@@ -247,7 +247,7 @@ Chaque module suit un format standardisé :
 - Modificateurs sagittaux : PI-LL mismatch, SVA, obliquité pelvienne
 - Objectifs de correction selon les modificateurs
 
-#### 5.5bis Classifications tridimensionnelles (3D)
+#### 5.5 Classifications tridimensionnelles (3D)
 - Classification de Lenke 3D (étude en développement)
   - Intégration de la rotation vertébrale apicale (AVR) et de la déformation dans les 3 plans
   - Utilisation de reconstructions 3D (EOS sterEOS, scanner)
@@ -271,7 +271,7 @@ Chaque module suit un format standardisé :
   - Impact sur la stratégie de correction (dérotation vs translation vs compression/distraction)
   - Intégration dans SpineSim© (visualisation et simulation 3D de la classification)
 
-#### 5.5 Classification de la scoliose neuromusculaire
+#### 5.6 Classification de la scoliose neuromusculaire
 - Selon l'étiologie neurologique
 - Selon le pattern de courbure
 - Classification de Sarwark et Sarwahi
@@ -1536,7 +1536,7 @@ Chaque module suit un format standardisé :
 - Drainage, antibioprophylaxie
 - Nutrition postopératoire
 
-#### 20.4bis Protocoles d'analgésie détaillés
+#### 20.5 Protocoles d'analgésie détaillés
 - Analgésie multimodale — principes et protocoles
   - Objectif : réduire la consommation d'opioïdes (opioid-sparing strategy)
   - Paracétamol IV systématique (1g/6h, max 4g/j)
@@ -1563,7 +1563,7 @@ Chaque module suit un format standardisé :
   - Prévention de l'iléus (alvimopan, mobilisation précoce)
   - Transition IV → PO : timing et molécules
 
-#### 20.5 Gestion transfusionnelle et protocoles sanguins
+#### 20.6 Gestion transfusionnelle et protocoles sanguins
 - Évaluation préopératoire du risque hémorragique
   - Estimation de la perte sanguine selon le type de chirurgie (SIA : 500-1500 mL, adulte/ostéotomie : 1000-3000 mL)
   - Bilan de coagulation préopératoire
@@ -1593,7 +1593,7 @@ Chaque module suit un format standardisé :
   - Critères de transfusion postopératoire
   - Mobilisation précoce et récupération
 
-#### 20.6 Équipe multidisciplinaire
+#### 20.7 Équipe multidisciplinaire
 - Composition de l'équipe
   - Chirurgien orthopédiste / neurochirurgien du rachis
   - Anesthésiste spécialisé en chirurgie rachidienne
@@ -1621,9 +1621,9 @@ Chaque module suit un format standardisé :
   - Suivi du parcours patient (pré-op, hospitalisation, post-op)
   - Éducation thérapeutique
 
-#### 20.7 Préparation du malade à la chirurgie — Parcours préopératoire complet
+#### 20.8 Préparation du malade à la chirurgie — Parcours préopératoire complet
 
-##### 20.7.1 Bilan préopératoire systématique
+##### 20.8.1 Bilan préopératoire systématique
 - Bilan biologique complet
   - NFS (hémoglobine, plaquettes), bilan de coagulation (TP, TCA, fibrinogène)
   - Groupage ABO-Rhésus + RAI (2 déterminations)
@@ -1645,7 +1645,7 @@ Chaque module suit un format standardisé :
   - Consultation de cardiologie si anomalie
   - Polysomnographie si suspicion de SAOS (obésité, scoliose sévère)
 
-##### 20.7.2 Consultations préopératoires
+##### 20.8.2 Consultations préopératoires
 - Consultation chirurgicale de planification
   - Explication de la chirurgie (avec supports visuels, modèles 3D)
   - Risques et bénéfices détaillés
@@ -1663,7 +1663,7 @@ Chaque module suit un format standardisé :
   - Planification des modalités (PES, PEM, D-waves, EMG)
   - Vérification de la compatibilité avec le protocole anesthésique
 
-##### 20.7.3 Optimisation préopératoire (programme de préhabilitation)
+##### 20.8.3 Optimisation préopératoire (programme de préhabilitation)
 - Optimisation de l'hémoglobine
   - Traitement de l'anémie ferriprive (fer IV : ferinject, fer sucrose)
   - EPO préopératoire si indiqué (controversé)
@@ -1690,7 +1690,7 @@ Chaque module suit un format standardisé :
   - Gestion du diabète (objectif HbA1c < 8%)
   - Arrêt de la contraception orale (si risque thromboembolique)
 
-##### 20.7.4 Préparation le jour J et veille de l'intervention
+##### 20.8.4 Préparation le jour J et veille de l'intervention
 - Veille de l'intervention
   - Douche antiseptique (chlorhexidine 4%)
   - Dépilation si nécessaire (tondeuse, pas de rasoir)
@@ -1713,7 +1713,7 @@ Chaque module suit un format standardisé :
   - Mise en route du cell-saver
   - Vérification du IONM : baseline des signaux (PES, PEM, D-waves)
 
-##### 20.7.5 Préparation spécifique selon le type de patient
+##### 20.8.5 Préparation spécifique selon le type de patient
 - Patient pédiatrique (< 18 ans)
   - Visite préopératoire du bloc opératoire (réduction anxiété)
   - Présence parentale jusqu'à l'induction
@@ -1732,7 +1732,7 @@ Chaque module suit un format standardisé :
   - Optimisation vitamine D et calcium en amont
   - Évaluation cardiovasculaire complète (> 60 ans)
 
-#### 20.8 Nutrition et santé osseuse en chirurgie de la scoliose
+#### 20.9 Nutrition et santé osseuse en chirurgie de la scoliose
 - Rôle de la vitamine D dans la santé osseuse
   - Prévalence de la carence en vitamine D chez les patients scoliotiques (30-60%)
   - Impact sur la qualité osseuse (densité, microarchitecture)
@@ -2293,7 +2293,7 @@ Chaque module suit un format standardisé :
 
 #### 29.1 Quiz par module — Banque de questions
 
-**Total : 560+ questions réparties sur 28 modules (20 questions minimum par module)**
+**Total : 600+ questions réparties sur 28 modules (20 questions minimum par module)**
 
 ##### Distribution des questions par partie :
 
