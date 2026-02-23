@@ -140,18 +140,28 @@ Chaque module suit un format standardisé :
 ### MODULE 2 : EMBRYOLOGIE ET CROISSANCE DU RACHIS
 
 #### 2.1 Développement embryologique
+> [MEDIA: 🎬 M02-S01-001 — Animation formation des somites et sclérotomes]
+> [MEDIA: 🎬 M02-S01-002 — Animation chondrification et ossification vertébrale]
+> [MEDIA: 🎬 M02-S01-003 — Animation neurulation (tube neural)]
+> [MEDIA: 📐 M02-S01-004 — Schéma anomalies de segmentation (hémivertèbre, barre, papillon)]
 - Somites et sclérotomes
 - Chondrification et ossification vertébrale
 - Formation du tube neural
 - Anomalies de segmentation (hémivertèbre, barre, vertèbre papillon)
 
 #### 2.2 Croissance rachidienne
+> [MEDIA: 📐 M02-S02-001 — Schéma croissance enchondrale vs périostée]
+> [MEDIA: 📊 M02-S02-003 — Infographie vitesse de croissance par âge et segment]
+> [MEDIA: 🎬 M02-S02-004 — Animation pic de croissance pubertaire]
 - Croissance enchondrale vs périostée
 - Plaques de croissance vertébrales (ring apophysis)
 - Vitesse de croissance selon l'âge et le segment
 - Pic de croissance pubertaire et son importance
 
 #### 2.3 Maturation squelettique
+> [MEDIA: 📊 M02-S03-001 — Infographie indice de Risser 0-5 avec radiographies]
+> [MEDIA: 📐 M02-S03-002 — Schéma Sanders classification (maturation main)]
+> [MEDIA: 📊 M02-S03-003 — Infographie courbe de Diméglio]
 - Indice de Risser (0 à 5) : description et signification
 - Stade de Tanner
 - Test de Risser modifié
@@ -164,12 +174,15 @@ Chaque module suit un format standardisé :
 ### MODULE 3 : BIOMÉCANIQUE DU RACHIS ET DE LA SCOLIOSE
 
 #### 3.1 Biomécanique rachidienne normale
+> [MEDIA: 🎬 M03-S01-001 — Animation axes de mouvement du rachis (3 plans)]
 - Axes de mouvement : flexion/extension, rotation, inclinaison latérale
 - Couplage des mouvements
 - Répartition des charges : pilier antérieur et postérieur
 - Centre de gravité et équilibre postural
 
 #### 3.2 Biomécanique de la déformation scoliotique
+> [MEDIA: 📊 M03-S02-001 — Diagramme cercle vicieux de Stokes]
+> [MEDIA: 🎬 M03-S02-002 — Animation déformation 3D scoliotique (frontal+sagittal+axial)]
 - Loi de Hueter-Volkmann
 - Cercle vicieux de la scoliose (théorie de Stokes)
 - Déformation tridimensionnelle : plan frontal, sagittal, axial
@@ -177,6 +190,7 @@ Chaque module suit un format standardisé :
 - Cunéiformisation vertébrale et discale
 
 #### 3.3 Biomécanique de la correction chirurgicale
+> [MEDIA: 🎬 M03-S03-001 — Animation principes correction (distraction, dérotation, translation)]
 - Principes de distraction (Harrington)
 - Principes de dérotation (Cotrel-Dubousset)
 - Translation et compression segmentaire
@@ -185,6 +199,8 @@ Chaque module suit un format standardisé :
 - Équilibre coronal et sagittal post-opératoire
 
 #### 3.4 Histoire de la chirurgie de la scoliose
+> [MEDIA: 📊 M03-S04-001 — Frise chronologique histoire de la chirurgie du rachis (1911-2025)]
+> [MEDIA: 📷 M03-S04-002 — Photos historiques : Harrington, CD, vis pédiculaires]
 - Ère pré-instrumentale
   - Plâtres correcteurs (méthodes d'Abbott, Risser)
   - Fusion postérieure sans instrumentation (Hibbs, 1911)
@@ -224,12 +240,15 @@ Chaque module suit un format standardisé :
 ### MODULE 4 : DÉFINITIONS ET ÉPIDÉMIOLOGIE
 
 #### 4.1 Définitions
+> [MEDIA: 📐 M04-S01-001 — Schéma mesure angle de Cobb (technique + exemple)]
+> [MEDIA: 📐 M04-S01-002 — Schéma courbure primaire vs secondaire]
 - Définition de la scoliose (SRS : angle de Cobb ≥ 10° + rotation)
 - Attitude scoliotique vs scoliose structurale
 - Courbure primaire (majeure) et courbures secondaires (compensatoires)
 - Scoliose fonctionnelle vs structurale
 
 #### 4.2 Épidémiologie
+> [MEDIA: 📊 M04-S02-001 — Infographie épidémiologie mondiale de la scoliose]
 - Prévalence (2-3% de la population)
 - Sex-ratio selon l'angle de Cobb
 - Facteurs de risque de progression
@@ -237,6 +256,7 @@ Chaque module suit un format standardisé :
 - Données épidémiologiques régionales et internationales
 
 #### 4.3 Étiologies
+> [MEDIA: 📊 M04-S03-001 — Organigramme classification étiologique des scolioses]
 - Scoliose idiopathique (80%)
   - Infantile (0-3 ans)
   - Juvénile (3-10 ans)
@@ -257,6 +277,8 @@ Chaque module suit un format standardisé :
 - Limites de cette classification
 
 #### 5.2 Classification de Lenke
+> [MEDIA: 📊 M05-S02-001 — Infographie complète classification de Lenke (6 types + modif)]
+> [MEDIA: 🧊 M05-S02-002 — Modèle 3D BioDigital : 6 types Lenke interactifs]
 - Type de courbure (1 à 6)
 - Modificateur lombaire (A, B, C)
 - Modificateur thoracique sagittal (−, N, +)
@@ -270,11 +292,14 @@ Chaque module suit un format standardisé :
 - Mixtes
 
 #### 5.4 Classification SRS-Schwab (scoliose adulte)
+> [MEDIA: 📊 M05-S04-001 — Infographie SRS-Schwab avec modificateurs sagittaux]
 - Types de courbures
 - Modificateurs sagittaux : PI-LL mismatch, SVA, obliquité pelvienne
 - Objectifs de correction selon les modificateurs
 
 #### 5.5 Classifications tridimensionnelles (3D)
+> [MEDIA: 🎬 M05-S05-001 — Animation classification 3D (plans frontal+sagittal+axial)]
+> [MEDIA: 🧊 M05-S05-002 — Modèle 3D interactif classification Rigo (A1-E2)]
 - Classification de Lenke 3D (étude en développement)
   - Intégration de la rotation vertébrale apicale (AVR) et de la déformation dans les 3 plans
   - Utilisation de reconstructions 3D (EOS sterEOS, scanner)
@@ -308,6 +333,7 @@ Chaque module suit un format standardisé :
 ### MODULE 6 : EXAMEN CLINIQUE
 
 #### 6.1 Anamnèse
+> [MEDIA: 📊 M06-S01-001 — Checklist anamnèse scoliose (drapeaux rouges)]
 - Âge de découverte
 - Antécédents familiaux
 - Douleur : caractéristiques, drapeaux rouges
@@ -322,12 +348,15 @@ Chaque module suit un format standardisé :
 - Déséquilibre sagittal (dos plat, hypercyphose)
 
 #### 6.3 Test d'Adams (flexion antérieure)
+> [MEDIA: 🎬 M06-S03-001 — Vidéo démonstration test d'Adams + scoliomètre]
+> [MEDIA: 📐 M06-S03-002 — Schéma technique du test d'Adams]
 - Technique standardisée
 - Mesure de la gibbosité au scoliomètre
 - Valeur seuil pour référence (≥ 5-7°)
 - Différenciation structurale vs fonctionnelle
 
 #### 6.4 Examen neurologique
+> [MEDIA: 📊 M06-S04-001 — Checklist examen neurologique systématique]
 - Testing moteur systématique
 - Réflexes ostéo-tendineux
 - Sensibilité
@@ -337,6 +366,7 @@ Chaque module suit un format standardisé :
 - Fossette sacro-coccygienne (dysraphisme)
 
 #### 6.5 Examen de la souplesse
+> [MEDIA: 🎬 M06-S05-001 — Vidéo bending test et fulcrum test]
 - Bending test (inclinaison latérale)
 - Traction test
 - Fulcrum bending test
@@ -355,6 +385,9 @@ Chaque module suit un format standardisé :
 ### MODULE 7 : IMAGERIE
 
 #### 7.1 Radiographie standard
+> [MEDIA: 📷 M07-S01-001 — Radiographie annotée : mesure angle de Cobb étape par étape]
+> [MEDIA: 📐 M07-S01-002 — Schéma mesure rotation (Nash-Moe, Perdriolle)]
+> [MEDIA: 📷 M07-S01-003 — Radiographie annotée : paramètres sagittaux et pelviens]
 - Téléradiographie du rachis entier (EOS si disponible)
   - Face et profil debout
   - Mesure de l'angle de Cobb : technique standardisée
@@ -373,12 +406,15 @@ Chaque module suit un format standardisé :
 - Indications et interprétation
 
 #### 7.3 Système EOS
+> [MEDIA: 📷 M07-S03-001 — Photo système EOS + exemple reconstruction 3D]
+> [MEDIA: 🎬 M07-S03-002 — Animation reconstruction 3D sterEOS]
 - Principe de fonctionnement (bi-plan basse dose)
 - Reconstruction 3D
 - Avantages vs radiographie conventionnelle
 - Paramètres mesurables en 3D
 
 #### 7.4 IRM
+> [MEDIA: 📷 M07-S04-001 — IRM annotée : syringomyélie, Chiari, moelle attachée]
 - Indications systématiques vs ciblées
   - Scoliose infantile et juvénile
   - Courbe thoracique gauche
@@ -412,6 +448,8 @@ Chaque module suit un format standardisé :
 ### MODULE 8 : SCOLIOSE IDIOPATHIQUE DE L'ADOLESCENT (SIA)
 
 #### 8.1 Physiopathologie et théories étiologiques
+> [MEDIA: 🎬 M08-S01-001 — Animation théorie uncoupled growth (croissance différentielle)]
+> [MEDIA: 📐 M08-S01-002 — Schéma facteurs étiologiques SIA (génétique, neuro, hormonal, biomécanique)]
 - Facteurs génétiques (gènes candidats, hérédité)
 - Facteurs neuromusculaires (asymétrie du tonus postural)
 - Facteurs hormonaux (mélatonine, leptine, calmoduline)
@@ -420,6 +458,8 @@ Chaque module suit un format standardisé :
 - Rôle du système vestibulaire et proprioceptif
 
 #### 8.2 Histoire naturelle
+> [MEDIA: 📊 M08-S02-001 — Infographie tableau Lonstein-Carlson (risque progression)]
+> [MEDIA: 📊 M08-S02-002 — Courbe progression selon Cobb × Risser]
 - Facteurs de risque de progression
   - Potentiel de croissance résiduel
   - Amplitude de la courbure
@@ -438,6 +478,9 @@ Chaque module suit un format standardisé :
 - Documentation photographique et radiologique
 
 #### 8.4 Traitement conservateur — Corset (orthèse)
+> [MEDIA: 📷 M08-S04-001 — Photos comparatives des types de corsets (Boston, Chêneau, Charleston, SpineCor)]
+> [MEDIA: 🎬 M08-S04-002 — Animation principes biomécaniques du corsetage (appuis, fenêtres, correction 3D)]
+> [MEDIA: 📊 M08-S04-003 — Infographie résultats BrAIST study]
 - Indications (BrAIST study) : Cobb 25-40°, Risser 0-2
 - Types de corsets
   - TLSO (Boston, Chêneau, Rigo-Chêneau, SPoRT)
@@ -457,6 +500,8 @@ Chaque module suit un format standardisé :
 - Exercices associés au corset
 
 #### 8.5 Traitement conservateur — Kinésithérapie spécifique
+> [MEDIA: 🎬 M08-S05-001 — Vidéo démonstration méthode Schroth (exercices clés)]
+> [MEDIA: 📊 M08-S05-002 — Tableau comparatif PSSE (Schroth, SEAS, Lyon, DoboMed, FITS)]
 - Exercices spécifiques à la scoliose (PSSE)
   - Méthode Schroth (Allemagne)
   - SEAS - Scientific Exercise Approach to Scoliosis (Italie)
@@ -477,6 +522,10 @@ Chaque module suit un format standardisé :
 - Timing chirurgical optimal
 
 #### 8.7 Traitement chirurgical — Arthrodèse postérieure
+> [MEDIA: 🎬 M08-S07-001 — Animation sélection niveaux de fusion (règles de Lenke)]
+> [MEDIA: 🎬 M08-S07-002 — Animation manœuvre de dérotation + translation segmentaire]
+> [MEDIA: 🧊 M08-S07-003 — Modèle 3D BioDigital instrumentation postérieure (vis, tiges, correction)]
+> [MEDIA: 📐 M08-S07-004 — Schéma monitoring neurophysio (PES, PEM, EMG déclenché)]
 - Sélection des niveaux de fusion (règles de Lenke)
   - Vertèbre limite supérieure et inférieure
   - Vertebra stable, vertèbre neutre
@@ -511,6 +560,9 @@ Chaque module suit un format standardisé :
 - Inconvénients : impact respiratoire, courbe d'apprentissage
 
 #### 8.9 Techniques de préservation de la croissance (Fusionless surgery)
+> [MEDIA: 🎬 M08-S09-001 — Animation VBT (principe Hueter-Volkmann + modulation croissance)]
+> [MEDIA: 📷 M08-S09-002 — Radiographies avant/après growing rods magnétiques (MAGEC)]
+> [MEDIA: 📊 M08-S09-003 — Tableau comparatif techniques fusionless (TGR, MCGR, VBT, VEPTR)]
 - Growing rods (barres de croissance)
   - Traditional growing rods (TGR)
   - Magnetically controlled growing rods (MCGR — MAGEC)
@@ -534,6 +586,7 @@ Chaque module suit un format standardisé :
 - Restrictions d'activité
 
 #### 8.11 Thoracoplastie et costoplastie
+> [MEDIA: 📐 M08-S11-001 — Schéma thoracoplastie convexe (résection costale + greffe)]
 - Définition et objectifs
   - Correction de la gibbosité costale résiduelle
   - Amélioration du résultat esthétique
@@ -587,6 +640,8 @@ Chaque module suit un format standardisé :
   - Dialogue ouvert avec le patient/famille
 
 #### 8.13 Traction halo-gravitaire préopératoire
+> [MEDIA: 📐 M08-S13-001 — Schéma halo céphalique (points d'insertion, dispositif)]
+> [MEDIA: 🎬 M08-S13-002 — Animation protocole traction progressive]
 - Définition et principes
   - Traction progressive de la colonne vertébrale par un halo céphalique fixé au crâne
   - Force de traction appliquée en position assise ou couchée (30-50% du poids corporel)
@@ -635,6 +690,8 @@ Chaque module suit un format standardisé :
 ### MODULE 9 : SCOLIOSE IDIOPATHIQUE INFANTILE ET JUVÉNILE
 
 #### 9.1 Scoliose idiopathique infantile (0-3 ans)
+> [MEDIA: 📐 M09-S01-001 — Schéma angle de Mehta (RVAD) : phase 1 vs phase 2]
+> [MEDIA: 🎬 M09-S01-002 — Animation technique plâtres correcteurs Mehta]
 - Particularités épidémiologiques (prédominance masculine, thoracique gauche)
 - Angle de Mehta (RVAD — Rib Vertebra Angle Difference)
   - Phase 1 (résolutive) vs Phase 2 (progressive)
@@ -653,6 +710,9 @@ Chaque module suit un format standardisé :
 - Planification à long terme
 
 #### 9.3 Early Onset Scoliosis (EOS) — Entité distincte
+> [MEDIA: 📊 M09-S03-001 — Organigramme classification étiologique EOS]
+> [MEDIA: 📐 M09-S03-002 — Schéma syndrome insuffisance thoracique (TIS) et SAL]
+> [MEDIA: 🎬 M09-S03-003 — Animation VEPTR + growing rods magnétiques]
 - Définition : scoliose diagnostiquée avant 10 ans (quelle que soit l'étiologie)
 - Importance des guidelines CHEST (Children's Spine Study Group)
 - Classification étiologique spécifique
@@ -691,11 +751,13 @@ Chaque module suit un format standardisé :
 ### MODULE 10 : SCOLIOSE DE L'ADULTE
 
 #### 10.1 Types de scoliose de l'adulte
+> [MEDIA: 📊 M10-S01-001 — Infographie 3 types scoliose adulte (idiopathique évoluée, dégénérative, secondaire)]
 - Scoliose idiopathique de l'adolescent évoluée à l'âge adulte
 - Scoliose dégénérative de novo
 - Scoliose secondaire (post-traumatique, iatrogène, métabolique)
 
 #### 10.2 Évaluation clinique spécifique
+> [MEDIA: 📊 M10-S02-001 — Checklist évaluation scoliose adulte (douleur, équilibre, comorbidités)]
 - Douleur (rachidienne, radiculaire)
 - Claudication neurogène
 - Déséquilibre sagittal (SVA, PI-LL mismatch)
@@ -733,6 +795,8 @@ Chaque module suit un format standardisé :
 - Approches : postérieure seule, antérieure seule, combinée
 
 #### 10.7 Ostéotomies
+> [MEDIA: 🎬 M10-S07-001 — Animation classification Schwab (SPO → PSO → VCR, grades 1-6)]
+> [MEDIA: 📐 M10-S07-002 — Schéma calcul correction sagittale (PI-LL target)]
 - Classification de Schwab (grades 1 à 6)
 - Smith-Petersen osteotomy (SPO) / Ponte
 - Pedicle subtraction osteotomy (PSO)
@@ -743,6 +807,8 @@ Chaque module suit un format standardisé :
 - Complications spécifiques de chaque ostéotomie
 
 #### 10.8 Chirurgie mini-invasive (MIS)
+> [MEDIA: 🎬 M10-S08-001 — Animation LLIF/OLIF (voie latérale + fixation percuténée)]
+> [MEDIA: 📐 M10-S08-002 — Schéma ACR (release ALL + cage hyperlordose)]
 - Techniques MIS par voie latérale
   - LLIF (Lateral Lumbar Interbody Fusion) / XLIF
   - OLIF (Oblique Lateral Interbody Fusion)
@@ -791,6 +857,7 @@ Chaque module suit un format standardisé :
 - Prévention du syndrome de la jonction distale
 
 #### 10.10 Complications spécifiques de la chirurgie adulte
+> [MEDIA: 📊 M10-S10-001 — Infographie PJK/PJF (mécanismes, facteurs de risque, prévention)]
 - Syndrome de la jonction proximale (PJK/PJF)
 - Syndrome de la jonction distale
 - Pseudarthrose
@@ -832,6 +899,8 @@ Chaque module suit un format standardisé :
 ### MODULE 11 : SCOLIOSE CONGÉNITALE
 
 #### 11.1 Classification
+> [MEDIA: 📐 M11-S01-001 — Schéma classification (défauts formation vs segmentation vs mixte)]
+> [MEDIA: 🧊 M11-S01-002 — Modèle 3D BioDigital : hémivertèbre, barre unilatérale, bloc]
 - Défauts de formation
   - Hémivertèbre (pleinement segmentée, semi-segmentée, non segmentée, incarcérée)
   - Vertèbre cunéiforme
@@ -853,6 +922,7 @@ Chaque module suit un format standardisé :
 - Barre unilatérale + hémivertèbre controlatérale : pire pronostic
 
 #### 11.4 Traitement
+> [MEDIA: 🎬 M11-S04-001 — Animation résection hémivertèbre (technique pas à pas)]
 - Observation et suivi (anomalies à faible risque)
 - Hémiépiphysiodèse convexe (croissance guidée)
 - Hemivertebra excision (résection d'hémivertèbre)
@@ -866,6 +936,7 @@ Chaque module suit un format standardisé :
 ### MODULE 12 : SCOLIOSE NEUROMUSCULAIRE
 
 #### 12.1 Étiologies
+> [MEDIA: 📊 M12-S01-001 — Organigramme étiologies neuromusculaires (neuropathiques vs myopathiques)]
 - Neuropathiques
   - Paralysie cérébrale
   - Myéloméningocèle / spina bifida
@@ -895,6 +966,8 @@ Chaque module suit un format standardisé :
 - Limite du traitement orthopédique
 
 #### 12.4 Traitement chirurgical
+> [MEDIA: 🎬 M12-S04-001 — Animation fusion longue T2-bassin + fixation pelvienne Galveston/S2AI]
+> [MEDIA: 📷 M12-S04-002 — Radiographies avant/après arthrodèse neuromusculaire]
 - Indications : Cobb > 40-50°, perte de fonction, obliquité pelvienne
 - Fusion longue (T2 ou T3 au bassin)
 - Fixation pelvienne : Galveston, vis iliaques, S2AI
@@ -913,6 +986,7 @@ Chaque module suit un format standardisé :
 ### MODULE 13 : SCOLIOSE SYNDROMIQUE
 
 #### 13.1 Neurofibromatose de type 1 (NF1)
+> [MEDIA: 📷 M13-S01-001 — Radiographies signes dystrophiques NF1 (penciling, scalloping)]
 - Dystrophic vs non-dystrophic curves
 - Signes dystrophiques : penciling des côtes, scalloping vertébral, dural ectasia
 - Particularités chirurgicales : fusion antérieure + postérieure souvent nécessaire
@@ -982,6 +1056,8 @@ Chaque module suit un format standardisé :
   - Évaluation cardiaque (valvulopathies)
 
 #### 13.8 Tumeurs rachidiennes et déformations
+> [MEDIA: 📷 M13-S08-001 — Scanner ostéome ostéoïde (nidus) + scoliose réactionnelle]
+> [MEDIA: 📊 M13-S08-002 — Organigramme tumeurs rachidiennes (bénignes vs malignes)]
 - Tumeurs bénignes causant une scoliose
   - Ostéome ostéoïde : scoliose douloureuse réactionnelle
     - Localisation : pédicule, lame postérieure
@@ -1015,6 +1091,8 @@ Chaque module suit un format standardisé :
 ### MODULE 14 : CYPHOSE ET DÉFORMATIONS SAGITTALES
 
 #### 14.1 Maladie de Scheuermann
+> [MEDIA: 📷 M14-S01-001 — Radiographie cyphose Scheuermann (cunéiformisation, nodules Schmorl)]
+> [MEDIA: 📐 M14-S01-002 — Schéma critères diagnostiques Scheuermann]
 - Définition et critères diagnostiques (≥ 5° de cunéiformisation sur ≥ 3 vertèbres adjacentes)
 - Types : thoracique classique vs thoracolombaire
 - Histoire naturelle
@@ -1039,6 +1117,7 @@ Chaque module suit un format standardisé :
 - Réduction vs fusion in situ
 
 #### 14.5 Scolioses secondaires acquises
+> [MEDIA: 📊 M14-S05-001 — Infographie scolioses acquises (post-trauma, post-laminectomie, post-irradiation, thoracogénique)]
 - Scoliose post-traumatique
   - Fractures vertébrales asymétriques
   - Cals vicieux et déformation progressive
@@ -1063,6 +1142,7 @@ Chaque module suit un format standardisé :
   - Traitement : identique aux autres étiologies selon la sévérité
 
 #### 14.6 Scolioses métaboliques
+> [MEDIA: 📊 M14-S06-001 — Tableau bilan métabolique complet (calcium, phosphore, vit D, PTH)]
 - Rachitisme
   - Carentiel (vitamine D) et syndromes de résistance
   - Déformations rachidiennes associées (cyphose, scoliose)
@@ -1096,6 +1176,9 @@ Chaque module suit un format standardisé :
 ### MODULE 15 : TECHNIQUES D'INSTRUMENTATION
 
 #### 15.1 Vis pédiculaires
+> [MEDIA: 🎬 M15-S01-001 — Animation mise en place vis pédiculaire free-hand (step by step)]
+> [MEDIA: 🧊 M15-S01-002 — Modèle 3D BioDigital : trajectoires pédiculaires par niveau]
+> [MEDIA: 📐 M15-S01-003 — Schéma vis monoaxiales vs polyaxiales vs corticales]
 - Anatomie du pédicule par niveau vertébral
 - Trajectoires : anatomique, straight-forward, in-out-in
 - Technique free-hand (landmarks de Kim, Lenke)
@@ -1133,6 +1216,8 @@ Chaque module suit un format standardisé :
 - Connecteurs et transition
 
 #### 15.6 Voies d'abord chirurgicales — anatomie détaillée
+> [MEDIA: 📐 M15-S06-001 — Schéma voies d'abord (postérieure, antérieure thoracique, latérale lombaire, ALIF)]
+> [MEDIA: 🎬 M15-S06-002 — Animation anatomie chirurgicale : plans musculaires et structures à risque]
 - Voie postérieure (la plus fréquente)
   - Position : décubitus ventral, cadre Wilson ou Jackson
   - Incision médiane, décollement sous-périosté de Cobb
@@ -1307,6 +1392,7 @@ Chaque module suit un format standardisé :
 ### MODULE 16 : OSTÉOTOMIES RACHIDIENNES
 
 #### 16.1 Classification anatomique (Schwab)
+> [MEDIA: 📊 M16-S01-001 — Infographie classification Schwab grades 1-6 (SPO → VCR)]
 - Grade 1 : résection facettaire partielle (Ponte / SPO)
 - Grade 2 : résection facettaire complète + chevron
 - Grade 3 : ostéotomie transpédiculaire de soustraction (PSO)
@@ -1321,6 +1407,8 @@ Chaque module suit un format standardisé :
 - Nombre de niveaux nécessaires
 
 #### 16.3 Pedicle Subtraction Osteotomy (PSO)
+> [MEDIA: 🎬 M16-S03-001 — Animation PSO pas à pas (résection cunéiforme + fermeture)]
+> [MEDIA: 📐 M16-S03-002 — Schéma correction obtenue 25-35° par PSO]
 - Technique chirurgicale pas à pas
 - Correction obtenue (25-35° par niveau)
 - Niveaux préférentiels (L2, L3, L4)
@@ -1328,6 +1416,7 @@ Chaque module suit un format standardisé :
 - Closing wedge vs opening wedge
 
 #### 16.4 Vertebral Column Resection (VCR)
+> [MEDIA: 🎬 M16-S04-001 — Animation VCR (résection complète + reconstruction colonne antérieure)]
 - Indications (déformations rigides > 100°)
 - Technique par voie postérieure seule
 - Technique combinée antérieure/postérieure
@@ -1340,12 +1429,15 @@ Chaque module suit un format standardisé :
 ### MODULE 17 : TECHNOLOGIES ASSISTÉES
 
 #### 17.1 Navigation chirurgicale
+> [MEDIA: 📷 M17-S01-001 — Photo systèmes navigation (CT-nav, O-arm, réalité augmentée)]
 - CT-navigation
 - O-arm (imagerie peropératoire)
 - Fluoroscopie 3D
 - Augmented reality (réalité augmentée)
 
 #### 17.2 Chirurgie robotique rachidienne
+> [MEDIA: 📷 M17-S02-001 — Photo systèmes robotiques (Mazor X, ROSA Spine, ExcelsiusGPS)]
+> [MEDIA: 📊 M17-S02-002 — Infographie précision comparée (free-hand vs fluo vs nav vs robot)]
 - Systèmes disponibles (Mazor X, ROSA Spine, ExcelsiusGPS)
 - Précision de la mise en place des vis
   - Données de précision comparées :
@@ -1367,6 +1459,7 @@ Chaque module suit un format standardisé :
   - Économies potentielles (moins de révisions, durée de séjour réduite)
 
 #### 17.3 Impression 3D
+> [MEDIA: 📷 M17-S03-001 — Photos modèles 3D imprimés + guides de coupe personnalisés]
 - Modèles anatomiques préopératoires
 - Guides de coupe personnalisés
 - Implants sur mesure
@@ -1421,6 +1514,7 @@ Chaque module suit un format standardisé :
 ### MODULE 18 : COMPLICATIONS CHIRURGICALES
 
 #### 18.1 Complications neurologiques
+> [MEDIA: 📊 M18-S01-001 — Algorithme gestion perte de signal IONM (checklist décisionnelle)]
 - Déficit moteur (incidence 0.5-2%)
 - Lésion radiculaire
 - Syndrome de la queue de cheval
@@ -1429,6 +1523,8 @@ Chaque module suit un format standardisé :
 - Prévention : monitoring, technique méticuleuse
 
 #### 18.2 Complications mécaniques
+> [MEDIA: 📷 M18-S02-001 — Radiographies complications mécaniques (PJK, rupture tige, pseudarthrose)]
+> [MEDIA: 📊 M18-S02-002 — Infographie facteurs de risque PJK et stratégies de prévention]
 - Déconnexion d'implant (rupture de tige, décrochage de vis)
 - Syndrome de la jonction proximale (PJK)
   - Définition et classification
@@ -1468,6 +1564,7 @@ Chaque module suit un format standardisé :
 ### MODULE 19 : REPRISE CHIRURGICALE
 
 #### 19.1 Indications de révision
+> [MEDIA: 📊 M19-S01-001 — Organigramme indications de révision chirurgicale]
 - Décompensation progressive
 - Pseudarthrose symptomatique
 - Défaillance mécanique
@@ -1498,6 +1595,7 @@ Chaque module suit un format standardisé :
 ### MODULE 20 : ANESTHÉSIE ET GESTION PÉRIOPÉRATOIRE
 
 #### 20.1 Évaluation préopératoire
+> [MEDIA: 📊 M20-S01-001 — Checklist bilan préopératoire complet (bio, imagerie, cardio-pulm)]
 - Bilan standard et spécifique
 - Épreuves fonctionnelles respiratoires (EFR)
 - Écho cardiaque (si scoliose sévère > 70°)
@@ -1514,6 +1612,8 @@ Chaque module suit un format standardisé :
 - Monitoring bispectral (BIS)
 
 #### 20.3 Monitoring neurophysiologique (IONM)
+> [MEDIA: 🎬 M20-S03-001 — Animation IONM (PES, PEM, D-waves, EMG) : principes et interprétation]
+> [MEDIA: 📊 M20-S03-002 — Infographie algorithme d'alerte IONM (perte signal → actions)]
 - PES (potentiels évoqués somesthésiques)
   - Principe : stimulation périphérique → enregistrement cortical
   - Electrode de stimulation : nerf tibial postérieur, nerf médian
@@ -1564,6 +1664,8 @@ Chaque module suit un format standardisé :
 - Nutrition postopératoire
 
 #### 20.5 Protocoles d'analgésie détaillés
+> [MEDIA: 📊 M20-S05-001 — Infographie analgésie multimodale (molécules, doses, timing)]
+> [MEDIA: 📐 M20-S05-002 — Schéma ESP block échoguidé (anatomie + technique)]
 - Analgésie multimodale — principes et protocoles
   - Objectif : réduire la consommation d'opioïdes (opioid-sparing strategy)
   - Paracétamol IV systématique (1g/6h, max 4g/j)
@@ -1591,6 +1693,7 @@ Chaque module suit un format standardisé :
   - Transition IV → PO : timing et molécules
 
 #### 20.6 Gestion transfusionnelle et protocoles sanguins
+> [MEDIA: 📊 M20-S06-001 — Infographie stratégies réduction saignement (TXA, cell-saver, hypotension)]
 - Évaluation préopératoire du risque hémorragique
   - Estimation de la perte sanguine selon le type de chirurgie (SIA : 500-1500 mL, adulte/ostéotomie : 1000-3000 mL)
   - Bilan de coagulation préopératoire
@@ -1760,6 +1863,7 @@ Chaque module suit un format standardisé :
   - Évaluation cardiovasculaire complète (> 60 ans)
 
 #### 20.9 Nutrition et santé osseuse en chirurgie de la scoliose
+> [MEDIA: 📊 M20-S09-001 — Infographie vitamine D + calcium + optimisation osseuse préopératoire]
 - Rôle de la vitamine D dans la santé osseuse
   - Prévalence de la carence en vitamine D chez les patients scoliotiques (30-60%)
   - Impact sur la qualité osseuse (densité, microarchitecture)
@@ -2306,6 +2410,8 @@ Chaque module suit un format standardisé :
 ### MODULE 25 : RECHERCHE ET INNOVATIONS
 
 #### 25.1 Génétique de la scoliose
+> [MEDIA: 📐 M25-S01-001 — Schéma GWAS et gènes candidats scoliose (LBX1, GPR126, PAX1)]
+> [MEDIA: 📊 M25-S01-002 — Infographie ScoliScore® et médecine personnalisée]
 - Gènes identifiés (LBX1, GPR126, PAX1)
 - Scores de risque génétique (ScoliScore®)
 - Perspectives de médecine personnalisée
@@ -2317,6 +2423,7 @@ Chaque module suit un format standardisé :
 - Perspectives diagnostiques
 
 #### 25.3 Innovations thérapeutiques
+> [MEDIA: 🎬 M25-S03-001 — Animation innovations (VBT long-term, tiges biodégradables, cellules souches)]
 - Vertebral Body Tethering : évolution et résultats à long terme
 - ApiFix / techniques de correction mini-invasive
 - Annulus fibrosus repair
@@ -2336,6 +2443,7 @@ Chaque module suit un format standardisé :
 - Rééducation assistée par réalité virtuelle
 
 #### 25.6 Registres et bases de données
+> [MEDIA: 📊 M25-S06-001 — Carte mondiale des registres rachis (SRS, Spine Tango, ICSG, NorSpine...)]
 - Registres internationaux
   - SRS Morbidity & Mortality Database
   - Eurospine Spine Tango
@@ -2366,6 +2474,7 @@ Chaque module suit un format standardisé :
 ### MODULE 26 : ASPECTS MÉDICO-LÉGAUX ET ÉTHIQUES
 
 #### 26.1 Consentement éclairé
+> [MEDIA: 📊 M26-S01-001 — Modèle de document de consentement éclairé (checklist risques)]
 - Information du patient et des parents
 - Risques à communiquer
 - Documentation
@@ -2392,6 +2501,7 @@ Chaque module suit un format standardisé :
 ### MODULE 27 : CAS CLINIQUES INTERACTIFS
 
 #### 27.1 Cas cliniques SIA
+> [MEDIA: 📷 M27-S01-001 — Cas 1-5 : radiographies + photos cliniques pré/post-op]
 - Cas 1 : SIA Lenke 1AN — thoracique droite classique
 - Cas 2 : SIA Lenke 3CN — double majeure
 - Cas 3 : SIA Lenke 5CN — thoracolombaire/lombaire
@@ -2423,6 +2533,8 @@ Chaque module suit un format standardisé :
 > **Module transversal** : L'application SpineSim© est utilisée tout au long de la formation. Ce module décrit l'ensemble des fonctionnalités et des ateliers pratiques intégrés à chaque partie.
 
 #### 28.1 Présentation générale de SpineSim©
+> [MEDIA: 🎬 M28-S01-001 — Vidéo démo SpineSim© (overview fonctionnalités + interface)]
+> [MEDIA: 🧊 M28-S01-002 — Modèle 3D interactif : exploration du rachis virtuel SpineSim©]
 - Philosophy et objectifs pédagogiques
   - Apprendre sans risque : simulation réaliste avant le bloc opératoire
   - Comprendre la biomécanique par la manipulation interactive
@@ -2674,6 +2786,7 @@ Chaque module suit un format standardisé :
 ### MODULE 29 : ÉVALUATION ET CERTIFICATION
 
 #### 29.1 Quiz par module — Banque de questions
+> [MEDIA: 📊 M29-S01-001 — Infographie distribution 600+ questions (4 niveaux × 8 parties)]
 
 **Total : 600+ questions réparties sur 28 modules (20 questions minimum par module)**
 
