@@ -102,7 +102,7 @@ SpineSim© est une application de simulation biomécanique du rachis et de chiru
 
 | Composant | Technologie | Rôle |
 |-----------|------------|------|
-| **Base de données** | PostgreSQL 16 | Données patients virtuels, résultats, progression |
+| **Base de données** | PostgreSQL 17 | Données patients virtuels, résultats, progression |
 | **Cache** | Redis | Cache de calculs, sessions temps réel |
 | **Stockage** | MinIO / S3 | Maillages 3D, fichiers DICOM, modèles |
 | **Conteneurisation** | Docker + Docker Compose | Déploiement reproductible |

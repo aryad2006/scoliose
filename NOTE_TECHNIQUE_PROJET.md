@@ -135,7 +135,7 @@ Le dépôt contient **14 documents** totalisant **8 710 lignes** de contenu stru
         ▼                   ▼                    ▼
 ┌─────────────────────────────────────────────────────────────┐
 │              Base de données / Stockage                      │
-│  PostgreSQL 16 (users, progress, analytics)                  │
+│  PostgreSQL 17 (users, progress, analytics)                  │
 │  Redis Cluster (sessions, cache)                             │
 │  S3/MinIO (médias, DICOM anonymisés)                         │
 │  TimescaleDB (learning analytics)                            │
@@ -274,7 +274,7 @@ Corrections majeures appliquées :
 |---|---|
 | Cloud | AWS / Azure / OVHCloud (conformité RGPD) |
 | Conteneurisation | Docker + Kubernetes |
-| BDD principale | PostgreSQL 16 |
+| BDD principale | PostgreSQL 17 |
 | BDD analytique | TimescaleDB |
 | Cache / Sessions | Redis Cluster |
 | Stockage objets | S3 / MinIO |

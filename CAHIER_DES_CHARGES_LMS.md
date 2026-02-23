@@ -218,7 +218,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | **Frontend LMS** | Vue.js 3 / Nuxt 3 | SSR, performances, écosystème riche |
 | **Backend LMS** | Node.js (NestJS) ou Python (Django) | Robustesse, communauté, ORM mature |
 | **Backend SpineSim** | Julia (Genie.jl) | Performance calcul scientifique, FEM |
-| **Base de données** | PostgreSQL 16 + pgvector | Données relationnelles, recherche vectorielle |
+| **Base de données** | PostgreSQL 17 + pgvector | Données relationnelles, recherche vectorielle |
 | **Cache** | Redis 7 Cluster | Sessions, cache, queues, rate limiting |
 | **Stockage objets** | AWS S3 / MinIO | Vidéos, modèles 3D, DICOM, sauvegardes |
 | **Recherche** | Elasticsearch / OpenSearch | Full-text, logs, analytics |
