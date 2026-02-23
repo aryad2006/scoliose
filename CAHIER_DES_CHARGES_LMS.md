@@ -83,7 +83,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Diamant | 💎 | ≥ 85% | Cas difficiles, complications, SpineSim |
 
 #### 2.3.3 Banque de questions
-- **640+ questions** réparties sur 29 modules
+- **600+ questions** réparties sur 28 modules
 - Chaque question : énoncé, options, explication détaillée, références bibliographiques
 - Randomisation : ordre des questions et des options
 - Pool de questions : tirage aléatoire dans un pool plus large (ratio 1.5:1)
@@ -143,7 +143,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 ### 2.6 Communication et collaboration
 
 - **Forum de discussion** : par module, avec modération et recherche
-- **Messagerie privée** : entre appprenant et tuteur/instructeur
+- **Messagerie privée** : entre apprenant et tuteur/instructeur
 - **Webinaires live** : intégration Zoom/Teams/BBB (Big Blue Button)
 - **Annotations collaboratives** : annotation partagée sur images et 3D
 - **Notifications** : email, push navigateur, in-app (nouveau contenu, deadline, live session)
@@ -154,6 +154,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Formule | Contenu | Prix indicatif | Durée |
 |---------|---------|----------------|-------|
 | **Découverte** | Modules 1-3 (fondamentaux) | Gratuit | Illimité |
+| **Essentiel** | Modules 1-14 (diagnostic + pathologies) | 290€ | 12 mois |
 | **Standard** | Tous modules sans SpineSim | 490€ | 12 mois |
 | **Premium** | Tous modules + SpineSim complet + VR | 890€ | 12 mois |
 | **Certification** | Premium + examen + certificat | 1 190€ | 12 mois |

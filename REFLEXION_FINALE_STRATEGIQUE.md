@@ -1,7 +1,7 @@
 # RÉFLEXION FINALE — Analyse stratégique du projet
 
 **Date** : Février 2026  
-**Contexte** : Relecture complète des 11 documents du dépôt (7 800+ lignes)
+**Contexte** : Relecture complète des 13 documents du dépôt (7 200+ lignes)
 
 ---
 
@@ -12,7 +12,7 @@ Le projet est d'une **ambition exceptionnelle** et d'une **profondeur médicale 
 - 29 modules, ~89 heures, ~2 525 lignes de plan pédagogique
 - 513+ médias catalogués individuellement
 - SpineSim© spécifié sur 1 650 lignes (20 sections)
-- 640+ questions de quiz à 4 niveaux de difficulté
+- 600+ questions de quiz à 4 niveaux de difficulté
 - 6 documents structurels (LMS, budget, calendrier, modèle économique, guide formateur, bibliographie)
 
 Les modules chirurgicaux (15-20, 28) sont rédigés à un **niveau de détail clinique exceptionnel** — doses, protocoles, algorithmes décisionnels — qui dépasse largement ce qu'on trouve dans la plupart des formations commerciales existantes.
@@ -136,7 +136,7 @@ Et surtout : permettre aux médecins expérimentés de **tester directement le q
 | **N-03** | **Pas de stratégie de propriété intellectuelle** : SpineSim© est marqué © mais aucun brevet, aucune protection algorithmique, aucun NDA mentionné | Risque de copie | Déposer un brevet sur les algorithmes FEM spécifiques + marque SpineSim® + NDA équipe |
 | **N-04** | **Pas de tarification étudiante** : €1 190 pour la certification est inabordable pour un interne (salaire ~€1 500-2 000/mois net) | Exclut le public cible principal | Ajouter un tarif étudiant à -50% (€595) ou paiement en 6 mensualités |
 | **N-05** | **Pas d'intégration IA pour la notation des réponses ouvertes** : Le Module 29 mentionne des « questions ouvertes courtes, corrigées par IA ou pairs » sans spécification | Feature clé non spécifiée | Spécifier un pipeline LLM-based de notation avec rubrique de scoring |
-| **N-06** | **Banque de 600 questions insuffisante pour l'apprentissage adaptatif** : 600 questions / 29 modules = ~21 questions/module. Pour un vrai système adaptatif, il faut 50-100 questions par topic. | Apprentissage adaptatif limité | Objectif : 1 500-2 000 questions à terme. Viser 600 au lancement + 200/an |
+| **N-06** | **Banque de 600 questions insuffisante pour l'apprentissage adaptatif** : 600 questions / 28 modules = ~21 questions/module. Pour un vrai système adaptatif, il faut 50-100 questions par topic. | Apprentissage adaptatif limité | Objectif : 1 500-2 000 questions à terme. Viser 600 au lancement + 200/an |
 | **N-07** | **Pas de normes vidéo définies** : Résolution ? Bitrate ? Codec ? HDR pour les vidéos chirurgicales ? | Risque d'incohérence technique | Définir : 1080p60 minimum, 4K pour vidéos chirurgicales, H.265, HDR optionnel |
 | **N-08** | **Pas de passerelle vers la pratique réelle** : Formation 100% en ligne, aucun lien avec cadaveric lab, proctoring au bloc, simulation physique | Valeur perçue limitée | Partenariat avec centres AO/Sawbones, option premium « certification + 2j cadaveric lab » |
 | **N-09** | **GPU client trop exigeant** : NVIDIA GTX 1060+ requis → exclut MacBook (Apple Silicon), Chromebook, PC hospitaliers | Exclut ~60% des laptops | Clarifier : GPU dédié = mode desktop haute fidélité uniquement. Le mode navigateur WebGL fonctionne sur GPU intégré (Intel HD 620+, Apple M1+). |

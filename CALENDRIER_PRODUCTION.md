@@ -52,10 +52,10 @@ Mois:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 2
 | **A5. Rédaction Partie IV** (M11-14) | 6-9 | 4 modules (congénitale, neuromusculaire, syndromique, cyphose) | Auteurs 3-5 |
 | **A6. Rédaction Partie V** (M15-17) | 8-11 | 3 modules (instrumentation, ostéotomies, technologies) | Auteurs 1-3 |
 | **A7. Rédaction Partie VI** (M18-19) | 10-12 | 2 modules (complications mécaniques, neurologiques) | Auteurs 4-5 |
-| **A8. Rédaction Partie VII** (M20-23) | 11-14 | 4 modules (peropératoire, kinésithérapie, orthèses, psychologie) | Auteurs 1-5 |
-| **A9. Rédaction Partie VIII** (M24-27) | 13-16 | 4 modules (recherche, éthique, cas complexes, innovations) | Auteurs 1-5 |
+| **A8. Rédaction Partie VII** (M20-23) | 11-14 | 4 modules (peropératoire, rééducation, psychologie, impacts respiratoires) | Auteurs 1-5 |
+| **A9. Rédaction Partie VIII** (M24-27) | 13-16 | 4 modules (dépistage, recherche/innovations, médico-légaux/éthique, cas cliniques) | Auteurs 1-5 |
 | **A10. Rédaction M28-29** (SpineSim + Eval) | 14-16 | 2 modules | Auteur 1 + Lead dev |
-| **A11. Questions quiz** (640+) | 3-16 | 640+ questions, 4 niveaux | Tous les auteurs |
+| **A11. Questions quiz** (600+) | 3-16 | 600+ questions, 4 niveaux | Tous les auteurs |
 | **A12. Relecture comité scientifique** | 4-18 | Corrections, validation | 5 experts |
 | **A13. Intégration finale** | 16-18 | Mise en forme, liens croisés | Coordinateur péda. |
 

@@ -240,7 +240,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | XREF-04 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | HIGH |
-| **Description** | **Nombre de questions quiz** : Le Module 29 mentionne « **560+** questions réparties sur 28 modules » puis, 20 lignes plus bas, un tableau totalisant **600** questions (145+175+160+120 = 600). 560+ ≠ 600. |
+| **Description** | **Nombre de questions quiz** : ~~Le Module 29 mentionne « **560+** questions réparties sur 28 modules » puis, 20 lignes plus bas, un tableau totalisant **600** questions (145+175+160+120 = 600). 560+ ≠ 600.~~ **✅ RÉSOLU** — Corrigé à « 600+ » dans tous les documents. |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — Module 29, §28.1 (sic) |
 | **Solution proposée** | Corriger le texte introductif à « 600 questions » pour correspondre au tableau, ou recalculer le tableau. Vérifier que chaque module a effectivement ≥20 questions comme annoncé (600/28 = 21.4 en moyenne, mais la distribution est inégale). |
 
@@ -274,7 +274,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | STRUCT-01 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | HIGH |
-| **Description** | **Erreur de numérotation des sections dans le Module 29** : Les sections du Module 29 (Évaluation et certification) utilisent les numéros 28.1 et 28.3 au lieu de 29.1 et 29.3. Les sections 29.2, 29.4 et 29.5 sont correctement numérotées. Cela crée une collision avec le Module 28 (SpineSim). |
+| **Description** | ~~**Erreur de numérotation des sections dans le Module 29**~~ : **✅ RÉSOLU — Vérification montre que 28.1 et 28.3 sont bien dans le Module 28 (SpineSim), pas dans le Module 29. Le Module 29 utilise correctement 29.1-29.5. Ce constat était invalide.** |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — Module 29, lignes ~2370 (« #### 28.1 Quiz par module ») et ~2440 (« #### 28.3 Évaluation par palier ») |
 | **Solution proposée** | Corriger « #### 28.1 Quiz par module » → « #### 29.1 Quiz par module » et « #### 28.3 Évaluation par palier » → « #### 29.3 Évaluation par palier ». |
 
@@ -284,7 +284,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | STRUCT-02 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | LOW |
-| **Description** | **Numérotation irrégulière** : Deux sections utilisent le suffixe « bis » au lieu d'une numérotation standard : §5.5bis (classifications additionnelles) et §20.4bis (protocoles d'analgésie). Cela indique des ajouts post-rédaction non re-numérotés. |
+| **Description** | ~~**Numérotation irrégulière** : Deux sections utilisent le suffixe « bis » au lieu d'une numérotation standard : §5.5bis (classifications additionnelles) et §20.4bis (protocoles d'analgésie).~~ **✅ RÉSOLU** — Renuméroté : §5.5bis→§5.5, §20.4bis→§20.5. |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — §5.5bis, §20.4bis |
 | **Solution proposée** | Re-numéroter proprement : §5.5bis → §5.6 (décaler les suivants) et §20.4bis → §20.5 (décaler §20.5→20.6, §20.6→20.7, etc.). |
 
@@ -562,14 +562,14 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | 9 | MED-01 | Mise à jour catalogue médias M20 (+12-15 médias) | 2 semaines catalogue |
 | 10 | TECH-02 | Clarification compatibilité GPU client (WebGL vs desktop) | 1 semaine specs |
 | 11 | TECH-03 | Spécification concurrence solveur FEM + architecture queuing | 2 semaines specs |
-| 12 | STRUCT-01 | Correction numérotation Module 29 (28.1→29.1, 28.3→29.3) | 10 minutes |
+| 12 | STRUCT-01 | ~~Correction numérotation Module 29 (28.1→29.1, 28.3→29.3)~~ **Invalide** | ~~10 minutes~~ |
 | 13 | PEDA-01 | Conception du test de positionnement d'entrée | 2-3 semaines |
 | 14 | PEDA-02 | Spécification du système de révision espacée | 1-2 semaines spec |
 | 15 | PRAT-01 | Création des templates cliniques téléchargeables | 3-4 semaines contenu |
 | 16 | LMS-01 | Spécification proctoring dans le CdC LMS | 1 semaine |
 | 17 | BUDCAL-02 | Décision et budgétisation réglementaire SaMD | Dépend de TECH-01 |
 | 18 | ECO-03 | Analyse concurrentielle détaillée (SWOT, stratégie différenciation) | 2 semaines |
-| 19 | XREF-04 | Correction incohérence 560+/600 questions | 10 minutes |
+| 19 | XREF-04 | ~~Correction incohérence 560+/600 questions~~ **✅ RÉSOLU** | ~~10 minutes~~ |
 
 ---
 

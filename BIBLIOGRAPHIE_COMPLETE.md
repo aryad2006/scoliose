@@ -177,36 +177,36 @@
 93. **Bess S, Line B, Fu KM, et al.** The health impact of symptomatic adult spinal deformity: comparison of deformity types to United States population norms and chronic diseases. *Spine.* 2016;41(3):224-233.
 94. **Lowe TG, Line BG.** Evidence-based medicine: analysis of Scheuermann kyphosis. *Spine.* 2007;32(19 Suppl):S115-S119.
 
-### Kinésithérapie (Module 21)
+### Rééducation et suivi à long terme (Module 21)
 95. **Romano M, Minozzi S, Bettany-Saltikov J, et al.** Exercises for adolescent idiopathic scoliosis. *Cochrane Database Syst Rev.* 2012;(8):CD007837.
 96. **Schreiber S, Parent EC, Khodayari Moez E, et al.** Schroth physiotherapeutic scoliosis-specific exercises added to the standard of care lead to better Cobb angle outcomes in adolescents with idiopathic scoliosis. *PLoS One.* 2016;11(12):e0168746.
 97. **Weiss HR, Negrini S, Rigo M, et al.** Indications for conservative management of scoliosis (SOSORT guidelines). *Stud Health Technol Inform.* 2006;123:175-181.
 
-### Orthèses (Module 22)
+### Impact psychologique et qualité de vie (Module 22)
 98. **Weinstein SL, Dolan LA, Wright JG, Dobbs MB.** Effects of bracing in adolescents with idiopathic scoliosis. *N Engl J Med.* 2013;369(16):1512-1521.
 99. **Rigo M, Negrini S, Weiss HR, et al.** 'SOSORT consensus paper 2012: the design of the brace. *Scoliosis.* 2014;9(1):12.
 
-### Psychologie (Module 23)
+### Impacts respiratoires, cardiovasculaires et fonctionnels (Module 23)
 100. **Tones M, Moss N, Polly DW Jr.** A review of quality of life and psychosocial issues in scoliosis. *Spine.* 2006;31(26):3027-3038.
-101. **Danielsson AJ, If possible, Nachemson AL.** Radiographic findings and curve progression 22 years after treatment for adolescent idiopathic scoliosis. *Spine.* 2001;26(5):516-525.
+101. **Danielsson AJ, Nachemson AL.** Radiographic findings and curve progression 22 years after treatment for adolescent idiopathic scoliosis. *Spine.* 2001;26(5):516-525.
 
 ---
 
 ## PARTIE VIII — SUJETS AVANCÉS (Modules 24-27)
 
-### Recherche (Module 24)
+### Dépistage de la scoliose (Module 24)
 102. **Cheng JC, Castelein RM, Chu WC, et al.** Adolescent idiopathic scoliosis. *Nat Rev Dis Primers.* 2015;1:15030.
 103. **Wise CA, Barnes R, Gillum J, et al.** Localization of susceptibility to familial idiopathic scoliosis. *Spine.* 2000;25(18):2372-2380.
 104. **Gorman KF, Julien C, Moreau A.** The genetic epidemiology of idiopathic scoliosis. *Eur Spine J.* 2012;21(10):1905-1919.
 
-### Éthique (Module 25)
+### Aspects médico-légaux et éthiques (Module 26)
 105. **Beauchamp TL, Childress JF.** Principles of Biomedical Ethics. 8th ed. Oxford University Press; 2019.
 
-### Cas complexes (Module 26)
+### Cas cliniques interactifs (Module 27)
 106. **Lenke LG, Fehlings MG, Shaffrey CI, et al.** Neurologic outcomes of complex adult spinal deformity surgery. *Spine.* 2016;41(3):204-212.
 107. **Kelly MP, Lenke LG, Bridwell KH, et al.** Fate of the adult revision spinal deformity patient: a single institution experience. *Spine.* 2013;38(19):E1196-E1200.
 
-### Innovations et avenir (Module 27)
+### Recherche, innovations et avenir (Module 25 / 27)
 108. **de Kleuver M, Lewis SJ, Germscheid NM, et al.** Optimal surgical care for adolescent idiopathic scoliosis: an international consensus. *Eur Spine J.* 2014;23(12):2603-2618.
 109. **Samdani AF, Ames RJ, Kimball JS, et al.** Anterior vertebral body tethering for immature adolescent idiopathic scoliosis: one-year results on the first 32 patients. *Eur Spine J.* 2015;24(7):1533-1539.
 110. **Crawford CH 3rd, Lenke LG.** Growth modulation by means of anterior tethering resulting in progressive correction of juvenile idiopathic scoliosis. *J Bone Joint Surg Am.* 2010;92(1):202-209.

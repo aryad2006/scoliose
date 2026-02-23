@@ -31,7 +31,7 @@
 | Simulation biomécanique (FEM) | ✅ SpineSim© (unique) | ❌ Aucune |
 | Chirurgie virtuelle VR | ✅ Intégrée | ❌ |
 | Couverture complète scoliose | ✅ 29 modules, 89h | ⚠️ Modules isolés |
-| Quiz adaptatifs 4 niveaux | ✅ 640+ questions | ⚠️ QCM basiques |
+| Quiz adaptatifs 4 niveaux | ✅ 600+ questions | ⚠️ QCM basiques |
 | Certification reconnue | ✅ DPC + CME | ✅ |
 | Modèles 3D interactifs | ✅ WebGL | ⚠️ Images/vidéos |
 | Tarification | ✅ Abordable | ⚠️ Souvent plus cher |
@@ -92,6 +92,9 @@
 | Répartition : Essentiel / Standard / Premium / Certif | 15% / 30% / 35% / 20% | 10% / 25% / 40% / 25% |
 | Part institutionnelle | 30% du CA | 50% du CA |
 | Churn annuel (renouvellement) | 40% | 60% |
+
+> *Note : Le churn annuel mesure le taux de non-renouvellement à échéance des licences 12 mois. Le churn mensuel (cf. KPI §6.1) diminue avec la maturité de la plateforme : 5% (An 1, ≈46% annualisé) → 3,5% (An 3) → 2,5% (An 5, ≈26% annualisé).*
+
 | Croissance organique/an | 30% | 50% |
 
 ### 3.2 Projections — 5 ans
@@ -107,6 +110,8 @@
 | **An 5** | 2 500 | 3 000 | 1 350 000 € | 1 200 000 € | **2 550 000 €** | -700 000 € | **+1 850 000 €** |
 
 #### Panier moyen par apprenant
+
+> *Répartition médiane (moyenne des scénarios bas et haut, cf. §3.1)*
 
 | Formule | Part | Prix moyen | Contribution |
 |---------|------|-----------|-------------|
@@ -198,7 +203,7 @@
 | Métrique | Cible An 1 | Cible An 3 | Cible An 5 |
 |----------|-----------|-----------|-----------|
 | **MRR** (Monthly Recurring Revenue) | 25 000 € | 100 000 € | 210 000 € |
-| **ARR** (Annual Recurring Revenue) | 300 000 € | 1 200 000 € | 2 500 000 € |
+| **ARR** (Annual Recurring Revenue) | 300 000 € | 1 200 000 € | 2 520 000 € |
 | **ARPU** (Average Revenue Per User) | 770 € | 770 € | 850 € |
 | **CAC** (Customer Acquisition Cost) | 200 € | 120 € | 80 € |
 | **LTV** (Lifetime Value) | 1 100 € | 1 400 € | 1 700 € |

@@ -34,7 +34,7 @@ Le projet inclut un **simulateur biomécanique interactif (SpineSim©)** basé s
 | Modules | 29 |
 | Durée totale estimée | ~89 heures |
 | Médias catalogués | 513+ items |
-| Questions de quiz | 640+ |
+| Questions de quiz | 600+ |
 | Niveaux de difficulté | 4 (Bronze 🥉 / Argent 🥈 / Or 🥇 / Diamant 💎) |
 | Examen certifiant | 3h30, surveillé (proctoring) |
 
@@ -42,14 +42,15 @@ Le projet inclut un **simulateur biomécanique interactif (SpineSim©)** basé s
 
 | # | Partie | Modules | Durée |
 |---|---|---|---|
-| I | Anatomie et biomécanique du rachis | 1-3 | ~12h |
-| II | Classifications et évaluation | 4-6 | ~10h |
-| III | Histoire naturelle et épidémiologie | 7-8 | ~8h |
-| IV | Traitements conservateurs | 9-10 | ~10h |
-| V | Chirurgie de la scoliose | 11-20 | ~28h |
-| VI | Rééducation et suivi | 21-23 | ~8h |
-| VII | Cas cliniques intégrés | 24-27 | ~6h |
-| VIII | Simulation et innovation | 28-29 | ~7h |
+| I | Fondamentaux et sciences de base | 1-3 | ~7h15 |
+| II | Définition, classification et diagnostic | 4-7 | ~10h |
+| III | Scoliose idiopathique | 8-10 | ~17h |
+| IV | Scolioses non idiopathiques | 11-14 | ~11h30 |
+| V | Techniques chirurgicales détaillées | 15-17 | ~14h30 |
+| VI | Complications et gestion | 18-19 | ~5h30 |
+| VII | Prise en charge globale | 20-23 | ~11h |
+| VIII | Sujets spéciaux et avancés | 24-27 | ~7h |
+| — | SpineSim© + Évaluation | 28-29 | ~5h30 |
 
 ### 2.3 SpineSim© — Simulateur biomécanique
 
@@ -62,7 +63,7 @@ Le projet inclut un **simulateur biomécanique interactif (SpineSim©)** basé s
 
 ## 3. Inventaire des livrables (dépôt Git)
 
-Le dépôt contient **10 documents fondateurs** totalisant **6 539 lignes** de contenu structuré :
+Le dépôt contient **13 documents** totalisant **7 253 lignes** de contenu structuré :
 
 | # | Fichier | Lignes | Rôle |
 |---|---|---|---|
@@ -70,12 +71,15 @@ Le dépôt contient **10 documents fondateurs** totalisant **6 539 lignes** de c
 | 2 | `MEDIAS_PRODUCTION_SCOLIOSE.md` | 776 | Catalogue de 513+ médias (images, vidéos, animations 3D, simulations) |
 | 3 | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` | 1 650 | Spécifications complètes SpineSim© (architecture, FEM, sécurité, déploiement, tests, CI/CD, analytics) |
 | 4 | `CAHIER_DES_CHARGES_LMS.md` | 291 | Cahier des charges pour la plateforme LMS (xAPI, SCORM, accessibilité) |
-| 5 | `BUDGET_GLOBAL_FORMATION.md` | 188 | Budget détaillé : 4,7-6,8 M€ sur 40 mois, 8 postes de dépenses |
+| 5 | `BUDGET_GLOBAL_FORMATION.md` | 188 | Budget détaillé : 4 695-6 835 K€ sur 40 mois, 8 postes de dépenses |
 | 6 | `CALENDRIER_PRODUCTION.md` | 229 | Calendrier intégré : 40 mois, 6 chantiers parallèles, 15 jalons |
 | 7 | `MODELE_ECONOMIQUE.md` | 191 | Modèle économique : 5 paliers tarifaires, projections à 5 ans, partenariats |
 | 8 | `GUIDE_FORMATEUR.md` | 247 | Guide du tuteur/formateur : rôles, animation, KPI, checklists |
 | 9 | `BIBLIOGRAPHIE_COMPLETE.md` | 195 | 130 références bibliographiques classées par partie |
 | 10 | `AUDIT_COMPLET_PROJET.md` | 549 | Audit qualité : 47 constats (7 critiques, 15 hauts, 16 moyens, 9 bas) |
+| 11 | `NOTE_TECHNIQUE_PROJET.md` | 236 | Note technique synthétique du projet |
+| 12 | `REFLEXION_FINALE_STRATEGIQUE.md` | 169 | Analyse stratégique et recommandations |
+| 13 | `AUDIT_FINAL_VERIFICATION.md` | 309 | Audit final de vérification (22 constats) |
 
 ---
 
@@ -220,15 +224,15 @@ L'audit complet (Audit #2) a identifié **47 constats** sur 10 dimensions :
 
 | Poste | Montant estimé |
 |---|---|
-| Contenu pédagogique (rédaction, expertise) | 800 K€ – 1.2 M€ |
-| Production médias (vidéo, 3D, animation) | 1.0 M€ – 1.5 M€ |
-| Développement SpineSim© | 1.2 M€ – 1.8 M€ |
+| Contenu pédagogique (rédaction, expertise) | 180 K€ – 280 K€ |
+| Production médias (vidéo, 3D, animation) | 250 K€ – 400 K€ |
+| Développement SpineSim© | 3 600 K€ – 5 000 K€ |
 | Plateforme LMS (licence / développement) | 300 K€ – 500 K€ |
-| Infrastructure cloud (40 mois) | 200 K€ – 400 K€ |
-| Marketing et commercialisation | 120 K€ – 300 K€ |
-| Gestion de projet et qualité | 400 K€ – 600 K€ |
-| Réserve de contingence (10%) | 400 K€ – 500 K€ |
-| **TOTAL** | **4,7 M€ – 6,8 M€** |
+| Infrastructure et hébergement (an 1) | 35 K€ – 55 K€ |
+| Marketing et lancement | 80 K€ – 150 K€ |
+| Certification et réglementaire | 50 K€ – 100 K€ |
+| Ressources humaines projet | 200 K€ – 350 K€ |
+| **TOTAL** | **4 695 K€ – 6 835 K€** |
 
 ---
 

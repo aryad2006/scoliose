@@ -28,7 +28,7 @@ Chaque module suit un format standardisé :
 
 1. **Objectifs pédagogiques** (affichés en début de module)
 2. **Pré-test** (5 QCM — évaluation des connaissances préalables)
-3. **Contenu théorique** (vidéo + diapositives narées, 30-45 min)
+3. **Contenu théorique** (vidéo + diapositives narrées, 30-45 min)
 4. **Points clés à retenir** (synthèse visuelle, infographie)
 5. **Vidéo chirurgicale commentée** (si applicable, 10-20 min)
 6. **Cas clinique interactif** (1-2 cas avec arbre décisionnel)

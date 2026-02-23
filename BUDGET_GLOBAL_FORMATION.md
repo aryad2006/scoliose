@@ -28,7 +28,7 @@
 |------------|--------|----------|---------------|-------|
 | Rédaction scientifique | 29 modules, ~89h de contenu | ~2 500 pages | 40-60 €/page | 100 000 — 150 000 € |
 | Cas cliniques | Rédaction + validation (imagerie, vidéo) | 60 cas | 500-800 € | 30 000 — 48 000 € |
-| Questions quiz | 640+ questions avec explications | 700 questions | 30-50 € | 21 000 — 35 000 € |
+| Questions quiz | 600+ questions avec explications | 700 questions | 30-50 € | 21 000 — 35 000 € |
 | Relecture scientifique | Comité de 5 experts | 5 experts × 40h | 150 €/h | 30 000 € |
 | Traduction EN | 29 modules | ~2 500 pages | Option : +40 000 — 60 000 € | (option) |
 
