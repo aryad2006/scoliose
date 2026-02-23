@@ -1,0 +1,54 @@
+# ============================================================
+# Formation Scoliose — Moodle LMS Local (Docker + PostgreSQL 17)
+# ============================================================
+# Usage :
+#   cd /Users/imac/Desktop/scoliose/moodle-local
+#   docker compose up -d
+#
+# Accès (après ~3-5 min la première fois) :
+#   Moodle  → http://localhost:8890
+#   Admin   → admin / ScolioseLMS2026
+#
+# Arrêt :          docker compose down
+# Reset complet :  docker compose down -v
+# ============================================================
+
+services:
+  db:
+    image: postgres:17
+    container_name: moodle-postgres
+    environment:
+      POSTGRES_DB: moodle
+      POSTGRES_USER: moodle_user
+      POSTGRES_PASSWORD: moodle_password_2026
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U moodle_user -d moodle"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  moodle:
+    image: moodlehq/moodle-php-apache:8.3
+    container_name: moodle-app
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - moodle_html:/var/www/html
+      - moodle_data:/var/www/moodledata
+      - ./init-moodle.sh:/usr/local/bin/init-moodle.sh:ro
+    ports:
+      - "8890:80"
+    command: bash /usr/local/bin/init-moodle.sh
+    restart: unless-stopped
+
+volumes:
+  pg_data:
+    driver: local
+  moodle_html:
+    driver: local
+  moodle_data:
+    driver: local
