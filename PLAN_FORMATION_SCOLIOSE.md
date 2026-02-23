@@ -76,37 +76,64 @@ Chaque module suit un format standardisé :
 
 #### 1.1 Anatomie descriptive du rachis
 - Vertèbres cervicales (C1-C7) : particularités de l'atlas et l'axis
+  > [MEDIA: 🧊 M01-S01-001 — Modèle 3D interactif rachis complet C1-coccyx]
+  > [MEDIA: 📐 M01-S01-002 — Schéma vertèbre cervicale typique]
+  > [MEDIA: 🎬 M01-S01-003 — Animation Atlas C1 et Axis C2]
 - Vertèbres thoraciques (T1-T12) : articulations costo-vertébrales
+  > [MEDIA: 📐 M01-S01-004 — Schéma vertèbre thoracique typique]
+  > [MEDIA: 🎬 M01-S01-005 — Animation articulations costo-vertébrales et respiration]
 - Vertèbres lombaires (L1-L5) : morphologie spécifique
+  > [MEDIA: 📐 M01-S01-006 — Schéma vertèbre lombaire typique]
 - Sacrum et coccyx
+  > [MEDIA: 📐 M01-S01-007 — Schéma sacrum et coccyx (3 vues)]
 - Variations anatomiques normales
+  > [MEDIA: 📊 M01-S01-008 — Infographie tableau comparatif des vertèbres]
+  > [MEDIA: 📐 M01-S01-009 — Schéma variations anatomiques]
 
 #### 1.2 Anatomie fonctionnelle
 - Unité fonctionnelle rachidienne (segment mobile de Junghans)
+  > [MEDIA: 🎬 M01-S02-001 — Animation segment mobile de Junghans (3 plans)]
 - Disque intervertébral : nucleus pulposus, annulus fibrosus
+  > [MEDIA: 🎬 M01-S02-002 — Animation structure du disque intervertébral]
 - Articulations zygapophysaires (facettaires)
+  > [MEDIA: 📐 M01-S02-003 — Schéma orientation des facettes par niveau]
 - Système ligamentaire : LLA, LLP, ligaments jaunes, inter-épineux, supra-épineux
+  > [MEDIA: 🎬 M01-S02-004 — Animation système ligamentaire séquentiel]
 - Canal rachidien et foramens intervertébraux
+  > [MEDIA: 📐 M01-S02-005 — Schéma canal rachidien et foramens]
 
 #### 1.3 Musculature rachidienne
 - Muscles érecteurs du rachis (iliocostal, longissimus, épineux)
+  > [MEDIA: 🧊 M01-S03-001 — Modèle 3D muscles du rachis (couches pelables)]
 - Muscles transversaires épineux (multifides, rotateurs)
+  > [MEDIA: 📐 M01-S03-002 — Schéma muscles transversaires épineux]
 - Muscles abdominaux et leur rôle dans l'équilibre sagittal
+  > [MEDIA: 🎬 M01-S03-003 — Animation rôle des abdominaux]
 - Psoas et carré des lombes
+  > [MEDIA: 📐 M01-S03-004 — Schéma psoas et carré des lombes]
 - Muscles respiratoires (diaphragme, intercostaux)
+  > [MEDIA: 🎬 M01-S03-005 — Animation muscles respiratoires et scoliose]
 
 #### 1.4 Neuroanatomie rachidienne
 - Moelle épinière : topographie, segments médullaires
+  > [MEDIA: 📐 M01-S04-001 — Schéma topographie médullaire]
 - Racines nerveuses et plexus
+  > [MEDIA: 🎬 M01-S04-002 — Animation racines nerveuses et plexus]
 - Système nerveux autonome rachidien
+  > [MEDIA: 📐 M01-S04-003 — Schéma système nerveux autonome]
 - Vascularisation médullaire (artère d'Adamkiewicz)
+  > [MEDIA: 🎬 M01-S04-004 — Animation artère d'Adamkiewicz (CRITIQUE chirurgie)]
 
 #### 1.5 Courbures physiologiques
 - Lordose cervicale (20-40°)
 - Cyphose thoracique (20-45°)
 - Lordose lombaire (40-60°)
+  > [MEDIA: 📐 M01-S05-001 — Schéma courbures sagittales normales (arcs de mesure)]
 - Paramètres pelviens : incidence pelvienne, pente sacrée, version pelvienne
+  > [MEDIA: 🎬 M01-S05-002 — Animation paramètres pelviens PI=SS+PT]
 - Équilibre sagittal global (C7 plumb line, SVA)
+  > [MEDIA: 📐 M01-S05-003 — Schéma équilibre sagittal global]
+  > [MEDIA: 🎬 M01-S05-004 — Animation mécanismes de compensation sagittale]
 
 ---
 
@@ -1765,35 +1792,132 @@ Chaque module suit un format standardisé :
 ### MODULE 21 : RÉÉDUCATION ET SUIVI À LONG TERME
 
 #### 21.1 Rééducation postopératoire
-- Protocole de mobilisation
+> [MEDIA: 🎬 M21-S01-001 — Animation HeyGen : introduction Module 21]
+> [MEDIA: 📊 M21-S01-002 — Infographie protocole rééducation 4 phases (frise chronologique)]
+- Protocole de mobilisation précoce
+  - J0-J1 : lever au fauteuil, verticalisation assistée
+  - J1-J3 : marche avec aide (kinésithérapeute), toilette assistée
+  - J3-J7 : marche autonome progressive, escaliers
+  - Semaine 2-6 : marche prolongée, activités quotidiennes légères
+  - Port du corset postopératoire (si prescrit) : indications, durée, sevrage
 - Exercices respiratoires
+  - Spirométrie incitative (Voldyne, Triflow)
+  - Exercices d'expansion thoracique et diaphragmatique
+  - Drainage bronchique (si scoliose neuromusculaire)
+  - Prévention de l'atélectasie et de la pneumopathie postopératoire
+  - Objectifs de CVF : récupération > 80% de la valeur préopératoire
 - Renforcement musculaire progressif
+  - Phase 1 (0-6 semaines) : isométrie tronc, mobilisation membres
+  - Phase 2 (6-12 semaines) : gainage progressif, proprioception
+  - Phase 3 (3-6 mois) : renforcement dynamique, endurance
+  - Phase 4 (> 6 mois) : réathlétisation, préparation physique spécifique
+  - Exercices interdits : rotation du tronc, flexion forcée, port de charges lourdes (6 mois)
+- Gestion de la douleur postopératoire
+  - Protocole multimodal : paracétamol + AINS + coantalgiques
+  - Sevrage progressif des opioïdes (risque de dépendance chez l'adolescent)
+  - Gabapentine/prégabaline si composante neuropathique
+  - Rôle de la kinésithérapie dans la gestion de la douleur
+  - TENS (neurostimulation transcutanée) : indications et efficacité
 - Reprise des activités quotidiennes
-- Retour scolaire / professionnel
+  - Reprise scolaire : 4-6 semaines (aménagements : ascenseur, sac à dos léger, pupitre adapté)
+  - Reprise du travail : 6-12 semaines (travail de bureau), 3-6 mois (travail physique)
+  - Conduite automobile : 6-8 semaines (après sevrage opioïdes)
+  - Voyage en avion : à partir de 4-6 semaines
+  - Activités sexuelles : reprise progressive après 4-6 semaines
 
 #### 21.2 Activité sportive après chirurgie
-- Restrictions initiales (3-6 mois)
-- Sports autorisés après fusion
-- Sports déconseillés / interdits
-- Sports de contact : recommandations
-- Retour à la compétition
+> [MEDIA: 📊 M21-S02-001 — Infographie sports autorisés / déconseillés / interdits après fusion]
+- Restrictions initiales (0-6 mois)
+  - Pas de sport les 3 premiers mois
+  - Mois 3-6 : marche, natation (dos crawlé), vélo stationnaire
+  - Pas de course, de saut ni de port de charge
+- Sports autorisés après consolidation (> 6-12 mois)
+  - Natation : tous styles (activité de choix)
+  - Vélo (route et stationnaire)
+  - Marche et randonnée
+  - Yoga doux et Pilates adapté
+  - Tennis (en double, sans compétition intensive)
+  - Golf (reprise progressive)
+  - Ski alpin (niveau modéré, après 12 mois)
+- Sports déconseillés / interdits après fusion longue
+  - Sports de contact : rugby, football américain, hockey, arts martiaux
+  - Sports à fort impact axial : trampoline, parachutisme, équitation de compétition
+  - Gymnastique de compétition, plongeon de haut vol
+  - Haltérophilie lourde (charge axiale > 50% du poids corporel)
+- Recommandations de la SRS pour le retour au sport
+  - Délai minimum : 6 mois post-fusion
+  - Évaluation radiographique de la consolidation avant reprise
+  - Décision individualisée selon le type de sport et le niveau de fusion
+  - Sports collectifs à impact modéré : décision au cas par cas
+- Retour à la compétition (sportif de haut niveau)
+  - Consultation spécialisée médecine du sport + chirurgien
+  - Tests fonctionnels de reprise : isocinétisme, test d'effort
+  - Programme de réathlétisation progressive (12-18 mois)
+  - Cas documentés de retour à la compétition après fusion (littérature)
 
 #### 21.3 Suivi à long terme
-- Calendrier de suivi (1 mois, 3 mois, 6 mois, 1 an, 2 ans, 5 ans, 10 ans)
+> [MEDIA: 📊 M21-S03-001 — Infographie calendrier de suivi (frise 2 semaines → 10 ans)]
+> [MEDIA: 🎬 M21-S03-002 — Animation pathologie du segment adjacent (ASD/PJK)]
+- Calendrier de suivi postopératoire
+  - 2 semaines : contrôle de plaie, radiographie debout (face + profil)
+  - 6 semaines : évaluation clinique, retrait éventuel du corset
+  - 3 mois : radiographie, évaluation fonctionnelle
+  - 6 mois : radiographie, évaluation douleur, retour au sport
+  - 1 an : bilan complet (radiographie, PROMs, EFR si indiquées)
+  - 2 ans : consolidation définitive, scanner en cas de doute
+  - 5 ans : suivi à long terme (cliché debout, questionnaires)
+  - 10 ans et au-delà : surveillance de la pathologie du segment adjacent
 - Surveillance radiologique
-- Évaluation fonctionnelle répétée
-- Grossesse et scoliose (conseil prénatal, anesthésie péridurale)
-- Vieillissement et scoliose
-- Pathologie adjacente à long terme
+  - Radiographies EOS basse dose (réduction irradiation de 6-9× vs conventionnel)
+  - Paramètres à évaluer : angle de Cobb résiduel, équilibre sagittal, perte de correction
+  - Scanner si suspicion de pseudarthrose ou de malposition de vis
+  - IRM si symptômes neurologiques nouveaux
+- Pathologie du segment adjacent (Adjacent Segment Disease — ASD)
+  - Définition : dégénérescence accélérée des niveaux adjacents à la fusion
+  - Incidence : 5-30% à 10 ans selon la littérature
+  - Facteurs de risque : fusion longue, déséquilibre sagittal, arrêt en zone de jonction
+  - Proximal junctional kyphosis (PJK) : incidence 20-40%, facteurs prédisposants
+  - Proximal junctional failure (PJF) : fracture vertébrale, pullout de l'instrumentation
+  - Distal junctional failure : dégénérescence discale sous-jacente, listhésis
+  - Prévention : sélection des niveaux, ligament augmentation, hook au niveau supérieur
+- Grossesse et scoliose
+  - Fertilité non affectée par la chirurgie de la scoliose
+  - Pas d'augmentation du risque de complication obstétricale
+  - Anesthésie péridurale : possible dans la majorité des cas (accès limité si fusion basse)
+  - Conseil prénatal : information sur les possibilités d'analgésie
+  - Rachianesthésie : alternative si péridurale impossible
+  - Évolution de la courbure pendant la grossesse (stabilité dans la majorité des cas)
+  - Allaitement et médications post-chirurgicales
+- Vieillissement et scoliose opérée
+  - Ostéoporose et fragilisation de l'os instrumenté
+  - Risque de fracture vertébrale adjacente
+  - Surveillance de la densité minérale osseuse (DEXA)
+  - Adaptation du suivi avec l'âge (sarcopénie, équilibre)
+  - Scoliose dégénérative de novo : distinction avec récidive
 
-#### 21.4 Scores et questionnaires de suivi
-- SRS-22r (Scoliosis Research Society)
-- SRS-30
-- ODI (Oswestry Disability Index)
-- SF-36
-- EQ-5D
-- SAQ (Spinal Appearance Questionnaire)
-- WRVAS (Walter Reed Visual Assessment Scale)
+#### 21.4 Scores et questionnaires de suivi (PROMs)
+- Questionnaires spécifiques à la scoliose
+  - SRS-22r (Scoliosis Research Society) : 5 domaines (fonction, douleur, image de soi, santé mentale, satisfaction)
+  - SRS-30 : version étendue avec sous-scores détaillés
+  - SAQ (Spinal Appearance Questionnaire) : évaluation de l'apparence
+  - WRVAS (Walter Reed Visual Assessment Scale) : perception esthétique
+  - TAPS (Trunk Appearance Perception Scale)
+- Questionnaires fonctionnels génériques
+  - ODI (Oswestry Disability Index) : handicap lombaire (0-100%)
+  - NDI (Neck Disability Index) : si fusion cervico-thoracique
+  - SF-36 / SF-12 : qualité de vie générale
+  - EQ-5D-5L : qualité de vie et utilité (analyses coût-efficacité)
+  - VAS douleur (0-10) : suivi longitudinal
+- Questionnaires psychologiques
+  - PHQ-9 (Patient Health Questionnaire) : dépistage dépression
+  - GAD-7 : dépistage anxiété
+  - Body Image Perception Scale
+- Utilisation clinique des PROMs
+  - Recueil systématique : préopératoire, 6 mois, 1 an, 2 ans, 5 ans
+  - Seuils de différence cliniquement significative (MCID)
+  - Intégration dans les registres (SRS, Spine Tango)
+  - Prise de décision partagée basée sur les PROMs
+  - Valeur médico-légale de la documentation par PROMs
 
 #### 21.5 Télémédecine et suivi à distance
 - Téléconsultation en chirurgie du rachis
@@ -1824,22 +1948,91 @@ Chaque module suit un format standardisé :
 ### MODULE 22 : IMPACT PSYCHOLOGIQUE ET QUALITÉ DE VIE
 
 #### 22.1 Impact psychologique de la scoliose
+> [MEDIA: 🎬 M22-S01-001 — Animation HeyGen : introduction Module 22]
+> [MEDIA: 📊 M22-S01-002 — Infographie impact psychologique (image corporelle, anxiété, social)]
 - Image corporelle et estime de soi
-- Anxiété et dépression
-- Impact social chez l'adolescent
+  - Perception de la déformation (gibbosité, asymétrie des épaules, déhanchement)
+  - Écart entre perception objective et subjective (body image distortion)
+  - Impact différentiel selon le sexe (prévalence féminine de la détresse)
+  - Facteurs prédictifs de mauvaise image corporelle (angle de Cobb, rotation, âge au diagnostic)
+  - Évolution de l'image corporelle après traitement (corset, chirurgie)
+- Troubles anxio-dépressifs
+  - Prévalence de l'anxiété chez les adolescents scoliotiques (2-3× population générale)
+  - Prévalence de la dépression (15-30% selon les séries)
+  - Facteurs de risque : sévérité de la courbe, douleur, isolement social, port du corset
+  - Dépistage systématique : PHQ-A (Patient Health Questionnaire for Adolescents), GAD-7
+  - Idées suicidaires et scoliose : vigilance et protocole de référence
+- Impact social et scolaire chez l'adolescent
+  - Harcèlement et moqueries (bullying) : prévalence et facteurs protecteurs
+  - Isolement social lié au corset et aux restrictions sportives
+  - Absentéisme scolaire (rendez-vous médicaux, chirurgie, rééducation)
+  - Impact sur les relations amoureuses et l'intimité
+  - Réseaux sociaux : influence positive (communautés de soutien) et négative (comparaison)
 - Vécu du traitement par corset
+  - Détresse liée au port du corset : chaleur, inconfort, visibilité
+  - Stratégies de coping (dissimulation, normalisation, affirmation)
+  - Influence sur l'observance (non-compliance : 20-40%)
+  - Vécu parental : culpabilité, stress, hypervigilance
+  - Adaptations vestimentaires et solutions pratiques
+- Impact psychologique de la chirurgie
+  - Anxiété préopératoire chez l'adolescent et les parents
+  - Ajustement post-chirurgical : satisfaction vs attentes
+  - Body image improvement après correction (mesures SRS-22)
+  - Cicatrice : acceptation, tatouage, chirurgie esthétique secondaire
+  - Syndrome de stress post-traumatique (PTSD) post-chirurgical : rare mais documenté
 
 #### 22.2 Prise en charge psychologique
-- Dépistage systématique
-- Soutien psychologique intégré
+- Dépistage systématique et outils de screening
+  - Intégration du dépistage psychologique dans la consultation orthopédique
+  - Échelles validées : SRS-22 (domaine santé mentale), PHQ-9, GAD-7, RCADS
+  - Seuils d'alerte et protocole de referral vers psychologue/psychiatre
+  - Formation des chirurgiens au repérage de la détresse psychologique
+- Soutien psychologique individuel
+  - Psychothérapie de soutien : indications et modalités
+  - Thérapie cognitivo-comportementale (TCC) : restructuration cognitive, gestion de l'anxiété
+  - Hypnose médicale : gestion de la douleur et de l'anxiété préopératoire
+  - Techniques de relaxation et pleine conscience (mindfulness)
+  - Art-thérapie et musicothérapie en milieu hospitalier
 - Groupes de pairs et associations de patients
-- Éducation thérapeutique
+  - Groupes de parole entre adolescents scoliotiques
+  - Peer mentoring : patients experts accompagnant les nouveaux diagnostiqués
+  - Associations nationales et internationales (ASF France, NSF USA, SRS patient resources)
+  - Camps et séjours thérapeutiques pour adolescents scoliotiques
+  - Forums et communautés en ligne : modération, limites, bénéfices
+- Soutien familial
+  - Impact de la scoliose sur le système familial (fratrie, couple parental)
+  - Groupes de parents : partage d'expérience, psychoéducation
+  - Fratrie : sentiment d'injustice, surprotection, adaptation
+  - Thérapie familiale systémique : indications
+  - Guidance parentale : gestion de l'observance, communication positive
 
-#### 22.3 Satisfaction des patients
+#### 22.3 Satisfaction des patients et résultats centrés sur le patient
+> [MEDIA: 📊 M22-S03-001 — Infographie facteurs de satisfaction post-chirurgie]
+> [MEDIA: 🎬 M22-S03-002 — Vidéo HeyGen : modèle SPIKES appliqué à la scoliose]
 - Mesures de satisfaction post-traitement
+  - Distinction entre résultat clinique objectif et satisfaction subjective
+  - SRS-22 domaine « satisfaction » : évaluation systématique
+  - Patient Satisfaction Index (PSI) : utilisation et limites
+  - Taux de satisfaction globale après chirurgie : 80-95% (séries publiées)
 - Facteurs déterminants de la satisfaction
+  - Concordance attentes préopératoires / résultat postopératoire
+  - Correction de la gibbosité (facteur le plus corrélé à la satisfaction)
+  - Niveau de douleur résiduelle
+  - Retour fonctionnel et sportif
+  - Résultat esthétique de la cicatrice
+  - Qualité de la communication médicale tout au long du parcours
 - Communication médecin-patient
-- Décision partagée
+  - Modèle SPIKES adapté à la scoliose (annonce diagnostique, annonce chirurgicale)
+  - Écoute active et validation des émotions de l'adolescent
+  - Utilisation de supports visuels (radiographies annotées, modèles 3D, SpineSim©)
+  - Temps dédié aux questions du patient et de la famille
+  - Communication adaptée à l'âge et à la maturité cognitive
+- Décision thérapeutique partagée (shared decision-making)
+  - Principes : information loyale, claire et appropriée
+  - Outils d'aide à la décision (decision aids) : développement et validation
+  - Rôle de l'adolescent dans la prise de décision : autonomie progressive
+  - Situations de désaccord : second avis, délai de réflexion
+  - Evidence-based patient choice : intégration des PROMs dans la discussion
 
 #### 22.4 Communication patient/famille et éducation thérapeutique
 - Communication de l'annonce diagnostique
@@ -1878,22 +2071,118 @@ Chaque module suit un format standardisé :
 ### MODULE 23 : IMPACTS RESPIRATOIRES, CARDIOVASCULAIRES ET FONCTIONNELS
 
 #### 23.1 Retentissement respiratoire
-- Syndrome restrictif dans les scolioses thoraciques sévères
-- Seuils critiques (Cobb > 60-70°)
-- Épreuves fonctionnelles respiratoires : interprétation
-- Thoracic insufficiency syndrome (syndrome d'insuffisance thoracique)
+> [MEDIA: 🎬 M23-S01-001 — Animation HeyGen : introduction Module 23]
+> [MEDIA: 📐 M23-S01-002 — Schéma compression parenchymateuse dans scoliose thoracique]
+> [MEDIA: 📊 M23-S01-003 — Graphique Cobb vs CVF (seuils critiques 60°/90°)]
+- Physiopathologie de l'insuffisance respiratoire dans la scoliose
+  - Déformation de la cage thoracique : asymétrie, réduction du volume
+  - Compression parenchymateuse du côté concave
+  - Restriction de l'expansion thoracique (compliance thoracique diminuée)
+  - Syndrome restrictif : diminution de la CVF, du VEMS et de la CPT
+  - Atteinte diaphragmatique dans les scolioses neuromusculaires
+- Seuils critiques et sévérité
+  - Angle de Cobb > 60-70° : retentissement respiratoire significatif
+  - Angle de Cobb > 90-100° : insuffisance respiratoire chronique
+  - Scoliotiques adultes > 100° : risque de cœur pulmonaire et mortalité accrue
+  - Corrélation non linéaire Cobb / fonction pulmonaire (effet seuil)
+  - Nombre de vertèbres thoraciques impliquées : facteur déterminant
+- Épreuves fonctionnelles respiratoires (EFR)
+  - Spirométrie : CVF, VEMS, rapport VEMS/CVF, CPT, VR
+  - CVF < 40% de la prédite : atteinte sévère
+  - Courbe débit-volume : pattern restrictif vs obstructif
+  - Pléthysmographie : volumes pulmonaires statiques
+  - DLCO (diffusion du CO) : évaluation de l'échange gazeux
+  - Test de marche de 6 minutes (TM6) : évaluation fonctionnelle intégrée
+  - Gazométrie artérielle : hypoxémie, hypercapnie
+  - Oxymétrie nocturne : dépistage de la désaturation nocturne
+- Thoracic Insufficiency Syndrome (TIS)
+  - Définition (Campbell) : incapacité du thorax à supporter une respiration et une croissance pulmonaire normales
+  - Étiologie : scoliose congénitale précoce, fusion de côtes, scoliose neuromusculaire infantile
+  - Classification selon la déformation thoracique
+  - Impact sur le développement pulmonaire chez l'enfant
+  - Traitement : VEPTR (Vertical Expandable Prosthetic Titanium Rib)
+  - Résultats sur la fonction pulmonaire : stabilisation plutôt qu'amélioration
 - Impact de la correction chirurgicale sur la fonction pulmonaire
+  - Amélioration modeste de la CVF après arthrodèse (5-10% en moyenne)
+  - Détérioration transitoire postopératoire immédiate (2-4 semaines)
+  - Facteurs influençant la récupération : âge, sévérité préop, étendue de la fusion
+  - VBT (tethering) : impact moindre que la fusion postérieure
+  - Chirurgie de préservation de croissance (growing rods) : maintien du développement pulmonaire
+  - Résultats à long terme (10-20 ans) : maintien de la fonction
 
 #### 23.2 Retentissement cardiovasculaire
+> [MEDIA: 🎬 M23-S02-001 — Animation cœur pulmonaire (physiopathologie HTAP → insuffisance VD)]
 - Cœur pulmonaire dans les scolioses sévères
+  - Physiopathologie : hypoxie chronique → vasoconstriction pulmonaire → HTAP → insuffisance VD
+  - Incidence : scolioses > 100°, surtout thoraciques droites
+  - Histoire naturelle : évolution vers l'insuffisance cardiaque droite
+  - Signes cliniques : dyspnée progressive, hépatalgies, œdèmes des membres inférieurs
+  - Pronostic historique (série de Ponseti & Friedman, 1950 : mortalité 50% à 50 ans pour Cobb > 90°)
 - Évaluation cardiaque préopératoire
-- Considérations en scoliose syndromique (Marfan)
+  - Échocardiographie : FEVG, TAPSE, PAPs estimée, morphologie VD
+  - ECG : signes de surcharge droite, hypertrophie VD, troubles du rythme
+  - Cathétérisme cardiaque droit : si suspicion d'HTAP sévère (PAPs > 40 mmHg)
+  - BNP/NT-ProBNP : marqueur d'insuffisance cardiaque
+  - Test d'effort cardiopulmonaire (CPET) : VO2max, seuil ventilatoire
+- Considérations cardiovasculaires spécifiques
+  - Scoliose et syndrome de Marfan : anévrisme aortique, prolapsus mitral
+  - Syndrome d'Ehlers-Danlos vasculaire : risque de dissection artérielle
+  - Cardiopathies congénitales associées (scoliose congénitale : 12-25%)
+  - Prophylaxie de l'endocardite : indications actuelles
+  - Anticoagulation peropératoire chez le patient avec valvulopathie
+- Effets de la correction chirurgicale sur la fonction cardiaque
+  - Amélioration de la fonction VD après correction de scolioses sévères
+  - Réduction de la PAPs à long terme
+  - Cas rapportés de régression du cœur pulmonaire après chirurgie précoce
+  - Limites : point de non-retour cardiovasculaire
 
-#### 23.3 Douleur chronique
-- Prévalence de la douleur dans la scoliose
-- Mécanismes de la douleur
-- Gestion multimodale
+#### 23.3 Douleur chronique dans la scoliose
+- Prévalence et caractéristiques
+  - Prévalence de la douleur : 30-50% des scolioses idiopathiques de l'adolescent, 60-90% des scolioses adultes
+  - Localisation : dorsale, lombaire basse, jonction thoraco-lombaire
+  - Caractère : mécanique (aggravé par la station debout prolongée), neuropathique (radiculaire)
+  - Facteurs associés : sévérité de la courbe, déséquilibre sagittal, dégénérescence discale
+- Mécanismes de la douleur dans la scoliose
+  - Déséquilibre musculaire et fatigue musculaire asymétrique
+  - Dégénérescence discale et arthropathie facettaire
+  - Sténose canalaire et foraminale (scoliose adulte)
+  - Composante neuropathique : compression radiculaire, étirement médullaire
+  - Sensibilisation centrale : chronicisation de la douleur
+- Gestion multimodale de la douleur
+  - Pharmacologie : paliers OMS, AINS, coantalgiques (gabapentine, duloxétine), corset antalgique
+  - Kinésithérapie : exercices de stabilisation, renforcement du core, étirements
+  - Infiltrations : épidurales, facettaires, blocs radiculaires (guidées par fluoroscopie ou scanner)
+  - Techniques interventionnelles : radiofréquence, neuromodulation
+  - Approches psychologiques : TCC de la douleur, ACT (thérapie d'acceptation et d'engagement)
+  - Activité physique adaptée : recommandation de l'exercice comme traitement de première ligne
 - Douleur postopératoire chronique
+  - Prévalence : 10-25% à 2 ans postopératoires
+  - Facteurs de risque : douleur préopératoire, catastrophisme, anxiété, chirurgie de révision
+  - Douleur neuropathique post-chirurgicale : neuropathie intercostale, névrome cicatriciel
+  - Prévention : analgésie préemptive, éducation préopératoire, réhabilitation améliorée après chirurgie (RAAC)
+
+#### 23.4 Impacts fonctionnels et qualité de vie globale
+- Impact sur la fonction physique
+  - Limitations de la mobilité rachidienne (flexion, rotation)
+  - Tolérance réduite à la station debout et assise prolongée
+  - Fatigue musculaire chronique et déconditionnement
+  - Impact sur la capacité de travail (scoliose adulte : invalidité, arrêts de travail)
+  - Évaluation par le SF-36 domaine « Fonction physique » et l'ODI
+- Impact sur le sommeil
+  - Troubles du sommeil : prévalence 30-40% chez les scoliotiques adultes
+  - Douleur nocturne et difficultés positionnelles
+  - Syndrome d'apnées obstructives du sommeil (SAOS) : association avec scoliose sévère
+  - Polysomnographie : indications (scoliose neuromusculaire, Cobb > 70°)
+- Impact sur la vie quotidienne
+  - Habillage et choix vestimentaires (adolescent)
+  - Activités de loisirs : limitations et adaptations
+  - Vie professionnelle : aménagement de poste, RQTH
+  - Vie reproductive : grossesse et accouchement (cf. M21.3)
+- Vision intégrée bio-psycho-sociale
+  - Modèle ICF (International Classification of Functioning, WHO)
+  - Facteurs personnels et environnementaux
+  - Participation sociale et citoyenneté
+  - Objectif thérapeutique : optimiser la participation, pas seulement corriger la courbe
 
 ---
 
@@ -1904,20 +2193,113 @@ Chaque module suit un format standardisé :
 ### MODULE 24 : DÉPISTAGE DE LA SCOLIOSE
 
 #### 24.1 Programmes de dépistage scolaire
-- Historique et controverses
-- Recommandations (AAOS, SRS, SOSORT, USPSTF)
-- Méthodes de dépistage (test d'Adams, scoliomètre)
-- Sensibilité et spécificité
-- Coût-efficacité
+> [MEDIA: 🎬 M24-S01-001 — Animation HeyGen : introduction Module 24]
+> [MEDIA: 📐 M24-S01-002 — Planche illustrative test d'Adams + scoliomètre]
+> [MEDIA: 📊 M24-S01-003 — Infographie recommandations des sociétés savantes]
+- Historique et évolution
+  - Premier programme de dépistage scolaire : Minnesota (1948)
+  - Généralisation internationale dans les années 1970-1980
+  - Controversy des années 1990-2000 : USPSTF grade « I » (preuves insuffisantes)
+  - Résurgence de l'intérêt : recommandations SRS/AAOS/POSNA 2008, SOSORT 2012
+- Recommandations des sociétés savantes
+  - AAOS/SRS/POSNA/AAP (2008) : dépistage recommandé à 10 et 12 ans (filles), 13-14 ans (garçons)
+  - SOSORT (2012, 2016) : dépistage scolaire recommandé (niveau de preuve modéré)
+  - USPSTF (2018) : preuves insuffisantes pour le dépistage de la population générale (grade I)
+  - HAS (France) : examen systématique de l'appareil locomoteur (visite médicale scolaire)
+  - Position de l'OMS : pas de recommandation universelle
+- Méthodes de dépistage
+  - Test d'Adams (forward bending test) : technique, interprétation, sensibilité (70-85%)
+  - Scoliomètre de Bunnell : seuil de référence (≥ 5° → 7° selon les programmes)
+  - Topographie de surface (Moiré, rasterstéreographie) : screening sans irradiation
+  - Applicationss smartphone (angle de rotation du tronc) : validation en cours
+  - Inspection visuelle : asymétrie des épaules, du triangle de la taille, de la gibbosité
+- Performance diagnostique
+  - Sensibilité du test d'Adams : 70-85% (dépend du seuil de Cobb retenu)
+  - Spécificité : 60-80%
+  - Valeur prédictive positive : 10-30% (Cobb > 20°)
+  - Taux de références inutiles : 2-5% de la population dépistée
+  - Nombre de radiographies pour un cas dépisté : 3-10
+  - Comparaison coût-efficacité des différentes méthodes
+- Coût-efficacité et impact populationnel
+  - Coût par cas dépisté : 4 000-15 000 $ (selon les programmes)
+  - Réduction documentée du taux de chirurgie dans les régions avec dépistage
+  - Détection plus précoce → plus de patients éligibles au traitement conservateur
+  - QALY gagnés par le dépistage précoce (modélisations)
+  - Comparaison coût-efficacité : dépistage vs diagnostic tardif
 - Organisation pratique d'un programme de dépistage
+  - Population cible : âge, sexe, fréquence
+  - Formation des examinateurs (infirmières scolaires, médecins scolaires)
+  - Protocole standardisé d'examen
+  - Circuit de référence en cas de dépistage positif
+  - Suivi des cas dépistés : traçabilité, relance
+  - Aspects éthiques : consentement parental, stress de l'adolescent dépisté
 
 #### 24.2 Diagnostic différentiel
-- Attitude scoliotique vs scoliose vraie
-- Inégalité de longueur des membres
-- Tumeurs rachidiennes (ostéome ostéoïde, ostéoblastome)
-- Spondylolisthésis
-- Infection (spondylodiscite)
+> [MEDIA: 📊 M24-S02-001 — Organigramme diagnostic différentiel (attitude vs structurale, red flags)]
+> [MEDIA: 📐 M24-S02-002 — Schémas tumeurs rachidiennes (ostéome, ostéoblastome, Ewing)]
+- Attitude scoliotique vs scoliose vraie (structurale)
+  - Définition : courbure fonctionnelle réductible (posture) vs structurale (rotation vertébrale)
+  - Test d'Adams négatif dans l'attitude scoliotique
+  - Radiographie en décubitus : correction complète de l'attitude scoliotique
+  - Causes fréquentes : inégalité de longueur des membres, douleur unilatérale, contracture musculaire
+  - Prise en charge : traitement de la cause, pas de corset ni de chirurgie
+- Inégalité de longueur des membres inférieurs (ILMI)
+  - Étiologie : congénitale, acquise (fracture, infection, tumeur), fonctionnelle
+  - Mesure clinique : crêtes iliaques, test de Galeazzi
+  - Imagerie : scanogramme, EOS, téléradiographie des membres inférieurs
+  - Compensation < 2 cm : talonnette ; > 2-3 cm : correction chirurgicale
+  - ILMI comme cause de scoliose fonctionnelle (réduction après correction de l'ILMI)
+- Tumeurs rachidiennes
+  - Ostéome ostéoïde : douleur nocturne soulagée par les AINS, scoliose antalgique
+  - Ostéoblastome : lésion expansive, tableau similaire
+  - Kyste anévrismal osseux
+  - Tumeurs malignes : sarcome d'Ewing, ostéosarcome, métastases (rares chez l'enfant)
+  - Tumeurs intracanalaires : astrocytome médullaire, épendymome → scoliose neurologique
+  - Red flags : douleur nocturne, raideur, signes neurologiques → IRM obligatoire
+- Spondylolyse et spondylolisthésis
+  - Spondylolyse isthmique (L5 ++) : défaut de l'isthme (pars interarticularis)
+  - Incidence : 5-7% population générale, sportifs à risque (gymnastique, plongeurs)
+  - Spondylolisthésis de bas grade (I-II) : souvent asymptomatique
+  - Spondylolisthésis de haut grade (III-V) : déformation sagittale, douleur, signes neurologiques
+  - Différence avec la scoliose : déformation principalement sagittale (pas de rotation)
+  - Imagerie : radiographies obliques, scanner, IRM
+- Infections rachidiennes
+  - Spondylodiscite : contexte infectieux, raideur segmentaire, VS/CRP élevées
+  - Abcès épidural : urgence neurochirurgicale
+  - Tuberculose rachidienne (mal de Pott) : gibbus (cyphose angulaire), abcès froid
+  - Imagerie : IRM avec gadolinium (examen de référence)
 - Hernie discale de l'adolescent
+  - Rare (1-4% des hernies discales)
+  - Présentation : sciatalgie, contracture musculaire, scoliose antalgique
+  - Diagnostic différentiel avec scoliose idiopathique : douleur, raideur, test de Lasègue +
+  - IRM lombaire : indication si douleur radiculaire chez l'adolescent
+- Pathologies neurologiques mimant une scoliose
+  - Syringomyélie : IRM médullaire systématique si scoliose atypique
+  - Malformation de Chiari I : headache occipitale, syringomyélie associée
+  - Moelle attachée (tethered cord) : pieds creux, troubles sphinctériens
+  - Tumeurs de la fosse postérieure : torticolis, signes d'HTIC
+  - Atteinte neuromusculaire débutante : amyotrophie spinale, Friedreich
+
+#### 24.3 Critères de référence au spécialiste
+- Quand référer vers le chirurgien du rachis
+  - Scoliomètre ≥ 7° (ou ≥ 5° si squelettiquement immature)
+  - Angle de Cobb ≥ 20° sur radiographie debout
+  - Toute scoliose en période prépubertaire (Risser 0)
+  - Scoliose douloureuse ou avec signes neurologiques
+  - Suspicion de scoliose non idiopathique (congénitale, neuromusculaire)
+  - Progression documentée (> 5° entre deux contrôles)
+- Informations à transmettre au spécialiste
+  - Radiographie debout (face + profil rachis entier)
+  - Maturation squelettique (Risser, Sanders si disponible)
+  - Anamnèse : antécédents familiaux, puberté, douleur
+  - Examen neurologique : réflexes cutanés abdominaux (RCA), force, sensibilité
+  - Photos cliniques standardisées (dos, face, profil, penché en avant)
+- Rôle du médecin de première ligne
+  - Dépistage lors des visites systématiques (médecin scolaire, médecin traitant, pédiatre)
+  - Surveillance de la croissance et de la puberté
+  - Rassurance appropriée (scoliose modérée non progressive)
+  - Coordination du suivi entre spécialistes (chirurgien, kinésithérapeute, psychologue)
+  - Détection des red flags nécessitant une référence urgente
 
 ---
 
