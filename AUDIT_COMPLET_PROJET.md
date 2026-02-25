@@ -544,15 +544,15 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 
 ### Actions CRITIQUES (à résoudre AVANT le début du développement)
 
-| # | ID | Action | Effort estimé | Impact |
-|---|-----|--------|--------------|--------|
-| 1 | ECO-01 | Validation marché (interviews, landing page, pricing test) | 2-3 mois, €10-30K | Valide ou invalide l'ensemble du projet |
-| 2 | TECH-01 | Décision réglementaire SaMD : « educational only » vs marquage CE/FDA | 1 mois (comité juridique) | Impacte budget (+€200-500K), timeline (+12-18 mois), scope |
-| 3 | XREF-01 | Unification des projections financières (Budget ↔ Modèle Économique) | 2 semaines | Crédibilité auprès des investisseurs |
-| 4 | XREF-02 | Clarification temporelle An 1 = post-lancement, recalcul break-even total | 1 semaine | Réalisme financier |
-| 5 | BUDCAL-01 | Revalorisation budget marketing (€80-150K → €200-400K minimum) | Décision budgétaire | Cohérence acquisition/CA |
-| 6 | ECO-02 | Clarification modèle de récurrence et recalcul churn/LTV | 1 semaine | Cohérence SaaS metrics |
-| 7 | XREF-03 | Définition du Minimum Viable Simulator (MVS) pour le lancement M22 | 2 semaines | Planification réaliste |
+| # | ID | Action | Effort estimé | Impact | Statut |
+|---|-----|--------|--------------|--------|--------|
+| 1 | ECO-01 | Validation marché (interviews, landing page, pricing test) | 2-3 mois, €10-30K | Valide ou invalide l'ensemble du projet | **✅ Plan défini** — `MODELE_ECONOMIQUE.md` §8 (40 interviews, landing page, Gabor-Granger, Go/No-Go) |
+| 2 | TECH-01 | Décision réglementaire SaMD : « educational only » vs marquage CE/FDA | 1 mois (comité juridique) | Impacte budget (+€200-500K), timeline (+12-18 mois), scope | **✅ RÉSOLU** — `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` §21 : Phase 1 « educational only » + critères Phase 2 SaMD |
+| 3 | XREF-01 | Unification des projections financières (Budget ↔ Modèle Économique) | 2 semaines | Crédibilité auprès des investisseurs | **✅ RÉSOLU** — Break-even opérationnel (An 3) vs cumulé (An 5) harmonisé dans les deux documents |
+| 4 | XREF-02 | Clarification temporelle An 1 = post-lancement, recalcul break-even total | 1 semaine | Réalisme financier | **✅ RÉSOLU** — Notes d'harmonisation ajoutées : An 1 = mois 22-34 post-lancement |
+| 5 | BUDCAL-01 | Revalorisation budget marketing (€80-150K → €200-400K minimum) | Décision budgétaire | Cohérence acquisition/CA | 🟡 Ouvert |
+| 6 | ECO-02 | Clarification modèle de récurrence et recalcul churn/LTV | 1 semaine | Cohérence SaaS metrics | 🟡 Ouvert |
+| 7 | XREF-03 | Définition du Minimum Viable Simulator (MVS) pour le lancement M22 | 2 semaines | Planification réaliste | **✅ RÉSOLU** — `CALENDRIER_PRODUCTION.md` : MVS défini avec features incluses/exclues au mois 22 |
 
 ### Actions HAUTES (à résoudre dans les 3 premiers mois du projet)
 

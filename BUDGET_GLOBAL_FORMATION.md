@@ -209,8 +209,11 @@
 | Année 4 | -600 000 € | +2 200 000 € | -2 150 000 € |
 | Année 5 | -600 000 € | +3 000 000 € | +250 000 € |
 
-> **Point d'équilibre estimé** : Année 5 (~1 500-2 000 abonnés premium)
+> **Point d'équilibre cumulé** (remboursement total de l'investissement CAPEX initial de ~3,5 M€) : **Année 5** (~1 500-2 000 abonnés premium cumulés, solde cumulé redevient positif : +250 000 €).
+> **Point d'équilibre opérationnel** (résultat net annuel positif) : **Année 3** (~1 500 apprenants actifs, CA 1 150 K€ > coûts 650 K€). Cf. `MODELE_ECONOMIQUE.md` §3.3.
 > **ROI à 7 ans** : ~150-200%
+>
+> *Note d'harmonisation : « An 1 » à « An 5 » dans ce phasage correspondent aux années commerciales post-lancement (lancement au mois 22 du calendrier de production). L'Année 0 correspond aux mois 1-22 (phase de développement pré-revenus).*
 
 ---
 

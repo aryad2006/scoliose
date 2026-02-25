@@ -1883,7 +1883,64 @@ end
 
 ---
 
+## 21. Stratégie réglementaire SaMD (Software as a Medical Device)
+
+> **Constat TECH-01 résolu** : SpineSim© modélise des anatomies, calcule des contraintes biomécaniques et produit des prédictions (PJK, correction). Selon la FDA et le MDR 2017/745, un logiciel analysant des données patient pour aider à la décision clinique est un SaMD de Classe IIa minimum. Cette section définit la stratégie réglementaire.
+
+### 21.1 Positionnement réglementaire retenu
+
+**Phase 1 (lancement, mois 22-36) : Outil pédagogique — « Educational Use Only »**
+
+SpineSim© est positionné exclusivement comme **outil pédagogique et de simulation éducative**, NON destiné à la planification chirurgicale réelle ni à la prise de décision clinique.
+
+- **Disclaimer obligatoire** (affiché au lancement de chaque session) :
+  > « SpineSim© is an educational simulation tool for training purposes only. It is NOT a medical device and must NOT be used for clinical decision-making, surgical planning, or patient care. Simulation results are approximate and intended for pedagogical demonstration only. »
+- **Disclaimer intégré dans** : CGU, écrans de chargement, exports PDF, rapports de simulation
+- **Pas d'import DICOM patient réel** en Phase 1 (uniquement des modèles anatomiques génériques ou anonymisés)
+- **Pas de prédiction clinique quantitative** (pas de « probabilité de PJK = 23% », seulement « risque élevé/modéré/faible » à titre pédagogique)
+
+Ce positionnement évite les exigences réglementaires SaMD et économise ~200-500 K€ et 12-18 mois.
+
+**Phase 2 (évolution future, mois 36+) : Option marquage CE/FDA — à évaluer**
+
+Si la demande du marché et la validation biommécanique le justifient, SpineSim© pourrait évoluer vers un dispositif médical (SaMD) pour la planification chirurgicale. Cette transition nécessiterait :
+
+| Exigence | Norme/Règlement | Coût estimé | Délai |
+|---|---|---|---|
+| Classification SaMD | MDR 2017/745 (UE) Classe IIa, FDA 510(k) De Novo | — | 2-3 mois |
+| Système de gestion qualité (QMS) | ISO 13485:2016 | 50-100 K€ | 6-12 mois |
+| Cycle de développement logiciel | IEC 62304:2006+A1 | Intégré au dev | Continu |
+| Gestion des risques | ISO 14971:2019 | 20-40 K€ | 3-6 mois |
+| Produit de santé logiciel | IEC 82304-1:2016 | 15-30 K€ | 3-6 mois |
+| Validation clinique | Cohorte prospective 30-50 patients | 80-150 K€ | 12-24 mois |
+| Dossier technique + organisme notifié | MDR Technical File, audit BSI/TÜV | 50-100 K€ | 6-12 mois |
+| Soumission FDA (marché US) | 510(k) ou De Novo | 30-80 K€ | 6-12 mois |
+| **Total Phase 2 SaMD** | | **245-500 K€** | **18-36 mois** |
+
+### 21.2 Mesures immédiates (Phase 1 — intégrées dès le début du développement)
+
+Même en mode « educational only », les bonnes pratiques suivantes sont appliquées pour faciliter une transition future vers SaMD :
+
+1. **Documentation du code** selon IEC 62304 (architecture, reviews, traçabilité des exigences)
+2. **Gestion des risques** légère (registre des risques, FMEA simplifiée sur les modules critiques)
+3. **Traçabilité des données de validation** biommécanique (50 cas de référence documentés)
+4. **Versioning rigoureux** (sematic versioning, changelog, reproducibilité des builds)
+5. **Tests automatisés** avec couverture >80% (déjà spécifié en §15)
+6. **Séparation claire** entre le moteur de simulation (« backend scientifique ») et l'interface pédagogique
+
+### 21.3 Critères de décision pour passer en Phase 2 (SaMD)
+
+| Critère | Seuil de déclenchement |
+|---|---|
+| Demande du marché | >50 chirurgiens demandent l'import DICOM patient réel |
+| Précision biommécanique | Validation sur ≥200 cas, erreur <5° sur l'angle de Cobb post-op |
+| Financement disponible | ≥300 K€ dédiés au processus réglementaire |
+| Équipe réglementaire | 1 Regulatory Affairs Manager recruté |
+| Partenariat industriel | Accord avec un fabricant d'implants pour co-développement |
+
+---
+
 *Document de spécifications techniques — SpineSim© — Février 2026*
 *Version 2.0 — Document évolutif, mis à jour à chaque phase de développement*
 *Propriété intellectuelle : à définir (brevet logiciel, licence académique ou commerciale)*
-*Sections 12-20 ajoutées : sécurité, déploiement, DR, tests, CI/CD, RBAC, accessibilité, mobile/hors-ligne, analytics*
+*Sections 12-21 : sécurité, déploiement, DR, tests, CI/CD, RBAC, accessibilité, mobile/hors-ligne, analytics, stratégie SaMD*

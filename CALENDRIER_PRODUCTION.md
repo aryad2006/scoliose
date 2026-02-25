@@ -105,12 +105,42 @@ Mois:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 2
 #### Jalons clés SpineSim
 | Jalon | Mois | Description |
 |-------|------|-------------|
+| **MVS (Minimum Viable Simulator)** | **22** | **Version de lancement intégrée au LMS (voir détail ci-dessous)** |
 | **MVP interne** | 6 | Modèle rachis + solver FEM fonctionnel |
 | **Alpha** | 14 | Chirurgie virtuelle basique (vis + tiges) |
 | **Beta fermée** | 24 | Toutes fonctionnalités, haptique, LMS |
 | **Beta ouverte** | 30 | Tests avec 50 utilisateurs pilotes |
 | **Release Candidate** | 36 | Corrections finales, validation |
 | **Version 1.0** | 40 | Lancement en production |
+
+#### Définition du MVS — Minimum Viable Simulator (Mois 22)
+
+> **Constat XREF-03 résolu** : SpineSim v1.0 est prévu au mois 40, mais la formation est lancée au mois 22. Le MVS définit les fonctionnalités SpineSim disponibles dès le lancement.
+
+**Fonctionnalités incluses dans le MVS (mois 22)** :
+
+| Composant | Fonctionnalité MVS | Phase source |
+|---|---|---|
+| Modèle anatomique 3D | Rachis complet (C1-S1), vertèbres individuelles, disques, ligaments | C1 (mois 1-6) |
+| Moteur FEM | Solver éléments finis opérationnel (rigidité, déformation, contraintes) | C1 (mois 1-6) |
+| Simulateur de pathologies | 11 types de scoliose visualisables (Lenke 1-6, neuromusculaire, congénitale, adulte, cyphose, syndromique) | C2 (mois 4-10) |
+| Chirurgie virtuelle (basique) | Placement de vis pédiculaires, insertion de tiges, manoeuvres de correction (rotation, translation) | C3 partiel (mois 8-16) |
+| Interface WebGL | UI complète : 6 modes d'affichage, mesures angulaires (Cobb), rotation 3D, coupe sagittale/coronale | C6 (mois 6-14) |
+| Intégration LMS | Connexion LTI 1.3 basique, tracking xAPI (session, score) | Ad hoc |
+| Scénarios pédagogiques | 5 cas cliniques guidés (Lenke 1, 2, 5, neuromusculaire, adulte dégénératif) | — |
+
+**Fonctionnalités NON incluses dans le MVS** (ajoutées progressivement mois 22-40) :
+
+| Fonctionnalité | Disponibilité | Phase |
+|---|---|---|
+| Ostéotomies (SPO, PSO, VCR) | Mois 24-26 | C4 |
+| Retour haptique | Mois 26-28 | C5 |
+| Mode VR/XR (Quest, WebXR) | Mois 28-32 | C7 |
+| Gamification avancée (badges, leaderboard) | Mois 32-36 | C9 |
+| Analyse prédictive (PJK, risque de révision) | Mois 36-40 | C10 |
+| Import DICOM patient-spécifique | Mois 36-40 | C10 |
+
+> **Impact sur la formation** : Au lancement (mois 22), les ateliers SpineSim du Module 28 couvriront les scénarios MVS (anatomie 3D, placement de vis, correction basique). Les ateliers avancés (ostéotomies, VR, import DICOM) seront débloqués progressivement avec des notifications aux apprenants. Le Module 28 indiquera clairement quels ateliers sont disponibles et lesquels sont « à venir ».
 
 ### D. Plateforme LMS (Mois 8-18)
 

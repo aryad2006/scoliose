@@ -127,11 +127,14 @@
 | Scénario | Nombre d'apprenants payants | Délai |
 |----------|----------------------------|-------|
 | **Hypothèse basse** | ~2 100 apprenants cumulés | An 4-5 |
-| **Hypothèse médiane** | ~1 500 apprenants cumulés | An 3 |
+| **Hypothèse médiane** | ~1 500 apprenants cumulés | **An 3** |
 | **Hypothèse haute** | ~1 000 apprenants cumulés | An 2-3 |
 
-> **Seuil de rentabilité opérationnelle** (hors investissement initial) : ~900 apprenants/an
-> **ROI investissement total** : Année 5-6 (hypothèse médiane)
+> **Seuil de rentabilité opérationnelle** (résultat net annuel positif, hors amortissement CAPEX) : **An 3** avec ~900 apprenants actifs/an.
+> **Seuil de rentabilité cumulé** (remboursement total de l'investissement initial de ~3,5 M€ + coûts cumulés) : **An 5** (cf. `BUDGET_GLOBAL_FORMATION.md` §4.2, solde cumulé +250 K€).
+> **ROI investissement total** : Année 5-6 (hypothèse médiane), ~150-200%.
+>
+> *Note d'harmonisation XREF-01 : « An 1 » = première année commerciale post-lancement (mois 22-34 du calendrier de production). L'investissement pré-lancement (mois 1-22) est comptabilisé en CAPEX (Année 0 = ~3,5 M€). Les deux métriques de break-even (opérationnel An 3 vs cumulé An 5) sont cohérentes et complémentaires.*
 
 ---
 
@@ -249,6 +252,90 @@
 
 ---
 
+## 8. PLAN DE VALIDATION MARCHÉ (PRÉ-DÉVELOPPEMENT)
+
+> **Constat ECO-01 résolu** : Aucune validation marché n'avait été effectuée. Les projections financières reposaient sur des benchmarks EdTech génériques. Ce plan définit les actions concrètes de validation du Product-Market Fit à mener AVANT le développement majeur.
+
+### 8.1 Phase 1 — Interviews qualitatives (Semaines 1-6)
+
+**Objectif** : Valider le besoin, le positionnement et la willingness-to-pay auprès de 40 professionnels.
+
+| Cible | Nombre | Canal de recrutement | Durée interview |
+|---|---|---|---|
+| Chirurgiens orthopédistes du rachis (seniors) | 10 | Réseau personnel, SFCR, congrès | 30-45 min |
+| Internes en chirurgie orthopédique (DES) | 10 | CHU partenaires, groupes WhatsApp/Telegram | 20-30 min |
+| Neurochirurgiens (déformations) | 5 | SFC, contacts directs | 30 min |
+| Kinésithérapeutes spécialisés rachis | 5 | Réseaux professionnels, IFMK | 20 min |
+| Chefs de service / DRH CHU | 5 | Contacts institutionnels | 30 min |
+| Responsables DPC / ANDPC | 3 | Contact direct ANDPC | 30 min |
+| Utilisateurs AO Spine e-learning | 2 | Réseau AO Spine | 20 min |
+
+**Guide d'interview** (questions clés) :
+1. Comment vous formez-vous actuellement sur la scoliose ? (fréquence, canaux, satisfaction)
+2. Quelles sont vos 3 principales difficultés/lacunes dans la prise en charge de la scoliose ?
+3. Seriez-vous intéressé par une formation en ligne complète sur la scoliose ? Pourquoi ?
+4. Qu'est-ce qui vous ferait choisir cette formation plutôt qu'AO Spine ou un congrès ?
+5. Un simulateur biomécanique (planification chirurgicale virtuelle) aurait-il de la valeur pour vous ?
+6. Quel prix seriez-vous prêt à payer pour cette formation ? (question ouverte, puis ancrage 490/890/1190€)
+7. Préférez-vous un format certification ou formation continue libre ?
+8. Votre établissement finance-t-il les formations en ligne ? Via quel mécanisme (DPC, OPCO, budget service) ?
+
+**Livrables** : Rapport de synthèse des interviews, verbatims clés, personas affinés.
+
+### 8.2 Phase 2 — Landing page test (Semaines 4-12)
+
+**Objectif** : Mesurer l'intérêt quantitatif (500 pré-inscriptions = signal de PMF positif).
+
+| Action | Détail | Coût estimé |
+|---|---|---|
+| Création landing page | Proposition de valeur, preview 3 modules gratuits, formulaire email | 500-1 500 € |
+| Vidéo teaser (2 min) | Présentation formation + démo SpineSim (maquette) | 1 000-3 000 € |
+| Campagne LinkedIn Ads | Ciblage chirurgiens orthopédistes, neurochirurgiens FR+EN | 3 000-5 000 € |
+| Campagne Google Ads | Mots-clés : "scoliosis training", "formation scoliose", "spine surgery simulation" | 2 000-4 000 € |
+| Email outreach | 200 contacts personnels + réseaux sociétés savantes | 0 € |
+
+**KPI de validation** :
+| Métrique | Seuil de validation (PMF+) | Seuil d'alerte (PMF?) |
+|---|---|---|
+| Pré-inscriptions email (8 semaines) | ≥500 | <200 |
+| Taux de conversion landing page | ≥8% | <3% |
+| Ouverture email de suivi | ≥40% | <20% |
+| Réponses "prêt à payer" | ≥30% des pré-inscrits | <15% |
+
+### 8.3 Phase 3 — Test de pricing (Semaines 8-12)
+
+**Méthodologie** : Test Gabor-Granger auprès des pré-inscrits (enquête en ligne).
+
+| Question | Format |
+|---|---|
+| "À quel prix cette formation serait-elle trop chère pour vous ?" | Montant libre |
+| "À quel prix cette formation vous semblerait-elle bon marché au point de douter de sa qualité ?" | Montant libre |
+| "Achèteriez-vous cette formation à 490€ ?" | Oui/Non |
+| "Achèteriez-vous cette formation à 890€ (avec SpineSim) ?" | Oui/Non |
+| "Achèteriez-vous la certification à 1190€ ?" | Oui/Non |
+| "SpineSim change-t-il votre décision d'achat ?" | Échelle 1-5 |
+
+### 8.4 Budget et calendrier de validation marché
+
+| Phase | Durée | Coût | Responsable |
+|---|---|---|---|
+| Interviews qualitatives | 6 semaines | 2 000-5 000 € (déplacements, incentives) | Dr Arya D. |
+| Landing page + campagnes | 8 semaines | 7 000-14 000 € | Marketing freelance |
+| Test de pricing | 4 semaines | 500-1 000 € (outil enquête) | Dr Arya D. |
+| **Total validation marché** | **12 semaines** | **9 500-20 000 €** | |
+
+### 8.5 Décision Go/No-Go
+
+| Signal | Décision |
+|---|---|
+| ≥500 pré-inscriptions + ≥60% des interviewés "très intéressés" + pricing validé | **GO** — Lancer le développement |
+| 200-500 pré-inscriptions + retours mitigés | **PIVOT** — Ajuster le positionnement (contenu seul sans SpineSim, niche francophone, prix réduit) |
+| <200 pré-inscriptions + <30% des interviewés intéressés | **NO-GO** — Abandonner ou repositionner radicalement |
+
+> *Ce plan de validation représente ~3 mois et <20 K€, soit <0,5% du budget total. C'est un investissement minimal pour valider (ou invalider) un projet à 4,7-6,8 M€.*
+
+---
+
 *Modèle économique — Formation Scoliose avec SpineSim© — Version 1.0*
 *Projections basées sur benchmark EdTech médical (Osmosis, Lecturio, AO Spine learnings)*
-*À mettre à jour après la phase de validation marché (interviews, landing page test)*
+*Plan de validation marché ajouté (ECO-01) — À exécuter AVANT le lancement du développement*
