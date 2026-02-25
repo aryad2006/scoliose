@@ -7,6 +7,22 @@
 
 ---
 
+## 🏥 Mise en situation
+
+> Sophie, 13 ans, est adressée par son médecin scolaire pour une **asymétrie du tronc** découverte lors du dépistage annuel. Sa mère, elle-même opérée d'une scoliose à 16 ans, est inquiète. Le chirurgien orthopédiste examine Sophie, demande des radiographies EOS du rachis entier et s'apprête à analyser chaque segment vertébral.
+>
+> → *Pour comprendre ce que le chirurgien observe, mesure et décide, vous devez d'abord maîtriser l'anatomie du rachis. C'est l'objet de ce module.*
+
+🧑‍🤝‍🧑 **Patiente fil rouge** : Sophie vous accompagnera tout au long de la Partie I (Modules 1 à 5). Vous la retrouverez à chaque module avec de nouvelles données cliniques.
+
+---
+
+## Termes clés introduits dans ce module
+
+Segment mobile de Junghans • Processus unciforme • Foramen transversaire • Artère d'Adamkiewicz • Nucleus pulposus • Annulus fibrosus • Zone neutre (Panjabi) • Multifides • Incidence pelvienne (PI) • Pente sacrée (SS) • Version pelvienne (PT) • SVA (*Sagittal Vertical Axis*) • PI-LL mismatch • Gibbosité • Cône terminal • Queue de cheval • Tropisme facettaire
+
+---
+
 ## Objectifs d'apprentissage
 
 À l'issue de ce module, l'apprenant sera capable de :
@@ -21,9 +37,11 @@
 
 ## 1.1 Anatomie descriptive du rachis
 
+🤔 **Question de réflexion** : Sur la radiographie de Sophie, le chirurgien compte les vertèbres et identifie chaque segment. Pourquoi cette étape apparemment simple est-elle une source fréquente d'erreurs chirurgicales graves (*wrong level surgery*) ?
+
 ### 1.1.1 Vue d'ensemble
 
-Le rachis humain est constitué de **33 vertèbres** réparties en 5 segments :
+Quand le chirurgien examine la radiographie EOS de Sophie, il voit d'abord l'ensemble du rachis — une colonne osseuse en « S » allongé, de la base du crâne au coccyx. Avant de mesurer quoi que ce soit, il identifie chaque segment. Le rachis humain est constitué de **33 vertèbres** réparties en 5 segments :
 
 | Segment | Vertèbres | Nombre | Mobilité | Fonction principale |
 |---|---|---|---|---|
@@ -33,7 +51,7 @@ Le rachis humain est constitué de **33 vertèbres** réparties en 5 segments :
 | Sacré | S1–S5 | 5 (fusionnées) | – | Transmission poids au bassin |
 | Coccygien | Co1–Co4 | 3-5 (fusionnées) | – | Insertion musculaire (plancher pelvien) |
 
-> [MEDIA: 🧊 M01-S01-001 — Modèle 3D interactif rachis complet C1-coccyx]
+> [MEDIA: 🧳 M01-S01-001 — Modèle 3D interactif rachis complet C1-coccyx (Faites pivoter le modèle à 360°. Identifiez les 5 segments et observez comment les courbures alternent lordose-cyphose-lordose. Comptez les vertèbres — combien en trouvez-vous ?)]
 
 La longueur totale du rachis représente environ **35% de la taille corporelle** chez l'adulte, soit 70-75 cm en moyenne. Les courbures alternées (lordose-cyphose-lordose) confèrent au rachis une résistance aux contraintes axiales **10 fois supérieure** à celle d'une colonne droite (formule de Delmas : R = N² + 1, où N = nombre de courbures ; R = 3² + 1 = 10).
 
@@ -65,7 +83,7 @@ La vertèbre cervicale typique se distingue par :
 **Atlas (C1)** :
 - **Anneau osseux** sans corps vertébral ni processus épineux véritable
 - **Masses latérales** : surfaces articulaires supérieures concaves (condyles occipitaux), inférieures plates (C2)
-- **Arc antérieur** : fovea dentis (cavité pour la dent de l'axis)
+- **Arc antérieur** : à la face postérieure, la *fovea dentis* (cavité articulaire pour la dent de l'axis)
 - **Arc postérieur** : sillon de l'artère vertébrale (risque chirurgical : lésion de l'artère vertébrale lors de la mise en place de vis en C1 — technique de Harms/Goel)
 - **Ligament transverse** : maintient la dent de l'axis, essentiel pour la stabilité C1-C2
 
@@ -190,13 +208,28 @@ Les variations anatomiques normales sont fréquentes et cliniquement importantes
 
 **Point clé** : En chirurgie de la scoliose, toujours vérifier le nombre de vertèbres (radiographie du rachis entier ou IRM) pour éviter les erreurs de niveau opératoire (wrong level surgery).
 
+> 💡 **Mnémonique — « 7-12-5-5 »** : Pour retenir le nombre de vertèbres par segment :
+> *« Pour le petit-déjeuner à **7h**, je prends **12** céréales, **5** tartines et **5** cafés »*
+> C7 • T12 • L5 • S5 = 29 vertèbres + 3-5 coccygiennes = 33 au total
+
+> 📌 **Retour sur Sophie** : Sur la radiographie de Sophie, le chirurgien repère **6 vertèbres non costales** en lombaire (pas 5). Il suspecte une **lombalisation de S1** — une variation présente chez 4-8% de la population. Cette découverte changera le comptage des niveaux si une chirurgie est envisagée.
+
+✏️ **Micro-exercice — Identifier les variations** :
+1. Un radiologue compte 13 vertèbres avec côtes sur la radio de face. Quelle variation anatomique suspecter ?
+2. Sur une IRM, le cône terminal se projette en regard de L3. Est-ce normal chez un adulte ? Chez un nouveau-né ?
+3. Le processus épineux de C7 est-il bifide ou non ? Pourquoi est-il appelé « vertèbre proéminente » ?
+
+*Vous savez désormais décrire chaque vertèbre, la nommer et identifier ses variations. Mais le rachis ne fonctionne pas vertèbre par vertèbre — il fonctionne par **segments mobiles**. Voyons comment ces structures interagissent.*
+
 ---
 
 ## 1.2 Anatomie fonctionnelle
 
+🤔 **Question de réflexion** : Si vous retirez un disque intervertébral et les deux facettes articulaires d'un segment, que reste-t-il pour empêcher les deux vertèbres de glisser l'une sur l'autre ? Comment le rachis maintient-il sa stabilité au quotidien ?
+
 ### 1.2.1 Unité fonctionnelle rachidienne (Segment mobile de Junghans)
 
-Le **segment mobile** est l'unité fonctionnelle élémentaire du rachis. Il comprend :
+Imaginez que vous devez expliquer à Sophie pourquoi une seule vertèbre ne peut rien faire seule. Le rachis ne fonctionne pas vertèbre par vertèbre, mais par **segments mobiles**. Le **segment mobile** (défini par Junghans) est l'unité fonctionnelle élémentaire du rachis. Il comprend :
 
 - Deux vertèbres adjacentes (vertèbre sus-jacente et sous-jacente)
 - Le disque intervertébral qui les sépare
@@ -315,15 +348,27 @@ Le foramen est un orifice ostéo-ligamentaire situé entre deux vertèbres adjac
 
 **Pertinence scoliose** : La déformation scoliotique entraîne un rétrécissement des foramens du côté concave de la courbure → risque de radiculopathie, surtout dans les scolioses lombaires dégénératives de l'adulte.
 
+> 💡 **Mnémonique — 80/20** : Le pilier antérieur porte **80%** de la charge, le pilier postérieur en guide **20%**.
+> *« L'avant porte, l'arrière guide »* — comme un camion dont le moteur (antérieur) traîne et le volant (postérieur) dirige.
+
+✏️ **Micro-exercice — Segment mobile** :
+1. Un chirurgien résèque complètement les deux facettes articulaires de L4-L5 (facettectomie bilatérale). D'après le modèle de Panjabi, quel sous-système de stabilité est détruit ? Quelle conséquence clinique prévoyez-vous ?
+2. La pression intradiscale de Sophie en position assise penchée en avant est d'environ 1,5 MPa. Combien vaut-elle debout ? (Indice : Wilke 1999)
+3. Pourquoi l'annulus fibrosus résiste-t-il mieux à la traction que le nucleus ?
+
+*Le segment mobile repose sur un équilibre entre os, disques et ligaments. Mais sans muscles, tout cela s'effondrerait. Découvrons la musculature qui maintient le rachis debout.*
+
 ---
 
 ## 1.3 Musculature rachidienne
 
+🤔 **Question de réflexion** : Après une chirurgie postérieure de la scoliose (6-8 heures d'opération), certains patients développent des douleurs lombaires chroniques malgré une correction parfaite. Quel groupe musculaire, endommagé par l'abord chirurgical, pourrait expliquer ce paradoxe ?
+
 ### 1.3.1 Muscles érecteurs du rachis (erector spinae)
 
-> [MEDIA: 🧊 M01-S03-001 — Modèle 3D muscles du rachis (couches pelables)]
+> [MEDIA: 🧳 M01-S03-001 — Modèle 3D muscles du rachis à couches pelables (Activez la vue postérieure. Retirez progressivement les couches de la superficie vers la profondeur : identifiez iliocostal → longissimus → épineux. Quel est le plus volumineux ?)]
 
-Le groupe des érecteurs du rachis est situé dans la gouttière paravertébrale, entre les processus transverses et les processus épineux. Il comprend trois colonnes, de latéral à médial :
+Le groupe des érecteurs du rachis occupe la gouttière paravertébrale, entre les processus transverses et les processus épineux. Il comprend trois colonnes, de latéral à médial :
 
 **1. Iliocostal (le plus latéral)** :
 - Origine : crête iliaque, face postérieure du sacrum
@@ -442,13 +487,32 @@ La scoliose thoracique altère la mécanique respiratoire :
 
 *Données basées sur Weinstein et al. (JAMA 2003, Iowa 50-year follow-up) et Pehrsson et al. (1992)*
 
+> 🧳 **Exercice SpineSim© — Muscles et scoliose** :
+> 1. Ouvrez le modèle *« Rachis normal »*. Activez la vue « Musculature » en mode transparence progressive.
+> 2. Identifiez les 3 colonnes de l'erector spinae (iliocostal, longissimus, épineux). Lequel est le plus médial ?
+> 3. Passez à la couche profonde : localisez les **multifides**. Simulez une **atrophie unilatérale droite** des multifides (curseur à -50%).
+> 4. Observez l'effet sur l'alignement segmentaire. La zone neutre s'élargit-elle ? Dans quelle direction le segment se déplace-t-il ?
+> 5. Rétablissez les multifides et simulez maintenant une **contracture du psoas gauche**. Quel effet sur la lordose lombaire ?
+> → *Comparez vos observations avec le modèle de Panjabi (3 sous-systèmes).*
+
+📌 **Retour sur Sophie** : L'équipe de Sophie aura un jour à choisir entre un abord de Hibbs (médian, risque d'atrophie des multifides) et un abord de Wiltse (intermusculaire, préservant les multifides). Cette décision dépendra de l'étendue de la fusion nécessaire (Module 16).
+
+✏️ **Micro-exercice — Muscles et clinique** :
+1. Le transverse de l'abdomen se contracte **avant** tout mouvement du bras ou de la jambe (feedforward). Quel système nerveux contrôle cette anticipation : volontaire ou automatique ?
+2. Une scoliose thoracique à 75° de Cobb : estimez la CVF de cette patiente (en % de la prédite) d'après le tableau ci-dessus.
+3. Pourquoi la technique de Wiltse préserve-t-elle mieux les multifides que l'abord de Hibbs ?
+
+*Les muscles maintiennent le rachis debout, mais c'est le système nerveux qui les commande. Et cette commande passe par la moelle épinière — un cordon de 45 cm dont la préservation est l'enjeu numéro un de toute chirurgie rachidienne.*
+
 ---
 
 ## 1.4 Neuroanatomie rachidienne
 
+🤔 **Question de réflexion** : Un chirurgien opère une scoliose thoracique au niveau de la **vertèbre T10**. Si un geste malécontreux lèse la moelle à ce niveau, quels **segments médullaires** seront touchés ? Et quelles conséquences pour le patient ? (La réponse n'est pas « T10 »...)
+
 ### 1.4.1 Moelle épinière : topographie et segments
 
-> [MEDIA: 📐 M01-S04-001 — Schéma topographie médullaire]
+> [MEDIA: 📐 M01-S04-001 — Schéma topographie médullaire (Observez le décalage entre vertèbre et segment médullaire : à quel niveau vertébral se termine la moelle ? Où commence la queue de cheval ?)]
 
 La moelle épinière est un cordon nerveux de ~45 cm situé dans le canal rachidien, de la jonction bulbo-médullaire (foramen magnum) au **cône terminal** (L1-L2 chez l'adulte, L3 chez le nouveau-né).
 
@@ -574,9 +638,29 @@ Le flux longitudinal est **insuffisant** pour alimenter toute la moelle → néc
 4. Maintien de la pression artérielle moyenne (PAM ≥ 80 mmHg) pendant les manœuvres de correction
 5. En cas de chute des potentiels évoqués → protocole de sauvetage (Module 20)
 
+> 💡 **Mnémonique — ADAM** (Artère d'Adamkiewicz) :
+> **A**rtère la plus importante — **D**anger paraplegíe — **À** gauche (80%) — **M**onitoring obligatoire
+> *Retenez : « ADAM est à gauche et surveille vos jambes »*
+
+🏥 **Cas clinique — M. R., 52 ans** :
+> Scoliose thoraco-lombaire dégénérative, Cobb T10-L3 = 48°. Le chirurgien prévoit une ostéotomie postérieure de soustraction pédiculaire (PSO) en L1 avec instrumentation de T9 à l'ilium. L'anesthésiste signale une chute de 60% des potentiels évoqués moteurs (PEM) des membres inférieurs lors de la correction.
+>
+> → *Quelle artère est probablement compromise ? À quel niveau et de quel côté la chercheriez-vous ? Quelle est la première mesure à prendre ? (Référez-vous aux 5 précautions ci-dessus.)*
+
+✏️ **Micro-exercice — Neuroanatomie appliquée** :
+1. Une lésion médullaire au niveau de la vertèbre T10 touche les segments médullaires L1-L3. Quels muscles seraient déficitaires (quadriceps, ischio-jambiers, releveurs du pied) ?
+2. Pourquoi le syndrome de l'artère spinale antérieure conserve-t-il la sensibilité profonde (proprioception) mais pas la sensibilité thermoalgique ?
+3. Le plexus lombaire chemine dans le psoas. Quel abord chirurgical expose spécifiquement au risque de lésion du nerf fémoral ?
+
+📌 **Retour sur Sophie** : Sophie a 13 ans. Son cône médullaire se projette en L1-L2 (normal pour son âge). Si une chirurgie est envisagée sur sa courbure thoracique, l'artère d'Adamkiewicz sera un enjeu majeur. L'équipe réalisera un monitoring IONM continu (Module 20).
+
+*Les muscles et les nerfs maintiennent le rachis debout et fonctionnel. Mais l'alignement du rachis dans l'espace — son **équilibre sagittal** — dépend avant tout de la géométrie des courbures et du bassin. C'est le dernier étage de notre analyse anatomique.*
+
 ---
 
 ## 1.5 Courbures physiologiques et équilibre sagittal
+
+🤔 **Question de réflexion** : Sur la radiographie de profil de Sophie, le chirurgien mesure des angles et trace des lignes. Pourquoi ne regarde-t-il pas uniquement la scoliose de face ? Que cherche-t-il dans le plan sagittal, et pourquoi est-ce devenu l'objectif numéro un de la chirurgie moderne ?
 
 ### 1.5.1 Les courbures dans le plan sagittal
 
@@ -671,6 +755,28 @@ Lorsque l'équilibre sagittal est perturbé (perte de lordose, augmentation de l
 - Facteurs de risque : âge > 55 ans, PI élevé, fusion au sacrum, ostéoporose, rod contour excessif
 - Le PJK sera approfondi dans le Module 18 (Complications)
 
+> 🔑 **Astuce clinique — 3 chiffres à retenir** :
+> Les objectifs de Schwab pour la scoliose de l'adulte tiennent en **3 chiffres** :
+> **50** (SVA < 50 mm) • **25** (PT < 25°) • **10** (PI-LL < ±10°)
+> *« Cinquante-vingt-cinq-dix » — récitez-le 3 fois, vous ne l'oublierez plus.*
+
+🏥 **Cas clinique — Mme D., 58 ans** :
+> Lombalgies chroniques invalidantes depuis 3 ans, marche limitée à 300 m. Radiographie EOS : scoliose lombaire dégénérative L2-L4 (Cobb 35°), listhésis L3-L4 grade I.
+>
+> **Paramètres sagittaux** : PI = 62° • LL = 28° • PT = 34° • SVA = 78 mm • Cyphose thoracique T4-T12 = 38°
+>
+> 1. Calculez le PI-LL mismatch. Est-il dans les objectifs de Schwab ?
+> 2. Le PT de 34° traduit-il une compensation ou une décompensation ?
+> 3. Mme D. marche les genoux fléchis. À quel stade de la cascade de Barrey se situe-t-elle ?
+> 4. Si vous deviez opérer, quelle lordose lombaire cible viseriez-vous (en fonction de son PI) ?
+
+📌 **Retour sur Sophie** : Sophie a 13 ans et sa scoliose est thoracique droite. Sur la radio de profil, son PI = 48°, sa lordose lombaire = 52°, son SVA = 15 mm. Son équilibre sagittal est **normal** — l'enjeu sera de le préserver après chirurgie. L'analyse complète de sa courbure (classification de Lenke) sera l'objet du Module 4.
+
+✏️ **Micro-exercice — Équilibre sagittal** :
+1. Un patient a un PI de 55°. Sa lordose lombaire est de 30°. Calculez le PI-LL mismatch et déduisez le PT probable (rappel : PI = SS + PT). Ce patient est-il en équilibre sagittal ?
+2. Classez ces 4 mécanismes compensatoires dans l'ordre de la cascade de Barrey : flexion des genoux • rétroversion pelvienne • hyperlordose cervicale • extension des chevilles.
+3. Pourquoi l'incidence pelvienne (PI) est-elle le seul paramètre qui ne change pas avec la posture ?
+
 ---
 
 ## Points clés à retenir
@@ -707,4 +813,130 @@ Lorsque l'équilibre sagittal est perturbé (perte de lordose, augmentation de l
 
 *Module 1 — Anatomie du Rachis — Formation Scoliose avec SpineSim©*
 *Durée : ~2h30 | Niveau : Fondamental | Partie I*
-*Version 1.0 — Février 2026*
+*Version 2.0 — Février 2026*
+
+---
+
+## Auto-évaluation du Module 1
+
+### QCM (choisissez la ou les réponses correctes)
+
+**Q1.** Quelle est la particularité anatomique qui distingue les vertèbres cervicales typiques (C3-C6) de toutes les autres vertèbres ?
+
+a) Un corps vertébral en forme de cœur
+b) Un processus épineux long et oblique vers le bas
+c) Un foramen transversaire traversé par l'artère vertébrale
+d) Des facettes costales sur le corps
+e) Des pédicules massifs
+
+<details><summary>💡 Réponse</summary>
+
+**c)** Le foramen transversaire est exclusif aux cervicales (C1-C7). L'artère vertébrale y chemine de C6 à C1 (pas en C7 où seule la veine passe). • (a) = thoracique • (b) = thoracique • (d) = thoracique • (e) = lombaire.
+</details>
+
+**Q2.** Dans le modèle de Panjabi, quels sont les trois sous-systèmes de stabilité rachidienne ?
+
+a) Osseux, discal, musculaire
+b) Passif (os/ligaments), actif (muscles), neural (proprioception)
+c) Antérieur, postérieur, latéral
+d) Cortical, spongieux, médullaire
+
+<details><summary>💡 Réponse</summary>
+
+**b)** Panjabi (1992) définit : sous-système passif (vertèbres, disques, ligaments), actif (muscles tendineux), et neural (contrôle neuromusculaire). La réponse (a) est partielle — elle omet le contrôle neural et les ligaments.
+</details>
+
+**Q3.** L'artère d'Adamkiewicz se trouve le plus souvent :
+
+a) À droite, entre T5 et T8
+b) À gauche, entre T9 et T12
+c) Médiane, en L3-L4
+d) Bilatérale, en T1-T4
+
+<details><summary>💡 Réponse</summary>
+
+**b)** À gauche dans 80% des cas, entre T9 et T12 dans 75% des cas. Sa lésion provoque le syndrome de l'artère spinale antérieure (paraplégie + perte thermoalgique + conservation de la proprioception).
+</details>
+
+**Q4.** Un patient présente un PI de 60°, une lordose lombaire (LL) de 35°, et un PT de 28°. Quelles affirmations sont correctes ? (2 réponses)
+
+a) Le PI-LL mismatch est de 25°, au-delà du seuil de Schwab
+b) Le PT de 28° indique une compensation pelvienne adéquate
+c) Ce patient a probablement épuisé sa réserve de rétroversion pelvienne
+d) Son SVA est forcément normal
+e) La pente sacrée (SS) vaut 32°
+
+<details><summary>💡 Réponse</summary>
+
+**a) et c)** PI-LL = 60° - 35° = 25° (seuil Schwab = 10° → bien au-delà). PT = 28° > 25° → compensation **excessive** (pas adéquate → b est faux). SS = PI - PT = 60° - 28° = 32° (→ e est correct aussi mathematiquement, mais la question demandait 2 réponses les plus cliniquement pertinentes). Le SVA n'est pas déductible du PI et LL seuls (→ d est faux).
+</details>
+
+**Q5.** Quel muscle est considéré comme le stabilisateur segmentaire le plus important du rachis lombaire ?
+
+a) Psoas major
+b) Iliocostal
+c) Multifides
+d) Droit de l'abdomen
+e) Grand dorsal
+
+<details><summary>💡 Réponse</summary>
+
+**c)** Les multifides enjambent 2-4 vertèbres, sont les plus développés en lombaire, et assurent la stabilisation segmentaire dynamique. Leur dommage chirurgical (abord de Hibbs) est un enjeu majeur. Le psoas (a) est un fléchisseur de hanche, pas un stabilisateur segmentaire.
+</details>
+
+---
+
+### Cas cliniques d'auto-évaluation
+
+**Cas 1 — Thomas, 15 ans**
+
+Adressé pour une scoliose thoracique droite découverte lors d'un examen sportif. Cobb T5-T12 = 42°. Le chirurgien prévoit une instrumentation postérieure de T4 à L1.
+
+1. Quel type de canal rachidien (forme, taille) rencontre-t-on en thoracique ? Pourquoi est-ce un facteur de risque ?  
+2. L'abord sera médian postérieur (Hibbs). Quels muscles seront décollés et potentiellement dénervés ?
+3. L'anesthésiste met en place un monitoring IONM. Pourquoi l'artère d'Adamkiewicz est-elle particulièrement à risque dans cette chirurgie ?
+
+<details><summary>💡 Éléments de réponse</summary>
+
+1. Canal circulaire et **étroit** (12-15 mm AP) → moins de marge pour les manœuvres de correction qu'en lombaire (où la queue de cheval est plus tolérante que la moelle).
+2. Les **multifides** et les **érecteurs du rachis** sont décollés de T4 à L1. Les multifides reçoivent une innervation segmentaire unique (pas de double innervation) → risque d'atrophie définitive.
+3. L'artère d'Adamkiewicz naît le plus souvent entre T9 et T12 (à gauche dans 80%) — exactement dans le champ opératoire de T4-L1. Les manœuvres de correction (dérotation, distraction) peuvent l'étirer ou la comprimer.
+</details>
+
+**Cas 2 — Mme L., 64 ans**
+
+Scoliose lombaire dégénérative. Paramètres sagittaux : PI = 58°, LL = 22°, PT = 36°, SVA = 95 mm. Elle marche penchée en avant, genoux fléchis.
+
+1. Calculez le PI-LL mismatch et la pente sacrée (SS).  
+2. À quel stade de la cascade de Barrey se situe Mme L. ? Justifiez.
+3. Si le chirurgien restaure une lordose de 55°, quel sera le nouveau PI-LL ? Les objectifs de Schwab seront-ils atteints ?
+
+<details><summary>💡 Éléments de réponse</summary>
+
+1. PI-LL = 58° - 22° = **36°** (très au-delà du seuil de 10°). SS = PI - PT = 58° - 36° = **22°** (très basse).
+2. **Stade 2** : rétroversion pelvienne maximale (PT = 36° >> 25°) ET flexion des genoux. SVA = 95 mm >> 50 mm confirme la décompensation.
+3. Nouveau PI-LL = 58° - 55° = **3°** → dans les objectifs (<10°). Le PT devrait se normaliser vers ~15° et le SVA diminuer. Objectifs de Schwab atteints si l'exécution chirurgicale est conforme.
+</details>
+
+---
+
+### Question ouverte de synthèse
+
+**En 10 lignes maximum**, expliquez pourquoi la connaissance de l'anatomie du rachis est un prérequis absolu avant la chirurgie de la scoliose. Illustrez votre réponse avec au moins 3 exemples concrets tirés de ce module (un risque vasculaire, un risque musculaire, un enjeu d'équilibre sagittal).
+
+---
+
+### Checklist d'auto-vérification
+
+Avant de passer au Module 2 (Embryologie), vérifiez que vous savez :
+
+- [ ] Nommer les 5 segments du rachis et le nombre de vertèbres de chacun
+- [ ] Différencier une vertèbre cervicale, thoracique et lombaire sur un schéma
+- [ ] Expliquer le concept de segment mobile de Junghans et les 3 sous-systèmes de Panjabi
+- [ ] Décrire la structure du disque intervertébral et son rôle dans la scoliose
+- [ ] Nommer les 3 muscles érecteurs du rachis et expliquer le rôle des multifides
+- [ ] Localiser l'artère d'Adamkiewicz et expliquer les conséquences de sa lésion
+- [ ] Calculer le PI-LL mismatch et interpréter le PT
+- [ ] Décrire la cascade compensatoire de Barrey
+
+*→ Module suivant : **Module 2 — Embryologie et croissance du rachis** — Nous découvrirons comment le rachis de Sophie s'est formé in utero et comment la croissance influence la progression de la scoliose.*
