@@ -4,7 +4,7 @@ set -e
 MOODLE_DIR="/var/www/html"
 MOODLE_DATA="/var/www/moodledata"
 
-# Télécharger Moodle si pas encore fait
+# TÃ©lÃ©charger Moodle si pas encore fait
 if [ ! -f "$MOODLE_DIR/version.php" ]; then
     echo "=== Telechargement de Moodle 4.5 ==="
     cd /tmp

@@ -1,4 +1,4 @@
-# CATALOGUE DE PRODUCTION MÉDIAS — FORMATION SCOLIOSE
+﻿# CATALOGUE DE PRODUCTION MÉDIAS — FORMATION SCOLIOSE
 ## Guide complet des images, schémas et animations à produire
 
 ### Légende des types de médias
@@ -45,7 +45,7 @@
 | M01-S02-001 | 🎬 ANIMATION | **Unité fonctionnelle rachidienne (segment mobile de Junghans)** : animation 3D montrant 2 vertèbres adjacentes avec le disque, les facettes, les ligaments — décomposition du mouvement dans les 3 plans | Highlight chaque composant |
 | M01-S02-002 | 🎬 ANIMATION | **Structure du disque intervertébral** : animation en coupe montrant le nucleus pulposus (gélatineux, central), l'annulus fibrosus (couches concentriques), les plateaux vertébraux cartilagineux — distribution des charges | Zoom progressif du macro au micro |
 | M01-S02-003 | 📐 SCHÉMA | **Articulations zygapophysaires par niveau** : orientation des facettes — sagittale au lombaire (flexion/extension), frontale au thoracique (rotation), oblique au cervical — avec flèches de mouvement | 3 schémas côte à côte |
-| M01-S02-004 | 🎬 ANIMATION | **Système ligamentaire rachidien** : vue sagittale médiane montrant séquentiellement chaque ligament — LLA (vert), LLP (rouge), ligaments jaunes (jaune), inter-épineux (bleu), supra-épineux (violet) | Apparition séquentielle avec nom |
+| M01-S02-004 | 🎬 ANIMATION | **Système ligamentaire rachidien** : vue sagittale médiane montrant séquentiellement chaque ligament — LVCA (vert), LVCP (rouge), ligaments jaunes (jaune), inter-épineux (bleu), supra-épineux (violet) | Apparition séquentielle avec nom |
 | M01-S02-005 | 📐 SCHÉMA | **Canal rachidien et foramens** : coupe axiale montrant le canal rachidien, les récessus latéraux, les foramens intervertébraux avec le passage des racines nerveuses, les pédicules, les ligaments jaunes | Annoter les zones de sténose |
 
 ### 1.3 Musculature rachidienne
@@ -714,8 +714,8 @@
 | M17-S03-001 | 📷 IMAGE | **Modèle 3D imprimé** : photos d'un modèle de rachis scoliotique imprimé en 3D — utilisé pour la planification et l'éducation du patient | Photos du modèle |
 | M17-S03-002 | 📷 IMAGE | **Guide de coupe personnalisé** : photo d'un guide imprimé en 3D placé sur la vertèbre — aide au positionnement exact des vis | Photo peropératoire |
 | M17-S04-001 | 📐 SCHÉMA | **IA — mesure automatique Cobb** : capture d'écran montrant un logiciel d'IA qui mesure automatiquement l'angle de Cobb sur une radiographie | Capture d'écran |
-| M17-S05-001 | 📷 IMAGE | **SpineSim© — interface de simulation** : capture d'écran de l'application SpineSim© montrant un modèle de rachis scoliotique avec les contraintes biomécaniques affichées en temps réel (carte de chaleur Von Mises) | Capture d'écran SpineSim |
-| M17-S05-002 | 🎥 VIDÉO | **Démo SpineSim© — simulation de correction** : vidéo démonstration montrant l'utilisation complète de SpineSim© — chargement d'un cas, placement de vis, insertion de tige, manœuvre de correction, analyse des contraintes résultantes | Screencast 5 min |
+| M17-S05-001 | 📷 IMAGE | **VERTEX© — interface de simulation** : capture d'écran de l'application VERTEX© montrant un modèle de rachis scoliotique avec les contraintes biomécaniques affichées en temps réel (carte de chaleur Von Mises) | Capture d'écran VERTEX |
+| M17-S05-002 | 🎥 VIDÉO | **Démo VERTEX© — simulation de correction** : vidéo démonstration montrant l'utilisation complète de VERTEX© — chargement d'un cas, placement de vis, insertion de tige, manœuvre de correction, analyse des contraintes résultantes | Screencast 5 min |
 | M17-S06-001 | 📐 SCHÉMA | **Planification préopératoire digitale** : capture d'écran d'un logiciel de planification — mesure des angles, simulation de la correction attendue, choix des niveaux de fusion, longueur des vis, cintrage de la tige | Capture de planning |
 | M17-S06-002 | 🎬 ANIMATION | **Workflow de planification pré-op** : animation montrant les étapes — import DICOM → reconstruction 3D → mesures automatiques → simulation de correction → exportation du plan chirurgical | Animation du pipeline |
 | M17-S06-003 | 📷 IMAGE | **Templates préopératoires** : images montrant les templates physiques et numériques — calques sur radiographies, mesure des vis, choix des niveaux, comparaison planifié vs réalisé | Photos de planification |
@@ -882,29 +882,29 @@
 
 ---
 
-## MODULE 28 : SIMULATION SpineSim©
+## MODULE 28 : SIMULATION VERTEX©
 
 | ID | Type | Description détaillée | Notes de production |
 |----|------|----------------------|---------------------|
-| M28-S01-001 | 📷 IMAGE | **Interface SpineSim© — vue générale** : capture d'écran de l'interface principale montrant le modèle 3D de rachis, les panneaux de contrôle, la carte de contraintes Von Mises, et le tableau de bord biomécanique | Capture HD 4K |
-| M28-S01-002 | 🎬 ANIMATION | **Tutoriel de prise en main SpineSim©** : animation screencast montrant la navigation 3D — rotation, zoom, coupe sagittale/axiale, sélection de vertèbre, affichage des propriétés mécaniques | Screencast animé 3 min |
-| M28-S01-003 | 📐 SCHÉMA | **Architecture technique SpineSim©** : schéma d'architecture montrant les couches — Frontend (Three.js/WebGL) → API REST/WebSocket → Backend Julia (moteur biomécanique FEM) → GPU CUDA → Base de données | Schéma d'architecture |
-| M28-S02-001 | 🧊 MODÈLE 3D | **Modèle vertébral interactif SpineSim©** : modèle 3D interactif d'une vertèbre avec les propriétés mécaniques — zones de dense cortical, spongieux, pédicule, processus transverses, lames — avec code couleur de rigidité | Modèle WebGL interactif |
-| M28-S02-002 | 🎬 ANIMATION | **Simulation de charge — rachis sain** : animation SpineSim© montrant la distribution des contraintes sur un rachis sain en station debout, flexion, extension, rotation — carte de chaleur Von Mises en temps réel | Capture vidéo SpineSim |
+| M28-S01-001 | 📷 IMAGE | **Interface VERTEX© — vue générale** : capture d'écran de l'interface principale montrant le modèle 3D de rachis, les panneaux de contrôle, la carte de contraintes Von Mises, et le tableau de bord biomécanique | Capture HD 4K |
+| M28-S01-002 | 🎬 ANIMATION | **Tutoriel de prise en main VERTEX©** : animation screencast montrant la navigation 3D — rotation, zoom, coupe sagittale/axiale, sélection de vertèbre, affichage des propriétés mécaniques | Screencast animé 3 min |
+| M28-S01-003 | 📐 SCHÉMA | **Architecture technique VERTEX©** : schéma d'architecture montrant les couches — Frontend (Three.js/WebGL) → API REST/WebSocket → Backend Julia (moteur biomécanique FEM) → GPU CUDA → Base de données | Schéma d'architecture |
+| M28-S02-001 | 🧊 MODÈLE 3D | **Modèle vertébral interactif VERTEX©** : modèle 3D interactif d'une vertèbre avec les propriétés mécaniques — zones de dense cortical, spongieux, pédicule, processus transverses, lames — avec code couleur de rigidité | Modèle WebGL interactif |
+| M28-S02-002 | 🎬 ANIMATION | **Simulation de charge — rachis sain** : animation VERTEX© montrant la distribution des contraintes sur un rachis sain en station debout, flexion, extension, rotation — carte de chaleur Von Mises en temps réel | Capture vidéo VERTEX |
 | M28-S02-003 | 🎬 ANIMATION | **Disque intervertébral — modèle Mooney-Rivlin** : animation montrant le comportement hyperélastique du disque sous charge — déformation du nucleus pulposus, fibres de l'annulus, pression intradiscale | Animation FEM |
-| M28-S03-001 | 🎬 ANIMATION | **Simulation de scoliose progressive** : animation SpineSim© montrant la génération d'une scoliose — modification progressive des paramètres (croissance asymétrique, rotation vertébrale) et visualisation de l'évolution de la courbure | Animation paramétrique |
+| M28-S03-001 | 🎬 ANIMATION | **Simulation de scoliose progressive** : animation VERTEX© montrant la génération d'une scoliose — modification progressive des paramètres (croissance asymétrique, rotation vertébrale) et visualisation de l'évolution de la courbure | Animation paramétrique |
 | M28-S03-002 | 🎬 ANIMATION | **Catalogue des pathologies simulables** : animation présentant les 11 pathologies disponibles — SIA, congénitale, neuromusculaire, dégénérative, Scheuermann, spondylolisthésis, fracture, tumeur, infection, post-chirurgicale, ostéoporotique | Montage de simulations |
-| M28-S04-001 | 🎥 VIDÉO | **Chirurgie virtuelle — voie postérieure** : vidéo de démonstration SpineSim© montrant la dissection couche par couche — peau → fascia → muscles paraspinaux → lames et facettes, avec retour haptique simulé | Screencast commenté 8 min |
-| M28-S04-002 | 🎥 VIDÉO | **Chirurgie virtuelle — voie antérieure** : vidéo SpineSim© montrant l'abord antérieur — thoracotomie virtuelle, identification des gros vaisseaux (zone rouge danger), exposition des corps vertébraux | Screencast commenté 6 min |
-| M28-S05-001 | 🎬 ANIMATION | **Placement de vis pédiculaire virtuel** : animation SpineSim© montrant le placement d'une vis — choix du point d'entrée, sélection du diamètre/longueur, trajectoire avec feedback de densité osseuse, détection de brèche (alerte visuelle/sonore) | Capture de simulation |
-| M28-S05-002 | 🎬 ANIMATION | **Mise en place de tige et correction** : animation SpineSim© montrant l'insertion de la tige, le cintrage virtuel, la manœuvre de dérotation, et l'analyse en temps réel de la correction obtenue et des forces sur les vis | Capture de simulation |
-| M28-S06-001 | 🎬 ANIMATION | **Simulation d'ostéotomie PSO** : animation SpineSim© montrant l'ostéotomie de soustraction pédiculaire — résection osseuse pas à pas, fermeture du coin, correction de la lordose, contraintes résultantes sur les implants adjacents | Capture de simulation |
-| M28-S07-001 | 📷 IMAGE | **Tableau de bord d'évaluation** : capture d'écran du dashboard de scoring SpineSim© — précision du placement des vis (%), respect de la stérilité, temps opératoire, détection de brèches, score global avec code couleur | Capture de dashboard |
-| M28-S07-002 | 📊 INFOGRAPHIE | **Système de gamification SpineSim©** : infographie montrant la progression — niveaux (Interne → Chef de clinique → Spécialiste → Expert), badges, leaderboard, objectifs de compétence, déblocage de cas complexes | Infographie gamification |
-| M28-S08-001 | 📷 IMAGE | **Mode VR SpineSim©** : photo d'un utilisateur avec casque VR interagissant avec le modèle de rachis 3D — contrôleurs haptiques simulant les instruments chirurgicaux | Photo immersive |
-| M28-S08-002 | 🧊 MODÈLE 3D | **Salle d'opération virtuelle** : modèle 3D interactif de la salle d'opération complète dans SpineSim© — patient, table, instruments, écrans de navigation, microscope, C-arm | Modèle WebGL/WebXR |
-| M28-S09-001 | 📊 INFOGRAPHIE | **SpineSim© — feuille de route de développement** : infographie montrant les 10 phases de développement — recherche, prototype, MVP, bêta, v1.0, avec timeline et jalons | Timeline de projet |
-| M28-S10-001 | 📐 SCHÉMA | **Intégration LMS-SpineSim©** : schéma d'intégration montrant la connexion entre le LMS de la formation et SpineSim© — SSO, xAPI statements, progression synchronisée, rapports de performance | Schéma d'intégration |
+| M28-S04-001 | 🎥 VIDÉO | **Chirurgie virtuelle — voie postérieure** : vidéo de démonstration VERTEX© montrant la dissection couche par couche — peau → fascia → muscles paraspinaux → lames et facettes, avec retour haptique simulé | Screencast commenté 8 min |
+| M28-S04-002 | 🎥 VIDÉO | **Chirurgie virtuelle — voie antérieure** : vidéo VERTEX© montrant l'abord antérieur — thoracotomie virtuelle, identification des gros vaisseaux (zone rouge danger), exposition des corps vertébraux | Screencast commenté 6 min |
+| M28-S05-001 | 🎬 ANIMATION | **Placement de vis pédiculaire virtuel** : animation VERTEX© montrant le placement d'une vis — choix du point d'entrée, sélection du diamètre/longueur, trajectoire avec feedback de densité osseuse, détection de brèche (alerte visuelle/sonore) | Capture de simulation |
+| M28-S05-002 | 🎬 ANIMATION | **Mise en place de tige et correction** : animation VERTEX© montrant l'insertion de la tige, le cintrage virtuel, la manœuvre de dérotation, et l'analyse en temps réel de la correction obtenue et des forces sur les vis | Capture de simulation |
+| M28-S06-001 | 🎬 ANIMATION | **Simulation d'ostéotomie PSO** : animation VERTEX© montrant l'ostéotomie de soustraction pédiculaire — résection osseuse pas à pas, fermeture du coin, correction de la lordose, contraintes résultantes sur les implants adjacents | Capture de simulation |
+| M28-S07-001 | 📷 IMAGE | **Tableau de bord d'évaluation** : capture d'écran du dashboard de scoring VERTEX© — précision du placement des vis (%), respect de la stérilité, temps opératoire, détection de brèches, score global avec code couleur | Capture de dashboard |
+| M28-S07-002 | 📊 INFOGRAPHIE | **Système de gamification VERTEX©** : infographie montrant la progression — niveaux (Interne → Chef de clinique → Spécialiste → Expert), badges, leaderboard, objectifs de compétence, déblocage de cas complexes | Infographie gamification |
+| M28-S08-001 | 📷 IMAGE | **Mode VR VERTEX©** : photo d'un utilisateur avec casque VR interagissant avec le modèle de rachis 3D — contrôleurs haptiques simulant les instruments chirurgicaux | Photo immersive |
+| M28-S08-002 | 🧊 MODÈLE 3D | **Salle d'opération virtuelle** : modèle 3D interactif de la salle d'opération complète dans VERTEX© — patient, table, instruments, écrans de navigation, microscope, C-arm | Modèle WebGL/WebXR |
+| M28-S09-001 | 📊 INFOGRAPHIE | **VERTEX© — feuille de route de développement** : infographie montrant les 10 phases de développement — recherche, prototype, MVP, bêta, v1.0, avec timeline et jalons | Timeline de projet |
+| M28-S10-001 | 📐 SCHÉMA | **Intégration LMS-VERTEX©** : schéma d'intégration montrant la connexion entre le LMS de la formation et VERTEX© — SSO, xAPI statements, progression synchronisée, rapports de performance | Schéma d'intégration |
 
 ---
 
@@ -915,7 +915,7 @@
 | M29-S01-001 | 📷 IMAGE | **Images pour QCM image-based** : banque de 50+ radiographies, IRM, scanners, photos cliniques avec différentes pathologies à identifier — chaque image avec la question et les réponses | Banque d'images quiz |
 | M29-S02-001 | 🎥 VIDÉO | **Vidéos pour vidéo-based questions** : 10+ extraits vidéo chirurgicaux (2-3 min chacun) avec des questions d'analyse — identifier la technique, le niveau, la complication | Clips vidéo courts |
 | M29-S03-001 | 📐 SCHÉMA | **Captures d'écran du dashboard** : maquettes de l'interface du LMS — dashboard apprenant, quiz en cours, résultats, badges | Maquettes UI |
-| M29-S04-001 | 📷 IMAGE | **Captures d'écran de l'épreuve SpineSim©** : images montrant la Section E de l'examen de certification — cas de simulation avec consignes, timer, critères d'évaluation affichés | Captures d'examen |
+| M29-S04-001 | 📷 IMAGE | **Captures d'écran de l'épreuve VERTEX©** : images montrant la Section E de l'examen de certification — cas de simulation avec consignes, timer, critères d'évaluation affichés | Captures d'examen |
 
 ---
 
@@ -956,12 +956,12 @@
 | Scolioses secondaires acquises (14.5) | 4 | 📷 📐 |
 | Scoliose métabolique (14.6) | 3 | 📷 📐 |
 | Voies d'abord chirurgicales (15.6) | 6 | 🎬 🎥 📐 |
-| SpineSim© lien & planification (17.5-17.6) | 6 | 📷 🎥 📐 🎬 |
+| VERTEX© lien & planification (17.5-17.6) | 6 | 📷 🎥 📐 🎬 |
 | Transfusion & équipe (20.5-20.6) | 6 | 📊 📐 |
 | Télémédecine (21.5) | 3 | 📷 📐 📊 |
 | Communication patient (22.4) | 3 | 🎥 📊 📐 |
 | Registres (25.6) | 2 | 📊 📐 |
-| **Module 28 — SpineSim©** | **20** | 📷 🎬 📐 🎥 📊 🧊 |
+| **Module 28 — VERTEX©** | **20** | 📷 🎬 📐 🎥 📊 🧊 |
 | Évaluation & certification (29) | 1 ajouté | 📷 |
 
 ### Répartition par section ajoutée (vague 2 — instruments, préparation, lacunes cliniques)
@@ -984,14 +984,14 @@
 
 | Priorité | Médias | Justification |
 |----------|--------|---------------|
-| **P1 — Critique** | Animations chirurgicales (rotation de tige, PSO, VBT), radiographies annotées, algorithmes décisionnels, captures SpineSim©, instruments chirurgicaux, protocoles d'analgésie et IONM | Cœur de la formation, indispensables |
-| **P2 — Important** | Schémas anatomiques, classifications illustrées (Lenke, 3D, Rigo), cas cliniques, modèles 3D SpineSim©, voies d'abord, préparation patient, check-lists | Compréhension fondamentale |
+| **P1 — Critique** | Animations chirurgicales (rotation de tige, PSO, VBT), radiographies annotées, algorithmes décisionnels, captures VERTEX©, instruments chirurgicaux, protocoles d'analgésie et IONM | Cœur de la formation, indispensables |
+| **P2 — Important** | Schémas anatomiques, classifications illustrées (Lenke, 3D, Rigo), cas cliniques, modèles 3D VERTEX©, voies d'abord, préparation patient, check-lists | Compréhension fondamentale |
 | **P3 — Enrichissement** | Vidéos de dépistage/kinésithérapie, modèles 3D interactifs, photos de bloc, télémédecine, registres, syndromes rares, tumeurs rachidiennes, traction halo | Valeur ajoutée pédagogique |
-| **P4 — Optionnel** | Glossaire illustré, maquettes UI, photos d'implants, gamification SpineSim©, halo-vest ambulatoire | Peuvent être ajoutés ultérieurement |
+| **P4 — Optionnel** | Glossaire illustré, maquettes UI, photos d'implants, gamification VERTEX©, halo-vest ambulatoire | Peuvent être ajoutés ultérieurement |
 
 ---
 
 *Guide de production médias — Formation scoliose — Février 2026*
 *~513 médias à produire (dont ~117 nouveaux ajoutés en 2 vagues), organisés par module et priorité*
-*Inclut 20 médias SpineSim©, 13 médias instruments/ancillaires, et 6 médias traction halo*
-*Inclut 20 médias spécifiques au Module 28 (Simulation SpineSim©)*
+*Inclut 20 médias VERTEX©, 13 médias instruments/ancillaires, et 6 médias traction halo*
+*Inclut 20 médias spécifiques au Module 28 (Simulation VERTEX©)*

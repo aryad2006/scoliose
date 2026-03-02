@@ -1,4 +1,4 @@
-# BUDGET GLOBAL — FORMATION SCOLIOSE AVEC SPINESIM©
+﻿# BUDGET GLOBAL — FORMATION SCOLIOSE AVEC VERTEX©
 
 ---
 
@@ -8,7 +8,7 @@
 |-------|---------------|-----------|
 | **A. Création de contenu pédagogique** | 180 000 — 280 000 € | 4-6% |
 | **B. Production médias** | 250 000 — 400 000 € | 5-8% |
-| **C. Développement SpineSim©** | 3 600 000 — 5 000 000 € | 70-75% |
+| **C. Développement VERTEX©** | 3 600 000 — 5 000 000 € | 70-75% |
 | **D. Développement plateforme LMS** | 300 000 — 500 000 € | 6-10% |
 | **E. Infrastructure et hébergement (an 1)** | 35 000 — 55 000 € | 1% |
 | **F. Marketing et lancement** | 80 000 — 150 000 € | 2-3% |
@@ -16,7 +16,7 @@
 | **H. Ressources humaines projet** | 200 000 — 350 000 € | 4-7% |
 | **TOTAL PROJET** | **4 695 000 — 6 835 000 €** | **100%** |
 
-> **Note** : SpineSim© représente ~70-75% du budget total car il s'agit d'un développement logiciel complexe (FEM, GPU, VR). Sans SpineSim, le budget formation serait de ~1 100 000 - 1 835 000 €.
+> **Note** : VERTEX© représente ~70-75% du budget total car il s'agit d'un développement logiciel complexe (FEM, GPU, VR). Sans VERTEX, le budget formation serait de ~1 100 000 - 1 835 000 €.
 
 ---
 
@@ -62,9 +62,9 @@
 - 1 sound designer
 - 1 photographe médical
 
-### C. Développement SpineSim© (3 600 000 — 5 000 000 €)
+### C. Développement VERTEX© (3 600 000 — 5 000 000 €)
 
-> Détail complet dans `SPINESIM_SPECIFICATIONS_TECHNIQUES.md §8`
+> Détail complet dans `VERTEX_SPECIFICATIONS_TECHNIQUES.md §8`
 
 | Phase | Durée | Équipe | Coût |
 |-------|-------|--------|------|
@@ -85,7 +85,7 @@
 | Consultants/experts externes | | | 100 000 — 150 000 € |
 | Certification CE/ISO 13485 (si applicable) | | | 200 000 — 385 000 € |
 
-**Équipe SpineSim (11-12 personnes)** :
+**Équipe VERTEX (11-12 personnes)** :
 - 1 Lead developer Julia
 - 2 Développeurs biomécaniciens (PhD)
 - 2 Développeurs backend Julia
@@ -102,15 +102,15 @@
 |----------|------|-----------|---------------|
 | **Option 1 : LMS open-source customisé** (Moodle, Canvas) | 120 000 — 200 000 € | Rapide, communauté, plugins | Limité en personnalisation |
 | **Option 2 : Développement sur mesure** (Node.js/Django) | 300 000 — 500 000 € | Contrôle total, UX optimale | Plus long, plus coûteux |
-| **Option 3 : LMS SaaS + personnalisation** (Thinkific, Teachable Pro) | 50 000 — 100 000 € + abonnement | Très rapide | Limité pour SpineSim |
+| **Option 3 : LMS SaaS + personnalisation** (Thinkific, Teachable Pro) | 50 000 — 100 000 € + abonnement | Très rapide | Limité pour VERTEX |
 
-> **Recommandation** : Option 1 (Moodle / Canvas LMS) + développement de plugins SpineSim sur mesure. Meilleur rapport qualité/prix avec intégration LTI 1.3 native.
+> **Recommandation** : Option 1 (Moodle / Canvas LMS) + développement de plugins VERTEX sur mesure. Meilleur rapport qualité/prix avec intégration LTI 1.3 native.
 
 | Sous-poste (Option 1) | Coût |
 |----------------------|------|
 | Installation et configuration Moodle/Canvas | 15 000 — 25 000 € |
 | Thème custom (UX/UI) | 20 000 — 40 000 € |
-| Plugin SpineSim (LTI + xAPI) | 30 000 — 50 000 € |
+| Plugin VERTEX (LTI + xAPI) | 30 000 — 50 000 € |
 | Plugin quiz avancé (4 niveaux, cas cliniques) | 20 000 — 35 000 € |
 | Plugin certification + proctoring | 15 000 — 25 000 € |
 | Plugin analytics/dashboard | 10 000 — 20 000 € |
@@ -123,7 +123,7 @@
 | Poste | Coût/mois | Coût/an |
 |-------|-----------|---------|
 | Serveurs K8s (API, LMS) | 400-800 € | 4 800 — 9 600 € |
-| GPU nodes (SpineSim) | 800-2 400 € | 9 600 — 28 800 € |
+| GPU nodes (VERTEX) | 800-2 400 € | 9 600 — 28 800 € |
 | Base de données (PostgreSQL managed) | 600 € | 7 200 € |
 | Cache (Redis cluster) | 400 € | 4 800 € |
 | Stockage S3 (5 TB) | 120 € | 1 440 € |
@@ -153,7 +153,7 @@
 | Accréditation CME/CPD internationale | 10 000 — 20 000 € |
 | RGPD : DPO externe, PIA, documentation | 10 000 — 20 000 € |
 | Certification HDS hébergeur | Inclus dans hébergement |
-| Certification ISO 13485 (si SpineSim = DM) | 25 000 — 50 000 € |
+| Certification ISO 13485 (si VERTEX = DM) | 25 000 — 50 000 € |
 | Juridique : CGV, CGU, contrats, PI | 10 000 — 20 000 € |
 
 ### H. Ressources humaines projet (200 000 — 350 000 €)
@@ -174,7 +174,7 @@
 |-------|---------|
 | Infrastructure cloud | 35 000 — 55 000 € |
 | Maintenance et évolutions LMS | 30 000 — 50 000 € |
-| Maintenance SpineSim (2-3 devs) | 200 000 — 350 000 € |
+| Maintenance VERTEX (2-3 devs) | 200 000 — 350 000 € |
 | Mise à jour contenu (annuelle) | 30 000 — 50 000 € |
 | Support technique (1-2 personnes) | 50 000 — 80 000 € |
 | Marketing continu | 30 000 — 50 000 € |
@@ -221,15 +221,15 @@
 
 | Risque | Impact | Probabilité | Mitigation |
 |--------|--------|-------------|------------|
-| Dépassement SpineSim | +30-50% | Moyenne | MVP d'abord, phases itératives |
+| Dépassement VERTEX | +30-50% | Moyenne | MVP d'abord, phases itératives |
 | Retard de lancement | +6-12 mois | Moyenne | Lancement progressif par module |
 | Adoption faible | Revenus ↓ 50% | Faible | Modèle freemium, partenariats |
-| Concurrence | Prix ↓ 30% | Faible | Différenciation SpineSim (unique) |
+| Concurrence | Prix ↓ 30% | Faible | Différenciation VERTEX (unique) |
 | Réglementation CE | +200-400 K€ | Moyenne | Anticiper dès la conception |
 | Turnover équipe technique | +20% coûts | Moyenne | Documentation, code review, rétention |
 
 ---
 
-*Budget global — Formation Scoliose avec SpineSim© — Version 1.0*
+*Budget global — Formation Scoliose avec VERTEX© — Version 1.0*
 *Estimations basées sur les prix du marché français 2024-2025*
 *À actualiser lors de la phase de contractualisation*

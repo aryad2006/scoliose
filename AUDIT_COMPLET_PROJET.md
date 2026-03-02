@@ -1,4 +1,4 @@
-# AUDIT COMPLET — Formation Scoliose avec SpineSim©
+﻿# AUDIT COMPLET — Formation Scoliose avec VERTEX©
 ## Rapport structuré en 10 dimensions
 
 *Date : Février 2026 — Version 1.0*
@@ -80,7 +80,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | LOW |
 | **Description** | Aucun contenu explicite sur les objectifs d'apprentissage (ILO — Intended Learning Outcomes) par module. Les « Objectifs pédagogiques » ne sont pas formulés selon la taxonomie de Bloom (« l'apprenant sera capable de... »). |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — tous les modules |
-| **Solution proposée** | Ajouter en début de chaque module une section « Objectifs d'apprentissage » avec 3-5 ILOs formulés selon Bloom (savoir, comprendre, appliquer, analyser, évaluer, créer). Mapper ces ILOs aux questions de quiz et aux compétences SpineSim. |
+| **Solution proposée** | Ajouter en début de chaque module une section « Objectifs d'apprentissage » avec 3-5 ILOs formulés selon Bloom (savoir, comprendre, appliquer, analyser, évaluer, créer). Mapper ces ILOs aux questions de quiz et aux compétences VERTEX. |
 
 ---
 
@@ -128,7 +128,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 
 ---
 
-## 3. LACUNES TECHNIQUES SPINESIM
+## 3. LACUNES TECHNIQUES VERTEX
 
 ### 3.1
 | Champ | Valeur |
@@ -136,9 +136,9 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | TECH-01 |
 | **Catégorie** | MISSING |
 | **Priorité** | CRITICAL |
-| **Description** | Aucune mention de la réglementation des dispositifs médicaux (FDA 510(k), marquage CE MDR 2017/745, classification logiciel dispositif médical — SaMD). SpineSim modélise des anatomies patient-spécifiques (import DICOM), calcule des contraintes biomécaniques et produit des « prédictions » (PJK, probabilité de révision). Selon la FDA et l'UE, un logiciel qui analyse des données patient pour aider à la décision clinique est un SaMD de Classe IIa minimum. Ignorer cette contrainte expose à un risque juridique majeur et potentiellement à l'interdiction de commercialisation. |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — aucune section réglementaire SaMD |
-| **Solution proposée** | 1) Ajouter une section « 21. Réglementation SaMD » couvrant la classification FDA/CE, la voie réglementaire 510(k)/De Novo, le marquage CE MDR, le QMS (ISO 13485), les normes IEC 62304 (cycle logiciel), IEC 82304 (produit santé), et ISO 14971 (gestion des risques). 2) Alternative : positionner SpineSim explicitement comme outil pédagogique NON destiné à la planification chirurgicale réelle (disclaimer « for educational purposes only »), ce qui réduirait les exigences mais limiterait la proposition de valeur. 3) Budgéter €100-300K pour le processus réglementaire dans le budget global. |
+| **Description** | Aucune mention de la réglementation des dispositifs médicaux (FDA 510(k), marquage CE MDR 2017/745, classification logiciel dispositif médical — SaMD). VERTEX modélise des anatomies patient-spécifiques (import DICOM), calcule des contraintes biomécaniques et produit des « prédictions » (PJK, probabilité de révision). Selon la FDA et l'UE, un logiciel qui analyse des données patient pour aider à la décision clinique est un SaMD de Classe IIa minimum. Ignorer cette contrainte expose à un risque juridique majeur et potentiellement à l'interdiction de commercialisation. |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — aucune section réglementaire SaMD |
+| **Solution proposée** | 1) Ajouter une section « 21. Réglementation SaMD » couvrant la classification FDA/CE, la voie réglementaire 510(k)/De Novo, le marquage CE MDR, le QMS (ISO 13485), les normes IEC 62304 (cycle logiciel), IEC 82304 (produit santé), et ISO 14971 (gestion des risques). 2) Alternative : positionner VERTEX explicitement comme outil pédagogique NON destiné à la planification chirurgicale réelle (disclaimer « for educational purposes only »), ce qui réduirait les exigences mais limiterait la proposition de valeur. 3) Budgéter €100-300K pour le processus réglementaire dans le budget global. |
 
 ### 3.2
 | Champ | Valeur |
@@ -147,7 +147,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | INSUFFICIENT |
 | **Priorité** | HIGH |
 | **Description** | La dépendance exclusive à CUDA.jl pour l'accélération GPU côté serveur impose des GPU NVIDIA. Aucune stratégie pour le support AMD (ROCm/AMDGPU.jl) ou Intel (oneAPI). Côté client, le pré-requis « NVIDIA GTX 1060+ » exclut : tous les Mac Apple Silicon (M1/M2/M3), les Chromebooks, les PC portables sans GPU discret (~60% du marché laptop), et les appareils institutionnels (hôpitaux) souvent équipés de GPU intégrés. |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §5 (GPU), `PLAN_FORMATION_SCOLIOSE.md` — Ressources techniques requises |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §5 (GPU), `PLAN_FORMATION_SCOLIOSE.md` — Ressources techniques requises |
 | **Solution proposée** | 1) Serveur : spécifier une abstraction GPU via KernelAbstractions.jl (déjà listé comme dépendance) qui supporte CUDA, ROCm et Metal. 2) Client : clarifier que le GPU dédié est requis uniquement pour le mode desktop haute-fidélité, et que le mode navigateur WebGL fonctionne sur GPU intégré (Intel HD 620+, Apple M1+). 3) Ajouter un test de compatibilité automatique au lancement (WebGL capabilities check). 4) Considérer WebGPU comme successeur de WebGL à moyen terme. |
 
 ### 3.3
@@ -157,7 +157,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | INSUFFICIENT |
 | **Priorité** | HIGH |
 | **Description** | Les spécifications de charge concurrent pour le solveur FEM sont absentes. Les tests de performance mentionnent 500 utilisateurs simultanés pour « la plateforme web » mais pas pour les sessions de simulation biomécanique (qui consomment GPU/CPU serveur-side significatifs). Un seul solveur FEM en Julia avec CUDA peut servir combien de simulations simultanées ? Quel est le temps de réponse sous charge ? Le coût GPU serveur par session ? |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §15 (Tests de performance), §10 (Déploiement) |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §15 (Tests de performance), §10 (Déploiement) |
 | **Solution proposée** | 1) Définir un objectif de sessions FEM simultanées (ex. 50-100) avec un budget hardware associé. 2) Spécifier l'architecture de queuing/load balancing pour les jobs FEM (ex. Celery/Redis queue avec pool de workers GPU). 3) Estimer le coût cloud GPU par session (ex. A100 à ~$3/h, si une session = 10 min GPU → €0.50/session). 4) Inclure dans les tests de performance un benchmark de solver concurrency. |
 
 ### 3.4
@@ -167,7 +167,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | MISSING |
 | **Priorité** | MEDIUM |
 | **Description** | Aucune mention de HIPAA (Health Insurance Portability and Accountability Act) pour le marché américain, bien que le modèle économique cible un marché international (i18n EN, 79K professionnels adressables). Seule la RGPD est couverte. Pour les clients institutionnels américains (universités, hôpitaux), la conformité HIPAA est un deal-breaker. |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §12 (Sécurité), `CAHIER_DES_CHARGES_LMS.md` — sécurité |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §12 (Sécurité), `CAHIER_DES_CHARGES_LMS.md` — sécurité |
 | **Solution proposée** | Ajouter une section « Conformité HIPAA » couvrant : PHI (Protected Health Information), BAA (Business Associate Agreement), encryption at rest (AES-256) et in transit (TLS 1.3), audit logging, access controls, breach notification. Certaines mesures (chiffrement, audit logs) sont déjà prévues pour la RGPD et sont réutilisables. |
 
 ### 3.5
@@ -177,8 +177,8 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | INSUFFICIENT |
 | **Priorité** | MEDIUM |
 | **Description** | Le dataset de validation biomécanique (50 cas de référence avec tolérance ±5%) est modeste pour un simulateur revendiquant une fidélité FEM. Les publications de référence (Panjabi, White) sont anciennes. Pas de protocole de validation clinique prospective (comparaison simulation vs résultat chirurgical réel). |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §15.5 (Tests de régression biomécanique), §8 (Validation) |
-| **Solution proposée** | 1) Augmenter à ≥200 cas de référence, incluant les 6 types Lenke, les scolioses neuromusculaires, et les adultes. 2) Définir un protocole de validation clinique : comparer les prédictions de correction SpineSim avec les résultats postopératoires réels (angle de Cobb post-op, SVA) sur une cohorte prospective de 30-50 patients. 3) Publier les résultats de validation dans un journal peer-reviewed (Spine, JBJS). |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §15.5 (Tests de régression biomécanique), §8 (Validation) |
+| **Solution proposée** | 1) Augmenter à ≥200 cas de référence, incluant les 6 types Lenke, les scolioses neuromusculaires, et les adultes. 2) Définir un protocole de validation clinique : comparer les prédictions de correction VERTEX avec les résultats postopératoires réels (angle de Cobb post-op, SVA) sur une cohorte prospective de 30-50 patients. 3) Publier les résultats de validation dans un journal peer-reviewed (Spine, JBJS). |
 
 ### 3.6
 | Champ | Valeur |
@@ -187,8 +187,8 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | SUGGESTION |
 | **Priorité** | LOW |
 | **Description** | Pas de mention du support Apple Vision Pro (visionOS) ni de la réalité mixte (MR). Les spécifications VR ne mentionnent que Meta Quest 2/3 et HTC Vive. Le marché médical AR/MR est en forte croissance avec visionOS et les HoloLens. |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §18.2 (Accessibilité VR/XR) |
-| **Solution proposée** | Ajouter à la roadmap (Phase 9-10) le support visionOS via WebXR ou SDK natif SwiftUI+RealityKit. Le positionnement MR (superposition du modèle SpineSim sur un mannequin réel) serait un différenciateur majeur. |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §18.2 (Accessibilité VR/XR) |
+| **Solution proposée** | Ajouter à la roadmap (Phase 9-10) le support visionOS via WebXR ou SDK natif SwiftUI+RealityKit. Le positionnement MR (superposition du modèle VERTEX sur un mannequin réel) serait un différenciateur majeur. |
 
 ### 3.7
 | Champ | Valeur |
@@ -197,7 +197,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Catégorie** | MISSING |
 | **Priorité** | LOW |
 | **Description** | Aucune stratégie de pérennité de l'écosystème Julia côté serveur. Julia reste un langage de niche (~0.3% TIOBE). Si des packages clés (FinEtools.jl, Ferrite.jl, Genie.jl) deviennent non-maintenus, le projet est vulnérable. Pas de plan B. |
-| **Localisation** | `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §9 (Dépendances Julia) |
+| **Localisation** | `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §9 (Dépendances Julia) |
 | **Solution proposée** | 1) Documenter les packages critiques et leur statut de maintenance (commits récents, nombre de contributeurs, funding). 2) Prévoir un budget d'implication dans la communauté Julia (contribution open source, sponsoring de packages critiques). 3) Identifier des alternatives en Python (FEniCS, dolfinx) ou C++ (deal.II) au cas où. 4) Architecturer le solver avec une interface API propre pour faciliter un rewrite futur si nécessaire. |
 
 ---
@@ -230,9 +230,9 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | XREF-03 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | HIGH |
-| **Description** | **SpineSim v1.0 à mois 40, mais intégration LMS à mois 18** : Le `CALENDRIER_PRODUCTION.md` montre SpineSim v1.0 au mois 40 (fin du projet global). L'intégration LMS est prévue aux mois 8-18. La formation est lancée au mois 22. Comment intégrer un simulateur qui ne sera complet qu'18 mois après le lancement ? Quelles fonctionnalités SpineSim sont disponibles au mois 22 vs mois 40 ? |
-| **Localisation** | `CALENDRIER_PRODUCTION.md` — Gantt ; `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` — §7 (Phases) ; `CAHIER_DES_CHARGES_LMS.md` — §4 (Intégration SpineSim) |
-| **Solution proposée** | 1) Définir explicitement un « Minimum Viable Simulator (MVS) » pour le mois 22 : quels modules SpineSim sont disponibles ? (suggestion : anatomie 3D, vis pédiculaires, 3-5 scénarios Lenke basiques — sans VR, sans FEM complet). 2) Documenter la roadmap incrémentale SpineSim dans le calendrier de production avec les features par phase. 3) Clarifier dans le plan de formation quels ateliers SpineSim sont disponibles au lancement vs ajoutés progressivement. |
+| **Description** | **VERTEX v1.0 à mois 40, mais intégration LMS à mois 18** : Le `CALENDRIER_PRODUCTION.md` montre VERTEX v1.0 au mois 40 (fin du projet global). L'intégration LMS est prévue aux mois 8-18. La formation est lancée au mois 22. Comment intégrer un simulateur qui ne sera complet qu'18 mois après le lancement ? Quelles fonctionnalités VERTEX sont disponibles au mois 22 vs mois 40 ? |
+| **Localisation** | `CALENDRIER_PRODUCTION.md` — Gantt ; `VERTEX_SPECIFICATIONS_TECHNIQUES.md` — §7 (Phases) ; `CAHIER_DES_CHARGES_LMS.md` — §4 (Intégration VERTEX) |
+| **Solution proposée** | 1) Définir explicitement un « Minimum Viable Simulator (MVS) » pour le mois 22 : quels modules VERTEX sont disponibles ? (suggestion : anatomie 3D, vis pédiculaires, 3-5 scénarios Lenke basiques — sans VR, sans FEM complet). 2) Documenter la roadmap incrémentale VERTEX dans le calendrier de production avec les features par phase. 3) Clarifier dans le plan de formation quels ateliers VERTEX sont disponibles au lancement vs ajoutés progressivement. |
 
 ### 4.4
 | Champ | Valeur |
@@ -262,7 +262,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | MEDIUM |
 | **Description** | **Plateforme LMS** : Le `CAHIER_DES_CHARGES_LMS.md` spécifie un développement custom (Vue.js/NestJS ou Django, PostgreSQL) avec 11 lots de livraison, tandis que d'autres endroits du projet mentionnent Moodle/Canvas comme options. Un développement custom est 3-5x plus cher qu'un déploiement Moodle avec plugins mais offre plus de contrôle. Le choix n'est pas tranché. |
 | **Localisation** | `CAHIER_DES_CHARGES_LMS.md` — §3 (Architecture technique) ; mentions Moodle dans d'autres documents |
-| **Solution proposée** | Trancher : 1) Custom build (comme détaillé dans le CdC) — budget €300-500K, timeline 12 mois, risque de non-delivery plus élevé, ou 2) Moodle + plugins custom (LTI SpineSim, quiz avancé, analytics) — budget €100-200K, timeline 6-8 mois, compromis sur l'UX. Faire un tableau comparatif décisionnel formalisé. |
+| **Solution proposée** | Trancher : 1) Custom build (comme détaillé dans le CdC) — budget €300-500K, timeline 12 mois, risque de non-delivery plus élevé, ou 2) Moodle + plugins custom (LTI VERTEX, quiz avancé, analytics) — budget €100-200K, timeline 6-8 mois, compromis sur l'UX. Faire un tableau comparatif décisionnel formalisé. |
 
 ---
 
@@ -274,7 +274,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | STRUCT-01 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | HIGH |
-| **Description** | ~~**Erreur de numérotation des sections dans le Module 29**~~ : **✅ RÉSOLU — Vérification montre que 28.1 et 28.3 sont bien dans le Module 28 (SpineSim), pas dans le Module 29. Le Module 29 utilise correctement 29.1-29.5. Ce constat était invalide.** |
+| **Description** | ~~**Erreur de numérotation des sections dans le Module 29**~~ : **✅ RÉSOLU — Vérification montre que 28.1 et 28.3 sont bien dans le Module 28 (VERTEX), pas dans le Module 29. Le Module 29 utilise correctement 29.1-29.5. Ce constat était invalide.** |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — Module 29, lignes ~2370 (« #### 28.1 Quiz par module ») et ~2440 (« #### 28.3 Évaluation par palier ») |
 | **Solution proposée** | Corriger « #### 28.1 Quiz par module » → « #### 29.1 Quiz par module » et « #### 28.3 Évaluation par palier » → « #### 29.3 Évaluation par palier ». |
 
@@ -340,7 +340,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | MEDIUM |
 | **Description** | **Activités collaboratives limitées** : Hormis le forum et les webinaires, aucune activité d'apprentissage par les pairs n'est structurée (peer review des cas cliniques, correction croisée, travaux de groupe, journal clubs). La littérature EdTech montre que l'apprentissage social augmente la rétention de 50%. |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — modalités ; `GUIDE_FORMATEUR.md` — §4 (Animation) |
-| **Solution proposée** | Ajouter : 1) Peer review des cas cliniques SpineSim (observer et commenter la simulation d'un pair, guidé par une grille d'évaluation). 2) Journal clubs mensuels : lecture collective d'un article récent avec discussion structurée. 3) Travaux collaboratifs : planification chirurgicale en binôme sur un cas SpineSim complexe. |
+| **Solution proposée** | Ajouter : 1) Peer review des cas cliniques VERTEX (observer et commenter la simulation d'un pair, guidé par une grille d'évaluation). 2) Journal clubs mensuels : lecture collective d'un article récent avec discussion structurée. 3) Travaux collaboratifs : planification chirurgicale en binôme sur un cas VERTEX complexe. |
 
 ### 6.4
 | Champ | Valeur |
@@ -382,7 +382,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | PRAT-03 |
 | **Catégorie** | MISSING |
 | **Priorité** | LOW |
-| **Description** | **Pas d'accès aux logiciels de planification chirurgicale commerciaux (Surgimap, Mediview, CASSOS)** ni de tutorial d'utilisation. SpineSim est un simulateur pédagogique, pas un outil de planification clinical-grade. Les apprenants ne sont pas formés aux outils qu'ils utiliseront en pratique. |
+| **Description** | **Pas d'accès aux logiciels de planification chirurgicale commerciaux (Surgimap, Mediview, CASSOS)** ni de tutorial d'utilisation. VERTEX est un simulateur pédagogique, pas un outil de planification clinical-grade. Les apprenants ne sont pas formés aux outils qu'ils utiliseront en pratique. |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — Module 17, Annexe E |
 | **Solution proposée** | Ajouter des vidéos tutorielles de 15-20 min pour les 2-3 logiciels de planification les plus utilisés (Surgimap, CASSOS). Négocier des licences éducatives temporaires avec les éditeurs. |
 
@@ -408,7 +408,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | HIGH |
 | **Description** | **Pas de budget pour la réglementation SaMD/CE/FDA** : Le budget prévoit €50-100K pour « Certification/réglementaire » mais cela couvre uniquement l'accréditation DPC et les certifications pédagogiques. Aucun budget pour un processus de marquage CE ou 510(k) qui coûte typiquement €100-500K (incluant consultant réglementaire, rédaction du Technical File, tests IEC 62304, audit de l'organisme notifié). Voir TECH-01. |
 | **Localisation** | `BUDGET_GLOBAL_FORMATION.md` — Certification/réglementaire |
-| **Solution proposée** | 1) Si SpineSim est positionné comme SaMD : ajouter €200-500K au budget réglementaire + 12-18 mois au calendrier (soumission en Phase 7-8). 2) Si SpineSim est positionné comme « educational only » : formaliser ce choix dans les specs et ajouter des disclaimers légaux sur tout output de simulation. |
+| **Solution proposée** | 1) Si VERTEX est positionné comme SaMD : ajouter €200-500K au budget réglementaire + 12-18 mois au calendrier (soumission en Phase 7-8). 2) Si VERTEX est positionné comme « educational only » : formaliser ce choix dans les specs et ajouter des disclaimers légaux sur tout output de simulation. |
 
 ### 8.3
 | Champ | Valeur |
@@ -418,7 +418,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | MEDIUM |
 | **Description** | **Budget contenu sous-estimé pour le volume produit** : €180-280K pour la création de contenu de 29 modules totalisant 89h. Cela représente €2 000-3 150/heure de formation produite. Le benchmark EdTech médical est €3 000-8 000/heure pour du contenu expert validé (source : Training Industry). Le bas de la fourchette (€180K) est irréaliste si le contenu est rédigé par des chirurgiens experts (honoraires typiques : €150-300/h). |
 | **Localisation** | `BUDGET_GLOBAL_FORMATION.md` — Création de contenu |
-| **Solution proposée** | 1) Revoir à la hausse : €350-500K minimum pour 89h de contenu expert. 2) Détailler le budget par poste : rédaction (chirurgiens auteurs), relecture (comité scientifique), mise en forme (ingénieur pédagogique), traduction (4 langues). 3) Ou réduire le volume à 50-60h en se concentrant sur le contenu différenciant (les modules chirurgicaux détaillés + SpineSim). |
+| **Solution proposée** | 1) Revoir à la hausse : €350-500K minimum pour 89h de contenu expert. 2) Détailler le budget par poste : rédaction (chirurgiens auteurs), relecture (comité scientifique), mise en forme (ingénieur pédagogique), traduction (4 langues). 3) Ou réduire le volume à 50-60h en se concentrant sur le contenu différenciant (les modules chirurgicaux détaillés + VERTEX). |
 
 ### 8.4
 | Champ | Valeur |
@@ -496,7 +496,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | CRITICAL |
 | **Description** | **Aucune validation marché effectuée** : Le document lui-même note « À mettre à jour après la phase de validation marché (interviews, landing page test) ». Les projections financières (€4.7-6.8M d'investissement) reposent sur des benchmarks EdTech génériques (Osmosis, Lecturio) qui ne sont pas des plateformes de simulation chirurgicale. La taille de marché (79K) est une estimation théorique sans enquête terrain. Investir >€4M sans validation préalable du Product-Market Fit est un risque majeur. |
 | **Localisation** | `MODELE_ECONOMIQUE.md` — note de fin de document |
-| **Solution proposée** | **Avant tout développement majeur** : 1) Conduire 30-50 interviews qualitatives (chirurgiens du rachis, chefs de service, DPC, DRH hôpitaux). 2) Créer une landing page avec proposition de valeur + collecte d'emails (objectif : 500 pré-inscriptions en 3 mois comme signal de PMF). 3) Tester le pricing via conjoint analysis ou Gabor-Granger. 4) Valider l'intérêt pour SpineSim spécifiquement (vs contenu seul) par un prototype cliquable. |
+| **Solution proposée** | **Avant tout développement majeur** : 1) Conduire 30-50 interviews qualitatives (chirurgiens du rachis, chefs de service, DPC, DRH hôpitaux). 2) Créer une landing page avec proposition de valeur + collecte d'emails (objectif : 500 pré-inscriptions en 3 mois comme signal de PMF). 3) Tester le pricing via conjoint analysis ou Gabor-Granger. 4) Valider l'intérêt pour VERTEX spécifiquement (vs contenu seul) par un prototype cliquable. |
 
 ### 10.2
 | Champ | Valeur |
@@ -516,7 +516,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | HIGH |
 | **Description** | **Risque de concurrence sous-estimé** : AO Spine (filiale éducative de la fondation AO, la plus grande organisation d'éducation orthopédique au monde) dispose déjà d'une plateforme e-learning complète, de 500+ chirurgiens experts, d'un réseau de 40 000+ membres, et de budgets supérieurs à €20M/an. AO Spine pourrait développer un simulateur similaire plus rapidement grâce à ses ressources. Le modèle économique mentionne AO Spine dans le benchmark mais sous-estime la menace concurrentielle. |
 | **Localisation** | `MODELE_ECONOMIQUE.md` — §2 (Avantage concurrentiel) |
-| **Solution proposée** | 1) Réaliser une analyse concurrentielle détaillée (SWOT, Porter) incluant AO Spine, ISSGF, Medtronic Academy, DePuy Synthes Institute, Stryker Spine Academy. 2) Identifier une niche défendable (ex. francophonie + simulation FEM = différenciateur unique). 3) Envisager une stratégie de partenariat plutôt que de concurrence avec AO Spine (licence SpineSim à AO Spine ?). 4) Protéger la propriété intellectuelle (brevet sur les algorithmes FEM spécifiques). |
+| **Solution proposée** | 1) Réaliser une analyse concurrentielle détaillée (SWOT, Porter) incluant AO Spine, ISSGF, Medtronic Academy, DePuy Synthes Institute, Stryker Spine Academy. 2) Identifier une niche défendable (ex. francophonie + simulation FEM = différenciateur unique). 3) Envisager une stratégie de partenariat plutôt que de concurrence avec AO Spine (licence VERTEX à AO Spine ?). 4) Protéger la propriété intellectuelle (brevet sur les algorithmes FEM spécifiques). |
 
 ### 10.4
 | Champ | Valeur |
@@ -547,7 +547,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | # | ID | Action | Effort estimé | Impact | Statut |
 |---|-----|--------|--------------|--------|--------|
 | 1 | ECO-01 | Validation marché (interviews, landing page, pricing test) | 2-3 mois, €10-30K | Valide ou invalide l'ensemble du projet | **✅ Plan défini** — `MODELE_ECONOMIQUE.md` §8 (40 interviews, landing page, Gabor-Granger, Go/No-Go) |
-| 2 | TECH-01 | Décision réglementaire SaMD : « educational only » vs marquage CE/FDA | 1 mois (comité juridique) | Impacte budget (+€200-500K), timeline (+12-18 mois), scope | **✅ RÉSOLU** — `SPINESIM_SPECIFICATIONS_TECHNIQUES.md` §21 : Phase 1 « educational only » + critères Phase 2 SaMD |
+| 2 | TECH-01 | Décision réglementaire SaMD : « educational only » vs marquage CE/FDA | 1 mois (comité juridique) | Impacte budget (+€200-500K), timeline (+12-18 mois), scope | **✅ RÉSOLU** — `VERTEX_SPECIFICATIONS_TECHNIQUES.md` §21 : Phase 1 « educational only » + critères Phase 2 SaMD |
 | 3 | XREF-01 | Unification des projections financières (Budget ↔ Modèle Économique) | 2 semaines | Crédibilité auprès des investisseurs | **✅ RÉSOLU** — Break-even opérationnel (An 3) vs cumulé (An 5) harmonisé dans les deux documents |
 | 4 | XREF-02 | Clarification temporelle An 1 = post-lancement, recalcul break-even total | 1 semaine | Réalisme financier | **✅ RÉSOLU** — Notes d'harmonisation ajoutées : An 1 = mois 22-34 post-lancement |
 | 5 | BUDCAL-01 | Revalorisation budget marketing (€80-150K → €200-400K minimum) | Décision budgétaire | Cohérence acquisition/CA | 🟡 Ouvert |
@@ -587,16 +587,16 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | MED-02 | MEDIAS, PLAN | Médias | INSUFFICIENT | MEDIUM |
 | MED-03 | MEDIAS, PLAN | Médias | MISSING | MEDIUM |
 | MED-04 | MEDIAS, PLAN | Médias | SUGGESTION | LOW |
-| TECH-01 | SPINESIM | SpineSim tech | MISSING | CRITICAL |
-| TECH-02 | SPINESIM, PLAN | SpineSim tech | INSUFFICIENT | HIGH |
-| TECH-03 | SPINESIM | SpineSim tech | INSUFFICIENT | HIGH |
-| TECH-04 | SPINESIM, LMS | SpineSim tech | MISSING | MEDIUM |
-| TECH-05 | SPINESIM | SpineSim tech | INSUFFICIENT | MEDIUM |
-| TECH-06 | SPINESIM | SpineSim tech | SUGGESTION | LOW |
-| TECH-07 | SPINESIM | SpineSim tech | MISSING | LOW |
+| TECH-01 | VERTEX | VERTEX tech | MISSING | CRITICAL |
+| TECH-02 | VERTEX, PLAN | VERTEX tech | INSUFFICIENT | HIGH |
+| TECH-03 | VERTEX | VERTEX tech | INSUFFICIENT | HIGH |
+| TECH-04 | VERTEX, LMS | VERTEX tech | MISSING | MEDIUM |
+| TECH-05 | VERTEX | VERTEX tech | INSUFFICIENT | MEDIUM |
+| TECH-06 | VERTEX | VERTEX tech | SUGGESTION | LOW |
+| TECH-07 | VERTEX | VERTEX tech | MISSING | LOW |
 | XREF-01 | BUDGET, MODELE | Cohérence croisée | INCONSISTENCY | CRITICAL |
 | XREF-02 | MODELE, CALENDRIER | Cohérence croisée | INCONSISTENCY | CRITICAL |
-| XREF-03 | CALENDRIER, SPINESIM, LMS | Cohérence croisée | INCONSISTENCY | HIGH |
+| XREF-03 | CALENDRIER, VERTEX, LMS | Cohérence croisée | INCONSISTENCY | HIGH |
 | XREF-04 | PLAN | Cohérence croisée | INCONSISTENCY | HIGH |
 | XREF-05 | BUDGET, MODELE | Cohérence croisée | INCONSISTENCY | MEDIUM |
 | XREF-06 | LMS | Cohérence croisée | INCONSISTENCY | MEDIUM |
@@ -612,7 +612,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | PRAT-02 | PLAN, MODELE | Pratique | MISSING | MEDIUM |
 | PRAT-03 | PLAN | Pratique | MISSING | LOW |
 | BUDCAL-01 | BUDGET, MODELE, CALENDRIER | Budget/Calendrier | INCONSISTENCY | CRITICAL |
-| BUDCAL-02 | BUDGET, SPINESIM | Budget/Calendrier | INSUFFICIENT | HIGH |
+| BUDCAL-02 | BUDGET, VERTEX | Budget/Calendrier | INSUFFICIENT | HIGH |
 | BUDCAL-03 | BUDGET | Budget/Calendrier | INSUFFICIENT | MEDIUM |
 | BUDCAL-04 | BUDGET | Budget/Calendrier | SUGGESTION | MEDIUM |
 | LMS-01 | LMS, PLAN | CdC LMS | MISSING | HIGH |

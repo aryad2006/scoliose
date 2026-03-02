@@ -1,4 +1,4 @@
-# AUDIT FINAL DE VÉRIFICATION — PROJET FORMATION SCOLIOSE
+﻿# AUDIT FINAL DE VÉRIFICATION — PROJET FORMATION SCOLIOSE
 
 **Date** : Juillet 2025  
 **Périmètre** : 13 fichiers, ~7 200+ lignes  
@@ -68,7 +68,7 @@
 | VI | Complications | 18-19 | 5h30 |
 | VII | Prise en charge globale | 20-23 | 11h |
 | VIII | Sujets avancés | 24-27 | 7h |
-| — | Simulation SpineSim© | 28 | 2h |
+| — | Simulation VERTEX© | 28 | 2h |
 | — | Évaluation finale | 29 | 3h30 |
 
 | **Écarts** | **7 parties sur 8** ont des modules incorrects dans la NOTE_TECHNIQUE. Seule la Partie I (1-3) est correcte. Les titres sont également erronés pour les Parties III à VIII. Les durées sont fausses pour les Parties I (12h vs 7h15), III (8h vs 17h), IV (10h vs 11h30), V (28h vs 14h30), VI (8h vs 5h30), VII (6h vs 7h), VIII (7h vs 5h30). |
@@ -87,7 +87,7 @@
 |-------|---------------|---------------|-------|
 | Contenu pédagogique | 800 K – 1,2 M€ | 180 – 280 K€ | **×4-5** |
 | Production médias | 1,0 M – 1,5 M€ | 250 – 400 K€ | **×3-4** |
-| SpineSim© | 1,2 M – 1,8 M€ | 3 600 – 5 000 K€ | **÷3** (inversé!) |
+| VERTEX© | 1,2 M – 1,8 M€ | 3 600 – 5 000 K€ | **÷3** (inversé!) |
 | Gestion de projet | 400 – 600 K€ | 50 – 100 K€ | **×6-8** |
 | Infrastructure | 200 – 400 K€ | 35 – 55 K€ | **×4-7** |
 | Marketing | 120 – 300 K€ | 80 – 150 K€ | **×1.5-2** |
@@ -153,7 +153,7 @@
 |-------|--------|
 | **Fichier** | NOTE_TECHNIQUE_PROJET.md (L6, L65, L67-78, L285-286) |
 | **Texte erroné** | « 10 fichiers, 7 719 lignes » (L6), « 10 documents fondateurs totalisant 6 539 lignes » (L65) |
-| **État actuel** | Le dépôt contient **12 fichiers** (ajout de NOTE_TECHNIQUE_PROJET.md et REFLEXION_FINALE_STRATEGIQUE.md). Les lignes ont changé : PLAN 2 223→2 525, MEDIAS 776→998, SPINESIM 1 650→1 890, etc. |
+| **État actuel** | Le dépôt contient **12 fichiers** (ajout de NOTE_TECHNIQUE_PROJET.md et REFLEXION_FINALE_STRATEGIQUE.md). Les lignes ont changé : PLAN 2 223→2 525, MEDIAS 776→998, VERTEX 1 650→1 890, etc. |
 | **Correction** | Mettre à jour le nombre de fichiers (10→12), le total de lignes, et les lignes individuelles dans le tableau d'inventaire. |
 
 ---
@@ -244,13 +244,13 @@
 
 ---
 
-### C-16 🟡 MOYENNE — NOTE_TECHNIQUE : SPINESIM lignes « ~1 650 » → réalité ~1 890
+### C-16 🟡 MOYENNE — NOTE_TECHNIQUE : VERTEX lignes « ~1 650 » → réalité ~1 890
 
 | Champ | Valeur |
 |-------|--------|
 | **Fichier** | NOTE_TECHNIQUE_PROJET.md (L59, L71) |
 | **Texte** | « 20 sections, ~1 650 lignes » et tableau : 1 650 lignes |
-| **Réalité** | SPINESIM_SPECIFICATIONS_TECHNIQUES.md contient 20 sections (§1-§20, vérifié) et **~1 890 lignes**. |
+| **Réalité** | VERTEX_SPECIFICATIONS_TECHNIQUES.md contient 20 sections (§1-§20, vérifié) et **~1 890 lignes**. |
 | **Correction** | Remplacer « 1 650 » par « ~1 890 » (si mise à jour de la NOTE_TECHNIQUE, cf. C-07). |
 
 ---
@@ -327,13 +327,13 @@
 | Numérotation sections 20.1-20.9 (post-correction) | ✅ Séquentielle, pas de doublons |
 | Numérotation sections 29.1-29.5 | ✅ Correcte (Module 29 contient bien 29.x, pas 28.x) |
 | 160 sections #### N.M vérifiées dans le PLAN | ✅ Toutes correctement numérotées par module |
-| SPINESIM : 20 sections §1-§20 | ✅ Présentes et séquentielles |
+| VERTEX : 20 sections §1-§20 | ✅ Présentes et séquentielles |
 | Panier moyen : 12%×290 + 28%×490 + 38%×890 + 22%×1190 = 772€ | ✅ Calcul exact |
 | Quiz totaux : 145+175+160+120 = 600 | ✅ Correspond au « 600+ » du PLAN |
 | Budget GLOBAL synthèse bas : 180+250+3600+300+35+80+50+200 = 4 695 K€ | ✅ |
 | Budget GLOBAL synthèse haut : 280+400+5000+500+55+150+100+350 = 6 835 K€ | ✅ |
-| SpineSim dev phases (BUDGET) bas : 3 150 K€ | ✅ Somme des 10 phases correcte |
-| SpineSim dev phases (BUDGET) haut : 4 375 K€ | ✅ |
+| VERTEX dev phases (BUDGET) bas : 3 150 K€ | ✅ Somme des 10 phases correcte |
+| VERTEX dev phases (BUDGET) haut : 4 375 K€ | ✅ |
 | Répartition canaux commerciaux : 40+30+5+10+8+5+2 = 100% | ✅ |
 | Terme médical « scoliomètre » | ✅ Orthographe correcte (vs « scoliomètre ») |
 | PLAN_FORMATION : durée sous-totaux ligne par ligne | ✅ Toutes les additions par partie sont correctes |
@@ -376,7 +376,7 @@
 | C-13 | Corriger « narées » → « narrées » | PLAN_FORMATION | 1 min |
 | C-14 | Corriger « appprenant » → « apprenant » | CAHIER_DES_CHARGES | 1 min |
 | C-15 | Mentionner « hypothèse médiane » pour le panier moyen | MODELE_ECONOMIQUE | 5 min |
-| C-16/17 | Mettre à jour les lignes du SPINESIM et AUDIT dans la NOTE_TECHNIQUE | NOTE_TECHNIQUE | Inclus dans C-07 |
+| C-16/17 | Mettre à jour les lignes du VERTEX et AUDIT dans la NOTE_TECHNIQUE | NOTE_TECHNIQUE | Inclus dans C-07 |
 
 ### Priorité 4 — Basses (optionnel)
 
@@ -404,7 +404,7 @@
 | PLAN_FORMATION_SCOLIOSE.md | C-13, C-18 | 🟡 MOYENNE |
 | BUDGET_GLOBAL_FORMATION.md | C-20, C-21 | 🟢 BASSE |
 | GUIDE_FORMATEUR.md | — | ✅ Aucune erreur détectée |
-| SPINESIM_SPECIFICATIONS_TECHNIQUES.md | — | ✅ Aucune erreur détectée |
+| VERTEX_SPECIFICATIONS_TECHNIQUES.md | — | ✅ Aucune erreur détectée |
 | MEDIAS_PRODUCTION_SCOLIOSE.md | — | ✅ Aucune erreur détectée |
 
 ---

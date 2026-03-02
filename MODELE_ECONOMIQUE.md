@@ -1,5 +1,5 @@
-# MODÈLE ÉCONOMIQUE
-## Formation en ligne sur la Scoliose avec SpineSim©
+﻿# MODÈLE ÉCONOMIQUE
+## Formation en ligne sur la Scoliose avec VERTEX©
 
 ---
 
@@ -8,7 +8,7 @@
 ### 1.1 Positionnement
 **Première formation en ligne complète et interactive sur la scoliose** combinant :
 - 29 modules expertisés (~89 heures) couvrant 100% des aspects de la scoliose
-- Application de simulation biomécanique **SpineSim©** unique au monde (FEM + chirurgie virtuelle + VR)
+- Application de simulation biomécanique **VERTEX©** unique au monde (FEM + chirurgie virtuelle + VR)
 - Quiz progressifs à 4 niveaux (Bronze → Diamant) avec certification
 - ~513 médias (animations 3D, vidéos chirurgicales, modèles interactifs)
 
@@ -28,7 +28,7 @@
 
 | Critère | Notre offre | Concurrence (AO Spine, etc.) |
 |---------|-------------|------------------------------|
-| Simulation biomécanique (FEM) | ✅ SpineSim© (unique) | ❌ Aucune |
+| Simulation biomécanique (FEM) | ✅ VERTEX© (unique) | ❌ Aucune |
 | Chirurgie virtuelle VR | ✅ Intégrée | ❌ |
 | Couverture complète scoliose | ✅ 29 modules, 89h | ⚠️ Modules isolés |
 | Quiz adaptatifs 4 niveaux | ✅ 600+ questions | ⚠️ QCM basiques |
@@ -46,8 +46,8 @@
 |---------|---------|---------|---------------------|-------------|
 | **Découverte** | Modules 1-3 (fondamentaux) + quiz Bronze | **Gratuit** | **Gratuit** | Illimité |
 | **Essentiel** | Modules 1-14 (diagnostic + pathologies) | **290 €** | **348 €** | 12 mois |
-| **Standard** | 29 modules complets (sans SpineSim) | **490 €** | **588 €** | 12 mois |
-| **Premium** | 29 modules + SpineSim© complet + VR | **890 €** | **1 068 €** | 12 mois |
+| **Standard** | 29 modules complets (sans VERTEX) | **490 €** | **588 €** | 12 mois |
+| **Premium** | 29 modules + VERTEX© complet + VR | **890 €** | **1 068 €** | 12 mois |
 | **Certification** | Premium + examen supervisé + certificat | **1 190 €** | **1 428 €** | 12 mois |
 
 ### 2.2 Offres institutionnelles
@@ -56,7 +56,7 @@
 |---------|-----------------|------------------|-----------------|
 | **Institution S** | 10-29 | 490 € | Standard + admin dashboard |
 | **Institution M** | 30-99 | 390 € | Premium + SSO + reporting |
-| **Institution L** | 100-499 | 290 € | Premium + SpineSim + SSO + support dédié |
+| **Institution L** | 100-499 | 290 € | Premium + VERTEX + SSO + support dédié |
 | **Institution XL** | 500+ | Sur devis | Tout + personnalisation + API |
 
 ### 2.3 Options et modules complémentaires
@@ -64,7 +64,7 @@
 | Option | Prix HT |
 |--------|---------|
 | Renouvellement annuel (accès + mises à jour) | 190 €/an |
-| SpineSim© add-on (pour abonnés Standard) | 390 € |
+| VERTEX© add-on (pour abonnés Standard) | 390 € |
 | Examen de certification seul (2 tentatives) | 290 € |
 | Pack cas cliniques avancés (20 cas supplémentaires) | 90 € |
 | Accès VR/haptique (module complémentaire) | 190 € |
@@ -143,7 +143,7 @@
 ### 4.1 Canaux directs (marge 100%)
 | Canal | Description | Part du CA estimée |
 |-------|-------------|-------------------|
-| **Site web propre** (spinesim.com / formation-scoliose.com) | Inscription directe, paiement Stripe | 40% |
+| **Site web propre** (VERTEX.com / formation-scoliose.com) | Inscription directe, paiement Stripe | 40% |
 | **Vente directe institutionnelle** | Démarchage CHU, universités, cliniques | 30% |
 | **Congrès et événements** | SRS, SFCR, SOSORT, Eurospine (inscriptions sur place) | 5% |
 
@@ -152,7 +152,7 @@
 |-------|-------------|------------|-------------------|
 | **ANDPC / DPC** | Prise en charge formation continue (France) | Frais admin ~10-15% | 10% |
 | **Sociétés savantes** (SRS, SFCR, SOSORT) | Recommandation + lien affilié | 10-20% | 8% |
-| **Plateformes LMS tierces** (via LTI) | SpineSim comme module dans leurs formations | 20-30% | 5% |
+| **Plateformes LMS tierces** (via LTI) | VERTEX comme module dans leurs formations | 20-30% | 5% |
 | **Distributeurs internationaux** | Partenaires locaux (Amérique latine, Asie) | 30-40% | 2% |
 
 ### 4.3 Canaux marketing
@@ -183,7 +183,7 @@
 
 | Partenaire | Type | Bénéfices |
 |-----------|------|-----------|
-| **Fabricants d'implants** (Medtronic, DePuy Synthes, Stryker, NuVasive, Zimmer Biomet) | Sponsoring, intégration de leurs implants dans SpineSim | Financement, réalisme, formation sur implants réels |
+| **Fabricants d'implants** (Medtronic, DePuy Synthes, Stryker, NuVasive, Zimmer Biomet) | Sponsoring, intégration de leurs implants dans VERTEX | Financement, réalisme, formation sur implants réels |
 | **Fabricants de navigation** (Medtronic StealthStation, Brainlab, Globus ExcelsiusGPS) | Co-développement module navigation | Données de précision, financement |
 | **Fabricants VR/haptique** (Meta, HTC, Haption, SenseGlove) | Prêt de matériel, co-marketing | Hardware, visibilité |
 | **Éditeurs LMS** (Moodle, Canvas, Blackboard) | Intégration certifiée | Distribution, crédibilité |
@@ -219,7 +219,7 @@
 | Levier | Action |
 |--------|--------|
 | **Mise à jour contenu** | Nouvelles publications intégrées annuellement |
-| **Nouveaux scénarios SpineSim** | 4 nouveaux scénarios/an |
+| **Nouveaux scénarios VERTEX** | 4 nouveaux scénarios/an |
 | **Webinaires experts** | 1/mois (live + replay) |
 | **Communauté** | Forum actif, case discussions |
 | **Gamification** | Classements, défis mensuels, badges saison |
@@ -289,7 +289,7 @@
 | Action | Détail | Coût estimé |
 |---|---|---|
 | Création landing page | Proposition de valeur, preview 3 modules gratuits, formulaire email | 500-1 500 € |
-| Vidéo teaser (2 min) | Présentation formation + démo SpineSim (maquette) | 1 000-3 000 € |
+| Vidéo teaser (2 min) | Présentation formation + démo VERTEX (maquette) | 1 000-3 000 € |
 | Campagne LinkedIn Ads | Ciblage chirurgiens orthopédistes, neurochirurgiens FR+EN | 3 000-5 000 € |
 | Campagne Google Ads | Mots-clés : "scoliosis training", "formation scoliose", "spine surgery simulation" | 2 000-4 000 € |
 | Email outreach | 200 contacts personnels + réseaux sociétés savantes | 0 € |
@@ -311,9 +311,9 @@
 | "À quel prix cette formation serait-elle trop chère pour vous ?" | Montant libre |
 | "À quel prix cette formation vous semblerait-elle bon marché au point de douter de sa qualité ?" | Montant libre |
 | "Achèteriez-vous cette formation à 490€ ?" | Oui/Non |
-| "Achèteriez-vous cette formation à 890€ (avec SpineSim) ?" | Oui/Non |
+| "Achèteriez-vous cette formation à 890€ (avec VERTEX) ?" | Oui/Non |
 | "Achèteriez-vous la certification à 1190€ ?" | Oui/Non |
-| "SpineSim change-t-il votre décision d'achat ?" | Échelle 1-5 |
+| "VERTEX change-t-il votre décision d'achat ?" | Échelle 1-5 |
 
 ### 8.4 Budget et calendrier de validation marché
 
@@ -329,13 +329,13 @@
 | Signal | Décision |
 |---|---|
 | ≥500 pré-inscriptions + ≥60% des interviewés "très intéressés" + pricing validé | **GO** — Lancer le développement |
-| 200-500 pré-inscriptions + retours mitigés | **PIVOT** — Ajuster le positionnement (contenu seul sans SpineSim, niche francophone, prix réduit) |
+| 200-500 pré-inscriptions + retours mitigés | **PIVOT** — Ajuster le positionnement (contenu seul sans VERTEX, niche francophone, prix réduit) |
 | <200 pré-inscriptions + <30% des interviewés intéressés | **NO-GO** — Abandonner ou repositionner radicalement |
 
 > *Ce plan de validation représente ~3 mois et <20 K€, soit <0,5% du budget total. C'est un investissement minimal pour valider (ou invalider) un projet à 4,7-6,8 M€.*
 
 ---
 
-*Modèle économique — Formation Scoliose avec SpineSim© — Version 1.0*
+*Modèle économique — Formation Scoliose avec VERTEX© — Version 1.0*
 *Projections basées sur benchmark EdTech médical (Osmosis, Lecturio, AO Spine learnings)*
 *Plan de validation marché ajouté (ECO-01) — À exécuter AVANT le lancement du développement*

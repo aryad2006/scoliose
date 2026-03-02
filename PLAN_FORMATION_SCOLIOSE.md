@@ -1,4 +1,4 @@
-# FORMATION COMPLÈTE SUR LA SCOLIOSE
+﻿# FORMATION COMPLÈTE SUR LA SCOLIOSE
 ## Formation en ligne — Audio-visuelle avec évaluation progressive
 ### Destinée aux internes, résidents et chirurgiens orthopédistes confirmés
 
@@ -9,7 +9,7 @@
 ### Format de la plateforme
 - **Type** : Formation e-learning asynchrone + sessions live optionnelles
 - **Plateforme** : Hébergement sur LMS (Teachable, Thinkific, ou Moodle médical)
-- **Application de simulation** : SpineSim© — application propriétaire de simulation biomécanique et chirurgie virtuelle (Julia + WebGL)
+- **Application de simulation** : VERTEX© — application propriétaire de simulation biomécanique et chirurgie virtuelle (Julia + WebGL)
 - **Accès** : 24h/24, progression libre, modules débloqués séquentiellement
 - **Certificat** : Délivré après validation de tous les modules (score ≥ 70%)
 - **Crédits CME/DPC** : Formation éligible au développement professionnel continu
@@ -32,7 +32,7 @@ Chaque module suit un format standardisé :
 4. **Points clés à retenir** (synthèse visuelle, infographie)
 5. **Vidéo chirurgicale commentée** (si applicable, 10-20 min)
 6. **Cas clinique interactif** (1-2 cas avec arbre décisionnel)
-7. **Atelier simulation SpineSim©** (si applicable — exercice pratique sur le simulateur)
+7. **Atelier simulation VERTEX©** (si applicable — exercice pratique sur le simulateur)
 8. **Quiz de fin de module** (15-20 QCM, difficulté progressive)
 9. **Post-test** (5 QCM — comparaison avec le pré-test)
 10. **Ressources complémentaires** (articles PDF, liens)
@@ -97,7 +97,7 @@ Chaque module suit un format standardisé :
   > [MEDIA: 🎬 M01-S02-002 — Animation structure du disque intervertébral]
 - Articulations zygapophysaires (facettaires)
   > [MEDIA: 📐 M01-S02-003 — Schéma orientation des facettes par niveau]
-- Système ligamentaire : LLA, LLP, ligaments jaunes, inter-épineux, supra-épineux
+- Système ligamentaire : LVCA, LVCP, ligaments jaunes, inter-épineux, supra-épineux
   > [MEDIA: 🎬 M01-S02-004 — Animation système ligamentaire séquentiel]
 - Canal rachidien et foramens intervertébraux
   > [MEDIA: 📐 M01-S02-005 — Schéma canal rachidien et foramens]
@@ -321,7 +321,7 @@ Chaque module suit un format standardisé :
   - Limites de la classification 2D de Lenke (ne capture pas la rotation ni le profil sagittal régional)
   - Impact de la 3D sur la sélection des niveaux de fusion
   - Impact sur la stratégie de correction (dérotation vs translation vs compression/distraction)
-  - Intégration dans SpineSim© (visualisation et simulation 3D de la classification)
+  - Intégration dans VERTEX© (visualisation et simulation 3D de la classification)
 
 #### 5.6 Classification de la scoliose neuromusculaire
 - Selon l'étiologie neurologique
@@ -1470,11 +1470,11 @@ Chaque module suit un format standardisé :
 - Prédiction de progression
 - Planification chirurgicale assistée
 
-#### 17.5 Application SpineSim© — Lien avec le simulateur
-- Intégration de la navigation et de la planification dans le simulateur SpineSim©
+#### 17.5 Application VERTEX© — Lien avec le simulateur
+- Intégration de la navigation et de la planification dans le simulateur VERTEX©
 - Simulation de la mise en place des vis avec navigation virtuelle
 - Comparaison des résultats simulés vs résultats chirurgicaux réels
-- Export des planifications depuis Surgimap vers SpineSim© pour simulation
+- Export des planifications depuis Surgimap vers VERTEX© pour simulation
 - Voir **Module 29** pour le détail complet de l'application
 
 #### 17.6 Planification chirurgicale préopératoire détaillée
@@ -2128,7 +2128,7 @@ Chaque module suit un format standardisé :
 - Communication médecin-patient
   - Modèle SPIKES adapté à la scoliose (annonce diagnostique, annonce chirurgicale)
   - Écoute active et validation des émotions de l'adolescent
-  - Utilisation de supports visuels (radiographies annotées, modèles 3D, SpineSim©)
+  - Utilisation de supports visuels (radiographies annotées, modèles 3D, VERTEX©)
   - Temps dédié aux questions du patient et de la famille
   - Communication adaptée à l'âge et à la maturité cognitive
 - Décision thérapeutique partagée (shared decision-making)
@@ -2528,13 +2528,13 @@ Chaque module suit un format standardisé :
 
 ---
 
-### MODULE 28 : APPLICATION DE SIMULATION BIOMÉCANIQUE ET CHIRURGIE VIRTUELLE — SpineSim©
+### MODULE 28 : APPLICATION DE SIMULATION BIOMÉCANIQUE ET CHIRURGIE VIRTUELLE — VERTEX©
 
-> **Module transversal** : L'application SpineSim© est utilisée tout au long de la formation. Ce module décrit l'ensemble des fonctionnalités et des ateliers pratiques intégrés à chaque partie.
+> **Module transversal** : L'application VERTEX© est utilisée tout au long de la formation. Ce module décrit l'ensemble des fonctionnalités et des ateliers pratiques intégrés à chaque partie.
 
-#### 28.1 Présentation générale de SpineSim©
-> [MEDIA: 🎬 M28-S01-001 — Vidéo démo SpineSim© (overview fonctionnalités + interface)]
-> [MEDIA: 🧊 M28-S01-002 — Modèle 3D interactif : exploration du rachis virtuel SpineSim©]
+#### 28.1 Présentation générale de VERTEX©
+> [MEDIA: 🎬 M28-S01-001 — Vidéo démo VERTEX© (overview fonctionnalités + interface)]
+> [MEDIA: 🧊 M28-S01-002 — Modèle 3D interactif : exploration du rachis virtuel VERTEX©]
 - Philosophy et objectifs pédagogiques
   - Apprendre sans risque : simulation réaliste avant le bloc opératoire
   - Comprendre la biomécanique par la manipulation interactive
@@ -2563,7 +2563,7 @@ Chaque module suit un format standardisé :
   - Plateaux vertébraux cartilagineux : interface disque-vertèbre
   - Dégénérescence discale paramétrable (grades Pfirrmann I-V)
 - **Système ligamentaire**
-  - LLA, LLP, ligaments jaunes, inter-épineux, supra-épineux, capsulaires
+  - LVCA, LVCP, ligaments jaunes, inter-épineux, supra-épineux, capsulaires
   - Comportement non-linéaire (loi de force-déplacement)
   - Propriétés dépendantes de l'âge et de la pathologie
 - **Musculature (modèle actif)**
@@ -2742,11 +2742,11 @@ Chaque module suit un format standardisé :
   - Simulation de la croissance résiduelle (patients pédiatriques)
   - Prédiction de la probabilité de révision à 5, 10, 15 ans
 
-#### 28.9 Intégration de SpineSim© aux modules de formation
+#### 28.9 Intégration de VERTEX© aux modules de formation
 
 ##### Ateliers pratiques par partie de la formation :
 
-| Partie | Module(s) | Atelier SpineSim© | Durée |
+| Partie | Module(s) | Atelier VERTEX© | Durée |
 |--------|-----------|-------------------|-------|
 | I. Fondamentaux | 1-3 | Manipulation d'un rachis normal : axes de mouvement, chargement, contraintes | 45 min |
 | II. Diagnostic | 4-7 | Mesure d'angle de Cobb sur modèle 3D, classification interactive | 30 min |
@@ -2760,7 +2760,7 @@ Chaque module suit un format standardisé :
 | VIII. Avancés | 24-27 | Cas complexes : adulte avec déséquilibre, revision PJK | 1h30 |
 | **TOTAL simulation** | — | — | **~12h** |
 
-#### 28.10 Gamification et progression sur SpineSim©
+#### 28.10 Gamification et progression sur VERTEX©
 - **Niveaux de compétence chirurgicale virtuelle**
   - 🔰 **Observateur** — Visionner des chirurgies virtuelles commentées
   - 🟢 **Apprenti** — Réaliser les gestes guidés (annotations et flèches visibles)
@@ -2880,7 +2880,7 @@ Chaque cas clinique suit le format :
 | **Section B** | 20 questions image-based (radio, IRM, photos) | 40 min | 15% |
 | **Section C** | 5 cas cliniques progressifs multi-étapes | 60 min | 25% |
 | **Section D** | 2 vidéos chirurgicales + questions d'analyse | 20 min | 10% |
-| **Section E** | 1 cas pratique SpineSim© (planification + simulation chirurgicale) | 30 min | 20% |
+| **Section E** | 1 cas pratique VERTEX© (planification + simulation chirurgicale) | 30 min | 20% |
 
 **Durée totale : 3h30 — en conditions surveillées (proctored)**
 
@@ -2892,7 +2892,7 @@ Chaque cas clinique suit le format :
 
 #### 29.4 Suivi de progression de l'apprenant
 
-- **Dashboard personnel** : Score par module, temps passé, progression globale, scores SpineSim©
+- **Dashboard personnel** : Score par module, temps passé, progression globale, scores VERTEX©
 - **Analyse des lacunes** : Identification automatique des thèmes à réviser
 - **Comparaison anonyme** : Percentile par rapport aux autres apprenants
 - **Badges et gamification** :
@@ -2900,7 +2900,7 @@ Chaque cas clinique suit le format :
   - 🏅 « Classificateur » — Module 5 validé ≥ 90%
   - 🏅 « Décision maker » — Tous les cas cliniques réussis au premier essai
   - 🏅 « Complication manager » — Modules 18-19 validés ≥ 85%
-  - 🏅 « Chirurgien virtuel » — Tous les badges SpineSim© obtenus
+  - 🏅 « Chirurgien virtuel » — Tous les badges VERTEX© obtenus
   - 🏅 « Expert complet » — Tous les modules validés ≥ 80%
   - 🏆 « Maître de la scoliose » — Examen final ≥ 90% + tous badges simulation
 
@@ -2954,10 +2954,10 @@ Chaque cas clinique suit le format :
 - Livres de référence : Bridwell & DeWald's Textbook of Spinal Surgery
 - Congrès et formations continues
 - Applications mobiles utiles (Surgimap, Spine Surgery)
-- **SpineSim©** : application de simulation biomécanique et chirurgie virtuelle (incluse dans la formation)
+- **VERTEX©** : application de simulation biomécanique et chirurgie virtuelle (incluse dans la formation)
 
-### Annexe F : Spécifications techniques de SpineSim©
-- Voir document séparé : `SPINESIM_SPECIFICATIONS_TECHNIQUES.md`
+### Annexe F : Spécifications techniques de VERTEX©
+- Voir document séparé : `VERTEX_SPECIFICATIONS_TECHNIQUES.md`
 - Langages : Julia (moteur biomécanique), JavaScript/TypeScript (frontend), WebGL (rendu 3D)
 - Packages Julia principaux : `FinEtools.jl`, `Ferrite.jl`, `CUDA.jl`, `Genie.jl`, `Makie.jl`
 - Plateformes : Web (navigateur), Desktop (Windows/macOS/Linux), VR (Meta Quest, HTC Vive)
@@ -2976,7 +2976,7 @@ Chaque cas clinique suit le format :
 | VI. Complications | 18-19 | 3h | 1h30 | 1h | **5h30** |
 | VII. Prise en charge globale | 20-23 | 7h30 | 2h | 1h30 | **11h** |
 | VIII. Sujets avancés | 24-27 | 4h | 1h30 | 1h30 | **7h** |
-| Simulation SpineSim© | 28 | 2h (théorie) | — | (inclus ci-dessus) | **2h** |
+| Simulation VERTEX© | 28 | 2h (théorie) | — | (inclus ci-dessus) | **2h** |
 | Évaluation finale | 29 | — | 3h30 | (inclus examen) | **3h30** |
 | **TOTAL** | **29 modules** | **54h30** | **21h30** | **~13h15** | **~89 heures** |
 
@@ -3006,14 +3006,14 @@ Chaque cas clinique suit le format :
 - Connexion internet stable (min 10 Mbps pour simulation 3D et vidéos HD)
 - Navigateur web récent (Chrome, Firefox, Edge, Safari) avec WebGL 2.0 activé
 - Écran ≥ 13 pouces recommandé (analyse d'images radiologiques et simulation 3D)
-- **Pour SpineSim©** : GPU dédié recommandé (NVIDIA GTX 1060+ ou équivalent) pour la version desktop
+- **Pour VERTEX©** : GPU dédié recommandé (NVIDIA GTX 1060+ ou équivalent) pour la version desktop
 - **Mode VR optionnel** : casque de réalité virtuelle compatible (Meta Quest 3, HTC Vive)
 - **Haptic feedback optionnel** : dispositif haptique (Geomagic Touch, Phantom) pour retour de force chirurgical
 - Compatible tablette et smartphone (sauf simulation 3D et examen final : ordinateur obligatoire)
 
 ---
 
-*Formation en ligne complète sur la scoliose avec simulation biomécanique SpineSim© — Février 2026*
+*Formation en ligne complète sur la scoliose avec simulation biomécanique VERTEX© — Février 2026*
 *Contenu validé par des chirurgiens orthopédistes spécialistes du rachis*
-*Application SpineSim© développée en Julia + WebGL — Simulation par éléments finis temps réel*
+*Application VERTEX© développée en Julia + WebGL — Simulation par éléments finis temps réel*
 *Mise à jour annuelle selon les dernières publications et recommandations*

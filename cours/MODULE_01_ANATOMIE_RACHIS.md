@@ -1,4 +1,4 @@
-# MODULE 1 — ANATOMIE DU RACHIS
+﻿# MODULE 1 — ANATOMIE DU RACHIS
 
 **Partie I — Fondamentaux et Sciences de Base**
 **Durée estimée** : 2h30
@@ -25,7 +25,7 @@ Segment mobile de Junghans • Processus unciforme • Foramen transversaire •
 
 ## Objectifs d'apprentissage
 
-À l'issue de ce module, l'apprenant sera capable de :
+À l'issue de ce module, le praticien sera capable de :
 
 1. **Décrire** les caractéristiques morphologiques distinctives des vertèbres cervicales, thoraciques, lombaires et du sacrum (Bloom : Connaissance)
 2. **Expliquer** le concept d'unité fonctionnelle rachidienne et le rôle de chaque composant (disque, facettes, ligaments) dans la stabilité segmentaire (Bloom : Compréhension)
@@ -136,7 +136,7 @@ Chaque côte s'articule avec le rachis par deux articulations :
 Les vertèbres lombaires sont les plus volumineuses, adaptées au port de charge :
 
 - **Corps vertébral** : massif, réniforme (en haricot), hauteur ~25-30 mm
-- **Pédicules** : épais et courts — voie d'insertion des vis pédiculaires (diamètre 8-15 mm selon le niveau)
+- **Pédicules** : épais et courts — voie d'insertion des vis pédiculaires (largeur transversale de 9 à 18 mm selon le niveau, hauteur sagittale ~15 mm)
 - **Processus transverses** : longs (appelés « processus costiformes »), insertion des muscles psoas et carré des lombes
 - **Processus épineux** : court, horizontal, quadrilatère
 - **Canal rachidien** : triangulaire, contient la queue de cheval (fin de la moelle en L1-L2)
@@ -267,7 +267,7 @@ Le disque intervertébral est un fibrocartilage situé entre les plateaux verté
 | Composant | Composition | Fonction |
 |---|---|---|
 | **Nucleus pulposus** | Gel mucoïde : 70-90% eau, protéoglycanes (aggrécane), collagène type II, cellules notochordales | Résistance à la compression, distribution hydrostatique des contraintes |
-| **Annulus fibrosus** | 15-25 lamelles concentriques de collagène type I, orientées alternativement à ±30° | Résistance à la traction, torsion, cisaillement |
+| **Annulus fibrosus** | 15-25 lamelles concentriques de collagène type I, fibres orientées en croisillon (alternance +30° / −30° d'une lamelle à l'autre, comme du contreplaqué) | Résistance à la traction, torsion, cisaillement |
 | **Plateaux cartilagineux** | Cartilage hyalin (~1 mm), rattaché au ring apophysis | Interface métabolique, diffusion nutriments vers le nucleus (disque avasculaire chez l'adulte) |
 
 **Biomécanique du disque** :
@@ -294,7 +294,7 @@ Les articulations facettaires sont des articulations synoviales planes (arthrodi
 
 **Tropisme facettaire** : asymétrie d'orientation des facettes droite/gauche au même niveau. Prévalence : 20-40%. Association discutée avec la dégénérescence discale et la scoliose dégénérative (potentiel facteur de rotation vertébrale asymétrique).
 
-**Pertinence clinique** : L'orientation des facettes thoraciques (plan frontal) explique pourquoi la scoliose thoracique s'accompagne toujours d'une **rotation vertébrale** — les facettes autorisent la rotation, et la rotation vertébrale est le mécanisme de la gibbosité.
+**Pertinence clinique — Rotation et scoliose** : La rotation vertébrale est présente dans **toute** scoliose (thoracique, lombaire ou thoraco-lombaire) — c'est le 3ᵉ plan de la déformation tridimensionnelle. Cependant, les facettes thoraciques (plan frontal) **facilitent** la rotation, qui atteint souvent 20-40° au thoracique contre 10-20° au lombaire (facettes sagittales plus restrictives). Au niveau thoracique, la rotation entraîne les côtes et produit la **gibbosité costale** ; au niveau lombaire, elle provoque une **voussure paravertébrale** (bourrelet musculaire palpable à la flexion antérieure).
 
 ### 1.2.4 Système ligamentaire
 
@@ -304,8 +304,8 @@ Le rachis est stabilisé par 7 ligaments principaux :
 
 | Ligament | Position | Fonction | Résistance (N) | Relevance chirurgicale |
 |---|---|---|---|---|
-| **Ligament longitudinal antérieur (LLA)** | Face antérieure des corps | Limite l'extension | 500-1000 | Préservé en chirurgie postérieure, sectionné en ALIF |
-| **Ligament longitudinal postérieur (LLP)** | Face postérieure des corps (dans le canal) | Limite la flexion | 300-600 | Non touché en instrumentation postérieure standard |
+| **Ligament vertébral commun antérieur — LVCA** (anciennement lig. longitudinal antérieur, ALL en anglais) | Face antérieure des corps | Limite l'extension | 500-1000 | Préservé en chirurgie postérieure, sectionné en ALIF |
+| **Ligament vertébral commun postérieur — LVCP** (anciennement lig. longitudinal postérieur, PLL en anglais) | Face postérieure des corps (dans le canal) | Limite la flexion | 300-600 | Non touché en instrumentation postérieure standard |
 | **Ligament jaune (flavum)** | Entre les lames adjacentes | Limite la flexion, maintien de la posture érigée (élastique) | 200-400 | **Retiré lors de la laminectomie** — doit être réséqué pour exposer le canal |
 | **Ligament inter-épineux** | Entre les processus épineux | Limite la flexion | 50-150 | Coupé lors de l'abord médian postérieur |
 | **Ligament supra-épineux** | Sur l'apex des processus épineux | Limite la flexion | 100-200 | Coupé lors de l'abord postérieur, palpable en clinique |
@@ -487,7 +487,7 @@ La scoliose thoracique altère la mécanique respiratoire :
 
 *Données basées sur Weinstein et al. (JAMA 2003, Iowa 50-year follow-up) et Pehrsson et al. (1992)*
 
-> 🧳 **Exercice SpineSim© — Muscles et scoliose** :
+> 🧳 **Exercice VERTEX© — Muscles et scoliose** :
 > 1. Ouvrez le modèle *« Rachis normal »*. Activez la vue « Musculature » en mode transparence progressive.
 > 2. Identifiez les 3 colonnes de l'erector spinae (iliocostal, longissimus, épineux). Lequel est le plus médial ?
 > 3. Passez à la couche profonde : localisez les **multifides**. Simulez une **atrophie unilatérale droite** des multifides (curseur à -50%).
@@ -811,7 +811,7 @@ Lorsque l'équilibre sagittal est perturbé (perte de lordose, augmentation de l
 
 ---
 
-*Module 1 — Anatomie du Rachis — Formation Scoliose avec SpineSim©*
+*Module 1 — Anatomie du Rachis — Formation Scoliose avec VERTEX©*
 *Durée : ~2h30 | Niveau : Fondamental | Partie I*
 *Version 2.0 — Février 2026*
 

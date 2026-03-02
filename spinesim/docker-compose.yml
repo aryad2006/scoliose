@@ -1,0 +1,54 @@
+version: '3.8'
+
+# VERTEX© — Docker Compose
+# Simulateur biomécanique du rachis
+# Virtual Environment for Rachis Training and EXploration
+
+services:
+  # ── Backend Julia ──
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vertex-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/src:/app/src
+    environment:
+      - JULIA_NUM_THREADS=auto
+      - VERTEX_PORT=8080
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ── Frontend Vue.js ──
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vertex-frontend
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://backend:8080
+    restart: unless-stopped
+
+  # ── Reverse Proxy Nginx (production) ──
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: vertex-proxy
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   depends_on:
+  #     - backend
+  #     - frontend

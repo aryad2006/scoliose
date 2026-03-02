@@ -1,4 +1,4 @@
-# PROMPTS ET SCRIPTS DE PRODUCTION MÉDIAS — FORMATION SCOLIOSE
+﻿# PROMPTS ET SCRIPTS DE PRODUCTION MÉDIAS — FORMATION SCOLIOSE
 
 **Date** : Février 2026  
 **Objectif** : Fournir les prompts prêts à l'emploi pour les 4 outils de production médias  
@@ -711,20 +711,20 @@ Vues prédéfinies :
   4. "Vue antérieure" (relation avec structures vasculaires)
 ```
 
-### MODULE 28 — SpineSim©
+### MODULE 28 — VERTEX©
 
-**M28-S01-001 — Modèle biomécanique SpineSim© (lien BioDigital)**
+**M28-S01-001 — Modèle biomécanique VERTEX© (lien BioDigital)**
 ```
 BIODIGITAL CONFIG :
 Modèle : Full spine + pelvis + rib cage
-Mode avancé (via SpineSim© API) :
+Mode avancé (via VERTEX© API) :
   - Intégration des données patient (DICOM → modèle 3D personnalisé)
   - Simulation de forces : vis-à-vis des vis, forces de correction en N
   - Propriétés mécaniques des vertèbres (Young modulus, Poisson ratio)
   - Animation : correction chirurgicale simulée en temps réel
   - Export : plan chirurgical avec coordonnées de vis et angles
 NOTE : Ce modèle sert de pont entre BioDigital (visualisation) 
-et SpineSim© (simulation biomécanique Julia backend)
+et VERTEX© (simulation biomécanique Julia backend)
 ```
 
 ---
@@ -743,7 +743,7 @@ HEYGEN AVATAR SETTINGS :
 - Avatar : "Dr. Expert" — homme/femme, 40-50 ans, professionnel
 - Tenue : blouse blanche, badge "Formation Scoliose"
 - Fond : bureau médical avec bibliothèque, écran de consultation,
-  ou fond neutre branded (logo SpineSim©)
+  ou fond neutre branded (logo VERTEX©)
 - Voix : française, professionnelle, claire
   • Option 1 : voix masculine grave (style conférence médicale)
   • Option 2 : voix féminine claire (style cours universitaire)
@@ -784,9 +784,9 @@ les complications et leur gestion,
 la prise en charge globale du patient,
 et des sujets avancés de recherche.
 
-[TRANSITION : slide SpineSim©]
+[TRANSITION : slide VERTEX©]
 
-L'un des éléments uniques de cette formation est SpineSim©, 
+L'un des éléments uniques de cette formation est VERTEX©, 
 notre simulateur biomécanique de chirurgie virtuelle. 
 Il vous permettra de pratiquer des gestes chirurgicaux 
 dans un environnement sûr, avant le bloc opératoire.
@@ -884,7 +884,7 @@ Et des sujets spéciaux : la thoracoplastie, les médecines
 complémentaires et la traction halo-gravitaire.
 
 Chaque sujet est accompagné d'illustrations interactives, 
-de cas cliniques dans SpineSim©, et de quiz de validation.
+de cas cliniques dans VERTEX©, et de quiz de validation.
 
 C'est parti."
 ---
@@ -1090,10 +1090,10 @@ DURÉE : ~1 min 30
 | **P2** | 3-6 | BioRender + Runway + BioDigital | M4-7 (classification, diagnostic, imagerie) | ~70 |
 | **P3** | 5-8 | Runway + BioRender + HeyGen | M8-10 (SIA, traitement) | ~90 |
 | **P4** | 7-10 | BioRender + Runway | M11-14 (scolioses non idiopathiques) | ~50 |
-| **P5** | 9-12 | Runway + BioDigital | M15-17 (chirurgie détaillée) + SpineSim© | ~70 |
+| **P5** | 9-12 | Runway + BioDigital | M15-17 (chirurgie détaillée) + VERTEX© | ~70 |
 | **P6** | 11-14 | BioRender + Runway | M18-20 (complications, périopératoire) | ~50 |
 | **P7** | 13-16 | BioRender + HeyGen | M21-24 (rééducation, psychologie, dépistage) | ~40 |
-| **P8** | 15-18 | BioRender + BioDigital + HeyGen | M25-29 (recherche, cas cliniques, SpineSim©, évaluation) | ~63 |
+| **P8** | 15-18 | BioRender + BioDigital + HeyGen | M25-29 (recherche, cas cliniques, VERTEX©, évaluation) | ~63 |
 | **HeyGen** | 1-18 | HeyGen (en continu) | Tous : introductions + narrations (29 intros + ~300 slides narrées) | ~330 vidéos |
 
 ## 5.3 Budget estimé par outil

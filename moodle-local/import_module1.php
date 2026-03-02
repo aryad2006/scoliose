@@ -842,7 +842,7 @@ $section2 .= <<<'HTML'
 <thead><tr><th>Composant</th><th>Composition</th><th>Fonction</th></tr></thead>
 <tbody>
 <tr><td><strong>Nucleus pulposus</strong></td><td>Gel mucoïde : 70-90% eau, protéoglycanes, collagène type II</td><td>Résistance à la compression</td></tr>
-<tr><td><strong>Annulus fibrosus</strong></td><td>15-25 lamelles concentriques, collagène type I ±30°</td><td>Résistance traction/torsion</td></tr>
+<tr><td><strong>Annulus fibrosus</strong></td><td>15-25 lamelles concentriques de collagène type I, fibres orientées en croisillon (alternance +30° / −30° d'une lamelle à l'autre, comme du contreplaqué)</td><td>Résistance à la traction, torsion, cisaillement</td></tr>
 <tr><td><strong>Plateaux cartilagineux</strong></td><td>Cartilage hyalin (~1 mm)</td><td>Interface métabolique (disque avasculaire)</td></tr>
 </tbody></table>
 
@@ -882,14 +882,14 @@ HTML;
 
 $section2 .= media_video('M01-S02-004',
     'Système ligamentaire rachidien — Animation séquentielle',
-    'Vue sagittale médiane : LLA (vert), LLP (rouge), ligaments jaunes, inter-épineux, supra-épineux — apparition séquentielle avec noms');
+    'Vue sagittale médiane : LVCA (vert), LVCP (rouge), ligaments jaunes, inter-épineux, supra-épineux — apparition séquentielle avec noms');
 
 $section2 .= <<<'HTML'
 <table class="medical-table">
 <thead><tr><th>Ligament</th><th>Position</th><th>Fonction</th><th>Résistance (N)</th><th>Chirurgie</th></tr></thead>
 <tbody>
-<tr><td><strong>LLA</strong></td><td>Face antérieure</td><td>Limite extension</td><td>500-1000</td><td>Préservé (post.), sectionné (ALIF)</td></tr>
-<tr><td><strong>LLP</strong></td><td>Face post. (canal)</td><td>Limite flexion</td><td>300-600</td><td>Non touché</td></tr>
+<tr><td><strong>LVCA</strong><br><small>(lig. vertébral commun antérieur)</small></td><td>Face antérieure</td><td>Limite extension</td><td>500-1000</td><td>Préservé (post.), sectionné (ALIF)</td></tr>
+<tr><td><strong>LVCP</strong><br><small>(lig. vertébral commun postérieur)</small></td><td>Face post. (canal)</td><td>Limite flexion</td><td>300-600</td><td>Non touché</td></tr>
 <tr><td><strong>Lig. jaune</strong></td><td>Entre les lames</td><td>Flexion + posture</td><td>200-400</td><td>Retiré lors laminectomie</td></tr>
 <tr><td><strong>Inter-épineux</strong></td><td>Entre épineuses</td><td>Limite flexion</td><td>50-150</td><td>Coupé abord post.</td></tr>
 <tr><td><strong>Supra-épineux</strong></td><td>Apex épineuses</td><td>Limite flexion</td><td>100-200</td><td>Coupé abord post.</td></tr>
@@ -1334,15 +1334,8 @@ if (!$category) {
     $category->depth = 1;
     $category->path = '';
 
-    require_once($CFG->libdir . '/coursecatlib.php');
-    if (class_exists('core_course_category')) {
-        $cat = core_course_category::create($category);
-        $categoryid = $cat->id;
-    } else {
-        // Fallback
-        $categoryid = $DB->insert_record('course_categories', $category);
-        $DB->set_field('course_categories', 'path', '/' . $categoryid, ['id' => $categoryid]);
-    }
+    $cat = core_course_category::create($category);
+    $categoryid = $cat->id;
     echo "   ✅ Catégorie 'Formation Scoliose' créée (ID: {$categoryid})\n";
 } else {
     $categoryid = $category->id;

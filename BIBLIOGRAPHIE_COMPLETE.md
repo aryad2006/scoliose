@@ -1,5 +1,5 @@
-# BIBLIOGRAPHIE COMPLÈTE
-## Formation en ligne sur la Scoliose avec SpineSim©
+﻿# BIBLIOGRAPHIE COMPLÈTE
+## Formation en ligne sur la Scoliose avec VERTEX©
 
 ---
 
@@ -215,7 +215,7 @@
 
 ## SIMULATION ET ÉVALUATION (Modules 28-29)
 
-### SpineSim© et simulation biomédicale (Module 28)
+### VERTEX© et simulation biomédicale (Module 28)
 111. **Aubin CE, Labelle H, Chevrefils C, et al.** Preoperative planning simulator for spinal deformity surgeries. *Spine.* 2008;33(20):2143-2152.
 112. **Clin J, Aubin CE, Sangole A, et al.** Correlation between immediate in-brace correction and biomechanical effectiveness of brace treatment in adolescent idiopathic scoliosis. *Spine.* 2010;35(18):1706-1713.
 113. **Galbusera F, Niemeyer F, Wilke HJ, et al.** Fully automated personalized finite element analysis of the human lumbar spine from medical images: a pilot study. *J Biomech.* 2019;89:42-48.
@@ -254,6 +254,6 @@
 
 ---
 
-*Bibliographie — Formation Scoliose avec SpineSim© — 130 références*
+*Bibliographie — Formation Scoliose avec VERTEX© — 130 références*
 *Mise à jour prévue annuellement avec les dernières publications*
 *Références accessibles via les liens DOI et les bases de données médicales*

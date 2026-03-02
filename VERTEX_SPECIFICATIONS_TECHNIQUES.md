@@ -1,4 +1,4 @@
-# SPINESIM© — SPÉCIFICATIONS TECHNIQUES DE L'APPLICATION
+﻿# VERTEX© — SPÉCIFICATIONS TECHNIQUES DE L'APPLICATION
 ## Application de simulation biomécanique du rachis et chirurgie virtuelle
 ### Document de spécifications pour le développement
 
@@ -7,7 +7,7 @@
 ## 1. VISION ET OBJECTIFS
 
 ### 1.1 Vision produit
-SpineSim© est une application de simulation biomécanique du rachis et de chirurgie virtuelle, développée spécifiquement pour la formation des chirurgiens orthopédistes et neurochirurgiens. Elle permet de simuler les contraintes mécaniques du rachis dans toutes les situations physiologiques et pathologiques, et d'apprendre les voies d'abord et techniques chirurgicales dans un environnement virtuel réaliste et sans risque.
+VERTEX© est une application de simulation biomécanique du rachis et de chirurgie virtuelle, développée spécifiquement pour la formation des chirurgiens orthopédistes et neurochirurgiens. Elle permet de simuler les contraintes mécaniques du rachis dans toutes les situations physiologiques et pathologiques, et d'apprendre les voies d'abord et techniques chirurgicales dans un environnement virtuel réaliste et sans risque.
 
 ### 1.2 Objectifs pédagogiques
 1. **Comprendre** la biomécanique rachidienne par manipulation interactive 3D
@@ -224,8 +224,8 @@ end
 
 | Ligament | Rigidité (N/mm) | Déformation rupture (%) | Force rupture (N) |
 |----------|----------------|------------------------|-------------------|
-| LLA | 33 | 25 | 450 |
-| LLP | 20 | 18 | 320 |
+| LVCA (lig. vertébral commun antérieur) | 33 | 25 | 450 |
+| LVCP (lig. vertébral commun postérieur) | 20 | 18 | 320 |
 | Ligament jaune | 15 | 35 | 210 |
 | Inter-épineux | 12 | 20 | 140 |
 | Supra-épineux | 15 | 22 | 180 |
@@ -664,14 +664,14 @@ end
 
 ## 7. INTÉGRATION AVEC LA PLATEFORME LMS
 
-### 7.1 Communication LMS ↔ SpineSim©
+### 7.1 Communication LMS ↔ VERTEX©
 
 | Événement | Direction | Données |
 |-----------|-----------|---------|
-| Lancement atelier | LMS → SpineSim© | ID module, ID apprenant, exercice à charger |
-| Progression | SpineSim© → LMS | Score, temps, gestes réalisés |
-| Complétion | SpineSim© → LMS | Résultat final, badge obtenu, rapport PDF |
-| Prérequis | LMS → SpineSim© | Niveaux débloqués, compétences acquises |
+| Lancement atelier | LMS → VERTEX© | ID module, ID apprenant, exercice à charger |
+| Progression | VERTEX© → LMS | Score, temps, gestes réalisés |
+| Complétion | VERTEX© → LMS | Résultat final, badge obtenu, rapport PDF |
+| Prérequis | LMS → VERTEX© | Niveaux débloqués, compétences acquises |
 
 ### 7.2 Standards d'interopérabilité
 - **xAPI (Experience API)** : traçabilité fine des interactions dans la simulation
@@ -766,7 +766,7 @@ end
 ## 10. PACKAGES JULIA — DÉTAIL DES DÉPENDANCES
 
 ```julia
-# Project.toml — dépendances principales de SpineSim©
+# Project.toml — dépendances principales de VERTEX©
 
 [deps]
 FinEtools = "91bb5406-6c9a-523d-811d-0644c4229550"
@@ -992,12 +992,12 @@ end
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: spinesim-solver-hpa
+  name: VERTEX-solver-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: spinesim-solver
+    name: VERTEX-solver
   minReplicas: 0
   maxReplicas: 10
   metrics:
@@ -1254,8 +1254,8 @@ describe('Virtual Surgery Workflow', () => {
 ### 16.1 Architecture du pipeline
 
 ```yaml
-# .github/workflows/spinesim-ci.yml
-name: SpineSim CI/CD Pipeline
+# .github/workflows/VERTEX-ci.yml
+name: VERTEX CI/CD Pipeline
 
 on:
   push:
@@ -1315,7 +1315,7 @@ jobs:
     services:
       postgres:
         image: postgres:16
-        env: { POSTGRES_DB: spinesim_test, POSTGRES_PASSWORD: test }
+        env: { POSTGRES_DB: VERTEX_test, POSTGRES_PASSWORD: test }
         ports: ['5432:5432']
       redis:
         image: redis:7
@@ -1336,15 +1336,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build Docker images
         run: |
-          docker build -t spinesim-api:${{ github.sha }} -f docker/Dockerfile.api .
-          docker build -t spinesim-solver:${{ github.sha }} -f docker/Dockerfile.solver .
-          docker build -t spinesim-frontend:${{ github.sha }} -f docker/Dockerfile.frontend .
+          docker build -t VERTEX-api:${{ github.sha }} -f docker/Dockerfile.api .
+          docker build -t VERTEX-solver:${{ github.sha }} -f docker/Dockerfile.solver .
+          docker build -t VERTEX-frontend:${{ github.sha }} -f docker/Dockerfile.frontend .
       - name: Push to registry
         run: |
           echo ${{ secrets.REGISTRY_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker push ghcr.io/spinesim/api:${{ github.sha }}
-          docker push ghcr.io/spinesim/solver:${{ github.sha }}
-          docker push ghcr.io/spinesim/frontend:${{ github.sha }}
+          docker push ghcr.io/VERTEX/api:${{ github.sha }}
+          docker push ghcr.io/VERTEX/solver:${{ github.sha }}
+          docker push ghcr.io/VERTEX/frontend:${{ github.sha }}
 
   # ═══════════════════════════════════════════
   # Stage 5: Deploy Staging
@@ -1358,7 +1358,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Deploy to staging K8s
         run: |
-          helm upgrade --install spinesim-staging ./helm/spinesim \
+          helm upgrade --install VERTEX-staging ./helm/VERTEX \
             --namespace staging \
             --set image.tag=${{ github.sha }} \
             --set env=staging \
@@ -1375,7 +1375,7 @@ jobs:
       - name: Cypress E2E
         uses: cypress-io/github-action@v6
         with:
-          config: baseUrl=https://staging.spinesim.io
+          config: baseUrl=https://staging.VERTEX.io
 
   # ═══════════════════════════════════════════
   # Stage 7: Deploy Production
@@ -1389,7 +1389,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Canary deployment (10%)
         run: |
-          helm upgrade --install spinesim ./helm/spinesim \
+          helm upgrade --install VERTEX ./helm/VERTEX \
             --namespace production \
             --set image.tag=${{ github.sha }} \
             --set canary.enabled=true \
@@ -1400,7 +1400,7 @@ jobs:
           julia scripts/check_canary_metrics.jl --threshold 0.01
       - name: Full rollout
         run: |
-          helm upgrade --install spinesim ./helm/spinesim \
+          helm upgrade --install VERTEX ./helm/VERTEX \
             --namespace production \
             --set image.tag=${{ github.sha }} \
             --set canary.enabled=false
@@ -1431,7 +1431,7 @@ function check_canary_health(threshold::Float64=0.01)
     
     if error_rate > threshold
         @warn "Canary error rate $(error_rate) exceeds threshold $(threshold)"
-        run(`helm rollback spinesim --namespace production`)
+        run(`helm rollback VERTEX --namespace production`)
         error("Canary deployment rolled back automatically")
     else
         @info "Canary healthy: error rate = $(error_rate)"
@@ -1479,7 +1479,7 @@ Super Admin
 | Publier module | ✅ | ✅ | ❌ | ❌ | ⚠️ (draft) | ❌ |
 | Voir contenu | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ (débloqué) |
 | Créer quiz | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ |
-| **Simulation SpineSim** | | | | | | |
+| **Simulation VERTEX** | | | | | | |
 | Accès simulation | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ (selon niveau) |
 | Mode libre (sandbox) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ (Or+) |
 | Scénarios avancés (VR) | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ (Diamant) |
@@ -1509,7 +1509,7 @@ struct SCIMUser
     institution_id::String  # Rattachement institution
 end
 
-# Mapping SAML attributes → SpineSim roles
+# Mapping SAML attributes → VERTEX roles
 const SAML_ROLE_MAPPING = Dict(
     "urn:mace:dir:entitlement:faculty" => "instructeur",
     "urn:mace:dir:entitlement:student" => "apprenant",
@@ -1632,8 +1632,8 @@ const STRESS_INDICATORS = {
 
 ```json
 {
-  "name": "SpineSim© - Simulateur Biomécanique du Rachis",
-  "short_name": "SpineSim",
+  "name": "VERTEX© - Simulateur Biomécanique du Rachis",
+  "short_name": "VERTEX",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1A237E",
@@ -1654,7 +1654,7 @@ const STRESS_INDICATORS = {
 
 ```javascript
 // service-worker.js — Stratégie de cache
-const CACHE_VERSION = 'spinesim-v2.1';
+const CACHE_VERSION = 'VERTEX-v2.1';
 
 const CACHE_STRATEGIES = {
   // Cache-first : assets statiques, modèles 3D de base
@@ -1739,11 +1739,11 @@ self.addEventListener('sync', event => {
 | Taux de réussite par question | Agrégation | Difficulté réelle vs prévue |
 | Temps de réponse par question | xAPI | Corrélation temps × réussite |
 | Tentatives par quiz | xAPI (attempted) | Courbe d'apprentissage |
-| Score simulation SpineSim | API SpineSim | Progression chirurgicale |
-| Précision placement vis | API SpineSim | Évolution accuracy % |
-| Score de correction Cobb final | API SpineSim | Courbe de compétence |
+| Score simulation VERTEX | API VERTEX | Progression chirurgicale |
+| Précision placement vis | API VERTEX | Évolution accuracy % |
+| Score de correction Cobb final | API VERTEX | Courbe de compétence |
 
-#### 20.1.3 Métriques SpineSim spécifiques
+#### 20.1.3 Métriques VERTEX spécifiques
 ```julia
 struct SimulationAnalytics
     student_id::String
@@ -1778,7 +1778,7 @@ end
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  SpineSim© — Dashboard Instructeur          Dr. Martin │ Cohorte 2026-A    │
+│  VERTEX© — Dashboard Instructeur          Dr. Martin │ Cohorte 2026-A    │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
@@ -1791,10 +1791,10 @@ end
 │  │ M5  Classifications ██████████████████████████████████░░░░ 82%       │  │
 │  │ M15 Instrumentation ████████████████████████░░░░░░░░░░░░░ 58%       │  │
 │  │ M20 Peropératoire  ██████████████░░░░░░░░░░░░░░░░░░░░░░░░ 32%       │  │
-│  │ M28 SpineSim       ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 21%       │  │
+│  │ M28 VERTEX       ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 21%       │  │
 │  └───────────────────────────────────────────────────────────────────────┘  │
 │                                                                             │
-│  ┌─ SpineSim — Compétences chirurgicales ───────────────────────────────┐  │
+│  ┌─ VERTEX — Compétences chirurgicales ───────────────────────────────┐  │
 │  │                                                                       │  │
 │  │  Précision vis pédiculaires    Correction Cobb       Temps opératoire │  │
 │  │  ┌────────────┐               ┌────────────┐        ┌────────────┐   │  │
@@ -1818,7 +1818,7 @@ end
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│  SpineSim© — Mon parcours                            Dr. Dupont │ Or 🥇    │
+│  VERTEX© — Mon parcours                            Dr. Dupont │ Or 🥇    │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  ┌─ Progression globale ────────────────────────────────────────────────┐  │
@@ -1830,12 +1830,12 @@ end
 │  │        Anatomie                 │  │                                 │  │
 │  │          ★★★★★                  │  │ → Module 22 : Complications     │  │
 │  │  Imagerie    Classification     │  │ → Quiz Or Module 20 (2e essai) │  │
-│  │   ★★★★☆       ★★★★★            │  │ → SpineSim Scénario Lenke 5C   │  │
+│  │   ★★★★☆       ★★★★★            │  │ → VERTEX Scénario Lenke 5C   │  │
 │  │  Chirurgie    Biomécanique      │  │ → Révision : Ostéotomies       │  │
 │  │   ★★★☆☆       ★★★★☆            │  │                                 │  │
 │  └─────────────────────────────────┘  └─────────────────────────────────┘  │
 │                                                                             │
-│  ┌─ SpineSim — Mes performances ────────────────────────────────────────┐  │
+│  ┌─ VERTEX — Mes performances ────────────────────────────────────────┐  │
 │  │  Dernière simulation : Lenke 1AN — Score 78/100                      │  │
 │  │  • Vis placées : 12/12 (92% intra-pédiculaires, record personnel)   │  │
 │  │  • Cobb final : 22° (cible < 25°) ✓                                 │  │
@@ -1868,7 +1868,7 @@ struct StudentPredictiveFeatures
     avg_quiz_score::Float64           # Score moyen quiz
     login_frequency::Float64          # Connexions/semaine
     time_between_sessions::Float64    # Jours entre sessions (régularité)
-    spinesim_improvement_rate::Float64 # Taux d'amélioration SpineSim
+    VERTEX_improvement_rate::Float64 # Taux d'amélioration VERTEX
     help_requests_ratio::Float64      # Demandes d'aide / interactions
     undo_ratio::Float64               # Annulations / actions totales
     video_completion_rate::Float64    # % vidéos regardées en entier
@@ -1885,16 +1885,16 @@ end
 
 ## 21. Stratégie réglementaire SaMD (Software as a Medical Device)
 
-> **Constat TECH-01 résolu** : SpineSim© modélise des anatomies, calcule des contraintes biomécaniques et produit des prédictions (PJK, correction). Selon la FDA et le MDR 2017/745, un logiciel analysant des données patient pour aider à la décision clinique est un SaMD de Classe IIa minimum. Cette section définit la stratégie réglementaire.
+> **Constat TECH-01 résolu** : VERTEX© modélise des anatomies, calcule des contraintes biomécaniques et produit des prédictions (PJK, correction). Selon la FDA et le MDR 2017/745, un logiciel analysant des données patient pour aider à la décision clinique est un SaMD de Classe IIa minimum. Cette section définit la stratégie réglementaire.
 
 ### 21.1 Positionnement réglementaire retenu
 
 **Phase 1 (lancement, mois 22-36) : Outil pédagogique — « Educational Use Only »**
 
-SpineSim© est positionné exclusivement comme **outil pédagogique et de simulation éducative**, NON destiné à la planification chirurgicale réelle ni à la prise de décision clinique.
+VERTEX© est positionné exclusivement comme **outil pédagogique et de simulation éducative**, NON destiné à la planification chirurgicale réelle ni à la prise de décision clinique.
 
 - **Disclaimer obligatoire** (affiché au lancement de chaque session) :
-  > « SpineSim© is an educational simulation tool for training purposes only. It is NOT a medical device and must NOT be used for clinical decision-making, surgical planning, or patient care. Simulation results are approximate and intended for pedagogical demonstration only. »
+  > « VERTEX© is an educational simulation tool for training purposes only. It is NOT a medical device and must NOT be used for clinical decision-making, surgical planning, or patient care. Simulation results are approximate and intended for pedagogical demonstration only. »
 - **Disclaimer intégré dans** : CGU, écrans de chargement, exports PDF, rapports de simulation
 - **Pas d'import DICOM patient réel** en Phase 1 (uniquement des modèles anatomiques génériques ou anonymisés)
 - **Pas de prédiction clinique quantitative** (pas de « probabilité de PJK = 23% », seulement « risque élevé/modéré/faible » à titre pédagogique)
@@ -1903,7 +1903,7 @@ Ce positionnement évite les exigences réglementaires SaMD et économise ~200-5
 
 **Phase 2 (évolution future, mois 36+) : Option marquage CE/FDA — à évaluer**
 
-Si la demande du marché et la validation biommécanique le justifient, SpineSim© pourrait évoluer vers un dispositif médical (SaMD) pour la planification chirurgicale. Cette transition nécessiterait :
+Si la demande du marché et la validation biommécanique le justifient, VERTEX© pourrait évoluer vers un dispositif médical (SaMD) pour la planification chirurgicale. Cette transition nécessiterait :
 
 | Exigence | Norme/Règlement | Coût estimé | Délai |
 |---|---|---|---|
@@ -1940,7 +1940,7 @@ Même en mode « educational only », les bonnes pratiques suivantes sont appliq
 
 ---
 
-*Document de spécifications techniques — SpineSim© — Février 2026*
+*Document de spécifications techniques — VERTEX© — Février 2026*
 *Version 2.0 — Document évolutif, mis à jour à chaque phase de développement*
 *Propriété intellectuelle : à définir (brevet logiciel, licence académique ou commerciale)*
 *Sections 12-21 : sécurité, déploiement, DR, tests, CI/CD, RBAC, accessibilité, mobile/hors-ligne, analytics, stratégie SaMD*

@@ -1,5 +1,5 @@
-# GUIDE DU FORMATEUR / TUTEUR
-## Formation en ligne sur la Scoliose avec SpineSim©
+﻿# GUIDE DU FORMATEUR / TUTEUR
+## Formation en ligne sur la Scoliose avec VERTEX©
 
 ---
 
@@ -7,7 +7,7 @@
 
 ### 1.1 Missions principales
 1. **Accompagner** les apprenants tout au long de leur parcours (coaching, mentorat)
-2. **Évaluer** les compétences (quiz, cas cliniques, simulations SpineSim©)
+2. **Évaluer** les compétences (quiz, cas cliniques, simulations VERTEX©)
 3. **Animer** la communauté d'apprentissage (forum, webinaires, discussions)
 4. **Adapter** le parcours aux besoins individuels (remédiation, approfondissement)
 5. **Contribuer** à l'amélioration continue du contenu (retours, mises à jour)
@@ -16,7 +16,7 @@
 - Chirurgien orthopédiste ou neurochirurgien **spécialiste du rachis** (≥ 5 ans d'expérience)
 - Expérience en **enseignement** (DES, DIU, formation continue)
 - Maîtrise des **outils numériques** de base (LMS, visioconférence, forum)
-- Formation initiale à **SpineSim©** validée (certification formateur)
+- Formation initiale à **VERTEX©** validée (certification formateur)
 - Disponibilité : **4-8 heures/semaine** par cohorte de 20-30 apprenants
 
 ### 1.3 Types de rôles
@@ -37,7 +37,7 @@
 2. Première connexion → changement de mot de passe obligatoire + MFA
 3. Accès au **Dashboard Instructeur** : vue d'ensemble de toutes les cohortes
 4. Accès au **CMS** : visualisation et édition du contenu (si autorisé)
-5. Accès à **SpineSim©** : mode formateur (tous les scénarios + outils d'évaluation)
+5. Accès à **VERTEX©** : mode formateur (tous les scénarios + outils d'évaluation)
 
 ### 2.2 Tableau de bord formateur
 
@@ -60,7 +60,7 @@
 │  ┌─ Actions rapides ─────────────────────────────────────────────┐  │
 │  │ [📩 Envoyer un message] [📊 Voir les rapports]                │  │
 │  │ [🎓 Planifier un webinaire] [📝 Corriger des évaluations]     │  │  
-│  │ [🎮 Lancer scénario SpineSim] [📋 Exporter CSV]               │  │
+│  │ [🎮 Lancer scénario VERTEX] [📋 Exporter CSV]               │  │
 │  └───────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -69,7 +69,7 @@
 - **Vue module** : parcourir chaque module comme un apprenant
 - **Vue éditeur** : voir les notes pédagogiques, réponses aux quiz, barèmes
 - **Vue évaluation** : liste des soumissions, scores, feedback à donner
-- **Vue SpineSim** : observer en temps réel la simulation d'un apprenant (mode spectateur)
+- **Vue VERTEX** : observer en temps réel la simulation d'un apprenant (mode spectateur)
 
 ---
 
@@ -85,7 +85,7 @@
 | **S4** | Point individuel (15 min) si besoin | Répondre aux difficultés |
 | **S6** | Webinaire thématique (cas clinique Partie III) | Approfondir, exercer |
 | **S8** | Évaluation mi-parcours | Feedback global, ajustement |
-| **S10** | Session SpineSim guidée (groupe) | Démonstration, exercice collectif |
+| **S10** | Session VERTEX guidée (groupe) | Démonstration, exercice collectif |
 | **S12** | Webinaire Q&A (questions ouvertes) | Lever les derniers doutes |
 | **S14** | Préparation à la certification | Conseils, révision, simulation examen |
 | **S16** | Examen de certification | Surveillance, évaluation |
@@ -140,7 +140,7 @@
 | 0-5 min | Introduction, objectifs du webinaire |
 | 5-20 min | Présentation du cas clinique (imagerie, histoire, examen) |
 | 20-35 min | Discussion interactive (questions, sondage, vote) |
-| 35-50 min | Démonstration SpineSim (planification chirurgicale live) |
+| 35-50 min | Démonstration VERTEX (planification chirurgicale live) |
 | 50-55 min | Synthèse et messages clés |
 | 55-60 min | Questions-réponses |
 
@@ -151,11 +151,11 @@
 | 1 | Lecture systématique d'une radiographie de scoliose | M7 | An 1, S3 |
 | 2 | Classification de Lenke — cas pratiques | M5 | An 1, S5 |
 | 3 | Indications chirurgicales vs conservatoires — algorithme | M8 | An 1, S7 |
-| 4 | Planification chirurgicale 3D (avec SpineSim) | M15 + M28 | An 1, S10 |
+| 4 | Planification chirurgicale 3D (avec VERTEX) | M15 + M28 | An 1, S10 |
 | 5 | Complications : prévention et gestion | M18-19 | An 1, S12 |
 | 6 | Scoliose de l'adulte — stratégies de prise en charge | M10 | An 1, S14 |
 | 7 | Ostéotomies — quand et comment ? | M16 | An 2, S3 |
-| 8 | SpineSim avancé — cas complexes en VR | M28 | An 2, S6 |
+| 8 | VERTEX avancé — cas complexes en VR | M28 | An 2, S6 |
 | 9 | Innovations et recherche | M27 | An 2, S10 |
 | 10 | Préparation à la certification — simulation d'examen | M29 | Avant chaque session |
 
@@ -176,7 +176,7 @@
 | ❓ Questions générales | Questions sur le parcours, la logistique |
 | 🏥 Cas cliniques | Discussion de cas (anonymisés), partage d'expérience |
 | 🔬 Littérature et recherche | Partage d'articles, discussion de publications |
-| 🎮 SpineSim | Questions sur la simulation, partage de scores |
+| 🎮 VERTEX | Questions sur la simulation, partage de scores |
 | 💡 Suggestions | Idées d'amélioration de la formation |
 
 ### 4.3 Évaluation et feedback
@@ -187,7 +187,7 @@
 - Si taux d'échec > 40% sur une question → **revoir la question** (mal formulée ?) ou **revoir le contenu** (insuffisant ?)
 - Pour les cas cliniques ouverts → **correction manuelle** avec feedback personnalisé
 
-#### SpineSim — Évaluation
+#### VERTEX — Évaluation
 - Consulter les **rapports de simulation** de chaque apprenant
 - Critères d'évaluation :
   - Précision du placement des vis (% intra-pédiculaire)
@@ -201,12 +201,12 @@
 - Le formateur/instructeur principal supervise l'examen
 - Vérification des conditions de proctoring
 - Correction des sections de planification chirurgicale (section 4 de l'examen)
-- Correction de la session SpineSim pratique (section 5)
+- Correction de la session VERTEX pratique (section 5)
 - Validation finale du certificat
 
 ---
 
-## 5. UTILISATION DE SPINESIM© (MODE FORMATEUR)
+## 5. UTILISATION DE VERTEX© (MODE FORMATEUR)
 
 ### 5.1 Fonctionnalités formateur
 
@@ -221,7 +221,7 @@
 | **Enregistrement/replay** | Enregistrer une session pour la rejouer comme démo |
 | **Annotations 3D** | Annoter le modèle en temps réel (flèches, cercles, texte) |
 
-### 5.2 Scénarios pédagogiques SpineSim recommandés
+### 5.2 Scénarios pédagogiques VERTEX recommandés
 
 | Scénario | Difficulté | Module | Objectifs |
 |----------|-----------|--------|-----------|
@@ -243,7 +243,7 @@
 | Jour | Horaire | Contenu |
 |------|---------|---------|
 | **J1 matin** | 9h-12h30 | Prise en main de la plateforme LMS (dashboard, forum, quiz) |
-| **J1 après-midi** | 14h-17h30 | SpineSim mode formateur (spectateur, co-pilote, scénarios) |
+| **J1 après-midi** | 14h-17h30 | VERTEX mode formateur (spectateur, co-pilote, scénarios) |
 | **J2 matin** | 9h-12h30 | Techniques de tutorat en ligne (accompagnement, relances, feedback) |
 | **J2 après-midi** | 14h-17h | Simulation de webinaire (exercice pratique) + évaluation |
 
@@ -278,7 +278,7 @@
 - [ ] Message de bienvenue envoyé à tous les apprenants
 - [ ] Webinaire d'introduction planifié (Zoom/BBB + calendrier LMS)
 - [ ] Forum initialisé (message de bienvenue, catégories vérifiées)
-- [ ] Scénarios SpineSim vérifiés (fonctionnels, objectifs clairs)
+- [ ] Scénarios VERTEX vérifiés (fonctionnels, objectifs clairs)
 - [ ] Calendrier de webinaires planifié (10 sessions sur 16 semaines)
 - [ ] Alertes automatiques configurées (inactivité 7j, 14j, 30j)
 
@@ -294,7 +294,7 @@
 ### 8.3 Checklist de fin de cohorte
 
 - [ ] Tous les quiz évalués et feedback envoyé
-- [ ] Évaluations SpineSim corrigées
+- [ ] Évaluations VERTEX corrigées
 - [ ] Examen de certification supervisé
 - [ ] Certificats validés et envoyés
 - [ ] Enquête de satisfaction envoyée
@@ -303,6 +303,6 @@
 
 ---
 
-*Guide du formateur — Formation Scoliose avec SpineSim© — Version 1.0*
+*Guide du formateur — Formation Scoliose avec VERTEX© — Version 1.0*
 *Ce guide est remis à chaque formateur/tuteur lors de sa certification*
 *Mis à jour annuellement en fonction des retours d'expérience*

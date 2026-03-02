@@ -1,16 +1,16 @@
-# CAHIER DES CHARGES — PLATEFORME LMS
-## Formation en ligne sur la Scoliose avec SpineSim©
+﻿# CAHIER DES CHARGES — PLATEFORME LMS
+## Formation en ligne sur la Scoliose avec VERTEX©
 
 ---
 
 ## 1. CONTEXTE ET OBJECTIFS
 
 ### 1.1 Contexte
-Mise en place d'une plateforme de formation en ligne (Learning Management System) dédiée à la formation complète sur la scoliose, intégrant l'application de simulation biomécanique SpineSim©. La plateforme doit accueillir des professionnels de santé (chirurgiens orthopédistes, internes, kinésithérapeutes) dans un environnement sécurisé conforme aux exigences de formation médicale continue.
+Mise en place d'une plateforme de formation en ligne (Learning Management System) dédiée à la formation complète sur la scoliose, intégrant l'application de simulation biomécanique VERTEX©. La plateforme doit accueillir des professionnels de santé (chirurgiens orthopédistes, internes, kinésithérapeutes) dans un environnement sécurisé conforme aux exigences de formation médicale continue.
 
 ### 1.2 Objectifs
 1. Héberger et distribuer **29 modules** de formation (~89 heures de contenu)
-2. Intégrer l'application **SpineSim©** (simulation 3D temps réel)
+2. Intégrer l'application **VERTEX©** (simulation 3D temps réel)
 3. Gérer un système d'évaluation progressif à **4 niveaux** (Bronze → Diamant)
 4. Délivrer des **certificats de formation** reconnus (DPC, CME)
 5. Accueillir **500 à 5 000 apprenants** en année 1, scalable à 20 000+
@@ -33,7 +33,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - Informations personnelles : nom, prénom, email, spécialité, année d'étude/exercice
 - Photo de profil, biographie courte
 - Préférences : langue (FR, EN, ES, AR), thème (clair/sombre), notifications
-- Portfolio de compétences (badges, certificats, scores SpineSim)
+- Portfolio de compétences (badges, certificats, scores VERTEX)
 
 ### 2.2 Gestion du contenu pédagogique
 
@@ -52,7 +52,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Images radiologiques | DICOM/WebP/PNG | 100 MB | Viewer DICOM intégré |
 | Documents | PDF/PPTX | 50 MB | Viewer en ligne |
 | Podcast/Audio | MP3/AAC | 500 MB | Streaming |
-| Modèles 3D SpineSim | GLB/USDZ | 500 MB | WebGL streaming |
+| Modèles 3D VERTEX | GLB/USDZ | 500 MB | WebGL streaming |
 | Quiz interactifs | JSON/xAPI | — | Temps réel |
 
 #### 2.2.3 Éditeur de contenu (CMS)
@@ -71,7 +71,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - **QCS** (Question à Choix Simple) : 1 seule réponse
 - **Cas cliniques interactifs** : scénarios avec embranchements (vidéo + texte + imagerie)
 - **Identification d'images** : pointer des structures anatomiques, mesurer des angles
-- **Simulation SpineSim** : évaluation pratique intégrée
+- **Simulation VERTEX** : évaluation pratique intégrée
 - **Drag & drop** : remettre en ordre (étapes chirurgicales, algorithme diagnostique)
 
 #### 2.3.2 Niveaux de difficulté
@@ -80,7 +80,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Bronze | 🥉 | ≥ 70% | Connaissances de base, rappels |
 | Argent | 🥈 | ≥ 75% | Application clinique, cas standards |
 | Or | 🥇 | ≥ 80% | Analyse complexe, planification chirurgicale |
-| Diamant | 💎 | ≥ 85% | Cas difficiles, complications, SpineSim |
+| Diamant | 💎 | ≥ 85% | Cas difficiles, complications, VERTEX |
 
 #### 2.3.3 Banque de questions
 - **600+ questions** réparties sur 28 modules
@@ -91,13 +91,13 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 
 #### 2.3.4 Examen de certification
 - Durée : 3h30 (chronométré)
-- 5 sections : QCM (60 min), cas cliniques (45 min), imagerie (30 min), planification (45 min), SpineSim pratique (30 min)
+- 5 sections : QCM (60 min), cas cliniques (45 min), imagerie (30 min), planification (45 min), VERTEX pratique (30 min)
 - Proctoring en ligne : webcam + screen recording + IA anti-fraude
 - 2 tentatives autorisées (délai 30 jours entre tentatives)
 - Note ≥ 70% pour réussir
 - Certificat numérique vérifiable (blockchain optionnel, QR code)
 
-### 2.4 Intégration SpineSim©
+### 2.4 Intégration VERTEX©
 
 #### 2.4.1 Lancement depuis le LMS
 - Bouton de lancement contextuel dans chaque module pertinent
@@ -108,7 +108,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 #### 2.4.2 Scénarios pédagogiques intégrés
 - Pré-configurés par module (ex : Module 15 → placement de vis pédiculaires)
 - Objectifs de simulation liés aux objectifs du module
-- Score SpineSim intégré dans la note du module (pondération configurable)
+- Score VERTEX intégré dans la note du module (pondération configurable)
 - Mode guidé (tutoriel) et mode libre (sandbox)
 
 #### 2.4.3 Prérequis techniques
@@ -123,7 +123,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - Radar de compétences (anatomie, imagerie, chirurgie, biomécanique...)
 - Historique des quiz (score, temps, évolution)
 - Badges et certificats obtenus
-- Recommandations personnalisées (module suivant, révision, SpineSim)
+- Recommandations personnalisées (module suivant, révision, VERTEX)
 - Temps total passé, streak de connexion
 
 #### 2.5.2 Dashboard instructeur/tuteur
@@ -155,8 +155,8 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 |---------|---------|----------------|-------|
 | **Découverte** | Modules 1-3 (fondamentaux) | Gratuit | Illimité |
 | **Essentiel** | Modules 1-14 (diagnostic + pathologies) | 290€ | 12 mois |
-| **Standard** | Tous modules sans SpineSim | 490€ | 12 mois |
-| **Premium** | Tous modules + SpineSim complet + VR | 890€ | 12 mois |
+| **Standard** | Tous modules sans VERTEX | 490€ | 12 mois |
+| **Premium** | Tous modules + VERTEX complet + VR | 890€ | 12 mois |
 | **Certification** | Premium + examen + certificat | 1 190€ | 12 mois |
 | **Institutionnel** | Licence par siège (min 10) | 590€/siège | 12 mois |
 
@@ -199,7 +199,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
          └────────┬─────────────┬─────────────┬──────────────────┘
                   │             │             │
          ┌────────▼──────┐ ┌───▼─────┐ ┌─────▼───────┐
-         │  LMS Backend  │ │SpineSim │ │ Media Server│
+         │  LMS Backend  │ │VERTEX │ │ Media Server│
          │  (Node.js /   │ │ API     │ │ (Video      │
          │   Django)     │ │ (Julia  │ │  streaming) │
          │               │ │  Genie) │ │             │
@@ -217,14 +217,14 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 |--------|-------------|---------------|
 | **Frontend LMS** | Vue.js 3 / Nuxt 3 | SSR, performances, écosystème riche |
 | **Backend LMS** | Node.js (NestJS) ou Python (Django) | Robustesse, communauté, ORM mature |
-| **Backend SpineSim** | Julia (Genie.jl) | Performance calcul scientifique, FEM |
+| **Backend VERTEX** | Julia (Genie.jl) | Performance calcul scientifique, FEM |
 | **Base de données** | PostgreSQL 17 + pgvector | Données relationnelles, recherche vectorielle |
 | **Cache** | Redis 7 Cluster | Sessions, cache, queues, rate limiting |
 | **Stockage objets** | AWS S3 / MinIO | Vidéos, modèles 3D, DICOM, sauvegardes |
 | **Recherche** | Elasticsearch / OpenSearch | Full-text, logs, analytics |
 | **Video streaming** | AWS MediaConvert + CloudFront | Transcodage HLS/DASH, DRM |
 | **Message broker** | RabbitMQ / Apache Kafka | Async (FEM jobs, notifications, xAPI) |
-| **CI/CD** | GitHub Actions | Build, test, deploy (voir SpineSim specs) |
+| **CI/CD** | GitHub Actions | Build, test, deploy (voir VERTEX specs) |
 | **Monitoring** | Prometheus + Grafana + Sentry | Métriques, alertes, error tracking |
 | **Container** | Docker + Kubernetes (EKS/GKE) | Orchestration, scaling, déploiement |
 
@@ -238,12 +238,12 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | CLS (Cumulative Layout Shift) | < 0.1 | Lighthouse |
 | Score Lighthouse | ≥ 90 (performance) | CI/CD |
 | Temps chargement vidéo | < 3s (start playback) | RUM |
-| Temps lancement SpineSim | < 10s | RUM |
+| Temps lancement VERTEX | < 10s | RUM |
 | API response p95 | < 200 ms | APM |
 | Uptime | 99.9% | Monitoring |
 
 ### 3.4 Sécurité (résumé)
-- Voir **SPINESIM_SPECIFICATIONS_TECHNIQUES.md §12** pour le détail complet
+- Voir **VERTEX_SPECIFICATIONS_TECHNIQUES.md §12** pour le détail complet
 - Chiffrement TLS 1.3 + données au repos AES-256
 - Authentification OAuth2/OIDC + MFA
 - Conformité RGPD, hébergement HDS
@@ -255,7 +255,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Système | Protocole | Usage |
 |---------|-----------|-------|
 | LRS (Learning Record Store) | xAPI (Tin Can) | Stockage des traces d'apprentissage |
-| LMS tiers (Moodle, Canvas) | LTI 1.3 | Intégration SpineSim dans LMS existants |
+| LMS tiers (Moodle, Canvas) | LTI 1.3 | Intégration VERTEX dans LMS existants |
 | Viewer DICOM | DICOMweb (WADO-RS) | Affichage images médicales |
 | Visioconférence | API Zoom/Teams/BBB | Webinaires live |
 | DPC / ANDPC | API DPC | Déclaration des actions de formation |
@@ -281,7 +281,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Ressource | Quantité | Coût estimé/mois |
 |-----------|----------|-------------------|
 | Serveurs API (K8s nodes) | 3-6 nodes (4 vCPU, 16 GB RAM) | 400-800€ |
-| GPU nodes (SpineSim FEM) | 1-3 nodes (NVIDIA T4/A10G) | 800-2400€ |
+| GPU nodes (VERTEX FEM) | 1-3 nodes (NVIDIA T4/A10G) | 800-2400€ |
 | PostgreSQL (RDS) | db.r6g.xlarge + replica | 600€ |
 | Redis (ElastiCache) | cache.r6g.large (3 nodes) | 400€ |
 | S3 stockage | ~5 TB (vidéos, modèles, DICOM) | 120€ |
@@ -308,7 +308,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | **Lot 2** | Auth, gestion utilisateurs, profils | Mois 2-3 |
 | **Lot 3** | CMS, import contenu, lecteur vidéo | Mois 3-5 |
 | **Lot 4** | Système de quiz et évaluation | Mois 5-6 |
-| **Lot 5** | Intégration SpineSim (LTI, SSO, xAPI) | Mois 6-8 |
+| **Lot 5** | Intégration VERTEX (LTI, SSO, xAPI) | Mois 6-8 |
 | **Lot 6** | Paiement, facturation, DPC | Mois 7-8 |
 | **Lot 7** | Analytics, dashboards, reporting | Mois 8-9 |
 | **Lot 8** | PWA, mode hors-ligne, responsive | Mois 9-10 |
@@ -321,8 +321,8 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - [ ] Inscription et authentification fonctionnelles (SSO, MFA)
 - [ ] 29 modules accessibles avec contenu multimédia
 - [ ] Quiz fonctionnels aux 4 niveaux de difficulté
-- [ ] SpineSim intégré et lançable depuis chaque module pertinent
-- [ ] Scores SpineSim remontés dans le LMS
+- [ ] VERTEX intégré et lançable depuis chaque module pertinent
+- [ ] Scores VERTEX remontés dans le LMS
 - [ ] Examen de certification avec proctoring opérationnel
 - [ ] Paiement par CB et virement fonctionnel
 - [ ] Dashboards apprenant, instructeur et admin opérationnels
@@ -340,7 +340,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 | Priorité | Description | Temps de réponse | Temps de résolution |
 |----------|-------------|-----------------|---------------------|
 | **Critique** | Plateforme inaccessible, perte de données | 30 min | 4h |
-| **Haute** | Fonctionnalité majeure indisponible (quiz, SpineSim) | 2h | 24h |
+| **Haute** | Fonctionnalité majeure indisponible (quiz, VERTEX) | 2h | 24h |
 | **Moyenne** | Bug fonctionnel non bloquant | 8h | 72h |
 | **Basse** | Amélioration, question | 24h | 2 semaines |
 
@@ -348,9 +348,9 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - **Contenu** : mise à jour annuelle (nouvelles publications, recommandations)
 - **Sécurité** : patches critiques sous 48h
 - **Fonctionnalités** : releases trimestrielles (sprint 2 semaines)
-- **SpineSim** : mises à jour selon le plan de développement (voir specs techniques)
+- **VERTEX** : mises à jour selon le plan de développement (voir specs techniques)
 
 ---
 
-*Cahier des charges LMS — Formation Scoliose avec SpineSim© — Version 1.0*
+*Cahier des charges LMS — Formation Scoliose avec VERTEX© — Version 1.0*
 *Document de référence pour la sélection du prestataire et le développement de la plateforme*

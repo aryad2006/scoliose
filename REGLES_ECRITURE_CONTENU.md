@@ -1,6 +1,6 @@
-# RÈGLES D'ÉCRITURE DU CONTENU PÉDAGOGIQUE
+﻿# RÈGLES D'ÉCRITURE DU CONTENU PÉDAGOGIQUE
 
-**Formation Scoliose avec SpineSim©**
+**Formation Scoliose avec VERTEX©**
 **Version** : 1.0 — Février 2026
 **Applicabilité** : Tous les modules (1 à 29)
 
@@ -91,8 +91,8 @@ Chaque information doit être classée en un de ces trois niveaux :
 
 | Niveau | But | Marqueur | Pour qui |
 |---|---|---|---|
-| **Essentiel** | Doit être mémorisé | Texte normal + **gras** | Tous les apprenants |
-| **Approfondi** | Compréhension fine | Encadré info (📖) | Apprenants avancés |
+| **Essentiel** | Doit être mémorisé | Texte normal + **gras** | Tous les praticiens |
+| **Approfondi** | Compréhension fine | Encadré info (📖) | Praticiens avancés |
 | **Expert** | Détail chirurgical/recherche | Encadré spécialisé (🔬) | Chirurgiens en formation |
 
 ### 3.2 Règles de gras et mise en emphase
@@ -116,20 +116,20 @@ Chaque information doit être classée en un de ces trois niveaux :
 
 ---
 
-## 4. Lien avec SpineSim©
+## 4. Lien avec VERTEX©
 
-### 4.1 Exercices SpineSim© obligatoires
+### 4.1 Exercices VERTEX© obligatoires
 
-- **Minimum 1 exercice SpineSim© par module** (sauf modules purement cliniques)
+- **Minimum 1 exercice VERTEX© par module** (sauf modules purement cliniques)
 - Formulés sous forme d'instruction directe :
 
-> 🧊 **Exercice SpineSim©** : Ouvrez le modèle « Rachis normal ». Passez en mode transparence progressive :
+> 🧊 **Exercice VERTEX©** : Ouvrez le modèle « Rachis normal ». Passez en mode transparence progressive :
 > 1. Identifiez les 3 colonnes de l'erector spinae (iliocostal, longissimus, épineux)
 > 2. Activez les vecteurs de force — observez la direction de traction de chaque muscle
 > 3. Simulez une atrophie des multifides du côté droit — observez l'effet sur l'alignement segmentaire
 > → *Que se passe-t-il au niveau de la zone neutre ?*
 
-### 4.2 Scénarios SpineSim©
+### 4.2 Scénarios VERTEX©
 
 - Chaque scénario a un objectif pédagogique clair
 - Format : **Contexte → Manipulation → Observation → Question**
@@ -170,7 +170,7 @@ Où :
 - `{EMOJI}` : 🧊 (3D), 📐 (schéma), 🎬 (animation/vidéo), 📊 (infographie), 📷 (photo clinique)
 - `{CODE}` : M{module}-S{section}-{numéro} (ex. M01-S03-002)
 - `{TITRE}` : titre descriptif du média
-- `{INSTRUCTION_PÉDAGOGIQUE}` : **NOUVEAU** — ce que l'apprenant doit observer dans ce média
+- `{INSTRUCTION_PÉDAGOGIQUE}` : **NOUVEAU** — ce que le praticien doit observer dans ce média
 
 ### 6.2 Instruction pédagogique obligatoire
 
@@ -309,7 +309,7 @@ Avant de considérer un module comme terminé, vérifier :
 | 4 | ≥ 1 question de réflexion par section | |
 | 5 | ≥ 1 micro-exercice par section | |
 | 6 | ≥ 3 mnémoniques/astuces | |
-| 7 | ≥ 1 exercice SpineSim© | |
+| 7 | ≥ 1 exercice VERTEX© | |
 | 8 | Tous les marqueurs médias avec instruction pédagogique | |
 | 9 | Encadrés variés (min 1 / 500 mots) | |
 | 10 | Transition entre chaque section | |
@@ -336,13 +336,13 @@ Avant de considérer un module comme terminé, vérifier :
 
 - Priorité à l'**application** : arbres décisionnels, algorithmes, classifications
 - Cas cliniques avec données à interpréter (radiographies, examens)
-- SpineSim© en mode simulation (modifier paramètres → observer résultats)
+- VERTEX© en mode simulation (modifier paramètres → observer résultats)
 
 ### 12.3 Modules techniques/chirurgicaux (Parties IV-V : Modules 16-25)
 
 - Priorité à la **procédure** : étapes, check-lists, trucs et astuces opératoires
 - Encadrés ⚠️ Danger fréquents (risques, pièges, complications)
-- SpineSim© en mode planification chirurgicale
+- VERTEX© en mode planification chirurgicale
 
 ### 12.4 Modules transversaux (Parties VI-VII : Modules 26-29)
 
@@ -352,4 +352,4 @@ Avant de considérer un module comme terminé, vérifier :
 
 ---
 
-*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques de la Formation Scoliose avec SpineSim©. Toute dérogation doit être justifiée par la nature du contenu.*
+*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques de la Formation Scoliose avec VERTEX©. Toute dérogation doit être justifiée par la nature du contenu.*
