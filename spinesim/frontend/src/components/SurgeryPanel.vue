@@ -38,6 +38,9 @@
             <button :class="{ active: screw.side === 'left' }" @click="screw.side = 'left'">
               ← Gauche
             </button>
+            <button :class="{ active: screw.side === 'bilateral' }" @click="screw.side = 'bilateral'">
+              ⬌ Bilatéral
+            </button>
             <button :class="{ active: screw.side === 'right' }" @click="screw.side = 'right'">
               Droite →
             </button>
@@ -87,16 +90,27 @@
           <span class="range-value">{{ screw.sagittal }}°</span>
         </div>
 
+        <!-- Bouton mode interactif -->
+        <button
+          class="btn interactive"
+          :class="{ 'active': placerActive }"
+          @click="toggleInteractivePlacer"
+          :disabled="!props.renderer"
+        >
+          {{ placerActive ? '🖱️ Clic sur rachis actif…' : '🖱️ Mode interactif' }}
+        </button>
+
         <button class="btn primary" @click="placeScrew" :disabled="store.loading">
-          🔩 Placer la vis
+          🔩 Placer la vis (auto)
         </button>
 
         <!-- Historique des vis placées -->
         <div v-if="placedScrews.length > 0" class="screw-history">
           <label>Vis placées ({{ placedScrews.length }})</label>
           <div v-for="(s, i) in placedScrews" :key="i" class="screw-item" :class="s.resultClass">
-            <span class="screw-level">{{ s.level }} {{ s.side === 'left' ? 'G' : 'D' }}</span>
+            <span class="screw-level">{{ s.level }} {{ s.side === 'left' ? 'G' : s.side === 'right' ? 'D' : 'B' }}</span>
             <span class="screw-info">∅{{ s.diameter }} × {{ s.length }}mm</span>
+            <span v-if="s.pullout" class="screw-pullout">{{ s.pullout }}N</span>
             <span class="screw-grade">{{ s.grade }}</span>
           </div>
         </div>
@@ -192,12 +206,62 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed } from 'vue'
+import { reactive, ref, computed, onUnmounted } from 'vue'
 import { useSpineStore } from '../stores/spineStore'
+import { ScrewPlacer } from '../engine/ScrewPlacer'
+import * as THREE from 'three'
+import axios from 'axios'
+
+const props = defineProps({
+  renderer: { type: Object, default: null },  // SpineRenderer instance
+})
 
 const store = useSpineStore()
 const tab = ref('screws')
 
+// API client
+const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000' })
+
+// ScrewPlacer (paresseux — instancié à la demande)
+let screwPlacer = null
+const placerActive = ref(false)
+
+function getScrewPlacer() {
+  if (!screwPlacer && props.renderer) {
+    screwPlacer = new ScrewPlacer(props.renderer, apiClient)
+    screwPlacer.on('placed', (result) => {
+      _pushScrewResult(screw.level, screw.side, screw.diameter, screw.length, result)
+      placerActive.value = false
+    })
+  }
+  return screwPlacer
+}
+
+function toggleInteractivePlacer() {
+  const placer = getScrewPlacer()
+  if (!placer) return
+
+  if (placerActive.value) {
+    placer.deactivate()
+    placerActive.value = false
+  } else {
+    placer.activate({
+      level: screw.level,
+      side: screw.side,
+      diameter: screw.diameter,
+      length: screw.length,
+      angle: screw.convergence,
+    })
+    placerActive.value = true
+  }
+}
+
+onUnmounted(() => {
+  if (screwPlacer) {
+    screwPlacer.dispose()
+    screwPlacer = null
+  }
+})
 const instrumentedLevels = [
   'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10', 'T11', 'T12',
   'L1', 'L2', 'L3', 'L4', 'L5', 'S1',
@@ -238,45 +302,113 @@ const maneuverDescription = computed(() => {
 })
 
 async function placeScrew() {
-  const result = await store.placeScrew({
-    level: screw.level,
-    side: screw.side,
-    diameter: screw.diameter,
-    length: screw.length,
-    entry_offset: [0, 0, 0],
-    trajectory_angles: [screw.convergence, screw.sagittal],
-  })
+  const sides = screw.side === 'bilateral' ? ['left', 'right'] : [screw.side]
 
-  if (result) {
-    const accuracy = result.accuracy_score || 0
-    let grade = '❌'
-    let resultClass = 'screw-bad'
-    if (accuracy >= 0.9) { grade = '⭐⭐⭐'; resultClass = 'screw-perfect' }
-    else if (accuracy >= 0.7) { grade = '⭐⭐'; resultClass = 'screw-good' }
-    else if (accuracy >= 0.5) { grade = '⭐'; resultClass = 'screw-ok' }
+  for (const side of sides) {
+    const placer = getScrewPlacer()
+    let result = null
 
-    placedScrews.value.push({
-      level: screw.level,
-      side: screw.side,
-      diameter: screw.diameter,
-      length: screw.length,
-      grade,
-      resultClass,
-    })
+    if (placer && props.renderer) {
+      result = await placer.placeAutomatic({
+        level: screw.level,
+        side,
+        diameter: screw.diameter,
+        length: screw.length,
+        angle: screw.convergence,
+      })
+    } else {
+      // Fallback : appel store uniquement
+      result = await store.placeScrew({
+        level: screw.level,
+        side,
+        diameter: screw.diameter,
+        length: screw.length,
+        entry_offset: [0, 0, 0],
+        trajectory_angles: [screw.convergence, screw.sagittal],
+      })
+    }
+
+    if (result) {
+      _pushScrewResult(screw.level, side, screw.diameter, screw.length, result)
+    }
   }
 }
 
+function _pushScrewResult(level, side, diameter, length, result) {
+  const accuracy = result.accuracy_score ?? result.cortical_contact_pct / 100 ?? 0
+  const breach   = result.breach_risk ?? 0
+  let grade = '❌'; let resultClass = 'screw-bad'
+  if (accuracy >= 0.9 && breach < 0.1) { grade = '⭐⭐⭐'; resultClass = 'screw-perfect' }
+  else if (accuracy >= 0.7 || breach < 0.2) { grade = '⭐⭐'; resultClass = 'screw-good' }
+  else if (accuracy >= 0.5 || breach < 0.3) { grade = '⭐'; resultClass = 'screw-ok' }
+
+  placedScrews.value.push({
+    level, side, diameter, length, grade, resultClass,
+    pullout: result.pullout_force_n ? Math.round(result.pullout_force_n) : null,
+    breach,
+  })
+}
+
 async function placeRod() {
-  // Appel API tige (stub côté serveur)
-  console.log('Place rod:', rod)
+  if (!props.renderer) {
+    console.warn('[SurgeryPanel] Renderer non disponible pour addRod()')
+    return
+  }
+
+  // Récupérer les positions des têtes de vis du côté sélectionné
+  const sideScrews = placedScrews.value.filter(
+    (s) => s.side === rod.side || s.side === 'bilateral',
+  )
+
+  if (sideScrews.length < 2) {
+    alert(`Placez au moins 2 vis côté ${rod.side === 'left' ? 'gauche' : 'droit'}`)
+    return
+  }
+
+  // Extraire les positions des meshes de l'renderer
+  const screwHeads = props.renderer.screwMeshes
+    .filter((g) => g.userData.side === rod.side || g.userData.side === 'bilateral')
+    .map((g) => {
+      const head = g.children[1] // tête de vis (index 1)
+      const worldPos = new THREE.Vector3()
+      ;(head ?? g).getWorldPosition(worldPos)
+      return [worldPos.x, worldPos.y, worldPos.z]
+    })
+
+  if (screwHeads.length < 2) {
+    alert('Impossible de récupérer les positions des vis 3D')
+    return
+  }
+
+  props.renderer.addRod({ screwHeads, diameter: rod.diameter, material: rod.material, side: rod.side })
 }
 
 async function applyManeuver() {
+  if (props.renderer && props.renderer.vertebraeMeshes.length > 0) {
+    const n = props.renderer.vertebraeMeshes.length
+    const corrections = Array.from({ length: n }, (_, i) => {
+      // Correction plus forte au centre de la courbe
+      const center = n / 2
+      const dist = Math.abs(i - center) / center
+      return maneuver.intensity * (1 - dist * 0.7)
+    })
+    props.renderer.animateCorrection(corrections, 2500)
+  }
   console.log('Apply maneuver:', maneuver)
 }
 
 async function evaluateSurgery() {
-  console.log('Evaluate surgery')
+  try {
+    const res = await apiClient.post('/api/simulation/surgery/evaluate', {
+      spine_id: store.spineId,
+      screws: placedScrews.value,
+      maneuver: maneuver.type,
+      intensity: maneuver.intensity,
+    })
+    store.surgicalResult = res.data
+  } catch {
+    console.warn('[SurgeryPanel] evaluateSurgery: API inaccessible')
+  }
 }
 </script>
 
@@ -458,7 +590,34 @@ async function evaluateSurgery() {
 .screw-ok { background: rgba(255, 170, 0, 0.08); border-color: #ffaa00; }
 .screw-bad { background: rgba(255, 0, 0, 0.08); border-color: #ff4444; }
 
+.btn.interactive {
+  background: #1a3a6a;
+  color: #80b4ff;
+  border: 1px solid #2a5090;
+  transition: all 0.2s;
+}
+
+.btn.interactive.active {
+  background: #0d2a54;
+  color: #00e5ff;
+  border-color: #00e5ff;
+  animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+  50%       { box-shadow: 0 0 0 4px rgba(0, 229, 255, 0); }
+}
+
+.screw-pullout {
+  font-size: 10px;
+  color: #9ecfff;
+  background: rgba(0, 100, 200, 0.2);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
 .screw-level { font-weight: bold; color: #eee; min-width: 30px; }
-.screw-info { color: #888; flex: 1; }
+.screw-info  { color: #888; flex: 1; }
 .screw-grade { font-size: 10px; }
 </style>

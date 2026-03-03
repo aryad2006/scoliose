@@ -291,6 +291,9 @@ struct LongitudinalResult
     # Statistiques
     max_damage::Float64
     max_asymmetry_developed::Float64
+
+    # Avertissements de simulation (ex: échecs FEM)
+    warnings::Vector{String}
 end
 
 # ── Paramètres de la simulation ──

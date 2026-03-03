@@ -1,0 +1,79 @@
+# ══════════════════════════════════════════════════════════════
+# VERTEX© — Docker Compose pour les tests CI
+# Usage : docker compose -f docker-compose.yml -f docker-compose.test.yml up
+# ══════════════════════════════════════════════════════════════
+
+version: '3.8'
+
+services:
+  # ── Base de données de test (isolation complète) ──────────────
+  db:
+    environment:
+      POSTGRES_DB: vertex_test
+
+  # ── Backend en mode test ──────────────────────────────────────
+  backend:
+    environment:
+      - JULIA_NUM_THREADS=auto
+      - VERTEX_PORT=8080
+      - VERTEX_DB_HOST=db
+      - VERTEX_DB_PORT=5432
+      - VERTEX_DB_NAME=vertex_test
+      - VERTEX_DB_USER=vertex
+      - VERTEX_DB_PASSWORD=vertex_secret
+      - JWT_SECRET=test_secret_ci_do_not_use_in_prod
+      - VERTEX_ENV=test
+
+  # ── Runner de tests Julia ─────────────────────────────────────
+  test-runner:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vertex-test-runner
+    working_dir: /app
+    command: >
+      julia --project=. --threads=auto -e '
+        using Pkg
+        Pkg.instantiate()
+        println("Running tests...")
+        include("test/runtests.jl")
+        ENV["RUN_API_TESTS"] = "true"
+        ENV["VERTEX_TEST_URL"] = "http://backend:8080"
+        include("test/test_api.jl")
+        println("All tests passed!")
+      '
+    environment:
+      - VERTEX_DB_HOST=db
+      - VERTEX_DB_PORT=5432
+      - VERTEX_DB_NAME=vertex_test
+      - VERTEX_DB_USER=vertex
+      - VERTEX_DB_PASSWORD=vertex_secret
+      - JWT_SECRET=test_secret_ci_do_not_use_in_prod
+      - VERTEX_TEST_URL=http://backend:8080
+      - RUN_API_TESTS=true
+    depends_on:
+      db:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+    networks:
+      - vertex-test-net
+    volumes:
+      - ./backend/src:/app/src:ro
+      - ./backend/test:/app/test:ro
+
+  # ── Tests Frontend (build uniquement) ────────────────────────
+  frontend-test:
+    image: node:20-alpine
+    container_name: vertex-frontend-test
+    working_dir: /app
+    command: sh -c "npm install && npm run build && echo 'Frontend build OK'"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+
+networks:
+  vertex-test-net:
+    driver: bridge

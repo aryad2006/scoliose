@@ -67,12 +67,46 @@
         </div>
       </section>
 
-      <!-- Graphique de progression -->
+      <!-- Graphique Chart.js + slider timeline -->
       <section class="result-section" v-if="result.snapshots?.length > 0">
-        <h4>Progression de Cobb</h4>
+        <h4>Évolution de Cobb</h4>
+
+        <!-- Graphique Chart.js -->
         <div class="chart-container">
           <canvas ref="chartCanvas"></canvas>
         </div>
+
+        <!-- ─── Slider timeline ─── -->
+        <div class="timeline-slider">
+          <label class="timeline-label">
+            📅 Année : <strong>{{ currentSnap?.time_years?.toFixed(1) ?? '—' }}</strong>
+          </label>
+          <input
+            type="range"
+            class="slider"
+            :min="0"
+            :max="result.snapshots.length - 1"
+            :step="1"
+            v-model.number="timelineIdx"
+          />
+          <div class="timeline-info" v-if="currentSnap">
+            <span class="ti-item">
+              Cobb :
+              <strong :class="cobbColorClass(currentSnap.cobb_angles?.max)">
+                {{ currentSnap.cobb_angles?.max?.toFixed(1) ?? '—' }}°
+              </strong>
+            </span>
+            <span class="ti-item">
+              Flambage :
+              <strong>{{ currentSnap.buckling_ratio?.toFixed(3) ?? '—' }}</strong>
+            </span>
+            <span class="ti-item" v-if="currentSnap.cobb_angles?.max > 10">
+              ⚠️ Seuil scoliose dépassé
+            </span>
+          </div>
+        </div>
+
+        <!-- Table des snapshots -->
         <div class="snapshot-table">
           <div class="snap-row snap-header">
             <span>Année</span>
@@ -80,10 +114,14 @@
             <span>Flambage</span>
           </div>
           <div
-            v-for="snap in result.snapshots"
+            v-for="(snap, idx) in result.snapshots"
             :key="snap.time_years"
             class="snap-row"
-            :class="{ 'snap-scoliosis': snap.cobb_angles?.max > 10 }"
+            :class="{
+              'snap-scoliosis': snap.cobb_angles?.max > 10,
+              'snap-active': idx === timelineIdx
+            }"
+            @click="timelineIdx = idx"
           >
             <span>{{ snap.time_years.toFixed(1) }}</span>
             <span>{{ snap.cobb_angles?.max?.toFixed(1) ?? '—' }}°</span>
@@ -120,11 +158,31 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from 'vue'
+import { ref, computed, watch, nextTick, onUnmounted } from 'vue'
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Tooltip,
+  Legend,
+  Filler,
+} from 'chart.js'
 import { useSpineStore } from '../stores/spineStore'
+
+// ── Enregistrement Chart.js (tree-shakeable) ─────────────────
+Chart.register(
+  LineController, LineElement, PointElement,
+  LinearScale, CategoryScale, Tooltip, Legend, Filler
+)
 
 const store = useSpineStore()
 const chartCanvas = ref(null)
+
+/** Slider de timeline — index dans result.snapshots */
+const timelineIdx = ref(0)
 
 const params = ref({
   duration_years: 10,
@@ -135,6 +193,12 @@ const params = ref({
 const result = computed(() => store.longitudinalResult)
 const comparison = computed(() => store.comparisonResults)
 
+const currentSnap = computed(() => {
+  if (!result.value?.snapshots?.length) return null
+  const idx = Math.min(timelineIdx.value, result.value.snapshots.length - 1)
+  return result.value.snapshots[idx]
+})
+
 const cobbClass = computed(() => {
   if (!result.value) return ''
   const cobb = result.value.final_cobb_deg
@@ -144,8 +208,17 @@ const cobbClass = computed(() => {
   return 'cobb-normal'
 })
 
+function cobbColorClass(deg) {
+  if (deg === undefined || deg === null) return ''
+  if (deg > 40) return 'cobb-severe'
+  if (deg > 25) return 'cobb-moderate'
+  if (deg > 10) return 'cobb-mild'
+  return 'cobb-normal'
+}
+
 async function runSimulation() {
   await store.runLongitudinal(params.value)
+  timelineIdx.value = 0
   await nextTick()
   drawChart()
 }
@@ -161,111 +234,113 @@ function formatName(name) {
   return name.replace(/_/g, ' ').replace(/^\d+\s/, '')
 }
 
+// ── Chart.js instance ─────────────────────────────────────────
+let chartInstance = null
+
 function drawChart() {
   if (!chartCanvas.value || !result.value?.snapshots?.length) return
-  const canvas = chartCanvas.value
-  const ctx = canvas.getContext('2d')
-  const snaps = result.value.snapshots
 
-  const dpr = window.devicePixelRatio || 1
-  const rect = canvas.parentElement.getBoundingClientRect()
-  canvas.width = rect.width * dpr
-  canvas.height = 160 * dpr
-  canvas.style.width = rect.width + 'px'
-  canvas.style.height = '160px'
-  ctx.scale(dpr, dpr)
+  const snaps  = result.value.snapshots
+  const labels = snaps.map(s => s.time_years.toFixed(1))
+  const cobbs  = snaps.map(s => s.cobb_angles?.max ?? 0)
 
-  const w = rect.width
-  const h = 160
-  const pad = { top: 20, right: 20, bottom: 30, left: 45 }
-  const plotW = w - pad.left - pad.right
-  const plotH = h - pad.top - pad.bottom
+  // Couleur des points : rouge si > 10°
+  const pointColors = cobbs.map(c => c > 10 ? '#e94560' : '#4ecdc4')
 
-  const times = snaps.map(s => s.time_years)
-  const cobbs = snaps.map(s => s.cobb_angles?.max ?? 0)
-  const maxT = Math.max(...times, 1)
-  const maxC = Math.max(...cobbs, 12)
-
-  // Background
-  ctx.fillStyle = '#0f3460'
-  ctx.fillRect(0, 0, w, h)
-
-  // Grid
-  ctx.strokeStyle = '#2a2a4a'
-  ctx.lineWidth = 0.5
-  for (let i = 0; i <= 4; i++) {
-    const y = pad.top + (plotH / 4) * i
-    ctx.beginPath()
-    ctx.moveTo(pad.left, y)
-    ctx.lineTo(w - pad.right, y)
-    ctx.stroke()
+  // Détruis l'instance existante si nécessaire
+  if (chartInstance) {
+    chartInstance.destroy()
+    chartInstance = null
   }
 
-  // 10° threshold line
-  const y10 = pad.top + plotH * (1 - 10 / maxC)
-  ctx.strokeStyle = '#e94560'
-  ctx.setLineDash([5, 3])
-  ctx.beginPath()
-  ctx.moveTo(pad.left, y10)
-  ctx.lineTo(w - pad.right, y10)
-  ctx.stroke()
-  ctx.setLineDash([])
-  ctx.fillStyle = '#e94560'
-  ctx.font = '9px monospace'
-  ctx.fillText('10° (seuil scoliose)', w - pad.right - 100, y10 - 3)
+  const ctx = chartCanvas.value.getContext('2d')
 
-  // Cobb curve
-  ctx.strokeStyle = '#4ecdc4'
-  ctx.lineWidth = 2
-  ctx.beginPath()
-  snaps.forEach((s, i) => {
-    const x = pad.left + (s.time_years / maxT) * plotW
-    const y = pad.top + plotH * (1 - (s.cobb_angles?.max ?? 0) / maxC)
-    if (i === 0) ctx.moveTo(x, y)
-    else ctx.lineTo(x, y)
+  chartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Angle de Cobb (°)',
+          data: cobbs,
+          borderColor: '#4ecdc4',
+          backgroundColor: 'rgba(78,205,196,0.12)',
+          pointBackgroundColor: pointColors,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          fill: true,
+          tension: 0.35,
+        },
+        {
+          // Ligne seuil 10°
+          label: 'Seuil scoliose (10°)',
+          data: labels.map(() => 10),
+          borderColor: '#e94560',
+          borderDash: [5, 4],
+          borderWidth: 1.5,
+          pointRadius: 0,
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 300 },
+      plugins: {
+        legend: {
+          labels: {
+            color: '#b0b8cc',
+            font: { size: 10 },
+            boxWidth: 14,
+          },
+        },
+        tooltip: {
+          callbacks: {
+            title: (items) => `Année ${items[0].label}`,
+            label: (item) => `${item.dataset.label}: ${Number(item.raw).toFixed(1)}`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Années', color: '#8899aa', font: { size: 10 } },
+          ticks: { color: '#8899aa', font: { size: 9 } },
+          grid: { color: '#1e2a45' },
+        },
+        y: {
+          title: { display: true, text: 'Cobb (°)', color: '#8899aa', font: { size: 10 } },
+          ticks: { color: '#8899aa', font: { size: 9 } },
+          grid: { color: '#1e2a45' },
+          min: 0,
+        },
+      },
+    },
   })
-  ctx.stroke()
-
-  // Points
-  snaps.forEach(s => {
-    const x = pad.left + (s.time_years / maxT) * plotW
-    const cobb = s.cobb_angles?.max ?? 0
-    const y = pad.top + plotH * (1 - cobb / maxC)
-    ctx.fillStyle = cobb > 10 ? '#e94560' : '#4ecdc4'
-    ctx.beginPath()
-    ctx.arc(x, y, 3, 0, Math.PI * 2)
-    ctx.fill()
-  })
-
-  // Axes labels
-  ctx.fillStyle = '#a0a0b0'
-  ctx.font = '10px monospace'
-  ctx.textAlign = 'center'
-  ctx.fillText('Années', w / 2, h - 3)
-
-  ctx.save()
-  ctx.translate(12, h / 2)
-  ctx.rotate(-Math.PI / 2)
-  ctx.fillText('Cobb (°)', 0, 0)
-  ctx.restore()
-
-  // Tick labels
-  ctx.textAlign = 'center'
-  for (let t = 0; t <= maxT; t += Math.ceil(maxT / 5)) {
-    const x = pad.left + (t / maxT) * plotW
-    ctx.fillText(t.toString(), x, h - pad.bottom + 15)
-  }
-  ctx.textAlign = 'right'
-  for (let c = 0; c <= maxC; c += Math.ceil(maxC / 4)) {
-    const y = pad.top + plotH * (1 - c / maxC)
-    ctx.fillText(c.toString(), pad.left - 5, y + 3)
-  }
 }
+
+// Mettre à jour la ligne verticale du slider sur le graphique
+watch(timelineIdx, (idx) => {
+  if (!chartInstance || !result.value?.snapshots?.length) return
+  // Highlight le point actif via la propriété pointRadius
+  const n = result.value.snapshots.length
+  const radii = Array.from({ length: n }, (_, i) => (i === idx ? 8 : 4))
+  chartInstance.data.datasets[0].pointRadius = radii
+  chartInstance.update('none')
+})
 
 // Redraw chart when result changes
 watch(result, async () => {
   await nextTick()
   drawChart()
+})
+
+onUnmounted(() => {
+  if (chartInstance) {
+    chartInstance.destroy()
+    chartInstance = null
+  }
 })
 </script>
 
@@ -429,6 +504,55 @@ watch(result, async () => {
 }
 
 .snap-scoliosis { color: #ff6b6b; }
+.snap-active    { background: rgba(78,205,196,0.12); font-weight: 600; }
 .comp-scoliosis { background: rgba(233, 69, 96, 0.1); }
-.comp-name { font-size: 10px; }
+.comp-name      { font-size: 10px; }
+.timeline-slider {
+  margin: 0.6rem 0;
+  padding: 0.5rem 0.3rem;
+  background: rgba(15, 52, 96, 0.4);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.timeline-label {
+  font-size: 0.8rem;
+  color: #b0b8cc;
+}
+
+.timeline-label strong {
+  color: #4ecdc4;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #4ecdc4;
+  cursor: pointer;
+}
+
+.timeline-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.ti-item {
+  background: rgba(10, 20, 40, 0.5);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  color: #8899aa;
+}
+
+.ti-item strong {
+  color: #e0e0e0;
+}
+
+/* ── Chart.js canvas hauteur fixée ── */
+.chart-container {
+  height: 200px;
+  position: relative;
+}
 </style>

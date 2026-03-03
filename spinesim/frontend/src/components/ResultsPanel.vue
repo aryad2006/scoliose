@@ -101,16 +101,45 @@
       <!-- Résultats chirurgicaux -->
       <section v-if="hasSurgeryResults" class="result-section">
         <h4>Évaluation chirurgicale</h4>
+
+        <!-- Score global /100 -->
         <div class="score-display">
           <div class="score-circle" :class="scoreClass">
-            {{ surgeryScore }}
+            <span class="score-num">{{ surgeryScore }}</span>
+            <span class="score-denom">/100</span>
           </div>
           <div class="score-grade">{{ scoreGrade }}</div>
         </div>
+
+        <!-- Barres de sous-score -->
+        <div class="score-breakdown">
+          <div v-for="item in scoreDimensions" :key="item.label" class="score-dim">
+            <div class="score-dim-header">
+              <span class="score-dim-label">{{ item.label }}</span>
+              <span class="score-dim-value" :style="{ color: item.color }">{{ item.display }}</span>
+            </div>
+            <div class="score-bar-track">
+              <div
+                class="score-bar-fill"
+                :style="{ width: item.pct + '%', background: item.color }"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Métriques détaillées -->
         <div class="info-grid">
           <div class="info-item">
             <span class="info-label">Correction Cobb</span>
             <span class="info-value">{{ correctionPercent }}%</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Δ SVA</span>
+            <span class="info-value" :class="svaClass">{{ svaDelta }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Contrainte max vis</span>
+            <span class="info-value" :class="screwStressClass">{{ screwStressMax }}</span>
           </div>
           <div class="info-item">
             <span class="info-label">Risque PJK</span>
@@ -207,9 +236,25 @@ function stressColor(ratio) {
   return `rgb(${r}, ${g}, ${b})`
 }
 
-// Surgery results
-const hasSurgeryResults = computed(() => !!store.spineData?.surgery_score)
-const surgeryScore = computed(() => store.spineData?.surgery_score || 0)
+// Surgery results — prend en compte store.surgicalResult (depuis SurgeryPanel) OU store.spineData
+const hasSurgeryResults = computed(() => !!(store.surgicalResult || store.spineData?.surgery_score))
+
+const _surgResult = computed(() => store.surgicalResult || store.spineData || {})
+
+const surgeryScore = computed(() => {
+  const r = _surgResult.value
+  if (r.surgery_score) return r.surgery_score
+  // Calcul local si pas de score serveur
+  const correction  = r.correction_percent ?? 0
+  const pjk         = r.pjk_risk ?? 0
+  const cobScore    = Math.min(correction * 1.2, 40)   // max 40 pts
+  const pjkScore    = (1 - pjk) * 20                   // max 20 pts
+  const balScore    = r.balance_score ?? 20             // max 20 pts
+  const screwScore  = r.screw_accuracy_score ?? 15      // max 15 pts
+  const svaScore    = r.sva_normalized ? 5 : 0          // 5 pts bonus
+  return Math.round(Math.min(cobScore + pjkScore + balScore + screwScore + svaScore, 100))
+})
+
 const scoreGrade = computed(() => {
   const s = surgeryScore.value
   if (s >= 90) return '⭐⭐⭐⭐⭐ Excellent'
@@ -218,25 +263,82 @@ const scoreGrade = computed(() => {
   if (s >= 40) return '⭐⭐ Passable'
   return '⭐ Insuffisant'
 })
+
 const scoreClass = computed(() => {
   const s = surgeryScore.value
   if (s >= 75) return 'score-excellent'
   if (s >= 50) return 'score-good'
   return 'score-poor'
 })
-const correctionPercent = computed(() => store.spineData?.correction_percent?.toFixed(0) || '—')
+
+const correctionPercent = computed(() => _surgResult.value?.correction_percent?.toFixed(0) || '—')
+
+const svaDelta = computed(() => {
+  const d = _surgResult.value?.sva_delta_mm
+  if (d == null) return '—'
+  const sign = d > 0 ? '+' : ''
+  return `${sign}${d.toFixed(0)} mm`
+})
+
+const screwStressMax = computed(() => {
+  const v = _surgResult.value?.screw_stress_max_mpa
+  if (v == null) return '—'
+  return `${v.toFixed(0)} MPa`
+})
+
+const screwStressClass = computed(() => {
+  const v = _surgResult.value?.screw_stress_max_mpa
+  if (v == null) return ''
+  if (v > 800) return 'metric-severe'
+  if (v > 500) return 'metric-moderate'
+  return 'metric-normal'
+})
+
 const pjkRisk = computed(() => {
-  const r = store.spineData?.pjk_risk
+  const r = _surgResult.value?.pjk_risk
   if (!r) return '—'
   if (r < 0.1) return 'Faible'
   if (r < 0.3) return 'Modéré'
   return 'Élevé'
 })
 const pjkClass = computed(() => {
-  const r = store.spineData?.pjk_risk
+  const r = _surgResult.value?.pjk_risk
   if (!r || r < 0.1) return 'metric-normal'
   if (r < 0.3) return 'metric-moderate'
   return 'metric-severe'
+})
+
+/** Dimensions du score pour les barres de progression */
+const scoreDimensions = computed(() => {
+  const r = _surgResult.value
+  const cp = r.correction_percent ?? 0
+  const pjk = r.pjk_risk ?? 0
+  return [
+    {
+      label: 'Correction Cobb',
+      display: `${cp.toFixed(0)}%`,
+      pct: Math.min(cp * 1.2, 100),
+      color: cp >= 50 ? '#00e676' : cp >= 30 ? '#ffab00' : '#ff1744',
+    },
+    {
+      label: 'Équilibre sagittal',
+      display: r.sva_normalized ? 'OK' : 'NON',
+      pct: r.sva_normalized ? 100 : (100 - Math.min(Math.abs(r.sva_delta_mm ?? 50) / 100 * 100, 100)),
+      color: r.sva_normalized ? '#00e676' : '#ffab00',
+    },
+    {
+      label: 'Placement vis',
+      display: `${((r.screw_accuracy_score ?? 0.75) * 100).toFixed(0)}%`,
+      pct: (r.screw_accuracy_score ?? 0.75) * 100,
+      color: (r.screw_accuracy_score ?? 0) >= 0.8 ? '#00e676' : '#ffab00',
+    },
+    {
+      label: 'Risque PJK',
+      display: pjkRisk.value,
+      pct: (1 - (pjk ?? 0)) * 100,
+      color: pjk < 0.1 ? '#00e676' : pjk < 0.3 ? '#ffab00' : '#ff1744',
+    },
+  ]
 })
 </script>
 
@@ -391,14 +493,24 @@ const pjkClass = computed(() => {
 
 .score-circle {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  font-size: 22px;
-  font-weight: bold;
   margin-bottom: 4px;
+}
+
+.score-num {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-denom {
+  font-size: 10px;
+  opacity: 0.7;
 }
 
 .score-excellent { background: rgba(0, 255, 136, 0.2); color: #00ff88; border: 2px solid #00ff88; }
@@ -408,6 +520,48 @@ const pjkClass = computed(() => {
 .score-grade {
   font-size: 12px;
   color: #ccc;
+}
+
+/* Score breakdown */
+.score-breakdown {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.score-dim { }
+
+.score-dim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.score-dim-label {
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.score-dim-value {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.score-bar-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
 }
 
 /* Vertebrae list */

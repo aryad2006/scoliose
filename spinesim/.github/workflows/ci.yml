@@ -1,0 +1,239 @@
+name: CI — VERTEX© Backend & Frontend
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  JULIA_VERSION: "1.10"
+  NODE_VERSION:  "20"
+  REGISTRY:      ghcr.io
+  IMAGE_NAME:    ${{ github.repository }}
+
+jobs:
+  # ── 1. Tests unitaires Julia ─────────────────────────────────
+  test-backend:
+    name: Julia Tests
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB:       vertex_test
+          POSTGRES_USER:     vertex
+          POSTGRES_PASSWORD: vertex_secret
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: ${{ env.JULIA_VERSION }}
+
+      - name: Cache Julia packages
+        uses: julia-actions/cache@v2
+
+      - name: Install dependencies
+        working-directory: spinesim/backend
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
+
+      - name: Run unit tests
+        working-directory: spinesim/backend
+        env:
+          VERTEX_DB_HOST:     localhost
+          VERTEX_DB_PORT:     "5432"
+          VERTEX_DB_NAME:     vertex_test
+          VERTEX_DB_USER:     vertex
+          VERTEX_DB_PASSWORD: vertex_secret
+          JWT_SECRET:         test_secret_ci_only
+        run: julia --project=. --threads=auto test/runtests.jl
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: julia-test-results
+          path: spinesim/backend/test/
+
+  # ── 2. Lint & Build Frontend ──────────────────────────────────
+  test-frontend:
+    name: Vue.js Build & Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: spinesim/frontend/package.json
+
+      - name: Install dependencies
+        working-directory: spinesim/frontend
+        run: npm install
+
+      - name: Build production
+        working-directory: spinesim/frontend
+        env:
+          NODE_ENV: production
+        run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: spinesim/frontend/dist/
+          retention-days: 7
+
+  # ── 3. Build Docker Images ────────────────────────────────────
+  build-docker:
+    name: Docker Build
+    needs: [test-backend, test-frontend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract backend metadata
+        id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix=sha-
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build & push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: spinesim/backend
+          push: true
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          labels: ${{ steps.meta-backend.outputs.labels }}
+          cache-from: type=gha
+          cache-to:   type=gha,mode=max
+
+      - name: Extract frontend metadata
+        id: meta-frontend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix=sha-
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build & push frontend image (prod)
+        uses: docker/build-push-action@v5
+        with:
+          context: spinesim/frontend
+          file:    spinesim/frontend/Dockerfile.prod
+          push: true
+          tags: ${{ steps.meta-frontend.outputs.tags }}
+          labels: ${{ steps.meta-frontend.outputs.labels }}
+          cache-from: type=gha
+          cache-to:   type=gha,mode=max
+
+  # ── 4. Tests d'intégration ────────────────────────────────────
+  integration-tests:
+    name: Integration Tests
+    needs: [build-docker]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start stack
+        working-directory: spinesim
+        run: docker compose up -d --wait
+
+      - name: Wait for backend health
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8080/api/health; then
+              echo "Backend ready!"
+              break
+            fi
+            sleep 2
+          done
+
+      - name: Setup Julia for integration tests
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: ${{ env.JULIA_VERSION }}
+
+      - name: Run API tests
+        working-directory: spinesim/backend
+        env:
+          VERTEX_TEST_URL: http://localhost:8080
+          RUN_API_TESTS:   "true"
+        run: julia --project=. test/test_api.jl
+
+      - name: Collect logs on failure
+        if: failure()
+        working-directory: spinesim
+        run: |
+          docker compose logs backend  > /tmp/backend.log
+          docker compose logs frontend > /tmp/frontend.log
+          docker compose logs db       > /tmp/db.log
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-logs
+          path: /tmp/*.log
+
+      - name: Stop stack
+        if: always()
+        working-directory: spinesim
+        run: docker compose down -v
+
+  # ── 5. Security scan ──────────────────────────────────────────
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: ./spinesim
+          format: sarif
+          output: trivy-results.sarif
+          severity: HIGH,CRITICAL
+
+      - name: Upload Trivy scan results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: trivy-results.sarif

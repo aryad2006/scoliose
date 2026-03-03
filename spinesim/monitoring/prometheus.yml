@@ -1,0 +1,76 @@
+# VERTEX© — Configuration Prometheus
+# Scrape interval global : 15s
+
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  external_labels:
+    project: "vertex"
+    env:     "production"
+
+# Règles d'alertes
+rule_files:
+  - "/etc/prometheus/rules/vertex_alerts.yml"
+
+# Alertmanager
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["alertmanager:9093"]
+
+# ─── Scrape configs ───────────────────────────────────────────────────────────
+scrape_configs:
+
+  # Prometheus lui-même
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # FastAPI Gateway (port 8000) — expose /metrics via prometheus_fastapi_instrumentator
+  - job_name: "vertex_gateway"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["gateway:8000"]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: "gateway"
+
+  # Julia Backend (port 8765) — expose /metrics (Prometheus.jl)
+  - job_name: "vertex_backend"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["backend:8765"]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: "julia_backend"
+
+  # FEBio Service (port 8081)
+  - job_name: "vertex_febio"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["febio:8081"]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: "febio_service"
+
+  # PostgreSQL
+  - job_name: "postgres"
+    static_configs:
+      - targets: ["postgres_exporter:9187"]
+
+  # Node Exporter (host)
+  - job_name: "node"
+    static_configs:
+      - targets: ["node_exporter:9100"]
+
+  # cAdvisor (Docker containers)
+  - job_name: "cadvisor"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["cadvisor:8080"]
+    metric_relabel_configs:
+      - source_labels: [container_label_com_docker_compose_service]
+        target_label: service

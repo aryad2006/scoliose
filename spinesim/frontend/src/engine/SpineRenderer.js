@@ -39,6 +39,7 @@ export class SpineRenderer {
     this.discMeshes = []
     this.ligamentLines = []
     this.screwMeshes = []
+    this.rodMeshes = []
     this.labels = []
 
     this._initScene()
@@ -184,57 +185,138 @@ export class SpineRenderer {
   }
 
   /**
-   * Crée le mesh 3D d'une vertèbre (corps + pédicules + lame simplifiés).
+   * Crée la forme 2D réniforme (kidney-shape) d'un corps vertébral.
+   * Utilise des courbes de Bézier pour approximer la section transversale
+   * réniforme des vertèbres lombaires/thoraciques.
+   *
+   * @param {number} w - Demi-largeur (mm)
+   * @param {number} d - Demi-profondeur (mm)
+   * @returns {THREE.Shape}
+   */
+  _createVertebraShape(w, d) {
+    const shape = new THREE.Shape()
+
+    // Coin postérieur gauche
+    shape.moveTo(-w, -d * 0.1)
+
+    // Arc antérieur (convexe — corps vertébral)
+    shape.bezierCurveTo(
+      -w * 0.8,  d * 1.0,   // cp1
+       w * 0.8,  d * 1.0,   // cp2
+       w,       -d * 0.1    // fin
+    )
+
+    // Arc postérieur droit (légèrement concave — canal médullaire)
+    shape.bezierCurveTo(
+       w * 0.7, -d * 0.9,   // cp1
+       w * 0.2, -d * 1.1,   // cp2
+       0,       -d * 0.85   // milieu — concavité postérieure
+    )
+
+    // Arc postérieur gauche
+    shape.bezierCurveTo(
+      -w * 0.2, -d * 1.1,
+      -w * 0.7, -d * 0.9,
+      -w,       -d * 0.1
+    )
+
+    shape.closePath()
+    return shape
+  }
+
+  /**
+   * Crée le mesh 3D d'une vertèbre avec ExtrudeGeometry réniforme et matériau PBR.
    */
   _createVertebraMesh(v) {
     const group = new THREE.Group()
     const morph = v.morphology
 
-    // Corps vertébral — cylindre aplati
-    const bodyGeom = new THREE.CylinderGeometry(
-      morph.body_width / 2 * 0.8,  // rayon supérieur (mm → unités 3D, échelle 1:1)
-      morph.body_width / 2,         // rayon inférieur
-      morph.body_height,
-      16, 1
-    )
-    const bodyMat = new THREE.MeshPhongMaterial({
-      color: COLORS.bone,
-      specular: 0x333333,
-      shininess: 20,
-      flatShading: false,
+    // Dimensions en mm (coordonnées 1:1)
+    const hw = morph.body_width  / 2   // demi-largeur
+    const hd = morph.body_depth  / 2   // demi-profondeur
+    const bh = morph.body_height        // hauteur corps
+
+    // ── Corps vertébral (ExtrudeGeometry réniforme) ──
+    const bodyShape = this._createVertebraShape(hw * 0.92, hd * 0.85)
+
+    const extrudeSettings = {
+      depth: bh,
+      bevelEnabled: true,
+      bevelThickness: 1.2,
+      bevelSize: 1.0,
+      bevelSegments: 2,
+      steps: 1,
+    }
+
+    const bodyGeom = new THREE.ExtrudeGeometry(bodyShape, extrudeSettings)
+    bodyGeom.center()
+
+    // Matériau PBR os cortical
+    const bodyMat = new THREE.MeshStandardMaterial({
+      color:     COLORS.bone,
+      roughness: 0.72,
+      metalness: 0.04,
+      envMapIntensity: 0.6,
     })
+
     const bodyMesh = new THREE.Mesh(bodyGeom, bodyMat)
+    bodyMesh.rotation.x = -Math.PI / 2   // XZ-plan → Three.js XY-plan
     bodyMesh.castShadow = true
     bodyMesh.receiveShadow = true
     bodyMesh.userData = { type: 'vertebra', level: v.level }
     group.add(bodyMesh)
 
-    // Pédicules — deux petits cylindres latéraux
+    // ── Pédicules — cylindres PBR ──
+    const pedMat = new THREE.MeshStandardMaterial({
+      color:     COLORS.bone,
+      roughness: 0.65,
+      metalness: 0.02,
+    })
+
     for (const side of [-1, 1]) {
       const pedGeom = new THREE.CylinderGeometry(
-        morph.pedicle_width / 2, morph.pedicle_width / 2,
-        morph.body_depth * 0.6, 8
+        morph.pedicle_width / 2 * 0.8,
+        morph.pedicle_width / 2,
+        morph.body_depth * 0.55,
+        10
       )
-      const pedMesh = new THREE.Mesh(pedGeom, bodyMat)
+      const pedMesh = new THREE.Mesh(pedGeom, pedMat)
       pedMesh.rotation.x = Math.PI / 2
       pedMesh.position.set(
-        side * morph.body_width / 3,
+        side * hw * 0.62,
         0,
-        -morph.body_depth / 3
+        -hd * 0.35
       )
       pedMesh.castShadow = true
       group.add(pedMesh)
     }
 
-    // Processus épineux — petit cône postérieur
-    const spGeom = new THREE.ConeGeometry(3, morph.body_depth * 0.4, 4)
-    const spMesh = new THREE.Mesh(spGeom, bodyMat)
+    // ── Processus épineux — cône PBR ──
+    const spGeom = new THREE.ConeGeometry(2.8, morph.body_depth * 0.42, 5)
+    const spMesh = new THREE.Mesh(spGeom, pedMat)
     spMesh.rotation.x = Math.PI / 2
-    spMesh.position.set(0, 0, -morph.body_depth * 0.7)
+    spMesh.position.set(0, 0, -hd * 0.72)
     group.add(spMesh)
 
-    // Position dans l'espace (coordonnées du serveur: x=latéral, y=AP, z=vertical)
-    // Three.js: x=latéral, y=vertical, z=AP
+    // ── Plateaux vertébraux — disques fins ──
+    for (const yOff of [-bh / 2 - 0.8, bh / 2 + 0.8]) {
+      const plateShape = this._createVertebraShape(hw * 0.88, hd * 0.82)
+      const plateGeom  = new THREE.ExtrudeGeometry(plateShape, {
+        depth: 1.5, bevelEnabled: false
+      })
+      plateGeom.center()
+      const plateMat = new THREE.MeshStandardMaterial({
+        color:     0xd4c5a9,
+        roughness: 0.55,
+        metalness: 0.05,
+      })
+      const plateMesh = new THREE.Mesh(plateGeom, plateMat)
+      plateMesh.rotation.x = -Math.PI / 2
+      plateMesh.position.y = yOff
+      group.add(plateMesh)
+    }
+
+    // Position dans l'espace (serveur: [x=lat, y=AP, z=vertical] → Three.js: [x, y(vert), z(AP)])
     group.position.set(v.position[0], v.position[2], v.position[1])
 
     return group
@@ -461,12 +543,14 @@ export class SpineRenderer {
     this.ligamentLines.forEach((l) => this.scene.remove(l))
     this.labels.forEach((l) => this.scene.remove(l))
     this.screwMeshes.forEach((m) => this.scene.remove(m))
+    this.rodMeshes.forEach((m) => this.scene.remove(m))
 
     this.vertebraeMeshes = []
     this.discMeshes = []
     this.ligamentLines = []
     this.labels = []
     this.screwMeshes = []
+    this.rodMeshes = []
   }
 
   _onResize() {
@@ -474,6 +558,179 @@ export class SpineRenderer {
     this.camera.aspect = w / h
     this.camera.updateProjectionMatrix()
     this.renderer.setSize(w, h)
+  }
+
+  /**
+   * Ajoute une vis pédiculaire dans la scène 3D.
+   *
+   * @param {Object} screwData
+   *   { level: 'L3', side: 'left'|'right',
+   *     entry: [x,y,z], direction: [dx,dy,dz],
+   *     diameter: 6.0, length: 45.0,
+   *     material: 'titanium'|'coba_chrome' }
+   * @returns {THREE.Object3D} Le groupe ajouté à la scène.
+   */
+  addScrew(screwData) {
+    const {
+      entry = [0, 0, 0],
+      direction = [0, 0, -1],
+      diameter = 6.0,
+      length = 45.0,
+      material: mat = 'titanium',
+      level = '',
+      side = 'left',
+    } = screwData
+
+    const metalColor  = mat === 'titanium' ? 0xafc4d6 : 0x8a9bb0   // Titane / Cobalt-Chrome
+    const headColor   = mat === 'titanium' ? 0xc8d8e8 : 0xa8b8c8
+
+    const group = new THREE.Group()
+    group.userData = { type: 'screw', level, side, screwData }
+
+    // Filet (cylindre légèrement conique)
+    const shaftGeo = new THREE.CylinderGeometry(
+      diameter * 0.5 * 0.9,  // rayon supérieur
+      diameter * 0.5 * 0.6,  // rayon inférieur (pointe)
+      length,
+      16,
+      8,
+    )
+    const shaftMat = new THREE.MeshStandardMaterial({
+      color: metalColor,
+      metalness: 0.92,
+      roughness: 0.18,
+    })
+    const shaft = new THREE.Mesh(shaftGeo, shaftMat)
+    shaft.castShadow = true
+    group.add(shaft)
+
+    // Tête de vis (cylindre plus large)
+    const headGeo = new THREE.CylinderGeometry(diameter * 0.75, diameter * 0.65, diameter * 1.2, 16)
+    const headMat = new THREE.MeshStandardMaterial({
+      color: headColor,
+      metalness: 0.95,
+      roughness: 0.12,
+    })
+    const head = new THREE.Mesh(headGeo, headMat)
+    head.position.y = length * 0.5 + diameter * 0.6
+    head.castShadow = true
+    group.add(head)
+
+    // Orienter le groupe selon `direction`
+    const dir = new THREE.Vector3(...direction).normalize()
+    const yAxis = new THREE.Vector3(0, 1, 0)
+    const q = new THREE.Quaternion()
+    if (Math.abs(dir.dot(yAxis)) < 0.9999) {
+      q.setFromUnitVectors(yAxis, dir)
+    } else if (dir.y < 0) {
+      q.setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI)
+    }
+    group.setRotationFromQuaternion(q)
+
+    // Translater vers le point d'entrée
+    group.position.set(...entry)
+
+    this.scene.add(group)
+    this.screwMeshes.push(group)
+
+    return group
+  }
+
+  /**
+   * Ajoute une tige de connexion entre plusieurs vis.
+   *
+   * @param {Object} rodData
+   *   { screwHeads: [[x,y,z], ...], diameter: 5.5,
+   *     material: 'titanium'|'cobalt_chrome', side: 'left'|'right' }
+   * @returns {THREE.Mesh}
+   */
+  addRod(rodData) {
+    const {
+      screwHeads = [],
+      diameter = 5.5,
+      material: mat = 'titanium',
+      side = 'left',
+    } = rodData
+
+    if (screwHeads.length < 2) {
+      console.warn('[SpineRenderer] addRod: besoin d\'au moins 2 points')
+      return null
+    }
+
+    const rodColor = mat === 'titanium' ? 0xbbd0e8 : 0x9aaaca  // Titane légèrement bleuté
+
+    const points = screwHeads.map((p) => new THREE.Vector3(...p))
+    const curve  = new THREE.CatmullRomCurve3(points)
+
+    const tubeGeo = new THREE.TubeGeometry(curve, 64, diameter * 0.5, 12, false)
+    const tubeMat = new THREE.MeshStandardMaterial({
+      color: rodColor,
+      metalness: 0.95,
+      roughness: 0.10,
+      envMapIntensity: 1.0,
+    })
+    const rod = new THREE.Mesh(tubeGeo, tubeMat)
+    rod.castShadow = true
+    rod.userData = { type: 'rod', side, rodData }
+
+    this.scene.add(rod)
+    this.rodMeshes.push(rod)
+
+    return rod
+  }
+
+  /**
+   * Supprime le matériel chirurgical (vis + tiges) sans toucher au rachis.
+   */
+  clearHardware() {
+    this.screwMeshes.forEach((m) => {
+      m.traverse((c) => { if (c.isMesh) { c.geometry.dispose(); c.material.dispose() } })
+      this.scene.remove(m)
+    })
+    this.rodMeshes.forEach((m) => {
+      m.geometry.dispose()
+      m.material.dispose()
+      this.scene.remove(m)
+    })
+    this.screwMeshes = []
+    this.rodMeshes  = []
+  }
+
+  /**
+   * Anime la correction progressive du rachis.
+   * Interpole chaque vertèbre de sa position initiale vers la position corrigée.
+   *
+   * @param {number[]} targetCorrectionsPct — [0-100] pour chaque vertèbre
+   * @param {number}   durationMs           — durée totale de l'animation (ms)
+   */
+  animateCorrection(targetCorrectionsPct = [], durationMs = 2000) {
+    if (this.vertebraeMeshes.length === 0) return
+
+    const startPositions = this.vertebraeMeshes.map((g) => g.position.clone())
+    const startRotations = this.vertebraeMeshes.map((g) => g.rotation.clone())
+    const startTime = performance.now()
+
+    const tick = () => {
+      const elapsed = performance.now() - startTime
+      const t = Math.min(elapsed / durationMs, 1.0)
+      const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t  // ease-in-out
+
+      this.vertebraeMeshes.forEach((group, i) => {
+        const pct = (targetCorrectionsPct[i] ?? 0) / 100
+
+        // Réduction de la rotation en z (courbure coronale)
+        const origRz = startRotations[i].z
+        group.rotation.z = origRz * (1 - ease * pct)
+
+        // Légère translation coronale pour simuler le maintien de la tige
+        const driftX = startPositions[i].x * ease * pct * 0.3
+        group.position.x = startPositions[i].x - driftX
+      })
+
+      if (t < 1.0) requestAnimationFrame(tick)
+    }
+
+    requestAnimationFrame(tick)
   }
 
   /**

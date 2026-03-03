@@ -12,6 +12,7 @@ export const useSpineStore = defineStore('spine', () => {
   const solverInfo = ref(null)
   const statusMessage = ref('Prêt')
   const screwResults = ref([])
+  const surgicalResult = ref(null)
   const loading = ref(false)
   const error = ref(null)
 
@@ -169,7 +170,7 @@ export const useSpineStore = defineStore('spine', () => {
   }
 
   return {
-    spineId, spineData, stresses, solverInfo, statusMessage, screwResults,
+    spineId, spineData, stresses, solverInfo, statusMessage, screwResults, surgicalResult,
     longitudinalResult, comparisonResults,
     loading, error,
     createSpine, solveSpine, applyScoliosis, placeScrew,

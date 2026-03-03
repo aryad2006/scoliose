@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/vertex/db" VERSION="20240628" COMMENT="XMLDB file for mod_vertex">
+  <TABLES>
+    <TABLE NAME="vertex" COMMENT="VERTEX© spine simulator activity instances">
+      <FIELDS>
+        <FIELD NAME="id"          TYPE="int"  LENGTH="10" NOTNULL="true"  SEQUENCE="true"/>
+        <FIELD NAME="course"      TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="0"
+               COMMENT="Course id"/>
+        <FIELD NAME="name"        TYPE="char" LENGTH="255" NOTNULL="true"/>
+        <FIELD NAME="intro"       TYPE="text" NOTNULL="false"/>
+        <FIELD NAME="introformat" TYPE="int"  LENGTH="4"  NOTNULL="true"  DEFAULT="0"/>
+        <FIELD NAME="timecreated" TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="0"/>
+        <FIELD NAME="timemodified"TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="0"/>
+        <!-- LTI / VERTEX configuration -->
+        <FIELD NAME="vertex_url"  TYPE="char" LENGTH="512" NOTNULL="false"
+               COMMENT="Base URL of the VERTEX simulation backend"/>
+        <FIELD NAME="spine_template" TYPE="char" LENGTH="100" NOTNULL="false" DEFAULT="scoliosis_t8_l2"
+               COMMENT="Preset spine template to load"/>
+        <FIELD NAME="mode"        TYPE="char" LENGTH="20"  NOTNULL="true"  DEFAULT="student"
+               COMMENT="student | demo | assessment"/>
+        <FIELD NAME="max_attempts" TYPE="int" LENGTH="4"  NOTNULL="true"  DEFAULT="3"/>
+        <FIELD NAME="grade"       TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="100"
+               COMMENT="Maximum grade (Moodle gradebook)"/>
+        <FIELD NAME="gradepass"   TYPE="number" LENGTH="10" DECIMALS="5" NOTNULL="true" DEFAULT="0"
+               COMMENT="Minimum passing grade"/>
+        <FIELD NAME="completionsubmit" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+
+    <TABLE NAME="vertex_submissions" COMMENT="Student submission and scoring data">
+      <FIELDS>
+        <FIELD NAME="id"            TYPE="int"  LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="vertex_id"     TYPE="int"  LENGTH="10" NOTNULL="true"
+               COMMENT="Foreign key → vertex.id"/>
+        <FIELD NAME="userid"        TYPE="int"  LENGTH="10" NOTNULL="true"/>
+        <FIELD NAME="attempt"       TYPE="int"  LENGTH="4"  NOTNULL="true" DEFAULT="1"/>
+        <FIELD NAME="timecreated"   TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="timemodified"  TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="spine_id"      TYPE="char" LENGTH="64"  NOTNULL="false"
+               COMMENT="VERTEX backend spine UUID"/>
+        <FIELD NAME="cobb_angle"    TYPE="number" LENGTH="6" DECIMALS="2"  NOTNULL="false"/>
+        <FIELD NAME="surgery_score" TYPE="int"  LENGTH="4"  NOTNULL="false"
+               COMMENT="Surgery score /100"/>
+        <FIELD NAME="n_screws"      TYPE="int"  LENGTH="4"  NOTNULL="false"/>
+        <FIELD NAME="cobb_correction_pct" TYPE="number" LENGTH="6" DECIMALS="2" NOTNULL="false"/>
+        <FIELD NAME="grade"         TYPE="number" LENGTH="10" DECIMALS="5" NOTNULL="false"
+               COMMENT="Moodle grade (0-100)"/>
+        <FIELD NAME="status"        TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="inprogress"
+               COMMENT="inprogress | submitted | graded"/>
+        <FIELD NAME="payload"       TYPE="text" NOTNULL="false"
+               COMMENT="Full JSON payload from VERTEX backend"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="vertex_id" TYPE="foreign" FIELDS="vertex_id" REFTABLE="vertex" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="userid_vertex" UNIQUE="false" FIELDS="userid, vertex_id"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════
-# Vertex — Serveur API REST + WebSocket
+# Vertex — Serveur API REST
 # ══════════════════════════════════════════════════════════════
 
 using HTTP
@@ -7,9 +7,53 @@ using JSON3
 using Sockets
 using UUIDs
 using Dates
+using Logging
 
-# ── Stockage en mémoire des modèles actifs ──
+# Module de base de données (Sprint 1)
+include(joinpath(@__DIR__, "..", "db", "database.jl"))
+using .Database
+
+# Module d'authentification (Sprint 2)
+include(joinpath(@__DIR__, "..", "auth", "users.jl"))
+using .Users
+
+# Module de rapports (Sprint 3)
+include(joinpath(@__DIR__, "..", "reports", "report.jl"))
+using .Reports
+
+# ── Stockage en mémoire des modèles actifs (thread-safe) ──
 const ACTIVE_MODELS = Dict{UUID, SpineModel}()
+const MODELS_LOCK = ReentrantLock()
+
+# ── Helpers d'accès thread-safe ──
+function get_model(id::UUID)::Union{SpineModel, Nothing}
+    lock(MODELS_LOCK) do
+        get(ACTIVE_MODELS, id, nothing)
+    end
+end
+
+function set_model!(id::UUID, model::SpineModel)
+    lock(MODELS_LOCK) do
+        ACTIVE_MODELS[id] = model
+    end
+end
+
+function delete_model!(id::UUID)
+    lock(MODELS_LOCK) do
+        delete!(ACTIVE_MODELS, id)
+    end
+end
+
+function count_models()::Int
+    lock(MODELS_LOCK) do
+        length(ACTIVE_MODELS)
+    end
+end
+
+# ── Logging structuré ──
+function log_request(method::String, path::String, status::Int, duration_ms::Float64)
+    @info "HTTP" method=method path=path status=status duration_ms=round(duration_ms, digits=2)
+end
 
 """
     start_server(; port=8080)
@@ -51,6 +95,16 @@ function start_server(; port::Int=8080)
     HTTP.register!(router, "POST", "/api/longitudinal/run", handle_longitudinal_run)
     HTTP.register!(router, "POST", "/api/longitudinal/comparison", handle_longitudinal_comparison)
     
+    # Authentification (Sprint 2)
+    HTTP.register!(router, "POST", "/api/auth/register", handle_auth_register)
+    HTTP.register!(router, "POST", "/api/auth/login",    handle_auth_login)
+    HTTP.register!(router, "POST", "/api/auth/refresh",  handle_auth_refresh)
+    HTTP.register!(router, "POST", "/api/auth/logout",   handle_auth_logout)
+    HTTP.register!(router, "GET",  "/api/auth/me",       handle_auth_me)
+
+    # Rapports PDF (Sprint 3)
+    HTTP.register!(router, "GET",  "/api/spine/*/report", handle_get_report)
+    
     # CORS headers pour le frontend
     HTTP.register!(router, "OPTIONS", "/*", handle_cors_preflight)
     
@@ -61,7 +115,14 @@ function start_server(; port::Int=8080)
     println("║  Port: $port                                 ║")
     println("╚══════════════════════════════════════════════╝")
     println()
-    println("Endpoints disponibles:")
+    # Connexion base de données (mode dégradé si indisponible)
+    db_ok = Database.init_db()
+    if db_ok
+        @info "PostgreSQL : disponible"
+    else
+        @warn "PostgreSQL : indisponible — fonctionnement en mode mémoire seule"
+    end
+    println()    println("Endpoints disponibles:")
     println("  GET  /api/health                  — État du serveur")
     println("  POST /api/spine/create             — Créer un rachis")
     println("  GET  /api/spine/{id}               — Récupérer un modèle")
@@ -115,7 +176,8 @@ function handle_health(req::HTTP.Request)
     return json_response(Dict(
         "status" => "ok",
         "version" => "0.2.0",
-        "active_models" => length(ACTIVE_MODELS),
+        "active_models" => count_models(),
+        "database" => Database.db_available() ? "connected" : "unavailable",
         "timestamp" => string(now()),
     ))
 end
@@ -140,6 +202,7 @@ function handle_info(req::HTTP.Request)
 end
 
 function handle_create_spine(req::HTTP.Request)
+    t0 = time()
     try
         body = JSON3.read(String(req.body))
         
@@ -154,9 +217,17 @@ function handle_create_spine(req::HTTP.Request)
             age=Int(age), sex=sex, tscore=Float64(tscore)
         )
         
-        ACTIVE_MODELS[model.id] = model
+        set_model!(model.id, model)
         
-        return json_response(Dict(
+        # Persister en base de données (si disponible)
+        if Database.db_available()
+            model_json = JSON3.write(to_json(model))
+            params_nt = (weight=Float64(weight), height=Float64(height),
+                         age=Int(age), sex=string(sex), tscore=Float64(tscore))
+            Database.save_spine_model(model.id, model_json, params_nt)
+        end
+        
+        resp = json_response(Dict(
             "id" => string(model.id),
             "message" => "Rachis créé avec succès",
             "num_vertebrae" => length(model.vertebrae),
@@ -164,31 +235,42 @@ function handle_create_spine(req::HTTP.Request)
             "num_ligaments" => length(model.ligaments),
             "model" => to_json(model),
         ); status=201)
+        log_request("POST", "/api/spine/create", 201, (time()-t0)*1000)
+        return resp
         
     catch e
+        @error "handle_create_spine failed" exception=(e, catch_backtrace())
+        log_request("POST", "/api/spine/create", 500, (time()-t0)*1000)
         return error_response("Erreur création rachis: $(sprint(showerror, e))"; status=500)
     end
 end
 
 function handle_get_spine(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
+            log_request("GET", "/api/spine/$id_str", 404, (time()-t0)*1000)
             return error_response("Modèle $id non trouvé"; status=404)
         end
-        return json_response(to_json(model))
-    catch
+        resp = json_response(to_json(model))
+        log_request("GET", "/api/spine/$id_str", 200, (time()-t0)*1000)
+        return resp
+    catch e
+        @error "handle_get_spine failed" id=id_str exception=(e, catch_backtrace())
+        log_request("GET", "/api/spine/$id_str", 400, (time()-t0)*1000)
         return error_response("ID invalide: $id_str"; status=400)
     end
 end
 
 function handle_solve_spine(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -217,10 +299,11 @@ function handle_solve_spine(req::HTTP.Request)
 end
 
 function handle_apply_scoliosis(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -253,10 +336,11 @@ end
 
 # ── Fracture ──
 function handle_apply_fracture(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -295,10 +379,11 @@ end
 
 # ── Hernie discale ──
 function handle_apply_hernia(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -330,10 +415,11 @@ end
 
 # ── Spondylolisthésis ──
 function handle_apply_spondylolisthesis(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -365,10 +451,11 @@ end
 
 # ── Sténose canalaire ──
 function handle_apply_stenosis(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -402,10 +489,11 @@ end
 
 # ── Tumeur rachidienne ──
 function handle_apply_tumor(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -450,10 +538,11 @@ end
 
 # ── Déformité de l'adulte ──
 function handle_apply_adult_deformity(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -500,10 +589,11 @@ function handle_apply_adult_deformity(req::HTTP.Request)
 end
 
 function handle_place_screw(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -551,10 +641,11 @@ function handle_place_screw(req::HTTP.Request)
 end
 
 function handle_place_rod(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -587,10 +678,11 @@ function handle_place_rod(req::HTTP.Request)
 end
 
 function handle_correction(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -626,10 +718,11 @@ function handle_correction(req::HTTP.Request)
 end
 
 function handle_evaluate(req::HTTP.Request)
+    t0 = time()
     id_str = split(req.target, "/")[4]
     try
         id = UUID(id_str)
-        model = get(ACTIVE_MODELS, id, nothing)
+        model = get_model(id)
         if isnothing(model)
             return error_response("Modèle $id non trouvé"; status=404)
         end
@@ -743,8 +836,25 @@ function handle_longitudinal_run(req::HTTP.Request)
         t0 = time()
         result = run_longitudinal_simulation(params)
         elapsed = time() - t0
-        
-        # Sérialiser
+
+        # Persister en base de données
+        if Database.db_available()
+            result_json = JSON3.write(Dict(
+                "final_cobb" => result.final_cobb,
+                "developed_scoliosis" => result.developed_scoliosis,
+                "buckling_detected" => result.buckling_detected,
+                "warnings" => result.warnings,
+            ))
+            p_nt = (duration_years=duration, time_step_months=params.time_step_months,
+                    initial_age=age, asymmetry_type=asym_type)
+            r_nt = (final_cobb=result.final_cobb, developed_scoliosis=result.developed_scoliosis,
+                    scoliosis_onset_years=result.scoliosis_onset_years,
+                    buckling_detected=result.buckling_detected,
+                    buckling_onset_years=result.buckling_onset_years,
+                    max_damage=result.max_damage, max_asymmetry=result.max_asymmetry_developed,
+                    warnings=result.warnings)
+            @async Database.save_longitudinal_result(result_json, nothing, p_nt, r_nt)
+        end
         return json_response(Dict(
             "message" => "Simulation longitudinale terminée",
             "computation_time_s" => round(elapsed, digits=1),
@@ -850,4 +960,222 @@ function parse_vertebral_level(s::String)::VertebralLevel
         "S1" => S1,
     )
     return get(level_map, uppercase(s), T8)
+end
+
+# ══════════════════════════════════════════════════════════════
+# SPRINT 2 — Handlers Authentification JWT
+# ══════════════════════════════════════════════════════════════
+
+"""Middleware : vérifie le JWT et retourne les Claims, ou envoie 401."""
+function require_auth(req::HTTP.Request)::Union{Users.JWT.Claims, HTTP.Response}
+    token = Users.JWT.extract_bearer_token(req)
+    result, claims = Users.JWT.verify_token(token)
+    
+    if result == Users.JWT.TOKEN_VALID
+        return claims
+    elseif result == Users.JWT.TOKEN_EXPIRED
+        return error_response("Token expiré — veuillez vous reconnecter"; status=401)
+    elseif result == Users.JWT.TOKEN_MISSING
+        return error_response("Authentification requise"; status=401)
+    else
+        return error_response("Token invalide"; status=401)
+    end
+end
+
+"""POST /api/auth/register"""
+function handle_auth_register(req::HTTP.Request)
+    t0 = time()
+    try
+        body = JSON3.read(String(req.body))
+        email    = string(get(body, :email,    ""))
+        username = string(get(body, :username, ""))
+        password = string(get(body, :password, ""))
+        fullname = string(get(body, :full_name, ""))
+        role     = string(get(body, :role,     "student"))
+        
+        conn = Database.get_conn()
+        if isnothing(conn)
+            log_request("POST", "/api/auth/register", 503, (time()-t0)*1000)
+            return error_response("Base de données indisponible"; status=503)
+        end
+        
+        user, err = Users.register_user(conn, email, username, password;
+                                         full_name=isempty(fullname) ? nothing : fullname,
+                                         role=role)
+        if !isnothing(err) && !isempty(err)
+            log_request("POST", "/api/auth/register", 400, (time()-t0)*1000)
+            return error_response(err; status=400)
+        end
+        
+        resp = json_response(Dict(
+            "message"  => "Compte créé avec succès",
+            "user_id"  => string(user.id),
+            "username" => user.username,
+            "role"     => user.role,
+        ); status=201)
+        log_request("POST", "/api/auth/register", 201, (time()-t0)*1000)
+        return resp
+    catch e
+        @error "handle_auth_register" exception=(e, catch_backtrace())
+        log_request("POST", "/api/auth/register", 500, (time()-t0)*1000)
+        return error_response("Erreur serveur"; status=500)
+    end
+end
+
+"""POST /api/auth/login"""
+function handle_auth_login(req::HTTP.Request)
+    t0 = time()
+    try
+        body = JSON3.read(String(req.body))
+        login    = string(get(body, :login,    get(body, :email, "")))
+        password = string(get(body, :password, ""))
+        
+        ip = ""
+        ua = ""
+        for (n, v) in req.headers
+            lowercase(n) == "x-forwarded-for" && (ip = v)
+            lowercase(n) == "user-agent"       && (ua = v)
+        end
+        
+        conn = Database.get_conn()
+        if isnothing(conn)
+            log_request("POST", "/api/auth/login", 503, (time()-t0)*1000)
+            return error_response("Base de données indisponible"; status=503)
+        end
+        
+        tokens, err = Users.login_user(conn, login, password; ip=ip, user_agent=ua)
+        if !isnothing(err) && !isempty(err)
+            log_request("POST", "/api/auth/login", 401, (time()-t0)*1000)
+            return error_response(err; status=401)
+        end
+        
+        resp = json_response(Dict(
+            "access_token"  => tokens.access_token,
+            "refresh_token" => tokens.refresh_token,
+            "token_type"    => tokens.token_type,
+            "expires_in"    => tokens.expires_in,
+        ))
+        log_request("POST", "/api/auth/login", 200, (time()-t0)*1000)
+        return resp
+    catch e
+        @error "handle_auth_login" exception=(e, catch_backtrace())
+        log_request("POST", "/api/auth/login", 500, (time()-t0)*1000)
+        return error_response("Erreur serveur"; status=500)
+    end
+end
+
+"""POST /api/auth/refresh"""
+function handle_auth_refresh(req::HTTP.Request)
+    t0 = time()
+    try
+        body = JSON3.read(String(req.body))
+        refresh_token = string(get(body, :refresh_token, ""))
+        isempty(refresh_token) && return error_response("refresh_token manquant"; status=400)
+        
+        conn = Database.get_conn()
+        isnothing(conn) && return error_response("Base de données indisponible"; status=503)
+        
+        tokens, err = Users.refresh_access_token(conn, refresh_token)
+        if !isnothing(err) && !isempty(err)
+            log_request("POST", "/api/auth/refresh", 401, (time()-t0)*1000)
+            return error_response(err; status=401)
+        end
+        
+        resp = json_response(Dict(
+            "access_token"  => tokens.access_token,
+            "refresh_token" => tokens.refresh_token,
+            "token_type"    => tokens.token_type,
+            "expires_in"    => tokens.expires_in,
+        ))
+        log_request("POST", "/api/auth/refresh", 200, (time()-t0)*1000)
+        return resp
+    catch e
+        @error "handle_auth_refresh" exception=(e, catch_backtrace())
+        return error_response("Erreur serveur"; status=500)
+    end
+end
+
+"""POST /api/auth/logout"""
+function handle_auth_logout(req::HTTP.Request)
+    try
+        body = JSON3.read(String(req.body))
+        refresh_token = string(get(body, :refresh_token, ""))
+        
+        conn = Database.get_conn()
+        if !isnothing(conn) && !isempty(refresh_token)
+            Users.logout_user(conn, refresh_token)
+        end
+        
+        return json_response(Dict("message" => "Déconnexion réussie"))
+    catch e
+        return json_response(Dict("message" => "Déconnexion"))
+    end
+end
+
+"""GET /api/auth/me — retourne le profil de l'utilisateur connecté"""
+function handle_auth_me(req::HTTP.Request)
+    auth = require_auth(req)
+    auth isa HTTP.Response && return auth  # 401
+    
+    return json_response(Dict(
+        "user_id"  => string(auth.user_id),
+        "username" => auth.username,
+        "role"     => auth.role,
+    ))
+end
+
+# ══════════════════════════════════════════════════════════════
+# SPRINT 3 — Handler Rapport PDF
+# ══════════════════════════════════════════════════════════════
+
+"""
+GET /api/spine/{id}/report
+GET /api/spine/{id}/report?patient_name=xxx
+
+Retourne un rapport JSON structuré — le frontend le convertit en PDF.
+"""
+function handle_get_report(req::HTTP.Request)
+    t0 = time()
+    id_str = split(req.target, "/")[4]
+    
+    try
+        id = UUID(id_str)
+        model = get_model(id)
+        
+        if isnothing(model)
+            log_request("GET", "/api/spine/$id_str/report", 404, (time()-t0)*1000)
+            return error_response("Modèle $id non trouvé"; status=404)
+        end
+        
+        # Parser les query params
+        patient_name = "Patient anonyme"
+        generated_by  = "VERTEX© Simulator"
+        
+        # Extraire ?patient_name=xxx de l'URL
+        query_str = ""
+        if contains(req.target, "?")
+            query_str = split(req.target, "?")[2]
+            for param in split(query_str, "&")
+                kv = split(param, "=")
+                length(kv) == 2 || continue
+                HTTP.URIs.unescapeuri(kv[1]) == "patient_name" &&
+                    (patient_name = HTTP.URIs.unescapeuri(kv[2]))
+                HTTP.URIs.unescapeuri(kv[1]) == "generated_by" &&
+                    (generated_by = HTTP.URIs.unescapeuri(kv[2]))
+            end
+        end
+        
+        report = Reports.generate_spine_report(model;
+                    patient_name=patient_name,
+                    generated_by=generated_by)
+        
+        resp = json_response(report)
+        log_request("GET", "/api/spine/$id_str/report", 200, (time()-t0)*1000)
+        return resp
+        
+    catch e
+        @error "handle_get_report" exception=(e, catch_backtrace())
+        log_request("GET", "/api/spine/$id_str/report", 500, (time()-t0)*1000)
+        return error_response("Erreur génération rapport: $(sprint(showerror, e))"; status=500)
+    end
 end

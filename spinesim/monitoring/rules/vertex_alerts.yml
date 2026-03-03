@@ -1,0 +1,152 @@
+groups:
+  - name: vertex_critical
+    interval: 30s
+    rules:
+
+      # ── Disponibilité services ──────────────────────────────────────────────
+      - alert: GatewayDown
+        expr: up{job="vertex_gateway"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service:  gateway
+        annotations:
+          summary:     "Gateway VERTEX indisponible"
+          description: "Le service FastAPI Gateway ne répond plus depuis 1 minute."
+
+      - alert: BackendDown
+        expr: up{job="vertex_backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service:  backend
+        annotations:
+          summary:     "Backend Julia indisponible"
+          description: "Le service Julia (spinesim) ne répond plus."
+
+      - alert: FEBioDown
+        expr: up{job="vertex_febio"} == 0
+        for: 2m
+        labels:
+          severity: warning
+          service:  febio
+        annotations:
+          summary:     "Service FEBio indisponible"
+          description: "Le microservice FEBio ne répond plus depuis 2 minutes."
+
+      - alert: PostgresDown
+        expr: pg_up == 0
+        for: 1m
+        labels:
+          severity: critical
+          service:  postgres
+        annotations:
+          summary:     "PostgreSQL indisponible"
+          description: "La base de données est inaccessible."
+
+      # ── Latences API ────────────────────────────────────────────────────────
+      - alert: GatewayHighLatency
+        expr: >
+          histogram_quantile(0.95,
+            rate(http_request_duration_seconds_bucket{job="vertex_gateway"}[5m])
+          ) > 2.0
+        for: 5m
+        labels:
+          severity: warning
+          service:  gateway
+        annotations:
+          summary:     "Latence Gateway P95 > 2s"
+          description: "Le 95e percentile de latence dépasse 2s sur les 5 dernières minutes."
+
+      - alert: SimulationSlowdown
+        expr: >
+          histogram_quantile(0.95,
+            rate(http_request_duration_seconds_bucket{
+              job="vertex_backend", handler=~".*/simulate.*"
+            }[5m])
+          ) > 30
+        for: 5m
+        labels:
+          severity: warning
+          service:  backend
+        annotations:
+          summary:     "Simulations FEM lentes (P95 > 30s)"
+          description: "Les simulations EF prennent plus de 30s au 95e percentile."
+
+      # ── Erreurs HTTP ─────────────────────────────────────────────────────────
+      - alert: HighErrorRate
+        expr: >
+          sum(rate(http_requests_total{job="vertex_gateway", status=~"5.."}[5m])) /
+          sum(rate(http_requests_total{job="vertex_gateway"}[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          service:  gateway
+        annotations:
+          summary:     "Taux d'erreur 5xx > 5%"
+          description: "Plus de 5% des requêtes retournent une erreur 5xx."
+
+      # ── Ressources système ───────────────────────────────────────────────────
+      - alert: HighMemoryUsage
+        expr: >
+          (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) > 0.90
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary:     "Utilisation mémoire > 90%"
+          description: "La mémoire disponible est inférieure à 10%."
+
+      - alert: HighCPUUsage
+        expr: >
+          100 - (avg by(instance)(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary:     "CPU > 85% depuis 10 minutes"
+          description: "La charge CPU est élevée et pourrait impacter les performances."
+
+      - alert: DiskAlmostFull
+        expr: >
+          (node_filesystem_avail_bytes{fstype!~"tmpfs|overlay"} /
+           node_filesystem_size_bytes{fstype!~"tmpfs|overlay"}) < 0.10
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary:     "Espace disque < 10%"
+          description: "Le disque {{ $labels.mountpoint }} est presque plein."
+
+      # ── PostgreSQL ───────────────────────────────────────────────────────────
+      - alert: PostgresConnectionsHigh
+        expr: pg_stat_activity_count > 80
+        for: 5m
+        labels:
+          severity: warning
+          service:  postgres
+        annotations:
+          summary:     "Connexions PostgreSQL élevées (> 80)"
+          description: "Le nombre de connexions actives dépasse 80."
+
+      - alert: PostgresLongRunningQuery
+        expr: pg_stat_activity_max_tx_duration{state="active"} > 120
+        for: 1m
+        labels:
+          severity: warning
+          service:  postgres
+        annotations:
+          summary:     "Requête PostgreSQL > 2 minutes"
+          description: "Une requête tourne depuis plus de 2 minutes."
+
+      # ── Business metrics ─────────────────────────────────────────────────────
+      - alert: FEMSolverFailures
+        expr: >
+          rate(vertex_fem_solver_errors_total[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          service:  backend
+        annotations:
+          summary:     "Taux d'échec solveur FEM > 10%"
+          description: "Le solveur FEM retourne trop d'erreurs — vérifier les entrées patient."

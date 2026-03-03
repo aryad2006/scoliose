@@ -1,0 +1,117 @@
+version: "3.9"
+
+# VERTEX© — Stack de monitoring (Prometheus + Grafana + Alertmanager)
+# Lancer : docker compose -f docker-compose.monitoring.yml up -d
+# Grafana : http://localhost:3001 (admin/vertex_grafana)
+
+services:
+
+  # ── Prometheus ──────────────────────────────────────────────────────────────
+  prometheus:
+    image: prom/prometheus:v2.51.2
+    container_name: vertex_prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./rules/:/etc/prometheus/rules/:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=30d"
+      - "--web.enable-lifecycle"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+    networks:
+      - vertex_net
+
+  # ── Grafana ──────────────────────────────────────────────────────────────────
+  grafana:
+    image: grafana/grafana:10.4.2
+    container_name: vertex_grafana
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=vertex_grafana
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/:ro
+      - ./grafana/dashboards/:/var/lib/grafana/dashboards/:ro
+    networks:
+      - vertex_net
+    depends_on:
+      - prometheus
+
+  # ── Alertmanager ─────────────────────────────────────────────────────────────
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    container_name: vertex_alertmanager
+    restart: unless-stopped
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+    networks:
+      - vertex_net
+
+  # ── Node Exporter (métriques serveur host) ──────────────────────────────────
+  node_exporter:
+    image: prom/node-exporter:v1.8.0
+    container_name: vertex_node_exporter
+    restart: unless-stopped
+    pid: host
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - "--path.procfs=/host/proc"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
+    ports:
+      - "9100:9100"
+    networks:
+      - vertex_net
+
+  # ── cAdvisor (métriques Docker containers) ───────────────────────────────────
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    container_name: vertex_cadvisor
+    restart: unless-stopped
+    privileged: true
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8080:8080"
+    networks:
+      - vertex_net
+
+  # ── Postgres Exporter ────────────────────────────────────────────────────────
+  postgres_exporter:
+    image: prometheuscommunity/postgres-exporter:v0.15.0
+    container_name: vertex_pg_exporter
+    restart: unless-stopped
+    environment:
+      - DATA_SOURCE_NAME=postgresql://${POSTGRES_USER:-vertex}:${POSTGRES_PASSWORD:-vertex_pass}@db:5432/${POSTGRES_DB:-vertex_db}?sslmode=disable
+    ports:
+      - "9187:9187"
+    networks:
+      - vertex_net
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  vertex_net:
+    external: true
+    name: spinesim_default
