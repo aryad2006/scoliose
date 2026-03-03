@@ -333,9 +333,11 @@ function apply_growth!(model::SpineModel, params::LongitudinalParams,
     Δh_per_vertebra = growth_rate * dt_months / length(model.vertebrae)
     
     for (i, vb) in enumerate(model.vertebrae)
-        # ── Croissance en hauteur ──
-        # Augmenter la hauteur du corps vertébral
-        # (En réalité, via les plaques de croissance = plateaux cartilagineux)
+        # ── Élongation verticale ──
+        pos = vb.position
+        z_shift = Δh_per_vertebra * (length(model.vertebrae) - i) / 
+                  length(model.vertebrae)
+        model.vertebrae[i].position = Vec3(pos[1], pos[2], pos[3] + z_shift)
         
         # ── Loi de Hueter-Volkmann ──
         # Si la vertèbre est inclinée (pré-scoliose), le côté comprimé 
@@ -344,22 +346,25 @@ function apply_growth!(model::SpineModel, params::LongitudinalParams,
         
         # Croissance différentielle gauche/droite
         # ΔG = G₀ × (1 - k × σ/σ_ref) où k est le coefficient de Hueter-Volkmann
-        hueter_volkmann_k = 0.5  # Sensibilité de la croissance aux contraintes
+        # Calibré d'après Stokes et al. (2006), Villemure & Stokes (2009)
+        hueter_volkmann_k = 1.0  # Sensibilité de la croissance aux contraintes
         
         growth_asymmetry = -hueter_volkmann_k * sin(tilt)
         # Côté concave (comprimé) : croissance réduite → cunéiformisation
         
-        if abs(growth_asymmetry) > 0.001 && age < 16
-            θy_growth = deg2rad(growth_asymmetry * Δh_per_vertebra * 10.0)
+        if abs(growth_asymmetry) > 0.0005 && age < 18
+            # Facteur d'amplification proportionnel à la vitesse de croissance
+            # Plus la croissance est rapide (pic pubertaire), plus l'effet est fort
+            growth_amplification = 18.0 * (growth_rate / (peak_rate + 0.5))
+            θy_growth = deg2rad(growth_asymmetry * Δh_per_vertebra * growth_amplification)
             R = rotation_matrix(0.0, θy_growth, 0.0)
-            model.vertebrae[i].orientation = R * vb.orientation
+            model.vertebrae[i].orientation = R * model.vertebrae[i].orientation
+            
+            # La croissance différentielle déplace aussi latéralement
+            lat_growth = Δh_per_vertebra * sin(tilt) * growth_amplification * 0.05
+            cur_pos = model.vertebrae[i].position
+            model.vertebrae[i].position = Vec3(cur_pos[1] + lat_growth, cur_pos[2], cur_pos[3])
         end
-        
-        # ── Élongation verticale ──
-        pos = vb.position
-        z_shift = Δh_per_vertebra * (length(model.vertebrae) - i) / 
-                  length(model.vertebrae)
-        model.vertebrae[i].position = Vec3(pos[1], pos[2], pos[3] + z_shift)
     end
     
     # Croissance des disques (plus lente)
@@ -390,21 +395,27 @@ function apply_cumulative_deformation!(model::SpineModel,
         # ── Fluage viscoélastique discal ──
         # Le disque se déforme lentement sous charge constante
         # ε_creep = A × σ^n × t  (loi puissance)
-        creep_coefficient = 1e-12  # Coefficient de fluage (mm/Pa/mois)
+        # Calibré d'après Keller et al. (1987), Adams & Dolan (2005)
+        creep_coefficient = 5e-11  # Coefficient de fluage (mm/Pa/mois)
         creep_displacement = creep_coefficient * σ * dt_months
         
         # La direction du fluage dépend de l'inclinaison existante
         tilt = atan(vb.orientation[1, 3], vb.orientation[3, 3])
         
-        if abs(tilt) > deg2rad(0.01)
+        if abs(tilt) > deg2rad(0.005)
             # Le fluage amplifie la déformation existante (instabilité)
-            lateral_creep = creep_displacement * sin(tilt) * 1000.0  # mm
+            lateral_creep = creep_displacement * sin(tilt) * 300.0  # mm
             pos = vb.position
             model.vertebrae[i].position = Vec3(
                 pos[1] + lateral_creep,
                 pos[2],
                 pos[3]
             )
+            
+            # Le fluage augmente aussi l'inclinaison (boucle positive)
+            θ_creep = creep_displacement * sin(tilt) * 0.2
+            R_creep = rotation_matrix(0.0, θ_creep, 0.0)
+            model.vertebrae[i].orientation = R_creep * vb.orientation
         end
     end
 end

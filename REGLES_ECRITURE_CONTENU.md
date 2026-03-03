@@ -83,7 +83,77 @@ Chaque section (ex. §1.1, §1.2...) DOIT contenir :
 
 ---
 
-## 3. Profondeur variable et progression
+## 3. Profondeur, rigueur scientifique et richesse pédagogique
+
+> **RÈGLE CARDINALE** : Cette formation s'adresse à des **praticiens confirmés** (chirurgiens orthopédistes, neurochirurgiens, rhumatologues, médecins de rééducation). Le contenu ne doit JAMAIS se limiter à énoncer des faits ou dresser des listes descriptives. Chaque information doit être **expliquée**, **justifiée** et **contextualisée** dans un raisonnement clinique ou biomécanique.
+
+### 3.0 Principes de richesse pédagogique (OBLIGATOIRES)
+
+#### 3.0.1 Jamais de fait sans explication
+
+Chaque donnée anatomique, biomécanique ou clinique DOIT être accompagnée de :
+
+1. **Le mécanisme sous-jacent** : pourquoi cette structure a cette forme, cette orientation, cette composition ?
+2. **La logique évolutive ou biomécanique** : quelle contrainte mécanique ou fonctionnelle explique cette adaptation ?
+3. **Les conséquences cliniques** : en quoi cela impacte la pratique, le raisonnement diagnostique et/ou la décision chirurgicale ?
+
+❌ **INTERDIT — Fait brut sans explication** :
+> Les facettes thoraciques sont orientées à 60° dans le plan frontal.
+
+✅ **OBLIGATOIRE — Fait + mécanisme + conséquence** :
+> Les facettes thoraciques sont orientées à ~60° dans le plan frontal. Cette orientation quasi coronale **autorise la rotation axiale** mais **limite la flexion-extension** — ce qui explique un paradoxe clinique fondamental : le segment thoracique, bien que rigidifié par la cage costale, est le siège privilégié de la rotation vertébrale dans la scoliose. Biomécaniquement, les surfaces articulaires frontales glissent l'une sur l'autre comme des tuiles lors de la rotation, alors qu'en lombaire les facettes sagittales s'emboîtent et verrouillent la rotation. C'est pourquoi la gibbosité costale (manifestation clinique de la rotation) est maximale en thoracique et modérée en lombaire.
+
+#### 3.0.2 Chaînes de raisonnement obligatoires
+
+Chaque section doit contenir au moins **une chaîne de raisonnement** explicite reliant anatomie → biomécanique → physiopathologie → clinique → décision thérapeutique.
+
+Format recommandé :
+> **Chaîne de raisonnement** : Structure anatomique → Propriété mécanique → Comportement sous charge → Mécanisme pathologique → Signe clinique → Implication chirurgicale
+
+Exemple :
+> *Uncus cervicaux → guident la flexion latérale + protègent l'artère vertébrale → dégénèrent en ostéophytes unco-vertébraux → compriment la racine (radiculopathie) ou l'artère vertébrale (insuffisance vertébro-basilaire) → cervicobrachialgie ou vertiges positionnels → décompression par uncectomie antérieure (technique de Smith-Robinson).*
+
+#### 3.0.3 Controverses et niveaux de preuve
+
+Pour les praticiens confirmés, il est indispensable de distinguer ce qui est **établi** de ce qui est **débattu** :
+
+- **Marqueur 📊 Niveau de preuve** : pour les affirmations cliniques importantes, indiquer le niveau de preuve (I à V) ou la qualité des données (méta-analyse, RCT, cohorte, série de cas, avis d'expert)
+- **Marqueur ⚖️ Controverse** : quand un sujet fait l'objet de débats dans la littérature, présenter les positions contradictoires avec les arguments de chaque côté
+- Ne JAMAIS présenter une hypothèse comme un fait établi
+- Citer les études princeps ET les études récentes qui confirment ou nuancent
+
+Exemple :
+> ⚖️ **Controverse — Tropisme facettaire et scoliose dégénérative** :
+> Le tropisme facettaire (asymétrie d'orientation des facettes droite/gauche) est-il un facteur causal de la scoliose dégénérative de l'adulte ?
+> - **Pour** : Boden et al. (1996) — corrélation significative tropisme > 10° et dégénérescence discale adjacente (cohorte prospective, n=120)
+> - **Contre** : Vanharanta et al. (1993) — pas de corrélation en IRM systématique (n=187)
+> - **Synthèse actuelle** : le tropisme facilite probablement la rotation asymétrique sous charge, mais n'est ni nécessaire ni suffisant pour déclencher une scoliose. Son rôle est celui d'un facteur prédisposant parmi d'autres (📊 Niveau de preuve : III).
+
+#### 3.0.4 Profondeur biomécanique
+
+Chaque structure anatomique qui a un rôle mécanique doit être analysée en termes de :
+
+- **Contraintes** : compression, traction, cisaillement, torsion (en MPa quand les données existent)
+- **Comportement matériau** : élasticité, viscoélasticité, fluage, hystérésis, fatigue
+- **Modèle mécanique** : quel modèle simplifié permet de comprendre le comportement (poutre, colonne, ressort, amortisseur, ressort-spiral) ?
+- **Données quantitatives** : valeurs numériques avec sources, intervalles de confiance ou écarts-types
+
+#### 3.0.5 Raisonnement chirurgical explicite
+
+Pour chaque implication chirurgicale mentionnée, le module doit détailler :
+
+- **Pourquoi** cette structure est à risque (pas seulement « risque de lésion nerveuse »)
+- **Comment** le chirurgien anticipe ce risque (technique, précaution)
+- **Que faire** si la complication survient (conduite à tenir)
+- **Avec quelles données probantes** (taux de complication, études de référence)
+
+#### 3.0.6 Densité de contenu attendue
+
+- **Minimum 300 mots par sous-section (§X.X.X)** — une sous-section de 3 phrases est insuffisante
+- **Au moins 2 paragraphes d'explication** pour chaque tableau de données numériques
+- **Au moins 1 encadré expert (🔬)** par section majeure (§X.X)
+- **Au moins 1 encadré de controverse (⚖️)** par module
+- Les sources bibliographiques doivent inclure au minimum les **études princeps** (>20 ans, fondatrices) ET les **études récentes** (<5 ans, état de l'art)
 
 ### 3.1 Trois niveaux de détail
 
@@ -91,9 +161,9 @@ Chaque information doit être classée en un de ces trois niveaux :
 
 | Niveau | But | Marqueur | Pour qui |
 |---|---|---|---|
-| **Essentiel** | Doit être mémorisé | Texte normal + **gras** | Tous les praticiens |
-| **Approfondi** | Compréhension fine | Encadré info (📖) | Praticiens avancés |
-| **Expert** | Détail chirurgical/recherche | Encadré spécialisé (🔬) | Chirurgiens en formation |
+| **Essentiel** | Doit être mémorisé et expliqué | Texte normal + **gras** + explication mécanistique | Tous les praticiens |
+| **Approfondi** | Compréhension fine des mécanismes | Encadré info (📖) avec biomécanique détaillée | Praticiens avancés |
+| **Expert** | Détail chirurgical/recherche/controverse | Encadré spécialisé (🔬) ou controverse (⚖️) | Chirurgiens en formation |
 
 ### 3.2 Règles de gras et mise en emphase
 

@@ -71,6 +71,7 @@
           :stresses="stresses"
           :solverInfo="solverInfo"
         />
+        <LongitudinalPanel />
       </aside>
     </div>
 
@@ -91,6 +92,7 @@ import PatientPanel from './components/PatientPanel.vue'
 import ScoliosisPanel from './components/ScoliosisPanel.vue'
 import SurgeryPanel from './components/SurgeryPanel.vue'
 import ResultsPanel from './components/ResultsPanel.vue'
+import LongitudinalPanel from './components/LongitudinalPanel.vue'
 
 const store = useSpineStore()
 const loading = ref(false)

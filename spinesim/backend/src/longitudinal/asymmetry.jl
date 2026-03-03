@@ -167,7 +167,7 @@ function mild_vertebral_wedging(; level::VertebralLevel=T8,
         ASYMMETRY_STATIC,
         [StaticAsymmetry(VERTEBRAL_WEDGING, level, angle, side)],
         DynamicAsymmetry[],
-        "Cunéiformisation vertébrale légère ($angle° en $level, côté $side)"
+        "Cunéiformisation vertébrale légère ($(angle)° en $level, côté $side)"
     )
 end
 
@@ -184,7 +184,7 @@ function mild_ligament_asymmetry(; level::VertebralLevel=T7,
         ASYMMETRY_DYNAMIC,
         StaticAsymmetry[],
         [DynamicAsymmetry(LIGAMENT_STIFFNESS_ASYMMETRY, level, ratio, side)],
-        "Asymétrie ligamentaire légère ($(Int(round((ratio-1)*100)))% en $level, côté $side)"
+        "Asymétrie ligamentaire légère ($(Int(round((ratio-1)*100)))% en $(level), côté $(side))"
     )
 end
 
@@ -200,7 +200,7 @@ function mild_disc_asymmetry(; level::VertebralLevel=T8,
         ASYMMETRY_DYNAMIC,
         StaticAsymmetry[],
         [DynamicAsymmetry(DISC_ASYMMETRY, level, ratio, side)],
-        "Asymétrie discale légère ($(Int(round((ratio-1)*100)))% en $level, côté $side)"
+        "Asymétrie discale légère ($(Int(round((ratio-1)*100)))% en $(level), côté $(side))"
     )
 end
 
@@ -219,6 +219,6 @@ function combined_asymmetry(; wedge_level::VertebralLevel=T8,
         ASYMMETRY_COMBINED,
         [StaticAsymmetry(VERTEBRAL_WEDGING, wedge_level, wedge_angle, side)],
         [DynamicAsymmetry(LIGAMENT_STIFFNESS_ASYMMETRY, lig_level, lig_ratio, side)],
-        "Asymétrie combinée (wedge $(wedge_angle)° + lig $(Int(round((lig_ratio-1)*100)))%)"
+        "Asymétrie combinée (wedge $(wedge_angle)° + lig $(Int(round((lig_ratio-1)*100)))%)"  # already correct
     )
 end

@@ -347,9 +347,9 @@ function default_longitudinal_params(;
         growth_rate::Float64=6.0,   # cm/an au pic
         growth_peak_age::Float64=12.0,
         asymmetry::AsymmetryConfig=symmetric_config(),
-        fatigue_sensitivity::Float64=0.5,
-        remodeling_rate::Float64=0.5,
-        disc_degeneration_rate::Float64=0.3,
+        fatigue_sensitivity::Float64=1.0,
+        remodeling_rate::Float64=1.0,
+        disc_degeneration_rate::Float64=0.5,
         snapshot_interval::Int=6,
         detect_buckling::Bool=true)
     

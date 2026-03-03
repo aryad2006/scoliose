@@ -131,7 +131,7 @@ function generate_adult_deformity!(model::SpineModel, params::AdultDeformityPara
         per_segment = deg2rad(ll_deficit / n_lumbar)
         
         for i in 1:n_lumbar
-            level = VertebralLevel(17 + i)  # L1 à L5
+            level = vertebral_levels()[17 + i]  # L1 à L5 (index 18-22 dans le tableau)
             idx = level_index(level)
             if idx <= length(model.vertebrae)
                 vb = model.vertebrae[idx]
@@ -148,7 +148,7 @@ function generate_adult_deformity!(model::SpineModel, params::AdultDeformityPara
         per_segment = deg2rad(excess_tk / n_thoracic)
         
         for i in 1:n_thoracic
-            level = VertebralLevel(3 + i)  # T4 à T12
+            level = vertebral_levels()[8 + i]  # T4 à T12 (index 9-17 dans le tableau)
             idx = level_index(level)
             if idx <= length(model.vertebrae)
                 vb = model.vertebrae[idx]
@@ -200,7 +200,10 @@ function generate_adult_deformity!(model::SpineModel, params::AdultDeformityPara
             disc = model.discs[idx]
             disc.height *= 0.6
             disc.nucleus.pressure *= 0.3
-            disc.annulus.stiffness *= 1.5  # Fibrose de l'annulus
+            # Fibrose de l'annulus → augmenter la rigidité de la matrice
+            gm = disc.annulus.ground_matrix
+            new_E = gm.youngs_modulus * 1.5
+            disc.annulus.ground_matrix = MaterialProperties(new_E, gm.poissons_ratio, gm.yield_stress, gm.density)
         end
     end
     
@@ -208,7 +211,7 @@ function generate_adult_deformity!(model::SpineModel, params::AdultDeformityPara
     for level in params.facet_arthropathy_levels
         idx = level_index(level)
         for lig in model.ligaments
-            if lig.level_index == idx && lig.type == CL
+            if level_index(lig.level) == idx && lig.type == CL
                 lig.linear_stiffness *= 2.0  # Ankylose facettaire
             end
         end

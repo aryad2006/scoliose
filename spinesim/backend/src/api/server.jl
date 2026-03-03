@@ -696,16 +696,35 @@ function handle_longitudinal_run(req::HTTP.Request)
         asym_level = parse_vertebral_level(asym_level_str)
         
         # Construire la config d'asymétrie
+        # Supporte les formats "wedging_N" (degrés) et "ligament_N" (%) du frontend
         asym_config = if asym_type == "none"
             symmetric_config()
+        # ── Formats frontend (wedging_1, wedging_2, wedging_3) ──
+        elseif asym_type == "wedging_1"
+            mild_vertebral_wedging(level=T8, angle=1.0, side=:right)
+        elseif asym_type == "wedging_2"
+            mild_vertebral_wedging(level=T8, angle=2.0, side=:right)
+        elseif asym_type == "wedging_3"
+            mild_vertebral_wedging(level=T8, angle=3.0, side=:right)
+        # ── Formats frontend (ligament_10, ligament_20) ──
+        elseif asym_type == "ligament_10"
+            mild_ligament_asymmetry(level=T7, ratio=1.10, side=:right)
+        elseif asym_type == "ligament_20"
+            mild_ligament_asymmetry(level=T7, ratio=1.20, side=:right)
+        # ── Format frontend (disc_10) ──
+        elseif asym_type == "disc_10"
+            mild_disc_asymmetry(level=T8, ratio=1.10, side=:right)
+        # ── Format frontend (combined = wedge 2° + lig 10%) ──
+        elseif asym_type == "combined"
+            combined_asymmetry(wedge_level=T8, wedge_angle=2.0,
+                               lig_level=T7, lig_ratio=1.10, side=:right)
+        # ── Formats API générique (rétrocompatibilité) ──
         elseif asym_type == "wedging"
             mild_vertebral_wedging(level=asym_level, angle=asym_mag, side=asym_side)
         elseif asym_type == "ligament"
             mild_ligament_asymmetry(level=asym_level, ratio=asym_mag, side=asym_side)
         elseif asym_type == "disc"
             mild_disc_asymmetry(level=asym_level, ratio=asym_mag, side=asym_side)
-        elseif asym_type == "combined"
-            combined_asymmetry(wedge_level=asym_level, wedge_angle=asym_mag, side=asym_side)
         else
             symmetric_config()
         end

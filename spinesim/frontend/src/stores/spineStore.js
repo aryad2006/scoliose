@@ -117,12 +117,52 @@ export const useSpineStore = defineStore('spine', () => {
     }
   }
 
+  // Longitudinal simulation results
+  const longitudinalResult = ref(null)
+  const comparisonResults = ref(null)
+
+  async function runLongitudinal(params) {
+    loading.value = true
+    error.value = null
+    statusMessage.value = `Simulation longitudinale ${params.duration_years} ans...`
+    try {
+      const res = await axios.post(`${API_BASE}/longitudinal/run`, params)
+      longitudinalResult.value = res.data
+      statusMessage.value = `✅ Simulation terminée — Cobb ${res.data.final_cobb_deg.toFixed(1)}° en ${res.data.duration_years} ans`
+      return res.data
+    } catch (err) {
+      error.value = err.response?.data?.error || err.message
+      statusMessage.value = `❌ Erreur simulation: ${error.value}`
+    } finally {
+      loading.value = false
+    }
+  }
+
+  async function runComparison(params) {
+    loading.value = true
+    error.value = null
+    statusMessage.value = `Étude comparative en cours (9 configurations × ${params.duration_years} ans)...`
+    try {
+      const res = await axios.post(`${API_BASE}/longitudinal/comparison`, params)
+      comparisonResults.value = res.data
+      statusMessage.value = `✅ Étude comparative terminée — ${Object.keys(res.data.results).length} configurations`
+      return res.data
+    } catch (err) {
+      error.value = err.response?.data?.error || err.message
+      statusMessage.value = `❌ Erreur comparaison: ${error.value}`
+    } finally {
+      loading.value = false
+    }
+  }
+
   function reset() {
     spineId.value = null
     spineData.value = null
     stresses.value = []
     solverInfo.value = null
     screwResults.value = []
+    longitudinalResult.value = null
+    comparisonResults.value = null
     loading.value = false
     error.value = null
     statusMessage.value = 'Prêt'
@@ -130,7 +170,9 @@ export const useSpineStore = defineStore('spine', () => {
 
   return {
     spineId, spineData, stresses, solverInfo, statusMessage, screwResults,
+    longitudinalResult, comparisonResults,
     loading, error,
-    createSpine, solveSpine, applyScoliosis, placeScrew, reset,
+    createSpine, solveSpine, applyScoliosis, placeScrew,
+    runLongitudinal, runComparison, reset,
   }
 })

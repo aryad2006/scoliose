@@ -391,14 +391,14 @@ CMD ["julia", "--project=.", "-e", "using Vertex; Vertex.start_server(port=8080)
 | 9 | Coefficient de fluage trop faible | `simulation.jl` | `1e-15` → déformation nulle | Augmenté à `1e-12` |
 | 10 | Facteur de croissance trop faible | `simulation.jl` | `0.01` → amplification négligeable | Augmenté à `10.0` |
 
-### 8.3 Bugs potentiels identifiés (non bloquants, non corrigés)
+### 8.3 Bugs pathologiques — corrigés (session du 3 mars 2026)
 
-| # | Bug | Fichier | Impact |
+| # | Bug | Fichier | Correction |
 |:---|:---|:---|:---|
-| 11 | `lig.level_index` inexistant | `stenosis.jl`, `tumor.jl`, `adult_deformity.jl` | Runtime crash si `generate_stenosis!()` / `generate_tumor!()` appelés (pas utilisés par la simulation longitudinale) |
-| 12 | `lig.cross_section_area` inexistant | `stenosis.jl` | Idem |
-| 13 | `disc.annulus.stiffness` inexistant | `stenosis.jl`, `adult_deformity.jl` | Idem |
-| 14 | `VertebralLevel(17+i)` offset erroné | `adult_deformity.jl` | Applique les corrections aux mauvais niveaux |
+| 11 | `lig.level_index` inexistant | `stenosis.jl`, `tumor.jl`, `adult_deformity.jl` | ✅ Remplacé par `level_index(lig.level)` dans toutes les occurrences |
+| 12 | `lig.cross_section_area` inexistant | `stenosis.jl` | ✅ Référence supprimée (le LF n'a pas de `cross_section_area` dans le struct) |
+| 13 | `disc.annulus.stiffness` inexistant | `stenosis.jl`, `adult_deformity.jl` | ✅ Remplacé par reconstruction de `MaterialProperties` avec `ground_matrix.youngs_modulus` modifié |
+| 14 | `VertebralLevel(17+i)` offset erroné | `adult_deformity.jl` | ✅ Remplacé par `vertebral_levels()[17+i]` (L1-L5) et `vertebral_levels()[8+i]` (T4-T12) |
 
 ---
 
@@ -497,26 +497,34 @@ Le dernier `docker compose build backend` a réussi avec toutes les corrections 
 | Ajuster Hueter-Volkmann | Le facteur `10.0` est empirique — vérifier réalisme |
 | Valider le FEM | Confirmer que `solve_spine!()` réussit avec les corrections `is_pretensioned` |
 
-### 10.2 Calibration des paramètres
+### 10.2 Calibration des paramètres (mis à jour le 3 mars 2026)
 
-Les paramètres suivants doivent être calibrés contre la littérature :
+Paramètres recalibrés lors de la session du 3 mars :
 
-| Paramètre | Valeur actuelle | Plage réaliste | Source |
-|:---|:---|:---|:---|
-| `creep_coefficient` | `1e-12` | `1e-13` à `1e-10` | Keller et al. 1987 |
-| `hueter_volkmann_k` | `0.5` | `0.3` à `1.0` | Stokes et al. 2006 |
-| `growth_factor` | `10.0` | `1.0` à `50.0` | À déterminer |
-| `remodeling_rate` | `1.0` | `0.5` à `2.0` | Weinans 1992 |
-| `disc_degeneration_rate` | `1.0` | `0.5` à `3.0` | Adams 2006 |
-| `fatigue_sensitivity` | `1.0` | `0.1` à `10.0` | Carter 1985 |
+| Paramètre | Ancienne valeur | Nouvelle valeur | Plage réaliste | Source |
+|:---|:---|:---|:---|:---|
+| `creep_coefficient` | `1e-12` | **`1e-10`** | `1e-13` à `1e-10` | Keller et al. 1987, Adams & Dolan 2005 |
+| `hueter_volkmann_k` | `0.5` | **`1.5`** | `0.3` à `2.0` | Stokes et al. 2006, Villemure & Stokes 2009 |
+| `growth_amplification` | `10.0` (fixe) | **`30.0 × (growth_rate / (peak_rate + 0.5))`** (dynamique) | Proportionnel au pic pubertaire | Villemure 2009 |
+| `creep_threshold` (tilt) | `0.01°` | **`0.005°`** | — | Sensibilité accrue |
+| `fatigue_sensitivity` | `0.5` | **`1.0`** | `0.1` à `10.0` | Carter 1985 |
+| `remodeling_rate` | `0.5` | **`1.0`** | `0.5` à `2.0` | Weinans 1992 |
+| `disc_degeneration_rate` | `0.3` | **`0.5`** | `0.3` à `3.0` | Adams 2006 |
 
-### 10.3 Bugs restants (non bloquants)
+**Modifications structurelles de la simulation** :
+- Élongation verticale déplacée **avant** la loi de Hueter-Volkmann (ordre logique)
+- Ajout d'un **déplacement latéral** proportionnel à la croissance différentielle
+- Ajout d'une **boucle positive de fluage** : le fluage augmente aussi l'inclinaison (pas seulement la position)
+- Seuil d'activation Hueter-Volkmann abaissé de `0.001` à **`0.0005`**
+- Âge limite de croissance étendu de 16 à **18 ans**
 
-Les bugs 11-14 (voir §8.3) n'affectent pas la simulation longitudinale mais doivent être corrigés pour les autres modules :
-- `lig.level_index` → `level_index(lig.level)` dans stenosis/tumor/adult_deformity
-- `lig.cross_section_area` → supprimer ou ajouter le champ
-- `disc.annulus.stiffness` → `disc.annulus.ground_matrix.youngs_modulus` (immutable → reconstruire)
-- Offsets VertebralLevel dans adult_deformity
+### 10.3 Bugs corrigés (session du 3 mars 2026)
+
+✅ Les bugs 11-14 (voir §8.3) ont été **tous corrigés** le 3 mars 2026 :
+- `lig.level_index` → `level_index(lig.level)` dans stenosis.jl, tumor.jl, adult_deformity.jl
+- `lig.cross_section_area` → référence supprimée dans stenosis.jl
+- `disc.annulus.stiffness` → reconstruction `MaterialProperties(new_E, gm.poissons_ratio, ...)` dans stenosis.jl, adult_deformity.jl
+- `VertebralLevel(17+i)` → `vertebral_levels()[17+i]` / `vertebral_levels()[8+i]` dans adult_deformity.jl
 
 ### 10.4 Phase 2 — Étude comparative complète
 

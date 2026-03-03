@@ -83,17 +83,16 @@ function generate_stenosis!(model::SpineModel, params::StenosisParameters)
         # ── 1. Hypertrophie du ligament jaune (LF) ──
         lf_factor = params.ligamentum_flavum_thickness / 3.0  # Ratio vs normal
         for lig in model.ligaments
-            if lig.level_index == lidx && lig.type == LF
+            if level_index(lig.level) == lidx && lig.type == LF
                 # Épaississement → augmente la raideur mais réduit l'espace canalaire
                 lig.linear_stiffness *= lf_factor
-                lig.cross_section_area *= lf_factor
             end
         end
         
         # ── 2. Hypertrophie facettaire ──
         hyp = params.facet_hypertrophy
         for lig in model.ligaments
-            if lig.level_index == lidx && lig.type == CL
+            if level_index(lig.level) == lidx && lig.type == CL
                 # Raideur facettaire augmentée
                 lig.linear_stiffness *= (1.0 + hyp)
             end
@@ -104,14 +103,17 @@ function generate_stenosis!(model::SpineModel, params::StenosisParameters)
             disc = model.discs[lidx]
             # Le bombement discal réduit la hauteur et augmente la pression
             disc.height *= (1.0 - 0.3 * params.disc_bulge)
-            disc.annulus.stiffness *= (0.8 + 0.4 * params.disc_bulge)
+            # Modifier la rigidité de la matrice de fond de l'annulus
+            gm = disc.annulus.ground_matrix
+            new_E = gm.youngs_modulus * (0.8 + 0.4 * params.disc_bulge)
+            disc.annulus.ground_matrix = MaterialProperties(new_E, gm.poissons_ratio, gm.yield_stress, gm.density)
         end
         
         # ── 4. Ostéophytes → rigidification segmentaire ──
         if params.osteophyte_encroachment > 0
             osteo_factor = 1.0 + 2.0 * params.osteophyte_encroachment
             for lig in model.ligaments
-                if lig.level_index == lidx && lig.type in (LVCA, LVCP)
+                if level_index(lig.level) == lidx && lig.type in (LVCA, LVCP)
                     lig.linear_stiffness *= osteo_factor
                 end
             end
@@ -123,7 +125,7 @@ function generate_stenosis!(model::SpineModel, params::StenosisParameters)
             vb = model.vertebrae[lidx]
             # Augmentation de la raideur globale du segment
             for lig in model.ligaments
-                if lig.level_index == lidx
+                if level_index(lig.level) == lidx
                     lig.linear_stiffness *= 1.3
                 end
             end

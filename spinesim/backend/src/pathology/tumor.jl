@@ -142,7 +142,7 @@ function generate_tumor!(model::SpineModel, params::TumorParameters)
             stiffness_factor = 1.0 - 0.7 * inv  # Jusqu'à 70% de perte
             
             for lig in model.ligaments
-                if lig.level_index == lidx && lig.type in (LVCA, LVCP)
+                if level_index(lig.level) == lidx && lig.type in (LVCA, LVCP)
                     lig.linear_stiffness *= stiffness_factor
                 end
             end
@@ -155,7 +155,7 @@ function generate_tumor!(model::SpineModel, params::TumorParameters)
         else
             # ── Lésion blastique → augmentation de rigidité ──
             for lig in model.ligaments
-                if lig.level_index == lidx
+                if level_index(lig.level) == lidx
                     lig.linear_stiffness *= 1.5  # Sclérose
                 end
             end
@@ -165,13 +165,13 @@ function generate_tumor!(model::SpineModel, params::TumorParameters)
         if params.pedicle_destruction == :bilateral
             # Déstabilisation majeure de l'arc postérieur
             for lig in model.ligaments
-                if lig.level_index == lidx && lig.type in (ISL, SSL, LF)
+                if level_index(lig.level) == lidx && lig.type in (ISL, SSL, LF)
                     lig.linear_stiffness *= 0.2
                 end
             end
         elseif params.pedicle_destruction == :unilateral
             for lig in model.ligaments
-                if lig.level_index == lidx && lig.type in (ISL, SSL, LF)
+                if level_index(lig.level) == lidx && lig.type in (ISL, SSL, LF)
                     lig.linear_stiffness *= 0.5
                 end
             end
