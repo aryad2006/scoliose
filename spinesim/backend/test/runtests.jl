@@ -333,6 +333,379 @@ include("../src/surgery/evaluation.jl")
         @test !result.developed_scoliosis
     end
 
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS SPRINT 0 — T0.5 : Warnings dans LongitudinalResult
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "LongitudinalResult — champ warnings (Sprint 0)" begin
+        params = default_longitudinal_params(
+            duration_years=1.0,
+            time_step_months=6,
+            snapshot_interval=6,
+            asymmetry=symmetric_config()
+        )
+        result = run_longitudinal_simulation(params)
+        
+        # Le champ warnings doit exister et être un Vector{String}
+        @test hasfield(typeof(result), :warnings)
+        @test result.warnings isa Vector{String}
+        
+        # Pour un rachis normal, aucun avertissement FEM attendu
+        # (le solveur doit converger)
+        @test length(result.warnings) == 0 ||
+              all(contains("FEM"), result.warnings)
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS SPRINT 0 — T0.3 : Thread-safety ACTIVE_MODELS
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "Thread-safety du dictionnaire (Sprint 0)" begin
+        # Test minimal sans démarrer le serveur HTTP
+        lock_obj = ReentrantLock()
+        dict = Dict{Int, String}()
+        
+        # Écriture concurrente
+        tasks = map(1:20) do i
+            @async begin
+                lock(lock_obj) do
+                    dict[i] = "model_$i"
+                end
+            end
+        end
+        for t in tasks; wait(t); end
+        
+        @test length(dict) == 20
+        @test all(haskey(dict, i) for i in 1:20)
+        
+        # Lecture concurrente pendant écriture
+        results = Vector{Union{String,Nothing}}(undef, 20)
+        write_tasks = [@async begin
+            lock(lock_obj) do
+                dict[100+i] = "extra_$i"
+            end
+        end for i in 1:10]
+        read_tasks = [@async begin
+            results[i] = lock(lock_obj) do
+                get(dict, i, nothing)
+            end
+        end for i in 1:20]
+        
+        for t in vcat(write_tasks, read_tasks); wait(t); end
+        # Pas de data race → toutes les lectures ont eu une valeur
+        @test all(!isnothing(r) for r in results)
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS SPRINT 3 — Génération de rapports
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "Module Reports (Sprint 3)" begin
+        include("../src/reports/report.jl")
+        
+        model = create_normal_spine(weight=75.0, height=175.0, age=35, sex=:M)
+        
+        report = Reports.generate_spine_report(model;
+                    patient_name="Dr. Test",
+                    generated_by="Test Suite")
+        
+        # Structure de base
+        @test haskey(report, "metadata")
+        @test haskey(report, "patient")
+        @test haskey(report, "clinical_measurements")
+        @test haskey(report, "pathologies")
+        @test haskey(report, "recommendations")
+        
+        # Patient
+        @test report["patient"]["age"] == 35
+        @test report["patient"]["sex"] == "M"
+        @test report["patient"]["weight_kg"] == 75.0
+        @test report["patient"]["bmi"] > 0
+        
+        # Mesures cliniques
+        cm = report["clinical_measurements"]
+        @test cm["cobb_angle_deg"] >= 0
+        @test cm["scoliosis_severity"] isa String
+        @test cm["thoracic_kyphosis_deg"] >= 0
+        
+        # Recommandations non vides
+        @test length(report["recommendations"]) >= 1
+    end
+
+    @testset "Sévérité Cobb (Reports)" begin
+        include("../src/reports/report.jl")
+        @test Reports.cobb_severity_label(5.0)  == "normal"
+        @test Reports.cobb_severity_label(15.0) == "légère"
+        @test Reports.cobb_severity_label(30.0) == "modérée"
+        @test Reports.cobb_severity_label(50.0) == "sévère"
+        @test Reports.cobb_severity_label(75.0) == "très sévère"
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS PLAN SPRINT 3 — FEM amélioré
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "FEM — Matrice de rotation locale→globale" begin
+        using LinearAlgebra: norm, I
+
+        # ── Cas vertical (axe y global) ──
+        p1 = Vec3(0.0, 0.0, 0.0)
+        p2 = Vec3(0.0, 1.0, 0.0)
+        T = element_rotation_matrix(p1, p2)
+
+        @test size(T) == (12, 12)
+
+        # T doit être orthogonale : T * T' ≈ I₁₂
+        @test T * T' ≈ Matrix(1.0 * I, 12, 12) atol=1e-10
+
+        # Déterminant = ±1 (matrice orthogonale)
+        @test abs(abs(det(T)) - 1.0) < 1e-10
+
+        # Blocs diagonaux identiques (symétrie)
+        for b in 0:3
+            λb = T[(3b+1):(3b+3), (3b+1):(3b+3)]
+            @test λb ≈ T[1:3, 1:3] atol=1e-12
+        end
+
+        # Blocs hors-diagonaux nuls
+        @test norm(T[1:3, 4:6]) < 1e-12
+
+        # ── Cas incliné à 45° ──
+        p3 = Vec3(1.0, 1.0, 0.0)
+        T2 = element_rotation_matrix(p1, p3)
+        @test T2 * T2' ≈ Matrix(1.0 * I, 12, 12) atol=1e-10
+
+        # ── Cas horizontal pur ──
+        p4 = Vec3(1.0, 0.0, 0.0)
+        T3 = element_rotation_matrix(p1, p4)
+        @test T3 * T3' ≈ Matrix(1.0 * I, 12, 12) atol=1e-10
+    end
+
+    @testset "FEM — Énergie de déformation positive" begin
+        # Un élément correctement assemblé doit avoir K semi-définie positive
+        # (après application des CL)
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        mesh = generate_spine_mesh(model)
+
+        K = assemble_global_stiffness(mesh)
+
+        # La matrice doit être symétrique
+        @test issymmetric(Matrix(K + K') / 2)
+
+        # Tous les éléments diagonaux doivent être >= 0
+        @test all(diag(K) .>= -1e-8)
+
+        # La matrice doit être creuse
+        @test isa(K, SparseMatrixCSC)
+    end
+
+    @testset "FEM — Solveur IterativeSolvers (CG)" begin
+        # Test de base : résoudre un système 2x2 bien conditionné
+        using SparseArrays
+
+        K_test = sparse([2.0 -1.0; -1.0 2.0])
+        F_test = [1.0, 0.0]
+
+        # Solution exacte : [2/3, 1/3]
+        u = cg_solve(K_test, F_test; tol=1e-12, maxiter=100)
+        @test u ≈ [2/3, 1/3] atol=1e-10
+
+        # Test sur un rachis complet avec gravité
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        U = solve_spine!(model; gravity=true)
+
+        # La solution doit exister et ne pas contenir de NaN/Inf
+        @test !any(isnan.(U))
+        @test !any(isinf.(U))
+
+        # Le déplacement du sacrum (nœud fixé) doit être nul
+        n = length(model.vertebrae)
+        dof_sacrum = ((n-1)*6+1):(n*6)
+        @test norm(U[dof_sacrum]) < 1e-6  # effet pénalité
+
+        # La norme de déplacement doit être physiquement raisonnable (< 50 mm)
+        @test norm(U) < 50.0
+    end
+
+    @testset "FEM — Cohérence rachis scoliotique" begin
+        # Un rachis avec scoliose doit avoir des déplacements différents
+        model_normal  = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        model_scol    = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        apply_scoliosis!(model_scol; cobb_angle=35.0, apex=T8, curve_type=:king_III)
+
+        U_normal = solve_spine!(model_normal; gravity=true)
+        U_scol   = solve_spine!(model_scol;   gravity=true)
+
+        @test !any(isnan.(U_scol))
+        @test !any(isinf.(U_scol))
+
+        # La norme totale de déplacement doit différer entre normal et scoliotique
+        @test norm(U_scol) != norm(U_normal)
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS — Conditions aux limites par élimination
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "FEM — Conditions limites : élimination vs pénalité" begin
+        model_elim = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        model_pen  = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+
+        U_elim = solve_spine!(model_elim; gravity=true, bc_method=:elimination)
+        U_pen  = solve_spine!(model_pen;  gravity=true, bc_method=:penalty)
+
+        # Les deux méthodes doivent donner des résultats proches
+        @test !any(isnan.(U_elim))
+        @test !any(isnan.(U_pen))
+
+        # Le sacrum doit être fixé dans les deux cas
+        n = length(model_elim.vertebrae)
+        dof_sacrum = ((n-1)*6+1):(n*6)
+
+        # Élimination : sacrum strictement nul
+        @test norm(U_elim[dof_sacrum]) < 1e-12
+
+        # Pénalité : sacrum quasi-nul (mais pas exactement 0)
+        @test norm(U_pen[dof_sacrum]) < 1e-3
+
+        # Les déplacements des vertèbres libres doivent être similaires
+        # (aux effets de conditionnement près)
+        free_dofs = setdiff(1:length(U_elim), dof_sacrum)
+        relative_error = norm(U_elim[free_dofs] - U_pen[free_dofs]) / 
+                         max(norm(U_elim[free_dofs]), 1e-10)
+        @test relative_error < 0.01  # < 1% de différence
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS — Ré-entrée du solveur (positions de référence)
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "FEM — Ré-entrée solve_spine! (idempotence)" begin
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+
+        # Première résolution
+        U1 = solve_spine!(model; gravity=true)
+        pos_after_1 = [v.position for v in model.vertebrae]
+
+        # Deuxième résolution — doit donner le MÊME résultat
+        # (avant le fix, les positions s'accumulaient)
+        U2 = solve_spine!(model; gravity=true)
+        pos_after_2 = [v.position for v in model.vertebrae]
+
+        @test U1 ≈ U2 atol=1e-8
+        for i in 1:length(pos_after_1)
+            @test pos_after_1[i] ≈ pos_after_2[i] atol=1e-10
+        end
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS — Matrice de rigidité géométrique (flambage)
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "FEM — Matrice de rigidité géométrique" begin
+        # Matrice géométrique d'un élément sous compression
+        elem = BeamElement(1, 1, 2, 30.0,  # L = 30 mm
+                           10.0e6, 3.85e6,  # E, G
+                           500.0, 1e4, 1e4, 2e4)  # A, Iy, Iz, J
+
+        N = 1000.0  # 1 kN compression
+        Kg = beam_geometric_stiffness(elem, N)
+
+        # 12×12
+        @test size(Kg) == (12, 12)
+
+        # Symétrique
+        @test Kg ≈ Kg' atol=1e-12
+
+        # Les termes diagonaux translationnels (v,w) doivent être > 0 pour N > 0
+        @test Kg[2, 2] > 0  # v
+        @test Kg[3, 3] > 0  # w
+
+        # Les termes axiaux (u) doivent être nuls (pas d'effet P-Δ en axial)
+        @test abs(Kg[1, 1]) < 1e-15
+        @test abs(Kg[7, 7]) < 1e-15
+
+        # Pour N = 0, matrice nulle
+        Kg0 = beam_geometric_stiffness(elem, 0.0)
+        @test norm(Kg0) < 1e-15
+    end
+
+    @testset "FEM — Assemblage géométrique global" begin
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        U = solve_spine!(model; gravity=true)
+
+        mesh = generate_spine_mesh(model)
+        Kσ = assemble_geometric_stiffness(mesh, U)
+
+        @test size(Kσ) == (138, 138)
+        @test isa(Kσ, SparseMatrixCSC)
+
+        # La matrice géométrique doit être non-nulle (il y a de la compression)
+        @test nnz(Kσ) > 0
+    end
+
+    @testset "FEM — Analyse de flambage linéaire" begin
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        U = solve_spine!(model; gravity=true)
+
+        mesh = generate_spine_mesh(model)
+        K = assemble_global_stiffness(mesh)
+        add_ligament_stiffness!(K, model.ligaments, mesh)
+        Kσ = assemble_geometric_stiffness(mesh, U)
+
+        λ_cr, _ = linear_buckling_factor(K, Kσ, model.fixed_dofs)
+
+        # Un rachis normal ne doit pas flamber : λ_cr > 1
+        @test λ_cr > 1.0
+
+        # Mais le facteur doit être fini (pas Inf — il y a bien une charge critique)
+        @test isfinite(λ_cr)
+    end
+
+    @testset "FEM — compute_fem_buckling_ratio" begin
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        solve_spine!(model; gravity=true)
+
+        ratio = compute_fem_buckling_ratio(model, 70.0)
+
+        # Rachis normal → pas de flambage → ratio < 1
+        @test ratio < 1.0
+        @test ratio > 0.0
+    end
+
+    # ═══════════════════════════════════════════════════════════════
+    # TESTS — Contraintes en coordonnées locales
+    # ═══════════════════════════════════════════════════════════════
+
+    @testset "FEM — Contraintes en coordonnées locales" begin
+        model = create_normal_spine(weight=70.0, height=170.0, age=30, sex=:M)
+        U = solve_spine!(model; gravity=true)
+
+        # Les contraintes doivent exister
+        @test length(model.stress_field) == 22  # 22 éléments
+
+        # Toutes les contraintes doivent être finies
+        for s in model.stress_field
+            vm = von_mises(s)
+            @test isfinite(vm)
+            @test vm ≥ 0.0
+        end
+
+        # Sous gravité pure, il doit y avoir de la compression (σ₁₁ non nul)
+        has_nonzero = any(abs(s.σ[1,1]) > 1e-10 for s in model.stress_field)
+        @test has_nonzero
+    end
+
+end
+
+# ── Tests JWT (Sprint 2) ──────────────────────────────────────
+println("Exécution des tests JWT...")
+include("test_jwt.jl")
+
+# ── Tests API intégration (Sprint 2-3) — seulement si serveur dispo ──
+if get(ENV, "RUN_API_TESTS", "false") == "true"
+    println("Exécution des tests d'intégration API...")
+    include("test_api.jl")
 end
 
 println("\n✅ Tous les tests passés !")

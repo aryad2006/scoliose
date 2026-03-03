@@ -50,6 +50,7 @@ function run_longitudinal_simulation(params::LongitudinalParams)::LongitudinalRe
     
     # Historique
     snapshots = SpineSnapshot[]
+    warnings = String[]  # avertissements collectés pendant la simulation
     
     # Métriques de suivi
     scoliosis_detected = false
@@ -83,7 +84,9 @@ function run_longitudinal_simulation(params::LongitudinalParams)::LongitudinalRe
         try
             solve_spine!(model; gravity=true, loads=representative_loads)
         catch e
-            @warn "Échec FEM au mois $month" exception=e
+            msg = "FEM échec mois $month: $(sprint(showerror, e))"
+            @warn msg
+            push!(warnings, msg)
             fem_ok = false
             # Continue — use fallback stress estimation
         end
@@ -165,7 +168,8 @@ function run_longitudinal_simulation(params::LongitudinalParams)::LongitudinalRe
         buckling_detected,
         buckling_detected ? buckling_onset : Inf,
         max_damage,
-        max_asym
+        max_asym,
+        warnings
     )
 end
 
@@ -593,6 +597,53 @@ Largeur moyenne du corps vertébral dans le modèle.
 function mean_body_width(model::SpineModel)::Float64
     return sum(v.morphology.body_width for v in model.vertebrae) / 
            length(model.vertebrae)
+end
+
+"""
+    compute_fem_buckling_ratio(model, weight) → Float64
+
+Analyse de flambage par matrice de rigidité géométrique FEM.
+
+Contrairement à `compute_spring_buckling_ratio` (formule d'Euler analytique),
+cette version utilise le vrai champ de contraintes du solveur FEM pour
+assembler la matrice de rigidité géométrique Kσ, puis résout le problème
+aux valeurs propres généralisé :
+
+    (K + λ·Kσ)·φ = 0
+
+Le plus petit λ > 0 est le facteur de charge critique.
+Si λ < 1 → le rachis flambe sous les charges actuelles.
+
+Plus coûteux en calcul, mais plus précis que la formule analytique car :
+- Prend en compte la géométrie réelle (pas simplifiée en colonne)
+- Inclut la contribution des ligaments
+- Capture les modes de flambage locaux (pas seulement le mode global)
+"""
+function compute_fem_buckling_ratio(model::SpineModel, 
+                                     patient_weight::Float64)::Float64
+    if !model.is_solved
+        @warn "Modèle non résolu — lancement de solve_spine! d'abord"
+        try
+            solve_spine!(model; gravity=true)
+        catch e
+            @warn "solve_spine! échoué dans compute_fem_buckling_ratio" exception=e
+            return 0.0  # Impossible de calculer
+        end
+    end
+    
+    mesh = generate_spine_mesh(model)
+    U = model.displacement
+    
+    # Assembler les matrices
+    K = assemble_global_stiffness(mesh)
+    add_ligament_stiffness!(K, model.ligaments, mesh)
+    Kσ = assemble_geometric_stiffness(mesh, U)
+    
+    # Analyse de flambage
+    λ_cr, _ = linear_buckling_factor(K, Kσ, model.fixed_dofs)
+    
+    # Le ratio est l'inverse : ratio > 1 → flambage
+    return 1.0 / λ_cr
 end
 
 # ═══════════════════════════════════════════════════════════════

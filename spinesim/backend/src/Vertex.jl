@@ -21,8 +21,8 @@ include("models/disc.jl")
 include("models/ligament.jl")
 include("models/spine.jl")
 include("fem/mesh.jl")
-include("fem/solver.jl")
 include("fem/stiffness.jl")
+include("fem/solver.jl")
 include("pathology/scoliosis.jl")
 include("pathology/fracture.jl")
 include("pathology/hernia.jl")
@@ -55,6 +55,11 @@ export StenosisLocation, SchizasGrade, StenosisType, StenosisParameters, generat
 export TumorCompartment, TumorParameters, generate_tumor!, TokuhashiScore, TomitaScore, SINSScore
 export AdultDeformityType, SRSSchwabCurveType, AdultDeformityParameters, generate_adult_deformity!
 export SagittalBalance, PILLModifier, PTModifier, SVAModifier
+
+# FEM avancé (Sprint 3+)
+export beam_geometric_stiffness, assemble_geometric_stiffness
+export linear_buckling_factor, apply_boundary_conditions
+export compute_fem_buckling_ratio
 
 # Simulation longitudinale (théorie du ressort spiral)
 export AsymmetryCategory, StaticAsymmetryType, DynamicAsymmetryType

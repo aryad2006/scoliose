@@ -73,3 +73,129 @@ age_limite_croissance = 18 ans
   curl -X POST http://localhost:8080/api/longitudinal/run -H Content-Type:application/json -d {duration_years:10,initial_age:10,asymmetry_type:wedging_2}
 
 Rapport complet : docs/RAPPORT_SIMULATION_RESSORT_SPIRAL.md
+
+---
+
+# NOTE TECHNIQUE DE REPRISE #2
+**Date** : 3 mars 2026 — **Session** : Claude Opus 4 (Sprint 3+ FEM)
+
+## Travail effectue — Sprint 3 : FEM ameliore
+
+### 1. Bug critique corrige : contraintes en coordonnees locales
+**Fichier** : `spinesim/backend/src/fem/solver.jl` — `compute_element_stresses()`
+
+**Avant** : les deplacements globaux U etaient utilises directement pour calculer
+les deformations axiales, de flexion et de torsion. Pour tout element NON-vertical
+(c'est-a-dire la majorite du rachis avec ses courbures sagittales), les contraintes
+etaient fausses.
+
+**Apres** : transformation `u_local = T * u_global` avant calcul des contraintes.
+Les formules de contrainte (sigma_axial = E * du/L, sigma_flex = E*c*dtheta/L)
+s'appliquent maintenant dans le repere local de la poutre.
+
+### 2. Conditions aux limites par elimination (vs penalite)
+**Fichier** : `spinesim/backend/src/fem/solver.jl` — `apply_boundary_conditions()`
+
+Nouvelle fonction avec deux methodes :
+- `:elimination` (defaut) — reduit le systeme K*U=F en eliminant les DOF fixes.
+  Meilleur conditionnement. Les DOF du sacrum sont exactement 0.
+- `:penalty` (retrocompatible) — ajoute 1e15 sur la diagonale.
+
+Le solveur reconstruit le vecteur complet U apres resolution du systeme reduit.
+
+### 3. Idempotence de solve_spine!
+**Fichier** : `spinesim/backend/src/fem/solver.jl`
+
+solve_spine! sauvegarde les positions/orientations de REFERENCE avant resolution,
+puis met a jour depuis la reference (pas incrementalement). Avant, appeler
+solve_spine! deux fois accumulait les deplacements → positions fausses.
+
+### 4. Matrice de rigidite geometrique (flambage FEM)
+**Fichier** : `spinesim/backend/src/fem/stiffness.jl`
+
+Trois nouvelles fonctions :
+- `beam_geometric_stiffness(elem, N)` — matrice Ksigma 12x12 (Przemieniecki 1968)
+  Capture l'effet P-Delta : reduction de rigidite sous compression.
+- `assemble_geometric_stiffness(mesh, U)` — assemblage global depuis les efforts
+  normaux reels (extraits du champ de deplacement).
+- `linear_buckling_factor(K, Ksigma, fixed_dofs)` — probleme aux valeurs propres
+  generalise : (K + lambda*Ksigma)*phi = 0. lambda_cr > 1 = stable.
+
+### 5. Flambage FEM dans la simulation longitudinale
+**Fichier** : `spinesim/backend/src/longitudinal/simulation.jl`
+
+Nouvelle fonction `compute_fem_buckling_ratio(model, weight)` :
+- Utilise la VRAIE matrice geometrique (pas la formule d'Euler simplifiee)
+- Inclut la contribution des ligaments
+- Capture les modes de flambage locaux
+- Complement de `compute_spring_buckling_ratio()` (analytique)
+
+### 6. Corrections d'architecture
+- Ordre inclusion corrige dans Vertex.jl : stiffness.jl AVANT solver.jl
+  (solver.jl utilise element_rotation_matrix() defini dans stiffness.jl)
+- Imports deplace : eigvals/det dans stiffness.jl, Diagonal/Symmetric dans solver.jl
+- Exports des nouvelles fonctions ajoutees dans Vertex.jl
+
+### 7. Tests ajoutes (7 testsets, ~95 lignes)
+**Fichier** : `spinesim/backend/test/runtests.jl`
+
+| Testset | Verifie |
+|:---|:---|
+| CL elimination vs penalite | Convergence < 1%, sacrum exactement zero |
+| Re-entree solve_spine! | U1 ≈ U2 a 1e-8 pres |
+| Matrice geometrique elem | Symetrie, termes nuls/positifs, N=0 → zeroes |
+| Assemblage geometrique global | 138x138 sparse, non-nulle |
+| Analyse flambage lineaire | lambda_cr > 1 pour rachis normal |
+| compute_fem_buckling_ratio | ratio < 1 pour rachis normal |
+| Contraintes coord. locales | Finitude, non-nullite sous gravite |
+
+---
+
+## Fichiers modifies
+
+| Fichier | Lignes | Type |
+|:---|:---:|:---|
+| spinesim/backend/src/fem/solver.jl | 266 | Rewrite (CL, idempotence, contraintes locales) |
+| spinesim/backend/src/fem/stiffness.jl | 453 | +190 lignes (Kg, assemblage, flambage) |
+| spinesim/backend/src/longitudinal/simulation.jl | ~840 | +40 lignes (compute_fem_buckling_ratio) |
+| spinesim/backend/src/Vertex.jl | 79 | Fix ordre inclusion + exports |
+| spinesim/backend/test/runtests.jl | ~710 | +95 lignes (7 testsets) |
+
+---
+
+## Prochaines etapes — Phase 2 (plan Sprint 4+)
+
+1. **Sprint 4 — Frontend 3D** : geometrie vertebrale realiste (ExtrudeGeometry),
+   materiaux PBR, controles de vue (AP/lateral/axial/3D), capture ecran
+   Fichiers : SpineRenderer.js, ViewControls.vue
+
+2. **Sprint 5 — Mesures angulaires API** : endpoint /api/measurements
+   avec Cobb, SVA, balance coronale, cyphose thoracique, lordose lombaire
+   Fichiers : server.jl (nouveau handler), MeasurementPanel.vue
+
+3. **Sprint 6 — Rapports cliniques PDF** : export structure
+   Fichiers : reports/report.jl, ReportPanel.vue
+
+4. **FEM dynamique** — permettre aux ligaments/disques d'initier la scoliose
+   (limitation identifiee dans la Phase 1 : asymetries tissus mous non initiatrices)
+
+5. **Rotation axiale** — ajouter theta_z (gibbosite) dans la simulation longitudinale
+
+6. **Contenu pedagogique** — etoffer Modules 21-25 (niveau bullet points → 500 lignes)
+
+---
+
+## Pour reprendre
+
+```
+cd C:\Users\USER\Documents\scoliose\spinesim
+docker compose up -d
+curl http://localhost:8080/health
+
+# Test simulation longitudinale (attendu max_cobb_angle = 22.2)
+curl -X POST http://localhost:8080/api/longitudinal/run -H Content-Type:application/json -d {duration_years:10,initial_age:10,asymmetry_type:wedging_2}
+
+# Tests Julia
+cd backend
+julia --project=. test/runtests.jl
+```

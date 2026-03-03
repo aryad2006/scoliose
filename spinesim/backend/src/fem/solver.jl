@@ -2,19 +2,61 @@
 # Vertex — Solveur FEM
 # ══════════════════════════════════════════════════════════════
 
+using IterativeSolvers
+using LinearAlgebra: Diagonal, Symmetric
+
 """
-    solve_spine!(model::SpineModel; gravity=true, loads=Load[])
+    apply_boundary_conditions(K, F, fixed_dofs; method=:elimination)
+
+Applique les conditions aux limites au système K·U = F.
+
+Deux méthodes disponibles :
+- `:elimination` (par défaut) — réduit le système en éliminant les DOF fixés.
+  Meilleur conditionnement, résultats exacts. Retourne (K_ff, F_ff, free_dofs).
+- `:penalty` — ajoute une rigidité massive (10¹⁵) sur les DOF fixés.
+  Plus simple mais dégrade le nombre de condition de K.
+"""
+function apply_boundary_conditions(K::SparseMatrixCSC, F::Vector{Float64},
+                                    fixed_dofs::Vector{Int};
+                                    method::Symbol=:elimination)
+    if method == :elimination
+        n = size(K, 1)
+        free_dofs = setdiff(1:n, fixed_dofs)
+        K_ff = K[free_dofs, free_dofs]
+        F_ff = F[free_dofs]
+        return K_ff, F_ff, free_dofs
+    else  # :penalty
+        K_pen = copy(K)
+        F_pen = copy(F)
+        penalty = 1e15
+        for dof in fixed_dofs
+            K_pen[dof, dof] += penalty
+            F_pen[dof] = 0.0
+        end
+        return K_pen, F_pen, collect(1:size(K, 1))
+    end
+end
+
+"""
+    solve_spine!(model::SpineModel; gravity=true, loads=Load[], bc_method=:elimination)
 
 Résout l'équilibre mécanique du rachis :
-1. Génère le maillage
-2. Assemble la matrice de rigidité K
-3. Calcule le vecteur de forces F (gravité + charges externes)
-4. Applique les conditions aux limites (sacrum fixé)
-5. Résout K·U = F
-6. Post-traite : contraintes, déplacements
+1. Sauvegarde les positions de référence (pour ré-entrée)
+2. Génère le maillage
+3. Assemble la matrice de rigidité K
+4. Calcule le vecteur de forces F (gravité + charges externes)
+5. Applique les conditions aux limites (sacrum fixé)
+6. Résout K·U = F (CG + Jacobi, fallback décomposition directe)
+7. Post-traite : contraintes, déplacements, rigidité géométrique
 """
 function solve_spine!(model::SpineModel; gravity::Bool=true,
-                      loads::Vector{Load}=Load[])
+                      loads::Vector{Load}=Load[],
+                      bc_method::Symbol=:elimination)
+    # ── 0. Sauvegarder les positions de référence ──
+    # Permet de ré-exécuter solve_spine! sans accumuler les déplacements
+    reference_positions = [v.position for v in model.vertebrae]
+    reference_orientations = [v.orientation for v in model.vertebrae]
+    
     # ── 1. Maillage ──
     mesh = generate_spine_mesh(model)
     
@@ -30,11 +72,11 @@ function solve_spine!(model::SpineModel; gravity::Bool=true,
     if gravity
         # Gravité : force verticale (-z) pondérée par masse segmentaire
         segment_mass = model.patient_weight / length(model.vertebrae)
-        g = 9810.0  # mm/s² (gravité en mm car coordonnées en mm)
+        g = 9.81  # m/s²
         
         for i in 1:length(model.vertebrae)
-            # Force gravitaire sur le DOF z (index 3)
-            F[(i-1)*6 + 3] -= segment_mass * g / 1000.0  # → N
+            # Force gravitaire en N sur le DOF z (index 3)
+            F[(i-1)*6 + 3] -= segment_mass * g
         end
     end
     
@@ -50,44 +92,59 @@ function solve_spine!(model::SpineModel; gravity::Bool=true,
         F[dof_start + 6] += load.moment[3]
     end
     
-    # ── 4. Conditions aux limites (méthode de pénalité) ──
-    penalty = 1e15
-    for dof in model.fixed_dofs
-        K[dof, dof] += penalty
-        F[dof] = 0.0
-    end
+    # ── 4. Conditions aux limites ──
+    K_bc, F_bc, active_dofs = apply_boundary_conditions(K, F, model.fixed_dofs;
+                                                         method=bc_method)
     
     # ── 5. Résolution ──
-    # Rendre K symétrique (précaution numérique)
-    K_sym = Symmetric((K + K') / 2)
+    K_sym = (K_bc + K_bc') / 2
     
-    U = try
-        K_sym \ F
+    diag_K = diag(K_sym)
+    diag_K = max.(abs.(diag_K), 1e-10)
+    Pl = Diagonal(1.0 ./ diag_K)
+    
+    U_reduced = try
+        u, history = cg(K_sym, F_bc; Pl=Pl, tol=1e-8, maxiter=2000, log=true)
+        if !history.isconverged
+            @warn "CG : convergence non atteinte" iterations=history.iters residual=history.data[:resnorm][end]
+        else
+            model.solver_iterations = history.iters
+            @info "CG convergé" iterations=history.iters
+        end
+        u
     catch e
-        @warn "Décomposition directe échouée, tentative itérative" exception=e
-        # Fallback : gradient conjugué
-        cg_solve(K, F, maxiter=500, tol=1e-8)
+        @warn "CG échoué, tentative décomposition directe" exception=e
+        Symmetric(K_sym) \ F_bc
+    end
+    
+    # ── 5b. Reconstruire le vecteur de déplacement complet ──
+    U = zeros(mesh.num_dof)
+    if bc_method == :elimination
+        for (i, dof) in enumerate(active_dofs)
+            U[dof] = U_reduced[i]
+        end
+    else
+        U = U_reduced
     end
     
     # ── 6. Post-traitement ──
     model.displacement = U
     model.is_solved = true
     
-    # Mettre à jour les positions des vertèbres
+    # Mettre à jour les positions depuis la RÉFÉRENCE (pas incrémental)
     for i in 1:length(model.vertebrae)
         dof_start = (i - 1) * 6
         dx = Vec3(U[dof_start+1], U[dof_start+2], U[dof_start+3])
-        model.vertebrae[i].position += dx
+        model.vertebrae[i].position = reference_positions[i] + dx
         
-        # Rotation simplifiée (petits angles)
+        # Rotation (petits angles, appliquée depuis l'orientation de référence)
         θx, θy, θz = U[dof_start+4], U[dof_start+5], U[dof_start+6]
         R = rotation_matrix(θx, θy, θz)
-        model.vertebrae[i].orientation = R * model.vertebrae[i].orientation
+        model.vertebrae[i].orientation = R * reference_orientations[i]
     end
     
     # Mettre à jour les longueurs des ligaments
     for lig in model.ligaments
-        # Recalculer la longueur courante
         node1 = find_nearest_node(mesh, lig.origin)
         node2 = find_nearest_node(mesh, lig.insertion)
         p1 = mesh.nodes[node1].position + Vec3(U[(node1-1)*6+1], U[(node1-1)*6+2], U[(node1-1)*6+3])
@@ -123,7 +180,17 @@ end
 """
     compute_element_stresses(mesh, U) → Vector{StressTensor}
 
-Calcule les contraintes de von Mises dans chaque élément poutre.
+Calcule les contraintes dans chaque élément poutre.
+
+**Important** : Les déplacements globaux U sont d'abord transformés en
+coordonnées locales via la matrice de rotation T de l'élément, afin que
+les déformations axiales, de flexion et de torsion soient correctement
+calculées dans le repère de la poutre.
+
+Formules (Euler-Bernoulli 3D) :
+- σ_axial = E × (u₇ - u₁) / L
+- σ_flex  = E × c × κ   où κ = courbure locale
+- τ_torsion = G × c × (θx₂ - θx₁) / L
 """
 function compute_element_stresses(mesh::SpineMesh, U::Vector{Float64})
     stresses = StressTensor[]
@@ -132,27 +199,43 @@ function compute_element_stresses(mesh::SpineMesh, U::Vector{Float64})
         dof1 = ((elem.node1 - 1) * 6 + 1):(elem.node1 * 6)
         dof2 = ((elem.node2 - 1) * 6 + 1):(elem.node2 * 6)
         
-        u_local = vcat(U[dof1], U[dof2])
+        # Déplacements globaux de l'élément (12 DOF)
+        u_global = vcat(U[dof1], U[dof2])
         
-        # Contrainte axiale
-        δu = u_local[7] - u_local[1]  # déplacement axial relatif
-        σ_axial = elem.E * δu / elem.length
+        # ── Transformation globale → locale ──
+        # T est la matrice de rotation (locale→globale formée dans stiffness.jl)
+        # u_local = T * u_global  (T est orthogonale, T⁻¹ = T')
+        p1 = mesh.nodes[elem.node1].position
+        p2 = mesh.nodes[elem.node2].position
+        T = element_rotation_matrix(p1, p2)
+        u_local = T * u_global
         
-        # Contrainte de flexion (moment max aux nœuds)
-        # M = EI × κ (courbure)
+        L = elem.length
+        
+        # Contrainte axiale : σ = E × ε = E × Δu_x / L
+        δu = u_local[7] - u_local[1]
+        σ_axial = elem.E * δu / L
+        
+        # Rayon effectif de la section (approximation circulaire)
+        c = sqrt(elem.A / π)
+        
+        # Contrainte de flexion dans le plan XZ (rotation θy)
+        # M_y = EIy × κ_y, σ_flex = M_y × c / Iy = E × c × κ_y
+        # κ_y ≈ (θy₂ - θy₁) / L pour petits angles
         Δθy = u_local[11] - u_local[5]
+        σ_flex_y = elem.E * c * Δθy / L
+        
+        # Contrainte de flexion dans le plan XY (rotation θz)
         Δθz = u_local[12] - u_local[6]
+        σ_flex_z = elem.E * c * Δθz / L
         
-        c_y = sqrt(elem.A / π)  # rayon effectif
-        σ_flex_y = elem.E * elem.Iy * Δθy / (elem.length * elem.A) * c_y
-        σ_flex_z = elem.E * elem.Iz * Δθz / (elem.length * elem.A) * c_y
-        
-        # Contrainte de torsion
+        # Contrainte de torsion : τ = G × c × (θx₂ - θx₁) / L
         Δθx = u_local[10] - u_local[4]
-        τ_torsion = elem.G * elem.J * Δθx / (elem.length * elem.A) * c_y
+        τ_torsion = elem.G * c * Δθx / L
         
-        # Tenseur simplifié
-        σ11 = σ_axial + σ_flex_y + σ_flex_z
+        # Tenseur de Cauchy simplifié (poutre)
+        # σ₁₁ = axial + flexion (fibre extrême)
+        σ11 = σ_axial + abs(σ_flex_y) + abs(σ_flex_z)
         σ = Mat3(
             σ11,         τ_torsion, 0,
             τ_torsion,   0,         0,
@@ -166,32 +249,17 @@ function compute_element_stresses(mesh::SpineMesh, U::Vector{Float64})
 end
 
 """
-    cg_solve(K, F; maxiter=500, tol=1e-8) → Vector{Float64}
+    cg_solve(K, F; maxiter=2000, tol=1e-8) → Vector{Float64}
 
-Solveur itératif gradient conjugué (fallback si décomposition directe échoue).
+Solveur gradient conjugué via IterativeSolvers.jl avec préconditionneur Jacobi.
+Remplace l'ancienne implémentation maison.
 """
-function cg_solve(K, F; maxiter::Int=500, tol::Float64=1e-8)
-    n = length(F)
-    x = zeros(n)
-    r = F - K * x
-    p = copy(r)
-    rsold = dot(r, r)
-    
-    for i in 1:maxiter
-        Ap = K * p
-        α = rsold / (dot(p, Ap) + 1e-30)
-        x .+= α .* p
-        r .-= α .* Ap
-        rsnew = dot(r, r)
-        
-        if sqrt(rsnew) < tol
-            return x
-        end
-        
-        p = r + (rsnew / rsold) * p
-        rsold = rsnew
+function cg_solve(K, F; maxiter::Int=2000, tol::Float64=1e-8)
+    diag_K = max.(abs.(diag(K)), 1e-10)
+    Pl = Diagonal(1.0 ./ diag_K)
+    u, history = cg(K, F; Pl=Pl, tol=tol, maxiter=maxiter, log=true)
+    if !history.isconverged
+        @warn "cg_solve : convergence non atteinte" iterations=history.iters
     end
-    
-    @warn "CG n'a pas convergé en $maxiter itérations (résidu: $(sqrt(rsold)))"
-    return x
+    return u
 end
