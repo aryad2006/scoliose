@@ -47,13 +47,20 @@
       </aside>
 
       <!-- Center: 3D Viewport -->
-      <main class="viewport-container">
+      <main ref="viewportContainer" class="viewport-container">
         <SpineViewport
           ref="viewport"
           :spineData="spineData"
           :stresses="stresses"
           :viewMode="currentView"
         />
+        <!-- Contrôles de vue (overlay en bas à gauche du viewport) -->
+        <div v-if="spineRenderer" class="viewport-controls">
+          <ViewControls
+            :renderer="spineRenderer"
+            :fullscreenTarget="viewportContainer"
+          />
+        </div>
         <div v-if="!spineId" class="empty-state">
           <p>🦴 Cliquez sur <strong>Nouveau rachis</strong> pour commencer</p>
           <p class="sub">VERTEX© — Virtual Environment for Rachis Training and EXploration</p>
@@ -71,7 +78,9 @@
           :stresses="stresses"
           :solverInfo="solverInfo"
         />
+        <MeasurementPanel v-if="spineId" :spineId="spineId" />
         <LongitudinalPanel />
+        <ReportPanel v-if="spineData" :spineData="spineData" :stresses="stresses" />
       </aside>
     </div>
 
@@ -85,17 +94,23 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useSpineStore } from './stores/spineStore'
 import SpineViewport from './components/SpineViewport.vue'
+import ViewControls from './components/ViewControls.vue'
 import PatientPanel from './components/PatientPanel.vue'
 import ScoliosisPanel from './components/ScoliosisPanel.vue'
 import SurgeryPanel from './components/SurgeryPanel.vue'
 import ResultsPanel from './components/ResultsPanel.vue'
+import MeasurementPanel from './components/MeasurementPanel.vue'
+import ReportPanel from './components/ReportPanel.vue'
 import LongitudinalPanel from './components/LongitudinalPanel.vue'
 
 const store = useSpineStore()
 const loading = ref(false)
+const viewport = ref(null)
+const viewportContainer = ref(null)
+const spineRenderer = ref(null)
 const currentView = ref('anatomical')
 
 const viewModes = [
@@ -137,6 +152,15 @@ async function createSpine() {
 function onScoliosisApplied() {
   store.solveSpine()
 }
+
+onMounted(() => {
+  // Attendre le prochain tick pour que SpineViewport soit monté
+  setTimeout(() => {
+    if (viewport.value?.renderer) {
+      spineRenderer.value = viewport.value.renderer
+    }
+  }, 100)
+})
 </script>
 
 <style>
@@ -304,6 +328,13 @@ body {
   border-radius: 20px;
   font-size: 0.8rem;
   border: 1px solid var(--success);
+}
+
+.viewport-controls {
+  position: absolute;
+  bottom: 50px;
+  left: 12px;
+  z-index: 10;
 }
 
 /* ── Status Bar ── */

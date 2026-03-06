@@ -104,6 +104,9 @@ function start_server(; port::Int=8080)
 
     # Rapports PDF (Sprint 3)
     HTTP.register!(router, "GET",  "/api/spine/*/report", handle_get_report)
+
+    # Mesures radiologiques (Sprint 5)
+    HTTP.register!(router, "GET",  "/api/spine/*/measurements", handle_get_measurements)
     
     # CORS headers pour le frontend
     HTTP.register!(router, "OPTIONS", "/*", handle_cors_preflight)
@@ -1177,5 +1180,157 @@ function handle_get_report(req::HTTP.Request)
         @error "handle_get_report" exception=(e, catch_backtrace())
         log_request("GET", "/api/spine/$id_str/report", 500, (time()-t0)*1000)
         return error_response("Erreur génération rapport: $(sprint(showerror, e))"; status=500)
+    end
+end
+
+# ══════════════════════════════════════════════════════════════
+# SPRINT 5 — Handler Mesures Radiologiques
+# ══════════════════════════════════════════════════════════════
+
+"""
+GET /api/spine/{id}/measurements
+
+Retourne les mesures radiologiques complètes :
+- Angle de Cobb + apex + sévérité
+- Cyphose thoracique (T4-T12)
+- Lordose lombaire (L1-L5)
+- SVA (Sagittal Vertical Axis)
+- Balance coronale (C7-CSVL)
+"""
+function handle_get_measurements(req::HTTP.Request)
+    t0 = time()
+    id_str = split(req.target, "/")[4]
+
+    try
+        id = UUID(id_str)
+        model = get_model(id)
+
+        if isnothing(model)
+            log_request("GET", "/api/spine/$id_str/measurements", 404, (time()-t0)*1000)
+            return error_response("Modèle $id non trouvé"; status=404)
+        end
+
+        # ── Positions des vertèbres ──
+        positions_x = [v.position[1] for v in model.vertebrae]
+        positions_y = [v.position[2] for v in model.vertebrae]
+        positions_z = [v.position[3] for v in model.vertebrae]
+        levels      = [v.level for v in model.vertebrae]
+
+        # ── Angle de Cobb (maximum frontal) ──
+        max_cobb  = 0.0
+        apex_idx  = 1
+        apex_level_str = string(levels[1])
+        n = length(model.vertebrae)
+
+        # Chercher le max de déviation latérale → apex
+        x_median = (minimum(positions_x) + maximum(positions_x)) / 2
+        max_dev = 0.0
+        for i in 1:n
+            dev = abs(positions_x[i] - x_median)
+            if dev > max_dev
+                max_dev  = dev
+                apex_idx = i
+            end
+        end
+        apex_level_str = string(levels[apex_idx])
+
+        # Calculer le Cobb entre vertèbres les plus inclinées
+        # au-dessus et en dessous de l'apex
+        if model.is_solved && n >= 3
+            # Calcul via measure_cobb pour le segment thoraco-lombaire
+            # Identifier upper/lower end vertebrae autour de l'apex
+            upper_idx = max(1, apex_idx - 3)
+            lower_idx = min(n, apex_idx + 3)
+            max_cobb = measure_cobb(model, levels[upper_idx], levels[lower_idx])
+        else
+            # Estimation géométrique
+            z_range = maximum(positions_z) - minimum(positions_z)
+            if z_range > 0.01
+                max_cobb = atand(max_dev * 2 / z_range) * 2
+            end
+        end
+
+        # ── Cyphose thoracique (T4-T12) ──
+        t4_idx = findfirst(l -> l == T4, levels)
+        t12_idx = findfirst(l -> l == T12, levels)
+        kyphosis = 35.0  # Valeur physiologique par défaut
+        if !isnothing(t4_idx) && !isnothing(t12_idx)
+            if model.is_solved
+                kyphosis = measure_cobb(model, T4, T12)
+            else
+                # Estimation géométrique via offset sagittal
+                thoracic = filter(v -> v.level in (T4,T5,T6,T7,T8,T9,T10,T11,T12), model.vertebrae)
+
+                if length(thoracic) >= 2
+                    kyphosis = Reports.estimate_curvature_angle(thoracic)
+                end
+            end
+        end
+
+        # ── Lordose lombaire (L1-L5) ──
+        l1_idx = findfirst(l -> l == L1, levels)
+        l5_idx = findfirst(l -> l == L5, levels)
+        lordosis = 45.0  # Valeur physiologique par défaut
+        if !isnothing(l1_idx) && !isnothing(l5_idx)
+            if model.is_solved
+                lordosis = measure_cobb(model, L1, L5)
+            else
+                lumbar = filter(v -> v.level in (L1,L2,L3,L4,L5), model.vertebrae)
+                if length(lumbar) >= 2
+                    lordosis = Reports.estimate_curvature_angle(lumbar)
+                end
+            end
+        end
+
+        # ── SVA — Sagittal Vertical Axis (mm) ──
+        # Distance horizontale en AP entre C7 et S1
+        c7_idx = findfirst(l -> l == C7, levels)
+        s1_idx = findfirst(l -> l == S1, levels)
+        sva_mm = 0.0
+        if !isnothing(c7_idx) && !isnothing(s1_idx)
+            sva_mm = (positions_y[c7_idx] - positions_y[s1_idx]) * 1000  # m → mm si nécessaire
+            # Les positions sont déjà en mm dans le modèle
+            sva_mm = positions_y[c7_idx] - positions_y[s1_idx]
+        end
+
+        # ── Balance coronale — C7-CSVL (mm) ──
+        # Distance latérale entre C7 et la ligne sacrée centrale (S1 x)
+        coronal_mm = 0.0
+        if !isnothing(c7_idx) && !isnothing(s1_idx)
+            coronal_mm = positions_x[c7_idx] - positions_x[s1_idx]
+        end
+
+        # ── Sévérité ──
+        severity = if max_cobb < 10
+            "normal"
+        elseif max_cobb < 25
+            "légère"
+        elseif max_cobb < 40
+            "modérée"
+        elseif max_cobb < 60
+            "sévère"
+        else
+            "très sévère"
+        end
+
+        result = Dict(
+            "cobb_angle_deg"          => round(max_cobb, digits=1),
+            "apex_level"              => apex_level_str,
+            "thoracic_kyphosis_deg"   => round(kyphosis, digits=1),
+            "lumbar_lordosis_deg"     => round(lordosis, digits=1),
+            "sva_mm"                  => round(sva_mm, digits=1),
+            "coronal_balance_mm"      => round(coronal_mm, digits=1),
+            "severity"                => severity,
+            "is_solved"               => model.is_solved,
+        )
+
+        resp = json_response(result)
+        log_request("GET", "/api/spine/$id_str/measurements", 200, (time()-t0)*1000)
+        return resp
+
+    catch e
+        @error "handle_get_measurements" exception=(e, catch_backtrace())
+        log_request("GET", "/api/spine/$id_str/measurements", 500, (time()-t0)*1000)
+        return error_response("Erreur mesures: $(sprint(showerror, e))"; status=500)
     end
 end

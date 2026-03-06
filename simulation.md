@@ -199,3 +199,121 @@ curl -X POST http://localhost:8080/api/longitudinal/run -H Content-Type:applicat
 cd backend
 julia --project=. test/runtests.jl
 ```
+
+---
+
+# NOTE TECHNIQUE DE REPRISE #3
+**Date** : 5 mars 2026 — **Session** : Claude Opus 4.6 (Sprint 4 + Sprint 5)
+
+## Travail effectue — Sprint 4 : Frontend 3D ameliore
+
+### 1. Geometrie vertebrale enrichie
+**Fichier** : `spinesim/frontend/src/engine/SpineRenderer.js`
+
+Ajout de structures anatomiques manquantes dans `_createVertebraMesh()` :
+- **Lamines** (BoxGeometry) — connexion pedicules → processus epineux
+- **Processus transverses** (CylinderGeometry) — extensions laterales
+- **Facettes articulaires** (SphereGeometry) — 4 par vertebre (sup/inf × gauche/droite)
+
+### 2. Environment map PBR procedurale
+**Fichier** : `spinesim/frontend/src/engine/SpineRenderer.js`
+
+Nouvelle methode `_initEnvironment()` :
+- PMREMGenerator avec scene procedurale (sol + plafond scialytique)
+- Reflets realistes sur vis et tiges metalliques (metalness 0.92+)
+- Pas de fichier HDR externe → chargement instantane
+
+### 3. Transitions camera animees
+**Fichier** : `spinesim/frontend/src/engine/SpineRenderer.js`
+
+Nouvelle methode `setCameraView(targetPos, targetLook, durationMs)` :
+- Animation fluide avec easing cubic-out
+- Annulation d'animation en cours via cancelAnimationFrame
+- Utilise lerpVectors pour interpolation position + target
+
+### 4. Integration ViewControls dans App.vue
+**Fichier** : `spinesim/frontend/src/App.vue`
+
+- ViewControls integre en overlay (position absolute, bas-gauche du viewport)
+- MeasurementPanel et ReportPanel integres dans le panneau droit
+- Renderer expose via defineExpose() dans SpineViewport.vue
+
+### 5. SpineViewport expose le renderer
+**Fichier** : `spinesim/frontend/src/components/SpineViewport.vue`
+
+- `defineExpose({ renderer })` permet au parent de passer le renderer a ViewControls
+- ViewControls utilise `setCameraView()` pour transitions AP/Lat/Axial/3D animees
+
+---
+
+## Travail effectue — Sprint 5 : Mesures radiologiques API
+
+### 1. Endpoint GET /api/spine/{id}/measurements
+**Fichier** : `spinesim/backend/src/api/server.jl`
+
+Nouveau handler `handle_get_measurements()` qui calcule :
+- **Angle de Cobb** — via `measure_cobb()` (FEM) ou estimation geometrique
+- **Apex** — vertebre avec deviation laterale maximale
+- **Cyphose thoracique** T4-T12 (norme 20-50 deg)
+- **Lordose lombaire** L1-L5 (norme 30-60 deg)
+- **SVA** — distance AP entre C7 et S1 (norme < 50 mm)
+- **Balance coronale** — distance laterale C7-CSVL (norme < 20 mm)
+- **Severite** — normal/legere/moderee/severe/tres severe
+
+### 2. Store action fetchMeasurements()
+**Fichier** : `spinesim/frontend/src/stores/spineStore.js`
+
+- Nouveau state `solveResult` pour stocker les mesures
+- `fetchMeasurements()` appele automatiquement apres `solveSpine()`
+- MeasurementPanel lit `store.solveResult` (deja cable)
+
+---
+
+## Fichiers modifies
+
+| Fichier | Type |
+|:---|:---|
+| spinesim/frontend/src/engine/SpineRenderer.js | +95 lignes (geometrie, envmap, camera) |
+| spinesim/frontend/src/components/SpineViewport.vue | +1 ligne (defineExpose) |
+| spinesim/frontend/src/components/ViewControls.vue | Transition animee |
+| spinesim/frontend/src/App.vue | Integration ViewControls, MeasurementPanel, ReportPanel |
+| spinesim/frontend/src/stores/spineStore.js | +solveResult, +fetchMeasurements() |
+| spinesim/backend/src/api/server.jl | +endpoint /api/spine/*/measurements (~110 lignes) |
+
+---
+
+## Prochaines etapes — Phase 2 (Sprint 6+)
+
+1. **Sprint 6 — Rapports cliniques PDF** : export structure
+   Fichiers : backend reports/report.jl (deja fait), ReportPanel.vue (deja integre)
+   → Verifier le cablage complet frontend ↔ backend
+
+2. **FEM dynamique** — permettre aux ligaments/disques d'initier la scoliose
+
+3. **Rotation axiale** — ajouter theta_z (gibbosite) dans la simulation longitudinale
+
+4. **Contenu pedagogique** — etoffer Modules 21-25
+
+---
+
+## Pour reprendre
+
+```
+cd C:\Users\USER\Documents\scoliose\spinesim
+docker compose up -d
+curl http://localhost:8080/api/health
+
+# Test mesures radiologiques (Sprint 5)
+curl http://localhost:8080/api/spine/{id}/measurements
+
+# Test simulation longitudinale (attendu max_cobb_angle = 22.2)
+curl -X POST http://localhost:8080/api/longitudinal/run -H Content-Type:application/json -d {duration_years:10,initial_age:10,asymmetry_type:wedging_2}
+
+# Build frontend
+cd frontend
+npm run build
+
+# Tests Julia
+cd backend
+julia --project=. test/runtests.jl
+```

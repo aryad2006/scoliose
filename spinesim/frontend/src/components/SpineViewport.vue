@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch, shallowRef } from 'vue'
+import { ref, onMounted, onUnmounted, watch, shallowRef, defineExpose } from 'vue'
 import { SpineRenderer } from '../engine/SpineRenderer'
 
 const props = defineProps({
@@ -43,6 +43,9 @@ watch(() => props.viewMode, (mode) => {
     renderer.value.setViewMode(mode)
   }
 })
+
+// Exposer le renderer pour que le parent puisse le passer à ViewControls
+defineExpose({ renderer })
 </script>
 
 <style scoped>

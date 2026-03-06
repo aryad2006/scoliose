@@ -41,11 +41,13 @@ export class SpineRenderer {
     this.screwMeshes = []
     this.rodMeshes = []
     this.labels = []
+    this._cameraAnim = null  // animation en cours
 
     this._initScene()
     this._initLights()
     this._initGrid()
     this._initControls()
+    this._initEnvironment()
     this._onResize = this._onResize.bind(this)
     window.addEventListener('resize', this._onResize)
   }
@@ -289,6 +291,61 @@ export class SpineRenderer {
       )
       pedMesh.castShadow = true
       group.add(pedMesh)
+    }
+
+    // ── Lamines — connexion pédicules → processus épineux ──
+    const lamMat = new THREE.MeshStandardMaterial({
+      color:     COLORS.bone,
+      roughness: 0.68,
+      metalness: 0.03,
+    })
+    for (const side of [-1, 1]) {
+      const lamGeom = new THREE.BoxGeometry(
+        hw * 0.35,                  // largeur
+        bh * 0.45,                  // hauteur
+        morph.body_depth * 0.12     // épaisseur
+      )
+      const lamMesh = new THREE.Mesh(lamGeom, lamMat)
+      lamMesh.position.set(
+        side * hw * 0.35,
+        0,
+        -hd * 0.55
+      )
+      lamMesh.castShadow = true
+      group.add(lamMesh)
+    }
+
+    // ── Processus transverses — cylindres latéraux ──
+    for (const side of [-1, 1]) {
+      const tpGeom = new THREE.CylinderGeometry(2.0, 1.4, hw * 0.55, 8)
+      const tpMesh = new THREE.Mesh(tpGeom, pedMat)
+      tpMesh.rotation.z = side * Math.PI / 2
+      tpMesh.position.set(
+        side * (hw * 0.85),
+        0,
+        -hd * 0.25
+      )
+      tpMesh.castShadow = true
+      group.add(tpMesh)
+    }
+
+    // ── Facettes articulaires — petites sphères supérieures/inférieures ──
+    const facMat = new THREE.MeshStandardMaterial({
+      color:     0xe8d5c0,
+      roughness: 0.50,
+      metalness: 0.06,
+    })
+    for (const side of [-1, 1]) {
+      for (const sup of [-1, 1]) {  // -1 = inférieur, +1 = supérieur
+        const facGeom = new THREE.SphereGeometry(2.2, 8, 6)
+        const facMesh = new THREE.Mesh(facGeom, facMat)
+        facMesh.position.set(
+          side * hw * 0.45,
+          sup * bh * 0.38,
+          -hd * 0.65
+        )
+        group.add(facMesh)
+      }
     }
 
     // ── Processus épineux — cône PBR ──
@@ -731,6 +788,80 @@ export class SpineRenderer {
     }
 
     requestAnimationFrame(tick)
+  }
+
+  /**
+   * Initialise un environment map procédural pour les reflets PBR.
+   * Simule un environnement de bloc opératoire (neutre, lumineux).
+   */
+  _initEnvironment() {
+    const pmremGenerator = new THREE.PMREMGenerator(this.renderer)
+    pmremGenerator.compileEquirectangularShader()
+
+    // Scène d'environnement simple (ciel neutre chirurgical)
+    const envScene = new THREE.Scene()
+    envScene.background = new THREE.Color(0xd0d8e0)
+
+    // Sol
+    const floorGeo = new THREE.PlaneGeometry(2000, 2000)
+    const floorMat = new THREE.MeshBasicMaterial({ color: 0xb0bec5 })
+    const floor = new THREE.Mesh(floorGeo, floorMat)
+    floor.rotation.x = -Math.PI / 2
+    floor.position.y = -100
+    envScene.add(floor)
+
+    // Plafond lumineux (scialytique)
+    const ceilGeo = new THREE.PlaneGeometry(400, 400)
+    const ceilMat = new THREE.MeshBasicMaterial({ color: 0xffffff })
+    const ceil = new THREE.Mesh(ceilGeo, ceilMat)
+    ceil.rotation.x = Math.PI / 2
+    ceil.position.y = 600
+    envScene.add(ceil)
+
+    this.envMap = pmremGenerator.fromScene(envScene, 0.04).texture
+    this.scene.environment = this.envMap
+    pmremGenerator.dispose()
+    envScene.clear()
+  }
+
+  /**
+   * Anime la caméra vers une position/target avec easing.
+   *
+   * @param {number[]} targetPos   — [x, y, z] position caméra cible
+   * @param {number[]} targetLook  — [x, y, z] point de regard cible
+   * @param {number}   durationMs  — durée de l'animation (ms, défaut 600)
+   */
+  setCameraView(targetPos, targetLook, durationMs = 600) {
+    // Annuler toute animation en cours
+    if (this._cameraAnim) {
+      cancelAnimationFrame(this._cameraAnim)
+      this._cameraAnim = null
+    }
+
+    const startPos = this.camera.position.clone()
+    const startTarget = this.controls.target.clone()
+    const endPos = new THREE.Vector3(...targetPos)
+    const endTarget = new THREE.Vector3(...targetLook)
+    const startTime = performance.now()
+
+    const tick = () => {
+      const elapsed = performance.now() - startTime
+      const t = Math.min(elapsed / durationMs, 1.0)
+      // Ease-out cubic
+      const ease = 1 - Math.pow(1 - t, 3)
+
+      this.camera.position.lerpVectors(startPos, endPos, ease)
+      this.controls.target.lerpVectors(startTarget, endTarget, ease)
+      this.controls.update()
+
+      if (t < 1.0) {
+        this._cameraAnim = requestAnimationFrame(tick)
+      } else {
+        this._cameraAnim = null
+      }
+    }
+
+    this._cameraAnim = requestAnimationFrame(tick)
   }
 
   /**

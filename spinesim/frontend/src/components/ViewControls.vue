@@ -121,10 +121,15 @@ function setView(view) {
   const r = props.renderer
   const { pos, target } = view
 
-  r.camera.position.set(...pos)
-  r.controls.target.set(...target)
-  r.camera.lookAt(...target)
-  r.controls.update()
+  // Utiliser la transition animée si disponible, sinon fallback
+  if (r.setCameraView) {
+    r.setCameraView(pos, target, 600)
+  } else {
+    r.camera.position.set(...pos)
+    r.controls.target.set(...target)
+    r.camera.lookAt(...target)
+    r.controls.update()
+  }
 }
 
 // ── Actions modes ────────────────────────────────────────────

@@ -13,6 +13,7 @@ export const useSpineStore = defineStore('spine', () => {
   const statusMessage = ref('Prêt')
   const screwResults = ref([])
   const surgicalResult = ref(null)
+  const solveResult = ref(null)
   const loading = ref(false)
   const error = ref(null)
 
@@ -57,11 +58,23 @@ export const useSpineStore = defineStore('spine', () => {
         numDof: res.data.num_dof,
       }
       statusMessage.value = `✅ Résolu en ${res.data.solver_time_ms}ms — ${res.data.num_dof} DOF`
+      // Charger les mesures radiologiques après résolution
+      await fetchMeasurements()
     } catch (err) {
       error.value = err.response?.data?.error || err.message
       statusMessage.value = `❌ Erreur solveur: ${error.value}`
     } finally {
       loading.value = false
+    }
+  }
+
+  async function fetchMeasurements() {
+    if (!spineId.value) return
+    try {
+      const res = await axios.get(`${API_BASE}/spine/${spineId.value}/measurements`)
+      solveResult.value = res.data
+    } catch (err) {
+      console.warn('Mesures indisponibles:', err.message)
     }
   }
 
@@ -162,6 +175,7 @@ export const useSpineStore = defineStore('spine', () => {
     stresses.value = []
     solverInfo.value = null
     screwResults.value = []
+    solveResult.value = null
     longitudinalResult.value = null
     comparisonResults.value = null
     loading.value = false
@@ -171,9 +185,9 @@ export const useSpineStore = defineStore('spine', () => {
 
   return {
     spineId, spineData, stresses, solverInfo, statusMessage, screwResults, surgicalResult,
-    longitudinalResult, comparisonResults,
+    solveResult, longitudinalResult, comparisonResults,
     loading, error,
-    createSpine, solveSpine, applyScoliosis, placeScrew,
+    createSpine, solveSpine, applyScoliosis, placeScrew, fetchMeasurements,
     runLongitudinal, runComparison, reset,
   }
 })
