@@ -668,7 +668,7 @@ end
 
 | Événement | Direction | Données |
 |-----------|-----------|---------|
-| Lancement atelier | LMS → VERTEX© | ID module, ID apprenant, exercice à charger |
+| Lancement atelier | LMS → VERTEX© | ID module, ID praticien, exercice à charger |
 | Progression | VERTEX© → LMS | Score, temps, gestes réalisés |
 | Complétion | VERTEX© → LMS | Résultat final, badge obtenu, rapport PDF |
 | Prérequis | LMS → VERTEX© | Niveaux débloqués, compétences acquises |
@@ -815,7 +815,7 @@ julia = "1.10"
 | `GET` | `/api/surgery/{id}/report` | Générer un rapport PDF |
 | `POST` | `/api/approach/{type}/start` | Démarrer une simulation de voie d'abord |
 | `POST` | `/api/approach/{id}/interact` | Interagir avec une couche anatomique |
-| `GET` | `/api/student/{id}/progress` | Progression de l'apprenant |
+| `GET` | `/api/student/{id}/progress` | Progression de le praticien |
 | `POST` | `/api/student/{id}/badge` | Attribuer un badge |
 
 ### 11.2 WebSocket (temps réel)
@@ -1456,7 +1456,7 @@ Super Admin
     │       │
     │       └── Content Manager
     │
-    └── Apprenant (Étudiant)
+    └── Praticien (Étudiant)
             │
             ├── Niveau Bronze
             ├── Niveau Argent
@@ -1466,7 +1466,7 @@ Super Admin
 
 ### 17.2 Matrice de permissions
 
-| Permission | Super Admin | Admin Inst. | Instructeur | Tuteur | Content Mgr | Apprenant |
+| Permission | Super Admin | Admin Inst. | Instructeur | Tuteur | Content Mgr | Praticien |
 |------------|:-----------:|:-----------:|:-----------:|:------:|:-----------:|:---------:|
 | **Utilisateurs** | | | | | | |
 | Créer utilisateur | ✅ | ✅ (son inst.) | ❌ | ❌ | ❌ | ❌ |
@@ -1512,7 +1512,7 @@ end
 # Mapping SAML attributes → VERTEX roles
 const SAML_ROLE_MAPPING = Dict(
     "urn:mace:dir:entitlement:faculty" => "instructeur",
-    "urn:mace:dir:entitlement:student" => "apprenant",
+    "urn:mace:dir:entitlement:student" => "praticien",
     "urn:mace:dir:entitlement:staff"   => "admin_institution",
     "urn:mace:dir:entitlement:admin"   => "super_admin",
 )
@@ -1814,7 +1814,7 @@ end
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 20.3 Dashboard apprenant
+### 20.3 Dashboard praticien
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐

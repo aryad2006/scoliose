@@ -101,7 +101,7 @@
 
 #### Hypothèse médiane
 
-| Année | Inscriptions | Apprenants actifs | CA Individuel | CA Institutionnel | CA Total | Coûts | Résultat net |
+| Année | Inscriptions | Praticiens actifs | CA Individuel | CA Institutionnel | CA Total | Coûts | Résultat net |
 |-------|-------------|-------------------|---------------|-------------------|----------|-------|-------------|
 | **An 1** | 400 | 400 | 215 000 € | 90 000 € | **305 000 €** | -1 500 000 € | **-1 195 000 €** |
 | **An 2** | 700 | 900 | 380 000 € | 250 000 € | **630 000 €** | -700 000 € | **-70 000 €** |
@@ -109,7 +109,7 @@
 | **An 4** | 1 800 | 2 200 | 970 000 € | 800 000 € | **1 770 000 €** | -650 000 € | **+1 120 000 €** |
 | **An 5** | 2 500 | 3 000 | 1 350 000 € | 1 200 000 € | **2 550 000 €** | -700 000 € | **+1 850 000 €** |
 
-#### Panier moyen par apprenant
+#### Panier moyen par praticien
 
 > *Répartition médiane (moyenne des scénarios bas et haut, cf. §3.1)*
 
@@ -124,13 +124,13 @@
 
 ### 3.3 Point mort (break-even)
 
-| Scénario | Nombre d'apprenants payants | Délai |
+| Scénario | Nombre de praticiens payants | Délai |
 |----------|----------------------------|-------|
-| **Hypothèse basse** | ~2 100 apprenants cumulés | An 4-5 |
-| **Hypothèse médiane** | ~1 500 apprenants cumulés | **An 3** |
-| **Hypothèse haute** | ~1 000 apprenants cumulés | An 2-3 |
+| **Hypothèse basse** | ~2 100 praticiens cumulés | An 4-5 |
+| **Hypothèse médiane** | ~1 500 praticiens cumulés | **An 3** |
+| **Hypothèse haute** | ~1 000 praticiens cumulés | An 2-3 |
 
-> **Seuil de rentabilité opérationnelle** (résultat net annuel positif, hors amortissement CAPEX) : **An 3** avec ~900 apprenants actifs/an.
+> **Seuil de rentabilité opérationnelle** (résultat net annuel positif, hors amortissement CAPEX) : **An 3** avec ~900 praticiens actifs/an.
 > **Seuil de rentabilité cumulé** (remboursement total de l'investissement initial de ~3,5 M€ + coûts cumulés) : **An 5** (cf. `BUDGET_GLOBAL_FORMATION.md` §4.2, solde cumulé +250 K€).
 > **ROI investissement total** : Année 5-6 (hypothèse médiane), ~150-200%.
 >
@@ -175,7 +175,7 @@
 | Partenaire | Type | Bénéfices mutuels |
 |-----------|------|-------------------|
 | **CHU / Hôpitaux universitaires** | Licence institutionnelle | Validation clinique, cas réels, prestige |
-| **Universités de médecine** | Intégration cursus DES | Volume d'apprenants, crédibilité |
+| **Universités de médecine** | Intégration cursus DES | Volume de praticiens, crédibilité |
 | **Écoles d'ingénieurs** (biomécanique) | Recherche, données de validation | Innovation, publications |
 | **Sociétés savantes** (SRS, SFCR, SOSORT, AOSpine) | Endorsement, promotion croisée | Légitimité, réseau, congrès |
 
@@ -232,7 +232,7 @@
 
 ### 7.1 Scénario pessimiste
 
-| Année | Apprenants actifs | CA | Résultat |
+| Année | Praticiens actifs | CA | Résultat |
 |-------|-------------------|-----|---------|
 | An 1 | 200 | 150 000 € | -1 350 000 € |
 | An 3 | 700 | 550 000 € | -100 000 € |
@@ -242,7 +242,7 @@
 
 ### 7.2 Scénario optimiste
 
-| Année | Apprenants actifs | CA | Résultat |
+| Année | Praticiens actifs | CA | Résultat |
 |-------|-------------------|-----|---------|
 | An 1 | 800 | 600 000 € | -900 000 € |
 | An 3 | 3 000 | 2 500 000 € | +1 850 000 € |

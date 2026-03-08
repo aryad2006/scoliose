@@ -14,7 +14,7 @@
 - **Certificat** : Délivré après validation de tous les modules (score ≥ 70%)
 - **Crédits CME/DPC** : Formation éligible au développement professionnel continu
 
-### Parcours apprenant
+### Parcours praticien
 
 | Niveau | Public cible | Modules obligatoires | Modules optionnels |
 |--------|-------------|---------------------|--------------------|
@@ -2695,7 +2695,7 @@ Chaque module suit un format standardisé :
   - Simulation de la translation du rachis et risque neurologique
 - **Évaluation des compétences en ostéotomie**
   - Score : temps, précision de la résection, correction obtenue, complications
-  - Comparaison des résultats inter-apprenants (benchmark anonyme)
+  - Comparaison des résultats inter-praticiens (benchmark anonyme)
 
 #### 28.7 Simulateur de chirurgie virtuelle — Procédures spécifiques
 - **Résection d'hémivertèbre**
@@ -2778,7 +2778,7 @@ Chaque module suit un format standardisé :
   - Temps passé sur le simulateur par module
   - Score de précision moyen (vis, correction, complications évitées)
   - Progression temporelle (courbe d'apprentissage personnelle)
-  - Classement anonyme inter-apprenants
+  - Classement anonyme inter-praticiens
   - Rapport exportable pour le portfolio professionnel (DPC)
 
 ---
@@ -2890,11 +2890,11 @@ Chaque cas clinique suit le format :
 - ≥ 75% → **Validé** (certificat standard)
 - < 75% → **Non validé** (2ème tentative possible après 30 jours)
 
-#### 29.4 Suivi de progression de l'apprenant
+#### 29.4 Suivi de progression de le praticien
 
 - **Dashboard personnel** : Score par module, temps passé, progression globale, scores VERTEX©
 - **Analyse des lacunes** : Identification automatique des thèmes à réviser
-- **Comparaison anonyme** : Percentile par rapport aux autres apprenants
+- **Comparaison anonyme** : Percentile par rapport aux autres praticiens
 - **Badges et gamification** :
   - 🏅 « Anatomiste » — Module 1 validé ≥ 90%
   - 🏅 « Classificateur » — Module 5 validé ≥ 90%
@@ -2908,7 +2908,7 @@ Chaque cas clinique suit le format :
 - Mise à jour annuelle du contenu et des quiz
 - Nouvelles questions ajoutées selon la littérature récente
 - Webinaires live trimestriels avec experts
-- Forum de discussion entre apprenants
+- Forum de discussion entre praticiens
 - Accès à la banque de questions pour révision illimitée
 
 ---

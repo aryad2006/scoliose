@@ -42,7 +42,7 @@ Les modules chirurgicaux (15-20, 28) sont rédigés à un **niveau de détail cl
 | Problème | Détail |
 |----------|--------|
 | **An 1 avant lancement** | Le modèle projette €305K en « An 1 », mais le lancement est au mois 22. Les « An » doivent être recalés post-lancement. |
-| **Break-even contradictoire** | Budget : An 5 (1 500-2 000 apprenants). Modèle éco. : An 3 (médian). Différence de 2 ans. |
+| **Break-even contradictoire** | Budget : An 5 (1 500-2 000 praticiens). Modèle éco. : An 3 (médian). Différence de 2 ans. |
 | **Coûts An 1 incohérents** | Modèle : résultat -€1,2M pour CA €305K → coûts = €1,5M. Budget : récurrent = €390-660K/an. L'écart de €850K n'est pas expliqué. |
 | **Churn de 5%/mois** | = 46% d'attrition annuelle. Incompatible avec le LTV annoncé de €1 100. |
 
@@ -51,11 +51,11 @@ Les modules chirurgicaux (15-20, 28) sont rédigés à un **niveau de détail cl
 | Période | An réel | Action | Investissement | Revenus | Solde |
 |---------|---------|--------|---------------|---------|-------|
 | M1-20 | Pré-lancement | Dev contenu + LMS | -€1,5M | €0 | -€1,5M |
-| M21-32 | An 1 commercial | 300 apprenants × €600 | -€500K | +€180K | -€1,8M |
-| M33-44 | An 2 commercial | 600 apprenants × €650 | -€550K | +€390K | -€1,96M |
-| M45-56 | An 3 commercial | 1 200 apprenants × €700 | -€600K | +€840K | -€1,72M |
-| M57-68 | An 4 commercial | 2 000 apprenants × €750 | -€650K | +€1,5M | -€870K |
-| M69-80 | An 5 commercial | 3 000 apprenants × €800 | -€700K | +€2,4M | +€830K |
+| M21-32 | An 1 commercial | 300 praticiens × €600 | -€500K | +€180K | -€1,8M |
+| M33-44 | An 2 commercial | 600 praticiens × €650 | -€550K | +€390K | -€1,96M |
+| M45-56 | An 3 commercial | 1 200 praticiens × €700 | -€600K | +€840K | -€1,72M |
+| M57-68 | An 4 commercial | 2 000 praticiens × €750 | -€650K | +€1,5M | -€870K |
+| M69-80 | An 5 commercial | 3 000 praticiens × €800 | -€700K | +€2,4M | +€830K |
 
 **Break-even réaliste : An 5 commercial (mois 70 du projet, ~6 ans)**
 
@@ -101,7 +101,7 @@ Et surtout : permettre aux médecins expérimentés de **tester directement le q
 2. **Le complément chirurgical simulé** que personne d'autre n'offre (VERTEX©)
 3. **Le partenaire** plutôt que le concurrent (licence VERTEX à AO Spine ?)
 
-**Marché atteignable réaliste** : 5 000-8 000 professionnels francophones (pas 79 000 mondial), avec un taux de pénétration de 10-15% sur 5 ans → 500-1 200 apprenants payants.
+**Marché atteignable réaliste** : 5 000-8 000 professionnels francophones (pas 79 000 mondial), avec un taux de pénétration de 10-15% sur 5 ans → 500-1 200 praticiens payants.
 
 ---
 
@@ -131,7 +131,7 @@ Et surtout : permettre aux médecins expérimentés de **tester directement le q
 
 | # | Constat | Impact | Solution |
 |---|---------|--------|----------|
-| **N-01** | **Pas de tuteur IA** : En 2026, un LLM contextuel (type ChatGPT médical) qui répond aux questions des apprenants sur le contenu est devenu un standard attendu. | Expérience utilisateur inférieure aux concurrents | Intégrer un assistant IA (RAG sur le contenu de la formation + littérature indexée) avec disclaimers médicaux |
+| **N-01** | **Pas de tuteur IA** : En 2026, un LLM contextuel (type ChatGPT médical) qui répond aux questions des praticiens sur le contenu est devenu un standard attendu. | Expérience utilisateur inférieure aux concurrents | Intégrer un assistant IA (RAG sur le contenu de la formation + littérature indexée) avec disclaimers médicaux |
 | **N-02** | **Pas de mode hors-ligne** : Chirurgiens voyageant en congrès, blocs sans wifi. | Perte d'engagement | App PWA avec cache des cours déjà consultés |
 | **N-03** | **Pas de stratégie de propriété intellectuelle** : VERTEX© est marqué © mais aucun brevet, aucune protection algorithmique, aucun NDA mentionné | Risque de copie | Déposer un brevet sur les algorithmes FEM spécifiques + marque VERTEX® + NDA équipe |
 | **N-04** | **Pas de tarification étudiante** : €1 190 pour la certification est inabordable pour un interne (salaire ~€1 500-2 000/mois net) | Exclut le public cible principal | Ajouter un tarif étudiant à -50% (€595) ou paiement en 6 mensualités |

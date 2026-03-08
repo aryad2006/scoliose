@@ -386,7 +386,7 @@ Cela améliorerait considérablement la fidélité des résultats avec un effort
 | F-LMS-02 | Quiz progressifs 4 niveaux (Bronze → Diamant), 600+ questions | P0 |
 | F-LMS-03 | Progression séquentielle configurable (seuil ≥70%) avec option test-out | P0 |
 | F-LMS-04 | 3 parcours (Essentiel 25h / Chirurgical 55h / Intégral 89h) + modules à la carte | P0 |
-| F-LMS-05 | Dashboard apprenant (progression, scores, radar de compétences) | P1 |
+| F-LMS-05 | Dashboard praticien (progression, scores, radar de compétences) | P1 |
 | F-LMS-06 | Dashboard formateur/tuteur (cohorte, alertes, statistiques) | P1 |
 | F-LMS-07 | Forum de discussion par module | P1 |
 | F-LMS-08 | Webinaires live intégrés (BBB / Zoom) | P2 |
@@ -572,7 +572,7 @@ Cela améliorerait considérablement la fidélité des résultats avec un effort
 - [ ] Import DICOM
 - [ ] Mode VR (WebXR)
 - [ ] Assistant IA (RAG)
-- [ ] 1 000+ apprenants actifs
+- [ ] 1 000+ praticiens actifs
 - [ ] Publication scientifique sur la théorie du ressort spiral
 
 ---
@@ -651,7 +651,7 @@ Lancer une formation fonctionnelle avec les modules les plus attractifs + la sim
 | **M7-8** | Contenu Partie II | Modules 4-7 (définitions, classifications, examen clinique, imagerie) |
 | **M8-9** | VERTEX integration | LTI 1.3 : simulation longitudinale accessible depuis Moodle, visualisation 3D des résultats |
 | **M9-10** | Contenu Partie III | Modules 8-10 (SIA, infantile/juvénile, adulte) — le cœur de la formation |
-| **M10** | Dashboards | Dashboard apprenant (progression, scores) + Dashboard formateur basique |
+| **M10** | Dashboards | Dashboard praticien (progression, scores) + Dashboard formateur basique |
 | **M11** | Beta privée | 20-30 chirurgiens testeurs, collecte feedback |
 | **M12** | Corrections beta | Intégration retours, correction contenu et bugs |
 | **M13** | Contenu Parties IV-V | Modules 11-17 (pathologies + techniques chirurgicales) |
@@ -706,7 +706,7 @@ Ajouter la chirurgie virtuelle avec FEBio, compléter les 29 modules, obtenir l'
 | Modules complets | 29 |
 | Questions quiz | ≥ 600 |
 | Cas cliniques VERTEX | ≥ 5 |
-| Apprenants actifs | ≥ 400 |
+| Praticiens actifs | ≥ 400 |
 | CA annuel | ≥ €200K |
 | Agrément DPC | Obtenu |
 
@@ -729,7 +729,7 @@ Ajouter la chirurgie virtuelle avec FEBio, compléter les 29 modules, obtenir l'
 
 | Indicateur | Objectif M36 |
 |---|---|
-| Apprenants actifs | ≥ 1 500 |
+| Praticiens actifs | ≥ 1 500 |
 | CA annuel | ≥ €1M |
 | Publications scientifiques | ≥ 1 (peer-reviewed) |
 | NPS | ≥ 55 |

@@ -1,8 +1,23 @@
 ﻿# RÈGLES D'ÉCRITURE DU CONTENU PÉDAGOGIQUE
 
-**Formation Scoliose avec VERTEX©**
-**Version** : 1.0 — Février 2026
-**Applicabilité** : Tous les modules (1 à 29)
+**Formations : Scoliose avec VERTEX© · Prothèse Totale du Genou · Infection Osseuse de l'Appareil Locomoteur**
+**Version** : 2.0 — Mars 2026
+**Applicabilité** : Tous les modules de toutes les formations
+
+---
+
+## 0. Règles impératives de terminologie
+
+> **RÈGLE ABSOLUE — TERMINOLOGIE « PRATICIEN »**
+>
+> Ces formations s'adressent à des **médecins et chirurgiens**. Par respect pour le public cible :
+>
+> - ✅ Utiliser systématiquement **« praticien »** (singulier) ou **« praticiens »** (pluriel)
+> - ❌ Ne **JAMAIS** utiliser « apprenant », « apprenants », « étudiant », « étudiants »
+> - ✅ Formulations acceptées : « le praticien », « les praticiens », « chaque praticien »
+> - ✅ Alternatives acceptées selon le contexte : « le clinicien », « le chirurgien », « le confrère »
+>
+> Cette règle s'applique à **l'ensemble du contenu** : modules de cours, scripts vidéo, consignes d'exercices, interface LMS, communications, certificats.
 
 ---
 

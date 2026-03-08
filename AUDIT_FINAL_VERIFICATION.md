@@ -230,7 +230,7 @@
 |-------|--------|
 | **Fichier** | CAHIER_DES_CHARGES_LMS.md (L146) |
 | **Texte erroné** | « entre **appprenant** et tuteur/instructeur » |
-| **Correction** | « entre **apprenant** et tuteur/instructeur » |
+| **Correction** | « entre **praticien** et tuteur/instructeur » |
 
 ---
 
@@ -374,7 +374,7 @@
 |---|---|---|---|
 | C-12 | Expliciter la formule LTV ou recalculer | MODELE_ECONOMIQUE | 30 min |
 | C-13 | Corriger « narées » → « narrées » | PLAN_FORMATION | 1 min |
-| C-14 | Corriger « appprenant » → « apprenant » | CAHIER_DES_CHARGES | 1 min |
+| C-14 | Corriger « appprenant » → « praticien » | CAHIER_DES_CHARGES | 1 min |
 | C-15 | Mentionner « hypothèse médiane » pour le panier moyen | MODELE_ECONOMIQUE | 5 min |
 | C-16/17 | Mettre à jour les lignes du VERTEX et AUDIT dans la NOTE_TECHNIQUE | NOTE_TECHNIQUE | Inclus dans C-07 |
 

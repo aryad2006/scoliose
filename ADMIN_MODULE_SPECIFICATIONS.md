@@ -184,7 +184,7 @@ L'admin peut configurer son dashboard avec les widgets suivants (drag & drop) :
 | KPI cards (8 max) | Inscrits, actifs, MRR, ARR, churn, NPS, complétion, tickets | Temps réel (WebSocket) |
 | Graphique revenus | MRR/ARR sur 12-24 mois, comparaison N-1 | Quotidien |
 | Graphique inscriptions | Par jour/semaine/mois, par source | Quotidien |
-| Carte géographique | Répartition des apprenants par pays | Quotidien |
+| Carte géographique | Répartition des praticiens par pays | Quotidien |
 | Alertes | Paiements échoués, inactivité, expiration, erreurs système | Temps réel |
 | Santé système | CPU, RAM, GPU, disque, uptime, latence API | 30 secondes |
 | Activité récente | Dernières inscriptions, complétions, paiements | Temps réel |
@@ -192,7 +192,7 @@ L'admin peut configurer son dashboard avec les widgets suivants (drag & drop) :
 | Pipeline VERTEX | Sessions actives, queue FEM, utilisation GPU | 30 secondes |
 | Tickets support | Ouverts/en cours/résolus, SLA compliance | Temps réel |
 | Calendrier | Webinaires, examens, deadlines, maintenance prévue | Horaire |
-| Leaderboard | Top 10 apprenants (opt-in), top institutions | Quotidien |
+| Leaderboard | Top 10 praticiens (opt-in), top institutions | Quotidien |
 
 ### 3.3 Alertes et notifications admin
 
@@ -332,7 +332,7 @@ Chaque utilisateur dispose d'une fiche complète accessible en un clic :
 Chaque institution dispose de son propre dashboard (accessible par l'admin institution délégué) :
 
 - Nombre de sièges utilisés / disponibles
-- Liste des apprenants rattachés
+- Liste des praticiens rattachés
 - Progression moyenne de la cohorte
 - Taux de complétion par module
 - Rapport de formation (exportable PDF — utile pour DPC institutionnel)
@@ -486,7 +486,7 @@ Chaque institution dispose de son propre dashboard (accessible par l'admin insti
 | TVA | Calcul automatique selon le pays (FR 20%, UE reverse charge, hors UE 0%) |
 | Modèle personnalisable | Logo, couleurs, texte de pied de page, coordonnées bancaires |
 | Envoi automatique | Email avec PDF joint à chaque émission |
-| Historique | Accès pour l'admin et pour l'apprenant (dans son espace) |
+| Historique | Accès pour l'admin et pour le praticien (dans son espace) |
 
 ### 6.4 Reporting financier
 
@@ -501,13 +501,13 @@ Chaque institution dispose de son propre dashboard (accessible par l'admin insti
 | **Cohort analysis** | Trimestriel | Dashboard | Rétention par cohorte d'inscription (mois 1→12) |
 | **LTV / CAC** | Trimestriel | Dashboard | Lifetime Value, Customer Acquisition Cost, ratio |
 | **Export FEC** | Annuel | CSV (norme FEC) | Fichier des Écritures Comptables (obligation légale France) |
-| **Rapport DPC** | Sur demande | PDF | Suivi des apprenants DPC, heures validées, attestations |
+| **Rapport DPC** | Sur demande | PDF | Suivi des praticiens DPC, heures validées, attestations |
 
 ### 6.5 Gestion DPC/OPCO (financement formation)
 
 | Fonctionnalité | Description |
 |---|---|
-| Dossier DPC | Formulaire de déclaration ANDPC pré-rempli pour l'apprenant |
+| Dossier DPC | Formulaire de déclaration ANDPC pré-rempli pour le praticien |
 | Suivi DPC | Tableau de bord des dossiers DPC en cours (soumis, validé, en attente de paiement) |
 | Attestation DPC | Génération automatique de l'attestation de suivi de formation (heures, contenu, évaluation) |
 | OPCO | Gestion des dossiers de prise en charge OPCO (pour les salariés) |
@@ -578,7 +578,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | Page formation | Syllabus, liste des modules, instructeurs, avis, tarifs, bouton d'achat |
 | Preview gratuite | 1-3 modules gratuits par formation (configurable par l'admin) |
 | Bundles | Combinaison de formations à prix réduit (ex : « Rachis complet » = Scoliose + Neurochir.) |
-| Recommandations | « Les apprenants qui ont suivi Scoliose ont aussi suivi... » |
+| Recommandations | « Les praticiens qui ont suivi Scoliose ont aussi suivi... » |
 | Avis et notes | Système de notation (1-5 étoiles) + commentaires modérés |
 | Recherche | Recherche full-text dans les titres, descriptions, contenus, instructeurs |
 
@@ -625,7 +625,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | Double correction | Option pour les cas cliniques complexes (2 correcteurs indépendants) |
 | Révision des résultats | L'admin peut réviser les résultats manuellement (avec justification) |
 | Recours | Procédure de recours pour les candidats (formulaire + comité de revue) |
-| Publication des résultats | Par email + dans l'espace apprenant, délai configurable (immédiat ou J+X) |
+| Publication des résultats | Par email + dans l'espace praticien, délai configurable (immédiat ou J+X) |
 | Statistiques examen | Taux de réussite, score moyen, distribution, questions discriminantes |
 
 ### 8.4 Certificats
@@ -640,7 +640,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | Durée de validité | Configurable, alerte de renouvellement automatique |
 | Téléchargement | PDF haute qualité (150 DPI minimum, format A4 et Letter) |
 | Partage | Bouton « Partager sur LinkedIn » pré-configuré |
-| Registre | Base de données publique des certificats vérifiables (opt-in de l'apprenant) |
+| Registre | Base de données publique des certificats vérifiables (opt-in de le praticien) |
 
 ### 8.5 Gestion DPC/CME des certifications
 
@@ -667,7 +667,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | Collaboration | Co-édition simultanée (type Google Docs), commentaires inline |
 | Planification | Publication programmée (date + heure de mise en ligne) |
 | Import/export | Import Word (.docx), Markdown (.md), PowerPoint → contenu LMS. Export SCORM/xAPI |
-| Prévisualisation | Vue apprenant (desktop, tablet, mobile) avant publication |
+| Prévisualisation | Vue praticien (desktop, tablet, mobile) avant publication |
 | Traduction | Interface double panneau (original + traduction), statut de traduction par section |
 | Marqueurs [MEDIA] | Détection automatique des marqueurs `[MEDIA: ...]` et lien avec la bibliothèque médias |
 
@@ -694,7 +694,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | Éditeur de question | Énoncé (texte riche + images), options, réponse correcte, explication détaillée, références |
 | Import en masse | Import CSV/Excel (énoncé, options A-E, réponse, explication) |
 | Statistiques par question | Taux de réussite, indice de discrimination, temps moyen, signalements |
-| Signalement | Les apprenants peuvent signaler une question (erreur, ambiguïté) → file de revue admin |
+| Signalement | Les praticiens peuvent signaler une question (erreur, ambiguïté) → file de revue admin |
 | Revue périodique | Rappel automatique de révision des questions (tous les 12 mois) |
 | Randomisation | Tirage aléatoire dans un pool, mélange des options, paramètres par quiz |
 | Anti-triche | Questions ancrées dans des pools larges (ratio 2:1), timer par question optionnel |
@@ -848,7 +848,7 @@ Un module partagé n'est rédigé qu'une fois, avec des **variantes** optionnell
 | **Acquisition** | Sources d'inscription, taux de conversion funnel, CAC | CSV, PDF |
 | **Rétention** | Cohort analysis, churn rate, raisons d'abandon | CSV, PDF |
 | **International** | Répartition géographique, CA par pays, langue préférée | CSV, PDF |
-| **DPC/CME** | Apprenants en parcours DPC, heures validées, attestations générées | CSV, PDF |
+| **DPC/CME** | Praticiens en parcours DPC, heures validées, attestations générées | CSV, PDF |
 | **Technique** | Uptime, latence, erreurs, utilisation GPU, coûts infra | CSV, PDF |
 
 ### 12.2 Générateur de rapports personnalisés
@@ -892,7 +892,7 @@ Chaque étape est cliquable → détail des utilisateurs à cette étape, analys
 |---|---|
 | Registre des traitements | Documentation automatique des traitements de données personnelles |
 | Consentements | Gestion des consentements (cookies, emails marketing, analytics) avec historique |
-| Droit d'accès | L'apprenant peut télécharger toutes ses données (JSON/PDF) depuis son profil |
+| Droit d'accès | L'praticien peut télécharger toutes ses données (JSON/PDF) depuis son profil |
 | Droit à l'oubli | Suppression ou anonymisation complète sur demande (admin valide, audit log) |
 | Portabilité | Export des données dans un format standard (JSON) |
 | DPO | Contact DPO visible dans les CGU et le panneau admin |

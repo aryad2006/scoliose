@@ -78,7 +78,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | CONT-06 |
 | **Catégorie** | MISSING |
 | **Priorité** | LOW |
-| **Description** | Aucun contenu explicite sur les objectifs d'apprentissage (ILO — Intended Learning Outcomes) par module. Les « Objectifs pédagogiques » ne sont pas formulés selon la taxonomie de Bloom (« l'apprenant sera capable de... »). |
+| **Description** | Aucun contenu explicite sur les objectifs d'apprentissage (ILO — Intended Learning Outcomes) par module. Les « Objectifs pédagogiques » ne sont pas formulés selon la taxonomie de Bloom (« le praticien sera capable de... »). |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — tous les modules |
 | **Solution proposée** | Ajouter en début de chaque module une section « Objectifs d'apprentissage » avec 3-5 ILOs formulés selon Bloom (savoir, comprendre, appliquer, analyser, évaluer, créer). Mapper ces ILOs aux questions de quiz et aux compétences VERTEX. |
 
@@ -252,7 +252,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **Priorité** | MEDIUM |
 | **Description** | **Coûts récurrents** : `BUDGET_GLOBAL_FORMATION.md` annonce €390-660K/an de coûts récurrents. Mais le `MODELE_ECONOMIQUE.md` projette un résultat net An 1 de -€1,2M pour un CA de €305K, ce qui implique des coûts totaux An 1 de ~€1,5M, bien au-delà des €390-660K récurrents. Même en ajoutant les coûts de développement initiaux amortis, l'écart n'est pas expliqué. |
 | **Localisation** | `BUDGET_GLOBAL_FORMATION.md` — Coûts récurrents ; `MODELE_ECONOMIQUE.md` — §5 Projections An 1 |
-| **Solution proposée** | Distinguer clairement : 1) Coûts CAPEX (développement initial amortis sur 3-5 ans), 2) Coûts OPEX récurrents (infra, maintenance, équipe minimum), 3) Coûts variables (marketing, support proportionnel au nombre d'apprenants). Réconcilier les deux documents avec un état des flux de trésorerie (cash flow) cohérent. |
+| **Solution proposée** | Distinguer clairement : 1) Coûts CAPEX (développement initial amortis sur 3-5 ans), 2) Coûts OPEX récurrents (infra, maintenance, équipe minimum), 3) Coûts variables (marketing, support proportionnel au nombre de praticiens). Réconcilier les deux documents avec un état des flux de trésorerie (cash flow) cohérent. |
 
 ### 4.6
 | Champ | Valeur |
@@ -382,7 +382,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | PRAT-03 |
 | **Catégorie** | MISSING |
 | **Priorité** | LOW |
-| **Description** | **Pas d'accès aux logiciels de planification chirurgicale commerciaux (Surgimap, Mediview, CASSOS)** ni de tutorial d'utilisation. VERTEX est un simulateur pédagogique, pas un outil de planification clinical-grade. Les apprenants ne sont pas formés aux outils qu'ils utiliseront en pratique. |
+| **Description** | **Pas d'accès aux logiciels de planification chirurgicale commerciaux (Surgimap, Mediview, CASSOS)** ni de tutorial d'utilisation. VERTEX est un simulateur pédagogique, pas un outil de planification clinical-grade. Les praticiens ne sont pas formés aux outils qu'ils utiliseront en pratique. |
 | **Localisation** | `PLAN_FORMATION_SCOLIOSE.md` — Module 17, Annexe E |
 | **Solution proposée** | Ajouter des vidéos tutorielles de 15-20 min pour les 2-3 logiciels de planification les plus utilisés (Surgimap, CASSOS). Négocier des licences éducatives temporaires avec les éditeurs. |
 
@@ -396,9 +396,9 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | BUDCAL-01 |
 | **Catégorie** | INCONSISTENCY |
 | **Priorité** | CRITICAL |
-| **Description** | **Budget marketing sous-dimensionné** : Le budget alloue €80-150K au marketing sur 40 mois. Le calendrier prévoit du marketing des mois 6 à 40+ (~34 mois). Cela représente €2 350-4 400/mois de budget marketing. Pour une CAC cible de €200 (An 1) et un objectif de 390 apprenants payants en An 1 (médian), il faudrait €78 000 de dépenses d'acquisition la première année seule — consommant 50-100% du budget marketing total de 40 mois en 12 mois. Le budget marketing est incompatible avec les objectifs d'acquisition du modèle économique. |
+| **Description** | **Budget marketing sous-dimensionné** : Le budget alloue €80-150K au marketing sur 40 mois. Le calendrier prévoit du marketing des mois 6 à 40+ (~34 mois). Cela représente €2 350-4 400/mois de budget marketing. Pour une CAC cible de €200 (An 1) et un objectif de 390 praticiens payants en An 1 (médian), il faudrait €78 000 de dépenses d'acquisition la première année seule — consommant 50-100% du budget marketing total de 40 mois en 12 mois. Le budget marketing est incompatible avec les objectifs d'acquisition du modèle économique. |
 | **Localisation** | `BUDGET_GLOBAL_FORMATION.md` — Marketing ; `MODELE_ECONOMIQUE.md` — §4 (Distribution), §6.1 (KPI: CAC) |
-| **Solution proposée** | 1) Revoir le budget marketing à la hausse : min €200-400K sur 40 mois (€5-10K/mois). 2) Ou revoir les hypothèses d'acquisition à la baisse (moins d'apprenants, break-even plus tardif). 3) Intégrer le marketing dans les coûts récurrents annuels du budget. 4) Détailler les canaux marketing (SEO : coût 0 mais temps, SEA : coût CPC, congrès : stands, KOL : honoraires). |
+| **Solution proposée** | 1) Revoir le budget marketing à la hausse : min €200-400K sur 40 mois (€5-10K/mois). 2) Ou revoir les hypothèses d'acquisition à la baisse (moins de praticiens, break-even plus tardif). 3) Intégrer le marketing dans les coûts récurrents annuels du budget. 4) Détailler les canaux marketing (SEO : coût 0 mais temps, SEA : coût CPC, congrès : stands, KOL : honoraires). |
 
 ### 8.2
 | Champ | Valeur |
@@ -480,7 +480,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | LMS-05 |
 | **Catégorie** | MISSING |
 | **Priorité** | LOW |
-| **Description** | **Pas de plan de migration de données** ni de stratégie de réversibilité. Si le fournisseur LMS doit être changé, comment exporter les données apprenants, les progressions, les contenus ? Le CdC ne mentionne pas la portabilité des données. |
+| **Description** | **Pas de plan de migration de données** ni de stratégie de réversibilité. Si le fournisseur LMS doit être changé, comment exporter les données praticiens, les progressions, les contenus ? Le CdC ne mentionne pas la portabilité des données. |
 | **Localisation** | `CAHIER_DES_CHARGES_LMS.md` — absent |
 | **Solution proposée** | Ajouter une clause de réversibilité : 1) Export complet des données en format ouvert (CSV/JSON/xAPI). 2) Documentation de la structure de données. 3) Période de réversibilité assistée de 6 mois. 4) Propriété des données et du code source (escrow de code). |
 
@@ -504,7 +504,7 @@ L'analyse exhaustive des 9 documents du projet (2 525 + 1 890 + 998 + 356 + 309 
 | **ID** | ECO-02 |
 | **Catégorie** | INSUFFICIENT |
 | **Priorité** | HIGH |
-| **Description** | **Churn de 5% mensuel en An 1 incompatible avec les projections** : Un churn mensuel de 5% signifie que (1-0.05)^12 = 54% des abonnés survivent après 1 an. Avec 390 apprenants payants en An 1, seulement ~210 sont encore actifs en fin d'année. L'ARPU de €770 est calculé sur quoi ? Une souscription annuelle unique ? Si c'est un abonnement mensuel, le churn de 5% réduit la LTV à €770/0.05 = €15 400, ce qui est incohérent avec le LTV annoncé de €1 100 en An 1. La mécanique de churn et le modèle de récurrence ne sont pas clairs. |
+| **Description** | **Churn de 5% mensuel en An 1 incompatible avec les projections** : Un churn mensuel de 5% signifie que (1-0.05)^12 = 54% des abonnés survivent après 1 an. Avec 390 praticiens payants en An 1, seulement ~210 sont encore actifs en fin d'année. L'ARPU de €770 est calculé sur quoi ? Une souscription annuelle unique ? Si c'est un abonnement mensuel, le churn de 5% réduit la LTV à €770/0.05 = €15 400, ce qui est incohérent avec le LTV annoncé de €1 100 en An 1. La mécanique de churn et le modèle de récurrence ne sont pas clairs. |
 | **Localisation** | `MODELE_ECONOMIQUE.md` — §6.1 (KPI SaaS) |
 | **Solution proposée** | 1) Clarifier le modèle de récurrence : abonnement mensuel, annuel, ou achat unique avec renouvellement ? 2) Recalculer le LTV en cohérence avec le churn : LTV = ARPU / churn_annuel. 3) Un churn mensuel réaliste en EdTech santé est plutôt 2-3%. 4) Prévoir un modèle de cohortes (cohort analysis) plutôt qu'un agrégat. |
 

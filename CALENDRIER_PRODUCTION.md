@@ -140,7 +140,7 @@ Mois:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 2
 | Analyse prédictive (PJK, risque de révision) | Mois 36-40 | C10 |
 | Import DICOM patient-spécifique | Mois 36-40 | C10 |
 
-> **Impact sur la formation** : Au lancement (mois 22), les ateliers VERTEX du Module 28 couvriront les scénarios MVS (anatomie 3D, placement de vis, correction basique). Les ateliers avancés (ostéotomies, VR, import DICOM) seront débloqués progressivement avec des notifications aux apprenants. Le Module 28 indiquera clairement quels ateliers sont disponibles et lesquels sont « à venir ».
+> **Impact sur la formation** : Au lancement (mois 22), les ateliers VERTEX du Module 28 couvriront les scénarios MVS (anatomie 3D, placement de vis, correction basique). Les ateliers avancés (ostéotomies, VR, import DICOM) seront débloqués progressivement avec des notifications aux praticiens. Le Module 28 indiquera clairement quels ateliers sont disponibles et lesquels sont « à venir ».
 
 ### D. Plateforme LMS (Mois 8-18)
 
@@ -151,7 +151,7 @@ Mois:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 2
 | **D3. Développement plugins** | 10-14 | Plugin VERTEX (LTI), quiz 4 niveaux, proctoring |
 | **D4. Import contenu** | 14-16 | 29 modules importés et testés |
 | **D5. Intégration paiement** | 15-16 | Stripe, factures, DPC |
-| **D6. Analytics et dashboards** | 16-17 | Dashboard apprenant, instructeur, admin |
+| **D6. Analytics et dashboards** | 16-17 | Dashboard praticien, instructeur, admin |
 | **D7. Tests et recette** | 17-18 | UAT, tests de charge, sécurité |
 
 ### E. Lancement (Mois 16-22)
@@ -243,11 +243,11 @@ F. MARKETING
 | J8 | Beta fermée formation | 18 | 30 testeurs actifs |
 | J9 | 500 médias produits | 20 | Catalogue complet validé |
 | J10 | Beta VERTEX | 24 | Toutes fonctionnalités, haptique |
-| J11 | Lancement Early Access | 20 | Premiers apprenants payants |
+| J11 | Lancement Early Access | 20 | Premiers praticiens payants |
 | J12 | Lancement public | 22 | Marketing, paiement, support opérationnels |
 | J13 | VERTEX Beta ouverte | 30 | 50 utilisateurs pilotes |
 | J14 | VERTEX v1.0 | 40 | Certification, validation complète |
-| J15 | 1 000 apprenants | 30 | Seuil de viabilité atteint |
+| J15 | 1 000 praticiens | 30 | Seuil de viabilité atteint |
 
 ---
 

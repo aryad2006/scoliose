@@ -6,7 +6,7 @@
 ## 1. RÔLE DU FORMATEUR / TUTEUR
 
 ### 1.1 Missions principales
-1. **Accompagner** les apprenants tout au long de leur parcours (coaching, mentorat)
+1. **Accompagner** les praticiens tout au long de leur parcours (coaching, mentorat)
 2. **Évaluer** les compétences (quiz, cas cliniques, simulations VERTEX©)
 3. **Animer** la communauté d'apprentissage (forum, webinaires, discussions)
 4. **Adapter** le parcours aux besoins individuels (remédiation, approfondissement)
@@ -17,16 +17,16 @@
 - Expérience en **enseignement** (DES, DIU, formation continue)
 - Maîtrise des **outils numériques** de base (LMS, visioconférence, forum)
 - Formation initiale à **VERTEX©** validée (certification formateur)
-- Disponibilité : **4-8 heures/semaine** par cohorte de 20-30 apprenants
+- Disponibilité : **4-8 heures/semaine** par cohorte de 20-30 praticiens
 
 ### 1.3 Types de rôles
 
-| Rôle | Responsabilité | Ratio apprenants |
+| Rôle | Responsabilité | Ratio praticiens |
 |------|---------------|-----------------|
 | **Instructeur principal** | Conception contenu, webinaires, évaluation finale | 1 pour toute la formation |
-| **Tuteur** | Suivi individuel, forum, feedback quiz | 1 pour 20-30 apprenants |
+| **Tuteur** | Suivi individuel, forum, feedback quiz | 1 pour 20-30 praticiens |
 | **Expert invité** | Webinaire ponctuel, cas clinique spécialisé | Ponctuel |
-| **Modérateur** | Animation forum, modération, FAQ | 1 pour 100 apprenants |
+| **Modérateur** | Animation forum, modération, FAQ | 1 pour 100 praticiens |
 
 ---
 
@@ -46,14 +46,14 @@
 │  DASHBOARD FORMATEUR                                                │
 │                                                                     │
 │  ┌─ Ma cohorte ──────────────────────────────────────────────────┐  │
-│  │ 25 apprenants inscrits │ 22 actifs │ 3 inactifs (>14j)       │  │
+│  │ 25 praticiens inscrits │ 22 actifs │ 3 inactifs (>14j)       │  │
 │  │ Progression moyenne : 45% │ Score moyen quiz : 78%           │  │
 │  └───────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 │  ┌─ Alertes ─────────────────────────────────────────────────────┐  │
 │  │ ⚠ Dr. Martin — inactif depuis 18 jours → contacter           │  │
 │  │ ⚠ Module 15 quiz : 42% d'échec → revoir le contenu ?        │  │
-│  │ ✓ 5 apprenants ont complété tous les modules                  │  │
+│  │ ✓ 5 praticiens ont complété tous les modules                  │  │
 │  │ 📩 3 messages non lus dans le forum                           │  │
 │  └───────────────────────────────────────────────────────────────┘  │
 │                                                                     │
@@ -66,14 +66,14 @@
 ```
 
 ### 2.3 Navigation dans le contenu
-- **Vue module** : parcourir chaque module comme un apprenant
+- **Vue module** : parcourir chaque module comme un praticien
 - **Vue éditeur** : voir les notes pédagogiques, réponses aux quiz, barèmes
 - **Vue évaluation** : liste des soumissions, scores, feedback à donner
-- **Vue VERTEX** : observer en temps réel la simulation d'un apprenant (mode spectateur)
+- **Vue VERTEX** : observer en temps réel la simulation d'un praticien (mode spectateur)
 
 ---
 
-## 3. ACCOMPAGNEMENT DES APPRENANTS
+## 3. ACCOMPAGNEMENT DES PRATICIENS
 
 ### 3.1 Parcours d'accompagnement
 
@@ -91,7 +91,7 @@
 | **S16** | Examen de certification | Surveillance, évaluation |
 | **Post** | Feedback final + orientation suite | Rétention, renouvellement |
 
-### 3.2 Communication avec les apprenants
+### 3.2 Communication avec les praticiens
 
 #### Types de messages
 | Type | Canal | Fréquence |
@@ -188,7 +188,7 @@
 - Pour les cas cliniques ouverts → **correction manuelle** avec feedback personnalisé
 
 #### VERTEX — Évaluation
-- Consulter les **rapports de simulation** de chaque apprenant
+- Consulter les **rapports de simulation** de chaque praticien
 - Critères d'évaluation :
   - Précision du placement des vis (% intra-pédiculaire)
   - Qualité de la correction (angle de Cobb final)
@@ -212,7 +212,7 @@
 
 | Fonctionnalité | Description |
 |----------------|-------------|
-| **Mode spectateur** | Observer en temps réel la simulation d'un apprenant |
+| **Mode spectateur** | Observer en temps réel la simulation d'un praticien |
 | **Mode co-pilote** | Prendre le contrôle à distance pour montrer un geste |
 | **Création de scénarios** | Définir un cas (type de scoliose, difficulté, objectifs) |
 | **Bibliothèque de scénarios** | Scénarios pré-définis par module |
@@ -262,9 +262,9 @@
 | Temps de réponse forum | < 48h | Automatique (LMS) |
 | Taux de complétion de la cohorte | > 75% | Dashboard |
 | Score moyen quiz de la cohorte | > 70% | Dashboard |
-| Satisfaction apprenant (NPS formateur) | > 50 | Enquête fin de parcours |
+| Satisfaction praticien (NPS formateur) | > 50 | Enquête fin de parcours |
 | Participation aux webinaires | > 60% de la cohorte | Zoom/BBB analytics |
-| Nombre de messages individuels envoyés | > 2/apprenant/mois | LMS |
+| Nombre de messages individuels envoyés | > 2/praticien/mois | LMS |
 | Certification formateur à jour | Oui | Annuel |
 
 ---
@@ -274,8 +274,8 @@
 ### 8.1 Checklist de démarrage de cohorte
 
 - [ ] Accès LMS vérifié (identifiants, autorisations)
-- [ ] Liste des apprenants reçue et vérifiée
-- [ ] Message de bienvenue envoyé à tous les apprenants
+- [ ] Liste des praticiens reçue et vérifiée
+- [ ] Message de bienvenue envoyé à tous les praticiens
 - [ ] Webinaire d'introduction planifié (Zoom/BBB + calendrier LMS)
 - [ ] Forum initialisé (message de bienvenue, catégories vérifiées)
 - [ ] Scénarios VERTEX vérifiés (fonctionnels, objectifs clairs)
@@ -287,7 +287,7 @@
 - [ ] Vérifier les alertes d'inactivité
 - [ ] Répondre aux questions du forum (< 48h)
 - [ ] Vérifier les résultats de quiz de la semaine
-- [ ] Contacter individuellement les apprenants en difficulté
+- [ ] Contacter individuellement les praticiens en difficulté
 - [ ] Publier la question de la semaine sur le forum
 - [ ] Préparer le webinaire si planifié
 

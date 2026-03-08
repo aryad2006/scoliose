@@ -246,7 +246,7 @@ Corrections majeures appliquées :
 - Formule « Essentiel » (290€) ajoutée au CAHIER_DES_CHARGES_LMS
 - ARR An 5 corrigé : 2 500 000 → 2 520 000 €
 - Notes d'harmonisation churn mensuel/annuel ajoutées
-- Typos corrigés : narrées, apprenant, ref 101
+- Typos corrigés : narrées, praticien, ref 101
 
 ---
 
@@ -311,7 +311,7 @@ Corrections majeures appliquées :
 
 ### 8.2 Projections financières (hypothèse médiane)
 
-| Année | Apprenants actifs | CA Total | Résultat net |
+| Année | Praticiens actifs | CA Total | Résultat net |
 |---|---|---|---|
 | An 1 | 400 | 305 000 € | -1 195 000 € |
 | An 2 | 900 | 630 000 € | -70 000 € |

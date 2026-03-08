@@ -1419,14 +1419,14 @@ Implémenter le système de quiz 4 niveaux dans Moodle.
 ## SPRINT 13 — Dashboard et analytics (Semaine 29-30)
 
 ### Objectif
-Tableaux de bord apprenant et formateur.
+Tableaux de bord praticien et formateur.
 
 ### Tâches
 
 🆕 `spinesim/frontend/src/views/DashboardStudent.vue`
 🆕 `spinesim/frontend/src/views/DashboardInstructor.vue`
 
-Dashboard apprenant :
+Dashboard praticien :
 - Progression globale (barre + %)
 - Modules complétés vs restants
 - Scores par module (radar)
@@ -1440,7 +1440,7 @@ Dashboard formateur :
 - Export CSV/PDF
 
 ### Critères de validation Sprint 13
-- [ ] Le dashboard apprenant affiche la progression en temps réel
+- [ ] Le dashboard praticien affiche la progression en temps réel
 - [ ] Le dashboard formateur affiche la cohorte avec filtres
 - [ ] Les alertes se déclenchent (ex: étudiant inactif >7 jours)
 

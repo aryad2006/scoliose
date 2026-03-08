@@ -914,7 +914,7 @@
 |----|------|----------------------|---------------------|
 | M29-S01-001 | 📷 IMAGE | **Images pour QCM image-based** : banque de 50+ radiographies, IRM, scanners, photos cliniques avec différentes pathologies à identifier — chaque image avec la question et les réponses | Banque d'images quiz |
 | M29-S02-001 | 🎥 VIDÉO | **Vidéos pour vidéo-based questions** : 10+ extraits vidéo chirurgicaux (2-3 min chacun) avec des questions d'analyse — identifier la technique, le niveau, la complication | Clips vidéo courts |
-| M29-S03-001 | 📐 SCHÉMA | **Captures d'écran du dashboard** : maquettes de l'interface du LMS — dashboard apprenant, quiz en cours, résultats, badges | Maquettes UI |
+| M29-S03-001 | 📐 SCHÉMA | **Captures d'écran du dashboard** : maquettes de l'interface du LMS — dashboard praticien, quiz en cours, résultats, badges | Maquettes UI |
 | M29-S04-001 | 📷 IMAGE | **Captures d'écran de l'épreuve VERTEX©** : images montrant la Section E de l'examen de certification — cas de simulation avec consignes, timer, critères d'évaluation affichés | Captures d'examen |
 
 ---

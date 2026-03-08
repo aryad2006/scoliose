@@ -13,7 +13,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 2. Intégrer l'application **VERTEX©** (simulation 3D temps réel)
 3. Gérer un système d'évaluation progressif à **4 niveaux** (Bronze → Diamant)
 4. Délivrer des **certificats de formation** reconnus (DPC, CME)
-5. Accueillir **500 à 5 000 apprenants** en année 1, scalable à 20 000+
+5. Accueillir **500 à 5 000 praticiens** en année 1, scalable à 20 000+
 6. Conformité **RGPD**, hébergement **HDS** pour données DICOM
 
 ---
@@ -26,7 +26,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - Inscription en ligne avec vérification d'identité professionnelle (numéro RPPS/ADELI pour la France)
 - Authentification OAuth2/OIDC, SSO SAML 2.0 (hôpitaux, universités)
 - MFA obligatoire pour accès examen et DICOM
-- Profils : apprenant, tuteur, instructeur, admin institution, super admin, content manager
+- Profils : praticien, tuteur, instructeur, admin institution, super admin, content manager
 - Rattachement institutionnel (hôpital, université, société savante)
 
 #### 2.1.2 Gestion des profils
@@ -118,7 +118,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 
 ### 2.5 Suivi et analytics
 
-#### 2.5.1 Dashboard apprenant
+#### 2.5.1 Dashboard praticien
 - Progression globale (barre de progression par partie et module)
 - Radar de compétences (anatomie, imagerie, chirurgie, biomécanique...)
 - Historique des quiz (score, temps, évolution)
@@ -132,7 +132,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - Analyse par question (taux de réussite, temps, discrimination)
 - Comparaison inter-cohortes
 - Export CSV/PDF des rapports
-- Messagerie directe aux apprenants
+- Messagerie directe aux praticiens
 
 #### 2.5.3 Dashboard administrateur
 - KPI globaux : inscriptions, taux de complétion, CA, NPS
@@ -143,7 +143,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 ### 2.6 Communication et collaboration
 
 - **Forum de discussion** : par module, avec modération et recherche
-- **Messagerie privée** : entre apprenant et tuteur/instructeur
+- **Messagerie privée** : entre praticien et tuteur/instructeur
 - **Webinaires live** : intégration Zoom/Teams/BBB (Big Blue Button)
 - **Annotations collaboratives** : annotation partagée sur images et 3D
 - **Notifications** : email, push navigateur, in-app (nouveau contenu, deadline, live session)
@@ -325,7 +325,7 @@ Mise en place d'une plateforme de formation en ligne (Learning Management System
 - [ ] Scores VERTEX remontés dans le LMS
 - [ ] Examen de certification avec proctoring opérationnel
 - [ ] Paiement par CB et virement fonctionnel
-- [ ] Dashboards apprenant, instructeur et admin opérationnels
+- [ ] Dashboards praticien, instructeur et admin opérationnels
 - [ ] Performance conforme aux SLA (TTFB, LCP, uptime)
 - [ ] Tests de sécurité validés (pentesting, RGPD)
 - [ ] Documentation technique et utilisateur livrée
