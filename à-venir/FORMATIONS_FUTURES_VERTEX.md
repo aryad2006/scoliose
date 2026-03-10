@@ -25,6 +25,7 @@
 | **13** | **Médecine du sport** | — | À venir |
 | **14** | **Ostéoporose** | 🦴 #7D6608 | À venir |
 | **15** | **Obésité et orthopédie** | 🟫 #6C3483 | À venir |
+| **16** | **Tendinites** | 🩶 #5D6D7E | À venir |
 
 ---
 
@@ -625,6 +626,98 @@
 
 ---
 
+### FORMATION 16 — Tendinites et tendinopathies
+
+| Critère | Détail |
+|---------|--------|
+| **Couleur** | 🩶 #5D6D7E |
+| **Volume** | Très fréquent — pathologie musculosquelettique la plus consultée (~30% des consultations en médecine du sport) |
+| **Public cible** | Chirurgiens orthopédistes, médecins du sport, rhumatologues, kinésithérapeutes, médecins de médecine physique |
+| **Modules estimés** | 20-25 modules |
+| **Durée estimée** | ~80h |
+| **Priorité** | ⭐⭐⭐ |
+
+**Contenu prévu** :
+
+1. **Physiopathologie tendineuse**
+   - Structure du tendon : collagène de type I, ténocytes, matrice extracellulaire, organisation hiérarchique (fibrilles, fibres, fascicules)
+   - Vascularisation tendineuse : zones hypovasculaires (zone critique), rôle dans la dégénérescence
+   - Continuum pathologique : tendon normal → tendinopathie réactive → dérégulation (dysrepair) → tendinopathie dégénérative (Cook & Purdam)
+   - Mécanobiologie : méchanotransduction, adaptation à la charge, surcharge, sous-charge
+   - Inflammation vs dégénérescence : abandon du terme « tendinite » au profit de « tendinopathie » — implications cliniques
+
+2. **Tendinopathie du tendon d'Achille**
+   - Tendinopathie corporéale : nodule fusiforme, douleur à la palpation, test de Thomson négatif
+   - Tendinopathie d'insertion (enthésopathie) : calcification, maladie de Haglund, bursite rétrocalcanéenne
+   - Diagnostic : échographie (épaississement, néovascularisation doppler), IRM (signal intra-tendineux)
+   - Traitement conservateur : exercices excentriques (protocole de Alfredson), isométriques, Heavy Slow Resistance (HSR)
+   - Ondes de choc extracorporelles (ESWT)
+   - PRP (Platelet-Rich Plasma) : preuves et limites
+   - Chirurgie : peignage tendineux, résection de Haglund, transfert du FHL (flexor hallucis longus)
+   - Rupture aiguë : traitement fonctionnel vs chirurgie, suture percutanée mini-invasive
+
+3. **Tendinopathie de la coiffe des rotateurs**
+   - Conflit sous-acromial (Neer) : stades I-III
+   - Tendinopathie calcifiante : classification de Gärtner, barbotage (needling) échoguidé, acromioplastie
+   - Tendinopathie du supra-épineux : zone critique de Codman, dégénérescence progressive
+   - Rupture partielle vs transfixiante : stratification du traitement
+   - Rééducation : recentrage de la tête humérale, renforcement des abaisseurs, travail scapulaire
+
+4. **Épicondylalgies (tennis elbow / golfer's elbow)**
+   - Épicondylite latérale (tennis elbow) : anatomopathologie, ECRB (extensor carpi radialis brevis)
+   - Épicondylite médiale (golfer's elbow) : fléchisseurs-pronateurs
+   - Diagnostic clinique : tests de provocation (Cozen, Mill, chaise)
+   - Traitement conservateur : repos relatif, attelle de contre-force, exercices excentriques, infiltration cortisonée (effet court terme, risque long terme)
+   - PRP vs corticoïdes vs prolothérapie : données de la littérature
+   - Chirurgie (si échec > 6-12 mois) : débridement ouvert (Nirschl), arthroscopique, décortication
+
+5. **Tendinopathie patellaire (jumper's knee)**
+   - Pôle inférieur de la rotule : zone d'insertion, stress en stockage d'énergie (sports de saut)
+   - Classification de Blazina : stades I-IV
+   - Diagnostic : échographie (épaississement, zone hypoéchogène), IRM
+   - Programme de rééducation : exercices excentriques sur plan décliné, isométriques (réduction douleur immédiate), HSR
+   - Ondes de choc, PRP, injection de haut volume (high-volume injection)
+   - Chirurgie : excision arthroscopique du pôle inférieur, débridement ouvert
+
+6. **Tendinopathie du moyen fessier (Greater Trochanteric Pain Syndrome — GTPS)**
+   - Syndrome douloureux du grand trochanter : bursite trochantérienne vs tendinopathie glutéale
+   - Facteurs de risque : femme > 40 ans, obésité, déséquilibre biomécanique
+   - Diagnostic clinique : douleur latérale de hanche, tests (Trendelenburg, FABER, résistance abduction)
+   - Imagerie : IRM (signal tendineux, rupture partielle/complète), échographie
+   - Traitement conservateur : modification d'activité, exercices de renforcement glutéal (programme ABC)
+   - Infiltration cortisonée échoguidée : effet transitoire
+   - PRP, ondes de choc : données émergentes
+   - Chirurgie (cas réfractaires) : réparation endoscopique du moyen fessier, bursectomie
+
+7. **Tendinopathie des fibulaires et du tibial postérieur**
+   - Tendinopathie des fibulaires : instabilité, subluxation, ténosynovite
+   - Insuffisance du tibial postérieur : lien avec le pied plat acquis de l'adulte (stades de Johnson)
+   - Ténosynovites spécifiques : de De Quervain (1er compartiment dorsal du poignet)
+
+8. **Thérapies biologiques et régénératives**
+   - PRP : préparation (centrifugation, leucocytes sélectifs), classification (Dohan-Ehrenfest), protocoles d'injection
+   - Prolothérapie : dextrose hypertonique, mécanisme d'action supposé
+   - Cellules souches mésenchymateuses (CSM) : aspirat de moelle osseuse (BMA), tissu adipeux, preuves limitées
+   - Acide hyaluronique péritendineux : lubrification, réduction des adhérences
+   - Facteurs de croissance : VEGF, PDGF, TGF-β — rôle dans la cicatrisation tendineuse
+   - Niveau de preuve actuel : revues systématiques, Cochrane, limites méthodologiques
+
+9. **Imagerie des tendinopathies**
+   - Échographie musculosquelettique : technique, repères, sémiologie (épaississement, hypoéchogénicité, néovascularisation doppler, calcifications)
+   - IRM : séquences (T1, T2, STIR, PD fat sat), signes de tendinopathie, rupture partielle vs complète
+   - Élastographie : évaluation de la rigidité tendineuse, corrélation avec la pathologie
+   - Imagerie interventionnelle : infiltrations échoguidées, barbotage, PRP sous contrôle écho
+
+10. **Rééducation et prévention**
+    - Programmes d'exercices : excentriques, isométriques, Heavy Slow Resistance (HSR), plyométriques progressifs
+    - Gestion de la charge : modèle « charge vs capacité », périodisation, monitoring (douleur sur EVA, volume d'entraînement)
+    - Ondes de choc extracorporelles (ESWT) : radiales vs focales, indications, protocoles
+    - Thérapies physiques adjuvantes : ultrasons, laser, cryothérapie, massage transverse profond (Cyriax)
+    - Orthèses et taping : stabilisation, décharge tendineuse
+    - Prévention : échauffement, renforcement préventif, correction biomécanique, gestion de la charge sportive
+
+---
+
 ## Tableau de synthèse global
 
 | # | Formation | Modules | Heures | Volume chir. France | Simulateur | Tier |
@@ -644,8 +737,9 @@
 | 13 | **Médecine du sport** | 20-25 | ~80h | — | SportSim© | 3 |
 | 14 | **Ostéoporose** | 20-25 | ~85h | ~400 000 fractures | OsteoSim© | 3 |
 | 15 | **Obésité et orthopédie** | 18-22 | ~75h | ~8M patients | BariatSim© | 3 |
-| | **TOTAL** | **368-442** | **~1 410h** | | **15 simulateurs** | |
+| 16 | **Tendinites** | 20-25 | ~80h | ~30% consultations sport | TendonSim© | 3 |
+| | **TOTAL** | **388-467** | **~1 490h** | | **16 simulateurs** | |
 
 ---
 
-*Document stratégique — Plateforme VERTEX© — 8 mars 2026*
+*Document stratégique — Plateforme VERTEX© — 10 mars 2026*
