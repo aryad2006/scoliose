@@ -59,17 +59,17 @@
 
 **Contenu obligatoire** :
 - **Exercices isométriques** (contraction statique sans mouvement) :
-  - Effet antalgique immédiat (inhibition corticale de la douleur — Rio et al., 2015)
+  - Effet antalgique immédiat (inhibition corticale de la douleur — Rio et al., 2015, *Br J Sports Med*)
   - Protocole : 5×45 sec à 70% de la contraction maximale volontaire, 2-3×/jour
   - Indications idéales : phase aiguë/hyperalgique, en-saison chez l'athlète (pré-entraînement), warm-up antalgique
   - Ne modifie PAS la structure tendineuse à long terme → transition vers concentrique/excentrique/HSR nécessaire
 - **Exercices excentiques** (allongement actif du muscle sous charge) :
-  - Protocole historique : Alfredson (Achille), Purdam (patellaire — decline squat)
+  - Protocole historique : Alfredson et al., 1998, *Am J Sports Med* (Achille), Purdam et al., 2004, *Br J Sports Med* (patellaire — decline squat)
   - Paramètres : 3×15 rép × 2 exercices × 2×/jour = 180 rép/jour, 12 semaines, douleur autorisée
   - Mécanisme : stimulus de remodelage collagénique + neuroplasticité antalgique
   - Limites : compliance médiocre (180 rép/jour !), non adapté à toutes les localisations (insertionnelles !)
 - **Heavy Slow Resistance (HSR)** (charge lourde, tempo lent, combinant concentrique + excentrique) :
-  - Protocole : Kongsgaard 2009 (patellaire), adapté pour Achille
+  - Protocole : Kongsgaard et al., 2009, *Scand J Med Sci Sports* (patellaire), adapté pour Achille
   - Paramètres : 3-4 exercices, 4×6-8 rép à >70% 1RM, tempo 3 sec concentrique + 3 sec excentrique, 3×/semaine, 12 semaines
   - Avantages : meilleure compliance (3×/semaine vs 2×/jour), résultats comparables ou supérieurs aux excentriques à 12 mois, satisfaction patient supérieure
   - Mécanisme : stimulus de compression de l'enthèse + traction (proche des contraintes sportives)
@@ -91,9 +91,9 @@
 ### Section 18.3 — Protocoles par localisation
 
 **Contenu obligatoire** :
-- **Achille corporéale** : Alfredson (excentrique 2×/jour) OU HSR (3×/semaine) — efficacité comparable (Beyer et al., 2015)
+- **Achille corporéale** : Alfredson (excentrique 2×/jour) OU HSR (3×/semaine) — efficacité comparable (Beyer et al., 2015, *Scand J Med Sci Sports*)
 - **Achille insertionnelle** : HSR SANS dorsiflexion au-delà du neutre (pas de Alfredson standard qui comprime l'insertion), isométriques en phase aiguë
-- **Patellaire** : isométrique (Rio), HSR (Kongsgaard) > excentriques purs (Purdam) — gestion de la charge de saut +++
+- **Patellaire** : isométrique (Rio et al., 2015), HSR (Kongsgaard et al., 2009) > excentriques purs (Purdam et al., 2004) — gestion de la charge de saut +++
 - **Glutéale (GTPS)** : programme GLoBE (Mellor) — isométrique → isotonique → fonctionnel, éviction des charges compressives en adduction
 - **Coiffe des rotateurs** : renforcement des abaisseurs de tête (proprioception + force), exercices scapulaires, éviction des mouvements overhead douloureux
 - **Épicondylalgie latérale** : Tyler twist (Flexbar), HSR progressif, renforcement de la préhension
@@ -115,7 +115,7 @@
   - Critères fonctionnels : hop test, tests sport-spécifiques
   - Critères psychologiques : confiance, absence d'appréhension
 - **Modèle de retour progressif** : volume sportif à 50% → progression 10-20% par semaine → retour à 100% sur 4-6 semaines → monitoring continu
-- **Récidive** : 25-30% dans les 12 mois après RTS → importance de la prévention secondaire (exercices de maintien, gestion de la charge)
+- **Récidive** : 25-30% dans les 12 mois après RTS (Silbernagel et al., 2007, *Am J Sports Med*) → importance de la prévention secondaire (exercices de maintien, gestion de la charge)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -272,8 +272,8 @@
 ### Section 20.2 — PRP : preuves d'efficacité par localisation
 
 **Contenu obligatoire** :
-- **Tendinopathie d'Achille** : méta-analyses contradictoires — certaines positives (bénéfice modeste à 3 mois), d'autres négatives (pas de bénéfice vs placebo à 12 mois — de Vos RCT 2010). Evidence : FAIBLE — PAS recommandé en routine
-- **Épicondylalgie latérale** : les MEILLEURES données — PRP > corticoïdes à 12 mois (Mishra RCT, Peerbooms RCT) — mais toujours inférieur à l'exercice seul dans certaines études. Evidence : MODÉRÉE
+- **Tendinopathie d'Achille** : méta-analyses contradictoires — certaines positives (bénéfice modeste à 3 mois), d'autres négatives (pas de bénéfice vs placebo à 12 mois — de Vos et al., 2010, *JAMA*). Evidence : FAIBLE — PAS recommandé en routine
+- **Épicondylalgie latérale** : les MEILLEURES données — PRP > corticoïdes à 12 mois (Mishra et al., 2014, *Am J Sports Med* ; Peerbooms et al., 2010, *Am J Sports Med*) — mais toujours inférieur à l'exercice seul dans certaines études. Evidence : MODÉRÉE
 - **Tendinopathie patellaire** : études contradictoires, hétérogénéité méthodologique majeure — pas de recommandation forte. Evidence : FAIBLE
 - **Coiffe des rotateurs** : le PRP en complément de la chirurgie (augmentation biologique de la réparation) → certaines méta-analyses montrent une amélioration du taux de cicatrisation (surtout petites/moyennes ruptures), pas de bénéfice clair pour les ruptures larges. Evidence : MODÉRÉE pour l'augmentation chirurgicale
 - **Fasciose plantaire** : PRP > corticoïdes à 12 mois dans certains RCT. Evidence : MODÉRÉE
@@ -351,11 +351,11 @@
 
 **Contenu obligatoire** :
 - **Effets bénéfiques** : puissant anti-inflammatoire, analgésie rapide (24-48h), réduction de l'œdème, amélioration fonctionnelle immédiate
-- **Effets néfastes (biologiques)** : inhibition de la synthèse de collagène (↓ 50% pendant 14 jours), ↓ prolifération des ténocytes, nécrose focale, ↑ expression des MMP (enzymes de dégradation), fragilisation tendineuse → ↑ risque de rupture
+- **Effets néfastes (biologiques)** : inhibition de la synthèse de collagène (↓ 50% pendant 14 jours — Wong et al., 2004, *Clin J Sport Med*), ↓ prolifération des ténocytes, nécrose focale, ↑ expression des MMP (enzymes de dégradation), fragilisation tendineuse → ↑ risque de rupture
 - **Le paradoxe des corticoïdes dans les tendinopathies** :
   - Tendinopathie = PAS une inflammation (tendinose dégénérative) → les anti-inflammatoires n'ont pas de cible biologique logique
   - À court terme : soulagement symptomatique (4-6 semaines) par l'effet antalgique
-  - À long terme : aggravation structurelle + rechute + résultats INFÉRIEURS au placebo (Coombes 2010, épicondylalgie)
+  - À long terme : aggravation structurelle + rechute + résultats INFÉRIEURS au placebo (Coombes et al., 2010, *Lancet*)
 - **BONNES indications des corticoïdes péri-tendineux** :
   - Bourses séreuses : bursite sous-acromiale, bursite rétro-calcanéenne, bursite trochantérienne, bourse de la patte d'oie (les bourses SONT inflammatoires)
   - Gaines synoviales : ténosynovite de De Quervain, trigger finger (inflammation de la gaine)
@@ -363,10 +363,10 @@
   - « Fenêtre thérapeutique » : injection unique pour permettre au patient de commencer la rééducation
 - **MAUVAISES indications / CONTRE-INDICATIONS** :
   - Injection intra-tendineuse (risque de rupture ++++)
-  - Tendinopathie d'Achille : CONTRE-INDIQUÉ en péri-achilléen (risque de rupture ×3.7)
+  - Tendinopathie d'Achille : CONTRE-INDIQUÉ en péri-achilléen (risque de rupture ×3.7 — van Sterkenburg & van Dijk, 2011, *Br J Sports Med*)
   - Tendinopathie patellaire : risque de rupture du tendon patellaire
   - Injections répétées >3/an au même site : dégradation cumulative
-  - Épicondylalgie latérale en routine : paradoxe Coombes — résultat NÉGATIF à long terme
+  - Épicondylalgie latérale en routine : paradoxe Coombes (Coombes et al., 2010, *Lancet*) — résultat NÉGATIF à long terme
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -386,7 +386,7 @@
   - Toujours combiné avec un anesthésique local (lidocaïne) : effet diagnostique (si disparition de la douleur = confirmation du diagnostic)
 - **Guidage échographique** :
   - RECOMMANDÉ pour toutes les infiltrations péri-tendineuses
-  - Améliore la précision : 90-95% vs 60-70% en aveugle (pour l'espace sous-acromial, plus grande différence pour les petites cibles)
+  - Améliore la précision : 90-95% vs 60-70% en aveugle (Hashiuchi et al., 2011, *J Shoulder Elbow Surg* ; pour l'espace sous-acromial, plus grande différence pour les petites cibles)
   - Réduit les complications : injection intra-tendineuse accidentelle → rupture
   - OBLIGATOIRE pour : PRP, HVI, barbotage de calcification, gaine des fléchisseurs, 1er compartiment de De Quervain avec septum
 
@@ -401,8 +401,8 @@
 
 **Contenu obligatoire** :
 - **Acide hyaluronique (AH) péri-tendineux** : lubrifiant biologique, ↓ friction, ↓ adhérences — evidence modeste pour l'adhésive capsulite et les ténosynovites, pas de preuve forte pour les tendinopathies
-- **Polidocanol (agent sclérosant)** : injection sous guidage doppler couleur dans les néovaisseaux → destruction des néovaisseaux + néonerfs = réduction de la douleur — utilisé pour tendinopathie d'Achille, résultats prometteurs (Alfredson, Ohberg) mais difficile à reproduire
-- **GTN (glyceryl trinitrate) topique** : patch de trinitrine sur le tendon → ↑ NO → stimulation de la synthèse de collagène, angiogenèse — evidence modérée pour Achille et épicondylalgie (Paoloni 2003), effet secondaire : céphalées
+- **Polidocanol (agent sclérosant)** : injection sous guidage doppler couleur dans les néovaisseaux → destruction des néovaisseaux + néonerfs = réduction de la douleur — utilisé pour tendinopathie d'Achille, résultats prometteurs (Ohberg & Alfredson, 2002, *Knee Surg Sports Traumatol Arthrosc*) mais difficile à reproduire
+- **GTN (glyceryl trinitrate) topique** : patch de trinitrine sur le tendon → ↑ NO → stimulation de la synthèse de collagène, angiogenèse — evidence modérée pour Achille et épicondylalgie (Paoloni et al., 2004, *J Bone Joint Surg Am*), effet secondaire : céphalées
 - **Toxine botulique** : injection dans les muscles extenseurs du poignet → ↓ tension sur l'ECRB → soulagement de l'épicondylalgie — evidence faible, effet temporaire
 
 **Médias** :
@@ -416,7 +416,7 @@
 1. Les corticoïdes ont un effet NÉFASTE biologique sur le tendon — inhibition du collagène, risque de rupture
 2. BONNES indications : bourses, gaines synoviales, calcification en crise — MAUVAISES : intra-tendineux, Achille, patellaire
 3. Le guidage échographique améliore la précision de 60-70% à 90-95%
-4. Le paradoxe des corticoïdes dans l'épicondylalgie (Coombes) : bénéfice court terme, résultat INFÉRIEUR à long terme
+4. Le paradoxe des corticoïdes dans l'épicondylalgie (Coombes et al., 2010, *Lancet*) : bénéfice court terme, résultat INFÉRIEUR à long terme
 5. Les alternatives (polidocanol, GTN) sont prometteuses mais manquent de données de haut niveau
 
 ### Auto-évaluation
@@ -454,7 +454,7 @@
 - **Définition de l'échec conservateur** : persistance de douleur et de limitation fonctionnelle MALGRÉ un traitement conservateur BIEN CONDUIT (vérifier !) et PENDANT une DURÉE SUFFISANTE
 - **Durée minimale de traitement conservateur avant chirurgie** :
   - Tendinopathie corporéale (Achille, patellaire, coiffe) : ≥6 mois de traitement bien conduit
-  - Épicondylalgie latérale : ≥12 mois (résolution spontanée 80-90% à 12-18 mois !)
+  - Épicondylalgie latérale : ≥12 mois (résolution spontanée 80-90% à 12-18 mois — Bisset et al., 2006, *BMJ*)
   - De Quervain : 2-3 infiltrations sans succès
   - Trigger finger : 2 infiltrations sans succès (grade III-IV)
   - Calcification tendinite : ≥6 mois si symptomatique
@@ -468,7 +468,7 @@
   - Limitation significative des activités professionnelles/sportives/de la vie quotidienne
   - Imagerie concordante (nodule dégénératif, rupture partielle, calcification)
   - Patient informé et motivé
-- **Résultats globaux de la chirurgie des tendinopathies** : satisfaction 70-90% (selon la localisation), retour au sport : 50-80% (au niveau antérieur), complications : 5-15%
+- **Résultats globaux de la chirurgie des tendinopathies** : satisfaction 70-90% (selon la localisation), retour au sport : 50-80% (au niveau antérieur), complications : 5-15% (Defined et al., Maffulli et al., 2010, *Sports Med*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -533,7 +533,7 @@
 ### Section 23.1 — Médicaments et tendons : pharmacovigilance
 
 **Contenu obligatoire** :
-- **Fluoroquinolones** : risque de tendinopathie (3-4× RR) et de rupture tendineuse (1.5-2.5× RR), surtout ciprofloxacine et lévofloxacine
+- **Fluoroquinolones** : risque de tendinopathie (3-4× RR) et de rupture tendineuse (1.5-2.5× RR) (Khaliq & Zhanel, 2003, *Clin Infect Dis*), surtout ciprofloxacine et lévofloxacine
   - Mécanisme : toxicité directe sur les ténocytes (↑ MMP, ↓ collagène, dégradation de la MEC), chélation du magnésium
   - Délai : médian 6 jours (range 2h à 6 mois), peut survenir jusqu'à 6 mois APRÈS l'arrêt
   - Facteurs aggravants : >60 ans, corticothérapie, insuffisance rénale, sport
@@ -541,8 +541,8 @@
   - CAT : ARRÊT IMMÉDIAT de la fluoroquinolone + mise au repos relatif + surveillance
   - FDA black box warning (2016) : risque de tendinopathie et rupture
 - **Corticoïdes systémiques** : fragilisation tendineuse diffuse (↓ synthèse de collagène, ↓ prolifération ténocytes) — risque accru si >3 mois de traitement ou bolus IV
-- **Statines** : myalgies fréquentes (5-10%), tendinopathie plus rare mais décrite (Achille, coiffe, épicondyliens) — mécanisme mal compris → si tendinopathie sous statine, discuter avec le cardiologue (switch ou arrêt temporaire)
-- **Inhibiteurs de l'aromatase** : utilisés dans le cancer du sein → arthralgies/tendinopathies fréquentes (arthromyalgies sous anti-aromatases ≈ 40-50%) — mécanisme : déplétion estrogénique → effet négatif sur le collagène
+- **Statines** : myalgies fréquentes (5-10% — Stroes et al., 2015, *Eur Heart J*), tendinopathie plus rare mais décrite (Achille, coiffe, épicondyliens) — mécanisme mal compris → si tendinopathie sous statine, discuter avec le cardiologue (switch ou arrêt temporaire)
+- **Inhibiteurs de l'aromatase** : utilisés dans le cancer du sein → arthralgies/tendinopathies fréquentes (arthromyalgies sous anti-aromatases ≈ 40-50% — Crew et al., 2007, *J Clin Oncol*) — mécanisme : déplétion estrogénique → effet négatif sur le collagène
 - **Rétinoïdes** (isotrétinoïne/Roaccutane)** : risque de calcifications tendineuses, enthésopathies
 - **Anticoagulants** : pas de risque direct mais attention aux infiltrations (risque hémorragique)
 
@@ -563,7 +563,7 @@
   - Précautions : risque gastro-intestinal, rénal, cardiovasculaire (surtout chez les >60 ans et les comorbidités)
 - **AINS topiques** (diclofénac gel, kétoprofène gel) :
   - Bonne pénétration pour les tendons superficiels (Achille, épicondyliens, patellaire)
-  - Efficacité modeste (NNT ≈ 7-10 pour les douleurs musculosquelettiques)
+  - Efficacité modeste (NNT ≈ 7-10 pour les douleurs musculosquelettiques — Derry et al., 2015, *Cochrane Database Syst Rev*)
   - Moins d'effets systémiques → préférable aux AINS oraux pour les tendinopathies superficielles
 - **Paracétamol** : efficacité faible dans les douleurs musculosquelettiques (Cochrane : PAS de bénéfice significatif vs placebo pour les lombalgies et l'arthrose) — usage habituel mais pas de preuve forte
 
@@ -587,6 +587,32 @@
 - 3 QCM Argent (mécanismes toxiques, CAT, prescription raisonnée)
 - 2 QCM Or (cas : patient polymédiqué avec tendinopathie → identification des coupables, adaptation)
 - 1 QCM Diamant (cas : femme 58 ans sous anti-aromatase + statine avec polytendinopathie → analyse pharmacologique complète)
+
+---
+
+## Références — Partie 7
+
+1. Alfredson H, Pietilä T, Jonsson P, et al. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. *Am J Sports Med*. 1998;26(3):360-366.
+2. Beyer R, Kongsgaard M, Hougs Kjær B, et al. Heavy Slow Resistance Versus Eccentric Training as Treatment for Achilles Tendinopathy. *Scand J Med Sci Sports*. 2015;25(5):e484-e491.
+3. Bisset L, Beller E, Jull G, et al. Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow. *BMJ*. 2006;333(7575):939.
+4. Coombes BK, Bisset L, Vicenzino B. Efficacy and safety of corticosteroid injections and other injections for management of tendinopathy. *Lancet*. 2010;376(9754):1751-1767.
+5. Crew KD, Greenlee H, Capodice J, et al. Prevalence of joint symptoms in postmenopausal women taking aromatase inhibitors for early-stage breast cancer. *J Clin Oncol*. 2007;25(25):3877-3883.
+6. de Vos RJ, Weir A, van Schie HT, et al. Platelet-rich plasma injection for chronic Achilles tendinopathy: a randomized controlled trial. *JAMA*. 2010;303(2):144-149.
+7. Derry S, Moore RA, Gaskell H, et al. Topical NSAIDs for acute musculoskeletal pain in adults. *Cochrane Database Syst Rev*. 2015;(6):CD007402.
+8. Hashiuchi T, Sakurai G, Morimoto M, et al. Accuracy of the subacromial injection: a prospective randomized magnetic resonance imaging study. *J Shoulder Elbow Surg*. 2011;20(7):1069-1073.
+9. Khaliq Y, Zhanel GG. Fluoroquinolone-associated tendinopathy: a critical review of the literature. *Clin Infect Dis*. 2003;36(11):1404-1410.
+10. Kongsgaard M, Kovanen V, Aagaard P, et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. *Scand J Med Sci Sports*. 2009;19(6):790-802.
+11. Maffulli N, Longo UG, Denaro V. Novel approaches for the management of tendinopathy. *Sports Med*. 2010;40(9):1-18.
+12. Mishra AK, Skrepnik NV, Edwards SG, et al. Efficacy of platelet-rich plasma for chronic tennis elbow. *Am J Sports Med*. 2014;42(2):463-471.
+13. Ohberg L, Alfredson H. Ultrasound guided sclerosis of neovessels in painful chronic Achilles tendinosis. *Knee Surg Sports Traumatol Arthrosc*. 2002;36(3):173-177.
+14. Paoloni JA, Appleyard RC, Nelson J, et al. Topical glyceryl trinitrate treatment of chronic noninsertional Achilles tendinopathy. *J Bone Joint Surg Am*. 2004;86(5):916-922.
+15. Peerbooms JC, Sluimer J, Bruijn DJ, et al. Positive effect of an autologous platelet concentrate in lateral epicondylitis. *Am J Sports Med*. 2010;38(2):255-262.
+16. Purdam CR, Jonsson P, Alfredson H, et al. A pilot study of the eccentric decline squat in the management of painful chronic patellar tendinopathy. *Br J Sports Med*. 2004;38(4):395-397.
+17. Rio E, Kidgell D, Purdam C, et al. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. *Br J Sports Med*. 2015;49(19):1277-1283.
+18. Silbernagel KG, Thomeé R, Eriksson BI, et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy. *Am J Sports Med*. 2007;35(6):897-906.
+19. Stroes ES, Thompson PD, Corsini A, et al. Statin-associated muscle symptoms: impact on statin therapy. *Eur Heart J*. 2015;36(17):1012-1022.
+20. van Sterkenburg MN, van Dijk CN. Injection treatment for chronic midportion Achilles tendinopathy. *Br J Sports Med*. 2011;45:1068-1076.
+21. Wong MW, Tang YN, Fu SC, et al. Triamcinolone suppresses human tenocyte cellular activity and collagen synthesis. *Clin J Sport Med*. 2004;14(6):338-343.
 
 ---
 

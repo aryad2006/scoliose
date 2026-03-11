@@ -35,7 +35,7 @@ Fracture-tassement • Burst fracture • Fracture-distraction (Chance) • Frac
 
 ---
 
-## 23.2 Classification AO Spine (2013)
+## 23.2 Classification AO Spine (Vaccaro et al., 2013, *Spine*)
 
 | Type | Mécanisme | Instabilité |
 |------|-----------|------------|
@@ -51,7 +51,7 @@ Fracture-tassement • Burst fracture • Fracture-distraction (Chance) • Frac
 
 ---
 
-## 23.3 Évaluation neurologique — Score ASIA
+## 23.3 Évaluation neurologique — Score ASIA (ASIA/IMSOP, 2003, *Spinal Cord*)
 
 | Grade | Description |
 |-------|-----------|
@@ -149,6 +149,15 @@ Fracture-tassement • Burst fracture • Fracture-distraction (Chance) • Frac
 > 📌 **5.** La **méthylprednisolone** n'est PLUS recommandée dans les traumatismes médullaires.
 
 > 📌 **6.** Dégradation neurologique progressive = indicaton chirurgicale en **urgence < 6–8h**.
+
+---
+
+## Références
+
+1. Vaccaro AR, Oner C, Kepler CK, et al. AOSpine thoracolumbar spine injury classification system. *Spine*. 2013;38(23):2028-2037.
+2. American Spinal Injury Association / International Medical Society of Paraplegia. International Standards for Neurological Classification of SCI (ISNCSCI). *Spinal Cord*. 2003;41:67-80.
+3. Fehlings MG, Vaccaro A, Wilson JR, et al. Early versus delayed decompression for traumatic cervical spinal cord injury (STASCIS). *PLoS One*. 2012;7(2):e32037.
+4. Hadley MN, Walters BC, Grabb PA, et al. Pharmacological therapy after acute cervical spinal cord injury (AANS/CNS Guidelines). *Neurosurgery*. 2013;72(Suppl 2):93-105.
 
 ---
 

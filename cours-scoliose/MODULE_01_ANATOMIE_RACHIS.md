@@ -84,7 +84,7 @@ La vertèbre cervicale typique se distingue par :
 - **Anneau osseux** sans corps vertébral ni processus épineux véritable
 - **Masses latérales** : surfaces articulaires supérieures concaves (condyles occipitaux), inférieures plates (C2)
 - **Arc antérieur** : à la face postérieure, la *fovea dentis* (cavité articulaire pour la dent de l'axis)
-- **Arc postérieur** : sillon de l'artère vertébrale (risque chirurgical : lésion de l'artère vertébrale lors de la mise en place de vis en C1 — technique de Harms/Goel)
+- **Arc postérieur** : sillon de l'artère vertébrale (risque chirurgical : lésion de l'artère vertébrale lors de la mise en place de vis en C1 — technique de Harms/Goel ; Harms & Melcher, 2001, *Spine* ; Goel et al., 1998)
 - **Ligament transverse** : maintient la dent de l'axis, essentiel pour la stabilité C1-C2
 
 **Axis (C2)** :
@@ -175,7 +175,7 @@ Les vertèbres lombaires sont les plus volumineuses, adaptées au port de charge
 
 > [MEDIA: 📐 M01-S01-007 — Schéma sacrum et coccyx (3 vues)]
 
-**Pertinence clinique** : L'instrumentation sacrée (vis iliaques, vis S1, vis S2-alar-iliac) est nécessaire dans les fusions longues s'étendant au sacrum. La fixation sacrée est le maillon faible des montages longs (risque de pseudarthrose L5-S1 = 24%).
+**Pertinence clinique** : L'instrumentation sacrée (vis iliaques, vis S1, vis S2-alar-iliac) est nécessaire dans les fusions longues s'étendant au sacrum. La fixation sacrée est le maillon faible des montages longs (risque de pseudarthrose L5-S1 = 24% ; Kim et al., 2006, *Spine*).
 
 ### 1.1.6 Comparaison synthétique des vertèbres
 
@@ -205,6 +205,8 @@ Les variations anatomiques normales sont fréquentes et cliniquement importantes
 | **Spina bifida occulta** | 10-20% | Arc postérieur S1 non fusionné, découverte fortuite |
 | **Bloc vertébral congénital** | 0,5-1% | Fusion de 2 vertèbres, limitation de mobilité segmentaire |
 | **Os odontoïdeum** | Rare | Ossicule séparé en lieu et place de la dent de l'axis, instabilité C1-C2 |
+
+*Sources prévalences : lombalisation et sacralisation (Castellvi et al., 1984, Spine) ; spina bifida occulta (Eubanks & Cheung, 2009, Spine J)*
 
 **Point clé** : En chirurgie de la scoliose, toujours vérifier le nombre de vertèbres (radiographie du rachis entier ou IRM) pour éviter les erreurs de niveau opératoire (wrong level surgery).
 
@@ -249,7 +251,7 @@ Le segment mobile peut être divisé en :
 | **Structures passives** | Stabilité | Ligaments, capsule articulaire |
 | **Structures actives** | Stabilité dynamique | Muscles (multifides, rotateurs) |
 
-Le concept de Panjabi (1992) identifie **trois sous-systèmes de stabilité** :
+Le concept de Panjabi (1992, *J Spinal Disord*) identifie **trois sous-systèmes de stabilité** :
 1. **Sous-système passif** : vertèbres, disques, ligaments — opérationnel en fin d'amplitude
 2. **Sous-système actif** : muscles et tendons — contrôle dans la zone neutre
 3. **Sous-système neural** : proprioception, contrôle neuromusculaire — coordination
@@ -292,7 +294,7 @@ Les articulations facettaires sont des articulations synoviales planes (arthrodi
 | Lombaire | ~90° sagittal | Flexion/extension | Rotation axiale |
 | Jonction thoraco-lombaire (T12-L1) | Transition frontale → sagittale | Zone de transition mécanique | — |
 
-**Tropisme facettaire** : asymétrie d'orientation des facettes droite/gauche au même niveau. Prévalence : 20-40%. Association discutée avec la dégénérescence discale et la scoliose dégénérative (potentiel facteur de rotation vertébrale asymétrique).
+**Tropisme facettaire** : asymétrie d'orientation des facettes droite/gauche au même niveau. Prévalence : 20-40% (Noren et al., 1991, *Spine*). Association discutée avec la dégénérescence discale et la scoliose dégénérative (potentiel facteur de rotation vertébrale asymétrique).
 
 **Pertinence clinique — Rotation et scoliose** : La rotation vertébrale est présente dans **toute** scoliose (thoracique, lombaire ou thoraco-lombaire) — c'est le 3ᵉ plan de la déformation tridimensionnelle. Cependant, les facettes thoraciques (plan frontal) **facilitent** la rotation, qui atteint souvent 20-40° au thoracique contre 10-20° au lombaire (facettes sagittales plus restrictives). Au niveau thoracique, la rotation entraîne les côtes et produit la **gibbosité costale** ; au niveau lombaire, elle provoque une **voussure paravertébrale** (bourrelet musculaire palpable à la flexion antérieure).
 
@@ -312,7 +314,7 @@ Le rachis est stabilisé par 7 ligaments principaux :
 | **Ligament intertransversaire** | Entre les processus transverses | Limite la flexion latérale | 50-100 | Dans le champ opératoire des abords postérolatéraux |
 | **Capsule articulaire (facettes)** | Autour des zygapophyses | Limite la rotation et la translation | 150-300 | Résection = instabilité segmentaire → nécessité de fusion |
 
-**Concept clé** : La séquence de défaillance ligamentaire en flexion (Panjabi & White, 1990) :
+**Concept clé** : La séquence de défaillance ligamentaire en flexion (White & Panjabi, *Clinical Biomechanics of the Spine*, 2nd ed., 1990) :
 1. Ligament supra-épineux
 2. Capsule facettaire
 3. Ligament jaune
@@ -808,6 +810,12 @@ Lorsque l'équilibre sagittal est perturbé (perte de lordose, augmentation de l
 13. Barrey C, Roussouly P, Le Huec JC, et al. Compensatory mechanisms contributing to keep the sagittal balance of the spine. *Eur Spine J*. 2013;22(Suppl 6):S834-S841.
 14. Weinstein SL, Dolan LA, Spratt KF, et al. Health and function of patients with untreated idiopathic scoliosis: a 50-year natural history study. *JAMA*. 2003;289(5):559-567.
 15. Adamkiewicz A. Die Blutgefässe des menschlichen Rückenmarkes. *Sitzungsber Akad Wiss Wien*. 1882;85:101-130.
+16. Harms J, Melcher RP. Posterior C1-C2 fusion with polyaxial screw and rod fixation. *Spine*. 2001;26(22):2467-2471.
+17. Goel A, Desai KI, Muzumdar DP. Atlantoaxial fixation using plate and screw method. *J Neurosurg (Spine)*. 1998;89:1002-1007.
+18. Kim YJ, Bridwell KH, Lenke LG, et al. Pseudarthrosis in long adult spinal deformity instrumentation and fusion to the sacrum. *Spine*. 2006;31(20):2329-2336.
+19. Castellvi AE, Goldstein LA, Chan DPK. Lumbosacral transitional vertebrae and their relationship with lumbar extradural defects. *Spine*. 1984;9(5):493-495.
+20. Eubanks JD, Cheung KS. Prevalence of lumbar spina bifida occulta. *Spine J*. 2009;9(4):278-284.
+21. Noren R, Trafimow J, Andersson GB, Huckman MS. The role of facet joint tropism and facet angle in disc degeneration. *Spine*. 1991;16(5):530-532.
 
 ---
 

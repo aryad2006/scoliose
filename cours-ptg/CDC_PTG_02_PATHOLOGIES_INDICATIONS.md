@@ -29,7 +29,7 @@
   - Épaisseur : 2-4 mm au genou (plus épais que la hanche)
   - Cartilage hyalin : surface lisse, blanc nacré, avasculaire, aneural, alymphatique
   - Répartition : plus épais en zone de charge, plus fin en périphérie
-  - Coefficient de friction : 0.001-0.01 (plus glissant que la glace sur la glace !)
+  - Coefficient de friction : 0.001-0.01 *(Mow et al., 1992)* (plus glissant que la glace sur la glace !)
 - Structure microscopique — 4 zones
   - Zone superficielle (tangentielle, 10-20%) : fibres de collagène II tangentielles, chondrocytes aplatis, résistance au cisaillement
   - Zone transitionnelle (40-60%) : fibres obliques aléatoires, chondrocytes ronds, transition mécanique
@@ -51,7 +51,7 @@
   - Pas de vascularisation directe → nutrition par imbibition (diffusion depuis le liquide synovial)
   - Cycle charge-décharge : « pompe » le liquide synovial dans et hors du cartilage
   - Conséquence : l'immobilisation prolongée affame le cartilage → dégénérescence
-  - Turnover très lent : collagène = demi-vie > 100 ans (pas de remplacement possible !)
+  - Turnover très lent : collagène = demi-vie > 100 ans *(Verzijl et al., 2000)* (pas de remplacement possible !)
 > [MEDIA: 🎬 MPTG05-S01-001 — Animation de la structure en 4 zones du cartilage articulaire : orientation des fibres, distribution des chondrocytes (Observez la transition mécanique des zones superficielle à profonde)]
 > [MEDIA: 🎬 MPTG05-S01-002 — Animation du mécanisme de lubrification : film de liquide synovial, weeping lubrication, boundary lubrication (Pourquoi le coefficient de friction est-il si bas ?)]
 > [MEDIA: 📐 MPTG05-S01-003 — Schéma du cycle de nutrition du cartilage par imbibition : charge → expulsion d'eau → décharge → ré-absorption (Expliquez pourquoi le mouvement est essentiel)]
@@ -87,25 +87,25 @@
 
 ### 5.3 Classifications de la gonarthrose
 
-- Classification radiologique de Kellgren-Lawrence (1957)
+- Classification radiologique de Kellgren-Lawrence *(Kellgren & Lawrence, 1957, Ann Rheum Dis)*
   - Grade 0 : normal
   - Grade 1 : pincement douteux, ostéophytes marginaux possibles
   - Grade 2 : ostéophytes certains, pincement modéré
   - Grade 3 : ostéophytes multiples, pincement franc, sclérose sous-chondrale, ébauche de déformation
   - Grade 4 : pincement sévère/nul (os-sur-os), ostéophytes volumineux, sclérose, déformation
   - Limites : reproductibilité inter-observateur modérée, ne prédit pas la douleur
-- Classification arthroscopique de l'ICRS (International Cartilage Regeneration & Joint Preservation Society)
+- Classification arthroscopique de l'ICRS (International Cartilage Regeneration & Joint Preservation Society) *(Brittberg & Winalski, 2003, J Bone Joint Surg Am)*
   - Grade 0 : normal
   - Grade 1 : lésion superficielle (fissures, ramollissement)
   - Grade 2 : lésion < 50% de l'épaisseur
   - Grade 3 : lésion > 50% de l'épaisseur (3A, 3B, 3C, 3D)
   - Grade 4 : lésion trans-chondrale atteignant l'os sous-chondral
-- Classification d'Outerbridge (arthroscopique — genou)
+- Classification d'Outerbridge *(Outerbridge, 1961, J Bone Joint Surg Br)* (arthroscopique — genou)
   - Grade I : ramollissement, boursouflure
   - Grade II : fissuration < 1.5 cm de diamètre
   - Grade III : fissuration > 1.5 cm, lésion profonde sans mise à nu de l'os
   - Grade IV : os sous-chondral exposé
-- Classification d'Ahlbäck (radiologique — genoux en charge)
+- Classification d'Ahlbäck *(Ahlbäck, 1968, Acta Radiol Suppl)* (radiologique — genoux en charge)
   - Stade 1 : pincement < 50%
   - Stade 2 : disparition de l'interligne
   - Stade 3 : usure osseuse < 5 mm
@@ -121,21 +121,21 @@
 ### 5.4 Facteurs de risque de la gonarthrose
 
 - Facteurs non modifiables
-  - Âge : incidence exponentielle après 50 ans (50% des > 65 ans ont des signes radiologiques)
+  - Âge : incidence exponentielle après 50 ans (50% des > 65 ans ont des signes radiologiques) *(Felson et al., 1987)*
   - Sexe : femmes > hommes après 55 ans (facteur hormonal, laxité, morphologie)
-  - Génétique : héritabilité 40-65% (gènes du collagène, GDF5, SMAD3)
+  - Génétique : héritabilité 40-65% *(Valdes & Spector, 2011)* (gènes du collagène, GDF5, SMAD3)
   - Ethnie : variations de prévalence (plus fréquente chez les Asiatiques — usage accroupi)
   - Morphologie : varus/valgus constitutionnel, dysplasie
 - Facteurs modifiables
-  - Obésité : facteur #1, chaque kg en plus = 4 kg de surcharge sur le genou
+  - Obésité : facteur #1, chaque kg en plus = 4 kg de surcharge sur le genou *(Messier et al., 2005)*
   - Activité professionnelle : travail accroupi, port de charges, escaliers répétés
   - Sport : football, rugby, ski → traumatismes → arthrose secondaire
   - Traumatismes : fracture articulaire, lésion méniscale, rupture du LCA
-  - Méniscectomie : multiplie le risque par 5-7 à 20 ans
+  - Méniscectomie : multiplie le risque par 5-7 à 20 ans *(Englund et al., 2003)*
   - Faiblesse musculaire : quadriceps faible → perte de l'amortissement dynamique
 - Facteurs protecteurs
   - Activité physique modérée (marche, vélo, natation) → nutrition du cartilage
-  - Perte de poids : réduction de 5 kg = réduction de 50% des symptômes
+  - Perte de poids : réduction de 5 kg = réduction de 50% des symptômes *(Christensen et al., 2007)*
   - Renforcement musculaire : quadriceps et ischio-jambiers → stabilisation dynamique
 > [MEDIA: 📊 MPTG05-S04-001 — Infographie des facteurs de risque de la gonarthrose : modifiables vs non modifiables, avec niveau de preuve (Identifiez les 3 facteurs sur lesquels le patient peut agir)]
 
@@ -153,7 +153,7 @@
   - Orthèses : genouillère de recentrage, orthèse de valgisation (unloading brace)
   - Semelles orthopédiques : coin latéral (varus)
 - Traitements chirurgicaux conservateurs
-  - Arthroscopie de débridement (lavage) : plus recommandé (études Moseley, Kirkley — niveau I)
+  - Arthroscopie de débridement (lavage) : plus recommandé (études Moseley et al., 2002 ; Kirkley et al., 2008 — *N Engl J Med* — niveau I)
   - Ostéotomie tibiale de valgisation (OTV) : patient jeune (< 60 ans), varus, compartiment médial isolé, activité sportive
   - Ostéotomie fémorale de varisation : rare, valgus fémoral, compartiment latéral
   - Microfractures, mosaïcplastie, greffe de chondrocytes : lésions focales chez le patient jeune
@@ -228,7 +228,7 @@
 ### 6.3 Arthrose post-traumatique
 
 - Fractures articulaires du genou
-  - Fracture du plateau tibial (Schatzker I-VI) → incongruence articulaire résiduelle
+  - Fracture du plateau tibial (Schatzker I-VI) *(Schatzker et al., 1979, Clin Orthop)* → incongruence articulaire résiduelle
   - Fracture supracondylienne du fémur → cal vicieux avec désaxation
   - Fracture patellaire → arthrose fémoro-patellaire secondaire
 - Particularités pour la PTG
@@ -243,7 +243,7 @@
 ### 6.4 Séquelles d'ostéotomie
 
 - Gonarthrose après ostéotomie tibiale de valgisation (OTV)
-  - L'OTV retarde la PTG de 7-10 ans en moyenne
+  - L'OTV retarde la PTG de 7-10 ans en moyenne *(Flecher et al., 2006)*
   - Modifications anatomiques : pente tibiale augmentée, patella baja, déformation métaphysaire, rotation tibiale
   - Cicatrices médiales ou latérales → risque de nécrose cutanée
   - Particularités techniques : coupes tibiales modifiées, extraction du matériel, risque de fracture
@@ -259,7 +259,7 @@
 ### 6.6 Hémophilie et arthropathie hémophilique
 
 - Hémarthrose récurrente → synovite chronique → destruction articulaire
-- Classification d'Arnold-Hilgartner (I-V)
+- Classification d'Arnold-Hilgartner *(Arnold & Hilgartner, 1977, J Bone Joint Surg Am)* (I-V)
 - Spécificités : os poreux, rétraction capsulaire, flexum marqué, fibrose intra-articulaire
 - Gestion de l'hémostase périopératoire (facteur VIII ou IX, émicizumab)
 - Résultats de la PTG : satisfaisants mais plus de complications (infection, raideur)
@@ -313,7 +313,7 @@
   - Statut tabagique (impact cicatrisation, risque de complications)
 - Attentes du patient
   - ESSENTIEL : évaluer les attentes réalistes vs irréalistes
-  - 15-20% d'insatisfaction après PTG → majoritairement liée à des attentes irréalistes
+  - 15-20% d'insatisfaction après PTG *(Bourne et al., 2010)* → majoritairement liée à des attentes irréalistes
   - « Qu'attendez-vous de l'opération ? » → question obligatoire pré-opératoire
 > [MEDIA: 📊 MPTG07-S01-001 — Checklist d'anamnèse pré-PTG : tous les éléments à recueillir, organisés par catégorie (Document imprimable pour la consultation)]
 
@@ -411,22 +411,22 @@
 
 ### 7.6 Scores cliniques validés
 
-- Knee Society Score (KSS) — score du chirurgien
+- Knee Society Score (KSS) *(Insall JN et al., 1989, Clin Orthop Relat Res)* — score du chirurgien
   - KSS-Knee score (100 points) : douleur, stabilité, mobilité
   - KSS-Function score (100 points) : marche, escaliers
-  - Nouveau KSS 2011 : ajout de scores d'activité et satisfaction
-- WOMAC (*Western Ontario and McMaster Universities Osteoarthritis Index*)
+  - Nouveau KSS 2011 *(Noble PC et al., 2012, Clin Orthop Relat Res)* : ajout de scores d'activité et satisfaction
+- WOMAC (*Western Ontario and McMaster Universities Osteoarthritis Index*) *(Bellamy et al., 1988, J Rheumatol)*
   - 24 questions : douleur (5), raideur (2), fonction (17)
   - Score 0-96 (0 = meilleur)
   - Le plus utilisé en recherche sur la gonarthrose
-- Oxford Knee Score (OKS)
+- Oxford Knee Score (OKS) *(Dawson et al., 1998, J Bone Joint Surg Br)*
   - 12 questions, score 12-60 (60 = pire)
   - Score du patient, simple à remplir
-- Forgotten Joint Score (FJS-12)
+- Forgotten Joint Score (FJS-12) *(Behrend et al., 2012, J Arthroplasty)*
   - 12 questions : « oubliez-vous votre prothèse ? »
   - Score 0-100 (100 = oublié totalement)
   - Discrimine mieux les bons résultats (effet plafond moindre)
-- KOOS (*Knee injury and Osteoarthritis Outcome Score*)
+- KOOS (*Knee injury and Osteoarthritis Outcome Score*) *(Roos et al., 1998, J Orthop Sports Phys Ther)*
   - 42 questions en 5 sous-échelles
   - Utilisé surtout pour les patients plus jeunes
 - EQ-5D et SF-36 : qualité de vie générale (pas spécifique au genou)
@@ -458,11 +458,11 @@
 - Cliché de face en schuss (*Rosenberg view*)
   - Patient debout, genou fléchi à 30-45°, appui monopode
   - Avantage : met en charge la zone portante postérieure du plateau tibial
-  - Détecte 30% de pincements médiaux méconnus sur le cliché en extension
+  - Détecte 30% de pincements médiaux méconnus sur le cliché en extension *(Rosenberg et al., 1988)*
   - **Devrait être systématique** en bilan de gonarthrose
 - Cliché de profil strict (genou à 30° de flexion)
   - Superposition des condyles fémoraux postérieurs (critère de qualité)
-  - Mesure : pente tibiale postérieure, hauteur patellaire (Insall-Salvati, Caton-Deschamps)
+  - Mesure : pente tibiale postérieure, hauteur patellaire (Insall-Salvati *(Insall J & Salvati E, 1971, Radiology)*, Caton-Deschamps *(Caton J et al., 1982, Rev Chir Orthop)*)
   - Recherche : ostéophytes postérieurs, géodes, lésion sous-chondrale
   - Patella baja ou alta : impact sur la technique chirurgicale
 - Incidence axiale de la patella (30° et 60° de flexion)
@@ -592,3 +592,34 @@
 
 *Fin de la Partie 2 — Pathologies et Indications (Modules 5-8)*
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
+
+---
+
+## Références
+
+- Ahlbäck S. Osteoarthrosis of the knee: a radiographic investigation. *Acta Radiol Suppl*. 1968;(277):7-72.
+- Arnold WD, Hilgartner MW. Hemophilic arthropathy: current concepts of pathogenesis and management. *J Bone Joint Surg Am*. 1977;59(3):287-305.
+- Bellamy N, Buchanan WW, Goldsmith CH, et al. Validation study of WOMAC: a health status instrument for measuring clinically important patient relevant outcomes. *J Rheumatol*. 1988;15(12):1833-1840.
+- Behrend H, Giesinger K, Giesinger JM, Kuster MS. The "forgotten joint" as the ultimate goal in joint arthroplasty: validation of a new patient-reported outcome measure. *J Arthroplasty*. 2012;27(3):430-436.
+- Bourne RB, Chesworth BM, Davis AM, et al. Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? *Clin Orthop Relat Res*. 2010;468(1):57-63.
+- Brittberg M, Winalski CS. Evaluation of cartilage injuries and repair. *J Bone Joint Surg Am*. 2003;85-A(Suppl 2):58-69.
+- Caton J, Deschamps G, Chambat P, et al. Les mesures de la hauteur de la rotule. *Rev Chir Orthop*. 1982;68(5):317-325.
+- Christensen R, Bartels EM, Astrup A, Bliddal H. Effect of weight reduction in obese patients diagnosed with knee osteoarthritis. *Ann Rheum Dis*. 2007;66(4):433-439.
+- Dawson J, Fitzpatrick R, Murray D, Carr A. Questionnaire on the perceptions of patients about total knee replacement. *J Bone Joint Surg Br*. 1998;80(1):63-69.
+- Englund M, Lohmander LS. Risk factors for symptomatic knee osteoarthritis fifteen to twenty-two years after meniscectomy. *Arthritis Rheum*. 2003;50(9):2811-2819.
+- Felson DT, Naimark A, Anderson J, et al. The prevalence of knee osteoarthritis in the elderly: the Framingham Osteoarthritis Study. *Arthritis Rheum*. 1987;30(8):914-918.
+- Flecher X, Parratte S, Aubaniac JM, Argenson JN. A 12-28-year followup study of closing wedge high tibial osteotomy. *Clin Orthop Relat Res*. 2006;(452):91-96.
+- Insall J, Salvati E. Patella position in the normal knee joint. *Radiology*. 1971;101(1):101-104.
+- Insall JN, Dorr LD, Scott RD, Scott WN. Rationale of the Knee Society clinical rating system. *Clin Orthop Relat Res*. 1989;(248):13-14.
+- Kellgren JH, Lawrence JS. Radiological assessment of osteo-arthrosis. *Ann Rheum Dis*. 1957;16(4):494-502.
+- Kirkley A, Birmingham TB, Litchfield RB, et al. A randomized trial of arthroscopic surgery for osteoarthritis of the knee. *N Engl J Med*. 2008;359(11):1097-1107.
+- Messier SP, Gutekunst DJ, Davis C, DeVita P. Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis. *Arthritis Rheum*. 2005;52(7):2026-2032.
+- Moseley JB, O'Malley K, Petersen NJ, et al. A controlled trial of arthroscopic surgery for osteoarthritis of the knee. *N Engl J Med*. 2002;347(2):81-88.
+- Mow VC, Ratcliffe A, Poole AR. Cartilage and diarthrodial joints as paradigms for hierarchical materials and structures. *Biomaterials*. 1992;13(2):67-97.
+- Noble PC, Scuderi GR, Brekke AC, et al. Development of a new Knee Society scoring system. *Clin Orthop Relat Res*. 2012;470(1):20-32.
+- Outerbridge RE. The etiology of chondromalacia patellae. *J Bone Joint Surg Br*. 1961;43-B(4):752-757.
+- Roos EM, Roos HP, Lohmander LS, et al. Knee Injury and Osteoarthritis Outcome Score (KOOS): development of a self-administered outcome measure. *J Orthop Sports Phys Ther*. 1998;28(2):88-96.
+- Rosenberg TD, Paulos LE, Parker RD, et al. The forty-five-degree posteroanterior flexion weight-bearing radiograph of the knee. *J Bone Joint Surg Am*. 1988;70(10):1479-1483.
+- Schatzker J, McBroom R, Bruce D. The tibial plateau fracture: the Toronto experience 1968-1975. *Clin Orthop Relat Res*. 1979;(138):94-104.
+- Valdes AM, Spector TD. Genetic epidemiology of hip and knee osteoarthritis. *Nat Rev Rheumatol*. 2011;7(1):23-32.
+- Verzijl N, DeGroot J, Thorpe SR, et al. Effect of collagen turnover on the accumulation of advanced glycation end products. *J Biol Chem*. 2000;275(50):39027-39031.

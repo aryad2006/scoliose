@@ -48,7 +48,7 @@ Score T (DEXA) • Ostéoporose • Fracture vertébrale ostéoporotique (FVO) �
 
 ## 25.3 Fractures vertébrales ostéoporotiques (FVO)
 
-### Classification de Genant
+### Classification de Genant (Genant et al., 1993, *J Bone Miner Res*)
 
 | Grade | Perte de hauteur |
 |-------|----------------|
@@ -140,6 +140,15 @@ Score T (DEXA) • Ostéoporose • Fracture vertébrale ostéoporotique (FVO) �
 > 📌 **5.** Vis cimentées fenestrated obligatoires chez l'ostéoporotique nécessitant une instrumentation.
 
 > 📌 **6.** Toujours éliminer une fracture pathologique (néoplasique) avant de traiter "l'ostéoporose".
+
+---
+
+## Références
+
+1. Genant HK, Wu CY, van Kuijk C, Nevitt MC. Vertebral fracture assessment using a semiquantitative technique. *J Bone Miner Res*. 1993;8(9):1137-1148.
+2. Kanis JA, McCloskey EV, Johansson H, et al. A reference standard for the description of osteoporosis. *Bone*. 2008;42(3):467-475.
+3. Klazen CA, Lohle PN, de Vries J, et al. Vertebroplasty versus conservative treatment in acute osteoporotic vertebral compression fractures (Vertos II). *BMJ*. 2010;340:c1865.
+4. Wardlaw D, Cummings SR, Van Meirhaeghe J, et al. Efficacy and safety of balloon kyphoplasty compared with non-surgical care for vertebral compression fracture (FREE). *Lancet*. 2009;373(9668):1016-1024.
 
 ---
 

@@ -55,7 +55,7 @@ Elle constitue la **seizième formation** de la plateforme VERTEX©, après les 
 À l'issue de cette formation, le praticien sera capable de :
 
 1. **Décrire** la structure, la biologie et la biomécanique du tendon normal, et les mécanismes de réparation tendineuse
-2. **Expliquer** le continuum pathologique de Cook & Purdam (tendinopathie réactive → dérégulation → dégénérative) et ses implications cliniques
+2. **Expliquer** le continuum pathologique de Cook & Purdam (tendinopathie réactive → dérégulation → dégénérative) et ses implications cliniques (Cook & Purdam, *Br J Sports Med*, 2009)
 3. **Diagnostiquer** une tendinopathie en utilisant l'examen clinique ciblé, l'échographie musculosquelettique et l'IRM
 4. **Distinguer** les différentes tendinopathies topographiques (Achille, coiffe, épicondylalgies, patellaire, glutéale, tibial postérieur, fibulaires, poignet) et leur prise en charge spécifique
 5. **Prescrire** un programme de rééducation fondé sur les preuves (exercices excentriques, isométriques, HSR, gestion de la charge)
@@ -351,6 +351,8 @@ Les règles d'écriture sont **identiques** à celles des autres formations VERT
 | 13 | Formulations interdites | ✅ Identique |
 | 14 | ≥ 300 mots par sous-section | ✅ Identique |
 
+> **⚠️ Originalité et propriété intellectuelle** : Les règles d'originalité du contenu et de prévention du plagiat définies à la **section 13 de `REGLES_ECRITURE_CONTENU.md`** s'appliquent intégralement à cette formation. Tout contenu doit être reformulé dans un style original, toute statistique ou classification doit être sourcée, et la checklist anti-plagiat (§13.7) doit être validée pour chaque module.
+
 ## 6.2 Adaptations spécifiques Tendinites
 
 | Adaptation | Détail |
@@ -468,6 +470,14 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 | AINS | Anti-Inflammatoire Non Stéroïdien |
 | DPC | Développement Professionnel Continu |
 | CME | *Continuing Medical Education* |
+
+---
+
+---
+
+# RÉFÉRENCES
+
+1. Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. *Br J Sports Med*. 2009;43(6):409-416. doi:10.1136/bjsm.2008.051193
 
 ---
 

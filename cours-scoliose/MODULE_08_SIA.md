@@ -102,8 +102,8 @@ La SIA est une **pathologie multifactorielle** dont la cause n'est pas élucidé
 
 ### 8.2.1 Composante génétique
 
-- **Héritabilité estimée** : 58–90 % (études de jumeaux)
-- **Histoire familiale** : 11–12 % d'atteinte chez les apparentés du 1er degré
+- **Héritabilité estimée** : 58–90 % (études de jumeaux) (Ogilvie et al., 2006, *Spine* ; Kesling & Reinker, 1997, *Spine*)
+- **Histoire familiale** : 11–12 % d'atteinte chez les apparentés du 1er degré (Riseborough & Wynne-Davies, 1973, *J Bone Joint Surg Br*)
 - **Gènes identifiés** :
   - *FBN1/FBN2* (fibrilline — Marfan related)
   - *CHD7*, *ADGRG6* (développement du rachis)
@@ -155,7 +155,7 @@ La SIA est une **pathologie multifactorielle** dont la cause n'est pas élucidé
 | **PVC** | Non atteint | Déjà atteint |
 | **Triradiate** | Ouvert | Fermé |
 
-### 8.3.2 Score de Lonstein-Carlson
+### 8.3.2 Score de Lonstein-Carlson (Lonstein & Carlson, 1984, *J Bone Joint Surg Am*)
 
 Formule prédictive du risque de progression (≥ 5° en 1 an) :
 
@@ -184,7 +184,7 @@ $$\text{Progression risk (\%)} = \frac{\text{Cobb} \times (\text{Risser} - 5)}{1
 
 > [MEDIA: 📐 M08-S04-001 — Tableau de classification de Lenke (type 1-6 + modificateurs)]
 
-La classification de Lenke (2001) est la référence mondiale pour la SIA. Elle guide la **sélection des niveaux de fusion**.
+La classification de Lenke (Lenke et al., 2001, *J Bone Joint Surg Am*) est la référence mondiale pour la SIA. Elle guide la **sélection des niveaux de fusion**.
 
 ### 8.4.1 Les 3 composantes de la classification
 
@@ -247,7 +247,7 @@ Basé sur la cyphose T5-T12 :
 
 ## 8.5 Évaluation clinique — Score SRS-22
 
-L'évaluation de la qualité de vie est indispensable. Le **SRS-22** (Scoliosis Research Society-22) explore 5 domaines :
+L'évaluation de la qualité de vie est indispensable. Le **SRS-22** (Scoliosis Research Society-22) (Asher et al., 2003, *Spine*) explore 5 domaines :
 
 | Domaine | Questions | Score (/5) |
 |---------|----------|-----------|
@@ -294,7 +294,7 @@ L'étude **BrAIST** (Bracing in Adolescent Idiopathic Scoliosis Trial) est l'ess
 - **Résultats** (Weinstein 2013, *NEJM*) :
   - Corset ≥ 18h/j : **72 % de succès** (pas de progression > 50° à maturité)
   - Observation seule : **48 % de succès**
-  - **NNT** : 4 patients à traiter pour éviter 1 échec
+  - **NNT** : 4 patients à traiter pour éviter 1 échec (Weinstein et al., 2013, *NEJM*)
   - Relation dose-réponse : chaque heure portée améliore le résultat
 
 **Indications actuelles** (consensus SRS/SOSORT) :
@@ -316,7 +316,7 @@ Un corset efficace agit par :
 #### Correction radiologique dans le corset (« correction immédiate »)
 
 - Mesurée sur la radio dans le corset à **3 mois** : critère pronostique fort
-- Correction immédiate **> 40 %** → corrèle avec le succès à long terme
+- Correction immédiate **> 40 %** → corrèle avec le succès à long terme (Clin et al., 2010, *Eur Spine J*)
 - Si correction < 20 % dans le corset = mauvaise indication ou corset mal adapté → à modifier
 
 ### 8.7.3 Types de corsets
@@ -334,7 +334,7 @@ Un corset efficace agit par :
 ### 8.7.4 Compliance et monitoring
 
 - **Compliance = facteur N°1 du résultat**
-- Auto-déclaration : surestimation de 30–40 % de la durée portée
+- Auto-déclaration : surestimation de 30–40 % de la durée portée (Rahman et al., 2010, *J Child Orthop*)
 - **Capteurs thermiques** (intégrés dans le corset) : monitorage objectif recommandé (SOSORT 2016)
 - Chaque heure de port non effectuée réduit l'efficacité — **relation dose-réponse démontrée**
 
@@ -358,14 +358,14 @@ Les **PSSE** (Physiotherapy Specific Scoliosis Exercises) sont des exercices sp�
 
 | Méthode | Origine | Principe | Niveau de preuve |
 |---------|---------|---------|-----------------|
-| **Schroth** | Allemagne | Auto-élongation + dérotation 3D + respiration asymétrique | Niveau 1B (RCT, Kuru 2016) |
-| **SEAS** | Italie (Romano) | Auto-correction active + exercices fonctionnels | Niveau 1B (RCT, Romano 2009) |
+| **Schroth** | Allemagne | Auto-élongation + dérotation 3D + respiration asymétrique | Niveau 1B (Kuru et al., 2016, *Eur J Phys Rehabil Med*) |
+| **SEAS** | Italie (Romano) | Auto-correction active + exercices fonctionnels | Niveau 1B (Romano et al., 2012, *Scoliosis*) |
 | **Méthode Lyon** | France | Corset+exercices, correction en 3 plans | Niveau 2 |
 | **DoboMed** | Pologne | Auto-élongation, proprioception | Niveau 2 |
 | **BSPTS** | Espagne | Dérivé Schroth | Niveau 2 |
 | **Side-shift** | UK (Mehta) | Déviation latérale active | Niveau 3 |
 
-**SOSORT 2016 guidelines** : Les PSSE sont recommandées comme **traitement de première ligne** pour les courbures légères à modérées (10–20°), et en **complément du corset** pour les courbures > 20°.
+**SOSORT 2016 guidelines** (Negrini et al., 2018, *Scoliosis and Spinal Disorders*) : Les PSSE sont recommandées comme **traitement de première ligne** pour les courbures légères à modérées (10–20°), et en **complément du corset** pour les courbures > 20°.
 
 > **⚠️ Attention** : La natation, le yoga, la kinésithérapie générale et le sport n'ont pas démontré d'effet correcteur sur la courbure — ne pas substituer à un traitement spécifique prouvé.
 
@@ -578,7 +578,7 @@ Chez les **patient jeunes** (< 10–12 ans) avec courbures progressives et poten
 
 | Complication | Fréquence | Prévention |
 |-------------|-----------|-----------|
-| **Déficit neurologique** | 0,3–1 % | Monitoring PES/PEM + triggered EMG |
+| **Déficit neurologique** | 0,3–1 % (Nuwer et al., 1995, *Spine*) | Monitoring PES/PEM + triggered EMG |
 | **Infection profonde** | 1–2 % | Antibio-prophylaxie + vancomycine locale |
 | **Pseudarthrose** | 1–3 % | Greffe abondante, correction < 70 % |
 | **PJK — Proximal junctional kyphosis** | 15–30 % (dont 2–5 % symptomatiques) | Limiter l'instrumentation à T4, bandes sous-laminaires |
@@ -754,9 +754,18 @@ Le **PJK** est défini par un angle cyphotique inter-instrumenté **≥ 10° sup
 
 ## Ressources complémentaires
 
-- **Étude princeps** : Weinstein SL et al. BrAIST trial. *NEJM*. 2013;369:1512–1521
-- **Classification** : Lenke LG et al. *JBJS Am*. 2001;83:1169–1181
+- **Étude princeps** : Weinstein SL et al. Effects of bracing in adolescents with idiopathic scoliosis (BrAIST). *NEJM*. 2013;369:1512–1521
+- **Classification** : Lenke LG et al. Adolescent idiopathic scoliosis: a new classification to determine extent of spinal arthrodesis. *J Bone Joint Surg Am*. 2001;83:1169–1181
 - **VBT** : Newton PO et al. *Spine*. 2018 + Alanay A et al. *JBJS*. 2020
-- **Monitoring** : Nuwer MR et al. *Spine*. 1995 ; Bhagat S et al. *EJSO*. 2015
-- **Guideline** : SOSORT consensus 2016 — *Scoliosis and Spinal Disorders*
+- **Monitoring** : Nuwer MR et al. A multicenter collaborative study of intraoperative spinal cord monitoring. *Spine*. 1995;20:1351–1358
+- **Guideline** : Negrini S et al. 2016 SOSORT guidelines: orthopaedic and rehabilitation treatment of idiopathic scoliosis during growth. *Scoliosis Spinal Disord*. 2018;13:3
 - **Livre** : Weinstein SL. *The Pediatric Spine*. 3rd ed. Wolters Kluwer, 2022
+- **Étiologie** : Ogilvie JW et al. The search for idiopathic scoliosis genes. *Spine*. 2006;31:679–681
+- **Étiologie** : Kesling KL, Reinker KA. Scoliosis in twins: a meta-analysis of the heritability of scoliosis. *Spine*. 1997;22:2009–2014
+- **Épidémiologie** : Riseborough EJ, Wynne-Davies R. A genetic survey of idiopathic scoliosis in Boston. *J Bone Joint Surg Br*. 1973;55:974–982
+- **Score** : Lonstein JE, Carlson JM. The prediction of curve progression in untreated idiopathic scoliosis during growth. *J Bone Joint Surg Am*. 1984;66:1061–1071
+- **Score** : Asher MA et al. The reliability and concurrent validity of the SRS-22 patient questionnaire. *Spine*. 2003;28:63–69
+- **Corset** : Clin J et al. Immediate 3D correction in bracing. *Eur Spine J*. 2010;19:1874–1882
+- **Compliance** : Rahman T et al. Electronic monitoring of scoliosis brace wear compliance. *J Child Orthop*. 2010;4:343–347
+- **PSSE** : Kuru T et al. The efficacy of three-dimensional Schroth exercises in adolescent idiopathic scoliosis. *Eur J Phys Rehabil Med*. 2016;52:694–701
+- **PSSE** : Romano M et al. Exercises for adolescent idiopathic scoliosis. *Cochrane Database Syst Rev*. 2012;8:CD007837

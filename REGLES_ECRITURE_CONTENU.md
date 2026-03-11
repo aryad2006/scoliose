@@ -1,7 +1,7 @@
 ﻿# RÈGLES D'ÉCRITURE DU CONTENU PÉDAGOGIQUE
 
-**Formations : Scoliose avec VERTEX© · Prothèse Totale du Genou · Infection Osseuse de l'Appareil Locomoteur**
-**Version** : 2.0 — Mars 2026
+**Formations : Scoliose avec VERTEX© · Prothèse Totale du Genou · Infection Osseuse de l'Appareil Locomoteur · Tendinites et Tendinopathies**
+**Version** : 3.0 — 10 mars 2026
 **Applicabilité** : Tous les modules de toutes les formations
 
 ---
@@ -437,4 +437,107 @@ Avant de considérer un module comme terminé, vérifier :
 
 ---
 
-*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques de la Formation Scoliose avec VERTEX©. Toute dérogation doit être justifiée par la nature du contenu.*
+## 13. Originalité du contenu et prévention du plagiat
+
+> **RÈGLE ABSOLUE — ORIGINALITÉ ET PROPRIÉTÉ INTELLECTUELLE**
+>
+> Le contenu de toutes les formations VERTEX© doit être **original**. Aucun texte, tableau, classification ou donnée statistique ne doit être reproduit verbatim depuis une source externe sans **attribution explicite et reformulation**. Le non-respect de cette règle expose le projet à des risques juridiques et éditoriaux majeurs.
+
+### 13.1 Classifications médicales
+
+**INTERDIT** — Reproduire intégralement un tableau de classification (tous les stades/grades avec leurs descriptions exactes).
+
+**OBLIGATOIRE** — Pour toute classification publiée :
+1. Mentionner l'attribution complète : « Classification de [Auteur] ([Année]) »
+2. Reformuler les descriptions de chaque stade dans un langage propre
+3. Ajouter la mention **« Adapté de [Auteur et al., Année, Revue] »** sous le tableau
+4. Ne pas reproduire plus de 3 stades/grades sans reformulation significative
+
+❌ **INTERDIT** :
+> | Stade | Description |
+> |---|---|
+> | 0 | Muscle normal |
+> | 1 | Quelques stries graisseuses |
+> | 2 | Dégénérescence graisseuse < muscle |
+> | 3 | Dégénérescence graisseuse = muscle |
+> | 4 | Dégénérescence graisseuse > muscle |
+
+✅ **OBLIGATOIRE** :
+> **Classification de la dégénérescence graisseuse musculaire** *(adapté de Goutallier et al., 1994, Clin Orthop Relat Res)*
+>
+> Le module doit présenter les 5 stades (0 à 4) de l'infiltration graisseuse évaluée en TDM ou IRM, allant de l'**absence de graisse intramusculaire** (stade 0) à la **prédominance graisseuse sur le tissu musculaire** (stade 4). Les stades intermédiaires quantifient le ratio progressif graisse/muscle.
+
+### 13.2 Données statistiques et chiffres
+
+**RÈGLE** : Toute donnée chiffrée (prévalence, incidence, risque relatif, sensibilité, spécificité, odds ratio, pourcentage) DOIT être accompagnée de sa source.
+
+Format obligatoire :
+
+> « La prévalence des ruptures de coiffe augmente avec l'âge, atteignant plus de 50% après 80 ans *(Tempelhof et al., 1999, J Shoulder Elbow Surg)* »
+
+**INTERDIT** — Accumuler des chiffres précis sans aucune source :
+> ❌ « Prévalence : 10-20% chez les 50-60 ans, 20-50% chez les >60 ans, 50-80% chez les >80 ans »
+
+**OBLIGATOIRE** — Chaque chiffre est sourcé ou regroupé sous une source commune :
+> ✅ « La prévalence des lésions asymptomatiques de la coiffe augmente progressivement avec chaque décennie de vie, de ~10% à 50 ans jusqu'à plus de 50% au-delà de 80 ans *(Yamamoto et al., 2010, J Shoulder Elbow Surg ; Tempelhof et al., 1999)* »
+
+### 13.3 Valeurs de sensibilité et spécificité des tests cliniques
+
+**INTERDIT** — Reproduire un tableau complet de Se/Sp de multiples tests cliniques sans source, car ces compilations sont des empreintes identifiables de méta-analyses ou de textbooks spécifiques.
+
+**OBLIGATOIRE** :
+1. Citer la **méta-analyse source** (ex. « Hegedus et al., 2012, BJSM ») pour chaque série de valeurs
+2. Utiliser des **fourchettes arrondies** plutôt que des valeurs exactes quand plusieurs sources divergent
+3. Préférer la formulation prescriptive : « le module doit présenter les performances diagnostiques du test de Thompson, avec une sensibilité élevée (>90%) selon les méta-analyses disponibles *(Maffulli, 1998 ; Thompson, 1962)* »
+
+### 13.4 Protocoles thérapeutiques publiés
+
+**INTERDIT** — Reproduire les paramètres exacts d'un protocole publié sans attribution.
+
+**OBLIGATOIRE** :
+1. Nommer le protocole et son auteur : « protocole excentrique d'Alfredson *(Alfredson et al., 1998, Am J Sports Med)* »
+2. Décrire les principes généraux plutôt que de copier les paramètres mot à mot
+3. Ajouter la mention : « Les paramètres détaillés sont disponibles dans la publication originale »
+4. Si les paramètres sont reproduits, utiliser : **« D'après [Auteur, Année] »**
+
+### 13.5 Formulation prescriptive dans les CDC
+
+Dans les **cahiers des charges** (documents de spécification), privilégier la formulation **prescriptive** (ce que le module doit contenir) plutôt que **déclarative** (affirmer des faits médicaux comme s'il s'agissait d'un cours).
+
+❌ **INTERDIT dans un CDC** :
+> « Le tendon d'Achille stocke et restitue 35% de l'énergie élastique pendant la course »
+
+✅ **OBLIGATOIRE dans un CDC** :
+> « Le module doit expliquer le rôle de stockage-restitution d'énergie élastique du tendon d'Achille (~35% selon Ker et al., 1987), en le reliant à la biomécanique de la course »
+
+### 13.6 Références bibliographiques obligatoires
+
+**RÈGLE** : Chaque fichier de CDC et chaque module de cours DOIT comporter une section **« Références bibliographiques »** en fin de document.
+
+Format de référence :
+> Auteur(s). *Titre de l'article*. Revue. Année;Volume(Numéro):Pages. DOI si disponible.
+
+Exigences minimales :
+- **Études princeps** (>10 ans, fondatrices du concept) : obligatoires
+- **Études récentes** (<5 ans, état de l'art) : obligatoires
+- **Minimum 5 références par module** dans les CDC
+- **Minimum 15 références par module** dans les cours finaux
+- Les références doivent être **vérifiables** (pas de citations inventées)
+
+### 13.7 Checklist anti-plagiat (ajout à la checklist §11)
+
+Avant de considérer un module ou un CDC comme terminé, vérifier :
+
+| # | Critère anti-plagiat | ✅ |
+|---|---|---|
+| 19 | Aucune classification reproduite verbatim sans « adapté de » | |
+| 20 | Toute donnée chiffrée a une source (auteur, année) | |
+| 21 | Aucune compilation Se/Sp sans méta-analyse source | |
+| 22 | Protocoles nommés avec attribution (auteur, année, revue) | |
+| 23 | Section « Références bibliographiques » présente et complète | |
+| 24 | Formulation prescriptive dans les CDC (pas de déclaratif brut) | |
+| 25 | Aucun paragraphe de >50 mots identique à une source externe | |
+
+---
+
+*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX© (Scoliose, PTG, IOA, Tendinites). Toute dérogation doit être justifiée par la nature du contenu.*

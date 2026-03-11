@@ -50,11 +50,11 @@ Tumeur primitive • Métastase rachidienne • Vertèbre borgne (one-eyed pedic
 - Perte de poids inexpliquée
 - AEG
 
-**Radio standard** : lyse visible uniquement si > 30–50 % de l'os détruit.
+**Radio standard** : lyse visible uniquement si > 30–50 % de l'os détruit (Helweg-Larsen & Hansen, 1996, *Acta Neurol Scand*).
 
 **Signe de la "vertèbre borgne"** (*one-eyed pedicle sign*) = disparition d'un pédicule sur la radio de face → suspect +++
 
-**IRM** : sensibilité 95 % → hypersignal T2, hypointensité T1, prise de contraste après gadolinium.
+**IRM** : sensibilité 95 % (Buhmann Kirchhoff et al., 2009, *Eur Radiol*) → hypersignal T2, hypointensité T1, prise de contraste après gadolinium.
 
 **Scanner** : évalue la destruction corticale, risque de fracture.
 
@@ -64,7 +64,7 @@ Tumeur primitive • Métastase rachidienne • Vertèbre borgne (one-eyed pedic
 
 ---
 
-## 24.3 Score SINS — Spinal Instability Neoplastic Score
+## 24.3 Score SINS — Spinal Instability Neoplastic Score (Fisher et al., 2010, *Spine*)
 
 Évalue l'instabilité tumorale neoplasique (aide à décider si chirurgie nécessaire) :
 
@@ -84,7 +84,7 @@ Tumeur primitive • Métastase rachidienne • Vertèbre borgne (one-eyed pedic
 
 ---
 
-## 24.4 Score de Bilsky (compression médullaire)
+## 24.4 Score de Bilsky (Bilsky et al., 2010, *J Neurosurg Spine*)
 
 | Grade | Description |
 |-------|-----------|
@@ -108,7 +108,7 @@ Tumeur primitive • Métastase rachidienne • Vertèbre borgne (one-eyed pedic
 | Bon | Oui — complet | Non | Chirurgie urgente si < 24–48h |
 | Bon | Non | Oui (SINS > 12) | Chirurgie (stabilisation) |
 
-**Score de Tokuhashi révisé** (0–15) : prédit la survie
+**Score de Tokuhashi révisé** (Tokuhashi et al., 2005, *Spine*) (0–15) : prédit la survie
 - 0–8 : survie < 6 mois → traitement palliatif
 - 9–11 : > 6 mois → chirurgie discutable
 - 12–15 : > 1 an → résection plus agressive
@@ -150,6 +150,17 @@ Tumeur primitive • Métastase rachidienne • Vertèbre borgne (one-eyed pedic
 > 📌 **5.** Séparation surgery + SRS = approche moderne pour métastases radiorésistantes.
 
 > 📌 **6.** Chordome du sacrum = tumeur primitive à résection en bloc — marges chirurgicales décisives pour la survie.
+
+---
+
+## Références
+
+1. Fisher CG, DiPaola CP, Ryken TC, et al. A novel classification system for spinal instability in neoplastic disease (SINS). *Spine*. 2010;35(22):E1221-E1229.
+2. Bilsky MH, Laufer I, Fourney DR, et al. Reliability analysis of the epidural spinal cord compression scale. *J Neurosurg Spine*. 2010;13(3):324-328.
+3. Tokuhashi Y, Matsuzaki H, Oda H, et al. A revised scoring system for preoperative evaluation of metastatic spine tumor prognosis. *Spine*. 2005;30(19):2186-2191.
+4. Helweg-Larsen S, Hansen SW. Radiologic assessment of vertebral metastases: threshold for detection. *Acta Neurol Scand*. 1996;94(5):303-307.
+5. Buhmann Kirchhoff S, Becker C, Duerr HR, et al. Detection of osseous metastases of the spine: comparison of high-resolution multi-detector CT with MRI. *Eur Radiol*. 2009;19(8):2079-2086.
+6. Laufer I, Rubin DG, Lis E, et al. The NOMS framework: approach to the treatment of spinal metastatic tumors. *Oncologist*. 2013;18(6):744-751.
 
 ---
 

@@ -23,10 +23,10 @@ Spondylodiscite • Spondylite • Discite • Abcès épidural • Abcès du ps
 
 ### Épidémiologie et facteurs de risque
 
-- Incidence : 2–4/100 000/an (en augmentation avec l'âge et l'immunodépression)
+- Incidence : 2–4/100 000/an (Grammatico et al., 2008, *J Antimicrob Chemother*) (en augmentation avec l'âge et l'immunodépression)
 - Terrain : diabète, immunodépression, hémodialyse, portage veineux, chirurgie rachidienne récente
 - **Germes** :
-  - *Staphylococcus aureus* (40–50 %) = le plus fréquent
+  - *Staphylococcus aureus* (40–50 %) = le plus fréquent (Zimmerli, 2010, *N Engl J Med*)
   - Entérobactéries (*E. coli*, *Pseudomonas*) chez les urologiques
   - Staphylocoques coagulase-négatif (sur matériel)
   - *Candida* (immunodéprimés)
@@ -41,7 +41,7 @@ Spondylodiscite • Spondylite • Discite • Abcès épidural • Abcès du ps
 
 | Examen | Valeur |
 |--------|--------|
-| **Hémocultures** (3 séries avant ATB) | Positives dans 50–70 % |
+| **Hémocultures** (3 séries avant ATB) | Positives dans 50–70 % (Berbari et al., 2015, *Clin Infect Dis*) |
 | CRP + VS | Élevées mais non spécifiques |
 | **IRM** (séquences T2 + gadolinium) | Gold standard — hypersignal T2 du disque et des plateaux, prise de contraste, abcès épidural |
 | **Biopsie disco-vertébrale scanno-guidée** | Si hémocultures négatives |
@@ -138,6 +138,15 @@ Spondylodiscite • Spondylite • Discite • Abcès épidural • Abcès du ps
 > 📌 **5.** L'**abcès épidural** avec déficit neurologique = urgence chirurgicale (drainage immédiat).
 
 > 📌 **6.** Sur matériel : DLMM si < 3–4 semaines, ablation du matériel si chronique.
+
+---
+
+## Références
+
+1. Grammatico L, Baron S, Rusch E, et al. Epidemiology of vertebral osteomyelitis (VO) in France: analysis of hospital-discharge data 2002–2003. *J Antimicrob Chemother*. 2008;58(4):996-999.
+2. Zimmerli W. Vertebral osteomyelitis. *N Engl J Med*. 2010;362(11):1022-1029.
+3. Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 IDSA clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. *Clin Infect Dis*. 2015;61(6):e26-e46.
+4. Duarte RM, Vaccaro AR. Spinal infection: state of the art and management algorithm. *Eur Spine J*. 2013;22(12):2787-2799.
 
 ---
 

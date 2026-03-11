@@ -32,7 +32,7 @@
 ### Section 22.1 — Épidémiologie et portes d'entrée
 
 **Contenu obligatoire** :
-- Incidence : 2-7/100 000/an (en augmentation : vieillissement, immunosuppression, gestes invasifs)
+- Incidence : 2-7/100 000/an *(Grammatico et al., 2008, J Antimicrob Chemother)* (en augmentation : vieillissement, immunosuppression, gestes invasifs)
 - Âge moyen : 50-70 ans, sex-ratio H/F = 1.5-2
 - **Portes d'entrée** :
   - Urinaire (30%) : BGN surtout
@@ -41,7 +41,7 @@
   - Iatrogène : discographie, infiltration péridurale/foraminale, chirurgie rachidienne
   - Non retrouvée (30-40%)
 - **Germes** :
-  - *S. aureus* : 30-50% (1er germe)
+  - *S. aureus* : 30-50% *(Gouliouris et al., 2010, Clin Med)* (1er germe)
   - BGN (*E. coli*, *Klebsiella*, *Proteus*) : 20-25% (porte d'entrée urinaire)
   - Streptocoques/Entérocoques : 10-15%
   - SCN : post-chirurgical
@@ -67,12 +67,12 @@
   - Abcès épidural : compression médullaire/radiculaire progressive
   - Abcès du psoas : psoïtis (flexion de hanche antalgique)
   - Choc septique (rare)
-- **Biologie** : CRP élevée (quasi constante), hyperleucocytose (50%), hémocultures positives dans 50-70%
+- **Biologie** : CRP élevée (quasi constante), hyperleucocytose (50%), hémocultures positives dans 50-70% *(Zimmerli, 2010, N Engl J Med)*
 
 ### Section 22.3 — Imagerie
 
 **Contenu obligatoire** :
-- **IRM** : EXAMEN DE RÉFÉRENCE — sensibilité 92-97%, spécificité 90-95%
+- **IRM** : EXAMEN DE RÉFÉRENCE — sensibilité 92-97%, spécificité 90-95% *(Berbari et al., 2015, Clin Infect Dis)*
   - T1 : hyposignal des corps vertébraux adjacents au disque
   - T2 : hypersignal des corps vertébraux et du disque
   - Gadolinium : rehaussement des plateaux vertébraux, du disque, des collections péri-vertébrales et épidurales
@@ -185,15 +185,15 @@
 ### Section 23.2 — Diagnostic de l'infection du pied diabétique
 
 **Contenu obligatoire** :
-- **Classification IWGDF/PEDIS de l'infection** :
+- **Classification IWGDF/PEDIS de l'infection** *(adapté de Lipsky et al., 2012, Clin Infect Dis ; IWGDF Guidelines)* :
   - Grade 1 : pas d'infection
   - Grade 2 : infection superficielle (cellulite <2 cm autour de l'ulcère)
   - Grade 3 : infection profonde (cellulite >2 cm, abcès profond, atteinte os/articulation, fasciite)
   - Grade 4 : sepsis systémique (SIRS)
-- **Probe-to-bone test** (test de la sonde) : stylet métallique stérile introduit au fond de l'ulcère → contact rugueux avec l'os = ostéite probable (sensibilité 66%, spécificité 85%, VPP élevée si prévalence élevée)
+- **Probe-to-bone test** (test de la sonde) : stylet métallique stérile introduit au fond de l'ulcère → contact rugueux avec l'os = ostéite probable (sensibilité 66%, spécificité 85% *(Grayson et al., 1995, JAMA)*, VPP élevée si prévalence élevée)
 - **Imagerie** :
   - Radiographies : lyse corticale, réaction périostée, destruction articulaire — mais retard de 2-3 semaines
-  - IRM : sensibilité 90%, spécificité 80% — diagnostic différentiel pied de Charcot vs ostéite +++
+  - IRM : sensibilité 90%, spécificité 80% *(Dinh et al., 2008, BMJ)* — diagnostic différentiel pied de Charcot vs ostéite +++
   - Scanner/PET : 2e intention
 - **Diagnostic microbiologique** :
   - Prélèvement superficiel (écouvillon) : INUTILE (reflète la colonisation, pas l'infection)
@@ -231,15 +231,15 @@
   - Transmétatarsienne : bon résultat fonctionnel, préserve l'appui
   - Lisfranc, Chopart : résultats fonctionnels variables, orthèses nécessaires
   - Amputation de jambe (transtibiale) : si ischémie non revascularisable + infection non contrôlable
-  - 30% des amputations sont précédées d'une amputation mineure ayant échoué
-  - Mortalité à 5 ans post-amputation majeure : 50-70% (comorbidités cardiovasculaires)
+  - 30% des amputations sont précédées d'une amputation mineure ayant échoué *(Pecoraro et al., 1990, Diabetes Care)*
+  - Mortalité à 5 ans post-amputation majeure : 50-70% *(Moulik et al., 2003, Diabetes Care)* (comorbidités cardiovasculaires)
 - **Revascularisation** : angioplastie ou pontage distral si artériopathie sévère — AVANT chirurgie infectieuse si possible
 
 ### Section 23.5 — Prise en charge multidisciplinaire
 
 - Équipe : diabétologue + infectiologue + chirurgien orthopédiste + chirurgien vasculaire + podologue + plaies et cicatrisation
 - Prévention secondaire : chaussage adapté, inspection quotidienne des pieds, équilibre glycémique, éducation thérapeutique
-- Taux de récidive : 40-60% à 5 ans → surveillance au long cours
+- Taux de récidive : 40-60% à 5 ans *(Armstrong et al., 2017, N Engl J Med)* → surveillance au long cours
 
 ### Points clés du Module 23
 
@@ -277,11 +277,11 @@
 ### Section 24.1 — Épidémiologie et physiopathologie
 
 **Contenu obligatoire** :
-- Tuberculose ostéoarticulaire : 2-5% de toutes les tuberculoses
+- Tuberculose ostéoarticulaire : 2-5% de toutes les tuberculoses *(OMS, Global Tuberculosis Report)*
 - Réactivation d'un foyer osseux ensemencé par voie hématogène lors de la primo-infection
 - Localisation : rachis (Mal de Pott) = 50% des cas ; hanche, genou, poignet (rares)
 - Population : migrants de zones endémiques, immunodéprimés (VIH ++), sujets âgés
-- En France : 150-300 cas/an estimés
+- En France : 150-300 cas/an estimés *(Santé publique France / InVS)*
 - BCGite ostéo-articulaire : rare complication post-vaccinale chez l'enfant
 
 ### Section 24.2 — Le Mal de Pott (spondylodiscite tuberculeuse)
@@ -310,7 +310,7 @@
 ### Section 24.4 — Traitement
 
 **Contenu obligatoire** :
-- **Traitement médical** (antituberculeux) : quadrithérapie initiale 2 mois (isoniazide + rifampicine + pyrazinamide + éthambutol) puis bithérapie 10-16 mois (isoniazide + rifampicine)
+- **Traitement médical** (antituberculeux) *(d'après OMS, Guidelines for treatment of drug-susceptible tuberculosis, 2017)* : quadrithérapie initiale 2 mois (isoniazide + rifampicine + pyrazinamide + éthambutol) puis bithérapie 10-16 mois (isoniazide + rifampicine)
 - Durée totale : **12-18 mois** (recommandations OMS/SPLIF pour la tuberculose ostéoarticulaire)
 - Compliance : traitement long → traitement directement observé (DOT) si nécessaire
 - Effets secondaires : hépatotoxicité (surveillance transaminases mensuelles), névrite optique (éthambutol), neuropathie périphérique (isoniazide → supplémentation en B6)
@@ -319,7 +319,7 @@
   - Instabilité rachidienne / cyphose progressive
   - Abcès volumineux non résolutif sous traitement médical
   - Technique : drainage d'abcès, corporectomie-greffe ± ostéosynthèse, correction de déformation
-- Résultats : excellents sous traitement anti-TB adapté (guérison >95% si traitement complet)
+- Résultats : excellents sous traitement anti-TB adapté (guérison >95% si traitement complet) *(Tuli, 2002, Clin Orthop Relat Res)*
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -402,6 +402,28 @@
 3. *M. marinum* (aquarium/poisson), *M. fortuitum/abscessus* (matériel) sont les MNT les plus fréquentes en orthopédie
 4. Le kyste hydatique osseux est rare mais redoutable (récidive fréquente)
 5. Le contexte géographique et immunitaire guide le diagnostic étiologique
+
+---
+
+---
+
+## RÉFÉRENCES — PARTIE VII
+
+1. Grammatico L, Baron S, Rusch E, et al. Epidemiology of vertebral osteomyelitis (VO) in France: analysis of hospital-discharge data 2002-2003. *J Antimicrob Chemother*. 2008;62(6):1307-1312.
+2. Gouliouris T, Aliyu SH, Brown NM. Spondylodiscitis: update on diagnosis and management. *Clin Med*. 2010;10(5):431-435.
+3. Zimmerli W. Vertebral osteomyelitis. *N Engl J Med*. 2010;362(11):1022-1029.
+4. Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 IDSA clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. *Clin Infect Dis*. 2015;61(6):e26-e46.
+5. Lipsky BA, Berendt AR, Cornia PB, et al. 2012 IDSA clinical practice guideline for the diagnosis and treatment of diabetic foot infections. *Clin Infect Dis*. 2012;54(12):e132-e173.
+6. International Working Group on the Diabetic Foot (IWGDF). IWGDF Guidelines on the diagnosis and treatment of foot infection in persons with diabetes. 2019.
+7. Grayson ML, Gibbons GW, Balogh K, et al. Probing to bone in infected pedal ulcers: a clinical sign of underlying osteomyelitis in diabetic patients. *JAMA*. 1995;273(9):721-723.
+8. Dinh MT, Abad CL, Safdar N. Diagnostic accuracy of the physical examination and imaging tests for osteomyelitis underlying diabetic foot ulcers: meta-analysis. *BMJ*. 2008;336(7654):1170-1173.
+9. Pecoraro RE, Reiber GE, Burgess EM. Pathways to diabetic limb amputation: basis for prevention. *Diabetes Care*. 1990;13(5):513-521.
+10. Moulik PK, Mtonga R, Gill GV. Amputation and mortality in new-onset diabetic foot ulcers stratified by etiology. *Diabetes Care*. 2003;26(2):491-494.
+11. Armstrong DG, Boulton AJM, Bus SA. Diabetic foot ulcers and their recurrence. *N Engl J Med*. 2017;376(24):2367-2375.
+12. OMS. *Global Tuberculosis Report*. Genève : Organisation mondiale de la Santé (édition annuelle).
+13. Santé publique France / InVS. Données de surveillance de la tuberculose en France.
+14. Tuli SM. General principles of osteoarticular tuberculosis. *Clin Orthop Relat Res*. 2002;(398):11-19.
+15. OMS. *Guidelines for treatment of drug-susceptible tuberculosis and patient care*. Genève : Organisation mondiale de la Santé, 2017.
 
 ---
 

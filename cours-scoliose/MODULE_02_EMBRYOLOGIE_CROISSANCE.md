@@ -174,7 +174,7 @@ Les anomalies congénitales du rachis résultent de perturbations de la segmenta
 
 | Type | Description | Déformation |
 |------|-------------|-------------|
-| Hémivertèbre entièrement segmentée | Demi-vertèbre avec disques des deux côtés | +++/scoliose 2-3°/an |
+| Hémivertèbre entièrement segmentée | Demi-vertèbre avec disques des deux côtés | +++/scoliose 2-3°/an (McMaster & Ohtsuka, 1982) |
 | Hémivertèbre semi-segmentée | Demi-vertèbre fusionnée d'un côté | ++ |
 | Hémivertèbre non segmentée (intercalée) | Demi-vertèbre fusionnée des deux côtés | +/- |
 | Coin vertébral | Réduction asymétrique d'une vertèbre | + |
@@ -190,7 +190,7 @@ Les anomalies congénitales du rachis résultent de perturbations de la segmenta
 
 > [MEDIA: 📐 M02-S01-004 — Schéma comparatif anomalies de segmentation (vue frontale)]
 
-**Règle pratique** : La **barre unilatérale + hémivertèbre controlatérale** est la forme la plus progressive (5-10° par an) et la plus difficile à corriger — intervention précoce obligatoire avant 5 ans.
+**Règle pratique** : La **barre unilatérale + hémivertèbre controlatérale** est la forme la plus progressive (5-10° par an ; McMaster & Ohtsuka, 1982, *J Bone Joint Surg Am*) et la plus difficile à corriger — intervention précoce obligatoire avant 5 ans.
 
 ---
 
@@ -247,7 +247,7 @@ La cyphose thoracique et la rotation vertébrale modifient la **cinématique de 
 
 ### 2.3.1 Indice de Risser
 
-L'**indice de Risser** (0 à 5) évalue la maturité squelettique par l'observation de l'**ossification de l'apophyse iliaque** (aileron iliaque) sur la radiographie de bassin debout.
+L'**indice de Risser** (Risser, 1958, *J Bone Joint Surg Am*) évalue la maturité squelettique par l'observation de l'**ossification de l'apophyse iliaque** (aileron iliaque) sur la radiographie de bassin debout.
 
 > [MEDIA: 📊 M02-S03-001 — Infographie indice de Risser 0-5 avec exemples radiographiques annotés]
 
@@ -268,7 +268,7 @@ L'**indice de Risser** (0 à 5) évalue la maturité squelettique par l'observat
 **Application clinique pour Sophie** :
 Sophie, 13 ans, Risser 0 → elle est AU DÉBUT de sa puberté squelettique. Son potentiel de croissance résiduel est **maximal**. Cette donnée est cruciale pour la décision thérapeutique (voir Module 8 : SIA — indications corset).
 
-> **Calcul du risque de progression** (Lonstein-Carlson) :
+> **Calcul du risque de progression** (Lonstein & Carlson, 1984, *J Bone Joint Surg Am*) :
 > Score = (Angle de Cobb × 3 – [Risser × 3 + Age × 3]) / 10
 > - Sophie : si Cobb = 25°, Risser 0, 13 ans → (75 – 0 – 39) / 10 = 3,6 → **Risque de progression : 68%**
 
@@ -286,7 +286,7 @@ Le **cartilage triradié** est la synchondrose en « Y » qui unit les trois com
 
 ### 2.3.3 Stades de Tanner
 
-Les **stades de Tanner** (T1-T5) évaluent la maturité pubertaire clinique :
+Les **stades de Tanner** (Tanner, 1962) évaluent la maturité pubertaire clinique :
 
 | Stade | Fille (caractères sexuels) | Corrélation Risser |
 |-------|--------------------------|-------------------|
@@ -302,7 +302,7 @@ Les **stades de Tanner** (T1-T5) évaluent la maturité pubertaire clinique :
 
 ### 2.3.4 Classification de Sanders
 
-La **classification de Sanders** (SS1 à SS8) évalue la maturité squelettique par l'examen radiographique de la **main et du poignet gauche** (atlas Greulich & Pyle), en se concentrant sur les épiphyses des métacarpes et des phalanges.
+La **classification de Sanders** (Sanders et al., 2008, *J Bone Joint Surg Am*) évalue la maturité squelettique par l'examen radiographique de la **main et du poignet gauche** (atlas Greulich & Pyle), en se concentrant sur les épiphyses des métacarpes et des phalanges.
 
 > [MEDIA: 📐 M02-S03-003 — Schéma Sanders classification (stades 1-8 avec correspondance Risser)]
 
@@ -320,7 +320,7 @@ La **classification de Sanders** (SS1 à SS8) évalue la maturité squelettique 
 
 ### 2.3.5 Courbe de Diméglio
 
-La **courbe de Diméglio** représente la croissance du rachis T1-L5 en fonction de l'âge, permettant d'estimer le **potentiel de croissance résiduel** en centimètres.
+La **courbe de Diméglio** (Diméglio, 1990) représente la croissance du rachis T1-L5 en fonction de l'âge, permettant d'estimer le **potentiel de croissance résiduel** en centimètres.
 
 > [MEDIA: 📊 M02-S03-004 — Courbe de Diméglio : croissance T1-L5 par âge (garçon/fille) avec zones à risque scoliose]
 
@@ -332,7 +332,7 @@ La **courbe de Diméglio** représente la croissance du rachis T1-L5 en fonction
 - 18 ans : T1-L5 = 39 cm (quasi adulte)
 
 **Calcul de la perte de hauteur** par la scoliose :
-Pour une scoliose thoracique (T5-T12), la perte de hauteur est estimée par la formule de Bjure :
+Pour une scoliose thoracique (T5-T12), la perte de hauteur est estimée par la formule de Bjure (Bjure et al., 1968) :
 > **Perte de hauteur (cm) = 0,016 × (angle de Cobb - 30)**
 > (Pour Cobb = 60° : perte = 0,016 × 30 = 0,48 cm de hauteur T5-T12)
 
@@ -373,7 +373,7 @@ Le **Risque de Lonstein-Carlson** = Formula :
 → **Traitement par orthèse (corset) fortement indiqué** (Cobb 25-40°, Risser 0-2, squelette immature) :
 - Objectif : prévenir la progression jusqu'à la fin de la croissance
 - Type : TLSO (thoraco-lombo-sacré) — Boston, Rigo-Chêneau, ou équivalent
-- Port 18-20h/jour minimum (étude BrAIST : port ≥ 18h/j → 72% de succès vs 48% dans le groupe observation)
+- Port 18-20h/jour minimum (étude BrAIST : port ≥ 18h/j → 72% de succès vs 48% dans le groupe observation ; Weinstein et al., 2013, *N Engl J Med*)
 
 ---
 
@@ -567,6 +567,11 @@ Même protocole avec `growth_remaining_cm: 0` → observer que la progression es
 - Sanders JO et al. *Predicting scoliosis progression from skeletal maturity: a simplified classification during adolescence*. JBJS 2008;90:540-53.
 - Dimeglio A, Bonnel F. *Le rachis en croissance*. Springer-Verlag, Paris 1990.
 - Little DG et al. *The natural history and management of congenital spinal anomalies*. Spine 2000.
+- Risser JC. *The iliac apophysis: an invaluable sign in the management of scoliosis*. Clin Orthop 1958;11:111-119.
+- Tanner JM. *Growth at Adolescence*. 2nd ed. Oxford: Blackwell; 1962.
+- McMaster MJ, Ohtsuka K. *The natural history of congenital scoliosis: a study of 251 patients*. J Bone Joint Surg Am 1982;64(8):1128-1147.
+- Weinstein SL, Dolan LA, Wright JG, Dobbs MB. *Effects of bracing in adolescents with idiopathic scoliosis*. N Engl J Med 2013;369(16):1512-1521.
+- Bjure J, Grimby G, Nachemson A. *Correction of body height in predicting spirometric values in scoliotic patients*. Scand J Clin Lab Invest 1968;21:191-192.
 
 ### Pour aller plus loin
 - [MEDIA: 📷 M02-RES-001 — Atlas Greulich & Pyle (radiographies de référence maturation main)]

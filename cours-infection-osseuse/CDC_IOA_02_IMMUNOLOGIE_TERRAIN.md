@@ -137,7 +137,7 @@
 ### Section 6.1 — Diabète et infections ostéoarticulaires
 
 **Contenu obligatoire** :
-- **Épidémiologie** : risque d'infection du site opératoire ×2-5 chez le diabétique
+- **Épidémiologie** : risque d'infection du site opératoire ×2-5 chez le diabétique *(Marchant et al., 2009, J Bone Joint Surg Am)*
 - **Mécanismes** :
   - Dysfonction des PNN : chimiotactisme altéré, phagocytose diminuée, burst oxydatif réduit
   - Microangiopathie : ischémie tissulaire, cicatrisation retardée
@@ -164,7 +164,7 @@
 - **Chimiothérapie et neutropénie** : neutropénie fébrile + suspicion d'IOA, germes fongiques (Aspergillus, Candida)
 - **Corticothérapie au long cours** : inhibition PNN et macrophages, retard de cicatrisation, ostéoporose (fragilité osseuse)
 - **Biothérapies** :
-  - Anti-TNF (infliximab, adalimumab) : risque infectieux ×2-3, tuberculose réactivée +++
+  - Anti-TNF (infliximab, adalimumab) : risque infectieux ×2-3 *(Dixon et al., 2006, Arthritis Rheum)*, tuberculose réactivée +++
   - Rituximab (anti-CD20) : hypogammaglobulinémie, infections tardives
   - Tocilizumab (anti-IL-6R) : masque la CRP ! (faux négatif biologique)
   - JAK inhibiteurs (tofacitinib, baricitinib) : risque d'infections opportunistes
@@ -183,14 +183,14 @@
 
 **Contenu obligatoire** :
 - **Dénutrition** :
-  - Critères : albumine <30 g/L, préalbumine <15 mg/dL, IMC <18.5, perte de poids >10% en 6 mois
+  - Critères : albumine <30 g/L, préalbumine <15 mg/dL *(ESPEN guidelines ; HAS, 2007)*, IMC <18.5, perte de poids >10% en 6 mois
   - Impact : cicatrisation ↓, immunité ↓ (lymphopénie, dysfonction PNN), hypoprotidémie → œdèmes
   - Supplémentation préopératoire : immunonutrition (arginine, glutamine, oméga-3)
 - **Obésité** :
-  - IMC >35 : risque infection ×2-3 post-arthroplastie
+  - IMC >35 : risque infection ×2-3 post-arthroplastie *(Namba et al., 2005, J Bone Joint Surg Am)*
   - Mécanismes : tissu adipeux pro-inflammatoire (adipokines), difficultés chirurgicales (exposition, durée opératoire allongée), hypoperfusion du tissu sous-cutané
   - Seuil pondéral pour arthroplastie : débat IMC 40 vs 45
-- **Tabac** : vasoconstriction, hypoxie tissulaire, dysfonction immunitaire — risque infection ×2
+- **Tabac** : vasoconstriction, hypoxie tissulaire, dysfonction immunitaire — risque infection ×2 *(Møller et al., 2002, Lancet)*
 - **Alcoolisme** : dysfonction hépatique, dénutrition, immunodépression
 - **Insuffisance rénale chronique** : immunodépression urémique, anémie, trobles de la cicatrisation, ajustement des doses d'ATB
 - **Anémie** : hypoxie tissulaire, cicatrisation retardée
@@ -205,7 +205,7 @@
 ### Section 6.4 — Classification McPherson de l'hôte et stratification du risque
 
 **Contenu obligatoire** :
-- Classification McPherson (adaptation de Cierny-Mader pour les infections périprothétiques) :
+- Classification McPherson *(adapté de McPherson et al., 2002, Clin Orthop Relat Res)* (adaptation de Cierny-Mader pour les infections périprothétiques) :
   - **Hôte A** : non compromis (pas de comorbidités majeures)
   - **Hôte B** : compromis — sous-types :
     - B-L : compromission locale (peau fragile, cicatrice, lymphœdème, irradiation)
@@ -231,6 +231,17 @@
 4. Le tabac double le risque d'infection du site opératoire
 5. La classification McPherson stratifie le risque de l'hôte (A, B, C) et guide la stratégie thérapeutique
 6. L'optimisation préopératoire (glycémie, nutrition, arrêt du tabac) est fondamentale pour réduire le risque
+
+---
+
+## Références bibliographiques (Partie 2)
+
+- Dixon WG, Watson K, Lunt M, et al. Rates of serious infection, including site-specific and bacterial intracellular infection, in rheumatoid arthritis patients receiving anti-tumor necrosis factor therapy. *Arthritis Rheum*. 2006;54(8):2368-2376.
+- HAS. Stratégie de prise en charge en cas de dénutrition protéino-énergétique chez la personne âgée. Recommandations. 2007.
+- Marchant MH Jr, Viens NA, Cook C, et al. The impact of glycemic control and diabetes mellitus on perioperative outcomes after total joint arthroplasty. *J Bone Joint Surg Am*. 2009;91(7):1621-1629.
+- McPherson EJ, Woodson C, Holtom P, et al. Periprosthetic total hip infection: outcomes using a staging system. *Clin Orthop Relat Res*. 2002;403:8-15.
+- Møller AM, Villebro N, Pedersen T, Tønnesen H. Effect of preoperative smoking intervention on postoperative complications: a randomised clinical trial. *Lancet*. 2002;359(9301):114-117.
+- Namba RS, Paxton L, Fithian DC, Stone ML. Obesity and perioperative morbidity in total hip and total knee arthroplasty patients. *J Bone Joint Surg Am*. 2005;20(7 Suppl 3):46-50.
 
 ---
 

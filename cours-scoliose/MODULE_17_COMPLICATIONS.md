@@ -80,8 +80,8 @@ Infection du site opératoire (ISO) • Infection profonde post-op • Germe Sta
 | **Tardive** | > J90 | Biofilm sur implants | 1–2 % |
 
 **Germes** :
-- S. aureus SASM/MRSA : 40–60 %
-- Staphylococcus epidermidis (biofilm) : 20–30 %
+- S. aureus SASM/MRSA : 40–60 % (Pull ter Gunne et al., 2010, *Spine*)
+- Staphylococcus epidermidis (biofilm) : 20–30 % (Pull ter Gunne et al., 2010, *Spine*)
 - Bacilles Gram négatifs (surtout neuromusculaire) : 10–15 %
 
 **Facteurs de risque** :
@@ -115,7 +115,7 @@ Infection du site opératoire (ISO) • Infection profonde post-op • Germe Sta
 
 | Complication | Fréquence | Prévention |
 |-------------|-----------|-----------|
-| DVT profonde | 10–30% (sans prophylaxie) | HBPM + bas de contention + lever précoce |
+| DVT profonde | 10–30 % (Dearborn et al., 1999, *Spine*) (sans prophylaxie) | HBPM + bas de contention + lever précoce |
 | Embolie pulmonaire | 0,5–1 % | Idem |
 | TEP mortelle | 0,1 % | Idem |
 
@@ -245,3 +245,12 @@ Infection du site opératoire (ISO) • Infection profonde post-op • Germe Sta
 - B. Rupture simple de matériel — changer la tige
 - C. Adjacent level disease — extension de la fusion
 - D. Infection tardive — antibiothérapie seule
+
+---
+
+## Ressources complémentaires
+
+- **Pull ter Gunne AF, Cohen DB.** Incidence, prevalence, and analysis of risk factors for surgical site infection following adult spinal surgery. *Spine*. 2010;35(13):1323–1328
+- **Dearborn JT, Hu SS, Tribus CB, Bradford DS.** Thromboembolic complications after major thoracolumbar spine surgery. *Spine*. 1999;24(14):1471–1476
+- **Weinstein MA, McCabe JP, Cammisa FP.** Postoperative spinal wound infection: a review of 2,391 consecutive index procedures. *J Spinal Disord*. 2000;13(5):422–426
+- **Lonstein JE et al.** Wound infection in spine surgery. *Spine*. 1999

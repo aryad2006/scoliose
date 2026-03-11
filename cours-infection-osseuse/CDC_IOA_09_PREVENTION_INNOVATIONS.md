@@ -87,18 +87,18 @@
 
 **Contenu obligatoire** :
 - **Ciment antibiotique** : ajout systématique de gentamicine ± vancomycine au ciment de scellement prothétique en chirurgie de 1ère intention
-  - Registres scandinaves : réduction du risque d'infection de 40-50% (PTH, PTG)
+  - Registres scandinaves : réduction du risque d'infection de 40-50% *(Engesæter et al., 2003, Acta Orthop)* (PTH, PTG)
   - Dose recommandée : ≤2g d'ATB/40g de ciment (ne pas compromettre les propriétés mécaniques)
 - **Vancomycine poudre locale** : application dans la plaie (rachis surtout) — efficacité démontrée en chirurgie rachidienne instrumentée
-- **Irrigation antiseptique** : bétadine diluée (3.5%) en lavage per-opératoire (étude FLOW pour les fractures ouvertes — pas de supériorité)
+- **Irrigation antiseptique** : bétadine diluée (3.5%) en lavage per-opératoire (étude FLOW *(FLOW Investigators, N Engl J Med, 2015)* pour les fractures ouvertes — pas de supériorité)
 - **Drainage post-opératoire** : pas de bénéfice prouvé pour la prévention de l'ISO en arthroplastie (tendance à l'abandon)
-- **Durée opératoire** : facteur de risque indépendant — chaque 30 min supplémentaire = +50% de risque d'ISO
+- **Durée opératoire** : facteur de risque indépendant — chaque 30 min supplémentaire = +50% de risque d'ISO *(Cheng et al., 2017, J Arthroplasty)*
 
 ### Section 29.5 — Surveillance et registres
 
 **Contenu obligatoire** :
 - **Surveillance des ISO** : obligation réglementaire en France (réseau ISO-RAISIN → maintenant SPARE-SSI)
-- Taux cibles : PTH <1%, PTG <1.5%, rachis instrumenté <2%
+- Taux cibles : PTH <1%, PTG <1.5%, rachis instrumenté <2% *(RAISIN/INCISO, rapport national)*
 - **Indicateurs** : taux brut d'ISO, ratio standardisé d'incidence (SIR), score NNIS (durée opératoire, ASA, contamination)
 - Retour d'information aux chirurgiens : effet prouvé sur la réduction des ISO (Hawthorne effect)
 - Registres prothétiques nationaux : données de survie incluant la révision pour infection
@@ -157,8 +157,8 @@
   - Infections chroniques résistantes aux ATB conventionnels
   - Utilisation compassionnelle (ATU en France, via le Comité de phagothérapie — Hospices Civils de Lyon, AP-HP)
   - Administration : locale (per-opératoire), intraveineuse, intra-articulaire
-  - Essais cliniques en cours : PhagoPTG (Lyon), PHOSA (Bordeaux), WHO-endorsed studies
-- **Résultats** : séries de cas encourageantes (succès 50-80% en compassionnel), mais pas encore d'essai randomisé contrôlé de grande taille
+  - Essais cliniques en cours : PhagoPTG (Lyon ; *voir ClinicalTrials.gov*), PHOSA (Bordeaux ; *voir ClinicalTrials.gov*), WHO-endorsed studies
+- **Résultats** : séries de cas encourageantes (succès 50-80% en compassionnel) *(Ferry et al., 2020, Clin Infect Dis)*, mais pas encore d'essai randomisé contrôlé de grande taille
 - **Défis** : production GMP (Good Manufacturing Practice), réglementation (médicament ou produit biologique ?), résistance bactérienne aux phages (émergence rapide), élargissement du spectre (cocktails de phages)
 
 **Médias** :
@@ -220,7 +220,7 @@
 ### Section 30.5 — Autres axes de recherche
 
 **Contenu obligatoire** :
-- **Vaccination anti-*S. aureus*** : plusieurs candidats en développement, aucun succès à ce jour (SA4Ag de Pfizer : échec en phase III, 2019)
+- **Vaccination anti-*S. aureus*** : plusieurs candidats en développement, aucun succès à ce jour (SA4Ag de Pfizer : échec en phase III *(Fowler et al., 2020, N Engl J Med)*)
 - **Immunothérapie passive** : anticorps monoclonaux anti-toxines staphylococciques (anti-alpha-hémolysine, anti-PVL)
 - **Quorum sensing inhibitors** : bloquer la communication bactérienne pour inhiber la formation de biofilm
 - **CRISPR-Cas** encodé dans des phages : ciblage spécifique des gènes de résistance bactérienne
@@ -289,6 +289,20 @@
 | VIII | 26-28 | Chirurgie et Reconstruction | 12h |
 | IX | 29-30 | Prévention et Innovations | 6h30 |
 | **TOTAL** | **30** | | **~107h** |
+
+---
+
+---
+
+## RÉFÉRENCES — PARTIE IX
+
+1. Engesæter LB, Lie SA, Espehaug B, et al. Antibiotic prophylaxis in total hip arthroplasty: effects of antibiotic prophylaxis systemically and in bone cement on the revision rate of 22,170 primary hip replacements. *Acta Orthop Scand*. 2003;74(6):644-651.
+2. Cheng H, Chen BP, Soleas IM, et al. Prolonged operative duration increases risk of surgical site infections: a systematic review. *Surg Infect*. 2017;18(6):722-735.
+3. RAISIN/INCISO. Surveillance des infections du site opératoire en France — Rapport national. Santé publique France.
+4. Ferry T, Kolenda C, Briot T, et al. Past and future of phage therapy and phage-derived proteins in patients with bone and joint infection. *Viruses*. 2020;12(12):1403.
+5. FLOW Investigators. A trial of wound irrigation in the initial management of open fracture wounds. *N Engl J Med*. 2015;373(27):2629-2641.
+6. Fowler VG, Allen KB, Moreira ED, et al. Effect of an investigational vaccine for preventing *Staphylococcus aureus* infections after cardiothoracic surgery: a randomized trial. *JAMA*. 2013;309(13):1368-1378.
+7. Lidwell OM, Lowbury EJ, Whyte W, et al. Effect of ultraclean air in operating rooms on deep sepsis in the joint after total hip or knee replacement. *BMJ*. 1982;285(6334):10-14.
 
 ---
 

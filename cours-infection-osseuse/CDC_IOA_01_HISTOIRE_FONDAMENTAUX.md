@@ -53,7 +53,7 @@
 - Louis Pasteur et la théorie des germes (1860s) — fin de la génération spontanée
 - Joseph Lister et l'antisepsie (1867) : acide phénique, réduction drastique des infections postopératoires
 - Robert Koch et les postulats de Koch (1882) — identification des agents pathogènes
-- Alexander Ogston (1880) : identification du *Staphylococcus aureus* comme agent principal des abcès
+- Alexander Ogston (1880, *Br Med J*) : identification du *Staphylococcus aureus* comme agent principal des abcès
 - Ernest Lexer (1894) : première description systématique de l'ostéomyélite hématogène
 - Développement de l'asepsie chirurgicale (Semmelweis, Halsted, gants en caoutchouc)
 - Impact sur la compréhension de la physiopathologie : de la « carie osseuse » à l'infection bactérienne
@@ -97,7 +97,7 @@
 - Gavriil Ilizarov : transport osseux par distraction ostéogénèse (1950s-1970s, diffusé en Occident dans les années 1980)
 - Développement du fixateur externe dans les fractures ouvertes infectées
 - Évolution du débridement : de l'amputation au « save the limb »
-- Rôle des ciments chargés d'antibiotiques (Buchholz et Engelbrecht, 1970)
+- Rôle des ciments chargés d'antibiotiques (Buchholz & Engelbrecht, 1970, *Chirurg*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -210,7 +210,7 @@
 
 **Contenu obligatoire** :
 - **Anatomie vasculaire métaphysaire de l'enfant** : boucles vasculaires sinusoïdales (anses capillaires) — flux lent, stase, perte des phagocytes marginés
-- Théorie de Trueta (1959) : les vaisseaux métaphysaires se terminent en boucles aveugles adjacentes à la physe → ralentissement du flux → piège bactérien
+- Théorie de Trueta (1959, *J Bone Joint Surg Br*) : les vaisseaux métaphysaires se terminent en boucles aveugles adjacentes à la physe → ralentissement du flux → piège bactérien
 - Absence de couche endothéliale complète au niveau des « sinusoïdes veineux » métaphysaires
 - Chez le nourrisson (<18 mois) : **vaisseaux transphysaires** reliant métaphyse et épiphyse → extension articulaire possible de l'infection
 - Chez l'enfant (2-16 ans) : physe = barrière vasculaire → infection métaphysaire, rarement épiphysaire
@@ -234,7 +234,7 @@
   - Foyers à distance : cutané, urinaire, dentaire, endocardite
   - Bactériémie transitoire : extraction dentaire, manœuvre instrumentale
 - **Voie directe (inoculation)** : fracture ouverte, chirurgie, ponction, morsure
-  - Classification de Gustilo-Anderson des fractures ouvertes et risque infectieux
+  - Classification de Gustilo-Anderson *(Gustilo & Anderson, 1976, J Bone Joint Surg Am)* des fractures ouvertes et risque infectieux
   - Implants : colonisation de surface, adhésion bactérienne
 - **Voie par contiguïté** : extension d'une infection des parties molles adjacentes
   - Escarre, ulcère, cellulite, infection de plaie
@@ -307,7 +307,7 @@
 ### Section 3.1 — *Staphylococcus aureus* : le roi des IOA
 
 **Contenu obligatoire** :
-- Épidémiologie : responsable de 40-60% des ostéomyélites hématogènes, 30-40% des infections périprothétiques
+- Épidémiologie : responsable de 40-60% des ostéomyélites hématogènes, 30-40% des infections périprothétiques *(Lew & Waldvogel, 2004, Lancet)*
 - **Facteurs de virulence** :
   - Adhésines (MSCRAMMs : *Microbial Surface Components Recognizing Adhesive Matrix Molecules*) : clumping factor A/B, fibronectin-binding proteins, collagen-binding protein
   - Toxines : leucocidine de Panton-Valentine (PVL), TSST-1, entérotoxines, alpha-hémolysine
@@ -332,7 +332,7 @@
 ### Section 3.2 — Staphylocoques à coagulase négative et les infections sur matériel
 
 **Contenu obligatoire** :
-- Principales espèces : *S. epidermidis* (60-80%), *S. lugdunensis* (virulent ++ comme *S. aureus*), *S. capitis*, *S. haemolyticus*, *S. hominis*
+- Principales espèces : *S. epidermidis* (60-80% ; Zimmerli et al., 2004, *N Engl J Med*), *S. lugdunensis* (virulent ++ comme *S. aureus*), *S. capitis*, *S. haemolyticus*, *S. hominis*
 - Rôle du slime (glycocalyx) dans la formation du biofilm sur implants métalliques
 - Profils de résistance : fréquemment résistants à la méticilline et aux fluoroquinolones
 - Interprétation délicate : contamination vs infection vraie (règle des ≥ 2 prélèvements positifs au même germe)
@@ -482,7 +482,7 @@
   - Barrière physique : diffusion limitée des antibiotiques et des cellules immunitaires
   - Hétérogénéité métabolique : bactéries en dormance (persisters) → insensibles aux ATB qui ciblent la croissance
   - Échanges génétiques : transfert horizontal de gènes de résistance facilité
-  - Tolérance vs résistance : les bactéries du biofilm sont « tolérantes » (pas résistantes génétiquement) mais deviennent résistantes à des concentrations 100-1000× la CMI
+  - Tolérance vs résistance : les bactéries du biofilm sont « tolérantes » (pas résistantes génétiquement) mais deviennent résistantes à des concentrations 100-1000× la CMI *(Stewart & Costerton, 2001, Lancet)*
 - **Le concept de « fenêtre antibiofilm »** : les premières heures post-contamination sont critiques — le biofilm n'est pas encore mature
 
 **Médias** :
@@ -508,7 +508,7 @@
 - **Cloaque** : ouverture dans l'involucrum par laquelle le pus s'écoule (communication avec la surface)
 - **Fistule** : trajet fistuleux depuis le cloaque jusqu'à la peau (sortie du pus)
 - Séquence complète : infection → nécrose vasculaire → séquestre → réaction périostée → involucrum → cloaque → fistule
-- Classification de Cierny-Mader : rôle de l'anatomie de l'atteinte osseuse (médullaire, superficielle, locale, diffuse)
+- Classification de Cierny-Mader *(adapté de Cierny et al., 2003, Clin Orthop Relat Res)* : rôle de l'anatomie de l'atteinte osseuse (médullaire, superficielle, locale, diffuse)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -552,7 +552,7 @@
 ### Section 4.5 — Physiopathologie de l'infection sur matériel
 
 **Contenu obligatoire** :
-- « The race for the surface » (Gristina, 1987) : compétition entre cellules de l'hôte et bactéries pour coloniser la surface de l'implant
+- « The race for the surface » (Gristina, 1987, *Science*) : compétition entre cellules de l'hôte et bactéries pour coloniser la surface de l'implant
 - Conditionnement de l'implant : adsorption instantanée de protéines de l'hôte (fibrinogène, fibronectine, albumine) → création d'un film conditionnant
 - Adhésion bactérienne au film conditionnant (adhésines + forces physiques)
 - Propriétés de surface : rugosité, hydrophobicité, charge → influence sur l'adhésion
@@ -579,6 +579,20 @@
 5. Le biofilm sur implant impose le retrait du matériel sauf dans le cadre d'un DAIR très précoce (<4 semaines)
 6. Les SCV de *S. aureus* survivent dans les ostéoblastes et expliquent les récidives à distance
 7. L'évasion immunitaire multifactorielle de *S. aureus* (protéine A, capsule, biofilm, SCV, superantigènes) rend son éradication particulièrement difficile
+
+---
+
+## Références bibliographiques (Partie 1)
+
+- Buchholz HW, Engelbrecht H. Über die Depotwirkung einiger Antibiotika bei Vermischung mit dem Kunstharz Palacos. *Chirurg*. 1970;41(11):511-515.
+- Cierny G, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. *Clin Orthop Relat Res*. 2003;414:7-24.
+- Gristina AG. Biomaterial-centered infection: microbial adhesion versus tissue integration. *Science*. 1987;237(4822):1588-1595.
+- Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. *J Bone Joint Surg Am*. 1976;58(4):453-458.
+- Lew DP, Waldvogel FA. Osteomyelitis. *Lancet*. 2004;364(9431):369-379.
+- Ogston A. Report upon micro-organisms in surgical diseases. *Br Med J*. 1881;1(1054):369-375.
+- Stewart PS, Costerton JW. Antibiotic resistance of bacteria in biofilms. *Lancet*. 2001;358(9276):135-138.
+- Trueta J. The three types of acute haematogenous osteomyelitis. *J Bone Joint Surg Br*. 1959;41-B(4):671-680.
+- Zimmerli W, Trampuz A, Ochsner PE. Prosthetic-joint infections. *N Engl J Med*. 2004;351(16):1645-1654.
 
 ---
 

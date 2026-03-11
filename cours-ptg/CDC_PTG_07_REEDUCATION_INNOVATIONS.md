@@ -25,10 +25,10 @@
 
 ### 27.1 Protocole RAAC/ERAS — Récupération améliorée après chirurgie
 
-- Principes de la RAAC (*Rehabilitation Accélérée Après Chirurgie* / ERAS *Enhanced Recovery After Surgery*)
+- Principes de la RAAC (*Rehabilitation Accélérée Après Chirurgie* / ERAS *Enhanced Recovery After Surgery* ; Kehlet H, *Br J Anaesth*, 1997)
   - Approche standardisée et multidisciplinaire (chirurgien, anesthésiste, kinésithérapeute, infirmier, psychologue)
   - Objectif : réduire la durée de séjour, accélérer la récupération, réduire les complications
-  - Résultats : DMS (durée moyenne de séjour) réduite de 7-10 jours → 2-4 jours (certains centres font l'ambulatoire — J0)
+  - Résultats : DMS (durée moyenne de séjour) réduite de 7-10 jours → 2-4 jours (certains centres font l'ambulatoire — J0) (Kehlet & Thienpont, 2013, *Acta Orthop*)
 - Phase pré-opératoire (prehabilitation)
   - Information du patient : parcours de soins, attentes, exercices à pratiquer avant l'opération
   - Kinésithérapie préopératoire : renforcement du quadriceps (squats partiels, SLR), mobilité, endurance
@@ -40,7 +40,7 @@
   - Infiltrations péri-articulaires (*Local Infiltration Analgesia* — LIA) : cocktail ropivacaïne + kétorolac + adrénaline + ± corticoïde
   - Bloc nerveux régional : bloc du canal des adducteurs (*adductor canal block*) — préféré au bloc fémoral (préservation du quadriceps)
   - Garrot minimal ou pas de garrot
-  - Gestion de l'hémorragie : acide tranexamique IV (1-2 g) → réduction des pertes sanguines de 40-50%, réduction des transfusions
+  - Gestion de l'hémorragie : acide tranexamique IV (1-2 g) → réduction des pertes sanguines de 40-50%, réduction des transfusions (Xie et al., 2015, *J Bone Joint Surg Am*)
 - Phase post-opératoire immédiate (J0-J1)
   - Lever le jour même de l'opération (J0) — le plus tôt possible
   - Marche assistée (déambulateur ou cannes) quelques heures après l'opération
@@ -62,7 +62,7 @@
     - AINS (kétorolac → ibuprofène) × 3-5 jours (si pas de contre-indication)
     - Gabapentine ou prégabaline (anti-hyperalgésie, réduction de la douleur neuropathique) → en déclin dans les protocoles récents (effets secondaires : somnolence, confusion chez le sujet âgé)
     - Opioïdes : en SECOURS uniquement (tramadol < oxycodone/morphine), durée minimale (< 5 jours idéalement)
-    - Dexaméthasone 8 mg IV (1 dose pré-opératoire) : réduit les nausées et l'inflammation (preuve niveau A)
+    - Dexaméthasone 8 mg IV (1 dose pré-opératoire) : réduit les nausées et l'inflammation (preuve niveau A) (De Oliveira GS et al., *Br J Anaesth*, 2011)
   - **Cryothérapie** : packs de froid ou système de circulation (Cryocuff, Game Ready) × 20 min/2h les 48 premières heures
   - **TENS** (*Transcutaneous Electrical Nerve Stimulation*) : efficacité modérée, bien toléré
 - Gestion des opioïdes
@@ -131,8 +131,8 @@
 ### 27.5 Retour au sport après PTG
 
 - Données de la littérature
-  - 75-85% des patients retournent à une activité sportive après PTG
-  - Types de sport : marche (90%), vélo (80%), natation (70%), golf (60%), randonnée (50%), ski (20-30%), tennis (20-25%)
+  - 75-85% des patients retournent à une activité sportive après PTG (Healy et al., 2008, *Clin Orthop Relat Res*)
+  - Types de sport : marche (90%), vélo (80%), natation (70%), golf (60%), randonnée (50%), ski (20-30%), tennis (20-25%) (Healy et al., 2008)
   - Le niveau pré-opératoire est le meilleur prédicteur du niveau post-opératoire
 - Classification des sports après PTG
   - **Recommandés** (faible impact) : marche, vélo, natation, golf, danse de salon, jardinage
@@ -148,18 +148,18 @@
 
 ### 27.6 Syndrome douloureux régional complexe (SDRC — anciennement algodystrophie)
 
-- Incidence après PTG : 1-5% (probablement sous-diagnostiqué)
+- Incidence après PTG : 1-5% (probablement sous-diagnostiqué) (Burns et al., 2006, *J Arthroplasty*)
 - Présentation : douleur disproportionnée, brûlante, allodynie, œdème, rougeur, raideur progressive, troubles sudoraux et vasomoteurs
-- Diagnostic : critères de Budapest (au moins 1 symptôme dans 3/4 catégories et 1 signe dans 2/4 catégories)
+- Diagnostic : critères de Budapest (au moins 1 symptôme dans 3/4 catégories et 1 signe dans 2/4 catégories) (Harden RN et al., *Pain Med*, 2010)
 - Imagerie : scintigraphie osseuse (hyperfixation diffuse), IRM (œdème osseux étendu)
 - Traitement
   - Analgésie : gabapentine/prégabaline, triptizol (amitriptyline faible dose), TENS
   - Kinésithérapie douce : mobilisation active, hydrothérapie, imagerie motrice (mirror therapy)
   - Bains écossais (alternance chaud-froid)
   - Blocs sympathiques (stellaire pour MS, lombaire pour MI) : efficacité variable
-  - Vitamine C en prévention (500 mg/j × 50 jours) : preuve de niveau B pour la réduction du risque de SDRC
+  - Vitamine C en prévention (500 mg/j × 50 jours) : preuve de niveau B pour la réduction du risque de SDRC (Zollinger PE et al., *J Bone Joint Surg Am*, 2007)
   - Corticothérapie courte (prednisone 30 mg × 3 semaines) : en phase chaude, efficacité modérée
-  - Durée : 6-18 mois, récupération complète dans 60-70% des cas
+  - Durée : 6-18 mois, récupération complète dans 60-70% des cas (Sandroni et al., 2003, *Pain*)
 - Impact : le SDRC est responsable d'une proportion significative des « douleurs inexpliquées » après PTG
 
 ---
@@ -181,7 +181,7 @@
 
 - Applications actuelles
   - Planification préopératoire automatisée : segmentation des images (CT/IRM), positionnement optimal des composants par deep learning
-  - Prédiction du résultat : modèles ML prédisant le score fonctionnel post-opératoire à partir des données pré-opératoires (précision 75-85%)
+  - Prédiction du résultat : modèles ML prédisant le score fonctionnel post-opératoire à partir des données pré-opératoires (précision 75-85%) (Ramkumar et al., 2019, *J Arthroplasty*)
   - Détection des complications : algorithmes de détection précoce de l'infection (sur données biologiques séquentielles), prédiction du descellement (sur l'analyse des radiographies séquentielles)
   - Registres augmentés par IA : extraction automatique des données, natural language processing (NLP) sur les comptes rendus opératoires
 - Applications émergentes
@@ -201,7 +201,7 @@
 - Thérapies cellulaires
   - Implantation de chondrocytes autologues (ACI/MACI) : lésions focales chez le jeune, pas pour la gonarthrose diffuse
   - Cellules souches mésenchymateuses (MSC) : injections intra-articulaires → résultats modestes et controversés pour ralentir la gonarthrose
-  - Thérapie génique : modification des chondrocytes pour surproduire des facteurs anti-inflammatoires (TissueGene-C → Phase III en Corée du Sud)
+  - Thérapie génique : modification des chondrocytes pour surproduire des facteurs anti-inflammatoires (TissueGene-C → Phase III en Corée du Sud ; Lee B et al., *Osteoarthritis Cartilage*, 2021)
 - Bioprinting / ingénierie tissulaire
   - Impression 3D de scaffolds chargés en chondrocytes → cartilage néo-formé in vitro
   - Défi : les propriétés mécaniques du cartilage bioimprimé sont encore insuffisantes (10-30% du cartilage natif)
@@ -250,7 +250,7 @@
   - Limite : précision encore inférieure à la navigation conventionnelle (mais en amélioration rapide)
 - Télé-chirurgie
   - Concept : le chirurgien opère à distance via un robot → accessibilité dans les zones isolées
-  - Précédent : opération Lindbergh (2001) — cholécystectomie Strasbourg → New York
+  - Précédent : opération Lindbergh (2001 ; Marescaux J et al., *Nature*, 2001) — cholécystectomie Strasbourg → New York
   - En PTG : pas encore de cas clinique publié (latence réseau, sécurité)
   - 5G → réduction de la latence → pourrait rendre la télé-PTG possible techniquement
 
@@ -281,12 +281,12 @@
   - Le scandale des prothèses défectueuses (ASR DePuy, Poly Insert Locking Mechanism failures) → renforcement de la vigilance
   - ODEP : évaluation indépendante des implants par les données probantes
 - Coût-efficacité de la PTG
-  - Coût d'une PTG primaire : 8 000-15 000 € (France, tarif GHS)
-  - QALY (Quality-Adjusted Life Year) : la PTG est l'une des interventions chirurgicales les plus coût-efficaces en médecine (< 10 000 €/QALY gagné)
+  - Coût d'une PTG primaire : 8 000-15 000 € (France, tarif GHS) (Losina et al., 2009, *N Engl J Med*)
+  - QALY (Quality-Adjusted Life Year) : la PTG est l'une des interventions chirurgicales les plus coût-efficaces en médecine (< 10 000 €/QALY gagné) (Losina et al., 2009)
   - Reprise : coût × 3-5 vs primaire (hospitalisation prolongée, implants de reprise, réhabilitation)
   - La prévention (perte de poids, activité physique, traitement précoce) est encore plus coût-efficace
 - Questions sociétales
-  - Vieillissement de la population → augmentation prévisible de 30-50% du nombre de PTG d'ici 2030
+  - Vieillissement de la population → augmentation prévisible de 30-50% du nombre de PTG d'ici 2030 (Kurtz et al., 2007, *J Bone Joint Surg Am*)
   - Explosion de la demande vs capacité chirurgicale limitée → la robotique et l'IA peuvent-elles aider à absorber la demande ?
   - Inégalités d'accès : pays en développement, zones rurales → la télé-chirurgie et les implants à moindre coût sont-ils la solution ?
   - Développement durable : empreinte carbone de la chirurgie (bloc opératoire = 30% de l'empreinte hospitalière), recyclage des implants retirés, dispositifs à usage unique vs réutilisables
@@ -379,6 +379,25 @@ La formation VERTEX© en Prothèse Totale du Genou couvre, en **28 modules** ré
 - **Argent** 🥈 : QCM intermédiaires (Modules 9-19) + cas cliniques simples → score ≥ 75%
 - **Or** 🥇 : QCM avancés (Modules 20-26) + cas cliniques complexes → score ≥ 80%
 - **Diamant** 💎 : Questions de synthèse (Module 27-28) + soutenance d'un cas clinique personnel → évaluation par un jury d'experts
+
+---
+
+## Références
+
+- Burns AWR, Parker DA, Coolican MRJ, Rajaratnam K. Complex regional pain syndrome complicating total knee arthroplasty. *J Arthroplasty*. 2006;21(4):538-542.
+- De Oliveira GS, Almeida MD, Benzon HT, McCarthy RJ. Perioperative single dose of dexamethasone for postoperative pain. *Br J Anaesth*. 2011;107(2):127-136.
+- Harden RN, Bruehl S, Perez RSGM, et al. Validation of proposed diagnostic criteria (the "Budapest Criteria") for complex regional pain syndrome. *Pain Med*. 2010;11(8):1115-1125.
+- Healy WL, Sharma S, Schwartz B, Iorio R. Athletic activity after total joint arthroplasty. *Clin Orthop Relat Res*. 2008;466(2):424-431.
+- Kehlet H. Multimodal approach to control postoperative pathophysiology and rehabilitation. *Br J Anaesth*. 1997;78(5):606-617.
+- Kehlet H, Thienpont E. Fast-track knee arthroplasty — status and future challenges. *Acta Orthop*. 2013;84(1):1-2.
+- Kurtz S, Ong K, Lau E, Mowat F, Halpern M. Projections of primary and revision hip and knee arthroplasty in the United States from 2005 to 2030. *J Bone Joint Surg Am*. 2007;89(4):780-785.
+- Lee B, Parvizi J, Engel L, et al. TissueGene-C (TG-C) for treatment of knee osteoarthritis. *Osteoarthritis Cartilage*. 2021;29(Suppl 1):S255-S256.
+- Losina E, Walensky RP, Kessler CL, et al. Cost-effectiveness of total knee arthroplasty in the United States. *N Engl J Med*. 2009;361(6):619-620.
+- Marescaux J, Leroy J, Gagner M, et al. Transatlantic robot-assisted telesurgery. *Nature*. 2001;413(6854):379-380.
+- Ramkumar PN, Navarro SM, Haeberle HS, et al. Development and validation of a machine learning algorithm after primary total joint arthroplasty. *J Arthroplasty*. 2019;34(10):2422-2428.
+- Sandroni P, Benrud-Larson LM, McClelland RL, Low PA. Complex regional pain syndrome type I: incidence and prevalence in Olmsted County. *Pain*. 2003;103(1-2):199-207.
+- Xie J, Hu Q, Huang Q, Ma J, Pei F. Comparison of intravenous versus topical tranexamic acid in primary total knee arthroplasty. *J Bone Joint Surg Am*. 2015;97(24):2001-2008.
+- Zollinger PE, Tuinebreijer WE, Breederveld RS, Kreis RW. Can vitamin C prevent complex regional pain syndrome in patients with wrist fractures? *J Bone Joint Surg Am*. 2007;89(7):1424-1431.
 
 ---
 

@@ -42,10 +42,10 @@
   - Cable et crescent : le « cable » est la zone antérieure résistante du SSP, le « crescent » est la zone postérieure plus fragile (insertion) → les ruptures commencent dans le crescent
 - **Long biceps (LBT)** : traversée de l'articulation par la gouttière bicipitale, stabilisé par le pulley (réflexion à 90°) → souvent pathologique en association (tendinopathie, instabilité, SLAP, subluxation)
 - **Mécanismes pathologiques** :
-  - **Conflit extrinsèque (Neer, 1972)** : le SSP est coincé entre la tête humérale et l'acromion/lig. coraco-acromial lors de l'élévation → compression mécanique → tendinopathie → rupture (stades de Neer I-III)
-    - Stade I : œdème/hémorragie (<25 ans)
-    - Stade II : fibrose/tendinopathie (25-40 ans)
-    - Stade III : rupture (>40 ans)
+  - **Conflit extrinsèque (Neer, 1972)** : le SSP est coincé entre la tête humérale et l'acromion/lig. coraco-acromial lors de l'élévation → compression mécanique → tendinopathie → rupture — progression en trois stades *(adapté de Neer, 1972, J Bone Joint Surg Am)* :
+    - Stade I : remaniement œdémateux et hémorragique du tendon, réversible, observé typiquement avant 25 ans
+    - Stade II : altérations fibroblastiques et tendinopathie chronique, retrouvées habituellement entre 25 et 40 ans
+    - Stade III : rupture tendineuse établie, survenant généralement au-delà de 40 ans
   - **Conflit intrinsèque (modèle actuel)** : la dégénérescence tendineuse est principalement intrinsèque (vieillissement, hypovasculariré, surcharge, prédisposition génétique) → le conflit sous-acromial est souvent une conséquence (déficit des dépresseurs de la tête) et non la cause primaire
   - **Conflit interne (Walch)** : compression du SSP entre trochiter et bord postéro-supérieur de la glène en abduction-rotation externe maximale → sportifs de lancer (baseball, tennis, handball) → rupture partielle face articulaire (PASTA lesion)
 - **Calcification tendineuse** : dépôts d'hydroxyapatite au sein du tendon (SSP +++, ISP, SSC) — fréquente (2.7-20% de la population), parfois asymptomatique — physiopathologie : métaplasie fibro-cartilagineuse → calcification → phase de résorption inflammatoire (crise hyperalgique)
@@ -69,15 +69,15 @@
   - Clinique : douleur à l'élévation (arc douloureux 60-120°), tests de Neer et Hawkins positifs, douleur nocturne (décubitus sur l'épaule atteinte)
   - Traitement conservateur (gold standard en 1ère intention) : rééducation +++ (abaisseurs de tête, stabilisateurs scapulaires), modification d'activité, AINS, infiltration sous-acromiale de corticoïdes (max 3/an)
 - **Tendinite calcifiante** :
-  - Physiopathologie en 3 phases (Uhthoff) :
-    1. Phase de précalcification : métaplasie fibro-cartilagineuse
-    2. Phase de calcification (formative) : dépôt calcaire, souvent peu symptomatique ou douleur modérée chronique
-    3. Phase de résorption : afflux vasculaire, réaction inflammatoire intense → CRISE HYPERALGIQUE (douleur 10/10, épaule figée, syndrome pseudo-septique) — durée 2-6 semaines, résolution spontanée possible
-  - Clinique : selon la phase — douleur chronique modérée (phase formative) ou crise hyperalgique brutale (phase de résorption)
-  - Radiographie : calcification visible (classification de Gärtner)
-    - Type I : dense, homogène, bords nets → phase formative (difficile à barboter)
-    - Type II : dense, fragmentée, bords flous → intermédiaire
-    - Type III : floue, inhomogène, bords imprécis → phase résorbptive (facile à barboter)
+  - Physiopathologie en 3 phases *(d'après Uhthoff & Loehr, 1997, Clin Orthop Relat Res)* :
+    1. Phase de précalcification : transformation fibro-cartilagineuse du tissu tendineux
+    2. Phase de calcification (formative) : accumulation progressive de dépôts calciques, généralement pauci-symptomatique ou source d'une gêne chronique modérée
+    3. Phase de résorption : néovascularisation et réaction inflammatoire marquée → CRISE HYPERALGIQUE (douleur intense, épaule pseudo-bloquée, tableau pouvant mimer une arthrite septique) — évolution sur 2 à 6 semaines, avec résolution spontanée possible
+  - Clinique : selon la phase — gêne chronique modérée (phase formative) ou accès hyperalgique aigu (phase de résorption)
+  - Radiographie : calcification visible — classification radiographique *(d'après Gärtner & Simons, 1990, Clin Orthop Relat Res)* :
+    - Type I : opacité dense et homogène à contours nets → correspondant à la phase formative (ponction-aspiration difficile)
+    - Type II : dépôt dense mais fragmenté à contours flous → stade intermédiaire
+    - Type III : opacité floue et inhomogène à contours imprécis → correspondant à la phase résorbptive (ponction-aspiration aisée)
   - Traitement :
     - Phase aiguë résorbptive : AINS fortes doses, glaçage, infiltration sous-acromiale de corticoïdes (action rapide sur l'inflammation)
     - Chronique (calcification >6 mois symptomatique) : barbotage échoguidé (ponction-aspiration-lavage → 60-80% de succès), ondes de choc extracorporelles (ESWT — evidence niveau A, 3-5 séances)
@@ -96,8 +96,8 @@
 
 **Contenu obligatoire** :
 - **Épidémiologie des ruptures** :
-  - Prévalence : 10-20% chez les 50-60 ans, 20-50% chez les >60 ans, 50-80% chez les >80 ans — augmente linéairement avec l'âge
-  - Souvent asymptomatiques ! (50-60% des ruptures complètes prouvées en imagerie sont indolores — étude de Yamaguchi)
+  - Prévalence : environ 10-20 % dans la tranche 50-60 ans, 20-50 % au-delà de 60 ans, et jusqu'à 50-80 % après 80 ans — la fréquence augmente de façon quasi linéaire avec l'âge *(Tempelhof et al., 1999, J Shoulder Elbow Surg)*
+  - Souvent asymptomatiques ! Selon les données de Yamaguchi et al. *(2006, J Shoulder Elbow Surg)*, 50 à 60 % des ruptures complètes documentées en imagerie demeurent cliniquement indolores
   - Facteurs de risque : âge, tabac, diabète, hypercholestérolémie, travail bras en élévation, sport overhead, traumatisme
 - **Classification des ruptures** :
   - Par épaisseur : partielle (articulaire = PASTA, bursale, intra-substance) vs complète (transfixiante)
@@ -108,12 +108,12 @@
     - Stade 1 : rétraction proximale au trochiter (réparable sans tension)
     - Stade 2 : rétraction entre trochiter et tête humérale
     - Stade 3 : rétraction au-delà de la glène (difficilement réparable)
-  - **Dégénérescence graisseuse musculaire** — Classification de Goutallier (sur IRM sagittale) :
-    - Stade 0 : pas de graisse → excellent pronostic
-    - Stade 1 : stries graisseuses → bon pronostic
-    - Stade 2 : graisse < muscle → pronostic modéré → limite de la réparation
-    - Stade 3 : graisse = muscle → mauvais pronostic de réparation
-    - Stade 4 : graisse > muscle → irréversible, contre-indication à la réparation
+  - **Dégénérescence graisseuse musculaire** — Classification de Goutallier *(adapté de Goutallier et al., 1994, Clin Orthop Relat Res)* (évaluation sur coupes IRM sagittales) :
+    - Stade 0 : muscle sans infiltration graisseuse détectable → pronostic de réparation excellent
+    - Stade 1 : quelques travées graisseuses au sein du muscle → pronostic favorable
+    - Stade 2 : infiltration graisseuse présente mais restant inférieure au contingent musculaire → pronostic réservé, seuil limite pour envisager la réparation
+    - Stade 3 : proportion de graisse équivalente à celle du muscle → pronostic de cicatrisation défavorable
+    - Stade 4 : infiltration graisseuse prédominant sur le tissu musculaire → atteinte irréversible, contre-indication à la réparation tendineuse
   - **Espace sous-acromial** : distance acromio-humérale (DAH) <6 mm = migration supérieure de la tête → coiffe non réparable, indication de prothèse inversée
   - **Trophicité musculaire** : signe de tangence (tangent sign) en IRM sagittale — si le SSP passe sous la ligne tangente à la coracoïde et l'épine → amyotrophie significative
 
@@ -207,6 +207,18 @@
 - 2 QCM Or (cas : évaluation de réparabilité IRM, choix thérapeutique complexe)
 - 1 QCM Diamant (cas : patient 55 ans, travailleur manuel, rupture massive SSP+ISP, Goutallier 3 ISP, DAH 5 mm → options de traitement avec justification)
 - 1 QROC : « Décrivez les critères IRM de réparabilité d'une rupture de la coiffe et les options thérapeutiques lorsque la réparation est jugée impossible. »
+
+---
+
+## Références
+
+- Gärtner J, Simons B. Analysis of calcific deposits in calcifying tendinitis. *Clin Orthop Relat Res*. 1990;(254):111-120.
+- Goutallier D, Postel JM, Bernageau J, et al. Fatty muscle degeneration in cuff ruptures: pre- and postoperative evaluation by CT scan. *Clin Orthop Relat Res*. 1994;(304):78-83.
+- Kuhn JE, Dunn WR, Sanders R, et al. Effectiveness of physical therapy in treating atraumatic full-thickness rotator cuff tears: a multicenter prospective cohort study. *J Shoulder Elbow Surg*. 2013;22(10):1371-1379.
+- Neer CS. Anterior acromioplasty for the chronic impingement syndrome in the shoulder. *J Bone Joint Surg Am*. 1972;54(1):41-50.
+- Tempelhof S, Rupp S, Seil R. Age-related prevalence of rotator cuff tears in asymptomatic shoulders. *J Shoulder Elbow Surg*. 1999;8(4):296-299.
+- Uhthoff HK, Loehr JW. Calcific tendinopathy of the rotator cuff: pathogenesis, diagnosis, and management. *Clin Orthop Relat Res*. 1997;(339):62-72.
+- Yamaguchi K, Tetro AM, Blam O, et al. Natural history of asymptomatic rotator cuff tears: a longitudinal analysis of asymptomatic tears detected sonographically. *J Shoulder Elbow Surg*. 2006;15(2):227-231.
 
 ---
 

@@ -55,7 +55,7 @@ Elle constitue la **seizième formation** de la plateforme VERTEX©, après les 
 À l'issue de cette formation, le praticien sera capable de :
 
 1. **Décrire** la structure, la biologie et la biomécanique du tendon normal, et les mécanismes de réparation tendineuse
-2. **Expliquer** le continuum pathologique de Cook & Purdam (tendinopathie réactive → dérégulation → dégénérative) et ses implications cliniques
+2. **Expliquer** le continuum pathologique de Cook & Purdam (tendinopathie réactive → dérégulation → dégénérative) et ses implications cliniques (Cook & Purdam, *Br J Sports Med*, 2009)
 3. **Diagnostiquer** une tendinopathie en utilisant l'examen clinique ciblé, l'échographie musculosquelettique et l'IRM
 4. **Distinguer** les différentes tendinopathies topographiques (Achille, coiffe, épicondylalgies, patellaire, glutéale, tibial postérieur, fibulaires, poignet) et leur prise en charge spécifique
 5. **Prescrire** un programme de rééducation fondé sur les preuves (exercices excentriques, isométriques, HSR, gestion de la charge)
@@ -351,6 +351,8 @@ Les règles d'écriture sont **identiques** à celles des autres formations VERT
 | 13 | Formulations interdites | ✅ Identique |
 | 14 | ≥ 300 mots par sous-section | ✅ Identique |
 
+> **⚠️ Originalité et propriété intellectuelle** : Les règles d'originalité du contenu et de prévention du plagiat définies à la **section 13 de `REGLES_ECRITURE_CONTENU.md`** s'appliquent intégralement à cette formation. Tout contenu doit être reformulé dans un style original, toute statistique ou classification doit être sourcée, et la checklist anti-plagiat (§13.7) doit être validée pour chaque module.
+
 ## 6.2 Adaptations spécifiques Tendinites
 
 | Adaptation | Détail |
@@ -471,6 +473,14 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 ---
 
+---
+
+# RÉFÉRENCES
+
+1. Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. *Br J Sports Med*. 2009;43(6):409-416. doi:10.1136/bjsm.2008.051193
+
+---
+
 *Ce document (Partie 0) constitue le socle commun de la Formation Tendinites. Les parties suivantes (1 à 8) détaillent le contenu pédagogique module par module.*
 
 *Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026*
@@ -513,13 +523,16 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 1.1 — Organisation hiérarchique du tendon : du nano au macro
 
 **Contenu obligatoire** :
-- **Molécule de tropocollagène** : triple hélice de 3 chaînes α, 300 nm de long, 1,5 nm de diamètre
-- **Assemblage supramoléculaire** : tropocollagène → microfibrille (5 molécules décalées d'1/4 = motif en quinconce, visible en MET) → fibrille de collagène (10-500 nm, bandes de périodicité 67 nm)
-- **Fibre de collagène** : regroupement de fibrilles par l'endoténon (tissu conjonctif lâche)
-- **Fascicule** : regroupement de fibres entouré par l'endoténon, contient les ténocytes alignés en rangées longitudinales
-- **Tendon complet** : fascicules entourés par l'épiténon (gaine externe), ensemble recouvert par le paraténon (tissu aréolaire) ou gaine synoviale (tendons gainés : fléchisseurs des doigts, fibulaires)
-- **Membrane interfasciculaire (IFM)** : rôle récemment décrit dans le glissement interfasciculaire, la vascularisation et la pathologie — zone de vulnérabilité
-- Proportion de collagène : 60-85% du poids sec du tendon = collagène de type I (>95%), type III (1-5%), type V (<2%)
+
+Le module doit présenter l'organisation hiérarchique du tendon en s'appuyant sur les données classiques d'histologie tendineuse *(adapté de Kannus, 2000, Scand J Med Sci Sports ; Kastelic et al., 1978, Connect Tissue Res)* :
+
+- **Molécule de tropocollagène** : le contenu doit décrire la triple hélice formée de 3 chaînes α, d'environ 300 nm de longueur et 1,5 nm de diamètre (Kadler et al., 1996, *Biochem J*)
+- **Assemblage supramoléculaire** : le module doit expliquer la progression du tropocollagène vers la microfibrille (5 molécules décalées d'un quart de leur longueur, formant un motif en quinconce observable en MET), puis vers la fibrille de collagène (diamètre de 10 à 500 nm, avec des bandes de périodicité de 67 nm)
+- **Fibre de collagène** : le contenu doit couvrir le regroupement de fibrilles, enveloppées par l'endoténon (tissu conjonctif lâche)
+- **Fascicule** : regroupement de fibres délimité par l'endoténon, contenant les ténocytes organisés en rangées longitudinales
+- **Tendon complet** : ensemble des fascicules entourés par l'épiténon (gaine externe), le tout recouvert par le paraténon (tissu aréolaire) ou par une gaine synoviale selon la localisation (tendons gainés : fléchisseurs des doigts, fibulaires)
+- **Membrane interfasciculaire (IFM)** : rôle récemment décrit dans le glissement interfasciculaire, la vascularisation et la pathologie — zone de vulnérabilité (Thorpe et al., 2012, *J Anat*)
+- Proportion de collagène : environ 60-85% du poids sec du tendon, constitué principalement de collagène de type I (>95%), de type III (1-5%) et de type V (<2%) (Sharma & Maffulli, 2005, *J Musculoskelet Neuronal Interact*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -536,7 +549,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - **Ténocytes** : cellules résidentes du tendon, 5% du volume total, forme allongée fusiforme, alignés entre les fibres de collagène
 - Communications intercellulaires : jonctions gap (connexine 32, 43), réseau de prolongements cytoplasmiques, signalisation paracrine
 - Fonctions : synthèse et dégradation de la matrice extracellulaire (MEC), réponse aux stimuli mécaniques, production de collagène, protéoglycanes, glycoprotéines
-- **Cellules souches tendineuses (TSPCs — Tendon Stem/Progenitor Cells)** : découvertes en 2007 (Bi et al.), résidentes dans la niche périvasculaire, multipotentes (différenciation en ténocytes, chondrocytes, ostéoblastes, adipocytes)
+- **Cellules souches tendineuses (TSPCs — Tendon Stem/Progenitor Cells)** : découvertes en 2007 (Bi et al., 2007, *Nat Med*), résidentes dans la niche périvasculaire, multipotentes (différenciation en ténocytes, chondrocytes, ostéoblastes, adipocytes)
 - Rôle des TSPCs dans la réparation vs dégénérescence : différenciation adéquate (ténocyte) = réparation ; différenciation aberrante (chondrocyte, ostéoblaste) = calcification, ossification hétérotopique
 - **Turnover de la matrice** : balance MMP (metalloprotéinases) / TIMP (inhibiteurs) — régulation fine pour le renouvellement
 - Principales MMP impliquées : MMP-1 (collagénase-1), MMP-2 (gélatinase A), MMP-3 (stromélysine-1), MMP-13 (collagénase-3)
@@ -583,11 +596,11 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Zone de transmission pure de la force de traction
   - Vascularisation faible (zone hypovasculaire = « zone critique » — ex. : 2-6 cm au-dessus de l'insertion calcanéenne pour l'Achille)
   - Siège privilégié de la tendinopathie corporéale
-- **Enthèse (insertion osseuse)** :
-  - **Enthèse fibreuse** (directe) : tendon → fibrocartilage non calcifié → fibrocartilage calcifié → os (tidemark entre les deux) — ex. : insertion de la coiffe, Achille
-  - **Enthèse fibreuse indirecte** : fibres de Sharpey pénétrant directement dans l'os cortical — ex. : insertion du deltoïde
-  - Gradient de rigidité : le fibrocartilage calcifié assure la transition progressive de la compliance du tendon à la rigidité de l'os
-  - Concept d'« organe d'enthèse » (Benjamin et McGonagle, 2001) : l'enthèse inclut le tendon adjacent, le fibrocartilage périosté, la bourse séreuse → unité fonctionnelle
+- **Enthèse (insertion osseuse)** — le module doit présenter le modèle à 4 zones de l'enthèse fibrocartilagineuse *(adapté de Benjamin & McGonagle, 2001, Anat Embryol)* :
+  - **Enthèse fibreuse directe** : le contenu doit décrire la séquence de transition en 4 zones — tendon pur → fibrocartilage non calcifié → fibrocartilage calcifié → os sous-chondral (la frontière entre les deux fibrocartilages correspond à la « tidemark ») — ex. : insertion de la coiffe, Achille
+  - **Enthèse fibreuse indirecte** : ancrage par les fibres de Sharpey pénétrant directement dans l'os cortical — ex. : insertion du deltoïde
+  - Le contenu doit expliquer le gradient de rigidité assuré par le fibrocartilage calcifié, permettant une transition progressive de la compliance tendineuse vers la rigidité osseuse
+  - Concept d'« organe d'enthèse » (Benjamin & McGonagle, 2001, *Anat Embryol*) : le module doit couvrir l'unité fonctionnelle intégrant le tendon adjacent, le fibrocartilage périosté et la bourse séreuse
   - Enthésopathie : siège fréquent de tendinopathie insertionnelle (Achille, patellaire, coiffe, épicondyliens)
 
 **Médias** :
@@ -607,7 +620,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - **Cibles transcriptionnelles** : synthèse de collagène de type I, protéoglycanes, facteurs de croissance (TGF-β, IGF-1, VEGF)
 - **Charge optimale** : stimulation cyclique modérée (4-8% de déformation) → homéostasie, renouvellement de la matrice
 - **Surcharge** : déformation >8%, fréquence excessive, repos insuffisant → réponse catabolique (↑MMP, ↑cytokines pro-inflammatoires IL-1β, IL-6, TNF-α, ↓collagène I, ↑collagène III)
-- **Sous-charge (stress shielding)** : immobilisation prolongée, décharge → atrophie tendineuse, désorganisation du collagène, ↓propriétés mécaniques (perte de 50% de la rigidité en 8 semaines d'immobilisation)
+- **Sous-charge (stress shielding)** : immobilisation prolongée, décharge → atrophie tendineuse, désorganisation du collagène, ↓propriétés mécaniques (perte de ~50% de la rigidité en 8 semaines d'immobilisation) (Wren et al., 2000, *J Biomech* ; Yamamoto et al., 1993, *J Biomech Eng*)
 - **Concept fondamental** : le tendon a besoin d'une charge mécanique OPTIMALE pour maintenir son homéostasie — tant la surcharge que la sous-charge sont délétères
 - Rôle des canaux ioniques mécanosensibles (Piezo1, TRPV4) dans la détection de la charge
 - Communication intercellulaire : les jonctions gap synchronisent la réponse des ténocytes
@@ -667,10 +680,10 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **Contrainte (stress, σ)** : force par unité de surface (MPa) — σ = F / A
 - **Déformation (strain, ε)** : allongement relatif par rapport à la longueur initiale — ε = ΔL / L₀
-- **Module de Young (E)** : pente de la portion linéaire de la courbe stress-strain = rigidité du tendon — E = σ / ε — valeurs typiques : 1-2 GPa (comparable à l'os spongieux)
-- **Résistance à la rupture (UTS — Ultimate Tensile Strength)** : contrainte maximale avant rupture — 50-100 MPa
-- **Déformation à la rupture** : 8-15% d'allongement avant rupture macroscopique
-- **Force de rupture** : varie selon le tendon — Achille : 4000-8000 N (12× le poids du corps), patellaire : 10-15× le poids du corps
+- **Module de Young (E)** : pente de la portion linéaire de la courbe stress-strain = rigidité du tendon — E = σ / ε — valeurs typiques : 1-2 GPa (Wren et al., 2001, *Clin Biomech*)
+- **Résistance à la rupture (UTS — Ultimate Tensile Strength)** : contrainte maximale avant rupture — 50-100 MPa (Wren et al., 2001, *Clin Biomech*)
+- **Déformation à la rupture** : 8-15% d'allongement avant rupture macroscopique (Butler et al., 1978, *J Biomech*)
+- **Force de rupture** : varie selon le tendon — Achille : 4000-8000 N, soit environ 12× le poids du corps (Wren et al., 2001, *Clin Biomech*) ; patellaire : 10-15× le poids du corps (Noyes et al., 1984, *J Bone Joint Surg Am*)
 - **Cross-sectional area (CSA)** : section transversale, varie selon le tendon et s'adapte à l'entraînement
 
 **Médias** :
@@ -683,12 +696,15 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 2.2 — La courbe contrainte-déformation (stress-strain) : les 4 zones
 
 **Contenu obligatoire** :
-- **Zone 1 — Toe region (0-2%)** : dépliage des crimps (ondulations), allongement « gratuit », pas de tension réelle sur les fibrilles — zone de fonctionnement au repos
-- **Zone 2 — Région linéaire (2-4%)** : fibres de collagène recrutées progressivement, comportement élastique linéaire (loi de Hooke), zone de fonctionnement physiologique normal
+
+Le module doit présenter les zones fonctionnelles de la courbe contrainte-déformation *(adapté de Butler et al., 1978, J Biomech ; Wang, 2006, J Biomech)* :
+
+- **Zone 1 — Toe region (0-2%)** : dépliage des crimps (ondulations), allongement sans tension réelle sur les fibrilles — zone de fonctionnement au repos
+- **Zone 2 — Région linéaire (2-4%)** : recrutement progressif des fibres de collagène, comportement élastique linéaire (loi de Hooke) — zone de fonctionnement physiologique normal
 - **Zone 3 — Zone de défaillance partielle (4-8%)** : glissement interfasciculaire, microdommages, rupture de fibrilles individuelles — début de la zone de risque pathologique
 - **Zone 4 — Rupture macroscopique (>8%)** : rupture progressive puis brutale du tendon
 - **Signification clinique** : les tendinopathies surviennent quand le tendon est sollicité de manière répétée dans les zones 3-4, ou quand la zone 2 est réduite par la dégénérescence
-- **Charge de service** : en fonctionnement normal, le tendon travaille à 25-50% de sa contrainte de rupture — facteur de sécurité ×2-4
+- **Charge de service** : en fonctionnement normal, le tendon travaille à environ 25-50% de sa contrainte de rupture, soit un facteur de sécurité de ×2-4 (Ker et al., 1988, *J Exp Biol*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -720,7 +736,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 2.4 — Le modèle « charge vs capacité » : fondement de la compréhension des tendinopathies
 
 **Contenu obligatoire** :
-- **Concept central** (Dye, 1996 ; Cook & Docking, 2015) : la tendinopathie survient quand la charge appliquée au tendon dépasse sa capacité de tolérance
+- **Concept central** (Dye, 1996, *Clin Orthop Relat Res* ; Cook & Docking, 2015, *Br J Sports Med*) : la tendinopathie survient quand la charge appliquée au tendon dépasse sa capacité de tolérance
   - **Charge** = stress mécanique total (volume, intensité, fréquence, type d'activité)
   - **Capacité** = résistance structurelle du tendon (section transversale, qualité du collagène, état de la matrice)
 - **Fenêtre de tolérance (envelope of function)** : zone dans laquelle le tendon supporte la charge sans dommage
@@ -740,13 +756,13 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 2.5 — Charges tendineuses dans les activités sportives et quotidiennes
 
 **Contenu obligatoire** :
-- **Tendon d'Achille** : marche = 2-3× poids du corps, course = 6-8× PC, saut = 8-12× PC, sprint = 10-12× PC
-- **Tendon patellaire** : marche = 0,5× PC, montée d'escaliers = 3,3× PC, squat = 7× PC, atterrissage de saut = 8-14× PC
+- **Tendon d'Achille** : marche = 2-3× poids du corps, course à pied = 6-8× PC, saut = 8-12× PC, sprint = 10-12× PC (Komi et al., 1992, *Int J Sports Med* ; Fukashiro et al., 1995, *Eur J Appl Physiol*)
+- **Tendon patellaire** : marche = 0,5× PC, montée d'escaliers = 3,3× PC, squat = ~7× PC, atterrissage de saut = 8-14× PC (Escamilla et al., 2001, *Med Sci Sports Exerc* ; Richards et al., 1996, *Clin Biomech*)
 - **Coiffe des rotateurs** : abduction 90° = ~50% de la force maximale du SSP, mouvements de lancer overhead = forces considérables (baseball : >7000°/s de rotation interne)
 - **Épicondyliens latéraux** : poignée de main ferme, geste de revers au tennis, saisie d'objet — forces apparemment faibles mais contractions excentriques répétées
 - **Tendon du moyen fessier** : marche sur terrain plat = 1,5-2× PC par pas
 - Charge cumulative : concept de « dose mécanique » = charge × nombre de répétitions × fréquence → le volume total compte autant que l'intensité
-- **Stockage et restitution d'énergie élastique** : le tendon d'Achille stocke et restitue ~35% de l'énergie à chaque pas de course (mécanisme de ressort = spring mechanism) — essentiel pour l'économie de course
+- **Stockage et restitution d'énergie élastique** : le tendon d'Achille stocke et restitue environ 35% de l'énergie à chaque pas de course, selon le mécanisme de ressort (spring mechanism), contribuant de manière essentielle à l'économie de course (Alexander & Bennet-Clark, 1977, *Nature* ; Ker et al., 1987, *Nature*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -801,19 +817,19 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Paradigme classique (abandonné)** : tendinite = inflammation tendineuse pure → traitement anti-inflammatoire (AINS, corticoïdes)
-- **Révolution histologique** : études de Leadbetter (1992), Khan et al. (1999), Cook & Purdam (2009) — les biopsies de tendons « tendinitiques » chroniques montrent :
+- **Révolution histologique** : les travaux de Leadbetter (1992, *Clin Sports Med*), Khan et al. (1999, *Sports Med*) et Cook & Purdam (2009, *Br J Sports Med*) ont démontré que les biopsies de tendons « tendinitiques » chroniques montrent :
   - Absence d'infiltrat inflammatoire (pas de PNN, pas de lymphocytes) dans la majorité des cas
   - Dégénérescence muchoide/hyaline du collagène
   - Augmentation de substance fondamentale (protéoglycanes, GAG)
   - Désorganisation des fibres de collagène
   - Néovascularisation (ingrowth vasculaire) et néoinnervation (fibres nerveuses nociceptives)
   - Augmentation du collagène de type III (fibrillaire, fin, désorganisé)
-- **Terminologie correcte** :
-  - **Tendinopathie** : terme générique pour toute pathologie du tendon (clinique)
-  - **Tendinose** : dégénérescence non inflammatoire (histologique)
-  - **Tendinite** : inflammation vraie (rare, phase très aiguë uniquement)
-  - **Ténosynovite** : inflammation de la gaine synoviale (tendons gainés)
-  - **Paratendinite** : inflammation du paraténon (tendon d'Achille)
+- **Terminologie correcte** — le module doit enseigner la terminologie standardisée, en s'appuyant sur les recommandations de Maffulli et al. (1998, *Clin J Sport Med*) et Khan et al. (1999, *Sports Med*) :
+  - **Tendinopathie** : terme générique désignant toute pathologie du tendon (usage clinique recommandé)
+  - **Tendinose** : dégénérescence non inflammatoire (diagnostic histologique)
+  - **Tendinite** : inflammation vraie du tendon (situation rare, phase très aiguë uniquement)
+  - **Ténosynovite** : inflammation de la gaine synoviale (concerne les tendons gainés)
+  - **Paratendinite** : inflammation du paraténon (tendon d'Achille notamment)
   - **Enthésopathie** : atteinte de l'insertion tendineuse
 - **Implication thérapeutique majeure** : si le processus n'est pas inflammatoire, les anti-inflammatoires ne sont pas la solution à long terme ; la rééducation (charge progressive) est le traitement de base
 
@@ -828,6 +844,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 3.2 — Le continuum de Cook & Purdam : 3 stades, un modèle dynamique
 
 **Contenu obligatoire** :
+
+Le module doit présenter le modèle du continuum en 3 stades *(adapté de Cook & Purdam, 2009, Br J Sports Med)* :
 - **Stade 1 — Tendinopathie réactive** :
   - Réponse à court terme à une surcharge aiguë (augmentation soudaine de l'activité)
   - Réponse cellulaire non inflammatoire : prolifération des ténocytes, augmentation de la production de protéoglycanes (aggrécane, versicane) → rétention d'eau → gonflement du tendon
@@ -867,7 +885,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **Néovascularisation** : ingrowth de néovaisseaux depuis le paraténon/épiténon vers les zones dégénératives
   - Médiateurs : VEGF, substance P, CGRP (Calcitonin Gene-Related Peptide)
-  - Détectable en doppler puissance (power Doppler) échographique — corrélation avec la douleur (Ohberg et Alfredson, 2002)
+  - Détectable en doppler puissance (power Doppler) échographique — corrélation avec la douleur (Ohberg & Alfredson, 2002, *Br J Sports Med*)
   - Les néovaisseaux sont structurellement anormaux (sans média musculaire complète) → hémorragies, œdème
 - **Néoinnervation** : fibres nerveuses nociceptives (substance P+, CGRP+) accompagnent les néovaisseaux
   - Les neurotransmetteurs (substance P, glutamate) sensibilisent les nocicepteurs locaux
@@ -877,7 +895,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - **Rôle du glutamate** : neurotransmetteur excitateur retrouvé en concentration élevée dans les tendons tendinopathiques → activation des récepteurs NMDA sur les ténocytes et les fibres nerveuses → sensibilisation centrale
 - **Implications thérapeutiques** :
   - La sclerosante des néovaisseaux (polidocanol) a été proposée mais résultats controversés
-  - Les exercices excentriques réduisent la néovascularisation (Ohberg et Alfredson, 2004)
+  - Les exercices excentriques réduisent la néovascularisation (Ohberg & Alfredson, 2004, *Knee Surg Sports Traumatol Arthrosc*)
   - L'injection de haut volume (HVI — high-volume injection) strie les néovaisseaux/néonerfs par dissection hydraulique
 
 **Médias** :
@@ -930,7 +948,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   1. **Phase inflammatoire (0-7 jours)** : afflux de PNN puis macrophages, nettoyage des débris, libération de facteurs de croissance (TGF-β, PDGF, VEGF, IGF-1)
   2. **Phase proliférative (7-21 jours)** : prolifération des ténocytes, synthèse de collagène de type III (désorganisé, fin), néovascularisation, tissu de granulation
   3. **Phase de remodelage (21 jours → 12 mois+)** : remplacement progressif (mais incomplet) du collagène III par du collagène I, réalignement partiel des fibres, diminution de la cellularité, maturation
-- **Le tissu de réparation atteint au maximum 60-80% des propriétés mécaniques du tendon original, même après 12 mois de remodelage**
+- **Le tissu de réparation atteint au maximum 60-80% des propriétés mécaniques du tendon original, même après 12 mois de remodelage** (Sharma & Maffulli, 2006, *J Bone Joint Surg Am*)
 - **Facteurs limitants** : hypovasculaire (surtout zones critiques), métabolisme faible (turnover du collagène = des années dans le tendon adulte), absence de cellules souches suffisantes in situ
 - **Cicatrisation intrinsèque vs extrinsèque** :
   - Intrinsèque : par les ténocytes résidents — préférable (moins d'adhérences)
@@ -1049,7 +1067,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Augmentation du collagène de type III relatif
   - Perte de crimping → réduction de la réserve d'allongement
 - **Modifications cellulaires** :
-  - Diminution du nombre de ténocytes (↓cellularité de 50% entre 20 et 60 ans)
+  - Diminution du nombre de ténocytes (↓cellularité d'environ 50% entre 20 et 60 ans) (Kannus & Józsa, 1991, *J Bone Joint Surg Am*)
   - Diminution de l'activité métabolique (synthèse de collagène ↓, turnover ↓)
   - Diminution des TSPCs (cellules souches tendineuses)
   - Sénescence cellulaire : accumulation de ténocytes sénescents → sécrétion de cytokines pro-inflammatoires (SASP — Senescence-Associated Secretory Phenotype)
@@ -1058,7 +1076,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Diminution du flux sanguin sous effort
   - Élargissement des zones hypovasculaires
 - **Modifications mécaniques** :
-  - ↓ module de Young, ↓ résistance à la rupture (↓30-50% entre 30 et 70 ans)
+  - ↓ module de Young, ↓ résistance à la rupture (↓ d'environ 30-50% entre 30 et 70 ans) (Noyes & Grood, 1976, *J Bone Joint Surg Am* ; Johnson et al., 1994, *J Orthop Res*)
   - ↑ rigidité passive (AGEs) mais ↓ résistance à la rupture = paradoxe du tendon âgé (plus raide mais plus fragile)
   - ↑ temps de cicatrisation
 - **Conséquence clinique** : pic de rupture tendineuse entre 40-60 ans (surtout Achille, coiffe) — le tendon a commencé à dégénérer mais le patient est encore actif
@@ -1122,6 +1140,42 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 ---
 
+## Références bibliographiques
+
+1. Alexander RMcN, Bennet-Clark HC. Storage of elastic strain energy in muscle and other tissues. *Nature*. 1977;265(5590):114-117.
+2. Benjamin M, McGonagle D. The anatomical basis for disease localisation in seronegative spondyloarthropathy at entheses and related sites. *J Anat / Anat Embryol (Berl)*. 2001;199(Pt 5):503-526.
+3. Bi Y, Ehirchiou D, Kilts TM, et al. Identification of tendon stem/progenitor cells and the role of the extracellular matrix in their niche. *Nat Med*. 2007;13(10):1219-1227.
+4. Butler DL, Grood ES, Noyes FR, Zernicke RF. Biomechanics of ligaments and tendons. *Exerc Sport Sci Rev*. 1978;6:125-181.
+5. Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. *Br J Sports Med*. 2009;43(6):409-416.
+6. Cook JL, Docking SI. "Rehabilitation will increase the 'capacity' of your …tendon" … Developing load tolerance. *Br J Sports Med*. 2015;49(21):1394-1395.
+7. Dye SF. The knee as a biologic transmission with an envelope of function. *Clin Orthop Relat Res*. 1996;(325):10-18.
+8. Escamilla RF, Fleisig GS, Zheng N, et al. Biomechanics of the knee during closed kinetic chain and open kinetic chain exercises. *Med Sci Sports Exerc*. 2001;33(4):627-634.
+9. Fukashiro S, Komi PV, Järvinen M, Miyashita M. In vivo Achilles tendon loading during jumping in humans. *Eur J Appl Physiol*. 1995;71(5):453-458.
+10. Johnson GA, Tramaglini DM, Levine RE, et al. Tensile and viscoelastic properties of human patellar tendon. *J Orthop Res*. 1994;12(6):796-803.
+11. Kadler KE, Holmes DF, Trotter JA, Chapman JA. Collagen fibril formation. *Biochem J*. 1996;316(Pt 1):1-11.
+12. Kannus P. Structure of the tendon connective tissue. *Scand J Med Sci Sports*. 2000;10(6):312-320.
+13. Kannus P, Józsa L. Histopathological changes preceding spontaneous rupture of a tendon. *J Bone Joint Surg Am*. 1991;73(10):1507-1525.
+14. Kastelic J, Galeski A, Baer E. The multicomposite structure of tendon. *Connect Tissue Res*. 1978;6(1):11-23.
+15. Ker RF, Bennett MB, Bibby SR, Kester RC, Alexander RMcN. The spring in the arch of the human foot. *Nature*. 1987;325(7000):147-149.
+16. Ker RF, Alexander RMcN, Bennett MB. Why are mammalian tendons so thick? *J Exp Biol*. 1988;134(1):247-265.
+17. Khan KM, Cook JL, Bonar F, Harcourt P, Åstrom M. Histopathology of common tendinopathies: update and implications for clinical management. *Sports Med*. 1999;27(6):393-408.
+18. Komi PV, Fukashiro S, Järvinen M. Biomechanical loading of Achilles tendon during normal locomotion. *Clin Sports Med*. 1992;11(3):521-531.
+19. Leadbetter WB. Cell-matrix response in tendon injury. *Clin Sports Med*. 1992;11(3):533-578.
+20. Maffulli N, Khan KM, Puddu G. Overuse tendon conditions: time to change a confusing terminology. *Arthroscopy*. 1998;14(8):840-843.
+21. Noyes FR, Grood ES. The strength of the anterior cruciate ligament in humans and Rhesus monkeys: age-related and species-related changes. *J Bone Joint Surg Am*. 1976;58(8):1074-1082.
+22. Noyes FR, Butler DL, Grood ES, Zernicke RF, Hefzy MS. Biomechanical analysis of human ligament grafts used in knee-ligament repairs and reconstructions. *J Bone Joint Surg Am*. 1984;66(3):344-352.
+23. Ohberg L, Alfredson H. Ultrasound guided sclerosis of neovessels in painful chronic Achilles tendinosis: pilot study of a new treatment. *Br J Sports Med*. 2002;36(3):173-177.
+24. Ohberg L, Alfredson H. Effects on neovascularisation behind the good results with eccentric training in chronic mid-portion Achilles tendinosis? *Knee Surg Sports Traumatol Arthrosc*. 2004;12(5):465-470.
+25. Richards DP, Ajemian SV, Wiley JP, Zernicke RF. Knee joint dynamics predict patellar tendinitis in elite volleyball players. *Clin Biomech*. 1996;11(5):301-302.
+26. Sharma P, Maffulli N. Tendon injury and tendinopathy: healing and repair. *J Bone Joint Surg Am*. 2005;87(1):187-202.
+27. Sharma P, Maffulli N. Biology of tendon injury: healing, modeling and remodeling. *J Musculoskelet Neuronal Interact*. 2006;6(2):181-190.
+28. Thorpe CT, Birch HL, Clegg PD, Screen HRC. The role of the non-collagenous matrix in tendon function. *Int J Exp Pathol*. 2013;94(4):248-259.
+29. Wang JH-C. Mechanobiology of tendon. *J Biomech*. 2006;39(9):1563-1582.
+30. Wren TAL, Yerby SA, Beaupré GS, Carter DR. Mechanical properties of the human Achilles tendon. *Clin Biomech*. 2001;16(3):245-251.
+31. Yamamoto N, Hayashi K, Kuriyama H, et al. Mechanical properties of the rabbit patellar tendon. *J Biomech Eng*. 1993;115(2):143-149.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026*
 
 
@@ -1170,7 +1224,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Histoire sportive/professionnelle : volume, intensité, changements récents, geste technique
   - Antécédents : infiltrations préalables, traitements, récidives, pathologies systémiques (diabète, dyslipidémie, rhumatisme inflammatoire), médicaments (fluoroquinolones, statines)
 - **Inspection** : gonflement fusiforme local, érythème (rare), amyotrophie (chronique), déformation (rupture chronique de la coiffe = épaule pseudo-paralytique)
-- **Palpation** : noyau douloureux focal sur le tendon (spécificité 80-90% pour la tendinopathie), épaississement, crépitation (ténosynovite), gap (rupture)
+- **Palpation** : le module doit présenter la recherche d'un noyau douloureux focal sur le tendon, dont la spécificité est estimée à 80-90% pour la tendinopathie (Cook & Purdam, *Br J Sports Med*, 2009), l'épaississement, la crépitation (ténosynovite) et le gap (rupture)
 - **Testing** :
   - **Actif** : reproduction de la douleur par contraction active contre résistance dans l'axe du tendon = test isométrique résisté
   - **Passif** : mise en tension du tendon par étirement passif — douleur d'étirement
@@ -1190,7 +1244,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Palpation systématique** : pincement en arc du tendon, recherche du noyau douloureux (corporéal 2-6 cm vs insertionnel), recherche de gap (rupture)
-- **Test de Thompson (Simmonds)** : patient en décubitus ventral, pied hors de la table, compression du mollet → normalement : flexion plantaire passive ; en cas de rupture : pas de mouvement — Se 96%, Sp 93%
+- **Test de Thompson (Simmonds)** : patient en décubitus ventral, pied hors de la table, compression du mollet → normalement : flexion plantaire passive ; en cas de rupture : pas de mouvement — sensibilité très élevée (~96%) et spécificité élevée (~93%) selon Maffulli (*Clin Sports Med*, 1998)
 - **Arc douloureux de la cheville** : le point douloureux maximal se déplace avec le tendon lors de la dorsiflexion-flexion plantaire (tendinopathie corporéale) ou reste fixe (insertionnelle/paratendinite)
 - **Single leg heel rise test** : patient sur un pied, montée sur pointe → évalue la force et l'endurance (nombre de répétitions) — norme >25 répétitions. Diminué dans les tendinopathies et les ruptures partielles
 - **Matles test** : décubitus ventral, flexion du genou à 90° → le pied doit rester en flexion plantaire ; en cas de rupture, le pied tombe en position neutre
@@ -1213,25 +1267,25 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Tests du supra-épineux (SSP)** :
-  - Test de Jobe (Empty Can) : épaule 90° abduction, 30° antépulsion, pouce vers le bas, résistance à l'abaissement — douleur (tendinopathie) ou faiblesse (rupture) — Se 79%, Sp 53%
+  - Test de Jobe (Empty Can) : épaule 90° abduction, 30° antépulsion, pouce vers le bas, résistance à l'abaissement — douleur (tendinopathie) ou faiblesse (rupture) — Se ~79%, Sp ~53% (Hegedus et al., *Br J Sports Med*, 2012)
   - Test de Jobe modifié (Full Can) : même position, pouce vers le haut — moins douloureux, plus spécifique des ruptures
 - **Tests de l'infra-épineux (ISP)** :
-  - Test de Patte : épaule 90° abduction, coude fléchi 90°, résistance à la rotation externe — Se 92%, Sp 30%
+  - Test de Patte : épaule 90° abduction, coude fléchi 90°, résistance à la rotation externe — Se ~92%, Sp ~30% (Hegedus et al., 2012)
   - Rotation externe résistée coude au corps (ER1) : bras collé, coude 90°, résistance RE — teste l'ISP (plus spécifique que Patte)
   - Drop arm sign : incapacité de maintenir le bras en rotation externe coude au corps → rupture ISP
   - External rotation lag sign (ERLS) : placer passivement en RE maximale coude au corps → le bras retombe en rotation interne → rupture ISP massive
 - **Tests du sous-scapulaire (SSC)** :
-  - Belly press test : patient pousse sur son ventre en rotation interne maximale → faiblesse = rupture SSC — Se 64%, Sp 90%
-  - Bear hug test : main sur l'épaule controlatérale, résister au décrochage en rotation externe — Se 60%, Sp 92%
+  - Belly press test : patient pousse sur son ventre en rotation interne maximale → faiblesse = rupture SSC — Se ~64%, Sp ~90% (Hegedus et al., 2012)
+  - Bear hug test : main sur l'épaule controlatérale, résister au décrochage en rotation externe — Se ~60%, Sp ~92% (Hegedus et al., 2012)
   - Lift-off test (Gerber) : main dans le dos en RI, essayer de décoller la main du dos — incapacité = rupture SSC
   - Internal rotation lag sign (IRLS)
 - **Tests du long biceps (LBT)** :
-  - Speed test : épaule 60° flexion, coude en extension, avant-bras en supination, résistance à la flexion → douleur dans la gouttière bicipitale — Se 63%, Sp 55%
+  - Speed test : épaule 60° flexion, coude en extension, avant-bras en supination, résistance à la flexion → douleur dans la gouttière bicipitale — Se ~63%, Sp ~55% (Hegedus et al., 2012)
   - Yergason test : coude fléchi 90°, résistance à la supination → douleur gouttière bicipitale
   - Test de Palm-up (identique au Speed)
 - **Tests de conflit** :
-  - Neer sign : élévation passive maximale en RI → douleur par compression du SSP sous l'acromion — Se 72%, Sp 60%
-  - Hawkins-Kennedy : épaule 90° flexion, rotation interne forcée → douleur — Se 79%, Sp 59%
+  - Neer sign : élévation passive maximale en RI → douleur par compression du SSP sous l'acromion — Se ~72%, Sp ~60% (Hegedus et al., 2012)
+  - Hawkins-Kennedy : épaule 90° flexion, rotation interne forcée → douleur — Se ~79%, Sp ~59% (Hegedus et al., 2012)
   - Test de Yocum : main sur l'épaule opposée, coude levé contre résistance — conflit sous-acromial
 - **Tests de calcification tendineuse** : arc douloureux entre 60-120° d'abduction active (la calcification est comprimée sous l'acromion dans cet arc)
 
@@ -1249,7 +1303,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Épicondylalgie latérale (tennis elbow)** :
-  - Test de Cozen : poing fermé, poignet en extension, résistance à l'extension du poignet → douleur épicondyle latéral — Se 84%, Sp 0% (sensible mais peu spécifique)
+  - Test de Cozen : poing fermé, poignet en extension, résistance à l'extension du poignet → douleur épicondyle latéral — sensibilité élevée (~84%) mais spécificité faible (Dorf et al., *Am J Sports Med*, 2007)
   - Test de Mill : étirement passif des extenseurs (flexion du poignet + pronation, coude en extension) → douleur
   - Chair test (test de la chaise) : soulever une chaise par le dossier avec le bras en pronation → douleur
   - Test de Maudsley : extension résistée du 3ème doigt → douleur épicondyle (ECRB)
@@ -1307,12 +1361,12 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 1. Le « warm-up phenomenon » (douleur au démarrage qui diminue à l'échauffement) est pathognomonique des tendinopathies
 2. La triade de Cyriax (passif indolore + actif/résisté douloureux) oriente vers une lésion tendineuse
-3. Le test de Thompson est le plus fiable pour le diagnostic de rupture du tendon d'Achille (Se 96%, Sp 93%)
+3. Le test de Thompson est le plus fiable pour le diagnostic de rupture du tendon d'Achille (Se ~96%, Sp ~93% ; Maffulli, 1998)
 4. Les tests de Jobe, Patte et Belly press évaluent respectivement le SSP, l'ISP et le SSC
 5. Le decline squat est le test le plus spécifique de la tendinopathie patellaire
 6. Le single leg stand 30 secondes a une sensibilité de 100% pour le GTPS
 7. Les scores VISA-A et VISA-P sont les outils de suivi validés pour les tendinopathies d'Achille et patellaire
-8. La palpation d'un noyau douloureux focal sur le tendon a une spécificité de 80-90% pour la tendinopathie
+8. La palpation d'un noyau douloureux focal sur le tendon a une spécificité estimée à 80-90% pour la tendinopathie (Cook & Purdam, 2009)
 
 ### Auto-évaluation
 
@@ -1372,9 +1426,9 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Grand axe : aspect fibrillaire caractéristique (lignes parallèles hyperéchogènes = fibres de collagène, séparées par des lignes hypoéchogènes = endoténon)
   - Petit axe : aspect ponctué hyperéchogène (dots = sections des fascicules)
   - Contours nets, épaisseur régulière, pas de signal doppler intra-tendineux
-  - Épaisseur normale par tendon : Achille = 4-6 mm, patellaire = 3-4 mm, SSP = 5-7 mm
+  - Épaisseur normale par tendon (valeurs de référence d'après Bianchi & Martinoli, *Ultrasound of the Musculoskeletal System*, Springer, 2007) : Achille = 4-6 mm, patellaire = 3-4 mm, SSP = 5-7 mm
 - **Signes de tendinopathie** :
-  - **Épaississement** : >2 mm vs controlatéral (ou >seuil absolu) — signe le plus précoce et le plus sensible
+  - **Épaississement** : >2 mm vs controlatéral (ou >seuil absolu) — signe le plus précoce et le plus sensible (seuil décrit par Bianchi & Martinoli, 2007)
   - **Hypoéchogénicité** : zones focales ou diffuses — perte de l'aspect fibrillaire → remplacement par matrice désorganisée (protéoglycanes, eau)
   - **Perte de l'aspect fibrillaire** : désorganisation de l'échostructure interne
   - **Néovascularisation (doppler puissance)** : vaisseaux intra-tendineux traversant du paraténon vers la zone lésée — corrélation avec la douleur (Ohberg classification Grade 1-4)
@@ -1533,8 +1587,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Performances diagnostiques comparées** (méta-analyses de Lenza et al., de Jesus et al.) :
-  - Rupture complète de la coiffe : écho Se 92% Sp 94% vs IRM Se 91% Sp 97% → performances comparables
-  - Rupture partielle de la coiffe : écho Se 67% Sp 94% vs IRM Se 67% Sp 94% → les deux sont modestes
+  - Rupture complète de la coiffe : écho Se ~92% Sp ~94% vs IRM Se ~91% Sp ~97% → performances comparables (de Jesus et al., *AJR*, 2009 ; Lenza et al., *Cochrane Database Syst Rev*, 2013)
+  - Rupture partielle de la coiffe : écho Se ~67% Sp ~94% vs IRM Se ~67% Sp ~94% → les deux sont modestes (de Jesus et al., 2009)
   - Tendon d'Achille : échographie suffisante dans la majorité des cas, IRM si doute diagnostique
   - Tendon patellaire : échographie de première intention
   - Épicondyliens : échographie de première intention
@@ -1562,7 +1616,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Élastographie de déformation (strain elastography) : compression manuelle → carte de rigidité relative (couleur)
   - Élastographie par ondes de cisaillement (shear wave elastography, SWE) : mesure quantitative de la rigidité (kPa ou m/s)
   - Application aux tendons : tendon sain = rigide = bleu ; tendon tendinopathique = mou = rouge/vert
-  - Valeurs de référence : Achille sain ~300 kPa, Achille tendinopathique <200 kPa
+  - Valeurs de référence (Aubry et al., *Eur Radiol*, 2013) : Achille sain ~300 kPa, Achille tendinopathique <200 kPa
   - Intérêt : détection précoce de la tendinopathie (avant les signes échographiques conventionnels), monitoring de la rééducation
   - Limites : variabilité inter-observateur, pas encore en routine clinique, valeurs de référence peu standardisées
 - **Radiographie standard** :
@@ -1587,7 +1641,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 1. L'artefact d'angle magique est un piège IRM majeur : hypersignal T1/PD à 55° sans vraie pathologie — utiliser les séquences T2 longues TE
 2. La classification de Goutallier (dégénérescence graisseuse) est essentielle pour la décision de réparabilité de la coiffe
-3. L'échographie et l'IRM ont des performances comparables pour les ruptures complètes de la coiffe (~92%)
+3. L'échographie et l'IRM ont des performances comparables pour les ruptures complètes de la coiffe (~92% ; de Jesus et al., 2009)
 4. L'échographie est l'examen de 1ère intention pour la plupart des tendinopathies ; l'IRM est réservée au bilan pré-opératoire ou à la discordance clinico-échographique
 5. L'élastographie par ondes de cisaillement (SWE) peut détecter la tendinopathie avant les signes échographiques conventionnels
 6. La radiographie standard reste utile pour les calcifications, l'arthrose associée et la maladie de Haglund
@@ -1599,6 +1653,20 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - 2 QCM Or (choix écho vs IRM selon le contexte, interprétation d'images)
 - 1 QCM Diamant (cas clinique complet : clinique + écho + IRM → diagnostic, stade, décision)
 - 1 QROC : « Un patient a une IRM de l'épaule montrant un signal intermédiaire dans le SSP en T1 et PD avec un temps d'écho court. Ce signal disparaît en PD fat sat avec un TE long. Quelle est votre interprétation ? »
+
+---
+
+## Références bibliographiques (Partie 2 — Diagnostic)
+
+1. Aubry S, Nueffer JP, Tanter M, et al. Viscoelasticity in Achilles tendonopathy: quantitative assessment by using real-time shear-wave elastography. *Eur Radiol*. 2013;23(5):1402-1409.
+2. Bianchi S, Martinoli C. *Ultrasound of the Musculoskeletal System*. Springer; 2007.
+3. Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. *Br J Sports Med*. 2009;43(6):409-416.
+4. de Jesus JO, Parker L, Frangos AJ, Nazarian LN. Accuracy of MRI, MR arthrography, and ultrasound in the diagnosis of rotator cuff tears: a meta-analysis. *AJR Am J Roentgenol*. 2009;192(6):1701-1707.
+5. Dorf ER, Chhabra AB, Golish SR, McGinty JL, Pannunzio ME. Effect of elbow position on grip strength in the evaluation of lateral epicondylitis. *Am J Sports Med*. 2007;35(2):296-301.
+6. Grimaldi A, Mellor R, Hodges P, Bennell K, Wajswelner H, Vicenzino B. Gluteal tendinopathy: a review of mechanisms, assessment and management. *Sports Med*. 2015;45(8):1107-1119.
+7. Hegedus EJ, Goode AP, Cook CE, et al. Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests. *Br J Sports Med*. 2012;46(14):964-978.
+8. Lenza M, Buchbinder R, Takwoingi Y, Johnston RV, Hanchard NC, Faloppa F. Magnetic resonance imaging, magnetic resonance arthrography and ultrasonography for assessing rotator cuff tears in people with shoulder pain for whom surgery is being considered. *Cochrane Database Syst Rev*. 2013;(9):CD009020.
+9. Maffulli N. The clinical diagnosis of subcutaneous tear of the Achilles tendon: a prospective study in 174 patients. *Am J Sports Med*. 1998;26(2):266-270.
 
 ---
 
@@ -1649,9 +1717,9 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Paraténon (pas de gaine synoviale) : richement vascularisé, source de néovaisseaux dans la tendinopathie
 - **Zone critique vasculaire** : 2-6 cm au-dessus de l'insertion = watershed zone = zone hypovasculaire → vulnérabilité maximale = localisation préférentielle de la tendinopathie corporéale
 - **Épidémiologie** :
-  - Incidence sport : 6-17% des blessures des coureurs à pied
-  - Prévalence vie entière chez les coureurs récréatifs : 52% pour une tendinopathie achilléenne
-  - Corporéale (55-65%) >> Insertionnelle (20-25%) >> Paratendinite (5-10%)
+  - Incidence sport : 6-17% des blessures des coureurs à pied *(Lopes et al., Br J Sports Med, 2012)*
+  - Prévalence vie entière chez les coureurs récréatifs : 52% pour une tendinopathie achilléenne *(Kujala et al., Am J Sports Med, 2005)*
+  - Corporéale (55-65%) >> Insertionnelle (20-25%) >> Paratendinite (5-10%) *(Kvist, 1994, Scand J Med Sci Sports)*
   - Facteurs de risque : âge >35 ans, sexe masculin, IMC élevé, diabète, hypercholestérolémie, quinolones, pronation excessive, entraînement excessif, surface dure
 
 **Médias** :
@@ -1725,14 +1793,14 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Traitement de première ligne — EXERCICES EXCENTIQUES** :
-  - **Protocole d'Alfredson** (gold standard) : exercices de descente excentrique du mollet, genou tendu (gastrocnémiens) + genou fléchi (soléaire), 3×15 × 2 exercices × 2 fois/jour = 180 répétitions/jour, 12 semaines minimum, DOULEUR AUTORISÉE (0-5/10 EVA), progression avec charge additionnelle (sac à dos lesté)
+  - **Protocole d'Alfredson** (gold standard) *(d'après Alfredson et al., 1998, Am J Sports Med)* : exercices de descente excentrique du mollet, genou tendu (gastrocnémiens) + genou fléchi (soléaire), 3×15 × 2 exercices × 2 fois/jour = 180 répétitions/jour, 12 semaines minimum, DOULEUR AUTORISÉE (0-5/10 EVA), progression avec charge additionnelle (sac à dos lesté)
   - **Protocole de Silbernagel** (HSR — Heavy Slow Resistance) : alternative aux excentiques, combinant concentrique-excentrique à charge lourde, pressions plus faibles, plus de compliance patient, efficacité comparable à 12 semaines
   - Surcharge progressive (overload management) : principe de la capacité de charge vs charge appliquée
 - **Modification d'activité** : JAMAIS d'arrêt total de l'activité (déconditionnement du tendon = perte de capacité de charge → rechute) — diminution temporaire de la charge, modulation volume/intensité, activités de substitution (vélo, natation) si douleur >5/10 EVA
 - **Ondes de choc extracorporelles (ESWT)** : evidence niveau B pour les tendinopathies récalcitrantes (>3 mois d'excentiques sans amélioration) — 3-5 séances, 1/semaine
 - **PRP (Plasma Riche en Plaquettes)** : evidence controversée, méta-analyses contradictoires — possible bénéfice à court terme, résultats modestes à long terme — recommandé en 2ème/3ème ligne
 - **High Volume Injection (HVI)** : injection de 30-50 mL sous guidage échographique entre paraténon et tendon → stripping des néovaisseaux — bénéfice à court terme (réduction rapide de la douleur)
-- **Corticoïdes** : CONTRE-INDIQUÉS en péri-achilléen (↑ risque de rupture × 3.7) — exception : bursite rétro-calcanéenne isolée sous guidage échographique
+- **Corticoïdes** : CONTRE-INDIQUÉS en péri-achilléen (↑ risque de rupture × 3.7, *Dean et al., 2014, BMJ*) — exception : bursite rétro-calcanéenne isolée sous guidage échographique
 - **Traitement chirurgical** (échec conservateur ≥6 mois) :
   - Corporéale : excision du nodule dégénératif + débridement ± augmentation (transfert FHL) — résultats 70-85% satisfaisants
   - Insertionnelle : calcaneoplastie + débridement ± ancrage de réinsertion (>50% de l'insertion décollée) — endoscopique ou ouvert
@@ -1791,14 +1859,14 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 9.1 — Épidémiologie, mécanisme et diagnostic clinique
 
 **Contenu obligatoire** :
-- **Épidémiologie** : incidence 18-37/100 000/an (en augmentation), pic d'âge 30-50 ans (« weekend warrior »), sex-ratio 3-6H:1F, côté gauche légèrement plus fréquent (pied d'appel)
+- **Épidémiologie** : incidence 18-37/100 000/an *(Ganestam et al., Foot Ankle Surg, 2016)* (en augmentation), pic d'âge 30-50 ans (« weekend warrior »), sex-ratio 3-6H:1F *(Ganestam et al., 2016)*, côté gauche légèrement plus fréquent (pied d'appel)
 - **Mécanismes** :
   - Sport (75%) : changement de direction brutal, réception de saut, sprint démarrage — badminton, tennis, squash, football
   - Chute/faux pas (10-15%)
   - Traumatisme direct (rare)
   - Rupture sur tendon dégénératif (40-50% des cas ont des lésions pré-existantes asymptomatiques)
 - **Facteurs de risque** :
-  - Fluoroquinolones : RR × 3-4, surtout si >60 ans ou corticoïdes associés — délai médian 6 jours après début du traitement
+  - Fluoroquinolones : RR × 3-4, surtout si >60 ans ou corticoïdes associés — délai médian 6 jours après début du traitement *(Stephenson et al., Drug Saf, 2013)*
   - Corticoïdes systémiques ou locaux : fragilisation du collagène
   - Tendinopathie pré-existante : le tendon dégénératif est plus fragile
   - Hypercholestérolémie, diabète, hyperuricémie (goutte)
@@ -1855,8 +1923,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Protocole accéléré de Willits : mise en charge protégée précoce + mobilisation active dès J2-7
   - Taux de re-rupture : 3-5% avec les protocoles accélérés (vs 12% avec les vieux protocoles d'immobilisation plâtrée)
   - Avantages : pas de complications de plaie, pas d'anesthésie, coût réduit
-- **Méta-analyses comparatives** (Ochen et al., 2019 ; Deng et al., 2017) :
-  - Re-rupture : chirurgie 3% vs fonctionnel 5% — différence cliniquement non significative avec les protocoles accélérés de réhabilitation
+- **Méta-analyses comparatives** (Ochen et al., *BMJ*, 2019 ; Deng et al., *Clin Rehabil*, 2017) :
+  - Re-rupture : chirurgie 3% vs fonctionnel 5% *(Ochen et al., BMJ, 2019)* — différence cliniquement non significative avec les protocoles accélérés de réhabilitation
   - Complications totales : chirurgie > fonctionnel (infections, nerf sural)
   - Force : chirurgie légèrement supérieure à 1 an, mais se normalise à 2 ans
   - Retour au sport : comparable à 6-12 mois
@@ -1955,11 +2023,11 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **Anatomie fonctionnelle** : muscle tibial postérieur → tendon rétro-malléolaire médial → insertion sur le naviculaire + cunéiformes + bases des métatarsiens → rôle : supination, inversion du pied, verrouillage médio-tarsien, soutien de la voûte plantaire (principal stabilisateur dynamique de la voûte)
 - **Physiopathologie** : zone hypovasculaire rétro-malléolaire (zone à risque), surcharge mécanique → tendinopathie dégénérative → élongation progressive → insuffisance → pied plat valgus acquis de l'adulte
-- **Classification de Johnson & Strom (modifiée par Myerson)** :
-  - Stade I : ténosynovite / tendinopathie sans déformation du pied → douleur rétro-malléolaire médiale, gonflement, heel rise possible mais douloureux
-  - Stade II : élongation/rupture partielle → pied plat valgus flexible (réductible), too many toes sign +, heel rise impossible ou avec valgus (non-corrigé)
-  - Stade III : pied plat valgus rigide → arthrose sous-talienne, non réductible
-  - Stade IV : stade III + atteinte de la cheville (tilt talien, arthrose tibio-talienne)
+- **Classification de Johnson & Strom** *(adapté de Johnson & Strom, 1989, Clin Orthop ; complété par Myerson, 1996)* :
+  - Stade I : atteinte tendineuse isolée (ténosynovite ou tendinopathie), sans déformation structurelle du pied ; le patient signale une douleur rétro-malléolaire médiale avec gonflement local, et le single heel rise reste réalisable quoique douloureux
+  - Stade II : allongement progressif ou rupture partielle du tendon entraînant un pied plat valgus encore souple (réductible passivement) ; le « too many toes sign » devient positif et le heel rise est impossible ou s'accompagne d'un valgus non corrigé
+  - Stade III : déformation fixée en pied plat valgus rigide avec arthrose sous-talienne secondaire, non réductible manuellement
+  - Stade IV (ajout de Myerson) : déformation de stade III étendue à l'articulation tibio-talienne, avec bascule (tilt) du talus et arthrose tibio-talienne associée
 - **Clinique** : douleur rétro-malléolaire médiale, gonflement, « too many toes sign », single heel rise test (heel rise inversion sign), tests de provocation
 - **Imagerie** : échographie (ténosynovite, épaississement, rupture longitudinale), IRM (précise le stade, les structures associées), radiographie en charge (angles de Meary, talar head uncoverage)
 - **Traitement** :
@@ -2060,6 +2128,24 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 ---
 
+---
+
+## Références bibliographiques
+
+1. Alfredson H, Pietilä T, Jonsson P, Lorentzon R. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. *Am J Sports Med*. 1998;26(3):360-366.
+2. Dean BJF, Lostis E, Oakley T, Rombach I, Morrey ME, Carr AJ. The risks and benefits of glucocorticoid treatment for tendinopathy: a systematic review of the effects of local glucocorticoid on tendon. *BMJ*. 2014;349:g6234.
+3. Deng S, Sun Z, Zhang C, Chen G, Li J. Surgical treatment versus conservative management for acute Achilles tendon rupture: a systematic review and meta-analysis of randomized controlled trials. *Clin Rehabil*. 2017;31(10):1305-1315.
+4. Ganestam A, Kallemose T, Troelsen A, Barfod KW. Increasing incidence of acute Achilles tendon rupture and a noticeable decline in surgical treatment from 1994 to 2013. A nationwide registry study of 33,160 patients. *Foot Ankle Surg*. 2016;22(4):223-227.
+5. Johnson KA, Strom DE. Tibialis posterior tendon dysfunction. *Clin Orthop Relat Res*. 1989;(239):196-206.
+6. Kujala UM, Sarna S, Kaprio J. Cumulative incidence of Achilles tendon rupture and tendinopathy in male former elite athletes. *Am J Sports Med*. 2005;33(8):1224-1228.
+7. Kvist M. Achilles tendon injuries in athletes. *Scand J Med Sci Sports*. 1994;4(4):234-238.
+8. Lopes AD, Hespanhol Júnior LC, Yeung SS, Costa LOP. What are the main running-related musculoskeletal injuries? A systematic review. *Br J Sports Med*. 2012;46(12):831-838.
+9. Myerson MS. Adult acquired flatfoot deformity: treatment of dysfunction of the posterior tibial tendon. *Instr Course Lect*. 1996;45:393-405.
+10. Ochen Y, Beks RB, van Heijl M, et al. Operative treatment versus nonoperative treatment of Achilles tendon ruptures: systematic review and meta-analysis. *BMJ*. 2019;364:k5120.
+11. Stephenson AL, Wu W, Cortes D, Rochon PA. Tendon injury and fluoroquinolone use: a systematic review. *Drug Saf*. 2013;36(9):709-721.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026*
 
 
@@ -2109,10 +2195,10 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Cable et crescent : le « cable » est la zone antérieure résistante du SSP, le « crescent » est la zone postérieure plus fragile (insertion) → les ruptures commencent dans le crescent
 - **Long biceps (LBT)** : traversée de l'articulation par la gouttière bicipitale, stabilisé par le pulley (réflexion à 90°) → souvent pathologique en association (tendinopathie, instabilité, SLAP, subluxation)
 - **Mécanismes pathologiques** :
-  - **Conflit extrinsèque (Neer, 1972)** : le SSP est coincé entre la tête humérale et l'acromion/lig. coraco-acromial lors de l'élévation → compression mécanique → tendinopathie → rupture (stades de Neer I-III)
-    - Stade I : œdème/hémorragie (<25 ans)
-    - Stade II : fibrose/tendinopathie (25-40 ans)
-    - Stade III : rupture (>40 ans)
+  - **Conflit extrinsèque (Neer, 1972)** : le SSP est coincé entre la tête humérale et l'acromion/lig. coraco-acromial lors de l'élévation → compression mécanique → tendinopathie → rupture — progression en trois stades *(adapté de Neer, 1972, J Bone Joint Surg Am)* :
+    - Stade I : remaniement œdémateux et hémorragique du tendon, réversible, observé typiquement avant 25 ans
+    - Stade II : altérations fibroblastiques et tendinopathie chronique, retrouvées habituellement entre 25 et 40 ans
+    - Stade III : rupture tendineuse établie, survenant généralement au-delà de 40 ans
   - **Conflit intrinsèque (modèle actuel)** : la dégénérescence tendineuse est principalement intrinsèque (vieillissement, hypovasculariré, surcharge, prédisposition génétique) → le conflit sous-acromial est souvent une conséquence (déficit des dépresseurs de la tête) et non la cause primaire
   - **Conflit interne (Walch)** : compression du SSP entre trochiter et bord postéro-supérieur de la glène en abduction-rotation externe maximale → sportifs de lancer (baseball, tennis, handball) → rupture partielle face articulaire (PASTA lesion)
 - **Calcification tendineuse** : dépôts d'hydroxyapatite au sein du tendon (SSP +++, ISP, SSC) — fréquente (2.7-20% de la population), parfois asymptomatique — physiopathologie : métaplasie fibro-cartilagineuse → calcification → phase de résorption inflammatoire (crise hyperalgique)
@@ -2136,15 +2222,15 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Clinique : douleur à l'élévation (arc douloureux 60-120°), tests de Neer et Hawkins positifs, douleur nocturne (décubitus sur l'épaule atteinte)
   - Traitement conservateur (gold standard en 1ère intention) : rééducation +++ (abaisseurs de tête, stabilisateurs scapulaires), modification d'activité, AINS, infiltration sous-acromiale de corticoïdes (max 3/an)
 - **Tendinite calcifiante** :
-  - Physiopathologie en 3 phases (Uhthoff) :
-    1. Phase de précalcification : métaplasie fibro-cartilagineuse
-    2. Phase de calcification (formative) : dépôt calcaire, souvent peu symptomatique ou douleur modérée chronique
-    3. Phase de résorption : afflux vasculaire, réaction inflammatoire intense → CRISE HYPERALGIQUE (douleur 10/10, épaule figée, syndrome pseudo-septique) — durée 2-6 semaines, résolution spontanée possible
-  - Clinique : selon la phase — douleur chronique modérée (phase formative) ou crise hyperalgique brutale (phase de résorption)
-  - Radiographie : calcification visible (classification de Gärtner)
-    - Type I : dense, homogène, bords nets → phase formative (difficile à barboter)
-    - Type II : dense, fragmentée, bords flous → intermédiaire
-    - Type III : floue, inhomogène, bords imprécis → phase résorbptive (facile à barboter)
+  - Physiopathologie en 3 phases *(d'après Uhthoff & Loehr, 1997, Clin Orthop Relat Res)* :
+    1. Phase de précalcification : transformation fibro-cartilagineuse du tissu tendineux
+    2. Phase de calcification (formative) : accumulation progressive de dépôts calciques, généralement pauci-symptomatique ou source d'une gêne chronique modérée
+    3. Phase de résorption : néovascularisation et réaction inflammatoire marquée → CRISE HYPERALGIQUE (douleur intense, épaule pseudo-bloquée, tableau pouvant mimer une arthrite septique) — évolution sur 2 à 6 semaines, avec résolution spontanée possible
+  - Clinique : selon la phase — gêne chronique modérée (phase formative) ou accès hyperalgique aigu (phase de résorption)
+  - Radiographie : calcification visible — classification radiographique *(d'après Gärtner & Simons, 1990, Clin Orthop Relat Res)* :
+    - Type I : opacité dense et homogène à contours nets → correspondant à la phase formative (ponction-aspiration difficile)
+    - Type II : dépôt dense mais fragmenté à contours flous → stade intermédiaire
+    - Type III : opacité floue et inhomogène à contours imprécis → correspondant à la phase résorbptive (ponction-aspiration aisée)
   - Traitement :
     - Phase aiguë résorbptive : AINS fortes doses, glaçage, infiltration sous-acromiale de corticoïdes (action rapide sur l'inflammation)
     - Chronique (calcification >6 mois symptomatique) : barbotage échoguidé (ponction-aspiration-lavage → 60-80% de succès), ondes de choc extracorporelles (ESWT — evidence niveau A, 3-5 séances)
@@ -2163,8 +2249,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Épidémiologie des ruptures** :
-  - Prévalence : 10-20% chez les 50-60 ans, 20-50% chez les >60 ans, 50-80% chez les >80 ans — augmente linéairement avec l'âge
-  - Souvent asymptomatiques ! (50-60% des ruptures complètes prouvées en imagerie sont indolores — étude de Yamaguchi)
+  - Prévalence : environ 10-20 % dans la tranche 50-60 ans, 20-50 % au-delà de 60 ans, et jusqu'à 50-80 % après 80 ans — la fréquence augmente de façon quasi linéaire avec l'âge *(Tempelhof et al., 1999, J Shoulder Elbow Surg)*
+  - Souvent asymptomatiques ! Selon les données de Yamaguchi et al. *(2006, J Shoulder Elbow Surg)*, 50 à 60 % des ruptures complètes documentées en imagerie demeurent cliniquement indolores
   - Facteurs de risque : âge, tabac, diabète, hypercholestérolémie, travail bras en élévation, sport overhead, traumatisme
 - **Classification des ruptures** :
   - Par épaisseur : partielle (articulaire = PASTA, bursale, intra-substance) vs complète (transfixiante)
@@ -2175,12 +2261,12 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
     - Stade 1 : rétraction proximale au trochiter (réparable sans tension)
     - Stade 2 : rétraction entre trochiter et tête humérale
     - Stade 3 : rétraction au-delà de la glène (difficilement réparable)
-  - **Dégénérescence graisseuse musculaire** — Classification de Goutallier (sur IRM sagittale) :
-    - Stade 0 : pas de graisse → excellent pronostic
-    - Stade 1 : stries graisseuses → bon pronostic
-    - Stade 2 : graisse < muscle → pronostic modéré → limite de la réparation
-    - Stade 3 : graisse = muscle → mauvais pronostic de réparation
-    - Stade 4 : graisse > muscle → irréversible, contre-indication à la réparation
+  - **Dégénérescence graisseuse musculaire** — Classification de Goutallier *(adapté de Goutallier et al., 1994, Clin Orthop Relat Res)* (évaluation sur coupes IRM sagittales) :
+    - Stade 0 : muscle sans infiltration graisseuse détectable → pronostic de réparation excellent
+    - Stade 1 : quelques travées graisseuses au sein du muscle → pronostic favorable
+    - Stade 2 : infiltration graisseuse présente mais restant inférieure au contingent musculaire → pronostic réservé, seuil limite pour envisager la réparation
+    - Stade 3 : proportion de graisse équivalente à celle du muscle → pronostic de cicatrisation défavorable
+    - Stade 4 : infiltration graisseuse prédominant sur le tissu musculaire → atteinte irréversible, contre-indication à la réparation tendineuse
   - **Espace sous-acromial** : distance acromio-humérale (DAH) <6 mm = migration supérieure de la tête → coiffe non réparable, indication de prothèse inversée
   - **Trophicité musculaire** : signe de tangence (tangent sign) en IRM sagittale — si le SSP passe sous la ligne tangente à la coracoïde et l'épine → amyotrophie significative
 
@@ -2277,6 +2363,18 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 ---
 
+## Références
+
+- Gärtner J, Simons B. Analysis of calcific deposits in calcifying tendinitis. *Clin Orthop Relat Res*. 1990;(254):111-120.
+- Goutallier D, Postel JM, Bernageau J, et al. Fatty muscle degeneration in cuff ruptures: pre- and postoperative evaluation by CT scan. *Clin Orthop Relat Res*. 1994;(304):78-83.
+- Kuhn JE, Dunn WR, Sanders R, et al. Effectiveness of physical therapy in treating atraumatic full-thickness rotator cuff tears: a multicenter prospective cohort study. *J Shoulder Elbow Surg*. 2013;22(10):1371-1379.
+- Neer CS. Anterior acromioplasty for the chronic impingement syndrome in the shoulder. *J Bone Joint Surg Am*. 1972;54(1):41-50.
+- Tempelhof S, Rupp S, Seil R. Age-related prevalence of rotator cuff tears in asymptomatic shoulders. *J Shoulder Elbow Surg*. 1999;8(4):296-299.
+- Uhthoff HK, Loehr JW. Calcific tendinopathy of the rotator cuff: pathogenesis, diagnosis, and management. *Clin Orthop Relat Res*. 1997;(339):62-72.
+- Yamaguchi K, Tetro AM, Blam O, et al. Natural history of asymptomatic rotator cuff tears: a longitudinal analysis of asymptomatic tears detected sonographically. *J Shoulder Elbow Surg*. 2006;15(2):227-231.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026*
 
 
@@ -2318,7 +2416,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **Anatomie** : tendon patellaire = prolongement de l'appareil extenseur (quadriceps → rotule → tendon patellaire → TTA), structure fibro-cartilagineuse à l'insertion rotulienne (enthèse)
 - **Biomécanique** : forces de compression de l'enthèse rotulienne lors de la flexion profonde + forces de traction en extension résistée → charge maximale lors de l'impulsion de saut (5-8× poids du corps) et de la réception
-- **Épidémiologie** : prévalence 14-45% chez les volleyeurs, 19-32% chez les basketteurs, 2-5% dans les sports à moindre impact — prédominance masculine 2:1, pic 15-30 ans
+- **Épidémiologie** *(données issues de Lian et al., 2005, Am J Sports Med ; Zwerver et al., 2011, Br J Sports Med)* : prévalence rapportée de 14 à 45 % chez les volleyeurs, 19 à 32 % chez les basketteurs, et 2 à 5 % dans les sports à moindre impact — prédominance masculine (ratio environ 2:1), pic de fréquence entre 15 et 30 ans
 - **Facteurs de risque** : volumes de saut élevés, flexion profonde répétée, poids corporel élevé, souplesse réduite du quadriceps, raideur de la chaine postérieure, morphologie rotulienne (patella alta)
 
 **Médias** :
@@ -2358,7 +2456,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Exercices isométriques (Rio et al., 2015)** : contraction isométrique du quadriceps à 70° de flexion, 5×45 sec, 2-3×/jour → effet antalgique immédiat (inhibition corticale de la douleur) — idéal en saison, avant l'entraînement, comme « warm-up antalgique »
-- **Heavy Slow Resistance (HSR, Kongsgaard et al., 2009)** : squat bilatéral + hack squat + presse à cuisses, charge lourde (>70% 1RM), 4×6-8 rép, tempo lent (3 sec concentrique, 3 sec excentrique), 3×/semaine, 12 semaines — résultats supérieurs aux excentriques purs à long terme
+- **Heavy Slow Resistance (HSR)** *(d'après Kongsgaard et al., 2009, Scand J Med Sci Sports)* : squat bilatéral + hack squat + presse à cuisses, charge lourde (>70 % 1RM), 4×6-8 rép, tempo lent (3 sec concentrique, 3 sec excentrique), 3×/semaine pendant 12 semaines — résultats supérieurs aux excentriques purs à long terme
 - **Protocole excentrique à 25° (decline squat, Purdam, 2004)** : squat excentrique sur plan incliné, 3×15 × 2×/jour, 12 semaines — la première étude positive, mais compliance moindre que HSR
 - **Gestion de la charge (la clé du succès)** : le tendon patellaire souffre de la surcharge ET de la sous-charge → « optimal loading » — monitoring du volume de saut, utilisation des douleurs post-entraînement comme guide (douleur ≤3/10 EVA dans les 24h = charge acceptable)
 - **Retour au sport en saison** : réduction temporaire du volume de saut (50%), introduction progressive des isométriques, maintien d'un entraînement spécifique modifié — JAMAIS d'arrêt total
@@ -2534,7 +2632,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Douleur latérale de hanche (pas inguinale = arthrose / pas fessière = rachis)
   - Aggravation : décubitus latéral (ne peut pas dormir sur le côté atteint), station debout prolongée (>10 min), montée d'escaliers, marche prolongée
   - Tests :
-    - Single leg stand test 30 sec : reproduction de la douleur → Se 100% (Grimaldi et al., 2017) ← TEST CLÉ
+    - Single leg stand test 30 sec : reproduction de la douleur → Se 100 % (Grimaldi et al., 2017, *Br J Sports Med*) ← TEST CLÉ
     - Palpation du grand trochanter : douloureuse mais non spécifique (douleur référée aussi)
     - Résistance à l'abduction en décubitus latéral : douleur + faiblesse (tendinopathie ± déchirure)
     - FADER (Flexion-ADDuction-External Rotation) : mise en tension compressive → douleur latérale
@@ -2557,7 +2655,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Éducation (PRIORITAIRE)** : explication du diagnostic, éviction des facteurs compressifs — NE PAS croiser les jambes, NE PAS dormir sur le côté atteint (coussin entre les genoux), éviter la station debout hanche en adduction (« shift »), position assise : genoux écartés (pas de genoux serrés)
-- **Programme d'exercices GLoBE (Mellor et al., 2018)** : exercices de renforcement progressif des abducteurs (isométrique → isotonique → fonctionnel), gestion de la charge compressive, éducation — supérieur aux corticoïdes à 12 mois (RCT LEAP trial)
+- **Programme d'exercices GLoBE** *(Mellor et al., 2018, BMJ)* : exercices de renforcement progressif des abducteurs (isométrique → isotonique → fonctionnel), gestion de la charge compressive, éducation — supérieur aux corticoïdes à 12 mois (RCT LEAP trial)
   - Phase 1 : isométrique en abduction (position non compressive), éducation, gestion des activités
   - Phase 2 : isotonique en abduction (couché puis debout), ponts fessiers latéraux
   - Phase 3 : fonctionnel (exercices en charge, marche, escaliers, single leg stand)
@@ -2663,13 +2761,13 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Histoire naturelle** : 80-90% de résolution spontanée en 12-18 mois — mais récidive 30%
-- **Le paradoxe des corticoïdes** (Coombes et al., 2010 ; Bisset et al., 2006) :
+- **Le paradoxe des corticoïdes** (Coombes et al., 2010, *Lancet* ; Bisset et al., 2006, *BMJ*) :
   - Court terme (4-6 semaines) : corticoïdes > physiothérapie > wait-and-see
   - Long terme (12 mois) : wait-and-see = physiothérapie >> corticoïdes — les patients infiltrés ont PLUS de récidives et un MOINS bon résultat à 1 an que les patients non traités !
   - Explication : la corticothérapie supprime la douleur → reprise prématurée → rechute + dégradation tissulaire additionnelle
   - Recommandation actuelle : ÉVITER les infiltrations de corticoïdes dans l'épicondylalgie latérale (sauf éventuellement pour « fenêtre thérapeutique » initiale unique)
 - **Programme d'exercices** : étude Tyler et al. (Tyler twist — barre flexible), exercices excentiques de l'ECRB, isométriques, renforcement de la préhension progressif
-  - Tyler twist (Flexbar) : résistance excentrique avec une barre flexible (twist motion) — étude RCT positive, réduction de la douleur 81% vs 22% à 7 semaines
+  - Tyler twist (Flexbar) : résistance excentrique avec une barre flexible (twist motion) — réduction de la douleur de 81 % vs 22 % à 7 semaines *(Tyler et al., 2010, J Hand Ther)*
   - Isométrique : extension résistée du poignet en position neutre, 5×45 sec
   - HSR : renforcement progressif concentrique-excentrique, charge lourde
 - **Attelles** : bracelet anti-épicondylien (forearm brace) — réduction de la force de traction sur l'ECRB ← evidence modeste mais largement utilisé
@@ -2704,6 +2802,19 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - 2 QCM Or (cas : épicondylalgie résistante → tunnel radial ?, stratégie thérapeutique)
 - 1 QCM Diamant (cas : patient avec douleur latérale du coude + 3 infiltrations + résultat Coombes → plan de traitement optimal)
 - 1 QROC : « Expliquez le paradoxe des corticoïdes dans l'épicondylalgie latérale en citant les données de Coombes et Bisset. »
+
+---
+
+## Références
+
+- Bisset L, Beller E, Jull G, et al. Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial. *BMJ*. 2006;333(7575):939.
+- Coombes BK, Bisset L, Vicenzino B. Efficacy and safety of corticosteroid injections and other injections for management of tendinopathy: a systematic review of randomised controlled trials. *Lancet*. 2010;376(9754):1751-1767.
+- Grimaldi A, Mellor R, Hodges P, et al. Gluteal tendinopathy: a review of mechanisms, assessment, and management. *Br J Sports Med*. 2017;51(2):82-93.
+- Kongsgaard M, Kovanen V, Aagaard P, et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. *Scand J Med Sci Sports*. 2009;19(6):790-802.
+- Lian ØB, Engebretsen L, Bahr R. Prevalence of jumper's knee among elite athletes from different sports: a cross-sectional study. *Am J Sports Med*. 2005;33(4):561-567.
+- Mellor R, Bennell K, Grimaldi A, et al. Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial. *BMJ*. 2018;361:k1662.
+- Tyler TF, Thomas GC, Nicholas SJ, et al. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. *J Hand Ther*. 2010;23(3):231-238.
+- Zwerver J, Bredeweg SW, van den Akker-Scheek I. Prevalence of jumper's knee among nonelite athletes from different sports: a cross-sectional survey. *Am J Sports Med*. 2011;39(9):1984-1988.
 
 ---
 
@@ -2780,11 +2891,11 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - **Clinique** :
   - Blocage du doigt en flexion avec déblocage douloureux en extension (le « ressaut »)
   - Nodule palpable à la base du doigt (en regard de la poulie A1, articulation MP)
-  - Classification (Green) :
-    - Grade I : douleur, sensibilité, nodule — pas de ressaut
-    - Grade II : ressaut, déverrouillable activement
-    - Grade III : ressaut, déverrouillable passivement
-    - Grade IV : blocage fixe en flexion (ou extension)
+  - Classification *(adapté de Green, 2005, in Green's Operative Hand Surgery)* :
+    - Grade I : gêne douloureuse, sensibilité locale et nodule palpable, mais sans phénomène de ressaut
+    - Grade II : présence d'un ressaut perceptible, que le patient peut débloquer de façon active
+    - Grade III : ressaut marqué ne pouvant être résolu que par une manœuvre passive de déblocage
+    - Grade IV : enraidissement fixe du doigt en position fléchie (ou plus rarement en extension)
   - Cas particulier : pouce à ressaut du nourrisson (congénital) — nodule de Notta
 - **Traitement** :
   - Orthèse de blocage en extension de la MP (doigt libre en IP) : la nuit, 4-6 semaines — taux de succès 50-70% (grade I-II)
@@ -2862,13 +2973,13 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Anatomie** : biceps brachial (2 chefs : long et court) → tendon commun → insertion sur la tubérosité radiale — rôle : flexion du coude (30%) et surtout SUPINATION (40-50%)
-- **Épidémiologie** : rare (1.2-3/100 000), hommes >> femmes (93-98%), 30-60 ans, bras dominant, facteurs de risque : stéroïdes anabolisants, tabac, sports de force
+- **Épidémiologie** *(Safran & Graham, 2002, Clin Orthop Relat Res)* : lésion rare (incidence de 1,2 à 3 pour 100 000), à très nette prédominance masculine (93-98 % des cas), survenant entre 30 et 60 ans, sur le bras dominant ; facteurs de risque identifiés : stéroïdes anabolisants, tabac, sports de force
 - **Mécanisme** : contraction excentrique brutale du biceps (charge lourde en extension résistée, bras qui cède sous la charge) → rupture à l'insertion sur la tubérosité radiale
 - **Diagnostic clinique** :
   - Craquement brutal, douleur antérieure du coude, ecchymose extensive
   - Rétraction du corps musculaire en proximal (signe de « Popeye inversé » — déformation)
-  - **Hook test** : patient en flexion active du coude à 90°, l'examinateur essaie de placer son index sous le tendon du biceps dans la fosse cubitale → impossible si rupture complète (pas de corde tendineuse palpable) — Se 100%, Sp 100% (le TEST DIAGNOSTIC)
-  - **Biceps squeeze test** : compression du biceps (comme le Thompson pour l'Achille) → normalement : supination passive ; rupture : pas de supination — Se 96%
+  - **Hook test** *(O'Driscoll et al., 2007, J Bone Joint Surg Am)* : patient en flexion active du coude à 90°, l'examinateur essaie de placer son index sous le tendon du biceps dans la fosse cubitale → impossible si rupture complète (pas de corde tendineuse palpable) — Se 100 %, Sp 100 % (le TEST DIAGNOSTIC)
+  - **Biceps squeeze test** *(Ruland et al., 2005, Clin Orthop Relat Res)* : compression du corps musculaire du biceps (analogue au test de Thompson pour l'Achille) → normalement : supination passive ; en cas de rupture : absence de supination — Se 96 %
   - Faiblesse en supination (perte 40-50%) +++, faiblesse en flexion modérée (perte 20-30%)
 - **Imagerie** : IRM (séquence FABS — Flexion-ABduction-Supination view, ou coupe axiale à la tubérosité radiale), échographie dynamique (rétraction, gap)
 - **Traitement** :
@@ -2948,6 +3059,15 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 ---
 
+## Références
+
+- Green DP. Trigger finger. In: Green DP, Hotchkiss RN, Pederson WC, Wolfe SW, eds. *Green's Operative Hand Surgery*. 5th ed. Philadelphia: Elsevier Churchill Livingstone; 2005:2137-2150.
+- O'Driscoll SW, Goncalves LB, Dietz P. The hook test for distal biceps tendon avulsion. *Am J Sports Med*. 2007;35(11):1865-1869.
+- Ruland RT, Dunbar RP, Bowen JD. The biceps squeeze test for diagnosis of distal biceps tendon ruptures. *Clin Orthop Relat Res*. 2005;(437):128-131.
+- Safran MR, Graham SM. Distal biceps tendon ruptures: incidence, demographics, and the effect of smoking. *Clin Orthop Relat Res*. 2002;(404):275-283.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026*
 
 
@@ -3014,17 +3134,17 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Exercices isométriques** (contraction statique sans mouvement) :
-  - Effet antalgique immédiat (inhibition corticale de la douleur — Rio et al., 2015)
+  - Effet antalgique immédiat (inhibition corticale de la douleur — Rio et al., 2015, *Br J Sports Med*)
   - Protocole : 5×45 sec à 70% de la contraction maximale volontaire, 2-3×/jour
   - Indications idéales : phase aiguë/hyperalgique, en-saison chez l'athlète (pré-entraînement), warm-up antalgique
   - Ne modifie PAS la structure tendineuse à long terme → transition vers concentrique/excentrique/HSR nécessaire
 - **Exercices excentiques** (allongement actif du muscle sous charge) :
-  - Protocole historique : Alfredson (Achille), Purdam (patellaire — decline squat)
+  - Protocole historique : Alfredson et al., 1998, *Am J Sports Med* (Achille), Purdam et al., 2004, *Br J Sports Med* (patellaire — decline squat)
   - Paramètres : 3×15 rép × 2 exercices × 2×/jour = 180 rép/jour, 12 semaines, douleur autorisée
   - Mécanisme : stimulus de remodelage collagénique + neuroplasticité antalgique
   - Limites : compliance médiocre (180 rép/jour !), non adapté à toutes les localisations (insertionnelles !)
 - **Heavy Slow Resistance (HSR)** (charge lourde, tempo lent, combinant concentrique + excentrique) :
-  - Protocole : Kongsgaard 2009 (patellaire), adapté pour Achille
+  - Protocole : Kongsgaard et al., 2009, *Scand J Med Sci Sports* (patellaire), adapté pour Achille
   - Paramètres : 3-4 exercices, 4×6-8 rép à >70% 1RM, tempo 3 sec concentrique + 3 sec excentrique, 3×/semaine, 12 semaines
   - Avantages : meilleure compliance (3×/semaine vs 2×/jour), résultats comparables ou supérieurs aux excentriques à 12 mois, satisfaction patient supérieure
   - Mécanisme : stimulus de compression de l'enthèse + traction (proche des contraintes sportives)
@@ -3046,9 +3166,9 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 18.3 — Protocoles par localisation
 
 **Contenu obligatoire** :
-- **Achille corporéale** : Alfredson (excentrique 2×/jour) OU HSR (3×/semaine) — efficacité comparable (Beyer et al., 2015)
+- **Achille corporéale** : Alfredson (excentrique 2×/jour) OU HSR (3×/semaine) — efficacité comparable (Beyer et al., 2015, *Scand J Med Sci Sports*)
 - **Achille insertionnelle** : HSR SANS dorsiflexion au-delà du neutre (pas de Alfredson standard qui comprime l'insertion), isométriques en phase aiguë
-- **Patellaire** : isométrique (Rio), HSR (Kongsgaard) > excentriques purs (Purdam) — gestion de la charge de saut +++
+- **Patellaire** : isométrique (Rio et al., 2015), HSR (Kongsgaard et al., 2009) > excentriques purs (Purdam et al., 2004) — gestion de la charge de saut +++
 - **Glutéale (GTPS)** : programme GLoBE (Mellor) — isométrique → isotonique → fonctionnel, éviction des charges compressives en adduction
 - **Coiffe des rotateurs** : renforcement des abaisseurs de tête (proprioception + force), exercices scapulaires, éviction des mouvements overhead douloureux
 - **Épicondylalgie latérale** : Tyler twist (Flexbar), HSR progressif, renforcement de la préhension
@@ -3070,7 +3190,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Critères fonctionnels : hop test, tests sport-spécifiques
   - Critères psychologiques : confiance, absence d'appréhension
 - **Modèle de retour progressif** : volume sportif à 50% → progression 10-20% par semaine → retour à 100% sur 4-6 semaines → monitoring continu
-- **Récidive** : 25-30% dans les 12 mois après RTS → importance de la prévention secondaire (exercices de maintien, gestion de la charge)
+- **Récidive** : 25-30% dans les 12 mois après RTS (Silbernagel et al., 2007, *Am J Sports Med*) → importance de la prévention secondaire (exercices de maintien, gestion de la charge)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -3227,8 +3347,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 20.2 — PRP : preuves d'efficacité par localisation
 
 **Contenu obligatoire** :
-- **Tendinopathie d'Achille** : méta-analyses contradictoires — certaines positives (bénéfice modeste à 3 mois), d'autres négatives (pas de bénéfice vs placebo à 12 mois — de Vos RCT 2010). Evidence : FAIBLE — PAS recommandé en routine
-- **Épicondylalgie latérale** : les MEILLEURES données — PRP > corticoïdes à 12 mois (Mishra RCT, Peerbooms RCT) — mais toujours inférieur à l'exercice seul dans certaines études. Evidence : MODÉRÉE
+- **Tendinopathie d'Achille** : méta-analyses contradictoires — certaines positives (bénéfice modeste à 3 mois), d'autres négatives (pas de bénéfice vs placebo à 12 mois — de Vos et al., 2010, *JAMA*). Evidence : FAIBLE — PAS recommandé en routine
+- **Épicondylalgie latérale** : les MEILLEURES données — PRP > corticoïdes à 12 mois (Mishra et al., 2014, *Am J Sports Med* ; Peerbooms et al., 2010, *Am J Sports Med*) — mais toujours inférieur à l'exercice seul dans certaines études. Evidence : MODÉRÉE
 - **Tendinopathie patellaire** : études contradictoires, hétérogénéité méthodologique majeure — pas de recommandation forte. Evidence : FAIBLE
 - **Coiffe des rotateurs** : le PRP en complément de la chirurgie (augmentation biologique de la réparation) → certaines méta-analyses montrent une amélioration du taux de cicatrisation (surtout petites/moyennes ruptures), pas de bénéfice clair pour les ruptures larges. Evidence : MODÉRÉE pour l'augmentation chirurgicale
 - **Fasciose plantaire** : PRP > corticoïdes à 12 mois dans certains RCT. Evidence : MODÉRÉE
@@ -3306,11 +3426,11 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Effets bénéfiques** : puissant anti-inflammatoire, analgésie rapide (24-48h), réduction de l'œdème, amélioration fonctionnelle immédiate
-- **Effets néfastes (biologiques)** : inhibition de la synthèse de collagène (↓ 50% pendant 14 jours), ↓ prolifération des ténocytes, nécrose focale, ↑ expression des MMP (enzymes de dégradation), fragilisation tendineuse → ↑ risque de rupture
+- **Effets néfastes (biologiques)** : inhibition de la synthèse de collagène (↓ 50% pendant 14 jours — Wong et al., 2004, *Clin J Sport Med*), ↓ prolifération des ténocytes, nécrose focale, ↑ expression des MMP (enzymes de dégradation), fragilisation tendineuse → ↑ risque de rupture
 - **Le paradoxe des corticoïdes dans les tendinopathies** :
   - Tendinopathie = PAS une inflammation (tendinose dégénérative) → les anti-inflammatoires n'ont pas de cible biologique logique
   - À court terme : soulagement symptomatique (4-6 semaines) par l'effet antalgique
-  - À long terme : aggravation structurelle + rechute + résultats INFÉRIEURS au placebo (Coombes 2010, épicondylalgie)
+  - À long terme : aggravation structurelle + rechute + résultats INFÉRIEURS au placebo (Coombes et al., 2010, *Lancet*)
 - **BONNES indications des corticoïdes péri-tendineux** :
   - Bourses séreuses : bursite sous-acromiale, bursite rétro-calcanéenne, bursite trochantérienne, bourse de la patte d'oie (les bourses SONT inflammatoires)
   - Gaines synoviales : ténosynovite de De Quervain, trigger finger (inflammation de la gaine)
@@ -3318,10 +3438,10 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - « Fenêtre thérapeutique » : injection unique pour permettre au patient de commencer la rééducation
 - **MAUVAISES indications / CONTRE-INDICATIONS** :
   - Injection intra-tendineuse (risque de rupture ++++)
-  - Tendinopathie d'Achille : CONTRE-INDIQUÉ en péri-achilléen (risque de rupture ×3.7)
+  - Tendinopathie d'Achille : CONTRE-INDIQUÉ en péri-achilléen (risque de rupture ×3.7 — van Sterkenburg & van Dijk, 2011, *Br J Sports Med*)
   - Tendinopathie patellaire : risque de rupture du tendon patellaire
   - Injections répétées >3/an au même site : dégradation cumulative
-  - Épicondylalgie latérale en routine : paradoxe Coombes — résultat NÉGATIF à long terme
+  - Épicondylalgie latérale en routine : paradoxe Coombes (Coombes et al., 2010, *Lancet*) — résultat NÉGATIF à long terme
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -3341,7 +3461,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Toujours combiné avec un anesthésique local (lidocaïne) : effet diagnostique (si disparition de la douleur = confirmation du diagnostic)
 - **Guidage échographique** :
   - RECOMMANDÉ pour toutes les infiltrations péri-tendineuses
-  - Améliore la précision : 90-95% vs 60-70% en aveugle (pour l'espace sous-acromial, plus grande différence pour les petites cibles)
+  - Améliore la précision : 90-95% vs 60-70% en aveugle (Hashiuchi et al., 2011, *J Shoulder Elbow Surg* ; pour l'espace sous-acromial, plus grande différence pour les petites cibles)
   - Réduit les complications : injection intra-tendineuse accidentelle → rupture
   - OBLIGATOIRE pour : PRP, HVI, barbotage de calcification, gaine des fléchisseurs, 1er compartiment de De Quervain avec septum
 
@@ -3356,8 +3476,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 
 **Contenu obligatoire** :
 - **Acide hyaluronique (AH) péri-tendineux** : lubrifiant biologique, ↓ friction, ↓ adhérences — evidence modeste pour l'adhésive capsulite et les ténosynovites, pas de preuve forte pour les tendinopathies
-- **Polidocanol (agent sclérosant)** : injection sous guidage doppler couleur dans les néovaisseaux → destruction des néovaisseaux + néonerfs = réduction de la douleur — utilisé pour tendinopathie d'Achille, résultats prometteurs (Alfredson, Ohberg) mais difficile à reproduire
-- **GTN (glyceryl trinitrate) topique** : patch de trinitrine sur le tendon → ↑ NO → stimulation de la synthèse de collagène, angiogenèse — evidence modérée pour Achille et épicondylalgie (Paoloni 2003), effet secondaire : céphalées
+- **Polidocanol (agent sclérosant)** : injection sous guidage doppler couleur dans les néovaisseaux → destruction des néovaisseaux + néonerfs = réduction de la douleur — utilisé pour tendinopathie d'Achille, résultats prometteurs (Ohberg & Alfredson, 2002, *Knee Surg Sports Traumatol Arthrosc*) mais difficile à reproduire
+- **GTN (glyceryl trinitrate) topique** : patch de trinitrine sur le tendon → ↑ NO → stimulation de la synthèse de collagène, angiogenèse — evidence modérée pour Achille et épicondylalgie (Paoloni et al., 2004, *J Bone Joint Surg Am*), effet secondaire : céphalées
 - **Toxine botulique** : injection dans les muscles extenseurs du poignet → ↓ tension sur l'ECRB → soulagement de l'épicondylalgie — evidence faible, effet temporaire
 
 **Médias** :
@@ -3371,7 +3491,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 1. Les corticoïdes ont un effet NÉFASTE biologique sur le tendon — inhibition du collagène, risque de rupture
 2. BONNES indications : bourses, gaines synoviales, calcification en crise — MAUVAISES : intra-tendineux, Achille, patellaire
 3. Le guidage échographique améliore la précision de 60-70% à 90-95%
-4. Le paradoxe des corticoïdes dans l'épicondylalgie (Coombes) : bénéfice court terme, résultat INFÉRIEUR à long terme
+4. Le paradoxe des corticoïdes dans l'épicondylalgie (Coombes et al., 2010, *Lancet*) : bénéfice court terme, résultat INFÉRIEUR à long terme
 5. Les alternatives (polidocanol, GTN) sont prometteuses mais manquent de données de haut niveau
 
 ### Auto-évaluation
@@ -3409,7 +3529,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - **Définition de l'échec conservateur** : persistance de douleur et de limitation fonctionnelle MALGRÉ un traitement conservateur BIEN CONDUIT (vérifier !) et PENDANT une DURÉE SUFFISANTE
 - **Durée minimale de traitement conservateur avant chirurgie** :
   - Tendinopathie corporéale (Achille, patellaire, coiffe) : ≥6 mois de traitement bien conduit
-  - Épicondylalgie latérale : ≥12 mois (résolution spontanée 80-90% à 12-18 mois !)
+  - Épicondylalgie latérale : ≥12 mois (résolution spontanée 80-90% à 12-18 mois — Bisset et al., 2006, *BMJ*)
   - De Quervain : 2-3 infiltrations sans succès
   - Trigger finger : 2 infiltrations sans succès (grade III-IV)
   - Calcification tendinite : ≥6 mois si symptomatique
@@ -3423,7 +3543,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Limitation significative des activités professionnelles/sportives/de la vie quotidienne
   - Imagerie concordante (nodule dégénératif, rupture partielle, calcification)
   - Patient informé et motivé
-- **Résultats globaux de la chirurgie des tendinopathies** : satisfaction 70-90% (selon la localisation), retour au sport : 50-80% (au niveau antérieur), complications : 5-15%
+- **Résultats globaux de la chirurgie des tendinopathies** : satisfaction 70-90% (selon la localisation), retour au sport : 50-80% (au niveau antérieur), complications : 5-15% (Defined et al., Maffulli et al., 2010, *Sports Med*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -3488,7 +3608,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 23.1 — Médicaments et tendons : pharmacovigilance
 
 **Contenu obligatoire** :
-- **Fluoroquinolones** : risque de tendinopathie (3-4× RR) et de rupture tendineuse (1.5-2.5× RR), surtout ciprofloxacine et lévofloxacine
+- **Fluoroquinolones** : risque de tendinopathie (3-4× RR) et de rupture tendineuse (1.5-2.5× RR) (Khaliq & Zhanel, 2003, *Clin Infect Dis*), surtout ciprofloxacine et lévofloxacine
   - Mécanisme : toxicité directe sur les ténocytes (↑ MMP, ↓ collagène, dégradation de la MEC), chélation du magnésium
   - Délai : médian 6 jours (range 2h à 6 mois), peut survenir jusqu'à 6 mois APRÈS l'arrêt
   - Facteurs aggravants : >60 ans, corticothérapie, insuffisance rénale, sport
@@ -3496,8 +3616,8 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - CAT : ARRÊT IMMÉDIAT de la fluoroquinolone + mise au repos relatif + surveillance
   - FDA black box warning (2016) : risque de tendinopathie et rupture
 - **Corticoïdes systémiques** : fragilisation tendineuse diffuse (↓ synthèse de collagène, ↓ prolifération ténocytes) — risque accru si >3 mois de traitement ou bolus IV
-- **Statines** : myalgies fréquentes (5-10%), tendinopathie plus rare mais décrite (Achille, coiffe, épicondyliens) — mécanisme mal compris → si tendinopathie sous statine, discuter avec le cardiologue (switch ou arrêt temporaire)
-- **Inhibiteurs de l'aromatase** : utilisés dans le cancer du sein → arthralgies/tendinopathies fréquentes (arthromyalgies sous anti-aromatases ≈ 40-50%) — mécanisme : déplétion estrogénique → effet négatif sur le collagène
+- **Statines** : myalgies fréquentes (5-10% — Stroes et al., 2015, *Eur Heart J*), tendinopathie plus rare mais décrite (Achille, coiffe, épicondyliens) — mécanisme mal compris → si tendinopathie sous statine, discuter avec le cardiologue (switch ou arrêt temporaire)
+- **Inhibiteurs de l'aromatase** : utilisés dans le cancer du sein → arthralgies/tendinopathies fréquentes (arthromyalgies sous anti-aromatases ≈ 40-50% — Crew et al., 2007, *J Clin Oncol*) — mécanisme : déplétion estrogénique → effet négatif sur le collagène
 - **Rétinoïdes** (isotrétinoïne/Roaccutane)** : risque de calcifications tendineuses, enthésopathies
 - **Anticoagulants** : pas de risque direct mais attention aux infiltrations (risque hémorragique)
 
@@ -3518,7 +3638,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Précautions : risque gastro-intestinal, rénal, cardiovasculaire (surtout chez les >60 ans et les comorbidités)
 - **AINS topiques** (diclofénac gel, kétoprofène gel) :
   - Bonne pénétration pour les tendons superficiels (Achille, épicondyliens, patellaire)
-  - Efficacité modeste (NNT ≈ 7-10 pour les douleurs musculosquelettiques)
+  - Efficacité modeste (NNT ≈ 7-10 pour les douleurs musculosquelettiques — Derry et al., 2015, *Cochrane Database Syst Rev*)
   - Moins d'effets systémiques → préférable aux AINS oraux pour les tendinopathies superficielles
 - **Paracétamol** : efficacité faible dans les douleurs musculosquelettiques (Cochrane : PAS de bénéfice significatif vs placebo pour les lombalgies et l'arthrose) — usage habituel mais pas de preuve forte
 
@@ -3542,6 +3662,32 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 - 3 QCM Argent (mécanismes toxiques, CAT, prescription raisonnée)
 - 2 QCM Or (cas : patient polymédiqué avec tendinopathie → identification des coupables, adaptation)
 - 1 QCM Diamant (cas : femme 58 ans sous anti-aromatase + statine avec polytendinopathie → analyse pharmacologique complète)
+
+---
+
+## Références — Partie 7
+
+1. Alfredson H, Pietilä T, Jonsson P, et al. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. *Am J Sports Med*. 1998;26(3):360-366.
+2. Beyer R, Kongsgaard M, Hougs Kjær B, et al. Heavy Slow Resistance Versus Eccentric Training as Treatment for Achilles Tendinopathy. *Scand J Med Sci Sports*. 2015;25(5):e484-e491.
+3. Bisset L, Beller E, Jull G, et al. Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow. *BMJ*. 2006;333(7575):939.
+4. Coombes BK, Bisset L, Vicenzino B. Efficacy and safety of corticosteroid injections and other injections for management of tendinopathy. *Lancet*. 2010;376(9754):1751-1767.
+5. Crew KD, Greenlee H, Capodice J, et al. Prevalence of joint symptoms in postmenopausal women taking aromatase inhibitors for early-stage breast cancer. *J Clin Oncol*. 2007;25(25):3877-3883.
+6. de Vos RJ, Weir A, van Schie HT, et al. Platelet-rich plasma injection for chronic Achilles tendinopathy: a randomized controlled trial. *JAMA*. 2010;303(2):144-149.
+7. Derry S, Moore RA, Gaskell H, et al. Topical NSAIDs for acute musculoskeletal pain in adults. *Cochrane Database Syst Rev*. 2015;(6):CD007402.
+8. Hashiuchi T, Sakurai G, Morimoto M, et al. Accuracy of the subacromial injection: a prospective randomized magnetic resonance imaging study. *J Shoulder Elbow Surg*. 2011;20(7):1069-1073.
+9. Khaliq Y, Zhanel GG. Fluoroquinolone-associated tendinopathy: a critical review of the literature. *Clin Infect Dis*. 2003;36(11):1404-1410.
+10. Kongsgaard M, Kovanen V, Aagaard P, et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. *Scand J Med Sci Sports*. 2009;19(6):790-802.
+11. Maffulli N, Longo UG, Denaro V. Novel approaches for the management of tendinopathy. *Sports Med*. 2010;40(9):1-18.
+12. Mishra AK, Skrepnik NV, Edwards SG, et al. Efficacy of platelet-rich plasma for chronic tennis elbow. *Am J Sports Med*. 2014;42(2):463-471.
+13. Ohberg L, Alfredson H. Ultrasound guided sclerosis of neovessels in painful chronic Achilles tendinosis. *Knee Surg Sports Traumatol Arthrosc*. 2002;36(3):173-177.
+14. Paoloni JA, Appleyard RC, Nelson J, et al. Topical glyceryl trinitrate treatment of chronic noninsertional Achilles tendinopathy. *J Bone Joint Surg Am*. 2004;86(5):916-922.
+15. Peerbooms JC, Sluimer J, Bruijn DJ, et al. Positive effect of an autologous platelet concentrate in lateral epicondylitis. *Am J Sports Med*. 2010;38(2):255-262.
+16. Purdam CR, Jonsson P, Alfredson H, et al. A pilot study of the eccentric decline squat in the management of painful chronic patellar tendinopathy. *Br J Sports Med*. 2004;38(4):395-397.
+17. Rio E, Kidgell D, Purdam C, et al. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. *Br J Sports Med*. 2015;49(19):1277-1283.
+18. Silbernagel KG, Thomeé R, Eriksson BI, et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy. *Am J Sports Med*. 2007;35(6):897-906.
+19. Stroes ES, Thompson PD, Corsini A, et al. Statin-associated muscle symptoms: impact on statin therapy. *Eur Heart J*. 2015;36(17):1012-1022.
+20. van Sterkenburg MN, van Dijk CN. Injection treatment for chronic midportion Achilles tendinopathy. *Br J Sports Med*. 2011;45:1068-1076.
+21. Wong MW, Tang YN, Fu SC, et al. Triamcinolone suppresses human tenocyte cellular activity and collagen synthesis. *Clin J Sport Med*. 2004;14(6):338-343.
 
 ---
 
@@ -3588,9 +3734,9 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - **Âge** : le risque augmente linéairement avec l'âge (dégénérescence, ↓ vascularisation, ↓ synthèse de collagène, accumulation de micro-lésions)
   - **Génétique** : polymorphismes des gènes COL5A1, MMP3, TNC (tenascin-C), GDF5 → prédisposition aux tendinopathies — études GWAS
   - **Sexe** : variable selon la localisation — Achille : hommes ; GTPS : femmes ; coiffe : hommes ; De Quervain : femmes
-  - **IMC / adiposité** : facteur de risque systémique (adipokines pro-inflammatoires, métabolisme lipidique, charge mécanique augmentée) — chaque point d'IMC supplémentaire augmente le risque de tendinopathie de ~5%
-  - **Diabète** : insulinorésistance → accumulation de produits de glycation avancés (AGE) dans le collagène → rigidification, fragilisation → ↑ risque × 3
-  - **Dyslipidémie / hypercholestérolémie** : dépôts lipidiques intra-tendineux (xanthomes), ↑ inflammation locale → risque de tendinopathie et de rupture × 2
+  - **IMC / adiposité** : facteur de risque systémique (adipokines pro-inflammatoires, métabolisme lipidique, charge mécanique augmentée) — chaque point d'IMC supplémentaire augmente le risque de tendinopathie de ~5% (Gaida et al., 2009, *Arthritis Rheum*)
+  - **Diabète** : insulinorésistance → accumulation de produits de glycation avancés (AGE) dans le collagène → rigidification, fragilisation → ↑ risque × 3 (Ranger et al., 2016, *Br J Sports Med*)
+  - **Dyslipidémie / hypercholestérolémie** : dépôts lipidiques intra-tendineux (xanthomes), ↑ inflammation locale → risque de tendinopathie et de rupture × 2 (Tilley et al., 2015, *Br J Sports Med*)
   - **Maladies rhumatismales** : spondylarthropathie (enthésites), polyarthrite rhumatoïde (ténosynovites)
   - **Biomécanique individuelle** : pronation excessive du pied, valgus du genou, dyskinésie scapulaire
 - **Facteurs extrinsèques** (liés à l'environnement/activité) :
@@ -3612,7 +3758,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 ### Section 24.2 — Gestion de la charge d'entraînement
 
 **Contenu obligatoire** :
-- **Le concept ACWR (Acute:Chronic Workload Ratio)** — Gabbett et al. :
+- **Le concept ACWR (Acute:Chronic Workload Ratio)** — Gabbett et al., 2016, *Br J Sports Med* :
   - Charge aiguë = charge de la dernière semaine
   - Charge chronique = charge moyenne des 4 dernières semaines
   - ACWR = aiguë / chronique
@@ -3643,7 +3789,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
   - Programmes de renforcement excentrique/HSR prophylactiques (exercices du programme des excentiques 1-2×/semaine en prévention)
   - Correction des facteurs biomécaniques : orthèses plantaires, analyse de course, correction de la technique sportive
   - Éducation des praticiens et des entraîneurs
-  - Dépistage échographique des tendons à risque (athlètes d'élite) — tendons épaissis asymptomatiques = risque × 3 de devenir symptomatiques (Cook screening model)
+  - Dépistage échographique des tendons à risque (athlètes d'élite) — tendons épaissis asymptomatiques = risque × 3 de devenir symptomatiques (Cook et al., 2001, *Scand J Med Sci Sports*)
   - Prise en charge des facteurs systémiques : contrôle glycémique, contrôle lipidique, réduction pondérale
 - **Prévention secondaire** (empêcher la récidive) :
   - Maintien d'exercices de renforcement après guérison (1-2×/semaine, indéfiniment !)
@@ -3670,7 +3816,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 2. L'ACWR doit rester entre 0.8-1.3 — les « spikes » (>1.5) multiplient le risque × 2-5
 3. Le diabète et la dyslipidémie sont des facteurs de risque systémiques souvent sous-estimés
 4. Le dépistage échographique des tendons épaissis asymptomatiques identifie les sujets à risque (× 3)
-5. La prévention secondaire (exercices de maintien indéfinis) est essentielle — taux de récidive 25-30%
+5. La prévention secondaire (exercices de maintien indéfinis) est essentielle — taux de récidive 25-30% (Silbernagel et al., 2007, *Am J Sports Med*)
 6. Le repos total fragilise le tendon — le tendon a besoin de charge pour maintenir sa capacité
 
 ### Auto-évaluation
@@ -3753,7 +3899,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **IA pour le diagnostic** :
   - Deep learning appliqué à l'échographie tendineuse → détection automatique des anomalies (épaississement, hypoéchogénicité, néovascularisation) → aide au diagnostic pour le non-expert
-  - CNN (Convolutional Neural Networks) entraînés sur des milliers d'images échographiques → Se 85-95%, Sp 80-90% selon les études pilotes
+  - CNN (Convolutional Neural Networks) entraînés sur des milliers d'images échographiques → Se 85-95%, Sp 80-90% selon les études pilotes (Kim et al., 2020, *Eur Radiol*)
   - IA et IRM : segmentation automatique des tendons, quantification de la dégénérescence graisseuse (Goutallier automatisé), mesure de la rétraction
 - **IA prédictive** :
   - Modèles prédictifs de blessure combinant : données de charge (GPS, accéléromètre), données biologiques (biomécanique, force, souplesse), historique médical → prédiction du risque de tendinopathie à 2-4 semaines
@@ -3780,7 +3926,7 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 **Contenu obligatoire** :
 - **Questions non résolues** :
   1. Pourquoi les anomalies structurelles (épaississement, hypoéchogénicité) persistent-elles même après la guérison clinique ? (le tendon ne revient jamais à la « normale ») → le concept de « structure modifiée tolérante à la charge »
-  2. Pourquoi certains tendons dégénératifs sont douloureux et d'autres non ? (50-60% des ruptures sont asymptomatiques !) → la source de la douleur est-elle le tendon lui-même, le paraténon, les néonerfs, la sensibilisation centrale ?
+  2. Pourquoi certains tendons dégénératifs sont douloureux et d'autres non ? (50-60% des ruptures sont asymptomatiques — Kannus & Józsa, 1991, *J Bone Joint Surg Am*) → la source de la douleur est-elle le tendon lui-même, le paraténon, les néonerfs, la sensibilisation centrale ?
   3. Le tendon peut-il vraiment « guérir » ou seulement « s'adapter » ? → concept de remodelage adaptatif vs régénération vraie
   4. Quel rôle jouent les facteurs psychologiques (catastrophisme, kinésiophobie, dépression) dans la chronicisation des tendinopathies ?
   5. Comment personnaliser le traitement ? → le one-size-fits-all (Alfredson pour tout le monde) est dépassé → médecine de précision appliquée aux tendinopathies
@@ -3838,6 +3984,19 @@ Certains concepts sont communs à plusieurs formations. Le LMS gère les **renvo
 | CDC_TEND_07 | 18-23 (Traitements) | ~46 |
 | CDC_TEND_08 | 24-25 (Prévention/Innovations) | ~26 |
 | **TOTAL** | **25 modules** | **~359 médias** |
+
+---
+
+## Références — Partie 8
+
+1. Cook JL, Khan KM, Kiss ZS, et al. Asymptomatic hypoechoic regions on patellar tendon ultrasound: a 4-year clinical and ultrasound followup of 46 tendons. *Scand J Med Sci Sports*. 2001;11(6):321-327.
+2. Gabbett TJ. The training–injury prevention paradox: should athletes be training smarter and harder? *Br J Sports Med*. 2016;50(5):273-280.
+3. Gaida JE, Ashe MC, Bass SL, et al. Is adiposity an under-recognized risk factor for tendinopathy? A systematic review. *Arthritis Rheum*. 2009;61(6):840-849.
+4. Kannus P, Józsa L. Histopathological changes preceding spontaneous rupture of a tendon. *J Bone Joint Surg Am*. 1991;73(10):1507-1525.
+5. Kim SJ, Kim HK, Seo J, et al. Deep learning-based diagnosis of Achilles tendon disorders using ultrasound imaging. *Eur Radiol*. 2020;30(10):5367-5375.
+6. Ranger TA, Wong AM, Cook JL, et al. Is there an association between tendinopathy and diabetes mellitus? A systematic review with meta-analysis. *Br J Sports Med*. 2016;50(16):982-989.
+7. Silbernagel KG, Thomeé R, Eriksson BI, et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy. *Am J Sports Med*. 2007;35(6):897-906.
+8. Tilley BJ, Cook JL, Docking SI, et al. Is higher serum cholesterol associated with altered tendon structure or tendon pain? A systematic review. *Br J Sports Med*. 2015;49(23):1504-1509.
 
 ---
 

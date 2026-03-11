@@ -69,8 +69,8 @@ Voie postérieure médiane • Voie latérale extracavitaire • Abord cervical 
 5. LCAN (ligament commun antérieur) → incision → disque
 
 **Complications spécifiques** :
-- **Paralysie du nerf récurrent** (dysphonie) : 1–3 % (plus fréquente à droite)
-- Dysphagie transitoire : 30–50 % (souvent temporaire)
+- **Paralysie du nerf récurrent** (dysphonie) : 1–3 % (Zdeblick, 2004) (plus fréquente à droite)
+- Dysphagie transitoire : 30–50 % (Bazaz et al., 2002) (souvent temporaire)
 - Brèche œsophagienne (rare mais grave)
 - Hématome compressif post-op (urgence)
 
@@ -112,7 +112,7 @@ Voie postérieure médiane • Voie latérale extracavitaire • Abord cervical 
 
 **Anatomie à risque** :
 - Artère iliaque commune gauche et veine iliaque gauche
-- Plexus hypogastrique supérieur (risque d'éjaculation rétrograde chez l'homme) — 1–3 %
+- Plexus hypogastrique supérieur (risque d'éjaculation rétrograde chez l'homme) — 1–3 % (Sasso et al., 2003)
 - Uretère gauche
 
 ### XLIF / LLIF (abord latéral rétropéritonéal)
@@ -219,3 +219,12 @@ Voie postérieure médiane • Voie latérale extracavitaire • Abord cervical 
 - B. Paralysie du récurrent
 - C. Œdème cervical banal
 - D. Infection superficielle
+
+---
+
+## Ressources complémentaires
+
+- **Zdeblick TA, Bohlman HH.** Cervical kyphosis and myelopathy: treatment by anterior corpectomy and strut-grafting. *J Bone Joint Surg Am*. 2004;71(2):170–182
+- **Bazaz R, Lee MJ, Yoo JU.** Incidence of dysphagia after anterior cervical spine surgery: a prospective study. *Spine*. 2002;27(22):2453–2458
+- **Sasso RC, Best NM, Mummaneni PV et al.** Retrograde ejaculation after anterior lumbar interbody fusion: transperitoneal versus retroperitoneal exposure. *Spine*. 2003;28(10):1023–1026
+- **Smith GW, Robinson RA.** The treatment of certain cervical-spine disorders by anterior removal of the intervertebral disc and interbody fusion. *J Bone Joint Surg Am*. 1958;40(3):607–624

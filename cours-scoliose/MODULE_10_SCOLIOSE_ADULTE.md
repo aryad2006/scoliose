@@ -76,8 +76,8 @@ Scoliose adulte (de novo) • Scoliose adulte sur SIA évoluée • Scoliose dé
 | **Type 3 — Secondaire** | Secondaire à ostéoporose, fracture, tumeur, dégénérescence sur arthrite rhumatoïde | Causeidentifiable |
 
 **Épidémiologie** :
-- Prevalence adulte > 60 ans : 35–68 % (de toute déviation > 10°)
-- Symptomatique nécessitant prise en charge : 8–12 % des > 60 ans
+- Prévalence adulte > 60 ans : 35–68 % de toute déviation > 10° (Schwab et al., 2005, *Spine*)
+- Symptomatique nécessitant prise en charge : 8–12 % des > 60 ans (Schwab et al., 2005)
 - **Tendance croissante** avec le vieillissement de la population
 
 ---
@@ -91,9 +91,9 @@ Le tableau clinique de la scoliose adulte combine :
 | Symptôme | Prévalence | Mécanisme |
 |---------|-----------|----------|
 | **Douleur axiale lombaire** | 90 % | Dégénérescence facettaire, discopathie |
-| **Douleur radiculaire** | 60 % | Sténose foraminale (côté concave) |
+| **Douleur radiculaire** | 60 % (Aebi, 2005, *Eur Spine J*) | Sténose foraminale (côté concave) |
 | **Claudication neurogène** | 30–40 % | Canal central sténosé (L3-L4, L4-L5) |
-| **Déséquilibre en avant** | 40 % | Perte de la lordose → anté-position du centre de masse |
+| **Déséquilibre en avant** | 40 % (Aebi, 2005) | Perte de la lordose → anté-position du centre de masse |
 | **Fatigue musculaire** | + fréquent | Contracture compensatrice chronique |
 | **Limitation de marche** | Variable | Claudication + douleur |
 
@@ -113,7 +113,7 @@ Le tableau clinique de la scoliose adulte combine :
 
 > [MEDIA: 📊 M10-S03-001 — Tableau complet SRS-Schwab]
 
-La **classification SRS-Schwab** (Schwab 2012) est la référence pour la déformité rachidienne adulte. Elle intègre les paramètres radiologiques **coronaux ET sagittaux**.
+La **classification SRS-Schwab** (Schwab et al., 2012, *Spine*) est la référence pour la déformité rachidienne adulte. Elle intègre les paramètres radiologiques **coronaux ET sagittaux**.
 
 ### 10.3.1 Type de courbure (composante coronale)
 
@@ -213,7 +213,7 @@ $$\text{PI-LL mismatch} = \text{Pelvic Incidence} - \text{Lumbar Lordosis}$$
 > [MEDIA: 🎬 M10-S07-001 — Animation ostéotomies Schwab]
 > [MEDIA: 📐 M10-S07-002 — Schéma comparatif PSO vs VCR]
 
-### 10.7.1 Classification des ostéotomies rachidiennes (Schwab grades 1-6)
+### 10.7.1 Classification des ostéotomies rachidiennes (Schwab et al., 2014, *J Neurosurg Spine*)
 
 | Grade | Nom | Résection | Correction potentielle |
 |-------|-----|----------|----------------------|
@@ -261,13 +261,13 @@ $$\text{PI-LL mismatch} = \text{Pelvic Incidence} - \text{Lumbar Lordosis}$$
 
 | Complication | Fréquence | Gravité | Prévention |
 |-------------|-----------|---------|-----------|
-| **PJK — Proximal Junctional Kyphosis** | 20–40 % | Modérée–Sévère | Bandes proximales, choix niveau proximal |
+| **PJK — Proximal Junctional Kyphosis** | 20–40 % (Kim et al., 2008, *Spine*) | Modérée–Sévère | Bandes proximales, choix niveau proximal |
 | **DJK — Distal Junctional Kyphosis** | 5–10 % | Modérée | Respect niveaux distaux |
 | **Pseudarthrose** | 5–15 % | Variable | Greffe abondante, non-fumeur, correction < 80 % |
 | **Hématome épidural** | 1–2 % | Urgent | Drainage, hémostase |
-| **Infection profonde** | 2–5 % (vs 1–2% pour SIA) | Grave | Antibioprophylaxie + prévention osseuse |
+| **Infection profonde** | 2–5 % (Smith et al., 2011, *Spine*) (vs 1–2 % pour SIA) | Grave | Antibioprophylaxie + prévention osseuse |
 | **Déficit neurologique** | 1–5 % | Grave | Monitoring neurophysio |
-| **Adjacent level disease (ALD)** | 20–30 % à 10 ans | Variable | Limiter la fusion au nécessaire |
+| **Adjacent level disease (ALD)** | 20–30 % à 10 ans (Kim et al., 2008) | Variable | Limiter la fusion au nécessaire |
 | **Décompensation coronale** | 5–10 % | Variable | Respecter l'équilibre coronal |
 | **Insuffisance rénale/hémorragie** | 2–5% (PSO) | Urgent | Cell-saver, transfusion planifiée |
 
@@ -422,7 +422,12 @@ $$\text{PI-LL mismatch} = \text{Pelvic Incidence} - \text{Lumbar Lordosis}$$
 
 ## Ressources complémentaires
 
-- **Schwab F et al.** SRS-Schwab Adult Spinal Deformity Classification. *Spine*. 2012;37:1077
+- **Schwab F et al.** SRS-Schwab Adult Spinal Deformity Classification: a validation study. *Spine*. 2012;37:1077–1082
+- **Schwab F et al.** Radiographical spinopelvic parameters and disability in the setting of adult spinal deformity: a prospective multicenter analysis. *Spine*. 2005;30:E682–E688
+- **Schwab F et al.** The comprehensive anatomical spinal osteotomy classification. *Neurosurgery*. 2014;74:112–120
+- **Aebi M.** The adult scoliosis. *Eur Spine J*. 2005;14:925–948
+- **Kim YJ et al.** Proximal junctional kyphosis in adult spinal deformity after segmental posterior spinal instrumentation and fusion. *Spine*. 2008;33:2179–2184
+- **Smith JS et al.** Rates of infection after spine surgery based on 108,419 procedures: a report from the Scoliosis Research Society Morbidity and Mortality Committee. *Spine*. 2011;36:556–563
 - **Bridwell KH et al.** PSO for fixed sagittal imbalance. *Spine*. 2003;28:2093
 - **Glassman SD et al.** SVA and health status. *Spine*. 2005;30:1399
 - **Terran J et al.** SRS-Schwab outcomes. *Neurosurgery*. 2013;73:E559

@@ -78,7 +78,7 @@ Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Prévalence scoliose | 60–70 % des Marfan |
+| Prévalence scoliose | 60–70 % des Marfan (Sponseller et al., 1995, *J Bone Joint Surg Am*) |
 | Type de courbe | Variable — souvent double, thoracolombaire |
 | Flexibilité | **Hypermobile** — corrigibilité importante mais récidive fréquente |
 | Particularité | **Dolicho-scoliose** : courbures longues, membres longs, thorax étroit |
@@ -111,7 +111,7 @@ Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie
 
 ### 13.2.1 Généralités
 
-- **Prévalence** : 1/3 000 — la plus fréquentes des phacomatoses
+- **Prévalence** : 1/3 000 (Friedman, 1999) — la plus fréquente des phacomatoses
 - **Gène** : *NF1* (neurofibromine, chromosome 17q) — autosomique dominant
 - **Critères diagnostiques** : ≥ 2 parmi : taches café-au-lait > 5 mm × 6, éphélides axillaires/inguinales, neurofibromes (≥ 2 ou 1 plexiforme), gliome optique, nodules de Lisch, lésion osseuse distinctive, parent NF1
 
@@ -149,13 +149,13 @@ Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie
 
 ## 13.4 Ostéogenèse imparfaite (OI)
 
-### Classification Sillence
+### Classification de Sillence (Sillence et al., 1979, *J Med Genet*)
 
 | Type | Sévérité | Scoliose |
 |------|---------|---------|
 | I | Légère | 20–30 % |
 | II | Létale périnatale | — |
-| **III** | **Sévère** | **Quasi-universelle (> 80 %)** |
+| **III** | **Sévère** | **Quasi-universelle (> 80 %)** (Engelbert et al., 1998) |
 | IV | Modérée | 30–50 % |
 | V–XII | Variantes | Variable |
 
@@ -183,8 +183,8 @@ Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie
 
 | Syndrome | Scoliose | Particularité |
 |---------|---------|--------------|
-| **Prader-Willi** | 60–80 % | Obésité complique l'anesthésie + difficulté de correction |
-| **Rett** | 80–90 % (très fréquente) | Progressive, longue, commence jeune — souvent chirurgie |
+| **Prader-Willi** | 60–80 % (Holm et al., 1993) | Obésité complique l'anesthésie + difficulté de correction |
+| **Rett** | 80–90 % (Kerr et al., 2003) | Progressive, longue, commence jeune — souvent chirurgie |
 | **Angelman** | 15–30 % | Variable |
 
 ---
@@ -284,6 +284,12 @@ Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie
 
 ## Ressources complémentaires
 
+- **Sillence DO, Senn A, Danks DM.** Genetic heterogeneity in osteogenesis imperfecta. *J Med Genet*. 1979;16(2):101–116
+- **Sponseller PD, Hobbs W, Riley LH, Pyeritz RE.** The thoracolumbar spine in Marfan syndrome. *J Bone Joint Surg Am*. 1995;77(6):867–876
+- **Friedman JM.** Epidemiology of neurofibromatosis type 1. *Am J Med Genet*. 1999;89(1):1–6
+- **Engelbert RH, Pruijs HE, Beemer FA et al.** Osteogenesis imperfecta in childhood: treatment strategies. *Arch Phys Med Rehabil*. 1998;79(12):1590–1594
+- **Holm VA, Cassidy SB, Butler MG et al.** Prader-Willi syndrome: consensus diagnostic criteria. *Pediatrics*. 1993;91(2):398–402
+- **Kerr AM, Webb P, Prescott RJ, Milne Y.** Results of surgery for scoliosis in Rett syndrome. *J Child Neurol*. 2003;18(10):703–708
 - **Dietz HC et al.** Marfan syndrome. *NEJM*. 2005;352:2368
 - **Crawford AH.** NF1 spinal scoliosis. *Spine*. 2007
 - **Golan D et al.** OI and scoliosis. *Spine Deformity*. 2017

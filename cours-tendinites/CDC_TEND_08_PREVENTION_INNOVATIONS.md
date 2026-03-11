@@ -36,9 +36,9 @@
   - **Âge** : le risque augmente linéairement avec l'âge (dégénérescence, ↓ vascularisation, ↓ synthèse de collagène, accumulation de micro-lésions)
   - **Génétique** : polymorphismes des gènes COL5A1, MMP3, TNC (tenascin-C), GDF5 → prédisposition aux tendinopathies — études GWAS
   - **Sexe** : variable selon la localisation — Achille : hommes ; GTPS : femmes ; coiffe : hommes ; De Quervain : femmes
-  - **IMC / adiposité** : facteur de risque systémique (adipokines pro-inflammatoires, métabolisme lipidique, charge mécanique augmentée) — chaque point d'IMC supplémentaire augmente le risque de tendinopathie de ~5%
-  - **Diabète** : insulinorésistance → accumulation de produits de glycation avancés (AGE) dans le collagène → rigidification, fragilisation → ↑ risque × 3
-  - **Dyslipidémie / hypercholestérolémie** : dépôts lipidiques intra-tendineux (xanthomes), ↑ inflammation locale → risque de tendinopathie et de rupture × 2
+  - **IMC / adiposité** : facteur de risque systémique (adipokines pro-inflammatoires, métabolisme lipidique, charge mécanique augmentée) — chaque point d'IMC supplémentaire augmente le risque de tendinopathie de ~5% (Gaida et al., 2009, *Arthritis Rheum*)
+  - **Diabète** : insulinorésistance → accumulation de produits de glycation avancés (AGE) dans le collagène → rigidification, fragilisation → ↑ risque × 3 (Ranger et al., 2016, *Br J Sports Med*)
+  - **Dyslipidémie / hypercholestérolémie** : dépôts lipidiques intra-tendineux (xanthomes), ↑ inflammation locale → risque de tendinopathie et de rupture × 2 (Tilley et al., 2015, *Br J Sports Med*)
   - **Maladies rhumatismales** : spondylarthropathie (enthésites), polyarthrite rhumatoïde (ténosynovites)
   - **Biomécanique individuelle** : pronation excessive du pied, valgus du genou, dyskinésie scapulaire
 - **Facteurs extrinsèques** (liés à l'environnement/activité) :
@@ -60,7 +60,7 @@
 ### Section 24.2 — Gestion de la charge d'entraînement
 
 **Contenu obligatoire** :
-- **Le concept ACWR (Acute:Chronic Workload Ratio)** — Gabbett et al. :
+- **Le concept ACWR (Acute:Chronic Workload Ratio)** — Gabbett et al., 2016, *Br J Sports Med* :
   - Charge aiguë = charge de la dernière semaine
   - Charge chronique = charge moyenne des 4 dernières semaines
   - ACWR = aiguë / chronique
@@ -91,7 +91,7 @@
   - Programmes de renforcement excentrique/HSR prophylactiques (exercices du programme des excentiques 1-2×/semaine en prévention)
   - Correction des facteurs biomécaniques : orthèses plantaires, analyse de course, correction de la technique sportive
   - Éducation des praticiens et des entraîneurs
-  - Dépistage échographique des tendons à risque (athlètes d'élite) — tendons épaissis asymptomatiques = risque × 3 de devenir symptomatiques (Cook screening model)
+  - Dépistage échographique des tendons à risque (athlètes d'élite) — tendons épaissis asymptomatiques = risque × 3 de devenir symptomatiques (Cook et al., 2001, *Scand J Med Sci Sports*)
   - Prise en charge des facteurs systémiques : contrôle glycémique, contrôle lipidique, réduction pondérale
 - **Prévention secondaire** (empêcher la récidive) :
   - Maintien d'exercices de renforcement après guérison (1-2×/semaine, indéfiniment !)
@@ -118,7 +118,7 @@
 2. L'ACWR doit rester entre 0.8-1.3 — les « spikes » (>1.5) multiplient le risque × 2-5
 3. Le diabète et la dyslipidémie sont des facteurs de risque systémiques souvent sous-estimés
 4. Le dépistage échographique des tendons épaissis asymptomatiques identifie les sujets à risque (× 3)
-5. La prévention secondaire (exercices de maintien indéfinis) est essentielle — taux de récidive 25-30%
+5. La prévention secondaire (exercices de maintien indéfinis) est essentielle — taux de récidive 25-30% (Silbernagel et al., 2007, *Am J Sports Med*)
 6. Le repos total fragilise le tendon — le tendon a besoin de charge pour maintenir sa capacité
 
 ### Auto-évaluation
@@ -201,7 +201,7 @@
 **Contenu obligatoire** :
 - **IA pour le diagnostic** :
   - Deep learning appliqué à l'échographie tendineuse → détection automatique des anomalies (épaississement, hypoéchogénicité, néovascularisation) → aide au diagnostic pour le non-expert
-  - CNN (Convolutional Neural Networks) entraînés sur des milliers d'images échographiques → Se 85-95%, Sp 80-90% selon les études pilotes
+  - CNN (Convolutional Neural Networks) entraînés sur des milliers d'images échographiques → Se 85-95%, Sp 80-90% selon les études pilotes (Kim et al., 2020, *Eur Radiol*)
   - IA et IRM : segmentation automatique des tendons, quantification de la dégénérescence graisseuse (Goutallier automatisé), mesure de la rétraction
 - **IA prédictive** :
   - Modèles prédictifs de blessure combinant : données de charge (GPS, accéléromètre), données biologiques (biomécanique, force, souplesse), historique médical → prédiction du risque de tendinopathie à 2-4 semaines
@@ -228,7 +228,7 @@
 **Contenu obligatoire** :
 - **Questions non résolues** :
   1. Pourquoi les anomalies structurelles (épaississement, hypoéchogénicité) persistent-elles même après la guérison clinique ? (le tendon ne revient jamais à la « normale ») → le concept de « structure modifiée tolérante à la charge »
-  2. Pourquoi certains tendons dégénératifs sont douloureux et d'autres non ? (50-60% des ruptures sont asymptomatiques !) → la source de la douleur est-elle le tendon lui-même, le paraténon, les néonerfs, la sensibilisation centrale ?
+  2. Pourquoi certains tendons dégénératifs sont douloureux et d'autres non ? (50-60% des ruptures sont asymptomatiques — Kannus & Józsa, 1991, *J Bone Joint Surg Am*) → la source de la douleur est-elle le tendon lui-même, le paraténon, les néonerfs, la sensibilisation centrale ?
   3. Le tendon peut-il vraiment « guérir » ou seulement « s'adapter » ? → concept de remodelage adaptatif vs régénération vraie
   4. Quel rôle jouent les facteurs psychologiques (catastrophisme, kinésiophobie, dépression) dans la chronicisation des tendinopathies ?
   5. Comment personnaliser le traitement ? → le one-size-fits-all (Alfredson pour tout le monde) est dépassé → médecine de précision appliquée aux tendinopathies
@@ -286,6 +286,19 @@
 | CDC_TEND_07 | 18-23 (Traitements) | ~46 |
 | CDC_TEND_08 | 24-25 (Prévention/Innovations) | ~26 |
 | **TOTAL** | **25 modules** | **~359 médias** |
+
+---
+
+## Références — Partie 8
+
+1. Cook JL, Khan KM, Kiss ZS, et al. Asymptomatic hypoechoic regions on patellar tendon ultrasound: a 4-year clinical and ultrasound followup of 46 tendons. *Scand J Med Sci Sports*. 2001;11(6):321-327.
+2. Gabbett TJ. The training–injury prevention paradox: should athletes be training smarter and harder? *Br J Sports Med*. 2016;50(5):273-280.
+3. Gaida JE, Ashe MC, Bass SL, et al. Is adiposity an under-recognized risk factor for tendinopathy? A systematic review. *Arthritis Rheum*. 2009;61(6):840-849.
+4. Kannus P, Józsa L. Histopathological changes preceding spontaneous rupture of a tendon. *J Bone Joint Surg Am*. 1991;73(10):1507-1525.
+5. Kim SJ, Kim HK, Seo J, et al. Deep learning-based diagnosis of Achilles tendon disorders using ultrasound imaging. *Eur Radiol*. 2020;30(10):5367-5375.
+6. Ranger TA, Wong AM, Cook JL, et al. Is there an association between tendinopathy and diabetes mellitus? A systematic review with meta-analysis. *Br J Sports Med*. 2016;50(16):982-989.
+7. Silbernagel KG, Thomeé R, Eriksson BI, et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy. *Am J Sports Med*. 2007;35(6):897-906.
+8. Tilley BJ, Cook JL, Docking SI, et al. Is higher serum cholesterol associated with altered tendon structure or tendon pain? A systematic review. *Br J Sports Med*. 2015;49(23):1504-1509.
 
 ---
 

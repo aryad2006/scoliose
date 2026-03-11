@@ -34,7 +34,7 @@
 **Contenu obligatoire** :
 - **Anatomie** : tendon patellaire = prolongement de l'appareil extenseur (quadriceps → rotule → tendon patellaire → TTA), structure fibro-cartilagineuse à l'insertion rotulienne (enthèse)
 - **Biomécanique** : forces de compression de l'enthèse rotulienne lors de la flexion profonde + forces de traction en extension résistée → charge maximale lors de l'impulsion de saut (5-8× poids du corps) et de la réception
-- **Épidémiologie** : prévalence 14-45% chez les volleyeurs, 19-32% chez les basketteurs, 2-5% dans les sports à moindre impact — prédominance masculine 2:1, pic 15-30 ans
+- **Épidémiologie** *(données issues de Lian et al., 2005, Am J Sports Med ; Zwerver et al., 2011, Br J Sports Med)* : prévalence rapportée de 14 à 45 % chez les volleyeurs, 19 à 32 % chez les basketteurs, et 2 à 5 % dans les sports à moindre impact — prédominance masculine (ratio environ 2:1), pic de fréquence entre 15 et 30 ans
 - **Facteurs de risque** : volumes de saut élevés, flexion profonde répétée, poids corporel élevé, souplesse réduite du quadriceps, raideur de la chaine postérieure, morphologie rotulienne (patella alta)
 
 **Médias** :
@@ -74,7 +74,7 @@
 
 **Contenu obligatoire** :
 - **Exercices isométriques (Rio et al., 2015)** : contraction isométrique du quadriceps à 70° de flexion, 5×45 sec, 2-3×/jour → effet antalgique immédiat (inhibition corticale de la douleur) — idéal en saison, avant l'entraînement, comme « warm-up antalgique »
-- **Heavy Slow Resistance (HSR, Kongsgaard et al., 2009)** : squat bilatéral + hack squat + presse à cuisses, charge lourde (>70% 1RM), 4×6-8 rép, tempo lent (3 sec concentrique, 3 sec excentrique), 3×/semaine, 12 semaines — résultats supérieurs aux excentriques purs à long terme
+- **Heavy Slow Resistance (HSR)** *(d'après Kongsgaard et al., 2009, Scand J Med Sci Sports)* : squat bilatéral + hack squat + presse à cuisses, charge lourde (>70 % 1RM), 4×6-8 rép, tempo lent (3 sec concentrique, 3 sec excentrique), 3×/semaine pendant 12 semaines — résultats supérieurs aux excentriques purs à long terme
 - **Protocole excentrique à 25° (decline squat, Purdam, 2004)** : squat excentrique sur plan incliné, 3×15 × 2×/jour, 12 semaines — la première étude positive, mais compliance moindre que HSR
 - **Gestion de la charge (la clé du succès)** : le tendon patellaire souffre de la surcharge ET de la sous-charge → « optimal loading » — monitoring du volume de saut, utilisation des douleurs post-entraînement comme guide (douleur ≤3/10 EVA dans les 24h = charge acceptable)
 - **Retour au sport en saison** : réduction temporaire du volume de saut (50%), introduction progressive des isométriques, maintien d'un entraînement spécifique modifié — JAMAIS d'arrêt total
@@ -250,7 +250,7 @@
   - Douleur latérale de hanche (pas inguinale = arthrose / pas fessière = rachis)
   - Aggravation : décubitus latéral (ne peut pas dormir sur le côté atteint), station debout prolongée (>10 min), montée d'escaliers, marche prolongée
   - Tests :
-    - Single leg stand test 30 sec : reproduction de la douleur → Se 100% (Grimaldi et al., 2017) ← TEST CLÉ
+    - Single leg stand test 30 sec : reproduction de la douleur → Se 100 % (Grimaldi et al., 2017, *Br J Sports Med*) ← TEST CLÉ
     - Palpation du grand trochanter : douloureuse mais non spécifique (douleur référée aussi)
     - Résistance à l'abduction en décubitus latéral : douleur + faiblesse (tendinopathie ± déchirure)
     - FADER (Flexion-ADDuction-External Rotation) : mise en tension compressive → douleur latérale
@@ -273,7 +273,7 @@
 
 **Contenu obligatoire** :
 - **Éducation (PRIORITAIRE)** : explication du diagnostic, éviction des facteurs compressifs — NE PAS croiser les jambes, NE PAS dormir sur le côté atteint (coussin entre les genoux), éviter la station debout hanche en adduction (« shift »), position assise : genoux écartés (pas de genoux serrés)
-- **Programme d'exercices GLoBE (Mellor et al., 2018)** : exercices de renforcement progressif des abducteurs (isométrique → isotonique → fonctionnel), gestion de la charge compressive, éducation — supérieur aux corticoïdes à 12 mois (RCT LEAP trial)
+- **Programme d'exercices GLoBE** *(Mellor et al., 2018, BMJ)* : exercices de renforcement progressif des abducteurs (isométrique → isotonique → fonctionnel), gestion de la charge compressive, éducation — supérieur aux corticoïdes à 12 mois (RCT LEAP trial)
   - Phase 1 : isométrique en abduction (position non compressive), éducation, gestion des activités
   - Phase 2 : isotonique en abduction (couché puis debout), ponts fessiers latéraux
   - Phase 3 : fonctionnel (exercices en charge, marche, escaliers, single leg stand)
@@ -379,13 +379,13 @@
 
 **Contenu obligatoire** :
 - **Histoire naturelle** : 80-90% de résolution spontanée en 12-18 mois — mais récidive 30%
-- **Le paradoxe des corticoïdes** (Coombes et al., 2010 ; Bisset et al., 2006) :
+- **Le paradoxe des corticoïdes** (Coombes et al., 2010, *Lancet* ; Bisset et al., 2006, *BMJ*) :
   - Court terme (4-6 semaines) : corticoïdes > physiothérapie > wait-and-see
   - Long terme (12 mois) : wait-and-see = physiothérapie >> corticoïdes — les patients infiltrés ont PLUS de récidives et un MOINS bon résultat à 1 an que les patients non traités !
   - Explication : la corticothérapie supprime la douleur → reprise prématurée → rechute + dégradation tissulaire additionnelle
   - Recommandation actuelle : ÉVITER les infiltrations de corticoïdes dans l'épicondylalgie latérale (sauf éventuellement pour « fenêtre thérapeutique » initiale unique)
 - **Programme d'exercices** : étude Tyler et al. (Tyler twist — barre flexible), exercices excentiques de l'ECRB, isométriques, renforcement de la préhension progressif
-  - Tyler twist (Flexbar) : résistance excentrique avec une barre flexible (twist motion) — étude RCT positive, réduction de la douleur 81% vs 22% à 7 semaines
+  - Tyler twist (Flexbar) : résistance excentrique avec une barre flexible (twist motion) — réduction de la douleur de 81 % vs 22 % à 7 semaines *(Tyler et al., 2010, J Hand Ther)*
   - Isométrique : extension résistée du poignet en position neutre, 5×45 sec
   - HSR : renforcement progressif concentrique-excentrique, charge lourde
 - **Attelles** : bracelet anti-épicondylien (forearm brace) — réduction de la force de traction sur l'ECRB ← evidence modeste mais largement utilisé
@@ -420,6 +420,19 @@
 - 2 QCM Or (cas : épicondylalgie résistante → tunnel radial ?, stratégie thérapeutique)
 - 1 QCM Diamant (cas : patient avec douleur latérale du coude + 3 infiltrations + résultat Coombes → plan de traitement optimal)
 - 1 QROC : « Expliquez le paradoxe des corticoïdes dans l'épicondylalgie latérale en citant les données de Coombes et Bisset. »
+
+---
+
+## Références
+
+- Bisset L, Beller E, Jull G, et al. Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial. *BMJ*. 2006;333(7575):939.
+- Coombes BK, Bisset L, Vicenzino B. Efficacy and safety of corticosteroid injections and other injections for management of tendinopathy: a systematic review of randomised controlled trials. *Lancet*. 2010;376(9754):1751-1767.
+- Grimaldi A, Mellor R, Hodges P, et al. Gluteal tendinopathy: a review of mechanisms, assessment, and management. *Br J Sports Med*. 2017;51(2):82-93.
+- Kongsgaard M, Kovanen V, Aagaard P, et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. *Scand J Med Sci Sports*. 2009;19(6):790-802.
+- Lian ØB, Engebretsen L, Bahr R. Prevalence of jumper's knee among elite athletes from different sports: a cross-sectional study. *Am J Sports Med*. 2005;33(4):561-567.
+- Mellor R, Bennell K, Grimaldi A, et al. Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial. *BMJ*. 2018;361:k1662.
+- Tyler TF, Thomas GC, Nicholas SJ, et al. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. *J Hand Ther*. 2010;23(3):231-238.
+- Zwerver J, Bredeweg SW, van den Akker-Scheek I. Prevalence of jumper's knee among nonelite athletes from different sports: a cross-sectional survey. *Am J Sports Med*. 2011;39(9):1984-1988.
 
 ---
 

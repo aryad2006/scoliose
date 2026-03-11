@@ -91,7 +91,7 @@ Test d'Adams • Scoliomètre de Bunnell • Gibbosité (angle de gibbosité = A
 
 **4. Antécédents familiaux**
 - Scoliose dans la famille (parents, fratrie, grands-parents) ?
-- Un antécédent familial au 1er degré augmente le risque de 2-10x (héritabilité ~38%)
+- Un antécédent familial au 1er degré augmente le risque de 2 à 10 fois (héritabilité estimée ~38 %) (Ogilvie et al., 2006, *Spine*)
 - Antécédent de chirurgie rachidienne dans la famille ?
 
 **5. Douleur — analyse sémiologique**
@@ -230,13 +230,13 @@ Le **scoliomètre de Bunnell** (inclinomètre de trunk rotation) mesure l'**Angl
 | 7-10° | Anomalie probable — radiographie recommandée |
 | > 10° | Anomalie certaine |
 
-**Correspondance ATR ↔ Cobb** (formule de Bunnell) :
+**Correspondance ATR ↔ Cobb** (formule de Bunnell, 1984, *J Bone Joint Surg Am*) :
 > ATR estimée (°) ≈ Cobb (°) × 0,22
 > Ex : Cobb 30° → ATR estimée ≈ 6,6°
 
 **Limites** :
-- Corrélation imparfaite avec le Cobb (r = 0.75)
-- Sensibilité pour Cobb ≥ 20° : 93% ; spécificité 77%
+- Corrélation imparfaite avec le Cobb (r = 0,75) (Bunnell, 1984)
+- Sensibilité pour Cobb ≥ 20° : 93 % ; spécificité 77 % (Bunnell, 1984 ; Côté et al., 1998, *Spine*)
 - Faux positifs : bosse de bison, contracture musculaire unilatérale, kyste pilonidal
 
 ### 6.3.3 Test d'Adams — Interprétation avancée
@@ -257,7 +257,7 @@ Le **scoliomètre de Bunnell** (inclinomètre de trunk rotation) mesure l'**Angl
 
 ### 6.4.1 Testing moteur systématique (MRC 0-5)
 
-**Score MRC** :
+**Score MRC** (Medical Research Council, 1943) :
 | Grade | Force |
 |-------|-------|
 | 0 | Aucune contraction |
@@ -378,7 +378,7 @@ Same principle, réalisé sous amplificateur de brillance ou radiographie :
 
 **Technique** : Placement d'un cylindre rigide (fulcrum) sous l'apex de la courbure en décubitus latéral → le poids du corps corrige la courbure.
 
-**Intérêt** : Prédit mieux la correction chirurgicale maximale que le bending test standard (corrélation r = 0.92 avec la correction post-opératoire).
+**Intérêt** : Prédit mieux la correction chirurgicale maximale que le bending test standard (corrélation r = 0,92 avec la correction post-opératoire) (Cheung & Luk, 1997, *Spine*).
 
 **Résultat** : Si la courbure se corrige à < 20° au fulcrum test → correction chirurgicale à 20° probablement atteignable.
 
@@ -411,8 +411,9 @@ Same principle, réalisé sous amplificateur de brillance ou radiographie :
 
 **Valeurs normales** :
 - Décompensation < 1 cm : équilibre coronal acceptable
-- Décompensation 1-2 cm : légère
+- Décompensation 1–2 cm : légère
 - Décompensation > 2 cm : **significative** → chirurgie doit restaurer l'équilibre coronal
+- *(Seuils selon King & Moe, 1983, *Clin Orthop Relat Res* ; SRS Standardization of Terminology)*
 
 **Formule** :
 > Décompensation coronale (cm) = Distance du fil de plomb C7 au pli inter-fessier
@@ -677,10 +678,15 @@ GET /api/spine/{sophie_id}
 ## Ressources complémentaires
 
 ### Articles de référence
-- Bunnell WP. *An objective criterion for scoliosis screening*. JBJS 1984;66:1381-7.
-- Adams W. *Lectures on the Pathology and Treatment of Lateral and Other Forms of Curvature of the Spine*. Churchill 1865. (description originale du test)
-- Cobb JR. *Outline for the study of scoliosis*. AAOS 1948.
-- Negrini S et al. *SOSORT guidelines 2011 — Orthopaedic and Rehabilitation treatment of idiopathic scoliosis during growth*. Scoliosis 2012.
+- Bunnell WP. *An objective criterion for scoliosis screening*. J Bone Joint Surg Am. 1984;66:1381–1387.
+- Adams W. *Lectures on the Pathology and Treatment of Lateral and Other Forms of Curvature of the Spine*. Churchill; 1865. (description originale du test)
+- Cobb JR. *Outline for the study of scoliosis*. Instr Course Lect AAOS. 1948;5:261–275.
+- Negrini S et al. *SOSORT guidelines 2011 — Orthopaedic and Rehabilitation treatment of idiopathic scoliosis during growth*. Scoliosis. 2012;7:3.
+- Cheung KMC, Luk KDK. Prediction of correction of scoliosis with use of the fulcrum bending radiograph. *J Bone Joint Surg Am*. 1997;79:1144–1150.
+- Medical Research Council. *Aids to the Investigation of Peripheral Nerve Injuries*. War Memorandum No. 7. London: HMSO; 1943.
+- Côté P et al. A study of the diagnostic accuracy and reliability of the scoliometer and Adam's forward bend test. *Spine*. 1998;23:796–802.
+- Ogilvie JW et al. The search for idiopathic scoliosis genes. *Spine*. 2006;31:679–681.
+- King HA, Moe JH. Treatment of scoliosis. *Clin Orthop Relat Res*. 1983;(175):55–68.
 
 ### Outils pratiques
 - [MEDIA: 📊 M06-RES-001 — Fiche d'examen clinique standardisé scoliose (format A4, à imprimer)]

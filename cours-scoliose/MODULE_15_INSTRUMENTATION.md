@@ -212,7 +212,7 @@ Vis pédiculaire • Vis polyaxiale (tulipe) • Vis monoaxiale • Connectors /
 ### 15.5.1 Fluoroscopie standard
 
 - **Technique de base** : scopie biplanaire AP + profil
-- Précision vis pédiculaire : **85–92 %** (classe A/B Gertzbein)
+- Précision vis pédiculaire : **85–92 %** (classe A/B, Gertzbein & Robbins, 1990)
 - Exposition ionisante patient et chirurgien
 
 ### 15.5.2 Navigation 3D per-opératoire (O-Arm + Stealth/StealthStation)
@@ -223,7 +223,7 @@ Vis pédiculaire • Vis polyaxiale (tulipe) • Vis monoaxiale • Connectors /
 3. Guidage en temps réel de la perçeuse + vis sur écran de navigation (3 plans simultanés)
 
 **Avantages** :
-- Précision : **95–98 %** (classe A/B) — vs 85–92 % fluoroscopie
+- Précision : **95–98 %** (classe A/B, Kosmopoulos & Schizas, 2007) — vs 85–92 % fluoroscopie
 - Réduction des brèches pédiculaires (classe C/D/E) de ~60 %
 - Moins d'exposition aux rayons X pour le chirurgien
 - Vérification immédiate post-mise en place
@@ -400,6 +400,8 @@ Vis pédiculaire • Vis polyaxiale (tulipe) • Vis monoaxiale • Connectors /
 
 ## Ressources complémentaires
 
+- **Gertzbein SD, Robbins SE.** Accuracy of pedicular screw placement in vivo. *Spine*. 1990;15(1):11–14
+- **Kosmopoulos V, Schizas C.** Pedicle screw placement accuracy: a meta-analysis. *Spine*. 2007;32(3):E111–E120
 - **Faraj A et al.** Titanium vs CoCr. *Spine*. Review 2019
 - **Lonstein JE et al.** Pedicle screw accuracy. *Spine*. 1999
 - **Ntilikina Y et al.** O-Arm navigation accuracy. *Orthopedics*. 2017

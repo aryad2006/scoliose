@@ -130,6 +130,15 @@ Le protocole **ERAS** (Enhanced Recovery After Surgery) vise à réduire les com
 
 ---
 
+## Références
+
+1. Debono B, Corniola MV, Engel A, et al. Enhanced Recovery After Surgery (ERAS) for lumbar spine fusion: a systematic review. *Spine J*. 2021;21(7):1205-1217.
+2. Rushton A, Eveleigh G, Petherick EJ, et al. Physiotherapy rehabilitation following lumbar spinal fusion: a systematic review and meta-analysis. *BMJ Open*. 2012;2(4):e000829.
+3. Daniels AH, Phelps T, Zimmer S, et al. Return to sport after spinal fusion: a systematic review. *Clin J Sport Med*. 2019;29(6):462-468.
+4. Asher MA, Min Lai S, Burton DC, Manna BJ. The reliability and concurrent validity of the SRS-22 patient questionnaire. *Spine*. 2003;28(1):63-69.
+
+---
+
 ## Quiz — 6 questions
 
 **Q1. 🥉** Selon le protocole ERAS, le premier lever après une arthrodèse rachidienne a lieu :

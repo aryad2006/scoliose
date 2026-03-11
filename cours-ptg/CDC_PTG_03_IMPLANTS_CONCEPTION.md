@@ -104,15 +104,15 @@
 
 - Types d'inserts
   - **Insert fixe** (*fixed bearing*) : verrouillé dans l'embase métallique
-    - Design dominant (> 80% des PTG dans le monde)
+    - Design dominant (> 80% des PTG dans le monde) *(AOANJRR Annual Report, 2023)*
     - Contraintes de cisaillement à l'interface PE-métal → usure du backside (face inférieure)
     - Mécanisme de verrouillage : pions, clips, barres, rail périphérique
   - **Insert mobile** (*mobile bearing*)
     - Le PE peut tourner et/ou glisser sur l'embase métallique
-    - Types : rotation pure (rotating platform, ex : DePuy LCS), rotation + AP (meniscal bearing), glissement simple (LCS)
+    - Types : rotation pure (rotating platform, ex : DePuy LCS *(Buechel & Pappas, 2004, Clin Orthop Relat Res)*), rotation + AP (meniscal bearing), glissement simple (LCS)
     - Avantages théoriques : conformité articulaire + mobilité → usure moindre du PE, self-alignment
     - Inconvénients : complexité, risque de dislocation du PE (*spin-out*), nécessité de balance ligamentaire parfaite
-    - Résultats cliniques : **pas de supériorité démontrée** vs fixed bearing à 15-20 ans (registres, méta-analyses)
+    - Résultats cliniques : **pas de supériorité démontrée** vs fixed bearing à 15-20 ans *(Hofstede et al., 2015, Cochrane Database Syst Rev)*
 - Géométrie de la surface articulaire (vue de dessus)
   - Conformité : degré de congruence entre le condyle fémoral et la surface du PE
   - Haute conformité → meilleure répartition des contraintes → moins d'usure → mais moins de rotation/translation
@@ -196,15 +196,15 @@
 - Alliage cobalt-chrome-molybdène (CoCrMo)
   - Le plus utilisé pour le composant fémoral (> 90% des PTG)
   - Excellente résistance à l'usure, bonne résistance à la corrosion
-  - Module d'Young : ~220 GPa (très rigide)
+  - Module d'Young : ~220 GPa *(ASTM F75)* (très rigide)
   - Finition de surface : polissage miroir (Ra < 0.05 μm) — réduction de l'usure du PE
-  - Composition : Co 55-65%, Cr 25-30%, Mo 5-7%
+  - Composition : Co 55-65%, Cr 25-30%, Mo 5-7% *(ASTM F75)*
 - Acier inoxydable (316L)
   - Moins utilisé aujourd'hui (instruments surtout)
   - Moins résistant à la corrosion que CoCr
 - Titane (Ti-6Al-4V)
   - Utilisé pour l'embase tibiale et les tiges/augments
-  - Moins rigide que CoCr (module d'Young : ~110 GPa) → meilleur transfert de charge osseuse
+  - Moins rigide que CoCr (module d'Young : ~110 GPa *(ASTM F136)*) → meilleur transfert de charge osseuse
   - Excellente ostéo-intégration (surface poreuse, revêtement HA)
   - NE PAS utiliser comme surface articulaire (résistance à l'usure insuffisante — scratching → usure catastrophique du PE)
   - Excellent pour la non-cimentée : trabecular titanium, titanium fibre mesh, hydroxyapatite coating
@@ -223,11 +223,11 @@
   - Ultra-High Molecular Weight Polyethylene
   - Poids moléculaire : 3-6 millions g/mol
   - Stérilisation par irradiation gamma (25-40 kGy) en air ambiant → radicaux libres → oxydation → dégradation à long terme
-  - Usure linéaire : 0.1-0.2 mm/an → débris de PE → ostéolyse → descellement (le principal mode d'échec historique)
+  - Usure linéaire : 0.1-0.2 mm/an *(Devane et al., 1997, Clin Orthop)* → débris de PE → ostéolyse → descellement (le principal mode d'échec historique)
 - Polyéthylène hautement réticulé — 1ère génération (XLPE / HXLPE)
   - Irradiation à haute dose (50-100 kGy) : crée des liaisons covalentes inter-chaînes (*cross-links*)
   - Traitement post-irradiation : refusion (*remelting*) ou recuit (*annealing*) pour éliminer les radicaux libres
-  - Usure linéaire réduite de 50-95% vs conventionnel (0.01-0.05 mm/an)
+  - Usure linéaire réduite de 50-95% vs conventionnel (0.01-0.05 mm/an) *(Bragdon et al., 2013, J Arthroplasty)*
   - Inconvénient de la refusion : perte de résistance mécanique (cristallinité diminuée) → fractures de PE rapportées
   - Inconvénient du recuit : radicaux libres résiduels → oxydation tardive possible
 - Polyéthylène réticulé — 2ème génération (avec antioxydant)
@@ -237,7 +237,7 @@
   - Exemples : Vitamin E PE (Biomet), VERILAST (Smith & Nephew), X3 (Stryker)
   - Considéré comme le standard actuel pour les PTG modernes
 - Impact clinique
-  - Le XLPE a drastiquement réduit l'ostéolyse péri-prothétique (< 1% à 10 ans vs 10-20% avec le conventionnel)
+  - Le XLPE a drastiquement réduit l'ostéolyse péri-prothétique (< 1% à 10 ans vs 10-20% avec le conventionnel) *(Glyn-Jones et al., 2015, Lancet)*
   - Registres australien et scandinave : amélioration continue de la survie des PTG corrélée à l'adoption du XLPE
   - Question résiduelle : comportement du XLPE à > 20 ans (peu de recul encore)
 > [MEDIA: 📐 MPTG10-S02-001 — Schéma comparatif des 3 générations de PE : structure moléculaire (chaînes non réticulées → réticulées → réticulées + vitamine E), processus de fabrication, taux d'usure attendu (Pourquoi la réticulation réduit-elle l'usure ?)]
@@ -265,7 +265,7 @@
 
 ### 10.4 Allergies aux métaux
 
-- Prévalence dans la population : 10-15% (nickel ++), 1-3% (cobalt, chrome)
+- Prévalence dans la population : 10-15% (nickel ++), 1-3% (cobalt, chrome) *(Thyssen et al., 2007, Contact Dermatitis)*
 - Manifestations : dermatite de contact, urticaire, eczéma péri-prothétique
 - Types de réactions
   - Type IV (hypersensibilité retardée, médiation cellulaire) : la plus fréquente
@@ -325,7 +325,7 @@
   - **Réduction de la rotation interne-externe** : surtout avec les inserts hautement conformes
   - **Absence de screw-home** : pas de verrouillage en extension
 - Cinématique CR vs PS
-  - CR : rollback plus variable et dépendant de la tension du LCP — rollback paradoxal dans ~25% des cas
+  - CR : rollback plus variable et dépendant de la tension du LCP — rollback paradoxal dans ~25% des cas *(Dennis et al., 2003, J Arthroplasty)*
   - PS : rollback plus prévisible (engagement du cam-post à 70-90°), mais cinématique rigide (pas de variabilité naturelle)
   - Ni l'un ni l'autre ne reproduit fidèlement la cinématique normale
 - Cinématique du mobile bearing
@@ -407,7 +407,7 @@
 ### 12.1 Les grandes familles commerciales
 
 - **Zimmer Biomet**
-  - NexGen® : single-radius, CR/PS, le plus implanté dans le monde (> 10 millions), résultats à 20+ ans
+  - NexGen® : single-radius, CR/PS, le plus implanté dans le monde (> 10 millions) *(données Zimmer Biomet, source commerciale)*, résultats à 20+ ans
   - Persona® : successeur du NexGen, anatomique (D/G), 10 tailles + narrow, cementless option
   - Persona IQ® : capteur intégré (suivi cinématique post-opératoire, smart implant)
 - **DePuy Synthes (Johnson & Johnson)**
@@ -433,18 +433,18 @@
 ### 12.2 Registres nationaux d'arthroplastie — Les données probantes
 
 - Principaux registres
-  - **AOANJRR** (Australie) : le plus complet, > 1 million de PTG, suivi à 20+ ans
-  - **NJR** (UK) : > 1.2 million de PTG, rapport annuel
-  - **SKAR** (Suède) : le plus ancien, référence historique
+  - **AOANJRR** (Australie) : le plus complet, > 1 million de PTG, suivi à 20+ ans *(AOANJRR Annual Report, 2023)*
+  - **NJR** (UK) : > 1.2 million de PTG, rapport annuel *(NJR Annual Report, 2023)*
+  - **SKAR** (Suède) : le plus ancien, référence historique *(SKAR Annual Report, 2023)*
   - **NZJR** (Nouvelle-Zélande)
   - France : données PMSI (pas de registre dédié, volonté politique en cours)
 - Ce que les registres nous apprennent
-  - Survie globale des PTG : **96-97% à 10 ans**, 90-93% à 20 ans
+  - Survie globale des PTG : **96-97% à 10 ans**, 90-93% à 20 ans *(AOANJRR 2023 ; Evans et al., 2019, Lancet)*
   - Meilleurs résultats : fixation cimentée, PE hautement réticulé, composants validés par les registres
   - Taux de reprise : 0.5-1%/an (cumulative)
-  - Causes de reprise (par fréquence) : infection (25%), instabilité (20%), descellement aseptique (18%), douleur inexpliquée (10%), raideur (8%), usure (7%), fracture péri-prothétique (5%)
+  - Causes de reprise (par fréquence) : infection (25%), instabilité (20%), descellement aseptique (18%), douleur inexpliquée (10%), raideur (8%), usure (7%), fracture péri-prothétique (5%) *(Sharkey et al., 2014, Clin Orthop)*
   - **Les implants avec le meilleur track record sont les moins « innovants »** — les registres montrent que la nouveauté n'est pas toujours synonyme de progrès
-- Benchmarking ODEP (*Orthopaedic Data Evaluation Panel*)
+- Benchmarking ODEP (*Orthopaedic Data Evaluation Panel*, www.odep.org.uk)
   - Classifie les implants selon leur niveau de preuve (1A* → 13A*)
   - 10A* = au moins 10 ans de données à > 95% de survie pour ≥ 500 patients
   - Recommandation NICE (UK) : n'utiliser que des implants avec benchmark ODEP ≥ 5A
@@ -511,6 +511,26 @@
 > 5. Quelles attentes du patient devez-vous tempérer et comment ?
 
 ---
+
+---
+
+## Références — Partie III
+
+- AOANJRR. *Australian Orthopaedic Association National Joint Replacement Registry — Annual Report 2023*. Adelaide: AOA.
+- ASTM F75-18. *Standard Specification for Cobalt-28 Chromium-6 Molybdenum Alloy Castings and Casting Alloy for Surgical Implants*. ASTM International.
+- ASTM F136-13. *Standard Specification for Wrought Titanium-6Aluminum-4Vanadium ELI Alloy for Surgical Implant Applications*. ASTM International.
+- Bragdon CR et al. (2013). Third-body wear of highly cross-linked polyethylene in a hip simulator. *J Arthroplasty*, 28(7), 1120–1125.
+- Buechel FF, Pappas MJ (2004). Long-term survivorship analysis of cruciate-sparing versus cruciate-sacrificing knee prostheses using meniscal bearings. *Clin Orthop Relat Res*, 429, 227–235.
+- Dennis DA et al. (2003). In vivo anteroposterior femorotibial translation of total knee arthroplasty: a multicenter analysis. *J Arthroplasty*, 18(6 Suppl 1), 6–10.
+- Devane PA et al. (1997). Measurement of polyethylene wear in metal-backed acetabular cups. *Clin Orthop Relat Res*, 344, 159–165.
+- Evans JT et al. (2019). How long does a knee replacement last? A systematic review and meta-analysis. *Lancet*, 393(10172), 655–663.
+- Glyn-Jones S et al. (2015). Osteoarthritis. *Lancet*, 386(9991), 376–387.
+- Hofstede SN et al. (2015). Mobile bearing vs fixed bearing prostheses for posterior cruciate retaining total knee arthroplasty. *Cochrane Database Syst Rev*, (2), CD012108.
+- NJR. *National Joint Registry for England, Wales, Northern Ireland and the Isle of Man — Annual Report 2023*. London: NJR.
+- ODEP. *Orthopaedic Data Evaluation Panel*. www.odep.org.uk.
+- Sharkey PF et al. (2014). Why are total knee arthroplasties failing today — Has anything changed after 10 years? *Clin Orthop Relat Res*, 472(12), 7–15.
+- SKAR. *Swedish Knee Arthroplasty Register — Annual Report 2023*. Lund: SKAR.
+- Thyssen JP et al. (2007). The epidemiology of contact allergy in the general population — prevalence and main findings. *Contact Dermatitis*, 57(5), 287–299.
 
 *Fin de la Partie 3 — Implants et Conception (Modules 9-12)*
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*

@@ -23,7 +23,7 @@ Spondylolisthésis • Spondylolyse • Pars interarticularis • Isthmique (typ
 
 **Spondylolisthésis** = glissement d'une vertèbre en avant par rapport à la suivante.
 
-### Classification de Wiltse–Newman
+### Classification de Wiltse–Newman (Wiltse et al., 1976, *Clin Orthop Relat Res*)
 
 | Type | Cause | Terrain |
 |------|-------|---------|
@@ -33,7 +33,7 @@ Spondylolisthésis • Spondylolyse • Pars interarticularis • Isthmique (typ
 | **IV — Traumatique** | Fracture aiguë arc postérieur | Trauma |
 | **V — Pathologique** | Tumeur / ostéoporose | |
 
-### Classification de Meyerding (degré de glissement)
+### Classification de Meyerding (Meyerding, 1932, *Surg Gynecol Obstet*)
 
 | Grade | Glissement |
 |-------|-----------|
@@ -49,7 +49,7 @@ Spondylolisthésis • Spondylolyse • Pars interarticularis • Isthmique (typ
 
 **Spondylolyse** = fracture de fatigue de la pars interarticularis (entre les facettes articulaires supérieure et inférieure).
 
-**Incidence** : 6–8 % de la population générale ; 15–20 % chez les sportifs (gymnastes, nageurs papillon, footballeurs, rugbymen).
+**Incidence** : 6–8 % de la population générale ; 15–20 % chez les sportifs (gymnastes, nageurs papillon, footballeurs, rugbymen) (Fredrickson et al., 1984, *J Bone Joint Surg Am*).
 
 **Physiopathologie** : micro-traumatismes répétés en hyperextension + torsion → fracture de contrainte.
 
@@ -99,7 +99,7 @@ Spondylolisthésis • Spondylolyse • Pars interarticularis • Isthmique (typ
 | Corset si spondylolyse aiguë fracturaire (CT scan) | 3–6 mois |
 | Infiltration et antalgiques | |
 
-**Taux de guérison spondylolyse aiguë avec corset** : 60–80 % si pris en charge précocement.
+**Taux de guérison spondylolyse aiguë avec corset** : 60–80 % si pris en charge précocement (Sys et al., 2001, *Eur Spine J*).
 
 ### Chirurgie (indications)
 
@@ -147,6 +147,16 @@ Spondylolisthésis • Spondylolyse • Pars interarticularis • Isthmique (typ
 > 📌 **5.** La **fusion in situ L5-S1** est la procédure de référence pour les grades I–II symptomatiques réfractaires.
 
 > 📌 **6.** La **racine L5** est à risque lors de toute réduction de glissement L5-S1.
+
+---
+
+## Références
+
+1. Wiltse LL, Newman PH, Macnab I. Classification of spondylolysis and spondylolisthesis. *Clin Orthop Relat Res*. 1976;(117):23-29.
+2. Meyerding HW. Spondylolisthesis. *Surg Gynecol Obstet*. 1932;54:371-377.
+3. Fredrickson BE, Baker D, McHolick WJ, et al. The natural history of spondylolysis and spondylolisthesis. *J Bone Joint Surg Am*. 1984;66(5):699-707.
+4. Sys J, Michielsen J, Bracke P, et al. Nonoperative treatment of active spondylolysis in elite athletes with normal X-ray findings. *Eur Spine J*. 2001;10(6):498-504.
+5. Weinstein JN, Lurie JD, Tosteson TD, et al. Surgical compared with nonoperative treatment for lumbar degenerative spondylolisthesis (SPORT). *J Bone Joint Surg Am*. 2009;91(6):1295-1304.
 
 ---
 

@@ -28,7 +28,7 @@
   - Perte osseuse : l'ablation des composants emporte l'os environnant
   - Tissus mous altérés : cicatrices, fibrose, atrophie musculaire, insuffisance ligamentaire
   - Enveloppe cutanée compromise : cicatrices multiples, peau fine, adhérences
-  - Risque infectieux augmenté (5-10% vs 1-2% en primaire)
+  - Risque infectieux augmenté (5-10% vs 1-2% en primaire) (Koh et al., 2017, *J Arthroplasty*)
   - Résultats fonctionnels inférieurs à la primaire dans toutes les séries
 - Bilan étiologique
   - Identifier la CAUSE de l'échec (condition sine qua non de la réussite de la reprise)
@@ -53,19 +53,21 @@
 
 ### 24.2 Classification de la perte osseuse — AORI (Anderson Orthopaedic Research Institute)
 
-- **Type 1** : perte osseuse mineure
-  - Os métaphysaire intact
-  - Pas de défect segmentaire
-  - Les coupes standards suffisent (niveau de coupe similaire à la primaire)
-- **Type 2** : perte osseuse modérée
-  - Défect métaphysaire (condylien ou plateau)
-  - 2A : un condyle ou un plateau atteint
-  - 2B : deux condyles ou deux plateaux atteints
-  - Nécessite : augments métalliques, ciment, ou greffe osseuse
-- **Type 3** : perte osseuse sévère
-  - Défect métaphysaire majeur compromettant l'insertion ligamentaire
-  - Structure métaphysaire non reconstructible par augments standards
-  - Nécessite : greffe massive structurale, mégaprothèse (prothèse de reconstruction), manchon métaphysaire (*sleeve*), cône métaphysaire (*cone*)
+*(adapté de Engh & Ammeen, 1999, Clin Orthop Relat Res)*
+
+- **Type 1** : perte osseuse minime, sans altération majeure de la métaphyse
+  - Os métaphysaire conservé dans son intégrité
+  - Absence de défect segmentaire significatif
+  - Les coupes de révision standard sont suffisantes (résection analogue à la primaire)
+- **Type 2** : perte osseuse modérée avec atteinte métaphysaire partielle
+  - Défect localisé au niveau condylien ou du plateau tibial
+  - 2A : atteinte unilatérale (un seul condyle ou un seul plateau)
+  - 2B : atteinte bilatérale (les deux condyles ou les deux plateaux)
+  - Reconstruction par augments métalliques, comblement au ciment, ou greffe osseuse
+- **Type 3** : perte osseuse massive avec destruction métaphysaire étendue
+  - Défect métaphysaire majeur menaçant les insertions ligamentaires
+  - Métaphyse non restaurable par les augments conventionnels
+  - Reconstruction par greffe structurale massive, mégaprothèse modulaire, manchon métaphysaire (*sleeve*) ou cône métaphysaire (*cone*)
 > [MEDIA: 📐 MPTG24-S02-001 — Classification AORI de la perte osseuse : dessin anatomique du fémur et du tibia avec les 3 types (1, 2A, 2B, 3) et la solution de reconstruction pour chacun (Classifiez 4 cas radiographiques)]
 > [MEDIA: 📷 MPTG24-S02-002 — Photos peropératoires de perte osseuse : type 1 (minime), type 2B (bilatérale), type 3 (massive) — avec la solution de reconstruction utilisée (Identifiez le type et la solution)]
 
@@ -140,8 +142,8 @@
   4. **Stabilité** (balance ligamentaire + contrainte de l'implant adaptées)
   5. **Mobilité** (amplitude compatible avec la fonction)
 - Restauration de la ligne articulaire
-  - Repère : ratio d'Insall-Salvati (longueur du tendon rotulien / longueur de la patella ≈ 1.0-1.2)
-  - Repère alternatif : distance épicondyle médial → ligne articulaire ≈ 25-30 mm
+  - Repère : ratio d'Insall-Salvati (longueur du tendon rotulien / longueur de la patella ≈ 1.0-1.2) (Insall J, Salvati E, *Radiology*, 1971)
+  - Repère alternatif : distance épicondyle médial → ligne articulaire ≈ 25-30 mm (Servien et al., 2008)
   - L'élévation de la ligne articulaire (joint line elevation) est la cause #1 de mauvais résultat en reprise → mid-flexion instability, douleur antérieure, Patella baja fonctionnelle
   - Méthode : utiliser la perte osseuse distale comme guide → la combler par des augments pour maintenir le niveau original
 
@@ -201,7 +203,7 @@
 - Solutions
   - Quadriceps snip (extension oblique proximale du snip en V) → gain d'exposition
   - TTA osteotomy (ostéotomie de la TTA) → déplacement vers le proximal pour exposition, puis re-fixation
-  - Greffe de tendon d'Achille avec os calcanéen (Emerson) → reconstruction du tendon rotulien
+  - Greffe de tendon d'Achille avec os calcanéen (technique d'Emerson ; Emerson RH et al., *Clin Orthop Relat Res*, 1990) → reconstruction du tendon rotulien
   - Mesh de renfort (Marlex ou LARS) → renforcement du tendon rotulien fragilisé
 
 ### 25.6 Cas particuliers en reprise
@@ -292,7 +294,7 @@
   - Rare mais possible (après arthrodèse pour infection guérie, par exemple)
   - Conditions : infection éradiquée (> 2 ans), couverture cutanée suffisante, quadriceps reconstructible
   - Chirurgie extrêmement complexe : perte osseuse majeure, insuffisance de l'appareil extenseur
-  - Résultats : 55-75% de bons résultats fonctionnels, taux de complications élevé (30-40%)
+  - Résultats : 55-75% de bons résultats fonctionnels, taux de complications élevé (30-40%) (Naranja et al., 1996, *J Arthroplasty*)
 
 ### 26.5 Déformation extra-articulaire (EAD)
 
@@ -325,9 +327,9 @@
 
 - Le nombre de PTG > 85 ans est en augmentation
 - Enjeux spécifiques
-  - Mortalité périopératoire augmentée (1-3% à 90 jours vs < 0.5% chez les < 70 ans)
+  - Mortalité périopératoire augmentée (1-3% à 90 jours vs < 0.5% chez les < 70 ans) (Memtsoudis et al., 2013, *J Bone Joint Surg Am*)
   - Comorbidités multiples
-  - Risque de confusion post-opératoire (syndrome confusionnel > 20%)
+  - Risque de confusion post-opératoire (syndrome confusionnel > 20%) (Scott et al., 2014, *Bone Joint J*)
   - Risque de complications thromboemboliques augmenté
   - Autonomie souvent limitée → la PTG améliore l'autonomie et réduit le risque de chute
 - Stratégie
@@ -377,6 +379,19 @@
 > 2. Quel traitement chirurgical proposez-vous ? (type d'ostéosynthèse, voie d'abord)
 > 3. Si le composant fémoral s'avère descellé à l'exploration, comment votre stratégie change-t-elle ?
 > 4. Quels facteurs de risque de fracture périprothétique identifiez-vous chez cette patiente ?
+
+---
+
+## Références
+
+- Emerson RH, Head WC, Malinin TI. Reconstruction of patellar tendon rupture after total knee arthroplasty with an extensor mechanism allograft. *Clin Orthop Relat Res*. 1990;(260):154-161.
+- Engh GA, Ammeen DJ. Bone loss with revision total knee arthroplasty: defect classification and alternatives for reconstruction. *Clin Orthop Relat Res*. 1999;(367):29-44.
+- Insall J, Salvati E. Patella position in the normal knee joint. *Radiology*. 1971;101(1):101-104.
+- Koh IJ, Cho WS, Choi NY, Kim TK. Causes, risk factors, and trends in failures after TKA. *J Arthroplasty*. 2017;32(12):3622-3628.
+- Memtsoudis SG, Pumberger M, Ma Y, et al. Epidemiology and risk factors for perioperative mortality after total joint arthroplasty. *J Bone Joint Surg Am*. 2013;95(8):e49.
+- Naranja RJ, Lotke PA, Pagnano MW, Hanssen AD. Total knee arthroplasty in a previously ankylosed or arthrodesed knee. *J Arthroplasty*. 1996;11(5):538-543.
+- Scott CEH, Howie CR, MacDonald D, Biant LC. Predicting dissatisfaction following total knee replacement. *Bone Joint J*. 2014;96-B(12):1632-1639.
+- Servien E, Lustig S, Neyret P. Restoration of the joint line in revision TKA. *Orthop Traumatol Surg Res*. 2008;94(8):785-791.
 
 ---
 

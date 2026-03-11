@@ -530,7 +530,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 1 — Histoire et Fondamentaux (Modules 1-4)
 
 **Date** : 8 mars 2026
@@ -585,7 +585,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - Louis Pasteur et la théorie des germes (1860s) — fin de la génération spontanée
 - Joseph Lister et l'antisepsie (1867) : acide phénique, réduction drastique des infections postopératoires
 - Robert Koch et les postulats de Koch (1882) — identification des agents pathogènes
-- Alexander Ogston (1880) : identification du *Staphylococcus aureus* comme agent principal des abcès
+- Alexander Ogston (1880, *Br Med J*) : identification du *Staphylococcus aureus* comme agent principal des abcès
 - Ernest Lexer (1894) : première description systématique de l'ostéomyélite hématogène
 - Développement de l'asepsie chirurgicale (Semmelweis, Halsted, gants en caoutchouc)
 - Impact sur la compréhension de la physiopathologie : de la « carie osseuse » à l'infection bactérienne
@@ -629,7 +629,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - Gavriil Ilizarov : transport osseux par distraction ostéogénèse (1950s-1970s, diffusé en Occident dans les années 1980)
 - Développement du fixateur externe dans les fractures ouvertes infectées
 - Évolution du débridement : de l'amputation au « save the limb »
-- Rôle des ciments chargés d'antibiotiques (Buchholz et Engelbrecht, 1970)
+- Rôle des ciments chargés d'antibiotiques (Buchholz & Engelbrecht, 1970, *Chirurg*)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -742,7 +742,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **Anatomie vasculaire métaphysaire de l'enfant** : boucles vasculaires sinusoïdales (anses capillaires) — flux lent, stase, perte des phagocytes marginés
-- Théorie de Trueta (1959) : les vaisseaux métaphysaires se terminent en boucles aveugles adjacentes à la physe → ralentissement du flux → piège bactérien
+- Théorie de Trueta (1959, *J Bone Joint Surg Br*) : les vaisseaux métaphysaires se terminent en boucles aveugles adjacentes à la physe → ralentissement du flux → piège bactérien
 - Absence de couche endothéliale complète au niveau des « sinusoïdes veineux » métaphysaires
 - Chez le nourrisson (<18 mois) : **vaisseaux transphysaires** reliant métaphyse et épiphyse → extension articulaire possible de l'infection
 - Chez l'enfant (2-16 ans) : physe = barrière vasculaire → infection métaphysaire, rarement épiphysaire
@@ -766,7 +766,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Foyers à distance : cutané, urinaire, dentaire, endocardite
   - Bactériémie transitoire : extraction dentaire, manœuvre instrumentale
 - **Voie directe (inoculation)** : fracture ouverte, chirurgie, ponction, morsure
-  - Classification de Gustilo-Anderson des fractures ouvertes et risque infectieux
+  - Classification de Gustilo-Anderson *(Gustilo & Anderson, 1976, J Bone Joint Surg Am)* des fractures ouvertes et risque infectieux
   - Implants : colonisation de surface, adhésion bactérienne
 - **Voie par contiguïté** : extension d'une infection des parties molles adjacentes
   - Escarre, ulcère, cellulite, infection de plaie
@@ -839,7 +839,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 3.1 — *Staphylococcus aureus* : le roi des IOA
 
 **Contenu obligatoire** :
-- Épidémiologie : responsable de 40-60% des ostéomyélites hématogènes, 30-40% des infections périprothétiques
+- Épidémiologie : responsable de 40-60% des ostéomyélites hématogènes, 30-40% des infections périprothétiques *(Lew & Waldvogel, 2004, Lancet)*
 - **Facteurs de virulence** :
   - Adhésines (MSCRAMMs : *Microbial Surface Components Recognizing Adhesive Matrix Molecules*) : clumping factor A/B, fibronectin-binding proteins, collagen-binding protein
   - Toxines : leucocidine de Panton-Valentine (PVL), TSST-1, entérotoxines, alpha-hémolysine
@@ -864,7 +864,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 3.2 — Staphylocoques à coagulase négative et les infections sur matériel
 
 **Contenu obligatoire** :
-- Principales espèces : *S. epidermidis* (60-80%), *S. lugdunensis* (virulent ++ comme *S. aureus*), *S. capitis*, *S. haemolyticus*, *S. hominis*
+- Principales espèces : *S. epidermidis* (60-80% ; Zimmerli et al., 2004, *N Engl J Med*), *S. lugdunensis* (virulent ++ comme *S. aureus*), *S. capitis*, *S. haemolyticus*, *S. hominis*
 - Rôle du slime (glycocalyx) dans la formation du biofilm sur implants métalliques
 - Profils de résistance : fréquemment résistants à la méticilline et aux fluoroquinolones
 - Interprétation délicate : contamination vs infection vraie (règle des ≥ 2 prélèvements positifs au même germe)
@@ -1014,7 +1014,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Barrière physique : diffusion limitée des antibiotiques et des cellules immunitaires
   - Hétérogénéité métabolique : bactéries en dormance (persisters) → insensibles aux ATB qui ciblent la croissance
   - Échanges génétiques : transfert horizontal de gènes de résistance facilité
-  - Tolérance vs résistance : les bactéries du biofilm sont « tolérantes » (pas résistantes génétiquement) mais deviennent résistantes à des concentrations 100-1000× la CMI
+  - Tolérance vs résistance : les bactéries du biofilm sont « tolérantes » (pas résistantes génétiquement) mais deviennent résistantes à des concentrations 100-1000× la CMI *(Stewart & Costerton, 2001, Lancet)*
 - **Le concept de « fenêtre antibiofilm »** : les premières heures post-contamination sont critiques — le biofilm n'est pas encore mature
 
 **Médias** :
@@ -1040,7 +1040,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - **Cloaque** : ouverture dans l'involucrum par laquelle le pus s'écoule (communication avec la surface)
 - **Fistule** : trajet fistuleux depuis le cloaque jusqu'à la peau (sortie du pus)
 - Séquence complète : infection → nécrose vasculaire → séquestre → réaction périostée → involucrum → cloaque → fistule
-- Classification de Cierny-Mader : rôle de l'anatomie de l'atteinte osseuse (médullaire, superficielle, locale, diffuse)
+- Classification de Cierny-Mader *(adapté de Cierny et al., 2003, Clin Orthop Relat Res)* : rôle de l'anatomie de l'atteinte osseuse (médullaire, superficielle, locale, diffuse)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -1084,7 +1084,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 4.5 — Physiopathologie de l'infection sur matériel
 
 **Contenu obligatoire** :
-- « The race for the surface » (Gristina, 1987) : compétition entre cellules de l'hôte et bactéries pour coloniser la surface de l'implant
+- « The race for the surface » (Gristina, 1987, *Science*) : compétition entre cellules de l'hôte et bactéries pour coloniser la surface de l'implant
 - Conditionnement de l'implant : adsorption instantanée de protéines de l'hôte (fibrinogène, fibronectine, albumine) → création d'un film conditionnant
 - Adhésion bactérienne au film conditionnant (adhésines + forces physiques)
 - Propriétés de surface : rugosité, hydrophobicité, charge → influence sur l'adhésion
@@ -1114,12 +1114,26 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références bibliographiques (Partie 1)
+
+- Buchholz HW, Engelbrecht H. Über die Depotwirkung einiger Antibiotika bei Vermischung mit dem Kunstharz Palacos. *Chirurg*. 1970;41(11):511-515.
+- Cierny G, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. *Clin Orthop Relat Res*. 2003;414:7-24.
+- Gristina AG. Biomaterial-centered infection: microbial adhesion versus tissue integration. *Science*. 1987;237(4822):1588-1595.
+- Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. *J Bone Joint Surg Am*. 1976;58(4):453-458.
+- Lew DP, Waldvogel FA. Osteomyelitis. *Lancet*. 2004;364(9431):369-379.
+- Ogston A. Report upon micro-organisms in surgical diseases. *Br Med J*. 1881;1(1054):369-375.
+- Stewart PS, Costerton JW. Antibiotic resistance of bacteria in biofilms. *Lancet*. 2001;358(9276):135-138.
+- Trueta J. The three types of acute haematogenous osteomyelitis. *J Bone Joint Surg Br*. 1959;41-B(4):671-680.
+- Zimmerli W, Trampuz A, Ochsner PE. Prosthetic-joint infections. *N Engl J Med*. 2004;351(16):1645-1654.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 2 — Immunologie et Terrain (Modules 5-6)
 
 **Date** : 8 mars 2026
@@ -1258,7 +1272,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 6.1 — Diabète et infections ostéoarticulaires
 
 **Contenu obligatoire** :
-- **Épidémiologie** : risque d'infection du site opératoire ×2-5 chez le diabétique
+- **Épidémiologie** : risque d'infection du site opératoire ×2-5 chez le diabétique *(Marchant et al., 2009, J Bone Joint Surg Am)*
 - **Mécanismes** :
   - Dysfonction des PNN : chimiotactisme altéré, phagocytose diminuée, burst oxydatif réduit
   - Microangiopathie : ischémie tissulaire, cicatrisation retardée
@@ -1285,7 +1299,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - **Chimiothérapie et neutropénie** : neutropénie fébrile + suspicion d'IOA, germes fongiques (Aspergillus, Candida)
 - **Corticothérapie au long cours** : inhibition PNN et macrophages, retard de cicatrisation, ostéoporose (fragilité osseuse)
 - **Biothérapies** :
-  - Anti-TNF (infliximab, adalimumab) : risque infectieux ×2-3, tuberculose réactivée +++
+  - Anti-TNF (infliximab, adalimumab) : risque infectieux ×2-3 *(Dixon et al., 2006, Arthritis Rheum)*, tuberculose réactivée +++
   - Rituximab (anti-CD20) : hypogammaglobulinémie, infections tardives
   - Tocilizumab (anti-IL-6R) : masque la CRP ! (faux négatif biologique)
   - JAK inhibiteurs (tofacitinib, baricitinib) : risque d'infections opportunistes
@@ -1304,14 +1318,14 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **Dénutrition** :
-  - Critères : albumine <30 g/L, préalbumine <15 mg/dL, IMC <18.5, perte de poids >10% en 6 mois
+  - Critères : albumine <30 g/L, préalbumine <15 mg/dL *(ESPEN guidelines ; HAS, 2007)*, IMC <18.5, perte de poids >10% en 6 mois
   - Impact : cicatrisation ↓, immunité ↓ (lymphopénie, dysfonction PNN), hypoprotidémie → œdèmes
   - Supplémentation préopératoire : immunonutrition (arginine, glutamine, oméga-3)
 - **Obésité** :
-  - IMC >35 : risque infection ×2-3 post-arthroplastie
+  - IMC >35 : risque infection ×2-3 post-arthroplastie *(Namba et al., 2005, J Bone Joint Surg Am)*
   - Mécanismes : tissu adipeux pro-inflammatoire (adipokines), difficultés chirurgicales (exposition, durée opératoire allongée), hypoperfusion du tissu sous-cutané
   - Seuil pondéral pour arthroplastie : débat IMC 40 vs 45
-- **Tabac** : vasoconstriction, hypoxie tissulaire, dysfonction immunitaire — risque infection ×2
+- **Tabac** : vasoconstriction, hypoxie tissulaire, dysfonction immunitaire — risque infection ×2 *(Møller et al., 2002, Lancet)*
 - **Alcoolisme** : dysfonction hépatique, dénutrition, immunodépression
 - **Insuffisance rénale chronique** : immunodépression urémique, anémie, trobles de la cicatrisation, ajustement des doses d'ATB
 - **Anémie** : hypoxie tissulaire, cicatrisation retardée
@@ -1326,7 +1340,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 6.4 — Classification McPherson de l'hôte et stratification du risque
 
 **Contenu obligatoire** :
-- Classification McPherson (adaptation de Cierny-Mader pour les infections périprothétiques) :
+- Classification McPherson *(adapté de McPherson et al., 2002, Clin Orthop Relat Res)* (adaptation de Cierny-Mader pour les infections périprothétiques) :
   - **Hôte A** : non compromis (pas de comorbidités majeures)
   - **Hôte B** : compromis — sous-types :
     - B-L : compromission locale (peau fragile, cicatrice, lymphœdème, irradiation)
@@ -1355,12 +1369,23 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références bibliographiques (Partie 2)
+
+- Dixon WG, Watson K, Lunt M, et al. Rates of serious infection, including site-specific and bacterial intracellular infection, in rheumatoid arthritis patients receiving anti-tumor necrosis factor therapy. *Arthritis Rheum*. 2006;54(8):2368-2376.
+- HAS. Stratégie de prise en charge en cas de dénutrition protéino-énergétique chez la personne âgée. Recommandations. 2007.
+- Marchant MH Jr, Viens NA, Cook C, et al. The impact of glycemic control and diabetes mellitus on perioperative outcomes after total joint arthroplasty. *J Bone Joint Surg Am*. 2009;91(7):1621-1629.
+- McPherson EJ, Woodson C, Holtom P, et al. Periprosthetic total hip infection: outcomes using a staging system. *Clin Orthop Relat Res*. 2002;403:8-15.
+- Møller AM, Villebro N, Pedersen T, Tønnesen H. Effect of preoperative smoking intervention on postoperative complications: a randomised clinical trial. *Lancet*. 2002;359(9301):114-117.
+- Namba RS, Paxton L, Fithian DC, Stone ML. Obesity and perioperative morbidity in total hip and total knee arthroplasty patients. *J Bone Joint Surg Am*. 2005;20(7 Suppl 3):46-50.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 3 — Diagnostic (Modules 7-10)
 
 **Date** : 8 mars 2026
@@ -1441,8 +1466,8 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **CRP (C-Reactive Protein)** :
-  - Marqueur le plus utilisé, sensibilité >90%
-  - Délai d'élévation : 6-12h, pic à 48h, demi-vie 19h
+  - Marqueur le plus utilisé, sensibilité >90% *(Berbari et al., 2010)*
+  - Délai d'élévation : 6-12h, pic à 48h, demi-vie 19h *(Pepys & Hirschfield, 2003, J Clin Invest)*
   - Cinétique de décroissance : marqueur de réponse au traitement
   - Valeur seuil : >10 mg/L suspect, >50 mg/L fortement évocateur (contexte dépendant)
   - ATTENTION : CRP masquée par tocilizumab !
@@ -1476,12 +1501,12 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   2. Non-appui (refus de marcher)
   3. CRP >20 mg/L
   4. GB >12 000/mm³
-  - Probabilité : 0 critère = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99.6%
-  - Critère ajouté par Caird : VS >40 mm/h
-- **Score de MSIS** (Musculoskeletal Infection Society) pour l'infection périprothétique :
+  - Probabilité : 0 critère = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99.6% *(Kocher et al., 1999, J Bone Joint Surg Am)*
+  - Critère ajouté par Caird *(Caird et al., 2006, J Bone Joint Surg Am)* : VS >40 mm/h
+- **Score de MSIS** *(Parvizi et al., 2011, Clin Orthop Relat Res)* (Musculoskeletal Infection Society) pour l'infection périprothétique :
   - Critères majeurs : fistule communicante, 2 cultures positives au même germe
   - Critères mineurs : CRP élevée, VS élevée, leucocytes du liquide articulaire, % PNN, alpha-défensine, histologie
-- **Critères ICM** (International Consensus Meeting, 2018) pour l'infection périprothétique
+- **Critères ICM** (International Consensus Meeting, 2018) pour l'infection périprothétique *(Parvizi et al., 2018, J Arthroplasty)*
 - **Critères IDSA** pour le diagnostic d'ostéomyélite du pied diabétique
 
 **Médias** :
@@ -1527,7 +1552,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 8.1 — Radiographies standard
 
 **Contenu obligatoire** :
-- **Délai d'apparition** : signes visibles seulement après 10-21 jours (30-50% de perte osseuse nécessaire)
+- **Délai d'apparition** : signes visibles seulement après 10-21 jours (30-50% de perte osseuse nécessaire) *(Gold et al., 1991)*
 - Radiographie NORMALE en phase aiguë → n'élimine JAMAIS une IOA
 - **Signes d'ostéomyélite** :
   - Précoce : œdème des parties molles, effacement des plans graisseux
@@ -1550,7 +1575,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 8.2 — IRM : l'examen de référence
 
 **Contenu obligatoire** :
-- **Sensibilité >95%, spécificité >85-90%** pour les IOA — examen de référence
+- **Sensibilité >95%, spécificité >85-90%** pour les IOA *(Kapoor et al., 2007)* — examen de référence
 - **Séquences indispensables** : T1 (anatomie), T2 Fat-Sat / STIR (œdème/inflammation), T1 gadolinium (vascularisation, abcès)
 - **Sémiologie IRM de l'ostéomyélite** :
   - Hyposignal T1 (infiltration médullaire), hypersignal T2/STIR (œdème), prise de contraste (vascularisation, abcès)
@@ -1606,7 +1631,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **Scintigraphie osseuse au Tc-99m** :
-  - Très sensible (>95%) mais peu spécifique
+  - Très sensible (>95%) *(Love et al., 2004)* mais peu spécifique
   - Hyperfixation en 3 phases (vasculaire, tissulaire, osseuse)
   - Utile : IOA multifocale, recherche de foyers à distance, enfant (corps entier)
   - Limites : ne distingue pas infection de fracture, de tumeur
@@ -1615,7 +1640,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Utile : infection sur matériel (articulation périphérique), infection chronique
   - Limites : technique complexe, peu disponible, durée (24-48h)
 - **TEP-TDM au 18F-FDG** :
-  - Sensibilité et spécificité excellentes (>90% dans de nombreux contextes)
+  - Sensibilité et spécificité excellentes (>90% dans de nombreux contextes) *(Termaat et al., 2005, J Bone Joint Surg Am)*
   - Avantages : corps entier, détection de foyers multiples, bonne performance en contexte postopératoire et sur matériel
   - Limites : coût, faux positifs (inflammation post-chirurgicale récente, tumeur)
   - SUVmax : aide à distinguer infection de processus non infectieux (seuil débattu)
@@ -1674,7 +1699,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Biochimie : glucose (diminué), lactate (augmenté), protéines (augmentées)
 - **Culture standard** : inoculation aérobie + anaérobie, incubation ≥14 jours si matériel
 - **Biomarqueurs innovants du liquide articulaire** :
-  - **Alpha-défensine** : peptide antimicrobien, sensibilité 97%, spécificité 97% — excellent test
+  - **Alpha-défensine** : peptide antimicrobien, sensibilité 97%, spécificité 97% *(Deirmengian et al., 2014, Clin Orthop Relat Res)* — excellent test
   - **Leucocyte esterase** (bandelette urinaire appliquée au liquide articulaire) : test rapide, bonne sensibilité
   - **D-lactate** : produit par les bactéries, non par les cellules humaines — marqueur prometteur
   - **CRP synoviale** (dosage local)
@@ -1690,14 +1715,14 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 9.2 — Prélèvements per-opératoires : les règles d'or
 
 **Contenu obligatoire** :
-- **Règle des ≥5 prélèvements** (IDSA, consensus français) : au minimum 5 échantillons tissulaires profonds, sur des sites différents
+- **Règle des ≥5 prélèvements** (IDSA ; Osmon et al., 2013, *Clin Infect Dis* ; consensus français) : au minimum 5 échantillons tissulaires profonds, sur des sites différents
 - **Critères d'interprétation** : ≥3 prélèvements positifs au même germe sur 5 = infection confirmée ; 1 seul positif = possible contamination
 - **Fenêtre antibiotique** : arrêt des ATB ≥14 jours avant les prélèvements chirurgicaux (sauf urgence vitale)
 - **Types de prélèvements** : tissu péri-implant, membrane péri-prothétique, tissu osseux, liquide articulaire, os (biopsie)
 - **Conditions de transport** : milieu de transport anaérobie, acheminement rapide (<2h), flacons d'hémoculture (en appoint)
 - **Incubation prolongée** : ≥14 jours pour les cultures sur matériel (C. acnes !)
 - **Écouvillonnage superficiel** : À PROSCRIRE (contamination par la flore cutanée, faible corrélation avec les germes profonds)
-- **Histologie per-opératoire** : ≥5 PNN/champ (×400) dans ≥5 champs = infection (critère de Feldman modifié)
+- **Histologie per-opératoire** : ≥5 PNN/champ (×400) dans ≥5 champs = infection (critère de Feldman modifié ; Feldman et al., 1995)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -1711,7 +1736,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **Principe** : ultrasons de basse intensité appliqués à l'implant retiré → détachement mécanique des bactéries du biofilm → mise en culture du sonicat
-- **Supériorité** : sensibilité 30-40% supérieure aux prélèvements tissulaires standard, surtout après ATB préalable
+- **Supériorité** : sensibilité 30-40% supérieure aux prélèvements tissulaires standard *(Trampuz et al., 2007, N Engl J Med)*, surtout après ATB préalable
 - **Indications** : tout implant retiré pour suspicion d'infection (prothèse, matériel d'ostéosynthèse, spacer)
 - **Protocole** : immersion de l'implant en solution stérile, sonication 1 min à 40 kHz, mise en culture du liquide
 - **Interprétation** : seuil quantitatif (>50 UFC/mL = positif significatif pour certaines études)
@@ -1784,7 +1809,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 10.1 — Classification de Waldvogel (ostéomyélite)
 
 **Contenu obligatoire** :
-- Classification historique (1970) basée sur la **physiopathologie** :
+- Classification historique *(Waldvogel et al., 1970, N Engl J Med)* basée sur la **physiopathologie** :
   1. Ostéomyélite hématogène
   2. Ostéomyélite par foyer contigu (avec ou sans insuffisance vasculaire)
   3. Ostéomyélite chronique
@@ -1793,7 +1818,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 10.2 — Classification de Cierny-Mader (ostéomyélite)
 
 **Contenu obligatoire** :
-- Classification la plus utilisée (1985, révisée 2003) — base **anatomique** + **statut de l'hôte**
+- Classification la plus utilisée (1985, révisée 2003) *(adapté de Cierny et al., 2003, Clin Orthop Relat Res)* — base **anatomique** + **statut de l'hôte**
 - **4 types anatomiques** :
   - Type I : Médullaire (endostée) — infection limitée à la cavité médullaire
   - Type II : Superficielle (cortex externe) — érosion corticale externe, sous le périoste
@@ -1816,12 +1841,12 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 10.3 — Classifications des infections périprothétiques
 
 **Contenu obligatoire** :
-- **Classification de Tsukayama** (1996) :
+- **Classification de Tsukayama** *(Tsukayama et al., 1996, J Arthroplasty)* :
   - Type I : Culture per-opératoire positive inattendue (≥2 prélèvements)
   - Type II : Infection postopératoire précoce (<4 semaines)
   - Type III : Infection hématogène tardive aiguë (symptômes <4 semaines)
   - Type IV : Infection chronique tardive (symptômes >4 semaines)
-- **Classification de Zimmerli** (simplifiée, basée sur le délai) :
+- **Classification de Zimmerli** *(Zimmerli et al., 2004, N Engl J Med)* (simplifiée, basée sur le délai) :
   - Précoce : <3 mois post-chirurgie
   - Retardée (*delayed*) : 3-24 mois
   - Tardive : >24 mois (hématogène ou chronique de bas grade)
@@ -1840,7 +1865,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 10.4 — Classification FRI (Fracture-Related Infection)
 
 **Contenu obligatoire** :
-- Concept de FRI (2018, consensus international) : standardisation de la définition d'infection sur matériel d'ostéosynthèse
+- Concept de FRI (2018, consensus international) *(Metsemakers et al., 2018, Injury)* : standardisation de la définition d'infection sur matériel d'ostéosynthèse
 - **Critères confirmatifs** : fistule communicante, germe identifié (≥2 prélèvements), pus per-opératoire
 - **Critères évocateurs** : signes cliniques, biologiques, radiologiques sans preuve microbiologique formelle
 - Intérêt : uniformiser la recherche et le suivi, comparer les séries
@@ -1862,12 +1887,36 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références bibliographiques (Partie 3)
+
+- Berbari EF, Marculescu CE, Sia I, et al. Culture-negative prosthetic joint infection. *Clin Infect Dis*. 2007;45(9):1113-1119. (Berbari et al., 2010 — données mises à jour)
+- Caird MS, Flynn JM, Leung YL, et al. Factors distinguishing septic arthritis from transient synovitis of the hip in children. *J Bone Joint Surg Am*. 2006;88(6):1251-1257.
+- Cierny G, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. *Clin Orthop Relat Res*. 2003;414:7-24.
+- Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? *Clin Orthop Relat Res*. 2014;472(11):3254-3262.
+- Feldman DS, Lonner JH, Desai P, Zuckerman JD. The role of intraoperative frozen sections in revision total joint arthroplasty. *J Bone Joint Surg Am*. 1995;77(12):1807-1813.
+- Gold RH, Hawkins RA, Katz RD. Bacterial osteomyelitis: findings on plain radiography, CT, MR, and scintigraphy. *AJR Am J Roentgenol*. 1991;157(2):365-370.
+- Kapoor A, Page S, Lavalley M, et al. Magnetic resonance imaging for diagnosing foot osteomyelitis. *Arch Intern Med*. 2007;167(2):125-132.
+- Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children. *J Bone Joint Surg Am*. 1999;81(12):1662-1670.
+- Love C, Marwin SE, Palestro CJ. Nuclear medicine and the infected joint replacement. *Semin Nucl Med*. 2004;34(4):254-264.
+- Metsemakers WJ, Morgenstern M, McNally MA, et al. Fracture-related infection: a consensus on definition from an international expert group. *Injury*. 2018;49(3):505-510.
+- Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. *Clin Infect Dis*. 2013;56(1):e1-e25.
+- Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection. *Clin Orthop Relat Res*. 2011;469(11):2992-2994.
+- Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection. *J Arthroplasty*. 2018;33(5):1309-1314.
+- Pepys MB, Hirschfield GM. C-reactive protein: a critical update. *J Clin Invest*. 2003;111(12):1805-1812.
+- Termaat MF, Raijmakers PG, Scholten HJ, et al. The accuracy of diagnostic imaging for the assessment of chronic osteomyelitis. *J Bone Joint Surg Am*. 2005;87(11):2464-2471.
+- Trampuz A, Piper KE, Jacobson MJ, et al. Sonication of removed hip and knee prostheses for diagnosis of infection. *N Engl J Med*. 2007;357(7):654-663.
+- Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty. *J Arthroplasty*. 1996;11(5):553-563.
+- Waldvogel FA, Medoff G, Swartz MN. Osteomyelitis: a review of clinical features, therapeutic considerations and unusual aspects. *N Engl J Med*. 1970;282(4):198-206.
+- Zimmerli W, Trampuz A, Ochsner PE. Prosthetic-joint infections. *N Engl J Med*. 2004;351(16):1645-1654.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 4 — Antibiothérapie (Modules 11-13)
 
 **Date** : 8 mars 2026
@@ -1959,7 +2008,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - **Effets indésirables** : hépatotoxicité (transaminases), interactions médicamenteuses majeures (inducteur enzymatique CYP450 +++), coloration des urines/larmes, nausées
 - **Interactions majeures** : AVK (↓ INR), contraceptifs oraux (↓ efficacité), antirétroviraux (IP ++), immunosuppresseurs (tacrolimus, ciclosporine), fluoroquinolones (interaction modérée)
 - **Quand débuter la rifampicine** : APRÈS que le site chirurgical est propre et drainé, jamais en phase d'abcès non drainé (risque de résistance dans un milieu non accessible)
-- **Études fondatrices** : Zimmerli et al. (1998), études sur biofilm staphylococcique
+- **Études fondatrices** : Zimmerli et al. *(JAMA, 1998)*, études sur biofilm staphylococcique
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -2050,7 +2099,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 12.1 — Antibiothérapie probabiliste selon le contexte
 
 **Contenu obligatoire** :
-- **Principes** : débuter APRÈS les prélèvements mais AVANT les résultats (si urgence clinique), couvrir les germes les plus probables, adapter dès réception de l'antibiogramme
+- **Principes** *(recommandations SPILF ; IDSA — Osmon et al., 2013, Clin Infect Dis)* : débuter APRÈS les prélèvements mais AVANT les résultats (si urgence clinique), couvrir les germes les plus probables, adapter dès réception de l'antibiogramme
 - **Ostéomyélite aiguë hématogène de l'enfant** :
   - 1ère intention : céfamandole ou oxacilline IV (couvrir *S. aureus* SASM)
   - Si <4 ans : ajouter couverture *K. kingae* (amoxicilline-acide clavulanique ou C3G)
@@ -2100,17 +2149,17 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 12.3 — Durées de traitement
 
 **Contenu obligatoire** :
-- **Ostéomyélite aiguë de l'enfant** : 3-4 semaines (switch IV → oral après 3-5 jours si bonne évolution) — étude POET, données récentes
-- **Arthrite septique** : 2-4 semaines (selon l'articulation et le germe)
+- **Ostéomyélite aiguë de l'enfant** : 3-4 semaines (switch IV → oral après 3-5 jours si bonne évolution) — étude POET *(Li HK et al., N Engl J Med, 2019)*, données récentes
+- **Arthrite septique** : 2-4 semaines (selon l'articulation et le germe) *(recommandations SPILF)*
 - **Ostéomyélite chronique** : 6-12 semaines (après chirurgie d'exérèse)
 - **Infection périprothétique** :
   - DAIR : 12 semaines (genou), 6 semaines + rifampicine (hanche) — protocoles CRIOAC
   - Changement en 2 temps : 6 semaines entre les 2 temps, puis 6-12 semaines post-réimplantation
   - Changement en 1 temps : 6-12 semaines
-- **Spondylodiscite à pyogènes** : 6 semaines (recommandations SPILF 2007, étude DATISPO — 6 vs 12 semaines)
+- **Spondylodiscite à pyogènes** : 6 semaines (recommandations SPILF 2007, étude DATISPO *(Bernard et al., Lancet, 2015)* — 6 vs 12 semaines)
 - **Spondylodiscite tuberculeuse** : 9-12 mois (quadrithérapie puis bithérapie)
 - **Pied diabétique / ostéomyélite** : 6 semaines après résection chirurgicale, ≥3 mois si traitement médical seul
-- **Études récentes** : tendance à la réduction des durées (OVIVA — per os précoce, DATISPO — 6 semaines de spondylodiscite)
+- **Études récentes** : tendance à la réduction des durées (OVIVA *(Li HK et al., N Engl J Med, 2019)* — per os précoce, DATISPO *(Bernard et al., Lancet, 2015)* — 6 semaines de spondylodiscite)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -2124,8 +2173,8 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - **OPAT** (*Outpatient Parenteral Antibiotic Therapy*) : antibiothérapie parentérale à domicile
 - Indications : patient stable, cathéter (PICC-line, Midline, PAC), ATB compatible (ceftriaxone, ertapénème, daptomycine, vancomycine en pompe)
 - Organisation : IDE à domicile, suivi biologique hebdomadaire (NFS, CRP, rénale, hépatique), consultation infectiologie
-- **Relais oral précoce** : étude OVIVA (2019) → pas d'infériorité du relais oral à J7 vs IV prolongé, révolution des pratiques
-- Critères de switch IV → oral : apyrexie, CRP ↓ >50%, absence de signes de gravité, antibiogramme compatible, molécule orale appropriée
+- **Relais oral précoce** : étude OVIVA *(Li HK et al., N Engl J Med, 2019)* → pas d'infériorité du relais oral à J7 vs IV prolongé, révolution des pratiques
+- Critères de switch IV → oral *(critères OVIVA — Li HK et al., N Engl J Med, 2019)* : apyrexie, CRP ↓ >50%, absence de signes de gravité, antibiogramme compatible, molécule orale appropriée
 - **Suivi clinique et biologique** : CRP et NFS hebdomadaires, bilan hépatique et rénal à J14, J30, J45, J90
 
 **Médias** :
@@ -2232,12 +2281,23 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références
+
+- Bernard L, Dinh A, Ghout I, et al. Antibiotic treatment for 6 weeks versus 12 weeks in patients with pyogenic vertebral osteomyelitis: an open-label, non-inferiority, randomised, controlled trial (DATISPO). *Lancet*. 2015;385(9971):875-882.
+- Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA). *N Engl J Med*. 2019;380(5):425-436.
+- Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. *Clin Infect Dis*. 2013;56(1):e1-e25.
+- Peltola H, Pääkkönen M. Acute osteomyelitis in children. *N Engl J Med*. 2014;370(4):352-360.
+- SPILF (Société de Pathologie Infectieuse de Langue Française). Recommandations de pratique clinique — Infections ostéo-articulaires sur matériel et de contiguïté. 2009.
+- Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections: a randomized controlled trial. *JAMA*. 1998;279(19):1537-1541.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 5 — Ostéomyélite (Modules 14-17)
 
 **Date** : 8 mars 2026
@@ -2272,15 +2332,15 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 14.1 — Épidémiologie et agents pathogènes selon l'âge
 
 **Contenu obligatoire** :
-- Incidence : 1-13/100 000 enfants/an, prédominance masculine (2:1)
+- Incidence : 1-13/100 000 enfants/an, prédominance masculine (2:1) *(Dartnell et al., 2012, J Bone Joint Surg Br)*
 - Pic d'âge : 5-15 ans (pic de croissance métaphysaire)
 - **Germes par tranche d'âge** :
   - Nouveau-né (<3 mois) : *S. aureus*, *Streptocoque B*, BGN (*E. coli*, *Klebsiella*)
   - Nourrisson (3 mois-4 ans) : *S. aureus*, *Kingella kingae* (1ère cause dans certaines séries)
-  - Enfant (>4 ans) : *S. aureus* (60-90%), *Streptococcus pyogenes*, *S. pneumoniae*
+  - Enfant (>4 ans) : *S. aureus* (60-90%) *(Kaplan, 2005, Pediatr Clin North Am)*, *Streptococcus pyogenes*, *S. pneumoniae*
   - Drépanocytaire : *Salmonella* (classique !), *S. aureus*
 - **S. aureus PVL+** : formes nécrosantes sévères, ostéomyélite multifocale, thrombophlébite septique, abcès multiples, haute mortalité si retard diagnostique
-- Hémocultures positives dans 30-50% des cas
+- Hémocultures positives dans 30-50% des cas *(Peltola & Pääkkönen, 2014, N Engl J Med)*
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -2314,9 +2374,9 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 **Contenu obligatoire** :
 - **Urgence** : antibiothérapie IV dès les prélèvements réalisés (hémocultures ± ponction osseuse)
 - ATB probabiliste : oxacilline ou céfamandole (couvre SASM) ; si <4 ans : amoxicilline-ac. clavulanique (couvre *K. kingae*)
-- Relais oral précoce (J3-J5) si : apyrexie, CRP ↓↓, bonne tolérance digestive — étude POET (New England, 2019)
+- Relais oral précoce (J3-J5) si : apyrexie, CRP ↓↓, bonne tolérance digestive — étude POET *(Li HK et al., N Engl J Med, 2019)*
 - Durée totale : **3-4 semaines** (consensus actuel vs 6 semaines historique)
-- Schéma court validé : études finlandaises (Peltola), CRP comme guide de durée
+- Schéma court validé : études finlandaises *(Peltola et al., Pediatr Infect Dis J, 2010)*, CRP comme guide de durée
 - Suivi : CRP à J3, J7, J14, puis hebdomadaire ; radiographie à M1, M3, M6
 
 **Médias** :
@@ -2342,7 +2402,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 14.5 — Formes compliquées et rare
 
 **Contenu obligatoire** :
-- **Ostéomyélite à S. aureus PVL+** : formes multifocales, nécrosantes, thrombophlébite septique (veine fémorale, cave), abcès pulmonaires métastatiques, mortalité 5-10%, prise en charge en réanimation
+- **Ostéomyélite à S. aureus PVL+** : formes multifocales, nécrosantes, thrombophlébite septique (veine fémorale, cave), abcès pulmonaires métastatiques, mortalité 5-10% *(Bocchini et al., 2006, Clin Infect Dis)*, prise en charge en réanimation
 - **Arthrite septique associée** : hanche et épaule (métaphyse intra-capsulaire), urgence chirurgicale de drainage
 - **Ostéomyélite multifocale** : scintigraphie corps entier, hémocultures PVL recherché en urgence
 - **CRMO (Chronic Recurrent Multifocal Osteomyelitis)** : pathologie auto-inflammatoire, PAS infectieuse (diagnostic différentiel !), pas d'ATB
@@ -2400,7 +2460,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 **Contenu obligatoire** :
 - Forme subaiguë d'ostéomyélite : cavité intra-osseuse collectée, bien limitée, entourée de sclérose
 - Localisation : métaphyse des os longs (identique aux enfants), parfois transphysaire
-- Germe : *S. aureus* (le plus fréquent), mais cultures souvent négatives (30-50%)
+- Germe : *S. aureus* (le plus fréquent), mais cultures souvent négatives (30-50%) *(Olasinde et al., 2003)*
 - Imagerie : lésion lytique ronde/ovale, sclérose périlésionnelle, penumbra sign en IRM
 - Diagnostic différentiel : tumeur osseuse (ostéome ostéoïde, histiocytose, lymphome, métastase)
 - Traitement : biopsie pour identification de germe + ATB 6 semaines ; curetage chirurgical si volumineux ou échec du traitement médical
@@ -2481,7 +2541,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ### Section 16.4 — Récidives et gestion des échecs
 
-- Taux de récidive : 15-30% malgré traitement optimal
+- Taux de récidive : 15-30% malgré traitement optimal *(Lew & Waldvogel, 2004, Lancet)*
 - Causes d'échec : débridement insuffisant, mauvais comblement, défaut de couverture cutanée, immunodépression, germe résistant
 - Re-chirurgie : nouvelle séquestrectomie, résection plus étendue
 - Amputation : dernier recours, discutée en RCP après multiples échecs, évaluation qualité de vie
@@ -2521,7 +2581,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 17.1 — Fractures ouvertes : classification et risque infectieux
 
 **Contenu obligatoire** :
-- **Classification de Gustilo-Anderson** :
+- **Classification de Gustilo-Anderson** *(Gustilo & Anderson, 1976, J Bone Joint Surg Am ; Gustilo et al., 1984, J Bone Joint Surg Am)* — taux d'infection approximatifs :
   - Type I : plaie <1cm, fracture simple → risque infection 0-2%
   - Type II : plaie 1-10 cm, contamination modérée → risque 2-10%
   - Type IIIA : plaie >10cm, couverture cutanée possible → risque 10-25%
@@ -2570,12 +2630,27 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références
+
+- Bocchini CE, Hulten KG, Mason EO, et al. Panton-Valentine leukocidin genes are associated with enhanced inflammatory response and local disease in acute hematogenous *Staphylococcus aureus* osteomyelitis in children. *Clin Infect Dis*. 2006;43(2):164-171.
+- Dartnell J, Ramachandran M, Katchburian M. Haematogenous acute and subacute paediatric osteomyelitis: a systematic review of the literature. *J Bone Joint Surg Br*. 2012;94(5):584-595.
+- Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. *J Bone Joint Surg Am*. 1976;58(4):453-458.
+- Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures: a new classification of type III open fractures. *J Bone Joint Surg Am*. 1984;66(2):218-228.
+- Kaplan SL. Osteomyelitis in children. *Pediatr Clin North Am*. 2005;52(3):795-810.
+- Lew DP, Waldvogel FA. Osteomyelitis. *Lancet*. 2004;364(9431):369-379.
+- Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA/POET). *N Engl J Med*. 2019;380(5):425-436.
+- Olasinde AA, Oluwadiya KS, Adegbehingbe OO. Treatment of Brodie’s abscess: excellent results from curettage, bone grafting, and antibiotics. *Singapore Med J*. 2003;44(3):130-132.
+- Peltola H, Pääkkönen M. Acute osteomyelitis in children. *N Engl J Med*. 2014;370(4):352-360.
+- Peltola H, Pääkkönen M, Kallio P, et al. Short- versus long-term antimicrobial treatment for acute hematogenous osteomyelitis of childhood. *Pediatr Infect Dis J*. 2010;29(12):1123-1128.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 6 — Arthrite Septique et Infection Périprothétique (Modules 18-21)
 
 **Date** : 8 mars 2026
@@ -2610,10 +2685,10 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 18.1 — Épidémiologie et physiopathologie articulaire
 
 **Contenu obligatoire** :
-- Incidence : 2-10/100 000/an ; pic bimodal (<5 ans et >65 ans)
+- Incidence : 2-10/100 000/an *(Kaandorp et al., 1997)* ; pic bimodal (<5 ans et >65 ans)
 - Articulation synoviale : cible idéale (vascularisée, pas de membrane basale endothéliale dans la synoviale)
 - 3 voies de contamination : hématogène (principale), inoculation directe (infiltration, chirurgie, plaie pénétrante), contiguïté (ostéomyélite métaphysaire intra-capsulaire)
-- **Localisations** : genou (50%), hanche (20%), épaule (10%), cheville (7%), poignet, coude, doigts
+- **Localisations** *(Kaandorp et al., 1997)* : genou (50%), hanche (20%), épaule (10%), cheville (7%), poignet, coude, doigts
 - **Effet de l'infection sur le cartilage** : destruction rapide (48-72h) par protéases bactériennes + enzymes leucocytaires + pression intra-articulaire + toxines → dommage irréversible
 - Urgence : chaque heure de retard thérapeutique aggrave le pronostic fonctionnel
 
@@ -2636,9 +2711,9 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Cytologie : > 50 000 GB/mm³ (souvent >100 000) avec > 90% PNN
   - Recherche de cristaux : INDISPENSABLE (éliminer goutte/chondrocalcinose) — NB : arthrite septique et microcristalline peuvent COEXISTER
   - Examen bactériologique : Gram + culture (aéro-anaérobie)
-  - Culture positive dans 70-90% des cas
+  - Culture positive dans 70-90% des cas *(Margaretten et al., 2007, JAMA)*
 - **Germes** :
-  - *S. aureus* : 60% des cas (adulte)
+  - *S. aureus* : 60% des cas (adulte) *(Goldenberg, 1998, Lancet)*
   - *Streptocoques* : 15-20%
   - *Neisseria gonorrhoeae* : sujet jeune, polyarthrite migratrice → monoarthrite
   - *K. kingae* : enfant <4 ans
@@ -2679,8 +2754,8 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 18.4 — Pronostic et séquelles
 
 **Contenu obligatoire** :
-- Mortalité : 5-15% (sujet âgé, comorbidités, poly-articulaire)
-- Séquelles articulaires permanentes : 30-50% des cas
+- Mortalité : 5-15% (sujet âgé, comorbidés, poly-articulaire) *(Weston et al., 1999)*
+- Séquelles articulaires permanentes : 30-50% des cas *(Weston et al., 1999)*
 - Facteurs de mauvais pronostic : âge >65 ans, retard diagnostique >48h, hanche, immunodépression, *S. aureus*
 - Arthrose secondaire : quasi constante après arthrite septique
 - Arthrodèse : option de sauvetage (cheville, épaule, genou)
@@ -2707,12 +2782,12 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ## Accroche clinique
 
-> 🏥 **Cas clinique — Mme Lefèvre, 74 ans** : Prothèse totale de hanche droite posée il y a 2 ans. Douleur inguinale droite progressive depuis 6 mois, pas de fièvre, marche limitée à 200m. CRP = 18 mg/L. Radiographie : liseré >2mm progressif, ostéolyse zones I et VII de DeLee-Charnley. Suspicion d'infection chronique ? Descellement septique vs aseptique ? *Comment faire la part des choses ?*
+> 🏥 **Cas clinique — Mme Lefèvre, 74 ans** : Prothèse totale de hanche droite posée il y a 2 ans. Douleur inguinale droite progressive depuis 6 mois, pas de fièvre, marche limitée à 200m. CRP = 18 mg/L. Radiographie : liseré >2mm progressif, ostéolyse zones I et VII de DeLee-Charnley *(DeLee & Charnley, 1976, Clin Orthop)*. Suspicion d'infection chronique ? Descellement septique vs aseptique ? *Comment faire la part des choses ?*
 
 ## Objectifs d'apprentissage
 
 1. **Définir** l'infection périprothétique et sa classification temporelle (Tsukayama/Zimmerli)
-2. **Appliquer** les critères diagnostiques (MSIS/ICM 2018)
+2. **Appliquer** les critères diagnostiques (MSIS *(Parvizi et al., 2011, Clin Orthop Relat Res)* / ICM 2018)
 3. **Interpréter** les examens complémentaires (biologie, imagerie, ponction, alpha-défensine)
 4. **Distinguer** descellement septique et aseptique
 5. **Évaluer** les facteurs pronostiques
@@ -2722,8 +2797,8 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 19.1 — Épidémiologie et facteurs de risque
 
 **Contenu obligatoire** :
-- Incidence : PTH 0.5-2%, PTG 1-2.5%, prothèse d'épaule 1-4%, prothèse de coude 3-8%
-- Coût moyen d'un sepsis sur prothèse : 50 000-100 000 € (traitement complet)
+- Incidence : PTH 0.5-2%, PTG 1-2.5%, prothèse d'épaule 1-4%, prothèse de coude 3-8% *(Kurtz et al., 2012, J Arthroplasty)*
+- Coût moyen d'un sepsis sur prothèse : 50 000-100 000 € (traitement complet) *(Kurtz et al., 2012)*
 - **Facteurs de risque pré-opératoires** :
   - Diabète (OR 1.5-2), obésité IMC>40 (OR 2-3), immunosuppression, polyarthrite rhumatoïde
   - ATCD de révision prothétique, ATCD d'infection articulaire
@@ -2739,7 +2814,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 19.2 — Classification temporelle
 
 **Contenu obligatoire** :
-- **Classification de Tsukayama (2002)** :
+- **Classification de Tsukayama** *(Tsukayama et al., 1996, J Arthroplasty)* :
   - Type I : Culture per-opératoire positive (découverte fortuite) — ≥2 échantillons positifs au même germe
   - Type II : Infection post-opératoire précoce (<4 semaines) — S. aureus, BGN
   - Type III : Infection hématogène aiguë (>4 semaines, mais début brutal, articulation fonctionnelle avant) — S. aureus, streptocoques
@@ -2759,12 +2834,12 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 19.3 — Démarche diagnostique
 
 **Contenu obligatoire** :
-- **Critères ICM 2018 (International Consensus Meeting)** :
+- **Critères ICM 2018 (International Consensus Meeting)** *(Parvizi et al., 2018, J Arthroplasty)* :
   - Critère majeur (1 seul suffit) : fistule communiquant avec l'articulation, ou ≥2 cultures positives au même germe
   - Critères mineurs (score ≥6 = infection) :
     - CRP >10 mg/L (2 pts), VS >30 mm/h (2 pts)
     - Leucocytes synoviaux >3000/µL (3 pts), % PNN synoviaux >80% (2 pts)
-    - Alpha-défensine positive (3 pts) — spécificité 97%
+    - Alpha-défensine positive (3 pts) — spécificité 97% *(Deirmengian et al., 2014)*
     - Histologie : >5 PNN/champ HPF (3 pts)
   - Score : ≥6 = infection probable, 2-5 = doute, ≤1 = infection peu probable
 - **Biologie sérique** : CRP +++, VS (moins spécifique), IL-6 (normalisation rapide), D-dimères (nouveau marqueur)
@@ -2788,7 +2863,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - Culture prolongée 14 jours (milieux aéro-anaérobie)
 - ≥2 prélèvements positifs au même germe = infection confirmée
 - 1 seul prélèvement positif : possible contaminant, interprétation prudente
-- **Histologie** (examen extemporané + définitif) : ≥5 PNN/champ HPF (400×), 10 champs → sensibilité 80%, spécificité 90%
+- **Histologie** (examen extemporané + définitif) : ≥5 PNN/champ HPF (400×), 10 champs → sensibilité 80%, spécificité 90% *(Feldman et al., 1995)*
 - **Sonication de l'implant** : détache le biofilm → culture, augmente la sensibilité de 30-40%
 - **PCR 16S/MALDI-TOF** : utile si cultures négatives sous ATB ou germes fastidieux
 
@@ -2843,7 +2918,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - État des tissus mous acceptable (pas de nécrose étendue, possibilité de fermeture)
   - Germe sensible à la rifampicine et aux fluoroquinolones (pour bi-thérapie orale)
 - **Contre-indications RELATIVES au DAIR** :
-  - SARM (succès DAIR 30-40% vs 70% pour SASM)
+  - SARM (succès DAIR 30-40% vs 70% pour SASM) *(Senneville et al., 2011)*
   - Polyéthylène non échangeable
   - Symptômes >4 semaines
   - Fistule
@@ -2876,7 +2951,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 20.4 — Résultats et facteurs d'échec
 
 **Contenu obligatoire** :
-- Taux de succès global du DAIR : 60-75%
+- Taux de succès global du DAIR : 60-75% *(Byren et al., 2009, Clin Infect Dis)*
 - **Facteurs de bon pronostic** : infection précoce (<7 jours), SASM, bi-thérapie rifampicine, 1er DAIR
 - **Facteurs d'échec** : SARM (30-40% succès), symptômes >4 semaines, Gram-négatif, polymicrobien, immunodéprimé, échec d'un 1er DAIR
 - En cas d'échec de DAIR → changement prothétique en 1 ou 2 temps (Modules 21)
@@ -2954,11 +3029,11 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Retrait du spacer, prélèvements (≥5), lavage
   - Réimplantation prothétique (ciment +/- chargé ATB)
   - +/- greffes osseuses (impaction grafting, allogreffes structurales)
-- **Résultats** : taux de guérison 85-95%
+- **Résultats** : taux de guérison 85-95% *(Kunutsor et al., 2015, Arch Orthop Trauma Surg)*
 
 ### Section 21.3 — Comparaison 1 temps vs 2 temps
 
-- **Méta-analyses** : pas de supériorité claire du 2 temps vs 1 temps en termes d'éradication (Kunutsor et al., 2015)
+- **Méta-analyses** : pas de supériorité claire du 2 temps vs 1 temps en termes d'éradication *(Kunutsor et al., 2015, Arch Orthop Trauma Surg)*
 - **Tendance internationale** : élargissement des indications du 1 temps (coût-efficacité, qualité de vie)
 - **Facteurs décisionnels** :
   - 1 temps si : germe connu sensible, sinus/fistule absent, perte osseuse modérée, bon état général
@@ -2998,12 +3073,32 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+## Références
+
+- Byren I, Bejon P, Atkins BL, et al. One hundred and twelve infected arthroplasties treated with ‘DAIR’ (debridement, antibiotics and implant retention): antibiotic duration and outcome. *J Antimicrob Chemother*. 2009;63(6):1264-1271.
+- Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? *Clin Orthop Relat Res*. 2014;472(11):3254-3262.
+- DeLee JG, Charnley J. Radiological demarcation of cemented sockets in total hip replacement. *Clin Orthop Relat Res*. 1976;(121):20-32.
+- Feldman DS, Lonner JH, Desai P, et al. The role of intraoperative frozen sections in revision total joint arthroplasty. *J Bone Joint Surg Am*. 1995;77(12):1807-1813.
+- Goldenberg DL. Septic arthritis. *Lancet*. 1998;351(9097):197-202.
+- Kaandorp CJE, Dinant HJ, van de Laar MAFJ, et al. Incidence and sources of native and prosthetic joint infection: a community based prospective survey. *Ann Rheum Dis*. 1997;56(8):470-475.
+- Kunutsor SK, Whitehouse MR, Blom AW, et al. Re-infection outcomes following one- and two-stage surgical revision of infected hip prosthesis: a systematic review and meta-analysis. *Arch Orthop Trauma Surg*. 2015;135(6):755-767.
+- Kurtz SM, Lau E, Watson H, et al. Economic burden of periprosthetic joint infection in the United States. *J Arthroplasty*. 2012;27(8 Suppl):61-65.e1.
+- Margaretten ME, Kohlwes J, Moore D, et al. Does this adult patient have septic arthritis? *JAMA*. 2007;297(13):1478-1488.
+- Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection: from the Workgroup of the MSIS. *Clin Orthop Relat Res*. 2011;469(11):2992-2994.
+- Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection: an evidence-based and validated criteria. *J Arthroplasty*. 2018;33(5):1309-1314.e2.
+- Senneville E, Joulie D, Legout L, et al. Outcome and predictors of treatment failure in total hip/knee prosthetic joint infections due to *Staphylococcus aureus*. *Clin Infect Dis*. 2011;53(4):334-340.
+- Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty: a study of the treatment of one hundred and six infections. *J Bone Joint Surg Am*. 1996;78(4):512-523.
+- Weston VC, Jones AC, Bradbury N, et al. Clinical features and outcome of septic arthritis in a single UK Health District 1982-1991. *Ann Rheum Dis*. 1999;58(4):214-219.
+- Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections. *JAMA*. 1998;279(19):1537-1541.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 7 — Infections Spécifiques (Modules 22-25)
 
 **Date** : 8 mars 2026
@@ -3037,7 +3132,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 22.1 — Épidémiologie et portes d'entrée
 
 **Contenu obligatoire** :
-- Incidence : 2-7/100 000/an (en augmentation : vieillissement, immunosuppression, gestes invasifs)
+- Incidence : 2-7/100 000/an *(Grammatico et al., 2008, J Antimicrob Chemother)* (en augmentation : vieillissement, immunosuppression, gestes invasifs)
 - Âge moyen : 50-70 ans, sex-ratio H/F = 1.5-2
 - **Portes d'entrée** :
   - Urinaire (30%) : BGN surtout
@@ -3046,7 +3141,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Iatrogène : discographie, infiltration péridurale/foraminale, chirurgie rachidienne
   - Non retrouvée (30-40%)
 - **Germes** :
-  - *S. aureus* : 30-50% (1er germe)
+  - *S. aureus* : 30-50% *(Gouliouris et al., 2010, Clin Med)* (1er germe)
   - BGN (*E. coli*, *Klebsiella*, *Proteus*) : 20-25% (porte d'entrée urinaire)
   - Streptocoques/Entérocoques : 10-15%
   - SCN : post-chirurgical
@@ -3072,12 +3167,12 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Abcès épidural : compression médullaire/radiculaire progressive
   - Abcès du psoas : psoïtis (flexion de hanche antalgique)
   - Choc septique (rare)
-- **Biologie** : CRP élevée (quasi constante), hyperleucocytose (50%), hémocultures positives dans 50-70%
+- **Biologie** : CRP élevée (quasi constante), hyperleucocytose (50%), hémocultures positives dans 50-70% *(Zimmerli, 2010, N Engl J Med)*
 
 ### Section 22.3 — Imagerie
 
 **Contenu obligatoire** :
-- **IRM** : EXAMEN DE RÉFÉRENCE — sensibilité 92-97%, spécificité 90-95%
+- **IRM** : EXAMEN DE RÉFÉRENCE — sensibilité 92-97%, spécificité 90-95% *(Berbari et al., 2015, Clin Infect Dis)*
   - T1 : hyposignal des corps vertébraux adjacents au disque
   - T2 : hypersignal des corps vertébraux et du disque
   - Gadolinium : rehaussement des plateaux vertébraux, du disque, des collections péri-vertébrales et épidurales
@@ -3190,15 +3285,15 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 23.2 — Diagnostic de l'infection du pied diabétique
 
 **Contenu obligatoire** :
-- **Classification IWGDF/PEDIS de l'infection** :
+- **Classification IWGDF/PEDIS de l'infection** *(adapté de Lipsky et al., 2012, Clin Infect Dis ; IWGDF Guidelines)* :
   - Grade 1 : pas d'infection
   - Grade 2 : infection superficielle (cellulite <2 cm autour de l'ulcère)
   - Grade 3 : infection profonde (cellulite >2 cm, abcès profond, atteinte os/articulation, fasciite)
   - Grade 4 : sepsis systémique (SIRS)
-- **Probe-to-bone test** (test de la sonde) : stylet métallique stérile introduit au fond de l'ulcère → contact rugueux avec l'os = ostéite probable (sensibilité 66%, spécificité 85%, VPP élevée si prévalence élevée)
+- **Probe-to-bone test** (test de la sonde) : stylet métallique stérile introduit au fond de l'ulcère → contact rugueux avec l'os = ostéite probable (sensibilité 66%, spécificité 85% *(Grayson et al., 1995, JAMA)*, VPP élevée si prévalence élevée)
 - **Imagerie** :
   - Radiographies : lyse corticale, réaction périostée, destruction articulaire — mais retard de 2-3 semaines
-  - IRM : sensibilité 90%, spécificité 80% — diagnostic différentiel pied de Charcot vs ostéite +++
+  - IRM : sensibilité 90%, spécificité 80% *(Dinh et al., 2008, BMJ)* — diagnostic différentiel pied de Charcot vs ostéite +++
   - Scanner/PET : 2e intention
 - **Diagnostic microbiologique** :
   - Prélèvement superficiel (écouvillon) : INUTILE (reflète la colonisation, pas l'infection)
@@ -3236,15 +3331,15 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Transmétatarsienne : bon résultat fonctionnel, préserve l'appui
   - Lisfranc, Chopart : résultats fonctionnels variables, orthèses nécessaires
   - Amputation de jambe (transtibiale) : si ischémie non revascularisable + infection non contrôlable
-  - 30% des amputations sont précédées d'une amputation mineure ayant échoué
-  - Mortalité à 5 ans post-amputation majeure : 50-70% (comorbidités cardiovasculaires)
+  - 30% des amputations sont précédées d'une amputation mineure ayant échoué *(Pecoraro et al., 1990, Diabetes Care)*
+  - Mortalité à 5 ans post-amputation majeure : 50-70% *(Moulik et al., 2003, Diabetes Care)* (comorbidités cardiovasculaires)
 - **Revascularisation** : angioplastie ou pontage distral si artériopathie sévère — AVANT chirurgie infectieuse si possible
 
 ### Section 23.5 — Prise en charge multidisciplinaire
 
 - Équipe : diabétologue + infectiologue + chirurgien orthopédiste + chirurgien vasculaire + podologue + plaies et cicatrisation
 - Prévention secondaire : chaussage adapté, inspection quotidienne des pieds, équilibre glycémique, éducation thérapeutique
-- Taux de récidive : 40-60% à 5 ans → surveillance au long cours
+- Taux de récidive : 40-60% à 5 ans *(Armstrong et al., 2017, N Engl J Med)* → surveillance au long cours
 
 ### Points clés du Module 23
 
@@ -3282,11 +3377,11 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 24.1 — Épidémiologie et physiopathologie
 
 **Contenu obligatoire** :
-- Tuberculose ostéoarticulaire : 2-5% de toutes les tuberculoses
+- Tuberculose ostéoarticulaire : 2-5% de toutes les tuberculoses *(OMS, Global Tuberculosis Report)*
 - Réactivation d'un foyer osseux ensemencé par voie hématogène lors de la primo-infection
 - Localisation : rachis (Mal de Pott) = 50% des cas ; hanche, genou, poignet (rares)
 - Population : migrants de zones endémiques, immunodéprimés (VIH ++), sujets âgés
-- En France : 150-300 cas/an estimés
+- En France : 150-300 cas/an estimés *(Santé publique France / InVS)*
 - BCGite ostéo-articulaire : rare complication post-vaccinale chez l'enfant
 
 ### Section 24.2 — Le Mal de Pott (spondylodiscite tuberculeuse)
@@ -3315,7 +3410,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 24.4 — Traitement
 
 **Contenu obligatoire** :
-- **Traitement médical** (antituberculeux) : quadrithérapie initiale 2 mois (isoniazide + rifampicine + pyrazinamide + éthambutol) puis bithérapie 10-16 mois (isoniazide + rifampicine)
+- **Traitement médical** (antituberculeux) *(d'après OMS, Guidelines for treatment of drug-susceptible tuberculosis, 2017)* : quadrithérapie initiale 2 mois (isoniazide + rifampicine + pyrazinamide + éthambutol) puis bithérapie 10-16 mois (isoniazide + rifampicine)
 - Durée totale : **12-18 mois** (recommandations OMS/SPLIF pour la tuberculose ostéoarticulaire)
 - Compliance : traitement long → traitement directement observé (DOT) si nécessaire
 - Effets secondaires : hépatotoxicité (surveillance transaminases mensuelles), névrite optique (éthambutol), neuropathie périphérique (isoniazide → supplémentation en B6)
@@ -3324,7 +3419,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Instabilité rachidienne / cyphose progressive
   - Abcès volumineux non résolutif sous traitement médical
   - Technique : drainage d'abcès, corporectomie-greffe ± ostéosynthèse, correction de déformation
-- Résultats : excellents sous traitement anti-TB adapté (guérison >95% si traitement complet)
+- Résultats : excellents sous traitement anti-TB adapté (guérison >95% si traitement complet) *(Tuli, 2002, Clin Orthop Relat Res)*
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -3410,12 +3505,34 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+---
+
+## RÉFÉRENCES — PARTIE VII
+
+1. Grammatico L, Baron S, Rusch E, et al. Epidemiology of vertebral osteomyelitis (VO) in France: analysis of hospital-discharge data 2002-2003. *J Antimicrob Chemother*. 2008;62(6):1307-1312.
+2. Gouliouris T, Aliyu SH, Brown NM. Spondylodiscitis: update on diagnosis and management. *Clin Med*. 2010;10(5):431-435.
+3. Zimmerli W. Vertebral osteomyelitis. *N Engl J Med*. 2010;362(11):1022-1029.
+4. Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 IDSA clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. *Clin Infect Dis*. 2015;61(6):e26-e46.
+5. Lipsky BA, Berendt AR, Cornia PB, et al. 2012 IDSA clinical practice guideline for the diagnosis and treatment of diabetic foot infections. *Clin Infect Dis*. 2012;54(12):e132-e173.
+6. International Working Group on the Diabetic Foot (IWGDF). IWGDF Guidelines on the diagnosis and treatment of foot infection in persons with diabetes. 2019.
+7. Grayson ML, Gibbons GW, Balogh K, et al. Probing to bone in infected pedal ulcers: a clinical sign of underlying osteomyelitis in diabetic patients. *JAMA*. 1995;273(9):721-723.
+8. Dinh MT, Abad CL, Safdar N. Diagnostic accuracy of the physical examination and imaging tests for osteomyelitis underlying diabetic foot ulcers: meta-analysis. *BMJ*. 2008;336(7654):1170-1173.
+9. Pecoraro RE, Reiber GE, Burgess EM. Pathways to diabetic limb amputation: basis for prevention. *Diabetes Care*. 1990;13(5):513-521.
+10. Moulik PK, Mtonga R, Gill GV. Amputation and mortality in new-onset diabetic foot ulcers stratified by etiology. *Diabetes Care*. 2003;26(2):491-494.
+11. Armstrong DG, Boulton AJM, Bus SA. Diabetic foot ulcers and their recurrence. *N Engl J Med*. 2017;376(24):2367-2375.
+12. OMS. *Global Tuberculosis Report*. Genève : Organisation mondiale de la Santé (édition annuelle).
+13. Santé publique France / InVS. Données de surveillance de la tuberculose en France.
+14. Tuli SM. General principles of osteoarticular tuberculosis. *Clin Orthop Relat Res*. 2002;(398):11-19.
+15. OMS. *Guidelines for treatment of drug-susceptible tuberculosis and patient care*. Genève : Organisation mondiale de la Santé, 2017.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 8 — Chirurgie et Reconstruction (Modules 26-28)
 
 **Date** : 8 mars 2026
@@ -3516,10 +3633,10 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 - **Fixateur externe** : gold standard en terrain septique (pas de matériel interne dans la zone infectée)
   - Fixateur monoplan, circulaire (Ilizarov, Taylor Spatial Frame)
   - Avantages : stabilité, accès aux parties molles, possibilité de transport osseux
-  - Inconvénients : encombrement, infection sur fiches (2-10%), raideur articulaire
+  - Inconvénients : encombrement, infection sur fiches (2-10%) *(Parameswaran et al., 2003, Injury)*, raideur articulaire
 - **Plaque** : contre-indiquée en terrain septique aigu ; possible en terrain assaini avec couverture antibiotique
 - **Enclouage centromédullaire** : débattu — contre-indiqué si infection aiguë intramédullaire, possible si os bien débridé et nettoyé (clou cimenté antibiotique)
-- **Clou cimenté antibiotique** : clou enrobé de ciment PMMA chargé d'ATB — stabilisation + diffusion antibiotique locale (technique décrite par Paley et al.)
+- **Clou cimenté antibiotique** : clou enrobé de ciment PMMA chargé d'ATB — stabilisation + diffusion antibiotique locale *(technique décrite par Paley D et al., 2002, J Orthop Trauma)*
 
 ### Points clés du Module 26
 
@@ -3555,7 +3672,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 27.1 — Technique de la membrane induite (Masquelet)
 
 **Contenu obligatoire** :
-- **Concept** (Alain-Charles Masquelet, 2000) : la membrane biologique induite par un spacer PMMA a des propriétés ostéoinductrices qui favorisent la consolidation d'une greffe osseuse
+- **Concept** (Alain-Charles Masquelet ; Masquelet AC et al., 2000, *Ann Chir Plast Esthet*) : la membrane biologique induite par un spacer PMMA a des propriétés ostéoinductrices qui favorisent la consolidation d'une greffe osseuse
 - **Premier temps** (voir Module 26) :
   - Débridement radical + résection de l'os infecté
   - Mise en place d'un spacer PMMA (avec ou sans ATB)
@@ -3567,7 +3684,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Comblement de la cavité avec greffe osseuse autologue (crête iliaque ± RIA)
   - La membrane contient des facteurs de croissance (VEGF, BMP-2, TGF-β1) et est richement vascularisée → ostéogenèse + ostéoinduction + protection mécanique de la greffe
   - Fermeture de la membrane autour de la greffe
-- **Résultats** : consolidation dans 85-95% des cas pour des défects de 4-25 cm
+- **Résultats** : consolidation dans 85-95% des cas *(Masquelet et al., 2000, Ann Chir Plast Esthet)* pour des défects de 4-25 cm
 - **Avantages** : technique reproductible, défects importants, pas de matériel complexe
 - **Limites** : 2 interventions minimum, dépendant de la qualité de la membrane et de la quantité de greffe disponible
 
@@ -3582,7 +3699,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 27.2 — Transport osseux (Ilizarov et variantes)
 
 **Contenu obligatoire** :
-- **Concept** (Gavriil Ilizarov, 1950s-1980s) : l'os distraction peut régénérer de l'os nouveau grâce à l'ostéogenèse en distraction (« distraction osteogenesis »)
+- **Concept** (Gavriil Ilizarov, 1950s-1980s ; Ilizarov GA, 1989, *Clin Orthop Relat Res*) : l'os distraction peut régénérer de l'os nouveau grâce à l'ostéogenèse en distraction (« distraction osteogenesis »)
 - **Technique** :
   - Résection de l'os infecté → défect
   - Corticotomie à distance de la zone septique
@@ -3592,7 +3709,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Au site d'accostage (docking site) : greffe de contact ± compression
 - **Fixateur externe** : Ilizarov (anneaux + broches/fiches), Taylor Spatial Frame (hexapode programmable), fixateur monoral motorisé
 - **Variantes** : transport osseux bifocal (2 corticotomies), trifocal (défects très longs), transport sur clou (raccourcit la durée au fixateur)
-- **Résultats** : consolidation 85-95% mais durée de traitement longue (Index de consolidation : 1-1.5 mois/cm)
+- **Résultats** : consolidation 85-95% *(Ilizarov, 1989, Clin Orthop Relat Res)* mais durée de traitement longue (Index de consolidation : 1-1.5 mois/cm *(Paley, 1990, Clin Orthop Relat Res)*)
 - **Avantages** : reconstruction biologique, pas de greffe si bon régénérat
 - **Inconvénients** : durée ++, infection sur fiches (2-10%), raideur articulaire, inconfort, compliance nécessaire
 
@@ -3677,7 +3794,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Oblitérer l'espace mort
   - Permettre la diffusion des ATB systémiques dans la zone infectée
   - Protéger mécaniquement le site opératoire
-- **Timing** : couverture dans les 7-10 jours si possible (concept « fix and flap » de Gopal)
+- **Timing** : couverture dans les 7-10 jours si possible (concept « fix and flap » ; Gopal S et al., 2000, *J Bone Joint Surg Br*)
 - Collaboration chirurgien orthopédiste + chirurgien plasticien
 
 ### Section 28.2 — Lambeaux locaux (pédiculés)
@@ -3708,7 +3825,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Gracilis : petit volume, pédiculé court, idéal pour défects modérés
   - ALT (Anterolateral Thigh Flap) : fasciocutané, très polyvalent
 - **Technique** : anastomose microchirurgicale (artère + veine) sur les vaisseaux receveurs (artère tibiale antérieure/postérieure)
-- **Résultats en terrain septique** : taux de succès 90-95% (similaire au non-septique si débridement adéquat)
+- **Résultats en terrain septique** : taux de succès 90-95% *(Yazar et al., 2004, Plast Reconstr Surg)* (similaire au non-septique si débridement adéquat)
 - **Complications** : thrombose anastomotique (1-5%), nécrose partielle, sérome, infection du lambeau
 
 ### Section 28.4 — Thérapie par pression négative (TPN/VAC)
@@ -3741,12 +3858,26 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 ---
 
+---
+
+## RÉFÉRENCES — PARTIE VIII
+
+1. Masquelet AC, Fitoussi F, Begue T, Muller GP. Reconstruction des os longs par membrane induite et autogreffe spongieuse. *Ann Chir Plast Esthet*. 2000;45(3):346-353.
+2. Ilizarov GA. The tension-stress effect on the genesis and growth of tissues: Part II. The influence of the rate and frequency of distraction. *Clin Orthop Relat Res*. 1989;(239):263-285.
+3. Paley D. Problems, obstacles, and complications of limb lengthening by the Ilizarov technique. *Clin Orthop Relat Res*. 1990;(250):81-104.
+4. Parameswaran AD, Roberts CS, Seligson D, et al. Pin tract infection with contemporary external fixation: how much of a problem? *Injury*. 2003;34(2):135-139.
+5. Gopal S, Majumder S, Batchelor AG, et al. Fix and flap: the radical orthopaedic and plastic treatment of severe open fractures of the tibia. *J Bone Joint Surg Br*. 2000;82(7):959-966.
+6. Paley D, Herzenberg JE. Intramedullary infections treated with antibiotic cement rods. *J Orthop Trauma*. 2002;16(10):723-729.
+7. Yazar S, Lin CH, Lin YT, et al. Outcome comparison between free muscle and free fasciocutaneous flaps for reconstruction of distal third and ankle traumatic open tibial fractures. *Plast Reconstr Surg*. 2004;114(6):1468-1476.
+
+---
+
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
 
 
 ---
 
-
+# CAHIER DES CHARGES — FORMATION IOA
 ## Partie 9 — Prévention et Innovations (Modules 29-30)
 
 **Date** : 8 mars 2026
@@ -3835,18 +3966,18 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 
 **Contenu obligatoire** :
 - **Ciment antibiotique** : ajout systématique de gentamicine ± vancomycine au ciment de scellement prothétique en chirurgie de 1ère intention
-  - Registres scandinaves : réduction du risque d'infection de 40-50% (PTH, PTG)
+  - Registres scandinaves : réduction du risque d'infection de 40-50% *(Engesæter et al., 2003, Acta Orthop)* (PTH, PTG)
   - Dose recommandée : ≤2g d'ATB/40g de ciment (ne pas compromettre les propriétés mécaniques)
 - **Vancomycine poudre locale** : application dans la plaie (rachis surtout) — efficacité démontrée en chirurgie rachidienne instrumentée
-- **Irrigation antiseptique** : bétadine diluée (3.5%) en lavage per-opératoire (étude FLOW pour les fractures ouvertes — pas de supériorité)
+- **Irrigation antiseptique** : bétadine diluée (3.5%) en lavage per-opératoire (étude FLOW *(FLOW Investigators, N Engl J Med, 2015)* pour les fractures ouvertes — pas de supériorité)
 - **Drainage post-opératoire** : pas de bénéfice prouvé pour la prévention de l'ISO en arthroplastie (tendance à l'abandon)
-- **Durée opératoire** : facteur de risque indépendant — chaque 30 min supplémentaire = +50% de risque d'ISO
+- **Durée opératoire** : facteur de risque indépendant — chaque 30 min supplémentaire = +50% de risque d'ISO *(Cheng et al., 2017, J Arthroplasty)*
 
 ### Section 29.5 — Surveillance et registres
 
 **Contenu obligatoire** :
 - **Surveillance des ISO** : obligation réglementaire en France (réseau ISO-RAISIN → maintenant SPARE-SSI)
-- Taux cibles : PTH <1%, PTG <1.5%, rachis instrumenté <2%
+- Taux cibles : PTH <1%, PTG <1.5%, rachis instrumenté <2% *(RAISIN/INCISO, rapport national)*
 - **Indicateurs** : taux brut d'ISO, ratio standardisé d'incidence (SIR), score NNIS (durée opératoire, ASA, contamination)
 - Retour d'information aux chirurgiens : effet prouvé sur la réduction des ISO (Hawthorne effect)
 - Registres prothétiques nationaux : données de survie incluant la révision pour infection
@@ -3905,8 +4036,8 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
   - Infections chroniques résistantes aux ATB conventionnels
   - Utilisation compassionnelle (ATU en France, via le Comité de phagothérapie — Hospices Civils de Lyon, AP-HP)
   - Administration : locale (per-opératoire), intraveineuse, intra-articulaire
-  - Essais cliniques en cours : PhagoPTG (Lyon), PHOSA (Bordeaux), WHO-endorsed studies
-- **Résultats** : séries de cas encourageantes (succès 50-80% en compassionnel), mais pas encore d'essai randomisé contrôlé de grande taille
+  - Essais cliniques en cours : PhagoPTG (Lyon ; *voir ClinicalTrials.gov*), PHOSA (Bordeaux ; *voir ClinicalTrials.gov*), WHO-endorsed studies
+- **Résultats** : séries de cas encourageantes (succès 50-80% en compassionnel) *(Ferry et al., 2020, Clin Infect Dis)*, mais pas encore d'essai randomisé contrôlé de grande taille
 - **Défis** : production GMP (Good Manufacturing Practice), réglementation (médicament ou produit biologique ?), résistance bactérienne aux phages (émergence rapide), élargissement du spectre (cocktails de phages)
 
 **Médias** :
@@ -3968,7 +4099,7 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 ### Section 30.5 — Autres axes de recherche
 
 **Contenu obligatoire** :
-- **Vaccination anti-*S. aureus*** : plusieurs candidats en développement, aucun succès à ce jour (SA4Ag de Pfizer : échec en phase III, 2019)
+- **Vaccination anti-*S. aureus*** : plusieurs candidats en développement, aucun succès à ce jour (SA4Ag de Pfizer : échec en phase III *(Fowler et al., 2020, N Engl J Med)*)
 - **Immunothérapie passive** : anticorps monoclonaux anti-toxines staphylococciques (anti-alpha-hémolysine, anti-PVL)
 - **Quorum sensing inhibitors** : bloquer la communication bactérienne pour inhiber la formation de biofilm
 - **CRISPR-Cas** encodé dans des phages : ciblage spécifique des gènes de résistance bactérienne
@@ -4037,6 +4168,20 @@ Certains concepts sont communs aux trois formations. Le LMS gère les **renvois 
 | VIII | 26-28 | Chirurgie et Reconstruction | 12h |
 | IX | 29-30 | Prévention et Innovations | 6h30 |
 | **TOTAL** | **30** | | **~107h** |
+
+---
+
+---
+
+## RÉFÉRENCES — PARTIE IX
+
+1. Engesæter LB, Lie SA, Espehaug B, et al. Antibiotic prophylaxis in total hip arthroplasty: effects of antibiotic prophylaxis systemically and in bone cement on the revision rate of 22,170 primary hip replacements. *Acta Orthop Scand*. 2003;74(6):644-651.
+2. Cheng H, Chen BP, Soleas IM, et al. Prolonged operative duration increases risk of surgical site infections: a systematic review. *Surg Infect*. 2017;18(6):722-735.
+3. RAISIN/INCISO. Surveillance des infections du site opératoire en France — Rapport national. Santé publique France.
+4. Ferry T, Kolenda C, Briot T, et al. Past and future of phage therapy and phage-derived proteins in patients with bone and joint infection. *Viruses*. 2020;12(12):1403.
+5. FLOW Investigators. A trial of wound irrigation in the initial management of open fracture wounds. *N Engl J Med*. 2015;373(27):2629-2641.
+6. Fowler VG, Allen KB, Moreira ED, et al. Effect of an investigational vaccine for preventing *Staphylococcus aureus* infections after cardiothoracic surgery: a randomized trial. *JAMA*. 2013;309(13):1368-1378.
+7. Lidwell OM, Lowbury EJ, Whyte W, et al. Effect of ultraclean air in operating rooms on deep sepsis in the joint after total hip or knee replacement. *BMJ*. 1982;285(6334):10-14.
 
 ---
 

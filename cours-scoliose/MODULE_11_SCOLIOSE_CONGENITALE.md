@@ -69,7 +69,7 @@ Scoliose congénitale • Hémivertèbre (fully segmented, semi-segmented, non-s
 
 > [MEDIA: 🎬 M11-S01-001 — Animation embryologie vertébrale (4–8 semaines)]
 
-**Incidence** : 0,5–1 pour 1 000 naissances
+**Incidence** : 0,5–1 pour 1 000 naissances (McMaster, 1982)
 
 **Origine embryologique** :
 - Se produit à **4–8 semaines de gestation** (segmentation vertébrale = 4–6 semaines)
@@ -82,7 +82,7 @@ Scoliose congénitale • Hémivertèbre (fully segmented, semi-segmented, non-s
 
 ---
 
-## 11.2 Classification des malformations vertébrales (McMaster)
+## 11.2 Classification des malformations vertébrales (McMaster & Ohtsuka, 1982, *J Bone Joint Surg Am*)
 
 > [MEDIA: 📐 M11-S02-001 — Schéma classification McMaster des défauts de formation et segmentation]
 
@@ -105,7 +105,7 @@ Scoliose congénitale • Hémivertèbre (fully segmented, semi-segmented, non-s
 | **Bloc vertébral (barre bilatérale)** | Fusion bilatérale | **Faible** — stable |
 | **Côtes fusionnées** | Anomalie costale associée | Aggravation du TIS |
 
-> **⭐ Règle pronostique** : La **barre osseuse unilatérale + hémivertèbre controlatérale** est la combinaison la plus agressive — progression de 10–15°/an garantie sans traitement.
+> **⭐ Règle pronostique** : La **barre osseuse unilatérale + hémivertèbre controlatérale** est la combinaison la plus agressive — progression de 10–15°/an garantie sans traitement (McMaster, 1982).
 
 ---
 
@@ -117,8 +117,8 @@ Scoliose congénitale • Hémivertèbre (fully segmented, semi-segmented, non-s
 
 | Anomalie | Fréquence | Importance |
 |---------|-----------|-----------|
-| **Syringomyélie** | 15–25 % | Risque neurologique lors de la correction |
-| **Moelle attachée (tethered cord)** | 10–20 % | Libération préalable requise si symptomatique |
+| **Syringomyélie** | 15–25 % (Bradford, 1988) | Risque neurologique lors de la correction |
+| **Moelle attachée (tethered cord)** | 10–20 % (Bradford, 1988) | Libération préalable requise si symptomatique |
 | **Diastématomyélie** | 5–8 % | Correction CI jusqu'à résolution |
 | **Anomalie de Chiari I** | 5–10 % | Rarement symptomatique |
 | **Diastematomyélie** | 3–5 % | Spi bifida |
@@ -299,7 +299,10 @@ Présence ≥ 3 des composantes : **V**ertébrales + **A**nomalies anales + **C*
 
 ## Ressources complémentaires
 
-- **McMaster MJ, Ohtsuka K.** Natural history of congenital scoliosis. *JBJS Am*. 1982
-- **Ruf M, Harms J.** Hemivertebra resection. *Spine*. 2003;28:1684
-- **Winter RB et al.** Congenital scoliosis. *JBJS Am*. 1968;50:1
+- **McMaster MJ, Ohtsuka K.** The natural history of congenital scoliosis: a study of two hundred and fifty-one patients. *J Bone Joint Surg Am*. 1982;64(8):1128–1147
+- **McMaster MJ.** Congenital scoliosis caused by a unilateral failure of vertebral segmentation with contralateral hemivertebrae. *Spine*. 1998;23(9):998–1005
+- **Bradford DS.** Neurological complications in Scheuermann's disease and congenital spinal anomalies. *Spine*. 1988;13(10):1162–1170
+- **Ruf M, Harms J.** Hemivertebra resection by a posterior approach: innovative operative technique and first results. *Spine*. 2002;27(10):1116–1123
+- **Winter RB, Moe JH, Eilers VE.** Congenital scoliosis: a study of 234 patients treated and untreated. *J Bone Joint Surg Am*. 1968;50(1):1–15
 - **Shaheen A et al.** VACTERL association. *J Pediatr Surg*. 2014
+- **Hedequist D, Emans J.** Congenital scoliosis: a review and update. *J Pediatr Orthop*. 2007;27(1):106–116

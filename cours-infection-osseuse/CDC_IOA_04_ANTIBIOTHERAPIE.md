@@ -90,7 +90,7 @@
 - **Effets indésirables** : hépatotoxicité (transaminases), interactions médicamenteuses majeures (inducteur enzymatique CYP450 +++), coloration des urines/larmes, nausées
 - **Interactions majeures** : AVK (↓ INR), contraceptifs oraux (↓ efficacité), antirétroviraux (IP ++), immunosuppresseurs (tacrolimus, ciclosporine), fluoroquinolones (interaction modérée)
 - **Quand débuter la rifampicine** : APRÈS que le site chirurgical est propre et drainé, jamais en phase d'abcès non drainé (risque de résistance dans un milieu non accessible)
-- **Études fondatrices** : Zimmerli et al. (1998), études sur biofilm staphylococcique
+- **Études fondatrices** : Zimmerli et al. *(JAMA, 1998)*, études sur biofilm staphylococcique
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -181,7 +181,7 @@
 ### Section 12.1 — Antibiothérapie probabiliste selon le contexte
 
 **Contenu obligatoire** :
-- **Principes** : débuter APRÈS les prélèvements mais AVANT les résultats (si urgence clinique), couvrir les germes les plus probables, adapter dès réception de l'antibiogramme
+- **Principes** *(recommandations SPILF ; IDSA — Osmon et al., 2013, Clin Infect Dis)* : débuter APRÈS les prélèvements mais AVANT les résultats (si urgence clinique), couvrir les germes les plus probables, adapter dès réception de l'antibiogramme
 - **Ostéomyélite aiguë hématogène de l'enfant** :
   - 1ère intention : céfamandole ou oxacilline IV (couvrir *S. aureus* SASM)
   - Si <4 ans : ajouter couverture *K. kingae* (amoxicilline-acide clavulanique ou C3G)
@@ -231,17 +231,17 @@
 ### Section 12.3 — Durées de traitement
 
 **Contenu obligatoire** :
-- **Ostéomyélite aiguë de l'enfant** : 3-4 semaines (switch IV → oral après 3-5 jours si bonne évolution) — étude POET, données récentes
-- **Arthrite septique** : 2-4 semaines (selon l'articulation et le germe)
+- **Ostéomyélite aiguë de l'enfant** : 3-4 semaines (switch IV → oral après 3-5 jours si bonne évolution) — étude POET *(Li HK et al., N Engl J Med, 2019)*, données récentes
+- **Arthrite septique** : 2-4 semaines (selon l'articulation et le germe) *(recommandations SPILF)*
 - **Ostéomyélite chronique** : 6-12 semaines (après chirurgie d'exérèse)
 - **Infection périprothétique** :
   - DAIR : 12 semaines (genou), 6 semaines + rifampicine (hanche) — protocoles CRIOAC
   - Changement en 2 temps : 6 semaines entre les 2 temps, puis 6-12 semaines post-réimplantation
   - Changement en 1 temps : 6-12 semaines
-- **Spondylodiscite à pyogènes** : 6 semaines (recommandations SPILF 2007, étude DATISPO — 6 vs 12 semaines)
+- **Spondylodiscite à pyogènes** : 6 semaines (recommandations SPILF 2007, étude DATISPO *(Bernard et al., Lancet, 2015)* — 6 vs 12 semaines)
 - **Spondylodiscite tuberculeuse** : 9-12 mois (quadrithérapie puis bithérapie)
 - **Pied diabétique / ostéomyélite** : 6 semaines après résection chirurgicale, ≥3 mois si traitement médical seul
-- **Études récentes** : tendance à la réduction des durées (OVIVA — per os précoce, DATISPO — 6 semaines de spondylodiscite)
+- **Études récentes** : tendance à la réduction des durées (OVIVA *(Li HK et al., N Engl J Med, 2019)* — per os précoce, DATISPO *(Bernard et al., Lancet, 2015)* — 6 semaines de spondylodiscite)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -255,8 +255,8 @@
 - **OPAT** (*Outpatient Parenteral Antibiotic Therapy*) : antibiothérapie parentérale à domicile
 - Indications : patient stable, cathéter (PICC-line, Midline, PAC), ATB compatible (ceftriaxone, ertapénème, daptomycine, vancomycine en pompe)
 - Organisation : IDE à domicile, suivi biologique hebdomadaire (NFS, CRP, rénale, hépatique), consultation infectiologie
-- **Relais oral précoce** : étude OVIVA (2019) → pas d'infériorité du relais oral à J7 vs IV prolongé, révolution des pratiques
-- Critères de switch IV → oral : apyrexie, CRP ↓ >50%, absence de signes de gravité, antibiogramme compatible, molécule orale appropriée
+- **Relais oral précoce** : étude OVIVA *(Li HK et al., N Engl J Med, 2019)* → pas d'infériorité du relais oral à J7 vs IV prolongé, révolution des pratiques
+- Critères de switch IV → oral *(critères OVIVA — Li HK et al., N Engl J Med, 2019)* : apyrexie, CRP ↓ >50%, absence de signes de gravité, antibiogramme compatible, molécule orale appropriée
 - **Suivi clinique et biologique** : CRP et NFS hebdomadaires, bilan hépatique et rénal à J14, J30, J45, J90
 
 **Médias** :
@@ -360,6 +360,17 @@
 4. La cinétique d'élution comporte un burst release initial puis une phase de décroissance — attention au risque de sous-dosage tardif
 5. Les spacers articulés (genou) maintiennent l'espace articulaire ; les spacers statiques offrent plus de stabilité
 6. L'antibiothérapie locale est complémentaire et NE REMPLACE JAMAIS l'antibiothérapie systémique
+
+---
+
+## Références
+
+- Bernard L, Dinh A, Ghout I, et al. Antibiotic treatment for 6 weeks versus 12 weeks in patients with pyogenic vertebral osteomyelitis: an open-label, non-inferiority, randomised, controlled trial (DATISPO). *Lancet*. 2015;385(9971):875-882.
+- Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA). *N Engl J Med*. 2019;380(5):425-436.
+- Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. *Clin Infect Dis*. 2013;56(1):e1-e25.
+- Peltola H, Pääkkönen M. Acute osteomyelitis in children. *N Engl J Med*. 2014;370(4):352-360.
+- SPILF (Société de Pathologie Infectieuse de Langue Française). Recommandations de pratique clinique — Infections ostéo-articulaires sur matériel et de contiguïté. 2009.
+- Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections: a randomized controlled trial. *JAMA*. 1998;279(19):1537-1541.
 
 ---
 

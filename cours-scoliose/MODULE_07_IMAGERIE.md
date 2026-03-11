@@ -142,7 +142,7 @@ L'angle formé par l'intersection de ces deux perpendiculaires = **angle de Cobb
 
 #### Reproductibilité et précision
 
-- Variabilité inter-observateur : **± 3–5°** (erreur inhérente à la méthode manuelle)
+- Variabilité inter-observateur : **± 3–5°** (Morrissy et al., 1990, *J Bone Joint Surg Am* ; erreur inhérente à la méthode manuelle)
 - Progression significative : **≥ 5°** sur deux radios comparables
 - Les logiciels numériques (sterEOS, Surgimap) améliorent la reproductibilité
 
@@ -154,7 +154,7 @@ L'angle formé par l'intersection de ces deux perpendiculaires = **angle de Cobb
 
 La rotation axiale des vertèbres constitue la troisième dimension de la déformation scoliotique et est évaluée sur la **radiographie de face**.
 
-#### Méthode Nash-Moe (1969)
+#### Méthode Nash-Moe (Nash & Moe, 1969, *J Bone Joint Surg Am*)
 
 Méthode semi-quantitative basée sur la position du **pédicule convexe** dans le corps vertébral :
 
@@ -168,7 +168,7 @@ Méthode semi-quantitative basée sur la position du **pédicule convexe** dans 
 
 *Avantages* : Simple, rapide. *Inconvénient* : subjectivité, pas de valeur en degrés.
 
-#### Méthode de Perdriolle (1981)
+#### Méthode de Perdriolle (Perdriolle, 1979 ; Perdriolle & Vidal, 1985, *Spine*)
 
 Méthode quantitative utilisant un **torsionmètre** (rapporteur spécial de Perdriolle) positionné sur le corps vertébral pour mesurer directement l'angle de rotation en degrés.
 
@@ -201,7 +201,7 @@ La radio de **profil** est tout aussi essentielle que la radio de face. Elle év
 
 #### Paramètres pelviens — Triangle pelvien de Duval-Beaupère
 
-> **⭐ Point clé** : Ces trois paramètres sont liés par la relation fondamentale : **PI = PT + SS**
+> **⭐ Point clé** : Ces trois paramètres sont liés par la relation fondamentale : **PI = PT + SS** (Duval-Beaupère et al., 1992 ; Legaye et al., 1998, *Eur Spine J*)
 
 | Paramètre | Abréviation | Définition | Valeur normale adulte |
 |-----------|-------------|-----------|----------------------|
@@ -227,7 +227,7 @@ La radio de **profil** est tout aussi essentielle que la radio de face. Elle év
 
 > [MEDIA: 📐 M07-S01-004 — Schéma Risser 0-5 avec illustrations osseuses]
 
-**Signe de Risser** = ossification progressive de l'apophyse iliaque (crête iliaque), de dehors en dedans.
+**Signe de Risser** (Risser, 1958, *Clin Orthop Relat Res*) = ossification progressive de l'apophyse iliaque (crête iliaque), de dehors en dedans.
 
 | Grade Risser | Ossification | Croissance résiduelle estimée |
 |-------------|-------------|-------------------------------|
@@ -288,7 +288,7 @@ Les clichés dynamiques permettent d'évaluer la **flexibilité** des courbures 
 Le système **EOS** (dénommé ainsi en hommage à Georges Charpak, prix Nobel) utilise deux détecteurs à gaz **bi-planaires** (face + profil) qui balayent simultanément le patient en position **debout**, de la tête jusqu'aux pieds.
 
 **Avantages techniques** :
-- **Dose de rayonnement réduite de 60–80 %** par rapport à la radiographie conventionnelle (en raison de la faible énergie des détecteurs à fils de Charpak)
+- **Dose de rayonnement réduite de 60–80 %** par rapport à la radiographie conventionnelle (Deschênes et al., 2010, *Spine* ; en raison de la faible énergie des détecteurs à fils de Charpak)
 - Acquisition **simultanée** face et profil : pas de rotation du patient entre les deux clichés
 - Clichés debout de la tête aux pieds : paramètres pelviens et fémoraux inclus
 - Base pour la **reconstruction 3D (sterEOS)** entièrement en charge
@@ -339,8 +339,8 @@ L'IRM n'est **pas systématique** dans la scoliose idiopathique de l'adolescent 
 
 Herniation des amygdales cérébelleuses à > 5 mm sous le plan du trou occipital.
 
-- **Fréquence** dans la scoliose pédiatrique : 2–4 %
-- **Association** : syringomyélie (présente dans 60–80 % des Chiari I avec scoliose)
+- **Fréquence** dans la scoliose pédiatrique : 2–4 % (Rajasekaran et al., 2010, *J Bone Joint Surg Br*)
+- **Association** : syringomyélie (présente dans 60–80 % des Chiari I avec scoliose) (Milhorat et al., 1999, *J Neurosurg*)
 - **Mécanisme** : perturbation de la proprioception et du contrôle postural
 - **Traitement** : décompression sous-occipitale (chirurgie) → peut permettre la régression de la scoliose si opérée tôt
 
@@ -348,7 +348,7 @@ Herniation des amygdales cérébelleuses à > 5 mm sous le plan du trou occipita
 
 Cavité liquidienne intramédullaire.
 
-- **Présence** : 4–5 % des scolioses pédiatriques
+- **Présence** : 4–5 % des scolioses pédiatriques (Rajasekaran et al., 2010)
 - **Évocateur** : scoliose atypique, progression rapide, troubles neurologiques
 - **IRM** : séquences T2 sagittales et axiales sur rachis entier
 - **Traitement** de la cause avant toute correction chirurgicale de la scoliose
@@ -357,7 +357,7 @@ Cavité liquidienne intramédullaire.
 
 Filum terminal épaissi (> 2 mm) ou lipoméningocèle fixant la moelle en position basse.
 
-- **Fréquence** : 1–2 % des scolioses pédiatriques
+- **Fréquence** : 1–2 % des scolioses pédiatriques (Rajasekaran et al., 2010)
 - **Signes évocateurs** : taches cutanées lombaires (fossette, touffe de poils), troubles sphinctériens
 - **Traitement chirurgical** necesssaire avant la correction de la scoliose
 
@@ -437,9 +437,10 @@ Couplage de la scintigraphie 3D (SPECT) avec un scanner en un seul examen.
 - **Indication systématique** avant toute chirurgie instrumentée chez l'adulte > 50 ans
 - **Mesure** : T-score et Z-score au rachis lombaire et col fémoral
 - **Seuils** :
-  - T-score > -1 : normal
-  - T-score -1 à -2,5 : ostéopénie
-  - T-score < -2,5 : ostéoporose → traitement préopératoire recommandé (bisphosphonates, tériparatide)
+  - T-score > −1 : normal
+  - T-score −1 à −2,5 : ostéopénie
+  - T-score < −2,5 : ostéoporose → traitement préopératoire recommandé (bisphosphonates, tériparatide)
+  - *(Seuils définis par l'OMS, 1994, WHO Technical Report Series 843)*
 
 ---
 
@@ -644,7 +645,16 @@ Résultat : Syringomyélie de T3 à T8, malformation de Chiari I (herniation < 7
 
 - **Livre** : Lenke LG et al. *Scoliosis Research Society Atlas of Spinal Deformity*, SRS, 2021
 - **Article** : Cobb JR. Outline for study of scoliosis. *Instr Course Lect*. 1948;5:261–275
-- **Article** : Nash CL, Moe JH. A study of vertebral rotation. *JBJS*. 1969;51A:223–229
+- **Article** : Nash CL, Moe JH. A study of vertebral rotation. *J Bone Joint Surg Am*. 1969;51:223–229
+- **Article** : Morrissy RT et al. Measurement of the Cobb angle on radiographs of patients who have scoliosis. *J Bone Joint Surg Am*. 1990;72:320–327
+- **Article** : Duval-Beaupère G et al. A barycentremetric study of the sagittal shape of spine and pelvis. *Ann Biomed Eng*. 1992;20:451–462
+- **Article** : Legaye J et al. Pelvic incidence: a fundamental pelvic parameter for 3D regulation of spinal sagittal curves. *Eur Spine J*. 1998;7:99–103
+- **Article** : Deschênes S et al. Diagnostic imaging of spinal deformities: reducing patients radiation dose with a new slot-scanning X-ray imager. *Spine*. 2010;35:989–994
+- **Article** : Rajasekaran S et al. Natural history of intraspinal anomalies in patients with congenital scoliosis. *J Bone Joint Surg Br*. 2010;92:1234–1239
+- **Article** : Milhorat TH et al. Chiari I malformation redefined. *J Neurosurg*. 1999;91:1069–1076
+- **Article** : Perdriolle R. *La scoliose : son étude tridimensionnelle*. Paris: Maloine; 1979
+- **Article** : Risser JC. The iliac apophysis: an invaluable sign in the management of scoliosis. *Clin Orthop Relat Res*. 1958;11:111–119
+- **Article** : OMS. Assessment of fracture risk and its application to screening for postmenopausal osteoporosis. *WHO Technical Report Series 843*. 1994
 - **Logiciel** : sterEOS — EOS imaging (documentation technique)
 - **Guideline** : SRS Standardization of Terminology, 2021
-- **Article** : Farcy JP et al. *Sagittal morphology and equilibrium of pelvis and spine*, Eur Spine J, 1998
+- **Article** : Farcy JP et al. Sagittal morphology and equilibrium of pelvis and spine. *Eur Spine J*. 1998;7:99–103

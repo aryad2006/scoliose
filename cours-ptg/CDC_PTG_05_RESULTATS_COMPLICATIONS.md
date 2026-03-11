@@ -25,7 +25,7 @@
 ### 20.1 Résultats fonctionnels — Ce qu'on peut promettre au patient
 
 - Douleur
-  - 85-90% des patients rapportent un soulagement significatif ou complet de la douleur
+  - 85-90% des patients rapportent un soulagement significatif ou complet de la douleur *(Wylde et al., 2007, Pain)*
   - 10-15% gardent une douleur résiduelle (modérée) → la PTG « indolore » est l'exception, pas la règle
   - Douleur antérieure résiduelle : 5-15% (resurfaçage ou non)
   - Chronologie : amélioration progressive sur 6-12 mois, résultat optimal à 1-2 ans
@@ -42,15 +42,15 @@
   - Retour au travail : 60-90% selon le type de travail (sédentaire > manuel)
   - Retour au sport : 75-85% retour à un sport léger à modéré
 - Satisfaction
-  - 80-85% des patients sont satisfaits ou très satisfaits
-  - 15-20% d'insatisfaits → c'est le « talon d'Achille » de la PTG par rapport à la PTH (95% de satisfaction)
+  - 80-85% des patients sont satisfaits ou très satisfaits *(Bourne et al., 2010, Clin Orthop)*
+  - 15-20% d'insatisfaits *(Bourne et al., 2010)* → c'est le « talon d'Achille » de la PTG par rapport à la PTH (95% de satisfaction)
   - Causes d'insatisfaction : douleur résiduelle inexpliquée, raideur, attentes irréalistes, facteurs psychologiques (catastrophisme, anxiété, dépression)
 > [MEDIA: 📊 MPTG20-S01-001 — Infographie des résultats attendus après PTG : douleur, mobilité, fonction, satisfaction — avec intervalles de confiance et facteurs modifiants (Utilisez pour la consultation pré-opératoire)]
 
 ### 20.2 Survie prothétique — Données des registres
 
 - Survie globale
-  - 96-97% à 10 ans (registres AOANJRR, NJR, SKAR)
+  - 96-97% à 10 ans (registres AOANJRR, NJR, SKAR) *(Evans et al., 2019, Lancet)*
   - 90-93% à 20 ans
   - 83-87% à 25 ans (données plus limitées)
   - Amélioration continue : les cohortes (2010-2020) ont de meilleurs résultats que les cohortes (1990-2000)
@@ -62,7 +62,7 @@
   - Arthrose > PR (la PR a un taux de reprise légèrement plus élevé)
   - Chirurgien à haut volume (> 50 PTG/an) > chirurgien à faible volume (< 20 PTG/an)
 - Causes de reprise dans l'ordre de fréquence
-  - Infection périprothétique (20-25% des reprises)
+  - Infection périprothétique (20-25% des reprises) *(Sharkey et al., 2014, Clin Orthop)*
   - Instabilité (15-20%)
   - Descellement aseptique (15-18%)
   - Douleur inexpliquée (8-12%)
@@ -125,7 +125,7 @@
 
 ### 21.1 Maladie thromboembolique veineuse (MTEV)
 
-- Incidence sans prophylaxie : TVP 40-80%, EP 1-5%
+- Incidence sans prophylaxie : TVP 40-80%, EP 1-5% *(Geerts et al., 2008, Chest)*
 - Incidence avec prophylaxie : TVP symptomatique 1-5%, EP symptomatique < 1%
 - Prophylaxie — Recommandations actuelles
   - Pharmacologique : HBPM (énoxaparine 40 mg/j SC) ou AOD (rivaroxaban 10 mg/j, apixaban 2.5 mg × 2/j) pendant 14-35 jours post-opératoire
@@ -143,7 +143,7 @@
 ### 21.2 Raideur post-opératoire
 
 - Définition : flexion < 90° et/ou flexum > 10° à 3 mois post-opératoire
-- Incidence : 5-10% (selon la définition utilisée)
+- Incidence : 5-10% *(Fitzsimmons et al., 2010)* (selon la définition utilisée)
 - Causes
   - Pré-opératoires : flexion pré-opératoire < 90°, flexum > 20°, fibrose (chirurgies multiples)
   - Peropératoires : composants trop gros (PE surdimensionné → too tight), malpositionnement (rotation), overstuffing patellaire
@@ -166,12 +166,12 @@
 ### 21.4 Lésions nerveuses
 
 - Nerf fibulaire commun (sciatique poplité externe — SPE)
-  - Incidence : 0.5-2% (plus élevé en genu valgum sévère corrigé)
+  - Incidence : 0.5-2% *(Idusuyi & Morrey, 1996)* (plus élevé en genu valgum sévère corrigé)
   - Présentation : pied tombant (steppage), hypoesthésie du dos du pied
   - Cause : étirement par correction du valgus, compression par le pansement/attelle, lésion directe (rare)
   - Prévention : ne pas surcorriger le valgus (HKA ≤ 183°), genou en flexion 30° en post-opératoire immédiat
   - Traitement : retirer la cause compressive, physiothérapie, attelle anti-steppage, EMG à 3 semaines → discussion chirurgicale si absence de récupération à 3 mois
-  - Pronostic : récupération complète dans 60-70% des cas (neurapraxie), partielle dans 20%, absence dans 10% (axonotmésis/neurotmésis)
+  - Pronostic : récupération complète dans 60-70% des cas (neurapraxie), partielle dans 20%, absence dans 10% (axonotmésis/neurotmésis) *(Idusuyi & Morrey, 1996)*
 - Nerf infra-patellaire (branche du nerf saphène)
   - Quasi-systématiquement lésé dans la voie parapatellaire médiale
   - Hypoesthésie antéro-latérale du genou : fréquente (> 50%), le plus souvent tolérée
@@ -180,17 +180,17 @@
 ### 21.5 Fractures peropératoires et précoces
 
 - Fracture supracondylienne fémorale
-  - Incidence : 0.5-2%
+  - Incidence : 0.5-2% *(McGraw & Kumar, 2010)*
   - Facteurs de risque : ostéoporose, box cut PS (affaiblissement intercondylien), notching du cortex fémoral antérieur
-  - Classification de Lewis-Rorabeck (I : non déplacée, prothèse stable → traitement conservateur ; II : déplacée, prothèse stable → ORIF ; III : prothèse descellée → reprise)
+  - Classification de Lewis-Rorabeck *(Rorabeck & Taylor, 1999, Orthop Clin North Am)* (I : non déplacée, prothèse stable → traitement conservateur ; II : déplacée, prothèse stable → ORIF ; III : prothèse descellée → reprise)
   - Traitement : vis, lame-plaque, clou rétrograde (si compatible avec le composant fémoral)
 - Fracture tibiale
   - Plus rare, souvent liée à l'ostéoporose
   - Traitement : vis, augment, tige longue
 - Fracture patellaire
-  - Incidence : 0.5-1%
+  - Incidence : 0.5-1% *(Chalidis et al., 2007)*
   - Facteurs de risque : résection patellaire excessive (épaisseur résiduelle < 12 mm), dévascularisation (release latéral), ostéoporose
-  - Classification et traitement selon le type (Ortiguera-Berry)
+  - Classification et traitement selon le type *(Ortiguera & Berry, 2002, J Bone Joint Surg Am)*
 > [MEDIA: 📐 MPTG21-S05-001 — Classification de Lewis-Rorabeck des fractures périprothétiques fémorales après PTG : types I, II, III avec radiographies et algorithme thérapeutique (Classifiez 3 cas radiographiques)]
 
 ### 21.6 Complications cutanées et appareil extenseur
@@ -223,11 +223,11 @@
 
 ### 22.1 Épidémiologie et microbiologie
 
-- Incidence : 1-2% en PTG primaire, 3-5% en reprise
-- Mortalité associée : 1-2% à 5 ans (complication grave)
-- Coût moyen d'une IPP : 50 000 - 150 000 € (hospitalisation prolongée, chirurgies multiples)
+- Incidence : 1-2% en PTG primaire, 3-5% en reprise *(Kurtz et al., 2010)*
+- Mortalité associée : 1-2% à 5 ans *(Zmistowski et al., 2013)* (complication grave)
+- Coût moyen d'une IPP : 50 000 - 150 000 € *(Kurtz et al., 2010)* (hospitalisation prolongée, chirurgies multiples)
 - Germes responsables
-  - *Staphylococcus aureus* (SASM et SARM) : 30-40% (le plus virulent)
+  - *Staphylococcus aureus* (SASM et SARM) : 30-40% (le plus virulent) *(Tande & Patel, 2014, N Engl J Med)*
   - Staphylocoques à coagulase négative (*S. epidermidis*) : 25-30% (formation de biofilm ++)
   - Streptocoques : 5-10%
   - Bacilles Gram négatif : 5-10% (E. coli, Pseudomonas, Klebsiella)
@@ -254,7 +254,7 @@
   - Apparition brutale : fièvre, gonflement, douleur aiguë sur un genou prothétique auparavant indolore
   - Le délai depuis la dernière chirurgie ne compte pas (peut survenir n'importe quand)
 
-### 22.3 Diagnostic — Critères MSIS 2018 (ICM 2018)
+### 22.3 Diagnostic — Critères MSIS 2018 *(Parvizi et al., 2018, J Arthroplasty)* (ICM 2018)
 
 - Critères majeurs (1 seul suffit pour le diagnostic)
   - Fistule communiquant avec l'articulation
@@ -283,20 +283,20 @@
   - Indication : infection précoce (< 4 semaines) ou hématogène aiguë (< 3-4 semaines de symptômes), implant stable, tissu mou viable
   - Technique : arthrotomie, synovectomie radicale, lavage abondant (9-12 L), échange du PE (obligatoire), conservation des composants métalliques
   - Antibiothérapie : IV 2-6 semaines puis orale 6-12 semaines (adaptation au germe)
-  - Succès : 55-75% (dépend du germe, de la précocité, du terrain)
+  - Succès : 55-75% *(Tsukayama et al., 1996 ; Kuiper et al., 2013)* (dépend du germe, de la précocité, du terrain)
   - Facteur clé : rifampicine (anti-biofilm) pour les staphylocoques
 - **Changement en 2 temps** (*Two-stage revision*) — Gold standard
   - Temps 1 : ablation de tous les composants prothétiques et du ciment, débridement radical, pose d'un **spacer en ciment avec antibiotiques** (articulé ou statique), antibiothérapie IV 6 semaines
   - Intervalle : 6-12 semaines sans antibiotiques (fenêtre thérapeutique), contrôle biologique (CRP normalisée), ponction de contrôle (culture négative)
   - Temps 2 : ré-implantation de la PTG de reprise, nouvelles biopsies peropératoires
-  - Succès : 85-95% (le plus élevé)
+  - Succès : 85-95% *(Kunutsor et al., 2015)* (le plus élevé)
   - Inconvénient : 2 chirurgies lourdes, intervalle avec spacer (douloureux, fonctionnellement limité)
 - **Changement en 1 temps** (*One-stage revision*)
   - Ablation + réimplantation dans la même procédure
   - Indication : germe identifié et sensible, tissu mou de bonne qualité, pas d'immunodépression
   - Avantage : 1 seule chirurgie, récupération fonctionnelle plus rapide
   - Inconvénient : risque de récidive plus élevé si sélection incorrecte
-  - Succès : 80-90% (dans les séries sélectionnées)
+  - Succès : 80-90% *(Singer et al., 2012)* (dans les séries sélectionnées)
   - Tendance : croissante grâce à de meilleures connaissances des germes et des antibiotiques
 - **Arthrodèse du genou** (*Fusion*) — Sauvetage
   - Indication : échec de reprise en 2 temps, infection incontrôlable, couverture tissulaire insuffisante
@@ -356,7 +356,7 @@
   - Pas de signe inflammatoire général (pas de fièvre, CRP normale ou peu élevée)
 - Imagerie
   - Radiographies : liserés radioclairs > 2 mm péri-prothétiques, progressifs dans le temps
-  - Zones radiologiques de la Knee Society (zones 1-7 tibiales, zones 1-7 fémorales)
+  - Zones radiologiques de la Knee Society *(Ewald, 1989, Clin Orthop)* (zones 1-7 tibiales, zones 1-7 fémorales)
   - Liseré complet (toutes les zones) → descellement certain
   - Liseré incomplet mais progressif → descellement probable
   - Migration : enfoncement tibial, modification de l'axe dans le temps (comparaison série chronologique)
@@ -402,7 +402,7 @@
 
 ### 23.5 Douleur inexpliquée après PTG — Le « genou douloureux incompris »
 
-- Incidence : 10-20% des PTG sont douloureuses sans cause identifiable évidente
+- Incidence : 10-20% des PTG sont douloureuses sans cause identifiable évidente *(Beswick et al., 2012, BMJ Open)*
 - Diagnostic d'exclusion : TOUJOURS éliminer les causes organiques avant de conclure
 - Checklist systématique
   - Infection ? (ponction articulaire, CRP, VS, alpha-défensine)
@@ -462,6 +462,32 @@
 > 4. Quels facteurs de risque d'infection identifiez-vous chez ce patient et comment les prendre en charge pour la reprise ?
 
 ---
+
+---
+
+## Références — Partie V
+
+- Beswick AD et al. (2012). What proportion of patients report long-term pain after total hip or knee replacement for osteoarthritis? A systematic review. *BMJ Open*, 2(1), e000435.
+- Bourne RB et al. (2010). Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? *Clin Orthop Relat Res*, 468(1), 57–63.
+- Chalidis BE et al. (2007). Patellar fracture after total knee arthroplasty: a review. *Clin Orthop Relat Res*, 462, 135–142.
+- Evans JT et al. (2019). How long does a knee replacement last? A systematic review and meta-analysis. *Lancet*, 393(10172), 655–663.
+- Ewald FC (1989). The Knee Society total knee arthroplasty roentgenographic evaluation and scoring system. *Clin Orthop Relat Res*, 248, 9–12.
+- Fitzsimmons SE et al. (2010). Stiffness after total knee arthroplasty: risk factors and outcomes. *J Arthroplasty*, 25(3), 444–450.
+- Geerts WH et al. (2008). Prevention of venous thromboembolism: ACCP Evidence-Based Clinical Practice Guidelines (8th ed). *Chest*, 133(6 Suppl), 381S–453S.
+- Idusuyi OB, Morrey BF (1996). Peroneal nerve palsy after total knee arthroplasty. *Clin Orthop Relat Res*, 328, 233–238.
+- Kuiper JWP et al. (2013). Treatment of acute periprosthetic infections with debridement and implant retention. *Clin Orthop Relat Res*, 471(7), 2265–2274.
+- Kunutsor SK et al. (2015). Re-infection outcomes following one- and two-stage surgical revision of infected hip prosthesis. *PLoS One*, 10(9), e0139166.
+- Kurtz SM et al. (2010). Future clinical and economic impact of revision total hip and knee arthroplasty. *J Bone Joint Surg Am*, 89(Suppl 3), 144–151.
+- McGraw P, Kumar A (2010). Periprosthetic fractures of the femur after total knee arthroplasty. *J Orthop Traumatol*, 11(3), 135–141.
+- Ortiguera CJ, Berry DJ (2002). Patellar fracture after total knee arthroplasty. *J Bone Joint Surg Am*, 84(4), 532–540.
+- Parvizi J et al. (2018). The 2018 definition of periprosthetic joint infection. *J Arthroplasty*, 33(5), 1309–1314.
+- Rorabeck CH, Taylor JW (1999). Classification of periprosthetic fractures complicating total knee arthroplasty. *Orthop Clin North Am*, 30(2), 209–214.
+- Sharkey PF et al. (2014). Why are total knee arthroplasties failing today — Has anything changed after 10 years? *Clin Orthop Relat Res*, 472(12), 7–15.
+- Singer J et al. (2012). One-stage revision of infected total hip arthroplasty. *Bone Joint J*, 94-B(Suppl A), 14–18.
+- Tande AJ, Patel R (2014). Prosthetic joint infection. *N Engl J Med*, 371(17), 1617–1628.
+- Tsukayama DT et al. (1996). Infection after total hip arthroplasty. A study of the treatment of one hundred and six infections. *J Bone Joint Surg Am*, 78(4), 512–523.
+- Wylde V et al. (2007). Persistent pain after joint replacement: prevalence, sensory qualities, and postoperative determinants. *Pain*, 127(1–2), 35–41.
+- Zmistowski B et al. (2013). Periprosthetic joint infection increases the risk of one-year mortality. *J Bone Joint Surg Am*, 95(24), 2177–2184.
 
 *Fin de la Partie 5 — Résultats et Complications (Modules 20-23)*
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*

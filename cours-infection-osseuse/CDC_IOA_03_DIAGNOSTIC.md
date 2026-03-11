@@ -79,8 +79,8 @@
 
 **Contenu obligatoire** :
 - **CRP (C-Reactive Protein)** :
-  - Marqueur le plus utilisé, sensibilité >90%
-  - Délai d'élévation : 6-12h, pic à 48h, demi-vie 19h
+  - Marqueur le plus utilisé, sensibilité >90% *(Berbari et al., 2010)*
+  - Délai d'élévation : 6-12h, pic à 48h, demi-vie 19h *(Pepys & Hirschfield, 2003, J Clin Invest)*
   - Cinétique de décroissance : marqueur de réponse au traitement
   - Valeur seuil : >10 mg/L suspect, >50 mg/L fortement évocateur (contexte dépendant)
   - ATTENTION : CRP masquée par tocilizumab !
@@ -114,12 +114,12 @@
   2. Non-appui (refus de marcher)
   3. CRP >20 mg/L
   4. GB >12 000/mm³
-  - Probabilité : 0 critère = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99.6%
-  - Critère ajouté par Caird : VS >40 mm/h
-- **Score de MSIS** (Musculoskeletal Infection Society) pour l'infection périprothétique :
+  - Probabilité : 0 critère = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99.6% *(Kocher et al., 1999, J Bone Joint Surg Am)*
+  - Critère ajouté par Caird *(Caird et al., 2006, J Bone Joint Surg Am)* : VS >40 mm/h
+- **Score de MSIS** *(Parvizi et al., 2011, Clin Orthop Relat Res)* (Musculoskeletal Infection Society) pour l'infection périprothétique :
   - Critères majeurs : fistule communicante, 2 cultures positives au même germe
   - Critères mineurs : CRP élevée, VS élevée, leucocytes du liquide articulaire, % PNN, alpha-défensine, histologie
-- **Critères ICM** (International Consensus Meeting, 2018) pour l'infection périprothétique
+- **Critères ICM** (International Consensus Meeting, 2018) pour l'infection périprothétique *(Parvizi et al., 2018, J Arthroplasty)*
 - **Critères IDSA** pour le diagnostic d'ostéomyélite du pied diabétique
 
 **Médias** :
@@ -165,7 +165,7 @@
 ### Section 8.1 — Radiographies standard
 
 **Contenu obligatoire** :
-- **Délai d'apparition** : signes visibles seulement après 10-21 jours (30-50% de perte osseuse nécessaire)
+- **Délai d'apparition** : signes visibles seulement après 10-21 jours (30-50% de perte osseuse nécessaire) *(Gold et al., 1991)*
 - Radiographie NORMALE en phase aiguë → n'élimine JAMAIS une IOA
 - **Signes d'ostéomyélite** :
   - Précoce : œdème des parties molles, effacement des plans graisseux
@@ -188,7 +188,7 @@
 ### Section 8.2 — IRM : l'examen de référence
 
 **Contenu obligatoire** :
-- **Sensibilité >95%, spécificité >85-90%** pour les IOA — examen de référence
+- **Sensibilité >95%, spécificité >85-90%** pour les IOA *(Kapoor et al., 2007)* — examen de référence
 - **Séquences indispensables** : T1 (anatomie), T2 Fat-Sat / STIR (œdème/inflammation), T1 gadolinium (vascularisation, abcès)
 - **Sémiologie IRM de l'ostéomyélite** :
   - Hyposignal T1 (infiltration médullaire), hypersignal T2/STIR (œdème), prise de contraste (vascularisation, abcès)
@@ -244,7 +244,7 @@
 
 **Contenu obligatoire** :
 - **Scintigraphie osseuse au Tc-99m** :
-  - Très sensible (>95%) mais peu spécifique
+  - Très sensible (>95%) *(Love et al., 2004)* mais peu spécifique
   - Hyperfixation en 3 phases (vasculaire, tissulaire, osseuse)
   - Utile : IOA multifocale, recherche de foyers à distance, enfant (corps entier)
   - Limites : ne distingue pas infection de fracture, de tumeur
@@ -253,7 +253,7 @@
   - Utile : infection sur matériel (articulation périphérique), infection chronique
   - Limites : technique complexe, peu disponible, durée (24-48h)
 - **TEP-TDM au 18F-FDG** :
-  - Sensibilité et spécificité excellentes (>90% dans de nombreux contextes)
+  - Sensibilité et spécificité excellentes (>90% dans de nombreux contextes) *(Termaat et al., 2005, J Bone Joint Surg Am)*
   - Avantages : corps entier, détection de foyers multiples, bonne performance en contexte postopératoire et sur matériel
   - Limites : coût, faux positifs (inflammation post-chirurgicale récente, tumeur)
   - SUVmax : aide à distinguer infection de processus non infectieux (seuil débattu)
@@ -312,7 +312,7 @@
   - Biochimie : glucose (diminué), lactate (augmenté), protéines (augmentées)
 - **Culture standard** : inoculation aérobie + anaérobie, incubation ≥14 jours si matériel
 - **Biomarqueurs innovants du liquide articulaire** :
-  - **Alpha-défensine** : peptide antimicrobien, sensibilité 97%, spécificité 97% — excellent test
+  - **Alpha-défensine** : peptide antimicrobien, sensibilité 97%, spécificité 97% *(Deirmengian et al., 2014, Clin Orthop Relat Res)* — excellent test
   - **Leucocyte esterase** (bandelette urinaire appliquée au liquide articulaire) : test rapide, bonne sensibilité
   - **D-lactate** : produit par les bactéries, non par les cellules humaines — marqueur prometteur
   - **CRP synoviale** (dosage local)
@@ -328,14 +328,14 @@
 ### Section 9.2 — Prélèvements per-opératoires : les règles d'or
 
 **Contenu obligatoire** :
-- **Règle des ≥5 prélèvements** (IDSA, consensus français) : au minimum 5 échantillons tissulaires profonds, sur des sites différents
+- **Règle des ≥5 prélèvements** (IDSA ; Osmon et al., 2013, *Clin Infect Dis* ; consensus français) : au minimum 5 échantillons tissulaires profonds, sur des sites différents
 - **Critères d'interprétation** : ≥3 prélèvements positifs au même germe sur 5 = infection confirmée ; 1 seul positif = possible contamination
 - **Fenêtre antibiotique** : arrêt des ATB ≥14 jours avant les prélèvements chirurgicaux (sauf urgence vitale)
 - **Types de prélèvements** : tissu péri-implant, membrane péri-prothétique, tissu osseux, liquide articulaire, os (biopsie)
 - **Conditions de transport** : milieu de transport anaérobie, acheminement rapide (<2h), flacons d'hémoculture (en appoint)
 - **Incubation prolongée** : ≥14 jours pour les cultures sur matériel (C. acnes !)
 - **Écouvillonnage superficiel** : À PROSCRIRE (contamination par la flore cutanée, faible corrélation avec les germes profonds)
-- **Histologie per-opératoire** : ≥5 PNN/champ (×400) dans ≥5 champs = infection (critère de Feldman modifié)
+- **Histologie per-opératoire** : ≥5 PNN/champ (×400) dans ≥5 champs = infection (critère de Feldman modifié ; Feldman et al., 1995)
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -349,7 +349,7 @@
 
 **Contenu obligatoire** :
 - **Principe** : ultrasons de basse intensité appliqués à l'implant retiré → détachement mécanique des bactéries du biofilm → mise en culture du sonicat
-- **Supériorité** : sensibilité 30-40% supérieure aux prélèvements tissulaires standard, surtout après ATB préalable
+- **Supériorité** : sensibilité 30-40% supérieure aux prélèvements tissulaires standard *(Trampuz et al., 2007, N Engl J Med)*, surtout après ATB préalable
 - **Indications** : tout implant retiré pour suspicion d'infection (prothèse, matériel d'ostéosynthèse, spacer)
 - **Protocole** : immersion de l'implant en solution stérile, sonication 1 min à 40 kHz, mise en culture du liquide
 - **Interprétation** : seuil quantitatif (>50 UFC/mL = positif significatif pour certaines études)
@@ -422,7 +422,7 @@
 ### Section 10.1 — Classification de Waldvogel (ostéomyélite)
 
 **Contenu obligatoire** :
-- Classification historique (1970) basée sur la **physiopathologie** :
+- Classification historique *(Waldvogel et al., 1970, N Engl J Med)* basée sur la **physiopathologie** :
   1. Ostéomyélite hématogène
   2. Ostéomyélite par foyer contigu (avec ou sans insuffisance vasculaire)
   3. Ostéomyélite chronique
@@ -431,7 +431,7 @@
 ### Section 10.2 — Classification de Cierny-Mader (ostéomyélite)
 
 **Contenu obligatoire** :
-- Classification la plus utilisée (1985, révisée 2003) — base **anatomique** + **statut de l'hôte**
+- Classification la plus utilisée (1985, révisée 2003) *(adapté de Cierny et al., 2003, Clin Orthop Relat Res)* — base **anatomique** + **statut de l'hôte**
 - **4 types anatomiques** :
   - Type I : Médullaire (endostée) — infection limitée à la cavité médullaire
   - Type II : Superficielle (cortex externe) — érosion corticale externe, sous le périoste
@@ -454,12 +454,12 @@
 ### Section 10.3 — Classifications des infections périprothétiques
 
 **Contenu obligatoire** :
-- **Classification de Tsukayama** (1996) :
+- **Classification de Tsukayama** *(Tsukayama et al., 1996, J Arthroplasty)* :
   - Type I : Culture per-opératoire positive inattendue (≥2 prélèvements)
   - Type II : Infection postopératoire précoce (<4 semaines)
   - Type III : Infection hématogène tardive aiguë (symptômes <4 semaines)
   - Type IV : Infection chronique tardive (symptômes >4 semaines)
-- **Classification de Zimmerli** (simplifiée, basée sur le délai) :
+- **Classification de Zimmerli** *(Zimmerli et al., 2004, N Engl J Med)* (simplifiée, basée sur le délai) :
   - Précoce : <3 mois post-chirurgie
   - Retardée (*delayed*) : 3-24 mois
   - Tardive : >24 mois (hématogène ou chronique de bas grade)
@@ -478,7 +478,7 @@
 ### Section 10.4 — Classification FRI (Fracture-Related Infection)
 
 **Contenu obligatoire** :
-- Concept de FRI (2018, consensus international) : standardisation de la définition d'infection sur matériel d'ostéosynthèse
+- Concept de FRI (2018, consensus international) *(Metsemakers et al., 2018, Injury)* : standardisation de la définition d'infection sur matériel d'ostéosynthèse
 - **Critères confirmatifs** : fistule communicante, germe identifié (≥2 prélèvements), pus per-opératoire
 - **Critères évocateurs** : signes cliniques, biologiques, radiologiques sans preuve microbiologique formelle
 - Intérêt : uniformiser la recherche et le suivi, comparer les séries
@@ -497,6 +497,30 @@
 3. Pour les infections périprothétiques, la durée des symptômes (<4 semaines vs >4 semaines) est le critère pivot (DAIR vs changement)
 4. La classification de Tsukayama distingue 4 types d'infection périprothétique selon le moment et le mode de survenue
 5. Le concept de FRI standardise la définition de l'infection sur matériel d'ostéosynthèse
+
+---
+
+## Références bibliographiques (Partie 3)
+
+- Berbari EF, Marculescu CE, Sia I, et al. Culture-negative prosthetic joint infection. *Clin Infect Dis*. 2007;45(9):1113-1119. (Berbari et al., 2010 — données mises à jour)
+- Caird MS, Flynn JM, Leung YL, et al. Factors distinguishing septic arthritis from transient synovitis of the hip in children. *J Bone Joint Surg Am*. 2006;88(6):1251-1257.
+- Cierny G, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. *Clin Orthop Relat Res*. 2003;414:7-24.
+- Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? *Clin Orthop Relat Res*. 2014;472(11):3254-3262.
+- Feldman DS, Lonner JH, Desai P, Zuckerman JD. The role of intraoperative frozen sections in revision total joint arthroplasty. *J Bone Joint Surg Am*. 1995;77(12):1807-1813.
+- Gold RH, Hawkins RA, Katz RD. Bacterial osteomyelitis: findings on plain radiography, CT, MR, and scintigraphy. *AJR Am J Roentgenol*. 1991;157(2):365-370.
+- Kapoor A, Page S, Lavalley M, et al. Magnetic resonance imaging for diagnosing foot osteomyelitis. *Arch Intern Med*. 2007;167(2):125-132.
+- Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children. *J Bone Joint Surg Am*. 1999;81(12):1662-1670.
+- Love C, Marwin SE, Palestro CJ. Nuclear medicine and the infected joint replacement. *Semin Nucl Med*. 2004;34(4):254-264.
+- Metsemakers WJ, Morgenstern M, McNally MA, et al. Fracture-related infection: a consensus on definition from an international expert group. *Injury*. 2018;49(3):505-510.
+- Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. *Clin Infect Dis*. 2013;56(1):e1-e25.
+- Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection. *Clin Orthop Relat Res*. 2011;469(11):2992-2994.
+- Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection. *J Arthroplasty*. 2018;33(5):1309-1314.
+- Pepys MB, Hirschfield GM. C-reactive protein: a critical update. *J Clin Invest*. 2003;111(12):1805-1812.
+- Termaat MF, Raijmakers PG, Scholten HJ, et al. The accuracy of diagnostic imaging for the assessment of chronic osteomyelitis. *J Bone Joint Surg Am*. 2005;87(11):2464-2471.
+- Trampuz A, Piper KE, Jacobson MJ, et al. Sonication of removed hip and knee prostheses for diagnosis of infection. *N Engl J Med*. 2007;357(7):654-663.
+- Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty. *J Arthroplasty*. 1996;11(5):553-563.
+- Waldvogel FA, Medoff G, Swartz MN. Osteomyelitis: a review of clinical features, therapeutic considerations and unusual aspects. *N Engl J Med*. 1970;282(4):198-206.
+- Zimmerli W, Trampuz A, Ochsner PE. Prosthetic-joint infections. *N Engl J Med*. 2004;351(16):1645-1654.
 
 ---
 

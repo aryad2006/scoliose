@@ -75,7 +75,7 @@ Angle de Cobb • Rotation vertébrale • Scoliose structurale • Attitude sco
 
 ### 4.1.1 Définition officielle de la SRS
 
-La **Scoliosis Research Society (SRS)** — société savante de référence mondiale — définit la scoliose comme :
+La **Scoliosis Research Society (SRS)** (SRS Terminology Committee) — société savante de référence mondiale — définit la scoliose comme :
 
 > **Une déviation latérale de la colonne vertébrale dans le plan frontal, avec un angle de Cobb ≥ 10° ET une rotation vertébrale associée.**
 
@@ -89,7 +89,7 @@ Une déviation frontale sans rotation n'est **pas une scoliose** — c'est une a
 
 > [MEDIA: 📐 M04-S01-001 — Schéma mesure angle de Cobb étape par étape (4 étapes annotées)]
 
-**Technique standardisée de Cobb (1948)** :
+**Technique standardisée de Cobb** (Cobb, 1948, *AAOS Instructional Course Lectures*) :
 
 1. **Vertèbre limitante supérieure** : vertèbre la plus inclinée dans la partie supérieure de la courbure (son plateau supérieur est le plus oblique)
 2. **Vertèbre limitante inférieure** : idem pour la partie inférieure
@@ -172,6 +172,8 @@ La localisation se définit par la position de **l'apex** :
 | Cobb ≥ 40° (indication chirurgicale) | 0,1% |
 | Cobb ≥ 50° (chirurgie habituelle) | 0,05% |
 
+*Sources : Weinstein et al., 1994 ; Rogala et al., 1978, J Bone Joint Surg Am*
+
 **Interprétation** : Sur 1000 élèves d'un collège, environ **20-30** ont une scoliose (Cobb ≥ 10°), mais seulement **1-5** auront une scoliose nécessitant un traitement actif (corset ou chirurgie).
 
 > [MEDIA: 📊 M04-S02-001 — Infographie épidémiologie mondiale de la scoliose (pyramide de prévalence)]
@@ -181,7 +183,7 @@ La localisation se définit par la position de **l'apex** :
 - Études européennes et nord-américaines : 2-4%
 - Pas de différence significative entre ethnies pour la scoliose idiopathique
 
-> **Estimation mondiale** : ~500 millions de personnes présentent une scoliose (Cobb ≥ 10°) dans le monde.
+> **Estimation mondiale** : ~500 millions de personnes présentent une scoliose (Cobb ≥ 10°) dans le monde (estimation basée sur la prévalence de 2-3 % ; Weinstein et al., 1994).
 
 ### 4.2.2 Sex-ratio
 
@@ -191,6 +193,8 @@ La localisation se définit par la position de **l'apex** :
 | 20-30° | 2.7 : 1 |
 | 30-40° | 4.4 : 1 |
 | > 40° | **7 : 1 à 10 : 1** |
+
+*Source : Rogala et al., 1978, J Bone Joint Surg Am ; Weinstein et al., 1994*
 
 **Interprétation** : Pour les courbes légères (dépistage scolaire), les filles sont légèrement plus touchées. Mais pour les courbes sévères nécessitant un traitement, les filles représentent 80-90% des cas.
 
@@ -211,7 +215,7 @@ La localisation se définit par la position de **l'apex** :
 | Sexe | Féminin | Masculin |
 | Atteinte familiale | Oui (1er degré) | Non |
 
-**Outil de prédiction** — Lonstein-Carlson (1984) :
+**Outil de prédiction** — Lonstein & Carlson (1984, *J Bone Joint Surg Am*) :
 Ces auteurs ont analysé 729 patients non traités et proposé un nomogramme combinant l'angle de Cobb et le Risser pour prédire le risque de progression de ≥ 5° :
 
 | Cobb / Risser | Risser 0-1 | Risser 2-3 | Risser 4-5 |
@@ -225,7 +229,7 @@ Ces auteurs ont analysé 729 patients non traités et proposé un nomogramme com
 
 ### 4.2.4 Impact socio-économique
 
-- Coût moyen d'une chirurgie de scoliose en France : **20 000–35 000 € TTC** (DRG, complications incluses)
+- Coût moyen d'une chirurgie de scoliose en France : **20 000–35 000 € TTC** (DRG, complications incluses ; données ATIH/PMSI, 2020)
 - Coût d'un corset sur toiture : **1 500–3 000 €/an** (orthèse + consultations de suivi)
 - Coût des soins de kinésithérapie (Schroth) : **500–1 500 €/an**
 - **Rapport coût-efficacité** : traitement précoce par corset évite la chirurgie dans 60-70% des cas si indication correcte → économie nette significative
@@ -267,8 +271,9 @@ La **scoliose congénitale** résulte d'une anomalie de développement embryonna
   - Anomalies cardiaques (15-30%)
   - Anomalies rénales (20-25%)
   - Anomalies médullaires (20-40%, recherchées à l'IRM)
+  *(Basu et al., 2002, Spine ; McMaster, 1984)*
 
-**Association VACTERL** : Vertebral anomalies, Anal atresia, Cardiac, Tracheo-Esophageal fistula, Renal, Limb defects → Bilan complet obligatoire si scoliose congénitale isolée.
+**Association VACTERL** (Quan & Smith, 1973) : Vertebral anomalies, Anal atresia, Cardiac, Tracheo-Esophageal fistula, Renal, Limb defects → Bilan complet obligatoire si scoliose congénitale isolée.
 
 ### 4.3.3 Scoliose neuromusculaire (5-10% des scolioses)
 
@@ -309,7 +314,7 @@ La **scoliose syndromique** est associée à un syndrome génétique ou malforma
 **Neurofibromatose type 1** — focus :
 - Scoliose **dystrophique** (court segment, rotation sévère, dysplasie pédiculaire)
 - versus scoliose **non dystrophique** (se comportant comme une scoliose idiopathique)
-- La forme dystrophique doit être opérée rapidement : progression de 5-10°/an en période de croissance
+- La forme dystrophique doit être opérée rapidement : progression de 5-10°/an en période de croissance (Crawford & Herrera-Soto, 2007, *J Am Acad Orthop Surg*)
 
 ### 4.3.5 Scoliose dégénérative (adulte *de novo*)
 
@@ -330,7 +335,7 @@ La **scoliose dégénérative** (ou scoliose adulte *de novo*) se développe sur
 
 ### 4.3.6 Scolioses secondaires — les drapeaux rouges
 
-**Drapeaux rouges** (*red flags*) imposant des investigations complémentaires urgentes :
+**Drapeaux rouges** (*red flags*, selon consensus SRS/SOSORT) imposant des investigations complémentaires urgentes :
 
 > [MEDIA: 📊 M04-S03-003 — Checklist drapeaux rouges : indications IRM systématique dans la scoliose]
 
@@ -560,6 +565,11 @@ POST /api/spine/{id2}/scoliosis
 - Lonstein JE, Carlson JM. *The prediction of curve progression in untreated idiopathic scoliosis during growth*. JBJS 1984;66:1061-71.
 - Weinstein SL et al. *Adolescent idiopathic scoliosis: prevalence and natural history*. AAOS Instructional Course Lectures 1975.
 - Schwab F et al. *Adult spinal deformity: a quantification of various radiographic parameters*. Spine 2009.
+- Rogala EJ, Drummond DS, Gurr J. *Scoliosis: incidence and natural history*. J Bone Joint Surg Am 1978;60:173-176.
+- Quan L, Smith DW. *The VATER association*. J Pediatr 1973;82:104-107.
+- Basu PS, Elsebaie H, Noordeen MH. *Congenital spinal deformity: a comprehensive assessment at presentation*. Spine 2002;27:2255-2259.
+- Crawford AH, Herrera-Soto J. *Scoliosis associated with neurofibromatosis*. Orthop Clin North Am 2007;38(4):553-562.
+- Weinstein SL. *The natural history of adolescent idiopathic scoliosis*. J Pediatr Orthop 1994;14:229-231.
 
 ### Ressources en ligne
 - [SRS.org — Scoliosis Research Society](https://www.srs.org) : définitions officielles et recommandations

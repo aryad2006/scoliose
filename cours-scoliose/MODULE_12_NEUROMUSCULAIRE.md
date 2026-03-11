@@ -88,7 +88,7 @@ Scoliose neuromusculaire • Scoliose paralytique • Myopathie de Duchenne (DMD
 
 ### 12.2.1 Histoire naturelle
 
-- Prévalence des scolioses > 20° chez les DMD en stade non-ambulant : **80–90 %**
+- Prévalence des scolioses > 20° chez les DMD en stade non-ambulant : **80–90 %** (Shapiro & Specht, 1993)
 - Apparition typique : **12–16 ans**
 - Progression rapide : **5–15°/an** une fois débutée
 - **Corrélation inverse CVF/Cobb** : chaque 10° de Cobb = perte de ~8 % de CVF
@@ -139,7 +139,7 @@ La **corticothérapie** (prednisone 0,75 mg/kg/j, deflazacort 0,9 mg/kg/j) est l
 
 ### Particularités SMA
 
-- **SMA type II** (assis mais non-marchant) : scoliose chez **100 % des patients**
+- **SMA type II** (assis mais non-marchant) : scoliose chez **100 % des patients** (Russman, 2007)
 - **SMA type III** (marchant tardif) : scoliose chez 30–50 %
 - Progression rapide, courbures longues, thoracolombaires
 
@@ -160,7 +160,7 @@ Les **thérapies modifiant la maladie** (spinraza, risdiplam, thérapie génique
 
 ### 12.4.1 Épidémiologie
 
-| Grade GMFCS | Prévalence scoliose > 20° |
+| Grade GMFCS (Palisano et al., 1997, *Dev Med Child Neurol*) | Prévalence scoliose > 20° |
 |-------------|--------------------------|
 | I–II (marchant) | 5–15 % |
 | III (marche avec aide) | 20–40 % |
@@ -289,8 +289,11 @@ Les **thérapies modifiant la maladie** (spinraza, risdiplam, thérapie génique
 
 ## Ressources complémentaires
 
+- **Shapiro F, Specht L.** The diagnosis and orthopaedic treatment of childhood spinal muscular atrophy, peripheral neuropathy, Friedreich ataxia, and arthrogryposis. *J Bone Joint Surg Am*. 1993;75(11):1699–1714
+- **Palisano R, Rosenbaum P, Walter S et al.** Development and reliability of a system to classify gross motor function in children with cerebral palsy. *Dev Med Child Neurol*. 1997;39(4):214–223
+- **Russman BS.** Spinal muscular atrophy: clinical classification and disease heterogeneity. *J Child Neurol*. 2007;22(8):946–951
 - **Cervellati S et al.** DMD scoliosis. *Spine*. 2004
 - **Sedra F et al.** Scoliosis in NMD. Review. *JBJS*. 2018
 - **Galasko CS.** Neuromuscular scoliosis. *Spine*. 1999
-- **Birnkrant DJ et al.** DMD care guidelines. *Lancet Neurol*. 2018;17:251
+- **Birnkrant DJ et al.** DMD care considerations, part 2: respiratory, cardiac, bone health, and orthopaedic management. *Lancet Neurol*. 2018;17(4):347–361
 - **Mercuri E et al.** Risdiplam SMA. *NEJM*. 2021

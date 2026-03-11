@@ -101,7 +101,7 @@ Mais ces degrés de liberté sont **couplés et contraints** par la géométrie 
 
 **Définition** : deux mouvements sont couplés si un mouvement principal en entraîne un second de façon systématique et non évitable.
 
-**Règle de Lovett** (1907) : Au rachis thoracique et lombaire, **l'inclinaison latérale et la rotation axiale sont couplées**. La diretion du couplage varie selon le niveau et la posture :
+**Règle de Lovett** (Lovett, 1907, *Lateral Curvature of the Spine*) : Au rachis thoracique et lombaire, **l'inclinaison latérale et la rotation axiale sont couplées**. La diretion du couplage varie selon le niveau et la posture :
 - Rachis thoracique : inclinaison droite → rotation droite (couplage ipsilatéral)
 - Rachis lombaire en lordose : inclinaison droite → rotation gauche (couplage contralatéral)
 - Rachis lombaire en flexion : couplage inversé
@@ -117,7 +117,7 @@ Le segment fonctionnel de Junghans supporte les charges selon le modèle des **d
 **Pilier antérieur** (corps vertébraux + disques) :
 - Supporte **80%** des contraintes en compression axiale
 - La pression intradiscale en position debout est de **0,5-0,7 MPa** (L3-L4)
-- En flexion antérieure avec un objet de 20 kg : **jusqu'à 2,3 MPa** (Nachemson)
+- En flexion antérieure avec un objet de 20 kg : **jusqu'à 2,3 MPa** (Nachemson, 1966, *Clin Orthop*)
 
 **Pilier postérieur** (facettes + arcs postérieurs) :
 - Supporte **20%** des contraintes axiales
@@ -139,7 +139,7 @@ Le segment fonctionnel de Junghans supporte les charges selon le modèle des **d
 
 ### 3.1.4 Concept de zone neutre (Panjabi)
 
-Manohar Panjabi (1992) a décrit la **zone neutre** comme la portion de l'amplitude articulaire normale où les structures passives (disque, ligaments, capsules) exercent une résistance minimale au mouvement.
+Manohar Panjabi (1992, *J Spinal Disord*) a décrit la **zone neutre** comme la portion de l'amplitude articulaire normale où les structures passives (disque, ligaments, capsules) exercent une résistance minimale au mouvement.
 
 > [MEDIA: 📐 M03-S01-003 — Courbe couple-déplacement : zone neutre vs zone élastique]
 
@@ -186,7 +186,7 @@ Le **centre de gravité** du corps humain se projette **en avant** de L4-L5 chez
 
 ### 3.2.2 Cercle vicieux de Stokes — le modèle de Hueter-Volkmann dynamique
 
-Ian Stokes (1997, 2007) a modélisé l'auto-aggravation de la scoliose idiopathique :
+Ian Stokes (Stokes et al., 1996, *Spine*) a modélisé l'auto-aggravation de la scoliose idiopathique :
 
 > [MEDIA: 📊 M03-S02-001 — Diagramme complet cercle vicieux de Stokes avec flèches causales]
 
@@ -274,7 +274,7 @@ Par définition (Stagnara 1984), la scoliose est mieux appréciée dans son **pl
 
 ### 3.3.1 Principe de distraction — Harrington (1962)
 
-Paul Harrington a révolutionné la chirurgie en 1962 avec sa tige de distraction appliquée du côté **concave** de la courbe.
+Paul Harrington (Harrington, 1962, *J Bone Joint Surg Am*) a révolutionné la chirurgie avec sa tige de distraction appliquée du côté **concave** de la courbe.
 
 > [MEDIA: 📷 M03-S03-001 — Photo instrumentation Harrington (tige de distraction + tige de compression)]
 
@@ -355,7 +355,7 @@ L'introduction des **vis pédiculaires** (Roy-Camille 1963, Suk 1994 pour la sco
 
 ### 3.3.5 Zone stable et zone instable de Harrington
 
-**Zone stable** : zone délimitée par les lignes verticales passant par les bords latéraux du sacrum sur la radiographie de face.
+**Zone stable** (Harrington, 1962, *J Bone Joint Surg Am*) : zone délimitée par les lignes verticales passant par les bords latéraux du sacrum sur la radiographie de face.
 
 **Zone instable** : vertebre(s) dont les extrémités tombent en dehors de la zone stable.
 
@@ -382,9 +382,9 @@ L'introduction des **vis pédiculaires** (Roy-Camille 1963, Suk 1994 pour la sco
 
 #### Ère Harrington (1962-1984)
 
-- **Paul Harrington (1962)** : tige de distraction. Réduction du taux de pseudarthrose à 5-10%. Révolution mondiale.
+- **Paul Harrington (1962)** : tige de distraction. Réduction du taux de pseudarthrose à 5-10% (Harrington, 1962). Révolution mondiale.
 - Diffusion en Europe dans les années 1970.
-- **Complications** : syndrome de flatback, libération de crochets, neurologie (taux < 1% avec monitoring SSEP).
+- **Complications** : syndrome de flatback, libération de crochets, neurologie (taux < 1% avec monitoring SSEP ; Reames et al., 2011, *Spine*).
 
 #### Ère Luque (1976-1984)
 
@@ -633,6 +633,9 @@ POST /api/spine/{id}/correction
 - Panjabi MM. *The stabilizing system of the spine. Part I. Function, dysfunction, adaptation and enhancement*. J Spinal Disord 1992;5:383-9.
 - Cotrel Y, Dubousset J, Guillaumat M. *New universal instrumentation in spinal surgery*. Clin Orthop 1988;227:10-23.
 - Suk SI, Lee CK, Kim WJ et al. *Segmental pedicle screw fixation in the treatment of thoracic idiopathic scoliosis*. Spine 1995;20:1399-405.
+- Harrington PR. *Treatment of scoliosis: correction and internal fixation by spine instrumentation*. J Bone Joint Surg Am 1962;44:591-610.
+- Lovett RW. *Lateral Curvature of the Spine and Round Shoulders*. Philadelphia: P. Blakiston’s Son; 1907.
+- Reames DL, Smith JS, Fu KM, et al. *Complications in the surgical treatment of 19,360 cases of pediatric scoliosis*. Spine 2011;36(18):1484-1491.
 
 ### Pour aller plus loin
 - [MEDIA: 🎬 M03-RES-001 — Masterclass vidéo "Manœuvre de dérotation CD : step by step" (45 min)]

@@ -162,15 +162,15 @@ Cyphose thoracique normale (20–40°) • Hypercyphose • Cyphose de Scheuerma
 - Si très rigide (< 40 % de correction passive) → voie antérieure complémentaire (discectomies libératrices)
 
 **Résultats** :
-- Correction moyenne : 55–65 % du Cobb initial
+- Correction moyenne : 55–65 % du Cobb initial (Bradford et al., 1974 ; Lowe, 1999)
 - Satisfaction 85–90 %
-- Complications : PJK (30 % si dépassement de la correction), neurologiques (rare)
+- Complications : PJK (30 % si dépassement de la correction — Kim et al., 2008), neurologiques (rare)
 
 ---
 
 ## 14.4 Cyphose congénitale
 
-**Types** (selon McMaster) :
+**Types** (selon McMaster & Singh, 1999, *J Bone Joint Surg Am*) :
 - **Type I** (défaut de formation, aplasie ventrale) : progression rapide → myélopathie possible
 - **Type II** (défaut de segmentation, barre antérieure) : progression lente
 - **Type III** (mixte)
@@ -183,7 +183,7 @@ Cyphose thoracique normale (20–40°) • Hypercyphose • Cyphose de Scheuerma
 
 **Mécanisme** : Fracture en coin (tassement antérieur) → ciphose angulaire résiduelle
 
-**Classification des fractures vertébrales** (AO/TLICS) :
+**Classification des fractures vertébrales** (AO/TLICS — Vaccaro et al., 2005, *Spine*) :
 - Fractures par compression → risque de cyphose résiduelle si > 30–40 %
 - Fractures burst → canal intéressé + cyphose potentielle
 
@@ -331,7 +331,9 @@ Cyphose thoracique normale (20–40°) • Hypercyphose • Cyphose de Scheuerma
 ## Ressources complémentaires
 
 - **Scheuermann HW.** Classic paper 1921. *Ugeskr. Laeger*.
-- **Bradford DS et al.** Scheuermann's kyphosis and roundback deformity. *JBJS Am*. 1974;56:740
-- **Lowe TG.** Scheuermann's disease. *Orthop Clin North Am*. 1999;30:475
-- **McMaster MJ, Singh H.** Congenital kyphosis. *JBJS Am*. 1999;81:1367
+- **Bradford DS, Moe JH, Montalvo FJ, Winter RB.** Scheuermann's kyphosis and roundback deformity: results of Milwaukee brace treatment. *J Bone Joint Surg Am*. 1974;56(4):740–758
+- **Lowe TG.** Scheuermann's disease. *Orthop Clin North Am*. 1999;30(3):475–487
+- **McMaster MJ, Singh H.** Natural history of congenital kyphosis and kyphoscoliosis. *J Bone Joint Surg Am*. 1999;81(10):1367–1383
+- **Vaccaro AR, Lehman RA, Hurlbert RJ et al.** A new classification of thoracolumbar injuries: the importance of injury morphology, the integrity of the posterior ligamentous complex, and neurologic status. *Spine*. 2005;30(20):2325–2333
+- **Kim YJ, Bridwell KH, Lenke LG et al.** Proximal junctional kyphosis in adult spinal deformity after segmental posterior spinal instrumentation and fusion. *Spine*. 2008;33(20):2179–2184
 - **Grevitt M et al.** PSO for sagittal imbalance. *Spine*. 2003

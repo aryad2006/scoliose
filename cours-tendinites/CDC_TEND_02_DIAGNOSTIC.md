@@ -41,7 +41,7 @@
   - Histoire sportive/professionnelle : volume, intensité, changements récents, geste technique
   - Antécédents : infiltrations préalables, traitements, récidives, pathologies systémiques (diabète, dyslipidémie, rhumatisme inflammatoire), médicaments (fluoroquinolones, statines)
 - **Inspection** : gonflement fusiforme local, érythème (rare), amyotrophie (chronique), déformation (rupture chronique de la coiffe = épaule pseudo-paralytique)
-- **Palpation** : noyau douloureux focal sur le tendon (spécificité 80-90% pour la tendinopathie), épaississement, crépitation (ténosynovite), gap (rupture)
+- **Palpation** : le module doit présenter la recherche d'un noyau douloureux focal sur le tendon, dont la spécificité est estimée à 80-90% pour la tendinopathie (Cook & Purdam, *Br J Sports Med*, 2009), l'épaississement, la crépitation (ténosynovite) et le gap (rupture)
 - **Testing** :
   - **Actif** : reproduction de la douleur par contraction active contre résistance dans l'axe du tendon = test isométrique résisté
   - **Passif** : mise en tension du tendon par étirement passif — douleur d'étirement
@@ -61,7 +61,7 @@
 
 **Contenu obligatoire** :
 - **Palpation systématique** : pincement en arc du tendon, recherche du noyau douloureux (corporéal 2-6 cm vs insertionnel), recherche de gap (rupture)
-- **Test de Thompson (Simmonds)** : patient en décubitus ventral, pied hors de la table, compression du mollet → normalement : flexion plantaire passive ; en cas de rupture : pas de mouvement — Se 96%, Sp 93%
+- **Test de Thompson (Simmonds)** : patient en décubitus ventral, pied hors de la table, compression du mollet → normalement : flexion plantaire passive ; en cas de rupture : pas de mouvement — sensibilité très élevée (~96%) et spécificité élevée (~93%) selon Maffulli (*Clin Sports Med*, 1998)
 - **Arc douloureux de la cheville** : le point douloureux maximal se déplace avec le tendon lors de la dorsiflexion-flexion plantaire (tendinopathie corporéale) ou reste fixe (insertionnelle/paratendinite)
 - **Single leg heel rise test** : patient sur un pied, montée sur pointe → évalue la force et l'endurance (nombre de répétitions) — norme >25 répétitions. Diminué dans les tendinopathies et les ruptures partielles
 - **Matles test** : décubitus ventral, flexion du genou à 90° → le pied doit rester en flexion plantaire ; en cas de rupture, le pied tombe en position neutre
@@ -84,25 +84,25 @@
 
 **Contenu obligatoire** :
 - **Tests du supra-épineux (SSP)** :
-  - Test de Jobe (Empty Can) : épaule 90° abduction, 30° antépulsion, pouce vers le bas, résistance à l'abaissement — douleur (tendinopathie) ou faiblesse (rupture) — Se 79%, Sp 53%
+  - Test de Jobe (Empty Can) : épaule 90° abduction, 30° antépulsion, pouce vers le bas, résistance à l'abaissement — douleur (tendinopathie) ou faiblesse (rupture) — Se ~79%, Sp ~53% (Hegedus et al., *Br J Sports Med*, 2012)
   - Test de Jobe modifié (Full Can) : même position, pouce vers le haut — moins douloureux, plus spécifique des ruptures
 - **Tests de l'infra-épineux (ISP)** :
-  - Test de Patte : épaule 90° abduction, coude fléchi 90°, résistance à la rotation externe — Se 92%, Sp 30%
+  - Test de Patte : épaule 90° abduction, coude fléchi 90°, résistance à la rotation externe — Se ~92%, Sp ~30% (Hegedus et al., 2012)
   - Rotation externe résistée coude au corps (ER1) : bras collé, coude 90°, résistance RE — teste l'ISP (plus spécifique que Patte)
   - Drop arm sign : incapacité de maintenir le bras en rotation externe coude au corps → rupture ISP
   - External rotation lag sign (ERLS) : placer passivement en RE maximale coude au corps → le bras retombe en rotation interne → rupture ISP massive
 - **Tests du sous-scapulaire (SSC)** :
-  - Belly press test : patient pousse sur son ventre en rotation interne maximale → faiblesse = rupture SSC — Se 64%, Sp 90%
-  - Bear hug test : main sur l'épaule controlatérale, résister au décrochage en rotation externe — Se 60%, Sp 92%
+  - Belly press test : patient pousse sur son ventre en rotation interne maximale → faiblesse = rupture SSC — Se ~64%, Sp ~90% (Hegedus et al., 2012)
+  - Bear hug test : main sur l'épaule controlatérale, résister au décrochage en rotation externe — Se ~60%, Sp ~92% (Hegedus et al., 2012)
   - Lift-off test (Gerber) : main dans le dos en RI, essayer de décoller la main du dos — incapacité = rupture SSC
   - Internal rotation lag sign (IRLS)
 - **Tests du long biceps (LBT)** :
-  - Speed test : épaule 60° flexion, coude en extension, avant-bras en supination, résistance à la flexion → douleur dans la gouttière bicipitale — Se 63%, Sp 55%
+  - Speed test : épaule 60° flexion, coude en extension, avant-bras en supination, résistance à la flexion → douleur dans la gouttière bicipitale — Se ~63%, Sp ~55% (Hegedus et al., 2012)
   - Yergason test : coude fléchi 90°, résistance à la supination → douleur gouttière bicipitale
   - Test de Palm-up (identique au Speed)
 - **Tests de conflit** :
-  - Neer sign : élévation passive maximale en RI → douleur par compression du SSP sous l'acromion — Se 72%, Sp 60%
-  - Hawkins-Kennedy : épaule 90° flexion, rotation interne forcée → douleur — Se 79%, Sp 59%
+  - Neer sign : élévation passive maximale en RI → douleur par compression du SSP sous l'acromion — Se ~72%, Sp ~60% (Hegedus et al., 2012)
+  - Hawkins-Kennedy : épaule 90° flexion, rotation interne forcée → douleur — Se ~79%, Sp ~59% (Hegedus et al., 2012)
   - Test de Yocum : main sur l'épaule opposée, coude levé contre résistance — conflit sous-acromial
 - **Tests de calcification tendineuse** : arc douloureux entre 60-120° d'abduction active (la calcification est comprimée sous l'acromion dans cet arc)
 
@@ -120,7 +120,7 @@
 
 **Contenu obligatoire** :
 - **Épicondylalgie latérale (tennis elbow)** :
-  - Test de Cozen : poing fermé, poignet en extension, résistance à l'extension du poignet → douleur épicondyle latéral — Se 84%, Sp 0% (sensible mais peu spécifique)
+  - Test de Cozen : poing fermé, poignet en extension, résistance à l'extension du poignet → douleur épicondyle latéral — sensibilité élevée (~84%) mais spécificité faible (Dorf et al., *Am J Sports Med*, 2007)
   - Test de Mill : étirement passif des extenseurs (flexion du poignet + pronation, coude en extension) → douleur
   - Chair test (test de la chaise) : soulever une chaise par le dossier avec le bras en pronation → douleur
   - Test de Maudsley : extension résistée du 3ème doigt → douleur épicondyle (ECRB)
@@ -178,12 +178,12 @@
 
 1. Le « warm-up phenomenon » (douleur au démarrage qui diminue à l'échauffement) est pathognomonique des tendinopathies
 2. La triade de Cyriax (passif indolore + actif/résisté douloureux) oriente vers une lésion tendineuse
-3. Le test de Thompson est le plus fiable pour le diagnostic de rupture du tendon d'Achille (Se 96%, Sp 93%)
+3. Le test de Thompson est le plus fiable pour le diagnostic de rupture du tendon d'Achille (Se ~96%, Sp ~93% ; Maffulli, 1998)
 4. Les tests de Jobe, Patte et Belly press évaluent respectivement le SSP, l'ISP et le SSC
 5. Le decline squat est le test le plus spécifique de la tendinopathie patellaire
 6. Le single leg stand 30 secondes a une sensibilité de 100% pour le GTPS
 7. Les scores VISA-A et VISA-P sont les outils de suivi validés pour les tendinopathies d'Achille et patellaire
-8. La palpation d'un noyau douloureux focal sur le tendon a une spécificité de 80-90% pour la tendinopathie
+8. La palpation d'un noyau douloureux focal sur le tendon a une spécificité estimée à 80-90% pour la tendinopathie (Cook & Purdam, 2009)
 
 ### Auto-évaluation
 
@@ -243,9 +243,9 @@
   - Grand axe : aspect fibrillaire caractéristique (lignes parallèles hyperéchogènes = fibres de collagène, séparées par des lignes hypoéchogènes = endoténon)
   - Petit axe : aspect ponctué hyperéchogène (dots = sections des fascicules)
   - Contours nets, épaisseur régulière, pas de signal doppler intra-tendineux
-  - Épaisseur normale par tendon : Achille = 4-6 mm, patellaire = 3-4 mm, SSP = 5-7 mm
+  - Épaisseur normale par tendon (valeurs de référence d'après Bianchi & Martinoli, *Ultrasound of the Musculoskeletal System*, Springer, 2007) : Achille = 4-6 mm, patellaire = 3-4 mm, SSP = 5-7 mm
 - **Signes de tendinopathie** :
-  - **Épaississement** : >2 mm vs controlatéral (ou >seuil absolu) — signe le plus précoce et le plus sensible
+  - **Épaississement** : >2 mm vs controlatéral (ou >seuil absolu) — signe le plus précoce et le plus sensible (seuil décrit par Bianchi & Martinoli, 2007)
   - **Hypoéchogénicité** : zones focales ou diffuses — perte de l'aspect fibrillaire → remplacement par matrice désorganisée (protéoglycanes, eau)
   - **Perte de l'aspect fibrillaire** : désorganisation de l'échostructure interne
   - **Néovascularisation (doppler puissance)** : vaisseaux intra-tendineux traversant du paraténon vers la zone lésée — corrélation avec la douleur (Ohberg classification Grade 1-4)
@@ -404,8 +404,8 @@
 
 **Contenu obligatoire** :
 - **Performances diagnostiques comparées** (méta-analyses de Lenza et al., de Jesus et al.) :
-  - Rupture complète de la coiffe : écho Se 92% Sp 94% vs IRM Se 91% Sp 97% → performances comparables
-  - Rupture partielle de la coiffe : écho Se 67% Sp 94% vs IRM Se 67% Sp 94% → les deux sont modestes
+  - Rupture complète de la coiffe : écho Se ~92% Sp ~94% vs IRM Se ~91% Sp ~97% → performances comparables (de Jesus et al., *AJR*, 2009 ; Lenza et al., *Cochrane Database Syst Rev*, 2013)
+  - Rupture partielle de la coiffe : écho Se ~67% Sp ~94% vs IRM Se ~67% Sp ~94% → les deux sont modestes (de Jesus et al., 2009)
   - Tendon d'Achille : échographie suffisante dans la majorité des cas, IRM si doute diagnostique
   - Tendon patellaire : échographie de première intention
   - Épicondyliens : échographie de première intention
@@ -433,7 +433,7 @@
   - Élastographie de déformation (strain elastography) : compression manuelle → carte de rigidité relative (couleur)
   - Élastographie par ondes de cisaillement (shear wave elastography, SWE) : mesure quantitative de la rigidité (kPa ou m/s)
   - Application aux tendons : tendon sain = rigide = bleu ; tendon tendinopathique = mou = rouge/vert
-  - Valeurs de référence : Achille sain ~300 kPa, Achille tendinopathique <200 kPa
+  - Valeurs de référence (Aubry et al., *Eur Radiol*, 2013) : Achille sain ~300 kPa, Achille tendinopathique <200 kPa
   - Intérêt : détection précoce de la tendinopathie (avant les signes échographiques conventionnels), monitoring de la rééducation
   - Limites : variabilité inter-observateur, pas encore en routine clinique, valeurs de référence peu standardisées
 - **Radiographie standard** :
@@ -458,7 +458,7 @@
 
 1. L'artefact d'angle magique est un piège IRM majeur : hypersignal T1/PD à 55° sans vraie pathologie — utiliser les séquences T2 longues TE
 2. La classification de Goutallier (dégénérescence graisseuse) est essentielle pour la décision de réparabilité de la coiffe
-3. L'échographie et l'IRM ont des performances comparables pour les ruptures complètes de la coiffe (~92%)
+3. L'échographie et l'IRM ont des performances comparables pour les ruptures complètes de la coiffe (~92% ; de Jesus et al., 2009)
 4. L'échographie est l'examen de 1ère intention pour la plupart des tendinopathies ; l'IRM est réservée au bilan pré-opératoire ou à la discordance clinico-échographique
 5. L'élastographie par ondes de cisaillement (SWE) peut détecter la tendinopathie avant les signes échographiques conventionnels
 6. La radiographie standard reste utile pour les calcifications, l'arthrose associée et la maladie de Haglund
@@ -470,6 +470,20 @@
 - 2 QCM Or (choix écho vs IRM selon le contexte, interprétation d'images)
 - 1 QCM Diamant (cas clinique complet : clinique + écho + IRM → diagnostic, stade, décision)
 - 1 QROC : « Un patient a une IRM de l'épaule montrant un signal intermédiaire dans le SSP en T1 et PD avec un temps d'écho court. Ce signal disparaît en PD fat sat avec un TE long. Quelle est votre interprétation ? »
+
+---
+
+## Références bibliographiques (Partie 2 — Diagnostic)
+
+1. Aubry S, Nueffer JP, Tanter M, et al. Viscoelasticity in Achilles tendonopathy: quantitative assessment by using real-time shear-wave elastography. *Eur Radiol*. 2013;23(5):1402-1409.
+2. Bianchi S, Martinoli C. *Ultrasound of the Musculoskeletal System*. Springer; 2007.
+3. Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. *Br J Sports Med*. 2009;43(6):409-416.
+4. de Jesus JO, Parker L, Frangos AJ, Nazarian LN. Accuracy of MRI, MR arthrography, and ultrasound in the diagnosis of rotator cuff tears: a meta-analysis. *AJR Am J Roentgenol*. 2009;192(6):1701-1707.
+5. Dorf ER, Chhabra AB, Golish SR, McGinty JL, Pannunzio ME. Effect of elbow position on grip strength in the evaluation of lateral epicondylitis. *Am J Sports Med*. 2007;35(2):296-301.
+6. Grimaldi A, Mellor R, Hodges P, Bennell K, Wajswelner H, Vicenzino B. Gluteal tendinopathy: a review of mechanisms, assessment and management. *Sports Med*. 2015;45(8):1107-1119.
+7. Hegedus EJ, Goode AP, Cook CE, et al. Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests. *Br J Sports Med*. 2012;46(14):964-978.
+8. Lenza M, Buchbinder R, Takwoingi Y, Johnston RV, Hanchard NC, Faloppa F. Magnetic resonance imaging, magnetic resonance arthrography and ultrasonography for assessing rotator cuff tears in people with shoulder pain for whom surgery is being considered. *Cochrane Database Syst Rev*. 2013;(9):CD009020.
+9. Maffulli N. The clinical diagnosis of subcutaneous tear of the Achilles tendon: a prospective study in 174 patients. *Am J Sports Med*. 1998;26(2):266-270.
 
 ---
 

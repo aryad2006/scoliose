@@ -75,7 +75,7 @@ Hernie discale • Nucleus pulposus • Anneau fibreux • Hernie par effraction
 - Coupe axiale T2 : localisation précise (paramédiante, foraminale, extra-foraminale)
 - Corrélation clinico-radiologique OBLIGATOIRE (15 % de hernies asymptomatiques chez les > 40 ans)
 
-**Classification de Michigan** :
+**Classification de Michigan** (Mysliwiec et al., 2009, *Pain Physician* ; voir aussi Fardon et al., 2014, *Spine J* — nomenclature combinée NASS/ASSR/ASNR) :
 - Grade 1 : Protrusion sans rupture de l'anneau
 - Grade 2 : Extrusion (nucleus a percé l'anneau, reste sous lig.)
 - Grade 3 : Hernie séquestrée (fragment libre dans le canal)
@@ -84,7 +84,7 @@ Hernie discale • Nucleus pulposus • Anneau fibreux • Hernie par effraction
 
 ## 19.4 Traitement conservateur
 
-**Indication** : 85–90 % des hernies guérissent spontanément en 6–12 semaines
+**Indication** : 85–90 % des hernies guérissent spontanément en 6–12 semaines (Weber, 1983, *Spine*)
 
 | Traitement | Durée | Niveau de preuve |
 |-----------|-------|-----------------|
@@ -140,6 +140,15 @@ Hernie discale • Nucleus pulposus • Anneau fibreux • Hernie par effraction
 > 📌 **4.** L'**infiltration épidurale** est recommandée en 2e intention si echec antalgiques.
 
 > 📌 **5.** La chirurgie est indiquée si résistance > 6–8 semaines, déficit neurologique progressif ou SQC.
+
+---
+
+## Références
+
+1. Weber H. Lumbar disc herniation: a controlled, prospective study with ten years of observation. *Spine*. 1983;8(2):131-140.
+2. Mysliwiec LW, Cholewicki J, Winkelpleck MD, Ez-Zaitouni A. MSU classification for herniated lumbar discs on MRI. *Pain Physician*. 2009;12(1):9-18.
+3. Fardon DF, Williams AL, Dohring EJ, et al. Lumbar disc nomenclature: version 2.0 — recommendations of the combined task forces of the NASS, ASSR, and ASNR. *Spine J*. 2014;14(11):2525-2545.
+4. Weinstein JN, Lurie JD, Tosteson TD, et al. Surgical versus nonoperative treatment for lumbar disc herniation: the Spine Patient Outcomes Research Trial (SPORT). *JAMA*. 2006;296(20):2441-2450.
 
 ---
 

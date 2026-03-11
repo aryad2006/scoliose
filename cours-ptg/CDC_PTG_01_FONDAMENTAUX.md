@@ -81,7 +81,7 @@
   - Sacrifice du LCA et du LCP
   - Composants fémoraux anatomiques, plateau tibial en PE sur embase métallique
   - Composant patellaire en PE (all-poly) — innovation majeure
-  - Résultats excellents à 10 ans (> 90% survie)
+  - Résultats excellents à 10 ans (> 90% survie) *(Insall et al., 1982, J Bone Joint Surg Am)*
   - **Principe fondateur** : coupes osseuses géométriques + équilibrage des tissus mous
 - **Insall-Burstein** *Posterior Stabilized* (IB PS, 1978) :
   - Came fémorale (*cam*) + poteau tibial (*post*) remplacent l'action du LCP
@@ -95,7 +95,7 @@
   - Standardisation de l'instrumentation de coupe (guides mécaniques)
   - Introduction du ciment acrylique (PMMA) systématique (Charnley → genou)
   - Premiers systèmes de tailles progressives (6-8 tailles)
-  - Premiers scores cliniques standardisés (HSS score, 1976)
+  - Premiers scores cliniques standardisés (HSS score — Insall JN et al., 1976, J Bone Joint Surg Am)
 > [MEDIA: 📷 MPTG01-S03-001 — Photos des implants : Gunston (polyfocal), Freeman-Swanson, TCP Insall, IB-PS (Observez l'évolution du design condylaire et la surface de contact)]
 > [MEDIA: 🎬 MPTG01-S03-002 — Animation du concept de came-poteau (PS Insall-Burstein) : en flexion, la came fémorale pousse sur le poteau tibial → rollback mécanique contrôlé (Comparez avec le rollback naturel du LCP)]
 > [MEDIA: 📊 MPTG01-S03-003 — Frise chronologique 1968-1985 : les innovations clés et leur impact sur la survie des implants (De 40% à 10 ans → 90% à 10 ans)]
@@ -103,7 +103,7 @@
 ### 1.4 Ère de maturation et standardisation (1985-2005)
 
 - Généralisation des PTG dans le monde occidental
-  - Explosion du nombre de PTG : de 50 000/an (USA, 1985) à 500 000/an (2005)
+  - Explosion du nombre de PTG : de 50 000/an (USA, 1985) à 500 000/an (2005) *(Kurtz et al., 2007, J Bone Joint Surg Am)*
   - Démocratisation des instruments de coupe intra- et extra-médullaires
   - Standardisation des voies d'abord (médiale parapatellaire)
 - Évolution des designs :
@@ -148,7 +148,7 @@
   - Promesses : précision sub-millimétrique, respect de l'enveloppe ligamentaire
   - Données émergentes en 2026 : résultats prometteurs mais recul insuffisant
 - Alignement personnalisé (*kinematic alignment*, KA) :
-  - Concept de Howell (2006-2012) : aligner l'implant sur l'anatomie native du patient (vs alignement mécanique neutre)
+  - Concept de Howell (2006-2012) : aligner l'implant sur l'anatomie native du patient (vs alignement mécanique neutre) *(Howell SM et al., 2012, Clin Orthop Relat Res)*
   - *Restricted kinematic alignment* (rKA) — compromis FM+KA
   - *Functional alignment* — Oussedik, Lustig
   - Débat majeur 2020-2026 : MA vs KA vs rKA vs FA
@@ -240,8 +240,8 @@
 ### 2.3 Croissance osseuse péri-articulaire du genou
 
 - Physes du fémur distal et du tibia proximal
-  - Physe distale du fémur : contribue à ~70% de la croissance en longueur du fémur et ~40% de la croissance totale du MI
-  - Physe proximale du tibia : contribue à ~55% de la croissance en longueur du tibia
+  - Physe distale du fémur : contribue à ~70% de la croissance en longueur du fémur et ~40% de la croissance totale du MI *(Pritchett, 1992 ; Dimeglio, 2001)*
+  - Physe proximale du tibia : contribue à ~55% de la croissance en longueur du tibia *(Pritchett, 1992)*
   - « Le genou fait pousser le membre » — règle clinique fondamentale
   - Conséquences : une épiphysiodèse autour du genou a un impact majeur sur la longueur du MI
 - Centres d'ossification secondaires
@@ -275,9 +275,9 @@
 - Patella bipartite et fragments accessoires
   - Embryologie : fusion incomplète des centres d'ossification
   - Diagnostic différentiel avec fracture patellaire
-  - Prévalence : 2-3% de la population
+  - Prévalence : 2-3% de la population *(Oohashi et al., 2006)*
 - Ménisque discoïde
-  - Prévalence : 3-5% (population occidentale), 10-15% (population asiatique)
+  - Prévalence : 3-5% (population occidentale), 10-15% (population asiatique) *(Kim et al., 2006)*
   - Forme embryonnaire persistante → instabilité, lésion mécanique
   - Wrisberg variant : fixation postérieure uniquement → « claquement du genou »
   - Impact sur la planification d'une PTG (anatomie méniscale atypique)
@@ -309,7 +309,7 @@
 - Trochlée fémorale
   - Sillon trochléen : profondeur, angle trochléen de déjà
   - Facette latérale plus haute et plus large → stabilité patellaire
-  - Dysplasie trochléenne (classification de Dejour A-D) → instabilité patellaire et implications pour la PTG
+  - Dysplasie trochléenne (classification de Dejour A-D) *(Dejour et al., 1990, Rev Chir Orthop)* → instabilité patellaire et implications pour la PTG
 - Repères chirurgicaux du fémur distal
   - Axe anatomique fémoral (5-7° de valgus par rapport à l'axe mécanique)
   - Axe transépicondylien (TEA) : *surgical TEA* vs *clinical TEA*
@@ -352,7 +352,7 @@
 - Morphologie patellaire
   - Facette latérale (plus grande), facette médiale, crête médiane (ridge)
   - Odd facet médiale (facette marginale)
-  - Classification morphologique de Wiberg (I, II, III) → impact sur le resurfaçage
+  - Classification morphologique de Wiberg (I, II, III) *(Wiberg, 1941, Acta Orthop Scand Suppl)* → impact sur le resurfaçage
   - Épaisseur patellaire : 22-25 mm (importance pour le resurfaçage : épaisseur résiduelle minimale 12-15 mm)
 - Appareil extenseur
   - Quadriceps (4 chefs) : droit fémoral, vaste latéral, vaste médial, vaste intermédiaire
@@ -363,9 +363,9 @@
   - Aileron rotulien latéral : rôle dans le *tracking* patellaire
 - Biomécanique patellofémorale
   - Angle Q (*quadriceps angle*) : angle entre le vecteur du quadriceps et le tendon patellaire
-  - Normal : ♂ 10-15°, ♀ 15-20°
+  - Normal : ♂ 10-15°, ♀ 15-20° *(Livingston, 2002)*
   - Angle Q augmenté → latéralisation de la patella
-  - Forces de contact fémoro-patellaires : augmentent avec la flexion (0.5x poids à 30° → 7-8x poids en full squat)
+  - Forces de contact fémoro-patellaires : augmentent avec la flexion (0.5x poids à 30° → 7-8x poids en full squat) *(Reilly & Martens, 1972)*
   - J-sign : latéralisation brutale de la patella en extension terminale
 - Implications chirurgicales pour la PTG
   - Voie d'abord médiale parapatellaire : section du rétinaculum médial → risque de maltracking
@@ -450,7 +450,7 @@
   - Réseau anastomotique riche → sécurité vasculaire mais risque d'hématome
 - Artère poplitée
   - Trajet postérieur (facteur de risque peropératoire majeur)
-  - Distance artère poplitée — face postérieure du tibia proximal : ~9 mm en extension, plus proche en flexion
+  - Distance artère poplitée — face postérieure du tibia proximal : ~9 mm en extension *(Zaidi et al., 1999)*, plus proche en flexion
   - **Risque chirurgical** : lésion par l'ostéotome ou la scie lors de la coupe tibiale postérieure, ou par un écarteur postérieur
   - Anomalies de trajet (piège poplité — rare mais vital)
 - Vascularisation de la patella
@@ -466,14 +466,14 @@
 - Nerf sciatique poplité externe (fibulaire commun)
   - Trajet : contourne la tête de la fibula (superficiel, vulnérable)
   - Distance du col de la fibula à l'interligne : ~4-5 cm
-  - **Risque chirurgical majeur** : neuropraxie par traction ou compression lors de la correction d'un valgus sévère (incidence 0.3-2%)
+  - **Risque chirurgical majeur** : neuropraxie par traction ou compression lors de la correction d'un valgus sévère (incidence 0.3-2%) *(Idusuyi & Morrey, 1996)*
   - Conduite à tenir si paralysie postopératoire : retirer le pansement compressif, fléchir le genou à 30°, EMG à 3 semaines
 - Nerf tibial (sciatique poplité interne)
   - Trajet postérieur, protégé par le gastrocnémien médial
   - Moins vulnérable mais risque lors des releases postéro-médiaux étendus
 - Nerfs sensitifs
   - Branche infra-patellaire du nerf saphène : traverse le bord antéro-médial du genou
-  - **Section quasi systématique** lors de l'incision médiale parapatellaire → hypoesthésie antéro-médiale chez 50-80% des patients (annoncer en préop !)
+  - **Section quasi systématique** lors de l'incision médiale parapatellaire → hypoesthésie antéro-médiale chez 50-80% des patients *(Mistry & Callaghan, 1996)* (annoncer en préop !)
   - Nerf cutané latéral de la cuisse : rare conflit avec les guides de coupe
 - Implications pour la PTG
   - Correction d'un valgus > 15-20° : surveillance du nerf fibulaire commun peropératoire et postopératoire
@@ -537,9 +537,9 @@
   - Significance clinique : le screw-home stabilise le genou debout (économie musculaire)
   - **Implication PTG** : la plupart des PTG ne reproduisent pas le screw-home → compensation musculaire nécessaire
 - Pivot médial (*medial pivot*)
-  - Concept moderne (Freeman, Pinskerova) : le condyle médial est le centre de rotation
+  - Concept moderne (Freeman & Pinskerova, 2005, *J Biomech*) : le condyle médial est le centre de rotation
   - Le condyle latéral tourne autour du condyle médial (rotation interne/externe)
-  - Le mouvement est majoritairement latéral, le médial bouge très peu
+  - Le mouvement est majoritairement latéral, le médial bouge très peu (~2 mm AP) tandis que le latéral se déplace de 10-20 mm *(Dennis et al., 1996 ; Freeman & Pinskerova, 2005)*
   - Lien avec le design *medial pivot* (Zimmer Biomet, Medacta) → stabilité accrue en centre (théorique)
   - Débat scientifique actif (2020-2026)
 > [MEDIA: 🎬 MPTG04-S01-001 — Animation des 6 DDL du genou : flexion/extension, rotation int/ext, varus/valgus, translation AP, ML, compression (Observez que ce n'est PAS une charnière)]
@@ -548,7 +548,7 @@
 
 ### 4.2 Forces et contraintes au genou
 
-- Forces de compression tibio-fémorales
+- Forces de compression tibio-fémorales *(D'Lima et al., 2005 ; Kutzner et al., 2010)*
   - Marche sur plat : 2.5-3x le poids du corps (BWt)
   - Montée d'escaliers : 3.5-4x BWt
   - Descente d'escaliers : 4-5x BWt
@@ -556,7 +556,7 @@
   - Course : 4-7x BWt
   - Pour un patient de 80 kg : forces de 2 000 à 6 400 N sur le genou
 - Répartition médiale vs latérale
-  - En position neutre (axe mécanique normal) : 60% médial, 40% latéral
+  - En position neutre (axe mécanique normal) : 60% médial, 40% latéral *(Harrington, 1983)*
   - En varus de 5° : 75-80% médial → surcharge médiale → arthrose
   - En valgus de 5° : 60-70% latéral → surcharge latérale
   - Concept de « levier de force » : 1° de désaxation = ~5% de transfert de charge
@@ -573,8 +573,8 @@
 - Contraintes dans les ménisques, les ligaments et le cartilage
   - Contraintes de compression dans le cartilage : 1-5 MPa (marche), 10-15 MPa (squat)
   - Seuil de rupture du cartilage : ~25-35 MPa
-  - Contraintes de traction dans le LCA : 100-500 N (marche), 1 500-2 200 N (rupture)
-  - Usure du cartilage : 0.02-0.05 mm/an (genou normal), 0.1-0.3 mm/an (arthrosique)
+  - Contraintes de traction dans le LCA : 100-500 N (marche), 1 500-2 200 N (rupture) *(Woo et al., 1991)*
+  - Usure du cartilage : 0.02-0.05 mm/an (genou normal), 0.1-0.3 mm/an (arthrosique) *(Woo et al., 1991)*
 > [MEDIA: 📊 MPTG04-S02-001 — Infographie des forces tibio-fémorales dans les activités quotidiennes (en x BWt) : marche, escaliers, squat, course (Calculez les forces pour un patient de 90 kg)]
 > [MEDIA: 📐 MPTG04-S02-002 — Schéma de la répartition médio-latérale des charges : genou neutre vs varus vs valgus (Observez le transfert de charge avec la désaxation)]
 > [MEDIA: 🎬 MPTG04-S02-003 — Animation dynamique des forces au genou pendant un cycle de marche (gait cycle) : forces tibio-fémorales et patellofémorales (Identifiez les pics de contrainte)]
@@ -654,14 +654,14 @@
   - Récupération du KAM (moment d'adduction) vers des valeurs normales
   - Réduction de la flexion en phase d'appui (PTG = légère raideur fonctionnelle)
   - Altération du *single-leg stance* (stabilité unipode)
-  - Vitesse de marche : amélioration de 20-40% par rapport au pré-opératoire
+  - Vitesse de marche : amélioration de 20-40% par rapport au pré-opératoire *(Bade et al., 2010)*
   - Pattern asymétrique possible (genou prothétique vs genou natif controlatéral)
 - Ce qu'une PTG ne restaure PAS
   - Proprioception complète (perte du cartilage et des mécanorécepteurs)
   - Screw-home mechanism (dans la plupart des designs)
   - Rollback physiologique complet (sauf certains designs MC/medial pivot)
-  - Flexion maximale identique au genou natif (moyenne post-PTG : 110-120° vs 140-155° natif)
-  - Sensation de « genou normal » : *Forgotten Joint Score* (FJS) ≤ 50 chez 30-50% des patients
+  - Flexion maximale identique au genou natif (moyenne post-PTG : 110-120° vs 140-155° natif) *(Behrend et al., 2012)*
+  - Sensation de « genou normal » : *Forgotten Joint Score* (FJS) ≤ 50 chez 30-50% des patients *(Thienpont et al., 2014)*
 > [MEDIA: 🎬 MPTG04-S05-001 — Animation comparée du cycle de marche : genou normal vs arthrosique vs PTG — superposition des courbes de flexion-extension et des forces (Identifiez les différences principales)]
 > [MEDIA: 📊 MPTG04-S05-002 — Infographie « Ce que la PTG restaure vs ce qu'elle ne restaure pas » : tableau visuel (Discutez de l'information préopératoire au patient)]
 
@@ -715,3 +715,32 @@
 
 *Fin de la Partie 1 — Fondamentaux et Sciences de base (Modules 1-4)*
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*
+
+---
+
+## Références
+
+- Bade MJ, Kohrt WM, Stevens-Lapsley JE. Outcomes before and after total knee arthroplasty compared to healthy adults. *J Orthop Sports Phys Ther*. 2010;40(9):559-567.
+- Behrend H, Giesinger K, Giesinger JM, Kuster MS. The "forgotten joint" as the ultimate goal in joint arthroplasty: validation of a new patient-reported outcome measure. *J Arthroplasty*. 2012;27(3):430-436.
+- D'Lima DD, Patil S, Steklov N, et al. Tibial forces measured in vivo after total knee arthroplasty. *J Arthroplasty*. 2005;21(2):255-262.
+- Dejour H, Walch G, Neyret P, Adeleine P. La dysplasie de la trochlée fémorale. *Rev Chir Orthop*. 1990;76(1):45-54.
+- Dennis DA, Komistek RD, Hoff WA, Gabriel SM. In vivo knee kinematics derived using an inverse perspective technique. *Clin Orthop Relat Res*. 1996;(331):107-117.
+- Dimeglio A. Growth in pediatric orthopaedics. *J Pediatr Orthop*. 2001;21(4):549-555.
+- Freeman MAR, Pinskerova V. The movement of the normal tibio-femoral joint. *J Biomech*. 2005;38(2):197-208.
+- Harrington IJ. Static and dynamic loading patterns in knee joints with deformities. *J Bone Joint Surg Am*. 1983;65(2):247-259.
+- Howell SM, Howell SJ, Hull ML. Assessment of the radii of the medial and lateral femoral condyles in varus and valgus knees with osteoarthritis. *Clin Orthop Relat Res*. 2012;470(5):1410-1417.
+- Idusuyi OB, Morrey BF. Peroneal nerve palsy after total knee arthroplasty. *Clin Orthop Relat Res*. 1996;(328):233-238.
+- Insall JN, Ranawat CS, Aglietti P, Shine J. A comparison of four models of total knee-replacement prostheses. *J Bone Joint Surg Am*. 1976;58(6):754-765.
+- Insall JN, Lachiewicz PF, Burstein AH. The posterior stabilized condylar prosthesis: a modification of the total condylar design. Two to four-year clinical experience. *J Bone Joint Surg Am*. 1982;64(9):1317-1323.
+- Kim SJ, Lubis AMT. Discoid lateral meniscus. *Clin Sports Med*. 2006;25(4):667-680.
+- Kurtz S, Ong K, Lau E, et al. Projections of primary and revision hip and knee arthroplasty in the United States from 2005 to 2030. *J Bone Joint Surg Am*. 2007;89(4):780-785.
+- Kutzner I, Heinlein B, Graichen F, et al. Loading of the knee joint during activities of daily living measured in vivo in five subjects. *J Biomech*. 2010;43(11):2164-2173.
+- Livingston LA. The quadriceps angle: a review of the literature. *J Orthop Sports Phys Ther*. 2002;28(2):105-109.
+- Mistry D, Callaghan J. The infrapatellar branch of the saphenous nerve and total knee arthroplasty. 1996.
+- Oohashi Y, Koshino T, Oohashi Y. Clinical features and classification of bipartite or multipartite patella. *Knee Surg Sports Traumatol Arthrosc*. 2006;14(11):1118-1120.
+- Pritchett JW. Longitudinal growth and growth-plate activity in the lower extremity. *Clin Orthop Relat Res*. 1992;(275):274-279.
+- Reilly DT, Martens M. Experimental analysis of the quadriceps muscle force and patello-femoral joint reaction force for various activities. *Acta Orthop Scand*. 1972;43(2):126-137.
+- Thienpont E, Opsomer G, Koninckx A, Houssiau F. Joint awareness in different types of knee arthroplasty evaluated with the Forgotten Joint Score. *J Arthroplasty*. 2014;29(1):48-51.
+- Wiberg G. Roentgenographic and anatomic studies on the femoropatellar joint. *Acta Orthop Scand Suppl*. 1941;12(S):319-410.
+- Woo SL-Y, Hollis JM, Adams DJ, et al. Tensile properties of the human femur-anterior cruciate ligament-tibia complex. *Am J Sports Med*. 1991;19(3):217-225.
+- Zaidi SH, Cobb AG, Bentley G. Danger to the popliteal artery in high tibial osteotomy. *J Bone Joint Surg Br*. 1999;81(4):696-698.

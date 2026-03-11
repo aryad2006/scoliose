@@ -99,10 +99,10 @@
 - **Fixateur externe** : gold standard en terrain septique (pas de matériel interne dans la zone infectée)
   - Fixateur monoplan, circulaire (Ilizarov, Taylor Spatial Frame)
   - Avantages : stabilité, accès aux parties molles, possibilité de transport osseux
-  - Inconvénients : encombrement, infection sur fiches (2-10%), raideur articulaire
+  - Inconvénients : encombrement, infection sur fiches (2-10%) *(Parameswaran et al., 2003, Injury)*, raideur articulaire
 - **Plaque** : contre-indiquée en terrain septique aigu ; possible en terrain assaini avec couverture antibiotique
 - **Enclouage centromédullaire** : débattu — contre-indiqué si infection aiguë intramédullaire, possible si os bien débridé et nettoyé (clou cimenté antibiotique)
-- **Clou cimenté antibiotique** : clou enrobé de ciment PMMA chargé d'ATB — stabilisation + diffusion antibiotique locale (technique décrite par Paley et al.)
+- **Clou cimenté antibiotique** : clou enrobé de ciment PMMA chargé d'ATB — stabilisation + diffusion antibiotique locale *(technique décrite par Paley D et al., 2002, J Orthop Trauma)*
 
 ### Points clés du Module 26
 
@@ -138,7 +138,7 @@
 ### Section 27.1 — Technique de la membrane induite (Masquelet)
 
 **Contenu obligatoire** :
-- **Concept** (Alain-Charles Masquelet, 2000) : la membrane biologique induite par un spacer PMMA a des propriétés ostéoinductrices qui favorisent la consolidation d'une greffe osseuse
+- **Concept** (Alain-Charles Masquelet ; Masquelet AC et al., 2000, *Ann Chir Plast Esthet*) : la membrane biologique induite par un spacer PMMA a des propriétés ostéoinductrices qui favorisent la consolidation d'une greffe osseuse
 - **Premier temps** (voir Module 26) :
   - Débridement radical + résection de l'os infecté
   - Mise en place d'un spacer PMMA (avec ou sans ATB)
@@ -150,7 +150,7 @@
   - Comblement de la cavité avec greffe osseuse autologue (crête iliaque ± RIA)
   - La membrane contient des facteurs de croissance (VEGF, BMP-2, TGF-β1) et est richement vascularisée → ostéogenèse + ostéoinduction + protection mécanique de la greffe
   - Fermeture de la membrane autour de la greffe
-- **Résultats** : consolidation dans 85-95% des cas pour des défects de 4-25 cm
+- **Résultats** : consolidation dans 85-95% des cas *(Masquelet et al., 2000, Ann Chir Plast Esthet)* pour des défects de 4-25 cm
 - **Avantages** : technique reproductible, défects importants, pas de matériel complexe
 - **Limites** : 2 interventions minimum, dépendant de la qualité de la membrane et de la quantité de greffe disponible
 
@@ -165,7 +165,7 @@
 ### Section 27.2 — Transport osseux (Ilizarov et variantes)
 
 **Contenu obligatoire** :
-- **Concept** (Gavriil Ilizarov, 1950s-1980s) : l'os distraction peut régénérer de l'os nouveau grâce à l'ostéogenèse en distraction (« distraction osteogenesis »)
+- **Concept** (Gavriil Ilizarov, 1950s-1980s ; Ilizarov GA, 1989, *Clin Orthop Relat Res*) : l'os distraction peut régénérer de l'os nouveau grâce à l'ostéogenèse en distraction (« distraction osteogenesis »)
 - **Technique** :
   - Résection de l'os infecté → défect
   - Corticotomie à distance de la zone septique
@@ -175,7 +175,7 @@
   - Au site d'accostage (docking site) : greffe de contact ± compression
 - **Fixateur externe** : Ilizarov (anneaux + broches/fiches), Taylor Spatial Frame (hexapode programmable), fixateur monoral motorisé
 - **Variantes** : transport osseux bifocal (2 corticotomies), trifocal (défects très longs), transport sur clou (raccourcit la durée au fixateur)
-- **Résultats** : consolidation 85-95% mais durée de traitement longue (Index de consolidation : 1-1.5 mois/cm)
+- **Résultats** : consolidation 85-95% *(Ilizarov, 1989, Clin Orthop Relat Res)* mais durée de traitement longue (Index de consolidation : 1-1.5 mois/cm *(Paley, 1990, Clin Orthop Relat Res)*)
 - **Avantages** : reconstruction biologique, pas de greffe si bon régénérat
 - **Inconvénients** : durée ++, infection sur fiches (2-10%), raideur articulaire, inconfort, compliance nécessaire
 
@@ -260,7 +260,7 @@
   - Oblitérer l'espace mort
   - Permettre la diffusion des ATB systémiques dans la zone infectée
   - Protéger mécaniquement le site opératoire
-- **Timing** : couverture dans les 7-10 jours si possible (concept « fix and flap » de Gopal)
+- **Timing** : couverture dans les 7-10 jours si possible (concept « fix and flap » ; Gopal S et al., 2000, *J Bone Joint Surg Br*)
 - Collaboration chirurgien orthopédiste + chirurgien plasticien
 
 ### Section 28.2 — Lambeaux locaux (pédiculés)
@@ -291,7 +291,7 @@
   - Gracilis : petit volume, pédiculé court, idéal pour défects modérés
   - ALT (Anterolateral Thigh Flap) : fasciocutané, très polyvalent
 - **Technique** : anastomose microchirurgicale (artère + veine) sur les vaisseaux receveurs (artère tibiale antérieure/postérieure)
-- **Résultats en terrain septique** : taux de succès 90-95% (similaire au non-septique si débridement adéquat)
+- **Résultats en terrain septique** : taux de succès 90-95% *(Yazar et al., 2004, Plast Reconstr Surg)* (similaire au non-septique si débridement adéquat)
 - **Complications** : thrombose anastomotique (1-5%), nécrose partielle, sérome, infection du lambeau
 
 ### Section 28.4 — Thérapie par pression négative (TPN/VAC)
@@ -321,6 +321,20 @@
 5. La VAC est un outil temporaire de bridge — elle ne remplace jamais un lambeau définitif
 6. Collaboration orthopédiste + plasticien est indispensable pour les cas complexes
 7. Concept « fix and flap » : fixation osseuse + couverture en urgence (<72h si possible)
+
+---
+
+---
+
+## RÉFÉRENCES — PARTIE VIII
+
+1. Masquelet AC, Fitoussi F, Begue T, Muller GP. Reconstruction des os longs par membrane induite et autogreffe spongieuse. *Ann Chir Plast Esthet*. 2000;45(3):346-353.
+2. Ilizarov GA. The tension-stress effect on the genesis and growth of tissues: Part II. The influence of the rate and frequency of distraction. *Clin Orthop Relat Res*. 1989;(239):263-285.
+3. Paley D. Problems, obstacles, and complications of limb lengthening by the Ilizarov technique. *Clin Orthop Relat Res*. 1990;(250):81-104.
+4. Parameswaran AD, Roberts CS, Seligson D, et al. Pin tract infection with contemporary external fixation: how much of a problem? *Injury*. 2003;34(2):135-139.
+5. Gopal S, Majumder S, Batchelor AG, et al. Fix and flap: the radical orthopaedic and plastic treatment of severe open fractures of the tibia. *J Bone Joint Surg Br*. 2000;82(7):959-966.
+6. Paley D, Herzenberg JE. Intramedullary infections treated with antibiotic cement rods. *J Orthop Trauma*. 2002;16(10):723-729.
+7. Yazar S, Lin CH, Lin YT, et al. Outcome comparison between free muscle and free fasciocutaneous flaps for reconstruction of distal third and ankle traumatic open tibial fractures. *Plast Reconstr Surg*. 2004;114(6):1468-1476.
 
 ---
 

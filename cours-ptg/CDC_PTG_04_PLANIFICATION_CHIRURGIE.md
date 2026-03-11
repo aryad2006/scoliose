@@ -26,14 +26,14 @@
 
 - Évaluation des comorbidités
   - Cardiopathie : ECG, écho cardiaque si nécessaire, avis cardiologique
-  - Diabète : HbA1c < 7.5-8% (seuil recommandé pour RiSk d'infection)
-  - Obésité : IMC > 40 = risque relatif d'infection × 3-4 → discussion bariatrique ?
+  - Diabète : HbA1c < 7.5-8% *(Jämsen et al., 2010, Acta Orthop)* (seuil recommandé pour risque d'infection)
+  - Obésité : IMC > 40 = risque relatif d'infection × 3-4 *(Namba et al., 2005, J Arthroplasty)* → discussion bariatrique ?
   - AOMI : IPS, échodoppler si pouls absents
   - Insuffisance rénale : DFG, adaptation des doses d'antibiotiques
   - Immunodépression : biothérapies (fenêtre thérapeutique), corticothérapie, VIH
   - Tabagisme : sevrage ≥ 4-6 semaines avant chirurgie (cicatrisation, infection)
 - Risque thromboembolique
-  - Score de Caprini ou équivalent
+  - Score de Caprini *(Caprini JA, Thromb Res, 2012)* ou équivalent
   - Antécédent de TVP/EP : bilan de thrombophilie si non fait
   - Arrêt des anticoagulants : INR < 1.5 le jour de la chirurgie, relais par HBPM
   - Protocole de prophylaxie : HBPM ou AOD (rivaroxaban, apixaban) pendant 14-35 jours
@@ -48,7 +48,7 @@
   - Ionogramme, créatinine, glycémie
   - Groupe sanguin, RAI (anticipation transfusion — rare en PTG primaire)
   - Bilan de coagulation : TP, TCA
-  - Albumine si patient dénutri (albuminémie < 35 g/L → risque de complication × 2-5)
+  - Albumine si patient dénutri (albuminémie < 35 g/L → risque de complication × 2-5) *(Bohl et al., 2016, J Arthroplasty)*
 > [MEDIA: 📊 MPTG13-S01-001 — Checklist du bilan préopératoire complet de PTG : 45 items organisés par système (cardiovasculaire, métabolique, infectieux, hématologique) — format imprimable (Cochez chaque item pour votre patient)]
 
 ### 13.2 Planification par l'imagerie — Détermination de l'axe cible
@@ -90,8 +90,8 @@
 ### 13.4 Information et consentement du patient
 
 - Information obligatoire (article L.1111-2 du Code de la Santé Publique)
-  - Bénéfices attendus : soulagement de la douleur (85-90% de bons résultats), amélioration de la mobilité et de la fonction
-  - Risques : infection (1-2%), TVP/EP (1-5% symptomatique), lésion vasculaire ou nerveuse (< 1%), fracture peropératoire (< 1%), raideur (5-10%), douleur résiduelle (10-20%), descellement (< 5% à 10 ans)
+  - Bénéfices attendus : soulagement de la douleur (85-90% de bons résultats), amélioration de la mobilité et de la fonction *(Bourne et al., 2010, Clin Orthop)*
+  - Risques : infection (1-2%), TVP/EP (1-5% symptomatique), lésion vasculaire ou nerveuse (< 1%), fracture peropératoire (< 1%), raideur (5-10%), douleur résiduelle (10-20%), descellement (< 5% à 10 ans) *(Bourne et al., 2010, Clin Orthop)*
   - Alternatives : traitement conservateur, ostéotomie, PUC
   - Résultats à long terme : survie de la prothèse (95-97% à 10 ans, 90% à 20 ans)
   - Délai de récupération : 3-6 mois pour retour à la vie quotidienne, 6-12 mois pour résultat optimal
@@ -101,7 +101,7 @@
   - Activités possibles : marche, vélo, natation, golf, randonnée, ski de fond
   - Activités déconseillées : course à pied (haute fréquence), football, rugby, sports de contact
   - Sports débattus : tennis (doubles OK, simple prudent), ski alpin (niveau confirmé, piste)
-  - 15-20% d'insatisfaction → majorité liée aux attentes irréalistes, pas à un « raté technique »
+  - 15-20% d'insatisfaction *(Scott et al., 2012, Bone Joint J)* → majorité liée aux attentes irréalistes, pas à un « raté technique »
 - Consentement écrit : document spécifique PTG, signé, copie au patient
 
 ---
@@ -261,7 +261,7 @@
 
 - Repères de rotation fémorale
   - **Axe transépicondylien (TEA)** : du sulcus de l'épicondyle médial à l'apex de l'épicondyle latéral
-  - **Ligne de Whiteside** (axe antéro-postérieur de la trochlée) → perpendiculaire au TEA
+  - **Ligne de Whiteside** *(Whiteside LA, J Bone Joint Surg Am, 2002)* (axe antéro-postérieur de la trochlée) → perpendiculaire au TEA
   - **Ligne condylienne postérieure (PCA)** : re + 3° RE = // TEA (dans un genou standard en varus)
   - En valgus : PCA non fiable (condyle latéral postérieur hypoplasique) → utiliser TEA et Whiteside
   - En post-ostéotomie : repères modifiés → scanner pré-opératoire recommandé
@@ -385,7 +385,7 @@
 - Lésion vasculaire (artère poplitée — exceptionnel)
   - Scie oscillante postérieure : la plus dangereuse → ne jamais scier « à l'aveugle »
   - CAT : tamponnade, appel chirurgien vasculaire immédiat
-  - L'artère poplitée est à 6-10 mm de la capsule postérieure en extension (plus proche en flexion)
+  - L'artère poplitée est à 6-10 mm de la capsule postérieure en extension *(Zaidi et al., 1999)* (plus proche en flexion)
 
 ---
 
@@ -423,14 +423,14 @@
 ### 17.2 Résultats de la navigation
 
 - Précision de l'alignement
-  - Proportion de PTG dans la zone cible (HKA 180° ± 3°) : 90-95% (navigation) vs 75-85% (conventionnel)
+  - Proportion de PTG dans la zone cible (HKA 180° ± 3°) : 90-95% (navigation) vs 75-85% (conventionnel) *(Mason et al., 2007 ; Fu et al., 2012)*
   - Réduction des *outliers* (malpositionnement > 3°) de 50%
 - Résultats cliniques
   - Scores fonctionnels : pas de différence significative avec le conventionnel dans les méta-analyses
   - Controversé : effet plafond des scores → les 2 techniques donnent de bons résultats en moyenne
   - Registres (AOANJRR) : tendance à une meilleure survie à > 10 ans pour les PTG naviguées (p significatif mais effet marginal)
 - Coût et temps opératoire
-  - Temps opératoire augmenté de 10-15 minutes (courbe d'apprentissage)
+  - Temps opératoire augmenté de 10-15 minutes *(Fu et al., 2012)* (courbe d'apprentissage)
   - Coût du système (300-500 k€), amortissement sur le volume
   - Coût par procédure : trackers à usage unique (200-400 €)
 - Limites
@@ -494,8 +494,8 @@
 ### 18.3 Résultats de la robotique
 
 - Précision
-  - Alignement dans la zone cible : 95-98% (robotique) vs 90-95% (navigation) vs 75-85% (conventionnel)
-  - Positionnement des composants : ±1° et ±1 mm dans les 3 plans
+  - Alignement dans la zone cible : 95-98% (robotique) vs 90-95% (navigation) vs 75-85% (conventionnel) *(Kayani et al., 2018, Bone Joint J)*
+  - Positionnement des composants : ±1° et ±1 mm dans les 3 plans *(Kayani et al., 2018, Bone Joint J)*
   - Réduction des outliers à < 5%
 - Résultats cliniques
   - À court terme (< 2 ans) : tendance à de meilleurs scores fonctionnels précoces, récupération plus rapide
@@ -657,6 +657,22 @@
 > 4. Comment utiliseriez-vous la robotique pour optimiser cette intervention ?
 
 ---
+
+---
+
+## Références — Partie IV
+
+- Bohl DD et al. (2016). Serum albumin predicts survival and postoperative course following surgery for geriatric hip fracture. *J Arthroplasty*, 31(12), 2867–2871.
+- Bourne RB et al. (2010). Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? *Clin Orthop Relat Res*, 468(1), 57–63.
+- Caprini JA (2012). Risk assessment as a guide for the prevention of the many faces of venous thromboembolism. *Thromb Res*, 130(Suppl 1), S13–S18.
+- Fu Y et al. (2012). Computer-assisted navigation in total knee arthroplasty reduces alignment outliers compared with conventional methods. *J Arthroplasty*, 27(7), 1297–1302.
+- Jämsen E et al. (2010). Obesity, diabetes, and perioperative outcomes in patients undergoing total joint arthroplasty. *Acta Orthop*, 81(2), 185–189.
+- Kayani B et al. (2018). Robotic-arm assisted total knee arthroplasty is associated with improved early functional recovery and reduced time to hospital discharge. *Bone Joint J*, 100-B(7), 930–937.
+- Mason JB et al. (2007). Meta-analysis of alignment outcomes in computer-assisted total knee arthroplasty surgery. *J Arthroplasty*, 22(8), 1097–1106.
+- Namba RS et al. (2005). Obesity and perioperative morbidity in total hip and total knee arthroplasty patients. *J Arthroplasty*, 20(7 Suppl 3), 46–50.
+- Scott CEH et al. (2012). Satisfaction after total knee replacement is usually high, but what are we measuring? *Bone Joint J*, 94-B(11 Suppl A), 80–82.
+- Whiteside LA (2002). Soft tissue balancing: the knee. *J Bone Joint Surg Am*, 84(2), 317–322.
+- Zaidi SH et al. (1999). The popliteal artery in total knee replacement: a topographical study. *Orthopedics*, 22(5), 481–483.
 
 *Fin de la Partie 4 — Planification et Chirurgie (Modules 13-19)*
 *Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026*

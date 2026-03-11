@@ -66,11 +66,11 @@
 - **Clinique** :
   - Blocage du doigt en flexion avec déblocage douloureux en extension (le « ressaut »)
   - Nodule palpable à la base du doigt (en regard de la poulie A1, articulation MP)
-  - Classification (Green) :
-    - Grade I : douleur, sensibilité, nodule — pas de ressaut
-    - Grade II : ressaut, déverrouillable activement
-    - Grade III : ressaut, déverrouillable passivement
-    - Grade IV : blocage fixe en flexion (ou extension)
+  - Classification *(adapté de Green, 2005, in Green's Operative Hand Surgery)* :
+    - Grade I : gêne douloureuse, sensibilité locale et nodule palpable, mais sans phénomène de ressaut
+    - Grade II : présence d'un ressaut perceptible, que le patient peut débloquer de façon active
+    - Grade III : ressaut marqué ne pouvant être résolu que par une manœuvre passive de déblocage
+    - Grade IV : enraidissement fixe du doigt en position fléchie (ou plus rarement en extension)
   - Cas particulier : pouce à ressaut du nourrisson (congénital) — nodule de Notta
 - **Traitement** :
   - Orthèse de blocage en extension de la MP (doigt libre en IP) : la nuit, 4-6 semaines — taux de succès 50-70% (grade I-II)
@@ -148,13 +148,13 @@
 
 **Contenu obligatoire** :
 - **Anatomie** : biceps brachial (2 chefs : long et court) → tendon commun → insertion sur la tubérosité radiale — rôle : flexion du coude (30%) et surtout SUPINATION (40-50%)
-- **Épidémiologie** : rare (1.2-3/100 000), hommes >> femmes (93-98%), 30-60 ans, bras dominant, facteurs de risque : stéroïdes anabolisants, tabac, sports de force
+- **Épidémiologie** *(Safran & Graham, 2002, Clin Orthop Relat Res)* : lésion rare (incidence de 1,2 à 3 pour 100 000), à très nette prédominance masculine (93-98 % des cas), survenant entre 30 et 60 ans, sur le bras dominant ; facteurs de risque identifiés : stéroïdes anabolisants, tabac, sports de force
 - **Mécanisme** : contraction excentrique brutale du biceps (charge lourde en extension résistée, bras qui cède sous la charge) → rupture à l'insertion sur la tubérosité radiale
 - **Diagnostic clinique** :
   - Craquement brutal, douleur antérieure du coude, ecchymose extensive
   - Rétraction du corps musculaire en proximal (signe de « Popeye inversé » — déformation)
-  - **Hook test** : patient en flexion active du coude à 90°, l'examinateur essaie de placer son index sous le tendon du biceps dans la fosse cubitale → impossible si rupture complète (pas de corde tendineuse palpable) — Se 100%, Sp 100% (le TEST DIAGNOSTIC)
-  - **Biceps squeeze test** : compression du biceps (comme le Thompson pour l'Achille) → normalement : supination passive ; rupture : pas de supination — Se 96%
+  - **Hook test** *(O'Driscoll et al., 2007, J Bone Joint Surg Am)* : patient en flexion active du coude à 90°, l'examinateur essaie de placer son index sous le tendon du biceps dans la fosse cubitale → impossible si rupture complète (pas de corde tendineuse palpable) — Se 100 %, Sp 100 % (le TEST DIAGNOSTIC)
+  - **Biceps squeeze test** *(Ruland et al., 2005, Clin Orthop Relat Res)* : compression du corps musculaire du biceps (analogue au test de Thompson pour l'Achille) → normalement : supination passive ; en cas de rupture : absence de supination — Se 96 %
   - Faiblesse en supination (perte 40-50%) +++, faiblesse en flexion modérée (perte 20-30%)
 - **Imagerie** : IRM (séquence FABS — Flexion-ABduction-Supination view, ou coupe axiale à la tubérosité radiale), échographie dynamique (rétraction, gap)
 - **Traitement** :
@@ -231,6 +231,15 @@
 - 2 QCM Or (cas : craquement du coude chez un haltérophile → diagnostic, timing chirurgical)
 - 1 QCM Diamant (cas : homme 52 ans, douleur épaule + Popeye sign + rupture SSP → quel traitement pour le LBT ?)
 - 1 QROC : « Comparez la ténodèse et la ténotomie du long biceps : indications, technique, résultats, et complications. »
+
+---
+
+## Références
+
+- Green DP. Trigger finger. In: Green DP, Hotchkiss RN, Pederson WC, Wolfe SW, eds. *Green's Operative Hand Surgery*. 5th ed. Philadelphia: Elsevier Churchill Livingstone; 2005:2137-2150.
+- O'Driscoll SW, Goncalves LB, Dietz P. The hook test for distal biceps tendon avulsion. *Am J Sports Med*. 2007;35(11):1865-1869.
+- Ruland RT, Dunbar RP, Bowen JD. The biceps squeeze test for diagnosis of distal biceps tendon ruptures. *Clin Orthop Relat Res*. 2005;(437):128-131.
+- Safran MR, Graham SM. Distal biceps tendon ruptures: incidence, demographics, and the effect of smoking. *Clin Orthop Relat Res*. 2002;(404):275-283.
 
 ---
 

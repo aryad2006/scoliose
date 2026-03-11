@@ -40,9 +40,9 @@
   - Paraténon (pas de gaine synoviale) : richement vascularisé, source de néovaisseaux dans la tendinopathie
 - **Zone critique vasculaire** : 2-6 cm au-dessus de l'insertion = watershed zone = zone hypovasculaire → vulnérabilité maximale = localisation préférentielle de la tendinopathie corporéale
 - **Épidémiologie** :
-  - Incidence sport : 6-17% des blessures des coureurs à pied
-  - Prévalence vie entière chez les coureurs récréatifs : 52% pour une tendinopathie achilléenne
-  - Corporéale (55-65%) >> Insertionnelle (20-25%) >> Paratendinite (5-10%)
+  - Incidence sport : 6-17% des blessures des coureurs à pied *(Lopes et al., Br J Sports Med, 2012)*
+  - Prévalence vie entière chez les coureurs récréatifs : 52% pour une tendinopathie achilléenne *(Kujala et al., Am J Sports Med, 2005)*
+  - Corporéale (55-65%) >> Insertionnelle (20-25%) >> Paratendinite (5-10%) *(Kvist, 1994, Scand J Med Sci Sports)*
   - Facteurs de risque : âge >35 ans, sexe masculin, IMC élevé, diabète, hypercholestérolémie, quinolones, pronation excessive, entraînement excessif, surface dure
 
 **Médias** :
@@ -116,14 +116,14 @@
 
 **Contenu obligatoire** :
 - **Traitement de première ligne — EXERCICES EXCENTIQUES** :
-  - **Protocole d'Alfredson** (gold standard) : exercices de descente excentrique du mollet, genou tendu (gastrocnémiens) + genou fléchi (soléaire), 3×15 × 2 exercices × 2 fois/jour = 180 répétitions/jour, 12 semaines minimum, DOULEUR AUTORISÉE (0-5/10 EVA), progression avec charge additionnelle (sac à dos lesté)
+  - **Protocole d'Alfredson** (gold standard) *(d'après Alfredson et al., 1998, Am J Sports Med)* : exercices de descente excentrique du mollet, genou tendu (gastrocnémiens) + genou fléchi (soléaire), 3×15 × 2 exercices × 2 fois/jour = 180 répétitions/jour, 12 semaines minimum, DOULEUR AUTORISÉE (0-5/10 EVA), progression avec charge additionnelle (sac à dos lesté)
   - **Protocole de Silbernagel** (HSR — Heavy Slow Resistance) : alternative aux excentiques, combinant concentrique-excentrique à charge lourde, pressions plus faibles, plus de compliance patient, efficacité comparable à 12 semaines
   - Surcharge progressive (overload management) : principe de la capacité de charge vs charge appliquée
 - **Modification d'activité** : JAMAIS d'arrêt total de l'activité (déconditionnement du tendon = perte de capacité de charge → rechute) — diminution temporaire de la charge, modulation volume/intensité, activités de substitution (vélo, natation) si douleur >5/10 EVA
 - **Ondes de choc extracorporelles (ESWT)** : evidence niveau B pour les tendinopathies récalcitrantes (>3 mois d'excentiques sans amélioration) — 3-5 séances, 1/semaine
 - **PRP (Plasma Riche en Plaquettes)** : evidence controversée, méta-analyses contradictoires — possible bénéfice à court terme, résultats modestes à long terme — recommandé en 2ème/3ème ligne
 - **High Volume Injection (HVI)** : injection de 30-50 mL sous guidage échographique entre paraténon et tendon → stripping des néovaisseaux — bénéfice à court terme (réduction rapide de la douleur)
-- **Corticoïdes** : CONTRE-INDIQUÉS en péri-achilléen (↑ risque de rupture × 3.7) — exception : bursite rétro-calcanéenne isolée sous guidage échographique
+- **Corticoïdes** : CONTRE-INDIQUÉS en péri-achilléen (↑ risque de rupture × 3.7, *Dean et al., 2014, BMJ*) — exception : bursite rétro-calcanéenne isolée sous guidage échographique
 - **Traitement chirurgical** (échec conservateur ≥6 mois) :
   - Corporéale : excision du nodule dégénératif + débridement ± augmentation (transfert FHL) — résultats 70-85% satisfaisants
   - Insertionnelle : calcaneoplastie + débridement ± ancrage de réinsertion (>50% de l'insertion décollée) — endoscopique ou ouvert
@@ -182,14 +182,14 @@
 ### Section 9.1 — Épidémiologie, mécanisme et diagnostic clinique
 
 **Contenu obligatoire** :
-- **Épidémiologie** : incidence 18-37/100 000/an (en augmentation), pic d'âge 30-50 ans (« weekend warrior »), sex-ratio 3-6H:1F, côté gauche légèrement plus fréquent (pied d'appel)
+- **Épidémiologie** : incidence 18-37/100 000/an *(Ganestam et al., Foot Ankle Surg, 2016)* (en augmentation), pic d'âge 30-50 ans (« weekend warrior »), sex-ratio 3-6H:1F *(Ganestam et al., 2016)*, côté gauche légèrement plus fréquent (pied d'appel)
 - **Mécanismes** :
   - Sport (75%) : changement de direction brutal, réception de saut, sprint démarrage — badminton, tennis, squash, football
   - Chute/faux pas (10-15%)
   - Traumatisme direct (rare)
   - Rupture sur tendon dégénératif (40-50% des cas ont des lésions pré-existantes asymptomatiques)
 - **Facteurs de risque** :
-  - Fluoroquinolones : RR × 3-4, surtout si >60 ans ou corticoïdes associés — délai médian 6 jours après début du traitement
+  - Fluoroquinolones : RR × 3-4, surtout si >60 ans ou corticoïdes associés — délai médian 6 jours après début du traitement *(Stephenson et al., Drug Saf, 2013)*
   - Corticoïdes systémiques ou locaux : fragilisation du collagène
   - Tendinopathie pré-existante : le tendon dégénératif est plus fragile
   - Hypercholestérolémie, diabète, hyperuricémie (goutte)
@@ -246,8 +246,8 @@
   - Protocole accéléré de Willits : mise en charge protégée précoce + mobilisation active dès J2-7
   - Taux de re-rupture : 3-5% avec les protocoles accélérés (vs 12% avec les vieux protocoles d'immobilisation plâtrée)
   - Avantages : pas de complications de plaie, pas d'anesthésie, coût réduit
-- **Méta-analyses comparatives** (Ochen et al., 2019 ; Deng et al., 2017) :
-  - Re-rupture : chirurgie 3% vs fonctionnel 5% — différence cliniquement non significative avec les protocoles accélérés de réhabilitation
+- **Méta-analyses comparatives** (Ochen et al., *BMJ*, 2019 ; Deng et al., *Clin Rehabil*, 2017) :
+  - Re-rupture : chirurgie 3% vs fonctionnel 5% *(Ochen et al., BMJ, 2019)* — différence cliniquement non significative avec les protocoles accélérés de réhabilitation
   - Complications totales : chirurgie > fonctionnel (infections, nerf sural)
   - Force : chirurgie légèrement supérieure à 1 an, mais se normalise à 2 ans
   - Retour au sport : comparable à 6-12 mois
@@ -346,11 +346,11 @@
 **Contenu obligatoire** :
 - **Anatomie fonctionnelle** : muscle tibial postérieur → tendon rétro-malléolaire médial → insertion sur le naviculaire + cunéiformes + bases des métatarsiens → rôle : supination, inversion du pied, verrouillage médio-tarsien, soutien de la voûte plantaire (principal stabilisateur dynamique de la voûte)
 - **Physiopathologie** : zone hypovasculaire rétro-malléolaire (zone à risque), surcharge mécanique → tendinopathie dégénérative → élongation progressive → insuffisance → pied plat valgus acquis de l'adulte
-- **Classification de Johnson & Strom (modifiée par Myerson)** :
-  - Stade I : ténosynovite / tendinopathie sans déformation du pied → douleur rétro-malléolaire médiale, gonflement, heel rise possible mais douloureux
-  - Stade II : élongation/rupture partielle → pied plat valgus flexible (réductible), too many toes sign +, heel rise impossible ou avec valgus (non-corrigé)
-  - Stade III : pied plat valgus rigide → arthrose sous-talienne, non réductible
-  - Stade IV : stade III + atteinte de la cheville (tilt talien, arthrose tibio-talienne)
+- **Classification de Johnson & Strom** *(adapté de Johnson & Strom, 1989, Clin Orthop ; complété par Myerson, 1996)* :
+  - Stade I : atteinte tendineuse isolée (ténosynovite ou tendinopathie), sans déformation structurelle du pied ; le patient signale une douleur rétro-malléolaire médiale avec gonflement local, et le single heel rise reste réalisable quoique douloureux
+  - Stade II : allongement progressif ou rupture partielle du tendon entraînant un pied plat valgus encore souple (réductible passivement) ; le « too many toes sign » devient positif et le heel rise est impossible ou s'accompagne d'un valgus non corrigé
+  - Stade III : déformation fixée en pied plat valgus rigide avec arthrose sous-talienne secondaire, non réductible manuellement
+  - Stade IV (ajout de Myerson) : déformation de stade III étendue à l'articulation tibio-talienne, avec bascule (tilt) du talus et arthrose tibio-talienne associée
 - **Clinique** : douleur rétro-malléolaire médiale, gonflement, « too many toes sign », single heel rise test (heel rise inversion sign), tests de provocation
 - **Imagerie** : échographie (ténosynovite, épaississement, rupture longitudinale), IRM (précise le stade, les structures associées), radiographie en charge (angles de Meary, talar head uncoverage)
 - **Traitement** :
@@ -448,6 +448,24 @@
 - 2 QCM Or (cas clinique : pied plat acquis → stade, traitement ; fasciose résistante → stratégie)
 - 1 QCM Diamant (cas : patiente 55 ans avec douleur rétro-malléolaire médiale + pied plat valgus unilatéral récent → bilan complet, stade Johnson, plan)
 - 1 QROC : « Décrivez les 4 stades de la classification de Johnson & Strom de l'insuffisance du tibial postérieur et le traitement correspondant à chaque stade. »
+
+---
+
+---
+
+## Références bibliographiques
+
+1. Alfredson H, Pietilä T, Jonsson P, Lorentzon R. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. *Am J Sports Med*. 1998;26(3):360-366.
+2. Dean BJF, Lostis E, Oakley T, Rombach I, Morrey ME, Carr AJ. The risks and benefits of glucocorticoid treatment for tendinopathy: a systematic review of the effects of local glucocorticoid on tendon. *BMJ*. 2014;349:g6234.
+3. Deng S, Sun Z, Zhang C, Chen G, Li J. Surgical treatment versus conservative management for acute Achilles tendon rupture: a systematic review and meta-analysis of randomized controlled trials. *Clin Rehabil*. 2017;31(10):1305-1315.
+4. Ganestam A, Kallemose T, Troelsen A, Barfod KW. Increasing incidence of acute Achilles tendon rupture and a noticeable decline in surgical treatment from 1994 to 2013. A nationwide registry study of 33,160 patients. *Foot Ankle Surg*. 2016;22(4):223-227.
+5. Johnson KA, Strom DE. Tibialis posterior tendon dysfunction. *Clin Orthop Relat Res*. 1989;(239):196-206.
+6. Kujala UM, Sarna S, Kaprio J. Cumulative incidence of Achilles tendon rupture and tendinopathy in male former elite athletes. *Am J Sports Med*. 2005;33(8):1224-1228.
+7. Kvist M. Achilles tendon injuries in athletes. *Scand J Med Sci Sports*. 1994;4(4):234-238.
+8. Lopes AD, Hespanhol Júnior LC, Yeung SS, Costa LOP. What are the main running-related musculoskeletal injuries? A systematic review. *Br J Sports Med*. 2012;46(12):831-838.
+9. Myerson MS. Adult acquired flatfoot deformity: treatment of dysfunction of the posterior tibial tendon. *Instr Course Lect*. 1996;45:393-405.
+10. Ochen Y, Beks RB, van Heijl M, et al. Operative treatment versus nonoperative treatment of Achilles tendon ruptures: systematic review and meta-analysis. *BMJ*. 2019;364:k5120.
+11. Stephenson AL, Wu W, Cortes D, Rochon PA. Tendon injury and fluoroquinolone use: a systematic review. *Drug Saf*. 2013;36(9):709-721.
 
 ---
 

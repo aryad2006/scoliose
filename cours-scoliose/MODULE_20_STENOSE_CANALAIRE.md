@@ -29,7 +29,7 @@ Canal lombaire étroit (CLE) • Sténose foraminale • Claudio intermittente n
 - Ostéophytes articulaires postérieurs (latérale)
 - Subluxation facettaire ou spondylolisthésis dégénératif
 
-**Classification de Schizas (IRM axial T2)** :
+**Classification de Schizas** (Schizas et al., 2010, *Spine*) **(IRM axial T2)** :
 | Grade | Aspect | Signal LCR |
 |-------|--------|-----------|
 | A | Contenu graisseux entourant les racines | Visible |
@@ -149,6 +149,14 @@ Canal lombaire étroit (CLE) • Sténose foraminale • Claudio intermittente n
 > 📌 **5.** La **fusion est nécessaire** si spondylolisthésis associé (stabilité) ou scoliose dégénérative.
 
 > 📌 **6.** Le syndrome de la queue de cheval = URGENCE chirurgicale même dans un contexte de CLE.
+
+---
+
+## Références
+
+1. Schizas C, Theumann N, Burn A, et al. Qualitative grading of severity of lumbar spinal stenosis based on the morphology of the dural sac on magnetic resonance images. *Spine*. 2010;35(21):1919-1924.
+2. Weinstein JN, Tosteson TD, Lurie JD, et al. Surgical versus nonsurgical therapy for lumbar spinal stenosis (SPORT). *N Engl J Med*. 2008;358(8):794-810.
+3. Kreiner DS, Shaffer WO, Baisden JL, et al. An evidence-based clinical guideline for the diagnosis and treatment of degenerative lumbar spinal stenosis (update). *Spine J*. 2013;13(7):734-743.
 
 ---
 

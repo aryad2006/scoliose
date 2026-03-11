@@ -33,15 +33,15 @@
 ### Section 14.1 — Épidémiologie et agents pathogènes selon l'âge
 
 **Contenu obligatoire** :
-- Incidence : 1-13/100 000 enfants/an, prédominance masculine (2:1)
+- Incidence : 1-13/100 000 enfants/an, prédominance masculine (2:1) *(Dartnell et al., 2012, J Bone Joint Surg Br)*
 - Pic d'âge : 5-15 ans (pic de croissance métaphysaire)
 - **Germes par tranche d'âge** :
   - Nouveau-né (<3 mois) : *S. aureus*, *Streptocoque B*, BGN (*E. coli*, *Klebsiella*)
   - Nourrisson (3 mois-4 ans) : *S. aureus*, *Kingella kingae* (1ère cause dans certaines séries)
-  - Enfant (>4 ans) : *S. aureus* (60-90%), *Streptococcus pyogenes*, *S. pneumoniae*
+  - Enfant (>4 ans) : *S. aureus* (60-90%) *(Kaplan, 2005, Pediatr Clin North Am)*, *Streptococcus pyogenes*, *S. pneumoniae*
   - Drépanocytaire : *Salmonella* (classique !), *S. aureus*
 - **S. aureus PVL+** : formes nécrosantes sévères, ostéomyélite multifocale, thrombophlébite septique, abcès multiples, haute mortalité si retard diagnostique
-- Hémocultures positives dans 30-50% des cas
+- Hémocultures positives dans 30-50% des cas *(Peltola & Pääkkönen, 2014, N Engl J Med)*
 
 **Médias** :
 | ID | Type | Description | Notes |
@@ -75,9 +75,9 @@
 **Contenu obligatoire** :
 - **Urgence** : antibiothérapie IV dès les prélèvements réalisés (hémocultures ± ponction osseuse)
 - ATB probabiliste : oxacilline ou céfamandole (couvre SASM) ; si <4 ans : amoxicilline-ac. clavulanique (couvre *K. kingae*)
-- Relais oral précoce (J3-J5) si : apyrexie, CRP ↓↓, bonne tolérance digestive — étude POET (New England, 2019)
+- Relais oral précoce (J3-J5) si : apyrexie, CRP ↓↓, bonne tolérance digestive — étude POET *(Li HK et al., N Engl J Med, 2019)*
 - Durée totale : **3-4 semaines** (consensus actuel vs 6 semaines historique)
-- Schéma court validé : études finlandaises (Peltola), CRP comme guide de durée
+- Schéma court validé : études finlandaises *(Peltola et al., Pediatr Infect Dis J, 2010)*, CRP comme guide de durée
 - Suivi : CRP à J3, J7, J14, puis hebdomadaire ; radiographie à M1, M3, M6
 
 **Médias** :
@@ -103,7 +103,7 @@
 ### Section 14.5 — Formes compliquées et rare
 
 **Contenu obligatoire** :
-- **Ostéomyélite à S. aureus PVL+** : formes multifocales, nécrosantes, thrombophlébite septique (veine fémorale, cave), abcès pulmonaires métastatiques, mortalité 5-10%, prise en charge en réanimation
+- **Ostéomyélite à S. aureus PVL+** : formes multifocales, nécrosantes, thrombophlébite septique (veine fémorale, cave), abcès pulmonaires métastatiques, mortalité 5-10% *(Bocchini et al., 2006, Clin Infect Dis)*, prise en charge en réanimation
 - **Arthrite septique associée** : hanche et épaule (métaphyse intra-capsulaire), urgence chirurgicale de drainage
 - **Ostéomyélite multifocale** : scintigraphie corps entier, hémocultures PVL recherché en urgence
 - **CRMO (Chronic Recurrent Multifocal Osteomyelitis)** : pathologie auto-inflammatoire, PAS infectieuse (diagnostic différentiel !), pas d'ATB
@@ -161,7 +161,7 @@
 **Contenu obligatoire** :
 - Forme subaiguë d'ostéomyélite : cavité intra-osseuse collectée, bien limitée, entourée de sclérose
 - Localisation : métaphyse des os longs (identique aux enfants), parfois transphysaire
-- Germe : *S. aureus* (le plus fréquent), mais cultures souvent négatives (30-50%)
+- Germe : *S. aureus* (le plus fréquent), mais cultures souvent négatives (30-50%) *(Olasinde et al., 2003)*
 - Imagerie : lésion lytique ronde/ovale, sclérose périlésionnelle, penumbra sign en IRM
 - Diagnostic différentiel : tumeur osseuse (ostéome ostéoïde, histiocytose, lymphome, métastase)
 - Traitement : biopsie pour identification de germe + ATB 6 semaines ; curetage chirurgical si volumineux ou échec du traitement médical
@@ -242,7 +242,7 @@
 
 ### Section 16.4 — Récidives et gestion des échecs
 
-- Taux de récidive : 15-30% malgré traitement optimal
+- Taux de récidive : 15-30% malgré traitement optimal *(Lew & Waldvogel, 2004, Lancet)*
 - Causes d'échec : débridement insuffisant, mauvais comblement, défaut de couverture cutanée, immunodépression, germe résistant
 - Re-chirurgie : nouvelle séquestrectomie, résection plus étendue
 - Amputation : dernier recours, discutée en RCP après multiples échecs, évaluation qualité de vie
@@ -282,7 +282,7 @@
 ### Section 17.1 — Fractures ouvertes : classification et risque infectieux
 
 **Contenu obligatoire** :
-- **Classification de Gustilo-Anderson** :
+- **Classification de Gustilo-Anderson** *(Gustilo & Anderson, 1976, J Bone Joint Surg Am ; Gustilo et al., 1984, J Bone Joint Surg Am)* — taux d'infection approximatifs :
   - Type I : plaie <1cm, fracture simple → risque infection 0-2%
   - Type II : plaie 1-10 cm, contamination modérée → risque 2-10%
   - Type IIIA : plaie >10cm, couverture cutanée possible → risque 10-25%
@@ -328,6 +328,21 @@
 3. Le parage précoce et la couverture rapide des parties molles sont essentiels pour prévenir l'infection
 4. L'objectif double est de contrôler l'infection ET d'obtenir la consolidation osseuse
 5. Le concept de FRI standardise le diagnostic de l'infection sur fracture
+
+---
+
+## Références
+
+- Bocchini CE, Hulten KG, Mason EO, et al. Panton-Valentine leukocidin genes are associated with enhanced inflammatory response and local disease in acute hematogenous *Staphylococcus aureus* osteomyelitis in children. *Clin Infect Dis*. 2006;43(2):164-171.
+- Dartnell J, Ramachandran M, Katchburian M. Haematogenous acute and subacute paediatric osteomyelitis: a systematic review of the literature. *J Bone Joint Surg Br*. 2012;94(5):584-595.
+- Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. *J Bone Joint Surg Am*. 1976;58(4):453-458.
+- Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures: a new classification of type III open fractures. *J Bone Joint Surg Am*. 1984;66(2):218-228.
+- Kaplan SL. Osteomyelitis in children. *Pediatr Clin North Am*. 2005;52(3):795-810.
+- Lew DP, Waldvogel FA. Osteomyelitis. *Lancet*. 2004;364(9431):369-379.
+- Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA/POET). *N Engl J Med*. 2019;380(5):425-436.
+- Olasinde AA, Oluwadiya KS, Adegbehingbe OO. Treatment of Brodie’s abscess: excellent results from curettage, bone grafting, and antibiotics. *Singapore Med J*. 2003;44(3):130-132.
+- Peltola H, Pääkkönen M. Acute osteomyelitis in children. *N Engl J Med*. 2014;370(4):352-360.
+- Peltola H, Pääkkönen M, Kallio P, et al. Short- versus long-term antimicrobial treatment for acute hematogenous osteomyelitis of childhood. *Pediatr Infect Dis J*. 2010;29(12):1123-1128.
 
 ---
 

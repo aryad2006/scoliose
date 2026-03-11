@@ -33,10 +33,10 @@
 ### Section 18.1 — Épidémiologie et physiopathologie articulaire
 
 **Contenu obligatoire** :
-- Incidence : 2-10/100 000/an ; pic bimodal (<5 ans et >65 ans)
+- Incidence : 2-10/100 000/an *(Kaandorp et al., 1997)* ; pic bimodal (<5 ans et >65 ans)
 - Articulation synoviale : cible idéale (vascularisée, pas de membrane basale endothéliale dans la synoviale)
 - 3 voies de contamination : hématogène (principale), inoculation directe (infiltration, chirurgie, plaie pénétrante), contiguïté (ostéomyélite métaphysaire intra-capsulaire)
-- **Localisations** : genou (50%), hanche (20%), épaule (10%), cheville (7%), poignet, coude, doigts
+- **Localisations** *(Kaandorp et al., 1997)* : genou (50%), hanche (20%), épaule (10%), cheville (7%), poignet, coude, doigts
 - **Effet de l'infection sur le cartilage** : destruction rapide (48-72h) par protéases bactériennes + enzymes leucocytaires + pression intra-articulaire + toxines → dommage irréversible
 - Urgence : chaque heure de retard thérapeutique aggrave le pronostic fonctionnel
 
@@ -59,9 +59,9 @@
   - Cytologie : > 50 000 GB/mm³ (souvent >100 000) avec > 90% PNN
   - Recherche de cristaux : INDISPENSABLE (éliminer goutte/chondrocalcinose) — NB : arthrite septique et microcristalline peuvent COEXISTER
   - Examen bactériologique : Gram + culture (aéro-anaérobie)
-  - Culture positive dans 70-90% des cas
+  - Culture positive dans 70-90% des cas *(Margaretten et al., 2007, JAMA)*
 - **Germes** :
-  - *S. aureus* : 60% des cas (adulte)
+  - *S. aureus* : 60% des cas (adulte) *(Goldenberg, 1998, Lancet)*
   - *Streptocoques* : 15-20%
   - *Neisseria gonorrhoeae* : sujet jeune, polyarthrite migratrice → monoarthrite
   - *K. kingae* : enfant <4 ans
@@ -102,8 +102,8 @@
 ### Section 18.4 — Pronostic et séquelles
 
 **Contenu obligatoire** :
-- Mortalité : 5-15% (sujet âgé, comorbidités, poly-articulaire)
-- Séquelles articulaires permanentes : 30-50% des cas
+- Mortalité : 5-15% (sujet âgé, comorbidés, poly-articulaire) *(Weston et al., 1999)*
+- Séquelles articulaires permanentes : 30-50% des cas *(Weston et al., 1999)*
 - Facteurs de mauvais pronostic : âge >65 ans, retard diagnostique >48h, hanche, immunodépression, *S. aureus*
 - Arthrose secondaire : quasi constante après arthrite septique
 - Arthrodèse : option de sauvetage (cheville, épaule, genou)
@@ -130,12 +130,12 @@
 
 ## Accroche clinique
 
-> 🏥 **Cas clinique — Mme Lefèvre, 74 ans** : Prothèse totale de hanche droite posée il y a 2 ans. Douleur inguinale droite progressive depuis 6 mois, pas de fièvre, marche limitée à 200m. CRP = 18 mg/L. Radiographie : liseré >2mm progressif, ostéolyse zones I et VII de DeLee-Charnley. Suspicion d'infection chronique ? Descellement septique vs aseptique ? *Comment faire la part des choses ?*
+> 🏥 **Cas clinique — Mme Lefèvre, 74 ans** : Prothèse totale de hanche droite posée il y a 2 ans. Douleur inguinale droite progressive depuis 6 mois, pas de fièvre, marche limitée à 200m. CRP = 18 mg/L. Radiographie : liseré >2mm progressif, ostéolyse zones I et VII de DeLee-Charnley *(DeLee & Charnley, 1976, Clin Orthop)*. Suspicion d'infection chronique ? Descellement septique vs aseptique ? *Comment faire la part des choses ?*
 
 ## Objectifs d'apprentissage
 
 1. **Définir** l'infection périprothétique et sa classification temporelle (Tsukayama/Zimmerli)
-2. **Appliquer** les critères diagnostiques (MSIS/ICM 2018)
+2. **Appliquer** les critères diagnostiques (MSIS *(Parvizi et al., 2011, Clin Orthop Relat Res)* / ICM 2018)
 3. **Interpréter** les examens complémentaires (biologie, imagerie, ponction, alpha-défensine)
 4. **Distinguer** descellement septique et aseptique
 5. **Évaluer** les facteurs pronostiques
@@ -145,8 +145,8 @@
 ### Section 19.1 — Épidémiologie et facteurs de risque
 
 **Contenu obligatoire** :
-- Incidence : PTH 0.5-2%, PTG 1-2.5%, prothèse d'épaule 1-4%, prothèse de coude 3-8%
-- Coût moyen d'un sepsis sur prothèse : 50 000-100 000 € (traitement complet)
+- Incidence : PTH 0.5-2%, PTG 1-2.5%, prothèse d'épaule 1-4%, prothèse de coude 3-8% *(Kurtz et al., 2012, J Arthroplasty)*
+- Coût moyen d'un sepsis sur prothèse : 50 000-100 000 € (traitement complet) *(Kurtz et al., 2012)*
 - **Facteurs de risque pré-opératoires** :
   - Diabète (OR 1.5-2), obésité IMC>40 (OR 2-3), immunosuppression, polyarthrite rhumatoïde
   - ATCD de révision prothétique, ATCD d'infection articulaire
@@ -162,7 +162,7 @@
 ### Section 19.2 — Classification temporelle
 
 **Contenu obligatoire** :
-- **Classification de Tsukayama (2002)** :
+- **Classification de Tsukayama** *(Tsukayama et al., 1996, J Arthroplasty)* :
   - Type I : Culture per-opératoire positive (découverte fortuite) — ≥2 échantillons positifs au même germe
   - Type II : Infection post-opératoire précoce (<4 semaines) — S. aureus, BGN
   - Type III : Infection hématogène aiguë (>4 semaines, mais début brutal, articulation fonctionnelle avant) — S. aureus, streptocoques
@@ -182,12 +182,12 @@
 ### Section 19.3 — Démarche diagnostique
 
 **Contenu obligatoire** :
-- **Critères ICM 2018 (International Consensus Meeting)** :
+- **Critères ICM 2018 (International Consensus Meeting)** *(Parvizi et al., 2018, J Arthroplasty)* :
   - Critère majeur (1 seul suffit) : fistule communiquant avec l'articulation, ou ≥2 cultures positives au même germe
   - Critères mineurs (score ≥6 = infection) :
     - CRP >10 mg/L (2 pts), VS >30 mm/h (2 pts)
     - Leucocytes synoviaux >3000/µL (3 pts), % PNN synoviaux >80% (2 pts)
-    - Alpha-défensine positive (3 pts) — spécificité 97%
+    - Alpha-défensine positive (3 pts) — spécificité 97% *(Deirmengian et al., 2014)*
     - Histologie : >5 PNN/champ HPF (3 pts)
   - Score : ≥6 = infection probable, 2-5 = doute, ≤1 = infection peu probable
 - **Biologie sérique** : CRP +++, VS (moins spécifique), IL-6 (normalisation rapide), D-dimères (nouveau marqueur)
@@ -211,7 +211,7 @@
 - Culture prolongée 14 jours (milieux aéro-anaérobie)
 - ≥2 prélèvements positifs au même germe = infection confirmée
 - 1 seul prélèvement positif : possible contaminant, interprétation prudente
-- **Histologie** (examen extemporané + définitif) : ≥5 PNN/champ HPF (400×), 10 champs → sensibilité 80%, spécificité 90%
+- **Histologie** (examen extemporané + définitif) : ≥5 PNN/champ HPF (400×), 10 champs → sensibilité 80%, spécificité 90% *(Feldman et al., 1995)*
 - **Sonication de l'implant** : détache le biofilm → culture, augmente la sensibilité de 30-40%
 - **PCR 16S/MALDI-TOF** : utile si cultures négatives sous ATB ou germes fastidieux
 
@@ -266,7 +266,7 @@
   - État des tissus mous acceptable (pas de nécrose étendue, possibilité de fermeture)
   - Germe sensible à la rifampicine et aux fluoroquinolones (pour bi-thérapie orale)
 - **Contre-indications RELATIVES au DAIR** :
-  - SARM (succès DAIR 30-40% vs 70% pour SASM)
+  - SARM (succès DAIR 30-40% vs 70% pour SASM) *(Senneville et al., 2011)*
   - Polyéthylène non échangeable
   - Symptômes >4 semaines
   - Fistule
@@ -299,7 +299,7 @@
 ### Section 20.4 — Résultats et facteurs d'échec
 
 **Contenu obligatoire** :
-- Taux de succès global du DAIR : 60-75%
+- Taux de succès global du DAIR : 60-75% *(Byren et al., 2009, Clin Infect Dis)*
 - **Facteurs de bon pronostic** : infection précoce (<7 jours), SASM, bi-thérapie rifampicine, 1er DAIR
 - **Facteurs d'échec** : SARM (30-40% succès), symptômes >4 semaines, Gram-négatif, polymicrobien, immunodéprimé, échec d'un 1er DAIR
 - En cas d'échec de DAIR → changement prothétique en 1 ou 2 temps (Modules 21)
@@ -377,11 +377,11 @@
   - Retrait du spacer, prélèvements (≥5), lavage
   - Réimplantation prothétique (ciment +/- chargé ATB)
   - +/- greffes osseuses (impaction grafting, allogreffes structurales)
-- **Résultats** : taux de guérison 85-95%
+- **Résultats** : taux de guérison 85-95% *(Kunutsor et al., 2015, Arch Orthop Trauma Surg)*
 
 ### Section 21.3 — Comparaison 1 temps vs 2 temps
 
-- **Méta-analyses** : pas de supériorité claire du 2 temps vs 1 temps en termes d'éradication (Kunutsor et al., 2015)
+- **Méta-analyses** : pas de supériorité claire du 2 temps vs 1 temps en termes d'éradication *(Kunutsor et al., 2015, Arch Orthop Trauma Surg)*
 - **Tendance internationale** : élargissement des indications du 1 temps (coût-efficacité, qualité de vie)
 - **Facteurs décisionnels** :
   - 1 temps si : germe connu sensible, sinus/fistule absent, perte osseuse modérée, bon état général
@@ -418,6 +418,26 @@
 5. Girdlestone, arthrodèse, amputation = sauvetage ultime après échecs multiples
 6. Les cas complexes doivent être adressés aux CRIOA (Centres de Référence)
 7. Le traitement suppressif est une option chez le patient inopérable
+
+---
+
+## Références
+
+- Byren I, Bejon P, Atkins BL, et al. One hundred and twelve infected arthroplasties treated with ‘DAIR’ (debridement, antibiotics and implant retention): antibiotic duration and outcome. *J Antimicrob Chemother*. 2009;63(6):1264-1271.
+- Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? *Clin Orthop Relat Res*. 2014;472(11):3254-3262.
+- DeLee JG, Charnley J. Radiological demarcation of cemented sockets in total hip replacement. *Clin Orthop Relat Res*. 1976;(121):20-32.
+- Feldman DS, Lonner JH, Desai P, et al. The role of intraoperative frozen sections in revision total joint arthroplasty. *J Bone Joint Surg Am*. 1995;77(12):1807-1813.
+- Goldenberg DL. Septic arthritis. *Lancet*. 1998;351(9097):197-202.
+- Kaandorp CJE, Dinant HJ, van de Laar MAFJ, et al. Incidence and sources of native and prosthetic joint infection: a community based prospective survey. *Ann Rheum Dis*. 1997;56(8):470-475.
+- Kunutsor SK, Whitehouse MR, Blom AW, et al. Re-infection outcomes following one- and two-stage surgical revision of infected hip prosthesis: a systematic review and meta-analysis. *Arch Orthop Trauma Surg*. 2015;135(6):755-767.
+- Kurtz SM, Lau E, Watson H, et al. Economic burden of periprosthetic joint infection in the United States. *J Arthroplasty*. 2012;27(8 Suppl):61-65.e1.
+- Margaretten ME, Kohlwes J, Moore D, et al. Does this adult patient have septic arthritis? *JAMA*. 2007;297(13):1478-1488.
+- Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection: from the Workgroup of the MSIS. *Clin Orthop Relat Res*. 2011;469(11):2992-2994.
+- Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection: an evidence-based and validated criteria. *J Arthroplasty*. 2018;33(5):1309-1314.e2.
+- Senneville E, Joulie D, Legout L, et al. Outcome and predictors of treatment failure in total hip/knee prosthetic joint infections due to *Staphylococcus aureus*. *Clin Infect Dis*. 2011;53(4):334-340.
+- Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty: a study of the treatment of one hundred and six infections. *J Bone Joint Surg Am*. 1996;78(4):512-523.
+- Weston VC, Jones AC, Bradbury N, et al. Clinical features and outcome of septic arthritis in a single UK Health District 1982-1991. *Ann Rheum Dis*. 1999;58(4):214-219.
+- Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections. *JAMA*. 1998;279(19):1537-1541.
 
 ---
 
