@@ -540,4 +540,126 @@ Avant de considérer un module ou un CDC comme terminé, vérifier :
 
 ---
 
+## 14. Cas cliniques progressifs d'entraînement (OBLIGATOIRE pour toutes les formations)
+
+> **RÈGLE ABSOLUE — CAS CLINIQUES D'ENTRAÎNEMENT**
+>
+> Chaque formation VERTEX© DOIT comporter un **cahier de cas cliniques progressifs** dédié. Ce cahier constitue un **entraînement systématique** à la prise en charge et aux conduites à tenir. Il est distinct des vignettes cliniques intégrées aux modules (§2.1) et de l'auto-évaluation de fin de module (§9). Il constitue un **document autonome** rattaché à chaque formation.
+
+### 14.1 Objectifs pédagogiques des cas cliniques progressifs
+
+Les cas cliniques d'entraînement visent à :
+
+1. **Consolider les connaissances** acquises dans les modules en les mobilisant dans des situations réalistes
+2. **Développer le raisonnement clinique** : du symptôme au diagnostic, du diagnostic à la prise en charge
+3. **Entraîner la prise de décision** : indications, contre-indications, choix thérapeutiques
+4. **Maîtriser les conduites à tenir** : urgences, complications, situations complexes
+5. **Intégrer la pluridisciplinarité** : savoir quand et à qui référer, comment coordonner les soins
+
+### 14.2 Structure obligatoire de chaque cas clinique
+
+Chaque cas clinique DOIT suivre cette structure :
+
+1. **En-tête** :
+   - Numéro et titre du cas (ex. « Cas n°1 — Le diagnostic inattendu »)
+   - Niveau de difficulté : 🥉 Bronze | 🥈 Argent | 🥇 Or | 💎 Diamant
+   - Modules mobilisés (ex. « Modules 3, 5, 8 »)
+   - Durée estimée de travail (15-45 min)
+   - Thématique principale
+
+2. **Présentation initiale** :
+   - Patient fictif avec identité réaliste (Mme/M. + initiale, âge, profession)
+   - Motif de consultation
+   - Antécédents pertinents (médicaux, chirurgicaux, familiaux)
+   - Traitement en cours
+   - Contexte socio-professionnel si pertinent
+
+3. **Examen clinique** :
+   - Données d'inspection, palpation, testing
+   - Résultats des tests cliniques spécifiques avec valeurs
+   - Scores fonctionnels si pertinents
+
+4. **Investigations** :
+   - Résultats biologiques (avec valeurs normales entre parenthèses)
+   - Imagerie : description textuelle + renvoi média (MXXX-CC-NNN)
+   - Autres examens complémentaires
+
+5. **Questions progressives** (minimum 5 par cas) :
+   - **Q1** : Analyse des données → « Quels sont les éléments sémiologiques clés ? »
+   - **Q2** : Diagnostic → « Quel diagnostic évoquez-vous ? Justifiez. »
+   - **Q3** : Bilan complémentaire → « Quels examens demandez-vous ? Pourquoi ? »
+   - **Q4** : Prise en charge → « Quelle est votre conduite à tenir ? Détaillez. »
+   - **Q5** : Complication / évolution → « Le patient revient à J+X avec [nouveau problème]. Que faites-vous ? »
+   - Questions supplémentaires possibles (Q6-Q10) pour les cas Or et Diamant
+
+6. **Réponses détaillées** :
+   - Chaque question a une réponse **argumentée et complète**
+   - Les réponses incluent les **justifications physiopathologiques**
+   - Les **pièges diagnostiques** sont signalés
+   - Les **erreurs fréquentes** sont mentionnées avec le marqueur ❌
+   - Les **alternatives thérapeutiques** sont discutées avec leurs avantages/inconvénients
+   - Les **références** aux modules de la formation sont indiquées (« cf. Module X, §X.X »)
+
+7. **Points d'apprentissage** (3-5 messages à retenir de ce cas)
+
+### 14.3 Progression et niveaux de difficulté
+
+Les cas cliniques sont organisés en **4 niveaux progressifs** :
+
+| Niveau | Nb min. de cas | Complexité | Type de raisonnement |
+|--------|---------------|------------|---------------------|
+| 🥉 **Bronze** | 5-8 | Cas typique, diagnostic évident | Application directe des connaissances |
+| 🥈 **Argent** | 5-8 | Cas atypique, diagnostic différentiel | Synthèse de plusieurs modules |
+| 🥇 **Or** | 3-5 | Cas complexe, multifactoriel | Décision thérapeutique argumentée |
+| 💎 **Diamant** | 2-3 | Cas expert, complication, échec | Gestion de l'incertitude, situations rares |
+
+**Minimum total** : 15-24 cas cliniques par formation.
+
+**Progression obligatoire** :
+- Les cas Bronze mobilisent 1-2 modules
+- Les cas Argent mobilisent 3-4 modules et incluent des diagnostics différentiels
+- Les cas Or mobilisent 5+ modules, intègrent les comorbidités et les décisions chirurgicales complexes
+- Les cas Diamant sont des cas multi-étapes avec complications, échecs, reprises
+
+### 14.4 Exigences de réalisme et de complétude
+
+- **Données réalistes** : toutes les valeurs biologiques, radiographiques, scores fonctionnels doivent être cohérentes entre elles et correspondre à la pathologie présentée
+- **Évolution temporelle** : les cas Or et Diamant incluent une chronologie (consultation initiale → bilan → traitement → suivi → complication éventuelle)
+- **Décision partagée** : au moins 2 cas par formation incluent une question sur l'information au patient et la décision partagée
+- **Multidisciplinarité** : au moins 3 cas par formation impliquent d'autres spécialités (anesthésie, rééducation, rhumatologie, infectiologie, etc.)
+- **Conduites à tenir structurées** : les réponses aux questions de prise en charge suivent une structure systématique :
+  1. Mesures immédiates (si urgence)
+  2. Bilan complémentaire
+  3. Information du patient
+  4. Traitement de première intention
+  5. Alternatives si échec
+  6. Surveillance et suivi
+
+### 14.5 Format du fichier
+
+Chaque formation dispose d'un fichier dédié dans son répertoire :
+
+| Formation | Fichier | Code |
+|-----------|---------|------|
+| Scoliose | `CAS_CLINIQUES_SCOLIOSE.md` | CCSCOL |
+| PTG | `CAS_CLINIQUES_PTG.md` | CCPTG |
+| IOA | `CAS_CLINIQUES_IOA.md` | CCIOA |
+| Tendinites | `CAS_CLINIQUES_TENDINITES.md` | CCTEND |
+| Obésité et Orthopédie | `CAS_CLINIQUES_OBO.md` | CCOBO |
+
+### 14.6 Checklist cas cliniques (ajout à la checklist §11)
+
+| # | Critère cas cliniques | ✅ |
+|---|---|---|
+| 26 | Cahier de cas cliniques présent pour la formation | |
+| 27 | Minimum 15 cas couvrant les 4 niveaux de difficulté | |
+| 28 | Chaque cas comporte ≥ 5 questions progressives | |
+| 29 | Réponses argumentées avec justifications physiopathologiques | |
+| 30 | Au moins 2 cas incluent la décision partagée | |
+| 31 | Au moins 3 cas impliquent la pluridisciplinarité | |
+| 32 | Conduites à tenir structurées (6 étapes) | |
+| 33 | Données biologiques et radiologiques réalistes et cohérentes | |
+
+---
+
 *Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX© (Scoliose, PTG, IOA, Tendinites, Obésité et Orthopédie). Toute dérogation doit être justifiée par la nature du contenu.*
