@@ -1,76 +1,73 @@
-# NOTE DE REPRISE — 11 mars 2026
+# NOTE DE REPRISE — 11 mars 2026 (mise à jour)
 
-**Projet** : VERTEX© — Formations médicales e-learning
-**Dépôt** : aryad2006/scoliose (branche main)
-**Dernière session** : 11 mars 2026
+**Projet** : VERTEX© — Formations médicales e-learning  
+**Dépôt** : aryad2006/scoliose (branche main)  
+**Dernière session** : 11 mars 2026  
+**Mise à jour** : 11 mars 2026 — session 2 (cas cliniques)
 
 ---
 
-## RÉSUMÉ DE CE QUI A ÉTÉ FAIT
+## HISTORIQUE DES SESSIONS
 
-### 1. Formation Obésité et Orthopédie — TERMINÉE ✅
+### Session précédente (avant 11 mars 2026)
 
-Création complète de la 5e formation VERTEX© :
+- ✅ 5 formations CDC complètes (Scoliose, PTG, IOA, Tendinites, Obésité)
+- ✅ Formation Obésité (commit `3ce04a8`)
+- ✅ Section 14 « Cas cliniques progressifs » ajoutée aux REGLES_ECRITURE_CONTENU.md
+- ✅ `à-venir/FORMATIONS_FUTURES_VERTEX.md` mis à jour
 
-| Fichier | Contenu | Statut |
-|---------|---------|--------|
-| `CDC_OBO_00_INTRODUCTION_CHARTE.md` | Architecture, charte graphique, navigation, glossaire | ✅ |
-| `CDC_OBO_01_FONDAMENTAUX_OBESITE.md` | Modules 1-5 : Épidémiologie, physiopathologie, tissu adipeux, comorbidités, évaluation | ✅ |
-| `CDC_OBO_02_TRAITEMENT_OBESITE.md` | Modules 6-9 : Nutrition, APA/TCC, pharmacologie GLP-1, chirurgie bariatrique | ✅ |
-| `CDC_OBO_03_BIOMECANIQUE_ARTICULAIRE.md` | Modules 10-12 : Biomécanique, arthrose métabolique, tendinopathies | ✅ |
-| `CDC_OBO_04_ARTHROPLASTIE.md` | Modules 13-15 : PTG, PTH, révision chez l'obèse | ✅ |
-| `CDC_OBO_05_RACHIS.md` | Modules 16-17 : Rachis dégénératif, chirurgie rachidienne | ✅ |
-| `CDC_OBO_06_TRAUMATOLOGIE.md` | Modules 18-19 : Fractures, traumatismes des tissus mous | ✅ |
-| `CDC_OBO_07_PERIOPERATOIRE.md` | Modules 20-22 : Anesthésie, complications, rééducation RAAC | ✅ |
-| `CDC_OBO_08_POPULATIONS_ETHIQUE.md` | Modules 23-25 : Pédiatrie, post-bariatrique, éthique/IA | ✅ |
-| `CDC_OBO_COMPLET.md` | Concaténation complète (3 708 lignes) | ✅ |
+### Session du 11 mars 2026 — CE QUI A ÉTÉ FAIT ✅
 
-**Commit** : `3ce04a8` — poussé sur GitHub ✅
+#### 1. CAS_CLINIQUES_SCOLIOSE.md — CRÉÉ ET COMPLET ✅
 
-### 2. Règles d'écriture — Section 14 ajoutée ✅
+**Fichier** : `cours-scoliose/CAS_CLINIQUES_SCOLIOSE.md`  
+**Volume** : ~2 700 lignes, 20 cas cliniques complets
 
-Ajout de la **Section 14 « Cas cliniques progressifs d'entraînement »** dans `REGLES_ECRITURE_CONTENU.md` (v3.0 → v3.1 de facto).
+| Niveau | Nb cas | Thématiques |
+|--------|--------|-------------|
+| 🥉 Bronze (1-7) | 7 | SIA dépistage, Scheuermann, spondylolisthésis, cyphose posturale, hernie discale, fracture ostéoporotique, fracture burst |
+| 🥈 Argent (8-13) | 6 | Ostéome ostéoïde, scoliose infantile, NF1 dystrophique, sténose dégénérative, Marfan, déséquilibre sagittal |
+| 🥇 Or (14-17) | 4 | SIA sévère Lenke, DMD neuromusculaire, scoliose congénitale, scoliose dégénérative complexe |
+| 💎 Diamant (18-20) | 3 | Déficit neurologique peropératoire, pseudarthrose/PJK, infection post-arthrodèse |
 
-Cette section définit :
-- Objectifs pédagogiques (consolider, raisonner, décider, CAT, pluridisciplinarité)
-- Structure obligatoire de chaque cas (en-tête, présentation, examen, investigations, questions progressives ≥5, réponses argumentées, points d'apprentissage)
-- 4 niveaux de difficulté : 🥉 Bronze → 🥈 Argent → 🥇 Or → 💎 Diamant
-- Minimum 15-24 cas par formation
-- Exigences de réalisme, évolution temporelle, décision partagée, multidisciplinarité
-- Checklist items 26-33 ajoutés
-- Nommage des fichiers : `CAS_CLINIQUES_{FORMATION}.md`
+**Caractéristiques** :
+- Chaque cas : présentation → ATCD → examen clinique → investigations → 5-7 questions progressives → réponses argumentées → points d'apprentissage
+- **47 tags `> [MEDIA: 📷/📐 MXX-SYY-ZZZ — Description]`** insérés inline dans les sections investigations et contexte peropératoire
+- Références croisées aux modules (Module 1-25)
+- Cas pluridisciplinaires : cas 15 (DMD : pneumo/cardio/neuro/ortho), cas 17 (gériatrie multi-spécialités), cas 20 (infectiologie)
+- Cas décision partagée : cas 12 (Marfan), cas 15 (DMD), cas 17 (adulte âgé)
+- CAT structurées dans chaque réponse
 
-**Statut** : Section écrite dans REGLES, prête au commit (pas encore poussée).
+#### 2. Règle « médias dans les cas cliniques » — ENREGISTRÉE ✅
 
-### 3. Fichiers projet mis à jour ✅
+Nouvelle règle persistante (sauvée en mémoire) applicable à TOUTES les formations :
+> **TOUJOURS intégrer des tags `> [MEDIA: 📷/📐/🎬 MXX-SYY-ZZZ — Description]` directement dans le flux du texte des cas cliniques**, au sein des sections Investigations, Examen clinique, et Réponses. Ne JAMAIS laisser une description textuelle d'imagerie sans tag MEDIA associé.
 
-- `REGLES_ECRITURE_CONTENU.md` : formation Obésité ajoutée à la ligne finale + Section 14
-- `à-venir/FORMATIONS_FUTURES_VERTEX.md` : Formation 15 (OBO) marquée ✅ CDC complet
+#### 3. Règle « création fichiers longs par parties » — ENREGISTRÉE ✅
+
+Pour les fichiers > 500 lignes, créer le fichier en parties successives (Partie 1/4, 2/4…) pour éviter les pertes de contexte.
 
 ---
 
 ## CE QUI RESTE À FAIRE
 
-### Priorité 1 — Créer les 5 cahiers de cas cliniques progressifs
+### Priorité 1 — Créer les 4 cahiers de cas cliniques restants
 
-Conformément à la Section 14 des REGLES, chaque formation doit avoir son cahier de cas cliniques :
+| # | Fichier | Répertoire | Min. cas | Statut |
+|---|---------|------------|----------|--------|
+| 1 | `CAS_CLINIQUES_PTG.md` | `cours-ptg/` | 15-24 | 🔲 À faire |
+| 2 | `CAS_CLINIQUES_IOA.md` | `cours-infection-osseuse/` | 15-24 | 🔲 À faire |
+| 3 | `CAS_CLINIQUES_TENDINITES.md` | `cours-tendinites/` | 15-24 | 🔲 À faire |
+| 4 | `CAS_CLINIQUES_OBO.md` | `cours-obesite-orthopedie/` | 15-24 | 🔲 À faire |
 
-| # | Fichier à créer | Répertoire | Min. cas | Statut |
-|---|----------------|------------|----------|--------|
-| 1 | `CAS_CLINIQUES_SCOLIOSE.md` | `cours-scoliose/` | 15-24 | 🔲 À faire |
-| 2 | `CAS_CLINIQUES_PTG.md` | `cours-ptg/` | 15-24 | 🔲 À faire |
-| 3 | `CAS_CLINIQUES_IOA.md` | `cours-infection-osseuse/` | 15-24 | 🔲 À faire |
-| 4 | `CAS_CLINIQUES_TENDINITES.md` | `cours-tendinites/` | 15-24 | 🔲 À faire |
-| 5 | `CAS_CLINIQUES_OBO.md` | `cours-obesite-orthopedie/` | 15-24 | 🔲 À faire |
-
-**Contenu de chaque fichier** (rappel Section 14) :
-- 5-8 cas 🥉 Bronze (application directe, 1-2 modules)
-- 5-8 cas 🥈 Argent (diagnostics différentiels, 3-4 modules)
-- 3-5 cas 🥇 Or (décision multi-facteurs, 5+ modules)
-- 2-3 cas 💎 Diamant (complications, échecs, reprises)
-- Chaque cas : présentation patient → examen → imagerie/biologie → 5-10 questions progressives → réponses argumentées → points d'apprentissage
-- ≥ 2 cas avec décision partagée, ≥ 3 cas pluridisciplinaires
-- CAT structurées (6 étapes)
+**Rappels importants pour la suite** :
+- Appliquer la règle des tags MEDIA dès la rédaction (ne pas les ajouter après coup)
+- Créer chaque fichier en parties (règle fichiers longs)
+- Chaque formation possède son propre catalogue médias (à créer ou consulter : `MEDIAS_PRODUCTION_{FORMATION}.md`)
+- Respecter la distribution : 5-8 Bronze, 5-8 Argent, 3-5 Or, 2-3 Diamant
+- Structure PTG : 7 parties CDC (Fondamentaux, Pathologies, Implants, Planification/Chirurgie, Résultats/Complications, Reprises, Rééducation/Innovations)
+- Structure IOA : 10 parties CDC (Introduction, Histoire, Immunologie, Diagnostic, Antibiothérapie, Ostéomyélite, IPP, Infections spécifiques, Chirurgie, Prévention)
+- Structure OBO : 9 parties CDC (Introduction, Fondamentaux, Traitement, Biomécanique, Arthroplastie, Rachis, Traumatologie, Périopératoire, Populations/Éthique)
 
 ### Priorité 2 — Git push final
 
@@ -82,7 +79,7 @@ Après création de tous les cahiers, commit et push global.
 
 | Formation | Modules | CDC | Cas cliniques | Statut global |
 |-----------|---------|-----|---------------|--------------|
-| Scoliose | 25+ modules | ✅ | 🔲 À faire | 90% |
+| Scoliose | 25+ modules | ✅ | ✅ 20 cas (47 médias) | **95%** |
 | PTG | 7 CDC | ✅ | 🔲 À faire | 90% |
 | IOA | 10 CDC | ✅ | 🔲 À faire | 90% |
 | Tendinites | 9 CDC | ✅ | 🔲 À faire | 90% |
@@ -92,12 +89,27 @@ Après création de tous les cahiers, commit et push global.
 
 ## POUR REPRENDRE
 
-1. Lire cette note
-2. Lire `REGLES_ECRITURE_CONTENU.md` Section 14 pour les spécifications des cas cliniques
-3. Commencer par `CAS_CLINIQUES_SCOLIOSE.md` (la formation la plus mature)
-4. Suivre l'ordre : Scoliose → PTG → IOA → Tendinites → Obésité
-5. Chaque cahier est un fichier autonome et complet
+1. Lire cette note en premier
+2. Lire `REGLES_ECRITURE_CONTENU.md` Section 14 pour les spécifications
+3. Consulter `cours-scoliose/CAS_CLINIQUES_SCOLIOSE.md` comme **modèle de référence** pour les autres formations
+4. Suivre l'ordre : PTG → IOA → Tendinites → Obésité
+5. Pour chaque formation : consulter les CDC correspondants + catalogue médias
+6. Intégrer les tags MEDIA dès la rédaction
+7. Créer par parties (Partie 1/N, 2/N…)
+8. Git commit + push à la fin de chaque session
 
 ---
 
-*Note de reprise — 11 mars 2026*
+## CONVENTIONS & RÈGLES ACTIVES
+
+| Règle | Source | Description |
+|-------|--------|-------------|
+| Tags MEDIA obligatoires | Mémoire repo | `> [MEDIA: 📷/📐/🎬 MXX-SYY-ZZZ — Description]` inline dans tout texte d'imagerie |
+| Fichiers longs par parties | Mémoire repo | Créer en N parties pour fichiers > 500 lignes |
+| Section 14 | REGLES v3.1 | Spécifications cas cliniques (niveaux, structure, checklist 26-33) |
+| Pas de plagiat | Mémoire repo | Adapter depuis la littérature, ne pas copier |
+| Nommage | Section 14 | `CAS_CLINIQUES_{NOM_FORMATION}.md` dans le répertoire formation |
+
+---
+
+*Note de reprise — 11 mars 2026 — mise à jour session 2*
