@@ -24,7 +24,7 @@
 | **12** | **Orthopédie pédiatrique** | — | À venir |
 | **13** | **Médecine du sport** | — | À venir |
 | **14** | **Ostéoporose** | 🦴 #7D6608 | À venir |
-| **15** | **Obésité et orthopédie** | 🟫 #6C3483 | À venir |
+| **15** | **Obésité et orthopédie** | 🟫 #6C3483 | ✅ CDC complet (25 modules, 9 parties) |
 | **16** | **Tendinites** | 🩶 #5D6D7E | À venir |
 
 ---

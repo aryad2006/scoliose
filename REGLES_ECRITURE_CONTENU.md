@@ -540,4 +540,4 @@ Avant de considérer un module ou un CDC comme terminé, vérifier :
 
 ---
 
-*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX© (Scoliose, PTG, IOA, Tendinites). Toute dérogation doit être justifiée par la nature du contenu.*
+*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX© (Scoliose, PTG, IOA, Tendinites, Obésité et Orthopédie). Toute dérogation doit être justifiée par la nature du contenu.*
