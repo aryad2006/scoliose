@@ -1,9 +1,9 @@
-# NOTE DE REPRISE — 12 mars 2026 (mise à jour)
+# NOTE DE REPRISE — 13 mars 2026 (mise à jour)
 
 **Projet** : VERTEX© — Formations médicales e-learning
 **Dépôt** : aryad2006/scoliose (branche main)
-**Dernière session** : 12 mars 2026
-**Mise à jour** : 12 mars 2026 — session 3 (cas cliniques PTG)
+**Dernière session** : 13 mars 2026
+**Mise à jour** : 13 mars 2026 — session 4 (cas cliniques IOA)
 
 ---
 
@@ -49,36 +49,47 @@
 | 🥇 Or (14-17) | 4 | Valgum sévère + nerf fibulaire, PTG bilatérale + comorbidités, instabilité CR récidivante, robotique vs conventionnelle |
 | 💎 Diamant (18-20) | 3 | Infection périprothétique chronique (2 temps), fracture périprothétique supracondylienne, descellement + perte osseuse AORI 3 |
 
+### Session du 13 mars 2026 — CE QUI A ÉTÉ FAIT ✅
+
+#### 1. CAS_CLINIQUES_IOA.md — CRÉÉ ET COMPLET ✅
+
+**Fichier** : `cours-infection-osseuse/CAS_CLINIQUES_IOA.md`
+**Volume** : ~5 000 lignes, 20 cas cliniques complets
+
+| Niveau | Nb cas | Thématiques |
+|--------|--------|-------------|
+| 🥉 Bronze (1-7) | 7 | Ostéomyélite aiguë enfant, arthrite septique native genou, spondylodiscite lombaire, ISO après ostéosynthèse, pied diabétique/ostéite, IPP aiguë post-op hanche, abcès de Brodie adolescent |
+| 🥈 Argent (8-13) | 6 | Ostéomyélite chronique post-trauma (Cierny-Mader), IPP chronique tardive genou (2 temps), tuberculose vertébrale (mal de Pott), infection fracture ouverte Gustilo IIIB, arthrite septique + immunodépression (anti-TNF), IPP cultures négatives |
+| 🥇 Or (14-17) | 4 | Changement 2 temps PTH + perte osseuse (SARM, Paprosky IIIA), reconstruction segmentaire Masquelet + lambeau, spondylodiscite + abcès épidural + déficit neurologique, pied Charcot surinfecté |
+| 💎 Diamant (18-20) | 3 | IPP multirécidivante (arthrodèse vs amputation vs suppression chronique), infection fongique (Candida) sur transplantée rénale, ostéomyélite chronique complexe (transport osseux Ilizarov vs fibula vascularisée) |
+
 **Caractéristiques** :
-- Chaque cas : présentation → ATCD → examen clinique → investigations → 5-7 questions progressives → réponses argumentées → points d'apprentissage
-- **~50 tags `> [MEDIA: 📷/📐 MPTGXX-SYY-ZZZ — Description]`** insérés inline
-- Références croisées aux modules PTG (Modules 1-28)
-- Cas pluridisciplinaires : cas 8 (rhumatologie), cas 13 (médecine vasculaire), cas 15 (cardiologie/pneumologie), cas 18 (infectiologie), cas 19 (gériatrie)
-- Cas décision partagée : cas 3 (patient jeune demandeur), cas 11 (obésité morbide), cas 15 (PTG bilatérale)
-- CAT structurées dans chaque réponse
-- Couverture des 28 modules de la formation PTG
+- Chaque cas : présentation → ATCD → examen clinique → investigations → 5-8 questions progressives → réponses argumentées → points d'apprentissage
+- Tags `> [MEDIA: 📷/📐 MIOAXX-SYY-ZZZ — Description]` insérés inline (~60 tags)
+- Références croisées aux 30 modules IOA (9 parties)
+- Cas pluridisciplinaires : cas 5 (diabétologie), cas 10 (pneumologie/TB), cas 12 (rhumatologie/immunologie), cas 17 (diabétologie/vasculaire), cas 19 (néphrologie/transplantation)
+- Cas décision partagée : cas 17 (conservation vs amputation), cas 18 (arthrodèse vs amputation vs suppression), cas 20 (reconstruction vs amputation)
+- CAT structurées, classifications (Tsukayama, Cierny-Mader, Gustilo, Wagner, Paprosky, AORI, ICM/MSIS 2018)
+- Couverture complète des 30 modules de la formation IOA
 
 ---
 
 ## CE QUI RESTE À FAIRE
 
-### Priorité 1 — Créer les 3 cahiers de cas cliniques restants
+### Priorité 1 — Créer les 2 cahiers de cas cliniques restants
 
 | # | Fichier | Répertoire | Min. cas | Statut |
 |---|---------|------------|----------|--------|
-| 1 | `CAS_CLINIQUES_IOA.md` | `cours-infection-osseuse/` | 15-24 | 🔲 À faire |
-| 2 | `CAS_CLINIQUES_TENDINITES.md` | `cours-tendinites/` | 15-24 | 🔲 À faire |
-| 3 | `CAS_CLINIQUES_OBO.md` | `cours-obesite-orthopedie/` | 15-24 | 🔲 À faire |
+| 1 | `CAS_CLINIQUES_TENDINITES.md` | `cours-tendinites/` | 15-24 | 🔲 À faire |
+| 2 | `CAS_CLINIQUES_OBO.md` | `cours-obesite-orthopedie/` | 15-24 | 🔲 À faire |
 
 **Rappels importants pour la suite** :
 - Appliquer la règle des tags MEDIA dès la rédaction (ne pas les ajouter après coup)
 - Créer chaque fichier en parties (règle fichiers longs)
-- Chaque formation possède son propre catalogue médias (à créer ou consulter : `MEDIAS_PRODUCTION_{FORMATION}.md`)
 - Respecter la distribution : 5-8 Bronze, 5-8 Argent, 3-5 Or, 2-3 Diamant
-- Structure IOA : 10 parties CDC (Introduction, Histoire, Immunologie, Diagnostic, Antibiothérapie, Ostéomyélite, IPP, Infections spécifiques, Chirurgie, Prévention)
 - Structure Tendinites : 9 parties CDC
 - Structure OBO : 9 parties CDC (Introduction, Fondamentaux, Traitement, Biomécanique, Arthroplastie, Rachis, Traumatologie, Périopératoire, Populations/Éthique)
-- **Modèles de référence** : `CAS_CLINIQUES_SCOLIOSE.md` et `CAS_CLINIQUES_PTG.md`
+- **Modèles de référence** : `CAS_CLINIQUES_SCOLIOSE.md`, `CAS_CLINIQUES_PTG.md` et `CAS_CLINIQUES_IOA.md`
 
 ### Priorité 2 — Git push final
 
@@ -90,9 +101,9 @@ Après création de tous les cahiers, commit et push global.
 
 | Formation | Modules | CDC | Cas cliniques | Statut global |
 |-----------|---------|-----|---------------|--------------|
-| Scoliose | 25+ modules | ✅ | ✅ 20 cas (47 médias) | **95%** |
+| Scoliose | 25+ modules | ✅ | ✅ 20 cas (~47 médias) | **95%** |
 | PTG | 28 modules / 7 CDC | ✅ | ✅ 20 cas (~50 médias) | **95%** |
-| IOA | 10 CDC | ✅ | 🔲 À faire | 90% |
+| IOA | 30 modules / 10 CDC | ✅ | ✅ 20 cas (~60 médias) | **95%** |
 | Tendinites | 9 CDC | ✅ | 🔲 À faire | 90% |
 | Obésité et Orthopédie | 25 modules / 9 CDC | ✅ | 🔲 À faire | 90% |
 
@@ -102,8 +113,8 @@ Après création de tous les cahiers, commit et push global.
 
 1. Lire cette note en premier
 2. Lire `REGLES_ECRITURE_CONTENU.md` Section 14 pour les spécifications
-3. Consulter `CAS_CLINIQUES_SCOLIOSE.md` et `CAS_CLINIQUES_PTG.md` comme **modèles de référence**
-4. Suivre l'ordre : IOA → Tendinites → Obésité
+3. Consulter `CAS_CLINIQUES_IOA.md` comme **modèle de référence le plus récent**
+4. Suivre l'ordre : Tendinites → Obésité
 5. Pour chaque formation : consulter les CDC correspondants + catalogue médias
 6. Intégrer les tags MEDIA dès la rédaction
 7. Créer par parties (Partie 1/N, 2/N…)
@@ -123,4 +134,4 @@ Après création de tous les cahiers, commit et push global.
 
 ---
 
-*Note de reprise — 12 mars 2026 — mise à jour session 3*
+*Note de reprise — 13 mars 2026 — mise à jour session 4*
