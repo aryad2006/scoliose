@@ -13,7 +13,7 @@ from docx.oxml import parse_xml
 import re
 
 
-def md_to_docx(md_path, docx_path):
+def md_to_docx(md_path, docx_path, color1=None, color2=None):
     """Convert a markdown file to a formatted DOCX."""
     with open(md_path, "r", encoding="utf-8") as f:
         content = f.read()
@@ -33,9 +33,10 @@ def md_to_docx(md_path, docx_path):
     font.name = "Calibri"
     font.size = Pt(12)
 
-    # Colors
-    BLEU_PETROLE = RGBColor(0x1A, 0x52, 0x76)
-    TURQUOISE = RGBColor(0x14, 0x8F, 0x77)
+    # Colors (customizable per formation)
+    BLEU_PETROLE = color1 or RGBColor(0x1A, 0x52, 0x76)
+    TURQUOISE = color2 or RGBColor(0x14, 0x8F, 0x77)
+    header_hex = "{:02X}{:02X}{:02X}".format(BLEU_PETROLE[0], BLEU_PETROLE[1], BLEU_PETROLE[2])
 
     lines = content.split("\n")
     i = 0
@@ -65,7 +66,7 @@ def md_to_docx(md_path, docx_path):
             else:
                 # End of table, process it
                 in_table = False
-                process_table(doc, table_rows)
+                process_table(doc, table_rows, header_color=header_hex)
                 table_rows = []
                 # Don't increment i, process current line normally
 
@@ -189,12 +190,12 @@ def md_to_docx(md_path, docx_path):
 
     # Process remaining table if any
     if in_table and table_rows:
-        process_table(doc, table_rows)
+        process_table(doc, table_rows, header_color=header_hex)
 
     doc.save(docx_path)
 
 
-def process_table(doc, table_rows):
+def process_table(doc, table_rows, header_color="1A5276"):
     """Create a table in the document that fits within page width."""
     if len(table_rows) < 2:
         return
@@ -278,7 +279,7 @@ def process_table(doc, table_rows):
                 for run in p.runs:
                     run.bold = True
                     run.font.size = Pt(11)
-                shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="1A5276" w:val="clear"/>')
+                shading = parse_xml(f'<w:shd {nsdecls("w")} w:fill="{header_color}" w:val="clear"/>')
                 tcPr.append(shading)
                 for run in p.runs:
                     run.font.color.rgb = RGBColor(0xFF, 0xFF, 0xFF)
@@ -337,24 +338,44 @@ def add_formatted_run(paragraph, text):
             run.font.size = Pt(12)
 
 
-def main():
-    src_dir = r"c:\Users\USER\Documents\scoliose\cours-diabetologie"
-    dst_dir = r"c:\Users\USER\docs-diabète"
+def convert_batch(src_dir, dst_dir, pattern, color1=None, color2=None):
+    """Convert a batch of MD files to DOCX."""
     os.makedirs(dst_dir, exist_ok=True)
-
-    md_files = sorted(glob.glob(os.path.join(src_dir, "CDC_DIAB_*.md")))
-
+    md_files = sorted(glob.glob(os.path.join(src_dir, pattern)))
+    count = 0
     for md_file in md_files:
         basename = os.path.splitext(os.path.basename(md_file))[0]
         docx_file = os.path.join(dst_dir, basename + ".docx")
         print(f"Converting {basename}...", end=" ", flush=True)
         try:
-            md_to_docx(md_file, docx_file)
+            md_to_docx(md_file, docx_file, color1=color1, color2=color2)
             print("OK")
+            count += 1
         except Exception as e:
             print(f"ERROR: {e}")
+    return count
 
-    print(f"\nDone! {len(md_files)} files converted to {dst_dir}")
+
+def main():
+    total = 0
+
+    # Diabetologie
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-diabetologie",
+        r"c:\Users\USER\docs-diabète",
+        "CDC_DIAB_*.md"
+    )
+
+    # Histoire de l'orthopedie
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-histoire-orthopedie",
+        r"c:\Users\USER\docs-histoire-orthopedie",
+        "CDC_HISTO_*.md",
+        color1=RGBColor(0x8B, 0x1A, 0x1A),  # Bordeaux
+        color2=RGBColor(0xB8, 0x86, 0x0B),  # Or antique
+    )
+
+    print(f"\nDone! {total} files converted")
 
 
 if __name__ == "__main__":
