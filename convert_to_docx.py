@@ -384,6 +384,22 @@ def main():
         color2=RGBColor(0x2C, 0x3E, 0x50),  # Bleu nuit
     )
 
+    # Hypothyroïdies
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-hypothyroidie",
+        r"c:\Users\USER\docs-hypothyroidie",
+        "CDC_HYPO_*.md",
+        color1=RGBColor(0x7D, 0x3C, 0x98),  # Violet améthyste
+        color2=RGBColor(0x2E, 0x40, 0x57),  # Bleu ardoise
+    )
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-hypothyroidie",
+        r"c:\Users\USER\docs-hypothyroidie",
+        "CAS_CLINIQUES_HYPO_*.md",
+        color1=RGBColor(0x7D, 0x3C, 0x98),  # Violet améthyste
+        color2=RGBColor(0x2E, 0x40, 0x57),  # Bleu ardoise
+    )
+
     print(f"\nDone! {total} files converted")
 
 
