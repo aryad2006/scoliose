@@ -400,6 +400,22 @@ def main():
         color2=RGBColor(0x2E, 0x40, 0x57),  # Bleu ardoise
     )
 
+    # Hyperthyroïdies
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-hyperthyroidie",
+        r"c:\Users\USER\docs-hyperthyroidie",
+        "CDC_HYPER_*.md",
+        color1=RGBColor(0xD3, 0x54, 0x00),  # Orange brûlé
+        color2=RGBColor(0x1A, 0x52, 0x76),  # Bleu marine
+    )
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-hyperthyroidie",
+        r"c:\Users\USER\docs-hyperthyroidie",
+        "CAS_CLINIQUES_HYPER_*.md",
+        color1=RGBColor(0xD3, 0x54, 0x00),  # Orange brûlé
+        color2=RGBColor(0x1A, 0x52, 0x76),  # Bleu marine
+    )
+
     print(f"\nDone! {total} files converted")
 
 
