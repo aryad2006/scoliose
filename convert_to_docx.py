@@ -375,6 +375,15 @@ def main():
         color2=RGBColor(0xB8, 0x86, 0x0B),  # Or antique
     )
 
+    # HTA
+    total += convert_batch(
+        r"c:\Users\USER\Documents\scoliose\cours-hta",
+        r"c:\Users\USER\docs-hta",
+        "CDC_HTA_*.md",
+        color1=RGBColor(0xC0, 0x39, 0x2B),  # Rouge carmin
+        color2=RGBColor(0x2C, 0x3E, 0x50),  # Bleu nuit
+    )
+
     print(f"\nDone! {total} files converted")
 
 
