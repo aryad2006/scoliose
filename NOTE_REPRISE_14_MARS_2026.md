@@ -32,15 +32,15 @@
   - Cas 16 : Pied de Charcot + ulcere infecte + osteomyelite
   - Cas 17 : Acidocetose severe en reanimation (protocole)
 
-- **Partie 4 (Diamant, cas 18-20)** : **A FAIRE**
-  - Cas 18 : Complications multiples + IRC terminale
-  - Cas 19 : Echec chirurgie bariatrique + recidive DT2
-  - Cas 20 : DT1 instable + transplantation d'ilots
+- **Partie 4 (Diamant, cas 18-20)** : **TERMINE** (~600 lignes — 14 mars 2026)
+  - Cas 18 : Complications multiples + IRC terminale (SPK, dialyse DP, ethique fin de vie)
+  - Cas 19 : Echec sleeve + recidive DT2 (mecanismes incretines, tirzepatide, conversion RYGB)
+  - Cas 20 : DT1 brittle + IAH + transplantation d'ilots (boucle fermee totale, criteres IPITA)
 
 ### Taches restantes
-1. Creer CAS_CLINIQUES_DIABETOLOGIE_P4.md (cas Diamant 18-20)
-2. Convertir les 4 fichiers de cas cliniques en .docx formate
-3. Copier dans docs-diabete/ et c:\Users\USER\
+1. ~~Creer CAS_CLINIQUES_DIABETOLOGIE_P4.md~~ — FAIT (14 mars 2026)
+2. ~~Convertir les 4 fichiers en .docx + .odt~~ — FAIT (8 fichiers dans docs-scoliose/)
+3. Push Git du nouveau fichier P4
 
 ### Autres formations — Cas cliniques restants
 - CAS_CLINIQUES_TENDINITES.md : **A FAIRE**
