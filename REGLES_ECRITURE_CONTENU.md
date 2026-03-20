@@ -328,28 +328,99 @@ Chaque média DOIT être accompagné d'une consigne d'observation :
 
 ---
 
-## 9. Auto-évaluation de fin de module
+## 9. Auto-évaluation de fin de module — Quiz d'ancrage
 
-### 9.1 Structure obligatoire
+> **PRINCIPE FONDATEUR** — Le quiz n'est pas un « bonus » en fin de module. C'est un **outil d'ancrage mémoriel**. Chaque point clé du module DOIT être couvert par au moins 1 quiz. Les points critiques (sécurité patient, erreurs graves, décisions vitales) DOIVENT être couverts par 2-3 quiz sous des angles différents. Le nombre de quiz est **proportionnel au contenu**, pas fixe.
 
-Chaque module se termine par un bloc d'auto-évaluation contenant :
+### 9.1 Règle de couverture exhaustive
 
-1. **3-5 QCM** (4-5 options, une ou deux correctes, explication pour chaque option)
-2. **1-2 cas cliniques courts** (4-6 lignes de contexte + 2-3 questions)
-3. **1 exercice de calcul ou mesure** (quand applicable)
-4. **1 question ouverte de synthèse** (réponse attendue en 5-10 lignes)
+**Étape 1 — Identification des points clés** :
+Avant de rédiger les quiz, lister TOUS les points clés du module :
+- Chaque définition ou classification importante
+- Chaque mécanisme physiopathologique essentiel
+- Chaque critère diagnostique ou seuil décisionnel
+- Chaque indication thérapeutique ou protocole
+- Chaque piège diagnostique ou erreur fréquente
+- Chaque geste technique ou conduite à tenir
+- Chaque donnée de niveau de preuve élevé (essais majeurs, Cochrane)
 
-### 9.2 Qualité des QCM
+**Étape 2 — Attribution des quiz** :
+
+| Type de point clé | Nombre minimum de quiz | Justification |
+|-------------------|----------------------|---------------|
+| Définition / classification | 1 | Ancrage factuel |
+| Mécanisme physiopathologique | 1-2 | Compréhension + application |
+| Critère diagnostique / seuil décisionnel | 1-2 | Factuel + cas clinique d'application |
+| Indication thérapeutique / protocole | 2-3 | Indication + contre-indication + cas d'application |
+| **Piège diagnostique / erreur fréquente** | **2-3** | **Point critique** — abordé sous plusieurs angles (factuel, cas piège, "quelle erreur a été commise ?") |
+| **Décision vitale / sécurité patient** | **2-3** | **Point critique** — urgence, geste salvateur, prévention |
+| Geste technique | 1-2 | Description + complication |
+| Essai clinique majeur | 1 | Résultat principal + impact pratique |
+
+**Étape 3 — Vérification de la couverture** :
+- Chaque point clé listé à l'étape 1 doit être couvert par ≥ 1 quiz
+- Aucun quiz ne doit être redondant (même question sous la même forme)
+- Le nombre total de quiz par module est **variable** : typiquement 8-20 selon la densité du module
+
+### 9.2 Niveaux de difficulté des quiz
+
+Chaque quiz est tagué par un niveau de difficulté. Les niveaux sont **mélangés** dans le module (pas en bloc), pour maintenir l'engagement.
+
+| Niveau | Tag | Type de question | Taxonomie de Bloom |
+|--------|-----|-----------------|-------------------|
+| **Bronze** | 🥉 | Rappel factuel, définition, valeur seuil | Connaître, comprendre |
+| **Argent** | 🥈 | Mécanisme, comparaison, synthèse de 2-3 concepts | Comprendre, analyser |
+| **Or** | 🥇 | Cas clinique guidé, application directe, calcul | Appliquer, analyser |
+| **Diamant** | 💎 | Cas clinique complexe, piège, décision difficile, erreur à identifier | Évaluer, créer |
+
+**Répartition cible** par module :
+- 🥉 Bronze : ~30 % des quiz (ancrage des fondamentaux)
+- 🥈 Argent : ~25 % (compréhension des mécanismes)
+- 🥇 Or : ~25 % (application clinique)
+- 💎 Diamant : ~20 % (raisonnement expert)
+
+### 9.3 Formats de quiz autorisés
+
+| Format | Description | Quand l'utiliser |
+|--------|-------------|-----------------|
+| **QCM classique** | 4-5 options, 1-2 correctes, explication pour chaque option | Définitions, classifications, seuils |
+| **Vrai/Faux piège** | 3-5 affirmations dont 1-2 sont des pièges courants | Pièges diagnostiques, idées reçues |
+| **Cas clinique court** | 3-5 lignes de contexte + 1 question ciblée | Application d'un concept |
+| **Cas clinique complexe** | 6-15 lignes + données paracliniques + 1 question de décision | Raisonnement intégratif |
+| **"Quelle erreur ?"** | Présentation d'une prise en charge avec une erreur cachée → identifier l'erreur | Points critiques de sécurité |
+| **Calcul clinique** | Données + formule à appliquer + interprétation | Scores, dosages, seuils |
+| **Question de synthèse** | Question ouverte, réponse attendue en 5-10 lignes | Synthèse transversale |
+
+### 9.4 Qualité rédactionnelle des quiz
 
 - Les distracteurs (mauvaises réponses) doivent être **plausibles** — aucune réponse absurde
-- Chaque option doit être accompagnée d'une explication (feedback immédiat)
-- Varier les niveaux de Bloom : pas uniquement du rappel factuel
+- Chaque option/réponse doit être accompagnée d'une **explication** (feedback immédiat)
+- Les quiz de cas cliniques doivent contenir des **données réalistes** (âge, sexe, mesures, imagerie)
+- Les questions doivent tester le **raisonnement**, pas uniquement la mémoire
+- Les quiz complexes doivent intégrer des données de **sections différentes** du module (synthèse)
+- Chaque quiz indique le **tag public** pertinent (🔷 CLINICIEN, 🔶 ÉCHOGRAPHISTE, 🟢 BIOLOGISTE, 🟣 TOUS)
 
-### 9.3 Qualité des cas cliniques
+### 9.5 Points critiques — Règle de la triple couverture
 
-- Données réalistes (âge, sexe, mesures, imagerie)
-- Questions qui testent le raisonnement, pas uniquement la mémoire
-- Intégrer des données issues de sections différentes du module (synthèse)
+> **RÈGLE ABSOLUE** — Les points suivants sont considérés comme **critiques pour la sécurité du patient**. Ils DOIVENT être couverts par au minimum **3 quiz** sous 3 angles différents (factuel, cas d'application, identification d'erreur) :
+>
+> - Toute situation d'**urgence vitale** (ex. SHO critique, torsion d'annexe, hémorragie)
+> - Toute **erreur de prise en charge irréversible** (ex. erreur d'identification gamètes, kystectomie inutile)
+> - Tout **seuil décisionnel critique** (ex. critères d'hospitalisation, indication chirurgicale)
+> - Toute **interaction médicamenteuse ou contre-indication dangereuse**
+> - Tout **geste technique à risque** (ex. ponction, paracentèse, réduction embryonnaire)
+
+### 9.6 Checklist quiz (ajout à la checklist §11)
+
+| # | Critère quiz d'ancrage | ✅ |
+|---|---|---|
+| 14 | Liste des points clés du module établie avant rédaction des quiz | |
+| 15 | Chaque point clé couvert par ≥ 1 quiz | |
+| 16 | Points critiques (sécurité patient) couverts par ≥ 3 quiz | |
+| 17 | Niveaux de difficulté mélangés (🥉 30 %, 🥈 25 %, 🥇 25 %, 💎 20 %) | |
+| 18 | Formats variés (pas uniquement des QCM) | |
+| 19 | Aucun quiz redondant (même question, même angle) | |
+| 20 | Feedback/explication pour chaque réponse | |
 
 ---
 
@@ -620,6 +691,36 @@ Les cas cliniques sont organisés en **4 niveaux progressifs** :
 - Les cas Argent mobilisent 3-4 modules et incluent des diagnostics différentiels
 - Les cas Or mobilisent 5+ modules, intègrent les comorbidités et les décisions chirurgicales complexes
 - Les cas Diamant sont des cas multi-étapes avec complications, échecs, reprises
+
+### 14.3bis Règle de couverture exhaustive des cas cliniques
+
+> **PRINCIPE** — Le cahier de cas cliniques suit la même logique d'ancrage que les quiz : chaque **situation clinique importante** de la formation DOIT être couverte par au moins 1 cas clinique. Les situations à haut risque ou fréquentes en pratique DOIVENT être couvertes par 2-3 cas sous des angles différents (présentation typique, atypique, complication).
+
+**Étape 1 — Inventaire des situations cliniques** :
+Avant de rédiger le cahier, lister TOUTES les situations cliniques de la formation :
+- Chaque présentation clinique typique (diagnostic évident → Bronze)
+- Chaque diagnostic différentiel important (présentation atypique → Argent)
+- Chaque décision thérapeutique complexe (choix entre plusieurs options → Or)
+- Chaque complication majeure (gestion en urgence, erreur, échec → Diamant)
+- Chaque situation fréquente en pratique quotidienne (même si « simple »)
+- Chaque situation rare mais grave (à ne pas manquer)
+
+**Étape 2 — Attribution des cas** :
+
+| Type de situation clinique | Nombre minimum de cas | Angles à couvrir |
+|---------------------------|----------------------|-----------------|
+| Présentation typique fréquente | 1 | Diagnostic + prise en charge standard |
+| Diagnostic différentiel | 1-2 | Présentation atypique, piège diagnostique |
+| Décision thérapeutique complexe | 2-3 | Indication vs contre-indication, choix entre options, cas limite |
+| **Complication grave / urgence** | **2-3** | **Diagnostic précoce, prise en charge immédiate, erreur à éviter** |
+| **Situation fréquente à erreur fréquente** | **2-3** | **Cas typique bien géré, cas avec erreur cachée, cas avec complication de l'erreur** |
+| Situation rare mais grave | 1-2 | Reconnaissance + orientation |
+| Décision éthique / partagée | 1-2 | Information patient, counseling, refus |
+
+**Étape 3 — Vérification de la couverture** :
+- Chaque situation listée à l'étape 1 doit être couverte par ≥ 1 cas
+- Le nombre total de cas par formation est **variable** : typiquement 20-40 selon l'étendue de la formation
+- Aucune partie/module majeur de la formation ne doit être absent du cahier de cas
 
 ### 14.4 Exigences de réalisme et de complétude
 
