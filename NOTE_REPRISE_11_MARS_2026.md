@@ -1,9 +1,9 @@
-# NOTE DE REPRISE — 17 mars 2026 (mise à jour)
+# NOTE DE REPRISE — 20 mars 2026 (mise à jour)
 
 **Projet** : VERTEX© — Formations médicales e-learning
 **Dépôt** : aryad2006/scoliose (branche main)
-**Dernière session** : 17 mars 2026
-**Mise à jour** : 17 mars 2026 — inventaire complet et mémoire Claude configurée
+**Dernière session** : 20 mars 2026
+**Mise à jour** : 20 mars 2026 — quiz thyroïdies + FIV complète
 
 ---
 
@@ -25,15 +25,15 @@
 |---|-----------|-----------|-------------|---------------|------------|
 | 6 | **Diabétologie** | cours-diabetologie/ | 12 CDC (00→11) + complet | ✅ ~20 cas (4 parties + complet) + quiz | **95%** |
 | 7 | **HTA** | cours-hta/ | 12 CDC (00→11) + complet | ✅ 35 cas (5 parties) | **95%** |
-| 8 | **Hypothyroïdies** | cours-hypothyroidie/ | 12 CDC (00→11) | ✅ 30 cas (3 parties) | **95%** |
-| 9 | **Hyperthyroïdies** | cours-hyperthyroidie/ | 12 CDC (00→11) | ✅ 30 cas (3 parties) | **95%** |
+| 8 | **Hypothyroïdies** | cours-hypothyroidie/ | 12 CDC (00→11) | ✅ 30 cas (3 parties) + quiz 100q | **98%** |
+| 9 | **Hyperthyroïdies** | cours-hyperthyroidie/ | 12 CDC (00→11) | ✅ 30 cas (3 parties) + quiz 100q | **98%** |
 
 ### Formations spéciales
 
 | # | Formation | Répertoire | Modules/CDC | Cas cliniques | Avancement |
 |---|-----------|-----------|-------------|---------------|------------|
 | 10 | **Histoire de l'Orthopédie** | cours-histoire-orthopedie/ | 9 CDC (00→08) + complet | N/A (pas de cas cliniques) | **100%** |
-| 11 | **FIV** | cours-fiv/ | 3 CDC (00→02) | 🔲 À faire | **20%** |
+| 11 | **FIV** | cours-fiv/ | 14 CDC (00→13) | ✅ 24 cas (3 parties) + quiz 110q | **98%** |
 | 12 | **Formations futures** | a-venir/ | Planning | — | Planning |
 
 ---
@@ -47,11 +47,10 @@
 | 1 | `CAS_CLINIQUES_TENDINITES.md` | cours-tendinites/ | 15-24 | 🔲 À faire |
 | 2 | `CAS_CLINIQUES_OBO.md` | cours-obesite-orthopedie/ | 15-24 | 🔲 À faire |
 
-### Priorité 2 — Formation FIV (en cours)
+### Priorité 2 — Formation FIV ✅ COMPLÈTE
 
-- 3 modules créés (intro + histoire + fondamentaux)
-- Reste : modules 03 à ~10 + cas cliniques
-- Structure CDC à compléter
+- 14 CDC (00→13) + 24 cas cliniques (3 parties) + quiz 110 questions
+- Cadre légal marocain AMP intégré (CDC_FIV_12)
 
 ### Priorité 3 — Finitions
 
@@ -91,6 +90,14 @@
 - ✅ CLAUDE.md global créé (~/.claude/CLAUDE.md)
 - ✅ Note de reprise mise à jour avec inventaire complet
 
+### 18-20 mars 2026
+- ✅ Formation FIV complète — CDC 03-13, quiz 110 questions, 24 cas cliniques (3 parties)
+- ✅ Formation LCA — CDC complet partie 00 (introduction et charte)
+- ✅ Section 15 REGLES_ECRITURE_CONTENU — fiabilité des sources et vérification par agent IA
+- ✅ Cadre légal marocain AMP intégré (CDC_FIV_12)
+- ✅ Quiz hypothyroïdies — 100 questions (4 niveaux, M01-M38)
+- ✅ Quiz hyperthyroïdies — 100 questions (4 niveaux, M01-M38)
+
 ---
 
 ## CONVENTIONS & RÈGLES ACTIVES
@@ -109,13 +116,14 @@
 ## POUR REPRENDRE
 
 1. La mémoire Claude est configurée — pas besoin de relire cette note en détail
-2. Prochaine tâche : **CAS_CLINIQUES_TENDINITES.md** (cours-tendinites/)
-3. Modèle de référence : `CAS_CLINIQUES_IOA.md`
-4. Consulter les 9 CDC Tendinites avant de rédiger
-5. Créer par parties (P1, P2, P3…)
-6. Tags MEDIA dès la rédaction
-7. Distribution : 5-8 Bronze, 5-8 Argent, 3-5 Or, 2-3 Diamant
+2. Prochaine tâche : **Quiz restants** (diabétologie déjà fait, HTA à vérifier) puis **CAS_CLINIQUES_TENDINITES.md** (cours-tendinites/)
+3. Quiz faits : diabétologie (99q), FIV (110q), hypothyroïdies (100q), hyperthyroïdies (100q)
+4. Cas cliniques manquants : Tendinites + Obésité-Orthopédie
+5. Modèle de référence quiz : `QUIZ_HYPOTHYROIDIE.md` ou `QUIZ_HYPERTHYROIDIE.md`
+6. Modèle de référence cas cliniques : `CAS_CLINIQUES_IOA.md`
+7. Créer par parties (P1, P2, P3…) pour fichiers > 500 lignes
+8. Tags MEDIA dès la rédaction
 
 ---
 
-*Note de reprise — 17 mars 2026 — inventaire complet 12 formations*
+*Note de reprise — 20 mars 2026 — 12 formations, quiz thyroïdies terminés*
