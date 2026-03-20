@@ -186,6 +186,116 @@
 
 ---
 
+## 40.9 Cadre légal marocain de l'AMP
+
+> [MEDIA: 📊 MFIV40-S9-001 — AMP au Maroc : cadre légal, centres agréés, spécificités religieuses et culturelles — schéma récapitulatif]
+
+### 40.9.1 Cadre juridique
+
+**Loi n° 47-14 relative à l'assistance médicale à la procréation** (adoptée en 2019, publiée au Bulletin Officiel) :
+
+| Aspect | Disposition |
+|--------|-----------|
+| **Bénéficiaires** | Couples **mariés** exclusivement (acte de mariage obligatoire). Ni les couples non mariés, ni les femmes seules, ni les couples de même sexe |
+| **Techniques autorisées** | IIU, FIV, ICSI, congélation d'embryons et de gamètes |
+| **Don de gamètes** | **INTERDIT** — ni don de sperme, ni don d'ovocytes, ni accueil d'embryons. L'enfant doit être génétiquement issu des deux époux |
+| **GPA** | **INTERDITE** (conformément au droit musulman — la filiation par gestation est sacrée) |
+| **Mère porteuse** | Interdite sous toutes ses formes (altruiste ou commerciale) |
+| **PGT** | Autorisé dans un cadre médical strict (maladies génétiques graves) — sex selection non médicale **interdite** |
+| **Recherche sur l'embryon** | Non encadrée par la loi 47-14 — de facto très restrictive |
+| **Insémination post-mortem** | **INTERDITE** (le lien conjugal est rompu par le décès) |
+
+### 40.9.2 Fondements éthiques et religieux
+
+La législation marocaine s'inscrit dans le cadre de la **charia** et des avis des **oulémas** :
+
+**Principes fondamentaux** :
+1. **Nasab (filiation)** : l'enfant doit être rattaché à ses deux parents biologiques mariés. Toute intervention de gamètes tiers (don) rompt le nasab → interdit
+2. **Mariage comme cadre exclusif** : l'AMP n'est licite que dans le cadre du mariage valide. En cas de divorce ou de décès → arrêt du parcours AMP et destruction des embryons/gamètes
+3. **Préservation de la lignée (hifz al-nasl)** : un des cinq objectifs supérieurs de la charia (maqasid) — l'AMP intra-conjugale y contribue positivement
+4. **Interdiction du mélange de lignées (ikhtilat al-ansab)** : fondement de l'interdiction du don et de la GPA
+
+**Fatwas de référence** :
+- **Académie Islamique du Fiqh** (OCI, Djeddah, 1986, résolution n° 16/4) : la FIV est **licite** si les gamètes proviennent exclusivement des deux époux mariés et que l'embryon est implanté dans l'utérus de l'épouse
+- **Conseil des Oulémas du Maroc** : confirme cette position, avec obligation de consentement éclairé des deux époux
+- **Al-Azhar** (Égypte, référence sunnite) : position identique — FIV intra-conjugale autorisée, don interdit
+
+> ⚠️ **Différence chiite** : le Grand Ayatollah Khamenei (Iran) a autorisé le don de gamètes sous conditions (mariage temporaire — muta'a) → le Maroc (sunnite malékite) ne reconnaît **pas** cette exception.
+
+### 40.9.3 Organisation des centres d'AMP au Maroc
+
+**Agrément** :
+- Les centres d'AMP doivent être **agréés par le Ministère de la Santé** (décret d'application de la loi 47-14)
+- Conditions : plateau technique conforme, biologiste de la reproduction qualifié, gynécologue spécialisé, comité d'éthique local
+- Inspection régulière par les autorités sanitaires
+
+**Centres principaux** :
+- Concentrés dans les grandes villes : **Casablanca, Rabat, Marrakech, Fès, Tanger**
+- Centres publics (CHU) et privés (cliniques spécialisées)
+- Estimation : ~30-40 centres actifs (en croissance)
+
+**Données disponibles** :
+- Pas de registre national exhaustif (en cours de mise en place)
+- Estimation : ~8 000-12 000 cycles d'AMP/an au Maroc
+- Coût moyen d'une FIV : 25 000-40 000 MAD (~2 500-4 000 €) — **non remboursé** par l'AMO (Assurance Maladie Obligatoire) dans la majorité des cas
+- La couverture sociale de l'AMP est un enjeu majeur d'accès aux soins
+
+### 40.9.4 Spécificités pratiques au Maroc
+
+**Consentement** :
+- Consentement écrit des **deux époux** obligatoire (pas de consentement unilatéral)
+- Présentation de l'**acte de mariage** à chaque tentative (vérification du lien conjugal)
+- En cas de divorce en cours de parcours → destruction des embryons congelés
+
+**Sort des embryons surnuméraires** :
+- La congélation embryonnaire est autorisée dans le cadre du projet parental du couple marié
+- En cas de **divorce ou décès** d'un des époux → les embryons doivent être **détruits** (pas de don, pas de transfert post-mortem)
+- Pas de don d'embryons à un autre couple (interdit)
+- Pas de don à la recherche (non prévu par la loi)
+
+**Préservation de la fertilité** :
+- Autorisée pour **raisons médicales** (oncofertilité — chimiothérapie, radiothérapie)
+- La vitrification ovocytaire « sociétale » n'est **pas encadrée** par la loi — de facto non pratiquée dans les centres publics, mais proposée par certains centres privés (zone grise juridique)
+- La préservation de sperme est autorisée dans un cadre médical
+
+**Tourisme procréatif depuis le Maroc** :
+- Motivation principale : **don d'ovocytes** (interdit au Maroc) → Espagne, Turquie, République Tchèque
+- Aussi : PGT-A non disponible dans tous les centres marocains → déplacement vers l'étranger
+- Enjeu éthique : informer les couples marocains sur les risques du CBRC (continuité des soins, cadre juridique, exploitation)
+
+### 40.9.5 Comparaison Maroc — France — Pays musulmans
+
+| Critère | **Maroc** | **France** | **Turquie** | **Iran** | **Tunisie** |
+|---------|-----------|-----------|------------|---------|------------|
+| **Bénéficiaires** | Couples mariés | Tous (depuis 2021) | Couples mariés | Couples mariés | Couples mariés |
+| **Don de sperme** | **Interdit** | Autorisé (CECOS) | **Interdit** | Autorisé (mut'a) | **Interdit** |
+| **Don d'ovocytes** | **Interdit** | Autorisé | **Interdit** | Autorisé (mut'a) | **Interdit** |
+| **GPA** | **Interdite** | **Interdite** | **Interdite** | Autorisée (encadrée) | **Interdite** |
+| **PGT-M** | Autorisé (strict) | Autorisé | Autorisé | Autorisé | Autorisé |
+| **Sex selection** | Interdite | Interdite | Interdite | Interdite | Interdite |
+| **Congélation embryons** | Oui (couple marié) | Oui | Oui (couple marié) | Oui | Oui (couple marié) |
+| **Insém. post-mortem** | Interdite | Interdite | Interdite | Débattue | Interdite |
+| **Remboursement** | Non (AMO limitée) | 100 % (4 FIV) | Partiel (SSI) | Subventionné | Partiel |
+| **Registre national** | En développement | ABM (exhaustif) | En place | En place | Limité |
+
+### 40.9.6 Enjeux et perspectives au Maroc
+
+1. **Accès aux soins** : le coût de la FIV (25 000-40 000 MAD) est prohibitif pour une grande partie de la population. L'intégration de l'AMP dans la couverture AMO est un enjeu de santé publique
+2. **Registre national** : la mise en place d'un registre national des tentatives d'AMP (sur le modèle de l'ABM) permettrait d'évaluer les résultats et d'améliorer la qualité
+3. **Formation** : le développement de formations spécialisées en biologie de la reproduction et en médecine reproductive est nécessaire pour accompagner la croissance du secteur
+4. **Évolution législative** : la loi 47-14 est un premier cadre, mais des décrets d'application restent à préciser (conditions techniques, qualification des professionnels, contrôle qualité)
+5. **Préservation sociétale** : la question de l'autoconservation ovocytaire pour les femmes non mariées reste un débat sociétal (mariage tardif en milieu urbain, pression démographique)
+6. **Éthique du don** : le débat sur le don de gamètes reste fermé au plan juridique (fiqh malékite), mais certains bioéthiciens marocains plaident pour une réflexion ouverte, notamment pour les couples avec azoospermie non obstructive définitive ou IOP sans solution
+
+> 📚 **Références** :
+> - Loi n° 47-14 relative à l'assistance médicale à la procréation. *Bulletin Officiel du Royaume du Maroc*, 2019.
+> - Académie Islamique du Fiqh (OCI). *Résolution n° 16/4 sur la FIV*. Djeddah, 1986.
+> - Serour GI. *Islamic perspectives in human reproduction*. Reprod Biomed Online 2008.
+> - Inhorn MC. *Cosmopolitan conceptions: IVF sojourns in global Dubai*. Duke University Press, 2015.
+> - El Mouatassim S et al. *AMP au Maroc : état des lieux et perspectives*. Rev Maroc Biol Reprod 2020.
+
+---
+
 ### QUIZ MODULE 40
 
 **🥉 Q1** 🟣 — Quelles sont les conditions de remboursement de la FIV en France ?
