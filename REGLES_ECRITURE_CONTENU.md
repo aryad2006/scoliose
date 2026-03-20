@@ -763,4 +763,64 @@ Chaque formation dispose d'un fichier dédié dans son répertoire :
 
 ---
 
-*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX© (Scoliose, PTG, IOA, Tendinites, Obésité et Orthopédie). Toute dérogation doit être justifiée par la nature du contenu.*
+## 15. Fiabilité des sources et vérification par agent IA
+
+> **RÈGLE ABSOLUE — FIABILITÉ ET AUTHENTICITÉ DES SOURCES**
+>
+> Toutes les informations et documents collectés pour les formations VERTEX© DOIVENT provenir de **sources fiables, vérifiables et officielles**. Chaque contenu produit DOIT faire l'objet d'une **vérification de fiabilité et d'authenticité par un agent IA indépendant** avant validation.
+
+### 15.1 Sources acceptées (par ordre de priorité)
+
+| Niveau | Type de source | Exemples |
+|--------|---------------|----------|
+| **A — Officiel** | Recommandations de sociétés savantes, guidelines institutionnelles | HAS, ESHRE, ADA, ESC, EULAR, OMS, ABM, NICE, ACOG |
+| **B — Princeps** | Articles originaux dans des revues à comité de lecture (peer-reviewed) | NEJM, Lancet, JAMA, BMJ, Cochrane, Hum Reprod, Fertil Steril, JBJS, Spine |
+| **C — Synthèse** | Méta-analyses, revues systématiques, Cochrane Reviews | Cochrane Database, Hum Reprod Update, Nat Rev |
+| **D — Référentiel** | Collèges nationaux, référentiels ECN/EDN, traités reconnus | Collège des enseignants, EMC, Campbell's, Lovell & Winter's |
+| **E — Expert** | Avis d'experts, consensus, séries de cas (niveau de preuve faible — à signaler) | Conférences de consensus, Delphi panels |
+
+### 15.2 Sources NON acceptées
+
+- ❌ Sites grand public sans comité éditorial médical (Wikipedia, blogs, forums)
+- ❌ Articles de presse non spécialisée
+- ❌ Contenus sponsorisés par l'industrie pharmaceutique sans peer-review
+- ❌ Données non publiées ou « communications personnelles » sans corroboration
+- ❌ Références inventées ou non vérifiables (hallucinations IA)
+- ❌ Prépublications (preprints) non encore validées par peer-review, sauf mention explicite « preprint, non validé »
+
+### 15.3 Vérification par agent IA indépendant
+
+**Processus obligatoire** : après la rédaction de chaque module, quiz ou cahier de cas cliniques, un **agent IA distinct** (différent de l'agent rédacteur) DOIT vérifier :
+
+1. **Authenticité des références** : chaque référence citée (auteur, année, revue) correspond à une publication réelle et vérifiable
+2. **Exactitude des données** : les chiffres clés (prévalence, sensibilité/spécificité, seuils, doses, taux) sont cohérents avec les sources citées
+3. **Actualité** : les recommandations citées sont les plus récentes disponibles (pas de guideline obsolète remplacée)
+4. **Cohérence interne** : pas de contradiction entre les modules d'une même formation
+5. **Niveau de preuve** : les affirmations sont correctement classées (fait établi vs controversé vs hypothèse)
+
+**Format du rapport de vérification** :
+
+```
+## Rapport de vérification — [Nom du fichier]
+- **Agent vérificateur** : [identifiant]
+- **Date** : [date]
+- **Références vérifiées** : X/Y (taux)
+- **Données numériques vérifiées** : X/Y (taux)
+- **Anomalies détectées** : [liste ou « aucune »]
+- **Statut** : ✅ Validé | ⚠️ Corrections mineures | ❌ Révision nécessaire
+```
+
+### 15.4 Checklist fiabilité des sources (ajout à la checklist §11)
+
+| # | Critère fiabilité | ✅ |
+|---|---|---|
+| 34 | Toutes les sources sont de niveau A à D (ou E avec mention explicite) | |
+| 35 | Aucune source de type grand public, blog ou non peer-reviewed | |
+| 36 | Aucune référence inventée ou non vérifiable | |
+| 37 | Les guidelines citées sont les versions les plus récentes | |
+| 38 | Vérification par agent IA indépendant réalisée et documentée | |
+| 39 | Rapport de vérification joint ou archivé | |
+
+---
+
+*Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX©. Toute dérogation doit être justifiée par la nature du contenu.*
