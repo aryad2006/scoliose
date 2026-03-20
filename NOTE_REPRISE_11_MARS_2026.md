@@ -1,9 +1,9 @@
-# NOTE DE REPRISE — 20 mars 2026 (mise à jour)
+# NOTE DE REPRISE — 20 mars 2026 (bilan complet)
 
 **Projet** : VERTEX© — Formations médicales e-learning
 **Dépôt** : aryad2006/scoliose (branche main)
 **Dernière session** : 20 mars 2026
-**Mise à jour** : 20 mars 2026 — quiz thyroïdies + FIV complète
+**Mise à jour** : 20 mars 2026 — bilan complet 12 formations + quiz + LCA
 
 ---
 
@@ -34,7 +34,8 @@
 |---|-----------|-----------|-------------|---------------|------------|
 | 10 | **Histoire de l'Orthopédie** | cours-histoire-orthopedie/ | 9 CDC (00→08) + complet | N/A (pas de cas cliniques) | **100%** |
 | 11 | **FIV** | cours-fiv/ | 14 CDC (00→13) | ✅ 24 cas (3 parties) + quiz 110q | **98%** |
-| 12 | **Formations futures** | a-venir/ | Planning | — | Planning |
+| 12 | **LCA (Ligament Croisé Antérieur)** | cours-lca/ | 1 CDC (00 intro) | 🔲 À faire | **10%** |
+| 13 | **Formations futures** | a-venir/ | Planning | — | Planning |
 
 ---
 
@@ -47,12 +48,27 @@
 | 1 | `CAS_CLINIQUES_TENDINITES.md` | cours-tendinites/ | 15-24 | 🔲 À faire |
 | 2 | `CAS_CLINIQUES_OBO.md` | cours-obesite-orthopedie/ | 15-24 | 🔲 À faire |
 
-### Priorité 2 — Formation FIV ✅ COMPLÈTE
+### Priorité 2 — Formation LCA (en cours)
 
-- 14 CDC (00→13) + 24 cas cliniques (3 parties) + quiz 110 questions
-- Cadre légal marocain AMP intégré (CDC_FIV_12)
+- 1 CDC intro rédigé (CDC_LCA_00), reste à produire les modules suivants
+- Pas encore de cas cliniques ni de quiz
 
-### Priorité 3 — Finitions
+### Priorité 3 — Quiz manquants
+
+| Formation | Quiz | Statut |
+|-----------|------|--------|
+| Diabétologie | QUIZ_DIABETOLOGIE.md (99q) | ✅ |
+| FIV | QUIZ_FIV.md (110q) | ✅ |
+| Hypothyroïdies | QUIZ_HYPOTHYROIDIE.md (100q) | ✅ |
+| Hyperthyroïdies | QUIZ_HYPERTHYROIDIE.md (100q) | ✅ |
+| HTA | — | 🔲 À faire |
+| Scoliose | — | 🔲 À faire |
+| PTG | — | 🔲 À faire |
+| IOA | — | 🔲 À faire |
+| Tendinites | — | 🔲 À faire |
+| Obésité-Orthopédie | — | 🔲 À faire |
+
+### Priorité 4 — Finitions
 
 - Mettre les 5 formations ortho à 100% (relecture, cohérence inter-modules)
 - Git push final après chaque lot de travail
@@ -116,9 +132,12 @@
 ## POUR REPRENDRE
 
 1. La mémoire Claude est configurée — pas besoin de relire cette note en détail
-2. Prochaine tâche : **Quiz restants** (diabétologie déjà fait, HTA à vérifier) puis **CAS_CLINIQUES_TENDINITES.md** (cours-tendinites/)
-3. Quiz faits : diabétologie (99q), FIV (110q), hypothyroïdies (100q), hyperthyroïdies (100q)
-4. Cas cliniques manquants : Tendinites + Obésité-Orthopédie
+2. **13 formations** au total (12 + LCA en cours)
+3. **Prochaines tâches par priorité** :
+   - Cas cliniques manquants : **Tendinites** + **Obésité-Orthopédie**
+   - Quiz manquants : HTA, Scoliose, PTG, IOA, Tendinites, Obésité-Orthopédie
+   - Formation LCA : poursuivre les CDC (01+)
+4. Quiz faits : Diabétologie (99q), FIV (110q), Hypothyroïdies (100q), Hyperthyroïdies (100q)
 5. Modèle de référence quiz : `QUIZ_HYPOTHYROIDIE.md` ou `QUIZ_HYPERTHYROIDIE.md`
 6. Modèle de référence cas cliniques : `CAS_CLINIQUES_IOA.md`
 7. Créer par parties (P1, P2, P3…) pour fichiers > 500 lignes
@@ -126,4 +145,4 @@
 
 ---
 
-*Note de reprise — 20 mars 2026 — 12 formations, quiz thyroïdies terminés*
+*Note de reprise — 20 mars 2026 — 13 formations, bilan complet*
