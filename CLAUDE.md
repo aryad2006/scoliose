@@ -1,8 +1,8 @@
-# CLAUDE.md — VERTEX© Projet Formation Rachis
+# CLAUDE.md — VERTEX© Plateforme Formations Medicales
 
 ## Projet
 
-VERTEX© (Virtual Environment for Rachis Training and EXploration) — Plateforme de formations medicales e-learning en chirurgie du rachis et orthopedie, avec simulateur biomecanique 3D.
+VERTEX© (Virtual Environment for Real-Time EXpertise) — Plateforme de formations medicales e-learning multi-specialites (orthopedie, endocrinologie, medecine interne, AMP), avec simulateur biomecanique 3D.
 
 ## Stack technique
 

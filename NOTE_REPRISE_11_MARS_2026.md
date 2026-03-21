@@ -1,9 +1,9 @@
-# NOTE DE REPRISE — 20 mars 2026 (bilan complet)
+# NOTE DE REPRISE — 21 mars 2026
 
-**Projet** : VERTEX© — Formations médicales e-learning
+**Projet** : VERTEX© (Virtual Environment for Real-Time EXpertise) — Formations médicales e-learning multi-spécialités
 **Dépôt** : aryad2006/scoliose (branche main)
-**Dernière session** : 20 mars 2026
-**Mise à jour** : 20 mars 2026 — bilan complet 12 formations + quiz + LCA
+**Dernière session** : 21 mars 2026
+**Mise à jour** : 21 mars 2026 — déploiement Moodle complet (12 formations)
 
 ---
 
@@ -114,6 +114,61 @@
 - ✅ Quiz hypothyroïdies — 100 questions (4 niveaux, M01-M38)
 - ✅ Quiz hyperthyroïdies — 100 questions (4 niveaux, M01-M38)
 
+### 21 mars 2026 — DÉPLOIEMENT MOODLE COMPLET
+- ✅ **VERTEX© renommé** : Virtual Environment for Real-Time EXpertise (plus "Rachis")
+- ✅ **Moodle local** (Docker) : 12 formations importées, page d'accueil refondue, thème Moove configuré
+- ✅ **Plugin VERTEX Coupons** créé (local_vertex_coupons) :
+  - Gestion coupons (création, lot, révocation)
+  - Inscription directe de praticiens par l'admin
+  - Page tarifs bi-régionale (Maroc MAD / International EUR)
+  - Page souscription (carte ou virement)
+  - Page activation coupon pour praticiens
+  - Envoi email automatique
+- ✅ **162 fichiers HTML** générés (generate_moodle_content.py)
+- ✅ **244 questions quiz** converties GIFT+XML (convert_quiz_to_gift.py)
+- ✅ **Hébergement Infomaniak** acquis : doctraining.ma (mutualisé PHP 8.2 + MariaDB 10.11)
+- ✅ **Moodle 4.5 installé en production** sur https://doctraining.ma
+- ✅ **12 formations importées** en production via API REST
+- ✅ **Plugin coupons installé** en production
+- ✅ **Thème Moove installé** en production (configuration en cours)
+- ✅ **Web Services activés** en production (token créé)
+
+---
+
+## INFRA PRODUCTION — doctraining.ma
+
+| Info | Valeur |
+|------|--------|
+| Domaine | doctraining.ma |
+| Hébergeur | Infomaniak (mutualisé) |
+| PHP | 8.2 |
+| BDD | MariaDB 10.11 |
+| Serveur MySQL | ws5ihj.myd.infomaniak.com:3306 |
+| Base | ws5ihj_doctraining |
+| Utilisateur MySQL | ws5ihj_aryad2006 |
+| Utilisateur SSH | uid361285 (terminal Infomaniak) |
+| Chemin Moodle | ~/sites/doctraining.ma/ |
+| Chemin moodledata | ~/moodledata/ |
+| Token API prod | 6c7f8707caa3219c4799c6d223929640 |
+| Email support | contact@doctraining.ma |
+
+### Cours en production (IDs)
+
+| # | Formation | ID prod |
+|---|-----------|---------|
+| 1 | Scoliose | 2 |
+| 2 | PTG | 3 |
+| 3 | IOA | 4 |
+| 4 | Tendinites | 5 |
+| 5 | Obésité | 6 |
+| 6 | Diabétologie | 7 |
+| 7 | HTA | 8 |
+| 8 | Hypothyroïdies | 9 |
+| 9 | Hyperthyroïdies | 10 |
+| 10 | FIV | 11 |
+| 11 | Histoire Orthopédie | 12 |
+| 12 | LCA | 13 |
+
 ---
 
 ## CONVENTIONS & RÈGLES ACTIVES
@@ -129,20 +184,43 @@
 
 ---
 
+## CE QUI RESTE À FAIRE
+
+### Priorité 1 — Production (doctraining.ma)
+- Finaliser la **configuration du thème Moove** en production (slider, marketing, FAQ, CSS custom)
+- Configurer le **SMTP** Infomaniak pour les emails (contact@doctraining.ma)
+- Configurer le **cron** Moodle (tâches planifiées Infomaniak)
+- Masquer le crédit Conecti.me et le footer Moodle (CSS custom)
+- Ajouter le **logo SVG VERTEX©** et le **favicon** dans le thème
+- Remplir les **coordonnées bancaires** sur la page virement
+- Configurer le **paiement en ligne** (Stripe ou CMI Maroc)
+
+### Priorité 2 — Contenu
+- Cas cliniques manquants : **Obésité-Orthopédie**
+- Quiz manquants : HTA, Scoliose, PTG, IOA, Tendinites, Obésité-Orthopédie
+- Formation LCA : poursuivre les CDC (01+)
+- Importer les quiz GIFT dans la banque de questions Moodle (prod)
+
+### Priorité 3 — Améliorations
+- Installer plugins additionnels en prod (H5P, customcert, attendance)
+- Configurer les inscriptions payantes (enrol_fee ou plugin custom)
+- Ajouter le plugin mod_vertex (simulateur) en prod
+
 ## POUR REPRENDRE
 
-1. La mémoire Claude est configurée — pas besoin de relire cette note en détail
-2. **13 formations** au total (12 + LCA en cours)
-3. **Prochaines tâches par priorité** :
-   - Cas cliniques manquants : **Tendinites** + **Obésité-Orthopédie**
-   - Quiz manquants : HTA, Scoliose, PTG, IOA, Tendinites, Obésité-Orthopédie
-   - Formation LCA : poursuivre les CDC (01+)
-4. Quiz faits : Diabétologie (99q), FIV (110q), Hypothyroïdies (100q), Hyperthyroïdies (100q)
-5. Modèle de référence quiz : `QUIZ_HYPOTHYROIDIE.md` ou `QUIZ_HYPERTHYROIDIE.md`
-6. Modèle de référence cas cliniques : `CAS_CLINIQUES_IOA.md`
-7. Créer par parties (P1, P2, P3…) pour fichiers > 500 lignes
-8. Tags MEDIA dès la rédaction
+1. La mémoire Claude est configurée
+2. **Site en production** : https://doctraining.ma (Moodle 4.5, Infomaniak)
+3. **Site local** : http://localhost:8890 (Docker, thème Moove complet)
+4. **13 formations** au total (12 + LCA en cours)
+5. Le thème Moove est installé en prod mais pas encore configuré (slider, marketing, FAQ)
+6. Le plugin coupons est installé en local ET en prod
+7. Scripts d'import : `import_all_formations.py`, `generate_moodle_content.py`, `convert_quiz_to_gift.py`
+8. Token API prod : `6c7f8707caa3219c4799c6d223929640`
+9. Pour déployer un fichier en prod : push sur GitHub puis `wget` depuis le SSH Infomaniak
+10. Quiz faits : Diabétologie (70q), FIV (48q), Hypothyroïdies (30q), Hyperthyroïdies (96q)
+11. Modèle de référence quiz : `QUIZ_HYPOTHYROIDIE.md` ou `QUIZ_HYPERTHYROIDIE.md`
+12. Modèle de référence cas cliniques : `CAS_CLINIQUES_IOA.md`
 
 ---
 
-*Note de reprise — 20 mars 2026 — 13 formations, bilan complet*
+*Note de reprise — 21 mars 2026 — 13 formations, site en production sur doctraining.ma*
