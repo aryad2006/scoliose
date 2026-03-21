@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/vertex_coupons/db" VERSION="2026032100" COMMENT="Tables pour les coupons VERTEX">
+  <TABLES>
+    <TABLE NAME="vertex_coupons" COMMENT="Coupons d'accès gratuit VERTEX©">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="code" TYPE="char" LENGTH="40" NOTNULL="true" COMMENT="Code coupon unique"/>
+        <FIELD NAME="email" TYPE="char" LENGTH="255" NOTNULL="true" COMMENT="Email du bénéficiaire"/>
+        <FIELD NAME="fullname" TYPE="char" LENGTH="255" NOTNULL="false" COMMENT="Nom complet (optionnel)"/>
+        <FIELD NAME="duration_days" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="30" COMMENT="Durée accès en jours"/>
+        <FIELD NAME="courses" TYPE="text" NOTNULL="false" COMMENT="IDs cours (vide = tous)"/>
+        <FIELD NAME="status" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="active" COMMENT="active, used, expired, revoked"/>
+        <FIELD NAME="created_by" TYPE="int" LENGTH="10" NOTNULL="true" COMMENT="Admin qui a créé"/>
+        <FIELD NAME="used_by" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="Utilisateur qui a utilisé"/>
+        <FIELD NAME="used_at" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="Timestamp utilisation"/>
+        <FIELD NAME="expires_at" TYPE="int" LENGTH="10" NOTNULL="false" COMMENT="Timestamp expiration accès"/>
+        <FIELD NAME="note" TYPE="text" NOTNULL="false" COMMENT="Note admin"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="idx_code" UNIQUE="true" FIELDS="code"/>
+        <INDEX NAME="idx_email" UNIQUE="false" FIELDS="email"/>
+        <INDEX NAME="idx_status" UNIQUE="false" FIELDS="status"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
