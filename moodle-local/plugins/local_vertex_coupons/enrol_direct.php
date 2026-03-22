@@ -59,7 +59,17 @@ if ($step === 'confirm') {
 
     $user = $DB->get_record('user', ['email' => strtolower($email)]);
     $created = false;
-    if (!$user) {
+    $already_enrolled = false;
+
+    if ($user) {
+        // Vérifier si déjà inscrit via un coupon actif
+        $existing_coupon = $DB->get_record_select('vertex_coupons',
+            "email = ? AND status = 'used' AND expires_at > ?",
+            [strtolower($email), time()]);
+        if ($existing_coupon) {
+            $already_enrolled = true;
+        }
+    } else {
         $parts = explode(' ', trim($fullname), 2);
         $user = new stdClass();
         $user->auth = 'manual';
@@ -78,6 +88,19 @@ if ($step === 'confirm') {
         $user->timemodified = time();
         $user->id = $DB->insert_record('user', $user);
         $created = true;
+    }
+
+    if ($already_enrolled) {
+        echo $OUTPUT->header();
+        echo '<div style="max-width:600px;margin:30px auto;text-align:center;">';
+        echo '<div style="background:#FFF3E0;border:2px solid #E65100;border-radius:12px;padding:25px;">';
+        echo '<h3 style="color:#E65100;">Praticien deja inscrit</h3>';
+        echo '<p><strong>' . $user->email . '</strong> a deja un abonnement actif jusqu\'au ' . date('d/m/Y', $existing_coupon->expires_at) . '</p>';
+        echo '</div>';
+        echo '<a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php" style="display:inline-block;margin-top:20px;background:#1565C0;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;">Retour</a>';
+        echo '</div>';
+        echo $OUTPUT->footer();
+        exit;
     }
 
     $coupon = vertex_coupons_create($email, $days, $fullname, '', 'Inscription directe');
