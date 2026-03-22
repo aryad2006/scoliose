@@ -90,15 +90,17 @@ if ($step === 'confirm') {
         $created = true;
     }
 
-    if ($already_enrolled) {
+    $force = optional_param('force', 0, PARAM_INT);
+    if ($already_enrolled && !$force) {
         echo $OUTPUT->header();
         echo '<div style="max-width:600px;margin:30px auto;text-align:center;">';
         echo '<div style="background:#FFF3E0;border:2px solid #E65100;border-radius:12px;padding:25px;">';
         echo '<h3 style="color:#E65100;">Praticien deja inscrit</h3>';
-        echo '<p><strong>' . $user->email . '</strong> a deja un abonnement actif jusqu\'au ' . date('d/m/Y', $existing_coupon->expires_at) . '</p>';
-        echo '</div>';
-        echo '<a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php" style="display:inline-block;margin-top:20px;background:#1565C0;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;">Retour</a>';
-        echo '</div>';
+        echo '<p><strong>' . $user->email . '</strong> a deja un abonnement actif jusqu\'au <strong>' . date('d/m/Y', $existing_coupon->expires_at) . '</strong></p>';
+        echo '<p style="color:#666;margin-top:15px;">Voulez-vous renouveler / prolonger l\'acces ?</p>';
+        echo '<a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php?step=confirm&email=' . urlencode($email) . '&fullname=' . urlencode($fullname) . '&password=' . urlencode($password) . '&days=' . $days . '&force=1" style="display:inline-block;background:#2E7D32;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;margin:5px;">Oui, renouveler pour ' . $days . ' jours</a>';
+        echo ' <a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php" style="display:inline-block;background:#666;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;margin:5px;">Annuler</a>';
+        echo '</div></div>';
         echo $OUTPUT->footer();
         exit;
     }
