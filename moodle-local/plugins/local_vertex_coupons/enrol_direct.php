@@ -98,7 +98,7 @@ if ($step === 'confirm') {
         echo '<h3 style="color:#E65100;">Praticien deja inscrit</h3>';
         echo '<p><strong>' . $user->email . '</strong> a deja un abonnement actif jusqu\'au <strong>' . date('d/m/Y', $existing_coupon->expires_at) . '</strong></p>';
         echo '<p style="color:#666;margin-top:15px;">Voulez-vous renouveler / prolonger l\'acces ?</p>';
-        echo '<a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php?step=confirm&email=' . urlencode($email) . '&fullname=' . urlencode($fullname) . '&password=' . urlencode($password) . '&days=' . $days . '&force=1" style="display:inline-block;background:#2E7D32;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;margin:5px;">Oui, renouveler pour ' . $days . ' jours</a>';
+        echo '<a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php?step=confirm&email=' . urlencode($email) . '&fullname=' . urlencode($fullname) . '&days=' . $days . '&force=1" style="display:inline-block;background:#2E7D32;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;margin:5px;">Oui, renouveler pour ' . $days . ' jours</a>';
         echo ' <a href="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php" style="display:inline-block;background:#666;color:white;padding:10px 25px;border-radius:8px;font-weight:600;text-decoration:none;margin:5px;">Annuler</a>';
         echo '</div></div>';
         echo $OUTPUT->footer();
@@ -147,18 +147,55 @@ echo '<div style="background:white;border-radius:12px;padding:30px;box-shadow:0 
 echo '<h3 style="color:#1565C0;margin-top:0;">Inscription directe d\'un praticien</h3>';
 echo '<p style="color:#666;">Cree le compte et inscrit immediatement aux formations.</p>';
 
+// Construire la liste des emails existants pour le JS
+$existing_emails = $DB->get_records_sql("SELECT DISTINCT LOWER(email) as email FROM {user} WHERE deleted=0 AND id>2");
+$emails_json = json_encode(array_column(array_values($existing_emails), 'email'));
+
 echo '<form action="' . $CFG->wwwroot . '/local/vertex_coupons/enrol_direct.php" method="get">';
 echo '<input type="hidden" name="step" value="confirm">';
 echo '<div style="margin-bottom:15px;"><label style="display:block;font-weight:600;margin-bottom:5px;">Email *</label>';
-echo '<input type="email" name="email" required placeholder="praticien@exemple.com" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
+echo '<input type="email" name="email" id="enrol_email" required placeholder="praticien@exemple.com" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
+echo '<div id="existing_user_msg" style="display:none;background:#E3F2FD;border:1px solid #1565C0;border-radius:8px;padding:10px;margin-bottom:15px;color:#1565C0;font-size:0.9em;">Utilisateur existant — renouvellement d\'acces (mot de passe inchange)</div>';
 echo '<div style="margin-bottom:15px;"><label style="display:block;font-weight:600;margin-bottom:5px;">Nom complet *</label>';
-echo '<input type="text" name="fullname" required placeholder="Dr. Prenom Nom" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
-echo '<div style="margin-bottom:15px;"><label style="display:block;font-weight:600;margin-bottom:5px;">Mot de passe</label>';
-echo '<input type="text" name="password" placeholder="Laisser vide = Vertex2026!" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
+echo '<input type="text" name="fullname" id="enrol_fullname" required placeholder="Dr. Prenom Nom" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
+echo '<div style="margin-bottom:15px;" id="password_div"><label style="display:block;font-weight:600;margin-bottom:5px;">Mot de passe</label>';
+echo '<input type="text" name="password" id="enrol_password" placeholder="Laisser vide = Vertex2026!" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;"></div>';
 echo '<div style="margin-bottom:15px;"><label style="display:block;font-weight:600;margin-bottom:5px;">Duree d\'acces</label>';
 echo '<select name="days" style="width:100%;padding:10px;border:2px solid #E0E0E0;border-radius:8px;box-sizing:border-box;">';
 echo '<option value="7">7 jours</option><option value="30" selected>30 jours</option><option value="90">90 jours</option><option value="180">6 mois</option><option value="365">1 an</option>';
 echo '</select></div>';
-echo '<button type="submit" style="width:100%;background:linear-gradient(135deg,#2E7D32,#1B5E20);color:white;border:none;padding:14px;border-radius:10px;font-size:1.05em;font-weight:600;cursor:pointer;">Creer le compte et inscrire</button>';
+echo '<button type="submit" id="enrol_btn" style="width:100%;background:linear-gradient(135deg,#2E7D32,#1B5E20);color:white;border:none;padding:14px;border-radius:10px;font-size:1.05em;font-weight:600;cursor:pointer;">Creer le compte et inscrire</button>';
 echo '</form></div></div>';
+
+echo '<script>
+var existingEmails = ' . $emails_json . ';
+var emailField = document.getElementById("enrol_email");
+var pwdField = document.getElementById("enrol_password");
+var pwdDiv = document.getElementById("password_div");
+var msg = document.getElementById("existing_user_msg");
+var btn = document.getElementById("enrol_btn");
+if (emailField) {
+    emailField.addEventListener("input", function() {
+        var val = this.value.toLowerCase().trim();
+        if (existingEmails.indexOf(val) !== -1) {
+            pwdField.disabled = true;
+            pwdField.value = "";
+            pwdField.style.background = "#f0f0f0";
+            pwdField.style.cursor = "not-allowed";
+            msg.style.display = "block";
+            btn.textContent = "Renouveler l\'acces";
+            btn.style.background = "linear-gradient(135deg,#1565C0,#0D47A1)";
+        } else {
+            pwdField.disabled = false;
+            pwdField.value = "";
+            pwdField.style.background = "white";
+            pwdField.style.cursor = "text";
+            msg.style.display = "none";
+            btn.textContent = "Creer le compte et inscrire";
+            btn.style.background = "linear-gradient(135deg,#2E7D32,#1B5E20)";
+        }
+    });
+}
+</script>';
+
 echo $OUTPUT->footer();
