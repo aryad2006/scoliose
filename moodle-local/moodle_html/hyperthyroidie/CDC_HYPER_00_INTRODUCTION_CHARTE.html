@@ -1,0 +1,447 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-hyperthyroidies">🔥 CAHIER DES CHARGES — FORMATION HYPERTHYROÏDIES</h1>
+<h2 id="formation-vertex-endocrinologie-hyperthyroidies">Formation VERTEX© — Endocrinologie : Hyperthyroïdies</h2>
+<hr />
+<h2 id="identite-de-la-formation">Identité de la formation</h2>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titre</strong></td>
+<td>Hyperthyroïdies — du Diagnostic à la Prise en Charge Optimale</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>HYPER</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>Mars 2026</td>
+</tr>
+<tr>
+<td><strong>Auteur</strong></td>
+<td>Professeur Émérite en Endocrinologie — Diabétologie</td>
+</tr>
+<tr>
+<td><strong>Public cible</strong></td>
+<td>Médecins généralistes, internes en médecine, endocrinologues confirmés</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>20-24 heures de formation</td>
+</tr>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>38 modules, 11 parties</td>
+</tr>
+<tr>
+<td><strong>Cas cliniques</strong></td>
+<td>30 cas progressifs (Bronze → Diamant)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="code-couleur">Code couleur</h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Titres principaux</td>
+<td>Orange brûlé</td>
+<td><strong>#D35400</strong></td>
+<td>H1, tableaux en-tête</td>
+</tr>
+<tr>
+<td>Accentuation</td>
+<td>Bleu marine</td>
+<td><strong>#1A5276</strong></td>
+<td>H2, encadrés, bordures</td>
+</tr>
+<tr>
+<td>Corps de texte</td>
+<td>Gris anthracite</td>
+<td>#2C3E50</td>
+<td>Texte courant</td>
+</tr>
+<tr>
+<td>Fond tableaux pair</td>
+<td>Pêche pâle</td>
+<td>#FAD7A0</td>
+<td>Lignes paires</td>
+</tr>
+<tr>
+<td>Fond encadrés clés</td>
+<td>Orange très pâle</td>
+<td>#FEF9E7</td>
+<td>Points pratiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="plan-general-de-la-formation">Plan général de la formation</h2>
+<h3 id="partie-01-embryologie-anatomie-et-histologie-thyroidiennes-m01-m03">PARTIE 01 — Embryologie, Anatomie et Histologie Thyroïdiennes (M01-M03)</h3>
+<ul>
+<li>M01 : Embryologie — foramen caecum, migration, gènes (NKX2-1, FOXE1, PAX8)</li>
+<li>M02 : Anatomie — forme papillon, rapports chirurgicaux, vascularisation (artères thyroïdiennes)</li>
+<li>M03 : Histologie — follicule thyroïdien, thyréocyte polarisé, cellules C parafolliculaires</li>
+</ul>
+<h3 id="partie-02-physiologie-thyroidienne-m04-m07">PARTIE 02 — Physiologie Thyroïdienne (M04-M07)</h3>
+<ul>
+<li>M04 : Axe hypothalamo-hypophyso-thyroïdien — TRH, TSH, TSHR, rétrocontrôle</li>
+<li>M05 : Biosynthèse des hormones thyroïdiennes — NIS, TPO, DUOX2, organification</li>
+<li>M06 : Transport et métabolisme — TBG/TTR/albumine, désiodases DIO1/2/3, rT3</li>
+<li>M07 : Effets biologiques — récepteurs TRα/TRβ, gènes cibles, effets métaboliques systémiques</li>
+</ul>
+<h3 id="partie-03-physiopathologie-et-etiologies-m08-m11">PARTIE 03 — Physiopathologie et Étiologies (M08-M11)</h3>
+<ul>
+<li>M08 : Classification des hyperthyroïdies — primaires, centrales, périphériques ; mécanismes (stimulation, autonomie, destruction, exogène)</li>
+<li>M09 : Maladie de Basedow — immunologie, TRAb stimulants, génétique HLA, histoire naturelle</li>
+<li>M10 : Goitre multinodulaire toxique et adénome toxique de Plummer — pathogénèse, mutations somatiques TSHR/Gαs</li>
+<li>M11 : Thyroïdites hyperthyroïdiennes — De Quervain (subaiguë granulomateuse), silencieuse, post-partum (phase I), médicamenteuses</li>
+</ul>
+<h3 id="partie-04-tableau-clinique-m12-m14">PARTIE 04 — Tableau Clinique (M12-M14)</h3>
+<ul>
+<li>M12 : Syndrome thyrotoxique constitué — signes cardinaux par appareil (cardiovasculaire, neuromusculaire, cutané, digestif, gynécologique)</li>
+<li>M13 : Orbitopathie basedowienne (TAO) — classification EUGOGO, physiopathologie, signes oculaires, urgences ophtalmologiques</li>
+<li>M14 : Crise thyrotoxique (storm) — diagnostic (score de Burch-Wartofsky), traitement d'urgence, mortalité</li>
+</ul>
+<h3 id="partie-05-examens-paracliniques-m15-m17">PARTIE 05 — Examens Paracliniques (M15-M17)</h3>
+<ul>
+<li>M15 : TSH, T4L, T3L — interprétation en hyperthyroïdie, pièges (hCG, amiodarone, RTH)</li>
+<li>M16 : TRAb (TSAb/TBAb), anti-TPO, anti-Tg, T3 totale — signification clinique</li>
+<li>M17 : Scintigraphie thyroïdienne (¹²³I/⁹⁹ᵐTc), échographie-Doppler, TEP-FDG, cytoponction</li>
+</ul>
+<h3 id="partie-06-formes-cliniques-particulieres-m18-m21">PARTIE 06 — Formes Cliniques Particulières (M18-M21)</h3>
+<ul>
+<li>M18 : Hyperthyroïdie et grossesse — Basedow, hyperthyroïdie gestationnelle (hCG), complications materno-fœtales</li>
+<li>M19 : Hyperthyroïdie de l'enfant et de l'adolescent — Basedow juvénile, particularités, impact scolaire</li>
+<li>M20 : Hyperthyroïdie du sujet âgé — FA, insuffisance cardiaque, présentation atypique, os</li>
+<li>M21 : Hyperthyroïdie et comorbidités — FA, ostéoporose, troubles psychiatriques, grossesse, infertilité</li>
+</ul>
+<h3 id="partie-07-diagnostic-et-depistage-m22-m24">PARTIE 07 — Diagnostic et Dépistage (M22-M24)</h3>
+<ul>
+<li>M22 : Stratégie diagnostique — de la TSH basse à l'étiologie ; arbres décisionnels</li>
+<li>M23 : Diagnostic étiologique — Basedow vs GMN toxique vs thyroïdite vs factice</li>
+<li>M24 : Dépistage — populations à risque, FA, grossesse, recommandations HAS/ETA/ATA</li>
+</ul>
+<h3 id="partie-08-traitement-antithyroidiens-de-synthese-m25-m28">PARTIE 08 — Traitement : Antithyroïdiens de Synthèse (M25-M28)</h3>
+<ul>
+<li>M25 : ATS — carbimazole, méthimazole, propylthiouracile — pharmacologie comparative</li>
+<li>M26 : Maladie de Basedow — schéma titration vs bloc-substitution, durée, rechute, prédicteurs</li>
+<li>M27 : Surveillance biologique — NFS, bilan hépatique, TRAb, indications de contrôle</li>
+<li>M28 : Effets indésirables des ATS — agranulocytose, hépatotoxicité, vascularite ANCA, tératogénicité</li>
+</ul>
+<h3 id="partie-09-traitement-iode-radioactif-et-chirurgie-m29-m32">PARTIE 09 — Traitement : Iode Radioactif et Chirurgie (M29-M32)</h3>
+<ul>
+<li>M29 : Radioiodothérapie (RAI) — mécanisme, dosimétrie, préparation, indications, contre-indications</li>
+<li>M30 : Suivi post-RAI — hypothyroïdie, aggravation TAO, résistance, 2ème dose</li>
+<li>M31 : Thyroïdectomie — totale vs subtotale, préparation au Lugol, complications (hypoparathyroïdie, nerf récurrent)</li>
+<li>M32 : Situations particulières — Basedow pendant la grossesse, crise thyrotoxique péri-opératoire, urgences</li>
+</ul>
+<h3 id="partie-10-hyperthyroidies-iatrogenes-et-secondaires-m33-m35">PARTIE 10 — Hyperthyroïdies Iatrogènes et Secondaires (M33-M35)</h3>
+<ul>
+<li>M33 : Hyperthyroïdie amiodaronée type 1 (excès iode) vs type 2 (thyroïdite destructive) — diagnostic, traitement</li>
+<li>M34 : Thyroïdite hyperthyroïdienne post-ICI — phase thyrotoxique, gestion oncologique</li>
+<li>M35 : Hyperthyroïdie factice, struma ovarii, métastases thyroïdiennes fonctionnelles, TSHome (adénome thyréotrope)</li>
+</ul>
+<h3 id="partie-11-innovations-et-perspectives-m36-m38">PARTIE 11 — Innovations et Perspectives (M36-M38)</h3>
+<ul>
+<li>M36 : Nouvelles thérapies pour l'orbitopathie — sélénium, rituximab, téprotumumab (IGF-1R)</li>
+<li>M37 : Antagonistes du TSHR (small molecule inhibitors) — TED modéré, nouvelles cibles moléculaires</li>
+<li>M38 : IA dans le diagnostic des hyperthyroïdies, biothérapies ciblées, perspectives 2030</li>
+</ul>
+<hr />
+<h2 id="conventions-editoriales">Conventions éditoriales</h2>
+<h3 id="tags-media">Tags MEDIA</h3>
+<pre><code>&gt; [MEDIA: {EMOJI} MHYPER{module}-S{section}-{numéro} — {DESCRIPTION}]
+</code></pre>
+<p><strong>Émojis par type</strong> :<br />
+- 📊 Tableau / Schéma<br />
+- 🔬 Image histologique / microscopie<br />
+- 📈 Courbe / Graphique<br />
+- 🎬 Vidéo / Animation<br />
+- 💊 Médicament / Prescription<br />
+- 🔍 Zoom clinique<br />
+- ⚕️ Geste technique</p>
+<h3 id="niveaux-de-quiz">Niveaux de quiz</h3>
+<ul>
+<li>🥉 <strong>Bronze</strong> — Connaissances fondamentales (application directe)</li>
+<li>🥈 <strong>Argent</strong> — Application clinique (diagnostics différentiels)</li>
+<li>🥇 <strong>Or</strong> — Expertise (décision multi-facteurs)</li>
+<li>💎 <strong>Diamant</strong> — Excellence (situations complexes, données de la littérature)</li>
+</ul>
+<h3 id="encadres-normalises">Encadrés normalisés</h3>
+<h2 id="-point-pratique-conseil-clinique-immediatement-applicable">- 💡 <strong>POINT PRATIQUE</strong> — conseil clinique immédiatement applicable</h2>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : erreur fréquente à éviter
+- 🚨 **URGENCE** — situation nécessitant une action immédiate
+- 📋 **RECOMMANDATION** — guideline (toujours précéder de « adapté de »)
+- 🔬 **EVIDENCE** — étude clé avec résultats</div>
+
+<hr />
+<h2 id="etudes-de-reference">Études de référence</h2>
+<table>
+<thead>
+<tr>
+<th>Étude</th>
+<th>Année</th>
+<th>Thème</th>
+<th>Résultat clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EUGOGO Consensus</strong></td>
+<td>2021</td>
+<td>Orbitopathie basedowienne</td>
+<td>Classification activité/sévérité TAO</td>
+</tr>
+<tr>
+<td><strong>ATA Guidelines</strong></td>
+<td>2016</td>
+<td>Hyperthyroïdie</td>
+<td>Recommandations traitement Basedow, GMN, RAI</td>
+</tr>
+<tr>
+<td><strong>ETA Guidelines</strong></td>
+<td>2018/2022</td>
+<td>Basedow grossesse</td>
+<td>TRAb, ATS, gestion péri-partum</td>
+</tr>
+<tr>
+<td><strong>TEPROTUMUMAB (OPTIC)</strong></td>
+<td>2021</td>
+<td>Orbitopathie modérée-sévère</td>
+<td>Réduction exophtalmie 83 % vs placebo</td>
+</tr>
+<tr>
+<td><strong>EUGOGO SETO</strong></td>
+<td>2022</td>
+<td>Sélénium TAO légère</td>
+<td>Sélénium 200 µg/j — régression TAO légère</td>
+</tr>
+<tr>
+<td><strong>MITIG</strong></td>
+<td>2022</td>
+<td>GMN toxique — ATS long cours</td>
+<td>Rémission 40 % à 18 mois sous MMI</td>
+</tr>
+<tr>
+<td><strong>WATTS et al.</strong></td>
+<td>2020</td>
+<td>Basedow récidivant</td>
+<td>RAI vs thyroïdectomie — comparaison</td>
+</tr>
+<tr>
+<td><strong>HAS</strong></td>
+<td>2019/2024</td>
+<td>Hyperthyroïdie — France</td>
+<td>Recommandations nationales</td>
+</tr>
+<tr>
+<td><strong>BURCH-WARTOFSKY</strong></td>
+<td>1993</td>
+<td>Crise thyrotoxique</td>
+<td>Score diagnostic validé — seuil ≥ 45</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="abreviations-principales">Abréviations principales</h2>
+<table>
+<thead>
+<tr>
+<th>Sigle</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATS</td>
+<td>Antithyroïdiens de synthèse</td>
+</tr>
+<tr>
+<td>Basedow</td>
+<td>Maladie de Graves-Basedow</td>
+</tr>
+<tr>
+<td>GMN</td>
+<td>Goitre multinodulaire</td>
+</tr>
+<tr>
+<td>GMNT</td>
+<td>Goitre multinodulaire toxique</td>
+</tr>
+<tr>
+<td>hCG</td>
+<td>Gonadotrophine chorionique humaine</td>
+</tr>
+<tr>
+<td>ICI</td>
+<td>Inhibiteurs de checkpoint immunitaire</td>
+</tr>
+<tr>
+<td>MMI</td>
+<td>Méthimazole (carbimazole = prodrogue)</td>
+</tr>
+<tr>
+<td>PTU</td>
+<td>Propylthiouracile</td>
+</tr>
+<tr>
+<td>RAI</td>
+<td>Radioiodothérapie (iode 131)</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Thyroid-Associated Orbitopathy (orbitopathie basedowienne)</td>
+</tr>
+<tr>
+<td>TRAb</td>
+<td>Anticorps anti-récepteur TSH</td>
+</tr>
+<tr>
+<td>TSAb</td>
+<td>TRAb stimulants (maladie de Basedow)</td>
+</tr>
+<tr>
+<td>TBAb</td>
+<td>TRAb bloquants</td>
+</tr>
+<tr>
+<td>TSHome</td>
+<td>Adénome hypophysaire sécrétant de la TSH</td>
+</tr>
+<tr>
+<td>EUGOGO</td>
+<td>European Group on Graves' Orbitopathy</td>
+</tr>
+<tr>
+<td>CAS</td>
+<td>Clinical Activity Score (activité TAO)</td>
+</tr>
+<tr>
+<td>EUGOGO</td>
+<td>European Group on Graves' Orbitopathy</td>
+</tr>
+<tr>
+<td>NIS</td>
+<td>Sodium-Iodide Symporter</td>
+</tr>
+<tr>
+<td>TPO</td>
+<td>Thyropéroxydase</td>
+</tr>
+<tr>
+<td>DUOX2</td>
+<td>Dual Oxidase 2</td>
+</tr>
+<tr>
+<td>DIO1/2/3</td>
+<td>Désiodases type 1, 2, 3</td>
+</tr>
+<tr>
+<td>TBG</td>
+<td>Thyroxine-Binding Globulin</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anti-plagiat-et-attributions">Anti-plagiat et attributions</h2>
+<p>Toute classification, recommandation ou donnée chiffrée est précédée de la mention <strong>« adapté de »</strong> avec la source. Les formulations sont prescriptives et pédagogiques, non reproduites des sources originales. Les études sont citées par leur acronyme et leur revue de publication uniquement.</p>
+<hr />
+<p><em>Formation VERTEX© — Tous droits réservés — Mars 2026</em></p>
+</div>

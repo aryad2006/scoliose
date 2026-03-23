@@ -1,0 +1,596 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-02-physiologie-thyroidienne">PARTIE 02 — Physiologie Thyroïdienne</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-04-axe-hypothalamo-hypophyso-thyroidien">MODULE 04 — Axe Hypothalamo-Hypophyso-Thyroïdien</h2>
+<h3 id="41-organisation-de-laxe-hpt">4.1 Organisation de l'axe HPT</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER04-S1-001 — Axe HPT complet : TRH hypothalamique → TSH hypophysaire → T4/T3 thyroïdiennes → rétrocontrôles négatifs]</p>
+</blockquote>
+<p><strong>Cascade de régulation</strong> (adapté de Bianco et al., Physiol Rev 2019) :</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Hormone</th>
+<th>Cellule source</th>
+<th>Stimulus</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hypothalamus</strong></td>
+<td>TRH (tripeptide)</td>
+<td>Neurones paraventriculaires</td>
+<td>Froid, stress, T3 basse</td>
+<td>↑ TSH</td>
+</tr>
+<tr>
+<td><strong>Hypophyse</strong></td>
+<td>TSH (glycoprotéine αβ)</td>
+<td>Thyréotropes (5-10 %)</td>
+<td>TRH, T3/T4 basses</td>
+<td>↑ synthèse + croissance thyroïde</td>
+</tr>
+<tr>
+<td><strong>Thyroïde</strong></td>
+<td>T4 (80 %), T3 (20 %)</td>
+<td>Thyréocytes</td>
+<td>TSH via TSHR (AMPc)</td>
+<td>Rétrocontrôle négatif</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rétrocontrôle log-linéaire TSH/T4L</strong> :<br />
+- Relation exponentielle inverse : doubler la T4L abaisse la TSH d'un facteur 100<br />
+- Sensibilité de la TSH aux variations de T4L : <strong>10× supérieure</strong> à T4L elle-même<br />
+- En hyperthyroïdie : toute élévation minime de T4/T3 → <strong>TSH effondrée (&lt; 0,01 mUI/L)</strong></p>
+<hr />
+<h3 id="42-le-tshr-cible-des-trab-dans-la-maladie-de-basedow">4.2 Le TSHR — Cible des TRAb dans la maladie de Basedow</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER04-S2-001 — Structure du TSHR : domaine extracellulaire, transmembranaire 7 hélices, voies de signalisation AMPc et IP3]</p>
+</blockquote>
+<p><strong>Récepteur TSH (TSHR)</strong> :<br />
+- Famille des récepteurs à 7 domaines transmembranaires couplés aux protéines G<br />
+- Sous-unité α extracellulaire (leucine-rich repeat domain = LRD) → site de liaison de la TSH <strong>et des TRAb</strong><br />
+- Signal : TSH → Gαs → ↑ AMPc → PKA → phosphorylation → transcription (NIS, TPO, Tg, TSHR)<br />
+- Signal secondaire : Gαq → IP3 → Ca²⁺ → ↑ organification iodée (à forte stimulation)</p>
+<p><strong>Mutations somatiques du TSHR</strong> (adapté de Parma et al., Nature 1993) :<br />
+- Mutations gain-de-fonction dans la région transmembranaire<br />
+- → Activation constitutive du TSHR sans TSH → autonomie thyroïdienne<br />
+- Retrouvées dans <strong>60-80 %</strong> des adénomes toxiques de Plummer<br />
+- Retrouvées dans <strong>20-40 %</strong> des nodules autonomes du GMNT</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Les TRAb stimulants (TSAb) se fixent sur le **même site** que la TSH sur le LRD du TSHR et activent la même cascade AMPc. La TSH hypophysaire est ainsi court-circuitée → TSH effondrée malgré une stimulation maximale de la thyroïde.</div>
+
+<hr />
+<h3 id="43-regulation-fine-de-laxe-hpt">4.3 Régulation fine de l'axe HPT</h3>
+<p><strong>Facteurs modulant la TSH</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Effet sur TSH</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T3 intrahypophysaire (DIO2)</td>
+<td>↓↓</td>
+<td>Rétrocontrôle direct sur thyréotropes</td>
+</tr>
+<tr>
+<td>Somatostatine</td>
+<td>↓</td>
+<td>Inhibition GH + TSH</td>
+</tr>
+<tr>
+<td>Dopamine</td>
+<td>↓</td>
+<td>Inhibition thyréotropes</td>
+</tr>
+<tr>
+<td>Glucocorticoïdes (&gt; 20 mg/j)</td>
+<td>↓</td>
+<td>Inhibition transcription TSH-β</td>
+</tr>
+<tr>
+<td>hCG (grossesse T1)</td>
+<td>↓</td>
+<td>Stimulation croisée TSHR → rétrocontrôle TSH</td>
+</tr>
+<tr>
+<td>Rythme circadien</td>
+<td>Pic nocturne (00h-04h)</td>
+<td>Variation CRH/TRH nocturne</td>
+</tr>
+<tr>
+<td>Jeûne prolongé</td>
+<td>↓</td>
+<td>↓ TRH hypothalamique</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — La TSH est le marqueur le plus sensible des variations thyroïdiennes. En hyperthyroïdie, une TSH &gt; 0,1 mUI/L doit faire reconsidérer le diagnostic (faux négatif ? hyperthyroïdie centrale ? macro-TSH ?).</p>
+<hr />
+<h3 id="quiz-module-04">QUIZ MODULE 04</h3>
+<p><strong>🥉 Q1</strong> — Dans la maladie de Basedow, pourquoi la TSH est-elle effondrée malgré une hyperstimulation thyroïdienne ?<br />
+<strong>A) Les TRAb stimulants (TSAb) activent le TSHR de façon constitutive → ↑ T4L et T3L → rétrocontrôle négatif log-linéaire sur les thyréotropes hypophysaires → suppression de la TSH. La glande est stimulée mais par les TRAb, non par la TSH.</strong></p>
+<p><strong>🥈 Q2</strong> — Quel mécanisme explique que la TSH soit transitoirement basse au 1er trimestre de grossesse normale ?<br />
+<strong>A) Pic de hCG (S8-S12) → stimulation croisée du TSHR (homologie structurale sous-unité α) → légère ↑ T4L → rétrocontrôle → ↓ TSH. Physiologique si T4L normale.</strong></p>
+<p><strong>🥇 Q3</strong> — Une mutation gain-de-fonction somatique du gène TSHR dans un nodule thyroïdien produit quel tableau clinique ?<br />
+<strong>A) Adénome toxique de Plummer — activation constitutive du TSHR → production hormonale autonome TSH-indépendante → nodule "chaud" à la scintigraphie → hyperthyroïdie avec suppression de la TSH et extinction du parenchyme thyroïdien sain.</strong></p>
+<p><strong>💎 Q4</strong> — Comparez la signalisation du TSHR activé par la TSH vs par les TRAb stimulants (TSAb) dans la maladie de Basedow.<br />
+<strong>A) TSH : liaison fugace (demi-vie TSH ~60 min), signal AMPc physiologique, régulé par le rétrocontrôle. TRAb/TSAb : liaison prolongée (IgG demi-vie ~21 jours), activation constitutive du TSHR insensible au rétrocontrôle hypophysaire → stimulation soutenue sans modulation → hyperthyroïdie chronique persistante. De plus, les TRAb peuvent activer des voies non-AMPc (β-arrestines, PI3K) avec des effets trophiques et pro-apoptotiques différents de la TSH.</strong></p>
+<hr />
+<h2 id="module-05-biosynthese-des-hormones-thyroidiennes">MODULE 05 — Biosynthèse des Hormones Thyroïdiennes</h2>
+<h3 id="51-captation-de-liode-cible-de-la-radioiodotherapie">5.1 Captation de l'iode — Cible de la radioiodothérapie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER05-S1-001 — Trajet de l'iode dans le thyréocyte : NIS → pôle apical → canal pendrine → colloïde → organification TPO/DUOX2]</p>
+</blockquote>
+<p><strong>Étapes de la biosynthèse</strong> (adapté de Bizhanova et Kopp, Thyroid 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Protéine</th>
+<th>Localisation</th>
+<th>Régulation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Captation iode plasmatique</td>
+<td><strong>NIS</strong> (SLC5A5)</td>
+<td>Pôle basolatéral</td>
+<td>TSH ↑ NIS, Excès iode ↓ NIS</td>
+</tr>
+<tr>
+<td>2. Efflux vers le colloïde</td>
+<td><strong>Pendrine</strong> (SLC26A4)</td>
+<td>Pôle apical</td>
+<td>TSH</td>
+</tr>
+<tr>
+<td>3. Oxydation iodure → iode</td>
+<td><strong>DUOX2</strong> + DUOXA2</td>
+<td>Apical</td>
+<td>H₂O₂ (substrat)</td>
+</tr>
+<tr>
+<td>4. Organification (iodation Tg)</td>
+<td><strong>TPO</strong></td>
+<td>Apical</td>
+<td>Inhibée par PTU (partiellement) et MMI</td>
+</tr>
+<tr>
+<td>5. Couplage DIT+MIT</td>
+<td><strong>TPO</strong></td>
+<td>Apical</td>
+<td>MMI inhibe</td>
+</tr>
+<tr>
+<td>6. Stockage sous forme de Tg</td>
+<td>Colloïde</td>
+<td>Luminal</td>
+<td>Réserve 2-3 mois</td>
+</tr>
+<tr>
+<td>7. Endocytose de Tg</td>
+<td>Mégalysome</td>
+<td>Intracellulaire</td>
+<td>TSH ↑ endocytose</td>
+</tr>
+<tr>
+<td>8. Protéolyse → T4/T3 libres</td>
+<td>Cathepsines B, D, L</td>
+<td>Lysosomes</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NIS : cible de la radioiodothérapie</strong><br />
+- Concentre ¹³¹I de façon active et sélective (débit × 20-40 vs plasma)<br />
+- En hyperthyroïdie, NIS surexprimé (stimulation TSH/TRAb) → captation élevée → efficacité RAI ↑<br />
+- MMI, amiodarone, produits de contraste iodés → ↓ captation NIS → réduire RAI</p>
+<hr />
+<h3 id="52-effets-wolff-chaikoff-et-jod-basedow">5.2 Effets Wolff-Chaikoff et Jod-Basedow</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPER05-S2-001 — Effet Wolff-Chaikoff : inhibition de la synthèse hormonale par surcharge iodée — puis échappement]</p>
+</blockquote>
+<p><strong>Effet Wolff-Chaikoff</strong> (adapté de Wolff et Chaikoff, 1948) :<br />
+- Surcharge iodée aiguë → inhibition transitoire de l'organification (↓ TPO/DUOX2)<br />
+- Durée : 24-48h chez le sujet normal → puis <strong>échappement</strong> (↓ expression NIS → ↓ captation iodée intracellulaireprotectrice)<br />
+- Base pharmacologique du <strong>Lugol</strong> (KI) en préparation chirurgicale du Basedow : réduction transitoire de la vascularisation et de la synthèse hormonale</p>
+<p><strong>Jod-Basedow</strong> :<br />
+- Surcharge iodée (produit de contraste, amiodarone) chez un sujet porteur d'une autonomie thyroïdienne sous-jacente (GMNT) → hyperthyroïdie<br />
+- Mécanisme : les nodules autonomes échappent à l'inhibition de Wolff-Chaikoff (NIS constitutionnellement actif)</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Avant tout examen avec produit de contraste iodé ou prescription d'amiodarone, doser la TSH. Un GMNT infraclinique peut se démasquer en hyperthyroïdie patente après injection iodée.</div>
+
+<hr />
+<h3 id="53-ptu-vs-carbimazolemmi-mecanismes-daction-compares">5.3 PTU vs Carbimazole/MMI — Mécanismes d'action comparés</h3>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>PTU (propylthiouracile)</th>
+<th>MMI/Carbimazole</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mécanisme</td>
+<td>Inhibe TPO + inhibe DIO1 (↓ conversion T4→T3)</td>
+<td>Inhibe TPO seulement</td>
+</tr>
+<tr>
+<td>Délai d'action</td>
+<td>Plus rapide sur T3 (double mécanisme)</td>
+<td>Plus lent sur T3</td>
+</tr>
+<tr>
+<td>Passage placentaire</td>
+<td><strong>Moins</strong> (plus grande protéinémie) — <strong>préféré T1 grossesse</strong></td>
+<td>Plus élevé (tératogène T1)</td>
+</tr>
+<tr>
+<td>Passage lacté</td>
+<td>Moins</td>
+<td>Plus</td>
+</tr>
+<tr>
+<td>Hépatotoxicité</td>
+<td><strong>Élevée (fulminante possible)</strong></td>
+<td>Modérée (cholestatique)</td>
+</tr>
+<tr>
+<td>Demi-vie</td>
+<td>1-2h (3-4 prises/j)</td>
+<td>6-12h (1-2 prises/j)</td>
+</tr>
+<tr>
+<td>Crise thyrotoxique</td>
+<td><strong>Traitement de choix</strong> (↓ T3 rapide)</td>
+<td>2ème ligne</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-05">QUIZ MODULE 05</h3>
+<p><strong>🥉 Q1</strong> — Quel transporteur permet la captation active de l'iode dans le thyréocyte, ciblé par la radioiodothérapie ?<br />
+<strong>A) NIS (Sodium-Iodide Symporter — SLC5A5)</strong></p>
+<p><strong>🥈 Q2</strong> — Pourquoi le PTU est-il préféré au carbimazole pendant le 1er trimestre de grossesse ?<br />
+<strong>A) Moindre passage placentaire et moindre tératogénicité (le carbimazole est associé à des aplasies cutanées et atrésies des choanes/œsophage si utilisé au T1). Le PTU reste 2ème ligne après le T1 (risque d'hépatite fulminante).</strong></p>
+<p><strong>🥇 Q3</strong> — Quel est le mécanisme du Lugol (KI) dans la préparation à la thyroïdectomie du Basedow ?<br />
+<strong>A) Effet Wolff-Chaikoff : surcharge iodée → inhibition transitoire de la TPO → ↓ synthèse T4/T3 → réduction de la vascularisation et de la taille du goitre en 10-15 jours (effets facilitant la chirurgie). L'échappement survient à J7-J14 → opérer dans ce délai.</strong></p>
+<p><strong>💎 Q4</strong> — Par quel mécanisme l'amiodarone peut-elle induire une hyperthyroïdie de type 1 chez un patient porteur d'un GMNT ?<br />
+<strong>A) L'amiodarone libère 6-8 mg d'iode/j → surcharge iodée → effet Jod-Basedow : les nodules autonomes (TSHR muté constitutionnellement actif) ne peuvent pas réduire leur NIS en réponse à la surcharge (mutation rend le signal suppresseur NIS non fonctionnel) → production hormonale autonome massivement augmentée → hyperthyroïdie de type 1.</strong></p>
+<hr />
+<h2 id="module-06-transport-et-metabolisme-peripherique">MODULE 06 — Transport et Métabolisme Périphérique</h2>
+<h3 id="61-transport-plasmatique">6.1 Transport plasmatique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER06-S1-001 — Protéines de transport thyroïdiennes : TBG, TTR, albumine — affinités et variations pathologiques]</p>
+</blockquote>
+<p><strong>Protéines de transport</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Protéine</th>
+<th>Capacité liaison</th>
+<th>Affinité T4</th>
+<th>Variation en hyperthyroïdie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TBG</strong> (thyroxine-binding globulin)</td>
+<td>75 % de T4 liée</td>
+<td>Très haute</td>
+<td>Inchangée</td>
+</tr>
+<tr>
+<td><strong>TTR</strong> (transthyrétine)</td>
+<td>15 %</td>
+<td>Intermédiaire</td>
+<td>Inchangée</td>
+</tr>
+<tr>
+<td><strong>Albumine</strong></td>
+<td>10 %</td>
+<td>Faible</td>
+<td>Inchangée</td>
+</tr>
+<tr>
+<td><strong>T4 libre</strong></td>
+<td>0,02-0,03 %</td>
+<td>—</td>
+<td><strong>Élevée</strong> → rétrocontrôle TSH</td>
+</tr>
+</tbody>
+</table>
+<p><strong>En hyperthyroïdie</strong> :<br />
+- T4 totale élevée, T4 libre élevée<br />
+- La TSH effondrée → mesure indirecte de la T4L excess<br />
+- Pièges : grossesse (↑ TBG → ↑ T4 totale sans vraie hyperthyroïdie), amiodarone (↑ T4L par inhibition DIO1)</p>
+<hr />
+<h3 id="62-desiodases-conversion-t4-t3-et-t3-inverse">6.2 Désiodases — Conversion T4 → T3 et T3 inverse</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER06-S2-001 — Désiodases DIO1/DIO2/DIO3 : localisations, substrats, produits et régulation en hyperthyroïdie]</p>
+</blockquote>
+<p><strong>Régulation des désiodases en hyperthyroïdie</strong> (adapté de Bianco et al., Endocr Rev 2002) :</p>
+<table>
+<thead>
+<tr>
+<th>Désiodase</th>
+<th>Localisation</th>
+<th>Action</th>
+<th>En hyperthyroïdie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DIO1</strong></td>
+<td>Foie, rein, thyroïde</td>
+<td>T4 → T3 (principale source T3 circulante)</td>
+<td>↑↑ (stimulée par T3)</td>
+</tr>
+<tr>
+<td><strong>DIO2</strong></td>
+<td>Cerveau, hypophyse, BAT</td>
+<td>T4 → T3 (locale, intracellulaire)</td>
+<td>↓ (rétrocontrôle protecteur)</td>
+</tr>
+<tr>
+<td><strong>DIO3</strong></td>
+<td>Placenta, cerveau, foie</td>
+<td>T3 → T2 (inactivation) ; T4 → rT3</td>
+<td>↑↑ (dégradation accélérée)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>En hyperthyroïdie</strong> :<br />
+- DIO1 activée → ↑ conversion T4→T3 → aggravation clinique<br />
+- DIO3 activée → ↑ dégradation T3 (mécanisme de protection partiel)<br />
+- PTU inhibe DIO1 → réduction rapide de T3 (avantage dans la crise thyrotoxique)</p>
+<hr />
+<h3 id="63-transport-intracellulaire-recepteurs-tr-et-tr">6.3 Transport intracellulaire — Récepteurs TRα et TRβ</h3>
+<p><strong>Récepteurs nucléaires thyroïdiens</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Récepteur</th>
+<th>Distribution tissulaire</th>
+<th>Gène cible principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TRα1</strong></td>
+<td>Cœur, os, muscle, cerveau</td>
+<td>Gènes contractilité cardiaque (MHC-α), régulation du rythme</td>
+</tr>
+<tr>
+<td><strong>TRα2</strong></td>
+<td>Ubiquitaire</td>
+<td>Non liant (antagoniste)</td>
+</tr>
+<tr>
+<td><strong>TRβ1</strong></td>
+<td>Foie, rein, thyroïde</td>
+<td>LDLR, SHBG, Tg, NIS</td>
+</tr>
+<tr>
+<td><strong>TRβ2</strong></td>
+<td>Hypophyse, hypothalamus</td>
+<td>TSH-β (rétrocontrôle)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>En hyperthyroïdie, activation des TRα cardiaque</strong> :<br />
+- ↑ MHC-α (chaîne lourde myosine α, ATPase rapide) → tachycardie, hypercontractilité<br />
+- ↑ SERCA2a → relaxation diastolique accélérée → ↑ débit cardiaque<br />
+- ↑ Densité récepteurs β-adrénergiques → potentialisation des catécholamines</p>
+<blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> — Les bêta-bloquants sont le traitement symptomatique de choix dans la thyrotoxicose car ils bloquent la potentialisation des catécholamines par les hormones thyroïdiennes (effet synergique sur TRα cardiaque). Le propranolol a l'avantage supplémentaire d'inhiber la DIO1 à fortes doses.</p>
+</blockquote>
+<hr />
+<h3 id="quiz-module-06">QUIZ MODULE 06</h3>
+<p><strong>🥉 Q1</strong> — Pourquoi le propranolol est-il utilisé en première ligne dans la crise thyrotoxique ?<br />
+<strong>A) Double mécanisme : (1) Bloque les récepteurs β-adrénergiques potentialisés par l'excès d'hormones thyroïdiennes → contrôle de la tachycardie, tremblements, anxiété ; (2) Inhibe la DIO1 à fortes doses → ↓ conversion T4→T3 → ↓ T3 circulante</strong></p>
+<p><strong>🥈 Q2</strong> — Dans quelle situation clinique la T4 totale peut-elle être élevée sans refléter une vraie hyperthyroïdie ?<br />
+<strong>A) Grossesse (↑ TBG par les estrogènes → ↑ T4 totale avec T4L normale) ; prise d'estrogènes (contraceptifs, THS) ; hépatite aiguë (↑ TBG) ; amiodarone (inhibe DIO1 → accumulation T4). Interprétation toujours par rapport à la T4 LIBRE et à la TSH.</strong></p>
+<p><strong>💎 Q3</strong> — Quel est le mécanisme de l'aggravation paradoxale de la thyrotoxicose par activation de la DIO1 ?<br />
+<strong>A) En hyperthyroïdie, l'excès de T3 active (transactivation) son propre enzyme de production DIO1 (via TRβ1 hépatique) → boucle d'amplification : T3 ↑ → DIO1 ↑ → conversion T4→T3 ↑ → T3 ↑↑ → cercle vicieux. Le PTU brise ce cercle en inhibant DIO1 en plus de TPO.</strong></p>
+<hr />
+<h2 id="module-07-effets-biologiques-des-hormones-thyroidiennes">MODULE 07 — Effets Biologiques des Hormones Thyroïdiennes</h2>
+<h3 id="71-effets-metaboliques-systemiques">7.1 Effets métaboliques systémiques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER07-S1-001 — Effets systémiques de l'excès d'hormones thyroïdiennes : organe par organe]</p>
+</blockquote>
+<p><strong>Effets d'un excès de T3/T4 par organe</strong> (adapté de Brent, NEJM 2008) :</p>
+<table>
+<thead>
+<tr>
+<th>Organe</th>
+<th>Effet</th>
+<th>Mécanisme moléculaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cœur</strong></td>
+<td>Tachycardie, ↑ débit, ↑ contractilité, FA</td>
+<td>↑ TRα → ↑ MHC-α, ↑ β-AR, ↑ HCN4 (pace-maker)</td>
+</tr>
+<tr>
+<td><strong>Métabolisme</strong></td>
+<td>↑ métabolisme basal (+ 25-40 %), amaigrissement</td>
+<td>↑ UCP1 (thermogenèse), ↑ Na/K-ATPase</td>
+</tr>
+<tr>
+<td><strong>Os</strong></td>
+<td>Ostéoporose (surtout post-ménopause)</td>
+<td>↑ résorption ostéoclastique via TRα, ↑ IGF-1 local</td>
+</tr>
+<tr>
+<td><strong>Muscle</strong></td>
+<td>Myopathie proximale, faiblesse</td>
+<td>↑ protéolyse (catabolisme accéléré)</td>
+</tr>
+<tr>
+<td><strong>SNP</strong></td>
+<td>Tremblements fins, hyperréflexie</td>
+<td>Potentialisation adrénergique</td>
+</tr>
+<tr>
+<td><strong>SNC</strong></td>
+<td>Anxiété, insomnie, labilité émotionnelle</td>
+<td>↑ neurotransmission adrénergique</td>
+</tr>
+<tr>
+<td><strong>Digestif</strong></td>
+<td>Diarrhée, ↑ motilité intestinale</td>
+<td>↑ motilité via TRα intestinal</td>
+</tr>
+<tr>
+<td><strong>Peau/annexes</strong></td>
+<td>Chaleur, sueurs, peau fine, alopécie</td>
+<td>↑ débit cutané, ↑ catabolisme protéique</td>
+</tr>
+<tr>
+<td><strong>Gynécologique</strong></td>
+<td>Oligoménorrhée, infertilité</td>
+<td>↑ SHBG → ↓ testostérone/estradiol libre</td>
+</tr>
+<tr>
+<td><strong>Foie</strong></td>
+<td>↓ LDL (↑ récepteurs LDL via TRβ1)</td>
+<td>↑ expression LDLR, ↑ lipolyse</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="72-effets-cardiovasculaires-priorite-therapeutique">7.2 Effets cardiovasculaires — Priorité thérapeutique</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPER07-S2-001 — Effet de l'hyperthyroïdie sur la fonction cardiaque : chronotropisme, inotropisme, résistances vasculaires]</p>
+</blockquote>
+<p><strong>Hémodynamique en hyperthyroïdie</strong> :<br />
+- ↑ FC (tachycardie sinusale, FA)<br />
+- ↑ Contractilité (FEVG initialement augmentée puis cardiomyopathie en cas de FA prolongée)<br />
+- ↓ Résistances vasculaires systémiques (vasodilatation via NO)<br />
+- ↑ Débit cardiaque (× 2-3)<br />
+- ↑ Masse ventriculaire gauche (hypertrophie excentrique si chronicité)</p>
+<p><strong>Fibrillation atriale dans l'hyperthyroïdie</strong> :<br />
+- Incidence : <strong>10-15 %</strong> dans l'hyperthyroïdie constituée (adapté de Sawin et al., 1994)<br />
+- Chez &gt; 65 ans : jusqu'à <strong>25-35 %</strong><br />
+- Mécanisme : raccourcissement de la période réfractaire atriale (↑ Na/K-ATPase + ↑ β-AR) + dilatation auriculaire gauche<br />
+- Risque thromboembolique élevé → anticoagulation recommandée (adapté de ATA 2016)</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Toute fibrillation atriale à début récent ou inexpliquée, même chez le sujet âgé, doit faire doser la TSH. L'hyperthyroïdie frustre (TSH 0,1-0,4 mUI/L) peut déclencher une FA sans autre signe clinique évident.</div>
+
+<hr />
+<h3 id="73-effets-osseux">7.3 Effets osseux</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER07-S3-001 — Mécanismes de l'ostéoporose thyrotoxique : stimulation ostéoclastique via TRα, ↓ ostéoblastogenèse]</p>
+</blockquote>
+<p><strong>Hyperthyroïdie et os</strong> :<br />
+- Hyperthyroïdie chronique → ↑ remodelage osseux (résorption &gt; formation)<br />
+- Perte osseuse : <strong>0,5-1 %/mois</strong> en phase active non traitée<br />
+- Risque fracturaire × 1,5-2 chez la femme post-ménopause avec ATCD d'hyperthyroïdie</p>
+<p><strong>Marqueurs</strong> :<br />
+- Phosphatases alcalines (PAL) élevées (activité ostéoblastique réactionnelle)<br />
+- Calciurie augmentée (hypercalciurie de résorption → parfois hypercalcémie légère)<br />
+- Ostéocalcine, CTX élevés</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Chez toute femme ménopausée avec ATCD d'hyperthyroïdie, réaliser une densitométrie osseuse (DXA). L'ostéoporose thyrotoxique est réversible partielle après traitement de l'hyperthyroïdie, mais une partie du capital osseux peut ne pas être récupérée.</p>
+<hr />
+<h3 id="quiz-module-07">QUIZ MODULE 07</h3>
+<p><strong>🥉 Q1</strong> — Quel est le principal mécanisme de la tachycardie dans l'hyperthyroïdie ?<br />
+<strong>A) Activation des récepteurs TRα cardiaques → ↑ expression des canaux HCN4 (pace-maker du nœud sinusal) + ↑ densité des récepteurs β-adrénergiques → hypersensibilité aux catécholamines → accélération de la dépolarisation diastolique → tachycardie sinusale</strong></p>
+<p><strong>🥈 Q2</strong> — Pourquoi l'hyperthyroïdie frustre (TSH 0,1-0,4 mUI/L avec T4L normale) est-elle particulièrement à risque de FA chez le sujet âgé ?<br />
+<strong>A) Même des élévations minimes de T3L/T4L à un niveau "supranormal tissu" suffisent à activer les TRα cardiaques — chez le sujet âgé, les oreillettes présentent une fibrose atriale préexistante et une vulnérabilité électrophysiologique accrue. L'hyperthyroïdie frustre × 3 le risque de FA à 10 ans (adapté de Cappola et al., JAMA 2006).</strong></p>
+<p><strong>💎 Q4</strong> — Expliquer le paradoxe de l'hyperthyroïdie sur le LDL : baisse du LDL en hyperthyroïdie, hausse en hypothyroïdie.<br />
+<strong>A) Les hormones thyroïdiennes (T3 via TRβ1 hépatique) activent la transcription du gène LDLR (récepteur LDL hépatique) → ↑ capture du LDL circulant par le foie → ↓ LDL plasmatique. En hyperthyroïdie → LDL bas, HDL parfois bas aussi (catabolisme accéléré). En hypothyroïdie → ↓ LDLR → LDL ↑↑. Conséquence pratique : une hypercholestérolémie s'améliore ou disparaît avec le traitement de l'hypothyroïdie, une hypocholestérolémie inexpliquée peut révéler une hyperthyroïdie.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 02 — Physiologie Thyroïdienne — Mars 2026</em></p>
+</div>

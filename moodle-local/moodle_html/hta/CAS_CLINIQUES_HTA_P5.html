@@ -1,0 +1,929 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-hta-partie-55">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION HTA (Partie 5/5)</h1>
+<p><strong>Cas n°29 à 35 — Niveaux Bronze, Argent, Or et Diamant</strong></p>
+<hr />
+<p><a id="cas-29"></a></p>
+<h3 id="cas-n29-mhd-seules-efficaces-hta-grade-1-a-faible-risque">Cas n°29 — MHD seules efficaces : HTA grade 1 à faible risque</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M25-27 (MHD), M12 (Stratification), M32 (Stratégie)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique</strong> : Quand les mesures hygiéno-diététiques suffisent — la preuve par l'exemple</p>
+<h4 id="presentation-initiale">Présentation initiale</h4>
+<p>M. Arnaud C., 38 ans, chef cuisinier, consulte pour une découverte d'HTA lors d'un bilan de santé : PA à 148/92 mmHg, confirmée sur deux consultations (145/90 et 150/93 mmHg). Il est asymptomatique.</p>
+<p><strong>Profil</strong> :<br />
+- IMC : 27,8 kg/m² (légère surcharge pondérale)<br />
+- Tour de taille : 96 cm (légèrement élevé)<br />
+- Alcool : 3-4 verres de vin/j (goûts professionnels)<br />
+- Sel : très élevé (cuisine française, goûts et assaisonnements importants)<br />
+- Activité physique : quasi nulle (debout mais pas d'exercice structuré)<br />
+- Stress : modéré (passion pour le métier)<br />
+- Tabac : non-fumeur</p>
+<p><strong>Antécédents</strong> :<br />
+- Aucun<br />
+- Familiaux : mère HTA depuis 62 ans</p>
+<p><strong>Bilan</strong> :<br />
+- LDL-C : 1,28 g/L, HDL 0,52 g/L, TG 1,35 g/L<br />
+- Glycémie à jeun : 0,96 g/L<br />
+- Créatinine : 82 µmol/L, DFG 98 mL/min<br />
+- RAC : 12 mg/g<br />
+- ECG : normal (Sokolow 24 mm)</p>
+<p><strong>SCORE2</strong> : homme 38 ans, non-fumeur, PAS 148, cholestérol non-HDL 1,76 g/L → <strong>SCORE2 ≈ 1,8 %</strong> → risque <strong>faible</strong> (&lt; 2,5 %)</p>
+<hr />
+<h4 id="question-1-traitement-medicamenteux-immediat">Question 1 — Traitement médicamenteux immédiat ?</h4>
+<p><strong>Faut-il débuter un traitement antihypertenseur médicamenteux aujourd'hui ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Non, pas de traitement médicamenteux d'emblée.</strong></p>
+<p><strong>Arguments</strong> :<br />
+- HTA <strong>grade 1</strong> (PAS 145-150 mmHg) ✓<br />
+- Risque CV <strong>faible</strong> (SCORE2 1,8 % &lt; 2,5 %) ✓<br />
+- Pas d'AAOC (ECG normal, RAC normal, DFG normal) ✓</p>
+<p>Selon ESC/ESH 2023 : grade 1 + risque faible → <strong>MHD pendant 3-6 mois</strong>, traitement médicamenteux uniquement si PA reste ≥ 140/90 mmHg après cette période.</p>
+<p><strong>Mais</strong> : les facteurs de risque modifiables présents (alcool, sel, sédentarité, surpoids) sont tous corrigeables → excellent candidat aux MHD.</p>
+</blockquote>
+<hr />
+<h4 id="question-2-plan-mhd-personnalise-et-resultats-attendus">Question 2 — Plan MHD personnalisé et résultats attendus</h4>
+<p><strong>Proposez un plan MHD quantifié et estimez la réduction de PA attendue.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Mesure</th>
+<th>Cible</th>
+<th>Réduction PAS attendue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Réduction de l'alcool</strong></td>
+<td>De 3-4 verres/j → ≤ 2 verres/j</td>
+<td><strong>-4 mmHg</strong></td>
+</tr>
+<tr>
+<td><strong>Restriction sodée</strong></td>
+<td>De 12 g/j estimés → &lt; 5 g/j</td>
+<td><strong>-7 mmHg</strong></td>
+</tr>
+<tr>
+<td><strong>Activité physique</strong></td>
+<td>150 min/semaine d'aérobie modéré</td>
+<td><strong>-5 mmHg</strong></td>
+</tr>
+<tr>
+<td><strong>Perte de poids</strong></td>
+<td>-3 à -5 kg (IMC 27,8 → 25)</td>
+<td><strong>-3 à -5 mmHg</strong></td>
+</tr>
+<tr>
+<td><strong>Régime DASH adapté</strong></td>
+<td>Augmenter fruits/légumes, réduire graisses saturées</td>
+<td><strong>-4 mmHg</strong></td>
+</tr>
+<tr>
+<td><strong>Total cumulatif</strong></td>
+<td>Toutes mesures appliquées</td>
+<td><strong>-20 à -25 mmHg</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Résultat attendu</strong> :<br />
+- PA initiale : 148/92 mmHg<br />
+- PA après MHD complètes : <strong>125-130/75-80 mmHg</strong> = objectif atteint sans médicament</p>
+<p><strong>Points pratiques</strong> :<br />
+- Sel : adapter les recettes (herbes aromatiques, épices), sensibiliser à l'étiquetage des produits<br />
+- Alcool : journées sans alcool en semaine, vin réservé au week-end<br />
+- Sport : marche rapide 30 min × 5/sem ou vélo, facile à intégrer en dehors du service</p>
+</blockquote>
+<hr />
+<h4 id="question-3-suivi">Question 3 — Suivi</h4>
+<p><strong>Comment surveillez-vous ce patient sur 6 mois ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Planning de suivi</strong> :<br />
+- <strong>M1</strong> : consultation, PA cabinet + automesure à domicile, poids, motivation<br />
+- <strong>M3</strong> : PA cabinet + MAPA si doute, bilan biologique (kaliémie, créatinine, glycémie)<br />
+- <strong>M6</strong> : évaluation complète<br />
+  - Si PA &lt; 135/85 en automesure → succès des MHD → continuer, contrôle annuel<br />
+  - Si PA ≥ 140/90 malgré MHD bien suivies → introduction du traitement médicamenteux</p>
+<p><strong>En cas d'échec des MHD</strong> :<br />
+- Bithérapie IEC + ICC (ou IEC + diurétique) en comprimé unique<br />
+- Continuer les MHD (synergie avec le traitement médicamenteux)</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>Pour l'HTA grade 1 à faible risque, les MHD seules peuvent normaliser la PA. Un plan MHD quantifié et personnalisé peut réduire la PAS de 20-25 mmHg — l'équivalent d'une bithérapie. L'alcool et le sel sont les leviers les plus efficaces.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-30"></a></p>
+<h3 id="cas-n30-retinopathie-hypertensive-severe">Cas n°30 — Rétinopathie hypertensive sévère</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M24 (Rétinopathie), M19 (Urgences), M06 (Complications)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique</strong> : Fond d'œil de l'hypertendu — stades et prise en charge</p>
+<h4 id="presentation-initiale_1">Présentation initiale</h4>
+<p>Mme Rose A., 59 ans, originaire d'Afrique subsaharienne, consulte en urgences ophtalmologiques pour une <strong>baisse brutale de la vision</strong> bilatérale depuis 48h avec des « éclairs lumineux ». Elle ne sait pas qu'elle est hypertendue.</p>
+<p><strong>PA à l'accueil ophtalmologie</strong> : 215/132 mmHg.</p>
+<p><strong>Fond d'œil</strong> (ophtalmoscope indirect + rétinographie) :</p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Œil droit</th>
+<th>Œil gauche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rétrécissement artériolaire</td>
+<td>Diffus (fil d'argent)</td>
+<td>Diffus (fil d'argent)</td>
+</tr>
+<tr>
+<td>Hémorragies rétiniennes</td>
+<td>Multiples (flammes + points)</td>
+<td>Multiples</td>
+</tr>
+<tr>
+<td>Exsudats cotonneux</td>
+<td>Nombreux</td>
+<td>Nombreux</td>
+</tr>
+<tr>
+<td>Exsudats secs (durs)</td>
+<td>Étoile maculaire</td>
+<td>Étoile maculaire</td>
+</tr>
+<tr>
+<td>Œdème papillaire</td>
+<td><strong>Présent bilatéral</strong></td>
+<td><strong>Présent bilatéral</strong></td>
+</tr>
+<tr>
+<td>Décollements séreux</td>
+<td>Petites bulles sous-rétiniennes</td>
+<td>Présents</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Acuité visuelle</strong> : 3/10 OD, 4/10 OG (vs vision normale attendue 10/10)</p>
+<hr />
+<h4 id="question-1-classification-et-severite">Question 1 — Classification et sévérité</h4>
+<p><strong>Quel est le stade de la rétinopathie hypertensive ? Quelles implications ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Rétinopathie hypertensive stade IV</strong> (Keith-Wagener-Barker) :<br />
+- Stade III (hémorragies + exsudats) ✓<br />
+- <strong>+ Œdème papillaire bilatéral</strong> ✓ → <strong>stade IV</strong></p>
+<p><strong>Classification de Wong-Mitchell</strong> :<br />
+- Grade <strong>sévère</strong> : stade III/IV avec atteinte maculaire (étoile maculaire)</p>
+<p><strong>Implications</strong> :<br />
+- Stade IV = <strong>HTA maligne</strong> → définit une urgence hypertensive<br />
+- L'œdème papillaire traduit l'hypertension intracrânienne secondaire à l'HTA extrême<br />
+- Menace visuelle réelle (décollements séreux, étoile maculaire)<br />
+- Atteinte viscérale systémique probable : bilan rénal, cardiaque, cérébral en urgence</p>
+<p><strong>Pronostic visuel</strong> :<br />
+- Si contrôle tensionnel rapide et efficace → régression des lésions en 4-8 semaines<br />
+- L'étoile maculaire peut laisser des séquelles (fibrose sous-rétinienne)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-bilan-et-prise-en-charge">Question 2 — Bilan et prise en charge</h4>
+<p><strong>Quel bilan en urgence ? Quel traitement antihypertenseur ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Bilan d'urgence</strong> (retentissement multiorgan) :<br />
+- Créatinine, ionogramme, NFS (microangiopathie ?)<br />
+- Schizocytes (fragmentation GR)<br />
+- BNP (surcharge cardiaque)<br />
+- ECG, échocardiographie si possible<br />
+- Fond d'œil : déjà réalisé<br />
+- TDM/IRM cérébrale si signe neurologique</p>
+<p><strong>Traitement antihypertenseur</strong> :<br />
+- <strong>Urgence hypertensive</strong> (atteinte d'organe cible = FO stade IV) → hospitalisation USIC<br />
+- <strong>Nicardipine IV</strong> : 5-15 mg/h en seringue électrique<br />
+- Objectif 1ère heure : réduction ≤ <strong>25 % de la PAM</strong><br />
+- PAM = (215 + 2×132)/3 = 160 mmHg → objectif 1ère heure : PAM ≥ 120 (PAS ≈ 170 mmHg)<br />
+- Objectif 24h : PA 150-160/95-100 mmHg<br />
+- Pas de normalisation rapide → risque d'ischémie optique par vasoconstriction paradoxale</p>
+<p><strong>Suivi ophtalmologique</strong> :<br />
+- Contrôle FO à J7, J15, M1, M3<br />
+- OCT (optical coherence tomography) pour suivi de l'étoile maculaire<br />
+- Avis rétinologue si décollements séreux étendus</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_1">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'œdème papillaire au fond d'œil définit l'HTA maligne (stade IV). La baisse de la vision peut être le premier signe d'une HTA non connue. Le contrôle progressif de la PA (≤ 25 % PAM/h) permet la régression des lésions rétiniennes. Un FO doit être réalisé devant toute HTA sévère.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-31"></a></p>
+<h3 id="cas-n31-hta-syndrome-metabolique-hyperuricemie">Cas n°31 — HTA + Syndrome métabolique + Hyperuricémie</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M09 (FDR), M28-32 (Traitement), M30 (Diurétiques)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique</strong> : Choix thérapeutique difficile face aux contraintes métaboliques</p>
+<h4 id="presentation-initiale_2">Présentation initiale</h4>
+<p>M. Michel T., 55 ans, hypertendu depuis 8 ans, dyslipidémique, obèse (IMC 33 kg/m²). Il présente une première crise de goutte aiguë (podagre du gros orteil gauche) ce mois-ci. Bilan récent révèle : uricémie 540 µmol/L (hyperuricémie sévère). Sous hydrochlorothiazide 25 mg + amlodipine 5 mg. PA actuelle : 156/98 mmHg.</p>
+<p><strong>Bilan</strong> :<br />
+- Glycémie à jeun : 1,18 g/L (≥ 5 critères syndrome métabolique : tour taille 106 cm, TG 2,1 g/L, HDL 0,38 g/L, glycémie 1,18, PA 156/98)<br />
+- Créatinine : 98 µmol/L, DFG 72 mL/min</p>
+<hr />
+<h4 id="question-1-probleme-medicamenteux">Question 1 — Problème médicamenteux</h4>
+<p><strong>L'hydrochlorothiazide est-il approprié chez ce patient ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>L'HCTZ est problématique dans ce contexte</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Problème</th>
+<th>Mécanisme</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hyperuricémie</td>
+<td>HCTZ réduit l'excrétion urinaire d'urate (compétition tubulaire)</td>
+<td>Aggravation de la goutte</td>
+</tr>
+<tr>
+<td>Syndrome métabolique</td>
+<td>HCTZ aggrave l'insulinorésistance, la glycémie, les TG</td>
+<td>Risque de diabète + 13-20 %</td>
+</tr>
+<tr>
+<td>Dyslipidémie</td>
+<td>Augmente TG, baisse HDL</td>
+<td>Aggravation du profil lipidique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Action</strong> : <strong>substituer l'HCTZ par l'indapamide 1,5 mg LP</strong> :<br />
+- Effet uricosémique moindre que l'HCTZ<br />
+- Effet métabolique neutre (pas d'aggravation glycémique ni lipidique)<br />
+- Meilleure couverture cardiovasculaire (données PROGRESS, ADVANCE)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-optimisation-therapeutique-globale">Question 2 — Optimisation thérapeutique globale</h4>
+<p><strong>Proposez une optimisation du traitement antihypertenseur en tenant compte de toutes les contraintes.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Modifications</strong> :</p>
+<ol>
+<li>
+<p><strong>Arrêt HCTZ → Indapamide 1,5 mg LP</strong> (diurétique métaboliquement neutre)</p>
+</li>
+<li>
+<p><strong>Ajouter IEC (ramipril 5 mg)</strong> :<br />
+   - IEC réduisent légèrement l'uricémie (augmentent l'excrétion rénale d'urate)<br />
+   - Bénéfice rénal si microalbuminurie</p>
+</li>
+<li>
+<p><strong>Alternative ou complément</strong> : <strong>losartan</strong> (ARA2 uricosurique) :<br />
+   - Le losartan est le seul ARA2 à avoir un effet uricosurique direct (diminue la réabsorption tubulaire d'urate)<br />
+   - Réduit l'uricémie de 15-20 % à dose de 100 mg/j<br />
+   - Peut remplacer ou compléter l'IEC</p>
+</li>
+<li>
+<p><strong>Amlodipine 10 mg</strong> : augmenter (bonne tolérance métabolique)</p>
+</li>
+</ol>
+<p><strong>Traitement de la goutte</strong> :<br />
+- Phase aiguë : colchicine 1 mg puis 0,5 mg/h (max 2-3 mg/j) ou AINS (attention HTA)<br />
+- Prévention : allopurinol 100-300 mg/j dès que la crise est terminée (objectif uricémie &lt; 360 µmol/L)</p>
+<p><strong>MHD</strong> :<br />
+- Perte de poids (priorité : obésité + syndrome métabolique)<br />
+- Réduire les purines alimentaires (viandes rouges, abats, alcool — surtout bière)<br />
+- Activité physique</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_2">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'HCTZ aggrave l'hyperuricémie, l'insulinorésistance et la dyslipidémie. Il doit être substitué par l'indapamide chez le patient avec syndrome métabolique et/ou goutte. Le losartan est l'unique ARA2 avec un effet uricosurique additionnel.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-32"></a></p>
+<h3 id="cas-n32-hta-maladie-de-parkinson-dysautonomie-severe">Cas n°32 — HTA + Maladie de Parkinson : dysautonomie sévère</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M10 (Mesure), M34 (Sujet âgé), M32 (Traitement)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : HTA + dysautonomie — la coexistence paradoxale d'HTA et d'hypotension orthostatique</p>
+<h4 id="presentation-initiale_3">Présentation initiale</h4>
+<p>Mme Suzanne V., 78 ans, Parkinson idiopathique depuis 8 ans (Hoehn &amp; Yahr stade 3), sous lévodopa/carbidopa 100/25 mg × 4/j + pramipexole 2,1 mg/j. Elle est adressée en urgence pour deux chutes en une semaine.</p>
+<p><strong>MAPA 24h réalisée en ambulatoire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Période</th>
+<th>PAS</th>
+<th>PAD</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7h-9h (avant lever)</td>
+<td><strong>185</strong></td>
+<td><strong>108</strong></td>
+<td>HTA nocturne/matinale</td>
+</tr>
+<tr>
+<td>9h-12h (post-lever)</td>
+<td><strong>102</strong></td>
+<td><strong>62</strong></td>
+<td>HO sévère post-lever</td>
+</tr>
+<tr>
+<td>12h-14h (repas)</td>
+<td>95</td>
+<td>58</td>
+<td>HO post-prandiale</td>
+</tr>
+<tr>
+<td>14h-20h</td>
+<td><strong>165</strong></td>
+<td><strong>95</strong></td>
+<td>HTA reprise debout inactif</td>
+</tr>
+<tr>
+<td>Nocturne</td>
+<td><strong>180</strong></td>
+<td><strong>104</strong></td>
+<td>HTA nocturne sévère</td>
+</tr>
+<tr>
+<td>Dipping</td>
+<td><strong>-10 %</strong></td>
+<td>—</td>
+<td><strong>Reverse-dipper</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Test orthostatique actif</strong> :<br />
+- Couché : 178/102 mmHg<br />
+- Debout 1 min : 105/65 mmHg → <strong>ΔPA = -73/-37 mmHg</strong> (HO extrêmement sévère)<br />
+- Debout 3 min : 98/62 mmHg</p>
+<hr />
+<h4 id="question-1-comprendre-la-physiopathologie">Question 1 — Comprendre la physiopathologie</h4>
+<p><strong>Expliquez le paradoxe : HTA couché + hypotension orthostatique debout.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Dysautonomie parkinsonienne</strong> (atteinte des noyaux végétatifs centraux et périphériques) :</p>
+<p><strong>En orthostatisme</strong> :<br />
+- Le baroréflexe (normalement : orthostatisme → tachycardie réflexe + vasoconstriction) est <strong>aboli</strong><br />
+- Le SNS ne peut pas augmenter les résistances périphériques → <strong>chute brutale de PA</strong><br />
+- Le cœur ne peut pas accélérer (aussi atteint) → pas de compensation cardiaque<br />
+- → <strong>Hypotension orthostatique neurologique</strong> (pas de tachycardie compensatrice = signe clé)</p>
+<p><strong>En décubitus</strong> :<br />
+- Absence de drainage veineux gravitationnel → remplissage cardiaque maximum<br />
+- Réabsorption rénale de sodium accrue (position allongée)<br />
+- La lévodopa a des effets vasomoteurs directs<br />
+- → <strong>Hypertension en décubitus</strong> (accumulation veineuse + incapacité à dilater en décubitus)</p>
+<p><strong>Conséquence</strong> : traiter l'HTA couché aggrave l'HO debout, et traiter l'HO debout aggrave l'HTA couché → contradiction thérapeutique</p>
+</blockquote>
+<hr />
+<h4 id="question-2-strategie-therapeutique">Question 2 — Stratégie thérapeutique</h4>
+<p><strong>Comment concilier la nécessité de traiter l'HTA nocturne sévère et l'HO diurne ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Mesures non médicamenteuses en premier</strong> :</p>
+<p><em>Pour l'HO</em> :<br />
+- Lever très progressif (rester assis au bord du lit 3-5 min avant de se lever)<br />
+- Bas de contention classe III (costal compris)<br />
+- Abdominal binder (ceinture abdominale)<br />
+- Repas fractionnés (5-6 petits repas pour éviter HO post-prandiale)<br />
+- Hydratation 2-2,5 L/j + sel alimentaire libre (rare HTA → augmenter le sel pour augmenter la volémie debout)<br />
+- Rehausser la tête du lit (30 cm) → réduit la réabsorption rénale nocturne → réduit HTA couché</p>
+<p><em>Pour l'HTA nocturne</em> :<br />
+- <strong>Patch de nitroglycérine nocturne</strong> (nitré transdermique) posé le soir, enlevé le matin → vasodilatateur ciblé sur la période de décubitus<br />
+- Évite l'aggravation de l'HO diurne car enlevé avant le lever</p>
+<p><strong>Médicaments de l'HO</strong> (si mesures insuffisantes) :<br />
+- <strong>Midodrine</strong> (agoniste α1, vasoconstricteur) : 2,5-10 mg × 3/j (ne pas prendre après 17h → HTA nocturne)<br />
+- <strong>Droxidopa</strong> : prodrogue de la noradrénaline<br />
+- <strong>Fludrocortisone</strong> 0,1-0,2 mg/j : rétention sodée → augmentation volémie (risque HTA couché, IC)</p>
+<p><strong>Antihypertenseur diurne</strong> si HTA persistante malgré les mesures :<br />
+- Éviter les vasodilatateurs (ICC, α-bloquants → aggravent l'HO)<br />
+- Éviter les diurétiques (hypovolémie → aggrave HO)<br />
+- Si indispensable : IEC ou ARA2 à faible dose, prise DEBOUT (pas au lever)</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_3">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>Dans la dysautonomie parkinsonienne, l'HTA couché + HO debout constituent un paradoxe thérapeutique. La rehausse de la tête du lit et le patch de nitroglycérine nocturne (enlevé le matin) permettent de traiter l'HTA couché sans aggraver l'HO. La midodrine traite l'HO sans aggraver l'HTA nocturne.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-33"></a></p>
+<h3 id="cas-n33-initiation-du-traitement-chez-une-femme-en-age-de-procreer">Cas n°33 — Initiation du traitement chez une femme en âge de procréer</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M28-32 (Traitement), M33 (Grossesse)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique</strong> : Choix de l'antihypertenseur chez la femme jeune avec projet de grossesse</p>
+<h4 id="presentation-initiale_4">Présentation initiale</h4>
+<p>Mme Leila B., 31 ans, enseignante, HTA grade 2 confirmée (PA 162/100 mmHg, MAPA diurne 158/98 mmHg). Pas de comorbidité. Projet de grossesse dans les 12 mois. Pas de traitement actuel. Son médecin lui propose un IEC mais elle a entendu que « ce médicament est dangereux pour le bébé ».</p>
+<hr />
+<h4 id="question-1-choix-de-lantihypertenseur">Question 1 — Choix de l'antihypertenseur</h4>
+<p><strong>Quel antihypertenseur prescrivez-vous chez une femme avec projet de grossesse ? Justifiez.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>IEC et ARA2 sont formellement contre-indiqués pendant la grossesse</strong> (2e et 3e trimestres surtout) → mais PEUVENT être utilisés si grossesse non confirmée, à condition :<br />
+- Arrêt dès confirmation de grossesse (test urinaire positif)<br />
+- Remplacement préalable par un médicament compatible</p>
+<p><strong>Cependant, en cas de projet de grossesse actif</strong> → <strong>ne pas prescrire IEC/ARA2</strong> (risque d'oubli d'arrêt)</p>
+<p><strong>Antihypertenseurs recommandés pendant la grossesse (et donc en projet de grossesse)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Classe</th>
+<th>Sécurité grossesse</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Méthyldopa</strong></td>
+<td>Central</td>
+<td>✓✓✓ (référence)</td>
+<td>Sécurité la plus documentée</td>
+</tr>
+<tr>
+<td><strong>Nifédipine LP</strong></td>
+<td>ICC DHP</td>
+<td>✓✓</td>
+<td>Compatible, efficace</td>
+</tr>
+<tr>
+<td><strong>Labétalol</strong></td>
+<td>α+β-bloquant</td>
+<td>✓✓</td>
+<td>Compatible, IV disponible</td>
+</tr>
+<tr>
+<td><strong>Nicardipine LP</strong></td>
+<td>ICC DHP</td>
+<td>✓✓</td>
+<td>Compatible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stratégie pour Mme Leila</strong> :<br />
+- <strong>Nifédipine LP 30-60 mg/j</strong> (1ère intention si projet de grossesse immédiat)<br />
+- Ou <strong>labétalol 200-400 mg × 2/j</strong><br />
+- Si PA insuffisamment contrôlée : association nifédipine + labétalol</p>
+<p><strong>À la confirmation de grossesse</strong> :<br />
+- Bilan obstétrical immédiat (échographie, bilan pré-éclampsie)<br />
+- Suivi en maternité de niveau adapté<br />
+- Aspirine 100-150 mg/j dès 12 SA (antécédents de FDR de pré-éclampsie : HTA chronique)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-information-de-la-patiente">Question 2 — Information de la patiente</h4>
+<p><strong>Comment expliquez-vous à Mme Leila que son traitement est compatible avec la grossesse ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Discours adapté</strong> :<br />
+- « La nifédipine est utilisée depuis 30 ans chez les femmes enceintes. Elle est efficace et sans danger pour votre bébé, contrairement aux IEC. »<br />
+- « Pendant la grossesse, votre pression artérielle sera surveillée très étroitement avec des consultations plus fréquentes. »<br />
+- « Dès que vous êtes enceinte, appelez-moi immédiatement pour vérifier votre traitement. »<br />
+- « L'HTA pendant la grossesse peut être sérieuse (pré-éclampsie), c'est pourquoi nous vous suivons de près. »</p>
+<p><strong>Importance de l'adhésion</strong> :<br />
+- Une HTA non traitée pendant la grossesse est beaucoup plus dangereuse pour la mère et l'enfant que le traitement<br />
+- Rassurer la patiente : traitement contrôlé = sécurité pour la mère et le bébé</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_4">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>IEC et ARA2 sont contre-indiqués si grossesse planifiée dans les 6 mois. Les antihypertenseurs compatibles sont la méthyldopa, la nifédipine LP, et le labétalol. L'aspirine préventive dès 12 SA est systématique chez l'hypertendue chronique. L'HTA non traitée est plus dangereuse que le traitement.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-34"></a></p>
+<h3 id="cas-n34-hta-insuffisance-renale-terminale-en-dialyse">Cas n°34 — HTA + Insuffisance rénale terminale en dialyse</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M22 (Complications rénales), M36 (IRC), M30 (Diurétiques)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : HTA en hémodialyse — particularités et traitement</p>
+<h4 id="presentation-initiale_5">Présentation initiale</h4>
+<p>M. Jean-Pierre K., 67 ans, hémodialysé 3 séances/semaine (lundi-mercredi-vendredi) depuis 3 ans pour néphrangiosclérose hypertensive. Sa PA en pré-dialyse ce lundi : 185/108 mmHg. PA post-dialyse : 148/90 mmHg. PA le mercredi matin (2 jours après) : 195/115 mmHg.</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Amlodipine 10 mg/j<br />
+- Bisoprolol 5 mg/j<br />
+- Ramipril 5 mg/j (à réévaluer)<br />
+- Pas de diurétique (diurèse résiduelle 200 mL/j seulement)</p>
+<p><strong>Prise de poids interdialytique</strong> : 3,8 kg entre lundi et mercredi (recommandé &lt; 2 kg)</p>
+<hr />
+<h4 id="question-1-mecanisme-de-lhta-en-dialyse">Question 1 — Mécanisme de l'HTA en dialyse</h4>
+<p><strong>Quels sont les mécanismes de l'HTA chez ce patient dialysé ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Mécanismes principaux</strong> (par ordre d'importance) :</p>
+<ol>
+<li>
+<p><strong>Surcharge hydrosodée</strong> (principal) :<br />
+   - Prise de poids interdialytique 3,8 kg → expansion volémique → HTA<br />
+   - Signe : PA plus élevée le mercredi (2 j post-dialyse) que le lundi (immédiat post-dialyse)<br />
+   - Objectif : prise de poids &lt; 2 kg entre chaque séance</p>
+</li>
+<li>
+<p><strong>Activation du SRAA</strong> :<br />
+   - Ischémie rénale chronique → sécrétion de rénine persistante malgré l'anurie fonctionnelle<br />
+   - Ramipril reste utile (bloque la rénine)</p>
+</li>
+<li>
+<p><strong>Hyperactivité sympathique</strong> :<br />
+   - Stimulation des nerfs afférents rénaux sur les reins natifs atrophiés<br />
+   - Bisoprolol utile</p>
+</li>
+<li>
+<p><strong>Rigidité artérielle accélérée</strong> (phosphore, calcifications vasculaires)</p>
+</li>
+<li>
+<p><strong>EPO</strong> :<br />
+   - L'érythropoïétine augmente la PA par action directe sur les vaisseaux<br />
+   - Ajuster la dose d'EPO si HTA mal contrôlée</p>
+</li>
+</ol>
+</blockquote>
+<hr />
+<h4 id="question-2-strategie-therapeutique_1">Question 2 — Stratégie thérapeutique</h4>
+<p><strong>Comment optimiser le traitement antihypertenseur chez ce dialysé ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>1. Contrôle du volume — priorité absolue</strong> :<br />
+- <strong>Réduire la prise de poids interdialytique à &lt; 2 kg</strong> :<br />
+  - Restriction hydrique : 500 mL/j + diurèse résiduelle (soit 700 mL/j max)<br />
+  - Restriction sodée stricte (sel → soif → eau → surcharge)<br />
+  - Objectif : atteindre le <strong>poids sec</strong> correct à chaque séance<br />
+- <strong>Augmenter la durée ou la fréquence des dialyses</strong> si nécessaire (dialyse courte nocturne)</p>
+<p><strong>2. Poids sec</strong> :<br />
+- Réévaluation du poids sec (peut être sous-estimé)<br />
+- Techniques : BIA (impédancemétrie), échocardiographie (VCI, diamètre), biomarqueurs (NT-proBNP)</p>
+<p><strong>3. Traitement médicamenteux</strong> :<br />
+- <strong>Amlodipine 10 mg</strong> : maintenir (pas dialysé, efficace)<br />
+- <strong>Bisoprolol 5 mg</strong> : partiellement dialysé → donner APRÈS la séance, pas avant<br />
+- <strong>Ramipril</strong> : à maintenir mais attention à l'hyperkaliémie (K+ souvent élevé en dialyse)<br />
+  - Surveiller K+ pré-dialyse<br />
+  - Si K+ &gt; 5,5 mmol/L → réduire ramipril<br />
+- <strong>Ajouter un 4e agent si nécessaire</strong> : labétalol ou clonidine (prudence)</p>
+<p><strong>4. Adaptation des antihypertenseurs à l'hémodialyse</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Dialysance</th>
+<th>Quand donner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amlodipine</td>
+<td>Non dialysé</td>
+<td>N'importe quand</td>
+</tr>
+<tr>
+<td>Bisoprolol</td>
+<td>Partiellement dialysé</td>
+<td>APRÈS la séance</td>
+</tr>
+<tr>
+<td>Ramipril</td>
+<td>Dialysé</td>
+<td>APRÈS la séance (ou le soir)</td>
+</tr>
+<tr>
+<td>Aténolol</td>
+<td>Très dialysé</td>
+<td>Après séance obligatoire</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_5">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'HTA en dialyse est principalement liée à la surcharge hydrosodée. La restriction sodée et hydrique + atteinte du poids sec sont les traitements les plus efficaces. Les antihypertenseurs dialysés (ramipril, bisoprolol) doivent être donnés APRÈS la séance pour éviter une hypotension per-dialytique.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-35"></a></p>
+<h3 id="cas-n35-desescalade-therapeutique-chez-le-tres-vieillard-fragile-85-ans">Cas n°35 — Désescalade thérapeutique chez le très vieillard fragile ≥ 85 ans</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M34 (Sujet âgé), M32 (Stratégie), M04 (Bilan initial)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : Quand arrêter le traitement antihypertenseur ? La désescalade raisonnée</p>
+<h4 id="presentation-initiale_6">Présentation initiale</h4>
+<p>Mme Yvette M., 89 ans, vit en EHPAD depuis 2 ans. Polypathologie : HTA (traitement depuis 40 ans), maladie d'Alzheimer modérée (MMSE 14/30), fibrillation auriculaire permanente (apixaban), ostéoporose (fracture hanche il y a 18 mois), dénutrition (albumine 26 g/L), insuffisance rénale chronique stade G3b (DFG 35 mL/min).</p>
+<p><strong>Traitement antihypertenseur</strong> :<br />
+- Amlodipine 10 mg/j<br />
+- Ramipril 10 mg/j<br />
+- Furosémide 40 mg/j (IC diastolique + anasarque ancienne)<br />
+- Indapamide 1,5 mg LP/j (ajouté il y a 6 mois par un urgentiste pour PA élevée)</p>
+<p><strong>PA au cabinet EHPAD</strong> :<br />
+- Aujourd'hui : 132/78 mmHg (couché)<br />
+- Debout à 1 min : 95/60 mmHg (<strong>HO sévère, ΔPA = -37 mmHg</strong>)<br />
+- Debout à 3 min : 88/56 mmHg</p>
+<p><strong>Événements récents</strong> : 3 chutes en 2 mois (dont une avec plaie du cuir chevelu). Confusion accrue. Perte d'appétit. Albumine en baisse.</p>
+<p><strong>MAPA réalisée</strong> :<br />
+- PAS diurne : 122 mmHg — PAD diurne : 72 mmHg<br />
+- PAS nocturne : 105 mmHg — PAD nocturne : 62 mmHg</p>
+<hr />
+<h4 id="question-1-evaluation-de-la-pertinence-du-traitement">Question 1 — Évaluation de la pertinence du traitement</h4>
+<p><strong>Le traitement antihypertenseur actuel est-il justifié chez Mme Yvette ? Argumentez.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Le traitement est excessif et dangereux dans le contexte actuel</strong> :</p>
+<p><strong>Arguments pour la désescalade</strong> :</p>
+<ol>
+<li>
+<p><strong>PA trop basse</strong> : PAS couché 132 mmHg (cible ≥ 80 ans : 130-139) → dans la cible, pas de marge pour 4 antihypertenseurs</p>
+</li>
+<li>
+<p><strong>HO sévère</strong> (ΔPA -37 mmHg) → <strong>cause principale des 3 chutes</strong> :<br />
+   - Les chutes chez la personne âgée fragile = risque de fracture (déjà une hanche fracturée)<br />
+   - Mortalité à 1 an après fracture de hanche chez l'octogénaire : 20-40 %</p>
+</li>
+<li>
+<p><strong>MAPA</strong> : PA nocturne 105 mmHg (très basse) → ischémie potentielle (cerveau, cœur, rein)</p>
+</li>
+<li>
+<p><strong>Polypharmacie</strong> : 4 antihypertenseurs + furosémide → risque d'interactions, non-observance complexe, dénutrition (IEC → anorexie)</p>
+</li>
+<li>
+<p><strong>Dénutrition + Alzheimer</strong> : tolérance réduite, bénéfice CV à long terme diminué</p>
+</li>
+<li>
+<p><strong>Espérance de vie</strong> : l'objectif primaire n'est plus la prévention CV à 10 ans mais la <strong>qualité de vie et l'autonomie</strong></p>
+</li>
+</ol>
+<p><strong>Conclusion</strong> : <strong>désescalade thérapeutique indiquée</strong> — les risques du traitement dépassent les bénéfices attendus.</p>
+</blockquote>
+<hr />
+<h4 id="question-2-plan-de-desescalade">Question 2 — Plan de désescalade</h4>
+<p><strong>Comment réduire progressivement le traitement ? Quel est le plan sur 3 mois ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Principes</strong> :<br />
+- Réduction <strong>progressive</strong> (un médicament à la fois, par paliers de 2-4 semaines)<br />
+- Surveillance PA couché ET debout à chaque modification<br />
+- Objectif : <strong>maintenir PAS 140-150 mmHg</strong> (couché, cible ≥ 80 ans fragile)<br />
+- Accepter une PA plus élevée si HO sévère</p>
+<p><strong>Plan proposé</strong> :</p>
+<p><strong>Semaine 1-2</strong> :<br />
+- <strong>Arrêt indapamide 1,5 mg</strong> (ajouté récemment, plus facilement réversible)<br />
+- Contrôle PA à J7</p>
+<p><strong>Semaine 3-4</strong> :<br />
+- <strong>Réduction furosémide à 20 mg</strong> (si pas de signe de décompensation IC)<br />
+- Contrôle PA + bilan rénal (créatinine, K+)</p>
+<p><strong>Semaine 5-6</strong> :<br />
+- <strong>Arrêt ramipril</strong> (ou réduction à 2,5 mg)<br />
+- (Le furosémide remplit une partie du rôle)</p>
+<p><strong>Semaine 7-8</strong> :<br />
+- Si PA couché reste 140-150 mmHg et HO s'améliore → objectif atteint<br />
+- Si PA couché &gt; 160 mmHg → maintenir amlodipine 5 mg (réduction de 10 à 5 mg)</p>
+<p><strong>Résultat attendu</strong> :<br />
+- Disparition ou réduction de l'HO<br />
+- Diminution des chutes<br />
+- Amélioration de l'appétit (arrêt IEC → moins d'anorexie)<br />
+- PA couché maintenue 140-150 mmHg (acceptable, pas de risque immédiat)</p>
+</blockquote>
+<hr />
+<h4 id="question-3-quelle-cible-tensionnelle-chez-la-personne-tres-agee-fragile">Question 3 — Quelle cible tensionnelle chez la personne très âgée fragile ?</h4>
+<p><strong>La cible PA de 130-139 mmHg des guidelines est-elle applicable à Mme Yvette ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Non — les guidelines ont des limites d'applicabilité chez les très vieillards fragiles</strong> :</p>
+<p><strong>Données probantes</strong> :<br />
+- L'étude HYVET (patients ≥ 80 ans, indapamide ± périndopril) incluait des patients en bonne santé (exclusion des patients avec MMSE &lt; 24, dépendants)<br />
+- Les grands essais (SPRINT, etc.) excluaient les patients institutionnalisés et les plus fragiles</p>
+<p><strong>Approche individualisée</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>Cible PAS</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥ 80 ans robuste, actif</td>
+<td>130-139</td>
+<td>HYVET applicable</td>
+</tr>
+<tr>
+<td>≥ 80 ans fragile modéré</td>
+<td>140-149</td>
+<td>Marge de sécurité</td>
+</tr>
+<tr>
+<td><strong>≥ 80 ans très fragile, institutionnalisé</strong></td>
+<td><strong>≤ 150-160</strong></td>
+<td><strong>Éviter l'HO et les chutes</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Évaluation gériatrique globale</strong> :<br />
+- Score de fragilité (Clinical Frailty Scale) : Mme Yvette = stade 7 (gravement fragile)<br />
+- Scores ≥ 6-7 → déprescription recommandée (STOPP criteria : antihypertenseurs causant HO persistante)</p>
+<p><strong>Critères STOPP</strong> (Screening Tool of Older Persons Prescriptions) :<br />
+- Toute classe d'antihypertenseurs chez un patient avec HO documentée, récidivante = à déprescrire</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_6">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>Chez la personne très âgée fragile, les chutes liées à l'hypotension orthostatique peuvent tuer plus vite que l'HTA. La désescalade thérapeutique progressive est une décision médicale courageuse et bienveillante. La cible PA doit être adaptée à la fragilité : 140-150 mmHg pour les fragiles, accepter 150-160 mmHg si HO persistante. Moins de médicaments = moins de risque chez le grand vieillard.</strong></p>
+</blockquote>
+<hr />
+<h2 id="synthese-finale-les-35-cas-et-leur-couverture-pedagogique">Synthèse finale — Les 35 cas et leur couverture pédagogique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHTA-SYNTH-001 — Carte heuristique : les 35 cas cliniques HTA organisés par module et niveau de difficulté]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Cas couvrants</th>
+<th>Points clés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mesure PA / MAPA</td>
+<td>4, 7, 13, 26</td>
+<td>Phénotypes, protocoles, dipping</td>
+</tr>
+<tr>
+<td>Épidémiologie</td>
+<td>1, 28, 29</td>
+<td>FDR, enfant, MHD</td>
+</tr>
+<tr>
+<td>Bilan retentissement</td>
+<td>1, 5, 17, 23</td>
+<td>Organes cibles, stratification</td>
+</tr>
+<tr>
+<td>HTA blouse blanche</td>
+<td>7</td>
+<td>Diagnostic, surveillance</td>
+</tr>
+<tr>
+<td>HTA masquée</td>
+<td>13</td>
+<td>Professionnelle, traitement</td>
+</tr>
+<tr>
+<td>HTA résistante</td>
+<td>8, 18</td>
+<td>Pseudo-résistance, dénervation</td>
+</tr>
+<tr>
+<td>Urgences hypertensives</td>
+<td>3, 6, 14, 15, 16</td>
+<td>Poussée vs urgence, traitements IV</td>
+</tr>
+<tr>
+<td>MHD</td>
+<td>29, 31</td>
+<td>Efficacité, sel, alcool, exercice</td>
+</tr>
+<tr>
+<td>IEC/ARA2</td>
+<td>1, 5, 9, 17, 33</td>
+<td>Néphroprotection, CI grossesse</td>
+</tr>
+<tr>
+<td>ICC</td>
+<td>21, 24</td>
+<td>Courbe en J, BPCO</td>
+</tr>
+<tr>
+<td>Diurétiques</td>
+<td>31, 34</td>
+<td>Métabolisme, dialyse</td>
+</tr>
+<tr>
+<td>Situations particulières</td>
+<td>4, 33, 35</td>
+<td>Grossesse, âgé, fragile</td>
+</tr>
+<tr>
+<td>HTA secondaire</td>
+<td>9, 11, 12, 19, 25, 26, 27</td>
+<td>HAP, phéo, DFM, Cushing, SAHOS, coarctation</td>
+</tr>
+<tr>
+<td>Complications cardiaques</td>
+<td>20, 21, 23</td>
+<td>ICFEr, ICFEp, coronaropathie</td>
+</tr>
+<tr>
+<td>Complications cérébrales</td>
+<td>6, 22</td>
+<td>AVC, encéphalopathie</td>
+</tr>
+<tr>
+<td>Complications rénales</td>
+<td>17, 34</td>
+<td>IRC, dialyse</td>
+</tr>
+<tr>
+<td>Complications vasculaires</td>
+<td>14</td>
+<td>Dissection aortique</td>
+</tr>
+<tr>
+<td>Complications ophtalmologiques</td>
+<td>30</td>
+<td>Rétinopathie stade IV</td>
+</tr>
+<tr>
+<td>Innovations</td>
+<td>18, 40</td>
+<td>Dénervation, ARNsi</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Fin du cahier complet de cas cliniques HTA — 35 cas (Niveaux Bronze, Argent, Or, Diamant)</em><br />
+<em>Parties 1 à 5 — Couverture exhaustive de tous les aspects de la formation</em></p>
+<p><em>Dernière mise à jour : 15 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

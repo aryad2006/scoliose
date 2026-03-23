@@ -823,4 +823,122 @@ Chaque formation dispose d'un fichier dédié dans son répertoire :
 
 ---
 
+## 16. Règles de développement des cours interactifs Moodle (OBLIGATOIRE)
+
+> **RÈGLE ABSOLUE — CDC ≠ COURS**
+>
+> Les fichiers CDC (Cahier des Charges) sont des **spécifications de développement**. Ils décrivent CE QUE le cours doit contenir. Ils ne doivent **JAMAIS** être importés comme contenu de cours dans Moodle. Le cours interactif doit être **développé à partir du CDC** — c'est le contenu pédagogique réel destiné aux praticiens.
+
+### 16.1 Transformation CDC → Cours interactif
+
+Le processus de développement d'un cours suit ces étapes :
+
+1. **Lecture du CDC** — comprendre les objectifs, sections obligatoires, médias, QCM
+2. **Rédaction du cours** — fichier `COURS_*.md` : prose pédagogique rédigée directement, jamais de directives ("le module doit expliquer que...")
+3. **Génération HTML** — script `generate_interactive_course.py` : conversion en page HTML interactive
+4. **Test en local** — import dans Moodle local (localhost:8890) pour valider le rendu
+5. **Déploiement en production** — import sur doctraining.ma après validation
+
+**Nommage obligatoire** :
+- CDC : `CDC_{PREFIX}_{NUM}_{TITRE}.md` (spécifications, ne pas importer)
+- Cours : `COURS_{PREFIX}_{NUM}_{TITRE}.md` (contenu interactif, à importer)
+- HTML : généré automatiquement par `generate_interactive_course.py`
+
+### 16.2 Interface et navigation
+
+**Sidebar fixe obligatoire** :
+- La navigation du cours doit se faire via une **sidebar fixe** à gauche
+- La sidebar contient la table des matières (H2 et H3) avec des ancres cliquables
+- La section active est mise en surbrillance au scroll (*scroll spy*)
+- Sur mobile : la sidebar passe en haut (responsive)
+
+**Hiérarchie des titres** :
+- H1 : titre du module
+- H2 : sections principales (numérotées : 1.1, 1.2, 1.3...)
+- H3 : sous-sections (1.1.1, 1.1.2...)
+- H4 : sous-sous-sections si nécessaire
+
+### 16.3 QCM et exercices interactifs
+
+> **RÈGLE** : Les QCM ne sont pas de simples listes statiques. Ils doivent être **manipulables** par le praticien.
+
+**Types d'interactions obligatoires selon le format** :
+
+| Format de question | Composant HTML | Comportement |
+|---|---|---|
+| **Choix unique** (1 bonne réponse) | `<input type="radio">` | Boutons radio, options empilées verticalement |
+| **Choix multiple** (≥2 bonnes réponses) | `<input type="checkbox">` | Cases à cocher, options empilées verticalement |
+| **Classement / réarrangement** | Drag & drop | Items déplaçables à la souris (et au touch), empilés verticalement |
+| **Réponse libre / synthèse** | `<textarea>` auto-resize | Zone de texte qui s'adapte au contenu |
+| **Calcul clinique** | `<input type="number">` + validation | Champ numérique avec vérification |
+
+**Règles d'interaction** :
+- **Bouton « Valider »** obligatoire — la correction ne s'affiche qu'après validation
+- **Feedback dépliable** — après validation, explication détaillée accessible au clic
+- **Indication visuelle** — vert (ou bleu) pour les bonnes réponses, rouge pour les erreurs
+- **Options empilées verticalement** — jamais sur la même ligne
+- **Badge de niveau** visible — 🥉 Bronze / 🥈 Argent / 🥇 Or / 💎 Diamant
+- **Réponse correcte JAMAIS visible** — ne jamais afficher ✅ ou la bonne réponse dans le HTML source. La bonne réponse est stockée en `data-correct="true"` et révélée uniquement après clic sur « Valider »
+
+**Règles spécifiques au drag & drop (exercices de classement)** :
+1. « Vérifier l'ordre » → les items bien placés apparaissent en vert, les mal placés en rouge. Le bouton se désactive.
+2. Si des erreurs : un bouton « Voir la correction » apparaît → affiche le bon ordre (vert = ceux que l'utilisateur avait bien, rouge = ceux qu'il avait mal)
+3. Un bouton « Réessayer » permet de relancer l'exercice : items remélangés, drag & drop réactivé, bouton « Vérifier » fonctionnel à nouveau
+
+**Règles pour les "astuces cliniques"** :
+- Ne PAS utiliser de mnémoniques à base d'acronymes forcés (type "SHARP", "SIG")
+- Préférer des formulations claires et professionnelles : « Retenez la séquence en 3 temps : ... »
+- Le contenu doit être immédiatement compréhensible sans décryptage d'acronyme
+
+### 16.4 Encadrés pédagogiques interactifs
+
+Chaque type d'encadré doit avoir un **style visuel distinct** :
+
+| Marqueur | Classe CSS | Couleur de fond | Bordure |
+|---|---|---|---|
+| 🏥 Clinique | `.clinique` | Jaune clair | Orange |
+| ⚠️ Danger | `.danger` | Rose clair | Rouge |
+| 📖 Approfondissement | `.approfondi` | Bleu clair | Bleu |
+| 💡 Astuce/Mnémonique | `.astuce` | Vert clair | Vert |
+| 🔬 Expert | `.expert` | Violet clair | Violet |
+| 🤔 Réflexion | `.reflexion` | Jaune pâle | Jaune |
+| ⚖️ Controverse | `.controverse` | Gris clair | Gris |
+
+### 16.5 Contenu pédagogique — exigences de qualité
+
+Le cours interactif destiné aux praticiens doit respecter :
+
+1. **Contenu rédigé, pas des directives** — transformer "le module doit expliquer que X" en une explication directe de X
+2. **Sources scientifiques fiables** — études princeps + récentes, niveaux de preuve, pas de plagiat
+3. **Richesse pédagogique** — chaque fait accompagné de son mécanisme et de sa conséquence clinique
+4. **Chaînes de raisonnement** — anatomie → biomécanique → physiopathologie → clinique → thérapeutique
+5. **Densité** — minimum 300 mots par sous-section, min 2 cas cliniques par module
+6. **Progressivité** — du concret vers l'abstrait, du simple vers le complexe
+7. **Terminologie** — « praticien », jamais « apprenant » ou « étudiant »
+
+### 16.6 Cas cliniques intégrés et autonomes
+
+- Les **cas cliniques intégrés** (dans le cours) doivent être interactifs : questions avec textarea, feedback dépliable
+- Les **cas cliniques autonomes** (fichiers CAS_CLINIQUES_*.md) sont un entraînement séparé
+- Les deux types doivent être présents dans chaque formation
+
+### 16.7 Checklist cours interactif (ajout à la checklist §11)
+
+| # | Critère cours interactif Moodle | ✅ |
+|---|---|---|
+| 40 | Sidebar fixe avec table des matières cliquable | |
+| 41 | QCM à choix unique = boutons radio | |
+| 42 | QCM à choix multiples = checkboxes | |
+| 43 | Exercices de classement = drag & drop | |
+| 44 | Réponses libres = textarea auto-resize | |
+| 45 | Bouton « Valider » sur chaque exercice | |
+| 46 | Feedback dépliable après validation | |
+| 47 | Options empilées verticalement (jamais horizontales) | |
+| 48 | Aucun contenu CDC visible (pas de "le module doit...") | |
+| 49 | Encadrés pédagogiques avec styles visuels distincts | |
+| 50 | Responsive (sidebar → top sur mobile) | |
+| 51 | Cas cliniques interactifs avec textarea + feedback | |
+
+---
+
 *Ce document est la référence unique pour la rédaction de tous les contenus pédagogiques des formations VERTEX©. Toute dérogation doit être justifiée par la nature du contenu.*

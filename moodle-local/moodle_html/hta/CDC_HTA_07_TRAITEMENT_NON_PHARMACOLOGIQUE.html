@@ -1,0 +1,416 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-07-traitement-non-pharmacologique">❤️ PARTIE 07 — TRAITEMENT NON PHARMACOLOGIQUE</h1>
+<h2 id="mesures-hygieno-dietetiques-sel-activite-physique-alimentation-stress">Mesures hygiéno-diététiques : sel, activité physique, alimentation, stress</h2>
+<hr />
+<h1 id="module-25-restriction-sodee-et-alimentation">MODULE 25 — RESTRICTION SODÉE ET ALIMENTATION</h1>
+<h2 id="251-sel-et-pression-arterielle">25.1 Sel et pression artérielle</h2>
+<h3 id="2511-bases-physiologiques">25.1.1 Bases physiologiques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA25-S01-001 — SCHÉMA : mécanismes de l'HTA sel-dépendante — expansion volémique, rigidité vasculaire, activation SRAA]</p>
+</blockquote>
+<p><strong>Relation sel-PA</strong> (adapté de INTERSALT, BMJ 1988 et PURE, NEJM 2014) :<br />
+- Relation linéaire entre consommation de sel et PAS au-delà de <strong>5 g/j</strong><br />
+- Chaque gramme de sel supplémentaire augmente la PAS de <strong>1-2 mmHg</strong><br />
+- <strong>Sensibilité au sel</strong> : variable inter-individuelle (30-50 % de la population est « sel-sensible »)<br />
+- Populations particulièrement sel-sensibles : sujets âgés, origine africaine, IRC, syndrome métabolique</p>
+<h3 id="2512-recommandations">25.1.2 Recommandations</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023 et OMS 2023) :</p>
+<blockquote>
+<ul>
+<li>Objectif : <strong>&lt; 5 g/j de sel</strong> (soit &lt; 2 g/j de sodium) — OMS et ESC/ESH concordants</li>
+<li>Consommation moyenne en France : <strong>8-10 g/j</strong> (double de la recommandation)</li>
+<li>Réduction attendue de PA : <strong>-5 mmHg PAS</strong> pour une réduction de 5 g/j de sel</li>
+<li>Sources principales de sel : pain (25 %), charcuteries (15 %), fromages (12 %), plats préparés (20 %)</li>
+</ul>
+</blockquote>
+<p><strong>Conseils pratiques</strong> :<br />
+- Ne pas resaler à table<br />
+- Réduire la consommation de pain (≤ 150 g/j), charcuteries, fromages<br />
+- Privilégier la cuisson maison, aromates et épices<br />
+- Lire les étiquettes (objectif &lt; 1,5 g de sel/portion)<br />
+- Augmenter la consommation de potassium (fruits, légumes) : ratio Na/K inversement corrélé à la PA</p>
+<h2 id="252-regime-dash">25.2 Régime DASH</h2>
+<h3 id="2521-principes">25.2.1 Principes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA25-S02-001 — SCHÉMA : composition du régime DASH — groupes alimentaires et portions quotidiennes]</p>
+</blockquote>
+<p><strong>Régime DASH</strong> (Dietary Approaches to Stop Hypertension, NEJM 1997 et 2001) :</p>
+<table>
+<thead>
+<tr>
+<th>Groupe alimentaire</th>
+<th>Portions/jour</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fruits</td>
+<td>4-5</td>
+<td>Pommes, bananes, agrumes, baies</td>
+</tr>
+<tr>
+<td>Légumes</td>
+<td>4-5</td>
+<td>Tous types, cuits et crus</td>
+</tr>
+<tr>
+<td>Céréales complètes</td>
+<td>6-8</td>
+<td>Pain complet, riz brun, avoine</td>
+</tr>
+<tr>
+<td>Protéines maigres</td>
+<td>2-3</td>
+<td>Volaille, poisson, légumineuses</td>
+</tr>
+<tr>
+<td>Produits laitiers allégés</td>
+<td>2-3</td>
+<td>Yaourt nature, lait écrémé</td>
+</tr>
+<tr>
+<td>Noix, graines</td>
+<td>4-5/semaine</td>
+<td>Amandes, noix, graines de lin</td>
+</tr>
+<tr>
+<td>Graisses et huiles</td>
+<td>2-3</td>
+<td>Huile d'olive, colza</td>
+</tr>
+<tr>
+<td>Sucreries</td>
+<td>≤ 5/semaine</td>
+<td>Limiter au maximum</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Efficacité</strong> :<br />
+- DASH seul : <strong>-6 mmHg PAS</strong> (vs régime occidental)<br />
+- DASH + restriction sodée (&lt; 3,8 g/j) : <strong>-11 mmHg PAS</strong> chez les hypertendus<br />
+- Effet additif avec le traitement médicamenteux</p>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Le régime méditerranéen partage de nombreuses caractéristiques avec le DASH et a l'avantage d'être culturellement plus adapté en France. L'étude PREDIMED (2018) a montré une réduction de 30 % des événements CV majeurs avec le régime méditerranéen enrichi en huile d'olive extra-vierge ou en noix.</p>
+</blockquote>
+<h2 id="253-alcool">25.3 Alcool</h2>
+<h3 id="2531-relation-alcool-pa">25.3.1 Relation alcool-PA</h3>
+<ul>
+<li>Relation <strong>linéaire</strong> entre consommation d'alcool et PA au-delà de <strong>2 verres/j</strong></li>
+<li>Chaque verre supplémentaire : <strong>+1 mmHg PAS</strong></li>
+<li>L'arrêt de l'alcool chez un buveur excessif réduit la PAS de <strong>4-5 mmHg</strong></li>
+<li>Le mythe du « French paradox » (vin rouge protecteur) est remis en question : pas de dose d'alcool sans risque selon l'OMS (2023)</li>
+</ul>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li>Hommes : <strong>≤ 14 unités/semaine</strong> (max 2/j, avec jours sans)</li>
+<li>Femmes : <strong>≤ 8 unités/semaine</strong> (max 1/j)</li>
+<li>1 unité = 10 g d'alcool = 1 verre standard (25 cL bière, 12,5 cL vin, 3 cL spiritueux)</li>
+</ul>
+</blockquote>
+<h2 id="254-poids-corporel">25.4 Poids corporel</h2>
+<h3 id="2541-impact-de-la-perte-de-poids">25.4.1 Impact de la perte de poids</h3>
+<ul>
+<li>Chaque perte de <strong>1 kg</strong> de poids corporel réduit la PAS de <strong>~1 mmHg</strong></li>
+<li>Objectif : <strong>IMC 20-25 kg/m²</strong>, tour de taille &lt; 94 cm (homme) et &lt; 80 cm (femme)</li>
+<li>Perte de poids de 5-10 % : réduction PAS de <strong>5-10 mmHg</strong></li>
+<li>Chirurgie bariatrique : réduction PA significative chez l'obèse sévère (IMC &gt; 40 ou &gt; 35 avec comorbidités)</li>
+</ul>
+<hr />
+<h1 id="module-26-activite-physique">MODULE 26 — ACTIVITÉ PHYSIQUE</h1>
+<h2 id="261-effets-de-lexercice-sur-la-pa">26.1 Effets de l'exercice sur la PA</h2>
+<h3 id="2611-mecanismes">26.1.1 Mécanismes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA26-S01-001 — SCHÉMA : effets de l'exercice physique sur la PA — mécanismes vasculaires, métaboliques et neuro-hormonaux]</p>
+</blockquote>
+<p><strong>Effets chroniques de l'exercice régulier</strong> :<br />
+- Réduction du tonus sympathique au repos<br />
+- Amélioration de la fonction endothéliale (augmentation NO)<br />
+- Réduction de la rigidité artérielle<br />
+- Perte de poids et réduction du tissu adipeux viscéral<br />
+- Amélioration de la sensibilité à l'insuline<br />
+- Réduction de l'inflammation chronique de bas grade</p>
+<h3 id="2612-efficacite-antihypertensive">26.1.2 Efficacité antihypertensive</h3>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>La méta-analyse de Naci et al. (Br J Sports Med 2019) montre que l'exercice régulier réduit la PAS de <strong>-5 à -7 mmHg</strong> chez les hypertendus, un effet comparable à une monothérapie antihypertensive. L'exercice isométrique (résistance statique, handgrip) est le plus efficace (-8,2 mmHg PAS).</p>
+</blockquote>
+<h3 id="2613-prescriptions">26.1.3 Prescriptions</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li><strong>Exercice aérobie</strong> : ≥ 150 min/semaine d'intensité modérée ou ≥ 75 min/semaine d'intensité vigoureuse</li>
+<li><strong>Exercice de résistance dynamique</strong> : 2-3 séances/semaine (musculation modérée)</li>
+<li><strong>Exercice isométrique</strong> : handgrip 4 × 2 min/j, 3 séances/semaine (le plus efficace sur la PAS)</li>
+<li><strong>Éviter</strong> : exercice isométrique intensif chez l'hypertendu non contrôlé (PA &gt; 180/110)</li>
+<li>Épreuve d'effort recommandée avant reprise d'activité intense chez les patients à haut risque CV</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type d'exercice</th>
+<th>Réduction PAS</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aérobie modéré</td>
+<td>-5 à -7 mmHg</td>
+<td>Marche rapide, vélo, natation</td>
+</tr>
+<tr>
+<td>Résistance dynamique</td>
+<td>-3 à -5 mmHg</td>
+<td>Musculation légère, élastiques</td>
+</tr>
+<tr>
+<td>Isométrique (handgrip)</td>
+<td>-6 à -8 mmHg</td>
+<td>Serrage balle, contraction statique</td>
+</tr>
+<tr>
+<td>HIIT (interval training)</td>
+<td>-4 à -6 mmHg</td>
+<td>Intervalles haute intensité</td>
+</tr>
+<tr>
+<td>Yoga / Tai chi</td>
+<td>-3 à -4 mmHg</td>
+<td>Postures, respiration, méditation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="module-27-gestion-du-stress-et-autres-mhd">MODULE 27 — GESTION DU STRESS ET AUTRES MHD</h1>
+<h2 id="271-stress-et-hta">27.1 Stress et HTA</h2>
+<h3 id="2711-mecanismes">27.1.1 Mécanismes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA27-S01-001 — SCHÉMA : voies du stress chronique menant à l'HTA — axe HPA, système sympathique, inflammation]</p>
+</blockquote>
+<p><strong>Stress chronique et HTA</strong> :<br />
+- Activation soutenue de l'axe hypothalamo-hypophyso-surrénalien (cortisol)<br />
+- Hyperactivité sympathique (catécholamines)<br />
+- Inflammation chronique (CRP, IL-6)<br />
+- Comportements délétères induits : tabac, alcool, alimentation hypercalorique, sédentarité<br />
+- Stress professionnel (job strain de Karasek) : augmente le risque d'HTA de 15-20 %</p>
+<h3 id="2712-interventions">27.1.2 Interventions</h3>
+<p><strong>Techniques de réduction du stress ayant démontré un bénéfice sur la PA</strong> :<br />
+- <strong>Méditation de pleine conscience (mindfulness)</strong> : -3 à -5 mmHg PAS (méta-analyse, Am J Hypertension 2019)<br />
+- <strong>Biofeedback</strong> : -3 mmHg PAS<br />
+- <strong>Yoga</strong> : -4 mmHg PAS (composante respiratoire et posturale)<br />
+- <strong>Relaxation musculaire progressive</strong> : -2 à -3 mmHg PAS<br />
+- <strong>Cohérence cardiaque</strong> : respiration 6 cycles/min, 5 min, 3 fois/jour</p>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>La cohérence cardiaque (respiration rythmée à 6 cycles/min) est une technique simple, gratuite et sans effet indésirable. 5 minutes 3 fois par jour améliorent la variabilité cardiaque et réduisent le tonus sympathique. Applications smartphone disponibles.</p>
+</blockquote>
+<h2 id="272-tabac-et-hta">27.2 Tabac et HTA</h2>
+<ul>
+<li>Le tabac <strong>n'est pas</strong> une cause d'HTA permanente</li>
+<li>Mais il provoque une élévation <strong>transitoire</strong> de la PA (+5-10 mmHg/cigarette pendant 15-30 min)</li>
+<li>Le tabac est un facteur de risque CV majeur <strong>indépendant</strong> (multiplie le risque CV par 2-3)</li>
+<li>L'arrêt du tabac est la mesure de réduction du risque CV <strong>la plus efficace</strong> (réduction du risque de 50 % à 1 an)</li>
+<li>Pas d'augmentation de PA après sevrage (contrairement à l'idée reçue)</li>
+</ul>
+<h2 id="273-cafeine">27.3 Caféine</h2>
+<ul>
+<li>Élévation transitoire de la PA (+5-10 mmHg pendant 1-3h)</li>
+<li>Pas d'augmentation du risque d'HTA chez les consommateurs réguliers (tolérance)</li>
+<li>≤ 4 tasses de café/j : pas de restriction nécessaire chez l'hypertendu traité</li>
+<li>Attention aux boissons énergisantes (caféine + taurine : effet synergique sur la PA)</li>
+</ul>
+<h2 id="274-synthese-des-mhd">27.4 Synthèse des MHD</h2>
+<h3 id="2741-impact-cumulatif">27.4.1 Impact cumulatif</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA27-S04-001 — TABLEAU RÉCAPITULATIF : impact de chaque MHD sur la PA et potentiel cumulatif]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Mesure</th>
+<th>Réduction PAS attendue</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restriction sodée (&lt; 5 g/j)</td>
+<td>-5 mmHg</td>
+<td>Effet majeur chez le sel-sensible</td>
+</tr>
+<tr>
+<td>Régime DASH / méditerranéen</td>
+<td>-6 mmHg</td>
+<td>Effet additif avec restriction sodée</td>
+</tr>
+<tr>
+<td>Perte de poids (5-10 %)</td>
+<td>-5 à -10 mmHg</td>
+<td>1 mmHg / kg perdu</td>
+</tr>
+<tr>
+<td>Activité physique régulière</td>
+<td>-5 à -7 mmHg</td>
+<td>≥ 150 min/semaine</td>
+</tr>
+<tr>
+<td>Modération alcool</td>
+<td>-4 mmHg</td>
+<td>Si consommation excessive</td>
+</tr>
+<tr>
+<td>Gestion du stress</td>
+<td>-3 à -5 mmHg</td>
+<td>Méditation, cohérence cardiaque</td>
+</tr>
+<tr>
+<td><strong>Total cumulatif potentiel</strong></td>
+<td><strong>-20 à -30 mmHg</strong></td>
+<td><strong>Équivalent bithérapie</strong></td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<p>Les MHD doivent être prescrites à TOUS les hypertendus, qu'ils soient ou non sous traitement médicamenteux. Leur effet cumulatif peut atteindre -20 à -30 mmHg de PAS, soit l'équivalent d'une bithérapie antihypertensive. Elles sont la seule stratégie chez les patients à PA normale haute et à bas risque CV.</p>
+</blockquote>
+<hr />
+<h2 id="275-quiz-modules-25-27">27.5 Quiz Modules 25-27</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> Quel est l'apport sodé quotidien recommandé chez l'hypertendu ?<br />
+- A) &lt; 10 g/j<br />
+- B) &lt; 8 g/j<br />
+- C) &lt; 5 g/j<br />
+- D) &lt; 2 g/j</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — &lt; 5 g/j de sel (&lt; 2 g/j de sodium), soit environ la moitié de la consommation moyenne française.</p>
+</blockquote>
+<p><strong>Q2.</strong> Quelle est la réduction de PAS attendue avec une activité physique régulière ?<br />
+- A) -1 à -2 mmHg<br />
+- B) -5 à -7 mmHg<br />
+- C) -15 mmHg<br />
+- D) -25 mmHg</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — -5 à -7 mmHg de PAS avec ≥ 150 min/semaine d'exercice aérobie modéré.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Quel type d'exercice est le plus efficace pour réduire la PAS ?<br />
+- A) Aérobie modéré<br />
+- B) Résistance dynamique<br />
+- C) Exercice isométrique (handgrip)<br />
+- D) Stretching</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — L'exercice isométrique (handgrip) réduit la PAS de -6 à -8 mmHg, supérieur aux autres modalités.</p>
+</blockquote>
+<p><strong>Q4.</strong> Quelle est la réduction cumulative maximale de PAS possible avec toutes les MHD ?<br />
+- A) -5 mmHg<br />
+- B) -10 mmHg<br />
+- C) -20 à -30 mmHg<br />
+- D) -50 mmHg</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — -20 à -30 mmHg de PAS en cumulant toutes les MHD, équivalent d'une bithérapie antihypertensive.</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q5.</strong> Pourquoi le ratio Na/K alimentaire est-il important ?<br />
+- A) Le potassium augmente la PA<br />
+- B) Un ratio Na/K élevé est corrélé à une PA plus élevée<br />
+- C) Le potassium est néphrotoxique<br />
+- D) Le ratio n'a aucune importance</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Un ratio Na/K élevé (beaucoup de sel, peu de potassium) est un meilleur prédicteur d'HTA et de mortalité CV que le sodium ou le potassium pris isolément.</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q6.</strong> Pourquoi le tabac ne cause-t-il pas d'HTA permanente malgré l'activation sympathique ?<br />
+- A) L'effet sympathique est trop faible<br />
+- B) L'élévation de PA est transitoire (15-30 min/cigarette) avec retour à la baseline entre les cigarettes<br />
+- C) Le tabac a un effet vasodilatateur secondaire<br />
+- D) Les fumeurs ont une PA plus basse</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — L'élévation tensionnelle est transitoire et transitoire entre les cigarettes, ne créant pas d'HTA permanente mesurable par MAPA. Cependant, les pics répétés de PA contribuent au dommage vasculaire (contrainte pariétale intermittente).</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

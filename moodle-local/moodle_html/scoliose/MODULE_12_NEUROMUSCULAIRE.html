@@ -1,0 +1,423 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-12-scoliose-neuromusculaire">MODULE 12 — SCOLIOSE NEUROMUSCULAIRE</h1>
+<p><strong>Partie V — Scolioses secondaires et particulières</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 11</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Julien, 14 ans, atteint de myopathie de Duchenne, est en fauteuil roulant depuis 2 ans. Sa mère appelle inquiète : <em>« Il se penche de plus en plus vers la gauche, le kiné dit que son dos se tord. Son généraliste a dit "c'est normal chez les enfants Duchenne". Est-ce qu'on doit faire quelque chose ? »</em></p>
+<p>→ <em>Les scolioses neuromusculaires ont une histoire naturelle prévisible et des traitements spécifiques. Elles peuvent mettre en jeu le pronostic vital par leur impact respiratoire.</em></p>
+</blockquote>
+<p>🧑 <strong>Patient fil rouge</strong> : Julien, 14 ans, DMD, Cobb thoracique gauche 45°, CVF 55 % de la valeur théorique.</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Scoliose neuromusculaire • Scoliose paralytique • Myopathie de Duchenne (DMD) • Amyotrophie spinale (SMA) • IMC (infirmité motrice cérébrale) • Spina bifida • Poliomyélite • SLA • Scoliose pelvi-oblique • Obliquité pelvienne • Ancrage pelvien (vis S2AI, vis iliaques, Galveston) • Fusion sacropelvienne • Corticothérapie et scoliose DMD • Ventilation non invasive (VNI) • CVF seuil chirurgical • Non-ambulant • Unit rod • Système "construct" complet T2-sacrum • Infection et maigres tissus mous</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les mécanismes pathogéniques des scolioses neuromusculaires selon l'étiopathogénie (paralytique, myopathique, spastique) (Bloom : Connaissance)</li>
+<li><strong>Définir</strong> les seuils d'intervention dans les principales pathologies (DMD, SMA, IMC) (Bloom : Application)</li>
+<li><strong>Planifier</strong> une fusion neuromusculaire : niveau de fusion, ancrage pelvien, gestion de la CVF (Bloom : Évaluation)</li>
+<li><strong>Anticiper</strong> les complications respiratoires et les prévenir (Bloom : Analyse)</li>
+<li><strong>Intégrer</strong> la décision chirurgicale dans la prise en charge multidisciplinaire (Bloom : Synthèse)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La scoliose est présente chez quel pourcentage des patients atteints de Duchenne en stade non-ambulant ?<br />
+- <strong>A. 80–90 %</strong><br />
+- B. 20–30 %<br />
+- C. 50–60 %<br />
+- D. 40–50 %</p>
+<p><strong>Q2.</strong> Le principal critère respiratoire utilisé pour fixer le seuil chirurgical dans la DMD est :<br />
+- A. VEF1 &lt; 60 %<br />
+- <strong>B. CVF ≥ 30–35 % de la valeur théorique (fenêtre chirurgicale)</strong><br />
+- C. Sa02 &lt; 92 %<br />
+- D. Débit expiratoire de pointe &lt; 160 L/min</p>
+<p><strong>Q3.</strong> L'obliquité pelvienne est la principale indication à :<br />
+- A. Fusion courte L1-L4<br />
+- <strong>B. Extension de la fusion jusqu'au sacrum (T2-sacrum ou T2-bassin)</strong><br />
+- C. Corset seul<br />
+- D. Traction halocrânienne préopératoire</p>
+<p><strong>Q4.</strong> Dans la myopathie de Duchenne, la corticothérapie au long cours (deflazacort/prednisone) a démontré :<br />
+- <strong>A. Un retard de l'apparition de la scoliose et une réduction de son taux de progression</strong><br />
+- B. Un arrêt définitif de la scoliose<br />
+- C. Aucun effet sur la scoliose<br />
+- D. Une accentuation de l'ostéoporose sans bénéfice sur la courbure</p>
+<p><strong>Q5.</strong> Dans l'IMC spastique (quadriplégie), les courbures sont typiquement :<br />
+- A. Flexibles et facilement corrigibles<br />
+- <strong>B. Longues, en "C", pelvi-obliques, rigides — souvent associées à une hyperlordose</strong><br />
+- C. Courtes et thoraciques<br />
+- D. Identiques à la SIA</p>
+<hr />
+<h2 id="121-classification-etiologique">12.1 Classification étiologique</h2>
+<blockquote>
+<p>[MEDIA: 📊 M12-S01-001 — Tableau étiologies des scolioses neuromusculaires]</p>
+</blockquote>
+<h3 id="niveau-de-lesion-et-type-de-scoliose">Niveau de lésion et type de scoliose</h3>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Pathologies</th>
+<th>Type de courbure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Neuromusculaire haute (corticale / spinale)</strong></td>
+<td>IMC (quadriplégie, diplégie), Arnold-Chiari</td>
+<td>Longue, en C, pelvi-oblique, rigide</td>
+</tr>
+<tr>
+<td><strong>Neuromusculaire basse (moelle épinière)</strong></td>
+<td>Spina bifida, myéloméningocèle, lésion médullaire</td>
+<td>Variable, souvent lombo-sacrée</td>
+</tr>
+<tr>
+<td><strong>Myopathique</strong></td>
+<td>DMD, SMA, dystrophies musculaires</td>
+<td>Longue thoracolombaire, progression rapide</td>
+</tr>
+<tr>
+<td><strong>Paralytique acquise</strong></td>
+<td>Poliomyélite (historique), SLA, traumatisme</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="122-scoliose-dans-la-myopathie-de-duchenne-dmd">12.2 Scoliose dans la myopathie de Duchenne (DMD)</h2>
+<blockquote>
+<p>[MEDIA: 📊 M12-S02-001 — Courbe de progression CVF/Cobb dans la DMD]</p>
+</blockquote>
+<h3 id="1221-histoire-naturelle">12.2.1 Histoire naturelle</h3>
+<ul>
+<li>Prévalence des scolioses &gt; 20° chez les DMD en stade non-ambulant : <strong>80–90 %</strong> (Shapiro &amp; Specht, 1993)</li>
+<li>Apparition typique : <strong>12–16 ans</strong></li>
+<li>Progression rapide : <strong>5–15°/an</strong> une fois débutée</li>
+<li><strong>Corrélation inverse CVF/Cobb</strong> : chaque 10° de Cobb = perte de ~8 % de CVF</li>
+<li>Sans intervention : CVF &lt; 20–25 % → insuffisance respiratoire + décès prématuré</li>
+</ul>
+<h3 id="1222-impact-de-la-corticotherapie">12.2.2 Impact de la corticothérapie</h3>
+<p>La <strong>corticothérapie</strong> (prednisone 0,75 mg/kg/j, deflazacort 0,9 mg/kg/j) est le seul traitement modifiant le cours de la DMD :<br />
+- Maintien de la marche 2–4 ans supplémentaires<br />
+- <strong>Retard d'apparition de la scoliose</strong> de 2–4 ans<br />
+- <strong>Réduction de 50 %</strong> du risque d'atteindre Cobb &gt; 20°<br />
+- Effets indésirables : prise de poids, ostéoporose (DEXA annuel), cataracte, tb comportement</p>
+<h3 id="1223-fenetre-chirurgicale">12.2.3 Fenêtre chirurgicale</h3>
+<p><strong>⭐ Concept clé</strong> : La chirurgie de scoliose DMD doit être réalisée dans une fenêtre temporelle précise :</p>
+<table>
+<thead>
+<tr>
+<th>CVF</th>
+<th>Décision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>≥ 35–40 %</strong></td>
+<td>Chirurgie recommandée si Cobb &gt; 20–25° en progression</td>
+</tr>
+<tr>
+<td><strong>30–35 %</strong> (limite basse)</td>
+<td>Chirurgie encore faisable avec préparation ventilatoire intensive</td>
+</tr>
+<tr>
+<td><strong>&lt; 25–30 %</strong></td>
+<td>Risque anesthésique trop élevé — discussion VNI préopératoire, évaluation cas par cas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Préparation respiratoire préopératoire</strong> :<br />
+- Mise en place de la VNI nocturne (BiPAP) avant chirurgie si CVF &lt; 40 %<br />
+- Kinésithérapie respiratoire intensive + cough-assist (aide à la toux)<br />
+- Bronchoscopie en cas d'encombrement chronique</p>
+<h3 id="1224-technique-chirurgicale-dmd">12.2.4 Technique chirurgicale DMD</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Recommandation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveaux de fusion</strong></td>
+<td>T2/3 → sacrum (avec ancrage pelvien si obliquité pelvienne)</td>
+</tr>
+<tr>
+<td><strong>Ancrage pelvien</strong></td>
+<td>Vis iliaques bilatérales ou S2AI (sacro-alar-iliac)</td>
+</tr>
+<tr>
+<td><strong>Instrumentation</strong></td>
+<td>Tiges + vis pédiculaires — éviter les crochets (résistance moindre)</td>
+</tr>
+<tr>
+<td><strong>Greffe</strong></td>
+<td>Allogreffe + extrait osseux local</td>
+</tr>
+<tr>
+<td><strong>BMP</strong></td>
+<td>Contre-indiqué &lt; 18 ans (sarcome potentiel)</td>
+</tr>
+<tr>
+<td><strong>Durée</strong></td>
+<td>4–6h, pertes sanguines 1–3L</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Résultats</strong> :<br />
+- Correction de <strong>60–70 %</strong> de la courbure<br />
+- <strong>Stabilisation des CVF</strong> post-chirurgie (principal bénéfice)<br />
+- Amélioration de la position assise + qualité de vie</p>
+<hr />
+<h2 id="123-scoliose-dans-lamyotrophie-spinale-sma">12.3 Scoliose dans l'amyotrophie spinale (SMA)</h2>
+<h3 id="particularites-sma">Particularités SMA</h3>
+<ul>
+<li><strong>SMA type II</strong> (assis mais non-marchant) : scoliose chez <strong>100 % des patients</strong> (Russman, 2007)</li>
+<li><strong>SMA type III</strong> (marchant tardif) : scoliose chez 30–50 %</li>
+<li>Progression rapide, courbures longues, thoracolombaires</li>
+</ul>
+<h3 id="revolution-therapeutique-nusinersen-risdiplam-zolgensma">Révolution thérapeutique — Nusinersen / Risdiplam / Zolgensma</h3>
+<p>Les <strong>thérapies modifiant la maladie</strong> (spinraza, risdiplam, thérapie génique onerogen) changent l'histoire naturelle :<br />
+- Dans les formes traitées précocement : <strong>réduction significative de la scoliose</strong><br />
+- Les patients traités tôt peuvent ne pas développer de scoliose sévère → impact sur les indications chirurgicales</p>
+<p><strong>Chirurgie</strong> :<br />
+- Même principes que DMD si indication<br />
+- Attention à la faiblesse musculaire sévère : anesthésie délicate (suxamétonium CI → hyperkaliémie)<br />
+- Growing rods si &lt; 10 ans</p>
+<hr />
+<h2 id="124-scoliose-dans-linfirmite-motrice-cerebrale-imc">12.4 Scoliose dans l'infirmité motrice cérébrale (IMC)</h2>
+<h3 id="1241-epidemiologie">12.4.1 Épidémiologie</h3>
+<table>
+<thead>
+<tr>
+<th>Grade GMFCS (Palisano et al., 1997, <em>Dev Med Child Neurol</em>)</th>
+<th>Prévalence scoliose &gt; 20°</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I–II (marchant)</td>
+<td>5–15 %</td>
+</tr>
+<tr>
+<td>III (marche avec aide)</td>
+<td>20–40 %</td>
+</tr>
+<tr>
+<td><strong>IV–V</strong> (non-marchant)</td>
+<td><strong>50–75 %</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1242-caracteristiques-des-courbures-imc">12.4.2 Caractéristiques des courbures IMC</h3>
+<ul>
+<li><strong>Courbures longues en "C"</strong> de T1 à L5 ou sacrum</li>
+<li><strong>Pelvi-oblique</strong> : obliquité pelvienne = asymétrie appui ischiatique → escarres +++ chez le patient en fauteuil</li>
+<li><strong>Rigidité</strong> : souvent moins flexible que la SIA due à la spasticité</li>
+<li>Associées à une <strong>hyperlordose cervicale ou lombaire</strong> en réponse à la spasticité</li>
+</ul>
+<h3 id="1243-prise-en-charge">12.4.3 Prise en charge</h3>
+<p><strong>Corset</strong> :<br />
+- Ne corrige pas mais peut ralentir la progression<br />
+- Améliore la position assise et le confort</p>
+<p><strong>Chirurgie</strong> :<br />
+- indication si Cobb &gt; 40–50° + obliquité pelvienne significative + impact fonction<br />
+- Fusion T2–sacrum + ancrage pelvien (Galveston, S2AI)<br />
+- Complications plus fréquentes qu'en SIA : infections (10–15 %), pertes sanguines majeures<br />
+- Amélioration démontrée de : confort, position assise, escarres, soins d'hygiène</p>
+<hr />
+<h2 id="125-scoliose-et-spina-bifida">12.5 Scoliose et spina bifida</h2>
+<ul>
+<li>Prévalence scoliose &gt; 10° : 40–60 % selon le niveau de la lésion</li>
+<li>Mécanismes : paralysie asymétrique + anomalies pelvienne + malformations vertébrales associées</li>
+<li>Bilan : IRM médullaire (hydrocéphalie + Chiari associés)</li>
+<li>Fusion long segment fréquente + décompression ventriculaire préalable si HTIC</li>
+</ul>
+<hr />
+<h2 id="126-anesthesie-et-chirurgie-neuromusculaire-precautions">12.6 Anesthésie et chirurgie neuromusculaire — précautions</h2>
+<blockquote>
+<p>[MEDIA: 📊 M12-S06-001 — Tableau des précautions anesthésiques par pathologie]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Pathologie</th>
+<th>Précautions anesthésiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DMD</strong></td>
+<td>Éviter le suxamétonium (hyperkaliémie), halogénés (rhabdomyolyse, sd. similaire maligne), utiliser propofol + curares non dépolarisants</td>
+</tr>
+<tr>
+<td><strong>SMA</strong></td>
+<td>Idem + aspiration obligatoire post-op (faiblesse toux), extubation prudente</td>
+</tr>
+<tr>
+<td><strong>IMC spastique</strong></td>
+<td>Risque dysréflexie autonome si lésion &gt; T6</td>
+</tr>
+<tr>
+<td><strong>Tout NM</strong></td>
+<td>Cell-saver obligatoire, monitoring PEM/PES adapté (interprétation différente en cas de pathologie de base)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> Les scolioses neuromusculaires ont une histoire naturelle <strong>bien plus agressive</strong> que la SIA — progressive, longue, avec impact respiratoire majeur.</p>
+<p>📌 <strong>2.</strong> Dans la <strong>DMD</strong>, la fenêtre chirurgicale est CVF entre 30 et 40 % — au-delà le risque anesthésique devient prohibitif.</p>
+<p>📌 <strong>3.</strong> La <strong>fusion T2-sacrum</strong> avec ancrage pelvien est la règle dans les scolioses neuromusculaires longues (obliquité pelvienne).</p>
+<p>📌 <strong>4.</strong> La <strong>corticothérapie</strong> dans la DMD retarde la scoliose de 2–4 ans — argument pour l'initier précocement.</p>
+<p>📌 <strong>5.</strong> La chirurgie neuromusculaire est nettement <strong>plus complexe</strong> que la SIA : pertes sanguines, infections, complications respiratoires.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-10-questions">Quiz — 10 questions</h2>
+<p><strong>Q1. 🥉</strong> La prévalence de la scoliose chez les DMD non-ambulants est de :<br />
+- A. 30 %<br />
+- B. 50 %<br />
+- <strong>C. 80–90 %</strong><br />
+- D. 100 %</p>
+<p><strong>Q2. 🥉</strong> Dans le contexte peropératoire d'un patient DMD, quel curare est contre-indiqué ?<br />
+- <strong>A. Le suxamétonium</strong> (risque d'hyperkaliémie et de rhabdomyolyse)<br />
+- B. Le rocuronium<br />
+- C. Le cis-atracurium<br />
+- D. Le vécuronium</p>
+<p><strong>Q3. 🥉</strong> La fenêtre chirurgicale dans la DMD concerne une CVF :<br />
+- A. &gt; 60 %<br />
+- <strong>B. Entre 30 et 40 % de la valeur théorique</strong><br />
+- C. &lt; 20 %<br />
+- D. Peu importe la CVF</p>
+<p><strong>Q4. 🥈</strong> La correction d'une obliquité pelvienne dans une scoliose neuromusculaire nécessite impérativement :<br />
+- A. Une fusion courte L1-L4<br />
+- <strong>B. Une fusion jusqu'au sacrum avec ancrage pelvien bilatéral (vis iliaques / S2AI)</strong><br />
+- C. Un corset pelvi-lombaire<br />
+- D. Des ostéotomies pelviennes</p>
+<p><strong>Q5. 🥈</strong> Les nouvelles thérapies de la SMA (nusinersen, risdiplam) ont modifié l'histoire de la scoliose en :<br />
+- <strong>A. Réduisant significativement la progression de la scoliose dans les formes traitées précocement</strong><br />
+- B. N'ayant aucun effet sur la scoliose<br />
+- C. Aggravant la scoliose par hypertonie<br />
+- D. Permettant l'évitement systématique de la chirurgie</p>
+<p><strong>Q6. 🥈</strong> Les courbures IMC de GMFCS IV-V sont typiquement :<br />
+- A. Courtes, thoraciques, flexibles<br />
+- <strong>B. Longues en "C", pelvi-obliques, rigides</strong><br />
+- C. Multiples et équilibrées<br />
+- D. Similaires à la SIA</p>
+<p><strong>Q7. 🥇</strong> Un patient DMD de 15 ans, CVF = 38 %, Cobb T4-L2 = 48° (progression de 12° en 6 mois), GMFCS = 5. Que recommandez-vous ?<br />
+- A. Corset rigide et surveillance<br />
+- B. Attendre CVF &gt; 50 %<br />
+- <strong>C. Chirurgie dans les 3–6 mois, en urgence relative — CVF encore dans la fenêtre chirurgicale, progression rapide. Préparation respiratoire immédiate (VNI, kiné)</strong><br />
+- D. Fusion courte L1-L4 pour stabiliser</p>
+<p><strong>Q8. 🥇</strong> Le principal bénéfice documenté de la fusion T2-sacrum dans la DMD est :<br />
+- A. L'amélioration de la marche<br />
+- <strong>B. La stabilisation de la CVF (maintien de la fonction respiratoire)</strong><br />
+- C. La disparition de la douleur lombaire<br />
+- D. La récupération de la fonction des membres supérieurs</p>
+<p><strong>Q9. 💎</strong> Lors d'une fusion T2-sacrum pour scoliose IMC chez une adolescente GMFCS V, à J2 post-op, la patiente présente une bradycardie soudaine à 38 BPM + TA 170/110 lors d'un changement de pansement. Diagnostic ?<br />
+- <strong>A. Dysréflexie autonome</strong> (réflexe orthostatique inversé en réponse à un stimulus nociceptif) — arrêter le stimulus, positionner en position semi-assise, antihypertenseur si persistance<br />
+- B. Choc hémorragique<br />
+- C. Embolie pulmonaire<br />
+- D. Hyperaldostéronisme</p>
+<p><strong>Q10. 💎</strong> CVF 28 %, DMD 16 ans, Cobb 55° depuis 2 ans, parents souhaitent la chirurgie. Discussion DPC avec le team : vous recommandez ?<br />
+- <strong>A. Discussion approfondie des risques (mortalité péri-opératoire &gt; 5 %), mise en place préalable de VNI + cough assist, bilan pluridisciplinaire. Si tout optimisé et patient/famille informés, chirurgie envisageable mais à risque élevé</strong><br />
+- B. Refus formel — contre-indication absolue<br />
+- C. Chirurgie en urgence — ne pas attendre<br />
+- D. Growing rods — technique moins agressive</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Shapiro F, Specht L.</strong> The diagnosis and orthopaedic treatment of childhood spinal muscular atrophy, peripheral neuropathy, Friedreich ataxia, and arthrogryposis. <em>J Bone Joint Surg Am</em>. 1993;75(11):1699–1714</li>
+<li><strong>Palisano R, Rosenbaum P, Walter S et al.</strong> Development and reliability of a system to classify gross motor function in children with cerebral palsy. <em>Dev Med Child Neurol</em>. 1997;39(4):214–223</li>
+<li><strong>Russman BS.</strong> Spinal muscular atrophy: clinical classification and disease heterogeneity. <em>J Child Neurol</em>. 2007;22(8):946–951</li>
+<li><strong>Cervellati S et al.</strong> DMD scoliosis. <em>Spine</em>. 2004</li>
+<li><strong>Sedra F et al.</strong> Scoliosis in NMD. Review. <em>JBJS</em>. 2018</li>
+<li><strong>Galasko CS.</strong> Neuromuscular scoliosis. <em>Spine</em>. 1999</li>
+<li><strong>Birnkrant DJ et al.</strong> DMD care considerations, part 2: respiratory, cardiac, bone health, and orthopaedic management. <em>Lancet Neurol</em>. 2018;17(4):347–361</li>
+<li><strong>Mercuri E et al.</strong> Risdiplam SMA. <em>NEJM</em>. 2021</li>
+</ul>
+</div>

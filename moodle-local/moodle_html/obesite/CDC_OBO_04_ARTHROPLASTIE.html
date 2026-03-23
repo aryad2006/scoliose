@@ -1,0 +1,406 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-4-arthroplastie-chez-le-patient-obese-modules-13-15">Partie 4 — Arthroplastie chez le patient obèse (Modules 13-15)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-13-prothese-totale-de-genou-chez-lobese-indications-seuils-dimc-technique-resultats-complications">MODULE 13 : PROTHÈSE TOTALE DE GENOU CHEZ L'OBÈSE — INDICATIONS, SEUILS D'IMC, TECHNIQUE, RÉSULTATS, COMPLICATIONS</h1>
+<p><strong>Partie</strong> : IV — Arthroplastie chez le patient obèse<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 10-11</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 58 ans, IMC 42, gonarthrose tricompartimentale avancée (Kellgren-Lawrence 4), douleur EVA 8/10, périmètre de marche 200 m. Tous les traitements conservateurs ont échoué. Le patient a refusé la chirurgie bariatrique et les tentatives de perte de poids médicale ont abouti à une reprise systématique. *Faut-il refuser l'arthroplastie en raison de l'IMC ? Existe-t-il un seuil d'IMC au-delà duquel la PTG est contre-indiquée ? Quelles adaptations techniques sont nécessaires ? Quels résultats peut-on raisonnablement annoncer ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Analyser</strong> les données de la littérature sur les résultats de la PTG chez l'obèse selon les catégories d'IMC</li>
+<li><strong>Discuter</strong> la controverse sur le seuil d'IMC limitant et les recommandations des sociétés savantes</li>
+<li><strong>Adapter</strong> la technique chirurgicale aux spécificités anatomiques de l'obèse</li>
+<li><strong>Identifier</strong> les complications spécifiques et quantifier les risques accrus</li>
+<li><strong>Organiser</strong> la prise en charge périopératoire optimale</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-131-ptg-et-obesite-donnees-epidemiologiques-et-resultats-fonctionnels">Section 13.1 — PTG et obésité : données épidémiologiques et résultats fonctionnels</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Épidémiologie</strong> : environ 50-60% des patients recevant une PTG sont obèses (IMC ≥ 30) ; environ 20-25% ont un IMC ≥ 35 ; environ 8-10% ont un IMC ≥ 40 (données registres nationaux australien AOANJRR, suédois SKAR, américain AJRR)</li>
+<li><strong>Résultats fonctionnels</strong> : les patients obèses tirent un bénéfice absolu de l'arthroplastie (amélioration significative de la douleur et de la fonction) mais les scores fonctionnels postopératoires restent inférieurs à ceux des normopondéraux à IMC équivalent de suivi (Singh et al., <em>JBJS Am</em>, 2011 ; Amin et al., <em>Clin Orthop Relat Res</em>, 2006)</li>
+<li><strong>Satisfaction</strong> : la satisfaction globale est comparable entre obèses et non-obèses — les patients obèses partent d'un niveau de handicap plus sévère et, malgré des scores postopératoires absolus inférieurs, l'amélioration relative est comparable</li>
+<li><strong>Gradation par IMC</strong> :</li>
+<li>IMC 30-34,9 (obésité classe I) : résultats proches des normopondéraux, risque de complications légèrement accru</li>
+<li>IMC 35-39,9 (obésité classe II) : résultats fonctionnels corrects mais taux de complications nettement augmenté</li>
+<li>IMC ≥ 40 (obésité morbide) : résultats fonctionnels inférieurs, taux de complications 2-3× plus élevé (Kerkhoffs et al., <em>Acta Orthop</em>, 2012)</li>
+<li>IMC ≥ 50 (super-obésité) : données très limitées, taux de complications très élevé, survie de l'implant réduite</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO13-S01-001 | 📊 INFOGRAPHIE | Résultats de la PTG par catégorie d'IMC — scores fonctionnels, satisfaction, complications | Graphique à barres |<br />
+| MOBO13-S01-002 | 📊 INFOGRAPHIE | Proportion de patients obèses dans les registres d'arthroplastie — données internationales | Graphique circulaire |</p>
+<h3 id="section-132-controverse-sur-le-seuil-dimc-faut-il-refuser-la-ptg-aux-obeses">Section 13.2 — Controverse sur le seuil d'IMC : faut-il refuser la PTG aux obèses ?</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Position AAOS (2013)</strong> : recommandation modérée de retarder l'arthroplastie élective chez les patients avec IMC &gt; 40 — recommandation basée sur l'augmentation du taux de complications</li>
+<li><strong>Évolution des positions</strong> : les recommandations basées uniquement sur l'IMC sont de plus en plus critiquées — l'IMC est un critère grossier qui ne prend pas en compte la composition corporelle, la distribution de la graisse (viscérale vs sous-cutanée), la sarcopénie, ni les comorbidités individuelles</li>
+<li><strong>Arguments pour un seuil strict</strong> :</li>
+<li>Taux de complications (infection, révision, complication systémique) augmenté avec l'IMC</li>
+<li>Responsabilité médico-légale en cas de complication chez un patient à haut risque</li>
+<li>Encourager la perte de poids préopératoire pour améliorer les résultats</li>
+<li>Meilleur rapport coût-efficacité</li>
+<li><strong>Arguments contre un seuil strict</strong> :</li>
+<li>Discrimination — refuser un traitement efficace sur un critère non modifiable à court terme</li>
+<li>Le patient obèse bénéficie de l'arthroplastie (amélioration de la qualité de vie, même si les scores absolus sont inférieurs)</li>
+<li>La perte de poids préopératoire est difficile à obtenir (95% de rechute à 5 ans avec le régime seul) — imposer une perte de poids comme condition d'accès peut être irréaliste</li>
+<li>Le report de la chirurgie expose le patient à une dégradation fonctionnelle et une qualité de vie altérée pendant l'attente</li>
+<li>Certaines études ne montrent pas de différence significative dans le taux de révision à long terme entre obèses et normopondéraux (méta-analyse de Kerkhoffs et al., 2012 — résultats variables selon les études)</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse active</strong> : il n'y a actuellement pas de consensus international sur un seuil d'IMC absolu pour refuser l'arthroplastie. La tendance est vers une évaluation individualisée intégrant l'IMC, les comorbidités, l'état nutritionnel, la motivation du patient et l'optimisation préopératoire, plutôt qu'un refus catégorique basé sur un chiffre unique d'IMC.</p>
+</blockquote>
+<ul>
+<li><strong>Approche pragmatique</strong> : optimisation préopératoire multimodale (perte de poids si possible, correction des comorbidités, pré-habilitation) + décision partagée avec le patient informé des risques accrus + adaptation de la technique chirurgicale + surveillance postopératoire renforcée</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO13-S02-001 | 📊 INFOGRAPHIE | Arguments pour et contre un seuil d'IMC — tableau de la controverse | Tableau balance |<br />
+| MOBO13-S02-002 | 📐 SCHÉMA | Approche d'évaluation individualisée — algorithme décisionnel pré-PTG chez l'obèse | Algorithme |</p>
+<h3 id="section-133-adaptations-techniques-de-la-ptg-chez-lobese">Section 13.3 — Adaptations techniques de la PTG chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Voie d'abord</strong> : l'accès articulaire est rendu difficile par les tissus mous épais (pannicule adipeux de la cuisse et de la jambe) — incision plus longue, rétraction plus difficile, visibilité réduite</li>
+<li>Voie parapatellaire médiale : standard, fonctionne chez la plupart des obèses</li>
+<li>Voie midvastus ou subvastus : possibles mais plus difficiles chez l'obèse en raison de la couverture musculaire réduite</li>
+<li>L'utilisation de rétracteurs de Hofmann profonds et d'écarteurs spécifiques est souvent nécessaire</li>
+<li>L'assistant doit être positionné pour maintenir les tissus mous écartés en permanence</li>
+<li><strong>Exposition</strong> : la mobilisation rotulienne peut être difficile — le pannicule abdominal peut recouvrir le champ opératoire en flexion ; certains chirurgiens utilisent un « tablier chirurgical » ou un bandage pour rétracter le pannicule abdominal ; positionnement : flexion à 90° du genou en peropératoire nécessitant un cale-pied robuste</li>
+<li><strong>Coupes osseuses</strong> : les repères anatomiques peropératoires sont plus difficiles à identifier — la navigation assistée par ordinateur ou les guides personnalisés (PSI) peuvent améliorer la précision des coupes chez l'obèse, bien que les études ne montrent pas toujours de bénéfice sur les résultats cliniques (Thienpont et al., <em>Bone Joint J</em>, 2014)</li>
+<li><strong>Implants</strong> : pas de nécessité systématique d'implants spécifiques mais :</li>
+<li>L'insert tibial plus épais et/ou plus contraint peut être nécessaire si la stabilité ligamentaire est insuffisante</li>
+<li>Les plateaux tibiaux de grande taille sont parfois nécessaires</li>
+<li>Les implants à fixation cimentée restent le standard — la fixation non cimentée est une option valide si la qualité osseuse le permet</li>
+<li><strong>Chirurgie robotique</strong> : des données émergentes suggèrent que la chirurgie assistée par robot peut améliorer la précision de l'alignement chez l'obèse en compensant les difficultés de visibilité et de repérage — études en cours</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO13-S03-001 | 🎬 ANIMATION | Technique de PTG chez l'obèse — voie d'abord, exposition, gestion des tissus mous | Animation chirurgicale |<br />
+| MOBO13-S03-002 | 📷 IMAGE | Exposition chirurgicale chez l'obèse — rétraction tissulaire, visibilité, repères | Photos peropératoires |<br />
+| MOBO13-S03-003 | 📊 INFOGRAPHIE | Adaptations techniques — checklist du chirurgien pour la PTG de l'obèse | Checklist |</p>
+<h3 id="section-134-complications-specifiques-de-la-ptg-chez-lobese">Section 13.4 — Complications spécifiques de la PTG chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Infection du site opératoire (ISO)</strong> : risque multiplié par 2 à 4 chez les obèses — multifactoriel : hématome dans les tissus mous épais (espace mort), hypoperfusion des tissues adipeux, diabète et immunosuppression, contamination bactérienne (plis cutanés, intertrigo pré-existant) ; taux d'infection profonde (prothétique) : environ 2-4% chez les obèses morbides vs 0,5-1% chez les normopondéraux (Namba et al., <em>J Arthroplasty</em>, 2005)</li>
+<li><strong>Complication thromboembolique</strong> : risque de TVP/EP augmenté — l'obésité est un facteur de risque indépendant de maladie veineuse thromboembolique (score de Caprini : obésité = 1 point) ; doses prophylactiques d'HBPM souvent ajustées au poids (enoxaparine posologie poids-dépendante)</li>
+<li><strong>Problèmes de cicatrisation</strong> : déhiscence, nécrose de lambeau cutané, hématome — les tissus mous de l'obèse sont plus vulnérables en raison de la tension cutanée accrue, de la microcirculation altérée et du diabète ; drainage prolongé</li>
+<li><strong>Raideur articulaire</strong> : les obèses récupèrent souvent moins d'amplitude de flexion — les tissus mous volumineux limitent mécaniquement la flexion ; la flexion moyenne postopératoire est d'environ 105-110° chez l'obèse vs 115-125° chez le normopondéral</li>
+<li><strong>Révision</strong> : taux de révision à 10 ans plus élevé chez les obèses — principalement pour infection (cause n°1) et usure/descellement aseptique (surcharge mécanique chronique) ; certains registres rapportent un taux de révision à 10 ans d'environ 6-8% chez les obèses morbides vs 3-4% chez les normopondéraux</li>
+<li><strong>Fractures périprothétiques</strong> : plus fréquentes chez l'obèse (chutes + sollicitation accrue) — les fractures supracondyliennes fémorales péri-PTG sont techniquement plus difficiles à traiter chez l'obèse</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO13-S04-001 | 📊 INFOGRAPHIE | Complications de la PTG selon l'IMC — infection, thrombose, révision, raideur | Graphique de risque relatif |<br />
+| MOBO13-S04-002 | 📐 SCHÉMA | Mécanisme de l'infection periprosthétique chez l'obèse — espace mort, hématome, hypoperfusion | Schéma physiopathologique |<br />
+| MOBO13-S04-003 | 📷 IMAGE | Complications cicatricielles post-PTG chez l'obèse — déhiscence, nécrose | Photos cliniques |</p>
+<h3 id="points-cles-du-module-13">Points clés du Module 13</h3>
+<ol>
+<li>Environ 50-60% des patients recevant une PTG sont obèses — c'est le quotidien de l'orthopédiste</li>
+<li>Le patient obèse bénéficie de la PTG (amélioration significative) mais les scores absolus restent inférieurs</li>
+<li>Il n'y a pas de consensus international sur un seuil d'IMC absolu pour refuser la PTG</li>
+<li>L'approche recommandée est l'évaluation individualisée + optimisation préopératoire + décision partagée</li>
+<li>L'infection du site opératoire est la complication majeure — risque ×2-4 chez l'obèse morbide</li>
+<li>La technique chirurgicale doit être adaptée : incision plus longue, rétraction tissulaire, précision des coupes</li>
+<li>La raideur postopératoire est plus fréquente — la flexion moyenne est réduite de 10-15°</li>
+<li>Le taux de révision à 10 ans est environ doublé chez l'obèse morbide</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (prévalence de l'obésité en PTG, principales complications, résultats fonctionnels)</li>
+<li>3 QCM Argent (controverse du seuil d'IMC, adaptations techniques, taux d'infection comparative)</li>
+<li>2 QCM Or (approche d'évaluation individualisée, gestion peropératoire de l'exposition)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 44, DT2, programmé PTG — plan complet de prise en charge incluant optimisation, discussion du seuil, adaptation chirurgicale et surveillance)</li>
+<li>1 QROC : « Quels arguments avanceriez-vous à un patient obèse morbide qui insiste pour une PTG malgré les risques accrus ? Et quels arguments pour un report ? Développez l'approche de décision partagée. »</li>
+</ul>
+<hr />
+<h1 id="module-14-prothese-totale-de-hanche-chez-lobese-voies-dabord-implants-luxation-complications">MODULE 14 : PROTHÈSE TOTALE DE HANCHE CHEZ L'OBÈSE — VOIES D'ABORD, IMPLANTS, LUXATION, COMPLICATIONS</h1>
+<p><strong>Partie</strong> : IV — Arthroplastie chez le patient obèse<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 10-11</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 62 ans, IMC 40, coxarthrose droite invalidante. Le chirurgien prévoit une PTH par voie antérieure. L'anesthésiste s'inquiète du positionnement sur une table orthopédique. Le chirurgien hésite entre une tête 32 mm standard et une tête 36 mm avec cupule double mobilité pour réduire le risque de luxation. *Comment l'obésité influence-t-elle le choix de la voie d'abord, du type d'implant et le risque de luxation ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Adapter</strong> le choix de la voie d'abord de PTH en fonction de l'IMC et de la morphologie du patient</li>
+<li><strong>Justifier</strong> l'utilisation de la double mobilité chez l'obèse pour réduire le risque de luxation</li>
+<li><strong>Quantifier</strong> les risques spécifiques de la PTH chez l'obèse (luxation, infection, TVP, fracture)</li>
+<li><strong>Connaître</strong> les difficultés techniques spécifiques de la PTH chez l'obèse</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-141-voie-dabord-de-pth-chez-lobese">Section 14.1 — Voie d'abord de PTH chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Voie postérieure (Kocher-Langenbeck, Moore)</strong> :</li>
+<li>Traditionnellement la plus utilisée chez l'obèse — bonne exposition, pas de limitation par le pannicule abdominal</li>
+<li>Risque de luxation postérieure : classiquement plus élevé que les voies antérieures (environ 3-5% vs 1-2%), même si la réparation capsulaire et des rotateurs externes a réduit ce risque</li>
+<li>Chez l'obèse : le risque de luxation est encore augmenté en raison de la difficulté de positionnement des implants et de l'amplitude de flexion-adduction-rotation médiale post-opératoire</li>
+<li>
+<p>Positionnement en décubitus latéral : relativement bien toléré chez l'obèse</p>
+</li>
+<li>
+<p><strong>Voie antérieure directe (Hueter)</strong> :</p>
+</li>
+<li>Popularité croissante — inter-nerveuse, inter-musculaire, récupération rapide</li>
+<li>Chez l'obèse : le pannicule abdominal et la cuisse volumineuse peuvent limiter l'accès antérieur, surtout chez l'homme avec obésité androïde ; la table orthopédique standard peut ne pas supporter les obèses morbides (limite de poids ~180 kg pour certaines tables)</li>
+<li>Certaines études rapportent un taux de complications plus élevé par voie antérieure chez les super-obèses (IMC ≥ 50) — fractures peropératoires, conversion en voie postérieure</li>
+<li>
+<p>Les avantages de récupération rapide de la voie antérieure sont moins prononcés chez l'obèse (SFHG, 2020)</p>
+</li>
+<li>
+<p><strong>Voie antéro-latérale (Hardinge, Watson-Jones modifiée)</strong> :</p>
+</li>
+<li>Compromise raisonnable — décubitus dorsal ou latéral, bon accès chez le patient de forte corpulence</li>
+<li>
+<p>Certains chirurgiens la préfèrent pour l'obèse morbide</p>
+</li>
+<li>
+<p><strong>Recommandation</strong> : le choix de la voie d'abord doit être guidé par l'expérience du chirurgien plus que par le dogme — il n'y a pas de supériorité démontrable d'une voie sur une autre chez l'obèse en termes de résultats à long terme</p>
+</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO14-S01-001 | 🎬 ANIMATION | Voies d'abord de la PTH chez l'obèse — antérieure, postérieure, antéro-latérale — avantages et difficultés | Animation comparative |<br />
+| MOBO14-S01-002 | 📊 INFOGRAPHIE | Comparaison des voies d'abord chez l'obèse — accès, luxation, récupération, limites | Tableau comparatif |</p>
+<h3 id="section-142-implants-et-double-mobilite-chez-lobese">Section 14.2 — Implants et double mobilité chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Risque de luxation chez l'obèse</strong> : multiplié par 2 à 3 par rapport au normopondéral (Haverkamp et al., <em>Acta Orthop</em>, 2011) — mécanismes : difficulté technique de positionnement optimal des implants (antéversion et inclinaison du cotyle, offset fémoral), tissus mous volumineux interposés, lèvre d'impingement réduite, faiblesse musculaire abducteurs</li>
+<li><strong>Cupule double mobilité (DM)</strong> :</li>
+<li>Concept français (Bousquet, 1974) : deux articulations — une petite articulation entre la tête prothétique et un insert mobile en polyéthylène, et une grande articulation entre l'insert et le métal-back</li>
+<li>Augmente l'amplitude de mouvement avant le phénomène d'impingement → réduit drastiquement le risque de luxation (taux de luxation &lt; 1% dans la plupart des séries, y compris chez les patients à risque)</li>
+<li>Recommandation croissante d'utiliser la DM chez l'obèse — notamment dans les recommandations françaises (SOFCOT, SFHG) et les consensus internationaux pour les patients à haut risque de luxation</li>
+<li>Données à long terme des registres : les inquiétudes initiales sur l'usure accélérée du PE de la DM ne se sont pas confirmées avec les PE hautement réticulés (HXLPE)</li>
+<li><strong>Taille de la tête fémorale</strong> : tête ≥ 36 mm recommandée chez l'obèse pour augmenter la stabilité intrinsèque — la distance tête-col (« head-neck ratio ») augmente avec le diamètre de la tête, repoussant le point d'impingement</li>
+<li><strong>Tige fémorale</strong> : offset latéralisé souvent nécessaire pour restaurer le bras de levier abducteur (offset global) — l'obèse a souvent un col fémoral plus large ; les tiges modulaires permettent d'ajuster l'offset indépendamment de la taille</li>
+<li><strong>Fixation</strong> : cimentée, non cimentée ou hybride — pas de recommandation spécifique liée à l'obésité ; la fixation cimentée offre un ancrage immédiat qui peut être avantageux si l'os est de qualité médiocre</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO14-S02-001 | 🎬 ANIMATION | Mécanisme de la cupule double mobilité — double articulation, anti-luxation | Animation 3D clé |<br />
+| MOBO14-S02-002 | 📐 SCHÉMA | Impingement et luxation — rôle du diamètre de tête et de l'offset | Schéma biomécanique |<br />
+| MOBO14-S02-003 | 📊 INFOGRAPHIE | Taux de luxation par type d'implant chez l'obèse — standard vs DM vs grande tête | Graphique comparatif |</p>
+<h3 id="section-143-complications-specifiques-de-la-pth-chez-lobese">Section 14.3 — Complications spécifiques de la PTH chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Luxation</strong> : complication la plus spécifique — taux d'environ 3-8% chez l'obèse morbide par voie postérieure sans DM vs &lt; 1% avec DM (Bouchet et al., <em>Int Orthop</em>, 2011) ; le surpoids crée un bras de levier de luxation : la cuisse « lourde » en flexion-adduction-rotation médiale génère des moments de force dépassant la stabilité intrinsèque de l'articulation</li>
+<li><strong>Infection</strong> : le risque d'infection précoce et chronique est doublé chez l'obèse — les facteurs sont similaires à la PTG (espace mort, hématome, diabète, hypoperfusion tissulaire) ; le taux d'infection profonde est d'environ 2-5% chez l'obèse morbide vs 0,5-1% chez le normopondéral</li>
+<li><strong>Maladie thromboembolique</strong> : risque augmenté — prophylaxie adaptée au poids, mobilisation précoce essentielle mais souvent plus difficile</li>
+<li><strong>Fracture peropératoire</strong> : risque augmenté, surtout par voie antérieure (extension fémorale pour l'extraction avec des tissus mous contraignants) — les fractures fémorales peropératoires chez l'obèse nécessitent souvent une adaptation (cerclage, tige longue)</li>
+<li><strong>Descellement aseptique</strong> : les données à long terme sont variables — certains registres rapportent un taux de révision légèrement augmenté à 15-20 ans chez les obèses, d'autres ne trouvent pas de différence significative ; la surcharge mécanique chronique peut théoriquement accélérer l'usure du PE et le descellement, mais les PE hautement réticulés de dernière génération semblent résister</li>
+<li><strong>Ossifications hétérotopiques</strong> : certaines études rapportent une incidence accrue chez l'obèse, possiblement liée à l'inflammation chronique</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO14-S03-001 | 📊 INFOGRAPHIE | Complications de la PTH chez l'obèse — luxation, infection, fracture, thrombose | Risques quantifiés |<br />
+| MOBO14-S03-002 | 📐 SCHÉMA | Bras de levier de luxation chez l'obèse — poids de la cuisse, moment de force, impingement | Schéma biomécanique |<br />
+| MOBO14-S03-003 | 🎬 ANIMATION | Simulation ObesSim© — comparaison stabilité PTH standard vs double mobilité chez l'obèse | Simulation |</p>
+<h3 id="points-cles-du-module-14">Points clés du Module 14</h3>
+<ol>
+<li>Le risque de luxation de PTH est multiplié par 2-3 chez l'obèse — la double mobilité le réduit à &lt; 1%</li>
+<li>La voie d'abord doit être guidée par l'expérience du chirurgien — pas de supériorité démontrée d'une voie chez l'obèse</li>
+<li>La voie antérieure peut être limitée par le pannicule abdominal (obésité androïde)</li>
+<li>Une tête fémorale ≥ 36 mm augmente la stabilité intrinsèque</li>
+<li>L'offset fémoral doit souvent être latéralisé pour restaurer le bras de levier abducteur</li>
+<li>L'infection de PTH est doublée chez l'obèse — mêmes mécanismes que pour la PTG</li>
+<li>La double mobilité est de plus en plus recommandée de première intention chez l'obèse</li>
+<li>Les PE hautement réticulés semblent résister à la surcharge mécanique chronique</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (risque de luxation chez l'obèse, principe de la DM, voie d'abord la plus permissive)</li>
+<li>3 QCM Argent (mécanisme de luxation chez l'obèse, indication de la DM, taux d'infection)</li>
+<li>2 QCM Or (choix d'implant complet, gestion d'une voie antérieure chez l'obèse morbide)</li>
+<li>1 QCM Diamant (cas clinique : patiente IMC 45, ATCD luxation PTH controlatérale, coxarthrose controlatérale — choix de voie d'abord, implant, mesures anti-luxation, protocole périopératoire)</li>
+<li>1 QROC : « Justifiez le choix d'une cupule double mobilité de première intention chez un patient obèse morbide recevant une PTH. Argumentez avec la biomécanique et les données de la littérature. »</li>
+</ul>
+<hr />
+<h1 id="module-15-arthroplastie-de-revision-et-cas-complexes-chez-lobese">MODULE 15 : ARTHROPLASTIE DE RÉVISION ET CAS COMPLEXES CHEZ L'OBÈSE</h1>
+<p><strong>Partie</strong> : IV — Arthroplastie chez le patient obèse<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 13-14</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 63 ans, IMC 43, porteur d'une PTG droite depuis 7 ans, consulte pour une douleur progressive du genou depuis 6 mois. La biologie montre CRP 25 mg/L, VS 40 mm. La ponction retrouve 12 000 leucocytes/mm³ avec 85% de PNN. Le diagnostic d'infection périprothétique chronique est confirmé. *Comment gérer la révision d'arthroplastie chez un obèse morbide avec infection ? Quelles sont les stratégies à un temps vs deux temps ? Comment les difficultés techniques sont-elles amplifiées par l'obésité ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les causes de révision les plus fréquentes chez l'obèse (infection, descellement, luxation)</li>
+<li><strong>Adapter</strong> la stratégie chirurgicale de révision aux contraintes de l'obésité (exposition, défects osseux, couverture tissulaire)</li>
+<li><strong>Gérer</strong> l'infection périprothétique chez l'obèse (stratégie à un temps vs deux temps, antibiothérapie)</li>
+<li><strong>Anticiper</strong> les complications spécifiques de la chirurgie de révision chez l'obèse</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-151-causes-de-revision-specifiques-a-lobese">Section 15.1 — Causes de révision spécifiques à l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Infection périprothétique</strong> : cause de révision n°1 chez l'obèse morbide (représente environ 30-40% des révisions chez l'obèse vs 15-20% dans la population générale) — l'obésité multiplie par 2-4 le risque d'infection profonde ; les germes les plus fréquents : <em>Staphylococcus aureus</em>, <em>Staphylococcus epidermidis</em>, <em>Enterobacteriaceae</em> (ces dernières plus fréquentes chez l'obèse que chez le normopondéral — contamination périnéale facilitée par les plis cutanés)</li>
+<li><strong>Descellement aseptique mécanique</strong> : la surcharge chronique accélère le descellement — en PTG, le descellement du plateau tibial (résorption osseuse de stress) est le plus fréquent ; en PTH, le descellement cotyloïdien (migration supéro-latérale) et le descellement fémoral</li>
+<li><strong>Instabilité / luxation</strong> (surtout PTH) : cause n°1 de révision précoce de PTH dans la population générale, encore plus fréquente chez l'obèse ; conversion en DM si non utilisée en primo-implantation</li>
+<li><strong>Usure du polyéthylène</strong> : mécanisme théorique de révision à long terme — la surcharge augmente le taux d'usure volumétrique ; les PE hautement réticulés ont considérablement réduit ce problème</li>
+<li><strong>Fracture périprothétique</strong> : cause de révision non planifiée — les obèses tombent plus souvent et les fractures sont plus complexes</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO15-S01-001 | 📊 INFOGRAPHIE | Causes de révision d'arthroplastie chez l'obèse vs population générale | Graphique comparatif |<br />
+| MOBO15-S01-002 | 📐 SCHÉMA | Mécanisme de descellement par surcharge — résorption osseuse de stress, migration | Schéma biomécanique |</p>
+<h3 id="section-152-gestion-de-linfection-periprothetique-chez-lobese">Section 15.2 — Gestion de l'infection périprothétique chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Diagnostic</strong> : les critères MSIS/ICM (2018) s'appliquent de la même manière — CRP élevée, ponction articulaire (leucocytes &gt; 3000/mm³ pour infection chronique de PTG, &gt; 80% PNN), culture microbiologique, alpha-défensine synoviale (sensibilité/spécificité &gt; 95%), histologie (&gt; 5 PNN par champ à fort grossissement dans ≥ 5 champs — critère de Feldman)</li>
+<li><strong>Stratégie à un temps (changement en un temps)</strong> : lavage, ablation de l'implant et du ciment, débridement agressif, réimplantation dans la même intervention + antibiothérapie — avantage : une seule chirurgie (morbi-mortalité réduite chez l'obèse pour qui les chirurgies multiples sont plus risquées) ; pratiquée principalement en Europe pour les infections chroniques à germe identifié et sensible</li>
+<li><strong>Stratégie à deux temps</strong> : 1er temps = ablation de l'implant, débridement, spacer cimenté aux antibiotiques ; inter-étape = antibiothérapie 6-12 semaines ; 2e temps = réimplantation définitive — avantage : taux d'éradication plus élevé dans les cas difficiles ; inconvénient : deux chirurgies chez un patient à haut risque anesthésique</li>
+<li><strong>DAIR (Debridement, Antibiotics, and Implant Retention)</strong> : pour les infections aiguës (&lt; 4 semaines) ou hématogènes précoces — lavage arthroscopique ou à ciel ouvert, changement de l'insert en PE, conservation des implants bien fixés + antibiothérapie prolongée ; taux de succès environ 50-70%, plus faible chez l'obèse (récidive plus fréquente)</li>
+<li><strong>Antibiothérapie</strong> : les doses doivent être ajustées au poids chez l'obèse — la pharmacocinétique est modifiée (volume de distribution augmenté pour les molécules hydrophiles, clairance augmentée) ; les antibiotiques lipophiles (fluoroquinolones, rifampicine) ont une meilleure pénétration dans les tissus adipeux</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO15-S02-001 | 📐 SCHÉMA | Algorithme de prise en charge de l'infection périprothétique chez l'obèse — DAIR vs 1 temps vs 2 temps | Algorithme décisionnel |<br />
+| MOBO15-S02-002 | 📷 IMAGE | Spacer en ciment aux antibiotiques — fabrication, positionnement | Photo chirurgicale |<br />
+| MOBO15-S02-003 | 📊 INFOGRAPHIE | Adaptation des doses d'antibiotiques chez l'obèse — poids de dosage, concentrations | Tableau pharmacologique |</p>
+<h3 id="section-153-difficultes-techniques-de-la-chirurgie-de-revision-chez-lobese">Section 15.3 — Difficultés techniques de la chirurgie de révision chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Exposition</strong> : encore plus difficile qu'en primo-implantation — adhérences, fibrose, tissus mous cicatriciels épais ; nécessité parfois d'un quadriceps snip ou d'une ostéotomie de la tubérosité tibiale antérieure (TTA) pour l'exposition de la PTG de révision</li>
+<li><strong>Extraction des implants</strong> : les implants cimentés bien fixés sont plus difficiles à extraire quand la visibilité est limitée — risque de fracture peropératoire augmenté</li>
+<li><strong>Reconstruction des défects osseux</strong> : les défects osseux sont comblés par allogreffes, augments métalliques (tantale/trabaculaire), cônes ou manchons — la qualité osseuse de l'obèse (ostéoporose post-bariatrique, carence en vitamine D) peut compromettre l'ostéo-intégration</li>
+<li><strong>Contrainte des implants de révision</strong> : les implants de révision à charnière (hinge) ou à haute contrainte (CCK — <em>constrained condylar knee</em>) sont plus souvent nécessaires chez l'obèse en raison de l'insuffisance ligamentaire et de la nécessité de stabilité intrinsèque maximale</li>
+<li><strong>Couverture tissulaire</strong> : les défects de couverture cutanée sont un problème majeur chez l'obèse — les lambeaux de gastrocnémien médial sont parfois nécessaires pour couvrir la PTG antérieure ; la consultation d'un chirurgien plasticien peut être nécessaire</li>
+<li><strong>Durée opératoire</strong> : significativement allongée chez l'obèse (exposition + extraction + reconstruction) — impact sur le risque anesthésique, le saignement et l'hypothermie</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO15-S03-001 | 🎬 ANIMATION | Techniques de révision de PTG chez l'obèse — exposition, extraction, reconstruction | Animation chirurgicale |<br />
+| MOBO15-S03-002 | 📐 SCHÉMA | Implants de révision — CCK, charnière, cônes d'augmentation en tantale | Schéma d'implants |<br />
+| MOBO15-S03-003 | 📷 IMAGE | Lambeau de gastrocnémien médial pour couverture de PTG | Photo chirurgicale |</p>
+<h3 id="points-cles-du-module-15">Points clés du Module 15</h3>
+<ol>
+<li>L'infection représente 30-40% des causes de révision chez l'obèse vs 15-20% en population générale</li>
+<li>Le choix entre stratégie à un temps et deux temps dépend du germe, de la fixation des implants et du risque anesthésique du patient</li>
+<li>Le DAIR a un taux de succès plus faible chez l'obèse (récidive plus fréquente)</li>
+<li>Les doses d'antibiotiques doivent être ajustées au poids chez l'obèse</li>
+<li>L'exposition chirurgicale en révision nécessite souvent un quadriceps snip ou une ostéotomie de la TTA</li>
+<li>Les implants à haute contrainte (CCK, charnière) sont plus souvent nécessaires chez l'obèse</li>
+<li>La couverture tissulaire est un défi — les lambeaux de gastrocnémien peuvent être nécessaires</li>
+<li>La collaboration multidisciplinaire (infectiologue, chirurgien plasticien, anesthésiste) est essentielle</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (cause de révision principale chez l'obèse, critères diagnostiques d'infection, définition du DAIR)</li>
+<li>3 QCM Argent (stratégie un temps vs deux temps, adaptation des antibiotiques, implants de révision)</li>
+<li>2 QCM Or (algorithme décisionnel d'infection chez l'obèse, gestion des défects osseux)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 45, infection chronique de PTG à <em>S. aureus</em> métiR, diabète, insuffisance rénale — stratégie complète)</li>
+<li>1 QROC : « Comparez les avantages et inconvénients des stratégies à un temps et à deux temps pour l'infection de PTG chez un obèse morbide. Quel protocole recommanderiez-vous et pourquoi ? »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-iv-modules-13-15">Références bibliographiques — Partie IV (Modules 13-15)</h2>
+<ol>
+<li>Amin AK, Patton JT, Cook RE, et al. Does obesity influence the clinical outcome at five years following total knee replacement for osteoarthritis? <em>J Bone Joint Surg Br</em>. 2006;88(3):335-340.</li>
+<li>Bouchet R, Mercier N, Saragaglia D. Posterior approach and dislocation rate: a 213 total hip replacements case-control study comparing the dual mobility cup with a conventional 28-mm metal head/polyethylene prosthesis. <em>Orthop Traumatol Surg Res</em>. 2011;97(1):2-7.</li>
+<li>Haverkamp D, Klinkenbijl MN, Somford MP, et al. Obesity in total hip arthroplasty — does it really matter? <em>Acta Orthop</em>. 2011;82(4):417-422.</li>
+<li>Kerkhoffs GM, Servien E, Dunn W, et al. The influence of obesity on the complication rate and outcome of total knee arthroplasty. <em>J Bone Joint Surg Am</em>. 2012;94(20):1839-1844.</li>
+<li>Namba RS, Paxton L, Fithian DC, Stone ML. Obesity and perioperative morbidity in total hip and total knee arthroplasty patients. <em>J Arthroplasty</em>. 2005;20(7 Suppl 3):46-50.</li>
+<li>Singh JA, Gabriel SE, Lewallen DG. Higher body mass index is not associated with worse pain outcomes after primary or revision total knee arthroplasty. <em>J Arthroplasty</em>. 2011;26(3):366-374.</li>
+<li>Thienpont E, Fennema P, Price A. Can technology improve alignment during knee arthroplasty. <em>Knee</em>. 2014;21(Suppl 1):S21-S28.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

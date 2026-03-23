@@ -1,0 +1,356 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-17-complications-chirurgicales-en-chirurgie-rachidienne">MODULE 17 — COMPLICATIONS CHIRURGICALES EN CHIRURGIE RACHIDIENNE</h1>
+<p><strong>Partie VII — Techniques chirurgicales</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 16</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>3 mois après sa chirurgie, Sophie revient en urgence avec fièvre 39°C, douleur dorsale intense, CRP 280. La cicatrice semble normale en surface. → Que faire ?</p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Infection du site opératoire (ISO) • Infection profonde post-op • Germe Staphylococcus aureus • MRSA • Débridement-lavage-maintien du matériel (DLMM) • Ablation de matériel infecté • Pseudarthrose rachidienne • Déficit neurologique postopératoire • Epidural hematoma • Adjacent level disease • Cônes médullaires • Dural tear (brèche durale) • LCR fistule • Delirium post-op • DVT / TEP (thrombose/embolie)</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les principales complications précoces et tardives de la chirurgie rachidienne (Bloom : Connaissance)</li>
+<li><strong>Classer</strong> les infections du site opératoire selon la profondeur et le timing (Bloom : Analyse)</li>
+<li><strong>Décrire</strong> la prise en charge d'un hématome épidural postopératoire (Bloom : Application)</li>
+<li><strong>Expliquer</strong> les facteurs de risque de pseudarthrose et sa prévention (Bloom : Compréhension)</li>
+<li><strong>Planifier</strong> la stratégie de reprise chirurgicale en cas d'infection profonde (Bloom : Évaluation)</li>
+</ol>
+<hr />
+<h2 id="171-complications-peroperatoires">17.1 Complications peropératoires</h2>
+<h3 id="1711-deficit-neurologique-peroperatoire">17.1.1 Déficit neurologique peropératoire</h3>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Mécanisme</th>
+<th>Prévention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brèche pédiculaire</strong></td>
+<td>Vis en dehors du pédicule</td>
+<td>Triggered EMG + navigation</td>
+</tr>
+<tr>
+<td><strong>Manipulation médullaire</strong></td>
+<td>Mauvaise manœuvre, traction</td>
+<td>Monitoring PES/PEM, décision douce</td>
+</tr>
+<tr>
+<td><strong>Ischémie médullaire</strong></td>
+<td>Ligature des artères segmentaires</td>
+<td>Éviter ligature bilateral, neuromonitoring</td>
+</tr>
+<tr>
+<td><strong>Distraction excessive</strong></td>
+<td>Correction trop rapide</td>
+<td>Correction progressive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alerte PES/PEM peropératoire</strong> (voir Module 8) :<br />
+- Arrêt immédiat → causes systémiques → desserrage → wake-up test.</p>
+<h3 id="1712-breche-durale">17.1.2 Brèche durale</h3>
+<ul>
+<li><strong>Prévalence</strong> : 3–8 % (chirurgies primaires) ; 10–15 % (révisions)</li>
+<li><strong>Diagostic</strong> : Écoulement aqueux clair, hernie de sac dural</li>
+<li><strong>Traitement</strong> :</li>
+<li>Suture directe si possible (fil non résorbable 4/0 étanche)</li>
+<li>Patch de colle biologique + fat graft si inaccessible</li>
+<li>Fermeture étanche obligatoire (pression de confirmation)</li>
+<li>Décubitus dorsal post-op 24–48h</li>
+</ul>
+<h3 id="1713-lesion-vasculaire">17.1.3 Lésion vasculaire</h3>
+<ul>
+<li><strong>Voie antérieure</strong> : artère ou veine iliaque — urgence vasculaire (0,1 %)</li>
+<li><strong>Voie postérieure</strong> : artère ou veine segmentaire — saignement contrôlable habituellement</li>
+</ul>
+<hr />
+<h2 id="172-complications-postoperatoires-precoces-j0j30">17.2 Complications postopératoires précoces (J0–J30)</h2>
+<h3 id="1721-hematome-epidural-post-operatoire">17.2.1 Hématome épidural post-opératoire</h3>
+<blockquote>
+<p><strong>Urgence chirurgicale absolue</strong></p>
+</blockquote>
+<ul>
+<li><strong>Incidence</strong> : 0,5–1 %</li>
+<li><strong>Tableau</strong> : Parésie ou paralysie progressive des membres inférieurs dans les 6–24h post-op (pic J1)</li>
+<li><strong>Diagnostic</strong> : Clinique + IRM urgente (ou reprise bloc si délai &gt; 8h)</li>
+<li><strong>Traitement</strong> : Reprise chirurgicale en urgence dans les 6–8h (délai = pronostic)</li>
+</ul>
+<h3 id="1722-infection-du-site-operatoire">17.2.2 Infection du site opératoire</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Timing</th>
+<th>Profondeur</th>
+<th>Fréquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Superficielle</strong></td>
+<td>J0–J30</td>
+<td>Jusqu'à fascia</td>
+<td>2–3 %</td>
+</tr>
+<tr>
+<td><strong>Profonde</strong></td>
+<td>J0–J90</td>
+<td>Profonde / sur matériel</td>
+<td>1–3 % (SIA) ; 5–10 % (NM)</td>
+</tr>
+<tr>
+<td><strong>Tardive</strong></td>
+<td>&gt; J90</td>
+<td>Biofilm sur implants</td>
+<td>1–2 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Germes</strong> :<br />
+- S. aureus SASM/MRSA : 40–60 % (Pull ter Gunne et al., 2010, <em>Spine</em>)<br />
+- Staphylococcus epidermidis (biofilm) : 20–30 % (Pull ter Gunne et al., 2010, <em>Spine</em>)<br />
+- Bacilles Gram négatifs (surtout neuromusculaire) : 10–15 %</p>
+<p><strong>Facteurs de risque</strong> :<br />
+- IMC élevé, diabète, dénutrition, corticothérapie, durée opératoire &gt; 4h<br />
+- Profil neuromusculaire, Duchenne, SMA</p>
+<p><strong>Prise en charge infection profonde précoce (&lt; 3 mois)</strong> :<br />
+1. Débridement-lavage-maintien du matériel (DLMM) — si &lt; 3 mois et fusion non démontrée<br />
+2. Cultures peropératoires multiples (× 5)<br />
+3. Antibiothérapie ciblée prolongée (6–12 semaines IV puis oral)<br />
+4. Cicatrisation par seconde intention ou lambeau (plasticien)<br />
+5. Si matériel impossible à maintenir → ablation + antibio + remise de matériel différée</p>
+<p><strong>Prise en charge infection tardive (&gt; 3 mois)</strong> :<br />
+- Ablation du matériel si fusion solide + antibiothérapie prolongée</p>
+<p><strong>Prévention</strong> :<br />
+- Antibioprophylaxie (céfazoline 2g IV dans l'heure avant incision)<br />
+- Vancomycine locale topique (powder) sur la plage osseuse (réduction iso profonde documentée)<br />
+- Préparation cutanée chlorhexidine<br />
+- Minimiser la durée opératoire<br />
+- Glycémie &lt; 11 mmol/L peropératoire</p>
+<h3 id="1723-syndrome-de-queue-de-cheval-ou-deficit-radiculaire">17.2.3 Syndrome de queue de cheval ou déficit radiculaire</h3>
+<ul>
+<li>Hématome épidural (traité ci-dessus)</li>
+<li>Vis mal positionnée compromettant une racine → reprise si symptomatique</li>
+<li>Rétraction radiculaire excessive → symptômes transitoires en général</li>
+</ul>
+<h3 id="1724-complications-thrombo-emboliques">17.2.4 Complications thrombo-emboliques</h3>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Fréquence</th>
+<th>Prévention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DVT profonde</td>
+<td>10–30 % (Dearborn et al., 1999, <em>Spine</em>) (sans prophylaxie)</td>
+<td>HBPM + bas de contention + lever précoce</td>
+</tr>
+<tr>
+<td>Embolie pulmonaire</td>
+<td>0,5–1 %</td>
+<td>Idem</td>
+</tr>
+<tr>
+<td>TEP mortelle</td>
+<td>0,1 %</td>
+<td>Idem</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HBPM</strong> (enoxaparine, tinzaparine) : début à H12–24 post-op si hémostase correcte.</p>
+<hr />
+<h2 id="173-complications-a-moyen-terme-112-mois">17.3 Complications à moyen terme (1–12 mois)</h2>
+<h3 id="1731-pseudarthrose">17.3.1 Pseudarthrose</h3>
+<p><strong>Définition</strong> : Absence de fusion osseuse solide à 12–24 mois → mobilité résiduelle des implants → fatigue → rupture de tige.</p>
+<p><strong>Facteurs de risque</strong> :<br />
+- Tabagisme (× 2–3)<br />
+- Ostéoporose<br />
+- Dénutrition / insuffisance vitamine D<br />
+- Greffe insuffisante<br />
+- Infection sur matériel (biofilm)<br />
+- Correction excessive (stress trop élevé sur les implants)</p>
+<p><strong>Diagnostic</strong> :<br />
+- Radio dynamique (flex/ext) → mobilité entre two niveaux<br />
+- Scanner (sans injection) → visualisation travées osseuses</p>
+<p><strong>Traitement</strong> :<br />
+- Révision avec nouvelle greffe + BMP-2 si adulte + instruments plus rigides<br />
+- Ablation matériel si infection associée</p>
+<h3 id="1732-rupture-de-tige">17.3.2 Rupture de tige</h3>
+<ul>
+<li><strong>Conséquence</strong> de la pseudarthrose le plus souvent</li>
+<li>Parfois fatigue de matériel (implant défectueux)</li>
+<li>Révision si douleur ou perte de correction</li>
+</ul>
+<hr />
+<h2 id="174-complications-tardives-1-an">17.4 Complications tardives (&gt; 1 an)</h2>
+<h3 id="1741-adjacent-level-disease-ald">17.4.1 Adjacent Level Disease (ALD)</h3>
+<ul>
+<li><strong>Définition</strong> : Dégénérescence accélérée des disques et articulations adjacents à la fusion</li>
+<li><strong>Prévalence</strong> : 20–30 % à 10 ans (symptomatique : 10–15 %)</li>
+<li><strong>Mécanisme</strong> : Augmentation des contraintes de flexion aux niveaux limitrophes</li>
+<li><strong>Traitement</strong> : Extension de la fusion si invalidant</li>
+</ul>
+<h3 id="1742-pjk-et-djk-voir-modules-8-et-10">17.4.2 PJK et DJK (voir Modules 8 et 10)</h3>
+<hr />
+<h2 id="175-cas-clinique-sophie-suite">17.5 Cas clinique — Sophie (suite)</h2>
+<blockquote>
+<p><strong>Données</strong> : J+3 mois, fièvre 39°C, CRP 280, douleur dorsale intense, cicatrice normale.</p>
+</blockquote>
+<p><strong>Diagnostic clinique</strong> : Infection profonde du site opératoire post-scoliose probable</p>
+<p><strong>Conduite</strong> :<br />
+1. Bilan bio urgent : NFS, CRP, hémocultures<br />
+2. <strong>IRM rachis</strong> → confirme l'infection (hypersignal T2 périimplant, abcès)<br />
+3. Reprise chirurgicale en urgence : <strong>DLMM</strong> (débridement-lavage-maintien du matériel)<br />
+4. 5 biopsies peropératoires pour cultures (dont anaérobies)<br />
+5. Antibiothérapie IV probabiliste (céfazoline + rifampicine si suspicion staph) → adaptation à l'antibiogramme<br />
+6. Durée totale antibiothérapie : 6 semaines IV + 6 semaines orale</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> L'<strong>hématome épidural</strong> est l'urgence postopératoire absolue — reprise dans les 6–8h pour préserver la fonction neurologique.</p>
+<p>📌 <strong>2.</strong> L'infection profonde précoce (&lt; 3 mois) se traite par <strong>DLMM</strong> (maintien du matériel) + antibiothérapie prolongée.</p>
+<p>📌 <strong>3.</strong> La <strong>pseudarthrose</strong> est la principale cause de rupture de tige — le tabac est son facteur de risque majeur.</p>
+<p>📌 <strong>4.</strong> La <strong>vancomycine topique</strong> (poudre intraopératoire) réduit les infections profondes après arthrodèse.</p>
+<p>📌 <strong>5.</strong> L'<strong>ALD</strong> est inévitable à long terme — limiter la fusion au minimum nécessaire.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-8-questions">Quiz — 8 questions</h2>
+<p><strong>Q1. 🥉</strong> L'urgence absolue detectable dans les premières 24h post-arthrodèse et nécessitant reprise immédiate est :<br />
+- <strong>A. Hématome épidural compressif</strong> — parésie ou paralysie progressive<br />
+- B. Infection superficielle<br />
+- C. Brèche durale<br />
+- D. DVT symptomatique</p>
+<p><strong>Q2. 🥉</strong> Le délai maximal de reprise chirurgicale pour un hématome épidural est de :<br />
+- <strong>A. 6–8 heures</strong><br />
+- B. 24 heures<br />
+- C. 12 heures<br />
+- D. 48 heures si inconfort</p>
+<p><strong>Q3. 🥈</strong> Le traitement de référence d'une infection profonde rachidienne &lt; 3 mois sur matériel est :<br />
+- <strong>A. DLMM (débridement lavage maintien du matériel) + antibiothérapie prolongée</strong><br />
+- B. Ablation systématique du matériel<br />
+- C. Antibiotiques seuls<br />
+- D. Lavage sans chirurgie (drainage)</p>
+<p><strong>Q4. 🥈</strong> Le principal facteur de risque modifiable de pseudarthrose post-arthrodèse est :<br />
+- A. L'âge<br />
+- <strong>B. Le tabagisme</strong><br />
+- C. Le sexe féminin<br />
+- D. Le type de courbure</p>
+<p><strong>Q5. 🥈</strong> L'Adjacent Level Disease survient chez quel pourcentage de patients à 10 ans ?<br />
+- A. 5 %<br />
+- B. 10 %<br />
+- <strong>C. 20–30 %</strong><br />
+- D. 50 %</p>
+<p><strong>Q6. 🥇</strong> Une brèche durale est survenue pendant la fusion T4-L2 de Sophie. Le sac dural a été suturé étanche. Quel suivi postopératoire est nécessaire ?<br />
+- <strong>A. Décubitus dorsal à plat 24–48h (réduire la pression du LCR sur la suture) + drainage aspiratif retiré immédiatement (pression négative favorise la fuite)</strong><br />
+- B. Position déclive 30° permanent<br />
+- C. Corticoïdes IV<br />
+- D. IRM urgente systématique</p>
+<p><strong>Q7. 🥇</strong> La vancomycine topique (poudre intraopératoire) a démontré une réduction des infections profondes. La dose recommandée est :<br />
+- A. 500 mg<br />
+- <strong>B. 0,5–2 g appliqués directement sur la plage osseuse avant fermeture</strong><br />
+- C. 5 g<br />
+- D. Injectée dans les muscles</p>
+<p><strong>Q8. 💎</strong> Un patient présente une rupture de tige CoCr à 18 mois d'une fusion L3-S1. Scanner : aucun cal osseux visible entre L4 et L5. Diagnostic et prise en charge ?<br />
+- <strong>A. Pseudarthrose L4-L5 avec rupture de tige par fatigue. Révision chirurgicale : ablation de la tige cassée + nouveau montage avec greffe abondante ± BMP-2 (adulte) + correction de tout facteur favorisant (tabac, nutrition, vitamine D)</strong><br />
+- B. Rupture simple de matériel — changer la tige<br />
+- C. Adjacent level disease — extension de la fusion<br />
+- D. Infection tardive — antibiothérapie seule</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Pull ter Gunne AF, Cohen DB.</strong> Incidence, prevalence, and analysis of risk factors for surgical site infection following adult spinal surgery. <em>Spine</em>. 2010;35(13):1323–1328</li>
+<li><strong>Dearborn JT, Hu SS, Tribus CB, Bradford DS.</strong> Thromboembolic complications after major thoracolumbar spine surgery. <em>Spine</em>. 1999;24(14):1471–1476</li>
+<li><strong>Weinstein MA, McCabe JP, Cammisa FP.</strong> Postoperative spinal wound infection: a review of 2,391 consecutive index procedures. <em>J Spinal Disord</em>. 2000;13(5):422–426</li>
+<li><strong>Lonstein JE et al.</strong> Wound infection in spine surgery. <em>Spine</em>. 1999</li>
+</ul>
+</div>

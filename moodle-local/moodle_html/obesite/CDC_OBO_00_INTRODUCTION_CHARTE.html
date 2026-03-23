@@ -1,0 +1,1429 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-complete-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION COMPLÈTE OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-0-introduction-generale-charte-graphique-et-architecture-pedagogique">Partie 0 — Introduction générale, Charte graphique et Architecture pédagogique</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Statut</strong> : Document fondateur — Cahier des charges complet<br />
+<strong>Plateforme</strong> : VERTEX© — Formation médicale en ligne<br />
+<strong>Formation</strong> : Obésité et Orthopédie — <em>Obesity and Orthopaedic Surgery</em></p>
+<hr />
+<h1 id="table-des-matieres-partie-0">TABLE DES MATIÈRES — PARTIE 0</h1>
+<ol>
+<li><a href="#1-synthèse-exécutive">Synthèse exécutive</a></li>
+<li><a href="#2-public-cible-et-prérequis">Public cible et prérequis</a></li>
+<li><a href="#3-architecture-pédagogique-globale">Architecture pédagogique globale</a></li>
+<li><a href="#4-charte-graphique-unifiée--plateforme-vertex">Charte graphique unifiée — Plateforme VERTEX©</a></li>
+<li><a href="#5-code-couleur--formation-obésité-et-orthopédie">Code couleur — Formation Obésité et Orthopédie</a></li>
+<li><a href="#6-règles-décriture-du-contenu">Règles d'écriture du contenu</a></li>
+<li><a href="#7-structure-des-fichiers-du-cdc">Structure des fichiers du CDC</a></li>
+<li><a href="#8-correspondance-inter-formations">Correspondance inter-formations</a></li>
+</ol>
+<hr />
+<h1 id="1-synthese-executive">1. SYNTHÈSE EXÉCUTIVE</h1>
+<h2 id="11-ce-quest-cette-formation">1.1 Ce qu'est cette formation</h2>
+<p>La <strong>Formation Obésité et Orthopédie</strong> est un programme e-learning complet destiné aux chirurgiens orthopédistes, anesthésistes-réanimateurs, médecins nutritionnistes, chirurgiens bariatriques, rééducateurs (MPR) et kinésithérapeutes, couvrant <strong>l'intégralité</strong> du sujet — de l'épidémiologie et la physiopathologie de l'obésité (biologie du tissu adipeux, syndrome métabolique, neuroendocrinologie de la régulation pondérale, comorbidités systémiques, pharmacothérapie et chirurgie bariatrique) aux conséquences orthopédiques complètes (impact biomécanique sur toutes les articulations, arthrose métabolique, arthroplastie chez l'obèse, chirurgie rachidienne, traumatologie, gestion périopératoire, rééducation adaptée, obésité pédiatrique, éthique et innovations).</p>
+<p>Elle constitue la <strong>cinquième formation</strong> de la plateforme VERTEX©, après les Formations Scoliose (🔵), PTG (🟢), IOA (🟤) et Tendinites (🩶). Les formations partagent :</p>
+<ul>
+<li>La même <strong>plateforme LMS</strong> (architecture, authentification, évaluation)</li>
+<li>La même <strong>charte graphique</strong> de base (typographie, mise en page, icônes)</li>
+<li>Les mêmes <strong>règles d'écriture pédagogique</strong> (cas cliniques, mnémoniques, niveaux de profondeur)</li>
+<li>Les mêmes <strong>standards d'évaluation</strong> (Bronze → Diamant, cas cliniques progressifs)</li>
+<li>Le même <strong>moteur de simulation</strong> VERTEX© (adapté : ObesSim© pour la modélisation biomécanique de la surcharge pondérale, la simulation de la planification arthroplastique chez l'obèse, la simulation des complications périopératoires)</li>
+</ul>
+<h2 id="12-perimetre-de-la-formation-obesite-et-orthopedie">1.2 Périmètre de la formation Obésité et Orthopédie</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>25 modules organisés en 8 parties</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>~80-90 heures de contenu</td>
+</tr>
+<tr>
+<td><strong>Niveau</strong></td>
+<td>Fondamental → Intermédiaire → Expert</td>
+</tr>
+<tr>
+<td><strong>Spécialités</strong></td>
+<td>Chirurgie orthopédique, anesthésie-réanimation, nutrition médicale, chirurgie bariatrique, médecine physique et de réadaptation (MPR), kinésithérapie, endocrinologie</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Obésité</strong></td>
+<td>Épidémiologie mondiale, physiopathologie (neuroendocrinologie, génétique, épigénétique), biologie du tissu adipeux (adipokines, inflammation chronique), syndrome métabolique, comorbidités (cardiovasculaires, respiratoires, métaboliques, psychologiques), évaluation complète du patient obèse, prise en charge nutritionnelle et diététique, activité physique adaptée, thérapie comportementale, pharmacothérapie (agonistes GLP-1, orlistat, naltrexone-bupropion, sémaglutide, tirzépatide), chirurgie bariatrique (sleeve gastrectomie, bypass Roux-en-Y, bypass en oméga, anneau gastrique, switch duodénal, SADI-S), suivi post-bariatrique</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Orthopédie</strong></td>
+<td>Impact biomécanique sur toutes les articulations, arthrose mécanique et métabolique, arthroplastie (PTG/PTH) chez l'obèse et l'obèse morbide, chirurgie du rachis chez l'obèse, traumatologie spécifique, tendinopathies et pathologies des tissus mous, pathologie du pied et de la cheville, gestion périopératoire complète (anesthésie, thromboprophylaxie, infection, cicatrisation), rééducation adaptée, obésité pédiatrique et conséquences musculosquelettiques, patient post-bariatrique en chirurgie orthopédique, éthique et décision partagée, innovations (IA, robotique, biomatériaux)</td>
+</tr>
+<tr>
+<td><strong>Simulation</strong></td>
+<td>ObesSim© — module VERTEX© dédié (modélisation biomécanique de la surcharge pondérale, simulation de planification arthroplastique chez l'obèse, simulation de gestion des complications périopératoires, calcul de risque personnalisé)</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>Certificat VERTEX© Obésité-Orthopédie, éligible DPC/CME</td>
+</tr>
+<tr>
+<td><strong>Langue</strong></td>
+<td>Français (traduction EN/ES/AR prévue)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-objectifs-pedagogiques-globaux">1.3 Objectifs pédagogiques globaux</h2>
+<p>À l'issue de cette formation, le praticien sera capable de :</p>
+<ol>
+<li><strong>Définir</strong> l'obésité selon les critères OMS (IMC, tour de taille), connaître les classifications (grades I à III, super-obésité) et les données épidémiologiques mondiales et nationales (OMS, <em>Lancet</em>, 2016 ; NCD Risk Factor Collaboration, <em>Lancet</em>, 2024)</li>
+<li><strong>Expliquer</strong> la physiopathologie intégrée de l'obésité : régulation neuroendocrinienne de la balance énergétique (leptine, ghréline, axe hypothalamique), rôle du tissu adipeux comme organe endocrine (Trayhurn &amp; Beattie, <em>Proc Nutr Soc</em>, 2001), inflammation chronique de bas grade et concept d'arthrose métabolique (Berenbaum et al., <em>Nat Rev Rheumatol</em>, 2013)</li>
+<li><strong>Évaluer</strong> de manière globale un patient obèse en orthopédie : bilan des comorbidités, évaluation nutritionnelle, scores de risque (ASA, STOP-BANG, Obesity Surgery Mortality Risk Score), planification multidisciplinaire</li>
+<li><strong>Analyser</strong> l'impact biomécanique de la surcharge pondérale sur l'appareil locomoteur : forces articulaires multipliées (genou : 4-6× le poids corporel par pas), accélération de l'arthrose, déséquilibre sagittal rachidien, tendinopathies chroniques</li>
+<li><strong>Prescrire</strong> une prise en charge médicale complète de l'obésité : programme nutritionnel individualisé, activité physique adaptée, thérapie comportementale, pharmacothérapie appropriée (agonistes GLP-1, combinaisons), indication de chirurgie bariatrique</li>
+<li><strong>Gérer</strong> les spécificités périopératoires du patient obèse en chirurgie orthopédique : anesthésie adaptée (intubation difficile, ventilation, pharmacocinétique), thromboprophylaxie renforcée, prévention de l'infection du site opératoire, optimisation de la cicatrisation</li>
+<li><strong>Réaliser</strong> une arthroplastie (PTG, PTH) chez le patient obèse en maîtrisant les adaptations techniques (voies d'abord, implants, équipement), les complications spécifiques et les résultats attendus</li>
+<li><strong>Planifier</strong> une chirurgie rachidienne chez l'obèse en intégrant les contraintes d'accès, le déséquilibre sagittal, le risque de pseudarthrose et les techniques adaptées (MIS, vis augmentées)</li>
+<li><strong>Prendre en charge</strong> les fractures et les traumatismes chez le patient obèse en tenant compte des spécificités biomécaniques, radiologiques et de fixation</li>
+<li><strong>Organiser</strong> la rééducation postopératoire du patient obèse : mobilisation précoce, exercices en décharge, balnéothérapie, activité physique adaptée (APA), prise en charge multidisciplinaire</li>
+<li><strong>Identifier</strong> les conséquences musculosquelettiques de l'obésité pédiatrique (épiphysiolyse fémorale supérieure, genu valgum, pied plat) et adapter la prise en charge</li>
+<li><strong>Coordonner</strong> le parcours du patient post-bariatrique nécessitant une chirurgie orthopédique : séquence temporelle, gestion des carences nutritionnelles, surveillance osseuse</li>
+<li><strong>Appliquer</strong> les principes éthiques dans la décision chirurgicale chez l'obèse : consentement éclairé, lutte contre le <em>weight bias</em>, seuils d'IMC et décision partagée</li>
+</ol>
+<hr />
+<h1 id="2-public-cible-et-prerequis">2. PUBLIC CIBLE ET PRÉREQUIS</h1>
+<h2 id="21-public-cible">2.1 Public cible</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Public</th>
+<th>Modules obligatoires</th>
+<th>Modules optionnels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveau 1 — Fondamental</strong></td>
+<td>Internes orthopédie, anesthésie, chirurgie générale, kinésithérapeutes</td>
+<td>Modules 1-5, 10-11, 13, 20-22</td>
+<td>Modules 6-9, 23-25</td>
+</tr>
+<tr>
+<td><strong>Niveau 2 — Intermédiaire</strong></td>
+<td>Résidents séniors, CCA, chirurgiens orthopédistes en début de pratique, anesthésistes, rééducateurs</td>
+<td>Modules 1-22</td>
+<td>Modules 23-25</td>
+</tr>
+<tr>
+<td><strong>Niveau 3 — Expert</strong></td>
+<td>Chirurgiens orthopédistes spécialisés, chirurgiens bariatriques, médecins nutritionnistes, chercheurs</td>
+<td>Modules 1-25 (intégralité)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-prerequis">2.2 Prérequis</h2>
+<ul>
+<li>Diplôme de médecine, de chirurgie ou de kinésithérapie (ou en cours d'obtention)</li>
+<li>Connaissances de base en anatomie de l'appareil locomoteur</li>
+<li>Connaissances de base en métabolisme et endocrinologie (souhaitées — les Modules 2-3 reprennent les fondamentaux)</li>
+<li>Connaissances de base en arthroplastie et chirurgie rachidienne (souhaitées — les modules rappellent les bases)</li>
+<li>Formations VERTEX© PTG et PTH recommandées en complément (liens croisés proposés)</li>
+</ul>
+<hr />
+<h1 id="3-architecture-pedagogique-globale">3. ARCHITECTURE PÉDAGOGIQUE GLOBALE</h1>
+<h2 id="31-organisation-en-8-parties-25-modules">3.1 Organisation en 8 parties — 25 modules</h2>
+<pre><code>FORMATION OBÉSITÉ ET ORTHOPÉDIE
+│
+├── PARTIE I — L'OBÉSITÉ : FONDAMENTAUX MÉDICAUX (Modules 1-5)
+│   ├── Module 1  : Épidémiologie, définitions et classifications — De l'OMS à la super-obésité
+│   ├── Module 2  : Physiopathologie de l'obésité — Neuroendocrinologie, génétique et environnement
+│   ├── Module 3  : Tissu adipeux et inflammation — Adipokines, syndrome métabolique et inflammation chronique
+│   ├── Module 4  : Comorbidités de l'obésité — Cardiovasculaires, respiratoires, métaboliques, psychologiques
+│   └── Module 5  : Évaluation globale du patient obèse — Bilan clinique, biologique et fonctionnel
+│
+├── PARTIE II — TRAITEMENT DE L'OBÉSITÉ (Modules 6-9)
+│   ├── Module 6  : Prise en charge nutritionnelle et diététique — Régimes, déficits caloriques, micronutriments
+│   ├── Module 7  : Activité physique et thérapie comportementale — Programmes adaptés, aspects psychologiques
+│   ├── Module 8  : Pharmacothérapie de l'obésité — Des suppresseurs d'appétit aux agonistes GLP-1
+│   └── Module 9  : Chirurgie bariatrique — Sleeve, bypass, techniques, complications et suivi
+│
+├── PARTIE III — IMPACT BIOMÉCANIQUE ET ARTICULAIRE (Modules 10-12)
+│   ├── Module 10 : Biomécanique de la surcharge pondérale — Forces articulaires, marche et équilibre sagittal
+│   ├── Module 11 : Arthrose et obésité — Arthrose mécanique vs métabolique, rôle des adipokines
+│   └── Module 12 : Tendinopathies, fasciite plantaire et pathologies des tissus mous chez l'obèse
+│
+├── PARTIE IV — ARTHROPLASTIE CHEZ LE PATIENT OBÈSE (Modules 13-15)
+│   ├── Module 13 : PTG chez l'obèse — Indications, seuils d'IMC, technique, résultats et complications
+│   ├── Module 14 : PTH chez l'obèse — Voies d'abord, implants, double mobilité et complications
+│   └── Module 15 : Arthroplastie de révision et cas complexes chez l'obèse
+│
+├── PARTIE V — RACHIS ET OBÉSITÉ (Modules 16-17)
+│   ├── Module 16 : Rachis dégénératif et obésité — Discopathie, sténose et équilibre sagittal
+│   └── Module 17 : Chirurgie rachidienne chez l'obèse — Voies d'abord, complications et techniques adaptées
+│
+├── PARTIE VI — TRAUMATOLOGIE ET OBÉSITÉ (Modules 18-19)
+│   ├── Module 18 : Fractures chez l'obèse — Épidémiologie, particularités et ostéosynthèse adaptée
+│   └── Module 19 : Traumatismes des tissus mous et complications traumatologiques chez l'obèse
+│
+├── PARTIE VII — GESTION PÉRIOPÉRATOIRE (Modules 20-22)
+│   ├── Module 20 : Anesthésie et réanimation du patient obèse — Intubation, ventilation et pharmacocinétique
+│   ├── Module 21 : Complications périopératoires — Infection, thromboembolie, cicatrisation et complications respiratoires
+│   └── Module 22 : Rééducation et récupération du patient obèse opéré — RAAC, APA et balnéothérapie
+│
+└── PARTIE VIII — POPULATIONS SPÉCIFIQUES, ÉTHIQUE ET INNOVATIONS (Modules 23-25)
+    ├── Module 23 : Obésité pédiatrique et conséquences orthopédiques — Épiphysiolyse, genu valgum, pied plat
+    ├── Module 24 : Patient post-bariatrique en orthopédie — Carences, ostéoporose et séquence chirurgicale
+    └── Module 25 : Éthique, décision partagée et innovations — Seuils d'IMC, weight bias, IA et recherche
+</code></pre>
+<h2 id="32-structure-standardisee-de-chaque-module">3.2 Structure standardisée de chaque module</h2>
+<p>Chaque module suit le <strong>même format</strong> que les autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>) :</p>
+<ol>
+<li><strong>En-tête</strong> : titre, partie, durée, niveau, prérequis</li>
+<li><strong>Accroche clinique</strong> : vignette patient ou mise en situation réelle (3-5 lignes)</li>
+<li><strong>Objectifs d'apprentissage</strong> : 3-7 objectifs formulés avec un verbe d'action (taxonomie de Bloom)</li>
+<li><strong>Sections de contenu</strong> : 3-6 sections principales</li>
+<li><strong>Points clés</strong> : 5-8 messages essentiels</li>
+<li><strong>Auto-évaluation</strong> : 5-10 questions (QCM, QROC, cas clinique court)</li>
+<li><strong>Références bibliographiques</strong> : sources vérifiables</li>
+</ol>
+<h2 id="33-parcours-praticien-deblocage-sequentiel">3.3 Parcours praticien — Déblocage séquentiel</h2>
+<pre><code>Module 1 → Module 2 → Module 3 → Module 4 → Module 5
+                                                  ↓
+          Module 6 → Module 7 → Module 8 → Module 9
+                                                ↓
+               Module 10 → Module 11 → Module 12
+                                           ↓
+               Module 13 → Module 14 → Module 15
+                                           ↓
+                    Module 16 → Module 17
+                                    ↓
+                    Module 18 → Module 19
+                                    ↓
+               Module 20 → Module 21 → Module 22
+                                           ↓
+               Module 23 → Module 24 → Module 25
+</code></pre>
+<ul>
+<li>Score ≥ 70% requis pour passer au module suivant</li>
+<li>2 tentatives autorisées par quiz</li>
+<li>Feedback immédiat avec explication et référence bibliographique</li>
+</ul>
+<h2 id="34-systeme-de-quiz-difficulte-progressive-identique-aux-autres-formations">3.4 Système de quiz — Difficulté progressive (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Icône</th>
+<th>Type de question</th>
+<th>% du quiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bronze</strong></td>
+<td>🥉</td>
+<td>Connaissance pure (rappel, définitions)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Argent</strong></td>
+<td>🥈</td>
+<td>Compréhension et application (cas simples)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Or</strong></td>
+<td>🥇</td>
+<td>Analyse et raisonnement clinique (cas complexes)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>💎</td>
+<td>Synthèse et décision thérapeutique multi-facteurs</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="4-charte-graphique-unifiee-plateforme-vertex">4. CHARTE GRAPHIQUE UNIFIÉE — PLATEFORME VERTEX©</h1>
+<h2 id="41-identite-visuelle-de-la-plateforme">4.1 Identité visuelle de la plateforme</h2>
+<p>La plateforme VERTEX© repose sur une identité visuelle <strong>commune</strong> à toutes les formations, garantissant la cohérence et la reconnaissance de marque.</p>
+<h3 id="411-typographie-identique-aux-autres-formations">4.1.1 Typographie (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Police</th>
+<th>Poids</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titres de partie (H1)</strong></td>
+<td>Montserrat</td>
+<td>Bold (700)</td>
+<td>32-36px</td>
+</tr>
+<tr>
+<td><strong>Titres de module (H2)</strong></td>
+<td>Montserrat</td>
+<td>SemiBold (600)</td>
+<td>26-30px</td>
+</tr>
+<tr>
+<td><strong>Titres de section (H3)</strong></td>
+<td>Montserrat</td>
+<td>Medium (500)</td>
+<td>22-24px</td>
+</tr>
+<tr>
+<td><strong>Sous-sections (H4)</strong></td>
+<td>Open Sans</td>
+<td>SemiBold (600)</td>
+<td>18-20px</td>
+</tr>
+<tr>
+<td><strong>Corps de texte</strong></td>
+<td>Open Sans</td>
+<td>Regular (400)</td>
+<td>16px, line-height 1.6</td>
+</tr>
+<tr>
+<td><strong>Légendes / notes</strong></td>
+<td>Open Sans</td>
+<td>Light (300)</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><strong>Code / formules</strong></td>
+<td>JetBrains Mono</td>
+<td>Regular</td>
+<td>14px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="412-mise-en-page-identique-aux-autres-formations">4.1.2 Mise en page (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Spécification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Largeur max contenu</strong></td>
+<td>900px (centré)</td>
+</tr>
+<tr>
+<td><strong>Marges latérales</strong></td>
+<td>60px minimum (responsive)</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-sections</strong></td>
+<td>48px</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-paragraphes</strong></td>
+<td>24px</td>
+</tr>
+<tr>
+<td><strong>Bordures d'encadrés</strong></td>
+<td>3px solid, border-radius 8px</td>
+</tr>
+<tr>
+<td><strong>Ombres</strong></td>
+<td>box-shadow: 0 2px 8px rgba(0,0,0,0.08)</td>
+</tr>
+<tr>
+<td><strong>Coins arrondis</strong></td>
+<td>8px (encadrés), 12px (cartes), 50% (avatars)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="413-iconographie-identique-aux-autres-formations-specifique">4.1.3 Iconographie (identique aux autres formations + spécifique)</h3>
+<table>
+<thead>
+<tr>
+<th>Icône</th>
+<th>Usage</th>
+<th>Emoji / SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td>Pertinence clinique</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td>Danger / Critique</td>
+<td>Rouge</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Approfondissement</td>
+<td>Bleu</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>Astuce / Mnémonique</td>
+<td>Vert clair</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td>Expert</td>
+<td>Violet</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td>Réflexion</td>
+<td>Jaune</td>
+</tr>
+<tr>
+<td>🧊</td>
+<td>Modèle 3D</td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td>📐</td>
+<td>Schéma</td>
+<td>Gris-bleu</td>
+</tr>
+<tr>
+<td>🎬</td>
+<td>Animation / Vidéo</td>
+<td>Rouge-orange</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Infographie</td>
+<td>Vert</td>
+</tr>
+<tr>
+<td>📷</td>
+<td>Photo clinique</td>
+<td>Gris</td>
+</tr>
+<tr>
+<td>⚖️</td>
+<td>Balance pondérale / Éthique (spécifique OBO)</td>
+<td>Violet foncé</td>
+</tr>
+<tr>
+<td>🍽️</td>
+<td>Nutrition / Diététique (spécifique OBO)</td>
+<td>Vert olive</td>
+</tr>
+<tr>
+<td>🏋️</td>
+<td>Activité physique / Rééducation (spécifique OBO)</td>
+<td>Bleu-vert</td>
+</tr>
+<tr>
+<td>💊</td>
+<td>Pharmacothérapie (spécifique OBO)</td>
+<td>Rose</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-code-couleur-formation-obesite-et-orthopedie">5. CODE COULEUR — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="51-palette-principale-formation-obesite-et-orthopedie">5.1 Palette principale — Formation Obésité et Orthopédie 🟫</h2>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Violet foncé (Métabolique)</td>
+<td><code>#6C3483</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Violet lumineux</td>
+<td><code>#8E44AD</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Lavande claire</td>
+<td><code>#BB8FCE</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé</td>
+<td><code>#FAFBFC</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Violet très pâle</td>
+<td><code>#F4ECF7</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+<tr>
+<td><strong>Succès</strong></td>
+<td>Vert médical</td>
+<td><code>#27AE60</code></td>
+<td>Validations, scores positifs (commun)</td>
+</tr>
+<tr>
+<td><strong>Alerte</strong></td>
+<td>Orange métabolique</td>
+<td><code>#E67E22</code></td>
+<td>Alertes spécifiques (complication, risque élevé)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Justification du violet foncé</strong> : Le violet foncé évoque la complexité métabolique et endocrinienne de l'obésité, la transversalité de cette pathologie qui touche tous les systèmes organiques. Il se distingue clairement du bleu cobalt (Scoliose 🔵), du vert (PTG 🟢), du rouge bordeaux (IOA 🟤) et du gris-bleu acier (Tendinites 🩶), permettant une identification instantanée de la formation.</p>
+</blockquote>
+<h3 id="elements-communs-partages-entre-toutes-les-formations">Éléments communs (partagés entre toutes les formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Texte principal</strong></td>
+<td>Noir doux</td>
+<td><code>#2C3E50</code></td>
+<td>Corps de texte, toutes formations</td>
+</tr>
+<tr>
+<td><strong>Texte secondaire</strong></td>
+<td>Gris moyen</td>
+<td><code>#7F8C8D</code></td>
+<td>Légendes, métadonnées</td>
+</tr>
+<tr>
+<td><strong>Fond neutre</strong></td>
+<td>Gris très clair</td>
+<td><code>#F7F9F9</code></td>
+<td>Fond de tableaux alternés</td>
+</tr>
+<tr>
+<td><strong>Bordures</strong></td>
+<td>Gris clair</td>
+<td><code>#D5D8DC</code></td>
+<td>Séparateurs, bordures de tableaux</td>
+</tr>
+<tr>
+<td><strong>Or (réussite)</strong></td>
+<td>Or</td>
+<td><code>#F39C12</code></td>
+<td>Badges, certificats</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>Bleu diamant</td>
+<td><code>#3498DB</code></td>
+<td>Niveau diamant quiz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-hierarchie-typographique-coloree-formation-obesite-et-orthopedie">5.2 Hiérarchie typographique colorée — Formation Obésité et Orthopédie 🟫</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Style</th>
+<th>Couleur</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H1 — Titre de partie</strong></td>
+<td>Montserrat Bold 34px, MAJUSCULES</td>
+<td><code>#6C3483</code> violet foncé</td>
+<td>PARTIE I — L'OBÉSITÉ : FONDAMENTAUX MÉDICAUX</td>
+</tr>
+<tr>
+<td><strong>H2 — Titre de module</strong></td>
+<td>Montserrat SemiBold 28px</td>
+<td><code>#6C3483</code> violet foncé</td>
+<td>MODULE 3 : TISSU ADIPEUX ET INFLAMMATION</td>
+</tr>
+<tr>
+<td><strong>H3 — Titre de section</strong></td>
+<td>Montserrat Medium 22px</td>
+<td><code>#8E44AD</code> violet lumineux</td>
+<td>3.2 Adipokines et dégradation cartilagineuse</td>
+</tr>
+<tr>
+<td><strong>H4 — Sous-section</strong></td>
+<td>Open Sans SemiBold 18px</td>
+<td><code>#2C3E50</code> noir doux</td>
+<td>Rôle pro-inflammatoire de la leptine</td>
+</tr>
+<tr>
+<td><strong>Bandeau latéral</strong></td>
+<td>—</td>
+<td><code>#6C3483</code> fond, texte blanc</td>
+<td>Navigation module</td>
+</tr>
+<tr>
+<td><strong>Badge formation</strong></td>
+<td>Pill 24px</td>
+<td><code>#6C3483</code> fond, blanc</td>
+<td>🟫 OBÉSITÉ-ORTHOPÉDIE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-encadres-code-couleur-partage-identique-aux-autres-formations">5.3 Encadrés — Code couleur partagé (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Nom</th>
+<th>Bordure gauche</th>
+<th>Fond</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td><strong>Pertinence clinique</strong></td>
+<td><code>#E67E22</code> orange</td>
+<td><code>#FDF2E9</code></td>
+<td>Lien concept → pratique clinique</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td><strong>Danger / Critique</strong></td>
+<td><code>#E74C3C</code> rouge</td>
+<td><code>#FDEDEC</code></td>
+<td>Risque vital, erreur dangereuse</td>
+</tr>
+<tr>
+<td>📖</td>
+<td><strong>Approfondissement</strong></td>
+<td><code>#3498DB</code> bleu</td>
+<td><code>#EBF5FB</code></td>
+<td>Mécanisme, recherche, biologie</td>
+</tr>
+<tr>
+<td>💡</td>
+<td><strong>Astuce / Mnémonique</strong></td>
+<td><code>#2ECC71</code> vert</td>
+<td><code>#EAFAF1</code></td>
+<td>Aide-mémoire, truc de praticien</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td><strong>Expert</strong></td>
+<td><code>#9B59B6</code> violet</td>
+<td><code>#F4ECF7</code></td>
+<td>Détail avancé, technique fine</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td><strong>Réflexion</strong></td>
+<td><code>#F1C40F</code> jaune</td>
+<td><code>#FEF9E7</code></td>
+<td>Question ouverte, problème</td>
+</tr>
+<tr>
+<td>⚖️</td>
+<td><strong>Focus métabolique</strong> (nouveau)</td>
+<td><code>#6C3483</code> violet foncé</td>
+<td><code>#F4ECF7</code></td>
+<td>Focus adipokines, métabolisme, inflammation</td>
+</tr>
+<tr>
+<td>🍽️</td>
+<td><strong>Nutrition</strong> (nouveau)</td>
+<td><code>#7D6608</code> olive</td>
+<td><code>#FEF9E7</code></td>
+<td>Diététique, carences, supplémentation</td>
+</tr>
+<tr>
+<td>🏋️</td>
+<td><strong>Activité physique</strong> (nouveau)</td>
+<td><code>#1ABC9C</code> turquoise</td>
+<td><code>#E8F8F5</code></td>
+<td>Programmes d'exercices, rééducation adaptée</td>
+</tr>
+</tbody>
+</table>
+<h2 id="54-sidebar-de-navigation-formation-obesite-et-orthopedie">5.4 Sidebar de navigation — Formation Obésité et Orthopédie 🟫</h2>
+<pre><code>┌──────────────────────────┐
+│  🟫 OBÉSITÉ-ORTHOPÉDIE    │  ← Fond #6C3483, texte blanc
+│  ──────────────────────  │
+│  PARTIE I — FONDAMENTAUX │  ← Texte #BB8FCE (lavande)
+│   ▸ M1 Épidémiologie     │  ← Texte blanc
+│   ▸ M2 Physiopathologie  │
+│   ▸ M3 Tissu adipeux     │
+│   ▸ M4 Comorbidités      │
+│   ► M5 Évaluation        │  ← Module actif : fond #8E44AD
+│  PARTIE II — TRAITEMENT  │
+│   ▸ M6 Nutrition         │
+│   ▸ M7 Activité phys.    │
+│   ▸ M8 Pharmacothérapie  │
+│   ▸ M9 Chir. bariatrique │
+│  PARTIE III — BIOMÉCANIQUE│
+│   ▸ M10 Forces artic.    │
+│   ▸ M11 Arthrose métab.  │
+│   ▸ M12 Tendinopathies   │
+│  PARTIE IV — ARTHROPLASTIE│
+│   ▸ M13 PTG obèse        │
+│   ▸ M14 PTH obèse        │
+│   ▸ M15 Révision/Complexe│
+│  PARTIE V — RACHIS       │
+│   ▸ M16 Rachis dégénér.  │
+│   ▸ M17 Chir. rachis     │
+│  PARTIE VI — TRAUMATOLOGIE│
+│   ▸ M18 Fractures        │
+│   ▸ M19 Tissus mous      │
+│  PARTIE VII — PÉRIOP.     │
+│   ▸ M20 Anesthésie       │
+│   ▸ M21 Complications    │
+│   ▸ M22 Rééducation      │
+│  PARTIE VIII — ÉTHIQUE   │
+│   ▸ M23 Obésité pédia.   │
+│   ▸ M24 Post-bariatrique │
+│   ▸ M25 Éthique/Innov.   │
+└──────────────────────────┘
+</code></pre>
+<hr />
+<h1 id="6-regles-decriture-du-contenu">6. RÈGLES D'ÉCRITURE DU CONTENU</h1>
+<p>Les règles d'écriture sont <strong>identiques</strong> à celles des autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>). Voici un résumé des principes fondamentaux, adaptés au contexte Obésité et Orthopédie :</p>
+<h2 id="61-principes-inchanges">6.1 Principes inchangés</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Règle</th>
+<th>Applicable OBO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Jamais de fait sans explication (mécanisme + conséquence clinique)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chaînes de raisonnement obligatoires (physiopathologie → biomécanique → chirurgie → résultats)</td>
+<td>✅ Adapté</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Controverses et niveaux de preuve (📊, ⚖️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Trois niveaux de profondeur (Essentiel / Approfondi / Expert)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Minimum 2 vignettes cliniques par module</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Minimum 1 question de réflexion par section (🤔)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Minimum 1 micro-exercice par section (✏️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Minimum 3 mnémoniques par module (💡)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Minimum 1 exercice ObesSim© par module (si applicable)</td>
+<td>✅ Adapté (VERTEX → ObesSim)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1 encadré pour 500 mots minimum</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Format des marqueurs médias : <code>&gt; [MEDIA: {EMOJI} {CODE} — {TITRE} ({INSTRUCTION})]</code></td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vouvoiement systématique</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Formulations interdites</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>14</td>
+<td>≥ 300 mots par sous-section</td>
+<td>✅ Identique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>**</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Originalité et propriété intellectuelle</strong> : Les règles d'originalité du contenu et de prévention du plagiat définies à la **section 13 de `REGLES_ECRITURE_CONTENU.md`** s'appliquent intégralement à cette formation. Tout contenu doit être reformulé dans un style original, toute statistique ou classification doit être sourcée, et la checklist anti-plagiat (§13.7) doit être validée pour chaque module.</div>
+
+<h2 id="62-adaptations-specifiques-obesite-et-orthopedie">6.2 Adaptations spécifiques Obésité et Orthopédie</h2>
+<table>
+<thead>
+<tr>
+<th>Adaptation</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simulateur</strong></td>
+<td>ObesSim© au lieu de SpineSim©, KneeSim© ou TendonSim©. Scénarios : modélisation biomécanique de la surcharge pondérale sur les articulations, simulation de planification de PTG/PTH chez l'obèse (positionnement voie d'abord, choix d'implant), simulation de gestion des complications périopératoires (risque thromboembolique, respiratoire), calcul de risque personnalisé multifactoriel</td>
+</tr>
+<tr>
+<td><strong>Patient fil rouge</strong></td>
+<td>Un patient fil rouge par partie — parcours complet d'un patient obèse morbide depuis le diagnostic jusqu'à la chirurgie orthopédique en passant par l'optimisation pondérale et le suivi post-opératoire</td>
+</tr>
+<tr>
+<td><strong>Particularité métabolique</strong></td>
+<td>Intégrer systématiquement la composante métabolique (adipokines, inflammation, insulinorésistance) à chaque module orthopédique — ne pas se limiter à la dimension mécanique</td>
+</tr>
+<tr>
+<td><strong>Particularité multidisciplinaire</strong></td>
+<td>Chaque module chirurgical DOIT mentionner le rôle du nutritionniste, de l'anesthésiste, du rééducateur et du psychologue dans la prise en charge</td>
+</tr>
+<tr>
+<td><strong>Photos cliniques et vidéos</strong></td>
+<td>Vidéos d'installation du patient obèse au bloc, vidéos de techniques chirurgicales adaptées, vidéos de rééducation en balnéothérapie, vidéos de consultation nutritionnelle</td>
+</tr>
+<tr>
+<td><strong>Données de la littérature</strong></td>
+<td>Chaque module DOIT comporter des données de registres nationaux (SNIIRAM, PMSI, registres arthroplastie) et internationaux (NJR, SHAR, AJRR) spécifiques au patient obèse</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-marqueurs-medias-codification-obesite-et-orthopedie">6.3 Marqueurs médias — Codification Obésité et Orthopédie</h2>
+<pre><code>&gt; [MEDIA: {EMOJI} MOBO{module}-S{section}-{numéro} — {TITRE} ({INSTRUCTION_PÉDAGOGIQUE})]
+</code></pre>
+<ul>
+<li>Préfixe <strong>MOBO</strong> pour distinguer des médias scoliose (M), PTG (MPTG), IOA (MIOA) et Tendinites (MTEND)</li>
+<li>Exemple : <code>MOBO13-S02-005</code> = Formation OBO, Module 13, Section 2, 5ème média</li>
+</ul>
+<hr />
+<h1 id="7-structure-des-fichiers-du-cdc">7. STRUCTURE DES FICHIERS DU CDC</h1>
+<p>Le présent cahier des charges est organisé en <strong>9 fichiers</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fichier</th>
+<th>Contenu</th>
+<th>Modules couverts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>CDC_OBO_00_INTRODUCTION_CHARTE.md</code></td>
+<td>Introduction, charte graphique, code couleur, règles d'écriture</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>CDC_OBO_01_FONDAMENTAUX_OBESITE.md</code></td>
+<td>Épidémiologie, physiopathologie, tissu adipeux, comorbidités, évaluation</td>
+<td>Modules 1-5</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>CDC_OBO_02_TRAITEMENT_OBESITE.md</code></td>
+<td>Nutrition, activité physique, pharmacothérapie, chirurgie bariatrique</td>
+<td>Modules 6-9</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>CDC_OBO_03_BIOMECANIQUE_ARTICULAIRE.md</code></td>
+<td>Biomécanique, arthrose métabolique, tendinopathies/tissus mous</td>
+<td>Modules 10-12</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>CDC_OBO_04_ARTHROPLASTIE.md</code></td>
+<td>PTG chez l'obèse, PTH chez l'obèse, révision et cas complexes</td>
+<td>Modules 13-15</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>CDC_OBO_05_RACHIS.md</code></td>
+<td>Rachis dégénératif, chirurgie rachidienne chez l'obèse</td>
+<td>Modules 16-17</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>CDC_OBO_06_TRAUMATOLOGIE.md</code></td>
+<td>Fractures, traumatismes des tissus mous</td>
+<td>Modules 18-19</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>CDC_OBO_07_PERIOPERATOIRE.md</code></td>
+<td>Anesthésie, complications périopératoires, rééducation</td>
+<td>Modules 20-22</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>CDC_OBO_08_POPULATIONS_ETHIQUE.md</code></td>
+<td>Obésité pédiatrique, post-bariatrique, éthique et innovations</td>
+<td>Modules 23-25</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="8-correspondance-inter-formations">8. CORRESPONDANCE INTER-FORMATIONS</h1>
+<h2 id="81-modules-partages-transversaux">8.1 Modules partagés / transversaux</h2>
+<p>Certains concepts sont communs à plusieurs formations. Le LMS gère les <strong>renvois croisés</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formation Scoliose</th>
+<th>Formation PTG</th>
+<th>Formation IOA</th>
+<th>Formation Tendinites</th>
+<th>Formation OBO</th>
+<th>Type de partage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anatomie musculosquelettique</td>
+<td>Module 1</td>
+<td>Module 3</td>
+<td>Module 2</td>
+<td>Module 1</td>
+<td>Module 10</td>
+<td>Contenu adapté au contexte obésité</td>
+</tr>
+<tr>
+<td>Arthroplastie du genou</td>
+<td>—</td>
+<td>Modules 1-28</td>
+<td>—</td>
+<td>—</td>
+<td>Module 13</td>
+<td>Focus spécifique obèse, renvoi vers PTG</td>
+</tr>
+<tr>
+<td>Arthroplastie de hanche</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 14</td>
+<td>Focus spécifique obèse, renvoi vers PTH</td>
+</tr>
+<tr>
+<td>Infection sur matériel</td>
+<td>Module 22</td>
+<td>Module 23</td>
+<td>Modules 18-21</td>
+<td>Module 21</td>
+<td>Module 21</td>
+<td>Renvoi vers IOA pour détails, focus risque obèse</td>
+</tr>
+<tr>
+<td>Rachis dégénératif</td>
+<td>Modules 19-20</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 16-17</td>
+<td>Spécificités chez l'obèse</td>
+</tr>
+<tr>
+<td>Rééducation postopératoire</td>
+<td>Module 18</td>
+<td>Module 27</td>
+<td>Module 27</td>
+<td>Modules 18, 22</td>
+<td>Module 22</td>
+<td>Spécificités obèse (APA, balnéothérapie)</td>
+</tr>
+<tr>
+<td>Tendinopathies</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 1-25</td>
+<td>Module 12</td>
+<td>Renvoi vers Tendinites pour détails</td>
+</tr>
+<tr>
+<td>Biomécanique</td>
+<td>Module 3</td>
+<td>Module 4</td>
+<td>—</td>
+<td>Module 2</td>
+<td>Module 10</td>
+<td>Focus surcharge pondérale</td>
+</tr>
+<tr>
+<td>Thromboprophylaxie</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 21</td>
+<td>Traitement approfondi chez l'obèse</td>
+</tr>
+<tr>
+<td>Ostéoporose post-bariatrique</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 24</td>
+<td>Exclusif OBO</td>
+</tr>
+<tr>
+<td>Éthique chirurgicale</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 25</td>
+<td>Exclusif OBO (weight bias)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="82-simulation-obessim-vs-autres-simulateurs">8.2 Simulation ObesSim© vs autres simulateurs</h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>SpineSim© (Scoliose)</th>
+<th>KneeSim© (PTG)</th>
+<th>InfectoSim© (IOA)</th>
+<th>TendonSim© (Tendinites)</th>
+<th>ObesSim© (OBO)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anatomie simulée</strong></td>
+<td>Rachis C3-S1</td>
+<td>Genou</td>
+<td>Os/articulation multi-site</td>
+<td>Tendons multi-sites</td>
+<td>Multi-site (genoux, hanches, rachis) avec morphotype obèse</td>
+</tr>
+<tr>
+<td><strong>Focus principal</strong></td>
+<td>Biomécanique, correction 3D</td>
+<td>Cinématique, placement implant</td>
+<td>Infection, biofilm</td>
+<td>Charge tendineuse, rééducation</td>
+<td>Surcharge pondérale, adaptation chirurgicale</td>
+</tr>
+<tr>
+<td><strong>Simulation unique</strong></td>
+<td>Croissance, progression</td>
+<td>Usure PE, descellement</td>
+<td>Cinétique ATB, biofilm</td>
+<td>Courbe charge-déformation, continuum</td>
+<td>Forces articulaires selon IMC, voies d'abord adaptées</td>
+</tr>
+<tr>
+<td><strong>Chirurgie virtuelle</strong></td>
+<td>Vis pédiculaires, cintrage tige</td>
+<td>Coupes, équilibrage</td>
+<td>Débridement 3D</td>
+<td>Peignage, réparation arthroscopique</td>
+<td>PTG/PTH chez obèse, rachis obèse</td>
+</tr>
+<tr>
+<td><strong>Scénarios spécifiques</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Choix ATB, résistance</td>
+<td>Planification rééducation, infiltration 3D</td>
+<td>Calcul risque périopératoire, optimisation pré-op, séquence bariatrique-orthopédique</td>
+</tr>
+<tr>
+<td><strong>Moteur</strong></td>
+<td>Julia + Three.js</td>
+<td>Même stack</td>
+<td>Même stack + pharmacocinétique</td>
+<td>Même stack + modèles biomécaniques</td>
+<td>Même stack + modèles métaboliques et biomécaniques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="annexe-a-glossaire-des-abreviations-obesite-et-orthopedie">ANNEXE A — GLOSSAIRE DES ABRÉVIATIONS OBÉSITÉ ET ORTHOPÉDIE</h1>
+<table>
+<thead>
+<tr>
+<th>Abréviation</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OBO</td>
+<td>Obésité et Orthopédie</td>
+</tr>
+<tr>
+<td>IMC</td>
+<td>Indice de Masse Corporelle (<em>Body Mass Index</em>, BMI)</td>
+</tr>
+<tr>
+<td>BMI</td>
+<td><em>Body Mass Index</em> (= IMC)</td>
+</tr>
+<tr>
+<td>OMS</td>
+<td>Organisation Mondiale de la Santé</td>
+</tr>
+<tr>
+<td>RYGB</td>
+<td><em>Roux-en-Y Gastric Bypass</em> (bypass gastrique en Y de Roux)</td>
+</tr>
+<tr>
+<td>SG</td>
+<td><em>Sleeve Gastrectomy</em> (gastrectomie longitudinale)</td>
+</tr>
+<tr>
+<td>OAGB</td>
+<td><em>One Anastomosis Gastric Bypass</em> (bypass en oméga)</td>
+</tr>
+<tr>
+<td>SADI-S</td>
+<td><em>Single Anastomosis Duodeno-Ileal bypass with Sleeve gastrectomy</em></td>
+</tr>
+<tr>
+<td>DS</td>
+<td><em>Duodenal Switch</em> (switch duodénal)</td>
+</tr>
+<tr>
+<td>AGB</td>
+<td><em>Adjustable Gastric Band</em> (anneau gastrique ajustable)</td>
+</tr>
+<tr>
+<td>GLP-1</td>
+<td><em>Glucagon-Like Peptide-1</em></td>
+</tr>
+<tr>
+<td>GIP</td>
+<td><em>Glucose-dependent Insulinotropic Polypeptide</em></td>
+</tr>
+<tr>
+<td>SGLT2</td>
+<td><em>Sodium-Glucose Cotransporter 2</em></td>
+</tr>
+<tr>
+<td>TNF-α</td>
+<td><em>Tumor Necrosis Factor Alpha</em></td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>Interleukine 6</td>
+</tr>
+<tr>
+<td>CRP</td>
+<td>Protéine C-Réactive (<em>C-Reactive Protein</em>)</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>Hémoglobine glyquée</td>
+</tr>
+<tr>
+<td>DT2</td>
+<td>Diabète de Type 2</td>
+</tr>
+<tr>
+<td>HTA</td>
+<td>Hypertension Artérielle</td>
+</tr>
+<tr>
+<td>SAOS</td>
+<td>Syndrome d'Apnées Obstructives du Sommeil</td>
+</tr>
+<tr>
+<td>CPAP</td>
+<td><em>Continuous Positive Airway Pressure</em> (pression positive continue)</td>
+</tr>
+<tr>
+<td>RAAC</td>
+<td>Récupération Améliorée Après Chirurgie (<em>Enhanced Recovery After Surgery</em>, ERAS)</td>
+</tr>
+<tr>
+<td>APA</td>
+<td>Activité Physique Adaptée</td>
+</tr>
+<tr>
+<td>PTG</td>
+<td>Prothèse Totale du Genou</td>
+</tr>
+<tr>
+<td>PTH</td>
+<td>Prothèse Totale de Hanche</td>
+</tr>
+<tr>
+<td>DXA</td>
+<td>Absorptiométrie biphotonique (Dual-energy X-ray Absorptiometry)</td>
+</tr>
+<tr>
+<td>FRAX</td>
+<td><em>Fracture Risk Assessment Tool</em></td>
+</tr>
+<tr>
+<td>MVTE</td>
+<td>Maladie Veineuse Thromboembolique</td>
+</tr>
+<tr>
+<td>EP</td>
+<td>Embolie Pulmonaire</td>
+</tr>
+<tr>
+<td>TVP</td>
+<td>Thrombose Veineuse Profonde</td>
+</tr>
+<tr>
+<td>ISO</td>
+<td>Infection du Site Opératoire</td>
+</tr>
+<tr>
+<td>ASA</td>
+<td><em>American Society of Anesthesiologists</em> (score ASA)</td>
+</tr>
+<tr>
+<td>STOP-BANG</td>
+<td>Score de dépistage du SAOS (Snoring, Tiredness, Observed apnea, Pressure, BMI, Age, Neck, Gender)</td>
+</tr>
+<tr>
+<td>OS-MRS</td>
+<td><em>Obesity Surgery Mortality Risk Score</em></td>
+</tr>
+<tr>
+<td>RR</td>
+<td>Risque Relatif</td>
+</tr>
+<tr>
+<td>OR</td>
+<td><em>Odds Ratio</em></td>
+</tr>
+<tr>
+<td>IC 95%</td>
+<td>Intervalle de Confiance à 95%</td>
+</tr>
+<tr>
+<td>NNT</td>
+<td><em>Number Needed to Treat</em></td>
+</tr>
+<tr>
+<td>MIS</td>
+<td><em>Minimally Invasive Surgery</em> (chirurgie mini-invasive)</td>
+</tr>
+<tr>
+<td>BMP</td>
+<td><em>Bone Morphogenetic Protein</em> (protéine morphogénétique osseuse)</td>
+</tr>
+<tr>
+<td>PMMA</td>
+<td>Polyméthacrylate de Méthyle (ciment chirurgical)</td>
+</tr>
+<tr>
+<td>CBT</td>
+<td><em>Cortical Bone Trajectory</em> (trajectoire corticale pour vis pédiculaires)</td>
+</tr>
+<tr>
+<td>EFS</td>
+<td>Épiphysiolyse Fémorale Supérieure</td>
+</tr>
+<tr>
+<td>SOFCOT</td>
+<td>Société Française de Chirurgie Orthopédique et Traumatologique</td>
+</tr>
+<tr>
+<td>AAOS</td>
+<td><em>American Academy of Orthopaedic Surgeons</em></td>
+</tr>
+<tr>
+<td>IFSO</td>
+<td><em>International Federation for the Surgery of Obesity</em></td>
+</tr>
+<tr>
+<td>IOF</td>
+<td><em>International Osteoporosis Foundation</em></td>
+</tr>
+<tr>
+<td>NJR</td>
+<td><em>National Joint Registry</em> (Royaume-Uni)</td>
+</tr>
+<tr>
+<td>SNIIRAM</td>
+<td>Système National d'Information Inter-Régimes de l'Assurance Maladie</td>
+</tr>
+<tr>
+<td>PMSI</td>
+<td>Programme de Médicalisation des Systèmes d'Information</td>
+</tr>
+<tr>
+<td>EVA</td>
+<td>Échelle Visuelle Analogique</td>
+</tr>
+<tr>
+<td>KSS</td>
+<td><em>Knee Society Score</em></td>
+</tr>
+<tr>
+<td>HHS</td>
+<td><em>Harris Hip Score</em></td>
+</tr>
+<tr>
+<td>WOMAC</td>
+<td><em>Western Ontario and McMaster Universities Osteoarthritis Index</em></td>
+</tr>
+<tr>
+<td>SF-36</td>
+<td><em>Short Form 36</em> (questionnaire de qualité de vie)</td>
+</tr>
+<tr>
+<td>EQ-5D</td>
+<td><em>EuroQol-5 Dimensions</em></td>
+</tr>
+<tr>
+<td>DPC</td>
+<td>Développement Professionnel Continu</td>
+</tr>
+<tr>
+<td>CME</td>
+<td><em>Continuing Medical Education</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="references">RÉFÉRENCES</h1>
+<ol>
+<li>NCD Risk Factor Collaboration (NCD-RisC). Worldwide trends in body-mass index, underweight, overweight, and obesity from 1975 to 2016: a pooled analysis. <em>Lancet</em>. 2017;390(10113):2627-2642. doi:10.1016/S0140-6736(17)32129-3</li>
+<li>Berenbaum F, Eymard F, Houard X. Osteoarthritis, inflammation and obesity. <em>Curr Opin Rheumatol</em>. 2013;25(1):114-118. doi:10.1097/BOR.0b013e32835a9414</li>
+<li>Trayhurn P, Beattie JH. Physiological role of adipose tissue: white adipose tissue as an endocrine and secretory organ. <em>Proc Nutr Soc</em>. 2001;60(3):329-339. doi:10.1079/PNS200194</li>
+<li>Kerkhoffs GMMJ, Servien E, Dunn W, et al. The influence of obesity on the complication rate and outcome of total knee arthroplasty: a meta-analysis and systematic literature review. <em>J Bone Joint Surg Am</em>. 2012;94(20):1839-1844.</li>
+<li>Jibri Z, Jamieson P, Englesbe MJ. Obesity and outcomes in orthopaedic surgery. <em>J Am Acad Orthop Surg</em>. 2019;27(7):e295-e304.</li>
+</ol>
+<hr />
+<p><em>Ce document (Partie 0) constitue le socle commun de la Formation Obésité et Orthopédie. Les parties suivantes (1 à 8) détaillent le contenu pédagogique module par module.</em></p>
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

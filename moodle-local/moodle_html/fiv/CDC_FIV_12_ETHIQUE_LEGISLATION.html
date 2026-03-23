@@ -1,0 +1,1121 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-12-ethique-legislation-psychologie">🩷 PARTIE 12 — ÉTHIQUE, LÉGISLATION, PSYCHOLOGIE</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-amp">Formation VERTEX© — Fécondation In Vitro et AMP</h2>
+<hr />
+<h1 id="table-des-matieres-partie-12">TABLE DES MATIÈRES — PARTIE 12</h1>
+<ul>
+<li><a href="#module-40">Module 40 — Cadre légal français de l'AMP</a></li>
+<li><a href="#module-41">Module 41 — Bioéthique et médecine reproductive</a></li>
+<li><a href="#module-42">Module 42 — Accompagnement psychologique du couple</a></li>
+</ul>
+<hr />
+<h1 id="module-40">MODULE 40 — Cadre Légal Français de l'AMP</h1>
+<p>🟣 <strong>TOUS</strong></p>
+<h2 id="401-evolution-des-lois-de-bioethique">40.1 Évolution des lois de bioéthique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S1-001 — Frise chronologique des lois de bioéthique françaises : 1994, 2004, 2011, 2021, 2024 — évolutions majeures de l'encadrement de l'AMP]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Loi</th>
+<th>Apports majeurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loi de 1994</strong></td>
+<td>Premier encadrement de l'AMP, création de l'ABM (ex-CNMBRDP), anonymat du don, interdiction de la GPA, interdiction de la recherche sur l'embryon</td>
+</tr>
+<tr>
+<td><strong>Loi de 2004</strong></td>
+<td>Clause de révision, autorisation encadrée de la recherche sur l'embryon (dérogation), DPI autorisé (bébé du double espoir)</td>
+</tr>
+<tr>
+<td><strong>Loi de 2011</strong></td>
+<td>Maintien de l'anonymat, vitrification ovocytaire autorisée, suppression de la clause de révision automatique</td>
+</tr>
+<tr>
+<td><strong>Loi de 2021</strong> (n°2021-1017)</td>
+<td><strong>AMP pour toutes</strong> (couples de femmes, femmes seules), <strong>autoconservation ovocytaire sociétale</strong>, accès aux origines (donneur si consent à majorité de l'enfant), élargissement de la recherche sur l'embryon</td>
+</tr>
+<tr>
+<td><strong>Loi de 2024</strong></td>
+<td>Ajustements réglementaires, décrets d'application AMP pour toutes, précisions sur l'accès aux origines, renforcement du suivi des enfants nés par AMP</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="402-agence-de-la-biomedecine-abm">40.2 Agence de la biomédecine (ABM)</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S2-001 — Organisation et missions de l'ABM : agrément des centres, registre national, AMP-vigilance, rapport annuel — schéma institutionnel]</p>
+</blockquote>
+<p><strong>Missions principales</strong> :<br />
+1. <strong>Agrément des centres d'AMP</strong> : inspection, renouvellement tous les 5 ans, conditions techniques et humaines<br />
+2. <strong>Registre national des tentatives d'AMP</strong> : collecte annuelle obligatoire (données par centre — nombre de cycles, taux de grossesse, taux de naissance)<br />
+3. <strong>AMP-vigilance</strong> : déclaration et suivi des événements indésirables<br />
+4. <strong>Information et éthique</strong> : avis sur les pratiques, rapport annuel au Parlement<br />
+5. <strong>Suivi des enfants nés par AMP</strong> : registre de suivi (santé, développement)</p>
+<p><strong>Données clés du registre ABM 2023</strong> :<br />
+- ~160 000 tentatives d'AMP/an en France<br />
+- ~25 000 enfants nés par AMP/an (~3,5 % des naissances)<br />
+- Taux de naissance vivante par ponction : ~22-25 % (tous âges confondus)<br />
+- &gt; 400 centres agréés en France</p>
+<hr />
+<h2 id="403-conditions-de-prise-en-charge-et-remboursement">40.3 Conditions de prise en charge et remboursement</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S3-001 — Conditions de remboursement de l'AMP en France : âge, nombre de tentatives, parcours de soins — algorithme administratif]</p>
+</blockquote>
+<p><strong>Conditions de prise en charge à 100 %</strong> (Assurance Maladie) :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Âge femme</strong></td>
+<td>Jusqu'à <strong>43 ans</strong> (dernier anniversaire avant la ponction)</td>
+</tr>
+<tr>
+<td><strong>Nombre de FIV</strong></td>
+<td>Maximum <strong>4 tentatives</strong> (= 4 ponctions avec au moins 1 transfert frais ou congelé)</td>
+</tr>
+<tr>
+<td><strong>Nombre d'IIU</strong></td>
+<td>Maximum <strong>6 tentatives</strong></td>
+</tr>
+<tr>
+<td><strong>Parcours</strong></td>
+<td>Demande d'entente préalable, accord du médecin conseil</td>
+</tr>
+<tr>
+<td><strong>Bilan obligatoire</strong></td>
+<td>Sérologies (VIH, VHB, VHC, syphilis), bilan pré-AMP complet</td>
+</tr>
+<tr>
+<td><strong>Délai de réflexion</strong></td>
+<td>1 mois minimum après le dernier entretien</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Particularités</strong> :<br />
+- Chaque tentative de FIV = 1 ponction + les TEC issus de cette ponction (les TEC ne comptent pas comme tentative supplémentaire)<br />
+- Après une naissance vivante : le compteur est remis à zéro (4 nouvelles tentatives)<br />
+- AMP pour toutes : mêmes conditions de remboursement depuis 2021</p>
+<hr />
+<h2 id="404-amp-pour-toutes">40.4 AMP pour toutes</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S4-001 — AMP pour toutes (loi 2021) : parcours couples de femmes et femmes seules — comparaison avec AMP médicale classique]</p>
+</blockquote>
+<p><strong>Cadre (loi du 2 août 2021)</strong> :<br />
+- Ouverture de l'AMP aux <strong>couples de femmes</strong> et aux <strong>femmes seules</strong> (non mariées)<br />
+- Même parcours médical que l'AMP pour infertilité (bilan, stimulation, FIV/IIU)<br />
+- Recours obligatoire au <strong>don de sperme</strong> (CECOS)<br />
+- Remboursement à 100 % dans les mêmes conditions</p>
+<p><strong>Filiation</strong> :<br />
+- Couples de femmes : <strong>reconnaissance conjointe anticipée</strong> devant notaire (avant la naissance) — les deux femmes sont mères légales<br />
+- Femme seule : filiation maternelle classique</p>
+<p><strong>Données</strong> (ABM 2023) :<br />
+- ~5 000-6 000 demandes de première consultation AMP pour toutes / an<br />
+- File d'attente CECOS : 12-18 mois (pénurie de donneurs de sperme)<br />
+- Taux de grossesse : comparable à l'AMP classique avec don de sperme</p>
+<hr />
+<h2 id="405-autoconservation-ovocytaire-societale">40.5 Autoconservation ovocytaire sociétale</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S5-001 — Autoconservation ovocytaire sociétale : conditions, parcours, résultats attendus — arbre décisionnel]</p>
+</blockquote>
+<p><strong>Cadre (loi 2021)</strong> :<br />
+- Femmes de <strong>29 à 37 ans</strong> (bornes d'âge fixées par décret)<br />
+- Sans nécessité de justification médicale (préservation « de convenance » ou « sociétale »)<br />
+- Stimulation ovarienne + ponction + vitrification des ovocytes<br />
+- <strong>Remboursement</strong> : stimulation et ponction prises en charge, mais <strong>pas la conservation annuelle</strong> (à la charge de la patiente — ~200-400 €/an selon les centres)</p>
+<p><strong>Résultats attendus</strong> :<br />
+- Nombre d'ovocytes vitrifiés recommandé : <strong>15-20</strong> pour un taux de naissance cumulatif raisonnable (&gt; 60 % si &lt; 35 ans)<br />
+- Si recueil &lt; 35 ans : taux de survie post-dévitrification &gt; 90 %, taux de naissance/ovocyte ~5-8 %<br />
+- Si recueil &gt; 36 ans : taux de naissance/ovocyte diminue significativement</p>
+<p><strong>Enjeux</strong> :<br />
+- Information loyale : les ovocytes vitrifiés ne garantissent pas une grossesse future<br />
+- Counseling : ne pas retarder un projet parental en comptant sur les ovocytes vitrifiés<br />
+- Utilisation future : les ovocytes ne peuvent être utilisés que par la femme elle-même (pas de don)</p>
+<hr />
+<h2 id="406-don-de-gametes-et-accueil-dembryons">40.6 Don de gamètes et accueil d'embryons</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S6-001 — Don de gamètes en France : CECOS, parcours donneur/receveur, anonymat et accès aux origines — schéma récapitulatif]</p>
+</blockquote>
+<p><strong>Don de sperme</strong> :<br />
+- Donneur : 18-44 ans, bilan médical complet, consentement devant TGI<br />
+- Gratuit et (historiquement) anonyme<br />
+- CECOS : 30 centres en France, file d'attente 12-24 mois<br />
+- Appariement phénotypique (groupe sanguin, couleur peau/yeux/cheveux)<br />
+- Maximum 10 naissances par donneur</p>
+<p><strong>Don d'ovocytes</strong> :<br />
+- Donneuse : 18-37 ans, bilan complet, stimulation ovarienne + ponction<br />
+- Même cadre de gratuité et anonymat<br />
+- File d'attente plus courte que le sperme (6-12 mois) mais pénurie persistante</p>
+<p><strong>Accès aux origines (loi 2021)</strong> :<br />
+- À la majorité, l'enfant né de don peut demander l'accès à des <strong>données non identifiantes</strong> (âge, profession, motivations du don)<br />
+- Et/ou l'<strong>identité du donneur</strong> → le donneur doit avoir <strong>consenti</strong> au moment du don à la communication future de son identité<br />
+- Commission d'accès aux données (CAPADD) créée pour gérer les demandes<br />
+- Les donneurs antérieurs à la loi peuvent volontairement s'inscrire sur le registre</p>
+<p><strong>Accueil d'embryons</strong> (don d'embryons) :<br />
+- Embryons surnuméraires d'un couple qui n'a plus de projet parental<br />
+- Double anonymat (donneur-receveur)<br />
+- Autorisation judiciaire (TGI)<br />
+- Très peu de cas en France (~200-300/an)</p>
+<hr />
+<h2 id="407-gpa-gestation-pour-autrui">40.7 GPA — Gestation pour autrui</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S7-001 — GPA dans le monde : carte mondiale de la légalité — France (interdite), USA, Ukraine, Canada, Royaume-Uni, Inde — cadres juridiques comparés]</p>
+</blockquote>
+<p><strong>En France</strong> : <strong>interdite</strong> (article 16-7 du Code civil : « Toute convention portant sur la procréation ou la gestation pour le compte d'autrui est nulle »)</p>
+<p><strong>Cadre international</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Pays</th>
+<th>Statut GPA</th>
+<th>Type</th>
+<th>Rémunération</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>France</strong></td>
+<td>Interdite</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>USA</strong> (Californie, Nevada, Illinois)</td>
+<td>Légale</td>
+<td>Commerciale</td>
+<td>Oui (40 000-100 000 $)</td>
+</tr>
+<tr>
+<td><strong>Canada</strong></td>
+<td>Légale</td>
+<td>Altruiste uniquement</td>
+<td>Non (remboursement frais)</td>
+</tr>
+<tr>
+<td><strong>Royaume-Uni</strong></td>
+<td>Légale</td>
+<td>Altruiste</td>
+<td>Non</td>
+</tr>
+<tr>
+<td><strong>Ukraine</strong></td>
+<td>Légale</td>
+<td>Commerciale</td>
+<td>Oui</td>
+</tr>
+<tr>
+<td><strong>Inde</strong></td>
+<td>Interdite pour étrangers (2021)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Israël</strong></td>
+<td>Légale (encadrée)</td>
+<td>Altruiste (commission)</td>
+<td>Remboursement</td>
+</tr>
+<tr>
+<td><strong>Belgique</strong></td>
+<td>Tolérée (pas de loi)</td>
+<td>Altruiste</td>
+<td>Non</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Transcription état civil</strong> (jurisprudence CEDH — Mennesson, 2014) :<br />
+- La France doit transcrire l'acte de naissance de l'enfant né par GPA à l'étranger<br />
+- Le parent biologique (père) est reconnu sur l'acte<br />
+- La mère d'intention peut adopter l'enfant (adoption du conjoint)</p>
+<hr />
+<h2 id="408-comparaison-internationale">40.8 Comparaison internationale</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S8-001 — Tableau comparatif AMP dans le monde : France, Espagne, Belgique, USA, Israël, Japon — critères clés]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>France</th>
+<th>Espagne</th>
+<th>Belgique</th>
+<th>USA</th>
+<th>Israël</th>
+<th>Japon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Âge limite FIV</strong></td>
+<td>43 ans</td>
+<td>50 ans</td>
+<td>45-47 ans</td>
+<td>Pas de limite légale</td>
+<td>45 ans (54 avec don)</td>
+<td>40-45 ans (centres)</td>
+</tr>
+<tr>
+<td><strong>SET obligatoire</strong></td>
+<td>Recommandé</td>
+<td>Recommandé</td>
+<td>Obligatoire &lt; 36 ans</td>
+<td>Recommandé (ASRM)</td>
+<td>Recommandé</td>
+<td>Recommandé</td>
+</tr>
+<tr>
+<td><strong>Don d'ovocytes</strong></td>
+<td>Anonyme, gratuit</td>
+<td>Anonyme, compensé (~1 000 €)</td>
+<td>Non anonyme possible</td>
+<td>Non anonyme, compensé</td>
+<td>Autorisé</td>
+<td>Très restrictif</td>
+</tr>
+<tr>
+<td><strong>Don de sperme</strong></td>
+<td>Anonyme → accès origines 2021</td>
+<td>Anonyme</td>
+<td>Non anonyme possible</td>
+<td>Banques privées, non anonyme</td>
+<td>Autorisé</td>
+<td>Autorisé (restrictif)</td>
+</tr>
+<tr>
+<td><strong>GPA</strong></td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Tolérée (altruiste)</td>
+<td>Légale (certains États)</td>
+<td>Légale (encadrée)</td>
+<td>Interdite</td>
+</tr>
+<tr>
+<td><strong>PGT-A</strong></td>
+<td>Non recommandé systématique</td>
+<td>Largement pratiqué</td>
+<td>Autorisé</td>
+<td>Largement pratiqué</td>
+<td>Autorisé</td>
+<td>Autorisé</td>
+</tr>
+<tr>
+<td><strong>Remboursement</strong></td>
+<td>100 % (4 FIV)</td>
+<td>Partiel (système public)</td>
+<td>Partiel (6 cycles, &lt; 43 ans)</td>
+<td>Privé (assurance variable)</td>
+<td>100 % (illimité, &lt; 45 ans)</td>
+<td>6 cycles, &lt; 43 ans</td>
+</tr>
+<tr>
+<td><strong>AMP femmes seules/couples femmes</strong></td>
+<td>Oui (2021)</td>
+<td>Oui</td>
+<td>Oui</td>
+<td>Oui</td>
+<td>Non (couples hétéro)</td>
+<td>Non</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="409-cadre-legal-marocain-de-lamp">40.9 Cadre légal marocain de l'AMP</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV40-S9-001 — AMP au Maroc : cadre légal, centres agréés, spécificités religieuses et culturelles — schéma récapitulatif]</p>
+</blockquote>
+<h3 id="4091-cadre-juridique">40.9.1 Cadre juridique</h3>
+<p><strong>Loi n° 47-14 relative à l'assistance médicale à la procréation</strong> (adoptée en 2019, publiée au Bulletin Officiel) :</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Disposition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bénéficiaires</strong></td>
+<td>Couples <strong>mariés</strong> exclusivement (acte de mariage obligatoire). Ni les couples non mariés, ni les femmes seules, ni les couples de même sexe</td>
+</tr>
+<tr>
+<td><strong>Techniques autorisées</strong></td>
+<td>IIU, FIV, ICSI, congélation d'embryons et de gamètes</td>
+</tr>
+<tr>
+<td><strong>Don de gamètes</strong></td>
+<td><strong>INTERDIT</strong> — ni don de sperme, ni don d'ovocytes, ni accueil d'embryons. L'enfant doit être génétiquement issu des deux époux</td>
+</tr>
+<tr>
+<td><strong>GPA</strong></td>
+<td><strong>INTERDITE</strong> (conformément au droit musulman — la filiation par gestation est sacrée)</td>
+</tr>
+<tr>
+<td><strong>Mère porteuse</strong></td>
+<td>Interdite sous toutes ses formes (altruiste ou commerciale)</td>
+</tr>
+<tr>
+<td><strong>PGT</strong></td>
+<td>Autorisé dans un cadre médical strict (maladies génétiques graves) — sex selection non médicale <strong>interdite</strong></td>
+</tr>
+<tr>
+<td><strong>Recherche sur l'embryon</strong></td>
+<td>Non encadrée par la loi 47-14 — de facto très restrictive</td>
+</tr>
+<tr>
+<td><strong>Insémination post-mortem</strong></td>
+<td><strong>INTERDITE</strong> (le lien conjugal est rompu par le décès)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4092-fondements-ethiques-et-religieux">40.9.2 Fondements éthiques et religieux</h3>
+<p>La législation marocaine s'inscrit dans le cadre de la <strong>charia</strong> et des avis des <strong>oulémas</strong> :</p>
+<p><strong>Principes fondamentaux</strong> :<br />
+1. <strong>Nasab (filiation)</strong> : l'enfant doit être rattaché à ses deux parents biologiques mariés. Toute intervention de gamètes tiers (don) rompt le nasab → interdit<br />
+2. <strong>Mariage comme cadre exclusif</strong> : l'AMP n'est licite que dans le cadre du mariage valide. En cas de divorce ou de décès → arrêt du parcours AMP et destruction des embryons/gamètes<br />
+3. <strong>Préservation de la lignée (hifz al-nasl)</strong> : un des cinq objectifs supérieurs de la charia (maqasid) — l'AMP intra-conjugale y contribue positivement<br />
+4. <strong>Interdiction du mélange de lignées (ikhtilat al-ansab)</strong> : fondement de l'interdiction du don et de la GPA</p>
+<p><strong>Fatwas de référence</strong> :<br />
+- <strong>Académie Islamique du Fiqh</strong> (OCI, Djeddah, 1986, résolution n° 16/4) : la FIV est <strong>licite</strong> si les gamètes proviennent exclusivement des deux époux mariés et que l'embryon est implanté dans l'utérus de l'épouse<br />
+- <strong>Conseil des Oulémas du Maroc</strong> : confirme cette position, avec obligation de consentement éclairé des deux époux<br />
+- <strong>Al-Azhar</strong> (Égypte, référence sunnite) : position identique — FIV intra-conjugale autorisée, don interdit</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Différence chiite</strong> : le Grand Ayatollah Khamenei (Iran) a autorisé le don de gamètes sous conditions (mariage temporaire — muta'a) → le Maroc (sunnite malékite) ne reconnaît **pas** cette exception.</div>
+
+<h3 id="4093-organisation-des-centres-damp-au-maroc">40.9.3 Organisation des centres d'AMP au Maroc</h3>
+<p><strong>Agrément</strong> :<br />
+- Les centres d'AMP doivent être <strong>agréés par le Ministère de la Santé</strong> (décret d'application de la loi 47-14)<br />
+- Conditions : plateau technique conforme, biologiste de la reproduction qualifié, gynécologue spécialisé, comité d'éthique local<br />
+- Inspection régulière par les autorités sanitaires</p>
+<p><strong>Centres principaux</strong> :<br />
+- Concentrés dans les grandes villes : <strong>Casablanca, Rabat, Marrakech, Fès, Tanger</strong><br />
+- Centres publics (CHU) et privés (cliniques spécialisées)<br />
+- Estimation : ~30-40 centres actifs (en croissance)</p>
+<p><strong>Données disponibles</strong> :<br />
+- Pas de registre national exhaustif (en cours de mise en place)<br />
+- Estimation : ~8 000-12 000 cycles d'AMP/an au Maroc<br />
+- Coût moyen d'une FIV : 25 000-40 000 MAD (~2 500-4 000 €) — <strong>non remboursé</strong> par l'AMO (Assurance Maladie Obligatoire) dans la majorité des cas<br />
+- La couverture sociale de l'AMP est un enjeu majeur d'accès aux soins</p>
+<h3 id="4094-specificites-pratiques-au-maroc">40.9.4 Spécificités pratiques au Maroc</h3>
+<p><strong>Consentement</strong> :<br />
+- Consentement écrit des <strong>deux époux</strong> obligatoire (pas de consentement unilatéral)<br />
+- Présentation de l'<strong>acte de mariage</strong> à chaque tentative (vérification du lien conjugal)<br />
+- En cas de divorce en cours de parcours → destruction des embryons congelés</p>
+<p><strong>Sort des embryons surnuméraires</strong> :<br />
+- La congélation embryonnaire est autorisée dans le cadre du projet parental du couple marié<br />
+- En cas de <strong>divorce ou décès</strong> d'un des époux → les embryons doivent être <strong>détruits</strong> (pas de don, pas de transfert post-mortem)<br />
+- Pas de don d'embryons à un autre couple (interdit)<br />
+- Pas de don à la recherche (non prévu par la loi)</p>
+<p><strong>Préservation de la fertilité</strong> :<br />
+- Autorisée pour <strong>raisons médicales</strong> (oncofertilité — chimiothérapie, radiothérapie)<br />
+- La vitrification ovocytaire « sociétale » n'est <strong>pas encadrée</strong> par la loi — de facto non pratiquée dans les centres publics, mais proposée par certains centres privés (zone grise juridique)<br />
+- La préservation de sperme est autorisée dans un cadre médical</p>
+<p><strong>Tourisme procréatif depuis le Maroc</strong> :<br />
+- Motivation principale : <strong>don d'ovocytes</strong> (interdit au Maroc) → Espagne, Turquie, République Tchèque<br />
+- Aussi : PGT-A non disponible dans tous les centres marocains → déplacement vers l'étranger<br />
+- Enjeu éthique : informer les couples marocains sur les risques du CBRC (continuité des soins, cadre juridique, exploitation)</p>
+<h3 id="4095-comparaison-maroc-france-pays-musulmans">40.9.5 Comparaison Maroc — France — Pays musulmans</h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th><strong>Maroc</strong></th>
+<th><strong>France</strong></th>
+<th><strong>Turquie</strong></th>
+<th><strong>Iran</strong></th>
+<th><strong>Tunisie</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bénéficiaires</strong></td>
+<td>Couples mariés</td>
+<td>Tous (depuis 2021)</td>
+<td>Couples mariés</td>
+<td>Couples mariés</td>
+<td>Couples mariés</td>
+</tr>
+<tr>
+<td><strong>Don de sperme</strong></td>
+<td><strong>Interdit</strong></td>
+<td>Autorisé (CECOS)</td>
+<td><strong>Interdit</strong></td>
+<td>Autorisé (mut'a)</td>
+<td><strong>Interdit</strong></td>
+</tr>
+<tr>
+<td><strong>Don d'ovocytes</strong></td>
+<td><strong>Interdit</strong></td>
+<td>Autorisé</td>
+<td><strong>Interdit</strong></td>
+<td>Autorisé (mut'a)</td>
+<td><strong>Interdit</strong></td>
+</tr>
+<tr>
+<td><strong>GPA</strong></td>
+<td><strong>Interdite</strong></td>
+<td><strong>Interdite</strong></td>
+<td><strong>Interdite</strong></td>
+<td>Autorisée (encadrée)</td>
+<td><strong>Interdite</strong></td>
+</tr>
+<tr>
+<td><strong>PGT-M</strong></td>
+<td>Autorisé (strict)</td>
+<td>Autorisé</td>
+<td>Autorisé</td>
+<td>Autorisé</td>
+<td>Autorisé</td>
+</tr>
+<tr>
+<td><strong>Sex selection</strong></td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Interdite</td>
+</tr>
+<tr>
+<td><strong>Congélation embryons</strong></td>
+<td>Oui (couple marié)</td>
+<td>Oui</td>
+<td>Oui (couple marié)</td>
+<td>Oui</td>
+<td>Oui (couple marié)</td>
+</tr>
+<tr>
+<td><strong>Insém. post-mortem</strong></td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Interdite</td>
+<td>Débattue</td>
+<td>Interdite</td>
+</tr>
+<tr>
+<td><strong>Remboursement</strong></td>
+<td>Non (AMO limitée)</td>
+<td>100 % (4 FIV)</td>
+<td>Partiel (SSI)</td>
+<td>Subventionné</td>
+<td>Partiel</td>
+</tr>
+<tr>
+<td><strong>Registre national</strong></td>
+<td>En développement</td>
+<td>ABM (exhaustif)</td>
+<td>En place</td>
+<td>En place</td>
+<td>Limité</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4096-enjeux-et-perspectives-au-maroc">40.9.6 Enjeux et perspectives au Maroc</h3>
+<ol>
+<li><strong>Accès aux soins</strong> : le coût de la FIV (25 000-40 000 MAD) est prohibitif pour une grande partie de la population. L'intégration de l'AMP dans la couverture AMO est un enjeu de santé publique</li>
+<li><strong>Registre national</strong> : la mise en place d'un registre national des tentatives d'AMP (sur le modèle de l'ABM) permettrait d'évaluer les résultats et d'améliorer la qualité</li>
+<li><strong>Formation</strong> : le développement de formations spécialisées en biologie de la reproduction et en médecine reproductive est nécessaire pour accompagner la croissance du secteur</li>
+<li><strong>Évolution législative</strong> : la loi 47-14 est un premier cadre, mais des décrets d'application restent à préciser (conditions techniques, qualification des professionnels, contrôle qualité)</li>
+<li><strong>Préservation sociétale</strong> : la question de l'autoconservation ovocytaire pour les femmes non mariées reste un débat sociétal (mariage tardif en milieu urbain, pression démographique)</li>
+<li><strong>Éthique du don</strong> : le débat sur le don de gamètes reste fermé au plan juridique (fiqh malékite), mais certains bioéthiciens marocains plaident pour une réflexion ouverte, notamment pour les couples avec azoospermie non obstructive définitive ou IOP sans solution</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Références</strong> :<br />
+- Loi n° 47-14 relative à l'assistance médicale à la procréation. <em>Bulletin Officiel du Royaume du Maroc</em>, 2019.<br />
+- Académie Islamique du Fiqh (OCI). <em>Résolution n° 16/4 sur la FIV</em>. Djeddah, 1986.<br />
+- Serour GI. <em>Islamic perspectives in human reproduction</em>. Reprod Biomed Online 2008.<br />
+- Inhorn MC. <em>Cosmopolitan conceptions: IVF sojourns in global Dubai</em>. Duke University Press, 2015.<br />
+- El Mouatassim S et al. <em>AMP au Maroc : état des lieux et perspectives</em>. Rev Maroc Biol Reprod 2020.</p>
+</blockquote>
+<hr />
+<h3 id="quiz-module-40">QUIZ MODULE 40</h3>
+<p><strong>🥉 Q1</strong> 🟣 — Quelles sont les conditions de remboursement de la FIV en France ?<br />
+<strong>R</strong> : Prise en charge à 100 % par l'Assurance Maladie : (1) Femme &lt; 43 ans au jour de la ponction ; (2) Maximum 4 tentatives de FIV (= 4 ponctions, les TEC issus de la même ponction ne comptent pas comme tentative supplémentaire) ; (3) Maximum 6 IIU ; (4) Entente préalable obligatoire ; (5) Bilan pré-AMP complet + sérologies. Après une naissance vivante, le compteur est remis à zéro. Depuis 2021, mêmes conditions pour l'AMP pour toutes.</p>
+<p><strong>🥈 Q2</strong> 🟣 — Quelles sont les principales différences entre le cadre AMP français et le système espagnol ?<br />
+<strong>R</strong> : (1) <strong>Âge</strong> : France 43 ans vs Espagne 50 ans ; (2) <strong>Don d'ovocytes</strong> : France anonyme et gratuit vs Espagne anonyme mais compensé (~1 000 €) → plus de donneuses, moins d'attente ; (3) <strong>PGT-A</strong> : non recommandé en France vs largement pratiqué en Espagne ; (4) <strong>GPA</strong> : interdite dans les deux pays ; (5) <strong>Remboursement</strong> : 100 % en France vs partiel en Espagne (système public avec liste d'attente, secteur privé développé). Ces différences expliquent le <strong>tourisme procréatif</strong> franco-espagnol (&gt; 40 ans, PGT-A, don d'ovocytes sans attente).</p>
+<p><strong>💎 Q3</strong> 🟣 — Un couple de femmes mariées souhaite entreprendre un parcours AMP en France. Décrivez le cadre légal, le parcours et la filiation.<br />
+<strong>R</strong> : <strong>Cadre légal</strong> : loi du 2 août 2021 — AMP ouverte aux couples de femmes et femmes seules, remboursement à 100 % dans les mêmes conditions que l'AMP médicale. <strong>Parcours</strong> : (1) Consultation d'information + entretien psychologique (obligatoire) ; (2) Délai de réflexion 1 mois ; (3) Inscription au CECOS pour don de sperme (attente 12-18 mois) ; (4) Appariement phénotypique du donneur ; (5) Bilan pré-AMP des deux partenaires ; (6) IIU avec sperme de donneur (1ère intention si bilan normal) ou FIV si indication ; (7) Maximum 6 IIU et 4 FIV. <strong>Filiation</strong> : reconnaissance conjointe anticipée devant notaire avant la naissance — les deux femmes sont inscrites comme mères sur l'acte de naissance, sans adoption nécessaire. Si la receveuse a &gt; 37 ans : discuter autoconservation préalable.</p>
+<hr />
+<h1 id="module-41">MODULE 41 — Bioéthique et Médecine Reproductive</h1>
+<p>🟣 <strong>TOUS</strong></p>
+<h2 id="411-statut-de-lembryon-humain">41.1 Statut de l'embryon humain</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S1-001 — Statut de l'embryon : perspectives philosophiques, juridiques, religieuses — tableau comparatif des positions]</p>
+</blockquote>
+<p><strong>Le grand débat</strong> : l'embryon humain n'a pas de statut juridique unifié dans le monde.</p>
+<table>
+<thead>
+<tr>
+<th>Perspective</th>
+<th>Position sur l'embryon</th>
+<th>Conséquences pour l'AMP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Droit français</strong></td>
+<td>« Personne humaine potentielle » — pas de personnalité juridique, mais dignité protégée</td>
+<td>Interdiction de création d'embryons pour la recherche, congélation et destruction encadrées</td>
+</tr>
+<tr>
+<td><strong>Église catholique</strong></td>
+<td>Personne humaine dès la fécondation (Donum Vitae, 1987 ; Dignitas Personae, 2008)</td>
+<td>Opposition à la FIV, à la congélation embryonnaire, au PGT</td>
+</tr>
+<tr>
+<td><strong>Islam</strong></td>
+<td>Ensoulment à 120 jours (certaines écoles) ou 40 jours</td>
+<td>FIV acceptée dans le couple marié, congélation autorisée si projet parental, PGT autorisé</td>
+</tr>
+<tr>
+<td><strong>Judaïsme</strong></td>
+<td>Statut progressif — pas de personnalité avant 40 jours</td>
+<td>FIV encouragée (commandement « croissez et multipliez »), PGT autorisé</td>
+</tr>
+<tr>
+<td><strong>Utilitarisme</strong></td>
+<td>Statut proportionnel au développement neurologique</td>
+<td>Recherche sur l'embryon justifiée si bénéfice médical, PGT largement accepté</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sort des embryons surnuméraires</strong> (droit français) :<br />
+- Le couple décide annuellement : (1) Poursuite du projet parental (conservation) ; (2) Don à un autre couple (accueil d'embryons) ; (3) Don à la recherche ; (4) Arrêt de la conservation (destruction)<br />
+- Si désaccord du couple : conservation maintenue par défaut<br />
+- Durée maximale de conservation : pas de limite légale en France (10 ans au Royaume-Uni)</p>
+<hr />
+<h2 id="412-recherche-sur-lembryon">41.2 Recherche sur l'embryon</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S2-001 — Recherche sur l'embryon humain : cadre légal international — régime d'autorisation vs interdiction vs dérogation]</p>
+</blockquote>
+<p><strong>Cadre français (loi 2021)</strong> :<br />
+- Recherche sur l'embryon : régime de <strong>déclaration</strong> (assouplissement vs anciennes dérogations)<br />
+- Recherche sur les cellules souches embryonnaires : régime de <strong>déclaration</strong><br />
+- Conditions : finalité médicale, pertinence scientifique, pas d'alternative, embryons surnuméraires uniquement (pas de création pour la recherche)<br />
+- Règle des <strong>14 jours</strong> : pas de culture embryonnaire au-delà de 14 jours (convention internationale)</p>
+<p><strong>Comparaison</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Pays</th>
+<th>Recherche embryonnaire</th>
+<th>Création embryons recherche</th>
+<th>Limite de culture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>France</td>
+<td>Autorisée (déclaration)</td>
+<td>Interdite</td>
+<td>14 jours</td>
+</tr>
+<tr>
+<td>Royaume-Uni</td>
+<td>Autorisée (HFEA)</td>
+<td>Autorisée</td>
+<td>14 jours</td>
+</tr>
+<tr>
+<td>Allemagne</td>
+<td>Très restrictive</td>
+<td>Interdite</td>
+<td>—</td>
+</tr>
+<tr>
+<td>USA</td>
+<td>Pas de loi fédérale (financement privé autorisé)</td>
+<td>Variable selon État</td>
+<td>14 jours (consensus)</td>
+</tr>
+<tr>
+<td>Japon</td>
+<td>Autorisée</td>
+<td>Autorisée (encadrée)</td>
+<td>14 jours</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enjeux actuels</strong> :<br />
+- Débat sur l'extension de la règle des 14 jours (ISSCR 2021 : recommandation d'assouplissement au cas par cas)<br />
+- Modèles embryonnaires synthétiques (blastoid, SHE — Synthetic Human Embryo) : pas d'embryon « naturel » → quelle réglementation ?</p>
+<hr />
+<h2 id="413-crispr-et-edition-genomique">41.3 CRISPR et édition génomique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S3-001 — Édition génomique CRISPR-Cas9 : principe, applications en reproduction, affaire He Jiankui — enjeux éthiques]</p>
+</blockquote>
+<p><strong>Affaire He Jiankui (2018)</strong> :<br />
+- Chercheur chinois, modification du gène CCR5 (résistance au VIH) sur des embryons humains<br />
+- Naissance de jumelles « Lulu et Nana » — premiers bébés génétiquement modifiés<br />
+- Condamnation internationale unanime : violation du moratoire, consentement douteux, mosaïcisme des modifications, effets off-target inconnus<br />
+- He Jiankui condamné à 3 ans de prison (Chine, 2019)</p>
+<p><strong>Cadre éthique</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Position internationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Édition somatique</strong> (cellules non reproductives)</td>
+<td>Autorisée en recherche, essais cliniques en cours (drépanocytose, bêta-thalassémie)</td>
+</tr>
+<tr>
+<td><strong>Édition germinale</strong> (embryons, gamètes) — modification transmissible</td>
+<td><strong>Moratoire international</strong> (OMS, Académies des Sciences) — interdite cliniquement</td>
+</tr>
+<tr>
+<td><strong>Édition germinale pour éliminer une maladie monogénique grave</strong></td>
+<td>Débat — certains bioéthiciens favorables si maladie létale sans alternative (mais PGT-M existe)</td>
+</tr>
+<tr>
+<td><strong>Enhancement</strong> (amélioration — intelligence, apparence)</td>
+<td>Unanimement rejeté</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="414-pgt-et-limites-ethiques-de-la-selection-embryonnaire">41.4 PGT et limites éthiques de la sélection embryonnaire</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S4-001 — PGT-M : indications autorisées, limites éthiques — spectre de la sélection embryonnaire — débat eugénisme]</p>
+</blockquote>
+<p><strong>Indications autorisées en France</strong> :<br />
+- <strong>PGT-M</strong> : maladies monogéniques <strong>graves et incurables</strong> (mucoviscidose, Huntington, drépanocytose, amyotrophie spinale...)<br />
+- <strong>PGT-SR</strong> : remaniements chromosomiques structuraux (translocations)<br />
+- <strong>PGT-A</strong> : non recommandé en routine (ESHRE) — pas d'indication systématique en France</p>
+<p><strong>Limites éthiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Pratique</th>
+<th>France</th>
+<th>Débat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sex selection</strong> (choix du sexe non médical)</td>
+<td><strong>Interdite</strong></td>
+<td>Autorisée dans certains pays (USA, Thaïlande)</td>
+</tr>
+<tr>
+<td><strong>Bébé du double espoir</strong> (HLA typing — sélection d'un embryon HLA-compatible pour sauver un aîné malade)</td>
+<td>Autorisé (cadre très strict, CPPDPN)</td>
+<td>Instrumentalisation de l'enfant à naître ?</td>
+</tr>
+<tr>
+<td><strong>Sélection de traits polygéniques</strong> (scores de risque génomique — QI, taille)</td>
+<td>Interdite</td>
+<td>Techniquement émergent, éthiquement rejeté</td>
+</tr>
+<tr>
+<td><strong>Sélection pour un handicap</strong> (surdité, nanisme — choix de parents sourds/nains)</td>
+<td>Interdite en France</td>
+<td>Débat communautaire (identité sourde, diversité)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pente glissante (slippery slope)</strong> : du PGT-M pour maladies graves → PGT pour prédispositions → sélection de traits → eugénisme ?</p>
+<hr />
+<h2 id="415-marchandisation-et-tourisme-procreatif">41.5 Marchandisation et tourisme procréatif</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S5-001 — Tourisme procréatif (cross-border reproductive care) : flux internationaux, motivations, destinations — carte mondiale]</p>
+</blockquote>
+<p><strong>Don rémunéré vs gratuit</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Modèle</th>
+<th>Pays</th>
+<th>Conséquences</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gratuit</strong> (altruiste)</td>
+<td>France, Royaume-Uni</td>
+<td>Pénurie de donneurs, files d'attente longues</td>
+</tr>
+<tr>
+<td><strong>Compensé</strong> (indemnisation)</td>
+<td>Espagne, Belgique</td>
+<td>Plus de donneurs, délai réduit</td>
+</tr>
+<tr>
+<td><strong>Commercial</strong></td>
+<td>USA (ovocytes : 5 000-15 000 $)</td>
+<td>Abondance, mais inégalités d'accès, exploitation ?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-border reproductive care</strong> (CBRC) — motivations :<br />
+1. <strong>Légal</strong> : GPA interdite → USA, Ukraine<br />
+2. <strong>Âge</strong> : &gt; 43 ans → Espagne, Grèce, République Tchèque<br />
+3. <strong>Technique</strong> : PGT-A, sex selection → USA, Chypre<br />
+4. <strong>Attente</strong> : don d'ovocytes → Espagne (pas d'attente)<br />
+5. <strong>Coût</strong> : FIV moins chère → République Tchèque, Tunisie</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE ÉTHIQUE</strong> : Le CBRC pose des problèmes de : (1) continuité des soins (suivi post-transfert en France) ; (2) exploitation des donneuses (pays à faibles revenus) ; (3) absence de registre international ; (4) risques médicaux accrus (DET, grossesses multiples dans certains pays).</div>
+
+<hr />
+<h2 id="416-consentement-eclaire-en-amp">41.6 Consentement éclairé en AMP</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV41-S6-001 — Consentement en AMP : étapes obligatoires, délai de réflexion, droit de rétractation — parcours administratif]</p>
+</blockquote>
+<p><strong>Consentements obligatoires</strong> :<br />
+- Consentement à la tentative d'AMP (renouvelé à chaque cycle)<br />
+- Consentement au devenir des embryons surnuméraires (enquête annuelle)<br />
+- Consentement au don (si applicable) — devant notaire ou TGI<br />
+- Consentement au PGT (si applicable) — après consultation de génétique</p>
+<p><strong>Droit à ne pas savoir</strong> :<br />
+- Le patient peut refuser de connaître certaines informations (ex. résultat du PGT-A si découverte fortuite d'une anomalie génétique parentale)<br />
+- Le médecin doit respecter ce choix tout en assurant la sécurité</p>
+<p><strong>Délai de réflexion</strong> :<br />
+- 1 mois minimum entre le dernier entretien médical et le début du traitement<br />
+- Rétractation possible à tout moment par l'un des membres du couple</p>
+<hr />
+<h3 id="quiz-module-41">QUIZ MODULE 41</h3>
+<p><strong>🥉 Q1</strong> 🟣 — Quelle est la position de la loi française sur l'édition génomique germinale et pourquoi ?<br />
+<strong>R</strong> : L'édition génomique de la lignée germinale (embryons, gamètes) est <strong>interdite</strong> en France, conformément au moratoire international. Raisons : (1) Les modifications sont <strong>transmissibles</strong> aux générations futures → conséquences imprévisibles ; (2) Risques de mosaïcisme et d'effets off-target (CRISPR n'est pas parfait) ; (3) Le PGT-M offre une alternative pour éviter la transmission de maladies monogéniques graves (sélection sans modification) ; (4) Risque de pente glissante vers l'enhancement (amélioration génétique) ; (5) Affaire He Jiankui (2018) : première violation → condamnation unanime de la communauté scientifique.</p>
+<p><strong>🥈 Q2</strong> 🟣 — Quelles sont les 4 options possibles pour les embryons surnuméraires en droit français, et quels problèmes éthiques posent-elles ?<br />
+<strong>R</strong> : Les 4 options (questionnaire annuel au couple) : (1) <strong>Poursuite du projet parental</strong> (conservation pour TEC ultérieur) ; (2) <strong>Don à un autre couple</strong> (accueil d'embryons — double anonymat, autorisation TGI) ; (3) <strong>Don à la recherche</strong> (régime de déclaration, finalité médicale) ; (4) <strong>Arrêt de la conservation</strong> (destruction). Problèmes éthiques : le statut de l'embryon (personne potentielle ?) rend chaque option difficile — la destruction heurte les sensibilités religieuses, le don à la recherche soulève la question de l'instrumentalisation, la conservation indéfinie pose le problème des embryons « orphelins » (perte de contact avec le couple). En pratique, &gt; 200 000 embryons sont conservés en France, dont une proportion significative sans projet parental clair.</p>
+<p><strong>💎 Q3</strong> 🟣 — Un couple français vous consulte : la femme a 44 ans, ils souhaitent un PGT-A avec sex selection et envisagent une GPA en Ukraine si nécessaire. Comment les informez-vous sur le cadre légal ?<br />
+<strong>R</strong> : Information point par point : (1) <strong>Âge</strong> : à 44 ans, la femme n'est plus éligible au remboursement AMP en France (limite 43 ans) → FIV possible à ses frais dans un centre français, mais taux de naissance &lt; 3-5 %/cycle → discussion réaliste ; (2) <strong>PGT-A</strong> : autorisé en France mais non recommandé en routine et non remboursé — le centre peut le proposer sur critères médicaux (âge ≥ 38 ans, échecs répétés) ; (3) <strong>Sex selection</strong> : <strong>interdite</strong> en France (et dans la plupart des pays européens) sauf si liée à une maladie génétique liée au sexe → si le couple souhaite choisir le sexe, c'est impossible légalement en France ; (4) <strong>GPA en Ukraine</strong> : la GPA est interdite en France — le couple peut se rendre en Ukraine (GPA commerciale légale pour couples hétérosexuels mariés), MAIS (a) la France ne reconnaît pas directement la filiation, (b) transcription de l'acte de naissance possible pour le parent biologique (jurisprudence Mennesson/CEDH), (c) adoption par la mère d'intention, (d) risques : absence de suivi médical français, questions éthiques (exploitation ?), complications juridiques. Recommandation : counseling approfondi, information loyale sur les chances réelles à 44 ans avec ovocytes propres, proposition de don d'ovocytes en France (mais &gt; 43 ans = hors cadre remboursement) ou à l'étranger (Espagne — jusqu'à 50 ans).</p>
+<hr />
+<h1 id="module-42">MODULE 42 — Accompagnement Psychologique du Couple</h1>
+<p>🟣 <strong>TOUS</strong></p>
+<h2 id="421-impact-psychologique-de-linfertilite">42.1 Impact psychologique de l'infertilité</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S1-001 — Impact psychologique de l'infertilité : prévalence anxiété/dépression, dimensions affectées — schéma biopsychosocial]</p>
+</blockquote>
+<p><strong>Prévalence</strong> :<br />
+- <strong>Anxiété</strong> : 25-40 % des femmes en parcours AMP (vs 10-15 % population générale)<br />
+- <strong>Dépression</strong> : 15-25 % des femmes (surtout après échecs répétés)<br />
+- <strong>Hommes</strong> : sous-diagnostiqués — 10-15 % d'anxiété, vécu d'impuissance et de culpabilité (surtout si facteur masculin)</p>
+<p><strong>Dimensions affectées</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estime de soi</strong></td>
+<td>Sentiment de défaillance corporelle, « mon corps ne fonctionne pas »</td>
+</tr>
+<tr>
+<td><strong>Identité</strong></td>
+<td>Remise en question de la féminité/masculinité, de la place dans la société</td>
+</tr>
+<tr>
+<td><strong>Couple</strong></td>
+<td>Tension, asymétrie du vécu, sexualité instrumentalisée (rapports programmés)</td>
+</tr>
+<tr>
+<td><strong>Social</strong></td>
+<td>Isolement, évitement des événements (grossesses d'amies, fêtes de famille), tabou</td>
+</tr>
+<tr>
+<td><strong>Professionnel</strong></td>
+<td>Absentéisme (RDV médicaux), difficulté de concentration, secret au travail</td>
+</tr>
+<tr>
+<td><strong>Sexualité</strong></td>
+<td>Dissociation sexualité-reproduction, baisse du désir, dysfonction érectile (homme)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="422-vecu-du-parcours-amp">42.2 Vécu du parcours AMP</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S2-001 — Vécu émotionnel du parcours AMP : courbe émotionnelle typique — espoir, anxiété, attente, résultat — cycle répétitif]</p>
+</blockquote>
+<p><strong>Phases émotionnelles d'un cycle AMP</strong> :</p>
+<pre><code>Espoir (début stimulation)
+    ↓
+Anxiété (monitorage, ajustements)
+    ↓
+Appréhension (ponction)
+    ↓
+Attente insoutenable (J0-J5 : résultats labo)
+    ↓
+Transfert → Espoir renouvelé
+    ↓
+&quot;Two-Week Wait&quot; (TWW — attente β-hCG) → Anxiété maximale
+    ↓
+Résultat
+    ├── Positif → Joie + anxiété (grossesse après AMP = anxieuse)
+    └── Négatif → Deuil → Questionnement → Décision de continuer ou non
+</code></pre>
+<p><strong>Facteurs aggravants</strong> :<br />
+- Nombre d'échecs antérieurs (effet cumulatif)<br />
+- Durée totale du parcours (&gt; 2 ans = facteur de risque majeur de dépression)<br />
+- Absence de cause identifiée (infertilité inexpliquée = plus anxiogène)<br />
+- Pression sociale et familiale</p>
+<hr />
+<h2 id="423-burn-out-du-parcours-amp">42.3 Burn-out du parcours AMP</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S3-001 — Burn-out AMP : signes d'alerte, facteurs de risque, quand proposer une pause — outil d'évaluation]</p>
+</blockquote>
+<p><strong>Définition</strong> : épuisement physique, émotionnel et mental lié à la répétition des cycles AMP sans succès</p>
+<p><strong>Signes d'alerte</strong> :<br />
+- Détachement émotionnel paradoxal (« je ne ressens plus rien »)<br />
+- Irritabilité permanente, conflits de couple fréquents<br />
+- Somatisation (céphalées, troubles digestifs, insomnie)<br />
+- Perte de sens (« pourquoi on continue ? »)<br />
+- Évitement des rendez-vous médicaux<br />
+- Idées noires (rare mais à dépister)</p>
+<p><strong>Quand proposer une pause thérapeutique</strong> :<br />
+- Après ≥ 3 cycles consécutifs sans succès<br />
+- Si symptômes dépressifs avérés (PHQ-9 ≥ 10)<br />
+- Si conflit de couple majeur lié au parcours<br />
+- Si la patiente exprime elle-même un besoin de « souffler »<br />
+- Durée recommandée : 3-6 mois (pas d'impact sur les résultats si &lt; 40 ans)</p>
+<hr />
+<h2 id="424-deuil-perinatal-et-deuil-du-projet">42.4 Deuil périnatal et deuil du projet</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S4-001 — Deuil en AMP : fausse couche, IMG, échec définitif, deuil du projet génétique — stades et accompagnement]</p>
+</blockquote>
+<p><strong>Types de deuil en AMP</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Spécificité du deuil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fausse couche précoce</strong></td>
+<td>Deuil souvent minimisé par l'entourage (« ce n'était qu'un embryon »), mais vécu comme une perte réelle après le parcours AMP</td>
+</tr>
+<tr>
+<td><strong>FC tardive / IMG</strong></td>
+<td>Deuil périnatal classique + culpabilité liée à l'AMP (« est-ce à cause de la FIV ? »)</td>
+</tr>
+<tr>
+<td><strong>Échec total du parcours</strong></td>
+<td>Deuil de l'enfant biologique, de la parentalité (si pas d'alternative), du « rêve de famille »</td>
+</tr>
+<tr>
+<td><strong>Passage au don</strong></td>
+<td>Deuil du projet génétique (l'enfant ne portera pas les gènes d'un des parents)</td>
+</tr>
+<tr>
+<td><strong>Fin du parcours sans enfant</strong></td>
+<td>Deuil le plus complexe — reconstruction identitaire nécessaire</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accompagnement</strong> :<br />
+- Reconnaître la perte (ne pas minimiser)<br />
+- Proposer un entretien psychologique systématique après FC en AMP<br />
+- Ritualisation si souhaitée (prénom, photo échographique, cérémonie)<br />
+- Suivi à distance (rappel à M+1, M+3, M+6)</p>
+<hr />
+<h2 id="425-don-de-gametes-aspects-psychologiques">42.5 Don de gamètes — Aspects psychologiques</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S5-001 — Psychologie du don de gamètes : vécu du donneur, vécu du receveur, question de la révélation à l'enfant — arbre décisionnel]</p>
+</blockquote>
+<p><strong>Côté donneur</strong> :<br />
+- Motivations : altruisme (70 %), connaissance d'un proche infertile (20 %), curiosité (10 %)<br />
+- Suivi psychologique recommandé (non obligatoire)<br />
+- Risque : difficulté future si l'enfant demande l'identité (loi 2021)</p>
+<p><strong>Côté receveur</strong> :<br />
+- Acceptation du don : processus de deuil du lien génétique → temps nécessaire<br />
+- <strong>Révélation à l'enfant</strong> : recommandée par les sociétés savantes (ESHRE, AAP) — précoce (avant 7 ans) et adaptée à l'âge<br />
+- Études : les enfants informés précocement s'adaptent mieux que ceux qui découvrent tardivement<br />
+- Risque de secret : si l'enfant découvre par hasard (test ADN récréatif) → crise de confiance majeure</p>
+<p><strong>Question de la ressemblance</strong> :<br />
+- Appariement phénotypique systématique en France (CECOS)<br />
+- Malgré l'appariement, l'enfant peut ne pas ressembler → vécu variable selon les familles</p>
+<hr />
+<h2 id="426-orientation-psychologique-quand-et-comment-referer">42.6 Orientation psychologique — Quand et comment référer</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S6-001 — Quand référer en psychologie/psychiatrie en parcours AMP : critères d'alerte, techniques validées — algorithme de décision]</p>
+</blockquote>
+<p><strong>Quand référer</strong> :<br />
+- Systématiquement : avant AMP pour toutes (couples femmes, femmes seules), avant don de gamètes, avant PGT<br />
+- Sur indication : après ≥ 2 échecs, après FC, si symptômes anxio-dépressifs, si conflit de couple, si antécédents psychiatriques</p>
+<p><strong>Techniques validées</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Indication</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TCC</strong> (Thérapie Cognitivo-Comportementale)</td>
+<td>Anxiété, pensées catastrophiques, gestion du stress</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>EMDR</strong></td>
+<td>Trauma (FC, IMG, accouchement traumatique antérieur)</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Mindfulness / MBSR</strong></td>
+<td>Réduction du stress global, TWW, gestion de l'attente</td>
+<td>Modéré (Li et al., 2016)</td>
+</tr>
+<tr>
+<td><strong>Thérapie de couple</strong></td>
+<td>Conflit lié au parcours, désaccord sur la suite</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Groupes de parole</strong></td>
+<td>Isolement social, partage d'expérience</td>
+<td>Faible (mais satisfaction élevée)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Associations de patients</strong> :<br />
+- <strong>BAMP</strong> (association nationale) : information, plaidoyer, soutien entre pairs<br />
+- <strong>Maia</strong> : accompagnement des parcours AMP et don<br />
+- <strong>Agir pour notre fertilité</strong> : prévention et information</p>
+<hr />
+<h2 id="427-resilience-et-reconstruction">42.7 Résilience et reconstruction</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV42-S7-001 — Après l'AMP : résilience, adoption, vie sans enfant — parcours de reconstruction et ressources]</p>
+</blockquote>
+<p><strong>Après échec définitif de l'AMP</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Parcours</th>
+<th>Accompagnement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Adoption</strong></td>
+<td>Agrément (ASE), adoption nationale/internationale — délai 3-7 ans</td>
+<td>Préparation psychologique, deuil de l'enfant biologique préalable</td>
+</tr>
+<tr>
+<td><strong>Vie sans enfant</strong> (childless not by choice)</td>
+<td>Reconstruction identitaire, réinvestissement d'autres projets</td>
+<td>Thérapie recommandée, groupes de soutien, associations (ex. Gateway Women)</td>
+</tr>
+<tr>
+<td><strong>Poursuite à l'étranger</strong></td>
+<td>CBRC (don d'ovocytes, GPA) — si ressources financières</td>
+<td>Information sur les risques, cadre juridique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Facteurs de résilience</strong> :<br />
+- Qualité de la relation de couple (facteur protecteur majeur)<br />
+- Réseau social de soutien<br />
+- Sens donné à l'expérience (« growth through adversity »)<br />
+- Accompagnement psychologique tout au long du parcours</p>
+<blockquote>
+<p>🚨 <strong>POINT CLÉ</strong> — Le praticien a un rôle essentiel : savoir proposer une pause, référer vers un psychologue, et accompagner la fin du parcours avec empathie et respect du choix du couple (y compris le choix de s'arrêter).</p>
+</blockquote>
+<hr />
+<h3 id="quiz-module-42">QUIZ MODULE 42</h3>
+<p><strong>🥉 Q1</strong> 🟣 — Quels sont les principaux impacts psychologiques de l'infertilité et du parcours AMP ?<br />
+<strong>R</strong> : (1) <strong>Anxiété</strong> (25-40 % des femmes vs 10-15 % pop. générale) et <strong>dépression</strong> (15-25 %, surtout après échecs répétés) ; (2) <strong>Atteinte de l'estime de soi</strong> (sentiment de défaillance corporelle) ; (3) <strong>Impact sur le couple</strong> (tension, asymétrie du vécu, sexualité instrumentalisée) ; (4) <strong>Isolement social</strong> (évitement des événements, tabou) ; (5) <strong>Burn-out AMP</strong> (épuisement physique et émotionnel après cycles répétés). Le parcours AMP est un marathon émotionnel avec des cycles espoir-déception répétitifs. L'homme est souvent sous-diagnostiqué (10-15 % d'anxiété).</p>
+<p><strong>🥈 Q2</strong> 🟣 — Quand doit-on proposer un accompagnement psychologique dans un parcours AMP ?<br />
+<strong>R</strong> : <strong>Systématiquement</strong> : (1) Avant AMP pour toutes (couples femmes, femmes seules — entretien obligatoire) ; (2) Avant tout recours au don de gamètes ; (3) Avant PGT (implications psychologiques de la sélection embryonnaire). <strong>Sur indication</strong> : (4) Après ≥ 2 échecs de FIV ; (5) Après fausse couche en AMP ; (6) Si score PHQ-9 ≥ 10 (dépression modérée) ; (7) Si conflit de couple lié au parcours ; (8) Si signes de burn-out AMP (détachement, somatisation, perte de sens) ; (9) Si antécédents psychiatriques. Techniques recommandées : TCC (anxiété), mindfulness (stress/attente), thérapie de couple (conflit), EMDR (trauma post-FC/IMG).</p>
+<p><strong>💎 Q3</strong> 🟣 — Après 5 FIV et 3 FC, une patiente de 40 ans vous dit « je n'en peux plus, je veux arrêter mais mon mari veut continuer ». Comment gérez-vous cette situation ?<br />
+<strong>R</strong> : Situation de burn-out AMP avec désaccord conjugal — nécessite une approche multidimensionnelle. (1) <strong>Valider le vécu</strong> : « Votre épuisement est légitime après 5 FIV et 3 FC — c'est un parcours très éprouvant. » Ne pas minimiser ni pousser à continuer ; (2) <strong>Évaluation</strong> : PHQ-9 et GAD-7 (dépression et anxiété), évaluation du risque suicidaire, évaluation de la dynamique conjugale ; (3) <strong>Consultation conjointe</strong> : proposer un entretien avec les deux partenaires — permettre à chacun d'exprimer son vécu, comprendre le désaccord (souvent : la femme porte la charge physique et émotionnelle, l'homme n'a pas le même vécu corporel) ; (4) <strong>Référer en psychologie de couple</strong> : thérapie de couple spécialisée en infertilité — le désaccord sur la suite est l'un des conflits les plus fréquents et les plus destructeurs ; (5) <strong>Proposer une pause</strong> : 3-6 mois de pause thérapeutique — pas d'impact sur les résultats à 40 ans (la réserve ne change pas significativement en 6 mois), mais bénéfice psychologique majeur ; (6) <strong>Information loyale</strong> : à 40 ans après 5 FIV et 3 FC → taux cumulatif de naissance vivante pour une 6e tentative &lt; 10 % → discuter les alternatives (don d'ovocytes, adoption, vie sans enfant) ; (7) <strong>Respecter le choix</strong> : si la patiente maintient sa décision d'arrêt → accompagner le deuil, proposer un suivi psychologique à M+3 et M+6.</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 12 — Éthique, législation, psychologie — Mars 2026</em></p>
+</div>

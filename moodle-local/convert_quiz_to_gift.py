@@ -55,6 +55,36 @@ QUIZ_FILES = {
         "category": "VERTEX-Hyperthyroïdies",
         "name": "Quiz Hyperthyroïdies",
     },
+    "obesite-orthopedie": {
+        "file": "cours-obesite-orthopedie/QUIZ_OBO_COMPLET.md",
+        "category": "VERTEX-Obésité-Orthopédie",
+        "name": "Quiz Obésité et Orthopédie",
+    },
+    "ptg": {
+        "file": "cours-ptg/QUIZ_PTG_COMPLET.md",
+        "category": "VERTEX-PTG",
+        "name": "Quiz Prothèse Totale du Genou",
+    },
+    "scoliose": {
+        "file": "cours-scoliose/QUIZ_SCOL_COMPLET.md",
+        "category": "VERTEX-Scoliose",
+        "name": "Quiz Scoliose",
+    },
+    "tendinites": {
+        "file": "cours-tendinites/QUIZ_TEND_COMPLET.md",
+        "category": "VERTEX-Tendinites",
+        "name": "Quiz Tendinites et Tendinopathies",
+    },
+    "hta": {
+        "file": "cours-hta/QUIZ_HTA_COMPLET.md",
+        "category": "VERTEX-HTA",
+        "name": "Quiz HTA",
+    },
+    "ioa": {
+        "file": "cours-infection-osseuse/QUIZ_IOA_COMPLET.md",
+        "category": "VERTEX-IOA",
+        "name": "Quiz Infections Ostéo-Articulaires",
+    },
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -124,7 +154,7 @@ def parse_quiz_md(filepath: Path) -> list[dict]:
             level = "argent"
         elif "-OR-" in code_upper:
             level = "or"
-        elif "-DI-" in code_upper:
+        elif "-DI-" in code_upper or "-DM-" in code_upper:
             level = "diamant"
         else:
             level = get_level_at_pos(q_match.start())

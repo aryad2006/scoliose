@@ -1,0 +1,630 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-8-les-grands-noms-de-lorthopedie">🦴 PARTIE 8 — LES GRANDS NOMS DE L'ORTHOPÉDIE</h1>
+<h2 id="galerie-des-pionniers-50-figures-qui-ont-faconne-la-discipline">Galerie des pionniers — 50 figures qui ont façonné la discipline</h2>
+<hr />
+<h1 id="module-32-dictionnaire-biographique-des-grands-orthopedistes">MODULE 32 — DICTIONNAIRE BIOGRAPHIQUE DES GRANDS ORTHOPÉDISTES</h1>
+<h2 id="portraits-et-contributions-des-figures-fondatrices">Portraits et contributions des figures fondatrices</h2>
+<hr />
+<h2 id="1-les-pionniers-avant-1800">1. Les pionniers (avant 1800)</h2>
+<h3 id="11-hippocrate-de-cos-460-370-av-j-c">1.1 Hippocrate de Cos (~460-370 av. J.-C.)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Grec</li>
+<li><strong>Contribution majeure</strong> : Fondements de la traumatologie rationnelle, banc d'Hippocrate, classification des fractures et luxations</li>
+<li><strong>Éponymes</strong> : Manœuvre d'Hippocrate (luxation d'épaule), banc d'Hippocrate, serment d'Hippocrate</li>
+<li><strong>Citation</strong> : <em>« La vie est courte, l'art est long, l'occasion fugitive, l'expérience trompeuse, le jugement difficile »</em></li>
+</ul>
+<h3 id="12-galien-de-pergame-129-216">1.2 Galien de Pergame (129-216)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Gréco-romain</li>
+<li><strong>Contribution majeure</strong> : Anatomie du squelette et des muscles, traumatologie des gladiateurs</li>
+<li><strong>Éponyme</strong> : Veine de Galien</li>
+<li><strong>Héritage</strong> : 1400 ans d'autorité anatomique (malgré les erreurs)</li>
+</ul>
+<h3 id="13-avicenne-ibn-sina-980-1037">1.3 Avicenne / Ibn Sina (980-1037)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Perse</li>
+<li><strong>Contribution majeure</strong> : <em>Canon de la médecine</em> — synthèse orthopédique la plus complète du Moyen Âge</li>
+<li><strong>Héritage</strong> : Manuel universitaire pendant 600 ans en Europe</li>
+</ul>
+<h3 id="14-abulcasis-al-zahrawi-936-1013">1.4 Abulcasis / Al-Zahrawi (936-1013)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Andalou (Cordoue)</li>
+<li><strong>Contribution majeure</strong> : <em>Kitab al-Tasrif</em> — premier atlas chirurgical illustré, 200+ instruments</li>
+<li><strong>Innovation</strong> : Catgut (suture résorbable), scie à os, cautérisation osseuse</li>
+</ul>
+<h3 id="15-andre-vesale-1514-1564">1.5 André Vésale (1514-1564)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Belge (Bruxelles)</li>
+<li><strong>Contribution majeure</strong> : <em>De Humani Corporis Fabrica</em> (1543) — correction de 200+ erreurs anatomiques de Galien</li>
+<li><strong>Héritage</strong> : Fondateur de l'anatomie moderne</li>
+</ul>
+<h3 id="16-ambroise-pare-1510-1590">1.6 Ambroise Paré (1510-1590)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français</li>
+<li><strong>Contribution majeure</strong> : Ligature vasculaire (fin de la cautérisation), prothèses articulées, traitement des plaies</li>
+<li><strong>Citation</strong> : <em>« Je le pansai, Dieu le guérit »</em></li>
+<li><strong>Éponymes</strong> : Fracture de Paré (atlas)</li>
+</ul>
+<h3 id="17-nicolas-andry-de-boisregard-1658-1742">1.7 Nicolas Andry de Boisregard (1658-1742)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Lyon)</li>
+<li><strong>Contribution majeure</strong> : Création du mot « orthopédie » (1741), arbre d'Andry</li>
+<li><strong>Héritage</strong> : Symbole universel de l'orthopédie</li>
+</ul>
+<h3 id="18-john-hunter-1728-1793">1.8 John Hunter (1728-1793)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Écossais</li>
+<li><strong>Contribution majeure</strong> : Biologie de la croissance et du remodelage osseux, consolidation fracturaire</li>
+<li><strong>Citation</strong> : <em>« Don't think, try »</em></li>
+<li><strong>Héritage</strong> : Fondateur de la chirurgie scientifique expérimentale</li>
+</ul>
+<hr />
+<h2 id="2-le-xixe-siecle-les-batisseurs">2. Le XIXe siècle — les bâtisseurs</h2>
+<h3 id="21-jean-andre-venel-1740-1791">2.1 Jean-André Venel (1740-1791)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Suisse</li>
+<li><strong>Contribution</strong> : Premier institut orthopédique au monde (Orbe, 1780)</li>
+</ul>
+<h3 id="22-antonius-mathijsen-1805-1878">2.2 Antonius Mathijsen (1805-1878)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Néerlandais</li>
+<li><strong>Contribution</strong> : Invention du bandage plâtré moderne (1851)</li>
+</ul>
+<h3 id="23-louis-stromeyer-1804-1876">2.3 Louis Stromeyer (1804-1876)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Allemand</li>
+<li><strong>Contribution</strong> : Première ténotomie sous-cutanée du tendon d'Achille (1831)</li>
+</ul>
+<h3 id="24-william-john-little-1810-1894">2.4 William John Little (1810-1894)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglais</li>
+<li><strong>Contribution</strong> : Royal Orthopaedic Hospital (1838), maladie de Little (paralysie cérébrale)</li>
+</ul>
+<h3 id="25-nikolai-pirogov-1810-1881">2.5 Nikolai Pirogov (1810-1881)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Russe</li>
+<li><strong>Contribution</strong> : Usage massif du plâtre en médecine de guerre (Crimée), amputation ostéoplastique de Pirogov</li>
+</ul>
+<h3 id="26-leopold-ollier-1830-1900">2.6 Léopold Ollier (1830-1900)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Lyon)</li>
+<li><strong>Contribution</strong> : Rôle ostéogénique du périoste, greffes osseuses, résections sous-périostées</li>
+<li><strong>Éponyme</strong> : Maladie d'Ollier (enchondromatose)</li>
+</ul>
+<h3 id="27-richard-von-volkmann-1830-1889">2.7 Richard von Volkmann (1830-1889)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Allemand</li>
+<li><strong>Contribution</strong> : Contracture ischémique de Volkmann (1881)</li>
+<li><strong>Éponyme</strong> : Contracture de Volkmann, triangle de Volkmann</li>
+</ul>
+<h3 id="28-hugh-owen-thomas-1834-1891">2.8 Hugh Owen Thomas (1834-1891)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Gallois</li>
+<li><strong>Contribution</strong> : Attelle de Thomas, collier de Thomas, principe du repos forcé</li>
+<li><strong>Héritage</strong> : Mortalité des fractures du fémur réduite de 80 % à 20 % (WWI)</li>
+</ul>
+<h3 id="29-lewis-albert-sayre-1820-1900">2.9 Lewis Albert Sayre (1820-1900)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Américain</li>
+<li><strong>Contribution</strong> : Premier professeur d'orthopédie aux USA, corset plâtré de suspension</li>
+</ul>
+<h3 id="210-percivall-pott-1714-1788">2.10 Percivall Pott (1714-1788)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglais</li>
+<li><strong>Contribution</strong> : Fracture de Pott (bimalléolaire), mal de Pott (tuberculose vertébrale)</li>
+</ul>
+<h3 id="211-joseph-lister-1827-1912">2.11 Joseph Lister (1827-1912)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglais</li>
+<li><strong>Contribution</strong> : Antisepsie chirurgicale (acide phénique, 1867)</li>
+<li><strong>Héritage</strong> : A rendu possible la chirurgie osseuse élective</li>
+</ul>
+<h3 id="212-wilhelm-rontgen-1845-1923">2.12 Wilhelm Röntgen (1845-1923)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Allemand</li>
+<li><strong>Contribution</strong> : Découverte des rayons X (1895), premier prix Nobel de physique (1901)</li>
+<li><strong>Héritage</strong> : Révolution diagnostique en orthopédie</li>
+</ul>
+<hr />
+<h2 id="3-le-xxe-siecle-les-revolutionnaires">3. Le XXe siècle — les révolutionnaires</h2>
+<h3 id="31-albin-lambotte-1866-1955">3.1 Albin Lambotte (1866-1955)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Belge (Anvers)</li>
+<li><strong>Contribution</strong> : Père de l'ostéosynthèse — plaques, vis, fixateur externe</li>
+<li><strong>Œuvre</strong> : <em>Chirurgie opératoire des fractures</em> (1913), &gt; 2000 ostéosynthèses</li>
+</ul>
+<h3 id="32-robert-jones-1857-1933">3.2 Robert Jones (1857-1933)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglais (Liverpool)</li>
+<li><strong>Contribution</strong> : Organisation des services orthopédiques militaires (WWI), fondation BOA (1918)</li>
+<li><strong>Éponyme</strong> : Fracture de Jones (5e métatarsien), bandage de Robert Jones</li>
+</ul>
+<h3 id="33-lorenz-bohler-1885-1973">3.3 Lorenz Böhler (1885-1973)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Autrichien (Vienne)</li>
+<li><strong>Contribution</strong> : Systématisation de la traumatologie, <em>Traitement des fractures</em> (1929, 14 langues)</li>
+<li><strong>Éponymes</strong> : Angle de Böhler, étrier de Böhler, attelle de Böhler-Braun</li>
+</ul>
+<h3 id="34-marius-smith-petersen-1886-1953">3.4 Marius Smith-Petersen (1886-1953)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Norvégien-américain (Boston)</li>
+<li><strong>Contribution</strong> : Clou tri-ailé (col fémoral), cup arthroplasty, voie d'abord antérieure de hanche</li>
+</ul>
+<h3 id="35-robert-danis-1880-1962">3.5 Robert Danis (1880-1962)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Belge (Bruxelles)</li>
+<li><strong>Contribution</strong> : Concept de compression interfragmentaire (« soudure autogène »)</li>
+<li><strong>Héritage</strong> : Inspiration directe de l'AO/ASIF</li>
+</ul>
+<h3 id="36-gerhard-kuntscher-1900-1972">3.6 Gerhard Küntscher (1900-1972)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Allemand (Kiel)</li>
+<li><strong>Contribution</strong> : Enclouage centromédullaire (1936) — clou intramédullaire à foyer fermé</li>
+<li><strong>Héritage</strong> : Fondement de l'enclouage moderne</li>
+</ul>
+<h3 id="37-vittorio-putti-1880-1940">3.7 Vittorio Putti (1880-1940)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Italien (Bologne)</li>
+<li><strong>Contribution</strong> : Institut Rizzoli (directeur), co-fondateur SICOT, traitement de la luxation congénitale de hanche</li>
+</ul>
+<h3 id="38-sir-john-charnley-1911-1982">3.8 Sir John Charnley (1911-1982)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglais (Wrightington)</li>
+<li><strong>Contribution</strong> : Low Friction Arthroplasty (1962) — PTH cimentée polyéthylène-métal, ciment PMMA, flux laminaire</li>
+<li><strong>Héritage</strong> : Plus grande innovation orthopédique du XXe siècle</li>
+</ul>
+<h3 id="39-maurice-e-muller-1918-2009">3.9 Maurice E. Müller (1918-2009)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Suisse (Berne)</li>
+<li><strong>Contribution</strong> : Fondateur et président de l'AO/ASIF (1958), classification AO des fractures, prothèse de Müller</li>
+<li><strong>Héritage</strong> : AO = plus grande organisation d'enseignement chirurgical au monde</li>
+</ul>
+<h3 id="310-martin-allgower-1917-2007">3.10 Martin Allgöwer (1917-2007)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Suisse (Bâle)</li>
+<li><strong>Contribution</strong> : Co-fondateur AO, recherche biologique, vis à compression</li>
+<li><strong>Éponyme</strong> : Point d'Allgöwer (suture)</li>
+</ul>
+<h3 id="311-gavriil-ilizarov-1921-1992">3.11 Gavriil Ilizarov (1921-1992)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Soviétique (Kourgan, Sibérie)</li>
+<li><strong>Contribution</strong> : Ostéogenèse en distraction, fixateur circulaire, transport osseux</li>
+<li><strong>Héritage</strong> : Révolution de la chirurgie reconstructrice</li>
+</ul>
+<h3 id="312-paul-harrington-1911-1980">3.12 Paul Harrington (1911-1980)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Américain (Houston, Texas)</li>
+<li><strong>Contribution</strong> : Première instrumentation rachidienne (tige de distraction, 1962)</li>
+<li><strong>Héritage</strong> : A rendu possible la correction chirurgicale de la scoliose</li>
+</ul>
+<h3 id="313-yves-cotrel-1925-2019">3.13 Yves Cotrel (1925-2019)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Paris)</li>
+<li><strong>Contribution</strong> : Co-inventeur de l'instrumentation CD (1983), plâtre EDF, traction de Cotrel</li>
+<li><strong>Héritage</strong> : Correction 3D de la scoliose</li>
+</ul>
+<h3 id="314-jean-dubousset-1932-">3.14 Jean Dubousset (1932-)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Paris)</li>
+<li><strong>Contribution</strong> : Co-inventeur de l'instrumentation CD (1983), concept du cône d'économie, co-inventeur du système EOS</li>
+<li><strong>Éponyme</strong> : Signe de Dubousset (gibbosité)</li>
+</ul>
+<h3 id="315-eduardo-luque-1940-2018">3.15 Eduardo Luque (1940-2018)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Mexicain</li>
+<li><strong>Contribution</strong> : Fils sous-laminaires + tiges (instrumentation de Luque, 1976), fixation segmentaire</li>
+<li><strong>Héritage</strong> : Précurseur de la fixation multi-segmentaire du rachis</li>
+</ul>
+<h3 id="316-masaki-watanabe-1911-1995">3.16 Masaki Watanabe (1911-1995)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Japonais (Tokyo)</li>
+<li><strong>Contribution</strong> : Arthroscope No. 21 (1957), première méniscectomie arthroscopique (1962)</li>
+<li><strong>Héritage</strong> : Père de l'arthroscopie</li>
+</ul>
+<h3 id="317-john-insall-1930-2000">3.17 John Insall (1930-2000)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Anglo-américain (New York)</li>
+<li><strong>Contribution</strong> : Prothèse Total Condylar (1973), prothèse postéro-stabilisée (1978), Insall Knee Score</li>
+<li><strong>Héritage</strong> : Père de la prothèse de genou moderne</li>
+</ul>
+<h3 id="318-augusto-sarmiento-1927-2020">3.18 Augusto Sarmiento (1927-2020)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Colombien-américain (Miami)</li>
+<li><strong>Contribution</strong> : Plâtre fonctionnel (functional bracing, 1967)</li>
+<li><strong>Héritage</strong> : Traitement conservateur moderne des fractures</li>
+</ul>
+<h3 id="319-gilles-bousquet-1937-2014">3.19 Gilles Bousquet (1937-2014)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Lyon)</li>
+<li><strong>Contribution</strong> : Cupule à double mobilité (1974)</li>
+<li><strong>Héritage</strong> : Innovation anti-luxation devenue standard mondial</li>
+</ul>
+<h3 id="320-reinhold-ganz-1936-">3.20 Reinhold Ganz (1936-)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Suisse (Berne)</li>
+<li><strong>Contribution</strong> : Luxation chirurgicale de la hanche, concept de conflit fémoro-acétabulaire (FAI)</li>
+<li><strong>Héritage</strong> : A ouvert le champ de la préservation articulaire de la hanche</li>
+</ul>
+<h3 id="321-ignacio-ponseti-1914-2009">3.21 Ignacio Ponseti (1914-2009)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Espagnol-américain (Iowa)</li>
+<li><strong>Contribution</strong> : Méthode de Ponseti pour le pied bot congénital (1996)</li>
+<li><strong>Héritage</strong> : Gold standard mondial, recommandé par l'OMS</li>
+</ul>
+<h3 id="322-alain-charles-masquelet-1950-">3.22 Alain-Charles Masquelet (1950-)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Français (Paris)</li>
+<li><strong>Contribution</strong> : Technique de la membrane induite pour les pertes de substance osseuse (2000)</li>
+<li><strong>Héritage</strong> : Révolution en reconstruction osseuse</li>
+</ul>
+<h3 id="323-dror-paley-1956-">3.23 Dror Paley (1956-)</h3>
+<ul>
+<li><strong>Nationalité</strong> : Canado-américain</li>
+<li><strong>Contribution</strong> : Diffusion de la méthode d'Ilizarov en Amérique, allongements des membres, classification des déformations</li>
+<li><strong>Héritage</strong> : Leader mondial de la chirurgie de l'allongement</li>
+</ul>
+<hr />
+<h2 id="4-les-grands-noms-par-specialite">4. Les grands noms par spécialité</h2>
+<h3 id="41-chirurgie-de-la-main">4.1 Chirurgie de la main</h3>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Dates</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sterling Bunnell</td>
+<td>1882-1957</td>
+<td>Père de la chirurgie de la main, transferts tendineux</td>
+</tr>
+<tr>
+<td>Marc Iselin</td>
+<td>1898-1987</td>
+<td>Fondateur de la chirurgie de la main en France</td>
+</tr>
+<tr>
+<td>Harold Kleinert</td>
+<td>1921-2013</td>
+<td>Réparation primaire des tendons fléchisseurs</td>
+</tr>
+<tr>
+<td>Earl Owen</td>
+<td>1930-2017</td>
+<td>Microchirurgie, replantation digitale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-chirurgie-du-rachis">4.2 Chirurgie du rachis</h3>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Dates</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Russell Hibbs</td>
+<td>1869-1932</td>
+<td>Première arthrodèse rachidienne (1911)</td>
+</tr>
+<tr>
+<td>Paul Harrington</td>
+<td>1911-1980</td>
+<td>Tige de distraction (1962)</td>
+</tr>
+<tr>
+<td>Eduardo Luque</td>
+<td>1940-2018</td>
+<td>Fils sous-laminaires (1976)</td>
+</tr>
+<tr>
+<td>Cotrel et Dubousset</td>
+<td>1925/1932</td>
+<td>Instrumentation CD — correction 3D (1983)</td>
+</tr>
+<tr>
+<td>Suk</td>
+<td>1944-</td>
+<td>Vis pédiculaires segmentaires (1993)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-chirurgie-du-genou">4.3 Chirurgie du genou</h3>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Dates</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hap Paul</td>
+<td>-</td>
+<td>Prothèses hinged (années 1950)</td>
+</tr>
+<tr>
+<td>John Insall</td>
+<td>1930-2000</td>
+<td>Total Condylar, PS design</td>
+</tr>
+<tr>
+<td>Frank Noyes</td>
+<td>1943-</td>
+<td>Reconstruction du LCA, scores</td>
+</tr>
+<tr>
+<td>Lars Peterson</td>
+<td>1944-</td>
+<td>ACI — implantation de chondrocytes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-traumatologie">4.4 Traumatologie</h3>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Dates</th>
+<th>Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lorenz Böhler</td>
+<td>1885-1973</td>
+<td>Systématisation de la traumatologie</td>
+</tr>
+<tr>
+<td>Maurice Müller</td>
+<td>1918-2009</td>
+<td>AO/ASIF — standardisation de l'ostéosynthèse</td>
+</tr>
+<tr>
+<td>Robert Gustilo</td>
+<td>1932-2003</td>
+<td>Classification des fractures ouvertes</td>
+</tr>
+<tr>
+<td>Christian Krettek</td>
+<td>1958-</td>
+<td>MIPO — ostéosynthèse mini-invasive</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-quiz-module-32">5. Quiz — Module 32</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel chirurgien français a créé le mot « orthopédie » en 1741 ?<br />
+- A) Ambroise Paré<br />
+- B) Nicolas Andry ✓<br />
+- C) Léopold Ollier<br />
+- D) Jean-André Venel</p>
+<p><strong>Q2.</strong> Associez chaque chirurgien à son innovation :<br />
+| Chirurgien | Innovation |<br />
+|-----------|-----------|<br />
+| Charnley | PTH à faible frottement ✓ |<br />
+| Ilizarov | Ostéogenèse en distraction ✓ |<br />
+| Küntscher | Clou centromédullaire ✓ |<br />
+| Cotrel-Dubousset | Correction 3D de la scoliose ✓ |</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Quel chirurgien est à la fois co-inventeur d'une instrumentation rachidienne révolutionnaire et co-inventeur d'un système d'imagerie basé sur un prix Nobel de physique ?<br />
+- A) Paul Harrington<br />
+- B) Jean Dubousset ✓<br />
+- C) Yves Cotrel<br />
+- D) Eduardo Luque</p>
+<h3 id="or">🥇 Or</h3>
+<p><strong>Q4.</strong> Quel point commun lie Semmelweis, Ilizarov et Küntscher dans leur parcours professionnel ?<br />
+- A) Ils ont tous travaillé au même hôpital<br />
+- B) Ils ont tous été initialement rejetés par l'establishment médical avant d'être reconnus ✓<br />
+- C) Ils étaient tous chirurgiens militaires<br />
+- D) Ils ont tous reçu le prix Nobel</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q5.</strong> Si vous deviez choisir les 5 innovations les plus importantes de l'histoire de l'orthopédie, lesquelles retiendriez-vous et pourquoi ? Argumentez.</p>
+<blockquote>
+<p><strong>Éléments de réponse possibles</strong> : (1) L'anesthésie (1846) — a rendu la chirurgie humaine ; (2) L'antisepsie (1867) — a rendu la chirurgie survivable ; (3) La radiographie (1895) — a rendu le diagnostic précis ; (4) La PTH de Charnley (1962) — a soulagé des millions d'arthrosiques ; (5) L'AO/ASIF (1958) — a standardisé et enseigné l'ostéosynthèse mondiale. Alternatives défendables : l'enclouage centromédullaire (Küntscher), l'arthroscopie (Watanabe), l'instrumentation CD (Cotrel-Dubousset), l'ostéogenèse en distraction (Ilizarov), les antibiotiques (Fleming/Florey/Chain).</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 8 — Les grands noms de l'orthopédie</em><br />
+<em>Formation VERTEX© — Histoire de l'Orthopédie — Tous droits réservés</em></p>
+<hr />
+<h2 id="annexe-tableau-recapitulatif-des-eponymes-orthopediques">ANNEXE — TABLEAU RÉCAPITULATIF DES ÉPONYMES ORTHOPÉDIQUES</h2>
+<table>
+<thead>
+<tr>
+<th>Éponyme</th>
+<th>Description</th>
+<th>Référence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angle de Böhler</td>
+<td>Angle tuber-articulaire du calcanéus</td>
+<td>Böhler, 1929</td>
+</tr>
+<tr>
+<td>Arbre d'Andry</td>
+<td>Symbole de l'orthopédie</td>
+<td>Andry, 1741</td>
+</tr>
+<tr>
+<td>Attelle de Thomas</td>
+<td>Attelle fémorale</td>
+<td>Hugh Owen Thomas, ~1875</td>
+</tr>
+<tr>
+<td>Bandage de Desault</td>
+<td>Immobilisation de l'épaule</td>
+<td>Desault, ~1790</td>
+</tr>
+<tr>
+<td>Banc d'Hippocrate</td>
+<td>Dispositif de réduction</td>
+<td>Hippocrate, ~400 av. J.-C.</td>
+</tr>
+<tr>
+<td>Broche de Kirschner</td>
+<td>Broche fine lisse</td>
+<td>Kirschner, 1909</td>
+</tr>
+<tr>
+<td>Clou de Küntscher</td>
+<td>Clou centromédullaire</td>
+<td>Küntscher, 1936</td>
+</tr>
+<tr>
+<td>Contracture de Volkmann</td>
+<td>Contracture ischémique avant-bras</td>
+<td>Volkmann, 1881</td>
+</tr>
+<tr>
+<td>Fracture de Jones</td>
+<td>Fracture base du 5e métatarsien</td>
+<td>Robert Jones, 1902</td>
+</tr>
+<tr>
+<td>Fracture de Pott</td>
+<td>Fracture bimalléolaire</td>
+<td>Pott, 1768</td>
+</tr>
+<tr>
+<td>Instrumentation CD</td>
+<td>Correction 3D du rachis</td>
+<td>Cotrel-Dubousset, 1983</td>
+</tr>
+<tr>
+<td>Low Friction Arthroplasty</td>
+<td>PTH cimentée</td>
+<td>Charnley, 1962</td>
+</tr>
+<tr>
+<td>Mal de Pott</td>
+<td>Tuberculose vertébrale</td>
+<td>Pott, 1779</td>
+</tr>
+<tr>
+<td>Maladie de Little</td>
+<td>Diplégie spastique</td>
+<td>Little, 1862</td>
+</tr>
+<tr>
+<td>Maladie d'Ollier</td>
+<td>Enchondromatose multiple</td>
+<td>Ollier, 1899</td>
+</tr>
+<tr>
+<td>Manœuvre d'Hippocrate</td>
+<td>Réduction luxation d'épaule</td>
+<td>Hippocrate, ~400 av. J.-C.</td>
+</tr>
+<tr>
+<td>Méthode de Ponseti</td>
+<td>Traitement du pied bot</td>
+<td>Ponseti, 1996</td>
+</tr>
+<tr>
+<td>Plâtre de Mathijsen</td>
+<td>Bandage plâtré</td>
+<td>Mathijsen, 1851</td>
+</tr>
+<tr>
+<td>Technique de Masquelet</td>
+<td>Membrane induite</td>
+<td>Masquelet, 2000</td>
+</tr>
+<tr>
+<td>Triangle de Petit</td>
+<td>Triangle lombaire</td>
+<td>Jean-Louis Petit, ~1740</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

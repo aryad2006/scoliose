@@ -1,0 +1,493 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-3-tendinopathies-du-tendon-dachille-et-du-pied-modules-8-10">Partie 3 — Tendinopathies du tendon d'Achille et du pied (Modules 8-10)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-8-tendinopathie-dachille-corporeale-et-insertionnelle">MODULE 8 : TENDINOPATHIE D'ACHILLE — CORPORÉALE ET INSERTIONNELLE</h1>
+<p><strong>Partie</strong> : III — Tendinopathies du tendon d'Achille et du pied<br />
+<strong>Durée estimée</strong> : 5h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Coureuse à pied (40 km/semaine), présente depuis 3 mois une douleur du tendon d'Achille droit, à mi-hauteur (zone médiane), apparue après une augmentation brutale du kilométrage (+30% en 2 semaines). La douleur est maximale le matin au lever (premiers pas douloureux pendant 10 minutes), diminue à l'échauffement, mais revient en fin de course. Le tendon est épaissi, fusiforme à la palpation. *Quel est le stade du continuum ? Faut-il arrêter le sport ? Quel programme d'exercices excentiques proposer ? Y a-t-il une place pour les injections ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Distinguer</strong> la tendinopathie corporéale de la tendinopathie insertionnelle d'Achille (physiopathologie, clinique, imagerie, traitement différent)</li>
+<li><strong>Évaluer</strong> la sévérité par le score VISA-A et l'examen clinique</li>
+<li><strong>Prescrire</strong> un programme d'exercices excentiques selon le protocole d'Alfredson</li>
+<li><strong>Maîtriser</strong> le modèle Silbernagel de reprise sportive progressive</li>
+<li><strong>Identifier</strong> les indications des thérapies adjuvantes (ondes de choc, PRP, chirurgie)</li>
+<li><strong>Connaître</strong> les facteurs de risque modifiables et les stratégies de prévention secondaire</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-81-anatomie-fonctionnelle-et-epidemiologie">Section 8.1 — Anatomie fonctionnelle et épidémiologie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie du complexe suro-achilléo-plantaire</strong> :<br />
+  - Gastrocnémiens (médial + latéral) et soléaire → convergence vers le tendon d'Achille<br />
+  - Zone de torsion fibres : les fibres latérales deviennent postérieures, les fibres médiales deviennent antérieures → zone de stress maximal et de tendinopathie corporéale (2-6 cm de l'insertion)<br />
+  - Insertion calcanéenne : fibrocartilage, enthèse, bourse rétro-calcanéenne (pré-achilléenne) et bourse rétro-calcanéenne superficielle<br />
+  - Paraténon (pas de gaine synoviale) : richement vascularisé, source de néovaisseaux dans la tendinopathie<br />
+- <strong>Zone critique vasculaire</strong> : 2-6 cm au-dessus de l'insertion = watershed zone = zone hypovasculaire → vulnérabilité maximale = localisation préférentielle de la tendinopathie corporéale<br />
+- <strong>Épidémiologie</strong> :<br />
+  - Incidence sport : 6-17% des blessures des coureurs à pied <em>(Lopes et al., Br J Sports Med, 2012)</em><br />
+  - Prévalence vie entière chez les coureurs récréatifs : 52% pour une tendinopathie achilléenne <em>(Kujala et al., Am J Sports Med, 2005)</em><br />
+  - Corporéale (55-65%) &gt;&gt; Insertionnelle (20-25%) &gt;&gt; Paratendinite (5-10%) <em>(Kvist, 1994, Scand J Med Sci Sports)</em><br />
+  - Facteurs de risque : âge &gt;35 ans, sexe masculin, IMC élevé, diabète, hypercholestérolémie, quinolones, pronation excessive, entraînement excessif, surface dure</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND08-S01-001 | 🧊 MODÈLE 3D | Complexe suro-achilléo-plantaire — anatomie avec zone de torsion des fibres | TendonSim© |<br />
+| MTEND08-S01-002 | 📐 SCHÉMA | Zone de torsion des fibres du tendon d'Achille — vue postérieure | Schéma + axe de stress |<br />
+| MTEND08-S01-003 | 📐 SCHÉMA | Zone critique vasculaire (2-6 cm) — watershed zone | Schéma vasculaire |<br />
+| MTEND08-S01-004 | 📊 INFOGRAPHIE | Épidémiologie des tendinopathies achilléennes — facteurs de risque | Chiffres clés |</p>
+<h3 id="section-82-tendinopathie-corporeale-physiopathologie-clinique-imagerie">Section 8.2 — Tendinopathie corporéale : physiopathologie, clinique, imagerie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Physiopathologie</strong> : surcharge mécanique dans la watershed zone → disruption des fibres de collagène → réponse cellulaire inadaptée (continuum de Cook) → accumulation de protéoglycanes, néovascularisation, désorganisation matricielle → nodule dégénératif (tendinose)<br />
+- <strong>Présentation clinique</strong> :<br />
+  - Douleur à 2-6 cm de l'insertion (mid-portion)<br />
+  - Raideur matinale (premiers pas douloureux pendant 5-30 minutes)<br />
+  - Warm-up phenomenon classique<br />
+  - Épaississement fusiforme palpable (signe du noyau)<br />
+  - Arc douloureux mobile (le noyau se déplace avec le tendon lors de la dorsiflexion)<br />
+  - Single leg heel rise test diminué (&lt;25 répétitions)<br />
+- <strong>Imaging</strong> :<br />
+  - Échographie : épaississement &gt;7 mm (norme 4-6 mm), hypoéchogénicité focale, perte fibrillaire, doppler puissance +(néovascularisation)<br />
+  - IRM : épaississement, signal intermédiaire en PD fat sat (tendinopathie) ou hypersignal T2 focal (fissure intra-substance)<br />
+- <strong>Stades cliniques</strong> (Blazina modifié) :<br />
+  - Stade 1 : douleur après l'activité uniquement<br />
+  - Stade 2 : douleur au début de l'activité, disparaît à l'échauffement<br />
+  - Stade 3 : douleur pendant l'activité, limitation de la performance<br />
+  - Stade 4 : douleur au repos<br />
+- <strong>Score VISA-A</strong> : évaluation standardisée (0-100), suivi longitudinal de l'efficacité du traitement</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND08-S02-001 | 📷 IMAGE | Aspect clinique — épaississement fusiforme du tendon d'Achille (photo) | Photo clinique |<br />
+| MTEND08-S02-002 | 📷 IMAGE | Échographie — tendinopathie corporéale (hypoéchogénicité, épaississement) | Image annotée |<br />
+| MTEND08-S02-003 | 📷 IMAGE | Doppler puissance positif — néovascularisation d'Ohberg grade 3 | Image écho couleur |<br />
+| MTEND08-S02-004 | 📊 INFOGRAPHIE | Stades de Blazina modifiés — correspondance avec le continuum de Cook | Tableau comparatif |<br />
+| MTEND08-S02-005 | 📊 INFOGRAPHIE | Score VISA-A — questionnaire complet | Formulaire reproductible |</p>
+<h3 id="section-83-tendinopathie-insertionnelle-et-maladie-de-haglund">Section 8.3 — Tendinopathie insertionnelle et maladie de Haglund</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendinopathie insertionnelle</strong> :<br />
+  - Localisation : insertion calcanéenne du tendon d'Achille (enthèse)<br />
+  - Physiopathologie différente de la corporéale : composante compressive (compression du tendon profond contre l'os lors de la dorsiflexion) + composante de traction → enthésopathie mixte<br />
+  - Souvent associée à : enthésophytes, bourse rétro-calcanéenne, Haglund<br />
+  - Facteurs associés : surpoids, sédentarité (paradoxalement), diabète, spondylarthropathie (rechercher HLA-B27 si bilatéral et inflammatoire)<br />
+  - Clinique : douleur à l'insertion (calcanéum postéro-supérieur), aggravée par le chaussage (contrefort), palpation douloureuse de l'insertion<br />
+  - IMPORTANT : les exercices excentiques standard (Alfredson avec le talon sous le bord de la marche) aggravent la tendinopathie insertionnelle par la composante compressive en dorsiflexion → adapter le protocole (pas de dorsiflexion au-delà de la position neutre)<br />
+- <strong>Maladie de Haglund</strong> :<br />
+  - Proéminence osseuse postéro-supérieure du calcanéum → conflit mécanique avec le tendon d'Achille et la bourse rétro-calcanéenne<br />
+  - Triade : proéminence osseuse + bursite rétro-calcanéenne + tendinopathie insertionnelle<br />
+  - Diagnostic : profil de cheville — angle de Fowler-Philip (&gt;75° = Haglund), mesure du parallel pitch lines<br />
+  - Traitement conservateur : modification du chaussage (pas de contrefort rigide), talonnette, ice, anti-inflammatoires, exercices adaptés<br />
+  - Traitement chirurgical : résection de la proéminence (calcaneoplastie) + débridement tendineux, abord direct ou endoscopique<br />
+- <strong>Bursites</strong> :<br />
+  - Bursite rétro-calcanéenne (rétro-achilléenne, pré-achilléenne) : entre tendon et calcanéum — souvent associée à Haglund ou rhumatisme inflammatoire<br />
+  - Bursite sous-cutanée superficielle : entre tendon et peau — friction du chaussage</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND08-S03-001 | 📐 SCHÉMA | Tendinopathie corporéale vs insertionnelle — localisation et mécanisme | Schéma comparatif |<br />
+| MTEND08-S03-002 | 📷 IMAGE | Radiographie profil — maladie de Haglund, angle de Fowler-Philip | Cliché annoté |<br />
+| MTEND08-S03-003 | 📷 IMAGE | IRM sagittale — Haglund + bursite + tendinopathie insertionnelle (triade) | Image annotée |<br />
+| MTEND08-S03-004 | 📐 SCHÉMA | Adaptation du protocole excentriques pour l'insertionnelle — pas de dorsiflexion au-delà du neutre | Schéma d'exercice |<br />
+| MTEND08-S03-005 | 📊 INFOGRAPHIE | Causes de douleur postérieure de cheville — diagnostic différentiel | Tableau différentiel |</p>
+<h3 id="section-84-traitement-de-la-tendinopathie-dachille-evidence-based">Section 8.4 — Traitement de la tendinopathie d'Achille — evidence-based</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Traitement de première ligne — EXERCICES EXCENTIQUES</strong> :<br />
+  - <strong>Protocole d'Alfredson</strong> (gold standard) <em>(d'après Alfredson et al., 1998, Am J Sports Med)</em> : exercices de descente excentrique du mollet, genou tendu (gastrocnémiens) + genou fléchi (soléaire), 3×15 × 2 exercices × 2 fois/jour = 180 répétitions/jour, 12 semaines minimum, DOULEUR AUTORISÉE (0-5/10 EVA), progression avec charge additionnelle (sac à dos lesté)<br />
+  - <strong>Protocole de Silbernagel</strong> (HSR — Heavy Slow Resistance) : alternative aux excentiques, combinant concentrique-excentrique à charge lourde, pressions plus faibles, plus de compliance patient, efficacité comparable à 12 semaines<br />
+  - Surcharge progressive (overload management) : principe de la capacité de charge vs charge appliquée<br />
+- <strong>Modification d'activité</strong> : JAMAIS d'arrêt total de l'activité (déconditionnement du tendon = perte de capacité de charge → rechute) — diminution temporaire de la charge, modulation volume/intensité, activités de substitution (vélo, natation) si douleur &gt;5/10 EVA<br />
+- <strong>Ondes de choc extracorporelles (ESWT)</strong> : evidence niveau B pour les tendinopathies récalcitrantes (&gt;3 mois d'excentiques sans amélioration) — 3-5 séances, 1/semaine<br />
+- <strong>PRP (Plasma Riche en Plaquettes)</strong> : evidence controversée, méta-analyses contradictoires — possible bénéfice à court terme, résultats modestes à long terme — recommandé en 2ème/3ème ligne<br />
+- <strong>High Volume Injection (HVI)</strong> : injection de 30-50 mL sous guidage échographique entre paraténon et tendon → stripping des néovaisseaux — bénéfice à court terme (réduction rapide de la douleur)<br />
+- <strong>Corticoïdes</strong> : CONTRE-INDIQUÉS en péri-achilléen (↑ risque de rupture × 3.7, <em>Dean et al., 2014, BMJ</em>) — exception : bursite rétro-calcanéenne isolée sous guidage échographique<br />
+- <strong>Traitement chirurgical</strong> (échec conservateur ≥6 mois) :<br />
+  - Corporéale : excision du nodule dégénératif + débridement ± augmentation (transfert FHL) — résultats 70-85% satisfaisants<br />
+  - Insertionnelle : calcaneoplastie + débridement ± ancrage de réinsertion (&gt;50% de l'insertion décollée) — endoscopique ou ouvert</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND08-S04-001 | 🎥 VIDÉO | Protocole d'Alfredson — démonstration des 2 exercices (genou tendu + fléchi) | Vidéo exercice |<br />
+| MTEND08-S04-002 | 🎬 ANIMATION | Protocole HSR de Silbernagel — progression de charge sur 12 semaines | Graphique animé |<br />
+| MTEND08-S04-003 | 📊 INFOGRAPHIE | Algorithme de traitement de la tendinopathie d'Achille — evidence by level | Arbre décisionnel |<br />
+| MTEND08-S04-004 | 📊 INFOGRAPHIE | Alfredson vs HSR — comparaison des protocoles | Tableau side-by-side |<br />
+| MTEND08-S04-005 | 🎥 VIDÉO | Chirurgie du nodule dégénératif — excision + débridement | Vidéo chirurgicale |<br />
+| MTEND08-S04-006 | 📐 SCHÉMA | High Volume Injection — principe du stripping des néovaisseaux | Schéma interventionnel |</p>
+<h3 id="points-cles-du-module-8">Points clés du Module 8</h3>
+<ol>
+<li>La tendinopathie corporéale (2-6 cm de l'insertion) et l'insertionnelle sont 2 entités distinctes avec des traitements différents</li>
+<li>La zone de torsion des fibres et la watershed zone vasculaire expliquent la vulnérabilité de la zone médiane</li>
+<li>Le protocole d'Alfredson (excentiques 180 rép/jour pendant 12 semaines) est le gold standard — la douleur modérée est acceptable pendant les exercices</li>
+<li>L'arrêt total de l'activité est DÉCONSEILLÉ — modulation de la charge, pas de cessation</li>
+<li>Les exercices excentiques standard avec dorsiflexion au-delà du neutre AGGRAVENT la tendinopathie insertionnelle</li>
+<li>Les corticoïdes sont CONTRE-INDIQUÉS en péri-achilléen (risque de rupture)</li>
+<li>La chirurgie n'est envisagée qu'après échec d'un traitement conservateur bien conduit pendant ≥6 mois</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, localisation, épidémiologie)</li>
+<li>3 QCM Argent (clinique, imagerie, protocoles d'exercices)</li>
+<li>2 QCM Or (choix thérapeutique selon le contexte, adaptation du programme)</li>
+<li>1 QCM Diamant (cas : coureuse avec tendinopathie insertionnelle, Haglund, VISA-A à 35 → plan complet de traitement)</li>
+<li>1 QROC : « Expliquez pourquoi les exercices excentiques d'Alfredson standard sont contre-indiqués dans la tendinopathie insertionnelle, et décrivez les modifications nécessaires. »</li>
+</ul>
+<hr />
+<h1 id="module-9-rupture-du-tendon-dachille-diagnostic-et-traitement">MODULE 9 : RUPTURE DU TENDON D'ACHILLE — DIAGNOSTIC ET TRAITEMENT</h1>
+<p><strong>Partie</strong> : III — Tendinopathies du tendon d'Achille et du pied<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-8</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Joueur de badminton récréatif, ressent un craquement brutal du mollet droit en se jetant sur un lob au-dessus de sa tête. Il décrit une sensation de « coup de pied dans le mollet ». Incapable de se relever sur la pointe du pied, il est transporté aux urgences. Le médecin urgentiste palpe un gap au tiers inférieur du mollet. *Quel est le diagnostic ? Faut-il opérer ou traiter fonctionnellement ? Les résultats sont-ils différents ? Quel protocole de réhabilitation ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> cliniquement une rupture du tendon d'Achille (triade : douleur brutale, test de Thompson positif, gap palpable)</li>
+<li><strong>Connaître</strong> l'épidémiologie et les facteurs de risque (fluoroquinolones, corticoïdes, le « weekend warrior »)</li>
+<li><strong>Comparer</strong> les résultats du traitement chirurgical vs fonctionnel (méta-analyses)</li>
+<li><strong>Maîtriser</strong> le protocole de réhabilitation fonctionnelle accéléré</li>
+<li><strong>Gérer</strong> les ruptures chroniques et les complications</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-91-epidemiologie-mecanisme-et-diagnostic-clinique">Section 9.1 — Épidémiologie, mécanisme et diagnostic clinique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Épidémiologie</strong> : incidence 18-37/100 000/an <em>(Ganestam et al., Foot Ankle Surg, 2016)</em> (en augmentation), pic d'âge 30-50 ans (« weekend warrior »), sex-ratio 3-6H:1F <em>(Ganestam et al., 2016)</em>, côté gauche légèrement plus fréquent (pied d'appel)<br />
+- <strong>Mécanismes</strong> :<br />
+  - Sport (75%) : changement de direction brutal, réception de saut, sprint démarrage — badminton, tennis, squash, football<br />
+  - Chute/faux pas (10-15%)<br />
+  - Traumatisme direct (rare)<br />
+  - Rupture sur tendon dégénératif (40-50% des cas ont des lésions pré-existantes asymptomatiques)<br />
+- <strong>Facteurs de risque</strong> :<br />
+  - Fluoroquinolones : RR × 3-4, surtout si &gt;60 ans ou corticoïdes associés — délai médian 6 jours après début du traitement <em>(Stephenson et al., Drug Saf, 2013)</em><br />
+  - Corticoïdes systémiques ou locaux : fragilisation du collagène<br />
+  - Tendinopathie pré-existante : le tendon dégénératif est plus fragile<br />
+  - Hypercholestérolémie, diabète, hyperuricémie (goutte)<br />
+  - Sédentarité + sport intense occasionnel<br />
+- <strong>Diagnostic clinique</strong> :<br />
+  - Interrogatoire : craquement audible (70%), sensation de coup de pied, impotence fonctionnelle ± capacité de marche résiduelle (flexion plantaire par le tibial postérieur et les fibulaires)<br />
+  - Test de Thompson (Simmonds) : POSITIF (pas de flexion plantaire à la compression du mollet) — Se 96%, Sp 93%<br />
+  - Gap palpable dans le tendon — Se 73%<br />
+  - Manque de tension en décubitus ventral : le pied tombe en position neutre vs flexion plantaire de repos controlatérale (signe de Matles)<br />
+  - Faiblesse de la flexion plantaire résistée (incapacité de monter sur la pointe)<br />
+  - ATTENTION : 20-25% des ruptures sont manquées (« entorse de cheville diagnostiquée ») → TOUJOURS faire un test de Thompson devant une douleur brutale de cheville postérieure</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND09-S01-001 | 📊 INFOGRAPHIE | Épidémiologie et facteurs de risque de rupture du tendon d'Achille | Chiffres clés |<br />
+| MTEND09-S01-002 | 🎥 VIDÉO | Test de Thompson — positif vs négatif (démonstration clinique) | Vidéo clinique |<br />
+| MTEND09-S01-003 | 📐 SCHÉMA | Mécanismes de rupture — positions du pied à risque | 3 situations illustrées |<br />
+| MTEND09-S01-004 | 📊 INFOGRAPHIE | 20-25% des ruptures manquées — pièges diagnostiques | Alertes |</p>
+<h3 id="section-92-imagerie-de-la-rupture">Section 9.2 — Imagerie de la rupture</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Échographie</strong> : examen de première intention, en urgence<br />
+  - Signes : discontinuité des fibres, gap anéchogène (rempli d'hématome hypoéchogène), rétraction des moignons<br />
+  - Mesure du diastasis avec le pied en position neutre et en flexion plantaire (apposition des moignons ?)<br />
+  - En temps réel dynamique : les moignons s'écartent en dorsiflexion — sensibilité quasi 100%<br />
+  - Rupture partielle : discontinuité focale, &lt;50% de l'épaisseur<br />
+- <strong>IRM</strong> : non nécessaire en urgence si le diagnostic clinique + échographie est clair<br />
+  - Indications IRM : doute diagnostique (rupture partielle ?) , rupture chronique (planification chirurgicale, état du muscle, dégénérescence graisseuse), contexte médico-légal<br />
+  - Gap en hypersignal T2 (liquide), rétraction mesurable, état des moignons<br />
+  - Rupture chronique : rétraction importante, dégénérescence graisseuse musculaire (Goutallier), cicatrice fibreuse<br />
+- <strong>Radiographie</strong> : pas de rôle direct pour la rupture, utile si fracture d'avulsion calcanéenne associée (rare)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND09-S02-001 | 📷 IMAGE | Échographie — rupture complète, gap anéchogène, rétraction | Image annotée |<br />
+| MTEND09-S02-002 | 📷 IMAGE | Échographie dynamique — apposition des moignons en flexion plantaire | Séquence comparative |<br />
+| MTEND09-S02-003 | 📷 IMAGE | IRM sagittale — rupture complète, gap en hypersignal T2 | Image annotée |<br />
+| MTEND09-S02-004 | 📷 IMAGE | IRM — rupture chronique avec dégénérescence graisseuse | Image annotée |</p>
+<h3 id="section-93-traitement-chirurgical-vs-fonctionnel-la-grande-question">Section 9.3 — Traitement chirurgical vs fonctionnel : la grande question</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>La controverse historique</strong> : pendant des décennies, la chirurgie a été considérée comme le gold standard → mais les études récentes (AAOS, Cochrane) ont remis en question cette position<br />
+- <strong>Traitement chirurgical</strong> :<br />
+  - Technique : suture directe termino-terminale (type Kessler modifié, Krackow, Bunnel), abord mini-ouvert (mini-incision 2-3 cm) ou percutané (Ma-Griffith)<br />
+  - Avantages : taux de re-rupture le plus bas (2-5%), reprise sportive légèrement plus précoce, meilleure récupération de la force de flexion plantaire<br />
+  - Inconvénients : complications de plaie (10-15% en chirurgie ouverte) — infection, nécrose cutanée, lésion du nerf sural (surtout percutané), adhérences, coût<br />
+  - Mini-ouvert et percutané : réduction des complications de plaie mais risque de lésion du nerf sural (7-13%)<br />
+- <strong>Traitement fonctionnel</strong> :<br />
+  - Principe : immobilisation en flexion plantaire (botte de marche avec talonnettes) → éloigner les moignons → réduction progressive de l'équin → mobilisation précoce<br />
+  - Protocole accéléré de Willits : mise en charge protégée précoce + mobilisation active dès J2-7<br />
+  - Taux de re-rupture : 3-5% avec les protocoles accélérés (vs 12% avec les vieux protocoles d'immobilisation plâtrée)<br />
+  - Avantages : pas de complications de plaie, pas d'anesthésie, coût réduit<br />
+- <strong>Méta-analyses comparatives</strong> (Ochen et al., <em>BMJ</em>, 2019 ; Deng et al., <em>Clin Rehabil</em>, 2017) :<br />
+  - Re-rupture : chirurgie 3% vs fonctionnel 5% <em>(Ochen et al., BMJ, 2019)</em> — différence cliniquement non significative avec les protocoles accélérés de réhabilitation<br />
+  - Complications totales : chirurgie &gt; fonctionnel (infections, nerf sural)<br />
+  - Force : chirurgie légèrement supérieure à 1 an, mais se normalise à 2 ans<br />
+  - Retour au sport : comparable à 6-12 mois<br />
+- <strong>Consensus actuel (ESSKA, AAOS)</strong> : le traitement fonctionnel avec réhabilitation accélérée est une alternative acceptable chez la majorité des patients, la chirurgie mini-invasive est préférable chez les sportifs compétiteurs et les ruptures avec diastasis &gt; 1 cm</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND09-S03-001 | 📊 INFOGRAPHIE | Chirurgie vs fonctionnel — résultats des méta-analyses | Tableau comparatif |<br />
+| MTEND09-S03-002 | 🎥 VIDÉO | Suture percutanée du tendon d'Achille — technique de Ma-Griffith | Vidéo chirurgicale |<br />
+| MTEND09-S03-003 | 📐 SCHÉMA | Protocole fonctionnel accéléré — réduction progressive de l'équin | Timeline |<br />
+| MTEND09-S03-004 | 📊 INFOGRAPHIE | Algorithme décisionnel : chirurgie vs fonctionnel selon le profil du patient | Arbre de décision |</p>
+<h3 id="section-94-ruptures-chroniques-et-re-ruptures">Section 9.4 — Ruptures chroniques et re-ruptures</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Définition</strong> : rupture chronique = diagnostic &gt;4-6 semaines après la rupture (missed rupture) → rétraction importante, comblement fibreux du gap, dégénérescence musculaire<br />
+- <strong>Gestion chirurgicale des ruptures chroniques</strong> :<br />
+  - Gap &lt;3 cm : suture bout-à-bout après excision du tissu cicatriciel + mobilisation en flexion plantaire<br />
+  - Gap 3-6 cm : récupération par lambeaux de retournement du gastrocnémien (turn-down flap de Bosworth), plastie en V-Y (Abraham et Pankovich)<br />
+  - Gap &gt;6 cm : transfert du FHL (Flexor Hallucis Longus) — or transfert du FDL, du péronier court<br />
+  - Allogreffes tendineuses : pour les défects massifs<br />
+- <strong>Re-rupture</strong> : 3-5% (opéré), 5% (fonctionnel) — souvent à 8-16 semaines, pendant la phase de transition marche → charge — TOUJOURS chirurgicale sauf context très particulier<br />
+- <strong>Complications tardives</strong> :<br />
+  - Faiblesse de la flexion plantaire résiduelle (20-30% de déficit de force à 1 an, même opéré)<br />
+  - Raideur en dorsiflexion (perte de l'amplitude passive)<br />
+  - Tendinopathie chronique post-rupture<br />
+  - Adhérences du nerf sural</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND09-S04-001 | 📐 SCHÉMA | Techniques chirurgicales pour les ruptures chroniques — suture, V-Y, transfert FHL | 3 illustrations |<br />
+| MTEND09-S04-002 | 🎥 VIDÉO | Transfert du FHL pour rupture chronique | Vidéo chirurgicale |<br />
+| MTEND09-S04-003 | 📊 INFOGRAPHIE | Algorithme de prise en charge des ruptures chroniques selon le gap | Arbre décisionnel |</p>
+<h3 id="section-95-rehabilitation-post-rupture">Section 9.5 — Réhabilitation post-rupture</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Phase 1 (0-2 semaines)</strong> : botte de marche en flexion plantaire maximale (3-4 talonnettes), mise en charge protégée (béquilles), mobilisation active en flexion plantaire, contractions isométriques douces, glaçage, surélévation<br />
+- <strong>Phase 2 (2-6 semaines)</strong> : retrait progressif des talonnettes (1 par semaine/toutes les 2 semaines), mise en charge progressivement complète, mobilisation active en dorsiflexion jusqu'à la position neutre (pas au-delà), exercices de proprioception<br />
+- <strong>Phase 3 (6-12 semaines)</strong> : retrait de la botte, sevrage des béquilles, marche en chaussures avec talonnette, mobilisation active-passive complète, exercices résistés progressifs (concentrique puis excentrique), vélo stationnaire<br />
+- <strong>Phase 4 (3-6 mois)</strong> : renforcement progressif (heel raise bilatéral puis unilatéral), reprise de la course en ligne droite (vers 4-5 mois), exercices fonctionnels sport-spécifiques<br />
+- <strong>Phase 5 (6-9 mois)</strong> : retour au sport avec contact et changements de direction, critères de retour : heel rise endurance &gt;90% du côté sain, VISA-A &gt;80, pas de douleur<br />
+- <strong>Critères de reprise sportive</strong> : VISA-A &gt;80, single leg heel rise &gt;25 rép ou &gt;90% du côté sain, hop test comparable, confiance psychologique</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND09-S05-001 | 📊 INFOGRAPHIE | Timeline de réhabilitation post-rupture — 5 phases | Timeline détaillée |<br />
+| MTEND09-S05-002 | 🎥 VIDÉO | Exercices de réhabilitation par phase | Vidéo exercices |<br />
+| MTEND09-S05-003 | 📊 INFOGRAPHIE | Critères de retour au sport — check-list | Formulaire |</p>
+<h3 id="points-cles-du-module-9">Points clés du Module 9</h3>
+<ol>
+<li>20-25% des ruptures du tendon d'Achille sont initialement manquées — TOUJOURS faire un test de Thompson</li>
+<li>Les fluoroquinolones multiplient le risque de rupture par 3-4, surtout si &gt;60 ans ou corticothérapie</li>
+<li>Le traitement fonctionnel accéléré est une alternative validée à la chirurgie, avec des résultats comparables</li>
+<li>La chirurgie reste préférable chez les sportifs compétiteurs et si le diastasis est &gt;1 cm</li>
+<li>La réhabilitation accélérée avec mise en charge précoce est la clé du succès (protocole de Willits)</li>
+<li>Les ruptures chroniques (&gt;6 semaines) nécessitent des techniques chirurgicales de reconstruction (V-Y, transfert FHL)</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (mécanisme, diagnostic, tests)</li>
+<li>3 QCM Argent (chirurgie vs fonctionnel, protocole de réhabilitation)</li>
+<li>2 QCM Or (cas clinique : choix thérapeutique, gestion de la rupture chronique)</li>
+<li>1 QCM Diamant (cas : patient 62 ans sous quinolones avec rupture bilatérale → plan de traitement complet)</li>
+<li>1 QROC : « Comparez les résultats du traitement chirurgical et fonctionnel de la rupture du tendon d'Achille en citant les méta-analyses récentes. »</li>
+</ul>
+<hr />
+<h1 id="module-10-tendinopathies-du-pied-et-de-la-cheville-hors-achille">MODULE 10 : TENDINOPATHIES DU PIED ET DE LA CHEVILLE (HORS ACHILLE)</h1>
+<p><strong>Partie</strong> : III — Tendinopathies du tendon d'Achille et du pied<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-9</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Présente depuis 6 mois une douleur progressive de la cheville droite, rétro-malléolaire médiale, avec un affaissement progressif de la voûte plantaire. Elle décrit avoir « de plus en plus de mal à marcher sur les surfaces irrégulières ». À l'examen, on note un pied plat valgus unilatéral avec un « too many toes sign » positif et un single heel rise test impossible. *Quel est le diagnostic ? Comment le confirmer ? Quelle est la classification de la tendinopathie du tibial postérieur ? Quel traitement proposer à chaque stade ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> et <strong>classifier</strong> la tendinopathie/insuffisance du tibial postérieur (classification de Johnson &amp; Strom)</li>
+<li><strong>Reconnaître</strong> les tendinopathies des fibulaires et leur association avec l'instabilité de cheville</li>
+<li><strong>Connaître</strong> la fasciite plantaire (fasciose) et son lien avec les tendinopathies</li>
+<li><strong>Identifier</strong> les tendinopathies du tibial antérieur et des extenseurs</li>
+<li><strong>Proposer</strong> un traitement adapté au stade pour chaque tendinopathie du pied/cheville</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-101-tendinopathie-et-insuffisance-du-tibial-posterieur">Section 10.1 — Tendinopathie et insuffisance du tibial postérieur</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie fonctionnelle</strong> : muscle tibial postérieur → tendon rétro-malléolaire médial → insertion sur le naviculaire + cunéiformes + bases des métatarsiens → rôle : supination, inversion du pied, verrouillage médio-tarsien, soutien de la voûte plantaire (principal stabilisateur dynamique de la voûte)<br />
+- <strong>Physiopathologie</strong> : zone hypovasculaire rétro-malléolaire (zone à risque), surcharge mécanique → tendinopathie dégénérative → élongation progressive → insuffisance → pied plat valgus acquis de l'adulte<br />
+- <strong>Classification de Johnson &amp; Strom</strong> <em>(adapté de Johnson &amp; Strom, 1989, Clin Orthop ; complété par Myerson, 1996)</em> :<br />
+  - Stade I : atteinte tendineuse isolée (ténosynovite ou tendinopathie), sans déformation structurelle du pied ; le patient signale une douleur rétro-malléolaire médiale avec gonflement local, et le single heel rise reste réalisable quoique douloureux<br />
+  - Stade II : allongement progressif ou rupture partielle du tendon entraînant un pied plat valgus encore souple (réductible passivement) ; le « too many toes sign » devient positif et le heel rise est impossible ou s'accompagne d'un valgus non corrigé<br />
+  - Stade III : déformation fixée en pied plat valgus rigide avec arthrose sous-talienne secondaire, non réductible manuellement<br />
+  - Stade IV (ajout de Myerson) : déformation de stade III étendue à l'articulation tibio-talienne, avec bascule (tilt) du talus et arthrose tibio-talienne associée<br />
+- <strong>Clinique</strong> : douleur rétro-malléolaire médiale, gonflement, « too many toes sign », single heel rise test (heel rise inversion sign), tests de provocation<br />
+- <strong>Imagerie</strong> : échographie (ténosynovite, épaississement, rupture longitudinale), IRM (précise le stade, les structures associées), radiographie en charge (angles de Meary, talar head uncoverage)<br />
+- <strong>Traitement</strong> :<br />
+  - Stade I : repos relatif, orthèses plantaires (soutien médial), AINS, rééducation (renforcement tibial postérieur)<br />
+  - Stade II : orthèses moulées rigides (AFO), rééducation intensive, chirurgie si échec (transfert du FDL + ostéotomie calcanéenne de médialisation)<br />
+  - Stade III : double arthrodèse (sous-talienne + talo-naviculaire) ou triple arthrodèse<br />
+  - Stade IV : pantalar fusion ou prothèse totale de cheville</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND10-S01-001 | 🧊 MODÈLE 3D | Anatomie du tendon du tibial postérieur — trajet et insertions | TendonSim© |<br />
+| MTEND10-S01-002 | 📐 SCHÉMA | Classification de Johnson &amp; Strom (stades I-IV) — illustrations | 4 stades |<br />
+| MTEND10-S01-003 | 📷 IMAGE | Aspect clinique — pied plat valgus acquis (vue postérieure, too many toes) | Photo clinique |<br />
+| MTEND10-S01-004 | 📷 IMAGE | Radiographie en charge — angles de Meary, morphologie du pied plat | Cliché annoté |<br />
+| MTEND10-S01-005 | 📊 INFOGRAPHIE | Traitement par stade (Johnson &amp; Strom) — algorithme | Arbre de décision |</p>
+<h3 id="section-102-tendinopathies-des-fibulaires-peroniers">Section 10.2 — Tendinopathies des fibulaires (péroniers)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : court fibulaire (PB) et long fibulaire (PL), gouttière rétro-malléolaire latérale, rétinaculum des fibulaires<br />
+- <strong>Tendinopathie des fibulaires</strong> : surcharge (course sur routes inclinées, terrain instable), association avec instabilité chronique de cheville, pied varus<br />
+  - Fissure longitudinale du court fibulaire (split tear) : la lésion la plus fréquente, le tendon est comprimé entre le long fibulaire et la malléole → fissuration — souvent dans un os peroneal (sésamoïde du long fibulaire)<br />
+  - Ténosynovite des fibulaires : syndrome du tunnel fibulaire<br />
+- <strong>Subluxation/luxation des tendons fibulaires</strong> : rupture du rétinaculum supérieur des fibulaires (entorse en dorsiflexion-inversion) → le tendon passe par-dessus la malléole latérale lors de la dorsiflexion — souvent confondu avec une « entorse de cheville »<br />
+  - Diagnostic : provocative test (circumduction active), échographie dynamique (subluxation en temps réel)<br />
+  - Traitement : chirurgical si récurrent (réparation/reconstruction du rétinaculum ± creusement de la gouttière)<br />
+- <strong>Imagerie</strong> : échographie +++, IRM si doute, radiographie (os peroneal, fracture pointe de malléole)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND10-S02-001 | 📐 SCHÉMA | Anatomie des tendons fibulaires — gouttière rétro-malléolaire | Schéma annoté |<br />
+| MTEND10-S02-002 | 📷 IMAGE | Échographie — fissure longitudinale du court fibulaire | Image annotée |<br />
+| MTEND10-S02-003 | 🎥 VIDÉO | Échographie dynamique — subluxation des fibulaires | Vidéo écho |<br />
+| MTEND10-S02-004 | 📐 SCHÉMA | Mécanisme de la subluxation des fibulaires — rupture du rétinaculum | Dessin |</p>
+<h3 id="section-103-fasciite-plantaire-fasciose-plantaire">Section 10.3 — Fasciite plantaire (fasciose plantaire)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Terminologie</strong> : « fasciite » est un terme impropre (pas d'inflammation) → « fasciose plantaire » ou « aponévrosite plantaire » = processus dégénératif du fascia plantaire<br />
+- <strong>Anatomie</strong> : fascia plantaire = bande fibreuse de l'insertion calcanéenne médiale jusqu'aux orteils → rôle : ressort passif (mécanisme de Windlass), soutien de la voûte<br />
+- <strong>Épidémiologie</strong> : très fréquent (10% de la population), pic 40-60 ans, IMC élevé, course à pied, station debout prolongée<br />
+- <strong>Physiopathologie</strong> : surcharge chronique de l'enthèse calcanéenne → dégénérescence du fascia → fasciose, ± épine calcanéenne (enthésophyte de traction — non responsable de la douleur dans 80% des cas)<br />
+- <strong>Clinique</strong> :<br />
+  - Douleur du talon en charge, maximale aux premiers pas du matin ou après repos prolongé<br />
+  - Palpation douloureuse de l'insertion médiale du calcanéum<br />
+  - Windlass test : dorsiflexion passive du gros orteil → reproduction de la douleur = mise en tension du fascia<br />
+- <strong>Imagerie</strong> : échographie → épaississement du fascia &gt;4 mm (norme &lt;3.5 mm), hypoéchogénicité, doppler +; radiographie → épine calcanéenne (non corrélée)<br />
+- <strong>Traitement</strong> :<br />
+  - 1ère ligne : étirements du fascia et du triceps sural (protocole de Digiovanni — étirement spécifique du fascia en dorsiflexion du gros orteil, 10 × 10 sec, 3×/jour), talonnettes, chaussures avec soutien<br />
+  - 2ème ligne : ondes de choc (ESWT — evidence niveau A pour fasciose chronique &gt;3 mois), nuit : attelle de nuit en dorsiflexion<br />
+  - 3ème ligne : infiltration de corticoïdes (max 1-2 injections, guidée — risque de rupture du fascia ≈ 2-3%), PRP<br />
+  - 4ème ligne : chirurgie (fasciotomie plantaire partielle) — exceptionnel (&lt;5% des cas)<br />
+  - Résolution spontanée dans 80-90% des cas à 12 mois</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND10-S03-001 | 📐 SCHÉMA | Anatomie du fascia plantaire — mécanisme de Windlass | Schéma biomécanique |<br />
+| MTEND10-S03-002 | 📷 IMAGE | Échographie — fasciose plantaire (épaississement &gt;4 mm, hypoéchogénicité) | Image annotée |<br />
+| MTEND10-S03-003 | 📷 IMAGE | Radiographie — épine calcanéenne | Cliché annoté |<br />
+| MTEND10-S03-004 | 🎥 VIDÉO | Protocole d'étirement de Digiovanni | Vidéo exercice |<br />
+| MTEND10-S03-005 | 📊 INFOGRAPHIE | Algorithme de traitement de la fasciose plantaire | Arbre décisionnel |</p>
+<h3 id="section-104-autres-tendinopathies-du-pied-et-de-la-cheville">Section 10.4 — Autres tendinopathies du pied et de la cheville</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendinopathie du tibial antérieur</strong> : rare, marche prolongée, douleur face antérieure de la cheville, épaississement du tendon sur le dos du pied, association avec syndrome de loge de l'effort<br />
+- <strong>Ténosynovite des extenseurs</strong> : conflit avec le chaussage serré (ski, escalade), crépitation palpable<br />
+- <strong>Tendinopathie du FHL (Flexor Hallucis Longus)</strong> : « ballet dancer's tendinitis », douleur rétro-malléolaire postéro-médiale, syndrome du carrefour postérieur, trigger toe — pathognomonique du danseur classique (relevé sur pointes)<br />
+- <strong>Sésamoïdite et tendinopathie des fléchisseurs de l'hallux</strong> : douleur sous la tête du premier métatarsien, course à pied, trauma, fracture de stress du sésamoïde<br />
+- <strong>Tendinopathie du tendon d'Achille accessoire</strong> : soleus accessorius, plantaris — rare, diagnostic d'exclusion</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND10-S04-001 | 📐 SCHÉMA | Vue d'ensemble des tendons de la cheville — coupe transversale (compartiments) | Schéma anatomique |<br />
+| MTEND10-S04-002 | 📊 INFOGRAPHIE | Diagnostic différentiel des douleurs du pied/cheville par localisation | Cartographie diagnostique |<br />
+| MTEND10-S04-003 | 📷 IMAGE | IRM — syndrome du carrefour postérieur (tendinopathie FHL + os trigone) | Image annotée |</p>
+<h3 id="points-cles-du-module-10">Points clés du Module 10</h3>
+<ol>
+<li>La tendinopathie du tibial postérieur évolue vers le pied plat valgus acquis — la classification de Johnson &amp; Strom guide le traitement</li>
+<li>La fissure longitudinale du court fibulaire est la lésion la plus fréquente des tendons fibulaires</li>
+<li>La subluxation des fibulaires est souvent diagnostiquée à tort comme une « entorse de cheville »</li>
+<li>La « fasciite plantaire » est en réalité une fasciose dégénérative — l'épine calcanéenne est un signe accessoire, non responsable de la douleur</li>
+<li>Le Windlass test est le test spécifique de la fasciose plantaire</li>
+<li>80-90% des fascioses plantaires guérissent spontanément en 12 mois avec un traitement conservateur</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, classification, signes cliniques)</li>
+<li>3 QCM Argent (imagerie, diagnostics différentiels, protocoles de traitement)</li>
+<li>2 QCM Or (cas clinique : pied plat acquis → stade, traitement ; fasciose résistante → stratégie)</li>
+<li>1 QCM Diamant (cas : patiente 55 ans avec douleur rétro-malléolaire médiale + pied plat valgus unilatéral récent → bilan complet, stade Johnson, plan)</li>
+<li>1 QROC : « Décrivez les 4 stades de la classification de Johnson &amp; Strom de l'insuffisance du tibial postérieur et le traitement correspondant à chaque stade. »</li>
+</ul>
+<hr />
+<hr />
+<h2 id="references-bibliographiques">Références bibliographiques</h2>
+<ol>
+<li>Alfredson H, Pietilä T, Jonsson P, Lorentzon R. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. <em>Am J Sports Med</em>. 1998;26(3):360-366.</li>
+<li>Dean BJF, Lostis E, Oakley T, Rombach I, Morrey ME, Carr AJ. The risks and benefits of glucocorticoid treatment for tendinopathy: a systematic review of the effects of local glucocorticoid on tendon. <em>BMJ</em>. 2014;349:g6234.</li>
+<li>Deng S, Sun Z, Zhang C, Chen G, Li J. Surgical treatment versus conservative management for acute Achilles tendon rupture: a systematic review and meta-analysis of randomized controlled trials. <em>Clin Rehabil</em>. 2017;31(10):1305-1315.</li>
+<li>Ganestam A, Kallemose T, Troelsen A, Barfod KW. Increasing incidence of acute Achilles tendon rupture and a noticeable decline in surgical treatment from 1994 to 2013. A nationwide registry study of 33,160 patients. <em>Foot Ankle Surg</em>. 2016;22(4):223-227.</li>
+<li>Johnson KA, Strom DE. Tibialis posterior tendon dysfunction. <em>Clin Orthop Relat Res</em>. 1989;(239):196-206.</li>
+<li>Kujala UM, Sarna S, Kaprio J. Cumulative incidence of Achilles tendon rupture and tendinopathy in male former elite athletes. <em>Am J Sports Med</em>. 2005;33(8):1224-1228.</li>
+<li>Kvist M. Achilles tendon injuries in athletes. <em>Scand J Med Sci Sports</em>. 1994;4(4):234-238.</li>
+<li>Lopes AD, Hespanhol Júnior LC, Yeung SS, Costa LOP. What are the main running-related musculoskeletal injuries? A systematic review. <em>Br J Sports Med</em>. 2012;46(12):831-838.</li>
+<li>Myerson MS. Adult acquired flatfoot deformity: treatment of dysfunction of the posterior tibial tendon. <em>Instr Course Lect</em>. 1996;45:393-405.</li>
+<li>Ochen Y, Beks RB, van Heijl M, et al. Operative treatment versus nonoperative treatment of Achilles tendon ruptures: systematic review and meta-analysis. <em>BMJ</em>. 2019;364:k5120.</li>
+<li>Stephenson AL, Wu W, Cortes D, Rochon PA. Tendon injury and fluoroquinolone use: a systematic review. <em>Drug Saf</em>. 2013;36(9):709-721.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

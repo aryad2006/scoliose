@@ -1,0 +1,446 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-7-infections-specifiques-modules-22-25">Partie 7 — Infections Spécifiques (Modules 22-25)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-22-spondylodiscite-et-abces-epidural">MODULE 22 : SPONDYLODISCITE ET ABCÈS ÉPIDURAL</h1>
+<p><strong>Partie</strong> : VII — Infections Spécifiques<br />
+<strong>Durée estimée</strong> : 4h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 2, 7, 8, 11</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Rachialgie lombaire intense depuis 3 semaines, fièvre 38.4°C, contracture paravertébrale majeure. ATCD d'infection urinaire à *E. coli* traitée il y a 1 mois. IRM rachidienne : hypersignal T2 des corps vertébraux L3-L4, destruction du disque L3-L4, collection pré-vertébrale et épidurale postérieure. *Spondylodiscite avec abcès épidural : quand opérer en urgence ? Le déficit neurologique est-il imminent ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> une spondylodiscite infectieuse (clinique, biologie, imagerie)</li>
+<li><strong>Différencier</strong> les étiologies (pyogène, tuberculeuse, post-opératoire)</li>
+<li><strong>Identifier</strong> l'abcès épidural comme urgence neurochirurgicale</li>
+<li><strong>Déterminer</strong> les indications du traitement médical seul vs chirurgical</li>
+<li><strong>Prescrire</strong> l'antibiothérapie adaptée et sa durée</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-221-epidemiologie-et-portes-dentree">Section 22.1 — Épidémiologie et portes d'entrée</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Incidence : 2-7/100 000/an <em>(Grammatico et al., 2008, J Antimicrob Chemother)</em> (en augmentation : vieillissement, immunosuppression, gestes invasifs)<br />
+- Âge moyen : 50-70 ans, sex-ratio H/F = 1.5-2<br />
+- <strong>Portes d'entrée</strong> :<br />
+  - Urinaire (30%) : BGN surtout<br />
+  - Cutanée (15%) : <em>S. aureus</em><br />
+  - Endocardite (10-15%) : streptocoques, staphylocoques<br />
+  - Iatrogène : discographie, infiltration péridurale/foraminale, chirurgie rachidienne<br />
+  - Non retrouvée (30-40%)<br />
+- <strong>Germes</strong> :<br />
+  - <em>S. aureus</em> : 30-50% <em>(Gouliouris et al., 2010, Clin Med)</em> (1er germe)<br />
+  - BGN (<em>E. coli</em>, <em>Klebsiella</em>, <em>Proteus</em>) : 20-25% (porte d'entrée urinaire)<br />
+  - Streptocoques/Entérocoques : 10-15%<br />
+  - SCN : post-chirurgical<br />
+  - <em>M. tuberculosis</em> : 20-30% dans les populations endémiques (Mal de Pott → Module 24)<br />
+  - <em>Brucella</em>, <em>Candida</em> : rares, contextes spécifiques<br />
+- Localisation préférentielle : lombaire (60%) &gt; thoracique (30%) &gt; cervicale (10%)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA22-S01-001 | 📊 INFOGRAPHIE | Portes d'entrée de la spondylodiscite et germes associés | Infographie circulaire |<br />
+| MIOA22-S01-002 | 📐 SCHÉMA | Anatomie vasculaire vertébrale et voies de contamination | Schéma vasculaire |</p>
+<h3 id="section-222-diagnostic-clinique-et-biologique">Section 22.2 — Diagnostic clinique et biologique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Triade classique</strong> : rachialgie + fièvre + raideur rachidienne<br />
+- Rachialgie : d'installation progressive (jours-semaines), inflammatoire (nocturne, insomniante), rebelle aux antalgiques<br />
+- Fièvre : inconstante (50-60%), parfois fébricule intermittente<br />
+- Contracture paravertébrale : quasi constante<br />
+- <strong>Signes de gravité</strong> :<br />
+  - Déficit neurologique : radiculaire (sciatique paralysante, syndrome de la queue de cheval) ou médullaire (syndrome compressif) → urgence chirurgicale<br />
+  - Abcès épidural : compression médullaire/radiculaire progressive<br />
+  - Abcès du psoas : psoïtis (flexion de hanche antalgique)<br />
+  - Choc septique (rare)<br />
+- <strong>Biologie</strong> : CRP élevée (quasi constante), hyperleucocytose (50%), hémocultures positives dans 50-70% <em>(Zimmerli, 2010, N Engl J Med)</em></p>
+<h3 id="section-223-imagerie">Section 22.3 — Imagerie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>IRM</strong> : EXAMEN DE RÉFÉRENCE — sensibilité 92-97%, spécificité 90-95% <em>(Berbari et al., 2015, Clin Infect Dis)</em><br />
+  - T1 : hyposignal des corps vertébraux adjacents au disque<br />
+  - T2 : hypersignal des corps vertébraux et du disque<br />
+  - Gadolinium : rehaussement des plateaux vertébraux, du disque, des collections péri-vertébrales et épidurales<br />
+  - Extension épidurale : compression moelle/racines → urgence si déficit neurologique<br />
+  - IRM corps entier si doute sur localisation multifocale<br />
+- <strong>Scanner</strong> : destruction disco-corporéale, guidage pour biopsie disco-vertébrale percutanée<br />
+- <strong>Radiographies</strong> : normales pendant 2-4 semaines, puis pincement discal, érosion des plateaux, destruction<br />
+- <strong>PET-scanner</strong> : utile pour le suivi (normalisation plus rapide que l'IRM)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA22-S03-001 | 📷 IMAGE | IRM de spondylodiscite L3-L4 : coupes T1, T2, T1 Gado | Séries IRM typiques |<br />
+| MIOA22-S03-002 | 📷 IMAGE | Abcès épidural compressif en IRM : coupe axiale et sagittale | Urgence neurochirurgicale |<br />
+| MIOA22-S03-003 | 📐 SCHÉMA | Diagnostic différentiel en imagerie : spondylodiscite infectieuse vs dégénérative Modic 1 vs tumorale | IRM comparées |</p>
+<h3 id="section-224-documentation-microbiologique">Section 22.4 — Documentation microbiologique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Hémocultures</strong> : 2-3 paires, AVANT toute antibiothérapie — positives dans 50-70%<br />
+- <strong>Biopsie disco-vertébrale</strong> (BDV) : geste clé si hémocultures négatives<br />
+  - Technique : percutanée, scanno-guidée, aiguille coaxiale<br />
+  - Prélèvements : disco-corporéaux (disque + plateau vertébral), ≥3 fragments<br />
+  - Résultats : positive dans 50-70% des cas<br />
+  - ATTENTION : arrêt des ATB (fenêtre ≥10-14 jours) avant BDV si non urgent<br />
+  - Si 1ère BDV négative : 2e BDV recommandée (rendement supplémentaire 30%)<br />
+- PCR 16S ARNr, MALDI-TOF, NGS : en 2e intention si cultures négatives<br />
+- Sérologies : <em>Brucella</em>, <em>Coxiella</em> selon contexte épidémiologique</p>
+<h3 id="section-225-traitement-medical">Section 22.5 — Traitement médical</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Antibiothérapie</strong> :<br />
+  - IV initiale (2-4 semaines) puis relais oral<br />
+  - Durée totale : <strong>6 semaines</strong> (recommandations IDSA, SPILF)<br />
+  - Étude randomisée (Bernard et al., Lancet 2015) : 6 semaines = 12 semaines (non-infériorité)<br />
+  - Schémas : oxacilline/céfazoline → relais FQ/clindamycine/TMP-SMX (selon germe)<br />
+  - BGN : C3G IV → relais FQ oral<br />
+  - Si matériel (vis, cage, tiges) : ajout rifampicine dans la bi-thérapie anti-staphylococcique<br />
+- <strong>Immobilisation</strong> : controversée — repos au lit court + corset rigide si instabilité<br />
+- <strong>Suivi</strong> : CRP hebdomadaire, IRM de contrôle à 6 semaines (attention : l'IRM se normalise lentement, 3-6 mois)</p>
+<h3 id="section-226-traitement-chirurgical-et-indications">Section 22.6 — Traitement chirurgical et indications</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Indications chirurgicales</strong> :<br />
+  - Déficit neurologique (urgence chirurgicale ++)<br />
+  - Abcès épidural compressif<br />
+  - Instabilité rachidienne / déformation<br />
+  - Échec du traitement médical (non amélioration à 4-6 semaines)<br />
+  - Abcès paravertébraux volumineux non drainables percutanément<br />
+- <strong>Techniques</strong> :<br />
+  - Laminectomie de décompression + drainage épidural<br />
+  - Corporectomie + greffe (cage intersomatique ou greffe iliaque) + ostéosynthèse postérieure<br />
+  - Abcès du psoas : drainage percutané scanno-guidé (1ère intention) ou chirurgical<br />
+- <strong>Résultats</strong> : mortalité 2-10%, récidive 5-15%, séquelles neurologiques irréversibles possibles si retard</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA22-S06-001 | 📐 SCHÉMA | Algorithme : traitement médical seul vs chirurgie dans la spondylodiscite | Arbre de décision |<br />
+| MIOA22-S06-002 | 📷 IMAGE | Corporectomie + greffe + ostéosynthèse : radiographie post-opératoire | Cas illustratif |<br />
+| MIOA22-S06-003 | 🎬 ANIMATION InfectoSim© | Simulation : spondylodiscite avec abcès épidural — urgence chirurgicale ? Évaluer les critères | Exercice interactif |</p>
+<h3 id="points-cles-du-module-22">Points clés du Module 22</h3>
+<ol>
+<li>La spondylodiscite est la plus fréquente des infections osseuses de l'adulte (localisation lombaire 60%)</li>
+<li>L'IRM est l'examen de référence (sensibilité 92-97%)</li>
+<li>Hémocultures + biopsie disco-vertébrale percutanée = documentation microbiologique</li>
+<li>Durée d'antibiothérapie : 6 semaines (étude Bernard, Lancet 2015)</li>
+<li>L'abcès épidural compressif avec déficit neurologique est une urgence chirurgicale absolue</li>
+<li>L'IRM de contrôle se normalise lentement (3-6 mois) — ne pas confondre avec échec thérapeutique</li>
+<li>La fenêtre ATB avant BDV est indispensable (≥14 jours) sauf urgence</li>
+</ol>
+<hr />
+<h1 id="module-23-pied-diabetique-infecte">MODULE 23 : PIED DIABÉTIQUE INFECTÉ</h1>
+<p><strong>Partie</strong> : VII — Infections Spécifiques<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 3, 6, 7, 8</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Diabétique type 2 depuis 25 ans, HbA1c = 9.8%. Ulcère neuropathique du 1er métatarsien gauche depuis 3 mois, extension récente, contact osseux positif au « probe-to-bone ». Pied chaud mais PAS douloureux (neuropathie !). Radiographie : lyse de la tête du 1er métatarsien. CRP = 45 mg/L. *Ostéite sur pied diabétique. Antibiothérapie seule ? Résection métatarsienne ? Quelle est la place de la chirurgie conservatrice ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Évaluer</strong> le pied diabétique selon les classifications PEDIS et IWGDF</li>
+<li><strong>Diagnostiquer</strong> l'ostéite du pied diabétique (probe-to-bone, imagerie, biopsie osseuse)</li>
+<li><strong>Distinguer</strong> infection vs colonisation dans l'ulcère diabétique</li>
+<li><strong>Traiter</strong> l'infection du pied diabétique (ATB + chirurgie conservatrice vs amputation)</li>
+<li><strong>Organiser</strong> la prise en charge multidisciplinaire</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-231-physiopathologie-du-pied-diabetique">Section 23.1 — Physiopathologie du pied diabétique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Triade pathologique</strong> :<br />
+  - Neuropathie périphérique (sensitive, motrice, autonome) : perte de la protection sensorielle, déformations (griffes, hallux valgus), sécheresse cutanée<br />
+  - Artériopathie oblitérante des MI : ischémie distale (artères jambières, pédieuses)<br />
+  - Immunodépression relative du diabétique : chimiotactisme altéré, phagocytose diminuée<br />
+- Ulcère neuropathique : indolore (!), en regard des points de pression (tête métatarsienne, talon)<br />
+- Mal perforant plantaire (MPP) : lésion typique<br />
+- Contamination bactérienne → colonisation → infection (continuum)<br />
+- La neuropathie masque la douleur = retard diagnostique fréquent</p>
+<h3 id="section-232-diagnostic-de-linfection-du-pied-diabetique">Section 23.2 — Diagnostic de l'infection du pied diabétique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Classification IWGDF/PEDIS de l'infection</strong> <em>(adapté de Lipsky et al., 2012, Clin Infect Dis ; IWGDF Guidelines)</em> :<br />
+  - Grade 1 : pas d'infection<br />
+  - Grade 2 : infection superficielle (cellulite &lt;2 cm autour de l'ulcère)<br />
+  - Grade 3 : infection profonde (cellulite &gt;2 cm, abcès profond, atteinte os/articulation, fasciite)<br />
+  - Grade 4 : sepsis systémique (SIRS)<br />
+- <strong>Probe-to-bone test</strong> (test de la sonde) : stylet métallique stérile introduit au fond de l'ulcère → contact rugueux avec l'os = ostéite probable (sensibilité 66%, spécificité 85% <em>(Grayson et al., 1995, JAMA)</em>, VPP élevée si prévalence élevée)<br />
+- <strong>Imagerie</strong> :<br />
+  - Radiographies : lyse corticale, réaction périostée, destruction articulaire — mais retard de 2-3 semaines<br />
+  - IRM : sensibilité 90%, spécificité 80% <em>(Dinh et al., 2008, BMJ)</em> — diagnostic différentiel pied de Charcot vs ostéite +++<br />
+  - Scanner/PET : 2e intention<br />
+- <strong>Diagnostic microbiologique</strong> :<br />
+  - Prélèvement superficiel (écouvillon) : INUTILE (reflète la colonisation, pas l'infection)<br />
+  - Biopsie osseuse transcutanée : gold standard (cultures + anatomopathologie)<br />
+  - Prélèvements profonds au curettage chirurgical<br />
+  - Germes : polymicrobien fréquent — S. aureus, streptocoques, entérobactéries, anaérobies, Pseudomonas</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA23-S02-001 | 📷 IMAGE | Mal perforant plantaire avec contact osseux (probe-to-bone +) | Photo clinique |<br />
+| MIOA23-S02-002 | 📷 IMAGE | IRM du pied diabétique : ostéite du 1er métatarsien — comparaison avec pied de Charcot | IRM comparatives |<br />
+| MIOA23-S02-003 | 📐 SCHÉMA | Algorithme diagnostique du pied diabétique infecté | Arbre de décision |<br />
+| MIOA23-S02-004 | 📊 INFOGRAPHIE | Classification IWGDF/PEDIS de l'infection du pied diabétique | Grades 1-4 |</p>
+<h3 id="section-233-traitement-medical">Section 23.3 — Traitement médical</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Antibiothérapie</strong> :<br />
+  - Infection superficielle (grade 2) : ATB orale, amoxicilline-ac. clav. ou FQ + métronidazole, 1-2 semaines<br />
+  - Infection profonde (grade 3-4) sans ostéite : ATB IV puis relais oral, 2-4 semaines<br />
+  - Ostéite du pied diabétique : 6-12 semaines (débat) ; OU traitement médical seul 6 semaines si résection chirurgicale complète de l'os infecté<br />
+  - Étude OVAIRE/PHRC : traitement médical seul de l'ostéite du pied (6 semaines ATB vs chirurgie + ATB courte)<br />
+- <strong>Décharge</strong> : ESSENTIELLE — chaussure de décharge, plâtre à contact total (TCC), déambulateur</p>
+<h3 id="section-234-traitement-chirurgical-conservateur-et-amputation">Section 23.4 — Traitement chirurgical conservateur et amputation</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Chirurgie conservatrice</strong> (objectif prioritaire) :<br />
+  - Résection de la tête métatarsienne (ostéite isolée)<br />
+  - Amputation de rayon (orteil + métatarsien)<br />
+  - Résection articulaire<br />
+  - Principe : toute chirurgie doit préserver au maximum la biomécanique du pied<br />
+- <strong>Amputation</strong> :<br />
+  - Transmétatarsienne : bon résultat fonctionnel, préserve l'appui<br />
+  - Lisfranc, Chopart : résultats fonctionnels variables, orthèses nécessaires<br />
+  - Amputation de jambe (transtibiale) : si ischémie non revascularisable + infection non contrôlable<br />
+  - 30% des amputations sont précédées d'une amputation mineure ayant échoué <em>(Pecoraro et al., 1990, Diabetes Care)</em><br />
+  - Mortalité à 5 ans post-amputation majeure : 50-70% <em>(Moulik et al., 2003, Diabetes Care)</em> (comorbidités cardiovasculaires)<br />
+- <strong>Revascularisation</strong> : angioplastie ou pontage distral si artériopathie sévère — AVANT chirurgie infectieuse si possible</p>
+<h3 id="section-235-prise-en-charge-multidisciplinaire">Section 23.5 — Prise en charge multidisciplinaire</h3>
+<ul>
+<li>Équipe : diabétologue + infectiologue + chirurgien orthopédiste + chirurgien vasculaire + podologue + plaies et cicatrisation</li>
+<li>Prévention secondaire : chaussage adapté, inspection quotidienne des pieds, équilibre glycémique, éducation thérapeutique</li>
+<li>Taux de récidive : 40-60% à 5 ans <em>(Armstrong et al., 2017, N Engl J Med)</em> → surveillance au long cours</li>
+</ul>
+<h3 id="points-cles-du-module-23">Points clés du Module 23</h3>
+<ol>
+<li>Le pied diabétique infecté est la 1ère cause d'amputation non traumatique</li>
+<li>La neuropathie masque la douleur → diagnostic souvent tardif</li>
+<li>Le probe-to-bone test est un outil diagnostique simple et utile (VPP élevée en contexte prévalent)</li>
+<li>L'écouvillon superficiel est INUTILE — seuls les prélèvements profonds (biopsie osseuse) ont de la valeur</li>
+<li>IRM : examen de référence pour le diagnostic d'ostéite, mais diagnostic différentiel difficile avec le pied de Charcot</li>
+<li>La chirurgie conservatrice est l'objectif prioritaire — préserver la biomécanique du pied</li>
+<li>La prise en charge est MULTIDISCIPLINAIRE : diabétologue, infectiologue, chirurgien, vasculaire, podologue</li>
+</ol>
+<hr />
+<h1 id="module-24-tuberculose-osteoarticulaire-mal-de-pott">MODULE 24 : TUBERCULOSE OSTÉOARTICULAIRE — MAL DE POTT</h1>
+<p><strong>Partie</strong> : VII — Infections Spécifiques<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 3, 22</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Arrivée récente du Mali. Rachialgie dorsale progressive depuis 6 mois, amaigrissement (-8 kg), sueurs nocturnes. Pas de fièvre franche. Radiographies : destruction des corps vertébraux T10-T11, érosion des plateaux en « miroir », image fusiforme pré-vertébrale. IRM : abcès fusiforme pré-vertébral s'étendant sur 3 étages, collection intra-canalaire avec compression médullaire. *Mal de Pott du rachis thoracique. Quelle est votre démarche diagnostique ? Comment traiter un abcès froid paravertébral géant ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Maîtriser</strong> la physiopathologie de la tuberculose ostéoarticulaire</li>
+<li><strong>Reconnaître</strong> les présentations typiques du Mal de Pott</li>
+<li><strong>Diagnostiquer</strong> la tuberculose ostéoarticulaire (bactériologie, histologie, PCR)</li>
+<li><strong>Prescrire</strong> le traitement antituberculeux adapté</li>
+<li><strong>Poser</strong> les indications chirurgicales</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-241-epidemiologie-et-physiopathologie">Section 24.1 — Épidémiologie et physiopathologie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Tuberculose ostéoarticulaire : 2-5% de toutes les tuberculoses <em>(OMS, Global Tuberculosis Report)</em><br />
+- Réactivation d'un foyer osseux ensemencé par voie hématogène lors de la primo-infection<br />
+- Localisation : rachis (Mal de Pott) = 50% des cas ; hanche, genou, poignet (rares)<br />
+- Population : migrants de zones endémiques, immunodéprimés (VIH ++), sujets âgés<br />
+- En France : 150-300 cas/an estimés <em>(Santé publique France / InVS)</em><br />
+- BCGite ostéo-articulaire : rare complication post-vaccinale chez l'enfant</p>
+<h3 id="section-242-le-mal-de-pott-spondylodiscite-tuberculeuse">Section 24.2 — Le Mal de Pott (spondylodiscite tuberculeuse)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Siège</strong> : rachis thoracique (50%), thoraco-lombaire (25%), lombaire (20%), cervical (5%)<br />
+- <strong>Présentation</strong> : insidieuse, sur des mois — rachialgie d'aggravation progressive, raideur, gibbosité (cyphose angulaire)<br />
+- Pas de fièvre franche dans 50% des cas<br />
+- Signes généraux : amaigrissement, sueurs nocturnes, AEG<br />
+- <strong>Imagerie typique</strong> :<br />
+  - Radiographie : destruction corporéale en « miroir » (2 corps adjacents), abcès fusiforme pré-vertébral<br />
+  - IRM : hypersignal T2, rehaussement périphérique, abcès froid (pas de rehaussement central), extension épidurale<br />
+  - Différences avec la spondylodiscite pyogène : destruction plus marquée, abcès froid volumineux, atteinte multi-étage, respect relatif du disque (initialement)<br />
+- <strong>Abcès froid</strong> :<br />
+  - Pré-vertébral, paravertébral, peut migrer à distance (abcès du psoas = psoïtis de Pott)<br />
+  - « Abcès froid » = pas de chaleur locale ni d'INFLAMMATION franche (réponse granulomateuse)</p>
+<h3 id="section-243-diagnostic">Section 24.3 — Diagnostic</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Biopsie disco-vertébrale</strong> : indispensable — cultures sur milieux de Löwenstein-Jensen (3-8 semaines), PCR <em>M. tuberculosis</em> (résultat en 48h), histologie (granulome giganto-cellulaire avec nécrose caséeuse)<br />
+- IDR à la tuberculine, QuantiFERON / T-SPOT.TB : positifs mais ne différencient pas latente/active<br />
+- Recherche de tuberculose pulmonaire associée (30-50% des cas)<br />
+- Diagnostic différentiel : spondylodiscite pyogène, brucellose, tumeur (métastase, lymphome, myélome)</p>
+<h3 id="section-244-traitement">Section 24.4 — Traitement</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Traitement médical</strong> (antituberculeux) <em>(d'après OMS, Guidelines for treatment of drug-susceptible tuberculosis, 2017)</em> : quadrithérapie initiale 2 mois (isoniazide + rifampicine + pyrazinamide + éthambutol) puis bithérapie 10-16 mois (isoniazide + rifampicine)<br />
+- Durée totale : <strong>12-18 mois</strong> (recommandations OMS/SPLIF pour la tuberculose ostéoarticulaire)<br />
+- Compliance : traitement long → traitement directement observé (DOT) si nécessaire<br />
+- Effets secondaires : hépatotoxicité (surveillance transaminases mensuelles), névrite optique (éthambutol), neuropathie périphérique (isoniazide → supplémentation en B6)<br />
+- <strong>Indications chirurgicales</strong> :<br />
+  - Déficit neurologique (urgence relative)<br />
+  - Instabilité rachidienne / cyphose progressive<br />
+  - Abcès volumineux non résolutif sous traitement médical<br />
+  - Technique : drainage d'abcès, corporectomie-greffe ± ostéosynthèse, correction de déformation<br />
+- Résultats : excellents sous traitement anti-TB adapté (guérison &gt;95% si traitement complet) <em>(Tuli, 2002, Clin Orthop Relat Res)</em></p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA24-S02-001 | 📷 IMAGE | Mal de Pott thoracique : radiographies et IRM typiques (destruction en miroir, abcès froid) | Série d'images |<br />
+| MIOA24-S02-002 | 📐 SCHÉMA | Comparaison spondylodiscite pyogène vs tuberculeuse — 10 critères différentiels | Tableau |<br />
+| MIOA24-S04-001 | 📊 INFOGRAPHIE | Protocole antituberculeux : quadrithérapie → bithérapie, durée, surveillance | Infographie médicament |<br />
+| MIOA24-S04-002 | 📷 IMAGE | Chirurgie du Mal de Pott : corporectomie, greffe, ostéosynthèse — radiographies pré et post | Cas illustratif |</p>
+<h3 id="points-cles-du-module-24">Points clés du Module 24</h3>
+<ol>
+<li>Le Mal de Pott (spondylodiscite tuberculeuse) touche le rachis thoracique dans 50% des cas</li>
+<li>Présentation insidieuse sur des mois : rachialgie, amaigrissement, pas toujours de fièvre</li>
+<li>L'abcès froid est caractéristique : volumineux, pas de chaleur locale, peut migrer (psoas)</li>
+<li>Diagnostic : biopsie disco-vertébrale + PCR M. tuberculosis + histologie (granulome caséeux)</li>
+<li>Traitement antituberculeux : quadrithérapie 2 mois puis bithérapie 10-16 mois — compliance essentielle</li>
+<li>Chirurgie réservée aux compressions neurologiques, instabilités et abcès réfractaires</li>
+<li>Guérison &gt;95% si traitement complet et adapté</li>
+</ol>
+<hr />
+<h1 id="module-25-infections-fongiques-parasitaires-et-a-mycobacteries-atypiques">MODULE 25 : INFECTIONS FONGIQUES, PARASITAIRES ET À MYCOBACTÉRIES ATYPIQUES</h1>
+<p><strong>Partie</strong> : VII — Infections Spécifiques<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Module 3</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Patient VIH (CD4 = 85/mm³), arrivant d'Arizona. Douleur du genou droit progressive depuis 2 mois, tuméfaction, pas de fièvre. Ponction : liquide inflammatoire, culture bactérienne négative. Culture fongique (3 semaines) : *Coccidioides immitis*. Radiographies : lésion lytique épiphysaire fémorale distale. *Coccidioïdomycose articulaire : comment traiter cette infection fongique rare mais grave ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les principales infections osseuses fongiques</li>
+<li><strong>Identifier</strong> les mycobactéries atypiques responsables d'infections musculo-squelettiques</li>
+<li><strong>Diagnostiquer</strong> et traiter les parasitoses ostéoarticulaires</li>
+<li><strong>Adapter</strong> la stratégie diagnostique et thérapeutique au contexte d'immunosuppression</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-251-infections-osseuses-fongiques">Section 25.1 — Infections osseuses fongiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Contexte</strong> : immunodéprimé (VIH, greffe d'organe, hémopathie), zones endémiques<br />
+- <strong>Candida</strong> : spondylodiscite (UDIV), ostéomyélite sur cathéter, néonatologie<br />
+  - Traitement : fluconazole 6-12 mois ou amphotéricine B<br />
+- <strong>Aspergillus</strong> : spondylodiscite, ostéomyélite chronique chez le neutropénique<br />
+  - Traitement : voriconazole 6-12 mois<br />
+- <strong>Cryptococcus</strong> : ostéomyélite rare, souvent VIH avec CD4 &lt;100<br />
+- <strong>Coccidioides</strong> (Valley fever) : zone endémique (sud-ouest USA, Mexique), ostéomyélite, arthrite<br />
+- <strong>Histoplasma, Blastomyces</strong> : zones endémiques (Amérique du Nord), ostéomyélite disséminée<br />
+- <strong>Diagnostic</strong> : cultures fongiques prolongées (2-4 semaines), histologie (colorations PAS, Gomori-Grocott), antigène sérique/urinaire, PCR<br />
+- Importance d'ÉVOQUER le diagnostic chez l'immunodéprimé devant des cultures bactériennes négatives</p>
+<h3 id="section-252-mycobacteries-non-tuberculeuses-mnt">Section 25.2 — Mycobactéries non tuberculeuses (MNT)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Mycobactérioses atypiques de l'appareil locomoteur :<br />
+  - <em>M. marinum</em> : infection après piqûre/blessure en milieu aquatique, ténosynovite/arthrite (poisson, aquarium)<br />
+  - <em>M. avium complex</em> (MAC) : ostéomyélite disséminée chez VIH avancé<br />
+  - <em>M. fortuitum</em>, <em>M. abscessus</em>, <em>M. chelonae</em> : mycobactéries à croissance rapide, ostéomyélite chronique post-traumatique/sur matériel<br />
+  - <em>M. ulcerans</em> : ulcère de Buruli (Afrique de l'Ouest) — atteinte osseuse par contiguïté<br />
+- Diagnostic : cultures sur milieux mycobactéries (Löwenstein), biologie moléculaire<br />
+- Traitement : multithérapie prolongée (12-24 mois), variable selon l'espèce</p>
+<h3 id="section-253-parasitoses-osteoarticulaires">Section 25.3 — Parasitoses ostéoarticulaires</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Rares mais à connaître dans un contexte tropical :<br />
+  - <strong>Échinococcose (kyste hydatique)</strong> : kyste hydatique osseux (vertèbre, pelvis), rare (1-2% des hydatidoses), chirurgie difficile, récidive fréquente<br />
+  - <strong>Toxoplasmose</strong> : arthrite chez l'immunodéprimé profond<br />
+  - <strong>Leishmaniose</strong> : atteinte osseuse exceptionnelle<br />
+- Diagnostic : sérologies, imagerie (aspect kystique), histologie, PCR</p>
+<h3 id="points-cles-du-module-25">Points clés du Module 25</h3>
+<ol>
+<li>Évoquer une infection fongique chez tout immunodéprimé avec infection ostéoarticulaire à cultures bactériennes négatives</li>
+<li>Les cultures fongiques nécessitent 2-4 semaines — les demander spécifiquement au laboratoire</li>
+<li><em>M. marinum</em> (aquarium/poisson), <em>M. fortuitum/abscessus</em> (matériel) sont les MNT les plus fréquentes en orthopédie</li>
+<li>Le kyste hydatique osseux est rare mais redoutable (récidive fréquente)</li>
+<li>Le contexte géographique et immunitaire guide le diagnostic étiologique</li>
+</ol>
+<hr />
+<hr />
+<h2 id="references-partie-vii">RÉFÉRENCES — PARTIE VII</h2>
+<ol>
+<li>Grammatico L, Baron S, Rusch E, et al. Epidemiology of vertebral osteomyelitis (VO) in France: analysis of hospital-discharge data 2002-2003. <em>J Antimicrob Chemother</em>. 2008;62(6):1307-1312.</li>
+<li>Gouliouris T, Aliyu SH, Brown NM. Spondylodiscitis: update on diagnosis and management. <em>Clin Med</em>. 2010;10(5):431-435.</li>
+<li>Zimmerli W. Vertebral osteomyelitis. <em>N Engl J Med</em>. 2010;362(11):1022-1029.</li>
+<li>Berbari EF, Kanj SS, Kowalski TJ, et al. 2015 IDSA clinical practice guidelines for the diagnosis and treatment of native vertebral osteomyelitis in adults. <em>Clin Infect Dis</em>. 2015;61(6):e26-e46.</li>
+<li>Lipsky BA, Berendt AR, Cornia PB, et al. 2012 IDSA clinical practice guideline for the diagnosis and treatment of diabetic foot infections. <em>Clin Infect Dis</em>. 2012;54(12):e132-e173.</li>
+<li>International Working Group on the Diabetic Foot (IWGDF). IWGDF Guidelines on the diagnosis and treatment of foot infection in persons with diabetes. 2019.</li>
+<li>Grayson ML, Gibbons GW, Balogh K, et al. Probing to bone in infected pedal ulcers: a clinical sign of underlying osteomyelitis in diabetic patients. <em>JAMA</em>. 1995;273(9):721-723.</li>
+<li>Dinh MT, Abad CL, Safdar N. Diagnostic accuracy of the physical examination and imaging tests for osteomyelitis underlying diabetic foot ulcers: meta-analysis. <em>BMJ</em>. 2008;336(7654):1170-1173.</li>
+<li>Pecoraro RE, Reiber GE, Burgess EM. Pathways to diabetic limb amputation: basis for prevention. <em>Diabetes Care</em>. 1990;13(5):513-521.</li>
+<li>Moulik PK, Mtonga R, Gill GV. Amputation and mortality in new-onset diabetic foot ulcers stratified by etiology. <em>Diabetes Care</em>. 2003;26(2):491-494.</li>
+<li>Armstrong DG, Boulton AJM, Bus SA. Diabetic foot ulcers and their recurrence. <em>N Engl J Med</em>. 2017;376(24):2367-2375.</li>
+<li>OMS. <em>Global Tuberculosis Report</em>. Genève : Organisation mondiale de la Santé (édition annuelle).</li>
+<li>Santé publique France / InVS. Données de surveillance de la tuberculose en France.</li>
+<li>Tuli SM. General principles of osteoarticular tuberculosis. <em>Clin Orthop Relat Res</em>. 2002;(398):11-19.</li>
+<li>OMS. <em>Guidelines for treatment of drug-susceptible tuberculosis and patient care</em>. Genève : Organisation mondiale de la Santé, 2017.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

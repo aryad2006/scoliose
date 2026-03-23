@@ -1,0 +1,388 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-7-gestion-perioperatoire-modules-20-22">Partie 7 — Gestion périopératoire (Modules 20-22)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-20-anesthesie-et-reanimation-du-patient-obese-intubation-ventilation-pharmacocinetique">MODULE 20 : ANESTHÉSIE ET RÉANIMATION DU PATIENT OBÈSE — INTUBATION, VENTILATION, PHARMACOCINÉTIQUE</h1>
+<p><strong>Partie</strong> : VII — Gestion périopératoire<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 4-5</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 60 ans, IMC 45, SAOS appareillé par PPC nocturne, DT2 sous insuline, est programmé pour une PTG. L'anesthésiste évalue un score de Mallampati 4, un tour de cou de 48 cm et un score STOP-BANG à 7/8. *Quels sont les risques anesthésiques spécifiques ? Comment adapter l'intubation, la ventilation et la pharmacocinétique des agents anesthésiques ? Quelle anesthésie privilégier : générale ou locorégionale ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Évaluer</strong> le risque anesthésique du patient obèse (voies aériennes, SAOS, cardiorespiratoire)</li>
+<li><strong>Adapter</strong> la technique d'intubation et de ventilation aux particularités de l'obèse</li>
+<li><strong>Modifier</strong> les posologies des agents anesthésiques en fonction de la pharmacocinétique de l'obèse</li>
+<li><strong>Comparer</strong> les techniques anesthésiques (AG, ALR, combinée) chez l'obèse orthopédique</li>
+<li><strong>Prévenir</strong> les complications anesthésiques spécifiques</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-201-evaluation-du-risque-anesthesique-chez-lobese">Section 20.1 — Évaluation du risque anesthésique chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Voies aériennes difficiles</strong> : l'obésité est un facteur de risque indépendant d'intubation difficile et de ventilation au masque difficile — tour de cou &gt; 43 cm (homme), score de Mallampati 3-4, ouverture de bouche limitée, distance thyro-mentonnière réduite, cou court et épais ; la prévalence d'intubation difficile est 2 à 4 fois plus élevée chez l'obèse morbide (Juvin et al., <em>Anesth Analg</em>, 2003)</li>
+<li><strong>SAOS (syndrome d'apnées obstructives du sommeil)</strong> : prévalence estimée à 40-70% chez les obèses morbides ; risque de dépression respiratoire majoré en postopératoire sous morphiniques ; le score STOP-BANG est un outil de dépistage simple (≥ 3 = risque élevé) ; les patients appareillés par PPC doivent reprendre leur PPC dès le réveil postopératoire</li>
+<li><strong>Syndrome d'obésité-hypoventilation (SOH)</strong> : hypoventilation alvéolaire chronique (PaCO₂ &gt; 45 mmHg à l'état de veille) chez l'obèse — prévalence environ 10-20% des obèses morbides ; risque d'hypercapnie sévère en postopératoire, hypoxémie, insuffisance respiratoire aiguë ; dépistage par gazométrie artérielle pré-opératoire systématique si IMC ≥ 40</li>
+<li><strong>Évaluation cardiaque</strong> : l'obèse a un risque cardiovasculaire accru — cardiomyopathie de l'obèse (dilatation VG, insuffisance cardiaque diastolique), HTA, athérosclérose ; évaluation préopératoire : ECG, échocardiographie si dyspnée ou signes d'insuffisance cardiaque, NT-proBNP</li>
+<li><strong>Scores de risque</strong> : ASA ≥ III quasi systématique chez l'obèse morbide ; score de Lee (facteurs de risque cardiaque) ; Obesity Surgery Mortality Risk Score (OS-MRS) pour la chirurgie bariatrique mais adaptable</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO20-S01-001 | 📊 INFOGRAPHIE | Évaluation anesthésique de l'obèse — voies aériennes, SAOS, SOH, cardio | Checklist préopératoire |<br />
+| MOBO20-S01-002 | 📐 SCHÉMA | Score STOP-BANG — items, interprétation, conduite à tenir | Schéma de dépistage |<br />
+| MOBO20-S01-003 | 📐 SCHÉMA | Positionnement « ramped » pour l'intubation — alignement des axes | Schéma de positionnement |</p>
+<h3 id="section-202-adaptation-de-lanesthesie-generale-chez-lobese">Section 20.2 — Adaptation de l'anesthésie générale chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Intubation</strong> : positionnement en « rampe » (<em>ramped position</em>) — élévation du tronc et de la tête pour aligner les axes oral-pharyngé-laryngé ; le masque laryngé est un plan B mais la ventilation au masque peut être difficile ; vidéo-laryngoscopie de première intention recommandée (SFAR) ; induction à séquence rapide fréquemment utilisée (estomac « plein » présumé, surtout si traitement par GLP-1 ou hernie hiatale)</li>
+<li><strong>Ventilation mécanique peropératoire</strong> : la CRF (capacité résiduelle fonctionnelle) est considérablement réduite chez l'obèse (jusqu'à 50% de diminution) → fermeture des petites voies aériennes, atélectasie, désaturation rapide ; stratégie de ventilation protectrice : Vt 6-8 mL/kg de poids idéal (PAS du poids réel), PEP 8-10 cmH₂O, FiO₂ modérée, manœuvres de recrutement alvéolaire</li>
+<li><strong>Pharmacocinétique</strong> :</li>
+<li>Volume de distribution : augmenté pour les molécules lipophiles (propofol, midazolam, fentanyl) → doses d'induction parfois augmentées, mais la masse maigre n'augmente pas proportionnellement → risque de surdosage si dosage au poids total</li>
+<li>Concept de poids de dosage :<ul>
+<li><strong>Poids idéal (PI)</strong> : pour les agents hydrophiles dont le Vd ne change pas (aminoglycosides, etc.)</li>
+<li><strong>Poids ajusté (PA = PI + 0,4 × [poids réel – PI])</strong> : pour la plupart des agents anesthésiques (propofol, rocuronium)</li>
+<li><strong>Poids total</strong> : rarement utilisé seul (risque de surdosage)</li>
+</ul>
+</li>
+<li>Curares : le rocuronium (0,6-1,2 mg/kg de poids idéal) ; la succinylcholine est dosée au poids total (1 mg/kg poids total) pour l'ISR ; décurarisation : sugammadex dosé au poids total (2-4 mg/kg poids total)</li>
+<li>Morphiniques : doses réduites si SAOS — surveillance postopératoire renforcée (oxymétrie continue ≥ 24h) ; privilégier l'analgésie multimodale pour réduire la consommation de morphiniques</li>
+<li><strong>Agents anesthésiques</strong> :</li>
+<li>Propofol : induction au poids ajusté, entretien en AIVOC (modèles pharmacocinétiques type Schnider ou Marsh — limites chez l'obèse morbide)</li>
+<li>Sévoflurane/desflurane : le desflurane est préféré chez l'obèse (faible solubilité → réveil plus rapide et plus prévisible)</li>
+<li>Rémifentanil : métabolisé par les estérases plasmatiques — ½ vie contexte-indépendante, idéal chez l'obèse ; dosé au poids idéal</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO20-S02-001 | 📊 INFOGRAPHIE | Poids de dosage — poids idéal, poids ajusté, poids total — quand utiliser lequel ? | Tableau pharmacologique |<br />
+| MOBO20-S02-002 | 📐 SCHÉMA | Ventilation mécanique de l'obèse — CRF réduite, atélectasie, stratégie protectrice | Schéma respiratoire |<br />
+| MOBO20-S02-003 | 📊 INFOGRAPHIE | Agents anesthésiques chez l'obèse — propofol, curares, morphiniques — dosages adaptés | Tableau posologique |</p>
+<h3 id="section-203-anesthesie-locoregionale-chez-lobese-orthopedique">Section 20.3 — Anesthésie locorégionale chez l'obèse orthopédique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Avantages de l'ALR</strong> : évite l'intubation difficile, réduit les complications respiratoires postopératoires, analgésie postopératoire sans morphiniques (réduction du risque d'apnée chez le SAOS), mobilisation et récupération plus précoces — de nombreuses recommandations (SFAR, ASA, ESRA) préconisent l'ALR quand possible chez l'obèse</li>
+<li><strong>Rachianesthésie</strong> : technique de choix pour la PTG et la PTH chez l'obèse — les repères de surface sont plus difficiles à palper (l'espace interépineux est profond sous la graisse sous-cutanée) ; l'échographie rachidienne préprocédurale est utile pour repérer l'espace interépineux et estimer la profondeur ; l'aiguille spinale standard (9 cm) peut être insuffisante → aiguilles longues (12-15 cm) souvent nécessaires ; la dose de bupivacaïne intrathécale peut être réduite chez l'obèse (la graisse épidurale comprime le sac dural → espace intrathécal réduit → extension plus haute de l'anesthésie pour une même dose)</li>
+<li><strong>Anesthésie péridurale</strong> : les mêmes difficultés de repérage s'appliquent — le cathéter péridural peut être difficile à stabiliser dans les tissus mous épais ; la péridurale thoracique pour la chirurgie rachidienne est techniquement très exigeante chez l'obèse</li>
+<li><strong>Blocs nerveux périphériques</strong> : guidage échographique indispensable chez l'obèse (les repères anatomiques superficiels sont masqués par la graisse) ; l'atténuation du faisceau ultrasonore par la graisse sous-cutanée réduit la qualité de l'image → utiliser des fréquences basses (sonde convexe 2-5 MHz pour les blocs profonds)</li>
+<li>Bloc fémoral / adducteur canal : pour la PTG — le nerf fémoral est plus profond ; le bloc adducteur canal est préféré (préservation de la force quadricipitale)</li>
+<li>Bloc sciatique poplité : pour la chirurgie de cheville — le nerf sciatique est plus profond dans la fosse poplitée chez l'obèse</li>
+<li>IPACK block (Infiltration entre l'artère Poplitée et la Capsule du Genou) : analgésie postérieure du genou</li>
+<li><strong>Anesthésie combinée</strong> : AG + ALR est souvent la stratégie optimale — l'ALR fournit l'analgésie, l'AG gère les voies aériennes si nécessaire</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO20-S03-001 | 📐 SCHÉMA | Rachianesthésie chez l'obèse — repérage échographique, aiguilles longues, doses réduites | Schéma technique |<br />
+| MOBO20-S03-002 | 📷 IMAGE | Échographie rachidienne pré-procédurale — identification de l'espace intrathécal chez l'obèse | Image échographique |<br />
+| MOBO20-S03-003 | 📊 INFOGRAPHIE | AG vs ALR vs combinée chez l'obèse — avantages, inconvénients, indications | Tableau décisionnel |</p>
+<h3 id="points-cles-du-module-20">Points clés du Module 20</h3>
+<ol>
+<li>L'intubation difficile est 2-4 fois plus fréquente chez l'obèse — vidéo-laryngoscope de première intention</li>
+<li>Le positionnement en « rampe » aligne les axes aériens — indispensable pour l'intubation</li>
+<li>La CRF est réduite de 50% chez l'obèse → désaturation rapide → ventilation protectrice avec PEP</li>
+<li>Les poids de dosage diffèrent : poids idéal (morphiniques), poids ajusté (propofol, curares), poids total (succinylcholine, sugammadex)</li>
+<li>L'ALR est recommandée chez l'obèse — évite l'intubation, réduit les complications respiratoires</li>
+<li>La rachianesthésie nécessite des aiguilles longues et des doses réduites chez l'obèse</li>
+<li>L'échographie est indispensable pour les blocs nerveux chez l'obèse</li>
+<li>La surveillance postopératoire renforcée (oxymétrie ≥ 24h) est obligatoire si SAOS</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (intubation difficile, rampe, STOP-BANG)</li>
+<li>3 QCM Argent (poids de dosage, ventilation protectrice, avantages ALR)</li>
+<li>2 QCM Or (pharmacocinétique complète des agents anesthésiques, rachianesthésie chez l'obèse)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 48, SAOS sévère, STOP-BANG 7, Mallampati 4, programmé PTG — plan anesthésique complet AG vs ALR vs combinée)</li>
+<li>1 QROC : « Expliquez pourquoi les doses de bupivacaïne intrathécale doivent être réduites chez l'obèse et les conséquences d'un surdosage. »</li>
+</ul>
+<hr />
+<h1 id="module-21-complications-perioperatoires-infection-thromboembolie-cicatrisation-complications-respiratoires">MODULE 21 : COMPLICATIONS PÉRIOPÉRATOIRES — INFECTION, THROMBOEMBOLIE, CICATRISATION, COMPLICATIONS RESPIRATOIRES</h1>
+<p><strong>Partie</strong> : VII — Gestion périopératoire<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 4-5, 13-14, 20</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 58 ans, IMC 43, J5 post-PTG droite. Fièvre à 38,8°C, inflammation locale du genou avec écoulement séro-hématique par le drain. La CRP est à 180 mg/L. La saturation est à 88% en air ambiant avec un scanner thoracique montrant des atélectasies bilatérales. *S'agit-il d'une infection du site opératoire, d'une complication thromboembolique, d'une complication respiratoire, ou de tout cela à la fois ? Comment gérer les multiples complications concomitantes chez l'obèse ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prévenir</strong> l'infection du site opératoire chez l'obèse (antibioprophylaxie adaptée, gestion des tissus mous)</li>
+<li><strong>Organiser</strong> la prévention thromboembolique adaptée au poids</li>
+<li><strong>Gérer</strong> les complications respiratoires postopératoires (atélectasie, pneumonie, décompensation SAOS)</li>
+<li><strong>Optimiser</strong> la cicatrisation et la gestion des drains chez l'obèse</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-211-infection-du-site-operatoire-iso-chez-lobese-prevention-et-traitement">Section 21.1 — Infection du site opératoire (ISO) chez l'obèse : prévention et traitement</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Facteurs de risque additifs</strong> : l'obésité est un facteur de risque indépendant d'infection du site opératoire — les facteurs se cumulent : diabète (HbA1c &gt; 7%), dénutrition protéique paradoxale, carence en vitamine D, immunodépression relative, hématome dans les espaces morts, hypoperfusion tissulaire, durée opératoire prolongée, colonisation cutanée des plis</li>
+<li><strong>Antibioprophylaxie</strong> : les doses standard de céfazoline (2 g) peuvent être insuffisantes chez l'obèse morbide — les recommandations SFAR (2018) et les guidelines AAOS préconisent :</li>
+<li>Céfazoline 3 g si poids ≥ 120 kg (certaines recommandations utilisent 2 g si &lt; 80 kg, 3 g si ≥ 80 kg)</li>
+<li>Réinjection de la demi-dose toutes les 2 heures si la chirurgie dure &gt; 4h (car la demi-vie de la céfazoline est plus courte chez l'obèse en raison d'une clairance rénale augmentée)</li>
+<li>En cas d'allergie aux bêta-lactamines : vancomycine 15 mg/kg de poids total (dose unique, max 2 g) — perfusion lente pour éviter le « red man syndrome »</li>
+<li><strong>Mesures préventives</strong> :</li>
+<li>Contrôle glycémique strict (glycémie &lt; 1,8 g/L en périopératoire — protocole d'insulinothérapie IV)</li>
+<li>Préparation cutanée : douche antiseptique (chlorhexidine) × 2 la veille et le matin de la chirurgie ; attention particulière aux plis cutanés</li>
+<li>Incision et fermeture : incision franche en un passage (éviter les incisions multiples dans les tissus adipeux), fermeture en plans multiples (sous-cutané profond, sous-cutané superficiel, cutané) pour oblitérer les espaces morts ; certains chirurgiens utilisent des drains aspiratifs systématiques chez l'obèse</li>
+<li>Pansement à pression négative (type Prevena™) : données émergentes en faveur de son utilisation systématique sur les incisions d'arthroplastie chez l'obèse morbide — réduction du taux d'infection superficielle et de déhiscence (Stannard et al., <em>J Bone Joint Surg Am</em>, 2012)</li>
+<li><strong>Traitement</strong> : cf. Module 15 pour l'infection périprothétique</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO21-S01-001 | 📊 INFOGRAPHIE | Antibioprophylaxie adaptée chez l'obèse — doses, timing, réinjection | Protocole posologique |<br />
+| MOBO21-S01-002 | 📐 SCHÉMA | Fermeture en plans multiples chez l'obèse — oblitération des espaces morts | Schéma chirurgical |<br />
+| MOBO21-S01-003 | 📷 IMAGE | Pansement à pression négative sur incision de PTG chez l'obèse | Photo clinique |</p>
+<h3 id="section-212-prevention-de-la-maladie-veineuse-thromboembolique-mvte">Section 21.2 — Prévention de la maladie veineuse thromboembolique (MVTE)</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Risque accru</strong> : l'obésité est un facteur de risque indépendant de TVP et d'EP — le score de Caprini attribue 1 point à l'obésité (parmi d'autres facteurs) ; combiné à la chirurgie orthopédique majeure (score Caprini élevé), le risque chez l'obèse est considérable ; certaines études estiment que le risque de TVP symptomatique est doublé chez les obèses morbides après arthroplastie</li>
+<li><strong>Thromboprophylaxie médicamenteuse</strong> :</li>
+<li>HBPM (enoxaparine) : la dose standard de 4000 UI/jour peut être insuffisante chez l'obèse morbide — les études pharmacocinétiques montrent que l'activité anti-Xa est subthérapeutique chez les patients &gt; 120 kg à dose standard ; les guidelines ACCP (2012) et SFAR recommandent une adaptation : 4000 UI × 2/jour (ou 6000 UI × 1/jour) chez les patients &gt; 100-120 kg, avec monitoring anti-Xa si disponible</li>
+<li>AOD (rivaroxaban, apixaban) : les études pharmacocinétiques montrent une réduction de la concentration plasmatique chez les super-obèses (&gt; 120 kg) — l'ISTH (2016) recommande de ne pas utiliser les AOD chez les patients &gt; 120 kg ou IMC &gt; 40 en l'absence de données suffisantes ; cependant, des données plus récentes (2020-2024) suggèrent que les AOD à dose standard sont probablement efficaces jusqu'à 150-160 kg</li>
+<li>Durée : 30-35 jours après PTG et PTH (prolongée au-delà des 10-14 jours de la dose standard hospitalière) — pas de recommandation spécifique de prolongation supplémentaire pour l'obèse</li>
+<li><strong>Mesures mécaniques</strong> : compression pneumatique intermittente (CPI) peropératoire et postopératoire dès l'arrivée en SSPI — les manchons doivent être de taille adaptée (taille XL bariatrique) ; mobilisation précoce (lever J0 si possible, marche J1)</li>
+<li><strong>Filtre cave</strong> : exceptionnellement indiqué (contre-indication absolue aux anticoagulants + risque très élevé d'EP)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO21-S02-001 | 📊 INFOGRAPHIE | Thromboprophylaxie chez l'obèse — HBPM doses adaptées, AOD controverses, durée | Protocole |<br />
+| MOBO21-S02-002 | 📐 SCHÉMA | Score de Caprini chez l'obèse orthopédique — calcul et interprétation | Schéma de score |</p>
+<h3 id="section-213-complications-respiratoires-postoperatoires">Section 21.3 — Complications respiratoires postopératoires</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Atélectasie</strong> : complication respiratoire la plus fréquente — favorisée par la réduction de la CRF, le décubitus prolongé, la douleur (limitation des mouvements respiratoires), les morphiniques ; prévention : position semi-assise (30-45°), kinésithérapie respiratoire précoce (spiromètre incitatif), PEP au masque, mobilisation précoce</li>
+<li><strong>Pneumonie postopératoire</strong> : incidence 2 à 3 fois plus élevée chez l'obèse — l'atélectasie est un lit pour l'infection ; l'intubation difficile avec intubation prolongée augmente le risque ; prévention : éviter l'intubation prolongée (ALR préférable), hygiène bucco-dentaire, kinésithérapie</li>
+<li><strong>Décompensation du SAOS</strong> : les morphiniques postopératoires augmentent le risque d'apnée et de désaturation chez les patients SAOS — protocole : reprise de la PPC dès le réveil, surveillance oxymétrique continue ≥ 24-48h, réduction maximale des morphiniques (analgésie multimodale : paracétamol, AINS si fonction rénale normale, gabapentine/pregabaline, ALR)</li>
+<li><strong>Syndrome d'obésité-hypoventilation (SOH) décompensé</strong> : le plus dangereux — hypercapnie sévère postopératoire, insuffisance respiratoire aiguë ; traitement : VNI (ventilation non invasive) type BiPAP, puis PPC ; si échec : intubation en réanimation</li>
+<li><strong>Embolie pulmonaire</strong> : diagnostic parfois retardé car les symptômes (dyspnée, tachycardie, désaturation) sont attribués à la complication respiratoire « habituelle » de l'obèse — maintenir un index de suspicion élevé ; angioscanner thoracique si doute (technique adaptée chez l'obèse)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO21-S03-001 | 📐 SCHÉMA | Cascade respiratoire postopératoire chez l'obèse — atélectasie → pneumonie → décompensation | Schéma séquentiel |<br />
+| MOBO21-S03-002 | 📊 INFOGRAPHIE | Analgésie multimodale chez l'obèse SAOS — réduction des morphiniques, alternatives | Protocole antalgique |</p>
+<h3 id="section-214-cicatrisation-et-gestion-des-drains">Section 21.4 — Cicatrisation et gestion des drains</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Facteurs de mauvaise cicatrisation</strong> : hypoperfusion des tissus adipeux, diabète (microcirculation), carences (protéines, zinc, vitamine C, vitamine A), œdème chronique, tension cutanée accrue sur les berges</li>
+<li><strong>Techniques de fermeture adaptées</strong> :</li>
+<li>Plans multiples : fermeture du plan sous-cutané profond au fil résorbable (Vicryl® 0 ou 2-0) pour rapprocher les berges et réduire la tension cutanée ; un ou deux plans sous-cutanés selon l'épaisseur</li>
+<li>Cutané : points dermiques inversés au Monocryl® 3-0 ou agrafes ; les agrafes permettent une fermeture rapide et étanche ; retrait à J14-J21 (plus tardif que chez le normopondéral car la cicatrisation est plus lente)</li>
+<li>Bandages adhésifs renforcés (Steri-Strip™ + Derrnabond™) en complément des points sous-cutanés</li>
+<li><strong>Drains</strong> : le drainage aspiratif (type Redon) est souvent laissé plus longtemps chez l'obèse (48-72h vs 24-48h) — les espaces morts produisent davantage de collections séro-hématiques ; le volume de drainage est surveillé (retrait si &lt; 30-50 mL/24h)</li>
+<li><strong>Pansement à pression négative (TPN)</strong> : utilisation prophylactique sur les incisions fermées chez l'obèse morbide — les données des études randomisées (Karlakki et al., <em>Bone Joint J</em>, 2016) montrent un taux réduit de complications de plaie ; maintenu 5-7 jours</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO21-S04-001 | 📐 SCHÉMA | Fermeture cutanée chez l'obèse — plans sous-cutanés, tension, agrafes | Schéma technique |<br />
+| MOBO21-S04-002 | 📊 INFOGRAPHIE | Protocole de gestion des drains et pansements chez l'obèse | Protocole clinique |</p>
+<h3 id="points-cles-du-module-21">Points clés du Module 21</h3>
+<ol>
+<li>La céfazoline doit être augmentée à 3 g si poids ≥ 120 kg avec réinjection toutes les 2h</li>
+<li>Le pansement à pression négative prophylactique réduit les complications de plaie chez l'obèse morbide</li>
+<li>L'enoxaparine doit être doublée (4000 UI × 2/jour) si poids &gt; 100-120 kg</li>
+<li>L'atélectasie est la complication respiratoire la plus fréquente — prévention position semi-assise + kinésithérapie</li>
+<li>Reprise de la PPC dès le réveil chez le patient SAOS</li>
+<li>L'analgésie multimodale est essentielle pour réduire les morphiniques chez l'obèse SAOS</li>
+<li>La fermeture en plans multiples oblitère les espaces morts et réduit les complications de plaie</li>
+<li>Les drains aspiratifs sont maintenus plus longtemps chez l'obèse (48-72h)</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (dose de céfazoline, complications respiratoires fréquentes, PPC postopératoire)</li>
+<li>3 QCM Argent (adaptation HBPM, pansement à pression négative, analgésie multimodale)</li>
+<li>2 QCM Or (protocole antithrombotique complet, gestion du SOH décompensé)</li>
+<li>1 QCM Diamant (cas clinique : obèse IMC 44, J3 PTG, fièvre + désaturation + inflammation locale — diagnostic différentiel et gestion simultanée)</li>
+<li>1 QROC : « Détaillez le protocole complet de prévention de l'infection du site opératoire chez un patient obèse morbide programmé pour une PTG. »</li>
+</ul>
+<hr />
+<h1 id="module-22-reeducation-et-recuperation-du-patient-obese-opere-raac-apa-balneotherapie">MODULE 22 : RÉÉDUCATION ET RÉCUPÉRATION DU PATIENT OBÈSE OPÉRÉ — RAAC, APA, BALNÉOTHÉRAPIE</h1>
+<p><strong>Partie</strong> : VII — Gestion périopératoire<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Module 7, 20-21</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 58 ans, IMC 39, J2 post-PTG gauche. Le programme RAAC prévoit la marche à J0 et le retour à domicile à J2-J3. La patiente pèse 110 kg — la kinésithérapeute constate qu'elle ne peut pas se mettre debout en appui sur les cannes axillaires (force insuffisante des membres supérieurs) et que le déambulateur standard est instable. *Comment adapter la rééducation précoce au patient obèse ? Le protocole RAAC est-il applicable ? Quels sont les outils spécifiques (matériel bariatrique, balnéothérapie, APA) ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Adapter</strong> les protocoles RAAC au patient obèse (lever précoce, marche, gestion de la douleur)</li>
+<li><strong>Organiser</strong> la rééducation post-opératoire avec du matériel adapté (déambulateurs bariatriques, lève-malades)</li>
+<li><strong>Prescrire</strong> la balnéothérapie comme outil de rééducation privilégié chez l'obèse</li>
+<li><strong>Planifier</strong> un programme d'activité physique adaptée (APA) à long terme post-chirurgie</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-221-protocoles-raac-chez-le-patient-obese">Section 22.1 — Protocoles RAAC chez le patient obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Principes RAAC appliqués à l'obèse</strong> : la RAAC (<em>Récupération Améliorée Après Chirurgie</em> — ERAS <em>Enhanced Recovery After Surgery</em>) est applicable aux patients obèses mais nécessite des adaptations ; les piliers fondamentaux restent les mêmes : information préopératoire, pré-habilitation, analgésie multimodale, lever et alimentation précoces, critères de sortie objectifs</li>
+<li><strong>Adaptations spécifiques</strong> :</li>
+<li>Lever J0 : objectif maintenu mais nécessite du personnel formé et du matériel adapté — un lève-malade (« verticalisateur ») peut être nécessaire pour les patients &gt; 130 kg ; les déambulateurs bariatriques (charge maximale 200-250 kg) remplacent les déambulateurs standards</li>
+<li>Marche J1 : objectif de quelques mètres dans le couloir ; les cannes anglaises sont souvent préférées aux cannes axillaires (meilleur confort pour l'obèse) ; certains patients très lourds utilisent un rollator bariatrique dès J1</li>
+<li>Douleur : l'analgésie multimodale réduit les opioïdes (cf. Module 21) ; les blocs nerveux continus (cathéter adducteur canal, cathéter sciatique poplité) permettent une analgésie prolongée sans morphiniques systémiques</li>
+<li>Sortie : souvent retardée de 1-2 jours par rapport aux normopondéraux — J3-J4 au lieu de J2-J3 pour la PTG ; la sortie est conditionnée à l'autonomie de mobilisation et à l'absence de complications</li>
+<li><strong>Critères de sortie</strong> : marche 30 m avec aide technique, escaliers (si domicile en étage), contrôle de la douleur (EVA &lt; 4), absence de complications (fièvre, saignement, complication respiratoire)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO22-S01-001 | 📊 INFOGRAPHIE | Protocole RAAC adapté à l'obèse — chronologie J-1 à J5 | Timeline RAAC |<br />
+| MOBO22-S01-002 | 📷 IMAGE | Matériel bariatrique — déambulateur, lève-malade, lit renforcé | Photos de matériel |</p>
+<h3 id="section-222-reeducation-post-operatoire-specifique">Section 22.2 — Rééducation post-opératoire spécifique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Phase hospitalière (J0-J5)</strong> :</li>
+<li>Kinésithérapie respiratoire systématique (spiromètre incitatif, exercices de toux dirigée) — prévention de l'atélectasie</li>
+<li>Mobilisation passive puis active du genou (arthromoteur si PTG) — objectif flexion 90° à J5</li>
+<li>Exercices isométriques : contractions du quadriceps en extension, glutéaux, mollets — maintien du trophisme musculaire</li>
+<li>Prévention des escarres : mobilisation fréquente, matelas à pression alternée (les escarres sacrées et talonnières sont plus fréquentes chez l'obèse alité)</li>
+<li><strong>Phase ambulatoire (J5-J90)</strong> :</li>
+<li>Kinésithérapie à domicile ou en centre de rééducation — 3-5 séances/semaine</li>
+<li>Objectifs : récupération des amplitudes articulaires (flexion 120° à M3 pour la PTG), renforcement musculaire progressif, récupération de la marche sans aide technique</li>
+<li>L'obèse récupère plus lentement la flexion et l'extension complète du genou — les tissus mous volumineux limitent mécaniquement la flexion ; la flexion moyenne à M3 est d'environ 105-110° (vs 115-120° chez le normopondéral)</li>
+<li>Centre de rééducation (SSR) : les patients obèses morbides bénéficient souvent d'un séjour en SSR spécialisé plutôt qu'un retour à domicile direct — les SSR doivent disposer d'équipement bariatrique</li>
+<li><strong>Balnéothérapie</strong> : outil de rééducation de choix chez l'obèse (cf. Module 7) — la flottabilité réduit le poids apparent de 50%, permettant une mise en charge progressive sans surcharge articulaire ; les exercices en piscine améliorent les amplitudes, la force et le cardiovasculaire ; début : dès cicatrisation complète (environ J21-J30 post-chirurgie) ; les piscines de rééducation doivent avoir des rampes d'accès et des lève-baignoire adaptés</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO22-S02-001 | 📊 INFOGRAPHIE | Programme de rééducation post-PTG chez l'obèse — objectifs par semaine | Planning de rééducation |<br />
+| MOBO22-S02-002 | 🎬 ANIMATION | Exercices de balnéothérapie post-arthroplastie chez l'obèse | Vidéo d'exercices |<br />
+| MOBO22-S02-003 | 📐 SCHÉMA | Prévention des escarres chez l'obèse hospitalisé — points de pression, matelas | Schéma préventif |</p>
+<h3 id="section-223-activite-physique-adaptee-apa-a-long-terme-et-prevention-de-la-reprise-ponderale">Section 22.3 — Activité physique adaptée (APA) à long terme et prévention de la reprise pondérale</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Enjeu à long terme</strong> : la chirurgie orthopédique chez l'obèse ne traite pas l'obésité — sans prise en charge de la surcharge pondérale, les résultats de l'arthroplastie se dégradent à long terme (usure, descellement, complications controlatérales) ; l'arthroplastie doit être un « tremplin » vers un mode de vie plus actif</li>
+<li><strong>Programme d'APA post-arthroplastie</strong> :</li>
+<li>M1-M3 : exercices en décharge (veloergomètre, balnéothérapie, exercices au sol)</li>
+<li>M3-M6 : marche progressive (distance croissante), renforcement musculaire avec charges légères</li>
+<li>M6-M12 : activités en charge modérée (marche nordique — excellent compromis entre sollicitation cardiovasculaire et faible impact articulaire), natation, vélo</li>
+<li>
+<blockquote>
+<p>M12 : activités récréatives adaptées — la course à pied est déconseillée (impact trop élevé sur les implants) ; le vélo, la natation, la marche, le golf, l'aquagym sont recommandés</p>
+</blockquote>
+</li>
+<li><strong>Objectif pondéral</strong> : la perte conjointe de 5-10% du poids corporel dans l'année suivant l'arthroplastie améliore significativement les scores fonctionnels et réduit le risque de complications à moyen terme — intégrer un suivi nutritionnel au programme de rééducation</li>
+<li><strong>Éducation thérapeutique du patient (ETP)</strong> : programme structuré incluant nutrition, exercice, gestion des comorbidités, autosurveillance — les équipes de rééducation doivent intégrer l'ETP dans le parcours de soins</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO22-S03-001 | 📊 INFOGRAPHIE | Programme d'APA post-arthroplastie — M1 à M12+ | Timeline d'activités |<br />
+| MOBO22-S03-002 | 📐 SCHÉMA | L'arthroplastie comme « tremplin » — cercle vertueux chirurgie → mobilité → exercice → perte de poids | Schéma conceptuel |</p>
+<h3 id="points-cles-du-module-22">Points clés du Module 22</h3>
+<ol>
+<li>La RAAC est applicable à l'obèse mais nécessite des adaptations (matériel bariatrique, personnel formé)</li>
+<li>Le lever J0 est l'objectif — lève-malades et déambulateurs bariatriques si nécessaire</li>
+<li>La balnéothérapie est l'outil de rééducation privilégié — flottabilité réduit le poids apparent de 50%</li>
+<li>L'obèse récupère plus lentement — la sortie est souvent retardée de 1-2 jours</li>
+<li>La flexion postopératoire du genou est limitée (105-110° vs 115-120°)</li>
+<li>L'arthroplastie doit être un tremplin vers un mode de vie actif — perte de 5-10% du poids améliore les résultats</li>
+<li>Les activités à faible impact (vélo, natation, marche nordique) sont recommandées à long terme</li>
+<li>L'ETP est essentielle dans le parcours de rééducation de l'obèse opéré</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (principes RAAC, balnéothérapie, matériel bariatrique)</li>
+<li>3 QCM Argent (adaptations RAAC chez l'obèse, programme d'APA, critères de sortie)</li>
+<li>2 QCM Or (rééducation post-PTG complète, prévention des escarres)</li>
+<li>1 QCM Diamant (cas clinique : patiente IMC 42, J2 PTG, incapable de se verticaliser — plan de rééducation adapté court et long terme)</li>
+<li>1 QROC : « Comment la balnéothérapie contribue-t-elle à la rééducation du patient obèse après arthroplastie ? Détaillez les mécanismes physiques et les bénéfices cliniques. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-vii-modules-20-22">Références bibliographiques — Partie VII (Modules 20-22)</h2>
+<ol>
+<li>Juvin P, Lavaut E, Dupont H, et al. Difficult tracheal intubation is more common in obese than in lean patients. <em>Anesth Analg</em>. 2003;97(2):595-600.</li>
+<li>Karlakki SL, Hamad AK, Whittall C, et al. Incisional negative pressure wound therapy dressings (iNPWTd) in routine primary hip and knee arthroplasties: a randomised controlled trial. <em>Bone Joint Res</em>. 2016;5(8):328-337.</li>
+<li>Stannard JP, Volgas DA, McGwin G, et al. Incisional negative pressure wound therapy after high-risk lower extremity fractures. <em>J Orthop Trauma</em>. 2012;26(1):37-42.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

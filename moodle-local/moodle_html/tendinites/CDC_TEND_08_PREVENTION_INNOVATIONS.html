@@ -1,0 +1,415 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-8-prevention-recherche-et-innovations-modules-24-25">Partie 8 — Prévention, recherche et innovations (Modules 24-25)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-24-prevention-des-tendinopathies-gestion-de-la-charge-et-facteurs-de-risque">MODULE 24 : PRÉVENTION DES TENDINOPATHIES — GESTION DE LA CHARGE ET FACTEURS DE RISQUE</h1>
+<p><strong>Partie</strong> : VIII — Prévention, recherche et innovations<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-23</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">En début de saison, 3 joueurs sur 12 présentent des signes échographiques de tendinopathie patellaire (épaississement + hypoéchogénicité) mais sont asymptomatiques. Par le passé, 2 d'entre eux ont développé des tendinopathies symptomatiques en milieu de saison, entraînant des absences de 3-6 semaines. *Faut-il traiter des anomalies échographiques asymptomatiques ? Comment prévenir l'apparition des tendinopathies dans une équipe sportive ? La gestion de la charge d'entraînement peut-elle réduire le risque ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les facteurs de risque modifiables et non modifiables des tendinopathies</li>
+<li><strong>Comprendre</strong> le concept de charge-capacité et son application à la prévention</li>
+<li><strong>Appliquer</strong> les principes de gestion de la charge d'entraînement (ACWR, sRPE)</li>
+<li><strong>Développer</strong> un programme de prévention primaire et secondaire des tendinopathies</li>
+<li><strong>Intégrer</strong> les facteurs systémiques (diabète, cholestérol, médicaments) dans la prévention</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-241-facteurs-de-risque-intrinseques-et-extrinseques">Section 24.1 — Facteurs de risque : intrinsèques et extrinsèques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Facteurs intrinsèques</strong> (liés à l'individu) :<br />
+  - <strong>Âge</strong> : le risque augmente linéairement avec l'âge (dégénérescence, ↓ vascularisation, ↓ synthèse de collagène, accumulation de micro-lésions)<br />
+  - <strong>Génétique</strong> : polymorphismes des gènes COL5A1, MMP3, TNC (tenascin-C), GDF5 → prédisposition aux tendinopathies — études GWAS<br />
+  - <strong>Sexe</strong> : variable selon la localisation — Achille : hommes ; GTPS : femmes ; coiffe : hommes ; De Quervain : femmes<br />
+  - <strong>IMC / adiposité</strong> : facteur de risque systémique (adipokines pro-inflammatoires, métabolisme lipidique, charge mécanique augmentée) — chaque point d'IMC supplémentaire augmente le risque de tendinopathie de ~5% (Gaida et al., 2009, <em>Arthritis Rheum</em>)<br />
+  - <strong>Diabète</strong> : insulinorésistance → accumulation de produits de glycation avancés (AGE) dans le collagène → rigidification, fragilisation → ↑ risque × 3 (Ranger et al., 2016, <em>Br J Sports Med</em>)<br />
+  - <strong>Dyslipidémie / hypercholestérolémie</strong> : dépôts lipidiques intra-tendineux (xanthomes), ↑ inflammation locale → risque de tendinopathie et de rupture × 2 (Tilley et al., 2015, <em>Br J Sports Med</em>)<br />
+  - <strong>Maladies rhumatismales</strong> : spondylarthropathie (enthésites), polyarthrite rhumatoïde (ténosynovites)<br />
+  - <strong>Biomécanique individuelle</strong> : pronation excessive du pied, valgus du genou, dyskinésie scapulaire<br />
+- <strong>Facteurs extrinsèques</strong> (liés à l'environnement/activité) :<br />
+  - <strong>Erreurs de charge</strong> : le facteur de risque n°1 ← augmentation brutale du volume ou de l'intensité d'entraînement (&gt;10-15% par semaine = risque)<br />
+  - <strong>Surface</strong> : terrain dur (béton &gt; tartan &gt; herbe), course en descente<br />
+  - <strong>Équipement</strong> : chaussures inadaptées (usure, drop incorrect), chaussage professionnel (contrefort)<br />
+  - <strong>Technique sportive</strong> : biomécanique de course, geste de lancer, position d'ergonomie au travail<br />
+  - <strong>Médicaments</strong> : fluoroquinolones, corticoïdes, statines, inhibiteurs de l'aromatase (cf. Module 23)<br />
+  - <strong>Environnement professionnel</strong> : gestes répétitifs, vibrations, contraintes positionnelles</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND24-S01-001 | 📊 INFOGRAPHIE | Facteurs de risque intrinsèques et extrinsèques — cartographie complète | Infographie large |<br />
+| MTEND24-S01-002 | 📐 SCHÉMA | Modèle charge-capacité dans la genèse des tendinopathies | Schéma conceptuel |<br />
+| MTEND24-S01-003 | 📊 INFOGRAPHIE | Impact du diabète, de l'obésité et de la dyslipidémie sur le tendon | Données chiffrées |<br />
+| MTEND24-S01-004 | 📊 INFOGRAPHIE | Prédisposition génétique — gènes identifiés et mécanismes | Tableau de gènes |</p>
+<h3 id="section-242-gestion-de-la-charge-dentrainement">Section 24.2 — Gestion de la charge d'entraînement</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Le concept ACWR (Acute:Chronic Workload Ratio)</strong> — Gabbett et al., 2016, <em>Br J Sports Med</em> :<br />
+  - Charge aiguë = charge de la dernière semaine<br />
+  - Charge chronique = charge moyenne des 4 dernières semaines<br />
+  - ACWR = aiguë / chronique<br />
+  - « Sweet spot » : ACWR 0.8-1.3 = risque minimal de blessure<br />
+  - Danger : ACWR &gt;1.5 = « spike de charge » → risque de blessure × 2-5<br />
+  - Danger aussi : ACWR &lt;0.6 = déconditionnement → vulnérabilité à la reprise<br />
+- <strong>Monitoring de la charge</strong> :<br />
+  - sRPE (session Rating of Perceived Exertion) : RPE (0-10) × durée de la session (minutes) = load (unités arbitraires) — méthode simple et validée<br />
+  - Training load metrics : volume (km, répétitions), intensité (vitesse, charge), fréquence<br />
+  - Jump count monitoring pour tendinopathie patellaire : compter les sauts par session (accéléromètre)<br />
+- <strong>Règle du 10%</strong> : ne pas augmenter la charge totale de plus de 10% par semaine<br />
+- <strong>Periodisation</strong> : alternance de semaines de charge (3) et de récupération (1) — microcycle de 4 semaines<br />
+- <strong>Le concept de « training the tendon »</strong> : le tendon a besoin de charge pour maintenir sa capacité → les périodes de repos total (vacances, blessure autre) fragilisent le tendon → reprise progressive obligatoire</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND24-S02-001 | 🎬 ANIMATION | ACWR — zone de sweet spot vs zone de danger | Animation graphique |<br />
+| MTEND24-S02-002 | 📐 SCHÉMA | Calcul sRPE — exemple pratique | Schéma numérique |<br />
+| MTEND24-S02-003 | 📊 INFOGRAPHIE | Règle du 10% et periodisation — modèle sur 4 semaines | Timeline |<br />
+| MTEND24-S02-004 | 📊 INFOGRAPHIE | Monitoring de la charge — outils et méthodes | Guide pratique |</p>
+<h3 id="section-243-programmes-de-prevention">Section 24.3 — Programmes de prévention</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Prévention primaire</strong> (empêcher l'apparition) :<br />
+  - Gestion de la charge d'entraînement (ACWR, règle du 10%)<br />
+  - Programmes de renforcement excentrique/HSR prophylactiques (exercices du programme des excentiques 1-2×/semaine en prévention)<br />
+  - Correction des facteurs biomécaniques : orthèses plantaires, analyse de course, correction de la technique sportive<br />
+  - Éducation des praticiens et des entraîneurs<br />
+  - Dépistage échographique des tendons à risque (athlètes d'élite) — tendons épaissis asymptomatiques = risque × 3 de devenir symptomatiques (Cook et al., 2001, <em>Scand J Med Sci Sports</em>)<br />
+  - Prise en charge des facteurs systémiques : contrôle glycémique, contrôle lipidique, réduction pondérale<br />
+- <strong>Prévention secondaire</strong> (empêcher la récidive) :<br />
+  - Maintien d'exercices de renforcement après guérison (1-2×/semaine, indéfiniment !)<br />
+  - Monitoring continu de la charge<br />
+  - Autogestion par le patient (éducation thérapeutique — reconnaître les signaux d'alerte)<br />
+  - Score VISA de monitoring (contrôle trimestriel post-guérison)<br />
+- <strong>Prévention en milieu professionnel</strong> :<br />
+  - Ergonomie du poste de travail<br />
+  - Pauses actives (stretching, mobilisation)<br />
+  - Rotation des tâches (limiter la répétitivité)<br />
+  - Outils anti-vibrations</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND24-S03-001 | 📊 INFOGRAPHIE | Programme de prévention primaire — check-list par domaine | Guide complet |<br />
+| MTEND24-S03-002 | 📊 INFOGRAPHIE | Prévention secondaire — maintien post-guérison | Fiche patient |<br />
+| MTEND24-S03-003 | 📊 INFOGRAPHIE | Prévention en milieu professionnel — ergonomie | Affiche |<br />
+| MTEND24-S03-004 | 📐 SCHÉMA | Screening échographique — modèle de Cook pour les tendons asymptomatiques | Algorithme |</p>
+<h3 id="points-cles-du-module-24">Points clés du Module 24</h3>
+<ol>
+<li>L'erreur de charge est le facteur de risque n°1 des tendinopathies — augmentation &gt;10-15%/semaine = danger</li>
+<li>L'ACWR doit rester entre 0.8-1.3 — les « spikes » (&gt;1.5) multiplient le risque × 2-5</li>
+<li>Le diabète et la dyslipidémie sont des facteurs de risque systémiques souvent sous-estimés</li>
+<li>Le dépistage échographique des tendons épaissis asymptomatiques identifie les sujets à risque (× 3)</li>
+<li>La prévention secondaire (exercices de maintien indéfinis) est essentielle — taux de récidive 25-30% (Silbernagel et al., 2007, <em>Am J Sports Med</em>)</li>
+<li>Le repos total fragilise le tendon — le tendon a besoin de charge pour maintenir sa capacité</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (facteurs de risque, ACWR, règle du 10%)</li>
+<li>3 QCM Argent (programmes de prévention, screening, gestion de la charge)</li>
+<li>2 QCM Or (cas : médecin d'équipe — programme de prévention pour une équipe de volley)</li>
+<li>1 QCM Diamant (cas : patient diabétique, dyslipidémique, sédentaire qui veut reprendre la course à pied → programme de prévention complet)</li>
+<li>1 QROC : « Décrivez le concept d'ACWR et son application pratique à la prévention des tendinopathies chez un coureur à pied. »</li>
+</ul>
+<hr />
+<h1 id="module-25-recherche-et-innovations-biomarqueurs-ingenierie-tissulaire-ia">MODULE 25 : RECHERCHE ET INNOVATIONS — BIOMARQUEURS, INGÉNIERIE TISSULAIRE, IA</h1>
+<p><strong>Partie</strong> : VIII — Prévention, recherche et innovations<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Tous les modules</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Un sportif d'élite porte un capteur connecté qui mesure en temps réel la rigidité de son tendon d'Achille par élastographie portable. L'intelligence artificielle analyse les données et prédit un risque de tendinopathie dans les 3 prochaines semaines. Le programme ajuste automatiquement la charge d'entraînement. Un prélèvement sanguin montre des biomarqueurs de dégradation du collagène élevés (COMP, MMP-3). Si nécessaire, une injection de nanoparticules chargées en facteurs de croissance sera réalisée. *Ce scénario est-il réaliste ? Où en est la recherche sur les tendinopathies ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les biomarqueurs candidats pour le diagnostic et le suivi des tendinopathies</li>
+<li><strong>Comprendre</strong> les avancées en ingénierie tissulaire tendineuse</li>
+<li><strong>Anticiper</strong> les applications de l'intelligence artificielle dans la prévention et le diagnostic</li>
+<li><strong>Identifier</strong> les axes de recherche prioritaires</li>
+<li><strong>Développer</strong> un esprit critique face aux innovations</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-251-biomarqueurs-des-tendinopathies">Section 25.1 — Biomarqueurs des tendinopathies</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Biomarqueurs sanguins candidats</strong> :<br />
+  - COMP (Cartilage Oligomeric Matrix Protein) : marqueur de dégradation de la matrice tendineuse — augmenté après l'exercice intense et dans les tendinopathies<br />
+  - MMP-3 (Matrix Metalloproteinase-3) : enzyme de dégradation du collagène — corrélation avec la sévérité<br />
+  - PIIANP (Procollagen IIA N-terminal propeptide) : marqueur de synthèse de collagène de type II<br />
+  - Cytokines : IL-6, IL-33, TNF-α → élévation variable dans les tendinopathies<br />
+  - micro-ARN circulants : miR-29, miR-21 — régulateurs du métabolisme du collagène<br />
+- <strong>Biomarqueurs dans le liquide péri-tendineux (microdialyse)</strong> : technique de recherche (cathéter à microdialyse autour du tendon) → mesure des prostaglandines, glutamate, lactate in vivo<br />
+- <strong>Limites actuelles</strong> : pas de biomarqueur VALIDÉ cliniquement pour le diagnostic ou le suivi en routine — tous sont en phase de recherche (TRL 3-5)<br />
+- <strong>Perspective</strong> : un « bilan tendineux sanguin » combinant COMP + MMP-3 + marqueurs de synthèse pourrait à l'avenir monitorer la réponse au traitement</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND25-S01-001 | 📊 INFOGRAPHIE | Biomarqueurs candidats — sang et liquide péri-tendineux | Tableau de synthèse |<br />
+| MTEND25-S01-002 | 📐 SCHÉMA | Biomarqueurs de synthèse vs dégradation du collagène | Balance schématique |<br />
+| MTEND25-S01-003 | 📊 INFOGRAPHIE | Échelle TRL (Technology Readiness Level) des biomarqueurs | Positionnement |</p>
+<h3 id="section-252-ingenierie-tissulaire-et-medecine-regenerative-avancee">Section 25.2 — Ingénierie tissulaire et médecine régénérative avancée</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Scaffolds (échafaudages)</strong> : matrices tridimensionnelles biocompatibles et biodégradables servant de support à la régénération tendineuse<br />
+  - Matériaux : collagène, PLGA, PLA, soie, hydrogels<br />
+  - Scaffolds électrospun : nanofibres alignées mimant l'architecture du collagène tendineux → anisotropie mécanique et guidage cellulaire<br />
+  - Impression 3D de scaffolds : personnalisation géométrique selon la lésion<br />
+- <strong>Cellules sources pour l'ingénierie</strong> :<br />
+  - Ténocytes autologues (culture cellulaire) : promettre mais perte phénotypique en culture<br />
+  - CSM (moelle, tissu adipeux) : différenciation tenogénique possible mais incomplète<br />
+  - iPSC (induced Pluripotent Stem Cells) : capacité de différenciation illimitée mais risques (tumorigénicité, instabilité)<br />
+  - Tendon Stem Progenitor Cells (TSPC) : cellules souches résidentes du tendon — la source la plus logique, mais difficiles à isoler et à expandre<br />
+- <strong>Biomatériaux injectables</strong> : hydrogels chargés en facteurs de croissance (TGF-β, BMP-12/GDF-7, CTGF) → injection locale → libération contrôlée → stimulation de la guérison tendineuse in situ<br />
+- <strong>Gene delivery</strong> : vecteurs viraux (AAV) ou non-viraux (nanoparticules, liposomes) transportant des gènes codant pour les facteurs tenogéniques → expression transitoire → production locale de protéines de guérison — résultats précliniques encourageants (modèle animal)<br />
+- <strong>Thérapie par exosomes</strong> : vésicules extracellulaires (30-150 nm) sécrétées par les CSM, contenant des protéines et des micro-ARN thérapeutiques — « cell-free therapy » → pas de risque tumorigène, stockage facile, dose reproductible — en développement préclinique</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND25-S02-001 | 📷 IMAGE | Scaffold électrospun en microscopie électronique — nanofibres alignées | Image de recherche |<br />
+| MTEND25-S02-002 | 🎬 ANIMATION | Gene delivery par nanoparticules — de l'injection à la synthèse de collagène | Animation moléculaire |<br />
+| MTEND25-S02-003 | 📐 SCHÉMA | Sources cellulaires pour l'ingénierie tendineuse — avantages/inconvénients | Tableau comparatif |<br />
+| MTEND25-S02-004 | 📐 SCHÉMA | Exosomes — mécanisme paracrine, cargo moléculaire | Schéma biologique |</p>
+<h3 id="section-253-intelligence-artificielle-et-technologies-connectees">Section 25.3 — Intelligence artificielle et technologies connectées</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>IA pour le diagnostic</strong> :<br />
+  - Deep learning appliqué à l'échographie tendineuse → détection automatique des anomalies (épaississement, hypoéchogénicité, néovascularisation) → aide au diagnostic pour le non-expert<br />
+  - CNN (Convolutional Neural Networks) entraînés sur des milliers d'images échographiques → Se 85-95%, Sp 80-90% selon les études pilotes (Kim et al., 2020, <em>Eur Radiol</em>)<br />
+  - IA et IRM : segmentation automatique des tendons, quantification de la dégénérescence graisseuse (Goutallier automatisé), mesure de la rétraction<br />
+- <strong>IA prédictive</strong> :<br />
+  - Modèles prédictifs de blessure combinant : données de charge (GPS, accéléromètre), données biologiques (biomécanique, force, souplesse), historique médical → prédiction du risque de tendinopathie à 2-4 semaines<br />
+  - Machine learning + wearables : capteurs de charge au tendon (acceleromètre, force plates) → feedback en temps réel<br />
+  - Applications actuelles : équipes sportives professionnelles (NBA, Premier League, rugby)<br />
+- <strong>Élastographie portable</strong> : dispositifs échographiques miniaturisés avec SWE → monitoring de la rigidité tendineuse au bord du terrain → détection des changements précoces (avant la douleur)<br />
+- <strong>Biofeedback et rééducation connectée</strong> :<br />
+  - Capteurs de force pendant les exercices excentiques → feedback en temps réel → meilleure compliance et précision du protocole<br />
+  - Applications mobiles de monitoring (VISA tracking, sRPE logging, charge management)<br />
+- <strong>Simulation et modélisation</strong> :<br />
+  - TendonSim© : modèles éléments finis du tendon → simulation de la charge-capacité, prédiction de l'effet des protocoles d'exercices<br />
+  - Digital twin : modèle numérique personnalisé du tendon du patient → simulation des traitements avant application</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND25-S03-001 | 🎬 ANIMATION | IA et échographie — détection automatique de tendinopathie (CNN) | Animation démonstration |<br />
+| MTEND25-S03-002 | 📐 SCHÉMA | Modèle prédictif de blessure — données d'entrée, processus, sortie | Schéma IA |<br />
+| MTEND25-S03-003 | 📊 INFOGRAPHIE | Wearables et monitoring tendineux — technologies disponibles et en développement | Timeline technologique |<br />
+| MTEND25-S03-004 | 🎬 ANIMATION | TendonSim© — démonstration de simulation charge-capacité | Animation logiciel |</p>
+<h3 id="section-254-axes-de-recherche-prioritaires-et-questions-ouvertes">Section 25.4 — Axes de recherche prioritaires et questions ouvertes</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Questions non résolues</strong> :<br />
+  1. Pourquoi les anomalies structurelles (épaississement, hypoéchogénicité) persistent-elles même après la guérison clinique ? (le tendon ne revient jamais à la « normale ») → le concept de « structure modifiée tolérante à la charge »<br />
+  2. Pourquoi certains tendons dégénératifs sont douloureux et d'autres non ? (50-60% des ruptures sont asymptomatiques — Kannus &amp; Józsa, 1991, <em>J Bone Joint Surg Am</em>) → la source de la douleur est-elle le tendon lui-même, le paraténon, les néonerfs, la sensibilisation centrale ?<br />
+  3. Le tendon peut-il vraiment « guérir » ou seulement « s'adapter » ? → concept de remodelage adaptatif vs régénération vraie<br />
+  4. Quel rôle jouent les facteurs psychologiques (catastrophisme, kinésiophobie, dépression) dans la chronicisation des tendinopathies ?<br />
+  5. Comment personnaliser le traitement ? → le one-size-fits-all (Alfredson pour tout le monde) est dépassé → médecine de précision appliquée aux tendinopathies<br />
+- <strong>Domaines de recherche prioritaires</strong> :<br />
+  - Phenotypage des patients (clinique, imagerie, biomarqueurs, génomique) → sous-groupes de répondeurs<br />
+  - Neuro-science de la douleur tendineuse (sensibilisation centrale/périphérique)<br />
+  - Optimisation des protocoles d'exercices par IA<br />
+  - Biothérapies de nouvelle génération (exosomes, gene delivery)<br />
+  - Prévention IA-assistée en sport et en milieu professionnel</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND25-S04-001 | 📊 INFOGRAPHIE | Les 5 grandes questions non résolues des tendinopathies | Infographie de synthèse |<br />
+| MTEND25-S04-002 | 📐 SCHÉMA | Du one-size-fits-all à la médecine de précision — paradigme shift | Schéma conceptuel |<br />
+| MTEND25-S04-003 | 📊 INFOGRAPHIE | Roadmap de la recherche sur les tendinopathies — 2025-2035 | Timeline prospective |</p>
+<h3 id="points-cles-du-module-25">Points clés du Module 25</h3>
+<ol>
+<li>Aucun biomarqueur sanguin n'est validé cliniquement pour les tendinopathies — tous sont au stade de recherche</li>
+<li>L'ingénierie tissulaire (scaffolds, gene delivery, exosomes) est prometteuse mais très préliminaire (TRL 3-5)</li>
+<li>L'IA peut améliorer le diagnostic échographique et la prédiction des blessures — applications en développement rapide</li>
+<li>Le tendon ne revient PAS à la normale après une tendinopathie — il s'adapte (structure modifiée tolérante à la charge)</li>
+<li>La médecine de précision (phenotypage, sous-groupes, traitement personnalisé) est l'avenir du traitement des tendinopathies</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (biomarqueurs, technologies, innovations)</li>
+<li>3 QCM Argent (ingénierie tissulaire, IA, questions ouvertes)</li>
+<li>2 QCM Or (analyse critique d'une innovation, application au cas clinique)</li>
+<li>1 QCM Diamant (cas : sportif d'élite — conception d'un programme de monitoring high-tech intégrant IA, wearables et biomarqueurs)</li>
+<li>1 QROC : « Pourquoi dit-on qu'un tendon tendinopathique ne "guérit" pas vraiment mais "s'adapte" ? Quelles sont les implications cliniques de ce concept ? »</li>
+</ul>
+<hr />
+<h2 id="recapitulatif-des-medias-partie-8">RÉCAPITULATIF DES MÉDIAS — PARTIE 8</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Nombre de médias</th>
+<th>Types dominants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module 24</td>
+<td>12</td>
+<td>📊 INFOGRAPHIE, 🎬 ANIMATION, 📐 SCHÉMA</td>
+</tr>
+<tr>
+<td>Module 25</td>
+<td>14</td>
+<td>📊 INFOGRAPHIE, 🎬 ANIMATION, 📐 SCHÉMA, 📷 IMAGE</td>
+</tr>
+<tr>
+<td><strong>Total Partie 8</strong></td>
+<td><strong>26</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recapitulatif-global-de-la-formation">RÉCAPITULATIF GLOBAL DE LA FORMATION</h2>
+<table>
+<thead>
+<tr>
+<th>Fichier CDC</th>
+<th>Modules</th>
+<th>Nombre de médias (estimé)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDC_TEND_00</td>
+<td>Introduction / Charte</td>
+<td>—</td>
+</tr>
+<tr>
+<td>CDC_TEND_01</td>
+<td>1-4 (Fondamentaux)</td>
+<td>~81</td>
+</tr>
+<tr>
+<td>CDC_TEND_02</td>
+<td>5-7 (Diagnostic)</td>
+<td>~48</td>
+</tr>
+<tr>
+<td>CDC_TEND_03</td>
+<td>8-10 (Achille/Pied)</td>
+<td>~52</td>
+</tr>
+<tr>
+<td>CDC_TEND_04</td>
+<td>14 (Coiffe)</td>
+<td>~34</td>
+</tr>
+<tr>
+<td>CDC_TEND_05</td>
+<td>11-13, 15 (Coude/Genou/Hanche)</td>
+<td>~42</td>
+</tr>
+<tr>
+<td>CDC_TEND_06</td>
+<td>16-17 (Poignet/Biceps)</td>
+<td>~30</td>
+</tr>
+<tr>
+<td>CDC_TEND_07</td>
+<td>18-23 (Traitements)</td>
+<td>~46</td>
+</tr>
+<tr>
+<td>CDC_TEND_08</td>
+<td>24-25 (Prévention/Innovations)</td>
+<td>~26</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>25 modules</strong></td>
+<td><strong>~359 médias</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references-partie-8">Références — Partie 8</h2>
+<ol>
+<li>Cook JL, Khan KM, Kiss ZS, et al. Asymptomatic hypoechoic regions on patellar tendon ultrasound: a 4-year clinical and ultrasound followup of 46 tendons. <em>Scand J Med Sci Sports</em>. 2001;11(6):321-327.</li>
+<li>Gabbett TJ. The training–injury prevention paradox: should athletes be training smarter and harder? <em>Br J Sports Med</em>. 2016;50(5):273-280.</li>
+<li>Gaida JE, Ashe MC, Bass SL, et al. Is adiposity an under-recognized risk factor for tendinopathy? A systematic review. <em>Arthritis Rheum</em>. 2009;61(6):840-849.</li>
+<li>Kannus P, Józsa L. Histopathological changes preceding spontaneous rupture of a tendon. <em>J Bone Joint Surg Am</em>. 1991;73(10):1507-1525.</li>
+<li>Kim SJ, Kim HK, Seo J, et al. Deep learning-based diagnosis of Achilles tendon disorders using ultrasound imaging. <em>Eur Radiol</em>. 2020;30(10):5367-5375.</li>
+<li>Ranger TA, Wong AM, Cook JL, et al. Is there an association between tendinopathy and diabetes mellitus? A systematic review with meta-analysis. <em>Br J Sports Med</em>. 2016;50(16):982-989.</li>
+<li>Silbernagel KG, Thomeé R, Eriksson BI, et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy. <em>Am J Sports Med</em>. 2007;35(6):897-906.</li>
+<li>Tilley BJ, Cook JL, Docking SI, et al. Is higher serum cholesterol associated with altered tendon structure or tendon pain? A systematic review. <em>Br J Sports Med</em>. 2015;49(23):1504-1509.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

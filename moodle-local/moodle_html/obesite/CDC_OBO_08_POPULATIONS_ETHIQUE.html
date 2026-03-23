@@ -1,0 +1,416 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-8-populations-specifiques-et-ethique-modules-23-25">Partie 8 — Populations spécifiques et éthique (Modules 23-25)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-23-obesite-pediatrique-et-consequences-orthopediques-epiphysiolyse-genu-valgum-blount">MODULE 23 : OBÉSITÉ PÉDIATRIQUE ET CONSÉQUENCES ORTHOPÉDIQUES — ÉPIPHYSIOLYSE, GENU VALGUM, BLOUNT</h1>
+<p><strong>Partie</strong> : VIII — Populations spécifiques et éthique<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-3, 10-12</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un garçon de 13 ans, IMC 32 (> 97e percentile), est adressé pour boiterie et douleur de hanche gauche depuis 3 semaines. L'examen retrouve une limitation de la rotation interne et un signe de Drehmann positif. La radiographie montre un glissement épiphysaire fémoral supérieur (épiphysiolyse) grade II. *Quel est le lien entre son obésité et cette pathologie ? Y a-t-il d'autres complications orthopédiques à rechercher systématiquement chez cet adolescent obèse ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> les complications orthopédiques spécifiques de l'obésité pédiatrique</li>
+<li><strong>Identifier</strong> le lien causal entre surcharge pondérale et épiphysiolyse fémorale supérieure</li>
+<li><strong>Dépister</strong> les troubles d'axes des membres inférieurs (genu valgum, Blount) chez l'enfant obèse</li>
+<li><strong>Organiser</strong> la prise en charge multidisciplinaire de l'enfant et l'adolescent obèse avec pathologie orthopédique</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-231-epidemiologie-de-lobesite-pediatrique-et-impact-musculo-squelettique">Section 23.1 — Épidémiologie de l'obésité pédiatrique et impact musculo-squelettique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Données épidémiologiques</strong> : l'obésité infantile est en augmentation mondiale — en France, 17% des enfants sont en surpoids et 4% sont obèses (étude ESTEBAN, 2015) ; aux États-Unis, la prévalence atteint 19,3% (CDC, 2020) ; l'OMS estime à 39 millions le nombre d'enfants &lt; 5 ans en surpoids dans le monde (2020)</li>
+<li><strong>Définition de l'obésité pédiatrique</strong> : l'IMC de l'enfant s'interprète sur les courbes de croissance (références IOTF ou courbes françaises) — surpoids : IMC &gt; 85e percentile, obésité : IMC &gt; 97e percentile (ou &gt; +2 DS) ; le rebond d'adiposité précoce (avant 6 ans) est un marqueur de risque d'obésité persistante</li>
+<li><strong>Impact musculo-squelettique global</strong> : les enfants obèses ont une prévalence accrue de douleurs musculo-squelettiques (dos, genoux, pieds) par rapport aux normopondéraux — jusqu'à 50% rapportent des douleurs (Taylor et al., <em>Pediatrics</em>, 2006) ; la surcharge mécanique sur un squelette en croissance a des conséquences spécifiques : troubles d'axes, atteinte des cartilages de croissance, troubles de la marche</li>
+<li><strong>Sarcopénie pédiatrique</strong> : paradoxalement, les enfants obèses ont une force musculaire relative réduite — la masse musculaire augmente en valeur absolue mais pas proportionnellement au poids ; la capacité fonctionnelle est réduite (test de 6 minutes de marche, EUROFIT) ; les performances motrices sont altérées (équilibre, coordination, sauts)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO23-S01-001 | 📊 INFOGRAPHIE | Obésité pédiatrique — épidémiologie mondiale et française, courbes IMC | Données épidémiologiques |<br />
+| MOBO23-S01-002 | 📐 SCHÉMA | Impact musculo-squelettique de l'obésité pédiatrique — cartographie des atteintes | Schéma du corps entier |</p>
+<h3 id="section-232-epiphysiolyse-femorale-superieure-efs">Section 23.2 — Épiphysiolyse fémorale supérieure (EFS)</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Lien obésité-EFS</strong> : l'EFS est la pathologie de la hanche la plus fréquente de l'adolescent — l'obésité est le facteur de risque majeur ; l'incidence est environ 10 fois plus élevée chez les enfants obèses (Loder, <em>J Pediatr Orthop</em>, 1996) ; le risque relatif est estimé entre 5 et 17 selon les séries ; l'obésité explique l'augmentation de l'incidence de l'EFS observée ces dernières décennies</li>
+<li><strong>Mécanisme</strong> : la surcharge pondérale augmente les forces de cisaillement sur la plaque de croissance fémorale proximale ; les adipokines et la leptine interfèrent avec la maturation du cartilage de croissance (hormones sexuelles retardées chez l'obèse → physe vulnérable plus longtemps) ; la combinaison surcharge mécanique + altération endocrinienne + physe fragilisée constitue la triade pathogénique</li>
+<li><strong>Diagnostic</strong> : douleur de hanche ou du genou (douleur projetée !), boiterie, limitation de la rotation interne, signe de Drehmann (rotation externe automatique lors de la flexion), abduc-tion forcée en flexion ; radiographies : bassin de face + faux profil de Lauenstein ; classification de Southwick (degré de glissement)</li>
+<li><strong>Traitement</strong> : vissage in situ en urgence (vis canulée unique percutanée) — urgence chirurgicale car le risque de glissement aigu avec nécrose avasculaire augmente avec le temps ; réduction du poids fortement recommandée pour diminuer le risque d'EFS controlatérale (30% de bilatéralité)</li>
+<li><strong>EFS controlatérale</strong> : le risque de bilatéralité est de 20-40% — plus élevé chez les enfants obèses ; le vissage prophylactique controlatéral est controversé mais de plus en plus pratiqué chez l'obèse (car le risque surpasse les inconvénients de la fixation prophylactique)</li>
+</ul>
+<p>⚖️ <strong>Controverse</strong> : Vissage prophylactique controlatéral : certains auteurs le recommandent systématiquement chez l'obèse (risque bilatéral 30-40%), d'autres estiment que la surveillance clinique et radiographique suffit. Le score de Kocher (âge &lt; 14, os modifié, IMC &gt; 25) aide à la décision.</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO23-S02-001 | 📷 IMAGE | Radiographie EFS — bassin face et Lauenstein, glissement grade II | Image radiographique |<br />
+| MOBO23-S02-002 | 📐 SCHÉMA | Mécanisme de l'EFS chez l'obèse — forces de cisaillement + facteurs endocriniens | Schéma biomécanique |<br />
+| MOBO23-S02-003 | 🎬 ANIMATION | Vissage in situ percutané de l'EFS | ObesSim© Vidéo chirurgicale |</p>
+<h3 id="section-233-troubles-daxes-des-membres-inferieurs-genu-valgum-et-maladie-de-blount">Section 23.3 — Troubles d'axes des membres inférieurs : genu valgum et maladie de Blount</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Genu valgum</strong> : l'axe mécanique physiologique de l'enfant évolue : varus (0-2 ans) → valgus physiologique maximal (3-4 ans, ~10°) → correction progressive vers la normale (7-8 ans) ; chez l'enfant obèse, la surcharge pondérale maintient ou aggrave le valgus — la distance intermalléolaire est significativement plus grande chez les enfants obèses ; le genu valgum persistant ou excessif entraîne une surcharge du compartiment latéral et une instabilité fémoro-patellaire</li>
+<li><strong>Maladie de Blount (tibia vara)</strong> :</li>
+<li>Forme infantile (1-3 ans) : déformation en varus progressif de l'extrémité proximale du tibia par atteinte de la physe médiale — l'obésité est un facteur de risque majeur ; diagnostic par radiographie (classification de Langenskiöld stades I-VI)</li>
+<li>Forme adolescente (&gt; 10 ans) : plus fréquente chez l'obèse afro-américain ; la surcharge pondérale est considérée comme la cause principale — les forces compressives sur la physe médiale provoquent sa fermeture asymétrique (loi de Hueter-Volkmann)</li>
+<li>Traitement : orthèses KAFO (stades précoces), ostéotomie tibiale proximale de valgisation (stades avancés ou échec du traitement orthopédique) ; combinée à un programme de perte de poids</li>
+<li><strong>Pied plat de l'enfant obèse</strong> : l'arche longitudinale médiale est plus basse chez les enfants obèses — la prévalence du pied plat est 3 à 4 fois plus élevée (Villarroya et al., <em>Foot Ankle Int</em>, 2009) ; la surcharge pondérale comprime le coussinet plantaire et étire les structures ligamentaires ; prise en charge : semelles orthopédiques avec soutien de voûte, exercices de renforcement des muscles intrinsèques du pied, réduction pondérale</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO23-S03-001 | 📐 SCHÉMA | Évolution de l'axe des membres inférieurs de l'enfant — normal vs obèse | Schéma développemental |<br />
+| MOBO23-S03-002 | 📷 IMAGE | Maladie de Blount — radiographie, classification de Langenskiöld | Image radiographique |<br />
+| MOBO23-S03-003 | 📷 IMAGE | Genu valgum sévère chez l'adolescent obèse — photo clinique et goniométrie | Photo clinique |</p>
+<h3 id="section-234-maladie-de-legg-calve-perthes-rachis-pediatrique-et-approche-multidisciplinaire">Section 23.4 — Maladie de Legg-Calvé-Perthes, rachis pédiatrique et approche multidisciplinaire</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Maladie de Legg-Calvé-Perthes</strong> : ostéonécrose idiopathique de la tête fémorale de l'enfant (4-8 ans) — le lien avec l'obésité est plus complexe : les enfants Perthes sont classiquement de plus petit gabarit, mais la surcharge pondérale chez un enfant Perthes aggrave le pronostic (tête fémorale fragilisée + forces mécaniques augmentées) ; l'indice de Herring (classification des piliers) est un facteur pronostique majeur</li>
+<li><strong>Rachis de l'enfant obèse</strong> :</li>
+<li>Lombalgie : prévalence augmentée chez les enfants et adolescents obèses — jusqu'à 30% (Hestbæk et al., <em>Eur Spine J</em>, 2006)</li>
+<li>Spondylolyse et spondylolisthésis : la surcharge pondérale augmente les contraintes en extension → risque accru de lyse isthmique</li>
+<li>Maladie de Scheuermann : l'obésité amplifie la cyphose thoracique — les plateaux vertébraux en croissance sont soumis à des forces de compression excessives</li>
+<li>Scoliose : le lien obésité-scoliose est controversé — certaines études montrent un IMC plus élevé chez les scoliotiques (Goodbody et al., <em>Spine Deformity</em>, 2017), mais la causalité n'est pas établie ; en revanche, l'obésité complique considérablement le traitement de la scoliose (corset moins efficace car compliance réduite, chirurgie plus risquée)</li>
+<li><strong>Prise en charge multidisciplinaire</strong> : l'enfant obèse avec pathologie orthopédique nécessite une équipe coordonnée — pédiatre, endocrinologue, chirurgien orthopédiste, kinésithérapeute, diététicien, psychologue ; la perte de poids doit être intégrée au plan de traitement mais avec des objectifs réalistes et sans stigmatisation</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO23-S04-001 | 📐 SCHÉMA | Complications orthopédiques de l'obésité pédiatrique — vue d'ensemble | Schéma récapitulatif |<br />
+| MOBO23-S04-002 | 📊 INFOGRAPHIE | Prise en charge multidisciplinaire de l'enfant obèse — équipe, parcours de soins | Organigramme |</p>
+<h3 id="points-cles-du-module-23">Points clés du Module 23</h3>
+<ol>
+<li>L'épiphysiolyse fémorale supérieure est 5-17 fois plus fréquente chez l'adolescent obèse</li>
+<li>La triade pathogénique de l'EFS : surcharge mécanique + altération endocrinienne + physe vulnérable</li>
+<li>Le risque d'EFS controlatérale est de 30-40% chez l'obèse — le vissage prophylactique est discuté</li>
+<li>La maladie de Blount est causée par la surcharge sur la physe tibiale médiale (loi de Hueter-Volkmann)</li>
+<li>Le pied plat est 3-4 fois plus fréquent chez l'enfant obèse</li>
+<li>Le genu valgum persiste et s'aggrave chez l'enfant obèse au-delà de 7-8 ans</li>
+<li>L'obésité aggrave le pronostic de la maladie de Legg-Calvé-Perthes</li>
+<li>La prise en charge de l'enfant obèse est multidisciplinaire — jamais de stigmatisation</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (EFS facteurs de risque, genu valgum physiologique, pied plat)</li>
+<li>3 QCM Argent (mécanisme EFS, maladie de Blount classification, rachis pédiatrique)</li>
+<li>2 QCM Or (vissage prophylactique controlatéral, programme multidisciplinaire complet)</li>
+<li>1 QCM Diamant (cas clinique : adolescent 14 ans IMC 34, boiterie + douleur de hanche — diagnostic, bilan, traitement, surveillance, prévention controlatérale)</li>
+<li>1 QROC : « Expliquez la physiopathologie de l'épiphysiolyse fémorale supérieure chez l'adolescent obèse, en intégrant les facteurs mécaniques et endocriniens. »</li>
+</ul>
+<hr />
+<h1 id="module-24-patient-post-bariatrique-en-orthopedie-carences-osteoporose-sequence-chirurgicale">MODULE 24 : PATIENT POST-BARIATRIQUE EN ORTHOPÉDIE — CARENCES, OSTÉOPOROSE, SÉQUENCE CHIRURGICALE</h1>
+<p><strong>Partie</strong> : VIII — Populations spécifiques et éthique<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 5, 8-9, 13-14</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 52 ans consulte pour une gonarthrose bilatérale invalidante. Elle a bénéficié d'un bypass gastrique (RYGB) il y a 2 ans avec une perte de 55 kg (poids passé de 135 à 80 kg). Ses examens biologiques montrent : hémoglobine 10,2 g/dL, ferritine 8 μg/L, vitamine D 12 ng/mL, albumine 32 g/L, PTH 98 pg/mL (N < 65). L'ostéodensitométrie montre un T-score de -2,2 au col fémoral. *Peut-on opérer cette patiente d'une PTG ? Quelles carences doivent être corrigées ? Son ostéoporose secondaire change-t-elle la stratégie chirurgicale ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les carences nutritionnelles post-bariatriques pertinentes en orthopédie</li>
+<li><strong>Évaluer</strong> le risque osseux (ostéoporose secondaire) du patient post-bariatrique</li>
+<li><strong>Planifier</strong> la séquence optimale chirurgie bariatrique → chirurgie orthopédique</li>
+<li><strong>Adapter</strong> la stratégie opératoire aux spécificités du patient post-bariatrique</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-241-carences-nutritionnelles-post-bariatriques-et-implications-orthopediques">Section 24.1 — Carences nutritionnelles post-bariatriques et implications orthopédiques</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Physiopathologie des carences</strong> : la chirurgie bariatrique induit une perte de poids par restriction (sleeve) et/ou malabsorption (RYGB, DS) — les techniques malabsorptives créent des carences plus sévères et plus fréquentes ; même après sleeve gastrectomie (technique restrictive pure), la réduction de l'intake et la diminution de l'acidité gastrique entraînent des carences</li>
+<li><strong>Carences principales</strong> :</li>
+<li><strong>Fer</strong> : carence la plus fréquente (30-50% après RYGB) — l'absorption du fer nécessite l'acidité gastrique (convertit Fe³⁺ en Fe²⁺) et se fait principalement dans le duodénum (court-circuité par le RYGB) ; conséquences : anémie → fatigue, déconditionnement, risque chirurgical augmenté</li>
+<li><strong>Vitamine D et calcium</strong> : carence en vitamine D 50-70% post-bariatrique, hypocalcémie 10-25% — l'absorption du calcium nécessite la vitamine D et se fait dans le duodénum et le jéjunum proximal ; conséquences : hyperparathyroïdie secondaire → résorption osseuse → ostéoporose</li>
+<li><strong>Protéines</strong> : hypoalbuminémie (&lt; 35 g/L) chez 5-15% des patients post-bariatriques — conséquences : mauvaise cicatrisation, fonte musculaire (sarcopénie post-bariatrique), immunodépression → risque d'infection majoré</li>
+<li><strong>Vitamine B12</strong> : carence 12-33% — l'absorption nécessite le facteur intrinsèque (estomac) ; conséquences : neuropathie périphérique (confusable avec une pathologie neurologique post-opératoire)</li>
+<li><strong>Zinc</strong> : carence 10-40% — impliqué dans la cicatrisation et l'immunité</li>
+<li><strong>Vitamine B1 (thiamine)</strong> : rare mais dramatique — encéphalopathie de Gayet-Wernicke si vomissements prolongés post-bariatriques ; risque de confusion avec un AVC post-opératoire</li>
+<li><strong>Bilan préopératoire obligatoire</strong> : NFS + réticulocytes, ferritine + coefficient de saturation, vitamine D (25-OH), calcium ionisé + phosphore, PTH, albumine + pré-albumine, vitamine B12, folates, zinc, vitamine B1 (si symptômes), bilan de coagulation, HbA1c</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO24-S01-001 | 📊 INFOGRAPHIE | Carences post-bariatriques — fréquence, mécanisme, dépistage, traitement | Tableau exhaustif |<br />
+| MOBO24-S01-002 | 📐 SCHÉMA | Cascade vitamine D → PTH → résorption osseuse → ostéoporose post-bariatrique | Schéma physiopathologique |<br />
+| MOBO24-S01-003 | 📊 INFOGRAPHIE | Bilan biologique préopératoire du patient post-bariatrique — checklist complète | Checklist clinique |</p>
+<h3 id="section-242-osteoporose-secondaire-post-bariatrique">Section 24.2 — Ostéoporose secondaire post-bariatrique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Perte osseuse post-bariatrique</strong> : la DMO (densité minérale osseuse) diminue de 5-15% dans les 2 ans suivant la chirurgie bariatrique (Yu et al., <em>J Bone Miner Res</em>, 2015) — principalement au fémur et au radius, moins au rachis ; les mécanismes sont multiples : carence en calcium et vitamine D, hyperparathyroïdie secondaire, perte de la charge mécanique protectrice (la perte rapide de poids réduit les forces gravitationnelles sur l'os), modification de la leptine (la leptine a un rôle osseux)</li>
+<li><strong>Ostéoporose et risque fracturaire</strong> : le risque de fracture augmente de 20-40% dans les 3-5 ans après chirurgie bariatrique (Lu et al., <em>Medicine</em>, 2015) — sites à risque : poignet, col fémoral, vertèbres ; paradoxalement, les fractures de stress des membres inférieurs sont aussi décrites</li>
+<li><strong>Implications pour l'arthroplastie</strong> :</li>
+<li>Os de qualité réduite → risque de fractures periprosthétiques augmenté</li>
+<li>Tenue des implants cimentés potentiellement affectée → les ciments avec antibiotiques restent standard mais la pénétration du ciment dans l'os spongieux fragilisé peut être différente</li>
+<li>Implants non cimentés : la croissance osseuse (<em>osseointegration</em>) peut être retardée par la qualité osseuse réduite → certains chirurgiens privilégient le ciment chez les patients ostéoporotiques post-bariatriques</li>
+<li>Vis et fixation : la tenue des vis dans l'os ostéoporotique est réduite → vis augmentées au ciment (pour l'ostéosynthèse), vis de plus gros diamètre</li>
+<li><strong>Traitement</strong> : supplémentation vitamine D (objectif 25-OH-D &gt; 30 ng/mL, souvent 4000-6000 UI/jour), calcium 1200-1500 mg/jour en doses fractionnées (citrate de calcium — mieux absorbé que le carbonate en l'absence d'acidité gastrique), protéines ≥ 60-80 g/jour ; bisphosphonates si T-score ≤ -2,5 : préférer les formes IV (acide zolédronique) car l'absorption orale est incertaine après chirurgie bariatrique ; le dénosumab est une alternative</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO24-S02-001 | 📐 SCHÉMA | Perte osseuse post-bariatrique — mécanismes multifactoriels | Schéma physiopathologique |<br />
+| MOBO24-S02-002 | 📊 INFOGRAPHIE | Traitement de l'ostéoporose post-bariatrique — supplémentation et bisphosphonates | Protocole thérapeutique |</p>
+<h3 id="section-243-sequence-chirurgicale-et-particularites-operatoires">Section 24.3 — Séquence chirurgicale et particularités opératoires</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Timing bariatrique → orthopédique</strong> :</li>
+<li>Recommandation : 12-18 mois entre la chirurgie bariatrique et l'arthroplastie — raisons : (1) la perte de poids est maximale entre M6 et M18, (2) la stabilisation pondérale est atteinte, (3) les carences nutritionnelles doivent être corrigées et stables</li>
+<li>Période critique : les 6 premiers mois post-bariatrique sont une période de catabolisme intense — ne jamais opérer d'arthroplastie élective dans cette fenêtre (risque maximal : dénutrition, anémie, cicatrisation compromise)</li>
+<li>Werner et al., <em>JBJS Am</em> (2015) : les patients ayant eu une chirurgie bariatrique avant arthroplastie ont des résultats à moyen terme comparables aux patients non obèses</li>
+<li>Inacio et al., <em>J Arthroplasty</em> (2014) : résultats plus nuancés — les complications infectieuses restent plus élevées que chez les normopondéraux même après perte de poids significative</li>
+<li><strong>Particularités peropératoires du patient post-bariatrique</strong> :</li>
+<li>Peau excédentaire : les lambeaux cutanés en excès créent des plis qui sont des réservoirs bactériens — préparer la peau avec soin, envisager l'abdominoplastie ou la dermolipectomie des cuisses avant l'arthroplastie si les plis créent des problèmes d'hygiène autour du genou</li>
+<li>Repères anatomiques modifiés : la perte de poids massive modifie les repères — la peau excédentaire rend l'abord chirurgical plus facile mais les plans anatomiques peuvent être modifiés par la fibrose résiduelle</li>
+<li>Anesthésie : le patient post-bariatrique peut avoir un estomac résiduel modifié (hernie hiatale fréquente post-sleeve, dumping syndrome post-RYGB) — attention aux AINS (ulcère sur anastomose), au jeûne préopératoire, à la gestion des traitements anti-diabétiques (souvent réduits ou arrêtés après bariatrique)</li>
+<li>Supplémentation péri-opératoire : maintenir les suppléments habituels (multivitamines, fer, calcium, vitamine D, B12) — ne pas interrompre sauf si NPO strict, reprendre dès la reprise alimentaire</li>
+</ul>
+<p>⚖️ <strong>Controverse</strong> : Chirurgie bariatrique avant arthroplastie : les données sont contradictoires — Werner (2015) rapporte de bons résultats, tandis que d'autres études montrent des taux d'infection persistants. Le bénéfice pondéral est certain mais le risque nutritionnel est réel. L'approche individualisée est recommandée.</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO24-S03-001 | 📊 INFOGRAPHIE | Timeline chirurgicale bariatrique → orthopédique — fenêtres optimales | Timeline décisionnelle |<br />
+| MOBO24-S03-002 | 📐 SCHÉMA | Bénéfices vs risques de la séquence bariatrique-arthroplastie | Balance bénéfice-risque |</p>
+<h3 id="points-cles-du-module-24">Points clés du Module 24</h3>
+<ol>
+<li>Les carences post-bariatriques les plus fréquentes : fer (30-50%), vitamine D (50-70%), protéines (5-15%)</li>
+<li>Le bilan biologique préopératoire est obligatoire et exhaustif chez le post-bariatrique</li>
+<li>La DMO diminue de 5-15% dans les 2 ans post-bariatrique — risque fracturaire +20-40%</li>
+<li>Le citrate de calcium est préféré au carbonate chez le post-bariatrique (meilleure absorption)</li>
+<li>Les bisphosphonates IV (zolédronique) sont préférés aux formes orales après chirurgie malabsorptive</li>
+<li>Attendre 12-18 mois post-bariatrique avant arthroplastie — jamais &lt; 6 mois</li>
+<li>La peau excédentaire est un réservoir bactérien — préparation cutanée renforcée</li>
+<li>Les AINS sont contre-indiqués après bypass gastrique (risque d'ulcère anastomotique)</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (carences fréquentes, timing bariatrique-orthopédique, bilan biologique)</li>
+<li>3 QCM Argent (ostéoporose mécanismes, calcium citrate vs carbonate, particularités peropératoires)</li>
+<li>2 QCM Or (protocole complet de supplémentation, stratégie d'arthroplastie chez le post-bariatrique)</li>
+<li>1 QCM Diamant (cas clinique : patiente post-RYGB 2 ans, IMC 28 résiduel, carences multiples, gonarthrose — plan de correction préopératoire et stratégie chirurgicale)</li>
+<li>1 QROC : « Une patiente post-sleeve gastrectomie de 18 mois présente un T-score de -2,5 au col fémoral. Comment prenez-vous en charge cette ostéoporose secondaire avant une PTH programmée ? »</li>
+</ul>
+<hr />
+<h1 id="module-25-ethique-decision-partagee-et-innovations-seuils-dimc-discrimination-intelligence-artificielle">MODULE 25 : ÉTHIQUE, DÉCISION PARTAGÉE ET INNOVATIONS — SEUILS D'IMC, DISCRIMINATION, INTELLIGENCE ARTIFICIELLE</h1>
+<p><strong>Partie</strong> : VIII — Populations spécifiques et éthique<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Tous les modules précédents</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 55 ans, IMC 47, diabétique de type 2, souffre d'une gonarthrose tricompartimentale invalidante (score WOMAC 78/96) depuis 5 ans. Il a été refusé par deux chirurgiens qui exigent un IMC < 40 avant d'opérer. Il a échoué dans toutes les tentatives de perte de poids. Il demande un troisième avis. *Est-il éthique de refuser une arthroplastie sur le seul critère de l'IMC ? Les seuils d'IMC constituent-ils une discrimination ? Comment organiser une décision partagée avec ce patient ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Analyser</strong> les dimensions éthiques des seuils d'IMC pour la chirurgie orthopédique</li>
+<li><strong>Identifier</strong> les biais de poids (<em>weight bias</em>) dans la pratique médicale</li>
+<li><strong>Organiser</strong> une décision partagée avec le patient obèse candidat à la chirurgie</li>
+<li><strong>Explorer</strong> les innovations technologiques (IA, robotique, implants) pour améliorer les résultats chez l'obèse</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-251-seuils-dimc-et-acces-a-la-chirurgie-donnees-scientifiques-et-limites">Section 25.1 — Seuils d'IMC et accès à la chirurgie : données scientifiques et limites</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Historique des seuils</strong> : en 2013, l'AAOS (<em>American Academy of Orthopaedic Surgeons</em>) a émis un <em>Clinical Practice Guideline</em> suggérant que l'arthroplastie élective ne devrait pas être réalisée chez les patients avec un IMC ≥ 40, en raison des complications accrues ; cette recommandation a eu un impact majeur sur la pratique — de nombreux chirurgiens et institutions ont adopté des seuils stricts</li>
+<li><strong>Données scientifiques</strong> : les méta-analyses montrent effectivement un risque accru de complications chez les super-obèses (IMC ≥ 40) — infection x2-4, révision x1.5-2, phlébite accrue ; MAIS :</li>
+<li>Les complications restent minoritaires (majorité des patients obèses ont un bon résultat fonctionnel)</li>
+<li>La satisfaction patient est élevée même dans les groupes IMC ≥ 40 (Kerkhoffs et al., <em>CORR</em>, 2012)</li>
+<li>Les scores fonctionnels (WOMAC, KSS) s'améliorent significativement, même si le niveau absolu final est inférieur aux normopondéraux</li>
+<li>La qualité de vie s'améliore plus chez les obèses que chez les normopondéraux (car le point de départ est plus bas)</li>
+<li><strong>Limites des seuils</strong> :</li>
+<li>L'IMC ne distingue pas la masse grasse de la masse maigre — un patient musclé avec un IMC élevé n'a pas le même risque qu'un patient sédentaire avec le même IMC</li>
+<li>Les comorbidités (diabète non contrôlé, SAOS sévère, tabagisme) modifient le risque bien plus que l'IMC seul</li>
+<li>Un seuil fixe ne tient pas compte de l'optimisation préopératoire possible (perte de poids, contrôle glycémique, arrêt du tabac)</li>
+<li>La position de l'AAHKS (<em>American Association of Hip and Knee Surgeons</em>, 2020) nuance l'AAOS : pas de seuil d'IMC absolu, mais évaluation individualisée du rapport bénéfice/risque</li>
+</ul>
+<p>⚖️ <strong>Controverse majeure</strong> : IMC seuil absolu vs évaluation individualisée — l'AAOS (2013) recommandait IMC &lt; 40, remise en question en 2020. L'approche moderne privilégie l'optimisation préopératoire avec évaluation individualisée plutôt qu'un seuil arbitraire. Certains centres maintiennent des seuils pour des raisons médico-légales et de ressources.</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO25-S01-001 | 📊 INFOGRAPHIE | Seuils d'IMC — historique, données, controverses, position des sociétés savantes | Synthèse des positions |<br />
+| MOBO25-S01-002 | 📐 SCHÉMA | Évaluation individualisée vs seuil absolu — arbre décisionnel | Algorithme décisionnel |</p>
+<h3 id="section-252-biais-de-poids-stigmatisation-et-ethique-medicale">Section 25.2 — Biais de poids, stigmatisation et éthique médicale</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Weight bias</strong> (<em>biais de poids</em>) : la stigmatisation liée au poids est l'une des dernières formes de discrimination socialement acceptée — des études montrent que les professionnels de santé (y compris les chirurgiens) ont des attitudes implicites négatives envers les patients obèses (Sabin et al., <em>PLoS One</em>, 2012 — étude IAT sur &gt; 2000 médecins)</li>
+<li><strong>Manifestations en orthopédie</strong> :</li>
+<li>Refus de prise en charge basé uniquement sur l'IMC (« perdez du poids d'abord »)</li>
+<li>Temps de consultation plus court avec les patients obèses</li>
+<li>Attitude paternaliste plutôt que partenariale</li>
+<li>Attribution de la douleur articulaire au seul surpoids (« c'est à cause de votre poids ») — réduisant la motivation du patient à consulter</li>
+<li>Retard diagnostique : les patients obèses sont diagnostiqués plus tardivement pour certaines pathologies car les symptômes sont attribués au surpoids</li>
+<li><strong>Conséquences de la stigmatisation</strong> : les patients stigmatisés fuient le système de soin, ont moins confiance en leur médecin, sont moins observants, ont plus de détresse psychologique, mangent davantage (« cycle de la stigmatisation ») — la stigmatisation ne favorise PAS la perte de poids, elle l'aggrave (Puhl et Heuer, <em>Am J Public Health</em>, 2010)</li>
+<li><strong>Principes éthiques</strong> :</li>
+<li>Bienfaisance : l'arthroplastie peut considérablement améliorer la qualité de vie de l'obèse — la priver constitue une perte de chance</li>
+<li>Non-malfaisance : les complications sont réelles — le chirurgien doit informer honnêtement et prévenir les risques</li>
+<li>Autonomie : le patient informé doit participer à la décision</li>
+<li>Justice distributive : les patients obèses ne doivent pas être exclus des soins chirurgicaux uniquement en raison de leur IMC</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO25-S02-001 | 📊 INFOGRAPHIE | Le biais de poids en médecine — manifestations, conséquences, prévention | Synthèse éthique |<br />
+| MOBO25-S02-002 | 📐 SCHÉMA | Cycle de la stigmatisation — stigmatisation → détresse → prise de poids → stigmatisation | Schéma conceptuel |</p>
+<h3 id="section-253-decision-partagee-avec-le-patient-obese">Section 25.3 — Décision partagée avec le patient obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Modèle de décision partagée</strong> : la décision de chirurgie chez l'obèse doit être un processus collaboratif entre le chirurgien, le patient et l'équipe multidisciplinaire — le modèle de Charles et al. (1997) définit 3 étapes : (1) échange d'informations, (2) délibération, (3) décision consensuelle</li>
+<li><strong>Information loyale et complète</strong> :</li>
+<li>Présenter honnêtement les risques augmentés (infection, révision, complications périopératoires) avec des chiffres précis (et non des termes vagues comme « risque élevé »)</li>
+<li>Présenter aussi les bénéfices attendus (amélioration fonctionnelle, amélioration de la qualité de vie — qui sont réels même chez les IMC &gt; 40)</li>
+<li>Expliquer les alternatives : perte de poids préopératoire (bénéfices + limites), chirurgie bariatrique d'abord, traitement conservateur (limites)</li>
+<li>Discuter l'optimisation préopératoire : ce qui peut être fait pour réduire le risque (HbA1c cible, arrêt tabac, évaluation SAOS, correction des carences, pré-habilitation physique)</li>
+<li><strong>Contrat de soins</strong> : certaines équipes proposent un « contrat de soins » avec le patient obèse — engagement mutuel : le patient s'engage à suivre le programme d'optimisation (perte de ≥ 5% du poids, HbA1c &lt; 8%, arrêt tabac), le chirurgien s'engage à opérer si les objectifs sont atteints — ce modèle est motivant plutôt que discriminant</li>
+<li><strong>Aide à la décision standardisée</strong> : des outils de décision standardisés (decision aids) peuvent objectiver le rapport bénéfice/risque — des calculateurs intégrant IMC, comorbidités, âge, sexe, niveau fonctionnel permettent de prédire le risque individuel de complication et le bénéfice fonctionnel attendu</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO25-S03-001 | 📐 SCHÉMA | Processus de décision partagée — 3 étapes avec checklist | Schéma de processus |<br />
+| MOBO25-S03-002 | 📊 INFOGRAPHIE | Contrat de soins — engagement patient et chirurgien | Modèle de contrat |</p>
+<h3 id="section-254-innovations-technologiques-et-perspectives">Section 25.4 — Innovations technologiques et perspectives</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Intelligence artificielle et prédiction</strong> :</li>
+<li>Les algorithmes de machine learning peuvent prédire le risque individuel de complication post-arthroplastie en intégrant des dizaines de variables (IMC, mais aussi HbA1c, albumine, SAOS, tabagisme, etc.) — les modèles prédictifs sont plus précis qu'un seuil d'IMC seul (Karnuta et al., <em>J Arthroplasty</em>, 2019)</li>
+<li>L'IA peut identifier les patients obèses qui bénéficieraient le plus de l'arthroplastie (« patients répondeurs ») vs ceux à très haut risque</li>
+<li>Limites : les biais de poids dans les données d'entraînement peuvent perpétuer les discriminations algorithmiques</li>
+<li><strong>Robotique chirurgicale</strong> :</li>
+<li>Les systèmes robotisés (MAKO Stryker®, ROSA Zimmer Biomet®, CORI Smith &amp; Nephew®) améliorent la précision du positionnement des implants chez l'obèse — les repères anatomiques sont moins fiables chez l'obèse, la robotique compense par le guidage</li>
+<li>Navigation et PSI (<em>Patient Specific Instruments</em>) : impression 3D de guides de coupe personnalisés — utile si l'anatomie standard est modifiée par la déformation</li>
+<li><strong>Implants de nouvelle génération</strong> :</li>
+<li>Implants augmentés pour os ostéoporotique (revêtement trabéculaire, revêtement d'hydroxyapatite)</li>
+<li>Implants à offset augmenté pour les PTH chez l'obèse (compensation de l'excès de tissus mous)</li>
+<li>Polyéthylène hautement réticulé avec antioxydant (vitamine E) : résistance à l'usure améliorée — important chez l'obèse qui sollicite davantage l'implant</li>
+<li><strong>Médecine personnalisée</strong> :</li>
+<li>Biomarqueurs prédictifs : dosage des adipokines (leptine, adiponectine) comme facteurs pronostiques post-arthroplastie — recherche en cours</li>
+<li>Pharmacogénomique : adaptation des traitements antalgiques et antithrombotiques au profil génétique du patient</li>
+<li>Réalité virtuelle : rééducation assistée par environnement immersif (jeux sérieux) — engagement du patient obèse dans la rééducation</li>
+<li><strong>Recherche en cours</strong> :</li>
+<li>Études multicentriques prospectives sur les résultats de l'arthroplastie après chirurgie bariatrique</li>
+<li>Essais sur les anti-adipokines (anti-leptine, anti-resistine) dans le traitement de l'arthrose métabolique</li>
+<li>Biothérapies ciblant le tissu adipeux para-articulaire (Hoffa fat pad)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO25-S04-001 | 📊 INFOGRAPHIE | IA et prédiction des risques chez l'obèse — variables, modèles, limites | Synthèse technologique |<br />
+| MOBO25-S04-002 | 🎬 ANIMATION | Robotique chirurgicale (MAKO) pour PTG chez l'obèse — guidage et précision | ObesSim© Vidéo |<br />
+| MOBO25-S04-003 | 📐 SCHÉMA | Innovations futures — du biomarqueur à la thérapie ciblée anti-adipokine | Schéma de recherche |</p>
+<h3 id="points-cles-du-module-25">Points clés du Module 25</h3>
+<ol>
+<li>L'AAOS (2013) suggérait un seuil d'IMC &lt; 40 pour l'arthroplastie — cette position est remise en question</li>
+<li>L'évaluation individualisée du rapport bénéfice/risque est préférable à un seuil d'IMC arbitraire</li>
+<li>Le biais de poids est omniprésent en médecine — la stigmatisation n'aide PAS à la perte de poids</li>
+<li>La décision partagée est un modèle éthique — information loyale, délibération, décision consensuelle</li>
+<li>Le contrat de soins est motivant : engagement mutuel patient-chirurgien</li>
+<li>L'IA prédit les complications mieux qu'un seuil d'IMC seul mais risque les biais algorithmiques</li>
+<li>La robotique chirurgicale améliore la précision chez l'obèse (repères anatomiques masqués)</li>
+<li>La recherche sur les anti-adipokines ouvre des perspectives pour l'arthrose métabolique</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (seuils AAOS, principes éthiques, décision partagée)</li>
+<li>3 QCM Argent (biais de poids, alternatives aux seuils, IA et prédiction)</li>
+<li>2 QCM Or (programme d'optimisation préopératoire complet, robotique et innovations)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 47, refusé par 2 chirurgiens, gonarthrose invalidante — plan éthique, décision partagée, optimisation, chirurgie)</li>
+<li>1 QROC : « Un patient IMC 48 avec gonarthrose tricompartimentale invalidante demande une PTG. Détaillez votre processus de décision partagée, incluant l'information, l'optimisation préopératoire, et le contrat de soins. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-viii-modules-23-25">Références bibliographiques — Partie VIII (Modules 23-25)</h2>
+<ol>
+<li>Loder RT. The demographics of slipped capital femoral epiphysis. <em>Clin Orthop Relat Res</em>. 1996;(322):8-27.</li>
+<li>Taylor ED, Theim KR, Mirch MC, et al. Orthopedic complications of overweight in children and adolescents. <em>Pediatrics</em>. 2006;117(6):2167-2174.</li>
+<li>Villarroya MA, Esquivel JM, Tomás C, et al. Foot structure in overweight and obese children. <em>Int J Pediatr Obes</em>. 2008;3(1):39-45.</li>
+<li>Yu EW, Bouxsein ML, Putman MS, et al. Two-year changes in bone density after Roux-en-Y gastric bypass surgery. <em>J Clin Endocrinol Metab</em>. 2015;100(4):1452-1459.</li>
+<li>Lu CW, Chang YK, Chang HH, et al. Fracture risk after bariatric surgery: a 12-year nationwide cohort study. <em>Medicine</em>. 2015;94(48):e2087.</li>
+<li>Werner BC, Kurkis GM, Ghassan A, et al. Bariatric surgery prior to total knee arthroplasty is associated with fewer postoperative complications. <em>J Arthroplasty</em>. 2015;30(9 Suppl):81-85.</li>
+<li>Inacio MC, Paxton EW, Fisher D, et al. Bariatric surgery prior to total joint arthroplasty may not provide improvements in outcomes. <em>J Arthroplasty</em>. 2014;29(7):1373-1377.</li>
+<li>Sabin JA, Marini M, Nosek BA. Implicit and explicit anti-fat bias among a large sample of medical doctors by BMI, race/ethnicity and gender. <em>PLoS One</em>. 2012;7(11):e48448.</li>
+<li>Puhl RM, Heuer CA. Obesity stigma: important considerations for public health. <em>Am J Public Health</em>. 2010;100(6):1019-1028.</li>
+<li>Karnuta JM, Navarro SM, Haeberle HS, et al. Predicting inpatient payments prior to lower extremity arthroplasty using deep learning: which features drive costs? <em>J Arthroplasty</em>. 2019;34(11):2610-2615.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

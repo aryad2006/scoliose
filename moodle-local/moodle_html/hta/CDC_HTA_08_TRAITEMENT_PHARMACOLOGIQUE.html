@@ -1,0 +1,665 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-08-traitement-pharmacologique">❤️ PARTIE 08 — TRAITEMENT PHARMACOLOGIQUE</h1>
+<h2 id="les-5-classes-majeures-associations-et-strategie-therapeutique-globale">Les 5 classes majeures, associations et stratégie thérapeutique globale</h2>
+<hr />
+<h1 id="module-28-inhibiteurs-du-sraa-iec-et-ara2">MODULE 28 — INHIBITEURS DU SRAA (IEC ET ARA2)</h1>
+<h2 id="281-inhibiteurs-de-lenzyme-de-conversion-iec">28.1 Inhibiteurs de l'enzyme de conversion (IEC)</h2>
+<h3 id="2811-mecanisme-daction">28.1.1 Mécanisme d'action</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA28-S01-001 — SCHÉMA : site d'action des IEC sur la cascade du SRAA — inhibition de la conversion d'angiotensine I en angiotensine II]</p>
+</blockquote>
+<p><strong>Mécanisme</strong> :<br />
+- Inhibition de l'enzyme de conversion (ECA/kininase II)<br />
+- Réduction de la formation d'angiotensine II<br />
+- Réduction de la dégradation de la bradykinine (effet vasodilatateur, mais aussi toux)<br />
+- Diminution de la sécrétion d'aldostérone<br />
+- Diminution des résistances périphériques totales</p>
+<h3 id="2812-molecules-disponibles">28.1.2 Molécules disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Dose initiale</th>
+<th>Dose optimale</th>
+<th>Demi-vie</th>
+<th>Particularité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ramipril</td>
+<td>1,25-2,5 mg</td>
+<td>10 mg</td>
+<td>13-17 h</td>
+<td>Prodrogue, métabolite actif</td>
+</tr>
+<tr>
+<td>Périndopril</td>
+<td>2,5-5 mg</td>
+<td>10 mg</td>
+<td>25-30 h</td>
+<td>Le plus étudié (EUROPA, PROGRESS)</td>
+</tr>
+<tr>
+<td>Énalapril</td>
+<td>5 mg</td>
+<td>20 mg × 2</td>
+<td>11 h</td>
+<td>Référence historique (CONSENSUS)</td>
+</tr>
+<tr>
+<td>Lisinopril</td>
+<td>5-10 mg</td>
+<td>40 mg</td>
+<td>12 h</td>
+<td>Pas de métabolisme hépatique</td>
+</tr>
+<tr>
+<td>Captopril</td>
+<td>12,5 mg × 3</td>
+<td>50 mg × 3</td>
+<td>2 h</td>
+<td>Premier IEC, obsolète en chronique</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2813-effets-indesirables-et-contre-indications">28.1.3 Effets indésirables et contre-indications</h3>
+<p><strong>Effets indésirables</strong> :<br />
+- <strong>Toux sèche</strong> : 5-20 % (accumulation de bradykinine), 1ère cause d'arrêt<br />
+- <strong>Hyperkaliémie</strong> : surveillance K+ à J7-J14<br />
+- <strong>Insuffisance rénale fonctionnelle</strong> : élévation créatinine acceptable si &lt; 30 % ; au-delà → sténose bilatérale des artères rénales<br />
+- <strong>Hypotension</strong> (1ère dose) : risque chez le sujet déplété<br />
+- <strong>Angiœdème</strong> : rare (0,1-0,7 %) mais grave, contre-indication définitive</p>
+<p><strong>Contre-indications absolues</strong> :<br />
+- Grossesse (tératogène, 2e et 3e trimestres surtout)<br />
+- Sténose bilatérale des artères rénales (ou sur rein unique)<br />
+- Antécédent d'angiœdème sous IEC<br />
+- Hyperkaliémie &gt; 5,5 mmol/L</p>
+<h2 id="282-antagonistes-des-recepteurs-at1-de-langiotensine-ii-ara2sartans">28.2 Antagonistes des récepteurs AT1 de l'angiotensine II (ARA2/sartans)</h2>
+<h3 id="2821-mecanisme">28.2.1 Mécanisme</h3>
+<ul>
+<li>Blocage sélectif du récepteur AT1 de l'angiotensine II</li>
+<li>Pas d'accumulation de bradykinine → pas de toux</li>
+<li>Stimulation indirecte du récepteur AT2 (vasodilatation, anti-prolifération)</li>
+</ul>
+<h3 id="2822-molecules-disponibles">28.2.2 Molécules disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Dose initiale</th>
+<th>Dose optimale</th>
+<th>Demi-vie</th>
+<th>Particularité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valsartan</td>
+<td>80 mg</td>
+<td>160-320 mg</td>
+<td>6-9 h</td>
+<td>IC post-IDM (VALIANT)</td>
+</tr>
+<tr>
+<td>Irbésartan</td>
+<td>150 mg</td>
+<td>300 mg</td>
+<td>11-15 h</td>
+<td>Néphroprotection diabétique (IDNT)</td>
+</tr>
+<tr>
+<td>Candésartan</td>
+<td>4-8 mg</td>
+<td>32 mg</td>
+<td>9 h</td>
+<td>IC (CHARM)</td>
+</tr>
+<tr>
+<td>Losartan</td>
+<td>50 mg</td>
+<td>100 mg</td>
+<td>2 h (6-9 actif)</td>
+<td>Effet uricosurique</td>
+</tr>
+<tr>
+<td>Telmisartan</td>
+<td>40 mg</td>
+<td>80 mg</td>
+<td>24 h</td>
+<td>Activité PPARγ partielle</td>
+</tr>
+<tr>
+<td>Olmésartan</td>
+<td>10-20 mg</td>
+<td>40 mg</td>
+<td>13 h</td>
+<td>Efficacité tensionnelle maximale</td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<p>IEC et ARA2 sont de première intention dans l'HTA. Indications préférentielles : diabète (néphroprotection), post-IDM, IC, néphropathie protéinurique. <strong>Ne jamais associer IEC + ARA2</strong> (risque d'IRA et d'hyperkaliémie, études ONTARGET et VA NEPHRON-D).</p>
+</blockquote>
+<hr />
+<h1 id="module-29-inhibiteurs-calciques-icc">MODULE 29 — INHIBITEURS CALCIQUES (ICC)</h1>
+<h2 id="291-classification-et-mecanismes">29.1 Classification et mécanismes</h2>
+<h3 id="2911-classes">29.1.1 Classes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA29-S01-001 — SCHÉMA : sites d'action des ICC — canaux calciques L vasculaires et cardiaques]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Sous-type</th>
+<th>Action vasculaire</th>
+<th>Action cardiaque</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dihydropyridines</strong></td>
+<td>DHP</td>
+<td>+++</td>
+<td>0 à +</td>
+<td>Amlodipine, lercanidipine</td>
+</tr>
+<tr>
+<td><strong>Phénylalkylamines</strong></td>
+<td>Non-DHP</td>
+<td>+</td>
+<td>+++</td>
+<td>Vérapamil</td>
+</tr>
+<tr>
+<td><strong>Benzothiazépines</strong></td>
+<td>Non-DHP</td>
+<td>++</td>
+<td>++</td>
+<td>Diltiazem</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2912-dihydropyridines-dhp">29.1.2 Dihydropyridines (DHP)</h3>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Dose</th>
+<th>Demi-vie</th>
+<th>Particularité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amlodipine</td>
+<td>5-10 mg</td>
+<td>35-50 h</td>
+<td>Référence, profil 24h, œdèmes dose-dépendants</td>
+</tr>
+<tr>
+<td>Lercanidipine</td>
+<td>10-20 mg</td>
+<td>8-10 h</td>
+<td>Moins d'œdèmes que l'amlodipine</td>
+</tr>
+<tr>
+<td>Nifédipine LP</td>
+<td>30-60 mg</td>
+<td>6-11 h</td>
+<td>Forme LP obligatoire (jamais sublingual)</td>
+</tr>
+<tr>
+<td>Félodipine</td>
+<td>5-10 mg</td>
+<td>11-16 h</td>
+<td>Bonne tolérance</td>
+</tr>
+<tr>
+<td>Nicardipine LP</td>
+<td>50 mg × 2</td>
+<td>8 h</td>
+<td>Aussi en IV (urgences)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Effets indésirables des DHP</strong> :<br />
+- Œdèmes des MI (10-30 %) : vasodilatation artériolaire pré-capillaire → augmentation pression hydrostatique capillaire ; réduits par l'association avec IEC/ARA2<br />
+- Flush, céphalées<br />
+- Tachycardie réflexe (surtout formes à courte durée d'action)<br />
+- Hypertrophie gingivale (rare)</p>
+<h3 id="2913-non-dhp-verapamil-diltiazem">29.1.3 Non-DHP (vérapamil, diltiazem)</h3>
+<ul>
+<li>Effets inotrope négatif, chronotrope négatif, dromotrope négatif</li>
+<li>CI : IC systolique (FEVG &lt; 40 %), BAV 2-3, bradycardie sévère</li>
+<li>CI : association avec β-bloquants (risque de bradycardie, BAV, IC)</li>
+<li>Utilité : HTA + tachyarythmie (FA) si β-bloquant CI</li>
+</ul>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Les ICC dihydropyridines sont particulièrement efficaces chez le sujet âgé et le patient d'origine africaine subsaharienne, populations où le profil rénine-basse rend les bloqueurs du SRAA moins efficaces en monothérapie.</p>
+</blockquote>
+<hr />
+<h1 id="module-30-diuretiques">MODULE 30 — DIURÉTIQUES</h1>
+<h2 id="301-classification">30.1 Classification</h2>
+<h3 id="3011-types-de-diuretiques-antihypertenseurs">30.1.1 Types de diurétiques antihypertenseurs</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA30-S01-001 — SCHÉMA : sites d'action des diurétiques le long du néphron — thiazidiques, de l'anse, épargneurs de potassium]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Site d'action</th>
+<th>Usage dans l'HTA</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thiazidiques</strong></td>
+<td>TCD (cotransporteur NaCl)</td>
+<td>1ère intention</td>
+<td>Hydrochlorothiazide</td>
+</tr>
+<tr>
+<td><strong>Thiazidique-like</strong></td>
+<td>TCD</td>
+<td>1ère intention (préféré)</td>
+<td>Indapamide, chlorthalidone</td>
+</tr>
+<tr>
+<td><strong>Anse</strong></td>
+<td>BHA (cotransporteur Na-K-2Cl)</td>
+<td>IRC sévère (DFG &lt; 30)</td>
+<td>Furosémide, bumétanide</td>
+</tr>
+<tr>
+<td><strong>Anti-aldostérone</strong></td>
+<td>Canal collecteur (récepteur minéralocorticoïde)</td>
+<td>HTA résistante, IC</td>
+<td>Spironolactone, éplérénone</td>
+</tr>
+<tr>
+<td><strong>Amiloride</strong></td>
+<td>Canal collecteur (canal ENaC)</td>
+<td>Association avec thiazidique</td>
+<td>Amiloride</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3012-thiazidiques-et-thiazidique-like">30.1.2 Thiazidiques et thiazidique-like</h3>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Dose</th>
+<th>Demi-vie</th>
+<th>Avantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Indapamide</strong></td>
+<td>1,5 mg LP</td>
+<td>14-24 h</td>
+<td>Effet vasculaire additionnel, neutre métaboliquement</td>
+</tr>
+<tr>
+<td><strong>Chlorthalidone</strong></td>
+<td>12,5-25 mg</td>
+<td>40-60 h</td>
+<td>Le plus étudié, longue durée d'action</td>
+</tr>
+<tr>
+<td>Hydrochlorothiazide</td>
+<td>12,5-25 mg</td>
+<td>6-15 h</td>
+<td>Courte durée, efficacité moindre sur 24h</td>
+</tr>
+</tbody>
+</table>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'indapamide et la chlorthalidone sont supérieurs à l'hydrochlorothiazide en termes de réduction des événements CV (méta-analyse Roush et al., Hypertension 2012). Les ESC/ESH 2023 recommandent de privilégier les thiazidique-like (indapamide, chlorthalidone) plutôt que l'HCTZ.</p>
+</blockquote>
+<p><strong>Effets indésirables des thiazidiques</strong> :<br />
+- Hypokaliémie (5-20 %) : surveillance K+, association avec IEC/ARA2 protectrice<br />
+- Hyponatrémie (surtout sujet âgé, femme)<br />
+- Hyperuricémie (précipitation de goutte)<br />
+- Hyperglycémie (aggravation du syndrome métabolique)<br />
+- Hypomagnésémie<br />
+- Hypercalcémie modérée</p>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > L'hyponatrémie sous thiazidique peut être sévère (< 120 mmol/L) et provoquer confusion, convulsions, coma. Elle survient typiquement chez la femme âgée de petit poids, en été (déshydratation), dans les premières semaines de traitement. Le natrémie doit être contrôlée à J7-J14.</div>
+
+<hr />
+<h1 id="module-31-betabloquants">MODULE 31 — BÊTABLOQUANTS</h1>
+<h2 id="311-place-dans-lhta">31.1 Place dans l'HTA</h2>
+<h3 id="3111-evolution-du-positionnement">31.1.1 Évolution du positionnement</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA31-S01-001 — TIMELINE : évolution du positionnement des β-bloquants dans l'HTA — de la 1ère ligne à la 4e ligne]</p>
+</blockquote>
+<p><strong>Position actuelle</strong> (adapté de ESC/ESH 2023) :<br />
+- <strong>Plus en 1ère intention</strong> dans l'HTA non compliquée (infériorité vs autres classes pour la prévention de l'AVC, méta-analyse Lindholm, Lancet 2005)<br />
+- <strong>Indications spécifiques</strong> : IC, post-IDM, angor, FA, tachyarythmie, hyperactivité sympathique, femme en âge de procréer</p>
+<h3 id="3112-molecules">31.1.2 Molécules</h3>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Sélectivité</th>
+<th>Dose</th>
+<th>Propriétés additionnelles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bisoprolol</td>
+<td>β1 sélectif</td>
+<td>2,5-10 mg</td>
+<td>Référence IC (CIBIS-II)</td>
+</tr>
+<tr>
+<td>Nébivolol</td>
+<td>β1 sélectif</td>
+<td>5-10 mg</td>
+<td>Vasodilatateur (libération NO)</td>
+</tr>
+<tr>
+<td>Aténolol</td>
+<td>β1 sélectif</td>
+<td>50-100 mg</td>
+<td>Moins efficace sur AVC (ASCOT)</td>
+</tr>
+<tr>
+<td>Métoprolol LP</td>
+<td>β1 sélectif</td>
+<td>50-200 mg</td>
+<td>IC (MERIT-HF)</td>
+</tr>
+<tr>
+<td>Carvédilol</td>
+<td>α1 + β1β2</td>
+<td>12,5-50 mg</td>
+<td>Vasodilatateur, antioxydant, IC</td>
+</tr>
+<tr>
+<td>Labétalol</td>
+<td>α + β</td>
+<td>200-800 mg</td>
+<td>Grossesse, urgences IV</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Effets indésirables</strong> :<br />
+- Bradycardie, BAV<br />
+- Bronchospasme (CI si asthme, prudence BPCO)<br />
+- Fatigue, troubles du sommeil, dysfonction érectile<br />
+- Masquage des signes d'hypoglycémie chez le diabétique<br />
+- Syndrome de Raynaud (aggravation)<br />
+- Effet rebond à l'arrêt brutal (ne jamais arrêter brutalement)</p>
+<hr />
+<h1 id="module-32-associations-et-strategie-therapeutique-globale">MODULE 32 — ASSOCIATIONS ET STRATÉGIE THÉRAPEUTIQUE GLOBALE</h1>
+<h2 id="321-principes-des-associations">32.1 Principes des associations</h2>
+<h3 id="3211-rationnel">32.1.1 Rationnel</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA32-S01-001 — SCHÉMA : synergie des associations antihypertensives — le « diamant » des associations recommandées]</p>
+</blockquote>
+<p><strong>Pourquoi associer ?</strong> :<br />
+- Monothérapie : contrôle de la PA dans seulement <strong>30-50 %</strong> des cas<br />
+- Chaque ajout de classe : réduction supplémentaire de <strong>8-10 mmHg PAS</strong><br />
+- Association à faibles doses : meilleure tolérance que monothérapie à forte dose<br />
+- Synergie pharmacologique (contre-régulation mutuelle)</p>
+<h3 id="3212-associations-recommandees-et-proscrites">32.1.2 Associations recommandées et proscrites</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA32-S01-002 — SCHÉMA : associations synergiques (trait plein) vs non recommandées (trait pointillé)]</p>
+</blockquote>
+<p><strong>Associations recommandées</strong> :<br />
+- <strong>IEC/ARA2 + ICC</strong> : synergie (bloqueur SRAA + vasodilatateur), réduction œdèmes ICC<br />
+- <strong>IEC/ARA2 + diurétique thiazidique</strong> : synergie (bloqueur SRAA + natriurèse), réduction hypokaliémie<br />
+- <strong>ICC + diurétique</strong> : deux vasodilatateurs, utile si CI au bloqueur SRAA</p>
+<p><strong>Association PROSCRITE</strong> :<br />
+- <strong>IEC + ARA2</strong> : pas de bénéfice additif, augmentation IRA et hyperkaliémie (ONTARGET)<br />
+- <strong>β-bloquant + vérapamil/diltiazem</strong> : risque BAV complet, asystolie</p>
+<h3 id="3213-strategie-en-escalier-escesh-2023">32.1.3 Stratégie en escalier (ESC/ESH 2023)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA32-S01-003 — ALGORITHME : stratégie thérapeutique en escalier — de l'initiation à l'HTA résistante]</p>
+</blockquote>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<p><strong>Étape 1 — Initiation</strong> :<br />
+- <strong>Bithérapie d'emblée</strong> à faibles doses (sauf HTA grade 1 faible risque, sujet âgé fragile &gt; 80 ans)<br />
+- <strong>Association privilégiée</strong> : IEC/ARA2 + ICC ou IEC/ARA2 + diurétique<br />
+- <strong>Comprimé unique combiné (SPC)</strong> recommandé pour améliorer l'observance</p>
+<p><strong>Étape 2 — Si non contrôle</strong> :<br />
+- <strong>Trithérapie</strong> : IEC/ARA2 + ICC + diurétique<br />
+- En comprimé unique si disponible (triple combo)</p>
+<p><strong>Étape 3 — HTA résistante</strong> :<br />
+- Vérifier observance (dosages plasmatiques)<br />
+- <strong>+ Spironolactone 25-50 mg</strong></p>
+<p><strong>Étape 4 — Si échec spironolactone</strong> :<br />
+- β-bloquant (si FC &gt; 70), doxazosine, ou clonidine<br />
+- Discussion dénervation rénale</p>
+<h2 id="322-comprimes-uniques-combines-spc">32.2 Comprimés uniques combinés (SPC)</h2>
+<h3 id="3221-rationnel">32.2.1 Rationnel</h3>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'utilisation de SPC (Single Pill Combination) améliore l'observance de <strong>24 %</strong> par rapport aux associations libres (méta-analyse Gupta et al., Hypertension 2017). L'observance est le facteur limitant principal du contrôle tensionnel.</p>
+</blockquote>
+<h3 id="3222-spc-disponibles-en-france">32.2.2 SPC disponibles en France</h3>
+<table>
+<thead>
+<tr>
+<th>Association</th>
+<th>Exemples de SPC</th>
+<th>Dosages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IEC + ICC</td>
+<td>Périndopril/amlodipine (Coveram®)</td>
+<td>5/5, 5/10, 10/5, 10/10</td>
+</tr>
+<tr>
+<td>IEC + diurétique</td>
+<td>Périndopril/indapamide (Preterax®, Bipreterax®)</td>
+<td>2,5/0,625 — 5/1,25 — 10/2,5</td>
+</tr>
+<tr>
+<td>ARA2 + ICC</td>
+<td>Valsartan/amlodipine (Exforge®)</td>
+<td>80/5, 160/5, 160/10</td>
+</tr>
+<tr>
+<td>ARA2 + diurétique</td>
+<td>Valsartan/HCTZ (CoTareg®)</td>
+<td>80/12,5 — 160/12,5 — 160/25</td>
+</tr>
+<tr>
+<td>Triple combo</td>
+<td>Périndopril/indapamide/amlodipine (Triplixam®)</td>
+<td>5/1,25/5 — 10/2,5/5 — 10/2,5/10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="323-cibles-tensionnelles-rappel">32.3 Cibles tensionnelles rappel</h2>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Cible PAS</th>
+<th>Cible PAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adulte &lt; 65 ans</td>
+<td>120-130 mmHg</td>
+<td>70-80 mmHg</td>
+</tr>
+<tr>
+<td>Adulte ≥ 65-79 ans</td>
+<td>130-139 mmHg</td>
+<td>70-80 mmHg</td>
+</tr>
+<tr>
+<td>Adulte ≥ 80 ans</td>
+<td>130-139 mmHg</td>
+<td>70-80 mmHg (prudence)</td>
+</tr>
+<tr>
+<td>Diabétique</td>
+<td>120-130 mmHg</td>
+<td>70-80 mmHg</td>
+</tr>
+<tr>
+<td>IRC</td>
+<td>&lt; 120 mmHg</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Post-AVC</td>
+<td>120-130 mmHg</td>
+<td>70-80 mmHg</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="324-quiz-modules-28-32">32.4 Quiz Modules 28-32</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> Quelle est la cause la plus fréquente d'arrêt des IEC ?<br />
+- A) Hyperkaliémie<br />
+- B) Toux sèche<br />
+- C) Angiœdème<br />
+- D) Hypotension</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La toux sèche (5-20 %) est le motif le plus fréquent d'arrêt des IEC, liée à l'accumulation de bradykinine.</p>
+</blockquote>
+<p><strong>Q2.</strong> Quelle est la stratégie d'initiation recommandée par ESC/ESH 2023 ?<br />
+- A) Monothérapie à forte dose<br />
+- B) Bithérapie d'emblée à faibles doses<br />
+- C) Trithérapie d'emblée<br />
+- D) MHD seules pendant 1 an</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Bithérapie d'emblée (IEC/ARA2 + ICC ou diurétique) en comprimé unique, sauf exceptions.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Pourquoi ne faut-il jamais associer IEC + ARA2 ?<br />
+- A) Car ils ont le même mécanisme<br />
+- B) Car l'étude ONTARGET a montré plus d'IRA et d'hyperkaliémie sans bénéfice CV<br />
+- C) Car c'est trop cher<br />
+- D) Car ils s'annulent mutuellement</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — ONTARGET (2008) a démontré que l'association IEC + ARA2 n'apporte pas de bénéfice CV supplémentaire mais augmente significativement le risque d'IRA, d'hyperkaliémie et d'hypotension.</p>
+</blockquote>
+<p><strong>Q4.</strong> Chez quel type de patient les ICC DHP sont-ils particulièrement efficaces ?<br />
+- A) Jeune homme caucasien<br />
+- B) Sujet âgé et patient d'origine africaine<br />
+- C) Patient diabétique uniquement<br />
+- D) Patient bradycarde</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Les ICC sont particulièrement efficaces dans les profils à rénine basse (sujet âgé, origine africaine), où les bloqueurs du SRAA sont moins efficaces en monothérapie.</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q5.</strong> Pourquoi les thiazidique-like (indapamide, chlorthalidone) sont-ils préférés à l'HCTZ ?<br />
+- A) Ils sont moins chers<br />
+- B) Ils ont une demi-vie plus longue et de meilleures preuves de réduction des événements CV<br />
+- C) Ils n'ont pas d'effets métaboliques<br />
+- D) Ils sont disponibles en comprimé unique</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Demi-vie plus longue (meilleure couverture 24h), preuves cliniques plus solides (réduction des événements CV démontrée), et effet vasculaire additionnel pour l'indapamide.</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q6.</strong> Pourquoi les β-bloquants ne sont-ils plus en 1ère intention dans l'HTA non compliquée ?<br />
+- A) Ils ne baissent pas la PA<br />
+- B) Ils sont moins efficaces que les autres classes pour prévenir l'AVC<br />
+- C) Ils sont tous retirés du marché<br />
+- D) Ils causent trop de bradycardie</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La méta-analyse de Lindholm (Lancet 2005) et l'étude ASCOT-BPLA ont montré une infériorité des β-bloquants (notamment l'aténolol) pour la prévention de l'AVC par rapport aux ICC et bloqueurs du SRAA, malgré une baisse de PA similaire.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

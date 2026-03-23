@@ -1,0 +1,484 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-6-reprises-et-cas-complexes-modules-24-26">Partie 6 — Reprises et Cas Complexes (Modules 24-26)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : VI — REPRISES CHIRURGICALES ET CAS COMPLEXES<br />
+<strong>Modules</strong> : 24 à 26<br />
+<strong>Durée estimée</strong> : ~12 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-24-ptg-de-reprise-principes-et-evaluation">MODULE 24 : PTG DE REPRISE — PRINCIPES ET ÉVALUATION</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Expert | <strong>Prérequis</strong> : Modules 22-23</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Évaluer</strong> un patient candidat à une reprise de PTG (bilan complet)</li>
+<li><strong>Classifier</strong> la perte osseuse (AORI) et planifier la reconstruction</li>
+<li><strong>Choisir</strong> le niveau de contrainte et le système de reprise adapté</li>
+<li><strong>Maîtriser</strong> les techniques d'extraction des composants</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="241-evaluation-pre-operatoire-de-la-reprise">24.1 Évaluation pré-opératoire de la reprise</h3>
+<ul>
+<li>Pourquoi la reprise est plus complexe que la primaire</li>
+<li>Perte osseuse : l'ablation des composants emporte l'os environnant</li>
+<li>Tissus mous altérés : cicatrices, fibrose, atrophie musculaire, insuffisance ligamentaire</li>
+<li>Enveloppe cutanée compromise : cicatrices multiples, peau fine, adhérences</li>
+<li>Risque infectieux augmenté (5-10% vs 1-2% en primaire) (Koh et al., 2017, <em>J Arthroplasty</em>)</li>
+<li>Résultats fonctionnels inférieurs à la primaire dans toutes les séries</li>
+<li>Bilan étiologique</li>
+<li>Identifier la CAUSE de l'échec (condition sine qua non de la réussite de la reprise)</li>
+<li>Douleur → checklist systématique (cf. Module 23.5)</li>
+<li>Descellement → aseptique ou septique ? (ponction articulaire OBLIGATOIRE)</li>
+<li>Instabilité → quel type ? (extension, flexion, globale)</li>
+<li>Raideur → cause mécanique ou fibrotique ?</li>
+<li>Fracture → type et stabilité de l'implant</li>
+<li>Usure → degré d'ostéolyse</li>
+<li>Bilan infectieux systématique avant toute reprise</li>
+<li>CRP, VS, numération leucocytaire</li>
+<li>Ponction articulaire : culture (milieu aérobie, anaérobie, enrichi), cytologie (leucocytes, % PMN), alpha-défensine</li>
+<li>Si doute : 2 ponctions à 2-4 semaines d'intervalle</li>
+<li>Scintigraphie aux leucocytes marqués ou TEP-scanner si clinique ambiguë</li>
+<li>Bilan d'imagerie pour la planification</li>
+<li>Radiographies : face + profil + pangonogramme → évaluation de l'axe, des liserés, de la perte osseuse, de la position des composants</li>
+<li>Scanner (CT-scan) avec protocole de réduction des artéfacts métalliques (MARS) :<ul>
+<li>Quantification 3D de la perte osseuse</li>
+<li>Évaluation de la rotation des composants</li>
+<li>Planification des augments et des tiges</li>
+</ul>
+</li>
+<li>Scanner obligatoire en reprise (contrairement à la primaire où il est optionnel)</li>
+</ul>
+<h3 id="242-classification-de-la-perte-osseuse-aori-anderson-orthopaedic-research-institute">24.2 Classification de la perte osseuse — AORI (Anderson Orthopaedic Research Institute)</h3>
+<p><em>(adapté de Engh &amp; Ammeen, 1999, Clin Orthop Relat Res)</em></p>
+<ul>
+<li><strong>Type 1</strong> : perte osseuse minime, sans altération majeure de la métaphyse</li>
+<li>Os métaphysaire conservé dans son intégrité</li>
+<li>Absence de défect segmentaire significatif</li>
+<li>Les coupes de révision standard sont suffisantes (résection analogue à la primaire)</li>
+<li><strong>Type 2</strong> : perte osseuse modérée avec atteinte métaphysaire partielle</li>
+<li>Défect localisé au niveau condylien ou du plateau tibial</li>
+<li>2A : atteinte unilatérale (un seul condyle ou un seul plateau)</li>
+<li>2B : atteinte bilatérale (les deux condyles ou les deux plateaux)</li>
+<li>Reconstruction par augments métalliques, comblement au ciment, ou greffe osseuse</li>
+<li><strong>Type 3</strong> : perte osseuse massive avec destruction métaphysaire étendue</li>
+<li>Défect métaphysaire majeur menaçant les insertions ligamentaires</li>
+<li>Métaphyse non restaurable par les augments conventionnels</li>
+<li>Reconstruction par greffe structurale massive, mégaprothèse modulaire, manchon métaphysaire (<em>sleeve</em>) ou cône métaphysaire (<em>cone</em>)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG24-S02-001</strong><br/>
+<em>Classification AORI de la perte osseuse : dessin anatomique du fémur et du tibia avec les 3 types (1, 2A, 2B, 3) et la solution de reconstruction pour chacun (Classifiez 4 cas radiographiques)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MPTG24-S02-002</strong><br/>
+<em>Photos peropératoires de perte osseuse : type 1 (minime), type 2B (bilatérale), type 3 (massive) — avec la solution de reconstruction utilisée (Identifiez le type et la solution)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="243-systemes-de-reprise-composants-modulaires">24.3 Systèmes de reprise — Composants modulaires</h3>
+<ul>
+<li>Principe de modularité</li>
+<li>La reprise nécessite des composants adaptables à chaque situation</li>
+<li>Système modulaire : choix indépendant de la taille articulaire, de la tige (longueur, diamètre, offset), des augments (épaisseur, position), des cônes/manchons</li>
+<li>Tiges intramédullaires (stems)</li>
+<li>Rôle : by-passer la zone de perte osseuse → transférer les charges vers la diaphyse saine</li>
+<li>Types : tiges cimentées (fixation immédiate) vs tiges press-fit non cimentées (ostéo-intégration)</li>
+<li>Longueur : 75-200 mm (standard : 100-150 mm)</li>
+<li>Diamètre : 10-22 mm, déclinaisons par 2 mm</li>
+<li>Offset : ajustement de l'alignement médio-latéral</li>
+<li>Fixation diaphysaire (<em>diaphyseal engaging</em>) : la tige est la fixation principale (perte métaphysaire)</li>
+<li>Augments métalliques</li>
+<li>Blocs ou coins en titane ou CoCr</li>
+<li>Remplacement de l'os manquant au niveau des condyles ou des plateaux</li>
+<li>Épaisseurs : 4, 8, 12, 16 mm (modulaires)</li>
+<li>Se fixent au composant articulaire (verrouillage mécanique + vis)</li>
+<li>Permettent de restaurer la ligne articulaire et de combler les défects</li>
+<li>Cônes et manchons métaphysaires (dernière génération)</li>
+<li><strong>Cônes en métal trabéculaire</strong> (tantalum ou titane poreux) : remplissent la métaphyse excavée, offrent une surface d'ostéo-intégration 3D</li>
+<li><strong>Manchons (<em>sleeves</em>)</strong> : cônes solides qui s'emboîtent dans la métaphyse et reçoivent la tige</li>
+<li>Avantage vs ciment + augments : ostéo-intégration → fixation biologique durable</li>
+<li>Résultats émergents : très prometteurs à moyen terme (5-10 ans)</li>
+<li>Exemples : Zimmer Trabecular Metal Cone, DePuy ATTUNE Revision S&amp;R Sleeve, Stryker Triathlon TS Cone</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG24-S03-001</strong><br/>
+<em>Schéma éclaté d'un système de reprise modulaire complet : composant articulaire + augments + cône/manchon + tige + vis — vue de face et de profil (Assemblez les composants pour 3 scénarios de perte osseuse)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="244-techniques-dextraction-des-implants">24.4 Techniques d'extraction des implants</h3>
+<ul>
+<li>Outils spécifiques</li>
+<li>Ostéotomes fins : libérer l'interface os-ciment ou os-implant</li>
+<li>Marteau à impaction (extraction par impaction contrôlée)</li>
+<li>Scie oscillante fine : pour couper le ciment sans détruire l'os</li>
+<li>Ciment-splitter : outil dédié au retrait du ciment</li>
+<li>Ultrason (système OSCAR, Biomet) : dissolution du ciment par ultrasons → extraction sans fracture osseuse</li>
+<li>Séquence d'extraction<br />
+  1. Retrait du PE (le plus simple — clip ou dé-verrouillage)<br />
+  2. Retrait de l'embase tibiale : ostéotome à l'interface, impaction douce, rotation<br />
+  3. Retrait du composant fémoral : ostéotome sous les condyles, impaction vers le haut<br />
+  4. Retrait du ciment résiduel : curettes, ostéotomes, fraises, ultrason<br />
+  5. Retrait de la patella prothétique (si resurfacée) : scie fine, curettes</li>
+<li>Pièges et complications</li>
+<li>Fracture peropératoire : risque #1 lors de l'extraction (os fragilisé par l'ostéolyse)</li>
+<li>Perte osseuse supplémentaire : l'extraction emporte de l'os → aggraver la classification AORI</li>
+<li>Ciment résiduel en canal : risque de malposition de la tige de reprise si non retiré</li>
+<li>Composant non cimenté ostéo-intégré : extraction très difficile → ostéotomies requises parfois (slot osteotomy)<blockquote>
+<p>[MEDIA: 🎥 MPTG24-S04-001 — Vidéo d'extraction d'une PTG en reprise : retrait séquentiel PE, tibia, fémur, curetage du ciment — mise en évidence de la perte osseuse (Évaluez la perte osseuse AORI après extraction)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-25-technique-chirurgicale-de-la-reprise">MODULE 25 : TECHNIQUE CHIRURGICALE DE LA REPRISE</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Expert | <strong>Prérequis</strong> : Module 24</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> une reprise de PTG selon une séquence codifiée</li>
+<li><strong>Reconstruire</strong> les défects osseux par augments, cônes, ou greffes</li>
+<li><strong>Restaurer</strong> la ligne articulaire et la balance ligamentaire en reprise</li>
+<li><strong>Choisir</strong> le niveau de contrainte adapté à l'instabilité résiduelle</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="251-principes-fondamentaux-de-la-reprise">25.1 Principes fondamentaux de la reprise</h3>
+<ul>
+<li>Les 5 objectifs de la reprise (dans l'ordre de priorité)<br />
+  1. <strong>Éradication de l'infection</strong> (si septique → changement en 2 temps)<br />
+  2. <strong>Restauration de la ligne articulaire</strong> (joint line restoration — clé de la cinématique)<br />
+  3. <strong>Reconstruction osseuse</strong> (combler les défects pour assurer la fixation)<br />
+  4. <strong>Stabilité</strong> (balance ligamentaire + contrainte de l'implant adaptées)<br />
+  5. <strong>Mobilité</strong> (amplitude compatible avec la fonction)</li>
+<li>Restauration de la ligne articulaire</li>
+<li>Repère : ratio d'Insall-Salvati (longueur du tendon rotulien / longueur de la patella ≈ 1.0-1.2) (Insall J, Salvati E, <em>Radiology</em>, 1971)</li>
+<li>Repère alternatif : distance épicondyle médial → ligne articulaire ≈ 25-30 mm (Servien et al., 2008)</li>
+<li>L'élévation de la ligne articulaire (joint line elevation) est la cause #1 de mauvais résultat en reprise → mid-flexion instability, douleur antérieure, Patella baja fonctionnelle</li>
+<li>Méthode : utiliser la perte osseuse distale comme guide → la combler par des augments pour maintenir le niveau original</li>
+</ul>
+<h3 id="252-reconstruction-femorale">25.2 Reconstruction fémorale</h3>
+<ul>
+<li>Type 1 AORI : coupes standards de révision (minimal bone loss)</li>
+<li>Type 2A : augment distal médial ou latéral (4-8 mm) → restauration de la ligne articulaire</li>
+<li>Type 2B : augments distal + postérieur bilatéraux → reconstruction bi-condylienne</li>
+<li>Technique de la « measured resection revision » : mesurer le défect, choisir l'augment correspondant</li>
+<li>Type 3 : </li>
+<li>Cône ou manchon métaphysaire en métal trabéculaire</li>
+<li>Greffe osseuse massive structurale (tête fémorale de banque de tissus) — rare, en déclin au profit des cônes métalliques</li>
+<li>Mégaprothèse (prothèse modulaire de reconstruction tumorale adaptée) → exceptionnel en reprise</li>
+<li>Greffe impactée (impaction bone grafting) : morcelée, compactée dans les défects → cimentée par-dessus</li>
+<li>Tige fémorale</li>
+<li>Longueur : by-passer la zone de perte osseuse + 2 diamètres de canal au-dessous</li>
+<li>Fixation diaphysaire (press-fit) si bone stock suffisant</li>
+<li>Fixation cimentée si os très fragile (PR, ostéoporose sévère)</li>
+<li>Offset : ajuster l'axe médio-latéral pour centrer le composant</li>
+</ul>
+<h3 id="253-reconstruction-tibiale">25.3 Reconstruction tibiale</h3>
+<ul>
+<li>Type 1 : coupes standards de révision</li>
+<li>Type 2A : augment médial ou latéral (4-12 mm) → combler la perte d'un plateau</li>
+<li>Type 2B : augments bilatéraux → combler les 2 plateaux</li>
+<li>Type 3 :</li>
+<li>Cône tibial en métal trabéculaire (le plus utilisé actuellement)</li>
+<li>Manchon tibial (sleeve)</li>
+<li>Greffe structurale (rare)</li>
+<li>Mégaprothèse tibiale (exceptionnel)</li>
+<li>Tige tibiale</li>
+<li>Plus critique que la tige fémorale (le tibia supporte les charges en compression)</li>
+<li>Longueur : 100-150 mm standard</li>
+<li>Press-fit ou cimentée</li>
+<li>Centrage dans le canal → risque de désaxation si mauvais centrage</li>
+<li>Conflit tige tibiale / tige fémorale : vérifier le non-engagement avant cimentation (impingement des tiges)</li>
+</ul>
+<h3 id="254-niveau-de-contrainte-en-reprise">25.4 Niveau de contrainte en reprise</h3>
+<ul>
+<li>En reprise, l'insuffisance ligamentaire est la RÈGLE (pas l'exception)</li>
+<li>Algorithme de choix</li>
+<li>LCM et LCL fonctionnels → PS de reprise</li>
+<li>LCM ou LCL insuffisant d'un côté → VVC (Varus-Valgus Constrained)</li>
+<li>LCM ET LCL insuffisants ou recurvatum → Charnière rotatoire (Rotating Hinge)</li>
+<li>Instabilité massive + perte osseuse majeure → Mégaprothèse</li>
+<li>La majorité des reprises utilisent un implant VVC ou Charnière (vs PS+CR en primaire)</li>
+<li>Contrainte accrue → contrainte à l'interface → tiges obligatoires (fixation diaphysaire)<blockquote>
+<p>[MEDIA: 📊 MPTG25-S04-001 — Algorithme de choix du niveau de contrainte en reprise : du PS de reprise → VVC → Charnière → Mégaprothèse — selon la balance ligamentaire et la perte osseuse (Appliquez à 4 cas de reprise)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="255-gestion-de-lappareil-extenseur-en-reprise">25.5 Gestion de l'appareil extenseur en reprise</h3>
+<ul>
+<li>Problèmes fréquents</li>
+<li>Patella baja (basse) : cicatrisation fibreuse du tendon rotulien → raccourcissement fonctionnel</li>
+<li>Fibrose supra-patellaire : adhérences du quadriceps → limitation de flexion</li>
+<li>Rupture du tendon rotulien (antérieure → rare mais catastrophique)</li>
+<li>Fracture patellaire sur résection itérative</li>
+<li>Solutions</li>
+<li>Quadriceps snip (extension oblique proximale du snip en V) → gain d'exposition</li>
+<li>TTA osteotomy (ostéotomie de la TTA) → déplacement vers le proximal pour exposition, puis re-fixation</li>
+<li>Greffe de tendon d'Achille avec os calcanéen (technique d'Emerson ; Emerson RH et al., <em>Clin Orthop Relat Res</em>, 1990) → reconstruction du tendon rotulien</li>
+<li>Mesh de renfort (Marlex ou LARS) → renforcement du tendon rotulien fragilisé</li>
+</ul>
+<h3 id="256-cas-particuliers-en-reprise">25.6 Cas particuliers en reprise</h3>
+<ul>
+<li>Reprise après PUC → PTG</li>
+<li>Relativement simple si perte osseuse minime (AORI type 1)</li>
+<li>Souvent réalisable avec un implant de PTG primaire (pas besoin de système de reprise)</li>
+<li>Résultats : comparables à la PTG primaire dans la plupart des séries</li>
+<li>Reprise itérative (2ème ou 3ème reprise)</li>
+<li>Perte osseuse cumulative → classification AORI type 3 fréquente</li>
+<li>Résultats décroissants à chaque reprise</li>
+<li>Alternative : arthrodèse ou amputation si impasse thérapeutique<blockquote>
+<p>[MEDIA: 🎥 MPTG25-S06-001 — Vidéo d'une reprise de PTG complète : extraction, évaluation de la perte osseuse, reconstruction avec cône + augments + tige + implant VVC (Analysez chaque décision chirurgicale)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-26-cas-complexes">MODULE 26 : CAS COMPLEXES</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Expert | <strong>Prérequis</strong> : Modules 15, 16, 25</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Gérer</strong> les déformations sévères (varus &gt; 20°, valgus &gt; 20°, flexum &gt; 30°)</li>
+<li><strong>Planifier</strong> la PTG sur séquelles d'ostéotomie, post-traumatique, ankylose</li>
+<li><strong>Adapter</strong> la technique en cas d'extra-articulaire déformation (EAD)</li>
+<li><strong>Traiter</strong> les cas de PTG chez le patient jeune (&lt; 55 ans) et très âgé (&gt; 85 ans)</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="261-genu-varum-severe-20">26.1 Genu varum sévère (&gt; 20°)</h3>
+<ul>
+<li>Challenges</li>
+<li>Perte osseuse tibiale médiale (usure ++)</li>
+<li>Ostéophytose massive médiale</li>
+<li>Contracture des structures médiales (LCM spastique, patte d'oie rétractée)</li>
+<li>Distension des structures latérales (LCL, PLC étirés)</li>
+<li>Risque de « overcorrection » → pied tombant (nerf fibulaire)</li>
+<li>Stratégie</li>
+<li>Release médial extensif mais progressif (cf. Module 15.5)</li>
+<li>Coupe tibiale plus résécante du côté médial (usure → la coupe doit atteindre l'os sain)</li>
+<li>Possible augment tibial médial si défect trop important</li>
+<li>LCL à surveiller : s'il est trop lâche après correction → VVC</li>
+<li>Axe cible : correction à 180° ± 3° (MA) ou individualiser (KA/FA si robotique)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG26-S01-001</strong><br/>
+<em>Radiographie + photo clinique d'un genu varum sévère (25°) : planning de correction étape par étape (Identifiez chaque structure à libérer)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="262-genu-valgum-severe-20">26.2 Genu valgum sévère (&gt; 20°)</h3>
+<ul>
+<li>Challenges</li>
+<li>Contracture du rétinaculum latéral, de l'IT band, du LCL, du poplité</li>
+<li>Hypoplasie du condyle fémoral latéral postérieur (repère PCA non fiable pour la rotation)</li>
+<li>Distension du LCM (peut être insuffisant après correction)</li>
+<li>Risque majeur : nerf fibulaire commun (étirement par correction)</li>
+<li>Patella subluxée latéralement (tracking anormal)</li>
+<li>Stratégie</li>
+<li>Voie latérale recommandée par certains (Keblish) — voie médiale possible si expérience</li>
+<li>Release latéral : IT band, bandelette iliotibiale au niveau articulaire, LCL, poplité, capsule postéro-latérale (cf. Module 15.6)</li>
+<li>Rotation fémorale : utiliser le TEA et Whiteside (PCA non fiable)</li>
+<li>Composant fémoral potentiellement downsized pour éviter l'overhang latéral</li>
+<li>Si LCM insuffisant après correction → VVC</li>
+<li>Nerf fibulaire : ne pas dépasser 15° de correction en un seul temps si possible</li>
+</ul>
+<h3 id="263-flexum-severe-30">26.3 Flexum sévère (&gt; 30°)</h3>
+<ul>
+<li>Challenges</li>
+<li>Rétraction des structures postérieures (capsule, gastrocnémiens, LCP, fascia)</li>
+<li>Perte de la course de l'appareil extenseur (Patella baja)</li>
+<li>Ostéophytes postérieures massives bloquant l'extension</li>
+<li>Risque vasculaire : artère poplitée rétractée → positionnement de sécurité en flexion</li>
+<li>Stratégie</li>
+<li>Résection osseuse distale supplémentaire (2-4 mm) → ouvrir le gap d'extension</li>
+<li>Résection des ostéophytes postérieures (condylien postérieur, plateau postérieur)</li>
+<li>Release progressif de la capsule postérieure</li>
+<li>Pie-crusting des gastrocnémiens (rare, extrême)</li>
+<li>Résection du LCP si CR (conversion en PS)</li>
+<li>Coupe tibiale avec pente réduite (0-3°) pour favoriser l'extension</li>
+<li>Post-opératoire : attelle en extension nocturne pendant 6 semaines</li>
+<li>Ne PAS s'attendre à une extension complète immédiate si flexum &gt; 30° (récupération progressive sur 3-6 mois)</li>
+</ul>
+<h3 id="264-ankylose-flexion-60-et-arthrodese-anterieure-a-convertir-en-ptg">26.4 Ankylose (flexion &lt; 60°) et arthrodèse antérieure à convertir en PTG</h3>
+<ul>
+<li>Ankylose</li>
+<li>Genoux raidis après chirurgie, infection, immobilisation prolongée</li>
+<li>Quadriceps fibrosé et rétracté, capsule et rétinaculum adhérents</li>
+<li>Abord : nécessite un quadriceps snip ou une ostéotomie de la TTA pour exposition</li>
+<li>Objectif réaliste : 90-100° de flexion (pas les 125° de la PTG standard)</li>
+<li>Résultats fonctionnels inférieurs mais transforment la vie du patient</li>
+<li>Conversion arthrodèse → PTG</li>
+<li>Rare mais possible (après arthrodèse pour infection guérie, par exemple)</li>
+<li>Conditions : infection éradiquée (&gt; 2 ans), couverture cutanée suffisante, quadriceps reconstructible</li>
+<li>Chirurgie extrêmement complexe : perte osseuse majeure, insuffisance de l'appareil extenseur</li>
+<li>Résultats : 55-75% de bons résultats fonctionnels, taux de complications élevé (30-40%) (Naranja et al., 1996, <em>J Arthroplasty</em>)</li>
+</ul>
+<h3 id="265-deformation-extra-articulaire-ead">26.5 Déformation extra-articulaire (EAD)</h3>
+<ul>
+<li>Définition : cal vicieux fémoral ou tibial déformant l'axe du MI sans que la déformation soit intra-articulaire</li>
+<li>Exemples : fracture diaphysaire fémorale avec varus résiduel 15°, cal vicieux tibial après OTV</li>
+<li>Impact sur la PTG : les coupes intra-articulaires standard ne peuvent pas corriger une déformation extra-articulaire</li>
+<li>Solutions</li>
+<li>Correction minime (&lt; 10° dans un seul plan) : correction par coupes intra-articulaires asymétriques (possible mais à la limite)</li>
+<li>Correction importante : ostéotomie correctrice en 1 temps ou en 2 temps (ostéotomie → consolidation → PTG)</li>
+<li>Navigation/robotique : aide à la planification des coupes en cas de repères anatomiques modifiés</li>
+<li>La coupe intra-articulaire « compensant » une EAD → obliquité de la ligne articulaire → instabilité en flexion → à éviter si &gt; 10°</li>
+</ul>
+<h3 id="266-ptg-chez-le-patient-jeune-55-ans">26.6 PTG chez le patient jeune (&lt; 55 ans)</h3>
+<ul>
+<li>Le nombre de PTG &lt; 55 ans augmente exponentiellement (obésité, activité sportive +)</li>
+<li>Enjeux spécifiques</li>
+<li>Durée de vie attendue : &gt; 25-30 ans → la prothèse devra durer ou être reprise</li>
+<li>Niveau d'activité élevé → usure accélérée et risque de complications mécaniques</li>
+<li>Attentes très élevées (retour au sport, travail physique)</li>
+<li>Optimisation</li>
+<li>XLPE 2ème génération systématique (usure minimale)</li>
+<li>Oxinium ou CoCr poli miroir (réduction de l'usure du PE)</li>
+<li>Non cimentée ou hybride (ostéo-intégration → meilleure fixation à très long terme ?)</li>
+<li>Alignement cinématique ou fonctionnel (cinématique plus naturelle → FJS plus élevé)</li>
+<li>Robotique (positionnement optimal → réduction des outliers)</li>
+<li>Information claire : « Vous aurez probablement besoin d'une reprise dans votre vie »</li>
+<li>Alternative à la PTG ? : PUC (si éligible), ostéotomie (temporisation), conservation (si tolérable)</li>
+</ul>
+<h3 id="267-ptg-chez-le-patient-tres-age-85-ans">26.7 PTG chez le patient très âgé (&gt; 85 ans)</h3>
+<ul>
+<li>Le nombre de PTG &gt; 85 ans est en augmentation</li>
+<li>Enjeux spécifiques</li>
+<li>Mortalité périopératoire augmentée (1-3% à 90 jours vs &lt; 0.5% chez les &lt; 70 ans) (Memtsoudis et al., 2013, <em>J Bone Joint Surg Am</em>)</li>
+<li>Comorbidités multiples</li>
+<li>Risque de confusion post-opératoire (syndrome confusionnel &gt; 20%) (Scott et al., 2014, <em>Bone Joint J</em>)</li>
+<li>Risque de complications thromboemboliques augmenté</li>
+<li>Autonomie souvent limitée → la PTG améliore l'autonomie et réduit le risque de chute</li>
+<li>Stratégie</li>
+<li>Évaluation gériatrique préopératoire (score ASA, critères de Fried, test cognitif)</li>
+<li>Optimisation nutritionnelle (album &gt; 35 g/L)</li>
+<li>Anesthésie locorégionale préférable (bloc fémoral + sciatique, rachianesthésie)</li>
+<li>Protocole de récupération améliorée après chirurgie (RAAC/ERAS) : mobilisation J0</li>
+<li>PTG cimentée systématique (fixation immédiate, pas d'attente d'ostéo-intégration)</li>
+<li>Design simple et éprouvé (pas d'innovation expérimentale chez le grand âge)<blockquote>
+<p>[MEDIA: 📊 MPTG26-S07-001 — Tableau des adaptations de la PTG selon l'âge : jeune (&lt; 55 ans), standard (55-75 ans), âgé (75-85 ans), très âgé (&gt; 85 ans) — implant, fixation, alignement, PE, suivi (Document de référence pour la prise de décision)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="auto-evaluation-partie-vi">AUTO-ÉVALUATION — PARTIE VI</h1>
+<h2 id="questions-transversales-modules-24-26">Questions transversales Modules 24-26</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : La classification AORI évalue :<br />
+- A) Le niveau de douleur après PTG<br />
+- B) La perte osseuse péri-prothétique en reprise<br />
+- C) Le risque d'infection<br />
+- D) Le type de polyéthylène</p>
+<p><strong>Q2</strong> 🥈 : Un patient avec une PTG descellée présente une perte osseuse de type AORI 2B fémoral. Quelle est la solution de reconstruction la plus adaptée ?<br />
+- A) Coupes standards de PTG primaire<br />
+- B) Augments métalliques distaux et postérieurs bilatéraux + tige<br />
+- C) Mégaprothèse de reconstruction<br />
+- D) Arthrodèse</p>
+<p><strong>Q3</strong> 🥈 : Quel est le risque spécifique majeur lors de la correction chirurgicale d'un genu valgum &gt; 20° ?<br />
+- A) Rupture du tendon rotulien<br />
+- B) Lésion du nerf fibulaire commun par étirement<br />
+- C) Fracture du condyle médial<br />
+- D) Hématome du mollet</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 45 ans, sportif, gonarthrose médiale KL 4 bilatérale, IMC 28, LCA intact bilatéral. Il refuse catégoriquement l'idée d'une PTG bilatérale. Quelles alternatives lui proposez-vous et dans quel ordre de préférence ? Argumentez chaque option avec les niveaux de preuve.</p>
+<p><strong>Q5</strong> 💎 : Vous recevez pour avis un patient de 72 ans porteur d'une PTG CR cimentée (NexGen) posée il y a 8 ans. Le patient consulte pour douleur croissante et instabilité en descente d'escaliers (dérobement). Le bilan radiographique montre un composant bien aligné mais un PE manifestement usé (asymétrie de l'espace médial) avec des géodes AORI type 2A tibiales médiales. La ponction exclut une infection. Décrivez votre stratégie chirurgicale complète : composants à changer, niveau de contrainte, reconstruction osseuse, fixation.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>Mme Johansson, 58 ans</strong>, ancien professeur de danse, IMC 24. PTG PS cimentée du genou gauche il y a 12 ans. Chute de sa hauteur il y a 3 semaines. Douleur aiguë, impotence fonctionnelle. Radiographie : fracture supracondylienne fémorale déplacée (Lewis-Rorabeck type II), composants en place, pas de liseré visible.</p>
+<ol>
+<li>Classifiez cette fracture et expliquez les implications thérapeutiques.</li>
+<li>Quel traitement chirurgical proposez-vous ? (type d'ostéosynthèse, voie d'abord)</li>
+<li>Si le composant fémoral s'avère descellé à l'exploration, comment votre stratégie change-t-elle ?</li>
+<li>Quels facteurs de risque de fracture périprothétique identifiez-vous chez cette patiente ?</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Emerson RH, Head WC, Malinin TI. Reconstruction of patellar tendon rupture after total knee arthroplasty with an extensor mechanism allograft. <em>Clin Orthop Relat Res</em>. 1990;(260):154-161.</li>
+<li>Engh GA, Ammeen DJ. Bone loss with revision total knee arthroplasty: defect classification and alternatives for reconstruction. <em>Clin Orthop Relat Res</em>. 1999;(367):29-44.</li>
+<li>Insall J, Salvati E. Patella position in the normal knee joint. <em>Radiology</em>. 1971;101(1):101-104.</li>
+<li>Koh IJ, Cho WS, Choi NY, Kim TK. Causes, risk factors, and trends in failures after TKA. <em>J Arthroplasty</em>. 2017;32(12):3622-3628.</li>
+<li>Memtsoudis SG, Pumberger M, Ma Y, et al. Epidemiology and risk factors for perioperative mortality after total joint arthroplasty. <em>J Bone Joint Surg Am</em>. 2013;95(8):e49.</li>
+<li>Naranja RJ, Lotke PA, Pagnano MW, Hanssen AD. Total knee arthroplasty in a previously ankylosed or arthrodesed knee. <em>J Arthroplasty</em>. 1996;11(5):538-543.</li>
+<li>Scott CEH, Howie CR, MacDonald D, Biant LC. Predicting dissatisfaction following total knee replacement. <em>Bone Joint J</em>. 2014;96-B(12):1632-1639.</li>
+<li>Servien E, Lustig S, Neyret P. Restoration of the joint line in revision TKA. <em>Orthop Traumatol Surg Res</em>. 2008;94(8):785-791.</li>
+</ul>
+<hr />
+<p><em>Fin de la Partie 6 — Reprises et Cas Complexes (Modules 24-26)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

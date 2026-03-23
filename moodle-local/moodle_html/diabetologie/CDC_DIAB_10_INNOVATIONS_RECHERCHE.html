@@ -1,0 +1,424 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-10-innovations-immunotherapie-et-recherche-modules-34-38">Partie 10 — Innovations, Immunothérapie et Recherche (Modules 34-38)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-34-prevention-du-dt1-immunotherapie-et-depistage-pre-symptomatique">MODULE 34 : PRÉVENTION DU DT1 — IMMUNOTHÉRAPIE ET DÉPISTAGE PRÉ-SYMPTOMATIQUE</h1>
+<p><strong>Partie</strong> : X — Innovations et recherche<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Module 5</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Les parents de Lucas, 10 ans, DT1 diagnostiqué à 8 ans, ont un 2e enfant, Emma, 5 ans. Ils demandent : « Peut-on savoir si Emma va développer le diabète ? Et peut-on l'empêcher ? » Le diabétologue explique que le dépistage des auto-anticorps est désormais possible et qu'un traitement préventif (teplizumab) a été approuvé. *Pour la première fois dans l'histoire du DT1, nous pouvons identifier les individus à risque et retarder l'apparition de la maladie — un changement de paradigme.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> les stades pré-cliniques du DT1 (Insel/JDRF : stades 1-3)</li>
+<li><strong>Connaître</strong> le dépistage par auto-anticorps (IA-2, GAD65, ZnT8, IAA) et son interprétation</li>
+<li><strong>Prescrire</strong> le teplizumab (anti-CD3) : mécanisme, indication, résultats</li>
+<li><strong>Connaître</strong> les autres stratégies de prévention en développement</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-1-stades-pre-cliniques-et-depistage">Section 1 — Stades pré-cliniques et dépistage</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Classification en stades</strong> (adapté de Insel et al., Diabetes Care, 2015) :</li>
+<li><strong>Stade 1</strong> : ≥ 2 auto-anticorps positifs, normoglycémie → risque de DT1 clinique ~75 % à 10 ans, ~100 % au cours de la vie</li>
+<li><strong>Stade 2</strong> : ≥ 2 auto-anticorps + dysglycémie (IFG, IGT, OGTT anormale) → risque de DT1 clinique ~75 % à 5 ans</li>
+<li><strong>Stade 3</strong> : DT1 clinique (symptômes + critères diagnostiques)</li>
+<li><strong>Auto-anticorps</strong> : IAA (anti-insuline — souvent le 1er chez l'enfant), GADA (anti-GAD65 — le plus fréquent), IA-2A (anti-tyrosine phosphatase), ZnT8A (anti-transporteur zinc) ; séroconversion : souvent entre 6 mois et 6 ans ; ≥ 2 auto-anticorps = risque très élevé</li>
+<li><strong>Programmes de dépistage</strong> : TrialNet (international), TEDDY (The Environmental Determinants of Diabetes in the Young), Fr1da (Bavière — dépistage populationnel à 2-5 ans), EDENT1FI (Europe) ; screening des apparentés au 1er degré ET dépistage populationnel en discussion</li>
+<li><strong>Bénéfice du dépistage</strong> : identification pré-symptomatique → éducation des familles → réduction dramatique des ACD inaugurales (de 30 % sans dépistage à &lt; 5 % avec dépistage → meilleure préservation β-cellulaire initiale)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB34-S01-001 — STADES PRÉ-CLINIQUES DT1 (stade 1-2-3 — auto-anticorps, glycémie, masse β-cellulaire, risque)]</p>
+<p>[MEDIA: 📋 MDIAB34-S01-002 — ALGORITHME DÉPISTAGE DT1 (qui dépister, quels auto-anticorps, interprétation, CAT selon résultat)]</p>
+</blockquote>
+<h3 id="section-2-teplizumab-et-strategies-de-prevention">Section 2 — Teplizumab et stratégies de prévention</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Teplizumab</strong> (Tzield®) — anti-CD3 monoclonal humanisé :</li>
+<li>Mécanisme : modulation de la réponse immunitaire T → induction de tolérance (expansion lymphocytes T régulateurs, épuisement T effecteurs auto-réactifs)</li>
+<li>Étude pivot : TrialNet TN-10 (Herold et al., N Engl J Med, 2019) — apparentés au 1er degré, stade 2, 8-49 ans → teplizumab IV 14 jours vs placebo → retard médian du DT1 clinique de 2 ans (24,4 mois vs 48,4 mois), certains patients &gt; 5 ans de retard</li>
+<li>Suivi à long terme : retard médian &gt; 3 ans, bénéfice maximal chez les plus jeunes et ceux avec le plus haut taux de C-peptide résiduel</li>
+<li>Approbation FDA (novembre 2022) : 1er traitement approuvé pour retarder le DT1 de stade 2 chez les ≥ 8 ans ; non encore approuvé en Europe (en cours d'évaluation EMA)</li>
+<li>Administration : cure de 14 jours IV consécutifs en milieu hospitalier ambulatoire ; effets secondaires : lymphopénie transitoire, rash cutané, syndrome de libération des cytokines (léger), risque infectieux transitoire</li>
+<li><strong>Autres stratégies en développement</strong> :</li>
+<li><strong>Abatacept</strong> (anti-CTLA4) : retarde la perte de C-peptide chez les DT1 récents (étude TrialNet, Orban et al., Lancet, 2011)</li>
+<li><strong>Verapamil</strong> : bloqueur calcique protégeant les β-cellules du stress (étude Ovalle et al., Nat Med, 2018 → maintien C-peptide chez DT1 récents)</li>
+<li><strong>Baricitinib</strong> (anti-JAK) : préservation β-cellulaire dans le DT1 récent (Waibel et al., N Engl J Med, 2023)</li>
+<li><strong>Antigènes spécifiques</strong> : vaccination GAD-alum (résultats mitigés), insuline orale (TrialNet — pas de bénéfice global mais signal dans un sous-groupe)</li>
+<li><strong>Thérapie combinée</strong> : association de plusieurs immunomodulateurs (en cours)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB34-S02-001 — RÉSULTATS TN-10 TEPLIZUMAB (courbes de Kaplan-Meier : temps jusqu'au DT1 clinique — teplizumab vs placebo)]</p>
+<p>[MEDIA: 📋 MDIAB34-S02-002 — PIPELINE PRÉVENTION DT1 (teplizumab, abatacept, verapamil, baricitinib, GAD-alum — phase, mécanisme, résultats)]</p>
+</blockquote>
+<h2 id="points-cles-module-34">Points clés — Module 34</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. DT1 stade 1 (≥ 2 auto-anticorps, normoglycémie) → risque ~100 % au cours de la vie<br />
+2. Teplizumab (anti-CD3) : 1er traitement approuvé retardant le DT1 de stade 2 (médiane +2 ans)<br />
+3. Le dépistage pré-symptomatique réduit les ACD inaugurales de 30 % à &lt; 5 %<br />
+4. Baricitinib (anti-JAK) : préservation β-cellulaire prometteuse dans le DT1 récent<br />
+5. Dépistage populationnel des auto-anticorps : en discussion (programmes Fr1da, EDENT1FI)</p>
+</blockquote>
+<h2 id="auto-evaluation-module-34">Auto-évaluation — Module 34</h2>
+<h3 id="qcm-progressifs-6-questions">QCM progressifs (6 questions)</h3>
+<p><strong>Q1 — 🥈 Argent</strong> : Que signifie la présence de ≥ 2 auto-anticorps anti-îlots chez un enfant normoglycémique ?<br />
+A. DT1 clinique  B. Stade 1 pré-clinique → risque ~100 % de DT1 au cours de la vie  C. DT2  D. Pas de signification</p>
+<blockquote>
+<p>✅ <strong>B</strong> — ≥ 2 auto-anticorps positifs = stade 1 pré-clinique, risque cumulatif de DT1 clinique de ~75 % à 10 ans et proche de 100 % au cours de la vie.</p>
+</blockquote>
+<p><strong>Q2 — 🥇 Or</strong> : Quel est le mécanisme d'action du teplizumab ?<br />
+A. Destruction des cellules bêta  B. Anti-CD3 → modulation immunitaire T → tolérance (↑ Treg, épuisement T effecteurs)  C. Stimulation de la sécrétion d'insuline  D. Blocage des auto-anticorps</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le teplizumab est un anti-CD3 monoclonal qui module la réponse immunitaire T : il induit l'expansion des lymphocytes T régulateurs et l'épuisement des T effecteurs auto-réactifs, sans immunosuppression globale.</p>
+</blockquote>
+<p><strong>Q3 — 🥇 Or</strong> : Quel résultat de l'étude TrialNet TN-10 ?<br />
+A. Guérison du DT1  B. Retard médian de 2 ans de l'apparition du DT1 clinique chez les stade 2  C. Prévention totale du DT1  D. Aucun effet significatif</p>
+<blockquote>
+<p>✅ <strong>B</strong> — TN-10 a montré un retard médian de ~2 ans (puis &gt; 3 ans en suivi prolongé) de l'apparition du DT1 clinique chez les apparentés au 1er degré en stade 2 traités par teplizumab vs placebo.</p>
+</blockquote>
+<p><strong>Q4 — 💎 Diamant</strong> : Emma (accroche), 5 ans, apparentée au 1er degré d'un DT1. Quelle conduite proposez-vous ?</p>
+<blockquote>
+<p>✅ (1) <strong>Dépistage</strong> : dosage des 4 auto-anticorps (IAA, GADA, IA-2A, ZnT8A) ; (2) Si ≥ 2 positifs : <strong>stade 1</strong> confirmé → HGPO 75 g adaptée à l'enfant pour évaluer la dysglycémie ; (3) Si dysglycémie → <strong>stade 2</strong> → discussion teplizumab (indication FDA si ≥ 8 ans → Emma a 5 ans → surveiller et réévaluer à 8 ans pour l'éligibilité) ; inclusion dans un protocole de recherche (TrialNet) ; (4) Si 0-1 auto-anticorps : faible risque → surveillance annuelle ; (5) Dans tous les cas : éducation des parents aux signes d'alerte (polyurie, polydipsie, amaigrissement → consultation urgente → éviter l'ACD inaugurale).</p>
+</blockquote>
+<hr />
+<h1 id="module-35-therapie-cellulaire-et-regeneration-cellulaire">MODULE 35 : THÉRAPIE CELLULAIRE ET RÉGÉNÉRATION β-CELLULAIRE</h1>
+<p><strong>Partie</strong> : X — Innovations et recherche<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Modules 1-2, 5</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient DT1 de 35 ans, diagnostiqué à 12 ans, avec hypoglycémies sévères récurrentes malgré une boucle fermée, demande : « J'ai lu qu'on pouvait maintenant guérir le diabète avec des cellules souches. C'est vrai ? » *La thérapie cellulaire est le Saint-Graal de la diabétologie — des avancées spectaculaires ont été réalisées, mais la route vers une application clinique large est encore longue.*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les approches de thérapie cellulaire du DT1 : transplantation d'îlots, cellules souches</li>
+<li><strong>Comprendre</strong> les avancées en cellules souches pluripotentes (hESC, iPSC) pour le DT1</li>
+<li><strong>Connaître</strong> les stratégies d'immuno-protection des greffons (encapsulation, édition génétique)</li>
+<li><strong>Évaluer</strong> le niveau de preuve et les perspectives réalistes</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-1-transplantation-dilots-de-langerhans">Section 1 — Transplantation d'îlots de Langerhans</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Transplantation d'îlots d'Edmonton</strong> (Shapiro et al., N Engl J Med, 2000) : infusion portale d'îlots isolés de donneurs cadavériques ; protocole d'immunosuppression sans corticoïdes (sirolimus + tacrolimus + daclizumab) ; résultats à 1 an : 100 % d'insulino-indépendance (7/7 patients initiaux) ; à 5 ans : 10 % insulino-indépendants mais ~80 % avec C-peptide détectable et amélioration significative des hypos sévères</li>
+<li><strong>Indications actuelles</strong> : DT1 avec hypoglycémies sévères récurrentes et hypo-unawareness, malgré traitement optimisé (y compris boucle fermée) ; souvent couplée à une greffe rénale (îlots après rein = IAK, ou îlots seuls = ITA)</li>
+<li><strong>Limites</strong> : pénurie de donneurs (2-3 pancréas par receveur), immunosuppression à vie (toxicité rénale, infections, cancers), perte progressive du greffon (rejet + récidive auto-immunité), coût</li>
+<li><strong>Donazpt</strong> (Lantidra®) — 1er produit de thérapie cellulaire allogénique approuvé FDA (2023) pour le DT1 avec hypos sévères non contrôlées</li>
+</ul>
+<h3 id="section-2-cellules-souches-et-bio-ingenierie">Section 2 — Cellules souches et bio-ingénierie</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Cellules souches embryonnaires humaines (hESC)</strong> :</li>
+<li>Différenciation dirigée vers des cellules β fonctionnelles (protocoles Pagliuca/Melton, Cell, 2014)</li>
+<li><strong>VX-880</strong> (Vertex Pharmaceuticals) : cellules β dérivées de hESC, infusion portale + immunosuppression → 1er patient (Shapiro et al., NEJM, 2023) : insulino-indépendance complète à 1 an → résultat historique ; essai de phase 1/2 en cours</li>
+<li><strong>VX-264</strong> : même cellules mais en dispositif d'encapsulation → sans immunosuppression systémique → essai en cours</li>
+<li><strong>Cellules souches pluripotentes induites (iPSC)</strong> :</li>
+<li>Reprogrammation de cellules somatiques du patient → différenciation en β → avantage théorique : pas de rejet (cellules autologues) ; mais : récidive auto-immunité dans le DT1 → protection nécessaire ; coût et temps de production</li>
+<li><strong>Encapsulation</strong> : dispositifs protégeant les cellules greffées du système immunitaire tout en permettant l'échange de nutriments et d'insuline :</li>
+<li>Macro-encapsulation (ViaCyte/CRISPR — PEC-Direct, PEC-Encap) : dispositif sous-cutané contenant des précurseurs pancréatiques ; résultats modestes (vascularisation insuffisante, fibrose péri-dispositif)</li>
+<li>Micro-encapsulation (alginate, hydrogels biocompatibles) : meilleur ratio surface/volume ; défis : fibrose, taille, biocompatibilité à long terme</li>
+<li><strong>Édition génétique (CRISPR)</strong> : cellules β « universelles » avec knock-out des gènes HLA classe I et II (évitement rejet) + knock-in de « ne me mange pas » (CD47) → cellules hypo-immunogènes → plus besoin d'immunosuppression → concept prometteur, stade préclinique/phase 1</li>
+<li><strong>Régénération endogène</strong> : stimulation de la prolifération des β-cellules restantes (inhibiteurs DYRK1A — harmine), transdifférenciation α→β (artémisinines, GABA), reprogrammation ductale → β ; stade préclinique</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB35-S02-001 — PIPELINE THÉRAPIE CELLULAIRE DT1 (Edmonton → VX-880 → VX-264 → iPSC → CRISPR hypo-immunogène — timeline et stade)]</p>
+<p>[MEDIA: 🔬 MDIAB35-S02-002 — SCHÉMA ENCAPSULATION (macro vs micro — principe, avantages, limites)]</p>
+</blockquote>
+<h2 id="points-cles-module-35">Points clés — Module 35</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Transplantation d'îlots (Edmonton) : efficace sur les hypos sévères mais nécessite immunosuppression à vie<br />
+2. Lantidra® (donislecel) : 1er produit cellulaire approuvé FDA (2023) pour DT1 + hypos sévères<br />
+3. VX-880 (Vertex) : cellules β de hESC → insulino-indépendance chez le 1er patient → révolution potentielle<br />
+4. VX-264 : même cellules en dispositif d'encapsulation → sans immunosuppression → essai en cours<br />
+5. CRISPR : cellules hypo-immunogènes (KO HLA + CD47) → concept prometteur pour éviter l'immunosuppression<br />
+6. La « guérison » du DT1 par thérapie cellulaire est scientifiquement possible mais pas encore cliniquement disponible à grande échelle</p>
+</blockquote>
+<h2 id="auto-evaluation-module-35">Auto-évaluation — Module 35</h2>
+<h3 id="qcm-progressifs-5-questions">QCM progressifs (5 questions)</h3>
+<p><strong>Q1 — 🥈 Argent</strong> : Quel est le principal résultat du programme VX-880 (Vertex) ?<br />
+A. Échec complet  B. Insulino-indépendance complète chez le 1er patient DT1 traité par cellules β dérivées de hESC  C. Amélioration modeste de l'HbA1c  D. Guérison de tous les patients</p>
+<blockquote>
+<p>✅ <strong>B</strong> — VX-880 a atteint l'insulino-indépendance complète chez le 1er patient (Shapiro et al., 2023), un résultat historique prouvant le concept de la thérapie cellulaire par cellules souches dans le DT1.</p>
+</blockquote>
+<p><strong>Q2 — 🥇 Or</strong> : Pourquoi l'encapsulation est-elle une stratégie clé pour la thérapie cellulaire ?<br />
+A. Pour augmenter la production d'insuline  B. Pour protéger les cellules greffées du système immunitaire sans immunosuppression systémique  C. Pour faciliter la chirurgie  D. Pour réduire le coût</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'encapsulation crée une barrière physique protégeant les cellules du rejet immunitaire tout en permettant la diffusion de glucose et d'insuline, éliminant le besoin d'immunosuppression systémique.</p>
+</blockquote>
+<p><strong>Q3 — 💎 Diamant</strong> : Comment expliquez-vous au patient de l'accroche l'état actuel de la thérapie cellulaire ?</p>
+<blockquote>
+<p>✅ « Les avancées sont réelles et historiques : pour la première fois, des cellules souches ont été transformées en cellules productrices d'insuline et ont guéri un patient dans un essai clinique (VX-880). Cependant : (1) ce traitement nécessite encore une immunosuppression à vie (avec ses risques) ; (2) les essais portent sur quelques patients → il faut confirmer l'efficacité et la sécurité à grande échelle ; (3) des solutions sans immunosuppression (encapsulation, édition génétique CRISPR) sont en cours d'essai mais ne sont pas encore disponibles ; (4) estimation réaliste : 5-10 ans avant une disponibilité clinique large. En attendant, la boucle fermée hybride est le meilleur traitement disponible pour vos hypos sévères. »</p>
+</blockquote>
+<hr />
+<h1 id="module-36-intelligence-artificielle-et-diabete-aide-au-diagnostic-prediction-gestion">MODULE 36 : INTELLIGENCE ARTIFICIELLE ET DIABÈTE — AIDE AU DIAGNOSTIC, PRÉDICTION, GESTION</h1>
+<p><strong>Partie</strong> : X — Innovations et recherche<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Intermédiaire → Avancé<br />
+<strong>Prérequis</strong> : Modules 16, 23, 29</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un centre de santé rural utilise un système de dépistage autonome de la rétinopathie diabétique par IA (IDx-DR) : la patiente pose le menton sur l'appareil photo, l'image est analysée automatiquement en 30 secondes, et le résultat s'affiche : « Rétinopathie diabétique référable — adresser à l'ophtalmologue ». Pas d'ophtalmologue sur place, pas de dilatation, pas d'attente. *L'IA transforme déjà la pratique diabétologique — du dépistage au traitement, en passant par la prédiction.*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les applications validées de l'IA en diabétologie</li>
+<li><strong>Comprendre</strong> le fonctionnement des algorithmes de boucle fermée (AID)</li>
+<li><strong>Évaluer</strong> les limites et enjeux éthiques de l'IA en santé</li>
+<li><strong>Anticiper</strong> les développements futurs</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-1-applications-validees-de-lia">Section 1 — Applications validées de l'IA</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Dépistage de la RD</strong> : IDx-DR/LumineticsCore (1er système diagnostique autonome approuvé FDA, 2018), EyeArt ; déploiement en soins primaires sans ophtalmologue ; sensibilité &gt; 87 %, spécificité &gt; 90 % ; limites (qualité image, cas limites)</li>
+<li><strong>Algorithmes de boucle fermée</strong> : les systèmes AID (MiniMed 780G, Control-IQ, Omnipod 5, CamAPS FX) sont des applications d'IA (MPC, PID) ajustant l'insuline en temps réel → millions de patients concernés</li>
+<li><strong>Prédiction du risque</strong> : modèles de machine learning pour prédire le risque de DT2 (FINDRISC amélioré, scores génomiques), le risque de complications (néphropathie, RD), le risque d'hypoglycémie (analyse des patterns CGM)</li>
+<li><strong>Aide à la décision thérapeutique</strong> : systèmes de recommandation basés sur le profil patient (IBM Watson, DreaMed Advisor) ; analyse automatisée des données CGM (patterns, AGP, alertes)</li>
+<li><strong>Chatbots et coaching</strong> : applications d'accompagnement du patient (rappels traitement, coaching nutritionnel, soutien motivationnel par IA conversationnelle)</li>
+</ul>
+<h3 id="section-2-limites-ethique-et-perspectives">Section 2 — Limites, éthique et perspectives</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Limites</strong> : biais algorithmiques (sous-représentation de certaines ethnies dans les données d'entraînement → performance réduite), boîte noire (explicabilité), dépendance aux données (qualité, exhaustivité), responsabilité médico-légale (qui est responsable si l'IA se trompe ?)</li>
+<li><strong>Éthique</strong> : consentement éclairé, protection des données de santé (RGPD), équité d'accès, rôle du médecin (supervision vs autonomie de l'IA), relation médecin-patient</li>
+<li><strong>Perspectives</strong> : pancréas artificiel « fully closed loop » piloté par IA avancée, diagnostic précoce du DT1 par modèles multi-omiques, médecine de précision par IA (choix thérapeutique optimal basé sur le phénotype complet du patient), digital twins (jumeaux numériques du patient diabétique pour simuler les réponses thérapeutiques)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🖥️ MDIAB36-S01-001 — APPLICATIONS IA EN DIABÉTOLOGIE (dépistage RD, boucle fermée, prédiction, aide décision — exemples concrets)]</p>
+<p>[MEDIA: 🔮 MDIAB36-S02-001 — CONCEPT DIGITAL TWIN DIABÉTIQUE (modèle numérique du patient → simulation réponse thérapeutique → personnalisation)]</p>
+</blockquote>
+<h2 id="points-cles-module-36">Points clés — Module 36</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. IDx-DR : 1er diagnostic autonome par IA approuvé FDA (dépistage RD sans ophtalmologue)<br />
+2. Les boucles fermées (AID) sont les applications d'IA les plus déployées en diabétologie<br />
+3. L'IA améliore la prédiction du risque (DT2, complications, hypoglycémies)<br />
+4. Limites : biais, explicabilité, responsabilité médico-légale<br />
+5. Digital twins : concept émergent pour la personnalisation thérapeutique</p>
+</blockquote>
+<hr />
+<h1 id="module-37-nouvelles-therapeutiques-molecules-en-developpement">MODULE 37 : NOUVELLES THÉRAPEUTIQUES — MOLÉCULES EN DÉVELOPPEMENT</h1>
+<p><strong>Partie</strong> : X — Innovations et recherche<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Modules 26-27, 34-35</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Un diabétologue revient d'un congrès (ADA 2025) enthousiasmé par les présentations sur les triple agonistes, l'insuline hebdomadaire, et les thérapies cellulaires. Son interne lui demande : « Quelles sont les molécules qui vont vraiment changer la pratique dans les 5 prochaines années ? » *Le pipeline thérapeutique en diabétologie est plus riche qu'il ne l'a jamais été — distinguer les innovations transformatives des améliorations incrémentales est un exercice crucial.*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les molécules en phase 3 ou récemment approuvées qui vont transformer la pratique</li>
+<li><strong>Comprendre</strong> les nouvelles cibles thérapeutiques</li>
+<li><strong>Évaluer</strong> le niveau de preuve de chaque innovation</li>
+<li><strong>Anticiper</strong> l'impact sur les algorithmes thérapeutiques</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-1-innovations-a-court-terme-approuvees-ou-en-phase-3">Section 1 — Innovations à court terme (approuvées ou en phase 3)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Insuline icodec</strong> (Awiqli®) : hebdomadaire, approuvée dans certains pays, DT2 → simplification majeure (ONWARDS 1-6)</li>
+<li><strong>Tirzépatide</strong> (Mounjaro®/Zepbound®) : double agoniste GIP/GLP-1 → efficacité sans précédent (HbA1c + poids) → CVOT en cours</li>
+<li><strong>Sémaglutide haute dose</strong> (Wegovy® 2,4 mg) : obésité + protection CV même sans DT2 (SELECT)</li>
+<li><strong>CagriSema</strong> (amyline + sémaglutide) : combinaison → perte de poids supérieure au sémaglutide seul (REDEFINE)</li>
+<li><strong>Resmétirom</strong> (Rezdiffra®) : agoniste THR-β, 1er traitement MASH approuvé FDA (MAESTRO-NASH)</li>
+<li><strong>Finérénone</strong> (Kerendia®) : ARM non stéroïdien → néphroprotection + CV (FIDELIO/FIGARO)</li>
+<li><strong>Teplizumab</strong> (Tzield®) : prévention DT1 stade 2</li>
+</ul>
+<h3 id="section-2-innovations-a-moyen-terme-phase-2-3">Section 2 — Innovations à moyen terme (phase 2-3)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Triple agonistes GLP-1/GIP/glucagon</strong> : rétaporsen (LY3437943, Eli Lilly), survodutide (Boehringer) → perte de poids &gt; 20 %, bénéfice MASH ; phase 3 en cours</li>
+<li><strong>Orforglipron</strong> (Eli Lilly) : 1er agoniste GLP-1 oral non peptidique (petite molécule) → plus simple que le sémaglutide oral (pas de contrainte de prise à jeun), résultats phase 2 prometteurs (↓ HbA1c 1,6 %, perte de poids 10 %) → phase 3 en cours</li>
+<li><strong>Danuglipron</strong> (Pfizer) : agoniste GLP-1 oral non peptidique (développement complexe, reformulation)</li>
+<li><strong>Insuline « smart » glucose-responsive</strong> : phase préclinique avancée/phase 1</li>
+<li><strong>VX-880/VX-264</strong> (Vertex) : thérapie cellulaire hESC → phase 1/2</li>
+<li><strong>Baricitinib</strong> : anti-JAK pour la préservation β-cellulaire dans le DT1 récent</li>
+<li><strong>Imeglimin</strong> (Twymeeg®) : mécanisme mitochondrial, approuvé au Japon, pas en Europe/USA</li>
+<li><strong>Aldose réductase inhibitors</strong> (épalréstat — Japon) : neuropathie, pas en Occident</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB37-S02-001 — PIPELINE THÉRAPEUTIQUE 2025-2030 (molécule, mécanisme, indication, phase, date estimée disponibilité)]</p>
+<p>[MEDIA: 📊 MDIAB37-S02-002 — COMPARATIF PERTE DE POIDS PAR CLASSE (sémaglutide vs tirzépatide vs triple agoniste vs CagriSema vs chirurgie bariatrique)]</p>
+</blockquote>
+<h2 id="points-cles-module-37">Points clés — Module 37</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Triple agonistes : perte de poids &gt; 20 % + bénéfice MASH → pourraient supplanter les mono-agonistes<br />
+2. Orforglipron : 1er aGLP-1 oral non peptidique → simplification majeure si phase 3 positive<br />
+3. CagriSema : amyline + sémaglutide → perte de poids supérieure au sémaglutide seul<br />
+4. Icodec : insuline hebdomadaire → transformation de l'initiation insulinique dans le DT2<br />
+5. Le pipeline 2025-2030 est le plus riche de l'histoire de la diabétologie</p>
+</blockquote>
+<hr />
+<h1 id="module-38-epidemiologie-mondiale-sante-publique-et-inegalites-dacces">MODULE 38 : ÉPIDÉMIOLOGIE MONDIALE, SANTÉ PUBLIQUE ET INÉGALITÉS D'ACCÈS</h1>
+<p><strong>Partie</strong> : X — Innovations et recherche<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 6, 10, 29</p>
+<h2 id="accroche-clinique_4">Accroche clinique</h2>
+<div class="vertex-accroche">Lors d'une conférence, un expert rappelle : « En 2024, 537 millions de personnes vivent avec le diabète dans le monde. En 2045, ce sera 783 millions. La moitié ne sont pas diagnostiquées. Et dans les pays à faible revenu, un enfant DT1 a une espérance de vie de 1 an car l'insuline n'est pas accessible. » *Le diabète est la pandémie silencieuse du XXIe siècle — et l'inégalité d'accès au traitement est un scandale sanitaire mondial.*</div>
+
+<h2 id="objectifs-dapprentissage_4">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> l'épidémiologie mondiale du diabète (IDF Diabetes Atlas 2024)</li>
+<li><strong>Comprendre</strong> les déterminants de la pandémie de DT2</li>
+<li><strong>Identifier</strong> les inégalités d'accès au diagnostic et au traitement</li>
+<li><strong>Connaître</strong> les initiatives mondiales de lutte contre le diabète</li>
+</ol>
+<h2 id="structure-du-contenu_4">Structure du contenu</h2>
+<h3 id="section-1-epidemiologie-mondiale">Section 1 — Épidémiologie mondiale</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Données IDF Diabetes Atlas 2024</strong> (10e édition) : 537 millions d'adultes (20-79 ans) diabétiques (prévalence 10,5 %) ; 783 millions projetés en 2045 (+46 %) ; 240 millions non diagnostiqués (44 %) ; 6,7 millions de décès/an attribuables au diabète ; coût mondial : 966 milliards USD (15 % des dépenses de santé mondiales)</li>
+<li><strong>Répartition géographique</strong> : Chine (140 M), Inde (74 M), USA (37 M), Pakistan (33 M), Brésil (22 M) → les pays à revenu intermédiaire concentrent 80 % des diabétiques ; prévalence la plus élevée : Moyen-Orient/Afrique du Nord (~17 %) ; croissance la plus rapide : Afrique (+134 % projeté 2021-2045)</li>
+<li><strong>DT1</strong> : ~8,75 millions dans le monde (incidence croissante de 3-4 %/an — Patterson et al., Lancet Diabetes Endocrinol, 2019) ; gradient Nord-Sud (Finlande 64/100 000 → Chine 1/100 000)</li>
+<li><strong>Diabète de l'enfant</strong> : 1,2 million d'enfants &lt; 20 ans avec DT1 ; DT2 pédiatrique en augmentation (obésité) — préoccupation majeure</li>
+<li><strong>Prédictions</strong> : « diabèse » (diabésité) = convergence pandémie d'obésité + DT2 ; urbanisation, sédentarité, transition nutritionnelle dans les PED (pays en développement)</li>
+</ul>
+<h3 id="section-2-inegalites-dacces-et-politiques-de-sante">Section 2 — Inégalités d'accès et politiques de santé</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Accès à l'insuline</strong> : 100 ans après sa découverte (1921), l'insuline reste inaccessible pour ~50 % des DT1 dans les pays à faible revenu → mortalité massive ; coût : 1 flacon d'insuline = 4 USD en Inde vs 300 USD aux USA (avant réforme) ; initiative OMS : insuline dans la liste des médicaments essentiels, programme de pré-qualification OMS pour les biosimilaires</li>
+<li><strong>Accès aux technologies</strong> : CGM et pompe = &lt; 1 % des diabétiques dans les PED vs &gt; 50 % des DT1 dans les pays nordiques → fracture technologique</li>
+<li><strong>Barrières</strong> : coût des traitements (aGLP-1, iSGLT2 restent très chers), infrastructure de santé insuffisante, manque de formation des soignants, stigmatisation, faible littératie en santé</li>
+<li><strong>Initiatives mondiales</strong> : couverture universelle (ODD 3.8 — accès universel aux médicaments essentiels), résolution ONU sur le diabète (2021), programme OMS « Global Diabetes Compact », plaidoyer pour le plafonnement du prix de l'insuline (Inflation Reduction Act USA 2022 → insuline plafonnée à 35 USD/mois pour Medicare)</li>
+<li><strong>Rôle du médecin</strong> : advocacy, participation aux programmes de prévention, dépistage dans les populations vulnérables, éducation thérapeutique adaptée culturellement</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🌍 MDIAB38-S01-001 — CARTE MONDIALE PRÉVALENCE DIABÈTE (IDF Atlas 2024, par région — dégradé de couleurs)]</p>
+<p>[MEDIA: 📊 MDIAB38-S02-001 — GRAPHIQUE INÉGALITÉS D'ACCÈS (insuline, CGM, aGLP-1 — pays à haut vs faible revenu)]</p>
+</blockquote>
+<h2 id="points-cles-module-38">Points clés — Module 38</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. 537 millions de diabétiques en 2024, 783 millions en 2045 — pandémie silencieuse<br />
+2. 44 % des diabétiques ne sont pas diagnostiqués<br />
+3. L'insuline reste inaccessible pour ~50 % des DT1 dans les pays à faible revenu<br />
+4. Fracture technologique : CGM/pompe &lt; 1 % dans les PED vs &gt; 50 % en Scandinavie<br />
+5. L'Afrique connaîtra la plus forte croissance (+134 % projeté 2021-2045)</p>
+</blockquote>
+<h2 id="auto-evaluation-module-38">Auto-évaluation — Module 38</h2>
+<h3 id="qcm-progressifs-5-questions_1">QCM progressifs (5 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Combien de personnes vivent avec le diabète dans le monde en 2024 ?<br />
+A. 100 millions  B. 537 millions  C. 1 milliard  D. 50 millions</p>
+<blockquote>
+<p>✅ <strong>B</strong> — 537 millions d'adultes (IDF Atlas 2024), avec une projection à 783 millions en 2045.</p>
+</blockquote>
+<p><strong>Q2 — 🥈 Argent</strong> : Quel pourcentage de diabétiques dans le monde ne sont pas diagnostiqués ?<br />
+A. 10 %  B. 25 %  C. 44 %  D. 75 %</p>
+<blockquote>
+<p>✅ <strong>C</strong> — 44 % (soit ~240 millions) des diabétiques dans le monde ne sont pas diagnostiqués, principalement dans les pays à faible/moyen revenu où le dépistage est insuffisant.</p>
+</blockquote>
+<p><strong>Q3 — 🥇 Or</strong> : Quelle région du monde connaîtra la plus forte croissance du diabète d'ici 2045 ?<br />
+A. Europe  B. Amérique du Nord  C. Afrique (+134 %)  D. Asie du Sud-Est</p>
+<blockquote>
+<p>✅ <strong>C</strong> — L'Afrique connaîtra la croissance la plus explosive (+134 % projeté), liée à l'urbanisation rapide, la transition nutritionnelle et le manque d'infrastructures de dépistage/traitement.</p>
+</blockquote>
+<p><strong>Q4 — 💎 Diamant</strong> : Un enfant DT1 naît dans un pays à faible revenu où l'insuline n'est pas disponible de façon fiable. Quels sont les enjeux et les solutions possibles ?</p>
+<blockquote>
+<p>✅ <strong>Enjeux</strong> : mortalité à court terme (ACD sans insuline = décès en quelques jours/semaines) ; espérance de vie &lt; 1 an vs &gt; 70 ans dans les pays riches → inégalité inacceptable. <strong>Solutions</strong> : (1) pré-qualification OMS des biosimilaires d'insuline → ↓ coûts ; (2) stockage adapté (insulines thermostables en développement) ; (3) programmes d'accès (Life for a Child Foundation — IDF) ; (4) formation des soignants locaux au diagnostic et au traitement du DT1 ; (5) plaidoyer international (résolution ONU, Global Diabetes Compact) ; (6) technologies low-cost (glucomètres abordables, CGM flash).</p>
+</blockquote>
+<hr />
+<h2 id="references-bibliographiques-partie-10">Références bibliographiques — Partie 10</h2>
+<ol>
+<li>Insel RA, Dunne JL, Atkinson MA et al. « Staging presymptomatic type 1 diabetes: a scientific statement of JDRF, the Endocrine Society, and the ADA. » <em>Diabetes Care</em>, 2015; 38(10): 1964-1974.</li>
+<li>Herold KC, Bundy BN, Long SA et al. (TrialNet TN-10). « An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes. » <em>N Engl J Med</em>, 2019; 381(7): 603-613.</li>
+<li>Waibel M, Wentworth JM, So M et al. « Baricitinib and β-cell function in patients with new-onset type 1 diabetes. » <em>N Engl J Med</em>, 2023; 389(23): 2140-2150.</li>
+<li>Shapiro AMJ, Lakey JRT, Ryan EA et al. « Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen. » <em>N Engl J Med</em>, 2000; 343(4): 230-238.</li>
+<li>Shapiro AMJ, Thompson D, Donner TW et al. « Insulin expression and C-peptide in type 1 diabetes subjects implanted with stem cell-derived fully differentiated islet cells. » <em>Cell Rep Med</em>, 2023; 4(7): 101120.</li>
+<li>Pagliuca FW, Millman JR, Gürtler M et al. « Generation of functional human pancreatic β cells in vitro. » <em>Cell</em>, 2014; 159(2): 428-439.</li>
+<li>Abràmoff MD, Lavin PT, Birch M et al. « Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy. » <em>npj Digital Medicine</em>, 2018; 1: 39.</li>
+<li>International Diabetes Federation. <em>IDF Diabetes Atlas</em>, 10th edition, 2024. Brussels, Belgium.</li>
+<li>Patterson CC, Harjutsalo V, Rosenbauer J et al. « Trends and cyclical variation in the incidence of childhood type 1 diabetes in 26 European centres. » <em>Lancet Diabetes Endocrinol</em>, 2019; 7(11): 850-863.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🔶 <strong>DIABÉTOLOGIE</strong> | Partie 10/12 | Couleur : Bleu pétrole <code>#1A5276</code><br />
+<em>Document généré pour la plateforme VERTEX© — Formation Diabétologie Complète</em></p>
+</blockquote>
+</div>

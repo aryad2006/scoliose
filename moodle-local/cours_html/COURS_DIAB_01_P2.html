@@ -1,0 +1,1167 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>VERTEX© — Cours interactif</title>
+<style>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — Cours interactif v2
+   ════════════════════════════════════════════════════════════ */
+
+/* === Layout sidebar + contenu === */
+.vertex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #2d3436;
+}
+
+/* --- Sidebar --- */
+.vertex-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 280px;
+  min-width: 280px;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #F8F9FA;
+  border-right: 1px solid #DEE2E6;
+  padding: 20px 0;
+  font-size: 0.88em;
+  z-index: 100;
+  scrollbar-width: thin;
+}
+.vertex-sidebar::-webkit-scrollbar { width: 5px; }
+.vertex-sidebar::-webkit-scrollbar-thumb { background: #CED4DA; border-radius: 3px; }
+.vertex-sidebar-title {
+  padding: 0 18px 14px;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 1px solid #DEE2E6;
+  margin-bottom: 10px;
+}
+.vertex-sidebar-title::before { content: "📑 "; }
+.vertex-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertex-sidebar li { margin: 0; }
+.vertex-sidebar a {
+  display: block;
+  padding: 7px 18px;
+  color: #495057;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+.vertex-sidebar a:hover {
+  background: #E9ECEF;
+  color: var(--vertex-primary, #1565C0);
+}
+.vertex-sidebar a.active {
+  background: #E3F2FD;
+  color: var(--vertex-primary, #1565C0);
+  border-left-color: var(--vertex-primary, #1565C0);
+  font-weight: 600;
+}
+.vertex-sidebar .toc-h3 {
+  padding-left: 34px;
+  font-size: 0.92em;
+  color: #6C757D;
+}
+
+/* --- Contenu principal --- */
+.vertex-content {
+  flex: 1;
+  max-width: 820px;
+  padding: 30px 40px;
+  line-height: 1.75;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+/* === Titres === */
+.vertex-content h1 {
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 3px solid var(--vertex-primary, #1565C0);
+  padding-bottom: 12px;
+  font-size: 1.85em;
+  margin-top: 0.5em;
+}
+.vertex-content h2 {
+  color: var(--vertex-primary, #1565C0);
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  border-left: 5px solid var(--vertex-primary, #1565C0);
+  padding-left: 14px;
+  scroll-margin-top: 20px;
+}
+.vertex-content h3 {
+  color: #2E7D32;
+  margin-top: 1.8em;
+  font-size: 1.22em;
+  scroll-margin-top: 20px;
+}
+.vertex-content h4 { color: #6A1B9A; margin-top: 1.2em; font-size: 1.05em; }
+
+/* === Encadrés pédagogiques === */
+.vbox {
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  border-left: 5px solid;
+}
+.vbox p:last-child { margin-bottom: 0; }
+.vbox-title { font-weight: 700; margin-bottom: 8px; display: block; }
+
+.vbox.clinique    { background:#FFF8E1; border-color:#F57F17; }
+.vbox.clinique    .vbox-title { color:#E65100; }
+.vbox.clinique    .vbox-title::before { content:"🏥 "; }
+.vbox.danger      { background:#FBE9E7; border-color:#C62828; }
+.vbox.danger      .vbox-title { color:#B71C1C; }
+.vbox.danger      .vbox-title::before { content:"⚠️ "; }
+.vbox.approfondi  { background:#E3F2FD; border-color:#1565C0; }
+.vbox.approfondi  .vbox-title { color:#0D47A1; }
+.vbox.approfondi  .vbox-title::before { content:"📖 "; }
+.vbox.astuce      { background:#E8F5E9; border-color:#2E7D32; }
+.vbox.astuce      .vbox-title { color:#1B5E20; }
+.vbox.astuce      .vbox-title::before { content:"💡 "; }
+.vbox.expert      { background:#F3E5F5; border-color:#7B1FA2; }
+.vbox.expert      .vbox-title { color:#6A1B9A; }
+.vbox.expert      .vbox-title::before { content:"🔬 "; }
+.vbox.reflexion   { background:#FFFDE7; border-color:#F9A825; }
+.vbox.reflexion   .vbox-title { color:#F57F17; }
+.vbox.reflexion   .vbox-title::before { content:"🤔 "; }
+.vbox.controverse { background:#ECEFF1; border-color:#546E7A; }
+.vbox.controverse .vbox-title { color:#37474F; }
+.vbox.controverse .vbox-title::before { content:"⚖️ "; }
+.vbox.pertinence  { background:#FFF3E0; border-color:#E65100; }
+.vbox.pertinence  .vbox-title { color:#BF360C; }
+.vbox.pertinence  .vbox-title::before { content:"🎯 "; }
+
+/* === Média placeholder === */
+.vmedia {
+  background: #F3E5F5; border: 2px dashed #9C27B0; border-radius: 10px;
+  padding: 22px; margin: 22px 0; text-align: center; color: #6A1B9A;
+}
+.vmedia-icon { font-size: 2em; display: block; margin-bottom: 6px; }
+.vmedia-code { font-weight: 700; }
+.vmedia-desc { font-style: italic; margin-top: 6px; color: #7B1FA2; }
+.vmedia-note { font-size: 0.8em; color: #9E9E9E; margin-top: 8px; }
+
+/* === QCM interactif === */
+.vqcm {
+  border: 2px solid #E0E0E0; border-radius: 10px;
+  padding: 22px; margin: 25px 0; background: #FAFAFA;
+}
+.vqcm-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.vqcm-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 14px;
+  font-size: 0.82em; font-weight: 700; color: #fff;
+}
+.vqcm-badge.bronze  { background: #F57F17; }
+.vqcm-badge.argent  { background: #78909C; }
+.vqcm-badge.or      { background: #FFB300; color:#333; }
+.vqcm-badge.diamant { background: #00ACC1; }
+.vqcm-question { font-weight: 600; font-size: 1.05em; margin-bottom: 14px; }
+
+/* Options empilées verticalement */
+.vqcm-options { list-style: none; padding: 0; margin: 0 0 15px; }
+.vqcm-options li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; margin: 6px 0; border-radius: 8px;
+  border: 2px solid #E0E0E0; background: #fff;
+  cursor: pointer; transition: all 0.15s ease;
+  user-select: none;
+}
+.vqcm-options li:hover { border-color: #90CAF9; background: #F5F9FF; }
+.vqcm-options li.selected { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vqcm-options li.correct-show { border-color: #2E7D32; background: #E8F5E9; }
+.vqcm-options li.incorrect-show { border-color: #C62828; background: #FFEBEE; }
+.vqcm-options input[type="radio"],
+.vqcm-options input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--vertex-primary, #1565C0);
+  width: 18px; height: 18px;
+}
+.vqcm-options label { cursor: pointer; flex: 1; }
+
+/* Bouton valider */
+.vqcm-validate {
+  display: inline-block; padding: 10px 24px; border-radius: 8px;
+  background: var(--vertex-primary, #1565C0); color: #fff; border: none;
+  font-weight: 600; font-size: 0.95em; cursor: pointer;
+  transition: background 0.15s ease;
+}
+.vqcm-validate:hover { filter: brightness(1.1); }
+.vqcm-validate:disabled { background: #CCC; cursor: not-allowed; }
+
+.vqcm-result {
+  margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+  font-weight: 600; display: none;
+}
+.vqcm-result.correct { background: #E8F5E9; color: #1B5E20; }
+.vqcm-result.incorrect { background: #FFEBEE; color: #B71C1C; }
+
+/* Feedback dépliable */
+.vfeedback { margin-top: 12px; border-radius: 8px; overflow: hidden; }
+.vfeedback summary {
+  background: #E3F2FD; padding: 10px 16px; cursor: pointer;
+  font-weight: 600; color: #1565C0; border-radius: 8px;
+  list-style: none;
+}
+.vfeedback summary::-webkit-details-marker { display: none; }
+.vfeedback summary::before { content: "💬 "; }
+.vfeedback .fb-content {
+  padding: 14px 16px; background: #F5F5F5;
+  border-radius: 0 0 8px 8px; line-height: 1.6;
+}
+
+/* === Exercice drag & drop === */
+.vdrag-zone {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0; padding: 12px; background: #F5F5F5; border-radius: 8px;
+  min-height: 60px;
+}
+.vdrag-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; background: #fff; border: 2px solid #E0E0E0;
+  border-radius: 8px; cursor: grab; user-select: none;
+  transition: all 0.15s ease;
+}
+.vdrag-item:active { cursor: grabbing; }
+.vdrag-item:hover { border-color: #90CAF9; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.vdrag-item .drag-handle { color: #9E9E9E; font-size: 1.2em; }
+.vdrag-item .drag-handle::before { content: "⠿"; }
+.vdrag-item.drag-over { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vdrag-item.correct-pos { border-color: #2E7D32; background: #E8F5E9; }
+.vdrag-item.incorrect-pos { border-color: #C62828; background: #FFEBEE; }
+
+/* === Textarea auto-resize === */
+.vtext-answer {
+  width: 100%; min-height: 80px; padding: 14px; border: 2px solid #E0E0E0;
+  border-radius: 8px; font-family: inherit; font-size: 0.95em;
+  line-height: 1.6; resize: none; overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.vtext-answer:focus { border-color: var(--vertex-primary, #1565C0); outline: none; }
+.vtext-answer::placeholder { color: #ADB5BD; }
+
+/* === Exercice structuré === */
+.vexercice {
+  border: 2px solid #26A69A; border-radius: 10px;
+  padding: 22px; margin: 22px 0; background: #E0F2F1;
+}
+.vexercice-title { font-weight: 700; color: #00695C; margin-bottom: 10px; }
+.vexercice-title::before { content: "✏️ "; }
+
+/* === Points clés === */
+.vpoints-cles {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-radius: 12px; padding: 22px 26px; margin: 30px 0;
+  border: 1px solid #A5D6A7;
+}
+.vpoints-cles-title { font-weight:700; font-size:1.2em; color:#1B5E20; margin-bottom:14px; }
+.vpoints-cles-title::before { content: "🔑 "; }
+.vpoints-cles ol { padding-left: 22px; }
+.vpoints-cles li { margin-bottom: 8px; }
+
+/* === Tableaux === */
+.vertex-content table {
+  width: 100%; border-collapse: collapse; margin: 22px 0;
+  font-size: 0.94em; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.vertex-content th {
+  background: var(--vertex-primary, #1565C0); color: #fff;
+  padding: 11px 14px; text-align: left; font-weight: 600;
+}
+.vertex-content td { padding: 9px 14px; border-bottom: 1px solid #E8E8E8; }
+.vertex-content tr:nth-child(even) { background: #F8F9FA; }
+.vertex-content tr:hover { background: #E3F2FD; }
+
+/* === Transition === */
+.vtransition {
+  text-align:center; padding:18px; margin:30px 0; color:#78909C;
+  font-style:italic; border-top:1px dashed #CFD8DC; border-bottom:1px dashed #CFD8DC;
+}
+
+/* === Références === */
+.vrefs {
+  background:#ECEFF1; border-radius:10px; padding:20px 24px;
+  margin:30px 0; font-size:0.88em; color:#546E7A;
+}
+.vrefs-title { font-weight:700; color:#37474F; font-size:1.05em; margin-bottom:10px; }
+.vrefs-title::before { content:"📚 "; }
+.vrefs ul { padding-left:18px; }
+.vrefs li { margin-bottom:4px; }
+
+/* === Footer === */
+.vertex-footer {
+  text-align:center; padding:20px; margin-top:40px;
+  color:#9E9E9E; font-size:0.85em; border-top:1px solid #E0E0E0;
+}
+
+/* Listes & blockquotes */
+.vertex-content ul, .vertex-content ol { padding-left:24px; }
+.vertex-content li { margin-bottom:5px; }
+.vertex-content blockquote {
+  border-left:4px solid #90CAF9; padding:12px 20px;
+  margin:16px 0; background:#F5F5F5; border-radius:0 8px 8px 0;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .vertex-wrapper { flex-direction: column; }
+  .vertex-sidebar {
+    position: relative; width: 100%; min-width: unset;
+    max-height: none; border-right: none; border-bottom: 1px solid #DEE2E6;
+  }
+  .vertex-content { padding: 20px; }
+}
+@media print {
+  .vertex-sidebar { display: none; }
+  .vertex-content { max-width: 100%; padding: 0; }
+}
+</style>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — JavaScript interactif
+   ════════════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Sidebar : scroll spy (highlight section active)
+  const sidebarLinks = document.querySelectorAll('.vertex-sidebar a');
+  const sections = [];
+  sidebarLinks.forEach(link => {
+    const id = link.getAttribute('href')?.replace('#','');
+    if (id) {
+      const el = document.getElementById(id);
+      if (el) sections.push({ el, link });
+    }
+  });
+
+  function updateActive() {
+    let current = null;
+    for (const s of sections) {
+      if (s.el.getBoundingClientRect().top <= 80) current = s;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ── Sidebar smooth scroll
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href')?.replace('#','');
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  // ── QCM : radio/checkbox + validation progressive
+  document.querySelectorAll('.vqcm').forEach(qcm => {
+    const btn = qcm.querySelector('.vqcm-validate');
+    const resultDiv = qcm.querySelector('.vqcm-result');
+    const feedbackEl = qcm.querySelector('.vfeedback');
+    const corrBtn = qcm.querySelector('.vqcm-show-correction');
+    const options = qcm.querySelectorAll('.vqcm-options li');
+    const inputs = qcm.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+
+    // Click on li selects the input
+    options.forEach(li => {
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const input = this.querySelector('input');
+        if (!input || input.disabled) return;
+        if (input.type === 'radio') {
+          inputs.forEach(i => { i.checked = false; i.closest('li').classList.remove('selected','incorrect-show'); });
+          input.checked = true;
+          this.classList.add('selected');
+        } else {
+          input.checked = !input.checked;
+          this.classList.toggle('selected', input.checked);
+          this.classList.remove('incorrect-show');
+        }
+        // Clear previous result message when user changes selection
+        if (resultDiv) resultDiv.style.display = 'none';
+      });
+    });
+
+    // Validate — only shows if wrong, user can retry
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // Check if anything is selected
+        const anySelected = [...inputs].some(i => i.checked);
+        if (!anySelected) return;
+
+        let allCorrect = true;
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          const isSelected = input && input.checked;
+
+          li.classList.remove('correct-show','incorrect-show');
+
+          if (isSelected && !isCorrect) {
+            li.classList.add('incorrect-show');
+            allCorrect = false;
+          }
+          if (!isSelected && isCorrect) {
+            allCorrect = false;
+          }
+        });
+
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          if (allCorrect) {
+            // Correct! Show success, highlight correct answers, disable inputs
+            resultDiv.className = 'vqcm-result correct';
+            resultDiv.textContent = 'Bonne réponse !';
+            options.forEach(li => {
+              const isCorrect = li.dataset.correct === 'true';
+              if (isCorrect) li.classList.add('correct-show');
+              const input = li.querySelector('input');
+              if (input) input.disabled = true;
+            });
+            btn.disabled = true;
+            if (corrBtn) corrBtn.style.display = 'none';
+            if (feedbackEl) feedbackEl.style.display = 'block';
+          } else {
+            // Wrong — show message but keep interactive
+            resultDiv.className = 'vqcm-result incorrect';
+            resultDiv.textContent = 'Réponse incorrecte — réessayez ou cliquez sur « Voir la correction ».';
+            // Show correction button
+            if (corrBtn) corrBtn.style.display = 'inline-block';
+          }
+        }
+      });
+    }
+
+    // Show correction — reveals correct answers, locks the QCM
+    if (corrBtn) {
+      corrBtn.addEventListener('click', function() {
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          li.classList.remove('selected','incorrect-show','correct-show');
+          if (isCorrect) li.classList.add('correct-show');
+          if (input) input.disabled = true;
+        });
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'vqcm-result incorrect';
+          resultDiv.textContent = 'Voici la bonne réponse :';
+        }
+        btn.disabled = true;
+        corrBtn.style.display = 'none';
+        if (feedbackEl) feedbackEl.style.display = 'block';
+      });
+    }
+  });
+
+  // ── Drag & Drop pour exercices de réarrangement
+  document.querySelectorAll('.vdrag-zone').forEach(zone => {
+    let draggedItem = null;
+
+    zone.querySelectorAll('.vdrag-item').forEach(item => {
+      item.setAttribute('draggable', 'true');
+
+      item.addEventListener('dragstart', function(e) {
+        draggedItem = this;
+        this.style.opacity = '0.5';
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      item.addEventListener('dragend', function() {
+        this.style.opacity = '1';
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        this.classList.add('drag-over');
+      });
+
+      item.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        if (draggedItem !== this) {
+          const allItems = [...zone.querySelectorAll('.vdrag-item')];
+          const fromIdx = allItems.indexOf(draggedItem);
+          const toIdx = allItems.indexOf(this);
+          if (fromIdx < toIdx) {
+            zone.insertBefore(draggedItem, this.nextSibling);
+          } else {
+            zone.insertBefore(draggedItem, this);
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartY = 0;
+      item.addEventListener('touchstart', function(e) {
+        draggedItem = this;
+        touchStartY = e.touches[0].clientY;
+        this.style.opacity = '0.7';
+      }, { passive: true });
+
+      item.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.closest('.vdrag-item') && target.closest('.vdrag-item') !== draggedItem) {
+          const over = target.closest('.vdrag-item');
+          zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+          over.classList.add('drag-over');
+        }
+      });
+
+      item.addEventListener('touchend', function(e) {
+        this.style.opacity = '1';
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target) {
+          const dropTarget = target.closest('.vdrag-item');
+          if (dropTarget && dropTarget !== draggedItem) {
+            const allItems = [...zone.querySelectorAll('.vdrag-item')];
+            const fromIdx = allItems.indexOf(draggedItem);
+            const toIdx = allItems.indexOf(dropTarget);
+            if (fromIdx < toIdx) {
+              zone.insertBefore(draggedItem, dropTarget.nextSibling);
+            } else {
+              zone.insertBefore(draggedItem, dropTarget);
+            }
+          }
+        }
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+    });
+
+    // Validate drag order + correction + retry
+    const validateBtn = zone.parentElement.querySelector('.vdrag-validate');
+    const correctionBtn = zone.parentElement.querySelector('.vdrag-correction');
+
+    if (validateBtn) {
+      validateBtn.addEventListener('click', function() {
+        const items = zone.querySelectorAll('.vdrag-item');
+        let allCorrect = true;
+        items.forEach(item => {
+          const currentIdx = [...zone.querySelectorAll('.vdrag-item')].indexOf(item);
+          const correctIdx = parseInt(item.dataset.order);
+          item.classList.remove('correct-pos', 'incorrect-pos');
+          if (currentIdx === correctIdx) {
+            item.classList.add('correct-pos');
+          } else {
+            item.classList.add('incorrect-pos');
+            allCorrect = false;
+          }
+          // Disable drag during review
+          item.setAttribute('draggable', 'false');
+          item.style.cursor = 'default';
+        });
+        validateBtn.disabled = true;
+        // Show correction button if not all correct
+        if (correctionBtn && !allCorrect) {
+          correctionBtn.style.display = 'inline-block';
+          correctionBtn.dataset.state = 'show';
+          correctionBtn.textContent = 'Voir la correction';
+        }
+      });
+    }
+
+    if (correctionBtn) {
+      correctionBtn.addEventListener('click', function() {
+        const state = this.dataset.state;
+        const items = [...zone.querySelectorAll('.vdrag-item')];
+
+        if (state === 'show') {
+          // Show correct order: sort items by data-order
+          const sorted = items.slice().sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
+          sorted.forEach(item => {
+            zone.appendChild(item);
+            // Mark: green if user had it right, red if user had it wrong
+            const wasCorrect = item.classList.contains('correct-pos');
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            if (wasCorrect) {
+              item.classList.add('correct-pos');
+            } else {
+              item.classList.add('incorrect-pos');
+            }
+          });
+          this.dataset.state = 'retry';
+          this.textContent = 'Réessayer';
+        } else if (state === 'retry') {
+          // Reset: shuffle items, clear colors, re-enable drag
+          const shuffled = items.slice().sort(() => Math.random() - 0.5);
+          shuffled.forEach(item => {
+            zone.appendChild(item);
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            item.setAttribute('draggable', 'true');
+            item.style.cursor = 'grab';
+          });
+          validateBtn.disabled = false;
+          this.style.display = 'none';
+          this.dataset.state = 'show';
+        }
+      });
+    }
+  });
+
+  // ── Textarea auto-resize
+  document.querySelectorAll('.vtext-answer').forEach(ta => {
+    function autoResize() {
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    ta.addEventListener('input', autoResize);
+    autoResize();
+  });
+
+});
+</script>
+<style>:root { --vertex-primary: #00838F; }</style></head><body><div class="vertex-wrapper"><nav class="vertex-sidebar"><div class="vertex-sidebar-title">Sommaire</div><ul><li><a href="#s-1-accroche-clinique" class="">Accroche clinique</a></li>
+<li><a href="#s-2-objectifs-d-apprentissage" class="">Objectifs d'apprentissage</a></li>
+<li><a href="#s-3-2-1-macroanatomie-du-pancréas-segments-rapports-et-canaux-ex" class="">2.1 — Macroanatomie du pancréas : segments, rapports et canaux excréteurs</a></li>
+<li><a href="#s-4-2-1-1-morphologie-générale-et-segments" class="toc-h3">2.1.1 — Morphologie générale et segments</a></li>
+<li><a href="#s-5-2-1-2-système-canalaire-wirsung-et-santorini" class="toc-h3">2.1.2 — Système canalaire : Wirsung et Santorini</a></li>
+<li><a href="#s-6-2-1-3-corrélations-en-imagerie" class="toc-h3">2.1.3 — Corrélations en imagerie</a></li>
+<li><a href="#s-7-2-2-microanatomie-distribution-des-îlots-de-langerhans-et-or" class="">2.2 — Microanatomie : distribution des îlots de Langerhans et organisation tissulaire</a></li>
+<li><a href="#s-8-2-2-1-distribution-régionale-des-îlots-l-héritage-embryologi" class="toc-h3">2.2.1 — Distribution régionale des îlots : l'héritage embryologique</a></li>
+<li><a href="#s-9-2-2-2-microvascularisation-insulaire-un-système-porte-en-min" class="toc-h3">2.2.2 — Microvascularisation insulaire : un système porte en miniature</a></li>
+<li><a href="#s-10-2-2-3-matrice-extracellulaire-et-environnement-péri-insulair" class="toc-h3">2.2.3 — Matrice extracellulaire et environnement péri-insulaire</a></li>
+<li><a href="#s-11-2-2-4-histologie-pratique-reconnaître-un-îlot" class="toc-h3">2.2.4 — Histologie pratique : reconnaître un îlot</a></li>
+<li><a href="#s-12-2-3-vascularisation-artérielle-et-drainage-veineux-portal" class="">2.3 — Vascularisation artérielle et drainage veineux portal</a></li>
+<li><a href="#s-13-2-3-1-vascularisation-artérielle" class="toc-h3">2.3.1 — Vascularisation artérielle</a></li>
+<li><a href="#s-14-2-3-2-drainage-veineux-portal-et-gradient-d-insulinémie-port" class="toc-h3">2.3.2 — Drainage veineux portal et gradient d'insulinémie porto-systémique</a></li>
+<li><a href="#s-15-2-3-3-le-peptide-c-marqueur-de-la-sécrétion-endogène" class="toc-h3">2.3.3 — Le peptide C : marqueur de la sécrétion endogène</a></li>
+<li><a href="#s-16-2-3-4-drainage-lymphatique" class="toc-h3">2.3.4 — Drainage lymphatique</a></li>
+<li><a href="#s-17-2-4-innervation-autonome-du-pancréas-endocrine" class="">2.4 — Innervation autonome du pancréas endocrine</a></li>
+<li><a href="#s-18-2-4-1-innervation-parasympathique-le-nerf-vague-et-la-phase-" class="toc-h3">2.4.1 — Innervation parasympathique : le nerf vague et la phase céphalique</a></li>
+<li><a href="#s-19-2-4-2-innervation-sympathique-les-nerfs-splanchniques-et-la-" class="toc-h3">2.4.2 — Innervation sympathique : les nerfs splanchniques et la réponse au stress</a></li>
+<li><a href="#s-20-2-4-3-système-nerveux-intra-pancréatique-neuropeptides-et-mo" class="toc-h3">2.4.3 — Système nerveux intra-pancréatique : neuropeptides et modulation fine</a></li>
+<li><a href="#s-21-2-4-4-neuropathie-autonome-diabétique-quand-l-innervation-se" class="toc-h3">2.4.4 — Neuropathie autonome diabétique : quand l'innervation se dégrade</a></li>
+<li><a href="#s-22-auto-évaluation-module-2" class="">Auto-évaluation — Module 2</a></li>
+<li><a href="#s-23-qcm" class="toc-h3">QCM</a></li>
+<li><a href="#s-24-cas-clinique" class="toc-h3">Cas clinique</a></li>
+<li><a href="#s-25-question-de-synthèse" class="toc-h3">Question de synthèse</a></li></ul></nav><main class="vertex-content"><h1>FORMATION DIABÉTOLOGIE — PARTIE I : FONDAMENTAUX</h1>
+<h1>MODULE 2 : ANATOMIE DU PANCRÉAS ENDOCRINE — Macroanatomie, Microanatomie, Vascularisation et Innervation</h1>
+<p><strong>Partie</strong> : I — Fondamentaux
+<strong>Durée estimée</strong> : 3h00
+<strong>Niveau</strong> : Fondamental
+<strong>Prérequis</strong> : Module 1 (Embryologie du pancréas), notions d'anatomie abdominale et de physiologie vasculaire</p>
+<hr />
+<h2 id="s-1-accroche-clinique">Accroche clinique</h2>
+<div class="vbox clinique"><span class="vbox-title">Mise en situation</span>
+Mme L., 62 ans, diabétique depuis 2 ans sous metformine (HbA1c 8,5%), a subi une pancréatectomie corporéo-caudale il y a 3 ans pour tumeur neuroendocrine. Son endocrinologue vous demande : <em>« Pourquoi cette patiente a-t-elle développé un diabète après résection du corps et de la queue, alors qu'un de mes autres patients, opéré de la tête du pancréas, reste normoglycémique ? Où se trouvent les îlots dans le pancréas ? Et pourquoi le dosage du peptide C me renseigne-t-il mieux que l'insulinémie sur sa sécrétion résiduelle ? »</em><br>
+> Pour répondre — et comprendre pourquoi la localisation anatomique d'une lésion pancréatique prédit le risque de diabète, pourquoi l'insulinémie périphérique sous-estime la sécrétion pancréatique réelle, et comment l'innervation module la sécrétion hormonale — il faut maîtriser l'anatomie macroscopique et microscopique du pancréas endocrine, sa vascularisation portale et son innervation autonome.
+</div>
+
+<h2 id="s-2-objectifs-d-apprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> la macroanatomie du pancréas (segments, rapports, canaux excréteurs) et sa corrélation avec l'imagerie</li>
+<li><strong>Expliquer</strong> la distribution hétérogène des îlots de Langerhans dans les différents segments pancréatiques et ses conséquences chirurgicales</li>
+<li><strong>Analyser</strong> le drainage veineux portal du pancréas endocrine, le gradient d'insulinémie porto-systémique et ses implications pharmacologiques</li>
+<li><strong>Distinguer</strong> les rôles respectifs du parasympathique et du sympathique dans la régulation de la sécrétion insulinique</li>
+<li><strong>Relier</strong> l'anatomie fonctionnelle du pancréas endocrine aux situations cliniques (chirurgie pancréatique, diabète de type 3c, neuropathie autonome)</li>
+</ol>
+<hr />
+<h2 id="s-3-2-1-macroanatomie-du-pancréas-segments-rapports-et-canaux-ex">2.1 — Macroanatomie du pancréas : segments, rapports et canaux excréteurs</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Le pancréas est un organe rétropéritonéal « caché » derrière l'estomac, difficilement accessible à l'examen clinique. Pourquoi cette localisation profonde complique-t-elle le diagnostic précoce des pathologies pancréatiques ? Et pourquoi la chirurgie de la tête du pancréas est-elle techniquement plus complexe que celle du corps ou de la queue ?
+</div>
+
+<p>La réponse réside dans les <strong>rapports anatomiques intimes</strong> du pancréas avec les structures vasculaires majeures et le cadre duodénal. La macroanatomie du pancréas n'est pas seulement une description morphologique — elle détermine directement les possibilités chirurgicales, les conséquences endocrines des résections et l'interprétation de l'imagerie.</p>
+<h3 id="s-4-2-1-1-morphologie-générale-et-segments">2.1.1 — Morphologie générale et segments</h3>
+<p>Le pancréas est un organe <strong>rétropéritonéal</strong> allongé, en forme de « marteau couché », pesant 60 à 100 g chez l'adulte et mesurant 15 à 20 cm de longueur. Il est orienté transversalement, légèrement oblique vers le haut et la gauche, étendu du cadre duodénal jusqu'au hile splénique. Sa consistance est lobulée, friable, de couleur jaune-rosé — caractéristiques qui expliquent la difficulté des sutures pancréatiques en chirurgie.</p>
+<p>L'organe est classiquement divisé en <strong>quatre segments</strong> principaux et un processus :</p>
+<p><strong>La tête</strong> (caput pancreatis) : c'est la portion la plus volumineuse, enchâssée dans la concavité du cadre duodénal (D1-D2-D3). Elle représente environ 30% de la masse totale. Ses rapports anatomiques sont particulièrement denses : en avant, le côlon transverse et le mésocôlon ; en arrière, la veine cave inférieure et l'artère mésentérique supérieure ; médialement, le cholédoque qui traverse son parenchyme pour atteindre l'ampoule de Vater. Cette intimité avec le cholédoque explique pourquoi les tumeurs de la tête pancréatique se manifestent souvent par un <strong>ictère obstructif</strong> (signe de Courvoisier).</p>
+<p><strong>Le processus unciné</strong> (processus uncinatus) : prolongement inférieur et gauche de la tête, il s'insinue en arrière des vaisseaux mésentériques supérieurs (artère et veine). En embryologie, il dérive du <strong>bourgeon ventral</strong> (cf. Module 1). Sa position anatomique rend sa résection indissociable de celle de la tête lors d'une duodéno-pancréatectomie céphalique (DPC, ou intervention de Whipple).</p>
+<p><strong>Le col</strong> (collum pancreatis) : segment étroit (~2 cm), il fait la jonction entre la tête et le corps. Il repose directement sur la <strong>confluence veineuse mésentérico-porte</strong> (union de la veine mésentérique supérieure et de la veine splénique pour former la veine porte). Cette relation est d'une importance chirurgicale capitale : lors d'une DPC, le chirurgien doit libérer la face postérieure du col de la veine porte — un geste délicat dont la faisabilité conditionne la résécabilité de la tumeur.</p>
+<p><strong>Le corps</strong> (corpus pancreatis) : il représente environ 30% de la masse et s'étend transversalement en avant de l'aorte et du rachis lombal (L1-L2). Ses rapports postérieurs comprennent l'artère splénique (qui chemine le long de son bord supérieur de manière tortueuse), le tronc cœliaque et les piliers du diaphragme. Le corps est le siège privilégié des <strong>pseudokystes</strong> post-pancréatites.</p>
+<p><strong>La queue</strong> (cauda pancreatis) : portion la plus fine et la plus mobile, elle se dirige vers le hile splénique dans le ligament spléno-rénal. Elle est le seul segment du pancréas qui est <strong>intrapéritonéal</strong> (et non rétropéritonéal). Cette mobilité relative facilite sa résection chirurgicale (pancréatectomie caudale, souvent couplée à une splénectomie en raison de la proximité des vaisseaux spléniques).</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Résection et conséquences endocrines** :<br>
+La densité en îlots de Langerhans varie selon le segment (cf. section 2.2). Retenez cette règle pratique : une résection de la <strong>queue</strong> et du <strong>corps</strong> (pancréatectomie corporéo-caudale) expose à un risque de diabète plus élevé qu'une résection de la <strong>tête</strong> (DPC), car la densité en cellules β est maximale dans la queue (bourgeon dorsal). Inversement, une DPC préserve la majorité du capital β-cellulaire.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S01-001</span><div class="vmedia-desc">Vue antérieure du pancréas in situ : segments (tête, processus unciné, col, corps, queue), rapports vasculaires et duodénaux (Identifiez chaque segment et localisez la confluence veineuse mésentérico-porte par rapport au col)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-5-2-1-2-système-canalaire-wirsung-et-santorini">2.1.2 — Système canalaire : Wirsung et Santorini</h3>
+<p>Le pancréas possède un <strong>double système canalaire</strong> excréteur, héritage direct de la double origine embryonnaire (cf. Module 1, section 1.1.2) :</p>
+<p>Le <strong>canal de Wirsung</strong> (canal pancréatique principal) dérive du canal du bourgeon ventral. Il traverse le pancréas dans toute sa longueur, de la queue à la tête, en recevant des canaux collatéraux à angle droit (disposition « en arête de poisson »). Son calibre normal augmente progressivement de la queue (~1 mm) vers la tête (~3,5 mm). Il s'abouche dans le duodénum (D2) au niveau de la <strong>papille majeure</strong> (ampoule de Vater), après avoir rejoint le cholédoque dans un trajet commun terminal. Le sphincter d'Oddi contrôle l'écoulement conjoint de la bile et du suc pancréatique.</p>
+<p>Le <strong>canal de Santorini</strong> (canal pancréatique accessoire) dérive du canal du bourgeon dorsal. Il draine essentiellement la partie supérieure de la tête et s'abouche au niveau de la <strong>papille mineure</strong>, environ 2 cm au-dessus de la papille majeure. Chez ~60% des individus, le canal de Santorini est fonctionnellement perméable ; chez les autres, il est atrophique ou non perméable.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Dilatation du Wirsung et cancer<strong> : Un Wirsung dilaté (>3 mm dans le corps, >1,5 mm dans la queue) sur une imagerie abdominale est un </strong>signe d'alarme**. Les étiologies principales sont : (1) obstruction par une tumeur de la tête (cancer pancréatique — associer à un ictère obstructif si le cholédoque est aussi comprimé), (2) pancréatite chronique (calcifications ± pseudokystes), (3) TIPMP (Tumeur Intra-canalaire Papillaire et Mucineuse du Pancréas) — lésion précancéreuse à surveiller. La règle clinique : tout Wirsung dilaté sans étiologie évidente impose une investigation rapide (IRM pancréatique + échoendoscopie).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S01-002</span><div class="vmedia-desc">Système canalaire pancréatique : canal de Wirsung, canal de Santorini, papille majeure et mineure, jonction bilio-pancréatique (Suivez le trajet du suc pancréatique de la queue jusqu'à D2 et identifiez le point de confluence avec le cholédoque)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-6-2-1-3-corrélations-en-imagerie">2.1.3 — Corrélations en imagerie</h3>
+<p>L'anatomie pancréatique est explorée par plusieurs modalités d'imagerie, chacune avec ses indications :</p>
+<table>
+<thead>
+<tr>
+<th>Modalité</th>
+<th>Visualisation</th>
+<th>Indications principales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Échographie abdominale</strong></td>
+<td>Parenchyme (limité par les gaz)</td>
+<td>Dépistage, dilatation Wirsung, cholédoque</td>
+</tr>
+<tr>
+<td><strong>Scanner (TDM) injecté</strong></td>
+<td>Parenchyme, rapports vasculaires, calcifications</td>
+<td>Bilan tumoral, pancréatite aiguë (score de Balthazar)</td>
+</tr>
+<tr>
+<td><strong>IRM pancréatique (CPRM)</strong></td>
+<td>Canaux (Wirsung, Santorini), parenchyme sans irradiation</td>
+<td>TIPMP, pancréatite chronique, anomalies canalaires</td>
+</tr>
+<tr>
+<td><strong>Échoendoscopie</strong></td>
+<td>Parenchyme haute résolution, petites lésions (&lt;1 cm)</td>
+<td>Micro-tumeurs, biopsie guidée, pancréatite chronique débutante</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+La cholangiopancréatographie par résonance magnétique (CPRM) a largement remplacé la CPRE (Cholangiopancréatographie Rétrograde Endoscopique) dans le diagnostic des anomalies canalaires. La CPRM est non invasive et visualise les canaux pancréatiques sans injection de produit de contraste intra-canalaire. Cependant, la CPRE conserve un rôle thérapeutique (sphinctérotomie, pose de prothèse). L'échoendoscopie reste la technique de référence pour les lésions <2 cm et la caractérisation tissulaire (élastographie, ponction sous échoendoscopie).
+</div>
+
+<div class="vexercice" id="ex_1"><div class="vexercice-title">Micro-exercice</div>
+<p>Un scanner abdominal révèle un pancréas aux contours irréguliers, des calcifications diffuses intra-parenchymateuses et un Wirsung dilaté à 8 mm dans le corps. Quel diagnostic évoquez-vous en priorité ? Quel examen complémentaire demanderiez-vous pour évaluer les canaux secondaires ?</p>
+<textarea class="vtext-answer" id="ex_1_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">Le tableau (calcifications + Wirsung dilaté + contours irréguliers) est caractéristique d'une pancréatite chronique calcifiante. L'examen complémentaire de choix est l'IRM pancréatique avec séquences CPRM, qui permet de visualiser les canaux secondaires, de rechercher des pseudokystes communicants et d'exclure une TIPMP associée (lésion précancéreuse sur pancréatite chronique).</div></details>
+</div>
+
+<div class="vtransition">La macroanatomie définit les segments du pancréas et leurs rapports. Mais pour comprendre pourquoi une résection du corps-queue cause plus de diabète qu'une résection de la tête, il faut plonger dans la microanatomie — la distribution des îlots de Langerhans au sein du parenchyme.</div>
+<hr />
+<h2 id="s-7-2-2-microanatomie-distribution-des-îlots-de-langerhans-et-or">2.2 — Microanatomie : distribution des îlots de Langerhans et organisation tissulaire</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Si les îlots de Langerhans ne représentent que 1-2% de la masse pancréatique, comment le pancréas assure-t-il un débit hormonal suffisant pour contrôler l'homéostasie glycémique de l'organisme entier ? Et pourquoi les îlots ne sont-ils pas répartis uniformément dans l'organe ?
+</div>
+
+<p>La réponse combine deux éléments : une <strong>vascularisation exceptionnelle</strong> (10-15% du débit sanguin total pour 1-2% de la masse — soit un rapport de 5 à 10 fois supérieur au tissu exocrine) et une <strong>distribution hétérogène</strong> des îlots qui reflète l'origine embryologique double du pancréas.</p>
+<h3 id="s-8-2-2-1-distribution-régionale-des-îlots-l-héritage-embryologi">2.2.1 — Distribution régionale des îlots : l'héritage embryologique</h3>
+<p>Le pancréas adulte contient environ <strong>1 million d'îlots de Langerhans</strong>, mais leur distribution n'est pas homogène. Les études morphométriques de référence (Rahier et al., <em>Diabetologia</em>, 1983 ; Wang et al., <em>Diabetologia</em>, 2013) ont établi une cartographie précise :</p>
+<p><strong>Queue et corps (bourgeon dorsal)</strong> : densité élevée en îlots, avec une prédominance de <strong>cellules β</strong> (50-60%) et <strong>cellules α</strong> (30-40%). La queue contient à elle seule une proportion disproportionnée de la masse β-cellulaire totale. Les îlots y sont plus gros (diamètre moyen 150-200 μm) et plus richement vascularisés.</p>
+<p><strong>Tête (bourgeon ventral)</strong> : densité en îlots plus faible, avec une particularité remarquable : enrichissement en <strong>cellules PP</strong> (polypeptide pancréatique). Dans certaines régions de la tête (notamment le processus unciné), les cellules PP peuvent représenter jusqu'à 50% des cellules endocrines insulaires, contre &lt;5% dans la queue. Cette distribution PP-enrichie est un vestige direct de l'origine du bourgeon ventral.</p>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Densité en îlots</th>
+<th>Cellules prédominantes</th>
+<th>Origine embryonnaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Queue</td>
+<td>Élevée</td>
+<td>β &gt; α &gt; δ</td>
+<td>Bourgeon dorsal</td>
+</tr>
+<tr>
+<td>Corps</td>
+<td>Intermédiaire-élevée</td>
+<td>β &gt; α &gt; δ</td>
+<td>Bourgeon dorsal</td>
+</tr>
+<tr>
+<td>Tête (supérieure)</td>
+<td>Intermédiaire</td>
+<td>β &gt; α &gt; δ &gt; PP</td>
+<td>Zone de fusion</td>
+</tr>
+<tr>
+<td>Tête (inférieure) + unciné</td>
+<td>Plus faible</td>
+<td>PP enrichi (jusqu'à 50%)</td>
+<td>Bourgeon ventral</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Chirurgie pancréatique et risque diabétogène<strong> : La distribution hétérogène des îlots a des conséquences chirurgicales directes. Une </strong>pancréatectomie corporéo-caudale<strong> (splénopancréatectomie gauche) enlève la zone la plus dense en cellules β, exposant à un risque de diabète post-opératoire de </strong>20 à 50%<strong> selon l'étendue de la résection et la réserve β-cellulaire préalable (Shirakawa et al., <em>J Hepatobiliary Pancreat Sci</em>, 2014). À l'inverse, une </strong>duodéno-pancréatectomie céphalique (DPC)<strong> préserve le corps et la queue, et le risque de diabète de novo est plus faible (10-20%), bien que l'altération de la physiologie digestive (perte de l'axe incrétine duodénale) puisse contribuer à une dysglycémie. Une </strong>pancréatectomie totale<strong> entraîne un </strong>diabète pancrétoprive** (type 3c) de gestion particulièrement difficile : perte simultanée de l'insuline ET du glucagon, avec risque d'hypoglycémies sévères « brittle diabetes ».
+</div>
+
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Prédiction du risque diabétogène** :<br>
+Avant une chirurgie pancréatique élective, l'évaluation pré-opératoire devrait inclure : HbA1c, glycémie à jeun, et idéalement un dosage du peptide C stimulé (post-prandial ou après glucagon). Un peptide C basal bas (<0,6 ng/mL) indique une réserve β-cellulaire limitée et un risque élevé de diabète post-opératoire, quel que soit le type de résection.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S02-001</span><div class="vmedia-desc">Cartographie de la distribution des îlots dans les segments pancréatiques : densité et composition cellulaire par segment (Comparez la densité en cellules β entre la queue et la tête — expliquez le risque diabétogène différentiel selon le type de résection)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-9-2-2-2-microvascularisation-insulaire-un-système-porte-en-min">2.2.2 — Microvascularisation insulaire : un système porte en miniature</h3>
+<p>La microvascularisation des îlots de Langerhans est remarquable par son <strong>intensité</strong> et son <strong>organisation fonctionnelle</strong>.</p>
+<p>Chaque îlot est irrigué par 1 à 3 <strong>artérioles afférentes</strong> qui pénètrent le pôle de l'îlot et se ramifient en un réseau capillaire <strong>fenêtré</strong> extrêmement dense. Les capillaires insulaires possèdent des <strong>fenestrations</strong> de 60-80 nm (pores transendothéliaux) qui permettent le passage rapide des hormones peptidiques — un dispositif comparable à celui des capillaires glomérulaires rénaux ou sinusoïdes hépatiques. Le débit sanguin insulaire est estimé à <strong>6-10 fois</strong> celui du tissu exocrine environnant par unité de masse.</p>
+<p>Le sang, après avoir traversé le réseau capillaire intra-insulaire, est collecté par des <strong>veinules efférentes</strong> qui drainent vers le système porte intra-pancréatique. Un concept important est celui du <strong>système porte insuloacinaire</strong> : chez certaines espèces (et probablement chez l'humain), le sang veineux sortant des îlots irrigue secondairement le tissu <strong>exocrine</strong> péri-insulaire avant de rejoindre les veines pancréatiques. Cela signifie que les acini entourant un îlot sont exposés à des concentrations d'insuline <strong>très élevées</strong> — l'insuline locale stimulant la synthèse d'enzymes digestives (notamment l'amylase). Ce couplage endo-exocrine explique pourquoi l'insuffisance exocrine accompagne souvent les diabètes avec carence insulinique sévère (DT1, DT3c).</p>
+<div class="vbox expert"><span class="vbox-title">Expert</span>
+La théorie du système porte insuloacinaire est soutenue par des études montrant que le tissu exocrine péri-insulaire présente des acini <strong>hypertrophiques</strong> (plus gros, plus actifs) par rapport aux acini distants des îlots (Malaisse-Lagae et al., <em>Endocrinology</em>, 1983). De plus, les patients DT1 de longue durée présentent une atrophie du tissu exocrine péri-insulaire, compatible avec la perte de l'effet trophique local de l'insuline. L'insuffisance exocrine pancréatique infraclinique (élastase fécale basse) est retrouvée chez jusqu'à <strong>40-50% des patients DT1</strong> et 20-30% des DT2 de longue durée (Hardt et al., <em>Diabetes Metab Res Rev</em>, 2011).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S02-002</span><div class="vmedia-desc">Microvascularisation d'un îlot de Langerhans : artérioles afférentes, capillaires fenêtrés, veinules efférentes et système porte insuloacinaire (Suivez le trajet du sang et identifiez pourquoi les acini péri-insulaires reçoivent de l'insuline à haute concentration)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-10-2-2-3-matrice-extracellulaire-et-environnement-péri-insulair">2.2.3 — Matrice extracellulaire et environnement péri-insulaire</h3>
+<p>Les îlots de Langerhans ne flottent pas dans un vide — ils sont entourés et infiltrés par une <strong>matrice extracellulaire</strong> (MEC) qui joue un rôle structurel et fonctionnel essentiel.</p>
+<p>La <strong>membrane basale péri-insulaire</strong> est composée principalement de collagène IV, de laminine (notamment les isoformes α5 et β1), de nidogène et de protéoglycanes. Cette membrane basale forme une interface entre le compartiment endocrine et le tissu exocrine environnant. Elle n'est pas une simple barrière passive : les cellules β possèdent des <strong>intégrines</strong> (β1, α3, α6) qui se lient spécifiquement à la laminine et au collagène IV, et cette adhésion est nécessaire à la <strong>survie</strong> et à la <strong>fonction sécrétoire</strong> des cellules β (Parnaud et al., <em>Diabetes</em>, 2006).</p>
+<p>La MEC intra-insulaire, plus discrète, est associée au réseau capillaire fenêtré. Elle contient du collagène IV péricapillaire, de la fibronectine et des facteurs de croissance séquestrés (VEGF-A notamment, qui maintient la fenestration vasculaire). La destruction de cette MEC lors de l'isolement enzymatique des îlots pour la greffe est l'une des causes de la perte cellulaire post-isolement — les protocoles modernes incorporent des suppléments de matrice (collagène IV, laminine) dans les milieux de culture pour améliorer la viabilité.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+La MEC péri-insulaire évolue avec la pathologie. Dans le DT2, le dépôt d'<strong>amyloïde insulaire</strong> (formé par l'agrégation de l'IAPP — Islet Amyloid Polypeptide, ou amyline, co-sécrétée avec l'insuline) remplace progressivement la MEC normale. Ce dépôt amyloïde est retrouvé dans >90% des pancréas de patients DT2 à l'autopsie (Westermark et al., <em>Ups J Med Sci</em>, 2011). Il contribue à la mort des cellules β par un mécanisme de toxicité membranaire (oligomères d'IAPP formant des pores dans la membrane plasmique) et par la perturbation du microenvironnement matriciel.
+</div>
+
+<h3 id="s-11-2-2-4-histologie-pratique-reconnaître-un-îlot">2.2.4 — Histologie pratique : reconnaître un îlot</h3>
+<p>En histologie conventionnelle (coloration HES — Hématoxyline-Éosine-Safran), les îlots de Langerhans apparaissent comme des <strong>amas cellulaires pâles</strong>, plus clairs que le tissu exocrine environnant (qui est plus basophile en raison de sa richesse en réticulum endoplasmique granuleux). Les cellules insulaires sont plus petites que les acini, disposées en cordons ou amas irréguliers, et entourées d'un réseau capillaire dense.</p>
+<p>L'identification des sous-types cellulaires nécessite des techniques spéciales :</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Cellules identifiées</th>
+<th>Marqueur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Immunohistochimie anti-insuline</strong></td>
+<td>Cellules β</td>
+<td>Insuline/pro-insuline</td>
+</tr>
+<tr>
+<td><strong>Immunohistochimie anti-glucagon</strong></td>
+<td>Cellules α</td>
+<td>Glucagon</td>
+</tr>
+<tr>
+<td><strong>Immunohistochimie anti-somatostatine</strong></td>
+<td>Cellules δ</td>
+<td>Somatostatine</td>
+</tr>
+<tr>
+<td><strong>Immunofluorescence multiplexe</strong></td>
+<td>Toutes simultanément</td>
+<td>Multi-marqueurs + DAPI</td>
+</tr>
+<tr>
+<td><strong>Coloration de Grimelius</strong></td>
+<td>Cellules endocrines (toutes)</td>
+<td>Argyrophilie</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+En pratique anatomopathologique, le comptage des cellules β et l'évaluation de la masse insulaire sont réalisés sur des coupes sériées avec immunomarquage anti-insuline. Cette technique est utilisée pour : (1) le diagnostic des insulinomes (tumeur neuroendocrine bénigne = hypersécrétion focale d'insuline), (2) l'évaluation post-mortem de la masse β-cellulaire (études autopsiques de Butler et al., 2003), (3) le contrôle qualité des greffons d'îlots avant transplantation (pourcentage de cellules β viables).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📷</span><span class="vmedia-code">MDIAB02-S02-003</span><div class="vmedia-desc">Histologie du pancréas : coupe HES et immunomarquage anti-insuline, anti-glucagon, anti-somatostatine d'un îlot normal (Comparez la coloration HES où l'îlot apparaît comme un amas pâle avec l'immunomarquage qui révèle la composition cellulaire)</div><div class="vmedia-note">Média à intégrer — PHOTO</div></div>
+
+<div class="vexercice" id="ex_2"><div class="vexercice-title">Micro-exercice</div>
+<p>Un anatomopathologiste observe une biopsie pancréatique montrant un îlot contenant 60% de cellules PP et 20% de cellules β. De quelle région du pancréas provient très probablement cette biopsie ? Justifiez en utilisant vos connaissances sur l'embryologie et la distribution régionale des îlots.</p>
+<textarea class="vtext-answer" id="ex_2_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">Un îlot enrichi en cellules PP (60%) provient très probablement de la partie inférieure de la tête ou du processus unciné — territoire dérivé du bourgeon ventral. Dans la queue et le corps (bourgeon dorsal), les cellules PP représentent <5% des cellules insulaires. Ce gradient PP reflète directement l'origine embryologique double du pancréas.</div></details>
+</div>
+
+<div class="vtransition">La distribution hétérogène des îlots et leur microvascularisation intense ne prennent tout leur sens que lorsqu'on les replace dans le contexte du drainage veineux portal — le système qui connecte la sécrétion pancréatique au foie, créant un gradient d'insulinémie aux implications cliniques majeures.</div>
+<hr />
+<h2 id="s-12-2-3-vascularisation-artérielle-et-drainage-veineux-portal">2.3 — Vascularisation artérielle et drainage veineux portal</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un patient diabétique de type 2 est traité par insuline sous-cutanée. Son diabétologue constate que le contrôle glycémique est difficile, avec des hypoglycémies périphériques fréquentes. Pourquoi l'insuline injectée en sous-cutané ne reproduit-elle pas fidèlement la sécrétion physiologique ? La réponse est liée au drainage portal du pancréas.
+</div>
+
+<h3 id="s-13-2-3-1-vascularisation-artérielle">2.3.1 — Vascularisation artérielle</h3>
+<p>Le pancréas reçoit sa vascularisation artérielle de <strong>deux sources principales</strong>, correspondant à ses deux segments embryologiques :</p>
+<p><strong>Tête du pancréas</strong> : vascularisée par les <strong>arcades pancréaticoduodénales</strong>, formées par l'anastomose entre :
+- L'artère <strong>pancréaticoduodénale supérieure</strong> (branche de l'artère gastroduodénale, elle-même issue de l'artère hépatique commune → tronc cœliaque)
+- L'artère <strong>pancréaticoduodénale inférieure</strong> (branche de l'artère mésentérique supérieure)</p>
+<p>Ces arcades forment un réseau anastomotique antérieur et postérieur qui vascularise la tête et le processus unciné. Cette double alimentation (tronc cœliaque + AMS) confère à la tête une sécurité vasculaire relative — mais rend la chirurgie complexe en raison du nombre de vaisseaux à contrôler.</p>
+<p><strong>Corps et queue du pancréas</strong> : vascularisés principalement par les <strong>branches pancréatiques de l'artère splénique</strong>. L'artère splénique chemine le long du bord supérieur du pancréas de manière sinueuse et émet 6 à 10 branches pancréatiques courtes, ainsi que l'<strong>artère pancréatique dorsale</strong> (grande artère pancréatique de Von Haller) qui irrigue la face postérieure du corps. L'artère pancréatique dorsale peut naître de l'artère splénique, du tronc cœliaque ou de l'artère mésentérique supérieure — cette variabilité doit être connue du chirurgien.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Hémorragie splénique peropératoire<strong> : Lors d'une pancréatectomie corporéo-caudale, la proximité intime entre l'artère splénique et le bord supérieur du corps pancréatique impose souvent une </strong>splénectomie associée<em>* (pancréatectomie gauche avec splénectomie). Une technique de conservation splénique est possible (technique de Kimura — dissection méticuleuse de chaque branche pancréatique, préservant l'axe splénique) mais reste techniquement exigeante. La conservation de la rate est importante chez le sujet jeune (risque d'infections encapsulées post-splénectomie, notamment </em>Streptococcus pneumoniae*).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S03-001</span><div class="vmedia-desc">Vascularisation artérielle du pancréas : arcades pancréaticoduodénales, branches de l'artère splénique, artère pancréatique dorsale (Identifiez la double alimentation de la tête — tronc cœliaque et AMS — et les branches spléniques du corps-queue)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-14-2-3-2-drainage-veineux-portal-et-gradient-d-insulinémie-port">2.3.2 — Drainage veineux portal et gradient d'insulinémie porto-systémique</h3>
+<p>Le drainage veineux du pancréas est <strong>exclusivement portal</strong> : l'ensemble du sang veineux pancréatique rejoint le système porte pour atteindre le foie <strong>avant</strong> la circulation systémique. Ce drainage s'effectue via :</p>
+<ul>
+<li>Les <strong>veines pancréaticoduodénales</strong> (tête) → veine mésentérique supérieure → veine porte</li>
+<li>Les <strong>veines pancréatiques courtes</strong> (corps et queue) → veine splénique → veine porte</li>
+</ul>
+<p>La confluence de la veine mésentérique supérieure et de la veine splénique forme la <strong>veine porte</strong> derrière le col du pancréas — un repère anatomique majeur.</p>
+<p>Ce drainage portal a une <strong>conséquence physiologique fondamentale</strong> : l'insuline sécrétée par les cellules β passe en premier lieu par le foie avant d'atteindre la circulation générale. Le foie capte et dégrade environ <strong>50% de l'insuline</strong> au premier passage hépatique (clairance hépatique de l'insuline). Il en résulte un <strong>gradient d'insulinémie porto-systémique</strong> :</p>
+<ul>
+<li><strong>Insulinémie portale</strong> : 300-800 pM (en phase postprandiale)</li>
+<li><strong>Insulinémie périphérique</strong> : 100-300 pM (en phase postprandiale)</li>
+<li><strong>Rapport porto-systémique</strong> : <strong>2-3×</strong> (l'insulinémie portale est 2 à 3 fois supérieure à l'insulinémie périphérique)</li>
+</ul>
+<p>Ce gradient a des implications majeures :</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Pourquoi l'insuline sous-cutanée n'est pas physiologique** :<br>
+L'insuline endogène (sécrétée par le pancréas) emprunte le drainage portal et atteint le foie à des concentrations 2-3 fois supérieures à la périphérie. Le foie — principal organe de stockage du glucose (glycogenèse) et de freinage de la production hépatique de glucose (néoglucogenèse) — est donc exposé à des niveaux élevés d'insuline, ce qui est nécessaire pour son action métabolique optimale.<br>
+> L'insuline exogène (injectée en sous-cutané) <strong>contourne le système porte</strong> : elle rejoint directement la circulation systémique et atteint le foie à la même concentration que les tissus périphériques. Conséquence : pour freiner suffisamment la production hépatique de glucose, il faut des doses qui exposent les tissus périphériques (muscles, tissu adipeux) à des concentrations d'insuline <strong>supra-physiologiques</strong> — d'où les hypoglycémies, la prise de poids et l'hyperinsulinémie périphérique chronique des patients sous insuline sous-cutanée. Ce problème fondamental a motivé les recherches sur l'<strong>insuline intra-portale</strong> (pompe implantable intra-péritonéale) et l'<strong>insuline inhalée</strong> (absorption par les capillaires pulmonaires).
+</div>
+
+<h3 id="s-15-2-3-3-le-peptide-c-marqueur-de-la-sécrétion-endogène">2.3.3 — Le peptide C : marqueur de la sécrétion endogène</h3>
+<p>Le <strong>peptide C</strong> (connecting peptide) est co-sécrété avec l'insuline en quantités équimolaires. Lors de la maturation de la pro-insuline dans les granules sécrétoires des cellules β, la pro-insuline est clivée en <strong>insuline</strong> + <strong>peptide C</strong> + deux dipeptides. L'insuline et le peptide C sont libérés ensemble dans la circulation portale.</p>
+<p>La différence cruciale : <strong>le peptide C n'est PAS capté par le foie</strong> au premier passage. Alors que ~50% de l'insuline est extraite par les hépatocytes, le peptide C traverse le foie sans extraction significative et atteint la circulation systémique à une concentration reflétant fidèlement le taux de sécrétion β-cellulaire.</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Insuline</th>
+<th>Peptide C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Captation hépatique au premier passage</td>
+<td>~50%</td>
+<td>~0%</td>
+</tr>
+<tr>
+<td>Demi-vie plasmatique</td>
+<td>~5-6 min</td>
+<td>~30 min</td>
+</tr>
+<tr>
+<td>Reflet de la sécrétion endogène</td>
+<td>Sous-estimée (extraction hépatique)</td>
+<td><strong>Fidèle</strong></td>
+</tr>
+<tr>
+<td>Interférence par l'insuline exogène</td>
+<td>Oui (dosage mesure endo + exo)</td>
+<td><strong>Non</strong> (uniquement endogène)</td>
+</tr>
+<tr>
+<td>Utilité clinique</td>
+<td>Limitée sous insulinothérapie</td>
+<td><strong>Marqueur de référence</strong> de la sécrétion résiduelle</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Quand doser le peptide C ?** :<br>
+Le dosage du peptide C est indiqué dans 4 situations : (1) <strong>Distinction DT1 vs DT2 tardif</strong> : un peptide C effondré (<0,2 ng/mL) confirme l'insulinopénie du DT1 ; un peptide C conservé (>0,8 ng/mL) oriente vers le DT2. (2) <strong>Évaluation du diabète de type 3c</strong> (post-chirurgie, post-pancréatite) : le peptide C quantifie la réserve β-cellulaire résiduelle. (3) <strong>Suspicion d'insulinome</strong> : peptide C élevé + hypoglycémie = sécrétion endogène inappropriée. (4) <strong>Hypoglycémie factice</strong> : insulinémie élevée + peptide C BAS = injection clandestine d'insuline exogène (le peptide C n'accompagne pas l'insuline injectée).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S03-002</span><div class="vmedia-desc">Gradient d'insulinémie porto-systémique : schéma du trajet de l'insuline et du peptide C du pancréas au foie puis à la périphérie, avec les taux de captation hépatique (Comparez les concentrations d'insuline dans la veine porte vs la veine sus-hépatique — identifiez pourquoi le peptide C reflète mieux la sécrétion endogène)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-16-2-3-4-drainage-lymphatique">2.3.4 — Drainage lymphatique</h3>
+<p>Le drainage lymphatique du pancréas suit les pédicules vasculaires et se fait vers plusieurs groupes ganglionnaires :</p>
+<ul>
+<li><strong>Ganglions pancréaticoduodénaux</strong> (antérieurs et postérieurs) pour la tête</li>
+<li><strong>Ganglions suprapancréatiques</strong> (le long de l'artère splénique) pour le corps</li>
+<li><strong>Ganglions du hile splénique</strong> pour la queue</li>
+<li><strong>Ganglions mésentériques supérieurs</strong> pour le processus unciné</li>
+</ul>
+<p>Ce drainage lymphatique a une importance oncologique majeure : il guide le <strong>curage ganglionnaire</strong> lors de la chirurgie carcinologique du pancréas. Lors d'une DPC, le curage emporte les ganglions pancréaticoduodénaux antérieurs et postérieurs, les ganglions pyloriques et les ganglions du pédicule hépatique. Le nombre de ganglions examinés (minimum 15 recommandés) et le rapport ganglions envahis/ganglions examinés (lymph node ratio) sont des facteurs pronostiques indépendants dans l'adénocarcinome du pancréas.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+Le drainage lymphatique du pancréas n'est pas uniquement pertinent en oncologie. Des études récentes suggèrent un rôle des ganglions lymphatiques pancréatiques dans la <strong>présentation antigénique</strong> des auto-antigènes β-cellulaires dans le DT1. Les cellules β apoptotiques libèrent des auto-antigènes (insuline, GAD65, IA-2, ZnT8) qui sont drainés vers les ganglions pancréatiques, où les cellules dendritiques les présentent aux lymphocytes T naïfs. Les ganglions pancréatiques pourraient ainsi être le site initial de l'activation auto-immune dans le DT1 (Gagnerault et al., <em>J Exp Med</em>, 2002).
+</div>
+
+<div class="vexercice" id="ex_3"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient diabétique sous insuline basale + bolus a une insulinémie mesurée à 45 mUI/L et un peptide C à 0,3 ng/mL (norme 0,8-3,5 ng/mL). L'insulinémie reflète-t-elle la sécrétion endogène ou l'insuline injectée ? Justifiez en utilisant vos connaissances sur le premier passage hépatique.</p>
+<textarea class="vtext-answer" id="ex_3_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">Le peptide C très bas (0,3 ng/mL, sous la norme) indique une sécrétion endogène quasi nulle — les cellules β résiduelles ne sécrètent pratiquement plus d'insuline. L'insulinémie élevée (45 mUI/L) reflète donc exclusivement l'insuline exogène injectée en sous-cutané. L'insuline sous-cutanée rejoint directement la circulation systémique sans premier passage hépatique, contrairement à l'insuline endogène qui est captée à ~50% par le foie. Le dosage de l'insulinémie chez un patient sous insulinothérapie est donc ininterprétable pour évaluer la sécrétion résiduelle — seul le peptide C est informatif.</div></details>
+</div>
+
+<div class="vtransition">La vascularisation et le drainage portal expliquent comment les hormones pancréatiques atteignent leurs organes cibles. Mais la sécrétion elle-même est régulée en temps réel par un système nerveux autonome complexe, dont la dysfonction contribue aux troubles glycémiques du diabétique.</div>
+<hr />
+<h2 id="s-17-2-4-innervation-autonome-du-pancréas-endocrine">2.4 — Innervation autonome du pancréas endocrine</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Vous êtes à table et la simple vue d'un plat appétissant fait saliver — réflexe parasympathique classique. Mais saviez-vous que cette même stimulation déclenche une sécrétion d'insuline AVANT même que le premier glucide soit absorbé ? Comment le cerveau peut-il anticiper les besoins en insuline avant l'arrivée du glucose ?
+</div>
+
+<p>La réponse réside dans la <strong>phase céphalique</strong> de la sécrétion d'insuline, médiée par l'innervation parasympathique du pancréas — un mécanisme anticipatoire élégant qui prépare l'organisme à l'afflux de nutriments.</p>
+<h3 id="s-18-2-4-1-innervation-parasympathique-le-nerf-vague-et-la-phase-">2.4.1 — Innervation parasympathique : le nerf vague et la phase céphalique</h3>
+<p>Le pancréas reçoit une innervation parasympathique dense par le <strong>nerf vague (X)</strong>, via ses branches cœliaques. Les fibres parasympathiques pré-ganglionnaires (cholinergiques) font synapse dans les <strong>ganglions intra-pancréatiques</strong> avec des neurones post-ganglionnaires qui innervent directement les îlots.</p>
+<p>Le neurotransmetteur principal est l'<strong>acétylcholine</strong> (ACh), qui agit sur les <strong>récepteurs muscariniques M3</strong> des cellules β. L'activation de M3 stimule la sécrétion d'insuline par deux mécanismes complémentaires :</p>
+<ol>
+<li>
+<p><strong>Potentialisation de la sécrétion glucose-dépendante</strong> : l'ACh ne stimule pas directement l'exocytose des granules d'insuline, mais elle amplifie la réponse sécrétoire au glucose. Mécanisme : activation de la phospholipase C → production d'IP3 et de DAG → mobilisation du calcium intracellulaire et activation de la PKC → potentialisation de l'exocytose.</p>
+</li>
+<li>
+<p><strong>Phase céphalique</strong> : avant même l'ingestion de nourriture, les stimuli sensoriels (vue, odeur, goût, mastication) activent le noyau moteur dorsal du vague dans le bulbe rachidien, qui envoie des efférences vagales aux îlots. Cette stimulation déclenche une <strong>sécrétion anticipatoire d'insuline</strong> (phase céphalique) qui représente ~1-3% de la sécrétion insulinique totale d'un repas (Teff, <em>Physiol Behav</em>, 2011). Bien que quantitativement modeste, cette phase céphalique est fonctionnellement importante : elle <strong>amorce</strong> la sensibilité hépatique à l'insuline et prépare le foie à stocker le glucose qui va arriver.</p>
+</li>
+</ol>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Phase céphalique et nutrition entérale<strong> : Chez les patients en nutrition entérale continue (sonde nasogastrique ou gastrostomie), la phase céphalique est </strong>supprimée** car la nourriture ne passe pas par la bouche. Résultat : la réponse insulinique est retardée et l'excursion glycémique post-prandiale est plus marquée. Certains protocoles de nutrition en réanimation tentent de restaurer cette phase céphalique par des « leurres gustatifs » (saveur sucrée sans calories) — une approche encore expérimentale mais basée sur une physiologie solide.
+</div>
+
+<p>Le nerf vague stimule également la sécrétion de <strong>glucagon</strong> (cellules α), de <strong>somatostatine</strong> (cellules δ) et de <strong>polypeptide pancréatique</strong> (PP). Le PP est d'ailleurs considéré comme un <strong>marqueur de l'activité vagale</strong> pancréatique : un pic de PP en réponse à l'hypoglycémie insulinique (test de l'hypoglycémie) confirme l'intégrité de l'innervation vagale du pancréas.</p>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S04-001</span><div class="vmedia-desc">Innervation parasympathique du pancréas : trajet du nerf vague, ganglions intra-pancréatiques, récepteurs M3 sur les cellules β, mécanisme de la phase céphalique (Suivez le signal nerveux depuis le cortex gustatif jusqu'à la cellule β et identifiez les étapes de la phase céphalique)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-19-2-4-2-innervation-sympathique-les-nerfs-splanchniques-et-la-">2.4.2 — Innervation sympathique : les nerfs splanchniques et la réponse au stress</h3>
+<p>L'innervation sympathique du pancréas provient des <strong>nerfs grands splanchniques</strong> (T5-T9) qui font synapse dans le <strong>ganglion cœliaque</strong>. Les fibres post-ganglionnaires (noradrénergiques) suivent les artères pancréatiques pour atteindre les îlots.</p>
+<p>Les effets du sympathique sur la sécrétion pancréatique sont <strong>globalement inhibiteurs</strong> pour l'insuline et <strong>stimulateurs</strong> pour le glucagon — une combinaison logique dans le contexte de la réponse au stress (« fight or flight ») qui nécessite une hyperglycémie pour fournir de l'énergie aux muscles :</p>
+<table>
+<thead>
+<tr>
+<th>Récepteur</th>
+<th>Localisation</th>
+<th>Effet sur la sécrétion d'insuline</th>
+<th>Effet sur la sécrétion de glucagon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>α2-adrénergique</strong></td>
+<td>Cellules β</td>
+<td><strong>Inhibition</strong> (mécanisme principal)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>β2-adrénergique</strong></td>
+<td>Cellules β</td>
+<td>Stimulation (faible)</td>
+<td><strong>Stimulation</strong></td>
+</tr>
+<tr>
+<td><strong>α1-adrénergique</strong></td>
+<td>Cellules β</td>
+<td>Inhibition (mineur)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>L'effet net du sympathique sur la cellule β est <strong>inhibiteur</strong>, car les récepteurs α2 dominent. Mécanisme : l'activation α2 inhibe l'adénylate cyclase → diminution de l'AMPc intracellulaire → réduction de l'exocytose des granules d'insuline. Les récepteurs β2, bien que présents, n'ont pas un effet suffisant pour contrebalancer l'inhibition α2 dans les conditions physiologiques.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Bêtabloquants et masquage des hypoglycémies<strong> : Les bêtabloquants non sélectifs (propranolol, nadolol) bloquent les récepteurs β2 des cellules β et des cellules α. Conséquences chez le patient diabétique : (1) réduction de la sécrétion résiduelle d'insuline (effet mineur), (2) inhibition de la sécrétion de glucagon en réponse à l'hypoglycémie (effet majeur) → </strong>aggravation et prolongation des hypoglycémies**, (3) masquage des symptômes adrénergiques d'hypoglycémie (tachycardie, tremblements, sueurs — médiés par les récepteurs β). Les bêtabloquants β1-sélectifs (bisoprolol, nébivolol) sont préférés chez le patient diabétique car ils épargnent les récepteurs β2 pancréatiques.
+</div>
+
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Stress et hyperglycémie** :<br>
+L'activation sympathique lors du stress (douleur, infection, chirurgie, traumatisme) inhibe la sécrétion d'insuline (α2) et stimule le glucagon (β2), combinée à l'augmentation des hormones de contre-régulation (cortisol, adrénaline, GH). C'est la base physiopathologique de l'<strong>hyperglycémie de stress</strong>, fréquente en réanimation et pouvant révéler un prédiabète latent. Un dosage d'HbA1c chez tout patient hospitalisé avec une hyperglycémie de stress permet de distinguer une hyperglycémie aiguë (HbA1c normale) d'un diabète méconnu (HbA1c élevée).
+</div>
+
+<h3 id="s-20-2-4-3-système-nerveux-intra-pancréatique-neuropeptides-et-mo">2.4.3 — Système nerveux intra-pancréatique : neuropeptides et modulation fine</h3>
+<p>Au-delà de l'innervation extrinsèque (vague et splanchniques), le pancréas possède un <strong>système nerveux intra-pancréatique</strong> (enteric-like nervous system) comprenant environ 200 à 500 ganglions contenant plusieurs milliers de neurones. Ce réseau nerveux autonome local module la sécrétion hormonale par des <strong>neuropeptides</strong> :</p>
+<p><strong>VIP (Vasoactive Intestinal Peptide)</strong> : neuropeptide libéré par les fibres nerveuses intra-pancréatiques, le VIP est un puissant <strong>stimulateur de la sécrétion d'insuline</strong>. Il agit via les récepteurs VPAC1 et VPAC2 sur les cellules β, activant l'adénylate cyclase → augmentation de l'AMPc → potentialisation de l'exocytose glucose-dépendante. Le VIP est aussi vasodilatateur — il augmente le débit sanguin insulaire, optimisant la détection du glucose et la délivrance hormonale.</p>
+<p><strong>PACAP (Pituitary Adenylate Cyclase-Activating Polypeptide)</strong> : neuropeptide structurellement apparenté au VIP, le PACAP est l'un des stimulateurs les plus puissants de la sécrétion d'insuline identifiés à ce jour. Il agit via les récepteurs PAC1 (spécifique) et VPAC1/2 (partagés avec le VIP). Des modèles murins invalidés pour le PACAP montrent une intolérance au glucose et un défaut de la phase précoce de sécrétion d'insuline (Jamen et al., <em>J Clin Invest</em>, 2000).</p>
+<p><strong>Galanine</strong> : neuropeptide inhibiteur, la galanine réduit la sécrétion d'insuline via les récepteurs GalR1. Elle agit en opposition au VIP et au PACAP, créant un système de <strong>balance fine</strong> entre stimulation et inhibition neurale de la sécrétion insulinique. La galanine est prédominante dans les fibres sympathiques intra-pancréatiques.</p>
+<div class="vbox expert"><span class="vbox-title">Expert</span>
+Le concept de « neuro-insular complex » (complexe neuro-insulaire) décrit l'association structurelle et fonctionnelle entre les terminaisons nerveuses et les cellules endocrines au sein de l'îlot. Les terminaisons nerveuses forment des synapses directes avec les cellules β, α et δ, permettant une modulation neurale quasi instantanée de la sécrétion hormonale. En immunofluorescence, ces terminaisons sont marquées par la synaptophysine et les neuropeptides spécifiques (VIP, PACAP, galanine, NPY). La densité de ces terminaisons est réduite dans le pancréas des patients DT2, suggérant que la « dénervation insulaire » contribue à la dysfonction sécrétoire (Rodriguez-Diaz et al., <em>Cell Metab</em>, 2011).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S04-002</span><div class="vmedia-desc">Innervation intra-pancréatique : neuropeptides stimulateurs (VIP, PACAP) et inhibiteurs (galanine) des cellules β, avec les voies de signalisation intracellulaires (Identifiez l'équilibre entre stimulation parasympathique/VIP et inhibition sympathique/galanine)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-21-2-4-4-neuropathie-autonome-diabétique-quand-l-innervation-se">2.4.4 — Neuropathie autonome diabétique : quand l'innervation se dégrade</h3>
+<p>La <strong>neuropathie autonome diabétique</strong> (NAD) est une complication chronique du diabète (DT1 et DT2) qui affecte progressivement les fibres nerveuses autonomes — y compris celles du pancréas. La NAD touche environ <strong>20-40% des patients diabétiques</strong> après 10-15 ans d'évolution (Vinik et al., <em>Diabetes Care</em>, 2003).</p>
+<p>L'atteinte de l'innervation pancréatique a des conséquences spécifiques, souvent sous-estimées :</p>
+<p><strong>Perte de la phase céphalique</strong> : la dénervation vagale du pancréas supprime la sécrétion anticipatoire d'insuline. Conséquence : l'excursion glycémique post-prandiale est plus marquée et plus prolongée, car le « priming » hépatique n'a pas lieu.</p>
+<p><strong>Altération de la contre-régulation</strong> : la réponse glucagonique à l'hypoglycémie est partiellement médiée par le sympathique (activation β2 des cellules α). Chez le patient DT1 avec NAD, cette réponse est altérée, contribuant au syndrome d'<strong>hypoglycemia unawareness</strong> (hypoglycémies non ressenties) — une complication grave qui touche jusqu'à 25% des DT1 de longue durée (Cryer, <em>J Clin Invest</em>, 2006).</p>
+<p><strong>Gastroparésie et variabilité glycémique</strong> : la NAD touche aussi l'innervation gastrique, causant un retard de vidange gastrique (gastroparésie). L'absorption des glucides devient erratique, créant un <strong>décalage imprévisible</strong> entre le pic d'insuline injectée et l'arrivée du glucose — source majeure de variabilité glycémique et de frustration pour le patient et le soignant.</p>
+<div class="vbox controverse"><span class="vbox-title">Controverse — Dénervation pancréatique et progression du DT2</span>
+Certains auteurs suggèrent que la dénervation sympathique et parasympathique progressive du pancréas contribue directement à la <strong>détérioration de la fonction β-cellulaire</strong> dans le DT2, au-delà de la glucolipotoxicité. L'argument : les neuropeptides intra-pancréatiques (VIP, PACAP) ont un effet trophique sur les cellules β (survie et prolifération), et leur perte pourrait accélérer l'apoptose β-cellulaire. Les données restent préliminaires (Ahrén, <em>Diabetologia</em>, 2000), mais cette hypothèse « neurogène » du déclin β-cellulaire dans le DT2 est un axe de recherche actif.
+</div>
+
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Dépistage de la NAD** : Le dépistage de la neuropathie autonome diabétique repose sur des tests cardiovasculaires simples (variabilité de la fréquence cardiaque à la respiration profonde, test de Valsalva, recherche d'hypotension orthostatique — critères d'Ewing). Il est recommandé à partir de 5 ans de diabète pour le DT2 et 5 ans post-puberté pour le DT1 (ADA Standards of Care, 2024). La présence d'une NAD cardiovasculaire doit faire suspecter une atteinte de l'innervation pancréatique et adapter la prise en charge glycémique (objectifs moins stricts chez les patients à risque d'hypoglycemia unawareness).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB02-S04-003</span><div class="vmedia-desc">Neuropathie autonome diabétique : atteinte progressive des fibres parasympathiques puis sympathiques, conséquences sur la sécrétion d'insuline, la contre-régulation et la vidange gastrique (Identifiez la séquence d'atteinte et ses conséquences sur la régulation glycémique)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<div class="vexercice" id="ex_4"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient DT1 de 52 ans (diabète depuis 30 ans) se plaint d'hypoglycémies nocturnes sévères sans symptômes prémonitoires (pas de sueurs, pas de tachycardie). Il a aussi des ballonnements post-prandiaux et des épisodes de malaise au lever.</p>
+<div style="margin:12px 0;"><label for="ex_4_q1" style="font-weight:600;color:#00695C;">1. Quel syndrome évoquez-vous ?</label><br><textarea class="vtext-answer" id="ex_4_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_4_q2" style="font-weight:600;color:#00695C;">2. Quels mécanismes physiopathologiques (liés à l'innervation pancréatique) expliquent ses hypoglycémies non ressenties ?</label><br><textarea class="vtext-answer" id="ex_4_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) Neuropathie autonome diabétique (NAD) avancée, avec atteinte cardiovasculaire (hypotension orthostatique au lever), gastro-intestinale (gastroparésie → ballonnements) et métabolique (hypoglycemia unawareness). (2) Les hypoglycémies non ressenties s'expliquent par : (a) perte de la réponse glucagonique à l'hypoglycémie (atteinte des fibres sympathiques β2 → les cellules α ne sont plus stimulées pour sécréter du glucagon de contre-régulation), (b) perte des symptômes adrénergiques d'alerte (tachycardie, sueurs, tremblements — médiés par les récepteurs β bloqués fonctionnellement par la NAD), (c) seuil d'activation abaissé du système nerveux autonome par les hypoglycémies récurrentes (« hypoglycemia-associated autonomic failure » — Cryer, 2006).</div></details>
+</div>
+
+<div class="vtransition">L'anatomie du pancréas endocrine — de l'organe macroscopique aux terminaisons nerveuses intra-insulaires — forme un système intégré dont la compréhension est indispensable pour appréhender les mécanismes de la sécrétion d'insuline et les conséquences des pathologies pancréatiques. Le module suivant explorera la physiologie détaillée de la cellule β et le couplage glucose-sécrétion.</div>
+<hr />
+<div class="vpoints-cles"><div class="vpoints-cles-title">Points clés — Module 2</div><ol>
+<li>Le pancréas est un organe rétropéritonéal de <strong>60-100 g</strong> dont les îlots ne représentent que <strong>1-2% de la masse</strong> mais reçoivent <strong>10-15% du débit sanguin</strong> — disproportion reflétant leur activité métabolique intense</li>
+<li><strong>Distribution hétérogène</strong> des îlots : densité en cellules β plus élevée dans la <strong>queue et le corps</strong> (bourgeon dorsal), cellules <strong>PP enrichies dans la tête</strong> (bourgeon ventral) — conséquence directe de l'embryologie</li>
+<li>Le <strong>gradient d'insulinémie porto-systémique</strong> (2-3×) résulte de la captation hépatique de ~50% de l'insuline au premier passage — ce gradient est <strong>perdu</strong> sous insulinothérapie sous-cutanée</li>
+<li>Le <strong>peptide C</strong>, co-sécrété avec l'insuline mais <strong>non capté par le foie</strong>, est le marqueur fidèle de la sécrétion endogène — indispensable sous insulinothérapie</li>
+<li>L'innervation <strong>parasympathique</strong> (vague → M3 → ACh) <strong>stimule</strong> la sécrétion d'insuline, incluant la phase céphalique anticipatoire ; l'innervation <strong>sympathique</strong> (splanchniques → α2) <strong>inhibe</strong> la sécrétion d'insuline</li>
+<li>Les <strong>neuropeptides intra-pancréatiques</strong> (VIP, PACAP stimulateurs ; galanine inhibitrice) modulent finement la sécrétion hormonale</li>
+<li>Les pathologies destructrices du pancréas (pancréatite chronique, cancer, chirurgie) causent un <strong>diabète de type 3c</strong> dont la sévérité dépend de la localisation et de l'étendue de la destruction</li>
+</ol></div>
+<hr />
+<h2 id="s-22-auto-évaluation-module-2">Auto-évaluation — Module 2</h2>
+<h3 id="s-23-qcm">QCM</h3>
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 1</span></div><div class="vqcm-question">Quelle proportion du débit sanguin pancréatique total est dirigée vers les îlots de Langerhans ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_0"><label for="qcm_1_0">A) 1-2%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_1"><label for="qcm_1_1">B) 5-7%</label></li>
+<li data-correct="true"><input type="radio" name="qcm_1" id="qcm_1_2"><label for="qcm_1_2">C) 10-15%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_3"><label for="qcm_1_3">D) 25-30%</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Les îlots représentent 1-2% de la masse pancréatique mais reçoivent 10-15% du débit sanguin — cette disproportion vascularisation/masse reflète leur activité métabolique intense et leur rôle endocrine majeur.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 2</span></div><div class="vqcm-question">Le gradient d'insulinémie porto-systémique signifie que :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_0"><label for="qcm_2_0">A) La concentration d'insuline est identique dans la veine porte et dans la circulation systémique</label></li>
+<li data-correct="true"><input type="radio" name="qcm_2" id="qcm_2_1"><label for="qcm_2_1">B) La concentration d'insuline est 2-3× plus élevée dans la veine porte que dans la circulation systémique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_2"><label for="qcm_2_2">C) Le glucagon est capté à 90% par le foie</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_3"><label for="qcm_2_3">D) Le peptide C est capté à 50% par le foie</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Environ 50% de l'insuline sécrétée est captée au premier passage hépatique. Le foie « voit » donc des concentrations d'insuline 2-3× supérieures à celles mesurées en périphérie. Le peptide C (co-sécrété avec l'insuline) n'est PAS capté par le foie, ce qui en fait un marqueur fiable de la sécrétion endogène.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 3</span></div><div class="vqcm-question">Quel nerf est responsable de la « phase céphalique » de la sécrétion d'insuline ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_0"><label for="qcm_3_0">A) Le nerf grand splanchnique</label></li>
+<li data-correct="true"><input type="radio" name="qcm_3" id="qcm_3_1"><label for="qcm_3_1">B) Le nerf vague (X)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_2"><label for="qcm_3_2">C) Le nerf phrénique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_3"><label for="qcm_3_3">D) Le nerf récurrent laryngé</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Le nerf vague (X), composante parasympathique, stimule la sécrétion d'insuline via l'acétylcholine et les récepteurs muscariniques M3 des cellules β. La phase céphalique correspond à une sécrétion d'insuline anticipatoire déclenchée par la vue, l'odeur et le goût des aliments, avant même l'absorption glucidique.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge or">🥇 Or</span><span>QCM 4</span></div><div class="vqcm-question">Un patient de 50 ans avec pancréatite chronique calcifiante développe un diabète insulinorequérant. Ce diabète est classé :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_0"><label for="qcm_4_0">A) DT1</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_1"><label for="qcm_4_1">B) DT2</label></li>
+<li data-correct="true"><input type="radio" name="qcm_4" id="qcm_4_2"><label for="qcm_4_2">C) Diabète de type 3c (pancréatique)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_3"><label for="qcm_4_3">D) LADA</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Le diabète de type 3c (ou diabète pancréatoprive) est causé par la destruction du parenchyme pancréatique (pancréatite chronique, cancer, hémochromatose, mucoviscidose, chirurgie). Il se distingue du DT1 (auto-immun) et du DT2 (insulinorésistance) par son étiologie et ses caractéristiques : atteinte combinée exocrine + endocrine, carence en glucagon (risque d'hypoglycémies sévères), élastase fécale basse.</div></details>
+<hr />
+<h3 id="s-24-cas-clinique">Cas clinique</h3>
+<div class="vbox clinique"><span class="vbox-title">Cas</span>
+Mme L., 62 ans**<br>
+Diabète diagnostiqué il y a 2 ans, HbA1c 8,5% sous metformine. Antécédent de pancréatectomie corporéo-caudale pour tumeur neuroendocrine il y a 3 ans. Poids stable, pas de stéatorrhée.<br>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge or">🥇 Or</span> <strong style="color:#E65100;">Q1</strong> : Pourquoi cette patiente est-elle plus susceptible de développer un diabète après chirurgie du corps et de la queue du pancréas plutôt que de la tête ?<br>
+> <em>Réponse attendue : Les îlots de Langerhans sont plus denses dans la queue et le corps (bourgeon dorsal) que dans la tête (bourgeon ventral). La résection corporéo-caudale enlève donc proportionnellement plus d'îlots β-sécréteurs. Les études morphométriques montrent que la densité en cellules β est maximale dans la queue — une pancréatectomie corporéo-caudale expose à un risque de diabète de 20-50%, contre 10-20% pour une DPC.</em><br></div><textarea class="vtext-answer" id="cas_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge argent">🥈 Argent</span> <strong style="color:#E65100;">Q2</strong> : Le dosage du peptide C serait-il informatif chez cette patiente ?<br>
+> <em>Réponse attendue : Oui. Le peptide C reflète la sécrétion résiduelle d'insuline endogène car il n'est pas capté par le foie (~0% d'extraction hépatique, vs ~50% pour l'insuline). Un peptide C bas confirmerait l'insuffisance β-cellulaire post-chirurgicale (diabète de type 3c) et orienterait vers l'insulinothérapie. Un peptide C encore conservé (>0,6 ng/mL) suggérerait que le parenchyme restant (tête) maintient une sécrétion suffisante pour envisager un traitement par antidiabétiques oraux (metformine ± sulfamide ± incrétine).</em></div><textarea class="vtext-answer" id="cas_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+</div>
+
+<hr />
+<h3 id="s-25-question-de-synthèse">Question de synthèse</h3>
+<div class="vexercice" style="border-color:#00ACC1; background:#E0F7FA;"><div class="vexercice-title" style="color:#006064;">💎 Question de synthèse</div><p>Un chirurgien vous demande conseil avant d'opérer un patient pour un adénocarcinome du corps du pancréas. Le patient est déjà prédiabétique (HbA1c 6,2%, glycémie à jeun 1,18 g/L). Quel bilan endocrinien pré-opératoire recommanderiez-vous, et quelles informations donneriez-vous au patient sur le risque de diabète post-opératoire ? Développez en 8-10 lignes en abordant : la distribution des îlots, le peptide C, le drainage portal et l'innervation.</p><textarea class="vtext-answer" id="synth_1" rows="6" placeholder="Développez votre réponse ici (8-10 lignes)..."></textarea></div>
+<blockquote>
+<p><em>Éléments de réponse : (1) </em><em>Bilan pré-opératoire</em><em> : HbA1c (confirmer le prédiabète), glycémie à jeun, peptide C basal et stimulé (évaluer la réserve β-cellulaire — un peptide C déjà bas est un facteur de risque majeur de diabète post-opératoire), élastase fécale (fonction exocrine de base). (2) </em><em>Information au patient</em><em> : la résection du corps pancréatique enlève une zone à forte densité en îlots de Langerhans (bourgeon dorsal). Chez un patient déjà prédiabétique (réserve β-cellulaire entamée), le risque de diabète post-opératoire est élevé (&gt;50%). Ce diabète sera de type 3c, avec risque d'hypoglycémies par déficit combiné en insuline ET en glucagon. Le drainage portal sera préservé (le pancréas restant — tête — draine toujours dans la veine porte), mais la masse β-cellulaire réduite ne suffira probablement pas à maintenir l'euglycémie. La neuropathie préexistante potentielle (prédiabète) pourrait aggraver la dysrégulation glycémique post-opératoire. Une insulinothérapie sera probablement nécessaire, avec un suivi endocrinologique étroit.</em></p>
+</blockquote>
+<hr />
+<div class="vrefs"><div class="vrefs-title">Références bibliographiques</div><ul>
+<li>Standring S (ed). <em>Gray's Anatomy: The Anatomical Basis of Clinical Practice</em>. 42nd ed. Elsevier; 2021. Chapters 62-63 (Pancreas).</li>
+<li>Rahier J et al. <em>Cellular composition of the human diabetic pancreas</em>. Diabetologia. 1983;24(5):366-371.</li>
+<li>Wang X et al. <em>Regional differences in islet distribution in the human pancreas — preferential beta-cell loss in the head region in patients with type 2 diabetes</em>. Diabetologia. 2013;56(12):2673-2682.</li>
+<li>Cabrera O et al. <em>The unique cytoarchitecture of human pancreatic islets</em>. PNAS. 2006;103(7):2334-2339.</li>
+<li>Bonner-Weir S, Orci L. <em>New perspectives on the microvasculature of the islets of Langerhans in the rat</em>. Diabetes. 1982;31(10):883-889.</li>
+<li>Parnaud G et al. <em>Blockade of β1 integrin-laminin-5 interaction affects spreading and insulin secretion of rat β-cells attached on extracellular matrix protein coated surfaces</em>. Diabetes. 2006;55(5):1413-1420.</li>
+<li>Malaisse-Lagae F et al. <em>Exocrine-endocrine relationships in the pancreas</em>. Endocrinology. 1983;113(1):104-110.</li>
+<li>Hardt PD et al. <em>Exocrine pancreatic insufficiency in diabetes mellitus</em>. Diabetes Metab Res Rev. 2011;27(8):823-831.</li>
+<li>Westermark P et al. <em>Islet amyloid polypeptide, islet amyloid, and diabetes mellitus</em>. Ups J Med Sci. 2011;116(2):81-89.</li>
+<li>Butler AE et al. <em>Beta-cell deficit and increased beta-cell apoptosis in humans with type 2 diabetes</em>. Diabetes. 2003;52(1):102-110.</li>
+<li>Teff KL. <em>How neural mediation of anticipatory and compensatory insulin release helps us tolerate food</em>. Physiol Behav. 2011;103(1):44-50.</li>
+<li>Rodriguez-Diaz R et al. <em>Innervation patterns of autonomic axons in the human endocrine pancreas</em>. Cell Metab. 2011;14(1):45-54.</li>
+<li>Jamen F et al. <em>PAC1 receptor-deficient mice display impaired insulinotropic response to glucose and reduced glucose tolerance</em>. J Clin Invest. 2000;105(9):1307-1315.</li>
+<li>Ahrén B. <em>Autonomic regulation of islet hormone secretion — implications for health and disease</em>. Diabetologia. 2000;43(4):393-410.</li>
+<li>Vinik AI et al. <em>Diabetic autonomic neuropathy</em>. Diabetes Care. 2003;26(5):1553-1579.</li>
+<li>Cryer PE. <em>Mechanisms of sympathoadrenal failure and hypoglycemia in diabetes</em>. J Clin Invest. 2006;116(6):1470-1473.</li>
+<li>Gagnerault MC et al. <em>Pancreatic lymph nodes are required for priming of β cell reactive T cells in NOD mice</em>. J Exp Med. 2002;196(3):369-377.</li>
+<li>Shirakawa S et al. <em>Risk factors for new-onset diabetes mellitus after distal pancreatectomy</em>. J Hepatobiliary Pancreat Sci. 2014;21(8):591-599.</li>
+<li>Shapiro AM et al. <em>Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen</em>. N Engl J Med. 2000;343(4):230-238.</li>
+<li>American Diabetes Association. <em>Standards of Medical Care in Diabetes — 2024</em>. Diabetes Care. 2024;47(Suppl 1).</li>
+</ul></div>
+<hr />
+<p><em>VERTEX© — Formation Diabétologie — Module 2 : Anatomie du Pancréas Endocrine</em>
+<em>Ce contenu est destiné à des praticiens confirmés. Il ne se substitue pas au jugement clinique.</em></p><div class="vertex-footer">VERTEX© — Virtual Environment for Real-Time EXpertise<br/>Formation médicale e-learning — doctraining.ma</div></main></div></body></html>

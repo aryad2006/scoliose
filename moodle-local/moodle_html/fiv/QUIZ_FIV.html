@@ -1,0 +1,3075 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="quiz-fiv-amp-vertex">QUIZ FIV / AMP — VERTEX©</h1>
+<p><strong>Formation</strong> : VERTEX© — Fécondation In Vitro et Assistance Médicale à la Procréation<br />
+<strong>Code</strong> : QZFIV<br />
+<strong>Total</strong> : 110 questions<br />
+<strong>Niveaux</strong> : 🥉 Bronze (33) · 🥈 Argent (28) · 🥇 Or (27) · 💎 Diamant (22)<br />
+<strong>Modules couverts</strong> : M01→M45 (13 parties)<br />
+<strong>Date</strong> : 20 mars 2026</p>
+<hr />
+<h2 id="bronze-rappel-factuel-definitions-seuils">🥉 BRONZE — Rappel factuel, définitions, seuils</h2>
+<hr />
+<h3 id="question-fiv-br-001-qcm">Question FIV-BR-001 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : histoire · <strong>Module</strong> : M01 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Quelle date marque la naissance du premier « bébé-éprouvette » humain (Louise Brown) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10 novembre 1977</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>25 juillet 1978</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>14 février 1980</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3 mars 1982</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 1977 est l'année de la fécondation, pas de la naissance.</li>
+<li><em>Proposition 2</em> : Exact. Louise Brown est née le 25 juillet 1978 à l'Oldham General Hospital (Royaume-Uni), grâce aux travaux d'Edwards et Steptoe.</li>
+<li><em>Proposition 3</em> : Amandine, premier bébé FIV français, est née le 24 février 1982 — pas 1980.</li>
+<li><em>Proposition 4</em> : Date fictive.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Edwards et Steptoe ont réalisé la FIV sur un cycle naturel (un seul ovocyte) sans stimulation ovarienne. Le prix Nobel de médecine a été décerné à Edwards en 2010, 32 ans après.</p>
+<p>📚 <strong>Référence</strong> : Steptoe PC, Edwards RG. <em>Birth after the reimplantation of a human embryo</em>. Lancet 1978.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-002-qcm">Question FIV-BR-002 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : histoire · <strong>Module</strong> : M02 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quelle technique, développée par Palermo et Van Steirteghem en 1992, a révolutionné la prise en charge de l'infertilité masculine sévère ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La FIV classique avec co-incubation prolongée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L'ICSI (injection intracytoplasmique de spermatozoïde)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Le diagnostic préimplantatoire (PGT)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La vitrification ovocytaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La FIV classique nécessite 50 000-100 000 spermatozoïdes mobiles par ovocyte et ne résout pas l'OAT sévère.</li>
+<li><em>Proposition 2</em> : Exact. L'ICSI permet de féconder avec un seul spermatozoïde injecté directement dans l'ovocyte, avec un taux de fécondation de 70-80 % même en OAT sévère.</li>
+<li><em>Proposition 3</em> : Le PGT (Handyside 1990) concerne le diagnostic génétique, pas la fécondation.</li>
+<li><em>Proposition 4</em> : La vitrification ovocytaire performante date de 2005 (Kuwayama).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Palermo G et al. <em>Pregnancies after ICSI of a single spermatozoon into an oocyte</em>. Lancet 1992.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-003-qcm">Question FIV-BR-003 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quel est le seuil d'AMH évoquant une diminution de la réserve ovarienne (DOR) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&lt; 3,5 ng/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&lt; 2,0 ng/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&lt; 1,1 ng/mL</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&lt; 0,3 ng/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 3,5 ng/mL est la limite supérieure de la normale — au-delà, suspecter un SOPK.</li>
+<li><em>Proposition 2</em> : 2,0 ng/mL est dans la fourchette normale.</li>
+<li><em>Proposition 3</em> : Exact. AMH &lt; 1,1 ng/mL évoque une réserve ovarienne diminuée. La corrélation AMH–CFA est forte (r = 0,7-0,8).</li>
+<li><em>Proposition 4</em> : 0,3 ng/mL correspond à une réserve très basse, quasi épuisée, mais le seuil de DOR est 1,1 ng/mL.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : L'AMH est sécrétée par les cellules de la granulosa des follicules pré-antraux et petits antraux. Elle est non cyclique (dosable à tout moment du cycle) et constitue le meilleur marqueur quantitatif de la réserve ovarienne, sans préjuger de la qualité ovocytaire.</p>
+<p>📚 <strong>Référence</strong> : La Marca A et al. <em>AMH-based nomograms</em>. Hum Reprod Update 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-004-qcm">Question FIV-BR-004 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>Quel compte de follicules antraux (CFA) au J2-J5 est considéré comme normal ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&lt; 5 follicules au total</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5 à 15 follicules au total</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>15 à 30 follicules au total</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&gt; 30 follicules au total</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : CFA &lt; 5 = réserve ovarienne diminuée (DOR).</li>
+<li><em>Proposition 2</em> : Exact. CFA 5-15 (certains auteurs 8-15) est considéré normal.</li>
+<li><em>Proposition 3</em> : CFA &gt; 20 évoque un excès folliculaire (profil SOPK), avec risque accru de SHO.</li>
+<li><em>Proposition 4</em> : &gt; 30 est hautement évocateur de SOPK.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Broekmans FJ et al. <em>Antral follicle count</em>. Fertil Steril 2010.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-005-qcm">Question FIV-BR-005 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : reproduction masculine · <strong>Module</strong> : M06 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Selon les normes OMS 2021 (6e édition), quel est le seuil inférieur de concentration spermatique normale ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>≥ 10 M/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>≥ 16 M/mL</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>≥ 20 M/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>≥ 39 M/mL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Ce seuil n'est pas retenu par l'OMS.</li>
+<li><em>Proposition 2</em> : Exact. OMS 2021 : concentration ≥ 16 M/mL (anciennement 15 M/mL en 2010).</li>
+<li><em>Proposition 3</em> : 20 M/mL était le seuil OMS 1999, abandonné depuis.</li>
+<li><em>Proposition 4</em> : 39 M/mL correspond au nombre total par éjaculat (volume × concentration), pas à la concentration seule.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Les normes OMS 2021 incluent aussi : mobilité progressive ≥ 30 %, morphologie Kruger ≥ 4 %, volume ≥ 1,4 mL, vitalité ≥ 54 %. Un spermogramme anormal doit être confirmé à ≥ 3 mois d'intervalle.</p>
+<p>📚 <strong>Référence</strong> : OMS. <em>WHO Laboratory Manual for the Examination and Processing of Human Semen</em>, 6th ed., 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-006-qcm">Question FIV-BR-006 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : fécondation · <strong>Module</strong> : M07 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Lors de la vérification de la fécondation à J1 (H16-18), combien de pronuclei (PN) observe-t-on en cas de fécondation normale ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1 PN</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2 PN</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3 PN</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0 PN</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 1 PN est un cas atypique à réévaluer à H+2 (possible parthénogénèse ou PN asynchrones).</li>
+<li><em>Proposition 2</em> : Exact. 2 PN (un paternel, un maternel) = fécondation normale diploïde.</li>
+<li><em>Proposition 3</em> : 3 PN = polyspermie ou non-expulsion du 2e globule polaire → embryon triploïde → <strong>à éliminer</strong>.</li>
+<li><em>Proposition 4</em> : 0 PN peut être un échec de fécondation ou une observation trop tardive (PN déjà disparus).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Alpha Scientists/ESHRE. <em>The Istanbul consensus workshop on embryo assessment</em>. Hum Reprod 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-007-qcm">Question FIV-BR-007 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : épidémiologie · <strong>Module</strong> : M08 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Quelle est la prévalence approximative de l'infertilité dans la population générale ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1-3 % des couples</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5-8 % des couples</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10-15 % des couples</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>25-30 % des couples</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Largement sous-estimé.</li>
+<li><em>Proposition 2</em> : Sous-estimé.</li>
+<li><em>Proposition 3</em> : Exact. L'infertilité touche 10-15 % des couples en âge de procréer. La fécondabilité mensuelle normale est de 15-25 %.</li>
+<li><em>Proposition 4</em> : Surestimé.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : L'infertilité se définit par l'absence de grossesse après 12 mois de rapports réguliers sans contraception. Les étiologies se répartissent en : féminine 30 %, masculine 30 %, mixte 20 %, inexpliquée 20 %.</p>
+<p>📚 <strong>Référence</strong> : Mascarenhas MN et al. <em>National, regional, and global trends in infertility prevalence</em>. PLoS Med 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-008-qcm">Question FIV-BR-008 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation · <strong>Module</strong> : M12 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quel protocole de stimulation est actuellement recommandé en première intention en FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Protocole long agoniste</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Protocole antagoniste</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Protocole en cycle naturel</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Protocole PPOS (progestin-primed)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le protocole long agoniste était le gold standard dans les années 1990 mais est associé à un risque accru de SHO et une durée plus longue. Il reste indiqué dans l'endométriose sévère et le PGT.</li>
+<li><em>Proposition 2</em> : Exact. Le protocole antagoniste est le standard actuel : durée réduite, risque de SHO diminué (possibilité de trigger agoniste), efficacité comparable.</li>
+<li><em>Proposition 3</em> : Le cycle naturel a des taux de succès par cycle nettement inférieurs.</li>
+<li><em>Proposition 4</em> : Le PPOS est une alternative en freeze-all (pas de transfert frais possible).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Al-Inany HG et al. <em>GnRH antagonists versus long agonist</em>. Cochrane 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-009-qcm">Question FIV-BR-009 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation · <strong>Module</strong> : M14 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>Quels sont les critères échographiques de déclenchement de l'ovulation en stimulation FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>≥ 1 follicule ≥ 20 mm</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>≥ 3 follicules ≥ 17 mm</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>≥ 5 follicules ≥ 14 mm</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>≥ 10 follicules ≥ 12 mm</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Un seul follicule ≥ 20 mm peut suffire en IIU mais pas en FIV (objectif multi-folliculaire).</li>
+<li><em>Proposition 2</em> : Exact. Critères de déclenchement : ≥ 3 follicules ≥ 17 mm, avec E2 &lt; 5 000 pg/mL et progestérone &lt; 1,5 ng/mL.</li>
+<li><em>Proposition 3</em> : Les follicules de 14 mm sont encore immatures (stade MI).</li>
+<li><em>Proposition 4</em> : Les follicules de 12 mm n'ont pas atteint la maturité ovocytaire.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : La corrélation taille-maturité est : &lt; 14 mm = GV (immature), 14-16 mm = MI, <strong>17-22 mm = MII (cible)</strong>, &gt; 24 mm = post-mature. La croissance folliculaire est de 1-3 mm/jour sous stimulation.</p>
+<p>📚 <strong>Référence</strong> : Revelli A et al. <em>Follicular output and oocyte quality</em>. Reprod Biomed Online 2015.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-010-qcm">Question FIV-BR-010 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : ponction · <strong>Module</strong> : M16 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quel est le délai optimal entre le déclenchement (trigger) et la ponction ovocytaire ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>24-28 heures</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>34-36 heures</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>38-42 heures</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>48-52 heures</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Trop tôt — les ovocytes n'ont pas terminé leur maturation méiotique (risque d'ovocytes immatures).</li>
+<li><em>Proposition 2</em> : Exact. Le timing de 34-36h permet la reprise de méiose et la maturation ovocytaire sans risque d'ovulation spontanée.</li>
+<li><em>Proposition 3</em> : À partir de 38-40h, le risque d'ovulation spontanée augmente significativement → perte des ovocytes dans la cavité péritonéale.</li>
+<li><em>Proposition 4</em> : Beaucoup trop tard — ovulation quasi certaine.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Edwards RG. <em>Maturation in vitro of human oocytes</em>. Lancet 1965.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-011-qcm">Question FIV-BR-011 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : cryobiologie · <strong>Module</strong> : M23 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quel est le taux de survie ovocytaire après vitrification selon le protocole Cryotop ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>50-60 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>70-80 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&gt; 90 %</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : C'est le taux de survie de la congélation lente (méthode ancienne).</li>
+<li><em>Proposition 2</em> : Sous-estimé pour la vitrification moderne.</li>
+<li><em>Proposition 3</em> : Exact. La vitrification (Kuwayama 2005) atteint un taux de survie ovocytaire &gt; 90-97 %, grâce à une vitesse de refroidissement &gt; 20 000 °C/min empêchant la cristallisation intracellulaire.</li>
+<li><em>Proposition 4</em> : Aucune technique n'atteint 100 %.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Le protocole Cryotop utilise 15 % DMSO + 15 % éthylène glycol + 0,5 M sucrose dans un volume &lt; 1 µL, avec un système ouvert (contact direct N₂ liquide). Le blastocyste est le stade préférentiel (survie &gt; 95-99 %).</p>
+<p>📚 <strong>Référence</strong> : Kuwayama M et al. <em>Highly efficient vitrification method for cryopreservation of human oocytes</em>. Reprod Biomed Online 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-012-qcm">Question FIV-BR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : classification · <strong>Module</strong> : M19 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Selon la classification de Gardner, comment désigne-t-on un blastocyste de qualité optimale à J5 ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Grade I, fragmentation &lt; 10 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4AA</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Morula compactée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2PN symétrique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Cette description correspond à la classification J2-J3 (cellulaire), pas au blastocyste.</li>
+<li><em>Proposition 2</em> : Exact. Classification Gardner : expansion (1-6), ICM (A/B/C), TE (A/B/C). Un 4AA = blastocyste expansé avec masse cellulaire interne et trophectoderme de qualité A. Taux d'implantation 40-50 %.</li>
+<li><em>Proposition 3</em> : La morula est le stade J4, pas un blastocyste.</li>
+<li><em>Proposition 4</em> : 2PN est l'observation à J1, pas une classification de blastocyste.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Gardner DK, Schoolcraft WB. <em>In vitro culture of human blastocysts</em>. 1999.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-013-qcm">Question FIV-BR-013 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : transfert · <strong>Module</strong> : M20 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quelle est la politique de transfert recommandée chez une patiente &lt; 38 ans en 1er-2e cycle FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Double transfert embryonnaire (DET) systématique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Single embryo transfer (SET) au stade blastocyste</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Triple embryo transfer</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Transfert de tous les embryons disponibles</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le DET multiplie le risque de grossesse gémellaire (20-25 %) avec complications maternelles et néonatales significatives.</li>
+<li><em>Proposition 2</em> : Exact. Le SET cumulé (frais + TEC) donne un taux de naissance comparable au DET tout en réduisant les grossesses multiples à 2-3 % <em>(Pandian, Cochrane 2013)</em>.</li>
+<li><em>Proposition 3</em> : Le transfert triple est abandonné dans la quasi-totalité des centres.</li>
+<li><em>Proposition 4</em> : Dangereux — risque de grossesse multiple de haut rang.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pandian Z et al. <em>Number of embryos for transfer</em>. Cochrane 2013.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-014-qcm">Question FIV-BR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : phase lutéale · <strong>Module</strong> : M21 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quel est le traitement standard du soutien de la phase lutéale en FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>hCG en injections répétées</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Progestérone vaginale (ex. Utrogestan 200 mg × 3/j)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Estradiol seul par voie orale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucun soutien lutéal n'est nécessaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'hCG en soutien lutéal augmente le risque de SHO — abandonné.</li>
+<li><em>Proposition 2</em> : Exact. La progestérone vaginale est le standard, avec effet de premier passage utérin. Alternative : dydrogestérone orale 10 mg × 3/j <em>(essai LOTUS, Tournaye, NEJM 2017)</em>. Soutien poursuivi jusqu'à 8-12 SA.</li>
+<li><em>Proposition 3</em> : L'estradiol seul ne compense pas le déficit en progestérone.</li>
+<li><em>Proposition 4</em> : L'insuffisance lutéale est quasi constante en FIV (aspiration des granulosa, inhibition de la LH par les analogues).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : van der Linden M et al. <em>Luteal phase support in IVF</em>. Cochrane 2015.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-015-qcm">Question FIV-BR-015 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : SHO · <strong>Module</strong> : M36 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Quel est le médiateur central du syndrome d'hyperstimulation ovarienne (SHO) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>L'estradiol (E2)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le VEGF (Vascular Endothelial Growth Factor)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La progestérone</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le TNF-alpha</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'E2 est un marqueur de risque mais pas le médiateur causal.</li>
+<li><em>Proposition 2</em> : Exact. Le VEGF, sécrété par la granulosa lutéinisée sous l'effet de l'hCG, provoque une perméabilité capillaire → fuite vers le 3e secteur → hémoconcentration → thrombose.</li>
+<li><em>Proposition 3</em> : La progestérone n'est pas impliquée dans la cascade du SHO.</li>
+<li><em>Proposition 4</em> : Le TNF-alpha joue un rôle secondaire dans la réaction inflammatoire.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : La cascade du SHO : hCG → VEGF → perméabilité capillaire → ascite, épanchement pleural, hémoconcentration → risque de thrombose (4-10 % des SHO sévères, territoires inhabituels : jugulaire, cérébrale, Budd-Chiari).</p>
+<p>📚 <strong>Référence</strong> : Golan A et al. <em>Ovarian hyperstimulation syndrome: an update review</em>. Obstet Gynecol Surv 1989.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-016-qcm">Question FIV-BR-016 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : législation · <strong>Module</strong> : M40 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Quelle loi française a ouvert l'AMP aux couples de femmes et aux femmes seules ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Loi de bioéthique 2004</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Loi de bioéthique 2011</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Loi de bioéthique 2021</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Loi de bioéthique 2024</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La loi 2004 a autorisé la recherche sur l'embryon et élargi le DPI.</li>
+<li><em>Proposition 2</em> : La loi 2011 a notamment autorisé la vitrification en France.</li>
+<li><em>Proposition 3</em> : Exact. La loi du 2 août 2021 a ouvert l'AMP aux couples de femmes et aux femmes seules (don de sperme CECOS), autorisé l'autoconservation ovocytaire sociétale (29-37 ans), et permis l'accès aux origines (CAPADD).</li>
+<li><em>Proposition 4</em> : La loi 2024 apporte des ajustements mais n'est pas celle de l'ouverture.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Loi n° 2021-1017 du 2 août 2021 relative à la bioéthique.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-017-qcm">Question FIV-BR-017 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : cryoconservation · <strong>Module</strong> : M24 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Combien de protocoles de TEC (transfert d'embryons congelés) principaux existe-t-il ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1 seul (cycle substitué)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2 (naturel et substitué)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3 (naturel modifié, substitué, stimulé)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5 ou plus</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Incomplet.</li>
+<li><em>Proposition 2</em> : Incomplet — le cycle stimulé est un 3e protocole validé.</li>
+<li><em>Proposition 3</em> : Exact. Cycle naturel modifié (hCG quand follicule ≥ 17 mm), cycle substitué (E2V + progestérone), cycle stimulé (faibles doses FSH). Le cycle substitué est le plus utilisé mais expose à un risque obstétrical accru (pas de corps jaune).</li>
+<li><em>Proposition 4</em> : Trois protocoles principaux, avec des variantes mineures.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ghobara T et al. <em>Cycle regimens for frozen-thawed embryo transfer</em>. Cochrane 2017.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-018-qcm">Question FIV-BR-018 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : préservation fertilité · <strong>Module</strong> : M25 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quelle est la tranche d'âge autorisée pour l'autoconservation ovocytaire sociétale en France ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>18-30 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>25-35 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>29-37 ans</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pas de limite d'âge</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Trop jeune — la borne inférieure est 29 ans.</li>
+<li><em>Proposition 2</em> : La borne supérieure est 37, pas 35.</li>
+<li><em>Proposition 3</em> : Exact. La loi de bioéthique 2021 autorise l'autoconservation sociétale entre 29 et 37 ans, sans justification médicale. La stimulation et la ponction sont remboursées, mais pas la conservation annuelle (200-400 €/an).</li>
+<li><em>Proposition 4</em> : La loi fixe des bornes d'âge.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : L'efficacité optimale est avant 35 ans. Taux de naissance par ovocyte : 5-7 % si &lt; 35 ans. Objectif ≥ 15 ovocytes vitrifiés pour un taux cumulatif de 70-85 %. Seulement 5-20 % des femmes utilisent finalement leurs ovocytes.</p>
+<p>📚 <strong>Référence</strong> : Loi n° 2021-1017 du 2 août 2021 ; ABM, rapport 2023.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-019-qcm">Question FIV-BR-019 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : laboratoire · <strong>Module</strong> : M33 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quelle est la classe ISO requise pour la salle de culture embryonnaire dans un laboratoire de FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ISO 1-3 (salle ultra-propre)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ISO 5-7 (salle blanche)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ISO 8-9 (environnement contrôlé standard)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucune classification n'est requise</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'ISO 1-3 est utilisée en microélectronique, pas en biologie de la reproduction.</li>
+<li><em>Proposition 2</em> : Exact. Le laboratoire de FIV doit répondre aux normes ISO 5-7 : pression positive, filtration HEPA, absence de COV (parfum interdit), température et humidité contrôlées.</li>
+<li><em>Proposition 3</em> : Insuffisant pour la manipulation de gamètes et embryons.</li>
+<li><em>Proposition 4</em> : L'accréditation COFRAC ISO 15189 est obligatoire en France.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Arrêté du 30 juin 2017 relatif aux règles de bonnes pratiques cliniques et biologiques d'AMP.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-020-vraifaux-piege">Question FIV-BR-020 — Vrai/Faux piège</h3>
+<blockquote>
+<p><strong>Domaine</strong> : anatomie · <strong>Module</strong> : M04 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Parmi ces affirmations sur l'anatomie du tractus génital féminin en AMP, lesquelles sont vraies ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Affirmation</th>
+<th style="text-align: center;">Vrai/Faux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La fécondation naturelle a lieu dans le tiers externe de l'ampoule tubaire</td>
+<td style="text-align: center;">✅ Vrai</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Un hydrosalpinx n'a aucun impact sur les résultats de FIV</td>
+<td style="text-align: center;">❌ Faux</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'épaisseur endométriale optimale pour le transfert est ≥ 7 mm en triple ligne</td>
+<td style="text-align: center;">✅ Vrai</td>
+</tr>
+<tr>
+<td>4</td>
+<td>L'utérus cloisonné est la malformation utérine la plus fréquente</td>
+<td style="text-align: center;">✅ Vrai</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Affirmation 1</em> : Vrai. La rencontre gamétique se fait au niveau du tiers externe (distal) de l'ampoule.</li>
+<li><em>Affirmation 2</em> : <strong>Faux — piège</strong>. L'hydrosalpinx réduit les taux de FIV de ~50 % <em>(Strandell, NEJM 1999)</em>. La salpingectomie avant FIV est recommandée.</li>
+<li><em>Affirmation 3</em> : Vrai. L'endomètre &lt; 7 mm est associé à un OR d'implantation de 0,4 <em>(Kasius, Hum Reprod Update 2014)</em>.</li>
+<li><em>Affirmation 4</em> : Vrai. L'utérus cloisonné est le plus fréquent et est associé aux FCS à répétition. L'échographie 3D est le gold standard diagnostique.</li>
+</ul>
+<hr />
+<h3 id="question-fiv-br-021-qcm">Question FIV-BR-021 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : biologie · <strong>Module</strong> : M18 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quelle est l'indication principale de l'ICSI par rapport à la FIV classique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Âge maternel &gt; 40 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>OAT sévère ou spermatozoïdes d'extraction testiculaire (TESE)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Endométriose stade III-IV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Infertilité inexpliquée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'âge maternel seul ne justifie pas l'ICSI.</li>
+<li><em>Proposition 2</em> : Exact. Les indications formelles sont : OAT sévère, TESE, PGT, échec total de fécondation en FIV classique. L'ICSI permet un taux de fécondation de 70-80 % avec un seul spermatozoïde par ovocyte.</li>
+<li><em>Proposition 3</em> : L'endométriose ne justifie pas l'ICSI sauf si le spermogramme est altéré.</li>
+<li><em>Proposition 4</em> : La FIV classique peut être tentée d'abord dans l'infertilité inexpliquée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Palermo G et al. <em>ICSI: where we have been and where we are going</em>. Semin Reprod Med 2009.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-022-qcm">Question FIV-BR-022 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : embryologie · <strong>Module</strong> : M19 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>À quel stade embryonnaire se produit l'activation du génome embryonnaire (EGA) chez l'humain ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2 cellules (J1)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4 cellules (J2)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8 cellules (J3)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Blastocyste (J5)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Au stade 2 cellules, l'embryon dépend encore des ARNm maternels.</li>
+<li><em>Proposition 2</em> : L'activation partielle commence mais reste minoritaire.</li>
+<li><em>Proposition 3</em> : Exact. L'EGA majeure a lieu au stade 8 cellules (J3) chez l'humain. L'embryon passe de la dépendance aux transcrits maternels à sa propre machinerie transcriptionnelle.</li>
+<li><em>Proposition 4</em> : Trop tardif — le génome est déjà actif depuis J3.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Braude P et al. <em>Human gene expression first occurs between the four- and eight-cell stages</em>. Nature 1988.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-br-023-qcm">Question FIV-BR-023 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : éthique · <strong>Module</strong> : M41 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Quel est le statut juridique de l'embryon humain in vitro en droit français ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Il a la personnalité juridique dès la fécondation</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Il est considéré comme une « personne humaine potentielle » sans personnalité juridique</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il est considéré comme un simple « matériel biologique »</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Son statut n'est défini dans aucun texte</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le droit français ne reconnaît pas la personnalité juridique à l'embryon in vitro.</li>
+<li><em>Proposition 2</em> : Exact. L'embryon est une « personne humaine potentielle » bénéficiant d'une protection spécifique. Les embryons surnuméraires ont 4 devenirs possibles : poursuite du projet parental, don à un couple, don à la recherche, destruction.</li>
+<li><em>Proposition 3</em> : L'embryon n'est pas un simple matériel — le CCNE et les lois de bioéthique lui reconnaissent un statut intermédiaire.</li>
+<li><em>Proposition 4</em> : Les lois de bioéthique (1994, 2004, 2011, 2021) définissent son statut.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : CCNE, avis n° 112, 2010 ; Loi de bioéthique 2021.</p>
+</blockquote>
+<hr />
+<h2 id="argent-mecanismes-comparaisons-synthese">🥈 ARGENT — Mécanismes, comparaisons, synthèse</h2>
+<hr />
+<h3 id="question-fiv-ar-001-qcm">Question FIV-AR-001 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Le modèle « deux cellules, deux gonadotrophines » de la stéroïdogenèse ovarienne repose sur quel mécanisme ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La LH stimule la granulosa → estradiol ; la FSH stimule la thèque → androgènes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>La LH stimule la thèque → androgènes ; la FSH stimule la granulosa → aromatase → estradiol</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>FSH et LH agissent toutes deux sur la granulosa exclusivement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La thèque produit directement l'estradiol sans intervention de la granulosa</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Inversé — c'est la thèque qui est sous contrôle LH.</li>
+<li><em>Proposition 2</em> : Exact. La thèque (sous LH) synthétise les androgènes (androstènedione, testostérone) qui sont transférés à la granulosa (sous FSH) où l'aromatase (CYP19A1) les convertit en estradiol.</li>
+<li><em>Proposition 3</em> : La thèque est essentielle — elle fournit le substrat androgénique.</li>
+<li><em>Proposition 4</em> : La thèque ne possède pas d'aromatase en quantité suffisante.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Ce modèle explique pourquoi la stimulation par FSH seule est efficace (les androgènes thécaux sont produits sous l'effet de la LH endogène résiduelle), mais aussi pourquoi un effondrement complet de la LH (agoniste prolongé) peut nécessiter un ajout de LH exogène (HMG).</p>
+<p>📚 <strong>Référence</strong> : Hillier SG. <em>Current concepts of the roles of FSH and LH in folliculogenesis</em>. Hum Reprod 1994.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-002-qcm">Question FIV-AR-002 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation · <strong>Module</strong> : M13 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Pourquoi le protocole DuoStim (double stimulation dans un même cycle) est-il proposé aux patientes faibles répondeuses ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Il permet de stimuler en phase folliculaire ET lutéale, avec 2 ponctions par cycle</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Il double la dose de FSH sur un seul cycle pour recruter plus de follicules</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il combine un agoniste et un antagoniste simultanément</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il utilise exclusivement le cycle naturel en phase lutéale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Exact. Le DuoStim exploite le recrutement folliculaire en vagues successives : stimulation en phase folliculaire → ponction → re-stimulation en phase lutéale → 2e ponction. Cela maximise le nombre d'ovocytes par cycle calendaire chez les faibles répondeuses (classification POSEIDON).</li>
+<li><em>Proposition 2</em> : Augmenter la dose seule ne résout pas le problème du pool folliculaire limité.</li>
+<li><em>Proposition 3</em> : Ces deux classes sont antagonistes et ne sont pas utilisées simultanément.</li>
+<li><em>Proposition 4</em> : Le DuoStim utilise la stimulation exogène en phase lutéale, pas un cycle naturel.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ubaldi FM et al. <em>Advanced maternal age in IVF</em>. Hum Reprod Update 2019.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-003-qcm">Question FIV-AR-003 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : déclenchement · <strong>Module</strong> : M15 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Pourquoi le trigger par agoniste GnRH réduit-il drastiquement le risque de SHO par rapport au trigger hCG ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Il ne provoque aucune lutéinisation</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Il induit un pic de LH endogène bref (24-36h) vs l'hCG (demi-vie prolongée 5-7 jours)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il bloque la sécrétion de VEGF immédiatement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il n'a aucun effet sur la maturation ovocytaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le trigger agoniste provoque une lutéinisation mais transitoire et de courte durée.</li>
+<li><em>Proposition 2</em> : Exact. L'hCG a une demi-vie de 5-7 jours → stimulation prolongée de la granulosa lutéinisée → VEGF prolongé → SHO. Le trigger agoniste provoque un pic de LH endogène de 24-36h seulement → lutéinisation brève → réduction du SHO de 95 % <em>(Youssef 2014)</em>. En contrepartie, insuffisance lutéale sévère → nécessité de freeze-all ou soutien lutéal renforcé.</li>
+<li><em>Proposition 3</em> : Le VEGF diminue secondairement à la chute rapide de la LH, pas par blocage direct.</li>
+<li><em>Proposition 4</em> : Le trigger agoniste mature les ovocytes normalement.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Youssef MA et al. <em>Is there a place for GnRH agonist triggering in IVF?</em> Fertil Steril 2014.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-004-qcm">Question FIV-AR-004 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : fécondation · <strong>Module</strong> : M07 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quel mécanisme moléculaire assure le blocage de la polyspermie après la fécondation ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La formation immédiate d'une membrane de fécondation par exocytose des granules corticaux</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>2</td>
+<td>La contraction de la zone pellucide par les prostaglandines</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'expulsion immédiate du 2e globule polaire qui referme l'orifice de pénétration</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La dégradation spontanée de la hyaluronidase du spermatozoïde</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Exact. Les oscillations calciques déclenchent l'exocytose des granules corticaux → libération d'enzymes (dont l'ovastacine qui clive la protéine ZP2) → modification de la zone pellucide → blocage de la fixation d'autres spermatozoïdes.</li>
+<li><em>Proposition 2</em> : Les prostaglandines ne jouent pas ce rôle.</li>
+<li><em>Proposition 3</em> : L'expulsion du 2e GP est un événement de maturation méiotique, pas un blocage physique.</li>
+<li><em>Proposition 4</em> : La hyaluronidase est un enzyme d'approche, pas un mécanisme anti-polyspermie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burkart AD et al. <em>Ovastacin, a cortical granule protease, cleaves ZP2</em>. J Cell Biol 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-005-qcm">Question FIV-AR-005 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : bilan · <strong>Module</strong> : M10 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>En cas d'azoospermie non obstructive, quel bilan génétique est indispensable avant de proposer une micro-TESE ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Caryotype seul</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Caryotype + microdélétions du chromosome Y (AZF)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Séquençage complet du génome</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucun bilan génétique n'est nécessaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le caryotype (recherche de Klinefelter 47,XXY) est nécessaire mais insuffisant.</li>
+<li><em>Proposition 2</em> : Exact. Le caryotype détecte les anomalies chromosomiques (Klinefelter : micro-TESE taux récupération 40-50 %). Les microdélétions AZF sont cruciales : <strong>AZFa ou AZFb complet = contre-indication à la biopsie</strong> (0 % de récupération), AZFc = 50-60 % de récupération.</li>
+<li><em>Proposition 3</em> : Disproportionné — le caryotype + AZF suffit en bilan standard.</li>
+<li><em>Proposition 4</em> : Le bilan génétique est obligatoire (consentement éclairé, contre-indications à la biopsie).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Krausz C, Riera-Escamilla A. <em>Genetics of male infertility</em>. Nat Rev Urol 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-006-qcm">Question FIV-AR-006 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation · <strong>Module</strong> : M12 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Pourquoi la corifollitropine alpha (Elonva) est-elle contre-indiquée chez les patientes SOPK avec CFA &gt; 20 ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Elle est inefficace chez les patientes SOPK</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sa demi-vie prolongée (65h) rend la dose non ajustable, avec un risque élevé de SHO</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Elle provoque une lutéinisation prématurée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Elle est allergène chez les patientes SOPK</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'Elonva est efficace mais trop puissante chez les hyper-répondeuses.</li>
+<li><em>Proposition 2</em> : Exact. La corifollitropine alpha a une demi-vie de 65 heures (≈ 7 jours de FSH standard en une seule injection). Chez les patientes SOPK/CFA &gt; 20, cette stimulation prolongée non modulable expose à un SHO sévère.</li>
+<li><em>Proposition 3</em> : Ce n'est pas le mécanisme du risque.</li>
+<li><em>Proposition 4</em> : Pas d'allergie spécifique décrite.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Devroey P et al. <em>A double-blind, non-inferiority RCT comparing corifollitropin alfa and recombinant FSH</em>. Hum Reprod 2009.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-007-qcm">Question FIV-AR-007 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : monitorage · <strong>Module</strong> : M14 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Une progestérone &gt; 1,5 ng/mL le jour du déclenchement impose quelle décision ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Annulation du cycle</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Transfert frais en urgence</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Freeze-all (congélation de tous les embryons)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Augmentation de la dose de FSH</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le cycle n'est pas annulé — les ovocytes sont ponctionnés et fécondés normalement.</li>
+<li><em>Proposition 2</em> : Le transfert frais est contre-indiqué car la fenêtre d'implantation est avancée.</li>
+<li><em>Proposition 3</em> : Exact. Une progestérone &gt; 1,5 ng/mL au trigger témoigne d'une transformation sécrétoire prématurée de l'endomètre — la fenêtre d'implantation est avancée. La qualité ovocytaire n'est PAS affectée, seule la réceptivité endométriale l'est → freeze-all et TEC ultérieur <em>(Bosch, Fertil Steril 2010)</em>.</li>
+<li><em>Proposition 4</em> : Inutile à ce stade — le déclenchement est imminent.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bosch E et al. <em>Circulating progesterone levels and ongoing pregnancy rates in IVF</em>. Fertil Steril 2010.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-008-qcm">Question FIV-AR-008 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : ponction · <strong>Module</strong> : M16 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>Le rinçage folliculaire (flushing) lors de la ponction ovocytaire améliore-t-il le taux de naissance vivante ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Oui, il augmente le taux de 15-20 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Non, aucun bénéfice démontré sur le taux de naissance vivante</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Oui, mais uniquement chez les faibles répondeuses</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il est contre-indiqué car il endommage les ovocytes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Aucune étude n'a montré ce bénéfice.</li>
+<li><em>Proposition 2</em> : Exact. La méta-analyse Cochrane <em>(Georgiou, 2018)</em> ne montre <strong>aucun bénéfice</strong> du flushing sur le taux de naissance vivante, tout en augmentant la durée de la procédure et la douleur.</li>
+<li><em>Proposition 3</em> : Même chez les faibles répondeuses, le bénéfice n'est pas prouvé.</li>
+<li><em>Proposition 4</em> : Le flushing n'est pas contre-indiqué, simplement inutile.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Georgiou EX et al. <em>Follicle flushing during oocyte retrieval</em>. Cochrane 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-009-qcm">Question FIV-AR-009 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : PGT · <strong>Module</strong> : M26 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>L'essai STAR (Munné 2019) a montré que le PGT-A :</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Améliore le taux cumulatif de naissance vivante chez les &lt; 38 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>N'améliore pas le taux cumulatif de naissance vivante chez les &lt; 38 ans</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Réduit le taux d'aneuploïdie de 50 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>N'a aucun effet sur le taux de fausse couche</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : C'est l'hypothèse initiale, réfutée par l'essai.</li>
+<li><em>Proposition 2</em> : Exact. L'essai STAR (Munné, Fertil Steril 2019) n'a pas montré de bénéfice cumulatif du PGT-A chez les &lt; 38 ans. Le PGT-A augmente le taux d'implantation par transfert mais réduit le nombre d'embryons transférables (perte d'embryons mosaïques viables).</li>
+<li><em>Proposition 3</em> : Le PGT-A ne « réduit » pas l'aneuploïdie — il la détecte pour sélectionner les embryons euploïdes.</li>
+<li><em>Proposition 4</em> : Le PGT-A réduit effectivement le taux de FC (en excluant les embryons aneuploïdes).</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Chez les &gt; 38 ans, le bénéfice est plus clair <em>(Rubio 2017 : 52 % vs 33 %)</em>. Le mosaïcisme reste un défi : la biopsie de 5-10 cellules de trophectoderme n'est pas représentative à 100 % de l'embryon entier.</p>
+<p>📚 <strong>Référence</strong> : Munné S et al. <em>Preimplantation genetic testing for aneuploidy versus morphology</em>. Fertil Steril 2019.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-010-qcm">Question FIV-AR-010 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : don gamètes · <strong>Module</strong> : M27 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Pourquoi le don d'ovocytes expose-t-il à un risque accru de prééclampsie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>En raison de l'âge avancé des receveuses exclusivement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>En raison de l'allo-immunisation maternelle vis-à-vis du trophoblaste semi-allogénique</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>En raison des doses élevées d'estradiol du cycle substitué</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le risque de prééclampsie n'est pas augmenté en don d'ovocytes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'âge contribue mais n'explique pas l'excès de risque spécifique au don.</li>
+<li><em>Proposition 2</em> : Exact. En don d'ovocytes, le fœtus est semi-allogénique (aucun patrimoine génétique maternel) → réponse immunitaire maternelle altérée → défaut de tolérance immunitaire placentaire → risque de prééclampsie × 2-3 par rapport à la FIV autologue.</li>
+<li><em>Proposition 3</em> : L'estradiol contribue à la thrombophilie mais n'est pas le mécanisme principal de la prééclampsie.</li>
+<li><em>Proposition 4</em> : Faux — le risque est bien documenté.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Masoudian P et al. <em>Oocyte donation pregnancies and the risk of preeclampsia</em>. Am J Obstet Gynecol 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-011-qcm">Question FIV-AR-011 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : échographie · <strong>Module</strong> : M30 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>Selon la classification FIGO des fibromes, quels types nécessitent une résection obligatoire avant FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Types 4 à 7 (sous-séreux et intramuraux profonds)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Types 0 et 1 (sous-muqueux purs et à composante intracavitaire &gt; 50 %)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tous les fibromes &gt; 5 cm quel que soit leur type</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucun fibrome ne nécessite de résection avant FIV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les types 4-7 n'ont qu'un impact minimal ou nul sur l'implantation.</li>
+<li><em>Proposition 2</em> : Exact. Les fibromes types 0 (intracavitaire pur) et 1 (&gt; 50 % intracavitaire) ont un impact majeur sur l'implantation → résection par hystéroscopie obligatoire avant FIV. Le type 2 a un impact probable, le type 3 est discuté.</li>
+<li><em>Proposition 3</em> : La taille seule ne détermine pas l'impact — c'est la localisation par rapport à la cavité qui prime.</li>
+<li><em>Proposition 4</em> : Les fibromes sous-muqueux altèrent clairement les résultats.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pritts EA et al. <em>Fibroids and infertility: an updated systematic review</em>. Hum Reprod Update 2009.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-012-qcm">Question FIV-AR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : infertilité inexpliquée · <strong>Module</strong> : M11 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quelle est la stratégie recommandée chez une femme de 39 ans avec infertilité inexpliquée depuis 2 ans ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Expectative 12 mois supplémentaires</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Clomifène seul pendant 6 cycles</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>FIV d'emblée</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>IIU pendant 6 cycles puis FIV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : À 39 ans, l'expectative fait perdre un temps précieux (déclin rapide de la réserve ovarienne après 37-38 ans).</li>
+<li><em>Proposition 2</em> : Le clomifène seul n'est pas supérieur à l'expectative <em>(Bhattacharya, BMJ 2008)</em>.</li>
+<li><em>Proposition 3</em> : Exact. Chez les ≥ 38 ans avec infertilité inexpliquée, la FIV d'emblée est recommandée : taux de naissance 31 % vs 17 % en IIU <em>(NEJM 2023)</em>.</li>
+<li><em>Proposition 4</em> : Six cycles d'IIU représentent ~6 mois de perdu à un âge où chaque mois compte.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Reindollar RH et al. <em>Single oocyte versus multiple oocyte/IUI for unexplained infertility</em>. NEJM 2023.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-013-qcm">Question FIV-AR-013 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : complications · <strong>Module</strong> : M36 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>En cas de SHO sévère avec hématocrite &gt; 45 % et oligurie &lt; 500 mL/24h, quel traitement est prioritaire ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Diurétiques de l'anse pour relancer la diurèse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AINS pour contrôler la douleur et l'inflammation</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Remplissage NaCl 0,9 %, albumine si &lt; 30 g/L, HBPM, paracentèse si ascite tendue</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ponction ovarienne de réduction en urgence</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : <strong>DANGEREUX</strong> — les diurétiques aggravent l'hémoconcentration et le risque thrombotique. L'oligurie est due à la fuite vers le 3e secteur, pas à un défaut de filtration.</li>
+<li><em>Proposition 2</em> : <strong>Les AINS sont CONTRE-INDIQUÉS</strong> dans le SHO (altération fonction rénale, risque hémorragique). Le paracétamol est la seule antalgie autorisée.</li>
+<li><em>Proposition 3</em> : Exact. Hospitalisation : remplissage cristalloïdes → albumine 20 % si albuminémie &lt; 30 g/L → HBPM (enoxaparine 40 mg/j) car risque thrombotique 4-10 % → paracentèse échoguidée si ascite tendue et gêne respiratoire.</li>
+<li><em>Proposition 4</em> : La ponction ovarienne n'est pas un geste thérapeutique du SHO.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : RCOG Green-top Guideline n° 5. <em>The management of OHSS</em>. 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-014-qcm">Question FIV-AR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesses multiples · <strong>Module</strong> : M37 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quel est le risque principal de la gémellité monochoriale biamniotique (MCBA) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La prématurité uniquement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le syndrome transfuseur-transfusé (STT) avec un risque de 10-15 %</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'incompatibilité rhésus entre les jumeaux</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>L'absence de risque spécifique par rapport aux grossesses BCBA</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La prématurité est un risque partagé par toutes les grossesses gémellaires, pas spécifique à la MCBA.</li>
+<li><em>Proposition 2</em> : Exact. La MCBA (60-70 % des grossesses MZ) présente un risque de STT de 10-15 % dû aux anastomoses vasculaires placentaires. Le traitement de référence est la fétoscopie laser <em>(Senat, NEJM 2004)</em>. Classification de Quintero en 5 stades.</li>
+<li><em>Proposition 3</em> : Les jumeaux MZ sont génétiquement identiques → même groupe sanguin.</li>
+<li><em>Proposition 4</em> : La MCBA a des risques spécifiques majeurs (STT, TAPS, séquence TRAP).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Senat MV et al. <em>Endoscopic laser surgery versus serial amnioreduction for severe TTTS</em>. NEJM 2004.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-015-qcm">Question FIV-AR-015 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : RIF · <strong>Module</strong> : M38 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Le scratching endométrial (scarification) améliore-t-il les taux d'implantation en cas d'échecs répétés (RIF) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Oui, il est recommandé en routine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Non, l'essai LENSEN (NEJM 2019, n=1 364) a réfuté son bénéfice</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Oui, mais uniquement en 1er cycle de FIV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il n'a jamais été étudié dans un essai randomisé</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le scratching a été longtemps pratiqué mais le niveau de preuve actuel ne le soutient pas.</li>
+<li><em>Proposition 2</em> : Exact. L'essai de Lensen (NEJM 2019, n=1 364) n'a montré aucun bénéfice significatif du scratching endométrial sur le taux de naissance vivante. Cette pratique est désormais abandonnée dans la plupart des centres.</li>
+<li><em>Proposition 3</em> : Aucun sous-groupe n'a montré de bénéfice.</li>
+<li><em>Proposition 4</em> : Plusieurs RCT ont été réalisées, dont l'essai Lensen.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Lensen S et al. <em>Endometrial scratching and live birth in women with unexplained infertility</em>. NEJM 2019.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-016-qcm">Question FIV-AR-016 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : endométriose · <strong>Module</strong> : M39 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Quelle est l'attitude recommandée face à un endométriome &lt; 4 cm avant FIV ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Kystectomie systématique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pas de chirurgie → FIV directe</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Drainage par ponction échoguidée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Agoniste GnRH 6 mois puis chirurgie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La kystectomie d'endométriome diminue l'AMH de 30-40 % et n'améliore PAS les taux de FIV <em>(Benschop, Cochrane 2010)</em>. <strong>À éviter</strong>.</li>
+<li><em>Proposition 2</em> : Exact. L'ESHRE 2014 recommande la FIV directe si endométriome &lt; 4 cm, stable, sans douleur invalidante. Préservation de la réserve ovarienne.</li>
+<li><em>Proposition 3</em> : Le drainage seul entraîne une récidive quasi systématique.</li>
+<li><em>Proposition 4</em> : L'agoniste pré-FIV est indiqué en endométriose III-IV pour améliorer les résultats <em>(Sallam, Cochrane 2006)</em>, mais la chirurgie de l'endométriome n'est pas recommandée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ESHRE. <em>Endometriosis guideline</em>. 2014 ; Benschop L et al. Cochrane 2010.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-017-qcm">Question FIV-AR-017 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : sécurité · <strong>Module</strong> : M33 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quel est l'événement indésirable le plus grave dans un laboratoire d'AMP ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La panne d'un incubateur</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L'erreur d'identification de gamètes ou d'embryons</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La contamination d'un milieu de culture</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>L'interruption du système de vidéosurveillance</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Grave mais gérable (transfert vers un autre incubateur, alarmes).</li>
+<li><em>Proposition 2</em> : Exact. L'erreur d'identification est l'événement le plus grave en AMP — elle peut mener à un enfant génétiquement non apparenté aux parents. Prévention : double vérification à chaque étape + système de témoinage électronique (RI Witness, RFID). Déclaration obligatoire en AMP-vigilance.</li>
+<li><em>Proposition 3</em> : La contamination est grave mais détectable et limitée en impact.</li>
+<li><em>Proposition 4</em> : N'a pas de conséquence directe sur les gamètes/embryons.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Magli MC et al. <em>Revised guidelines for good practice in IVF laboratories</em>. Hum Reprod 2008.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-ar-018-qcm">Question FIV-AR-018 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : innovations · <strong>Module</strong> : M43 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quel est le niveau de preuve actuel des algorithmes d'IA pour la sélection embryonnaire (iDAScore, Life Whisperer) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Validé par plusieurs RCT avec bénéfice sur le taux de naissance vivante</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>AUC 0,70-0,80 en études rétrospectives, pas de RCT prouvant un bénéfice clinique</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Inférieur à la sélection morphologique classique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Utilisé en routine clinique dans tous les centres</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Aucune RCT de grande envergure n'a démontré un bénéfice sur le taux de naissance vivante <em>(Armstrong, Cochrane 2019)</em>.</li>
+<li><em>Proposition 2</em> : Exact. Les algorithmes actuels (iDAScore AUC 0,70-0,75, Life Whisperer AUC 0,70) montrent des performances prometteuses en rétrospectif mais manquent de validation prospective randomisée.</li>
+<li><em>Proposition 3</em> : L'IA est au minimum équivalente, voire supérieure à la morphologie classique pour la prédiction.</li>
+<li><em>Proposition 4</em> : L'adoption est croissante mais loin d'être universelle (enjeux : réglementation CE-IVDR, explicabilité, biais datasets).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Armstrong S et al. <em>Time-lapse systems for embryo incubation</em>. Cochrane 2019 ; Berntsen J et al. <em>iDAScore</em>. Hum Reprod 2022.</p>
+</blockquote>
+<hr />
+<h2 id="or-cas-clinique-guide-application-directe-calcul">🥇 OR — Cas clinique guidé, application directe, calcul</h2>
+<hr />
+<h3 id="question-fiv-or-001-cas-clinique-court">Question FIV-OR-001 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : bilan · <strong>Modules</strong> : M05, M08, M09 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme A., 34 ans, infertilité primaire depuis 2 ans. Bilan : AMH 0,8 ng/mL, CFA 4, FSH J3 = 12 UI/L, E2 J3 = 85 pg/mL. Spermogramme du conjoint normal.</strong></p>
+<p><strong>Quelle est votre interprétation et votre stratégie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bilan normal, expectative 12 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Réserve ovarienne diminuée (DOR), FIV d'emblée avec protocole adapté (POSEIDON)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SOPK probable, stimulation douce par clomifène</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Insémination intra-utérine × 6 cycles</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Tout le bilan crie « DOR » — l'expectative ferait perdre un temps précieux.</li>
+<li><em>Proposition 2</em> : Exact. AMH &lt; 1,1 + CFA &lt; 5 + FSH &gt; 10 + E2 &gt; 80 = <strong>DOR convergent</strong>. Cette patiente correspond au groupe POSEIDON 3 (&lt; 35 ans, mauvais pronostic). Stratégie : FIV avec protocole antagoniste, doses de FSH élevées (300-450 UI), considérer DuoStim, PGT-A discutable, counseling sur le pronostic.</li>
+<li><em>Proposition 3</em> : Les données évoquent une DOR, pas un SOPK (CFA 4, AMH basse).</li>
+<li><em>Proposition 4</em> : L'IIU est insuffisante avec une réserve ovarienne aussi basse.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Poseidon Group. <em>A new more detailed stratification of low responders</em>. Reprod Biomed Online 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-002-cas-clinique-court">Question FIV-OR-002 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation · <strong>Modules</strong> : M13, M15 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme B., 30 ans, SOPK (AMH 9,2 ng/mL, CFA 32). Protocole antagoniste flexible, FSH 100 UI. À J10 : 22 follicules &gt; 14 mm, E2 = 4 800 pg/mL.</strong></p>
+<p><strong>Quelle est votre stratégie de déclenchement ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Trigger hCG 10 000 UI + transfert frais</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Trigger agoniste GnRH + freeze-all</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Annulation du cycle</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Attente 2 jours supplémentaires pour que l'E2 baisse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : <strong>DANGEREUX</strong>. SOPK + 22 follicules + E2 4 800 pg/mL → risque de SHO sévère majeur avec trigger hCG (demi-vie prolongée, lutéinisation prolongée).</li>
+<li><em>Proposition 2</em> : Exact. Règle d'or du SOPK : <strong>antagoniste + trigger agoniste + freeze-all</strong> = quasi-éliminateur du SHO sévère. Le trigger agoniste induit un pic de LH bref (24-36h) → réduction du SHO de 95 %. Ajouter cabergoline 0,5 mg/j × 8 jours post-ponction.</li>
+<li><em>Proposition 3</em> : L'annulation gaspillerait cette cohorte folliculaire. La ponction + freeze-all est sûre et efficace.</li>
+<li><em>Proposition 4</em> : L'E2 ne baissera pas spontanément — les follicules continuent de croître.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Youssef MA et al. <em>GnRH agonist for final oocyte maturation in GnRH antagonist co-treated IVF/ICSI cycles</em>. Cochrane 2014.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-003-cas-clinique-court">Question FIV-OR-003 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse précoce · <strong>Modules</strong> : M22, M32 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme C., 36 ans, J14 post-transfert de blastocyste. β-hCG = 320 UI/L. À J21, β-hCG = 2 500 UI/L. Échographie : sac intra-utérin 8 mm + image annexielle droite suspecte de 12 mm.</strong></p>
+<p><strong>Quel diagnostic évoquez-vous en priorité ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Grossesse intra-utérine évolutive normale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Grossesse hétérotopique (GIU + GEU)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GEU isolée avec pseudo-sac</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Kyste du corps jaune banal</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La GIU semble présente mais l'image annexielle est inquiétante.</li>
+<li><em>Proposition 2</em> : Exact. En AMP, la grossesse hétérotopique (GIU + GEU simultanées) a une incidence de <strong>1/100</strong> (vs 1/30 000 en grossesse spontanée). Devant un sac intra-utérin + image annexielle suspecte + β-hCG en hausse, le diagnostic de grossesse hétérotopique doit être évoqué en priorité. Traitement : chirurgie cœlioscopique de la GEU en préservant la GIU.</li>
+<li><em>Proposition 3</em> : Il y a un sac intra-utérin vrai → ce n'est pas un pseudo-sac.</li>
+<li><em>Proposition 4</em> : Un kyste du corps jaune n'est pas exclu mais une image de 12 mm en annexe en contexte AMP impose la suspicion de GEU.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Tal J et al. <em>Heterotopic pregnancy after IVF-ET</em>. J Assist Reprod Genet 1996.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-004-cas-clinique-court">Question FIV-OR-004 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : RIF · <strong>Modules</strong> : M38, M39 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme D., 32 ans, 3 transferts de blastocystes de bonne qualité (4AA, 4AB, 3BB), aucune grossesse. Bilan : hystéroscopie normale, HSG perméable, spermogramme normal. Anti-TPO négatifs. Quels diagnostics évoquez-vous et quels examens demandez-vous ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p>Diagnostic : <strong>Échec répété d'implantation (RIF)</strong> — définition : pas de grossesse après ≥ 3 embryons de bonne qualité ou ≥ 2 blastocystes (&lt; 40 ans).</p>
+<p>Bilan de 2e intention à réaliser :<br />
+1. <strong>Endométrite chronique</strong> : biopsie endométriale + CD138 (≥ 1/10 HPF). Prévalence 30-40 % dans le RIF <em>(Cicinelli 2015)</em>. Si positif : doxycycline 200 mg/j × 14j → contrôle M+1<br />
+2. <strong>ERA</strong> (Endometrial Receptivity Array) : 238 gènes endométriaux. 25 % de fenêtres déplacées dans le RIF. Cependant, ERA-RCT (Simon 2020) : pas de bénéfice en population générale<br />
+3. <strong>SAPL</strong> : anticorps anti-cardiolipine, anti-β2GP1, anticoagulant lupique (critères de Sydney). Si positif : aspirine + HBPM<br />
+4. <strong>Caryotype des 2 partenaires</strong> : translocation équilibrée → PGT-SR<br />
+5. <strong>DFI spermatique</strong> (SCSA/TUNEL) : un spermogramme normal n'exclut pas un DFI élevé<br />
+6. <strong>NK utérines</strong> : attention — les NK circulantes ne sont PAS informatives pour l'endomètre</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège</strong> : Ne PAS proposer de scratching endométrial — réfuté par Lensen (NEJM 2019).</div>
+
+<blockquote>
+<p>📚 <strong>Références</strong> : Cicinelli E et al. <em>Chronic endometritis</em>. Fertil Steril 2015 ; Simon C et al. <em>ERA-RCT</em>. Fertil Steril 2020.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-005-cas-clinique-court">Question FIV-OR-005 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : préservation · <strong>Module</strong> : M25 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme E., 28 ans, cancer du sein canalaire infiltrant ER+. Chimiothérapie néo-adjuvante prévue dans 15 jours. AMH 2,8 ng/mL, CFA 14. Elle souhaite préserver sa fertilité.</strong></p>
+<p><strong>Détaillez votre stratégie.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Vitrification ovocytaire après stimulation classique par FSH seule</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stimulation avec letrozole + FSH en random-start, puis vitrification ovocytaire</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Report de la chimiothérapie de 3 mois pour une stimulation standard</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pas de préservation possible dans ce délai</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : En cancer ER+, la stimulation par FSH seule fait monter l'E2 à des taux élevés → potentiellement délétère pour un cancer hormonodépendant.</li>
+<li><em>Proposition 2</em> : Exact. <strong>Letrozole</strong> (inhibiteur d'aromatase) + FSH : maintient l'E2 bas malgré la stimulation. <strong>Random start</strong> : début de stimulation à tout moment du cycle (pas besoin d'attendre les règles) → gain de temps critique. Consultation oncofertilité dans les 24-48h. Objectif ≥ 15 ovocytes vitrifiés.</li>
+<li><em>Proposition 3</em> : Le report de la chimiothérapie de 3 mois n'est pas acceptable en oncologie.</li>
+<li><em>Proposition 4</em> : La stimulation en random start dure ~12-14 jours — compatible avec un délai de 15 jours.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Oktay K et al. <em>Fertility preservation in patients with cancer</em>. ASCO guideline update 2018 ; Letrozole protocol : Oktay K et al. Fertil Steril 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-006-cas-clinique-court">Question FIV-OR-006 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : complications · <strong>Modules</strong> : M36, M32 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme F., 27 ans, SOPK, ponctionnée il y a 48h (18 ovocytes). Se présente aux urgences : douleur abdominale aiguë latéralisée à droite, défense modérée. FC 105 bpm, PA 100/65 mmHg.</strong></p>
+<p><strong>Quel diagnostic évoquez-vous en priorité et quelle est votre conduite à tenir ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p>Diagnostic prioritaire : <strong>Torsion d'annexe droite</strong> — les ovaires sont volumineux (post-ponction + stimulation) et lourds → facteur mécanique de torsion. L'incidence est de 0,08-0,2 % post-ponction.</p>
+<p>Conduite à tenir :<br />
+1. <strong>Échographie pelvienne en urgence</strong> : Doppler de l'annexe droite → absence de flux vasculaire = fortement évocateur<br />
+2. Si Doppler absent ou douteux → <strong>cœlioscopie en urgence</strong> pour détorsion (et non ovariectomie si viable)<br />
+3. Ne pas attendre un scanner ou une IRM — le pronostic dépend de la rapidité de la détorsion<br />
+4. Diagnostic différentiel : hémorragie intra-péritonéale post-ponction (0,1-0,5 %), SHO précoce avec ascite, appendicite</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège</strong> : Ne pas confondre avec un SHO précoce. La **latéralisation** de la douleur + le Doppler absent orientent vers la torsion.</div>
+
+<blockquote>
+<p>📚 <strong>Référence</strong> : Delvigne A, Rozenberg S. <em>Complications of ART</em>. Hum Reprod Update 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-007-calcul-clinique">Question FIV-OR-007 — Calcul clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M22 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>β-hCG J12 post-transfert de blastocyste J5 : 45 UI/L. β-hCG J14 : 95 UI/L. Interprétation ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Doublement normal (48h) → grossesse bien évolutive, pronostic favorable</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Doublement acceptable mais β-hCG J14 &lt; 200 → pronostic réservé, contrôle à J18</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>β-hCG en plateau → grossesse arrêtée certaine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>β-hCG &gt; 5 → suffisant pour confirmer une grossesse évolutive</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le doublement est correct (45 → 95 en 48h ≈ ×2,1), mais le <strong>taux absolu</strong> à J14 compte : β-hCG J14 &lt; 50 UI/L = pronostic défavorable (&lt; 15 % de grossesse évolutive), β-hCG J14 &gt; 200 UI/L = pronostic favorable. Ici, 95 UI/L = zone intermédiaire.</li>
+<li><em>Proposition 2</em> : Exact. Cinétique correcte mais taux absolu intermédiaire → contrôle à J18 (doublement attendu ~190 UI/L) + échographie à 5-6 SA si poursuite.</li>
+<li><em>Proposition 3</em> : Il y a bien un doublement, pas un plateau.</li>
+<li><em>Proposition 4</em> : Un β-hCG &gt; 5 confirme une grossesse biochimique mais ne préjuge pas de l'évolutivité.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Poikkeus P et al. <em>Serum hCG 12 days after embryo transfer in predicting pregnancy outcome</em>. Hum Reprod 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-008-cas-clinique-court">Question FIV-OR-008 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : SOPK en FIV · <strong>Modules</strong> : M39, M13, M15 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme G., 29 ans, SOPK (AMH 11 ng/mL, CFA 38), obésité (IMC 34). 1ère FIV. Détaillez votre protocole complet.</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li><strong>Préparation</strong> : metformine 1 500-2 000 mg/j (débutée 1-3 mois avant), perte de poids ciblée (même 5-10 % améliore les résultats), supplémentation en vitamine D si carence</li>
+<li><strong>Protocole</strong> : antagoniste (jamais agoniste long chez SOPK → risque SHO)</li>
+<li><strong>Dose FSH</strong> : faible (100-150 UI/j), start low go slow. Elonva <strong>contre-indiquée</strong> (CFA &gt; 20)</li>
+<li><strong>Monitorage rapproché</strong> : échographie + E2 tous les 2 jours à partir de J7</li>
+<li><strong>Déclenchement</strong> : trigger agoniste GnRH (Décapeptyl) — <strong>jamais hCG</strong> chez SOPK hyperrépondeuse</li>
+<li><strong>Freeze-all</strong> systématique (pas de transfert frais)</li>
+<li><strong>Post-ponction</strong> : cabergoline 0,5 mg/j × 8 jours</li>
+<li><strong>TEC</strong> : cycle substitué ou naturel modifié, 2-3 mois après</li>
+<li><strong>Taux attendu</strong> : taux cumulatif COMPARABLE voire supérieur aux non-SOPK grâce au nombre d'ovocytes</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Thessaloniki ESHRE/ASRM consensus on infertility treatment related to PCOS. Hum Reprod 2008 ; Youssef 2014.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-009-cas-clinique-court">Question FIV-OR-009 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : andrologie · <strong>Modules</strong> : M10, M34 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>M. H., 35 ans. Spermogramme : concentration 22 M/mL, mobilité progressive 35 %, morphologie Kruger 5 %. Cependant, 3 FIV-ICSI avec des embryons de qualité moyenne (fragmentation 25-50 %) et 0 grossesse.</strong></p>
+<p><strong>Quel examen demandez-vous et pourquoi ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Caryotype sanguin</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Test de fragmentation de l'ADN spermatique (SCSA ou TUNEL)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bilan hormonal FSH/LH/testostérone</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Nouveau spermogramme de contrôle</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le caryotype est normal dans la grande majorité des cas de spermogramme normal.</li>
+<li><em>Proposition 2</em> : Exact. <strong>Un spermogramme normal n'exclut PAS un DFI élevé</strong>. Le DFI (DNA Fragmentation Index) &gt; 30 % en SCSA (ou &gt; 36 % en TUNEL) est associé à une altération de la qualité embryonnaire et des échecs d'implantation. Stratégies si DFI élevé : antioxydants 3 mois, réduction de l'abstinence à 24h, MACS, microfluidique (ZyMot), voire TESE (DFI testiculaire &lt; DFI éjaculé).</li>
+<li><em>Proposition 3</em> : Le bilan hormonal est indiqué en cas d'anomalie spermatique, pas si le spermogramme est normal.</li>
+<li><em>Proposition 4</em> : Un nouveau spermogramme ne détectera pas le DFI.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Esteves SC et al. <em>Sperm DNA fragmentation testing</em>. Urology 2017.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-010-cas-clinique-court">Question FIV-OR-010 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TEC · <strong>Modules</strong> : M24, M30 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme I., 33 ans, cycle substitué pour TEC. E2V croissant depuis 12 jours. Échographie : endomètre 9 mm triple ligne. Progestérone sérique &lt; 0,5 ng/mL.</strong></p>
+<p><strong>Quand débutez-vous la progestérone et quand planifiez-vous le transfert de blastocyste ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Progestérone immédiate, transfert le lendemain</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Progestérone ce soir, transfert à P+5 (5e jour de progestérone)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Progestérone après 3 jours supplémentaires d'E2V</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pas de progestérone nécessaire en cycle substitué</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Trop court — l'endomètre n'a pas le temps de se transformer.</li>
+<li><em>Proposition 2</em> : Exact. En cycle substitué : lorsque l'endomètre atteint ≥ 7 mm en triple ligne, on débute la progestérone (Utrogestan 200 mg × 3/j vaginal). Le transfert de blastocyste se fait à <strong>P+5</strong> (5e jour de progestérone) pour synchroniser l'endomètre sécrétoire avec le stade embryonnaire J5.</li>
+<li><em>Proposition 3</em> : L'endomètre est déjà prêt (9 mm, triple ligne) — pas besoin de prolonger l'E2V.</li>
+<li><em>Proposition 4</em> : Le cycle substitué n'a PAS de corps jaune → la progestérone exogène est INDISPENSABLE.</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Explication</strong> : Le cycle substitué expose à un risque obstétrical accru (prééclampsie) car il n'y a pas de corps jaune <em>(Von Versen-Hoynck, Hypertension 2020)</em>.</p>
+<p>📚 <strong>Référence</strong> : Ghobara T et al. <em>Cycle regimens for frozen-thawed embryo transfer</em>. Cochrane 2017.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-011-cas-clinique-court">Question FIV-OR-011 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : IOP · <strong>Modules</strong> : M39, M27 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme J., 31 ans, aménorrhée secondaire depuis 8 mois. FSH = 42 UI/L (confirmée à 4 semaines). AMH = 0,05 ng/mL, CFA = 1. Caryotype 46,XX normal. Anti-surrénale négatif.</strong></p>
+<p><strong>Quel est votre diagnostic et quelles options de fertilité proposez-vous ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p>Diagnostic : <strong>Insuffisance ovarienne prématurée (IOP)</strong> — FSH &gt; 25 UI/L (× 2 à 4 semaines d'intervalle), AMH effondrée, CFA &lt; 3-5, aménorrhée avant 40 ans. Étiologie ici : idiopathique (50-60 % des cas) après exclusion génétique (caryotype normal → pas de Turner) et auto-immune (anticorps négatifs). Rechercher FMR1 (prémutation X fragile).</p>
+<p>Options de fertilité :<br />
+1. <strong>FIV avec ovocytes propres</strong> : taux de naissance/cycle très faible (2-5 %). Possibilité de random-start si follicule visible, accumulation d'embryons sur plusieurs cycles<br />
+2. <strong>Don d'ovocytes</strong> : taux de naissance 40-60 % par transfert. Option la plus efficace. Counseling sur le deuil génétique<br />
+3. <strong>Traitements expérimentaux</strong> : PRP ovarien, OFFA (Kawamura 2013), cellules souches → <strong>AUCUN validé par RCT</strong>. Mise en garde contre le marketing agressif<br />
+4. <strong>Traitement hormonal substitutif</strong> (THM) obligatoire jusqu'à 51 ans (protection osseuse et cardiovasculaire)</p>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ESHRE. <em>Management of women with premature ovarian insufficiency</em>. Guideline 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-012-qcm">Question FIV-OR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : législation · <strong>Module</strong> : M40 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Combien de tentatives de FIV sont remboursées à 100 % en France ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2 FIV + 4 IIU</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4 FIV (ponctions) + 6 IIU, femme &lt; 43 ans</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Illimité tant que la femme a &lt; 45 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6 FIV + 6 IIU, femme &lt; 40 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Sous-estimé.</li>
+<li><em>Proposition 2</em> : Exact. Remboursement 100 % : max 4 FIV (comptées en ponctions), max 6 IIU, femme &lt; 43 ans. Les TEC ne comptent PAS comme tentative supplémentaire. Compteur remis à zéro après chaque naissance.</li>
+<li><em>Proposition 3</em> : La France n'est pas l'Israël (remboursement illimité &lt; 45 ans).</li>
+<li><em>Proposition 4</em> : La limite d'âge est 43 ans, pas 40.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Code de la Sécurité sociale, art. L160-14 ; ABM, Rapport médical et scientifique 2023.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-or-013-cas-clinique-court">Question FIV-OR-013 — Cas clinique court</h3>
+<blockquote>
+<p><strong>Domaine</strong> : échographie · <strong>Modules</strong> : M30, M31 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>Patiente en stimulation, J9. Échographie : 25 follicules &gt; 14 mm, dont 8 &gt; 17 mm. E2 = 5 200 pg/mL. Endomètre 11 mm triple ligne.</strong></p>
+<p><strong>Quelles sont vos alertes et votre conduite ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p>Alertes :<br />
+- <strong>Risque SHO élevé</strong> : ≥ 20 follicules &gt; 14 mm + E2 &gt; 5 000 pg/mL → deux critères de SHO sévère réunis<br />
+- Critère de déclenchement atteint (≥ 3 follicules ≥ 17 mm) mais E2 au-dessus du seuil de sécurité</p>
+<p>Conduite :<br />
+1. <strong>Trigger agoniste</strong> (pas hCG) → réduction SHO 95 %<br />
+2. <strong>Freeze-all</strong> obligatoire<br />
+3. Cabergoline 0,5 mg/j × 8 jours post-ponction<br />
+4. Si E2 continue d'augmenter : coasting possible (arrêt FSH 1-2 jours avant trigger — controversé mais parfois utilisé)<br />
+5. Surveillance post-ponction rapprochée (J+3, J+5, J+7) : poids, diurèse, périmètre abdominal<br />
+6. Consignes patient : hydratation 2-3 L/j, alimentation hyperprotéinée, paracétamol (AINS contre-indiqués), consulter si douleur/dyspnée/oligurie</p>
+<hr />
+<h3 id="question-fiv-or-014-qcm">Question FIV-OR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : MIV · <strong>Module</strong> : M28 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Quelle est l'indication principale de la maturation in vitro (MIV) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Faible réserve ovarienne (DOR)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SOPK avec antécédent de SHO sévère ou urgence en oncofertilité</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Infertilité inexpliquée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Endométriose stade III-IV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : En DOR, le nombre d'ovocytes est déjà limité — la MIV réduirait encore les chances.</li>
+<li><em>Proposition 2</em> : Exact. La MIV (recueil ovocytes immatures 6-10 mm, maturation 24-48h in vitro) est indiquée en SOPK avec ATCD de SHO sévère (éviter toute stimulation) et en oncofertilité urgente (pas le temps d'une stimulation complète). Le protocole CAPA-IVM <em>(Vuong, NEJM 2023)</em> améliore les résultats (pré-maturation 24h).</li>
+<li><em>Proposition 3</em> : La FIV standard est préférable.</li>
+<li><em>Proposition 4</em> : L'endométriose ne bénéficie pas de la MIV.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vuong LN et al. <em>IVM vs IVF in PCOS</em>. NEJM 2023.</p>
+</blockquote>
+<hr />
+<h2 id="diamant-cas-complexe-piege-decision-difficile-erreur-a-identifier">💎 DIAMANT — Cas complexe, piège, décision difficile, erreur à identifier</h2>
+<hr />
+<h3 id="question-fiv-di-001-quelle-erreur">Question FIV-DI-001 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : stimulation / sécurité · <strong>Modules</strong> : M12, M15, M36 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme K., 26 ans, SOPK typique (AMH 8,5 ng/mL, CFA 28). 1ère FIV. Le médecin prescrit : protocole long agoniste (triptoreline J21), FSH 225 UI/j à partir de J14 de down-regulation, trigger par hCG 10 000 UI.</strong></p>
+<p><strong>Identifiez les erreurs de cette prescription.</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p><strong>3 erreurs majeures</strong> (toutes potentiellement dangereuses) :</p>
+<ol>
+<li>
+<p><strong>Protocole long agoniste chez SOPK</strong> → devrait être un protocole antagoniste. L'agoniste long ne permet pas le trigger agoniste en cas de réponse excessive (les récepteurs GnRH sont désensibilisés). Perte de la « porte de sortie » de sécurité.</p>
+</li>
+<li>
+<p><strong>FSH 225 UI/j chez SOPK</strong> → dose beaucoup trop élevée. Le SOPK avec CFA 28 nécessite un « start low, go slow » : 100-150 UI maximum. De plus, l'Elonva est contre-indiquée (CFA &gt; 20).</p>
+</li>
+<li>
+<p><strong>Trigger hCG chez SOPK</strong> → <strong>erreur la plus dangereuse</strong>. Chez une patiente SOPK hyperrépondeuse, le trigger hCG (demi-vie 5-7 jours) maximise le risque de SHO sévère. Le trigger agoniste est le choix de sécurité (réduction SHO 95 %). Mais ici, le protocole agoniste long rend le trigger agoniste <strong>impossible</strong> (récepteurs désensibilisés) → la patiente est piégée dans un protocole sans sécurité.</p>
+</li>
+</ol>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Conclusion</strong> : Cette prescription cumule 3 facteurs de risque de SHO sévère. Le protocole correct est : **antagoniste + FSH 100-150 UI + trigger agoniste + freeze-all + cabergoline**.</div>
+
+<blockquote>
+<p>📚 <strong>Référence</strong> : ESHRE OHSS guideline 2020 ; Youssef 2014.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-002-cas-clinique-complexe">Question FIV-DI-002 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : complications · <strong>Modules</strong> : M36, M22 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme L., 32 ans, FIV-ICSI. Transfert frais de blastocyste à J5. À J12 post-transfert : β-hCG = 450 UI/L (grossesse débutante). À J18 : douleurs abdominales diffuses, distension abdominale, prise de poids 3 kg en 5 jours. Échographie : ovaires 14 cm bilatéraux, ascite abondante. Hématocrite 47 %, leucocytes 18 G/L, créatinine 115 µmol/L, albuminémie 25 g/L.</strong></p>
+<p><strong>1) Quel est le diagnostic et sa classification ?</strong><br />
+<strong>2) Pourquoi ce SHO est-il particulièrement grave ?</strong><br />
+<strong>3) Détaillez votre prise en charge.</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p><strong>1) SHO sévère tardif</strong> (classification Golan : sévère → Ht &gt; 45 %, oligurie probable, ovaires &gt; 12 cm). Tardif car J18 post-transfert = lié à l'hCG <strong>endogène</strong> de la grossesse débutante (pas l'hCG du trigger qui a disparu).</p>
+<p><strong>2) Gravité particulière</strong> :<br />
+- SHO tardif = pronostic plus sévère que le précoce (auto-entretenu par la grossesse → hCG endogène croissant)<br />
+- Hypoalbuminémie sévère (25 g/L &lt; 30 g/L) → fuite protéique massive<br />
+- Créatinine élevée → insuffisance rénale fonctionnelle débutante<br />
+- Ht 47 % → hémoconcentration → risque de thrombose (4-10 % des SHO sévères, territoires inhabituels : jugulaire, cérébrale, Budd-Chiari)</p>
+<p><strong>3) Prise en charge</strong> :<br />
+- <strong>Hospitalisation</strong> obligatoire<br />
+- <strong>Remplissage</strong> : NaCl 0,9 % IV, 1-2 L les premières heures, puis ajusté à la diurèse (objectif &gt; 0,5 mL/kg/h)<br />
+- <strong>Albumine 20 %</strong> : perfusion car albuminémie &lt; 30 g/L (maintenir la pression oncotique)<br />
+- <strong>HBPM</strong> : enoxaparine 40 mg/j SC (prophylaxie thromboembolique) — à poursuivre jusqu'à résolution<br />
+- <strong>Paracentèse échoguidée</strong> si ascite tendue et gêne respiratoire (tirage, SpO2 &lt; 95 %)<br />
+- <strong>Surveillance</strong> : poids 2×/j, bilan quotidien (Ht, créatinine, ionogramme, albumine, bilan hépatique), diurèse horaire<br />
+- <strong>Paracétamol</strong> pour la douleur — <strong>AINS CONTRE-INDIQUÉS</strong> (néphrotoxicité, hémorragie)<br />
+- <strong>Diurétiques CONTRE-INDIQUÉS</strong> (aggraveraient l'hémoconcentration et le risque thrombotique)<br />
+- <strong>Ne PAS interrompre la grossesse</strong> sauf détresse vitale maternelle incontrôlable<br />
+- Durée prévisible : 2-4 semaines (jusqu'à la stabilisation du β-hCG puis son plateau)</p>
+<blockquote>
+<p>📚 <strong>Référence</strong> : RCOG Green-top Guideline n° 5, 2016 ; Delvigne A, Rozenberg S, Hum Reprod Update 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-003-cas-clinique-complexe">Question FIV-DI-003 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : éthique / décision partagée · <strong>Modules</strong> : M26, M41 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>M. et Mme M., tous deux 40 ans. 2e FIV-ICSI. 4 blastocystes vitrifiés. PGT-A : 2 embryons aneuploïdes (trisomie 16, monosomie 22), 1 embryon mosaïque (mosaïcisme faible trisomie 8, 30 %), 1 embryon euploïde (46,XX). Le couple demande s'il est possible de transférer l'embryon mosaïque « pour avoir un garçon » (ils savent que l'euploïde est une fille).</strong></p>
+<p><strong>Comment gérez-vous cette situation ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p>Plusieurs enjeux éthiques et médicaux :</p>
+<ol>
+<li>
+<p><strong>Refuser la sélection du sexe non médicale</strong> : en France, la sélection du sexe pour convenance est <strong>interdite</strong> (loi de bioéthique). Le PGT a pour seul objectif la détection d'anomalies chromosomiques ou génétiques, pas le choix du sexe.</p>
+</li>
+<li>
+<p><strong>L'embryon mosaïque</strong> : un mosaïcisme faible (30 % trisomie 8) est compatible avec une grossesse normale dans certains cas (autocorrection embryonnaire possible). Cependant, le transfert d'un mosaïque ne se décide PAS en fonction du sexe mais en fonction du rapport bénéfice/risque médical. La biopsie de trophectoderme (5-10 cellules) n'est pas représentative à 100 % de l'embryon.</p>
+</li>
+<li>
+<p><strong>Stratégie recommandée</strong> :<br />
+   - Transférer l'embryon <strong>euploïde</strong> (46,XX) en priorité = meilleur pronostic<br />
+   - Expliquer que le mosaïque peut être gardé en « réserve » si échec avec l'euploïde<br />
+   - Counseling génétique obligatoire avant transfert d'embryon mosaïque<br />
+   - Documenter le refus de sélection du sexe dans le dossier<br />
+   - Proposer un accompagnement psychologique si le couple persiste</p>
+</li>
+<li>
+<p><strong>Pente glissante</strong> : ce cas illustre les dérives possibles du PGT-A (PGT-M → traits → sélection → eugénisme). Le cadre légal français protège contre ces dérives.</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Loi de bioéthique 2021, art. L2131-4 ; PGDIS Position statement on mosaicism 2019.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-004-cas-clinique-complexe">Question FIV-DI-004 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : endométrite chronique + RIF · <strong>Modules</strong> : M38, M30 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme N., 35 ans, 4 transferts de blastocystes (3 × 4AA, 1 × 4AB), 0 grossesse (RIF). Hystéroscopie : endomètre normal macroscopiquement. Biopsie endométriale : CD138 = 5/10 HPF. ERA : fenêtre réceptive. SAPL négatif. Caryotypes normaux. DFI conjoint = 18 % (normal).</strong></p>
+<p><strong>Quelle est votre interprétation et votre prise en charge ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li>
+<p><strong>Diagnostic</strong> : <strong>Endométrite chronique</strong> confirmée — CD138 ≥ 1/10 HPF (ici 5/10 HPF). Prévalence 30-40 % dans le RIF <em>(Cicinelli 2015)</em>. L'hystéroscopie peut être normale (sensibilité limitée pour l'endométrite chronique).</p>
+</li>
+<li>
+<p><strong>Traitement</strong> :<br />
+   - <strong>Doxycycline 200 mg/j × 14 jours</strong> (1ère ligne)<br />
+   - Si allergie : azithromycine ou métronidazole + ciprofloxacine<br />
+   - <strong>Contrôle</strong> : nouvelle biopsie endométriale à M+1 pour vérifier la disparition des plasmocytes<br />
+   - Taux d'amélioration : 60-70 % après traitement antibiotique <em>(Cicinelli 2015)</em><br />
+   - Si persistance : 2e ligne antibiotique, considérer culture endométriale ciblée</p>
+</li>
+<li>
+<p><strong>Interprétation de l'ERA</strong> : réceptif → la fenêtre n'est pas le problème. L'ERA-RCT (Simon 2020) n'a pas montré de bénéfice en population générale.</p>
+</li>
+<li>
+<p><strong>Après guérison</strong> : TEC avec le protocole habituel (pas de modification de la fenêtre). Pronostic nettement amélioré après traitement de l'endométrite.</p>
+</li>
+<li>
+<p><strong>Si nouvel échec post-traitement</strong> : considérer immunologie endométriale (EMMA/ALICE — microbiome endométrial), thrombophilies héréditaires, facteurs embryonnaires (PGT-A sur futurs cycles).</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cicinelli E et al. <em>Prevalence of chronic endometritis in repeated unexplained implantation failure</em>. Fertil Steril 2015.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-005-quelle-erreur">Question FIV-DI-005 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : ponction / sécurité · <strong>Module</strong> : M16, M32 · <strong>Tag</strong> : 🔶 ÉCHOGRAPHISTE</p>
+</blockquote>
+<p><strong>L'opérateur réalise une ponction ovocytaire. Avant de ponctionner le dernier follicule de l'ovaire gauche, il repère un vaisseau (artère iliaque) entre la sonde et le follicule. Il décide de ponctionner malgré tout en utilisant un angle d'approche latéral « pour éviter le vaisseau ».</strong></p>
+<p><strong>Identifiez l'erreur et la règle de sécurité.</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p><strong>Erreur</strong> : ponctionner malgré l'interposition d'un vaisseau iliaque. La règle absolue est : <strong>SÉCURITÉ &gt; NOMBRE D'OVOCYTES</strong>. Si un vaisseau est interposé entre la sonde et un follicule, ce follicule ne doit <strong>PAS</strong> être ponctionné, même si c'est le dernier. L'angle d'approche latéral n'élimine pas le risque de transfixion vasculaire.</p>
+<p><strong>Conséquences potentielles</strong> :<br />
+- Hémorragie intra-péritonéale (0,1-0,5 % des ponctions)<br />
+- Hématome rétropéritonéal<br />
+- Choc hémorragique → chirurgie en urgence</p>
+<p><strong>Règle</strong> : le repérage Doppler des vaisseaux iliaques et de l'uretère est <strong>obligatoire</strong> avant chaque ponction. La trajectoire doit être la plus courte possible et toujours libre de tout vaisseau.</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Rappel antisepsie</strong> : sérum physiologique uniquement (PAS de Bétadine = toxique pour les ovocytes).</div>
+
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ludwig AK et al. <em>Complications of transvaginal ultrasound-guided oocyte retrieval</em>. Reprod Biomed Online 2006.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-006-cas-clinique-complexe">Question FIV-DI-006 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : âge et PGT-A · <strong>Modules</strong> : M26, M39 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mme O., 41 ans. 1ère FIV-ICSI. 8 ovocytes ponctionnés, 6 MII, 5 fécondés, 3 blastocystes vitrifiés. Le couple demande un PGT-A. Résultats : 2 embryons aneuploïdes, 1 euploïde.</strong></p>
+<p><strong>1) Le PGT-A était-il justifié ici ?</strong><br />
+<strong>2) Et si les 3 embryons étaient aneuploïdes ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p><strong>1) Discussion PGT-A à 41 ans :</strong></p>
+<p>Arguments POUR :<br />
+- Taux d'aneuploïdie &gt; 60-70 % à cet âge → majorité des embryons aneuploïdes<br />
+- Rubio 2017 : bénéfice démontré chez les &gt; 38 ans (52 % vs 33 % par transfert)<br />
+- Réduit le taux de FC (évite transfert d'embryons trisomiques)<br />
+- Réduit le temps vers la grossesse (pas de transferts « inutiles »)</p>
+<p>Arguments CONTRE :<br />
+- Faible nombre d'embryons (3) → risque de « tout perdre » au PGT-A<br />
+- STAR trial : pas de bénéfice cumulatif prouvé<br />
+- Mosaïcisme : perte potentielle d'embryons viables classés aneuploïdes sur biopsie non représentative</p>
+<p><strong>Ici</strong> : le PGT-A a identifié 1 euploïde sur 3 → permet un transfert ciblé. Bénéfice : taux d'implantation attendu ~50 % (vs ~20 % sans sélection à 41 ans). Le PGT-A était <strong>raisonnable</strong> dans ce cas.</p>
+<p><strong>2) Si 3 embryons aneuploïdes :</strong><br />
+- Aucun embryon transférable → dilemme<br />
+- Options : nouveau cycle FIV avec accumulation d'embryons → nouveau PGT-A, ou FIV sans PGT-A (accepter un taux de FC plus élevé), ou discussion don d'ovocytes<br />
+- Counseling : à 41 ans, taux naissance/cycle ~8-12 %, nécessité de plusieurs cycles pour accumuler des euploïdes<br />
+- L'absence d'euploïde sur 3 embryons ne préjuge pas du cycle suivant</p>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Rubio C et al. <em>In vitro fertilization with PGT-A in advanced maternal age</em>. Am J Obstet Gynecol 2017 ; Munné S et al. STAR trial 2019.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-007-cas-clinique-complexe">Question FIV-DI-007 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : CRISPR / éthique · <strong>Module</strong> : M41, M44 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Un couple porteur hétérozygote de la drépanocytose (trait AS × AS, risque 25 % d'enfant SS) demande si l'on peut « corriger » le gène HbS par CRISPR sur leurs embryons plutôt que de faire un PGT-M avec risque de ne pas avoir d'embryons transférables.</strong></p>
+<p><strong>Comment répondez-vous ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li>
+<p><strong>Le CRISPR germinal est INTERDIT</strong> :<br />
+   - Moratoire international depuis l'affaire He Jiankui (2018, modification CCR5 chez des jumelles → condamné à 3 ans de prison)<br />
+   - En France : interdit par la loi de bioéthique (art. 16-4 du Code civil : « nul ne peut porter atteinte à l'intégrité de l'espèce humaine »)<br />
+   - Convention d'Oviedo (1997) : interdiction de modification du génome transmissible</p>
+</li>
+<li>
+<p><strong>Pourquoi l'interdiction ?</strong> :<br />
+   - Effets off-target : CRISPR peut couper à des sites non ciblés → mutations involontaires potentiellement pathogènes<br />
+   - Mosaïcisme : édition post-fécondation = toutes les cellules ne sont pas modifiées identiquement<br />
+   - Modifications transmissibles aux générations futures → implications irréversibles pour l'espèce<br />
+   - Pente glissante : correction thérapeutique → amélioration → sélection de traits</p>
+</li>
+<li>
+<p><strong>Alternative disponible et légale</strong> : <strong>PGT-M pour drépanocytose</strong><br />
+   - Workup 3-6 mois (étude familiale, marqueurs informatifs)<br />
+   - Biopsie trophectoderme J5 + analyse ciblée du gène HBB<br />
+   - Sélection des embryons AA (sains) ou AS (porteurs sains)<br />
+   - Probabilité : sur 4 blastocystes, en moyenne 3 sont transférables (AA ou AS)<br />
+   - Taux de naissance comparable à la FIV standard après sélection</p>
+</li>
+<li>
+<p><strong>Accompagnement</strong> : le couple peut ressentir de la frustration face à la lourdeur du PGT-M. Expliquer que le PGT-M est éprouvé depuis 1990 (Handyside, Nature) et que le ratio bénéfice/risque est largement en faveur du PGT-M vs CRISPR.</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Lander ES et al. <em>Adopt a moratorium on heritable genome editing</em>. Nature 2019 ; Loi de bioéthique 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-008-cas-clinique-complexe">Question FIV-DI-008 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : fin de parcours / psychologie · <strong>Modules</strong> : M42, M39 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Mme P., 43 ans. 4 FIV réalisées (compteur épuisé), 0 grossesse. AMH 0,2 ng/mL. Dernière tentative : 2 ovocytes, 1 fécondé, arrêt de développement J3. Le couple refuse le don d'ovocytes. Elle pleure en consultation et dit « je suis un échec ». Son conjoint est silencieux.</strong></p>
+<p><strong>Comment gérez-vous cette consultation ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li>
+<p><strong>Écoute active et validation émotionnelle</strong> : reconnaître la douleur sans la minimiser. « Ce que vous ressentez est légitime après ce parcours. Vous n'êtes pas un échec — la biologie a des limites qui ne reflètent pas votre valeur. »</p>
+</li>
+<li>
+<p><strong>Bilan factuel honnête</strong> :<br />
+   - AMH 0,2 + 43 ans → réserve quasi épuisée, taux naissance/cycle &lt; 5 %<br />
+   - Compteur SS épuisé (4 ponctions), FIV supplémentaire non remboursée<br />
+   - Don d'ovocytes : taux 40-60 % mais refusé → respecter le choix, proposer un délai de réflexion</p>
+</li>
+<li>
+<p><strong>Le conjoint</strong> :<br />
+   - Le silence masculin est fréquent (sous-diagnostic 10-15 %). Poser des questions directes : « Et vous, comment vivez-vous cette situation ? »<br />
+   - 30-40 % des couples présentent un burn-out AMP (détachement, irritabilité, somatisation)<br />
+   - Proposer PHQ-9 si suspicion dépressive (≥ 10 = dépistage positif)</p>
+</li>
+<li>
+<p><strong>Orientation psychologique</strong> :<br />
+   - Proposition d'accompagnement par un psychologue spécialisé en AMP (TCC, EMDR si trauma, mindfulness/MBSR)<br />
+   - Associations : BAMP, Maia<br />
+   - Pause thérapeutique recommandée : pas d'impact négatif sur les résultats si &lt; 40 ans (ici 43 ans → la question ne se pose plus en autologue)</p>
+</li>
+<li>
+<p><strong>Accompagnement de la fin de parcours</strong> :<br />
+   - Deuil de l'enfant biologique = processus spécifique, différent du deuil classique<br />
+   - Laisser la porte ouverte au don d'ovocytes (le refus initial peut évoluer avec le temps)<br />
+   - Explorer d'autres projets parentaux (adoption) si le couple le souhaite<br />
+   - Ne JAMAIS forcer une décision</p>
+</li>
+<li>
+<p><strong>Règle du praticien</strong> : « Savoir proposer une pause, référer vers un psychologue, et accompagner la fin de parcours avec empathie — cela fait partie du soin. »</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Gameiro S et al. <em>ESHRE guideline: routine psychosocial care in infertility</em>. Hum Reprod 2015 ; Cousineau TM, Domar AD. <em>Psychological impact of infertility</em>. Best Pract Res Clin Obstet Gynaecol 2007.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-009-qcm-complexe">Question FIV-DI-009 — QCM complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : sécurité laboratoire · <strong>Module</strong> : M33 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>Dans un laboratoire de FIV, laquelle de ces situations constitue une urgence AMP-vigilance à déclaration obligatoire ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Un taux de fécondation ICSI de 65 % (légèrement sous l'objectif de 70 %)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>La panne d'un 2e incubateur (3 incubateurs restent fonctionnels)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Un mélange de tubes de 2 patients différents détecté avant insémination</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Un temps de culture prolongé de 2 heures pour raison technique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Un taux sous-optimal est un indicateur de qualité à surveiller (KPI) mais pas un événement AMP-vigilance.</li>
+<li><em>Proposition 2</em> : Gérable en routine — transfert vers les incubateurs fonctionnels.</li>
+<li><em>Proposition 3</em> : Exact. Le mélange (même détecté à temps) est un <strong>événement sentinelle</strong> à déclaration obligatoire en AMP-vigilance. L'erreur d'identification de gamètes est l'événement le plus grave en AMP. Prévention : double vérification + témoin électronique (RI Witness RFID).</li>
+<li><em>Proposition 4</em> : Un retard de 2h est suboptimal mais ne constitue pas un événement de sécurité déclarable.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ABM, Guide AMP-vigilance 2020.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-010-cas-clinique-complexe">Question FIV-DI-010 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : préservation fertilité / éthique · <strong>Modules</strong> : M25, M40 · <strong>Tag</strong> : 🟣 TOUS</p>
+</blockquote>
+<p><strong>Sophie, 35 ans, célibataire. Elle consulte pour autoconservation ovocytaire sociétale. AMH 2,4 ng/mL, CFA 12. Elle demande combien d'ovocytes sont nécessaires et quel est le « taux de garantie » d'avoir un enfant.</strong></p>
+<p><strong>Comment la conseillez-vous ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li>
+<p><strong>Éligibilité</strong> : 35 ans, dans la tranche 29-37 ans → éligible (loi 2021). Pas de justification médicale requise.</p>
+</li>
+<li>
+<p><strong>Objectif quantitatif</strong> :<br />
+   - Taux de naissance par ovocyte vitrifié : 5-7 % si &lt; 35 ans (diminue avec l'âge)<br />
+   - Objectif : <strong>≥ 15 ovocytes vitrifiés</strong> pour un taux cumulatif de 70-85 % (&lt; 35 ans)<br />
+   - À 35 ans : réserve correcte (AMH 2,4, CFA 12) → 1 à 2 stimulations probablement suffisantes<br />
+   - Chaque stimulation peut donner 8-15 ovocytes en réponse normale</p>
+</li>
+<li>
+<p><strong>Honnêteté sur les limites</strong> :<br />
+   - <strong>Il n'y a PAS de « garantie »</strong> : même avec 15 ovocytes, le taux cumulatif n'atteint pas 100 %<br />
+   - Efficacité optimale <strong>avant 35 ans</strong> — elle est à la limite. Après 38 ans : assurance limitée<br />
+   - Taux d'utilisation réel : seulement <strong>5-20 % des femmes utilisent</strong> finalement leurs ovocytes (la majorité conçoit spontanément ou en couple)</p>
+</li>
+<li>
+<p><strong>Aspects pratiques</strong> :<br />
+   - Remboursement : stimulation + ponction remboursées à 100 % ; conservation <strong>non remboursée</strong> (200-400 €/an)<br />
+   - Durée de conservation : pas de limite légale<br />
+   - Les ovocytes restent la propriété de la patiente</p>
+</li>
+<li>
+<p><strong>Counseling</strong> :<br />
+   - Expliquer que c'est une « assurance fertilité », pas une garantie<br />
+   - Proposer de vitrifier le plus tôt possible (chaque mois compte)<br />
+   - Pas de pression — décision personnelle</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cobo A et al. <em>Oocyte vitrification as an efficient option for elective fertility preservation</em>. Fertil Steril 2016 ; Loi 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-011-cas-clinique-complexe">Question FIV-DI-011 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : transplantation utérine · <strong>Module</strong> : M44 · <strong>Tag</strong> : 🔷 CLINICIEN</p>
+</blockquote>
+<p><strong>Mlle Q., 24 ans, syndrome de Mayer-Rokitansky-Küster-Hauser (MRKH) — agénésie utérine. Ovaires fonctionnels, AMH 3,5 ng/mL. Elle souhaite porter elle-même sa grossesse.</strong></p>
+<p><strong>Quelles sont les options et le protocole ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<ol>
+<li>
+<p><strong>GPA (Gestation Pour Autrui)</strong> : <strong>interdite en France</strong> (art. 16-7 Code civil). Possible à l'étranger (USA, Canada, certains pays) — tourisme procréatif.</p>
+</li>
+<li>
+<p><strong>Transplantation utérine</strong> : option émergente, <strong>indication principale = MRKH</strong>.<br />
+   - Première naissance : Brännström, Suède, 2014<br />
+   - &gt; 100 transplantations mondiales, &gt; 50 naissances (2024)<br />
+   - Taux de naissance : 40-50 %</p>
+</li>
+<li>
+<p><strong>Protocole</strong> :<br />
+   - Étape 1 : FIV + vitrification d'embryons (ovaires fonctionnels)<br />
+   - Étape 2 : transplantation utérine (donneuse vivante apparentée ou décédée)<br />
+   - Étape 3 : attente 12 mois (vascularisation, immunosuppression)<br />
+   - Étape 4 : TEC (transfert d'embryon congelé)<br />
+   - Étape 5 : grossesse sous immunosuppression → césarienne obligatoire (~36-37 SA)<br />
+   - Étape 6 : hystérectomie (retrait de l'utérus greffé) → arrêt immunosuppression</p>
+</li>
+<li>
+<p><strong>Risques</strong> : rejet (immunosuppression au long cours), complications chirurgicales, prématurité, césarienne obligatoire.</p>
+</li>
+<li>
+<p><strong>En France</strong> : programme de recherche au CHU de Limoges (Pr Gauthier). Pas encore en routine.</p>
+</li>
+</ol>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Brännström M et al. <em>Livebirth after uterus transplantation</em>. Lancet 2015 ; Testa G et al. <em>First live birth after uterus transplantation in the US</em>. Am J Transplant 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-fiv-di-012-cas-clinique-complexe">Question FIV-DI-012 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : échec total de fécondation · <strong>Modules</strong> : M18, M28, M34 · <strong>Tag</strong> : 🟢 BIOLOGISTE</p>
+</blockquote>
+<p><strong>1ère FIV-ICSI de M. et Mme R. 10 ovocytes MII ponctionnés, ICSI réalisée sur les 10. À J1 : 0 PN sur les 10 ovocytes (échec total de fécondation — TFF).</strong></p>
+<p><strong>1) Quelles sont les causes possibles ?</strong><br />
+<strong>2) Quelle est votre stratégie pour le cycle suivant ?</strong></p>
+<p><strong>Réponse attendue :</strong></p>
+<p><strong>1) Causes de TFF en ICSI</strong> (taux 2-3 %) :<br />
+- <strong>Défaut d'activation ovocytaire</strong> : absence ou insuffisance des oscillations calciques. Cause la plus fréquente<br />
+- <strong>Déficit en PLCzeta spermatique</strong> : protéine clé déclenchant les oscillations Ca2+ → absente dans la globozoospermie et certaines formes de TFF<br />
+- <strong>Immaturité ovocytaire</strong> : ovocytes métaphasiques mais avec compétence réduite<br />
+- <strong>Problème technique ICSI</strong> : injection mal positionnée, lésion du fuseau méiotique<br />
+- <strong>Morphologie spermatique extrême</strong> : globozoospermie (absence d'acrosome)</p>
+<p><strong>2) Stratégie cycle suivant</strong> :<br />
+- <strong>AOA (activation ovocytaire artificielle)</strong> : ionophore calcique (A23187 ou ionomycine) → mime les oscillations calciques normalement déclenchées par PLCzeta. Appliqué après l'ICSI<br />
+- Vérifier la morphologie spermatique (recherche de globozoospermie)<br />
+- Optimiser la maturation ovocytaire (timing trigger, culture prolongée des MI)<br />
+- Considérer un split ICSI + AOA / ICSI seul (pour évaluer le bénéfice)<br />
+- Si nouveau TFF malgré AOA : dosage PLCzeta spermatique si disponible, TESE (spz testiculaires parfois meilleur potentiel d'activation)</p>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Swain JE, Pool TB. <em>ART failure: oocyte contributions to unsuccessful fertilization</em>. Hum Reprod Update 2008 ; Heindryckx B et al. <em>Calcium ionophore AOA</em>. Reprod Biomed Online 2008.</p>
+</blockquote>
+<hr />
+<p><em>Fin du quiz — 110 questions couvrant les 45 modules (M01→M45)</em></p>
+<hr />
+<p><strong>Répartition finale :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Nombre</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥉 Bronze</td>
+<td>33</td>
+<td>30 %</td>
+</tr>
+<tr>
+<td>🥈 Argent</td>
+<td>28</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>🥇 Or</td>
+<td>27</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>💎 Diamant</td>
+<td>22</td>
+<td>20 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Couverture thématique :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Modules</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Histoire (P1)</td>
+<td>M01-M03</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fondamentaux (P2)</td>
+<td>M04-M07</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Bilan infertilité (P3)</td>
+<td>M08-M11</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Stimulation (P4)</td>
+<td>M12-M15</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Ponction/Labo (P5)</td>
+<td>M16-M19</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Transfert/Implant. (P6)</td>
+<td>M20-M22</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Cryoconservation (P7)</td>
+<td>M23-M25</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Techniques avancées (P8)</td>
+<td>M26-M29</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Échographie (P9)</td>
+<td>M30-M32</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Biologie reprod. (P10)</td>
+<td>M33-M35</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Complications (P11)</td>
+<td>M36-M39</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Éthique/Législation (P12)</td>
+<td>M40-M42</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Innovations (P13)</td>
+<td>M43-M45</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Points critiques sécurité patient (triple couverture ≥ 3 quiz) :</strong><br />
+- SHO : BR-015, AR-003, AR-013, OR-002, OR-013, DI-001, DI-002 (7 questions)<br />
+- Torsion annexe : OR-006, DI-005 (+ intégrée dans SHO)<br />
+- Erreur identification : AR-017, DI-009<br />
+- Ponction sécurité : DI-005<br />
+- Grossesse hétérotopique : OR-003<br />
+- AINS contre-indiqués SHO : AR-013, DI-002</p>
+<hr />
+<p><em>QUIZ_FIV.md — Formation VERTEX© FIV/AMP — 20 mars 2026</em></p>
+</div>

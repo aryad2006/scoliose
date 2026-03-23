@@ -1,0 +1,636 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-03-physiopathologie-et-etiologies">🦋 PARTIE 03 — PHYSIOPATHOLOGIE ET ÉTIOLOGIES</h1>
+<h2 id="des-mecanismes-fondamentaux-aux-etiologies-les-plus-frequentes">Des mécanismes fondamentaux aux étiologies les plus fréquentes</h2>
+<hr />
+<h1 id="module-08-mecanismes-des-hypothyroidies">MODULE 08 — MÉCANISMES DES HYPOTHYROÏDIES</h1>
+<h2 id="81-classification-physiopathologique">8.1 Classification physiopathologique</h2>
+<h3 id="811-hypothyroidie-primaire-thyroidienne">8.1.1 Hypothyroïdie primaire (thyroïdienne)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO08-S01-001 — TABLEAU : classification des hypothyroïdies — primaire, centrale, périphérique — TSH, T4L, étiologies]</p>
+</blockquote>
+<p><strong>Mécanisme</strong> : insuffisance de production hormonale par la glande thyroïde elle-même.<br />
+- TSH <strong>élevée</strong> (rétrocontrôle levé) ++ ← signe biologique cardinal<br />
+- T4L <strong>basse</strong><br />
+- Représente <strong>&gt; 99 %</strong> de toutes les hypothyroïdies</p>
+<p><strong>Grades</strong> (adapté de Gurnell et al., Endocrinol Metab Clin 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>Clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grade 1 (fruste)</td>
+<td>4-10 mUI/L</td>
+<td>Normale</td>
+<td>Souvent asymptomatique</td>
+</tr>
+<tr>
+<td>Grade 2 (modérée)</td>
+<td>10-50 mUI/L</td>
+<td>Basse</td>
+<td>Syndrome hypothyroïdien modéré</td>
+</tr>
+<tr>
+<td>Grade 3 (sévère)</td>
+<td>&gt; 50 mUI/L</td>
+<td>Très basse</td>
+<td>Syndrome complet, risque myxœdème</td>
+</tr>
+</tbody>
+</table>
+<h3 id="812-hypothyroidie-centrale-secondaire-ou-tertiaire">8.1.2 Hypothyroïdie centrale (secondaire ou tertiaire)</h3>
+<ul>
+<li><strong>Secondaire</strong> (hypophysaire) : TSH normale ou basse + T4L basse (déficit en TSH)</li>
+<li><strong>Tertiaire</strong> (hypothalamique) : TSH basse + T4L basse (déficit en TRH)</li>
+<li>En pratique clinique : souvent regroupées sous "hypothyroïdie centrale"</li>
+<li>Représente <strong>&lt; 1 %</strong> des hypothyroïdies</li>
+</ul>
+<h3 id="813-resistance-aux-hormones-thyroidiennes">8.1.3 Résistance aux hormones thyroïdiennes</h3>
+<ul>
+<li>Mutations TR : RTHβ (THRB) ou RTHα (THRA)</li>
+<li>TSH variable (normale à élevée), T3/T4 élevées, action insuffisante dans les tissus résistants</li>
+<li>Voir Module 07</li>
+</ul>
+<h3 id="814-mecanismes-des-hypothyroidies-primaires">8.1.4 Mécanismes des hypothyroïdies primaires</h3>
+<table>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Destruction du tissu thyroïdien</strong></td>
+<td>Hashimoto, post-RAI, post-chirurgie, irradiation externe</td>
+</tr>
+<tr>
+<td><strong>Blocage de la synthèse</strong></td>
+<td>Médicaments (amiodarone, lithium, ATU en excès), excès iode</td>
+</tr>
+<tr>
+<td><strong>Défaut congénital de synthèse</strong></td>
+<td>Dyshormonogenèses (mutations TPO, DUOX2, NIS, Tg)</td>
+</tr>
+<tr>
+<td><strong>Dysgénésie</strong></td>
+<td>Athyréose, ectopie, hypoplasie</td>
+</tr>
+<tr>
+<td><strong>Résistance à la TSH</strong></td>
+<td>Mutations TSHR inactivatrices</td>
+</tr>
+<tr>
+<td><strong>Carence en iode</strong></td>
+<td>Zone endémique, restriction sévère</td>
+</tr>
+<tr>
+<td><strong>Infiltration</strong></td>
+<td>Amyloïdose, sarcoïdose, hémochromatose, Riedel</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="82-quiz-module-08">8.2 Quiz Module 08</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Dans l'hypothyroïdie primaire, la TSH est :<br />
+- A) Normale<br />
+- B) Basse<br />
+- C) Élevée<br />
+- D) Variable</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — La TSH est élevée : la baisse de T4L lève le rétrocontrôle → hypersécrétion compensatrice de TSH.</p>
+</blockquote>
+<p><strong>Q2.</strong> L'hypothyroïdie centrale représente environ :<br />
+- A) 50 % des hypothyroïdies<br />
+- B) 20 % des hypothyroïdies<br />
+- C) 5 % des hypothyroïdies<br />
+- D) Moins de 1 % des hypothyroïdies</p>
+<blockquote>
+<p><strong>Réponse : D</strong> — L'hypothyroïdie centrale (d'origine hypophysaire ou hypothalamique) est rare (&lt; 1 %). La très grande majorité des hypothyroïdies est primaire (thyroïdienne).</p>
+</blockquote>
+<h3 id="or">🥇 Or</h3>
+<p><strong>Q3.</strong> Un patient a TSH à 0,8 mUI/L (normale basse) et T4L à 6 pmol/L (très basse). Quel diagnostic doit être impérativement évoquer ?<br />
+- A) Hypothyroïdie primaire grade 1<br />
+- B) Hypothyroïdie centrale (secondaire ou tertiaire)<br />
+- C) Sick euthyroid syndrome<br />
+- D) Hyperthyroïdie infraclinique</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — T4L très basse avec TSH normale ou basse = hypothyroïdie centrale jusqu'à preuve du contraire. Bilan : IRM hypophysaire + évaluation des autres axes hypophysaires (ACTH/cortisol en priorité).</p>
+</blockquote>
+<hr />
+<h1 id="module-09-thyroidite-de-hashimoto">MODULE 09 — THYROÏDITE DE HASHIMOTO</h1>
+<h2 id="91-epidemiologie-et-physiopathologie">9.1 Épidémiologie et physiopathologie</h2>
+<h3 id="911-donnees-epidemiologiques">9.1.1 Données épidémiologiques</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO09-S01-001 — GRAPHIQUE : prévalence de la thyroïdite de Hashimoto par sexe et âge]</p>
+</blockquote>
+<p><strong>Épidémiologie</strong> (adapté de Caturegli et al., Clin Rev Allergy Immunol 2014) :<br />
+- <strong>Première cause</strong> d'hypothyroïdie dans les pays industrialisés<br />
+- Prévalence : 2-5 % de la population générale<br />
+- Prédominance féminine : <strong>sex-ratio 7-9 femmes / 1 homme</strong><br />
+- Tous les âges, mais pic entre 30 et 60 ans<br />
+- Prévalence des anticorps anti-TPO en population générale : 10-15 % (sujets en euthyroïdie avec un potentiel évolutif vers l'hypothyroïdie)</p>
+<h3 id="912-physiopathologie-auto-immune">9.1.2 Physiopathologie auto-immune</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO09-S01-002 — SCHÉMA : mécanismes immunitaires dans la thyroïdite de Hashimoto — CD4+, CD8+, auto-anticorps, apoptose]</p>
+</blockquote>
+<p><strong>Mécanismes</strong> (adapté de Rapoport &amp; McLachlan, Autoimmunity 2014) :<br />
+- Rupture de tolérance centrale et périphérique aux antigènes thyroïdiens (Tg, TPO, TSHR)<br />
+- <strong>LT CD4+ Th1</strong> → activation LT CD8+ cytotoxiques (apoptose des thyréocytes via Fas/FasL)<br />
+- <strong>LT CD4+ Th17</strong> → inflammation locale, recrutement neutrophiles<br />
+- <strong>LT B → Auto-anticorps</strong> :<br />
+  - Anti-TPO (&gt; 95 %) : marqueurs de la maladie, peuvent inhiber la TPO<br />
+  - Anti-Tg (60 %) : marqueurs, interfèrent avec dosage Tg<br />
+  - Anti-TSHR bloquants (rare, &lt; 5 %) : peuvent provoquer hypothyroïdie en bloquant le TSHR</p>
+<h3 id="913-facteurs-genetiques-et-environnementaux">9.1.3 Facteurs génétiques et environnementaux</h3>
+<p><strong>Génétique</strong> :<br />
+- HLA : DRB1<em>03 (DR3), DRB1</em>04, DRB1*05<br />
+- Gènes de régulation immunitaire : CTLA-4 (Ala17), PTPN22 (Trp620), CD25 (IL-2Rα)<br />
+- Héritabilité estimée : 70 %</p>
+<p><strong>Facteurs environnementaux</strong> :<br />
+- Excès iodé (augmente immunogénicité de la Tg)<br />
+- Infections virales (mimétisme moléculaire)<br />
+- Grossesse (remaniement immunitaire post-partum)<br />
+- Stress<br />
+- Tabac (facteur protecteur paradoxal sur l'hypothyroïdie)<br />
+- Déficit en vitamine D, sélénium</p>
+<h3 id="914-histoire-naturelle">9.1.4 Histoire naturelle</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO09-S02-001 — COURBE : histoire naturelle de la thyroïdite de Hashimoto — phases évolutives sur 20 ans]</p>
+</blockquote>
+<p><strong>Phases évolutives</strong> :<br />
+1. <strong>Phase euthyroïdienne</strong> : anti-TPO+, TSH normale, durée variable (mois à années)<br />
+2. <strong>Phase d'hypothyroïdie frustre</strong> : TSH 4-10 mUI/L, T4L normale<br />
+3. <strong>Phase d'hypothyroïdie constituée</strong> : TSH &gt; 10 mUI/L, T4L basse<br />
+4. <strong>Hashitoxicose</strong> (inconstante) : libération hormonale par destruction folliculaire → phase transitoire d'hyperthyroïdie avant l'hypothyroïdie définitive</p>
+<p><strong>Vitesse de progression</strong> (adapté de Vanderpump, Whickham Survey 1995) :<br />
+- Anti-TPO+ : risque de progression vers hypothyroïdie de <strong>5 %/an</strong><br />
+- Anti-TPO- : risque de <strong>2 %/an</strong><br />
+- TSH &gt; 6 mUI/L + anti-TPO+ : risque de <strong>50 % à 10 ans</strong></p>
+<h3 id="915-formes-cliniques">9.1.5 Formes cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>Forme</th>
+<th>Aspect glande</th>
+<th>Histologie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hashimoto <strong>hypertrophique</strong> (classique)</td>
+<td>Goitre ferme, homogène, indolore</td>
+<td>Infiltrat lymphocytaire + follicules actifs résiduels</td>
+</tr>
+<tr>
+<td>Hashimoto <strong>atrophique</strong> (thyroïdite atrophique)</td>
+<td>Glande petite, fibreuse</td>
+<td>Fibrose extensive, peu de follicules</td>
+</tr>
+</tbody>
+</table>
+<h3 id="916-complications-rares">9.1.6 Complications rares</h3>
+<ul>
+<li><strong>Lymphome thyroïdien</strong> : risque relatif × 60 vs population générale (lymphome B diffus à grandes cellules, lymphome MALT) — suspecter si masse thyroïdienne à croissance rapide + Hashimoto connu</li>
+<li><strong>Cancer papillaire</strong> : association décrite mais rôle causal débattu</li>
+<li><strong>Syndrome polyendocrinien auto-immun</strong> (PEA) :</li>
+<li><strong>PEA-2</strong> : Hashimoto + DT1 + insuffisance surrénalienne (Addison)</li>
+<li><strong>PEA-3</strong> : Hashimoto + DT1 (fréquent)</li>
+<li>Autres associations : maladie de Biermer, vitiligo, pelade, maladie cœliaque</li>
+</ul>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de HAS 2019) :</p>
+<blockquote>
+<p>Chez tout patient avec thyroïdite de Hashimoto, rechercher les maladies auto-immunes associées : glycémie (DT1), NFS (Biermer), cortisol matinal (Addison), sérologie maladie cœliaque (IgA anti-transglutaminase). Ce bilan doit être répété si apparition de nouveaux symptômes.</p>
+</blockquote>
+<hr />
+<h2 id="92-quiz-module-09">9.2 Quiz Module 09</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Les anticorps anti-TPO sont présents dans quelle proportion des thyroïdites de Hashimoto ?<br />
+- A) 30 %<br />
+- B) 60 %<br />
+- C) 80 %<br />
+- D) 95 %</p>
+<blockquote>
+<p><strong>Réponse : D</strong> — Les anti-TPO sont positifs dans &gt; 95 % des Hashimoto.</p>
+</blockquote>
+<p><strong>Q2.</strong> La thyroïdite de Hashimoto est surtout fréquente chez :<br />
+- A) Les hommes jeunes (20-30 ans)<br />
+- B) Les femmes entre 30 et 60 ans (sex-ratio 7-9 F/H)<br />
+- C) Les enfants &lt; 5 ans<br />
+- D) Les femmes ménopausées uniquement</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Prédominance féminine marquée, pic entre 30-60 ans.</p>
+</blockquote>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un patient avec Hashimoto connu présente une masse thyroïdienne croissant rapidement en quelques semaines. Quelle est la principale complication à évoquer ?<br />
+- A) Cancer papillaire<br />
+- B) Lymphome thyroïdien (B diffus à grandes cellules ou MALT)<br />
+- C) Goitre multinodulaire bénin<br />
+- D) Adénome folliculaire</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le lymphome thyroïdien est une complication rare mais grave du Hashimoto (RR × 60). Une masse à croissance rapide sur fond de Hashimoto doit faire évoquer en priorité un lymphome. Cytoponction + biopsie chirurgicale si nécessaire.</p>
+</blockquote>
+<h3 id="or_1">🥇 Or</h3>
+<p><strong>Q4.</strong> Une femme de 28 ans avec Hashimoto et DT1 développe une asthénie majeure, une hypotension, une mélanodermie et une kaliémie à 5,6 mmol/L. Quel syndrome ?<br />
+- A) Myxœdème sévère<br />
+- B) Syndrome polyendocrinien auto-immun de type 2 (PEA-2) avec insuffisance surrénalienne (Addison)<br />
+- C) Crise thyrotoxique<br />
+- D) Syndrome néphrotique</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — PEA-2 (Schmidt) associe Hashimoto + DT1 + maladie d'Addison. La mélanodermie, l'hypotension, l'hyperkaliémie orientent vers l'insuffisance surrénalienne. Urgence vitale : cortisol plasmatique + test Synacthène.</p>
+</blockquote>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q5.</strong> Pourquoi la "hashitoxicose" peut-elle être confondue avec une maladie de Basedow, et quels arguments permettent de les distinguer ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : Dans les deux cas : thyrotoxicose biologique (TSH basse, T4L/T3L élevées), signes cliniques d'hyperthyroïdie. Différences : (1) Anticorps : TRAb stimulants positifs dans Basedow (&gt; 90 %) mais négatifs ou faiblement positifs dans Hashimoto ; les anti-TPO sont présents dans les deux. (2) Scintigraphie : hypercaptation homogène dans Basedow vs hypocaptation (thyroïdite destructive) dans hashitoxicose. (3) Évolution : la hashitoxicose est transitoire (quelques semaines) et évolue vers l'hypothyroïdie, le Basedow est une hyperthyroïdie chronique. (4) Traitement : la hashitoxicose ne répond pas aux ATU (pas de synthèse hormonale excessive, seulement libération de stock) — les β-bloquants suffisent temporairement.</p>
+</blockquote>
+<hr />
+<h1 id="module-10-hypothyroidies-iatrogenes">MODULE 10 — HYPOTHYROÏDIES IATROGÈNES</h1>
+<h2 id="101-post-chirurgicale-et-post-irradiation">10.1 Post-chirurgicale et post-irradiation</h2>
+<h3 id="1011-hypothyroidie-post-thyroidectomie">10.1.1 Hypothyroïdie post-thyroïdectomie</h3>
+<ul>
+<li><strong>Thyroïdectomie totale</strong> : hypothyroïdie immédiate, certaine (100 %)</li>
+<li>Initiation LT4 dès J1 post-opératoire, dose cible : 1,6-1,8 µg/kg/j (poids idéal)</li>
+<li><strong>Thyroïdectomie partielle</strong> (lobo-isthmectomie) : hypothyroïdie différée chez 20-50 % selon le volume réséqué, les causes et les anti-TPO préexistants</li>
+<li>Surveillance TSH à 6 semaines, 6 mois, puis annuelle</li>
+<li>Facteurs de risque d'hypothyroïdie post-lobo : anti-TPO+, TSH pré-opératoire dans la partie haute de la normale, volume faible du lobe restant</li>
+</ul>
+<h3 id="1012-post-iratherapie-rai-iode-131">10.1.2 Post-irathérapie (RAI, iode 131)</h3>
+<ul>
+<li>Fréquence : 50-90 % à 1 an, risque cumulatif croissant à vie</li>
+<li>Délai : variable, peut survenir des mois après le traitement</li>
+<li>Surveillance TSH : mensuelle les 3 premiers mois, puis trimestrielle la 1ère année, puis annuelle à vie</li>
+</ul>
+<h3 id="1013-post-irradiation-cervicale-externe">10.1.3 Post-irradiation cervicale externe</h3>
+<ul>
+<li>Radiothérapie pour lymphome de Hodgkin, cancers ORL</li>
+<li>Délai : 2-5 ans après l'irradiation</li>
+<li>Risque corrélé à la dose reçue (&gt; 30 Gy)</li>
+<li>Surveillance TSH annuelle à vie chez tout patient irradié en cervical</li>
+</ul>
+<h2 id="102-medicaments-hypothyroidiants">10.2 Médicaments hypothyroïdiants</h2>
+<blockquote>
+<p>[MEDIA: 💊 MHYPO10-S02-001 — TABLEAU : médicaments provoquant l'hypothyroïdie — mécanisme et fréquence]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Classe</th>
+<th>Mécanisme</th>
+<th>Fréquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amiodarone</strong></td>
+<td>Anti-arythmique</td>
+<td>Wolff-Chaikoff persistant + action anti-thyroïdienne directe</td>
+<td>15-22 %</td>
+</tr>
+<tr>
+<td><strong>Lithium</strong></td>
+<td>Thymorégulateur</td>
+<td>Blocage endocytose colloïde et sécrétion hormonale</td>
+<td>20-40 %</td>
+</tr>
+<tr>
+<td><strong>Anti-PD-1/PD-L1</strong> (nivolumab, pembrolizumab)</td>
+<td>ICI (immunothérapie)</td>
+<td>Thyroïdite immune auto-immune</td>
+<td>5-15 %</td>
+</tr>
+<tr>
+<td><strong>Anti-CTLA-4</strong> (ipilimumab)</td>
+<td>ICI</td>
+<td>Hypophysite immune → hypothyroïdie centrale</td>
+<td>5-10 %</td>
+</tr>
+<tr>
+<td><strong>Interféron α</strong></td>
+<td>Antivirale/oncologie</td>
+<td>Déclenchement auto-immunité thyroïdienne</td>
+<td>5-40 %</td>
+</tr>
+<tr>
+<td><strong>Interleukine-2</strong></td>
+<td>Immunostimulant</td>
+<td>Déclenchement auto-immunité</td>
+<td>15-40 %</td>
+</tr>
+<tr>
+<td><strong>Inhibiteurs TKI</strong> (sunitinib)</td>
+<td>Anticancer</td>
+<td>Mécanismes multiples (inhibition NIS, TPO, vascularisation)</td>
+<td>20-50 %</td>
+</tr>
+<tr>
+<td><strong>ATU en excès</strong> (méthimazole, PTU)</td>
+<td>Antithyroïdiens</td>
+<td>Inhibition TPO/couplage → hypothyroïdie iatrogène</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>Thalidomide, lénalidomide</strong></td>
+<td>Immunomodulateurs</td>
+<td>Mécanisme non précisé</td>
+<td>Rare</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Chez tout patient sous amiodarone, la biologie thyroïdienne est difficile à interpréter : T4 totale et T4L sont souvent élevées même en hypothyroïdie (l'amiodarone inhibe DIO1, réduisant la conversion T4→T3). La <strong>TSH</strong> reste le meilleur indicateur. La T3L est souvent basse même en euthyroïdie sous amiodarone.</p>
+</blockquote>
+<h2 id="103-thyroidites-avec-phase-hypothyroidienne">10.3 Thyroïdites avec phase hypothyroïdienne</h2>
+<h3 id="1031-thyroidite-du-post-partum-tpp">10.3.1 Thyroïdite du post-partum (TPP)</h3>
+<ul>
+<li><strong>Prévalence</strong> : 7-10 % des accouchées, plus fréquente si anti-TPO+ pendant la grossesse (50 % vs 2-3 %)</li>
+<li><strong>Phases</strong> :<br />
+  1. <strong>Phase thyrotoxique</strong> (mois 1-4) : libération hormonale → thyrotoxicose légère ou absente<br />
+  2. <strong>Phase hypothyroïdienne</strong> (mois 4-8) : la plus symptomatique, parfois confondue avec dépression post-partum<br />
+  3. <strong>Récupération</strong> (à 1 an) : 80 % récupèrent, 20 % → hypothyroïdie définitive</li>
+<li><strong>Dépistage</strong> : TSH à 3 et 6 mois post-partum chez toute femme anti-TPO+</li>
+<li><strong>Récidive</strong> : 70 % lors des grossesses suivantes</li>
+<li><strong>Traitement</strong> : LT4 si phase hypothyroïdienne symptomatique, tentative de sevrage à 12 mois</li>
+</ul>
+<h3 id="1032-thyroidite-subaigue-de-de-quervain">10.3.2 Thyroïdite subaiguë de De Quervain</h3>
+<ul>
+<li>Virale (paramyxovirus, entérovirus), douleurs cervicales irradiant à l'oreille</li>
+<li>Phase thyrotoxique (destruction folliculaire) → euthyroïdie → hypothyroïdie transitoire (mois 3-6)</li>
+<li>Récupération complète dans 90 % des cas</li>
+<li>Traitement : AINS → corticoïdes si douleurs sévères</li>
+</ul>
+<hr />
+<h2 id="104-quiz-module-10">10.4 Quiz Module 10</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> La thyroïdite du post-partum survient chez quel pourcentage des accouchées ?<br />
+- A) 1 %<br />
+- B) 3 %<br />
+- C) 7-10 %<br />
+- D) 30 %</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — 7-10 % des accouchées, avec un risque beaucoup plus élevé si anti-TPO+ pendant la grossesse (50 %).</p>
+</blockquote>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q2.</strong> Un patient sous sunitinib (inhibiteur TKI) pour cancer du rein développe une fatigue et une prise de poids. La TSH est à 18 mUI/L. La conduite à tenir est :<br />
+- A) Arrêter le sunitinib<br />
+- B) Initier LT4 sans arrêter le sunitinib<br />
+- C) Attendre la fin du traitement<br />
+- D) Doser les TRAb</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — L'hypothyroïdie iatrogène sous TKI est fréquente (20-50 %) et ne nécessite pas d'arrêt du traitement anticancéreux. Introduction de LT4 avec surveillance TSH.</p>
+</blockquote>
+<h3 id="or_2">🥇 Or</h3>
+<p><strong>Q3.</strong> Un patient sous amiodarone a une TSH à 15 mUI/L, T4L à 22 pmol/L (limite haute normale), T3L à 2,8 pmol/L (basse). Interprétez ce bilan.<br />
+- A) Euthyroïdie : T4L normale<br />
+- B) Hypothyroïdie : TSH élevée malgré T4L normale car l'amiodarone bloque DIO1 (accumulation T4)<br />
+- C) Hyperthyroïdie : T4L limite haute<br />
+- D) Sick euthyroid syndrome</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Sous amiodarone, la T4L est souvent faussement élevée (inhibition DIO1 → accumulation T4). La TSH élevée à 15 mUI/L, malgré une T4L "normale" pour le laboratoire, signe une hypothyroïdie vraie. C'est la TSH qui fait foi.</p>
+</blockquote>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q4.</strong> Une femme traitée pour cancer du sein par radiothérapie thoracique 3 ans auparavant développe une hypothyroïdie. Son bilan immunitaire est négatif (anti-TPO, anti-Tg). La TSH est à 22 mUI/L. Quel mécanisme, quelle surveillance à long terme ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : Hypothyroïdie post-radique par fibrose progressive des thyréocytes et de la microvascularisation thyroïdienne. Mécanisme : lésions ADN radio-induites, apoptose thyréocytaire retardée, fibrose interstitielle. Pas d'auto-immunité dans ce contexte. Délai typique : 2-5 ans. Risque cumulatif progressif (&gt; 30 % à 10 ans pour &gt; 30 Gy). La surveillance TSH doit être annuelle à vie car l'hypothyroïdie peut survenir plusieurs décennies après l'irradiation. Le cancer thyroïdien radio-induit (adénocarcinome papillaire) est une autre complication à surveiller par échographie annuelle.</p>
+</blockquote>
+<hr />
+<h1 id="module-11-hypothyroidies-congenitales">MODULE 11 — HYPOTHYROÏDIES CONGÉNITALES</h1>
+<h2 id="111-epidemiologie-et-classification">11.1 Épidémiologie et classification</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO11-S01-001 — TABLEAU : classification des hypothyroïdies congénitales — dysgénésies vs dyshormonogenèses]</p>
+</blockquote>
+<ul>
+<li><strong>Prévalence</strong> : 1/3 000 à 1/4 000 naissances (2e endocrinopathie pédiatrique après le DT1)</li>
+<li>Plus fréquente chez les filles (sex-ratio 2:1)</li>
+</ul>
+<p><strong>Classification</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Proportion</th>
+<th>Gène(s) concerné(s)</th>
+<th>Scintigraphie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dysgénésie</strong> (85 %)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>→ Ectopie</td>
+<td>40-45 %</td>
+<td>NKX2-1, FOXE1, PAX8</td>
+<td>Tissu ectopique (lingual+++)</td>
+</tr>
+<tr>
+<td>→ Athyréose</td>
+<td>25-30 %</td>
+<td>NKX2-1, PAX8</td>
+<td>Absence de fixation</td>
+</tr>
+<tr>
+<td>→ Hémithyroïdie</td>
+<td>15-20 %</td>
+<td>—</td>
+<td>Fixation unilatérale</td>
+</tr>
+<tr>
+<td><strong>Dyshormonogenèse</strong> (15 %)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>→ Défaut TPO</td>
+<td>50 % des DH</td>
+<td>TPO</td>
+<td>Goitre + hypercaptation</td>
+</tr>
+<tr>
+<td>→ Défaut DUOX2</td>
+<td>20 % des DH</td>
+<td>DUOX2, DUOXA2</td>
+<td>Goitre + hypercaptation</td>
+</tr>
+<tr>
+<td>→ Défaut NIS</td>
+<td>Rare</td>
+<td>SLC5A5</td>
+<td>Goitre + hypocaptation</td>
+</tr>
+<tr>
+<td>→ Défaut Tg</td>
+<td>Rare</td>
+<td>TG</td>
+<td>Goitre, Tg indosable</td>
+</tr>
+<tr>
+<td>→ Syndrome de Pendred</td>
+<td>Rare</td>
+<td>SLC26A4</td>
+<td>Goitre + surdité</td>
+</tr>
+</tbody>
+</table>
+<h2 id="112-depistage-neonatal">11.2 Dépistage néonatal</h2>
+<h3 id="1121-programme-francais">11.2.1 Programme français</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO11-S02-001 — ALGORITHME : programme de dépistage néonatal de l'hypothyroïdie congénitale en France]</p>
+</blockquote>
+<p><strong>Protocole</strong> (adapté de ANSM / Association Française pour le Dépistage et la Prévention des Handicaps de l'Enfant - AFDPHE) :<br />
+- Prélèvement sanguin sur buvard (test de Guthrie) : <strong>J3</strong> de vie (J2 si sortie précoce)<br />
+- Dosage <strong>TSH</strong> par immunoessai sur tache sèche<br />
+- <strong>Seuil d'alerte</strong> : TSH &gt; 20 mUI/L → rappel urgent</p>
+<p><strong>Conduite si TSH &gt; 20 mUI/L</strong> :<br />
+1. Dosage confirmateur : TSH + T4L <strong>sériques</strong> (veineux) J5-J10<br />
+2. Échographie cervicale : recherche ectopie, athyréose, goitre<br />
+3. Initiation LT4 <strong>immédiate</strong> si T4L basse (ne pas attendre la scintigraphie)<br />
+4. Scintigraphie thyroïdienne (99mTc ou 123I) : à distance (après 3 ans) pour bilan étiologique complet</p>
+<h3 id="1122-cibles-therapeutiques">11.2.2 Cibles thérapeutiques</h3>
+<p><strong>Doses initiales LT4</strong> (adapté de Léger et al., J Clin Endocrinol Metab 2014) :<br />
+- Nouveau-né : <strong>10-15 µg/kg/j</strong> (doses élevées car athyréose fréquente)<br />
+- 1-6 mois : 8-10 µg/kg/j<br />
+- 6-12 mois : 6-8 µg/kg/j</p>
+<p><strong>Cibles TSH</strong> :<br />
+- 0-12 mois : TSH 0,5-2 mUI/L (objectif vers le bas de la normale)<br />
+- 1-5 ans : TSH 0,5-2 mUI/L</p>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>Chaque semaine de retard dans l'initiation du traitement aggrave irréversiblement le pronostic neurologique. L'objectif est de normaliser la T4L dans les <strong>2 premières semaines de vie</strong>. Au-delà de 1 mois sans traitement, les séquelles cognitives sont probables même avec un traitement ultérieur.</p>
+</blockquote>
+<hr />
+<h2 id="113-quiz-module-11">11.3 Quiz Module 11</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Le dépistage néonatal de l'hypothyroïdie congénitale en France est réalisé :<br />
+- A) À J1 de vie par dosage T4L<br />
+- B) À J3 de vie par dosage TSH sur buvard<br />
+- C) À J15 de vie par dosage TSH sérique<br />
+- D) In utero à 20 SA</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — TSH sur buvard (test de Guthrie) à J3, seuil d'alerte &gt; 20 mUI/L.</p>
+</blockquote>
+<p><strong>Q2.</strong> La forme la plus fréquente d'hypothyroïdie congénitale est :<br />
+- A) La dyshormonogenèse par mutation TPO<br />
+- B) L'ectopie thyroïdienne (40-45 % des dysgénésies)<br />
+- C) L'athyréose<br />
+- D) Le syndrome de Pendred</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — L'ectopie thyroïdienne (surtout linguale) est la forme la plus fréquente de dysgénésie et représente la cause la plus fréquente d'hypothyroïdie congénitale.</p>
+</blockquote>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un enfant avec hypothyroïdie congénitale associe un goitre volumineux, un test au perchlorate positif et une surdité neurosensorielle bilatérale. Quel syndrome ?<br />
+- A) Syndrome de Van Wyk-Grumbach<br />
+- B) Syndrome de Pendred (mutation SLC26A4 / pendrine)<br />
+- C) Dyshormonogenèse par défaut de TPO<br />
+- D) Syndrome de Bamforth-Lazarus</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le syndrome de Pendred associe goitre (dyshormonogenèse par défaut de pendrine), test au perchlorate positif et surdité neurosensorielle (pendrine exprimée aussi dans la strie vasculaire cochléaire).</p>
+</blockquote>
+<h3 id="or_3">🥇 Or</h3>
+<p><strong>Q4.</strong> Pourquoi traite-t-on immédiatement une hypothyroïdie congénitale avant d'avoir le résultat de la scintigraphie ?<br />
+- A) Car la scintigraphie n'est pas fiable à cet âge<br />
+- B) Car la myélinisation cérébrale dépend des HT maternelles jusqu'à 12-14 SA mais ensuite des HT fœtales puis néonatales — chaque semaine non traitée compromet le pronostic neurologique<br />
+- C) Car la LT4 n'a pas d'effets secondaires<br />
+- D) Car l'étiologie n'influence pas le traitement</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La fenêtre de vulnérabilité cérébrale est courte. La scintigraphie est réalisée à distance (après 3 ans, après sevrage temporaire du traitement ou avec TSH élevée). L'étiologie n'influence pas l'urgence thérapeutique.</p>
+</blockquote>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q5.</strong> Un nourrisson de 6 mois a une hypothyroïdie congénitale par ectopie linguale. Ses parents posent la question d'une intervention chirurgicale sur la thyroïde linguale. Quelle est votre réponse et votre argumentation ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : La thyroïde linguale ectopique est souvent le seul tissu thyroïdien fonctionnel du patient (70 % des cas). Son exérèse chirurgicale provoquerait une athyréose définitive aggravant l'hypothyroïdie. De plus, le traitement médical (LT4 à vie) est parfaitement efficace et gérable. La chirurgie n'est indiquée que si la thyroïde linguale provoque une obstruction des voies aériennes ou une dysphagie sévère incompatible avec la croissance — ce qui est rare. La décision doit être prise en concertation entre l'endocrinologue pédiatrique, l'ORL et la famille. Il existe des cas décrits de régression de la thyroïde linguale sous LT4 (réduction de la stimulation TSH → réduction volume).</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

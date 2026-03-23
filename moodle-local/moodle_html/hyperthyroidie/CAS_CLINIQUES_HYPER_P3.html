@@ -1,0 +1,735 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-hyperthyroidies-partie-3-cas-21-a-30">CAS CLINIQUES — Hyperthyroïdies — Partie 3 (Cas 21 à 30)</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<h3 id="niveaux-or-et-diamant">Niveaux Or 🥇 et Diamant 💎</h3>
+<hr />
+<h2 id="cas-21-tao-menacant-la-vue-neuropathie-optique-dysthyroidienne">CAS 21 💎 — TAO Menaçant la Vue : Neuropathie Optique Dysthyroïdienne</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-21 — Neuropathie optique compressive dans la TAO : baisse d'acuité visuelle, réduction du champ visuel, urgence thérapeutique — décompression orbitaire d'urgence]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Véronique, 56 ans, fumeuse. Basedow traité par RAI il y a 18 mois (euthyroïdienne sous LT4). Consultation ophtalmologique urgente pour <strong>baisse d'acuité visuelle bilatérale</strong> progressive depuis 3 jours.</p>
+<p><strong>Examen ophtalmologique</strong> :<br />
+- Acuité visuelle OD : <strong>4/10</strong> (était 10/10 à 6 mois). OG : <strong>6/10</strong> (était 10/10)<br />
+- Proptose : OD 28 mm / OG 27 mm (Hertel)<br />
+- <strong>Champ visuel</strong> : déficit central et arciforme bilatéral à la périmétrie Goldman<br />
+- PIO : 24 mmHg OD / 22 mmHg OG (limites hautes)<br />
+- Fond d'œil : <strong>œdème papillaire bilatéral</strong><br />
+- IRM orbitaire : muscles extra-oculaires hypertrophiés, <strong>compression du nerf optique</strong> au sommet de l'orbite ("crowded apex")</p>
+<p><strong>Biologie</strong> : TSH 1,8 mUI/L (euthyroïdienne), TRAb 5,2 UI/L (encore positifs).</p>
+<p><strong>Q1 💎</strong> — Quel est le tableau et quelle est l'urgence ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Neuropathie Optique Dysthyroïdienne (NOD)</strong> — urgence ophtalmologique absolue :<br />
+1. Mécanisme : hypertrophie des muscles extra-oculaires → compression du nerf optique à l'apex orbitaire (espace étroit) → ischémie nerveuse → dégénérescence irréversible si non traitée<br />
+2. Signes de NOD : ↓ acuité visuelle + déficit champ visuel + œdème papillaire + compression IRM apex<br />
+3. CAS EUGOGO : "Sight-threatening TAO" → catégorie la plus sévère (NOD et/ou kératopathie cornéenne exposée)<br />
+4. <strong>Sans traitement dans les 24-48h : cécité permanente irréversible</strong></p>
+<p><strong>Q2 💎</strong> — Quelle est la séquence thérapeutique urgente (dans les 24 heures) ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Séquence URGENTE EUGOGO pour NOD</strong> :</p>
+<p><strong>ÉTAPE 1 (H0-H12)</strong> : <strong>Méthylprednisolone IV haute dose immédiate</strong> :<br />
+- Méthylprednisolone 1 g IV bolus sur 30 min (J1)<br />
+- Répéter J2 + J3 (3 bolus consécutifs = 3 g total)<br />
+- Monitoring : glycémie, TA, ECG (risque arythmies), surveillance hépatique<br />
+- Si réponse favorable (acuité → dans les 48-72h) : continuer corticoïdes IV selon protocole EUGOGO, puis oral</p>
+<p><strong>ÉTAPE 2 (J3-J7) — Si pas d'amélioration</strong> : <strong>Décompression orbitaire chirurgicale urgente</strong> :<br />
+- Exérèse de la paroi interne et/ou inférieure de l'orbite → ↑ volume orbite → ↓ pression apex<br />
+- Chirurgie endoscopique (endonasale) ou transcarconculaire selon expertise<br />
+- Résultats : amélioration acuité dans 60-70 % si dans les 7 jours</p>
+<p><strong>Ne pas attendre</strong> : la NOD est une urgence chirurgicale si réponse insuffisante aux corticoïdes à 48-72h.</p>
+<p><strong>Q3 💎</strong> — À J3, amélioration partielle (acuité OD 7/10, OG 8/10, œdème papillaire en réduction). Vous continuez les corticoïdes IV. À 3 mois, CAS = 1, acuité normalisée, proptose 24 mm résiduelle. Quelle est la suite du parcours de soin ?</p>
+<p><strong>Réponse Q3</strong> : Phase séquellaire après NOD contrôlée :</p>
+<ol>
+<li><strong>Phase inactive confirmée</strong> (CAS = 1) → arrêt corticoïdes progressif</li>
+<li><strong>Séquelles résiduelles</strong> (proptose 24 mm, fibrose musculaire) → réhabilitation chirurgicale en 3 étapes séquentielles (à distance de la phase active, espacement 3-6 mois entre chaque) :<br />
+   - <strong>Étape 1</strong> : Décompression orbitaire (si proptose &gt; 22 mm) → correction de la proptose<br />
+   - <strong>Étape 2</strong> : Chirurgie des muscles oculomoteurs (si strabisme/diplopie résiduelle stable)<br />
+   - <strong>Étape 3</strong> : Chirurgie palpébrale (rétraction, ectropion)</li>
+<li><strong>Téprotumumab</strong> : discuter si proptose persiste &gt; 21-22 mm malgré décompression → option d'accès compassionnel</li>
+<li><strong>Contrôle Basedow</strong> : TRAb encore positifs (5,2 UI/L) → thyroïdectomie totale discutée (↓ TRAb plus rapide qu'avec RAI seul → bénéfice TAO potentiel)</li>
+<li><strong>Tabac</strong> : sevrage tabagique impératif (tabac = facteur d'aggravation TAO le plus modifiable)</li>
+</ol>
+<hr />
+<h2 id="cas-22-hyperthyroidie-gestationnelle-compliquee-ftus-hypothyroidien">CAS 22 💎 — Hyperthyroïdie Gestationnelle Compliquée : Fœtus Hypothyroïdien</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-22 — Basedow maternel sur-traité : goitre fœtal à l'échographie, ajustement PTU pour protéger la thyroïde fœtale, coordination obstétrico-endocrinologique]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Camille, 30 ans, Basedow connu, 28 SA sous PTU 200 mg × 3/j depuis 12 SA. TRAb à 10 SA : 18,5 UI/L.</p>
+<p><strong>Écho morphologique à 28 SA</strong> : <strong>goitre fœtal</strong> découvert incidemment (lobe thyroïdien droit 15 mm, gauche 14 mm). FC fœtale : <strong>142 bpm</strong> (limite inférieure). Croissance fœtale normale.</p>
+<p><strong>Biologie maternelle à 28 SA</strong> :<br />
+- TSH : <strong>3,8 mUI/L</strong> (haute, limite supérieure de la normale pour T3)<br />
+- T4L : <strong>9 pmol/L</strong> (<strong>BASSE</strong> : N 12-22)</p>
+<p><strong>Q1 💎</strong> — Quel est votre diagnostic et comment l'expliquez-vous ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Hypothyroïdie fœtale iatrogène</strong> causée par surdosage en PTU maternel :<br />
+1. PTU traverse le placenta (passage transplacentaire) → bloque la synthèse thyroïdienne fœtale<br />
+2. Fœtus n'a pas encore sa propre régulation HPT mature à 28 SA → sensible au blocage ATS maternel<br />
+3. <strong>Goitre fœtal = signe d'hypothyroïdie fœtale</strong> : ↑ TSH fœtale → hypertrophie thyroïdienne compensatrice<br />
+4. <strong>FC fœtale basse</strong> (142 bpm) : l'hypothyroïdie ralentit la FC fœtale (N 120-160 bpm mais 142 = limite basse)<br />
+5. <strong>T4L maternelle basse</strong> : confirme le surdosage PTU<br />
+6. TRAb restent élevés (à doser) : risque de Basedow fœtal subsiste si PTU réduit → balance hypothyroïdie/hyperthyroïdie</p>
+<p><strong>Q2 💎</strong> — Quelle est la stratégie de prise en charge pour protéger le fœtus tout en contrôlant le Basedow maternel ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Stratégie</strong> :</p>
+<ol>
+<li><strong>Réduction immédiate du PTU</strong> : objectif T4L maternelle dans le <strong>tiers supérieur de la normale</strong> (17-22 pmol/L). Réduire à PTU 100 mg × 2/j d'emblée (50 % de réduction)</li>
+<li><strong>Surveillance biologique maternelle</strong> : TSH + T4L dans 2 semaines</li>
+<li><strong>Surveillance fœtale</strong> :<br />
+   - Écho fœtale hebdomadaire : taille goitre, FC, biométrie<br />
+   - Vélocimétrie Doppler artère ombilicale (retentissement circulatoire)</li>
+<li><strong>Si goitre fœtal ne régresse pas malgré adaptation PTU</strong> :<br />
+   - <strong>Amniocentèse</strong> avec dosage TSH fœtale (amniotic fluid fetal TSH) → diagnostic précis hypothyroïdie fœtale<br />
+   - <strong>Injection intra-amniotique de LT4</strong> (en 2ème ligne, exceptionnel) : traitement de l'hypothyroïdie fœtale sans agir sur la mère</li>
+<li>TRAb à 32-36 SA : surveillance risque Basedow néonatal</li>
+</ol>
+<p><strong>Coordination</strong> : consultation multidisciplinaire obstétricien + endocrinologue + néonatologiste.</p>
+<p><strong>Q3 💎</strong> — L'enfant naît à 38 SA. À J3, bilan néonatal : TSH 95 mUI/L, T4L 6 pmol/L, TRAb 8,5 UI/L (transmis par voie transplacentaire). Comment prenez-vous en charge cet enfant ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypothyroïdie néonatale transitoire + Basedow néonatal simultanés</strong> — situation rare et complexe :</p>
+<ol>
+<li><strong>Interprétation</strong> : TSH très élevée + T4L basse = hypothyroïdie néonatale. Mais TRAb très positifs (8,5 UI/L) = risque de Basedow néonatal une fois les effets du PTU maternel dissipés (demi-vie PTU = 2h → disparaît en 24-48h chez le nouveau-né)</li>
+<li><strong>Phase 1 (J0-J3)</strong> : hypothyroïdie prédominante → LT4 néonatale : 10-15 µg/kg/j</li>
+<li><strong>Phase 2 (J3-J21)</strong> : à mesure que le PTU disparaît et TRAb restent → risque d'hyperthyroïdie néonatale (délai 3-12 semaines selon catabolisme des TRAb transmis)</li>
+<li><strong>Surveillance</strong> : TSH + T4L + FC à J3, J7, J14, J21</li>
+<li>Si TSH se normalise puis devient basse + T4L haute + tachycardie → <strong>Basedow néonatal</strong> → ATS néonataux (MMI 0,5-1 mg/kg/j) + bêta-bloquant (propranolol 1-2 mg/kg/j)</li>
+<li>Durée : TRAb maternels disparaissent en 3-12 semaines → hypothyroïdie et hyperthyroïdie néonatales sont toutes les deux <strong>transitoires</strong></li>
+</ol>
+<hr />
+<h2 id="cas-23-tshome-adenome-thyreotrope-diagnostic-et-traitement">CAS 23 💎 — TSHome (Adénome Thyréotrope) : Diagnostic et Traitement</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-23 — Adénome thyréotrope : macroadénome hypophysaire découvert devant un tableau d'hyperthyroïdie atypique avec TSH non effondrée, traitement par chirurgie transsphénoïdale + analogues de la somatostatine]</p>
+</blockquote>
+<p><strong>Patient</strong> : Pierre, 48 ans, céphalées croissantes depuis 6 mois. Bilan pour troubles visuels.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>3,2 mUI/L</strong> (normale)<br />
+- T4L : <strong>48 pmol/L</strong> (3× la normale)<br />
+- T3L : <strong>12,5 pmol/L</strong> (2× la normale)<br />
+- <strong>α-GSU : 2,8 UI/L</strong> → α-GSU/TSH = <strong>2,8/3,2 = 0,875</strong> → <strong>&gt; 1</strong> si exprimé en mUI/L (vérifier unités)<br />
+- TRAb : négatifs<br />
+- GH : normale. Prolactine : 45 ng/mL (légèrement élevée = effet de masse)<br />
+- <strong>IRM hypophysaire</strong> : <strong>macroadénome de 22 mm</strong>, extension suprasellaire, contact avec le chiasma optique</p>
+<p><strong>Champ visuel</strong> : début de quadranopsie bitemporale supérieure.</p>
+<p><strong>Q1 💎</strong> — Confirmez le diagnostic et expliquez le rapport α-GSU/TSH.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Diagnostic : TSHome (adénome thyréotrope)</strong> — arguments :<br />
+1. TSH <strong>non effondrée</strong> + T4L et T3L très élevées = dissociation anormale → étiologie centrale<br />
+2. <strong>α-GSU/TSH &gt; 1</strong> → l'adénome sécrète proportionnellement plus de sous-unité α libre (anomalie de glycosylation) que de TSH complète → rapport pathologique<br />
+3. IRM : macroadénome hypophysaire visible<br />
+4. TRAb négatifs → pas de Basedow<br />
+5. Léger hyperprolactinémie par effet de masse (tige pituitaire comprimée)</p>
+<p><strong>Calcul α-GSU/TSH</strong> : Le rapport s'exprime en UI/L / mUI/L × 10 = 2,8 / (3,2 × 10) = 2,8/32 = 0,087. Attention aux <strong>unités</strong> : méthodes variables selon laboratoires. La valeur pathologique est <strong>&gt; 1</strong> pour α-GSU (U/L) / TSH (mU/L). En pratique : α-GSU élevée pour le taux de TSH = hypersécrétion relative de sous-unité α = TSHome.</p>
+<p><strong>Q2 💎</strong> — Quelle est la stratégie thérapeutique pour ce macroadénome de 22 mm avec extension suprasellaire ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Urgence relative</strong> : contact chiasmatique → risque de cécité par compression → traiter rapidement.</p>
+<p><strong>Phase 1 — Traitement néoadjuvant (2-3 mois)</strong> :<br />
+1. <strong>Octréotide LAR 20-30 mg IM/mois</strong> ou lanréotide autogel 120 mg/mois<br />
+2. Objectifs : ↓ volume tumoral (40-50 %) + contrôle hormonal (80 %) → améliore les conditions chirurgicales<br />
+3. Surveillance : TSH + T4L + T3L mensuels + IRM à 3 mois<br />
+4. MMI 10-20 mg/j en complément si T4L encore très élevée (contrôle périphérique)</p>
+<p><strong>Phase 2 — Chirurgie transsphénoïdale endoscopique</strong> (après réduction sous ASS) :<br />
+1. Résection maximale du macroadénome<br />
+2. Neurochirurgien expérimenté en pathologie hypophysaire (centre référence)<br />
+3. Bilan post-opératoire immédiat : TSH + T4L + bilan hypophysaire complet (ACTH, GH, FSH/LH, ADH)<br />
+4. Risques : insuffisance hypophysaire post-op (20-30 % des macroadénomes)</p>
+<p><strong>Phase 3 — Si résidu post-opératoire</strong> :<br />
+1. Reprendre octréotide LAR au long cours<br />
+2. Radiochirurgie stéréotaxique (Gamma Knife) si résidu non accessible au traitement médical<br />
+3. Surveillance IRM annuelle</p>
+<p><strong>Q3 💎</strong> — À 6 mois post-chirurgie, la TSH est à 0,05 mUI/L avec T4L basse. Le patient est fatigué, a pris 8 kg. L'IRM montre un résidu tumoral de 8 mm. Que décidez-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Panhypopituitarisme partiel post-chirurgical</strong> avec résidu tumoral :</p>
+<ol>
+<li><strong>Bilan exhaustif</strong> : cortisol 8h + ACTH + IGF-1 + GH stimulée + FSH/LH + testostérone + ADH + Osmolalité</li>
+<li><strong>Insuffisance thyréotrope post-chirurgicale</strong> (secondaire) : TSH basse ne reflète plus l'axe HPT → remplacer LT4 pour normaliser la T4L (cible T4L dans la moitié supérieure des valeurs normales)</li>
+<li>Si insuffisance corticotrope → <strong>hydrocortisone</strong> 15-20 mg/j avant tout autre traitement hormonal (risque d'insuffisance surrénalienne aiguë si stress)</li>
+<li><strong>Résidu 8 mm</strong> : reprendre octréotide LAR → surveillance IRM semestrielle</li>
+<li>Discussion radiochirurgie stéréotaxique si résidu non contrôlé par ASS à 12 mois</li>
+</ol>
+<hr />
+<h2 id="cas-24-hyperthyroidie-amiodaronee-type-1-severe">CAS 24 💎 — Hyperthyroïdie Amiodaronée Type 1 Sévère</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-24 — HAT1 sévère sur GMNT : résistance au MMI malgré fortes doses, thyroïdectomie totale d'urgence chez cardiaque sous amiodarone, préparation maximale]</p>
+</blockquote>
+<p><strong>Patient</strong> : Jacques, 68 ans, cardiologue. ATCD : cardiomyopathie dilatée FEVG 30 %, sous amiodarone depuis 5 ans pour tachycardie ventriculaire. Hospitalisé en cardiologie pour décompensation.</p>
+<p><strong>Biologie à l'admission</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong>, T4L : <strong>72 pmol/L</strong>, T3L : <strong>18,5 pmol/L</strong><br />
+- TRAb : négatifs. IL-6 : <strong>12 pg/mL</strong> (légèrement élevée)<br />
+- Tg : 420 ng/mL (élevée). CRP : 15 mg/L</p>
+<p><strong>Écho-Doppler thyroïde</strong> : goitre multinodulaire 65 mL, vascularisation <strong>hyperhomogène mais présente</strong> (Doppler couleur non supprimée).</p>
+<p><strong>Scintigraphie</strong> : fixation hétérogène 14 % à 24h avec zones hyperfixantes.</p>
+<p><strong>Cardiologue</strong> : "Impossibilité formelle d'arrêter l'amiodarone — arythmie létale si arrêt."</p>
+<p><strong>Q1 💎</strong> — Quel est le type d'HAT et comment le traitez-vous en première ligne ?</p>
+<p><strong>Réponse Q1</strong> : <strong>HAT1</strong> (Jod-Basedow) :<br />
+- GMNT préexistant (65 mL, nodules)<br />
+- Fixation scintigraphique présente (14 %) → tissu fonctionnel résiduel<br />
+- Hypervascularisation Doppler → activité synthétique<br />
+- IL-6 modérément élevée (non &gt; 30 pg/mL comme HAT2 pure)<br />
+- Tg élevée (production)<br />
+- TRAb négatifs → pas de Basedow auto-immun</p>
+<p><strong>Traitement HAT1</strong> :<br />
+1. <strong>MMI 40-60 mg/j</strong> (impossibilité d'arrêter l'amiodarone → doses maxales d'ATS)<br />
+2. Maintien amiodarone (accord cardiologue)<br />
+3. <strong>Perchlorate de potassium</strong> (Irenat) : compétiteur du NIS → réduit la captation d'iode par la thyroïde → utilisé en association avec MMI dans les HAT1 réfractaires (inhibition de l'entrée d'iode supplémentaire)<br />
+4. Surveillance hebdomadaire : TSH + T4L + T3L + NFS + hépatique<br />
+5. Objectif T4L : normalisation en 6-12 semaines (stock iodé considérable → délai longer)</p>
+<p><strong>Q2 💎</strong> — À 12 semaines, sous MMI 60 mg/j + perchlorate de potassium, T4L encore à 55 pmol/L, TSH &lt; 0,01. Décompensation cardiaque aggravée par thyrotoxicose. Décidez.</p>
+<p><strong>Réponse Q2</strong> : <strong>Résistance au traitement médical maximal</strong> → indication de thyroïdectomie totale d'urgence :</p>
+<p><strong>Préparation pré-opératoire intensive</strong> :<br />
+1. <strong>Maintenir MMI 60 mg/j + perchlorate</strong> (poursuite jusqu'au bloc)<br />
+2. <strong>Propranolol</strong> IV si FC &gt; 100 bpm (sous surveillance cardio stricte)<br />
+3. <strong>Solution de Lugol</strong> 10-20 gouttes × 3/j pendant 7-10 j (réduction vascularisation intra-thyroïdienne, effet Wolff-Chaikoff transitoire)<br />
+4. <strong>Bétabloquants IV</strong> en per-opératoire (esmolol courte durée d'action)<br />
+5. <strong>Hydrocortisone</strong> 100 mg avant induction (stress chirurgical + possibilité HAT mixte)</p>
+<p><strong>Évaluation risque opératoire</strong> :<br />
+- FEVG 30 % = risque cardiologique majeur (décompensation per-opératoire)<br />
+- Cardiologue en salle d'opération / réanimation cardio pré-positionnée<br />
+- Chirurgien endocrinien expérimenté<br />
+- Anesthésiste spécialisé en chirurgie cardiaque à risque élevé<br />
+- Mortalité opératoire estimée : 5-8 % dans ce contexte (contre 20-30 % si on n'opère pas)</p>
+<p><strong>Q3 💎</strong> — Post-opératoire J2 : hématome compressif cervical avec dyspnée et stridor. Que faites-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hématome post-thyroïdectomie compressif</strong> — URGENCE CHIRURGICALE ABSOLUE :</p>
+<ol>
+<li><strong>Réouverture immédiate de la cicatrice</strong> (au lit du patient si nécessaire si détresse respiratoire aiguë) : libérer la compression</li>
+<li>Appel <strong>chirurgien + anesthésiste</strong> en urgence (5 min)</li>
+<li><strong>Intubation orotrachéale</strong> si SpO2 &lt; 92 % malgré oxygène ou si détresse respiratoire → anesthésiste en urgence</li>
+<li>Bloc opératoire en urgence : évacuation de l'hématome, hémostase chirurgicale</li>
+<li>Surveillance post-drainage : calcium (parathyroïdes peuvent avoir été lésées supplémentairement par l'hématome), cordes vocales (nasofibroscopie)</li>
+<li><strong>Protocole de soins STHYR</strong> : en France, les équipes spécialisées disposent de kits d'ouverture rapide de cicatrice cervicale en SSPI</li>
+</ol>
+<hr />
+<h2 id="cas-25-maladie-de-basedow-et-infertilite-optimisation-pre-conceptionnelle">CAS 25 💎 — Maladie de Basedow et Infertilité : Optimisation Pré-Conceptionnelle</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-25 — Basedow et projet de grossesse : optimisation thyroïdienne pré-conceptionnelle, choix du traitement définitif, fenêtre entre RAI et conception]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Aurélie, 34 ans. Basedow récidivant (2ème rechute après 18 mois d'ATS × 2). TRAb 8,2 UI/L. Désir de grossesse dans 12 mois.</p>
+<p><strong>Situation</strong> :<br />
+- Score GREAT : 3/4 → rechute très probable si 3ème ATS<br />
+- Pas de TAO actuellement<br />
+- Euthyroïdienne sous MMI 10 mg/j<br />
+- T4L 16 pmol/L, TSH 1,4 mUI/L</p>
+<p><strong>Q1 💎</strong> — Comment conseiller cette patiente sur le traitement définitif de son Basedow en vue d'une grossesse ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Deux options</strong> pour traitement définitif avant grossesse :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>RAI (¹³¹I)</th>
+<th>Chirurgie (thyroïdectomie totale)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Délai avant grossesse</td>
+<td><strong>6 mois minimum</strong> (HAS/ATA)</td>
+<td><strong>3-4 semaines</strong> après cicatrisation</td>
+</tr>
+<tr>
+<td>Contrôle TRAb</td>
+<td>Déclin lent (6-24 mois)</td>
+<td>Déclin plus rapide (3-6 mois)</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Peut aggraver (TRAb positifs)</td>
+<td>Neutre ou légèrement bénéfique</td>
+</tr>
+<tr>
+<td>Hypothyroïdie</td>
+<td>80-90 % → LT4</td>
+<td>&gt; 95 % → LT4</td>
+</tr>
+<tr>
+<td>Risque chirurgical</td>
+<td>Nul</td>
+<td>Faible (NLR, parathyroïdes)</td>
+</tr>
+<tr>
+<td>Convenance</td>
+<td>1 seule séance</td>
+<td>Hospitalisation + convalescence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommandation</strong> : Vu le désir de grossesse dans 12 mois + TRAb 8,2 UI/L (risque TAO si RAI) :<br />
+- <strong>Chirurgie recommandée</strong> (ETA 2018, HAS 2019 pour Basedow avec TRAb élevés et désir de grossesse)<br />
+- TRAb déclinent plus vite post-chirurgie → grossesse plus sûre à 3-6 mois<br />
+- Si RAI choisi : grossesse reportée à 6 mois minimum + surveillance TRAb avant conception (si TRAb encore &gt; 2-3 × normale à 6 mois → reporter grossesse)</p>
+<p><strong>Q2 💎</strong> — Elle choisit la chirurgie. Comment la préparer et quand programmer la grossesse ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Préparation chirurgicale</strong> :<br />
+1. Euthyroïdie confirmée sous MMI (T4L dans les normes, TSH 0,5-2 mUI/L)<br />
+2. MMI jusqu'à J1 chirurgie + solution de Lugol 7-10 j avant (5 gouttes × 3/j)<br />
+3. Nasofibroscopie pré-opératoire<br />
+4. Bilan pré-op : NFS, TP/TCA, hémogroupage, bilan thyroïdien complet</p>
+<p><strong>Post-opératoire</strong> :<br />
+1. LT4 débutée à J1 ou J2 post-op : 1,6 µg/kg/j<br />
+2. Calcium + calcitriol prophylactique J0-J7 (parathyroïdes ++)<br />
+3. TRAb à contrôler à 1 mois, 3 mois, 6 mois</p>
+<p><strong>Timing grossesse</strong> :<br />
+- TSH normalisée sous LT4 + TRAb &lt; 2 × normale → feu vert pour grossesse (en général 3-6 mois post-chirurgie)<br />
+- Objectif TSH pré-conceptionnelle : <strong>0,5-2,5 mUI/L</strong> (ATA 2017 grossesse)<br />
+- Si TRAb encore &gt; 5 UI/L à 6 mois : reporter grossesse (risque Basedow fœtal/néonatal)</p>
+<p><strong>Q3 💎</strong> — Elle débute une grossesse 5 mois après la chirurgie. TSH à 6 SA : 4,8 mUI/L, T4L 10 pmol/L, TRAb 3,2 UI/L. Que décidez-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypothyroïdie infra-substituée à 6 SA</strong> → urgence endocrinologique :</p>
+<ol>
+<li><strong>Augmentation immédiate LT4</strong> : +25-50 µg/j → objectif TSH &lt; 2,5 mUI/L en T1</li>
+<li>Les besoins en LT4 augmentent de <strong>30-50 %</strong> dès le T1 (↑ TBG, ↑ volume de distribution, ↑ métabolisme placentaire T4)</li>
+<li>Contrôle TSH + T4L dans <strong>2 semaines</strong> (pas 6 semaines comme en dehors de la grossesse)</li>
+<li><strong>TRAb 3,2 UI/L</strong> : encore significatifs → bilan TRAb à 32-36 SA + écho fœtale à 20, 28, 36 SA pour goitre fœtal</li>
+<li>Coordination obstétricien + endocrinologue + néonatologiste</li>
+</ol>
+<hr />
+<h2 id="cas-26-crise-thyrotoxique-simulant-un-sepsis">CAS 26 💎 — Crise Thyrotoxique Simulant un Sepsis</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-26 — Crise thyrotoxique masquée par un tableau septique : diagnostic tardif, score Burch-Wartofsky, prise en charge réanimatoire multidisciplinaire]</p>
+</blockquote>
+<p><strong>Patient</strong> : Karim, 52 ans, adressé en réanimation pour <strong>choc septique</strong> supposé : fièvre 39,8°C, hypotension 85/50 mmHg, confusion, diarrhée.</p>
+<p><strong>Antécédents</strong> : Basedow connu, a lui-même arrêté le MMI "car il se sentait guéri" il y a 3 mois. Pas de suivi depuis 6 mois.</p>
+<p><strong>Bilan initial</strong> :<br />
+- NFS : GB 18 G/L (hyperleucocytose PN)<br />
+- PCT : 2,8 µg/L (élevée)<br />
+- CRP : 220 mg/L<br />
+- Hémocultures : 2 bouteilles en cours<br />
+- <strong>TSH demandée en routine</strong> : &lt; 0,01 mUI/L. T4L : 78 pmol/L. T3L : 19,5 pmol/L</p>
+<p><strong>Score de Burch-Wartofsky</strong> :<br />
+- T° 39,8°C : 20 pts + Confusion : 20 pts + FC 148 bpm : 25 pts + Diarrhée : 10 pts + Arrêt ATS : 10 pts = <strong>85 points</strong></p>
+<p><strong>Q1 💎</strong> — Comment la crise thyrotoxique peut-elle simuler un sepsis ? Quels signes orientent vers le bon diagnostic ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Similarités trompeuses crise/sepsis</strong> :<br />
+- Fièvre élevée dans les deux → peut conduire à priorité à l'infectieux<br />
+- Hyperleucocytose : possible en crise thyrotoxique (de stress) + PCT peut être légèrement élevée (non spécifique)<br />
+- Hypotension, tachycardie, confusion dans les deux<br />
+- Diarrhée dans les deux (entérotoxines septiques vs hypermotilité thyrotoxique)</p>
+<p><strong>Signes orientant vers la crise thyrotoxique</strong> :<br />
+1. <strong>Antécédent connu de Basedow</strong> non suivi<br />
+2. <strong>Tachycardie disproportionnée</strong> (148 bpm) sans foyer infectieux clair<br />
+3. <strong>Perte de poids antérieure</strong> notable (vêtements flottants, ceinture resserrée)<br />
+4. <strong>Absence de foyer infectieux</strong> clair malgré bilan exhaustif<br />
+5. <strong>TSH effondrée + T4L majestueuse</strong> → confirmée immédiatement</p>
+<blockquote>
+<p><strong>RÈGLE D'OR</strong> : Toute décompensation inexpliquée chez un patient avec antécédent thyroïdien ou sous amiodarone → TSH en URGENCE.</p>
+</blockquote>
+<p><strong>Q2 💎</strong> — Vous concluez à une crise thyrotoxique. Les hémocultures reviennent positives à Staphylococcus aureus. Comment gérez-vous les deux diagnostics simultanément ?</p>
+<p><strong>Réponse Q2</strong> : <strong>Crise thyrotoxique + bactériémie à Staphylococcus aureus</strong> — double urgence :</p>
+<p><strong>Priorité absolue</strong> : La <strong>crise thyrotoxique</strong> est souvent déclenchée par une infection → les deux diagnostics coexistent. Traiter les deux simultanément :</p>
+<p><strong>Traitement de la crise thyrotoxique</strong> (ordre strict) :<br />
+1. PTU 500 mg SNG/oral → heure H0<br />
+2. Lugol 20 gouttes × 3/j → H+1 (1h après PTU obligatoire)<br />
+3. Propranolol IV : esmolol si hypotension (courte demi-vie, maniable) → FC &lt; 100 bpm objectif<br />
+4. Hydrocortisone 100 mg IV × 3/j<br />
+5. Refroidissement physique + paracétamol IV (PAS aspirine)</p>
+<p><strong>Traitement du sepsis à Staphylocoque</strong> :<br />
+1. Antibiothérapie probabiliste puis adaptée aux antibiogrammes : flucloxacilline 12 g/j IV ou vancomycine si SARM<br />
+2. Échocardiographie cardiaque urgente (endocardite ?)<br />
+3. Retrait KVC si présent<br />
+4. Remplissage vasculaire équilibré (éviter surcharge en IC thyrotoxique)</p>
+<p><strong>Surveillance</strong> : T4L toutes les 12h, FC, diurèse, conscience (Glasgow), PCT/CRP à J3</p>
+<p><strong>Q3 💎</strong> — À J7, persistance d'une hyperthyroïdie malgré traitement médical optimal. T4L encore à 45 pmol/L. Le sepsis est contrôlé. L'équipe envisage la thyroïdectomie. Quels sont les critères de décision et de timing ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Critères de décision pour thyroïdectomie d'urgence semi-différée</strong> :</p>
+<p><strong>Indications validées</strong> :<br />
+1. Crise thyrotoxique résistante au traitement médical maximal (≥ 5-7 jours de traitement optimal → T4L encore &gt; 2× la normale)<br />
+2. Défaillance d'organes persistante (IC, confusion) liée à la thyrotoxicose<br />
+3. CI absolue aux ATS (ex. agranulocytose sévère, hépatotoxicité)</p>
+<p><strong>Timing optimal</strong> :<br />
+1. <strong>Sepsis contrôlé obligatoire</strong> (hémocultures négatives, CRP en descente, apyrexie 48h) → réduire risque endocardite sur plaie opératoire<br />
+2. PTU + Lugol maximaux en préopératoire<br />
+3. Stabilité hémodynamique : PAM &gt; 65 mmHg sans amines vasopressives si possible<br />
+4. Mortalité opératoire dans ce contexte : <strong>8-15 %</strong> (vs 20-30 % si crise non contrôlée) → balance justifie la chirurgie</p>
+<p><strong>Discussion éthique</strong> : démarche collégiale (réanimateur + endocrinologue + chirurgien + anesthésiste) → décision documentée en RCP.</p>
+<hr />
+<h2 id="cas-27-basedow-pediatrique-rechute-a-ladolescence">CAS 27 💎 — Basedow Pédiatrique : Rechute à l'Adolescence</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-27 — Basedow rechute à l'adolescence : 4ème cure d'ATS insuffisante, compliance difficile, transition vers traitement définitif, impact psychosocial]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Zoé, 16 ans. Basedow diagnostiqué à 11 ans. 3 cures de MMI (4-5 ans de traitement total). 4ème rechute cliniquement : nervosité, mauvais résultats scolaires, prise de poids dénie (thymie difficile d'évaluation).</p>
+<p><strong>Biologie</strong> : TSH 0,02 mUI/L, T4L 35 pmol/L, TRAb 12,5 UI/L (toujours très élevés).</p>
+<p><strong>Q1 💎</strong> — Quels facteurs psychosociaux influencent la compliance et le pronostic du Basedow adolescent ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Facteurs spécifiques à l'adolescence</strong> :</p>
+<ol>
+<li><strong>Non-compliance aux ATS</strong> : prise de médicaments quotidiens = obstacle à l'autonomisation → oublis fréquents, déni de la maladie</li>
+<li><strong>Impact psychologique</strong> : maladie chronique à cet âge → dépression, anxiété, trouble de l'image corporelle (proptose, goitre)</li>
+<li><strong>Pression scolaire</strong> : concentration difficile en thyrotoxicose → cercle vicieux (résultats → anxiété → aggravation thyrotoxicose)</li>
+<li><strong>Facteurs aggravants</strong> : tabagisme débutant (risque TAO), régimes restrictifs, stress des examens</li>
+<li><strong>Relation médecin-adolescent</strong> : la transition entre pédiatrie et médecine adulte est un moment à risque de perte de suivi</li>
+<li><strong>Approche</strong> : éducation thérapeutique adaptée à l'âge, implication de l'adolescente dans la décision, application de suivi biologique (reminder SMS), consultation sans les parents si souhaitée</li>
+</ol>
+<p><strong>Q2 💎</strong> — La famille et Zoé optent pour la thyroïdectomie totale. Quelles sont les spécificités de la prise en charge chirurgicale à 16 ans ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Spécificités pédiatriques</strong> de la thyroïdectomie :</p>
+<ol>
+<li><strong>Centre expert obligatoire</strong> : chirurgien ayant réalisé &gt; 30 thyroïdectomies pédiatriques/an (recommandation ETA 2018 pédiatrie)</li>
+<li><strong>Consentement</strong> : consentement des deux parents + assentiment de Zoé (16 ans = patient mineur mais doit être impliqué dans la décision)</li>
+<li><strong>Anesthésie pédiatrique</strong> : différences pharmacocinétiques, intubation pédiatrique</li>
+<li><strong>Préparation</strong> : MMI pour éthyroïdie (même protocole adulte) + Lugol 7-10 j</li>
+<li><strong>Risques spécifiques</strong> :<br />
+   - Hypoparathyroïdie : plus fréquente chez l'enfant (parathyroïdes plus petites, plus difficiles à identifier)<br />
+   - NLR : tissu plus délicat → neuromonitoring per-opératoire obligatoire</li>
+<li><strong>Post-opératoire</strong> :<br />
+   - LT4 10-15 µg/kg/j dès J1 (croissance en cours)<br />
+   - Calcium + calcitriol préventifs<br />
+   - Objectif TSH : 0,5-2 mUI/L (croissance optimale, pas surréprimée)</li>
+<li><strong>Transition</strong> vers médecin adulte à 18 ans organisée dès la chirurgie</li>
+</ol>
+<p><strong>Q3 💎</strong> — 3 mois post-thyroïdectomie, TRAb passent de 12,5 à 4,2 UI/L. Bonne éthyroïdie sous LT4. Zoé reprend ses études avec d'excellents résultats. Quelle surveillance à long terme proposez-vous ?</p>
+<p><strong>Réponse Q3</strong> : Suivi post-thyroïdectomie adolescent :</p>
+<p><strong>Surveillance thyroïdienne</strong> :<br />
+1. TSH + T4L toutes les 6-8 semaines pendant 6 mois (ajustements LT4 fréquents en adolescence → croissance + activité physique + stress)<br />
+2. Puis TSH annuel une fois stabilisé<br />
+3. TRAb à 6 mois, 1 an, 2 ans : déclin attendu → si persistance à 2 ans → vérifier hypothyroïdie résiduelle ou Basedow résiduel sur tissu ectopique (rare)</p>
+<p><strong>Surveillance osseuse</strong> :<br />
+- DXA à 18 ans (référence adulte jeune)<br />
+- Calcium + vitamine D maintenus jusqu'à 18-20 ans<br />
+- Activité physique encouragée</p>
+<p><strong>Surveillance ophtalmologique</strong> :<br />
+- Contrôle ophtalmologique annuel (TRAb encore positifs à 4,2 UI/L → risque TAO résiduel)<br />
+- Si progression TRAb → ophtalmologue urgence</p>
+<p><strong>Suivi psychologique</strong> :<br />
+- Consultation à 6 mois post-op : évaluation qualité de vie, scolarité, image corporelle<br />
+- Si séquelles psychologiques → prise en charge spécialisée</p>
+<hr />
+<h2 id="cas-28-struma-ovarii-toxique">CAS 28 💎 — Struma Ovarii Toxique</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-28 — Struma ovarii toxique : hyperthyroïdie avec thyroïde cervicale normale, scintigraphie corps entier avec fixation pelvienne, traitement chirurgical]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Marianne, 41 ans. Consulte pour palpitations, amaigrissement 5 kg en 3 mois. Règles irrégulières.</p>
+<p><strong>Biologie</strong> : TSH 0,01 mUI/L, T4L 42 pmol/L, TRAb négatifs, anti-TPO négatifs, Tg 85 ng/mL (légèrement élevée).</p>
+<p><strong>Écho thyroïde</strong> : <strong>thyroïde NORMALE</strong> (volume 12 mL, pas de nodule). Pas de goitre.</p>
+<p><strong>Scintigraphie thyroïdienne ¹²³I</strong> : <strong>fixation cervicale NULLE</strong> (thyroïde non visible = supprimée). Fixation inattendue <strong>pelvienne</strong>.</p>
+<p><strong>Écho pelvienne</strong> : <strong>masse ovarienne droite de 8 cm</strong>, hétérogène, composite (zones kystiques et solides).</p>
+<p><strong>Q1 💎</strong> — Comment expliquez-vous ce tableau et quel est le diagnostic ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Struma ovarii toxique</strong> :</p>
+<ol>
+<li><strong>Mécanisme</strong> : tératome ovarien (kyste dermoïde) contenant du tissu thyroïdien fonctionnel &gt; 50 % → tissu thyroïdien ectopique ovarien acquiert une <strong>autonomie</strong> (mutation TSHR possible) → production hormonale indépendante de la TSH</li>
+<li><strong>Thyroïde cervicale</strong> : supprimée par rétrocontrôle négatif → non visible à la scintigraphie (fixation nulle cervicale)</li>
+<li><strong>Scintigraphie corps entier</strong> : fixation pelvienne = tissu thyroïdien ectopique actif dans l'ovaire → <strong>pathognomonique</strong></li>
+<li><strong>Tg élevée</strong> : produite par le tissu thyroïdien ovarien</li>
+<li><strong>TRAb négatifs</strong> : pas de mécanisme auto-immun</li>
+<li>Diagnostic : struma ovarii toxique (hormones produites par la tumeur ovarienne)</li>
+</ol>
+<p><strong>Q2 💎</strong> — Quelle est la prise en charge chirurgicale et comment évaluer la malignité ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Prise en charge chirurgicale</strong> :</p>
+<p><strong>Bilan pré-opératoire</strong> :<br />
+1. IRM pelvienne (caractérisation de la masse, extension)<br />
+2. Marqueurs tumoraux : CA-125 (kyste dermoïde/carcinome), CEA, bêta-hCG<br />
+3. Scanner thoraco-abdomino-pelvien (recherche métastases si suspicion malignité)<br />
+4. TDM cervico-thoracique (tissu thyroïdien ectopique cervical ?)<br />
+5. MMI 20-30 mg/j pour euthyroïdie pré-opératoire</p>
+<p><strong>Chirurgie</strong> :<br />
+1. <strong>Ovariectomie droite</strong> (laparoscopie ou laparotomie selon taille 8 cm)<br />
+2. Examen histologique extemporané obligatoire<br />
+3. Si malignité (carcinome thyroïdien dans struma ovarii) : thyroïdectomie totale + RAI ¹³¹I à distance<br />
+4. Prélèvement bilatéral recommandé par certains (struma ovarien bilatéral dans 10 % des cas)</p>
+<p><strong>Critères de malignité</strong> (carcinome thyroïdien dans struma ovarii : &lt; 5 % des cas) :<br />
+- Envahissement capsulaire ou vasculaire<br />
+- Angioinvasion<br />
+- Métastases à distance (TAC + scintigraphie ¹³¹I post-opératoire)</p>
+<p><strong>Q3 💎</strong> — Histologie : carcinome papillaire T1 dans le struma ovarii, pas d'envahissement capsulaire. Quelle est la suite de la prise en charge ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Carcinome thyroïdien papillaire microinvasif (pT1) dans struma ovarii</strong> — faible risque :</p>
+<p><strong>Stratégie selon le stade</strong> :<br />
+1. <strong>Thyroïdectomie totale</strong> cervicale : recherche tissu thyroïdien cervical normal ou cancéreux<br />
+2. <strong>Scintigraphie corps entier diagnostique</strong> au ¹³¹I après thyroïdectomie : résidu thyroïdien + recherche métastases à distance<br />
+3. <strong>RAI ¹³¹I thérapeutique</strong> (1 110-3 700 MBq) si : résidu scintigraphique + Tg élevée post-thyroïdectomie + suspicion de foyers métastatiques<br />
+4. Si pT1 sans invasion capsulaire/vasculaire + Tg indétectable post-thyroïdectomie → surveillance seule (RAI non systématique dans les microcarcinomes à faible risque)<br />
+5. Surveillance à vie : Tg + anticorps anti-Tg annuels + écho cervicale + scintigraphie si Tg remonte</p>
+<hr />
+<h2 id="cas-29-syndrome-de-resistance-partielle-aux-hormones-thyroidiennes-avec-hyperthyroidie-peripherique-selective-rth">CAS 29 💎 — Syndrome de Résistance Partielle aux Hormones Thyroïdiennes avec Hyperthyroïdie Périphérique Sélective (RTHα)</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-29 — RTHα par mutation THRA : hypothyroïdie cardiaque paradoxale + tableau d'hyperthyroïdie osseuse, biologie normale, diagnostic génétique]</p>
+</blockquote>
+<p><strong>Patient</strong> : Romain, 28 ans. Suivi en endocrinologie pour anomalies thyroïdiennes sans étiologie claire.</p>
+<p><strong>Biologie répétée</strong> :<br />
+- TSH : <strong>1,6 mUI/L</strong> (normale)<br />
+- T4L : <strong>18 pmol/L</strong> (normale)<br />
+- T3L : <strong>6,8 pmol/L</strong> (limite haute normale)<br />
+- TRAb : négatifs. Anti-TPO : négatifs<br />
+- <strong>rT3 : 0,12 nmol/L</strong> (limite haute)</p>
+<p><strong>Clinique</strong> :<br />
+- Bradycardie de repos (46 bpm)<br />
+- Constipation chronique (depuis l'enfance)<br />
+- <strong>Fracture spontanée du 2ème métatarse</strong> lors d'une randonnée légère<br />
+- DXA : T-score rachis -2,3 (ostéoporose sévère pour 28 ans !)<br />
+- Légère macrocéphalie à la naissance (ATCD retrouvé)<br />
+- Retard de développement légèrement intellectuel (QI 85)</p>
+<p><strong>Q1 💎</strong> — Quel est le tableau clinique et quel diagnostic génétique évoquez-vous ?</p>
+<p><strong>Réponse Q1</strong> : <strong>RTHα (Résistance aux Hormones Thyroïdiennes α) par mutation THRA</strong> :</p>
+<p>Mécanisme : le TRα est exprimé préférentiellement dans le cœur, l'os, le cerveau, le côlon. Une mutation perte-de-fonction de THRA → <strong>résistance sélective</strong> dans ces tissus → effet "hypothyroïde" local malgré T3L normale.</p>
+<p><strong>Tableau spécifique RTHα</strong> :<br />
+| Tissu | Récepteur | Effet de la mutation | Clinique |<br />
+|-------|-----------|---------------------|---------|<br />
+| Cœur | <strong>TRα</strong> | Résistance → hypothyroïdie cardiaque | <strong>Bradycardie</strong> |<br />
+| Côlon | <strong>TRα</strong> | Résistance → ralentissement motilité | <strong>Constipation</strong> |<br />
+| Os | <strong>TRα</strong> | Résistance → ↓ remodelage | <strong>Ostéoporose sévère, fractures</strong> |<br />
+| Cerveau | <strong>TRα</strong> | Résistance développementale | <strong>Retard cognitif léger, macrocéphalie</strong> |<br />
+| Hypophyse | <strong>TRβ</strong> (normal) | Feedback normal | <strong>TSH normale</strong> |</p>
+<p><strong>Biologie "normale"</strong> : la TSH est normale car l'hypophyse utilise TRβ (non muté) → pas de signal TSH anormal. La T3L peut être dans les limites hautes (compensation partielle).</p>
+<p><strong>Q2 💎</strong> — Comment confirmez-vous le diagnostic et est-ce traitable ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Confirmation</strong> :<br />
+1. <strong>Séquençage du gène THRA</strong> (chromosome 17) : mutation hétérozygote dans le domaine de liaison du ligand<br />
+2. &gt; 40 mutations décrites depuis 2012 (Bochukova et al., NEJM 2012 — première description clinique)<br />
+3. Transmission autosomale dominante → bilan familial</p>
+<p><strong>Traitement — cas par cas</strong> :<br />
+- <strong>Pas de traitement standard</strong> validé<br />
+- LT3 haute dose (saturer les récepteurs partiellement résistants) : essais pilotes → amélioration de la bradycardie et de la constipation dans certains cas<br />
+- <strong>TRIAC (acide triiodoacétique)</strong> : haute affinité TRβ et TRα → peut contourner partiellement la résistance<br />
+- Orthopédie : prise en charge des fractures + biphosphonates pour l'ostéoporose<br />
+- Prise en charge neuropsychologique</p>
+<p><strong>Q3 💎</strong> — En quoi la distinction entre RTHα et RTHβ change-t-elle la prise en charge clinique et les conseils génétiques ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>RTHβ</th>
+<th>RTHα</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gène</td>
+<td>THRB</td>
+<td>THRA</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td>Ubiquitaire (cœur, os, foie)</td>
+<td>Cœur, os, cerveau, côlon</td>
+</tr>
+<tr>
+<td>Biologie</td>
+<td>TSH haute + T4L/T3L ↑↑</td>
+<td>TSH normale + T3L limite haute</td>
+</tr>
+<tr>
+<td>Clinique principale</td>
+<td>Tachycardie, ostéoporose</td>
+<td><strong>Bradycardie</strong>, constipation, fractures</td>
+</tr>
+<tr>
+<td>Retard cognitif</td>
+<td>Rare (léger)</td>
+<td>Plus fréquent</td>
+</tr>
+<tr>
+<td>Diagnostic</td>
+<td>Séquençage THRB</td>
+<td>Séquençage THRA</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>Aucun (asymptomatique)</td>
+<td>LT3 haute dose ± TRIAC</td>
+</tr>
+<tr>
+<td>Conseil génétique</td>
+<td>Dominant autosomal</td>
+<td>Dominant autosomal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Différence majeure pour la prise en charge</strong> :<br />
+1. RTHβ : souvent euthyroïdien fonctionnellement → ne pas traiter<br />
+2. RTHα : peut développer des complications organiques sévères (ostéoporose fracturaire précoce, retard cognitif) → suivi pluridisciplinaire cardiologie + rhumatologie + neuropédiatrie/neuropsychologie<br />
+3. Grossesse RTHα : risque hypothyroïdie fœtale si fœtus non porteur de la mutation (T3L maternelle haute mais fœtus avec TRα normal → peut développer une hyperthyroïdie relative)</p>
+<hr />
+<h2 id="cas-30-cas-integratif-patient-polycomorbide">CAS 30 💎 — Cas Intégratif : Patient Polycomorbide</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-30 — Cas de synthèse : patient avec Basedow + TAO + amiodarone pour FA + grossesse souhaitée + ATCD psychiatrique — prise en charge globale et priorisation des risques]</p>
+</blockquote>
+<p><strong>Patient/Patiente</strong> : Sandrine, 36 ans, mariée, désir de grossesse.</p>
+<p><strong>Antécédents</strong> :<br />
+- Maladie de Basedow récidivante (3 cures d'ATS)<br />
+- <strong>TAO légère</strong> (CAS 2, proptose 18 mm bilatérale)<br />
+- <strong>Trouble bipolaire II</strong> stable sous valproate + quetiapine<br />
+- FA paroxystique traitée par <strong>amiodarone</strong> (cardiologue refuse l'arrêt)<br />
+- Tabagisme 15 PA (non sevrée)</p>
+<p><strong>Situation actuelle</strong> :<br />
+- TSH 0,03 mUI/L, T4L 38 pmol/L (sous MMI 20 mg/j)<br />
+- TRAb 9,2 UI/L (persistants)<br />
+- Bilan biologique sous amiodarone + MMI : T4L attendue élevée → ici 38 = trop haute malgré traitement</p>
+<p><strong>Q1 💎</strong> — Identifiez les 5 principaux problèmes médicaux et leur hiérarchie de prise en charge.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Priorité</th>
+<th>Problème</th>
+<th>Urgence</th>
+<th>Risque principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Hyperthyroïdie non contrôlée</td>
+<td><strong>Urgente</strong></td>
+<td>Arythmie, crise, AVC</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>HAT (amiodarone + Basedow)</td>
+<td><strong>Urgente</strong></td>
+<td>Thyrotoxicose réfractaire</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>FA (amiodarone)</td>
+<td><strong>Semi-urgente</strong></td>
+<td>TE, décompensation cardiaque</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>TAO légère + tabac</td>
+<td>Modérée</td>
+<td>Aggravation TAO si RAI + tabac</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Désir de grossesse + valproate</td>
+<td>Planifiée</td>
+<td>Tératogénicité valproate + TRAb élevés</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Q2 💎</strong> — Élaborez une stratégie intégrée pour les 12 prochains mois.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Mois 1-3 — Contrôle thyroïdien</strong> :<br />
+1. <strong>Augmenter MMI</strong> à 40 mg/j → objectif T4L dans limites normales<br />
+2. Vérifier il s'agit d'une HAT1 (GMNT sous amiodarone) : IL-6, écho-Doppler thyroïde, scintigraphie si possible<br />
+3. Si HAT1 confirmée : <strong>ajouter perchlorate de potassium</strong> (compétiteur NIS)<br />
+4. <strong>Tabacologie urgente</strong> : sevrage tabagique prioritaire (risque TAO aggravation × 7 chez fumeuse)</p>
+<p><strong>Mois 3-6 — Décision thérapeutique définitive</strong> :<br />
+1. <strong>Thyroïdectomie totale recommandée</strong> (solution optimale ici) : traite le Basedow + HAT1 simultanément<br />
+2. Avantages : TRAb déclinent (TAO ↑ si RAI), contrôle immédiat, pas de CI grossesse à long terme<br />
+3. Préparation : euthyroïdie + Lugol + bêta-bloquant<br />
+4. <strong>Maintenir amiodarone</strong> (cardiologue) → surveiller TSH post-op</p>
+<p><strong>Mois 6-12 — Projet de grossesse</strong> :<br />
+1. <strong>Valproate CI en grossesse</strong> (Dépakine : spina bifida, RCIU, CI absolue T1) → discussion psychiatrique : switch vers lamotrigine ou lithium (effets thyroïdiens du lithium à monitorer)<br />
+2. TRAb post-chirurgie à contrôler à 3-6 mois : si &lt; 2 × normale → feu vert grossesse<br />
+3. LT4 optimisée pré-conceptionnelle (TSH 0,5-2,5 mUI/L)<br />
+4. <strong>Amiodarone et grossesse</strong> : tératogène (CI grossesse), discussion cardiologue pour remplacement (flécaïnide ? ablation FA ?)<br />
+5. Sélénium 200 µg/j : pour TAO légère stabilisée (EUGOGO) + pendant grossesse après sevrage amiodarone</p>
+<p><strong>Q3 💎</strong> — Si le cardiologue parvient à remplacer l'amiodarone par de la flécaïnide à 9 mois, et que Sandrine est euthyroïdienne sous LT4, TRAb à 1,8 UI/L (limite normale), elle tombe enceinte spontanément. Quels sont les risques résiduels et le plan de suivi ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Grossesse à risque</strong> — plan de suivi détaillé :</p>
+<p><strong>Risques résiduels et surveillance</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Risque</th>
+<th>Surveillance</th>
+<th>Fréquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hypothyroïdie post-chirurgie</strong> (besoins LT4 ↑ 30-50 % T1)</td>
+<td>TSH + T4L</td>
+<td>Toutes les 2-4 semaines T1, puis mensuel</td>
+</tr>
+<tr>
+<td><strong>Basedow fœtal/néonatal</strong> (TRAb encore 1,8)</td>
+<td>TRAb à 32-36 SA, écho fœtale FC + goitre</td>
+<td>28, 32, 36 SA</td>
+</tr>
+<tr>
+<td><strong>FA</strong> (post-amiodarone, antécédent)</td>
+<td>Holter mensuel, PA</td>
+<td>Mensuel</td>
+</tr>
+<tr>
+<td><strong>Trouble bipolaire</strong> (lamotrigine en grossesse : ajustement doses)</td>
+<td>Lithiémie si switch + consult psychiatrie</td>
+<td>Mensuel</td>
+</tr>
+<tr>
+<td><strong>Sevrage amiodarone</strong> (stock iodé persistant 6-9 mois)</td>
+<td>TSH + T4L (rechute hyperthyroïdie possible)</td>
+<td>Mensuel pendant 12 mois</td>
+</tr>
+<tr>
+<td><strong>TAO</strong> (TRAb bas mais non nuls)</td>
+<td>CAS + proptose biannuel</td>
+<td>Tous les 6 mois</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Plan de suivi</strong> : consultation mensuelle multidisciplinaire (endocrinologue + obstétricien + cardiologue + psychiatre) + bilan biologique mensuel T1-T2 + bimensuel T3. Maternité de niveau III prévenue pour accouchement.</p>
+<hr />
+<p><em>Formation VERTEX© — Cas Cliniques Hyperthyroïdies — Partie 3 (Cas 21-30) — Mars 2026</em></p>
+</div>

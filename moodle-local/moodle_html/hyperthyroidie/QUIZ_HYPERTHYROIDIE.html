@@ -1,0 +1,4797 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="quiz-hyperthyroidies-vertex">QUIZ HYPERTHYROÏDIES — VERTEX©</h1>
+<p><strong>Formation</strong> : VERTEX© — Hyperthyroïdies Complète<br />
+<strong>Code</strong> : QZHYPER<br />
+<strong>Total</strong> : 100 questions<br />
+<strong>Niveaux</strong> : 🥉 Bronze (30) · 🥈 Argent (25) · 🥇 Or (25) · 💎 Diamant (20)<br />
+<strong>Modules couverts</strong> : M01→M38 (11 parties)<br />
+<strong>Date</strong> : 20 mars 2026</p>
+<hr />
+<h2 id="bronze-rappel-factuel-definitions-seuils">🥉 BRONZE — Rappel factuel, définitions, seuils</h2>
+<hr />
+<h3 id="question-hyper-br-001-qcm">Question HYPER-BR-001 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : embryologie · <strong>Module</strong> : M01</p>
+</blockquote>
+<p><strong>Quelle est la première glande endocrine à se différencier au cours de l'embryogenèse humaine ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La surrénale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L'hypophyse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La thyroïde</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le pancréas endocrine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La surrénale se différencie plus tardivement (8e semaine).</li>
+<li><em>Proposition 2</em> : L'hypophyse dérive de la poche de Rathke et se forme vers la 4e-5e semaine.</li>
+<li><em>Proposition 3</em> : Exact. L'ébauche thyroïdienne apparaît dès J20-J22 à partir de l'endoderme pharyngé (foramen caecum).</li>
+<li><em>Proposition 4</em> : Les îlots de Langerhans se différencient vers la 9e-10e semaine.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vassart G, Dumont JE. <em>The thyrotropin receptor and the regulation of thyrocyte function</em>. Endocr Rev 1992.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-002-qcm">Question HYPER-BR-002 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : anatomie · <strong>Module</strong> : M02</p>
+</blockquote>
+<p><strong>Quel aspect échographique Doppler est caractéristique de la maladie de Basedow active ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aspect hypoéchogène focal</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Aspect en "inferno" ou "feu de brousse"</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Absence de vascularisation</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Calcifications diffuses</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'hypoéchogénicité diffuse est possible mais pas l'aspect Doppler caractéristique.</li>
+<li><em>Proposition 2</em> : Exact. Le débit sanguin thyroïdien est × 10 dans le Basedow actif (500-1 000 mL/min vs 50-100 normal), visible en "inferno" au Doppler couleur.</li>
+<li><em>Proposition 3</em> : L'absence de vascularisation oriente vers une thyroïdite destructive.</li>
+<li><em>Proposition 4</em> : Les calcifications sont typiques du GMNT ancien ou de lésions nodulaires chroniques.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ralls PW et al. <em>Color-flow Doppler sonography in Graves disease</em>. AJR 1988.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-003-qcm">Question HYPER-BR-003 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : histologie · <strong>Module</strong> : M03</p>
+</blockquote>
+<p><strong>Quel est l'aspect histologique caractéristique du colloïde dans la maladie de Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Colloïde abondant et dense</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Colloïde raréfié aux bords festonnés (scalloping)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Colloïde calcifié</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Colloïde absent avec nécrose</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Un colloïde abondant traduit un follicule au repos (TSH basse sans stimulation TRAb).</li>
+<li><em>Proposition 2</em> : Exact. L'endocytose intense de la Tg par les thyréocytes hyperstimulés par les TRAb raréfie le colloïde et crée un aspect festonné en périphérie.</li>
+<li><em>Proposition 3</em> : Les calcifications colloïdales sont rares et non spécifiques du Basedow.</li>
+<li><em>Proposition 4</em> : La nécrose est caractéristique de la thyroïdite de De Quervain (granulomes à cellules géantes).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : LiVolsi VA. <em>Surgical pathology of the thyroid</em>. WB Saunders 1994.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-004-qcm">Question HYPER-BR-004 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M04</p>
+</blockquote>
+<p><strong>Dans la maladie de Basedow, pourquoi la TSH est-elle effondrée alors que la thyroïde est hyperstimulée ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Les TRAb détruisent la TSH circulante</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Les TRAb stimulent le TSHR → ↑ T4/T3 → rétrocontrôle négatif → TSH supprimée</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'hypophyse est envahie par les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La TSH est consommée par la thyroïde hyperactive</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les TRAb ne dégradent pas la TSH ; ils se fixent sur le TSHR thyroïdien.</li>
+<li><em>Proposition 2</em> : Exact. Les TRAb (TSAb) activent le TSHR de façon constitutive → ↑ T4L/T3L → rétrocontrôle log-linéaire négatif sur les thyréotropes → suppression de la TSH. La glande est stimulée par les TRAb, non par la TSH.</li>
+<li><em>Proposition 3</em> : Les TRAb ne traversent pas la barrière hémato-encéphalique de façon pathologique pour envahir l'hypophyse.</li>
+<li><em>Proposition 4</em> : La TSH n'est pas "consommée" ; sa sécrétion est supprimée par le rétrocontrôle.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Rapoport B, McLachlan SM. <em>Graves' disease pathogenesis</em>. Nat Rev Endocrinol 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-005-qcm">Question HYPER-BR-005 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05</p>
+</blockquote>
+<p><strong>Quel transporteur assure la captation active de l'iode dans le thyréocyte, cible de la radioiodothérapie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La pendrine (SLC26A4)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le NIS (SLC5A5)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La mégaline</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La pendrine assure l'efflux apical de l'iode vers le colloïde, pas la captation basolatérale.</li>
+<li><em>Proposition 2</em> : Exact. Le NIS (Sodium-Iodide Symporter) co-transporte 2 Na⁺ et 1 I⁻ avec un gradient de concentration × 20-100. C'est la cible de la scintigraphie et de la RAI à l'¹³¹I.</li>
+<li><em>Proposition 3</em> : La TPO est l'enzyme d'oxydation et d'organification de l'iode au pôle apical.</li>
+<li><em>Proposition 4</em> : La mégaline est impliquée dans l'endocytose de la thyroglobuline, pas dans la captation iodée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Dohán O et al. <em>The sodium/iodide symporter (NIS)</em>. Endocr Rev 2003.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-006-qcm">Question HYPER-BR-006 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M06</p>
+</blockquote>
+<p><strong>Quelle propriété pharmacologique différencie le PTU du MMI/carbimazole ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Le PTU inhibe le NIS en plus de la TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le PTU inhibe la DIO1 (conversion T4→T3) en plus de la TPO</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Le PTU a une demi-vie plus longue que le MMI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le PTU est tératogène au premier trimestre</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Ni le PTU ni le MMI n'inhibent le NIS directement.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU inhibe la TPO (comme le MMI) ET la DIO1 (conversion périphérique T4→T3), d'où son intérêt dans la crise thyrotoxique pour une réduction plus rapide de la T3.</li>
+<li><em>Proposition 3</em> : C'est l'inverse — le PTU a une demi-vie courte (1-2h) vs MMI (6-12h).</li>
+<li><em>Proposition 4</em> : C'est le MMI/carbimazole qui est tératogène au T1 (aplasie cutis, atrésie choanale). Le PTU est préféré au T1.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cooper DS. <em>Antithyroid drugs</em>. NEJM 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-007-qcm">Question HYPER-BR-007 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : effets biologiques · <strong>Module</strong> : M07</p>
+</blockquote>
+<p><strong>Quelle complication cardiovasculaire touche 10-15 % des patients en hyperthyroïdie constituée ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>L'embolie pulmonaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L'infarctus du myocarde</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La fibrillation atriale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le bloc auriculo-ventriculaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'embolie pulmonaire n'est pas une complication directe de l'hyperthyroïdie.</li>
+<li><em>Proposition 2</em> : L'infarctus du myocarde n'est qu'exceptionnellement lié à l'hyperthyroïdie (&lt; 5 %).</li>
+<li><em>Proposition 3</em> : Exact. La FA touche 10-15 % des hyperthyroïdiens (jusqu'à 25-35 % chez &gt; 65 ans). Mécanisme : raccourcissement de la période réfractaire atriale + dilatation auriculaire.</li>
+<li><em>Proposition 4</em> : Le BAV est plutôt lié à l'hypothyroïdie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Sawin CT et al. <em>Low serum thyrotropin concentrations as a risk factor for atrial fibrillation</em>. NEJM 1994.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-008-qcm">Question HYPER-BR-008 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : classification · <strong>Module</strong> : M08</p>
+</blockquote>
+<p><strong>Quelle est la différence entre thyrotoxicose et hyperthyroïdie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Thyrotoxicose = forme sévère d'hyperthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Thyrotoxicose = excès hormonal quelle qu'en soit la source ; hyperthyroïdie = production thyroïdienne excessive</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ce sont des synonymes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hyperthyroïdie = forme auto-immune ; thyrotoxicose = toutes les autres</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La thyrotoxicose n'est pas un degré de sévérité mais un concept plus large.</li>
+<li><em>Proposition 2</em> : Exact. Toute hyperthyroïdie est une thyrotoxicose, mais pas l'inverse (ex : thyrotoxicose factice = exogène, pas de production thyroïdienne excessive).</li>
+<li><em>Proposition 3</em> : Non — la thyrotoxicose factice est une thyrotoxicose mais pas une hyperthyroïdie.</li>
+<li><em>Proposition 4</em> : Cette classification est incorrecte.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>Hyperthyroidism and other causes of thyrotoxicosis</em>. Thyroid 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-009-qcm">Question HYPER-BR-009 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : étiologie · <strong>Module</strong> : M09</p>
+</blockquote>
+<p><strong>Quel est le sex-ratio de la maladie de Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1:1</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2:1 (F/H)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5-7:1 (F/H)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10:1 (F/H)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La répartition est largement déséquilibrée en faveur des femmes.</li>
+<li><em>Proposition 2</em> : 2:1 est le ratio de la thyroïdite de Hashimoto, pas du Basedow.</li>
+<li><em>Proposition 3</em> : Exact. Le Basedow touche 5-7 femmes pour 1 homme. Prévalence F : 1-2 %, H : 0,2-0,3 %.</li>
+<li><em>Proposition 4</em> : Le ratio 10:1 est trop élevé.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Hollowell JG et al. <em>Serum TSH, T4, and thyroid antibodies in the United States population</em>. JCE 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-010-qcm">Question HYPER-BR-010 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : étiologie · <strong>Module</strong> : M10</p>
+</blockquote>
+<p><strong>Quelle mutation est retrouvée dans 60-80 % des adénomes toxiques de Plummer ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mutation de BRAF V600E</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mutation gain-de-fonction du gène TSHR</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mutation de RAS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mutation de PAX8-PPARγ</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : BRAF V600E est associé au carcinome papillaire de la thyroïde, pas à l'adénome toxique.</li>
+<li><em>Proposition 2</em> : Exact. Les mutations somatiques gain-de-fonction du TSHR (domaine transmembranaire) activent constitutionnellement la cascade AMPc sans TSH → production hormonale autonome.</li>
+<li><em>Proposition 3</em> : Les mutations RAS sont retrouvées dans 15-25 % des nodules du GMNT (prolifération) mais ne sont pas le mécanisme principal de l'autonomie.</li>
+<li><em>Proposition 4</em> : PAX8-PPARγ est associé au carcinome folliculaire.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Parma J et al. <em>Somatic mutations in the thyrotropin receptor gene cause hyperfunctioning thyroid adenomas</em>. Nature 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-011-qcm">Question HYPER-BR-011 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : thyroïdite · <strong>Module</strong> : M11</p>
+</blockquote>
+<p><strong>Quelle caractéristique biologique est pathognomonique de la thyroïdite de De Quervain ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>TRAb positifs</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Anti-TPO très élevés</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>VSR très élevée (50-100 mm/h) + thyroïde douloureuse</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>T3L extrêmement haute</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les TRAb sont négatifs dans la thyroïdite de De Quervain (pas de mécanisme auto-immun anti-TSHR).</li>
+<li><em>Proposition 2</em> : Les anti-TPO sont généralement négatifs dans De Quervain (contrairement à Hashimoto ou thyroïdite silencieuse).</li>
+<li><em>Proposition 3</em> : Exact. La triade douleur cervicale irradiant aux oreilles + VSR &gt; 50 mm/h + CRP élevée est quasi-pathognomonique, associée à une scintigraphie blanche (&lt; 1 %).</li>
+<li><em>Proposition 4</em> : La T3L peut être élevée mais n'est pas spécifique de cette étiologie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pearce EN et al. <em>Thyroiditis</em>. NEJM 2003.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-012-qcm">Question HYPER-BR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : clinique · <strong>Module</strong> : M12</p>
+</blockquote>
+<p><strong>Quel signe cutané est pathognomonique de la maladie de Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Onycolyse de Plummer</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Alopécie diffuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dermopathie prétibiale (myxœdème prétibial)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Érythème palmaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'onycolyse est assez spécifique de l'hyperthyroïdie mais pas pathognomonique du Basedow.</li>
+<li><em>Proposition 2</em> : L'alopécie diffuse est un signe non spécifique de toute hyperthyroïdie.</li>
+<li><em>Proposition 3</em> : Exact. La dermopathie prétibiale (1-2 % des Basedow) est pathognomonique — plaques érythémateuses/violacées sur les tibias (dépôt de GAG), souvent associée à la TAO.</li>
+<li><em>Proposition 4</em> : L'érythème palmaire n'est pas pathognomonique du Basedow.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Fatourechi V. <em>Thyroid dermopathy and acropachy</em>. Best Pract Res Clin Endocrinol 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-013-qcm">Question HYPER-BR-013 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TAO · <strong>Module</strong> : M13</p>
+</blockquote>
+<p><strong>Quel score évalue l'activité inflammatoire de l'orbitopathie basedowienne (TAO) ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Score de Burch-Wartofsky</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Score GREAT</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CAS (Clinical Activity Score) — seuil ≥ 3/7</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Score CHA₂DS₂-VASc</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Burch-Wartofsky évalue la crise thyrotoxique, pas la TAO.</li>
+<li><em>Proposition 2</em> : GREAT prédit la rechute du Basedow après ATS.</li>
+<li><em>Proposition 3</em> : Exact. Le CAS comprend 7 critères (douleur spontanée, douleur au mouvement, rougeur palpébrale, injection conjonctivale, chémosis, œdème palpébral, caroncule inflammatoire). CAS ≥ 3/7 = TAO active, candidat à l'immunosuppression.</li>
+<li><em>Proposition 4</em> : CHA₂DS₂-VASc évalue le risque thromboembolique de la FA.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Mourits MP et al. <em>Clinical Activity Score as a guide in the management of patients with Graves' ophthalmopathy</em>. 1989.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-014-qcm">Question HYPER-BR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : urgence · <strong>Module</strong> : M14</p>
+</blockquote>
+<p><strong>Quel score permet de diagnostiquer une crise thyrotoxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Score de Wells</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Score de Burch-Wartofsky</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Score SOFA</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Score de Glasgow</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le score de Wells évalue la probabilité d'embolie pulmonaire.</li>
+<li><em>Proposition 2</em> : Exact. Score ≥ 45 = crise thyrotoxique probable → traitement d'urgence sans attendre la biologie. Items : température, FC, FA, insuffisance cardiaque, troubles digestifs, troubles SNC, facteur précipitant.</li>
+<li><em>Proposition 3</em> : SOFA évalue la défaillance d'organes en réanimation.</li>
+<li><em>Proposition 4</em> : Glasgow évalue le niveau de conscience.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burch HB, Wartofsky L. <em>Life-threatening thyrotoxicosis. Thyroid Storm</em>. Endocrinol Metab Clin North Am 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-015-qcm">Question HYPER-BR-015 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : biologie · <strong>Module</strong> : M15</p>
+</blockquote>
+<p><strong>Qu'est-ce que la T3-toxicosis ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Intoxication par surdosage de liothyronine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TSH effondrée + T3L élevée + T4L normale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TSH effondrée + T4L élevée + T3L normale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>T3L et T4L toutes deux très élevées</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'intoxication à la liothyronine est une thyrotoxicose factice, pas une T3-toxicosis endogène.</li>
+<li><em>Proposition 2</em> : Exact. Représente 5-10 % des hyperthyroïdies, plus fréquente dans le GMNT et l'adénome de Plummer (désiodation préférentielle T4→T3 dans les nodules autonomes).</li>
+<li><em>Proposition 3</em> : Ce profil correspond à une hyperthyroïdie classique à T4 prédominante.</li>
+<li><em>Proposition 4</em> : L'élévation conjointe correspond à une hyperthyroïdie constituée classique.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>ATA Guidelines</em>. Thyroid 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-016-qcm">Question HYPER-BR-016 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : anticorps · <strong>Module</strong> : M16</p>
+</blockquote>
+<p><strong>Quelle est la signification de TRAb positifs chez une femme enceinte basedowienne au T3 ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rémission en cours</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Risque d'hyperthyroïdie néonatale par passage transplacentaire</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Indication d'arrêt des ATS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucune signification clinique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Des TRAb positifs au T3 indiquent une activité auto-immune persistante, pas une rémission.</li>
+<li><em>Proposition 2</em> : Exact. Les TRAb (IgG) passent le placenta. Si ≥ 3-5 × la norme au T3 → risque d'hyperthyroïdie néonatale transitoire (1-5 % des cas). Surveillance pédiatrique néonatale obligatoire.</li>
+<li><em>Proposition 3</em> : Les TRAb positifs ne sont pas une indication d'arrêt des ATS — au contraire, ils peuvent justifier le maintien.</li>
+<li><em>Proposition 4</em> : Signification clinique majeure pour la surveillance néonatale.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines. <em>Management of Graves' hyperthyroidism in pregnancy</em>. 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-017-qcm">Question HYPER-BR-017 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : imagerie · <strong>Module</strong> : M17</p>
+</blockquote>
+<p><strong>Quelle est la captation ¹²³I à 24h attendue dans la maladie de Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&lt; 5 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10-35 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>50-90 %</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100 %</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : &lt; 5 % = fixation effondrée → thyroïdite, thyrotoxicose factice.</li>
+<li><em>Proposition 2</em> : 10-35 % = captation normale.</li>
+<li><em>Proposition 3</em> : Exact. Le Basedow montre une fixation diffuse, homogène et élevée (50-90 %) par stimulation TRAb du NIS.</li>
+<li><em>Proposition 4</em> : 100 % est physiologiquement impossible.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines for Diagnosis and Management of Hyperthyroidism</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-018-qcm">Question HYPER-BR-018 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M18</p>
+</blockquote>
+<p><strong>Quel ATS est recommandé au 1er trimestre de grossesse ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>MMI (méthimazole)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Carbimazole</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PTU (propylthiouracile)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bloc-substitution MMI + LT4</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le MMI est tératogène au T1 (aplasie cutis, atrésie choanale/œsophagienne).</li>
+<li><em>Proposition 2</em> : Le carbimazole est une prodrogue du MMI → mêmes risques tératogènes au T1.</li>
+<li><em>Proposition 3</em> : Exact. Le PTU a un moindre passage placentaire et une moindre tératogénicité au T1. Switch vers MMI à S12-S14 (risque hépatotoxicité PTU).</li>
+<li><em>Proposition 4</em> : Le bloc-substitution est contre-indiqué en grossesse (les ATS passent le placenta mais pas la LT4 → hypothyroïdie fœtale).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines. <em>Management of Graves' hyperthyroidism in pregnancy</em>. 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-019-qcm">Question HYPER-BR-019 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : pédiatrie · <strong>Module</strong> : M19</p>
+</blockquote>
+<p><strong>Quelle est la particularité de croissance du Basedow pédiatrique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Retard de croissance constant</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Accélération de la vitesse de croissance et avance de maturation osseuse</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Croissance normale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gigantisme hypophysaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le retard de croissance est caractéristique de l'hypothyroïdie, pas de l'hyperthyroïdie.</li>
+<li><em>Proposition 2</em> : Exact. L'excès d'hormones thyroïdiennes accélère la maturation osseuse (avance d'âge osseux), ce qui peut paradoxalement réduire la taille finale si l'os se soude prématurément.</li>
+<li><em>Proposition 3</em> : La croissance est typiquement perturbée dans le Basedow pédiatrique.</li>
+<li><em>Proposition 4</em> : Le gigantisme est lié à un excès de GH, pas d'hormones thyroïdiennes.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ATA Guidelines 2016, ESPE 2022.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-020-qcm">Question HYPER-BR-020 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : sujet âgé · <strong>Module</strong> : M20</p>
+</blockquote>
+<p><strong>Quelle est la forme d'hyperthyroïdie la plus fréquente chez le sujet âgé ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Maladie de Basedow</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Thyroïdite silencieuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Goitre multinodulaire toxique (GMNT)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyrotoxicose factice</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Basedow prédomine chez les adultes jeunes (20-40 ans).</li>
+<li><em>Proposition 2</em> : La thyroïdite silencieuse est transitoire et plus fréquente chez la femme jeune.</li>
+<li><em>Proposition 3</em> : Exact. Le GMNT résulte de l'évolution d'un goitre simple sur 10-20 ans avec autonomisation progressive des nodules. Étiologie principale chez le &gt; 50 ans.</li>
+<li><em>Proposition 4</em> : La thyrotoxicose factice est rare chez le sujet âgé.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Hollowell JG et al. <em>Serum TSH, T4, and thyroid antibodies</em>. JCE 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-021-qcm">Question HYPER-BR-021 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M22</p>
+</blockquote>
+<p><strong>Quelle est la première étape du diagnostic d'une suspicion d'hyperthyroïdie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Scintigraphie thyroïdienne</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dosage de la T4L</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dosage de la TSH</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La scintigraphie est un examen de 2e-3e intention pour le diagnostic étiologique.</li>
+<li><em>Proposition 2</em> : La T4L est dosée en 2e intention si la TSH est basse.</li>
+<li><em>Proposition 3</em> : Exact. La TSH est le marqueur de première ligne — sa sensibilité aux variations thyroïdiennes est 10× supérieure à celle de la T4L.</li>
+<li><em>Proposition 4</em> : Les TRAb sont dosés en 3e intention pour confirmer l'étiologie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : HAS 2019. <em>Hyperthyroïdie — Diagnostic et prise en charge</em>.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-022-qcm">Question HYPER-BR-022 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M23</p>
+</blockquote>
+<p><strong>Quel critère formel suffit à lui seul pour diagnostiquer la maladie de Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Anti-TPO élevés</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRAb positifs dans le contexte d'une hyperthyroïdie</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TSH effondrée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Goitre diffus</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les anti-TPO sont un critère d'appui, pas un critère formel (positifs dans le Hashimoto aussi).</li>
+<li><em>Proposition 2</em> : Exact. Un seul critère formel suffit : (1) TRAb positifs + hyperthyroïdie ; (2) TAO active documentée + hyperthyroïdie ; (3) dermopathie prétibiale + hyperthyroïdie.</li>
+<li><em>Proposition 3</em> : La TSH effondrée confirme l'hyperthyroïdie mais pas l'étiologie.</li>
+<li><em>Proposition 4</em> : Le goitre diffus est un critère d'appui, pas formel.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Kahaly GJ et al. <em>ETA Guideline for the Management of Graves' Hyperthyroidism</em>. Eur Thyroid J 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-023-qcm">Question HYPER-BR-023 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : dépistage · <strong>Module</strong> : M24</p>
+</blockquote>
+<p><strong>Quelle est la définition de l'hyperthyroïdie frustre ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>TSH effondrée avec T4L et T3L élevées mais asymptomatique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TSH persistante &lt; 0,4 mUI/L avec T4L et T3L normales</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>T4L élevée avec TSH normale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>T3L basse avec TSH basse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Des hormones élevées définissent une hyperthyroïdie constituée, pas frustre.</li>
+<li><em>Proposition 2</em> : Exact. L'hyperthyroïdie frustre se définit par une TSH &lt; 0,4 mUI/L persistante avec T4L et T3L normales. Prévalence : 1-2 % en population générale, 5-10 % chez &gt; 65 ans.</li>
+<li><em>Proposition 3</em> : T4L élevée + TSH normale évoque un TSHome ou une RTHβ.</li>
+<li><em>Proposition 4</em> : Ce profil évoque un sick euthyroid (NTIS).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Hollowell JG et al. JCE 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-024-qcm">Question HYPER-BR-024 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M25</p>
+</blockquote>
+<p><strong>Quelle est la durée standard d'un premier traitement par ATS dans le Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3-6 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>12-18 mois</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>24-36 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>À vie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 3-6 mois est insuffisant pour obtenir une rémission immunologique.</li>
+<li><em>Proposition 2</em> : Exact. Durée recommandée : 12-18 mois (ATA 2016, ETA 2018), avec un taux de rémission de 30-50 % après une première cure.</li>
+<li><em>Proposition 3</em> : 24-36 mois est réservé aux rechutes ou TRAb persistants.</li>
+<li><em>Proposition 4</em> : Le traitement à vie par ATS n'est pas recommandé en première intention.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-025-qcm">Question HYPER-BR-025 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M29</p>
+</blockquote>
+<p><strong>Quelle est la demi-vie de l'¹³¹I utilisé en radioiodothérapie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>24 heures</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>13 heures</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8 jours</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>30 jours</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 24h est environ la demi-vie du ⁹⁹ᵐTc (6h pour la demi-vie physique).</li>
+<li><em>Proposition 2</em> : 13h est la demi-vie de l'¹²³I (utilisé en scintigraphie diagnostique).</li>
+<li><em>Proposition 3</em> : Exact. L'¹³¹I a une demi-vie de 8,02 jours. Rayonnement β⁻ (93 %, portée 0,5-2 mm) = destruction sélective du parenchyme thyroïdien.</li>
+<li><em>Proposition 4</em> : 30 jours est trop long.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Alexander EK, Larsen PR. <em>High dose ¹³¹I therapy for the treatment of hyperthyroidism</em>. 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-026-qcm">Question HYPER-BR-026 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : suivi · <strong>Module</strong> : M30</p>
+</blockquote>
+<p><strong>À quel délai évaluer l'efficacité de la RAI pour le Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6 mois</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>12 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : À 1 mois, la T4L peut encore être élevée (libération hormonale post-RAI).</li>
+<li><em>Proposition 2</em> : À 3 mois, la TSH commence seulement à remonter.</li>
+<li><em>Proposition 3</em> : Exact. L'évaluation complète de l'efficacité de la RAI nécessite 6 mois. Hypothyroïdie définitive dans 40-80 % des cas à 1 an.</li>
+<li><em>Proposition 4</em> : 12 mois serait trop tardif pour un premier bilan d'efficacité.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-027-qcm">Question HYPER-BR-027 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : iatrogène · <strong>Module</strong> : M33</p>
+</blockquote>
+<p><strong>Combien d'iode libre l'amiodarone 200 mg/j libère-t-elle quotidiennement ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>150 µg/j (apport quotidien recommandé)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1 mg/j</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7 mg/j (environ 40× le besoin quotidien)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>75 mg/j</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : 150 µg/j est l'apport iodé quotidien recommandé chez l'adulte.</li>
+<li><em>Proposition 2</em> : 1 mg/j serait insuffisant pour expliquer les effets thyroïdiens de l'amiodarone.</li>
+<li><em>Proposition 3</em> : Exact. L'amiodarone contient 37 % d'iode. Un comprimé de 200 mg = 75 mg d'iode organique, dont ~7 mg d'iode libre libéré par désiodation quotidienne, soit ~40× le besoin.</li>
+<li><em>Proposition 4</em> : 75 mg/j est la quantité d'iode organique total du comprimé, pas l'iode libre libéré.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Amiodarone and thyroid disease</em>. Neth J Med 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-028-qcm">Question HYPER-BR-028 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : iatrogène · <strong>Module</strong> : M34</p>
+</blockquote>
+<p><strong>Quelle est la séquence temporelle typique d'une thyroïdite post-ICI ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hypothyroïdie puis hyperthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Phase hyperthyroïdienne transitoire puis hypothyroïdie dans 60-80 % des cas</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hyperthyroïdie permanente</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Euthyroïdie constante</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La séquence est inversée — la phase destructive hyperthyroïdienne précède l'hypothyroïdie.</li>
+<li><em>Proposition 2</em> : Exact. Délai d'apparition : 6-12 semaines post-1ère injection. Phase hyper (2-6 semaines, relargage par destruction CD8+) → phase hypothyroïdienne dans 60-80 % (récupération euthyroïdienne &lt; 20 %).</li>
+<li><em>Proposition 3</em> : L'hyperthyroïdie permanente post-ICI serait un Basedow induit par ICI (rare, TRAb+), pas une thyroïdite.</li>
+<li><em>Proposition 4</em> : Des dysthyroïdies surviennent dans 10-30 % des patients sous combinaison ICI.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Barroso-Sousa R et al. <em>Incidence of Endocrine Dysfunction Following ICI</em>. JAMA Oncol 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-029-qcm">Question HYPER-BR-029 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : formes rares · <strong>Module</strong> : M35</p>
+</blockquote>
+<p><strong>Quel profil biologique est pathognomonique de la thyrotoxicose factice à la lévothyroxine ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>T4L haute + Tg élevée + scintigraphie blanche</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T4L haute + Tg effondrée + scintigraphie blanche + TRAb négatifs</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>T3L haute + T4L haute + Tg élevée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TSH haute + T4L haute</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La Tg est élevée dans les hyperthyroïdies vraies (Basedow, GMNT, thyroïdites), pas effondrée.</li>
+<li><em>Proposition 2</em> : Exact. L'exogène hormonal inhibe complètement la thyroïde endogène → Tg effondrée (&lt; 1 µg/L). Clé du diagnostic différentiel.</li>
+<li><em>Proposition 3</em> : Une Tg élevée oriente vers une hyperthyroïdie endogène.</li>
+<li><em>Proposition 4</em> : TSH haute + T4L haute = TSHome ou RTHβ.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>Thyroid</em>. 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-br-030-qcm">Question HYPER-BR-030 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : innovations · <strong>Module</strong> : M36</p>
+</blockquote>
+<p><strong>Quel est le mécanisme d'action du téprotumumab dans la TAO ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Antagoniste du TSHR</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Anti-CD20 (déplétion B)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Anticorps monoclonal anti-IGF-1R</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Anti-IL-6R</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les antagonistes du TSHR sont encore en développement préclinique.</li>
+<li><em>Proposition 2</em> : L'anti-CD20 est le rituximab, utilisé en 3e intention dans la TAO réfractaire.</li>
+<li><em>Proposition 3</em> : Exact. Le téprotumumab bloque l'IGF-1R surexprimé dans les fibroblastes orbitaires → ↓ prolifération + ↓ production hyaluronate → régression de la proptose. Essai OPTIC : 83 % de répondeurs vs 10 % placebo.</li>
+<li><em>Proposition 4</em> : L'anti-IL-6R est le tocilizumab, en études pilotes dans la TAO.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Smith TJ, Kahaly GJ (OPTIC Trial). <em>Teprotumumab for Thyroid-Associated Ophthalmopathy</em>. NEJM 2017/2021.</p>
+</blockquote>
+<hr />
+<h2 id="argent-application-clinique-diagnostics-differentiels">🥈 ARGENT — Application clinique, diagnostics différentiels</h2>
+<hr />
+<h3 id="question-hyper-ar-001-qcm">Question HYPER-AR-001 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : embryologie · <strong>Module</strong> : M01</p>
+</blockquote>
+<p><strong>Une patiente de 30 ans présente une hyperthyroïdie sans fixation cervicale à la scintigraphie ¹³¹I mais avec une fixation pelvienne gauche. Quel diagnostic évoquer ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Métastase thyroïdienne</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Struma ovarii</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tératome ovarien bénin non sécrétant</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyroïdite factice</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les métastases thyroïdiennes montrent habituellement une fixation cervicale et extra-cervicale, pas une fixation pelvienne isolée sans cervicale.</li>
+<li><em>Proposition 2</em> : Exact. Le struma ovarii est un tératome ovarien contenant du tissu thyroïdien fonctionnel autonome. Diagnostic : fixation pelvienne + absence de fixation cervicale (thyroïde cervicale supprimée).</li>
+<li><em>Proposition 3</em> : Un tératome non sécrétant ne fixe pas le radioiode.</li>
+<li><em>Proposition 4</em> : La thyrotoxicose factice montre une scintigraphie blanche sans aucune fixation.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>Thyroid</em>. 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-002-qcm">Question HYPER-AR-002 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05</p>
+</blockquote>
+<p><strong>Pourquoi le Lugol (KI) est-il utilisé en préparation à la thyroïdectomie du Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Il bloque la conversion T4→T3</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Effet Wolff-Chaikoff : surcharge iodée → ↓ synthèse hormonale + ↓ vascularisation</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il détruit sélectivement les thyréocytes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il stimule les TRAb bloquants</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Lugol ne bloque pas la DIO1 (c'est le propranolol à fortes doses et le PTU).</li>
+<li><em>Proposition 2</em> : Exact. L'effet Wolff-Chaikoff inhibe transitoirement la TPO (↓ synthèse) et réduit la vascularisation thyroïdienne (↓ pertes sanguines per-opératoires de 30-50 %). Administration 10-14 jours avant la chirurgie ; ne pas dépasser 14 jours (échappement).</li>
+<li><em>Proposition 3</em> : Le Lugol ne détruit pas les thyréocytes (c'est la RAI qui le fait).</li>
+<li><em>Proposition 4</em> : Le Lugol n'a pas d'effet immunomodulateur sur les TRAb.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>ATA Guidelines</em>. Thyroid 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-003-qcm">Question HYPER-AR-003 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M07</p>
+</blockquote>
+<p><strong>Pourquoi la pression différentielle est-elle élargie dans l'hyperthyroïdie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HTA systolique et diastolique proportionnelle</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>↑ PAS (débit cardiaque ↑) + ↓ PAD (vasodilatation via NO)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>↓ PAS + ↑ PAD</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Insuffisance aortique associée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'HTA est dissociée — la PAD est abaissée par la vasodilatation.</li>
+<li><em>Proposition 2</em> : Exact. L'excès de T3 via TRα vasculaire → vasodilatation → ↓ PAD. Simultanément, ↑ FC + contractilité → ↑ débit cardiaque → ↑ PAS. Résultat : PAS élevée + PAD basse (ex. 160/60 mmHg).</li>
+<li><em>Proposition 3</em> : Ce profil n'existe pas dans l'hyperthyroïdie.</li>
+<li><em>Proposition 4</em> : L'insuffisance aortique peut élargir la différentielle mais n'est pas liée à l'hyperthyroïdie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Brent GA. <em>Graves' disease</em>. NEJM 2008.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-004-qcm">Question HYPER-AR-004 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : étiologie · <strong>Module</strong> : M09</p>
+</blockquote>
+<p><strong>Quel facteur environnemental est le principal facteur de risque de TAO sévère ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Stress</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Carence en iode</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tabac</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Grossesse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le stress est un facteur de risque de Basedow (RR 2-3) mais pas le principal pour la TAO.</li>
+<li><em>Proposition 2</em> : La carence en iode favorise le GMNT, pas la TAO.</li>
+<li><em>Proposition 3</em> : Exact. Le tabac est le facteur de risque majeur de TAO sévère (RR × 5-8). Il augmente les cytokines pro-inflammatoires et l'hypoxie orbitaire.</li>
+<li><em>Proposition 4</em> : La grossesse est protectrice pour le Basedow (tolérance immunitaire).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bartalena L et al. <em>EUGOGO Consensus</em>. Eur J Endocrinol 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-005-qcm">Question HYPER-AR-005 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : thyroïdite · <strong>Module</strong> : M11</p>
+</blockquote>
+<p><strong>Quel traitement est contre-indiqué dans la phase thyrotoxique d'une thyroïdite destructive ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bêta-bloquants</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Paracétamol</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Antithyroïdiens de synthèse (ATS)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Corticoïdes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les bêta-bloquants sont le traitement symptomatique de choix dans la phase thyrotoxique.</li>
+<li><em>Proposition 2</em> : Le paracétamol est indiqué pour la fièvre.</li>
+<li><em>Proposition 3</em> : Exact. Les ATS sont inutiles — la thyrotoxicose est due à la destruction folliculaire (libération passive d'hormones stockées), non à une hypersynthèse. La TPO n'est pas hyperactive, il n'y a pas de substrat pour les ATS.</li>
+<li><em>Proposition 4</em> : Les corticoïdes sont indiqués dans la De Quervain résistante aux AINS.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pearce EN et al. <em>Thyroiditis</em>. NEJM 2003.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-006-qcm">Question HYPER-AR-006 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : clinique · <strong>Module</strong> : M12</p>
+</blockquote>
+<p><strong>Un homme de 32 ans, d'origine coréenne, présente un épisode de paralysie des membres inférieurs au réveil après un repas riche en glucides. Sa TSH est à 0,02 mUI/L. Quel est le diagnostic ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Syndrome de Guillain-Barré</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Paralysie périodique thyrotoxique (PPT)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Myasthénie grave</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AVC médullaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Guillain-Barré est post-infectieux, ascendant progressif, avec dissociation albumino-cytologique du LCR.</li>
+<li><em>Proposition 2</em> : Exact. PPT : complication rare, prédominante chez les hommes d'origine asiatique. Mécanisme : l'hyperthyroïdie + charge glucidique → insulinosécrétion → entrée massive de K+ dans les cellules → hypokaliémie → paralysie flasque. Traitement : KCl IV + propranolol IV.</li>
+<li><em>Proposition 3</em> : La myasthénie est fluctuante et touche les muscles oculaires et pharyngés.</li>
+<li><em>Proposition 4</em> : L'AVC médullaire est un diagnostic vasculaire avec déficit sensitif associé.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Kung AWC. <em>Thyrotoxic periodic paralysis</em>. Endocr Rev 2006.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-007-qcm">Question HYPER-AR-007 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : urgence · <strong>Module</strong> : M14</p>
+</blockquote>
+<p><strong>Dans la crise thyrotoxique, pourquoi le Lugol doit-il être administré au moins 1h APRÈS le PTU ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pour éviter une allergie croisée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pour bloquer d'abord la TPO avant d'apporter l'iode-substrat</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pour que le Lugol ait le temps d'être absorbé</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il n'y a pas de raison précise, c'est une convention</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Il n'y a pas d'allergie croisée entre PTU et Lugol.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU doit bloquer la TPO avant d'apporter l'iode du Lugol. Sans ce blocage, l'iode du Lugol sera utilisé comme substrat par la TPO encore active → ↑ synthèse hormonale → aggravation (effet Jod-Basedow paradoxal).</li>
+<li><em>Proposition 3</em> : Le délai concerne la pharmacodynamie du PTU, pas l'absorption du Lugol.</li>
+<li><em>Proposition 4</em> : La séquence est fondée sur un mécanisme physiopathologique précis.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burch HB, Wartofsky L. <em>Thyroid Storm</em>. Endocrinol Metab Clin North Am 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-008-qcm">Question HYPER-AR-008 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : biologie · <strong>Module</strong> : M15</p>
+</blockquote>
+<p><strong>Un patient sous amiodarone 200 mg/j a T4L à 40 pmol/L (haute) mais TSH à 1,5 mUI/L. Interprétation ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hyperthyroïdie amiodaronée type 1</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hyperthyroïdie amiodaronée type 2</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Euthyroïdie sous amiodarone (valeurs attendues)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TSHome</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'HAT1 nécessite une TSH effondrée, pas normale.</li>
+<li><em>Proposition 2</em> : L'HAT2 nécessite également une TSH effondrée.</li>
+<li><em>Proposition 3</em> : Exact. Sous amiodarone stable, l'inhibition de la DIO1 provoque une accumulation de T4 → T4L élevée. La TSH normale est le marqueur de l'euthyroïdie. Chercher une HAT uniquement si TSH effondrée.</li>
+<li><em>Proposition 4</em> : Le TSHome montre une TSH inadaptée (normale ou haute) + T4L haute, mais dans un contexte clinique différent.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Amiodarone and thyroid disease</em>. Neth J Med 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-009-qcm">Question HYPER-AR-009 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : anticorps · <strong>Module</strong> : M16</p>
+</blockquote>
+<p><strong>Comment différencier biologiquement une thyrotoxicose factice d'une hyperthyroïdie vraie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Par les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Par la thyroglobuline (Tg)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Par les anti-TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Par la T4L seule</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les TRAb sont négatifs dans les deux cas (sauf si Basedow).</li>
+<li><em>Proposition 2</em> : Exact. Thyrotoxicose factice : Tg effondrée (&lt; 1 µg/L) car la thyroïde endogène est supprimée. Hyperthyroïdie vraie : Tg élevée (production active). La Tg est la clé.</li>
+<li><em>Proposition 3</em> : Les anti-TPO ne différencient pas ces deux entités.</li>
+<li><em>Proposition 4</em> : La T4L peut être élevée dans les deux cas.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>Thyroid</em>. 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-010-qcm">Question HYPER-AR-010 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : imagerie · <strong>Module</strong> : M17</p>
+</blockquote>
+<p><strong>Comment l'échographie-Doppler distingue-t-elle un Basedow d'une thyroïdite silencieuse en phase thyrotoxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La thyroïdite montre une hypervascularisation diffuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le Basedow montre une hypervascularisation diffuse (inferno) ; la thyroïdite une hypo- ou avascularisation</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il n'y a pas de différence Doppler</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La thyroïdite montre des calcifications</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : C'est l'inverse — la thyroïdite destructive montre une vascularisation réduite.</li>
+<li><em>Proposition 2</em> : Exact. Basedow : débit artère thyroïdienne supérieure &gt; 100 cm/s (normal &lt; 40), aspect "inferno". Thyroïdite silencieuse : vascularisation réduite ou normale (destruction, pas de synthèse active). Cette distinction est particulièrement utile chez la femme allaitante où la scintigraphie est contre-indiquée.</li>
+<li><em>Proposition 3</em> : La différence est significative et diagnostiquement utile.</li>
+<li><em>Proposition 4</em> : Les calcifications ne sont pas caractéristiques de la thyroïdite silencieuse.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-011-qcm">Question HYPER-AR-011 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M18</p>
+</blockquote>
+<p><strong>Pourquoi le schéma bloc-substitution (MMI + LT4) est-il contre-indiqué pendant la grossesse ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La LT4 est tératogène</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Les ATS passent le placenta mais pas la LT4 → hypothyroïdie fœtale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Le MMI ne fonctionne pas chez la femme enceinte</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La LT4 aggrave les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La LT4 n'est pas tératogène.</li>
+<li><em>Proposition 2</em> : Exact. Les ATS (MMI, PTU) traversent le placenta → effet hypothyroïdiant fœtal. La LT4 ne passe pas significativement le placenta → le fœtus subit les ATS sans bénéficier de la compensation LT4 maternelle. Utiliser la dose minimale d'ATS seule.</li>
+<li><em>Proposition 3</em> : Le MMI est efficace mais doit être donné au T2-T3 (après switch du PTU).</li>
+<li><em>Proposition 4</em> : La LT4 n'a pas d'effet sur les TRAb.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-012-qcm">Question HYPER-AR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : sujet âgé · <strong>Module</strong> : M20</p>
+</blockquote>
+<p><strong>Un patient de 78 ans présente une perte de 8 kg en 3 mois, FA, asthénie profonde, sans nervosité ni goitre. TSH à 0,02 mUI/L. Quelle est l'hypothèse la plus probable ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Maladie de Basedow classique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hyperthyroïdie apathique sur GMNT</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dépression du sujet âgé</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cancer digestif occulte</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Basedow classique associe nervosité, goitre, TAO — absent ici.</li>
+<li><em>Proposition 2</em> : Exact. L'hyperthyroïdie apathique du sujet âgé se présente par amaigrissement, FA, apathie (au lieu de nervosité), sans goitre palpable (GMNT plongeant). Diagnostic souvent retardé.</li>
+<li><em>Proposition 3</em> : La dépression n'explique pas la TSH effondrée et la FA.</li>
+<li><em>Proposition 4</em> : Le cancer digestif n'explique pas la TSH effondrée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Hollowell JG et al. JCE 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-013-qcm">Question HYPER-AR-013 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M22</p>
+</blockquote>
+<p><strong>TSH effondrée + T4L normale + T3L à 8,5 pmol/L. Quel est le diagnostic ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hyperthyroïdie frustre</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T3-toxicosis</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hypothyroïdie centrale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Euthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'hyperthyroïdie frustre a T4L et T3L normales.</li>
+<li><em>Proposition 2</em> : Exact. TSH effondrée + T3L élevée + T4L normale = T3-toxicosis. Fréquente dans le GMNT et l'adénome de Plummer (conversion préférentielle T4→T3 dans les nodules autonomes via DIO1 suractivée).</li>
+<li><em>Proposition 3</em> : L'hypothyroïdie centrale montre TSH basse + T4L basse.</li>
+<li><em>Proposition 4</em> : La TSH effondrée avec T3L élevée exclut l'euthyroïdie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : HAS 2019. <em>Hyperthyroïdie — Diagnostic et prise en charge</em>.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-014-qcm">Question HYPER-AR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M23</p>
+</blockquote>
+<p><strong>Comment distinguer une thyroïdite de De Quervain d'une thyroïdite silencieuse ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Par la scintigraphie (toutes deux blanches, pas de distinction)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Par la douleur, la fièvre, la VSR et les anti-TPO</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Par les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Par la T4L (plus élevée dans De Quervain)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La scintigraphie est blanche dans les deux cas → ne les différencie pas.</li>
+<li><em>Proposition 2</em> : Exact. De Quervain : douleur thyroïdienne intense + fièvre + VSR &gt; 50 mm/h + anti-TPO négatifs. Silencieuse : thyroïde indolore + pas de fièvre + VSR normale + anti-TPO souvent positifs.</li>
+<li><em>Proposition 3</em> : Les TRAb sont négatifs dans les deux cas.</li>
+<li><em>Proposition 4</em> : La T4L n'est pas un critère différentiel fiable entre ces deux thyroïdites.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pearce EN et al. <em>Thyroiditis</em>. NEJM 2003.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-015-qcm">Question HYPER-AR-015 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M26</p>
+</blockquote>
+<p><strong>Un homme de 35 ans avec Basedow a un score GREAT à 9. Quelle est la recommandation ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ATS (MMI) 12 mois avec arrêt progressif</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Surveillance seule</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Traitement définitif d'emblée (RAI ou chirurgie)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PTU au long cours</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Avec un score GREAT &gt; 6, le risque de rechute dépasse 70 % → ATS seuls insuffisants.</li>
+<li><em>Proposition 2</em> : La surveillance seule est inappropriée devant une hyperthyroïdie constituée.</li>
+<li><em>Proposition 3</em> : Exact. Score GREAT &gt; 6 → risque de rechute &gt; 70 %. Proposer un traitement définitif d'emblée (RAI ou thyroïdectomie totale). Les ATS servent de préparation au traitement définitif.</li>
+<li><em>Proposition 4</em> : Le PTU au long cours est déconseillé (FDA black box : hépatite fulminante).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vos XG et al. <em>Graves' Recurrence After ATD (GREAT score)</em>. Eur Thyroid J 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-016-qcm">Question HYPER-AR-016 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : surveillance · <strong>Module</strong> : M27</p>
+</blockquote>
+<p><strong>Un patient sous carbimazole depuis 14 mois a TSH normalisée, TRAb à 0,8 UI/L (&lt; 1). Peut-on arrêter les ATS ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Non, il faut poursuivre à vie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oui, les critères de rémission sont favorables</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Non, il faut attendre 36 mois minimum</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il faut passer directement à la RAI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le traitement par ATS n'est pas à vie dans le Basedow (sauf refus de traitement définitif).</li>
+<li><em>Proposition 2</em> : Exact. Critères favorables d'arrêt : TSH normalisée ≥ 6 mois + TRAb négatifs (&lt; 1 UI/L) + dose minimale d'ATS + durée ≥ 12-18 mois. Surveillance TSH rapprochée après arrêt.</li>
+<li><em>Proposition 3</em> : 36 mois n'est pas un seuil standard pour l'arrêt.</li>
+<li><em>Proposition 4</em> : La RAI n'est pas indiquée si les critères de rémission sont favorables.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vitti P et al. <em>Remission of Graves' disease after ATD</em>. 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-017-qcm">Question HYPER-AR-017 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : effets indésirables · <strong>Module</strong> : M28</p>
+</blockquote>
+<p><strong>Pourquoi le PTU est-il déconseillé en traitement de fond prolongé depuis la mise en garde FDA de 2010 ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Risque d'agranulocytose plus élevé</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Risque d'hépatite cytolytique fulminante</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Inefficacité à long terme</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tératogénicité au T1</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le risque d'agranulocytose est comparable entre MMI et PTU.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU peut causer une hépatite cytolytique fulminante (nécrose hépatique massive) avec cas de décès et de transplantations hépatiques. Le MMI a une hépatotoxicité moindre (cholestatique). PTU réservé au T1 de grossesse, crise thyrotoxique, et allergie sévère au MMI.</li>
+<li><em>Proposition 3</em> : Le PTU est efficace mais sa toxicité hépatique limite son utilisation au long cours.</li>
+<li><em>Proposition 4</em> : C'est le MMI qui est tératogène au T1, pas le PTU.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cooper DS. <em>Antithyroid drugs</em>. NEJM 2005. FDA Black Box Warning 2010.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-018-qcm">Question HYPER-AR-018 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : chirurgie · <strong>Module</strong> : M31</p>
+</blockquote>
+<p><strong>Un patient est J2 post-thyroïdectomie totale. Il présente des fourmillements péribuccaux et des crampes des mains. Quel diagnostic évoquer en priorité ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Lésion du nerf récurrent</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hypoparathyroïdie post-opératoire (hypocalcémie)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hématome compressif</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hypothyroïdie post-opératoire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La lésion du nerf récurrent se manifeste par une dysphonie, pas par des paresthésies.</li>
+<li><em>Proposition 2</em> : Exact. Signes d'hypocalcémie par hypoparathyroïdie post-opératoire (10-20 % transitoire). Bilan : calcémie ionisée + PTH + magnésémie. Traitement : calcium IV si sévère, puis calcium oral + alphacalcidol.</li>
+<li><em>Proposition 3</em> : L'hématome compressif se manifeste par une dyspnée et un stridor.</li>
+<li><em>Proposition 4</em> : L'hypothyroïdie post-opératoire n'apparaît qu'après plusieurs jours/semaines.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-019-qcm">Question HYPER-AR-019 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : RAI · <strong>Module</strong> : M29</p>
+</blockquote>
+<p><strong>Pourquoi le MMI doit-il être arrêté 5-7 jours avant la RAI ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pour éviter une interaction médicamenteuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pour permettre la récupération de la captation de l'¹³¹I par le NIS</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pour réduire le risque d'allergie à l'iode</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pour normaliser la TSH avant la RAI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Il n'y a pas d'interaction médicamenteuse directe entre MMI et ¹³¹I.</li>
+<li><em>Proposition 2</em> : Exact. Le MMI réduit l'expression du NIS et la demande iodée thyroïdienne → ↓ captation de l'¹³¹I → ↓ efficacité de la RAI. L'arrêt 5-7j avant permet la récupération de la captation.</li>
+<li><em>Proposition 3</em> : L'allergie à l'iode n'est pas liée aux ATS.</li>
+<li><em>Proposition 4</em> : La normalisation de la TSH prend des semaines, pas 5-7 jours.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-020-qcm">Question HYPER-AR-020 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : iatrogène · <strong>Module</strong> : M33</p>
+</blockquote>
+<p><strong>Comment différencier biologiquement et par imagerie une HAT1 d'une HAT2 ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Par les TRAb uniquement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HAT1 : fixation scintigraphique résiduelle + hypervascularisation Doppler + IL-6 normale ; HAT2 : scintigraphie blanche + hypovascularisation + IL-6 très élevée</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Par la T4L (plus élevée dans HAT2)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il n'existe pas de moyen de différenciation fiable</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les TRAb peuvent aider (positifs si Basedow sous-jacent dans HAT1) mais ne suffisent pas seuls.</li>
+<li><em>Proposition 2</em> : Exact. HAT1 (Jod-Basedow sur thyroïde pathologique) : fixation résiduelle, hypervascularisation, IL-6 normale, GMNT préexistant → traitement par ATS. HAT2 (thyroïdite destructive sur thyroïde saine) : scintigraphie blanche, hypovascularisation, IL-6 très élevée (&gt; 30-100 pg/mL) → traitement par corticoïdes.</li>
+<li><em>Proposition 3</em> : La T4L ne différencie pas fiablement HAT1 de HAT2.</li>
+<li><em>Proposition 4</em> : La différenciation est possible et cliniquement fondamentale (traitements opposés).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Amiodarone and thyroid disease</em>. Neth J Med 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-021-qcm">Question HYPER-AR-021 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : ICI · <strong>Module</strong> : M34</p>
+</blockquote>
+<p><strong>Dans quelle situation faut-il envisager l'arrêt de l'ICI pour toxicité thyroïdienne ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Dès le grade 1 (TSH modifiée asymptomatique)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Grades 3-4 uniquement (symptômes sévères ou urgence vitale)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jamais — la thyroïde n'est jamais un motif d'arrêt d'ICI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dès la première élévation de T4L</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le grade 1 ne justifie pas l'arrêt de l'ICI — surveillance seule.</li>
+<li><em>Proposition 2</em> : Exact. Grade 1-2 : l'ICI est maintenu (bénéfice oncologique &gt;&gt; risque thyroïdien) + traitement symptomatique. Grade 3 : suspension ICI + corticoïdes si nécessaire. Grade 4 (crise thyrotoxique) : arrêt définitif ICI.</li>
+<li><em>Proposition 3</em> : L'arrêt est indiqué en grade 3-4.</li>
+<li><em>Proposition 4</em> : L'élévation de T4L isolée n'est pas un motif d'arrêt.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Barroso-Sousa R et al. <em>JAMA Oncol</em>. 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-022-qcm">Question HYPER-AR-022 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : formes rares · <strong>Module</strong> : M35</p>
+</blockquote>
+<p><strong>Quel rapport distingue formellement un adénome thyréotrope (TSHome) d'une RTHβ ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>T4L/T3L</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>α-GSU/TSH</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>TRAb/anti-TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TSH/prolactine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les deux conditions montrent T4L et T3L élevées.</li>
+<li><em>Proposition 2</em> : Exact. α-GSU/TSH &gt; 1 → TSHome (l'adénome sécrète proportionnellement plus de sous-unité α libre). α-GSU/TSH &lt; 1 + IRM normale + ATCD familiaux → RTHβ (séquencer THRB).</li>
+<li><em>Proposition 3</em> : TRAb et anti-TPO sont négatifs dans les deux cas.</li>
+<li><em>Proposition 4</em> : Le rapport TSH/prolactine n'est pas un critère diagnostique standard.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Beck-Peccoz P et al. <em>TSH-secreting pituitary adenomas</em>. Nat Rev Endocrinol 2013.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-023-qcm">Question HYPER-AR-023 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : scintigraphie · <strong>Module</strong> : M10</p>
+</blockquote>
+<p><strong>Comment la scintigraphie permet-elle de distinguer un Basedow d'un GMNT toxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fixation identique dans les deux cas</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Basedow : fixation diffuse homogène ; GMNT : fixation hétérogène avec zones chaudes et froides</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Basedow : fixation focale ; GMNT : fixation diffuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La scintigraphie ne permet pas cette distinction</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La fixation est qualitativement différente.</li>
+<li><em>Proposition 2</em> : Exact. Basedow : fixation diffuse, homogène, symétrique (toute la glande stimulée par les TRAb). GMNT : fixation hétérogène avec zones chaudes (nodules autonomes) et zones froides (parenchyme sain supprimé). Adénome de Plummer : foyer unique hyperfixant avec extinction du reste.</li>
+<li><em>Proposition 3</em> : C'est l'inverse.</li>
+<li><em>Proposition 4</em> : C'est l'un des principaux apports de la scintigraphie.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-024-qcm">Question HYPER-AR-024 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : dépistage · <strong>Module</strong> : M24</p>
+</blockquote>
+<p><strong>Un patient de 70 ans présente une TSH à 0,05 mUI/L, T4L et T3L normales, asymptomatique. Faut-il traiter ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Non, car asymptomatique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oui — TSH &lt; 0,1 mUI/L chez &gt; 65 ans = traitement recommandé</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Surveiller TSH dans 12 mois</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Scintigraphie immédiate sans traitement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le caractère asymptomatique ne protège pas des complications (FA, ostéoporose).</li>
+<li><em>Proposition 2</em> : Exact. TSH &lt; 0,1 mUI/L chez &gt; 65 ans → risque FA × 3 et risque fracturaire augmenté de 50 %. Traitement recommandé même si asymptomatique. Bilan étiologique (TRAb, scintigraphie) + traitement adapté.</li>
+<li><em>Proposition 3</em> : 12 mois est un délai trop long pour une TSH &lt; 0,1 chez le sujet âgé.</li>
+<li><em>Proposition 4</em> : La scintigraphie fait partie du bilan étiologique mais le traitement ne doit pas être retardé.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cappola AR et al. <em>Thyroid status, cardiovascular risk, and mortality in older adults</em>. JAMA 2006.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-ar-025-qcm">Question HYPER-AR-025 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : comorbidités · <strong>Module</strong> : M21</p>
+</blockquote>
+<p><strong>Quel est le mécanisme de la gynécomastie chez l'homme hyperthyroïdien ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Excès d'estrogènes par tumeur surrénalienne</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>↑ SHBG → ↓ testostérone libre + ↑ ratio estrogènes/androgènes</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Effet direct des hormones thyroïdiennes sur le tissu mammaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hypothyroïdie concomitante</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La tumeur surrénalienne est une cause rare de gynécomastie, non liée à l'hyperthyroïdie.</li>
+<li><em>Proposition 2</em> : Exact. Les hormones thyroïdiennes (via TRβ1 hépatique) stimulent la synthèse de SHBG → ↓ testostérone libre → ↑ ratio estrogènes/androgènes libres → gynécomastie. Réversible après traitement.</li>
+<li><em>Proposition 3</em> : L'effet est indirect via la SHBG, pas direct sur le tissu mammaire.</li>
+<li><em>Proposition 4</em> : L'hypothyroïdie n'est pas en cause ici.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Brent GA. <em>Graves' disease</em>. NEJM 2008.</p>
+</blockquote>
+<hr />
+<h2 id="or-expertise-decision-multi-facteurs">🥇 OR — Expertise, décision multi-facteurs</h2>
+<hr />
+<h3 id="question-hyper-or-001-cas-clinique">Question HYPER-OR-001 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : urgence · <strong>Module</strong> : M14</p>
+</blockquote>
+<p><strong>Une femme de 35 ans, Basedow connue, arrête ses ATS il y a 3 semaines. Elle est admise aux urgences avec T° 39,8°C, FC 145/min, FA, confusion, ictère. Score Burch-Wartofsky à 60. Décrivez le traitement d'urgence séquentiel.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cardioversion immédiate + aspirine</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PTU → Lugol (≥ 1h après) → propranolol → hydrocortisone → paracétamol → traiter le facteur déclenchant</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>MMI seul à dose élevée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyroïdectomie d'urgence immédiate</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Cardioversion inefficace sans traitement de l'hyperthyroïdie. Aspirine CONTRE-INDIQUÉE (déplace T4 de la TBG → ↑ T4L → aggravation).</li>
+<li><em>Proposition 2</em> : Exact. Séquence : (1) PTU 600-1 000 mg charge ; (2) Lugol ≥ 1h après PTU (sinon Jod-Basedow paradoxal) ; (3) Propranolol 60-80 mg/4h PO ou 1-2 mg IV ; (4) Hydrocortisone 100 mg/8h IV (insuffisance surrénalienne relative + inhibe DIO1) ; (5) Paracétamol (pas aspirine) ; (6) Facteur déclenchant.</li>
+<li><em>Proposition 3</em> : Le MMI seul est insuffisant dans une crise thyrotoxique (score ≥ 45). Le PTU est préféré (double mécanisme TPO + DIO1).</li>
+<li><em>Proposition 4</em> : La thyroïdectomie d'urgence est réservée à l'échec du traitement médical.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burch HB, Wartofsky L. <em>Thyroid Storm</em>. 1993 ; Idrose AM. 2014.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-002-cas-clinique">Question HYPER-OR-002 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TAO · <strong>Module</strong> : M13</p>
+</blockquote>
+<p><strong>Un patient basedowien tabagique consulte pour baisse d'acuité visuelle + dyschromatopsie de l'œil droit dans un contexte de TAO connue. Quelle est l'urgence et la conduite ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Consultation ophtalmologique programmée à 2 semaines</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Neuropathie optique compressive → méthylprednisolone IV haute dose en urgence ± décompression orbitaire</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sélénium 200 µg/j et surveillance</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Augmenter les ATS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Un délai de 2 semaines est inacceptable — la vision est menacée.</li>
+<li><em>Proposition 2</em> : Exact. Baisse AV + dyschromatopsie dans une TAO = neuropathie optique compressive = URGENCE. Traitement : méthylprednisolone IV 500-1 000 mg/j × 3 jours. Si pas de réponse en 2 semaines : décompression orbitaire chirurgicale.</li>
+<li><em>Proposition 3</em> : Le sélénium est pour la TAO légère, pas pour une urgence visuelle.</li>
+<li><em>Proposition 4</em> : Les ATS ne traitent pas la TAO active menaçant la vue.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bartalena L et al. <em>EUGOGO 2021</em>.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-003-cas-clinique">Question HYPER-OR-003 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M18</p>
+</blockquote>
+<p><strong>Une femme basedowienne sous PTU 150 mg/j au T1 arrive à S12. Comment gérer la transition thérapeutique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Arrêter tous les ATS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Switch PTU → MMI/carbimazole à S12-S14, dose minimale efficace</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Poursuivre PTU jusqu'à l'accouchement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Passer au bloc-substitution</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'arrêt de tous les ATS risque une rechute sévère.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU est préféré au T1 (moindre tératogénicité). Transition vers MMI à S12-S14 pour réduire l'exposition au PTU (risque hépatotoxicité). Dose minimale pour maintenir T4L en limite haute de la norme.</li>
+<li><em>Proposition 3</em> : Poursuivre le PTU au long cours augmente le risque d'hépatite fulminante.</li>
+<li><em>Proposition 4</em> : Le bloc-substitution est contre-indiqué en grossesse.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines 2018, ATA Guidelines 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-004-cas-clinique">Question HYPER-OR-004 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M29</p>
+</blockquote>
+<p><strong>Un patient basedowien avec TAO modérée-sévère active (CAS 4/7) est candidat à un traitement définitif après échec des ATS. RAI ou chirurgie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>RAI sans protection corticoïde</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RAI avec protection corticoïde systématique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Thyroïdectomie totale (préférentielle dans ce contexte)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ATS au long cours</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : RAI sans protection aggrave la TAO dans 15-25 % des cas — contre-indiquée.</li>
+<li><em>Proposition 2</em> : La RAI avec corticoïdes est acceptable dans la TAO légère, mais dans la TAO modérée-sévère active, la chirurgie est préférentielle.</li>
+<li><em>Proposition 3</em> : Exact. La thyroïdectomie totale est préférentielle en cas de TAO modérée-sévère active car : (1) suppression rapide de la charge antigénique thyroïdienne → ↓ TRAb plus rapide ; (2) pas de libération d'antigènes (contrairement à la RAI) ; (3) résultat immédiat sur l'hyperthyroïdie.</li>
+<li><em>Proposition 4</em> : Les ATS au long cours ne sont pas un traitement curatif et ont été essayés sans succès.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Perros P et al. <em>EUGOGO 2018</em> ; Bartalena L et al. <em>NEJM 1998</em>.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-005-cas-clinique">Question HYPER-OR-005 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : iatrogène · <strong>Module</strong> : M33</p>
+</blockquote>
+<p><strong>Un patient sous amiodarone depuis 4 ans pour FA réfractaire développe TSH &lt; 0,01, T4L 80 pmol/L, scintigraphie blanche, IL-6 à 85 pg/mL. Quel type d'HAT et quel traitement ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>HAT1 → MMI haute dose</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HAT2 → prednisone 40-60 mg/j</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>HAT mixte → association MMI + prednisone</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyroïdectomie immédiate</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La scintigraphie blanche et l'IL-6 très élevée excluent une HAT1 pure (fixation résiduelle et IL-6 normale dans HAT1).</li>
+<li><em>Proposition 2</em> : Exact. HAT2 confirmée : scintigraphie blanche (fixation nulle) + IL-6 très élevée (&gt; 30 pg/mL) + thyroïde antérieurement normale = thyroïdite destructive par toxicité de l'amiodarone. Traitement : prednisone 40-60 mg/j pendant 3-6 mois, réponse rapide attendue en 2-4 semaines.</li>
+<li><em>Proposition 3</em> : Les critères sont clairement de type 2, pas mixte.</li>
+<li><em>Proposition 4</em> : La thyroïdectomie est réservée à la résistance aux corticoïdes.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Neth J Med</em>. 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-006-cas-clinique">Question HYPER-OR-006 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : clinique · <strong>Module</strong> : M12</p>
+</blockquote>
+<p><strong>Pourquoi la cardioversion électrique d'une FA thyrotoxique est-elle contre-indiquée avant traitement de l'hyperthyroïdie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Risque de fibrillation ventriculaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Le substrat arythmogène persiste tant que la TSH n'est pas normalisée → récidive immédiate</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'amiodarone est nécessaire et elle est contre-indiquée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La cardioversion est techniquement impossible en hyperthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le risque de FV n'est pas le principal problème.</li>
+<li><em>Proposition 2</em> : Exact. En hyperthyroïdie, le raccourcissement de la période réfractaire atriale et la dilatation auriculaire persistent. La cardioversion est inefficace ou à haut risque de récidive immédiate. Normaliser d'abord la TSH (4-8 semaines d'ATS) → retour en sinusal spontané dans 50-60 %.</li>
+<li><em>Proposition 3</em> : D'autres antiarythmiques sont disponibles.</li>
+<li><em>Proposition 4</em> : La cardioversion est techniquement possible mais cliniquement inefficace.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ATA Guidelines 2016, ESC 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-007-cas-clinique">Question HYPER-OR-007 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : pédiatrie · <strong>Module</strong> : M19</p>
+</blockquote>
+<p><strong>Un enfant de 8 ans, Basedow sous MMI, présente fièvre à 38,8°C avec pharyngite. Quelle est la conduite immédiate ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Poursuivre MMI + antibiotiques</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Arrêt immédiat du MMI + NFS urgente</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Réduire la dose de MMI de moitié</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ajouter un bêta-bloquant</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Poursuivre le MMI sans exclure l'agranulocytose est dangereux.</li>
+<li><em>Proposition 2</em> : Exact. Fièvre + maux de gorge sous ATS = suspicion d'agranulocytose. Arrêt immédiat du MMI. NFS urgente. Si PNN &lt; 500/mm³ → hospitalisation, isolement protecteur, G-CSF, antibiotiques. Ne jamais reprendre le même ATS.</li>
+<li><em>Proposition 3</em> : La réduction de dose est insuffisante — l'arrêt est impératif.</li>
+<li><em>Proposition 4</em> : Le bêta-bloquant n'est pas la priorité dans cette situation.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ATA Guidelines 2016, ESPE 2022.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-008-qcm">Question HYPER-OR-008 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M04</p>
+</blockquote>
+<p><strong>Une mutation gain-de-fonction somatique du gène TSHR dans un nodule thyroïdien produit quel tableau clinique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hypothyroïdie congénitale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adénome toxique de Plummer</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Maladie de Basedow</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyroïdite de Hashimoto</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'hypothyroïdie congénitale résulte de mutations perte-de-fonction du TSHR.</li>
+<li><em>Proposition 2</em> : Exact. Mutation somatique gain-de-fonction du TSHR → activation constitutive AMPc sans TSH → production hormonale autonome → nodule "chaud" à la scintigraphie → hyperthyroïdie avec suppression de la TSH et extinction du parenchyme sain.</li>
+<li><em>Proposition 3</em> : Le Basedow est auto-immun (TRAb), pas mutationnel.</li>
+<li><em>Proposition 4</em> : Le Hashimoto est une thyroïdite auto-immune destructive.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Parma J et al. <em>Nature</em>. 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-009-qcm">Question HYPER-OR-009 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M06</p>
+</blockquote>
+<p><strong>Pourquoi le propranolol est-il préféré aux autres bêta-bloquants dans la crise thyrotoxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Il est plus cardiosélectif</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Il bloque les β-AR + inhibe la DIO1 à fortes doses (↓ conversion T4→T3)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il a la demi-vie la plus longue</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Il est le seul bêta-bloquant disponible en IV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le propranolol est non cardiosélectif (β1 + β2), contrairement au bisoprolol.</li>
+<li><em>Proposition 2</em> : Exact. Double mécanisme : (1) Blocage des récepteurs β-adrénergiques → contrôle de la tachycardie, tremblements ; (2) Inhibition de la DIO1 à fortes doses → ↓ conversion T4→T3 → ↓ T3 circulante. Avantage unique dans la crise thyrotoxique.</li>
+<li><em>Proposition 3</em> : Le propranolol a une demi-vie relativement courte (3-6h).</li>
+<li><em>Proposition 4</em> : D'autres bêta-bloquants sont disponibles en IV (esmolol, etc.).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cooper DS. <em>Antithyroid drugs</em>. NEJM 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-010-cas-clinique">Question HYPER-OR-010 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M23</p>
+</blockquote>
+<p><strong>Un patient présente TSH à 2,5 mUI/L (normale), T4L 3× la normale, T3L 2× la normale. α-GSU/TSH = 1,8. IRM : macroadénome hypophysaire. Diagnostic ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Maladie de Basedow avec immunodosage interférent</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Adénome thyréotrope (TSHome)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RTHβ (résistance aux hormones thyroïdiennes)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hyperthyroïdie frustre</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Basedow montre une TSH effondrée, pas normale/haute.</li>
+<li><em>Proposition 2</em> : Exact. TSH inadaptée (normale/haute) + T4L/T3L élevées + α-GSU/TSH &gt; 1 + adénome hypophysaire visible = TSHome. Traitement de 1ère ligne : chirurgie transsphénoïdale.</li>
+<li><em>Proposition 3</em> : RTHβ aurait α-GSU/TSH &lt; 1, IRM normale, ATCD familiaux.</li>
+<li><em>Proposition 4</em> : L'hyperthyroïdie frustre a T4L et T3L normales.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Beck-Peccoz P et al. <em>Nat Rev Endocrinol</em>. 2013.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-011-cas-clinique">Question HYPER-OR-011 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : post-partum · <strong>Module</strong> : M11</p>
+</blockquote>
+<p><strong>Une femme à 4 mois post-partum présente TSH effondrée, T4L élevée, thyroïde indolore. Comment distinguer un Basedow du post-partum d'une thyroïdite post-partum ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Par la T4L uniquement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRAb + scintigraphie (ou écho-Doppler si allaitement)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Par la CRP</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Par les anti-Tg</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La T4L est élevée dans les deux cas.</li>
+<li><em>Proposition 2</em> : Exact. Thyroïdite post-partum : anti-TPO +, TRAb négatifs, scintigraphie blanche (ou Doppler hypovasculaire si allaitement). Basedow post-partum : TRAb + (TSAb), scintigraphie fixation élevée diffuse (ou Doppler hypervasculaire). Distinction essentielle car la thyroïdite ne nécessite pas d'ATS, contrairement au Basedow.</li>
+<li><em>Proposition 3</em> : La CRP est normale dans les deux cas.</li>
+<li><em>Proposition 4</em> : Les anti-Tg ne différencient pas ces deux entités.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Pearce EN et al. <em>Thyroiditis</em>. NEJM 2003.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-012-qcm">Question HYPER-OR-012 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : chirurgie · <strong>Module</strong> : M31</p>
+</blockquote>
+<p><strong>Pourquoi le Lugol ne doit-il pas être administré plus de 14 jours avant la thyroïdectomie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Allergie retardée à l'iode</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Échappement à l'effet Wolff-Chaikoff → reprise de synthèse + risque de Jod-Basedow</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Accumulation toxique d'iode dans les reins</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Inhibition irréversible de la TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'allergie à l'iode n'est pas liée à la durée du Lugol.</li>
+<li><em>Proposition 2</em> : Exact. L'échappement au Wolff-Chaikoff survient à J7-J14 : ↓ NIS → ↓ captation iodée intracellulaire → levée de l'inhibition de la TPO → reprise de synthèse hormonale → possible aggravation de l'hyperthyroïdie. Opérer dans la fenêtre J10-J14.</li>
+<li><em>Proposition 3</em> : L'iode n'est pas néphrotoxique à ces doses.</li>
+<li><em>Proposition 4</em> : L'inhibition de la TPO par l'iode est réversible.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>ATA Guidelines</em>. Thyroid 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-013-cas-clinique">Question HYPER-OR-013 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TAO · <strong>Module</strong> : M13</p>
+</blockquote>
+<p><strong>Un patient basedowien est candidat à la RAI. Il a une TAO légère (CAS 1/7). Quelle précaution est nécessaire ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Contre-indication absolue de la RAI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Corticoïdes systématiques protecteurs (prednisone 0,3 mg/kg/j pendant 3 mois)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aucune précaution nécessaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Téprotumumab avant la RAI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La TAO légère n'est pas une contre-indication absolue à la RAI.</li>
+<li><em>Proposition 2</em> : Exact. Même dans la TAO légère, une protection corticoïde est recommandée pour prévenir l'aggravation post-RAI (risque 15-25 % sans corticoïdes → &lt; 5 % avec). Prednisone 0,3 mg/kg/j débutée 1-3 jours post-RAI, décroissance sur 3 mois.</li>
+<li><em>Proposition 3</em> : L'absence de précaution est risquée même dans la TAO légère.</li>
+<li><em>Proposition 4</em> : Le téprotumumab est réservé à la TAO modérée-sévère active.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bartalena L et al. <em>NEJM</em>. 1998 ; EUGOGO 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-014-qcm">Question HYPER-OR-014 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : effets indésirables · <strong>Module</strong> : M28</p>
+</blockquote>
+<p><strong>Quel mécanisme explique la vascularite à ANCA sous PTU ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Réaction allergique de type I</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PTU = substrat de la MPO neutrophilaire → néo-épitopes → ANCA anti-MPO</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Auto-immunité anti-thyroïdienne croisée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Toxicité hépatique secondaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La vascularite ANCA n'est pas une réaction d'hypersensibilité de type I.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU est métabolisé par la MPO → modification conformationnelle → néo-épitopes → ANCA anti-MPO. Retrouvés chez 20-30 % des patients PTU &gt; 12 mois. Risque de glomérulonéphrite ANCA-positive si ANCA élevés + protéinurie.</li>
+<li><em>Proposition 3</em> : La vascularite ANCA n'est pas un mécanisme d'auto-immunité thyroïdienne.</li>
+<li><em>Proposition 4</em> : La vascularite est un processus vasculaire, pas hépatique.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cooper DS. <em>NEJM</em>. 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-015-qcm">Question HYPER-OR-015 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : urgence · <strong>Module</strong> : M14</p>
+</blockquote>
+<p><strong>Pourquoi l'aspirine est-elle contre-indiquée dans la crise thyrotoxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Risque hémorragique majoré</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Déplacement compétitif des HT de la TBG → ↑ T4L libre → aggravation</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Interaction avec le PTU</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Insuffisance rénale aiguë</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le risque hémorragique n'est pas le principal problème dans ce contexte.</li>
+<li><em>Proposition 2</em> : Exact. L'aspirine et les salicylés déplacent compétitivement les hormones thyroïdiennes de leur liaison à la TBG → ↑ T4L libre → aggravation de la thyrotoxicose tissulaire. Utiliser uniquement le paracétamol.</li>
+<li><em>Proposition 3</em> : Il n'y a pas d'interaction pharmacocinétique significative PTU-aspirine.</li>
+<li><em>Proposition 4</em> : L'IRA n'est pas le mécanisme principal de contre-indication.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burch HB, Wartofsky L. 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-016-cas-clinique">Question HYPER-OR-016 — Cas clinique</h3>
+<blockquote>
+<p><strong>Domaine</strong> : sujet âgé · <strong>Module</strong> : M20</p>
+</blockquote>
+<p><strong>Pourquoi l'amiodarone est-elle contre-indiquée pour cardioverter une FA chez un patient avec hyperthyroïdie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Elle est trop bradycardisante</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Surcharge iodée → risque Jod-Basedow ou HAT → aggravation de la thyrotoxicose</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Interaction avec les ATS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Elle est inefficace dans la FA thyrotoxique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La bradycardie n'est pas le problème principal ici.</li>
+<li><em>Proposition 2</em> : Exact. L'amiodarone contient 37 % d'iode → surcharge → Jod-Basedow ou HAT → aggravation de la thyrotoxicose. De plus, l'amiodarone inhibe la DIO1 → ↑ T4L → interprétation biologique perturbée. Alternative : bisoprolol + cardioversion électrique après euthyroïdie.</li>
+<li><em>Proposition 3</em> : Les interactions ATS-amiodarone ne sont pas le problème principal.</li>
+<li><em>Proposition 4</em> : L'amiodarone est efficace contre la FA mais son iode est délétère.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ATA 2016 ; ESC 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-017-qcm">Question HYPER-OR-017 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : chirurgie · <strong>Module</strong> : M32</p>
+</blockquote>
+<p><strong>À quel trimestre peut-on opérer une thyroïdectomie pour Basedow non contrôlé pendant la grossesse ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>T1</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T2 (idéalement S14-S22)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>T3</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Post-partum uniquement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La chirurgie est contre-indiquée au T1 (organogenèse).</li>
+<li><em>Proposition 2</em> : Exact. Le T2 (S14-S22) est la meilleure période : organogenèse terminée, utérus encore peu volumineux, risque obstétrical minimal.</li>
+<li><em>Proposition 3</em> : Au T3, le risque de prématurité et d'hémorragie est majoré.</li>
+<li><em>Proposition 4</em> : Le post-partum est une option mais on ne peut pas toujours attendre.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-018-qcm">Question HYPER-OR-018 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : innovations · <strong>Module</strong> : M36</p>
+</blockquote>
+<p><strong>Quelle est la place du sélénium dans le traitement de la TAO ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>TAO modérée-sévère active (1ère ligne)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TAO légère active (200 µg/j pendant 6 mois)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Prévention du Basedow</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Crise thyrotoxique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La TAO modérée-sévère relève des corticoïdes IV ou du téprotumumab.</li>
+<li><em>Proposition 2</em> : Exact. Essai EUGOGO (Marcocci, NEJM 2011) : sélénium 200 µg/j de séléniure de sodium pendant 6 mois → amélioration qualité de vie (78 % vs 53 %), moins de progressions (7 % vs 26 %) dans la TAO légère.</li>
+<li><em>Proposition 3</em> : Le sélénium ne prévient pas le Basedow.</li>
+<li><em>Proposition 4</em> : Le sélénium n'a pas de place dans la crise thyrotoxique.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Marcocci C et al. <em>Selenium and the Course of Mild Graves' Orbitopathy</em>. NEJM 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-019-qcm">Question HYPER-OR-019 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : biologie · <strong>Module</strong> : M07</p>
+</blockquote>
+<p><strong>Quel est le mécanisme de l'ostéoporose thyrotoxique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>↓ résorption osseuse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>↑ résorption ostéoclastique via TRα + perte osseuse 0,5-1 %/mois en phase active</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Carence en vitamine D associée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Effet direct des ATS sur l'os</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : C'est l'inverse — la résorption est augmentée.</li>
+<li><em>Proposition 2</em> : Exact. L'excès de T3 via TRα active les ostéoclastes → ↑ remodelage osseux (résorption &gt; formation) → perte osseuse de 0,5-1 %/mois en phase active. Risque fracturaire × 1,5-2 chez la femme post-ménopausée.</li>
+<li><em>Proposition 3</em> : La carence en vitamine D est un facteur indépendant, pas le mécanisme principal.</li>
+<li><em>Proposition 4</em> : Les ATS n'ont pas d'effet osseux direct significatif.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vestergaard P et al. 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-020-qcm">Question HYPER-OR-020 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M05</p>
+</blockquote>
+<p><strong>Par quel mécanisme l'amiodarone peut-elle induire une hyperthyroïdie de type 1 chez un patient porteur d'un GMNT ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Toxicité directe sur les thyréocytes</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Effet Jod-Basedow : les nodules autonomes échappent à Wolff-Chaikoff → synthèse massive</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Stimulation des TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Activation de la DIO2</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La toxicité directe caractérise le type 2, pas le type 1.</li>
+<li><em>Proposition 2</em> : Exact. Surcharge iodée → les nodules autonomes (TSHR muté constitutionnellement actif) ne peuvent pas réduire leur NIS → production hormonale massivement augmentée → HAT1 = Jod-Basedow.</li>
+<li><em>Proposition 3</em> : Les TRAb ne sont pas directement stimulés par l'amiodarone.</li>
+<li><em>Proposition 4</em> : La DIO2 n'est pas le mécanisme principal de l'HAT1.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Neth J Med</em>. 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-021-qcm">Question HYPER-OR-021 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M26</p>
+</blockquote>
+<p><strong>Quel est le mécanisme indirect de réduction des TRAb sous ATS à long terme ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Inhibition directe des plasmocytes par le MMI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>↓ Expression TSHR sur les thyréocytes → ↓ stimulation antigénique → ↓ production TRAb</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Destruction des lymphocytes B par le PTU</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Neutralisation chimique des TRAb circulants</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le MMI n'inhibe pas directement les plasmocytes.</li>
+<li><em>Proposition 2</em> : Exact. Mécanisme indirect : ↓ expression TSHR → ↓ présentation d'antigènes aux lymphocytes T → ↓ production TRAb. L'euthyroïdie restaurée améliore aussi l'immunorégulation (Treg). Réduction inconstante (absente chez 30-40 % des patients).</li>
+<li><em>Proposition 3</em> : Le PTU ne détruit pas les lymphocytes B.</li>
+<li><em>Proposition 4</em> : Les ATS ne neutralisent pas chimiquement les TRAb.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cooper DS. <em>NEJM</em>. 2005.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-022-qcm">Question HYPER-OR-022 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : imagerie · <strong>Module</strong> : M17</p>
+</blockquote>
+<p><strong>Pourquoi une surcharge iodée récente (produit de contraste IV) invalide-t-elle la scintigraphie ¹²³I ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>L'iode stable compétitionne avec l'¹²³I pour le NIS → fixation faussement basse</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>2</td>
+<td>L'iode stable détruit le NIS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'iode stable interfère avec le détecteur gamma</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aucune interférence</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Exact. L'iode ¹²⁷I du produit de contraste est en excès dans le pool iodé → compétition avec l'¹²³I pour la captation NIS → fixation faussement basse → scintigraphie non interprétable. Délai : 4-6 semaines après injection IV, 8-12 semaines après coronarographie.</li>
+<li><em>Proposition 2</em> : L'iode stable ne détruit pas le NIS — il sature les sites de captation.</li>
+<li><em>Proposition 3</em> : L'iode stable n'émet pas de rayonnement gamma détectable.</li>
+<li><em>Proposition 4</em> : L'interférence est cliniquement significative.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-023-qcm">Question HYPER-OR-023 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : innovations · <strong>Module</strong> : M37</p>
+</blockquote>
+<p><strong>Pourquoi les antagonistes du TSHR (small molecule inhibitors) représentent-ils une avancée conceptuelle ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ils sont moins chers que les ATS</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ils bloquent le TSHR à sa source (vs ATS qui bloquent seulement la synthèse en aval)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ils remplacent la LT4</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ils éliminent les TRAb directement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le coût n'est pas l'avancée conceptuelle principale.</li>
+<li><em>Proposition 2</em> : Exact. Les ATS bloquent la synthèse hormonale (TPO) mais la stimulation du TSHR par les TRAb persiste. Les SMI-TSHR bloquent le récepteur lui-même → suppression du signal à sa source → contrôle simultané de l'hyperthyroïdie ET de la TAO (fibroblastes orbitaires expriment le TSHR).</li>
+<li><em>Proposition 3</em> : Ils ne remplacent pas la LT4.</li>
+<li><em>Proposition 4</em> : Ils ne neutralisent pas les TRAb circulants.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Concepts en développement, stade préclinique (2025).</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-024-qcm">Question HYPER-OR-024 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : suivi · <strong>Module</strong> : M30</p>
+</blockquote>
+<p><strong>Quelles sont les causes d'échec de la RAI ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Volume thyroïdien trop petit</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Volume trop grand (&gt; 80 mL), captation trop faible, dose insuffisante, MMI repris trop tôt</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Allergie à l'¹³¹I</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Âge du patient &gt; 65 ans</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Un volume petit favorise l'efficacité de la RAI.</li>
+<li><em>Proposition 2</em> : Exact. Causes d'échec : volume &gt; 80 mL, captation &lt; 30 %, dose insuffisante, MMI repris &lt; 7 jours post-RAI (radioprotection partielle des thyréocytes). En cas d'échec : 2ème dose (+20-50 %) ou thyroïdectomie.</li>
+<li><em>Proposition 3</em> : L'¹³¹I ne provoque pas de réactions allergiques.</li>
+<li><em>Proposition 4</em> : L'âge &gt; 65 ans n'est pas une cause d'échec — au contraire, la RAI est souvent préférentielle chez le sujet âgé.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Ross DS et al. <em>ATA Guidelines</em>. Thyroid 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-or-025-qcm">Question HYPER-OR-025 — QCM</h3>
+<blockquote>
+<p><strong>Domaine</strong> : IA · <strong>Module</strong> : M38</p>
+</blockquote>
+<p><strong>Quelle application de l'IA a montré les meilleurs résultats pour le dépistage de la TAO en médecine générale ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Analyse automatique des TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deep learning sur photos de visage pour détecter l'exophtalmie (sensibilité 95 %)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Prédiction de la crise thyrotoxique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Classification automatique de la TSH</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'analyse des TRAb n'est pas une application d'IA de dépistage.</li>
+<li><em>Proposition 2</em> : Exact. L'algorithme IA analysant les photos de visage détecte une proptose &gt; 18 mm avec une sensibilité de 95 % (Singh et al., JAMA Ophthalmol 2023). Potentiel de dépistage en médecine générale sans ophtalmologue.</li>
+<li><em>Proposition 3</em> : La prédiction de la crise thyrotoxique n'est pas une application IA validée.</li>
+<li><em>Proposition 4</em> : La classification de la TSH ne nécessite pas d'IA complexe.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Singh S et al. <em>JAMA Ophthalmol</em>. 2023.</p>
+</blockquote>
+<hr />
+<h2 id="diamant-excellence-situations-complexes-quelle-erreur">💎 DIAMANT — Excellence, situations complexes, "quelle erreur ?"</h2>
+<hr />
+<h3 id="question-hyper-di-001-cas-clinique-complexe">Question HYPER-DI-001 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M04</p>
+</blockquote>
+<p><strong>Comparez la signalisation du TSHR activé par la TSH vs par les TRAb stimulants (TSAb) dans la maladie de Basedow. Pourquoi cette différence explique-t-elle la chronicité du Basedow ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>TSH et TSAb activent le TSHR de façon identique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TSH : liaison fugace (t½ 60 min), régulée ; TRAb : liaison prolongée (t½ IgG 21 jours), insensible au rétrocontrôle → stimulation soutenue chronique</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Les TRAb bloquent le TSHR au lieu de le stimuler</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La TSH est plus puissante que les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La cinétique et la régulabilité sont fondamentalement différentes.</li>
+<li><em>Proposition 2</em> : Exact. TSH : liaison fugace (demi-vie ~60 min), signal AMPc physiologique, régulé par le rétrocontrôle T3/T4. TSAb : liaison prolongée (IgG demi-vie ~21 jours), activation constitutive insensible au rétrocontrôle hypophysaire → stimulation soutenue sans modulation → hyperthyroïdie chronique. De plus, les TRAb activent des voies non-AMPc (β-arrestines, PI3K) avec des effets trophiques additionnels.</li>
+<li><em>Proposition 3</em> : Les TRAb bloquants (TBAb) existent mais sont distincts des TSAb stimulants.</li>
+<li><em>Proposition 4</em> : Les TSAb sont plus "persistants" que la TSH, ce qui est la clé de la chronicité.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Rapoport B, McLachlan SM. <em>Nat Rev Endocrinol</em>. 2016.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-002-quelle-erreur">Question HYPER-DI-002 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : urgence · <strong>Module</strong> : M14</p>
+</blockquote>
+<p><strong>Un médecin urgentiste administre le Lugol AVANT le PTU dans le traitement d'une crise thyrotoxique. Quelle est l'erreur et sa conséquence ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pas d'erreur, l'ordre est indifférent</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Erreur grave : l'iode du Lugol sera utilisé comme substrat par la TPO encore active → aggravation de la crise</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Erreur mineure sans conséquence clinique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le Lugol est contre-indiqué dans la crise thyrotoxique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'ordre est fondamental pour éviter l'aggravation.</li>
+<li><em>Proposition 2</em> : Exact. Le PTU doit TOUJOURS précéder le Lugol (≥ 1h). Sans blocage préalable de la TPO par le PTU, l'iode du Lugol fournit un substrat pour une synthèse hormonale accrue → effet Jod-Basedow paradoxal → aggravation de la crise.</li>
+<li><em>Proposition 3</em> : Cette erreur peut aggraver une crise thyrotoxique mortelle.</li>
+<li><em>Proposition 4</em> : Le Lugol est indiqué dans la crise thyrotoxique, mais APRÈS le PTU.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Burch HB, Wartofsky L. 1993.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-003-cas-clinique-complexe">Question HYPER-DI-003 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M18</p>
+</blockquote>
+<p><strong>Quel est le mécanisme de l'hyperthyroïdie néonatale transitoire dans le Basedow maternel, et comment prédire ce risque ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Passage de MMI au fœtus → hypothyroïdie rebond néonatale</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Passage transplacentaire des TRAb (IgG, t½ 21j) → activation du TSHR fœtal → résolution en 2-6 semaines</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mutation germinale du TSHR transmise par la mère</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Passage de T4L maternelle au fœtus</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le passage de MMI cause une hypothyroïdie fœtale, pas une hyperthyroïdie néonatale.</li>
+<li><em>Proposition 2</em> : Exact. Les TRAb maternels (IgG) passent le placenta via les récepteurs Fc (transport actif dès S16-S20). Les TSAb activent le TSHR thyroïdien fœtal → hyperthyroïdie néonatale dans 1-5 % des Basedow avec TRAb élevés. Résolution en 2-6 semaines (catabolisation des IgG maternelles). Prédiction : TRAb &gt; 3-5 × la norme à S22-S26 → surveillance néonatale.</li>
+<li><em>Proposition 3</em> : La mutation germinale du TSHR donne une hyperthyroïdie congénitale permanente, pas transitoire.</li>
+<li><em>Proposition 4</em> : La T4L maternelle ne passe que faiblement le placenta.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-004-cas-clinique-complexe">Question HYPER-DI-004 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TAO · <strong>Module</strong> : M36</p>
+</blockquote>
+<p><strong>Une patiente de 42 ans, Basedow avec TAO modérée-sévère active (CAS 5, proptose 23 mm), a reçu 3 cures de méthylprednisolone IV sans amélioration. Quelles sont les options thérapeutiques et leur niveau de preuve ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sélénium 400 µg/j</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Téprotumumab (anti-IGF-1R) &gt; rituximab (anti-CD20) &gt; décompression orbitaire chirurgicale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RAI immédiate pour réduire les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Augmenter les corticoïdes IV</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le sélénium est pour la TAO légère, pas la modérée-sévère réfractaire.</li>
+<li><em>Proposition 2</em> : Exact. Options par niveau de preuve : (1) Téprotumumab (OPTIC 2021 : 83 % répondeurs, ↓ 2,82 mm proptose — AMM FDA, accès compassionnel EU) ; (2) Rituximab (ORBIT : supérieur aux corticoïdes pour prévention rechute — 2 × 1 g) ; (3) Décompression orbitaire chirurgicale si menace visuelle ou proptose sévère persistante.</li>
+<li><em>Proposition 3</em> : La RAI aggraverait la TAO dans ce contexte.</li>
+<li><em>Proposition 4</em> : Augmenter les corticoïdes au-delà de la dose cumulative maximale (8 g) expose à des effets indésirables sévères sans bénéfice additionnel.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Smith TJ, Kahaly GJ (OPTIC Trial). <em>NEJM</em>. 2021 ; EUGOGO 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-005-cas-clinique-complexe">Question HYPER-DI-005 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : iatrogène · <strong>Module</strong> : M33</p>
+</blockquote>
+<p><strong>Un patient sous amiodarone pour FA réfractaire développe une HAT2 sévère non contrôlée par 6 semaines de prednisone. Le cardiologue refuse l'arrêt de l'amiodarone. Quelle stratégie ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Augmenter la prednisone à 100 mg/j</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Thyroïdectomie totale en urgence semi-différée après préparation médicale maximale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RAI d'emblée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Plasmaphérèse exclusive</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : L'augmentation au-delà de 60 mg/j expose à des effets secondaires sans bénéfice prouvé après 6 semaines d'échec.</li>
+<li><em>Proposition 2</em> : Exact. La thyroïdectomie totale est le seul traitement définitif en cas de résistance aux corticoïdes + impossibilité d'arrêt amiodarone + RAI non réalisable (fixation effondrée). Préparation : PTU 600 mg/j + prednisone + propranolol ± Lugol. Mortalité péri-opératoire 2-3 %, à peser vs mortalité de la thyrotoxicose non contrôlée.</li>
+<li><em>Proposition 3</em> : La RAI est inefficace dans l'HAT2 (scintigraphie blanche, pas de captation).</li>
+<li><em>Proposition 4</em> : La plasmaphérèse peut être un traitement d'appoint mais pas le traitement définitif.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Neth J Med</em>. 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-006-quelle-erreur">Question HYPER-DI-006 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : biologie · <strong>Module</strong> : M15</p>
+</blockquote>
+<p><strong>Un médecin diagnostique une hyperthyroïdie chez un patient sous amiodarone sur la base d'une T4L à 45 pmol/L avec TSH à 1,2 mUI/L. Quelle est l'erreur ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pas d'erreur — T4L élevée = hyperthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Erreur : sous amiodarone stable, T4L élevée + TSH normale = euthyroïdie attendue (inhibition DIO1)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il fallait doser les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>L'amiodarone fausse tous les dosages</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Sous amiodarone, la T4L élevée avec TSH normale est la norme biologique attendue.</li>
+<li><em>Proposition 2</em> : Exact. L'amiodarone inhibe la DIO1 → accumulation de T4 → T4L élevée. La TSH normale confirme l'euthyroïdie. Le diagnostic d'HAT repose sur la TSH effondrée (&lt; 0,1 mUI/L), pas sur la T4L seule.</li>
+<li><em>Proposition 3</em> : Les TRAb ne sont indiqués que si la TSH est effondrée.</li>
+<li><em>Proposition 4</em> : L'amiodarone ne fausse pas tous les dosages — la TSH reste le marqueur de référence.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Eskes SA et al. <em>Neth J Med</em>. 2012.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-007-cas-clinique-complexe">Question HYPER-DI-007 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : étiologie · <strong>Module</strong> : M09</p>
+</blockquote>
+<p><strong>Pourquoi la grossesse améliore-t-elle temporairement la maladie de Basedow alors que le post-partum provoque une rechute ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Les hormones de grossesse inhibent la TPO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Grossesse : tolérance immunitaire (↑ Treg, Th2) → ↓ TRAb ; post-partum : rebond immunitaire (↓ Treg, ↑ Th1) → ↑ TRAb</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'hCG bloque les TRAb</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La T4L est naturellement basse en grossesse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les hormones de grossesse n'inhibent pas directement la TPO.</li>
+<li><em>Proposition 2</em> : Exact. Grossesse : tolérance immunitaire physiologique (↑ Treg, ↑ cytokines Th2, ↓ Th1) → ↓ TRAb → possibilité de réduire les ATS au T3. Post-partum : rebond immunitaire (↓ Treg, ↑ Th1) → ↑ TRAb → rechute fréquente à 2-6 mois.</li>
+<li><em>Proposition 3</em> : L'hCG ne bloque pas les TRAb.</li>
+<li><em>Proposition 4</em> : La T4L n'est pas naturellement basse en grossesse (elle peut être modifiée mais ce n'est pas le mécanisme).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Kahaly GJ et al. <em>ETA Guideline</em>. 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-008-quelle-erreur">Question HYPER-DI-008 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : chirurgie · <strong>Module</strong> : M31</p>
+</blockquote>
+<p><strong>Un chirurgien opère un Basedow sans préparation par Lugol et avec une T4L encore à 50 pmol/L. Quelles sont les deux erreurs et leurs conséquences ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pas d'erreur — le chirurgien peut opérer avec T4L élevée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Erreur 1 : absence de Lugol → vascularisation excessive → hémorragie per-opératoire. Erreur 2 : euthyroïdie non atteinte → risque de crise thyrotoxique péri-opératoire</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Erreur uniquement si goitre volumineux</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le Lugol n'est jamais indiqué avant la chirurgie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Opérer un Basedow non préparé est une faute médicale.</li>
+<li><em>Proposition 2</em> : Exact. (1) Sans Lugol : vascularisation thyroïdienne × 10 dans le Basedow actif → saignement per-opératoire majeur (le Lugol réduit les pertes de 30-50 %). (2) T4L élevée → risque de crise thyrotoxique per- ou post-opératoire (mortalité 10-30 %). Conditions sine qua non : euthyroïdie biologique + Lugol 10-14j avant.</li>
+<li><em>Proposition 3</em> : Les erreurs sont indépendantes du volume du goitre.</li>
+<li><em>Proposition 4</em> : Le Lugol est recommandé par toutes les guidelines (ATA 2016, ETA 2018).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bahn RS et al. <em>ATA Guidelines</em>. 2011.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-009-cas-clinique-complexe">Question HYPER-DI-009 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M06</p>
+</blockquote>
+<p><strong>Expliquer le mécanisme de la boucle d'amplification T3-DIO1 en hyperthyroïdie et comment le PTU la brise.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La DIO1 est inhibée en hyperthyroïdie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T3 ↑ → DIO1 ↑ (transactivation TRβ1) → conversion T4→T3 ↑ → T3 ↑↑ (cercle vicieux). PTU inhibe DIO1 → brise le cercle</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La DIO1 convertit T3 en T2</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le propranolol est plus efficace que le PTU pour briser cette boucle</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : C'est l'inverse — la DIO1 est activée par l'excès de T3 en hyperthyroïdie.</li>
+<li><em>Proposition 2</em> : Exact. L'excès de T3 active la transcription du gène DIO1 via TRβ1 hépatique → ↑ production de DIO1 → ↑ conversion T4→T3 → ↑ T3 → boucle d'amplification. Le PTU brise ce cercle en inhibant DIO1 en plus de la TPO — avantage unique dans la crise thyrotoxique.</li>
+<li><em>Proposition 3</em> : La DIO3 (pas DIO1) convertit T3 en T2. La DIO1 convertit T4 en T3.</li>
+<li><em>Proposition 4</em> : Le propranolol inhibe partiellement la DIO1 à fortes doses mais moins efficacement que le PTU.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Bianco AC et al. <em>Endocr Rev</em>. 2002.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-010-cas-clinique-complexe">Question HYPER-DI-010 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : TAO · <strong>Module</strong> : M09</p>
+</blockquote>
+<p><strong>Quel est le mécanisme moléculaire du lien entre le TSHR orbitaire et la TAO, et comment le téprotumumab intervient-il dans cette cascade ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Les TRAb n'agissent pas sur l'orbite</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TRAb → TSHR orbitaire → activation fibroblastes → GAG + adipogenèse → exophtalmie. IGF-1R amplifie le signal. Téprotumumab bloque IGF-1R → rupture de la cascade</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La TAO est purement mécanique (compression par le goitre)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Les TRAb détruisent directement les muscles oculomoteurs</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le TSHR est exprimé par les fibroblastes orbitaires — les TRAb y agissent.</li>
+<li><em>Proposition 2</em> : Exact. Les fibroblastes orbitaires préadiposeux expriment TSHR + IGF-1R. TRAb → TSHR → AMPc → prolifération + différenciation adipocytaire (↑ graisse orbitaire) + synthèse de GAG (acide hyaluronique) → rétention hydrique → exophtalmie. L'IGF-1R forme un complexe fonctionnel avec le TSHR, amplifiant la signalisation. Le téprotumumab (anti-IGF-1R) bloque cette amplification → réduction de la proptose (83 % OPTIC).</li>
+<li><em>Proposition 3</em> : La TAO est immunologique, pas mécanique.</li>
+<li><em>Proposition 4</em> : Les TRAb activent les fibroblastes, pas de destruction musculaire directe (la fibrose est secondaire).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Smith TJ, Kahaly GJ. <em>NEJM</em>. 2021.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-011-quelle-erreur">Question HYPER-DI-011 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : ICI · <strong>Module</strong> : M34</p>
+</blockquote>
+<p><strong>Un oncologue arrête l'immunothérapie (pembrolizumab) chez un patient avec mélanome métastatique en raison d'une TSH à 0,15 mUI/L (grade 1) découverte à la biologie de routine. Quelle est l'erreur ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pas d'erreur — protéger la thyroïde est prioritaire</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Erreur : grade 1 (TSH modifiée, asymptomatique) ne justifie pas l'arrêt de l'ICI. Bénéfice oncologique &gt;&gt; risque thyroïdien</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Il aurait dû prescrire des ATS avant d'arrêter</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>L'erreur est de ne pas avoir fait de scintigraphie</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le bénéfice oncologique de l'ICI est nettement supérieur au risque thyroïdien en grade 1.</li>
+<li><em>Proposition 2</em> : Exact. Grades 1-2 : maintenir l'ICI + traitement symptomatique (bêta-bloquants si symptômes, surveillance TSH). L'ICI ne doit être suspendu qu'en grade 3 (symptômes sévères) et arrêté définitivement uniquement en grade 4 (urgence vitale).</li>
+<li><em>Proposition 3</em> : Les ATS ne sont pas indiqués dans la thyroïdite post-ICI (destructive, pas de synthèse excessive).</li>
+<li><em>Proposition 4</em> : La scintigraphie n'est pas l'examen prioritaire pour cette décision.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Barroso-Sousa R et al. <em>JAMA Oncol</em>. 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-012-cas-clinique-complexe">Question HYPER-DI-012 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : physiologie · <strong>Module</strong> : M07</p>
+</blockquote>
+<p><strong>Expliquer le paradoxe LDL : baisse du LDL en hyperthyroïdie, hausse en hypothyroïdie. Conséquence pratique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Les hormones thyroïdiennes détruisent le LDL directement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T3 via TRβ1 hépatique → ↑ transcription LDLR → ↑ capture LDL → ↓ LDL plasmatique. Conséquence : une hypocholestérolémie inexpliquée peut révéler une hyperthyroïdie</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'hyperthyroïdie augmente les HDL</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le LDL n'est pas modifié par la thyroïde</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les hormones thyroïdiennes n'ont pas d'action directe lytique sur le LDL.</li>
+<li><em>Proposition 2</em> : Exact. T3 (via TRβ1 hépatique) active la transcription du gène LDLR → ↑ récepteurs LDL hépatiques → ↑ capture du LDL circulant → ↓ LDL. En hypothyroïdie : ↓ LDLR → LDL ↑↑. Conséquence : une hypercholestérolémie s'améliore en traitant l'hypothyroïdie ; une hypocholestérolémie inexpliquée doit faire doser la TSH.</li>
+<li><em>Proposition 3</em> : Les HDL sont souvent diminués en hyperthyroïdie (catabolisme accéléré).</li>
+<li><em>Proposition 4</em> : La thyroïde a un impact majeur et bien documenté sur le métabolisme lipidique.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Brent GA. <em>Graves' disease</em>. NEJM 2008.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-013-cas-clinique-complexe">Question HYPER-DI-013 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : dépistage · <strong>Module</strong> : M24</p>
+</blockquote>
+<p><strong>Quel est le risque cardiovasculaire spécifique de l'hyperthyroïdie frustre prolongée chez le sujet âgé, selon les données de la littérature ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Aucun risque démontré</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TSH &lt; 0,1 mUI/L → RR FA = 3,1 à 12 ans ; ↑ mortalité cardiovasculaire × 1,5 chez femmes âgées</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Risque limité aux patients symptomatiques</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le risque concerne uniquement l'ostéoporose</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le risque est bien documenté par plusieurs études épidémiologiques.</li>
+<li><em>Proposition 2</em> : Exact. Cappola et al. (JAMA 2006) : TSH &lt; 0,1 → RR FA = 3,1. Sawin et al. (NEJM 1994) : FA × 3 chez &gt; 60 ans. Bauer et al. (JAMA 2001) : ↑ mortalité CV × 1,5 chez femmes âgées. Ces données justifient le traitement même asymptomatique.</li>
+<li><em>Proposition 3</em> : Le risque existe indépendamment des symptômes.</li>
+<li><em>Proposition 4</em> : Le risque cardiovasculaire (FA, mortalité) est au moins aussi important que le risque osseux.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Cappola AR et al. <em>JAMA</em>. 2006 ; Sawin CT et al. <em>NEJM</em>. 1994.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-014-cas-clinique-complexe">Question HYPER-DI-014 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : chirurgie · <strong>Module</strong> : M31</p>
+</blockquote>
+<p><strong>Pourquoi la thyroïdectomie est-elle préférée à la RAI chez un patient basedowien avec TAO modérée-sévère active ? Détaillez les mécanismes immunologiques.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>La RAI est plus efficace mais plus risquée</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RAI libère antigènes → ↑ TRAb → aggravation TAO (même avec corticoïdes). Chirurgie supprime charge antigénique → ↓ TRAb rapide → amélioration TAO</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>La chirurgie réduit les TRAb par section du nerf vague</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Les deux traitements ont le même impact sur la TAO</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : La RAI est plus risquée pour la TAO dans ce contexte spécifique.</li>
+<li><em>Proposition 2</em> : Exact. La RAI libère des antigènes thyroïdiens (Tg, TPO, TSHR) lors de la destruction → stimulation immunitaire → ↑ TRAb → aggravation TAO (15-25 % sans corticoïdes, 5-15 % avec). La thyroïdectomie totale supprime la source antigénique → ↓ TRAb plus rapide → amélioration de la TAO dans 50-75 %. Résultat immédiat sur l'hyperthyroïdie.</li>
+<li><em>Proposition 3</em> : La section du nerf vague n'a pas d'effet sur les TRAb.</li>
+<li><em>Proposition 4</em> : L'impact sur la TAO est différent et cliniquement significatif.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Perros P et al. <em>EUGOGO 2018</em> ; Bartalena L et al. <em>NEJM</em>. 1998.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-015-cas-clinique-complexe">Question HYPER-DI-015 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : traitement · <strong>Module</strong> : M26</p>
+</blockquote>
+<p><strong>Un patient basedowien traité par ATS depuis 18 mois a ses TRAb persistants à 12 UI/L, malgré une TSH normalisée et une dose de MMI réduite à 10 mg/j. Le score GREAT initial était à 8. Quelle est la stratégie optimale ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Arrêter les ATS et surveiller</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Prolonger les ATS jusqu'à 36-48 mois ou proposer un traitement définitif (RAI/chirurgie)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Doubler la dose de MMI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Ajouter du PTU en association</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Arrêter avec TRAb à 12 UI/L et GREAT initial à 8 → risque de rechute &gt; 80 %.</li>
+<li><em>Proposition 2</em> : Exact. TRAb persistants à M18 = mauvais pronostic de rémission. Deux options : (1) Prolonger les ATS jusqu'à 24-48 mois (ETA 2022 autorise le traitement prolongé si TRAb en décroissance) ; (2) Traitement définitif si TRAb stables ou augmentent. Avec GREAT à 8, le traitement définitif est souvent la meilleure option.</li>
+<li><em>Proposition 3</em> : Doubler la dose n'accélérera pas la rémission immunologique et augmentera les effets indésirables.</li>
+<li><em>Proposition 4</em> : L'association MMI + PTU n'est pas recommandée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Vos XG et al. <em>Eur Thyroid J</em>. 2016 ; ETA 2022.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-016-quelle-erreur">Question HYPER-DI-016 — "Quelle erreur ?"</h3>
+<blockquote>
+<p><strong>Domaine</strong> : grossesse · <strong>Module</strong> : M18</p>
+</blockquote>
+<p><strong>Un médecin prescrit un schéma bloc-substitution (MMI 30 mg + LT4 75 µg/j) à une femme basedowienne enceinte de 20 SA. Quelle est l'erreur et sa conséquence sur le fœtus ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pas d'erreur — le bloc-substitution est bien toléré en grossesse</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Erreur majeure : le MMI traverse le placenta mais la LT4 très peu → le fœtus reçoit le MMI sans compensation → hypothyroïdie fœtale</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>L'erreur est d'utiliser le MMI au lieu du PTU à 20 SA</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>La LT4 est tératogène</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le bloc-substitution est formellement contre-indiqué en grossesse.</li>
+<li><em>Proposition 2</em> : Exact. Les ATS traversent le placenta (MMI +++, PTU ++) mais la LT4 ne passe que très faiblement. Le fœtus subit les ATS à forte dose sans bénéficier de la LT4 compensatoire → hypothyroïdie fœtale → goitre fœtal, retard de développement. Utiliser la dose minimale d'ATS seule, jamais le bloc-substitution.</li>
+<li><em>Proposition 3</em> : À 20 SA (T2), le MMI est correctement préféré au PTU (switch à S12-S14).</li>
+<li><em>Proposition 4</em> : La LT4 n'est pas tératogène.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ETA Guidelines 2018.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-017-cas-clinique-complexe">Question HYPER-DI-017 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : formes rares · <strong>Module</strong> : M35</p>
+</blockquote>
+<p><strong>Un patient de 55 ans présente TSH à 2,5 mUI/L, T4L 3× la normale, T3L 2× la normale. α-GSU/TSH = 1,8. IRM : macroadénome de 18 mm. Quel est le traitement de référence et sa probabilité de guérison ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ATS au long cours</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chirurgie transsphénoïdale + analogues somatostatine si résidu. Guérison complète 40-60 % pour macroadénome</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RAI</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Radiothérapie exclusive</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Les ATS ne traitent pas la cause (adénome hypophysaire) — ils n'agissent que sur la synthèse thyroïdienne.</li>
+<li><em>Proposition 2</em> : Exact. TSHome avec macroadénome : chirurgie transsphénoïdale en 1ère ligne. Guérison complète : 70-80 % (micro) mais 40-60 % (macro — extensions possibles). Préparation : octréotide LAR 3-6 mois pour réduire le volume. Si résidu : octréotide LAR au long cours + radiochirurgie stéréotaxique.</li>
+<li><em>Proposition 3</em> : La RAI est inutile (hyperthyroïdie secondaire, pas primaire).</li>
+<li><em>Proposition 4</em> : La radiothérapie est une 3e ligne (contrôle hormonal 50-60 %, délai 12-24 mois).</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Beck-Peccoz P et al. <em>Nat Rev Endocrinol</em>. 2013.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-018-cas-clinique-complexe">Question HYPER-DI-018 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : pédiatrie · <strong>Module</strong> : M19</p>
+</blockquote>
+<p><strong>Quel syndrome génétique est associé à une hyperthyroïdie néonatale permanente par mutation germinale gain-de-fonction du TSHR, et comment la distinguer du Basedow néonatal ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Maladie de McCune-Albright</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hyperthyroïdie congénitale non auto-immune (mutation TSHR germinale AD) : permanente, TRAb négatifs, vs Basedow néonatal (transitoire, TRAb maternels)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Syndrome de Down</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Syndrome de Turner</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : McCune-Albright implique une mutation somatique de GNAS (pas TSHR germinal) → dysplasie fibreuse + puberté précoce ± hyperthyroïdie.</li>
+<li><em>Proposition 2</em> : Exact. Mutation hétérozygote gain-de-fonction TSHR (transmission AD) → activation constitutive → hyperthyroïdie dès la naissance, PERMANENTE, TRAb NÉGATIFS. Basedow néonatal : TRANSITOIRE (2-6 semaines), TRAb maternels POSITIFS (catabolisme IgG).</li>
+<li><em>Proposition 3</em> : Le syndrome de Down est associé à l'hypothyroïdie auto-immune, pas à l'hyperthyroïdie congénitale.</li>
+<li><em>Proposition 4</em> : Le syndrome de Turner est associé à l'hypothyroïdie auto-immune.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : ATA 2016, ESPE 2022.</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-019-cas-clinique-complexe">Question HYPER-DI-019 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : innovations · <strong>Module</strong> : M37</p>
+</blockquote>
+<p><strong>Quels sont les défis principaux du développement d'un antagoniste TSHR oral à usage clinique ?</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Coût de fabrication uniquement</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Spécificité (éviter inhibition FSH/LH), biodisponibilité orale, réversibilité, distinction blocage TSAb vs TSH physiologique</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Aucun défi — les molécules sont prêtes pour la clinique</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Le seul défi est la durée d'action</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le coût est un facteur mais pas le défi principal.</li>
+<li><em>Proposition 2</em> : Exact. Défis majeurs : (1) SPÉCIFICITÉ — TSHR appartient à la famille LHR/FSHR → risque d'inhiber la fertilité ; (2) BIODISPONIBILITÉ ORALE — les biothérapies IV ont de bonnes propriétés PK mais les SMI oraux sont plus complexes ; (3) RÉVERSIBILITÉ et TITRATION — permettre la surveillance TSH-guidée ; (4) Distinguer blocage TSAb pathologiques vs TSH physiologique.</li>
+<li><em>Proposition 3</em> : Les molécules sont encore en phase préclinique (2025).</li>
+<li><em>Proposition 4</em> : Les défis sont multiples et complexes.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Concepts en développement, stade préclinique (2025).</p>
+</blockquote>
+<hr />
+<h3 id="question-hyper-di-020-cas-clinique-complexe">Question HYPER-DI-020 — Cas clinique complexe</h3>
+<blockquote>
+<p><strong>Domaine</strong> : diagnostic · <strong>Module</strong> : M08</p>
+</blockquote>
+<p><strong>Dans quel tableau clinique la TSH peut-elle être normale ou élevée en présence d'une T4L élevée ? Citez les trois principales causes et leur différenciation.</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Proposition</th>
+<th style="text-align: center;">Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Hyperthyroïdie classique (Basedow)</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>(1) TSHome (α-GSU/TSH &gt; 1, adénome IRM) ; (2) RTHβ (α-GSU/TSH &lt; 1, ATCD familiaux, IRM normale) ; (3) Anticorps interférant dans le dosage (faux résultats)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Thyroïdite de De Quervain</td>
+<td style="text-align: center;">❌</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thyrotoxicose factice</td>
+<td style="text-align: center;">❌</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Feedbacks :</strong></p>
+<ul>
+<li><em>Proposition 1</em> : Le Basedow montre une TSH effondrée, pas normale/haute.</li>
+<li><em>Proposition 2</em> : Exact. (1) TSHome : sécrétion autonome de TSH → TSH inadaptée + T4L haute. α-GSU/TSH &gt; 1. (2) RTHβ : insensibilité hypophysaire aux HT → TSH non supprimée. α-GSU/TSH &lt; 1, ATCD familiaux, séquencer THRB. (3) Anticorps hétérophiles ou macro-TSH → faux résultats, vérifier avec une autre technique de dosage.</li>
+<li><em>Proposition 3</em> : La thyroïdite de De Quervain montre une TSH effondrée.</li>
+<li><em>Proposition 4</em> : La thyrotoxicose factice montre une TSH effondrée.</li>
+</ul>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Beck-Peccoz P et al. <em>Nat Rev Endocrinol</em>. 2013.</p>
+</blockquote>
+<hr />
+<p><em>Formation VERTEX© — Quiz Hyperthyroïdies — 100 questions — Mars 2026</em></p>
+</div>

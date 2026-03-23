@@ -1,0 +1,828 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-6-examen-clinique-de-la-scoliose">MODULE 6 — EXAMEN CLINIQUE DE LA SCOLIOSE</h1>
+<p><strong>Partie II — La Scoliose : Définition, Classification et Diagnostic</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 1-5</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>La mère d'un élève de 5e (12 ans) appelle son médecin de famille : <em>« L'infirmière scolaire a dit qu'il avait peut-être une scoliose. Elle a vu quelque chose au dos. Est-ce que c'est grave ? »</em> Le médecin explique qu'il va réaliser un examen clinique complet avant de décider si des radiographies sont nécessaires. En 10 minutes d'examen bien structuré, la plupart des réponses seront là.</p>
+<p>→ <em>Ce module enseigne l'examen clinique standardisé de la scoliose : une compétence fondamentale que tout médecin et chirurgien doit maîtriser.</em></p>
+</blockquote>
+<p>🧑‍🤝‍🧑 <strong>Patient fil rouge</strong> : Nous allons examiner Sophie (13 ans) en détail — du premier coup d'œil à l'évaluation neurologique complète. Chaque signe clinique sera corrélé à ses données anatomiques et biomécaniques.</p>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Test d'Adams • Scoliomètre de Bunnell • Gibbosité (angle de gibbosité = ATR) • Fil de plomb de C7 • Décompensation coronale • Pli de taille asymétrique • Bending test • Traction test • Fulcrum bending test • Push-prone test • Réflexes cutanés abdominaux (RCA) • Testing musculaire (MRC) • Tropisme facettaire • Inégalité de longueur des membres inférieurs (ILMI) • Obliquité pelvienne • Score de Cobb clinique • Distance doigts-sol • Indice de Schöber</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Conduire</strong> un interrogatoire ciblé sur la scoliose, identifiant les drapeaux rouges (Bloom : Application)</li>
+<li><strong>Réaliser</strong> et <strong>interpréter</strong> le test d'Adams avec scoliomètre (Bloom : Application)</li>
+<li><strong>Effectuer</strong> un examen neurologique rachidien complet et identifier les signes évocateurs de pathologie intracanalaire (Bloom : Application)</li>
+<li><strong>Évaluer</strong> la souplesse d'une courbure scoliotique par les tests cliniques standardisés (Bloom : Analyse)</li>
+<li><strong>Mesurer</strong> et <strong>interpréter</strong> l'équilibre coronal et sagittal d'un patient scoliotique (Bloom : Application)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> Le scoliomètre de Bunnell mesure :<br />
+- A. L'angle de Cobb<br />
+- B. La cyphose thoracique<br />
+- <strong>C. L'angle de gibbosité (ATR — Angle of Trunk Rotation)</strong><br />
+- D. La lordose lombaire</p>
+<p><strong>Q2.</strong> Le seuil de référence pour l'ATR au scoliomètre justifiant une radiographie est :<br />
+- A. 1°<br />
+- B. 3°<br />
+- <strong>C. 5-7°</strong><br />
+- D. 15°</p>
+<p><strong>Q3.</strong> Les réflexes cutanés abdominaux (RCA) sont testés par :<br />
+- A. Percussion du tendon rotulien<br />
+- B. Flexion du tronc<br />
+- <strong>C. Stimulation cutanée para-ombilicale → contraction réflexe du muscle abdominal</strong><br />
+- D. Percussion de la région lombo-fessière</p>
+<p><strong>Q4.</strong> Le bending test évalue :<br />
+- A. La douleur provoquée par l'inclinaison<br />
+- B. L'amplitude de mobilité en rotation<br />
+- <strong>C. La réductibilité (souplesse) de la courbure scoliotique</strong><br />
+- D. La stabilité lombosacrée</p>
+<p><strong>Q5.</strong> Une ILMI (inégalité de longueur des membres inférieurs) non compensée crée :<br />
+- A. Une cyphose thoracique droite<br />
+- <strong>B. Une obliquité pelvienne et une attitude scoliotique qui disparaît si on compense</strong><br />
+- C. Une scoliose structurale lombaire irréductible<br />
+- D. Une rotation vertébrale fixée</p>
+<hr />
+<h2 id="61-anamnese-linterrogatoire-cible">6.1 Anamnèse — L'interrogatoire ciblé</h2>
+<p>🤔 <strong>Question de réflexion</strong> : En 5 minutes d'interrogatoire, quelles informations sont absolument indispensables avant d'examiner un adolescent suspect de scoliose ?</p>
+<blockquote>
+<p>[MEDIA: 📊 M06-S01-001 — Checklist anamnèse scoliose : drapeaux rouges surlignés (à imprimer)]</p>
+</blockquote>
+<h3 id="611-informations-essentielles">6.1.1 Informations essentielles</h3>
+<p><strong>1. Âge et mode de découverte</strong><br />
+- Découverte fortuite (dépistage scolaire, visite sportive) → signe de bon pronostic (souvent précoce)<br />
+- Auto-découverte par patient/famille → parfois déjà une déformation visible<br />
+- Douleur motivant la consultation → <strong>drapeau rouge</strong> — la scoliose idiopathique est habituellement <strong>indolore</strong></p>
+<p><strong>2. Délai de surveillance et évolution</strong><br />
+- Depuis combien de temps connu ? Mesures antérieures disponibles ?<br />
+- Progression documentée (anciens radios) → calcul du taux de progression</p>
+<p><strong>3. Statut pubertaire</strong> (informations clés pour le risque de progression)<br />
+- Filles : date des premières règles (ménarche) ; développement mammaire (stade Tanner)<br />
+- Garçons : pilosité faciale, mue de la voix<br />
+- Croissance récente : combien de cm cette année ? (PVC en cours si &gt; 5 cm/an)</p>
+<p><strong>4. Antécédents familiaux</strong><br />
+- Scoliose dans la famille (parents, fratrie, grands-parents) ?<br />
+- Un antécédent familial au 1er degré augmente le risque de 2 à 10 fois (héritabilité estimée ~38 %) (Ogilvie et al., 2006, <em>Spine</em>)<br />
+- Antécédent de chirurgie rachidienne dans la famille ?</p>
+<p><strong>5. Douleur — analyse sémiologique</strong><br />
+- <strong>La SIA est typiquement INDOLORE</strong> — la douleur est un drapeau rouge<br />
+- Si douleur : mécanique (meilleure en repos) vs inflammatoire (nocturne, raideur matinale)<br />
+- <strong>Douleur nocturne</strong> réveillant → tumeur osseuse (ostéome ostéoïde T0, tumeur maligne)<br />
+- <strong>Douleur d'horaire inflammatoire</strong> → spondylarthropathie<br />
+- Localisation et irradiation (radiculalgie → compression nerveuse)</p>
+<p><strong>6. Symptômes neurologiques</strong><br />
+- Déficit de force, fourmillements, engourdissements dans les membres<br />
+- Troubles sphinctériens (urgences mictionnelles, incontinence) → <strong>urgence neurochirurgicale</strong><br />
+- Troubles de l'équilibre, maladresse progressive</p>
+<p><strong>7. Pathologie associée</strong><br />
+- Syndrome de Marfan (grande taille, arachnodactylie, hyperlaxité) ?<br />
+- NF1 (taches café au lait, neurofibromes cutanés) ?<br />
+- Myopathie (faiblesse progressive) ?<br />
+- Pathologie cardiaque, respiratoire ?</p>
+<p><strong>8. Impact fonctionnel et psychologique</strong><br />
+- Gêne esthétique (évaluation subjective 0-10)<br />
+- Limitation sportive ou scolaire<br />
+- Vécu psychologique (anxiété, dépression, image corporelle) → dépistage du vécu émotionnel dès la 1ère consultation<br />
+- Score SRS-22r ou Scoliosis Research Society questionnaire (qualité de vie)</p>
+<hr />
+<h2 id="62-inspection-lexamen-debout-standardise">6.2 Inspection — L'examen debout standardisé</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Avant de toucher le patient, que peut-on apprendre par simple observation ? Dans la scoliose, l'inspection seule donne souvent 80% du diagnostic.</p>
+<div class="vertex-media video">
+<strong>🎬 M06-S02-001</strong><br/>
+<em>Vidéo démonstration inspection standardisée face/profil/dos (5 min)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="621-installation-du-patient">6.2.1 Installation du patient</h3>
+<p><strong>Conditions standardisées</strong> :<br />
+- Patient <strong>debout</strong>, pieds nus, pieds à largeur de bassin<br />
+- Sous-vêtements uniquement (ou torse nu) — examen indispensable, pudeur respectée<br />
+- Lumière suffisante et homogène<br />
+- Médecin à distance suffisante (1-2 m) pour avoir une vue d'ensemble</p>
+<h3 id="622-vue-posterieure-de-dos">6.2.2 Vue postérieure (de dos)</h3>
+<p><strong>Séquence d'observation de haut en bas</strong> :</p>
+<p><strong>1. Épaules</strong> :<br />
+- Asymétrie de hauteur des épaules (épaule gauche ou droite plus haute)<br />
+- Dans la SIA thoracique droite : épaule droite souvent plus haute (courbure principale lève la ceinture scapulaire droite)<br />
+- Si épaule gauche nettement plus haute → suspicion courbure thoracique haute (type Lenke 2) ou cervicothoracique</p>
+<div class="vertex-media schema">
+<strong>📐 M06-S02-001</strong><br/>
+<em>Schéma comparatif face postérieure : scoliose vs dos normal (épaules, flancs, bassin)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>2. Omoplates (scapulas)</strong> :<br />
+- Décollement d'omoplate (scapula alata) : côté convexe thoracique → côté droit dans SIA droite<br />
+- Asymétrie de la hauteur et de la projection des omoplates<br />
+- <strong>Ne pas confondre avec un décollement d'omoplate neurologique</strong> (paralysie du serratus) — faire lever les bras au-dessus de la tête</p>
+<p><strong>3. Taille (flancs)</strong> :<br />
+- <strong>Pli de taille asymétrique</strong> : côté convexe de la courbure lombaire — l'espace entre le bras et le flanc est asymétrique<br />
+- Excès de pli de taille du côté convexe lombaire (côté gauche dans scoliose lombaire gauche)</p>
+<p><strong>4. Décompensation du tronc</strong> :<br />
+- L'axe du tronc est-il centré sur le bassin ?<br />
+- Évaluer le déport latéral du tronc : centre de C7 doit être aligné avec le pli interfessier<br />
+- Signe du fil à plomb : si &gt; 2 cm latéralement → décompensation coronale</p>
+<p><strong>5. Bassin</strong> :<br />
+- Obliquité du bassin (une crête iliaque plus haute) → peut être secondaire à la scoliose ou primaire (ILMI)<br />
+- Mettre la patient debout sur une planche compensatrice si obliquité de bassin → vérifier si l'asymétrie du dos diminue (ILMI associée)</p>
+<h3 id="623-vue-de-profil-equilibre-sagittal">6.2.3 Vue de profil — Équilibre sagittal</h3>
+<p><strong>Inspection sagittale</strong> :<br />
+- Lordose lombaire : normale, aplatissée (dos plat), ou augmentée (hyperlordose) ?<br />
+- Cyphose thoracique : dos rond ou dos plat ?<br />
+- Protrusion abdominale (hyperlordose lombaire et bascule pelvienne antérieure) ?<br />
+- Déséquilibre sagittal global : fil de plomb imaginaire de C7 → tombe-t-il en avant du sacrum ? (déséquilibre positif)</p>
+<p><strong>Dans la SIA</strong> :<br />
+- Souvent dos plat thoracique (<strong>hypocyphose</strong> — signe presque pathognomonique de la SIA)<br />
+- Lordose lombaire relatvement préservée<br />
+- Le déséquilibre sagittal est rarement sévère dans la SIA de l'adolescent (vs adulte)</p>
+<h3 id="624-vue-anterieure-de-face">6.2.4 Vue antérieure (de face)</h3>
+<ul>
+<li>Asymétrie des plis sous-mammaires (filles) ou des côtes inférieures</li>
+<li>Différence de hauteur des mamelons (reflet de l'asymétrie thorcacique)</li>
+<li>Thorax "bombé" d'un côté en antérieur (contre-gibbosité antérieure du côté concave)</li>
+</ul>
+<hr />
+<h2 id="63-test-dadams-et-scoliometre">6.3 Test d'Adams et scoliomètre</h2>
+<p>Le <strong>test d'Adams</strong> (flexion antérieure du tronc) est le test de dépistage clinique de la scoliose. C'est l'examen de base du dépistage scolaire.</p>
+<div class="vertex-media video">
+<strong>🎬 M06-S03-001</strong><br/>
+<em>Vidéo démonstration test d'Adams + scoliomètre (technique standardisée)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 M06-S03-002</strong><br/>
+<em>Schéma technique du test d'Adams : position du patient et de l'examinateur</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="631-technique-standardisee">6.3.1 Technique standardisée</h3>
+<p><strong>Installation</strong> :<br />
+1. Patient debout, pieds joints, dos tourné vers l'examinateur<br />
+2. Patient fléchit progressivement le tronc vers l'avant, bras pendants, paumes jointes<br />
+3. Le chirurgien est à hauteur du dos du patient (regard au niveau du thorax)<br />
+4. Observer de haut (profil du dos "horizontal")</p>
+<p><strong>Ce que l'on cherche</strong> :<br />
+- <strong>Gibbosité costale</strong> (dos) : relief convexe d'un côté → rotation vertébrale<br />
+- <strong>Gibbosité lomba</strong>re : bombement para-vertébral lombaire<br />
+- <strong>Asymétrie de la ligne des processus épineux</strong> lors du retour en extension</p>
+<p><strong>Résultat</strong> :<br />
+| Observation | Interprétation |<br />
+|-------------|---------------|<br />
+| Gibbosité présente et persistante | <strong>Scoliose structurale</strong> — rotation vertébrale |<br />
+| Dos plat et symétrique | Pas de scoliose ou attitude scoliotique |<br />
+| Asymétrie disparaissant com la flexion augmente | Côte "proéminente" sans rotation → fausse gibbosité |<br />
+| Gibbosité disparaît en couchant | Attitude scoliotique (fonctionnelle) |</p>
+<h3 id="632-scoliometre-de-bunnell-mesure-de-latr">6.3.2 Scoliomètre de Bunnell — Mesure de l'ATR</h3>
+<p>Le <strong>scoliomètre de Bunnell</strong> (inclinomètre de trunk rotation) mesure l'<strong>Angle de Torsion du Rachis (ATR)</strong> = angle of trunk rotation.</p>
+<p><strong>Technique</strong> :<br />
+1. Patient en flexion antérieure standardisée (Adams)<br />
+2. Poser le scoliomètre <strong>perpendiculairement à l'axe du rachis</strong> sur la région à mesurer<br />
+3. Lire l'angle sur le cadran (en degrés)<br />
+4. Mesurer au niveau thoracique (T5-T10) et lombaire (L1-L4)</p>
+<p><strong>Seuil de référence</strong> :<br />
+| ATR | Signification clinique |<br />
+|-----|----------------------|<br />
+| &lt; 5° | Normal — pas de signification |<br />
+| <strong>5-7°</strong> | <strong>Seuil de référence pour indication radiographique</strong> (recommandation SRS) |<br />
+| 7-10° | Anomalie probable — radiographie recommandée |<br />
+| &gt; 10° | Anomalie certaine |</p>
+<p><strong>Correspondance ATR ↔ Cobb</strong> (formule de Bunnell, 1984, <em>J Bone Joint Surg Am</em>) :</p>
+<blockquote>
+<p>ATR estimée (°) ≈ Cobb (°) × 0,22<br />
+Ex : Cobb 30° → ATR estimée ≈ 6,6°</p>
+</blockquote>
+<p><strong>Limites</strong> :<br />
+- Corrélation imparfaite avec le Cobb (r = 0,75) (Bunnell, 1984)<br />
+- Sensibilité pour Cobb ≥ 20° : 93 % ; spécificité 77 % (Bunnell, 1984 ; Côté et al., 1998, <em>Spine</em>)<br />
+- Faux positifs : bosse de bison, contracture musculaire unilatérale, kyste pilonidal</p>
+<h3 id="633-test-dadams-interpretation-avancee">6.3.3 Test d'Adams — Interprétation avancée</h3>
+<p><strong>Région cervicothoracique</strong> (T1-T4) : patient en hyperfléxion du tronc → gibbosité haute → suspicion de courbure thoracique haute (type Lenke 2)</p>
+<p><strong>Région lombaire</strong> : patient se penche moins loin → gibbosité lombaire visible → courbure lombaire</p>
+<p><strong>Retour de flexion</strong> : observer la séquence de redressement — compensation ? boiterie ? douleur déclenchée ?</p>
+<hr />
+<h2 id="64-examen-neurologique">6.4 Examen neurologique</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi faut-il systématiquement faire un examen neurologique chez un adolescent avec une scoliose, même si tout semble parfaitement normal cliniquement ?</p>
+<blockquote>
+<p>[MEDIA: 📊 M06-S04-001 — Checklist examen neurologique scoliose (1 feuille, à imprimer)]</p>
+</blockquote>
+<h3 id="641-testing-moteur-systematique-mrc-0-5">6.4.1 Testing moteur systématique (MRC 0-5)</h3>
+<p><strong>Score MRC</strong> (Medical Research Council, 1943) :<br />
+| Grade | Force |<br />
+|-------|-------|<br />
+| 0 | Aucune contraction |<br />
+| 1 | Légère contraction visible/palpable, sans mouvement |<br />
+| 2 | Mouvement possible si pesanteur éliminée |<br />
+| 3 | Mouvement possible contre la pesanteur, sans résistance |<br />
+| 4 | Mouvement contre résistance modérée |<br />
+| <strong>5</strong> | <strong>Force normale</strong> |</p>
+<p><strong>Testing par niveau radiculaire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Muscle test</th>
+<th>Mouvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C5</td>
+<td>Deltoïde</td>
+<td>Abduction épaule</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Biceps brachial</td>
+<td>Flexion coude</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Triceps brachial</td>
+<td>Extension coude</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Muscles intrinsèques main</td>
+<td>Pince fine</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Psoas, quadriceps (partiel)</td>
+<td>Flexion hanche</td>
+</tr>
+<tr>
+<td>L3-L4</td>
+<td>Quadriceps</td>
+<td>Extension genou</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>Tibial antérieur</td>
+<td><strong>Dorsiflexion cheville</strong></td>
+</tr>
+<tr>
+<td><strong>L5</strong></td>
+<td>Extenseur hallux (EHL)</td>
+<td><strong>Extension gros orteil</strong></td>
+</tr>
+<tr>
+<td><strong>S1</strong></td>
+<td>Triceps sural</td>
+<td><strong>Flexion plantaire</strong>, reflexe achilléen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="642-reflexes-osteo-tendineux-rot">6.4.2 Réflexes ostéo-tendineux (ROT)</h3>
+<table>
+<thead>
+<tr>
+<th>ROT</th>
+<th>Niveau</th>
+<th>Technique</th>
+<th>Réponse normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bicipital</td>
+<td>C5-C6</td>
+<td>Percussion tendon biceps</td>
+<td>Contraction biceps, flexion coude</td>
+</tr>
+<tr>
+<td>Rotulien (quadricipital)</td>
+<td>L3-L4</td>
+<td>Percussion tendon rotulien</td>
+<td>Extension genou</td>
+</tr>
+<tr>
+<td>Achilléen</td>
+<td>S1-S2</td>
+<td>Percussion tendon d'Achille</td>
+<td>Flexion plantaire</td>
+</tr>
+<tr>
+<td>Cutané plantaire (Babinski)</td>
+<td>Voie pyramidale</td>
+<td>Stimulation bord externe plante</td>
+<td><strong>Normal : flexion plantaire</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Babinski positif</strong> (extension du gros orteil = signe de Babinski vrai) → <strong>atteinte du faisceau pyramidal</strong> → <strong>IRM urgente</strong> (myélopathie, syringomyélie, Chiari)</p>
+<p><strong>Hyperréflexie</strong> (ROT vifs, diffusés, polycinétiques) : signe de compression de la moelle → IRM urgente</p>
+<h3 id="643-reflexes-cutanes-abdominaux-rca-examen-cle">6.4.3 Réflexes cutanés abdominaux (RCA) — Examen clé</h3>
+<p>Les <strong>RCA</strong> sont des réflexes superficiels testés par stimulation cutanée para-ombilicale horizontale.</p>
+<div class="vertex-media schema">
+<strong>📐 M06-S04-002</strong><br/>
+<em>Schéma technique des réflexes cutanés abdominaux</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Technique</strong> :<br />
+- Patient couché sur le dos, abdomen découvert<br />
+- Stimulation cutanée (pointe mousse ou doigt) horizontalement :<br />
+  - <strong>Quadrant supérieur</strong> : T8-T9 (au-dessus de l'ombilic)<br />
+  - <strong>Quadrant inférieur</strong> : T11-T12 (au-dessous de l'ombilic)<br />
+- Réponse normale : contraction de la paroi abdominale ipsilatérale avec déviation légère de l'ombilic</p>
+<p><strong>Interprétation</strong> :<br />
+| Résultat | Signification |<br />
+|----------|--------------|<br />
+| <strong>RCA SYMÉTRIQUES présents</strong> | Normal |<br />
+| <strong>RCA ASYMÉTRIQUES</strong> | Pathologique — signe de compression médullaire unilatérale |<br />
+| RCA absents des 2 côtés | Peut être normal (obésité, multiparité) — valeur si asymétriques |</p>
+<p><strong>Importance pour la scoliose</strong> : L'asymétrie des RCA est un signe précoce et sensible de <strong>syringomyélie</strong> — avant même la douleur ou le déficit moteur. C'est un <strong>drapeau rouge majeur</strong> qui impose une IRM.</p>
+<h3 id="644-sensibilite">6.4.4 Sensibilité</h3>
+<ul>
+<li>Tact léger (coton) : territoire de chaque dermatome</li>
+<li>Piqûre (neuro-aiguille) : thermoalgésique (fasciaux spinothalamiques)</li>
+<li><strong>Déficit de sensibilité suspendu</strong> (au niveau du thorax, C-T correspondant à la syringomyélie) → IRM</li>
+</ul>
+<h3 id="645-autres-signes-neurologiques-importants">6.4.5 Autres signes neurologiques importants</h3>
+<p><strong>Signe de Hoffmann</strong> (membre supérieur, équivalent du Babinski) :<br />
+- Pincement rapide de l'ongle du majeur → flexion de l'index et du pouce = Hoffmann positif<br />
+- Signe d'atteinte voie pyramidale</p>
+<p><strong>Test de marche sur les talons et sur la pointe</strong> :<br />
+- Marche sur talons (forces dorsiflexeurs) → L4-L5<br />
+- Marche sur pointe (forces plantairefléchisseurs) → S1</p>
+<p><strong>Clonus</strong> : rotulien, achilléen → signe d'atteinte pyramidale</p>
+<p><strong>Recherche de taches café au lait</strong> :<br />
+- ≥ 6 taches &gt; 5 mm (enfant) ou &gt; 15 mm (adulte) → NF1 (critères OMS)<br />
+- Importance : NF1 = scoliose syndromique ± dystrophique → prise en charge spécifique</p>
+<p><strong>Fossette sacrococcygienne</strong> (fossette anale) :<br />
+- Petite dépression cutanée sacrée dans le sillon inter-fessier<br />
+- Si profonde, irrégulière, avec touffe de poils ou hémangiome → <strong>dysraphisme occulte</strong> → IRM</p>
+<hr />
+<h2 id="65-examen-de-la-souplesse">6.5 Examen de la souplesse</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Une scoliose de 40° rigide et une scoliose de 40° souple n'ont pas la même signification chirurgicale. Comment évaluer la souplesse ?</p>
+<h3 id="651-bending-test-clinique-inclinaison-laterale">6.5.1 Bending test clinique (inclinaison latérale)</h3>
+<p><strong>Technique</strong> :<br />
+1. Patient debout, bras le long du corps<br />
+2. Inclinaison latérale maximale du côté de la courbure (vers la concavité) → la courbure doit se réduire<br />
+3. Inclinaison controlatérale (vers la convexité) → apprécier la compensation</p>
+<p><strong>Interprétation</strong> :<br />
+- Scoliose <strong>souple</strong> : la courbure se corrige à &gt; 50% à l'inclinaison controlatérale<br />
+- Scoliose <strong>modérément raide</strong> : correction 25-50%<br />
+- Scoliose <strong>rigide</strong> (structurale fixée) : correction &lt; 25%</p>
+<div class="vertex-media video">
+<strong>🎬 M06-S05-001</strong><br/>
+<em>Vidéo bending test clinique bilatéral (standardisé) + fulcrum test</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="652-bending-test-radiographique">6.5.2 Bending test radiographique</h3>
+<p>Same principle, réalisé sous amplificateur de brillance ou radiographie :<br />
+- Radiographie couché ou debout en inclinaison latérale maximale bilatérale<br />
+- <strong>Criteria de Lenke</strong> : si courbure &lt; 25° sur bending controlatéral = non structurale</p>
+<h3 id="653-traction-test">6.5.3 Traction test</h3>
+<p><strong>Traction céphalique</strong> (suspension ou traction manuelle de la tête) :<br />
+- Évaluation de la réductibilité de la courbure cervicothoracique<br />
+- Plus utile dans la planification des courbures thoraciques hautes</p>
+<h3 id="654-fulcrum-bending-test-test-de-meiss">6.5.4 Fulcrum bending test (test de Meiss)</h3>
+<p><strong>Technique</strong> : Placement d'un cylindre rigide (fulcrum) sous l'apex de la courbure en décubitus latéral → le poids du corps corrige la courbure.</p>
+<p><strong>Intérêt</strong> : Prédit mieux la correction chirurgicale maximale que le bending test standard (corrélation r = 0,92 avec la correction post-opératoire) (Cheung &amp; Luk, 1997, <em>Spine</em>).</p>
+<p><strong>Résultat</strong> : Si la courbure se corrige à &lt; 20° au fulcrum test → correction chirurgicale à 20° probablement atteignable.</p>
+<h3 id="655-push-prone-test">6.5.5 Push-prone test</h3>
+<p><strong>Technique</strong> : En décubitus ventral, le praticien exerce une pression digitale sur l'apex de la courbure → observe la réductibilité.</p>
+<p><strong>Utilité</strong> : évaluer la rigidité relative, notamment pour les scolioses courtes congénitales.</p>
+<h3 id="656-quantification-de-la-raideur">6.5.6 Quantification de la raideur</h3>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Formule</th>
+<th>Seuil de rigidité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pourcentage de réductibilité</strong></td>
+<td>(Cobb couché - Cobb bending) / Cobb couché × 100</td>
+<td>&lt; 25% = rigide</td>
+</tr>
+<tr>
+<td><strong>Index de flexibilité</strong></td>
+<td>Cobb bending / Cobb couché</td>
+<td>&lt; 0,25 = significativement raide</td>
+</tr>
+<tr>
+<td><strong>Fulcrum correction index</strong></td>
+<td>Cobb fulcrum / Cobb debout</td>
+<td>&lt; 0,5 = chirurgie complémentaire envisageable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="66-evaluation-de-lequilibre">6.6 Évaluation de l'équilibre</h2>
+<h3 id="661-equilibre-coronal-fil-a-plomb-de-c7">6.6.1 Équilibre coronal — fil à plomb de C7</h3>
+<p><strong>Mesure du déséquilibre coronal</strong> :<br />
+1. Suspendre un fil à plomb depuis l'<strong>apophyse épineuse de C7</strong> (ou la protubérance occipitale externe)<br />
+2. Le fil doit tomber dans le pli inter-fessier (± 1 cm)<br />
+3. <strong>Décompensation coronale</strong> : si le fil tombe en dehors du pli inter-fessier</p>
+<div class="vertex-media schema">
+<strong>📐 M06-S06-001</strong><br/>
+<em>Schéma mesure décompensation coronale au fil de plomb C7</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Valeurs normales</strong> :<br />
+- Décompensation &lt; 1 cm : équilibre coronal acceptable<br />
+- Décompensation 1–2 cm : légère<br />
+- Décompensation &gt; 2 cm : <strong>significative</strong> → chirurgie doit restaurer l'équilibre coronal<br />
+- <em>(Seuils selon King &amp; Moe, 1983, </em>Clin Orthop Relat Res<em> ; SRS Standardization of Terminology)</em></p>
+<p><strong>Formule</strong> :</p>
+<blockquote>
+<p>Décompensation coronale (cm) = Distance du fil de plomb C7 au pli inter-fessier</p>
+</blockquote>
+<p><strong>Dans la SIA</strong> : la plupart des scolioses sont compensées (courbure primaire compensée par secondaire). Une décompensation &gt; 2 cm dans la SIA est inhabituellement sévère et mérite attention.</p>
+<h3 id="662-equilibre-sagittal-global">6.6.2 Équilibre sagittal global</h3>
+<p><strong>Méthode clinique</strong> :<br />
+- Demander au patient de se tenir en position naturelle<br />
+- Observer le profil de profil : le fil de plomb de C7 devrait tomber en avant du promontoire sacré</p>
+<p><strong>Distance SVA clinique</strong> (Sagittal Vertical Axis) :<br />
+- Normal : C7 plumb line passe dans les 3-4 cm en avant du coin supéro-postérieur de S1<br />
+- Déséquilibre sagittal positif (fwd) : &gt; +5 cm (patient se penche en avant globalement)</p>
+<p><strong>Examen clinique du déséquilibre sagittal</strong> :<br />
+- Patient en décubitus dorsal : peut-il allonger complètement le dos sur la table ? (contracture en flexion)<br />
+- March test : le patient marche-t-il penché en avant ? (déséquilibre sagittal sévère)</p>
+<h3 id="663-obliquite-pelvienne">6.6.3 Obliquité pelvienne</h3>
+<ul>
+<li>Pose les mains sur les crêtes iliaques → sont-elles au même niveau ?</li>
+<li>Mesurez horizontalement si oblique</li>
+<li>Différencier : obliquité pelvienne structurale (dans la scoliose) vs fonctionnelle (ILMI)</li>
+</ul>
+<h3 id="664-inegalite-de-longueur-des-membres-inferieurs-ilmi">6.6.4 Inégalité de longueur des membres inférieurs (ILMI)</h3>
+<p><strong>Mesure clinique</strong> :<br />
+1. Palper les deux crêtes iliaques<br />
+2. Si obliquité pelvienne : placer une planche compensatrice sous le pied du côté court<br />
+3. Élévation jusqu'à nivellement des hanches<br />
+4. L'épaisseur de la planche = l'ILMI</p>
+<p><strong>Seuil</strong> :<br />
+- ILMI &lt; 1 cm : peu significatif cliniquement<br />
+- ILMI ≥ 1,5-2 cm : peut créer une obliquité de bassin et une attitude scoliotique</p>
+<p><strong>Mesure radiographique</strong> (si doute clinique) :<br />
+- Téléradiographie des membres inférieurs face debout<br />
+- Mesure au compas de la distance tête fémorale → surface tibiale distale</p>
+<p><strong>Règle</strong> : Toujours placer des semelles compensatrices et refaire la radiographie EOS du rachis après compensation → vérifier si la scoliose persiste (confirmation de scoliose structurale vs attitude scoliotique).</p>
+<hr />
+<h2 id="67-cas-clinique-examen-complet-de-sophie">6.7 Cas clinique — Examen complet de Sophie</h2>
+<blockquote>
+<p>[MEDIA: 📊 M06-S07-001 — Fiche d'examen clinique complète de Sophie (modèle à remplir)]</p>
+</blockquote>
+<h3 id="anamnese-resume">Anamnèse (résumé)</h3>
+<ul>
+<li>13 ans, scoliose découverte au dépistage scolaire</li>
+<li>Tanner T3, pas de ménarche, 6 cm de croissance cette année</li>
+<li>Mère opérée d'une scoliose à 16 ans</li>
+<li><strong>Aucune douleur, aucun signe neurologique spontané</strong></li>
+<li>Aucune tache café au lait ou anomalie cutanée signalée</li>
+</ul>
+<h3 id="inspection">Inspection</h3>
+<ul>
+<li>Épaule droite légèrement plus haute (+1 cm)</li>
+<li>Pli de taille légèrement asymétrique (gauche &gt; droite)</li>
+<li>Colonne légèrement déportée à droite (décompensation coronale 1,5 cm mesurée au fil de plomb)</li>
+<li>Profil sagittal : dos plat thoracique (hypocyphose) — lordose lombaire normale</li>
+</ul>
+<h3 id="test-dadams">Test d'Adams</h3>
+<ul>
+<li>Position : flexion antérieure complète, paumes jointes</li>
+<li><strong>Gibbosité costale thoracique droite visible et persistante : ATR = 9° au scoliomètre thoracique</strong></li>
+<li>ATR lombaire = 2° (pas de gibbosité lombaire significative)</li>
+<li>→ Confirme scoliose thoracique structurale droite</li>
+</ul>
+<h3 id="examen-neurologique">Examen neurologique</h3>
+<table>
+<thead>
+<tr>
+<th>Évaluation</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Testing musculaire membres supérieurs</td>
+<td>MRC 5/5 bilateral</td>
+</tr>
+<tr>
+<td>Testing musculaire membres inférieurs</td>
+<td>MRC 5/5 bilatéral (tibial antérieur, EHL, triceps sural)</td>
+</tr>
+<tr>
+<td>Réflexes rotuliens</td>
+<td>Présents et symétriques</td>
+</tr>
+<tr>
+<td>Réflexes achilléens</td>
+<td>Présents et symétriques</td>
+</tr>
+<tr>
+<td>Babinski</td>
+<td>Négatif bilatéral (flexion plantaire)</td>
+</tr>
+<tr>
+<td><strong>RCA</strong></td>
+<td><strong>Présents et symétriques</strong> (pas de drapeau rouge)</td>
+</tr>
+<tr>
+<td>Sensibilité</td>
+<td>Normale dans tous les dermatomes</td>
+</tr>
+<tr>
+<td>Clonus</td>
+<td>Absent</td>
+</tr>
+</tbody>
+</table>
+<p>→ Examen neurologique normal → pas d'indication à l'IRM en urgence</p>
+<h3 id="tests-de-souplesse">Tests de souplesse</h3>
+<ul>
+<li>Bending test droit (vers concavité) : réduction de la courbure thoracique de 28° à 20° → <strong>réductibilité = 29%</strong> (courbure modérément raide pour son âge)</li>
+<li>Bending gauche : la courbure thoracique reste à 22° → confirme courbure structurale (&gt; 25° limite — mais Lenke adopte le seuil de 25°, donc ici en limite)</li>
+</ul>
+<h3 id="equilibre">Équilibre</h3>
+<ul>
+<li>Décompensation coronale : 1,5 cm vers la droite (acceptable)</li>
+<li>ILMI : crêtes iliaques asymétriques de 0,5 cm (non significatif)</li>
+<li>Bassin : légèrement oblique à droite (secondaire à la scoliose)</li>
+</ul>
+<h3 id="conclusion-clinique">Conclusion clinique</h3>
+<ul>
+<li>Scoliose idiopathique de l'adolescent (SIA), thoracique droite T5-T12</li>
+<li>Cobb 28° (radiographies EOS confirmatives), Lenke 1AN</li>
+<li>Examen neurologique normal → pas d'indication IRM</li>
+<li>Souplesse modérée → bon candidat au traitement par corset</li>
+<li><strong>Indication : orthèse TLSO ≥ 18h/j</strong></li>
+</ul>
+<hr />
+<h2 id="atelier-vertex-simulation-de-lexamen-clinique">🎯 Atelier VERTEX© — Simulation de l'examen clinique</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Corréler les données cliniques avec les paramètres du modèle VERTEX©.</p>
+<h3 id="protocole">Protocole</h3>
+<p>À partir du modèle de Sophie (Cobb 28°) :</p>
+<pre><code class="language-json">GET /api/spine/{sophie_id}
+</code></pre>
+<p>→ Extraire : <code>cobb_angle</code>, <code>apical_rotation</code>, <code>sagittal_profile</code></p>
+<p><strong>Calculer l'ATR théorique</strong> à partir de la rotation apicale :</p>
+<blockquote>
+<p>ATR ≈ rotation_apicale (°) × 0,4 (formule de corrélation ATR-rotation)</p>
+</blockquote>
+<p><strong>Comparer</strong> avec l'ATR mesuré cliniquement au scoliomètre (9°)<br />
+→ La corrélation confirme-t-elle la cohérence clinico-radiologique ?</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>[MEDIA: 📊 M06-S08-001 — Infographie récapitulative Module 6 : examen clinique standardisé]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Point clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anamnèse</td>
+<td>Douleur nocturne + progression rapide + neurologie → drapeaux rouges → IRM</td>
+</tr>
+<tr>
+<td>Inspection</td>
+<td>Gibbosité, épaules, pli de taille, décompensation coronale, profil sagittal</td>
+</tr>
+<tr>
+<td>Test d'Adams</td>
+<td>Gibbosité persistante → scoliose structurale ; disparaît → fonctionnelle</td>
+</tr>
+<tr>
+<td>Scoliomètre</td>
+<td>ATR ≥ 5-7° → indication radiographique</td>
+</tr>
+<tr>
+<td>RCA</td>
+<td>Asymétrie → drapeau rouge majeur (syringomyélie) → IRM obligatoire</td>
+</tr>
+<tr>
+<td>Bending test</td>
+<td>Évalue la souplesse → oriente la stratégie chirurgicale</td>
+</tr>
+<tr>
+<td>Fil à plomb C7</td>
+<td>Mesure la décompensation coronale → objectif chirurgical</td>
+</tr>
+<tr>
+<td>ILMI</td>
+<td>Toujours chercher → cause d'attitude scoliotique → traiter en premier</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quiz-fin-de-module-15-questions">Quiz fin de module — 15 questions</h2>
+<h3 id="bronze-questions-1-a-5">🥉 Bronze — Questions 1 à 5</h3>
+<p><strong>Q1.</strong> Quel paramètre le scoliomètre de Bunnell mesure-t-il ?<br />
+- A. L'angle de Cobb (radiographique)<br />
+- <strong>B. L'angle de torsion du tronc (ATR = Angle of Trunk Rotation)</strong> ✓<br />
+- C. La hauteur de la gibbosité en cm<br />
+- D. La lordose lombaire</p>
+<p><strong>Q2.</strong> Un ATR de 8° au scoliomètre lors du test d'Adams impose :<br />
+- A. Aucun suivi particulier<br />
+- B. Rééducation immédiate<br />
+- <strong>C. Radiographie du rachis entier en charge</strong> ✓<br />
+- D. Corset immédiat sans radiographie</p>
+<p><strong>Q3.</strong> Les réflexes cutanés abdominaux (RCA) asymétriques évoquent en premier lieu :<br />
+- A. Hernie discale lombaire<br />
+- <strong>B. Syringomyélie</strong> ✓<br />
+- C. Scoliose idiopathique simple<br />
+- D. Neurofibromatose</p>
+<p><strong>Q4.</strong> Le fil à plomb de C7 évalue :<br />
+- A. La cyphose thoracique<br />
+- <strong>B. L'équilibre coronal (décompensation latérale)</strong> ✓<br />
+- C. La lordose lombaire<br />
+- D. La rotation vertébrale</p>
+<p><strong>Q5.</strong> Une ILMI de 1,5 cm non compensée peut créer :<br />
+- A. Une scoliose structurale lombaire<br />
+- <strong>B. Une attitude scoliotique (fonctionnelle)</strong> ✓<br />
+- C. Une scoliose thoracique droite<br />
+- D. Aucune anomalie posturale visible</p>
+<h3 id="argent-questions-6-a-10">🥈 Argent — Questions 6 à 10</h3>
+<p><strong>Q6.</strong> Lors du test d'Adams, une gibbosité qui disparaît en couché dorsal indique :<br />
+- A. Scoliose thoracique sévère<br />
+- <strong>B. Attitude scoliotique (fonctionnelle) — cause extra-rachidienne</strong> ✓<br />
+- C. Scoliose congénitale<br />
+- D. Scoliose dégénérative</p>
+<p><strong>Q7.</strong> Sophie a une décompensation coronale de 2,5 cm vers la droite au fil de plomb de C7. Cette valeur est :<br />
+- A. Normale (&lt; 1 cm est la limite normale)<br />
+- B. Acceptable (&lt; 3 cm est toléré)<br />
+- <strong>C. Significative (&gt; 2 cm = décompensation notable → objectif de correction chirurgicale si chirurgie)</strong> ✓<br />
+- D. Normale pour une adolescente de 13 ans</p>
+<p><strong>Q8.</strong> Un signe de Babinski positif chez un adolescent scoliotique impose :<br />
+- A. Corset immédiat<br />
+- B. Surveillance à 6 mois<br />
+- <strong>C. IRM médullaire urgente</strong> ✓<br />
+- D. Chirurgie de la scoliose en urgence</p>
+<p><strong>Q9.</strong> Le fulcrum bending test est plus prédictif de la correction chirurgicale que le bending test standard car :<br />
+- A. Il est plus facile à réaliser<br />
+- B. Il mesure la rotation vertébrale<br />
+- <strong>C. Le cylindre sous l'apex simule mieux la force de correction chirurgicale appliquée directement à l'apex</strong> ✓<br />
+- D. Il est radiographique</p>
+<p><strong>Q10.</strong> Une adolescente avec une courbure thoracique droite de 30° présente une fossette sacro-coccygienne profonde avec touffe de poils. La prochaine étape est :<br />
+- <strong>A. IRM du rachis entier — suspicion de dysraphisme occulte (moelle attachée) → cause possible de la scoliose</strong> ✓<br />
+- B. Corset immédiat<br />
+- C. Chirurgie si Cobb &gt; 40°<br />
+- D. Tests de souplesse</p>
+<h3 id="or-questions-11-a-13">🥇 Or — Questions 11 à 13</h3>
+<p><strong>Q11.</strong> Lors de l'examen d'une adolescente de 14 ans avec scoliose thoracique gauche de 25°, vous notez : RCA absents à gauche, présents à droite ; testing musculaire normal bilatéral. Votre démarche est :<br />
+- A. Surveiller à 4 mois (scoliose légère)<br />
+- B. Corset uniquement<br />
+- <strong>C. IRM médullaire urgente — courbure gauche (anormale) + RCA asymétriques = deux drapeaux rouges → forte suspicion de syringomyélie ou Chiari</strong> ✓<br />
+- D. Testing moteur détaillé et électromyogramme</p>
+<p><strong>Q12.</strong> Un garçon de 16 ans a une scoliose thoracique droite de 42°. Au bending test, la courbure se réduit à 35° (réductibilité 17%). Au fulcrum test, elle se réduit à 22°. Cela signifie :<br />
+- A. La chirurgie est contre-indiquée (trop raide)<br />
+- <strong>B. La chirurgie peut obtenir une correction à environ 22-25° ; la rigidité modérée peut nécessiter un temps antérieur de libération discale si correction &gt; 50% souhaitée</strong> ✓<br />
+- C. La correction chirurgicale maximale sera de 35°<br />
+- D. Un corset peut encore réduire la courbure à ce stade</p>
+<p><strong>Q13.</strong> En dépistage scolaire, si vous utilisez un seuil ATR ≥ 5° pour déclencher des radiographies, parmi 1000 élèves dépistés vous attendez environ combien de positifs vrais (scoliose réelle) et de faux positifs ?<br />
+- <strong>A. ~30-40 positifs vrais (2-4% de prévalence) et ~10-20 faux positifs (attitude scoliotique, asymétrie musculaire) → sensibilité 93%, spécificité 77%</strong> ✓<br />
+- B. ~100 positifs vrais et 200 faux positifs<br />
+- C. ~5 positifs vrais uniquement<br />
+- D. ~300 positifs vrais</p>
+<h3 id="diamant-questions-14-15">💎 Diamant — Questions 14-15</h3>
+<p><strong>Q14.</strong> Vous mesurez l'ATR d'une scoliose lombaire gauche principale à scoliomètre : ATR = 4°. L'angle de Cobb radiographique est de 22°. En utilisant la formule ATR ≈ Cobb × 0,22, la cohérence est :<br />
+- A. Confirmée (4° ≈ 22° × 0,22 = 4,84° — résultat conforme)<br />
+- <strong>A. Confirmée — ATR 4° est cohérent avec Cobb 22° (4,84° prédit)</strong> ✓ <br />
+- B. Incohérente — le Cobb est probablement surestimé<br />
+- C. Incohérente — l'ATR devrait être &gt; 10° pour un Cobb de 22°<br />
+- D. La formule s'applique uniquement aux scolioses thoraciques</p>
+<p><strong>Q15.</strong> Un patient adulte de 65 ans consulte pour une lombalgie chronique avec douleur irradiante bilatérale aux membres inférieurs, claudication à 200 m. L'examen montre : scoliose lombaire droite de 35° (dégénérative), pas de déficit moteur, ROT rotulien vifs bilatéraux avec diffusion, clonus rotulien 2 battements à droite. L'explication la plus cohérente est :<br />
+- <strong>A. Sténose du canal rachidien lombaire (claudication neurogène) + signe d'atteinte pyramidale suggérant une composante cervicale associée (myélopathie sur cervicarthrose) → IRM cervicale ET lombaire</strong> ✓<br />
+- B. Simple scoliose dégénérative sans autre pathologie<br />
+- C. Pathologie vasculaire périphérique avec claudication artérielle<br />
+- D. Syndrome pyramidal d'origine cérébrale</p>
+<hr />
+<h2 id="post-test-5-questions">Post-test — 5 questions</h2>
+<p><strong>Q1.</strong> Le scoliomètre mesure → <strong>l'ATR (angle de torsion du tronc)</strong> ✓<br />
+<strong>Q2.</strong> Seuil ATR → radiographie → <strong>5-7°</strong> ✓<br />
+<strong>Q3.</strong> RCA asymétriques → <strong>syringomyélie</strong> ✓<br />
+<strong>Q4.</strong> Fil à plomb C7 évalue → <strong>équilibre coronal</strong> ✓<br />
+<strong>Q5.</strong> ILMI → créé une → <strong>attitude scoliotique (fonctionnelle)</strong> ✓</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<h3 id="articles-de-reference">Articles de référence</h3>
+<ul>
+<li>Bunnell WP. <em>An objective criterion for scoliosis screening</em>. J Bone Joint Surg Am. 1984;66:1381–1387.</li>
+<li>Adams W. <em>Lectures on the Pathology and Treatment of Lateral and Other Forms of Curvature of the Spine</em>. Churchill; 1865. (description originale du test)</li>
+<li>Cobb JR. <em>Outline for the study of scoliosis</em>. Instr Course Lect AAOS. 1948;5:261–275.</li>
+<li>Negrini S et al. <em>SOSORT guidelines 2011 — Orthopaedic and Rehabilitation treatment of idiopathic scoliosis during growth</em>. Scoliosis. 2012;7:3.</li>
+<li>Cheung KMC, Luk KDK. Prediction of correction of scoliosis with use of the fulcrum bending radiograph. <em>J Bone Joint Surg Am</em>. 1997;79:1144–1150.</li>
+<li>Medical Research Council. <em>Aids to the Investigation of Peripheral Nerve Injuries</em>. War Memorandum No. 7. London: HMSO; 1943.</li>
+<li>Côté P et al. A study of the diagnostic accuracy and reliability of the scoliometer and Adam's forward bend test. <em>Spine</em>. 1998;23:796–802.</li>
+<li>Ogilvie JW et al. The search for idiopathic scoliosis genes. <em>Spine</em>. 2006;31:679–681.</li>
+<li>King HA, Moe JH. Treatment of scoliosis. <em>Clin Orthop Relat Res</em>. 1983;(175):55–68.</li>
+</ul>
+<h3 id="outils-pratiques">Outils pratiques</h3>
+<ul>
+<li>[MEDIA: 📊 M06-RES-001 — Fiche d'examen clinique standardisé scoliose (format A4, à imprimer)]</li>
+<li>[MEDIA: 📊 M06-RES-002 — Questionnaire SRS-22r (version française) + instructions de scoring]</li>
+<li>[MEDIA: 🎬 M06-RES-003 — Webinar "Dépistage scolaire de la scoliose : technique, seuils, orientation" (30 min)]</li>
+</ul>
+<h3 id="protocole-de-depistage-scolaire">Protocole de dépistage scolaire</h3>
+<ul>
+<li>Âge recommandé : 10-13 ans (filles), 11-14 ans (garçons)</li>
+<li>Outil : scoliomètre de Bunnell ou visite médicale avec Adams</li>
+<li>Seuil : ATR ≥ 5-7° → orientation chirurgien + radio EOS</li>
+<li>Fréquence : 1 fois par an en période pubertaire</li>
+</ul>
+<h3 id="liens-vers-les-modules-suivants">Liens vers les modules suivants</h3>
+<p>→ <strong>Module 7</strong> : Imagerie — à partir des données cliniques, prescrire les imageries adaptées<br />
+→ <strong>Module 8</strong> : SIA — physiopathologie et histoire naturelle de la scoliose idiopathique</p>
+<hr />
+<p><em>Module 6 validé — Score minimal : 70% (10/15)</em><br />
+<em>Prochaine étape : Module 7 — Imagerie de la scoliose</em></p>
+</div>

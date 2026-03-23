@@ -1,0 +1,321 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-25-osteoporose-et-rachis">MODULE 25 — OSTÉOPOROSE ET RACHIS</h1>
+<p><strong>Partie X — Pathologies spécifiques</strong><br />
+<strong>Durée estimée</strong> : 1h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1–7, 14, 23, 24</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Michèle, 73 ans, postménopausée, chute sur les fesses. Douleur dorsale aiguë 9/10. Radio : fracture tassement T12, plateau supérieur enfoncé. Antécédent : fracture du col du fémur à 68 ans...</p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Score T (DEXA) • Ostéoporose • Fracture vertébrale ostéoporotique (FVO) • Cyphoplastie au ballonnet • Vertébroplastie percutanée • Embolie de ciment • Bisphosphonates • Dénosumab • Tériparatide (PTH 1–34) • Romosozumab • Vis cimentée (fenestrated screw) • Score FRAX</p>
+<hr />
+<h2 id="251-epidemiologie-et-definitions">25.1 Épidémiologie et définitions</h2>
+<p><strong>Définition OMS</strong> :<br />
+- Ostéopénie : T-score −1 à −2,5<br />
+- <strong>Ostéoporose : T-score &lt; −2,5</strong><br />
+- Ostéoporose sévère : T-score &lt; −2,5 + fracture de fragilité</p>
+<p><strong>Ostéoporose primaire</strong> : post-ménopausique (type 1) et sénile (type 2, &gt; 70 ans).</p>
+<p><strong>Épidémiologie</strong> :<br />
+- 30 % des femmes post-ménopausées ont une ostéoporose<br />
+- <strong>Fractures vertébrales ostéoporotiques</strong> : 500 000/an en Europe<br />
+- Niveau le plus touché : T7-T12 (jonction thoraco-lombaire)</p>
+<hr />
+<h2 id="252-bilan-osseux">25.2 Bilan osseux</h2>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DEXA</strong> (Absorptiométrie biphotonique)</td>
+<td>Mesure du T-score rachis + hanche</td>
+</tr>
+<tr>
+<td><strong>Score FRAX</strong> (OMS)</td>
+<td>À 10 ans, risque de fracture selon facteurs de risque cliniques + DEXA</td>
+</tr>
+<tr>
+<td>Bilan biologique</td>
+<td>NFS, CRP, calcémie, vitamine D, PTH, EPP (éliminer myélome), Prot. totales</td>
+</tr>
+<tr>
+<td>Radio de rachis</td>
+<td>Recherche fractures vertébrales prévalentes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="253-fractures-vertebrales-osteoporotiques-fvo">25.3 Fractures vertébrales ostéoporotiques (FVO)</h2>
+<h3 id="classification-de-genant-genant-et-al-1993-j-bone-miner-res">Classification de Genant (Genant et al., 1993, <em>J Bone Miner Res</em>)</h3>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Perte de hauteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>1 — Légère</td>
+<td>20–25 %</td>
+</tr>
+<tr>
+<td>2 — Modérée</td>
+<td>25–40 %</td>
+</tr>
+<tr>
+<td>3 — Sévère</td>
+<td>&gt; 40 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnostic-differentiel">Diagnostic différentiel</h3>
+<blockquote>
+<p>⚠️ <strong>Ne pas confondre</strong> fracture ostéoporotique et fracture métastatique (IRM : hypersignal T2 persistant avec masse tumorale = suspect).</p>
+</blockquote>
+<p><strong>Signe favorable ostéoporotique</strong> : ligne de vide discal intracorporéen (intravertebral vacuum) sur scanner — signe de nécrose avasculaire bénigne.</p>
+<hr />
+<h2 id="254-traitement-des-fvo-aigues">25.4 Traitement des FVO aiguës</h2>
+<h3 id="conservateur-premier-choix">Conservateur (premier choix)</h3>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Repos relatif</td>
+<td>Courte durée (48–72h max)</td>
+</tr>
+<tr>
+<td>Antalgiques (paracetamol, palier 2)</td>
+<td>Selon EVA</td>
+</tr>
+<tr>
+<td>AINS (brève durée)</td>
+<td>Si non contre-indiqués</td>
+</tr>
+<tr>
+<td>Corset lombaire (semi-rigide)</td>
+<td>6–8 semaines</td>
+</tr>
+<tr>
+<td>Réevaluation à 4–6 semaines</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vertebroplastie-cyphoplastie">Vertébroplastie / Cyphoplastie</h3>
+<p><strong>Vertébroplastie</strong> :<br />
+- Injection percutanée de ciment PMMA dans le corps vertébral sous fluoroscopie<br />
+- Soulagement douloureux dans 80–90 % des cas à 1 mois<br />
+- Risque : fuite de ciment (embolie ciment)</p>
+<p><strong>Cyphoplastie au ballonnet</strong> (balloon kyphoplasty) :<br />
+- Introduction d'un ballonnet → création d'une cavité → injection ciment à basse pression<br />
+- Meilleur restauration de hauteur vertébrale (correction partielle de la cyphose)<br />
+- Moins de risque de fuite que la vertébroplastie</p>
+<p><strong>Indications de vertébroplastie/cyphoplastie</strong> :<br />
+- Fracture douloureuse sans consolidation &gt; 3 semaines<br />
+- Intolérance au traitement conservateur<br />
+- <strong>CI</strong> : fracture avec compression neurologique, infection, allergie ciment, Bilsky 2–3</p>
+<blockquote>
+<p>⭐ Essais Vertos 2 et FREE : vertébroplastie &gt; traitement conservateur à court terme pour la douleur.</p>
+</blockquote>
+<hr />
+<h2 id="255-traitements-anti-osteoporotiques-apres-fvo">25.5 Traitements anti-ostéoporotiques (après FVO)</h2>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Mécanisme</th>
+<th>Spécificité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bisphosphonates</strong> (alendronate, zoledronate)</td>
+<td>Anti-ostéoclaste</td>
+<td>1ère ligne, femme post-ménopausique</td>
+</tr>
+<tr>
+<td><strong>Dénosumab</strong></td>
+<td>Anti-RANK ligand</td>
+<td>Si int. bisphosphonates, IRC</td>
+</tr>
+<tr>
+<td><strong>Tériparatide</strong> (PTH 1–34)</td>
+<td>Pro-ostéoblaste</td>
+<td>FVO multiples sévères, 24 mois max</td>
+</tr>
+<tr>
+<td><strong>Romosozumab</strong></td>
+<td>Anti-sclérostine</td>
+<td>Haut risque fracturaire, 12 mois</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supplémentation</strong> : Calcium 1000–1200 mg/j + Vitamine D3 800–1000 UI/j systématique.</p>
+<hr />
+<h2 id="256-chirurgie-darthrodese-chez-losteoporotique">25.6 Chirurgie d'arthrodèse chez l'ostéoporotique</h2>
+<p><strong>Défis spécifiques</strong> :<br />
+- Ancrage insuffisant des vis pédiculaires (os trabéculaire friable)<br />
+- Risque de démontage prématuré ("pull-out")</p>
+<p><strong>Solutions</strong> :<br />
+| Technique | Principe |<br />
+|-----------|---------|<br />
+| <strong>Vis fenestrated cimentées</strong> | Ciment injecté via vis dans le pédicule |<br />
+| <strong>Vis plus longues (cortex)</strong> | Bi-cortical purchase |<br />
+| <strong>Augmentation du nombre de niveaux</strong> | Distribution des forces |<br />
+| <strong>Tériparatide préopératoire 3 mois</strong> | Amélioration de la densité osseuse préchirurgicale |</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> T-score &lt; −2,5 = ostéoporose OMS ; T-score &lt; −2,5 + fracture = ostéoporose sévère.</p>
+<p>📌 <strong>2.</strong> Le bilan inclut DEXA + FRAX + biologie (éliminer myélome : EPP obligatoire).</p>
+<p>📌 <strong>3.</strong> La <strong>cyphoplastie</strong> (ballonnet) réduit le risque de fuite de ciment vs vertébroplastie.</p>
+<p>📌 <strong>4.</strong> Bisphosphonates = traitement de 1ère ligne ; tériparatide si ostéoporose sévère avec fractures multiples.</p>
+<p>📌 <strong>5.</strong> Vis cimentées fenestrated obligatoires chez l'ostéoporotique nécessitant une instrumentation.</p>
+<p>📌 <strong>6.</strong> Toujours éliminer une fracture pathologique (néoplasique) avant de traiter "l'ostéoporose".</p>
+</blockquote>
+<hr />
+<h2 id="references">Références</h2>
+<ol>
+<li>Genant HK, Wu CY, van Kuijk C, Nevitt MC. Vertebral fracture assessment using a semiquantitative technique. <em>J Bone Miner Res</em>. 1993;8(9):1137-1148.</li>
+<li>Kanis JA, McCloskey EV, Johansson H, et al. A reference standard for the description of osteoporosis. <em>Bone</em>. 2008;42(3):467-475.</li>
+<li>Klazen CA, Lohle PN, de Vries J, et al. Vertebroplasty versus conservative treatment in acute osteoporotic vertebral compression fractures (Vertos II). <em>BMJ</em>. 2010;340:c1865.</li>
+<li>Wardlaw D, Cummings SR, Van Meirhaeghe J, et al. Efficacy and safety of balloon kyphoplasty compared with non-surgical care for vertebral compression fracture (FREE). <em>Lancet</em>. 2009;373(9668):1016-1024.</li>
+</ol>
+<hr />
+<h2 id="quiz-8-questions">Quiz — 8 questions</h2>
+<p><strong>Q1. 🥉</strong> Selon l'OMS, l'ostéoporose est définie par un T-score :<br />
+- A. &lt; −1,5<br />
+- <strong>B. &lt; −2,5</strong><br />
+- C. &lt; −3,0<br />
+- D. &lt; −2,0</p>
+<p><strong>Q2. 🥉</strong> La technique interventionnelle osseuse réduisant le plus le risque de fuite de ciment est :<br />
+- A. Vertébroplastie seule<br />
+- <strong>B. Cyphoplastie au ballonnet (création de cavité à basse pression)</strong><br />
+- C. Discectomie<br />
+- D. Infiltration intravertébrale de collagène</p>
+<p><strong>Q3. 🥈</strong> Michèle (73 ans, fracture T12 ostéoporotique douloureuse depuis 6 semaines, EVA 8/10, pas de déficit, T-score −3,1) : quelle est la prise en charge la plus adaptée ?<br />
+- <strong>A. Cyphoplastie percutanée (fracture douloureuse non consolidée &gt; 3 semaines, EVA élevée) + début de tériparatide (T-score sévère, fractures de fragilité multiples)</strong><br />
+- B. Chirurgie d'arthrodèse d'emblée<br />
+- C. Corticoïdes IV haute dose<br />
+- D. Repos complet 3 mois sans intervention</p>
+<p><strong>Q4. 🥈</strong> Le médicament pro-ostéoblastique réservé aux ostéoporoses sévères avec fractures multiples est :<br />
+- A. Alendronate<br />
+- B. Dénosumab<br />
+- <strong>C. Tériparatide (PTH 1–34) — max 24 mois</strong><br />
+- D. Calcium + vitamine D exclusive</p>
+<p><strong>Q5. 🥈</strong> L'EPP (électrophorèse des protéines plasmatiques) est systématique dans le bilan d'une fracture vertébrale ostéoporotique pour :<br />
+- <strong>A. Éliminer un myélome multiple</strong><br />
+- B. Évaluer la densité osseuse<br />
+- C. Chercher une infection<br />
+- D. Quantifier l'inflammation</p>
+<p><strong>Q6. 🥇</strong> Quelle est la contre-indication principale à la cyphoplastie ?<br />
+- A. Age &gt; 80 ans<br />
+- B. Fracture ancienne &gt; 6 mois<br />
+- <strong>C. Compression neurologique (Bilsky 2–3)</strong><br />
+- D. T-score entre −2,5 et −3</p>
+<p><strong>Q7. 🥇</strong> Pour une arthrodèse L3-S1 chez une patiente ostéoporotique (T-score −3,2), quelle technique d'ancrage est prioritaire ?<br />
+- A. Vis pédiculaires standard<br />
+- <strong>B. Vis fenestrated pédiculaires (injection de ciment PMMA pour renforcer l'ancrage)</strong><br />
+- C. Crochets laminaires seuls<br />
+- D. Fils sous-laminaires</p>
+<p><strong>Q8. 💎</strong> Michèle est opérée d'une arthrodèse L2-L5 + cages TLIF pour une scoliose dégénérative. 3 mois post-op, radio : démontage d'une vis L3 droite avec mobilisation de la cage. CRP normale. Que proposez-vous ?<br />
+- <strong>A. Reprise chirurgicale avec vis cimentée (fenestrated + injection PMMA) en position L3, ajout d'un niveau L1 si instabilité multipliée. Instaurer tériparatide préopératoire au moins 6 semaines avant toute nouvelle chirurgie pour améliorer la qualité osseuse. Envisager si possible une courte période de tériparatide (3 mois) avant la reprise pour optimiser le remodelage.</strong><br />
+- B. Traitement conservateur avec bisphosphonate IV<br />
+- C. Ablation du matériel seule<br />
+- D. Nouvelle cimentoplastie de renfort sans reprise de vis</p>
+</div>

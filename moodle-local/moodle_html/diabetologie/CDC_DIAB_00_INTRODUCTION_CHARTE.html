@@ -1,0 +1,1769 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-complete-diabetologie">CAHIER DES CHARGES — FORMATION COMPLÈTE DIABÉTOLOGIE</h1>
+<h2 id="partie-0-introduction-generale-charte-graphique-et-architecture-pedagogique">Partie 0 — Introduction générale, Charte graphique et Architecture pédagogique</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Statut</strong> : Document fondateur — Cahier des charges complet<br />
+<strong>Plateforme</strong> : VERTEX© — Formation médicale en ligne<br />
+<strong>Formation</strong> : Diabétologie Complète — <em>Comprehensive Diabetology</em></p>
+<hr />
+<h1 id="table-des-matieres-partie-0">TABLE DES MATIÈRES — PARTIE 0</h1>
+<ol>
+<li><a href="#1-synthèse-exécutive">Synthèse exécutive</a></li>
+<li><a href="#2-public-cible-et-prérequis">Public cible et prérequis</a></li>
+<li><a href="#3-architecture-pédagogique-globale">Architecture pédagogique globale</a></li>
+<li><a href="#4-charte-graphique-unifiée--plateforme-vertex">Charte graphique unifiée — Plateforme VERTEX©</a></li>
+<li><a href="#5-code-couleur--formation-diabétologie">Code couleur — Formation Diabétologie</a></li>
+<li><a href="#6-règles-décriture-du-contenu">Règles d'écriture du contenu</a></li>
+<li><a href="#7-structure-des-fichiers-du-cdc">Structure des fichiers du CDC</a></li>
+<li><a href="#8-correspondance-inter-formations">Correspondance inter-formations</a></li>
+</ol>
+<hr />
+<h1 id="1-synthese-executive">1. SYNTHÈSE EXÉCUTIVE</h1>
+<h2 id="11-ce-quest-cette-formation">1.1 Ce qu'est cette formation</h2>
+<p>La <strong>Formation Diabétologie Complète</strong> est un programme e-learning exhaustif destiné aux médecins généralistes, internes en médecine, diabétologues-endocrinologues et nutritionnistes, couvrant <strong>l'intégralité</strong> de la diabétologie — depuis l'embryologie et l'anatomie du pancréas endocrine, la physiologie de l'homéostasie glucidique, la physiopathologie des différents types de diabète, le diagnostic, le dépistage, les complications aiguës et chroniques (micro et macrovasculaires), jusqu'aux traitements actuels et futurs (insulinothérapie, antidiabétiques oraux et injectables, technologies du diabète, pancréas artificiel, immunothérapie, thérapie cellulaire, médecine de précision), en passant par les situations cliniques particulières (grossesse, chirurgie, réanimation, sport) et l'organisation des soins.</p>
+<p>Elle constitue la <strong>sixième formation</strong> de la plateforme VERTEX©, après les Formations Scoliose (🔵), PTG (🟢), IOA (🟤), Tendinites (🩶) et Obésité-Orthopédie (🟣). Les formations partagent :</p>
+<ul>
+<li>La même <strong>plateforme LMS</strong> (architecture, authentification, évaluation)</li>
+<li>La même <strong>charte graphique</strong> de base (typographie, mise en page, icônes)</li>
+<li>Les mêmes <strong>règles d'écriture pédagogique</strong> (cas cliniques, mnémoniques, niveaux de profondeur)</li>
+<li>Les mêmes <strong>standards d'évaluation</strong> (Bronze → Diamant, cas cliniques progressifs)</li>
+<li>Le même <strong>moteur de simulation</strong> VERTEX© (adapté : DiabSim© pour la modélisation métabolique, la simulation de l'insulinothérapie, la cinétique glycémique et les scénarios de complications)</li>
+</ul>
+<h2 id="12-perimetre-de-la-formation-diabetologie">1.2 Périmètre de la formation Diabétologie</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>40 modules organisés en 12 parties</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>~120-140 heures de contenu</td>
+</tr>
+<tr>
+<td><strong>Niveau</strong></td>
+<td>Fondamental → Intermédiaire → Expert</td>
+</tr>
+<tr>
+<td><strong>Spécialités</strong></td>
+<td>Diabétologie-endocrinologie, médecine générale, médecine interne, nutrition, cardiologie, néphrologie, ophtalmologie, neurologie, obstétrique, anesthésie-réanimation, médecine du sport, pédiatrie</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Fondamental</strong></td>
+<td>Embryologie du pancréas, anatomie macro et microscopique, îlots de Langerhans, physiologie de la sécrétion d'insuline, glucagon, incrétines (GLP-1, GIP), axe entéro-insulaire, métabolisme glucidique intégré (foie, muscle, tissu adipeux, cerveau), transporteurs du glucose (GLUT), signalisation insulinique</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Physiopathologie</strong></td>
+<td>DT1 (auto-immunité, destruction β-cellulaire, histoire naturelle, stades pré-cliniques), DT2 (insulinorésistance, dysfonction β-cellulaire, glucotoxicité, lipotoxicité, inflammasome, microbiote), MODY (types 1-14), LADA, diabète mitochondrial, diabète pancréatique (type 3c), diabète médicamenteux (corticoïdes, immunothérapie), diabète gestationnel</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Diagnostic</strong></td>
+<td>Critères OMS/ADA/HAS, glycémie à jeun, HGPO 75g, HbA1c, diagnostic différentiel, dépistage ciblé et populationnel, prédiabète (IFG, IGT), auto-anticorps (anti-GAD, anti-IA2, anti-ZnT8, anti-insuline), peptide C, génotypage HLA</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Clinique</strong></td>
+<td>Présentation DT1 (enfant, adolescent, adulte, acidocétose inaugurale), présentation DT2 (découverte fortuite, syndrome métabolique, acanthosis nigricans), complications aiguës (acidocétose, syndrome hyperosmolaire, hypoglycémie sévère, acidose lactique), formes particulières (sujet âgé, enfant, migrant, psychiatrique)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Complications</strong></td>
+<td>Microvasculaires : rétinopathie (classification ETDRS, OCT, anti-VEGF), néphropathie (stades Mogensen/KDIGO, néphroprotection iSGLT2/finérénone), neuropathie (polyneuropathie, dysautonomie, Charcot). Macrovasculaires : coronaropathie silencieuse, AVC, AOMI, cardiopathie diabétique. Pied diabétique (grades IWGDF/Texas, décharge, revascularisation). Autres : NASH/MAFLD, infections, dermatologie, dysfonction érectile, ostéoarticulaire</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Traitement</strong></td>
+<td>DT1 : schémas insuliniques (basal-bolus, pompe CSII), analogues rapides/lents, insulines ultra-concentrées, CGM (FreeStyle Libre, Dexcom, Guardian), boucle fermée (CamAPS, Control-IQ, Omnipod 5), pancréas artificiel. DT2 : metformine, sulfamides/glinides, iDPP-4, agonistes GLP-1 (liraglutide, sémaglutide, dulaglutide, tirzépatide), iSGLT2 (empagliflozine, dapagliflozine, canagliflozine), glitazones, inhibiteurs α-glucosidase, double/triple agonistes (survodutide, retatrutide), insulinothérapie du DT2, algorithmes HAS/ADA-EASD. Futur : teplizumab, greffe d'îlots, cellules souches, encapsulation, édition génomique</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Situations</strong></td>
+<td>Diabète et grossesse (programmation, suivi, accouchement), diabète et chirurgie (protocoles périopératoires), diabète et réanimation (gestion glycémique intensive), diabète et sport (adaptation insuline, prévention hypo), gestion du risque CV (dyslipidémie, HTA, anti-agrégation)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Volet Organisation</strong></td>
+<td>Parcours de soins (ALD, coordination ville-hôpital, télémédecine, télésurveillance), ETP structurée (programmes, entretien motivationnel, accompagnement psychologique), IA et médecine de précision</td>
+</tr>
+<tr>
+<td><strong>Simulation</strong></td>
+<td>DiabSim© — module VERTEX© dédié (cinétique glycémique, simulation insulinothérapie, ajustement de doses, scénarios de complications aiguës, calcul de risque CV personnalisé)</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>Certificat VERTEX© Diabétologie, éligible DPC/CME</td>
+</tr>
+<tr>
+<td><strong>Langue</strong></td>
+<td>Français (traduction EN/ES/AR prévue)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-objectifs-pedagogiques-globaux">1.3 Objectifs pédagogiques globaux</h2>
+<p>À l'issue de cette formation, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> l'embryologie, l'anatomie macro et microscopique du pancréas endocrine et la structure des îlots de Langerhans (Slack, <em>Development</em>, 1995 ; Jennings et al., <em>Diabetes</em>, 2015)</li>
+<li><strong>Expliquer</strong> la physiologie de la sécrétion d'insuline (couplage stimulus-sécrétion, canaux KATP, exocytose biphasique) et le rôle des incrétines dans l'axe entéro-insulaire (Drucker, <em>Cell Metab</em>, 2006 ; Nauck &amp; Meier, <em>Diabetologia</em>, 2018)</li>
+<li><strong>Décrire</strong> le métabolisme glucidique intégré (rôle du foie, du muscle squelettique, du tissu adipeux et du cerveau) et les mécanismes de régulation de la glycémie à jeun et postprandiale</li>
+<li><strong>Expliquer</strong> la physiopathologie du DT1 (auto-immunité, stades Eisenbarth/Insel, prédisposition HLA, facteurs environnementaux) et du DT2 (insulinorésistance, dysfonction β-cellulaire progressive, glucotoxicité, lipotoxicité, rôle du microbiote)</li>
+<li><strong>Classifier</strong> les différents types de diabète selon la nomenclature actuelle (DT1, DT2, MODY, LADA, diabète mitochondrial, pancréatique, gestationnel, médicamenteux, génétiques rares)</li>
+<li><strong>Diagnostiquer</strong> un diabète selon les critères OMS/ADA et prescrire le bilan étiologique adapté (auto-anticorps, peptide C, HLA, MODY génétique)</li>
+<li><strong>Organiser</strong> le dépistage du diabète dans les populations à risque et identifier les états de prédiabète (IFG, IGT) avec leur prise en charge</li>
+<li><strong>Reconnaître</strong> et prendre en charge les complications aiguës : acidocétose diabétique (protocole de réhydratation, insulinothérapie IVSE, correction kaliémie), syndrome hyperosmolaire, hypoglycémie sévère, acidose lactique</li>
+<li><strong>Dépister</strong> et classer les complications microvasculaires : rétinopathie (classification ETDRS, indication anti-VEGF), néphropathie (stades KDIGO, néphroprotection), neuropathie (questionnaires, EMG, monofilament)</li>
+<li><strong>Évaluer</strong> le risque cardiovasculaire global du patient diabétique et prescrire une stratégie de prévention adaptée (statines, antihypertenseurs, anti-agrégants, iSGLT2, aGLP-1)</li>
+<li><strong>Prescrire</strong> et adapter l'insulinothérapie du DT1 : schéma basal-bolus, pompe, ratio insuline/glucides, facteur de sensibilité, gestion de l'exercice</li>
+<li><strong>Utiliser</strong> les technologies du diabète : CGM, pompes à insuline, boucles fermées hybrides, applications de santé connectée</li>
+<li><strong>Appliquer</strong> l'algorithme thérapeutique du DT2 : metformine en première ligne, choix de la bithérapie selon le profil du patient (cardiorénal, pondéral), escalade thérapeutique, passage à l'insuline</li>
+<li><strong>Maîtriser</strong> la pharmacologie des nouvelles classes thérapeutiques : agonistes GLP-1, iSGLT2, iDPP-4, double et triple agonistes (tirzépatide, survodutide, retatrutide)</li>
+<li><strong>Gérer</strong> le diabète dans les situations particulières : grossesse (programmation, suivi obstétrical, insulinothérapie), chirurgie (protocoles périopératoires), réanimation (contrôle glycémique intensif vs conventionnel), sport (adaptation du traitement)</li>
+<li><strong>Prendre en charge</strong> le pied diabétique de manière multidisciplinaire : gradation du risque IWGDF, décharge, soins locaux, antibiothérapie, revascularisation, indication d'amputation</li>
+<li><strong>Connaître</strong> les innovations thérapeutiques : immunothérapie préventive du DT1 (teplizumab), greffe d'îlots pancréatiques, cellules souches, pancréas bio-artificiel, édition génomique</li>
+<li><strong>Organiser</strong> le parcours de soins du patient diabétique : suivi annuel structuré, coordination des intervenants, télémédecine, éducation thérapeutique, accompagnement psychologique</li>
+</ol>
+<hr />
+<h1 id="2-public-cible-et-prerequis">2. PUBLIC CIBLE ET PRÉREQUIS</h1>
+<h2 id="21-public-cible">2.1 Public cible</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Public</th>
+<th>Modules obligatoires</th>
+<th>Modules optionnels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveau 1 — Fondamental</strong></td>
+<td>Internes en médecine, médecins généralistes en formation, IDE en diabétologie</td>
+<td>Modules 1-4, 9-10, 12-15, 22, 25-26</td>
+<td>Modules 5-8, 16-21, 27-40</td>
+</tr>
+<tr>
+<td><strong>Niveau 2 — Intermédiaire</strong></td>
+<td>Médecins généralistes installés, internes DES endocrinologie, résidents</td>
+<td>Modules 1-29, 34-35</td>
+<td>Modules 30-33, 36-40</td>
+</tr>
+<tr>
+<td><strong>Niveau 3 — Expert</strong></td>
+<td>Diabétologues-endocrinologues, médecins internistes, chercheurs, enseignants</td>
+<td>Modules 1-40 (intégralité)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-prerequis">2.2 Prérequis</h2>
+<ul>
+<li>Diplôme de médecine (ou en cours d'obtention) — ou diplôme d'IDE spécialisée en diabétologie</li>
+<li>Connaissances de base en biochimie et physiologie (souhaitées — les Modules 1-4 reprennent les fondamentaux)</li>
+<li>Connaissances de base en pharmacologie (souhaitées — les modules de traitement sont progressifs)</li>
+<li>Formation VERTEX© Obésité-Orthopédie recommandée en complément (liens croisés : modules obésité/syndrome métabolique/DT2)</li>
+</ul>
+<hr />
+<h1 id="3-architecture-pedagogique-globale">3. ARCHITECTURE PÉDAGOGIQUE GLOBALE</h1>
+<h2 id="31-organisation-en-12-parties-40-modules">3.1 Organisation en 12 parties — 40 modules</h2>
+<pre><code>FORMATION DIABÉTOLOGIE COMPLÈTE
+│
+├── PARTIE I — FONDAMENTAUX : EMBRYOLOGIE, ANATOMIE ET PHYSIOLOGIE (Modules 1-4)
+│   ├── Module 1  : Embryologie du pancréas — Organogenèse, différenciation cellulaire, îlots de Langerhans
+│   ├── Module 2  : Anatomie du pancréas endocrine — Macro/microanatomie, vascularisation, innervation
+│   ├── Module 3  : Physiologie de la sécrétion d'insuline et du glucagon — Couplage stimulus-sécrétion, incrétines
+│   └── Module 4  : Métabolisme glucidique intégré — Foie, muscle, tissu adipeux, cerveau, transporteurs GLUT
+│
+├── PARTIE II — PHYSIOPATHOLOGIE DU DIABÈTE (Modules 5-8)
+│   ├── Module 5  : Diabète de type 1 — Auto-immunité, destruction β-cellulaire, stades pré-cliniques, histoire naturelle
+│   ├── Module 6  : Diabète de type 2 — Insulinorésistance, dysfonction β-cellulaire, glucotoxicité, lipotoxicité
+│   ├── Module 7  : Diabètes spécifiques — MODY, LADA, mitochondrial, pancréatique (3c), médicamenteux, génétiques rares
+│   └── Module 8  : Diabète gestationnel — Physiopathologie, dépistage IADPSG, prise en charge, conséquences fœto-maternelles
+│
+├── PARTIE III — DIAGNOSTIC ET DÉPISTAGE (Modules 9-11)
+│   ├── Module 9  : Diagnostic du diabète — Critères OMS/ADA/HAS, glycémie à jeun, HGPO, HbA1c, pièges diagnostiques
+│   ├── Module 10 : Dépistage et prédiabète — Populations cibles, outils, stratégies, IFG, IGT, prévention du DT2
+│   └── Module 11 : Explorations biologiques spécialisées — Auto-anticorps, peptide C, HLA, génétique MODY, profil lipidique
+│
+├── PARTIE IV — CLINIQUE ET FORMES DU DIABÈTE (Modules 12-15)
+│   ├── Module 12 : Présentation clinique du DT1 — Signes cardinaux, acidocétose inaugurale, formes de l'enfant et de l'adulte
+│   ├── Module 13 : Présentation clinique du DT2 — Découverte fortuite, syndrome métabolique, acanthosis nigricans
+│   ├── Module 14 : Complications aiguës — Acidocétose, syndrome hyperosmolaire, hypoglycémie sévère, acidose lactique
+│   └── Module 15 : Formes cliniques particulières — Diabète du sujet âgé, de l'enfant/adolescent, du migrant, du patient psychiatrique
+│
+├── PARTIE V — COMPLICATIONS CHRONIQUES MICROVASCULAIRES (Modules 16-18)
+│   ├── Module 16 : Rétinopathie diabétique — Physiopathologie, classification ETDRS, dépistage, OCT, anti-VEGF, laser
+│   ├── Module 17 : Néphropathie diabétique — Microalbuminurie → IRC, classification KDIGO, néphroprotection (iSGLT2, finérénone)
+│   └── Module 18 : Neuropathie diabétique — Polyneuropathie sensitivomotrice, dysautonomie cardiaque/digestive/vésicale, douleur neuropathique
+│
+├── PARTIE VI — COMPLICATIONS CHRONIQUES MACROVASCULAIRES ET AUTRES (Modules 19-21)
+│   ├── Module 19 : Complications cardiovasculaires — Coronaropathie silencieuse, AVC, AOMI, cardiopathie diabétique, IC
+│   ├── Module 20 : Pied diabétique — Physiopathologie, gradation IWGDF, décharge, soins locaux, revascularisation, amputation
+│   └── Module 21 : Autres complications — NASH/MAFLD, infections, dermatologie, ostéoarticulaire, dysfonction érectile, santé buccodentaire
+│
+├── PARTIE VII — TRAITEMENT DU DIABÈTE DE TYPE 1 (Modules 22-24)
+│   ├── Module 22 : Insulinothérapie du DT1 — Pharmacologie des insulines, schémas basal-bolus, ajustement des doses
+│   ├── Module 23 : Technologies du diabète — Pompes à insuline, CGM, boucles fermées, pancréas artificiel
+│   └── Module 24 : Éducation thérapeutique et autosurveillance — IF, ratio I/G, facteur de sensibilité, gestion des hypo/hyper
+│
+├── PARTIE VIII — TRAITEMENT DU DIABÈTE DE TYPE 2 (Modules 25-29)
+│   ├── Module 25 : Mesures hygiéno-diététiques — Nutrition thérapeutique, activité physique adaptée, sevrage tabagique
+│   ├── Module 26 : Antidiabétiques oraux classiques — Metformine, sulfamides, glinides, inhibiteurs α-glucosidase, glitazones
+│   ├── Module 27 : Nouvelles classes thérapeutiques — Agonistes GLP-1, iSGLT2, iDPP-4, double/triple agonistes
+│   ├── Module 28 : Insulinothérapie dans le DT2 — Indications, instauration, titration, schémas, intensification, désescalade
+│   └── Module 29 : Stratégie thérapeutique globale — Algorithmes HAS/ADA-EASD, personnalisation, objectifs glycémiques individualisés
+│
+├── PARTIE IX — SITUATIONS PARTICULIÈRES (Modules 30-33)
+│   ├── Module 30 : Diabète et grossesse — Programmation préconceptionnelle, suivi, accouchement, post-partum, allaitement
+│   ├── Module 31 : Diabète et chirurgie — Gestion périopératoire, protocoles insuliniques, chirurgie bariatrique et rémission du DT2
+│   ├── Module 32 : Diabète en situation aiguë — Réanimation, corticothérapie, infections sévères, nutrition artificielle
+│   └── Module 33 : Diabète et exercice physique — Physiologie à l'effort, adaptation du traitement, sport de compétition
+│
+├── PARTIE X — RISQUE CARDIOVASCULAIRE ET PROTECTION D'ORGANE (Modules 34-35)
+│   ├── Module 34 : Dyslipidémie et HTA chez le diabétique — Objectifs LDL, statines, ézétimibe, iPCSK9, antihypertenseurs
+│   └── Module 35 : Risque CV global et protection cardiorespiratoire — Scores, prévention, anti-agrégation, bénéfices CV des iSGLT2/aGLP-1
+│
+├── PARTIE XI — INNOVATIONS ET PERSPECTIVES (Modules 36-38)
+│   ├── Module 36 : Immunothérapie et prévention du DT1 — Teplizumab, essais cliniques, screening génétique/immunologique
+│   ├── Module 37 : Thérapie cellulaire et médecine régénérative — Greffe d'îlots, cellules souches, encapsulation, édition génomique
+│   └── Module 38 : Intelligence artificielle et médecine de précision — Algorithmes prédictifs, phénotypage, pharmacogénomique
+│
+└── PARTIE XII — ORGANISATION DES SOINS ET ÉDUCATION (Modules 39-40)
+    ├── Module 39 : Parcours de soins du patient diabétique — ALD, réseau, télémédecine, télésurveillance, coordination
+    └── Module 40 : Éducation thérapeutique structurée — Programmes ETP, entretien motivationnel, accompagnement psychologique, empowerment
+</code></pre>
+<h2 id="32-structure-standardisee-de-chaque-module">3.2 Structure standardisée de chaque module</h2>
+<p>Chaque module suit le <strong>même format</strong> que les autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>) :</p>
+<ol>
+<li><strong>En-tête</strong> : titre, partie, durée, niveau, prérequis</li>
+<li><strong>Accroche clinique</strong> : vignette patient ou mise en situation réelle (3-5 lignes)</li>
+<li><strong>Objectifs d'apprentissage</strong> : 3-7 objectifs formulés avec un verbe d'action (taxonomie de Bloom)</li>
+<li><strong>Sections de contenu</strong> : 3-6 sections principales</li>
+<li><strong>Points clés</strong> : 5-8 messages essentiels</li>
+<li><strong>Auto-évaluation</strong> : 8-15 questions (QCM, QROC, cas clinique court) — <strong>densité maximale de quiz</strong></li>
+<li><strong>Références bibliographiques</strong> : sources vérifiables</li>
+</ol>
+<h2 id="33-parcours-praticien-deblocage-sequentiel">3.3 Parcours praticien — Déblocage séquentiel</h2>
+<pre><code>Module 1 → Module 2 → Module 3 → Module 4
+                                      ↓
+          Module 5 → Module 6 → Module 7 → Module 8
+                                               ↓
+               Module 9 → Module 10 → Module 11
+                                          ↓
+          Module 12 → Module 13 → Module 14 → Module 15
+                                                  ↓
+               Module 16 → Module 17 → Module 18
+                                           ↓
+               Module 19 → Module 20 → Module 21
+                                           ↓
+               Module 22 → Module 23 → Module 24
+                                           ↓
+          Module 25 → Module 26 → Module 27 → Module 28 → Module 29
+                                                              ↓
+               Module 30 → Module 31 → Module 32 → Module 33
+                                                        ↓
+                         Module 34 → Module 35
+                                        ↓
+               Module 36 → Module 37 → Module 38
+                                           ↓
+                    Module 39 → Module 40
+</code></pre>
+<ul>
+<li>Score ≥ 70% requis pour passer au module suivant</li>
+<li>2 tentatives autorisées par quiz</li>
+<li>Feedback immédiat avec explication et référence bibliographique</li>
+</ul>
+<h2 id="34-systeme-de-quiz-difficulte-progressive-et-densite-maximale">3.4 Système de quiz — Difficulté progressive et densité maximale</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Icône</th>
+<th>Type de question</th>
+<th>% du quiz</th>
+<th>Nb questions/module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bronze</strong></td>
+<td>🥉</td>
+<td>Connaissance pure (rappel, définitions, valeurs seuils)</td>
+<td>25%</td>
+<td>2-4</td>
+</tr>
+<tr>
+<td><strong>Argent</strong></td>
+<td>🥈</td>
+<td>Compréhension et application (cas simples, calculs, prescriptions)</td>
+<td>30%</td>
+<td>3-5</td>
+</tr>
+<tr>
+<td><strong>Or</strong></td>
+<td>🥇</td>
+<td>Analyse et raisonnement clinique (cas complexes, diagnostic différentiel)</td>
+<td>30%</td>
+<td>3-4</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>💎</td>
+<td>Synthèse et décision thérapeutique multi-facteurs (situations rares, controverses)</td>
+<td>15%</td>
+<td>1-2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exigence spécifique Diabétologie</strong> : chaque module comporte <strong>10-15 questions d'auto-évaluation</strong> (vs 5-10 dans les autres formations), incluant obligatoirement :<br />
+- 3-5 QCM classiques (4-5 options, feedback immédiat pour chaque option)<br />
+- 2-3 cas cliniques courts avec questions enchaînées<br />
+- 1-2 exercices de calcul (dose d'insuline, ratio I/G, estimation DFG, objectif LDL)<br />
+- 1-2 questions de prescription (ordonnance type, bilan annuel)<br />
+- 1 question de synthèse ouverte</p>
+<hr />
+<h1 id="4-charte-graphique-unifiee-plateforme-vertex">4. CHARTE GRAPHIQUE UNIFIÉE — PLATEFORME VERTEX©</h1>
+<h2 id="41-identite-visuelle-de-la-plateforme">4.1 Identité visuelle de la plateforme</h2>
+<p>La plateforme VERTEX© repose sur une identité visuelle <strong>commune</strong> à toutes les formations, garantissant la cohérence et la reconnaissance de marque.</p>
+<h3 id="411-typographie-identique-aux-autres-formations">4.1.1 Typographie (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Police</th>
+<th>Poids</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titres de partie (H1)</strong></td>
+<td>Montserrat</td>
+<td>Bold (700)</td>
+<td>32-36px</td>
+</tr>
+<tr>
+<td><strong>Titres de module (H2)</strong></td>
+<td>Montserrat</td>
+<td>SemiBold (600)</td>
+<td>26-30px</td>
+</tr>
+<tr>
+<td><strong>Titres de section (H3)</strong></td>
+<td>Montserrat</td>
+<td>Medium (500)</td>
+<td>22-24px</td>
+</tr>
+<tr>
+<td><strong>Sous-sections (H4)</strong></td>
+<td>Open Sans</td>
+<td>SemiBold (600)</td>
+<td>18-20px</td>
+</tr>
+<tr>
+<td><strong>Corps de texte</strong></td>
+<td>Open Sans</td>
+<td>Regular (400)</td>
+<td>16px, line-height 1.6</td>
+</tr>
+<tr>
+<td><strong>Légendes / notes</strong></td>
+<td>Open Sans</td>
+<td>Light (300)</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><strong>Code / formules</strong></td>
+<td>JetBrains Mono</td>
+<td>Regular</td>
+<td>14px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="412-mise-en-page-identique-aux-autres-formations">4.1.2 Mise en page (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Spécification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Largeur max contenu</strong></td>
+<td>900px (centré)</td>
+</tr>
+<tr>
+<td><strong>Marges latérales</strong></td>
+<td>60px minimum (responsive)</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-sections</strong></td>
+<td>48px</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-paragraphes</strong></td>
+<td>24px</td>
+</tr>
+<tr>
+<td><strong>Bordures d'encadrés</strong></td>
+<td>3px solid, border-radius 8px</td>
+</tr>
+<tr>
+<td><strong>Ombres</strong></td>
+<td>box-shadow: 0 2px 8px rgba(0,0,0,0.08)</td>
+</tr>
+<tr>
+<td><strong>Coins arrondis</strong></td>
+<td>8px (encadrés), 12px (cartes), 50% (avatars)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="413-iconographie-identique-aux-autres-formations-specifique">4.1.3 Iconographie (identique aux autres formations + spécifique)</h3>
+<table>
+<thead>
+<tr>
+<th>Icône</th>
+<th>Usage</th>
+<th>Emoji / SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td>Pertinence clinique</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td>Danger / Critique</td>
+<td>Rouge</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Approfondissement</td>
+<td>Bleu</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>Astuce / Mnémonique</td>
+<td>Vert clair</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td>Expert</td>
+<td>Violet</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td>Réflexion</td>
+<td>Jaune</td>
+</tr>
+<tr>
+<td>🧊</td>
+<td>Modèle 3D</td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td>📐</td>
+<td>Schéma</td>
+<td>Gris-bleu</td>
+</tr>
+<tr>
+<td>🎬</td>
+<td>Animation / Vidéo</td>
+<td>Rouge-orange</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Infographie</td>
+<td>Vert</td>
+</tr>
+<tr>
+<td>📷</td>
+<td>Photo clinique</td>
+<td>Gris</td>
+</tr>
+<tr>
+<td>🩸</td>
+<td>Glycémie / Biologie (spécifique DIAB)</td>
+<td>Rouge sang</td>
+</tr>
+<tr>
+<td>💉</td>
+<td>Insuline / Injection (spécifique DIAB)</td>
+<td>Bleu clair</td>
+</tr>
+<tr>
+<td>📱</td>
+<td>Technologie / CGM / App (spécifique DIAB)</td>
+<td>Teal</td>
+</tr>
+<tr>
+<td>🧬</td>
+<td>Génétique / Auto-immunité (spécifique DIAB)</td>
+<td>Violet ADN</td>
+</tr>
+<tr>
+<td>🍽️</td>
+<td>Nutrition / Diététique (partagé OBO)</td>
+<td>Vert olive</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-code-couleur-formation-diabetologie">5. CODE COULEUR — FORMATION DIABÉTOLOGIE</h1>
+<h2 id="51-palette-principale-formation-diabetologie">5.1 Palette principale — Formation Diabétologie 🔶</h2>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Bleu pétrole (Métabolique/Endocrine)</td>
+<td><code>#1A5276</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Bleu turquoise</td>
+<td><code>#148F77</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Bleu-vert clair</td>
+<td><code>#76D7C4</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé</td>
+<td><code>#FAFBFC</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Bleu-vert très pâle</td>
+<td><code>#E8F8F5</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+<tr>
+<td><strong>Succès</strong></td>
+<td>Vert médical</td>
+<td><code>#27AE60</code></td>
+<td>Validations, scores positifs (commun)</td>
+</tr>
+<tr>
+<td><strong>Alerte</strong></td>
+<td>Orange glycémie haute</td>
+<td><code>#E67E22</code></td>
+<td>Alertes hyperglycémie, complications</td>
+</tr>
+<tr>
+<td><strong>Danger</strong></td>
+<td>Rouge hypoglycémie</td>
+<td><code>#E74C3C</code></td>
+<td>Alertes hypoglycémie, urgences</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Justification du bleu pétrole</strong> : Le bleu pétrole évoque la profondeur métabolique et endocrinienne de la diabétologie, la rigueur du contrôle glycémique. Il se distingue clairement du bleu cobalt (Scoliose 🔵), du vert (PTG 🟢), du rouge bordeaux (IOA 🟤), du gris-bleu acier (Tendinites 🩶) et du violet foncé (Obésité 🟣), permettant une identification instantanée de la formation.</p>
+</blockquote>
+<h3 id="elements-communs-partages-entre-toutes-les-formations">Éléments communs (partagés entre toutes les formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Texte principal</strong></td>
+<td>Noir doux</td>
+<td><code>#2C3E50</code></td>
+<td>Corps de texte, toutes formations</td>
+</tr>
+<tr>
+<td><strong>Texte secondaire</strong></td>
+<td>Gris moyen</td>
+<td><code>#7F8C8D</code></td>
+<td>Légendes, métadonnées</td>
+</tr>
+<tr>
+<td><strong>Fond neutre</strong></td>
+<td>Gris très clair</td>
+<td><code>#F7F9F9</code></td>
+<td>Fond de tableaux alternés</td>
+</tr>
+<tr>
+<td><strong>Bordures</strong></td>
+<td>Gris clair</td>
+<td><code>#D5D8DC</code></td>
+<td>Séparateurs, bordures de tableaux</td>
+</tr>
+<tr>
+<td><strong>Or (réussite)</strong></td>
+<td>Or</td>
+<td><code>#F39C12</code></td>
+<td>Badges, certificats</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>Bleu diamant</td>
+<td><code>#3498DB</code></td>
+<td>Niveau diamant quiz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-hierarchie-typographique-coloree-formation-diabetologie">5.2 Hiérarchie typographique colorée — Formation Diabétologie 🔶</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Style</th>
+<th>Couleur</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H1 — Titre de partie</strong></td>
+<td>Montserrat Bold 34px, MAJUSCULES</td>
+<td><code>#1A5276</code> bleu pétrole</td>
+<td>PARTIE I — FONDAMENTAUX : EMBRYOLOGIE, ANATOMIE ET PHYSIOLOGIE</td>
+</tr>
+<tr>
+<td><strong>H2 — Titre de module</strong></td>
+<td>Montserrat SemiBold 28px</td>
+<td><code>#1A5276</code> bleu pétrole</td>
+<td>MODULE 3 : PHYSIOLOGIE DE LA SÉCRÉTION D'INSULINE</td>
+</tr>
+<tr>
+<td><strong>H3 — Titre de section</strong></td>
+<td>Montserrat Medium 22px</td>
+<td><code>#148F77</code> turquoise</td>
+<td>3.2 Axe entéro-insulaire et effet incrétine</td>
+</tr>
+<tr>
+<td><strong>H4 — Sous-section</strong></td>
+<td>Open Sans SemiBold 18px</td>
+<td><code>#2C3E50</code> noir doux</td>
+<td>Rôle du GLP-1 dans la potentialisation de la sécrétion d'insuline</td>
+</tr>
+<tr>
+<td><strong>Bandeau latéral</strong></td>
+<td>—</td>
+<td><code>#1A5276</code> fond, texte blanc</td>
+<td>Navigation module</td>
+</tr>
+<tr>
+<td><strong>Badge formation</strong></td>
+<td>Pill 24px</td>
+<td><code>#1A5276</code> fond, blanc</td>
+<td>🔶 DIABÉTOLOGIE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-encadres-code-couleur-partage-identique-aux-autres-formations-specifiques">5.3 Encadrés — Code couleur partagé (identique aux autres formations + spécifiques)</h2>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Nom</th>
+<th>Bordure gauche</th>
+<th>Fond</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td><strong>Pertinence clinique</strong></td>
+<td><code>#E67E22</code> orange</td>
+<td><code>#FDF2E9</code></td>
+<td>Lien concept → pratique clinique</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td><strong>Danger / Critique</strong></td>
+<td><code>#E74C3C</code> rouge</td>
+<td><code>#FDEDEC</code></td>
+<td>Risque vital, erreur dangereuse (hypo sévère, acidocétose)</td>
+</tr>
+<tr>
+<td>📖</td>
+<td><strong>Approfondissement</strong></td>
+<td><code>#3498DB</code> bleu</td>
+<td><code>#EBF5FB</code></td>
+<td>Mécanisme, recherche, biochimie</td>
+</tr>
+<tr>
+<td>💡</td>
+<td><strong>Astuce / Mnémonique</strong></td>
+<td><code>#2ECC71</code> vert</td>
+<td><code>#EAFAF1</code></td>
+<td>Aide-mémoire, truc de praticien</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td><strong>Expert</strong></td>
+<td><code>#9B59B6</code> violet</td>
+<td><code>#F4ECF7</code></td>
+<td>Détail avancé, technique fine</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td><strong>Réflexion</strong></td>
+<td><code>#F1C40F</code> jaune</td>
+<td><code>#FEF9E7</code></td>
+<td>Question ouverte, problème</td>
+</tr>
+<tr>
+<td>🩸</td>
+<td><strong>Focus glycémique</strong> (nouveau)</td>
+<td><code>#C0392B</code> rouge sang</td>
+<td><code>#FDEDEC</code></td>
+<td>Objectifs glycémiques, profils CGM, temps dans la cible</td>
+</tr>
+<tr>
+<td>💉</td>
+<td><strong>Focus insuline</strong> (nouveau)</td>
+<td><code>#2980B9</code> bleu clair</td>
+<td><code>#EBF5FB</code></td>
+<td>Schémas insuliniques, ajustement de doses, pharmacocinétique</td>
+</tr>
+<tr>
+<td>📱</td>
+<td><strong>Focus technologie</strong> (nouveau)</td>
+<td><code>#17A589</code> teal</td>
+<td><code>#E8F8F5</code></td>
+<td>CGM, pompes, boucles fermées, applications</td>
+</tr>
+<tr>
+<td>🧬</td>
+<td><strong>Focus génétique/immunologie</strong> (nouveau)</td>
+<td><code>#8E44AD</code> violet</td>
+<td><code>#F4ECF7</code></td>
+<td>Auto-anticorps, HLA, MODY, thérapie cellulaire</td>
+</tr>
+</tbody>
+</table>
+<h2 id="54-sidebar-de-navigation-formation-diabetologie">5.4 Sidebar de navigation — Formation Diabétologie 🔶</h2>
+<pre><code>┌──────────────────────────────┐
+│  🔶 DIABÉTOLOGIE              │  ← Fond #1A5276, texte blanc
+│  ────────────────────────────│
+│  PARTIE I — FONDAMENTAUX     │  ← Texte #76D7C4
+│   ▸ M1 Embryologie pancréas  │  ← Texte blanc
+│   ▸ M2 Anatomie endocrine    │
+│   ▸ M3 Physiologie insuline  │
+│   ▸ M4 Métabolisme glucidique│
+│  PARTIE II — PHYSIOPATHOLOGIE│
+│   ▸ M5 DT1 auto-immunité     │
+│   ▸ M6 DT2 insulinorésistance│
+│   ▸ M7 Diabètes spécifiques  │
+│   ▸ M8 Diabète gestationnel   │
+│  PARTIE III — DIAGNOSTIC     │
+│   ▸ M9 Critères diagnostiques│
+│   ▸ M10 Dépistage/prédiabète │
+│   ▸ M11 Explorations bio     │
+│  PARTIE IV — CLINIQUE        │
+│   ▸ M12 Clinique DT1         │
+│   ▸ M13 Clinique DT2         │
+│   ▸ M14 Complications aiguës │
+│   ► M15 Formes particulières │  ← Module actif : fond #148F77
+│  PARTIE V — MICROVASCULAIRE  │
+│   ▸ M16 Rétinopathie         │
+│   ▸ M17 Néphropathie         │
+│   ▸ M18 Neuropathie          │
+│  PARTIE VI — MACROVASCULAIRE │
+│   ▸ M19 Cardiovasculaire     │
+│   ▸ M20 Pied diabétique      │
+│   ▸ M21 Autres complications │
+│  PARTIE VII — TTT DT1       │
+│   ▸ M22 Insulinothérapie DT1 │
+│   ▸ M23 Technologies         │
+│   ▸ M24 ETP/autosurveillance │
+│  PARTIE VIII — TTT DT2      │
+│   ▸ M25 MHD                  │
+│   ▸ M26 ADO classiques       │
+│   ▸ M27 Nouvelles classes    │
+│   ▸ M28 Insuline DT2         │
+│   ▸ M29 Stratégie globale    │
+│  PARTIE IX — SITUATIONS      │
+│   ▸ M30 Grossesse            │
+│   ▸ M31 Chirurgie            │
+│   ▸ M32 Réanimation          │
+│   ▸ M33 Sport                │
+│  PARTIE X — RISQUE CV       │
+│   ▸ M34 Dyslipidémie/HTA    │
+│   ▸ M35 Prévention CV        │
+│  PARTIE XI — INNOVATIONS    │
+│   ▸ M36 Immunothérapie DT1   │
+│   ▸ M37 Thérapie cellulaire  │
+│   ▸ M38 IA/Précision         │
+│  PARTIE XII — ORGANISATION  │
+│   ▸ M39 Parcours de soins    │
+│   ▸ M40 ETP structurée       │
+└──────────────────────────────┘
+</code></pre>
+<hr />
+<h1 id="6-regles-decriture-du-contenu">6. RÈGLES D'ÉCRITURE DU CONTENU</h1>
+<p>Les règles d'écriture sont <strong>identiques</strong> à celles des autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>). Voici un résumé des principes fondamentaux, adaptés au contexte Diabétologie :</p>
+<h2 id="61-principes-inchanges">6.1 Principes inchangés</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Règle</th>
+<th>Applicable DIAB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Jamais de fait sans explication (mécanisme + conséquence clinique)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chaînes de raisonnement obligatoires (physiopathologie → biochimie → clinique → traitement)</td>
+<td>✅ Adapté</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Controverses et niveaux de preuve (📊, ⚖️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Trois niveaux de profondeur (Essentiel / Approfondi / Expert)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Minimum 2 vignettes cliniques par module</td>
+<td>✅ Renforcé → <strong>minimum 3</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Minimum 1 question de réflexion par section (🤔)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Minimum 1 micro-exercice par section (✏️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Minimum 3 mnémoniques par module (💡)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Minimum 1 exercice DiabSim© par module (si applicable)</td>
+<td>✅ Adapté (VERTEX → DiabSim)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1 encadré pour 500 mots minimum</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Format des marqueurs médias : <code>&gt; [MEDIA: {EMOJI} {CODE} — {TITRE} ({INSTRUCTION})]</code></td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vouvoiement systématique</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Formulations interdites</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>14</td>
+<td>≥ 300 mots par sous-section</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Auto-évaluation renforcée : 10-15 questions par module</strong></td>
+<td>✅ <strong>Nouveau — spécifique DIAB</strong></td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>Cas cliniques progressifs obligatoires couvrant tous les chapitres</strong></td>
+<td>✅ <strong>Nouveau — spécifique DIAB</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>**</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Originalité et propriété intellectuelle</strong> : Les règles d'originalité du contenu et de prévention du plagiat définies à la **section 13 de `REGLES_ECRITURE_CONTENU.md`** s'appliquent intégralement à cette formation.</div>
+
+<h2 id="62-adaptations-specifiques-diabetologie">6.2 Adaptations spécifiques Diabétologie</h2>
+<table>
+<thead>
+<tr>
+<th>Adaptation</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simulateur</strong></td>
+<td>DiabSim© au lieu de SpineSim©, KneeSim©, InfectoSim©, TendonSim© ou ObesSim©. Scénarios : cinétique glycémique (simulation glucose-insuline sur 24h), ajustement de doses d'insuline (basal-bolus, pompe), simulation de l'effet des repas et de l'exercice sur la glycémie, scénarios de complications aiguës (acidocétose, hypoglycémie), simulation pharmacocinétique des ADO et injectables, calcul de risque CV personnalisé</td>
+</tr>
+<tr>
+<td><strong>Patient fil rouge</strong></td>
+<td>Un patient fil rouge par partie — parcours complet d'un patient DT1 (de la découverte à l'autonomie avec boucle fermée) ET d'un patient DT2 (de la découverte au traitement injectable en passant par les complications)</td>
+</tr>
+<tr>
+<td><strong>Particularité métabolique</strong></td>
+<td>Intégrer systématiquement les données de glycémie (valeurs, profils CGM, temps dans la cible) à chaque module clinique et thérapeutique</td>
+</tr>
+<tr>
+<td><strong>Particularité multidisciplinaire</strong></td>
+<td>Chaque module de complications DOIT mentionner le rôle du spécialiste d'organe (ophtalmologue, néphrologue, cardiologue, neurologue, podologue)</td>
+</tr>
+<tr>
+<td><strong>Densité de quiz</strong></td>
+<td><strong>10-15 questions par module</strong> avec cas cliniques enchaînés, calculs de doses, ordonnances types — la formation Diabétologie vise un entraînement maximal</td>
+</tr>
+<tr>
+<td><strong>Données de la littérature</strong></td>
+<td>Études princeps obligatoires : DCCT/EDIC (DT1), UKPDS (DT2), ADVANCE, ACCORD, EMPA-REG OUTCOME, LEADER, DAPA-HF/CKD, CREDENCE, SUSTAIN, SURPASS, STENO-2, VADT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-marqueurs-medias-codification-diabetologie">6.3 Marqueurs médias — Codification Diabétologie</h2>
+<pre><code>&gt; [MEDIA: {EMOJI} MDIAB{module}-S{section}-{numéro} — {TITRE} ({INSTRUCTION_PÉDAGOGIQUE})]
+</code></pre>
+<ul>
+<li>Préfixe <strong>MDIAB</strong> pour distinguer des médias des autres formations (M, MPTG, MIOA, MTEND, MOBO)</li>
+<li>Exemple : <code>MDIAB03-S02-005</code> = Formation DIAB, Module 3, Section 2, 5ème média</li>
+</ul>
+<hr />
+<h1 id="7-structure-des-fichiers-du-cdc">7. STRUCTURE DES FICHIERS DU CDC</h1>
+<p>Le présent cahier des charges est organisé en <strong>12 fichiers</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fichier</th>
+<th>Contenu</th>
+<th>Modules couverts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>CDC_DIAB_00_INTRODUCTION_CHARTE.md</code></td>
+<td>Introduction, charte graphique, code couleur, règles d'écriture</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>CDC_DIAB_01_FONDAMENTAUX.md</code></td>
+<td>Embryologie, anatomie, physiologie, métabolisme glucidique</td>
+<td>Modules 1-4</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>CDC_DIAB_02_PHYSIOPATHOLOGIE.md</code></td>
+<td>DT1, DT2, diabètes spécifiques, gestationnel</td>
+<td>Modules 5-8</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>CDC_DIAB_03_DIAGNOSTIC_DEPISTAGE.md</code></td>
+<td>Diagnostic, dépistage, prédiabète, explorations biologiques</td>
+<td>Modules 9-11</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>CDC_DIAB_04_CLINIQUE_FORMES.md</code></td>
+<td>Clinique DT1/DT2, complications aiguës, formes particulières</td>
+<td>Modules 12-15</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>CDC_DIAB_05_COMPLICATIONS_MICROVASCULAIRES.md</code></td>
+<td>Rétinopathie, néphropathie, neuropathie</td>
+<td>Modules 16-18</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>CDC_DIAB_06_COMPLICATIONS_MACROVASCULAIRES.md</code></td>
+<td>Cardiovasculaire, pied diabétique, autres complications</td>
+<td>Modules 19-21</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>CDC_DIAB_07_TRAITEMENT_DT1.md</code></td>
+<td>Insulinothérapie, technologies, éducation thérapeutique</td>
+<td>Modules 22-24</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>CDC_DIAB_08_TRAITEMENT_DT2.md</code></td>
+<td>MHD, ADO, injectables, insuline DT2, stratégie globale</td>
+<td>Modules 25-29</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>CDC_DIAB_09_SITUATIONS_PARTICULIERES.md</code></td>
+<td>Grossesse, chirurgie, réanimation, sport</td>
+<td>Modules 30-33</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>CDC_DIAB_10_RISQUE_CV_INNOVATIONS.md</code></td>
+<td>Risque CV, immunothérapie, thérapie cellulaire, IA</td>
+<td>Modules 34-38</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>CDC_DIAB_11_ORGANISATION_EDUCATION.md</code></td>
+<td>Parcours de soins, ETP structurée</td>
+<td>Modules 39-40</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="8-correspondance-inter-formations">8. CORRESPONDANCE INTER-FORMATIONS</h1>
+<h2 id="81-modules-partages-transversaux">8.1 Modules partagés / transversaux</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formation Scoliose</th>
+<th>Formation PTG</th>
+<th>Formation IOA</th>
+<th>Formation Tendinites</th>
+<th>Formation OBO</th>
+<th>Formation DIAB</th>
+<th>Type de partage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syndrome métabolique</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 3-4</td>
+<td>Module 6</td>
+<td>Contenu partagé, angle DT2</td>
+</tr>
+<tr>
+<td>Obésité et DT2</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 1-9</td>
+<td>Modules 6, 25, 31</td>
+<td>Renvoi croisé OBO ↔ DIAB</td>
+</tr>
+<tr>
+<td>Chirurgie bariatrique</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 9</td>
+<td>Module 31</td>
+<td>OBO = technique, DIAB = rémission DT2</td>
+</tr>
+<tr>
+<td>Infection (pied diabétique)</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 18-21</td>
+<td>—</td>
+<td>—</td>
+<td>Module 20</td>
+<td>Renvoi vers IOA pour ATB</td>
+</tr>
+<tr>
+<td>Neuropathie/pied</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 12</td>
+<td>Module 12</td>
+<td>Module 18, 20</td>
+<td>Spécificités diabétiques</td>
+</tr>
+<tr>
+<td>Risque CV périopératoire</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 20-21</td>
+<td>Module 31</td>
+<td>Renvoi croisé</td>
+</tr>
+<tr>
+<td>Rééducation/APA</td>
+<td>Module 18</td>
+<td>Module 27</td>
+<td>Module 27</td>
+<td>Modules 18, 22</td>
+<td>Module 22</td>
+<td>Modules 25, 33</td>
+<td>Spécificités diabète</td>
+</tr>
+<tr>
+<td>Insuffisance rénale</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 17</td>
+<td>Exclusif DIAB (néphropathie)</td>
+</tr>
+<tr>
+<td>Rétinopathie</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 16</td>
+<td>Exclusif DIAB</td>
+</tr>
+<tr>
+<td>Technologies CGM/pompe</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 23</td>
+<td>Exclusif DIAB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="82-simulation-diabsim-vs-autres-simulateurs">8.2 Simulation DiabSim© vs autres simulateurs</h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>SpineSim©</th>
+<th>KneeSim©</th>
+<th>InfectoSim©</th>
+<th>TendonSim©</th>
+<th>ObesSim©</th>
+<th>DiabSim©</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Focus principal</strong></td>
+<td>Biomécanique rachis</td>
+<td>Cinématique genou</td>
+<td>Infection, biofilm</td>
+<td>Charge tendineuse</td>
+<td>Surcharge pondérale</td>
+<td>Métabolisme glucidique</td>
+</tr>
+<tr>
+<td><strong>Simulation unique</strong></td>
+<td>Croissance, correction</td>
+<td>Usure PE</td>
+<td>Cinétique ATB</td>
+<td>Courbe charge</td>
+<td>Forces selon IMC</td>
+<td>Cinétique glucose-insuline 24h</td>
+</tr>
+<tr>
+<td><strong>Scénarios spécifiques</strong></td>
+<td>Vis pédiculaires</td>
+<td>Coupes, équilibrage</td>
+<td>Choix ATB</td>
+<td>Rééducation</td>
+<td>Planification obèse</td>
+<td>Ajustement doses, hypo/hyper, acidocétose</td>
+</tr>
+<tr>
+<td><strong>Modèles</strong></td>
+<td>FEM poutre</td>
+<td>Cinématique</td>
+<td>Pharmacocinétique</td>
+<td>Biomécanique</td>
+<td>Bioméca + métabo</td>
+<td>Modèles compartimentaux glucose-insuline</td>
+</tr>
+<tr>
+<td><strong>Moteur</strong></td>
+<td>Julia + Three.js</td>
+<td>Même stack</td>
+<td>Même stack</td>
+<td>Même stack</td>
+<td>Même stack</td>
+<td>Même stack + modèles métaboliques (Bergman, Dalla Man)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="annexe-a-glossaire-des-abreviations-diabetologie">ANNEXE A — GLOSSAIRE DES ABRÉVIATIONS DIABÉTOLOGIE</h1>
+<table>
+<thead>
+<tr>
+<th>Abréviation</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DIAB</td>
+<td>Diabétologie</td>
+</tr>
+<tr>
+<td>DT1</td>
+<td>Diabète de Type 1</td>
+</tr>
+<tr>
+<td>DT2</td>
+<td>Diabète de Type 2</td>
+</tr>
+<tr>
+<td>DG</td>
+<td>Diabète Gestationnel</td>
+</tr>
+<tr>
+<td>MODY</td>
+<td><em>Maturity-Onset Diabetes of the Young</em></td>
+</tr>
+<tr>
+<td>LADA</td>
+<td><em>Latent Autoimmune Diabetes in Adults</em></td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>Hémoglobine glyquée</td>
+</tr>
+<tr>
+<td>GAJ</td>
+<td>Glycémie à jeun</td>
+</tr>
+<tr>
+<td>GPP</td>
+<td>Glycémie postprandiale</td>
+</tr>
+<tr>
+<td>HGPO</td>
+<td>Hyperglycémie Provoquée par voie Orale</td>
+</tr>
+<tr>
+<td>IFG</td>
+<td><em>Impaired Fasting Glucose</em> (hyperglycémie modérée à jeun)</td>
+</tr>
+<tr>
+<td>IGT</td>
+<td><em>Impaired Glucose Tolerance</em> (intolérance au glucose)</td>
+</tr>
+<tr>
+<td>Anti-GAD</td>
+<td>Anticorps anti-glutamate décarboxylase</td>
+</tr>
+<tr>
+<td>Anti-IA2</td>
+<td>Anticorps anti-tyrosine phosphatase</td>
+</tr>
+<tr>
+<td>Anti-ZnT8</td>
+<td>Anticorps anti-transporteur de zinc 8</td>
+</tr>
+<tr>
+<td>ICA</td>
+<td><em>Islet Cell Antibodies</em> (anticorps anti-îlots)</td>
+</tr>
+<tr>
+<td>HLA</td>
+<td><em>Human Leukocyte Antigen</em> (antigène leucocytaire humain)</td>
+</tr>
+<tr>
+<td>GLP-1</td>
+<td><em>Glucagon-Like Peptide-1</em></td>
+</tr>
+<tr>
+<td>GIP</td>
+<td><em>Glucose-dependent Insulinotropic Polypeptide</em></td>
+</tr>
+<tr>
+<td>DPP-4</td>
+<td>Dipeptidyl Peptidase-4</td>
+</tr>
+<tr>
+<td>SGLT2</td>
+<td><em>Sodium-Glucose Cotransporter 2</em></td>
+</tr>
+<tr>
+<td>iSGLT2</td>
+<td>Inhibiteur du SGLT2</td>
+</tr>
+<tr>
+<td>iDPP-4</td>
+<td>Inhibiteur de la DPP-4 (gliptine)</td>
+</tr>
+<tr>
+<td>aGLP-1</td>
+<td>Agoniste du récepteur du GLP-1</td>
+</tr>
+<tr>
+<td>iPCSK9</td>
+<td>Inhibiteur de la PCSK9</td>
+</tr>
+<tr>
+<td>KATP</td>
+<td>Canal potassique ATP-dépendant</td>
+</tr>
+<tr>
+<td>GLUT</td>
+<td><em>Glucose Transporter</em> (transporteur du glucose)</td>
+</tr>
+<tr>
+<td>IRS</td>
+<td><em>Insulin Receptor Substrate</em> (substrat du récepteur de l'insuline)</td>
+</tr>
+<tr>
+<td>PI3K</td>
+<td>Phosphatidylinositol 3-kinase</td>
+</tr>
+<tr>
+<td>AMPK</td>
+<td><em>AMP-activated Protein Kinase</em></td>
+</tr>
+<tr>
+<td>CGM</td>
+<td><em>Continuous Glucose Monitoring</em> (mesure continue du glucose)</td>
+</tr>
+<tr>
+<td>FGM</td>
+<td><em>Flash Glucose Monitoring</em> (mesure flash du glucose)</td>
+</tr>
+<tr>
+<td>CSII</td>
+<td><em>Continuous Subcutaneous Insulin Infusion</em> (pompe à insuline)</td>
+</tr>
+<tr>
+<td>MDI</td>
+<td><em>Multiple Daily Injections</em> (injections multiples)</td>
+</tr>
+<tr>
+<td>TIR</td>
+<td><em>Time In Range</em> (temps dans la cible, 70-180 mg/dL)</td>
+</tr>
+<tr>
+<td>TBR</td>
+<td><em>Time Below Range</em> (temps en hypoglycémie)</td>
+</tr>
+<tr>
+<td>TAR</td>
+<td><em>Time Above Range</em> (temps en hyperglycémie)</td>
+</tr>
+<tr>
+<td>GMI</td>
+<td><em>Glucose Management Indicator</em> (indicateur de gestion du glucose)</td>
+</tr>
+<tr>
+<td>AID</td>
+<td><em>Automated Insulin Delivery</em> (boucle fermée)</td>
+</tr>
+<tr>
+<td>I/G</td>
+<td>Ratio insuline/glucides</td>
+</tr>
+<tr>
+<td>FSI</td>
+<td>Facteur de Sensibilité à l'Insuline</td>
+</tr>
+<tr>
+<td>IF</td>
+<td>Insulinothérapie Fonctionnelle</td>
+</tr>
+<tr>
+<td>ACD</td>
+<td>Acidocétose Diabétique</td>
+</tr>
+<tr>
+<td>SHH</td>
+<td>Syndrome d'Hyperglycémie Hyperosmolaire</td>
+</tr>
+<tr>
+<td>RD</td>
+<td>Rétinopathie Diabétique</td>
+</tr>
+<tr>
+<td>RDNP</td>
+<td>Rétinopathie Diabétique Non Proliférante</td>
+</tr>
+<tr>
+<td>RDP</td>
+<td>Rétinopathie Diabétique Proliférante</td>
+</tr>
+<tr>
+<td>EMD</td>
+<td>Œdème Maculaire Diabétique</td>
+</tr>
+<tr>
+<td>ETDRS</td>
+<td><em>Early Treatment Diabetic Retinopathy Study</em></td>
+</tr>
+<tr>
+<td>OCT</td>
+<td>Tomographie par Cohérence Optique</td>
+</tr>
+<tr>
+<td>VEGF</td>
+<td><em>Vascular Endothelial Growth Factor</em></td>
+</tr>
+<tr>
+<td>ND</td>
+<td>Néphropathie Diabétique</td>
+</tr>
+<tr>
+<td>DFG</td>
+<td>Débit de Filtration Glomérulaire</td>
+</tr>
+<tr>
+<td>DFGe</td>
+<td>DFG estimé</td>
+</tr>
+<tr>
+<td>RAC</td>
+<td>Rapport Albumine/Créatinine (urinaire)</td>
+</tr>
+<tr>
+<td>KDIGO</td>
+<td><em>Kidney Disease: Improving Global Outcomes</em></td>
+</tr>
+<tr>
+<td>IRC</td>
+<td>Insuffisance Rénale Chronique</td>
+</tr>
+<tr>
+<td>IRT</td>
+<td>Insuffisance Rénale Terminale</td>
+</tr>
+<tr>
+<td>AOMI</td>
+<td>Artériopathie Oblitérante des Membres Inférieurs</td>
+</tr>
+<tr>
+<td>AVC</td>
+<td>Accident Vasculaire Cérébral</td>
+</tr>
+<tr>
+<td>IC</td>
+<td>Insuffisance Cardiaque</td>
+</tr>
+<tr>
+<td>ICFEr</td>
+<td>Insuffisance Cardiaque à Fraction d'Éjection réduite</td>
+</tr>
+<tr>
+<td>IWGDF</td>
+<td><em>International Working Group on the Diabetic Foot</em></td>
+</tr>
+<tr>
+<td>NASH</td>
+<td><em>Non-Alcoholic Steatohepatitis</em> (stéatohépatite non alcoolique)</td>
+</tr>
+<tr>
+<td>MAFLD</td>
+<td><em>Metabolic-Associated Fatty Liver Disease</em></td>
+</tr>
+<tr>
+<td>MASLD</td>
+<td><em>Metabolic-dysfunction Associated Steatotic Liver Disease</em></td>
+</tr>
+<tr>
+<td>ETP</td>
+<td>Éducation Thérapeutique du Patient</td>
+</tr>
+<tr>
+<td>ALD</td>
+<td>Affection de Longue Durée</td>
+</tr>
+<tr>
+<td>DPC</td>
+<td>Développement Professionnel Continu</td>
+</tr>
+<tr>
+<td>CME</td>
+<td><em>Continuing Medical Education</em></td>
+</tr>
+<tr>
+<td>HAS</td>
+<td>Haute Autorité de Santé</td>
+</tr>
+<tr>
+<td>ADA</td>
+<td><em>American Diabetes Association</em></td>
+</tr>
+<tr>
+<td>EASD</td>
+<td><em>European Association for the Study of Diabetes</em></td>
+</tr>
+<tr>
+<td>IDF</td>
+<td><em>International Diabetes Federation</em></td>
+</tr>
+<tr>
+<td>IADPSG</td>
+<td><em>International Association of Diabetes and Pregnancy Study Groups</em></td>
+</tr>
+<tr>
+<td>SFD</td>
+<td>Société Francophone du Diabète</td>
+</tr>
+<tr>
+<td>DCCT</td>
+<td><em>Diabetes Control and Complications Trial</em></td>
+</tr>
+<tr>
+<td>EDIC</td>
+<td><em>Epidemiology of Diabetes Interventions and Complications</em></td>
+</tr>
+<tr>
+<td>UKPDS</td>
+<td><em>United Kingdom Prospective Diabetes Study</em></td>
+</tr>
+<tr>
+<td>ADVANCE</td>
+<td><em>Action in Diabetes and Vascular Disease</em></td>
+</tr>
+<tr>
+<td>ACCORD</td>
+<td><em>Action to Control Cardiovascular Risk in Diabetes</em></td>
+</tr>
+<tr>
+<td>STENO-2</td>
+<td>Étude Steno-2 (traitement multifactoriel)</td>
+</tr>
+<tr>
+<td>EMPA-REG</td>
+<td><em>Empagliflozin Cardiovascular Outcome Event Trial</em></td>
+</tr>
+<tr>
+<td>LEADER</td>
+<td><em>Liraglutide Effect and Action in Diabetes</em></td>
+</tr>
+<tr>
+<td>SUSTAIN</td>
+<td><em>Semaglutide Unabated Sustainability in Treatment of Type 2 Diabetes</em></td>
+</tr>
+<tr>
+<td>SURPASS</td>
+<td><em>Tirzepatide Clinical Trial Program</em></td>
+</tr>
+<tr>
+<td>DAPA-HF</td>
+<td><em>Dapagliflozin and Prevention of Adverse Outcomes in Heart Failure</em></td>
+</tr>
+<tr>
+<td>DAPA-CKD</td>
+<td><em>Dapagliflozin and Prevention of Adverse Outcomes in Chronic Kidney Disease</em></td>
+</tr>
+<tr>
+<td>CREDENCE</td>
+<td><em>Canagliflozin and Renal Events in Diabetes with Established Nephropathy</em></td>
+</tr>
+<tr>
+<td>EVA</td>
+<td>Échelle Visuelle Analogique</td>
+</tr>
+<tr>
+<td>IMC</td>
+<td>Indice de Masse Corporelle</td>
+</tr>
+<tr>
+<td>HTA</td>
+<td>Hypertension Artérielle</td>
+</tr>
+<tr>
+<td>LDL-c</td>
+<td>LDL-cholestérol</td>
+</tr>
+<tr>
+<td>HDL-c</td>
+<td>HDL-cholestérol</td>
+</tr>
+<tr>
+<td>TG</td>
+<td>Triglycérides</td>
+</tr>
+<tr>
+<td>PA</td>
+<td>Pression Artérielle</td>
+</tr>
+<tr>
+<td>ECG</td>
+<td>Électrocardiogramme</td>
+</tr>
+<tr>
+<td>ETT</td>
+<td>Échocardiographie Trans-Thoracique</td>
+</tr>
+<tr>
+<td>IPS</td>
+<td>Index de Pression Systolique (cheville/bras)</td>
+</tr>
+<tr>
+<td>EMG</td>
+<td>Électromyogramme</td>
+</tr>
+<tr>
+<td>IVSE</td>
+<td>Intraveineux à la Seringue Électrique</td>
+</tr>
+<tr>
+<td>RAAC</td>
+<td>Récupération Améliorée Après Chirurgie</td>
+</tr>
+<tr>
+<td>NNT</td>
+<td><em>Number Needed to Treat</em></td>
+</tr>
+<tr>
+<td>RR</td>
+<td>Risque Relatif</td>
+</tr>
+<tr>
+<td>HR</td>
+<td><em>Hazard Ratio</em></td>
+</tr>
+<tr>
+<td>OR</td>
+<td><em>Odds Ratio</em></td>
+</tr>
+<tr>
+<td>IC 95%</td>
+<td>Intervalle de Confiance à 95%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="references">RÉFÉRENCES</h1>
+<ol>
+<li>Slack JMW. Developmental biology of the pancreas. <em>Development</em>. 1995;121(6):1569-1580.</li>
+<li>Jennings RE, Berry AA, Strutt JP, et al. Human pancreas development. <em>Development</em>. 2015;142(18):3126-3137. doi:10.1242/dev.120063</li>
+<li>Drucker DJ. The biology of incretin hormones. <em>Cell Metab</em>. 2006;3(3):153-165. doi:10.1016/j.cmet.2006.01.004</li>
+<li>Nauck MA, Meier JJ. Incretin hormones: Their role in health and disease. <em>Diabetes Obes Metab</em>. 2018;20(Suppl 1):5-21.</li>
+<li>Atkinson MA, Eisenbarth GS, Michels AW. Type 1 diabetes. <em>Lancet</em>. 2014;383(9911):69-82. doi:10.1016/S0140-6736(13)60591-7</li>
+<li>DeFronzo RA. From the triumvirate to the ominous octet: a new paradigm for the treatment of type 2 diabetes mellitus. <em>Diabetes</em>. 2009;58(4):773-795.</li>
+<li>American Diabetes Association. Standards of Care in Diabetes — 2025. <em>Diabetes Care</em>. 2025;48(Suppl 1).</li>
+<li>Davies MJ, Aroda VR, Collins BS, et al. Management of hyperglycaemia in type 2 diabetes, 2022. A consensus report by ADA and EASD. <em>Diabetologia</em>. 2022;65(12):1925-1966.</li>
+<li>Nathan DM, DCCT/EDIC Research Group. The Diabetes Control and Complications Trial/Epidemiology of Diabetes Interventions and Complications Study at 30 years. <em>Diabetes Care</em>. 2014;37(1):9-16.</li>
+<li>UK Prospective Diabetes Study (UKPDS) Group. Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33). <em>Lancet</em>. 1998;352(9131):837-853.</li>
+<li>Zinman B, Wanner C, Lachin JM, et al. Empagliflozin, cardiovascular outcomes, and mortality in type 2 diabetes (EMPA-REG OUTCOME). <em>N Engl J Med</em>. 2015;373(22):2117-2128.</li>
+<li>Marso SP, Daniels GH, Tanaka K, et al. Liraglutide and cardiovascular outcomes in type 2 diabetes (LEADER). <em>N Engl J Med</em>. 2016;375(4):311-322.</li>
+<li>Heerspink HJL, Stefánsson BV, Correa-Rotter R, et al. Dapagliflozin in patients with chronic kidney disease (DAPA-CKD). <em>N Engl J Med</em>. 2020;383(15):1436-1446.</li>
+<li>Frías JP, Davies MJ, Rosenstock J, et al. Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes (SURPASS-2). <em>N Engl J Med</em>. 2021;385(6):503-515.</li>
+<li>Herold KC, Bundy BN, Long SA, et al. An anti-CD3 antibody, teplizumab, in relatives at risk for type 1 diabetes (TrialNet). <em>N Engl J Med</em>. 2019;381(7):603-613.</li>
+</ol>
+<hr />
+<p><em>Ce document (Partie 0) constitue le socle commun de la Formation Diabétologie Complète. Les parties suivantes (1 à 11) détaillent le contenu pédagogique module par module.</em></p>
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 13 mars 2026</em></p>
+</div>

@@ -11,15 +11,17 @@
 ## Table des matières
 
 ### 🥉 Cas Bronze (application directe — 1-2 modules)
+
 - [Cas n°1 — La gibbosité du dépistage scolaire](#cas-1)
 - [Cas n°2 — Une raideur dorsale chez un sportif](#cas-2)
 - [Cas n°3 — Une douleur lombaire avec glissement](#cas-3)
-- [Cas n°4 — Le dos rond de l'adolescent](#cas-4)
+- [Cas n°4 — Le dos rond de l&#39;adolescent](#cas-4)
 - [Cas n°5 — Une lombosciatique typique](#cas-5)
 - [Cas n°6 — Un tassement vertébral chez une femme ménopausée](#cas-6)
 - [Cas n°7 — Un traumatisme rachidien par chute](#cas-7)
 
 ### 🥈 Cas Argent (diagnostic différentiel — 3-4 modules)
+
 - [Cas n°8 — Une scoliose douloureuse chez un enfant](#cas-8)
 - [Cas n°9 — Aggravation rapide chez une fillette](#cas-9)
 - [Cas n°10 — Une déformation rachidienne avec atteinte cutanée](#cas-10)
@@ -28,15 +30,17 @@
 - [Cas n°13 — Un déséquilibre sagittal progressif chez un retraité](#cas-13)
 
 ### 🥇 Cas Or (décision multi-facteurs — 5+ modules)
+
 - [Cas n°14 — SIA sévère avec décompensation thoracique](#cas-14)
 - [Cas n°15 — Scoliose neuromusculaire et insuffisance respiratoire](#cas-15)
 - [Cas n°16 — Scoliose congénitale avec anomalies associées](#cas-16)
 - [Cas n°17 — Scoliose dégénérative symptomatique chez un patient ostéoporotique](#cas-17)
 
 ### 💎 Cas Diamant (complications, échecs, reprises)
+
 - [Cas n°18 — Déficit neurologique post-opératoire](#cas-18)
 - [Cas n°19 — Pseudarthrose et PJK après arthrodèse longue](#cas-19)
-- [Cas n°20 — Infection du site opératoire sur matériel d'arthrodèse](#cas-20)
+- [Cas n°20 — Infection du site opératoire sur matériel d&#39;arthrodèse](#cas-20)
 
 ---
 
@@ -44,7 +48,8 @@
 
 ---
 
-<a id="cas-1"></a>
+`<a id="cas-1"></a>`
+
 ### Cas n°1 — La gibbosité du dépistage scolaire
 
 **Niveau** : 🥉 Bronze
@@ -57,6 +62,7 @@
 Mlle T., 12 ans, est adressée par le médecin scolaire qui a noté une asymétrie du tronc lors d'un dépistage. L'adolescente ne se plaint d'aucune douleur. Elle est en 5e, pratique la natation deux fois par semaine. Ses premières règles sont apparues il y a 4 mois.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : mère opérée d'une scoliose à l'âge de 15 ans
@@ -80,11 +86,11 @@ Mlle T., 12 ans, est adressée par le médecin scolaire qui a noté une asymétr
 
 > [MEDIA: 📷 M07-S01-001 — Téléradiographie EOS face et profil d'un patient scoliotique — courbures annotées, vertèbres limites, angle de Cobb]
 
-  - Courbure thoracique droite T5-T12 : angle de Cobb 28°
-  - Vertèbre apicale T8, rotation Nash-Moe grade I
-  - Courbure lombaire compensatrice gauche L1-L4 : 18°
-  - Risser 1
-  - Profil sagittal : cyphose thoracique 30°, lordose lombaire 45° (équilibre conservé)
+- Courbure thoracique droite T5-T12 : angle de Cobb 28°
+- Vertèbre apicale T8, rotation Nash-Moe grade I
+- Courbure lombaire compensatrice gauche L1-L4 : 18°
+- Risser 1
+- Profil sagittal : cyphose thoracique 30°, lordose lombaire 45° (équilibre conservé)
 
 > [MEDIA: 📐 M04-S01-001 — Définition de l'angle de Cobb : vertèbre limite supérieure, vertèbre limite inférieure, lignes tangentielles, angle ≥ 10°]
 
@@ -107,6 +113,7 @@ Mlle T., 12 ans, est adressée par le médecin scolaire qui a noté une asymétr
 #### Réponses détaillées
 
 **R1** — Les éléments clés orientant vers une scoliose structurale sont :
+
 - **Gibbosité au test d'Adams** (8° au scoliomètre) : une gibbosité ≥ 5° lors de la flexion antérieure du tronc traduit une rotation vertébrale fixée, caractéristique d'une scoliose structurale. Une attitude scoliotique (posturale) se corrige en flexion et ne produit pas de gibbosité (cf. Module 6, §6.2)
 - **Rotation vertébrale** Nash-Moe grade I confirmée radiologiquement
 - **Angle de Cobb ≥ 10°**, seuil diagnostique défini par la SRS (cf. Module 4, §4.1)
@@ -115,12 +122,14 @@ Mlle T., 12 ans, est adressée par le médecin scolaire qui a noté une asymétr
 ❌ **Erreur fréquente** : confondre attitude scoliotique (réductible, sans rotation) et scoliose structurale (fixée, avec rotation et gibbosité).
 
 **R2** — Diagnostic : **Scoliose idiopathique de l'adolescent (SIA)**. Critères :
+
 - Âge : 12 ans (10-18 ans = période adolescente)
 - Scoliose structurale (Cobb 28° ≥ 10°) avec rotation vertébrale
 - Absence de cause identifiable (pas d'anomalie neurologique, congénitale ou syndromique)
 - Classification SRS : scoliose thoracique droite — un seul arc principal
 
 **R3** — Éléments d'estimation du potentiel de croissance :
+
 - **Risser 1** : ossification iliaque débutante — croissance résiduelle significative (environ 2-3 ans restants). Le maximum de risque de progression se situe entre Risser 0 et Risser 2 (cf. Module 2, §2.5)
 - **Stade de Tanner S3** : puberté en cours, pic de croissance pubertaire probablement non encore atteint ou en cours
 - **Ménarche récente** (4 mois) : la ménarche survient en moyenne 1 an après le pic de croissance. La croissance résiduelle est encore de 5-7 cm en moyenne
@@ -129,6 +138,7 @@ Mlle T., 12 ans, est adressée par le médecin scolaire qui a noté une asymétr
 C'est fondamental car le **risque de progression** est directement corrélé au potentiel de croissance restant et à l'amplitude de la courbure (indice de Lonstein-Carlson, cf. Module 8, §8.3). Une courbure de 28° avant Risser 2 présente un risque de progression estimé à 60-70%.
 
 **R4** — Conduite à tenir :
+
 1. **Pas d'urgence** : pas de déficit neurologique, pas de douleur
 2. **Bilan complémentaire** : pas d'IRM nécessaire dans ce contexte typique (SIA sans signe neurologique)
 3. **Information de la patiente et des parents** : explication de la maladie, du risque de progression, du principe du traitement orthopédique
@@ -137,6 +147,7 @@ C'est fondamental car le **risque de progression** est directement corrélé au 
 6. **Surveillance** : contrôle clinique et radiographique tous les 4-6 mois jusqu'à maturité squelettique
 
 **R5** — La natation **ne peut pas corriger ni stabiliser** une scoliose structurale. C'est une croyance populaire sans fondement scientifique. Aucune activité sportive n'a démontré d'efficacité sur la progression d'une scoliose idiopathique. En revanche :
+
 - La natation reste bénéfique pour le renforcement musculaire global et le bien-être
 - Elle ne doit pas se substituer au traitement orthopédique (corset)
 - Le sport n'est pas contre-indiqué, y compris avec un corset (retrait possible pendant l'activité)
@@ -151,7 +162,8 @@ C'est fondamental car le **risque de progression** est directement corrélé au 
 
 ---
 
-<a id="cas-2"></a>
+`<a id="cas-2"></a>`
+
 ### Cas n°2 — Une raideur dorsale chez un sportif
 
 **Niveau** : 🥉 Bronze
@@ -164,6 +176,7 @@ C'est fondamental car le **risque de progression** est directement corrélé au 
 M. K., 15 ans, consulte pour des dorsalgies évoluant depuis 6 mois, aggravées par les entraînements de rugby. Il décrit une impression de « dos bloqué » après les séances. Sa mère s'inquiète d'une posture voûtée qui s'accentue. Scolarisé en seconde, il joue en catégorie cadet.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : fracture du poignet gauche il y a 2 ans (ostéosynthèse par broche)
 - Familiaux : père avec hypercyphose modérée non traitée
@@ -185,11 +198,11 @@ M. K., 15 ans, consulte pour des dorsalgies évoluant depuis 6 mois, aggravées 
 
 > [MEDIA: 📷 M14-S01-001 — Radiographie latérale Scheuermann : cunéiformisation ≥ 5° sur 3 vertèbres adjacentes (T7-T10), nœuds de Schmorl en T8 et T9, irrégularité des plateaux, cyphose thoracique augmentée à 58°]
 
-  - Cyphose thoracique T4-T12 : 58° (normale 20-45°)
-  - ≥ 3 vertèbres consécutives avec cunéiformisation antérieure ≥ 5° (T7, T8, T9, T10)
-  - Irrégularités des plateaux vertébraux
-  - Nœuds de Schmorl en T8 et T9
-  - Lordose lombaire compensatrice : 62°
+- Cyphose thoracique T4-T12 : 58° (normale 20-45°)
+- ≥ 3 vertèbres consécutives avec cunéiformisation antérieure ≥ 5° (T7, T8, T9, T10)
+- Irrégularités des plateaux vertébraux
+- Nœuds de Schmorl en T8 et T9
+- Lordose lombaire compensatrice : 62°
 
 > [MEDIA: 📐 M07-S01-004 — Mesure des paramètres sagittaux sur profil : cyphose T5-T12, lordose L1-L5/S1, PI, SS, PT — lignes de mesure avec angles]
 
@@ -210,6 +223,7 @@ M. K., 15 ans, consulte pour des dorsalgies évoluant depuis 6 mois, aggravées 
 #### Réponses détaillées
 
 **R1** — Éléments radiologiques clés :
+
 - **Cyphose thoracique 58°** (> 45° = pathologique)
 - **Cunéiformisation antérieure ≥ 5°** d'au moins 3 vertèbres consécutives : c'est le **critère de Sorensen**, critère diagnostique principal de la maladie de Scheuermann (cf. Module 14, §14.3)
 - **Irrégularités des plateaux vertébraux** : ondulations du cartilage d'accueil
@@ -219,17 +233,19 @@ M. K., 15 ans, consulte pour des dorsalgies évoluant depuis 6 mois, aggravées 
 **R2** — Diagnostic : **Maladie de Scheuermann** (dystrophie rachidienne de croissance, cyphose structurale).
 
 Différence avec la cyphose posturale :
-| Critère | Scheuermann | Cyphose posturale |
-|---------|-------------|-------------------|
-| Réductibilité | Non réductible en hyperextension | Réductible en décubitus/hyperextension |
-| Critères de Sorensen | ≥ 3 vertèbres cunéiformes ≥ 5° | Absent |
-| Nœuds de Schmorl | Fréquents | Absents |
-| Irrégularités des plateaux | Présentes | Absentes |
-| Progression | Peut progresser en croissance | Stable, fonctionnelle |
+
+| Critère                     | Scheuermann                         | Cyphose posturale                        |
+| ---------------------------- | ----------------------------------- | ---------------------------------------- |
+| Réductibilité              | Non réductible en hyperextension   | Réductible en décubitus/hyperextension |
+| Critères de Sorensen        | ≥ 3 vertèbres cunéiformes ≥ 5° | Absent                                   |
+| Nœuds de Schmorl            | Fréquents                          | Absents                                  |
+| Irrégularités des plateaux | Présentes                          | Absentes                                 |
+| Progression                  | Peut progresser en croissance       | Stable, fonctionnelle                    |
 
 (cf. Module 14, §14.2-14.3)
 
 **R3** — Position concernant le rugby :
+
 - **Phase aiguë douloureuse** : arrêt temporaire du rugby (4-8 semaines) pour permettre la mise en route du traitement et la diminution des douleurs
 - **Sport de contact** (rugby) : les impacts axiaux et les flexions forcées du rachis sollicitent les vertèbres dystrophiques et peuvent aggraver les douleurs. Prudence recommandée tant que la croissance n'est pas terminée
 - **Après amélioration** : reprise possible avec adaptation (éviter les postes de mêlée, renforcement du gainage postérieur)
@@ -239,6 +255,7 @@ Différence avec la cyphose posturale :
 ❌ **Erreur fréquente** : interdire tout sport de façon prolongée, ce qui nuit à l'adhésion et au bien-être psychologique de l'adolescent.
 
 **R4** — Prise en charge :
+
 1. **Information** : explication de la maladie, du caractère bénin mais nécessitant un suivi, pronostic généralement favorable
 2. **Kinésithérapie** (pivot du traitement) : étirements des ischio-jambiers et des pectoraux, renforcement des extenseurs rachidiens, travail postural, gainage
 3. **Traitement orthopédique** : corset anti-cyphose (type Milwaukee ou corset de Gschwend) si cyphose > 50-55° chez un patient en croissance (Risser 3 = croissance résiduelle modérée). Port 18-20h/jour pendant 12-18 mois
@@ -246,6 +263,7 @@ Différence avec la cyphose posturale :
 5. **Surveillance** : contrôle clinique et radiographique tous les 6 mois jusqu'à maturité squelettique
 
 **R5** — Indications chirurgicales (rares dans le Scheuermann) :
+
 - Cyphose > 70-75° malgré un traitement orthopédique bien conduit
 - Douleurs invalidantes résistantes au traitement conservateur après maturité squelettique
 - Déficit neurologique (exceptionnel, par compression médullaire dans les formes très sévères)
@@ -261,7 +279,8 @@ Différence avec la cyphose posturale :
 
 ---
 
-<a id="cas-3"></a>
+`<a id="cas-3"></a>`
+
 ### Cas n°3 — Une douleur lombaire avec glissement
 
 **Niveau** : 🥉 Bronze
@@ -274,6 +293,7 @@ Différence avec la cyphose posturale :
 M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'apparition progressive depuis 3 mois, majorées à l'hyperextension et après les entraînements. Il signale parfois des irradiations dans la fesse droite sans dépasser le genou. Ses performances sportives sont en baisse.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : père opéré du rachis lombaire à 45 ans (motif inconnu)
@@ -298,11 +318,11 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 
 > [MEDIA: 📐 M14-S04-001 — Classification de Meyerding : radiographie latérale montrant les grades I-V de spondylolisthésis + spondyloptose — mesure du glissement en pourcentage]
 
-  - Lyse isthmique bilatérale de L5 visible sur les clichés obliques (image du « petit chien décapité »)
-  - Glissement antérieur de L5 sur S1
-  - Grade Meyerding II (glissement 30%)
-  - Angle de glissement (slip angle) : 12°
-  - Indice de Taillard : 30%
+- Lyse isthmique bilatérale de L5 visible sur les clichés obliques (image du « petit chien décapité »)
+- Glissement antérieur de L5 sur S1
+- Grade Meyerding II (glissement 30%)
+- Angle de glissement (slip angle) : 12°
+- Indice de Taillard : 30%
 
 #### Questions progressives
 
@@ -319,6 +339,7 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 #### Réponses détaillées
 
 **R1** — Éléments évocateurs :
+
 - **Terrain** : adolescent sportif, gymnaste (hyperextensions et microtraumatismes répétés du rachis = facteur de risque majeur de spondylolyse) (cf. Module 21, §21.2)
 - **Douleur** mécanique lombaire basse, aggravée par l'hyperextension
 - **Test du flamant rose positif** : douleur provoquée par l'hyperextension unipodale, très évocateur de lyse isthmique
@@ -327,6 +348,7 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 - **Lasègue négatif** : pas de conflit disco-radiculaire
 
 **R2** — Interprétation radiologique :
+
 - **Lyse isthmique bilatérale de L5** : solution de continuité de la pars interarticularis, visible sur les obliques comme une fracture du « cou du petit chien » (signe de la Scottie dog de Lachapelle)
 - **Classification Wiltse-Newman** : Type II (isthmique), sous-type A (lyse de fatigue/stress fracture) (cf. Module 21, §21.3)
 - **Classification Meyerding** : Grade II (glissement de 26 à 50%, ici 30%) (cf. Module 21, §21.4)
@@ -335,11 +357,13 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 ❌ **Erreur fréquente** : confondre spondylo**lyse** (défect osseux de l'isthme sans glissement) et spondylo**listhésis** (glissement vertébral associé).
 
 **R3** — Examens complémentaires :
+
 - **Scanner lombaire (coupes fines sur L5-S1)** : confirmer la lyse isthmique, évaluer le potentiel de consolidation (lyse récente vs ancienne), mesurer précisément le glissement
 - **IRM lombaire** : éliminer une compression nerveuse (racine L5), évaluer l'état discal L5-S1, rechercher un œdème de l'isthme (lyse active vs ancienne)
 - Pas de scintigraphie osseuse nécessaire en première intention si le scanner et l'IRM sont disponibles
 
 **R4** — Conduite à tenir :
+
 1. **Mesures immédiates** : arrêt de la gymnastique (hyperextension contre-indiquée), arrêt de l'automédication par AINS
 2. **Traitement antalgique** : paracétamol en première ligne, AINS sur prescription courte si nécessaire
 3. **Information** : explication du diagnostic, rassurance sur le pronostic généralement favorable des grades I-II
@@ -348,6 +372,7 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 6. **Surveillance** : contrôle clinique à 6 semaines, radiographique à 3 et 6 mois. Adapter la reprise sportive (sports en flexion privilégiés, éviter l'hyperextension)
 
 **R5** — Critères d'indication chirurgicale :
+
 - Douleurs persistantes > 6 mois malgré un traitement conservateur bien conduit
 - Progression documentée du glissement (passage de grade II à III)
 - Glissement de haut grade (≥ grade III, Meyerding ≥ 50%)
@@ -364,7 +389,8 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 
 ---
 
-<a id="cas-4"></a>
+`<a id="cas-4"></a>`
+
 ### Cas n°4 — Le dos rond de l'adolescent
 
 **Niveau** : 🥉 Bronze
@@ -377,6 +403,7 @@ M. R., 16 ans, gymnaste de haut niveau, consulte pour des lombalgies basses d'ap
 Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « de plus en plus voûtée ». Elle passe beaucoup de temps sur son téléphone et devant l'ordinateur. Pas de douleur spontanée. Scolarisée en 3e, elle ne pratique pas de sport régulier.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : sans particularité
@@ -399,11 +426,11 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 
 > [MEDIA: 📐 M06-S02-003 — Déséquilibre sagittal clinique : vue latérale montrant dos plat, dos normal, hypercyphose, déséquilibre antérieur — silhouettes comparatives]
 
-  - Cyphose thoracique T4-T12 : 48° (légèrement augmentée, normale < 45°)
-  - Vertèbres de morphologie normale : pas de cunéiformisation ≥ 5° sur 3 vertèbres consécutives
-  - Pas de nœud de Schmorl
-  - Plateaux vertébraux réguliers
-  - Lordose lombaire : 50° (équilibrée)
+- Cyphose thoracique T4-T12 : 48° (légèrement augmentée, normale < 45°)
+- Vertèbres de morphologie normale : pas de cunéiformisation ≥ 5° sur 3 vertèbres consécutives
+- Pas de nœud de Schmorl
+- Plateaux vertébraux réguliers
+- Lordose lombaire : 50° (équilibrée)
 
 > [MEDIA: 📐 M07-S01-004 — Mesure des paramètres sagittaux sur profil : cyphose T5-T12, lordose L1-L5/S1, PI, SS, PT — lignes de mesure avec angles]
 
@@ -424,6 +451,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 #### Réponses détaillées
 
 **R1** — Cette cyphose est **posturale** (fonctionnelle) et non structurale. Éléments cliniques discriminants :
+
 - **Réductibilité complète** en décubitus ventral et en hyperextension active : critère fondamental. Une cyphose de Scheuermann ne se réduit pas passivement (cf. Module 14, §14.2)
 - **Cyphose harmonieuse** sans angulation focale au test d'Adams (Scheuermann : angulation localisée sur le segment atteint)
 - **Souplesse rachidienne conservée** : la raideur segmentaire est typique du Scheuermann
@@ -431,6 +459,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 - **Absence de douleur** même à la palpation des épineuses
 
 **R2** — Oui, les radiographies confirment la cyphose posturale :
+
 - Cyphose 48° : augmentée mais modérément (les cyphoses posturales dépassent rarement 55-60°)
 - **Critères de Sorensen non remplis** : pas de cunéiformisation antérieure ≥ 5° sur 3 vertèbres consécutives. C'est le critère négatif décisif
 - **Absence de nœuds de Schmorl** et plateaux réguliers : pas de dystrophie vertébrale
@@ -439,6 +468,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 (cf. Module 14, §14.3)
 
 **R3** — Conduite à tenir :
+
 1. **Rassurance** : il s'agit d'une cyphose posturale, pas d'une maladie. Pronostic excellent
 2. **Pas de traitement orthopédique** (pas de corset)
 3. **Kinésithérapie posturale** : programme de correction posturale active, renforcement des extenseurs du rachis et des rétracteurs des omoplates, étirements des pectoraux et de la chaîne antérieure
@@ -447,6 +477,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 6. **Pas de surveillance radiographique** systématique si l'examen clinique reste rassurant. Contrôle clinique à 6-12 mois
 
 **R4** — Le corset n'est **pas indiqué** dans cette situation :
+
 - La cyphose est posturale et réductible : un corset traite des déformations structurales et fixées
 - Un corset pour une cyphose posturale risquerait d'entraîner une dépendance musculaire (atrophie des extenseurs par le support externe)
 - La kinésithérapie active est le traitement de choix : elle développe la force musculaire posturale qui manque
@@ -455,6 +486,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 ❌ **Erreur fréquente** : prescrire un corset devant toute cyphose augmentée sans vérifier les critères de Sorensen et la réductibilité clinique.
 
 **R5** — Conseils d'hygiène de vie :
+
 - Pratiquer une activité physique ≥ 3 fois/semaine (natation, escalade, volleyball, danse recommandés pour le renforcement dorsal)
 - Limiter les postures prolongées en flexion : régler la hauteur de l'écran à hauteur des yeux, pauses toutes les 30-45 minutes
 - Exercices d'auto-correction posturale quotidiens (10 min de travail en extension, étirements, gainage dorsal)
@@ -470,7 +502,8 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 
 ---
 
-<a id="cas-5"></a>
+`<a id="cas-5"></a>`
+
 ### Cas n°5 — Une lombosciatique typique
 
 **Niveau** : 🥉 Bronze
@@ -483,6 +516,7 @@ Mlle B., 14 ans, est amenée par ses parents qui s'inquiètent de sa posture « 
 M. D., 38 ans, maçon, consulte en urgence pour une douleur lombaire irradiant dans le membre inférieur droit, apparue brutalement il y a 5 jours en soulevant un parpaing. La douleur est intense (EVA 7/10), traçante, partant du bas du dos, traversant la fesse, la face postérieure de la cuisse, la face postéro-latérale du mollet, et se terminant sur le bord latéral du pied et le petit orteil. Elle est majorée par la toux, l'éternuement et la position assise prolongée.
 
 **Antécédents** :
+
 - Médicaux : épisode de lumbago il y a 2 ans, résolutif spontanément
 - Chirurgicaux : appendicectomie
 - Familiaux : sans particularité
@@ -509,10 +543,10 @@ M. D., 38 ans, maçon, consulte en urgence pour une douleur lombaire irradiant d
 
 > [MEDIA: 📐 M01-S04-001 — Moelle épinière — topographie : cône médullaire, queue de cheval, décalage segments médullaires/niveaux vertébraux]
 
-  - Hernie discale L5-S1 postéro-latérale droite, extrusion sous-ligamentaire
-  - Conflit avec la racine S1 droite
-  - Pas de sténose canalaire associée
-  - Discopathie dégénérative L5-S1 (Pfirrmann grade III)
+- Hernie discale L5-S1 postéro-latérale droite, extrusion sous-ligamentaire
+- Conflit avec la racine S1 droite
+- Pas de sténose canalaire associée
+- Discopathie dégénérative L5-S1 (Pfirrmann grade III)
 
 > [MEDIA: 📐 M06-S04-002 — Carte des dermatomes et myotomes : territoires sensitifs et moteurs de chaque racine nerveuse]
 
@@ -533,11 +567,13 @@ M. D., 38 ans, maçon, consulte en urgence pour une douleur lombaire irradiant d
 #### Réponses détaillées
 
 **R1** — Le trajet douloureux correspond à une **sciatique S1 droite** :
+
 - Fesse → face postérieure de la cuisse → face postéro-latérale du mollet → bord latéral du pied → 5e orteil
 - C'est le trajet du dermatome S1, correspondant au trajet dit « sciatique tronquée basse » (cf. Module 19, §19.3)
 - Le mécanisme (soulèvement de charge en flexion) est un facteur déclenchant classique de hernie discale par hyperpression discale postérieure (cf. Module 1, §1.8 et Module 19, §19.2)
 
 **R2** — Éléments confirmatoires d'atteinte S1 droite :
+
 - **Lasègue positif à 35°** à droite : mise en tension de la racine S1 (et L5) par étirement du nerf sciatique. Un Lasègue < 40° est très évocateur de conflit radiculaire franc (cf. Module 19, §19.4)
 - **Hypoesthésie du bord latéral du pied et du 5e orteil** : territoire sensitif S1
 - **Réflexe achilléen droit diminué** : arc réflexe S1
@@ -546,6 +582,7 @@ M. D., 38 ans, maçon, consulte en urgence pour une douleur lombaire irradiant d
 ❌ **Erreur fréquente** : confondre atteinte L5 (releveur du pied, dos du pied, réflexe normal) et S1 (flexion plantaire, bord latéral du pied, achilléen aboli).
 
 **R3** — Signes de gravité recherchés systématiquement (« drapeaux rouges ») :
+
 - **Syndrome de la queue de cheval** : troubles sphinctériens (rétention/incontinence urinaire), anesthésie en selle, hypoesthésie périnéale → **Absent** (tonus normal, pas de trouble vésical). Sa présence impose une chirurgie en urgence dans les 24-48h
 - **Déficit moteur significatif** (≤ 3/5) : paralysant → **Absent** (force 5/5 sur tous les groupes)
 - **Sciatique hyperalgique** résistante aux morphiniques → **Absent** (douleur contrôlée partiellement par tramadol)
@@ -554,6 +591,7 @@ M. D., 38 ans, maçon, consulte en urgence pour une douleur lombaire irradiant d
 Aucun signe de gravité n'est présent : prise en charge ambulatoire possible.
 
 **R4** — Conduite à tenir :
+
 1. **Pas d'urgence chirurgicale** (pas de déficit moteur, pas de queue de cheval)
 2. **Traitement médical** : antalgiques palier I-II (paracétamol + AINS en l'absence de contre-indication, 7-10 jours), myorelaxant si contracture importante
 3. **Information du patient** : histoire naturelle favorable (80-90% de résolution spontanée en 6-8 semaines), pas de repos strict au lit (mobilisation précoce recommandée)
@@ -562,6 +600,7 @@ Aucun signe de gravité n'est présent : prise en charge ambulatoire possible.
 6. **Surveillance** : contrôle clinique à 3-4 semaines. Si persistance après 6 semaines, réévaluation et discussion d'infiltration épidurale
 
 **R5** — À 6 semaines avec persistance des symptômes (EVA 4/10, invalidant) :
+
 - **Infiltration épidurale de corticoïdes** sous guidage radiologique ou scanographique : traitement de deuxième ligne pour la sciatique persistante
 - **Kinésithérapie active** : programme McKenzie et/ou stabilisation lombaire, éducation à la gestion de la douleur
 - Si persistance à 3 mois malgré traitement bien conduit : discussion de **chirurgie** (microdiscectomie L5-S1 ou discectomie endoscopique), surtout si la concordance clinico-radiologique est bonne et le retentissement fonctionnel important (cf. Module 19, §19.7)
@@ -576,7 +615,8 @@ Aucun signe de gravité n'est présent : prise en charge ambulatoire possible.
 
 ---
 
-<a id="cas-6"></a>
+`<a id="cas-6"></a>`
+
 ### Cas n°6 — Un tassement vertébral chez une femme ménopausée
 
 **Niveau** : 🥉 Bronze
@@ -589,6 +629,7 @@ Aucun signe de gravité n'est présent : prise en charge ambulatoire possible.
 Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues il y a 10 jours après avoir soulevé un sac de courses. La douleur est intense (EVA 6/10), de siège thoraco-lombaire, sans irradiation radiculaire, majorée par la station debout prolongée et les changements de position. Elle signale une perte de taille de 4 cm depuis 5 ans.
 
 **Antécédents** :
+
 - Médicaux : hypertension artérielle traitée, ménopause à 48 ans sans THS, carence en vitamine D connue non supplémentée
 - Chirurgicaux : cholécystectomie
 - Familiaux : mère ayant eu une fracture du col du fémur à 78 ans
@@ -638,6 +679,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 #### Réponses détaillées
 
 **R1** — Éléments évocateurs :
+
 - **Terrain** : femme de 72 ans, ménopausée depuis 24 ans (carence estrogénique prolongée), morphotype fin (IMC 22,4), carence en vitamine D non traitée, antécédent familial de fracture ostéoporotique (mère, col du fémur) (cf. Module 25, §25.2)
 - **Mécanisme** : traumatisme à basse énergie (soulever un sac), insuffisant pour fracturer une vertèbre saine
 - **Perte de taille** : −4 cm en 5 ans, signe cardinal de tassements vertébraux itératifs
@@ -645,6 +687,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 - **Tassement ancien en L1** : antécédent de fracture vertébrale = facteur de risque majeur de nouvelle fracture (risque x 5)
 
 **R2** — La biologie est indispensable pour éliminer les causes secondaires d'ostéopathie fragilisante :
+
 - **Myélome** : électrophorèse des protéines sériques (pic monoclonal ?) → normale ici. Le myélome est le principal diagnostic différentiel d'une fracture vertébrale pathologique chez le sujet âgé
 - **Métastases osseuses** : NFS normale, CRP normale, pas de contexte néoplasique connu
 - **Hyperparathyroïdie** : calcémie normale → éliminée
@@ -653,6 +696,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 - Si doute persistant, un scanner ou une IRM du rachis permet de différencier un tassement ostéoporotique (bénin) d'un tassement pathologique (tumoral)
 
 **R3** — **Ostéodensitométrie (DEXA)** au rachis lombaire et au col du fémur :
+
 - Examen de référence pour le diagnostic d'ostéoporose (cf. Module 25, §25.3)
 - Résultat attendu : T-score ≤ −2,5 (définition OMS de l'ostéoporose)
 - Dans ce contexte (fracture vertébrale sur traumatisme à basse énergie), le diagnostic d'ostéoporose est déjà cliniquement probable, mais la DEXA est nécessaire pour :
@@ -661,6 +705,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
   - Calculer le **score FRAX** (risque de fracture majeure à 10 ans) pour guider la stratégie thérapeutique
 
 **R4** — Conduite à tenir complète :
+
 1. **Traitement antalgique** : paracétamol (1 g x 4/j), ± AINS courte durée si fonction rénale normale, corset rigide thoraco-lombaire à visée antalgique (6-8 semaines)
 2. **Supplémentation** : vitamine D (dose de charge 100 000 UI puis 800-1000 UI/j) + calcium (1000-1200 mg/j si apports alimentaires insuffisants)
 3. **Traitement anti-ostéoporotique** : bisphosphonate (alendronate 70 mg/semaine ou risédronate 35 mg/semaine PO, ou acide zolédronique 5 mg IV/an). Alternative si bisphosphonate contre-indiqué : dénosumab 60 mg SC/6 mois ou tériparatide (si ≥ 2 fractures)
@@ -669,6 +714,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 6. **Surveillance** : DEXA de contrôle à 2 ans, contrôle biologique (vitamine D, calcémie) à 3 mois
 
 **R5** — Indications de vertébroplastie/cyphoplastie :
+
 - **Douleur intense persistante** (EVA > 5) malgré un traitement antalgique bien conduit pendant 4-6 semaines (cf. Module 25, §25.6)
 - **Fracture récente** (< 6 semaines, confirmée par œdème en IRM ou STIR)
 - **Mur postérieur intact** (condition sine qua non pour la technique percutanée)
@@ -685,7 +731,8 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 
 ---
 
-<a id="cas-7"></a>
+`<a id="cas-7"></a>`
+
 ### Cas n°7 — Un traumatisme rachidien par chute
 
 **Niveau** : 🥉 Bronze
@@ -698,6 +745,7 @@ Mme L., 72 ans, retraitée, consulte pour des dorso-lombalgies aiguës apparues 
 M. A., 28 ans, charpentier, est amené aux urgences après une chute d'un échafaudage d'environ 3 mètres de hauteur. Réception sur les pieds puis chute assise. Il se plaint de douleurs rachidiennes thoraco-lombaires intenses (EVA 8/10). Conscient et orienté (GCS 15), il n'a pas perdu connaissance. Les constantes sont stables (PA 130/80, FC 88, SaO₂ 98%).
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Traitement : aucun
@@ -751,11 +799,13 @@ M. A., 28 ans, charpentier, est amené aux urgences après une chute d'un échaf
 #### Réponses détaillées
 
 **R1** — Classification de la fracture :
+
 - **Classification AO Spine** : **Type A3** (burst fracture = fracture-éclatement) — fracture du corps vertébral avec atteinte du mur postérieur. Sous-type A3 car atteinte d'un seul plateau vertébral avec recul du mur postérieur (cf. Module 23, §23.4)
 - **Classification de Magerl** (historique) : Type A (compression), sous-groupe A3 (burst)
 - **Siège** : jonction thoraco-lombaire (T12-L2), zone de transition biomécanique la plus vulnérable entre le segment thoracique rigide (cage thoracique) et le segment lombaire mobile (cf. Module 1, §1.5 et Module 23, §23.1)
 
 **R2** — Éléments déterminant la stabilité :
+
 - **Complexe ligamentaire postérieur (CLP)** : **intact** à l'IRM — élément clé de stabilité. L'intégrité du CLP est le facteur pronostique le plus important dans les fractures thoraco-lombaires (cf. Module 23, §23.5)
 - **Recul du mur postérieur** : 20% — modéré, pas de compression neurologique
 - **Cyphose segmentaire** : 18° — augmentée mais modérée
@@ -766,14 +816,16 @@ M. A., 28 ans, charpentier, est amené aux urgences après une chute d'un échaf
 En résumé : fracture en compression pure (type A) avec CLP intact et neurologie normale → fracture relativement stable.
 
 **R3** — **Score TLICS** (Thoraco-Lumbar Injury Classification and Severity Score) :
-| Paramètre | Description | Points |
-|-----------|-------------|--------|
-| Morphologie | Burst fracture | 2 |
-| CLP | Intact (IRM normale) | 0 |
-| Statut neurologique | Intact (ASIA E) | 0 |
-| **Total** | | **2** |
+
+| Paramètre          | Description          | Points      |
+| ------------------- | -------------------- | ----------- |
+| Morphologie         | Burst fracture       | 2           |
+| CLP                 | Intact (IRM normale) | 0           |
+| Statut neurologique | Intact (ASIA E)      | 0           |
+| **Total**     |                      | **2** |
 
 Interprétation (cf. Module 23, §23.6) :
+
 - TLICS ≤ 3 : traitement conservateur recommandé
 - TLICS = 4 : zone grise (conservateur ou chirurgical)
 - TLICS ≥ 5 : traitement chirurgical recommandé
@@ -781,6 +833,7 @@ Interprétation (cf. Module 23, §23.6) :
 → Ici TLICS = 2 : **traitement conservateur** recommandé.
 
 **R4** — Conduite à tenir :
+
 1. **Mesures immédiates** : antalgiques IV (paracétamol + morphine titrée), maintien de l'immobilisation, prévention thromboembolique (HBPM)
 2. **Traitement orthopédique** : corset rigide thoraco-lombaire (type TLSO ou corset 3 points) pour 3 mois, avec verticalisation progressive sous corset après 48-72h
 3. **Pas d'indication chirurgicale** (TLICS = 2, neurologie intacte, CLP intact)
@@ -789,6 +842,7 @@ Interprétation (cf. Module 23, §23.6) :
 6. **Prévention thromboembolique** par HBPM pendant la période de mobilité réduite
 
 **R5** — Surveillance :
+
 - **Court terme (hospitalisation)** :
   - Surveillance neurologique pluriquotidienne les 48 premières heures (risque de détérioration si œdème post-traumatique)
   - Surveillance des constantes (syndrome de détresse respiratoire post-traumatique)
@@ -816,7 +870,8 @@ Interprétation (cf. Module 23, §23.6) :
 
 ---
 
-<a id="cas-8"></a>
+`<a id="cas-8"></a>`
+
 ### Cas n°8 — Une scoliose douloureuse chez un enfant
 
 **Niveau** : 🥈 Argent
@@ -829,6 +884,7 @@ Interprétation (cf. Module 23, §23.6) :
 M. E., 10 ans, est adressé pour une scoliose découverte lors d'une consultation pour des rachialgies nocturnes évoluant depuis 2 mois. Les douleurs réveillent l'enfant la nuit et sont soulagées par l'ibuprofène. Il a perdu 2 kg en 1 mois sans modification alimentaire. Scolarisé en CM2, sportif (football 3 fois/semaine), il ne présente pas de plainte fonctionnelle aux membres inférieurs.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : sans particularité
@@ -876,6 +932,7 @@ M. E., 10 ans, est adressé pour une scoliose découverte lors d'une consultatio
 #### Réponses détaillées
 
 **R1** — Drapeaux rouges (cf. Module 4, §4.5 et Module 24, §24.2) :
+
 - **Douleur rachidienne nocturne** réveillant l'enfant : atypique pour une scoliose idiopathique (qui est classiquement indolore)
 - **Scoliose thoraco-lombaire GAUCHE** : une courbure thoracique ou thoraco-lombaire gauche est atypique et doit systématiquement faire rechercher une cause sous-jacente (tumeur, syringomyélie)
 - **Âge de 10 ans prépubère** (SIA typique = adolescent pubère)
@@ -888,14 +945,16 @@ M. E., 10 ans, est adressé pour une scoliose découverte lors d'une consultatio
 ❌ **Erreur fréquente** : considérer comme « idiopathique » toute scoliose de l'enfant sans rechercher systématiquement les drapeaux rouges — en particulier la douleur et la topographie atypique.
 
 **R2** — Diagnostics différentiels d'une scoliose douloureuse de l'enfant :
+
 - **Tumeur rachidienne** : ostéome ostéoïde (premier diagnostic à évoquer devant une douleur nocturne soulagée par les AINS chez l'enfant), ostéoblastome, kyste osseux anévrysmal, tumeur maligne primitive (sarcome d'Ewing), métastases (neuroblastome chez l'enfant)
 - **Infection rachidienne** : spondylodiscite (à éliminer devant la CRP élevée)
 - **Syringomyélie / malformation de Chiari** : à évoquer devant les signes neurologiques subtils et la courbure gauche
 - **Scoliose sur moelle attachée** (spina bifida occulta)
 - **Hernie discale** (rare chez l'enfant mais possible)
-(cf. Module 24, §24.1-24.3)
+  (cf. Module 24, §24.1-24.3)
 
 **R3** — Examens complémentaires prioritaires :
+
 - **IRM rachidienne complète (cervico-thoraco-lombaire)** : examen clé — recherche une tumeur de l'arc postérieur, une syringomyélie, une malformation de Chiari, une lésion intra-canalaire. Indispensable devant les signes neurologiques et la courbure atypique
 - **Scanner centré sur T12 (coupes fines)** : caractérisation de la lésion osseuse suspectée (élargissement pédiculaire), bilan d'extension locale
 - **Scintigraphie osseuse au technétium** : recherche d'une hyperfixation focale (tumeur, infection), bilan d'extension à distance
@@ -904,6 +963,7 @@ M. E., 10 ans, est adressé pour une scoliose découverte lors d'une consultatio
 **R4** — Devant une lésion ostéolytique de l'arc postérieur de T12, bien limitée, avec prise de contraste homogène et hyperfixation scintigraphique, chez un enfant de 10 ans avec douleur nocturne soulagée par les AINS, le diagnostic le plus probable est un **ostéome ostéoïde** (cf. Module 24, §24.4).
 
 Arguments en faveur :
+
 - Tumeur bénigne ostéoformatrice la plus fréquente du rachis chez l'enfant et l'adolescent
 - Localisation typique : arc postérieur (pédicule, lame, processus articulaire)
 - Douleur **nocturne** caractéristique, **soulagée par les AINS** (inhibition de la synthèse de prostaglandines par le nidus tumoral)
@@ -914,6 +974,7 @@ Arguments en faveur :
 Alternative à discuter : **ostéoblastome** (si nidus > 2 cm, comportement plus agressif)
 
 **R5** — Conduite à tenir :
+
 1. **Confirmation diagnostique** : scanner en coupes fines pour visualiser le nidus (image lacunaire avec sclérose périphérique typique). Biopsie rarement nécessaire si l'imagerie est caractéristique
 2. **Traitement curatif** : **ablation percutanée par radiofréquence** (thermoablation) du nidus sous guidage scanner — traitement de référence actuel de l'ostéome ostéoïde. Taux de succès > 90%, peu invasif, hospitalisation courte (cf. Module 24, §24.5)
 3. **Alternative chirurgicale** : résection en bloc du nidus si la thermoablation n'est pas réalisable (proximité des structures nerveuses)
@@ -931,7 +992,8 @@ Alternative à discuter : **ostéoblastome** (si nidus > 2 cm, comportement plus
 
 ---
 
-<a id="cas-9"></a>
+`<a id="cas-9"></a>`
+
 ### Cas n°9 — Aggravation rapide chez une fillette
 
 **Niveau** : 🥈 Argent
@@ -944,6 +1006,7 @@ Alternative à discuter : **ostéoblastome** (si nidus > 2 cm, comportement plus
 Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne thoracique gauche découverte lors d'un examen systématique. L'enfant est en bonne santé apparente, active, sans plainte fonctionnelle. Née à terme, développement psychomoteur normal. Pas de notion de malformation associée. Les parents sont très inquiets.
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : aucune scoliose familiale connue
@@ -990,6 +1053,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 #### Réponses détaillées
 
 **R1** — Classification :
+
 - **Scoliose infantile** : apparition entre 0 et 3 ans (cf. Module 9, §9.1)
 - Particularités de ce groupe d'âge :
   - **Prévalence masculine** dans les scolioses infantiles (contrairement à la SIA où les filles prédominent)
@@ -1000,6 +1064,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
   - L'indice de Mehta (RVAD et phase) permet de prédire la progressivité
 
 **R2** — Le RVAD (Rib-Vertebral Angle Difference de Mehta) :
+
 - C'est la différence d'angle entre la côte et le corps vertébral côté convexe et côté concave, mesurée sur la vertèbre apicale (cf. Module 9, §9.3)
 - **RVAD > 20°** : forte probabilité de scoliose **progressive** (critère de Mehta)
 - **RVAD < 20°** : probable évolution vers la **résolution spontanée**
@@ -1008,6 +1073,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 - Combiné à la valeur de Cobb de 32° à l'âge de 3 ans, le pronostic est celui d'une scoliose infantile progressive nécessitant un traitement actif
 
 **R3** — Examens complémentaires nécessaires :
+
 - **IRM médullaire complète** (cervico-thoraco-lombaire) : **obligatoire** dans toute scoliose infantile. Recherche de :
   - Syringomyélie (20% des cas de scoliose infantile non idiopathique)
   - Malformation d'Arnold-Chiari
@@ -1019,7 +1085,9 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 - L'IRM est l'examen le plus important car une anomalie intra-canalaire modifie fondamentalement la prise en charge
 
 **R4** — Stratégie thérapeutique :
+
 - Compte tenu du **caractère progressif** (RVAD 28°, Phase 2, Cobb 32° à 3 ans) :
+
 1. **Traitement par plâtres correcteurs successifs** de type Mehta (EDF — Elongation-Dérotation-Flexion) : technique de référence pour les scolioses infantiles progressives (cf. Module 9, §9.5)
    - Plâtres sous anesthésie générale, changés toutes les 8-12 semaines
    - Objectif : obtenir une correction maximale puis stabilisation
@@ -1030,6 +1098,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 6. Si échec : discussion d'un traitement chirurgical de croissance guidée (voir Q6)
 
 **R5** — Information aux parents sur le pronostic :
+
 - La scoliose de leur fille est du type **progressif** (RVAD élevé, Phase 2)
 - **Sans traitement**, la courbure va presque certainement s'aggraver avec la croissance, potentiellement jusqu'à des valeurs très sévères (> 80-100°) avec retentissement respiratoire
 - **Avec traitement précoce** (plâtres + corset) :
@@ -1040,6 +1109,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 - Le soutien psychologique de l'enfant et de la famille est important tout au long du parcours
 
 **R6** — Options chirurgicales si progression à 60° malgré le traitement (à 5 ans) :
+
 - **Tiges de croissance (growing rods)** : tiges implantées de part et d'autre de la courbure (ancrage proximal et distal), allongées chirurgicalement tous les 6-8 mois sous anesthésie générale (cf. Module 9, §9.6)
 - **Tiges magnétiques (MCGR — Magnetically Controlled Growing Rod)** : allongement non invasif en consultation par contrôle magnétique externe, évitant les réinterventions itératives. Innovation majeure mais coût élevé
 - **VEPTR (Vertical Expandable Prosthetic Titanium Rib)** : si insuffisance thoracique associée (syndrome d'insuffisance thoracique)
@@ -1056,7 +1126,8 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 
 ---
 
-<a id="cas-10"></a>
+`<a id="cas-10"></a>`
+
 ### Cas n°10 — Une déformation rachidienne avec atteinte cutanée
 
 **Niveau** : 🥈 Argent
@@ -1069,6 +1140,7 @@ Mlle F., 3 ans, est adressée par son pédiatre pour une courbure rachidienne th
 M. G., 11 ans, est suivi en neuropédiatrie pour une neurofibromatose de type 1 (NF1) diagnostiquée à l'âge de 4 ans. Il est adressé pour évaluation d'une courbure rachidienne constatée lors de la surveillance annuelle. L'enfant est asymptomatique sur le plan rachidien. Scolarisé en 6e avec un programme adapté (troubles des apprentissages légers).
 
 **Antécédents** :
+
 - Médicaux : NF1 confirmée génétiquement (mutation NF1), gliome des voies optiques stable sous surveillance
 - Chirurgicaux : aucun
 - Familiaux : mère porteuse de NF1 (forme modérée)
@@ -1123,6 +1195,7 @@ M. G., 11 ans, est suivi en neuropédiatrie pour une neurofibromatose de type 1 
 
 **R1** — Caractéristiques de la scoliose dystrophique NF1 (cf. Module 13, §13.2) :
 La NF1 peut provoquer deux types de scoliose : non-dystrophique (similaire à une SIA) et dystrophique (spécifique à la NF1). Les signes radiologiques dystrophiques identifiés chez ce patient sont :
+
 - **Scalloping vertébral postérieur** : érosion du mur postérieur des corps vertébraux due à l'ectasie durale ou aux neurofibromes
 - **Élargissement des foramens intervertébraux** (neurofibromes plexiformes ou ectasie durale)
 - **Amincissement des pédicules** (T6-T7) : érosion par pression des tissus dysplasiques
@@ -1133,18 +1206,19 @@ La NF1 peut provoquer deux types de scoliose : non-dystrophique (similaire à un
 
 **R2** — La distinction est cruciale car les pronostics sont radicalement différents :
 
-| Critère | Non-dystrophique | Dystrophique |
-|---------|-----------------|--------------|
-| Évolution | Similaire à SIA, modérée | Progression rapide et sévère |
-| Réponse au corset | Possible (comme SIA) | Inefficace |
-| Seuil chirurgical | Standard (45-50°) | Plus précoce (20-40°) |
-| Risque de cyphose | Modéré | Élevé (cyphoscoliose) |
-| Pseudarthrose post-op | Standard | Très augmenté (30-40%) |
-| Progression post-op | Rare | Fréquente (instrumentation insuffisante) |
+| Critère              | Non-dystrophique            | Dystrophique                              |
+| --------------------- | --------------------------- | ----------------------------------------- |
+| Évolution            | Similaire à SIA, modérée | Progression rapide et sévère            |
+| Réponse au corset    | Possible (comme SIA)        | Inefficace                                |
+| Seuil chirurgical     | Standard (45-50°)          | Plus précoce (20-40°)                   |
+| Risque de cyphose     | Modéré                    | Élevé (cyphoscoliose)                   |
+| Pseudarthrose post-op | Standard                    | Très augmenté (30-40%)                  |
+| Progression post-op   | Rare                        | Fréquente (instrumentation insuffisante) |
 
 La scoliose dystrophique de NF1 est l'une des plus agressives en chirurgie rachidienne pédiatrique. Le risque de progression sans traitement est quasi certain, avec déformation sévère et potentiel retentissement neurologique et cardio-respiratoire (cf. Module 13, §13.3).
 
 **R3** — Conduite à tenir :
+
 1. **Bilan préopératoire complet** : la chirurgie est indiquée d'emblée devant une scoliose dystrophique de 45° chez un enfant prépubère
    - IRM médullaire complète déjà réalisée (pas de neurofibrome intra-canalaire — bon point)
    - Scanner rachidien pour évaluer la morphologie pédiculaire (pédicules dystrophiques = implantation difficile)
@@ -1157,6 +1231,7 @@ La scoliose dystrophique de NF1 est l'une des plus agressives en chirurgie rachi
 3. **Surveillance rapprochée post-opératoire** prolongée (risque de pseudarthrose augmenté)
 
 **R4** — Particularités chirurgicales NF1 (cf. Module 13, §13.4 et Module 15) :
+
 - **Pédicules dystrophiques** : amincis, érodés — vis pédiculaires difficiles à implanter. Navigation 3D (O-arm) recommandée. Ancrage par crochets ou câbles sous-laminaires en alternative
 - **Tissu osseux de mauvaise qualité** : os dysplasique avec risque de pull-out (arrachement) des implants → utilisation de ciment augmenté dans certains cas
 - **Risque élevé de pseudarthrose** (30-40%) : greffe osseuse abondante (autogreffe iliaque + allogreffe), considérer les protéines morphogénétiques (BMP) avec prudence (hors AMM chez l'enfant, risque théorique de stimulation tumorale dans NF1)
@@ -1166,6 +1241,7 @@ La scoliose dystrophique de NF1 est l'une des plus agressives en chirurgie rachi
 - **Surveillance prolongée** obligatoire : risque de complications tardives plus élevé que dans la SIA
 
 **R5** — Le corset n'est **pas indiqué** dans cette situation :
+
 - Les scolioses **dystrophiques** de NF1 ne répondent pas au traitement orthopédique — c'est un facteur pronostique bien établi dans la littérature (cf. Module 13, §13.3)
 - La progression est inéluctable sans chirurgie, le corset ne fait que retarder l'intervention en exposant à une aggravation de la courbure
 - Seules les scolioses **non-dystrophiques** de NF1 (qui ressemblent à des SIA classiques) peuvent être traitées par corset selon les mêmes critères que la SIA
@@ -1183,7 +1259,8 @@ La scoliose dystrophique de NF1 est l'une des plus agressives en chirurgie rachi
 
 ---
 
-<a id="cas-11"></a>
+`<a id="cas-11"></a>`
+
 ### Cas n°11 — Lombalgies chroniques et canal rétréci
 
 **Niveau** : 🥈 Argent
@@ -1196,6 +1273,7 @@ La scoliose dystrophique de NF1 est l'une des plus agressives en chirurgie rachi
 Mme H., 68 ans, retraitée, consulte pour des lombalgies chroniques évoluant depuis 3 ans, progressivement associées à une gêne à la marche. Elle décrit un périmètre de marche réduit à 300 mètres, limité par l'apparition de douleurs dans les deux mollets et de paresthésies des pieds, la forçant à s'arrêter et à se pencher en avant pour être soulagée. Le caddie de courses la soulage. Pas de douleurs nocturnes, pas de trouble sphinctérien.
 
 **Antécédents** :
+
 - Médicaux : diabète de type 2 (HbA1c 7,2%), hypertension artérielle, dyslipidémie
 - Chirurgicaux : appendicectomie, hystérectomie
 - Familiaux : sans particularité
@@ -1254,19 +1332,20 @@ Mme H., 68 ans, retraitée, consulte pour des lombalgies chroniques évoluant de
 
 Différenciation avec la claudication vasculaire :
 
-| Critère | Claudication neurogène | Claudication vasculaire |
-|---------|----------------------|------------------------|
-| Type de douleur | Lourdeur, paresthésies, faiblesse | Crampes, douleur musculaire |
-| Topographie | Fesses, cuisses, jambes (L3-S1) | Mollets surtout |
-| Position de soulagement | Flexion du tronc (caddie, vélo) | Arrêt simple |
-| Vélo | Bien toléré (rachis en flexion) | Mal toléré (effort musculaire) |
-| Pouls périphériques | Présents | Absents ou diminués |
-| Début | Progressif | Brutal (à distance fixe) |
-| Récupération | Lente (plusieurs minutes) | Rapide (1-2 minutes) |
+| Critère                | Claudication neurogène            | Claudication vasculaire          |
+| ----------------------- | ---------------------------------- | -------------------------------- |
+| Type de douleur         | Lourdeur, paresthésies, faiblesse | Crampes, douleur musculaire      |
+| Topographie             | Fesses, cuisses, jambes (L3-S1)    | Mollets surtout                  |
+| Position de soulagement | Flexion du tronc (caddie, vélo)   | Arrêt simple                    |
+| Vélo                   | Bien toléré (rachis en flexion)  | Mal toléré (effort musculaire) |
+| Pouls périphériques   | Présents                          | Absents ou diminués             |
+| Début                  | Progressif                         | Brutal (à distance fixe)        |
+| Récupération          | Lente (plusieurs minutes)          | Rapide (1-2 minutes)             |
 
 Ici, les pouls sont perçus, la position penchée en avant soulage (augmentation du diamètre canalaire en flexion), et le caddie aide → claudication neurogène typique. La coexistence d'une polyneuropathie diabétique complique l'évaluation mais n'explique pas la claudication à la marche.
 
 **R2** — Paramètres d'équilibre sagittal (cf. Module 10, §10.4) :
+
 - **SVA = 8 cm** (normal < 5 cm) : déséquilibre sagittal positif (le patient est projeté en avant). Ceci entraîne une surcharge des muscles extenseurs du rachis et une fatigue majeure à la station debout
 - **PI-LL mismatch = 27°** (PI 55° − LL 28° = 27°) : la lordose lombaire est très insuffisante par rapport à l'incidence pelvienne. Normal : PI-LL < 10°. Un mismatch > 10° est associé à une dégradation significative de la qualité de vie (corrélation SRS-22 démontrée)
 - **Impact thérapeutique** : Si une chirurgie est envisagée, il faut impérativement restaurer l'alignement sagittal (corriger la lordose pour ramener PI-LL < 10°). Une simple décompression sans correction du déséquilibre sagittal expose à un résultat fonctionnel médiocre et à la progression de la déformation
@@ -1274,12 +1353,14 @@ Ici, les pouls sont perçus, la position penchée en avant soulage (augmentation
 ❌ **Erreur fréquente** : réaliser une laminectomie de décompression isolée sans prendre en compte le déséquilibre sagittal → risque d'aggravation de la déformation, de listhésis progressif et de résultat fonctionnel décevant.
 
 **R3** — Rôle de l'EMG :
+
 - L'EMG est utile pour **distinguer** la polyneuropathie diabétique d'une radiculopathie compressive surajoutée
 - Ici : **polyneuropathie sensitivo-motrice axonale** diabétique confirmée, **sans atteinte radiculaire individualisée** détectable par EMG
 - Interprétation : les symptômes de claudication à la marche sont d'origine **canalaire** (dynamique, liés à la posture en extension) et non d'origine neuropathique périphérique. L'EMG au repos peut ne pas montrer de souffrance radiculaire car la compression est **posturale** (en charge)
 - L'EMG aide au pronostic : la polyneuropathie diabétique préexistante est un facteur de moins bonne récupération neurologique post-chirurgicale
 
 **R4** — Algorithme décisionnel :
+
 1. **Traitement conservateur en première intention** (3-6 mois) :
    - Kinésithérapie : renforcement des abdominaux et extenseurs, exercices en flexion (programme Williams), travail ergonomique
    - Antalgiques : paracétamol, éviter les AINS au long cours (fonction rénale à surveiller avec le diabète)
@@ -1291,14 +1372,16 @@ Ici, les pouls sont perçus, la position penchée en avant soulage (augmentation
 3. Si chirurgie retenue : planification détaillée (voir Q5)
 
 **R5** — Geste chirurgical proposé et risques :
+
 - **Intervention** : décompression + arthrodèse + correction de l'alignement sagittal
+
   - Décompression L3-L4 et L4-L5 (laminectomie ou laminotomie)
   - Arthrodèse instrumentée L1 ou L2 à S1 (± extension au bassin si instabilité L5-S1) avec correction de la lordose lombaire (objectif : PI-LL < 10°)
   - Cages intersomatiques (TLIF ou LLIF) en L4-L5 et éventuellement L3-L4 pour restaurer la hauteur discale et la lordose segmentaire
   - Réduction du listhésis L4-L5
   - Greffe osseuse (autogreffe + substitut)
-
 - **Risques spécifiques à cette patiente** :
+
   - **Diabète** : risque infectieux augmenté (ISO x 2-3), cicatrisation ralentie, neuropathie préexistante → optimiser la glycémie péri-opératoire (protocole insuline, objectif glycémie < 1,80 g/L)
   - **Obésité (IMC 28,9)** : abord chirurgical plus difficile, risque thromboembolique augmenté, risque de complications mécaniques (pull-out des vis)
   - **Ostéoporose potentielle** (femme ménopausée, 68 ans) : DEXA préopératoire à réaliser, risque de tassement de la vertèbre sus-jacente (PJK = Proximal Junctional Kyphosis)
@@ -1315,7 +1398,8 @@ Ici, les pouls sont perçus, la position penchée en avant soulage (augmentation
 
 ---
 
-<a id="cas-12"></a>
+`<a id="cas-12"></a>`
+
 ### Cas n°12 — Une scoliose chez un adolescent hyper-laxe
 
 **Niveau** : 🥈 Argent
@@ -1328,6 +1412,7 @@ Ici, les pouls sont perçus, la position penchée en avant soulage (augmentation
 M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il est grand (185 cm pour son âge, P97), mince (55 kg, IMC 16,1), avec un morphotype longiligne. Une scoliose a été diagnostiquée à 11 ans (Cobb 18° à l'époque), traitée par corset. Le corset a été arrêté par la famille il y a 6 mois par lassitude. Le patient est « assez souple » selon les parents.
 
 **Antécédents** :
+
 - Médicaux : myopie sévère bilatérale (−8 dioptries), subluxation du cristallin gauche découverte à 12 ans. Pneumothorax spontané droit à 13 ans
 - Chirurgicaux : drainage thoracique (pneumothorax)
 - Familiaux : père décédé à 42 ans de dissection aortique
@@ -1376,24 +1461,28 @@ M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il e
 #### Réponses détaillées
 
 **R1** — Éléments orientant vers un syndrome de Marfan :
+
 - **Critères squelettiques** : grande taille (P97), arachnodactylie (signes de Steinberg et Walker-Murdoch positifs), ratio envergure/taille aux limites (1,049), pectus carinatum, scoliose > 20°, pieds plats, protrusio acetabuli, hyperlaxité (Beighton 7/9)
 - **Critère oculaire** : subluxation du cristallin (ectopia lentis) — critère majeur des critères de Ghent révisés
 - **Critère cardiovasculaire** : dilatation de la racine aortique (Z-score ≥ 2), prolapsus mitral. Père décédé de dissection aortique (antécédent familial)
 - **Autre** : pneumothorax spontané (fréquent dans le Marfan)
 
 **Critères de Ghent révisés (2010)** pour le diagnostic (cf. Module 13, §13.5) :
+
 - Ectopia lentis + dilatation aortique (Z ≥ 2) = **diagnostic de Marfan** confirmé
 - OU : Ectopia lentis + mutation FBN1 connue = diagnostic confirmé
 - Ici, les deux critères majeurs sont réunis (ectopia lentis + dilatation aortique Z-score 3,2). Diagnostic confirmé, même sans analyse génétique.
 - La mutation FBN1 est néanmoins recommandée pour le conseil génétique familial.
 
 **R2** — Progression rapide (18° → 52° en 3 ans) expliquée par :
+
 - **Tissu conjonctif anormal** (mutation FBN1 → fibrilline déficiente) : les structures ligamentaires et capsulaires rachidiennes sont moins résistantes à la déformation. Les scolioses du Marfan progressent plus vite et sont plus résistantes au corset que les SIA
 - **Croissance rapide** : pic pubertaire en cours (Risser 2, 14 ans, grande taille), poussée de croissance majeure du syndrome de Marfan (phénotype longiligne)
 - **Arrêt du corset** : facteur aggravant documenté. La progression aurait probablement eu lieu même avec le corset (les scolioses marfanoïdes répondent moins bien au corsetage), mais l'arrêt a pu accélérer le processus
 - **Hypocyphose thoracique** (18°) : l'absence de cyphose thoracique normale est un facteur biomécanique aggravant de la scoliose (instabilité rotationnelle du rachis thoracique en cas de dos plat)
 
 **R3** — Conduite à tenir pour la scoliose :
+
 1. **Le corset n'est plus indiqué** : la courbure est à 52° (au-delà du seuil efficace de 45°), le corset est peu efficace dans le Marfan, et l'observance est mauvaise
 2. **Indication chirurgicale** : arthrodèse postérieure instrumentée pour corriger et stabiliser la courbure
    - Courbure > 50° chez un patient en croissance → risque de progression majeure
@@ -1405,6 +1494,7 @@ M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il e
    - Pneumologie : EFR (pneumothorax antécédent, risque de récidive peropératoire)
 
 **R4** — Précautions chirurgicales spécifiques au Marfan (cf. Module 13, §13.6) :
+
 - **Cardiovasculaires** :
   - Éviter les variations tensionnelles brutales (risque de dissection aortique peropératoire)
   - Monitoring invasif (cathéter artériel, ETO si disponible)
@@ -1420,6 +1510,7 @@ M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il e
 - **Informer l'anesthésiste** du diagnostic de Marfan (risque d'intubation difficile — subluxation atlanto-axoïdienne possible)
 
 **R5** — Entretien de décision partagée :
+
 - **Exposer les faits** :
   - La courbure a progressé de 18° à 52° en 3 ans, malgré le corset initial
   - Sans chirurgie, la progression est quasi certaine (croissance résiduelle + tissu conjonctif fragile). Le risque est d'atteindre 70-80° ou plus, avec retentissement cosmétique, respiratoire et douloureux
@@ -1442,7 +1533,8 @@ M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il e
 
 ---
 
-<a id="cas-13"></a>
+`<a id="cas-13"></a>`
+
 ### Cas n°13 — Un déséquilibre sagittal progressif chez un retraité
 
 **Niveau** : 🥈 Argent
@@ -1455,6 +1547,7 @@ M. J., 14 ans, est adressé pour une scoliose thoracique droite évolutive. Il e
 M. N., 74 ans, ancien enseignant, consulte car il « ne tient plus droit ». Depuis 2 ans, il se penche de plus en plus en avant et ne peut marcher plus de 200 mètres sans se tenir à un déambulateur. Il est fatigué en fin de journée, avec des douleurs lombaires et des cuisses (face antérieure). Il doit plier les genoux et fléchir les hanches pour compenser. Sa femme rapporte qu'il « regarde ses pieds en permanence ».
 
 **Antécédents** :
+
 - Médicaux : arthrodèse L4-L5-S1 il y a 12 ans pour spondylolisthésis dégénératif, hypertension, insuffisance rénale stade 2
 - Chirurgicaux : prothèse de genou droit il y a 5 ans
 - Familiaux : mère ostéoporotique avec fractures vertébrales
@@ -1510,6 +1603,7 @@ M. N., 74 ans, ancien enseignant, consulte car il « ne tient plus droit ». Dep
 
 **R1** — Mécanismes de compensation en cascade (cf. Module 10, §10.3 et Module 14, §14.7) :
 Le déséquilibre sagittal déclenche une **cascade de compensation** pour maintenir le regard horizontal et l'équilibre debout :
+
 1. **Rétroversion pelvienne** : PT = 35° (normal < 20°). Le bassin bascule en arrière pour reculer la ligne de gravité. C'est le premier mécanisme mis en jeu, mais il est ici épuisé (PT maximal)
 2. **Flexion des genoux** : les genoux se fléchissent pour abaisser le centre de masse et reculer la ligne de gravité — observable cliniquement (marche en flexion)
 3. **Hyperextension des hanches** : ici limitée (extension à 0°, pas de réserve)
@@ -1518,6 +1612,7 @@ Le déséquilibre sagittal déclenche une **cascade de compensation** pour maint
 Quand tous les mécanismes sont épuisés, le patient ne peut plus maintenir le regard horizontal et perd son autonomie (périmètre de marche effondré). La douleur des cuisses (face antérieure) correspond à la fatigue des quadriceps sollicités en permanence par la position en genoux fléchis.
 
 **R2** — Relation arthrodèse-déséquilibre (cf. Module 10, §10.5) :
+
 - L'arthrodèse L4-S1 réalisée il y a 12 ans a probablement été faite en **lordose insuffisante** (LL actuelle = 20° pour un PI de 60°)
 - L'arthrodèse a figé les segments L4-S1 dans une position non optimale, privant le rachis de sa capacité d'adaptation lombaire basse
 - Au fil du temps, la dégénérescence des segments sus-jacents (L1-L3) a aggravé la perte de lordose
@@ -1526,17 +1621,19 @@ Quand tous les mécanismes sont épuisés, le patient ne peut plus maintenir le 
 - Le résultat est un déséquilibre sagittal progressif, bien au-delà des capacités de compensation du patient
 
 **R3** — Paramètres radiologiques clés (cf. Module 10, §10.4) :
-| Paramètre | Valeur | Normal | Signification |
-|-----------|--------|--------|---------------|
-| SVA | 14 cm | < 5 cm | Déséquilibre sagittal sévère |
-| PI-LL | 40° | < 10° | Mismatch majeur, corrélé à l'invalidité |
-| PT | 35° | < 20° | Compensation pelvienne maximale (épuisée) |
-| TPA | 38° | < 14° | Paramètre global intégrant SVA et PT, prédictif de la qualité de vie |
-| PJK | 25° | < 10° | Complication jonctionnelle au-dessus de l'arthrodèse |
+
+| Paramètre | Valeur | Normal | Signification                                                            |
+| ---------- | ------ | ------ | ------------------------------------------------------------------------ |
+| SVA        | 14 cm  | < 5 cm | Déséquilibre sagittal sévère                                         |
+| PI-LL      | 40°   | < 10° | Mismatch majeur, corrélé à l'invalidité                              |
+| PT         | 35°   | < 20° | Compensation pelvienne maximale (épuisée)                              |
+| TPA        | 38°   | < 14° | Paramètre global intégrant SVA et PT, prédictif de la qualité de vie |
+| PJK        | 25°   | < 10° | Complication jonctionnelle au-dessus de l'arthrodèse                    |
 
 Tous ces paramètres sont sévèrement altérés. L'étude de Schwab (SRS-Schwab) a démontré une corrélation directe entre PI-LL mismatch, PT, SVA et les scores de qualité de vie (SRS-22, ODI). Un PI-LL > 20° et un PT > 25° sont associés à une invalidité sévère. Ici, les valeurs sont bien au-delà de ces seuils.
 
 **R4** — Options chirurgicales de correction (cf. Module 10, §10.6) :
+
 - **Objectif** : restaurer PI-LL < 10° → il faut gagner environ 30-35° de lordose lombaire
 - **Options** :
   1. **Extension de l'arthrodèse vers le haut** (T10 ou T9) avec ostéotomies de correction lordosante :
@@ -1548,6 +1645,7 @@ Tous ces paramètres sont sévèrement altérés. L'étude de Schwab (SRS-Schwab
 
 **R5** — Intégration de l'ostéoporose (cf. Module 25, §25.5) :
 L'ostéoporose sévère (T-score −2,8) est un facteur de risque majeur qui modifie la stratégie à tous les niveaux :
+
 - **Préopératoire** :
   - Traitement anti-ostéoporotique à débuter au moins 3-6 mois avant la chirurgie si celle-ci n'est pas urgente
   - Tériparatide (agent anabolique osseux) préféré aux bisphosphonates en pré-chirurgical (stimule la formation osseuse et la consolidation)
@@ -1565,6 +1663,7 @@ L'ostéoporose sévère (T-score −2,8) est un facteur de risque majeur qui mod
 ❌ **Erreur fréquente** : opérer un patient ostéoporotique sévère sans optimisation osseuse préalable ni augmentation cimentée des vis → échec mécanique précoce.
 
 **R6** — Réponse au patient sur le traitement conservateur :
+
 - **Honnêtement** : le traitement conservateur seul ne peut pas **corriger** le déséquilibre sagittal. Aucune kinésithérapie ni aucun corset ne peut restaurer une lordose lombaire figée par l'arthrodèse et la dégénérescence
 - **Ce que peut apporter le traitement conservateur** :
   - Renforcement musculaire (extenseurs, abdominaux) pour optimiser les compensations restantes
@@ -1589,7 +1688,8 @@ L'ostéoporose sévère (T-score −2,8) est un facteur de risque majeur qui mod
 
 ---
 
-<a id="cas-14"></a>
+`<a id="cas-14"></a>`
+
 ### Cas n°14 — SIA sévère avec décompensation thoracique
 
 **Niveau** : 🥇 Or
@@ -1602,6 +1702,7 @@ L'ostéoporose sévère (T-score −2,8) est un facteur de risque majeur qui mod
 Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. La scoliose a été diagnostiquée à 12 ans (Cobb 30°), un corset a été porté partiellement pendant 2 ans (moins de 12h/jour en moyenne). La courbure a progressé. Elle se plaint d'une gêne esthétique majeure (asymétrie des épaules, gibbosité visible, déformation du tronc), d'un essoufflement léger à l'effort intense (natation de compétition), et d'une douleur dorsale modérée (EVA 3/10) en fin de journée. Impact psychologique significatif (évite les activités de plage et de piscine avec les amies).
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : aucun
 - Familiaux : tante paternelle opérée d'une scoliose
@@ -1648,7 +1749,7 @@ Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. L
 
 #### Questions progressives
 
-**Q1** — Analysez la classification Lenke de cette scoliose et expliquez comment elle guide la sélection des niveaux de fusion. 
+**Q1** — Analysez la classification Lenke de cette scoliose et expliquez comment elle guide la sélection des niveaux de fusion.
 
 **Q2** — Quels sont les niveaux de fusion que vous proposez et comment les déterminez-vous ?
 
@@ -1674,6 +1775,7 @@ Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. L
 **Impact sur la fusion** : Lenke 1A permet une **fusion sélective thoracique** (ne pas fusionner la courbure lombaire compensatrice non structurale). C'est un avantage majeur : on préserve la mobilité lombaire.
 
 **R2** — Niveaux de fusion proposés :
+
 - **Vertèbre proximale** : **T3 ou T4** — vertèbre supérieure instrumentée (UIV). Critères : inclure la vertèbre épaule (upper end vertebra) et obtenir un équilibre des épaules. Si l'épaule droite est plus haute, fusionner jusqu'à T3 peut être nécessaire
 - **Vertèbre distale** : **L1** — vertèbre inférieure instrumentée (LIV). Critères pour Lenke 1A :
   - La LIV est la vertèbre stable (intersectée par la CSVL) ou la vertèbre distale touchée
@@ -1685,6 +1787,7 @@ Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. L
 ❌ **Erreur fréquente** : fusionner trop bas (jusqu'à L3-L4) dans un Lenke 1A, ce qui sacrifie inutilement la mobilité lombaire et expose à la dégénérescence sous-jacente à long terme.
 
 **R3** — Plan technique chirurgical :
+
 - **Instrumentation** : vis pédiculaires bilatérales (ancrage le plus solide) sur chaque vertèbre instrumentée. Vis polyaxiales en proximal et distal, vis monoaxiales possibles en zone apicale pour un meilleur contrôle de la dérotation
 - **Manœuvres de correction** :
   - **Dérotation en bloc (rod derotation)** : technique principale — la tige pré-cintrée est insérée côté concave et dérotée de 90° pour transformer la scoliose en cyphose physiologique
@@ -1695,6 +1798,7 @@ Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. L
 - **Tiges** : tiges en CoCr 5,5 mm (plus rigides que le titane) pour une correction optimale d'une courbure sévère
 
 **R4** — Stratégie sagittale (cf. Module 14, §14.7) :
+
 - L'**hypocyphose thoracique** (22°) est un problème spécifique des SIA thoraciques droites. Objectifs :
   - Restaurer une cyphose thoracique de **25-40°** (norme anatomique)
   - La manœuvre de dérotation en bloc (rod derotation) convertit naturellement une partie de la rotation axiale en cyphose → aide à restaurer le profil sagittal
@@ -1704,6 +1808,7 @@ Mlle C., 15 ans, est adressée pour une scoliose thoracique droite évolutive. L
 
 **R5** — Information sur les risques chirurgicaux :
 Les risques à détailler dans l'information préopératoire :
+
 - **Déficit neurologique** (< 0,5-1%) : le risque le plus redouté. Peut aller de la simple dysesthésie à la paraplégie (exceptionnelle). Le neuromonitoring peropératoire réduit considérablement ce risque
 - **Infection du site opératoire** (2-4%) : infection superficielle ou profonde, pouvant nécessiter un lavage chirurgical et une antibiothérapie prolongée
 - **Saignement** : perte sanguine moyenne 500-1500 mL dans les corrections de scoliose sévère. Polytransfusion possible. Récupération de sang peropératoire (cell-saver) systématique
@@ -1715,6 +1820,7 @@ Les risques à détailler dans l'information préopératoire :
 - **Impact fonctionnel** : perte de mobilité thoracique (rotation, flexion latérale du segment fusionné). Pas de limitation significative des AVQ
 
 **R6** — Reprise de la natation de compétition :
+
 - **Reprise sportive progressive** autorisée à partir de **6-12 mois** post-opératoire (après consolidation de l'arthrodèse)
 - **Natation de loisir** : possible dès 3-4 mois (activité à faible impact)
 - **Natation de compétition** : la perte de mobilité thoracique (rotation limitée) affectera la technique de nage, en particulier le crawl et le dos crawlé
@@ -1724,6 +1830,7 @@ Les risques à détailler dans l'information préopératoire :
 - Environ **80% des patients** reprennent une activité sportive après arthrodèse pour SIA, mais le retour au sport de compétition dépend du nombre de niveaux fusionnés et de la discipline
 
 **R7** — Protocole de neuromonitoring peropératoire (cf. Module 17, §17.3) :
+
 - **PES (Potentiels Évoqués Somesthésiques)** : stimulation du nerf tibial postérieur et du nerf médian, recueil cortical. Surveillance des voies sensitives (cordons postérieurs de la moelle). Critère d'alerte : diminution d'amplitude > 50% ou augmentation de latence > 10%
 - **PEM (Potentiels Évoqués Moteurs)** : stimulation corticale transcrânienne, recueil musculaire (quadriceps, tibial antérieur, gastrocnémien, abducteur du gros orteil). Surveillance des voies motrices (faisceau cortico-spinal). Critère d'alerte : disparition complète ou diminution > 65% d'amplitude
 - **Triggered EMG** : stimulation directe des vis pédiculaires pour vérifier leur positionnement. Un seuil < 8-10 mA en thoracique ou < 10-12 mA en lombaire suggère une effraction du pédicule
@@ -1744,7 +1851,8 @@ Les risques à détailler dans l'information préopératoire :
 
 ---
 
-<a id="cas-15"></a>
+`<a id="cas-15"></a>`
+
 ### Cas n°15 — Scoliose neuromusculaire et insuffisance respiratoire
 
 **Niveau** : 🥇 Or
@@ -1757,6 +1865,7 @@ Les risques à détailler dans l'information préopératoire :
 M. P., 13 ans, est suivi depuis l'âge de 5 ans pour une dystrophie musculaire de Duchenne (DMD) confirmée génétiquement (délétion exons 45-50 du gène DMD). Il est en fauteuil roulant depuis l'âge de 10 ans. Une scoliose thoraco-lombaire a été détectée lors de la perte de la marche et s'est rapidement aggravée. Il est adressé pour évaluation chirurgicale. Il présente une obésité modérée (corticothérapie) et une gêne respiratoire progressive.
 
 **Antécédents** :
+
 - Médicaux : DMD, cardiomyopathie dilatée débutante (FEVG 50%), traitement par corticoïdes (déflazacort) depuis l'âge de 5 ans, VNI nocturne depuis 6 mois
 - Chirurgicaux : ténotomies d'Achille bilatérales à 8 ans
 - Familiaux : un frère aîné décédé de DMD à 24 ans (complications respiratoires)
@@ -1816,6 +1925,7 @@ M. P., 13 ans, est suivi depuis l'âge de 5 ans pour une dystrophie musculaire d
 #### Réponses détaillées
 
 **R1** — Mécanismes de progression rapide (cf. Module 12, §12.2) :
+
 - **Perte de l'activité musculaire posturale** : les muscles paravertébraux et abdominaux ne peuvent plus stabiliser le rachis en position assise → le rachis s'effondre progressivement sous l'effet de la gravité
 - **Asymétrie de l'affaiblissement musculaire** : la faiblesse n'est pas parfaitement symétrique → une asymétrie même minime initie la courbure, qui s'auto-aggrave par le cercle vicieux de Stokes (pression asymétrique sur les plateaux vertébraux en croissance → cunéiformisation → aggravation de la courbure) (cf. Module 3, §3.6)
 - **Position assise prolongée** : charge axiale permanente sur un rachis sans soutien musculaire
@@ -1825,22 +1935,25 @@ M. P., 13 ans, est suivi depuis l'âge de 5 ans pour une dystrophie musculaire d
 
 **R2** — Critères de timing chirurgical (cf. Module 12, §12.4) :
 Le timing est crucial car il s'agit de trouver la fenêtre optimale entre deux risques :
+
 - **Opérer trop tôt** : courbure encore modérée, risque chirurgical inutile, phénomène de crankshaft si prépubère
 - **Opérer trop tard** : détérioration respiratoire et cardiaque rendant la chirurgie trop risquée
 
 Critères actuels :
-| Paramètre | Seuil | Ce patient |
-|-----------|-------|------------|
-| Cobb | > 20-25° et progressif | 55° ✓ |
-| Obliquité pelvienne | > 10-15° | 18° ✓ |
-| CVF | > 30-35% (seuil minimum) | 38% ✓ (limite) |
-| FEVG | > 40% (seuil minimum) | 50% ✓ |
-| Âge | Après 10-12 ans idéalement | 13 ans ✓ |
-| Progression | > 10°/an | Rapide ✓ |
+
+| Paramètre           | Seuil                        | Ce patient      |
+| -------------------- | ---------------------------- | --------------- |
+| Cobb                 | > 20-25° et progressif      | 55° ✓         |
+| Obliquité pelvienne | > 10-15°                    | 18° ✓         |
+| CVF                  | > 30-35% (seuil minimum)     | 38% ✓ (limite) |
+| FEVG                 | > 40% (seuil minimum)        | 50% ✓          |
+| Âge                 | Après 10-12 ans idéalement | 13 ans ✓       |
+| Progression          | > 10°/an                    | Rapide ✓       |
 
 → Ce patient remplit les critères pour la chirurgie. La **fenêtre chirurgicale se ferme** : si l'on attend, la CVF va continuer de baisser et franchir le seuil critique de 30% rendant la chirurgie très risquée.
 
 **R3** — Impact de la CVF à 38% (cf. Module 12, §12.5) :
+
 - CVF 38% = **restriction sévère** mais encore au-dessus du seuil de 30-35% considéré comme la limite inférieure pour la chirurgie dans la DMD
 - **Implications préopératoires** :
   - Consultation pneumologique spécialisée : optimisation de la mécanique ventilatoire, apprentissage de l'utilisation de l'insufflateur-exsufflateur mécanique (Cough Assist)
@@ -1857,6 +1970,7 @@ Critères actuels :
   - Surveillance en USI/réanimation pendant 48-72h minimum
 
 **R4** — Technique chirurgicale spécifique (cf. Module 12, §12.6 et Module 15) :
+
 - **Arthrodèse postérieure longue T2-bassin (ilium)**
   - Fusionner du rachis thoracique haut (T2-T3) au bassin est obligatoire dans les scolioses neuromusculaires avec obliquité pelvienne significative
   - L'ancrage pelvien (vis iliaques ou vis S2AI = sacro-alar-iliac) est indispensable pour corriger l'obliquité pelvienne et prévenir la récidive
@@ -1868,18 +1982,20 @@ Critères actuels :
 - **Particularité** : vérifier la position assise en fauteuil roulant en peropératoire (adaptation du moulage de l'assise postopératoire)
 
 **R5** — Risques péri-opératoires spécifiques DMD et prévention :
-| Risque | Mécanisme | Prévention |
-|--------|-----------|------------|
-| Rhabdomyolyse / Hyperkaliémie | Succinylcholine + muscle dystrophique | Proscrire la succinylcholine. Rocuronium + sugammadex |
-| Hyperthermie maligne-like | Halogénés (sévoflurane) controversés | Préférer l'anesthésie IV totale (TIVA : propofol + rémifentanil) |
-| Insuffisance respiratoire post-op | CVF basse, toux inefficace | VNI précoce, Cough Assist, kinésithérapie respiratoire intensive |
-| Insuffisance cardiaque aiguë | Cardiomyopathie préexistante (FEVG 50%) | Remplissage prudent, monitorage hémodynamique invasif, inotropes si besoin |
-| Saignement excessif | Chirurgie longue, ostéoporose cortisonique | Acide tranexamique, cell-saver, réserve de concentrés érythrocytaires |
-| Infection | Corticothérapie au long cours, immunodépression relative | Antibioprophylaxie large, asepsie rigoureuse, stress dose de corticoïdes peropératoires |
-| Iléus prolongé | Position ventrale prolongée, morphiniques | Analgésie multimodale, mobilisation précoce |
-| Ostéoporose cortisonique | Vis dans os ostéoporotique | Augmentation cimentée si nécessaire, vis de bon diamètre |
+
+| Risque                            | Mécanisme                                                 | Prévention                                                                               |
+| --------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Rhabdomyolyse / Hyperkaliémie    | Succinylcholine + muscle dystrophique                      | Proscrire la succinylcholine. Rocuronium + sugammadex                                     |
+| Hyperthermie maligne-like         | Halogénés (sévoflurane) controversés                   | Préférer l'anesthésie IV totale (TIVA : propofol + rémifentanil)                      |
+| Insuffisance respiratoire post-op | CVF basse, toux inefficace                                 | VNI précoce, Cough Assist, kinésithérapie respiratoire intensive                       |
+| Insuffisance cardiaque aiguë     | Cardiomyopathie préexistante (FEVG 50%)                   | Remplissage prudent, monitorage hémodynamique invasif, inotropes si besoin               |
+| Saignement excessif               | Chirurgie longue, ostéoporose cortisonique                | Acide tranexamique, cell-saver, réserve de concentrés érythrocytaires                  |
+| Infection                         | Corticothérapie au long cours, immunodépression relative | Antibioprophylaxie large, asepsie rigoureuse, stress dose de corticoïdes peropératoires |
+| Iléus prolongé                  | Position ventrale prolongée, morphiniques                 | Analgésie multimodale, mobilisation précoce                                             |
+| Ostéoporose cortisonique         | Vis dans os ostéoporotique                                | Augmentation cimentée si nécessaire, vis de bon diamètre                               |
 
 **R6** — Suivi post-opératoire :
+
 - **J0-J3** : réanimation/USI, VNI continue, kinésithérapie respiratoire pluriquotidienne, surveillance hémodynamique rapprochée, analgésie multimodale (éviter morphiniques haute dose → dépression respiratoire)
 - **J3-J7** : si extubation réussie et VNI efficace → transfert en unité de soins. Début de verticalisation en fauteuil (adaptation de l'assise préparée en aval)
 - **J7-J14** : rééducation fonctionnelle, adaptation du fauteuil roulant, éducation thérapeutique des parents
@@ -1888,6 +2004,7 @@ Critères actuels :
 - **Annuel** : suivi cardio-respiratoire intégré, surveillance du matériel, adaptation du fauteuil avec la croissance résiduelle
 
 **R7** — Entretien avec les parents (décision partagée) :
+
 - **Ce que la chirurgie apporte** :
   - **Amélioration fonctionnelle** : meilleure posture assise, libération des deux mains (plus besoin d'appui latéral), amélioration du confort au fauteuil
   - **Stabilisation respiratoire** : la correction de la scoliose peut stabiliser voire améliorer modestement la CVF à court terme (en évitant la compression thoracique progressive)
@@ -1909,7 +2026,8 @@ Critères actuels :
 
 ---
 
-<a id="cas-16"></a>
+`<a id="cas-16"></a>`
+
 ### Cas n°16 — Scoliose congénitale avec anomalies associées
 
 **Niveau** : 🥇 Or
@@ -1922,6 +2040,7 @@ Critères actuels :
 Mlle S., 18 mois, est adressée par son pédiatre pour une déformation rachidienne thoraco-lombaire constatée depuis la naissance. L'enfant est née à terme (3200 g), grossesse sans particularité. Le diagnostic d'hémivertèbre a été évoqué sur des radiographies réalisées à 6 mois de vie. L'enfant se développe normalement (marche acquise à 14 mois), pas de trouble sphinctérien.
 
 **Antécédents** :
+
 - Médicaux : souffle cardiaque découvert à la naissance (CIV petite, non opérée)
 - Chirurgicaux : aucun
 - Familiaux : sans particularité
@@ -1988,16 +2107,18 @@ Mlle S., 18 mois, est adressée par son pédiatre pour une déformation rachidie
 #### Réponses détaillées
 
 **R1** — Classification McMaster (cf. Module 11, §11.3) :
+
 - **Type** : défaut de **formation** (≠ défaut de segmentation)
 - **Sous-type** : **hémivertèbre pleinement segmentée** = la forme avec le **potentiel de progression le plus élevé**
 
 Classification des hémivertèbres selon le risque évolutif :
-| Type | Segmentation | Risque de progression |
-|------|-------------|----------------------|
-| Non segmentée (fusion avec la vertèbre adjacente) | Incorporée | Faible |
-| Semi-segmentée | Un disque sur deux | Modéré |
-| **Pleinement segmentée** | **Deux disques normaux** | **Élevé** |
-| Incarcérée (encadrée par vertèbres compensatrices) | Variable | Plus faible (compensation locale) |
+
+| Type                                                   | Segmentation                   | Risque de progression             |
+| ------------------------------------------------------ | ------------------------------ | --------------------------------- |
+| Non segmentée (fusion avec la vertèbre adjacente)    | Incorporée                    | Faible                            |
+| Semi-segmentée                                        | Un disque sur deux             | Modéré                          |
+| **Pleinement segmentée**                        | **Deux disques normaux** | **Élevé**                 |
+| Incarcérée (encadrée par vertèbres compensatrices) | Variable                       | Plus faible (compensation locale) |
 
 Ici : hémivertèbre pleinement segmentée = **croissance asymétrique** garantie car les deux plaques de croissance du disque sus et sous-jacent sont actives → la vertèbre grandit d'un côté et pas de l'autre → aggravation inéluctable avec la croissance.
 
@@ -2007,14 +2128,15 @@ Taux de progression attendu : environ **2-3° par an** dans le rachis thoraco-lo
 La scoliose congénitale résulte d'une anomalie de la somitogenèse (4e-6e semaine de développement embryonnaire). À cette période, le mésoblaste se différencie simultanément en plusieurs structures → les malformations sont souvent **associées** (atteinte de l'axe mésodermique) :
 
 - **VACTERL** (association non aléatoire) :
+
   - **V**ertebral anomalies (scoliose congénitale ✓)
   - **A**nal atresia (imperforation anale)
   - **C**ardiac defects (CIV ✓ — retrouvée ici)
   - **T**racheo-**E**sophageal fistula (fistule trachéo-œsophagienne)
   - **R**enal anomalies (rein en fer à cheval ✓ — retrouvé ici)
   - **L**imb anomalies (anomalies des membres)
-
 - **Bilan systématique obligatoire** :
+
   - Échographie rénale (20-30% de malformations rénales associées) → ici : rein en fer à cheval
   - Échocardiographie (10-15% de cardiopathies congénitales) → ici : CIV
   - IRM médullaire (20-40% d'anomalies intra-canalaires : moelle attachée, diastéomatomyélie, syringomyélie)
@@ -2024,6 +2146,7 @@ La scoliose congénitale résulte d'une anomalie de la somitogenèse (4e-6e sema
 Cette patiente présente une **association VACTERL** partielle (V + C + R).
 
 **R3** — Histoire naturelle et risque évolutif :
+
 - **Hémivertèbre pleinement segmentée** au niveau thoraco-lombaire : le risque de progression est **quasi certain** (cf. Module 11, §11.5)
 - Les deux plaques de croissance actives assurent une croissance asymétrique continue. La courbure actuelle (30° à 18 mois) va s'aggraver avec chaque poussée de croissance (infantile puis pubertaire)
 - **Sans traitement** : la courbure peut atteindre 60-90° à maturité squelettique, avec déformation sévère et impact fonctionnel
@@ -2031,6 +2154,7 @@ Cette patiente présente une **association VACTERL** partielle (V + C + R).
 - Le risque est majoré par le caractère **non incarcéré** de l'hémivertèbre (pas de vertèbres adjacentes compensatrices qui limiteraient la déformation)
 
 **R4** — Stratégie thérapeutique :
+
 1. **Le corset est inefficace** dans les scolioses congénitales : la déformation est liée à une anomalie osseuse structurale, pas à un déséquilibre musculaire ou postural
 2. **Indication chirurgicale** : résection de l'hémivertèbre avec arthrodèse segmentaire courte
    - **Timing optimal** : entre 1 et 3 ans. L'intervention précoce permet de :
@@ -2045,6 +2169,7 @@ Cette patiente présente une **association VACTERL** partielle (V + C + R).
    - Consultation anesthésique pédiatrique spécialisée
 
 **R5** — Technique de résection d'hémivertèbre (cf. Module 11, §11.6 et Module 15) :
+
 - **Principe** : exérèse complète de l'hémivertèbre malformée et arthrodèse courte des vertèbres adjacentes en position corrigée
 - **Voie d'abord** : postérieure seule (technique préférée actuellement), ou combinée postéro-latérale
 - **Étapes** :
@@ -2064,6 +2189,7 @@ Cette patiente présente une **association VACTERL** partielle (V + C + R).
 - **Résultats attendus** : correction de 60-80% de la courbure, fusion courte préservant le maximum de croissance rachidienne
 
 **R6** — Réponse aux parents sur la surveillance seule :
+
 - La surveillance seule **n'est pas recommandée** pour une hémivertèbre pleinement segmentée au niveau thoraco-lombaire
 - Arguments :
   - L'aggravation est **quasi inéluctable** : les deux plaques de croissance actives assurent une croissance asymétrique continue
@@ -2086,7 +2212,8 @@ Cette patiente présente une **association VACTERL** partielle (V + C + R).
 
 ---
 
-<a id="cas-17"></a>
+`<a id="cas-17"></a>`
+
 ### Cas n°17 — Scoliose dégénérative symptomatique chez un patient ostéoporotique
 
 **Niveau** : 🥇 Or
@@ -2099,6 +2226,7 @@ Cette patiente présente une **association VACTERL** partielle (V + C + R).
 Mme V., 71 ans, retraitée, consulte pour une dégradation progressive de sa qualité de vie depuis 3 ans. Elle présente des lombalgies chroniques (EVA 6/10), un périmètre de marche réduit à 200 mètres avec des douleurs radiculaires bilatérales (cruralgie L4 gauche prédominante et sciatique L5 droite), et un déséquilibre postural qui la pousse à s'appuyer sur un caddie. Elle a « tout essayé » : kinésithérapie, infiltrations (3 séries), antalgiques.
 
 **Antécédents** :
+
 - Médicaux : ostéoporose connue traitée par alendronate depuis 2 ans (T-score col fémoral −3,0), HTA, hypothyroïdie, syndrome dépressif réactionnel
 - Chirurgicaux : PTH gauche il y a 6 ans, cholécystectomie
 - Familiaux : mère avec tassements vertébraux multiples
@@ -2156,6 +2284,7 @@ Mme V., 71 ans, retraitée, consulte pour une dégradation progressive de sa qua
 #### Réponses détaillées
 
 **R1** — Analyse des déficits neurologiques :
+
 - **Déficit L4 gauche** (quadriceps 4/5, hypoesthésie face antérieure de cuisse, rotulien diminué) :
   - Correspond à la compression de la racine L4 gauche
   - Localisation probable : sténose canalaire L3-L4 (Schizas D) avec listhésis dégénératif → la racine L4 traverse le récessus latéral de L3-L4 où la sténose est maximale
@@ -2170,23 +2299,26 @@ Mme V., 71 ans, retraitée, consulte pour une dégradation progressive de sa qua
 
 **R2** — Objectifs thérapeutiques :
 **Objectifs cliniques** :
+
 - Décompression neurologique → récupération des déficits moteurs et sensitifs, disparition de la claudication
 - Correction de la douleur lombaire mécanique
 - Restauration du périmètre de marche
 - Amélioration de la qualité de vie (SRS-22, ODI)
 
 **Objectifs radiologiques** (cf. Module 10, §10.4) :
-| Paramètre | Cible |
-|-----------|-------|
-| PI-LL mismatch | < 10° (idéalement < 10°, actuellement 33°) |
-| SVA | < 5 cm (actuellement 9 cm) |
-| PT | < 20° (actuellement 30°) |
-| Équilibre frontal | Fil à plomb < 2 cm |
-| Lordose lombaire | ≥ 48° (PI − 10° = 48°) |
+
+| Paramètre         | Cible                                          |
+| ------------------ | ---------------------------------------------- |
+| PI-LL mismatch     | < 10° (idéalement < 10°, actuellement 33°) |
+| SVA                | < 5 cm (actuellement 9 cm)                     |
+| PT                 | < 20° (actuellement 30°)                     |
+| Équilibre frontal | Fil à plomb < 2 cm                            |
+| Lordose lombaire   | ≥ 48° (PI − 10° = 48°)                    |
 
 La restauration de l'alignement sagittal est **l'objectif chirurgical le plus corrélé au résultat fonctionnel** dans les déformités de l'adulte (corrélation démontrée par Schwab et al.).
 
 **R3** — Montage chirurgical proposé :
+
 - **Fusion longue T10 (ou T9) – sacrum – ilium** :
   - **Niveaux proximaux** : T10 ou T9 pour inclure la zone de cyphose jonctionnelle thoraco-lombaire et obtenir un ancrage solide au-dessus de la déformation. Arrêter à la charnière thoraco-lombaire (T12-L1) expose à un PJK élevé
   - **Niveaux distaux** : extension au sacrum (S1) + ancrage pelvien (vis iliaques ou S2AI). Il est nécessaire de descendre au sacrum car la courbure atteint L5 et le listhésis L3-L4 nécessite une stabilisation étendue
@@ -2202,6 +2334,7 @@ La restauration de l'alignement sagittal est **l'objectif chirurgical le plus co
 - **Greffe osseuse** : autogreffe locale + allogreffe abondante. BMP à discuter (hors AMM mais utilisé dans de nombreuses séries adultes pour réduire le taux de pseudarthrose)
 
 **R4** — Gestion de l'ostéoporose (cf. Module 25, §25.5) :
+
 - **Préopératoire** :
   - Alendronate en cours depuis 2 ans → continuer. Certains auteurs recommandent un relais par **tériparatide** (agent anabolique) en pré et postopératoire (stimule la formation osseuse et la consolidation de la fusion)
   - Vérifier et corriger la vitamine D (objectif > 30 ng/mL)
@@ -2217,18 +2350,20 @@ La restauration de l'alignement sagittal est **l'objectif chirurgical le plus co
   - DEXA de contrôle à 2 ans
 
 **R5** — Complications anticipées et prévention :
-| Complication | Risque estimé | Prévention |
-|-------------|---------------|------------|
-| **PJK** (cyphose jonctionnelle proximale) | 20-40% | UIV en T10 (pas à la charnière TL), vis augmentées en proximal, ligamentoplastie prophylactique discutée |
-| **Pseudarthrose** | 10-20% | Greffe abondante, BMP si nécessaire, traitement anti-ostéoporotique, pas de tabac |
-| **Infection profonde** | 5-8% | Antibioprophylaxie, vancomycine topique intra-plaie (powder), glycémie contrôlée, fermeture soigneuse |
-| **Désinstrumentation distale** (pull-out sacrum) | 10-15% | Vis iliaques ou S2AI, ciment PMMA |
-| **Déficit neurologique** | 2-5% | Neuromonitoring, décompression prudente, réduction progressive du listhésis |
-| **Thrombose/embolie pulmonaire** | 3-5% | HBPM, bas de contention, verticalisation précoce |
-| **Complications médicales** (pneumopathie, infection urinaire, iléus) | 15-20% | ERAS, kinésithérapie respiratoire, sondage intermittent, mobilisation précoce |
-| **Fracture de tige** | 5-10% (à long terme) | Distribution des contraintes (cages, greffe), tiges bi-tige CoCr 6,0 mm |
+
+| Complication                                                                  | Risque estimé        | Prévention                                                                                                  |
+| ----------------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **PJK** (cyphose jonctionnelle proximale)                               | 20-40%                | UIV en T10 (pas à la charnière TL), vis augmentées en proximal, ligamentoplastie prophylactique discutée |
+| **Pseudarthrose**                                                       | 10-20%                | Greffe abondante, BMP si nécessaire, traitement anti-ostéoporotique, pas de tabac                          |
+| **Infection profonde**                                                  | 5-8%                  | Antibioprophylaxie, vancomycine topique intra-plaie (powder), glycémie contrôlée, fermeture soigneuse     |
+| **Désinstrumentation distale** (pull-out sacrum)                       | 10-15%                | Vis iliaques ou S2AI, ciment PMMA                                                                            |
+| **Déficit neurologique**                                               | 2-5%                  | Neuromonitoring, décompression prudente, réduction progressive du listhésis                               |
+| **Thrombose/embolie pulmonaire**                                        | 3-5%                  | HBPM, bas de contention, verticalisation précoce                                                            |
+| **Complications médicales** (pneumopathie, infection urinaire, iléus) | 15-20%                | ERAS, kinésithérapie respiratoire, sondage intermittent, mobilisation précoce                             |
+| **Fracture de tige**                                                    | 5-10% (à long terme) | Distribution des contraintes (cages, greffe), tiges bi-tige CoCr 6,0 mm                                      |
 
 **R6** — Risque médicamenteux : interaction tramadol-paroxétine :
+
 - **Oui**, il existe un risque de **syndrome sérotoninergique** : le tramadol a une action sérotoninergique (inhibition de la recapture de la sérotonine) et la paroxétine est un ISRS. La combinaison potentialise le risque
 - Par ailleurs, la paroxétine est un **inhibiteur puissant du CYP2D6**, qui métabolise le tramadol en son métabolite actif (O-desméthyltramadol). Cela peut réduire l'efficacité antalgique du tramadol
 - **Conduite à tenir** :
@@ -2238,6 +2373,7 @@ La restauration de l'alignement sagittal est **l'objectif chirurgical le plus co
   - Informer l'anesthésiste de l'association
 
 **R7** — Parcours de soins post-opératoire (multidisciplinarité) :
+
 - **J0-J1** : USI, monitorage, analgésie multimodale (PCA morphine ou cathéter péridural, paracétamol IV, kétoprofène si pas de CI, gabapentine), VNI si besoin, bilan biologique
 - **J1-J3** : lever au fauteuil (J1 si possible), kinésithérapie respiratoire et de mobilisation, radiographie de contrôle debout face + profil, reprise alimentaire progressive
 - **J3-J10** : marche avec aide (déambulateur), kinésithérapie de rééducation progressive, surveillance de la plaie, retrait du drainage, prévention thromboembolique
@@ -2264,7 +2400,8 @@ La restauration de l'alignement sagittal est **l'objectif chirurgical le plus co
 
 ---
 
-<a id="cas-18"></a>
+`<a id="cas-18"></a>`
+
 ### Cas n°18 — Déficit neurologique post-opératoire
 
 **Niveau** : 💎 Diamant
@@ -2277,6 +2414,7 @@ La restauration de l'alignement sagittal est **l'objectif chirurgical le plus co
 Mlle W., 14 ans, est opérée d'une arthrodèse postérieure T3-L1 pour SIA Lenke 1BN, Cobb 58°. L'intervention se déroule normalement pendant la phase d'instrumentation (vis pédiculaires bilatérales T3 à L1 sans difficulté). La tige côté concave est mise en place et cintrée. Lors de la manœuvre de **dérotation de la tige** (rod derotation), à la rotation de 70° environ, le neurophysiologiste signale :
 
 **Alerte neuromonitoring** :
+
 - **PEM** : perte complète des réponses dans le tibial antérieur bilatéral et le gastrocnémien bilatéral (membres inférieurs). PEM des membres supérieurs conservés normaux
 - **PES** : diminution d'amplitude de 60% des PES du nerf tibial postérieur bilatéral, latences prolongées de 12%
 - **Triggered EMG** : pas d'alerte sur les vis pédiculaires (seuils > 12 mA sur toutes les vis)
@@ -2313,6 +2451,7 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 #### Réponses détaillées
 
 **R1** — Interprétation de l'alerte :
+
 - **Perte bilatérale des PEM aux membres inférieurs** avec conservation des PEM membres supérieurs : indique une souffrance médullaire **sous le niveau cervical** (le faisceau cortico-spinal est atteint au niveau thoracique mais pas au-dessus)
 - **Diminution des PES de 60%** : souffrance des voies sensitives (cordons postérieurs), qui vascularisation est distincte (artères spinales postérieures)
 - **Triggered EMG normal** : les vis ne sont pas en cause (pas d'effraction pédiculaire)
@@ -2322,10 +2461,12 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 **R2** — Protocole de gestion minute par minute (cf. Module 17, §17.4) :
 
 **T0 — Alerte déclarée** :
+
 - Le chirurgien **arrête toute manœuvre de correction**
 - Communication immédiate à toute l'équipe : « Alerte neuromonitoring — protocole de déficit en cours »
 
 **T0 à T+2 minutes — Correction des causes systémiques** :
+
 - Anesthésiste : **augmenter la PAM > 80-85 mmHg** (remplissage vasculaire ± vasopresseurs : phényléphrine ou noradrénaline)
 - Vérifier la **température** (réchauffement si < 36°C)
 - Corriger l'**anémie** si Hb < 8-9 g/dL (transfusion)
@@ -2333,30 +2474,34 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 - Neurophysiologiste : vérifier les **connexions techniques** (électrodes, impédances, artefacts)
 
 **T+2 à T+5 minutes — Geste chirurgical correctif** :
+
 - **Retirer le dernier geste** : défaire la rotation de la tige (retourner la tige à sa position initiale)
 - Vérifier l'absence de compression directe (caillot, mèche, fragment osseux dans le canal)
 - Irriguer le champ au sérum physiologique tiède
 
 **T+5 à T+15 minutes — Attente et réévaluation** :
+
 - Surveillance continue des PEM et PES toutes les 2-3 minutes
 - PAM maintenue > 80-85 mmHg
 - Si récupération des PEM et PES : reprendre la correction de façon plus progressive et prudente (rotation partielle, par paliers de 10-15°, avec vérification du neuromonitoring à chaque palier)
 - Si PAS de récupération → passer au test de réveil (Q4)
 
 **R3** — Causes réversibles à éliminer systématiquement (checklist « ATHAVIS ») :
-| Cause | Vérification | Ce patient |
-|-------|-------------|------------|
-| **A**nesthésie trop profonde | BIS, dernière dose de curare | Propofol-rémifentanil correct, pas de curare récent |
-| **T**ension artérielle basse | PAM | PAM 68 mmHg → à augmenter (limite basse) |
-| **H**ypothermie | Température | 35,8°C → réchauffer |
-| **A**némie | Hb/Hct | Hb 9,2 g/dL → transfuser si pas de récupération |
-| **V**is mal positionnée | Triggered EMG | Seuils > 12 mA → vis correctes |
-| **I**mpédance/connexion | Vérification technique | À vérifier par le neurophysiologiste |
-| **S**aignement/compression locale | Inspection visuelle du canal | À vérifier chirurgicalement |
+
+| Cause                                   | Vérification                 | Ce patient                                            |
+| --------------------------------------- | ----------------------------- | ----------------------------------------------------- |
+| **A**nesthésie trop profonde     | BIS, dernière dose de curare | Propofol-rémifentanil correct, pas de curare récent |
+| **T**ension artérielle basse     | PAM                           | PAM 68 mmHg → à augmenter (limite basse)            |
+| **H**ypothermie                   | Température                  | 35,8°C → réchauffer                                |
+| **A**némie                       | Hb/Hct                        | Hb 9,2 g/dL → transfuser si pas de récupération    |
+| **V**is mal positionnée          | Triggered EMG                 | Seuils > 12 mA → vis correctes                       |
+| **I**mpédance/connexion          | Vérification technique       | À vérifier par le neurophysiologiste                |
+| **S**aignement/compression locale | Inspection visuelle du canal  | À vérifier chirurgicalement                         |
 
 ❌ **Erreur fréquente** : incriminer immédiatement la chirurgie sans éliminer les causes systémiques réversibles qui représentent 30-40% des alertes de neuromonitoring.
 
 **R4** — Test de réveil de Stagnara (cf. Module 17, §17.4) :
+
 - **Principe** : réveiller partiellement le patient sous anesthésie générale pour évaluer directement la motricité volontaire des membres inférieurs — c'est le gold standard historique et le dernier recours diagnostique quand le neuromonitoring est équivoque ou quand les PEM ne récupèrent pas
 - **Procédure** :
   1. L'anesthésiste diminue progressivement le propofol et le rémifentanil
@@ -2370,6 +2515,7 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 
 **R5** — Conduite à tenir devant le déficit confirmé :
 **Immédiatement (en salle)** :
+
 - **Retrait complet de toute l'instrumentation** (toutes les vis, tiges, barres transversales) : l'objectif est de supprimer toute source de compression ou de tension médullaire
 - Laisser la greffe si elle a été posée (ne contribue pas à la compression)
 - Vérifier l'absence de cause compressive résiduelle (inspections visuelle et palpatoire du canal)
@@ -2378,6 +2524,7 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 - Fermeture du site chirurgical
 
 **Post-opératoire immédiat** :
+
 - Transfert en **réanimation**
 - **IRM médullaire** en urgence (dans les 24h) : rechercher un hématome épidural compressif (indication de reprise chirurgicale en urgence pour évacuation), un œdème médullaire, une ischémie médullaire
 - Si hématome épidural : reprise chirurgicale d'urgence pour évacuation
@@ -2385,6 +2532,7 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 - **Information** aux parents : entretien complet et honnête sur la situation, le pronostic incertain, et le plan de prise en charge. Accompagnement psychologique
 
 **R6** — Rééducation et suivi à 3 mois (récupération partielle — marche avec cannes, déficit L4-L5-S1 3/5) :
+
 - **Objectifs de rééducation** (cf. Module 18, §18.5) :
   - Récupération motrice maximale des membres inférieurs
   - Autonomie à la marche (objectif : marche sans aide ou avec une canne)
@@ -2414,7 +2562,8 @@ Le chirurgien est alerté. Le temps écoulé depuis le début de l'alerte est T0
 
 ---
 
-<a id="cas-19"></a>
+`<a id="cas-19"></a>`
+
 ### Cas n°19 — Pseudarthrose et PJK après arthrodèse longue
 
 **Niveau** : 💎 Diamant
@@ -2429,6 +2578,7 @@ Mme M., 67 ans, a été opérée il y a 18 mois d'une arthrodèse T10-sacrum-ili
 Elle reconsulte pour des **douleurs lombaires récidivantes** apparues depuis 4 mois, progressivement croissantes (EVA 7/10), avec une sensation de « claquement » dans le dos lors des mouvements. Depuis 2 mois, elle a également noté une **perte de la correction posturale** et se penche à nouveau en avant.
 
 **Antécédents** :
+
 - Médicaux : ostéoporose (T-score −2,7 au col fémoral, sous alendronate), HTA, tabagisme 15 paquets-années (sevré depuis la chirurgie)
 - Chirurgicaux : arthrodèse T10-sacrum-ilium il y a 18 mois, PTH droite
 - Traitement : alendronate, ramipril, paracétamol + tramadol, calcium-vitamine D
@@ -2489,29 +2639,33 @@ Elle reconsulte pour des **douleurs lombaires récidivantes** apparues depuis 4 
 **R1** — Deux complications distinctes et liées :
 
 **Complication 1 — Pseudarthrose au site de PSO (L3)** :
+
 - **Mécanisme** : la PSO (pedicle subtraction osteotomy) crée un grand vide osseux en forme de coin dans le corps vertébral. La consolidation de cette ostéotomie est exigeante en termes mécaniques (forces de compression importantes sur ce site). Si la greffe osseuse ne consolide pas complètement → pseudarthrose → micro-mobilité au site → fracture de fatigue des tiges (qui prennent toutes les contraintes) (cf. Module 17, §17.5)
 - La **fracture de tige** est la conséquence de la pseudarthrose, pas l'inverse. Les tiges cassent par fatigue mécanique car elles subissent des contraintes cycliques sans amortissement par l'os (l'os n'a pas consolidé)
 - La crépitation palpable traduit la mobilité anormale au site de pseudarthrose
 
 **Complication 2 — PJK (Proximal Junctional Kyphosis) avec fracture de T9** :
+
 - **Mécanisme** : la vertèbre supra-adjacente au montage (T9) subit une surcharge mécanique liée à la transition brutale entre le segment fusionné rigide (T10-sacrum) et le rachis mobile sus-jacent. Chez une patiente ostéoporotique, le corps vertébral ne résiste pas à cette surcontrainte → fracture-tassement → cyphose jonctionnelle (cf. Module 17, §17.5)
 - Facteur aggravant : la perte de correction par la pseudarthrose distale augmente les contraintes proximales → cercle vicieux
 
 **Lien entre les deux** : les deux complications sont mécaniquement liées. La pseudarthrose distale augmente la mobilité du montage en distal, redistribuant les contraintes vers le haut → aggravation du PJK. Et inversement, le PJK modifie le bras de levier du montage, augmentant les contraintes sur la PSO.
 
 **R2** — Facteurs de risque prédisposants :
-| Facteur | Impact |
-|---------|--------|
-| **Ostéoporose** (T-score −2,7) | Risque de fracture de T9 (PJK), qualité d'os insuffisante pour la consolidation de la PSO |
-| **Tabagisme** (15 PA, sevré récemment) | Le tabac est le facteur de risque modifiable le plus important de pseudarthrose (réduction de 30-40% du taux de fusion) |
-| **PSO** (ostéotomie agressive) | Elle crée un grand défect osseux à haut risque de non-consolidation |
-| **Arthrodèse longue** (T10-sacrum) | Plus le montage est long, plus le risque de PJK est élevé (bras de levier long) |
-| **Âge** (67 ans) | Capacité de consolidation réduite, sarcopénie |
-| **UIV en T10** (charnière thoraco-lombaire) | Localisation à risque pour le PJK (moins favorable que T9 ou T8 dans certaines études) |
-| **IMC** et statut nutritionnel | À évaluer (carence protéique possible chez une patiente âgée) |
+
+| Facteur                                            | Impact                                                                                                                   |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **Ostéoporose** (T-score −2,7)             | Risque de fracture de T9 (PJK), qualité d'os insuffisante pour la consolidation de la PSO                               |
+| **Tabagisme** (15 PA, sevré récemment)     | Le tabac est le facteur de risque modifiable le plus important de pseudarthrose (réduction de 30-40% du taux de fusion) |
+| **PSO** (ostéotomie agressive)              | Elle crée un grand défect osseux à haut risque de non-consolidation                                                   |
+| **Arthrodèse longue** (T10-sacrum)          | Plus le montage est long, plus le risque de PJK est élevé (bras de levier long)                                        |
+| **Âge** (67 ans)                            | Capacité de consolidation réduite, sarcopénie                                                                         |
+| **UIV en T10** (charnière thoraco-lombaire) | Localisation à risque pour le PJK (moins favorable que T9 ou T8 dans certaines études)                                 |
+| **IMC** et statut nutritionnel               | À évaluer (carence protéique possible chez une patiente âgée)                                                       |
 
 **R3** — Priorisation du traitement :
 Les deux complications doivent idéalement être traitées dans le **même temps opératoire** car :
+
 - Elles sont mécaniquement liées → traiter l'une sans l'autre expose à une récidive
 - La patiente ne supporterait probablement pas deux interventions lourdes séparées
 - La correction de la pseudarthrose seule ne résout pas le PJK, et inversement
@@ -2520,6 +2674,7 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 **Plan en un temps** : reprise de la pseudarthrose L3 + extension proximale du montage pour traiter le PJK.
 
 **R4** — Plan chirurgical de reprise :
+
 1. **Voie d'abord** : reprise par voie postérieure médiane sur toute la longueur du montage existant
 2. **Traitement de la pseudarthrose L3** :
    - Retrait des tiges fracturées
@@ -2536,6 +2691,7 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 5. **Neuromonitoring** peropératoire obligatoire
 
 **R5** — Stratégie anti-ostéoporotique modifiée :
+
 - L'alendronate (anti-résorptif) n'a pas empêché la fracture de T9 et peut ne pas être le meilleur choix dans un contexte de consolidation osseuse nécessaire
 - **Changement de stratégie** :
   - **Arrêt de l'alendronate** : les bisphosphonates inhibent le remodelage osseux, ce qui peut théoriquement ralentir la consolidation de la pseudarthrose (données controversées mais par précaution)
@@ -2546,6 +2702,7 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 - **Bilan complémentaire** : dosage vitamine D, bilan phospho-calcique, bilan nutritionnel (albumine, pré-albumine)
 
 **R6** — Prévention de la récidive du PJK :
+
 - **Extension haute du montage** : remonter jusqu'à T7 ou T6 (pas dans les courbures thoraciques, et loin de la charnière thoraco-lombaire)
 - **Augmentation cimentée prophylactique** de la vertèbre supra-adjacente et idéalement des 2 vertèbres au-dessus de la UIV → réduction documentée du risque de fracture
 - **Ligamentoplastie jonctionnelle** : technique consistant à renforcer le complexe ligamentaire à la jonction supérieure par un câble ou un ligament synthétique reliant la UIV à la vertèbre sus-jacente (technique encore évaluée mais prometteuse)
@@ -2557,6 +2714,7 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 ❌ **Erreur fréquente** : prolonger le montage de seulement 1 niveau au-dessus du PJK sans augmentation cimentée → risque élevé de récidive itérative.
 
 **R7** — Entretien de décision partagée pour la reprise :
+
 - **Reconnaître la souffrance** : « Je comprends que la perspective d'une nouvelle intervention est difficile. Votre ressenti est légitime. »
 - **Exposer la situation sans opérer** :
   - La pseudarthrose avec fracture de tiges ne consolidera pas spontanément → les douleurs vont persister et s'aggraver
@@ -2580,7 +2738,8 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 
 ---
 
-<a id="cas-20"></a>
+`<a id="cas-20"></a>`
+
 ### Cas n°20 — Infection du site opératoire sur matériel d'arthrodèse
 
 **Niveau** : 💎 Diamant
@@ -2593,12 +2752,14 @@ Les deux complications doivent idéalement être traitées dans le **même temps
 M. O., 16 ans, a été opéré il y a 3 semaines d'une arthrodèse postérieure T3-L2 pour SIA Lenke 2BN (double thoracique), Cobb 62° thoracique principale. L'intervention s'est bien déroulée (correction de 55% obtenue, pas d'incident neurologique, neuromonitoring normal). Les suites immédiates étaient simples (sortie à J7).
 
 Il reconsulte en urgence à J21 pour :
+
 - **Fièvre** : 38,8°C depuis 48h, intermittente
 - **Douleur dorsale** croissante (EVA 6/10) malgré le traitement antalgique habituel
 - **Rougeur et gonflement** de la partie moyenne de la cicatrice (en regard de T7-T9)
 - **Écoulement séreux** de la cicatrice, apparu depuis 24h
 
 **Antécédents** :
+
 - Médicaux : aucun
 - Chirurgicaux : arthrodèse T3-L2 il y a 3 semaines
 - Traitement post-opératoire : paracétamol, fer oral (anémie post-opératoire), kinésithérapie
@@ -2657,13 +2818,15 @@ Il reconsulte en urgence à J21 pour :
 **R1** — Diagnostic : **Infection du site opératoire (ISO) profonde précoce** (cf. Module 17, §17.6 et Module 22, §22.1)
 
 Classification :
-| Critère | Description |
-|---------|-------------|
-| **Précocité** | Précoce (< 30 jours post-opératoire). Ici J21 |
-| **Profondeur** | Profonde : la collection atteint le plan sous-fascial et le matériel d'ostéosynthèse. Ce n'est pas une infection superficielle (qui serait limitée au tissu sous-cutané) |
-| **Germe suspecté** | Cocci gram positif en amas → **Staphylococcus aureus** (germe le plus fréquent des ISO post-arthrodèse, 40-60% des cas). Le staphylocoque dore est le germe principal des infections précoces à développement rapide avec syndrome inflammatoire biologique marqué |
+
+| Critère                  | Description                                                                                                                                                                                                                                                                    |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Précocité**     | Précoce (< 30 jours post-opératoire). Ici J21                                                                                                                                                                                                                                |
+| **Profondeur**      | Profonde : la collection atteint le plan sous-fascial et le matériel d'ostéosynthèse. Ce n'est pas une infection superficielle (qui serait limitée au tissu sous-cutané)                                                                                                  |
+| **Germe suspecté** | Cocci gram positif en amas →**Staphylococcus aureus** (germe le plus fréquent des ISO post-arthrodèse, 40-60% des cas). Le staphylocoque dore est le germe principal des infections précoces à développement rapide avec syndrome inflammatoire biologique marqué |
 
 Diagnostic posé sur :
+
 - Critères cliniques : fièvre, érythème périincisionnel, écoulement purulent, douleur locale
 - Critères biologiques : hyperleucocytose à PNN, CRP très élevée (145 mg/L — très au-dessus de la cinétique normale de décroissance post-opératoire), procalcitonine élevée
 - Critères radiologiques : collection au contact du matériel (IRM)
@@ -2671,6 +2834,7 @@ Diagnostic posé sur :
 Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP qui ré-augmente ou ne diminue pas après J5-J7 est un signal d'alerte majeur.
 
 **R2** — Conduite à tenir en urgence :
+
 1. **Hospitalisation immédiate** en service de chirurgie rachidienne
 2. **Ne PAS débuter d'antibiothérapie probabiliste** avant les prélèvements peropératoires (sauf si sepsis sévère avec instabilité hémodynamique — ce qui n'est pas le cas ici). La documentation bactériologique peropératoire est fondamentale pour le choix de l'antibiothérapie ciblée
 3. **Préparer le bloc opératoire** pour un lavage chirurgical en urgence (dans les 24h)
@@ -2680,6 +2844,7 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 7. **Consentement éclairé** du patient et des parents : lavage chirurgical, conservation du matériel envisagée, antibiothérapie prolongée
 
 **R3** — Décision sur le matériel — **CONSERVATION** :
+
 - Dans les infections précoces (< 30 jours), le matériel d'arthrodèse **doit être conservé** si possible (cf. Module 17, §17.7) :
   - L'arthrodèse n'est pas encore consolidée à 3 semaines → le retrait du matériel entraînerait une perte complète de la correction et l'effondrement de la scoliose
   - Le biofilm bactérien sur le matériel est encore immature à ce stade précoce (colonisation < 4 semaines) → un lavage chirurgical agressif combiné à une antibiothérapie adaptée peut éradiquer l'infection avec le matériel en place
@@ -2692,6 +2857,7 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 - Ici, la fusion n'est pas encore obtenue, le germe présumé (SAMS) est sensible aux antibiotiques courants, et l'infection est précoce → **conservation du matériel + lavage agressif**
 
 **R4** — Protocole de lavage chirurgical (cf. Module 17, §17.7 et Module 22, §22.5) :
+
 1. **Anesthésie générale**, patient en décubitus ventral
 2. **Reprise de la cicatrice** : ouverture complète de la voie d'abord postérieure
 3. **Prélèvements bactériologiques multiples** (AVANT toute irrigation antibiotique) :
@@ -2708,6 +2874,7 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 7. **Vancomycine en poudre** : 1-2 g de vancomycine en poudre saupoudrée dans la plaie avant fermeture (technique documentée pour réduire le risque de ré-infection)
 
 **R5** — Antibiothérapie pour SAMS (cf. Module 22, §22.4) :
+
 - **Phase IV (intraveineuse)** — durée : 2 à 4 semaines :
   - **Oxacilline** (ou cloxacilline) 200 mg/kg/j en 4-6 injections IV (bêta-lactamine anti-staphylococcique de première ligne pour les SAMS)
   - **+** **Rifampicine** 10 mg/kg/j en 2 prises PO (dès culture confirmée, jamais en monothérapie) : la rifampicine est l'antibiotique avec la meilleure activité anti-biofilm et la meilleure pénétration osseuse
@@ -2719,6 +2886,7 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 **Durée totale recommandée** : 6-12 semaines (avis infectiologue indispensable).
 
 **Surveillance du traitement** :
+
 - CRP 2 fois/semaine pendant la phase IV, puis 1 fois/semaine
 - Bilan hépatique (rifampicine) et rénal hebdomadaire
 - NFS (risque d'agranulocytose avec les bêta-lactamines haute dose)
@@ -2727,6 +2895,7 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 ❌ **Erreur fréquente** : prescrire la rifampicine en monothérapie → émergence rapide de résistance (en 24-48h). La rifampicine doit TOUJOURS être associée à un deuxième antibiotique actif.
 
 **R6** — Surveillance post-traitement et critères de guérison :
+
 - **Pendant le traitement** :
   - Surveillance clinique : température, aspect de la cicatrice, douleur (courbe EVA)
   - CRP : doit décroître régulièrement. Objectif : normalisation (< 5 mg/L) avant l'arrêt des antibiotiques
@@ -2742,18 +2911,19 @@ Remarque : la CRP post-opératoire normale se normalise en 2-3 semaines. Une CRP
 - **Signes de rechute** justifiant une nouvelle exploration : fièvre inexpliquée, douleur locale récidivante, ré-ascension de la CRP, fistulisation cutanée
 
 **R7** — Mesures préventives de l'ISO (cf. Module 17, §17.2) :
-| Mesure | Timing | Niveau de preuve |
-|--------|--------|-----------------|
-| **Antibioprophylaxie** (céfazoline 2g IV 30-60 min avant incision, réinjection si chirurgie > 4h) | Préopératoire | Élevé |
-| **Préparation cutanée** : douche antiseptique préopératoire, décontamination nasale si porteur SARM | Préopératoire | Modéré |
-| **Vancomycine intra-plaie** (poudre 1-2g avant fermeture) | Peropératoire | Modéré-élevé (réduction ISO de 50%) |
-| **Glycémie contrôlée** (< 1,80 g/L en péri-opératoire) | Péri-opératoire | Élevé |
-| **Normothermie** (température > 36°C en salle d'opération) | Peropératoire | Élevé |
-| **Changement de gants** avant la pose du matériel | Peropératoire | Faible mais recommandé |
-| **Irrigation de la plaie** au sérum physiologique abondant avant fermeture | Peropératoire | Modéré |
-| **Fermeture soigneuse** plan par plan, éviter les espaces morts | Peropératoire | Élevé |
-| **Drainage** adapté (retrait à 48-72h) | Postopératoire | Modéré |
-| **Optimisation nutritionnelle** : albumine > 30 g/L, pré-albumine > 150 mg/L | Préopératoire | Modéré |
+
+| Mesure                                                                                                         | Timing            | Niveau de preuve                         |
+| -------------------------------------------------------------------------------------------------------------- | ----------------- | ---------------------------------------- |
+| **Antibioprophylaxie** (céfazoline 2g IV 30-60 min avant incision, réinjection si chirurgie > 4h)      | Préopératoire   | Élevé                                  |
+| **Préparation cutanée** : douche antiseptique préopératoire, décontamination nasale si porteur SARM | Préopératoire   | Modéré                                 |
+| **Vancomycine intra-plaie** (poudre 1-2g avant fermeture)                                                | Peropératoire    | Modéré-élevé (réduction ISO de 50%) |
+| **Glycémie contrôlée** (< 1,80 g/L en péri-opératoire)                                              | Péri-opératoire | Élevé                                  |
+| **Normothermie** (température > 36°C en salle d'opération)                                            | Peropératoire    | Élevé                                  |
+| **Changement de gants** avant la pose du matériel                                                       | Peropératoire    | Faible mais recommandé                  |
+| **Irrigation de la plaie** au sérum physiologique abondant avant fermeture                              | Peropératoire    | Modéré                                 |
+| **Fermeture soigneuse** plan par plan, éviter les espaces morts                                         | Peropératoire    | Élevé                                  |
+| **Drainage** adapté (retrait à 48-72h)                                                                 | Postopératoire   | Modéré                                 |
+| **Optimisation nutritionnelle** : albumine > 30 g/L, pré-albumine > 150 mg/L                            | Préopératoire   | Modéré                                 |
 
 Dans ce cas précis, on peut s'interroger sur l'observance régulière de l'antibioprophylaxie, la normothermie, et l'utilisation de vancomycine intra-plaie (non systématique dans tous les centres). Un état nutritionnel sub-optimal (albumine à 32 g/L en post-opératoire) pourrait avoir contribué au risque infectieux.
 
@@ -2771,43 +2941,42 @@ Dans ce cas précis, on peut s'interroger sur l'observance régulière de l'anti
 
 ### Tableau récapitulatif des 20 cas cliniques
 
-| N° | Titre | Niveau | Modules | Thématique principale |
-|----|-------|--------|---------|----------------------|
-| 1 | Gibbosité du dépistage scolaire | 🥉 Bronze | 4, 6 | Dépistage SIA |
-| 2 | Raideur dorsale chez un sportif | 🥉 Bronze | 14, 7 | Maladie de Scheuermann |
-| 3 | Douleur lombaire avec glissement | 🥉 Bronze | 21, 7 | Spondylolisthésis isthmique |
-| 4 | Dos rond de l'adolescent | 🥉 Bronze | 6, 14 | Cyphose posturale vs structurale |
-| 5 | Lombosciatique typique | 🥉 Bronze | 19, 1 | Hernie discale L5-S1 |
-| 6 | Tassement vertébral post-ménopausique | 🥉 Bronze | 25, 7 | Fracture ostéoporotique |
-| 7 | Traumatisme rachidien par chute | 🥉 Bronze | 23, 1 | Fracture burst et TLICS |
-| 8 | Scoliose douloureuse chez un enfant | 🥈 Argent | 4, 6, 7, 24 | Ostéome ostéoïde |
-| 9 | Aggravation rapide d'une fillette | 🥈 Argent | 9, 2, 5, 7 | Scoliose infantile progressive |
-| 10 | Déformation avec atteinte cutanée | 🥈 Argent | 13, 5, 6, 15 | NF1 et scoliose dystrophique |
-| 11 | Lombalgies chroniques et canal rétréci | 🥈 Argent | 20, 10, 7, 1 | Sténose canalaire sur scoliose de novo |
-| 12 | Scoliose chez un adolescent hyper-laxe | 🥈 Argent | 13, 6, 5, 8 | Syndrome de Marfan |
-| 13 | Déséquilibre sagittal progressif | 🥈 Argent | 10, 25, 14, 7 | Déséquilibre sagittal de l'adulte |
-| 14 | SIA sévère avec décompensation | 🥇 Or | 8, 5, 7, 15, 16, 17 | Chirurgie SIA — Lenke et niveaux de fusion |
-| 15 | Scoliose neuromusculaire et insuffisance respiratoire | 🥇 Or | 12, 1, 15, 17, 18 | DMD — timing chirurgical et gestion multidisciplinaire |
-| 16 | Scoliose congénitale avec anomalies | 🥇 Or | 11, 2, 7, 15, 5 | Hémivertèbre — McMaster et résection précoce |
-| 17 | Scoliose dégénérative chez patient ostéoporotique | 🥇 Or | 10, 20, 25, 15, 17, 14 | Chirurgie de déformité de l'adulte multi-facteurs |
-| 18 | Déficit neurologique post-opératoire | 💎 Diamant | 17, 8, 15, 16, 5, 18 | Alerte neuromonitoring et protocole d'urgence |
-| 19 | Pseudarthrose et PJK après arthrodèse | 💎 Diamant | 17, 10, 15, 25, 14, 18 | Échecs mécaniques et reprise |
-| 20 | Infection du site opératoire sur matériel | 💎 Diamant | 17, 22, 15, 8, 18 | ISO profonde et conservation du matériel |
+| N° | Titre                                                 | Niveau     | Modules                | Thématique principale                                  |
+| --- | ----------------------------------------------------- | ---------- | ---------------------- | ------------------------------------------------------- |
+| 1   | Gibbosité du dépistage scolaire                     | 🥉 Bronze  | 4, 6                   | Dépistage SIA                                          |
+| 2   | Raideur dorsale chez un sportif                       | 🥉 Bronze  | 14, 7                  | Maladie de Scheuermann                                  |
+| 3   | Douleur lombaire avec glissement                      | 🥉 Bronze  | 21, 7                  | Spondylolisthésis isthmique                            |
+| 4   | Dos rond de l'adolescent                              | 🥉 Bronze  | 6, 14                  | Cyphose posturale vs structurale                        |
+| 5   | Lombosciatique typique                                | 🥉 Bronze  | 19, 1                  | Hernie discale L5-S1                                    |
+| 6   | Tassement vertébral post-ménopausique               | 🥉 Bronze  | 25, 7                  | Fracture ostéoporotique                                |
+| 7   | Traumatisme rachidien par chute                       | 🥉 Bronze  | 23, 1                  | Fracture burst et TLICS                                 |
+| 8   | Scoliose douloureuse chez un enfant                   | 🥈 Argent  | 4, 6, 7, 24            | Ostéome ostéoïde                                     |
+| 9   | Aggravation rapide d'une fillette                     | 🥈 Argent  | 9, 2, 5, 7             | Scoliose infantile progressive                          |
+| 10  | Déformation avec atteinte cutanée                   | 🥈 Argent  | 13, 5, 6, 15           | NF1 et scoliose dystrophique                            |
+| 11  | Lombalgies chroniques et canal rétréci              | 🥈 Argent  | 20, 10, 7, 1           | Sténose canalaire sur scoliose de novo                 |
+| 12  | Scoliose chez un adolescent hyper-laxe                | 🥈 Argent  | 13, 6, 5, 8            | Syndrome de Marfan                                      |
+| 13  | Déséquilibre sagittal progressif                    | 🥈 Argent  | 10, 25, 14, 7          | Déséquilibre sagittal de l'adulte                     |
+| 14  | SIA sévère avec décompensation                     | 🥇 Or      | 8, 5, 7, 15, 16, 17    | Chirurgie SIA — Lenke et niveaux de fusion             |
+| 15  | Scoliose neuromusculaire et insuffisance respiratoire | 🥇 Or      | 12, 1, 15, 17, 18      | DMD — timing chirurgical et gestion multidisciplinaire |
+| 16  | Scoliose congénitale avec anomalies                  | 🥇 Or      | 11, 2, 7, 15, 5        | Hémivertèbre — McMaster et résection précoce       |
+| 17  | Scoliose dégénérative chez patient ostéoporotique | 🥇 Or      | 10, 20, 25, 15, 17, 14 | Chirurgie de déformité de l'adulte multi-facteurs     |
+| 18  | Déficit neurologique post-opératoire                | 💎 Diamant | 17, 8, 15, 16, 5, 18   | Alerte neuromonitoring et protocole d'urgence           |
+| 19  | Pseudarthrose et PJK après arthrodèse               | 💎 Diamant | 17, 10, 15, 25, 14, 18 | Échecs mécaniques et reprise                          |
+| 20  | Infection du site opératoire sur matériel           | 💎 Diamant | 17, 22, 15, 8, 18      | ISO profonde et conservation du matériel               |
 
 ### Checklist de conformité (Section 14 des REGLES)
 
-| # | Critère | ✅ |
-|---|---------|---|
-| 26 | Cahier de cas cliniques présent | ✅ |
-| 27 | 20 cas couvrant les 4 niveaux (7 Bronze, 6 Argent, 4 Or, 3 Diamant) | ✅ |
-| 28 | Chaque cas comporte ≥ 5 questions progressives | ✅ |
-| 29 | Réponses argumentées avec justifications physiopathologiques | ✅ |
-| 30 | ≥ 2 cas incluent la décision partagée (cas 12, 14, 15, 17, 19) | ✅ |
+| #  | Critère                                                                 | ✅ |
+| -- | ------------------------------------------------------------------------ | -- |
+| 26 | Cahier de cas cliniques présent                                         | ✅ |
+| 27 | 20 cas couvrant les 4 niveaux (7 Bronze, 6 Argent, 4 Or, 3 Diamant)      | ✅ |
+| 28 | Chaque cas comporte ≥ 5 questions progressives                          | ✅ |
+| 29 | Réponses argumentées avec justifications physiopathologiques           | ✅ |
+| 30 | ≥ 2 cas incluent la décision partagée (cas 12, 14, 15, 17, 19)        | ✅ |
 | 31 | ≥ 3 cas impliquent la pluridisciplinarité (cas 11, 15, 16, 17, 19, 20) | ✅ |
-| 32 | Conduites à tenir structurées (6 étapes) dans les cas chirurgicaux | ✅ |
-| 33 | Données biologiques et radiologiques réalistes et cohérentes | ✅ |
+| 32 | Conduites à tenir structurées (6 étapes) dans les cas chirurgicaux    | ✅ |
+| 33 | Données biologiques et radiologiques réalistes et cohérentes          | ✅ |
 
 ---
 
 *VERTEX© — Formation Scoliose — Cahier de cas cliniques progressifs v1.0 — 11 mars 2026*
-

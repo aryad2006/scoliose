@@ -1,0 +1,483 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-07-diagnostic-et-depistage">PARTIE 07 — Diagnostic et Dépistage</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-22-strategie-diagnostique">MODULE 22 — Stratégie Diagnostique</h2>
+<h3 id="221-demarche-en-deux-etapes">22.1 Démarche en deux étapes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER22-S1-001 — Algorithme diagnostique global : de la TSH effondrée à l'étiologie en 4 étapes]</p>
+</blockquote>
+<p><strong>Étape 1 — TSH de dépistage</strong> :</p>
+<pre><code>TSH &lt; 0,4 mUI/L → Hyperthyroïdie possible → Étape 2
+TSH 0,4-4,0 mUI/L → Euthyroïdie → Pas d'hyperthyroïdie (sauf RTH)
+TSH &gt; 4,0 mUI/L → Hypothyroïdie → Voir formation Hypothyroïdies
+</code></pre>
+<p><strong>Étape 2 — T4L + T3L</strong> :</p>
+<pre><code>TSH &lt; 0,4 + T4L élevée ± T3L élevée → Hyperthyroïdie constituée → Étape 3
+TSH &lt; 0,4 + T4L normale + T3L élevée → T3-toxicosis → Étape 3
+TSH &lt; 0,4 + T4L normale + T3L normale → Hyperthyroïdie frustre → Étape 3
+TSH normale + T4L élevée + T3L élevée → RTHβ ou TSHome → IRM hypophysaire
+</code></pre>
+<p><strong>Étape 3 — Bilan étiologique</strong> :</p>
+<pre><code>TRAb positifs → Maladie de Basedow (90 % des cas si clinique compatible)
+TRAb négatifs + anti-TPO + + thyroïde douloureuse → Thyroïdite De Quervain
+TRAb négatifs + anti-TPO + + thyroïde indolore → Thyroïdite silencieuse/post-partum
+TRAb négatifs + GMNT échographie → GMNT toxique
+TRAb négatifs + nodule unique + scintigraphie foyer chaud → Adénome Plummer
+TSH normale ou haute + T4L haute + IRM hypophysaire → TSHome ou RTHβ
+Tg effondrée + T4L haute → Thyrotoxicose factice
+</code></pre>
+<hr />
+<h3 id="222-arbre-decisionnel-complet">22.2 Arbre décisionnel complet</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER22-S2-001 — Arbre décisionnel complet hyperthyroïdie : de la TSH aux traitements selon l'étiologie]</p>
+</blockquote>
+<p><strong>Algorithme de la HAS 2019 (adapté)</strong> :</p>
+<ol>
+<li><strong>TSH &lt; 0,4 mUI/L</strong> → T4L + T3L</li>
+<li><strong>T4L ou T3L élevée</strong> → Confirmer hyperthyroïdie vraie</li>
+<li><strong>TRAb</strong> → si positifs = Basedow, si négatifs → scintigraphie</li>
+<li><strong>Scintigraphie</strong> :<br />
+   - Fixation élevée diffuse : Basedow (si TRAb négatifs atypiques)<br />
+   - Fixation focale ou hétérogène : GMNT ou adénome<br />
+   - Fixation effondrée : thyroïdite, thyrotoxicose factice</li>
+<li><strong>Si scintigraphie impossible</strong> (grossesse, allaitement) → Doppler thyroïdien (hyper- vs hypo-vascularisation)</li>
+</ol>
+<hr />
+<h3 id="223-role-de-limagerie-dans-la-demarche-etiologique">22.3 Rôle de l'imagerie dans la démarche étiologique</h3>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Indication principale</th>
+<th>Apport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TRAb</strong></td>
+<td>1ère ligne si clinique évocatrice Basedow</td>
+<td>Confirmation Basedow (sensibilité 95 %)</td>
+</tr>
+<tr>
+<td><strong>Scintigraphie ¹²³I</strong></td>
+<td>TSH effondrée sans Basedow clinique évident</td>
+<td>Différencier hyperthyroïdie vraie vs thyroïdite</td>
+</tr>
+<tr>
+<td><strong>Écho-Doppler</strong></td>
+<td>Grossesse, allaitement, surcharge iodée</td>
+<td>Alternative scintigraphie</td>
+</tr>
+<tr>
+<td><strong>IRM hypophysaire</strong></td>
+<td>TSH normale/élevée + T4L haute</td>
+<td>TSHome, RTHβ, hypophysite</td>
+</tr>
+<tr>
+<td><strong>TEP-FDG</strong></td>
+<td>Découverte incidentale, cancer possible</td>
+<td>Incidentalome métastatique</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-22">QUIZ MODULE 22</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la première étape du diagnostic d'une suspicion d'hyperthyroïdie ?<br />
+<strong>A) Dosage de la TSH</strong></p>
+<p><strong>🥈 Q2</strong> — TSH effondrée + T4L normale + T3L à 8,5 pmol/L. Quel est le diagnostic ?<br />
+<strong>A) T3-toxicosis (hyperthyroïdie à T3 isolée) — fréquente dans le GMNT et l'adénome de Plummer (conversion préférentielle T4→T3 dans les nodules autonomes). Bilan étiologique : TRAb + scintigraphie.</strong></p>
+<p><strong>💎 Q3</strong> — Comment distinguer un Basedow avec TRAb négatifs d'un GMNT à la scintigraphie ?<br />
+<strong>A) Basedow TRAb négatifs (10 % des cas) : fixation élevée, diffuse, homogène, symétrique. GMNT : fixation hétérogène avec zones chaudes (nodules autonomes) et zones froides (parenchyme supprimé). Le Doppler peut compléter (hypervascularisation diffuse = Basedow).</strong></p>
+<hr />
+<h2 id="module-23-diagnostic-etiologique">MODULE 23 — Diagnostic Étiologique</h2>
+<h3 id="231-maladie-de-basedow-criteres-diagnostiques">23.1 Maladie de Basedow — Critères diagnostiques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER23-S1-001 — Critères diagnostiques de la maladie de Basedow : triade clinique, biologie, imagerie]</p>
+</blockquote>
+<p><strong>Diagnostic de Basedow</strong> (adapté de Kahaly et al., ETA 2018) :</p>
+<p><strong>Critères formels</strong> (un seul suffit) :<br />
+1. <strong>TRAb positifs</strong> (&gt; 1,75 UI/L) dans le contexte d'une hyperthyroïdie<br />
+2. Ou : <strong>TAO active</strong> documentée + hyperthyroïdie<br />
+3. Ou : <strong>Dermopathie prétibiale</strong> + hyperthyroïdie</p>
+<p><strong>Critères d'appui</strong> (en l'absence des critères formels) :<br />
+- Scintigraphie : fixation diffuse élevée<br />
+- Écho-Doppler : hypervascularisation diffuse<br />
+- Anti-TPO positifs<br />
+- ATCD familiaux de Basedow<br />
+- Association avec d'autres maladies auto-immunes</p>
+<hr />
+<h3 id="232-diagnostic-etiologique-des-thyroidites">23.2 Diagnostic étiologique des thyroïdites</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER23-S2-001 — Tableau différentiel des thyroïdites : De Quervain, silencieuse, post-partum, ICI — critères diagnostiques]</p>
+</blockquote>
+<p><strong>Tableau comparatif</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>De Quervain</th>
+<th>Silencieuse</th>
+<th>Post-partum</th>
+<th>Post-ICI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Douleur thyroïde</td>
+<td><strong>+++</strong></td>
+<td>Non</td>
+<td>Non</td>
+<td>Non</td>
+</tr>
+<tr>
+<td>Fièvre</td>
+<td>++</td>
+<td>Non</td>
+<td>Non</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>VSR</td>
+<td><strong>&gt; 50 mm/h</strong></td>
+<td>Normale</td>
+<td>Normale</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Anti-TPO</td>
+<td>Négatifs</td>
+<td>Positifs (50 %)</td>
+<td><strong>Positifs (90 %)</strong></td>
+<td>Variables</td>
+</tr>
+<tr>
+<td>TRAb</td>
+<td>Négatifs</td>
+<td>Négatifs</td>
+<td>Négatifs</td>
+<td>Négatifs</td>
+</tr>
+<tr>
+<td>Scintigraphie</td>
+<td>Blanche</td>
+<td>Blanche</td>
+<td>Blanche</td>
+<td>Blanche</td>
+</tr>
+<tr>
+<td>Corticoïdes</td>
+<td>Oui (si résistance AINS)</td>
+<td>Non</td>
+<td>Non</td>
+<td>Si grade 3-4</td>
+</tr>
+<tr>
+<td>Evolution</td>
+<td>Résolution 3-6 mois</td>
+<td>Résolution 3-6 mois</td>
+<td>Résolution + risque Hashimoto</td>
+<td>Variable, souvent permanente</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="233-diagnostic-du-tshome-adenome-thyreotrope">23.3 Diagnostic du TSHome (adénome thyréotrope)</h3>
+<p><strong>Critères diagnostiques</strong> (adapté de Beck-Peccoz et al., 2013) :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td>Normale ou élevée</td>
+</tr>
+<tr>
+<td>T4L</td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>T3L</td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>α-GSU/TSH</td>
+<td><strong>&gt; 1</strong> (rapport pathologique)</td>
+</tr>
+<tr>
+<td>IRM hypophysaire</td>
+<td><strong>Adénome visible</strong></td>
+</tr>
+<tr>
+<td>Réponse TRH</td>
+<td>Abolie ou paradoxale</td>
+</tr>
+<tr>
+<td>Réponse T3 haute dose</td>
+<td>TSH non freinée</td>
+</tr>
+<tr>
+<td>IGFI</td>
+<td>↑ si co-sécrétion GH</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Différentiel TSHome vs RTHβ</strong> :<br />
+- α-GSU/TSH &gt; 1 → TSHome<br />
+- α-GSU/TSH &lt; 1 + IRM normale + ATCD familiaux → RTHβ (séquencer THRB)</p>
+<hr />
+<h3 id="234-diagnostics-difficiles">23.4 Diagnostics difficiles</h3>
+<p><strong>Hyperthyroïdie factice</strong> :<br />
+- Thyrotoxicose exogène (T4 ou T3 en excès)<br />
+- Profil : T4L haute + Tg effondrée + scintigraphie blanche<br />
+- Si T3 exogène (LT3, Cynomel) : T3L très haute + T4L basse ou normale<br />
+- Contexte : personnel médical, trouble alimentaire, régime amaigrissant frauduleux</p>
+<p><strong>Thyrotoxicose induite par les hormones thyroïdiennes dans les "boosters métaboliques"</strong> :<br />
+- Produits de "brûleurs de graisse" parfois contaminés par des extraits thyroïdiens<br />
+- Déclaration pharmacovigilance</p>
+<hr />
+<h3 id="quiz-module-23">QUIZ MODULE 23</h3>
+<p><strong>🥉 Q1</strong> — Quels sont les critères formels de diagnostic de la maladie de Basedow ?<br />
+<strong>A) Un seul suffit : (1) TRAb positifs + hyperthyroïdie ; (2) TAO active documentée + hyperthyroïdie ; (3) Dermopathie prétibiale + hyperthyroïdie.</strong></p>
+<p><strong>🥈 Q2</strong> — Comment distinguer une thyroïdite de De Quervain d'une thyroïdite silencieuse ?<br />
+<strong>A) De Quervain : douleur thyroïdienne intense irradiant aux oreilles, fièvre, VSR très élevée (&gt; 50 mm/h), anti-TPO négatifs. Thyroïdite silencieuse : thyroïde indolore, pas de fièvre, VSR normale, anti-TPO souvent positifs.</strong></p>
+<p><strong>💎 Q3</strong> — Quel paramètre distingue formellement un adénome thyréotrope d'une RTHβ ?<br />
+<strong>A) Le rapport α-GSU/TSH : &gt; 1 dans le TSHome (l'adénome sécrète proportionnellement plus de sous-unité α libre que de TSH complète) ; &lt; 1 dans la RTHβ. L'IRM hypophysaire confirme le TSHome (adénome visible). La réponse à la TRH est abolie dans le TSHome, présente dans la RTHβ.</strong></p>
+<hr />
+<h2 id="module-24-depistage-des-hyperthyroidies">MODULE 24 — Dépistage des Hyperthyroïdies</h2>
+<h3 id="241-populations-cibles">24.1 Populations cibles</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER24-S1-001 — Populations cibles pour le dépistage de la TSH en hyperthyroïdie : tableau des facteurs de risque]</p>
+</blockquote>
+<p><strong>Dépistage recommandé de la TSH</strong> (adapté de HAS 2019, ATA 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Fréquence</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Femme &gt; 60 ans</td>
+<td>TSH tous les 5 ans</td>
+<td>GMNT asymptomatique fréquent</td>
+</tr>
+<tr>
+<td>Grossesse avec FR (Basedow, ATCD, anti-TPO)</td>
+<td>T1 systématique</td>
+<td>Risques fœtaux</td>
+</tr>
+<tr>
+<td>Traitement par amiodarone</td>
+<td>Avant + tous les 6 mois</td>
+<td>Hyperthyroïdie type 1 ou 2</td>
+</tr>
+<tr>
+<td>Traitement par ICI (immunothérapie)</td>
+<td>Avant + tous les 6-12 semaines</td>
+<td>Thyroïdite hyperthyroïdienne</td>
+</tr>
+<tr>
+<td>Traitement par lithium</td>
+<td>Avant + annuel</td>
+<td>Rebond hyperthyroïdie à l'arrêt</td>
+</tr>
+<tr>
+<td>Traitement par interféron-α</td>
+<td>Avant + tous les 3 mois</td>
+<td>Induction Basedow ou thyroïdite</td>
+</tr>
+<tr>
+<td>ATCD personnel ou familial de thyropathie</td>
+<td>Annuel</td>
+<td>GMNT, Basedow</td>
+</tr>
+<tr>
+<td>FA inexpliquée</td>
+<td>TSH ponctuelle</td>
+<td>Hyperthyroïdie comme déclencheur</td>
+</tr>
+<tr>
+<td>Décompensation cardiaque inexpliquée</td>
+<td>TSH ponctuelle</td>
+<td>Débit cardiaque élevé</td>
+</tr>
+<tr>
+<td>Syndrome confusionnel aigu sujet âgé</td>
+<td>TSH ponctuelle</td>
+<td>Crise thyrotoxique apathique</td>
+</tr>
+<tr>
+<td>Perte de poids inexpliquée &gt; 65 ans</td>
+<td>TSH ponctuelle</td>
+<td>GMNT apathique</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="242-hyperthyroidie-frustre-decision-de-traitement">24.2 Hyperthyroïdie frustre — Décision de traitement</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER24-S2-001 — Hyperthyroïdie frustre : algorithme de décision thérapeutique selon le niveau de TSH et les facteurs de risque]</p>
+</blockquote>
+<p><strong>Définition</strong> : TSH &lt; 0,4 mUI/L (persistant) avec T4L et T3L normales</p>
+<p><strong>Prévalence</strong> : 1-2 % en population générale, 5-10 % chez &gt; 65 ans (adapté de Hollowell 2002)</p>
+<p><strong>Décision de traitement de l'HT frustre</strong> (adapté de ATA 2016) :</p>
+<table>
+<thead>
+<tr>
+<th>TSH</th>
+<th>Facteur de risque</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0,1 mUI/L</td>
+<td>Tous (âges)</td>
+<td><strong>Traiter</strong> — risque CV et osseux significatif</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>&gt; 65 ans</td>
+<td><strong>Traiter</strong> — FA, IC, ostéoporose</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>&gt; 65 ans sans FR + asymptomatique</td>
+<td>Surveillance TSH (6 mois)</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>&lt; 65 ans asymptomatique</td>
+<td>Surveiller si cause transitoire suspectée</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>Grossesse</td>
+<td>TRAb + étiologie — traiter si Basedow</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>Cardiopathie connue</td>
+<td><strong>Traiter</strong> — risque FA ++</td>
+</tr>
+<tr>
+<td>0,1-0,4 mUI/L</td>
+<td>Ostéoporose sévère</td>
+<td><strong>Traiter</strong> — risque fracturaire ++</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> — Une TSH entre 0,1-0,4 mUI/L persistante (confirmée à 3-6 mois) chez un sujet &gt; 65 ans multiplie par 3 le risque de FA et augmente de 50 % le risque fracturaire. Le traitement est recommandé même si asymptomatique.</p>
+</blockquote>
+<hr />
+<h3 id="243-surveillance-avant-traitements-pro-thyrotoxiques">24.3 Surveillance avant traitements pro-thyrotoxiques</h3>
+<p><strong>Avant amiodarone</strong> :<br />
+1. TSH + T4L + T3L de référence avant J1<br />
+2. Anti-TPO (terrain auto-immun = risque Basedow)<br />
+3. Écho-thyroïde (goitre nodulaire = risque GMNT)<br />
+4. TSH + T4L tous les 6 mois pendant le traitement<br />
+5. Surveillance pendant 18-24 mois après l'arrêt</p>
+<p><strong>Avant ICI (anti-PD1/PD-L1/CTLA4)</strong> :<br />
+1. TSH + T4L + anti-TPO avant J1<br />
+2. TSH + T4L à chaque cycle (3-6 semaines)<br />
+3. TSH + T4L si symptôme intercurrent</p>
+<p><strong>Avant Lithium</strong> :<br />
+1. TSH + T4L + créatinine + ECG avant initiation<br />
+2. TSH tous les 6 mois première année, puis annuel</p>
+<hr />
+<h3 id="quiz-module-24">QUIZ MODULE 24</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la définition de l'hyperthyroïdie frustre ?<br />
+<strong>A) TSH persistante &lt; 0,4 mUI/L avec T4L ET T3L dans les valeurs normales</strong></p>
+<p><strong>🥈 Q2</strong> — Un patient de 70 ans présente une TSH à 0,05 mUI/L, T4L et T3L normales, asymptomatique, sans cardiopathie connue. Faut-il traiter ?<br />
+<strong>A) Oui — TSH &lt; 0,1 mUI/L chez &gt; 65 ans = traitement recommandé. Risque significatif de FA (× 3) et de fractures ostéoporotiques. Bilan étiologique (TRAb, scintigraphie) + traitement : MMI puis RAI ou chirurgie si GMNT ou Basedow.</strong></p>
+<p><strong>💎 Q3</strong> — Quel est le risque cardiovasculaire spécifique de l'hyperthyroïdie frustre prolongée selon les données de la littérature ?<br />
+<strong>A) Cappola et al. (JAMA 2006) sur 3 233 adultes âgés : TSH &lt; 0,1 mUI/L → RR FA = 3,1 (IC 95 % : 1,7-5,5) à 12 ans. Sawin et al. (NEJM 1994) : TSH &lt; 0,1 mUI/L → FA × 3 chez &gt; 60 ans. Bauer et al. (JAMA 2001) : TSH basse chronique → ↑ mortalité cardiovasculaire × 1,5 chez femmes âgées. Ces données justifient le traitement même asymptomatique.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 07 — Diagnostic et Dépistage — Mars 2026</em></p>
+</div>

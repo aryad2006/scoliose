@@ -1,0 +1,687 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-1-fondamentaux-tendineux-modules-1-4">Partie 1 — Fondamentaux tendineux (Modules 1-4)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-1-biologie-et-structure-du-tendon-du-collagene-a-lorgane">MODULE 1 : BIOLOGIE ET STRUCTURE DU TENDON — DU COLLAGÈNE À L'ORGANE</h1>
+<p><strong>Partie</strong> : I — Fondamentaux tendineux<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Aucun</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un coureur de fond de 35 ans consulte pour une douleur progressive du tendon d'Achille droit, apparue après avoir augmenté son volume d'entraînement de 30% en 3 semaines. L'échographie montre un épaississement fusiforme du tendon avec des zones hypoéchogènes et une néovascularisation au doppler puissance. *Le radiologue parle de « tendinose » et non de « tendinite ». Quelle est la différence ? Pourquoi le tendon est-il si vulnérable à la surcharge ? Qu'est-ce qui rend sa cicatrisation si difficile ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'organisation hiérarchique du tendon (molécule de collagène → microfibrille → fibrille → fibre → fascicule → tendon)</li>
+<li><strong>Identifier</strong> les composants cellulaires (ténocytes, cellules souches tendineuses) et extracellulaires (collagène types I et III, élastine, protéoglycanes, GAG)</li>
+<li><strong>Expliquer</strong> le rôle du collagène de type I dans la résistance mécanique et du type III dans la réparation</li>
+<li><strong>Distinguer</strong> les différentes régions anatomiques du tendon (corps, jonction myotendineuse, enthèse)</li>
+<li><strong>Comprendre</strong> les mécanismes de mécanotransduction et leur rôle dans l'homéostasie tendineuse</li>
+<li><strong>Analyser</strong> les facteurs intrinsèques et extrinsèques de vulnérabilité tendineuse</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-11-organisation-hierarchique-du-tendon-du-nano-au-macro">Section 1.1 — Organisation hiérarchique du tendon : du nano au macro</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'organisation hiérarchique du tendon en s'appuyant sur les données classiques d'histologie tendineuse <em>(adapté de Kannus, 2000, Scand J Med Sci Sports ; Kastelic et al., 1978, Connect Tissue Res)</em> :</p>
+<ul>
+<li><strong>Molécule de tropocollagène</strong> : le contenu doit décrire la triple hélice formée de 3 chaînes α, d'environ 300 nm de longueur et 1,5 nm de diamètre (Kadler et al., 1996, <em>Biochem J</em>)</li>
+<li><strong>Assemblage supramoléculaire</strong> : le module doit expliquer la progression du tropocollagène vers la microfibrille (5 molécules décalées d'un quart de leur longueur, formant un motif en quinconce observable en MET), puis vers la fibrille de collagène (diamètre de 10 à 500 nm, avec des bandes de périodicité de 67 nm)</li>
+<li><strong>Fibre de collagène</strong> : le contenu doit couvrir le regroupement de fibrilles, enveloppées par l'endoténon (tissu conjonctif lâche)</li>
+<li><strong>Fascicule</strong> : regroupement de fibres délimité par l'endoténon, contenant les ténocytes organisés en rangées longitudinales</li>
+<li><strong>Tendon complet</strong> : ensemble des fascicules entourés par l'épiténon (gaine externe), le tout recouvert par le paraténon (tissu aréolaire) ou par une gaine synoviale selon la localisation (tendons gainés : fléchisseurs des doigts, fibulaires)</li>
+<li><strong>Membrane interfasciculaire (IFM)</strong> : rôle récemment décrit dans le glissement interfasciculaire, la vascularisation et la pathologie — zone de vulnérabilité (Thorpe et al., 2012, <em>J Anat</em>)</li>
+<li>Proportion de collagène : environ 60-85% du poids sec du tendon, constitué principalement de collagène de type I (&gt;95%), de type III (1-5%) et de type V (&lt;2%) (Sharma &amp; Maffulli, 2005, <em>J Musculoskelet Neuronal Interact</em>)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND01-S01-001 | 🎬 ANIMATION | Organisation hiérarchique du tendon — zoom progressif : molécule → microfibrille → fibrille → fibre → fascicule → tendon | Animation 3D essentielle avec zoom progressif |<br />
+| MTEND01-S01-002 | 📐 SCHÉMA | Coupe transversale du tendon — endoténon, épiténon, paraténon, fascicules, vaisseaux | Schéma anatomique annoté |<br />
+| MTEND01-S01-003 | 📷 IMAGE | Microscopie électronique à transmission — bandes de périodicité 67 nm du collagène | Photo MET réelle annotée |<br />
+| MTEND01-S01-004 | 📐 SCHÉMA | Assemblage du tropocollagène en motif quinconce — espacement 67 nm | Schéma moléculaire |<br />
+| MTEND01-S01-005 | 📊 INFOGRAPHIE | Tendon gainé vs tendon non gainé — comparaison structurale | Paraténon vs gaine synoviale |</p>
+<h3 id="section-12-composants-cellulaires-les-tenocytes-chefs-dorchestre-de-lhomeostasie">Section 1.2 — Composants cellulaires : les ténocytes, chefs d'orchestre de l'homéostasie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Ténocytes</strong> : cellules résidentes du tendon, 5% du volume total, forme allongée fusiforme, alignés entre les fibres de collagène<br />
+- Communications intercellulaires : jonctions gap (connexine 32, 43), réseau de prolongements cytoplasmiques, signalisation paracrine<br />
+- Fonctions : synthèse et dégradation de la matrice extracellulaire (MEC), réponse aux stimuli mécaniques, production de collagène, protéoglycanes, glycoprotéines<br />
+- <strong>Cellules souches tendineuses (TSPCs — Tendon Stem/Progenitor Cells)</strong> : découvertes en 2007 (Bi et al., 2007, <em>Nat Med</em>), résidentes dans la niche périvasculaire, multipotentes (différenciation en ténocytes, chondrocytes, ostéoblastes, adipocytes)<br />
+- Rôle des TSPCs dans la réparation vs dégénérescence : différenciation adéquate (ténocyte) = réparation ; différenciation aberrante (chondrocyte, ostéoblaste) = calcification, ossification hétérotopique<br />
+- <strong>Turnover de la matrice</strong> : balance MMP (metalloprotéinases) / TIMP (inhibiteurs) — régulation fine pour le renouvellement<br />
+- Principales MMP impliquées : MMP-1 (collagénase-1), MMP-2 (gélatinase A), MMP-3 (stromélysine-1), MMP-13 (collagénase-3)<br />
+- ADAMTS (A Disintegrin And Metalloproteinase with Thrombospondin motifs) : rôle dans le clivage des protéoglycanes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND01-S02-001 | 📐 SCHÉMA | Ténocyte — morphologie, réseau Gap junction, prolongements entre les fibrilles de collagène | Vue en coupe longitudinale |<br />
+| MTEND01-S02-002 | 🎬 ANIMATION | Cellules souches tendineuses (TSPCs) — niche périvasculaire, différenciation ténocytaire vs aberrante | Animation critique |<br />
+| MTEND01-S02-003 | 📐 SCHÉMA | Balance MMP/TIMP — homéostasie vs dégradation excessive | Balance à plateaux |<br />
+| MTEND01-S02-004 | 📊 INFOGRAPHIE | Tableau des principales MMP impliquées dans le tendon — substrat, rôle, régulation | Tableau synthétique |</p>
+<h3 id="section-13-matrice-extracellulaire-le-squelette-du-tendon">Section 1.3 — Matrice extracellulaire : le squelette du tendon</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Collagène de type I</strong> : &gt;95% du collagène total, confère la résistance à la traction, organisé en fibres parallèles crimp (ondulation au repos = réserve d'allongement de 2-4%)<br />
+- <strong>Collagène de type III</strong> : 1-5% normalement, augmente considérablement dans les tendinopathies (jusqu'à 20-30%) et la cicatrisation — fibres plus fines, moins résistantes, moins organisées<br />
+- Ratio type I/type III : indicateur de qualité du tendon — ratio élevé = tendon sain ; ratio bas = tendon dégénératif ou en réparation<br />
+- <strong>Élastine</strong> : 1-2% du poids sec, confère l'élasticité passive, retrouvée surtout dans les paratendon et l'IFM<br />
+- <strong>Protéoglycanes</strong> : décorine (le plus abondant, organisation des fibrilles), biglycane, aggrécane (zones de compression : enthèse, wrap-around), versicane, lubricine (surface)<br />
+- <strong>Glycosaminoglycanes (GAG)</strong> : chondroïtine sulfate, dermatane sulfate, kératane sulfate — hydratation et propriétés viscoélastiques<br />
+- <strong>Glycoprotéines structurales</strong> : ténascine-C (exprimée sous contrainte mécanique, marqueur de tendinopathie), fibronectine, thrombospondine<br />
+- <strong>Eau</strong> : 55-70% du poids total du tendon — rôle dans la lubrification et les propriétés viscoélastiques</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND01-S03-001 | 📐 SCHÉMA | Architecture de la MEC tendineuse — collagène I, III, protéoglycanes, eau, GAG | Schéma en coupe |<br />
+| MTEND01-S03-002 | 🎬 ANIMATION | Phénomène de crimping du collagène — ondulation au repos → extension sous charge → retour | Animation biomécanique |<br />
+| MTEND01-S03-003 | 📐 SCHÉMA | Ratio collagène I/III — comparaison tendon sain vs tendinopathique vs cicatriciel | 3 états comparés |<br />
+| MTEND01-S03-004 | 📐 SCHÉMA | Rôle de la décorine dans l'organisation des fibrilles de collagène | Zoom moléculaire |<br />
+| MTEND01-S03-005 | 📊 INFOGRAPHIE | Composition biochimique du tendon — pourcentages en poids sec | Camembert annoté |</p>
+<h3 id="section-14-regions-anatomiques-specialisees-jonction-myotendineuse-corps-tendineux-et-enthese">Section 1.4 — Régions anatomiques spécialisées : jonction myotendineuse, corps tendineux et enthèse</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Jonction myotendineuse (JMT)</strong> :<br />
+  - Zone de transition entre le muscle et le tendon<br />
+  - Interdigitations complexes (doigt de gant) augmentant la surface de contact (×10-20)<br />
+  - Point de vulnérabilité pour les lésions musculaires de grade 3 (avulsion myotendineuse)<br />
+  - Transmission de force : actine-myosine → sarcolemme → laminine → collagène tendineux<br />
+- <strong>Corps du tendon</strong> :<br />
+  - Zone de transmission pure de la force de traction<br />
+  - Vascularisation faible (zone hypovasculaire = « zone critique » — ex. : 2-6 cm au-dessus de l'insertion calcanéenne pour l'Achille)<br />
+  - Siège privilégié de la tendinopathie corporéale<br />
+- <strong>Enthèse (insertion osseuse)</strong> — le module doit présenter le modèle à 4 zones de l'enthèse fibrocartilagineuse <em>(adapté de Benjamin &amp; McGonagle, 2001, Anat Embryol)</em> :<br />
+  - <strong>Enthèse fibreuse directe</strong> : le contenu doit décrire la séquence de transition en 4 zones — tendon pur → fibrocartilage non calcifié → fibrocartilage calcifié → os sous-chondral (la frontière entre les deux fibrocartilages correspond à la « tidemark ») — ex. : insertion de la coiffe, Achille<br />
+  - <strong>Enthèse fibreuse indirecte</strong> : ancrage par les fibres de Sharpey pénétrant directement dans l'os cortical — ex. : insertion du deltoïde<br />
+  - Le contenu doit expliquer le gradient de rigidité assuré par le fibrocartilage calcifié, permettant une transition progressive de la compliance tendineuse vers la rigidité osseuse<br />
+  - Concept d'« organe d'enthèse » (Benjamin &amp; McGonagle, 2001, <em>Anat Embryol</em>) : le module doit couvrir l'unité fonctionnelle intégrant le tendon adjacent, le fibrocartilage périosté et la bourse séreuse<br />
+  - Enthésopathie : siège fréquent de tendinopathie insertionnelle (Achille, patellaire, coiffe, épicondyliens)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND01-S04-001 | 🎬 ANIMATION | Jonction myotendineuse — interdigitations, transmission de force muscle → tendon | Animation 3D |<br />
+| MTEND01-S04-002 | 📐 SCHÉMA | Enthèse fibreuse (4 zones) : tendon → fibrocartilage non calcifié → fibrocartilage calcifié → os | Coupe histologique schématisée |<br />
+| MTEND01-S04-003 | 📷 IMAGE | Coupe histologique d'une enthèse saine (coloration HE ou Safranine-O) — identification des 4 zones | Photo microscopique annotée |<br />
+| MTEND01-S04-004 | 📐 SCHÉMA | Concept d'organe d'enthèse de Benjamin — vue d'ensemble avec bourse, fibrocartilage, tendon | Schéma conceptuel |<br />
+| MTEND01-S04-005 | 📊 INFOGRAPHIE | Comparaison des 3 régions tendineuses : JMT, corps, enthèse — vascularisation, pathologie, vulnérabilité | Tableau comparatif |</p>
+<h3 id="section-15-mecanotransduction-comment-le-tendon-sent-la-charge">Section 1.5 — Mécanotransduction : comment le tendon « sent » la charge</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Définition</strong> : conversion d'un stimulus mécanique en signal biochimique intracellulaire<br />
+- <strong>Mécanisme</strong> : déformation de la MEC → activation des intégrines (α et β) à la surface des ténocytes → cascade de signalisation intracellulaire (FAK, MAPK, ERK1/2, JNK) → transcription génique<br />
+- <strong>Cibles transcriptionnelles</strong> : synthèse de collagène de type I, protéoglycanes, facteurs de croissance (TGF-β, IGF-1, VEGF)<br />
+- <strong>Charge optimale</strong> : stimulation cyclique modérée (4-8% de déformation) → homéostasie, renouvellement de la matrice<br />
+- <strong>Surcharge</strong> : déformation &gt;8%, fréquence excessive, repos insuffisant → réponse catabolique (↑MMP, ↑cytokines pro-inflammatoires IL-1β, IL-6, TNF-α, ↓collagène I, ↑collagène III)<br />
+- <strong>Sous-charge (stress shielding)</strong> : immobilisation prolongée, décharge → atrophie tendineuse, désorganisation du collagène, ↓propriétés mécaniques (perte de ~50% de la rigidité en 8 semaines d'immobilisation) (Wren et al., 2000, <em>J Biomech</em> ; Yamamoto et al., 1993, <em>J Biomech Eng</em>)<br />
+- <strong>Concept fondamental</strong> : le tendon a besoin d'une charge mécanique OPTIMALE pour maintenir son homéostasie — tant la surcharge que la sous-charge sont délétères<br />
+- Rôle des canaux ioniques mécanosensibles (Piezo1, TRPV4) dans la détection de la charge<br />
+- Communication intercellulaire : les jonctions gap synchronisent la réponse des ténocytes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND01-S05-001 | 🎬 ANIMATION | Mécanotransduction — de la charge mécanique au signal intracellulaire : intégrines → FAK → MAPK → transcription | Animation moléculaire |<br />
+| MTEND01-S05-002 | 📐 SCHÉMA | Courbe de réponse à la charge : sous-charge → zone optimale → surcharge — effet sur le tendon | Courbe en U inversé |<br />
+| MTEND01-S05-003 | 📐 SCHÉMA | Réponse cellulaire à la surcharge vs sous-charge — MMP, collagène, cytokines | Comparaison en 2 colonnes |<br />
+| MTEND01-S05-004 | 📊 INFOGRAPHIE | Canaux mécanosensibles (Piezo1, TRPV4) — localisation et fonction | Schéma membranaire |</p>
+<h3 id="points-cles-du-module-1">Points clés du Module 1</h3>
+<ol>
+<li>Le tendon possède une organisation hiérarchique remarquable : tropocollagène → microfibrille → fibrille → fibre → fascicule → tendon, chaque niveau ayant un rôle biomécanique spécifique</li>
+<li>Le collagène de type I constitue &gt;95% du collagène tendineux et confère la résistance à la traction ; le type III augmente dans les tendinopathies et la cicatrisation</li>
+<li>Les ténocytes, bien que représentant seulement 5% du volume, sont les chefs d'orchestre de l'homéostasie tendineuse via la mécanotransduction</li>
+<li>Les cellules souches tendineuses (TSPCs) peuvent se différencier en ténocytes (réparation) ou en chondrocytes/ostéoblastes (calcification — réponse aberrante)</li>
+<li>L'enthèse est une zone de transition sophistiquée (4 couches) entre le tendon et l'os, siège fréquent des tendinopathies insertionnelles</li>
+<li>La mécanotransduction est le mécanisme clé : le tendon a besoin d'une charge OPTIMALE — la surcharge comme la sous-charge sont délétères</li>
+<li>Le phénomène de crimping confère au tendon une réserve d'allongement de 2-4% avant la mise en tension des fibres</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (structure hiérarchique, composants, définitions)</li>
+<li>3 QCM Argent (rôle des composants, mécanotransduction)</li>
+<li>2 QCM Or (analyse de la réponse à la surcharge, ratio collagène I/III)</li>
+<li>1 QCM Diamant (synthèse biologie-clinique : relier structure et vulnérabilité)</li>
+<li>1 QROC : « Expliquez en 5 lignes pourquoi le terme tendinose est plus approprié que tendinite pour décrire la plupart des tendinopathies chroniques »</li>
+</ul>
+<hr />
+<h1 id="module-2-biomecanique-tendineuse-charge-deformation-et-adaptation">MODULE 2 : BIOMÉCANIQUE TENDINEUSE — CHARGE, DÉFORMATION ET ADAPTATION</h1>
+<p><strong>Partie</strong> : I — Fondamentaux tendineux<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Module 1</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Basketteur semi-professionnel, consulte pour une douleur au pôle inférieur de la rotule droite, apparue après le début de la saison (augmentation du volume d'entraînement de jump/sprint). La douleur est maximale au démarrage de l'entraînement, diminue après l'échauffement, puis réapparaît après l'effort. *Pourquoi le tendon patellaire est-il particulièrement sollicité dans les sports de saut ? Quelles sont les forces qui s'exercent sur le tendon lors d'un atterrissage ? Pourquoi la douleur diminue-t-elle à l'échauffement ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les propriétés mécaniques du tendon (rigidité, module de Young, résistance à la rupture, hystérésis)</li>
+<li><strong>Interpréter</strong> la courbe contrainte-déformation (stress-strain) du tendon et ses zones fonctionnelles</li>
+<li><strong>Expliquer</strong> les propriétés viscoélastiques (fluage, relaxation de contrainte, dépendance à la vitesse)</li>
+<li><strong>Comprendre</strong> le modèle « charge vs capacité » et son application clinique</li>
+<li><strong>Analyser</strong> les effets de l'entraînement, du vieillissement et des pathologies systémiques sur les propriétés biomécaniques</li>
+<li><strong>Quantifier</strong> les charges tendineuses dans les activités sportives courantes</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-21-proprietes-mecaniques-fondamentales-du-tendon">Section 2.1 — Propriétés mécaniques fondamentales du tendon</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Contrainte (stress, σ)</strong> : force par unité de surface (MPa) — σ = F / A<br />
+- <strong>Déformation (strain, ε)</strong> : allongement relatif par rapport à la longueur initiale — ε = ΔL / L₀<br />
+- <strong>Module de Young (E)</strong> : pente de la portion linéaire de la courbe stress-strain = rigidité du tendon — E = σ / ε — valeurs typiques : 1-2 GPa (Wren et al., 2001, <em>Clin Biomech</em>)<br />
+- <strong>Résistance à la rupture (UTS — Ultimate Tensile Strength)</strong> : contrainte maximale avant rupture — 50-100 MPa (Wren et al., 2001, <em>Clin Biomech</em>)<br />
+- <strong>Déformation à la rupture</strong> : 8-15% d'allongement avant rupture macroscopique (Butler et al., 1978, <em>J Biomech</em>)<br />
+- <strong>Force de rupture</strong> : varie selon le tendon — Achille : 4000-8000 N, soit environ 12× le poids du corps (Wren et al., 2001, <em>Clin Biomech</em>) ; patellaire : 10-15× le poids du corps (Noyes et al., 1984, <em>J Bone Joint Surg Am</em>)<br />
+- <strong>Cross-sectional area (CSA)</strong> : section transversale, varie selon le tendon et s'adapte à l'entraînement</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND02-S01-001 | 📐 SCHÉMA | Définition de contrainte (σ) et déformation (ε) — illustration sur un tendon | Formules annotées |<br />
+| MTEND02-S01-002 | 📊 INFOGRAPHIE | Tableau des propriétés mécaniques par tendon : Achille, patellaire, coiffe, épicondyliens | Comparaison chiffrée |<br />
+| MTEND02-S01-003 | 📐 SCHÉMA | Module de Young — pente de la courbe stress-strain — signification clinique | Graphique annoté |</p>
+<h3 id="section-22-la-courbe-contrainte-deformation-stress-strain-les-4-zones">Section 2.2 — La courbe contrainte-déformation (stress-strain) : les 4 zones</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les zones fonctionnelles de la courbe contrainte-déformation <em>(adapté de Butler et al., 1978, J Biomech ; Wang, 2006, J Biomech)</em> :</p>
+<ul>
+<li><strong>Zone 1 — Toe region (0-2%)</strong> : dépliage des crimps (ondulations), allongement sans tension réelle sur les fibrilles — zone de fonctionnement au repos</li>
+<li><strong>Zone 2 — Région linéaire (2-4%)</strong> : recrutement progressif des fibres de collagène, comportement élastique linéaire (loi de Hooke) — zone de fonctionnement physiologique normal</li>
+<li><strong>Zone 3 — Zone de défaillance partielle (4-8%)</strong> : glissement interfasciculaire, microdommages, rupture de fibrilles individuelles — début de la zone de risque pathologique</li>
+<li><strong>Zone 4 — Rupture macroscopique (&gt;8%)</strong> : rupture progressive puis brutale du tendon</li>
+<li><strong>Signification clinique</strong> : les tendinopathies surviennent quand le tendon est sollicité de manière répétée dans les zones 3-4, ou quand la zone 2 est réduite par la dégénérescence</li>
+<li><strong>Charge de service</strong> : en fonctionnement normal, le tendon travaille à environ 25-50% de sa contrainte de rupture, soit un facteur de sécurité de ×2-4 (Ker et al., 1988, <em>J Exp Biol</em>)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND02-S02-001 | 🎬 ANIMATION | Courbe stress-strain complète avec les 4 zones — animation des fibres de collagène à chaque étape | Animation biomécanique essentielle |<br />
+| MTEND02-S02-002 | 📐 SCHÉMA | Les 4 zones annotées avec correspondance fibrillaire : crimp → recrutement → microdommages → rupture | Schéma dual (courbe + fibres) |<br />
+| MTEND02-S02-003 | 📐 SCHÉMA | Facteur de sécurité du tendon — zone de service vs zone de risque | Graphique avec zones colorées |</p>
+<h3 id="section-23-proprietes-viscoelastiques-le-tendon-nest-pas-un-simple-ressort">Section 2.3 — Propriétés viscoélastiques : le tendon n'est pas un simple ressort</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Définition</strong> : le tendon a des propriétés à la fois élastiques (restitution d'énergie) et visqueuses (dissipation d'énergie, dépendance au temps)<br />
+- <strong>Hystérésis</strong> : la courbe de décharge est inférieure à la courbe de charge → 5-10% de l'énergie est dissipée sous forme de chaleur (friction interne)<br />
+  - Conséquence : « préchauffage » du tendon par les premières contractions → le tendon devient plus performant (le collagène se réaligne, la viscosité diminue)<br />
+  - Explication clinique de la douleur diminuant à l'échauffement dans les tendinopathies<br />
+- <strong>Fluage (creep)</strong> : sous charge constante, le tendon s'allonge lentement avec le temps (réarrangement des fibres, exsudation d'eau)<br />
+- <strong>Relaxation de contrainte (stress relaxation)</strong> : à déformation constante, la contrainte diminue progressivement<br />
+- <strong>Dépendance à la vitesse de chargement (rate dependency)</strong> : le tendon est plus rigide à vitesse de chargement élevée → résiste mieux aux impacts rapides mais est plus fragile en cas de surcharge soudaine<br />
+- <strong>Conditionnement mécanique (preconditioning)</strong> : les premières cycles de charge-décharge stabilisent la réponse — importance de l'échauffement</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND02-S03-001 | 🎬 ANIMATION | Hystérésis tendineuse — courbe charge/décharge, énergie dissipée en chaleur | Animation avec coloration de la zone de perte |<br />
+| MTEND02-S03-002 | 🎬 ANIMATION | Fluage et relaxation de contrainte — animation temporelle | 2 graphiques animés côte à côte |<br />
+| MTEND02-S03-003 | 📐 SCHÉMA | Dépendance à la vitesse — courbes à différentes vitesses de chargement | Graphique multi-courbes |<br />
+| MTEND02-S03-004 | 📐 SCHÉMA | Preconditioning — stabilisation de la réponse après les premiers cycles | Graphique cyclique |</p>
+<h3 id="section-24-le-modele-charge-vs-capacite-fondement-de-la-comprehension-des-tendinopathies">Section 2.4 — Le modèle « charge vs capacité » : fondement de la compréhension des tendinopathies</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Concept central</strong> (Dye, 1996, <em>Clin Orthop Relat Res</em> ; Cook &amp; Docking, 2015, <em>Br J Sports Med</em>) : la tendinopathie survient quand la charge appliquée au tendon dépasse sa capacité de tolérance<br />
+  - <strong>Charge</strong> = stress mécanique total (volume, intensité, fréquence, type d'activité)<br />
+  - <strong>Capacité</strong> = résistance structurelle du tendon (section transversale, qualité du collagène, état de la matrice)<br />
+- <strong>Fenêtre de tolérance (envelope of function)</strong> : zone dans laquelle le tendon supporte la charge sans dommage<br />
+- <strong>Facteurs augmentant la charge</strong> : augmentation brutale du volume d'entraînement, changement de surface/chaussures, sport de saut/sprint, biomécanique déficiente<br />
+- <strong>Facteurs diminuant la capacité</strong> : vieillissement, déconditionnement, pathologies systémiques (diabète, dyslipidémie, ménopause), médicaments (fluoroquinolones, statines, corticoïdes répétés), génétique (polymorphismes COL5A1, COL1A1, MMP3, ténascine-C)<br />
+- <strong>Implication clinique</strong> : le traitement repose sur la modulation de la charge (réduction initiale) ET l'augmentation de la capacité (rééducation progressive)<br />
+- <strong>Monitoring de la charge</strong> : gestion du Training Load (charge aiguë/chronique, ACWR — Acute:Chronic Workload Ratio)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND02-S04-001 | 📐 SCHÉMA | Modèle charge vs capacité — représentation graphique avec fenêtre de tolérance | Schéma conceptuel fondamental |<br />
+| MTEND02-S04-002 | 🎬 ANIMATION | Scénarios de surcharge : augmentation du volume trop rapide → dépassement de la fenêtre → tendinopathie | Animation avec curseur de charge |<br />
+| MTEND02-S04-003 | 📊 INFOGRAPHIE | Facteurs augmentant la charge vs diminuant la capacité — tableau en 2 colonnes | Synthèse visuelle |<br />
+| MTEND02-S04-004 | 📐 SCHÉMA | ACWR — Acute:Chronic Workload Ratio — zone de sweet spot vs danger | Graphique avec zones colorées |</p>
+<h3 id="section-25-charges-tendineuses-dans-les-activites-sportives-et-quotidiennes">Section 2.5 — Charges tendineuses dans les activités sportives et quotidiennes</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendon d'Achille</strong> : marche = 2-3× poids du corps, course à pied = 6-8× PC, saut = 8-12× PC, sprint = 10-12× PC (Komi et al., 1992, <em>Int J Sports Med</em> ; Fukashiro et al., 1995, <em>Eur J Appl Physiol</em>)<br />
+- <strong>Tendon patellaire</strong> : marche = 0,5× PC, montée d'escaliers = 3,3× PC, squat = ~7× PC, atterrissage de saut = 8-14× PC (Escamilla et al., 2001, <em>Med Sci Sports Exerc</em> ; Richards et al., 1996, <em>Clin Biomech</em>)<br />
+- <strong>Coiffe des rotateurs</strong> : abduction 90° = ~50% de la force maximale du SSP, mouvements de lancer overhead = forces considérables (baseball : &gt;7000°/s de rotation interne)<br />
+- <strong>Épicondyliens latéraux</strong> : poignée de main ferme, geste de revers au tennis, saisie d'objet — forces apparemment faibles mais contractions excentriques répétées<br />
+- <strong>Tendon du moyen fessier</strong> : marche sur terrain plat = 1,5-2× PC par pas<br />
+- Charge cumulative : concept de « dose mécanique » = charge × nombre de répétitions × fréquence → le volume total compte autant que l'intensité<br />
+- <strong>Stockage et restitution d'énergie élastique</strong> : le tendon d'Achille stocke et restitue environ 35% de l'énergie à chaque pas de course, selon le mécanisme de ressort (spring mechanism), contribuant de manière essentielle à l'économie de course (Alexander &amp; Bennet-Clark, 1977, <em>Nature</em> ; Ker et al., 1987, <em>Nature</em>)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND02-S05-001 | 📊 INFOGRAPHIE | Tableau des charges tendineuses par activité : Achille, patellaire, coiffe, épicondyliens | Données chiffrées en × poids du corps |<br />
+| MTEND02-S05-002 | 🎬 ANIMATION | Stockage-restitution d'énergie élastique dans le tendon d'Achille pendant la course | Animation spring mechanism |<br />
+| MTEND02-S05-003 | 📐 SCHÉMA | Dose mécanique = charge × répétitions × fréquence — visualisation du concept | Formule visuelle |</p>
+<h3 id="points-cles-du-module-2">Points clés du Module 2</h3>
+<ol>
+<li>La courbe stress-strain du tendon comporte 4 zones : toe region (crimp), linéaire (fonctionnement normal), défaillance partielle, rupture macroscopique</li>
+<li>Le tendon travaille normalement à 25-50% de sa contrainte de rupture (facteur de sécurité ×2-4)</li>
+<li>Le tendon est viscoélastique : l'hystérésis explique pourquoi la douleur diminue à l'échauffement</li>
+<li>Le modèle charge vs capacité est le fondement de la compréhension des tendinopathies : la pathologie survient quand la charge dépasse la capacité</li>
+<li>Le tendon d'Achille supporte 6-8× le poids du corps pendant la course et 8-12× lors d'un saut</li>
+<li>Le stockage-restitution d'énergie élastique (spring mechanism) est essentiel pour l'économie de la locomotion</li>
+<li>Les fluoroquinolones, statines, corticoïdes répétés, diabète et ménopause diminuent la capacité tendineuse</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (définitions, zones de la courbe stress-strain)</li>
+<li>3 QCM Argent (propriétés viscoélastiques, charges chiffrées)</li>
+<li>2 QCM Or (application du modèle charge-capacité, analyse de cas clinique)</li>
+<li>1 QCM Diamant (synthèse biomécanique : facteurs de risque combinés)</li>
+<li>1 QROC : « Un coureur de marathon augmente son volume de 60 km à 90 km/semaine en 2 semaines et développe une tendinopathie d'Achille. Expliquez le mécanisme en utilisant le modèle charge-capacité. »</li>
+</ul>
+<hr />
+<h1 id="module-3-physiopathologie-des-tendinopathies-le-continuum-de-cook-purdam">MODULE 3 : PHYSIOPATHOLOGIE DES TENDINOPATHIES — LE CONTINUUM DE COOK &amp; PURDAM</h1>
+<p><strong>Partie</strong> : I — Fondamentaux tendineux<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1, 2</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Joueuse de tennis amateur, consulte pour une douleur progressive de l'épaule droite (dominante) depuis 6 mois. Son médecin traitant lui a prescrit 3 infiltrations de corticoïdes à 1 mois d'intervalle, avec un soulagement transitoire. L'IRM montre un épaississement du supra-épineux avec des zones de signal intermédiaire intra-tendineux et une petite fissure partielle de la face articulaire. *Est-ce une « tendinite » au sens classique (inflammation) ? Les infiltrations étaient-elles appropriées ? Pourquoi la corticothérapie peut-elle être délétère à long terme dans les tendinopathies ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> pourquoi le terme « tendinite » est inapproprié pour la majorité des tendinopathies chroniques</li>
+<li><strong>Décrire</strong> le continuum pathologique de Cook &amp; Purdam en 3 stades (réactive, dérégulation, dégénérative)</li>
+<li><strong>Distinguer</strong> les caractéristiques histologiques, échographiques et cliniques de chaque stade du continuum</li>
+<li><strong>Analyser</strong> le rôle de l'inflammation neurogénique, de la néovascularisation et de l'innervation dans la douleur tendineuse</li>
+<li><strong>Comprendre</strong> pourquoi certains tendons sont réversibles et d'autres non, et les implications thérapeutiques</li>
+<li><strong>Intégrer</strong> les facteurs de risque intrinsèques et extrinsèques dans le modèle physiopathologique</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-31-de-la-tendinite-a-la-tendinopathie-un-changement-de-paradigme">Section 3.1 — De la « tendinite » à la « tendinopathie » : un changement de paradigme</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Paradigme classique (abandonné)</strong> : tendinite = inflammation tendineuse pure → traitement anti-inflammatoire (AINS, corticoïdes)<br />
+- <strong>Révolution histologique</strong> : les travaux de Leadbetter (1992, <em>Clin Sports Med</em>), Khan et al. (1999, <em>Sports Med</em>) et Cook &amp; Purdam (2009, <em>Br J Sports Med</em>) ont démontré que les biopsies de tendons « tendinitiques » chroniques montrent :<br />
+  - Absence d'infiltrat inflammatoire (pas de PNN, pas de lymphocytes) dans la majorité des cas<br />
+  - Dégénérescence muchoide/hyaline du collagène<br />
+  - Augmentation de substance fondamentale (protéoglycanes, GAG)<br />
+  - Désorganisation des fibres de collagène<br />
+  - Néovascularisation (ingrowth vasculaire) et néoinnervation (fibres nerveuses nociceptives)<br />
+  - Augmentation du collagène de type III (fibrillaire, fin, désorganisé)<br />
+- <strong>Terminologie correcte</strong> — le module doit enseigner la terminologie standardisée, en s'appuyant sur les recommandations de Maffulli et al. (1998, <em>Clin J Sport Med</em>) et Khan et al. (1999, <em>Sports Med</em>) :<br />
+  - <strong>Tendinopathie</strong> : terme générique désignant toute pathologie du tendon (usage clinique recommandé)<br />
+  - <strong>Tendinose</strong> : dégénérescence non inflammatoire (diagnostic histologique)<br />
+  - <strong>Tendinite</strong> : inflammation vraie du tendon (situation rare, phase très aiguë uniquement)<br />
+  - <strong>Ténosynovite</strong> : inflammation de la gaine synoviale (concerne les tendons gainés)<br />
+  - <strong>Paratendinite</strong> : inflammation du paraténon (tendon d'Achille notamment)<br />
+  - <strong>Enthésopathie</strong> : atteinte de l'insertion tendineuse<br />
+- <strong>Implication thérapeutique majeure</strong> : si le processus n'est pas inflammatoire, les anti-inflammatoires ne sont pas la solution à long terme ; la rééducation (charge progressive) est le traitement de base</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND03-S01-001 | 📐 SCHÉMA | Comparaison histologique : tendon normal vs tendinose — désorganisation du collagène, substance fondamentale, néovascularisation | 2 coupes côte à côte |<br />
+| MTEND03-S01-002 | 📷 IMAGE | Coupe histologique de tendinose (coloration HE) — désorganisation, muchoïde, néovascularisation | Photo microscopique réelle annotée |<br />
+| MTEND03-S01-003 | 📊 INFOGRAPHIE | Terminologie correcte : tendinopathie vs tendinose vs tendinite vs ténosynovite vs paratendinite | Tableau de définitions |<br />
+| MTEND03-S01-004 | 📐 SCHÉMA | Paradigme ancien (inflammation) vs paradigme modern (dégénérescence/charge) | Schéma comparatif |</p>
+<h3 id="section-32-le-continuum-de-cook-purdam-3-stades-un-modele-dynamique">Section 3.2 — Le continuum de Cook &amp; Purdam : 3 stades, un modèle dynamique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le modèle du continuum en 3 stades <em>(adapté de Cook &amp; Purdam, 2009, Br J Sports Med)</em> :<br />
+- <strong>Stade 1 — Tendinopathie réactive</strong> :<br />
+  - Réponse à court terme à une surcharge aiguë (augmentation soudaine de l'activité)<br />
+  - Réponse cellulaire non inflammatoire : prolifération des ténocytes, augmentation de la production de protéoglycanes (aggrécane, versicane) → rétention d'eau → gonflement du tendon<br />
+  - Pas de désorganisation structurale majeure du collagène<br />
+  - Clinique : douleur aiguë, gonflement fusiforme, lié à la surcharge<br />
+  - <strong>RÉVERSIBLE</strong> avec repos relatif et gestion de la charge<br />
+  - Touche typiquement le sportif jeune après surcharge brutale<br />
+- <strong>Stade 2 — Dysréparation (tendon dysrepair)</strong> :<br />
+  - Tentative de guérison échouée avec désorganisation partielle de la matrice<br />
+  - Augmentation de la production de protéoglycanes et de collagène de type III<br />
+  - Apparition de la néovascularisation (ingrowth vasculaire) et de la néoinnervation (fibres nociceptives accompagnant les néovaisseaux)<br />
+  - Collagène partiellement désorganisé mais une trame résiduelle est conservée<br />
+  - <strong>PARTIELLEMENT RÉVERSIBLE</strong> avec rééducation adaptée (charge progressive)<br />
+  - Touche typiquement le praticien de 25-40 ans avec charge inadéquate chronique<br />
+- <strong>Stade 3 — Tendinopathie dégénérative</strong> :<br />
+  - Dégénérescence irréversible du collagène, larges zones de matrice acellulaire et désorganisée<br />
+  - Dégénérescence muchoïde/hyaline/lipidique/calcifiante<br />
+  - Mort cellulaire (apoptose des ténocytes, zones acellulaires)<br />
+  - Néovascularisation et néoinnervation abondantes dans les zones bordant les lésions<br />
+  - Risque de rupture si la portion dégénérative dépasse un seuil critique (&gt;30% de la section ?)<br />
+  - <strong>NON RÉVERSIBLE</strong> (pas de retour au tendon normal), mais le traitement peut améliorer la portion saine restante<br />
+  - Touche typiquement le sujet &gt;40 ans, le sportif chroniquement surchargé, le patient avec facteurs de risque systémiques<br />
+- <strong>Dynamique du modèle</strong> : le continuum n'est PAS une progression linéaire inévitable — les stades 1 et 2 peuvent régresser avec un traitement adapté. Mais le stade 3 n'a pas de retour en arrière structurel<br />
+- <strong>Coexistence de stades</strong> : au sein d'un même tendon, différentes zones peuvent être à des stades différents du continuum (zones saines adjacentes à des zones dégénératives)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND03-S02-001 | 🎬 ANIMATION | Le continuum de Cook &amp; Purdam — les 3 stades avec transitions, réversibilité partielle | Animation conceptuelle fondamentale |<br />
+| MTEND03-S02-002 | 📐 SCHÉMA | Les 3 stades — caractéristiques histologiques, cellulaires, matricielles, cliniques | Tableau en 3 colonnes |<br />
+| MTEND03-S02-003 | 📐 SCHÉMA | Coexistence de stades au sein d'un même tendon — cartographie en coupe | Zones colorées par stade |<br />
+| MTEND03-S02-004 | 📊 INFOGRAPHIE | Réversibilité du continuum — stade 1 ↔ stade 2 réversible, stade 3 irréversible | Flèches bidirectionnelles et unidirectionnelles |<br />
+| MTEND03-S02-005 | 📐 SCHÉMA | Profil typique du patient pour chaque stade (âge, activité, facteurs de risque) | 3 silhouettes annotées |</p>
+<h3 id="section-33-neovascularisation-et-neoinnervation-les-cles-de-la-douleur-tendineuse">Section 3.3 — Néovascularisation et néoinnervation : les clés de la douleur tendineuse</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Néovascularisation</strong> : ingrowth de néovaisseaux depuis le paraténon/épiténon vers les zones dégénératives<br />
+  - Médiateurs : VEGF, substance P, CGRP (Calcitonin Gene-Related Peptide)<br />
+  - Détectable en doppler puissance (power Doppler) échographique — corrélation avec la douleur (Ohberg &amp; Alfredson, 2002, <em>Br J Sports Med</em>)<br />
+  - Les néovaisseaux sont structurellement anormaux (sans média musculaire complète) → hémorragies, œdème<br />
+- <strong>Néoinnervation</strong> : fibres nerveuses nociceptives (substance P+, CGRP+) accompagnent les néovaisseaux<br />
+  - Les neurotransmetteurs (substance P, glutamate) sensibilisent les nocicepteurs locaux<br />
+  - Innervation sympathique (NPY, NE) → vasomotricité anormale<br />
+  - Le tendon sain est quasiment aneurel dans sa portion centrale — la néoinnervation est pathologique<br />
+- <strong>Inflammation neurogénique</strong> : libération de substance P et CGRP par les fibres nociceptives → vasodilatation locale, extravasation plasmatique, dégranulation des mastocytes → cercle vicieux<br />
+- <strong>Rôle du glutamate</strong> : neurotransmetteur excitateur retrouvé en concentration élevée dans les tendons tendinopathiques → activation des récepteurs NMDA sur les ténocytes et les fibres nerveuses → sensibilisation centrale<br />
+- <strong>Implications thérapeutiques</strong> :<br />
+  - La sclerosante des néovaisseaux (polidocanol) a été proposée mais résultats controversés<br />
+  - Les exercices excentriques réduisent la néovascularisation (Ohberg &amp; Alfredson, 2004, <em>Knee Surg Sports Traumatol Arthrosc</em>)<br />
+  - L'injection de haut volume (HVI — high-volume injection) strie les néovaisseaux/néonerfs par dissection hydraulique</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND03-S03-001 | 🎬 ANIMATION | Néovascularisation → néoinnervation → douleur — cercle vicieux physiopathologique | Animation en boucle |<br />
+| MTEND03-S03-002 | 📷 IMAGE | Doppler puissance d'un tendon d'Achille tendinopathique — néovascularisation marquée | Image échographique réelle annotée |<br />
+| MTEND03-S03-003 | 📐 SCHÉMA | Inflammation neurogénique — substance P, CGRP, mastocytes, vasodilatation | Circuit neuronal annoté |<br />
+| MTEND03-S03-004 | 📐 SCHÉMA | Tendon sain (aneurel central) vs tendon tendinopathique (néoinnervé) — comparaison | 2 coupes côte à côte |<br />
+| MTEND03-S03-005 | 📊 INFOGRAPHIE | Cibles thérapeutiques de la néovascularisation/néoinnervation : excentriques, HVI, sclérosante | Algorithme visuel |</p>
+<h3 id="section-34-facteurs-de-risque-un-modele-multifactoriel">Section 3.4 — Facteurs de risque : un modèle multifactoriel</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Facteurs de risque intrinsèques (liés au patient)</strong> :<br />
+  - Âge : &gt;35 ans → diminution du turnover du collagène, réduction de la vascularisation, accumulation des microdommages<br />
+  - Sexe : certaines tendinopathies plus fréquentes chez l'homme (Achille, patellaire), d'autres chez la femme (glutéales, De Quervain)<br />
+  - Génétique : polymorphismes COL5A1 (forme du collagène V), COL1A1, MMP3, ténascine-C — prédisposition génétique documentée pour la tendinopathie d'Achille et les ruptures<br />
+  - Dyslipidémie : hypercholestérolémie → dépôts lipidiques intra-tendineux, xanthomes tendineux, altération de la MEC<br />
+  - Diabète : glycation avancée des protéines (AGEs — Advanced Glycation End-products) → cross-links anormaux du collagène → rigidité excessive, fragilité<br />
+  - Ménopause : chute des œstrogènes → diminution de la synthèse de collagène, remodelage altéré (tendance aux tendinopathies chez la femme post-ménopausée)<br />
+  - Obésité : charge mécanique augmentée + inflammation systémique de bas grade (adipokines)<br />
+  - Morphologie : pieds plats/cavus (Achille), genu valgum (patellaire), conflit sous-acromial (coiffe)<br />
+- <strong>Facteurs de risque extrinsèques (liés à l'environnement)</strong> :<br />
+  - Surcharge d'entraînement : augmentation trop rapide du volume/intensité (règle des 10% maximum/semaine)<br />
+  - Changement de surface : passage terrain souple → dur (ou inversement)<br />
+  - Chaussage inadéquat : drop inadapté, semelle usée, absence d'amorti<br />
+  - Erreurs de gestuelle technique : biomécanique de course, geste sportif<br />
+  - Température : entraînement par temps froid → rigidité tendineuse accrue<br />
+- <strong>Médicaments à risque</strong> :<br />
+  - <strong>Fluoroquinolones</strong> : risque de tendinopathie ×2-5 et de rupture tendineuse (surtout Achille) — mécanisme : inhibition de la synthèse de collagène, toxicité des ténocytes, chélation du magnésium, augmentation des MMP<br />
+  - <strong>Statines</strong> : tendinopathies rares mais documentées — mécanisme discuté (inhibition de la voie du mévalonate, cytotoxicité mitochondriale)<br />
+  - <strong>Corticoïdes systémiques</strong> : effet catabolique sur le collagène<br />
+  - <strong>Corticoïdes locaux (infiltrations)</strong> : soulagement court terme mais effet délétère sur la structure tendineuse à long terme — inhibition de la synthèse de collagène, apoptose des ténocytes, diminution des propriétés mécaniques</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND03-S04-001 | 📊 INFOGRAPHIE | Facteurs de risque intrinsèques et extrinsèques — modèle multifactoriel | Schéma en marguerite |<br />
+| MTEND03-S04-002 | 📐 SCHÉMA | Mécanisme des fluoroquinolones sur le tendon — 4 voies de toxicité | Schéma moléculaire |<br />
+| MTEND03-S04-003 | 📐 SCHÉMA | Glycation avancée (AGEs) dans le diabète — cross-links du collagène → rigidité → fragilité | Schéma biochimique |<br />
+| MTEND03-S04-004 | 📐 SCHÉMA | Effet des corticoïdes sur le tendon à court et long terme | Timeline avec double effet |<br />
+| MTEND03-S04-005 | 📊 INFOGRAPHIE | Médicaments à risque de tendinopathie — tableau synthétique | Alerte pharmacovigilance |</p>
+<h3 id="section-35-pourquoi-le-tendon-guerit-mal-les-limites-de-la-cicatrisation-tendineuse">Section 3.5 — Pourquoi le tendon guérit mal : les limites de la cicatrisation tendineuse</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Capacité de cicatrisation limitée</strong> : le tendon cicatrise, mais le tissu de réparation n'est jamais identique au tendon sain<br />
+- <strong>3 phases de cicatrisation</strong> :<br />
+  1. <strong>Phase inflammatoire (0-7 jours)</strong> : afflux de PNN puis macrophages, nettoyage des débris, libération de facteurs de croissance (TGF-β, PDGF, VEGF, IGF-1)<br />
+  2. <strong>Phase proliférative (7-21 jours)</strong> : prolifération des ténocytes, synthèse de collagène de type III (désorganisé, fin), néovascularisation, tissu de granulation<br />
+  3. <strong>Phase de remodelage (21 jours → 12 mois+)</strong> : remplacement progressif (mais incomplet) du collagène III par du collagène I, réalignement partiel des fibres, diminution de la cellularité, maturation<br />
+- <strong>Le tissu de réparation atteint au maximum 60-80% des propriétés mécaniques du tendon original, même après 12 mois de remodelage</strong> (Sharma &amp; Maffulli, 2006, <em>J Bone Joint Surg Am</em>)<br />
+- <strong>Facteurs limitants</strong> : hypovasculaire (surtout zones critiques), métabolisme faible (turnover du collagène = des années dans le tendon adulte), absence de cellules souches suffisantes in situ<br />
+- <strong>Cicatrisation intrinsèque vs extrinsèque</strong> :<br />
+  - Intrinsèque : par les ténocytes résidents — préférable (moins d'adhérences)<br />
+  - Extrinsèque : par les cellules du paraténon/gaine synoviale — plus rapide mais génère des adhérences<br />
+- <strong>Implications cliniques</strong> : la mobilisation précoce contrôlée favorise la cicatrisation intrinsèque et le réalignement du collagène ; l'immobilisation prolongée favorise la cicatrisation extrinsèque et les adhérences</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND03-S05-001 | 🎬 ANIMATION | Les 3 phases de cicatrisation tendineuse — inflammatoire → proliférative → remodelage | Animation temporelle |<br />
+| MTEND03-S05-002 | 📐 SCHÉMA | Comparaison tendon sain vs tissu de réparation — propriétés mécaniques (60-80%) | Courbe stress-strain comparative |<br />
+| MTEND03-S05-003 | 📐 SCHÉMA | Cicatrisation intrinsèque vs extrinsèque — avantages et inconvénients | 2 schémas comparatifs |<br />
+| MTEND03-S05-004 | 📊 INFOGRAPHIE | Timeline de cicatrisation tendineuse : phases, activités autorisées, propriétés mécaniques | Frise chronologique |</p>
+<h3 id="points-cles-du-module-3">Points clés du Module 3</h3>
+<ol>
+<li>La majorité des tendinopathies chroniques NE sont PAS inflammatoires — le terme « tendinose » (dégénérescence) est plus approprié que « tendinite »</li>
+<li>Le continuum de Cook &amp; Purdam comprend 3 stades : réactive (réversible), dysréparation (partiellement réversible), dégénérative (irréversible structurellement)</li>
+<li>La néovascularisation et la néoinnervation sont les principales sources de douleur dans les tendinopathies — les néonerfs accompagnent les néovaisseaux</li>
+<li>Le glutamate et la substance P jouent un rôle central dans la douleur tendineuse par inflammation neurogénique</li>
+<li>Les fluoroquinolones augmentent le risque de tendinopathie et de rupture ×2-5 (surtout tendon d'Achille)</li>
+<li>Les corticoïdes locaux soulagent à court terme mais sont délétères sur la structure tendineuse à long terme</li>
+<li>Le tissu de réparation tendineuse n'atteint que 60-80% des propriétés mécaniques du tendon original</li>
+<li>La rééducation par charge progressive (et non le repos complet) est le traitement de base des tendinopathies</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (terminologie, stades du continuum)</li>
+<li>3 QCM Argent (caractéristiques de chaque stade, facteurs de risque)</li>
+<li>2 QCM Or (analyse du continuum appliqué à un cas clinique, médicaments à risque)</li>
+<li>1 QCM Diamant (décision thérapeutique intégrant le stade, les facteurs de risque et le profil du patient)</li>
+<li>1 QROC : « Pourquoi les infiltrations répétées de corticoïdes dans un tendon tendinopathique sont-elles potentiellement dangereuses à long terme ? Expliquez le mécanisme. »</li>
+</ul>
+<hr />
+<h1 id="module-4-vascularisation-innervation-et-cicatrisation-tendineuse">MODULE 4 : VASCULARISATION, INNERVATION ET CICATRISATION TENDINEUSE</h1>
+<p><strong>Partie</strong> : I — Fondamentaux tendineux<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1, 2, 3</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Sportif du dimanche (tennis, jogging), consulte pour une rupture du tendon d'Achille gauche survenue brutalement en jouant au tennis (« coup de fouet »). L'IRM confirme une rupture complète à 4 cm de l'insertion calcanéenne. *Pourquoi la rupture survient-elle précisément à cet endroit ? Pourquoi le patient de 55 ans plutôt que celui de 25 ans ? La zone de rupture correspond-elle à une zone de « faiblesse vasculaire » ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> la vascularisation du tendon (sources, zones hypovasculaires) et son implication dans les tendinopathies</li>
+<li><strong>Expliquer</strong> l'innervation tendineuse normale et pathologique (néoinnervation)</li>
+<li><strong>Comprendre</strong> les mécanismes de cicatrisation tendineuse intrinsèque et extrinsèque</li>
+<li><strong>Identifier</strong> les zones hypovasculaires spécifiques à chaque tendon (zones critiques)</li>
+<li><strong>Analyser</strong> l'effet du vieillissement sur la biologie tendineuse</li>
+<li><strong>Relier</strong> vascularisation, innervation et capacité de cicatrisation aux options thérapeutiques</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-41-vascularisation-tendineuse-3-sources-1-zone-critique">Section 4.1 — Vascularisation tendineuse : 3 sources, 1 zone critique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>3 sources de vascularisation</strong> :<br />
+  1. <strong>Jonction myotendineuse</strong> : vaisseaux issus de la vascularisation musculaire<br />
+  2. <strong>Enthèse (insertion osseuse)</strong> : vaisseaux périostés<br />
+  3. <strong>Paraténon / mésoténon</strong> : vaisseaux segmentaires pénétrant le tendon sur sa surface — source principale pour le corps du tendon<br />
+- <strong>Distribution vasculaire</strong> : vascularisation principalement périphérique → la portion centrale du tendon est la moins vascularisée<br />
+- <strong>Zones hypovasculaires (zones critiques)</strong> : zones où la vascularisation est minimale — correspondent aux sites de prédilection des tendinopathies et des ruptures<br />
+  - Tendon d'Achille : zone critique 2-6 cm au-dessus de l'insertion calcanéenne (zone « watershed » entre vascularisation proximale et distale)<br />
+  - Coiffe des rotateurs (SSP) : zone critique près de l'insertion sur le trochiter (zone de Codman, ~1 cm de l'insertion)<br />
+  - Tendon patellaire : pôle inférieur de la rotule<br />
+  - Long biceps : portion intra-articulaire<br />
+  - Tibial postérieur : derrière la malléole médiale<br />
+- <strong>Vascularisation vs activité</strong> : l'activité physique augmente le flux sanguin péritendineux (x2-3 pendant l'exercice) mais pas toujours le flux intra-tendineux dans les zones critiques → paradoxe vasculaire<br />
+- <strong>Wrap-around tendons</strong> : tendons qui contournent une poulie osseuse (ex. : Achille autour du calcanéum, long biceps dans la gouttière, tibial postérieur derrière la malléole) → compression → zone avasculaire fonctionnelle</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND04-S01-001 | 📐 SCHÉMA | Les 3 sources de vascularisation tendineuse — JMT, enthèse, paraténon | Schéma du tendon entier |<br />
+| MTEND04-S01-002 | 📐 SCHÉMA | Zones hypovasculaires du tendon d'Achille — zone critique à 2-6 cm | Coupe sagittale annotée |<br />
+| MTEND04-S01-003 | 📐 SCHÉMA | Zone hypovasculaire de la coiffe (SSP) — zone de Codman | Vue latérale épaule annotée |<br />
+| MTEND04-S01-004 | 📊 INFOGRAPHIE | Zones critiques par tendon : Achille, coiffe, patellaire, long biceps, tibial postérieur | Carte du corps annotée |<br />
+| MTEND04-S01-005 | 📐 SCHÉMA | Wrap-around tendons — compression sur poulie osseuse → ischémie | Schéma mécanique |</p>
+<h3 id="section-42-innervation-tendineuse-de-la-proprioception-a-la-douleur">Section 4.2 — Innervation tendineuse : de la proprioception à la douleur</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Innervation du tendon sain</strong> :<br />
+  - Principalement à la surface (épiténon, paraténon) et aux jonctions (myotendineuse, enthèse)<br />
+  - La portion centrale du tendon est quasi-aneurale (très peu de fibres nerveuses)<br />
+  - Types de récepteurs : mécanorécepteurs de Golgi (organes tendineux de Golgi à la JMT), corpuscules de Ruffini, corpuscules de Pacini, terminaisons libres<br />
+  - Rôle : proprioception (tension tendineuse), réflexe myotatique inverse (protection contre la surcharge)<br />
+- <strong>Innervation du tendon pathologique</strong> :<br />
+  - Néoinnervation : ingrowth de fibres nerveuses nociceptives dans les zones lésées — corrélation avec la douleur<br />
+  - Fibres C non myélinisées (substance P+, CGRP+) : douleur lente, sourde, persistante<br />
+  - Fibres sympathiques (NPY+, NE+) : vasomotricité anormale<br />
+  - Neurotransmetteurs excitateurs : glutamate (↑ dans les tendons tendinopathiques), substance P, CGRP<br />
+  - Sensibilisation périphérique → sensibilisation centrale (en cas de chronicité)<br />
+- <strong>Organe tendineux de Golgi</strong> : capsule de collagène encapsulant des fibres nerveuses Ib — détecte la tension → réflexe inhibiteur (relâchement musculaire protecteur)<br />
+  - Rôle dans les exercices isométriques : activation des OTG → inhibition de la transmission douloureuse → analgésie par les isométriques</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND04-S02-001 | 📐 SCHÉMA | Innervation du tendon sain — distribution des récepteurs (Golgi, Ruffini, Pacini, terminaisons libres) | Coupe longitudinale annotée |<br />
+| MTEND04-S02-002 | 📐 SCHÉMA | Néoinnervation pathologique — fibres C, substance P, CGRP | Comparaison sain vs pathologique |<br />
+| MTEND04-S02-003 | 🎬 ANIMATION | Organe tendineux de Golgi — réflexe myotatique inverse → protection | Animation réflexe |<br />
+| MTEND04-S02-004 | 📐 SCHÉMA | Sensibilisation périphérique → centrale dans les tendinopathies chroniques | Circuit nerveux |</p>
+<h3 id="section-43-effet-du-vieillissement-sur-le-tendon">Section 4.3 — Effet du vieillissement sur le tendon</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Modifications structurales</strong> :<br />
+  - Diminution du diamètre des fibrilles de collagène et augmentation de la distribution bimodale<br />
+  - Accumulation de cross-links non enzymatiques (AGEs — glycation) → rigidité accrue<br />
+  - Diminution de la teneur en eau et en protéoglycanes → perte de propriétés viscoélastiques<br />
+  - Augmentation du collagène de type III relatif<br />
+  - Perte de crimping → réduction de la réserve d'allongement<br />
+- <strong>Modifications cellulaires</strong> :<br />
+  - Diminution du nombre de ténocytes (↓cellularité d'environ 50% entre 20 et 60 ans) (Kannus &amp; Józsa, 1991, <em>J Bone Joint Surg Am</em>)<br />
+  - Diminution de l'activité métabolique (synthèse de collagène ↓, turnover ↓)<br />
+  - Diminution des TSPCs (cellules souches tendineuses)<br />
+  - Sénescence cellulaire : accumulation de ténocytes sénescents → sécrétion de cytokines pro-inflammatoires (SASP — Senescence-Associated Secretory Phenotype)<br />
+- <strong>Modifications vasculaires</strong> :<br />
+  - Diminution de la densité vasculaire<br />
+  - Diminution du flux sanguin sous effort<br />
+  - Élargissement des zones hypovasculaires<br />
+- <strong>Modifications mécaniques</strong> :<br />
+  - ↓ module de Young, ↓ résistance à la rupture (↓ d'environ 30-50% entre 30 et 70 ans) (Noyes &amp; Grood, 1976, <em>J Bone Joint Surg Am</em> ; Johnson et al., 1994, <em>J Orthop Res</em>)<br />
+  - ↑ rigidité passive (AGEs) mais ↓ résistance à la rupture = paradoxe du tendon âgé (plus raide mais plus fragile)<br />
+  - ↑ temps de cicatrisation<br />
+- <strong>Conséquence clinique</strong> : pic de rupture tendineuse entre 40-60 ans (surtout Achille, coiffe) — le tendon a commencé à dégénérer mais le patient est encore actif</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND04-S03-001 | 📊 INFOGRAPHIE | Vieillissement tendineux — modifications structurales, cellulaires, vasculaires, mécaniques | Tableau synthétique |<br />
+| MTEND04-S03-002 | 📐 SCHÉMA | Paradoxe du tendon âgé : ↑ rigidité (AGEs) mais ↓ résistance à la rupture | Courbe stress-strain comparée jeune vs âgé |<br />
+| MTEND04-S03-003 | 📐 SCHÉMA | Courbe de résistance tendineuse en fonction de l'âge — pic à 25-30 ans, déclin progressif | Graphique avec zone à risque |<br />
+| MTEND04-S03-004 | 📷 IMAGE | Microscopie d'un tendon jeune vs âgé — différence de cellularité et d'organisation | 2 photos côte à côte |</p>
+<h3 id="section-44-cicatrisation-tendineuse-et-implications-therapeutiques">Section 4.4 — Cicatrisation tendineuse et implications thérapeutiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Rappel</strong> : 3 phases (inflammatoire, proliférative, remodelage) — cf. Module 3<br />
+- <strong>Cicatrisation dans les différents contextes</strong> :<br />
+  - Rupture aiguë : cicatrisation meilleure si facteurs mécaniques favorables (bon alignement, tension modérée, vascularisation préservée)<br />
+  - Tendinopathie chronique : tentative de réparation permanente mais inadéquate → le tendon est en perpétuel état de « chantier » sans jamais achever la reconstruction<br />
+  - Réparation chirurgicale : la suture rétablit la continuité mais le tendon régénéré reste biologiquement inférieur<br />
+- <strong>Facteurs favorisant la cicatrisation</strong> :<br />
+  - Mobilisation précoce contrôlée (charge mécanique → orientation des fibres de collagène)<br />
+  - Facteurs de croissance (TGF-β, PDGF, VEGF, IGF-1, bFGF)<br />
+  - PRP (source de facteurs de croissance plaquettaires)<br />
+  - Bonne vascularisation locale<br />
+  - Absence de facteurs systémiques défavorables (diabète, tabac, corticoïdes)<br />
+- <strong>Facteurs défavorisant la cicatrisation</strong> :<br />
+  - Immobilisation prolongée (adhérences, désorientation du collagène)<br />
+  - Tabac : vasospasme, hypoxie tissulaire, ↑ MMP<br />
+  - Diabète : glycation, vasculopathie, neuropathie<br />
+  - Corticoïdes : inhibition de la synthèse de collagène<br />
+  - Gap tendino-tendineux excessif (si réparation chirurgicale sous tension)<br />
+  - Infection locale</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND04-S04-001 | 📊 INFOGRAPHIE | Facteurs favorisant vs défavorisant la cicatrisation tendineuse | Tableau en 2 colonnes |<br />
+| MTEND04-S04-002 | 🎬 ANIMATION | Effet de la mobilisation précoce vs immobilisation sur l'orientation du collagène | Animation comparative |<br />
+| MTEND04-S04-003 | 📐 SCHÉMA | Rôle des facteurs de croissance dans la cicatrisation tendineuse — cibles cellulaires et matricielles | Schéma en réseau |<br />
+| MTEND04-S04-004 | 📐 SCHÉMA | Effet du tabac sur la cicatrisation tendineuse — 3 mécanismes | Schéma physiopathologique |</p>
+<h3 id="points-cles-du-module-4">Points clés du Module 4</h3>
+<ol>
+<li>Le tendon est vascularisé par 3 sources : JMT, enthèse et paraténon — la portion centrale est la moins vascularisée</li>
+<li>Les zones hypovasculaires (zones critiques) correspondent aux sites de prédilection des tendinopathies et des ruptures</li>
+<li>Le tendon sain est quasi-aneural en son centre — la néoinnervation pathologique est la source principale de douleur</li>
+<li>Les organes tendineux de Golgi expliquent en partie l'effet analgésique des exercices isométriques</li>
+<li>Le vieillissement crée un paradoxe : le tendon devient plus raide (AGEs) mais plus fragile (↓ résistance à la rupture)</li>
+<li>Le pic de rupture tendineuse survient entre 40-60 ans (dégénérescence commencée + activité maintenue)</li>
+<li>La mobilisation précoce contrôlée est essentielle pour une cicatrisation de qualité (orientation du collagène, évitement des adhérences)</li>
+<li>Le tabac, le diabète et les corticoïdes sont les 3 principaux facteurs systémiques défavorisant la cicatrisation tendineuse</li>
+</ol>
+<h3 id="auto-evaluation_3">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (sources de vascularisation, zones critiques)</li>
+<li>3 QCM Argent (innervation normale vs pathologique, vieillissement)</li>
+<li>2 QCM Or (relier la zone de rupture à la vascularisation, facteurs de cicatrisation)</li>
+<li>1 QCM Diamant (cas complexe : patient diabétique fumeur sous fluoroquinolones avec tendinopathie — analyse multifactorielle)</li>
+<li>1 QROC : « Pourquoi la zone de rupture du tendon d'Achille se situe-t-elle typiquement à 2-6 cm de l'insertion calcanéenne ? Expliquez le mécanisme vasculaire. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques">Références bibliographiques</h2>
+<ol>
+<li>Alexander RMcN, Bennet-Clark HC. Storage of elastic strain energy in muscle and other tissues. <em>Nature</em>. 1977;265(5590):114-117.</li>
+<li>Benjamin M, McGonagle D. The anatomical basis for disease localisation in seronegative spondyloarthropathy at entheses and related sites. <em>J Anat / Anat Embryol (Berl)</em>. 2001;199(Pt 5):503-526.</li>
+<li>Bi Y, Ehirchiou D, Kilts TM, et al. Identification of tendon stem/progenitor cells and the role of the extracellular matrix in their niche. <em>Nat Med</em>. 2007;13(10):1219-1227.</li>
+<li>Butler DL, Grood ES, Noyes FR, Zernicke RF. Biomechanics of ligaments and tendons. <em>Exerc Sport Sci Rev</em>. 1978;6:125-181.</li>
+<li>Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. <em>Br J Sports Med</em>. 2009;43(6):409-416.</li>
+<li>Cook JL, Docking SI. "Rehabilitation will increase the 'capacity' of your …tendon" … Developing load tolerance. <em>Br J Sports Med</em>. 2015;49(21):1394-1395.</li>
+<li>Dye SF. The knee as a biologic transmission with an envelope of function. <em>Clin Orthop Relat Res</em>. 1996;(325):10-18.</li>
+<li>Escamilla RF, Fleisig GS, Zheng N, et al. Biomechanics of the knee during closed kinetic chain and open kinetic chain exercises. <em>Med Sci Sports Exerc</em>. 2001;33(4):627-634.</li>
+<li>Fukashiro S, Komi PV, Järvinen M, Miyashita M. In vivo Achilles tendon loading during jumping in humans. <em>Eur J Appl Physiol</em>. 1995;71(5):453-458.</li>
+<li>Johnson GA, Tramaglini DM, Levine RE, et al. Tensile and viscoelastic properties of human patellar tendon. <em>J Orthop Res</em>. 1994;12(6):796-803.</li>
+<li>Kadler KE, Holmes DF, Trotter JA, Chapman JA. Collagen fibril formation. <em>Biochem J</em>. 1996;316(Pt 1):1-11.</li>
+<li>Kannus P. Structure of the tendon connective tissue. <em>Scand J Med Sci Sports</em>. 2000;10(6):312-320.</li>
+<li>Kannus P, Józsa L. Histopathological changes preceding spontaneous rupture of a tendon. <em>J Bone Joint Surg Am</em>. 1991;73(10):1507-1525.</li>
+<li>Kastelic J, Galeski A, Baer E. The multicomposite structure of tendon. <em>Connect Tissue Res</em>. 1978;6(1):11-23.</li>
+<li>Ker RF, Bennett MB, Bibby SR, Kester RC, Alexander RMcN. The spring in the arch of the human foot. <em>Nature</em>. 1987;325(7000):147-149.</li>
+<li>Ker RF, Alexander RMcN, Bennett MB. Why are mammalian tendons so thick? <em>J Exp Biol</em>. 1988;134(1):247-265.</li>
+<li>Khan KM, Cook JL, Bonar F, Harcourt P, Åstrom M. Histopathology of common tendinopathies: update and implications for clinical management. <em>Sports Med</em>. 1999;27(6):393-408.</li>
+<li>Komi PV, Fukashiro S, Järvinen M. Biomechanical loading of Achilles tendon during normal locomotion. <em>Clin Sports Med</em>. 1992;11(3):521-531.</li>
+<li>Leadbetter WB. Cell-matrix response in tendon injury. <em>Clin Sports Med</em>. 1992;11(3):533-578.</li>
+<li>Maffulli N, Khan KM, Puddu G. Overuse tendon conditions: time to change a confusing terminology. <em>Arthroscopy</em>. 1998;14(8):840-843.</li>
+<li>Noyes FR, Grood ES. The strength of the anterior cruciate ligament in humans and Rhesus monkeys: age-related and species-related changes. <em>J Bone Joint Surg Am</em>. 1976;58(8):1074-1082.</li>
+<li>Noyes FR, Butler DL, Grood ES, Zernicke RF, Hefzy MS. Biomechanical analysis of human ligament grafts used in knee-ligament repairs and reconstructions. <em>J Bone Joint Surg Am</em>. 1984;66(3):344-352.</li>
+<li>Ohberg L, Alfredson H. Ultrasound guided sclerosis of neovessels in painful chronic Achilles tendinosis: pilot study of a new treatment. <em>Br J Sports Med</em>. 2002;36(3):173-177.</li>
+<li>Ohberg L, Alfredson H. Effects on neovascularisation behind the good results with eccentric training in chronic mid-portion Achilles tendinosis? <em>Knee Surg Sports Traumatol Arthrosc</em>. 2004;12(5):465-470.</li>
+<li>Richards DP, Ajemian SV, Wiley JP, Zernicke RF. Knee joint dynamics predict patellar tendinitis in elite volleyball players. <em>Clin Biomech</em>. 1996;11(5):301-302.</li>
+<li>Sharma P, Maffulli N. Tendon injury and tendinopathy: healing and repair. <em>J Bone Joint Surg Am</em>. 2005;87(1):187-202.</li>
+<li>Sharma P, Maffulli N. Biology of tendon injury: healing, modeling and remodeling. <em>J Musculoskelet Neuronal Interact</em>. 2006;6(2):181-190.</li>
+<li>Thorpe CT, Birch HL, Clegg PD, Screen HRC. The role of the non-collagenous matrix in tendon function. <em>Int J Exp Pathol</em>. 2013;94(4):248-259.</li>
+<li>Wang JH-C. Mechanobiology of tendon. <em>J Biomech</em>. 2006;39(9):1563-1582.</li>
+<li>Wren TAL, Yerby SA, Beaupré GS, Carter DR. Mechanical properties of the human Achilles tendon. <em>Clin Biomech</em>. 2001;16(3):245-251.</li>
+<li>Yamamoto N, Hayashi K, Kuriyama H, et al. Mechanical properties of the rabbit patellar tendon. <em>J Biomech Eng</em>. 1993;115(2):143-149.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

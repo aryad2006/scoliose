@@ -1,0 +1,512 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-09-situations-particulieres-et-therapeutiques">PARTIE 09 — Situations Particulières et Thérapeutiques</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-29-grossesse-sous-levothyroxine">MODULE 29 — Grossesse sous Lévothyroxine</h2>
+<h3 id="291-adaptation-de-la-dose-en-grossesse">29.1 Adaptation de la dose en grossesse</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO29-S1-001 — Protocole d'adaptation de la dose LT4 en grossesse : algorithme décisionnel semaine par semaine]</p>
+</blockquote>
+<p><strong>Pourquoi augmenter la dose dès la grossesse</strong> (adapté de Alexander et al., NEJM 2004) :</p>
+<table>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↑ TBG (× 2-3) par estrogènes</td>
+<td>↑ liaison T4 → ↑ besoin production T4</td>
+</tr>
+<tr>
+<td>↑ Volume de distribution</td>
+<td>↑ besoin absolu en LT4</td>
+</tr>
+<tr>
+<td>↑ FGR → ↑ clairance iodée</td>
+<td>↑ besoin de LT4 et d'iode</td>
+</tr>
+<tr>
+<td>Transfert T4 materno-fœtal T1</td>
+<td>Consommation fœtale de T4 maternelle</td>
+</tr>
+<tr>
+<td>hCG → stimulation TSHR</td>
+<td>Compense partiellement mais insuffisamment</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Augmentation pratique de la dose</strong> :<br />
+- Dès test de grossesse positif : <strong>+25-30 %</strong> de la dose habituelle<br />
+- Méthode simple : ajouter 2 comprimés supplémentaires par semaine (prise de 9 comprimés/semaine au lieu de 7)<br />
+- Contrôle TSH + T4L à <strong>4-6 semaines</strong></p>
+<hr />
+<h3 id="292-surveillance-pendant-la-grossesse">29.2 Surveillance pendant la grossesse</h3>
+<p><strong>Rythme de surveillance recommandé</strong> (adapté de ATA 2017, ETA 2023) :</p>
+<table>
+<thead>
+<tr>
+<th>Trimestre</th>
+<th>Fréquence</th>
+<th>Paramètres</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1 (4-12 SA)</td>
+<td>Toutes les 4 semaines</td>
+<td>TSH + T4L</td>
+</tr>
+<tr>
+<td>T2 (13-28 SA)</td>
+<td>Toutes les 6-8 semaines</td>
+<td>TSH + T4L</td>
+</tr>
+<tr>
+<td>T3 (29-40 SA)</td>
+<td>Toutes les 6-8 semaines</td>
+<td>TSH + T4L</td>
+</tr>
+<tr>
+<td>Post-partum (J1-S6)</td>
+<td>Retour dose préconceptionnelle + contrôle S6</td>
+<td>TSH</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cibles en grossesse</strong> :<br />
+- TSH T1 : &lt; 2,5 mUI/L (idéalement 0,5-1,5)<br />
+- TSH T2-T3 : &lt; 3,0-3,5 mUI/L<br />
+- T4L : tiers supérieur de la normale (attention : méthodes immunométriques sous-estiment T4L en grossesse)</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Ne pas réduire la dose de LT4 devant une TSH basse isolée (0,1-0,3 mUI/L) au T1. La TSH est naturellement abaissée par l'hCG. Vérifier la T4L — si T4L dans les normes, pas de modification.</div>
+
+<hr />
+<h3 id="293-hypothyroidie-decouverte-pendant-la-grossesse">29.3 Hypothyroïdie découverte pendant la grossesse</h3>
+<p><strong>Conduite à tenir</strong> (adapté de ETA 2023) :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HT constituée</td>
+<td>&gt; 4 mUI/L</td>
+<td>Basse</td>
+<td>LT4 immédiate, dose complète</td>
+</tr>
+<tr>
+<td>HT frustre + anti-TPO +</td>
+<td>2,5-10 mUI/L</td>
+<td>Normale</td>
+<td>LT4 recommandée</td>
+</tr>
+<tr>
+<td>HT frustre sans anti-TPO</td>
+<td>2,5-10 mUI/L</td>
+<td>Normale</td>
+<td>Discutable, surveillance étroite</td>
+</tr>
+<tr>
+<td>Anti-TPO + seul (TSH normale)</td>
+<td>Normale</td>
+<td>Normale</td>
+<td>Surveillance mensuelle TSH</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — En cas d'HT découverte au T1, initier LT4 à la dose complète (50-100 µg/j selon la TSH) sans passer par la titration progressive : l'urgence est de normaliser la TSH rapidement pour protéger le développement neurologique fœtal.</p>
+<hr />
+<h3 id="294-thyroidite-du-post-partum">29.4 Thyroïdite du post-partum</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO29-S4-001 — Histoire naturelle de la thyroïdite du post-partum : phases hyper et hypo, résolution, rechute]</p>
+</blockquote>
+<p><strong>Épidémiologie</strong> : 5-10 % des femmes dans l'année post-partum ; 50 % des femmes anti-TPO positives en grossesse</p>
+<p><strong>Phases cliniques</strong> (adapté de Stagnaro-Green, 2012) :</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Délai post-partum</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>Durée</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase I (hyper)</td>
+<td>1-3 mois</td>
+<td>↓</td>
+<td>↑</td>
+<td>2-8 semaines</td>
+<td>Bêta-bloquants si symptômes</td>
+</tr>
+<tr>
+<td>Phase II (hypo)</td>
+<td>4-8 mois</td>
+<td>↑</td>
+<td>↓</td>
+<td>4-6 mois</td>
+<td>LT4 si symptômes ou allaitement</td>
+</tr>
+<tr>
+<td>Résolution</td>
+<td>12-18 mois</td>
+<td>Normale</td>
+<td>Normale</td>
+<td>—</td>
+<td>Sevrage progressif LT4</td>
+</tr>
+<tr>
+<td>Rechute future</td>
+<td>À chaque grossesse</td>
+<td>Variable</td>
+<td>Variable</td>
+<td>—</td>
+<td>Surveillance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Évolution à long terme</strong> :<br />
+- 20-30 % évoluent vers une hypothyroïdie permanente (Hashimoto associé, anti-TPO + persistants)<br />
+- TSH de contrôle à 1 an du post-partum pour détecter les formes permanentes</p>
+<hr />
+<h3 id="quiz-module-29">QUIZ MODULE 29</h3>
+<p><strong>🥉 Q1</strong> — Quand augmenter la dose de LT4 pendant la grossesse ?<br />
+<strong>A) Dès le test de grossesse positif</strong> B) À 12 SA C) Seulement si TSH &gt; 2,5 mUI/L D) Pas avant 20 SA</p>
+<p><strong>🥈 Q2</strong> — Une femme enceinte de 20 SA sous LT4 100 µg/j a TSH 0,15 mUI/L et T4L normale. Quelle est la conduite ?<br />
+A) Réduire la dose immédiatement <strong>B) TSH physiologiquement basse au T1-T2 (effet hCG + augmentation de dose) — T4L normale rassurante, surveillance sans modification</strong> C) Arrêter LT4 D) Passer à la formulation IV</p>
+<p><strong>🥇 Q3</strong> — Une femme présente à 5 mois post-partum fatigue, prise de poids, et TSH à 11 mUI/L. Anti-TPO à 420 UI/mL. Quelle est la conduite ?<br />
+<strong>A) Phase hypothyroïdienne de thyroïdite du post-partum — initier LT4 si symptômes invalidants, sevrage à 12-18 mois, contrôle TSH à 1 an pour éliminer évolution vers Hashimoto permanent</strong></p>
+<p><strong>💎 Q4</strong> — Quel est le risque de récidive de la thyroïdite du post-partum lors des grossesses ultérieures, et comment surveiller ?<br />
+<strong>A) Risque de récidive de 70-80 % à chaque grossesse — surveillance TSH mensuelle au T1 et au post-partum (mois 1-3-6-12), supplémentation en iode, dépistage anti-TPO dès la préconception</strong></p>
+<hr />
+<h2 id="module-30-hypothyroidie-sous-amiodarone">MODULE 30 — Hypothyroïdie sous Amiodarone</h2>
+<h3 id="301-mecanismes-et-epidemiologie">30.1 Mécanismes et épidémiologie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO30-S1-001 — Mécanismes de la dysthyroïdie amiodaronée : types 1 et 2, surcharge iodée, inhibition DIO1]</p>
+</blockquote>
+<p><strong>L'amiodarone et la thyroïde</strong> :<br />
+- Contient <strong>37 % d'iode</strong> (un comprimé de 200 mg libère 6-8 mg d'iode/j)<br />
+- Inhibe la DIO1 et la DIO2 → ↑ T4, ↓ T3<br />
+- Demi-vie très longue : <strong>40-55 jours</strong> → effets thyroïdiens persistants 6-12 mois après l'arrêt</p>
+<p><strong>Anomalies biologiques attendues SANS dysthyroïdie</strong> :<br />
+- T4L élevée (30-50 % au-dessus de la norme)<br />
+- T3L basse (20-30 % sous la norme)<br />
+- TSH transitoirement élevée les 3 premiers mois (puis normalisée)</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : La T4L élevée et la T3L basse sont normales sous amiodarone en euthyroïdie. Interpréter la TSH comme marqueur principal de l'euthyroïdie.</div>
+
+<p><strong>Hypothyroïdie amiodaronée</strong> :<br />
+- Incidence : <strong>15-22 %</strong> (France, zone iodo-suffisante)<br />
+- Mécanisme : effet Wolff-Chaikoff persistant (surcharge iodée bloquant la synthèse) + thyroïdite auto-immune (anti-TPO + préexistants = facteur de risque)</p>
+<hr />
+<h3 id="302-diagnostic-et-prise-en-charge-de-lhypothyroidie-amiodaronee">30.2 Diagnostic et prise en charge de l'hypothyroïdie amiodaronée</h3>
+<p><strong>Diagnostic</strong> :<br />
+- TSH élevée (&gt; 10 mUI/L) + T4L dans les normes ou basse, sous amiodarone stable depuis &gt; 3 mois<br />
+- Anti-TPO souvent positifs (terrain auto-immun préexistant)</p>
+<p><strong>Prise en charge</strong> (adapté de Eskes et al., EJE 2012) :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HT amiodarone avec indication cardiologique impérative</td>
+<td>Maintenir amiodarone + initier LT4</td>
+</tr>
+<tr>
+<td>HT amiodarone avec alternative anti-arythmique possible</td>
+<td>Discuter substitution + LT4</td>
+</tr>
+<tr>
+<td>HT modérée, pas de symptôme</td>
+<td>LT4 progressive, surveillance</td>
+</tr>
+<tr>
+<td>Surveillance TSH sous amiodarone</td>
+<td>Avant initiation, puis tous les 6 mois</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — L'hypothyroïdie amiodaronée répond bien à la LT4. Contrairement à l'hyperthyroïdie amiodaronée (particulièrement complexe), elle est plus facile à gérer et ne nécessite généralement pas l'arrêt de l'amiodarone.</p>
+<hr />
+<h3 id="quiz-module-30">QUIZ MODULE 30</h3>
+<p><strong>🥉 Q1</strong> — Quelle proportion d'iode contient l'amiodarone ?<br />
+A) 10 % B) 20 % <strong>C) 37 %</strong> D) 50 %</p>
+<p><strong>🥈 Q2</strong> — Un patient sous amiodarone depuis 6 mois a T4L à 32 pmol/L (haute), T3L à 3,2 pmol/L (basse), TSH à 1,5 mUI/L. Quelle est l'interprétation ?<br />
+<strong>A) Profil biologique normal sous amiodarone en euthyroïdie — inhibition DIO1 → ↑ T4, ↓ T3, TSH normale</strong> B) Hyperthyroïdie type 2 C) Hypothyroïdie centrale D) Hypothyroïdie iatrogène — initier LT4</p>
+<p><strong>🥇 Q3</strong> — Un patient sous amiodarone a TSH à 25 mUI/L à M6 de traitement. Anti-TPO 180 UI/mL. Que faire ?<br />
+<strong>A) HT amiodaronée sur terrain Hashimoto — maintenir amiodarone (indication cardiologique) + initier LT4 progressivement, cible TSH 0,5-2,5 mUI/L</strong></p>
+<p><strong>💎 Q4</strong> — Combien de temps après l'arrêt de l'amiodarone peut-on observer des dysthyroïdies ?<br />
+<strong>A) Jusqu'à 12-18 mois après l'arrêt, en raison de la demi-vie très longue (40-55 jours) et du stockage tissulaire — la surveillance TSH doit être maintenue pendant au moins 18 mois après l'arrêt</strong></p>
+<hr />
+<h2 id="module-31-hypothyroidie-post-immunotherapie-ici">MODULE 31 — Hypothyroïdie Post-Immunothérapie (ICI)</h2>
+<h3 id="311-epidemiologie-et-mecanismes">31.1 Épidémiologie et mécanismes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO31-S1-001 — Incidence des dysthyroïdies selon les classes d'ICI : anti-PD1, anti-PD-L1, anti-CTLA4, combinaisons]</p>
+</blockquote>
+<p><strong>Incidence des dysthyroïdies sous ICI</strong> (adapté de Barroso-Sousa et al., JCO 2018) :</p>
+<table>
+<thead>
+<tr>
+<th>Classe ICI</th>
+<th>Hypothyroïdie (%)</th>
+<th>Hyperthyroïdie (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anti-PD1 (nivolumab, pembrolizumab)</td>
+<td>5-10 %</td>
+<td>2-5 %</td>
+</tr>
+<tr>
+<td>Anti-PD-L1 (atézolizumab, durvalumab)</td>
+<td>3-7 %</td>
+<td>1-3 %</td>
+</tr>
+<tr>
+<td>Anti-CTLA4 (ipilimumab)</td>
+<td>2-5 %</td>
+<td>&lt; 2 %</td>
+</tr>
+<tr>
+<td>Combinaison PD1+CTLA4</td>
+<td>15-20 %</td>
+<td>5-10 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mécanisme</strong> :<br />
+- Activation lymphocytes T CD8+ cytotoxiques → thyroïdite destructive auto-immune<br />
+- Souvent biphasique : phase hyperthyroïdienne (destructive) puis phase hypothyroïdienne<br />
+- Hypothyroïdie définitive dans 50-80 % des cas (glande détruite)</p>
+<hr />
+<h3 id="312-presentation-clinique-et-diagnostic">31.2 Présentation clinique et diagnostic</h3>
+<p><strong>Profil temporel</strong> :<br />
+- Médiane d'apparition : 6-12 semaines après l'initiation de l'ICI<br />
+- Peut survenir jusqu'à 2 ans après l'arrêt (rare)</p>
+<p><strong>Diagnostic</strong> :<br />
+- TSH élevée (phase hypo) ± T4L basse<br />
+- Anti-TPO souvent positifs (terrain auto-immun amplifié)<br />
+- Échographie : thyroïdite hypoéchogène<br />
+- Pas d'indication de scintigraphie dans ce contexte</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : L'hypothyroïdie post-ICI est souvent diagnostiquée tardivement car les symptômes (fatigue, prise de poids) sont confondus avec les effets secondaires de la chimiothérapie ou la progression tumorale.</div>
+
+<hr />
+<h3 id="313-prise-en-charge">31.3 Prise en charge</h3>
+<p><strong>Principe</strong> : Ne pas interrompre l'ICI pour une hypothyroïdie isolée (grade 1-2)</p>
+<p><strong>Conduite selon la gravité</strong> (adapté de ASCO Guidelines 2018) :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>TSH</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grade 1 (asymptomatique)</td>
+<td>&gt; 4-10 mUI/L</td>
+<td>Surveillance, pas de traitement</td>
+</tr>
+<tr>
+<td>Grade 2 (symptômes légers)</td>
+<td>&gt; 10 mUI/L</td>
+<td>LT4 initier, continuer ICI</td>
+</tr>
+<tr>
+<td>Grade 3 (symptômes significatifs)</td>
+<td>&gt; 10 mUI/L + T4L basse</td>
+<td>LT4 IV possible, corticoïdes discutés, suspendre ICI</td>
+</tr>
+<tr>
+<td>Grade 4 (mise en jeu du pronostic vital)</td>
+<td>Coma myxœdémateux</td>
+<td>Arrêt ICI, LT4 IV haute dose, réanimation</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — Une hypothyroïdie grade 2 traitée par LT4 ne contre-indique pas la poursuite de l'immunothérapie oncologique. Informer l'oncologue, initier LT4, et reprendre la surveillance thyroïdienne à chaque cycle.</p>
+<hr />
+<h3 id="quiz-module-31">QUIZ MODULE 31</h3>
+<p><strong>🥉 Q1</strong> — Quelle classe d'ICI est associée à la plus haute incidence de dysthyroïdies ?<br />
+A) Anti-PD-L1 seul B) Anti-CTLA4 seul C) Anti-PD1 seul <strong>D) Combinaison anti-PD1 + anti-CTLA4</strong></p>
+<p><strong>🥈 Q2</strong> — Un patient sous pembrolizumab pour mélanome a TSH à 8 mUI/L, asymptomatique à S8 de traitement. Quelle est la conduite ?<br />
+A) Arrêter le pembrolizumab <strong>B) Grade 1 — surveillance TSH au prochain cycle, pas de traitement immédiat, continuer l'ICI</strong> C) Initier LT4 50 µg/j D) Corticoïdes systémiques</p>
+<p><strong>🥇 Q3</strong> — Quelle est la probabilité de résolution de l'hypothyroïdie après arrêt de l'ICI ?<br />
+<strong>A) Faible (20-50 %) — la plupart des hypothyroïdies post-ICI sont permanentes car la thyroïdite auto-immune a détruit le parenchyme thyroïdien — la majorité des patients restent sous LT4 à vie</strong></p>
+<p><strong>💎 Q4</strong> — Quelle est la distinction physiopathologique entre la thyroïdite post-ICI et la thyroïdite de Hashimoto classique ?<br />
+<strong>A) Thyroïdite ICI : destruction rapide T-lymphocytaire CD8+ (lymphocytes cytotoxiques anti-thyrocytes déréprimés par blocage du checkpoint PD-1) → évolution rapide vers athyréose fonctionnelle. Hashimoto : auto-immunité Th2, destruction lente progressive sur des années, anti-TPO marqueurs, rôle prédominant des lymphocytes B</strong></p>
+<hr />
+<h2 id="module-32-hypothyroidie-et-chirurgie">MODULE 32 — Hypothyroïdie et Chirurgie</h2>
+<h3 id="321-hypothyroidie-et-risque-peri-operatoire">32.1 Hypothyroïdie et risque péri-opératoire</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO32-S1-001 — Impact de l'hypothyroïdie non traitée sur les risques péri-opératoires : anesthésie, cardiovasculaire, cicatrisation]</p>
+</blockquote>
+<p><strong>Risques de l'hypothyroïdie en péri-opératoire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Système</th>
+<th>Risque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cardiovasculaire</td>
+<td>↓ débit cardiaque, bradycardie, hypotension peropératoire</td>
+</tr>
+<tr>
+<td>Respiratoire</td>
+<td>↑ sensibilité aux opioïdes, hypoventilation, retard réveil</td>
+</tr>
+<tr>
+<td>Coagulation</td>
+<td>↑ risque saignement (facteur de Von Willebrand ↓)</td>
+</tr>
+<tr>
+<td>Métabolique</td>
+<td>Hypoglycémie, hyponatrémie, hypothermie</td>
+</tr>
+<tr>
+<td>Cicatrisation</td>
+<td>Retard de cicatrisation</td>
+</tr>
+<tr>
+<td>Anesthésiques</td>
+<td>↑ sensibilité aux anesthésiques halogénés → hypotension</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="322-conduite-peri-operatoire">32.2 Conduite péri-opératoire</h3>
+<p><strong>Chirurgie programmée</strong> :<br />
+- Normaliser la TSH <strong>avant</strong> toute chirurgie non urgente (délai 2-4 mois)<br />
+- Chirurgie sous hypothyroïdie légère ou frustre : risque acceptable si urgence modérée<br />
+- Hypothyroïdie sévère : <strong>contre-indication relative</strong> à toute chirurgie élective</p>
+<p><strong>Chirurgie urgente sous hypothyroïdie</strong> :<br />
+1. LT4 IV : 200-500 µg en dose de charge, puis 50-100 µg/j IV<br />
+2. T3 IV si disponible (urgence vitale) : 10-20 µg/8h<br />
+3. Hydrocortisone 100 mg/8h (insuffisance surrénalienne associée non exclue)<br />
+4. Réchauffement actif, support hémodynamique, ventilation assistée si nécessaire</p>
+<p><strong>Post-opératoire</strong> :<br />
+- Continuer LT4 IV jusqu'à reprise de l'alimentation orale<br />
+- Passer en LT4 orale à la reprise des boissons (biodisponibilité réduite transitoirement par effet iléus)</p>
+<hr />
+<h3 id="323-hypothyroidie-apres-thyroidectomie">32.3 Hypothyroïdie après thyroïdectomie</h3>
+<p><strong>Hypothyroïdie post-chirurgicale</strong> = forme la plus prévisible et la plus facilement substituée</p>
+<p><strong>Initiation systématique de LT4 après thyroïdectomie totale</strong> :<br />
+- <strong>J1-J2 post-opératoire</strong> : démarrer LT4<br />
+- Dose d'emblée complète si patient &lt; 65 ans, sans comorbidité cardiovasculaire<br />
+- Dose progressive si &gt; 65 ans ou antécédent coronarien<br />
+- Premier contrôle TSH à <strong>6 semaines</strong> post-opératoires</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Ne pas attendre l'apparition de symptômes hypothyroïdiens pour initier le traitement après thyroïdectomie totale. Le délai de plusieurs semaines entre l'intervention et l'hypothyroïdie biologique justifie une initiation précoce.</div>
+
+<hr />
+<h3 id="quiz-module-32">QUIZ MODULE 32</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la conduite recommandée avant une chirurgie programmée chez un patient avec hypothyroïdie sévère ?<br />
+A) Opérer en urgence <strong>B) Différer la chirurgie et normaliser la TSH en 2-4 mois sous LT4</strong> C) Augmenter la dose d'anesthésiques D) Substituer par T3 seule</p>
+<p><strong>🥈 Q2</strong> — Un patient présente une hypothyroïdie non substituée en urgence chirurgicale abdominale. Quelle est la prise en charge thyroïdienne ?<br />
+<strong>A) LT4 IV 200-400 µg en dose de charge, hydrocortisone 100 mg/8h (insuffisance surrénalienne associée non exclue), monitoring cardiovasculaire continu</strong></p>
+<p><strong>🥇 Q3</strong> — Quand initier la LT4 après thyroïdectomie totale ?<br />
+A) À l'apparition des symptômes <strong>B) J1-J2 post-opératoire, dose complète (ou progressive si &gt; 65 ans)</strong> C) À 3 mois quand la TSH commence à monter D) Seulement si TSH &gt; 10 mUI/L</p>
+<p><strong>💎 Q4</strong> — Pourquoi l'hypothyroïdie augmente-t-elle le risque hémorragique péri-opératoire ?<br />
+<strong>A) Déficit en facteur de Von Willebrand (les hormones thyroïdiennes régulent la transcription du gène VWF dans les cellules endothéliales) + altération de la fonction plaquettaire + allongement du temps de saignement — effets réversibles sous LT4</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 09 — Situations Particulières et Thérapeutiques — Mars 2026</em></p>
+</div>

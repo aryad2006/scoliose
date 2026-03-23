@@ -1,0 +1,1554 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-11-complications-et-situations-particulieres">🩷 PARTIE 11 — COMPLICATIONS ET SITUATIONS PARTICULIÈRES</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-amp">Formation VERTEX© — Fécondation In Vitro et AMP</h2>
+<hr />
+<h1 id="table-des-matieres-partie-11">TABLE DES MATIÈRES — PARTIE 11</h1>
+<ul>
+<li><a href="#module-36">Module 36 — Syndrome d'hyperstimulation ovarienne</a></li>
+<li><a href="#module-37">Module 37 — Grossesses multiples : prévention et prise en charge</a></li>
+<li><a href="#module-38">Module 38 — Échecs répétés d'implantation et fausses couches à répétition</a></li>
+<li><a href="#module-39">Module 39 — Pathologies associées : SOPK, endométriose, IOP, âge maternel</a></li>
+</ul>
+<hr />
+<h1 id="module-36">MODULE 36 — Syndrome d'Hyperstimulation Ovarienne</h1>
+<p>🔷 <strong>CLINICIEN</strong> 🟣 <strong>TOUS</strong></p>
+<h2 id="361-physiopathologie-detaillee">36.1 Physiopathologie détaillée</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV36-S1-001 — Physiopathologie du SHO : cascade VEGF → perméabilité capillaire → fuite plasmatique → 3e secteur → hémoconcentration → insuffisance rénale → thrombose — schéma intégratif]</p>
+</blockquote>
+<p><strong>Acteur central : le VEGF (Vascular Endothelial Growth Factor)</strong></p>
+<p>Le SHO est une <strong>complication iatrogène</strong> de la stimulation ovarienne, médiée par une production excessive de VEGF par les cellules de la granulosa lutéinisées sous l'effet de l'hCG (exogène ou endogène).</p>
+<p><strong>Cascade physiopathologique</strong> :</p>
+<pre><code>hCG (exogène ou grossesse)
+    ↓
+Cellules de la granulosa lutéinisées (corps jaunes multiples)
+    ↓
+VEGF +++ (via récepteur VEGFR-2 / KDR)
+    ↓
+Perméabilité capillaire généralisée
+    ↓
+Fuite plasmatique vers le 3e secteur
+    ├── Ascite (péritonéale)
+    ├── Épanchement pleural (surtout droit)
+    └── Œdème généralisé
+    ↓
+Hémoconcentration (Ht &gt; 45 %)
+    ↓
+Hypovolémie efficace
+    ├── Insuffisance rénale fonctionnelle (oligurie)
+    ├── ↑ Viscosité sanguine → THROMBOSE
+    └── ↓ Perfusion hépatique → cytolyse
+</code></pre>
+<p><strong>Autres médiateurs impliqués</strong> :<br />
+- <strong>Interleukines</strong> (IL-1β, IL-6, IL-8) → réaction inflammatoire systémique<br />
+- <strong>Système rénine-angiotensine ovarien</strong> → rétention hydro-sodée<br />
+- <strong>Prostaglandines</strong> et <strong>histamine</strong> → vasodilatation<br />
+- <strong>Endothéline-1</strong> → dysfonction endothéliale</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>POINT CLÉ</strong> : Le SHO ne survient qu'en présence d'hCG (exogène pour le déclenchement, ou endogène si grossesse). Sans hCG, pas de SHO → d'où l'intérêt du déclenchement par agoniste GnRH + freeze-all.</div>
+
+<hr />
+<h2 id="362-classification-de-golan-revisee">36.2 Classification de Golan révisée</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV36-S2-001 — Classification du SHO selon Golan révisée : stades léger, modéré, sévère, critique — critères cliniques, biologiques et échographiques]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Clinique</th>
+<th>Biologie</th>
+<th>Échographie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Léger</strong></td>
+<td>Distension abdominale, gêne, nausées légères</td>
+<td>Normale</td>
+<td>Ovaires 5-12 cm</td>
+</tr>
+<tr>
+<td><strong>Modéré</strong></td>
+<td>Douleurs abdominales, nausées/vomissements, diarrhée</td>
+<td>Ht normal ou légèrement ↑</td>
+<td>Ascite échographique, ovaires &gt; 12 cm</td>
+</tr>
+<tr>
+<td><strong>Sévère</strong></td>
+<td>Ascite clinique (matité des flancs), oligurie &lt; 500 mL/24h, dyspnée, prise de poids &gt; 1 kg/j</td>
+<td>Ht &gt; 45 %, leucocytes &gt; 15 000, créatinine &gt; 1,2 mg/dL, hyponatrémie, hyperkaliémie, hypoprotéinémie</td>
+<td>Ascite abondante, épanchement pleural, ovaires très volumineux</td>
+</tr>
+<tr>
+<td><strong>Critique</strong></td>
+<td>Anurie, SDRA, thrombose veineuse/artérielle, défaillance multi-viscérale</td>
+<td>Ht &gt; 55 %, IRA (créat &gt; 1,6), CIVD, cytolyse hépatique (HELLP-like)</td>
+<td>Ascite sous tension, épanchement pleural bilatéral</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chronologie</strong> :<br />
+- <strong>SHO précoce</strong> (J3-J7 post-déclenchement) : lié à l'hCG exogène → résolution spontanée en 7-10 jours si pas de grossesse<br />
+- <strong>SHO tardif</strong> (J12-J17 post-déclenchement) : lié à l'hCG endogène (grossesse débutante) → aggravation progressive, résolution plus longue (2-3 semaines), pronostic moins favorable</p>
+<hr />
+<h2 id="363-facteurs-de-risque-et-prevention">36.3 Facteurs de risque et prévention</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV36-S3-001 — Facteurs de risque du SHO et algorithme de prévention : stratification du risque avant et pendant la stimulation — arbre décisionnel]</p>
+</blockquote>
+<p><strong>Facteurs de risque</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Détail</th>
+<th>Risque relatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Âge jeune</strong> (&lt; 33 ans)</td>
+<td>Réserve ovarienne élevée</td>
+<td>↑↑</td>
+</tr>
+<tr>
+<td><strong>IMC bas</strong> (&lt; 20 kg/m²)</td>
+<td>Sensibilité accrue aux gonadotrophines</td>
+<td>↑</td>
+</tr>
+<tr>
+<td><strong>SOPK</strong></td>
+<td>Cohorte folliculaire élevée, hyperandrogénie</td>
+<td>↑↑↑ (risque majeur)</td>
+</tr>
+<tr>
+<td><strong>AMH &gt; 5 ng/mL</strong></td>
+<td>Réserve ovarienne très élevée</td>
+<td>↑↑↑</td>
+</tr>
+<tr>
+<td><strong>CFA &gt; 20</strong> (total bilatéral)</td>
+<td>Prédiction de hyper-réponse</td>
+<td>↑↑</td>
+</tr>
+<tr>
+<td><strong>E2 &gt; 3 500 pg/mL</strong> le jour du trigger</td>
+<td>Réponse excessive en cours</td>
+<td>↑↑↑</td>
+</tr>
+<tr>
+<td><strong>&gt; 15-20 ovocytes recueillis</strong></td>
+<td>Hyper-réponse avérée</td>
+<td>↑↑↑</td>
+</tr>
+<tr>
+<td><strong>ATCD de SHO</strong></td>
+<td>Récidive fréquente</td>
+<td>↑↑↑</td>
+</tr>
+<tr>
+<td><strong>Déclenchement par hCG</strong></td>
+<td>Demi-vie longue, effet lutéotrope prolongé</td>
+<td>↑↑ (vs agoniste)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stratégie de prévention — Approche graduée</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Moment</th>
+<th>Mesure</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Avant stimulation</strong></td>
+<td>Protocole antagoniste (vs long agoniste)</td>
+<td>Élevé (ESHRE 2016)</td>
+</tr>
+<tr>
+<td><strong>Avant stimulation</strong></td>
+<td>Dose de FSH adaptée (faible dose si SOPK/AMH élevée)</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>Pendant stimulation</strong></td>
+<td>Monitorage rapproché (E2 + écho tous les 2 jours)</td>
+<td>Consensus</td>
+</tr>
+<tr>
+<td><strong>Au déclenchement</strong></td>
+<td><strong>Trigger agoniste GnRH</strong> (vs hCG) → ↓ SHO de 95 %</td>
+<td>Élevé (Youssef 2014)</td>
+</tr>
+<tr>
+<td><strong>Au déclenchement</strong></td>
+<td>Double trigger (agoniste + micro-dose hCG 1 500 UI) si besoin de transfert frais</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Post-ponction</strong></td>
+<td><strong>Freeze-all</strong> (pas de transfert frais → pas de grossesse → pas de SHO tardif)</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>Post-ponction</strong></td>
+<td><strong>Cabergoline</strong> 0,5 mg/j × 8 jours (↓ VEGFR-2)</td>
+<td>Élevé (Alvarez 2007)</td>
+</tr>
+<tr>
+<td><strong>Post-ponction</strong></td>
+<td>Perfusion albumine 20 % per-ponction (controversé — Cochrane : bénéfice marginal)</td>
+<td>Faible</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>RÈGLE D'OR</strong> — Patiente à haut risque (SOPK, AMH &gt; 5, CFA &gt; 20) : <strong>protocole antagoniste + trigger agoniste + freeze-all</strong> = stratégie quasi éliminatrice du SHO sévère.</p>
+</blockquote>
+<hr />
+<h2 id="364-prise-en-charge-therapeutique">36.4 Prise en charge thérapeutique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV36-S4-001 — Algorithme de prise en charge du SHO : ambulatoire vs hospitalier — critères de décision, traitements, surveillance]</p>
+</blockquote>
+<h3 id="3641-prise-en-charge-ambulatoire-sho-leger-a-modere">36.4.1 Prise en charge ambulatoire (SHO léger à modéré)</h3>
+<p><strong>Critères de maintien ambulatoire</strong> :<br />
+- Pas de vomissements incoercibles<br />
+- Diurèse conservée (&gt; 1 000 mL/24h)<br />
+- Ht &lt; 45 %<br />
+- Pas de dyspnée<br />
+- Suivi quotidien assuré</p>
+<p><strong>Mesures</strong> :<br />
+- <strong>Hydratation orale</strong> : 2-3 L/jour (eau, boissons isotoniques)<br />
+- <strong>Alimentation hyperprotéinée</strong> (compensation des pertes protéiques dans le 3e secteur)<br />
+- <strong>Repos relatif</strong> (pas d'alitement strict — risque thromboembolique)<br />
+- <strong>Surveillance quotidienne</strong> : poids (matin à jeun), périmètre abdominal, diurèse<br />
+- <strong>Antalgiques</strong> : paracétamol (éviter AINS → risque rénal)<br />
+- <strong>HBPM prophylactique</strong> si facteurs de risque thromboembolique associés (âge, tabac, ATCD, immobilisation)<br />
+- <strong>Consultation en urgence</strong> si : prise de poids &gt; 1 kg/j, oligurie, dyspnée, douleur intense</p>
+<h3 id="3642-prise-en-charge-hospitaliere-sho-severe-a-critique">36.4.2 Prise en charge hospitalière (SHO sévère à critique)</h3>
+<p><strong>Critères d'hospitalisation</strong> :<br />
+- Vomissements incoercibles<br />
+- Oligurie &lt; 500 mL/24h<br />
+- Ht &gt; 45 %<br />
+- Ascite clinique tendue<br />
+- Épanchement pleural symptomatique<br />
+- Suspicion de thrombose<br />
+- SHO critique (défaillance d'organe)</p>
+<p><strong>Traitement</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Mesure</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Remplissage vasculaire</strong></td>
+<td>NaCl 0,9 % IV, objectif : diurèse &gt; 0,5 mL/kg/h</td>
+</tr>
+<tr>
+<td><strong>Albumine 20 %</strong></td>
+<td>50-100 mL si hypoalbuminémie &lt; 30 g/L (expansion volémique + ↑ pression oncotique)</td>
+</tr>
+<tr>
+<td><strong>HEA</strong> (hydroxyéthylamidon)</td>
+<td>Alternative à l'albumine (restrictions d'utilisation — EMA 2018)</td>
+</tr>
+<tr>
+<td><strong>HBPM</strong></td>
+<td>Énoxaparine 40 mg/j SC (prophylactique) → dose curative si thrombose avérée</td>
+</tr>
+<tr>
+<td><strong>Paracentèse échoguidée</strong></td>
+<td>Si ascite tendue et dyspnée/oligurie — voie transabdominale ou <strong>transvaginale</strong> (plus confortable, guidée échographiquement) — drainage progressif (max 3-5 L)</td>
+</tr>
+<tr>
+<td><strong>Thoracocentèse</strong></td>
+<td>Si épanchement pleural compressif avec détresse respiratoire</td>
+</tr>
+<tr>
+<td><strong>Correction électrolytique</strong></td>
+<td>K⁺, Na⁺ — surveillance biquotidienne</td>
+</tr>
+<tr>
+<td><strong>Oxygénothérapie</strong></td>
+<td>Si SpO₂ &lt; 94 %</td>
+</tr>
+<tr>
+<td><strong>Réanimation</strong></td>
+<td>Si SHO critique : intubation/ventilation si SDRA, dialyse si IRA organique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Surveillance hospitalière</strong> :<br />
+- Poids, diurèse, périmètre abdominal : biquotidien<br />
+- NFS, ionogramme, créatinine, protéinémie, bilan hépatique : quotidien<br />
+- Échographie abdominale : ascite, ovaires (attention torsion)<br />
+- Radio thorax ou écho pleurale si dyspnée</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE</strong> : Ne pas confondre SHO sévère avec **torsion d'annexe** (ovaires volumineux → facteur de risque de torsion). La douleur latéralisée aiguë impose un Doppler ovarien en urgence.</div>
+
+<hr />
+<h2 id="365-complications-specifiques-du-sho">36.5 Complications spécifiques du SHO</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV36-S5-001 — Complications du SHO sévère : thromboembolisme veineux et artériel, IRA, SDRA — schémas et prise en charge]</p>
+</blockquote>
+<p><strong>Thromboembolisme</strong> (complication la plus redoutée) :<br />
+- <strong>Incidence</strong> : 0,04-0,11 % des cycles de stimulation (tous SHO) → 4-10 % des SHO sévères<br />
+- <strong>Veines</strong> : TVP des membres inférieurs, thrombose jugulaire, thrombose des veines sus-hépatiques (Budd-Chiari), thrombose veineuse cérébrale<br />
+- <strong>Artères</strong> : AVC ischémique, infarctus du myocarde (rare), embolie artérielle périphérique<br />
+- <strong>Particularité</strong> : thromboses des territoires <strong>inhabituels</strong> (jugulaire, cérébrale, sous-clavière) plus fréquentes que dans la population générale<br />
+- <strong>Traitement</strong> : HBPM curative + bas de contention + mobilisation précoce</p>
+<p><strong>Insuffisance rénale aiguë</strong> :<br />
+- Fonctionnelle (pré-rénale) dans la majorité des cas → régresse avec remplissage<br />
+- Organique si hypovolémie prolongée → risque de nécrose tubulaire aiguë<br />
+- Dialyse exceptionnellement nécessaire</p>
+<p><strong>SDRA (Syndrome de Détresse Respiratoire Aiguë)</strong> :<br />
+- Ascite + épanchement pleural + perméabilité capillaire pulmonaire → hypoxémie sévère<br />
+- Ventilation mécanique si nécessaire<br />
+- Drainage des épanchements en urgence</p>
+<hr />
+<h3 id="quiz-module-36">QUIZ MODULE 36</h3>
+<p><strong>🥉 Q1</strong> 🔷 — Quel est le médiateur central de la physiopathologie du SHO ?<br />
+<strong>R</strong> : Le <strong>VEGF</strong> (Vascular Endothelial Growth Factor), produit par les cellules de la granulosa lutéinisées sous l'effet de l'hCG. Le VEGF active le récepteur VEGFR-2 endothélial → perméabilité capillaire généralisée → fuite plasmatique vers le 3e secteur (ascite, épanchement pleural, œdème).</p>
+<p><strong>🥉 Q2</strong> 🔷 — Pourquoi le SHO ne survient-il qu'en présence d'hCG ?<br />
+<strong>R</strong> : L'hCG (exogène ou endogène si grossesse) est le stimulus obligatoire de la production de VEGF par les corps jaunes multiples. Sans hCG, les corps jaunes régressent et le VEGF diminue → pas de SHO. C'est pourquoi le déclenchement par agoniste GnRH (pic de LH endogène court, sans hCG) réduit le SHO de 95 %, et le freeze-all (pas de grossesse = pas d'hCG endogène) prévient le SHO tardif.</p>
+<p><strong>🥉 Q3</strong> 🔷 — Citez les 4 stades de la classification de Golan révisée du SHO.<br />
+<strong>R</strong> : (1) <strong>Léger</strong> : distension abdominale, nausées, ovaires 5-12 cm ; (2) <strong>Modéré</strong> : douleurs abdominales, vomissements, ascite échographique, ovaires &gt; 12 cm ; (3) <strong>Sévère</strong> : ascite clinique, oligurie &lt; 500 mL/24h, Ht &gt; 45 %, créatinine &gt; 1,2 mg/dL, dyspnée ; (4) <strong>Critique</strong> : anurie, SDRA, thrombose veineuse/artérielle, défaillance multi-viscérale, CIVD.</p>
+<p><strong>🥈 Q4</strong> 🔷 — Quels sont les 5 principaux facteurs de risque du SHO ?<br />
+<strong>R</strong> : (1) <strong>SOPK</strong> (facteur majeur — cohorte folliculaire élevée, hyperandrogénie) ; (2) <strong>AMH &gt; 5 ng/mL</strong> (réserve ovarienne très élevée) ; (3) <strong>CFA &gt; 20</strong> bilatéral (prédiction hyper-réponse) ; (4) <strong>E2 &gt; 3 500 pg/mL</strong> le jour du trigger (réponse excessive en cours) ; (5) <strong>&gt; 15-20 ovocytes recueillis</strong>. Autres : âge jeune (&lt; 33 ans), IMC bas, ATCD de SHO, déclenchement par hCG.</p>
+<p><strong>🥈 Q5</strong> 🔷 — Décrivez la stratégie de prévention graduée du SHO chez une patiente à haut risque.<br />
+<strong>R</strong> : Approche en 3 temps : <strong>Avant stimulation</strong> : protocole antagoniste (permet le trigger agoniste), dose de FSH adaptée (faible dose si SOPK/AMH élevée). <strong>Au déclenchement</strong> : trigger agoniste GnRH (↓ SHO de 95 % — Youssef 2014), ou double trigger si besoin de transfert frais. <strong>Post-ponction</strong> : freeze-all systématique (pas de grossesse = pas de SHO tardif), cabergoline 0,5 mg/j × 8 jours (↓ VEGFR-2). Règle d'or : SOPK + AMH &gt; 5 + CFA &gt; 20 → <strong>antagoniste + trigger agoniste + freeze-all</strong>.</p>
+<p><strong>🥈 Q6</strong> 🔷 — Quels sont les critères d'hospitalisation d'un SHO et les 3 premières mesures thérapeutiques ?<br />
+<strong>R</strong> : Critères : (1) oligurie &lt; 500 mL/24h ; (2) Ht &gt; 45 % ; (3) vomissements incoercibles ; (4) ascite clinique tendue ; (5) dyspnée ; (6) suspicion de thrombose. Les 3 premières mesures : (1) <strong>Remplissage IV</strong> NaCl 0,9 % + albumine 20 % si hypoalbuminémie → objectif diurèse &gt; 0,5 mL/kg/h ; (2) <strong>HBPM prophylactique</strong> (énoxaparine 40 mg/j — complication thrombotique = la plus mortelle) ; (3) <strong>Paracentèse échoguidée</strong> si ascite tendue (transvaginale ou transabdominale) → amélioration immédiate de la mécanique respiratoire et de la perfusion rénale.</p>
+<p><strong>🥇 Q7</strong> 🔷 — Quelle est la différence entre SHO précoce et SHO tardif, et pourquoi est-ce important ?<br />
+<strong>R</strong> : <strong>SHO précoce</strong> (J3-J7 post-déclenchement) : lié à l'hCG exogène du trigger → résolution spontanée en 7-10 jours si pas de grossesse. <strong>SHO tardif</strong> (J12-J17) : lié à l'hCG endogène d'une grossesse débutante → aggravation progressive, résolution lente (2-3 semaines), pronostic plus sévère. Importance : (1) Le SHO tardif est plus grave et plus long ; (2) La stratégie freeze-all élimine le SHO tardif (pas de grossesse = pas d'hCG endogène) ; (3) Devant un SHO qui s'aggrave après J10 → rechercher une grossesse (β-hCG) car cela modifie la prise en charge et le pronostic.</p>
+<p><strong>🥇 Q8</strong> 🔷 — Quelle erreur a été commise ? Patiente de 26 ans, SOPK, AMH 8 ng/mL, CFA 28 : protocole long agoniste, FSH 225 UI/j, trigger hCG, 30 ovocytes, transfert frais d'un blastocyste.<br />
+<strong>R</strong> : <strong>Multiples erreurs</strong> : (1) <strong>Protocole long agoniste</strong> chez une SOPK → interdit (empêche le trigger agoniste, augmente le risque SHO) → devait être un protocole antagoniste ; (2) <strong>Dose de FSH trop élevée</strong> (225 UI) pour une AMH à 8 ng/mL → devait être 100-150 UI ; (3) <strong>Trigger hCG</strong> avec 30 follicules → trigger agoniste obligatoire ; (4) <strong>Transfert frais</strong> chez une SOPK hyper-répondeuse → freeze-all obligatoire ; (5) <strong>Pas de cabergoline</strong> prescrite. Cette patiente développera quasi certainement un SHO sévère à critique. Stratégie correcte : antagoniste + FSH 100-150 UI + trigger agoniste + freeze-all + cabergoline 0,5 mg/j × 8 jours.</p>
+<p><strong>💎 Q9</strong> 🔷 — Quelles sont les particularités du thromboembolisme dans le SHO ?<br />
+<strong>R</strong> : (1) Incidence : 4-10 % des SHO sévères (vs 0,04-0,11 % de tous les cycles) ; (2) <strong>Territoires inhabituels</strong> : thromboses jugulaires, veineuses cérébrales, sous-clavières, Budd-Chiari (veines sus-hépatiques) — plus fréquentes que dans la population générale ; (3) Thromboses artérielles possibles (AVC, IDM — rares) ; (4) Mécanisme : hémoconcentration (Ht &gt; 45 %) + hypovolémie + immobilisation + état pro-thrombotique (↑ facteurs de coagulation, ↓ antithrombine) ; (5) Traitement : HBPM curative + bas de contention + mobilisation précoce ; (6) La thrombose peut survenir jusqu'à 2-3 semaines après la ponction.</p>
+<p><strong>💎 Q10</strong> 🔷 — Patiente de 28 ans, SOPK, J8 post-ponction (22 ovocytes, trigger hCG, transfert frais) : prise de poids 5 kg, dyspnée, oligurie 300 mL/24h, Ht 52 %, créatinine 1,8 mg/dL, ascite abondante, β-hCG positive. Diagnostic et prise en charge complète ?<br />
+<strong>R</strong> : <strong>Diagnostic</strong> : SHO <strong>tardif critique</strong> (β-hCG positive → hCG endogène perpétue le SHO). Erreur initiale : trigger hCG + transfert frais chez SOPK (aurait dû : trigger agoniste + freeze-all). <strong>PEC</strong> : (1) Hospitalisation soins intensifs ; (2) Remplissage IV : NaCl 0,9 % 500 mL/4h + albumine 20 % 100 mL × 2/j — objectif diurèse &gt; 30 mL/h ; (3) HBPM curative (énoxaparine 1 mg/kg × 2/j) — Ht &gt; 50 % = risque thrombotique majeur + bilan thrombose (D-dimères, angio-TDM si suspicion EP) ; (4) Paracentèse transvaginale échoguidée urgente (3-4 L progressif) ; (5) O₂ si SpO₂ &lt; 94 % ; (6) Surveillance : NFS/iono/créat/BH toutes les 6-8h, diurèse horaire ; (7) Pronostic : résolution lente (2-4 semaines — grossesse en cours). Pas d'interruption sauf pronostic vital.</p>
+<p><strong>💎 Q11</strong> 🔷 — Vrai ou Faux (5 affirmations sur le SHO) :<br />
+1. Le coasting (réduction de la dose FSH en fin de stimulation) est la stratégie de prévention de référence.<br />
+2. La paracentèse transvaginale est contre-indiquée si les ovaires sont volumineux.<br />
+3. Le SHO peut survenir en l'absence totale de stimulation exogène.<br />
+4. L'AINS est le traitement antalgique de choix dans le SHO.<br />
+5. Une patiente avec SHO léger peut être suivie en ambulatoire.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — le coasting est abandonné (inefficace, retarde le déclenchement). La stratégie de référence est trigger agoniste + freeze-all. (2) <strong>FAUX</strong> — la paracentèse transvaginale est justement recommandée car elle permet un drainage guidé entre les ovaires volumineux, sous contrôle échographique. (3) <strong>VRAI</strong> — un SHO peut survenir dans un cycle naturel (exceptionnel — grossesse spontanée avec hyperréponse endogène, ou SOPK avec grossesse spontanée). (4) <strong>FAUX</strong> — les AINS sont contre-indiqués (risque rénal dans un contexte d'hypovolémie et d'IRA fonctionnelle). Antalgique de choix : paracétamol. (5) <strong>VRAI</strong> — SHO léger à modéré sans critères d'hospitalisation : suivi quotidien ambulatoire (poids, périmètre abdominal, diurèse).</p>
+<hr />
+<h1 id="module-37">MODULE 37 — Grossesses Multiples : Prévention et Prise en Charge</h1>
+<p>🔷 <strong>CLINICIEN</strong> 🟣 <strong>TOUS</strong></p>
+<h2 id="371-epidemiologie-des-grossesses-multiples-en-amp">37.1 Épidémiologie des grossesses multiples en AMP</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV37-S1-001 — Évolution du taux de grossesses multiples post-FIV dans le monde : tendance décroissante grâce au SET — données ESHRE, CDC, ABM 2000-2025]</p>
+</blockquote>
+<p><strong>Données épidémiologiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Indicateur</th>
+<th>Valeur</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taux de grossesse gémellaire après DET (2 embryons)</td>
+<td>20-25 %</td>
+<td>ESHRE 2020</td>
+</tr>
+<tr>
+<td>Taux de grossesse gémellaire après SET (1 embryon)</td>
+<td>2-3 % (monozygote)</td>
+<td>ESHRE 2020</td>
+</tr>
+<tr>
+<td>Taux de grossesse triple+ après FIV</td>
+<td>&lt; 0,5 % (quasi éliminé par SET)</td>
+<td>ABM 2023</td>
+</tr>
+<tr>
+<td>Objectif de qualité d'un centre AMP</td>
+<td>&lt; 10 % de grossesses multiples</td>
+<td>ESHRE/ASRM</td>
+</tr>
+<tr>
+<td>Taux de SET en Belgique/Suède</td>
+<td>&gt; 70 %</td>
+<td>Législation obligatoire</td>
+</tr>
+<tr>
+<td>Taux de SET en France</td>
+<td>~50-55 % (en progression)</td>
+<td>ABM 2023</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tendance historique</strong> :<br />
+- 1990-2000 : DET systématique → 25-30 % de gémellaires, 3-5 % de triples<br />
+- 2000-2010 : prise de conscience des risques → recommandations SET<br />
+- 2010-2025 : vitrification + SET + TEC → taux cumulatif de naissance vivante comparable au DET, avec ↓ drastique des grossesses multiples</p>
+<hr />
+<h2 id="372-risques-des-grossesses-multiples">37.2 Risques des grossesses multiples</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV37-S2-001 — Risques maternels et fœtaux des grossesses multiples vs singleton — tableau comparatif avec odds ratios]</p>
+</blockquote>
+<h3 id="3721-risques-maternels">37.2.1 Risques maternels</h3>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Singleton</th>
+<th>Gémellaire</th>
+<th>OR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pré-éclampsie</td>
+<td>3-5 %</td>
+<td>10-15 %</td>
+<td>× 3</td>
+</tr>
+<tr>
+<td>Diabète gestationnel</td>
+<td>5-7 %</td>
+<td>10-15 %</td>
+<td>× 2</td>
+</tr>
+<tr>
+<td>Hémorragie du post-partum</td>
+<td>5 %</td>
+<td>15-20 %</td>
+<td>× 3-4</td>
+</tr>
+<tr>
+<td>Césarienne</td>
+<td>25-30 %</td>
+<td>&gt; 70 %</td>
+<td>× 2,5</td>
+</tr>
+<tr>
+<td>Anémie (≥ 3e trimestre)</td>
+<td>15 %</td>
+<td>40 %</td>
+<td>× 2,5</td>
+</tr>
+<tr>
+<td>Hospitalisation prénatale</td>
+<td>10 %</td>
+<td>40 %</td>
+<td>× 4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3722-risques-ftaux-et-neonataux">37.2.2 Risques fœtaux et néonataux</h3>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Singleton</th>
+<th>Gémellaire</th>
+<th>Triplet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prématurité (&lt; 37 SA)</td>
+<td>8-10 %</td>
+<td>50 %</td>
+<td>&gt; 90 %</td>
+</tr>
+<tr>
+<td>Grande prématurité (&lt; 32 SA)</td>
+<td>1-2 %</td>
+<td>8-10 %</td>
+<td>30-40 %</td>
+</tr>
+<tr>
+<td>Petit poids de naissance (&lt; 2 500 g)</td>
+<td>6 %</td>
+<td>50 %</td>
+<td>&gt; 90 %</td>
+</tr>
+<tr>
+<td>RCIU</td>
+<td>5-8 %</td>
+<td>15-25 %</td>
+<td>30-40 %</td>
+</tr>
+<tr>
+<td>Mortalité périnatale</td>
+<td>0,5 %</td>
+<td>2-3 %</td>
+<td>5-8 %</td>
+</tr>
+<tr>
+<td>Paralysie cérébrale</td>
+<td>0,2 %</td>
+<td>0,8 %</td>
+<td>2-3 %</td>
+</tr>
+<tr>
+<td>Admission en réanimation néonatale</td>
+<td>10 %</td>
+<td>40 %</td>
+<td>&gt; 80 %</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="373-grossesse-gemellaire-monozygote-post-fiv">37.3 Grossesse gémellaire monozygote post-FIV</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV37-S3-001 — Mécanismes de la gémellité monozygote post-FIV : herniation du blastocyste lors du hatching, types de placentation — MCBA, MCMA — risques spécifiques STT/TAPS]</p>
+</blockquote>
+<p><strong>Incidence augmentée en FIV</strong> :<br />
+- Spontané : 0,4 % des grossesses<br />
+- Post-FIV (transfert de blastocyste) : <strong>2-5 %</strong> → risque × 5-12<br />
+- Post-hatching assisté : incidence encore plus élevée</p>
+<p><strong>Mécanisme proposé</strong> :<br />
+- Herniation du blastocyste à travers la brèche de la zona pellucida (hatching assisté ou culture prolongée) → division du bouton embryonnaire interne</p>
+<p><strong>Types de placentation et risques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Fréquence (MZ post-FIV)</th>
+<th>Risque spécifique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DCBA</strong> (bichoriale biamniotique)</td>
+<td>20-30 %</td>
+<td>Risque standard (comme DZ)</td>
+</tr>
+<tr>
+<td><strong>MCBA</strong> (monochoriale biamniotique)</td>
+<td>60-70 %</td>
+<td><strong>STT</strong> (syndrome transfuseur-transfusé) 10-15 %, TAPS, RCIU sélectif</td>
+</tr>
+<tr>
+<td><strong>MCMA</strong> (monochoriale monoamniotique)</td>
+<td>1-5 %</td>
+<td>Enchevêtrement des cordons, mortalité 10-20 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Syndrome transfuseur-transfusé (STT)</strong> :<br />
+- Diagnostic : discordance de liquide amniotique (polyhydramnios receveur / oligoamnios donneur — critères de Quintero)<br />
+- Traitement : <strong>fœtoscopie laser</strong> (coagulation des anastomoses placentaires — technique de Senat — référence : Senat et al., <em>NEJM</em>, 2004)<br />
+- Stades de Quintero (I-V) : de la discordance isolée de liquide à la mort fœtale</p>
+<hr />
+<h2 id="374-prevention-politique-du-transfert-embryonnaire-unique-set">37.4 Prévention : politique du transfert embryonnaire unique (SET)</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV37-S4-001 — Politique SET vs DET : taux de grossesse, taux cumulatif de naissance vivante, réduction des grossesses multiples — méta-analyse et données nationales]</p>
+</blockquote>
+<p><strong>Recommandations internationales (ESHRE/ASRM)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>SET recommandé</th>
+<th>DET acceptable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Âge</td>
+<td>&lt; 38 ans</td>
+<td>≥ 38 ans (selon centre)</td>
+</tr>
+<tr>
+<td>Cycle</td>
+<td>1er ou 2e cycle FIV</td>
+<td>≥ 3e cycle (discuté)</td>
+</tr>
+<tr>
+<td>Qualité embryonnaire</td>
+<td>Blastocyste de bonne qualité (≥ 3BB)</td>
+<td>Pas de blastocyste disponible</td>
+</tr>
+<tr>
+<td>PGT-A euploïde</td>
+<td>Toujours SET</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Politique centre</td>
+<td>SET systématique si conditions remplies</td>
+<td>DET si conditions non remplies</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Résultats cumulatifs SET vs DET</strong> :<br />
+- SET frais + TEC ultérieur (cumulatif) : taux de naissance vivante <strong>comparable</strong> au DET frais (Pandian et al., Cochrane 2013)<br />
+- Avantage du SET cumulatif : ↓ drastique des grossesses multiples (2-3 % vs 20-25 %)<br />
+- Clé du succès : <strong>vitrification performante</strong> (taux de survie &gt; 95 % pour blastocystes)</p>
+<p><strong>Législation</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Pays</th>
+<th>Politique SET</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Belgique</strong></td>
+<td>SET obligatoire &lt; 36 ans au 1er-2e cycle (loi 2003)</td>
+</tr>
+<tr>
+<td><strong>Suède</strong></td>
+<td>SET quasi obligatoire (recommandation forte depuis 2003)</td>
+</tr>
+<tr>
+<td><strong>Finlande</strong></td>
+<td>SET fortement recommandé</td>
+</tr>
+<tr>
+<td><strong>France</strong></td>
+<td>Recommandé mais non obligatoire (ABM)</td>
+</tr>
+<tr>
+<td><strong>USA</strong></td>
+<td>Recommandé (ASRM guidelines) mais non législatif</td>
+</tr>
+<tr>
+<td><strong>Espagne</strong></td>
+<td>Maximum 3 embryons (loi), SET croissant</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="375-reduction-embryonnaire">37.5 Réduction embryonnaire</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV37-S5-001 — Réduction embryonnaire : technique KCl intracardique échoguidé — indications, résultats, aspects éthiques — vidéo schématique]</p>
+</blockquote>
+<p><strong>Indications</strong> :<br />
+- Grossesse triple ou plus (réduction à jumeaux)<br />
+- Grossesse gémellaire MCBA à haut risque (réduction à singleton — cas par cas)<br />
+- Grossesse gémellaire chez patiente à risque (pathologie maternelle sévère)</p>
+<p><strong>Technique</strong> :<br />
+- Terme : <strong>11-13 SA</strong> (après biopsie de villosités choriales si PGT souhaité)<br />
+- Voie : transabdominale échoguidée<br />
+- Agent : <strong>KCl intracardique</strong> → asystolie fœtale<br />
+- Choix de l'embryon réduit : le plus accessible techniquement (sauf anomalie identifiée)</p>
+<p><strong>Résultats</strong> (Evans &amp; Britt, <em>Semin Perinatol</em>, 2005) :</p>
+<table>
+<thead>
+<tr>
+<th>Réduction</th>
+<th>Perte fœtale totale</th>
+<th>Prématurité &lt; 32 SA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Triplet → jumeaux</td>
+<td>5-7 %</td>
+<td>10-15 %</td>
+</tr>
+<tr>
+<td>Triplet → singleton</td>
+<td>8-12 %</td>
+<td>5-7 %</td>
+</tr>
+<tr>
+<td>Jumeaux → singleton</td>
+<td>5-8 %</td>
+<td>3-5 %</td>
+</tr>
+<tr>
+<td>Sans réduction (triplets)</td>
+<td>—</td>
+<td>30-40 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aspects éthiques et psychologiques</strong> :<br />
+- Décision partagée avec le couple (information complète sur les risques des grossesses multiples vs risques de la réduction)<br />
+- Impact psychologique : deuil périnatal pour le(s) fœtus réduit(s), culpabilité<br />
+- Accompagnement psychologique obligatoire<br />
+- En France : pas d'interdit légal, acte médical encadré (centres de diagnostic prénatal)</p>
+<hr />
+<h3 id="quiz-module-37">QUIZ MODULE 37</h3>
+<p><strong>🥉 Q1</strong> 🔷 — Quel est le taux de grossesse gémellaire après DET vs SET ?<br />
+<strong>R</strong> : DET (2 embryons transférés) : 20-25 % de grossesse gémellaire. SET (1 embryon) : 2-3 % de gémellaire (monozygote uniquement). Le SET réduit les grossesses multiples de × 10. Objectif de qualité d'un centre AMP : &lt; 10 % de grossesses multiples.</p>
+<p><strong>🥉 Q2</strong> 🔷 — Citez 3 risques maternels et 3 risques fœtaux des grossesses gémellaires.<br />
+<strong>R</strong> : <strong>Maternels</strong> : (1) Pré-éclampsie × 3 (10-15 % vs 3-5 %) ; (2) Césarienne &gt; 70 % ; (3) Hémorragie du post-partum × 3-4. <strong>Fœtaux</strong> : (1) Prématurité &lt; 37 SA : 50 % (vs 8-10 % singleton) ; (2) RCIU : 15-25 % ; (3) Mortalité périnatale × 5 (2-3 % vs 0,5 %).</p>
+<p><strong>🥈 Q3</strong> 🔷 — Quels sont les 3 principaux arguments en faveur d'une politique systématique de SET ?<br />
+<strong>R</strong> : (1) Le taux cumulatif de naissance vivante (SET frais + TEC) est <strong>comparable</strong> au DET frais (Pandian, Cochrane 2013) → pas de perte de chance ; (2) ↓ grossesses multiples de 20-25 % (DET) à 2-3 % (SET) → ↓ drastique de la prématurité et de la morbi-mortalité ; (3) ↓ coûts de santé (prématurité, réanimation néonatale, handicap). Condition : vitrification performante (survie &gt; 95 % des blastocystes).</p>
+<p><strong>🥈 Q4</strong> 🔷 — Pourquoi le taux de grossesse gémellaire monozygote est-il augmenté après FIV ?<br />
+<strong>R</strong> : Mécanisme : <strong>herniation du blastocyste</strong> à travers la zona pellucida fragilisée (hatching assisté, culture prolongée, ICSI, biopsie PGT) → division du bouton embryonnaire interne. Incidence : 2-5 % post-FIV (vs 0,4 % spontané = × 5-12). Type le plus fréquent : <strong>MCBA</strong> (monochoriale biamniotique) → risque STT 10-15 %, nécessitant suivi écho rapproché dès 16 SA.</p>
+<p><strong>🥈 Q5</strong> 🔷 — Qu'est-ce que le syndrome transfuseur-transfusé (STT) et quel est son traitement ?<br />
+<strong>R</strong> : Le STT complique 10-15 % des grossesses MCBA. Diagnostic : discordance de liquide amniotique (polyhydramnios chez le receveur / oligoamnios chez le donneur — critères de Quintero stades I-V). Traitement de référence : <strong>fœtoscopie laser</strong> (coagulation des anastomoses placentaires — technique de Senat, <em>NEJM</em> 2004). Sans traitement : mortalité 80-100 %. Après laser : survie d'au moins 1 jumeau &gt; 80 %.</p>
+<p><strong>🥇 Q6</strong> 🔷 — Dans quels pays le SET est-il obligatoire et quels sont les critères de sélection pour le SET ?<br />
+<strong>R</strong> : <strong>Obligatoire</strong> : Belgique (&lt; 36 ans, 1er-2e cycle — loi 2003), Suède (recommandation forte depuis 2003). <strong>Critères de sélection pour SET</strong> (ESHRE/ASRM) : (1) &lt; 38 ans ; (2) 1er ou 2e cycle FIV ; (3) Blastocyste de bonne qualité (≥ 3BB) ; (4) PGT-A euploïde → toujours SET ; (5) Programme de vitrification performant dans le centre. En France : recommandé mais non obligatoire (taux SET ~50-55 %, en progression).</p>
+<p><strong>🥇 Q7</strong> 🔷 — Quelles sont les indications et la technique de la réduction embryonnaire ?<br />
+<strong>R</strong> : <strong>Indications</strong> : grossesse triple+ (réduction à jumeaux), grossesse gémellaire MCBA à haut risque (cas par cas), grossesse gémellaire chez patiente à pathologie maternelle sévère. <strong>Technique</strong> : (1) Terme : 11-13 SA ; (2) Voie transabdominale échoguidée ; (3) KCl intracardique → asystolie fœtale ; (4) Choix : le plus accessible (sauf anomalie identifiée → BVC avant réduction si souhaitée). <strong>Résultats</strong> : triplet → jumeaux : perte fœtale 5-7 % (vs prématurité 30-40 % sans réduction).</p>
+<p><strong>💎 Q8</strong> 🔷 — Quelle erreur a été commise ? Transfert de 2 blastocystes chez une patiente de 30 ans, 1er cycle FIV, blastocyste 4AA disponible.<br />
+<strong>R</strong> : <strong>Erreur : DET au lieu de SET</strong>. Cette patiente remplit tous les critères de SET : &lt; 38 ans, 1er cycle, blastocyste de bonne qualité (4AA). Le DET l'expose à un risque de grossesse gémellaire de 20-25 % sans bénéfice sur le taux cumulatif de naissance (SET + TEC ultérieur = résultat équivalent). Si grossesse gémellaire : risques de prématurité × 6, césarienne × 2,5, pré-éclampsie × 3, + risque de gémellité MZ (2-5 %) avec STT. Le 2e blastocyste devait être vitrifié pour un TEC ultérieur si nécessaire.</p>
+<p><strong>💎 Q9</strong> 🔷 — Grossesse quadruple après transfert de 2 blastocystes (2 DCBA + 1 paire MCBA) chez une patiente de 32 ans, 1er cycle FIV. Stratégie et counseling ?<br />
+<strong>R</strong> : Grossesse quadruple = 2 DZ (chacun issu d'un blastocyste) dont 1 paire MCBA (gémellité MZ par herniation). Sans intervention : prématurité extrême &gt; 90 %, mortalité élevée. <strong>Stratégie</strong> : (1) Counseling complet (risques prématurité/mortalité vs risques réduction) ; (2) <strong>Réduction embryonnaire</strong> 11-13 SA → jumeaux (cibler la paire MCBA qui porte le risque STT surajouté) ; (3) Réduction à singleton discutée si patiente le souhaite ; (4) BVC avant réduction si souhaitée ; (5) Accompagnement psychologique obligatoire ; (6) Pour l'avenir : <strong>SET obligatoire</strong> (DET chez 32 ans au 1er cycle = erreur de stratégie).</p>
+<p><strong>💎 Q10</strong> 🔷 — Vrai ou Faux (4 affirmations) :<br />
+1. Le SET élimine totalement le risque de grossesse gémellaire.<br />
+2. La grossesse gémellaire post-FIV a un meilleur pronostic que la grossesse gémellaire spontanée.<br />
+3. La réduction embryonnaire de jumeaux à singleton est interdite en France.<br />
+4. Le hatching assisté augmente le risque de gémellité monozygote.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — le SET réduit les gémellaires à 2-3 % (monozygotes) mais ne les élimine pas. (2) <strong>FAUX</strong> — même pronostic pour les DCBA, mais les grossesses post-FIV ont une incidence plus élevée de MCBA (gémellité MZ) → risque STT surajouté. (3) <strong>FAUX</strong> — pas d'interdit légal en France, acte médical encadré (centres de diagnostic prénatal), mais débat éthique important et accompagnement psychologique obligatoire. (4) <strong>VRAI</strong> — le hatching assisté fragilise la zona pellucida → herniation du blastocyste → ↑ risque de gémellité MZ (incidence 2-5 % vs 0,4 % spontané).</p>
+<hr />
+<h1 id="module-38">MODULE 38 — Échecs Répétés d'Implantation et Fausses Couches à Répétition</h1>
+<p>🔷 <strong>CLINICIEN</strong> 🟢 <strong>BIOLOGISTE</strong></p>
+<h2 id="381-echec-repete-dimplantation-rif-definition-et-epidemiologie">38.1 Échec répété d'implantation (RIF) — Définition et épidémiologie</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV38-S1-001 — RIF : définition, prévalence, algorithme diagnostique — facteurs embryonnaires, endométriaux, immunologiques, thrombophiliques]</p>
+</blockquote>
+<p><strong>Définition</strong> (Coughlan et al., <em>J Obstet Gynaecol</em>, 2014) :<br />
+- Absence de grossesse clinique après transfert d'au moins <strong>3 embryons de bonne qualité</strong> (stade clivé) ou <strong>2 blastocystes</strong> chez une femme de &lt; 40 ans<br />
+- Pas de définition universellement consensuelle → certains auteurs incluent le nombre de cycles (≥ 3 cycles échoués)</p>
+<p><strong>Prévalence</strong> : 10-15 % des patientes en FIV</p>
+<p><strong>Facteurs étiologiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Proportion estimée</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Embryonnaire</strong></td>
+<td>50-60 %</td>
+<td>Aneuploïdies non détectées, qualité ovocytaire, qualité spermatique</td>
+</tr>
+<tr>
+<td><strong>Endométrial</strong></td>
+<td>20-30 %</td>
+<td>Pathologie cavitaire, endométrite, fenêtre d'implantation décalée</td>
+</tr>
+<tr>
+<td><strong>Immunologique</strong></td>
+<td>5-10 %</td>
+<td>NK utérins, auto-immunité, SAPL</td>
+</tr>
+<tr>
+<td><strong>Thrombophilique</strong></td>
+<td>5-10 %</td>
+<td>SAPL, thrombophilies héréditaires</td>
+</tr>
+<tr>
+<td><strong>Inexpliqué</strong></td>
+<td>10-20 %</td>
+<td>Après bilan exhaustif normal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="382-bilan-du-rif-facteur-embryonnaire">38.2 Bilan du RIF — Facteur embryonnaire</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV38-S2-001 — Bilan embryonnaire du RIF : PGT-A, time-lapse, fragmentation ADN — algorithme décisionnel]</p>
+</blockquote>
+<p><strong>PGT-A (Preimplantation Genetic Testing for Aneuploidies)</strong> :<br />
+- Objectif : identifier les embryons euploïdes (46 chromosomes normaux)<br />
+- Résultat attendu : 40-60 % d'aneuploïdies chez les &lt; 38 ans → explication fréquente des RIF<br />
+- Méthode : biopsie du trophectoderme J5-J6 + NGS<br />
+- Limite : mosaïcisme (l'embryon peut avoir des cellules euploïdes et aneuploïdes — la biopsie n'est pas représentative à 100 %)</p>
+<p><strong>Optimisation de la qualité embryonnaire</strong> :<br />
+- <strong>Time-lapse</strong> : sélection morphocinétique des embryons avec les meilleurs timings de division<br />
+- <strong>Culture prolongée</strong> jusqu'au blastocyste : sélection naturelle (seuls 40-50 % des embryons atteignent J5-J6)<br />
+- <strong>Évaluation de la fragmentation ADN spermatique</strong> (TUNEL/SCSA) → si DFI &gt; 30 % : MACS, microfluidique, TESE</p>
+<p><strong>Qualité ovocytaire</strong> :<br />
+- Plus difficile à évaluer directement<br />
+- Marqueurs indirects : âge, AMH, morphologie ovocytaire (spindle view — microscope à lumière polarisée)<br />
+- Interventions : antioxydants (CoQ10, DHEA — controversé), GH (hormone de croissance — bénéfice modeste, Norman et al., Cochrane 2020)</p>
+<hr />
+<h2 id="383-bilan-du-rif-facteur-endometrial">38.3 Bilan du RIF — Facteur endométrial</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV38-S3-001 — Bilan endométrial du RIF : hystéroscopie, ERA, EMMA/ALICE, Doppler utérin — algorithme intégré]</p>
+</blockquote>
+<h3 id="3831-pathologie-cavitaire">38.3.1 Pathologie cavitaire</h3>
+<p><strong>Hystéroscopie diagnostique</strong> (examen clé — à réaliser avant tout autre bilan endométrial) :<br />
+- <strong>Polypes</strong> endométriaux : prévalence 15-30 % dans le RIF → résection hystéroscopique → amélioration des taux d'implantation<br />
+- <strong>Synéchies</strong> (syndrome d'Asherman) : adhérences intra-utérines → résection + pose de stérilet ou ballonnet anti-adhérence + estrogènes<br />
+- <strong>Cloison utérine</strong> : malformation müllérienne la plus fréquente → septoplastie hystéroscopique (bénéfice discuté en RIF — ESHRE 2016 : pas de preuve formelle)<br />
+- <strong>Endométrite chronique</strong> → biopsie endométriale avec immunohistochimie CD138 (plasmocytes)</p>
+<h3 id="3832-endometrite-chronique">38.3.2 Endométrite chronique</h3>
+<ul>
+<li><strong>Prévalence dans le RIF</strong> : 30-40 % (vs 10 % en population FIV générale)</li>
+<li><strong>Diagnostic</strong> : biopsie endométriale en phase lutéale → CD138 (plasmocytes stromaux) → seuil : ≥ 1 plasmocyte / 10 HPF</li>
+<li><strong>Traitement</strong> : <strong>doxycycline</strong> 200 mg/j × 14 jours (1ère ligne) → contrôle par biopsie à M+1 → si persistance : ciprofloxacine + métronidazole 14 jours (2e ligne)</li>
+<li><strong>Résultats</strong> : taux d'implantation ↑ de 60-70 % après éradication de l'endométrite (Cicinelli et al., <em>Hum Reprod</em>, 2015)</li>
+</ul>
+<h3 id="3833-era-endometrial-receptivity-analysis">38.3.3 ERA (Endometrial Receptivity Analysis)</h3>
+<ul>
+<li><strong>Principe</strong> : analyse transcriptomique de 238 gènes endométriaux → classification de l'endomètre en « réceptif », « pré-réceptif » ou « post-réceptif »</li>
+<li><strong>Développeur</strong> : Igenomix (brevet)</li>
+<li><strong>Résultat</strong> : 25 % des patientes en RIF ont une <strong>fenêtre d'implantation déplacée</strong> (Ruiz-Alonso et al., <em>Fertil Steril</em>, 2013)</li>
+<li><strong>Application</strong> : transfert personnalisé (pET — personalized Embryo Transfer) — décalage du transfert de 12-24h selon le résultat ERA</li>
+<li><strong>Niveau de preuve</strong> : modéré — l'essai ERA-RCT (Simón et al., <em>AJOG</em>, 2020) n'a pas montré de bénéfice significatif en population générale, mais bénéfice potentiel dans le sous-groupe RIF (débattu)</li>
+</ul>
+<h3 id="3834-emma-alice-microbiome-endometrial">38.3.4 EMMA / ALICE (microbiome endométrial)</h3>
+<ul>
+<li><strong>EMMA</strong> (Endometrial Microbiome Metagenomic Analysis) : analyse du microbiome endométrial par NGS 16S → prédominance de <em>Lactobacillus</em> (&gt; 90 %) = favorable ; dysbiose (<em>Gardnerella</em>, <em>Streptococcus</em>, <em>Enterococcus</em>) = défavorable</li>
+<li><strong>ALICE</strong> (Analysis of Infectious Chronic Endometritis) : détection spécifique des pathogènes de l'endométrite chronique</li>
+<li><strong>Niveau de preuve</strong> : faible — études observationnelles (Moreno et al., <em>AJOG</em>, 2016)</li>
+</ul>
+<h3 id="3835-doppler-uterin">38.3.5 Doppler utérin</h3>
+<ul>
+<li><strong>Évaluation</strong> : Doppler des artères utérines (index de pulsatilité — IP) + Doppler sous-endométrial</li>
+<li><strong>Seuil</strong> : IP &gt; 3,0 le jour du transfert → perfusion endométriale insuffisante → pronostic d'implantation réduit</li>
+<li><strong>Interventions</strong> : aspirine 100 mg/j (bénéfice modeste), sildénafil vaginal (vasodilatation — en recherche), G-CSF intrautérin (en recherche)</li>
+</ul>
+<hr />
+<h2 id="384-bilan-du-rif-facteur-immunologique-et-thrombophilique">38.4 Bilan du RIF — Facteur immunologique et thrombophilique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV38-S4-001 — Facteurs immunologiques et thrombophiliques du RIF : NK utérins, SAPL, thrombophilies héréditaires — bilan et traitements]</p>
+</blockquote>
+<h3 id="3841-cellules-nk-uterines">38.4.1 Cellules NK utérines</h3>
+<ul>
+<li><strong>Physiologie</strong> : les NK utérines (CD56bright/CD16−) sont essentielles pour l'angiogenèse et le remodelage des artères spiralées → favorisent l'implantation</li>
+<li><strong>Hypothèse dans le RIF</strong> : excès de NK cytotoxiques (CD56dim/CD16+) → destruction trophoblastique → échec d'implantation</li>
+<li><strong>Bilan</strong> : biopsie endométriale en phase lutéale → immunohistochimie CD56/CD16 → ratio NK cytotoxiques</li>
+<li><strong>Traitements proposés</strong> (niveau de preuve faible) :</li>
+<li><strong>Intralipides</strong> IV 20 % (100 mL en perfusion lente, J7-J9 du cycle) → modulation NK</li>
+<li><strong>Corticoïdes</strong> (prednisolone 10-20 mg/j de J1 à J12 du cycle) → immunosuppression non spécifique</li>
+<li><strong>Immunoglobulines IV</strong> (IGIV — 0,4 g/kg) → immunomodulation → coût très élevé, preuves insuffisantes</li>
+<li><strong>Controverse</strong> : le dosage des NK sanguins n'est PAS informatif pour l'endomètre (les NK utérines ≠ NK circulantes)</li>
+</ul>
+<h3 id="3842-syndrome-des-antiphospholipides-sapl">38.4.2 Syndrome des antiphospholipides (SAPL)</h3>
+<ul>
+<li><strong>Anticorps</strong> : anticoagulant lupique, anticardiolipine (IgG/IgM), anti-β2GP1 (IgG/IgM)</li>
+<li><strong>Critères de Sydney</strong> : ≥ 1 critère clinique (thrombose ou complication obstétricale) + ≥ 1 critère biologique (2 dosages positifs à 12 semaines d'intervalle)</li>
+<li><strong>Prévalence dans le RIF</strong> : 5-15 %</li>
+<li><strong>Traitement si SAPL confirmé</strong> : <strong>aspirine 100 mg/j</strong> + <strong>HBPM</strong> (énoxaparine 40 mg/j) dès le début du cycle de transfert → poursuivi pendant toute la grossesse et 6 semaines post-partum</li>
+</ul>
+<h3 id="3843-thrombophilies-hereditaires">38.4.3 Thrombophilies héréditaires</h3>
+<ul>
+<li>Facteur V Leiden, mutation G20210A du facteur II (prothrombine), déficit en protéine C, S, antithrombine</li>
+<li>Rôle dans le RIF : discuté — association faible dans les méta-analyses</li>
+<li>Bilan : prescrit en 2e intention si ATCD thrombotique personnel/familial ou FCS à répétition</li>
+<li>Traitement : aspirine ± HBPM (cas par cas)</li>
+</ul>
+<hr />
+<h2 id="385-traitements-adjuvants-du-rif">38.5 Traitements adjuvants du RIF</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV38-S5-001 — Traitements adjuvants du RIF : scratching endométrial, PRP intrautérin, G-CSF, GH — niveau de preuve et recommandations]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Principe</th>
+<th>Niveau de preuve</th>
+<th>Recommandation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scratching endométrial</strong></td>
+<td>Lésion mécanique de l'endomètre en phase lutéale du cycle précédent → réponse inflammatoire → ↑ réceptivité ?</td>
+<td><strong>Réfuté</strong> — Lensen et al., <em>NEJM</em>, 2019 (RCT n=1 364) : pas de bénéfice</td>
+<td>Non recommandé</td>
+</tr>
+<tr>
+<td><strong>PRP intrautérin</strong> (Platelet-Rich Plasma)</td>
+<td>Facteurs de croissance plaquettaires → régénération endométriale</td>
+<td><strong>Émergent</strong> — études pilotes positives (Chang et al., 2019)</td>
+<td>En recherche</td>
+</tr>
+<tr>
+<td><strong>G-CSF intrautérin</strong></td>
+<td>Facteur de croissance granulocytaire → amélioration de l'épaisseur endométriale</td>
+<td><strong>Émergent</strong> — résultats contradictoires</td>
+<td>En recherche</td>
+</tr>
+<tr>
+<td><strong>GH</strong> (hormone de croissance)</td>
+<td>↑ récepteurs IGF-1 endométriaux → épaisseur et vascularisation</td>
+<td>Modéré (Norman et al., Cochrane 2020)</td>
+<td>Cas sélectionnés (endomètre fin)</td>
+</tr>
+<tr>
+<td><strong>Hatching assisté</strong></td>
+<td>Perforation de la zona pellucida → facilitation de l'éclosion</td>
+<td><strong>Réfuté</strong> en population générale (Cochrane Carney 2012)</td>
+<td>Non recommandé (sauf situations spécifiques — épaisseur ZP, embryons congelés-décongelés)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="386-fausses-couches-a-repetition-rpl">38.6 Fausses couches à répétition (RPL)</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV38-S6-001 — RPL : définition, étiologies, arbre décisionnel diagnostique et thérapeutique — algorithme ESHRE 2023]</p>
+</blockquote>
+<h3 id="3861-definition">38.6.1 Définition</h3>
+<ul>
+<li><strong>ESHRE 2023</strong> : ≥ 2 fausses couches cliniques (documentées échographiquement ou histologiquement) avant 14 SA</li>
+<li>Ancienne définition (OMS) : ≥ 3 FC consécutives</li>
+<li><strong>Prévalence</strong> : 1-2 % des couples (≥ 3 FC) ; 5 % (≥ 2 FC)</li>
+</ul>
+<h3 id="3862-etiologies">38.6.2 Étiologies</h3>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Prévalence dans RPL</th>
+<th>Bilan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anomalies chromosomiques embryonnaires</strong></td>
+<td>50-60 %</td>
+<td>Caryotype produit de FC, PGT-A</td>
+</tr>
+<tr>
+<td><strong>Anomalies utérines</strong></td>
+<td>10-15 %</td>
+<td>Échographie 3D, hystéroscopie</td>
+</tr>
+<tr>
+<td><strong>SAPL</strong></td>
+<td>5-15 %</td>
+<td>Anticorps antiphospholipides × 2 à 12 semaines</td>
+</tr>
+<tr>
+<td><strong>Anomalies chromosomiques parentales</strong></td>
+<td>3-5 %</td>
+<td>Caryotype couple (translocation robertsonienne, réciproque)</td>
+</tr>
+<tr>
+<td><strong>Thrombophilies</strong></td>
+<td>5-10 % (débattu)</td>
+<td>Bilan de thrombophilie (2e intention)</td>
+</tr>
+<tr>
+<td><strong>Dysthyroïdie</strong></td>
+<td>5-10 %</td>
+<td>TSH (&lt; 2,5 mUI/L recommandé)</td>
+</tr>
+<tr>
+<td><strong>Diabète non équilibré</strong></td>
+<td>2-5 %</td>
+<td>HbA1c, glycémie à jeun</td>
+</tr>
+<tr>
+<td><strong>Facteur masculin</strong></td>
+<td>Émergent</td>
+<td>Fragmentation ADN spermatique</td>
+</tr>
+<tr>
+<td><strong>Inexpliqué</strong></td>
+<td>40-50 %</td>
+<td>Après bilan exhaustif normal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3863-traitements">38.6.3 Traitements</h3>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Traitement</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SAPL</strong></td>
+<td>Aspirine 100 mg/j + HBPM 40 mg/j</td>
+<td>Élevé (Cochrane Empson 2005)</td>
+</tr>
+<tr>
+<td><strong>Cloison utérine</strong></td>
+<td>Septoplastie hystéroscopique</td>
+<td>Modéré (débattu — ESHRE)</td>
+</tr>
+<tr>
+<td><strong>Endométrite chronique</strong></td>
+<td>Doxycycline 200 mg/j × 14 jours</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Translocation parentale</strong></td>
+<td>PGT-SR (sélection embryons équilibrés)</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>Dysthyroïdie</strong></td>
+<td>Lévothyroxine (cible TSH &lt; 2,5)</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>Aneuploïdies récurrentes</strong></td>
+<td>PGT-A</td>
+<td>Modéré (si ≥ 2 FC avec caryotype anormal du produit)</td>
+</tr>
+<tr>
+<td><strong>Progestérone</strong> (RPL inexpliqué avec saignement précoce)</td>
+<td>Progestérone vaginale 400 mg × 2/j dès saignement</td>
+<td>Élevé (PRISM — Coomarasamy, <em>NEJM</em>, 2019)</td>
+</tr>
+<tr>
+<td><strong>RPL inexpliqué sans saignement</strong></td>
+<td>Soutien psychologique (TLC — Tender Loving Care)</td>
+<td>Modéré (Clifford, <em>Hum Reprod</em>, 1997 — 75 % de succès avec suivi empathique seul)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-38">QUIZ MODULE 38</h3>
+<p><strong>🥉 Q1</strong> 🔷 — Quelle est la définition du RIF ?<br />
+<strong>R</strong> : Absence de grossesse clinique après transfert de ≥ 3 embryons de bonne qualité (stade clivé) ou ≥ 2 blastocystes chez une femme &lt; 40 ans (Coughlan 2014). Prévalence : 10-15 % des patientes en FIV.</p>
+<p><strong>🥉 Q2</strong> 🔷 — Quelle est la définition des RPL selon l'ESHRE 2023 ?<br />
+<strong>R</strong> : ≥ 2 fausses couches cliniques (documentées échographiquement ou histologiquement) avant 14 SA. Prévalence : 5 % des couples (≥ 2 FC). L'ancienne définition OMS exigeait ≥ 3 FC consécutives.</p>
+<p><strong>🥉 Q3</strong> 🔷 — Quel est le premier examen à réaliser dans le bilan de RIF ?<br />
+<strong>R</strong> : <strong>Hystéroscopie diagnostique</strong> — examen simple, ambulatoire, à haut rendement diagnostique (pathologie cavitaire dans 15-30 % des RIF : polype, synéchie, cloison, signes d'endométrite). En parallèle : biopsie endométriale pour CD138 (endométrite chronique retrouvée dans 30-40 % des RIF).</p>
+<p><strong>🥈 Q4</strong> 🟢 — Qu'est-ce que l'endométrite chronique, comment la diagnostiquer et la traiter ?<br />
+<strong>R</strong> : Infection chronique de l'endomètre, souvent asymptomatique. <strong>Diagnostic</strong> : biopsie endométriale en phase lutéale + immunohistochimie CD138 (plasmocytes stromaux ≥ 1/10 HPF). <strong>Prévalence</strong> : 30-40 % dans le RIF (vs 10 % en population FIV générale). <strong>Traitement</strong> : doxycycline 200 mg/j × 14 jours (1ère ligne) → contrôle biopsie M+1. Si persistance : ciprofloxacine + métronidazole 14 jours (2e ligne). Résultats : taux d'implantation ↑ de 60-70 % après éradication (Cicinelli 2015).</p>
+<p><strong>🥈 Q5</strong> 🟢 — Expliquez le principe de l'ERA et ses limites.<br />
+<strong>R</strong> : L'ERA analyse 238 gènes endométriaux → classification en réceptif, pré-réceptif ou post-réceptif. 25 % des RIF ont une fenêtre déplacée → transfert personnalisé (pET). <strong>Limites</strong> : (1) ERA-RCT (Simón 2020) : pas de bénéfice en population générale ; (2) Reproductibilité inter-cycles discutée ; (3) Brevet Igenomix unique, pas de validation indépendante ; (4) Coût élevé (~800-1 000 €).</p>
+<p><strong>🥈 Q6</strong> 🔷 — Pourquoi le scratching endométrial n'est-il plus recommandé dans le RIF ?<br />
+<strong>R</strong> : Le scratching (lésion mécanique de l'endomètre en phase lutéale du cycle précédent) était censé stimuler une réponse inflammatoire favorable à l'implantation. Initialement prometteur (Nastri, Cochrane 2015), il a été <strong>réfuté</strong> par le RCT de Lensen (<em>NEJM</em>, 2019, n=1 364) : aucun bénéfice sur le taux de naissance vivante. Le scratching n'est donc plus recommandé dans le RIF.</p>
+<p><strong>🥇 Q7</strong> 🔷 — Citez les 4 catégories de facteurs étiologiques du RIF et un examen pour chaque.<br />
+<strong>R</strong> : (1) <strong>Embryonnaire</strong> (50-60 %) : PGT-A (aneuploïdies), time-lapse, fragmentation ADN spermatique ; (2) <strong>Endométrial</strong> (20-30 %) : hystéroscopie, biopsie CD138, ERA, Doppler utérin ; (3) <strong>Immunologique</strong> (5-10 %) : NK utérins (biopsie CD56/CD16), SAPL (anticorps antiphospholipides) ; (4) <strong>Thrombophilique</strong> (5-10 %) : SAPL, FV Leiden, mutation prothrombine. + 10-20 % inexpliqué après bilan exhaustif.</p>
+<p><strong>🥇 Q8</strong> 🔷 — Quelles sont les principales étiologies des RPL et leur traitement ?<br />
+<strong>R</strong> : (1) <strong>Anomalies chromosomiques embryonnaires</strong> (50-60 %) → PGT-A si ≥ 2 FC avec caryotype anormal ; (2) <strong>SAPL</strong> (5-15 %) → aspirine 100 mg/j + HBPM (preuve élevée) ; (3) <strong>Anomalies utérines</strong> (10-15 %) → hystéroscopie + septoplastie si cloison ; (4) <strong>Translocation parentale</strong> (3-5 %) → PGT-SR ; (5) <strong>Dysthyroïdie</strong> → TSH &lt; 2,5 + lévothyroxine ; (6) <strong>RPL inexpliqué avec saignement</strong> → progestérone vaginale 400 mg × 2/j (PRISM, <em>NEJM</em> 2019) ; (7) <strong>RPL inexpliqué sans saignement</strong> → TLC (Tender Loving Care — 75 % de succès avec suivi empathique seul).</p>
+<p><strong>💎 Q9</strong> 🔷 — Vrai ou Faux (4 affirmations sur le RIF/RPL) :<br />
+1. Le PRP intrautérin est validé comme traitement du RIF.<br />
+2. Les NK circulants sont un bon reflet des NK utérins.<br />
+3. La progestérone est efficace dans toutes les RPL inexpliquées.<br />
+4. Le SAPL doit être confirmé par 2 dosages positifs à 12 semaines d'intervalle.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — le PRP intrautérin est en recherche (études pilotes — Chang 2019) mais aucun RCT publié. Pas de recommandation en routine. (2) <strong>FAUX</strong> — les NK circulantes (sang) ≠ NK utérines. Le dosage sanguin n'est pas informatif pour l'endomètre. Seule la biopsie endométriale avec immunohistochimie CD56/CD16 évalue les NK utérines. (3) <strong>FAUX</strong> — la progestérone est efficace uniquement chez les femmes avec RPL inexpliqué <strong>ET saignement précoce</strong> (étude PRISM, Coomarasamy, <em>NEJM</em> 2019). Sans saignement, pas de bénéfice démontré. (4) <strong>VRAI</strong> — critères de Sydney : ≥ 1 critère clinique + ≥ 1 critère biologique (anticoagulant lupique, anticardiolipine ou anti-β2GP1) positif à 2 reprises à ≥ 12 semaines d'intervalle.</p>
+<p><strong>💎 Q10</strong> 🔷 — Patiente de 34 ans, 4 TEC de blastocystes euploïdes (PGT-A) sans grossesse. Hystéroscopie : aspect inflammatoire. Biopsie : CD138 positif. ERA : pré-réceptif à LH+7. Plan thérapeutique complet ?<br />
+<strong>R</strong> : RIF avec 2 facteurs : endométrite chronique + fenêtre déplacée. Facteur embryonnaire exclu (euploïdes). <strong>Plan</strong> : (1) Doxycycline 200 mg/j × 14 jours ; (2) Contrôle biopsie CD138 à M+1 ; (3) Si CD138 négatif → ERA de contrôle (la guérison peut modifier la fenêtre) ; (4) Si ERA toujours pré-réceptif → transfert personnalisé LH+8 (ou P+6) = décalage 24h ; (5) TEC blastocyste euploïde en cycle substitué avec timing pET ; (6) Adjuvants raisonnables : aspirine 100 mg/j, progestérone IM/SC. Ne PAS ajouter : scratching (réfuté NEJM 2019), IGIV, intralipides.</p>
+<p><strong>💎 Q11</strong> 🔷 — Quelle erreur a été commise ? Patiente avec 3 FC à répétition : on prescrit d'emblée aspirine + HBPM + IGIV + intralipides + scratching + progestérone sans bilan préalable.<br />
+<strong>R</strong> : <strong>Erreur majeure : traitement empirique sans bilan étiologique</strong>. (1) Le SAPL n'est pas confirmé (2 dosages nécessaires) → aspirine + HBPM non justifiés sans diagnostic ; (2) IGIV : preuves insuffisantes, coût très élevé, effets secondaires → non recommandées en routine ; (3) Intralipides : pas d'indication sans dosage des NK utérines ; (4) Scratching : réfuté (Lensen, NEJM 2019) ; (5) Progestérone : utile uniquement si saignement précoce (PRISM). <strong>Approche correcte</strong> : bilan étiologique complet AVANT tout traitement → caryotype couple, hystéroscopie/écho 3D, SAPL (× 2 à 12 sem), TSH, glycémie, CD138, puis traitement ciblé selon les résultats.</p>
+<hr />
+<h1 id="module-39">MODULE 39 — Pathologies Associées : SOPK, Endométriose, IOP, Âge Maternel</h1>
+<p>🔷 <strong>CLINICIEN</strong></p>
+<h2 id="391-sopk-et-fiv">39.1 SOPK et FIV</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV39-S1-001 — SOPK et FIV : protocoles adaptés, gestion du risque SHO, résultats — algorithme décisionnel complet]</p>
+</blockquote>
+<h3 id="3911-defis-specifiques-du-sopk-en-fiv">39.1.1 Défis spécifiques du SOPK en FIV</h3>
+<table>
+<thead>
+<tr>
+<th>Défi</th>
+<th>Mécanisme</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hyper-réponse</strong></td>
+<td>Cohorte folliculaire élevée (CFA souvent &gt; 20) + sensibilité aux gonadotrophines</td>
+<td>Risque SHO +++, recueil &gt; 20-30 ovocytes</td>
+</tr>
+<tr>
+<td><strong>Qualité ovocytaire</strong></td>
+<td>Hyperandrogénie intra-folliculaire, résistance à l'insuline → stress oxydatif</td>
+<td>Taux de maturation et fécondation parfois inférieur</td>
+</tr>
+<tr>
+<td><strong>Qualité embryonnaire</strong></td>
+<td>Ovocytes de qualité hétérogène</td>
+<td>Taux de blastulation correct mais qualité variable</td>
+</tr>
+<tr>
+<td><strong>Réceptivité endométriale</strong></td>
+<td>Hyperandrogénie → endomètre hyper-prolifératif, résistance à la progestérone</td>
+<td>Implantation parfois altérée</td>
+</tr>
+<tr>
+<td><strong>Risque obstétrical</strong></td>
+<td>IMC élevé, résistance à l'insuline</td>
+<td>Diabète gestationnel, pré-éclampsie</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3912-protocoles-adaptes">39.1.2 Protocoles adaptés</h3>
+<p><strong>Protocole de stimulation</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Recommandation SOPK</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protocole</strong></td>
+<td><strong>Antagoniste</strong> (obligatoire)</td>
+<td>Flexibilité, possibilité de trigger agoniste</td>
+</tr>
+<tr>
+<td><strong>Dose de FSH</strong></td>
+<td>Faible dose initiale (100-150 UI/j)</td>
+<td>↓ risque hyper-réponse</td>
+</tr>
+<tr>
+<td><strong>Recombinante vs HMG</strong></td>
+<td>FSH recombinante (dose précise)</td>
+<td>Meilleur contrôle</td>
+</tr>
+<tr>
+<td><strong>Trigger</strong></td>
+<td><strong>Agoniste GnRH</strong> (quasi obligatoire si &gt; 15 follicules)</td>
+<td>↓ SHO de 95 %</td>
+</tr>
+<tr>
+<td><strong>Transfert</strong></td>
+<td><strong>Freeze-all</strong> systématique</td>
+<td>Pas de SHO tardif + meilleure réceptivité endométriale en TEC</td>
+</tr>
+<tr>
+<td><strong>Co-traitement</strong></td>
+<td>Metformine 1 500-2 000 mg/j (débutée 2 mois avant)</td>
+<td>↓ SHO (Tang, Cochrane 2012), amélioration qualité ovocytaire (discuté)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alternative : maturation in vitro (MIV)</strong> :<br />
+- Recueil d'ovocytes immatures (follicules 6-10 mm) sans stimulation ou après mini-stimulation<br />
+- Maturation 24-48h in vitro → ICSI<br />
+- Avantage : <strong>pas de SHO</strong> (pas de stimulation gonadotrophine)<br />
+- Inconvénient : taux de maturation 50-70 %, taux de grossesse inférieur à la FIV conventionnelle<br />
+- Indication : SOPK avec CFA très élevé et ATCD de SHO sévère</p>
+<h3 id="3913-resultats-de-la-fiv-dans-le-sopk">39.1.3 Résultats de la FIV dans le SOPK</h3>
+<ul>
+<li>Nombre d'ovocytes élevé (souvent 15-30)</li>
+<li>Taux de fécondation : comparable ou légèrement inférieur</li>
+<li>Taux de blastulation : comparable</li>
+<li><strong>Taux de naissance vivante cumulatif</strong> (frais + TEC) : <strong>comparable</strong> voire supérieur à la population non-SOPK (grâce au grand nombre d'embryons disponibles)</li>
+<li>Principale différence : le <strong>risque de SHO</strong> et la nécessité de freeze-all</li>
+</ul>
+<hr />
+<h2 id="392-endometriose-et-fiv">39.2 Endométriose et FIV</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV39-S2-001 — Endométriose et FIV : impact sur la réserve ovarienne et la qualité ovocytaire — stratégie chirurgicale vs FIV directe — arbre décisionnel]</p>
+</blockquote>
+<h3 id="3921-impact-de-lendometriose-sur-la-fertilite-en-fiv">39.2.1 Impact de l'endométriose sur la fertilité en FIV</h3>
+<table>
+<thead>
+<tr>
+<th>Stade (rAFS/ASRM)</th>
+<th>Impact</th>
+<th>Résultats FIV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I-II (minime-légère)</strong></td>
+<td>Inflammation péritonéale, liquide folliculaire inflammatoire (IL-6, TNF-α, ROS)</td>
+<td>Résultats proches de la population générale</td>
+</tr>
+<tr>
+<td><strong>III-IV (modérée-sévère)</strong></td>
+<td>↓ Réserve ovarienne (endométriomes → destruction corticale), adhérences pelviennes, distorsion anatomique</td>
+<td>↓ Nombre d'ovocytes, ↓ taux de grossesse de 20-30 %</td>
+</tr>
+<tr>
+<td><strong>Endométriose profonde</strong></td>
+<td>Nodules recto-vaginaux, vésicaux → douleurs, dyspareunie</td>
+<td>Impact FIV variable — chirurgie discutée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3922-chirurgie-avant-fiv-le-dilemme-de-lendometriome">39.2.2 Chirurgie avant FIV — Le dilemme de l'endométriome</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Recommandation</th>
+<th>Référence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Endométriome &lt; 4 cm</strong></td>
+<td>Pas de chirurgie → FIV directe</td>
+<td>ESHRE 2014</td>
+</tr>
+<tr>
+<td><strong>Endométriome 4-6 cm</strong></td>
+<td>Discussion au cas par cas (chirurgie si symptômes, accès ponction difficile)</td>
+<td>ESHRE 2014</td>
+</tr>
+<tr>
+<td><strong>Endométriome &gt; 6 cm</strong></td>
+<td>Chirurgie (kystectomie vs drainage) puis FIV</td>
+<td>Consensus</td>
+</tr>
+<tr>
+<td><strong>Endométriome récidivant (post-chirurgie)</strong></td>
+<td><strong>Pas de re-chirurgie</strong> → FIV directe</td>
+<td>Benschop, Cochrane 2010</td>
+</tr>
+<tr>
+<td><strong>Alternative</strong></td>
+<td>Sclérose échoguidée à l'éthanol (drainage + injection éthanol 95 %)</td>
+<td>Émergent — Cohen, <em>Fertil Steril</em>, 2017</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE</strong> : La kystectomie d'un endométriome **détruit du cortex ovarien sain** (perte de follicules primordiaux) → ↓ AMH post-opératoire de 30-40 % par ovaire opéré. Ne jamais opérer un endométriome dans le seul but d'améliorer les résultats FIV (pas de bénéfice — Benschop, Cochrane 2010).</div>
+
+<h3 id="3923-protocoles-fiv-adaptes-a-lendometriose">39.2.3 Protocoles FIV adaptés à l'endométriose</h3>
+<table>
+<thead>
+<tr>
+<th>Stratégie</th>
+<th>Détail</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agoniste GnRH long 3 mois</strong> avant FIV</td>
+<td>Suppression de l'endométriose active → ↓ inflammation</td>
+<td>Modéré (Sallam, Cochrane 2006 — bénéfice × 4 sur taux de grossesse)</td>
+</tr>
+<tr>
+<td><strong>Protocole antagoniste</strong></td>
+<td>Standard si réserve ovarienne préservée</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td><strong>DuoStim</strong></td>
+<td>Si faible réserve (endométriome bilatéral post-chirurgie)</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Accumulation d'ovocytes/embryons</strong></td>
+<td>Plusieurs cycles de stimulation → vitrification → TEC groupé</td>
+<td>Pratique courante</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="393-insuffisance-ovarienne-prematuree-iop-et-fiv">39.3 Insuffisance ovarienne prématurée (IOP) et FIV</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV39-S3-001 — IOP : diagnostic, étiologies, stratégies de FIV (très faibles chances), alternatives — don d'ovocytes, innovations]</p>
+</blockquote>
+<h3 id="3931-diagnostic">39.3.1 Diagnostic</h3>
+<ul>
+<li><strong>Critères</strong> : femme &lt; 40 ans, <strong>FSH &gt; 25 UI/L</strong> (2 dosages à 4 semaines d'intervalle), aménorrhée ou spanioménorrhée ≥ 4 mois, <strong>AMH effondrée</strong> (&lt; 0,1-0,5 ng/mL), CFA &lt; 3-5</li>
+</ul>
+<h3 id="3932-etiologies">39.3.2 Étiologies</h3>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Prévalence</th>
+<th>Détails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Idiopathique</strong></td>
+<td>50-60 %</td>
+<td>Aucune cause identifiée</td>
+</tr>
+<tr>
+<td><strong>Auto-immune</strong></td>
+<td>15-20 %</td>
+<td>Ovarite auto-immune (associations : thyroïdite, Addison, diabète type 1) — anticorps anti-ovariens non standardisés</td>
+</tr>
+<tr>
+<td><strong>Génétique</strong></td>
+<td>10-15 %</td>
+<td>Turner (45,X et mosaïques), prémutation FMR1 (&gt; 55-200 CGG → risque IOP 20 %), BMP-15, FSHR</td>
+</tr>
+<tr>
+<td><strong>Iatrogène</strong></td>
+<td>10-15 %</td>
+<td>Chimiothérapie (alkylants +++), radiothérapie pelvienne, chirurgie ovarienne bilatérale</td>
+</tr>
+<tr>
+<td><strong>Infectieuse</strong></td>
+<td>Rare</td>
+<td>Oreillons (ovarite ourlienne), tuberculose</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3933-fiv-avec-ovocytes-propres-dans-liop">39.3.3 FIV avec ovocytes propres dans l'IOP</h3>
+<p><strong>Réalité des résultats</strong> :<br />
+- Taux de cycle annulé (pas de follicule recrutable) : 30-50 %<br />
+- Nombre moyen d'ovocytes par ponction : 1-3<br />
+- Taux de naissance vivante par cycle : <strong>2-5 %</strong> (très faible)<br />
+- Taux de naissance vivante cumulatif (plusieurs cycles) : 10-20 % après 3-6 tentatives</p>
+<p><strong>Stratégies</strong> :<br />
+- <strong>Natural cycle IVF</strong> ou <strong>minimal stimulation</strong> (les doses élevées de FSH n'améliorent pas le recrutement si la réserve est épuisée)<br />
+- <strong>DuoStim</strong> (double stimulation par cycle — phase folliculaire + lutéale → 2 ponctions)<br />
+- <strong>Accumulation d'ovocytes/embryons</strong> par vitrification sur plusieurs cycles<br />
+- <strong>Random start</strong> si fenêtre de stimulation favorable<br />
+- <strong>PGT-A</strong> : discuté (peu d'embryons disponibles → risque de n'avoir aucun embryon transférable)</p>
+<h3 id="3934-don-dovocytes-la-solution-principale">39.3.4 Don d'ovocytes — La solution principale</h3>
+<ul>
+<li><strong>Taux de naissance vivante</strong> : 40-60 % par transfert (comparable à la donneuse)</li>
+<li>L'âge utérin est moins important que l'âge ovocytaire → les femmes IOP jeunes ont d'excellents résultats avec don</li>
+<li><strong>Cadre légal en France</strong> : don anonyme et gratuit (CECOS), loi bioéthique 2021 : levée partielle de l'anonymat à la majorité de l'enfant si le donneur y consent</li>
+<li><strong>Alternatives internationales</strong> : banques d'ovocytes (Espagne, République Tchèque, Grèce — don non anonyme dans certains pays)</li>
+</ul>
+<h3 id="3935-innovations-en-recherche">39.3.5 Innovations en recherche</h3>
+<table>
+<thead>
+<tr>
+<th>Innovation</th>
+<th>Principe</th>
+<th>Stade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PRP ovarien</strong> (Platelet-Rich Plasma)</td>
+<td>Injection intra-ovarienne de facteurs de croissance → « réveil » des follicules dormants</td>
+<td>Études pilotes (Sfakianoudis 2019) — résultats contradictoires</td>
+</tr>
+<tr>
+<td><strong>OFFA</strong> (Ovarian Fragmentation for Follicular Activation)</td>
+<td>Fragmentation + auto-transplantation du cortex → activation Hippo pathway → recrutement folliculaire</td>
+<td>Cas cliniques (Kawamura 2013) — pas de RCT</td>
+</tr>
+<tr>
+<td><strong>Cellules souches</strong></td>
+<td>Injection de cellules souches mésenchymateuses dans le stroma ovarien</td>
+<td>Recherche préclinique</td>
+</tr>
+<tr>
+<td><strong>Gamètes artificiels (IVG)</strong></td>
+<td>Différenciation de cellules somatiques en ovocytes (iPSC)</td>
+<td>Modèle murin (Hayashi 2012) — très loin de l'application clinique humaine</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="394-age-maternel-avance-et-fiv">39.4 Âge maternel avancé et FIV</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV39-S4-001 — Impact de l'âge maternel sur les résultats FIV : courbe de déclin, taux d'aneuploïdies par âge, stratégies adaptées — données registres ABM et SART]</p>
+</blockquote>
+<h3 id="3941-donnees-chiffrees">39.4.1 Données chiffrées</h3>
+<table>
+<thead>
+<tr>
+<th>Âge</th>
+<th>Taux d'aneuploïdie embryonnaire</th>
+<th>Taux de naissance vivante/cycle FIV</th>
+<th>FC spontanée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 35 ans</td>
+<td>30-40 %</td>
+<td>30-40 %</td>
+<td>10-15 %</td>
+</tr>
+<tr>
+<td>35-37 ans</td>
+<td>40-50 %</td>
+<td>25-30 %</td>
+<td>15-20 %</td>
+</tr>
+<tr>
+<td>38-40 ans</td>
+<td>50-60 %</td>
+<td>15-20 %</td>
+<td>25-30 %</td>
+</tr>
+<tr>
+<td>41-42 ans</td>
+<td>60-70 %</td>
+<td>8-12 %</td>
+<td>30-40 %</td>
+</tr>
+<tr>
+<td>&gt; 42 ans</td>
+<td>&gt; 70-80 %</td>
+<td>&lt; 5 %</td>
+<td>40-50 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Modèle biologique</strong> :<br />
+- Déplétion folliculaire exponentielle (modèle de Faddy-Gosden)<br />
+- Dysfonction du fuseau méiotique → non-disjonction chromosomique → aneuploïdies (surtout trisomies)<br />
+- Dysfonction mitochondriale ovocytaire → énergie insuffisante pour la méiose et le développement embryonnaire précoce<br />
+- ↓ Qualité de la zone pellucide et du cytoplasme ovocytaire</p>
+<h3 id="3942-strategies-fiv-adaptees">39.4.2 Stratégies FIV adaptées</h3>
+<table>
+<thead>
+<tr>
+<th>Stratégie</th>
+<th>Détail</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stimulation conventionnelle / agressive</strong></td>
+<td>Doses élevées de FSH (225-450 UI/j) + LH (protocole long ou antagoniste)</td>
+<td>38-42 ans, réserve ovarienne correcte</td>
+</tr>
+<tr>
+<td><strong>DuoStim</strong></td>
+<td>Double stimulation par cycle → 2 ponctions</td>
+<td>≥ 40 ans, réserve ovarienne diminuée</td>
+</tr>
+<tr>
+<td><strong>Accumulation d'embryons</strong></td>
+<td>Vitrification d'embryons/blastocystes sur 2-4 cycles → TEC groupé</td>
+<td>Standard ≥ 40 ans</td>
+</tr>
+<tr>
+<td><strong>PGT-A</strong></td>
+<td>Sélection des embryons euploïdes → ↑ taux d'implantation par transfert</td>
+<td>Débattu ≥ 38 ans — ESHRE : pas de recommandation systématique</td>
+</tr>
+<tr>
+<td><strong>Don d'ovocytes</strong></td>
+<td>Ovocytes de donneuse jeune → taux de naissance 40-60 %</td>
+<td>Si échecs répétés ou &gt; 42-43 ans</td>
+</tr>
+<tr>
+<td><strong>Natural cycle / mini-IVF</strong></td>
+<td>Si réserve très basse (1-3 follicules recrutables)</td>
+<td>Alternative au DuoStim</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3943-pgt-a-et-age-maternel-le-debat">39.4.3 PGT-A et âge maternel — Le débat</h3>
+<p><strong>Arguments en faveur</strong> :<br />
+- ↓ Taux de FC (en transférant uniquement des embryons euploïdes → FC 5-10 % vs 30-40 % sans PGT-A)<br />
+- ↓ Délai pour obtenir une naissance vivante (si embryon euploïde disponible)<br />
+- ↓ Transferts inutiles (embryons aneuploïdes)</p>
+<p><strong>Arguments contre</strong> :<br />
+- Perte d'embryons due au mosaïcisme (embryon classé « aneuploïde » par la biopsie mais viable)<br />
+- Si très peu d'embryons : risque de n'avoir aucun embryon transférable après PGT-A (« no transfer cycle »)<br />
+- Taux de naissance vivante <strong>cumulatif</strong> (tous embryons transférés) : pas de bénéfice démontré en RCT (Munné et al., <em>Fertil Steril</em>, 2019 — STAR trial : pas de différence significative)<br />
+- Coût additionnel (2 000-4 000 € par cycle)</p>
+<h3 id="3944-counseling-et-realisme">39.4.4 Counseling et réalisme</h3>
+<ul>
+<li><strong>Informer clairement</strong> des chances réelles par cycle et cumulatives</li>
+<li><strong>Limite d'âge</strong> : &gt; 43 ans avec ovocytes propres → taux de naissance vivante &lt; 2-3 % par cycle → discussion don d'ovocytes</li>
+<li><strong>Pas de limite d'âge pour le don d'ovocytes</strong> (résultats liés à l'âge de la donneuse, pas de la receveuse) — mais risques obstétricaux ↑ après 45 ans</li>
+<li>Soutien psychologique indispensable : gestion de l'échec, deuil du projet génétique si don nécessaire</li>
+</ul>
+<hr />
+<h3 id="quiz-module-39">QUIZ MODULE 39</h3>
+<p><strong>🥉 Q1</strong> 🔷 — Quel est le protocole de stimulation recommandé pour une patiente SOPK en FIV ?<br />
+<strong>R</strong> : Protocole <strong>antagoniste</strong> + <strong>faible dose FSH</strong> (100-150 UI/j) + <strong>trigger agoniste GnRH</strong> (si &gt; 15 follicules) + <strong>freeze-all</strong> systématique + metformine 1 500-2 000 mg/j (débutée 2 mois avant). Résultat cumulatif comparable sans risque de SHO.</p>
+<p><strong>🥉 Q2</strong> 🔷 — Quel est le taux de naissance vivante par cycle FIV selon l'âge maternel ?<br />
+<strong>R</strong> : &lt; 35 ans : 30-40 % ; 35-37 ans : 25-30 % ; 38-40 ans : 15-20 % ; 41-42 ans : 8-12 % ; &gt; 42 ans : &lt; 5 %. Cause principale du déclin : ↑ aneuploïdies embryonnaires (30 % à &lt; 35 ans → &gt; 70 % à &gt; 42 ans).</p>
+<p><strong>🥈 Q3</strong> 🔷 — Pourquoi ne faut-il pas opérer un endométriome récidivant avant la FIV ?<br />
+<strong>R</strong> : La kystectomie détruit du cortex ovarien sain → ↓ AMH de 30-40 % par ovaire opéré → réserve ovarienne irréversiblement diminuée. Cochrane (Benschop 2010) : <strong>aucun bénéfice</strong> sur les taux de grossesse. Alternative : <strong>sclérose échoguidée</strong> à l'éthanol — moins invasif, préserve le cortex.</p>
+<p><strong>🥈 Q4</strong> 🔷 — Quels sont les critères diagnostiques de l'IOP ?<br />
+<strong>R</strong> : Femme &lt; 40 ans + <strong>FSH &gt; 25 UI/L</strong> (2 dosages à 4 semaines d'intervalle) + aménorrhée/spanioménorrhée ≥ 4 mois + AMH effondrée (&lt; 0,1-0,5 ng/mL) + CFA &lt; 3-5. Étiologies : idiopathique (50-60 %), auto-immune (15-20 %), génétique (Turner, FMR1 — 10-15 %), iatrogène (chimio, radio — 10-15 %).</p>
+<p><strong>🥈 Q5</strong> 🔷 — Quels sont les arguments pour et contre le PGT-A chez la femme de &gt; 38 ans ?<br />
+<strong>R</strong> : <strong>Pour</strong> : ↓ FC (5-10 % vs 30-40 %), ↓ transferts inutiles, ↓ délai si euploïde disponible. <strong>Contre</strong> : perte d'embryons viables (mosaïcisme), risque de « no-transfer cycle » si peu d'embryons, taux cumulatif de naissance non amélioré en RCT (STAR trial, Munné 2019), coût (2 000-4 000 €/cycle). ESHRE : pas de recommandation systématique.</p>
+<p><strong>🥇 Q6</strong> 🔷 — Quelle stratégie pour une patiente avec endométriose stade III-IV avant FIV ?<br />
+<strong>R</strong> : (1) <strong>Agoniste GnRH long 3 mois</strong> avant FIV (suppression endométriose active → ↓ inflammation — Sallam, Cochrane 2006 : bénéfice × 4 sur taux de grossesse) ; (2) <strong>Pas de re-chirurgie</strong> si endométriome récidivant (Benschop, Cochrane 2010) ; (3) Sclérose échoguidée si endométriome gêne la ponction ; (4) Protocole antagoniste si réserve préservée, DuoStim si réserve diminuée ; (5) Accumulation d'embryons si faible réserve bilatérale.</p>
+<p><strong>🥇 Q7</strong> 🔷 — Quelles sont les options de FIV pour une patiente IOP avec ses propres ovocytes ?<br />
+<strong>R</strong> : Résultats très faibles (taux naissance/cycle : 2-5 %). Stratégies : (1) Natural cycle ou mini-stimulation (les doses élevées n'améliorent pas le recrutement si réserve épuisée) ; (2) DuoStim (2 ponctions/cycle) ; (3) Accumulation par vitrification sur 3-6 cycles ; (4) PGT-A discuté (risque no-transfer). La <strong>solution principale</strong> reste le don d'ovocytes (taux naissance 40-60 %). Innovations en recherche : PRP ovarien, OFFA (Kawamura 2013) — pas validés.</p>
+<p><strong>💎 Q8</strong> 🔷 — Quelle erreur a été commise ? Patiente avec SOPK, AMH 7 ng/mL : kystectomie bilatérale pour endométriomes de 3 cm avant FIV.<br />
+<strong>R</strong> : <strong>Double erreur</strong> : (1) Les endométriomes de 3 cm (&lt; 4 cm) ne nécessitent <strong>pas de chirurgie</strong> avant FIV (ESHRE 2014) → FIV directe recommandée ; (2) La kystectomie bilatérale chez une SOPK (qui a déjà des réserves élevées) n'est pas indiquée ET détruit du cortex ovarien (↓ AMH 30-40 % par ovaire). Résultat : réserve ovarienne diminuée sans bénéfice sur le taux de grossesse. Stratégie correcte : FIV directe avec protocole antagoniste adapté au SOPK.</p>
+<p><strong>💎 Q9</strong> 🔷 — Patiente de 41 ans, AMH 0,8 ng/mL, CFA 4, 2 cycles FIV avec 3 et 2 ovocytes, 1 blastocyste (non euploïde PGT-A). Stratégie ?<br />
+<strong>R</strong> : Faible répondeuse âgée (POSEIDON groupe 4). Pronostic : &lt; 10-15 % de naissance cumulatif sur 3-6 cycles. <strong>Stratégie</strong> : (1) DuoStim (2 ponctions/cycle) ; (2) Accumulation embryons vitrifiés sur 3-4 cycles ; (3) PGT-A : à discuter (peu d'embryons → risque no-transfer vs FC 25-30 % sans PGT-A → décision partagée) ; (4) FSH 300-450 UI + LH 75 UI/j, antagoniste ; (5) <strong>Counseling</strong> : aneuploïdie 60-70 % à 41 ans, &lt; 5-10 % chance/cycle, don d'ovocytes (40-60 %) = meilleure option ; (6) Limite raisonnable : 3-4 DuoStim puis réévaluation.</p>
+<p><strong>💎 Q10</strong> 🔷 — Vrai ou Faux (4 affirmations) :<br />
+1. Le taux de naissance vivante cumulatif dans le SOPK est inférieur à la population non-SOPK.<br />
+2. L'agoniste GnRH long 3 mois avant FIV est bénéfique dans l'endométriose stade III-IV.<br />
+3. Le PRP ovarien est recommandé en routine dans l'IOP.<br />
+4. Après 43 ans avec ovocytes propres, le taux de naissance par cycle FIV est &lt; 5 %.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — le taux cumulatif (frais + TEC) est <strong>comparable voire supérieur</strong> grâce au grand nombre d'embryons disponibles. La différence est le risque de SHO et la nécessité de freeze-all. (2) <strong>VRAI</strong> — Sallam, Cochrane 2006 : l'agoniste GnRH 3 mois avant FIV dans l'endométriose sévère améliore le taux de grossesse × 4 (suppression de l'inflammation pelvienne). (3) <strong>FAUX</strong> — le PRP ovarien est en recherche (Sfakianoudis 2019, cas cliniques), aucun RCT publié, marketing agressif de certaines cliniques privées sans preuve solide. (4) <strong>VRAI</strong> — registres ABM : &lt; 2-3 % après 43 ans → discussion don d'ovocytes indispensable.</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 11 — Complications et situations particulières — Mars 2026</em></p>
+</div>

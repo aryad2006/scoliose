@@ -1,0 +1,576 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-03-physiopathologie-et-etiologies">PARTIE 03 — Physiopathologie et Étiologies</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-08-classification-des-hyperthyroidies">MODULE 08 — Classification des Hyperthyroïdies</h2>
+<h3 id="81-definitions-et-terminologie">8.1 Définitions et terminologie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER08-S1-001 — Terminologie des hyperthyroïdies : thyrotoxicose vs hyperthyroïdie — distinction mécanistique]</p>
+</blockquote>
+<p><strong>Terminologie essentielle</strong> :</p>
+<ul>
+<li><strong>Thyrotoxicose</strong> : Syndrome clinico-biologique lié à un excès d'hormones thyroïdiennes dans les tissus cibles, quelle que soit la cause</li>
+<li><strong>Hyperthyroïdie vraie</strong> : Thyrotoxicose d'origine thyroïdienne (synthèse excessive ou libération excessive)</li>
+<li><strong>Thyrotoxicose exogène</strong> : Prise d'hormones thyroïdiennes en excès (factice ou iatrogène)</li>
+<li><strong>Hyperthyroïdie frustre</strong> : TSH basse (&lt; 0,4 mUI/L) avec T4L et T3L normales, sans symptôme franc</li>
+</ul>
+<hr />
+<h3 id="82-classification-mecanistique">8.2 Classification mécanistique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER08-S2-001 — Classification des hyperthyroïdies selon le mécanisme : tableau synoptique avec exemples cliniques]</p>
+</blockquote>
+<p><strong>Classification en 4 mécanismes</strong> (adapté de Bahn et al., Thyroid 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Scintigraphie</th>
+<th>Exemples</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>TRAb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stimulation TSHR</strong></td>
+<td>Fixation élevée diffuse</td>
+<td>Maladie de Basedow, hyperthyroïdie gestationnelle</td>
+<td>↓↓</td>
+<td>↑↑</td>
+<td>+ (Basedow)</td>
+</tr>
+<tr>
+<td><strong>Autonomie fonctionnelle</strong></td>
+<td>Fixation focale ou hétérogène</td>
+<td>Adénome de Plummer, GMNT</td>
+<td>↓↓</td>
+<td>↑ à ↑↑</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Destruction folliculaire</strong></td>
+<td>Fixation blanche (effondrée)</td>
+<td>Thyroïdites (De Quervain, silencieuse, post-partum, post-ICI)</td>
+<td>↓</td>
+<td>↑ (transitoire)</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Apport exogène</strong></td>
+<td>Fixation effondrée</td>
+<td>LT4 excessive, T3 factice, struma ovarii</td>
+<td>↓↓</td>
+<td>↑ (T4) ou ↓ (T3 seule)</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hyperthyroïdies centrales (rares)</strong> :<br />
+- Adénome thyréotrope (TSHome) : TSH <strong>normale ou élevée</strong> + T4L élevée<br />
+- Résistance aux hormones thyroïdiennes β (RTHβ) : TSH normale/élevée + T4L/T3L élevées</p>
+<hr />
+<h3 id="83-epidemiologie">8.3 Épidémiologie</h3>
+<p><strong>Prévalence des hyperthyroïdies</strong> (adapté de Hollowell et al., JCE 2002) :</p>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Prévalence (F)</th>
+<th>Prévalence (H)</th>
+<th>Sex-ratio F/H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maladie de Basedow</strong></td>
+<td>1-2 %</td>
+<td>0,2-0,3 %</td>
+<td>5-7:1</td>
+</tr>
+<tr>
+<td><strong>GMNT toxique</strong></td>
+<td>0,3-0,6 %</td>
+<td>0,1 %</td>
+<td>4-5:1</td>
+</tr>
+<tr>
+<td><strong>Adénome toxique</strong></td>
+<td>0,1-0,2 %</td>
+<td>Rare</td>
+<td>4:1</td>
+</tr>
+<tr>
+<td><strong>Thyroïdites</strong></td>
+<td>1-3 % (transitoire)</td>
+<td>Rare</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER08-S3-001 — Répartition étiologique des hyperthyroïdies par âge et sexe — données épidémiologiques françaises]</p>
+</blockquote>
+<hr />
+<h3 id="quiz-module-08">QUIZ MODULE 08</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la différence entre thyrotoxicose et hyperthyroïdie ?<br />
+<strong>A) Thyrotoxicose = excès d'hormones thyroïdiennes dans les tissus, quelle que soit la source (y compris exogène). Hyperthyroïdie vraie = excès de production par la thyroïde. Toute hyperthyroïdie est une thyrotoxicose, mais pas l'inverse (ex : thyrotoxicose factice = exogène).</strong></p>
+<p><strong>🥈 Q2</strong> — Comment la scintigraphie distingue-t-elle une thyroïdite destructive d'une hyperthyroïdie autonome ?<br />
+<strong>A) Thyroïdite : scintigraphie blanche (fixation effondrée &lt; 1 %) — la glande est détruite, elle ne capte plus l'iode. Autonomie : fixation élevée ou focale — la glande produit activement des hormones. Ce critère est fondamental pour la décision thérapeutique (les ATS sont inutiles dans la thyroïdite).</strong></p>
+<p><strong>💎 Q3</strong> — Dans quel tableau clinique la TSH peut-elle être normale ou élevée en présence d'une T4L élevée ?<br />
+<strong>A) (1) Adénome thyréotrope (TSHome) : sécrétion autonome de TSH par l'adénome hypophysaire → T4L élevée + TSH inadaptée (normale ou ↑). (2) RTHβ : insensibilité hypophysaire aux hormones thyroïdiennes → TSH non supprimée malgré T4L/T3L élevées. (3) Anticorps interférant dans les dosages (faux positif TSH ou faux négatif T4L).</strong></p>
+<hr />
+<h2 id="module-09-maladie-de-basedow">MODULE 09 — Maladie de Basedow</h2>
+<h3 id="91-physiopathologie-immune">9.1 Physiopathologie immune</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER09-S1-001 — Immunopathologie de la maladie de Basedow : CD4+/CD8+ thyroïdiens, TRAb stimulants, anticorps anti-TSHR, activation B]</p>
+</blockquote>
+<p><strong>Mécanisme auto-immun</strong> (adapté de Rapoport et McLachlan, Nat Rev Endocrinol 2016) :</p>
+<ol>
+<li><strong>Prédisposition génétique</strong> : HLA-DR3 (× 3-5 risque), HLA-B8, polymorphismes CTLA4, PTPN22, CD40, FOXP3</li>
+<li><strong>Facteur déclenchant</strong> : Infection (Yersinia enterocolitica — homologie moléculaire TSHR), stress, tabac (RR × 2-5 pour TAO), accouchement (dérégulation immunitaire post-partum), iode</li>
+<li><strong>Rupture de tolérance</strong> : Défaut des T-régulateurs (Treg) → activation des lymphocytes T CD4+ helper (Th2 dominant)</li>
+<li><strong>Production TRAb</strong> : Lymphocytes B thyroïdiens différenciés en plasmocytes → IgG anti-TSHR</li>
+<li><strong>Stimulation chronique</strong> : TRAb (TSAb) → TSHR constitutionnellement activé → ↑ synthèse + ↑ captation iode + ↑ vascularisation + ↑ croissance (goitre)</li>
+</ol>
+<p><strong>Types de TRAb</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Effet</th>
+<th>Conséquence clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TSAb</strong> (stimulants)</td>
+<td>Activation AMPc</td>
+<td>Hyperthyroïdie, goitre, TAO</td>
+</tr>
+<tr>
+<td><strong>TBAb</strong> (bloquants)</td>
+<td>Compétition TSH</td>
+<td>Hypothyroïdie (rare)</td>
+</tr>
+<tr>
+<td><strong>Neutres</strong></td>
+<td>Ni stimulants ni bloquants</td>
+<td>Aucun effet</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER09-S2-001 — Structure des TRAb et sites de liaison sur le domaine extracellulaire du TSHR]</p>
+</blockquote>
+<hr />
+<h3 id="92-genetique-et-facteurs-de-risque">9.2 Génétique et facteurs de risque</h3>
+<p><strong>Facteurs génétiques</strong> (adapté de Brix et al., 2001) :<br />
+- Concordance jumeaux monozygotes : <strong>35 %</strong> (rôle majeur de l'environnement)<br />
+- Concordance jumeaux dizygotes : <strong>3 %</strong><br />
+- Femmes atteintes si mère atteinte : <strong>20 %</strong></p>
+<p><strong>Facteurs environnementaux</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>RR</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabac</strong></td>
+<td>2-5 (TAO ++)</td>
+<td>↑ cytokines pro-inflammatoires, hypoxie orbitaire</td>
+</tr>
+<tr>
+<td><strong>Stress</strong></td>
+<td>2-3</td>
+<td>↑ CRH → dérégulation Th1/Th2</td>
+</tr>
+<tr>
+<td><strong>Post-partum</strong></td>
+<td>5-7</td>
+<td>Rebond immunitaire post-partum (dérégulation Treg)</td>
+</tr>
+<tr>
+<td><strong>Grossesse</strong></td>
+<td>Protecteur</td>
+<td>Tolérance immunitaire (↑ Treg) → rechute fréquente post-partum</td>
+</tr>
+<tr>
+<td><strong>Excès iode</strong></td>
+<td>Variable</td>
+<td>Jod-Basedow sur terrain auto-immun</td>
+</tr>
+<tr>
+<td><strong>Sélénium (carence)</strong></td>
+<td>↑ risque TAO</td>
+<td>Cofacteur GPx (peroxydases)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="93-histoire-naturelle-du-basedow">9.3 Histoire naturelle du Basedow</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPER09-S3-001 — Histoire naturelle de la maladie de Basedow : phases, rémission, rechute, évolution TAO]</p>
+</blockquote>
+<p><strong>Évolution sous traitement ATS</strong> :<br />
+- Rémission après 12-18 mois d'ATS : <strong>30-50 %</strong> (adapté de Vitti et al., 2012)<br />
+- Rechute à 5 ans après arrêt ATS : <strong>50-60 %</strong><br />
+- Rémission durable (≥ 5 ans) : <strong>30-40 %</strong></p>
+<p><strong>Prédicteurs de rechute</strong> (adapté de Vitti et al., EJE 1997) :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Risque rechute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAb élevés (&gt; 10 UI/L) à l'arrêt ATS</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Goitre volumieux</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Tabagisme actif</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Homme jeune</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>T4L très élevée à la présentation</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>HLA-DR3</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>TRAb négatifs à l'arrêt ATS</td>
+<td>Faible (bon pronostic)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Score EUGOGO/ETA de risque de rechute</strong> (adapté de Vos et al., Eur Thyroid J 2016) :<br />
+- Score GREAT (Graves' Recurrence After ATD) :<br />
+  - Âge &lt; 40 ans (3 pts), homme (1 pt), T4L &gt; 40 pmol/L (3 pts), TRAb &gt; 6 UI/L (3 pts), goitre volumeux (2 pts)<br />
+  - Score ≥ 6 → rechute à 18 mois probable &gt; 60 %</p>
+<hr />
+<h3 id="94-orbitopathie-basedowienne-tao-introduction">9.4 Orbitopathie basedowienne (TAO) — Introduction</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER09-S4-001 — Mécanismes de l'orbitopathie basedowienne : fibroblastes orbitaires, IGF-1R, TRAb, glycosaminoglycanes]</p>
+</blockquote>
+<p>La TAO est traitée en détail au Module 13. Introduction physiopathologique :</p>
+<ul>
+<li><strong>Mécanisme</strong> : Les fibroblastes orbitaires expriment le TSHR (et l'IGF-1R) → TRAb + TSAb → activation fibroblastes → ↑ glycosaminoglycanes (GAG) → œdème orbitaire → exophtalmie</li>
+<li><strong>Corrélation avec TSH</strong> : La TAO est souvent aggravée en hyperthyroïdie non contrôlée ou après RAI (si sans protection)</li>
+<li><strong>Rôle du tabac</strong> : Facteur de risque majeur de TAO sévère (RR × 5-8)</li>
+</ul>
+<hr />
+<h3 id="quiz-module-09">QUIZ MODULE 09</h3>
+<p><strong>🥉 Q1</strong> — Quel est le sex-ratio de la maladie de Basedow ?<br />
+A) 1:1 B) 2:1 F/H <strong>C) 5-7:1 F/H</strong> D) 10:1 F/H</p>
+<p><strong>🥈 Q2</strong> — Un patient basedowien, tabagique actif à 20 paquets-années, TRAb à 18 UI/L, goitre grade II, après 18 mois d'ATS veut arrêter le traitement. Quel est son pronostic ?<br />
+<strong>A) Risque élevé de rechute (score GREAT élevé : TRAb &gt; 6, goitre, tabac). Recommander soit la poursuite des ATS (jusqu'à 24-36 mois), soit un traitement définitif (RAI ou chirurgie). Sevrage tabagique impératif.</strong></p>
+<p><strong>🥇 Q3</strong> — Pourquoi la grossesse améliore-t-elle temporairement la maladie de Basedow alors que le post-partum provoque une rechute ?<br />
+<strong>A) Grossesse : tolérance immunitaire physiologique (↑ Treg, ↑ cytokines Th2, ↓ Th1) → ↓ TRAb, souvent amélioration du Basedow (possibilité de réduire les ATS au T3). Post-partum : rebond immunitaire (↓ Treg, ↑ Th1) → ↑ TRAb → rechute fréquente à 2-6 mois post-partum.</strong></p>
+<p><strong>💎 Q4</strong> — Quel est le mécanisme moléculaire du lien entre le TSHR orbitaire et la TAO ?<br />
+<strong>A) Le TSHR est exprimé par les fibroblastes orbitaires préadiposeux (précurseurs des adipocytes orbitaires). Les TRAb/TSAb circulants se fixent sur ce TSHR orbitaire → activation AMPc → prolifération fibroblastique → différenciation en adipocytes (↑ tissu graisseux orbitaire) + ↑ synthèse de glycosaminoglycanes hydrophiles (acide hyaluronique, chondroïtine sulfate) → rétention hydrique orbitaire → exophtalmie. L'IGF-1R exprimé sur les mêmes fibroblastes forme un complexe fonctionnel avec le TSHR amplifiant la signalisation → cible du téprotumumab (anticorps anti-IGF-1R).</strong></p>
+<hr />
+<h2 id="module-10-goitre-multinodulaire-toxique-et-adenome-de-plummer">MODULE 10 — Goitre Multinodulaire Toxique et Adénome de Plummer</h2>
+<h3 id="101-goitre-multinodulaire-toxique-gmnt">10.1 Goitre multinodulaire toxique (GMNT)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER10-S1-001 — Pathogénèse du GMNT : évolution du goitre simple vers l'autonomisation — mutations somatiques TSHR/Gαs]</p>
+</blockquote>
+<p><strong>Histoire naturelle</strong> :<br />
+- <strong>Goitre simple</strong> (stimulation chronique TSH, souvent carence iodée relative) → <strong>goitre multinodulaire</strong> (GMN) → <strong>GMN toxique</strong> (GMNT) par autonomisation progressive<br />
+- Délai : 10-20 ans en moyenne<br />
+- Prévalence GMNT : <strong>20-40 % des hyperthyroïdies</strong> en Europe continentale (zones de carence iodée modérée)</p>
+<p><strong>Mécanisme d'autonomisation</strong> (adapté de Krohn et al., Endocr Rev 2005) :<br />
+1. Hyperplasie polyclonale (stimulation TSH) → nodules hétérogènes<br />
+2. Mutations somatiques aléatoires du TSHR ou de GNAS (Gαs) dans certains clones<br />
+3. Ces clones mutés prolifèrent indépendamment de la TSH → nodules autonomes "chauds"<br />
+4. Suppression progressive de la TSH → extinction des zones saines intercalaires</p>
+<p><strong>Mutations retrouvées</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Gène</th>
+<th>Fréquence dans GMNT</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TSHR</strong> (domaine transmembranaire)</td>
+<td>20-60 % des nodules chauds</td>
+<td>Activation constitutive AMPc sans TSH</td>
+</tr>
+<tr>
+<td><strong>GNAS</strong> (codon 201, 227)</td>
+<td>8-15 % des nodules chauds</td>
+<td>↑ Gαs constitutif → ↑ AMPc</td>
+</tr>
+<tr>
+<td><strong>RAS</strong> (NRAS, KRAS)</td>
+<td>15-25 %</td>
+<td>Prolifération cellulaire</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="102-adenome-toxique-de-plummer">10.2 Adénome toxique de Plummer</h3>
+<p><strong>Définition</strong> : Nodule thyroïdien unique bénin, autonome, avec hypersécrétion hormonale TSH-indépendante</p>
+<p><strong>Épidémiologie</strong> :<br />
+- Femme 40-60 ans, souvent iodo-déficiente<br />
+- Représente 5-15 % des hyperthyroïdies<br />
+- Mutation TSHR somatique dans <strong>60-80 %</strong> des cas</p>
+<p><strong>Présentation clinique</strong> :<br />
+- Nodule palpable isolé, ferme, souvent 3-4 cm<br />
+- Hyperthyroïdie modérée (rarement sévère sauf si iode ajouté)<br />
+- TSH &lt; 0,1 mUI/L, T4L modérément élevée<br />
+- Scintigraphie : <strong>foyer hyperfixant unique</strong> avec extinction du reste du parenchyme</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER10-S2-001 — Scintigraphies comparatives : Basedow (fixation diffuse) vs adénome Plummer (foyer unique chaud) vs GMNT (hétérogène)]</p>
+</blockquote>
+<hr />
+<h3 id="103-traitement-de-lautonomie-thyroidienne">10.3 Traitement de l'autonomie thyroïdienne</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER10-S3-001 — Options thérapeutiques GMNT et adénome Plummer : ATS (préparation), RAI, chirurgie, alcoolisation]</p>
+</blockquote>
+<p><strong>Rappel : les ATS ne sont pas un traitement curatif de l'autonomie</strong> (absence de rémission à l'arrêt) — ils sont utilisés uniquement en préparation à un traitement définitif</p>
+<p><strong>Options thérapeutiques</strong> (adapté de ATA Guidelines 2016) :</p>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>GMNT</th>
+<th>Adénome Plummer</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RAI</strong> (¹³¹I)</td>
+<td>Oui</td>
+<td>Oui</td>
+<td>Non invasif, ambulatoire</td>
+<td>Efficacité partielle si goitre &gt; 80 g, aggravation TAO</td>
+</tr>
+<tr>
+<td><strong>Chirurgie</strong></td>
+<td>Oui (goitre volumineux, symptômes compressifs)</td>
+<td>Oui (si grand)</td>
+<td>Résultat immédiat, analyse anatomo-pathologique</td>
+<td>Risque NLR, parathyroïdes</td>
+</tr>
+<tr>
+<td><strong>ATS</strong></td>
+<td>Préparation seulement</td>
+<td>Préparation seulement</td>
+<td>Euthyroïdie pré-RAI/chirurgie</td>
+<td>Pas de rémission</td>
+</tr>
+<tr>
+<td><strong>Alcoolisation échoguidée</strong></td>
+<td>Non</td>
+<td>Petits adénomes</td>
+<td>Ambulatoire, peu invasif</td>
+<td>Douleurs, récidive 20 %</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-10">QUIZ MODULE 10</h3>
+<p><strong>🥉 Q1</strong> — Quelle mutation est retrouvée dans 60-80 % des adénomes toxiques de Plummer ?<br />
+<strong>A) Mutation somatique gain-de-fonction du gène TSHR (domaine transmembranaire) → activation constitutive de la production d'AMPc sans TSH</strong></p>
+<p><strong>🥈 Q2</strong> — Pourquoi les antithyroïdiens de synthèse ne constituent-ils pas un traitement curatif du GMNT ?<br />
+<strong>A) Les ATS inhibent la TPO (synthèse hormonale) mais n'éliminent pas les clones cellulaires autonomes (mutations TSHR/Gαs persistantes). À l'arrêt du traitement, la production hormonale reprend immédiatement. Les ATS sont utilisés uniquement pour préparer à un traitement définitif (RAI ou chirurgie).</strong></p>
+<p><strong>🥇 Q3</strong> — Comment la scintigraphie permet-elle de distinguer un Basedow d'un GMNT toxique ?<br />
+<strong>A) Basedow : fixation diffuse, homogène et élevée des deux lobes (toute la glande stimulée par les TRAb). GMNT : fixation hétérogène avec zones chaudes (nodules autonomes) et zones froides (parenchyme sain supprimé). Adénome Plummer : foyer unique hyperfixant avec extinction complète du reste de la glande.</strong></p>
+<p><strong>💎 Q4</strong> — Quel est le mécanisme physiopathologique de l'hyperactivation des nodules autonomes après injection de produit de contraste iodé (Jod-Basedow) ?<br />
+<strong>A) Les cellules nodulaires avec mutation TSHR/Gαs maintiennent une expression constitutive du NIS (normalement régulée à la baisse par l'excès d'iode via Wolff-Chaikoff). La surcharge iodée fournit le substrat supplémentaire → synthèse hormonale massive → thyrotoxicose aiguë post-iode. Prévention : dépistage TSH avant injection, normalisation préalable par MMI si TSH basse.</strong></p>
+<hr />
+<h2 id="module-11-thyroidites-hyperthyroidiennes">MODULE 11 — Thyroïdites Hyperthyroïdiennes</h2>
+<h3 id="111-thyroidite-subaigue-de-de-quervain">11.1 Thyroïdite subaiguë de De Quervain</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER11-S1-001 — Thyroïdite de De Quervain : phases cliniques, évolution de la TSH, T4L sur 6 mois]</p>
+</blockquote>
+<p><strong>Épidémiologie</strong> :<br />
+- Femme 30-50 ans, pic printanier/automnal<br />
+- Déclenchée par une infection virale (oreillons, adénovirus, Coxsackie, COVID-19)<br />
+- Fréquence : 2-4 % des thyropathies<br />
+- Récidive : 4 % des patients</p>
+<p><strong>Tableau clinique</strong> :<br />
+- <strong>Douleur cervicale antérieure irradiant aux oreilles/mâchoire</strong> — douleur au toucher de la thyroïde<br />
+- Fièvre (38-39°C), asthénie profonde<br />
+- Phase thyrotoxique transitoire (2-8 semaines)</p>
+<p><strong>Biologie caractéristique</strong> :<br />
+- VSR très élevée (50-100 mm/h) — élément diagnostique majeur<br />
+- CRP élevée<br />
+- TSH effondrée, T4L élevée (phase I)<br />
+- Puis phase hypothyroïdienne (libération épuisée, phase II)<br />
+- Puis normalisation (90 % des cas)<br />
+- Anti-TPO généralement négatifs (contrairement à Hashimoto)</p>
+<p><strong>Scintigraphie</strong> : fixation effondrée (&lt; 1 %) — caractéristique clé (vs Basedow)</p>
+<hr />
+<h3 id="112-thyroidite-silencieuse-et-post-partum-phase-hyperthyroidienne">11.2 Thyroïdite silencieuse et post-partum (phase hyperthyroïdienne)</h3>
+<p>(Voir Module 10 de la formation Hypothyroïdies pour la physiopathologie détaillée)</p>
+<p><strong>Phase hyperthyroïdienne spécifique</strong> :<br />
+- TSH effondrée + T4L élevée + <strong>anti-TPO positifs</strong> (contrairement à De Quervain)<br />
+- Scintigraphie blanche (fixation effondrée)<br />
+- Absence de douleur cervicale (contrairement à De Quervain)<br />
+- Pas de traitement spécifique de la phase thyrotoxique (bêta-bloquants si symptômes)<br />
+- <strong>Pas d'ATS</strong> (destruction, pas de synthèse excessive)</p>
+<hr />
+<h3 id="113-thyroidites-medicamenteuses-hyperthyroidiennes">11.3 Thyroïdites médicamenteuses (hyperthyroïdiennes)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER11-S3-001 — Thyroïdites médicamenteuses : amiodarone type 2, ICI, lithium, interféron — tableau comparatif]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Type</th>
+<th>Mécanisme</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amiodarone</strong> type 2</td>
+<td>Thyroïdite destructive</td>
+<td>Toxicité directe iode sur thyréocytes</td>
+<td>Corticoïdes (prednisone 40 mg/j)</td>
+</tr>
+<tr>
+<td><strong>ICI</strong> (anti-PD1, CTLA4)</td>
+<td>Thyroïdite auto-immune</td>
+<td>Activation CD8+ → destruction thyroïdienne</td>
+<td>Bêta-bloquants, surveillance</td>
+</tr>
+<tr>
+<td><strong>Interféron-α</strong></td>
+<td>Thyroïdite silencieuse ou Basedow</td>
+<td>Activation immunitaire</td>
+<td>ATS (si Basedow) ou bêta-bloquants</td>
+</tr>
+<tr>
+<td><strong>Lithium</strong></td>
+<td>Variable</td>
+<td>Inhibe sécrétion thyroïdienne → rebond à l'arrêt</td>
+<td>Traitement de la cause</td>
+</tr>
+<tr>
+<td><strong>Sunitinib/sorafénib</strong></td>
+<td>Thyroïdite</td>
+<td>Toxicité directe vasculaire</td>
+<td>Surveillance, LT4 si hypothyroïdie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Thyroïdite de De Quervain post-COVID-19</strong> (adapté de Brancatella et al., J Clin Endocrinol Metab 2020) :<br />
+- Décrite dans des séries de cas<br />
+- Douleurs cervicales, fièvre, thyrotoxicose<br />
+- VSR élevée, scintigraphie blanche<br />
+- Traitement : AINS, corticoïdes si résistance</p>
+<hr />
+<h3 id="quiz-module-11">QUIZ MODULE 11</h3>
+<p><strong>🥉 Q1</strong> — Quelle caractéristique biologique est pathognomonique de la thyroïdite de De Quervain ?<br />
+A) TRAb positifs B) Anti-TPO élevés <strong>C) VSR très élevée (50-100 mm/h) + thyroïde douloureuse</strong> D) T3L très haute</p>
+<p><strong>🥈 Q2</strong> — Quel traitement est contre-indiqué dans la phase thyrotoxique d'une thyroïdite (de De Quervain ou silencieuse) ?<br />
+<strong>A) Les antithyroïdiens de synthèse — la thyrotoxicose est due à une destruction folliculaire (libération passive d'hormones stockées), non à une hypersynthèse. Les ATS n'ont pas de substrat à inhiber et sont donc inutiles. Traitement symptomatique : bêta-bloquants.</strong></p>
+<p><strong>🥇 Q3</strong> — Comment distinguer biologiquement une thyroïdite silencieuse post-partum d'un Basedow du post-partum ?<br />
+<strong>A) Thyroïdite post-partum : anti-TPO + élevés, scintigraphie blanche (fixation effondrée), TRAb négatifs, douleur absente. Basedow post-partum : TRAb + (TSAb), scintigraphie avec fixation élevée diffuse, possiblement TRAb déjà connus avant grossesse. La scintigraphie est contre-indiquée pendant l'allaitement (alternative : test à la TSH ou doppler-thyroïde).</strong></p>
+<p><strong>💎 Q4</strong> — Quel mécanisme explique le déclenchement d'une thyroïdite de De Quervain après infection virale ?<br />
+<strong>A) Mécanisme immuno-viral : (1) Mimétisme moléculaire — les antigènes viraux (ex. protéine de capside) partagent des épitopes avec les antigènes thyrocytaires → réponse CD8+ cytotoxique croisée ; (2) Activation du complément et des macrophages dans la thyroïde (granulomes géants) ; (3) Libération de cytokines pro-inflammatoires (IL-6, TNF-α) → destruction directe des thyréocytes. L'absence d'auto-anticorps (anti-TPO, TRAb) distingue ce mécanisme viral du Basedow ou du Hashimoto.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 03 — Physiopathologie et Étiologies — Mars 2026</em></p>
+</div>

@@ -1,0 +1,499 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-10-hypothyroidies-secondaires-et-tertiaires">PARTIE 10 — Hypothyroïdies Secondaires et Tertiaires</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-33-hypothyroidies-centrales">MODULE 33 — Hypothyroïdies Centrales</h2>
+<h3 id="331-definition-et-classification">33.1 Définition et classification</h3>
+<p><strong>Hypothyroïdie centrale</strong> = insuffisance thyroïdienne par défaut de stimulation hypophysaire (TSH) ou hypothalamique (TRH), en présence d'une glande thyroïde potentiellement saine.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO33-S1-001 — Classification des hypothyroïdies centrales : causes hypophysaires vs hypothalamiques, tableau différentiel]</p>
+</blockquote>
+<p><strong>Classification</strong> (adapté de Persani, Eur J Endocrinol 2012) :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Niveau</th>
+<th>TSH</th>
+<th>Autres déficits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hypothyroïdie secondaire</td>
+<td>Hypophysaire</td>
+<td>Basse ou inadaptée</td>
+<td>Souvent multiples (ACTH, LH/FSH, GH)</td>
+</tr>
+<tr>
+<td>Hypothyroïdie tertiaire</td>
+<td>Hypothalamique</td>
+<td>Basse ou inadaptée (TSH inactive)</td>
+<td>Associés aux lésions hypothalamiques</td>
+</tr>
+<tr>
+<td>Hypothyroïdie quaternaire</td>
+<td>Périphérique (résistance)</td>
+<td>Normale ou haute</td>
+<td>Pas de déficit central</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="332-etiologies-des-hypothyroidies-centrales">33.2 Étiologies des hypothyroïdies centrales</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO33-S2-001 — Principales causes d'hypothyroïdie centrale : tableau par localisation anatomique]</p>
+</blockquote>
+<p><strong>Causes hypophysaires</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Étiologies spécifiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tumorales</strong></td>
+<td>Adénome hypophysaire non fonctionnel (compressif), craniopharyngiome, méningiome, métastase</td>
+</tr>
+<tr>
+<td><strong>Iatrogènes</strong></td>
+<td>Chirurgie hypophysaire (transsphénoïdale), radiothérapie cérébrale</td>
+</tr>
+<tr>
+<td><strong>Inflammatoires</strong></td>
+<td>Hypophysite auto-immune (IgG4, post-partum, ICI), sarcoïdose, histiocytose</td>
+</tr>
+<tr>
+<td><strong>Vasculaires</strong></td>
+<td>Syndrome de Sheehan (nécrose post-partum), apoplexie hypophysaire</td>
+</tr>
+<tr>
+<td><strong>Génétiques</strong></td>
+<td>Mutations POU1F1, PROP1, LHX4, HESX1 (panhypopituitarisme congénital)</td>
+</tr>
+<tr>
+<td><strong>Infiltratives</strong></td>
+<td>Hémochromatose, lymphome</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Causes hypothalamiques</strong> :<br />
+- Craniopharyngiome<br />
+- Gliome, germinome<br />
+- Radiothérapie hypothalamique<br />
+- Traumatisme crânio-encéphalique grave<br />
+- Syndrome de la selle turcique vide (partielle ou totale)<br />
+- Sarcoïdose, histiocytose X</p>
+<hr />
+<h3 id="333-presentation-clinique">33.3 Présentation clinique</h3>
+<p><strong>Spécificités des hypothyroïdies centrales</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Hypothyroïdie centrale</th>
+<th>Hypothyroïdie primaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td>Basse, normale ou légèrement élevée</td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>T4L</td>
+<td>Basse</td>
+<td>Basse</td>
+</tr>
+<tr>
+<td>Signes hypothyroïdiens</td>
+<td>Souvent atténués</td>
+<td>Francs</td>
+</tr>
+<tr>
+<td>Goitre</td>
+<td>Absent (pas de stimulation TSH)</td>
+<td>Possible (Hashimoto)</td>
+</tr>
+<tr>
+<td>Autres déficits</td>
+<td>Fréquents (GH, ACTH, gonadotropes)</td>
+<td>Absents</td>
+</tr>
+<tr>
+<td>Anti-TPO</td>
+<td>Négatifs</td>
+<td>Souvent positifs</td>
+</tr>
+<tr>
+<td>Céphalées, troubles visuels</td>
+<td>Possibles (compression chiasma)</td>
+<td>Absents</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Une TSH "normale" avec T4L basse est le profil caractéristique de l'hypothyroïdie centrale. La relation TSH-T4L est rompue. Ne jamais conclure à une euthyroïdie sur la seule normalité de la TSH sans doser la T4L.</div>
+
+<hr />
+<h3 id="334-diagnostic">33.4 Diagnostic</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO33-S4-001 — Algorithme diagnostic de l'hypothyroïdie centrale : du profil biologique à l'IRM hypophysaire]</p>
+</blockquote>
+<p><strong>Bilan de première intention</strong> :<br />
+1. TSH + T4L (± T3L) : profil central (TSH inadaptée + T4L basse)<br />
+2. Autres axes hypophysaires : cortisol 8h, IGF-1, LH/FSH/testostérone ou estradiol, prolactine<br />
+3. <strong>IRM hypophysaire</strong> en coupes coronales et sagittales (gadolinium) — examen clé<br />
+4. Bilan visuel : champ visuel automatisé (si suspicion de compression chiasmatique)<br />
+5. Sérologie IgG4 (hypophysite IgG4)</p>
+<p><strong>Test à la TRH</strong> (peu disponible en France) :<br />
+- Injection IV 200 µg TRH → mesure TSH à 20, 60, 90 min<br />
+- Hypothyroïdie secondaire : réponse abolie (pas de pic TSH)<br />
+- Hypothyroïdie tertiaire : pic TSH tardif (60-90 min vs 20 min normal)</p>
+<hr />
+<h3 id="quiz-module-33">QUIZ MODULE 33</h3>
+<p><strong>🥉 Q1</strong> — Quel est le profil biologique caractéristique de l'hypothyroïdie centrale ?<br />
+A) TSH haute + T4L basse B) TSH haute + T4L normale <strong>C) TSH basse ou normale + T4L basse</strong> D) TSH basse + T4L haute</p>
+<p><strong>🥈 Q2</strong> — Une femme de 30 ans présente une fatigue chronique, TSH à 1,8 mUI/L, T4L à 7,5 pmol/L (basse), aménorrhée secondaire, IGF-1 bas. Quel diagnostic suspecter ?<br />
+<strong>A) Panhypopituitarisme — profil typique d'hypothyroïdie centrale avec déficits associés (gonadotrope, somatotrope) — IRM hypophysaire urgente</strong></p>
+<p><strong>🥇 Q3</strong> — Syndrome de Sheehan : quel mécanisme et quels déficits ?<br />
+<strong>A) Nécrose ischémique de la glande hypophysaire lors de l'accouchement (hémorragie + choc hypotensif) → panhypopituitarisme : HT centrale, insuffisance surrénalienne, aménorrhée, impossibilité d'allaitement (prolactine nulle), diabète insipide (rare)</strong></p>
+<p><strong>💎 Q4</strong> — Pourquoi l'IRM hypophysaire doit-elle être réalisée avec injection de gadolinium dans le bilan d'une hypothyroïdie centrale ?<br />
+<strong>A) Le gadolinium permet de différencier l'adénome (prise de contraste tardive en périphérie) de l'hypophysite (prise de contraste homogène et précoce), du craniopharyngiome (calcifications + prise périphérique) et d'apprécier le rapport avec le chiasma optique — éléments essentiels pour la décision thérapeutique (chirurgie vs corticoïdes vs surveillance)</strong></p>
+<hr />
+<h2 id="module-34-insuffisance-thyreotrope">MODULE 34 — Insuffisance Thyréotrope</h2>
+<h3 id="341-insuffisance-thyreotrope-specificites">34.1 Insuffisance thyréotrope : spécificités</h3>
+<p>L'<strong>insuffisance thyréotrope</strong> (IT) est la forme isolée ou prédominante de déficit en TSH dans le cadre d'un panhypopituitarisme ou d'une atteinte sélective thyréotrope.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO34-S1-001 — Algorithme de remplacement hormonal global dans le panhypopituitarisme : ordre et priorités]</p>
+</blockquote>
+<p><strong>Particularités de l'IT</strong> :<br />
+- TSH inadaptée à la carence en T4L → <strong>TSH ne peut pas être utilisée comme marqueur de suivi</strong><br />
+- Cible de suivi = <strong>T4L</strong> (tiers supérieur de la norme)<br />
+- Remplacement thyroïdien <strong>toujours débuté après</strong> le remplacement cortisonique (risque de crise addisonienne si L4 débuté en premier)</p>
+<hr />
+<h3 id="342-ordre-de-remplacement-dans-le-panhypopituitarisme">34.2 Ordre de remplacement dans le panhypopituitarisme</h3>
+<p><strong>Règle cardinale</strong> (adapté de Fleseriu et al., Lancet Diabetes Endocrinol 2016) :</p>
+<pre><code>1. Cortisol → Hydrocortisone (priorité absolue — insuffisance surrénalienne = risque vital)
+2. Hormones thyroïdiennes → LT4
+3. Hormones gonadiques → testostérone ou estrogènes/progestatifs
+4. GH → Somatropine (si indication : adulte avec déficit sévère symptomatique)
+5. ADH si diabète insipide → Desmopressine
+</code></pre>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Initier la LT4 avant de corriger le déficit cortisolique peut précipiter une crise d'insuffisance surrénalienne aiguë. En cas de doute, toujours substituer les glucocorticoïdes en premier.</div>
+
+<hr />
+<h3 id="343-surveillance-de-lit-traitee">34.3 Surveillance de l'IT traitée</h3>
+<p><strong>Paramètre cible</strong> : T4L dans le <strong>tiers supérieur de la normale</strong> pour l'âge</p>
+<p><strong>Fréquence</strong> : TSH + T4L (+ T3L si combinaison) tous les 6-12 mois</p>
+<p><strong>Signes de surdosage</strong> : T4L &gt; limite supérieure normale, symptômes hyperthyroïdiens (tachycardie, insomnie, tremblements)</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Chez les patients avec panhypopituitarisme, la prise de la LT4 et de l'hydrocortisone doit être coordonnée. Les doses d'hydrocortisone doivent être doublées ou triplées en cas de maladie intercurrente, chirurgie ou stress important (règle des jours de maladie).</p>
+<hr />
+<h3 id="344-etiologies-genetiques-de-linsuffisance-thyreotrope-congenitale">34.4 Étiologies génétiques de l'insuffisance thyréotrope congénitale</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO34-S4-001 — Gènes impliqués dans l'insuffisance thyréotrope congénitale : POU1F1, PROP1, TRHR, TSHB]</p>
+</blockquote>
+<p><strong>Mutations rares</strong> (adapté de Fliers et al., Nat Rev Endocrinol 2014) :</p>
+<table>
+<thead>
+<tr>
+<th>Gène</th>
+<th>Protéine</th>
+<th>Phénotype</th>
+<th>Transmission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TSHB</strong></td>
+<td>Sous-unité β de la TSH</td>
+<td>IT isolée (TSH inactive sécrétée)</td>
+<td>AR</td>
+</tr>
+<tr>
+<td><strong>TRHR</strong></td>
+<td>Récepteur TRH</td>
+<td>IT isolée</td>
+<td>AR</td>
+</tr>
+<tr>
+<td><strong>POU1F1 (Pit-1)</strong></td>
+<td>Facteur transcription hypophysaire</td>
+<td>IT + déficit GH + Prolactine</td>
+<td>AR/AD</td>
+</tr>
+<tr>
+<td><strong>PROP1</strong></td>
+<td>Facteur transcription hypophysaire</td>
+<td>Panhypopituitarisme (TSH + GH + LH/FSH + ACTH tardif)</td>
+<td>AR</td>
+</tr>
+<tr>
+<td><strong>HESX1</strong></td>
+<td>Facteur transcription</td>
+<td>Panhypopituitarisme + septo-optique</td>
+<td>AR/AD</td>
+</tr>
+<tr>
+<td><strong>LHX4</strong></td>
+<td>Facteur transcription</td>
+<td>Panhypopituitarisme + malformation fosse post</td>
+<td>AD</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-34">QUIZ MODULE 34</h3>
+<p><strong>🥉 Q1</strong> — Quel paramètre biologique est utilisé pour surveiller l'efficacité du traitement dans l'insuffisance thyréotrope ?<br />
+A) TSH <strong>B) T4L (tiers supérieur de la normale)</strong> C) T3L D) Anti-TPO</p>
+<p><strong>🥈 Q2</strong> — Un patient panhypopituiaire nouvellement diagnostiqué. Dans quel ordre initier les remplacements hormonaux ?<br />
+<strong>A) 1. Hydrocortisone (priorité absolue) → 2. LT4 → 3. Testostérone ou estrogènes → 4. GH si indiquée — ne jamais commencer par LT4 sans substitution cortisonique préalable</strong></p>
+<p><strong>🥇 Q3</strong> — Quel phénotype clinique est associé à une mutation de PROP1 ?<br />
+<strong>A) Panhypopituitarisme progressif : déficits en GH, TSH, LH/FSH apparus tôt, déficit en ACTH souvent tardif (peut se démasquer à l'âge adulte) — IRM : hypophyse normale ou augmentée puis atrophie progressive</strong></p>
+<p><strong>💎 Q4</strong> — Un nouveau-né a un buvard de dépistage néonatal normal (TSH 12 mUI/L) mais développe à M3 une hypothyroïdie avec T4L basse. Quel mécanisme génétique peut expliquer ce tableau ?<br />
+<strong>A) Mutation du gène TSHB (sous-unité β de la TSH) → TSH sécrétée en quantité normale ou élevée mais biologiquement inactive → TSH immunoréactive normale au dépistage mais action TSHR nulle → T4L effondrée non détectée par le programme de dépistage sur TSH</strong></p>
+<hr />
+<h2 id="module-35-resistance-aux-hormones-thyroidiennes-rth">MODULE 35 — Résistance aux Hormones Thyroïdiennes (RTH)</h2>
+<h3 id="351-definition-et-classification">35.1 Définition et classification</h3>
+<p>La <strong>résistance aux hormones thyroïdiennes (RTH)</strong> est un syndrome caractérisé par l'insensibilité des organes cibles aux effets des hormones thyroïdiennes, malgré des taux élevés de T4L et T3L.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO35-S1-001 — Classification des résistances aux hormones thyroïdiennes : RTHβ, RTHα, RTH périphérique — tableau comparatif]</p>
+</blockquote>
+<p><strong>Classification</strong> (adapté de Refetoff et al., Endocr Rev 2014) :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Gène</th>
+<th>Récepteur</th>
+<th>Prévalence</th>
+<th>TSH</th>
+<th>T4L/T3L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RTHβ</strong></td>
+<td>THRB</td>
+<td>TRβ1 et TRβ2</td>
+<td>1/50 000</td>
+<td>Normale ou élevée</td>
+<td>Élevées</td>
+</tr>
+<tr>
+<td><strong>RTHα</strong></td>
+<td>THRA</td>
+<td>TRα1</td>
+<td>Rare (&lt; 100 cas)</td>
+<td>Normale</td>
+<td>T4L élevée, T3L basse</td>
+</tr>
+<tr>
+<td>RTH périphérique</td>
+<td>MCT8 (SLCA16A2)</td>
+<td>Transport intracellulaire</td>
+<td>Rare (lié X)</td>
+<td>Variable</td>
+<td>T4L élevée, T3L très haute</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="352-rth-la-forme-la-plus-frequente">35.2 RTHβ : la forme la plus fréquente</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO35-S2-001 — Mécanisme moléculaire de la RTHβ : mutation THRB → dominant négatif → insensibilité thyroïdienne hypophysaire et tissulaire]</p>
+</blockquote>
+<p><strong>Mécanisme moléculaire</strong> :<br />
+- Mutation hétérozygote du gène <strong>THRB</strong> (90 % dans le domaine de liaison du ligand)<br />
+- Effet dominant négatif : le récepteur mutant inhibe le récepteur sauvage<br />
+- Résistance variable selon les tissus (hypophyse &gt; périphérie dans la forme classique)</p>
+<p><strong>Profil biologique caractéristique</strong> :<br />
+- <strong>T4L élevée</strong> + <strong>T3L élevée</strong> + <strong>TSH normale ou modérément élevée</strong> (inappropriée à la T4)<br />
+- Anti-TPO négatifs<br />
+- Réponse normale de la TSH à la TRH (contrairement à un adénome hypophysaire sécrétant de TSH)</p>
+<p><strong>Tableau clinique de RTHβ</strong> :<br />
+- <strong>Hyperactivité</strong> : tachycardie, intolérance à la chaleur (tissu cardiaque sensible via TRα)<br />
+- <strong>Hypoactivité</strong> : goitre (thyroïde compense), retard des acquisitions chez l'enfant (cerveau via TRβ2)<br />
+- Mélange paradoxal d'hypo ET d'hyperthyroïdie selon le tissu</p>
+<hr />
+<h3 id="353-rth-forme-rare-mais-instructive">35.3 RTHα : forme rare mais instructive</h3>
+<p><strong>Mécanisme</strong> : Mutation du gène <strong>THRA</strong> → insensibilité dans les tissus à prédominance TRα (cœur, tissu osseux, intestin, cerveau)</p>
+<p><strong>Profil biologique</strong> :<br />
+- T4L élevée (compensation axe HPT fonctionnel)<br />
+- <strong>T3L BASSE</strong> (ratio T3/T4 inversé — caractéristique)<br />
+- TSH normale ou légèrement basse<br />
+- TSH → T4 → T3 → mais T3 ne peut pas agir sur TRα → compensation par production ++</p>
+<p><strong>Phénotype clinique</strong> :<br />
+- Bradycardie (TRα cardiaque)<br />
+- Constipation, macrocéphalie<br />
+- Retard mental modéré<br />
+- Dysmorphie légère<br />
+- Anémie macrocytaire</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Dans la RTHα, la T4L est élevée mais la TSH est normale : le médecin non averti peut évoquer une hyperthyroïdie ou une macro-T4 alors qu'il s'agit d'une résistance aux hormones thyroïdiennes.</div>
+
+<hr />
+<h3 id="354-rth-par-mutation-de-mct8-syndrome-dallan-herndon-dudley">35.4 RTH par mutation de MCT8 (Syndrome d'Allan-Herndon-Dudley)</h3>
+<p><strong>Gène MCT8 (SLC16A2)</strong> : transporteur de T3 au niveau de la barrière hémato-encéphalique</p>
+<p><strong>Transmission</strong> : <strong>liée à l'X</strong> → affecte uniquement les garçons (femmes conductrices)</p>
+<p><strong>Phénotype sévère</strong> :<br />
+- Retard mental profond<br />
+- Hypotonie ± spasticité, quadriplégie<br />
+- Absence de langage<br />
+- Crises d'épilepsie</p>
+<p><strong>Biologie paradoxale</strong> :<br />
+- T3L très élevée (accumulation périphérique car ne peut pas entrer dans le cerveau)<br />
+- T4L normale ou basse (surconversion T4→T3 en périphérie)<br />
+- TSH normale</p>
+<p><strong>Traitement en cours d'évaluation</strong> : Dérivé de la T3 TRIAC (acide triiodothyroacétique) — pénètre le SNC sans nécessiter MCT8 — résultats préliminaires encourageants (adapté de Groeneweg et al., Lancet Diabetes Endocrinol 2019)</p>
+<hr />
+<h3 id="355-diagnostic-differentiel-rth-vs-adenome-thyreotrope">35.5 Diagnostic différentiel RTHβ vs adénome thyréotrope</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO35-S5-001 — Différencier RTHβ d'un adénome à TSH : tableau comparatif biologique et imagerie]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>RTHβ</th>
+<th>Adénome thyréotrope (TSHoma)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td>Normale ou légèrement élevée</td>
+<td>Souvent élevée (&gt; 5-10 mUI/L)</td>
+</tr>
+<tr>
+<td>T4L, T3L</td>
+<td>Élevées</td>
+<td>Très élevées</td>
+</tr>
+<tr>
+<td>Sous-unité α de la glycoprotéines (α-GSU)</td>
+<td>Normale</td>
+<td>Élevée (rapport α-GSU/TSH &gt; 1)</td>
+</tr>
+<tr>
+<td>IRM hypophysaire</td>
+<td>Normale</td>
+<td>Adénome visible (micro ou macro)</td>
+</tr>
+<tr>
+<td>Scintigraphie octréotide</td>
+<td>Normale</td>
+<td>Fixation adénomateuse</td>
+</tr>
+<tr>
+<td>Réponse TSH à la TRH</td>
+<td>Positive (normale)</td>
+<td>Souvent abolie</td>
+</tr>
+<tr>
+<td>ATCD familiaux</td>
+<td>Souvent positifs (AD)</td>
+<td>Non</td>
+</tr>
+<tr>
+<td>Test à la T3 (freinage)</td>
+<td>TSH freinée (réponse normale)</td>
+<td>TSH non freinée</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-35">QUIZ MODULE 35</h3>
+<p><strong>🥉 Q1</strong> — Quel gène est muté dans la forme la plus fréquente de résistance aux hormones thyroïdiennes ?<br />
+A) THRA <strong>B) THRB</strong> C) MCT8 D) TRHR</p>
+<p><strong>🥈 Q2</strong> — Une patiente de 28 ans a T4L à 38 pmol/L (haute), T3L à 8 pmol/L (haute), TSH à 3,2 mUI/L, anti-TPO négatifs, pas d'adénome à l'IRM. Quel est le diagnostic probable ?<br />
+<strong>A) RTHβ — profil biologique avec T4L et T3L élevées et TSH inadaptée (normale alors qu'elle devrait être effondrée) — séquençage THRB confirmera</strong></p>
+<p><strong>🥇 Q3</strong> — Comment différencier une RTHβ d'un adénome hypophysaire sécrétant de la TSH ?<br />
+<strong>A) α-GSU élevée (rapport α-GSU/TSH &gt; 1) et IRM hypophysaire anormale = adénome. Test à la TRH : abolition de la réponse = adénome. ATCD familiaux + IRM normale + réponse normale à la TRH + freinage à la T3 = RTHβ</strong></p>
+<p><strong>💎 Q4</strong> — Quel mécanisme explique que dans la RTHβ, certains patients aient simultanément des signes d'hypothyroïdie ET d'hyperthyroïdie ?<br />
+<strong>A) Distribution tissulaire différente des récepteurs TRα et TRβ : TRβ2 (hypophyse, foie, rein, cerveau) est résistant → l'hypophyse sécrétion TSH inadaptée et le foie a une hypercholestérolémie. TRα (cœur, os, muscle) est normal → tachycardie et tremblements par excès de T3 libre sur les récepteurs TRα intacts. Ce phénotype mixte est pathognomonique de RTHβ</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 10 — Hypothyroïdies Secondaires et Tertiaires — Mars 2026</em></p>
+</div>

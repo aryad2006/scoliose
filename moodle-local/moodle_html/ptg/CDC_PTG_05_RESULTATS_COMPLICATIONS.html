@@ -1,0 +1,582 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-5-resultats-et-complications-modules-20-23">Partie 5 — Résultats et Complications (Modules 20-23)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : V — RÉSULTATS, COMPLICATIONS ET GESTION<br />
+<strong>Modules</strong> : 20 à 23<br />
+<strong>Durée estimée</strong> : ~14 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-20-resultats-de-la-ptg">MODULE 20 : RÉSULTATS DE LA PTG</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Intermédiaire | <strong>Prérequis</strong> : Modules 7, 12, 16</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les résultats cliniques attendus après PTG (douleur, mobilité, fonction, satisfaction)</li>
+<li><strong>Interpréter</strong> les données des registres et des études de survie</li>
+<li><strong>Identifier</strong> les facteurs prédictifs de bon et de mauvais résultat</li>
+<li><strong>Évaluer</strong> la qualité de vie post-PTG à court, moyen et long terme</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="201-resultats-fonctionnels-ce-quon-peut-promettre-au-patient">20.1 Résultats fonctionnels — Ce qu'on peut promettre au patient</h3>
+<ul>
+<li>Douleur</li>
+<li>85-90% des patients rapportent un soulagement significatif ou complet de la douleur <em>(Wylde et al., 2007, Pain)</em></li>
+<li>10-15% gardent une douleur résiduelle (modérée) → la PTG « indolore » est l'exception, pas la règle</li>
+<li>Douleur antérieure résiduelle : 5-15% (resurfaçage ou non)</li>
+<li>Chronologie : amélioration progressive sur 6-12 mois, résultat optimal à 1-2 ans</li>
+<li>Mobilité</li>
+<li>Flexion moyenne post-opératoire : 110-125° (selon les séries et le design)</li>
+<li>Facteur prédictif le plus puissant de la flexion post-opératoire : la flexion pré-opératoire</li>
+<li>Flexion &lt; 90° pré-opératoire → probable flexion &lt; 110° post-opératoire</li>
+<li>Extension : récupération d'un flexum modéré (&lt; 15°) dans la majorité des cas</li>
+<li>Flexum &gt; 20° pré-opératoire → risque de flexum résiduel</li>
+<li>Fonction</li>
+<li>Périmètre de marche : amélioration de 300% en moyenne (de 500 m → 2 km)</li>
+<li>Escaliers : 80-90% peuvent monter et descendre sans aide</li>
+<li>Activités quotidiennes : nette amélioration (score WOMAC amélioré de 50-70%)</li>
+<li>Retour au travail : 60-90% selon le type de travail (sédentaire &gt; manuel)</li>
+<li>Retour au sport : 75-85% retour à un sport léger à modéré</li>
+<li>Satisfaction</li>
+<li>80-85% des patients sont satisfaits ou très satisfaits <em>(Bourne et al., 2010, Clin Orthop)</em></li>
+<li>15-20% d'insatisfaits <em>(Bourne et al., 2010)</em> → c'est le « talon d'Achille » de la PTG par rapport à la PTH (95% de satisfaction)</li>
+<li>Causes d'insatisfaction : douleur résiduelle inexpliquée, raideur, attentes irréalistes, facteurs psychologiques (catastrophisme, anxiété, dépression)<blockquote>
+<p>[MEDIA: 📊 MPTG20-S01-001 — Infographie des résultats attendus après PTG : douleur, mobilité, fonction, satisfaction — avec intervalles de confiance et facteurs modifiants (Utilisez pour la consultation pré-opératoire)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="202-survie-prothetique-donnees-des-registres">20.2 Survie prothétique — Données des registres</h3>
+<ul>
+<li>Survie globale</li>
+<li>96-97% à 10 ans (registres AOANJRR, NJR, SKAR) <em>(Evans et al., 2019, Lancet)</em></li>
+<li>90-93% à 20 ans</li>
+<li>83-87% à 25 ans (données plus limitées)</li>
+<li>Amélioration continue : les cohortes (2010-2020) ont de meilleurs résultats que les cohortes (1990-2000)</li>
+<li>Facteurs de meilleure survie (registres)</li>
+<li>Fixation cimentée &gt; non cimentée (sauf fixation tibiale non cimentée de certains systèmes)</li>
+<li>PE XLPE &gt; PE conventionnel (réduction de l'usure et de l'ostéolyse)</li>
+<li>Âge &gt; 65 ans &gt; âge &lt; 55 ans (les jeunes patients ont un taux de reprise plus élevé — activité !)</li>
+<li>IMC &lt; 30 &gt; IMC &gt; 40 (obésité → plus de complications mécaniques et infectieuses)</li>
+<li>Arthrose &gt; PR (la PR a un taux de reprise légèrement plus élevé)</li>
+<li>Chirurgien à haut volume (&gt; 50 PTG/an) &gt; chirurgien à faible volume (&lt; 20 PTG/an)</li>
+<li>Causes de reprise dans l'ordre de fréquence</li>
+<li>Infection périprothétique (20-25% des reprises) <em>(Sharkey et al., 2014, Clin Orthop)</em></li>
+<li>Instabilité (15-20%)</li>
+<li>Descellement aseptique (15-18%)</li>
+<li>Douleur inexpliquée (8-12%)</li>
+<li>Raideur (5-8%)</li>
+<li>Usure/ostéolyse (5-7%, en diminution avec le XLPE)</li>
+<li>Fracture périprothétique (3-5%)</li>
+<li>Malpositionnement (3-5%)<blockquote>
+<p>[MEDIA: 📊 MPTG20-S02-001 — Courbe de survie de Kaplan-Meier des PTG à 25 ans (données AOANJRR) — globale et par sous-groupes (âge, fixation, PE) (Identifiez les facteurs de meilleure survie)]<br />
+[MEDIA: 📊 MPTG20-S02-002 — Pie chart des causes de reprise de PTG : proportions en 2024 vs 2005 (Comment les causes ont-elles évolué avec les innovations ?)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="203-facteurs-predictifs-du-resultat">20.3 Facteurs prédictifs du résultat</h3>
+<ul>
+<li>Facteurs pré-opératoires favorables</li>
+<li>Douleur pré-opératoire sévère (paradoxalement → plus de marge d'amélioration)</li>
+<li>Bonne mobilité pré-opératoire (flexion &gt; 110°)</li>
+<li>Attentes réalistes</li>
+<li>Absence de comorbidités psychologiques (pas de catastrophisme, pas de dépression sévère)</li>
+<li>IMC &lt; 35</li>
+<li>Pas d'opération antérieure sur le genou</li>
+<li>Facteurs pré-opératoires défavorables</li>
+<li>Douleur pré-opératoire modérée (peu de marge d'amélioration)</li>
+<li>Flexum &gt; 15° ou flexion &lt; 90°</li>
+<li>Syndrome douloureux chronique préexistant</li>
+<li>Catastrophisme élevé (questionnaire PCS &gt; 30)</li>
+<li>Dépression / anxiété non traitée</li>
+<li>Opérations multiples antérieures</li>
+<li>Fibromyalgie</li>
+<li>Litige médico-légal en cours</li>
+<li>Facteurs per et post-opératoires</li>
+<li>Positionnement correct de l'implant (outliers → pire résultat)</li>
+<li>Balance ligamentaire adéquate</li>
+<li>Absence de complications (infection, TVP, raideur)</li>
+<li>Rééducation active et assidue</li>
+<li>Soutien social<blockquote>
+<p>[MEDIA: 📊 MPTG20-S03-001 — Modèle prédictif du résultat post-PTG : score de risque intégrant les facteurs favorables et défavorables — application à un cas clinique (Calculez le score prédictif pour votre patient)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="204-le-genou-oublie-le-forgotten-joint-score">20.4 Le genou « oublié » — Le Forgotten Joint Score</h3>
+<ul>
+<li>Objectif ultime de la PTG : que le patient « oublie » son genou prothétique</li>
+<li>FJS-12 : seul score qui mesure cette notion (plafond plus élevé que KSS ou WOMAC)</li>
+<li>Score FJS &gt; 70 : excellent résultat (le patient ne pense pratiquement jamais à son genou)</li>
+<li>Score FJS &lt; 30 : mauvais résultat (conscience permanente de la prothèse)</li>
+<li>Facteurs de FJS élevé : alignement cinématique, médial pivot, bonne balance ligamentaire, patient non anxieux</li>
+<li>Facteurs de FJS bas : malpositionnement, raideur, crépitations, instabilité résiduelle, facteurs psychologiques</li>
+</ul>
+<hr />
+<h1 id="module-21-complications-precoces">MODULE 21 : COMPLICATIONS PRÉCOCES</h1>
+<p><strong>Durée</strong> : ~3h30 | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Module 16</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> et <strong>gérer</strong> les complications post-opératoires précoces (&lt; 3 mois)</li>
+<li><strong>Prévenir</strong> les complications thromboemboliques et infectieuses</li>
+<li><strong>Traiter</strong> la raideur post-opératoire précoce</li>
+<li><strong>Reconnaître</strong> les lésions nerveuses et vasculaires</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="211-maladie-thromboembolique-veineuse-mtev">21.1 Maladie thromboembolique veineuse (MTEV)</h3>
+<ul>
+<li>Incidence sans prophylaxie : TVP 40-80%, EP 1-5% <em>(Geerts et al., 2008, Chest)</em></li>
+<li>Incidence avec prophylaxie : TVP symptomatique 1-5%, EP symptomatique &lt; 1%</li>
+<li>Prophylaxie — Recommandations actuelles</li>
+<li>Pharmacologique : HBPM (énoxaparine 40 mg/j SC) ou AOD (rivaroxaban 10 mg/j, apixaban 2.5 mg × 2/j) pendant 14-35 jours post-opératoire</li>
+<li>Mécanique : bas de contention, compression pneumatique intermittente peropératoire</li>
+<li>Mobilisation précoce : lever J0 ou J1 post-opératoire (le plus préventif !)</li>
+<li>Diagnostic</li>
+<li>TVP : douleur du mollet, signe de Homans (peu spécifique), œdème unilatéral → écho-doppler veineux</li>
+<li>EP : dyspnée, tachycardie, douleur thoracique → angio-scanner thoracique</li>
+<li>D-dimères : peu utiles en post-opératoire (toujours élevés)</li>
+<li>Traitement</li>
+<li>TVP distale : anticoagulation curative 3 mois</li>
+<li>TVP proximale ou EP : anticoagulation curative 3-6 mois, +/- filtre cave si contre-indication aux anticoagulants</li>
+<li>EP massive : thrombolyse ± embolectomie (urgence vitale)</li>
+</ul>
+<h3 id="212-raideur-post-operatoire">21.2 Raideur post-opératoire</h3>
+<ul>
+<li>Définition : flexion &lt; 90° et/ou flexum &gt; 10° à 3 mois post-opératoire</li>
+<li>Incidence : 5-10% <em>(Fitzsimmons et al., 2010)</em> (selon la définition utilisée)</li>
+<li>Causes</li>
+<li>Pré-opératoires : flexion pré-opératoire &lt; 90°, flexum &gt; 20°, fibrose (chirurgies multiples)</li>
+<li>Peropératoires : composants trop gros (PE surdimensionné → too tight), malpositionnement (rotation), overstuffing patellaire</li>
+<li>Post-opératoires : hémarthrose, douleur → défaut de rééducation, algodystrophie (SDRC)</li>
+<li>Prise en charge</li>
+<li>Rééducation intensive sous antalgiques (protocole de mobilisation passive continue — CPM — controversé)</li>
+<li>Mobilisation sous anesthésie (MUA, <em>Manipulation Under Anesthesia</em>) : efficace si réalisée avant 3 mois, résultats médiocres après 6 mois</li>
+<li>Arthrolyse arthroscopique ou à ciel ouvert : si échec de la MUA, lyse des adhérences, résection du tissu cicatriciel</li>
+<li>Reprise chirurgicale : si cause mécanique (composant mal positionné, PE trop épais)<blockquote>
+<p>[MEDIA: 📊 MPTG21-S02-001 — Algorithme de prise en charge de la raideur post-PTG : chronologie (J0 → 3 mois → 6 mois → 1 an) avec les options thérapeutiques à chaque étape (Appliquez à un cas de flexion à 70° à 8 semaines)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="213-hematome-et-hemarthrose">21.3 Hématome et hémarthrose</h3>
+<ul>
+<li>Hématome de la loge : tuméfaction, ecchymose étendue, tension des téguments</li>
+<li>Hémarthrose : épanchement articulaire sanglant → raideur, douleur, risque infectieux</li>
+<li>Facteurs de risque : anticoagulation excessive, saignement non contrôlé, absence de drain (controversé)</li>
+<li>Traitement : ponction évacuatrice (hémarthrose), reprise hémostase si hématome compressif → urgence chirurgicale</li>
+<li>Syndrome de loge (exceptionnel mais gravissime) : douleur excessive, étirement passif des orteils douloureux → fasciotomie en urgence</li>
+</ul>
+<h3 id="214-lesions-nerveuses">21.4 Lésions nerveuses</h3>
+<ul>
+<li>Nerf fibulaire commun (sciatique poplité externe — SPE)</li>
+<li>Incidence : 0.5-2% <em>(Idusuyi &amp; Morrey, 1996)</em> (plus élevé en genu valgum sévère corrigé)</li>
+<li>Présentation : pied tombant (steppage), hypoesthésie du dos du pied</li>
+<li>Cause : étirement par correction du valgus, compression par le pansement/attelle, lésion directe (rare)</li>
+<li>Prévention : ne pas surcorriger le valgus (HKA ≤ 183°), genou en flexion 30° en post-opératoire immédiat</li>
+<li>Traitement : retirer la cause compressive, physiothérapie, attelle anti-steppage, EMG à 3 semaines → discussion chirurgicale si absence de récupération à 3 mois</li>
+<li>Pronostic : récupération complète dans 60-70% des cas (neurapraxie), partielle dans 20%, absence dans 10% (axonotmésis/neurotmésis) <em>(Idusuyi &amp; Morrey, 1996)</em></li>
+<li>Nerf infra-patellaire (branche du nerf saphène)</li>
+<li>Quasi-systématiquement lésé dans la voie parapatellaire médiale</li>
+<li>Hypoesthésie antéro-latérale du genou : fréquente (&gt; 50%), le plus souvent tolérée</li>
+<li>Rarement symptomatique (douleur neurogène) → information pré-opératoire</li>
+</ul>
+<h3 id="215-fractures-peroperatoires-et-precoces">21.5 Fractures peropératoires et précoces</h3>
+<ul>
+<li>Fracture supracondylienne fémorale</li>
+<li>Incidence : 0.5-2% <em>(McGraw &amp; Kumar, 2010)</em></li>
+<li>Facteurs de risque : ostéoporose, box cut PS (affaiblissement intercondylien), notching du cortex fémoral antérieur</li>
+<li>Classification de Lewis-Rorabeck <em>(Rorabeck &amp; Taylor, 1999, Orthop Clin North Am)</em> (I : non déplacée, prothèse stable → traitement conservateur ; II : déplacée, prothèse stable → ORIF ; III : prothèse descellée → reprise)</li>
+<li>Traitement : vis, lame-plaque, clou rétrograde (si compatible avec le composant fémoral)</li>
+<li>Fracture tibiale</li>
+<li>Plus rare, souvent liée à l'ostéoporose</li>
+<li>Traitement : vis, augment, tige longue</li>
+<li>Fracture patellaire</li>
+<li>Incidence : 0.5-1% <em>(Chalidis et al., 2007)</em></li>
+<li>Facteurs de risque : résection patellaire excessive (épaisseur résiduelle &lt; 12 mm), dévascularisation (release latéral), ostéoporose</li>
+<li>Classification et traitement selon le type <em>(Ortiguera &amp; Berry, 2002, J Bone Joint Surg Am)</em></li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG21-S05-001</strong><br/>
+<em>Classification de Lewis-Rorabeck des fractures périprothétiques fémorales après PTG : types I, II, III avec radiographies et algorithme thérapeutique (Classifiez 3 cas radiographiques)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="216-complications-cutanees-et-appareil-extenseur">21.6 Complications cutanées et appareil extenseur</h3>
+<ul>
+<li>Nécrose cutanée</li>
+<li>Facteurs de risque : cicatrices multiples, peau fine, corticothérapie, tabac, AOMI</li>
+<li>Prévention : lambeau de pleine épaisseur, pas de décollement sous-cutané excessif</li>
+<li>Traitement : pansements (petit défect), lambeau de couverture (grand défect → urgence plastique)</li>
+<li>Rupture du tendon rotulien</li>
+<li>Rare (0.1-0.5%) mais catastrophique</li>
+<li>Traitement : réparation + cerclage métallique + immobilisation en extension 6 semaines</li>
+<li>Luxation patellaire</li>
+<li>Subluxation latérale : tracking anormal, release latéral peropératoire insuffisant ou malrotation du composant fémoral</li>
+<li>Luxation vraie : rare, reprise chirurgicale</li>
+</ul>
+<hr />
+<h1 id="module-22-infection-periprothetique-du-genou">MODULE 22 : INFECTION PÉRIPROTHÉTIQUE DU GENOU</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 16, 21</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> une infection périprothétique (IPP) selon les critères MSIS 2018</li>
+<li><strong>Classifier</strong> les IPP (précoce, retardée, tardive, hématogène)</li>
+<li><strong>Traiter</strong> les IPP selon le type et le profil (lavage, changement en 1 temps, 2 temps)</li>
+<li><strong>Prévenir</strong> l'IPP en primaire et en reprise</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="221-epidemiologie-et-microbiologie">22.1 Épidémiologie et microbiologie</h3>
+<ul>
+<li>Incidence : 1-2% en PTG primaire, 3-5% en reprise <em>(Kurtz et al., 2010)</em></li>
+<li>Mortalité associée : 1-2% à 5 ans <em>(Zmistowski et al., 2013)</em> (complication grave)</li>
+<li>Coût moyen d'une IPP : 50 000 - 150 000 € <em>(Kurtz et al., 2010)</em> (hospitalisation prolongée, chirurgies multiples)</li>
+<li>Germes responsables</li>
+<li><em>Staphylococcus aureus</em> (SASM et SARM) : 30-40% (le plus virulent) <em>(Tande &amp; Patel, 2014, N Engl J Med)</em></li>
+<li>Staphylocoques à coagulase négative (<em>S. epidermidis</em>) : 25-30% (formation de biofilm ++)</li>
+<li>Streptocoques : 5-10%</li>
+<li>Bacilles Gram négatif : 5-10% (E. coli, Pseudomonas, Klebsiella)</li>
+<li>Infections polymicrobiennes : 10-15%</li>
+<li>Culture négative : 10-15% (antibiotiques préalables, germes atypiques, <em>C. acnes</em>)</li>
+<li>Germes atypiques : champignons (Candida), mycobactéries (exceptionnels)</li>
+</ul>
+<h3 id="222-classification-chronologique">22.2 Classification chronologique</h3>
+<ul>
+<li><strong>Infection précoce</strong> (&lt; 4 semaines post-opératoire)</li>
+<li>Germes virulents (S. aureus, BGN)</li>
+<li>Contamination peropératoire</li>
+<li>Signes bruyants : fièvre, cicatrice inflammatoire, écoulement, CRP très élevée</li>
+<li><strong>Infection retardée</strong> (1-3 mois post-opératoire)</li>
+<li>Germes de faible virulence (SCN, C. acnes)</li>
+<li>Contamination peropératoire à révélation retardée</li>
+<li>Signes plus subtils : douleur persistante, CRP modérément élevée</li>
+<li><strong>Infection chronique</strong> (&gt; 3 mois post-opératoire, &gt; 1 an souvent)</li>
+<li>Germes de faible virulence avec biofilm mature</li>
+<li>Présentation insidieuse : douleur progressive, descellement « aseptique » sur radiographie</li>
+<li>Diagnostic différentiel avec le descellement mécanique → biopsies nécessaires</li>
+<li><strong>Infection hématogène</strong> (aiguë sur prothèse bien portante)</li>
+<li>Dissémination à partir d'un foyer infectieux distant (urinaire, dentaire, cutané, pulmonaire)</li>
+<li>Apparition brutale : fièvre, gonflement, douleur aiguë sur un genou prothétique auparavant indolore</li>
+<li>Le délai depuis la dernière chirurgie ne compte pas (peut survenir n'importe quand)</li>
+</ul>
+<h3 id="223-diagnostic-criteres-msis-2018-parvizi-et-al-2018-j-arthroplasty-icm-2018">22.3 Diagnostic — Critères MSIS 2018 <em>(Parvizi et al., 2018, J Arthroplasty)</em> (ICM 2018)</h3>
+<ul>
+<li>Critères majeurs (1 seul suffit pour le diagnostic)</li>
+<li>Fistule communiquant avec l'articulation</li>
+<li>2 cultures positives au même germe (sur des prélèvements séparés)</li>
+<li>Critères mineurs (score ≥ 6 → infection probable)</li>
+<li>CRP sérique élevée (&gt; 10 mg/L) : +2 points</li>
+<li>VS élevée (&gt; 30 mm/h) : +2 points</li>
+<li>D-dimères élevés (&gt; 860 ng/mL) : +2 points</li>
+<li>Leucocytes synoviaux &gt; 3000/μL : +3 points</li>
+<li>Polynucléaires (PMN) &gt; 80% dans le liquide synovial : +3 points</li>
+<li>Leucocyte esterase ++ ou +++ (bandelette sur liquide synovial) : +3 points</li>
+<li>α-défensine positive (test synovial) : +3 points</li>
+<li>Culture positive (1 seule) : +2 points</li>
+<li>Histologie positive (&gt; 5 PNN/champ fort) : +3 points</li>
+<li>Score pré-opératoire ≥ 6 → haute probabilité d'infection</li>
+<li>Score peropératoire (après ouverture) ≥ 6 → confirme l'infection</li>
+<li>Examens complémentaires</li>
+<li>Ponction articulaire : OBLIGATOIRE avant toute reprise de PTG douloureuse (envoyer pour culture, cytologie, cristaux, alpha-défensine)</li>
+<li>Hémocultures en cas de fièvre</li>
+<li>Imagerie : radiographies (descellement tardif), scintigraphie aux leucocytes marqués (SPECT-CT), TEP-scanner (18F-FDG)<blockquote>
+<p>[MEDIA: 📊 MPTG22-S03-001 — Score MSIS 2018 pour le diagnostic d'infection périprothétique : tous les critères avec leur pondération, seuils, interprétation (Document de référence imprimable)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="224-traitement-de-linfection-periprothetique">22.4 Traitement de l'infection périprothétique</h3>
+<ul>
+<li><strong>DAIR</strong> (<em>Debridement, Antibiotics and Implant Retention</em>) — Lavage avec conservation de la prothèse</li>
+<li>Indication : infection précoce (&lt; 4 semaines) ou hématogène aiguë (&lt; 3-4 semaines de symptômes), implant stable, tissu mou viable</li>
+<li>Technique : arthrotomie, synovectomie radicale, lavage abondant (9-12 L), échange du PE (obligatoire), conservation des composants métalliques</li>
+<li>Antibiothérapie : IV 2-6 semaines puis orale 6-12 semaines (adaptation au germe)</li>
+<li>Succès : 55-75% <em>(Tsukayama et al., 1996 ; Kuiper et al., 2013)</em> (dépend du germe, de la précocité, du terrain)</li>
+<li>Facteur clé : rifampicine (anti-biofilm) pour les staphylocoques</li>
+<li><strong>Changement en 2 temps</strong> (<em>Two-stage revision</em>) — Gold standard</li>
+<li>Temps 1 : ablation de tous les composants prothétiques et du ciment, débridement radical, pose d'un <strong>spacer en ciment avec antibiotiques</strong> (articulé ou statique), antibiothérapie IV 6 semaines</li>
+<li>Intervalle : 6-12 semaines sans antibiotiques (fenêtre thérapeutique), contrôle biologique (CRP normalisée), ponction de contrôle (culture négative)</li>
+<li>Temps 2 : ré-implantation de la PTG de reprise, nouvelles biopsies peropératoires</li>
+<li>Succès : 85-95% <em>(Kunutsor et al., 2015)</em> (le plus élevé)</li>
+<li>Inconvénient : 2 chirurgies lourdes, intervalle avec spacer (douloureux, fonctionnellement limité)</li>
+<li><strong>Changement en 1 temps</strong> (<em>One-stage revision</em>)</li>
+<li>Ablation + réimplantation dans la même procédure</li>
+<li>Indication : germe identifié et sensible, tissu mou de bonne qualité, pas d'immunodépression</li>
+<li>Avantage : 1 seule chirurgie, récupération fonctionnelle plus rapide</li>
+<li>Inconvénient : risque de récidive plus élevé si sélection incorrecte</li>
+<li>Succès : 80-90% <em>(Singer et al., 2012)</em> (dans les séries sélectionnées)</li>
+<li>Tendance : croissante grâce à de meilleures connaissances des germes et des antibiotiques</li>
+<li><strong>Arthrodèse du genou</strong> (<em>Fusion</em>) — Sauvetage</li>
+<li>Indication : échec de reprise en 2 temps, infection incontrôlable, couverture tissulaire insuffisante</li>
+<li>Technique : clou IM, fixateur externe (Ilizarov), compression-distraction</li>
+<li>Résultat : genou raide mais indolore et stable (raccourcissement du MI)</li>
+<li>Alternative à l'amputation</li>
+<li><strong>Amputation fémorale</strong> — Ultime recours</li>
+<li>Indication : sepsis non contrôlé mettant en jeu le pronostic vital, perte osseuse massive, état vasculaire compromis</li>
+<li>Rare (&lt; 1% des IPP) mais réel</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG22-S04-001</strong><br/>
+<em>Animation du changement en 2 temps : ablation, débridement, spacer, intervalle, réimplantation — étape par étape (Suivez le timing de l'antibiothérapie)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MPTG22-S04-002</strong><br/>
+<em>Photos de spacers en ciment articulés : fabrication au bloc opératoire, moule en silicone, antibiotiques incorporés (Nommez les antibiotiques utilisés)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="225-prevention-de-linfection">22.5 Prévention de l'infection</h3>
+<ul>
+<li>Mesures pré-opératoires</li>
+<li>Dépistage et décontamination du MRSA</li>
+<li>Optimisation du diabète (HbA1c &lt; 7.5%)</li>
+<li>Sevrage tabagique (≥ 4 semaines)</li>
+<li>Traitement des foyers infectieux (dentaire, urinaire, cutané)</li>
+<li>Nutrition : albuminémie &gt; 35 g/L</li>
+<li>Réduction pondérale si IMC &gt; 40</li>
+<li>Mesures peropératoires</li>
+<li>Antibioprophylaxie IV (céfazoline 2g, re-dose à 2h)</li>
+<li>Flux laminaire (controversé : pas de preuve d'efficacité dans les méta-analyses récentes)</li>
+<li>Scaphandre chirurgical (pas de preuve forte — recommandé par certaines sociétés savantes)</li>
+<li>Discipline au bloc : limitation du nombre de personnes, portes fermées, conversations limitées</li>
+<li>Lavage pulsé avant cimentation</li>
+<li>Ciment aux antibiotiques (prophylaxie primaire : débattu)</li>
+<li>Mesures post-opératoires</li>
+<li>Pansement occlusif stérile × 48h minimum</li>
+<li>Antibioprophylaxie à vie avant gestes invasifs (dentaire, urologique) : CONTROVERSÉ, abandonnée par l'ADA (American Dental Association) mais maintenue par certaines sociétés européennes</li>
+</ul>
+<hr />
+<h1 id="module-23-complications-tardives-et-descellement">MODULE 23 : COMPLICATIONS TARDIVES ET DESCELLEMENT</h1>
+<p><strong>Durée</strong> : ~3h30 | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 20-22</p>
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> le descellement aseptique et l'usure de l'implant</li>
+<li><strong>Différencier</strong> descellement aseptique et septique</li>
+<li><strong>Gérer</strong> l'instabilité chronique post-PTG</li>
+<li><strong>Traiter</strong> les fractures périprothétiques tardives</li>
+</ol>
+<h2 id="contenu-detaille_3">Contenu détaillé</h2>
+<h3 id="231-descellement-aseptique">23.1 Descellement aseptique</h3>
+<ul>
+<li>Physiopathologie</li>
+<li>Micro-mouvements à l'interface os-ciment ou os-implant → fibrose → lyse osseuse → descellement</li>
+<li>Débris de PE → réaction granulomateuse → ostéolyse (historiquement le mécanisme principal — en déclin avec le XLPE)</li>
+<li>Facteurs : PE conventionnel (débris massifs), malpositionnement (surcharge locale), activité excessive</li>
+<li>Présentation clinique</li>
+<li>Douleur progressive (mécanique), souvent à la marche et aux escaliers</li>
+<li>Signe de démarrage (douleur au lever puis atténuation → type « mécanique »)</li>
+<li>Pas de signe inflammatoire général (pas de fièvre, CRP normale ou peu élevée)</li>
+<li>Imagerie</li>
+<li>Radiographies : liserés radioclairs &gt; 2 mm péri-prothétiques, progressifs dans le temps</li>
+<li>Zones radiologiques de la Knee Society <em>(Ewald, 1989, Clin Orthop)</em> (zones 1-7 tibiales, zones 1-7 fémorales)</li>
+<li>Liseré complet (toutes les zones) → descellement certain</li>
+<li>Liseré incomplet mais progressif → descellement probable</li>
+<li>Migration : enfoncement tibial, modification de l'axe dans le temps (comparaison série chronologique)</li>
+<li>Diagnostic différentiel obligatoire : infection chronique de bas grade (ponction articulaire systématique)</li>
+<li>Traitement : reprise chirurgicale → PTG de reprise (cf. Module 24)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG23-S01-001</strong><br/>
+<em>Radiographies évolutives de descellement aseptique tibial : cliché initial (normal), 5 ans (liseré partiel), 10 ans (liseré complet, enfoncement) — zones de Knee Society annotées (Classifiez le descellement)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="232-usure-et-osteolyse">23.2 Usure et ostéolyse</h3>
+<ul>
+<li>PE conventionnel : usure linéaire 0.1-0.2 mm/an → shard de PE → macrophages → TNF-α, IL-1, RANKL → activation ostéoclastique → ostéolyse</li>
+<li>Ostéolyse péri-prothétique : cavités lytiques autour des composants, silencieuses cliniquement jusqu'au descellement</li>
+<li>Scanner : meilleure sensibilité que les radiographies pour détecter l'ostéolyse (artéfacts métalliques → protocole MARS)</li>
+<li>XLPE : réduction drastique de l'ostéolyse (&lt; 1% à 10 ans) → plus de cette complication avec les implants modernes</li>
+<li>Usure du PE (visible sur les radiographies) : asymétrie de l'espace fémoro-PE (condyle plus enfoncé d'un côté)</li>
+</ul>
+<h3 id="233-instabilite-chronique-post-ptg">23.3 Instabilité chronique post-PTG</h3>
+<ul>
+<li>Classification par le timing</li>
+<li>Instabilité précoce : dans les 6 premiers mois → cause peropératoire (balance, taille)</li>
+<li>Instabilité tardive : après 1 an → détérioration progressive des tissus mous, usure du PE</li>
+<li>Classification par le type</li>
+<li>Instabilité en extension : gap d'extension trop large (résection distale excessive, LCM/LCL insuffisants)</li>
+<li>Instabilité en flexion (mid-flexion) : gap de flexion trop large, PE trop fin, fémur trop petit</li>
+<li>Instabilité multidirectionnelle : mécanisme de contrainte insuffisant pour l'enveloppe ligamentaire résiduelle</li>
+<li>Instabilité récurrente de la came (PS) : cam-post jump → dislocation postérieure du PE</li>
+<li>Traitement</li>
+<li>Non chirurgical : orthèse, rééducation (renforcement quadriceps/ischios)</li>
+<li>Chirurgical : échange du PE (épaisseur plus grande), augmentation de la contrainte (CR → PS, PS → VVC), reprise complète si malpositionnement causatif</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG23-S03-001</strong><br/>
+<em>Schéma des 4 types d'instabilité post-PTG : en extension, en flexion, en mid-flexion, globale — avec le mécanisme et la solution chirurgicale (Diagnostiquez le type d'instabilité sur le cas vidéo)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="234-fractures-periprothetiques-tardives">23.4 Fractures périprothétiques tardives</h3>
+<ul>
+<li>Fracture supracondylienne du fémur</li>
+<li>L'os supracondylien est affaibli par l'échancrure intercondylienne (box cut) et le notching antérieur</li>
+<li>Chute banale (énergie faible) chez le patient ostéoporotique</li>
+<li>Classification de Lewis-Rorabeck (cf. Module 21.5)</li>
+<li>Traitement : conservateur (plâtre) si non déplacée → ORI (lame-plaque, clou rétrograde) si déplacée et prothèse stable → reprise si prothèse descellée</li>
+<li>Fracture du plateau tibial péri-prothétique</li>
+<li>Plus rare → traitement conservateur ou vis si non déplacée → reprise avec tige et augments si descellée</li>
+<li>Fracture de fatigue du tibia proximal</li>
+<li>Facteurs : notching tibial, ostéoporose, surcharge mécanique</li>
+<li>Souvent asymptomatique initialement → découverte sur cliché de contrôle</li>
+</ul>
+<h3 id="235-douleur-inexpliquee-apres-ptg-le-genou-douloureux-incompris">23.5 Douleur inexpliquée après PTG — Le « genou douloureux incompris »</h3>
+<ul>
+<li>Incidence : 10-20% des PTG sont douloureuses sans cause identifiable évidente <em>(Beswick et al., 2012, BMJ Open)</em></li>
+<li>Diagnostic d'exclusion : TOUJOURS éliminer les causes organiques avant de conclure</li>
+<li>Checklist systématique</li>
+<li>Infection ? (ponction articulaire, CRP, VS, alpha-défensine)</li>
+<li>Malpositionnement ? (scanner avec protocole de rotation, pangonogramme)</li>
+<li>Instabilité ? (examen clinique dynamique, stress radiographiques)</li>
+<li>Raideur/arthrofibrose ? (flexion, extension)</li>
+<li>Pathologie régionale ? (hanche (coxarthrose !), rachis (cruralgie), SDRC, tendinopathie patte d'oie)</li>
+<li>Facteurs psychologiques ? (catastrophisme, kinésiophobie, secondaire, dépression)</li>
+<li>Allergie aux métaux ? (patch test — si présomption clinique)</li>
+<li>Crépitations patellaires ? (PE fémoro-patellaire)</li>
+<li>Irritation du nerf infra-patellaire ? (zone d'hypoesthésie ≠ douleur)</li>
+<li>Si toutes les causes organiques sont exclues → prise en charge multidisciplinaire (douleur, psychologie, kinésithérapie)</li>
+<li>La reprise chirurgicale « à l'aveugle » pour douleur inexpliquée est CONTRE-INDIQUÉE (résultats catastrophiques)<blockquote>
+<p>[MEDIA: 📊 MPTG23-S05-001 — Algorithme diagnostique de la PTG douloureuse : 12 causes organiques à éliminer systématiquement avant de conclure à une douleur inexpliquée (Parcourez la checklist pour un cas clinique)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="auto-evaluation-partie-v">AUTO-ÉVALUATION — PARTIE V</h1>
+<h2 id="questions-transversales-modules-20-23">Questions transversales Modules 20-23</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Quel est le taux de survie globale des PTG primaires à 10 ans selon les registres ?<br />
+- A) 80%<br />
+- B) 90%<br />
+- C) 96-97%<br />
+- D) 99%</p>
+<p><strong>Q2</strong> 🥈 : Quel est le critère majeur suffisant à lui seul pour poser le diagnostic d'infection périprothétique (MSIS 2018) ?<br />
+- A) CRP &gt; 10 mg/L<br />
+- B) Leucocytes synoviaux &gt; 3000/μL<br />
+- C) Fistule communiquant avec l'articulation<br />
+- D) Alpha-défensine positive</p>
+<p><strong>Q3</strong> 🥈 : La première cause de reprise de PTG dans les registres actuels est :<br />
+- A) L'usure du polyéthylène<br />
+- B) L'infection périprothétique<br />
+- C) Le descellement aseptique<br />
+- D) La fracture périprothétique</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 70 ans rapporte une douleur progressive du genou prothétique gauche à 3 ans de la PTG. La CRP est à 8 mg/L (normale &lt; 5). La radiographie montre un liseré tibial en zone 2-3-5. Comment procédez-vous ?<br />
+- A) Surveillance simple et radiographie à 6 mois<br />
+- B) Ponction articulaire avec culture, cytologie, alpha-défensine<br />
+- C) Reprise chirurgicale immédiate pour descellement<br />
+- D) Changement du PE</p>
+<p><strong>Q5</strong> 💎 : Mme Dupont, 72 ans, PTG gauche il y a 18 mois (PS cimentée, XLPE Vit E). Elle consulte pour douleur persistante (EVA 6/10) malgré 6 mois de kinésithérapie. La flexion est à 95°, extension à -5° (flessum résiduel). Les radiographies montrent un bon alignement, pas de liseré. La CRP est à 4 mg/L. Décrivez votre démarche diagnostique complète et votre prise en charge thérapeutique.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>M. Rodrigues, 68 ans</strong>, diabétique (HbA1c 8.2%), IMC 36, PTG droite il y a 4 ans (NexGen CR cimentée, PE conventionnel). Depuis 6 mois : douleur croissante, gonflement intermittent du genou droit. Température : 37.6°C. CRP : 42 mg/L. Radiographies : liseré tibial en zone 1-2-3-5, léger enfoncement médial.</p>
+<ol>
+<li>Quelle est votre hypothèse principale ? Justifiez par les données biologiques et radiologiques.</li>
+<li>Quels examens complémentaires demandez-vous en priorité ?</li>
+<li>Si la ponction confirme une infection à <em>Staphylococcus aureus</em> sensible (SASM), quel traitement proposez-vous ? (type de chirurgie, antibiothérapie)</li>
+<li>Quels facteurs de risque d'infection identifiez-vous chez ce patient et comment les prendre en charge pour la reprise ?</li>
+</ol>
+</blockquote>
+<hr />
+<hr />
+<h2 id="references-partie-v">Références — Partie V</h2>
+<ul>
+<li>Beswick AD et al. (2012). What proportion of patients report long-term pain after total hip or knee replacement for osteoarthritis? A systematic review. <em>BMJ Open</em>, 2(1), e000435.</li>
+<li>Bourne RB et al. (2010). Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? <em>Clin Orthop Relat Res</em>, 468(1), 57–63.</li>
+<li>Chalidis BE et al. (2007). Patellar fracture after total knee arthroplasty: a review. <em>Clin Orthop Relat Res</em>, 462, 135–142.</li>
+<li>Evans JT et al. (2019). How long does a knee replacement last? A systematic review and meta-analysis. <em>Lancet</em>, 393(10172), 655–663.</li>
+<li>Ewald FC (1989). The Knee Society total knee arthroplasty roentgenographic evaluation and scoring system. <em>Clin Orthop Relat Res</em>, 248, 9–12.</li>
+<li>Fitzsimmons SE et al. (2010). Stiffness after total knee arthroplasty: risk factors and outcomes. <em>J Arthroplasty</em>, 25(3), 444–450.</li>
+<li>Geerts WH et al. (2008). Prevention of venous thromboembolism: ACCP Evidence-Based Clinical Practice Guidelines (8th ed). <em>Chest</em>, 133(6 Suppl), 381S–453S.</li>
+<li>Idusuyi OB, Morrey BF (1996). Peroneal nerve palsy after total knee arthroplasty. <em>Clin Orthop Relat Res</em>, 328, 233–238.</li>
+<li>Kuiper JWP et al. (2013). Treatment of acute periprosthetic infections with debridement and implant retention. <em>Clin Orthop Relat Res</em>, 471(7), 2265–2274.</li>
+<li>Kunutsor SK et al. (2015). Re-infection outcomes following one- and two-stage surgical revision of infected hip prosthesis. <em>PLoS One</em>, 10(9), e0139166.</li>
+<li>Kurtz SM et al. (2010). Future clinical and economic impact of revision total hip and knee arthroplasty. <em>J Bone Joint Surg Am</em>, 89(Suppl 3), 144–151.</li>
+<li>McGraw P, Kumar A (2010). Periprosthetic fractures of the femur after total knee arthroplasty. <em>J Orthop Traumatol</em>, 11(3), 135–141.</li>
+<li>Ortiguera CJ, Berry DJ (2002). Patellar fracture after total knee arthroplasty. <em>J Bone Joint Surg Am</em>, 84(4), 532–540.</li>
+<li>Parvizi J et al. (2018). The 2018 definition of periprosthetic joint infection. <em>J Arthroplasty</em>, 33(5), 1309–1314.</li>
+<li>Rorabeck CH, Taylor JW (1999). Classification of periprosthetic fractures complicating total knee arthroplasty. <em>Orthop Clin North Am</em>, 30(2), 209–214.</li>
+<li>Sharkey PF et al. (2014). Why are total knee arthroplasties failing today — Has anything changed after 10 years? <em>Clin Orthop Relat Res</em>, 472(12), 7–15.</li>
+<li>Singer J et al. (2012). One-stage revision of infected total hip arthroplasty. <em>Bone Joint J</em>, 94-B(Suppl A), 14–18.</li>
+<li>Tande AJ, Patel R (2014). Prosthetic joint infection. <em>N Engl J Med</em>, 371(17), 1617–1628.</li>
+<li>Tsukayama DT et al. (1996). Infection after total hip arthroplasty. A study of the treatment of one hundred and six infections. <em>J Bone Joint Surg Am</em>, 78(4), 512–523.</li>
+<li>Wylde V et al. (2007). Persistent pain after joint replacement: prevalence, sensory qualities, and postoperative determinants. <em>Pain</em>, 127(1–2), 35–41.</li>
+<li>Zmistowski B et al. (2013). Periprosthetic joint infection increases the risk of one-year mortality. <em>J Bone Joint Surg Am</em>, 95(24), 2177–2184.</li>
+</ul>
+<p><em>Fin de la Partie 5 — Résultats et Complications (Modules 20-23)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

@@ -1,0 +1,407 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-4-antibiotherapie-modules-11-13">Partie 4 — Antibiothérapie (Modules 11-13)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-11-pharmacologie-des-antibiotiques-en-contexte-osseux">MODULE 11 : PHARMACOLOGIE DES ANTIBIOTIQUES EN CONTEXTE OSSEUX</h1>
+<p><strong>Partie</strong> : IV — Antibiothérapie<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Module 3</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite chronique du fémur à SASM. Antibiothérapie par oxacilline IV 12g/j pendant 2 semaines suivie de lévofloxacine + rifampicine per os. À 6 semaines, la CRP remonte et une fistule réapparaît. *La rifampicine a-t-elle bien diffusé dans l'os ? La combinaison était-elle optimale ? Quel rôle joue la diffusion osseuse dans le choix des antibiotiques ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> les principes de diffusion des antibiotiques dans l'os (ratio os/sérum)</li>
+<li><strong>Connaître</strong> les antibiotiques à bonne diffusion osseuse et ceux à diffusion insuffisante</li>
+<li><strong>Maîtriser</strong> la pharmacologie de la rifampicine, des fluoroquinolones et des antibiotiques anti-biofilm</li>
+<li><strong>Comprendre</strong> les concepts de pharmacocinétique (PK) et pharmacodynamie (PD) appliqués à l'os</li>
+<li><strong>Adapter</strong> les posologies selon la fonction rénale et hépatique</li>
+<li><strong>Identifier</strong> les interactions médicamenteuses majeures</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-111-diffusion-osseuse-des-antibiotiques-principes-generaux">Section 11.1 — Diffusion osseuse des antibiotiques : principes généraux</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Barrière osseuse</strong> : l'os est un tissu peu vascularisé (cortex) avec une matrice minéralisée limitant la diffusion<br />
+- <strong>Ratio os/sérum</strong> : rapport entre concentration osseuse et concentration sérique — variable selon l'ATB<br />
+- <strong>Facteurs influençant la diffusion</strong> :<br />
+  - Liposolubilité de la molécule (↑ = meilleure diffusion)<br />
+  - Liaison aux protéines plasmatiques (↓ = meilleure fraction libre diffusible)<br />
+  - Taille moléculaire<br />
+  - Vascularisation osseuse (os cortical &lt;&lt; os spongieux &lt;&lt; os infecté/inflammatoire)<br />
+  - État de l'os : os sain vs os infecté (vascularisation néo-formée = meilleure diffusion paradoxale)<br />
+- <strong>Antibiotiques à bonne diffusion osseuse</strong> : fluoroquinolones, rifampicine, clindamycine, linézolide, TMP-SMX, acide fusidique, métronidazole<br />
+- <strong>Antibiotiques à diffusion osseuse modérée</strong> : bêta-lactamines (à doses élevées), vancomycine<br />
+- <strong>Antibiotiques à diffusion osseuse insuffisante</strong> : aminosides (usage IV/local mais mauvaise diffusion osseuse systémique)<br />
+- <strong>Le paradoxe de l'os infecté</strong> : la néovascularisation inflammatoire améliore la diffusion → l'os infecté reçoit plus d'ATB que l'os sain</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA11-S01-001 | 📊 INFOGRAPHIE | Tableau de diffusion osseuse des principaux antibiotiques (ratio os/sérum) | Classement code couleur |<br />
+| MIOA11-S01-002 | 📐 SCHÉMA | Facteurs influençant la diffusion osseuse des ATB — schéma conceptuel | 5 facteurs illustrés |<br />
+| MIOA11-S01-003 | 🎬 ANIMATION | Diffusion d'un ATB de la circulation sanguine vers l'os cortical et spongieux | Animation pharmacocinétique |<br />
+| MIOA11-S01-004 | 📐 SCHÉMA | Paradoxe de l'os infecté : néovascularisation → meilleure diffusion | Schéma comparatif |</p>
+<h3 id="section-112-pharmacocinetiquepharmacodynamie-pkpd-appliquees-a-los">Section 11.2 — Pharmacocinétique/pharmacodynamie (PK/PD) appliquées à l'os</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Rappels PK/PD</strong> :<br />
+  - ATB temps-dépendants : bêta-lactamines, vancomycine → efficacité liée au temps au-dessus de la CMI (T&gt;CMI)<br />
+  - ATB concentration-dépendants : aminosides, fluoroquinolones → efficacité liée au Cmax/CMI ou AUC/CMI<br />
+  - ATB AUC-dépendants : vancomycine (AUC/CMI cible &gt;400), linézolide<br />
+- <strong>Application à l'os</strong> :<br />
+  - Pour les bêta-lactamines : perfusion continue ou prolongée pour maximiser T&gt;CMI dans l'os<br />
+  - Pour les fluoroquinolones : doses unitaires élevées pour atteindre un Cmax/CMI &gt;10<br />
+  - Pour la vancomycine : monitoring des concentrations résiduelles (cible 15-20 mg/L), AUC/CMI<br />
+- <strong>Monitoring thérapeutique (TDM)</strong> : vancomycine, aminosides, voriconazole obligatoires ; rifampicine recommandé<br />
+- <strong>Adaptation rénale</strong> : aminosides, vancomycine, bêta-lactamines — formules de Cockcroft, CKD-EPI<br />
+- <strong>Adaptation hépatique</strong> : rifampicine, métronidazole, clindamycine</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA11-S02-001 | 📐 SCHÉMA | Modèles PK/PD : temps-dépendant vs concentration-dépendant vs AUC-dépendant | 3 courbes de concentration |<br />
+| MIOA11-S02-002 | 📊 INFOGRAPHIE | Tableau PK/PD par classe d'ATB + objectif thérapeutique dans l'os | Synthèse clinique |<br />
+| MIOA11-S02-003 | 📐 SCHÉMA | Perfusion continue de bêta-lactamines : principe et avantage dans l'os | Comparaison intermittent vs continu |</p>
+<h3 id="section-113-la-rifampicine-larme-anti-biofilm-par-excellence">Section 11.3 — La rifampicine : l'arme anti-biofilm par excellence</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Propriétés uniques</strong> :<br />
+  - Activité anti-biofilm démontrée (pénètre le biofilm, tue les bactéries sessiles)<br />
+  - Excellente diffusion osseuse (ratio os/sérum &gt; 0.5)<br />
+  - Activité bactéricide intracellulaire (SCV !)<br />
+  - Bonne diffusion dans les abcès<br />
+- <strong>RÈGLE ABSOLUE</strong> : JAMAIS en monothérapie (sélection de résistance en 24-48h !)<br />
+  - Toujours en combinaison : rifampicine + FQ, rifampicine + cotrimoxazole, rifampicine + clindamycine<br />
+- <strong>Posologie</strong> : 600-900 mg/j en 1-2 prises (adulte)<br />
+- <strong>Effets indésirables</strong> : hépatotoxicité (transaminases), interactions médicamenteuses majeures (inducteur enzymatique CYP450 +++), coloration des urines/larmes, nausées<br />
+- <strong>Interactions majeures</strong> : AVK (↓ INR), contraceptifs oraux (↓ efficacité), antirétroviraux (IP ++), immunosuppresseurs (tacrolimus, ciclosporine), fluoroquinolones (interaction modérée)<br />
+- <strong>Quand débuter la rifampicine</strong> : APRÈS que le site chirurgical est propre et drainé, jamais en phase d'abcès non drainé (risque de résistance dans un milieu non accessible)<br />
+- <strong>Études fondatrices</strong> : Zimmerli et al. <em>(JAMA, 1998)</em>, études sur biofilm staphylococcique</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA11-S03-001 | 🎬 ANIMATION | Rifampicine vs biofilm : pénétration, action sur bactéries sessiles et intracellulaires | Animation anti-biofilm |<br />
+| MIOA11-S03-002 | </p>
+<div class="vertex-alerte"><strong>ENCADRÉ | JAMAIS de rifampicine en monothérapie</strong> : sélection de résistance en 24-48h | Encadré danger critique |
+| MIOA11-S03-003 | 📊 INFOGRAPHIE | Interactions médicamenteuses de la rifampicine — tableau exhaustif | Tableau d'interactions |
+| MIOA11-S03-004 | 📐 SCHÉMA | Quand débuter la rifampicine dans la séquence thérapeutique | Timeline optimale |</div>
+
+<h3 id="section-114-fluoroquinolones-clindamycine-et-antibiotiques-oraux-a-bonne-diffusion-osseuse">Section 11.4 — Fluoroquinolones, clindamycine et antibiotiques oraux à bonne diffusion osseuse</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Fluoroquinolones</strong> (lévofloxacine, ciprofloxacine, moxifloxacine) :<br />
+  - Excellente diffusion osseuse (ratio &gt;1 pour certaines)<br />
+  - Activité anti-biofilm (synergie avec rifampicine)<br />
+  - Risque de résistance si monothérapie<br />
+  - Effets indésirables : tendinopathies (tendon d'Achille ++), neuropathie, allongement QT, photosensibilité, dysglycémie<br />
+  - Contre-indications relatives : épilepsie, déficit en G6PD<br />
+- <strong>Clindamycine</strong> : bonne diffusion osseuse, activité anti-staphylococcique, per os possible, risque de colite à <em>C. difficile</em><br />
+- <strong>Cotrimoxazole (TMP-SMX)</strong> : alternative orale, bonne diffusion, actif sur SARM communautaire, risque hématologique, rénal<br />
+- <strong>Acide fusidique</strong> : bonne diffusion, toujours en combinaison, hépatotoxicité<br />
+- <strong>Linézolide</strong> : oxazolidinone, excellente diffusion, actif anti-SARM, anti-ERV, per os = IV ; toxicité hématologique (thrombopénie) et neurologique (neuropathie) si &gt;28 jours<br />
+- <strong>Tédizolide</strong> : oxazolidinone de 2e génération, meilleure tolérance, 1 prise/jour<br />
+- <strong>Doxycycline</strong> : alternative orale en suppression chronique, bonne diffusion, tolérance correcte</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA11-S04-001 | 📊 INFOGRAPHIE | Tableau des antibiotiques oraux à bonne diffusion osseuse : molécule, spectre, posologie, effets indésirables | Tableau de référence |<br />
+| MIOA11-S04-002 | </p>
+<div class="vertex-alerte"><strong>ENCADRÉ | Effets indésirables des fluoroquinolones</strong> : tendinopathies, neuropathie | Encadré alerte |
+| MIOA11-S04-003 | 📐 SCHÉMA | Linézolide : spectre, place dans les IOA à SARM/ERV, durée maximale recommandée | Schéma synthétique |</div>
+
+<h3 id="section-115-antibiotiques-iv-beta-lactamines-glycopeptides-daptomycine">Section 11.5 — Antibiotiques IV : bêta-lactamines, glycopeptides, daptomycine</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Bêta-lactamines anti-staphylococciques</strong> : oxacilline/cloxacilline (SASM), céfazoline (SASM, alternative), pipéracilline-tazobactam (large spectre)<br />
+  - Diffusion osseuse modérée mais compensée par des doses élevées et la perfusion continue<br />
+- <strong>Vancomycine</strong> : référence anti-SARM IV, monitoring obligatoire, néphrotoxicité, red-man syndrome<br />
+  - AUC/CMI cible 400-600<br />
+- <strong>Daptomycine</strong> : lipopeptide, actif anti-SARM, anti-ERV, bactéricide rapide<br />
+  - Dose ≥8-10 mg/kg pour les IOA (doses standard de 4-6 mg/kg insuffisantes)<br />
+  - Inactivée par le surfactant → NE PAS utiliser dans les pneumonies<br />
+  - Monitoring CPK (myotoxicité)<br />
+- <strong>Ceftaroline</strong> : céphalosporine anti-SARM, bonne tolérance, alternative intéressante<br />
+- <strong>Carbapénèmes</strong> : imipénème, méropénème — large spectre, réserve pour BLSE/certaines EPC<br />
+- <strong>Ceftazidime-avibactam, céfidérocol</strong> : nouvelles molécules anti-EPC</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA11-S05-001 | 📊 INFOGRAPHIE | Antibiotiques IV dans les IOA : molécule, spectre, posologie, monitoring | Tableau de référence |<br />
+| MIOA11-S05-002 | 📐 SCHÉMA | Algorithme d'antibiothérapie IV selon le germe identifié | Arbre décisionnel |<br />
+| MIOA11-S05-003 | 📐 SCHÉMA | Daptomycine à haute dose dans les IOA : justification et surveillance | Schéma PK/PD |</p>
+<h3 id="points-cles-du-module-11">Points clés du Module 11</h3>
+<ol>
+<li>La diffusion osseuse des ATB dépend de la liposolubilité, de la liaison protéique, de la taille et de la vascularisation osseuse</li>
+<li>La rifampicine est l'arme anti-biofilm majeure — JAMAIS en monothérapie (résistance en 24-48h)</li>
+<li>Les fluoroquinolones ont une excellente diffusion osseuse mais des effets indésirables sérieux (tendinopathie)</li>
+<li>Le linézolide est une option anti-SARM/ERV par voie orale, mais limité à 28 jours par la toxicité hématologique/neurologique</li>
+<li>La daptomycine doit être utilisée à haute dose (≥8-10 mg/kg) dans les IOA</li>
+<li>Le monitoring thérapeutique (TDM) est obligatoire pour vancomycine et aminosides</li>
+</ol>
+<hr />
+<h1 id="module-12-antibiotherapie-probabiliste-et-documentee-des-ioa">MODULE 12 : ANTIBIOTHÉRAPIE PROBABILISTE ET DOCUMENTÉE DES IOA</h1>
+<p><strong>Partie</strong> : IV — Antibiothérapie<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 3, 7, 9, 11</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite aiguë hématogène du fémur (IRM confirmée). Hémocultures en cours. Pas de porte d'entrée évidente. Pas d'allergie connue. CRP 120 mg/L, fièvre 39.5°C. *Quel antibiotique probabiliste débutez-vous dans l'heure ? Sur quel germe pariez-vous ? Quelle sera la durée totale de traitement ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> l'antibiothérapie probabiliste adaptée selon le contexte (enfant/adulte, post-op, hématogène)</li>
+<li><strong>Adapter</strong> le traitement après documentation microbiologique</li>
+<li><strong>Connaître</strong> les durées de traitement recommandées</li>
+<li><strong>Gérer</strong> le relais IV → oral (OPAT, switch précoce)</li>
+<li><strong>Organiser</strong> le suivi biologique et clinique sous traitement</li>
+<li><strong>Maîtriser</strong> les protocoles thérapeutiques des CRIOAC</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-121-antibiotherapie-probabiliste-selon-le-contexte">Section 12.1 — Antibiothérapie probabiliste selon le contexte</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principes</strong> <em>(recommandations SPILF ; IDSA — Osmon et al., 2013, Clin Infect Dis)</em> : débuter APRÈS les prélèvements mais AVANT les résultats (si urgence clinique), couvrir les germes les plus probables, adapter dès réception de l'antibiogramme<br />
+- <strong>Ostéomyélite aiguë hématogène de l'enfant</strong> :<br />
+  - 1ère intention : céfamandole ou oxacilline IV (couvrir <em>S. aureus</em> SASM)<br />
+  - Si &lt;4 ans : ajouter couverture <em>K. kingae</em> (amoxicilline-acide clavulanique ou C3G)<br />
+  - Si SARM suspecté (voyage, communauté à risque) : vancomycine + C3G<br />
+  - Drépanocytaire : C3G (couvrir <em>Salmonella</em>)<br />
+- <strong>Arthrite septique</strong> : mêmes principes que l'ostéomyélite, adapté au contexte<br />
+- <strong>Infection post-opératoire précoce (&lt;4 semaines)</strong> :<br />
+  - Couvrir <em>S. aureus</em> + SCN + BGN = vancomycine + pipéracilline-tazobactam (ou C3G)<br />
+  - En cas de SARM connu : vancomycine obligatoire<br />
+- <strong>Spondylodiscite</strong> : C3G ou oxacilline (si CG+ prédominant) ; si tuberculose suspectée → traitement antituberculeux<br />
+- <strong>Pied diabétique infecté</strong> : amoxicilline-acide clavulanique (forme modérée) ; pipéracilline-tazobactam + vancomycine (forme sévère, à BMR)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA12-S01-001 | 📊 INFOGRAPHIE | Antibiothérapie probabiliste des IOA : tableau par contexte clinique | Tableau de référence majeur |<br />
+| MIOA12-S01-002 | 📐 SCHÉMA | Algorithme d'antibiothérapie probabiliste de l'ostéomyélite aiguë de l'enfant | Arbre décisionnel pédiatrique |<br />
+| MIOA12-S01-003 | 📊 INFOGRAPHIE | Antibiothérapie probabiliste du pied diabétique selon la sévérité (IDSA) | Tableau gradué |</p>
+<h3 id="section-122-antibiotherapie-documentee-et-adaptee">Section 12.2 — Antibiothérapie documentée et adaptée</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principe</strong> : dès l'antibiogramme, adapter l'ATB au spectre le plus étroit efficace (épargne écologique)<br />
+- <strong>IOA à SASM</strong> :<br />
+  - IV : oxacilline ou céfazoline<br />
+  - Relais oral : lévofloxacine + rifampicine (combinaison de référence pour les IOA sur matériel)<br />
+  - Alternatives : clindamycine + rifampicine, TMP-SMX + rifampicine<br />
+- <strong>IOA à SARM</strong> :<br />
+  - IV : vancomycine ou daptomycine haute dose<br />
+  - Relais oral : TMP-SMX + rifampicine, linézolide + rifampicine, FQ + rifampicine (si sensible)<br />
+- <strong>IOA à SCN (S. epidermidis)</strong> :<br />
+  - Souvent MétR → vancomycine IV + rifampicine (si DAIR), puis relais par FQ + rifampicine si sensible<br />
+- <strong>IOA à streptocoques</strong> : amoxicilline IV puis relais per os (bonne sensibilité)<br />
+- <strong>IOA à BGN</strong> : C3G ou FQ (si sensible), carbapénème (si BLSE)<br />
+- <strong>IOA à <em>Cutibacterium acnes</em></strong> : amoxicilline IV puis per os ×12 semaines, alternatives : clindamycine<br />
+- <strong>Associations antibiotiques anti-biofilm de référence</strong> (DAIR, matériel conservé) :<br />
+  - Staphyloque + matériel : rifampicine + FQ (ou TMP-SMX, ou clindamycine)<br />
+  - La rifampicine est l'élément clé si l'implant est conservé</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA12-S02-001 | 📊 INFOGRAPHIE | Antibiothérapie documentée par germe (tableau complet) : SASM, SARM, SCN, streptocoques, BGN, C. acnes | Tableau de référence majeur |<br />
+| MIOA12-S02-002 | 📐 SCHÉMA | Combinaisons rifampicine + compagnon : choix selon antibiogramme et tolérance | Arbre de choix |<br />
+| MIOA12-S02-003 | 💊 ENCADRÉ | Protocole de relais IV → oral : critères de switch (apyrexie, CRP ↓, tolérance digestive) | Encadré protocole |</p>
+<h3 id="section-123-durees-de-traitement">Section 12.3 — Durées de traitement</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Ostéomyélite aiguë de l'enfant</strong> : 3-4 semaines (switch IV → oral après 3-5 jours si bonne évolution) — étude POET <em>(Li HK et al., N Engl J Med, 2019)</em>, données récentes<br />
+- <strong>Arthrite septique</strong> : 2-4 semaines (selon l'articulation et le germe) <em>(recommandations SPILF)</em><br />
+- <strong>Ostéomyélite chronique</strong> : 6-12 semaines (après chirurgie d'exérèse)<br />
+- <strong>Infection périprothétique</strong> :<br />
+  - DAIR : 12 semaines (genou), 6 semaines + rifampicine (hanche) — protocoles CRIOAC<br />
+  - Changement en 2 temps : 6 semaines entre les 2 temps, puis 6-12 semaines post-réimplantation<br />
+  - Changement en 1 temps : 6-12 semaines<br />
+- <strong>Spondylodiscite à pyogènes</strong> : 6 semaines (recommandations SPILF 2007, étude DATISPO <em>(Bernard et al., Lancet, 2015)</em> — 6 vs 12 semaines)<br />
+- <strong>Spondylodiscite tuberculeuse</strong> : 9-12 mois (quadrithérapie puis bithérapie)<br />
+- <strong>Pied diabétique / ostéomyélite</strong> : 6 semaines après résection chirurgicale, ≥3 mois si traitement médical seul<br />
+- <strong>Études récentes</strong> : tendance à la réduction des durées (OVIVA <em>(Li HK et al., N Engl J Med, 2019)</em> — per os précoce, DATISPO <em>(Bernard et al., Lancet, 2015)</em> — 6 semaines de spondylodiscite)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA12-S03-001 | 📊 INFOGRAPHIE | Durées de traitement recommandées par type d'IOA | Tableau synthétique de référence |<br />
+| MIOA12-S03-002 | 📐 SCHÉMA | Études clés récentes : OVIVA, DATISPO, POET — impact sur les pratiques | Résumé visuel |</p>
+<h3 id="section-124-opat-et-traitement-ambulatoire">Section 12.4 — OPAT et traitement ambulatoire</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>OPAT</strong> (<em>Outpatient Parenteral Antibiotic Therapy</em>) : antibiothérapie parentérale à domicile<br />
+- Indications : patient stable, cathéter (PICC-line, Midline, PAC), ATB compatible (ceftriaxone, ertapénème, daptomycine, vancomycine en pompe)<br />
+- Organisation : IDE à domicile, suivi biologique hebdomadaire (NFS, CRP, rénale, hépatique), consultation infectiologie<br />
+- <strong>Relais oral précoce</strong> : étude OVIVA <em>(Li HK et al., N Engl J Med, 2019)</em> → pas d'infériorité du relais oral à J7 vs IV prolongé, révolution des pratiques<br />
+- Critères de switch IV → oral <em>(critères OVIVA — Li HK et al., N Engl J Med, 2019)</em> : apyrexie, CRP ↓ &gt;50%, absence de signes de gravité, antibiogramme compatible, molécule orale appropriée<br />
+- <strong>Suivi clinique et biologique</strong> : CRP et NFS hebdomadaires, bilan hépatique et rénal à J14, J30, J45, J90</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA12-S04-001 | 📊 INFOGRAPHIE | Organisation de l'OPAT : acteurs, suivi, matériel | Schéma organisationnel |<br />
+| MIOA12-S04-002 | 📐 SCHÉMA | Critères de switch IV → oral : checklist de sécurité | Checklist colorée |<br />
+| MIOA12-S04-003 | 📊 INFOGRAPHIE | Calendrier de suivi biologique sous ATB prolongé | Planning de suivi |</p>
+<h3 id="points-cles-du-module-12">Points clés du Module 12</h3>
+<ol>
+<li>L'antibiothérapie probabiliste doit couvrir <em>S. aureus</em> dans la grande majorité des IOA</li>
+<li>La combinaison rifampicine + fluoroquinolone est la référence pour les IOA sur matériel à staphylocoque sensible</li>
+<li>La rifampicine ne doit JAMAIS être utilisée en monothérapie et ne doit être débutée que lorsque le foyer est contrôlé chirurgicalement</li>
+<li>L'étude OVIVA permet un relais oral précoce (J7) dans de nombreuses IOA</li>
+<li>Les durées de traitement tendent à se raccourcir (3-4 semaines chez l'enfant, 6 semaines pour la spondylodiscite)</li>
+<li>Le suivi biologique régulier (CRP, NFS, bilan hépatique/rénal) est indispensable</li>
+</ol>
+<hr />
+<h1 id="module-13-antibiotiques-locaux-ciment-spacers-billes-coatings">MODULE 13 : ANTIBIOTIQUES LOCAUX — CIMENT, SPACERS, BILLES, COATINGS</h1>
+<p><strong>Partie</strong> : IV — Antibiothérapie<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 11, 12</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Infection chronique de PTG à SASM. Explantation et mise en place d'un spacer en ciment chargé de vancomycine + gentamicine. 8 semaines d'ATB systémique. Lors de la réimplantation, les prélèvements reviennent négatifs. *Comment fonctionne un spacer antibiotique ? Quelles concentrations locales atteint-on ? Pourquoi vancomycine + gentamicine plutôt qu'un seul ATB ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> le principe de l'antibiothérapie locale et ses avantages</li>
+<li><strong>Connaître</strong> les antibiotiques utilisables en ciment (thermostables, hydrosolubles)</li>
+<li><strong>Décrire</strong> les différents vecteurs locaux (ciment, spacer, billes, éponge de collagène, coatings)</li>
+<li><strong>Comprendre</strong> la cinétique d'élution des antibiotiques depuis le ciment</li>
+<li><strong>Discuter</strong> les avantages et limites de l'antibiothérapie locale</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-131-principes-de-lantibiotherapie-locale">Section 13.1 — Principes de l'antibiothérapie locale</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Avantages</strong> : concentrations locales très élevées (10-100× la CMI, 100-1000× les concentrations sériques), faible toxicité systémique, action au contact du biofilm<br />
+- <strong>Indications</strong> : espace mort après débridement, spacer entre 2 temps, ciment d'ancrage prophylactique, ostéomyélite chronique<br />
+- <strong>Le concept d'espace mort</strong> : après séquestrectomie radicale, la cavité résiduelle doit être comblée (sinon : réinfection par hématome)<br />
+- <strong>Complémentaire et non substitutive</strong> : l'antibiothérapie locale ne remplace JAMAIS l'antibiothérapie systémique</p>
+<h3 id="section-132-le-ciment-pmma-charge-dantibiotiques">Section 13.2 — Le ciment PMMA chargé d'antibiotiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>PMMA</strong> (Polyméthacrylate de Méthyle) : polymérise exothermiquement, l'ATB est emprisonné dans la matrice<br />
+- <strong>ATB utilisables</strong> : thermostables (résistent à la polymérisation exothermique ~80°C), hydrosolubles (éluent depuis la matrice)<br />
+  - Gentamicine (le plus utilisé), tobramycine, vancomycine, clindamycine<br />
+  - ATB NON utilisables : rifampicine (interfère avec la polymérisation), bêta-lactamines (thermolabiles), daptomycine<br />
+- <strong>Cinétique d'élution</strong> :<br />
+  - Phase initiale rapide (burst release) : premières 24-72h → concentrations très élevées<br />
+  - Phase de décroissance lente : semaines → concentrations plus faibles, risque de sous-dosage et de sélection de résistance<br />
+- <strong>Combinaison de 2 ATB</strong> : vancomycine + gentamicine — synergie d'élution (les 2 élèchent mutuellement la porosité du ciment)<br />
+- <strong>Dosage dans le ciment</strong> :<br />
+  - Prophylactique : 0.5-1g ATB / 40g ciment<br />
+  - Thérapeutique (spacer) : 3-4g vancomycine + 3-4g gentamicine / 40g ciment (doses élevées)<br />
+- <strong>Types de ciment thérapeutique</strong> :<br />
+  - Artisanal (préparé au bloc) vs industriel (prêt à l'emploi : Spacer-G, Copal)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA13-S02-001 | 🎬 ANIMATION | Cinétique d'élution du ciment : burst release → décroissance | Courbe animée |<br />
+| MIOA13-S02-002 | 📐 SCHÉMA | Ciment PMMA : structure moléculaire, piégeage de l'ATB, élution | Zoom microscopique |<br />
+| MIOA13-S02-003 | 📷 IMAGE | Préparation d'un spacer de genou au bloc opératoire | Photo per-opératoire |<br />
+| MIOA13-S02-004 | 📊 INFOGRAPHIE | ATB utilisables vs non utilisables en ciment — critères et liste | Tableau de référence |</p>
+<h3 id="section-133-spacers-billes-et-autres-vecteurs">Section 13.3 — Spacers, billes et autres vecteurs</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Spacers articulés</strong> (genou) : maintiennent l'espace articulaire et la longueur du membre, permettent une mobilité partielle<br />
+- <strong>Spacers statiques</strong> (hanche, genou complexe) : plus stables, moins de mobilité<br />
+- <strong>Billes de gentamicine</strong> (Septopal®) : chaîne de billes de PMMA pré-chargées, comblement de cavités osseuses<br />
+- <strong>Éponge de collagène-gentamicine</strong> (Collatamp®) : résorbable, libération rapide, utilisée en prophylaxie locale<br />
+- <strong>Sulfate de calcium</strong> : résorbable, bonne élution, remplacé progressivement par l'os<br />
+- <strong>Vecteurs innovants</strong> :<br />
+  - Bio-verres chargés d'ATB (BAG-S53P4) : antimicrobiens intrinsèquement + libération d'ions, ostéoconducteurs<br />
+  - Hydrogels chargés d'ATB : libération contrôlée, résorbables<br />
+  - Coatings d'implants : surfaces traitées anti-biofilm (argent, cuivre, hydroxyapatite chargée d'ATB)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA13-S03-001 | 📷 IMAGE | Spacer articulé de genou (vue clinique et radiographique) | Photos per-op + radio |<br />
+| MIOA13-S03-002 | 📷 IMAGE | Billes de gentamicine (Septopal) en place dans une cavité osseuse | Radio et photo per-op |<br />
+| MIOA13-S03-003 | 📊 INFOGRAPHIE | Comparatif des vecteurs d'ATB locaux : PMMA, sulfate de calcium, collagène, bio-verre | Tableau multicritère |<br />
+| MIOA13-S03-004 | 📐 SCHÉMA | Coating anti-biofilm d'implant — technologies disponibles | Schéma de surface |</p>
+<h3 id="points-cles-du-module-13">Points clés du Module 13</h3>
+<ol>
+<li>L'antibiothérapie locale atteint des concentrations 100-1000× supérieures aux concentrations sériques au site d'infection</li>
+<li>Les ATB utilisables en ciment PMMA doivent être thermostables et hydrosolubles (gentamicine, vancomycine, tobramycine)</li>
+<li>La combinaison vancomycine + gentamicine dans le ciment améliore l'élution par synergie</li>
+<li>La cinétique d'élution comporte un burst release initial puis une phase de décroissance — attention au risque de sous-dosage tardif</li>
+<li>Les spacers articulés (genou) maintiennent l'espace articulaire ; les spacers statiques offrent plus de stabilité</li>
+<li>L'antibiothérapie locale est complémentaire et NE REMPLACE JAMAIS l'antibiothérapie systémique</li>
+</ol>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Bernard L, Dinh A, Ghout I, et al. Antibiotic treatment for 6 weeks versus 12 weeks in patients with pyogenic vertebral osteomyelitis: an open-label, non-inferiority, randomised, controlled trial (DATISPO). <em>Lancet</em>. 2015;385(9971):875-882.</li>
+<li>Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA). <em>N Engl J Med</em>. 2019;380(5):425-436.</li>
+<li>Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. <em>Clin Infect Dis</em>. 2013;56(1):e1-e25.</li>
+<li>Peltola H, Pääkkönen M. Acute osteomyelitis in children. <em>N Engl J Med</em>. 2014;370(4):352-360.</li>
+<li>SPILF (Société de Pathologie Infectieuse de Langue Française). Recommandations de pratique clinique — Infections ostéo-articulaires sur matériel et de contiguïté. 2009.</li>
+<li>Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections: a randomized controlled trial. <em>JAMA</em>. 1998;279(19):1537-1541.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

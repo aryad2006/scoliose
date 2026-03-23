@@ -1,0 +1,423 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-hypertension-arterielle">❤️ CAHIER DES CHARGES — FORMATION HYPERTENSION ARTÉRIELLE</h1>
+<h2 id="de-la-mesure-tensionnelle-a-la-medecine-de-precision-vasculaire">De la mesure tensionnelle à la médecine de précision vasculaire</h2>
+<hr />
+<p><strong>Badge formation</strong> : ❤️ HTA<br />
+<strong>Date</strong> : 14 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Hypertension Artérielle — Formation complète et actualisée<br />
+<strong>Plateforme</strong> : VERTEX© (Virtual Environment for Rachis Training and EXploration)<br />
+<strong>Public cible</strong> : Médecins généralistes, internes de cardiologie et de médecine interne, cardiologues praticiens<br />
+<strong>Prérequis</strong> : Connaissances médicales de base, physiologie cardiovasculaire<br />
+<strong>Durée estimée</strong> : 35 heures (auto-formation)<br />
+<strong>Couleur dominante</strong> : Rouge carmin <code>#C0392B</code><br />
+<strong>Couleur accent</strong> : Bleu nuit <code>#2C3E50</code></p>
+<hr />
+<h2 id="1-objectifs-pedagogiques-generaux">1. OBJECTIFS PÉDAGOGIQUES GÉNÉRAUX</h2>
+<h3 id="11-objectif-principal">1.1 Objectif principal</h3>
+<p>Maîtriser l'ensemble des connaissances nécessaires à la prise en charge optimale de l'hypertension artérielle, depuis les mécanismes physiopathologiques fondamentaux jusqu'aux thérapeutiques innovantes, en passant par le dépistage, le diagnostic, le bilan étiologique, l'évaluation du retentissement et la stratification du risque cardiovasculaire, conformément aux recommandations ESC/ESH 2023, HAS 2024 et ACC/AHA 2017.</p>
+<h3 id="12-objectifs-specifiques">1.2 Objectifs spécifiques</h3>
+<p>À l'issue de cette formation, l'apprenant sera capable de :</p>
+<ol>
+<li>Expliquer les mécanismes physiologiques de régulation de la pression artérielle</li>
+<li>Identifier les facteurs de risque et les mécanismes physiopathologiques de l'HTA</li>
+<li>Mesurer correctement la PA et interpréter les résultats (cabinet, MAPA, automesure)</li>
+<li>Réaliser et interpréter le bilan initial et le bilan de retentissement</li>
+<li>Diagnostiquer et prendre en charge les formes particulières d'HTA</li>
+<li>Dépister et explorer les HTA secondaires</li>
+<li>Évaluer le risque cardiovasculaire global (SCORE2, SCORE2-OP)</li>
+<li>Prescrire un traitement antihypertenseur adapté selon les recommandations actuelles</li>
+<li>Gérer les situations d'urgence hypertensive</li>
+<li>Connaître les innovations thérapeutiques (dénervation rénale, thérapie digitale)</li>
+</ol>
+<hr />
+<h2 id="2-architecture-de-la-formation">2. ARCHITECTURE DE LA FORMATION</h2>
+<h3 id="21-plan-general-12-parties-40-modules">2.1 Plan général — 12 parties, 40 modules</h3>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Titre</th>
+<th>Modules</th>
+<th>Contenu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>Introduction et charte</td>
+<td>—</td>
+<td>Plan, conventions, bibliographie</td>
+</tr>
+<tr>
+<td>01</td>
+<td>Fondamentaux</td>
+<td>M01-M04</td>
+<td>Anatomie vasculaire, physiologie, régulation PA, hémodynamique</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Physiopathologie</td>
+<td>M05-M08</td>
+<td>HTA essentielle, SRAA, système nerveux sympathique, dysfonction endothéliale</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Épidémiologie et diagnostic</td>
+<td>M09-M12</td>
+<td>Épidémiologie, mesure de la PA, critères diagnostiques, MAPA/automesure</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Bilan et examens</td>
+<td>M13-M15</td>
+<td>Bilan initial, retentissement, stratification du risque CV</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Formes cliniques</td>
+<td>M16-M19</td>
+<td>HTA blouse blanche, masquée, résistante, urgences hypertensives</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Complications</td>
+<td>M20-M24</td>
+<td>Cœur, cerveau, rein, vaisseaux, œil</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Traitement non pharmacologique</td>
+<td>M25-M27</td>
+<td>Hygiène de vie, sel, activité physique, stress</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Traitement pharmacologique</td>
+<td>M28-M32</td>
+<td>IEC/ARA2, ICC, diurétiques, bêtabloquants, associations, stratégie globale</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Situations particulières</td>
+<td>M33-M36</td>
+<td>Grossesse, sujet âgé, diabète, insuffisance rénale</td>
+</tr>
+<tr>
+<td>10</td>
+<td>HTA secondaire</td>
+<td>M37-M39</td>
+<td>Endocrinienne, rénovasculaire, autres causes</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Innovations et perspectives</td>
+<td>M40</td>
+<td>Dénervation rénale, thérapie digitale, IA, biomarqueurs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-conventions-et-charte">3. CONVENTIONS ET CHARTE</h2>
+<h3 id="31-tags-medias">3.1 Tags médias</h3>
+<p>Format : <code>&gt; [MEDIA: {EMOJI} MHTA{module}-S{section}-{numéro} — {TITRE}]</code></p>
+<p>Types de médias :<br />
+- 📊 : Schémas, algorithmes, arbres décisionnels<br />
+- 🖼️ : Illustrations anatomiques et physiologiques<br />
+- 📈 : Courbes, graphiques, données épidémiologiques<br />
+- 🔬 : Examens complémentaires, imagerie<br />
+- 🎬 : Vidéos de gestes (mesure tensionnelle, écho cardiaque)<br />
+- 💊 : Tableaux pharmacologiques<br />
+- 🏥 : Cas cliniques illustrés</p>
+<h3 id="32-quiz">3.2 Quiz</h3>
+<ul>
+<li>10-15 questions par module</li>
+<li>4 niveaux : 🥉 Bronze, 🥈 Argent, 🥇 Or, 💎 Diamant</li>
+<li>Questions intégrant les recommandations ESC/ESH 2023 et HAS 2024</li>
+</ul>
+<h3 id="33-code-couleur">3.3 Code couleur</h3>
+<ul>
+<li><strong>Rouge carmin <code>#C0392B</code></strong> : titres H1 et H2, alertes urgences</li>
+<li><strong>Bleu nuit <code>#2C3E50</code></strong> : titres H3, accents, encadrés recommandations</li>
+<li><strong>Fond rouge clair</strong> : encadrés « URGENCE HYPERTENSIVE »</li>
+<li><strong>Fond bleu clair</strong> : encadrés « RECOMMANDATION ESC/ESH »</li>
+<li><strong>Fond vert clair</strong> : encadrés « BONNE PRATIQUE »</li>
+</ul>
+<h3 id="34-encadres-speciaux">3.4 Encadrés spéciaux</h3>
+<ul>
+<li><strong>🚨 URGENCE</strong> : situations nécessitant une prise en charge immédiate</li>
+<li><strong>📋 RECOMMANDATION</strong> : recommandations ESC/ESH 2023, HAS 2024, ACC/AHA 2017</li>
+<li><strong>💡 POINT PRATIQUE</strong> : astuces cliniques pour le praticien</li>
+<li>**</li>
+</ul>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : erreurs fréquentes à éviter
+- **🔬 EVIDENCE** : niveau de preuve et études de référence</div>
+
+<hr />
+<h2 id="4-sources-et-references">4. SOURCES ET RÉFÉRENCES</h2>
+<h3 id="41-recommandations-de-reference">4.1 Recommandations de référence</h3>
+<ol>
+<li><strong>ESC/ESH 2023</strong> — <em>2023 ESH Guidelines for the management of arterial hypertension</em>, Journal of Hypertension, 2023</li>
+<li><strong>ACC/AHA 2017</strong> — <em>Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults</em>, Hypertension, 2017</li>
+<li><strong>HAS 2024</strong> — <em>Prise en charge de l'hypertension artérielle de l'adulte</em>, Haute Autorité de Santé</li>
+<li><strong>KDIGO 2021</strong> — <em>Clinical Practice Guideline for the Management of Blood Pressure in CKD</em></li>
+<li><strong>ESC 2024</strong> — <em>Guidelines on Chronic Coronary Syndromes</em> (chapitre HTA)</li>
+<li><strong>ISSHP 2022</strong> — <em>International Society for the Study of Hypertension in Pregnancy</em></li>
+</ol>
+<h3 id="42-ouvrages-de-reference">4.2 Ouvrages de référence</h3>
+<ol>
+<li><strong>Kaplan NM, Victor RG</strong> — <em>Kaplan's Clinical Hypertension</em>, 12th ed., Wolters Kluwer, 2024</li>
+<li><strong>Mancia G, Grassi G</strong> — <em>Manual of Hypertension of the European Society of Hypertension</em>, 3rd ed., 2019</li>
+<li><strong>Bakris GL, Sorrentino MJ</strong> — <em>Hypertension: A Companion to Braunwald's Heart Disease</em>, 4th ed., Elsevier, 2023</li>
+<li><strong>Safar ME, O'Rourke MF</strong> — <em>Arterial Stiffness in Hypertension</em>, Elsevier, 2006</li>
+<li><strong>Blacher J, Halimi JM et al.</strong> — <em>Prise en charge de l'HTA de l'adulte</em>, SFHTA/SFMV, 2024</li>
+</ol>
+<h3 id="43-etudes-cliniques-de-reference">4.3 Études cliniques de référence</h3>
+<table>
+<thead>
+<tr>
+<th>Étude</th>
+<th>Année</th>
+<th>Résultat clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPRINT</td>
+<td>2015</td>
+<td>Cible PAS &lt; 120 mmHg réduit la mortalité CV de 25 % vs &lt; 140</td>
+</tr>
+<tr>
+<td>HOPE-3</td>
+<td>2016</td>
+<td>Bénéfice du traitement chez les patients à risque intermédiaire</td>
+</tr>
+<tr>
+<td>PATHWAY-2</td>
+<td>2015</td>
+<td>Spironolactone supérieure dans l'HTA résistante</td>
+</tr>
+<tr>
+<td>SYMPLICITY HTN-3</td>
+<td>2014</td>
+<td>Dénervation rénale : résultats initiaux décevants</td>
+</tr>
+<tr>
+<td>SPYRAL HTN-ON MED</td>
+<td>2022</td>
+<td>Dénervation rénale : résultats positifs (2ème génération)</td>
+</tr>
+<tr>
+<td>STEP</td>
+<td>2021</td>
+<td>PAS 110-130 vs 130-150 chez le sujet âgé chinois</td>
+</tr>
+<tr>
+<td>RADIANCE-HTN TRIO</td>
+<td>2022</td>
+<td>Dénervation rénale par ultrasons dans HTA résistante</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>2022</td>
+<td>Pas de différence matin vs soir pour la prise du traitement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-anti-plagiat-et-attribution">5. ANTI-PLAGIAT ET ATTRIBUTION</h2>
+<ul>
+<li>Formulation prescriptive originale de toutes les données</li>
+<li>Classifications et scores indiqués « adapté de [source, année] »</li>
+<li>Données chiffrées référencées avec la source</li>
+<li>Les algorithmes sont reformulés, non reproduits à l'identique</li>
+</ul>
+<hr />
+<h2 id="6-classification-de-lhta-tableau-de-reference">6. CLASSIFICATION DE L'HTA — TABLEAU DE RÉFÉRENCE</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHTA00-S06-001 — TABLEAU COMPARATIF : classifications de l'HTA — ESC/ESH 2023 vs ACC/AHA 2017 vs HAS 2024]</p>
+</blockquote>
+<p><strong>Classification ESC/ESH 2023</strong> (adapté de ESC/ESH, J Hypertension 2023) :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>PAS (mmHg)</th>
+<th></th>
+<th>PAD (mmHg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimale</td>
+<td>&lt; 120</td>
+<td>et</td>
+<td>&lt; 80</td>
+</tr>
+<tr>
+<td>Normale</td>
+<td>120-129</td>
+<td>et/ou</td>
+<td>80-84</td>
+</tr>
+<tr>
+<td>Normale haute</td>
+<td>130-139</td>
+<td>et/ou</td>
+<td>85-89</td>
+</tr>
+<tr>
+<td>HTA grade 1</td>
+<td>140-159</td>
+<td>et/ou</td>
+<td>90-99</td>
+</tr>
+<tr>
+<td>HTA grade 2</td>
+<td>160-179</td>
+<td>et/ou</td>
+<td>100-109</td>
+</tr>
+<tr>
+<td>HTA grade 3</td>
+<td>≥ 180</td>
+<td>et/ou</td>
+<td>≥ 110</td>
+</tr>
+<tr>
+<td>HTA systolique isolée</td>
+<td>≥ 140</td>
+<td>et</td>
+<td>&lt; 90</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Classification ACC/AHA 2017</strong> (adapté de Whelton et al., Hypertension 2017) :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>PAS (mmHg)</th>
+<th></th>
+<th>PAD (mmHg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normale</td>
+<td>&lt; 120</td>
+<td>et</td>
+<td>&lt; 80</td>
+</tr>
+<tr>
+<td>Élevée</td>
+<td>120-129</td>
+<td>et</td>
+<td>&lt; 80</td>
+</tr>
+<tr>
+<td>HTA stade 1</td>
+<td>130-139</td>
+<td>ou</td>
+<td>80-89</td>
+</tr>
+<tr>
+<td>HTA stade 2</td>
+<td>≥ 140</td>
+<td>ou</td>
+<td>≥ 90</td>
+</tr>
+<tr>
+<td>Crise hypertensive</td>
+<td>&gt; 180</td>
+<td>et/ou</td>
+<td>&gt; 120</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>La différence majeure entre les recommandations européennes (ESC/ESH) et américaines (ACC/AHA) réside dans le seuil diagnostique : 140/90 mmHg en Europe vs 130/80 mmHg aux États-Unis. Cette divergence de 10 mmHg sur la systolique a des implications considérables en termes de prévalence et de décision thérapeutique.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

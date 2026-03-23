@@ -1,0 +1,754 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-fiv-amp-partie-1-cas-1-a-10">CAS CLINIQUES — FIV / AMP — Partie 1 (Cas 1 à 10)</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-assistance-medicale-a-la-procreation">Formation VERTEX© — Fécondation In Vitro et Assistance Médicale à la Procréation</h2>
+<h3 id="niveaux-bronze-et-argent">Niveaux Bronze 🥉 et Argent 🥈</h3>
+<hr />
+<blockquote>
+<p><strong>Instructions pédagogiques</strong> : Chaque cas est structuré en étapes progressives. Lisez l'énoncé, répondez aux questions, puis consultez les corrections détaillées. Les cas couvrent les présentations les plus fréquentes en médecine de la reproduction.</p>
+</blockquote>
+<hr />
+<h2 id="cas-01-infertilite-primaire-chez-un-couple-jeune-bilan-de-premiere-intention">CAS 01 🥉 — Infertilité Primaire chez un Couple Jeune : Bilan de Première Intention</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-01 — Bilan d'infertilité de première intention : organigramme complet des examens femme + homme]</p>
+</blockquote>
+<p><strong>Patients</strong> : Mme et M. A. — Elle 29 ans, professeure des écoles, lui 31 ans, ingénieur. Mariés depuis 3 ans. Aucun antécédent médical notable chez les deux. Pas de tabac, pas d'alcool excessif.</p>
+<p><strong>Motif de consultation</strong> : Infertilité primaire — désir de grossesse depuis 18 mois, rapports réguliers sans contraception.</p>
+<p><strong>Anamnèse</strong> :<br />
+- Mme A. : cycles réguliers (28-30 jours), règles normales, pas de dysménorrhée invalidante, pas de dyspareunie. Poids 62 kg, taille 168 cm (IMC 22). Pas de chirurgie abdomino-pelvienne.<br />
+- M. A. : pas d'antécédent de cryptorchidie, d'orchite, de chirurgie inguinale. Pas d'exposition professionnelle toxique.</p>
+<hr />
+<p><strong>Q1 🥉</strong> — Quel bilan de première intention prescrivez-vous pour chacun des deux partenaires ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Bilan féminin</strong> :<br />
+1. <strong>Bilan hormonal J2-J3</strong> : FSH, LH, E2, AMH (dosable à tout moment du cycle), prolactine, TSH<br />
+2. <strong>Échographie pelvienne</strong> : CFA (J2-J5), morphologie utérine, recherche d'endométriome, myomes, adénomyose<br />
+3. <strong>Évaluation de la perméabilité tubaire</strong> : HSG (hystérosalpingographie) ou HyFoSy (SonoHSG — mousse ExEm, pas d'irradiation)<br />
+4. <strong>Sérologies obligatoires</strong> : rubéole, toxoplasmose, VIH, VHB, VHC, syphilis</p>
+<p><strong>Bilan masculin</strong> :<br />
+1. <strong>Spermogramme</strong> (abstinence 2-7 jours) : normes OMS 2021 (concentration ≥ 16 M/mL, mobilité progressive ≥ 30 %, morphologie Kruger ≥ 4 %, volume ≥ 1,4 mL, vitalité ≥ 54 %)<br />
+2. <strong>Spermoculture</strong><br />
+3. <strong>Sérologies</strong> : VIH, VHB, VHC, syphilis</p>
+<blockquote>
+<p>💡 <strong>Point clé</strong> : le bilan est <strong>simultané</strong> chez les deux partenaires dès la première consultation. Étiologies de l'infertilité : féminine 30 %, masculine 30 %, mixte 20 %, inexpliquée 20 %.</p>
+</blockquote>
+<hr />
+<p><strong>Q2 🥉</strong> — Les résultats du bilan de Mme A. : AMH 3,2 ng/mL, CFA 14, FSH J3 = 6,5 UI/L, E2 J3 = 35 pg/mL. HSG : trompes perméables. Échographie : utérus normal, pas de myome, pas d'endométriome. Comment interprétez-vous ces résultats ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p>Bilan <strong>entièrement normal</strong> :<br />
+- AMH 3,2 (normal : 1,1-3,5 ng/mL) → bonne réserve ovarienne<br />
+- CFA 14 (normal : 5-15) → confirme l'AMH<br />
+- FSH 6,5 UI/L (normal &lt; 10-12) + E2 35 pg/mL (normal &lt; 80) → pas de recrutement folliculaire prématuré<br />
+- Perméabilité tubaire conservée<br />
+- Cavité utérine normale</p>
+<p>→ Aucun facteur féminin identifié. Le résultat du spermogramme est déterminant pour l'orientation.</p>
+<hr />
+<p><strong>Q3 🥈</strong> — Spermogramme de M. A. : volume 3,2 mL, concentration 42 M/mL, mobilité progressive 38 %, morphologie 6 %, vitalité 72 %. Tout est normal. Le couple a donc une <strong>infertilité inexpliquée</strong>. Quelle stratégie proposez-vous ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Infertilité inexpliquée</strong> confirmée (diagnostic d'exclusion — bilan standard normal, prévalence 20-25 %).</p>
+<p>Stratégie adaptée à l'âge (elle 29 ans, &lt; 35 ans) :<br />
+1. <strong>Expectative supervisée 6-12 mois</strong> : fécondabilité mensuelle spontanée ~3-5 % dans cette situation. Modèle de Hunault : jeune couple, courte durée → pronostic spontané raisonnable<br />
+2. Si échec → <strong>IIU (insémination intra-utérine) × 3-4 cycles</strong> : taux 10-12 %/cycle avec stimulation légère<br />
+3. Si échec IIU → <strong>FIV</strong></p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège</strong> : le clomifène seul n'est PAS supérieur à l'expectative dans l'infertilité inexpliquée *(Bhattacharya, BMJ 2008)*.</div>
+
+<blockquote>
+<p>📚 <strong>Références</strong> : Hunault CC et al. <em>A prediction model for selecting subfertile patients</em>. Hum Reprod 2004 ; Bhattacharya S et al. BMJ 2008.</p>
+</blockquote>
+<hr />
+<p><strong>Q4 🥈</strong> — 4 cycles d'IIU sans grossesse. Mme A. a maintenant 30 ans. Vous décidez de passer en FIV. Quel protocole de stimulation choisissez-vous et pourquoi ?</p>
+<p><strong>Réponse Q4</strong> :</p>
+<p><strong>Protocole antagoniste</strong> (standard en 1ère intention) :<br />
+- <strong>Justification</strong> : risque SHO réduit (possibilité de trigger agoniste si hyperréponse), durée moindre, efficacité comparable au protocole long agoniste <em>(Al-Inany, Cochrane 2016)</em><br />
+- <strong>Dose FSH</strong> : 150-225 UI/j (réserve normale, 30 ans)<br />
+- <strong>Antagoniste</strong> : cétrorelix ou ganirélix, débuté quand follicule ≥ 14 mm ou E2 &gt; 300 pg/mL (protocole flexible)<br />
+- <strong>Monitorage</strong> : écho + E2 à J5-J6, puis tous les 2-3 jours<br />
+- <strong>Critères de déclenchement</strong> : ≥ 3 follicules ≥ 17 mm, E2 &lt; 5 000 pg/mL, progestérone &lt; 1,5 ng/mL<br />
+- <strong>Trigger</strong> : hCG 5 000-10 000 UI (réponse normale attendue). Si hyperréponse (&gt; 15-20 follicules) → basculer vers trigger agoniste + freeze-all<br />
+- <strong>Ponction</strong> : 34-36h post-trigger</p>
+<blockquote>
+<p>📚 <strong>Référence</strong> : Al-Inany HG et al. Cochrane 2016.</p>
+</blockquote>
+<hr />
+<p><strong>Q5 🥈</strong> — 12 ovocytes ponctionnés, 10 MII. FIV classique (spermogramme normal) : 7 fécondés (2PN). Culture J5 : 3 blastocystes (4AA, 3AB, 3BB). Quelle est votre stratégie de transfert ?</p>
+<p><strong>Réponse Q5</strong> :</p>
+<ul>
+<li><strong>SET (Single Embryo Transfer)</strong> du meilleur blastocyste (<strong>4AA</strong>) : recommandé chez &lt; 38 ans, 1er cycle, blastocystes de bonne qualité <em>(Pandian, Cochrane 2013)</em></li>
+<li><strong>Vitrification</strong> des 2 restants (3AB, 3BB ≥ seuil 3BB)</li>
+<li><strong>Transfert échoguidé</strong> : dépôt 1-2 cm du fond utérin, vessie semi-pleine 200-300 mL</li>
+<li><strong>Soutien lutéal</strong> : Utrogestan 200 mg × 3/j vaginal, à poursuivre jusqu'à 8-12 SA si grossesse</li>
+<li><strong>β-hCG</strong> : dosage J12-J14 post-transfert</li>
+</ul>
+<p>Taux de grossesse attendu : 35-45 % par transfert de blastocyste chez une femme de 30 ans.</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. L'infertilité inexpliquée est un diagnostic d'exclusion (20-25 % des couples)<br />
+2. Le bilan est TOUJOURS simultané chez les deux partenaires<br />
+3. La stratégie dépend de l'âge : &lt; 35 ans → expectative puis IIU puis FIV<br />
+4. Le protocole antagoniste est le standard en 1ère intention<br />
+5. SET au stade blastocyste chez &lt; 38 ans, 1er cycle</p>
+</blockquote>
+<hr />
+<h2 id="cas-02-oat-severe-et-icsi-premier-parcours-de-fiv">CAS 02 🥉 — OAT Sévère et ICSI : Premier Parcours de FIV</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-02 — Spermogramme sévèrement altéré : orientation vers ICSI, arbre décisionnel]</p>
+</blockquote>
+<p><strong>Patients</strong> : Mme L., 32 ans, secrétaire médicale, et M. L., 34 ans, conducteur routier.</p>
+<p><strong>Motif</strong> : Infertilité primaire de 2 ans.</p>
+<p><strong>Bilan féminin</strong> : Normal — AMH 2,8 ng/mL, CFA 12, trompes perméables, échographie normale.</p>
+<p><strong>Spermogramme M. L.</strong> :<br />
+- Volume : 2,5 mL<br />
+- Concentration : <strong>3 M/mL</strong> (N ≥ 16)<br />
+- Mobilité progressive : <strong>12 %</strong> (N ≥ 30 %)<br />
+- Morphologie Kruger : <strong>2 %</strong> (N ≥ 4 %)<br />
+- Vitalité : 48 % (N ≥ 54 %)</p>
+<p><strong>Spermogramme de contrôle (3 mois plus tard)</strong> : Concentration 4 M/mL, mobilité progressive 15 %, morphologie 2 %. Confirmation de l'anomalie.</p>
+<hr />
+<p><strong>Q1 🥉</strong> — Comment qualifiez-vous cette anomalie spermatique et quel est le TMSC (Total Motile Sperm Count) ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>OAT sévère</strong> (oligo-asthéno-tératozoospermie sévère) :<br />
+- <strong>Oligo</strong> : 3-4 M/mL (sévère &lt; 5 M/mL)<br />
+- <strong>Asthéno</strong> : 12-15 % de mobilité progressive (sévère &lt; 20 %)<br />
+- <strong>Térato</strong> : 2 % de formes normales (sévère &lt; 4 %)</p>
+<p><strong>TMSC</strong> = volume × concentration × % mobilité progressive = 2,5 × 3 × 0,12 = <strong>0,9 million</strong></p>
+<p>Orientation AMP selon TMSC : NSMI ≥ 5M → IIU ; 0,5-5M → FIV classique ; <strong>&lt; 0,5M → ICSI</strong>. Ici TMSC 0,9M → limite basse, FIV classique risquée (taux d'échec total de fécondation ~5-10 %), <strong>ICSI recommandée</strong>.</p>
+<hr />
+<p><strong>Q2 🥉</strong> — Quel bilan complémentaire prescrivez-vous à M. L. ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<ol>
+<li><strong>Bilan hormonal</strong> : FSH, LH, testostérone totale, inhibine B (évaluation de la spermatogenèse)</li>
+<li><strong>Échographie scrotale</strong> : recherche de varicocèle, anomalies testiculaires, ectasie du rete testis</li>
+<li><strong>Caryotype sanguin</strong> : recherche de Klinefelter (47,XXY) — fréquence 5-10 % dans l'OAT sévère</li>
+<li><strong>Microdélétions du chromosome Y (AZF)</strong> : AZFa/AZFb complet = contre-indication biopsie testiculaire, AZFc = 50-60 % de récupération</li>
+<li><strong>Recherche mutation CFTR</strong> : si suspicion d'agénésie bilatérale des canaux déférents (ABCD)</li>
+<li><strong>Test de fragmentation ADN spermatique</strong> (SCSA/TUNEL) : DFI &gt; 30 % = impact négatif</li>
+<li><strong>Spermoculture</strong> : éliminer une infection</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Point clé</strong> : la spermatogenèse dure ~74 jours + 12 jours de maturation épididymaire ≈ 3 mois. Tout facteur toxique (infection, fièvre, médicament) peut affecter le spermogramme avec un délai de 3 mois.</p>
+</blockquote>
+<hr />
+<p><strong>Q3 🥈</strong> — Résultats : FSH 8 UI/L (normale), testostérone normale, caryotype 46,XY, AZF négatif, CFTR négatif, écho testiculaire normale. DFI (SCSA) = 22 % (&lt; 30 %). Diagnostic : <strong>OAT sévère idiopathique</strong>. Vous planifiez une FIV-ICSI. Décrivez le principe de l'ICSI et ses avantages ici.</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>ICSI</strong> (Injection Intracytoplasmique de Spermatozoïde) :<br />
+- <strong>Principe</strong> : injection directe d'un spermatozoïde unique dans le cytoplasme de l'ovocyte à l'aide d'une micropipette de 5-7 µm, après immobilisation du spermatozoïde par un coup sur la queue<br />
+- <strong>Taux de fécondation</strong> : 70-80 % (vs 50-70 % en FIV classique)<br />
+- <strong>Avantage en OAT sévère</strong> : contourne toutes les étapes de la fécondation naturelle (migration, traversée du cumulus, liaison ZP, réaction acrosomique). Un seul spermatozoïde suffit<br />
+- <strong>Indications formelles</strong> : OAT sévère, TESE, PGT, échec total de fécondation en FIV classique, facteur masculin sévère</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Attention</strong> : en ICSI, la capacitation et la réaction acrosomique sont contournées, mais la protéine **PLCzeta** (déclenchant les oscillations calciques pour l'activation ovocytaire) reste nécessaire. Un déficit en PLCzeta peut entraîner un échec total de fécondation → AOA (activation ovocytaire artificielle).</div>
+
+<hr />
+<p><strong>Q4 🥈</strong> — Ponction : 14 ovocytes, 11 MII. ICSI : 8 fécondés (2PN). J5 : 4 blastocystes (4AA, 4AB, 3BB, 3BC). Le 3BC est-il éligible à la vitrification ?</p>
+<p><strong>Réponse Q4</strong> :</p>
+<ul>
+<li><strong>SET</strong> du 4AA (meilleur pronostic, taux d'implantation ~40-50 %)</li>
+<li>Vitrification : 4AB ✅, 3BB ✅ (≥ seuil 3BB)</li>
+<li><strong>3BC</strong> : en-dessous du seuil de vitrification habituel (≥ 3BB). La plupart des centres ne vitrifient pas les 3BC (faible survie post-réchauffement, taux d'implantation &lt; 10 %). Discussion avec le couple : informer que le pronostic est faible mais que certains centres acceptent la vitrification au cas par cas.</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Classification Gardner</strong> : expansion (1-6), ICM (A/B/C), TE (A/B/C). Le seuil de vitrification varie selon les centres mais ≥ 3BB est le consensus le plus fréquent.</p>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. OAT sévère → ICSI (pas FIV classique)<br />
+2. Bilan génétique obligatoire avant FIV-ICSI dans l'infertilité masculine sévère<br />
+3. TMSC = paramètre intégratif d'orientation AMP<br />
+4. Seuil de vitrification : ≥ 3BB dans la majorité des centres<br />
+5. Spermatogenèse ~3 mois → délai d'action de tout facteur</p>
+</blockquote>
+<hr />
+<h2 id="cas-03-decouverte-dun-hydrosalpinx-au-bilan-impact-sur-la-fiv">CAS 03 🥉 — Découverte d'un Hydrosalpinx au Bilan : Impact sur la FIV</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-03 — Hydrosalpinx bilatéral à l'HSG : trompes en massue, rétention de produit de contraste]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme C., 35 ans, aide-soignante. Infertilité secondaire (1 IVG à 22 ans, puis plus de grossesse depuis 6 ans). Conjoint M. C., 37 ans, spermogramme normal.</p>
+<p><strong>Bilan</strong> : AMH 2,0 ng/mL, CFA 10. HSG : <strong>hydrosalpinx bilatéral</strong> (trompes dilatées en massue, pas de passage de produit de contraste en péritonéal).</p>
+<hr />
+<p><strong>Q1 🥉</strong> — Qu'est-ce qu'un hydrosalpinx et quel est son impact sur les résultats de FIV ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Hydrosalpinx</strong> : dilatation de la trompe par accumulation de liquide (le plus souvent secondaire à une infection pelvienne — Chlamydia, gonocoque — ou chirurgie pelvienne). La trompe est obstruée et non fonctionnelle.</p>
+<p><strong>Impact sur la FIV</strong> : l'hydrosalpinx <strong>réduit les taux de FIV de ~50 %</strong> <em>(Strandell, NEJM 1999)</em>. Mécanismes :<br />
+- Reflux de liquide tubaire dans la cavité utérine → toxicité directe sur l'embryon (cytokines inflammatoires, TNF-α)<br />
+- Effet « lavage » mécanique empêchant l'implantation<br />
+- Altération de la réceptivité endométriale</p>
+<hr />
+<p><strong>Q2 🥉</strong> — Quelle mesure chirurgicale préalable recommandez-vous avant la FIV ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Salpingectomie bilatérale</strong> par cœlioscopie avant la FIV. C'est la recommandation formelle <em>(ESHRE, NICE, ASRM)</em>.</p>
+<p>Alternatives si salpingectomie impossible (adhérences sévères) :<br />
+- <strong>Clip tubaire proximal</strong> (occlusion de la trompe au niveau isthmique → empêche le reflux)<br />
+- <strong>Drainage par aspiration échoguidée</strong> : effet temporaire, récidive fréquente → non recommandé en routine</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Point critique</strong> : la **salpingectomie** ne diminue PAS la réserve ovarienne si la technique respecte le mésosalpinx (pas de coagulation extensive de l'apport vasculaire ovarien). L'AMH ne varie pas significativement après salpingectomie.</div>
+
+<hr />
+<p><strong>Q3 🥈</strong> — Salpingectomie bilatérale réalisée. AMH post-op à 3 mois : 1,9 ng/mL (stable). Vous réalisez la FIV : 8 ovocytes, 6 MII, 4 fécondés (FIV classique), 2 blastocystes J5 (3AB, 3BB). SET du 3AB, vitrification du 3BB. β-hCG J14 = 180 UI/L. Échographie 7 SA : sac intra-utérin + activité cardiaque positive. Quels risques spécifiques surveillez-vous dans ce contexte d'antécédent tubaire ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<ol>
+<li><strong>GEU résiduelle</strong> (rare après salpingectomie bilatérale mais possible sur moignon tubaire) : surveiller la localisation du sac à l'échographie précoce</li>
+<li><strong>Grossesse hétérotopique</strong> : incidence 1/100 en AMP (vs 1/30 000 en naturel). Même après salpingectomie, une GEU est possible sur le moignon, le péritoine ou la corne</li>
+<li><strong>Risques obstétricaux de la FIV</strong> : prééclampsie (OR 1,5-2), RCIU, prématurité, placenta prævia</li>
+<li><strong>Aspirine 150 mg/j</strong> à débuter avant 16 SA en prévention de la prééclampsie <em>(essai ASPRE, Rolnik, NEJM 2017)</em></li>
+</ol>
+<p>Ici : sac intra-utérin avec activité cardiaque → grossesse intra-utérine évolutive. Bonne nouvelle. Surveillance obstétricale standard.</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. L'hydrosalpinx réduit les taux de FIV de 50 %<br />
+2. Salpingectomie avant FIV = recommandation forte<br />
+3. La salpingectomie ne diminue pas la réserve ovarienne (technique correcte)<br />
+4. Surveillance GEU même après salpingectomie (moignon résiduel)</p>
+</blockquote>
+<hr />
+<h2 id="cas-04-sopk-et-premiere-fiv-prevention-du-sho">CAS 04 🥉 — SOPK et Première FIV : Prévention du SHO</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-04 — SOPK : échographie ovarienne &gt; 20 follicules, protocole antagoniste + trigger agoniste + freeze-all]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme D., 27 ans, pharmacienne. IMC 26 (surpoids léger). Infertilité primaire 18 mois. Cycles irréguliers (35-60 jours). Hirsutisme modéré (score de Ferriman-Gallwey 12).</p>
+<p><strong>Bilan</strong> :<br />
+- AMH : <strong>8,5 ng/mL</strong> (N 1,1-3,5)<br />
+- CFA : <strong>34</strong> (N 5-15)<br />
+- FSH J3 : 4,2 UI/L, LH J3 : 9,8 UI/L (ratio LH/FSH &gt; 2)<br />
+- Testostérone : 0,8 ng/mL (limite haute)<br />
+- Écho : ovaires augmentés de volume (12 mL chacun), multifolliculaires &gt; 20 follicules/ovaire, aspect « collier de perles »<br />
+- Spermogramme conjoint : normal</p>
+<p><strong>Diagnostic</strong> : <strong>SOPK</strong> (critères de Rotterdam : oligoménorrhée + hyperandrogénie clinique + aspect échographique).</p>
+<hr />
+<p><strong>Q1 🥉</strong> — Pourquoi le SOPK est-il un facteur de risque majeur de SHO en FIV ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p>Le SOPK est le <strong>facteur de risque principal</strong> de SHO en raison de :<br />
+1. <strong>Pool folliculaire excessif</strong> (CFA &gt; 20) → réponse multi-folliculaire amplifiée sous FSH<br />
+2. <strong>AMH élevée</strong> (&gt; 5 ng/mL) → corrélation directe avec le nombre de follicules recrutables<br />
+3. <strong>Sensibilité accrue à la FSH</strong> → seuil de réponse bas, recrutement massif même à faibles doses<br />
+4. <strong>Production excessive de VEGF</strong> par la granulosa sous hCG → perméabilité capillaire → SHO</p>
+<p>Le SHO sévère survient dans 3-8 % des SOPK stimulés, mais est quasi éliminable avec le bon protocole.</p>
+<hr />
+<p><strong>Q2 🥈</strong> — Détaillez le protocole de stimulation FIV adapté au SOPK de Mme D.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Protocole optimisé SOPK</strong> :<br />
+1. <strong>Pré-traitement</strong> : metformine 1 500 mg/j (débutée 1-3 mois avant). Perte de poids ciblée (5-10 % améliore les résultats)<br />
+2. <strong>Protocole antagoniste</strong> : OBLIGATOIRE (permet le trigger agoniste de sauvetage). <strong>Jamais</strong> de protocole long agoniste chez SOPK (récepteurs GnRH désensibilisés → trigger agoniste impossible → piégé sans sécurité)<br />
+3. <strong>FSH faible dose</strong> : 100-150 UI/j. « Start low, go slow ». <strong>Elonva CONTRE-INDIQUÉE</strong> (CFA &gt; 20, dose non ajustable)<br />
+4. <strong>Monitorage rapproché</strong> : écho + E2 tous les 2 jours dès J7<br />
+5. <strong>Seuil d'alerte</strong> : &gt; 15-20 follicules &gt; 14 mm et/ou E2 &gt; 3 500-5 000 pg/mL<br />
+6. <strong>Trigger agoniste GnRH</strong> (Décapeptyl) : réduit le SHO de 95 % <em>(Youssef 2014)</em>. <strong>Jamais hCG</strong> chez SOPK hyperrépondeuse<br />
+7. <strong>Freeze-all</strong> systématique (pas de transfert frais)<br />
+8. <strong>Post-ponction</strong> : cabergoline 0,5 mg/j × 8 jours (inhibe VEGFR-2)<br />
+9. <strong>TEC</strong> : 2-3 mois après, cycle substitué ou naturel modifié</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Règle d'or</strong> : **Antagoniste + trigger agoniste + freeze-all** = quasi-éliminateur du SHO sévère.</div>
+
+<hr />
+<p><strong>Q3 🥈</strong> — Résultats : 18 ovocytes ponctionnés, 15 MII. ICSI (choisi pour optimiser le rendement). 12 fécondés (2PN). J5 : 6 blastocystes vitrifiés (2 × 4AA, 1 × 4AB, 2 × 3BB, 1 × 3BC). À J+3 post-ponction : prise de poids 1,5 kg, distension abdominale modérée, diurèse conservée. Hématocrite 39 %, pas d'ascite significative à l'écho.</p>
+<p><strong>Quel est votre diagnostic et votre conduite ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>SHO léger</strong> (classification Golan) :<br />
+- Prise de poids modérée, distension abdominale, pas d'ascite significative<br />
+- Ht 39 % (&lt; 45 % → pas de critère de sévérité)<br />
+- Diurèse conservée</p>
+<p><strong>Conduite ambulatoire</strong> :<br />
+1. Hydratation orale 2-3 L/j (eau, bouillon)<br />
+2. Alimentation hyperprotéinée<br />
+3. <strong>Paracétamol</strong> pour la douleur (AINS <strong>CONTRE-INDIQUÉS</strong>)<br />
+4. Repos relatif (pas d'alitement strict)<br />
+5. Surveillance : poids quotidien, périmètre abdominal, diurèse<br />
+6. Consignes de consultation en urgence : prise de poids &gt; 1 kg/j, dyspnée, oligurie, douleur abdominale aiguë<br />
+7. Contrôle écho + bilan à J+5 si symptômes persistent<br />
+8. Pas d'inquiétude majeure grâce au <strong>trigger agoniste + freeze-all</strong> → pas d'hCG endogène (pas de grossesse en cours) → SHO précoce isolé → résolution spontanée en 5-7 jours</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Le SOPK est le facteur de risque n°1 de SHO<br />
+2. Protocole SOPK = antagoniste + FSH basse dose + trigger agoniste + freeze-all<br />
+3. Elonva contre-indiquée si CFA &gt; 20<br />
+4. Le SHO précoce (lié au trigger) se résout en 5-7 jours si pas de grossesse<br />
+5. AINS = CONTRE-INDIQUÉS dans le SHO</p>
+</blockquote>
+<hr />
+<h2 id="cas-05-reserve-ovarienne-diminuee-et-strategie-de-la-faible-repondeuse">CAS 05 🥈 — Réserve Ovarienne Diminuée et Stratégie de la Faible Répondeuse</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-05 — Classification POSEIDON des faibles répondeuses : 4 groupes, stratégies adaptées]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme E., 37 ans, architecte. Infertilité primaire 2 ans. Pas d'antécédent chirurgical pelvien.</p>
+<p><strong>Bilan</strong> :<br />
+- AMH : <strong>0,7 ng/mL</strong> (N 1,1-3,5 → DOR)<br />
+- CFA : <strong>3</strong> (N 5-15 → DOR)<br />
+- FSH J3 : <strong>14 UI/L</strong> (élevée, &gt; 10-12)<br />
+- E2 J3 : <strong>90 pg/mL</strong> (élevé &gt; 80 → recrutement folliculaire prématuré)<br />
+- Écho : utérus normal, pas de pathologie annexielle<br />
+- Spermogramme conjoint : normal</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Interprétez le bilan et classez cette patiente selon la classification POSEIDON.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Convergence des 4 marqueurs vers une DOR (Diminished Ovarian Reserve)</strong> :<br />
+- AMH &lt; 1,1 → DOR<br />
+- CFA &lt; 5 → DOR<br />
+- FSH &gt; 12 → DOR (interprétable car E2 &lt; 200)<br />
+- E2 J3 &gt; 80 → recrutement folliculaire prématuré (la FSH est « artificiellement » freinée par un follicule déjà recruté)</p>
+<p><strong>Classification POSEIDON</strong> : <strong>Groupe 4</strong> (≥ 35 ans + marqueurs de réserve altérés : AMH &lt; 1,2 ng/mL et CFA &lt; 5). C'est le groupe de plus mauvais pronostic parmi les faibles répondeuses.</p>
+<p><strong>Critères de Bologne (ESHRE 2011)</strong> : au moins 2 des 3 critères suivants → mauvaise répondeuse :<br />
+1. Âge ≥ 40 ans ou autre facteur de risque → ici 37 ans (borderline)<br />
+2. Mauvaise réponse antérieure (≤ 3 ovocytes en stimulation standard) → pas d'antécédent FIV<br />
+3. CFA &lt; 5-7 ou AMH &lt; 0,5-1,1 → ✅</p>
+<hr />
+<p><strong>Q2 🥈</strong> — Quel protocole de stimulation proposez-vous ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Stratégie pour faible répondeuse (POSEIDON 4)</strong> :</p>
+<ol>
+<li><strong>Protocole antagoniste</strong> (rester standard, pas d'avantage du long agoniste ici)</li>
+<li><strong>FSH hautes doses</strong> : 300-450 UI/j. Ajout de LH (Pergoveris, Luveris) ou HMG (Menopur) → l'ajout de LH peut aider les faibles répondeuses <em>(Humaidan 2017)</em></li>
+<li><strong>Considérer le DuoStim</strong> (double stimulation) : stimulation en phase folliculaire → ponction → re-stimulation en phase lutéale → 2e ponction → maximise le nombre d'ovocytes par cycle calendaire</li>
+<li><strong>Stratégie d'accumulation</strong> : vitrification des ovocytes/embryons sur 2-3 cycles → puis transfert. Permet de constituer une cohorte suffisante pour optimiser le PGT-A ou la sélection</li>
+<li><strong>Trigger hCG</strong> (pas agoniste) car pas de risque de SHO chez les faibles répondeuses (peu de follicules)</li>
+<li><strong>ICSI recommandée</strong> (maximiser le taux de fécondation avec peu d'ovocytes)</li>
+</ol>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Counseling indispensable</strong> : à 37 ans avec AMH 0,7, le taux de naissance par cycle est de ~15-20 %. Le pronostic diminue rapidement. Discuter le don d'ovocytes si échec après 2-3 tentatives.</div>
+
+<hr />
+<p><strong>Q3 🥈</strong> — 1ère FIV : 4 ovocytes ponctionnés, 3 MII, 2 fécondés (ICSI), 1 blastocyste 3BB à J5. 2e FIV (DuoStim) : ponction folliculaire 3 ovocytes → 1 blastocyste 3AB ; ponction lutéale 2 ovocytes → 0 blastocyste. Total accumulé : 1 × 3BB + 1 × 3AB. Faut-il proposer un PGT-A ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Discussion PGT-A chez faible répondeuse</strong> :</p>
+<p>Arguments <strong>CONTRE</strong> le PGT-A ici :<br />
+- Seulement 2 blastocystes → si les 2 sont aneuploïdes au PGT-A, <strong>rien à transférer</strong> → retour à zéro<br />
+- Le PGT-A impose une biopsie + vitrification/réchauffement → perte potentielle d'embryons déjà rares<br />
+- Le taux d'aneuploïdie à 37 ans est ~40-50 %, mais des embryons aneuploïdes en biopsie (mosaïques) peuvent parfois s'autocorriger</p>
+<p>Arguments <strong>POUR</strong> le PGT-A :<br />
+- Éviter un transfert « inutile » d'embryon aneuploïde → gain de temps<br />
+- Réduire le taux de FC</p>
+<p><strong>Recommandation</strong> : dans ce cas précis, le PGT-A n'est <strong>PAS recommandé</strong> — le nombre d'embryons est trop faible pour risquer de tout perdre. Mieux vaut transférer les 2 embryons successivement (3AB puis 3BB) sans PGT-A.</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. La classification POSEIDON guide la stratégie chez les faibles répondeuses<br />
+2. DuoStim = outil pour maximiser les ovocytes par cycle calendaire<br />
+3. Le PGT-A n'est PAS systématique — contre-productif si très peu d'embryons<br />
+4. Counseling honnête sur le pronostic + discussion du don d'ovocytes</p>
+</blockquote>
+<hr />
+<h2 id="cas-06-endometriose-stade-iii-iv-et-fiv-pre-traitement-par-agoniste">CAS 06 🥈 — Endométriose Stade III-IV et FIV : Pré-traitement par Agoniste</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-06 — Endométriose sévère en FIV : traitement par agoniste GnRH 3 mois avant stimulation]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme F., 33 ans, infirmière. Dysménorrhée sévère depuis l'adolescence. Infertilité primaire 3 ans. Cœlioscopie diagnostique il y a 2 ans : <strong>endométriose stade III (score ASRM 35 points)</strong>, endométriome gauche 3 cm.</p>
+<p><strong>Bilan actuel</strong> :<br />
+- AMH : 1,8 ng/mL (limite basse de la normale)<br />
+- CFA : 8 (dont 4 à gauche avec endométriome)<br />
+- Écho : endométriome gauche 3,5 cm « ground glass », ovaire droit normal<br />
+- Trompes : perméabilité non évaluable en HSG (adhérences)<br />
+- Spermogramme conjoint : normal</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Faut-il opérer l'endométriome de 3,5 cm avant la FIV ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>NON — FIV directe sans chirurgie de l'endométriome</strong>.</p>
+<p>Arguments :<br />
+- L'endométriome &lt; 4 cm : l'ESHRE 2014 recommande la FIV directe (pas de chirurgie)<br />
+- La <strong>kystectomie d'endométriome</strong> diminue l'AMH de <strong>30-40 %</strong> <em>(Benschop, Cochrane 2010)</em> — ici l'AMH est déjà limite basse (1,8)<br />
+- La kystectomie n'améliore PAS les taux de FIV (pas de bénéfice sur le taux de naissance)<br />
+- Risque opératoire : adhérences supplémentaires, dommage ovarien, récidive</p>
+<p><strong>Exception</strong> : chirurgie si endométriome &gt; 4-5 cm (gêne à la ponction), croissance rapide (suspecter une néoplasie), douleur invalidante non contrôlée.</p>
+<hr />
+<p><strong>Q2 🥈</strong> — Quel pré-traitement spécifique est recommandé en endométriose stade III-IV avant FIV ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Agoniste GnRH long (3 mois) avant la stimulation FIV</strong> <em>(Sallam, Cochrane 2006)</em> :<br />
+- Mécanisme : down-regulation prolongée → quiescence endométriale → réduction de l'inflammation péritonéale → amélioration de la réceptivité endométriale<br />
+- Bénéfice : <strong>× 4 taux de grossesse clinique</strong> par rapport à la FIV sans pré-traitement <em>(Sallam 2006)</em><br />
+- Protocole : triptoreline 3,75 mg IM mensuel × 3 mois → enchaîner directement la stimulation FIV sans attendre la reprise de cycles<br />
+- Effets secondaires : bouffées de chaleur, sécheresse vaginale, perte osseuse transitoire (réversible)</p>
+<hr />
+<p><strong>Q3 🥈</strong> — Après 3 mois d'agoniste, stimulation en protocole antagoniste, 150 UI FSH. Ponction : 7 ovocytes (dont 4 du côté de l'endométriome). ICSI (choisie car peu d'ovocytes) : 5 fécondés. J5 : 2 blastocystes (4AB, 3BB). SET du 4AB. β-hCG J14 = 250 UI/L. Grossesse évolutive à l'échographie 7 SA.</p>
+<p><strong>Quels risques obstétricaux spécifiques surveillez-vous ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Risques spécifiques de l'endométriose sévère en grossesse :<br />
+1. <strong>FCS précoce</strong> : risque légèrement accru<br />
+2. <strong>Placenta prævia</strong> : risque accru (adhérences, cicatrices utérines)<br />
+3. <strong>Prééclampsie</strong> : risque FIV (OR 1,5-2) → aspirine 150 mg/j avant 16 SA <em>(ASPRE, Rolnik NEJM 2017)</em><br />
+4. <strong>RCIU</strong> (restriction de croissance intra-utérine)<br />
+5. <strong>Douleur</strong> : l'endométriose s'améliore souvent pendant la grossesse (effet protecteur de la progestérone) mais peut flamber en post-partum<br />
+6. <strong>Surveillance de l'endométriome</strong> : croissance ? Torsion (ovaire alourdi) ?</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Endométriome &lt; 4 cm = PAS de chirurgie avant FIV<br />
+2. La kystectomie diminue l'AMH de 30-40 %<br />
+3. Agoniste GnRH 3 mois avant FIV en stade III-IV (× 4 taux grossesse)<br />
+4. Aspirine 150 mg/j en prévention de la prééclampsie</p>
+</blockquote>
+<hr />
+<h2 id="cas-07-echec-total-de-fecondation-en-icsi-activation-ovocytaire">CAS 07 🥈 — Échec Total de Fécondation en ICSI : Activation Ovocytaire</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-07 — Échec total de fécondation (TFF) en ICSI : causes et AOA (activation ovocytaire artificielle)]</p>
+</blockquote>
+<p><strong>Patients</strong> : Mme et M. G. — Elle 31 ans, lui 33 ans. Infertilité primaire 3 ans. Bilan féminin normal (AMH 2,5, CFA 11). Spermogramme : OAT modérée (concentration 8 M/mL, mobilité 20 %, morphologie 3 %). DFI 28 % (&lt; 30 %).</p>
+<p><strong>1ère FIV-ICSI</strong> : 10 MII récupérés. ICSI réalisée. <strong>J1 : 0 fécondation (0 PN sur 10 ovocytes)</strong>. Échec total de fécondation (TFF).</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Quelles sont les causes possibles de cet échec total de fécondation en ICSI ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p>Le TFF en ICSI est rare (2-3 %) mais dévastateur. Causes :</p>
+<ol>
+<li><strong>Défaut d'activation ovocytaire</strong> (cause la plus fréquente) : absence ou insuffisance des oscillations calciques post-injection. Le spermatozoïde injecté libère normalement la <strong>PLCzeta</strong> qui déclenche les oscillations Ca²⁺. Un déficit en PLCzeta = pas d'activation</li>
+<li><strong>Globozoospermie</strong> : absence d'acrosome → déficit en PLCzeta → cause classique de TFF</li>
+<li><strong>Immaturité ovocytaire cytoplasmatique</strong> : les ovocytes sont métaphasiques (MII) mais leur machinerie d'activation est incompétente</li>
+<li><strong>Problème technique ICSI</strong> : injection mal positionnée, lésion du fuseau méiotique, spermatozoïde mal immobilisé</li>
+<li><strong>Combinaison de facteurs</strong> : facteur masculin subliminal + facteur ovocytaire mineur → TFF synergique</li>
+</ol>
+<hr />
+<p><strong>Q2 🥈</strong> — Quelle est votre stratégie pour le 2e cycle ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>AOA (Activation Ovocytaire Artificielle)</strong> :<br />
+- <strong>Principe</strong> : application d'un ionophore calcique (A23187 ou ionomycine) sur les ovocytes <strong>immédiatement après l'ICSI</strong> → mime les oscillations calciques normalement déclenchées par PLCzeta → déclenche l'activation ovocytaire artificiellement<br />
+- <strong>Taux de fécondation avec AOA</strong> : 40-70 % (vs 0 % sans AOA dans cette situation)<br />
+- <strong>Indications</strong> : TFF en ICSI, globozoospermie, TFF récidivant</p>
+<p><strong>Protocole du 2e cycle</strong> :<br />
+1. ICSI sur tous les MII<br />
+2. AOA immédiatement après l'ICSI (incubation 15 min dans milieu contenant l'ionophore calcique)<br />
+3. Vérification 2PN à H16-18</p>
+<p><strong>Si nouvel échec malgré AOA</strong> :<br />
+- Dosage PLCzeta spermatique (si disponible)<br />
+- Considérer TESE (spermatozoïdes testiculaires : parfois meilleur potentiel d'activation)<br />
+- Évaluer la maturité ovocytaire (injection plus tardive, culture prolongée des MI)</p>
+<hr />
+<p><strong>Q3 🥈</strong> — 2e cycle avec AOA : 11 MII, ICSI + AOA. J1 : 7 fécondés (2PN). J5 : 3 blastocystes. Transfert et grossesse. Pourquoi l'AOA a-t-elle fonctionné ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>L'AOA a contourné le déficit en PLCzeta spermatique :<br />
+- Le ionophore calcique crée directement un flux de Ca²⁺ intracellulaire dans l'ovocyte<br />
+- Ce flux déclenche l'exocytose des granules corticaux (blocage polyspermie) et la reprise de méiose → formation des 2 PN<br />
+- Le spermatozoïde apporte son matériel génétique mais son rôle d'activateur est remplacé par l'ionophore</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Sécurité AOA</strong> : les données actuelles sont rassurantes sur le développement des enfants nés après AOA, mais les séries restent limitées. Consentement éclairé obligatoire.</div>
+
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. TFF en ICSI = 2-3 %, souvent lié à un déficit en PLCzeta<br />
+2. AOA (ionophore calcique) = solution de sauvetage efficace<br />
+3. La globozoospermie est une indication classique d'AOA<br />
+4. Si AOA échoue → TESE, évaluation maturité ovocytaire</p>
+</blockquote>
+<hr />
+<h2 id="cas-08-preservation-de-la-fertilite-en-oncologie-cancer-du-sein-er">CAS 08 🥈 — Préservation de la Fertilité en Oncologie : Cancer du Sein ER+</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-08 — Préservation fertilité en oncologie : random-start + letrozole, arbre décisionnel urgence]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme H., 30 ans, commerciale. Diagnostic récent de <strong>carcinome canalaire infiltrant du sein gauche, ER+ HER2−, T2N0M0</strong>. Chimiothérapie néo-adjuvante prévue dans 12 jours. AMH 3,0 ng/mL, CFA 15.</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Pourquoi la préservation de la fertilité est-elle urgente ici ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<ol>
+<li><strong>Gonadotoxicité de la chimiothérapie</strong> : les <strong>alkylants</strong> (cyclophosphamide, dans le protocole AC-T standard) sont hautement gonadotoxiques. Risque d'IOP post-chimio significatif à 30 ans</li>
+<li><strong>Délai limité</strong> : 12 jours avant la chimio. La stimulation standard dure 10-14 jours → c'est faisable en <strong>random-start</strong></li>
+<li><strong>Réserve actuelle correcte</strong> (AMH 3,0, CFA 15) → bon potentiel de recueil. La chimio pourrait détruire irréversiblement cette réserve</li>
+</ol>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Règle oncofertilité</strong> : consultation dans les **24-48 heures** suivant l'annonce du diagnostic.</div>
+
+<hr />
+<p><strong>Q2 🥈</strong> — Détaillez le protocole de stimulation adapté au cancer du sein ER+.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Protocole spécifique cancer ER+</strong> :<br />
+1. <strong>Random-start</strong> : début de la stimulation à <strong>tout moment du cycle</strong> (pas besoin d'attendre les règles) → gain de temps critique<br />
+2. <strong>Letrozole</strong> (inhibiteur d'aromatase) + FSH : le letrozole maintient l'E2 bas malgré la stimulation multifolliculaire. <strong>Indispensable</strong> en cancer ER+ (éviter l'exposition à des taux d'E2 élevés potentiellement délétères pour la tumeur)<br />
+3. <strong>Protocole antagoniste</strong> (standard)<br />
+4. <strong>Trigger agoniste</strong> (préféré) → récupération plus rapide, reprise de la chimio sans délai<br />
+5. <strong>Objectif</strong> : ≥ 15 ovocytes vitrifiés (taux naissance/ovocyte 5-7 % si &lt; 35 ans → 15-20 ovocytes = taux cumulatif 70-85 %)</p>
+<hr />
+<p><strong>Q3 🥈</strong> — Stimulation 11 jours (random-start J8 du cycle + letrozole + FSH 225 UI + antagoniste). Ponction : 14 ovocytes, 12 MII. <strong>Vitrification ovocytaire</strong> (pas de fécondation — patiente célibataire). Chimio débutée J+5 post-ponction.</p>
+<p><strong>Y a-t-il d'autres mesures de préservation à discuter ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Autres mesures de préservation complémentaires :<br />
+1. <strong>Agoniste GnRH pendant la chimio</strong> (protection ovarienne) : triptoreline 3,75 mg IM avant chaque cycle de chimio → met les ovaires au repos → réduction de la gonadotoxicité. Bénéfice modeste mais validé <em>(POEMS trial, Moore, NEJM 2015)</em><br />
+2. <strong>Vitrification de tissu ovarien (cortex)</strong> : option si la patiente n'avait pas eu le temps pour une stimulation (urgence extrême). Ici non nécessaire car ovocytes déjà vitrifiés<br />
+3. <strong>Suivi AMH post-chimio</strong> : évaluation de la réserve résiduelle. Reprise potentielle à 6-12 mois</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Consultation oncofertilité dans les 24-48h<br />
+2. Random-start = gain de temps en urgence oncologique<br />
+3. Letrozole obligatoire en cancer ER+ (maintient E2 bas)<br />
+4. Objectif ≥ 15 ovocytes vitrifiés (&lt; 35 ans)<br />
+5. Agoniste GnRH pendant la chimio = protection ovarienne complémentaire</p>
+</blockquote>
+<hr />
+<h2 id="cas-09-azoospermie-non-obstructive-micro-tese-et-icsi">CAS 09 🥈 — Azoospermie Non Obstructive : Micro-TESE et ICSI</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-09 — Azoospermie non obstructive : arbre décisionnel caryotype + AZF → micro-TESE → ICSI]</p>
+</blockquote>
+<p><strong>Patient</strong> : M. I., 32 ans. Couple en désir de grossesse depuis 2 ans. Mme I., 30 ans, bilan féminin normal.</p>
+<p><strong>Spermogramme M. I. (× 2, à 3 mois d'intervalle)</strong> : <strong>Azoospermie</strong> (aucun spermatozoïde retrouvé après centrifugation du culot).</p>
+<p><strong>Examen clinique</strong> : testicules de volume réduit (10 mL bilatéral, N &gt; 15 mL), consistance molle. Pas de varicocèle palpable. Canaux déférents palpables bilatéralement.</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Comment distinguez-vous une azoospermie obstructive d'une non obstructive ? Quel bilan prescrivez-vous ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Distinction OA vs NOA</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>OA (obstructive)</th>
+<th>NOA (non obstructive)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FSH</td>
+<td><strong>Normale</strong></td>
+<td><strong>Élevée</strong> (&gt; 10-12 UI/L)</td>
+</tr>
+<tr>
+<td>Inhibine B</td>
+<td>Normale</td>
+<td>Basse (&lt; 80 pg/mL)</td>
+</tr>
+<tr>
+<td>Volume testiculaire</td>
+<td>Normal (&gt; 15 mL)</td>
+<td><strong>Réduit</strong></td>
+</tr>
+<tr>
+<td>Canaux déférents</td>
+<td>Absents (ABCD) ou obstrués</td>
+<td>Présents</td>
+</tr>
+<tr>
+<td>Histologie</td>
+<td>Spermatogenèse normale</td>
+<td>Arrêt maturation ou SCO</td>
+</tr>
+</tbody>
+</table>
+<p>Ici : testicules petits (10 mL) + canaux déférents présents → <strong>NOA probable</strong>.</p>
+<p><strong>Bilan</strong> :<br />
+1. <strong>FSH, LH, testostérone, inhibine B</strong> : confirmer l'atteinte testiculaire<br />
+2. <strong>Caryotype sanguin</strong> : Klinefelter (47,XXY) — fréquence 10-15 % dans les NOA<br />
+3. <strong>Microdélétions Y (AZF)</strong> : <strong>AZFa ou AZFb complet = CONTRE-INDICATION à la biopsie</strong> (0 % récupération). AZFc = 50-60 % récupération<br />
+4. <strong>Échographie scrotale</strong> : évaluation tissulaire, recherche de microlithiase, varicocèle infraclinique</p>
+<hr />
+<p><strong>Q2 🥈</strong> — Résultats : FSH = <strong>28 UI/L</strong> (élevée), inhibine B = <strong>35 pg/mL</strong> (basse), testostérone 3,5 ng/mL (normale basse). Caryotype : <strong>47,XXY (Klinefelter)</strong>. AZF : négatif. Quel est le pronostic et quelle technique proposez-vous ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Syndrome de Klinefelter (47,XXY)</strong> : cause génétique la plus fréquente d'azoospermie non obstructive. FSH élevée + testicules petits + inhibine B basse = insuffisance testiculaire sévère.</p>
+<p><strong>Micro-TESE</strong> (microdissection testiculaire sous microscope opératoire) :<br />
+- <strong>Taux de récupération de spermatozoïdes</strong> dans le Klinefelter : <strong>40-50 %</strong> <em>(Schlegel 1999)</em><br />
+- Technique : ouverture de l'albuginée → repérage au microscope (× 20-25) des tubules séminifères les plus dilatés (aspect opaque = spermatogenèse focale) → prélèvement ciblé<br />
+- Avantage sur la TESE conventionnelle : meilleur taux de récupération (micro-TESE 40-60 % vs TESE 30-50 % dans NOA)<br />
+- Si spermatozoïdes retrouvés → ICSI en frais ou cryopréservation pour ICSI ultérieure</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Conseil génétique obligatoire</strong> : informer le couple que le garçon issu d'un père Klinefelter a un risque faible mais non nul de Klinefelter. PGT-A possible pour exclure les aneuploïdies.</div>
+
+<hr />
+<p><strong>Q3 🥈</strong> — Micro-TESE réalisée : spermatozoïdes retrouvés (foyers de spermatogenèse focale). Cryopréservation d'une paillette. FIV-ICSI planifiée. Comment vérifier la vitalité des spermatozoïdes testiculaires (souvent immobiles) avant ICSI ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Les spermatozoïdes testiculaires sont fréquemment <strong>immobiles</strong> (pas de maturation épididymaire). Il faut distinguer immobile vivant vs mort :</p>
+<p><strong>Tests de vitalité</strong> :<br />
+1. <strong>HOS test</strong> (Hypo-Osmotic Swelling) : incubation en milieu hypo-osmotique → le spermatozoïde vivant gonfle (queue enroulée) car membrane intacte<br />
+2. <strong>Pentoxifylline</strong> : stimulation de la mobilité résiduelle par inhibition de la phosphodiestérase → le spermatozoïde vivant reprend une mobilité légère (« twitch »)<br />
+3. <strong>Laser</strong> : micro-impulsion laser sur la queue → le spermatozoïde vivant montre une courbure réflexe de la queue<br />
+4. Après confirmation de vitalité → ICSI avec le spermatozoïde testé</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Azoospermie : toujours distinguer OA vs NOA (FSH, volume testiculaire)<br />
+2. Caryotype + AZF = obligatoires dans la NOA<br />
+3. AZFa/AZFb complet = contre-indication à la biopsie<br />
+4. Klinefelter : micro-TESE taux 40-50 %<br />
+5. Spermatozoïdes testiculaires immobiles → tests de vitalité avant ICSI</p>
+</blockquote>
+<hr />
+<h2 id="cas-10-don-dovocytes-pour-couple-de-femmes-cadre-legal-post-2021">CAS 10 🥈 — Don d'Ovocytes pour Couple de Femmes : Cadre Légal Post-2021</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-10 — AMP pour toutes : cadre légal 2021, parcours don de sperme CECOS pour couple de femmes]</p>
+</blockquote>
+<p><strong>Patientes</strong> : Mme et Mme J. — Mme J1, 34 ans, professeure de yoga, et Mme J2, 32 ans, journaliste. Couple marié depuis 2 ans. Souhaitent avoir un enfant. Mme J1 souhaite porter la grossesse.</p>
+<hr />
+<p><strong>Q1 🥉</strong> — Depuis quelle loi et dans quel cadre l'AMP est-elle accessible aux couples de femmes en France ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Loi de bioéthique du 2 août 2021</strong> : a ouvert l'AMP aux <strong>couples de femmes</strong> et aux <strong>femmes seules</strong>.</p>
+<p>Cadre :<br />
+- Don de sperme par le CECOS (gratuit, anonyme historiquement → accès aux origines possible depuis 2021 via la CAPADD pour les enfants nés après la loi)<br />
+- <strong>Maximum 10 naissances par donneur</strong><br />
+- Pas de condition d'infertilité médicale requise<br />
+- <strong>Reconnaissance conjointe anticipée</strong> devant notaire : les deux femmes sont légalement mères dès la naissance<br />
+- Remboursement : mêmes conditions que les couples hétérosexuels (100 %, max 6 IIU + 4 FIV, &lt; 43 ans pour la femme qui porte)</p>
+<hr />
+<p><strong>Q2 🥈</strong> — Quel parcours AMP proposez-vous à ce couple ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Parcours pour Mme J1 (porteuse de la grossesse)</strong> :</p>
+<ol>
+<li><strong>Consultation AMP</strong> : évaluation gynécologique de Mme J1 (bilan ovarien, utérin, infectieux)</li>
+<li><strong>Reconnaissance conjointe anticipée</strong> devant notaire (obligatoire avant le début du parcours AMP)</li>
+<li><strong>Inscription au CECOS</strong> pour don de sperme (délai variable selon les centres : 6-18 mois)</li>
+<li><strong>Appariement phénotypique</strong> : le CECOS sélectionne un donneur compatible (groupe sanguin, phénotype général)</li>
+<li><strong>Première intention : IIU avec sperme de donneur</strong> × 6 cycles (si bilan tubaire normal, Mme J1 &lt; 35 ans)</li>
+<li>Si échec IIU → <strong>FIV avec sperme de donneur</strong></li>
+</ol>
+<blockquote>
+<p>💡 <strong>Note</strong> : la <strong>ROPA</strong> (Reception of Oocytes from Partner — une femme donne ses ovocytes, l'autre porte la grossesse) n'est <strong>PAS autorisée en France</strong> car assimilée à un don dirigé intracouple. Pratiquée en Espagne, Belgique.</p>
+</blockquote>
+<hr />
+<p><strong>Q3 🥈</strong> — Après 4 IIU sans grossesse, vous passez en FIV. Mme J1 : AMH 2,5 ng/mL, CFA 11. Stimulation standard, protocole antagoniste. 10 ovocytes ponctionnés, 8 MII. FIV classique avec sperme de donneur : 6 fécondés. J5 : 3 blastocystes (4AA, 3AB, 3BB). SET du 4AA. β-hCG J14 = 285 UI/L. Grossesse évolutive.</p>
+<p><strong>Quelles particularités de suivi obstétrical dans ce contexte ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Le suivi obstétrical est <strong>standard</strong> avec quelques particularités :</p>
+<ol>
+<li><strong>Pas de risque accru de prééclampsie</strong> lié au don (contrairement au don d'ovocytes — ici ce sont les ovocytes de Mme J1 + sperme de donneur → pas d'allo-immunisation maternelle)</li>
+<li><strong>Risques standard FIV</strong> : prééclampsie légèrement augmentée (OR 1,5-2) → aspirine 150 mg/j &lt; 16 SA <em>(ASPRE)</em></li>
+<li><strong>Accompagnement psychologique</strong> : proposer un soutien pour le couple (vécu de l'AMP, place de la co-mère, questions futures de l'enfant sur ses origines)</li>
+<li><strong>Accès aux origines</strong> : depuis la loi 2021, l'enfant né de don post-loi pourra à sa majorité demander l'identité du donneur via la CAPADD</li>
+<li><strong>Reconnaissance juridique</strong> : la reconnaissance conjointe anticipée garantit que Mme J2 est légalement mère dès la naissance — pas besoin d'adoption</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Loi 2021 = AMP pour couples de femmes et femmes seules<br />
+2. Reconnaissance conjointe anticipée obligatoire devant notaire<br />
+3. Parcours : IIU avec sperme de donneur → FIV si échec<br />
+4. ROPA non autorisée en France<br />
+5. Accompagnement psychologique spécifique (co-parentalité, origines)</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 1 — 10 cas cliniques (5 Bronze, 5 Argent)</em></p>
+<hr />
+<p><strong>Récapitulatif Partie 1 :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cas</th>
+<th>Niveau</th>
+<th>Thème</th>
+<th>Modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>🥉</td>
+<td>Infertilité inexpliquée, bilan 1ère intention</td>
+<td>M05, M08, M11</td>
+</tr>
+<tr>
+<td>02</td>
+<td>🥉</td>
+<td>OAT sévère, ICSI</td>
+<td>M06, M10, M18, M19</td>
+</tr>
+<tr>
+<td>03</td>
+<td>🥉</td>
+<td>Hydrosalpinx et FIV</td>
+<td>M04, M09, M22</td>
+</tr>
+<tr>
+<td>04</td>
+<td>🥉🥈</td>
+<td>SOPK et prévention SHO</td>
+<td>M12, M13, M15, M36</td>
+</tr>
+<tr>
+<td>05</td>
+<td>🥈</td>
+<td>DOR et faible répondeuse (POSEIDON)</td>
+<td>M05, M09, M13, M26</td>
+</tr>
+<tr>
+<td>06</td>
+<td>🥈</td>
+<td>Endométriose III-IV et FIV</td>
+<td>M09, M30, M39</td>
+</tr>
+<tr>
+<td>07</td>
+<td>🥈</td>
+<td>TFF en ICSI et AOA</td>
+<td>M07, M18, M28</td>
+</tr>
+<tr>
+<td>08</td>
+<td>🥈</td>
+<td>Préservation fertilité oncologie</td>
+<td>M25</td>
+</tr>
+<tr>
+<td>09</td>
+<td>🥈</td>
+<td>Azoospermie NOA, Klinefelter, micro-TESE</td>
+<td>M10, M17, M29</td>
+</tr>
+<tr>
+<td>10</td>
+<td>🥈</td>
+<td>AMP couples de femmes (loi 2021)</td>
+<td>M27, M40</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>CAS_CLINIQUES_FIV_P1.md — Formation VERTEX© FIV/AMP — 20 mars 2026</em></p>
+</div>

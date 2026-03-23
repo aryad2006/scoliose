@@ -1,0 +1,569 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-3-diagnostic-et-depistage-modules-9-11">Partie 3 — Diagnostic et Dépistage (Modules 9-11)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-9-diagnostic-du-diabete-criteres-omsadahas-glycemie-a-jeun-hgpo-hba1c">MODULE 9 : DIAGNOSTIC DU DIABÈTE — CRITÈRES OMS/ADA/HAS, GLYCÉMIE À JEUN, HGPO, HbA1c</h1>
+<p><strong>Partie</strong> : III — Diagnostic et Dépistage<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 5-6</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un homme de 52 ans consulte son médecin traitant pour une fatigue persistante. Le bilan biologique montre : GAJ 1,18 g/L. Le médecin hésite : *« Est-ce un diabète ? Un prédiabète ? Faut-il confirmer par une deuxième mesure, une HGPO ou une HbA1c ? Et si l'HbA1c est à 6,3%, est-ce que ça change le diagnostic ? »* Les critères diagnostiques du diabète semblent simples mais recèlent des pièges que tout praticien doit connaître.</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> les critères diagnostiques du diabète selon l'OMS (2006/2011), l'ADA (2025) et la HAS : GAJ ≥ 1,26 g/L, HGPO H+2 ≥ 2,00 g/L, HbA1c ≥ 6,5%, glycémie aléatoire ≥ 2,00 g/L avec symptômes</li>
+<li><strong>Distinguer</strong> les situations nécessitant une confirmation (asymptomatique = 2 mesures) de celles ne la nécessitant pas (symptômes + glycémie ≥ 2,00 g/L)</li>
+<li><strong>Identifier</strong> les pièges diagnostiques : situations où l'HbA1c est non fiable (hémoglobinopathies, anémie, grossesse, IRC)</li>
+<li><strong>Interpréter</strong> une HGPO 75 g dans ses différentes indications (DG, prédiabète, diabètes monogéniques)</li>
+<li><strong>Connaître</strong> les zones grises diagnostiques et les diagnostics différentiels de l'hyperglycémie</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-91-criteres-diagnostiques-du-diabete-les-seuils-fondamentaux">Section 9.1 — Critères diagnostiques du diabète : les seuils fondamentaux</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les critères diagnostiques du diabète en s'appuyant sur les recommandations internationales actuelles :</p>
+<ul>
+<li><strong>Critères OMS/ADA</strong> : le module doit présenter les 4 critères diagnostiques (un seul suffit, mais confirmation nécessaire si asymptomatique) :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Seuil</th>
+<th>Conditions</th>
+<th>Confirmation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GAJ (<em>Fasting Plasma Glucose</em>)</td>
+<td>≥ 1,26 g/L (7,0 mmol/L)</td>
+<td>Jeûne ≥ 8h, sang veineux</td>
+<td>Oui (2ème mesure sur un autre jour) sauf si symptômes</td>
+</tr>
+<tr>
+<td>HGPO 75 g, H+2</td>
+<td>≥ 2,00 g/L (11,1 mmol/L)</td>
+<td>Test standardisé (cf. §9.2)</td>
+<td>Oui si asymptomatique</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>≥ 6,5% (48 mmol/mol)</td>
+<td>Méthode certifiée NGSP/DCCT</td>
+<td>Oui si asymptomatique</td>
+</tr>
+<tr>
+<td>Glycémie aléatoire</td>
+<td>≥ 2,00 g/L (11,1 mmol/L)</td>
+<td>+ symptômes cardinaux</td>
+<td>Non — diagnostic posé</td>
+</tr>
+</tbody>
+</table>
+<p><em>(adapté de ADA, Standards of Care in Diabetes, 2025 ; OMS, Definition and Diagnosis of Diabetes, 2006)</em></p>
+<ul>
+<li><strong>Règle de la confirmation</strong> : le module doit insister sur le fait qu'en l'absence de symptômes cardinaux (polyurie, polydipsie, amaigrissement) ou de décompensation métabolique (acidocétose, SHH), le diagnostic nécessite DEUX mesures anormales sur DEUX jours différents (même critère ou critères différents). Si deux critères sont discordants (ex. GAJ diabétique mais HbA1c non diabétique), le critère positif doit être recontrôlé</li>
+<li><strong>Symptômes cardinaux</strong> : le module doit décrire les symptômes classiques — polyurie osmotique (seuil rénal ~1,80 g/L), polydipsie compensatrice, amaigrissement (catabolisme protéique et lipidique, surtout DT1), polyphagie, vision trouble (variation osmotique cristallinienne), infections récurrentes (mycoses, infections urinaires). La présence de symptômes + glycémie ≥ 2,00 g/L suffit au diagnostic sans confirmation</li>
+<li><strong>Distinction GAJ capillaire vs veineuse</strong> : le module doit souligner que le diagnostic repose sur la glycémie veineuse plasmatique (et non capillaire). La glycémie capillaire (lecteur de glycémie) est un outil de surveillance, pas de diagnostic (variabilité ±15%)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB09-S01-001 | 📊 INFOGRAPHIE | Algorithme diagnostique du diabète — arbre décisionnel GAJ / HbA1c / HGPO / symptômes |<br />
+| MDIAB09-S01-002 | 📊 INFOGRAPHIE | Les 4 critères diagnostiques en un tableau — seuils, conditions, confirmation |</p>
+<h3 id="section-92-lhgpo-75-g-technique-interpretation-et-indications">Section 9.2 — L'HGPO 75 g : technique, interprétation et indications</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Technique standardisée</strong> : le module doit décrire la procédure de l'HGPO 75 g selon les recommandations OMS — jeûne de 8-14h, alimentation non restrictive les 3 jours précédents (≥ 150 g de glucides/j), repos pendant le test, pas de tabac, prélèvements veineux à T0 et T+120 min après ingestion de 75 g de glucose anhydre dissous dans 250-300 mL d'eau, ingestion en 5 min</li>
+<li><strong>Interprétation des résultats</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>GAJ (T0)</th>
+<th>H+2 (T120)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td>&lt; 1,10 g/L</td>
+<td>&lt; 1,40 g/L</td>
+</tr>
+<tr>
+<td>IFG (<em>Impaired Fasting Glucose</em>)</td>
+<td>1,10 - 1,25 g/L</td>
+<td>&lt; 1,40 g/L</td>
+</tr>
+<tr>
+<td>IGT (<em>Impaired Glucose Tolerance</em>)</td>
+<td>&lt; 1,26 g/L</td>
+<td>1,40 - 1,99 g/L</td>
+</tr>
+<tr>
+<td>Diabète</td>
+<td>≥ 1,26 g/L</td>
+<td>≥ 2,00 g/L</td>
+</tr>
+</tbody>
+</table>
+<p><em>(adapté de OMS, Definition and Diagnosis of Diabetes, 2006)</em></p>
+<ul>
+<li><strong>Indications</strong> : le module doit préciser que l'HGPO n'est pas systématique en routine mais est indiquée dans : (1) dépistage du DG (HGPO 75 g, critères IADPSG — cf. Module 8), (2) confirmation diagnostique quand GAJ et HbA1c sont discordantes ou en zone grise, (3) diagnostic des MODY (profil glycémique post-charge), (4) dépistage de l'IGT (non détectable par GAJ ni HbA1c), (5) suivi des sujets à risque (stade 2 du DT1 pré-clinique)</li>
+<li><strong>Note ADA</strong> : le module doit mentionner que l'ADA accepte la GAJ seule OU l'HbA1c seule comme tests de dépistage de première intention chez l'adulte, et ne recommande l'HGPO qu'en 2ème intention ou pour le DG</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB09-S02-001 | 📐 SCHÉMA | Courbe glycémique HGPO — profils normal, IFG, IGT et diabétique superposés |<br />
+| MDIAB09-S02-002 | 📐 SCHÉMA | Technique de l'HGPO 75 g — protocole standardisé étape par étape |</p>
+<h3 id="section-93-lhba1c-atouts-limites-et-pieges-diagnostiques">Section 9.3 — L'HbA1c : atouts, limites et pièges diagnostiques</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Principe</strong> : le module doit expliquer que l'HbA1c mesure la glycation non enzymatique de l'hémoglobine (fraction A1c), reflétant la glycémie moyenne des 2-3 derniers mois (durée de vie des globules rouges ~120 jours). La corrélation HbA1c ↔ glycémie moyenne a été établie par l'étude ADAG (Nathan et al., <em>Diabetes Care</em>, 2008) — ex. HbA1c 7% ≈ glycémie moyenne ~1,54 g/L</li>
+<li><strong>Méthode de dosage</strong> : le module doit préciser que le diagnostic par HbA1c nécessite une méthode certifiée NGSP (<em>National Glycohemoglobin Standardization Program</em>) et traçable DCCT/IFCC. Les méthodes point-of-care ne sont pas acceptées pour le diagnostic</li>
+<li><strong>Avantages</strong> : pas de jeûne nécessaire, faible variabilité intra-individuelle, meilleure corrélation avec les complications chroniques que la GAJ isolée, praticité (prélèvement à tout moment)</li>
+<li><strong>Situations d'HbA1c non fiable</strong> : le module doit détailler les situations où l'HbA1c NE DOIT PAS être utilisée pour le diagnostic — hémoglobinopathies (drépanocytose HbS, thalassémie — interférence analytique variable selon la méthode), anémie hémolytique ou ferriprive (turn-over érythrocytaire altéré), transfusion récente, grossesse (hémodilution, modification du turn-over), insuffisance rénale sévère (carbamylation de l'Hb), hépatopathie sévère, traitement par EPO ou fer IV, VIH sous antirétroviraux (interférence possible). Dans ces situations, utiliser GAJ ou HGPO</li>
+<li><strong>Écarts ethno-raciaux</strong> : le module doit mentionner que des études ont montré des différences d'HbA1c à glycémie égale entre groupes ethniques (~0,4% plus élevée chez les Afro-Américains vs Caucasiens, Herman et al., <em>Ann Intern Med</em>, 2007) — la signification clinique de ces différences est débattue</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB09-S03-001 | 📊 INFOGRAPHIE | Correspondance HbA1c ↔ glycémie moyenne estimée (eAG) — table de conversion ADAG |<br />
+| MDIAB09-S03-002 | 📊 INFOGRAPHIE | Situations d'HbA1c non fiable — liste des pièges diagnostiques avec mécanisme |</p>
+<h3 id="section-94-diagnostics-differentiels-et-situations-particulieres">Section 9.4 — Diagnostics différentiels et situations particulières</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Hyperglycémie de stress</strong> : le module doit distinguer le diabète vrai de l'hyperglycémie de stress (infection aiguë, chirurgie, traumatisme, corticothérapie, AVC, IDM) — contrôler à distance de l'épisode aigu (HbA1c utile dans ce contexte)</li>
+<li><strong>Diabète ou prédiabète ?</strong> : le module doit présenter la zone grise — GAJ 1,10-1,25 g/L = IFG (prédiabète selon ADA ; « hyperglycémie modérée à jeun » selon OMS/HAS), HbA1c 5,7-6,4% = prédiabète ADA (non retenu par OMS/HAS). La conduite à tenir devant ces zones grises est détaillée dans le Module 10</li>
+<li><strong>Diabète de type 1 vs type 2 vs MODY vs LADA</strong> : le module doit présenter les éléments d'orientation étiologique au diagnostic — âge, IMC, auto-anticorps, peptide C, cétonurie, antécédents familiaux, mode de début (brutal vs progressif). Arbre décisionnel vers le bilan étiologique (Module 11)</li>
+<li><strong>Diabète secondaire</strong> : le module doit rappeler les causes de diabète secondaire à évoquer systématiquement — pancréatique (type 3c), endocrinien (Cushing, acromégalie, phéochromocytome, hyperthyroïdie), médicamenteux (cf. Module 7), génétique (cf. Module 7)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB09-S04-001 | 📐 SCHÉMA | Arbre décisionnel étiologique au diagnostic — DT1 vs DT2 vs MODY vs LADA vs secondaire |<br />
+| MDIAB09-S04-002 | 📊 INFOGRAPHIE | Éléments d'orientation au diagnostic — tableau comparatif DT1/DT2/MODY/LADA |</p>
+<h2 id="points-cles">Points clés</h2>
+<ol>
+<li>Le diagnostic de diabète repose sur 4 critères possibles — GAJ ≥ 1,26 g/L, HGPO H+2 ≥ 2,00 g/L, HbA1c ≥ 6,5%, glycémie aléatoire ≥ 2,00 g/L + symptômes</li>
+<li>En l'absence de symptômes, le diagnostic nécessite DEUX mesures anormales sur DEUX jours différents</li>
+<li>L'HbA1c ne doit PAS être utilisée pour le diagnostic en cas d'hémoglobinopathie, anémie, grossesse, IRC sévère</li>
+<li>La glycémie veineuse plasmatique est le standard — la glycémie capillaire n'est pas un outil diagnostique</li>
+<li>L'HGPO 75 g est indispensable pour diagnostiquer l'IGT et le DG — elle n'est pas systématique en routine</li>
+<li>Toujours évoquer un diagnostic étiologique (DT1/DT2/MODY/LADA/secondaire) dès le diagnostic posé</li>
+</ol>
+<h2 id="auto-evaluation-module-9">Auto-évaluation — Module 9</h2>
+<p><strong>QCM 1</strong> 🥉 : Le seuil de GAJ définissant le diabète est :<br />
+- A) ≥ 1,10 g/L<br />
+- B) ≥ 1,20 g/L<br />
+- C) ≥ 1,26 g/L ✅<br />
+- D) ≥ 1,40 g/L</p>
+<blockquote>
+<p><em>Feedback : Le seuil de 1,26 g/L (7,0 mmol/L) a été établi par l'OMS et l'ADA comme correspondant au seuil d'apparition de la rétinopathie diabétique dans les études épidémiologiques. Ce seuil nécessite une confirmation par une 2ème mesure si le patient est asymptomatique.</em></p>
+</blockquote>
+<p><strong>QCM 2</strong> 🥈 : Un patient asymptomatique a une GAJ à 1,30 g/L et une HbA1c à 6,2%. Quelle est la conduite à tenir ?<br />
+- A) Le diagnostic de diabète est posé (GAJ ≥ 1,26)<br />
+- B) Recontrôler la GAJ sur un autre jour ✅<br />
+- C) L'HbA1c &lt; 6,5% exclut le diabète<br />
+- D) Réaliser une HGPO immédiatement</p>
+<blockquote>
+<p><em>Feedback : Chez un patient asymptomatique, une seule GAJ ≥ 1,26 g/L ne suffit pas — il faut confirmer par une 2ème mesure sur un autre jour. Si les deux critères sont discordants (GAJ diabétique, HbA1c non diabétique), c'est le critère positif (GAJ) qui doit être recontrôlé. Si la 2ème GAJ est ≥ 1,26, le diagnostic est posé malgré l'HbA1c « normale ».</em></p>
+</blockquote>
+<p><strong>QCM 3</strong> 🥈 : L'HbA1c ne doit PAS être utilisée pour le diagnostic de diabète dans laquelle de ces situations ?<br />
+- A) Patient sédentaire de 55 ans<br />
+- B) Patiente drépanocytaire homozygote HbSS ✅<br />
+- C) Patient sous metformine<br />
+- D) Patient hypertendu sous IEC</p>
+<blockquote>
+<p><em>Feedback : Les hémoglobinopathies (HbS, HbC, thalassémie) interfèrent avec de nombreuses méthodes de dosage de l'HbA1c (HPLC, immunoessai) et le turn-over érythrocytaire modifié fausse l'interprétation. Chez ces patients, utiliser la GAJ ou l'HGPO pour le diagnostic.</em></p>
+</blockquote>
+<p><strong>QCM 4</strong> 🥇 : Un patient de 45 ans, IMC 21, consulte pour polyurie-polydipsie depuis 3 semaines. Glycémie veineuse à 3,50 g/L, cétonurie +++. Le diagnostic de diabète est-il posé ?<br />
+- A) Non, il faut confirmer par une 2ème glycémie<br />
+- B) Non, il faut doser l'HbA1c<br />
+- C) Oui, la glycémie ≥ 2,00 g/L avec symptômes cardinaux suffit ✅<br />
+- D) Il faut d'abord faire une HGPO</p>
+<blockquote>
+<p><em>Feedback : En présence de symptômes cardinaux (polyurie, polydipsie) + glycémie ≥ 2,00 g/L, le diagnostic de diabète est posé SANS confirmation. De plus, la présence de cétonurie oriente vers un DT1. La priorité est la prise en charge urgente (recherche d'acidocétose, insulinothérapie).</em></p>
+</blockquote>
+<p><strong>Cas clinique</strong> 🥇 : Mme R., 38 ans, originaire du Sénégal, trait drépanocytaire HbAS. Bilan systématique : GAJ 1,08 g/L, HbA1c 6,8%. Son médecin pose le diagnostic de diabète sur l'HbA1c. Qu'en pensez-vous ?</p>
+<blockquote>
+<p><em>Réponse : Le diagnostic est inapproprié. Le trait drépanocytaire HbAS peut interférer avec certaines méthodes de dosage de l'HbA1c (HPLC en particulier), faussant le résultat à la hausse ou à la baisse selon la méthode. De plus, des études ont montré des différences d'HbA1c liées à l'ethnie à glycémie égale. CAT : (1) Ne pas retenir l'HbA1c comme critère diagnostique chez cette patiente, (2) Contrôler la GAJ — ici 1,08 g/L = normale (&lt;1,10), (3) Si doute, réaliser une HGPO 75 g, (4) Si GAJ et HGPO normales → pas de diabète, l'HbA1c élevée est un artefact analytique. Ce cas illustre pourquoi la connaissance des limites de l'HbA1c est indispensable.</em></p>
+</blockquote>
+<hr />
+<h1 id="module-10-depistage-et-prediabete-populations-cibles-outils-prevention-du-dt2">MODULE 10 : DÉPISTAGE ET PRÉDIABÈTE — POPULATIONS CIBLES, OUTILS, PRÉVENTION DU DT2</h1>
+<p><strong>Partie</strong> : III — Diagnostic et Dépistage<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Module 9</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">M. P., 48 ans, IMC 31 kg/m², père DT2, consulte pour un bilan de santé. Sa GAJ est à 1,15 g/L et son HbA1c à 6,0%. *« Docteur, mon père est diabétique et je ne veux pas le devenir. Est-ce que je suis en route vers le diabète ? Et surtout, est-ce qu'on peut l'empêcher ? »* Le praticien doit connaître le concept de prédiabète, les outils de dépistage, et surtout les preuves que la prévention du DT2 est possible.</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les populations cibles du dépistage du diabète selon les recommandations ADA et HAS</li>
+<li><strong>Définir</strong> et classifier les états de prédiabète : IFG, IGT, HbA1c 5,7-6,4%</li>
+<li><strong>Connaître</strong> les preuves de la prévention du DT2 par les mesures hygiéno-diététiques (DPP, Finnish DPS, Da Qing)</li>
+<li><strong>Évaluer</strong> le rôle de la pharmacoprévention (metformine, acarbose, pioglitazone, aGLP-1)</li>
+<li><strong>Organiser</strong> le suivi d'un patient prédiabétique</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-101-strategies-de-depistage-du-diabete-de-type-2">Section 10.1 — Stratégies de dépistage du diabète de type 2</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Dépistage ciblé vs populationnel</strong> : le module doit distinguer le dépistage ciblé (recommandé — chez les sujets à risque) du dépistage systématique populationnel (non recommandé en l'état actuel des preuves). Le module doit présenter les critères de dépistage ciblé selon l'ADA (2025) et la HAS (2014)</li>
+<li><strong>Critères ADA</strong> (adapté de ADA, Standards of Care, 2025) : le module doit indiquer que le dépistage est recommandé chez : (1) tout adulte ≥ 35 ans (anciennement 45 ans, abaissé en 2022), (2) tout adulte avec IMC ≥ 25 kg/m² (≥ 23 chez les Asiatiques) + ≥ 1 facteur de risque (antécédent familial DT2 au 1er degré, ethnie à risque, antécédent de DG, HTA, dyslipidémie, syndrome des ovaires polykystiques, sédentarité, acanthosis nigricans, antécédent de maladie cardiovasculaire, prédiabète antérieur)</li>
+<li><strong>Critères HAS</strong> (2014) : le module doit présenter la stratégie française — dépistage par GAJ chez les sujets ≥ 45 ans avec ≥ 1 facteur de risque, répété tous les 1-3 ans selon le niveau de risque. Score FINDRISC comme outil de pré-sélection</li>
+<li><strong>Outils de dépistage</strong> : GAJ (test de 1ère intention en France), HbA1c (accepté par l'ADA comme alternative), HGPO (2ème intention ou pour DG). Le module doit mentionner le score FINDRISC (questionnaire validé, score ≥ 12 = indication de GAJ)</li>
+<li><strong>Dépistage du DT1</strong> : le module doit mentionner le dépistage des apparentés au 1er degré par auto-anticorps (cf. Module 5) — différence fondamentale avec le dépistage du DT2</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB10-S01-001 | 📊 INFOGRAPHIE | Algorithme de dépistage du DT2 — populations cibles, outils, fréquence |<br />
+| MDIAB10-S01-002 | 📊 INFOGRAPHIE | Score FINDRISC — questionnaire illustré avec seuils de risque |</p>
+<h3 id="section-102-prediabete-definitions-risques-et-histoire-naturelle">Section 10.2 — Prédiabète : définitions, risques et histoire naturelle</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Définitions</strong> : le module doit présenter les deux catégories de prédiabète et leurs seuils :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Critère ADA</th>
+<th>Critère OMS/HAS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IFG (<em>Impaired Fasting Glucose</em>)</td>
+<td>GAJ 1,00-1,25 g/L</td>
+<td>GAJ 1,10-1,25 g/L</td>
+</tr>
+<tr>
+<td>IGT (<em>Impaired Glucose Tolerance</em>)</td>
+<td>HGPO H+2 : 1,40-1,99 g/L</td>
+<td>HGPO H+2 : 1,40-1,99 g/L</td>
+</tr>
+<tr>
+<td>Prédiabète HbA1c</td>
+<td>5,7-6,4%</td>
+<td>Non retenu par OMS</td>
+</tr>
+</tbody>
+</table>
+<p><em>(adapté de ADA, Standards of Care, 2025 ; OMS, 2006)</em></p>
+<ul>
+<li><strong>Différence ADA vs OMS</strong> : le module doit souligner que le seuil d'IFG diffère entre l'ADA (≥ 1,00 g/L) et l'OMS/HAS (≥ 1,10 g/L) — l'ADA a abaissé son seuil en 2003, ce que l'OMS n'a pas suivi. La catégorie « prédiabète par HbA1c 5,7-6,4% » est spécifique à l'ADA et non reconnue par l'OMS</li>
+<li><strong>Risque de progression</strong> : le module doit présenter les données de progression — environ 5-10% des sujets prédiabétiques progressent vers le DT2 chaque année. L'IGT isolée confère un risque plus élevé que l'IFG isolée. La combinaison IFG + IGT confère le risque le plus élevé (~10-12%/an). À 10 ans, environ 30-50% des sujets prédiabétiques développent un DT2 en l'absence d'intervention</li>
+<li><strong>Risque cardiovasculaire</strong> : le module doit souligner que le prédiabète est déjà associé à un risque cardiovasculaire accru (méta-analyse Huang et al., <em>BMJ</em>, 2016 — RR ~1,15 pour les événements CV majeurs) — d'où l'importance de la prise en charge globale des facteurs de risque CV dès le stade de prédiabète</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB10-S02-001 | 📊 INFOGRAPHIE | Spectre glycémique — normal → IFG/IGT → diabète, avec seuils et risques |<br />
+| MDIAB10-S02-002 | 📊 INFOGRAPHIE | Risque annuel de progression vers le DT2 — IFG, IGT, IFG+IGT |</p>
+<h3 id="section-103-prevention-du-dt2-preuves-et-interventions">Section 10.3 — Prévention du DT2 : preuves et interventions</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Études princeps de prévention par MHD</strong> : le module doit présenter les 3 études fondatrices démontrant que la prévention du DT2 est possible par des mesures hygiéno-diététiques intensives :</li>
+<li><strong>Finnish DPS</strong> (Tuomilehto et al., <em>N Engl J Med</em>, 2001) : intervention = activité physique ≥ 150 min/semaine + perte de poids ≥ 5% + alimentation enrichie en fibres, pauvre en graisses → réduction du risque de DT2 de 58% à 3,2 ans, effet persistant à 13 ans de suivi</li>
+<li><strong>DPP</strong> (<em>Diabetes Prevention Program</em>, Knowler et al., <em>N Engl J Med</em>, 2002) : 3 234 sujets IGT, 3 bras (placebo, metformine 850 mg × 2/j, MHD intensives) → MHD : -58% de risque de DT2, metformine : -31%, bénéfice persistant à 15 ans (DPP-OS)</li>
+<li><strong>Da Qing</strong> (Pan et al., <em>Lancet</em>, 1997, suivi à 30 ans — Gong et al., <em>Lancet Diabetes Endocrinol</em>, 2019) : réduction du risque de DT2, événements CV et mortalité à 30 ans de suivi</li>
+<li><strong>Objectifs de l'intervention lifestyle</strong> : le module doit présenter les cibles validées — perte de poids de 5-7% du poids initial, activité physique ≥ 150 min/semaine d'intensité modérée, alimentation riche en fibres (≥ 15 g/1000 kcal), pauvre en graisses saturées (&lt;30% des calories)</li>
+<li><strong>Pharmacoprévention</strong> : le module doit discuter la place des traitements médicamenteux — metformine (seul agent avec données à long terme, DPP — recommandé par l'ADA chez les sujets à très haut risque : IMC ≥ 35, &lt;60 ans, femmes avec antécédent de DG), acarbose (étude STOP-NIDDM, -25%), pioglitazone (étude ACT NOW, -72% mais effets secondaires), aGLP-1 (données émergentes sur le sémaglutide dans la prévention — STEP, SELECT)</li>
+<li><strong>Recommandations actuelles</strong> : le module doit synthétiser les recommandations ADA 2025 — MHD intensives en 1ère intention pour tous les sujets prédiabétiques, metformine envisageable en complément chez les sujets à très haut risque, suivi annuel (GAJ ou HbA1c)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB10-S03-001 | 📊 INFOGRAPHIE | Études de prévention du DT2 — DPP, Finnish DPS, Da Qing : design, résultats, NNT |<br />
+| MDIAB10-S03-002 | 📐 SCHÉMA | Stratégie de prévention du DT2 — MHD + pharmacoprévention selon le profil de risque |</p>
+<h2 id="points-cles_1">Points clés</h2>
+<ol>
+<li>Le dépistage du DT2 est ciblé (sujets à risque) — non populationnel</li>
+<li>Le prédiabète comprend l'IFG (GAJ 1,10-1,25 g/L OMS, 1,00-1,25 ADA), l'IGT (HGPO H+2 1,40-1,99 g/L) et l'HbA1c 5,7-6,4% (ADA seul)</li>
+<li>La prévention du DT2 est possible : MHD intensives réduisent le risque de 58% (DPP, Finnish DPS)</li>
+<li>La metformine réduit le risque de 31% (DPP) — envisageable chez les sujets à très haut risque</li>
+<li>Le prédiabète est déjà associé à un risque cardiovasculaire accru — prise en charge globale des FDRCV</li>
+</ol>
+<h2 id="auto-evaluation-module-10">Auto-évaluation — Module 10</h2>
+<p><strong>QCM 1</strong> 🥉 : Le seuil d'IFG selon l'OMS est :<br />
+- A) ≥ 0,90 g/L<br />
+- B) ≥ 1,00 g/L (seuil ADA)<br />
+- C) ≥ 1,10 g/L ✅<br />
+- D) ≥ 1,26 g/L</p>
+<blockquote>
+<p><em>Feedback : L'OMS et la HAS retiennent le seuil de 1,10 g/L pour l'IFG, tandis que l'ADA a abaissé son seuil à 1,00 g/L en 2003. En pratique française, on utilise le seuil OMS de 1,10 g/L.</em></p>
+</blockquote>
+<p><strong>QCM 2</strong> 🥈 : L'étude DPP a démontré que les MHD intensives réduisent le risque de DT2 de :<br />
+- A) 25%<br />
+- B) 31%<br />
+- C) 58% ✅<br />
+- D) 72%</p>
+<blockquote>
+<p><em>Feedback : Les MHD intensives (perte de poids 5-7%, exercice 150 min/semaine) ont réduit le risque de 58% vs placebo, et la metformine de 31%. La pioglitazone (étude ACT NOW) a montré -72% mais n'est pas recommandée en prévention en raison de ses effets secondaires.</em></p>
+</blockquote>
+<p><strong>Cas clinique</strong> 🥈 : M. P. (accroche) a une GAJ à 1,15 g/L, HbA1c 6,0%, IMC 31 kg/m², père DT2. Quelle est votre stratégie ?</p>
+<blockquote>
+<p><em>Réponse : (1) Diagnostic : IFG (GAJ 1,10-1,25 g/L) = prédiabète. HbA1c 6,0% = prédiabète selon ADA (5,7-6,4%). (2) Réaliser une HGPO 75 g pour évaluer l'IGT (risque de progression plus élevé si IFG + IGT). (3) Intervention MHD intensive : objectif perte de poids ≥ 5% (soit ~4-5 kg), activité physique ≥ 150 min/semaine, alimentation équilibrée riche en fibres, pauvre en graisses saturées et sucres rapides. (4) Bilan FDRCV complet (lipides, PA, tabac). (5) Discuter la metformine si facteurs de risque multiples (IMC ≥ 35, &lt;60 ans — ici IMC 31, limite). (6) Suivi annuel par GAJ ou HbA1c. (7) Information du patient sur l'efficacité prouvée de la prévention (DPP : -58%).</em></p>
+</blockquote>
+<hr />
+<h1 id="module-11-explorations-biologiques-specialisees-auto-anticorps-peptide-c-hla-genetique-mody">MODULE 11 : EXPLORATIONS BIOLOGIQUES SPÉCIALISÉES — AUTO-ANTICORPS, PEPTIDE C, HLA, GÉNÉTIQUE MODY</h1>
+<p><strong>Partie</strong> : III — Diagnostic et Dépistage<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 5-7, 9</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un homme de 42 ans, diagnostiqué « DT2 » à 38 ans, est sous metformine + gliclazide avec contrôle médiocre (HbA1c 8,5%). IMC 24 kg/m², pas d'antécédent familial de DT2. Le diabétologue prescrit un bilan étiologique : anti-GAD 180 UI/mL (N < 5), anti-IA2 négatif, peptide C 0,4 ng/mL (bas). *« Ce patient n'a pas un DT2 — c'est un LADA. Il faut passer à l'insuline. »* Ce cas illustre l'importance du bilan étiologique pour adapter le traitement.</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> et interpréter le dosage des auto-anticorps du diabète (anti-GAD, anti-IA2, anti-ZnT8, IAA)</li>
+<li><strong>Utiliser</strong> le peptide C pour évaluer la sécrétion résiduelle d'insuline et orienter le diagnostic étiologique</li>
+<li><strong>Connaître</strong> les indications du typage HLA dans le contexte du DT1</li>
+<li><strong>Prescrire</strong> un séquençage génétique MODY et en interpréter les résultats</li>
+<li><strong>Intégrer</strong> ces examens dans un arbre décisionnel étiologique pratique</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-111-auto-anticorps-du-diabete-prescription-et-interpretation">Section 11.1 — Auto-anticorps du diabète : prescription et interprétation</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Les 4 auto-anticorps</strong> : le module doit détailler chaque auto-anticorps :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Auto-anticorps</th>
+<th>Cible antigénique</th>
+<th>Sensibilité au diagnostic DT1</th>
+<th>Spécificités</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anti-GAD65</td>
+<td>Glutamate décarboxylase 65</td>
+<td>~70-80%</td>
+<td>Le plus persistant (positif des années après le diagnostic), marqueur du LADA</td>
+</tr>
+<tr>
+<td>Anti-IA2</td>
+<td>Tyrosine phosphatase IA-2</td>
+<td>~50-70%</td>
+<td>Corrélé à une progression plus rapide vers l'insulinorequérance</td>
+</tr>
+<tr>
+<td>Anti-ZnT8</td>
+<td>Transporteur de zinc 8</td>
+<td>~60-70%</td>
+<td>Ajout récent (Wenzlau et al., PNAS, 2007), augmente la sensibilité combinée</td>
+</tr>
+<tr>
+<td>IAA</td>
+<td>Insuline</td>
+<td>~50-70% (enfant), ~20% (adulte)</td>
+<td>Doit être dosé AVANT toute insulinothérapie (sinon positif par immunisation)</td>
+</tr>
+</tbody>
+</table>
+<p><em>(adapté de Ziegler et al., Diabetes Care, 2012)</em></p>
+<ul>
+<li><strong>Combinaison d'anticorps</strong> : le module doit expliquer que la combinaison de 2 ou 3 anticorps atteint une sensibilité de ~95-98% pour le DT1. La présence de ≥ 2 anticorps chez un sujet à risque confère un risque de progression vers le DT1 clinique d'environ 44% à 5 ans et quasi 100% à vie</li>
+<li><strong>Indications du dosage</strong> : le module doit préciser quand doser les auto-anticorps — (1) doute entre DT1 et DT2 (sujet jeune, maigre, ou DT2 « atypique »), (2) suspicion de LADA (DT2 avec réponse insuffisante aux ADO), (3) dépistage familial (apparentés au 1er degré d'un DT1), (4) classification étiologique initiale du diabète. NE PAS doser systématiquement chez un DT2 typique (obèse, &gt;50 ans, antécédents familiaux DT2)</li>
+<li><strong>Faux positifs</strong> : le module doit mentionner que les anti-GAD peuvent être positifs en dehors du diabète — maladies auto-immunes thyroïdiennes, maladie cœliaque, stiff-person syndrome. Un titre d'anti-GAD faiblement positif chez un sujet DT2 typique ne signifie pas automatiquement un LADA</li>
+</ul>
+<h3 id="section-112-peptide-c-evaluation-de-la-secretion-residuelle">Section 11.2 — Peptide C : évaluation de la sécrétion résiduelle</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Physiologie</strong> : le module doit rappeler que le peptide C est co-sécrété avec l'insuline en quantités équimolaires lors du clivage de la proinsuline dans les granules β-cellulaires (cf. Module 3). Contrairement à l'insuline, le peptide C n'est pas capté par le foie → reflet fidèle de la sécrétion endogène d'insuline. Sa demi-vie (~30 min) est plus longue que celle de l'insuline (~5 min), ce qui facilite son dosage</li>
+<li><strong>Dosage</strong> : le module doit présenter les deux modalités — peptide C à jeun (le plus simple) et peptide C stimulé (après repas mixte standardisé ou injection de glucagon 1 mg IV — plus sensible). Valeurs normales : peptide C à jeun ~0,8-3,5 ng/mL (méthodes immunochimiques actuelles)</li>
+<li><strong>Interprétation diagnostique</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Peptide C à jeun</th>
+<th>Interprétation</th>
+<th>Orientation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0,2 ng/mL</td>
+<td>Sécrétion β-cellulaire effondrée</td>
+<td>DT1 évolué, pancréatectomie totale</td>
+</tr>
+<tr>
+<td>0,2-0,6 ng/mL</td>
+<td>Sécrétion résiduelle faible</td>
+<td>DT1 récent, LADA avancé, type 3c</td>
+</tr>
+<tr>
+<td>0,6-3,5 ng/mL</td>
+<td>Sécrétion conservée</td>
+<td>DT2 (précoce), MODY, LADA débutant</td>
+</tr>
+<tr>
+<td>&gt; 3,5 ng/mL</td>
+<td>Hyperinsulinisme</td>
+<td>DT2 avec insulinorésistance, insulinome</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Utilité clinique</strong> : le module doit préciser les indications du dosage — distinction DT1/DT2/LADA, évaluation de la sécrétion résiduelle dans le DT1 (rémission ? éligibilité greffe ?), orientation vers l'insulinothérapie (peptide C bas = insuline nécessaire), suivi après pancréatectomie</li>
+</ul>
+<h3 id="section-113-typage-hla-et-genetique-mody">Section 11.3 — Typage HLA et génétique MODY</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Typage HLA</strong> : le module doit expliquer que le typage HLA de classe II (DR/DQ) n'est pas un outil diagnostique de routine mais est utilisé dans le dépistage familial du DT1 (programmes TrialNet, TEDDY) et dans la recherche. Indication clinique principale : nouveau-né d'un parent DT1 → typage HLA à la naissance pour stratifier le risque</li>
+<li><strong>Séquençage MODY</strong> : le module doit présenter les indications du séquençage génétique MODY — critères cliniques évocateurs (cf. Module 7) : diagnostic &lt;35 ans, hérédité AD (≥ 2-3 générations), auto-anticorps négatifs, peptide C conservé, absence d'obésité. Le module doit détailler les panels de gènes séquencés (GCK, HNF1A, HNF4A, HNF1B, PDX1, NEUROD1 — minimum 6 gènes), le délai de résultat (~4-8 semaines), et l'impact thérapeutique majeur (MODY2 → pas de traitement, MODY3 → sulfamides faible dose)</li>
+<li><strong>Score de probabilité</strong> : le module doit mentionner les outils d'aide à la décision — calculateur de probabilité MODY en ligne (Exeter MODY calculator — Shield et al., <em>Diabetologia</em>, 2012), qui intègre l'âge de diagnostic, le sexe, le traitement, l'HbA1c, l'IMC et les antécédents familiaux pour estimer la probabilité pré-test d'un MODY</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description |<br />
+|----|------|-------------|<br />
+| MDIAB11-S03-001 | 📊 INFOGRAPHIE | Arbre décisionnel : quand prescrire un séquençage MODY ? — critères cliniques et score de probabilité |<br />
+| MDIAB11-S03-002 | 📊 INFOGRAPHIE | Impact du diagnostic génétique MODY sur le traitement — passage metformine/insuline → sulfamides |</p>
+<h2 id="points-cles_2">Points clés</h2>
+<ol>
+<li>Les auto-anticorps (anti-GAD, anti-IA2, anti-ZnT8, IAA) servent à distinguer DT1/LADA du DT2 — ne pas doser systématiquement chez un DT2 typique</li>
+<li>Le peptide C reflète la sécrétion endogène d'insuline — peptide C bas → insulinothérapie ; peptide C conservé + auto-AC négatifs → penser MODY</li>
+<li>Le séquençage MODY a un impact thérapeutique majeur — MODY2 = pas de traitement, MODY3 = sulfamides</li>
+<li>Le typage HLA est réservé au dépistage familial du DT1 et à la recherche</li>
+<li>L'IAA doit être dosé AVANT toute insulinothérapie (sinon positif par immunisation)</li>
+</ol>
+<h2 id="auto-evaluation-module-11">Auto-évaluation — Module 11</h2>
+<p><strong>QCM 1</strong> 🥈 : Quel auto-anticorps est le plus caractéristique du LADA ?<br />
+- A) Anti-IA2<br />
+- B) Anti-ZnT8<br />
+- C) Anti-GAD65 ✅<br />
+- D) IAA</p>
+<blockquote>
+<p><em>Feedback : L'anti-GAD65 est positif dans ~90% des LADA. C'est l'auto-anticorps le plus persistant (peut rester positif des années après le diagnostic) et le plus pertinent pour le dépistage du LADA chez un patient étiqueté DT2.</em></p>
+</blockquote>
+<p><strong>QCM 2</strong> 🥈 : Un peptide C à jeun à 0,2 ng/mL chez un diabétique sous ADO oriente vers :<br />
+- A) Un DT2 avec insulinorésistance sévère<br />
+- B) Un MODY2/GCK<br />
+- C) Un DT1/LADA évolué nécessitant de l'insuline ✅<br />
+- D) Un diabète cortico-induit</p>
+<blockquote>
+<p><em>Feedback : Un peptide C très bas (&lt; 0,2-0,3 ng/mL) indique une sécrétion endogène d'insuline effondrée, incompatible avec un DT2 (où le peptide C est normal ou élevé). Ce résultat oriente vers un DT1 ou un LADA évolué et impose le passage à l'insulinothérapie — les ADO insulinosécrétagogues seront inefficaces sans réserve β-cellulaire.</em></p>
+</blockquote>
+<p><strong>QCM 3</strong> 🥇 : Un patient de 28 ans, diagnostiqué diabétique à 22 ans, père et grand-père diabétiques, IMC 22, auto-AC négatifs, peptide C normal. Le séquençage MODY retrouve une mutation HNF1A. Le patient est sous insuline basale-bolus depuis 6 ans. Quelle modification thérapeutique proposez-vous ?<br />
+- A) Maintenir l'insuline et ajouter de la metformine<br />
+- B) Remplacer l'insuline par des sulfamides à faible dose ✅<br />
+- C) Arrêter tout traitement<br />
+- D) Passer à un iSGLT2</p>
+<blockquote>
+<p><em>Feedback : Le MODY3/HNF1A répond remarquablement aux sulfamides à faible dose (4× plus sensible que les DT2 — Pearson et al., Lancet, 2003). Le passage de l'insuline aux sulfamides est non seulement possible mais recommandé — il simplifie considérablement le traitement (1 cp vs injections multiples) sans perte de contrôle glycémique. Transition progressive sous surveillance glycémique. Ce cas illustre l'impact thérapeutique majeur du diagnostic génétique.</em></p>
+</blockquote>
+<p><strong>Cas clinique</strong> 💎 : Vous recevez un enfant de 6 mois avec diabète néonatal permanent. Il est sous insuline IVSE puis SC. Les auto-anticorps sont négatifs. Le séquençage retrouve une mutation activatrice de KCNJ11 (Kir6.2). Quelle implication thérapeutique ?</p>
+<blockquote>
+<p><em>Réponse : Les mutations activatrices de KCNJ11 maintiennent le canal KATP en position ouverte → la cellule β ne peut pas sécréter d'insuline en réponse au glucose. Mais les sulfamides ferment le canal KATP par un mécanisme indépendant de l'ATP (liaison au SUR1). Un essai de passage insuline → sulfamides à forte dose (glibenclamide 0,5-1 mg/kg/j) est indiqué et réussit dans ~90% des cas (Pearson et al., N Engl J Med, 2006). Le patient peut passer d'injections d'insuline à un comprimé de sulfamide per os — transformation radicale de la qualité de vie. Surveillance glycémique intensive pendant la transition.</em></p>
+</blockquote>
+<hr />
+<h1 id="references-partie-3-modules-9-11">RÉFÉRENCES — PARTIE 3 (Modules 9-11)</h1>
+<ol>
+<li>American Diabetes Association. Standards of Care in Diabetes — 2025. <em>Diabetes Care</em>. 2025;48(Suppl 1).</li>
+<li>World Health Organization. Definition and Diagnosis of Diabetes Mellitus and Intermediate Hyperglycaemia. Geneva: WHO; 2006.</li>
+<li>Nathan DM, Kuenen J, Borg R, et al. Translating the A1c assay into estimated average glucose values (ADAG). <em>Diabetes Care</em>. 2008;31(8):1473-1478.</li>
+<li>Herman WH, Ma Y, Uwaifo G, et al. Differences in A1C by race and ethnicity among patients with impaired glucose tolerance in the DPP. <em>Diabetes Care</em>. 2007;30(10):2453-2457.</li>
+<li>Tuomilehto J, Lindström J, Eriksson JG, et al. Prevention of type 2 diabetes mellitus by changes in lifestyle among subjects with impaired glucose tolerance (Finnish DPS). <em>N Engl J Med</em>. 2001;344(18):1343-1350.</li>
+<li>Knowler WC, Barrett-Connor E, Fowler SE, et al. Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin (DPP). <em>N Engl J Med</em>. 2002;346(6):393-403.</li>
+<li>Gong Q, Zhang P, Wang J, et al. Morbidity and mortality after lifestyle intervention for people with impaired glucose tolerance: 30-year results of the Da Qing Diabetes Prevention Outcome Study. <em>Lancet Diabetes Endocrinol</em>. 2019;7(6):452-461.</li>
+<li>Huang Y, Cai X, Mai W, et al. Association between prediabetes and risk of cardiovascular disease and all cause mortality: systematic review and meta-analysis. <em>BMJ</em>. 2016;355:i5953.</li>
+<li>Wenzlau JM, Juhl K, Yu L, et al. The cation efflux transporter ZnT8 (Slc30A8) is a major autoantigen in human type 1 diabetes. <em>PNAS</em>. 2007;104(43):17040-17045.</li>
+<li>Ziegler AG, Rewers M, Simell O, et al. Seroconversion to multiple islet autoantibodies and risk of progression to diabetes in children. <em>JAMA</em>. 2013;309(23):2473-2479.</li>
+<li>Shield JP, Hattersley AT, et al. The MODY probability calculator. <em>Diabetologia</em>. 2012;55(Suppl 1):S47-S48.</li>
+<li>Pearson ER, Flechtner I, Njølstad PR, et al. Switching from insulin to oral sulfonylureas in patients with diabetes due to Kir6.2 mutations. <em>N Engl J Med</em>. 2006;355(5):467-477.</li>
+</ol>
+<hr />
+<p><em>Partie 3 — Modules 9-11 — Document conforme à la charte VERTEX© — Version 1.0 — 13 mars 2026</em></p>
+</div>

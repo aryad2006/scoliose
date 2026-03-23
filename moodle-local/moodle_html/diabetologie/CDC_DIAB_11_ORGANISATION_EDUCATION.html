@@ -1,0 +1,347 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-11-organisation-des-soins-et-education-therapeutique-modules-39-40">Partie 11 — Organisation des Soins et Éducation Thérapeutique (Modules 39-40)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-39-parcours-de-soins-du-patient-diabetique-organisation-telemedecine-qualite">MODULE 39 : PARCOURS DE SOINS DU PATIENT DIABÉTIQUE — ORGANISATION, TÉLÉMÉDECINE, QUALITÉ</h1>
+<p><strong>Partie</strong> : XI — Organisation et éducation<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 29</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme L., 58 ans, DT2 depuis 10 ans, vit dans un village sans diabétologue à proximité (le plus proche est à 80 km). Son médecin traitant assure le suivi mais se sent « dépassé » par les nouvelles recommandations (iSGLT2, aGLP-1, finérénone). Il aimerait un avis spécialisé mais la patiente refuse de « faire la route ». *L'organisation du parcours de soins et la télémédecine sont devenues indispensables pour garantir un accès équitable aux soins diabétologiques.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Organiser</strong> le parcours de soins du diabétique selon les recommandations HAS</li>
+<li><strong>Connaître</strong> le rôle de chaque professionnel dans le suivi multidisciplinaire</li>
+<li><strong>Utiliser</strong> la télémédecine (téléconsultation, téléexpertise, télésurveillance) en diabétologie</li>
+<li><strong>Appliquer</strong> les indicateurs de qualité du suivi diabétique</li>
+<li><strong>Connaître</strong> le cadre médico-social : ALD, droits du patient, associations</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-1-parcours-de-soins-et-suivi-structure">Section 1 — Parcours de soins et suivi structuré</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Parcours de soins HAS</strong> (guide du parcours de soins DT2 — HAS, mise à jour 2024) :</li>
+<li>Médecin traitant : pivot du suivi (diagnostic, traitement initial, coordination, renouvellements)</li>
+<li>Diabétologue/endocrinologue : recours (DT1, DT2 complexe, technologies, complications sévères, grossesse)</li>
+<li>Infirmier(e) : ETP, injections, surveillance (IDEL, IPA — Infirmier en Pratique Avancée)</li>
+<li>Diététicien(ne) : bilan nutritionnel, programme alimentaire personnalisé</li>
+<li>Podologue : soins de pieds (remboursés selon le grade podologique)</li>
+<li>Ophtalmologue : FO annuel, dépistage RD</li>
+<li>Néphrologue : si DFG &lt; 30, déclin rapide, ou néphropathie atypique</li>
+<li>Cardiologue : si FRCV multiples, IC, ischémie silencieuse</li>
+<li>Psychologue : dépression, détresse, TCA</li>
+<li>Pharmacien : conseil, adhésion, entretiens pharmaceutiques</li>
+<li><strong>Bilan annuel structuré</strong> (check-list) :</li>
+<li>HbA1c (trimestrielle si objectif non atteint, semestrielle si stable)</li>
+<li>Bilan lipidique (annuel)</li>
+<li>Créatinine + DFG + RAC (annuel)</li>
+<li>FO ou rétinophotographie (annuel, biennal si grade 0 stable)</li>
+<li>ECG de repos (annuel)</li>
+<li>Examen des pieds + monofilament (annuel)</li>
+<li>Évaluation diététique</li>
+<li>Dépistage dépression (PHQ-2)</li>
+<li>Vaccinations à jour</li>
+<li>Bilan dentaire (annuel — risque parodontal ↑)</li>
+<li><strong>ALD 8</strong> (Affection de Longue Durée — diabète de type 1 et 2) : prise en charge 100 % par l'Assurance Maladie pour les soins en rapport ; protocole de soins établi par le médecin traitant ; renouvellement tous les 5 ans</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB39-S01-001 — CHECK-LIST BILAN ANNUEL DT2 (tableau : examen, fréquence, qui réalise, quand adresser)]</p>
+<p>[MEDIA: 📋 MDIAB39-S01-002 — SCHÉMA PARCOURS DE SOINS MULTIDISCIPLINAIRE (médecin traitant au centre, flèches vers spécialistes, fréquence de recours)]</p>
+</blockquote>
+<h3 id="section-2-telemedecine-et-e-sante">Section 2 — Télémédecine et e-santé</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Cadre réglementaire</strong> : loi de financement SS 2018, avenant 6 (conventions télémédecine) ; 5 actes : téléconsultation, téléexpertise, télésurveillance, téléassistance, régulation médicale</li>
+<li><strong>Applications en diabétologie</strong> :</li>
+<li><strong>Téléconsultation</strong> : consultation vidéo diabétologue-patient → suivi DT2 stable, ajustement ADO, ETP à distance ; avantages : accès en zone sous-médicalisée, gain de temps</li>
+<li><strong>Téléexpertise</strong> : avis du diabétologue sollicité par le médecin traitant sans présence du patient → choix thérapeutique, interprétation CGM ; cadre : asynchrone, rémunéré</li>
+<li><strong>Télésurveillance</strong> : suivi à distance des données du patient (glycémie CGM, PA, poids) avec alertes ; programme ETAPES puis pérennisation (2023) : remboursement forfaitaire pour le suivi CGM à distance des DT1 et DT2 sous insuline → diabétologue analyse les données AGP et ajuste le traitement à distance</li>
+<li><strong>Plateformes numériques</strong> : applications de suivi (MySugr, Diabeloop, LibreView, CareLink) → partage des données CGM/pompe avec l'équipe soignante → télé-ajustements</li>
+<li><strong>Limites</strong> : fracture numérique (personnes âgées, zones blanches), examen clinique impossible (pieds +++), confidentialité des données, relation médecin-patient altérée</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🖥️ MDIAB39-S02-001 — SCHÉMA TÉLÉMÉDECINE EN DIABÉTOLOGIE (téléconsultation, téléexpertise, télésurveillance — flux de données patient/médecin)]</p>
+</blockquote>
+<h3 id="section-3-indicateurs-de-qualite-et-demarches-damelioration">Section 3 — Indicateurs de qualité et démarches d'amélioration</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Indicateurs ROSP</strong> (Rémunération sur Objectifs de Santé Publique — médecin traitant) :</li>
+<li>% de DT2 avec HbA1c &lt; 7 % (ou cible individualisée atteinte)</li>
+<li>% de DT2 avec FO réalisé dans l'année</li>
+<li>% de DT2 avec dosage RAC/créatinine dans l'année</li>
+<li>% de DT2 sous statine si indication</li>
+<li>% de DT2 avec examen des pieds documenté</li>
+<li><strong>Registres et programmes qualité</strong> : Programme Sophia (Assurance Maladie — accompagnement téléphonique par des infirmiers) ; registres régionaux de suivi du DT1 (BPD, SFDT1)</li>
+<li><strong>Parcours ville-hôpital</strong> : coordination via les CPTS (Communautés Professionnelles Territoriales de Santé), DAC (Dispositifs d'Appui à la Coordination), protocoles de coopération IPA-diabétologue</li>
+</ul>
+<h2 id="points-cles-module-39">Points clés — Module 39</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Le médecin traitant est le pivot du suivi DT2 — le diabétologue intervient en recours<br />
+2. Bilan annuel structuré : HbA1c, lipides, rein (DFG+RAC), FO, pieds, ECG, dépression<br />
+3. ALD 8 : 100 % pour les soins en rapport avec le diabète<br />
+4. La télésurveillance CGM est remboursée (programme ETAPES/pérennisation)<br />
+5. La téléexpertise permet l'avis diabétologique sans déplacement du patient<br />
+6. Indicateurs ROSP : outils de suivi de qualité en médecine générale</p>
+</blockquote>
+<h2 id="auto-evaluation-module-39">Auto-évaluation — Module 39</h2>
+<h3 id="qcm-progressifs-6-questions">QCM progressifs (6 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quelle est la fréquence recommandée du dosage de l'HbA1c chez un DT2 à l'objectif ?<br />
+A. Mensuelle  B. Trimestrielle  C. Semestrielle  D. Annuelle</p>
+<blockquote>
+<p>✅ <strong>C</strong> — Si l'HbA1c est à l'objectif et stable, un dosage semestriel suffit. En revanche, si l'objectif n'est pas atteint ou en cas de modification thérapeutique, le dosage trimestriel est recommandé.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Qu'est-ce que l'ALD 8 ?<br />
+A. Un protocole de recherche  B. L'Affection de Longue Durée pour le diabète → prise en charge 100 % par l'AM  C. Un type de diabète  D. Un examen de dépistage</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'ALD 8 est le cadre réglementaire de prise en charge à 100 % par l'Assurance Maladie des soins en rapport avec le diabète (DT1 et DT2).</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Qu'est-ce que la téléexpertise en diabétologie ?<br />
+A. Consultation vidéo avec le patient  B. Avis spécialisé du diabétologue sollicité par le médecin traitant, sans présence du patient  C. Surveillance automatique par IA  D. Formation en ligne</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La téléexpertise permet au médecin traitant de solliciter l'avis du diabétologue (choix thérapeutique, interprétation CGM) sans que le patient ait besoin de se déplacer. Elle est rémunérée et peut être asynchrone.</p>
+</blockquote>
+<p><strong>Q4 — 🥇 Or</strong> : Comment la télésurveillance CGM fonctionne-t-elle en pratique ?<br />
+A. Le patient envoie ses glycémies par SMS  B. Les données CGM sont partagées automatiquement via une plateforme → le diabétologue analyse l'AGP à distance et ajuste le traitement  C. Un infirmier visite le patient quotidiennement  D. Le patient se déplace mensuellement pour télécharger ses données</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La télésurveillance CGM utilise des plateformes numériques (LibreView, CareLink, Dexcom Clarity) où les données sont partagées automatiquement. Le diabétologue analyse l'AGP, identifie les patterns et ajuste le traitement à distance.</p>
+</blockquote>
+<p><strong>Q5 — 💎 Diamant</strong> : Mme L. (accroche) : proposez un parcours de soins intégrant la télémédecine pour cette patiente en zone sous-médicalisée.</p>
+<blockquote>
+<p>✅ (1) <strong>Médecin traitant</strong> : suivi trimestriel présentiel (examen clinique, pieds, PA, prescription bilan), ajustement ADO selon téléexpertise ; (2) <strong>Téléconsultation diabétologue</strong> : semestrielle (bilan complications, stratégie thérapeutique, CGM review si applicable) ; (3) <strong>Téléexpertise</strong> : entre consultations → le MT envoie les résultats et questions → le diabétologue répond sous 72h avec recommandations ; (4) <strong>FO</strong> : rétinophotographie non mydriatique via réseau de télé-ophtalmologie (OPHDIAT) → lecture déportée ; (5) <strong>Podologue</strong> : présentiel selon grade (MSP ou tournée podologique) ; (6) <strong>IPA</strong> : suivi intermédiaire (ETP, titration insuline si nécessaire) → en présentiel ou téléconsultation ; (7) <strong>Pharmacien</strong> : entretiens pharmaceutiques (adhésion), dispensation adaptée.</p>
+</blockquote>
+<hr />
+<h1 id="module-40-education-therapeutique-structuree-du-dt2-programmes-outils-evaluation">MODULE 40 : ÉDUCATION THÉRAPEUTIQUE STRUCTURÉE DU DT2 — PROGRAMMES, OUTILS, ÉVALUATION</h1>
+<p><strong>Partie</strong> : XI — Organisation et éducation<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Module 24 (ETP DT1), 25, 29</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">M. K., 60 ans, DT2 depuis 5 ans, sous metformine + sémaglutide. HbA1c : 7,5 %. Il consulte en disant : « Je ne comprends pas pourquoi je prends autant de médicaments. Ma voisine est diabétique aussi et elle ne prend rien. Et d'ailleurs, pourquoi je ne dois pas manger de pain blanc alors que mon père en mangeait et vivait bien ? » *Le DT2 est une maladie où l'éducation thérapeutique n'est pas un complément mais une composante intégrale du traitement — un patient qui comprend sa maladie la gère mieux.*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Structurer</strong> un programme d'ETP pour le DT2 : objectifs, méthodes, évaluation</li>
+<li><strong>Utiliser</strong> les techniques pédagogiques adaptées au DT2 (entretien motivationnel, approche centrée patient)</li>
+<li><strong>Adapter</strong> l'ETP aux populations spécifiques (sujet âgé, migrant, faible littératie)</li>
+<li><strong>Évaluer</strong> l'efficacité d'un programme d'ETP (indicateurs cliniques et pédagogiques)</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-1-principes-et-methodes-pedagogiques">Section 1 — Principes et méthodes pédagogiques</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Entretien motivationnel</strong> (Miller &amp; Rollnick) : technique de communication centrée sur le patient, explorant l'ambivalence face au changement ; principes OARS : Open questions, Affirm, Reflect, Summarize ; efficacité démontrée dans le DT2 (amélioration HbA1c, adhésion, comportements — Ekong &amp; Kavookjian, Patient Educ Couns, 2016)</li>
+<li><strong>Approche centrée patient</strong> (Patient-Centered Care) : le patient est expert de sa maladie au quotidien ; le soignant est expert du savoir médical → partenariat ; objectifs thérapeutiques négociés, pas imposés</li>
+<li><strong>Méthodes pédagogiques</strong> :</li>
+<li>Individuelles : consultation d'ETP (30-45 min), utilisation de supports visuels, teach-back method (le patient explique ce qu'il a compris)</li>
+<li>Collectives : ateliers en petit groupe (6-10 patients), partage d'expériences, dynamique de groupe → particulièrement efficace pour l'alimentation et l'activité physique</li>
+<li>Outils numériques : applications de suivi (carnet glycémique, suivi alimentaire), serious games, vidéos éducatives, webinaires</li>
+</ul>
+<h3 id="section-2-programme-detp-structure-pour-le-dt2">Section 2 — Programme d'ETP structuré pour le DT2</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Diagnostic éducatif</strong> : identique au DT1 (cf. module 24) mais adapté aux spécificités du DT2 (adulte d'âge mûr, souvent comorbidités, souvent découverte fortuite → déni fréquent, représentations culturelles de l'alimentation)</li>
+<li><strong>Compétences cibles</strong> (adapté de HAS 2007) :</li>
+<li>Comprendre sa maladie (mécanismes simples du DT2, rôle de l'insuline, progression)</li>
+<li>Comprendre son traitement (pourquoi chaque médicament, quand le prendre, effets attendus et secondaires)</li>
+<li>Adapter son alimentation (pas de régime restrictif, équilibre, plaisir alimentaire préservé)</li>
+<li>Pratiquer une activité physique régulière (adaptée, progressive, durable)</li>
+<li>Surveiller (glycémie si insuline/SU, pieds, signes d'alerte)</li>
+<li>Gérer les situations à risque (hypoglycémie si SU/insuline, maladie intercurrente, voyage)</li>
+<li>Intégrer le diabète dans sa vie quotidienne (travail, famille, vie sociale, sexualité)</li>
+<li><strong>Programme type</strong> (4-5 séances de 2-3h sur 3-6 mois) :</li>
+<li>Séance 1 : Diagnostic éducatif + « Qu'est-ce que le DT2 ? » (physiopathologie simplifiée, représentations)</li>
+<li>Séance 2 : Alimentation (assiette idéale, index glycémique, recettes, convivialité préservée)</li>
+<li>Séance 3 : Activité physique (prescription personnalisée, obstacles, solutions pratiques)</li>
+<li>Séance 4 : Traitements et surveillance (mécanismes simplifiés, gestion hypo, observance)</li>
+<li>Séance 5 : Vivre avec le DT2 (complications à prévenir, droits sociaux, ressources, bilan éducatif)</li>
+<li>Suivi de renforcement : séances espacées (trimestrielles → semestrielles → annuelles)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB40-S02-001 — PROGRAMME ETP DT2 TYPE (5 séances — thèmes, objectifs, méthodes pédagogiques, intervenants)]</p>
+<p>[MEDIA: 🍽️ MDIAB40-S02-002 — OUTIL PÉDAGOGIQUE « L'ASSIETTE IDÉALE » (support visuel pour atelier alimentation)]</p>
+</blockquote>
+<h3 id="section-3-adaptation-et-populations-specifiques">Section 3 — Adaptation et populations spécifiques</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Sujet âgé</strong> : simplification des messages, priorité à la sécurité (éviter les hypos) et à la qualité de vie, implication de l'aidant, adaptation cognitive (répétition, supports visuels, gros caractères)</li>
+<li><strong>Patient migrant / faible littératie</strong> : supports visuels et iconographiques (pictogrammes, photos d'aliments locaux), interprète professionnel si barrière linguistique, adaptation culturelle des conseils alimentaires (ne pas imposer un modèle alimentaire « occidental »), médiateur de santé</li>
+<li><strong>Patient en situation de précarité</strong> : accès aux droits sociaux (ALD, CMU/CSS, CMUC), aide alimentaire adaptée (banques alimentaires avec conseils diététiques), accès aux soins podologiques gratuits</li>
+<li><strong>Patient réticent ou en déni</strong> : entretien motivationnel +++, ne pas « faire la morale », explorer les freins, commencer par 1 objectif simple et concret, valoriser chaque petit progrès</li>
+</ul>
+<h3 id="section-4-evaluation-de-letp">Section 4 — Évaluation de l'ETP</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Indicateurs cliniques</strong> : HbA1c, poids, PA, LDL-c, taux de complications, hospitalisations</li>
+<li><strong>Indicateurs pédagogiques</strong> : acquisition de connaissances (questionnaires pré/post), compétences d'auto-soins (auto-surveillance, gestion hypo, adaptation alimentaire), compétences d'adaptation (résolution de problèmes, gestion émotionnelle)</li>
+<li><strong>Indicateurs de qualité de vie</strong> : DQoL, WHO-5, PAID, satisfaction (DTSQ)</li>
+<li><strong>Indicateurs de processus</strong> : taux de participation, taux de complétion, satisfaction des patients, attrition</li>
+<li><strong>Évaluation à long terme</strong> : maintien des acquis à 6 mois, 1 an → sessions de renforcement</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB40-S04-001 — INDICATEURS D'ÉVALUATION ETP (cliniques, pédagogiques, qualité de vie — tableau avec outils de mesure)]</p>
+</blockquote>
+<h2 id="points-cles-module-40">Points clés — Module 40</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. L'ETP est une composante intégrale du traitement du DT2, pas un « complément »<br />
+2. L'entretien motivationnel est plus efficace que la prescription directive<br />
+3. Programme structuré : 4-5 séances + suivi de renforcement → amélioration HbA1c + qualité de vie<br />
+4. Adaptation culturelle obligatoire (alimentation, littératie, langue)<br />
+5. Le diagnostic éducatif est la 1ère étape indispensable<br />
+6. Évaluation multidimensionnelle : clinique + pédagogique + qualité de vie<br />
+7. Le patient est expert de sa maladie au quotidien → partenariat, pas prescription</p>
+</blockquote>
+<h2 id="auto-evaluation-module-40">Auto-évaluation — Module 40</h2>
+<h3 id="qcm-progressifs-8-questions">QCM progressifs (8 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est le principe fondamental de l'entretien motivationnel ?<br />
+A. Convaincre le patient par des arguments scientifiques  B. Explorer l'ambivalence du patient face au changement, dans une approche empathique et non jugeante  C. Imposer des règles strictes  D. Menacer le patient avec les complications</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'entretien motivationnel explore l'ambivalence du patient (il veut et ne veut pas changer en même temps) de manière empathique, sans jugement. Le soignant aide le patient à trouver ses propres motivations au changement.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Quelle est la 1ère étape de tout programme d'ETP ?<br />
+A. L'atelier alimentation  B. Le diagnostic éducatif (bilan éducatif partagé)  C. Le dosage de l'HbA1c  D. La prescription de médicaments</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le diagnostic éducatif (comprendre le patient : connaissances, croyances, vécu, freins, ressources, projets) est toujours la 1ère étape, avant tout enseignement.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Comment adapter l'ETP pour un patient migrant avec barrière linguistique ?<br />
+A. Pas d'ETP possible  B. Supports visuels, interprète professionnel, adaptation culturelle des conseils alimentaires, médiateur de santé  C. ETP en anglais  D. ETP uniquement écrite</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'adaptation passe par des supports visuels et iconographiques, un interprète professionnel (pas un proche), l'adaptation culturelle des conseils (aliments locaux, habitudes alimentaires respectées), et si possible un médiateur de santé.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : La méthode « teach-back » consiste en :<br />
+A. Donner un cours magistral au patient  B. Demander au patient d'expliquer avec ses propres mots ce qu'il a compris  C. Faire un test écrit  D. Lire une brochure au patient</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le teach-back vérifie la compréhension en demandant au patient de reformuler avec ses propres mots. Ce n'est pas un test de connaissances mais un outil de communication qui permet d'identifier et de corriger les malentendus.</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : M. K. (accroche) : « Pourquoi je prends autant de médicaments alors que ma voisine ne prend rien ? » Comment répondez-vous ?</p>
+<blockquote>
+<p>✅ « Chaque diabète est différent. Le diabète de votre voisine est peut-être plus récent, moins avancé, ou elle a peut-être perdu beaucoup de poids. Vos médicaments sont là pour 3 raisons précises : (1) la metformine aide votre foie à mieux réguler le sucre — c'est le traitement de base depuis 25 ans ; (2) le sémaglutide aide votre pancréas à mieux sécréter l'insuline pendant les repas ET vous aide à perdre du poids — c'est un médicament récent qui protège aussi votre cœur ; (3) si vous arrêtiez, votre glycémie remonterait et les complications arriveraient silencieusement (yeux, reins, pieds). L'objectif n'est pas de prendre des médicaments pour toujours — si vous perdez suffisamment de poids, on pourrait en réduire certains. »</p>
+</blockquote>
+<p><strong>Q6 — 🥇 Or</strong> : M. K. : « Pourquoi pas de pain blanc alors que mon père en mangeait ? » Comment répondez-vous en ETP ?</p>
+<blockquote>
+<p>✅ « Votre père avait peut-être un pancréas qui fonctionnait mieux que le vôtre. Le pain blanc n'est pas interdit — il fait simplement monter la glycémie très vite (index glycémique élevé). Le pain complet ou aux céréales fait monter la glycémie plus doucement, ce qui est plus facile à gérer pour votre pancréas. Vous pouvez continuer à manger du pain, mais préférez-le complet et en quantité raisonnable. Le but n'est pas de supprimer les aliments que vous aimez mais de trouver des alternatives qui vous plaisent. »</p>
+</blockquote>
+<p><strong>Q7 — 💎 Diamant</strong> : Un patient DT2 de 68 ans, d'origine maghrébine, faible littératie en français, refuse l'activité physique car « ce n'est pas dans ma culture ». Comment abordez-vous l'ETP ?</p>
+<blockquote>
+<p>✅ (1) <strong>Entretien motivationnel</strong> : explorer ses représentations (« Racontez-moi comment vous voyez l'activité physique ») ; (2) <strong>Adaptation culturelle</strong> : identifier les activités déjà pratiquées (marche pour la prière, jardinage, jeux avec les petits-enfants) → valoriser et s'appuyer dessus (« En fait, vous bougez déjà ! ») ; (3) <strong>Ne pas imposer un modèle occidental</strong> (salle de sport) mais proposer des alternatives culturellement acceptables : marche en groupe (avec amis/famille), activités au domicile ; (4) <strong>Supports visuels</strong> : photos d'exercices simples, pas de texte long ; (5) <strong>Médiateur de santé arabophone</strong> si disponible ; (6) <strong>Objectif négocié</strong> : 1 seul objectif concret (« marcher 20 min après le déjeuner, 3 jours par semaine ») ; (7) <strong>Valoriser chaque progrès</strong> à la consultation suivante.</p>
+</blockquote>
+<p><strong>Q8 — 💎 Diamant</strong> : Construisez un programme d'ETP pour un groupe de 8 patients DT2 nouvellement diagnostiqués, en 5 séances.</p>
+<blockquote>
+<p>✅ <strong>Séance 1</strong> (3h) — « Mon diabète et moi » : diagnostic éducatif individuel (20 min chacun en parallèle si 2 animateurs) ; atelier collectif : « Qu'est-ce que le DT2 ? » (physiopathologie simplifiée avec métaphore : clé-serrure-insuline, réservoir qui déborde) ; recueil des représentations et des questions. <strong>Séance 2</strong> (3h) — « Mon assiette » : atelier pratique alimentation (assiette modèle, tri d'aliments photos, lecture d'étiquettes, recettes adaptées) ; accent sur le plaisir et la convivialité, pas les interdits. <strong>Séance 3</strong> (3h) — « Bouger au quotidien » : atelier activité physique (identification des freins, solutions pratiques, démonstration d'exercices simples, objectif SMART personnalisé) ; séance de marche collective de 20 min. <strong>Séance 4</strong> (3h) — « Mes traitements et ma surveillance » : atelier médicaments (pourquoi chaque médicament, comment le prendre, effets secondaires) ; gestion hypo si SU/insuline ; auto-surveillance glycémique (si applicable) ; soins des pieds (démonstration). <strong>Séance 5</strong> (3h) — « Vivre avec le DT2 » : droits sociaux (ALD, CSS), prévention des complications (FO, pieds, rein — pourquoi les bilans), vie sociale et professionnelle, ressources (associations : FFD, AFD) ; bilan éducatif partagé → objectifs de suivi individuels. <strong>Renforcement</strong> : 1 séance à M3, M6, M12 puis annuelle.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-40">Cas clinique intégré — Module 40</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Mme S., 55 ans, DT2 depuis 2 ans</strong></p>
+<p>Mme S., aide-soignante, DT2 sous metformine 2 g/j. HbA1c : 7,9 %. IMC : 34. Vit seule. Elle dit : « Je n'ai pas le temps de cuisiner, je mange au self de l'hôpital et le soir c'est des plats tout prêts. Je sais que c'est mal mais je suis fatiguée en rentrant. » PHQ-2 : 3/6. Elle ne fait aucune activité physique.</p>
+<p><strong>Questions :</strong><br />
+1. Réalisez le diagnostic éducatif de Mme S. (connaissances, freins, ressources, croyances identifiables).<br />
+2. Quels objectifs éducatifs négocieriez-vous avec elle pour les 3 prochains mois ?<br />
+3. Comment abordez-vous la question alimentaire sans culpabilisation ?<br />
+4. Le PHQ-2 à 3/6 : quelle action ?<br />
+5. Quel suivi éducatif proposez-vous ?</p>
+</blockquote>
+<h3 id="question-de-synthese">Question de synthèse</h3>
+<blockquote>
+<p>🔄 <strong>Synthèse</strong> : Construisez le parcours éducatif complet d'un patient DT2, du diagnostic à 5 ans de suivi, en intégrant les séances initiales, les séances de renforcement, les indicateurs d'évaluation, et les adaptations en fonction de l'évolution de la maladie et du vécu du patient.</p>
+</blockquote>
+<hr />
+<h2 id="references-bibliographiques-partie-11">Références bibliographiques — Partie 11</h2>
+<ol>
+<li>HAS. « Guide du parcours de soins — Diabète de type 2 de l'adulte. » Mise à jour 2024.</li>
+<li>HAS. « Éducation thérapeutique du patient — Définition, finalités et organisation. » Recommandations, 2007.</li>
+<li>Miller WR, Rollnick S. <em>Motivational Interviewing: Helping People Change.</em> 3rd ed. New York: Guilford Press, 2013.</li>
+<li>d'Ivernois JF, Gagnayre R. <em>Apprendre à éduquer le patient.</em> 6e éd. Paris: Maloine, 2020.</li>
+<li>Ekong G, Kavookjian J. « Motivational interviewing and outcomes in adults with type 2 diabetes: A systematic review. » <em>Patient Educ Couns</em>, 2016; 99(6): 944-952.</li>
+<li>Haute Autorité de Santé. « Stratégie médicamenteuse du contrôle glycémique du diabète de type 2. » Recommandation de bonne pratique, mise à jour 2024.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🔶 <strong>DIABÉTOLOGIE</strong> | Partie 11/12 | Couleur : Bleu pétrole <code>#1A5276</code><br />
+<em>Document généré pour la plateforme VERTEX© — Formation Diabétologie Complète</em></p>
+</blockquote>
+</div>

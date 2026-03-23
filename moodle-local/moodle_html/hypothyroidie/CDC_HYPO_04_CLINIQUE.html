@@ -1,0 +1,412 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-04-tableau-clinique-de-lhypothyroidie">🦋 PARTIE 04 — TABLEAU CLINIQUE DE L'HYPOTHYROÏDIE</h1>
+<h2 id="du-syndrome-myxdemateux-au-coma-myxdemateux">Du syndrome myxœdémateux au coma myxœdémateux</h2>
+<hr />
+<h1 id="module-12-syndrome-hypothyroidien-constitue">MODULE 12 — SYNDROME HYPOTHYROÏDIEN CONSTITUÉ</h1>
+<h2 id="121-signes-generaux-et-constitution-du-syndrome">12.1 Signes généraux et constitution du syndrome</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO12-S01-001 — TABLEAU SYNOPTIQUE : signes cliniques de l'hypothyroïdie par appareil — fréquence et valeur diagnostique]</p>
+</blockquote>
+<p>L'hypothyroïdie constitue un <strong>syndrome de ralentissement général</strong> touchant tous les organes et systèmes, par déficit des effets métaboliques, cardiovasculaires et neuronaux des hormones thyroïdiennes.</p>
+<p><strong>Signes généraux</strong> :<br />
+- <strong>Asthénie</strong> physique et psychique (signe le plus fréquent, &gt; 90 %)<br />
+- <strong>Frilosité</strong> (réduction BMR → moins de thermogenèse)<br />
+- <strong>Prise de poids</strong> modérée (2-5 kg en général) — principalement par rétention hydrosodée (myxœdème), pas de vraie obésité<br />
+- Ralentissement global : psychomoteur, digestif, cardiaque</p>
+<h2 id="122-signes-cutaneo-muqueux-le-myxdeme">12.2 Signes cutanéo-muqueux : le myxœdème</h2>
+<h3 id="1221-le-myxdeme">12.2.1 Le myxœdème</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO12-S02-001 — PHOTOGRAPHIE CLINIQUE : myxœdème du visage — faciès lunaire, paupières œdématiées, macroglosie, teint jaunâtre]</p>
+</blockquote>
+<p>Le <strong>myxœdème</strong> est l'infiltration mucoïde des tissus (accumulation de glycosaminoglycanes — hyaluronane, chondroïtine sulfate), caractéristique de l'hypothyroïdie :<br />
+- <strong>Ne prend pas le godet</strong> (diffère de l'œdème cardiaque ou rénal)<br />
+- Localisation préférentielle : visage (paupières bouffies, faciès lunaire), mains, chevilles, zones prétibiales<br />
+- Macroglosie (langue épaissie, empreintes dentaires sur les bords)<br />
+- Voix rauque (infiltration des cordes vocales et du larynx)</p>
+<p><strong>Signes cutanés</strong> :<br />
+- Peau <strong>sèche</strong>, froide, squameuse (réduction transpiration, sécheresse épidermique)<br />
+- Teint <strong>jaunâtre pâle</strong> : paleur (anémie) + ictère flavinique (accumulation caroténoïdes)<br />
+- Chute des cheveux (alopécie diffuse), <strong>chute du tiers externe des sourcils</strong> (signe de la reine Anne de Perse, pathognomonique mais peu sensible)<br />
+- Ongles cassants, striés, décolorés (leukonychia)<br />
+- Hyperkératose palmoplantaire</p>
+<h3 id="1222-signes-cardio-vasculaires">12.2.2 Signes cardio-vasculaires</h3>
+<ul>
+<li><strong>Bradycardie sinusale</strong> (chronotropisme réduit par ↓ MHC-α, ↓ récepteurs β-adrénergiques)</li>
+<li><strong>Épanchement péricardique</strong> : fréquent (30-50 % des hypothyroïdies sévères), rarement compressif, riche en protéines et cholestérol</li>
+<li><strong>Élargissement de la silhouette cardiaque</strong> à la radiographie thoracique</li>
+<li><strong>HTA diastolique</strong> (augmentation résistances périphériques totales par ↓ NO)</li>
+<li><strong>Diminution du débit cardiaque</strong> (ΔFC + Δ inotropisme)</li>
+<li><strong>Dysfonction diastolique</strong> (SERCA2a ↓ → relaxation lente → E/A &lt; 1)</li>
+</ul>
+<h3 id="1223-signes-neuromusculaires">12.2.3 Signes neuromusculaires</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO12-S03-001 — SCHÉMA : mécanisme de l'allongement du réflexogramme achilléen — SERCA2a réduite et ralentissement de la décontraction]</p>
+</blockquote>
+<ul>
+<li><strong>Crampes, myalgies</strong> (accumulation de glycosaminoglycanes dans les muscles)</li>
+<li><strong>Pseudomyotonie</strong> : contraction et relaxation musculaire lentes (pseudo-Thomsen)</li>
+<li><strong>Syndrome du canal carpien</strong> : infiltration mucoïde du rétinaculum du carpe (20-30 % des hypothyroïdiens)</li>
+<li><strong>Réflexogramme achilléen allongé</strong> &gt; 400 ms (décontraction lente) : signe clinique classique, spécificité 85 %</li>
+<li><strong>Neuropathie périphérique</strong> sensitive (rare, surtout dans les formes sévères)</li>
+<li><strong>Myopathie hypothyroïdienne</strong> : faiblesse musculaire proximale, CPK très élevées (jusqu'à 5-10N)</li>
+</ul>
+<h3 id="1224-signes-cognitifs-et-psychiatriques">12.2.4 Signes cognitifs et psychiatriques</h3>
+<ul>
+<li><strong>Ralentissement idéo-moteur</strong> : pensée lente, trouble de la concentration et de la mémoire</li>
+<li><strong>Dépression</strong> : fréquente, parfois inaugurale ; 10-15 % des dépressions résistantes cachent une hypothyroïdie</li>
+<li><strong>Démence réversible</strong> : pseudo-démence hypothyroïdienne, régression sous LT4</li>
+<li><strong>Psychose myxœdémateuse</strong> (syndrome de Clerambault-Kandinsky rare) : hallucinations, délire</li>
+<li>Somnolence diurne excessive</li>
+<li>Syndrome des apnées du sommeil (SAHOS) aggravé ou favorisé</li>
+</ul>
+<h3 id="1225-signes-digestifs">12.2.5 Signes digestifs</h3>
+<ul>
+<li><strong>Constipation</strong> : ralentissement du transit (↓ motilité intestinale par hypomyotonie), parfois opiniâtre</li>
+<li><strong>Iléus paralytique</strong> : forme grave, urgence digestive</li>
+<li><strong>Ascite</strong> myxœdémateuse (rare, exsudat riche en protéines et albumine)</li>
+<li>Prise de poids modeste (rétention hydrique et alimentaire)</li>
+</ul>
+<h3 id="1226-signes-gyneco-endocriniens">12.2.6 Signes gynéco-endocriniens</h3>
+<ul>
+<li><strong>Trouble du cycle</strong> : spanioménorrhée ou ménorragies (les deux sont possibles)</li>
+<li><strong>Infertilité</strong> : cycles anovulatoires fréquents</li>
+<li><strong>Hyperprolactinémie</strong> : TRH élevée → stimulation des thyréotropes ET des lactotropes → hyperprolactinémie → galactorrhée chez la femme, gynécomastie chez l'homme</li>
+<li><strong>Baisse de la libido</strong> (homme et femme)</li>
+</ul>
+<h3 id="1227-signes-biologiques">12.2.7 Signes biologiques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO12-S07-001 — TABLEAU : anomalies biologiques de l'hypothyroïdie — mécanisme et fréquence]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Anomalie</th>
+<th>Mécanisme</th>
+<th>Fréquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LDL-C élevé</strong> (20-40 %)</td>
+<td>↓ expression LDL-R hépatique (TRβ1)</td>
+<td>70-80 %</td>
+</tr>
+<tr>
+<td><strong>Hyponatrémie</strong> (SIADH)</td>
+<td>↑ ADH par baroréflexe altéré</td>
+<td>20-30 %</td>
+</tr>
+<tr>
+<td><strong>Anémie</strong></td>
+<td>Normochrome normocytaire (EPO ↓) ou macrocytaire (Biermer associé)</td>
+<td>40-50 %</td>
+</tr>
+<tr>
+<td><strong>CPK élevées</strong></td>
+<td>Myopathie hypothyroïdienne (jusqu'à 5-10N)</td>
+<td>60-70 %</td>
+</tr>
+<tr>
+<td><strong>LDH, ASAT élevées</strong></td>
+<td>Lyse musculaire, hépatique</td>
+<td>30-40 %</td>
+</tr>
+<tr>
+<td><strong>Hypercalcémie</strong> légère</td>
+<td>↑ PTH (hypothyroïdie → ↓ calcitonine relative)</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td><strong>Hypoglycémie</strong> (coma)</td>
+<td>↓ contre-régulation</td>
+<td>Forme sévère</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="module-13-hypothyroidie-frustre-infraclinique">MODULE 13 — HYPOTHYROÏDIE FRUSTRE (INFRACLINIQUE)</h1>
+<h2 id="131-definition-et-epidemiologie">13.1 Définition et épidémiologie</h2>
+<p><strong>Définition</strong> : TSH &gt; 4,0 mUI/L avec T4L dans les valeurs normales de référence.</p>
+<p><strong>Grades</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>Risque de progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grade 1 (légère)</td>
+<td>4-10 mUI/L</td>
+<td>Normale</td>
+<td>2-5 %/an selon statut anti-TPO</td>
+</tr>
+<tr>
+<td>Grade 2 (modérée)</td>
+<td>&gt; 10 mUI/L</td>
+<td>Normale</td>
+<td>Risque élevé (50 % à 10 ans)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prévalence</strong> (adapté de NHANES III, Hollowell 2002) :<br />
+- Population générale adulte : 4-15 %<br />
+- Femmes &gt; 60 ans : 15-20 %</p>
+<h2 id="132-evolution-naturelle">13.2 Évolution naturelle</h2>
+<p>🔬 <strong>EVIDENCE — Whickham Survey</strong> (adapté de Vanderpump et al., Clin Endocrinol 1995) :</p>
+<blockquote>
+<p>Étude de cohorte de 20 ans sur 2 779 sujets en euthyroïdie :<br />
+- Femmes avec TSH élevée + anti-TPO+ : risque de progression vers hypothyroïdie constituée = <strong>5 %/an</strong><br />
+- Femmes avec TSH élevée + anti-TPO- : <strong>2 %/an</strong><br />
+- Hommes : risque 2-3 fois plus faible<br />
+- Régression spontanée vers l'euthyroïdie : 5-12 %/an</p>
+</blockquote>
+<h2 id="133-indications-de-traitement">13.3 Indications de traitement</h2>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de HAS 2019 et ETA 2023) :</p>
+<p><strong>Traitement recommandé si</strong> :<br />
+- TSH &gt; 10 mUI/L (quel que soit l'âge)<br />
+- TSH 4-10 mUI/L + symptômes hypothyroïdiens documentés<br />
+- Grossesse ou désir de grossesse (si TSH &gt; 2,5 mUI/L)<br />
+- TSH 4-10 mUI/L + goitre évolutif<br />
+- TSH 4-10 mUI/L + infertilité<br />
+- TSH 4-10 mUI/L + anticorps anti-TPO positifs + progression prouvée</p>
+<p><strong>Traitement NON recommandé si</strong> :<br />
+- Âge &gt; 65 ans, asymptomatique, TSH 4-10 mUI/L (TRUST trial)<br />
+- TSH &lt; 10 mUI/L, asymptomatique, anti-TPO-, stable sur 2 dosages</p>
+<p>🔬 <strong>EVIDENCE — TRUST trial</strong> (adapté de Stott et al., NEJM 2017) :</p>
+<blockquote>
+<p>737 patients ≥ 65 ans, TSH 4,6-19,9 mUI/L, randomisés LT4 vs placebo. Résultat : <strong>aucune différence</strong> sur les symptômes (score hypothyroïdien), la qualité de vie, la dépression, la cognition, la fonction cardiaque. Conclusion : le traitement de l'HT frustre chez le sujet âgé asymptomatique n'est pas bénéfique.</p>
+</blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > La TSH isolément élevée chez un patient âgé de > 75 ans peut être physiologique (décalage des valeurs de référence avec l'âge). Une TSH de 6 mUI/L chez un octogénaire asymptomatique sans anti-TPO ne nécessite pas forcément de traitement.</div>
+
+<hr />
+<h1 id="module-14-myxdeme-severe-et-coma-myxdemateux">MODULE 14 — MYXŒDÈME SÉVÈRE ET COMA MYXŒDÉMATEUX</h1>
+<h2 id="141-definition-et-physiopathologie">14.1 Définition et physiopathologie</h2>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>Le coma myxœdémateux est une urgence vitale rare (incidence &lt; 1/million/an) mais gravissime (mortalité 20-40 % malgré traitement). Il résulte de la dépression de tous les métabolismes par absence prolongée d'hormones thyroïdiennes.</p>
+</blockquote>
+<p><strong>Facteurs déclenchants</strong> :<br />
+- Exposition au <strong>froid</strong> (le plus fréquent — contexte hivernal)<br />
+- <strong>Infections</strong> (pneumonie, infection urinaire)<br />
+- <strong>Médicaments dépresseurs du SNC</strong> (sédatifs, opiacés, anesthésiques, β-bloquants)<br />
+- <strong>Chirurgie</strong> ou traumatisme<br />
+- Arrêt accidentel du traitement thyroïdien<br />
+- Infarctus du myocarde, AVC, embolie pulmonaire</p>
+<h2 id="142-tableau-clinique">14.2 Tableau clinique</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO14-S02-001 — TABLEAU : score de Popoveniuc — thermorégulation, SNC, cardiovasculaire, gastro-intestinal, facteur déclenchant]</p>
+</blockquote>
+<p><strong>Clinique</strong> :<br />
+- <strong>Troubles de la conscience</strong> : confusion → stupeur → coma<br />
+- <strong>Hypothermie</strong> (&lt; 35°C, souvent &lt; 32°C) : signe cardinal<br />
+- <strong>Bradycardie</strong> &lt; 50 bpm, hypotension, bas débit cardiaque<br />
+- <strong>Hypoventilation</strong> → hypercapnie → acidose respiratoire<br />
+- <strong>Iléus</strong> paralytique, rétention urinaire aiguë<br />
+- <strong>Hypoglycémie</strong> (réduction néoglucogenèse)</p>
+<p><strong>Score de Popoveniuc (2014)</strong> (adapté de Popoveniuc et al., Endocr Pract 2014) :</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T° ≥ 35°C</td>
+<td>0</td>
+</tr>
+<tr>
+<td>T° 33-35°C</td>
+<td>10</td>
+</tr>
+<tr>
+<td>T° &lt; 33°C</td>
+<td>20</td>
+</tr>
+<tr>
+<td>FC 60-99 bpm</td>
+<td>0</td>
+</tr>
+<tr>
+<td>FC &lt; 60 bpm</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Facteur déclenchant identifié</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Troubles conscience légers</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Coma profond</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Score &gt; 60 : coma myxœdémateux probable</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Biologie</strong> :<br />
+- TSH &gt; 50-100 mUI/L (parfois indosable)<br />
+- T4L très basse<br />
+- Hyponatrémie sévère (SIADH), hypoglycémie<br />
+- Hypercapnie, acidose respiratoire (gaz du sang)<br />
+- CPK très élevées (myopathie sévère)</p>
+<h2 id="143-traitement-durgence">14.3 Traitement d'urgence</h2>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>Traitement à démarrer <strong>immédiatement</strong> avant la confirmation biologique complète si la suspicion clinique est forte.</p>
+</blockquote>
+<p><strong>Traitement</strong> (adapté de Jonklaas et al., Thyroid 2014) :<br />
+1. <strong>LT4 IV</strong> : bolus 200-400 µg IV en 15-30 minutes, puis 50-100 µg/j IV → dès que possible per os<br />
+2. <strong>T3 IV (liothyronine)</strong> : si choc circulatoire ou défaillance multiviscérale → bolus 10-25 µg IV puis 10 µg/8h<br />
+3. <strong>Hydrocortisone IV</strong> : 100 mg IV toutes les 8h (suspicion insuffisance surrénalienne associée — PEA ou insuffisance antéhypophysaire)<br />
+4. <strong>Réchauffement passif</strong> (couverture thermique — éviter le réchauffement actif externe car vasodilatation périphérique → choc)<br />
+5. <strong>Ventilation assistée</strong> (intubation si PCO2 &gt; 50 mmHg)<br />
+6. <strong>Correction hyponatrémie</strong> lentement (+ 0,5 mmol/L/h) — risque de myélinolyse centro-pontine<br />
+7. <strong>Traitement du facteur déclenchant</strong></p>
+<p><strong>Mortalité</strong> : 20-40 % malgré traitement adapté.</p>
+<hr />
+<h2 id="144-quiz-modules-12-14">14.4 Quiz Modules 12-14</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Le myxœdème dans l'hypothyroïdie est caractérisé par :<br />
+- A) Un œdème prenant le godet<br />
+- B) Un œdème ne prenant pas le godet (accumulation glycosaminoglycanes)<br />
+- C) Un œdème de la cheville uniquement<br />
+- D) Un œdème lié à une hypoalbuminémie</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le myxœdème est une infiltration mucoïde qui ne prend pas le godet, contrairement aux œdèmes hydro-sodés.</p>
+</blockquote>
+<p><strong>Q2.</strong> La frilosité dans l'hypothyroïdie est due à :<br />
+- A) Une vasoconstriction périphérique<br />
+- B) Une réduction du taux métabolique basal (BMR) → moins de thermogenèse<br />
+- C) Une anémie sévère<br />
+- D) Une hypoprotidémie</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La Na/K-ATPase (gène cible de T3) est sous-exprimée → BMR réduit de 20-40 % → production de chaleur insuffisante → frilosité.</p>
+</blockquote>
+<p><strong>Q3.</strong> L'hypothyroïdie frustre grade 1 correspond à :<br />
+- A) TSH 4-10 mUI/L, T4L normale<br />
+- B) TSH &gt; 10 mUI/L, T4L normale<br />
+- C) TSH normale, T4L basse<br />
+- D) TSH 4-10 mUI/L, T4L basse</p>
+<blockquote>
+<p><strong>Réponse : A</strong> — Grade 1 : TSH 4-10 mUI/L, T4L encore normale.</p>
+</blockquote>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q4.</strong> Selon le TRUST trial, la LT4 est-elle recommandée chez un patient de 72 ans, TSH à 8 mUI/L, asymptomatique, anti-TPO négatifs ?<br />
+- A) Oui, TSH &gt; 4 → traitement systématique<br />
+- B) Non : TRUST trial (2017) montre l'absence de bénéfice symptomatique chez ≥ 65 ans asymptomatiques<br />
+- C) Oui si LDL-C élevé<br />
+- D) Oui si IMC &gt; 30</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le TRUST trial (2017) n'a pas démontré de bénéfice du traitement par LT4 chez les sujets ≥ 65 ans avec HT frustre asymptomatique.</p>
+</blockquote>
+<p><strong>Q5.</strong> Un patient de 78 ans est retrouvé confus, hypotherme (T° 31°C), bradycarde à 38 bpm en plein hiver. La première mesure à effectuer est :<br />
+- A) Doser TSH en urgence et attendre les résultats<br />
+- B) Réchauffage actif immédiat sous-couverture chauffante<br />
+- C) Démarrer LT4 IV + hydrocortisone IV + réchauffement passif + ventilation<br />
+- D) Doser cortisol seul</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Coma myxœdémateux probable : traitement immédiat sans attendre la biologie complète. Le réchauffement passif (pas actif) est capital pour éviter la vasodilatation périphérique.</p>
+</blockquote>
+<h3 id="or">🥇 Or</h3>
+<p><strong>Q6.</strong> Un patient hypothyroïdien connu présente des crampes musculaires et une CPK à 8N. L'électromyogramme montre un tracé myopathique. Quel est le mécanisme et quelle est la première mesure thérapeutique ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : Myopathie hypothyroïdienne par accumulation de glycosaminoglycanes dans le tissu musculaire et réduction des enzymes métaboliques musculaires. La CPK peut atteindre 5-10N dans les hypothyroïdies sévères non traitées. La première mesure est l'optimisation du traitement thyroïdien (LT4, normalisation TSH) : la myopathie est entièrement réversible sous traitement, généralement en 4-12 semaines. Pas besoin d'autre traitement spécifique si la TSH se normalise.</p>
+</blockquote>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q7.</strong> Expliquez pourquoi l'hyperprolactinémie est fréquente dans l'hypothyroïdie primaire sévère et quelles sont ses conséquences cliniques chez l'homme et la femme.</p>
+<blockquote>
+<p><strong>Réponse</strong> : La TRH hypothalamique (élevée en hypothyroïdie primaire pour tenter de stimuler plus de TSH) stimule non seulement les thyréotropes mais aussi les <strong>lactotropes</strong> (cellules à prolactine de l'antéhypophyse), via le même récepteur TRH-R1. Résultat : hyperprolactinémie fonctionnelle (généralement 25-100 ng/mL). Conséquences : Femme : aménorrhée, galactorrhée, dysfonction ovulatoire, infertilité. Homme : gynécomastie, galactorrhée, baisse de la libido, dysfonction érectile, spermatogenèse altérée. Traitement : normalisation de la TSH par LT4 → régression spontanée de la prolactine et des symptômes en 4-8 semaines. Ne pas prescrire de cabergoline ni d'IRM hypophysaire en première intention sans avoir d'abord normalisé la TSH.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

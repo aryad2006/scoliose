@@ -1,0 +1,310 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-19-hernie-discale-et-sciatique">MODULE 19 — HERNIE DISCALE ET SCIATIQUE</h1>
+<p><strong>Partie IX — Pathologies dégénératives</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1 à 7</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Karim, 34 ans, boulanger, consulte pour une douleur lombaire irradiant dans la jambe droite (L5) depuis 3 semaines, EVA 7/10. Il marche difficilement depuis 4 jours. Est-ce urgent ?</p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Hernie discale • Nucleus pulposus • Anneau fibreux • Hernie par effraction (extrusion) • Hernie sous-ligamentaire • Hernie foraminale • Hernie extra-foraminale • Hernie centrale • Syndrome de la queue de cheval • AINS • Corticothérapie systémique • Infiltration épiduale ou foraminale • Radiculalgie L4, L5, S1 • Test de Lasègue • Microdiscectomie • Séquestrectomie • Endoscopie rachidienne</p>
+<hr />
+<h2 id="191-anatomie-et-physiopathologie">19.1 Anatomie et physiopathologie</h2>
+<p><strong>Structure discale</strong> :<br />
+- <strong>Nucleus pulposus</strong> : hydrogel mucopolysaccharidique sous pression (70–80 % eau)<br />
+- <strong>Anneau fibreux</strong> : 12–16 lamelles de fibres collagènes<br />
+- <strong>Plateaux cartilagineux</strong> : interface disque-vertèbre</p>
+<p><strong>Mécanisme de hernie</strong> :<br />
+1. Dégénérescence discale (perte en eau du nucleus)<br />
+2. Fissure de l'anneau (postéro-latérale le plus souvent)<br />
+3. Protrusion / extrusion du nucleus → compression de la racine nerveuse</p>
+<p><strong>Facteurs de risque</strong> :<br />
+- Charge répétée en flexion + torsion (manutentionnaires, agriculteurs)<br />
+- Sédentarité + obésité + tabac<br />
+- Prédisposition génétique (collagène)</p>
+<hr />
+<h2 id="192-presentation-clinique-des-hernies-lombaires">19.2 Présentation clinique des hernies lombaires</h2>
+<table>
+<thead>
+<tr>
+<th>Hernie</th>
+<th>Racine comprimée</th>
+<th>Topographie douleur</th>
+<th>Déficit moteur</th>
+<th>Réflexe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L3-L4</strong></td>
+<td><strong>L4</strong></td>
+<td>Fesse → face antérieure cuisse → genou</td>
+<td>Quadriceps (pied en relevé)</td>
+<td>↓ Rotulien</td>
+</tr>
+<tr>
+<td><strong>L4-L5</strong></td>
+<td><strong>L5</strong></td>
+<td>Fesse → face externe cuisse → jambe → gros orteil</td>
+<td>Jambier antérieur (releveur gros orteil)</td>
+<td>ROT normaux</td>
+</tr>
+<tr>
+<td><strong>L5-S1</strong></td>
+<td><strong>S1</strong></td>
+<td>Fesse → face postérieure jambe → talon / 5e orteil</td>
+<td>Triceps sural (marche sur la pointe des pieds)</td>
+<td>↓ Achiléen</td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-de-lasegue">Test de Lasègue</h3>
+<ul>
+<li>Patient en décubitus dorsal, genou tendu</li>
+<li>Élévation passive de la jambe</li>
+<li><strong>Positif si douleur radiculaire &lt; 60°</strong> (irradiation en dessous du genou)</li>
+<li>Lasègue controlatéral positif (cross sign) → hernie massive ou intradurale</li>
+</ul>
+<h3 id="syndrome-de-la-queue-de-cheval-sqc">Syndrome de la queue de cheval (SQC)</h3>
+<p><strong>⭐ URGENCE CHIRURGICALE ABSOLUE</strong></p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rétention urinaire</td>
+<td>Signe le plus fiable</td>
+</tr>
+<tr>
+<td>Anesthésie en selle (périnée, anus)</td>
+<td>Caractéristique</td>
+</tr>
+<tr>
+<td>Paralysie sphinctérienne</td>
+<td>Tardif</td>
+</tr>
+<tr>
+<td>Parésie bilatérale rapide</td>
+<td>Alarme</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Délai chirurgical</strong> : <strong>&lt; 24–48h</strong> → pronostic sphinctérien corrèle avec le délai</p>
+<hr />
+<h2 id="193-imagerie">19.3 Imagerie</h2>
+<p><strong>IRM lombaire</strong> : Gold standard<br />
+- Coupe sagittale T2 : visualise le nucleus (hypersignal) et la hernie<br />
+- Coupe axiale T2 : localisation précise (paramédiante, foraminale, extra-foraminale)<br />
+- Corrélation clinico-radiologique OBLIGATOIRE (15 % de hernies asymptomatiques chez les &gt; 40 ans)</p>
+<p><strong>Classification de Michigan</strong> (Mysliwiec et al., 2009, <em>Pain Physician</em> ; voir aussi Fardon et al., 2014, <em>Spine J</em> — nomenclature combinée NASS/ASSR/ASNR) :<br />
+- Grade 1 : Protrusion sans rupture de l'anneau<br />
+- Grade 2 : Extrusion (nucleus a percé l'anneau, reste sous lig.)<br />
+- Grade 3 : Hernie séquestrée (fragment libre dans le canal)</p>
+<hr />
+<h2 id="194-traitement-conservateur">19.4 Traitement conservateur</h2>
+<p><strong>Indication</strong> : 85–90 % des hernies guérissent spontanément en 6–12 semaines (Weber, 1983, <em>Spine</em>)</p>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Durée</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Antalgiques</strong> (paracétamol, tramadol)</td>
+<td>Continu</td>
+<td>Niveau 1</td>
+</tr>
+<tr>
+<td><strong>AINS</strong></td>
+<td>2–3 semaines</td>
+<td>Niveau 1</td>
+</tr>
+<tr>
+<td><strong>Corticoïdes oraux</strong></td>
+<td>Cure courte 5–7 j</td>
+<td>Niveau 2 (bénéfice modéré, transitoire)</td>
+</tr>
+<tr>
+<td><strong>Infiltration épidurale</strong></td>
+<td>1–3 injections</td>
+<td>Niveau 1 (réduction douleur à court terme)</td>
+</tr>
+<tr>
+<td><strong>Kinésithérapie</strong></td>
+<td>Dès amélioration aiguë</td>
+<td>Niveau 2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Indications à reconsidérer la chirurgie</strong> :<br />
+- Déficit neurologique progressif (urgence)<br />
+- Syndrome de queue de cheval (urgence)<br />
+- Douleur invalidante réfractaire &gt; 6–8 semaines malgré traitement bien conduit</p>
+<hr />
+<h2 id="195-chirurgie-discectomie-microdiscectomie">19.5 Chirurgie — Discectomie / Microdiscectomie</h2>
+<p><strong>Indications</strong> :<br />
+- SQC : URGENCE<br />
+- Déficit moteur progressif<br />
+- Douleur &gt; 6–8 semaines réfractaire (EVA &gt; 6)</p>
+<p><strong>Technique de microdiscectomie</strong> :<br />
+1. Incision 2–3 cm postérieure paramédiante<br />
+2. Hémilaminotomie + ligamentotomie jaune<br />
+3. Rétraction douce de la racine<br />
+4. Ablation du fragment discal hernié</p>
+<p><strong>Résultats</strong> :<br />
+- 90–95 % de soulagement radiculaire immédiat<br />
+- 5–10 % de récidive à 10 ans<br />
+- Pas de différence à 4 ans entre chirurgie et traitement conservateur pour la douleur axiale lombaire</p>
+<hr />
+<h2 id="196-endoscopie-rachidienne">19.6 Endoscopie rachidienne</h2>
+<p><strong>Avantages</strong> : Chirurgie ambulatoire, moins de dissection, récupération plus rapide.</p>
+<p><strong>Indications</strong> : Hernies L4-L5 et L5-S1 paramédianes ou foraminales.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> L5 = gros orteil + jambier antérieur + Lasègue ; S1 = 5e orteil + triceps sural + réflexe achiléen.</p>
+<p>📌 <strong>2.</strong> Le <strong>syndrome de la queue de cheval</strong> (rétention urinaire + anesthésie en selle) = URGENCE chirurgicale &lt; 24h.</p>
+<p>📌 <strong>3.</strong> 85–90 % des hernies guérissent <strong>spontanément</strong> en 6–12 semaines.</p>
+<p>📌 <strong>4.</strong> L'<strong>infiltration épidurale</strong> est recommandée en 2e intention si echec antalgiques.</p>
+<p>📌 <strong>5.</strong> La chirurgie est indiquée si résistance &gt; 6–8 semaines, déficit neurologique progressif ou SQC.</p>
+</blockquote>
+<hr />
+<h2 id="references">Références</h2>
+<ol>
+<li>Weber H. Lumbar disc herniation: a controlled, prospective study with ten years of observation. <em>Spine</em>. 1983;8(2):131-140.</li>
+<li>Mysliwiec LW, Cholewicki J, Winkelpleck MD, Ez-Zaitouni A. MSU classification for herniated lumbar discs on MRI. <em>Pain Physician</em>. 2009;12(1):9-18.</li>
+<li>Fardon DF, Williams AL, Dohring EJ, et al. Lumbar disc nomenclature: version 2.0 — recommendations of the combined task forces of the NASS, ASSR, and ASNR. <em>Spine J</em>. 2014;14(11):2525-2545.</li>
+<li>Weinstein JN, Lurie JD, Tosteson TD, et al. Surgical versus nonoperative treatment for lumbar disc herniation: the Spine Patient Outcomes Research Trial (SPORT). <em>JAMA</em>. 2006;296(20):2441-2450.</li>
+</ol>
+<hr />
+<h2 id="quiz-8-questions">Quiz — 8 questions</h2>
+<p><strong>Q1. 🥉</strong> Une hernie L4-L5 comprend principalement la racine :<br />
+- A. L4<br />
+- <strong>B. L5</strong><br />
+- C. S1<br />
+- D. L3</p>
+<p><strong>Q2. 🥉</strong> Le signe de Lasègue est positif si la douleur radiculaire apparaît à une élévation de la jambe :<br />
+- <strong>A. &lt; 60° en extension du genou</strong><br />
+- B. &gt; 90°<br />
+- C. Uniquement en rotation interne<br />
+- D. Spécifique au talon</p>
+<p><strong>Q3. 🥉</strong> La rétention urinaire associée à une hernie discale centrale doit faire craindre :<br />
+- <strong>A. Un syndrome de la queue de cheval</strong><br />
+- B. Une cystite<br />
+- C. Une prostatite (chez l'homme)<br />
+- D. Un effet secondaire des antalgiques</p>
+<p><strong>Q4. 🥈</strong> La chirurgie d'une hernie discale lombaire est URGENTE en cas de :<br />
+- A. Douleur EVA 6 depuis 3 jours<br />
+- <strong>B. Syndrome de la queue de cheval (rétention urinaire + anesthésie en selle)</strong><br />
+- C. Hernie L4-L5 sur IRM<br />
+- D. Sciatique hyperalgique depuis 2 semaines</p>
+<p><strong>Q5. 🥈</strong> Le taux de guérison spontanée des hernies discales lombaires est d'environ :<br />
+- A. 50 %<br />
+- B. 70 %<br />
+- <strong>C. 85–90 %</strong><br />
+- D. 99 %</p>
+<p><strong>Q6. 🥈</strong> Karim (boulanger, sciatique L5 droite depuis 3 semaines, EVA 7/10) : quelle est la première étape thérapeutique ?<br />
+- <strong>A. Traitement conservateur : AINS + antalgiques + explications + repos relatif. IRM si déficit ou résistance &gt; 6 semaines</strong><br />
+- B. IRM immédiate + infiltration<br />
+- C. Microdiscectomie d'emblée<br />
+- D. Hospitalisation pour corticoïdes IV</p>
+<p><strong>Q7. 🥇</strong> La microdiscectomie donne un taux de soulagement radiculaire de :<br />
+- A. 60 %<br />
+- B. 75 %<br />
+- <strong>C. 90–95 % à court terme</strong><br />
+- D. 50 %</p>
+<p><strong>Q8. 💎</strong> À J3 d'une microdiscectomie L4-L5 par endoscopie, le patient appelle pour une douleur radiculaire identique à la douleur préopératoire. IRM : aucune hernie récidivante visible. Quelle est l'explication la plus probable ?<br />
+- <strong>A. Inflammation post-opératoire de la racine (neuropraxie post-décompression transitoire) — courante dans les 4–6 premières semaines. Rassurer + AINS + réévaluer à 6 semaines</strong><br />
+- B. Récidive immédiate de la hernie — reprise chirurgicale urgente<br />
+- C. Hématome épidural — urgence<br />
+- D. Erreur de niveau chirurgical</p>
+</div>

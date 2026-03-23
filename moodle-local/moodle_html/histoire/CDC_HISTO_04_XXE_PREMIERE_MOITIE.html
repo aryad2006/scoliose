@@ -1,0 +1,985 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-4-premiere-moitie-du-xxe-siecle-1900-1950">🦴 PARTIE 4 — PREMIÈRE MOITIÉ DU XXe SIÈCLE (1900-1950)</h1>
+<h2 id="des-tranchees-aux-premieres-protheses-la-forge-de-lorthopedie-moderne">Des tranchées aux premières prothèses — la forge de l'orthopédie moderne</h2>
+<hr />
+<h1 id="module-14-la-premiere-guerre-mondiale-1914-1918">MODULE 14 — LA PREMIÈRE GUERRE MONDIALE (1914-1918)</h1>
+<h2 id="traumatologie-de-masse-innovations-de-terrain-et-reconstruction-des-mutiles">Traumatologie de masse, innovations de terrain et reconstruction des mutilés</h2>
+<hr />
+<h2 id="objectifs-pedagogiques">Objectifs pédagogiques</h2>
+<ul>
+<li>Analyser l'impact de la Grande Guerre sur le développement de la traumatologie</li>
+<li>Décrire les innovations chirurgicales nées du conflit</li>
+<li>Comprendre le rôle de Robert Jones et des centres orthopédiques militaires</li>
+<li>Évaluer l'héritage de la médecine de guerre sur l'orthopédie civile</li>
+</ul>
+<hr />
+<h2 id="1-le-choc-de-la-guerre-industrielle">1. Le choc de la guerre industrielle</h2>
+<h3 id="11-une-traumatologie-sans-precedent">1.1 Une traumatologie sans précédent</h3>
+<p>⚔️ <strong>CONTEXTE HISTORIQUE</strong> :</p>
+<blockquote>
+<p>La Première Guerre mondiale produit des traumatismes d'une ampleur et d'une gravité inédites. Les obus d'artillerie (responsables de 70 % des blessures), les mitrailleuses et les armes chimiques causent des fractures comminutives, des plaies délabrantes et des infections massives. En quatre ans, 21 millions de soldats sont blessés, dont des millions avec des lésions musculo-squelettiques.</p>
+</blockquote>
+<p><strong>Statistiques traumatologiques de la Grande Guerre</strong> (adapté de Ireland, 1929) :</p>
+<table>
+<thead>
+<tr>
+<th>Type de blessure</th>
+<th>Proportion</th>
+<th>Problème orthopédique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blessures par éclats d'obus</td>
+<td>70 %</td>
+<td>Fractures comminutives, corps étrangers multiples</td>
+</tr>
+<tr>
+<td>Blessures par balles</td>
+<td>25 %</td>
+<td>Fractures diaphysaires, lésions neurovasculaires</td>
+</tr>
+<tr>
+<td>Blessures par arme blanche</td>
+<td>2 %</td>
+<td>Plaies pénétrantes</td>
+</tr>
+<tr>
+<td>Blessures par gaz</td>
+<td>3 %</td>
+<td>Séquelles respiratoires</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO14-S01-001 — PHOTOGRAPHIE : poste de secours avancé sur le front, avec soldats blessés en attente d'évacuation, Somme, 1916]</p>
+</blockquote>
+<h3 id="12-la-chaine-devacuation-sanitaire">1.2 La chaîne d'évacuation sanitaire</h3>
+<p><strong>Organisation de la chaîne sanitaire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Échelon</th>
+<th>Structure</th>
+<th>Délai</th>
+<th>Soins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1er</td>
+<td>Poste de secours régimentaire</td>
+<td>Minutes</td>
+<td>Premiers soins, pansements</td>
+</tr>
+<tr>
+<td>2e</td>
+<td>Poste de secours divisionnaire</td>
+<td>Heures</td>
+<td>Triage, attelles, garrot</td>
+</tr>
+<tr>
+<td>3e</td>
+<td>Ambulance de campagne</td>
+<td>6-12 h</td>
+<td>Chirurgie d'urgence (amputations)</td>
+</tr>
+<tr>
+<td>4e</td>
+<td>Hôpital d'évacuation</td>
+<td>1-3 jours</td>
+<td>Chirurgie réparatrice</td>
+</tr>
+<tr>
+<td>5e</td>
+<td>Hôpital de base (arrière)</td>
+<td>1-2 semaines</td>
+<td>Chirurgie définitive, rééducation</td>
+</tr>
+<tr>
+<td>6e</td>
+<td>Hôpital métropolitain</td>
+<td>Semaines</td>
+<td>Reconstruction, appareillage</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-les-innovations-chirurgicales-de-la-grande-guerre">2. Les innovations chirurgicales de la Grande Guerre</h2>
+<h3 id="21-lattelle-de-thomas-sur-le-front">2.1 L'attelle de Thomas sur le front</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO14-S02-001 — PHOTOGRAPHIE : application de l'attelle de Thomas sur un blessé du front, 1917]</p>
+</blockquote>
+<p>La mortalité des fractures du fémur sur le front occidental chute de 80 % à 15-20 % après l'adoption systématique de l'attelle de Thomas en 1916, sous l'impulsion de Sir Robert Jones.</p>
+<h3 id="22-la-methode-de-carrel-dakin">2.2 La méthode de Carrel-Dakin</h3>
+<p>Alexis Carrel (prix Nobel 1912) et Henry Dakin développent un système d'irrigation continue des plaies infectées avec une solution d'hypochlorite de sodium (liquide de Dakin) à 0,5 %.</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO14-S02-002 — SCHÉMA : système d'irrigation continue de Carrel-Dakin pour les plaies de guerre infectées]</p>
+</blockquote>
+<p><strong>Principe de Carrel-Dakin</strong> :<br />
+- Irrigation continue par tubes perforés placés dans la plaie<br />
+- Solution de Dakin (hypochlorite de sodium 0,5 %) renouvelée toutes les 2 heures<br />
+- Réduction du taux de gangrène gazeuse de 30 % à 5 %<br />
+- Suture secondaire différée après stérilisation de la plaie</p>
+<p>🔗 <strong>LIEN AVEC LA PRATIQUE ACTUELLE</strong> :</p>
+<blockquote>
+<p>Le liquide de Dakin est toujours utilisé en 2026 pour l'antisepsie des plaies chroniques. Le principe de la suture différée après décontamination reste le standard de traitement des fractures ouvertes sévères (type III de Gustilo).</p>
+</blockquote>
+<h3 id="23-autres-innovations-nees-du-conflit">2.3 Autres innovations nées du conflit</h3>
+<table>
+<thead>
+<tr>
+<th>Innovation</th>
+<th>Développeur</th>
+<th>Principe</th>
+<th>Héritage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traction trans-squelettique</td>
+<td>Fritz Steinmann (1907)</td>
+<td>Broche trans-osseuse pour traction</td>
+<td>Standard actuel</td>
+</tr>
+<tr>
+<td>Fixateur externe rudimentaire</td>
+<td>Lambotte (1902), perfectionné au front</td>
+<td>Fixation percutanée</td>
+<td>Fixateur AO, Ilizarov</td>
+</tr>
+<tr>
+<td>Greffe osseuse massive</td>
+<td>Fred Albee (1915)</td>
+<td>Autogreffe tibiale pour pseudarthrose</td>
+<td>Banques d'os</td>
+</tr>
+<tr>
+<td>Chirurgie réparatrice faciale</td>
+<td>Harold Gillies</td>
+<td>Reconstruction maxillo-faciale</td>
+<td>Chirurgie plastique</td>
+</tr>
+<tr>
+<td>Prothèses de membres</td>
+<td>Centres d'appareillage</td>
+<td>Bras et jambes artificiels</td>
+<td>Industrie prothétique</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-la-reeducation-des-mutiles-de-guerre">3. La rééducation des mutilés de guerre</h2>
+<h3 id="31-les-gueules-cassees-et-la-reconstruction">3.1 Les « gueules cassées » et la reconstruction</h3>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO14-S03-001 — PHOTOGRAPHIE : atelier de rééducation des mutilés, Grand Palais, Paris, 1918]</p>
+</blockquote>
+<p>⚔️ <strong>CONTEXTE HISTORIQUE</strong> :</p>
+<blockquote>
+<p>La France compte 1,1 million de mutilés de guerre en 1918, dont 300 000 invalides permanents. L'Union des Blessés de la Face et de la Tête (« Gueules cassées ») est fondée en 1921 par le colonel Picot. Les centres de rééducation se multiplient et posent les bases de la médecine physique et de réadaptation (MPR).</p>
+</blockquote>
+<hr />
+<h2 id="4-quiz-module-14">4. Quiz — Module 14</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> De combien la mortalité des fractures du fémur a-t-elle été réduite par l'attelle de Thomas pendant la Première Guerre mondiale ?<br />
+- A) De 50 % à 30 %<br />
+- B) De 80 % à 15-20 % ✓<br />
+- C) De 90 % à 50 %<br />
+- D) De 40 % à 10 %</p>
+<p><strong>Q2.</strong> Quel antiseptique développé par Carrel et Dakin pendant la Grande Guerre est toujours utilisé aujourd'hui ?<br />
+- A) L'eau oxygénée<br />
+- B) L'hypochlorite de sodium (Dakin) ✓<br />
+- C) L'alcool iodé<br />
+- D) Le formol</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q3.</strong> Analysez comment la Première Guerre mondiale a transformé la traumatologie orthopédique et quels principes développés dans les tranchées restent fondamentaux dans la prise en charge actuelle des traumatismes.</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) Triage et chaîne d'évacuation → médecine de catastrophe moderne ; (2) Attelle de Thomas → immobilisation pré-hospitalière ; (3) Carrel-Dakin → débridement et irrigation des plaies ouvertes ; (4) Traction trans-squelettique → fixation externe temporaire (damage control orthopaedics) ; (5) Suture différée → prise en charge des fractures ouvertes type III ; (6) Rééducation des mutilés → médecine physique et de réadaptation.</p>
+</blockquote>
+<hr />
+<h1 id="module-15-lentre-deux-guerres-1918-1939">MODULE 15 — L'ENTRE-DEUX-GUERRES (1918-1939)</h1>
+<h2 id="structuration-academique-lorenz-bohler-et-les-premieres-protheses">Structuration académique, Lorenz Böhler et les premières prothèses</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_1">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire la structuration de l'orthopédie comme spécialité académique</li>
+<li>Analyser les contributions de Lorenz Böhler à la traumatologie systématisée</li>
+<li>Retracer les premières tentatives d'arthroplastie</li>
+<li>Comprendre l'émergence des sociétés savantes orthopédiques</li>
+</ul>
+<hr />
+<h2 id="1-lorenz-bohler-1885-1973-le-systematiseur-de-la-traumatologie">1. Lorenz Böhler (1885-1973) — le systématiseur de la traumatologie</h2>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO15-S01-001 — PORTRAIT : Lorenz Böhler, fondateur de l'Unfallkrankenhaus de Vienne]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — LORENZ BÖHLER (1885-1973)</strong> :</p>
+<blockquote>
+<p>Chirurgien autrichien, Böhler est le père de la traumatologie systématisée. Médecin militaire pendant la Première Guerre mondiale, il est frappé par le manque de standardisation dans le traitement des fractures. En 1925, il fonde à Vienne l'Unfallkrankenhaus (hôpital des accidents), premier centre de traumatologie spécialisé au monde. Son <em>Traitement des fractures</em> (1929), traduit en 14 langues, devient la bible mondiale de la traumatologie.</p>
+</blockquote>
+<p><strong>Principes de Böhler pour le traitement des fractures</strong> (adapté de Böhler, 1929) :</p>
+<table>
+<thead>
+<tr>
+<th>Principe</th>
+<th>Description</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Réduction anatomique</td>
+<td>Restaurer l'alignement et la longueur</td>
+<td>Manœuvres de réduction</td>
+</tr>
+<tr>
+<td>2. Immobilisation stable</td>
+<td>Maintenir la réduction jusqu'à consolidation</td>
+<td>Plâtre, traction</td>
+</tr>
+<tr>
+<td>3. Préservation de la vascularisation</td>
+<td>Respecter les parties molles</td>
+<td>Manipulation douce</td>
+</tr>
+<tr>
+<td>4. Mobilisation précoce</td>
+<td>Mobiliser les articulations adjacentes</td>
+<td>Rééducation précoce</td>
+</tr>
+<tr>
+<td>5. Surveillance continue</td>
+<td>Contrôle clinique et radiologique</td>
+<td>Suivi régulier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Innovations de Böhler</strong> :<br />
+- <strong>Angle de Böhler</strong> : angle tuber-articulaire du calcanéus (normal 20-40°), utilisé pour évaluer les fractures du calcanéum<br />
+- <strong>Étrier de Böhler</strong> : pour la marche en plâtre<br />
+- <strong>Attelle de Böhler-Braun</strong> : pour la traction des fractures du fémur<br />
+- <strong>Organisation standardisée</strong> : circuits patient, protocoles, formation continue</p>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO15-S01-002 — SCHÉMA : l'angle de Böhler — mesure de l'angle tuber-articulaire du calcanéus, normal vs fracture]</p>
+</blockquote>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« Le traitement des fractures n'est pas un art, c'est une technique qui peut et doit être enseignée systématiquement. Chaque chirurgien doit savoir traiter une fracture aussi bien que n'importe quel autre chirurgien — c'est une question de méthode, pas de talent. »</em><br />
+— Lorenz Böhler, <em>Traitement des fractures</em>, 1929 (adapté)</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>Böhler transforme la traumatologie d'un art individuel en une discipline systématisée avec des protocoles reproductibles. Son approche — centres spécialisés, standardisation des procédures, formation continue — préfigure directement la philosophie AO/ASIF qui émergera 30 ans plus tard.</p>
+</blockquote>
+<hr />
+<h2 id="2-les-premieres-arthroplasties">2. Les premières arthroplasties</h2>
+<h3 id="21-chronologie-des-premieres-protheses-articulaires">2.1 Chronologie des premières prothèses articulaires</h3>
+<p><strong>Histoire de l'arthroplastie de hanche</strong> (adapté de Learmonth, 2007) :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Chirurgien</th>
+<th>Innovation</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1891</td>
+<td>Themistocles Glück</td>
+<td>Prothèse fémorale en ivoire (hanche et genou)</td>
+<td>Échec par infection</td>
+</tr>
+<tr>
+<td>1923</td>
+<td>Marius Smith-Petersen</td>
+<td>Cup arthroplasty (verre moulé)</td>
+<td>Fragilité du verre</td>
+</tr>
+<tr>
+<td>1938</td>
+<td>Smith-Petersen</td>
+<td>Cup en Vitallium</td>
+<td>Premiers succès durables</td>
+</tr>
+<tr>
+<td>1938</td>
+<td>Philip Wiles</td>
+<td>Première PTH totale (acier inoxydable)</td>
+<td>Résultats médiocres</td>
+</tr>
+<tr>
+<td>1940</td>
+<td>Austin Moore</td>
+<td>Première hémiarthroplastie fémorale métallique</td>
+<td>Succès modéré</td>
+</tr>
+<tr>
+<td>1946</td>
+<td>Frères Judet (Robert et Jean)</td>
+<td>Prothèse fémorale en acrylique</td>
+<td>Usure rapide</td>
+</tr>
+<tr>
+<td>1950</td>
+<td>Austin Moore</td>
+<td>Prothèse de Moore (standard)</td>
+<td>Standard pendant 20 ans</td>
+</tr>
+<tr>
+<td>1951</td>
+<td>Kenneth McKee et John Watson-Farrar</td>
+<td>PTH métal-métal</td>
+<td>Résultats variables</td>
+</tr>
+<tr>
+<td>1958</td>
+<td>Sir John Charnley</td>
+<td>Début des recherches sur la « low friction arthroplasty »</td>
+<td>Révolution</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Sir John Charnley</td>
+<td>PTH polyéthylène-métal, ciment PMMA</td>
+<td>Gold standard</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO15-S02-001 — FRISE CHRONOLOGIQUE : histoire de la prothèse de hanche de Glück (1891) à nos jours]</p>
+<p>[MEDIA: 🔬 MHISTO15-S02-002 — COLLECTION : évolution des prothèses de hanche — ivoire (Glück), Vitallium (Smith-Petersen), acrylique (Judet), métal (Moore), Charnley]</p>
+</blockquote>
+<h3 id="22-marius-smith-petersen-1886-1953">2.2 Marius Smith-Petersen (1886-1953)</h3>
+<p>👤 <strong>PORTRAIT — MARIUS NYGAARD SMITH-PETERSEN (1886-1953)</strong> :</p>
+<blockquote>
+<p>Chirurgien norvégien-américain au Massachusetts General Hospital (Boston), Smith-Petersen développe la cup arthroplasty (arthroplastie par chapeau) en Vitallium (1938), la voie d'abord antérieure de la hanche (« Smith-Petersen approach ») et le clou tri-ailé pour les fractures du col fémoral. Il est l'un des architectes fondateurs de l'arthroplastie moderne.</p>
+</blockquote>
+<p><strong>Innovations de Smith-Petersen</strong> :<br />
+- <strong>Clou tri-ailé</strong> (1925) : première fixation interne fiable du col fémoral<br />
+- <strong>Cup arthroplasty</strong> en Vitallium (1938) : premier succès durable d'arthroplastie<br />
+- <strong>Voie d'abord antérieure de la hanche</strong> : toujours utilisée (approche de Hueter-Smith-Petersen)</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO15-S02-003 — CLOU TRI-AILÉ DE SMITH-PETERSEN : instrument et radiographie post-opératoire, ~1935]</p>
+</blockquote>
+<h3 id="23-histoire-de-la-prothese-totale-de-genou">2.3 Histoire de la prothèse totale de genou</h3>
+<p><strong>Chronologie de l'arthroplastie du genou</strong> (adapté de Ranawat, 2012) :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Chirurgien</th>
+<th>Innovation</th>
+<th>Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1860</td>
+<td>Verneuil</td>
+<td>Interposition tissulaire (fascia)</td>
+<td>Première tentative</td>
+</tr>
+<tr>
+<td>1891</td>
+<td>Glück</td>
+<td>Prothèse de genou en ivoire</td>
+<td>Échec par infection</td>
+</tr>
+<tr>
+<td>1940</td>
+<td>Campbell</td>
+<td>Interposition métallique (Vitallium)</td>
+<td>Résultats limités</td>
+</tr>
+<tr>
+<td>1950s</td>
+<td>Walldius, Shiers</td>
+<td>Prothèses à charnière</td>
+<td>Descellement fréquent</td>
+</tr>
+<tr>
+<td>1968</td>
+<td>Gunston</td>
+<td>Prothèse polycentric</td>
+<td>Premier design anatomique</td>
+</tr>
+<tr>
+<td>1971</td>
+<td>Freeman et Swanson</td>
+<td>ICLH prosthesis</td>
+<td>Resurfaçage</td>
+</tr>
+<tr>
+<td>1973</td>
+<td>Insall et Walker</td>
+<td>Total Condylar</td>
+<td>Standard moderne</td>
+</tr>
+<tr>
+<td>1978</td>
+<td>Insall et Burstein</td>
+<td>PTG postéro-stabilisée</td>
+<td>Sacrifice du LCP</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Buechel et Pappas</td>
+<td>PTG mobile bearing</td>
+<td>Plateau mobile</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Plusieurs</td>
+<td>PTG patient-specific (PSI)</td>
+<td>Guides de coupe sur mesure</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>MAKO, NAVIO, ROSA</td>
+<td>PTG assistée par robot</td>
+<td>Précision sub-millimétrique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO15-S02-004 — FRISE CHRONOLOGIQUE : histoire de la prothèse totale de genou de 1860 à nos jours]</p>
+</blockquote>
+<hr />
+<h2 id="3-la-fondation-des-societes-savantes">3. La fondation des sociétés savantes</h2>
+<h3 id="31-principales-societes-orthopediques-fondees-au-xxe-siecle">3.1 Principales sociétés orthopédiques fondées au XXe siècle</h3>
+<table>
+<thead>
+<tr>
+<th>Société</th>
+<th>Fondation</th>
+<th>Fondateur(s)</th>
+<th>Pays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>American Orthopaedic Association (AOA)</td>
+<td>1887</td>
+<td>Virgil Gibney</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>British Orthopaedic Association (BOA)</td>
+<td>1918</td>
+<td>Sir Robert Jones</td>
+<td>UK</td>
+</tr>
+<tr>
+<td>SICOT (Société Internationale de Chirurgie Orthopédique et de Traumatologie)</td>
+<td>1929</td>
+<td>Robert Jones, Vittorio Putti</td>
+<td>International</td>
+</tr>
+<tr>
+<td>AAOS (American Academy of Orthopaedic Surgeons)</td>
+<td>1933</td>
+<td>Plusieurs</td>
+<td>USA</td>
+</tr>
+<tr>
+<td>SOFCOT (Société Française de Chirurgie Orthopédique et Traumatologique)</td>
+<td>1918 (réorganisée 1970)</td>
+<td>Plusieurs</td>
+<td>France</td>
+</tr>
+<tr>
+<td>AO/ASIF</td>
+<td>1958</td>
+<td>Müller, Allgöwer, Willenegger, Schneider</td>
+<td>Suisse</td>
+</tr>
+<tr>
+<td>EFORT (European Federation of National Associations of Orthopaedics and Traumatology)</td>
+<td>1991</td>
+<td>Plusieurs</td>
+<td>Europe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-quiz-module-15">4. Quiz — Module 15</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel chirurgien autrichien a fondé le premier centre de traumatologie spécialisé au monde en 1925 ?<br />
+- A) Gerhard Küntscher<br />
+- B) Lorenz Böhler ✓<br />
+- C) Albin Lambotte<br />
+- D) Robert Danis</p>
+<p><strong>Q2.</strong> Quelle prothèse articulaire Smith-Petersen a-t-il développée en 1938 ?<br />
+- A) Une prothèse totale de hanche<br />
+- B) Une cup arthroplasty en Vitallium ✓<br />
+- C) Une prothèse de genou<br />
+- D) Une prothèse d'épaule</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Quel est l'angle de Böhler et à quoi sert-il ?<br />
+- A) L'angle de la tête fémorale, pour les fractures du col<br />
+- B) L'angle tuber-articulaire du calcanéus, pour évaluer les fractures du calcanéum ✓<br />
+- C) L'angle de la scoliose, pour mesurer la courbure rachidienne<br />
+- D) L'angle du plateau tibial, pour planifier les ostéotomies</p>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q4.</strong> Comparez les cinq principes de Böhler (1929) pour le traitement des fractures avec les quatre principes de l'AO/ASIF (1958). Quels sont les points communs et les divergences conceptuelles ?</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : Points communs : réduction anatomique, stabilité mécanique, préservation de la vascularisation, mobilisation fonctionnelle précoce. Divergence majeure : Böhler privilégie le traitement conservateur (plâtre, traction) tandis que l'AO/ASIF prône la fixation interne systématique. L'AO ajoute le concept de compression interfragmentaire (hérité de Danis). Convergence finale : l'AO intégrera la fixation biologique (respect de la vascularisation, plaques verrouillées pontantes) à partir des années 1990.</p>
+</blockquote>
+<hr />
+<h1 id="module-16-la-seconde-guerre-mondiale-1939-1945">MODULE 16 — LA SECONDE GUERRE MONDIALE (1939-1945)</h1>
+<h2 id="antibiotiques-fixateurs-externes-et-naissance-de-la-reeducation">Antibiotiques, fixateurs externes et naissance de la rééducation</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_2">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire l'impact des antibiotiques sur la chirurgie de guerre</li>
+<li>Analyser le développement des fixateurs externes pendant le conflit</li>
+<li>Comprendre la création des centres de rééducation militaires</li>
+<li>Identifier les innovations de Küntscher en enclouage centromédullaire</li>
+</ul>
+<hr />
+<h2 id="1-la-revolution-antibiotique">1. La révolution antibiotique</h2>
+<h3 id="11-de-la-decouverte-a-lusage-militaire">1.1 De la découverte à l'usage militaire</h3>
+<p><strong>Chronologie des antibiotiques en chirurgie</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Événement</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1928</td>
+<td>Découverte de la pénicilline par Alexander Fleming</td>
+<td>Observation de laboratoire</td>
+</tr>
+<tr>
+<td>1940</td>
+<td>Florey et Chain purifient la pénicilline</td>
+<td>Production industrielle possible</td>
+</tr>
+<tr>
+<td>1943</td>
+<td>Premier usage militaire massif (Afrique du Nord)</td>
+<td>Réduction drastique de la mortalité infectieuse</td>
+</tr>
+<tr>
+<td>1944</td>
+<td>Production industrielle (USA)</td>
+<td>Disponibilité pour les troupes alliées</td>
+</tr>
+<tr>
+<td>1944</td>
+<td>Jour J (Débarquement) : pénicilline disponible en masse</td>
+<td>Survie des blessés améliorée</td>
+</tr>
+<tr>
+<td>1945</td>
+<td>Fleming, Florey et Chain reçoivent le prix Nobel</td>
+<td>Reconnaissance scientifique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO16-S01-001 — AFFICHE DE GUERRE : « Thanks to PENICILLIN... He Will Come Home! », propagande américaine, 1944]</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>La pénicilline transforme radicalement la chirurgie de guerre : la mortalité des fractures ouvertes chute de 20-30 % (Première Guerre mondiale) à 3-5 % (Seconde Guerre mondiale). Pour la première fois, une fracture ouverte infectée n'est plus nécessairement mortelle ou synonyme d'amputation.</p>
+</blockquote>
+<h3 id="12-impact-sur-lorthopedie">1.2 Impact sur l'orthopédie</h3>
+<table>
+<thead>
+<tr>
+<th>Avant antibiotiques</th>
+<th>Après antibiotiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fracture ouverte = amputation fréquente</td>
+<td>Conservation du membre possible</td>
+</tr>
+<tr>
+<td>Ostéomyélite = invalidité chronique</td>
+<td>Guérison par antibiothérapie prolongée</td>
+</tr>
+<tr>
+<td>Chirurgie élective osseuse = risque majeur</td>
+<td>Ostéosynthèse élective envisageable</td>
+</tr>
+<tr>
+<td>Arthroplastie = risque infectieux prohibitif</td>
+<td>Prothèses articulaires possibles</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-gerhard-kuntscher-1900-1972-lenclouage-centromedullaire">2. Gerhard Küntscher (1900-1972) — l'enclouage centromédullaire</h2>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO16-S02-001 — PORTRAIT : Gerhard Küntscher, chirurgien de Kiel, avec un de ses clous centromédullaires]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — GERHARD KÜNTSCHER (1900-1972)</strong> :</p>
+<blockquote>
+<p>Chirurgien à Kiel (Allemagne), Küntscher développe en 1936-1940 la technique de l'enclouage centromédullaire (Marknagelung) pour les fractures diaphysaires du fémur et du tibia. Son clou en V est inséré dans le canal médullaire sans ouvrir le foyer de fracture (technique à foyer fermé). Malgré le scepticisme initial de ses collègues, la technique est utilisée massivement par la Wehrmacht pendant la Seconde Guerre mondiale, avec des résultats spectaculaires.</p>
+</blockquote>
+<p><strong>Principes de l'enclouage de Küntscher</strong> :<br />
+1. Clou métallique inséré dans le canal médullaire<br />
+2. Technique à foyer fermé (pas d'abord du foyer fracturaire)<br />
+3. Alésage du canal médullaire pour adapter le clou<br />
+4. Stabilité par élasticité du clou dans le canal (contact cortical sur 3 points)<br />
+5. Mise en charge précoce possible</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO16-S02-002 — RADIOGRAPHIES : enclouage centromédullaire de Küntscher — fracture diaphysaire du fémur, avant et après]</p>
+</blockquote>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« Les alliés ont appris la technique de l'enclouage centromédullaire en traitant les soldats allemands blessés faits prisonniers. Ils ont été étonnés de voir ces patients marcher sur leurs fractures du fémur avec un simple clou intramédullaire, alors que les méthodes alliées imposaient des mois de traction au lit. »</em><br />
+— Rapport médical allié, 1945 (adapté)</p>
+</blockquote>
+<p><strong>Évolution de l'enclouage centromédullaire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Innovation</th>
+<th>Auteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1936</td>
+<td>Clou en V de Küntscher</td>
+<td>Küntscher</td>
+</tr>
+<tr>
+<td>1953</td>
+<td>Clou de Küntscher modifié (section en trèfle)</td>
+<td>Küntscher</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Enclouage verrouillé (vis de verrouillage proximale et distale)</td>
+<td>Klemm et Schellmann</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Clou universels verrouillés (fémur, tibia, humérus)</td>
+<td>AO, Synthes</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Enclouage élastique centromédullaire (ECMES) pédiatrique</td>
+<td>Métaizeau</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Clous avec ciblage électromagnétique</td>
+<td>Plusieurs</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Clous télescopiques (ostéogenèse imparfaite)</td>
+<td>Fassier-Duval</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO16-S02-003 — FRISE : évolution de l'enclouage centromédullaire de Küntscher (1936) à nos jours]</p>
+</blockquote>
+<p>🔗 <strong>LIEN AVEC LA PRATIQUE ACTUELLE</strong> :</p>
+<blockquote>
+<p>L'enclouage centromédullaire verrouillé est aujourd'hui le traitement de référence des fractures diaphysaires du fémur et du tibia. Le principe de Küntscher — fixation interne à foyer fermé préservant la vascularisation périostée — est le fondement de l'ostéosynthèse biologique moderne.</p>
+</blockquote>
+<hr />
+<h2 id="3-fixateurs-externes-et-damage-control">3. Fixateurs externes et damage control</h2>
+<h3 id="31-developpement-des-fixateurs-externes-pendant-la-guerre">3.1 Développement des fixateurs externes pendant la guerre</h3>
+<table>
+<thead>
+<tr>
+<th>Fixateur</th>
+<th>Développeur</th>
+<th>Principe</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixateur de Lambotte (1902)</td>
+<td>Lambotte</td>
+<td>Mono-plan, barres et fiches</td>
+<td>Précurseur</td>
+</tr>
+<tr>
+<td>Fixateur de Stader (1937)</td>
+<td>Stader (vétérinaire)</td>
+<td>Barres latérales</td>
+<td>Adapté à l'homme</td>
+</tr>
+<tr>
+<td>Fixateur de Hoffmann (1938)</td>
+<td>Raoul Hoffmann</td>
+<td>Multi-plan, articulations</td>
+<td>Standard de guerre</td>
+</tr>
+<tr>
+<td>Fixateur d'Anderson (1944)</td>
+<td>Roger Anderson</td>
+<td>Mono-plan simplifié</td>
+<td>Usage militaire allié</td>
+</tr>
+</tbody>
+</table>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>Le fixateur externe, initialement conçu comme traitement définitif des fractures ouvertes de guerre, deviendra le pilier du « damage control orthopaedics » (DCO) — stabilisation temporaire des fractures chez les polytraumatisés avant ostéosynthèse définitive.</p>
+</blockquote>
+<hr />
+<h2 id="4-quiz-module-16">4. Quiz — Module 16</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> En quelle année la pénicilline a-t-elle été utilisée pour la première fois massivement en chirurgie de guerre ?<br />
+- A) 1928<br />
+- B) 1940<br />
+- C) 1943 ✓<br />
+- D) 1945</p>
+<p><strong>Q2.</strong> Qui a inventé le clou centromédullaire ?<br />
+- A) Lorenz Böhler<br />
+- B) Gerhard Küntscher ✓<br />
+- C) Robert Danis<br />
+- D) Albin Lambotte</p>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q3.</strong> Quel est le principe révolutionnaire de la technique de Küntscher par rapport aux ostéosynthèses par plaque ?<br />
+- A) Elle est plus rapide à réaliser<br />
+- B) Elle se fait à foyer fermé, préservant la vascularisation périostée ✓<br />
+- C) Elle utilise du titane<br />
+- D) Elle ne nécessite pas d'anesthésie</p>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q4.</strong> Analysez comment la Seconde Guerre mondiale a préparé les conditions de la révolution arthroplastique de l'après-guerre (Charnley, 1962).</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) Antibiotiques → chirurgie élective à risque infectieux acceptable ; (2) Métallurgie de guerre → alliages biocompatibles (Vitallium, acier inoxydable amélioré) ; (3) Küntscher → preuve qu'un implant métallique intra-osseux est toléré à long terme ; (4) Développement du PMMA (polyméthacrylate de méthyle) comme matériau de guerre → ciment osseux de Charnley ; (5) Centres de rééducation → soins post-opératoires structurés.</p>
+</blockquote>
+<hr />
+<h1 id="module-17-smith-petersen-kuntscher-et-les-fondations-de-losteosynthese-moderne">MODULE 17 — SMITH-PETERSEN, KÜNTSCHER ET LES FONDATIONS DE L'OSTÉOSYNTHÈSE MODERNE</h1>
+<h2 id="les-pionniers-qui-ont-prepare-la-revolution-aoasif">Les pionniers qui ont préparé la révolution AO/ASIF</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_3">Objectifs pédagogiques</h2>
+<ul>
+<li>Synthétiser les contributions des pionniers de l'ostéosynthèse</li>
+<li>Analyser le débat historique entre traitement conservateur et fixation interne</li>
+<li>Comprendre les conditions qui ont mené à la fondation de l'AO en 1958</li>
+<li>Décrire l'émergence de la philosophie de fixation biologique</li>
+</ul>
+<hr />
+<h2 id="1-le-grand-debat-conservateur-vs-chirurgical-1900-1958">1. Le grand débat : conservateur vs chirurgical (1900-1958)</h2>
+<h3 id="11-les-deux-ecoles">1.1 Les deux écoles</h3>
+<p><strong>Comparaison des deux philosophies</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>École conservatrice (Böhler)</th>
+<th>École chirurgicale (Lambotte, Danis)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principe</td>
+<td>« La nature consolide, le chirurgien ne fait que maintenir »</td>
+<td>« La fixation interne rigide accélère la consolidation »</td>
+</tr>
+<tr>
+<td>Méthode</td>
+<td>Plâtre, traction, attelles</td>
+<td>Plaques, vis, clous</td>
+</tr>
+<tr>
+<td>Avantages</td>
+<td>Pas de risque infectieux chirurgical</td>
+<td>Réduction anatomique parfaite, mobilisation précoce</td>
+</tr>
+<tr>
+<td>Inconvénients</td>
+<td>Raideur articulaire, cals vicieux</td>
+<td>Risque infectieux, matériel métallique</td>
+</tr>
+<tr>
+<td>Chefs de file</td>
+<td>Böhler, Watson-Jones, Perkins</td>
+<td>Lambotte, Danis, Küntscher, AO</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-les-echecs-qui-ont-motive-la-fondation-de-lao">1.2 Les échecs qui ont motivé la fondation de l'AO</h3>
+<p>En Suisse dans les années 1950, les résultats du traitement conservateur des fractures sont jugés insuffisants par un groupe de jeunes chirurgiens :<br />
+- 30 % de cals vicieux<br />
+- 15 % de pseudarthroses<br />
+- Raideur articulaire post-plâtre fréquente<br />
+- Invalidité prolongée (3-6 mois d'arrêt de travail)</p>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« Nous avions vu trop de résultats médiocres avec le traitement conservateur. Des fractures mal réduites, des cals vicieux, des pseudarthroses, des raideurs articulaires. Nous étions convaincus que la fixation interne, si elle était réalisée correctement avec le bon matériel et la bonne technique, pouvait donner de meilleurs résultats. »</em><br />
+— Maurice Müller, entretien rétrospectif (adapté)</p>
+</blockquote>
+<hr />
+<h2 id="2-les-quatre-fondateurs-de-laoasif">2. Les quatre fondateurs de l'AO/ASIF</h2>
+<h3 id="21-la-reunion-fondatrice-6-novembre-1958-bienne-suisse">2.1 La réunion fondatrice (6 novembre 1958, Bienne, Suisse)</h3>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO17-S02-001 — PHOTOGRAPHIE : les quatre fondateurs de l'AO — Maurice Müller, Martin Allgöwer, Robert Schneider et Hans Willenegger, 1958]</p>
+</blockquote>
+<p><strong>Les fondateurs</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Spécialité</th>
+<th>Rôle dans l'AO</th>
+<th>Contribution majeure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maurice E. Müller (1918-2009)</td>
+<td>Chirurgien orthopédiste, Berne</td>
+<td>Président fondateur</td>
+<td>Classification AO des fractures, prothèse de hanche</td>
+</tr>
+<tr>
+<td>Martin Allgöwer (1917-2007)</td>
+<td>Chirurgien, Bâle</td>
+<td>Vice-président</td>
+<td>Recherche biologique, vis à compression</td>
+</tr>
+<tr>
+<td>Hans Willenegger (1910-1998)</td>
+<td>Chirurgien, Liestal</td>
+<td>Secrétaire</td>
+<td>Organisation de l'enseignement</td>
+</tr>
+<tr>
+<td>Robert Schneider (1912-1990)</td>
+<td>Chirurgien, Grosshöchstetten</td>
+<td>Trésorier</td>
+<td>Instrumentation chirurgicale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-les-quatre-principes-de-laoasif">2.2 Les quatre principes de l'AO/ASIF</h3>
+<ol>
+<li><strong>Réduction anatomique</strong> des fragments fracturaires</li>
+<li><strong>Fixation interne stable</strong> (compression interfragmentaire)</li>
+<li><strong>Préservation de la vascularisation</strong> osseuse et des parties molles</li>
+<li><strong>Mobilisation active précoce</strong> du membre et du patient</li>
+</ol>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>La fondation de l'AO/ASIF en 1958 représente la plus grande révolution organisationnelle de l'histoire de l'orthopédie. Pour la première fois, un groupe de chirurgiens développe simultanément : des implants standardisés, un instrumentarium dédié, une classification des fractures, un système de documentation et un programme d'enseignement mondial. L'AO forme à ce jour plus de 500 000 chirurgiens dans 100 pays.</p>
+</blockquote>
+<hr />
+<h2 id="3-quiz-module-17">3. Quiz — Module 17</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> En quelle année et dans quel pays l'AO/ASIF a-t-elle été fondée ?<br />
+- A) 1950, Allemagne<br />
+- B) 1958, Suisse ✓<br />
+- C) 1962, Angleterre<br />
+- D) 1970, États-Unis</p>
+<p><strong>Q2.</strong> Combien de chirurgiens ont fondé l'AO/ASIF ?<br />
+- A) Deux<br />
+- B) Quatre ✓<br />
+- C) Six<br />
+- D) Huit</p>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Quels sont les quatre principes de l'AO/ASIF ?<br />
+- A) Incision, fixation, fermeture, rééducation<br />
+- B) Réduction anatomique, fixation stable, préservation vasculaire, mobilisation précoce ✓<br />
+- C) Diagnostic, chirurgie, plâtre, contrôle<br />
+- D) Traction, réduction, plâtre, surveillance</p>
+<h3 id="diamant_3">💎 Diamant</h3>
+<p><strong>Q4.</strong> Comment la philosophie AO a-t-elle évolué entre 1958 (fixation rigide, compression absolue) et les années 2000 (fixation biologique, plaques verrouillées pontantes) ? Quels échecs cliniques ont motivé cette évolution ?</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) La fixation rigide par compression entraîne un stress shielding sous la plaque → ostéoporose sous l'implant → refracture à l'ablation ; (2) L'abord chirurgical extensif dévascularise les fragments → pseudarthroses et infections ; (3) La philosophie biologique (MIPO, plaques verrouillées) préserve le périoste et la vascularisation ; (4) Le concept de stabilité relative (cal secondaire par micro-mouvements contrôlés) remplace la stabilité absolue pour les fractures comminutives ; (5) L'AO intègre les deux philosophies : stabilité absolue pour les fractures articulaires, stabilité relative pour les fractures diaphysaires.</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 4 — Première moitié du XXe siècle</em><br />
+<em>Prochaine partie : Seconde moitié du XXe siècle (1950-2000)</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

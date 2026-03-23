@@ -1,0 +1,351 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-18-reeducation-et-rehabilitation-post-chirurgicale">MODULE 18 — RÉÉDUCATION ET RÉHABILITATION POST-CHIRURGICALE</h1>
+<p><strong>Partie VIII — Rééducation et suivi</strong><br />
+<strong>Durée estimée</strong> : 1h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1 à 17</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Sophie rentre chez elle à J5 post-opératoire. La kinésithérapeute scolaire appelle : <em>« Quelles sont les précautions ? Peut-elle reprendre le sport ? Quand peut-elle s'asseoir ? »</em></p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>ERAS (Enhanced Recovery After Surgery) • Mobilisation précoce • Protocole de réhabilitation • Restriction de flexion-rotation • Fenêtre de consolidation • Kinésithérapie respiratoire • Récupération musculaire paravertébrale • Natation • Reprise sportive • Corselet post-op • SRS-22 post-opératoire • Douleur post-opératoire (PCA) • Analgésie multimodale</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> le protocole ERAS à la chirurgie rachidienne (Bloom : Application)</li>
+<li><strong>Planifier</strong> le calendrier de réhabilitation selon le type de chirurgie (Bloom : Évaluation)</li>
+<li><strong>Distinguer</strong> les activités autorisées et interdites selon la phase de consolidation (Bloom : Analyse)</li>
+</ol>
+<hr />
+<h2 id="181-protocole-eras-en-chirurgie-rachidienne">18.1 Protocole ERAS en chirurgie rachidienne</h2>
+<p>Le protocole <strong>ERAS</strong> (Enhanced Recovery After Surgery) vise à réduire les complications, la durée de séjour et améliorer la satisfaction patient.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Mesures clés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Préopératoire</strong></td>
+<td>Optimisation nutritionnelle, arrêt tabac 4 semaines avant, fer si anémie, ergothérapie, information du patient</td>
+</tr>
+<tr>
+<td><strong>Per-opératoire</strong></td>
+<td>Anesthésie locorégionale, infiltration cicatricielle, cell-saver, réchauffement actif, antifibrinolytiques (acide tranexamique)</td>
+</tr>
+<tr>
+<td><strong>Post-opératoire</strong></td>
+<td>Alimentation orale J0, lever J1, antalgiques multimodaux (paracétamol + AINS + kétamine + gabapentine ± morphine PCA), éviter opioïdes prolongés</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="182-programme-de-rehabilitation-post-operatoire">18.2 Programme de réhabilitation post-opératoire</h2>
+<h3 id="phase-1-hospitalisation-j0j5j7">Phase 1 — Hospitalisation (J0–J5–J7)</h3>
+<table>
+<thead>
+<tr>
+<th>Jour</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>J0</strong></td>
+<td>Réveil en SSPI, analgésie, premier lever avec aide (soir ou J1)</td>
+</tr>
+<tr>
+<td><strong>J1</strong></td>
+<td>Lever et marche avec kiné, kiné respiratoire (spiromètre), ablation drains</td>
+</tr>
+<tr>
+<td><strong>J2–J3</strong></td>
+<td>Marche 2–3× /jour, toilette autonome avec aide, escaliers si possible</td>
+</tr>
+<tr>
+<td><strong>J4–J5</strong></td>
+<td>Retour à domicile ou SSR selon les cas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-2-domicile-ou-ssr-s1s6">Phase 2 — Domicile ou SSR (S1–S6)</h3>
+<table>
+<thead>
+<tr>
+<th>Activité</th>
+<th>Délai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Marche progressive</strong></td>
+<td>Immédiat — 3× 20 min/j dès S1</td>
+</tr>
+<tr>
+<td><strong>Assis prolongé</strong></td>
+<td>À partir de S2 (max 20 min par session initialement)</td>
+</tr>
+<tr>
+<td><strong>Montée/descente escaliers</strong></td>
+<td>J3–J7</td>
+</tr>
+<tr>
+<td>**Natation (crawl dos uniquement)</td>
+<td>S6–S8 (pas de crawl ou brasse → rotation)</td>
+</tr>
+<tr>
+<td><strong>Vélo stationnaire</strong></td>
+<td>S6–S8</td>
+</tr>
+<tr>
+<td><strong>Conduite automobile</strong></td>
+<td>S4–S6 (selon douleur + SIA simple)</td>
+</tr>
+<tr>
+<td><strong>Reprise scolaire</strong></td>
+<td>S6–S8 (avec aménagement assis/debout)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Restrictions</strong> :<br />
+- <strong>Pas de flexion &lt; 90°</strong> pendant 3 mois<br />
+- <strong>Pas de port de charges &gt; 5 kg</strong> pendant 3 mois<br />
+- <strong>Pas de torsion axiale</strong> pendant 3 mois</p>
+<h3 id="phase-3-consolidation-m3m12">Phase 3 — Consolidation (M3–M12)</h3>
+<table>
+<thead>
+<tr>
+<th>Mois</th>
+<th>Étape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M3</td>
+<td>Radio de contrôle — débuter rééducation active</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>Radio — si fusion visible → levée progressive des restrictions</td>
+</tr>
+<tr>
+<td>M9–M12</td>
+<td>Reprise autorisation sport à impact (tennis, foot) si fusion confirmée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phase-4-retour-au-sport">Phase 4 — Retour au sport</h3>
+<table>
+<thead>
+<tr>
+<th>Activité</th>
+<th>Délai minimum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Natation complète</strong></td>
+<td>3–6 mois</td>
+</tr>
+<tr>
+<td><strong>Cyclisme, running léger</strong></td>
+<td>6 mois</td>
+</tr>
+<tr>
+<td><strong>Sports à contact (foot, rugby)</strong></td>
+<td>12–18 mois</td>
+</tr>
+<tr>
+<td><strong>Skiing, equitation</strong></td>
+<td>12–18 mois</td>
+</tr>
+<tr>
+<td><strong>Sport professionnel (cas individuel)</strong></td>
+<td>12–24 mois selon sport</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="183-kinesitherapie-specifique-post-op">18.3 Kinésithérapie spécifique post-op</h2>
+<h3 id="objectifs">Objectifs</h3>
+<ol>
+<li><strong>Récupération de la marche</strong> et de l'équilibre</li>
+<li><strong>Renforcement dei muscles paravertébraux</strong> (souvent atrophiés post-op)</li>
+<li><strong>Reconditionnement à l'effort</strong> général</li>
+<li><strong>Education</strong> : postures correctes, ergonomie rachidienne</li>
+</ol>
+<h3 id="programme-type-post-sia-fusion-posterieure">Programme type (post SIA fusion postérieure)</h3>
+<ul>
+<li><strong>Semaine 1–4</strong> : Marche progressive + activation du transverse gauche/droit + respiration diaphragmatique</li>
+<li><strong>Mois 2–3</strong> : Exercices de stabilisation du tronc (planche basse, McGill exercises) sans flexion</li>
+<li><strong>Mois 3–6</strong> : Renforcement para-vertébral en extension + gainage progressif</li>
+<li><strong>Mois 6–12</strong> : Retour à l'activité sportive adaptée</li>
+</ul>
+<hr />
+<h2 id="184-suivi-a-long-terme">18.4 Suivi à long terme</h2>
+<table>
+<thead>
+<tr>
+<th>Délai</th>
+<th>Contenu de la consultation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3 mois</strong></td>
+<td>Radio panoramique, douleur (VAS), SRS-22, début rééducation active</td>
+</tr>
+<tr>
+<td><strong>6 mois</strong></td>
+<td>Radio EOS, neuro exam, image corporelle (photos), SRS-22</td>
+</tr>
+<tr>
+<td><strong>1 an</strong></td>
+<td>Radio EOS + profil + bassin, SRS-22, questionnaire parents</td>
+</tr>
+<tr>
+<td><strong>2 ans</strong></td>
+<td>Idem + résiduel (satisfaction)</td>
+</tr>
+<tr>
+<td><strong>5 ans</strong></td>
+<td>Radio + SRS-22 — recherche ALD, PJK</td>
+</tr>
+<tr>
+<td><strong>10 ans</strong></td>
+<td>Idem — pseudarthrose tardive, ALD</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> Le protocole <strong>ERAS</strong> réduit la durée d'hospitalisation et les complications — lever J1 est la règle.</p>
+<p>📌 <strong>2.</strong> La <strong>fusion osseuse</strong> prend 12–18 mois — les restrictions sportives reflètent cette timeline.</p>
+<p>📌 <strong>3.</strong> La <strong>natation créole/dos</strong> peut reprendre à S6–S8, mais la brasse reste interdite 3 mois minimum (torsion).</p>
+<p>📌 <strong>4.</strong> Le <strong>suivi à long terme</strong> (5–10 ans) est indispensable pour dépister PJK, ALD, pseudarthrose.</p>
+</blockquote>
+<hr />
+<h2 id="references">Références</h2>
+<ol>
+<li>Debono B, Corniola MV, Engel A, et al. Enhanced Recovery After Surgery (ERAS) for lumbar spine fusion: a systematic review. <em>Spine J</em>. 2021;21(7):1205-1217.</li>
+<li>Rushton A, Eveleigh G, Petherick EJ, et al. Physiotherapy rehabilitation following lumbar spinal fusion: a systematic review and meta-analysis. <em>BMJ Open</em>. 2012;2(4):e000829.</li>
+<li>Daniels AH, Phelps T, Zimmer S, et al. Return to sport after spinal fusion: a systematic review. <em>Clin J Sport Med</em>. 2019;29(6):462-468.</li>
+<li>Asher MA, Min Lai S, Burton DC, Manna BJ. The reliability and concurrent validity of the SRS-22 patient questionnaire. <em>Spine</em>. 2003;28(1):63-69.</li>
+</ol>
+<hr />
+<h2 id="quiz-6-questions">Quiz — 6 questions</h2>
+<p><strong>Q1. 🥉</strong> Selon le protocole ERAS, le premier lever après une arthrodèse rachidienne a lieu :<br />
+- A. J3<br />
+- <strong>B. J1 (le lendemain de l'opération)</strong><br />
+- C. J5<br />
+- D. Quand la douleur le permet</p>
+<p><strong>Q2. 🥉</strong> Quelle activité aquatique est autorisée en premier après arthrodèse ?<br />
+- A. Brasse (épaules)<br />
+- <strong>B. Natation dos (crawl dos)</strong><br />
+- C. Nage papillon<br />
+- D. Plongée sous-marine</p>
+<p><strong>Q3. 🥈</strong> La restriction de port de charges (&gt; 5 kg) après arthrodèse dure :<br />
+- <strong>A. 3 mois</strong><br />
+- B. 6 semaines<br />
+- C. 1 an<br />
+- D. Définitivement</p>
+<p><strong>Q4. 🥈</strong> La reprise des sports à impact (football, tennis) est autorisée au minimum à :<br />
+- A. 3 mois<br />
+- B. 6 mois<br />
+- <strong>C. 12–18 mois</strong><br />
+- D. Jamais</p>
+<p><strong>Q5. 🥇</strong> Un patient de 16 ans, SIA, fusion T4-L1 opéré il y a 8 semaines, demande s'il peut reprendre l'équitation. Que lui répondre ?<br />
+- <strong>A. Non — l'équitation est un sport à impact et torsion, autorisé au minimum à 12–18 mois et uniquement si fusion confirmée à la radio de 6 mois</strong><br />
+- B. Oui — si la douleur est supportable<br />
+- C. Oui à 3 mois<br />
+- D. Jamais après arthrodèse</p>
+<p><strong>Q6. 💎</strong> À M3 post-arthrodèse T4-L2 pour Scheuermann, la radio montre une correction cyphose 72° → 40°. Le patient se plaint de douleur au niveau junctionnel proximal T3 (EVA 4/10). Quelle conduite ?<br />
+- <strong>A. Radio panoramique debout + profil pour mesurer l'angle junctionnel T2-T4 comparativement au préopératoire. Si PJK (augmentation &gt; 10°) + douleur → surveillance rapprochée, rééducation paravertébrale spécifique T2-T4. Révision chirurgicale si progression ou PJK structurel</strong><br />
+- B. Pas de signe grave — antalgiques seuls<br />
+- C. Ablation du matériel précoce<br />
+- D. IRM urgente pour décompression</p>
+</div>

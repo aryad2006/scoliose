@@ -1,0 +1,459 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-5-tendinopathies-du-coude-du-genou-et-de-la-hanche-modules-11-13-15">Partie 5 — Tendinopathies du coude, du genou et de la hanche (Modules 11-13, 15)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-11-tendinopathie-patellaire-jumpers-knee">MODULE 11 : TENDINOPATHIE PATELLAIRE (JUMPER'S KNEE)</h1>
+<p><strong>Partie</strong> : V — Tendinopathies du coude, du genou et de la hanche<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Joueur de volley-ball professionnel, présente une douleur du pôle inférieur de la rotule gauche depuis 5 mois. La douleur apparaît à l'impulsion de saut et au squat. Le VISA-P est à 45/100. L'échographie montre un épaississement hypoéchogène du tendon patellaire proximal avec néovascularisation au doppler. Il a une compétition importante dans 3 mois. *Peut-il continuer à jouer ? Quel programme d'exercices ? Quelle est la place des infiltrations ? Quand faut-il opérer ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> la physiopathologie de la tendinopathie patellaire et son lien avec les sports de saut</li>
+<li><strong>Évaluer</strong> la sévérité par le score VISA-P et l'examen clinique</li>
+<li><strong>Maîtriser</strong> les programmes de rééducation evidence-based (isométrique, HSR, excentrique)</li>
+<li><strong>Gérer</strong> le retour au sport et la gestion de la charge chez l'athlète en saison</li>
+<li><strong>Connaître</strong> les indications des traitements adjuvants et chirurgicaux</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-111-anatomie-biomecanique-et-epidemiologie">Section 11.1 — Anatomie, biomécanique et épidémiologie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : tendon patellaire = prolongement de l'appareil extenseur (quadriceps → rotule → tendon patellaire → TTA), structure fibro-cartilagineuse à l'insertion rotulienne (enthèse)<br />
+- <strong>Biomécanique</strong> : forces de compression de l'enthèse rotulienne lors de la flexion profonde + forces de traction en extension résistée → charge maximale lors de l'impulsion de saut (5-8× poids du corps) et de la réception<br />
+- <strong>Épidémiologie</strong> <em>(données issues de Lian et al., 2005, Am J Sports Med ; Zwerver et al., 2011, Br J Sports Med)</em> : prévalence rapportée de 14 à 45 % chez les volleyeurs, 19 à 32 % chez les basketteurs, et 2 à 5 % dans les sports à moindre impact — prédominance masculine (ratio environ 2:1), pic de fréquence entre 15 et 30 ans<br />
+- <strong>Facteurs de risque</strong> : volumes de saut élevés, flexion profonde répétée, poids corporel élevé, souplesse réduite du quadriceps, raideur de la chaine postérieure, morphologie rotulienne (patella alta)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND11-S01-001 | 🧊 MODÈLE 3D | Appareil extenseur du genou — anatomie 3D | TendonSim© |<br />
+| MTEND11-S01-002 | 🎬 ANIMATION | Biomécanique du saut — forces sur le tendon patellaire (impulsion/réception) | Animation biomécanique |<br />
+| MTEND11-S01-003 | 📊 INFOGRAPHIE | Épidémiologie et facteurs de risque par sport | Données chiffrées |</p>
+<h3 id="section-112-clinique-imagerie-et-classification">Section 11.2 — Clinique, imagerie et classification</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Clinique</strong> :<br />
+  - Douleur localisée au pôle inférieur de la rotule (95% des cas), en charge, impulsion, squat profond, montée/descente d'escaliers<br />
+  - Palpation du pôle inférieur de la rotule en extension → douleur exquise<br />
+  - Decline squat sur plan incliné à 25° : test le plus spécifique<br />
+  - Single leg decline squat : plus discriminant<br />
+  - Extension résistée à 30° de flexion → douleur<br />
+- <strong>Imagerie</strong> :<br />
+  - Échographie : épaississement du tendon proximal, hypoéchogénicité, doppler + (norme patellaire &lt;4 mm d'épaisseur)<br />
+  - IRM : épaississement, signal intermédiaire PD fat sat (rarement nécessaire, sauf doute diagnostique ou planification chirurgicale)<br />
+- <strong>Classification de Blazina</strong> (modifiée) :<br />
+  - Stade 1 : douleur après l'activité → n'affecte pas la performance<br />
+  - Stade 2 : douleur pendant l'activité mais ne limite pas la performance<br />
+  - Stade 3 : douleur pendant et après l'activité, limitant la performance<br />
+  - Stade 4 : rupture partielle ou complète du tendon patellaire<br />
+- <strong>Score VISA-P</strong> : 8 questions, score 0-100 (normal 100, moyenne d'un patient nécessitant une chirurgie : 30-45)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND11-S02-001 | 🎥 VIDÉO | Decline squat test — démonstration et interprétation | Vidéo clinique |<br />
+| MTEND11-S02-002 | 📷 IMAGE | Échographie — tendinopathie patellaire (pôle inférieur) | Image annotée |<br />
+| MTEND11-S02-003 | 📊 INFOGRAPHIE | Classification de Blazina et score VISA-P | Aide-mémoire |</p>
+<h3 id="section-113-traitement-evidence-based">Section 11.3 — Traitement evidence-based</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Exercices isométriques (Rio et al., 2015)</strong> : contraction isométrique du quadriceps à 70° de flexion, 5×45 sec, 2-3×/jour → effet antalgique immédiat (inhibition corticale de la douleur) — idéal en saison, avant l'entraînement, comme « warm-up antalgique »<br />
+- <strong>Heavy Slow Resistance (HSR)</strong> <em>(d'après Kongsgaard et al., 2009, Scand J Med Sci Sports)</em> : squat bilatéral + hack squat + presse à cuisses, charge lourde (&gt;70 % 1RM), 4×6-8 rép, tempo lent (3 sec concentrique, 3 sec excentrique), 3×/semaine pendant 12 semaines — résultats supérieurs aux excentriques purs à long terme<br />
+- <strong>Protocole excentrique à 25° (decline squat, Purdam, 2004)</strong> : squat excentrique sur plan incliné, 3×15 × 2×/jour, 12 semaines — la première étude positive, mais compliance moindre que HSR<br />
+- <strong>Gestion de la charge (la clé du succès)</strong> : le tendon patellaire souffre de la surcharge ET de la sous-charge → « optimal loading » — monitoring du volume de saut, utilisation des douleurs post-entraînement comme guide (douleur ≤3/10 EVA dans les 24h = charge acceptable)<br />
+- <strong>Retour au sport en saison</strong> : réduction temporaire du volume de saut (50%), introduction progressive des isométriques, maintien d'un entraînement spécifique modifié — JAMAIS d'arrêt total<br />
+- <strong>Traitements adjuvants</strong> :<br />
+  - PRP : evidence modeste (quelques études positives), utilisé en 2ème/3ème ligne<br />
+  - Ondes de choc : evidence faible pour le tendon patellaire (contrairement à l'Achille)<br />
+  - Corticoïdes péri-tendineux : CONTRE-INDIQUÉS (risque de rupture du tendon patellaire)<br />
+- <strong>Chirurgie</strong> (échec conservateur &gt;6-12 mois) :<br />
+  - Arthroscopie : débridement du pôle inférieur + résection du nodule dégénératif — résultats 60-80%<br />
+  - Chirurgie ouverte : excision du nodule + scarification ± greffe de collagène<br />
+  - Résultats post-chirurgicaux : retour au sport 50-75% (niveau antérieur), délai 6-12 mois</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND11-S03-001 | 🎥 VIDÉO | Exercices isométriques 70° (Rio) — démonstration | Vidéo exercice |<br />
+| MTEND11-S03-002 | 🎥 VIDÉO | Protocole HSR (Kongsgaard) — squat, hack squat, presse | Vidéo exercice |<br />
+| MTEND11-S03-003 | 📊 INFOGRAPHIE | Isométrique vs excentrique vs HSR — comparaison des protocoles | Tableau comparatif |<br />
+| MTEND11-S03-004 | 📊 INFOGRAPHIE | Gestion de la charge — monitoring et « traffic light model » | Infographie pratique |<br />
+| MTEND11-S03-005 | 📊 INFOGRAPHIE | Algorithme de traitement — tendinopathie patellaire | Arbre décisionnel |</p>
+<h3 id="points-cles-du-module-11">Points clés du Module 11</h3>
+<ol>
+<li>La tendinopathie patellaire touche principalement les sportifs de saut (volley, basket) — pôle inférieur de la rotule dans 95% des cas</li>
+<li>Les exercices isométriques (Rio et al.) offrent un effet antalgique immédiat — idéals en saison comme « warm-up antalgique »</li>
+<li>Le protocole HSR (Kongsgaard) est supérieur aux excentriques purs à long terme</li>
+<li>La gestion optimale de la charge (ni trop, ni trop peu) est la clé du succès</li>
+<li>Les corticoïdes sont CONTRE-INDIQUÉS autour du tendon patellaire</li>
+<li>L'arrêt total de l'activité est DÉCONSEILLÉ — modulation de la charge</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, clinique, classification)</li>
+<li>3 QCM Argent (protocoles d'exercices, imagerie)</li>
+<li>2 QCM Or (gestion en saison, choix thérapeutique)</li>
+<li>1 QCM Diamant (cas : volleyeur pro en saison avec VISA-P 40 → plan complet)</li>
+<li>1 QROC : « Comparez les protocoles isométrique (Rio), excentrique (Purdam) et HSR (Kongsgaard) pour la tendinopathie patellaire. »</li>
+</ul>
+<hr />
+<h1 id="module-12-tendinopathies-du-genou-hors-patellaire-bandelette-ilio-tibiale-patte-doie-quadricipitale">MODULE 12 : TENDINOPATHIES DU GENOU (HORS PATELLAIRE) — BANDELETTE ILIO-TIBIALE, PATTE D'OIE, QUADRICIPITALE</h1>
+<p><strong>Partie</strong> : V — Tendinopathies du coude, du genou et de la hanche<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Coureuse à pied (60 km/semaine), présente depuis 6 semaines une douleur de la face externe du genou droit, apparaissant systématiquement au 5ème kilomètre de course depuis qu'elle a augmenté ses sorties en descente. La douleur est brûlante, localisée précisément sur le condyle fémoral latéral, et disparaît en quelques minutes à l'arrêt de la course. *S'agit-il d'un syndrome de la bandelette ilio-tibiale ? Comment le confirmer ? Quel est le traitement ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> le syndrome de la bandelette ilio-tibiale (runner's knee)</li>
+<li><strong>Distinguer</strong> les différentes tendinopathies du genou (patellaire, bandelette, patte d'oie, quadricipitale, poplitée)</li>
+<li><strong>Connaître</strong> la physiopathologie et le traitement spécifique de chaque entité</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-121-syndrome-de-la-bandelette-ilio-tibiale-itb-syndrome">Section 12.1 — Syndrome de la bandelette ilio-tibiale (ITB syndrome)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : bandelette ilio-tibiale = épaississement du fascia lata en latéral de la cuisse, depuis le TFL et le grand fessier jusqu'au tubercule de Gerdy (tibia latéral)<br />
+- <strong>Physiopathologie</strong> : débat (friction mécanique vs compression de la graisse sous-jacente) — actuellement : compression d'un coussinet graisseux richement innervé et vascularisé entre la BIT et le condyle latéral à 20-30° de flexion (« zone d'impingement ») — pas une tendinopathie stricto sensu mais classiquement regroupée avec<br />
+- <strong>Épidémiologie</strong> : 1ère cause de douleur externe du genou chez le coureur à pied, 5-14% des blessures des coureurs, prédominance féminine (largeur du bassin → valgus dynamique), cyclisme (position assise prolongée)<br />
+- <strong>Facteurs de risque</strong> : augmentation brutale du volume, course en descente (flexion prolongée), surface inclinée, faiblesse des abducteurs de hanche, raideur de la BIT<br />
+- <strong>Clinique</strong> : douleur en regard du condyle fémoral latéral, apparition reproductible à la même distance de course, disparition rapide à l'arrêt, test de Noble (pression sur le condyle latéral + flexion-extension du genou à 20-30° → douleur), test d'Ober (raideur de la BIT)<br />
+- <strong>Traitement</strong> : repos relatif (modulation du volume), étirements de la BIT, renforcement des abducteurs de hanche (moyen fessier), foam rolling, glaçage, AINS court terme — corticoïdes péri-bursaux (1-2 injections si récalcitrant) — chirurgie exceptionnelle (Z-plastie ou résection partielle)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND12-S01-001 | 📐 SCHÉMA | Anatomie de la bandelette ilio-tibiale — TFL → tubercule de Gerdy | Schéma annoté |<br />
+| MTEND12-S01-002 | 🎬 ANIMATION | Zone d'impingement à 20-30° de flexion | Animation biomécanique |<br />
+| MTEND12-S01-003 | 🎥 VIDÉO | Test de Noble et test d'Ober | Vidéo clinique |<br />
+| MTEND12-S01-004 | 🎥 VIDÉO | Programme de rééducation — étirements BIT + renforcement abducteurs | Vidéo exercices |</p>
+<h3 id="section-122-tendinopathie-de-la-patte-doie-pes-anserinus">Section 12.2 — Tendinopathie de la patte d'oie (pes anserinus)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : confluence de 3 tendons en médial du tibia proximal : sartorius, gracilis, semi-tendineux (mnémo : « Say Grace before Tea ») — bourse de la patte d'oie sous-jacente<br />
+- <strong>Physiopathologie</strong> : friction mécanique, bursite, tendinopathie — association fréquente avec gonarthrose médiale (varus → contrainte en médial)<br />
+- <strong>Épidémiologie</strong> : femmes &gt;50 ans, obésité, gonarthrose, diabète<br />
+- <strong>Clinique</strong> : douleur antéro-médiale du genou, 5-6 cm sous l'interligne, douleur en montée d'escaliers, test résisté en flexion-rotation interne, palpation douloureuse de la patte d'oie<br />
+- <strong>Traitement</strong> : kinésithérapie (étirements ischio-jambiers, renforcement quadriceps), AINS, infiltration de corticoïdes écho-guidée (bourse de la patte d'oie — bonne indication), traitement de la gonarthrose sous-jacente</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND12-S02-001 | 📐 SCHÉMA | Anatomie de la patte d'oie — 3 tendons, bourse | Schéma annoté |<br />
+| MTEND12-S02-002 | 📊 INFOGRAPHIE | Diagnostic différentiel des douleurs médiales du genou | Tableau |</p>
+<h3 id="section-123-tendinopathie-quadricipitale-et-autres">Section 12.3 — Tendinopathie quadricipitale et autres</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendinopathie quadricipitale</strong> : insertion du quadriceps sur le pôle supérieur de la rotule — plus rare que la patellaire, patients plus âgés (&gt;40 ans), haltérophiles — clinique similaire mais douleur au pôle supérieur, extension résistée douloureuse<br />
+- <strong>Tendinopathie poplitée</strong> : douleur postéro-latérale du genou, course en descente — rare, diagnostic d'exclusion<br />
+- <strong>Rupture du tendon quadricipital</strong> : patient &gt;40 ans, souvent sur terrain fragilisé (diabète, insuffisance rénale, corticothérapie) — perte de l'extension active du genou, gap palpable au-dessus de la rotule → urgence chirurgicale (réparation directe)<br />
+- <strong>Rupture du tendon patellaire</strong> : plus rare, &lt;40 ans, souvent traumatique sur tendon pathologique — rotule ascensionnée (patella alta), gap sous-rotulien → urgence chirurgicale</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND12-S03-001 | 📐 SCHÉMA | Lésions de l'appareil extenseur — tendinop. patellaire vs quadricipitale vs ruptures | Vue latérale annotée |<br />
+| MTEND12-S03-002 | 📷 IMAGE | Rupture du tendon quadricipital — gap et ascension rotulienne | Photo/radio |<br />
+| MTEND12-S03-003 | 📊 INFOGRAPHIE | Diagnostic différentiel des douleurs du genou par localisation | Cartographie |</p>
+<h3 id="points-cles-du-module-12">Points clés du Module 12</h3>
+<ol>
+<li>Le syndrome de la BIT est la 1ère cause de douleur latérale du genou chez le coureur — physiopathologie par compression (non friction)</li>
+<li>La patte d'oie (sartorius-gracilis-semi-tendineux) est souvent associée à la gonarthrose médiale</li>
+<li>La tendinopathie quadricipitale touche des patients plus âgés que la patellaire</li>
+<li>La rupture du tendon quadricipital est une urgence chirurgicale (perte de l'extension active)</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, localisations, tests)</li>
+<li>2 QCM Argent (diagnostic différentiel, indications)</li>
+<li>2 QCM Or (cas de douleur de genou latérale chez un coureur)</li>
+<li>1 QCM Diamant (cas : douleur de genou aiguë + impossibilité d'étendre → diagnostic et prise en charge urgente)</li>
+</ul>
+<hr />
+<h1 id="module-13-tendinopathies-gluteales-et-syndrome-douloureux-du-grand-trochanter-gtps">MODULE 13 : TENDINOPATHIES GLUTÉALES ET SYNDROME DOULOUREUX DU GRAND TROCHANTER (GTPS)</h1>
+<p><strong>Partie</strong> : V — Tendinopathies du coude, du genou et de la hanche<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Présente une douleur latérale de la hanche droite depuis 8 mois, aggravée en position debout prolongée (>15 min), en montant les escaliers, et surtout en décubitus latéral droit (la nuit). Elle a été traitée par « bursite trochantérienne » avec 3 infiltrations de corticoïdes sans amélioration durable. *Le diagnostic de « bursite » est-il correct ? Ce tableau clinique correspond-il plutôt à une tendinopathie glutéale ? Comment le confirmer et le traiter efficacement ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> le changement de paradigme : de la « bursite trochantérienne » au GTPS (Greater Trochanteric Pain Syndrome)</li>
+<li><strong>Distinguer</strong> les composantes du GTPS : tendinopathie glutéale, bursite, douleur référée</li>
+<li><strong>Maîtriser</strong> l'examen clinique et les tests spécifiques</li>
+<li><strong>Proposer</strong> les traitements evidence-based (exercices, éducation, gestion de la charge compressive)</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-131-du-concept-de-bursite-a-la-tendinopathie-gluteale">Section 13.1 — Du concept de « bursite » à la tendinopathie glutéale</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Changement de paradigme</strong> : le terme « bursite trochantérienne » est obsolète — les études IRM et chirurgicales montrent que la cause principale de la douleur latérale de hanche est la tendinopathie glutéale (moyen fessier ± petit fessier), pas la bursite isolée (qui est secondaire/associée)<br />
+- <strong>Anatomie</strong> :<br />
+  - Moyen fessier : large éventail musculaire → insertion sur les facettes antérieure et latérale du grand trochanter — abducteur principal et stabilisateur frontal du bassin<br />
+  - Petit fessier : profond → insertion sur la facette antérieure — stabilisateur et rotateur interne<br />
+  - Bourses trochantériennes : sous-glutéale (entre moyen fessier et grand trochanter), sous-fasciale (entre BIT et grand trochanter)<br />
+  - « La coiffe de la hanche » : analogie avec la coiffe des rotateurs de l'épaule — les glutéaux stabilisent la tête fémorale dans le cotyle comme la coiffe stabilise la tête humérale<br />
+- <strong>Épidémiologie</strong> : 1.8-5.6/1000 personnes-année, femmes &gt;&gt; hommes (4:1), pic 40-60 ans, association avec obésité, arthrose de hanche, lombalgie chronique<br />
+- <strong>Physiopathologie</strong> : surcharge compressive + traction du tendon sur le grand trochanter → tendinopathie — aggravée par :<br />
+  - Position debout hanche en adduction (shift latéral)<br />
+  - Décubitus latéral (compression directe)<br />
+  - Montée d'escaliers (composante excentrique)<br />
+  - Course à pied (crossover gait — surcroisement des pieds)<br />
+  - Faiblesse des abducteurs → chute du bassin controlatéral (Trendelenburg) → augmentation de la composante compressive</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND13-S01-001 | 🧊 MODÈLE 3D | Insertions du moyen et petit fessier sur le grand trochanter — 3 facettes | TendonSim© |<br />
+| MTEND13-S01-002 | 📐 SCHÉMA | « Coiffe de la hanche » — analogie avec la coiffe de l'épaule | Schéma comparatif |<br />
+| MTEND13-S01-003 | 🎬 ANIMATION | Charge compressive en position debout — hanche en adduction vs neutre | Animation biomécanique |<br />
+| MTEND13-S01-004 | 📊 INFOGRAPHIE | GTPS — changement de paradigme (bursite → tendinopathie) | Timeline conceptuelle |</p>
+<h3 id="section-132-examen-clinique-et-imagerie">Section 13.2 — Examen clinique et imagerie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Clinique</strong> :<br />
+  - Douleur latérale de hanche (pas inguinale = arthrose / pas fessière = rachis)<br />
+  - Aggravation : décubitus latéral (ne peut pas dormir sur le côté atteint), station debout prolongée (&gt;10 min), montée d'escaliers, marche prolongée<br />
+  - Tests :<br />
+    - Single leg stand test 30 sec : reproduction de la douleur → Se 100 % (Grimaldi et al., 2017, <em>Br J Sports Med</em>) ← TEST CLÉ<br />
+    - Palpation du grand trochanter : douloureuse mais non spécifique (douleur référée aussi)<br />
+    - Résistance à l'abduction en décubitus latéral : douleur + faiblesse (tendinopathie ± déchirure)<br />
+    - FADER (Flexion-ADDuction-External Rotation) : mise en tension compressive → douleur latérale<br />
+    - FABER (Flexion-ABDuction-External Rotation) : pour exclure une douleur articulaire (sacro-iliaque, coxo-fémorale)<br />
+    - Test de Trendelenburg modifié : chute du bassin controlatéral en appui monopodal → déficit du moyen fessier<br />
+- <strong>Imagerie</strong> :<br />
+  - Échographie : épaississement/hypoéchogénicité des tendons glutéaux, épanchement de la bourse sous-glutéale, doppler<br />
+  - IRM (gold standard) : signal intermédiaire/hypersignal au sein du moyen fessier (insertion trochantérienne), classification des ruptures (partielle vs complète)<br />
+  - Radiographie : exclure arthrose, calcifications trochantériennes péri-articulaires</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND13-S02-001 | 🎥 VIDÉO | Single leg stand test 30 sec — démonstration et interprétation | Vidéo clinique |<br />
+| MTEND13-S02-002 | 🎥 VIDÉO | Tests FADER, FABER, abduction résistée | Vidéo clinique |<br />
+| MTEND13-S02-003 | 📷 IMAGE | IRM — tendinopathie du moyen fessier (coupe coronale, PD fat sat) | Image annotée |<br />
+| MTEND13-S02-004 | 📊 INFOGRAPHIE | Diagnostic différentiel : douleur latérale vs antérieure vs postérieure de hanche | Cartographie |</p>
+<h3 id="section-133-traitement-evidence-based">Section 13.3 — Traitement evidence-based</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Éducation (PRIORITAIRE)</strong> : explication du diagnostic, éviction des facteurs compressifs — NE PAS croiser les jambes, NE PAS dormir sur le côté atteint (coussin entre les genoux), éviter la station debout hanche en adduction (« shift »), position assise : genoux écartés (pas de genoux serrés)<br />
+- <strong>Programme d'exercices GLoBE</strong> <em>(Mellor et al., 2018, BMJ)</em> : exercices de renforcement progressif des abducteurs (isométrique → isotonique → fonctionnel), gestion de la charge compressive, éducation — supérieur aux corticoïdes à 12 mois (RCT LEAP trial)<br />
+  - Phase 1 : isométrique en abduction (position non compressive), éducation, gestion des activités<br />
+  - Phase 2 : isotonique en abduction (couché puis debout), ponts fessiers latéraux<br />
+  - Phase 3 : fonctionnel (exercices en charge, marche, escaliers, single leg stand)<br />
+- <strong>Ondes de choc</strong> : evidence modérée (amélioration à 3-6 mois)<br />
+- <strong>Infiltrations de corticoïdes</strong> : effet à court terme (4-8 semaines) mais INFÉRIEUR à l'exercice à 12 mois (LEAP trial) — utilisation ponctuelle pour « fenêtre thérapeutique » facilitant la rééducation<br />
+- <strong>PRP</strong> : evidence limitée, études en cours<br />
+- <strong>Chirurgie</strong> (échec conservateur &gt;12 mois) :<br />
+  - Réparation endoscopique des tendons glutéaux (par ancres sur le grand trochanter) — résultats 70-85% bons à excellents, recul encore limité<br />
+  - Bursectomie endoscopique : insuffisante si tendinopathie sous-jacente non traitée</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND13-S03-001 | 🎥 VIDÉO | Programme GLoBE — exercices par phase | Vidéo exercices |<br />
+| MTEND13-S03-002 | 📐 SCHÉMA | Positions à éviter vs postures correctes — gestion de la compression | Guide postural illustré |<br />
+| MTEND13-S03-003 | 📊 INFOGRAPHIE | Résultats du LEAP trial — exercice vs corticoïdes vs wait-and-see | Graphique |<br />
+| MTEND13-S03-004 | 📊 INFOGRAPHIE | Algorithme de traitement du GTPS | Arbre décisionnel |</p>
+<h3 id="points-cles-du-module-13">Points clés du Module 13</h3>
+<ol>
+<li>Le terme « bursite trochantérienne » est obsolète — la tendinopathie glutéale est la cause principale du GTPS</li>
+<li>Le single leg stand test 30 sec a une sensibilité de 100% pour le GTPS</li>
+<li>L'éducation et la gestion de la charge compressive sont prioritaires (pas de croisement de jambes, coussin de nuit)</li>
+<li>L'exercice (programme GLoBE) est supérieur aux corticoïdes à 12 mois (LEAP trial)</li>
+<li>Les corticoïdes offrent un soulagement à court terme mais ne sont pas une solution durable</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, clinique, tests)</li>
+<li>3 QCM Argent (imagerie, protocole GLoBE, LEAP trial)</li>
+<li>2 QCM Or (gestion des facteurs compressifs, diagnostic différentiel)</li>
+<li>1 QCM Diamant (cas : femme 55 ans, douleur latérale hanche + nocturne + 3 infiltrations → plan complet)</li>
+<li>1 QROC : « Expliquez le changement de paradigme de la "bursite trochantérienne" vers la tendinopathie glutéale et les implications thérapeutiques. »</li>
+</ul>
+<hr />
+<h1 id="module-15-epicondylalgies-tennis-elbow-et-golfers-elbow">MODULE 15 : ÉPICONDYLALGIES — TENNIS ELBOW ET GOLFER'S ELBOW</h1>
+<p><strong>Partie</strong> : V — Tendinopathies du coude, du genou et de la hanche<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Cadre commercial, droitier, consulte pour une douleur du coude droit apparue depuis 4 mois, aggravée par la poignée de main, le port du sac d'ordinateur, et le geste de tourner la poignée de porte. Jamais joué au tennis. L'examen montre une douleur exquise de l'épicondyle latéral, les tests de Cozen et de Mill sont positifs. Trois infiltrations de corticoïdes ont donné un soulagement transitoire de 3-4 semaines chacune. *Pourquoi les infiltrations ne guérissent-elles pas ? Le protocole d'exercices excentiques est-il aussi efficace que pour l'Achille ? Faut-il opérer ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> la physiopathologie de l'épicondylalgie latérale (rôle central de l'ECRB)</li>
+<li><strong>Maîtriser</strong> l'examen clinique et le diagnostic différentiel (tunnel radial, radiculopathie C6-C7)</li>
+<li><strong>Connaître</strong> les résultats paradoxaux des corticoïdes (benefit à court terme, harm à long terme)</li>
+<li><strong>Prescrire</strong> un programme de rééducation basé sur les preuves</li>
+<li><strong>Identifier</strong> les indications chirurgicales</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-151-anatomie-physiopathologie-et-epidemiologie">Section 15.1 — Anatomie, physiopathologie et épidémiologie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : épicondyle latéral = origine commune des extenseurs du poignet (CEO — Common Extensor Origin) → ECRB (extensor carpi radialis brevis), EDC (extensor digitorum communis), EDM, ECU<br />
+- <strong>Rôle central de l'ECRB</strong> : c'est le tendon le plus profond, le plus court, celui qui subit le plus de contraintes lors de la préhension → c'est presque toujours lui qui est atteint<br />
+- <strong>Physiopathologie</strong> : tendinose dégénérative de l'ECRB (pas d'inflammation) — surcharge répétée en préhension → micro-lésions → réparation inadéquate → angiogenèse, hyperplasie fibroblastique, désorganisation du collagène — Terme à utiliser : « épicondylalgie latérale » (pas « épicondylite » car pas de -ite)<br />
+- <strong>Épidémiologie</strong> : prévalence 1-3% de la population générale, pic 35-55 ans, sex-ratio 1:1, bras dominant (75%), associations : travail physique répétitif (préhension, pronation-supination, vibrations), souvent PAS de lien avec le tennis (que 5-10% des cas !)<br />
+- <strong>Épicondylalgie médiale (golfer's elbow)</strong> : origine commune des fléchisseurs-pronateurs → 10× moins fréquente que la latérale</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND15-S01-001 | 🧊 MODÈLE 3D | Anatomie de l'origine commune des extenseurs — ECRB, EDC | TendonSim© |<br />
+| MTEND15-S01-002 | 📐 SCHÉMA | ECRB — le tendon le plus profond et le plus vulnérable | Coupe transversale |<br />
+| MTEND15-S01-003 | 📊 INFOGRAPHIE | Épidémiologie — « tennis elbow sans tennis dans 90% des cas » | Données chiffrées |</p>
+<h3 id="section-152-examen-clinique-et-diagnostic-differentiel">Section 15.2 — Examen clinique et diagnostic différentiel</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Examen clinique de l'épicondylalgie latérale</strong> :<br />
+  - Palpation : douleur exquise 5 mm en avant et en distal de l'épicondyle latéral (= insertion de l'ECRB)<br />
+  - Test de Cozen : poing fermé, résistance à l'extension du poignet → douleur épicondyle latéral<br />
+  - Test de Mill : extension passive du coude + flexion du poignet + pronation → étirement des extenseurs → douleur<br />
+  - Test de Maudsley : extension résistée du 3ème doigt → douleur (spécifique ECRB)<br />
+  - Chair test : soulever une chaise par le dossier en pronation → douleur<br />
+  - Grip strength test : perte de force de préhension 20-30% vs controlatéral ← meilleur critère objectif<br />
+  - Score PRTEE (Patient-Rated Tennis Elbow Evaluation) : 15 questions, 0-100<br />
+- <strong>Examen clinique de l'épicondylalgie médiale</strong> :<br />
+  - Douleur de l'épicondyle médial, résistance à la flexion du poignet en supination, étirement en extension-supination<br />
+  - Recherche de névrite ulnaire associée (Tinnel du nerf ulnaire au coude — 60% de comorbidité)<br />
+- <strong>Diagnostic différentiel CRITIQUE</strong> :<br />
+  - <strong>Syndrome du tunnel radial</strong> (posterior interosseous nerve entrapment) : compression branche postérieure du nerf radial → douleur 3-4 travers de doigt en distal de l'épicondyle, supination résistée coude en extension douloureuse, EMG ± normal — souvent confondu avec l'épicondylalgie<br />
+  - <strong>Radiculopathie cervicale C6</strong> : testing sensitif dermatome C6, Spurling test, réflexe bicipital — douleur irradiée de la nuque<br />
+  - <strong>Arthrose huméro-radiale</strong> : douleur en rotation et flexion-extension, crépitation, imagerie<br />
+  - <strong>Instabilité postéro-latérale rotatoire (PLRI)</strong> : test du pivot shift lateral, drawer latéral</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND15-S02-001 | 🎥 VIDÉO | Tests de Cozen, Mill, Maudsley — démonstration | Vidéo clinique |<br />
+| MTEND15-S02-002 | 🎥 VIDÉO | Grip strength test avec dynamomètre | Vidéo clinique |<br />
+| MTEND15-S02-003 | 📐 SCHÉMA | Épicondylalgie latérale (ECRB) vs syndrome du tunnel radial — localisation de la douleur | Schéma différentiel |<br />
+| MTEND15-S02-004 | 📊 INFOGRAPHIE | Diagnostics différentiels de la douleur latérale du coude | Tableau de synthèse |</p>
+<h3 id="section-153-traitement-evidence-based">Section 15.3 — Traitement evidence-based</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Histoire naturelle</strong> : 80-90% de résolution spontanée en 12-18 mois — mais récidive 30%<br />
+- <strong>Le paradoxe des corticoïdes</strong> (Coombes et al., 2010, <em>Lancet</em> ; Bisset et al., 2006, <em>BMJ</em>) :<br />
+  - Court terme (4-6 semaines) : corticoïdes &gt; physiothérapie &gt; wait-and-see<br />
+  - Long terme (12 mois) : wait-and-see = physiothérapie &gt;&gt; corticoïdes — les patients infiltrés ont PLUS de récidives et un MOINS bon résultat à 1 an que les patients non traités !<br />
+  - Explication : la corticothérapie supprime la douleur → reprise prématurée → rechute + dégradation tissulaire additionnelle<br />
+  - Recommandation actuelle : ÉVITER les infiltrations de corticoïdes dans l'épicondylalgie latérale (sauf éventuellement pour « fenêtre thérapeutique » initiale unique)<br />
+- <strong>Programme d'exercices</strong> : étude Tyler et al. (Tyler twist — barre flexible), exercices excentiques de l'ECRB, isométriques, renforcement de la préhension progressif<br />
+  - Tyler twist (Flexbar) : résistance excentrique avec une barre flexible (twist motion) — réduction de la douleur de 81 % vs 22 % à 7 semaines <em>(Tyler et al., 2010, J Hand Ther)</em><br />
+  - Isométrique : extension résistée du poignet en position neutre, 5×45 sec<br />
+  - HSR : renforcement progressif concentrique-excentrique, charge lourde<br />
+- <strong>Attelles</strong> : bracelet anti-épicondylien (forearm brace) — réduction de la force de traction sur l'ECRB ← evidence modeste mais largement utilisé<br />
+- <strong>PRP</strong> : evidence controversée (résultats positifs en injection unique vs corticoïdes à 12 mois dans certaines études)<br />
+- <strong>Ondes de choc</strong> : evidence faible pour l'épicondylalgie<br />
+- <strong>Chirurgie</strong> (échec conservateur &gt;12 mois) :<br />
+  - Débridement ouvert de l'ECRB dégénératif (technique de Nirschl) → résultats 80-90%<br />
+  - Débridement arthroscopique : vision de la face profonde de l'ECRB → débridement, libération capsulaire si raideur<br />
+  - Release percutané (tenotomie) : mini-invasif, résultats 75-85%</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND15-S03-001 | 📊 INFOGRAPHIE | Paradoxe des corticoïdes — graphique des résultats à 4 sem vs 12 mois (Coombes) | Graphique comparatif |<br />
+| MTEND15-S03-002 | 🎥 VIDÉO | Tyler twist avec Flexbar — démonstration technique | Vidéo exercice |<br />
+| MTEND15-S03-003 | 📊 INFOGRAPHIE | Algorithme de traitement de l'épicondylalgie latérale | Arbre décisionnel |<br />
+| MTEND15-S03-004 | 🎥 VIDÉO | Chirurgie de Nirschl — débridement ouvert de l'ECRB | Vidéo chirurgicale |</p>
+<h3 id="points-cles-du-module-15">Points clés du Module 15</h3>
+<ol>
+<li>L'épicondylalgie latérale est une tendinose de l'ECRB (pas une inflammation) — 90% des cas ne sont PAS liés au tennis</li>
+<li>Le syndrome du tunnel radial est le principal diagnostic différentiel — douleur plus distale</li>
+<li>Le paradoxe des corticoïdes : bénéfice à court terme mais résultats INFÉRIEURS au placebo à 12 mois</li>
+<li>80-90% de résolution spontanée à 12-18 mois — le traitement conservateur est la règle</li>
+<li>Le Tyler twist (Flexbar) est un traitement excentriques validé</li>
+<li>La chirurgie n'est indiquée qu'après échec d'un traitement conservateur &gt;12 mois</li>
+</ol>
+<h3 id="auto-evaluation_3">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, tests cliniques, épidémiologie)</li>
+<li>3 QCM Argent (paradoxe des corticoïdes, diagnostic différentiel, protocoles)</li>
+<li>2 QCM Or (cas : épicondylalgie résistante → tunnel radial ?, stratégie thérapeutique)</li>
+<li>1 QCM Diamant (cas : patient avec douleur latérale du coude + 3 infiltrations + résultat Coombes → plan de traitement optimal)</li>
+<li>1 QROC : « Expliquez le paradoxe des corticoïdes dans l'épicondylalgie latérale en citant les données de Coombes et Bisset. »</li>
+</ul>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Bisset L, Beller E, Jull G, et al. Mobilisation with movement and exercise, corticosteroid injection, or wait and see for tennis elbow: randomised trial. <em>BMJ</em>. 2006;333(7575):939.</li>
+<li>Coombes BK, Bisset L, Vicenzino B. Efficacy and safety of corticosteroid injections and other injections for management of tendinopathy: a systematic review of randomised controlled trials. <em>Lancet</em>. 2010;376(9754):1751-1767.</li>
+<li>Grimaldi A, Mellor R, Hodges P, et al. Gluteal tendinopathy: a review of mechanisms, assessment, and management. <em>Br J Sports Med</em>. 2017;51(2):82-93.</li>
+<li>Kongsgaard M, Kovanen V, Aagaard P, et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. <em>Scand J Med Sci Sports</em>. 2009;19(6):790-802.</li>
+<li>Lian ØB, Engebretsen L, Bahr R. Prevalence of jumper's knee among elite athletes from different sports: a cross-sectional study. <em>Am J Sports Med</em>. 2005;33(4):561-567.</li>
+<li>Mellor R, Bennell K, Grimaldi A, et al. Education plus exercise versus corticosteroid injection use versus a wait and see approach on global outcome and pain from gluteal tendinopathy: prospective, single blinded, randomised clinical trial. <em>BMJ</em>. 2018;361:k1662.</li>
+<li>Tyler TF, Thomas GC, Nicholas SJ, et al. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. <em>J Hand Ther</em>. 2010;23(3):231-238.</li>
+<li>Zwerver J, Bredeweg SW, van den Akker-Scheek I. Prevalence of jumper's knee among nonelite athletes from different sports: a cross-sectional survey. <em>Am J Sports Med</em>. 2011;39(9):1984-1988.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

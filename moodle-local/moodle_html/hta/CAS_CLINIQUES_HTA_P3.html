@@ -1,0 +1,1058 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-hta-partie-33">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION HTA (Partie 3/3)</h1>
+<p><strong>Cas n°14 à 20 — Niveaux Or et Diamant</strong></p>
+<hr />
+<h2 id="cas-or">🥇 CAS OR</h2>
+<hr />
+<p><a id="cas-14"></a></p>
+<h3 id="cas-n14-urgence-hypertensive-dissection-aortique-de-type-b">Cas n°14 — Urgence hypertensive : dissection aortique de type B</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilisés</strong> : M19 (Urgences), M23 (Complications vasculaires), M31-32 (Traitement)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : Dissection aortique — diagnostic rapide et stratégie tensionnelle</p>
+<h4 id="presentation-initiale">Présentation initiale</h4>
+<p>M. Michel F., 61 ans, hypertendu connu depuis 15 ans, irrégulièrement suivi, sans traitement depuis 8 mois. Il arrive aux urgences à 14h37 pour une <strong>douleur thoracique</strong> débutée à 13h45, d'emblée maximale, irradiant vers le dos et le membre inférieur droit. Il transpire abondamment.</p>
+<h4 id="examen-clinique-aux-urgences">Examen clinique aux urgences</h4>
+<ul>
+<li><strong>PA bras droit</strong> : 198/118 mmHg</li>
+<li><strong>PA bras gauche</strong> : 158/94 mmHg</li>
+<li><strong>FC</strong> : 96 bpm</li>
+<li><strong>Pouls fémoral droit</strong> : diminué (gauche : présent)</li>
+<li><strong>SpO2</strong> : 96 % en air ambiant</li>
+<li><strong>Auscultation cardiaque</strong> : souffle diastolique régurgitant en décubitus latéral gauche (3/6)</li>
+<li><strong>Auscultation pulmonaire</strong> : quelques crépitants basaux gauches</li>
+<li><strong>Neurologique</strong> : paresthésies du membre inférieur droit</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MHTA-CC14-001 — Angio-TDM thoraco-abdominal en coupe axiale et reconstruction sagittale : dissection aortique type B — flap intimal visible, vraie et fausse lumière]</p>
+</blockquote>
+<p><strong>Angio-TDM thoraco-abdominale</strong> (réalisé en 18 min) :<br />
+- Dissection aortique <strong>type B de Stanford</strong> : départ de la dissection à 3 cm de l'artère sous-clavière gauche, extension jusqu'à l'illiaque droite<br />
+- Fausse lumière comprimant la vraie lumière aortique<br />
+- Branche iliaque droite naissant de la fausse lumière<br />
+- Pas d'épanchement péricardique<br />
+- Pas d'hémomédiastin (pas de saignement actif)</p>
+<hr />
+<h4 id="question-1-diagnostic-et-classification">Question 1 — Diagnostic et classification</h4>
+<p><strong>Confirmez le diagnostic. Pourquoi la différence de PA entre les deux bras est-elle importante ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Dissection aortique de type B de Stanford</strong> :<br />
+- Type A : atteint l'aorte ascendante → chirurgie d'urgence<br />
+- <strong>Type B : ne touche PAS l'aorte ascendante</strong> → traitement médical en première intention (sauf complication)</p>
+<p><strong>Différence de PA bras droit/gauche (ΔPA = 40 mmHg de PAS)</strong> :<br />
+- Asymétrie significative (≥ 15 mmHg) → évoque une sténose artérielle sous-clavière ou aortique<br />
+- Ici : la dissection comprime probablement la sous-clavière droite (ou l'artère naît de la fausse lumière)<br />
+- C'est pourquoi il faut TOUJOURS mesurer la PA aux deux bras chez tout patient douloureux thoracique<br />
+- La PA de référence pour le traitement = celle du <strong>bras le plus élevé</strong> (bras droit, 198/118 mmHg)</p>
+<p><strong>Complications présentes</strong> :<br />
+- Malperfusion membres inférieurs droits (pouls fémoral droit diminué, paresthésies)<br />
+- Insuffisance aortique (souffle diastolique) — à préciser si vraie lumière préservée<br />
+- Début d'OAP (crépitants basaux)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-urgence-medicale-objectifs-tensionnels">Question 2 — Urgence médicale : objectifs tensionnels</h4>
+<p><strong>Quels sont vos objectifs et votre traitement antihypertenseur d'urgence ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Objectifs en &lt; 20 minutes</strong> :<br />
+- <strong>PAS &lt; 120 mmHg</strong><br />
+- <strong>FC &lt; 60 bpm</strong><br />
+- Ces cibles réduisent la contrainte pariétale (dP/dt) et limitent l'extension de la dissection</p>
+<p><strong>Traitement IV</strong> :</p>
+<p><strong>1ère intention — combinaison</strong> :<br />
+- <strong>Esmolol</strong> (Brévibloc®) IV : bolus 0,5 mg/kg en 1 min, puis 50-200 µg/kg/min → contrôle FC<br />
+- <strong>Nicardipine</strong> (Loxen®) IV : 5-15 mg/h → contrôle PA</p>
+<p><strong>Alternative</strong> :<br />
+- <strong>Labétalol</strong> IV (α + β) : 20-80 mg en bolus répétés ou 0,5-2 mg/min en perfusion</p>
+<p><strong>Surveillance continue</strong> :<br />
+- Scope cardiaque + SpO2<br />
+- PA invasive (cathéter artériel) → titration en temps réel<br />
+- Diurèse horaire</p>
+<p><strong>Indication de revascularisation endovasculaire</strong> (TEVAR) :<br />
+- Malperfusion des membres inférieurs droits ✓ → indication potentielle au TEVAR (pose d'une endoprothèse aortique)<br />
+- Discussion urgente avec équipe chirurgie vasculaire et cardiaque</p>
+</blockquote>
+<hr />
+<h4 id="question-3-prise-en-charge-globale">Question 3 — Prise en charge globale</h4>
+<p><strong>Quelle est la suite de la prise en charge (court et long terme) ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Court terme (USIC)</strong> :<br />
+- Maintien PA &lt; 120 mmHg et FC &lt; 60 bpm par traitement IV<br />
+- Relais par traitement oral dès que possible (labétalol + amlodipine)<br />
+- Discussion TEVAR en urgence (malperfusion droite)<br />
+- Échocardiographie transthoracique + transœsophagienne<br />
+- Bilan génétique si facteurs (jeune, Marfan, bicuspidie aortique)</p>
+<p><strong>Long terme</strong> :<br />
+- <strong>Bêtabloquant à vie</strong> (réduction de la contrainte pariétale, prévention de l'extension)<br />
+- Cible PA stricte &lt; 120/80 mmHg avec MAPA<br />
+- Surveillance par IRM/TDM aortique (M1, M6, puis annuel)<br />
+- Contre-indication aux efforts violents<br />
+- Information du patient sur signes d'alerte (récidive douloureuse → urgences)</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>La dissection aortique est une urgence vitale. La cible est PAS &lt; 120 mmHg + FC &lt; 60 bpm en &lt; 20 min (esmolol + nicardipine). La mesure aux deux bras est indispensable pour tout douloureux thoracique. Type A → chirurgie urgente ; type B → médical (± TEVAR si complication).</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-15"></a></p>
+<h3 id="cas-n15-eclampsie-en-salle-de-naissance">Cas n°15 — Éclampsie en salle de naissance</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilisés</strong> : M33 (HTA et grossesse), M19 (Urgences)<br />
+<strong>Durée estimée</strong> : 30 min<br />
+<strong>Thématique</strong> : Convulsions éclamptiques — traitement immédiat</p>
+<h4 id="presentation-initiale_1">Présentation initiale</h4>
+<p>Mme Aminata K., 26 ans, primipare, en travail à 35 SA + 4 jours en salle de naissance. Elle est suivie pour une pré-éclampsie modérée (PA 145/92 mmHg sous méthyldopa 750 mg × 2, protéinurie 400 mg/24h). Elle est sous monitoring. La sage-femme vous appelle en urgence : la patiente vient de faire une <strong>crise convulsive tonico-clonique généralisée</strong> durant 1 min 30 secondes, elle reprend conscience progressivement, est confuse, désorientée.</p>
+<p><strong>PA mesurée pendant la crise</strong> : 186/116 mmHg<br />
+<strong>SpO2</strong> : 88 % (crise terminée, masque à O2 en place)<br />
+<strong>RCF (rythme cardiaque fœtal)</strong> : décélérations tardives répétées</p>
+<hr />
+<h4 id="question-1-diagnostic">Question 1 — Diagnostic</h4>
+<p><strong>Quel est le diagnostic ? Qu'est-ce qui le distingue d'un AVC chez une femme enceinte ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Éclampsie</strong> :<br />
+- Définition : <strong>pré-éclampsie + convulsions généralisées</strong> (en l'absence d'autre cause neurologique)<br />
+- Survient dans 2-3 % des pré-éclampsies sévères<br />
+- Peut survenir avant, pendant ou après l'accouchement</p>
+<p><strong>Distinction d'un AVC</strong> :<br />
+| | Éclampsie | AVC |<br />
+|---|---|---|<br />
+| Contexte | Pré-éclampsie connue | Possible sans contexte |<br />
+| Crise | Tonico-clonique généralisée | Déficit focal souvent |<br />
+| Confusion post-critique | Habituelle | Variable |<br />
+| IRM | PRES (hypersignaux occipito-pariétaux réversibles) | Infarctus ou hémorragie |<br />
+| PA | Très élevée | Variable |<br />
+| Traitement | MgSO4 + contrôle PA | Variable |</p>
+<p><strong>Urgence immédiate</strong> : protection des voies aériennes, oxygénation, position latérale de sécurité, appel obstétricien + anesthésiste + pédiatre néonatologiste.</p>
+</blockquote>
+<hr />
+<h4 id="question-2-traitement-de-la-crise-et-prevention-des-recidives">Question 2 — Traitement de la crise et prévention des récidives</h4>
+<p><strong>Quel traitement administrez-vous immédiatement ? Quelle est la posologie ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>1. Sulfate de magnésium (MgSO4) — traitement de 1ère intention</strong> :<br />
+- <strong>Bolus</strong> : 4 g IV en <strong>20 minutes</strong> (pas trop vite : risque de bradycardie, hypotension)<br />
+- <strong>Entretien</strong> : 1 g/h à la seringue électrique pendant <strong>24h post-partum</strong></p>
+<p><strong>Surveillance MgSO4</strong> (signes de surdosage) :<br />
+- Réflexes rotuliens : présents → continuer ; absents → réduire<br />
+- Fréquence respiratoire : &gt; 12/min → continuer ; &lt; 12/min → STOP<br />
+- Diurèse : &gt; 25 mL/h → continuer<br />
+- Magnésémie si signes de toxicité (zone thérapeutique 2-3,5 mmol/L)<br />
+- <strong>Antidote</strong> : gluconate de calcium 1 g IV si surdosage</p>
+<p><strong>2. Contrôle tensionnel immédiat</strong> (PA &gt; 160/110) :<br />
+- <strong>Labétalol</strong> IV (premier choix en salle de naissance)<br />
+- Ou nicardipine IV<br />
+- Cible : PAS 140-150 mmHg, PAD 90-100 mmHg (ne pas descendre trop vite → ischémie fœtale)</p>
+<p><strong>3. Extraction fœtale</strong> :<br />
+- Éclampsie = indication d'extraction semi-urgente (dans les heures suivantes)<br />
+- Terme 35+4 → viabilité assurée → décision rapide<br />
+- RCF pathologique → césarienne en urgence</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_1">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'éclampsie se traite par MgSO4 (bolus 4 g + entretien 1 g/h). L'extraction fœtale est l'unique traitement curatif. Les IEC/ARA2 sont formellement contre-indiqués. La surveillance du MgSO4 (réflexes, FR, diurèse) est indispensable.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-16"></a></p>
+<h3 id="cas-n16-hta-maligne-avec-microangiopathie-thrombotique">Cas n°16 — HTA maligne avec microangiopathie thrombotique</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilisés</strong> : M05-06 (Physiopath), M19 (Urgences), M22 (Complications rénales)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : HTA maligne — diagnostic complet et prise en charge multiorgan</p>
+<h4 id="presentation-initiale_2">Présentation initiale</h4>
+<p>M. Abdou S., 38 ans, d'origine africaine, sans antécédent documenté, amené par son frère pour asthénie profonde, céphalées persistantes depuis 10 jours et baisse de la vision. Pas de traitement en cours.</p>
+<h4 id="examen-clinique">Examen clinique</h4>
+<ul>
+<li><strong>PA</strong> : 235/148 mmHg (bras droit), 230/145 mmHg (bras gauche)</li>
+<li><strong>FC</strong> : 104 bpm, régulier</li>
+<li><strong>Fond d'œil</strong> : hémorragies rétiniennes étendues en flammèches, exsudats secs et cotonneux, <strong>œdème papillaire bilatéral</strong> = <strong>rétinopathie stade IV</strong></li>
+<li><strong>Neurologique</strong> : ralentissement idéomoteur, Glasgow 14</li>
+<li><strong>Auscultation</strong> : galop B3, crépitants jusqu'aux bases</li>
+</ul>
+<p><strong>Bilan en urgence</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Résultat</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Créatinine</td>
+<td>438 µmol/L</td>
+<td>Insuffisance rénale sévère</td>
+</tr>
+<tr>
+<td>DFG</td>
+<td>14 mL/min</td>
+<td>Stade 5</td>
+</tr>
+<tr>
+<td>Kaliémie</td>
+<td>5,8 mmol/L</td>
+<td>Hyperkaliémie</td>
+</tr>
+<tr>
+<td>Bicarbonates</td>
+<td>13 mmol/L</td>
+<td>Acidose métabolique</td>
+</tr>
+<tr>
+<td>Hb</td>
+<td>7,2 g/dL</td>
+<td>Anémie sévère</td>
+</tr>
+<tr>
+<td>Plaquettes</td>
+<td>52 000/mm³</td>
+<td>Thrombopénie sévère</td>
+</tr>
+<tr>
+<td>Schizocytes</td>
+<td>8 %</td>
+<td>Hémolyse mécanique</td>
+</tr>
+<tr>
+<td>LDH</td>
+<td>2 100 UI/L</td>
+<td>Très élevé</td>
+</tr>
+<tr>
+<td>Haptoglobine</td>
+<td>Indosable</td>
+<td>Hémolyse active</td>
+</tr>
+<tr>
+<td>Coombs direct</td>
+<td>Négatif</td>
+<td>Anémie NON auto-immune</td>
+</tr>
+<tr>
+<td>BNP</td>
+<td>2 850 pg/mL</td>
+<td>IC</td>
+</tr>
+<tr>
+<td>TDM cérébral</td>
+<td>Pas d'hémorragie, PRES occipital</td>
+<td>Encéphalopathie HTN</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="question-1-diagnostic-syndromique">Question 1 — Diagnostic syndromique</h4>
+<p><strong>Identifiez tous les syndromes présents. Quel est l'unificateur physiopathologique ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>HTA maligne avec microangiopathie thrombotique (MAT)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Syndrome</th>
+<th>Manifestations</th>
+<th>Score de gravité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTA maligne</td>
+<td>PA 235/148, rétinopathie stade IV</td>
+<td>Définit le tableau</td>
+</tr>
+<tr>
+<td>MAT</td>
+<td>Schizocytes 8 %, plaquettes 52K, LDH 2100, haptoglobine indosable, Coombs négatif</td>
+<td>Sévère</td>
+</tr>
+<tr>
+<td>IRA oligo-anurique</td>
+<td>Créatinine 438, DFG 14, acidose, hyperkaliémie</td>
+<td>Potentiellement dialysable</td>
+</tr>
+<tr>
+<td>IC aiguë décompensée</td>
+<td>BNP 2850, galop B3, crépitants</td>
+<td>Modérée</td>
+</tr>
+<tr>
+<td>PRES/encéphalopathie HTN</td>
+<td>Ralentissement, TDM PRES</td>
+<td>Réversible si contrôlé</td>
+</tr>
+<tr>
+<td>Rétinopathie stade IV</td>
+<td>Œdème papillaire bilatéral</td>
+<td>Menace visuelle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Physiopathologie unificatrice</strong> :<br />
+- HTA extrêmement sévère → <strong>nécrose fibrinoïde artériolaire</strong> (microangiopathie)<br />
+- Les artérioles lésées entraînent une activation de la coagulation locale → fragmentation des globules rouges (schizocytes) → MAT<br />
+- L'ischémie rénale + hypertension intraglomérulaire → IRA<br />
+- Le tout auto-entretenu : ischémie rénale → activation SRAA → aggravation HTA → cercle vicieux</p>
+</blockquote>
+<hr />
+<h4 id="question-2-priorites-therapeutiques">Question 2 — Priorités thérapeutiques</h4>
+<p><strong>Quelles sont vos actions dans les 6 premières heures ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>1. Baisse tensionnelle progressive (priorité absolue)</strong> :<br />
+- <strong>Nicardipine IV</strong> : 5-15 mg/h en seringue électrique<br />
+- Objectif 1ère heure : réduction ≤ 25 % de la PAM (PAM actuelle ≈ 177 → objectif ≈ 133 → PAS ≈ 170 mmHg)<br />
+- Objectif H6 : PA 160-170 / 100-105 mmHg<br />
+- Pas de normalisation brutale : risque d'ischémie rénale, cérébrale, coronaire</p>
+<p><strong>2. Gestion de l'hyperkaliémie (K+ 5,8, acidose)</strong> :<br />
+- Calcium gluconate IV (protection myocardique)<br />
+- Bicarbonates IV si pH &lt; 7,20<br />
+- Kayexalate (résine échangeuse d'ions) ou ZIRCONIUM (patiromer)<br />
+- Scope cardiaque</p>
+<p><strong>3. MAT</strong> :<br />
+- Éliminer PTT (ADAMTS13) → si activité &lt; 10 % → échanges plasmatiques urgents<br />
+- Ici : MAT secondaire à l'HTA → traitement antihypertenseur seul → régression attendue<br />
+- Pas d'échanges plasmatiques d'emblée si PTT exclu</p>
+<p><strong>4. IRA sévère</strong> :<br />
+- Diurèse horaire<br />
+- Si oligurie persistante + surcharge + acidose sévère → <strong>hémodialyse d'urgence</strong> (potentiellement nécessaire ce soir)</p>
+<p><strong>5. IC aiguë</strong> :<br />
+- Gestion prudente des volumes (risque de surcharge)<br />
+- Furosémide IV si diurèse maintenue</p>
+</blockquote>
+<hr />
+<h4 id="question-3-pronostic-renal">Question 3 — Pronostic rénal</h4>
+<p><strong>La créatinine à J7 sous traitement est à 195 µmol/L. Comment interprétez-vous cette évolution ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Amélioration de la fonction rénale</strong> :<br />
+- Créatinine passe de 438 à 195 µmol/L à J7 → <strong>réduction de 55 %</strong> = récupération partielle significative<br />
+- DFG passe de 14 à ~35 mL/min</p>
+<p><strong>Signification physiopathologique</strong> :<br />
+- La nécrose fibrinoïde artériolaire est partiellement réversible avec le contrôle tensionnel<br />
+- La réduction de la PA → réduction de l'ischémie glomérulaire → restauration partielle du DFG</p>
+<p><strong>Pronostic rénal à long terme</strong> :<br />
+- 20-30 % des HTA malignes évoluent vers l'IRC terminale malgré le traitement<br />
+- Dépend de la sévérité initiale et de la rapidité du contrôle tensionnel<br />
+- Suivi néphrologiste + cardiologue obligatoire à vie<br />
+- Surveillance MAPA trimestrielle, RAC mensuel jusqu'à stabilisation</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_2">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'HTA maligne engage le pronostic vital et rénal. La MAT secondaire régresse avec le contrôle tensionnel seul (contrairement au PTT qui nécessite des échanges plasmatiques). La réduction de PA doit être progressive. La récupération rénale est souvent partielle mais significative.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-17"></a></p>
+<h3 id="cas-n17-hta-irc-avancee-diabete-strategie-nephroprotectrice">Cas n°17 — HTA + IRC avancée + diabète — stratégie néphroprotectrice</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilisés</strong> : M22 (Complications rénales), M35-36 (Diabète + IRC), M28-32 (Traitement)<br />
+<strong>Durée estimée</strong> : 35 min<br />
+<strong>Thématique</strong> : Optimisation thérapeutique dans le diabète avec IRC et HTA</p>
+<h4 id="presentation-initiale_3">Présentation initiale</h4>
+<p>M. Gérard M., 67 ans, diabétique de type 2 depuis 20 ans, hypertendu depuis 15 ans. Il est adressé en consultation de néphrologie pour aggravation progressive de la fonction rénale.</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Irbésartan 300 mg/j<br />
+- Amlodipine 5 mg/j<br />
+- Metformine 1 g × 2/j<br />
+- Sitagliptine 100 mg/j<br />
+- Atorvastatine 40 mg/j</p>
+<p><strong>Bilan</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Résultat</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PA au cabinet</td>
+<td>148/88 mmHg</td>
+<td>Non contrôlée</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>8,3 %</td>
+<td>Mal équilibrée</td>
+</tr>
+<tr>
+<td>Créatinine</td>
+<td>178 µmol/L</td>
+<td>IRC stade G3b</td>
+</tr>
+<tr>
+<td>DFG (CKD-EPI)</td>
+<td>36 mL/min</td>
+<td>G3b</td>
+</tr>
+<tr>
+<td>RAC</td>
+<td>780 mg/g</td>
+<td>Macroalbuminurie (A3)</td>
+</tr>
+<tr>
+<td>Kaliémie</td>
+<td>4,9 mmol/L</td>
+<td>Limite haute</td>
+</tr>
+<tr>
+<td>Bilan lipidique</td>
+<td>LDL-C 1,02 g/L</td>
+<td>Cible non atteinte (&lt; 0,55)</td>
+</tr>
+<tr>
+<td>Hb</td>
+<td>10,8 g/dL</td>
+<td>Anémie</td>
+</tr>
+<tr>
+<td>BU</td>
+<td>Protéinurie 3+, pas d'hématurie</td>
+<td>—</td>
+</tr>
+<tr>
+<td>ECG</td>
+<td>HVG électrique (Cornell 38 mm²ms)</td>
+<td>AAOC cardiaque</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="question-1-evaluation-de-la-situation-globale">Question 1 — Évaluation de la situation globale</h4>
+<p><strong>Identifiez les problèmes thérapeutiques et les lacunes actuelles.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Problèmes identifiés</strong> :</p>
+<ol>
+<li>
+<p><strong>PA non contrôlée</strong> (148/88 mmHg) malgré bithérapie → bithérapie insuffisante</p>
+</li>
+<li>
+<p><strong>RAC très élevé</strong> (780 mg/g) sous ARA2 → blocage SRAA insuffisant OU dose non optimisée</p>
+</li>
+<li>
+<p><strong>Glycémie insuffisamment contrôlée</strong> (HbA1c 8,3 %) → intensification diabète nécessaire</p>
+</li>
+<li>
+<p><strong>Metformine à réévaluer</strong> : DFG 36 → autorisation jusqu'à 30 mL/min mais prudence ; réduire à 500 mg × 2</p>
+</li>
+<li>
+<p><strong>LDL-C 1,02 g/L</strong> vs cible &lt; 0,55 g/L (risque très élevé) → statine insuffisante</p>
+</li>
+<li>
+<p><strong>Anémie</strong> (Hb 10,8) → causes : carence martiale, EPO insuffisante → bilan martial, ferritine, érythropoïétine</p>
+</li>
+<li>
+<p><strong>Pas d'iSGLT2</strong> malgré DFG 36 (indication si ≥ 20) → omission thérapeutique majeure</p>
+</li>
+<li>
+<p><strong>Pas de finérénone</strong> malgré diabète + IRC + albuminurie sévère → omission thérapeutique</p>
+</li>
+</ol>
+</blockquote>
+<hr />
+<h4 id="question-2-plan-therapeutique-optimise">Question 2 — Plan thérapeutique optimisé</h4>
+<p><strong>Proposez un plan thérapeutique complet et justifiez chaque décision.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Traitement antihypertenseur</strong> :<br />
+- <strong>Maintenir irbésartan 300 mg</strong> (dose maximale, néphroprotection)<br />
+- <strong>Ajouter indapamide 1,5 mg LP</strong> (diurétique encore efficace à DFG 36) → bithérapie complète<br />
+- <strong>Ou ajouter amlodipine 10 mg</strong> si déjà à 5 mg → optimiser la dose<br />
+- Cible PA : <strong>&lt; 120 mmHg</strong> (mesure standardisée SPRINT)</p>
+<p><strong>Traitement diabète</strong> :<br />
+- <strong>Introduire dapagliflozine 10 mg</strong> (iSGLT2 — DFG 36 ≥ 20 → autorisé)<br />
+  - Réduction RAC de 30-40 %<br />
+  - Ralentissement progression IRC<br />
+  - Bénéfice cardiovasculaire (DECLARE, DAPA-CKD)<br />
+  - Réduction HbA1c de 0,7-1 %<br />
+  - Surveillance : infections génitales, euglycémique DKA (rare)<br />
+- <strong>Adapter metformine</strong> : 500 mg × 2 (à réévaluer si DFG &lt; 30)<br />
+- <strong>Arrêt sitagliptine</strong> (si iSGLT2 introduit, pas de nécessité ; économie médicamenteuse)<br />
+- <strong>Évaluer insulinisation</strong> si HbA1c reste &gt; 7 % sous iSGLT2</p>
+<p><strong>Finérénone</strong> :<br />
+- <strong>Introduire finérénone 10 mg</strong> (MRA non stéroïdien) si K+ &lt; 5 mmol/L (ici 4,9 = à surveiller)<br />
+- Surveillance K+ à J7, J14, M1 puis tous les 3 mois<br />
+- Bénéfice additionnel sur albuminurie et progression IRC (FIDELIO-DKD, FIGARO-DKD)</p>
+<p><strong>Hypolipidémiant</strong> :<br />
+- <strong>Passer à atorvastatine 80 mg</strong> ou <strong>rosuvastatine 40 mg</strong><br />
+- Si LDL-C encore &gt; 0,55 → ajouter ézétimibe 10 mg (cible très difficile à atteindre sans)</p>
+<p><strong>Anémie</strong> :<br />
+- Bilan martial complet (ferritine, CST)<br />
+- Si carence : fer IV (préféré à la voie orale en IRC G3b)<br />
+- EPO (darbépoétine) si anémie rénale documentée (cible Hb 10-12 g/dL)</p>
+<p><strong>Suivi</strong> :<br />
+- Créatinine + K+ à J7, M1, M3<br />
+- RAC mensuel jusqu'à stabilisation<br />
+- MAPA à M3 (vérification de la cible)</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_3">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>La triple néphroprotection (IEC/ARA2 + iSGLT2 + finérénone) est la stratégie optimale du diabétique hypertendu avec IRC. La cible PA est &lt; 120 mmHg en mesure standardisée. Chaque médicament a un mécanisme complémentaire. Surveillance rapprochée du K+ et de la créatinine indispensable.</strong></p>
+</blockquote>
+<hr />
+<h2 id="cas-diamant">💎 CAS DIAMANT</h2>
+<hr />
+<p><a id="cas-18"></a></p>
+<h3 id="cas-n18-hta-resistante-confirmee-candidature-a-la-denervation-renale">Cas n°18 — HTA résistante confirmée — candidature à la dénervation rénale</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M18 (HTA résistante), M40 (Innovations), M37-39 (HTA secondaire)<br />
+<strong>Durée estimée</strong> : 40 min<br />
+<strong>Thématique</strong> : Démarche complète avant dénervation rénale</p>
+<h4 id="presentation-initiale_4">Présentation initiale</h4>
+<p>M. David K., 53 ans, adressé en centre expert pour HTA résistante réfractaire. Hypertendu depuis 18 ans.</p>
+<p><strong>Traitement actuel optimisé depuis 18 mois</strong> :<br />
+- Périndopril 10 mg/j<br />
+- Amlodipine 10 mg/j<br />
+- Chlorthalidone 25 mg/j<br />
+- <strong>Spironolactone 50 mg/j</strong> (4e ligne depuis 12 mois)<br />
+- Bisoprolol 10 mg/j (5e ligne, FC 62 bpm)</p>
+<p><strong>PA au cabinet</strong> (3 consultations récentes) : 162/98, 159/97, 164/99 mmHg</p>
+<p><strong>Démarche préalable documentée</strong> :<br />
+- Brassard : adapté (circonf 34 cm → brassard large)<br />
+- AINS : aucun<br />
+- Apport sodé : natriurèse 24h = 82 mmol/j (≈ 4,8 g de sel/j = conforme)<br />
+- <strong>Dosages plasmatiques</strong> (LC-MS/MS) : tous les 5 médicaments détectés à concentrations thérapeutiques → <strong>observance vérifiée</strong><br />
+- SAHOS : appareillé par PPC (IAH résiduel &lt; 3)<br />
+- <strong>MAPA 24h</strong> : PAS diurne 156 mmHg, PAS nocturne 148 mmHg (non-dipper)</p>
+<p><strong>Bilan HTA secondaire complet</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Résultat</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAR</td>
+<td>12</td>
+<td>Normal (HAP non retenu)</td>
+</tr>
+<tr>
+<td>Métanéphrines libres</td>
+<td>Normales</td>
+<td>Phéochromocytome exclu</td>
+</tr>
+<tr>
+<td>Cortisol libre urinaire</td>
+<td>Normal</td>
+<td>Cushing exclu</td>
+</tr>
+<tr>
+<td>TDM surrénalien</td>
+<td>Normal</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Écho-Doppler rénal</td>
+<td>Artères rénales perméables, pas de sténose</td>
+<td>SAR exclue</td>
+</tr>
+<tr>
+<td>TSH</td>
+<td>Normale</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bilan d'organes cibles</strong> :<br />
+- Masse VG indexée : 128 g/m² (HVG, &gt; 115)<br />
+- VOP : 12,4 m/s (rigidité artérielle augmentée)<br />
+- RAC : 120 mg/g (microalbuminurie)<br />
+- DFG : 58 mL/min</p>
+<hr />
+<h4 id="question-1-validation-de-la-resistance-vraie">Question 1 — Validation de la résistance vraie</h4>
+<p><strong>Sur quels critères affirmez-vous l'HTA résistante vraie dans ce cas ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Critères de résistance vraie validés</strong> :</p>
+<ol>
+<li>
+<p>✓ <strong>PA persistante ≥ 140/90 malgré ≥ 3 antihypertenseurs</strong> incluant un diurétique<br />
+   → ici 5 agents incluant chlorthalidone + spironolactone</p>
+</li>
+<li>
+<p>✓ <strong>Observance vérifiée par dosages plasmatiques</strong> (LC-MS/MS positif pour les 5 agents)</p>
+</li>
+<li>
+<p>✓ <strong>MHD respectées</strong> (natriurèse &lt; 100 mmol/j, pas d'AINS, SAHOS traité)</p>
+</li>
+<li>
+<p>✓ <strong>Confirmation par MAPA</strong> (PAS diurne 156 mmHg ≥ 135 = pas d'effet blouse blanche)</p>
+</li>
+<li>
+<p>✓ <strong>Causes secondaires exclues</strong> (HAP, phéochromocytome, SAR, Cushing)</p>
+</li>
+</ol>
+<p>→ <strong>HTA résistante vraie authentique</strong> — un des rares cas où la dénervation rénale peut être discutée</p>
+</blockquote>
+<hr />
+<h4 id="question-2-eligibilite-a-la-denervation-renale">Question 2 — Éligibilité à la dénervation rénale</h4>
+<p><strong>Ce patient est-il éligible ? Quels critères évaluez-vous ? Quels examens demandez-vous ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Critères d'éligibilité à la dénervation rénale</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Chez M. David K.</th>
+<th>Évaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTA résistante vraie documentée</td>
+<td>✓</td>
+<td>Critère rempli</td>
+</tr>
+<tr>
+<td>Observance vérifiée</td>
+<td>✓</td>
+<td>Critère rempli</td>
+</tr>
+<tr>
+<td>Causes secondaires exclues</td>
+<td>✓</td>
+<td>Critère rempli</td>
+</tr>
+<tr>
+<td>DFG ≥ 30 mL/min</td>
+<td>58 mL/min ✓</td>
+<td>Critère rempli</td>
+</tr>
+<tr>
+<td>Anatomie artérielle rénale favorable</td>
+<td>À vérifier</td>
+<td>Artères rénales ≥ 4 mm, pas de sténose, pas d'anomalie</td>
+</tr>
+<tr>
+<td>Pas de contre-indication médicale</td>
+<td>À vérifier</td>
+<td>IC décompensée, rein unique, antécédents vasculaires rénaux</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examens complémentaires</strong> :<br />
+- <strong>Angio-IRM des artères rénales</strong> : évaluation anatomique (diamètre, longueur artérielle, bifurcations, anomalies)<br />
+- Artères rénales acceptables pour la procédure si : diamètre ≥ 4 mm, longueur ≥ 20 mm accessible, pas de sténose (même modérée)<br />
+- Échocardiographie + bilan CV complet (risque per-procédure)</p>
+<p><strong>Information et consentement</strong> :<br />
+- Présenter les données actuelles SPYRAL (réduction PAS moyenne -7 mmHg en MAPA)<br />
+- Hétérogénéité de réponse : 20-30 % de non-répondeurs<br />
+- Alternatives médicales : doxazosine, minoxidil<br />
+- Procédure non remboursée à ce jour en France (hors protocole de recherche)</p>
+<p><strong>Décision en RCP</strong> : réunion multidisciplinaire (néphrologue, cardiologue, équipe de dénervation)</p>
+</blockquote>
+<hr />
+<h4 id="question-3-alternative-avant-la-denervation">Question 3 — Alternative avant la dénervation</h4>
+<p><strong>Y a-t-il une option médicale non encore essayée ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Minoxidil</strong> (non encore prescrit) :<br />
+- Vasodilatateur artériolaire direct, très puissant<br />
+- Réservé à l'HTA réfractaire sévère (ne jamais en 1ère intention)<br />
+- Dose : 5-10 mg × 2/j, jusqu'à 40-80 mg/j<br />
+- <strong>Effets indésirables</strong> : rétention hydrosodée (associer diurétique de l'anse), hypertrichose (30 %), réflexe tachycardique (associer β-bloquant)<br />
+- Peut réduire PA de 20-30 mmHg supplémentaires chez les vrais résistants</p>
+<p><strong>Clonidine</strong> :<br />
+- Antihypertenseur central α2 agoniste<br />
+- Réduction PAS de 10-15 mmHg<br />
+- Effets secondaires : somnolence, sécheresse buccale, syndrome de rebond à l'arrêt brutal</p>
+<p><strong>Position</strong> :<br />
+- Proposer minoxidil comme ultime recours médicamenteux avant dénervation<br />
+- Si réponse insuffisante après 3 mois à dose optimale → confirmer la candidature à la dénervation dans le cadre d'un protocole de recherche</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_4">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>La dénervation rénale n'est envisageable que pour l'HTA résistante vraie documentée (observance prouvée, causes secondaires exclues, MAPA confirmant). La réduction moyenne de PA est de -7 mmHg (SPYRAL). Elle doit être proposée en RCP dans des centres experts.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-19"></a></p>
+<h3 id="cas-n19-hyperaldosteronisme-primaire-bilateral-workup-complet">Cas n°19 — Hyperaldostéronisme primaire bilatéral : workup complet</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M37 (HAP complet), M30 (Diurétiques), M12 (Diagnostic)<br />
+<strong>Durée estimée</strong> : 40 min<br />
+<strong>Thématique</strong> : Dépistage, confirmation, latéralisation et traitement au long cours de l'HAP</p>
+<h4 id="presentation-initiale_5">Présentation initiale</h4>
+<p>Mme Claire V., 55 ans, hypertendue depuis 12 ans, est adressée en centre de référence pour HTA résistante avec hypokaliémie répétée. Sous quadrithérapie (ARA2 + ICC + thiazidique + anti-aldostérone 50 mg).</p>
+<p><strong>Bilan</strong> :<br />
+- K+ : 3,1 mmol/L (sous supplémentation potassique 6 g/j)<br />
+- Aldostérone : 34 ng/dL<br />
+- Rénine directe : 0,4 mUI/L<br />
+- RAR : 85 → <strong>très évocateur HAP</strong></p>
+<p><strong>Test de confirmation (charge sodée IV)</strong> :<br />
+- Aldostérone post-charge : <strong>22 ng/dL</strong> (N &lt; 10) → <strong>HAP confirmé</strong></p>
+<p><strong>TDM surrénalien</strong> : glandes surrénales d'aspect normal, pas d'adénome visible.</p>
+<p><strong>Cathétérisme des veines surrénaliennes (CVS)</strong> :<br />
+| Site | Aldostérone (pg/mL) | Cortisol (µg/dL) | Rapport A/C |<br />
+|------|--------------------|--------------------|-------------|<br />
+| VCI | 280 | 11 | 25,5 |<br />
+| Surrénale droite | 3 200 | 380 | 8,4 |<br />
+| Surrénale gauche | 4 100 | 410 | 10,0 |</p>
+<hr />
+<h4 id="question-1-interpretation-du-cvs">Question 1 — Interprétation du CVS</h4>
+<p><strong>Interprétez les résultats du cathétérisme des veines surrénaliennes.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Méthode d'interprétation</strong> :<br />
+- Rapport aldostérone/cortisol (A/C) de chaque côté, corrigé par le cortisol pour tenir compte de la dilution<br />
+- <strong>Index de sélectivité</strong> : Cortisol surrénalien / cortisol VCI &gt; 3 → le cathétérisme est techniquement valide<br />
+  - Ici : côté droit : 380/11 = 34,5 ✓ ; côté gauche : 410/11 = 37,3 ✓ → CVS valide</p>
+<ul>
+<li><strong>Index de latéralisation</strong> : rapport A/C du côté dominant / rapport A/C du côté non dominant</li>
+<li>Côté dominant : gauche (A/C = 10,0)... mais droit (8,4)</li>
+<li>Les deux sont très proches et les deux sont supérieurs à la VCI (25,5)</li>
+<li><strong>Index de latéralisation</strong> : 10,0 / 8,4 = <strong>1,2</strong> (&lt; 4 = pas de latéralisation significative)</li>
+</ul>
+<p><strong>Conclusion</strong> :<br />
+- <strong>HAP bilatéral</strong> (les deux glandes hypersécrétrices, sans prédominance d'un côté)<br />
+- Le TDM surrénalien ne montrant pas d'adénome est cohérent avec une hyperplasie bilatérale<br />
+- <strong>Chirurgie NON indiquée</strong> (surrénalectomie bilatérale = insuffisance surrénalienne)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-traitement-medical-au-long-cours">Question 2 — Traitement médical au long cours</h4>
+<p><strong>Quel traitement médicamenteux instaurez-vous pour l'HAP bilatéral ? Quels objectifs et surveillance ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Traitement de choix : anti-aldostérone</strong> (bloqueur compétitif du récepteur minéralocorticoïde)</p>
+<p><strong>Spironolactone</strong> (traitement de référence) :<br />
+- Dose : <strong>50-100 mg/j</strong> (jusqu'à 400 mg si nécessaire)<br />
+- <strong>Objectif K+ ≥ 3,5 mmol/L</strong> sans supplémentation<br />
+- <strong>Objectif PA</strong> &lt; 135/85 mmHg (MAPA)</p>
+<p><strong>Effets secondaires de la spironolactone</strong> :<br />
+- Gynécomastie/mastodynie (15-20 % des hommes) → switch vers éplérénone<br />
+- Dysfonction érectile<br />
+- Cycles menstruels irréguliers</p>
+<p><strong>Éplérénone</strong> (alternative) :<br />
+- Plus sélective (pas d'anti-androgénique → moins de gynécomastie)<br />
+- Dose : <strong>50-200 mg/j</strong><br />
+- Moins puissante que la spironolactone à dose équivalente (dose double nécessaire)</p>
+<p><strong>Surveillance au long cours</strong> :<br />
+- <strong>Kaliémie</strong> : M1, M3, puis tous les 6 mois (risque d'hyperkaliémie si IRC ou IEC associé)<br />
+- <strong>Créatinine, DFG</strong> : idem<br />
+- <strong>PA</strong> : MAPA annuelle<br />
+- <strong>TDM surrénalien</strong> : tous les 2-3 ans (risque d'apparition d'adénome sur hyperplasie)</p>
+<p><strong>Option investigationnelle</strong> :<br />
+- <strong>Lorundrostat</strong> (inhibiteur CYP11B2) : en essais cliniques, potentiellement supérieur pour l'HAP bilatéral</p>
+</blockquote>
+<hr />
+<h4 id="question-3-cas-complexe-hypokaliemie-severe-persistante">Question 3 — Cas complexe : hypokaliémie sévère persistante</h4>
+<p><strong>Malgré 100 mg de spironolactone + supplémentation K+, la kaliémie reste à 2,8 mmol/L. Que faites-vous ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Causes de résistance</strong> :<br />
+1. Mauvaise absorption de la spironolactone (prise sans graisses → alimentation avec graisse pour l'absorption)<br />
+2. Dose insuffisante → augmenter à <strong>200-400 mg/j</strong> (si toléré)<br />
+3. Présence de médicaments interférant (ARA2 peut être insuffisant → passer à IEC)<br />
+4. HAP très sévère (volume de sécrétion très important)<br />
+5. Cause surajoutée : vomissements, diarrhée, diurétique thiazidique en surdosage</p>
+<p><strong>Actions</strong> :<br />
+1. <strong>Augmenter spironolactone à 200 mg/j</strong> en deux prises, avec un repas<br />
+2. <strong>Arrêt ou réduction du thiazidique</strong> (perte potassique)<br />
+3. Réévaluer la prise concomitante de médicaments kaliurétiques<br />
+4. <strong>K+ IV</strong> si &lt; 2,5 mmol/L ou symptômes (crampes sévères, arythmie)<br />
+5. Réévaluation du CVS à 6 mois (technique parfois non concluante)<br />
+6. Discussion de l'adénomectomie exploratrice cœlioscopique bilatérale si très résistant (exceptionnel)</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_5">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>L'HAP bilatéral est traité médicalement (spironolactone ou éplérénone) — jamais par chirurgie bilatérale. Le CVS est indispensable avant toute décision chirurgicale. L'index de latéralisation &lt; 4 signe la bilatéralité. La kaliémie est le marqueur principal d'efficacité du traitement.</strong></p>
+</blockquote>
+<hr />
+<p><a id="cas-20"></a></p>
+<h3 id="cas-n20-hta-fibrillation-auriculaire-insuffisance-cardiaque-optimisation-therapeutique">Cas n°20 — HTA + fibrillation auriculaire + insuffisance cardiaque — optimisation thérapeutique</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilisés</strong> : M20 (Complications cardiaques), M28-32 (Traitement), M34 (Sujet âgé)<br />
+<strong>Durée estimée</strong> : 40 min<br />
+<strong>Thématique</strong> : HTA dans le contexte d'une cardiopathie évoluée — arbitrage thérapeutique complexe</p>
+<h4 id="presentation-initiale_6">Présentation initiale</h4>
+<p>Mme Jacqueline P., 74 ans, hospitalisée pour insuffisance cardiaque décompensée (OAP). Antécédents : HTA depuis 22 ans, FA persistante anticoagulée (apixaban), IC à FEVG réduite (FEVG 38 %) connue depuis 4 ans sur cardiopathie hypertensive, IRC modérée (DFG 42 mL/min).</p>
+<p><strong>Traitement avant hospitalisation</strong> :<br />
+- Bisoprolol 10 mg/j<br />
+- Furosémide 80 mg/j<br />
+- Éplérénone 25 mg/j<br />
+- Apixaban 5 mg × 2/j<br />
+- Amlodipine 5 mg/j (prescrite par le cardiologue ambulatoire pour les chiffres tensionnels élevés)<br />
+- Ramipril 5 mg/j</p>
+<p><strong>À l'admission</strong> :<br />
+- PA : 158/92 mmHg<br />
+- FC : 98 bpm (FA)<br />
+- SpO2 : 88 % en air ambiant<br />
+- Crépitants jusqu'aux apex<br />
+- Orthopnée, oedèmes périphériques +++<br />
+- BNP : 1 840 pg/mL<br />
+- Créatinine : 156 µmol/L (DFG 36 mL/min, aggravation)<br />
+- Kaliémie : 4,7 mmol/L</p>
+<blockquote>
+<p>[MEDIA: 📊 MHTA-CC20-001 — Algorithme de prise en charge de l'IC à FEVG réduite — séquence d'introduction des thérapeutiques recommandées par ESC 2021]</p>
+</blockquote>
+<hr />
+<h4 id="question-1-probleme-medicamenteux-critique">Question 1 — Problème médicamenteux critique</h4>
+<p><strong>Identifiez le problème posé par l'amlodipine dans ce contexte.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Amlodipine est CONTRE-INDIQUÉE dans l'IC à FEVG réduite (ICFEr)</strong> :<br />
+- Les ICC dihydropyridines (amlodipine, nifédipine, félodipine) ont un <strong>effet inotrope négatif</strong> direct<br />
+- Dans une ICFEr (FEVG 38 %), ils peuvent aggraver la dysfonction systolique<br />
+- Étude V-HeFT III et méta-analyses : pas de bénéfice et tendance à l'aggravation dans l'ICFEr sévère<br />
+- <strong>Exception</strong> : amlodipine est neutre dans les ICFEr légères à modérées (PRAISE trial) et peut être utilisée pour contrôle tensionnel si absolument nécessaire après optimisation des autres traitements</p>
+<p><strong>Action</strong> : Discussion sur l'arrêt de l'amlodipine (ou réduction à 2,5 mg) après résolution de la décompensation, en optimisant les autres antihypertenseurs.</p>
+<p><strong>Alternative pour l'HTA dans l'ICFEr</strong> :<br />
+- Optimiser IEC → passage à <strong>sacubitril/valsartan</strong> (ARNI, Entresto®) si PA ≥ 100 systolique<br />
+- Optimiser β-bloquant<br />
+- Optimiser anti-aldostérone<br />
+- iSGLT2 (dapagliflozine)</p>
+</blockquote>
+<hr />
+<h4 id="question-2-strategie-de-sortie-dhospitalisation">Question 2 — Stratégie de sortie d'hospitalisation</h4>
+<p><strong>Proposez la stratégie médicamenteuse optimale pour cette patiente à la sortie.</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Objectif</strong> : traitement optimal de l'ICFEr (les 4 piliers ESC 2021) + contrôle tensionnel + anticoagulation FA + IRC</p>
+<p><strong>Les 4 piliers de l'ICFEr</strong> :</p>
+<ol>
+<li>
+<p><strong>ARNI (sacubitril/valsartan, Entresto®)</strong> — remplace le ramipril :<br />
+   - Supérieur aux IEC sur mortalité CV et hospitalisation (PARADIGM-HF, 2014)<br />
+   - Bénéfice antihypertenseur additionnel (-5 à -8 mmHg PAS)<br />
+   - Délai 36h après dernière dose IEC<br />
+   - Cible : Entresto 97/103 mg × 2/j<br />
+   - CI : DFG &lt; 30, K+ &gt; 5,4, angiœdème sous IEC</p>
+</li>
+<li>
+<p><strong>β-bloquant (bisoprolol 10 mg)</strong> :<br />
+   - Maintenir à la dose actuelle (contrôle FC FA)<br />
+   - FC cible en FA : 60-90 bpm au repos</p>
+</li>
+<li>
+<p><strong>Anti-aldostérone (éplérénone 25-50 mg)</strong> :<br />
+   - Maintenir, surveiller K+ (DFG 36 → risque hyperkaliémie, ne pas dépasser 25-50 mg)</p>
+</li>
+<li>
+<p><strong>iSGLT2 (dapagliflozine 10 mg)</strong> :<br />
+   - Bénéfice ICFEr indépendant du diabète (DAPA-HF)<br />
+   - DFG 36 ≥ 20 → autorisé<br />
+   - Diurèse osmotique → peut permettre réduction furosémide</p>
+</li>
+</ol>
+<p><strong>FA</strong> :<br />
+- <strong>Maintenir apixaban</strong> (anticoagulation optimale)<br />
+- Évaluer cardioversion si rythme sinusal possible (echo-Doppler)</p>
+<p><strong>HTA</strong> :<br />
+- Cible PAS : <strong>120-130 mmHg</strong> (ICFEr, DFG 36)<br />
+- L'ARNI + bisoprolol + éplérénone + iSGLT2 assurent un contrôle tensionnel souvent suffisant<br />
+- <strong>Arrêt de l'amlodipine</strong> si PA contrôlée sous le quadruplet</p>
+<p><strong>Furosémide</strong> :<br />
+- Ajuster selon les signes congestifs (descendre à 40-60 mg si dégorgement obtenu)</p>
+<p><strong>IRC</strong> :<br />
+- Surveillance créatinine + K+ à J7, J14, M1 après modification thérapeutique</p>
+</blockquote>
+<hr />
+<h4 id="question-3-cibles-et-suivi">Question 3 — Cibles et suivi</h4>
+<p><strong>Quelles sont vos cibles et votre calendrier de suivi ?</strong></p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :</p>
+<p><strong>Cibles thérapeutiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Cible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PA (MAPA)</td>
+<td>120-130 mmHg</td>
+</tr>
+<tr>
+<td>FC (FA)</td>
+<td>60-90 bpm repos</td>
+</tr>
+<tr>
+<td>HbA1c (si DT2)</td>
+<td>7-8 % (patient âgé, IRC)</td>
+</tr>
+<tr>
+<td>DFG</td>
+<td>Stabilisation (pas de récupération attendue)</td>
+</tr>
+<tr>
+<td>K+</td>
+<td>4,0-5,2 mmol/L</td>
+</tr>
+<tr>
+<td>BNP</td>
+<td>&lt; 500 pg/mL</td>
+</tr>
+<tr>
+<td>FEVG</td>
+<td>Amélioration possible (35-45 %) sous traitement optimal à 6-12 mois</td>
+</tr>
+<tr>
+<td>INR/anti-Xa</td>
+<td>Zone thérapeutique (apixaban non monitoré)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Calendrier de suivi</strong> :<br />
+- <strong>J7</strong> : créatinine, K+, PA, poids (ajustement furosémide)<br />
+- <strong>J14</strong> : idem<br />
+- <strong>M1</strong> : bilan complet, ECG, PA MAPA<br />
+- <strong>M3</strong> : échocardiographie (réévaluation FEVG), bilan métabolique complet<br />
+- <strong>M6</strong> : bilan long terme, discussion cardioversion si rythme sinusal souhaitable<br />
+- <strong>Annuel</strong> : échocardiographie, test de marche 6 min, bilan rénal</p>
+</blockquote>
+<hr />
+<h4 id="message-a-retenir_6">Message à retenir</h4>
+<blockquote>
+<p>💡 <strong>Les ICC dihydropyridines sont contre-indiqués dans l'ICFEr. Le quadruplet ARNI + β-bloquant + anti-aldostérone + iSGLT2 est le traitement de référence de l'ICFEr et assure souvent un contrôle tensionnel suffisant. L'ARNI (sacubitril/valsartan) remplace avantageusement les IEC dans l'ICFEr avec HTA.</strong></p>
+</blockquote>
+<hr />
+<h2 id="synthese-pedagogique-les-20-cas-en-10-messages-cles">Synthèse pédagogique — Les 20 cas en 10 messages clés</h2>
+<table>
+<thead>
+<tr>
+<th>Thème</th>
+<th>Message essentiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnostic</td>
+<td>Toujours confirmer par ≥ 2 consultations ou mesure hors cabinet (sauf grade 3)</td>
+</tr>
+<tr>
+<td>Mesure</td>
+<td>La nifédipine sublinguale est proscrite. Les 3 mesures, 1-2 min d'intervalle</td>
+</tr>
+<tr>
+<td>Phénotypes</td>
+<td>MAPA indispensable pour identifier blouse blanche, masquée, non-dipping</td>
+</tr>
+<tr>
+<td>Grossesse</td>
+<td>IEC/ARA2 = contre-indication absolue. MgSO4 = anticonvulsivant de référence</td>
+</tr>
+<tr>
+<td>Résistance</td>
+<td>Pseudo-résistance toujours en premier (observance, sel, AINS, SAHOS)</td>
+</tr>
+<tr>
+<td>Urgences</td>
+<td>Baisse ≤ 25 % PAM/h sauf dissection (&lt; 20 min, PAS &lt; 120, FC &lt; 60)</td>
+</tr>
+<tr>
+<td>HAP</td>
+<td>RAR + confirmation + CVS + traitement chirurgical si unilatéral</td>
+</tr>
+<tr>
+<td>Phéochromocytome</td>
+<td>α-bloquant AVANT β-bloquant. Métanéphrines plasmatiques = référence</td>
+</tr>
+<tr>
+<td>ICFEr</td>
+<td>ICC DHP = contre-indiqués. Quadruplet ARNI + BB + anti-aldo + iSGLT2</td>
+</tr>
+<tr>
+<td>Néphroprotection</td>
+<td>Triple : IEC/ARA2 + iSGLT2 + finérénone. Cible PA &lt; 120 mmHg</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Fin du cahier de cas cliniques HTA — 20 cas complets (Niveaux Bronze, Argent, Or, Diamant)</em><br />
+<em>Partie 3/3 — Cas 14 à 20</em></p>
+<p><em>Dernière mise à jour : 15 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

@@ -1,0 +1,964 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-fiv-et-amp">CAHIER DES CHARGES — FORMATION FIV ET AMP</h1>
+<h2 id="partie-8-techniques-avancees-modules-26-29">Partie 8 — Techniques avancées (Modules 26-29)</h2>
+<p><strong>Date</strong> : 17 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Fécondation In Vitro et Assistance Médicale à la Procréation<br />
+<strong>Plateforme</strong> : VERTEX© / ReproSim©</p>
+<hr />
+<h1 id="module-26-diagnostic-preimplantatoire-pgt-a-pgt-m-pgt-sr">MODULE 26 : DIAGNOSTIC PRÉIMPLANTATOIRE — PGT-A, PGT-M, PGT-SR</h1>
+<p><strong>Partie</strong> : VIII — Techniques avancées<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 16-19 (laboratoire FIV/ICSI, culture embryonnaire, classification), Module 22 (cryopréservation), Module 5 (génétique de la reproduction)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 BIOLOGISTE 🟣 GÉNÉTICIEN</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme R., 41 ans, consulte après 4 échecs d'implantation en FIV-ICSI. Ses embryons étaient de bonne morphologie (blastocystes 4AB et 3BB selon Gardner). L'endomètre était trilamellaire à 9 mm. Bilan immunologique négatif, ERA normal. Son gynécologue vous adresse la patiente pour discuter d'un PGT-A. Vous disposez de 6 blastocystes vitrifiés de la dernière tentative. L'interne vous demande : *« Est-ce qu'on biopsie les 6 ? Le NGS va nous dire lesquels sont euploïdes, et on transfert le meilleur — c'est logique, non ? »* La réponse est moins simple qu'il n'y paraît. Le PGT-A fait l'objet de l'une des controverses les plus vives de la médecine reproductive contemporaine — entre promesses technologiques et données probantes parfois décevantes.</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Différencier</strong> les trois types de PGT (PGT-A, PGT-M, PGT-SR) en termes d'indications, de techniques et de résultats attendus</li>
+<li><strong>Évaluer</strong> de manière critique les données probantes du PGT-A en distinguant les populations susceptibles d'en bénéficier de celles pour lesquelles le bénéfice est incertain</li>
+<li><strong>Décrire</strong> la technique de biopsie du trophectoderme au stade blastocyste (J5-J6) et expliquer pourquoi elle a supplanté la biopsie au stade clivage (J3)</li>
+<li><strong>Interpréter</strong> un résultat de PGT-A (euploïde, aneuploïde, mosaïque) et ses implications pour la stratégie de transfert</li>
+<li><strong>Expliquer</strong> les principes du PGT-M (haplotypage, karyomapping) et les étapes de sa mise en place, du conseil génétique au transfert</li>
+<li><strong>Discuter</strong> les limites biologiques du PGT (mosaïcisme, autocorrection embryonnaire, faux positifs/négatifs) et les perspectives non invasives (niPGT-A)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-261-pgt-a-aneuploidies-de-la-promesse-technologique-a-la-controverse-clinique">Section 26.1 — PGT-A (aneuploïdies) : de la promesse technologique à la controverse clinique</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Si un embryon est morphologiquement parfait (blastocyste 5AA) mais aneuploïde au PGT-A, faut-il le détruire ? Et si un embryon mosaïque à 40% de cellules anormales a le potentiel de s'autocorriger et de donner un enfant sain — comment intégrer cette incertitude dans la décision clinique ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le PGT-A (<em>Preimplantation Genetic Testing for Aneuploidies</em>, anciennement PGS — <em>Preimplantation Genetic Screening</em>) en exposant l'évolution historique des techniques, les indications actuelles, les résultats et surtout les controverses majeures qui structurent le débat :</p>
+<ul>
+<li>
+<p><strong>Rationnel et indications</strong> : le module doit expliquer que le PGT-A repose sur un constat biologique fondamental — le taux d'aneuploïdie embryonnaire augmente avec l'<strong>âge maternel</strong>, passant d'environ 30% chez les femmes de &lt;35 ans à plus de 70-80% au-delà de 42 ans <em>(Franasiak et al., Fertil Steril, 2014)</em>. Les indications classiques comprennent l'<strong>âge maternel avancé</strong> (&gt;38 ans), les <strong>fausses couches à répétition</strong> (≥2 pertes avant 12 SA), les <strong>échecs répétés d'implantation</strong> (≥3 transferts sans grossesse avec embryons de bonne qualité), et les formes sévères d'<strong>infertilité masculine</strong> (OATS sévère). Le module doit préciser que l'objectif du PGT-A n'est pas d'augmenter le nombre de bébés par couple, mais de <strong>réduire le temps jusqu'à la grossesse</strong> (<em>time-to-pregnancy</em>) en évitant le transfert d'embryons voués à l'échec ou à la fausse couche.</p>
+</li>
+<li>
+<p><strong>Évolution technique — de la FISH au NGS</strong> : le module doit retracer les trois générations technologiques du PGT-A pour montrer comment les limites de chaque technique ont alimenté les controverses. La <strong>FISH</strong> (<em>Fluorescence In Situ Hybridization</em>), première technique utilisée dans les années 1990, n'analysait que 5-12 chromosomes sur 23 paires — elle est désormais <strong>obsolète</strong> car elle manquait les aneuploïdies des chromosomes non testés et générait des faux négatifs inacceptables. L'<strong>aCGH</strong> (<em>array Comparative Genomic Hybridization</em>) a permis l'analyse des 24 chromosomes simultanément (22 autosomes + X + Y), révolutionnant la fiabilité du screening — mais avec un coût élevé et une résolution limitée pour le mosaïcisme. Le <strong>NGS</strong> (<em>Next Generation Sequencing</em>) est le standard actuel (depuis ~2015) : il offre une <strong>analyse simultanée des 24 chromosomes</strong> avec une résolution supérieure, la capacité de détecter le <strong>mosaïcisme</strong> (pourcentage de cellules aneuploïdes dans la biopsie), une possibilité de quantification des segments dupliqués/délétés, et un coût par embryon en diminution progressive <em>(Fiorentino et al., Hum Reprod, 2014)</em>. Le <strong>SNP array</strong> constitue une alternative utilisée par certains laboratoires, permettant en plus l'identification de la triploïdie et des disomies uniparentales.</p>
+</li>
+<li>
+<p><strong>Technique de biopsie — trophectoderme vs blastomère</strong> : le module doit expliquer pourquoi la biopsie au stade <strong>blastocyste</strong> (J5-J6) a supplanté la biopsie au stade <strong>clivage</strong> (J3, biopsie d'un blastomère sur 6-8 cellules). La biopsie J3 retirait <strong>12-15% de la masse cellulaire</strong> totale de l'embryon — un dommage significatif associé à une réduction de 10-15% du potentiel d'implantation <em>(Scott et al., Fertil Steril, 2013)</em>. De plus, le mosaïcisme est <strong>physiologiquement fréquent</strong> au stade clivage (50-70% des embryons à J3 contiennent au moins une cellule aneuploïde) — une seule cellule biopsiée ne représente pas nécessairement le reste de l'embryon. La biopsie du trophectoderme (5-10 cellules du futur placenta, prélevées par aspiration au laser ou mécaniquement) n'altère pas la <strong>masse cellulaire interne</strong> (futur fœtus), réduit considérablement le mosaïcisme confondant, et offre un échantillon plus représentatif <em>(Scott et al., Fertil Steril, 2013 ; Capalbo et al., Hum Reprod, 2016)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse majeure — Le PGT-A améliore-t-il les résultats de la FIV ?</strong><br />
+Le PGT-A fait l'objet d'un débat intense entre ses partisans et ses détracteurs, structuré autour de deux études pivotales :<br />
+- <strong>Contre le PGT-A universel</strong> : l'étude <strong>STAR</strong> (Munné et al., <em>Fertil Steril</em>, 2019 — RCT multicentrique, n=661) n'a montré <strong>aucun bénéfice significatif</strong> du PGT-A par NGS chez les <em>good prognosis patients</em> de &lt;38 ans en termes de taux de naissance vivante par cycle de stimulation (50,0% PGT-A vs 45,7% contrôle, p=0,36). Mastenbroek et al. (<em>N Engl J Med</em>, 2007) avaient déjà montré une <strong>réduction</strong> du taux de grossesse avec le PGT-A par FISH (mais la technique était alors obsolète).<br />
+- <strong>Pour le PGT-A ciblé</strong> : les défenseurs argumentent que le bénéfice réside dans des sous-populations spécifiques : femmes &gt;38 ans (où le taux d'aneuploïdie dépasse 50%), fausses couches à répétition, échecs d'implantation. L'étude de Rubio et al. (<em>Fertil Steril</em>, 2017) a montré un bénéfice chez les &gt;38 ans (taux de grossesse évolutive par transfert 52% vs 33%, p=0,003).<br />
+- <strong>Positions des sociétés savantes</strong> : l'<strong>ASRM</strong> (2018) considère les preuves « insuffisantes pour recommander le PGT-A universel ». L'<strong>ESHRE</strong> (position paper, 2020) recommande une approche individualisée, pas un screening systématique. L'ABM française n'a pas émis de recommandation en faveur du PGT-A systématique.<br />
+- <strong>Synthèse actuelle</strong> : le PGT-A est un outil de <strong>sélection embryonnaire</strong> qui améliore le taux d'implantation <strong>par transfert</strong> mais ne modifie pas nécessairement le taux cumulatif de naissance vivante par cycle complet (car les embryons euploïdes auraient de toute façon implanté in fine). Son intérêt principal est de <strong>réduire le temps jusqu'à la grossesse</strong> et le nombre de transferts infructueux — un bénéfice psychologique et logistique non négligeable, mais qui doit être mis en balance avec le coût, le risque de faux positifs et la perte d'embryons potentiellement viables (📊 Niveau de preuve : I-II pour l'absence de bénéfice universel &lt;38 ans ; II-III pour le bénéfice &gt;38 ans).</p>
+<p>💡 <strong>Mnémonique — SCREEN</strong> (Limites du PGT-A) :<br />
+<strong>S</strong>elf-correction embryonnaire possible — <strong>C</strong>oût élevé non remboursé — <strong>R</strong>ésultats discordants selon les populations — <strong>E</strong>rreur de mosaïcisme (faux positifs) — <strong>E</strong>vidence insuffisante pour le screening universel — <strong>N</strong>GS pas infaillible (concordance biopsie/ICM ~95%)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Cas décisionnel — Mme T., 34 ans, 1re tentative FIV-ICSI, 8 blastocystes vitrifiés de bonne qualité.<br />
+1. Le PGT-A est-il recommandé dans ce cas selon les positions ESHRE/ASRM ? Justifiez.<br />
+2. Si la patiente insiste pour un PGT-A, quels sont les arguments à lui présenter pour et contre ?<br />
+3. Si le PGT-A révèle 3 embryons euploïdes, 3 aneuploïdes et 2 mosaïques (30-40%), quelle est votre stratégie de transfert ?<br />
+→ <em>1. Non recommandé — patiente &lt;38 ans, bon pronostic, 1re tentative, données STAR négatives. 2. Pour : réduction du temps jusqu'à la grossesse, réduction des fausses couches sur aneuploïdie ; Contre : coût, risque de faux positif (perte d'embryons viables), pas de bénéfice prouvé sur le taux cumulatif dans cette population. 3. Transférer en priorité les euploïdes (un par un — SET), puis discuter les mosaïques low-level selon les recommandations PGDIS 2021 si les euploïdes échouent.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV26-S01-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Évolution des techniques PGT : FISH → aCGH → NGS — chronologie, résolution et limites de chaque génération (Identifiez pourquoi la FISH a été abandonnée)</td>
+</tr>
+<tr>
+<td>MFIV26-S01-002</td>
+<td>🎬 VIDÉO</td>
+<td>Biopsie du trophectoderme au laser : geste pas-à-pas sur blastocyste J5 (Observez le nombre de cellules prélevées et la zone de biopsie)</td>
+</tr>
+<tr>
+<td>MFIV26-S01-003</td>
+<td>📊 GRAPHIQUE</td>
+<td>Taux d'aneuploïdie embryonnaire par tranche d'âge maternel : 25-45 ans — données Franasiak et al. 2014</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chaîne de raisonnement</strong> : Âge maternel avancé → Augmentation des erreurs méiotiques (non-disjonction) → Taux d'aneuploïdie embryonnaire élevé → Échecs d'implantation et fausses couches → PGT-A par NGS sur biopsie de trophectoderme → Sélection d'embryons euploïdes → Meilleur taux d'implantation par transfert → Mais pas de bénéfice cumulatif prouvé chez les &lt;38 ans.</p>
+<p>La section suivante aborde l'interprétation du mosaïcisme — un défi qui remet en question la vision binaire « euploïde vs aneuploïde ».</p>
+<hr />
+<h3 id="section-262-mosaicisme-embryonnaire-la-zone-grise-du-pgt-a">Section 26.2 — Mosaïcisme embryonnaire : la zone grise du PGT-A</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Un embryon dont la biopsie de trophectoderme révèle 40% de cellules trisomiques 16 et 60% de cellules euploïdes — est-il « malade » ou « sain » ? Cette question apparemment simple met en lumière la limite fondamentale du PGT-A : nous biopsiions le futur placenta pour en déduire le statut du futur fœtus.</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit expliquer la biologie du mosaïcisme embryonnaire et ses conséquences sur la prise de décision clinique :</p>
+<ul>
+<li>
+<p><strong>Définition et biologie</strong> : le module doit préciser que le <strong>mosaïcisme</strong> désigne la présence de deux (ou plusieurs) populations cellulaires de constitution chromosomique différente au sein d'un même embryon. Contrairement aux aneuploïdies méiotiques (présentes dans toutes les cellules dès la fécondation — trisomie homogène), le mosaïcisme résulte d'<strong>erreurs mitotiques</strong> survenant lors des premières divisions de clivage. Ces erreurs (non-disjonction mitotique, anaphase lag) sont fréquentes : 15-90% des embryons préimplantatoires présentent un degré de mosaïcisme selon les études et les méthodes d'analyse <em>(Taylor et al., Hum Reprod, 2014)</em>. Le module doit expliquer que le mosaïcisme n'est pas un « défaut » pathologique mais un phénomène biologique normal des premières divisions — le génome embryonnaire est instable avant l'activation complète des checkpoints mitotiques.</p>
+</li>
+<li>
+<p><strong>Capacité d'autocorrection</strong> : le module doit présenter les mécanismes par lesquels un embryon mosaïque peut donner un individu chromosomiquement normal — <strong>apoptose sélective</strong> des cellules aneuploïdes (les cellules anormales sont éliminées par mort cellulaire programmée), <strong>avantage prolifératif</strong> des cellules euploïdes (qui se divisent plus efficacement et finissent par « diluer » les cellules anormales), et <strong>ségrégation préférentielle</strong> des cellules aneuploïdes vers le trophectoderme (futur placenta) plutôt que vers la masse cellulaire interne (futur fœtus) <em>(Bolton et al., Nature Communications, 2016)</em>. Cette autocorrection explique pourquoi certains embryons classés « mosaïques » au PGT-A donnent des enfants parfaitement sains.</p>
+</li>
+<li>
+<p><strong>Classification du mosaïcisme — PGDIS 2021</strong> : le module doit présenter la classification du <em>Preimplantation Genetic Diagnosis International Society</em> (recommandations 2021, adaptées de PGDIS 2019) qui distingue trois catégories en fonction du pourcentage de cellules aneuploïdes dans la biopsie : <strong>mosaïcisme low-level</strong> (&lt;20% — considéré comme « bruit de fond » technique, embryon classé euploïde), <strong>mosaïcisme intermédiaire</strong> (20-80% — zone grise, transfert possible après conseil génétique approfondi avec information sur les incertitudes), et <strong>mosaïcisme high-level</strong> (&gt;80% — classé aneuploïde, transfert déconseillé). Le module doit nuancer que ces seuils sont <strong>arbitraires</strong> — la biologie n'a pas de frontière nette à 20% ou 80% — et que la concordance entre le résultat de la biopsie (trophectoderme) et le statut réel du fœtus (masse cellulaire interne) n'est que de 93-97% <em>(Capalbo et al., Hum Reprod, 2017)</em>.</p>
+</li>
+<li>
+<p><strong>Transfert d'embryons mosaïques</strong> : le module doit présenter les données de Greco et al. (<em>N Engl J Med</em>, 2015) — série pionnière de transfert d'embryons mosaïques (n=18) avec un taux de grossesse de 33% et des naissances saines documentées — puis les données de registres plus larges (Viotti et al., <em>Hum Genet</em>, 2021) confirmant que le transfert d'embryons mosaïques avec monosomie/trisomie segmentaire ou mosaïcisme intermédiaire est une option viable, avec un taux de grossesse évolutive inférieur de 10-20% à celui des embryons euploïdes mais largement supérieur à celui des embryons aneuploïdes homogènes. Le module doit insister sur le <strong>conseil génétique préalable</strong> obligatoire et le <strong>suivi prénatal renforcé</strong> (amniocentèse recommandée) en cas de transfert d'un embryon mosaïque.</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — niPGT-A : vers un diagnostic non invasif ?</strong><br />
+Le niPGT-A (<em>non-invasive PGT-A</em>) est une approche en cours de développement qui analyse l'ADN libre sécrété par le blastocyste dans son milieu de culture (<em>spent culture medium</em>). L'hypothèse est que les cellules trophectodermiques libèrent de l'ADN par apoptose ou sécrétion active, et que cet ADN reflète le statut chromosomique de l'embryon. Huang et al. (<em>PNAS</em>, 2019) ont montré une concordance de 78-85% entre le niPGT-A et la biopsie conventionnelle — prometteuse mais insuffisante pour un usage clinique. Les limites actuelles incluent la contamination par l'ADN maternel (cellules du cumulus résiduelles), la faible quantité d'ADN récupérable, et la variabilité entre les milieux de culture. La recherche est active — plusieurs essais cliniques sont en cours (2023-2026) pour valider la technique dans des conditions standardisées <em>(Rubio et al., Fertil Steril, 2020)</em>. Le niPGT-A pourrait, à terme, rendre la biopsie invasive obsolète — un changement de paradigme considérable pour l'ensemble du champ du PGT.</p>
+<p>💡 <strong>Mnémonique — MOSAIC</strong> (Gestion du mosaïcisme) :<br />
+<strong>M</strong>onosomie/trisomie — quel chromosome ? — <strong>O</strong>rientation vers le conseil génétique — <strong>S</strong>euils PGDIS (20/80%) — <strong>A</strong>utocorrection possible (apoptose, dilution) — <strong>I</strong>nformation du couple sur les incertitudes — <strong>C</strong>ontrôle prénatal (amniocentèse si transfert)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Résultats PGT-A de 5 blastocystes — classez chacun et proposez une conduite :<br />
+1. Blastocyste A : euploïde 46,XX — NGS normal<br />
+2. Blastocyste B : trisomie 21 homogène (&gt;90%)<br />
+3. Blastocyste C : mosaïcisme trisomie 16 à 35%<br />
+4. Blastocyste D : mosaïcisme monosomie X à 15%<br />
+5. Blastocyste E : trisomie 22 segmentaire mosaïque à 55%<br />
+→ <em>A : transférable en priorité. B : non transférable (aneuploïdie homogène — risque trisomie 21). C : zone grise (mosaïcisme intermédiaire, chromosome 16 — trisomie 16 confinée au placenta décrite, transfert envisageable après conseil génétique + amniocentèse prévue). D : classé euploïde (mosaïcisme &lt;20% = bruit de fond technique PGDIS). E : zone grise haute (55%, segmentaire — discussion multidisciplinaire, transfert possible en dernier recours avec information exhaustive).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV26-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Mécanismes d'autocorrection du mosaïcisme : apoptose sélective, dilution, ségrégation trophectoderme/ICM (Identifiez le mécanisme dominant selon le stade embryonnaire)</td>
+</tr>
+<tr>
+<td>MFIV26-S02-002</td>
+<td>📊 GRAPHIQUE</td>
+<td>Taux de grossesse évolutive selon le résultat PGT-A : euploïde vs mosaïque intermédiaire vs aneuploïde — données Viotti et al. 2021</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-263-pgt-m-maladies-monogeniques-et-pgt-sr-remaniements-structuraux">Section 26.3 — PGT-M (maladies monogéniques) et PGT-SR (remaniements structuraux)</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Un couple porteur hétérozygote de la mutation CFTR ΔF508 (mucoviscidose) a un risque de 25% d'avoir un enfant atteint. Le PGT-M permet d'identifier les embryons indemnes avant le transfert — mais sa mise en place nécessite 3 à 6 mois de préparation. Pourquoi un tel délai, alors que le NGS peut analyser un génome en 48 heures ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit distinguer clairement le PGT-M du PGT-A par ses objectifs, ses indications et sa méthodologie :</p>
+<ul>
+<li>
+<p><strong>PGT-M — indications</strong> : le module doit présenter les indications du PGT-M (<em>Preimplantation Genetic Testing for Monogenic disorders</em>, anciennement PGD — <em>Preimplantation Genetic Diagnosis</em>) — couples dont au moins un membre est porteur d'une <strong>mutation identifiée</strong> responsable d'une maladie monogénique transmissible. Les exemples classiques incluent la <strong>mucoviscidose</strong> (CFTR — autosomique récessif, 1/30 porteurs en Europe), la <strong>drépanocytose</strong> (HBB — autosomique récessif), la <strong>maladie de Huntington</strong> (HTT — autosomique dominant, pénétrance complète), l'<strong>amyotrophie spinale</strong> (SMN1 — autosomique récessif), la <strong>dystrophie myotonique de Steinert</strong> (DMPK — autosomique dominant), et de manière plus débattue les mutations <strong>BRCA1/2</strong> (prédisposition au cancer du sein/ovaire — discussion éthique : il s'agit d'une prédisposition, pas d'une certitude, et la pénétrance est incomplète ~60-80%). Le module doit souligner que l'indication du PGT-M est <strong>posée par un centre pluridisciplinaire de diagnostic prénatal (CPDPN)</strong> après consultation de conseil génétique.</p>
+</li>
+<li>
+<p><strong>PGT-M — technique et délai de mise en place</strong> : le module doit expliquer que, contrairement au PGT-A (analyse standardisée des 24 chromosomes applicable immédiatement), le PGT-M nécessite une <strong>préparation spécifique</strong> pour chaque couple et chaque mutation. La technique repose sur la <strong>PCR spécifique</strong> de la mutation (amplification ciblée de la région d'intérêt) couplée à une <strong>analyse de liaison</strong> par marqueurs microsatellites flanquant le gène — cette analyse indirecte (haplotypage) permet de <strong>confirmer</strong> le résultat de la PCR directe et de détecter d'éventuels <em>allele drop-out</em> (ADO — défaut d'amplification d'un allèle, risque majeur de faux négatif). Le <strong>karyomapping</strong> (Illumina) est une technique récente qui utilise un SNP array à haute densité (~300 000 SNP) pour reconstituer les haplotypes parentaux autour du locus de la mutation — il permet une mise en place plus rapide et offre simultanément une analyse des aneuploïdies (PGT-A combiné). Le délai de 3-6 mois s'explique par : (1) le prélèvement sanguin des deux membres du couple + si possible un apparenté atteint (ou ADN du cas index), (2) la mise au point du protocole de PCR et de liaison spécifique à la famille (<em>workup</em>), (3) la validation du test sur les ADN familiaux avant application aux embryons <em>(Rechitsky et al., Fertil Steril, 2004 ; Natesan et al., Hum Reprod, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>PGT-SR — remaniements structuraux</strong> : le module doit présenter le PGT-SR (<em>Preimplantation Genetic Testing for Structural Rearrangements</em>) destiné aux couples dont l'un des membres est porteur d'un <strong>remaniement chromosomique équilibré</strong> — translocation robertsonienne (fusion de deux chromosomes acrocentriques — 13, 14, 15, 21, 22), translocation réciproque (échange de segments entre deux chromosomes non homologues), ou inversion (péri- ou paracentrique). Ces porteurs sont phénotypiquement normaux mais produisent un taux élevé de <strong>gamètes déséquilibrés</strong> lors de la méiose — aboutissant à des embryons avec monosomie/trisomie partielle, cause majeure de fausses couches à répétition (60-70% des FCS du 1er trimestre chez ces couples) et plus rarement de naissances d'enfants porteurs de syndromes chromosomiques. Le PGT-SR utilise les mêmes plateformes que le PGT-A (NGS, aCGH, SNP array) pour identifier les embryons <strong>équilibrés ou normaux</strong> — la distinction entre « normal » et « porteur équilibré » n'est pas toujours possible avec les techniques actuelles (résolution insuffisante pour les petites translocations) <em>(Scriven et al., Reprod Biomed Online, 2013)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Le cas BRCA et PGT-M : un débat éthique vivant</strong><br />
+L'autorisation du PGT-M pour les mutations BRCA1/2 (prédisposition au cancer du sein et de l'ovaire) est un sujet de débat éthique majeur. En France, le CPDPN peut autoriser le PGT-M pour BRCA au cas par cas depuis 2014, mais la pratique reste rare et controversée. Les arguments en faveur : pénétrance élevée (60-80% de risque cumulé de cancer), impact majeur sur la vie du porteur (chirurgies prophylactiques, surveillance lourde), souffrance familiale documentée. Les arguments contre : il s'agit d'une prédisposition et non d'une maladie certaine, les traitements existent et s'améliorent, risque de dérive vers la sélection pour d'autres prédispositions (diabète, Alzheimer ?). Au Royaume-Uni, la HFEA (<em>Human Fertilisation and Embryology Authority</em>) autorise le PGT-M pour BRCA depuis 2009 <em>(Menon et al., J Med Ethics, 2007)</em>.</p>
+<p>💡 <strong>Mnémonique — DELAY</strong> (Pourquoi le PGT-M prend 3-6 mois) :<br />
+<strong>D</strong>NA des parents + cas index à prélever — <strong>E</strong>laboration du protocole PCR spécifique — <strong>L</strong>iaison par marqueurs microsatellites à valider — <strong>A</strong>llele drop-out à exclure par tests préliminaires — <strong>Y</strong>ield (validation finale) sur ADN familiaux avant biopsie embryonnaire</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai/Faux — justifiez :<br />
+1. Le PGT-M peut être mis en place en 48 heures comme le PGT-A.<br />
+2. Le karyomapping permet de combiner PGT-M et PGT-A sur la même biopsie.<br />
+3. Un porteur de translocation robertsonienne rob(13;14) a 100% de gamètes déséquilibrés.<br />
+4. Le PGT-SR peut distinguer un embryon « normal » d'un embryon « porteur équilibré » dans tous les cas.<br />
+5. Le PGT-M pour la maladie de Huntington est autorisé en France.<br />
+→ <em>1. FAUX — le PGT-M nécessite 3-6 mois de mise au point (workup familial, PCR, liaison). 2. VRAI — le karyomapping par SNP array permet l'analyse simultanée du locus monogénique et des 24 chromosomes. 3. FAUX — la ségrégation méiotique produit environ 2/3 de gamètes normaux ou équilibrés et 1/3 de gamètes déséquilibrés pour une rob(13;14) — mais le taux de FCS reste significativement élevé. 4. FAUX — les techniques actuelles (NGS, aCGH) ne distinguent pas toujours le statut « normal » du « porteur équilibré » pour les petites translocations. 5. VRAI — la maladie de Huntington est une indication classique du PGT-M, autorisée par les CPDPN.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV26-S03-001</td>
+<td>📐 SCHÉMA</td>
+<td>Karyomapping : principe de reconstruction des haplotypes parentaux autour d'un locus monogénique (Identifiez comment le recoupement des SNP permet de distinguer l'allèle muté de l'allèle sain)</td>
+</tr>
+<tr>
+<td>MFIV26-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Ségrégation méiotique d'une translocation réciproque : modes adjacent-1, adjacent-2, alterne — et produits de conception correspondants (Repérez pourquoi le mode alterne est le seul à produire des gamètes viables)</td>
+</tr>
+<tr>
+<td>MFIV26-S03-003</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Arbre décisionnel PGT-A vs PGT-M vs PGT-SR : indications, techniques, délais, résultats comparés</td>
+</tr>
+</tbody>
+</table>
+<p>La section suivante aborde le module 26 dans son auto-évaluation avant de passer au don de gamètes — un domaine où la génétique rencontre l'éthique et la législation.</p>
+<hr />
+<h2 id="auto-evaluation-module-26">Auto-évaluation — Module 26</h2>
+<p><strong>QCM 1</strong> : Quelle technique d'analyse génétique est le standard actuel pour le PGT-A ?<br />
+- A. FISH sur 12 chromosomes<br />
+- B. aCGH sur 24 chromosomes<br />
+- C. NGS sur 24 chromosomes<br />
+- D. PCR spécifique de mutation<br />
+- E. Karyomapping par SNP array</p>
+<p>→ <em>C. Le NGS est le standard depuis ~2015 — il analyse les 24 chromosomes simultanément avec une résolution supérieure à l'aCGH, à un coût décroissant, et avec la capacité de détecter le mosaïcisme. La FISH (A) est obsolète. L'aCGH (B) reste utilisé mais est progressivement remplacé. La PCR (D) est la technique du PGT-M, pas du PGT-A. Le karyomapping (E) est utilisé pour le PGT-M combiné au PGT-A.</em></p>
+<p><strong>QCM 2</strong> : Selon les recommandations PGDIS 2021, un résultat de PGT-A montrant 15% de cellules trisomiques 21 est classé :<br />
+- A. Aneuploïde — non transférable<br />
+- B. Mosaïque intermédiaire — transfert possible après conseil génétique<br />
+- C. Mosaïque low-level — classé euploïde<br />
+- D. Indéterminé — nouvelle biopsie nécessaire</p>
+<p>→ <em>C. Un mosaïcisme &lt;20% est considéré comme du bruit de fond technique selon les recommandations PGDIS 2021 — l'embryon est classé euploïde. L'amplification par NGS génère un signal de base qui peut mimer un faible pourcentage de mosaïcisme sans réalité biologique.</em></p>
+<p><strong>QCM 3</strong> : Quel est le délai habituel de mise en place du PGT-M ?<br />
+- A. 48 heures<br />
+- B. 1-2 semaines<br />
+- C. 3-6 mois<br />
+- D. 12-18 mois</p>
+<p>→ <em>C. Le PGT-M nécessite un workup familial (prélèvements ADN, mise au point PCR, validation de l'analyse de liaison) qui prend typiquement 3 à 6 mois — contrairement au PGT-A dont le protocole est standardisé.</em></p>
+<p><strong>Cas clinique court</strong> : Mme et M. L. — lui porteur d'une translocation réciproque t(4;11) découverte lors du bilan de 3 fausses couches au 1er trimestre. Ils souhaitent un PGT-SR. Après stimulation et ICSI, 5 blastocystes sont biopsiés. Résultats : 2 embryons équilibrés/normaux, 1 embryon avec trisomie partielle 4q, 1 embryon avec monosomie 11p, 1 embryon mosaïque (trisomie partielle 4q à 25%).<br />
+1. Quels embryons sont transférables ?<br />
+2. Peut-on distinguer si les 2 embryons « équilibrés » sont porteurs de la translocation ou chromosomiquement normaux ?<br />
+3. Quelle information donner au couple concernant l'embryon mosaïque ?</p>
+<p>→ <em>1. Les 2 embryons équilibrés/normaux sont transférables en priorité. L'embryon avec trisomie partielle 4q et celui avec monosomie 11p sont des produits de ségrégation déséquilibrée — non transférables. 2. Non — les techniques actuelles (NGS) ne distinguent pas toujours un caryotype normal d'un caryotype porteur de la même translocation équilibrée que le père. Un diagnostic prénatal (amniocentèse avec caryotype standard) est recommandé en cas de grossesse pour confirmer le statut. 3. L'embryon mosaïque à 25% est en zone grise intermédiaire (PGDIS). Le transfert est envisageable en dernier recours si les 2 euploïdes/équilibrés échouent, après conseil génétique détaillé et avec amniocentèse systématique. Le couple doit être informé du taux de grossesse évolutive inférieur et de l'incertitude sur l'autocorrection.</em></p>
+<p><strong>Question de synthèse</strong> : En 5-10 lignes, expliquez pourquoi le PGT-A, malgré sa logique biologique apparente (sélectionner les embryons euploïdes), ne bénéficie pas de preuves solides de niveau I en faveur d'un screening universel. Intégrez les notions de taux cumulatif, de mosaïcisme et d'autocorrection dans votre réponse.</p>
+<hr />
+<h1 id="module-27-don-de-gametes-et-accueil-dembryons">MODULE 27 : DON DE GAMÈTES ET ACCUEIL D'EMBRYONS</h1>
+<p><strong>Partie</strong> : VIII — Techniques avancées<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire-Expert<br />
+<strong>Prérequis</strong> : Modules 1-5 (fondamentaux), Module 8 (bilan d'infertilité), Module 14 (cadre légal de l'AMP — cf. Partie 4)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🟢 LÉGISLATION 🟣 ÉTHIQUE</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Mme B., 43 ans, insuffisance ovarienne prématurée (IOP) diagnostiquée à 38 ans (AMH <0,1 ng/mL, FSH 65 UI/L). Quatre tentatives de FIV avec ses propres ovocytes — aucun embryon obtenu. Elle est accompagnée de son conjoint. Le couple souhaite un don d'ovocytes. Mme B. demande : *« Est-ce que le bébé me ressemblera ? En France, est-ce que je pourrai connaître la donneuse ? Et combien de temps faut-il attendre ? »* Derrière ces questions apparemment simples se cachent les enjeux les plus complexes de l'AMP — la filiation biologique versus gestationnelle, l'anonymat remis en question par la loi de 2021, et la réalité d'une pénurie de donneuses en France qui pousse de nombreux couples vers l'étranger.</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Lister</strong> les indications médicales du don d'ovocytes et du don de sperme selon les recommandations ESHRE et le cadre réglementaire français</li>
+<li><strong>Décrire</strong> le parcours complet d'un don d'ovocytes en France (recrutement, évaluation, stimulation de la donneuse, préparation de la receveuse, transfert)</li>
+<li><strong>Expliquer</strong> les principes de l'appariement phénotypique donneuse-receveuse et ses limites</li>
+<li><strong>Analyser</strong> les modifications apportées par la loi de bioéthique de 2021 (AMP pour toutes, accès aux origines, fin de l'anonymat absolu)</li>
+<li><strong>Comparer</strong> les cadres législatifs français et internationaux (Espagne, Belgique, République Tchèque) en matière de don de gamètes</li>
+<li><strong>Justifier</strong> les indications et le cadre de l'accueil d'embryons comme alternative au don de gamètes</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-271-don-dovocytes-indications-parcours-de-la-donneuse-et-resultats">Section 27.1 — Don d'ovocytes : indications, parcours de la donneuse et résultats</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le don d'ovocytes produit les meilleurs taux de grossesse de toute l'AMP (50-60% par transfert), quels que soient l'âge de la receveuse. Pourquoi de tels résultats — et pourquoi cela confirme-t-il que l'âge ovocytaire est le facteur limitant principal de la fertilité, bien plus que l'âge utérin ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le don d'ovocytes comme la technique d'AMP offrant les meilleurs résultats, en détaillant les indications, le processus et le cadre français :</p>
+<ul>
+<li>
+<p><strong>Indications</strong> : le module doit distinguer les indications principales du don d'ovocytes — <strong>insuffisance ovarienne prématurée</strong> (IOP — ménopause avant 40 ans, idiopathique, auto-immune, iatrogène post-chimiothérapie), <strong>syndrome de Turner</strong> (45,X — dysgénésie gonadique, nécessitant en plus un bilan cardiaque préalable à la grossesse en raison du risque de dissection aortique — cf. Module 35), <strong>échecs répétés de FIV</strong> (≥3 cycles sans obtention d'embryons ou embryons de mauvaise qualité, en particulier chez les &gt;40 ans), <strong>âge maternel avancé</strong> (&gt;43-44 ans — les ovocytes propres sont très majoritairement aneuploïdes), et le <strong>risque de transmission d'une maladie génétique</strong> lorsque le PGT-M est impossible ou refusé. Le module doit insister sur le fait que l'âge de la <strong>donneuse</strong> détermine le taux de grossesse, pas l'âge de la receveuse — une femme de 48 ans recevant des ovocytes d'une donneuse de 25 ans aura un taux d'implantation comparable à celui d'une femme de 25 ans en FIV autologue <em>(Sauer et al., Fertil Steril, 1992 ; Yeh et al., Fertil Steril, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>Parcours de la donneuse en France</strong> : le module doit détailler le cadre français du don d'ovocytes, organisé par les <strong>CECOS</strong> (<em>Centres d'Étude et de Conservation des Œufs et du Sperme humains</em>) et les centres autorisés. Le don est <strong>anonyme</strong> (avec évolution vers l'accès aux origines depuis la loi 2021 — cf. section 27.3), <strong>gratuit</strong> (principe d'indisponibilité du corps humain — pas de rémunération, seule une indemnisation des frais est prévue), et <strong>altruiste</strong>. La donneuse doit avoir moins de <strong>37 ans</strong>, avoir été informée des risques et avoir donné son consentement devant un juge (ou notaire depuis 2021). L'évaluation comprend un bilan médical complet (examen gynécologique, bilan hormonal, échographie pelvienne, sérologies), un bilan <strong>génétique</strong> (caryotype, recherche de mutations fréquentes — CFTR, hémoglobinopathies, amyotrophie spinale selon les recommandations ESHRE 2019), et un entretien <strong>psychologique</strong> obligatoire. La donneuse subit ensuite une <strong>stimulation ovarienne</strong> complète (protocole antagoniste standard) suivie d'une ponction — le même protocole que pour une FIV classique, avec les mêmes risques (SHO, hémorragie). Le module doit mentionner que la pénurie de donneuses en France entraîne des <strong>délais d'attente de 1 à 5 ans</strong> selon les centres <em>(Agence de la Biomédecine, rapport annuel, 2023)</em>.</p>
+</li>
+<li>
+<p><strong>Appariement phénotypique</strong> : le module doit expliquer le principe de l'appariement entre donneuse et receveuse — le centre cherche à faire correspondre les caractéristiques phénotypiques principales (groupe sanguin, couleur de peau, cheveux, yeux, morphotype) pour que l'enfant « ressemble » autant que possible à la receveuse. Le module doit préciser que cet appariement est <strong>approximatif</strong> — les gènes déterminant le phénotype sont polygéniques et complexes, et la « ressemblance » ne peut être garantie. L'appariement est une pratique historique liée au secret du don — avec l'évolution vers la transparence (accès aux origines), son importance tend à diminuer dans certains pays.</p>
+</li>
+<li>
+<p><strong>Résultats</strong> : le module doit présenter les résultats du don d'ovocytes — taux de grossesse clinique de <strong>50-60% par transfert</strong> de blastocyste, taux de naissance vivante de <strong>40-50% par transfert</strong> (données ESHRE EIM registry, 2022). Ces résultats sont les meilleurs de l'AMP car ils combinent des ovocytes jeunes (donneuse &lt;37 ans) avec un utérus préparé de manière optimale (cycle substitué). Le module doit souligner que les risques obstétricaux sont légèrement majorés en don d'ovocytes par rapport à la FIV autologue — en particulier le risque d'<strong>hypertension gravidique et de prééclampsie</strong> (×2-3), probablement lié à l'allo-immunisation (l'embryon est génétiquement « étranger » à la receveuse de manière plus complète qu'en FIV autologue) <em>(Masoudian et al., Am J Obstet Gynecol, 2016)</em>.</p>
+</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Don d'ovocytes et risque cardiovasculaire chez la receveuse Turner**
+> Les femmes porteuses d'un syndrome de Turner (45,X) représentent 10-15% des receveuses de don d'ovocytes. Le module doit impérativement signaler que la grossesse chez une patiente Turner comporte un **risque vital** : dissection aortique (1-2% des grossesses Turner — mortalité 50%), prééclampsie sévère, cardiopathie congénitale sous-jacente. Un **bilan cardiaque complet** (IRM cardiaque, échocardiographie, mesure du diamètre aortique indexé) est obligatoire avant le don. Le diamètre aortique indexé doit être <25 mm/m² — au-delà, la grossesse est **contre-indiquée** *(Gravholt et al., Eur J Endocrinol, 2017 — guidelines Turner)*.</div>
+
+<blockquote>
+<p>💡 <strong>Mnémonique — DONOR</strong> (Évaluation de la donneuse d'ovocytes) :<br />
+<strong>D</strong>émographie (&lt;37 ans, consentement) — <strong>O</strong>varian reserve (AMH, CFA normaux) — <strong>N</strong>o genetic risk (caryotype, CFTR, hémoglobinopathies) — <strong>O</strong>verall health (sérologies, bilan général) — <strong>R</strong>eady psychologically (entretien obligatoire)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme F., 44 ans, AMH 0,3 ng/mL, 2 FIV avec ses propres ovocytes (1 embryon obtenu, pas de grossesse). Elle consulte pour un don d'ovocytes en France.<br />
+1. Quelles sont les étapes de préparation de son endomètre pour recevoir l'embryon du don ?<br />
+2. Si la donneuse a 28 ans, quel taux de grossesse par transfert peut-on raisonnablement espérer ?<br />
+3. Quel risque obstétrical spécifique devez-vous mentionner dans l'information à la patiente ?<br />
+→ <em>1. Cycle substitué — blocage de l'axe (agoniste GnRH ou pilule), puis administration séquentielle d'estradiol (E2 — valérate per os, patch ou gel — pendant 12-14 jours pour prolifération endométriale), contrôle échographique (endomètre trilamellaire ≥7 mm), puis ajout de progestérone (P4 — vaginale ou IM) pour transformation sécrétoire, synchronisation avec la cohorte embryonnaire de la donneuse. 2. 50-60% de grossesse clinique par transfert de blastocyste — les meilleurs résultats de l'AMP. 3. Risque augmenté de prééclampsie (×2-3 vs FIV autologue) — surveillance tensionnelle renforcée, aspirine low-dose dès 12 SA recommandée (cf. Module 35).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV27-S01-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Parcours du don d'ovocytes en France : de la candidature de la donneuse au transfert chez la receveuse — chronologie et étapes clés (Repérez les 3 points de contrôle obligatoires)</td>
+</tr>
+<tr>
+<td>MFIV27-S01-002</td>
+<td>📊 GRAPHIQUE</td>
+<td>Taux de grossesse par transfert selon la source des ovocytes : autologue par tranche d'âge vs don — données ESHRE EIM 2022</td>
+</tr>
+</tbody>
+</table>
+<p>La section suivante élargit le propos au don de sperme et à l'accueil d'embryons — des pratiques encadrées différemment selon les pays.</p>
+<hr />
+<h3 id="section-272-don-de-sperme-et-accueil-dembryons">Section 27.2 — Don de sperme et accueil d'embryons</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le don de sperme existe depuis les années 1970 en France (CECOS fondés en 1973). Le don d'ovocytes n'est pratiqué que depuis les années 1990. Pourquoi un tel décalage — et en quoi les contraintes techniques du recueil ovocytaire expliquent-elles cette différence historique ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le don de sperme et l'accueil d'embryons comme des alternatives complémentaires dans l'arsenal de l'AMP avec tiers donneur :</p>
+<ul>
+<li>
+<p><strong>Don de sperme — indications</strong> : le module doit lister les indications du don de sperme — <strong>azoospermie</strong> sécrétoire ou excrétoire non traitable (absence totale de spermatozoïdes après TESE/micro-TESE), <strong>risque de transmission d'une maladie génétique grave</strong> lorsque le PGT-M est impossible ou refusé, et depuis la <strong>loi de bioéthique 2021</strong>, les <strong>femmes seules</strong> et les <strong>couples de femmes</strong> souhaitant un projet parental. Le module doit préciser que cette dernière indication a considérablement élargi la demande de dons de sperme en France, augmentant les délais d'attente dans les CECOS. Le module doit également mentionner l'azoospermie post-traitement oncologique lorsqu'aucune autoconservation n'avait été réalisée, et les situations de couples sérodiscordants (VIH) lorsque le lavage de sperme n'est pas disponible — indication devenue rare avec les traitements antirétroviraux actuels.</p>
+</li>
+<li>
+<p><strong>Don de sperme — parcours et contrôle qualité</strong> : le module doit décrire le parcours du don de sperme en France via les CECOS — don <strong>anonyme</strong> (avec évolution vers l'accès aux origines — loi 2021), <strong>gratuit</strong>, <strong>altruiste</strong>. Le donneur doit avoir moins de <strong>45 ans</strong>, être en bonne santé, et passer un bilan complet (sérologies VIH/VHB/VHC/TPHA-VDRL, caryotype, recherche de CFTR, bilan sanguin, entretien psychologique). Le module doit expliquer la notion de <strong>quarantaine</strong> — les paillettes de sperme sont congelées et ne sont libérées qu'après une nouvelle sérologie du donneur à <strong>6 mois</strong> (pour exclure une séroconversion dans la fenêtre sérologique initiale). Le <strong>spermogramme de don</strong> a des critères plus stricts que le spermogramme diagnostique — seuls les donneurs dont le sperme supporte bien la congélation-décongélation (<em>test de cryotolérance</em>) sont retenus. L'appariement phénotypique donneur-receveur suit les mêmes principes que pour le don d'ovocytes. La <strong>traçabilité</strong> est gérée par l'Agence de la Biomédecine — chaque donneur est limité à un nombre maximal de naissances (10 par donneur en France) pour minimiser le risque de consanguinité involontaire <em>(Loi de bioéthique 2021, Art. L2141-1 et suivants du Code de la santé publique)</em>.</p>
+</li>
+<li>
+<p><strong>Accueil d'embryons</strong> : le module doit présenter l'accueil d'embryons (anciennement « don d'embryons ») — un couple ayant des embryons surnuméraires vitrifiés à l'issue de leur propre FIV peut les proposer à un autre couple (ou une femme seule/couple de femmes depuis 2021). Le cadre légal français est spécifique : l'<strong>autorisation judiciaire</strong> (tribunal judiciaire, anciennement TGI) est requise pour le couple donneur et le couple receveur, le don est anonyme (avec accès aux origines pour les enfants majeurs — loi 2021), le matching phénotypique est réalisé par le centre. Le module doit signaler que l'accueil d'embryons est une pratique <strong>marginale</strong> en France (quelques centaines de transferts par an vs plusieurs milliers de dons de sperme et d'ovocytes) — les raisons sont multiples : réticence des couples à donner « leur » embryon (attachement symbolique fort), lourdeur administrative (procédure judiciaire), disponibilité limitée d'embryons surnuméraires de bonne qualité (la vitrification a amélioré les résultats des TEC, réduisant le « surplus »). Les taux de grossesse sont de l'ordre de 20-30% par transfert — inférieurs au don d'ovocytes car les embryons proviennent souvent de couples ayant eux-mêmes des difficultés de fertilité <em>(Agence de la Biomédecine, rapport 2023)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — ROPA : quand les deux femmes participent biologiquement</strong><br />
+La <strong>ROPA</strong> (<em>Reception of Oocytes from Partner</em>) est une technique permettant à un couple de femmes de partager le processus biologique de la maternité — l'une fournit les ovocytes (stimulation + ponction), l'autre porte la grossesse (transfert embryonnaire après préparation endométriale). Cette technique est <strong>interdite en France</strong> (considérée comme un don dirigé, incompatible avec le principe d'anonymat), mais autorisée en <strong>Espagne</strong>, <strong>Belgique</strong>, <strong>Pays-Bas</strong> et dans plusieurs États américains. Le module doit préciser que la ROPA a un intérêt symbolique fort pour les couples de femmes souhaitant que les deux partenaires participent biologiquement au projet parental — mais elle reste controversée sur le plan éthique (instrumentalisation du corps de la partenaire donneuse, question de la filiation) <em>(Marina et al., Hum Reprod, 2010)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Associez chaque situation clinique à la technique d'AMP avec tiers donneur la plus appropriée :<br />
+1. Couple homme-femme, azoospermie sécrétoire non obstructive, micro-TESE négative<br />
+2. Couple de femmes souhaitant un enfant<br />
+3. Femme de 44 ans, IOP depuis 3 ans, conjoint normospermique<br />
+4. Couple ayant 5 embryons surnuméraires vitrifiés, projet parental accompli, souhaitant « donner » leurs embryons<br />
+→ <em>1. Don de sperme + IAD ou FIV selon le bilan féminin. 2. Don de sperme + IAD/FIV (loi 2021) — ou ROPA si à l'étranger (Espagne, Belgique). 3. Don d'ovocytes (ovocytes de donneuse &lt;37 ans → fécondation ICSI avec sperme du conjoint → transfert chez la receveuse). 4. Accueil d'embryons — les embryons surnuméraires peuvent être proposés à un autre couple/femme seule après autorisation judiciaire.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV27-S02-001</td>
+<td>📊 TABLEAU COMPARATIF</td>
+<td>Don d'ovocytes vs don de sperme vs accueil d'embryons : indications, cadre légal, taux de grossesse, délais — comparaison structurée</td>
+</tr>
+<tr>
+<td>MFIV27-S02-002</td>
+<td>📐 SCHÉMA</td>
+<td>Principe de la ROPA : circuit des ovocytes, sperme de donneur, embryon, grossesse — visualisation du rôle biologique de chaque partenaire</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-273-loi-de-bioethique-2021-amp-pour-toutes-et-acces-aux-origines">Section 27.3 — Loi de bioéthique 2021 : AMP pour toutes et accès aux origines</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La France a maintenu l'anonymat absolu du don de gamètes pendant 50 ans (1973-2021). La loi de 2021 y met fin en permettant aux enfants nés de don d'accéder à l'identité du donneur à leur majorité. Quels sont les arguments qui ont conduit à ce revirement — et pourquoi certains craignent-ils une chute du nombre de donneurs ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les modifications majeures apportées par la loi de bioéthique du <strong>2 août 2021</strong> et leurs conséquences pratiques pour l'AMP en France :</p>
+<ul>
+<li>
+<p><strong>AMP pour toutes</strong> : le module doit expliquer que la loi de 2021 a étendu l'accès à l'AMP aux <strong>couples de femmes</strong> et aux <strong>femmes seules</strong> (non mariées, sans conjoint masculin) — supprimant l'exigence d'un couple homme-femme vivant depuis au moins 2 ans ou marié. Le module doit préciser les conséquences pratiques : augmentation significative de la demande en don de sperme (estimation : +20-30% de la demande annuelle dans les CECOS), nécessité d'adapter les parcours de soins (absence de bilan masculin, insémination intra-utérine avec sperme de donneur — IAD — comme technique de première intention), et enjeux de filiation (établissement de la filiation par reconnaissance conjointe devant notaire pour les couples de femmes — nouveau dispositif juridique spécifique). Le module doit mentionner que cette évolution législative place la France dans le groupe des pays européens ayant ouvert l'AMP au-delà du couple hétérosexuel (Belgique, Espagne, Pays-Bas, Royaume-Uni, Portugal, Danemark) <em>(Loi n°2021-1017 du 2 août 2021 relative à la bioéthique)</em>.</p>
+</li>
+<li>
+<p><strong>Accès aux origines et fin de l'anonymat absolu</strong> : le module doit expliquer le dispositif mis en place par la loi de 2021 — tout enfant né d'un don de gamètes (ou d'un accueil d'embryons) pourra, <strong>à sa majorité</strong> (18 ans), saisir la <strong>Commission d'accès des personnes nées d'une assistance médicale à la procréation aux données des tiers donneurs</strong> (CAPADD) pour accéder à des <strong>données non identifiantes</strong> du donneur (âge au moment du don, caractéristiques physiques, situation familiale et professionnelle, motivations du don) et/ou à l'<strong>identité</strong> du donneur (nom, prénom, date de naissance). Le consentement du donneur à la communication de ces informations est un <strong>prérequis au don</strong> depuis le 1er septembre 2022 — tout nouveau donneur doit accepter par avance cette possibilité. Le module doit souligner que ce dispositif ne crée <strong>aucun lien de filiation</strong> entre le donneur et l'enfant — il s'agit d'un droit à la connaissance de ses origines biologiques, pas d'un droit à la parenté. Le module doit mentionner les craintes initiales (chute du recrutement de donneurs) et les données rassurantes des pays ayant levé l'anonymat avant la France — en Suède (anonymat levé en 1985), le nombre de donneurs a transitoirement diminué puis s'est stabilisé, avec un changement de profil (donneurs plus âgés, plus souvent déjà parents, motivés par l'altruisme plutôt que par l'anonymat) <em>(Lalos et al., Hum Reprod, 2003)</em>.</p>
+</li>
+<li>
+<p><strong>Autoconservation ovocytaire sociétale</strong> : le module doit mentionner que la loi de 2021 a également autorisé l'<strong>autoconservation ovocytaire sans indication médicale</strong> (<em>social egg freezing</em>) — toute femme de 29 à 37 ans peut faire vitrifier ses ovocytes en dehors de tout contexte pathologique (cf. Module 25 — Préservation de la fertilité). Cette mesure est liée au don de gamètes car la loi encourage un « couplage » : une femme qui autoconserve ses ovocytes peut être sensibilisée au don (mais le don reste volontaire et distinct — les ovocytes autoconservés ne sont pas ceux donnés).</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Le tourisme reproductif : quand la loi française ne suffit pas</strong><br />
+Malgré les avancées de la loi 2021, certaines situations restent non couvertes en France — la <strong>GPA</strong> (<em>Gestation Pour Autrui</em>) reste interdite (article 16-7 du Code civil), le <strong>don dirigé</strong> (choisir son donneur/sa donneuse) n'est pas autorisé, et les <strong>délais d'attente</strong> pour le don d'ovocytes atteignent 2-5 ans dans certains centres. Le « tourisme reproductif » vers l'Espagne (leader européen du don d'ovocytes — ~60% de part de marché UE, don rémunéré ~900-1000 euros, anonymat strict, délai 1-3 mois), la République Tchèque (coût inférieur, qualité croissante), la Grèce ou la Belgique concerne des milliers de couples français chaque année. Le module doit présenter ces flux sans jugement moral mais avec les données factuelles : risques (absence de suivi intégré, double protocole médical, absence de couverture sociale), avantages (délai réduit, choix plus large), et le dilemme éthique de la rémunération des donneuses <em>(Shenfield et al., Hum Reprod, 2010)</em>.</p>
+<p>💡 <strong>Mnémonique — LOI 2021</strong> (5 mesures clés) :<br />
+<strong>L</strong>evée de l'anonymat (accès aux origines à 18 ans) — <strong>O</strong>uverture de l'AMP (couples femmes, femmes seules) — <strong>I</strong>ndication élargie de l'autoconservation ovocytaire — <strong>2021</strong> = date de promulgation (2 août)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai/Faux — cadre légal français post-2021 :<br />
+1. Un couple de femmes peut accéder à l'AMP en France depuis 2021.<br />
+2. Le donneur de sperme a l'obligation légale de reconnaître l'enfant né du don.<br />
+3. L'enfant né d'un don peut connaître l'identité du donneur dès sa naissance.<br />
+4. L'autoconservation ovocytaire est autorisée entre 29 et 37 ans.<br />
+5. La GPA reste interdite en France après la loi de 2021.<br />
+→ <em>1. VRAI — loi du 2 août 2021. 2. FAUX — aucun lien de filiation n'est créé entre le donneur et l'enfant ; le donneur ne peut pas être poursuivi en recherche de paternité. 3. FAUX — l'accès aux données identifiantes est possible à la majorité (18 ans), pas avant. 4. VRAI — article 29 de la loi. 5. VRAI — la GPA n'a pas été modifiée par la loi de 2021, elle reste interdite (art. 16-7 du Code civil).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV27-S03-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Loi de bioéthique 2021 — les 5 mesures clés pour l'AMP : schéma synthétique avec dates d'entrée en vigueur</td>
+</tr>
+<tr>
+<td>MFIV27-S03-002</td>
+<td>📊 TABLEAU</td>
+<td>Comparaison internationale du cadre légal du don de gamètes : France, Espagne, Belgique, Royaume-Uni, USA — anonymat, rémunération, GPA, AMP pour toutes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="auto-evaluation-module-27">Auto-évaluation — Module 27</h2>
+<p><strong>QCM 1</strong> : Quel est le taux de grossesse clinique par transfert de blastocyste en don d'ovocytes ?<br />
+- A. 15-25%<br />
+- B. 30-40%<br />
+- C. 50-60%<br />
+- D. 70-80%</p>
+<p>→ <em>C. Le don d'ovocytes produit les meilleurs résultats de l'AMP — 50-60% de grossesse clinique par transfert de blastocyste — car il combine des ovocytes jeunes (donneuse &lt;37 ans) avec un endomètre optimalement préparé. Les résultats sont largement indépendants de l'âge de la receveuse (données ESHRE EIM 2022).</em></p>
+<p><strong>QCM 2</strong> : Depuis la loi de bioéthique 2021, à quel âge un enfant né d'un don de gamètes peut-il accéder à l'identité du donneur ?<br />
+- A. Dès la naissance<br />
+- B. À 16 ans<br />
+- C. À 18 ans (majorité)<br />
+- D. À 25 ans<br />
+- E. Jamais — l'anonymat reste absolu</p>
+<p>→ <em>C. La loi de 2021 permet l'accès aux données identifiantes du donneur à la majorité (18 ans), via la CAPADD. Le consentement du donneur à cette divulgation est un prérequis au don depuis le 1er septembre 2022.</em></p>
+<p><strong>QCM 3</strong> : Quel risque obstétrical est spécifiquement augmenté en don d'ovocytes par rapport à la FIV autologue ?<br />
+- A. Diabète gestationnel<br />
+- B. Prééclampsie<br />
+- C. Prématurité spontanée<br />
+- D. Malformations fœtales<br />
+- E. Macrosomie</p>
+<p>→ <em>B. Le risque de prééclampsie est multiplié par 2-3 en don d'ovocytes, probablement en lien avec l'allo-immunisation (embryon génétiquement plus « étranger » à la receveuse qu'en FIV autologue). Ce risque justifie une surveillance tensionnelle renforcée et la prescription d'aspirine low-dose (Masoudian et al., AJOG, 2016).</em></p>
+<p><strong>Cas clinique court</strong> : Mme et Mme V. — couple de femmes, souhaitent un enfant. Mme V1 a 32 ans (bilan gynécologique normal, trompes perméables à l'HSG). Elles souhaitent une IAD avec sperme de donneur.<br />
+1. Ce projet est-il légalement possible en France depuis quelle date ?<br />
+2. Quel est le parcours standard pour ce couple ?<br />
+3. Mme V2, 35 ans, demande si elle peut « porter l'enfant de sa compagne » en recevant les ovocytes de Mme V1. Est-ce possible en France ?</p>
+<p>→ <em>1. Depuis la loi du 2 août 2021. 2. Consultation d'un centre autorisé AMP, entretiens médicaux et psychologiques obligatoires (comme pour tout couple en AMP), inscription en liste d'attente pour don de sperme (CECOS), reconnaissance conjointe devant notaire (dispositif de filiation spécifique pour les couples de femmes), puis IAD (insémination intra-utérine avec sperme de donneur) en première intention si le bilan de Mme V1 est normal. 3. Non — il s'agit de la technique ROPA (Reception of Oocytes from Partner), considérée en France comme un don dirigé, donc interdite. Ce parcours est légal en Espagne et en Belgique.</em></p>
+<p><strong>Question de synthèse</strong> : En 5-10 lignes, analysez les conséquences pratiques de la levée de l'anonymat du don de gamètes (loi 2021) pour les centres d'AMP français — recrutement des donneurs, profil des nouveaux donneurs, et impact potentiel sur les délais d'attente.</p>
+<hr />
+<h1 id="module-28-maturation-in-vitro-miv-et-activation-ovocytaire">MODULE 28 : MATURATION IN VITRO (MIV) ET ACTIVATION OVOCYTAIRE</h1>
+<p><strong>Partie</strong> : VIII — Techniques avancées<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 10-12 (stimulation ovarienne, pharmacologie), Module 16 (ponction ovocytaire), Module 17 (laboratoire FIV/ICSI)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 BIOLOGISTE 🔴 EXPÉRIMENTAL</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Mme D., 28 ans, SOPK typique (LH/FSH >2, AMH 12 ng/mL, 35 follicules antraux par ovaire). Première tentative FIV — protocole antagoniste avec FSH 100 UI/j. À J6 de stimulation, E2 à 4500 pg/mL avec 28 follicules >12 mm. Déclenchement agoniste GnRH (prévention SHO) + freeze-all. Le biologiste vous appelle : *« 22 ovocytes ponctionnés, mais seulement 8 sont matures (MII). Les 14 autres sont au stade GV ou MI. Est-ce qu'on peut les maturer in vitro pour augmenter la cohorte ? »* Et lors du cycle suivant, le laboratoire signale un échec total de fécondation post-ICSI — 0/10 ovocytes MII fécondés. L'interne demande : *« Activation ovocytaire ? Ionophore calcique ? »* Ces deux situations cliniques — immaturité ovocytaire et défaut d'activation — illustrent les limites de la FIV conventionnelle et les techniques avancées qui tentent de les dépasser.</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> les principes biologiques de la maturation ovocytaire (passage GV → MI → MII) et les conditions nécessaires à la reprise de la méiose</li>
+<li><strong>Décrire</strong> le protocole de MIV (recueil d'ovocytes immatures, conditions de culture, milieux, chronologie) et ses indications</li>
+<li><strong>Comparer</strong> la MIV conventionnelle et la CAPA-IVM en termes de protocole et de résultats</li>
+<li><strong>Justifier</strong> les indications de l'activation ovocytaire assistée (AOA) et décrire les techniques disponibles (ionophore calcique, SrCl2, PLCzeta)</li>
+<li><strong>Évaluer</strong> de manière critique les résultats et la sécurité de la MIV et de l'AOA à la lumière des données actuelles</li>
+<li><strong>Décrire</strong> le principe de l'injection de spermatides rondes (ROSI) et ses indications exceptionnelles</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-281-maturation-in-vitro-miv-une-fiv-sans-stimulation">Section 28.1 — Maturation In Vitro (MIV) : une FIV sans stimulation</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La FIV conventionnelle nécessite une stimulation ovarienne lourde (injections quotidiennes pendant 10-14 jours, risque de SHO). La MIV propose de court-circuiter cette étape en recueillant des ovocytes immatures et en les maturant au laboratoire. Si cette approche fonctionnait aussi bien que la FIV classique, elle révolutionnerait l'AMP. Pourquoi, 30 ans après sa première description, la MIV reste-t-elle marginale ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la MIV comme une technique de niche aux indications ciblées, en expliquant ses principes, ses résultats et ses limites :</p>
+<ul>
+<li>
+<p><strong>Principes biologiques</strong> : le module doit rappeler la maturation ovocytaire physiologique — l'ovocyte est bloqué au stade <strong>GV</strong> (<em>Germinal Vesicle</em> — prophase I de méiose) dans le follicule antral. Le pic de LH déclenche la reprise de la méiose : rupture de la vésicule germinale (GVBD), expulsion du premier globule polaire, blocage au stade <strong>MII</strong> (<em>Metaphase II</em>) — l'ovocyte est « mature » et prêt à être fécondé. In vivo, cette maturation prend <strong>24-36 heures</strong> et nécessite un environnement folliculaire riche en facteurs de croissance (EGF, amphiréguline, épireguline) sécrétés par les cellules de la granulosa en réponse au pic de LH. La MIV consiste à reproduire ce processus <strong>in vitro</strong> en plaçant les ovocytes immatures (GV) dans un milieu de culture supplémenté.</p>
+</li>
+<li>
+<p><strong>Technique de la MIV conventionnelle</strong> : le module doit décrire le protocole — soit sans stimulation aucune (« true IVM »), soit après un <strong>priming minimal</strong> (FSH 150 UI/j pendant 3 jours, ou hCG 10 000 UI 36 heures avant la ponction — pour initier la maturation in vivo sans obtenir de follicules dominants). La ponction est réalisée sur des follicules de <strong>petite taille</strong> (8-12 mm — pas de follicule dominant), sous anesthésie locale ou générale, avec une aiguille de ponction de calibre réduit (19G). Les ovocytes recueillis (principalement au stade GV, quelques MI) sont placés en <strong>milieu IVM</strong> supplémenté en FSH recombinante, LH ou hCG, et facteurs de croissance (EGF) — la culture dure <strong>24-48 heures</strong> jusqu'à obtention du stade MII. Les ovocytes maturés sont ensuite fécondés par ICSI (la zone pellucide des ovocytes maturés in vitro est plus résistante que celle des ovocytes maturés in vivo, rendant la FIV classique moins efficace) <em>(Cha et al., Fertil Steril, 1991 — description princeps ; Chian et al., Lancet, 1999)</em>.</p>
+</li>
+<li>
+<p><strong>Indications</strong> : le module doit préciser les indications de la MIV — la principale est le <strong>SOPK</strong> (syndrome des ovaires polykystiques), où le risque de SHO est élevé et où la MIV permet d'obtenir une cohorte ovocytaire sans stimulation (le nombre élevé de follicules antraux fournit un pool suffisant d'ovocytes immatures). L'<strong>oncofertilité en urgence</strong> constitue une deuxième indication — lorsque la chimiothérapie ne peut être retardée et que la stimulation ovarienne classique (10-14 jours) n'est pas possible. La MIV chez les patientes à <strong>faible réserve ovarienne</strong> est débattue — le nombre d'ovocytes immatures récupérables est faible, et les résultats sont décevants <em>(Fadini et al., Reprod Biomed Online, 2009)</em>.</p>
+</li>
+<li>
+<p><strong>Résultats et limites</strong> : le module doit présenter honnêtement les résultats inférieurs de la MIV par rapport à la FIV conventionnelle — taux de maturation GV→MII de 50-70%, taux de fécondation de 60-70% (vs 70-80% en FIV/ICSI standard), taux d'implantation de <strong>15-20%</strong> (vs 30-40% en FIV conventionnelle), taux de grossesse clinique par cycle de 20-35% <em>(Walls et al., Hum Reprod, 2015)</em>. Les ovocytes maturés in vitro présentent une <strong>compétence développementale réduite</strong> — le cytoplasme n'a pas bénéficié de la maturation cytoplasmique complète qui s'opère normalement au sein du follicule (accumulation d'ARNm maternels, réorganisation mitochondriale, configuration du fuseau méiotique). Le module doit nuancer en indiquant que les résultats s'améliorent avec les techniques récentes (CAPA-IVM — cf. ci-dessous) et que, dans le SOPK spécifiquement, le rapport bénéfice/risque peut être favorable (élimination complète du risque de SHO).</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — La MIV a-t-elle un avenir en dehors du SOPK ?</strong><br />
+- <strong>Pour (la MIV comme technique d'avenir)</strong> : élimination du risque de SHO, réduction du coût (pas de médicaments de stimulation — économie de 1500-3000 euros par cycle), moins d'injections pour la patiente, applicable en urgence (oncofertilité). Les résultats de la CAPA-IVM se rapprochent de la FIV conventionnelle dans les centres experts <em>(Vuong et al., N Engl J Med, 2023)</em>.<br />
+- <strong>Contre (la MIV reste marginale)</strong> : résultats globalement inférieurs (taux d'implantation -50% vs FIV standard), données de sécurité à long terme limitées (moins de 10 000 enfants nés de MIV dans le monde), technique opérateur-dépendante (peu de centres formés), pas de bénéfice prouvé en termes de coût-efficacité lorsque l'on inclut le taux cumulatif sur plusieurs cycles.<br />
+- <strong>Synthèse</strong> : la MIV est une technique de <strong>niche</strong> dont le SOPK est l'indication principale validée. Son développement dépend des avancées en milieux de culture et de la démonstration d'une non-infériorité par rapport à la FIV standard dans des RCT de grande puissance (📊 Niveau de preuve : II-III).</p>
+<p>📖 <strong>Approfondissement — CAPA-IVM : la nouvelle génération de maturation in vitro</strong><br />
+La <strong>CAPA-IVM</strong> (<em>Capacitation-IVM</em>) est une approche biphasique développée par l'équipe de Vuong et al. au Vietnam, publiée dans le <em>New England Journal of Medicine</em> en 2023. Contrairement à la MIV conventionnelle (culture directe en milieu FSH/LH), la CAPA-IVM comprend deux phases : (1) une phase de <strong>pré-maturation</strong> (ou « capacitation ») de 24 heures dans un milieu contenant du CNP (<em>C-type Natriuretic Peptide</em>) — ce peptide maintient l'arrêt méiotique (GV) tout en permettant la maturation cytoplasmique et l'accumulation des facteurs nécessaires à la compétence développementale ; (2) une phase de <strong>maturation proprement dite</strong> dans un milieu FSH/EGF classique. Cette approche biphasique reproduit plus fidèlement la physiologie folliculaire — dans le follicule in vivo, l'ovocyte reste en GV malgré un environnement stimulant, grâce au CNP sécrété par les cellules de la granulosa, jusqu'au pic de LH. L'essai de Vuong et al. (NEJM, 2023 — RCT, n=546, SOPK) a montré un taux de grossesse évolutive de <strong>44%</strong> par transfert en CAPA-IVM vs 49% en FIV conventionnelle — une différence non significative qui, si confirmée, pourrait changer la place de la MIV dans l'arsenal thérapeutique (📊 Niveau de preuve : II — RCT monocentrique, confirmation multicentrique nécessaire).</p>
+<p>💡 <strong>Mnémonique — IVM</strong> (Indications de la MIV) :<br />
+<strong>I</strong>mminent cancer treatment (oncofertilité urgente) — <strong>V</strong>ery high AFC/PCOS (SOPK — éliminer le SHO) — <strong>M</strong>inimal stimulation souhaitée (choix de la patiente, contexte particulier)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme S., 26 ans, SOPK, AMH 14 ng/mL, 40 CFA bilatéraux. Vous lui proposez une MIV.<br />
+1. Décrivez le protocole de priming que vous utiliseriez.<br />
+2. Combien d'ovocytes immatures pouvez-vous raisonnablement espérer récupérer ?<br />
+3. Si vous récupérez 15 ovocytes GV, combien atteindront le stade MII en culture ?<br />
+4. Quel est le principal avantage de la MIV dans ce cas précis ?<br />
+→ <em>1. Priming par hCG 10 000 UI 36h avant ponction (ou FSH 150 UI pendant 3 jours) — pas de stimulation complète. 2. Avec 40 CFA, on peut espérer 10-20 ovocytes (rendement de ponction inférieur à la FIV classique car les follicules sont petits). 3. Taux de maturation GV→MII de 50-70% : environ 8-10 MII. 4. Élimination complète du risque de SHO — risque majeur chez une patiente SOPK avec 40 CFA et AMH 14 ng/mL.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV28-S01-001</td>
+<td>📐 SCHÉMA</td>
+<td>Maturation ovocytaire : GV → MI → MII — chronologie in vivo (follicule) vs in vitro (MIV) — rôle du CNP et de l'EGF (Comparez les deux voies et identifiez l'étape critique de la CAPA-IVM)</td>
+</tr>
+<tr>
+<td>MFIV28-S01-002</td>
+<td>📊 GRAPHIQUE</td>
+<td>Résultats comparés MIV conventionnelle vs CAPA-IVM vs FIV standard : taux de maturation, fécondation, implantation — données Vuong et al. 2023</td>
+</tr>
+<tr>
+<td>MFIV28-S01-003</td>
+<td>🎬 VIDÉO</td>
+<td>Ponction d'ovocytes immatures pour MIV : technique de ponction sur follicules de petite taille (8-12 mm) — différences avec la ponction FIV standard (Observez le calibre de l'aiguille et la vitesse d'aspiration)</td>
+</tr>
+</tbody>
+</table>
+<p>La section suivante aborde une situation clinique angoissante : l'échec total de fécondation — et les techniques qui tentent de le surmonter.</p>
+<hr />
+<h3 id="section-282-activation-ovocytaire-assistee-aoa-et-injection-de-spermatides-rondes-rosi">Section 28.2 — Activation ovocytaire assistée (AOA) et injection de spermatides rondes (ROSI)</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Lors de la fécondation normale, le spermatozoïde déclenche des oscillations calciques dans l'ovocyte — un signal critique qui « réveille » l'ovocyte de son blocage en MII. Que se passe-t-il quand ce signal est absent ou défectueux ? Et peut-on le remplacer artificiellement ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'AOA et la ROSI comme des techniques de recours dans des situations d'échec total de fécondation :</p>
+<ul>
+<li>
+<p><strong>Défaut d'activation ovocytaire</strong> : le module doit expliquer la physiologie de l'activation ovocytaire — lors de la fécondation, la fusion spermatozoïde-ovocyte libère dans le cytoplasme ovocytaire la <strong>PLCzeta</strong> (phospholipase C zeta) spermatique, qui déclenche des <strong>oscillations calciques</strong> (augmentations rythmiques du calcium intracellulaire). Ces oscillations sont nécessaires à la reprise de la méiose (expulsion du 2e globule polaire, formation des pronuclei), à l'exocytose corticale (blocage de la polyspermie), et à l'activation transcriptionnelle du génome embryonnaire. Un <strong>défaut d'activation ovocytaire</strong> (absence ou insuffisance des oscillations calciques) aboutit à un <strong>échec total de fécondation</strong> — aucun des ovocytes MII injectés en ICSI ne forme de pronuclei (0% de fécondation), malgré une injection techniquement correcte et des ovocytes d'apparence normale. Ce phénomène concerne environ <strong>1-3% des cycles ICSI</strong> et peut être d'origine spermatique (déficit en PLCzeta — mutations, défaut de compaction chromatinienne) ou ovocytaire (défaut de sensibilité aux oscillations calciques) <em>(Kashir et al., Hum Reprod Update, 2010)</em>.</p>
+</li>
+<li>
+<p><strong>Techniques d'AOA</strong> : le module doit présenter les trois approches principales —<br />
+  (1) L'<strong>ionophore calcique</strong> (A23187 — calcimycine, ou ionomycine) est la technique la plus utilisée : l'ovocyte est brièvement exposé (5-15 minutes) à l'ionophore calcique immédiatement après l'ICSI — le ionophore crée des canaux dans la membrane cellulaire permettant l'entrée massive de calcium extracellulaire, mimant les oscillations calciques physiologiques. Les résultats montrent une restauration du taux de fécondation à <strong>60-80%</strong> dans les cas de défaut d'activation spermatique <em>(Ebner et al., Reprod Biomed Online, 2015)</em>.<br />
+  (2) Le <strong>SrCl2</strong> (chlorure de strontium) — le strontium remplace le calcium et déclenche des oscillations intracellulaires ; moins utilisé que le ionophore calcique mais avec des données de sécurité comparables.<br />
+  (3) La <strong>PLCzeta recombinante</strong> — injection directe de la protéine PLCzeta humaine recombinante dans l'ovocyte après ICSI — cette approche est la plus « physiologique » car elle reproduit exactement le signal naturel, mais elle est encore au stade de <strong>recherche</strong> (essais précliniques prometteurs, pas encore d'utilisation clinique validée) <em>(Kashir et al., Fertil Steril, 2019)</em>.</p>
+</li>
+<li>
+<p><strong>Indications de l'AOA</strong> : le module doit préciser que l'AOA n'est pas indiquée en première intention — elle est réservée aux situations d'<strong>échec total de fécondation post-ICSI</strong> (0/n ovocytes fécondés) confirmé sur au moins un cycle, ou aux cas de <strong>globozoospermie</strong> (spermatozoïdes à tête ronde — absence d'acrosome, déficit sévère en PLCzeta). L'AOA n'est pas recommandée pour les échecs partiels de fécondation (ex. 30% de fécondation — taux inférieur à l'attendu mais fécondation existante) — dans ces cas, l'optimisation de la technique ICSI et la vérification de la qualité ovocytaire sont prioritaires.</p>
+</li>
+<li>
+<p><strong>Résultats et sécurité</strong> : le module doit présenter les données rassurantes mais encore limitées sur la sécurité de l'AOA — les études de suivi des enfants nés après ionophore calcique (série de Vanden Meerschaut et al., <em>Hum Reprod</em>, 2014 — n=21 enfants, suivi à 2 ans — développement psychomoteur normal) ne montrent pas de surrisque, mais les effectifs restent faibles pour conclure définitivement. L'ESHRE classifie l'AOA comme une technique <strong>expérimentale acceptable</strong> dans les indications strictes (📊 Niveau de preuve : III-IV — séries de cas, pas de RCT).</p>
+</li>
+<li>
+<p><strong>Injection de spermatides rondes (ROSI)</strong> : le module doit présenter la ROSI comme une technique de dernier recours pour les patients présentant une <strong>azoospermie non obstructive</strong> (NOA) chez qui aucun spermatozoïde mature n'a pu être récupéré par TESE ou micro-TESE, mais qui disposent de <strong>spermatides rondes</strong> (cellules germinales haploïdes au stade pré-spermiogénèse). Le principe consiste à injecter une spermatide ronde dans l'ovocyte, comme en ICSI, puis à activer artificiellement l'ovocyte (AOA obligatoire — la spermatide ronde ne contient pas suffisamment de PLCzeta pour déclencher l'activation). Les résultats sont <strong>très faibles</strong> — taux de grossesse &lt;5% par cycle dans la plupart des séries, avec un taux élevé de fausses couches. La plus grande série mondiale est celle de <strong>Tanaka et al.</strong> au Japon (&gt;90 bébés nés, données présentées à l'ESHRE 2019) — les enfants nés semblent sains, mais le suivi à long terme est incomplet. L'ESHRE classe la ROSI comme <strong>technique expérimentale</strong> qui ne devrait être proposée que dans des protocoles de recherche avec consentement éclairé spécifique <em>(Tanaka et al., Reprod Biomed Online, 2018 ; ESHRE add-ons working group, 2020)</em>.</p>
+</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger — AOA et ROSI : techniques expérimentales</strong> : consentement renforcé obligatoire**
+> L'AOA (par ionophore calcique) et surtout la ROSI sont des techniques dont les données de sécurité à long terme sont insuffisantes. Avant toute AOA ou ROSI, le couple doit recevoir une information complète et signer un consentement spécifique mentionnant : (1) le caractère expérimental de la technique, (2) l'absence de données de sécurité à long terme sur les enfants nés, (3) le taux de succès attendu (ROSI <5% de grossesse/cycle), (4) la possibilité d'alternatives (don de sperme en cas d'échec de micro-TESE + ROSI). Le praticien engage sa responsabilité s'il ne documente pas cette information.</div>
+
+<blockquote>
+<p>💡 <strong>Mnémonique — CALCIUM</strong> (Activation ovocytaire) :<br />
+<strong>C</strong>alcium oscillations = signal fondamental — <strong>A</strong>OA si échec total fécondation ICSI — <strong>L</strong>'ionophore A23187 = technique de référence — <strong>C</strong>onsentement renforcé obligatoire — <strong>I</strong>ndicateurs : 0% fécondation, globozoospermie — <strong>U</strong>sage restreint (pas en 1re intention) — <strong>M</strong>ise en garde : sécurité long terme insuffisante</p>
+<p>✏️ <strong>Micro-exercice</strong> : M. et Mme G. — 1er cycle ICSI : 10 ovocytes MII injectés, 0 fécondation (0/10). Vérification technique : injection correcte, spermatozoïdes mobiles et morphologiquement normaux.<br />
+1. Quel diagnostic évoquez-vous ?<br />
+2. Quelle technique proposez-vous pour le cycle suivant ?<br />
+3. Si M. G. présente une globozoospermie à la relecture du spermogramme, cela renforce-t-il votre diagnostic ?<br />
+→ <em>1. Défaut d'activation ovocytaire — probablement d'origine spermatique (déficit en PLCzeta). Un défaut ovocytaire est également possible mais plus rare. 2. AOA par ionophore calcique (A23187 ou ionomycine) immédiatement après ICSI lors du cycle suivant — avec consentement renforcé et information sur le caractère expérimental. 3. Oui — la globozoospermie (absence d'acrosome, tête ronde) est la cause la mieux documentée de déficit en PLCzeta. L'AOA est considérée comme l'indication de référence dans la globozoospermie (taux de fécondation restauré à 50-70%).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV28-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Activation ovocytaire physiologique : fusion spermatozoïde → libération PLCzeta → oscillations calciques → reprise méiose II (Identifiez les 3 conséquences des oscillations calciques)</td>
+</tr>
+<tr>
+<td>MFIV28-S02-002</td>
+<td>🎬 VIDÉO</td>
+<td>AOA par ionophore calcique : protocole post-ICSI, timing, observation des pronuclei à 16-18h</td>
+</tr>
+<tr>
+<td>MFIV28-S02-003</td>
+<td>📷 PHOTO</td>
+<td>Globozoospermie au microscope : spermatozoïdes à tête ronde vs morphologie normale — comparaison (Repérez l'absence d'acrosome)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="auto-evaluation-module-28">Auto-évaluation — Module 28</h2>
+<p><strong>QCM 1</strong> : Quel est le taux d'implantation en MIV conventionnelle comparé à la FIV standard ?<br />
+- A. Équivalent (30-40%)<br />
+- B. Inférieur de moitié (15-20%)<br />
+- C. Supérieur (40-50%)<br />
+- D. Nul (0%)</p>
+<p>→ <em>B. Le taux d'implantation en MIV conventionnelle est de 15-20% vs 30-40% en FIV standard — la maturation in vitro ne permet pas une compétence développementale équivalente à la maturation in vivo. La CAPA-IVM améliore ces résultats mais les données restent préliminaires (Walls et al., Hum Reprod, 2015 ; Vuong et al., NEJM, 2023).</em></p>
+<p><strong>QCM 2</strong> : Quelle est la principale indication de l'AOA par ionophore calcique ?<br />
+- A. Faible taux de fécondation en FIV classique (30%)<br />
+- B. Échec total de fécondation post-ICSI (0%)<br />
+- C. Mauvaise qualité embryonnaire après fécondation normale<br />
+- D. Prévention du mosaïcisme embryonnaire</p>
+<p>→ <em>B. L'AOA est réservée à l'échec total de fécondation post-ICSI (0% — aucun ovocyte fécondé malgré une injection techniquement correcte), évocateur d'un défaut d'activation ovocytaire (déficit en PLCzeta). Les indications A, C et D ne relèvent pas de l'AOA.</em></p>
+<p><strong>Cas clinique court</strong> : Mme K., 27 ans, SOPK (AMH 15 ng/mL, 42 CFA). Lors d'une première FIV, SHO sévère ayant nécessité une hospitalisation (ascite, hématocrite 48%, créatinine 130 μmol/L). La patiente refuse une nouvelle stimulation ovarienne.<br />
+1. Quelle technique alternative proposez-vous ?<br />
+2. Quel priming utiliseriez-vous avant la ponction ?<br />
+3. Quel taux de grossesse pouvez-vous annoncer à la patiente avec cette technique ?</p>
+<p>→ <em>1. Maturation In Vitro (MIV) — permet de récupérer des ovocytes immatures sans stimulation (ou avec un priming minimal), éliminant le risque de SHO. C'est l'indication princeps de la MIV. 2. Priming par hCG 10 000 UI 36h avant ponction, ou FSH 150 UI/j pendant 3 jours (sans monitorage par E2 — pas de risque de SHO). La CAPA-IVM avec pré-maturation au CNP serait l'option optimale si le centre en dispose. 3. 20-35% de grossesse clinique par cycle en MIV conventionnelle (inférieur à la FIV standard), potentiellement 40-45% en CAPA-IVM selon les données de Vuong et al. (NEJM, 2023) — à discuter honnêtement avec la patiente en comparaison avec le 45-50% de la FIV standard.</em></p>
+<p><strong>Question de synthèse</strong> : En 5-10 lignes, expliquez pourquoi la CAPA-IVM représente potentiellement un changement de paradigme pour la prise en charge du SOPK en AMP. Intégrez les notions de risque de SHO, de compétence ovocytaire et de résultats comparatifs.</p>
+<hr />
+<h1 id="module-29-techniques-emergentes-tese-micro-tese-et-approches-innovantes">MODULE 29 : TECHNIQUES ÉMERGENTES — TESE, MICRO-TESE ET APPROCHES INNOVANTES</h1>
+<p><strong>Partie</strong> : VIII — Techniques avancées<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 7-8 (bilan d'infertilité masculine, spermogramme), Module 17 (ICSI), Module 28 (activation ovocytaire)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 ANDROLOGUE 🔴 CHIRURGIEN</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">M. P., 33 ans, azoospermie non obstructive (NOA) découverte lors du bilan d'infertilité du couple. Bilan hormonal : FSH 22 UI/L (élevée — atteinte testiculaire), inhibine B 45 pg/mL (basse), testostérone 3,2 ng/mL (normale basse). Caryotype 47,XXY — syndrome de Klinefelter. Le couple souhaite un enfant biologique. Vous programmez une micro-TESE. L'interne demande : *« Quelle est la probabilité de trouver des spermatozoïdes ? Et si on n'en trouve pas, est-ce qu'on peut utiliser les spermatides rondes ? »* La chirurgie de récupération spermatique dans l'azoospermie non obstructive est l'un des défis les plus exigeants de la médecine reproductive — un geste microchirurgical sous microscope opératoire qui transforme la vie de couples autrement voués au don de sperme.</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comparer</strong> la TESE conventionnelle et la micro-TESE en termes de technique chirurgicale, de taux de récupération et d'indications respectives</li>
+<li><strong>Justifier</strong> le choix de la micro-TESE comme technique de référence dans l'azoospermie non obstructive (NOA)</li>
+<li><strong>Évaluer</strong> le rôle de la varicocelectomie pré-TESE dans l'optimisation des résultats</li>
+<li><strong>Décrire</strong> les techniques d'optimisation du transfert embryonnaire (assisted hatching, EmbryoGlue, collapse du blastocyste)</li>
+<li><strong>Analyser</strong> de manière critique le niveau de preuve de chaque « add-on » de la FIV</li>
+<li><strong>Discuter</strong> les enjeux éthiques et scientifiques de la thérapie de remplacement mitochondrial (MRT)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-291-tese-et-micro-tese-chirurgie-de-recuperation-spermatique-dans-lazoospermie">Section 29.1 — TESE et micro-TESE : chirurgie de récupération spermatique dans l'azoospermie</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Dans l'azoospermie non obstructive, la spermatogenèse est globalement défaillante — mais dans 40-60% des cas, des « îlots » de spermatogenèse focale persistent dans le parenchyme testiculaire. Comment un chirurgien peut-il identifier ces îlots, invisibles à l'œil nu, dans un testicule de 15-20 cm³ ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la chirurgie de récupération spermatique comme le traitement de référence de l'azoospermie non obstructive, en détaillant les deux techniques principales :</p>
+<ul>
+<li>
+<p><strong>TESE conventionnelle</strong> (<em>Testicular Sperm Extraction</em>) : le module doit décrire la technique — incision scrotale, ouverture de l'albuginée testiculaire, prélèvement <strong>aveugle</strong> de 3-6 fragments de parenchyme testiculaire dans différentes régions du testicule (pôle supérieur, moyen, inférieur), examen au microscope par l'embryologiste pour rechercher des spermatozoïdes. La TESE conventionnelle est une technique « en aveugle » car le chirurgien ne peut pas distinguer les zones de spermatogenèse active des zones de Sertoli-cell-only ou de maturation incomplète. Le taux de récupération spermatique (SRR — <em>Sperm Retrieval Rate</em>) en TESE conventionnelle dans la NOA est de <strong>30-40%</strong> selon les séries <em>(Schlegel, Hum Reprod Update, 1999)</em>. Le volume de tissu testiculaire prélevé est significatif, avec un risque de <strong>lésion vasculaire</strong> et d'atrophie testiculaire post-opératoire (diminution de volume de 5-20%).</p>
+</li>
+<li>
+<p><strong>Micro-TESE</strong> (<em>Microsurgical Testicular Sperm Extraction</em>) : le module doit décrire la technique de référence, développée par Peter Schlegel (Cornell, 1999) — incision équatoriale de l'albuginée sur toute la longueur du testicule, exposition du parenchyme, et exploration systématique sous <strong>microscope opératoire</strong> (grossissement ×20-25). Le chirurgien identifie les <strong>tubules séminifères dilatés</strong> (diamètre &gt;200 μm — les tubules contenant une spermatogenèse active sont plus distendus que les tubules atrophiques Sertoli-cell-only qui apparaissent fins et translucides). Ces tubules sont sélectivement prélevés et transmis à l'embryologiste pour dilacération et recherche de spermatozoïdes. Les avantages de la micro-TESE par rapport à la TESE conventionnelle sont multiples : <strong>taux de récupération supérieur</strong> (40-60% vs 30-40% dans la NOA — Bernie et al., <em>J Urol</em>, 2015 — méta-analyse), <strong>prélèvement ciblé</strong> (volume de tissu prélevé 10-70× inférieur — préservation du parenchyme testiculaire), <strong>moins de lésions vasculaires</strong> (identification des vaisseaux intra-testiculaires sous microscope), et <strong>moindre risque d'atrophie</strong> post-opératoire <em>(Schlegel, Fertil Steril, 1999 ; Deruyver et al., Andrology, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>Spermatozoïdes frais vs congelés pour ICSI</strong> : le module doit aborder la question pratique de l'utilisation des spermatozoïdes testiculaires — <strong>frais</strong> (ICSI réalisée le jour même de la micro-TESE, nécessitant une synchronisation entre le chirurgien, le biologiste et le gynécologue — ponction ovocytaire programmée le même jour) vs <strong>congelés</strong> (cryopréservation des spermatozoïdes testiculaires puis ICSI ultérieure, offrant une flexibilité logistique). Les données montrent des taux de fécondation et de grossesse <strong>comparables</strong> entre spermatozoïdes testiculaires frais et congelés dans la plupart des études <em>(Ohlander et al., Fertil Steril, 2014)</em> — la congélation est donc une option sûre qui évite la pression logistique de la synchronisation.</p>
+</li>
+<li>
+<p><strong>Varicocelectomie pré-micro-TESE</strong> : le module doit présenter les données sur l'intérêt d'une cure de varicocèle (varicocelectomie microchirurgicale sub-inguinale) avant la micro-TESE chez les patients NOA porteurs d'une varicocèle clinique. La varicocelectomie améliore la spermatogenèse dans <strong>30-40% des cas</strong>, avec parfois l'apparition de spermatozoïdes dans l'éjaculat (rendant la micro-TESE inutile) ou une amélioration du SRR lors de la micro-TESE ultérieure. L'intervalle optimal entre varicocelectomie et micro-TESE est de <strong>3-6 mois</strong> (temps nécessaire pour un cycle complet de spermatogenèse — 74 jours) <em>(Schlegel &amp; Kaufmann, J Urol, 2004 ; Haydardedeoglu et al., Andrology, 2020)</em>. Le module doit nuancer : toutes les études ne retrouvent pas ce bénéfice, et la décision doit être individualisée (grade de varicocèle, âge du patient, urgence du projet parental).</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Le syndrome de Klinefelter et la micro-TESE</strong><br />
+Le syndrome de Klinefelter (47,XXY) est la cause génétique la plus fréquente d'azoospermie non obstructive (1/600 hommes). La micro-TESE permet de récupérer des spermatozoïdes dans <strong>30-50%</strong> des cas de Klinefelter — un résultat remarquable compte tenu de la dysgénésie testiculaire sévère. Les facteurs prédictifs de succès incluent : âge &lt;35 ans (la spermatogenèse résiduelle décline avec l'âge), taux de testostérone &gt;3 ng/mL (éventuellement après optimisation hormonale), et absence d'antécédent de cryptorchidie bilatérale. Le module doit préciser que les spermatozoïdes récupérés chez les patients Klinefelter sont <strong>haploïdes</strong> (23,X ou 23,Y) dans leur grande majorité malgré le caryotype 47,XXY du patient — le mécanisme de correction méiotique élimine le chromosome X surnuméraire <em>(Fullerton et al., Fertil Steril, 2010)</em>.</p>
+<p>💡 <strong>Mnémonique — MICRO</strong> (Avantages de la micro-TESE vs TESE) :<br />
+<strong>M</strong>icroscope ×20-25 (identification des tubules dilatés) — <strong>I</strong>dentification vasculaire (moins de lésions) — <strong>C</strong>iblage des îlots de spermatogenèse focale — <strong>R</strong>écupération supérieure (40-60% vs 30-40%) — <strong>O</strong>rgane préservé (volume prélevé 10-70× moindre)</p>
+<p>✏️ <strong>Micro-exercice</strong> : M. A., 29 ans, NOA, FSH 28 UI/L, varicocèle gauche grade III. Caryotype normal (46,XY). Micro-délétion AZFc du chromosome Y.<br />
+1. La micro-TESE est-elle indiquée ?<br />
+2. Proposez-vous une varicocelectomie préalable ?<br />
+3. Quel taux de récupération spermatique pouvez-vous annoncer ?<br />
+4. Pourquoi la micro-délétion AZFc (et non AZFa ou AZFb) est-elle un facteur « favorable » ?<br />
+→ <em>1. Oui — NOA avec micro-délétion AZFc, indication classique de la micro-TESE. 2. Discutable — la varicocèle grade III est cliniquement significative, et une varicocelectomie pourrait améliorer le SRR. Intervalle de 3-6 mois. Le bénéfice n'est pas garanti. 3. Micro-délétion AZFc : SRR de 50-70% (le meilleur pronostic des micro-délétions Y — contrairement aux AZFa et AZFb où le SRR est quasi nul). 4. La délétion AZFc élimine le gène DAZ (Deleted in AZoospermia) mais préserve des gènes essentiels à la spermatogenèse résiduelle — la maturation s'arrête tardivement (spermatides, voire spermatozoïdes focaux). Les délétions AZFa et AZFb entraînent un arrêt de maturation précoce (Sertoli-cell-only ou arrêt au stade spermatocyte) — SRR &lt;5%.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV29-S01-001</td>
+<td>🎬 VIDÉO</td>
+<td>Micro-TESE sous microscope opératoire : identification des tubules séminifères dilatés, prélèvement sélectif (Comparez l'aspect des tubules dilatés vs atrophiques)</td>
+</tr>
+<tr>
+<td>MFIV29-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>TESE conventionnelle vs micro-TESE : zone de prélèvement, volume tissulaire, taux de récupération — comparaison visuelle</td>
+</tr>
+<tr>
+<td>MFIV29-S01-003</td>
+<td>📊 GRAPHIQUE</td>
+<td>Taux de récupération spermatique par étiologie de NOA : Klinefelter, AZFc, arrêt de maturation, Sertoli-cell-only — données Bernie et al. 2015</td>
+</tr>
+</tbody>
+</table>
+<p>La section suivante explore les « add-ons » de la FIV — des techniques complémentaires dont le niveau de preuve varie considérablement.</p>
+<hr />
+<h3 id="section-292-add-ons-de-la-fiv-assisted-hatching-embryoglue-et-techniques-doptimisation">Section 29.2 — Add-ons de la FIV : assisted hatching, EmbryoGlue et techniques d'optimisation</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : L'industrie de la FIV propose aux couples de nombreux « extras » (<em>add-ons</em>) : assisted hatching, EmbryoGlue, time-lapse, PGT-A, acupuncture pré-transfert... Certains sont validés par des données solides, d'autres reposent sur des preuves fragiles. Comment distinguer l'innovation utile du marketing reproductif ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les principaux add-ons de la FIV en évaluant de manière critique le niveau de preuve de chacun, en aidant le praticien à fournir une information éclairée aux couples :</p>
+<ul>
+<li>
+<p><strong>Assisted hatching (éclosion assistée)</strong> : le module doit expliquer le rationnel — l'embryon doit « éclore » de la zone pellucide (membrane glycoprotéique entourant l'embryon) pour pouvoir s'implanter dans l'endomètre. L'assisted hatching consiste à créer une ouverture ou un amincissement de la zone pellucide pour faciliter cette éclosion. Trois techniques existent : <strong>laser</strong> (la plus utilisée — laser à diode infrarouge, ouverture précise et reproductible), <strong>mécanique</strong> (microdissection à l'aiguille), et <strong>chimique</strong> (solution de Tyrode acide — en voie d'abandon car moins contrôlable). Les indications classiquement avancées sont : âge maternel &gt;38 ans, épaisseur de zone pellucide anormale (&gt;17 μm), embryons congelés-décongelés (la vitrification peut durcir la zona), et échecs répétés d'implantation. Le module doit présenter la méta-analyse <strong>Cochrane</strong> de Lacey et al. (2020, 39 RCT, &gt;7000 femmes) — résultat : <strong>pas de bénéfice significatif</strong> sur le taux de naissance vivante dans la population générale FIV (RR 1,09 ; IC 95% 0,99-1,20). Un bénéfice modeste est possible chez les femmes &gt;38 ans et pour les embryons congelés, mais les données sont de faible qualité (📊 Niveau de preuve : I — mais effet cliniquement non significatif).</p>
+</li>
+<li>
+<p><strong>EmbryoGlue</strong> : le module doit présenter ce milieu de transfert enrichi en <strong>acide hyaluronique</strong> (HA — composant naturel de l'interface embryon-endomètre) commercialisé par Vitrolife. Le rationnel est que l'HA favorise l'<strong>adhésion</strong> de l'embryon à l'endomètre au moment du transfert (interaction avec les récepteurs CD44 endométriaux). La méta-analyse Cochrane de Bontekoe et al. (2014, 16 RCT, &gt;3900 femmes) montre un <strong>bénéfice modeste mais significatif</strong> — augmentation du taux de naissance vivante (RR 1,12 ; IC 95% 1,02-1,24). Le NNT (<em>Number Needed to Treat</em>) est d'environ 25 — il faut utiliser l'EmbryoGlue pour 25 transferts pour obtenir une naissance supplémentaire. Le module doit discuter le coût-efficacité (surcoût de 100-200 euros par transfert) et la qualité variable des études incluses (📊 Niveau de preuve : I — bénéfice modeste).</p>
+</li>
+<li>
+<p><strong>Collapse artificiel du blastocyste avant vitrification</strong> : le module doit expliquer que le blastocyste contient une cavité remplie de liquide (blastocèle) qui peut compromettre la survie lors de la vitrification (formation de cristaux de glace intracellulaire). Le <strong>collapse artificiel</strong> consiste à perforer le trophectoderme avec un laser ou une aiguille pour évacuer le liquide du blastocèle immédiatement avant la vitrification. Les données montrent une <strong>amélioration du taux de survie post-décongélation</strong> (95-99% avec collapse vs 90-95% sans — Mukaida et al., <em>Hum Reprod</em>, 2006) et potentiellement du taux d'implantation. Cette technique est largement adoptée par les laboratoires de FIV (📊 Niveau de preuve : III — séries comparatives, pas de RCT).</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — Les add-ons en FIV : innovation ou exploitation commerciale ?</strong><br />
+L'ESHRE et la HFEA (autorité britannique) ont alerté sur la multiplication des add-ons proposés aux couples en FIV — souvent présentés comme révolutionnaires par les cliniques, mais rarement validés par des données de niveau I.<br />
+- <strong>Position HFEA</strong> (traffic light system) : la HFEA britannique attribue un code couleur (vert/ambre/rouge) à chaque add-on selon son niveau de preuve. L'assisted hatching et l'EmbryoGlue reçoivent un feu <strong>ambre</strong> (preuve modérée d'un petit bénéfice). Le time-lapse, le PGT-A universel et l'acupuncture reçoivent un feu <strong>rouge</strong> (preuve insuffisante d'un bénéfice sur le taux de naissance vivante).<br />
+- <strong>Enjeu éthique</strong> : les couples en FIV sont vulnérables — l'espoir d'un enfant les rend susceptibles d'accepter (et de payer) tout ce qui pourrait « augmenter les chances ». Le devoir du praticien est de fournir une information loyale et basée sur les preuves, en distinguant clairement ce qui est validé de ce qui est expérimental <em>(Harper et al., Hum Reprod, 2017 — ESHRE add-ons paper)</em>.</p>
+<p>💡 <strong>Mnémonique — PROVE IT</strong> (Évaluer un add-on FIV) :<br />
+<strong>P</strong>rimary outcome = taux de naissance vivante (pas « taux de grossesse biochimique ») — <strong>R</strong>CT de grande puissance ? — <strong>O</strong>utcome par intention de traiter ? — <strong>V</strong>alidation indépendante (pas seulement l'industriel) — <strong>E</strong>ffet size cliniquement pertinent ? — <strong>I</strong>nformation loyale au couple — <strong>T</strong>raffic light HFEA/ESHRE</p>
+<p>✏️ <strong>Micro-exercice</strong> : Un couple en 3e tentative FIV vous demande les « options supplémentaires » disponibles. Classez les add-ons suivants par niveau de preuve (du plus au moins validé) et justifiez :<br />
+1. EmbryoGlue (acide hyaluronique)<br />
+2. Assisted hatching au laser<br />
+3. Acupuncture pré-transfert<br />
+4. Collapse du blastocyste avant vitrification<br />
+→ <em>Classement par niveau de preuve : (1) EmbryoGlue — méta-analyse Cochrane positive, bénéfice modeste mais significatif (NdP I). (2) Collapse — largement adopté, données comparatives favorables mais pas de RCT (NdP III). (3) Assisted hatching — méta-analyse Cochrane non significative dans la population générale, possible bénéfice marginal &gt;38 ans (NdP I — effet non significatif). (4) Acupuncture — méta-analyses contradictoires, effet placebo probable, feu rouge HFEA (NdP I — absence de bénéfice).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV29-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Assisted hatching au laser : ouverture de la zone pellucide — technique pas-à-pas (Identifiez le diamètre optimal de l'ouverture et la zone à éviter)</td>
+</tr>
+<tr>
+<td>MFIV29-S02-002</td>
+<td>📊 TABLEAU</td>
+<td>Add-ons FIV : traffic light system — technique, rationnel, NdP, recommandation (code couleur HFEA)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-293-therapie-de-remplacement-mitochondrial-mrt-et-frontieres-ethiques">Section 29.3 — Thérapie de remplacement mitochondrial (MRT) et frontières éthiques</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Un enfant né avec trois patrimoines génétiques — ADN nucléaire du père et de la mère, ADN mitochondrial d'une donneuse d'ovocyte. Les médias ont parlé de « bébé à trois parents ». Cette formulation est-elle scientifiquement correcte ? Et quels sont les enjeux éthiques d'une technique qui modifie la lignée germinale ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la MRT comme l'une des techniques les plus innovantes et les plus controversées de la médecine reproductive contemporaine :</p>
+<ul>
+<li>
+<p><strong>Rationnel</strong> : le module doit expliquer que les <strong>maladies mitochondriales</strong> (prévalence ~1/5000 naissances) sont dues à des mutations de l'<strong>ADN mitochondrial</strong> (ADNmt — 37 gènes, transmission maternelle exclusive). Certaines mutations de l'ADNmt causent des maladies sévères et souvent fatales — syndrome de Leigh, MELAS (<em>Mitochondrial Encephalopathy, Lactic Acidosis, Stroke-like episodes</em>), MERRF, neuropathie de Leber. Le PGT-M n'est pas applicable aux maladies mitochondriales car l'ADNmt est <strong>hétéroplasmique</strong> (proportion variable de mitochondries mutantes vs normales dans chaque cellule) et sa distribution est <strong>stochastique</strong> lors des divisions cellulaires — impossible de prédire le taux d'hétéroplasmie du fœtus à partir de la biopsie de trophectoderme. La MRT vise à remplacer les mitochondries mutantes de la mère par des mitochondries saines d'une donneuse, en conservant l'ADN nucléaire des deux parents.</p>
+</li>
+<li>
+<p><strong>Techniques</strong> : le module doit décrire les deux principales approches —<br />
+  (1) Le <strong>MST</strong> (<em>Maternal Spindle Transfer</em>) : le fuseau méiotique (contenant les chromosomes maternels) est extrait de l'ovocyte de la mère porteuse de la mutation mitochondriale, puis transféré dans un ovocyte de donneuse dont le propre fuseau a été retiré (ovocyte énucléé mais conservant ses mitochondries saines). L'ovocyte reconstitué est ensuite fécondé par ICSI. L'enfant possède l'ADN nucléaire de ses deux parents biologiques et l'ADN mitochondrial de la donneuse (~37 gènes sur ~20 000 gènes au total — soit &lt;0,2% du génome total).<br />
+  (2) Le <strong>PNT</strong> (<em>Pronuclear Transfer</em>) : après fécondation, les deux pronuclei (paternel et maternel) sont extraits du zygote de la mère et transférés dans un zygote de donneuse dont les pronuclei ont été retirés.</p>
+</li>
+<li>
+<p><strong>Cadre réglementaire et résultats</strong> : le module doit présenter le cadre unique du Royaume-Uni — la HFEA a autorisé la MRT en <strong>2015</strong> (premier pays au monde), avec les premières applications cliniques au Newcastle Fertility Centre à partir de 2017. Les résultats sont encore confidentiels et sur de très petits effectifs — les données publiées sont limitées à quelques naissances, avec un suivi à court terme rassurant mais insuffisant pour conclure sur la sécurité à long terme <em>(Hyslop et al., Nature, 2016 — preuve de concept ; UK Parliament, Mitochondrial Donation Regulations, 2015)</em>. Le module doit mentionner le cas controversé de <strong>Zhang et al.</strong> (2017) — naissance d'un enfant après MST réalisée au Mexique (contournement des réglementations américaines — la FDA n'autorise pas la MRT aux USA), soulevant des questions éthiques sur le tourisme reproductif pour les techniques non autorisées.</p>
+</li>
+<li>
+<p><strong>Enjeux éthiques</strong> : le module doit présenter les débats éthiques majeurs — (1) la MRT constitue une <strong>modification de la lignée germinale</strong> (l'ADNmt de la donneuse sera transmis à toutes les générations suivantes si l'enfant est une fille), (2) le concept de « bébé à trois parents » est biologiquement inexact (l'ADNmt ne code que 37 gènes mitochondriaux, aucun trait phénotypique visible) mais psychologiquement percutant, (3) le risque de <strong>dérive</strong> vers d'autres modifications germinales (CRISPR — affaire He Jiankui, 2018, les premiers bébés CRISPR), (4) la question du <strong>consentement</strong> de l'enfant à naître (modification irréversible de son patrimoine génétique), et (5) le débat sur la <strong>proportionnalité</strong> (la MRT est-elle justifiée uniquement pour les maladies mitochondriales sévères, ou pourrait-elle être étendue ?) <em>(Nuffield Council on Bioethics, Novel techniques for the prevention of mitochondrial DNA disorders, 2012)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — Carryover mitochondrial et reversion</strong><br />
+Un problème technique majeur de la MRT est le <strong>carryover</strong> — lors du transfert du fuseau ou des pronuclei, une petite quantité de cytoplasme maternel (contenant des mitochondries mutantes) est inévitablement transférée avec l'ADN nucléaire. Ce carryover (estimé à 1-5% du total mitochondrial) pourrait, théoriquement, se ré-amplifier au cours du développement embryonnaire (phénomène de <strong>reversion</strong>) — ramenant le taux d'hétéroplasmie au-dessus du seuil pathogène. Les études sur des embryons humains montrent que la reversion survient dans ~15% des cas in vitro <em>(Yamada et al., Cell Reports, 2016)</em> — un taux préoccupant qui justifie la poursuite des recherches avant une généralisation de la technique.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai/Faux — MRT et enjeux éthiques :<br />
+1. La MRT est autorisée en routine dans l'Union européenne.<br />
+2. L'ADN mitochondrial de la donneuse représente environ 0,2% du génome total de l'enfant.<br />
+3. Si l'enfant né de MRT est un garçon, il transmettra l'ADN mitochondrial de la donneuse à ses enfants.<br />
+4. Le carryover mitochondrial rend la MRT théoriquement imparfaite.<br />
+5. La technique de Zhang et al. (2017) a été réalisée au Mexique car autorisée par la loi mexicaine.<br />
+→ <em>1. FAUX — seul le Royaume-Uni autorise la MRT (depuis 2015). La plupart des pays européens ne l'ont pas légiférée. 2. VRAI — l'ADNmt contient 37 gènes sur ~20 000 gènes au total. 3. FAUX — l'ADN mitochondrial est de transmission maternelle exclusive. Un garçon ne transmet pas ses mitochondries à ses enfants. 4. VRAI — le carryover de 1-5% peut théoriquement se ré-amplifier (reversion). 5. FAUX — le Mexique n'avait pas de législation spécifique sur la MRT (vide juridique), ce qui a permis la réalisation de la technique sans autorisation explicite — ce n'est pas la même chose qu'une autorisation.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV29-S03-001</td>
+<td>📐 SCHÉMA</td>
+<td>Maternal Spindle Transfer (MST) : les 4 étapes — extraction du fuseau maternel, énucléation de l'ovocyte donneuse, transfert, fécondation ICSI (Identifiez à quel moment l'ADN mitochondrial de la donneuse est « sélectionné »)</td>
+</tr>
+<tr>
+<td>MFIV29-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Pronuclear Transfer (PNT) : les 4 étapes — comparaison avec le MST (Quelle technique est réalisée avant et quelle technique après fécondation ?)</td>
+</tr>
+<tr>
+<td>MFIV29-S03-003</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Maladies mitochondriales : transmission maternelle, hétéroplasmie, seuil pathogène — pourquoi le PGT-M classique ne fonctionne pas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="auto-evaluation-module-29">Auto-évaluation — Module 29</h2>
+<p><strong>QCM 1</strong> : Quel est le taux de récupération spermatique (SRR) en micro-TESE dans l'azoospermie non obstructive ?<br />
+- A. 10-20%<br />
+- B. 30-40%<br />
+- C. 40-60%<br />
+- D. 70-80%</p>
+<p>→ <em>C. Le SRR en micro-TESE est de 40-60% dans la NOA, supérieur à la TESE conventionnelle (30-40%). La supériorité de la micro-TESE repose sur l'identification visuelle des tubules séminifères dilatés sous microscope ×20-25 (Bernie et al., J Urol, 2015).</em></p>
+<p><strong>QCM 2</strong> : Quel add-on FIV dispose du meilleur niveau de preuve d'efficacité (méta-analyse Cochrane positive) ?<br />
+- A. Assisted hatching au laser<br />
+- B. EmbryoGlue (acide hyaluronique)<br />
+- C. Acupuncture pré-transfert<br />
+- D. PGT-A universel</p>
+<p>→ <em>B. L'EmbryoGlue dispose d'une méta-analyse Cochrane positive (Bontekoe et al., 2014) montrant un bénéfice modeste mais significatif (RR 1,12 ; NNT ~25). L'assisted hatching (A) n'a pas montré de bénéfice significatif dans la population générale. L'acupuncture (C) et le PGT-A universel (D) n'ont pas de preuve de bénéfice sur le taux de naissance vivante.</em></p>
+<p><strong>QCM 3</strong> : La thérapie de remplacement mitochondrial (MRT) est légalement autorisée dans quel pays ?<br />
+- A. France<br />
+- B. États-Unis<br />
+- C. Royaume-Uni<br />
+- D. Japon<br />
+- E. Allemagne</p>
+<p>→ <em>C. Le Royaume-Uni est le premier et, à ce jour, le seul pays à avoir légiféré en faveur de la MRT (2015 — Mitochondrial Donation Regulations). Les USA (B) n'autorisent pas la MRT (interdiction FDA). La France (A), le Japon (D) et l'Allemagne (E) n'ont pas de cadre législatif autorisant cette technique.</em></p>
+<p><strong>Cas clinique court</strong> : M. H., 35 ans, syndrome de Klinefelter (47,XXY) diagnostiqué à 18 ans. Couple infertile depuis 3 ans. Azoospermie confirmée sur 3 spermogrammes. FSH 18 UI/L, inhibine B 60 pg/mL, testostérone 2,8 ng/mL. Varicocèle gauche grade II. Le couple souhaite un enfant biologique.<br />
+1. Quelle technique de récupération spermatique proposez-vous ?<br />
+2. Envisagez-vous un traitement préalable ? Lequel ?<br />
+3. Quel taux de récupération pouvez-vous annoncer au couple ?<br />
+4. Si la micro-TESE échoue (pas de spermatozoïde retrouvé), quelles sont les alternatives ?</p>
+<p>→ <em>1. Micro-TESE — technique de référence dans le Klinefelter. 2. Deux options préalables : (a) optimisation hormonale (testostérone basse — envisager un traitement par inhibiteur d'aromatase ou hCG pendant 3-6 mois pour améliorer la testostérone intratesticulaire et la spermatogenèse résiduelle), (b) varicocelectomie microchirurgicale (grade II — bénéfice discuté mais envisageable). Les deux traitements nécessitent un délai de 3-6 mois avant la micro-TESE. 3. SRR de 30-50% dans le Klinefelter (données Fullerton et al., 2010). Facteurs favorables : âge jeune (35 ans), inhibine B détectable (60 pg/mL — suggère une spermatogenèse résiduelle). 4. Alternatives en cas d'échec : don de sperme (discussion avec le couple), ou ROSI (spermatides rondes — si retrouvées lors de la micro-TESE, mais taux de grossesse &lt;5%, technique expérimentale).</em></p>
+<p><strong>Question de synthèse</strong> : En 5-10 lignes, expliquez pourquoi la HFEA a développé un système de « traffic lights » pour les add-ons de FIV, et comment le praticien devrait utiliser ce système dans sa consultation avec les couples. Intégrez les notions de vulnérabilité du patient, de niveau de preuve et de responsabilité médicale.</p>
+<hr />
+<h2 id="references-bibliographiques-partie-8-modules-26-29">Références bibliographiques — Partie 8 (Modules 26-29)</h2>
+<ol>
+<li>Bernie AM, et al. <em>Comparison of microdissection testicular sperm extraction, conventional testicular sperm extraction, and testicular sperm aspiration for nonobstructive azoospermia: a systematic review and meta-analysis</em>. Fertil Steril. 2015;104(5):1099-1103.</li>
+<li>Bolton H, et al. <em>Mouse model of chromosome mosaicism reveals lineage-specific depletion of aneuploid cells and normal developmental potential</em>. Nat Commun. 2016;7:11165.</li>
+<li>Bontekoe S, et al. <em>Adherence compounds in embryo transfer media for assisted reproductive technologies</em>. Cochrane Database Syst Rev. 2014;(2):CD007421.</li>
+<li>Capalbo A, et al. <em>Correlation between standard blastocyst morphology, euploidy and implantation: an observational study in two centers involving 956 screened blastocysts</em>. Hum Reprod. 2014;29(6):1173-1181.</li>
+<li>Capalbo A, et al. <em>Consistent and reproducible outcomes of blastocyst biopsy and aneuploidy screening across different biopsy practitioners</em>. Hum Reprod. 2016;31(1):199-208.</li>
+<li>Cha KY, et al. <em>Pregnancy after in vitro fertilization of human follicular oocytes collected from nonstimulated cycles, their culture in vitro and their transfer in a donor oocyte program</em>. Fertil Steril. 1991;55(1):109-113.</li>
+<li>Deruyver Y, et al. <em>Microdissection testicular sperm extraction: a systematic review</em>. Andrology. 2014;2(1):20-24.</li>
+<li>Ebner T, et al. <em>Artificial oocyte activation: evidence for clinical readiness</em>. Reprod Biomed Online. 2015;30(5):495-499.</li>
+<li>Fiorentino F, et al. <em>Application of next-generation sequencing technology for comprehensive aneuploidy screening of blastocysts in clinical preimplantation genetic screening cycles</em>. Hum Reprod. 2014;29(12):2802-2813.</li>
+<li>Franasiak JM, et al. <em>The nature of aneuploidy with increasing age of the female partner: a review of 15,169 consecutive trophectoderm biopsies evaluated with comprehensive chromosomal screening</em>. Fertil Steril. 2014;101(3):656-663.</li>
+<li>Fullerton G, et al. <em>Should non-mosaic Klinefelter syndrome men be labelled as infertile in 2009?</em>. Hum Reprod. 2010;25(3):588-597.</li>
+<li>Gravholt CH, et al. <em>Clinical practice guidelines for the care of girls and women with Turner syndrome</em>. Eur J Endocrinol. 2017;177(3):G1-G70.</li>
+<li>Greco E, et al. <em>Healthy babies after intrauterine transfer of mosaic aneuploid blastocysts</em>. N Engl J Med. 2015;373(21):2089-2090.</li>
+<li>Harper J, et al. <em>Adjuncts in the IVF laboratory: where is the evidence for 'add-on' interventions?</em>. Hum Reprod. 2017;32(3):485-491.</li>
+<li>Huang L, et al. <em>Noninvasive preimplantation genetic testing for aneuploidy in spent medium may be more reliable than trophectoderm biopsy</em>. PNAS. 2019;116(28):14105-14112.</li>
+<li>Hyslop LA, et al. <em>Towards clinical application of pronuclear transfer to prevent mitochondrial DNA disease</em>. Nature. 2016;534(7607):383-386.</li>
+<li>Kashir J, et al. <em>Oocyte activation, phospholipase C zeta and human infertility</em>. Hum Reprod Update. 2010;16(6):690-703.</li>
+<li>Lacey L, et al. <em>Assisted hatching on assisted conception (IVF and ICSI)</em>. Cochrane Database Syst Rev. 2020;(3):CD001894.</li>
+<li>Lalos A, et al. <em>Recruiting donors in Sweden: an overview</em>. Hum Reprod. 2003;18(5):1038-1042.</li>
+<li>Marina S, et al. <em>Sharing motherhood: biological lesbian co-mothers, a new IVF indication</em>. Hum Reprod. 2010;25(4):938-941.</li>
+<li>Masoudian P, et al. <em>Oocyte donation pregnancies and the risk of preeclampsia or gestational hypertension</em>. Am J Obstet Gynecol. 2016;214(3):328.e1-328.e8.</li>
+<li>Munné S, et al. <em>Preimplantation genetic testing for aneuploidy versus morphology as selection criteria for single frozen-thawed embryo transfer in good-prognosis patients: a multicenter randomized clinical trial</em>. Fertil Steril. 2019;112(6):1071-1079.</li>
+<li>Natesan SA, et al. <em>Genome-wide karyomapping accurately identifies the inheritance of single-gene defects in human preimplantation embryos in vitro</em>. Genet Med. 2014;16(11):838-845.</li>
+<li>Nuffield Council on Bioethics. <em>Novel techniques for the prevention of mitochondrial DNA disorders: an ethical review</em>. 2012.</li>
+<li>Ohlander SJ, et al. <em>Use of fresh versus cryopreserved testicular sperm for intracytoplasmic sperm injection in testicular sperm extraction cycles: a systematic review and meta-analysis</em>. Fertil Steril. 2014;101(2):344-349.</li>
+<li>Rechitsky S, et al. <em>Preimplantation genetic diagnosis with HLA matching</em>. Reprod Biomed Online. 2004;9(2):210-221.</li>
+<li>Rubio C, et al. <em>In vitro fertilization with preimplantation genetic diagnosis for aneuploidies in advanced maternal age: a randomized, controlled trial</em>. Fertil Steril. 2017;107(5):1122-1129.</li>
+<li>Sauer MV, et al. <em>Establishing a nonanonymous donor oocyte program — preliminary experience at Columbia-Presbyterian Medical Center, New York, NY</em>. Fertil Steril. 1992;57(2):386-390.</li>
+<li>Schlegel PN. <em>Testicular sperm extraction: microdissection improves sperm yield with minimal tissue excision</em>. Hum Reprod. 1999;14(1):131-135.</li>
+<li>Schlegel PN, Kaufmann J. <em>Role of varicocelectomy in men with nonobstructive azoospermia</em>. Fertil Steril. 2004;81(6):1585-1588.</li>
+<li>Scott RT Jr, et al. <em>Blastocyst biopsy with comprehensive chromosome screening and fresh embryo transfer significantly increases in vitro fertilization implantation and delivery rates</em>. Fertil Steril. 2013;100(3):697-703.</li>
+<li>Shenfield F, et al. <em>Cross-border reproductive care in six European countries</em>. Hum Reprod. 2010;25(6):1361-1368.</li>
+<li>Tanaka A, et al. <em>Fourteen babies born after round spermatid injection into human oocytes</em>. Reprod Biomed Online. 2018;36(5):S19.</li>
+<li>Taylor TH, et al. <em>The origin, mechanisms, incidence and clinical consequences of chromosomal mosaicism in humans</em>. Hum Reprod Update. 2014;20(4):571-581.</li>
+<li>Vanden Meerschaut F, et al. <em>Neonatal and neurodevelopmental outcome of children aged 3-10 years born following assisted oocyte activation</em>. Reprod Biomed Online. 2014;28(1):54-63.</li>
+<li>Viotti M, et al. <em>Let the evidence guide data interpretation: a reply to Capalbo et al.</em>. Hum Reprod. 2021;36(10):2834-2836.</li>
+<li>Vuong LN, et al. <em>In-vitro maturation of oocytes versus conventional IVF in women with infertility and a high antral follicle count: a randomized non-inferiority trial</em>. N Engl J Med. 2023;388(2):142-151.</li>
+<li>Walls ML, et al. <em>In vitro maturation as an alternative to standard in vitro fertilization for patients diagnosed with polycystic ovaries</em>. Hum Reprod. 2015;30(7):1632-1641.</li>
+<li>Yamada M, et al. <em>Genetic drift can compromise mitochondrial replacement by nuclear transfer in human oocytes</em>. Cell Stem Cell. 2016;18(6):749-754.</li>
+<li>Yeh JS, et al. <em>Effect of increasing age on IVF and donor oocyte success rates</em>. Fertil Steril. 2014;102(3):e105-e106.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🧊 <strong>Exercice ReproSim©</strong> : Ouvrez le module « Protocoles de récupération spermatique ».<br />
+1. Simulez une micro-TESE sur le modèle testiculaire 3D — explorez le parenchyme sous grossissement ×25 et identifiez 3 tubules séminifères dilatés.<br />
+2. Comparez visuellement l'aspect des tubules « actifs » (dilatés, opaques) vs « Sertoli-cell-only » (fins, translucides).<br />
+3. Simulez un prélèvement ciblé et transmettez le fragment au laboratoire virtuel — observez la dilacération et la recherche de spermatozoïdes.<br />
+→ <em>Quel paramètre microscopique distingue le plus fiablement un tubule actif d'un tubule inactif ?</em></p>
+</blockquote>
+<hr />
+<p><em>Ce document constitue le cahier des charges de la Partie 8 (Modules 26-29) de la formation FIV et AMP — VERTEX© / ReproSim©. Il est conforme aux REGLES_ECRITURE_CONTENU.md v3.0 et aux conventions de la plateforme.</em></p>
+</div>

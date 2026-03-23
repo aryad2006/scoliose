@@ -1,0 +1,1053 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>VERTEX© — Cours interactif</title>
+<style>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — Cours interactif v2
+   ════════════════════════════════════════════════════════════ */
+
+/* === Layout sidebar + contenu === */
+.vertex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #2d3436;
+}
+
+/* --- Sidebar --- */
+.vertex-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 280px;
+  min-width: 280px;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #F8F9FA;
+  border-right: 1px solid #DEE2E6;
+  padding: 20px 0;
+  font-size: 0.88em;
+  z-index: 100;
+  scrollbar-width: thin;
+}
+.vertex-sidebar::-webkit-scrollbar { width: 5px; }
+.vertex-sidebar::-webkit-scrollbar-thumb { background: #CED4DA; border-radius: 3px; }
+.vertex-sidebar-title {
+  padding: 0 18px 14px;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 1px solid #DEE2E6;
+  margin-bottom: 10px;
+}
+.vertex-sidebar-title::before { content: "📑 "; }
+.vertex-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertex-sidebar li { margin: 0; }
+.vertex-sidebar a {
+  display: block;
+  padding: 7px 18px;
+  color: #495057;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+.vertex-sidebar a:hover {
+  background: #E9ECEF;
+  color: var(--vertex-primary, #1565C0);
+}
+.vertex-sidebar a.active {
+  background: #E3F2FD;
+  color: var(--vertex-primary, #1565C0);
+  border-left-color: var(--vertex-primary, #1565C0);
+  font-weight: 600;
+}
+.vertex-sidebar .toc-h3 {
+  padding-left: 34px;
+  font-size: 0.92em;
+  color: #6C757D;
+}
+
+/* --- Contenu principal --- */
+.vertex-content {
+  flex: 1;
+  max-width: 820px;
+  padding: 30px 40px;
+  line-height: 1.75;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+/* === Titres === */
+.vertex-content h1 {
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 3px solid var(--vertex-primary, #1565C0);
+  padding-bottom: 12px;
+  font-size: 1.85em;
+  margin-top: 0.5em;
+}
+.vertex-content h2 {
+  color: var(--vertex-primary, #1565C0);
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  border-left: 5px solid var(--vertex-primary, #1565C0);
+  padding-left: 14px;
+  scroll-margin-top: 20px;
+}
+.vertex-content h3 {
+  color: #2E7D32;
+  margin-top: 1.8em;
+  font-size: 1.22em;
+  scroll-margin-top: 20px;
+}
+.vertex-content h4 { color: #6A1B9A; margin-top: 1.2em; font-size: 1.05em; }
+
+/* === Encadrés pédagogiques === */
+.vbox {
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  border-left: 5px solid;
+}
+.vbox p:last-child { margin-bottom: 0; }
+.vbox-title { font-weight: 700; margin-bottom: 8px; display: block; }
+
+.vbox.clinique    { background:#FFF8E1; border-color:#F57F17; }
+.vbox.clinique    .vbox-title { color:#E65100; }
+.vbox.clinique    .vbox-title::before { content:"🏥 "; }
+.vbox.danger      { background:#FBE9E7; border-color:#C62828; }
+.vbox.danger      .vbox-title { color:#B71C1C; }
+.vbox.danger      .vbox-title::before { content:"⚠️ "; }
+.vbox.approfondi  { background:#E3F2FD; border-color:#1565C0; }
+.vbox.approfondi  .vbox-title { color:#0D47A1; }
+.vbox.approfondi  .vbox-title::before { content:"📖 "; }
+.vbox.astuce      { background:#E8F5E9; border-color:#2E7D32; }
+.vbox.astuce      .vbox-title { color:#1B5E20; }
+.vbox.astuce      .vbox-title::before { content:"💡 "; }
+.vbox.expert      { background:#F3E5F5; border-color:#7B1FA2; }
+.vbox.expert      .vbox-title { color:#6A1B9A; }
+.vbox.expert      .vbox-title::before { content:"🔬 "; }
+.vbox.reflexion   { background:#FFFDE7; border-color:#F9A825; }
+.vbox.reflexion   .vbox-title { color:#F57F17; }
+.vbox.reflexion   .vbox-title::before { content:"🤔 "; }
+.vbox.controverse { background:#ECEFF1; border-color:#546E7A; }
+.vbox.controverse .vbox-title { color:#37474F; }
+.vbox.controverse .vbox-title::before { content:"⚖️ "; }
+.vbox.pertinence  { background:#FFF3E0; border-color:#E65100; }
+.vbox.pertinence  .vbox-title { color:#BF360C; }
+.vbox.pertinence  .vbox-title::before { content:"🎯 "; }
+
+/* === Média placeholder === */
+.vmedia {
+  background: #F3E5F5; border: 2px dashed #9C27B0; border-radius: 10px;
+  padding: 22px; margin: 22px 0; text-align: center; color: #6A1B9A;
+}
+.vmedia-icon { font-size: 2em; display: block; margin-bottom: 6px; }
+.vmedia-code { font-weight: 700; }
+.vmedia-desc { font-style: italic; margin-top: 6px; color: #7B1FA2; }
+.vmedia-note { font-size: 0.8em; color: #9E9E9E; margin-top: 8px; }
+
+/* === QCM interactif === */
+.vqcm {
+  border: 2px solid #E0E0E0; border-radius: 10px;
+  padding: 22px; margin: 25px 0; background: #FAFAFA;
+}
+.vqcm-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.vqcm-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 14px;
+  font-size: 0.82em; font-weight: 700; color: #fff;
+}
+.vqcm-badge.bronze  { background: #F57F17; }
+.vqcm-badge.argent  { background: #78909C; }
+.vqcm-badge.or      { background: #FFB300; color:#333; }
+.vqcm-badge.diamant { background: #00ACC1; }
+.vqcm-question { font-weight: 600; font-size: 1.05em; margin-bottom: 14px; }
+
+/* Options empilées verticalement */
+.vqcm-options { list-style: none; padding: 0; margin: 0 0 15px; }
+.vqcm-options li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; margin: 6px 0; border-radius: 8px;
+  border: 2px solid #E0E0E0; background: #fff;
+  cursor: pointer; transition: all 0.15s ease;
+  user-select: none;
+}
+.vqcm-options li:hover { border-color: #90CAF9; background: #F5F9FF; }
+.vqcm-options li.selected { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vqcm-options li.correct-show { border-color: #2E7D32; background: #E8F5E9; }
+.vqcm-options li.incorrect-show { border-color: #C62828; background: #FFEBEE; }
+.vqcm-options input[type="radio"],
+.vqcm-options input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--vertex-primary, #1565C0);
+  width: 18px; height: 18px;
+}
+.vqcm-options label { cursor: pointer; flex: 1; }
+
+/* Bouton valider */
+.vqcm-validate {
+  display: inline-block; padding: 10px 24px; border-radius: 8px;
+  background: var(--vertex-primary, #1565C0); color: #fff; border: none;
+  font-weight: 600; font-size: 0.95em; cursor: pointer;
+  transition: background 0.15s ease;
+}
+.vqcm-validate:hover { filter: brightness(1.1); }
+.vqcm-validate:disabled { background: #CCC; cursor: not-allowed; }
+
+.vqcm-result {
+  margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+  font-weight: 600; display: none;
+}
+.vqcm-result.correct { background: #E8F5E9; color: #1B5E20; }
+.vqcm-result.incorrect { background: #FFEBEE; color: #B71C1C; }
+
+/* Feedback dépliable */
+.vfeedback { margin-top: 12px; border-radius: 8px; overflow: hidden; }
+.vfeedback summary {
+  background: #E3F2FD; padding: 10px 16px; cursor: pointer;
+  font-weight: 600; color: #1565C0; border-radius: 8px;
+  list-style: none;
+}
+.vfeedback summary::-webkit-details-marker { display: none; }
+.vfeedback summary::before { content: "💬 "; }
+.vfeedback .fb-content {
+  padding: 14px 16px; background: #F5F5F5;
+  border-radius: 0 0 8px 8px; line-height: 1.6;
+}
+
+/* === Exercice drag & drop === */
+.vdrag-zone {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0; padding: 12px; background: #F5F5F5; border-radius: 8px;
+  min-height: 60px;
+}
+.vdrag-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; background: #fff; border: 2px solid #E0E0E0;
+  border-radius: 8px; cursor: grab; user-select: none;
+  transition: all 0.15s ease;
+}
+.vdrag-item:active { cursor: grabbing; }
+.vdrag-item:hover { border-color: #90CAF9; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.vdrag-item .drag-handle { color: #9E9E9E; font-size: 1.2em; }
+.vdrag-item .drag-handle::before { content: "⠿"; }
+.vdrag-item.drag-over { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vdrag-item.correct-pos { border-color: #2E7D32; background: #E8F5E9; }
+.vdrag-item.incorrect-pos { border-color: #C62828; background: #FFEBEE; }
+
+/* === Textarea auto-resize === */
+.vtext-answer {
+  width: 100%; min-height: 80px; padding: 14px; border: 2px solid #E0E0E0;
+  border-radius: 8px; font-family: inherit; font-size: 0.95em;
+  line-height: 1.6; resize: none; overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.vtext-answer:focus { border-color: var(--vertex-primary, #1565C0); outline: none; }
+.vtext-answer::placeholder { color: #ADB5BD; }
+
+/* === Exercice structuré === */
+.vexercice {
+  border: 2px solid #26A69A; border-radius: 10px;
+  padding: 22px; margin: 22px 0; background: #E0F2F1;
+}
+.vexercice-title { font-weight: 700; color: #00695C; margin-bottom: 10px; }
+.vexercice-title::before { content: "✏️ "; }
+
+/* === Points clés === */
+.vpoints-cles {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-radius: 12px; padding: 22px 26px; margin: 30px 0;
+  border: 1px solid #A5D6A7;
+}
+.vpoints-cles-title { font-weight:700; font-size:1.2em; color:#1B5E20; margin-bottom:14px; }
+.vpoints-cles-title::before { content: "🔑 "; }
+.vpoints-cles ol { padding-left: 22px; }
+.vpoints-cles li { margin-bottom: 8px; }
+
+/* === Tableaux === */
+.vertex-content table {
+  width: 100%; border-collapse: collapse; margin: 22px 0;
+  font-size: 0.94em; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.vertex-content th {
+  background: var(--vertex-primary, #1565C0); color: #fff;
+  padding: 11px 14px; text-align: left; font-weight: 600;
+}
+.vertex-content td { padding: 9px 14px; border-bottom: 1px solid #E8E8E8; }
+.vertex-content tr:nth-child(even) { background: #F8F9FA; }
+.vertex-content tr:hover { background: #E3F2FD; }
+
+/* === Transition === */
+.vtransition {
+  text-align:center; padding:18px; margin:30px 0; color:#78909C;
+  font-style:italic; border-top:1px dashed #CFD8DC; border-bottom:1px dashed #CFD8DC;
+}
+
+/* === Références === */
+.vrefs {
+  background:#ECEFF1; border-radius:10px; padding:20px 24px;
+  margin:30px 0; font-size:0.88em; color:#546E7A;
+}
+.vrefs-title { font-weight:700; color:#37474F; font-size:1.05em; margin-bottom:10px; }
+.vrefs-title::before { content:"📚 "; }
+.vrefs ul { padding-left:18px; }
+.vrefs li { margin-bottom:4px; }
+
+/* === Footer === */
+.vertex-footer {
+  text-align:center; padding:20px; margin-top:40px;
+  color:#9E9E9E; font-size:0.85em; border-top:1px solid #E0E0E0;
+}
+
+/* Listes & blockquotes */
+.vertex-content ul, .vertex-content ol { padding-left:24px; }
+.vertex-content li { margin-bottom:5px; }
+.vertex-content blockquote {
+  border-left:4px solid #90CAF9; padding:12px 20px;
+  margin:16px 0; background:#F5F5F5; border-radius:0 8px 8px 0;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .vertex-wrapper { flex-direction: column; }
+  .vertex-sidebar {
+    position: relative; width: 100%; min-width: unset;
+    max-height: none; border-right: none; border-bottom: 1px solid #DEE2E6;
+  }
+  .vertex-content { padding: 20px; }
+}
+@media print {
+  .vertex-sidebar { display: none; }
+  .vertex-content { max-width: 100%; padding: 0; }
+}
+</style>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — JavaScript interactif
+   ════════════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Sidebar : scroll spy (highlight section active)
+  const sidebarLinks = document.querySelectorAll('.vertex-sidebar a');
+  const sections = [];
+  sidebarLinks.forEach(link => {
+    const id = link.getAttribute('href')?.replace('#','');
+    if (id) {
+      const el = document.getElementById(id);
+      if (el) sections.push({ el, link });
+    }
+  });
+
+  function updateActive() {
+    let current = null;
+    for (const s of sections) {
+      if (s.el.getBoundingClientRect().top <= 80) current = s;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ── Sidebar smooth scroll
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href')?.replace('#','');
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  // ── QCM : radio/checkbox + validation progressive
+  document.querySelectorAll('.vqcm').forEach(qcm => {
+    const btn = qcm.querySelector('.vqcm-validate');
+    const resultDiv = qcm.querySelector('.vqcm-result');
+    const feedbackEl = qcm.querySelector('.vfeedback');
+    const corrBtn = qcm.querySelector('.vqcm-show-correction');
+    const options = qcm.querySelectorAll('.vqcm-options li');
+    const inputs = qcm.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+
+    // Click on li selects the input
+    options.forEach(li => {
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const input = this.querySelector('input');
+        if (!input || input.disabled) return;
+        if (input.type === 'radio') {
+          inputs.forEach(i => { i.checked = false; i.closest('li').classList.remove('selected','incorrect-show'); });
+          input.checked = true;
+          this.classList.add('selected');
+        } else {
+          input.checked = !input.checked;
+          this.classList.toggle('selected', input.checked);
+          this.classList.remove('incorrect-show');
+        }
+        // Clear previous result message when user changes selection
+        if (resultDiv) resultDiv.style.display = 'none';
+      });
+    });
+
+    // Validate — only shows if wrong, user can retry
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // Check if anything is selected
+        const anySelected = [...inputs].some(i => i.checked);
+        if (!anySelected) return;
+
+        let allCorrect = true;
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          const isSelected = input && input.checked;
+
+          li.classList.remove('correct-show','incorrect-show');
+
+          if (isSelected && !isCorrect) {
+            li.classList.add('incorrect-show');
+            allCorrect = false;
+          }
+          if (!isSelected && isCorrect) {
+            allCorrect = false;
+          }
+        });
+
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          if (allCorrect) {
+            // Correct! Show success, highlight correct answers, disable inputs
+            resultDiv.className = 'vqcm-result correct';
+            resultDiv.textContent = 'Bonne réponse !';
+            options.forEach(li => {
+              const isCorrect = li.dataset.correct === 'true';
+              if (isCorrect) li.classList.add('correct-show');
+              const input = li.querySelector('input');
+              if (input) input.disabled = true;
+            });
+            btn.disabled = true;
+            if (corrBtn) corrBtn.style.display = 'none';
+            if (feedbackEl) feedbackEl.style.display = 'block';
+          } else {
+            // Wrong — show message but keep interactive
+            resultDiv.className = 'vqcm-result incorrect';
+            resultDiv.textContent = 'Réponse incorrecte — réessayez ou cliquez sur « Voir la correction ».';
+            // Show correction button
+            if (corrBtn) corrBtn.style.display = 'inline-block';
+          }
+        }
+      });
+    }
+
+    // Show correction — reveals correct answers, locks the QCM
+    if (corrBtn) {
+      corrBtn.addEventListener('click', function() {
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          li.classList.remove('selected','incorrect-show','correct-show');
+          if (isCorrect) li.classList.add('correct-show');
+          if (input) input.disabled = true;
+        });
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'vqcm-result incorrect';
+          resultDiv.textContent = 'Voici la bonne réponse :';
+        }
+        btn.disabled = true;
+        corrBtn.style.display = 'none';
+        if (feedbackEl) feedbackEl.style.display = 'block';
+      });
+    }
+  });
+
+  // ── Drag & Drop pour exercices de réarrangement
+  document.querySelectorAll('.vdrag-zone').forEach(zone => {
+    let draggedItem = null;
+
+    zone.querySelectorAll('.vdrag-item').forEach(item => {
+      item.setAttribute('draggable', 'true');
+
+      item.addEventListener('dragstart', function(e) {
+        draggedItem = this;
+        this.style.opacity = '0.5';
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      item.addEventListener('dragend', function() {
+        this.style.opacity = '1';
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        this.classList.add('drag-over');
+      });
+
+      item.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        if (draggedItem !== this) {
+          const allItems = [...zone.querySelectorAll('.vdrag-item')];
+          const fromIdx = allItems.indexOf(draggedItem);
+          const toIdx = allItems.indexOf(this);
+          if (fromIdx < toIdx) {
+            zone.insertBefore(draggedItem, this.nextSibling);
+          } else {
+            zone.insertBefore(draggedItem, this);
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartY = 0;
+      item.addEventListener('touchstart', function(e) {
+        draggedItem = this;
+        touchStartY = e.touches[0].clientY;
+        this.style.opacity = '0.7';
+      }, { passive: true });
+
+      item.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.closest('.vdrag-item') && target.closest('.vdrag-item') !== draggedItem) {
+          const over = target.closest('.vdrag-item');
+          zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+          over.classList.add('drag-over');
+        }
+      });
+
+      item.addEventListener('touchend', function(e) {
+        this.style.opacity = '1';
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target) {
+          const dropTarget = target.closest('.vdrag-item');
+          if (dropTarget && dropTarget !== draggedItem) {
+            const allItems = [...zone.querySelectorAll('.vdrag-item')];
+            const fromIdx = allItems.indexOf(draggedItem);
+            const toIdx = allItems.indexOf(dropTarget);
+            if (fromIdx < toIdx) {
+              zone.insertBefore(draggedItem, dropTarget.nextSibling);
+            } else {
+              zone.insertBefore(draggedItem, dropTarget);
+            }
+          }
+        }
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+    });
+
+    // Validate drag order + correction + retry
+    const validateBtn = zone.parentElement.querySelector('.vdrag-validate');
+    const correctionBtn = zone.parentElement.querySelector('.vdrag-correction');
+
+    if (validateBtn) {
+      validateBtn.addEventListener('click', function() {
+        const items = zone.querySelectorAll('.vdrag-item');
+        let allCorrect = true;
+        items.forEach(item => {
+          const currentIdx = [...zone.querySelectorAll('.vdrag-item')].indexOf(item);
+          const correctIdx = parseInt(item.dataset.order);
+          item.classList.remove('correct-pos', 'incorrect-pos');
+          if (currentIdx === correctIdx) {
+            item.classList.add('correct-pos');
+          } else {
+            item.classList.add('incorrect-pos');
+            allCorrect = false;
+          }
+          // Disable drag during review
+          item.setAttribute('draggable', 'false');
+          item.style.cursor = 'default';
+        });
+        validateBtn.disabled = true;
+        // Show correction button if not all correct
+        if (correctionBtn && !allCorrect) {
+          correctionBtn.style.display = 'inline-block';
+          correctionBtn.dataset.state = 'show';
+          correctionBtn.textContent = 'Voir la correction';
+        }
+      });
+    }
+
+    if (correctionBtn) {
+      correctionBtn.addEventListener('click', function() {
+        const state = this.dataset.state;
+        const items = [...zone.querySelectorAll('.vdrag-item')];
+
+        if (state === 'show') {
+          // Show correct order: sort items by data-order
+          const sorted = items.slice().sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
+          sorted.forEach(item => {
+            zone.appendChild(item);
+            // Mark: green if user had it right, red if user had it wrong
+            const wasCorrect = item.classList.contains('correct-pos');
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            if (wasCorrect) {
+              item.classList.add('correct-pos');
+            } else {
+              item.classList.add('incorrect-pos');
+            }
+          });
+          this.dataset.state = 'retry';
+          this.textContent = 'Réessayer';
+        } else if (state === 'retry') {
+          // Reset: shuffle items, clear colors, re-enable drag
+          const shuffled = items.slice().sort(() => Math.random() - 0.5);
+          shuffled.forEach(item => {
+            zone.appendChild(item);
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            item.setAttribute('draggable', 'true');
+            item.style.cursor = 'grab';
+          });
+          validateBtn.disabled = false;
+          this.style.display = 'none';
+          this.dataset.state = 'show';
+        }
+      });
+    }
+  });
+
+  // ── Textarea auto-resize
+  document.querySelectorAll('.vtext-answer').forEach(ta => {
+    function autoResize() {
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    ta.addEventListener('input', autoResize);
+    autoResize();
+  });
+
+});
+</script>
+<style>:root { --vertex-primary: #00838F; }</style></head><body><div class="vertex-wrapper"><nav class="vertex-sidebar"><div class="vertex-sidebar-title">Sommaire</div><ul><li><a href="#s-1-accroche-clinique" class="">Accroche clinique</a></li>
+<li><a href="#s-2-objectifs-d-apprentissage" class="">Objectifs d'apprentissage</a></li>
+<li><a href="#s-3-4-1-le-foie-chef-d-orchestre-de-la-glycémie-à-jeun" class="">4.1 — Le foie : chef d'orchestre de la glycémie à jeun</a></li>
+<li><a href="#s-4-4-1-1-production-hépatique-de-glucose-les-deux-voies" class="toc-h3">4.1.1 — Production hépatique de glucose : les deux voies</a></li>
+<li><a href="#s-5-4-1-2-insulinorésistance-hépatique-dans-le-dt2" class="toc-h3">4.1.2 — Insulinorésistance hépatique dans le DT2</a></li>
+<li><a href="#s-6-4-1-3-metformine-mécanisme-d-action-hépatique" class="toc-h3">4.1.3 — Metformine : mécanisme d'action hépatique</a></li>
+<li><a href="#s-7-4-1-4-glycogénogenèse-postprandiale-le-foie-en-mode-stockage" class="toc-h3">4.1.4 — Glycogénogenèse postprandiale : le foie en mode « stockage »</a></li>
+<li><a href="#s-8-4-2-muscle-squelettique-le-principal-consommateur-postprandi" class="">4.2 — Muscle squelettique : le principal consommateur postprandial de glucose</a></li>
+<li><a href="#s-9-4-2-1-captage-musculaire-du-glucose-la-voie-insulino-dépenda" class="toc-h3">4.2.1 — Captage musculaire du glucose : la voie insulino-dépendante</a></li>
+<li><a href="#s-10-4-2-2-la-voie-ampk-calcium-le-captage-indépendant-de-l-insul" class="toc-h3">4.2.2 — La voie AMPK/calcium : le captage indépendant de l'insuline par la contraction</a></li>
+<li><a href="#s-11-4-2-3-insulinorésistance-musculaire-dans-le-dt2" class="toc-h3">4.2.3 — Insulinorésistance musculaire dans le DT2</a></li>
+<li><a href="#s-12-4-3-tissu-adipeux-bien-plus-qu-un-réservoir-de-graisse" class="">4.3 — Tissu adipeux : bien plus qu'un réservoir de graisse</a></li>
+<li><a href="#s-13-4-3-1-lipolyse-et-acides-gras-libres-le-rôle-de-l-insuline" class="toc-h3">4.3.1 — Lipolyse et acides gras libres : le rôle de l'insuline</a></li>
+<li><a href="#s-14-4-3-2-adipokines-le-tissu-adipeux-comme-organe-endocrine" class="toc-h3">4.3.2 — Adipokines : le tissu adipeux comme organe endocrine</a></li>
+<li><a href="#s-15-4-4-cerveau-consommateur-obligatoire-et-régulateur-central" class="">4.4 — Cerveau : consommateur obligatoire et régulateur central</a></li>
+<li><a href="#s-16-4-4-1-le-cerveau-glucose-dépendant" class="toc-h3">4.4.1 — Le cerveau glucose-dépendant</a></li>
+<li><a href="#s-17-4-4-2-neurones-glucose-sensibles-et-régulation-centrale" class="toc-h3">4.4.2 — Neurones glucose-sensibles et régulation centrale</a></li>
+<li><a href="#s-18-4-4-3-neuroglycopénie-urgence-thérapeutique" class="toc-h3">4.4.3 — Neuroglycopénie : urgence thérapeutique</a></li>
+<li><a href="#s-19-4-4-4-corps-cétoniques-substrat-alternatif-de-secours" class="toc-h3">4.4.4 — Corps cétoniques : substrat alternatif de secours</a></li>
+<li><a href="#s-20-points-clés-du-module" class="">Points clés du module</a></li>
+<li><a href="#s-21-qcm-auto-évaluation" class="">QCM — Auto-évaluation</a></li>
+<li><a href="#s-22-cas-clinique" class="toc-h3">Cas clinique</a></li>
+<li><a href="#s-23-question-de-synthèse" class="toc-h3">Question de synthèse</a></li></ul></nav><main class="vertex-content"><h1>FORMATION DIABÉTOLOGIE — PARTIE I : FONDAMENTAUX</h1>
+<h1>MODULE 4 : MÉTABOLISME GLUCIDIQUE INTÉGRÉ — Foie, Muscle, Tissu Adipeux, Cerveau</h1>
+<p><strong>Partie</strong> : I — Fondamentaux
+<strong>Durée estimée</strong> : 3h00
+<strong>Niveau</strong> : Fondamental
+<strong>Prérequis</strong> : Modules 1 à 3 (embryologie pancréatique, insuline/glucagon, signalisation cellulaire)</p>
+<hr />
+<h2 id="s-1-accroche-clinique">Accroche clinique</h2>
+<div class="vbox clinique"><span class="vbox-title">Mise en situation</span>
+Un patient diabétique de type 2 sous metformine 1 000 mg × 2/j vous montre son carnet glycémique : glycémies à jeun régulièrement élevées (1,40 g/L), mais glycémies postprandiales quasi normales (1,60 g/L). Il est perplexe : <em>« Docteur, je fais attention à ce que je mange, mes glycémies après les repas sont correctes, mais le matin à jeun c'est toujours élevé. D'où vient ce sucre alors que je n'ai rien mangé depuis 12 heures ? Et pourquoi la metformine que vous m'avez prescrite fait surtout baisser la glycémie du matin ? »</em><br>
+> Pour répondre à ces questions — et comprendre pourquoi la glycémie à jeun et la glycémie postprandiale relèvent de mécanismes distincts impliquant des organes différents — il faut intégrer le rôle métabolique de quatre acteurs majeurs : le foie, maître de la glycémie à jeun ; le muscle squelettique, principal consommateur de glucose après le repas ; le tissu adipeux, régulateur indirect via les acides gras libres et les adipokines ; et le cerveau, consommateur obligatoire de glucose et centre de régulation neurovégétative. C'est le concept de l'« octet omineux » décrit par DeFronzo (<em>Diabetes</em>, 2009), où la défaillance simultanée de ces multiples organes caractérise le DT2.
+</div>
+
+<h2 id="s-2-objectifs-d-apprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Expliquer</strong> la production hépatique de glucose (glycogénolyse et néoglucogenèse), sa régulation hormonale et sa dérégulation dans le DT2</li>
+<li><strong>Décrire</strong> le mécanisme d'action de la metformine sur la néoglucogenèse hépatique et justifier son efficacité préférentielle sur la glycémie à jeun</li>
+<li><strong>Détailler</strong> le captage musculaire du glucose stimulé par l'insuline (voie IRS-1/PI3K/Akt/GLUT4) et par la contraction (voie AMPK/calcium)</li>
+<li><strong>Analyser</strong> le rôle du tissu adipeux dans l'insulinorésistance via la lipolyse, les acides gras libres et les adipokines</li>
+<li><strong>Intégrer</strong> la chaîne physiopathologique tissu adipeux viscéral → lipotoxicité → insulinorésistance hépatique et musculaire → hyperglycémie</li>
+</ol>
+<hr />
+<h2 id="s-3-4-1-le-foie-chef-d-orchestre-de-la-glycémie-à-jeun">4.1 — Le foie : chef d'orchestre de la glycémie à jeun</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Après un jeûne de 12 heures, votre glycémie reste stable autour de 0,80-0,90 g/L. Pourtant, le cerveau consomme ~5 g de glucose par heure. D'où vient ce glucose si les réserves de glycogène hépatique s'épuisent en 8-12 heures ? Et pourquoi, chez le patient DT2, le foie continue-t-il à produire du glucose même quand la glycémie est déjà élevée ?
+</div>
+
+<h3 id="s-4-4-1-1-production-hépatique-de-glucose-les-deux-voies">4.1.1 — Production hépatique de glucose : les deux voies</h3>
+<p>Le foie est le seul organe capable de maintenir la glycémie dans la plage physiologique pendant le jeûne, grâce à sa double capacité de <strong>glycogénolyse</strong> et de <strong>néoglucogenèse</strong>. Cette production hépatique de glucose représente environ <strong>2 mg/kg/min</strong> à l'état basal chez l'adulte sain, soit environ 10 g/h pour un individu de 70 kg — précisément ce qu'il faut pour alimenter les organes glucose-dépendants, cerveau en tête.</p>
+<p>La <strong>glycogénolyse</strong> — dégradation du glycogène hépatique en glucose — est la source prédominante de glucose pendant les <strong>8 premières heures</strong> suivant le dernier repas. Le foie stocke environ 70-100 g de glycogène chez l'adulte, mobilisable rapidement sous l'action du glucagon qui active la glycogène phosphorylase via l'AMPc et la protéine kinase A. L'insuline exerce l'effet inverse : elle active la glycogène synthase (via déphosphorylation par la protéine phosphatase 1) et inhibe la glycogène phosphorylase, favorisant ainsi le stockage plutôt que la libération. La glycogénolyse est un mécanisme rapide, mobilisable en quelques minutes, mais <strong>quantitativement limité</strong> par les réserves de glycogène.</p>
+<p>La <strong>néoglucogenèse</strong> — synthèse de novo de glucose à partir de précurseurs non glucidiques — prend le relais progressivement et devient la source majoritaire de glucose au-delà de <strong>12 heures de jeûne</strong>. Les substrats sont le lactate (cycle de Cori), l'alanine (cycle glucose-alanine musculaire), le glycérol (issu de la lipolyse adipocytaire) et le pyruvate. Les enzymes clés — <strong>PEPCK</strong> (phosphoénolpyruvate carboxykinase), <strong>fructose-1,6-bisphosphatase</strong> et <strong>glucose-6-phosphatase (G6Pase)</strong> — sont régulées au niveau transcriptionnel par le ratio insuline/glucagon. L'insuline, via la phosphorylation du facteur de transcription FoxO1 par Akt, réprime la transcription de PEPCK et de G6Pase. Le glucagon, via l'AMPc et le facteur CREB, stimule leur transcription (Barthel &amp; Schmoll, <em>Am J Physiol</em>, 2003).</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Glycogénolyse vs néoglucogenèse en pratique** :<br>
+Retenez la chronologie : les 8 premières heures de jeûne = surtout glycogénolyse (le foie « vide ses réserves »). Au-delà de 12h = surtout néoglucogenèse (le foie « fabrique du glucose »). C'est pourquoi la glycémie à jeun stricte (≥12h de jeûne) reflète principalement la néoglucogenèse, et c'est cette voie que la metformine cible.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S01-001</span><div class="vmedia-desc">Schéma des deux voies de production hépatique de glucose : glycogénolyse (0-8h) et néoglucogenèse (>12h), avec les substrats, enzymes clés et régulation hormonale (Identifiez à quel moment la néoglucogenèse dépasse la glycogénolyse et pourquoi le ratio insuline/glucagon est le régulateur central)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-5-4-1-2-insulinorésistance-hépatique-dans-le-dt2">4.1.2 — Insulinorésistance hépatique dans le DT2</h3>
+<p>Dans le diabète de type 2, l'insulinorésistance hépatique constitue le mécanisme principal responsable de l'<strong>hyperglycémie à jeun</strong>. Le foie se comporte paradoxalement comme s'il était en situation de jeûne permanent, alors même que le patient est hyperinsulinémique et hyperglycémique. La production hépatique de glucose n'est pas freinée par l'hyperinsulinémie, et peut atteindre <strong>2,5-3 mg/kg/min</strong> — soit 25-50% au-dessus de la normale (DeFronzo et al., <em>J Clin Invest</em>, 1989).</p>
+<p>Deux mécanismes s'additionnent. D'une part, la <strong>signalisation de l'insuline est défectueuse</strong> au niveau hépatique : la voie IRS-2/PI3K/Akt est altérée, FoxO1 n'est pas phosphorylé et reste nucléaire actif, maintenant l'expression de PEPCK et G6Pase. La néoglucogenèse tourne « à plein régime » malgré l'hyperinsulinémie. D'autre part, une <strong>hyperglucagonémie paradoxale</strong> est présente chez la quasi-totalité des patients DT2. Les cellules α pancréatiques, qui devraient réduire leur sécrétion de glucagon en réponse à l'hyperglycémie, ne le font pas — en partie à cause de la perte du signal paracrine insulinique et d'une résistance des cellules α au glucose (Unger &amp; Cherrington, <em>J Clin Invest</em>, 2012). Le glucagon en excès stimule en permanence la néoglucogenèse et la glycogénolyse.</p>
+<p>Cette double anomalie — insulinorésistance + hyperglucagonémie — explique le profil glycémique typique du DT2 débutant : <strong>GAJ élevée</strong> alors que les glycémies postprandiales peuvent encore être quasi normales (le muscle compensant partiellement par un captage résiduel). C'est le stade où la metformine est particulièrement efficace.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Insulinorésistance sélective hépatique<strong> : L'insulinorésistance hépatique est <em>sélective</em> : la voie métabolique de l'insuline (néoglucogenèse) est résistante, mais la voie lipogénique reste sensible. L'insuline continue donc à stimuler la </strong>lipogenèse de novo<em>* et la synthèse de VLDL, contribuant à la stéatose hépatique (NAFLD/NASH) et à la dyslipidémie athérogène du DT2 (triglycérides élevés, HDL bas). Cette « insulinorésistance sélective » est un concept clé pour comprendre pourquoi le DT2 associe hyperglycémie ET stéatose hépatique (Brown & Goldstein, </em>Cell Metab*, 2008).
+</div>
+
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Le foie du patient DT2 « se comporte comme s'il était à jeun » : production de glucose non freinée, glycogénolyse active, néoglucogenèse maximale. Cette métaphore est utile en consultation pour expliquer au patient pourquoi ses glycémies à jeun sont élevées malgré l'absence d'alimentation nocturne : <em>« Ce n'est pas l'alimentation qui est en cause, c'est votre foie qui fabrique trop de sucre la nuit. »</em>
+</div>
+
+<h3 id="s-6-4-1-3-metformine-mécanisme-d-action-hépatique">4.1.3 — Metformine : mécanisme d'action hépatique</h3>
+<p>La metformine, biguanide prescrit depuis plus de 60 ans, reste le traitement de première intention du DT2 principalement parce qu'elle cible efficacement la <strong>néoglucogenèse hépatique</strong> — le mécanisme central de l'hyperglycémie à jeun. Son mécanisme d'action, longtemps débattu, a été clarifié par les travaux de Foretz et collaborateurs (<em>J Clin Invest</em>, 2010).</p>
+<p>La metformine pénètre dans l'hépatocyte via le transporteur OCT1 (organic cation transporter 1) et <strong>inhibe le complexe I de la chaîne respiratoire mitochondriale</strong>. Cette inhibition, modérée et réversible, réduit la production d'ATP et augmente le ratio AMP/ATP intracellulaire. L'accumulation d'AMP a deux conséquences majeures :</p>
+<ol>
+<li>
+<p><strong>Activation de l'AMPK</strong> (AMP-activated protein kinase) : cette kinase « détecteur d'énergie » phosphoryle et inactive des facteurs de transcription lipogéniques (SREBP-1c) et gluconéogéniques. L'AMPK phosphoryle également CRTC2 (CREB-regulated transcription coactivator 2), empêchant son entrée dans le noyau et réduisant la transcription de PEPCK et G6Pase (Shaw et al., <em>Science</em>, 2005).</p>
+</li>
+<li>
+<p><strong>Inhibition directe de la néoglucogenèse</strong> par le déficit énergétique : la néoglucogenèse est un processus très coûteux en énergie (6 ATP par molécule de glucose produite). En réduisant la disponibilité d'ATP, la metformine limite directement le flux néoglucogénique, indépendamment de l'AMPK (Madiraju et al., <em>Nature</em>, 2014).</p>
+</li>
+</ol>
+<p>L'effet net est une <strong>réduction de 25-30% de la production hépatique de glucose</strong>, ce qui se traduit par une baisse de la GAJ de 0,30-0,50 g/L et une réduction de l'HbA1c de 1,0-1,5%. La metformine est plus efficace sur la GAJ que sur la GPP, car la néoglucogenèse est le déterminant principal de la glycémie à jeun mais ne contribue que partiellement à la glycémie postprandiale.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement — Débat AMPK-dépendant vs AMPK-indépendant</span>
+Foretz et al. (2010) ont montré que la metformine réduit la production hépatique de glucose même chez des souris KO pour l'AMPK hépatique, remettant en question le dogme de l'AMPK comme médiateur unique. Madiraju et al. (2014) ont proposé un mécanisme complémentaire via l'inhibition de la glycérol-3-phosphate déshydrogénase mitochondriale, réduisant la conversion du glycérol et du lactate en glucose. Le consensus actuel est que les deux voies coexistent : AMPK-dépendante (transcriptionnelle, effet prolongé) et AMPK-indépendante (métabolique, effet immédiat).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S01-002</span><div class="vmedia-desc">Mécanisme d'action de la metformine dans l'hépatocyte : inhibition du complexe I → ↑AMP/ATP → activation AMPK → ↓ PEPCK/G6Pase → ↓ néoglucogenèse (Retracez le cheminement moléculaire de la metformine depuis son entrée via OCT1 jusqu'à la réduction de la production de glucose)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-7-4-1-4-glycogénogenèse-postprandiale-le-foie-en-mode-stockage">4.1.4 — Glycogénogenèse postprandiale : le foie en mode « stockage »</h3>
+<p>Après un repas glucidique, le foie bascule d'un mode « production » à un mode « captage et stockage ». Le glucose portal, arrivant en concentration élevée via la veine porte, est capté par l'hépatocyte via <strong>GLUT2</strong> (transporteur bidirectionnel à haute capacité, non insulino-dépendant) et dirigé vers la <strong>glycogénogenèse</strong>. Le foie capte environ <strong>30% du glucose absorbé</strong> lors d'un repas mixte, contribuant significativement au contrôle de la glycémie postprandiale (Cherrington, <em>Diabetes</em>, 1999).</p>
+<p>Ce basculement est orchestré par l'inversion du ratio <strong>insuline/glucagon</strong> dans le sang portal. En période postprandiale, la concentration portale d'insuline est 3-4 fois supérieure à la concentration systémique (effet de premier passage hépatique), créant un gradient insulinique puissant qui active la glycogène synthase, inhibe la glycogène phosphorylase et réprime les enzymes de la néoglucogenèse. Simultanément, la sécrétion de glucagon est supprimée par l'hyperglycémie et l'hyperinsulinémie, réduisant le tonus gluconéogénique.</p>
+<div class="vbox expert"><span class="vbox-title">Expert — Voie directe et voie indirecte de la glycogénogenèse</span>
+Le glucose hépatique postprandial est stocké sous forme de glycogène par deux voies : la <strong>voie directe</strong> (glucose → glucose-6-phosphate → glucose-1-phosphate → UDP-glucose → glycogène) et la <strong>voie indirecte</strong> (glucose → pyruvate → oxaloacétate → phosphoénolpyruvate → glucose-6-phosphate → glycogène). Chez l'humain, la voie indirecte représente jusqu'à 50% de la glycogénogenèse postprandiale, ce qui est surprenant car elle passe par le pyruvate — un « détour » apparent qui a une logique métabolique : elle permet de recycler le lactate et l'alanine en glycogène sans passer par la libération de glucose libre.
+</div>
+
+<div class="vexercice" id="ex_1"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient DT2 a une GAJ à 1,50 g/L et une GPP à 1,70 g/L. Vous initiez la metformine 1 000 mg × 2/j. Après 3 mois, la GAJ est à 1,15 g/L (-0,35) et la GPP à 1,55 g/L (-0,15).</p>
+<div style="margin:12px 0;"><label for="ex_1_q1" style="font-weight:600;color:#00695C;">1. Pourquoi la metformine a-t-elle davantage réduit la GAJ que la GPP ?</label><br><textarea class="vtext-answer" id="ex_1_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_1_q2" style="font-weight:600;color:#00695C;">2. Si vous souhaitez agir davantage sur la GPP, quelle classe thérapeutique ajouteriez-vous ?</label><br><textarea class="vtext-answer" id="ex_1_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) La metformine cible la néoglucogenèse hépatique, mécanisme principal de l'hyperglycémie à jeun. La GPP dépend surtout du captage musculaire (insulino-dépendant) et de l'effet incrétine, peu affectés par la metformine. (2) Pour cibler la GPP : un agoniste du récepteur GLP-1 (stimule la sécrétion d'insuline glucose-dépendante et ralentit la vidange gastrique) ou un inhibiteur de DPP-4 (potentialise l'effet incrétine). Un inhibiteur de SGLT2 pourrait aussi aider en augmentant l'excrétion urinaire de glucose.</div></details>
+</div>
+
+<div class="vtransition">Le foie produit et stocke le glucose, mais c'est un autre organe qui en consomme la majorité après le repas. Le muscle squelettique, représentant ~40% de la masse corporelle, est le principal « puits » de glucose en période postprandiale — et son dysfonctionnement est au cœur de l'insulinorésistance du DT2.</div>
+<hr />
+<h2 id="s-8-4-2-muscle-squelettique-le-principal-consommateur-postprandi">4.2 — Muscle squelettique : le principal consommateur postprandial de glucose</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un patient DT2 sédentaire est adressé pour un programme d'activité physique adaptée. Après 3 mois de marche rapide (30 min/j, 5j/semaine), ses glycémies postprandiales s'améliorent significativement. Pourtant, sa masse musculaire n'a pas augmenté et son insulinémie n'a pas changé. Comment l'exercice peut-il améliorer le captage du glucose si le problème de fond est l'insulinorésistance ?
+</div>
+
+<h3 id="s-9-4-2-1-captage-musculaire-du-glucose-la-voie-insulino-dépenda">4.2.1 — Captage musculaire du glucose : la voie insulino-dépendante</h3>
+<p>Le muscle squelettique est responsable de <strong>75 à 80% du captage du glucose stimulé par l'insuline</strong> en période postprandiale — ce qui en fait quantitativement le principal organe d'élimination du glucose plasmatique (DeFronzo, <em>Diabetes</em>, 2009). Cette prédominance musculaire s'explique par la combinaison de deux facteurs : la masse musculaire totale (~30 kg chez un adulte de 70 kg) et la densité élevée de récepteurs à l'insuline sur les fibres musculaires.</p>
+<p>Le mécanisme moléculaire du captage musculaire du glucose repose sur la <strong>translocation du transporteur GLUT4</strong> depuis des vésicules de stockage intracellulaires vers la membrane plasmique. À l'état basal (entre les repas), ~90% des transporteurs GLUT4 sont séquestrés dans des compartiments intracellulaires, et le captage basal de glucose par le muscle est faible. Après un repas, l'insuline déclenche une cascade de signalisation qui multiplie la densité de GLUT4 à la membrane par un facteur <strong>10 à 20</strong>, augmentant massivement le flux de glucose vers le cytoplasme musculaire (Saltiel &amp; Kahn, <em>Nature</em>, 2001).</p>
+<p>La cascade de signalisation canonique est la suivante : l'insuline se lie au <strong>récepteur à activité tyrosine kinase</strong> de la membrane musculaire → autophosphorylation du récepteur → recrutement et phosphorylation des substrats <strong>IRS-1/IRS-2</strong> (Insulin Receptor Substrates) → activation de la <strong>PI3-kinase</strong> (phosphoinositide 3-kinase) → génération de PIP3 → recrutement et activation de <strong>Akt/PKB</strong> (protéine kinase B) → phosphorylation de la protéine <strong>AS160</strong> (Akt Substrate of 160 kDa) → levée de l'inhibition sur le trafic vésiculaire de GLUT4 → fusion des vésicules GLUT4 avec la membrane plasmique.</p>
+<p>Simultanément, Akt active la <strong>glycogène synthase</strong> (via inactivation de GSK3β), orientant le glucose capté vers le stockage sous forme de glycogène musculaire — le principal devenir du glucose postprandial dans le muscle. Le muscle stocke environ <strong>400-500 g de glycogène</strong>, soit quatre fois plus que le foie, mais ce glycogène musculaire ne peut pas être libéré dans le sang (le muscle ne possède pas de glucose-6-phosphatase) et sert exclusivement de réserve énergétique locale pour la contraction.</p>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S02-001</span><div class="vmedia-desc">Cascade de signalisation insulinique dans le myocyte : du récepteur tyrosine kinase à la translocation de GLUT4 (Suivez chaque étape de phosphorylation et identifiez les points de blocage dans l'insulinorésistance)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Pourquoi le DT2 atteint d'abord la GPP** :<br>
+Puisque le muscle capte 75-80% du glucose postprandial, toute diminution de l'efficacité de GLUT4 retentit principalement sur la glycémie postprandiale. L'insulinorésistance musculaire est donc le premier déterminant de l'intolérance au glucose (stade pré-diabète → GPP élevée), avant que l'insulinorésistance hépatique ne cause l'hyperglycémie à jeun.
+</div>
+
+<h3 id="s-10-4-2-2-la-voie-ampk-calcium-le-captage-indépendant-de-l-insul">4.2.2 — La voie AMPK/calcium : le captage indépendant de l'insuline par la contraction</h3>
+<p>L'une des découvertes les plus importantes en diabétologie musculaire est l'existence d'une <strong>voie de captage du glucose totalement indépendante de l'insuline</strong>, activée par la contraction musculaire. Cette voie passe par deux médiateurs : l'<strong>AMPK</strong> et le <strong>calcium</strong> intracellulaire.</p>
+<p>Lors de la contraction, la consommation d'ATP par les ATPases musculaires (actine-myosine, Ca²⁺-ATPase du réticulum sarcoplasmique) augmente le ratio AMP/ATP, activant l'AMPK. Simultanément, l'élévation du calcium cytosolique (libéré par le réticulum sarcoplasmique pour déclencher la contraction) active la <strong>CaMKII</strong> (calcium/calmodulin-dependent protein kinase II). Ces deux signaux convergent pour déclencher la translocation de GLUT4 vers la membrane par des voies distinctes de la voie PI3K/Akt insulino-dépendante (Richter &amp; Hargreaves, <em>Physiol Rev</em>, 2013).</p>
+<p>La conséquence clinique est majeure : <strong>l'exercice physique augmente le captage musculaire du glucose même en situation d'insulinorésistance sévère</strong>. Chez le patient DT2 dont la voie IRS-1/PI3K/Akt est bloquée par la lipotoxicité, la contraction musculaire « court-circuite » ce blocage en utilisant une voie alternative pour mobiliser GLUT4. C'est le fondement pharmacologique de la prescription d'activité physique dans le DT2.</p>
+<p>L'effet de l'exercice sur le captage du glucose est double : un <strong>effet aigu</strong> (pendant et jusqu'à 2h après l'exercice, lié à la translocation de GLUT4) et un <strong>effet prolongé</strong> (amélioration de la sensibilité à l'insuline pendant 24-48h post-exercice, liée à la restauration des stocks de glycogène et à des modifications de la signalisation). Cet effet prolongé explique pourquoi la régularité de l'exercice (idéalement quotidien ou au minimum 5j/semaine) est plus importante que l'intensité isolée.</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+En consultation, lorsqu'un patient DT2 vous dit qu'il « ne voit pas l'intérêt de l'exercice puisqu'il est résistant à l'insuline », vous pouvez lui expliquer : <em>« Justement, vos muscles ont une deuxième porte d'entrée pour le sucre, qui fonctionne sans insuline. L'exercice ouvre cette porte. C'est pourquoi le sport fait baisser votre glycémie même si votre insuline marche mal. »</em> Cette explication, fondée sur la biologie, est un puissant levier de motivation.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S02-002</span><div class="vmedia-desc">Comparaison des deux voies de translocation de GLUT4 dans le myocyte : voie insulino-dépendante (IRS-1/PI3K/Akt) et voie contraction-dépendante (AMPK/CaMKII) (Identifiez pourquoi la voie de contraction reste fonctionnelle quand la voie insulinique est bloquée)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-11-4-2-3-insulinorésistance-musculaire-dans-le-dt2">4.2.3 — Insulinorésistance musculaire dans le DT2</h3>
+<p>L'insulinorésistance musculaire est chronologiquement le <strong>premier défaut mesurable</strong> dans l'histoire naturelle du DT2, détectable parfois des décennies avant le diagnostic. Les travaux pionniers de Shulman (<em>J Clin Invest</em>, 2000) ont identifié les <strong>lipides intramyocellulaires</strong> comme médiateurs centraux de cette résistance.</p>
+<p>Le mécanisme est le suivant : l'excès d'acides gras libres (AGL) circulants — conséquence de la lipolyse adipocytaire non freinée (cf. section 4.3) — conduit à une accumulation ectopique de lipides dans le muscle sous forme de <strong>diacylglycérol (DAG)</strong> et de <strong>céramides</strong>. Le DAG active la <strong>PKCθ</strong> (protéine kinase C θ), qui phosphoryle IRS-1 sur des résidus sérine (au lieu des résidus tyrosine normalement phosphorylés par le récepteur à l'insuline). Cette phosphorylation sérine est <strong>inhibitrice</strong> : elle empêche IRS-1 de transmettre le signal insulinique à PI3K, bloquant en aval toute la cascade jusqu'à GLUT4 (Itani et al., <em>Diabetes</em>, 2002).</p>
+<p>Les céramides, eux, activent la <strong>protéine phosphatase 2A (PP2A)</strong> qui déphosphoryle et inactive Akt, bloquant la cascade à un niveau encore plus distal. L'accumulation de céramides est particulièrement délétère car elle altère aussi la survie cellulaire via des voies pro-apoptotiques.</p>
+<p>En parallèle, une <strong>dysfonction mitochondriale</strong> musculaire a été documentée chez les patients DT2 et leurs apparentés au premier degré : réduction de la densité mitochondriale, diminution de la capacité oxydative et altération de la β-oxydation des acides gras. Cette dysfonction crée un cercle vicieux : les acides gras mal oxydés s'accumulent sous forme de métabolites lipotoxiques (DAG, céramides), aggravant l'insulinorésistance, qui elle-même réduit l'activité mitochondriale (Kelley et al., <em>Diabetes</em>, 2002).</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Lipides intramyocellulaires : athlètes vs DT2<em>* : Le paradoxe de l'athlète d'endurance est instructif : les sportifs d'ultra-fond présentent des taux de lipides intramyocellulaires aussi élevés que les patients DT2, mais sont extrêmement insulino-sensibles. La différence tient au </em>turnover* : chez l'athlète, les lipides intramyocellulaires sont rapidement oxydés dans des mitochondries nombreuses et fonctionnelles, sans accumulation de DAG ni de céramides. Chez le DT2, le déficit mitochondrial bloque l'oxydation, favorisant l'accumulation des métabolites lipotoxiques. Ce n'est pas la quantité de lipides qui compte, mais l'équilibre entre stockage et oxydation.
+</div>
+
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement — Le concept de « flexibilité métabolique »</span>
+Le muscle sain alterne entre l'oxydation des acides gras (à jeun) et l'oxydation du glucose (en postprandial) — c'est la « flexibilité métabolique » (Kelley & Mandarino, <em>Diabetes</em>, 2000). Chez le patient DT2, cette flexibilité est perdue : le muscle oxyde préférentiellement les acides gras même en période postprandiale (« inflexibilité métabolique »), réduisant l'utilisation du glucose et contribuant à l'hyperglycémie postprandiale. La restauration de cette flexibilité par l'exercice physique régulier est l'un des mécanismes par lesquels l'activité physique améliore le contrôle glycémique.
+</div>
+
+<div class="vexercice" id="ex_2"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient DT2, IMC 33, sédentaire, a des GPP régulièrement à 2,20 g/L. Il commence un programme de marche rapide 30 min/j.</p>
+<div style="margin:12px 0;"><label for="ex_2_q1" style="font-weight:600;color:#00695C;">1. Par quel mécanisme moléculaire l'exercice améliore-t-il ses GPP alors qu'il reste insulinorésistant ?</label><br><textarea class="vtext-answer" id="ex_2_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_2_q2" style="font-weight:600;color:#00695C;">2. Pourquoi conseillez-vous un exercice quotidien plutôt que 2 séances intenses par semaine ?</label><br><textarea class="vtext-answer" id="ex_2_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) La contraction musculaire active GLUT4 via la voie AMPK/calcium, indépendante de l'insuline. Cette voie « court-circuite » le blocage de la voie IRS-1/PI3K par le DAG et les céramides. (2) L'effet de l'exercice sur la sensibilité à l'insuline dure 24-48h post-exercice. Un exercice quotidien maintient cet effet en continu, tandis que 2 séances/semaine laissent des « fenêtres » de 3-4 jours sans bénéfice. La régularité prime sur l'intensité.</div></details>
+</div>
+
+<div class="vtransition">Le muscle capte le glucose, mais d'où viennent les acides gras libres qui causent l'insulinorésistance musculaire ? Le tissu adipeux, longtemps considéré comme un simple organe de stockage, est en réalité un acteur endocrine majeur dont la dysfonction alimente la cascade de l'insulinorésistance.</div>
+<hr />
+<h2 id="s-12-4-3-tissu-adipeux-bien-plus-qu-un-réservoir-de-graisse">4.3 — Tissu adipeux : bien plus qu'un réservoir de graisse</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Deux patients ont le même IMC de 32 kg/m². Le premier est insulino-sensible, normoglycémique, avec un tour de taille de 85 cm. Le second est DT2, avec un tour de taille de 110 cm. Pourquoi la <em>localisation</em> de la graisse est-elle plus importante que sa <em>quantité</em> pour prédire le risque métabolique ?
+</div>
+
+<h3 id="s-13-4-3-1-lipolyse-et-acides-gras-libres-le-rôle-de-l-insuline">4.3.1 — Lipolyse et acides gras libres : le rôle de l'insuline</h3>
+<p>Le tissu adipeux ne capte que ~5% du glucose stimulé par l'insuline en période postprandiale — une contribution quantitativement modeste au captage glucosé. Cependant, son rôle dans l'homéostasie glycémique est <strong>indirect mais majeur</strong>, via le contrôle de la <strong>lipolyse</strong> et la libération d'acides gras libres (AGL) dans la circulation.</p>
+<p>À l'état physiologique, l'insuline exerce un puissant effet anti-lipolytique sur l'adipocyte. Elle inhibe la <strong>lipase hormono-sensible (HSL)</strong> — l'enzyme clé de la lipolyse — via la voie PI3K/Akt → activation de la phosphodiestérase 3B → dégradation de l'AMPc → inactivation de la PKA → déphosphorylation et inactivation de HSL. Cette inhibition est extrêmement sensible : des concentrations d'insuline très faibles (10-20 µU/mL) suffisent à supprimer la lipolyse de 50%. En période postprandiale, l'hyperinsulinémie bloque presque totalement la lipolyse, réduisant les AGL circulants de 600-800 µmol/L (à jeun) à 100-200 µmol/L (postprandial).</p>
+<p>Dans le <strong>DT2</strong>, l'insulinorésistance adipocytaire altère cette régulation : la lipolyse n'est plus correctement supprimée par l'insuline, et les AGL circulants restent anormalement élevés en permanence, y compris en période postprandiale. Cet excès d'AGL a des conséquences systémiques catastrophiques — c'est le concept de <strong>lipotoxicité</strong> (Unger &amp; Scherer, <em>Trends Endocrinol Metab</em>, 2010) :</p>
+<ul>
+<li><strong>Foie</strong> : les AGL en excès sont captés par l'hépatocyte, estérifiés en triglycérides (→ stéatose hépatique/NAFLD), et stimulent la néoglucogenèse (les AGL sont une source d'énergie et de substrats pour la néoglucogenèse). Le DAG hépatique active PKCε, bloquant la signalisation de l'insuline → insulinorésistance hépatique.</li>
+<li><strong>Muscle</strong> : accumulation ectopique de DAG et céramides → blocage de IRS-1/PI3K → insulinorésistance musculaire (cf. section 4.2.3).</li>
+<li><strong>Pancréas</strong> : les AGL en excès induisent un stress oxydatif et un stress du réticulum endoplasmique dans les cellules β, conduisant à leur <strong>lipoapoptose</strong>. Ce mécanisme contribue à la réduction progressive de la masse β-cellulaire au cours de l'évolution du DT2 (Butler et al., <em>Diabetes</em>, 2003).</li>
+</ul>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+La triade lipotoxique<em>* : Retenez que les AGL en excès attaquent simultanément les trois organes cibles du DT2 : le foie (stéatose + néoglucogenèse), le muscle (insulinorésistance) et le pancréas (lipoapoptose β). C'est la « triade lipotoxique ». La perte pondérale, en réduisant la masse grasse viscérale et les AGL circulants, agit simultanément sur ces trois sites — ce qui explique son efficacité métabolique remarquable, y compris la rémission du DT2 après chirurgie bariatrique (Lean et al., </em>Lancet*, 2018).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S03-001</span><div class="vmedia-desc">Schéma de la lipotoxicité systémique : tissu adipeux viscéral → lipolyse non freinée → AGL → atteinte hépatique (stéatose + néoglucogenèse), musculaire (DAG + céramides → insulinorésistance) et pancréatique (lipoapoptose β) (Retracez le parcours d'un AGL depuis l'adipocyte jusqu'à ses effets pathologiques dans chaque organe cible)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-14-4-3-2-adipokines-le-tissu-adipeux-comme-organe-endocrine">4.3.2 — Adipokines : le tissu adipeux comme organe endocrine</h3>
+<p>La reconnaissance du tissu adipeux comme <strong>organe endocrine</strong> à part entière est l'une des avancées majeures de la fin du XXème siècle. L'adipocyte sécrète des dizaines de molécules bioactives — les <strong>adipokines</strong> — qui exercent des effets systémiques sur le métabolisme, l'inflammation, l'immunité et la fonction vasculaire.</p>
+<p><strong>Leptine</strong> : Découverte en 1994 (Zhang et al., <em>Nature</em>, 1994), la leptine est sécrétée proportionnellement à la masse grasse. Elle agit sur l'hypothalamus (noyaux arqué et ventromédian) pour réduire l'appétit et augmenter la dépense énergétique. Chez l'obèse, les taux de leptine sont paradoxalement très élevés, mais une <strong>résistance à la leptine</strong> s'installe au niveau central (saturation des récepteurs, altération du transport à travers la barrière hémato-encéphalique), abolissant l'effet anorexigène. La résistance à la leptine précède souvent l'insulinorésistance et contribue au cercle vicieux de l'obésité.</p>
+<p><strong>Adiponectine</strong> : Secrétée exclusivement par l'adipocyte, l'adiponectine est un puissant <strong>sensibilisateur à l'insuline</strong>. Elle active l'AMPK dans le muscle et le foie, augmente l'oxydation des acides gras, réduit la néoglucogenèse hépatique et exerce des effets anti-inflammatoires et anti-athérogènes. Paradoxalement, l'adiponectine est la seule adipokine dont les taux sont <strong>inversement corrélés</strong> à la masse grasse : plus l'obésité est importante (surtout viscérale), plus l'adiponectine est basse. Chez les patients DT2, les taux d'adiponectine sont significativement réduits, et cette réduction est un facteur de risque indépendant de progression vers le DT2 (Yamauchi et al., <em>Nat Med</em>, 2001).</p>
+<p><strong>Cytokines pro-inflammatoires (TNF-α, IL-6)</strong> : Le tissu adipeux viscéral hypertrophié sécrète des quantités élevées de TNF-α et d'IL-6, créant un état d'<strong>inflammation chronique de bas grade</strong> caractéristique de l'obésité viscérale. Le TNF-α altère directement la signalisation de l'insuline en activant les kinases JNK et IKKβ, qui phosphorylent IRS-1 sur sérine (effet inhibiteur identique à celui du DAG). L'IL-6 stimule la production hépatique de CRP (marqueur inflammatoire) et contribue à l'insulinorésistance hépatique (Hotamisligil, <em>Nature</em>, 2006).</p>
+<p><strong>Résistine et visfatine</strong> : La résistine, initialement décrite comme facteur d'insulinorésistance chez le rongeur, a un rôle moins clairement établi chez l'humain. La visfatine (ou NAMPT/PBEF) a été proposée comme « mimétique de l'insuline », mais les résultats sont controversés.</p>
+<div class="vbox controverse"><span class="vbox-title">Controverse — Obésité métaboliquement saine</span>
+Le concept d'« obèse métaboliquement sain » (<em>metabolically healthy obese</em>, MHO) désigne des individus obèses (IMC >30) sans aucune anomalie métabolique (pas d'insulinorésistance, glycémie normale, profil lipidique normal, CRP normale). Ce phénotype, qui représente 10-30% des obèses selon les critères utilisés, serait lié à une distribution préférentiellement sous-cutanée (et non viscérale) de la graisse, avec préservation de la fonction adipocytaire et des taux normaux d'adiponectine. Cependant, des études de suivi à long terme montrent qu'une proportion significative de MHO évolue vers un phénotype métaboliquement malsain au fil du temps (Appleton et al., <em>J Clin Endocrinol Metab</em>, 2013), remettant en question la stabilité de ce concept.
+</div>
+
+<div class="vbox expert"><span class="vbox-title">Expert — Tissu adipeux brun et beige</span>
+Au-delà du tissu adipeux blanc (stockage), l'adulte possède du tissu adipeux <strong>brun</strong> (dépôts supraclaviculaires, paravertébraux) et du tissu adipeux <strong>beige</strong> (adipocytes blancs « convertis » sous stimulation adrénergique ou par le froid). Ces tissus expriment <strong>UCP1</strong> (uncoupling protein 1), qui découple la phosphorylation oxydative et dissipe l'énergie sous forme de chaleur (thermogenèse). Leur activation améliore la sensibilité à l'insuline et la tolérance au glucose. Les agonistes des récepteurs β3-adrénergiques et le FGF21 sont des voies thérapeutiques en cours d'exploration pour activer la thermogenèse et améliorer le métabolisme glucidique.
+</div>
+
+<div class="vexercice" id="ex_3"><div class="vexercice-title">Micro-exercice</div>
+<p>Associez chaque adipokine à son effet métabolique principal :<br>- (A) Sensibilisation à l'insuline (AMPK) — (B) Satiété hypothalamique — (C) Inflammation hépatique (CRP) — (D) Insulinorésistance (phosphorylation sérine IRS-1)</p>
+<div style="margin:12px 0;"><label for="ex_3_q1" style="font-weight:600;color:#00695C;">1. Leptine — 2. Adiponectine — 3. TNF-α — 4. IL-6</label><br><textarea class="vtext-answer" id="ex_3_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">1-B (leptine → satiété), 2-A (adiponectine → sensibilisation insuline), 3-D (TNF-α → phosphorylation sérine IRS-1 via JNK), 4-C (IL-6 → stimulation CRP hépatique). Retenez que l'adiponectine est la « bonne » adipokine (seule à diminuer avec l'obésité), tandis que les autres augmentent avec l'excès de tissu adipeux viscéral.</div></details>
+</div>
+
+<div class="vtransition">Foie, muscle, tissu adipeux — nous avons exploré les trois organes périphériques clés du métabolisme glucidique. Mais il reste un acteur central, souvent oublié : le cerveau, consommateur obligatoire de glucose et centre de régulation de l'ensemble du métabolisme énergétique.</div>
+<hr />
+<h2 id="s-15-4-4-cerveau-consommateur-obligatoire-et-régulateur-central">4.4 — Cerveau : consommateur obligatoire et régulateur central</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un patient DT1 sous insuline rapide s'injecte accidentellement une double dose avant le dîner. Trente minutes plus tard, il présente des sueurs froides, des tremblements, puis une confusion mentale croissante. Pourquoi le cerveau est-il le premier organe à souffrir de l'hypoglycémie, alors que le muscle et le foie s'adaptent facilement ?
+</div>
+
+<h3 id="s-16-4-4-1-le-cerveau-glucose-dépendant">4.4.1 — Le cerveau glucose-dépendant</h3>
+<p>Le cerveau humain, bien que ne représentant que 2% de la masse corporelle, consomme environ <strong>120 g de glucose par jour</strong>, soit ~60% de la consommation basale de glucose de l'organisme entier à jeun (Magistretti &amp; Allaman, <em>Nat Rev Neurosci</em>, 2015). Cette consommation considérable reflète l'activité métabolique intense des neurones (maintien des potentiels de membrane, synthèse et recyclage des neurotransmetteurs, transport axonal) et leur dépendance quasi exclusive au glucose comme substrat énergétique.</p>
+<p>Cette dépendance s'explique par deux contraintes biologiques fondamentales. D'une part, la <strong>barrière hémato-encéphalique (BHE)</strong> ne laisse pas passer les acides gras à longue chaîne, qui sont les substrats énergétiques des autres organes à jeun (muscle, cœur). Le cerveau ne peut donc pas utiliser l'oxydation des acides gras comme alternative au glucose — contrairement au muscle, qui bascule aisément vers la β-oxydation. D'autre part, le cerveau ne stocke que des quantités infimes de glycogène (essentiellement dans les astrocytes), insuffisantes pour couvrir plus de quelques minutes de besoins.</p>
+<p>Le transport du glucose vers le cerveau repose sur deux transporteurs clés, tous deux <strong>indépendants de l'insuline</strong> :</p>
+<ul>
+<li><strong>GLUT1</strong> : exprimé sur les cellules endothéliales de la BHE et sur les astrocytes, il assure le transport du glucose du sang vers le liquide extracellulaire cérébral. Sa Km (~5-7 mM) est proche de la glycémie normale, ce qui signifie que le transport est sensible aux variations glycémiques : une chute de la glycémie réduit proportionnellement l'apport en glucose.</li>
+<li><strong>GLUT3</strong> : exprimé sur les neurones, il assure le captage neuronal final. Sa Km très basse (~1,4 mM) garantit un captage efficace même à faibles concentrations de glucose extracellulaire — un mécanisme de protection qui maintient l'alimentation neuronale jusqu'à des niveaux de glycémie très bas.</li>
+</ul>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement — La navette lactate astrocyte-neurone</span>
+Les astrocytes captent le glucose via GLUT1, le métabolisent en lactate par glycolyse aérobie, puis exportent le lactate vers les neurones via les transporteurs MCT (monocarboxylate transporters). Les neurones oxydent ce lactate dans leurs mitochondries. Ce « couplage métabolique astrocyte-neurone » (Pellerin & Magistretti, <em>PNAS</em>, 1994) représente une voie majeure d'alimentation neuronale et pourrait expliquer pourquoi les astrocytes stockent du glycogène (réserve locale de lactate pour les neurones en cas de besoin).
+</div>
+
+<h3 id="s-17-4-4-2-neurones-glucose-sensibles-et-régulation-centrale">4.4.2 — Neurones glucose-sensibles et régulation centrale</h3>
+<p>Le cerveau n'est pas seulement un consommateur passif de glucose — il est aussi un <strong>régulateur actif</strong> de la glycémie via des populations spécialisées de neurones glucose-sensibles localisées principalement dans l'<strong>hypothalamus</strong> (noyaux arqué et ventromédian) et le <strong>tronc cérébral</strong> (noyau du tractus solitaire).</p>
+<p>Ces neurones fonctionnent comme de véritables « glucostats centraux » :</p>
+<ul>
+<li>
+<p>Les <strong>neurones glucose-excités</strong> (GE) augmentent leur activité électrique quand la concentration de glucose augmente. Ils expriment la glucokinase (le même « glucostat » que la cellule β pancréatique) et le canal potassique KATP. Une élévation du glucose → ↑ ATP/ADP → fermeture KATP → dépolarisation → activation neuronale. Ces neurones activent les voies parasympathiques (nerf vague) qui stimulent la sécrétion d'insuline et la captation hépatique de glucose.</p>
+</li>
+<li>
+<p>Les <strong>neurones glucose-inhibés</strong> (GI) augmentent leur activité quand le glucose diminue. Ils activent les voies sympathiques et stimulent la sécrétion des hormones de contre-régulation (glucagon, adrénaline, cortisol, hormone de croissance) pour restaurer la glycémie. L'AMPK joue un rôle clé dans ces neurones : l'hypoglycémie → ↑ AMP/ATP → activation AMPK → dépolarisation et activation neuronale.</p>
+</li>
+</ul>
+<p>L'hypothalamus intègre également les signaux hormonaux périphériques — leptine, insuline, ghréline, GLP-1 — pour coordonner la prise alimentaire, la dépense énergétique et le métabolisme glucidique. La leptine et l'insuline, agissant sur les neurones <strong>POMC/CART</strong> (anorexigènes) et <strong>NPY/AgRP</strong> (orexigènes) du noyau arqué, constituent un circuit de rétrocontrôle central qui ajuste le comportement alimentaire à l'état des réserves énergétiques.</p>
+<div class="vbox expert"><span class="vbox-title">Expert — Insulinorésistance cérébrale dans le DT2</span>
+Des études récentes utilisant l'IRM fonctionnelle et l'administration intranasale d'insuline ont démontré l'existence d'une <strong>insulinorésistance cérébrale</strong> chez les patients DT2 et obèses : la réponse hypothalamique à l'insuline est atténuée, contribuant à la perte de contrôle de l'appétit et à la dérégulation de la production hépatique de glucose (voie vagale). Cette insulinorésistance cérébrale pourrait précéder l'insulinorésistance périphérique et constituer un événement initiateur du DT2 chez certains patients (Kullmann et al., <em>Lancet Diabetes Endocrinol</em>, 2016).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S04-001</span><div class="vmedia-desc">Régulation centrale de la glycémie par l'hypothalamus : neurones GE et GI, intégration des signaux hormonaux (insuline, leptine, ghréline), efférences sympathiques et parasympathiques (Identifiez comment une hypoglycémie active séquentiellement les neurones GI puis les hormones de contre-régulation)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-18-4-4-3-neuroglycopénie-urgence-thérapeutique">4.4.3 — Neuroglycopénie : urgence thérapeutique</h3>
+<p>La <strong>neuroglycopénie</strong> — souffrance neuronale par déficit en glucose — est la conséquence directe de la dépendance cérébrale au glucose. Elle constitue le risque principal de l'hypoglycémie iatrogène (insuline, sulfamides) et représente une <strong>urgence thérapeutique</strong>.</p>
+<p>La séquence clinique suit une progression stéréotypée qui reflète la vulnérabilité hiérarchique des structures cérébrales :</p>
+<table>
+<thead>
+<tr>
+<th>Glycémie (g/L)</th>
+<th>Stade</th>
+<th>Symptômes</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0,70</td>
+<td>Réponse adrénergique</td>
+<td>Sueurs, tremblements, tachycardie, pâleur, anxiété</td>
+<td>Activation sympathique (adrénaline) — signal d'alarme</td>
+</tr>
+<tr>
+<td>&lt; 0,55</td>
+<td>Neuroglycopénie légère</td>
+<td>Trouble de la concentration, ralentissement, irritabilité</td>
+<td>Déficit cortical débutant</td>
+</tr>
+<tr>
+<td>&lt; 0,40</td>
+<td>Neuroglycopénie modérée</td>
+<td>Confusion, comportement anormal, désorientation</td>
+<td>Atteinte corticale diffuse</td>
+</tr>
+<tr>
+<td>&lt; 0,30</td>
+<td>Neuroglycopénie sévère</td>
+<td>Convulsions, déficit neurologique focal</td>
+<td>Atteinte sous-corticale</td>
+</tr>
+<tr>
+<td>&lt; 0,20</td>
+<td>Coma hypoglycémique</td>
+<td>Coma profond, risque de lésions irréversibles</td>
+<td>Atteinte du tronc cérébral</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Hypoglycémies non ressenties<strong> : Chez les patients DT1 anciens ou DT2 sous insulinothérapie intensive, les hypoglycémies répétées provoquent une </strong>adaptation centrale<em>* : le seuil de déclenchement des symptômes adrénergiques s'abaisse progressivement (de 0,70 à 0,50 g/L ou moins). Le patient ne ressent plus les signes d'alarme (sueurs, tremblements) et passe directement à la neuroglycopénie — c'est l'« hypoglycémie non ressentie » (</em>hypoglycemia unawareness<em>), qui concerne 20-25% des DT1 de longue durée. Le traitement repose sur l'éviction stricte de toute hypoglycémie pendant 2-3 semaines, permettant de restaurer les seuils de contre-régulation (Cryer, </em>Diabetes*, 2008).
+</div>
+
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Conduite à tenir devant une hypoglycémie** :<br>
+- Patient conscient : <strong>resucrage oral</strong> immédiat (15 g de glucose = 3 morceaux de sucre ou 150 mL de jus de fruit), contrôle à 15 min, resucrage si nécessaire.<br>
+- Patient inconscient ou non coopérant : <strong>glucagon</strong> 1 mg IM/SC (ou glucagon nasal 3 mg) si entourage formé ; sinon glucose 30% IV (30 mL) à l'hôpital. Ne JAMAIS tenter un resucrage oral chez un patient inconscient (risque d'inhalation).
+</div>
+
+<h3 id="s-19-4-4-4-corps-cétoniques-substrat-alternatif-de-secours">4.4.4 — Corps cétoniques : substrat alternatif de secours</h3>
+<p>Lorsque le glucose devient insuffisant (jeûne prolongé &gt;24-48h, régime très pauvre en glucides, ou acidocétose diabétique), le cerveau peut utiliser un substrat alternatif : les <strong>corps cétoniques</strong> — <strong>β-hydroxybutyrate</strong> (majoritaire) et <strong>acétoacétate</strong> — produits par le foie à partir de l'oxydation des acides gras (cétogenèse).</p>
+<p>Les corps cétoniques traversent la BHE via les transporteurs MCT1 et sont oxydés par les neurones dans le cycle de Krebs. Lors d'un jeûne prolongé (&gt;5-7 jours), les corps cétoniques peuvent couvrir jusqu'à <strong>60-70% des besoins énergétiques cérébraux</strong>, réduisant d'autant la consommation de glucose et donc les besoins en néoglucogenèse — un mécanisme d'épargne protéique fondamental pour la survie (Owen et al., <em>J Clin Invest</em>, 1967).</p>
+<p>Cependant, cette adaptation est <strong>lente</strong> (plusieurs jours sont nécessaires pour la régulation positive des enzymes d'oxydation des corps cétoniques et des transporteurs MCT) et ne protège pas contre l'hypoglycémie aiguë iatrogène, qui survient en quelques minutes — trop vite pour que l'adaptation cétogénique se mette en place.</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Acidocétose diabétique<strong> : Dans l'acidocétose diabétique du DT1, les corps cétoniques sont produits en excès (déficit insulinique → lipolyse massive → cétogenèse hépatique non régulée). Le problème n'est pas le substrat cérébral (les corps cétoniques alimentent le cerveau), mais l'</strong>acidose métabolique** : le β-hydroxybutyrate et l'acétoacétate sont des acides forts qui abaissent le pH sanguin. L'acidocétose peut paradoxalement survenir avec une glycémie modérément élevée (« acidocétose euglycémique », décrite sous inhibiteurs de SGLT2) — preuve que c'est le déficit insulinique et la cétogenèse, et non l'hyperglycémie, qui déterminent la gravité.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB04-S04-002</span><div class="vmedia-desc">Substrats énergétiques du cerveau : glucose (normal), corps cétoniques (jeûne prolongé, acidocétose), lactate (astrocytes). Adaptation temporelle des transporteurs (Identifiez pourquoi l'hypoglycémie aiguë est dangereuse alors que le jeûne prolongé est toléré)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<div class="vexercice" id="ex_4"><div class="vexercice-title">Micro-exercice</div>
+<p>Patient DT1 sous pompe à insuline, retrouvé confus à domicile. Glycémie capillaire : 0,35 g/L. Ses proches lui donnent du jus d'orange par la bouche. Cette attitude est-elle correcte ? Justifiez.</p>
+<textarea class="vtext-answer" id="ex_4_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">NON. Le patient est confus (neuroglycopénie modérée), avec un risque de trouble de la déglutition et de fausse route. L'administration orale de glucose est contre-indiquée chez un patient avec altération de la conscience. L'attitude correcte est : glucagon 1 mg IM/SC (ou glucagon nasal 3 mg) administré par les proches, puis position latérale de sécurité, et appel du 15/SAMU. Le resucrage oral sera possible après récupération d'une conscience normale.</div></details>
+</div>
+
+<hr />
+<h2 id="s-20-points-clés-du-module">Points clés du module</h2>
+<table>
+<thead>
+<tr>
+<th>Organe</th>
+<th>Rôle principal</th>
+<th>Mécanisme clé</th>
+<th>Atteinte dans le DT2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foie</strong></td>
+<td>Production de glucose à jeun</td>
+<td>Glycogénolyse + néoglucogenèse, régulées par insuline/glucagon</td>
+<td>Production non freinée (insulinorésistance + hyperglucagonémie) → ↑ GAJ</td>
+</tr>
+<tr>
+<td><strong>Muscle</strong></td>
+<td>Captage postprandial (~75-80%)</td>
+<td>GLUT4 translocation (insuline) ou contraction (AMPK/Ca²⁺)</td>
+<td>↓ captage via DAG/céramides → ↑ GPP</td>
+</tr>
+<tr>
+<td><strong>Tissu adipeux</strong></td>
+<td>Contrôle de la lipolyse + sécrétions endocrines</td>
+<td>Insuline inhibe HSL ; adipokines (adiponectine, leptine, TNF-α)</td>
+<td>Lipolyse non freinée → AGL → lipotoxicité systémique</td>
+</tr>
+<tr>
+<td><strong>Cerveau</strong></td>
+<td>Consommation obligatoire (~120 g/j) + régulation centrale</td>
+<td>GLUT1/GLUT3 (insuline-indépendants) ; neurones glucose-sensibles</td>
+<td>Neuroglycopénie si hypoglycémie ; insulinorésistance centrale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages essentiels</strong> :
+- La GAJ reflète surtout la <strong>production hépatique de glucose</strong> (néoglucogenèse) — cible de la metformine
+- La GPP reflète surtout le <strong>captage musculaire</strong> (GLUT4) — cible de l'exercice physique et des incrétines
+- Le tissu adipeux viscéral est le « chef d'orchestre de l'insulinorésistance » via les AGL et les adipokines pro-inflammatoires
+- L'exercice physique est efficace même en insulinorésistance car GLUT4 est mobilisable par la voie AMPK/calcium (indépendante de l'insuline)
+- Le cerveau est le premier organe menacé par l'hypoglycémie (pas de β-oxydation, pas de réserves de glycogène significatives)</p>
+<hr />
+<h2 id="s-21-qcm-auto-évaluation">QCM — Auto-évaluation</h2>
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 1</span></div><div class="vqcm-question">Quel organe est responsable de la majorité du captage du glucose stimulé par l'insuline en période postprandiale ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_0"><label for="qcm_1_0">A) Le foie</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_1"><label for="qcm_1_1">B) Le cerveau</label></li>
+<li data-correct="true"><input type="radio" name="qcm_1" id="qcm_1_2"><label for="qcm_1_2">C) Le muscle squelettique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_3"><label for="qcm_1_3">D) Le tissu adipeux</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div><details class="vfeedback" style="display:none"><summary>Voir l'explication</summary><div class="fb-content">Le muscle squelettique capte ~75-80% du glucose stimulé par l'insuline via la translocation de GLUT4. Le tissu adipeux ne capte que ~5% du glucose, malgré son rôle indirect majeur via la régulation de la lipolyse et les adipokines.</div></details></div>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 2</span></div><div class="vqcm-question">La metformine réduit la glycémie à jeun principalement en :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_0"><label for="qcm_2_0">A) Stimulant la sécrétion d'insuline</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_1"><label for="qcm_2_1">B) Inhibant l'absorption intestinale du glucose</label></li>
+<li data-correct="true"><input type="radio" name="qcm_2" id="qcm_2_2"><label for="qcm_2_2">C) Réduisant la production hépatique de glucose (néoglucogenèse)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_3"><label for="qcm_2_3">D) Augmentant l'excrétion rénale de glucose</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div><details class="vfeedback" style="display:none"><summary>Voir l'explication</summary><div class="fb-content">La metformine active l'AMPK hépatique et inhibe le complexe I mitochondrial, réduisant la néoglucogenèse. Elle ne stimule pas la sécrétion d'insuline (pas d'effet insulinosécréteur → pas de risque d'hypoglycémie en monothérapie). L'excrétion rénale de glucose est le mécanisme des inhibiteurs de SGLT2, pas de la metformine.</div></details></div>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 3</span></div><div class="vqcm-question">L'exercice physique favorise le captage musculaire du glucose par une voie :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_0"><label for="qcm_3_0">A) Exclusivement insulino-dépendante (PI3K/Akt)</label></li>
+<li data-correct="true"><input type="radio" name="qcm_3" id="qcm_3_1"><label for="qcm_3_1">B) Indépendante de l'insuline, via l'AMPK et le calcium</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_2"><label for="qcm_3_2">C) Dépendante du glucagon</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_3"><label for="qcm_3_3">D) Médiée par le GLP-1</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div><details class="vfeedback" style="display:none"><summary>Voir l'explication</summary><div class="fb-content">La contraction musculaire active la translocation de GLUT4 via la voie AMPK (↑ AMP/ATP) et la voie calcium/CaMKII, toutes deux indépendantes de l'insuline. C'est pourquoi l'exercice améliore le captage du glucose même chez le patient insulinorésistant dont la voie IRS-1/PI3K/Akt est défectueuse.</div></details></div>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge or">🥇 Or</span><span>QCM 4</span></div><div class="vqcm-question">Patient DT2, GAJ 1,60 g/L, GPP H+2 2,00 g/L. Quels mécanismes expliquent ces anomalies ?</div><ul class="vqcm-options"><li data-correct="true"><input type="radio" name="qcm_4" id="qcm_4_0"><label for="qcm_4_0">A) GAJ : ↑ production hépatique de glucose ; GPP : ↓ captage musculaire du glucose</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_1"><label for="qcm_4_1">B) GAJ : ↓ captage musculaire ; GPP : ↑ production hépatique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_2"><label for="qcm_4_2">C) GAJ et GPP : déficit de sécrétion d'insuline uniquement</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_3"><label for="qcm_4_3">D) GAJ : ↑ absorption intestinale ; GPP : ↓ production hépatique</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div><details class="vfeedback" style="display:none"><summary>Voir l'explication</summary><div class="fb-content">La GAJ élevée reflète l'insulinorésistance hépatique (néoglucogenèse non freinée par l'insuline + hyperglucagonémie paradoxale). La GPP élevée reflète l'insulinorésistance musculaire (translocation de GLUT4 réduite) associée à un déficit incrétine. Cette distinction a une implication thérapeutique directe : la metformine cible la GAJ (néoglucogenèse), tandis que les incrétines (agonistes GLP-1, iDPP-4) ciblent préférentiellement la GPP (sécrétion d'insuline glucose-dépendante + ralentissement de la vidange gastrique).</div></details></div>
+<hr />
+<h3 id="s-22-cas-clinique">Cas clinique</h3>
+<div class="vbox clinique"><span class="vbox-title">Cas</span>
+Mme F., 48 ans**<br>
+DT2 diagnostiqué il y a 6 mois. IMC 34 kg/m², tour de taille 102 cm. HbA1c initiale 7,5%. Glycémie à jeun 1,35 g/L, GPP (H+2) 1,90 g/L. Traitement initial : metformine 500 mg × 2/j.<br>
+> À M+3 : GAJ 1,15 g/L (-0,20), GPP 1,75 g/L (-0,15), HbA1c 7,0%.<br>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge argent">🥈 Argent</span> <strong style="color:#E65100;">Q1</strong> : Pourquoi la metformine a-t-elle davantage amélioré la GAJ (-0,20 g/L) que la GPP (-0,15 g/L) ?<br>
+> <em>Réponse : La metformine agit principalement en réduisant la production hépatique de glucose (néoglucogenèse) via l'activation de l'AMPK et l'inhibition du complexe I mitochondrial. La GAJ étant principalement déterminée par la néoglucogenèse hépatique (seule source de glucose après 12h de jeûne), c'est logiquement le paramètre le plus amélioré. La GPP dépend surtout du captage musculaire du glucose (GLUT4) et de l'effet incrétine, deux mécanismes sur lesquels la metformine a un effet limité. L'amélioration modeste de la GPP (-0,15) s'explique par la réduction du « point de départ » glycémique préprandial (la glycémie basale étant plus basse, le pic postprandial est mécaniquement atténué).</em><br></div><textarea class="vtext-answer" id="cas_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge or">🥇 Or</span> <strong style="color:#E65100;">Q2</strong> : Quels conseils d'activité physique donneriez-vous à Mme F., et pourquoi l'exercice est-il efficace malgré son insulinorésistance ?<br>
+> <em>Réponse : Prescription d'activité physique : 150 min/semaine d'exercice d'intensité modérée (marche rapide, natation, vélo), idéalement réparties sur 5 jours (30 min/j) plutôt que concentrées sur 2 séances. Associer si possible des exercices de résistance (renforcement musculaire) 2×/semaine pour augmenter la masse musculaire et donc la surface de captage du glucose. L'exercice est efficace malgré l'insulinorésistance car la contraction musculaire active la translocation de GLUT4 via la voie AMPK/calcium, totalement indépendante de la voie insulinique IRS-1/PI3K/Akt. Cette voie alternative « court-circuite » le blocage causé par l'accumulation de DAG et de céramides. L'effet persiste 24-48h post-exercice, d'où l'importance de la régularité quotidienne.</em></div><textarea class="vtext-answer" id="cas_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+</div>
+
+<hr />
+<h3 id="s-23-question-de-synthèse">Question de synthèse</h3>
+<div class="vexercice" style="border-color:#00ACC1; background:#E0F7FA;"><div class="vexercice-title" style="color:#006064;">💎 Question de synthèse</div><p>Décrivez la chaîne physiopathologique qui relie l'excès de tissu adipeux viscéral à l'hyperglycémie du DT2, en intégrant les rôles du foie, du muscle et du pancréas. Structurez votre réponse autour du concept de lipotoxicité.</p><textarea class="vtext-answer" id="synth_1" rows="6" placeholder="Développez votre réponse ici (8-10 lignes)..."></textarea></div>
+<blockquote>
+<p><em>Éléments de réponse : (1) </em><em>Point de départ — tissu adipeux viscéral</em><em> : l'hypertrophie des adipocytes viscéraux entraîne une insulinorésistance adipocytaire → la lipolyse n'est plus freinée par l'insuline → libération massive d'AGL dans la circulation portale et systémique. Les adipokines pro-inflammatoires (TNF-α, IL-6) augmentent tandis que l'adiponectine (protectrice) diminue, aggravant l'inflammation systémique de bas grade. (2) </em><em>Foie</em><em> : les AGL en excès sont captés par l'hépatocyte → accumulation de DAG → activation de PKCε → blocage de la signalisation de l'insuline → la néoglucogenèse n'est plus freinée → </em><em>hyperglycémie à jeun</em><em>. Parallèlement, les AGL sont estérifiés en triglycérides → stéatose hépatique (NAFLD). (3) </em><em>Muscle</em><em> : les AGL en excès s'accumulent sous forme de DAG et de céramides dans le myocyte → activation de PKCθ (DAG) et PP2A (céramides) → phosphorylation inhibitrice d'IRS-1 et inactivation d'Akt → translocation de GLUT4 réduite → </em><em>hyperglycémie postprandiale</em><em>. (4) </em><em>Pancréas</em><em> : les AGL en excès induisent un stress oxydatif et un stress du réticulum endoplasmique dans les cellules β → lipoapoptose β → réduction progressive de la masse β-cellulaire et de la capacité sécrétoire → la sécrétion d'insuline, initialement compensatrice, devient insuffisante → le DT2 se décompense. Cette chaîne — tissu adipeux viscéral → AGL → lipotoxicité triple (foie + muscle + pancréas) → hyperglycémie — illustre le concept de l'« octet omineux » de DeFronzo (Diabetes, 2009) et explique pourquoi la perte pondérale (en particulier viscérale) peut induire une rémission du DT2.</em></p>
+</blockquote>
+<hr />
+<div class="vrefs"><div class="vrefs-title">Références bibliographiques</div><ul>
+<li>DeFronzo RA. <em>Banting Lecture. From the triumvirate to the ominous octet: a new paradigm for the treatment of type 2 diabetes mellitus</em>. Diabetes. 2009;58(4):773-795.</li>
+<li>DeFronzo RA et al. <em>The effect of insulin on the disposal of intravenous glucose. Results from indirect calorimetry and hepatic and femoral venous catheterization</em>. Diabetes. 1981;30(12):1000-1007.</li>
+<li>Saltiel AR, Kahn CR. <em>Insulin signalling and the regulation of glucose and lipid metabolism</em>. Nature. 2001;414(6865):799-806.</li>
+<li>Shulman GI. <em>Cellular mechanisms of insulin resistance</em>. J Clin Invest. 2000;106(2):171-176.</li>
+<li>Foretz M et al. <em>Metformin inhibits hepatic gluconeogenesis in mice independently of the LKB1/AMPK pathway via a decrease in hepatic energy state</em>. J Clin Invest. 2010;120(7):2355-2369.</li>
+<li>Madiraju AK et al. <em>Metformin suppresses gluconeogenesis by inhibiting mitochondrial glycerophosphate dehydrogenase</em>. Nature. 2014;510(7506):542-546.</li>
+<li>Shaw RJ et al. <em>The kinase LKB1 mediates glucose homeostasis in liver and therapeutic effects of metformin</em>. Science. 2005;310(5754):1642-1646.</li>
+<li>Unger RH, Scherer PE. <em>Gluttony, sloth and the metabolic syndrome: a roadmap to lipotoxicity</em>. Trends Endocrinol Metab. 2010;21(6):345-352.</li>
+<li>Unger RH, Cherrington AD. <em>Glucagonocentric restructuring of diabetes: a pathophysiologic and therapeutic makeover</em>. J Clin Invest. 2012;122(1):4-12.</li>
+<li>Hotamisligil GS. <em>Inflammation and metabolic disorders</em>. Nature. 2006;444(7121):860-867.</li>
+<li>Yamauchi T et al. <em>The fat-derived hormone adiponectin reverses insulin resistance associated with both lipoatrophy and obesity</em>. Nat Med. 2001;7(8):941-946.</li>
+<li>Zhang Y et al. <em>Positional cloning of the mouse obese gene and its human homologue</em>. Nature. 1994;372(6505):425-432.</li>
+<li>Richter EA, Hargreaves M. <em>Exercise, GLUT4, and skeletal muscle glucose uptake</em>. Physiol Rev. 2013;93(3):993-1017.</li>
+<li>Magistretti PJ, Allaman I. <em>A cellular perspective on brain energy metabolism and functional imaging</em>. Neuron. 2015;86(4):883-901.</li>
+<li>Pellerin L, Magistretti PJ. <em>Glutamate uptake into astrocytes stimulates aerobic glycolysis: a mechanism coupling neuronal activity to glucose utilization</em>. Proc Natl Acad Sci USA. 1994;91(22):10625-10629.</li>
+<li>Cryer PE. <em>The barrier of hypoglycemia in diabetes</em>. Diabetes. 2008;57(12):3169-3176.</li>
+<li>Owen OE et al. <em>Brain metabolism during fasting</em>. J Clin Invest. 1967;46(10):1589-1595.</li>
+<li>Cherrington AD. <em>Banting Lecture 1997. Control of glucose uptake and release by the liver in vivo</em>. Diabetes. 1999;48(5):1198-1214.</li>
+<li>Barthel A, Schmoll D. <em>Novel concepts in insulin regulation of hepatic gluconeogenesis</em>. Am J Physiol Endocrinol Metab. 2003;285(4):E685-E692.</li>
+<li>Brown MS, Goldstein JL. <em>Selective versus total insulin resistance: a pathogenic paradox</em>. Cell Metab. 2008;7(2):95-96.</li>
+<li>Butler AE et al. <em>Beta-cell deficit and increased beta-cell apoptosis in humans with type 2 diabetes</em>. Diabetes. 2003;52(1):102-110.</li>
+<li>Lean ME et al. <em>Primary care-led weight management for remission of type 2 diabetes (DiRECT): an open-label, cluster-randomised trial</em>. Lancet. 2018;391(10120):541-551.</li>
+<li>Kelley DE, Mandarino LJ. <em>Fuel selection in human skeletal muscle in insulin resistance: a reexamination</em>. Diabetes. 2000;49(5):677-683.</li>
+<li>Itani SI et al. <em>Lipid-induced insulin resistance in human muscle is associated with changes in diacylglycerol, protein kinase C, and IkappaB-alpha</em>. Diabetes. 2002;51(7):2005-2011.</li>
+<li>Kullmann S et al. <em>Brain insulin resistance at the crossroads of metabolic and cognitive disorders in humans</em>. Physiol Rev. 2016;96(4):1169-1209.</li>
+</ul></div>
+<hr />
+<p><em>VERTEX© — Formation Diabétologie — Module 4 : Métabolisme Glucidique Intégré — Foie, Muscle, Tissu Adipeux, Cerveau</em>
+<em>Ce contenu est destiné à des praticiens confirmés. Il ne se substitue pas au jugement clinique.</em></p><div class="vertex-footer">VERTEX© — Virtual Environment for Real-Time EXpertise<br/>Formation médicale e-learning — doctraining.ma</div></main></div></body></html>

@@ -1,0 +1,1183 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>VERTEX© — Cours interactif</title>
+<style>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — Cours interactif v2
+   ════════════════════════════════════════════════════════════ */
+
+/* === Layout sidebar + contenu === */
+.vertex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #2d3436;
+}
+
+/* --- Sidebar --- */
+.vertex-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 280px;
+  min-width: 280px;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #F8F9FA;
+  border-right: 1px solid #DEE2E6;
+  padding: 20px 0;
+  font-size: 0.88em;
+  z-index: 100;
+  scrollbar-width: thin;
+}
+.vertex-sidebar::-webkit-scrollbar { width: 5px; }
+.vertex-sidebar::-webkit-scrollbar-thumb { background: #CED4DA; border-radius: 3px; }
+.vertex-sidebar-title {
+  padding: 0 18px 14px;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 1px solid #DEE2E6;
+  margin-bottom: 10px;
+}
+.vertex-sidebar-title::before { content: "📑 "; }
+.vertex-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertex-sidebar li { margin: 0; }
+.vertex-sidebar a {
+  display: block;
+  padding: 7px 18px;
+  color: #495057;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+.vertex-sidebar a:hover {
+  background: #E9ECEF;
+  color: var(--vertex-primary, #1565C0);
+}
+.vertex-sidebar a.active {
+  background: #E3F2FD;
+  color: var(--vertex-primary, #1565C0);
+  border-left-color: var(--vertex-primary, #1565C0);
+  font-weight: 600;
+}
+.vertex-sidebar .toc-h3 {
+  padding-left: 34px;
+  font-size: 0.92em;
+  color: #6C757D;
+}
+
+/* --- Contenu principal --- */
+.vertex-content {
+  flex: 1;
+  max-width: 820px;
+  padding: 30px 40px;
+  line-height: 1.75;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+/* === Titres === */
+.vertex-content h1 {
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 3px solid var(--vertex-primary, #1565C0);
+  padding-bottom: 12px;
+  font-size: 1.85em;
+  margin-top: 0.5em;
+}
+.vertex-content h2 {
+  color: var(--vertex-primary, #1565C0);
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  border-left: 5px solid var(--vertex-primary, #1565C0);
+  padding-left: 14px;
+  scroll-margin-top: 20px;
+}
+.vertex-content h3 {
+  color: #2E7D32;
+  margin-top: 1.8em;
+  font-size: 1.22em;
+  scroll-margin-top: 20px;
+}
+.vertex-content h4 { color: #6A1B9A; margin-top: 1.2em; font-size: 1.05em; }
+
+/* === Encadrés pédagogiques === */
+.vbox {
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  border-left: 5px solid;
+}
+.vbox p:last-child { margin-bottom: 0; }
+.vbox-title { font-weight: 700; margin-bottom: 8px; display: block; }
+
+.vbox.clinique    { background:#FFF8E1; border-color:#F57F17; }
+.vbox.clinique    .vbox-title { color:#E65100; }
+.vbox.clinique    .vbox-title::before { content:"🏥 "; }
+.vbox.danger      { background:#FBE9E7; border-color:#C62828; }
+.vbox.danger      .vbox-title { color:#B71C1C; }
+.vbox.danger      .vbox-title::before { content:"⚠️ "; }
+.vbox.approfondi  { background:#E3F2FD; border-color:#1565C0; }
+.vbox.approfondi  .vbox-title { color:#0D47A1; }
+.vbox.approfondi  .vbox-title::before { content:"📖 "; }
+.vbox.astuce      { background:#E8F5E9; border-color:#2E7D32; }
+.vbox.astuce      .vbox-title { color:#1B5E20; }
+.vbox.astuce      .vbox-title::before { content:"💡 "; }
+.vbox.expert      { background:#F3E5F5; border-color:#7B1FA2; }
+.vbox.expert      .vbox-title { color:#6A1B9A; }
+.vbox.expert      .vbox-title::before { content:"🔬 "; }
+.vbox.reflexion   { background:#FFFDE7; border-color:#F9A825; }
+.vbox.reflexion   .vbox-title { color:#F57F17; }
+.vbox.reflexion   .vbox-title::before { content:"🤔 "; }
+.vbox.controverse { background:#ECEFF1; border-color:#546E7A; }
+.vbox.controverse .vbox-title { color:#37474F; }
+.vbox.controverse .vbox-title::before { content:"⚖️ "; }
+.vbox.pertinence  { background:#FFF3E0; border-color:#E65100; }
+.vbox.pertinence  .vbox-title { color:#BF360C; }
+.vbox.pertinence  .vbox-title::before { content:"🎯 "; }
+
+/* === Média placeholder === */
+.vmedia {
+  background: #F3E5F5; border: 2px dashed #9C27B0; border-radius: 10px;
+  padding: 22px; margin: 22px 0; text-align: center; color: #6A1B9A;
+}
+.vmedia-icon { font-size: 2em; display: block; margin-bottom: 6px; }
+.vmedia-code { font-weight: 700; }
+.vmedia-desc { font-style: italic; margin-top: 6px; color: #7B1FA2; }
+.vmedia-note { font-size: 0.8em; color: #9E9E9E; margin-top: 8px; }
+
+/* === QCM interactif === */
+.vqcm {
+  border: 2px solid #E0E0E0; border-radius: 10px;
+  padding: 22px; margin: 25px 0; background: #FAFAFA;
+}
+.vqcm-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.vqcm-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 14px;
+  font-size: 0.82em; font-weight: 700; color: #fff;
+}
+.vqcm-badge.bronze  { background: #F57F17; }
+.vqcm-badge.argent  { background: #78909C; }
+.vqcm-badge.or      { background: #FFB300; color:#333; }
+.vqcm-badge.diamant { background: #00ACC1; }
+.vqcm-question { font-weight: 600; font-size: 1.05em; margin-bottom: 14px; }
+
+/* Options empilées verticalement */
+.vqcm-options { list-style: none; padding: 0; margin: 0 0 15px; }
+.vqcm-options li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; margin: 6px 0; border-radius: 8px;
+  border: 2px solid #E0E0E0; background: #fff;
+  cursor: pointer; transition: all 0.15s ease;
+  user-select: none;
+}
+.vqcm-options li:hover { border-color: #90CAF9; background: #F5F9FF; }
+.vqcm-options li.selected { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vqcm-options li.correct-show { border-color: #2E7D32; background: #E8F5E9; }
+.vqcm-options li.incorrect-show { border-color: #C62828; background: #FFEBEE; }
+.vqcm-options input[type="radio"],
+.vqcm-options input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--vertex-primary, #1565C0);
+  width: 18px; height: 18px;
+}
+.vqcm-options label { cursor: pointer; flex: 1; }
+
+/* Bouton valider */
+.vqcm-validate {
+  display: inline-block; padding: 10px 24px; border-radius: 8px;
+  background: var(--vertex-primary, #1565C0); color: #fff; border: none;
+  font-weight: 600; font-size: 0.95em; cursor: pointer;
+  transition: background 0.15s ease;
+}
+.vqcm-validate:hover { filter: brightness(1.1); }
+.vqcm-validate:disabled { background: #CCC; cursor: not-allowed; }
+
+.vqcm-result {
+  margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+  font-weight: 600; display: none;
+}
+.vqcm-result.correct { background: #E8F5E9; color: #1B5E20; }
+.vqcm-result.incorrect { background: #FFEBEE; color: #B71C1C; }
+
+/* Feedback dépliable */
+.vfeedback { margin-top: 12px; border-radius: 8px; overflow: hidden; }
+.vfeedback summary {
+  background: #E3F2FD; padding: 10px 16px; cursor: pointer;
+  font-weight: 600; color: #1565C0; border-radius: 8px;
+  list-style: none;
+}
+.vfeedback summary::-webkit-details-marker { display: none; }
+.vfeedback summary::before { content: "💬 "; }
+.vfeedback .fb-content {
+  padding: 14px 16px; background: #F5F5F5;
+  border-radius: 0 0 8px 8px; line-height: 1.6;
+}
+
+/* === Exercice drag & drop === */
+.vdrag-zone {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0; padding: 12px; background: #F5F5F5; border-radius: 8px;
+  min-height: 60px;
+}
+.vdrag-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; background: #fff; border: 2px solid #E0E0E0;
+  border-radius: 8px; cursor: grab; user-select: none;
+  transition: all 0.15s ease;
+}
+.vdrag-item:active { cursor: grabbing; }
+.vdrag-item:hover { border-color: #90CAF9; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.vdrag-item .drag-handle { color: #9E9E9E; font-size: 1.2em; }
+.vdrag-item .drag-handle::before { content: "⠿"; }
+.vdrag-item.drag-over { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vdrag-item.correct-pos { border-color: #2E7D32; background: #E8F5E9; }
+.vdrag-item.incorrect-pos { border-color: #C62828; background: #FFEBEE; }
+
+/* === Textarea auto-resize === */
+.vtext-answer {
+  width: 100%; min-height: 80px; padding: 14px; border: 2px solid #E0E0E0;
+  border-radius: 8px; font-family: inherit; font-size: 0.95em;
+  line-height: 1.6; resize: none; overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.vtext-answer:focus { border-color: var(--vertex-primary, #1565C0); outline: none; }
+.vtext-answer::placeholder { color: #ADB5BD; }
+
+/* === Exercice structuré === */
+.vexercice {
+  border: 2px solid #26A69A; border-radius: 10px;
+  padding: 22px; margin: 22px 0; background: #E0F2F1;
+}
+.vexercice-title { font-weight: 700; color: #00695C; margin-bottom: 10px; }
+.vexercice-title::before { content: "✏️ "; }
+
+/* === Points clés === */
+.vpoints-cles {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-radius: 12px; padding: 22px 26px; margin: 30px 0;
+  border: 1px solid #A5D6A7;
+}
+.vpoints-cles-title { font-weight:700; font-size:1.2em; color:#1B5E20; margin-bottom:14px; }
+.vpoints-cles-title::before { content: "🔑 "; }
+.vpoints-cles ol { padding-left: 22px; }
+.vpoints-cles li { margin-bottom: 8px; }
+
+/* === Tableaux === */
+.vertex-content table {
+  width: 100%; border-collapse: collapse; margin: 22px 0;
+  font-size: 0.94em; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.vertex-content th {
+  background: var(--vertex-primary, #1565C0); color: #fff;
+  padding: 11px 14px; text-align: left; font-weight: 600;
+}
+.vertex-content td { padding: 9px 14px; border-bottom: 1px solid #E8E8E8; }
+.vertex-content tr:nth-child(even) { background: #F8F9FA; }
+.vertex-content tr:hover { background: #E3F2FD; }
+
+/* === Transition === */
+.vtransition {
+  text-align:center; padding:18px; margin:30px 0; color:#78909C;
+  font-style:italic; border-top:1px dashed #CFD8DC; border-bottom:1px dashed #CFD8DC;
+}
+
+/* === Références === */
+.vrefs {
+  background:#ECEFF1; border-radius:10px; padding:20px 24px;
+  margin:30px 0; font-size:0.88em; color:#546E7A;
+}
+.vrefs-title { font-weight:700; color:#37474F; font-size:1.05em; margin-bottom:10px; }
+.vrefs-title::before { content:"📚 "; }
+.vrefs ul { padding-left:18px; }
+.vrefs li { margin-bottom:4px; }
+
+/* === Footer === */
+.vertex-footer {
+  text-align:center; padding:20px; margin-top:40px;
+  color:#9E9E9E; font-size:0.85em; border-top:1px solid #E0E0E0;
+}
+
+/* Listes & blockquotes */
+.vertex-content ul, .vertex-content ol { padding-left:24px; }
+.vertex-content li { margin-bottom:5px; }
+.vertex-content blockquote {
+  border-left:4px solid #90CAF9; padding:12px 20px;
+  margin:16px 0; background:#F5F5F5; border-radius:0 8px 8px 0;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .vertex-wrapper { flex-direction: column; }
+  .vertex-sidebar {
+    position: relative; width: 100%; min-width: unset;
+    max-height: none; border-right: none; border-bottom: 1px solid #DEE2E6;
+  }
+  .vertex-content { padding: 20px; }
+}
+@media print {
+  .vertex-sidebar { display: none; }
+  .vertex-content { max-width: 100%; padding: 0; }
+}
+</style>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — JavaScript interactif
+   ════════════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Sidebar : scroll spy (highlight section active)
+  const sidebarLinks = document.querySelectorAll('.vertex-sidebar a');
+  const sections = [];
+  sidebarLinks.forEach(link => {
+    const id = link.getAttribute('href')?.replace('#','');
+    if (id) {
+      const el = document.getElementById(id);
+      if (el) sections.push({ el, link });
+    }
+  });
+
+  function updateActive() {
+    let current = null;
+    for (const s of sections) {
+      if (s.el.getBoundingClientRect().top <= 80) current = s;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ── Sidebar smooth scroll
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href')?.replace('#','');
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  // ── QCM : radio/checkbox + validation progressive
+  document.querySelectorAll('.vqcm').forEach(qcm => {
+    const btn = qcm.querySelector('.vqcm-validate');
+    const resultDiv = qcm.querySelector('.vqcm-result');
+    const feedbackEl = qcm.querySelector('.vfeedback');
+    const corrBtn = qcm.querySelector('.vqcm-show-correction');
+    const options = qcm.querySelectorAll('.vqcm-options li');
+    const inputs = qcm.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+
+    // Click on li selects the input
+    options.forEach(li => {
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const input = this.querySelector('input');
+        if (!input || input.disabled) return;
+        if (input.type === 'radio') {
+          inputs.forEach(i => { i.checked = false; i.closest('li').classList.remove('selected','incorrect-show'); });
+          input.checked = true;
+          this.classList.add('selected');
+        } else {
+          input.checked = !input.checked;
+          this.classList.toggle('selected', input.checked);
+          this.classList.remove('incorrect-show');
+        }
+        // Clear previous result message when user changes selection
+        if (resultDiv) resultDiv.style.display = 'none';
+      });
+    });
+
+    // Validate — only shows if wrong, user can retry
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // Check if anything is selected
+        const anySelected = [...inputs].some(i => i.checked);
+        if (!anySelected) return;
+
+        let allCorrect = true;
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          const isSelected = input && input.checked;
+
+          li.classList.remove('correct-show','incorrect-show');
+
+          if (isSelected && !isCorrect) {
+            li.classList.add('incorrect-show');
+            allCorrect = false;
+          }
+          if (!isSelected && isCorrect) {
+            allCorrect = false;
+          }
+        });
+
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          if (allCorrect) {
+            // Correct! Show success, highlight correct answers, disable inputs
+            resultDiv.className = 'vqcm-result correct';
+            resultDiv.textContent = 'Bonne réponse !';
+            options.forEach(li => {
+              const isCorrect = li.dataset.correct === 'true';
+              if (isCorrect) li.classList.add('correct-show');
+              const input = li.querySelector('input');
+              if (input) input.disabled = true;
+            });
+            btn.disabled = true;
+            if (corrBtn) corrBtn.style.display = 'none';
+            if (feedbackEl) feedbackEl.style.display = 'block';
+          } else {
+            // Wrong — show message but keep interactive
+            resultDiv.className = 'vqcm-result incorrect';
+            resultDiv.textContent = 'Réponse incorrecte — réessayez ou cliquez sur « Voir la correction ».';
+            // Show correction button
+            if (corrBtn) corrBtn.style.display = 'inline-block';
+          }
+        }
+      });
+    }
+
+    // Show correction — reveals correct answers, locks the QCM
+    if (corrBtn) {
+      corrBtn.addEventListener('click', function() {
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          li.classList.remove('selected','incorrect-show','correct-show');
+          if (isCorrect) li.classList.add('correct-show');
+          if (input) input.disabled = true;
+        });
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'vqcm-result incorrect';
+          resultDiv.textContent = 'Voici la bonne réponse :';
+        }
+        btn.disabled = true;
+        corrBtn.style.display = 'none';
+        if (feedbackEl) feedbackEl.style.display = 'block';
+      });
+    }
+  });
+
+  // ── Drag & Drop pour exercices de réarrangement
+  document.querySelectorAll('.vdrag-zone').forEach(zone => {
+    let draggedItem = null;
+
+    zone.querySelectorAll('.vdrag-item').forEach(item => {
+      item.setAttribute('draggable', 'true');
+
+      item.addEventListener('dragstart', function(e) {
+        draggedItem = this;
+        this.style.opacity = '0.5';
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      item.addEventListener('dragend', function() {
+        this.style.opacity = '1';
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        this.classList.add('drag-over');
+      });
+
+      item.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        if (draggedItem !== this) {
+          const allItems = [...zone.querySelectorAll('.vdrag-item')];
+          const fromIdx = allItems.indexOf(draggedItem);
+          const toIdx = allItems.indexOf(this);
+          if (fromIdx < toIdx) {
+            zone.insertBefore(draggedItem, this.nextSibling);
+          } else {
+            zone.insertBefore(draggedItem, this);
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartY = 0;
+      item.addEventListener('touchstart', function(e) {
+        draggedItem = this;
+        touchStartY = e.touches[0].clientY;
+        this.style.opacity = '0.7';
+      }, { passive: true });
+
+      item.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.closest('.vdrag-item') && target.closest('.vdrag-item') !== draggedItem) {
+          const over = target.closest('.vdrag-item');
+          zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+          over.classList.add('drag-over');
+        }
+      });
+
+      item.addEventListener('touchend', function(e) {
+        this.style.opacity = '1';
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target) {
+          const dropTarget = target.closest('.vdrag-item');
+          if (dropTarget && dropTarget !== draggedItem) {
+            const allItems = [...zone.querySelectorAll('.vdrag-item')];
+            const fromIdx = allItems.indexOf(draggedItem);
+            const toIdx = allItems.indexOf(dropTarget);
+            if (fromIdx < toIdx) {
+              zone.insertBefore(draggedItem, dropTarget.nextSibling);
+            } else {
+              zone.insertBefore(draggedItem, dropTarget);
+            }
+          }
+        }
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+    });
+
+    // Validate drag order + correction + retry
+    const validateBtn = zone.parentElement.querySelector('.vdrag-validate');
+    const correctionBtn = zone.parentElement.querySelector('.vdrag-correction');
+
+    if (validateBtn) {
+      validateBtn.addEventListener('click', function() {
+        const items = zone.querySelectorAll('.vdrag-item');
+        let allCorrect = true;
+        items.forEach(item => {
+          const currentIdx = [...zone.querySelectorAll('.vdrag-item')].indexOf(item);
+          const correctIdx = parseInt(item.dataset.order);
+          item.classList.remove('correct-pos', 'incorrect-pos');
+          if (currentIdx === correctIdx) {
+            item.classList.add('correct-pos');
+          } else {
+            item.classList.add('incorrect-pos');
+            allCorrect = false;
+          }
+          // Disable drag during review
+          item.setAttribute('draggable', 'false');
+          item.style.cursor = 'default';
+        });
+        validateBtn.disabled = true;
+        // Show correction button if not all correct
+        if (correctionBtn && !allCorrect) {
+          correctionBtn.style.display = 'inline-block';
+          correctionBtn.dataset.state = 'show';
+          correctionBtn.textContent = 'Voir la correction';
+        }
+      });
+    }
+
+    if (correctionBtn) {
+      correctionBtn.addEventListener('click', function() {
+        const state = this.dataset.state;
+        const items = [...zone.querySelectorAll('.vdrag-item')];
+
+        if (state === 'show') {
+          // Show correct order: sort items by data-order
+          const sorted = items.slice().sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
+          sorted.forEach(item => {
+            zone.appendChild(item);
+            // Mark: green if user had it right, red if user had it wrong
+            const wasCorrect = item.classList.contains('correct-pos');
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            if (wasCorrect) {
+              item.classList.add('correct-pos');
+            } else {
+              item.classList.add('incorrect-pos');
+            }
+          });
+          this.dataset.state = 'retry';
+          this.textContent = 'Réessayer';
+        } else if (state === 'retry') {
+          // Reset: shuffle items, clear colors, re-enable drag
+          const shuffled = items.slice().sort(() => Math.random() - 0.5);
+          shuffled.forEach(item => {
+            zone.appendChild(item);
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            item.setAttribute('draggable', 'true');
+            item.style.cursor = 'grab';
+          });
+          validateBtn.disabled = false;
+          this.style.display = 'none';
+          this.dataset.state = 'show';
+        }
+      });
+    }
+  });
+
+  // ── Textarea auto-resize
+  document.querySelectorAll('.vtext-answer').forEach(ta => {
+    function autoResize() {
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    ta.addEventListener('input', autoResize);
+    autoResize();
+  });
+
+});
+</script>
+<style>:root { --vertex-primary: #00838F; }</style></head><body><div class="vertex-wrapper"><nav class="vertex-sidebar"><div class="vertex-sidebar-title">Sommaire</div><ul><li><a href="#s-1-accroche-clinique" class="">Accroche clinique</a></li>
+<li><a href="#s-2-objectifs-d-apprentissage" class="">Objectifs d'apprentissage</a></li>
+<li><a href="#s-3-3-1-couplage-stimulus-sécrétion-du-glucose-à-l-exocytose-d-i" class="">3.1 — Couplage stimulus-sécrétion : du glucose à l'exocytose d'insuline</a></li>
+<li><a href="#s-4-3-1-1-entrée-du-glucose-les-transporteurs-glut" class="toc-h3">3.1.1 — Entrée du glucose : les transporteurs GLUT</a></li>
+<li><a href="#s-5-3-1-2-la-glucokinase-le-glucostat-de-la-cellule" class="toc-h3">3.1.2 — La glucokinase : le « glucostat » de la cellule β</a></li>
+<li><a href="#s-6-3-1-3-métabolisme-mitochondrial-et-génération-du-signal-atp" class="toc-h3">3.1.3 — Métabolisme mitochondrial et génération du signal ATP</a></li>
+<li><a href="#s-7-3-1-4-canal-k-atp-le-transducteur-bioélectrique" class="toc-h3">3.1.4 — Canal K~ATP~ : le transducteur bioélectrique</a></li>
+<li><a href="#s-8-3-1-5-exocytose-et-maturation-de-l-insuline" class="toc-h3">3.1.5 — Exocytose et maturation de l'insuline</a></li>
+<li><a href="#s-9-3-2-cinétique-biphasique-de-la-sécrétion-d-insuline" class="">3.2 — Cinétique biphasique de la sécrétion d'insuline</a></li>
+<li><a href="#s-10-3-2-1-première-phase-le-pool-rapidement-libérable-rrp" class="toc-h3">3.2.1 — Première phase : le pool rapidement libérable (RRP)</a></li>
+<li><a href="#s-11-3-2-2-deuxième-phase-recrutement-et-néosynthèse" class="toc-h3">3.2.2 — Deuxième phase : recrutement et néosynthèse</a></li>
+<li><a href="#s-12-3-2-3-perte-de-la-première-phase-le-signal-d-alarme-précoce-" class="toc-h3">3.2.3 — Perte de la première phase : le signal d'alarme précoce du DT2</a></li>
+<li><a href="#s-13-3-2-4-pulsatilité-de-la-sécrétion-d-insuline" class="toc-h3">3.2.4 — Pulsatilité de la sécrétion d'insuline</a></li>
+<li><a href="#s-14-3-3-incrétines-glp-1-et-gip-l-axe-entéro-insulaire" class="">3.3 — Incrétines GLP-1 et GIP : l'axe entéro-insulaire</a></li>
+<li><a href="#s-15-3-3-1-l-effet-incrétine-découverte-et-quantification" class="toc-h3">3.3.1 — L'effet incrétine : découverte et quantification</a></li>
+<li><a href="#s-16-3-3-2-glp-1-l-incrétine-thérapeutiquement-dominante" class="toc-h3">3.3.2 — GLP-1 : l'incrétine thérapeutiquement dominante</a></li>
+<li><a href="#s-17-3-3-3-gip-le-partenaire-redécouvert" class="toc-h3">3.3.3 — GIP : le partenaire redécouvert</a></li>
+<li><a href="#s-18-3-3-4-déficit-incrétine-dans-le-dt2" class="toc-h3">3.3.4 — Déficit incrétine dans le DT2</a></li>
+<li><a href="#s-19-3-3-5-stratégies-thérapeutiques-ciblant-l-axe-incrétine" class="toc-h3">3.3.5 — Stratégies thérapeutiques ciblant l'axe incrétine</a></li>
+<li><a href="#s-20-3-3-6-l-axe-cerveau-intestin-pancréas" class="toc-h3">3.3.6 — L'axe cerveau-intestin-pancréas</a></li>
+<li><a href="#s-21-3-4-glucagon-et-contre-régulation-glycémique" class="">3.4 — Glucagon et contre-régulation glycémique</a></li>
+<li><a href="#s-22-3-4-1-physiologie-du-glucagon" class="toc-h3">3.4.1 — Physiologie du glucagon</a></li>
+<li><a href="#s-23-3-4-2-hiérarchie-de-la-contre-régulation-glycémique" class="toc-h3">3.4.2 — Hiérarchie de la contre-régulation glycémique</a></li>
+<li><a href="#s-24-3-4-3-hypoglycemia-unawareness-dans-le-dt1" class="toc-h3">3.4.3 — Hypoglycemia unawareness dans le DT1</a></li>
+<li><a href="#s-25-3-4-4-hyperglucagonémie-paradoxale-dans-le-dt2" class="toc-h3">3.4.4 — Hyperglucagonémie paradoxale dans le DT2</a></li>
+<li><a href="#s-26-auto-évaluation-module-3" class="">Auto-évaluation — Module 3</a></li>
+<li><a href="#s-27-qcm" class="toc-h3">QCM</a></li>
+<li><a href="#s-28-cas-clinique" class="toc-h3">Cas clinique</a></li>
+<li><a href="#s-29-question-de-synthèse" class="toc-h3">Question de synthèse</a></li></ul></nav><main class="vertex-content"><h1>MODULE 3 : PHYSIOLOGIE DE LA SÉCRÉTION D'INSULINE ET DU GLUCAGON — Couplage Stimulus-Sécrétion, Incrétines et Contre-Régulation</h1>
+<p><strong>Partie</strong> : I — Fondamentaux
+<strong>Durée estimée</strong> : 3h30
+<strong>Niveau</strong> : Fondamental à intermédiaire
+<strong>Prérequis</strong> : Modules 1 et 2 (embryologie pancréatique, architecture des îlots, biologie de la cellule β)</p>
+<hr />
+<h2 id="s-1-accroche-clinique">Accroche clinique</h2>
+<div class="vbox clinique"><span class="vbox-title">Mise en situation</span>
+M. R., 72 ans, diabétique de type 2 sous gliclazide 60 mg (sulfamide hypoglycémiant), est retrouvé confus à 2 heures du matin par son épouse. La glycémie capillaire affiche 0,38 g/L (2,1 mmol/L). Aux urgences, après resucrage intraveineux, le patient récupère mais l'équipe de garde s'interroge : <em>« Pourquoi l'insuline continue-t-elle d'être sécrétée alors que la glycémie est dangereusement basse ? Le pancréas ne devrait-il pas couper la production d'insuline quand le glucose chute ? »</em><br>
+> Pour comprendre cette situation — et pourquoi les sulfamides sont capables de « court-circuiter » la protection physiologique contre l'hypoglycémie — il faut maîtriser le couplage stimulus-sécrétion de la cellule β, le rôle central des canaux K~ATP~, la cinétique biphasique de la sécrétion d'insuline, l'effet incrétine et la hiérarchie de la contre-régulation glycémique.
+</div>
+
+<h2 id="s-2-objectifs-d-apprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> le mécanisme complet du couplage stimulus-sécrétion de la cellule β, du transport du glucose à l'exocytose des granules d'insuline</li>
+<li><strong>Expliquer</strong> le fonctionnement des canaux K~ATP~ (Kir6.2/SUR1) et les conséquences de leurs mutations (diabète néonatal, hyperinsulinisme congénital)</li>
+<li><strong>Distinguer</strong> la première et la deuxième phase de sécrétion d'insuline et comprendre la signification clinique de la perte de la première phase</li>
+<li><strong>Analyser</strong> l'effet incrétine (GLP-1, GIP) et ses applications thérapeutiques (analogues du GLP-1, inhibiteurs de la DPP-4, double agoniste GIP/GLP-1)</li>
+<li><strong>Intégrer</strong> la physiologie du glucagon et la hiérarchie de la contre-régulation pour comprendre les hypoglycémies iatrogènes et l'<em>hypoglycemia unawareness</em></li>
+</ol>
+<hr />
+<h2 id="s-3-3-1-couplage-stimulus-sécrétion-du-glucose-à-l-exocytose-d-i">3.1 — Couplage stimulus-sécrétion : du glucose à l'exocytose d'insuline</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un nouveau-né présente des hypoglycémies sévères récurrentes dès les premières heures de vie, avec un taux d'insuline plasmatique paradoxalement élevé. Le diagnostic d'hyperinsulinisme congénital est posé. Si le mécanisme normal de sécrétion d'insuline est parfaitement couplé au taux de glucose, comment une cellule β peut-elle « ignorer » une glycémie basse et continuer à sécréter de l'insuline ?
+</div>
+
+<p>La cellule β pancréatique est un véritable <strong>senseur métabolique</strong> : elle ne détecte pas le glucose par un récepteur membranaire classique, mais en le métabolisant elle-même. C'est le flux métabolique intracellulaire du glucose qui génère le signal déclencheur de la sécrétion d'insuline — un mécanisme élégant qui assure un couplage proportionnel entre la glycémie ambiante et la quantité d'insuline libérée.</p>
+<h3 id="s-4-3-1-1-entrée-du-glucose-les-transporteurs-glut">3.1.1 — Entrée du glucose : les transporteurs GLUT</h3>
+<p>Le glucose pénètre dans la cellule β par <strong>diffusion facilitée</strong> via des transporteurs membranaires de la famille GLUT. Chez l'humain, le transporteur principal est <strong>GLUT1</strong> (avec une contribution de GLUT3), tandis que chez le rongeur, c'est <strong>GLUT2</strong> qui domine. Cette distinction est importante car la majorité de la littérature expérimentale provient de modèles murins — l'extrapolation directe à l'humain nécessite de garder cette différence à l'esprit.</p>
+<p>Ces transporteurs sont des <strong>protéines passives</strong> : ils ne consomment pas d'énergie et équilibrent rapidement la concentration intracellulaire de glucose avec la concentration extracellulaire. Le glucose entre donc dans la cellule β à un débit proportionnel à la glycémie plasmatique. Le transport lui-même n'est pas l'étape limitante du couplage stimulus-sécrétion — c'est l'étape suivante, la phosphorylation par la glucokinase, qui joue ce rôle critique.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+Chez le rongeur, GLUT2 a un Km élevé (~17 mM), ce qui signifie que le transport reste proportionnel au glucose dans la gamme physiologique et pathologique. Chez l'humain, GLUT1 a un Km plus bas (~3 mM) et est saturé à des glycémies physiologiques, mais l'expression combinée de GLUT1 et GLUT3 assure un flux d'entrée suffisant pour maintenir le couplage métabolique. Des mutations de <em>SLC2A2</em> (gène de GLUT2) causent le syndrome de Fanconi-Bickel (glycosurie rénale, hépatomégalie, retard de croissance) mais n'entraînent paradoxalement qu'un diabète modéré, confirmant que GLUT2 n'est pas le transporteur principal de la cellule β humaine (Santer et al., <em>Nat Genet</em>, 1997).
+</div>
+
+<h3 id="s-5-3-1-2-la-glucokinase-le-glucostat-de-la-cellule">3.1.2 — La glucokinase : le « glucostat » de la cellule β</h3>
+<p>Une fois dans la cellule, le glucose est phosphorylé en glucose-6-phosphate (G6P) par la <strong>glucokinase</strong> (hexokinase IV). Cette enzyme est le véritable <strong>capteur de glucose</strong> de la cellule β — elle fonctionne comme un « glucostat » qui fixe le seuil de déclenchement de la sécrétion d'insuline.</p>
+<p>La glucokinase possède des propriétés cinétiques uniques qui la distinguent des autres hexokinases :</p>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>Glucokinase (Hexokinase IV)</th>
+<th>Hexokinases I-III</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Km pour le glucose</strong></td>
+<td>~8 mM (~1,44 g/L)</td>
+<td>0,01-0,1 mM</td>
+</tr>
+<tr>
+<td><strong>Inhibition par le G6P</strong></td>
+<td>Non</td>
+<td>Oui (rétro-inhibition)</td>
+</tr>
+<tr>
+<td><strong>Cinétique</strong></td>
+<td>Sigmoïdale (coopérativité apparente, coefficient de Hill ~1,7)</td>
+<td>Michaélienne classique</td>
+</tr>
+<tr>
+<td><strong>Distribution</strong></td>
+<td>Cellule β, hépatocyte, neurones hypothalamiques</td>
+<td>Ubiquitaire</td>
+</tr>
+</tbody>
+</table>
+<p>Le Km élevé (~8 mM) signifie que la glucokinase n'est <strong>saturée qu'à des glycémies élevées</strong> : dans la gamme physiologique (4-10 mM), son activité augmente proportionnellement au glucose. L'absence d'inhibition par le G6P garantit que le flux métabolique reste fidèlement couplé à la concentration de glucose extracellulaire. La cinétique sigmoïdale confère au système une <strong>sensibilité accrue</strong> autour du seuil glycémique physiologique — une petite variation de glycémie autour de 5-8 mM entraîne un changement significatif de l'activité enzymatique et donc de la sécrétion d'insuline (Matschinsky, <em>Diabetes</em>, 2002).</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Mutations de la glucokinase** :<br>
+- <strong>Mutations inactivatrices hétérozygotes</strong> → <strong>MODY2</strong> : le Km de la glucokinase est « relevé » d'environ 2-3 mM. Le glucostat est réglé plus haut → hyperglycémie modérée et stable (5,5-8 mmol/L à jeun), ne nécessitant généralement aucun traitement car non progressive.<br>
+- <strong>Mutations inactivatrices homozygotes</strong> → <strong>Diabète néonatal permanent</strong> : absence quasi totale de détection du glucose → diabète sévère dès la naissance.<br>
+- <strong>Mutations activatrices</strong> → <strong>Hyperinsulinisme congénital</strong> : le Km est abaissé, la glucokinase est hyperactive même à glycémie basse → sécrétion inappropriée d'insuline → hypoglycémies récurrentes (Glaser et al., <em>N Engl J Med</em>, 1998).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB03-S01-001</span><div class="vmedia-desc">Courbe d'activité de la glucokinase vs hexokinases classiques en fonction de la glycémie : cinétique sigmoïdale, Km, effet des mutations MODY2 et mutations activatrices (Identifiez le seuil de glycémie auquel la sécrétion d'insuline est déclenchée et comment ce seuil est modifié dans les mutations)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-6-3-1-3-métabolisme-mitochondrial-et-génération-du-signal-atp">3.1.3 — Métabolisme mitochondrial et génération du signal ATP</h3>
+<p>Le G6P produit par la glucokinase entre dans la <strong>glycolyse</strong>, générant du pyruvate et un faible rendement d'ATP. Mais c'est le métabolisme mitochondrial qui produit la majeure partie du signal : le pyruvate entre dans le <strong>cycle de Krebs</strong> (via la pyruvate déshydrogénase et la pyruvate carboxylase), puis les équivalents réduits (NADH, FADH2) alimentent la <strong>chaîne de phosphorylation oxydative</strong>, produisant massivement de l'ATP.</p>
+<p>Le résultat net est une <strong>augmentation du ratio ATP/ADP</strong> intracellulaire proportionnelle à la glycémie. Ce ratio constitue le signal métabolique qui va directement agir sur l'étape suivante du couplage : la fermeture des canaux K~ATP~.</p>
+<p>Un détail important : la cellule β possède une particularité métabolique — elle exprime très peu de <strong>lactate déshydrogénase</strong> (LDH) et de <strong>transporteurs de monocarboxylates</strong> (MCT). Cela signifie que le pyruvate issu de la glycolyse est presque entièrement dirigé vers la mitochondrie plutôt que converti en lactate. Cette « canalisation mitochondriale » du pyruvate est essentielle pour un couplage stimulus-sécrétion efficace : si le pyruvate était dévié vers le lactate, le signal ATP serait atténué et la cellule β ne répondrait pas correctement au glucose (Sekine et al., <em>J Biol Chem</em>, 1994).</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Chaîne métabolique complète** :<br>
+Retenez la séquence en 5 étapes : (1) glucose entre via GLUT1 → (2) phosphorylation par la glucokinase (étape limitante) → (3) glycolyse → pyruvate → (4) cycle de Krebs + phosphorylation oxydative → (5) ↑ ATP/ADP. Chaque étape est proportionnelle à la glycémie. La glucokinase est le « gardien du seuil ».
+</div>
+
+<h3 id="s-7-3-1-4-canal-k-atp-le-transducteur-bioélectrique">3.1.4 — Canal K~ATP~ : le transducteur bioélectrique</h3>
+<p>Le canal K~ATP~ est le <strong>pivot</strong> de la transduction du signal métabolique en signal électrique. C'est un complexe hétéro-octamérique composé de deux sous-unités :</p>
+<ul>
+<li><strong>Kir6.2</strong> (gène <em>KCNJ11</em>) : le pore ionique proprement dit, canal potassique à rectification entrante</li>
+<li><strong>SUR1</strong> (gène <em>ABCC8</em>, <em>Sulfonylurea Receptor 1</em>) : la sous-unité régulatrice, qui contient les sites de liaison de l'ATP, de l'ADP et des sulfamides</li>
+</ul>
+<p>Le fonctionnement est le suivant :</p>
+<p><strong>Au repos (glycémie basse, ATP/ADP bas)</strong> : le canal K~ATP~ est <strong>ouvert</strong>. Le potassium (K+) sort de la cellule selon son gradient électrochimique → la membrane est <strong>hyperpolarisée</strong> (environ -70 mV) → les canaux calciques voltage-dépendants sont fermés → pas de sécrétion d'insuline.</p>
+<p><strong>En réponse au glucose (glycémie élevée, ↑ ATP/ADP)</strong> : l'ATP se lie à Kir6.2 et <strong>ferme</strong> le canal K~ATP~ → le K+ ne sort plus → la membrane se <strong>dépolarise</strong> → ouverture des <strong>canaux calciques voltage-dépendants</strong> de type L → influx massif de Ca2+ → le calcium intracellulaire déclenche l'<strong>exocytose</strong> des granules d'insuline via la machinerie SNARE.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Mécanisme des hypoglycémies sous sulfamides<strong> : Les sulfamides hypoglycémiants (gliclazide, glibenclamide, glimépiride) se lient au site SUR1 du canal K~ATP~ et le </strong>ferment indépendamment du ratio ATP/ADP**. Cela signifie que la cellule β est « forcée » de sécréter de l'insuline même quand la glycémie est basse — le couplage glucose-sécrétion est court-circuité. C'est exactement ce qui s'est passé chez M. R. dans l'accroche clinique : à 2h du matin, sa glycémie était basse, mais le gliclazide maintenait les canaux K~ATP~ fermés → dépolarisation → sécrétion d'insuline → hypoglycémie sévère. Ce mécanisme est aggravé par l'insuffisance rénale (qui prolonge la demi-vie des sulfamides) et l'âge avancé.
+</div>
+
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Mutations des canaux K~ATP~** :<br>
+Les mutations de <em>KCNJ11</em> (Kir6.2) et <em>ABCC8</em> (SUR1) sont responsables de deux pathologies « miroir » :<br>
+- <strong>Mutations activatrices</strong> (canal reste ouvert) → la cellule β ne peut pas se dépolariser → pas de sécrétion d'insuline → <strong>diabète néonatal</strong>. Point remarquable : ces patients, longtemps traités par insuline injectable, peuvent souvent passer aux <strong>sulfamides à haute dose</strong> car les sulfamides ferment le canal par un mécanisme indépendant de l'ATP — ils contournent le défaut génétique (Pearson et al., <em>N Engl J Med</em>, 2006).<br>
+- <strong>Mutations inactivatrices</strong> (canal reste fermé) → dépolarisation permanente → sécrétion continue d'insuline → <strong>hyperinsulinisme congénital</strong> (hypoglycémies néonatales sévères, parfois réfractaires au diazoxide, nécessitant une pancréatectomie subtotale).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">🎬</span><span class="vmedia-code">MDIAB03-S01-002</span><div class="vmedia-desc">Animation du couplage stimulus-sécrétion complet : entrée glucose → glucokinase → métabolisme mitochondrial → ↑ ATP/ADP → fermeture canal K~ATP~ → dépolarisation → influx Ca2+ → exocytose (Suivez le parcours du glucose et identifiez à quel niveau les sulfamides interviennent)</div><div class="vmedia-note">Média à intégrer — VIDEO</div></div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB03-S01-003</span><div class="vmedia-desc">Canal K~ATP~ (Kir6.2/SUR1) : structure, sites de liaison de l'ATP et des sulfamides, effet des mutations activatrices vs inactivatrices (Comparez le canal normal, le canal muté « ouvert en permanence » du diabète néonatal, et le canal fermé par un sulfamide)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-8-3-1-5-exocytose-et-maturation-de-l-insuline">3.1.5 — Exocytose et maturation de l'insuline</h3>
+<p>L'influx de calcium déclenche la fusion des <strong>granules sécrétoires</strong> avec la membrane plasmique via la machinerie <strong>SNARE</strong> (Soluble NSF Attachment Protein Receptor), un complexe protéique composé principalement de syntaxine-1A, SNAP-25 et VAMP2 (synaptobrévine). Ce mécanisme est remarquablement similaire à celui de l'exocytose des neurotransmetteurs au niveau synaptique — ce qui n'est pas surprenant compte tenu de l'origine neuroendocrine commune des cellules β et des neurones (lignage Ngn3, cf. Module 1).</p>
+<p>Le contenu des granules sécrétoires mérite attention : la cellule β ne stocke pas directement l'insuline mature, mais sa forme précurseur, la <strong>proinsuline</strong>. La maturation s'effectue dans les granules sécrétoires par clivage protéolytique par les proprotéine convertases <strong>PC1/3</strong> et <strong>PC2</strong> :</p>
+<p><strong>Proinsuline → Insuline (chaînes A et B reliées par ponts disulfure) + Peptide C</strong></p>
+<p>Le <strong>peptide C</strong> (connecting peptide) est sécrété en quantité <strong>équimolaire</strong> avec l'insuline. Cette propriété en fait un marqueur précieux de la sécrétion endogène d'insuline : contrairement à l'insuline exogène (qui ne contient pas de peptide C), le dosage du peptide C permet d'évaluer la fonction résiduelle des cellules β chez un patient sous insulinothérapie. Un peptide C effondré confirme l'insulinopénie (DT1 avancé) ; un peptide C conservé oriente vers un DT2 ou un MODY.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+L'amyline (IAPP, <em>Islet Amyloid Polypeptide</em>) est co-sécrétée avec l'insuline dans un ratio d'environ 1:100. Dans le DT2, l'amyline a tendance à former des <strong>dépôts amyloïdes</strong> dans l'îlot, contribuant à la toxicité β-cellulaire. Ces dépôts sont retrouvés chez >90% des patients DT2 à l'autopsie (Westermark et al., <em>Diabetologia</em>, 2011). Le pramlintide (analogue synthétique de l'amyline) est utilisé comme traitement adjuvant dans le DT1 et le DT2, ralentissant la vidange gastrique et réduisant l'excursion glycémique postprandiale.
+</div>
+
+<div class="vexercice" id="ex_1"><div class="vexercice-title">Micro-exercice</div>
+<p>Classez dans l'ordre les événements suivants du couplage stimulus-sécrétion :</p>
+<div class="vdrag-zone">
+<div class="vdrag-item" data-order="0"><span class="drag-handle"></span><span>(A) Dépolarisation membranaire</span></div>
+<div class="vdrag-item" data-order="2"><span class="drag-handle"></span><span>(C) Phosphorylation du glucose par la glucokinase</span></div>
+<div class="vdrag-item" data-order="1"><span class="drag-handle"></span><span>(B) Augmentation du ratio ATP/ADP</span></div>
+<div class="vdrag-item" data-order="4"><span class="drag-handle"></span><span>(E) Fermeture des canaux K~ATP~</span></div>
+<div class="vdrag-item" data-order="3"><span class="drag-handle"></span><span>(D) Ouverture des canaux calciques voltage-dépendants</span></div>
+</div>
+<button class="vqcm-validate vdrag-validate" type="button">Vérifier l'ordre</button>
+<button class="vqcm-validate vdrag-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button>
+<div class="vqcm-result" id="ex_1_result"></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">C → B → E → A → D. La glucokinase phosphoryle le glucose (étape limitante), le métabolisme mitochondrial augmente le ratio ATP/ADP, l'ATP ferme les canaux K~ATP~, la cellule se dépolarise, puis les canaux calciques s'ouvrent et le Ca2+ déclenche l'exocytose.</div></details>
+</div>
+
+<div class="vtransition">Le couplage stimulus-sécrétion explique <em>comment</em> la cellule β répond au glucose — mais cette réponse n'est pas monolithique. Elle se décompose en deux phases temporellement distinctes, dont la première est un marqueur précoce de dysfonction β-cellulaire dans le DT2.</div>
+<hr />
+<h2 id="s-9-3-2-cinétique-biphasique-de-la-sécrétion-d-insuline">3.2 — Cinétique biphasique de la sécrétion d'insuline</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un praticien réalise un test de tolérance au glucose intraveineux (IVGTT) chez deux patients. Le patient A présente un pic d'insuline rapide dans les 5 premières minutes, suivi d'une sécrétion soutenue. Le patient B ne montre aucun pic initial, seulement une montée lente et plate. Pourtant, les deux patients ont encore une HbA1c normale. Lequel est le plus à risque de développer un DT2 dans les 5 prochaines années ?
+</div>
+
+<p>La sécrétion d'insuline en réponse à une stimulation glucosée ne se fait pas de manière linéaire et continue — elle suit un profil <strong>biphasique</strong> caractéristique, dont chaque phase a un mécanisme et une signification clinique distincts.</p>
+<h3 id="s-10-3-2-1-première-phase-le-pool-rapidement-libérable-rrp">3.2.1 — Première phase : le pool rapidement libérable (RRP)</h3>
+<p>La <strong>première phase</strong> de sécrétion d'insuline survient dans les <strong>5 à 10 premières minutes</strong> suivant une stimulation glucosée brutale (comme un bolus intraveineux de glucose). Elle se manifeste par un <strong>pic</strong> aigu et transitoire de sécrétion d'insuline.</p>
+<p>Ce pic provient de l'exocytose du <strong>pool de granules rapidement libérable</strong> (<em>Readily Releasable Pool</em>, RRP), constitué des granules d'insuline déjà « amarrées » (<em>docked</em>) à la membrane plasmique, prêtes à fusionner dès que le signal calcique est reçu. Le RRP ne représente qu'environ <strong>1-5% du contenu total en granules</strong> de la cellule β (~50-100 granules sur un stock de ~10 000), mais son rôle physiologique est capital.</p>
+<p>La première phase a une fonction métabolique précise : elle <strong>supprime rapidement la production hépatique de glucose</strong>. Le foie produit en permanence du glucose (néoglucogenèse, glycogénolyse) pour maintenir la glycémie à jeun. Lors d'un repas, l'insuline de première phase envoie un signal rapide au foie pour « couper » cette production endogène — le glucose alimentaire absorbé prend le relais. Sans cette suppression rapide, la glycémie postprandiale s'élève excessivement car la production hépatique s'ajoute à l'absorption intestinale.</p>
+<div class="vbox expert"><span class="vbox-title">Expert</span>
+Le RRP est un concept fonctionnel qui recouvre des réalités morphologiques : les granules du RRP sont physiquement associées à la membrane par le complexe SNARE dans une configuration « prête à fusionner ». La reconstitution du RRP (re-priming) prend 2-5 minutes et dépend de facteurs comme Munc13-1, Rab3A et la phosphoinositide kinase. Des défauts dans ces protéines d'amarrage contribuent à la perte de première phase dans les modèles de DT2 (Gaisano, <em>Diabetes</em>, 2017).
+</div>
+
+<h3 id="s-11-3-2-2-deuxième-phase-recrutement-et-néosynthèse">3.2.2 — Deuxième phase : recrutement et néosynthèse</h3>
+<p>La <strong>deuxième phase</strong> débute après 10-15 minutes et se prolonge aussi longtemps que la stimulation glucosée persiste. Son amplitude est <strong>proportionnelle</strong> à l'intensité et à la durée du stimulus glycémique.</p>
+<p>Elle repose sur deux mécanismes complémentaires :</p>
+<ol>
+<li><strong>Recrutement du pool de réserve</strong> : les granules d'insuline stockées dans le cytoplasme (pool de réserve, ~95% du stock total) sont mobilisées, transportées le long du cytosquelette d'actine et de microtubules vers la membrane, puis « amarrées » pour reconstituer continuellement le RRP.</li>
+<li><strong>Néosynthèse d'insuline</strong> : le glucose stimule la transcription du gène de l'insuline et la traduction de l'ARNm de la proinsuline, assurant le réapprovisionnement des granules sur les heures qui suivent.</li>
+</ol>
+<p>La deuxième phase est responsable de la majorité de l'insuline sécrétée en réponse à un repas. Elle assure la <strong>captation périphérique du glucose</strong> (muscles, tissu adipeux) et le stockage des nutriments.</p>
+<div class="vmedia"><span class="vmedia-icon">📊</span><span class="vmedia-code">MDIAB03-S02-001</span><div class="vmedia-desc">Profil biphasique de la sécrétion d'insuline : courbe en réponse à un bolus IV de glucose, montrant la première phase (pic, 0-10 min) et la deuxième phase (plateau, >10 min), avec identification des pools de granules correspondants (Comparez le profil normal au profil d'un patient en stade pré-DT2 avec perte de la première phase)</div><div class="vmedia-note">Média à intégrer — INFOGRAPHIE</div></div>
+
+<h3 id="s-12-3-2-3-perte-de-la-première-phase-le-signal-d-alarme-précoce-">3.2.3 — Perte de la première phase : le signal d'alarme précoce du DT2</h3>
+<p>La <strong>perte de la première phase</strong> de sécrétion d'insuline est considérée comme l'<strong>anomalie la plus précoce</strong> de la fonction β-cellulaire dans l'évolution vers le DT2. Elle est détectable dès le stade d'intolérance au glucose (IGT, <em>Impaired Glucose Tolerance</em>), alors que l'HbA1c peut encore être dans les limites normales (Pratley &amp; Weyer, <em>Diabetologia</em>, 2001).</p>
+<p>Les conséquences de cette perte sont directes :
+- Absence de suppression rapide de la production hépatique de glucose → <strong>hyperglycémie postprandiale précoce</strong>
+- Surcharge de la deuxième phase (qui doit compenser) → épuisement progressif → déficit global
+- Installation d'un cercle vicieux : hyperglycémie → glucotoxicité → aggravation du déficit sécrétoire</p>
+<p>Le test de référence pour quantifier la première phase est le <strong>test de tolérance au glucose intraveineux</strong> (IVGTT), qui mesure l'<strong>AIR</strong> (<em>Acute Insulin Response</em>) — l'aire sous la courbe d'insulinémie dans les 10 premières minutes après le bolus IV de glucose. Un AIR abaissé chez un sujet à risque (antécédents familiaux de DT2, obésité, IGT) est un marqueur prédictif puissant de la progression vers le diabète franc.</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Première phase et choix thérapeutique** :<br>
+Certains traitements du DT2 « restaurent » partiellement la première phase : les <strong>analogues rapides de l'insuline</strong> (lispro, asparte, glulisine) injectés en préprandial miment la première phase perdue. Les <strong>glinides</strong> (répaglinide, natéglinide), sécrétagogues d'action rapide et courte, stimulent préférentiellement la première phase. À l'inverse, les sulfamides d'action longue (glibenclamide) stimulent les deux phases de manière indiscriminée, avec un risque d'hypoglycémie nocturne.
+</div>
+
+<h3 id="s-13-3-2-4-pulsatilité-de-la-sécrétion-d-insuline">3.2.4 — Pulsatilité de la sécrétion d'insuline</h3>
+<p>Au-delà de la cinétique biphasique en réponse au repas, la sécrétion d'insuline présente une <strong>pulsatilité intrinsèque</strong> : des oscillations régulières avec une périodicité de <strong>5 à 15 minutes</strong>. Ces pulses résultent du couplage électrique entre cellules β via les jonctions gap (connexine 36, cf. Module 1) et des oscillations du métabolisme mitochondrial (cycles glycolytiques oscillants).</p>
+<p>Cette pulsatilité n'est pas un artefact — elle a une <strong>importance fonctionnelle majeure</strong> : le foie répond mieux à l'insuline administrée de manière pulsatile qu'à une perfusion continue de même dose totale. Les récepteurs hépatiques de l'insuline subissent une « désensibilisation » (down-regulation) en cas d'exposition continue, alors que les pulses permettent une resensibilisation entre chaque pic.</p>
+<p>Dans le DT2, la <strong>perte de la pulsatilité</strong> est un signe précoce de dysfonction β-cellulaire, souvent concomitant de la perte de la première phase. Cette observation a des implications pour les stratégies de remplacement insulinique : les pompes à insuline délivrant des micro-bolus rapprochés se rapprochent davantage de la pulsatilité physiologique que les injections sous-cutanées classiques.</p>
+<div class="vbox controverse"><span class="vbox-title">Controverse — Pulsatilité et pompes à insuline</span>
+> Bien que la théorie suggère que reproduire la pulsatilité physiologique optimiserait l'efficacité de l'insulinothérapie, les essais cliniques comparant les pompes à insuline aux multi-injections n'ont pas montré de bénéfice dramatique lié spécifiquement à la pulsatilité. Le bénéfice des pompes provient surtout de la flexibilité de programmation des débits basaux et des bolus préprandiaux. La reproduction fidèle des oscillations de 5-15 minutes reste un défi technologique non résolu.
+</div>
+
+<div class="vexercice" id="ex_2"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient réalise un IVGTT. Le graphique montre un pic d'insuline normal dans les 5 premières minutes (AIR = 65 µU/mL·min), mais une deuxième phase très faible et plate.</p>
+<div style="margin:12px 0;"><label for="ex_2_q1" style="font-weight:600;color:#00695C;">1. Quel pool de granules est conservé ?</label><br><textarea class="vtext-answer" id="ex_2_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_2_q2" style="font-weight:600;color:#00695C;">2. Quel est le mécanisme probable du déficit ?</label><br><textarea class="vtext-answer" id="ex_2_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) Le RRP (pool rapidement libérable) est conservé → première phase normale. (2) Le déficit concerne le recrutement du pool de réserve : soit un défaut de transport intracellulaire des granules (dysfonction du cytosquelette), soit un défaut de néosynthèse de proinsuline (stress du réticulum endoplasmique), soit un épuisement du stock total de granules. Ce profil est moins fréquent que la perte isolée de première phase mais peut se voir dans les formes évoluées de DT2.</div></details>
+</div>
+
+<div class="vtransition">Le glucose n'est pas le seul stimulus de la sécrétion d'insuline. La voie orale d'administration du glucose déclenche une réponse insulinique 2 à 3 fois supérieure à la voie intraveineuse — c'est l'effet incrétine, dont la compréhension a révolutionné la pharmacologie du DT2.</div>
+<hr />
+<h2 id="s-14-3-3-incrétines-glp-1-et-gip-l-axe-entéro-insulaire">3.3 — Incrétines GLP-1 et GIP : l'axe entéro-insulaire</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Deux volontaires sains reçoivent la même quantité de glucose (75 g). Le premier l'ingère par voie orale (HGPO). Le second le reçoit en perfusion intraveineuse, avec un ajustement du débit pour obtenir exactement la même courbe glycémique. Pourtant, le sujet qui a bu le glucose sécrète 2 à 3 fois plus d'insuline que celui qui l'a reçu en IV. Comment expliquer cette différence alors que la glycémie est identique ?
+</div>
+
+<h3 id="s-15-3-3-1-l-effet-incrétine-découverte-et-quantification">3.3.1 — L'effet incrétine : découverte et quantification</h3>
+<p>L'observation que la voie orale de glucose stimule davantage la sécrétion d'insuline que la voie intraveineuse à glycémie identique a été baptisée <strong>effet incrétine</strong> (<em>incretin effect</em>). Ce phénomène, quantifié rigoureusement par Nauck et al. (<em>J Clin Endocrinol Metab</em>, 1986) dans une expérience devenue classique (glucose oral vs glucose IV isoglycémique), démontre que <strong>50 à 70% de la sécrétion postprandiale d'insuline</strong> est attribuable à des facteurs intestinaux — les <strong>incrétines</strong> — et non au glucose seul.</p>
+<p>Deux hormones intestinales rendent compte de la quasi-totalité de l'effet incrétine :
+- Le <strong>GLP-1</strong> (<em>Glucagon-Like Peptide 1</em>), sécrété par les cellules L de l'iléon et du côlon
+- Le <strong>GIP</strong> (<em>Glucose-dependent Insulinotropic Polypeptide</em>), sécrété par les cellules K du duodénum et du jéjunum proximal</p>
+<p>L'effet incrétine est un mécanisme <strong>d'amplification anticipatoire</strong> : l'intestin « prévient » le pancréas qu'un repas arrive avant que le glucose n'ait significativement augmenté la glycémie. Cette anticipation optimise la réponse insulinique et limite l'excursion glycémique postprandiale — une forme de régulation « feed-forward » remarquablement efficace.</p>
+<div class="vmedia"><span class="vmedia-icon">📊</span><span class="vmedia-code">MDIAB03-S03-001</span><div class="vmedia-desc">Expérience de Nauck (1986) : courbes d'insulinémie en réponse au glucose oral vs IV isoglycémique, avec quantification de l'effet incrétine (50-70%) (Identifiez la surface entre les deux courbes qui représente la contribution des incrétines)</div><div class="vmedia-note">Média à intégrer — INFOGRAPHIE</div></div>
+
+<h3 id="s-16-3-3-2-glp-1-l-incrétine-thérapeutiquement-dominante">3.3.2 — GLP-1 : l'incrétine thérapeutiquement dominante</h3>
+<p>Le <strong>GLP-1</strong> est sécrété par les cellules entéroendocrines de type L, situées principalement dans l'<strong>iléon distal et le côlon</strong>. Il est produit par clivage post-traductionnel du proglucagon (le même précurseur que le glucagon, mais clivé différemment par la PC1/3 intestinale vs la PC2 pancréatique).</p>
+<p>Le GLP-1 possède un profil pharmacologique exceptionnel qui en fait la cible thérapeutique de choix :</p>
+<p><strong>Actions pancréatiques</strong> :
+- <strong>Stimulation de la sécrétion d'insuline</strong> — mais uniquement de manière <strong>glucose-dépendante</strong> : le GLP-1 amplifie la réponse insulinique au glucose mais ne déclenche pas de sécrétion lorsque la glycémie est basse. Ce mécanisme élimine le risque d'hypoglycémie (contrairement aux sulfamides).
+- <strong>Suppression de la sécrétion de glucagon</strong> — également glucose-dépendante. Le GLP-1 inhibe les cellules α, réduisant la production hépatique de glucose. Ce double effet (↑ insuline + ↓ glucagon) est synergique pour abaisser la glycémie.</p>
+<p><strong>Actions extra-pancréatiques</strong> :
+- <strong>Ralentissement de la vidange gastrique</strong> : réduit la vitesse d'absorption du glucose → atténuation du pic glycémique postprandial
+- <strong>Effet satiétogène central</strong> : action sur les récepteurs GLP-1R de l'hypothalamus et du tronc cérébral → réduction de l'appétit et de la prise alimentaire → perte de poids
+- <strong>Cardioprotection</strong> : réduction des événements cardiovasculaires majeurs (MACE) démontrée pour le liraglutide (LEADER), le sémaglutide (SUSTAIN-6) et le dulaglutide (REWIND) — un bénéfice qui dépasse la simple amélioration glycémique (Drucker, <em>Cell Metab</em>, 2006 ; Marso et al., <em>N Engl J Med</em>, 2016)</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — GLP-1 = pas d'hypoglycémie** :<br>
+Le caractère glucose-dépendant de l'action du GLP-1 est l'argument clé en pratique : quand la glycémie descend en dessous de ~4 mM, l'effet du GLP-1 sur la cellule β s'éteint spontanément. C'est pourquoi les analogues du GLP-1 (exénatide, liraglutide, sémaglutide, dulaglutide) et les inhibiteurs de la DPP-4 (sitagliptine, vildagliptine, saxagliptine, linagliptine) ne provoquent pas d'hypoglycémie en monothérapie — un avantage majeur sur les sulfamides et l'insuline exogène.
+</div>
+
+<h3 id="s-17-3-3-3-gip-le-partenaire-redécouvert">3.3.3 — GIP : le partenaire redécouvert</h3>
+<p>Le <strong>GIP</strong> est sécrété par les cellules K du <strong>duodénum et du jéjunum proximal</strong>, en réponse au glucose et aux lipides alimentaires. Historiquement, le GIP a été relégué au second plan car son effet insulinotrope est <strong>atténué chez les patients DT2</strong> (résistance au GIP), ce qui semblait limiter son intérêt thérapeutique.</p>
+<p>Cependant, le GIP a connu un regain d'intérêt spectaculaire avec le <strong>tirzépatide</strong> (Mounjaro®), un <strong>double agoniste GIP/GLP-1</strong> qui a démontré une efficacité supérieure au sémaglutide seul sur la réduction de l'HbA1c et la perte de poids dans les essais SURPASS (Frías et al., <em>N Engl J Med</em>, 2021). Ce résultat suggère que la combinaison des deux voies incrétines produit un effet synergique, possiblement par des mécanismes complémentaires au niveau du tissu adipeux et du système nerveux central.</p>
+<p>Une différence fondamentale avec le GLP-1 : le GIP <strong>stimule</strong> la sécrétion de glucagon (≠ GLP-1 qui l'inhibe). Cette action apparemment paradoxale pourrait avoir un rôle physiologique dans la mobilisation des réserves hépatiques en période interprandiale et dans la prévention de l'hypoglycémie.</p>
+<div class="vbox expert"><span class="vbox-title">Expert</span>
+Le récepteur du GIP (GIPR) est exprimé non seulement dans les cellules β et α, mais aussi dans le <strong>tissu adipeux</strong>, les <strong>ostéoblastes</strong> et le <strong>système nerveux central</strong>. L'activation du GIPR dans le tissu adipeux favorise le stockage lipidique et pourrait contribuer à un remodelage adipeux bénéfique (shift du tissu viscéral vers le tissu sous-cutané). Cette action extra-pancréatique pourrait expliquer une partie du bénéfice métabolique du tirzépatide au-delà de son effet incrétine direct (Campbell & Drucker, <em>Cell Metab</em>, 2013).
+</div>
+
+<h3 id="s-18-3-3-4-déficit-incrétine-dans-le-dt2">3.3.4 — Déficit incrétine dans le DT2</h3>
+<p>Chez les patients DT2, l'effet incrétine est <strong>réduit d'environ 50%</strong> par rapport aux sujets sains (Nauck et al., <em>Diabetologia</em>, 1986). Ce déficit est attribuable à deux mécanismes :</p>
+<ol>
+<li><strong>Diminution modeste de la sécrétion de GLP-1</strong> : la plupart des études montrent une réduction de 10-20% des taux de GLP-1 postprandiaux dans le DT2, mais cette diminution est insuffisante pour expliquer la totalité du déficit incrétine.</li>
+<li><strong>Résistance au GIP</strong> : les cellules β des patients DT2 répondent beaucoup moins au GIP qu'au GLP-1 — c'est le mécanisme dominant du déficit incrétine. La résistance au GIP serait liée à une down-regulation du récepteur GIPR sur les cellules β soumises au stress métabolique chronique.</li>
+</ol>
+<p>Cette dissociation a orienté les stratégies thérapeutiques : puisque le GLP-1 reste efficace dans le DT2 (contrairement au GIP seul), c'est la voie GLP-1 qui a été ciblée en priorité.</p>
+<h3 id="s-19-3-3-5-stratégies-thérapeutiques-ciblant-l-axe-incrétine">3.3.5 — Stratégies thérapeutiques ciblant l'axe incrétine</h3>
+<p>Le GLP-1 natif a une <strong>demi-vie extrêmement courte</strong> : 2 à 3 minutes seulement. Il est rapidement dégradé par la <strong>DPP-4</strong> (<em>Dipeptidyl Peptidase-4</em>), une enzyme ubiquitaire qui clive les deux acides aminés N-terminaux du GLP-1 actif (7-36 amide), le transformant en GLP-1 inactif (9-36 amide).</p>
+<p>Deux stratégies pharmacologiques contournent cette dégradation :</p>
+<table>
+<thead>
+<tr>
+<th>Stratégie</th>
+<th>Molécules</th>
+<th>Mécanisme</th>
+<th>Voie</th>
+<th>Efficacité HbA1c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inhibiteurs de la DPP-4</strong> (gliptines)</td>
+<td>Sitagliptine, vildagliptine, saxagliptine, linagliptine, alogliptine</td>
+<td>Bloquent l'enzyme DPP-4 → prolongent la demi-vie du GLP-1 endogène (×2-3)</td>
+<td>Orale</td>
+<td>-0,5 à -0,8%</td>
+</tr>
+<tr>
+<td><strong>Analogues du GLP-1</strong> (aGLP-1R)</td>
+<td>Exénatide, liraglutide, sémaglutide, dulaglutide, albiglutide</td>
+<td>Molécules résistantes à la DPP-4 → activation directe et prolongée du récepteur GLP-1R</td>
+<td>SC ou orale (sémaglutide)</td>
+<td>-1,0 à -1,8%</td>
+</tr>
+<tr>
+<td><strong>Double agoniste GIP/GLP-1</strong></td>
+<td>Tirzépatide</td>
+<td>Activation simultanée des récepteurs GLP-1R et GIPR</td>
+<td>SC</td>
+<td>-1,5 à -2,4%</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Effets indésirables des analogues du GLP-1** : Les nausées et vomissements (20-40% des patients en début de traitement) sont liés au ralentissement de la vidange gastrique. Ils sont dose-dépendants et s'atténuent habituellement en 2-4 semaines. Une titration progressive est essentielle. Le risque de pancréatite aiguë a été évoqué mais les grandes études de sécurité (LEADER, SUSTAIN) n'ont pas confirmé de surrisque significatif. Le signal de cancer médullaire de la thyroïde observé chez les rongeurs (liraglutide, sémaglutide) n'a pas été confirmé chez l'humain mais reste une contre-indication en cas d'antécédent personnel ou familial de cancer médullaire thyroïdien ou de NEM2.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB03-S03-002</span><div class="vmedia-desc">Axe entéro-insulaire : cellules L (GLP-1) et K (GIP), dégradation par la DPP-4, sites d'action pancréatiques et extra-pancréatiques, cibles thérapeutiques (Identifiez les deux niveaux d'intervention pharmacologique : inhibition de la DPP-4 vs activation directe du récepteur)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-20-3-3-6-l-axe-cerveau-intestin-pancréas">3.3.6 — L'axe cerveau-intestin-pancréas</h3>
+<p>L'effet incrétine ne se limite pas à une boucle hormonale intestin-pancréas. Des travaux récents révèlent un <strong>axe neuro-hormonal</strong> intégrant le cerveau : le GLP-1 active des neurones du <strong>noyau du tractus solitaire</strong> (NTS) et de l'<strong>area postrema</strong> dans le tronc cérébral, qui projettent vers l'hypothalamus (contrôle de l'appétit) et le noyau dorsal moteur du vague (efférences parasympathiques vers le pancréas). Ce circuit vagal contribue à la potentialisation de la sécrétion d'insuline et à la suppression du glucagon.</p>
+<p>L'existence de cet axe explique pourquoi les analogues du GLP-1 ont des effets centraux marqués (satiété, perte de poids) et pourquoi la chirurgie bariatrique (qui modifie l'anatomie intestinale et la sécrétion des incrétines) a des effets métaboliques qui dépassent la simple restriction calorique — la rémission du DT2 après bypass gastrique survient souvent en quelques jours, bien avant que la perte de poids ne soit significative.</p>
+<blockquote>
+<p>🤔 <strong>Réflexion avancée</strong> : Si l'axe cerveau-intestin-pancréas est si puissant, pourquoi les patients avec une vagotomie tronculaire (ancienne chirurgie anti-ulcéreuse) ne développent-ils pas tous un diabète ? La réponse est que l'axe incrétine a une composante hormonale (GLP-1 et GIP circulants agissant directement sur les cellules β) et une composante neurale (voie vagale). La redondance des deux voies confère une robustesse au système — la perte d'une voie est partiellement compensée par l'autre.</p>
+</blockquote>
+<div class="vexercice" id="ex_3"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient DT2 est traité par sitagliptine (iDPP-4). Vous observez une réduction modeste de l'HbA1c (-0,6%). Vous envisagez de passer à un analogue du GLP-1 (sémaglutide). Expliquez pourquoi l'analogue du GLP-1 est plus efficace que l'iDPP-4.</p>
+<textarea class="vtext-answer" id="ex_3_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">L'iDPP-4 agit en protégeant le GLP-1 endogène de la dégradation → elle augmente les taux de GLP-1 de 2 à 3 fois, mais reste limitée par la quantité de GLP-1 que l'intestin produit physiologiquement. L'analogue du GLP-1 (sémaglutide) est administré à des doses pharmacologiques qui activent le récepteur GLP-1R à un niveau bien supérieur au GLP-1 physiologique → effet insulinotrope plus puissant, suppression du glucagon plus marquée, ralentissement de la vidange gastrique et satiété plus intenses → réduction de l'HbA1c et perte de poids significativement supérieures.</div></details>
+</div>
+
+<div class="vtransition">L'insuline n'agit pas seule dans la régulation glycémique — le glucagon, sécrété par les cellules α, est son principal antagoniste hormonal. La compréhension de la physiologie du glucagon et de la hiérarchie de contre-régulation est essentielle pour gérer les hypoglycémies et comprendre l'hyperglycémie à jeun du DT2.</div>
+<hr />
+<h2 id="s-21-3-4-glucagon-et-contre-régulation-glycémique">3.4 — Glucagon et contre-régulation glycémique</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un patient DT2 a une glycémie à jeun élevée (1,60 g/L) malgré une HbA1c relativement modeste (7,5%). Son insulinémie à jeun est élevée (25 µU/mL), ce qui élimine un déficit insulinique absolu. Si l'insuline est « suffisante », pourquoi la glycémie à jeun reste-t-elle élevée ? Quel « partenaire oublié » contribue à cette hyperglycémie ?
+</div>
+
+<h3 id="s-22-3-4-1-physiologie-du-glucagon">3.4.1 — Physiologie du glucagon</h3>
+<p>Le <strong>glucagon</strong> est une hormone peptidique de 29 acides aminés sécrétée par les <strong>cellules α</strong> des îlots de Langerhans. Il est produit par clivage du proglucagon par la <strong>PC2</strong> (dans les cellules α pancréatiques) — contrairement aux cellules L intestinales qui clivent le même proglucagon par la PC1/3 pour produire le GLP-1 (cf. section 3.3).</p>
+<p>Le glucagon est l'<strong>hormone hyperglycémiante majeure</strong>. Son action s'exerce principalement sur le <strong>foie</strong>, via le récepteur du glucagon (GCGR) couplé à la protéine Gs et à l'adénylate cyclase :</p>
+<ul>
+<li><strong>Glycogénolyse</strong> : activation de la glycogène phosphorylase → libération rapide du glucose stocké sous forme de glycogène hépatique. C'est l'effet le plus rapide (minutes).</li>
+<li><strong>Néoglucogenèse</strong> : stimulation de la synthèse de novo de glucose à partir de précurseurs non glucidiques (lactate, alanine, glycérol). Effet plus lent (heures) mais quantitativement majeur en situation de jeûne prolongé.</li>
+<li><strong>Cétogenèse</strong> : en cas de déficit insulinique associé, le glucagon stimule l'oxydation des acides gras hépatiques et la production de corps cétoniques — un mécanisme de survie en cas de jeûne qui devient pathologique dans l'acidocétose diabétique.</li>
+</ul>
+<p><strong>Régulation de la sécrétion de glucagon</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Stimulateurs</th>
+<th>Inhibiteurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hypoglycémie</td>
+<td>Hyperglycémie</td>
+</tr>
+<tr>
+<td>Acides aminés (surtout arginine, alanine)</td>
+<td>Insuline (signal paracrine intra-îlot)</td>
+</tr>
+<tr>
+<td>Exercice physique</td>
+<td>Somatostatine (signal paracrine)</td>
+</tr>
+<tr>
+<td>Stimulation sympathique (adrénaline, noradrénaline)</td>
+<td>GLP-1</td>
+</tr>
+<tr>
+<td>Cortisol</td>
+<td>Amyline</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+L'inhibition du glucagon par l'insuline est principalement <strong>paracrine</strong> : l'insuline sécrétée par les cellules β adjacentes diffuse localement à forte concentration et inhibe directement les cellules α voisines. Cette concentration locale est 50 à 100 fois supérieure à l'insulinémie systémique. Ce mécanisme explique pourquoi, dans le DT1 (destruction des cellules β), les cellules α sont « libérées » de cette inhibition paracrine et sécrètent un excès paradoxal de glucagon même en hyperglycémie (cf. Module 1, section 1.3.4). L'insuline exogène injectée en sous-cutané ne reproduit pas cette inhibition paracrine locale — elle atteint les cellules α seulement via la circulation systémique, à des concentrations beaucoup plus faibles.
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB03-S04-001</span><div class="vmedia-desc">Actions hépatiques du glucagon : glycogénolyse, néoglucogenèse, cétogenèse — voies de signalisation GCGR/Gs/AMPc et effets métaboliques (Identifiez pourquoi le glucagon est à la fois une hormone de survie en cas de jeûne et un facteur aggravant dans le diabète déséquilibré)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-23-3-4-2-hiérarchie-de-la-contre-régulation-glycémique">3.4.2 — Hiérarchie de la contre-régulation glycémique</h3>
+<p>Lorsque la glycémie chute, l'organisme active une <strong>cascade de défenses</strong> hiérarchisée, chaque mécanisme se déclenchant à un seuil glycémique de plus en plus bas. Cette hiérarchie, établie par les travaux fondamentaux de Cryer (<em>J Clin Invest</em>, 2006), est essentielle pour comprendre la physiopathologie des hypoglycémies :</p>
+<table>
+<thead>
+<tr>
+<th>Seuil glycémique (mg/dL)</th>
+<th>Mécanisme activé</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>~80</strong> (4,4 mM)</td>
+<td>↓ Sécrétion d'insuline</td>
+<td>Première défense : levée du frein insulinique sur la production hépatique</td>
+</tr>
+<tr>
+<td><strong>~65-70</strong> (3,6-3,9 mM)</td>
+<td>↑ Sécrétion de glucagon</td>
+<td>Glycogénolyse + néoglucogenèse hépatique → production de glucose</td>
+</tr>
+<tr>
+<td><strong>~65-70</strong> (3,6-3,9 mM)</td>
+<td>↑ Sécrétion d'adrénaline</td>
+<td>Glycogénolyse hépatique et musculaire, lipolyse, ↓ captation périphérique du glucose</td>
+</tr>
+<tr>
+<td><strong>~60</strong> (3,3 mM)</td>
+<td>↑ Cortisol + hormone de croissance (GH)</td>
+<td>Effets anti-insuliniques retardés (heures), néoglucogenèse</td>
+</tr>
+<tr>
+<td><strong>~55-60</strong> (3,0-3,3 mM)</td>
+<td>Symptômes neurogènes (adrénergiques)</td>
+<td>Tremblements, palpitations, sueurs, anxiété → signal d'alerte conscient</td>
+</tr>
+<tr>
+<td><strong>&lt;50</strong> (2,8 mM)</td>
+<td>Symptômes neuroglycopéniques</td>
+<td>Confusion, troubles visuels, convulsions, coma → urgence vitale</td>
+</tr>
+</tbody>
+</table>
+<p>Plusieurs points essentiels méritent l'attention du praticien :</p>
+<ol>
+<li>
+<p>La <strong>diminution de l'insuline</strong> est la première défense — elle précède l'activation du glucagon. Chez un patient sous insuline exogène, cette première ligne de défense est <strong>abolie</strong> : l'insuline injectée continue d'agir indépendamment de la glycémie.</p>
+</li>
+<li>
+<p>Le <strong>glucagon</strong> et l'<strong>adrénaline</strong> sont les deux défenses actives principales. Elles se déclenchent au même seuil mais ont des mécanismes d'action distincts et complémentaires. La perte du glucagon seul est compensable par l'adrénaline. La perte des deux est catastrophique.</p>
+</li>
+<li>
+<p>Les <strong>symptômes neurogènes</strong> (tremblements, sueurs, palpitations) sont déclenchés par l'activation sympatho-adrénergique — ils constituent le <strong>signal d'alarme conscient</strong> qui permet au patient de se resucrer. La perte de ces symptômes définit l'<em>hypoglycemia unawareness</em>.</p>
+</li>
+</ol>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB03-S04-002</span><div class="vmedia-desc">Escalier de la contre-régulation glycémique : seuils successifs de déclenchement des défenses hormonales et des symptômes, du plus haut (↓ insuline, 80 mg/dL) au plus bas (neuroglycopénie, <50 mg/dL) (Identifiez quelles lignes de défense sont perdues dans le DT1 évolué et pourquoi le risque d'hypoglycémie sévère augmente)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-24-3-4-3-hypoglycemia-unawareness-dans-le-dt1">3.4.3 — Hypoglycemia unawareness dans le DT1</h3>
+<p>Les patients DT1 de longue durée (&gt;5 ans) présentent une vulnérabilité spécifique aux hypoglycémies sévères, liée à la <strong>perte séquentielle</strong> des mécanismes de contre-régulation :</p>
+<p><strong>Première perte : la réponse glucagon</strong> — Dans les 5 premières années suivant le diagnostic du DT1, la réponse glucagon à l'hypoglycémie disparaît chez la majorité des patients. Le mécanisme est lié à la <strong>perte du signal paracrine insulinique intra-îlot</strong> : dans l'îlot normal, la chute de l'insuline locale est le signal principal qui déclenche la sécrétion de glucagon en réponse à l'hypoglycémie. Quand les cellules β sont détruites, ce signal disparaît — les cellules α « ne détectent plus » l'hypoglycémie par cette voie. L'insuline exogène injectée ne restaure pas ce mécanisme car elle n'atteint pas l'îlot à des concentrations suffisantes.</p>
+<p><strong>Deuxième perte : la réponse adrénergique</strong> — Après des épisodes répétés d'hypoglycémie, le seuil de déclenchement de la réponse adrénergique s'<strong>abaisse progressivement</strong> (de ~65 mg/dL à ~50 mg/dL voire moins). Ce phénomène d'adaptation centrale (<em>hypoglycemia-associated autonomic failure</em>, HAAF) signifie que l'adrénaline n'est libérée qu'à des glycémies dangereusement basses — trop tard pour que le patient ressente les symptômes d'alerte et se resucre.</p>
+<p>Le résultat combiné est l'<strong>hypoglycemia unawareness</strong> : le patient passe directement de la normoglycémie à la neuroglycopénie (confusion, perte de conscience) sans symptômes adrénergiques d'alerte. Le risque d'hypoglycémie sévère est multiplié par <strong>25</strong> (Cryer, <em>J Clin Invest</em>, 2006).</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Prise en charge de l'hypoglycemia unawareness** :<br>
+La stratégie repose sur l'<strong>évitement strict des hypoglycémies</strong> pendant 2-3 semaines : relèvement des cibles glycémiques, utilisation de la mesure continue du glucose (MCG) avec alertes prédictives, et éventuellement passage à une <strong>boucle fermée</strong> (pompe à insuline + MCG avec algorithme d'arrêt automatique). Cette stratégie permet de « remonter » le seuil adrénergique et de restaurer partiellement les symptômes d'alerte — c'est le concept de <em>hypoglycemia unawareness reversal</em>. En revanche, la réponse glucagon, une fois perdue, ne se restaure pas.
+</div>
+
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Le cercle vicieux de l'hypoglycemia unawareness** :<br>
+Hypoglycémies récurrentes → abaissement du seuil adrénergique → absence de symptômes d'alerte → hypoglycémies non détectées plus fréquentes et plus profondes → abaissement supplémentaire du seuil → hypoglycémie sévère (coma, convulsions, décès). Ce cercle ne peut être rompu que par une prévention active et agressive des hypoglycémies.
+</div>
+
+<h3 id="s-25-3-4-4-hyperglucagonémie-paradoxale-dans-le-dt2">3.4.4 — Hyperglucagonémie paradoxale dans le DT2</h3>
+<p>Si le glucagon est l'hormone de l'hypoglycémie, comment expliquer que les patients DT2 — qui sont hyperglycémiques — aient un glucagon <strong>paradoxalement élevé</strong> ? Cette observation, soulignée par Unger et Cherrington comme celle du « partenaire oublié » du diabète (<em>J Clin Invest</em>, 2012), est l'une des anomalies physiopathologiques les plus importantes du DT2.</p>
+<p>Dans le DT2, les cellules α présentent une <strong>résistance à l'inhibition</strong> : elles ne répondent plus normalement à l'hyperglycémie (qui devrait supprimer le glucagon) ni à l'insuline paracrine (dont l'effet est atténué par l'insulinorésistance locale). Le résultat est une sécrétion de glucagon inappropriée en situation d'hyperglycémie, avec des conséquences directes :</p>
+<ul>
+<li><strong>Production hépatique de glucose excessive</strong> → hyperglycémie à jeun. C'est le mécanisme dominant de l'hyperglycémie à jeun du DT2 — plus que le déficit insulinique lui-même à ce stade.</li>
+<li><strong>Hyperglycémie postprandiale</strong> aggravée : au lieu de diminuer après un repas (comme chez le sujet sain), le glucagon ne se supprime pas, voire augmente → la production hépatique de glucose persiste et s'ajoute à l'absorption intestinale.</li>
+<li><strong>Majoration de la cétogenèse</strong> en cas de décompensation → risque de cétose et d'état hyperosmolaire.</li>
+</ul>
+<div class="vbox expert"><span class="vbox-title">Expert — Le glucagon comme cible thérapeutique directe</span>
+> L'hyperglucagonémie du DT2 a motivé le développement d'<strong>antagonistes du récepteur du glucagon</strong> (GCGR). Plusieurs molécules ont montré une réduction significative de la glycémie à jeun en essais cliniques. Cependant, le blocage du glucagon s'accompagne d'une <strong>hyperplasie compensatoire des cellules α</strong> (feedback positif) et d'une <strong>augmentation des taux de GLP-1</strong> (le proglucagon non clivé par PC2 est redirigé vers le GLP-1 par PC1/3). Les effets à long terme (risque de tumeurs neuroendocrines α, stéatose hépatique par inhibition de la β-oxydation) restent à évaluer. Les analogues du GLP-1 contournent ce problème en supprimant le glucagon de manière glucose-dépendante sans bloquer totalement le récepteur (Kazda et al., <em>Diabetes Care</em>, 2016).
+</div>
+
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — « Bithérapie hormonale » du DT2** :<br>
+Le DT2 n'est pas seulement un déficit d'insuline — c'est un déséquilibre du ratio insuline/glucagon. Les traitements les plus efficaces sont ceux qui corrigent les deux versants : les analogues du GLP-1 (↑ insuline ET ↓ glucagon), le tirzépatide (double agoniste) et l'association insuline + analogue du GLP-1 (insuline basale pour couvrir le déficit sécrétoire + GLP-1 pour supprimer le glucagon et favoriser la perte de poids). Cette vision « bihormonale » du DT2 remplace le paradigme centré sur l'insuline seule.
+</div>
+
+<div class="vexercice" id="ex_4"><div class="vexercice-title">Micro-exercice</div>
+<p>Un patient DT1 depuis 20 ans fait une hypoglycémie à 0,40 g/L. Il ne ressent aucun symptôme (pas de tremblements, pas de sueurs). Expliquez la séquence physiopathologique en vous appuyant sur la hiérarchie de contre-régulation.</p>
+<textarea class="vtext-answer" id="ex_4_answer" placeholder="Rédigez votre réponse ici..."></textarea>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) L'insuline exogène ne diminue pas quand la glycémie baisse → première ligne de défense abolie. (2) Après 20 ans de DT1, les cellules β sont détruites → perte du signal paracrine intra-îlot → la réponse glucagon à l'hypoglycémie a disparu depuis les premières années. (3) Après des hypoglycémies récurrentes, le seuil de la réponse adrénergique s'est abaissé bien en dessous de 0,40 g/L (HAAF) → pas de libération d'adrénaline → pas de symptômes neurogènes (tremblements, sueurs). Résultat : le patient passe directement à la neuroglycopénie sans signal d'alerte. C'est l'hypoglycemia unawareness, risque ×25 d'hypoglycémie sévère.</div></details>
+</div>
+
+<div class="vtransition">Avec cette vue d'ensemble — couplage stimulus-sécrétion, cinétique biphasique, incrétines, glucagon et contre-régulation — vous disposez des bases physiologiques pour comprendre les mécanismes d'action de l'ensemble de la pharmacopée antidiabétique et la gestion rationnelle des hypoglycémies.</div>
+<hr />
+<div class="vpoints-cles"><div class="vpoints-cles-title">Points clés — Module 3</div><ol>
+<li>Le couplage stimulus-sécrétion repose sur le flux métabolique du glucose dans la cellule β : <strong>GLUT1 → glucokinase (glucostat, Km ~8 mM) → glycolyse → mitochondrie → ↑ ATP/ADP → fermeture canal K~ATP~ → dépolarisation → influx Ca2+ → exocytose</strong></li>
+<li>La <strong>glucokinase</strong> est l'étape limitante — ses mutations causent le MODY2 (inactivatrices) ou l'hyperinsulinisme congénital (activatrices)</li>
+<li>Les <strong>canaux K~ATP~</strong> (Kir6.2/SUR1) sont le transducteur bioélectrique. Les sulfamides les ferment <strong>indépendamment du glucose</strong> → risque d'hypoglycémie. Les mutations de KCNJ11/ABCC8 causent diabète néonatal (activatrices) ou hyperinsulinisme congénital (inactivatrices)</li>
+<li>La sécrétion d'insuline est <strong>biphasique</strong> : 1ère phase (RRP, 5-10 min, suppression hépatique) et 2ème phase (pool de réserve, &gt;10 min, captation périphérique). La <strong>perte de la 1ère phase</strong> est l'anomalie la plus précoce du DT2</li>
+<li>L'<strong>effet incrétine</strong> (GLP-1 + GIP) amplifie 2-3× la sécrétion d'insuline par voie orale vs IV et représente <strong>50-70%</strong> de la sécrétion postprandiale</li>
+<li>Le GLP-1 est <strong>glucose-dépendant</strong> (pas d'hypoglycémie), ↑ insuline, ↓ glucagon, ↓ vidange gastrique, satiété, cardioprotection. Demi-vie 2-3 min (DPP-4) → stratégies : iDPP-4 ou analogues résistants</li>
+<li>Le <strong>tirzépatide</strong> (double agoniste GIP/GLP-1) a une efficacité supérieure aux mono-agonistes</li>
+<li>La <strong>contre-régulation</strong> est hiérarchisée : ↓ insuline (80) → ↑ glucagon (65-70) → ↑ adrénaline (65-70) → cortisol/GH (60) → symptômes neurogènes (55-60) → neuroglycopénie (&lt;50)</li>
+<li>L'<strong>hypoglycemia unawareness</strong> du DT1 résulte de la perte séquentielle glucagon puis adrénaline → risque ×25</li>
+<li>L'<strong>hyperglucagonémie paradoxale</strong> du DT2 (« partenaire oublié ») est responsable de l'hyperglycémie à jeun excessive → les traitements corrigeant le ratio insuline/glucagon sont les plus efficaces</li>
+</ol></div>
+<hr />
+<h2 id="s-26-auto-évaluation-module-3">Auto-évaluation — Module 3</h2>
+<h3 id="s-27-qcm">QCM</h3>
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 1</span></div><div class="vqcm-question">Quelle enzyme est considérée comme le « capteur de glucose » de la cellule β ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_0"><label for="qcm_1_0">A) Hexokinase I</label></li>
+<li data-correct="true"><input type="radio" name="qcm_1" id="qcm_1_1"><label for="qcm_1_1">B) Glucokinase (Hexokinase IV)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_2"><label for="qcm_1_2">C) Phosphofructokinase</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_3"><label for="qcm_1_3">D) Pyruvate kinase</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">La glucokinase (hexokinase IV) a un Km élevé (~8 mM) proche de la glycémie normale, n'est pas inhibée par son produit, et fonctionne comme un véritable « glucostat ». Ses mutations causent le MODY2 (inactivatrices) ou l'hyperinsulinisme congénital (activatrices).</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 2</span></div><div class="vqcm-question">L'effet incrétine explique quel pourcentage de la sécrétion postprandiale d'insuline chez le sujet sain ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_0"><label for="qcm_2_0">A) 10-20%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_1"><label for="qcm_2_1">B) 30-40%</label></li>
+<li data-correct="true"><input type="radio" name="qcm_2" id="qcm_2_2"><label for="qcm_2_2">C) 50-70%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_3"><label for="qcm_2_3">D) &gt;90%</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">L'effet incrétine (GLP-1 + GIP) est responsable de 50-70% de la sécrétion d'insuline en réponse à un repas oral (Nauck et al., 1986). Ce phénomène explique pourquoi la voie orale stimule 2-3 fois plus la sécrétion d'insuline que la voie IV à glycémie identique.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 3</span></div><div class="vqcm-question">Les sulfamides hypoglycémiants agissent en :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_0"><label for="qcm_3_0">A) Stimulant la sécrétion de GLP-1</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_1"><label for="qcm_3_1">B) Inhibant la DPP-4</label></li>
+<li data-correct="true"><input type="radio" name="qcm_3" id="qcm_3_2"><label for="qcm_3_2">C) Fermant les canaux K~ATP~ indépendamment du glucose</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_3"><label for="qcm_3_3">D) Activant la glucokinase</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Les sulfamides se lient au SUR1 du canal K~ATP~ et le ferment indépendamment du ratio ATP/ADP → sécrétion d'insuline même quand la glycémie est basse → risque d'hypoglycémie. C'est le mécanisme opposé à l'action glucose-dépendante du GLP-1.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 4</span></div><div class="vqcm-question">Quelle est la demi-vie du GLP-1 natif dans la circulation ?</div><ul class="vqcm-options"><li data-correct="true"><input type="radio" name="qcm_4" id="qcm_4_0"><label for="qcm_4_0">A) 2-3 minutes</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_1"><label for="qcm_4_1">B) 20-30 minutes</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_2"><label for="qcm_4_2">C) 2-3 heures</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_3"><label for="qcm_4_3">D) 12-24 heures</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Le GLP-1 natif a une demi-vie très courte (2-3 min) due à la dégradation rapide par la DPP-4. Les analogues thérapeutiques (liraglutide, sémaglutide, dulaglutide) sont modifiés structurellement pour résister à la DPP-4 et avoir des demi-vies de plusieurs heures à plusieurs jours.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge or">🥇 Or</span><span>QCM 5</span></div><div class="vqcm-question">Un patient DT1 depuis 15 ans ne ressent plus les signes d'hypoglycémie. Quel est le mécanisme principal ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_0"><label for="qcm_5_0">A) Neuropathie périphérique des extrémités</label></li>
+<li data-correct="true"><input type="radio" name="qcm_5" id="qcm_5_1"><label for="qcm_5_1">B) Perte de la réponse glucagon puis de la réponse adrénergique à l'hypoglycémie</label></li>
+<li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_2"><label for="qcm_5_2">C) Adaptation centrale au glucose bas</label></li>
+<li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_3"><label for="qcm_5_3">D) Absorption rapide de l'insuline injectée</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Hypoglycemia unawareness : perte séquentielle de la réponse glucagon (premières années du DT1, par disparition du signal paracrine insulinique intra-îlot) puis abaissement du seuil de la réponse adrénergique (HAAF, après hypoglycémies récurrentes). Le risque d'hypoglycémie sévère est multiplié par 25 (Cryer, 2006). La stratégie thérapeutique repose sur l'évitement strict des hypoglycémies pour remonter le seuil adrénergique.</div></details>
+<hr />
+<h3 id="s-28-cas-clinique">Cas clinique</h3>
+<div class="vbox clinique"><span class="vbox-title">Cas</span>
+M. B., 67 ans**<br>
+DT2 depuis 12 ans. Traitement actuel : metformine 1000 mg × 2/j + gliclazide 60 mg/j. HbA1c 7,8%. Le patient rapporte des épisodes d'hypoglycémie à jeun et en fin de nuit (glycémies capillaires à 50-60 mg/dL), avec sueurs et tremblements. Bilan : créatinine 115 µmol/L, DFGe estimé 52 mL/min/1,73m² (IRC stade 3a).<br>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge argent">🥈 Argent</span> <strong style="color:#E65100;">Q1</strong> : Expliquez le mécanisme des hypoglycémies sous gliclazide chez ce patient en intégrant la pharmacologie du canal K~ATP~ et la fonction rénale.<br>
+> <em>Réponse : Le gliclazide se lie au SUR1 du canal K~ATP~ et le ferme indépendamment du ratio ATP/ADP intracellulaire → la cellule β sécrète de l'insuline même quand la glycémie est basse (court-circuit du couplage glucose-sécrétion). Ce risque est aggravé chez M. B. par deux facteurs : (1) le DFGe à 52 mL/min traduit une insuffisance rénale modérée qui prolonge la demi-vie du gliclazide et de ses métabolites actifs (accumulation) ; (2) à 67 ans, la clairance hépatique est également réduite et les réserves glycogéniques sont plus faibles, diminuant la capacité de contre-régulation. Les hypoglycémies en fin de nuit correspondent au nadir glycémique physiologique (période de jeûne prolongé) où l'effet résiduel du sulfamide persiste sans stimulus alimentaire.</em><br></div><textarea class="vtext-answer" id="cas_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge or">🥇 Or</span> <strong style="color:#E65100;">Q2</strong> : Proposez une alternative thérapeutique au gliclazide qui corrige le risque d'hypoglycémie tout en maintenant un contrôle glycémique satisfaisant chez ce patient. Justifiez par le mécanisme d'action.<br>
+> <em>Réponse : Deux options principales, toutes deux basées sur l'effet glucose-dépendant :</em><br>
+<em>- <strong>Inhibiteur de la DPP-4 (iDPP-4)</strong> : par exemple la linagliptine (pas d'ajustement rénal nécessaire, élimination biliaire) ou la sitagliptine (ajustée à 50 mg pour DFGe 30-50 ou 25 mg pour DFGe <30). Mécanisme : prolonge la demi-vie du GLP-1 endogène → stimulation de l'insuline glucose-dépendante → pas d'hypoglycémie quand la glycémie est basse. Efficacité modeste (HbA1c -0,5 à -0,8%) mais profil de sécurité excellent, adapté au patient âgé avec IRC.</em><br>
+<em>- <strong>Analogue du GLP-1 (aGLP-1R)</strong> : par exemple le dulaglutide (pas d'ajustement rénal) ou le sémaglutide (utilisable jusqu'au DFGe 15). Mécanisme : activation pharmacologique directe du récepteur GLP-1R → stimulation insulinique glucose-dépendante + suppression du glucagon + ralentissement vidange gastrique + perte de poids. Efficacité supérieure aux iDPP-4 (HbA1c -1,0 à -1,8%). Bénéfice cardiovasculaire additionnel. Pas d'hypoglycémie en monothérapie ou avec metformine.</em><br>
+<em>Dans les deux cas, l'avantage décisif sur le gliclazide est le caractère glucose-dépendant de l'action : quand la glycémie descend en dessous du seuil d'activation (~4 mM), l'effet insulinotrope s'éteint spontanément → pas de sécrétion d'insuline inappropriée en fin de nuit.</em></div><textarea class="vtext-answer" id="cas_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+</div>
+
+<hr />
+<h3 id="s-29-question-de-synthèse">Question de synthèse</h3>
+<div class="vexercice" style="border-color:#00ACC1; background:#E0F7FA;"><div class="vexercice-title" style="color:#006064;">💎 Question de synthèse</div><p>Un confrère vous dit : « Le DT2, c'est un manque d'insuline, point final. » En vous appuyant sur les quatre sections de ce module, expliquez pourquoi cette vision est incomplète et quelles sont les implications thérapeutiques d'une vision plus intégrée de la physiopathologie du DT2.</p><textarea class="vtext-answer" id="synth_1" rows="6" placeholder="Développez votre réponse ici (8-10 lignes)..."></textarea></div>
+<blockquote>
+<p><em>Éléments de réponse : Cette vision unicausale est réductrice. Le DT2 associe au minimum quatre anomalies sécrétoires : (1) </em><em>Perte de la première phase</em><em> de sécrétion d'insuline (défaut du RRP → absence de suppression rapide de la production hépatique de glucose → hyperglycémie postprandiale précoce) ; (2) </em><em>Déficit incrétine</em><em> (réduction de ~50% de l'effet incrétine, surtout par résistance au GIP → amplification insuffisante de la sécrétion postprandiale) ; (3) </em><em>Hyperglucagonémie paradoxale</em><em> (les cellules α ne sont plus correctement inhibées → production hépatique de glucose excessive → hyperglycémie à jeun) ; (4) </em><em>Perte de la pulsatilité</em><em> de la sécrétion d'insuline (désensibilisation hépatique). Implications thérapeutiques : les traitements les plus efficaces corrigent plusieurs de ces anomalies simultanément. Les analogues du GLP-1 et le tirzépatide agissent sur les quatre composantes (↑ insuline glucose-dépendante, restauration partielle de la première phase, suppression du glucagon, correction du déficit incrétine). Les sulfamides ne corrigent que le déficit insulinique — et de manière non glucose-dépendante, ajoutant un risque d'hypoglycémie. L'association insuline basale + analogue du GLP-1 couvre le déficit insulinique (composantes 1 et 4) et l'hyperglucagonémie (composante 3).</em></p>
+</blockquote>
+<hr />
+<div class="vrefs"><div class="vrefs-title">Références bibliographiques</div><ul>
+<li>Matschinsky FM. <em>Regulation of pancreatic beta-cell glucokinase: from basics to therapeutics</em>. Diabetes. 2002;51(Suppl 3):S394-S404.</li>
+<li>Pratley RE, Weyer C. <em>The role of impaired early insulin secretion in the pathogenesis of Type II diabetes mellitus</em>. Diabetologia. 2001;44(8):929-945.</li>
+<li>Nauck MA et al. <em>Incretin effects of increasing glucose loads in man calculated from venous insulin and C-peptide responses</em>. J Clin Endocrinol Metab. 1986;63(2):492-498.</li>
+<li>Nauck MA et al. <em>Reduced incretin effect in type 2 (non-insulin-dependent) diabetes</em>. Diabetologia. 1986;29(1):46-52.</li>
+<li>Drucker DJ. <em>The biology of incretin hormones</em>. Cell Metab. 2006;3(3):153-165.</li>
+<li>Cryer PE. <em>Mechanisms of sympathoadrenal failure and hypoglycemia in diabetes</em>. J Clin Invest. 2006;116(6):1470-1473.</li>
+<li>Unger RH, Cherrington AD. <em>Glucagonocentric restructuring of diabetes: a pathophysiologic and therapeutic makeover</em>. J Clin Invest. 2012;122(1):4-12.</li>
+<li>Pearson ER et al. <em>Switching from insulin to oral sulfonylureas in patients with diabetes due to Kir6.2 mutations</em>. N Engl J Med. 2006;355(5):467-477.</li>
+<li>Glaser B et al. <em>Familial hyperinsulinism caused by an activating glucokinase mutation</em>. N Engl J Med. 1998;338(4):226-230.</li>
+<li>Santer R et al. <em>Mutations in GLUT2, the gene for the liver-type glucose transporter, in patients with Fanconi-Bickel syndrome</em>. Nat Genet. 1997;17(3):324-326.</li>
+<li>Sekine N et al. <em>Low lactate dehydrogenase and high mitochondrial glycerol phosphate dehydrogenase in pancreatic beta-cells</em>. J Biol Chem. 1994;269(7):4895-4902.</li>
+<li>Gaisano HY. <em>Recent new insights into the role of SNARE and associated proteins in insulin granule exocytosis</em>. Diabetes Obes Metab. 2017;19(Suppl 1):115-123.</li>
+<li>Westermark P et al. <em>Islet amyloid polypeptide, islet amyloid, and diabetes mellitus</em>. Physiol Rev. 2011;91(3):795-826.</li>
+<li>Marso SP et al. <em>Liraglutide and cardiovascular outcomes in type 2 diabetes</em>. N Engl J Med. 2016;375(4):311-322.</li>
+<li>Frías JP et al. <em>Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes</em>. N Engl J Med. 2021;385(6):503-515.</li>
+<li>Campbell JE, Drucker DJ. <em>Pharmacology, physiology, and mechanisms of incretin hormone action</em>. Cell Metab. 2013;17(6):819-837.</li>
+<li>Kazda CM et al. <em>Evaluation of efficacy and safety of the glucagon receptor antagonist LY2409021 in patients with type 2 diabetes</em>. Diabetes Care. 2016;39(7):1241-1249.</li>
+</ul></div>
+<hr />
+<p><em>VERTEX© — Formation Diabétologie — Module 3 : Physiologie de la Sécrétion d'Insuline et du Glucagon</em>
+<em>Ce contenu est destiné à des praticiens confirmés. Il ne se substitue pas au jugement clinique.</em></p><div class="vertex-footer">VERTEX© — Virtual Environment for Real-Time EXpertise<br/>Formation médicale e-learning — doctraining.ma</div></main></div></body></html>

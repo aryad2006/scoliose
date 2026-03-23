@@ -1,0 +1,874 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-4-definitions-et-epidemiologie-de-la-scoliose">MODULE 4 — DÉFINITIONS ET ÉPIDÉMIOLOGIE DE LA SCOLIOSE</h1>
+<p><strong>Partie II — La Scoliose : Définition, Classification et Diagnostic</strong><br />
+<strong>Durée estimée</strong> : 1h30<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 1-3 (Anatomie, Embryologie, Biomécanique)</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Sophie entre maintenant dans la Partie II du parcours de formation. Son dossier est maintenant complet : les radiographies EOS montrent une scoliose thoracique droite T5-T12, angle de Cobb = 28°, rotation Nash-Moe grade II. Mais en salle d'attente, la mère de Sophie discute avec la mère d'un autre patient : <em>« Mon fils a aussi une scoliose... mais lui c'est à cause de sa myopathie. C'est pareil ? »</em></p>
+<p>→ <em>Ce module établit les définitions précises, distingue les types de scoliose, et donne les données épidémiologiques indispensables pour contextualiser chaque patient.</em></p>
+</blockquote>
+<p>👥 <strong>Changement de fil rouge</strong> : Nous entrons dans la Partie II. La patiente Sophie reste notre référence, mais nous allons élargir à la <strong>population scoliotique globale</strong>.</p>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Angle de Cobb • Rotation vertébrale • Scoliose structurale • Attitude scoliotique (scoliose fonctionnelle) • Scoliose idiopathique • Scoliose congénitale • Scoliose neuromusculaire • Scoliose syndromique • Scoliose dégénérative • Scoliose <em>de novo</em> • Courbure primaire (majeure) • Courbure secondaire (compensatoire) • Prévalence • Incidence • Sex-ratio • Facteurs de risque de progression • Drapeau rouge (<em>red flag</em>)</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Définir</strong> la scoliose selon les critères de la Scoliosis Research Society (SRS) (Bloom : Connaissance)</li>
+<li><strong>Distinguer</strong> une scoliose structurale d'une attitude scoliotique (scoliose fonctionnelle) (Bloom : Application)</li>
+<li><strong>Citer</strong> les données épidémiologiques de la scoliose idiopathique de l'adolescent (prévalence, sex-ratio, facteurs de risque) (Bloom : Connaissance)</li>
+<li><strong>Classer</strong> une scoliose selon son étiologie à partir des données cliniques et paracliniques (Bloom : Analyse)</li>
+<li><strong>Identifier</strong> les drapeaux rouges orientant vers une scoliose secondaire nécessitant des investigations complémentaires (Bloom : Application)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> Quel est l'angle de Cobb minimum pour retenir le diagnostic de scoliose selon la SRS ?<br />
+- A. 5°<br />
+- <strong>B. 10°</strong><br />
+- C. 20°<br />
+- D. 30°</p>
+<p><strong>Q2.</strong> Une scoliose disparaissant en flexion antérieure est :<br />
+- A. Une scoliose structurale sévère<br />
+- <strong>B. Une attitude scoliotique (fonctionnelle)</strong><br />
+- C. Une scoliose congénitale<br />
+- D. Une scoliose neuromusculaire</p>
+<p><strong>Q3.</strong> La prévalence de la scoliose idiopathique dans la population générale est :<br />
+- A. &lt; 0,5%<br />
+- B. 1%<br />
+- <strong>C. 2-3%</strong><br />
+- D. 10%</p>
+<p><strong>Q4.</strong> Le sex-ratio (F/H) pour les scolioses idiopathiques à Cobb &gt; 40° est :<br />
+- A. 1:1<br />
+- B. 2:1<br />
+- C. 4:1<br />
+- <strong>D. 7:1 à 10:1</strong></p>
+<p><strong>Q5.</strong> Une scoliose associée à une neurofibromatose de type 1 est classée :<br />
+- A. Idiopathique<br />
+- B. Neuromusculaire<br />
+- C. Dégénérative<br />
+- <strong>D. Syndromique</strong></p>
+<hr />
+<h2 id="41-definitions">4.1 Définitions</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Un enfant de 12 ans présente une asymétrie des épaules. Le médecin scolaire suspecte une scoliose. Mais un simple déséquilibre des membres inférieurs peut créer la même apparence. Comment distinguer une vraie scoliose d'une fausse ?</p>
+<h3 id="411-definition-officielle-de-la-srs">4.1.1 Définition officielle de la SRS</h3>
+<p>La <strong>Scoliosis Research Society (SRS)</strong> (SRS Terminology Committee) — société savante de référence mondiale — définit la scoliose comme :</p>
+<blockquote>
+<p><strong>Une déviation latérale de la colonne vertébrale dans le plan frontal, avec un angle de Cobb ≥ 10° ET une rotation vertébrale associée.</strong></p>
+</blockquote>
+<p>Deux éléments sont indissociables :<br />
+1. <strong>Angle de Cobb ≥ 10°</strong> (mesuré sur téléradiographie debout)<br />
+2. <strong>Rotation vertébrale</strong> (déformation tridimensionnelle — composante axiale obligatoire)</p>
+<p>Une déviation frontale sans rotation n'est <strong>pas une scoliose</strong> — c'est une attitude scoliotique.</p>
+<h3 id="412-mesure-de-langle-de-cobb">4.1.2 Mesure de l'angle de Cobb</h3>
+<div class="vertex-media schema">
+<strong>📐 M04-S01-001</strong><br/>
+<em>Schéma mesure angle de Cobb étape par étape (4 étapes annotées)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Technique standardisée de Cobb</strong> (Cobb, 1948, <em>AAOS Instructional Course Lectures</em>) :</p>
+<ol>
+<li><strong>Vertèbre limitante supérieure</strong> : vertèbre la plus inclinée dans la partie supérieure de la courbure (son plateau supérieur est le plus oblique)</li>
+<li><strong>Vertèbre limitante inférieure</strong> : idem pour la partie inférieure</li>
+<li><strong>Perpendiculaires</strong> aux plateaux des vertèbres limitantes</li>
+<li><strong>Angle</strong> entre ces deux perpendiculaires = angle de Cobb</li>
+</ol>
+<p><strong>Ou équivalent</strong> : angle entre les tangentes aux plateaux vertébraux des vertèbres limitantes (méthode identique).</p>
+<p><strong>Reproductibilité</strong> : l'erreur de mesure inter-observateur est de <strong>±3-5°</strong>. Un changement &lt; 5° n'est donc pas cliniquement significatif. Une "progression" n'est retenue que si elle est ≥ <strong>5°</strong> sur deux mesures comparatives.</p>
+<p><strong>Limites</strong> :<br />
+- La radiographie doit être en <strong>position debout</strong> (position assise ou couchée sous-estime la courbure)<br />
+- La mesure 2D dans le plan frontal ignore la rotation axiale et la déformation sagittale<br />
+- La variabilité inter-observateur nécessite idéalement que la même personne mesure en série</p>
+<h4 id="nomenclature-des-courbures">Nomenclature des courbures</h4>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Courbure primaire (majeure)</td>
+<td>Courbure la plus grande, la plus structurale, la plus rotatoire</td>
+</tr>
+<tr>
+<td>Courbure secondaire (compensatoire)</td>
+<td>Courbure développée pour maintenir l'équilibre — peut devenir structurale</td>
+</tr>
+<tr>
+<td>Courbure structurale</td>
+<td>Ne se corrige pas sur les bending films (correction &lt; 25%)</td>
+</tr>
+<tr>
+<td>Courbure non structurale</td>
+<td>Se corrige complètement sur les bending films (correction &gt; 25%)</td>
+</tr>
+<tr>
+<td>Apex</td>
+<td>Vertèbre ou disque le plus latéralement dévié et le plus rototé</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-media schema">
+<strong>📐 M04-S01-002</strong><br/>
+<em>Schéma courbure primaire (P) vs courbure secondaire (S) + définition apex</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="413-scoliose-structurale-vs-attitude-scoliotique">4.1.3 Scoliose structurale vs attitude scoliotique</h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th><strong>Scoliose structurale</strong></th>
+<th><strong>Attitude scoliotique (fonctionnelle)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Étiologie</td>
+<td>Intrinsèque au rachis</td>
+<td>Cause extra-rachidienne (ILLI, contracture musculaire, douleur)</td>
+</tr>
+<tr>
+<td>Rotation vertébrale</td>
+<td>Présente</td>
+<td>Absente</td>
+</tr>
+<tr>
+<td>Test d'Adams (flexion)</td>
+<td>Gibbosité persistante</td>
+<td>Disparition de l'asymétrie</td>
+</tr>
+<tr>
+<td>Bending films</td>
+<td>Réduction partielle &lt; 25%</td>
+<td>Disparition complète de la courbure</td>
+</tr>
+<tr>
+<td>Angle de Cobb debout vs couché</td>
+<td>Persiste couché</td>
+<td>Disparit couché</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>Oriente vers scoliose (corset / chirurgie si indiqué)</td>
+<td>Traiter la cause (semelle, kiné)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Causes fréquentes d'attitude scoliotique</strong> :<br />
+- Inégalité de longueur des membres inférieurs (ILMI) = cause n°1<br />
+- Contracture des muscles para-vertébraux (spasmophilie, torticolis)<br />
+- Hernie discale lombaire avec sciatique antalgique<br />
+- Douleur unilatérale (fracture de côte, tumeur)<br />
+- Compensation d'une cyphose localisée</p>
+<p><strong>Démarche pratique</strong> : Mettre la patient sur une semelle compensatrice pour équilibrer le bassin. Si la courbure disparaît → attitude scoliotique. Si persiste → scoliose structurale.</p>
+<h3 id="414-courbures-primaires-et-secondaires-nomenclature-topographique">4.1.4 Courbures primaires et secondaires — nomenclature topographique</h3>
+<p>La localisation se définit par la position de <strong>l'apex</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Localisation</th>
+<th>Apex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cervicale</td>
+<td>C1-C6</td>
+</tr>
+<tr>
+<td>Cervicothoracique</td>
+<td>C7-T1</td>
+</tr>
+<tr>
+<td>Thoracique</td>
+<td>T2-T11</td>
+</tr>
+<tr>
+<td>Thoracolombaire</td>
+<td>T12-L1</td>
+</tr>
+<tr>
+<td>Lombaire</td>
+<td>L2-L4</td>
+</tr>
+<tr>
+<td>Lombosacrée</td>
+<td>L5-S1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Latéralité</strong> :<br />
+- Scoliose <strong>droite</strong> : convexité vers la droite (apex va à droite)<br />
+- Scoliose <strong>gauche</strong> : convexité vers la gauche</p>
+<p><strong>Règle mnémotechnique</strong> : La scoliose thoracique idiopathique de l'adolescente est quasi-constamment <strong>droite</strong>. Une scoliose thoracique <em>gauche</em> est <strong>atypique</strong> et nécessite une IRM (rechercher une syringomyélie, une malformation de Chiari).</p>
+<hr />
+<h2 id="42-epidemiologie">4.2 Épidémiologie</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Vous êtes médecin scolaire et vous devez organiser un dépistage. À quel âge faut-il le faire ? Chez qui ? Avec quel outil ? Les données épidémiologiques guident ces décisions de santé publique.</p>
+<h3 id="421-prevalence">4.2.1 Prévalence</h3>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Prévalence (Cobb ≥ 10°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population générale (enfants/adolescents)</td>
+<td><strong>2-3%</strong></td>
+</tr>
+<tr>
+<td>Cobb ≥ 20°</td>
+<td>0,5%</td>
+</tr>
+<tr>
+<td>Cobb ≥ 30°</td>
+<td>0,2%</td>
+</tr>
+<tr>
+<td>Cobb ≥ 40° (indication chirurgicale)</td>
+<td>0,1%</td>
+</tr>
+<tr>
+<td>Cobb ≥ 50° (chirurgie habituelle)</td>
+<td>0,05%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources : Weinstein et al., 1994 ; Rogala et al., 1978, J Bone Joint Surg Am</em></p>
+<p><strong>Interprétation</strong> : Sur 1000 élèves d'un collège, environ <strong>20-30</strong> ont une scoliose (Cobb ≥ 10°), mais seulement <strong>1-5</strong> auront une scoliose nécessitant un traitement actif (corset ou chirurgie).</p>
+<blockquote>
+<p>[MEDIA: 📊 M04-S02-001 — Infographie épidémiologie mondiale de la scoliose (pyramide de prévalence)]</p>
+</blockquote>
+<p><strong>Données mondiales</strong> :<br />
+- Études asiatiques (Chine, Japon) : 1,5-2% (légèrement inférieur aux données occidentales)<br />
+- Études européennes et nord-américaines : 2-4%<br />
+- Pas de différence significative entre ethnies pour la scoliose idiopathique</p>
+<blockquote>
+<p><strong>Estimation mondiale</strong> : ~500 millions de personnes présentent une scoliose (Cobb ≥ 10°) dans le monde (estimation basée sur la prévalence de 2-3 % ; Weinstein et al., 1994).</p>
+</blockquote>
+<h3 id="422-sex-ratio">4.2.2 Sex-ratio</h3>
+<table>
+<thead>
+<tr>
+<th>Angle de Cobb</th>
+<th>F:H (ratio filles/garçons)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10-20°</td>
+<td>1.4 : 1</td>
+</tr>
+<tr>
+<td>20-30°</td>
+<td>2.7 : 1</td>
+</tr>
+<tr>
+<td>30-40°</td>
+<td>4.4 : 1</td>
+</tr>
+<tr>
+<td>&gt; 40°</td>
+<td><strong>7 : 1 à 10 : 1</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source : Rogala et al., 1978, J Bone Joint Surg Am ; Weinstein et al., 1994</em></p>
+<p><strong>Interprétation</strong> : Pour les courbes légères (dépistage scolaire), les filles sont légèrement plus touchées. Mais pour les courbes sévères nécessitant un traitement, les filles représentent 80-90% des cas.</p>
+<p><strong>Explication hormonale hypothétique</strong> : <br />
+- Mélatonine, leptine, calmoduline — perturbations chez les filles pubères<br />
+- Profil différent de maturation hormonale pubertaire<br />
+- Différences de croissance rachidienne (filles : croissance plus rapide, pic plus précoce)</p>
+<h3 id="423-facteurs-de-risque-de-progression">4.2.3 Facteurs de risque de progression</h3>
+<blockquote>
+<p>[MEDIA: 📊 M04-S02-002 — Infographie facteurs de risque de progression (arbre décisionnel)]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Haut risque</th>
+<th>Faible risque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Potentiel de croissance</td>
+<td>Risser 0-1, avant ménarche</td>
+<td>Risser 4-5, après ménarche</td>
+</tr>
+<tr>
+<td>Angle de Cobb initial</td>
+<td>&gt; 25°</td>
+<td>&lt; 20°</td>
+</tr>
+<tr>
+<td>Type de courbure</td>
+<td>Double majeure, thoracolombaire</td>
+<td>Lombaire basse</td>
+</tr>
+<tr>
+<td>Sexe</td>
+<td>Féminin</td>
+<td>Masculin</td>
+</tr>
+<tr>
+<td>Atteinte familiale</td>
+<td>Oui (1er degré)</td>
+<td>Non</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outil de prédiction</strong> — Lonstein &amp; Carlson (1984, <em>J Bone Joint Surg Am</em>) :<br />
+Ces auteurs ont analysé 729 patients non traités et proposé un nomogramme combinant l'angle de Cobb et le Risser pour prédire le risque de progression de ≥ 5° :</p>
+<table>
+<thead>
+<tr>
+<th>Cobb / Risser</th>
+<th>Risser 0-1</th>
+<th>Risser 2-3</th>
+<th>Risser 4-5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5-19°</strong></td>
+<td>22%</td>
+<td>10%</td>
+<td>~0%</td>
+</tr>
+<tr>
+<td><strong>20-29°</strong></td>
+<td><strong>68%</strong></td>
+<td>23%</td>
+<td>~0%</td>
+</tr>
+<tr>
+<td><strong>30-39°</strong></td>
+<td><strong>90%</strong></td>
+<td>44%</td>
+<td>17%</td>
+</tr>
+<tr>
+<td><strong>≥ 40°</strong></td>
+<td><strong>100%</strong></td>
+<td>68%</td>
+<td>30%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Case de Sophie</em> : Cobb 28°, Risser 0 → <strong>68%</strong> de risque de progression sans traitement.</p>
+<h3 id="424-impact-socio-economique">4.2.4 Impact socio-économique</h3>
+<ul>
+<li>Coût moyen d'une chirurgie de scoliose en France : <strong>20 000–35 000 € TTC</strong> (DRG, complications incluses ; données ATIH/PMSI, 2020)</li>
+<li>Coût d'un corset sur toiture : <strong>1 500–3 000 €/an</strong> (orthèse + consultations de suivi)</li>
+<li>Coût des soins de kinésithérapie (Schroth) : <strong>500–1 500 €/an</strong></li>
+<li><strong>Rapport coût-efficacité</strong> : traitement précoce par corset évite la chirurgie dans 60-70% des cas si indication correcte → économie nette significative</li>
+</ul>
+<hr />
+<h2 id="43-etiologies-des-scolioses">4.3 Étiologies des scolioses</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Deux jeunes de 15 ans ont tous les deux une scoliose thoracique de 35°. L'un a une scoliose idiopathique, l'autre une scoliose neuromusculaire secondaire à une amyotrophie spinale. Leur traitement sera-t-il identique ? Pourquoi pas ?</p>
+<blockquote>
+<p>[MEDIA: 📊 M04-S03-001 — Organigramme classification étiologique des scolioses (arbre décisionnel)]</p>
+</blockquote>
+<h3 id="431-scoliose-idiopathique-80-des-scolioses">4.3.1 Scoliose idiopathique (80% des scolioses)</h3>
+<p>La <strong>scoliose idiopathique</strong> est une scoliose structurale dont aucune cause identifiable n'est retrouvée après bilan clinique et radiologique complet.</p>
+<p><strong>"Idiopathique" = absence de cause connue</strong>, non "sans cause". La recherche étiologique active identifie des facteurs génétiques, neuromusculaires, et hormonaux — mais aucun n'explique seul la totalité des cas.</p>
+<h4 id="classification-chronologique">Classification chronologique</h4>
+<table>
+<thead>
+<tr>
+<th>Sous-type</th>
+<th>Âge de découverte</th>
+<th>Caractéristiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Infantile</strong></td>
+<td>0-3 ans</td>
+<td>Rare en Occident (1-2%) ; souvent résolutive ; IRM systématique</td>
+</tr>
+<tr>
+<td><strong>Juvénile</strong></td>
+<td>3-10 ans</td>
+<td>10-15% ; potentiel de progression important (longue durée de croissance résiduelle)</td>
+</tr>
+<tr>
+<td><strong>Adolescente (SIA)</strong></td>
+<td>10-18 ans</td>
+<td><strong>80%</strong> des scolioses idiopathiques ; la forme la plus étudiée</td>
+</tr>
+<tr>
+<td><strong>Adulte</strong></td>
+<td>&gt; 18 ans</td>
+<td>Scoliose SIA persistant à l'âge adulte ou découverte tardive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scoliose idiopathique de l'adolescent (SIA)</strong> : le reste de la Partie III lui est consacrée (Modules 8-11).</p>
+<h3 id="432-scoliose-congenitale-5-10-des-scolioses">4.3.2 Scoliose congénitale (5-10% des scolioses)</h3>
+<p>La <strong>scoliose congénitale</strong> résulte d'une anomalie de développement embryonnaire vertébral (Modules 2.1.4).</p>
+<p><strong>Caractéristiques spécifiques</strong> :<br />
+- Présente à la naissance (même si parfois découverte tardivement)<br />
+- Cause : défaut de formation (hémivertèbre) ou défaut de segmentation (barre)<br />
+- Progression variable selon le type (hémivertèbre segmentée = la plus progressive)<br />
+- Associations fréquentes :<br />
+  - Anomalies cardiaques (15-30%)<br />
+  - Anomalies rénales (20-25%)<br />
+  - Anomalies médullaires (20-40%, recherchées à l'IRM)<br />
+<em>(Basu et al., 2002, Spine ; McMaster, 1984)</em></p>
+<p><strong>Association VACTERL</strong> (Quan &amp; Smith, 1973) : Vertebral anomalies, Anal atresia, Cardiac, Tracheo-Esophageal fistula, Renal, Limb defects → Bilan complet obligatoire si scoliose congénitale isolée.</p>
+<h3 id="433-scoliose-neuromusculaire-5-10-des-scolioses">4.3.3 Scoliose neuromusculaire (5-10% des scolioses)</h3>
+<p>La <strong>scoliose neuromusculaire</strong> est secondaire à une pathologie neurologique centrale ou périphérique, ou à une affection musculaire.</p>
+<blockquote>
+<p>[MEDIA: 📊 M04-S03-002 — Tableau classification des scolioses neuromusculaires par étiologie]</p>
+</blockquote>
+<p><strong>Causes principales</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Neuropathies centrales (MNS)</strong></td>
+<td>Paralysie cérébrale (IMC), syringomyélie, tumeur médullaire</td>
+</tr>
+<tr>
+<td><strong>Neuropathies périphériques (MNI)</strong></td>
+<td>Spina bifida, amyotrophie spinale (SMA), ataxie de Friedreich</td>
+</tr>
+<tr>
+<td><strong>Myopathies</strong></td>
+<td>Duchenne (DMD), Becker, dystrophie myotonique</td>
+</tr>
+<tr>
+<td><strong>Autres</strong></td>
+<td>Charcot-Marie-Tooth, dysautonomie familiale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Particularités des scolioses neuromusculaires</strong> :<br />
+- Courbures en <strong>C</strong> longues (vs en S pour les idiopathiques)<br />
+- Souvent <strong>obliquité pelvienne</strong> associée (bassin oblique) → instrumentation jusqu'au sacrum/bassin obligatoire<br />
+- Progression <strong>après</strong> la fin de la croissance (risque continu à l'âge adulte)<br />
+- Chirurgie plus complexe : patients fragiles, hypotonie musculaire, risque respiratoire per-opératoire élevé</p>
+<p><strong>Points d'ancrage spécifiques</strong> : Unité de Galveston (fixation aux épines iliaques) ou vis iliaques pour couvrir l'obliquité pelvienne.</p>
+<h3 id="434-scoliose-syndromique">4.3.4 Scoliose syndromique</h3>
+<p>La <strong>scoliose syndromique</strong> est associée à un syndrome génétique ou malformatif connu.</p>
+<table>
+<thead>
+<tr>
+<th>Syndrome</th>
+<th>Prévalence de scoliose</th>
+<th>Particularités</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Marfan</strong></td>
+<td>60-70%</td>
+<td>Tissu conjonctif anormal + ectasie durale → grande prudence chirurgicale</td>
+</tr>
+<tr>
+<td><strong>Neurofibromatose type 1 (NF1)</strong></td>
+<td>10-20%</td>
+<td>Courbures en S serré, dystrophiques (Cobb &gt; 50° avec peu de vertèbres) ; déformation rapide</td>
+</tr>
+<tr>
+<td><strong>Syndrome d'Ehlers-Danlos</strong></td>
+<td>60%</td>
+<td>Hyperlaxité ligamentaire → instrumentation en risque de libération</td>
+</tr>
+<tr>
+<td><strong>Syndrome de Prader-Willi</strong></td>
+<td>80%</td>
+<td>Obésité + hypotonie ; chirurgie difficile</td>
+</tr>
+<tr>
+<td><strong>Syndrome de Rett</strong></td>
+<td>80-100%</td>
+<td>Filles ; scoliose neuromusculaire + contractures</td>
+</tr>
+<tr>
+<td><strong>Ostéogenèse imparfaite</strong></td>
+<td>Variable</td>
+<td>Os fragile ; vis pédiculaires à faible résistance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Neurofibromatose type 1</strong> — focus :<br />
+- Scoliose <strong>dystrophique</strong> (court segment, rotation sévère, dysplasie pédiculaire)<br />
+- versus scoliose <strong>non dystrophique</strong> (se comportant comme une scoliose idiopathique)<br />
+- La forme dystrophique doit être opérée rapidement : progression de 5-10°/an en période de croissance (Crawford &amp; Herrera-Soto, 2007, <em>J Am Acad Orthop Surg</em>)</p>
+<h3 id="435-scoliose-degenerative-adulte-de-novo">4.3.5 Scoliose dégénérative (adulte <em>de novo</em>)</h3>
+<p>La <strong>scoliose dégénérative</strong> (ou scoliose adulte <em>de novo</em>) se développe sur un rachis adulte sain par dégénérescence asymétrique des disques et des facettes articulaires.</p>
+<p><strong>Mécanisme</strong> :<br />
+1. Dégénérescence asymétrique du disque → cunéiformisation discale<br />
+2. Sténose de canal rachidien par hypertrophie facettaire et épaississement du ligament jaune<br />
+3. Subluxation dégénérative → déséquilibre frontal et sagittal progressif</p>
+<p><strong>Caractéristiques</strong> :<br />
+- Apparaît après <strong>50 ans</strong> en général<br />
+- Lombaire basse (L1-L5) prédominant<br />
+- Souvent associée à une <strong>sténose de canal rachidien</strong> → claudication neurogène<br />
+- Progression lente (0,5-1°/an) sauf lors d'un épisode de dégénérescence rapide<br />
+- <strong>Douleur prédominante</strong> (vs scoliose idiopathique souvent indolore)<br />
+- Traitement chirurgical : arthrodèse avec décompression + correction globale (équilibre sagittal ++)</p>
+<h3 id="436-scolioses-secondaires-les-drapeaux-rouges">4.3.6 Scolioses secondaires — les drapeaux rouges</h3>
+<p><strong>Drapeaux rouges</strong> (<em>red flags</em>, selon consensus SRS/SOSORT) imposant des investigations complémentaires urgentes :</p>
+<blockquote>
+<p>[MEDIA: 📊 M04-S03-003 — Checklist drapeaux rouges : indications IRM systématique dans la scoliose]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Drapeau rouge</th>
+<th>Suspicion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scoliose à <strong>convexité gauche</strong> au thoracique</td>
+<td>Syringomyélie, Chiari → IRM obligatoire</td>
+</tr>
+<tr>
+<td><strong>Douleur nocturne</strong> ou constante</td>
+<td>Tumeur (ostéome ostéoïde, tumeur vertébrale) → scinti / IRM</td>
+</tr>
+<tr>
+<td><strong>Signes neurologiques</strong> (déficit moteur, ROT abolis)</td>
+<td>Comprssion médullaire → IRM urgente</td>
+</tr>
+<tr>
+<td><strong>Age de début &lt; 10 ans</strong> (infantile/juvénile)</td>
+<td>Malformation (Chiari, syringomyélie) → IRM</td>
+</tr>
+<tr>
+<td><strong>Scoliose à progression rapide</strong> (&gt; 1°/mois)</td>
+<td>Cause secondaire → IRM</td>
+</tr>
+<tr>
+<td><strong>Réflexes cutanés abdominaux asymétriques</strong></td>
+<td>Syringomyélie infra-clinique → IRM</td>
+</tr>
+<tr>
+<td><strong>Fossette sacro-coccygienne</strong> / touffe de poils</td>
+<td>Dysraphisme occulte → IRM</td>
+</tr>
+<tr>
+<td><strong>Café au lait</strong>, neurofibromes</td>
+<td>NF1 → bilan génétique + IRM</td>
+</tr>
+<tr>
+<td><strong>Hyperlaxité</strong> + grand statut + aorte dilatée</td>
+<td>Marfan → échographie cardiaque</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Règle</strong> : En présence d'UN SEUL drapeau rouge, une IRM du rachis entier est indiquée <strong>avant tout traitement</strong>.</p>
+<hr />
+<h2 id="44-cas-clinique-approche-etiologique">4.4 Cas clinique — Approche étiologique</h2>
+<h3 id="presentation">Présentation</h3>
+<p>Vous voyez en consultation deux jeunes patients dans la même journée :</p>
+<p><strong>Patient A</strong> : Lucas, 16 ans, garçon. Scoliose thoracique <strong><em>gauche</em></strong> T4-T9, Cobb 22°. Découverte lors d'une visite sportive. Asthénique, reflex cutanés abdominaux <strong>asymétriques</strong> (présents à droite, absents à gauche). Pas de douleur.</p>
+<p><strong>Patient B</strong> : Emma, 14 ans, fille. Scoliose thoracique <strong><em>droite</em></strong> T5-T12, Cobb 30°. Découverte au dépistage scolaire. Risser 1, Tanner T3. Pas de signe neurologique. Antécédent : grand-mère opérée d'une scoliose.</p>
+<h3 id="questions">Questions</h3>
+<ol>
+<li>Lequel de ces deux patients nécessite une IRM en urgence ? Pourquoi ?</li>
+<li>Quel est le type de scoliose d'Emma ? Quels sont ses facteurs de risque de progression ?</li>
+<li>Si Lucas avait une syringomyélie T4-T9 à l'IRM, quel serait le traitement à initier en premier ?</li>
+</ol>
+<h3 id="reponses-commentees">Réponses commentées</h3>
+<p><strong>1. Lucas nécessite une IRM URGENTE</strong> :<br />
+- Scoliose thoracique <strong>gauche</strong> = drapeau rouge n°1 (chez un adolescent, la thoracique droite est la règle ; la gauche oriente vers une pathologie intracanalaire)<br />
+- Réflexes cutanés abdominaux <strong>asymétriques</strong> = drapeau rouge n°2 (signe précoce de syringomyélie)<br />
+- Deux drapeaux rouges → IRM médullaire en urgence</p>
+<p><strong>2. Emma = Scoliose idiopathique de l'adolescent (SIA)</strong><br />
+- Critères : thoracique droite, adolescente de 14 ans, pas de signe neurologique, pas de cause identifiable<br />
+- Facteurs de risque de progression : féminin, Risser 1, Tanner T3, Cobb 30°, antécédent familial (grand-mère)<br />
+- Risque Lonstein-Carlson : &gt; 60%</p>
+<p><strong>3. Si syringomyélie chez Lucas</strong> :<br />
+- Traitement de la syringomyélie EN PREMIER (neurochirurgie) — décompression de la causa (Chiari, moelle attachée)<br />
+- La correction de la scoliose est différée — dans certains cas, le traitement de la syringomyélie stabilise ou améliore la scoliose spontanément<br />
+- Jamais de chirurgie de la scoliose sans avoir traité la cause intracanalaire</p>
+<hr />
+<h2 id="atelier-vertex-comparaison-etiologique">🎯 Atelier VERTEX© — Comparaison étiologique</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Comparer visuellement un modèle de scoliose idiopathique vs un modèle de scoliose congénitale.</p>
+<h3 id="protocole">Protocole</h3>
+<p><strong>Modèle idiopathique (Emma)</strong></p>
+<pre><code class="language-json">POST /api/spine { &quot;patient_age&quot;: 14 }
+POST /api/spine/{id}/scoliosis
+{
+  &quot;cobb_angle&quot;: 30,
+  &quot;apex_vertebra&quot;: &quot;T9&quot;,
+  &quot;curve_type&quot;: &quot;right_thoracic&quot;
+}
+</code></pre>
+<p><strong>Modèle "congénital" — simuler une hémivertèbre</strong></p>
+<p>Utiliser l'API de scoliose avec des paramètres asymétriques pour simuler l'effet d'une hémivertèbre T10 gauche :</p>
+<pre><code class="language-json">POST /api/spine/{id2}/scoliosis
+{
+  &quot;cobb_angle&quot;: 25,
+  &quot;apex_vertebra&quot;: &quot;T10&quot;,
+  &quot;curve_type&quot;: &quot;left_thoracic&quot;,
+  &quot;short_segment&quot;: true
+}
+</code></pre>
+<p><strong>Simulation longitudinale comparative</strong> (24 mois):<br />
+- Modèle idiopathique avec <code>growth_remaining_cm: 2</code><br />
+- Modèle congénital avec <code>growth_remaining_cm: 2</code> et taux de progression plus élevé</p>
+<p>→ Comparer les courbes de progression sur 24 mois</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>[MEDIA: 📊 M04-S04-001 — Infographie récapitulative Module 4 : définitions + épidémiologie + étiologies]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>À retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Définition SRS</td>
+<td>Cobb ≥ 10° + rotation vertébrale (les deux obligatoires)</td>
+</tr>
+<tr>
+<td>Attitude scoliotique</td>
+<td>Pas de rotation, disparaît en flexion → traiter la cause</td>
+</tr>
+<tr>
+<td>Prévalence SIA</td>
+<td>2-3% (mais seulement 0,1% necessiate chirurgie)</td>
+</tr>
+<tr>
+<td>Sex-ratio</td>
+<td>F:H = 7:1 pour les Cobb &gt; 40°</td>
+</tr>
+<tr>
+<td>Mégarègle drapeaux rouges</td>
+<td>Thoracique gauche, signe neurologique, douleur nocturne → IRM obligatoire</td>
+</tr>
+<tr>
+<td>SIA vs congénitale</td>
+<td>SIA = courbures en S avec rotation ; congénitale = courbe C courte avec anomalie vertébrale</td>
+</tr>
+<tr>
+<td>NF1 dystrophique</td>
+<td>Progression 5-10°/an → urgence chirurgicale</td>
+</tr>
+<tr>
+<td>Scoliose dégénérative</td>
+<td>&gt; 50 ans ; lombaire basse ; douleur prédominante ; sténose associée</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quiz-fin-de-module-15-questions">Quiz fin de module — 15 questions</h2>
+<h3 id="bronze-questions-1-a-5">🥉 Bronze — Questions 1 à 5</h3>
+<p><strong>Q1.</strong> Quel est le critère diagnostic de la scoliose selon la SRS ?<br />
+- A. Cobb ≥ 5° uniquement<br />
+- <strong>B. Cobb ≥ 10° + rotation vertébrale</strong> ✓<br />
+- C. Cobb ≥ 20° + douleur<br />
+- D. Gibbosité ≥ 5°</p>
+<p><strong>Q2.</strong> Une inclinaison latérale disparaissant à la flexion et à la mise sur semelle correctrice est :<br />
+- A. Une scoliose congénitale<br />
+- <strong>B. Une attitude scoliotique</strong> ✓<br />
+- C. Une scoliose idiopathique débutante<br />
+- D. Une scoliose dégénérative</p>
+<p><strong>Q3.</strong> Parmi les scolioses suivantes, laquelle représente 80% des cas ?<br />
+- A. Congénitale<br />
+- B. Neuromusculaire<br />
+- <strong>C. Idiopathique</strong> ✓<br />
+- D. Dégénérative</p>
+<p><strong>Q4.</strong> L'erreur de mesure inter-observateur de l'angle de Cobb est de :<br />
+- A. ±1°<br />
+- <strong>B. ±3-5°</strong> ✓<br />
+- C. ±10°<br />
+- D. ±15°</p>
+<p><strong>Q5.</strong> La prévalence de la scoliose idiopathique dans la population est :<br />
+- <strong>A. 2-3%</strong> ✓<br />
+- B. 10%<br />
+- C. 0,1%<br />
+- D. 20%</p>
+<h3 id="argent-questions-6-a-10">🥈 Argent — Questions 6 à 10</h3>
+<p><strong>Q6.</strong> Le test le plus simple pour différencier une scoliose structurale d'une attitude scoliotique est :<br />
+- A. IRM<br />
+- B. Radiographie de face<br />
+- <strong>C. Test d'Adams (flexion antérieure) — présence ou absence de gibbosité</strong> ✓<br />
+- D. Scanner</p>
+<p><strong>Q7.</strong> Une adolescente de 13 ans présente une scoliose thoracique droite de 28°, Risser 0. Son risque de progression (Lonstein-Carlson) est d'environ :<br />
+- A. 20%<br />
+- B. 40%<br />
+- <strong>C. 68%</strong> ✓<br />
+- D. 100%</p>
+<p><strong>Q8.</strong> Quelle association VACTERL doit-on rechercher systématiquement devant une scoliose congénitale ?<br />
+- A. Anomalies visuelles + audtives + cardiaques + thoraciques + rénales + membres<br />
+- <strong>B. Anomalies Vertébrales + Atresie Anale + Cardiaques + Trachéo-Esophagiennnes + Rénales + Limb (membres)</strong> ✓<br />
+- C. Variantes anatomiques + Anomalies crâniennes + Troubles neurologiques<br />
+- D. Association Vasculaire + Anomalies cutanées + Troubles érythropoïétiques</p>
+<p><strong>Q9.</strong> Chez un patient porteur d'une scoliose neuromusculaire secondaire à une paralysie cérébrale, l'instrumentation doit typically descendre jusqu'à :<br />
+- A. T12-L1 (jonction thoracolombaire)<br />
+- B. L4 (vertèbre limitante inférieure habituelle)<br />
+- <strong>C. Le sacrum/bassin (pelvis) pour corriger l'obliquité pelvienne</strong> ✓<br />
+- D. L'apex de la courbure uniquement</p>
+<p><strong>Q10.</strong> La scoliose dégénérative adulte se distingue de la SIA par :<br />
+- A. L'absence de rotation vertébrale<br />
+- B. La topographie cervicale préférentielle<br />
+- <strong>C. La douleur prédominante, la sténose de canal rachidien associée, et le mécanisme dégénératif discal/facettaire</strong> ✓<br />
+- D. Le sex-ratio 1:1</p>
+<h3 id="or-questions-11-a-13">🥇 Or — Questions 11 à 13</h3>
+<p><strong>Q11.</strong> Un garçon de 9 ans présente une scoliose thoracique gauche de 20°. L'examen montre des réflexes cutanés abdominaux absents à droite. La première étape de prise en charge est :<br />
+- A. Corset immédiat<br />
+- B. Radiographie de contrôle à 4 mois<br />
+- <strong>C. IRM médullaire complète en urgence — deux drapeaux rouges (thoracique gauche + RCA asymétriques) → forte suspicion de syringomyélie</strong> ✓<br />
+- D. Surveillance seule</p>
+<p><strong>Q12.</strong> La scoliose dystrophique sur NF1 se distingue de la forme non dystrophique par :<br />
+- A. La localisation lombaire préférentielle<br />
+- <strong>B. La courte angulation sur peu de vertèbres, la dysplasie pédiculaire, la progression rapide (5-10°/an), et la nécessité d'une intervention précoce</strong> ✓<br />
+- C. L'hyperlaxité ligamentaire associée<br />
+- D. La forte héritabilité</p>
+<p><strong>Q13.</strong> Vous voyez une femme de 55 ans qui présente une scoliose lombaire de 25° apparue progressivement depuis 5 ans, avec une claudication neurogène après 200 m de marche et une lombalgie chronique. La priorité thérapeutique initiale est :<br />
+- A. Chirurgie de correction immédiate<br />
+- <strong>B. Traitement conservateur (antalgiques, kinésithérapie, infiltration) en première intention ; chirurgie si échec ou sténose sévère invalidante</strong> ✓<br />
+- C. Corset immédiat<br />
+- D. IRM cérébrale</p>
+<h3 id="diamant-questions-14-15">💎 Diamant — Questions 14-15</h3>
+<p><strong>Q14.</strong> Vous analysez une cohorte de dépistage scolaire de 2 000 élèves (10-15 ans). En utilisant les données épidémiologiques, combien d'élèves s'attendez-vous à trouver avec : (a) Cobb ≥ 10°, (b) Cobb ≥ 30°, (c) indication chirurgicale potentielle ?<br />
+- A. (a) 5, (b) 2, (c) 0<br />
+- <strong>B. (a) 40-60, (b) 4-6, (c) 1-2</strong> ✓ (2-3% pour ≥10° ; 0,2% pour ≥30° ; 0,05-0,1% pour chirurgie)<br />
+- C. (a) 100, (b) 20, (c) 5<br />
+- D. (a) 200, (b) 50, (c) 20</p>
+<p><strong>Q15.</strong> Un chirurgien présente une série de 50 scolioses opérées avec un taux de correction moyen de 65% (Cobb post-op / Cobb pré-op). La variabilité intra-observateur de la mesure de Cobb est de ±3°. Pour un patient avec Cobb pré-op = 55° et Cobb post-op = 22°, la correction mesurée est-elle statistiquement fiable ?<br />
+- A. Non — l'erreur de mesure rend toute conclusion impossible<br />
+- <strong>B. Oui — la différence de 33° est très largement supérieure à l'erreur de mesure (±3°) ; la correction est réelle et cliniquement significative</strong> ✓<br />
+- C. Non — il faudrait qu'elle soit &gt; 50%<br />
+- D. Oui, mais uniquement si mesurée par le chirurgien lui-même</p>
+<hr />
+<h2 id="post-test-5-questions">Post-test — 5 questions</h2>
+<p><strong>Q1.</strong> Définition SRS de la scoliose → <strong>Cobb ≥ 10° + rotation vertébrale</strong> ✓<br />
+<strong>Q2.</strong> Signe distinguant scoliose structurale de fonctionnelle → <strong>Gibbosité au test d'Adams (rotation vertébrale)</strong> ✓<br />
+<strong>Q3.</strong> Prévalence scoliose → <strong>2-3% de la population</strong> ✓<br />
+<strong>Q4.</strong> Sex-ratio Cobb &gt; 40° → <strong>F:H = 7:1 à 10:1</strong> ✓<br />
+<strong>Q5.</strong> Classification NF1 → <strong>Syndromique</strong> ✓</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<h3 id="articles-de-reference">Articles de référence</h3>
+<ul>
+<li>Cobb JR. <em>Outline for the study of scoliosis</em>. AAOS Instructional Course Lectures 1948;5:261-75.</li>
+<li>Lonstein JE, Carlson JM. <em>The prediction of curve progression in untreated idiopathic scoliosis during growth</em>. JBJS 1984;66:1061-71.</li>
+<li>Weinstein SL et al. <em>Adolescent idiopathic scoliosis: prevalence and natural history</em>. AAOS Instructional Course Lectures 1975.</li>
+<li>Schwab F et al. <em>Adult spinal deformity: a quantification of various radiographic parameters</em>. Spine 2009.</li>
+<li>Rogala EJ, Drummond DS, Gurr J. <em>Scoliosis: incidence and natural history</em>. J Bone Joint Surg Am 1978;60:173-176.</li>
+<li>Quan L, Smith DW. <em>The VATER association</em>. J Pediatr 1973;82:104-107.</li>
+<li>Basu PS, Elsebaie H, Noordeen MH. <em>Congenital spinal deformity: a comprehensive assessment at presentation</em>. Spine 2002;27:2255-2259.</li>
+<li>Crawford AH, Herrera-Soto J. <em>Scoliosis associated with neurofibromatosis</em>. Orthop Clin North Am 2007;38(4):553-562.</li>
+<li>Weinstein SL. <em>The natural history of adolescent idiopathic scoliosis</em>. J Pediatr Orthop 1994;14:229-231.</li>
+</ul>
+<h3 id="ressources-en-ligne">Ressources en ligne</h3>
+<ul>
+<li><a href="https://www.srs.org">SRS.org — Scoliosis Research Society</a> : définitions officielles et recommandations</li>
+<li><a href="https://www.sosort.org">SOSORT — Society on Scoliosis Orthopaedic and Rehabilitation Treatment</a> : traitement conservateur</li>
+<li>[MEDIA: 📊 M04-RES-001 — Infographie drapeaux rouges à imprimer (aide-mémoire clinique)]</li>
+</ul>
+<h3 id="liens-vers-les-modules-suivants">Liens vers les modules suivants</h3>
+<p>→ <strong>Module 5</strong> : Classification des scolioses — les systèmes Lenke et SRS-Schwab<br />
+→ <strong>Module 8</strong> : SIA — physiopathologie et histoire naturelle détaillées<br />
+→ <strong>Module 12</strong> : Scoliose dégénérative de l'adulte</p>
+<hr />
+<p><em>Module 4 validé — Score minimal : 70% (10/15)</em><br />
+<em>Prochaine étape : Module 5 — Classification des scolioses</em></p>
+</div>

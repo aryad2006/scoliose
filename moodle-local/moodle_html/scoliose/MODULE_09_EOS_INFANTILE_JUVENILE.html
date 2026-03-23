@@ -1,0 +1,636 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-9-scoliose-de-lenfant-formes-infantile-et-juvenile">MODULE 9 — SCOLIOSE DE L'ENFANT : FORMES INFANTILE ET JUVÉNILE</h1>
+<p><strong>Partie III — Scoliose idiopathique</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 8</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Parents inquiets : <em>« Notre fils Théo a 3 ans. Le pédiatre a noté une scoliose à un examen de routine. Il n'a aucun symptôme. Le radiologue dit 22°. Est-ce grave ? Ça va partir tout seul ? Ou faut-il opérer un enfant de cet âge ? »</em></p>
+<p>→ <em>Les scolioses de l'enfant jeune ne ressemblent pas à la SIA. Leurs mécanismes, leur pronostic et leurs traitements sont différents — et la chronologie de croissance du thorax en fait un enjeu vital.</em></p>
+</blockquote>
+<p>🧑 <strong>Patient fil rouge</strong> : Théo, 3 ans — scoliose thoracique gauche Cobb 22°, RVA 20° (rib-vertebral angle difference &gt; 20°).</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Early-onset scoliosis (EOS) • Late-onset scoliosis (LOS) • Scoliose infantile • Scoliose juvénile • Rib-vertebral angle (RVA) • RVAD (rib-vertebral angle difference) • Index de Mehta • Résolution spontanée • Thoracic insufficiency syndrome • T1–T12 height • Growing rods • MCGR (magnetically controlled growing rod) • VEPTR (vertical expandable prosthetic titanium rib) • Traction sériée • Plâtres sériés (casts) • Tauer cast • EDF cast • Sanders score • Indice de Cobb critique (50°) • Maladie pulmonaire de la scoliose précoce</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Distinguer</strong> les formes infantile (0–3 ans), juvénile (3–10 ans) et adolescente de la scoliose idiopathique (Bloom : Analyse)</li>
+<li><strong>Appliquer</strong> le score RVAD de Mehta pour distinguer les scolioses régressives des progressives (Bloom : Application)</li>
+<li><strong>Expliquer</strong> le concept de thoracic insufficiency syndrome et ses conséquences respiratoires (Bloom : Compréhension)</li>
+<li><strong>Décrire</strong> le protocole des plâtres correcteurs (EDF/Mehta casts) pour la scoliose infantile progressive (Bloom : Connaissance)</li>
+<li><strong>Sélectionner</strong> la technique de croissance guidée appropriée (MCGR, VEPTR, growing rods) selon l'âge et le type de scoliose (Bloom : Évaluation)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> L'Early-onset scoliosis (EOS) est définie par une scoliose apparaissant avant :<br />
+- A. 5 ans<br />
+- <strong>B. 10 ans</strong><br />
+- C. 8 ans<br />
+- D. 13 ans</p>
+<p><strong>Q2.</strong> Quel est le signe radiologique le plus fiable pour distinguer une scoliose infantile régressive d'une progressive ?<br />
+- A. L'angle de Cobb<br />
+- B. Le Risser<br />
+- <strong>C. La RVAD (rib-vertebral angle difference) selon Mehta</strong><br />
+- D. La rotation de Nash-Moe</p>
+<p><strong>Q3.</strong> La croissance pulmonaire principale a lieu entre :<br />
+- <strong>A. La naissance et 8 ans</strong> (multiplication alvéolaire × 10)<br />
+- B. 8 et 15 ans<br />
+- C. 15 et 20 ans<br />
+- D. La croissance pulmonaire est linéaire</p>
+<p><strong>Q4.</strong> L'indice de T1-T12 height normal pour un enfant de 8 ans est :<br />
+- A. 10 cm<br />
+- <strong>B. ~18–20 cm (croissance de 6–7 cm de T1-T12 entre 5 et 10 ans)</strong><br />
+- C. 30 cm<br />
+- D. 6 cm</p>
+<p><strong>Q5.</strong> La complication principale des growing rods traditionnels par rapport aux MCGR est :<br />
+- A. Moins de correction<br />
+- <strong>B. La nécessité de multiples révisions chirurgicales (12–20) pour allongement</strong><br />
+- C. L'absence d'effet sur la croissance<br />
+- D. Leur coût plus élevé</p>
+<hr />
+<h2 id="91-definitions-et-classification-par-age-dapparition">9.1 Définitions et classification par âge d'apparition</h2>
+<blockquote>
+<p>[MEDIA: 📊 M09-S01-001 — Infographie classification temporelle EOS/LOS]</p>
+</blockquote>
+<p>La classification par âge d'apparition de la scoliose est essentielle car elle conditionne le <strong>pronostic respiratoire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Âge d'apparition</th>
+<th>Caractéristiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scoliose infantile</strong></td>
+<td>0–3 ans</td>
+<td>Déformation plus sévère, risque élevé de TIS</td>
+</tr>
+<tr>
+<td><strong>Scoliose juvénile</strong></td>
+<td>3–10 ans</td>
+<td>Intermédiaire, potentiel de croissance important</td>
+</tr>
+<tr>
+<td><strong>EOS — Early-onset scoliosis</strong></td>
+<td>&lt; 10 ans</td>
+<td>Terme générique (infantile + juvénile ; définition SRS/POSNA)</td>
+</tr>
+<tr>
+<td><strong>SIA</strong></td>
+<td>10 ans – maturité</td>
+<td>(Module 8)</td>
+</tr>
+<tr>
+<td><strong>LOS — Late-onset scoliosis</strong></td>
+<td>&gt; 10 ans</td>
+<td>Risque pulmonaire moindre</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pourquoi 10 ans est le seuil critique ?</strong><br />
+- La <strong>multiplication alvéolaire</strong> se fait de la naissance à 8 ans : le nombre d'alvéoles passe de 25 millions à la naissance à 250–300 millions (Dunnill, 1962, <em>Thorax</em>)<br />
+- Une scoliose thoracique évolutive avant 10 ans <strong>comprime le thorax en croissance</strong> et réduit définitivement le nombre d'alvéoles<br />
+- Au-delà de 10 ans, le volume alvéolaire peut augmenter (croissance taille des alvéoles) même si la scoliose est présente</p>
+<hr />
+<h2 id="92-scoliose-infantile-idiopathique-03-ans">9.2 Scoliose infantile idiopathique (0–3 ans)</h2>
+<div class="vertex-media schema">
+<strong>📐 M09-S02-001</strong><br/>
+<em>Schéma RVAD de Mehta</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="921-epidemiologie">9.2.1 Épidémiologie</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prévalence</strong></td>
+<td>0,05–0,1 % (rare)</td>
+</tr>
+<tr>
+<td><strong>Sexe ratio</strong></td>
+<td>Prédominance masculine (3:2) — contraire de la SIA (McMaster, 1983, <em>J Bone Joint Surg Br</em>)</td>
+</tr>
+<tr>
+<td><strong>Côté de la courbure</strong></td>
+<td>Gauche dans 90 % (contraire de la SIA) (McMaster, 1983)</td>
+</tr>
+<tr>
+<td><strong>Résolution spontanée</strong></td>
+<td><strong>70–90 % des cas</strong> disparaissent sans traitement (Lloyd-Roberts &amp; Pilcher, 1965, <em>J Bone Joint Surg Br</em>)</td>
+</tr>
+<tr>
+<td><strong>Formes progressives</strong></td>
+<td>10–30 % — nécessitent traitement actif</td>
+</tr>
+</tbody>
+</table>
+<h3 id="922-score-de-rvad-de-mehta-distinction-regressif-progressif">9.2.2 Score de RVAD de Mehta — Distinction régressif / progressif</h3>
+<p>L'analyse de la <strong>rib-vertebral angle difference (RVAD)</strong> (Mehta, 1972, <em>J Bone Joint Surg Br</em>) permet de prédire l'évolution dès la première radio :</p>
+<p><strong>Définition du RVA</strong> : Angle entre la perpendiculaire à la plateforme vertébrale apicale et l'axe de la côte correspondante.</p>
+<p><strong>RVAD = RVA côté convexe − RVA côté concave</strong></p>
+<table>
+<thead>
+<tr>
+<th>RVAD</th>
+<th>Phase selon Mehta</th>
+<th>Évolution probable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&lt; 20°</strong></td>
+<td>Phase 1 (superposition pédicule-côte)</td>
+<td><strong>Régressif</strong> — 90 % de résolution (Mehta, 1972)</td>
+</tr>
+<tr>
+<td><strong>≥ 20°</strong></td>
+<td>Phase 2 (séparation pédicule-côte)</td>
+<td><strong>Progressif</strong> — 84 % de progression (Mehta, 1972)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>🔑 Clé clinique pour Théo</strong> : RVAD 20° → zone frontière. Surveillance à 6 mois + traitement préventif par plâtrage si progression.</p>
+</blockquote>
+<h3 id="923-causes-a-eliminer-imperativement">9.2.3 Causes à éliminer impérativement</h3>
+<p>La scoliose infantile idiopathique est un <strong>diagnostic d'exclusion</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Cause à éliminer</th>
+<th>Exploration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Malformations vertébrales</strong> (hémivertèbre, barre)</td>
+<td>Radio + scanner</td>
+</tr>
+<tr>
+<td><strong>Syringomyélie</strong></td>
+<td>IRM médullaire systématique si courbure gauche</td>
+</tr>
+<tr>
+<td><strong>Moelle attachée</strong> (tethered cord)</td>
+<td>IRM</td>
+</tr>
+<tr>
+<td><strong>Tumeur intra-rachidienne</strong></td>
+<td>IRM</td>
+</tr>
+<tr>
+<td><strong>Neurofibromatose</strong></td>
+<td>Examen cutané (taches café-au-lait)</td>
+</tr>
+<tr>
+<td><strong>Syndrome de Marfan</strong></td>
+<td>Examen clinique + génétique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ Règle d'or</strong> : Toute scoliose &lt; 5 ans ou avec caractéristiques atypiques (convexité gauche, courbe courte, rapide évolution) → <strong>IRM médullaire systématique</strong> avant tout traitement.</p>
+</blockquote>
+<hr />
+<h2 id="93-thoracic-insufficiency-syndrome-tis">9.3 Thoracic Insufficiency Syndrome (TIS)</h2>
+<blockquote>
+<p>[MEDIA: 📊 M09-S03-001 — Infographie TIS et conséquences respiratoires]</p>
+</blockquote>
+<p><strong>Définition</strong> (Campbell et al., 2003, <em>J Bone Joint Surg Am</em>) : Incapacité du thorax à permettre une croissance pulmonaire normale et un échange ventilatoire adéquat.</p>
+<h3 id="931-mecanismes-du-tis-dans-leos">9.3.1 Mécanismes du TIS dans l'EOS</h3>
+<ol>
+<li><strong>Volume thoracique réduit</strong> : la scoliose réduit la hauteur thoracique (T1-T12 height) et la section transversale</li>
+<li><strong>Anomalies costales</strong> : fusions costales, côtes courtes, espacement inter-costal réduit</li>
+<li><strong>Constriction alvéolaire</strong> pendant la phase de multiplication (&lt; 8 ans) → <strong>hypoplasie pulmonaire définitive</strong></li>
+<li><strong>Déséquilibre ventilation/perfusion</strong> → hypoxémie chronique</li>
+</ol>
+<h3 id="932-parametres-cliniques-du-tis">9.3.2 Paramètres cliniques du TIS</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Normal</th>
+<th>TIS sévère</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T1-T12 height</strong> (à 5 ans)</td>
+<td>&gt; 22 cm</td>
+<td>&lt; 18 cm</td>
+</tr>
+<tr>
+<td><strong>CVF</strong> (capacité vitale forcée)</td>
+<td>&gt; 80 %</td>
+<td>&lt; 50 %</td>
+</tr>
+<tr>
+<td><strong>SpO₂</strong> nocturne</td>
+<td>&gt; 95 %</td>
+<td>&lt; 90 % (désaturations)</td>
+</tr>
+<tr>
+<td><strong>Nombre d'espaces intercostaux</strong></td>
+<td>11</td>
+<td>&lt; 8 (fusions)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="933-consequences-pulmonaires-a-long-terme">9.3.3 Conséquences pulmonaires à long terme</h3>
+<ul>
+<li><strong>Hypertension pulmonaire</strong> (cor pulmonale) si CVF &lt; 40 % prolongée</li>
+<li><strong>Pneumonies à répétition</strong> : broncho-drainage inefficace</li>
+<li><strong>Mortalité</strong> prématurée sur insuffisance respiratoire si non traitée</li>
+</ul>
+<hr />
+<h2 id="94-traitement-conservateur-de-leos">9.4 Traitement conservateur de l'EOS</h2>
+<h3 id="941-observation">9.4.1 Observation</h3>
+<p><strong>Indications</strong> :<br />
+- RVAD &lt; 20° (phase 1) → risque spontanément régressif<br />
+- Cobb &lt; 25° stable</p>
+<p><strong>Surveillance</strong> : Radio tous les 4–6 mois (croissance rapide). Si progression ≥ 5° → traitement actif.</p>
+<h3 id="942-platres-series-correcteurs">9.4.2 Plâtres sériés correcteurs</h3>
+<div class="vertex-media video">
+<strong>🎬 M09-S04-001</strong><br/>
+<em>Vidéo technique plâtre EDF</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p>Les <strong>plâtres correcteurs sériés</strong> (Mehta / EDF — Elongation Dérotation Flexion) sont le traitement de référence de la scoliose infantile progressive.</p>
+<p><strong>Principe</strong> :<br />
+- Plâtre sous anesthésie courte, table d'Appert-Rodriguez<br />
+- <strong>Élongation</strong> (traction longitudinale) + <strong>dérotation</strong> + <strong>flexion latérale</strong> sur la concavité<br />
+- Changement toutes les <strong>8–12 semaines</strong> (croissance rapide)<br />
+- Objectif : corriger ou stabiliser sans chirurgie</p>
+<p><strong>Résultats</strong> :<br />
+- Correction moyenne : 30–50 % du Cobb initial<br />
+- Dans les formes infantiles légères (&lt; 30°) : <strong>correction durable possible</strong> dans 30–40 % des cas<br />
+- Transition vers corset rigide quand Cobb ≤ 20°</p>
+<h3 id="943-corset-dans-la-scoliose-juvenile">9.4.3 Corset dans la scoliose juvénile</h3>
+<p>Mêmes principes que la SIA (Module 8) mais :<br />
+- <strong>CTLSO (Milwaukee) si apex T6 ou au-dessus</strong><br />
+- Durée de port : 22–23h/j (croissance plus rapide)<br />
+- Changement de corset tous les <strong>6–12 mois</strong> (croissance)<br />
+- Résultats moins favorables que dans la SIA (compliance difficile, potentiel de croissance plus grand)</p>
+<hr />
+<h2 id="95-chirurgie-de-leos-techniques-de-croissance-guidee">9.5 Chirurgie de l'EOS — Techniques de croissance guidée</h2>
+<blockquote>
+<p>[MEDIA: 📊 M09-S05-001 — Tableau comparatif MCGR / VEPTR / TGR]</p>
+</blockquote>
+<div class="vertex-media video">
+<strong>🎬 M09-S05-002</strong><br/>
+<em>Animation MCGR — allongement magnétique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="951-principes-generaux">9.5.1 Principes généraux</h3>
+<p><strong>L'arthrodèse définitive AVANT 10 ans est contre-indiquée</strong> sauf exception car elle provoque :<br />
+- Arrêt de la croissance des segments fusionnés = <strong>crankshaft phenomenon</strong> (déformation malgré la fusion)<br />
+- <strong>Réduction permanente de la hauteur thoracique</strong><br />
+- <strong>Réduction de la CVF</strong> définitive</p>
+<p>Toutes les techniques de croissance guidée visent à <strong>contrôler la déformation TOUT EN maintenant la croissance</strong>.</p>
+<h3 id="952-growing-rods-traditionnels-tgr">9.5.2 Growing Rods Traditionnels (TGR)</h3>
+<p><strong>Principe</strong> :<br />
+- Ancrages proximaux + distaux (crochets, vis ou hybrid)<br />
+- Tiges parallèles libres sur la zone de croissance<br />
+- <strong>Allongement chirurgical</strong> tous les 6 mois (~1 cm par allongement)<br />
+- Arthrodèse définitive à 10–12 ans</p>
+<p><strong>Résultats</strong> :<br />
+- Correction initiale : 40–50 %<br />
+- Gain de hauteur T1-S1 : +1 cm/an en moyenne (vs +3 cm/an sans maladie)<br />
+- <strong>Loi des retours décroissants</strong> : chaque allongement corrige moins que le précédent → risque d'auto-fusion iatrogène</p>
+<p><strong>Complications</strong> :<br />
+- 12–20 interventions chirurgicales avant la fusion définitive<br />
+- Infection cumulée : 10–25 % (Bess et al., 2010, <em>J Pediatr Orthop</em>)<br />
+- Migration d'implants<br />
+- Psychologique : répercussions majeures (enfant hospitalisé tous les 6 mois)</p>
+<h3 id="953-mcgr-magnetically-controlled-growing-rods-magec">9.5.3 MCGR — Magnetically Controlled Growing Rods (MAGEC)</h3>
+<div class="vertex-media video">
+<strong>🎬 M09-S05-002</strong><br/>
+<em>Animation MCGR — allongement en consultation</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 M09-S05-003</strong><br/>
+<em>Schéma composantes de la tige MAGEC</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Principe</strong> :<br />
+- Tige contenant un <strong>actionneur magnétique</strong> (MAGEC Ellipse Technologie)<br />
+- Allongement <strong>non chirurgical</strong> en consultation par une télécommande magnétique externe<br />
+- Allongement de <strong>1 mm</strong> toutes les 4–8 semaines (sans anesthésie)</p>
+<p><strong>Résultats comparés aux TGR</strong> :<br />
+- Correction similaire (40–50 %)<br />
+- <strong>90 % de réduction des interventions chirurgicales</strong> (Cheung et al., 2012, <em>Spine</em>) → bénéfice majeur pour l'enfant et la famille<br />
+- Tolérance améliorée</p>
+<p><strong>Complications spécifiques MCGR</strong> :<br />
+- <strong>Panne du moteur magnétique</strong> (5–10 %) → nécessite remplacement chirurgical (Teoh et al., 2016, <em>Bone Joint J</em>)<br />
+- <strong>Corrosion métallique</strong> et relargage de particules Ti/Co/Cr<br />
+- <strong>Irritation des tissus mous</strong> locaux par les particules<br />
+- Fiabilité de l'allongement diminue après 2–3 ans d'utilisation</p>
+<h3 id="954-veptr-vertical-expandable-prosthetic-titanium-rib">9.5.4 VEPTR — Vertical Expandable Prosthetic Titanium Rib</h3>
+<p><strong>Indication privilégiée</strong> : <strong>Thoracic insufficiency syndrome avec fusions costales</strong> ou scolioses avec anomalies thoraciques majeures (syndrome Jarcho-Levin, etc.)</p>
+<p><strong>Principe</strong> :<br />
+- Crochet proximal sur côte + ancrage distal (côte, transverse ou iliaque)<br />
+- Distraction inter-costale → élargit le thorax côté concave<br />
+- Allongement tous les 6 mois</p>
+<p><strong>Avantage vs growing rods</strong> : Traite directement l'espace intercostal et la déformation thoracique, pas seulement la courbure rachidienne.</p>
+<h3 id="955-fusion-definitive">9.5.5 Fusion définitive</h3>
+<p>À <strong>10–12 ans</strong>, quand la croissance thoracique est suffisante :<br />
+- Arthrodèse postérieure définitive selon les règles de Lenke adaptées à l'enfant<br />
+- Retrait du matériel de croissance guidée<br />
+- Correction résiduelle par instrumentation pédicul</p>
+<hr />
+<h2 id="96-scoliose-juvenile-idiopathique-310-ans">9.6 Scoliose juvénile idiopathique (3–10 ans)</h2>
+<h3 id="961-particularites">9.6.1 Particularités</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prévalence</strong></td>
+<td>Rare (0,1–0,3 %)</td>
+</tr>
+<tr>
+<td><strong>Sexe</strong></td>
+<td>Prédominance féminine (dès 6 ans)</td>
+</tr>
+<tr>
+<td><strong>Côté</strong></td>
+<td>Thoracique droite (comme la SIA)</td>
+</tr>
+<tr>
+<td><strong>Évolution</strong></td>
+<td>Souvent progressive — moins de résolution que l'infantile</td>
+</tr>
+<tr>
+<td><strong>SIA différentielle</strong></td>
+<td>Si découverte tardive, peut être une SIA débutante précoce</td>
+</tr>
+</tbody>
+</table>
+<h3 id="962-prise-en-charge">9.6.2 Prise en charge</h3>
+<p><strong>Stratégie par tranche d'âge et angle</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Âge</th>
+<th>Cobb</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3–7 ans</td>
+<td>&lt; 20°</td>
+<td>Observation (radio 4–6 mois)</td>
+</tr>
+<tr>
+<td>3–7 ans</td>
+<td>20–35°</td>
+<td>Plâtres sériés puis corset</td>
+</tr>
+<tr>
+<td>3–7 ans</td>
+<td>&gt; 35° progressif</td>
+<td>Growing rods / MCGR</td>
+</tr>
+<tr>
+<td>7–10 ans</td>
+<td>&lt; 25°</td>
+<td>Corset (22–23h/j)</td>
+</tr>
+<tr>
+<td>7–10 ans</td>
+<td>25–40°</td>
+<td>Corset + PSSE</td>
+</tr>
+<tr>
+<td>7–10 ans</td>
+<td>&gt; 40° progressif</td>
+<td>Growing rods / MCGR ou attendre 10 ans</td>
+</tr>
+<tr>
+<td>7–10 ans</td>
+<td>&gt; 60°</td>
+<td>MCGR sans attendre + attendre fusion définitive à 10 ans</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="97-cas-clinique-theo-3-ans">9.7 Cas clinique — Théo, 3 ans</h2>
+<blockquote>
+<p><strong>Situation</strong> : Théo 3 ans, scoliose thoracique gauche T4-T9 Cobb 22°, RVAD 20°, IRM médullaire normale.</p>
+</blockquote>
+<p><strong>Analyse</strong> :<br />
+1. RVAD = 20° → <strong>zone frontière phase 1/2</strong> → risque modéré de progression<br />
+2. Courbure gauche chez garçon → atypique → IRM déjà réalisée (normale) ✓<br />
+3. Pas de cause secondaire identifiée → scoliose infantile idiopathique</p>
+<p><strong>Décision thérapeutique</strong> :<br />
+- Surveillance rapprochée à <strong>4 mois</strong> avec nouvelle radio<br />
+- Si progression ≥ 5° → plâtres EDF sériés<br />
+- Si stable ou régression → préserver e traitement conservateur</p>
+<p><strong>Pronostic communiqué aux parents</strong> :<br />
+- 70 % des chances de régression spontanée<br />
+- Si progression → traitement efficace disponible (plâtres puis corset)<br />
+- Pas de chirurgie imminente si bonnes conduites de surveillance</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> L'EOS (&lt; 10 ans) est distincte de la SIA — risque respiratoire vital si scoliose thoracique progressive pendant la multiplication alvéolaire (0–8 ans).</p>
+<p>📌 <strong>2.</strong> La <strong>RVAD de Mehta</strong> (&lt; 20° = régressif, ≥ 20° = progressif) est le meilleur outil prédictif de la scoliose infantile.</p>
+<p>📌 <strong>3.</strong> Toute scoliose infantile atypique (courbure gauche, rapide progression) → <strong>IRM médullaire</strong> pour éliminer syringomyélie, moelle attachée, tumeur.</p>
+<p>📌 <strong>4.</strong> Les <strong>plâtres sériés EDF/Mehta</strong> sont le traitement conservateur de référence pour la scoliose infantile progressive (&lt; 6 ans).</p>
+<p>📌 <strong>5.</strong> L'<strong>arthrodèse définitive avant 10 ans est contre-indiquée</strong> (sauf exception) — privilégier les techniques de croissance guidée (MCGR, VEPTR, TGR).</p>
+<p>📌 <strong>6.</strong> Le <strong>MCGR (MAGEC)</strong> réduit de 90 % les interventions chirurgicales vs TGR — mais comporte des risques spécifiques (panne, corrosion).</p>
+</blockquote>
+<hr />
+<h2 id="quiz-de-fin-de-module-15-questions">Quiz de fin de module — 15 questions</h2>
+<p><strong>Q1. 🥉</strong> L'EOS (Early-onset scoliosis) est définie par une scoliose avant quel âge ?<br />
+- <strong>A. 10 ans</strong><br />
+- B. 5 ans<br />
+- C. 13 ans<br />
+- D. 8 ans</p>
+<p><strong>Q2. 🥉</strong> La scoliose infantile idiopathique présente le plus souvent une courbure :<br />
+- A. Thoracique droite<br />
+- <strong>B. Thoracique gauche</strong><br />
+- C. Lombaire droite<br />
+- D. Cervicale</p>
+<p><strong>Q3. 🥉</strong> Le taux de résolution spontanée de la scoliose infantile idiopathique est :<br />
+- A. 20–30 %<br />
+- B. 40–50 %<br />
+- <strong>C. 70–90 %</strong><br />
+- D. 100 %</p>
+<p><strong>Q4. 🥉</strong> Quelle exploration est systématique devant une scoliose infantile idiopathique ?<br />
+- A. Scanner thoracique<br />
+- <strong>B. IRM médullaire</strong><br />
+- C. Scintigraphie osseuse<br />
+- D. Électromyogramme</p>
+<p><strong>Q5. 🥈</strong> Un RVAD de 25° dans la scoliose infantile correspond à :<br />
+- A. Phase 1 — pronostic régressif<br />
+- <strong>B. Phase 2 — pronostic progressif</strong><br />
+- C. Normal<br />
+- D. Critère d'indication chirurgicale immédiate</p>
+<p><strong>Q6. 🥈</strong> Le Thoracic Insufficiency Syndrome est défini par :<br />
+- A. Une CVF &lt; 80 %<br />
+- <strong>B. L'incapacité du thorax à permettre une croissance pulmonaire normale et un échange ventilatoire adéquat</strong><br />
+- C. Une scoliose thoracique &gt; 50°<br />
+- D. La fusion des côtes bilatérale</p>
+<p><strong>Q7. 🥈</strong> Le plâtre EDF signifie :<br />
+- A. Extenseur dorsal fixe<br />
+- <strong>B. Élongation Dérotation Flexion</strong><br />
+- C. Extension Décompression Flexion<br />
+- D. Évaluation des Déviation Frontale</p>
+<p><strong>Q8. 🥈</strong> L'avantage principal du MCGR (MAGEC) par rapport aux Growing Rods Traditionnels est :<br />
+- A. Une meilleure correction de la déformation<br />
+- B. Son absence de complications<br />
+- <strong>C. L'allongement non chirurgical → réduction de 90 % des révisions</strong><br />
+- D. Sa compatibilité IRM complète</p>
+<p><strong>Q9. 🥈</strong> L'âge minimal recommandé pour une arthrodèse définitive dans l'EOS est :<br />
+- A. 5 ans<br />
+- B. 8 ans<br />
+- <strong>C. 10–12 ans</strong><br />
+- D. 15 ans</p>
+<p><strong>Q10. 🥇</strong> Un enfant de 5 ans présente une scoliose thoracique progressive malgré 3 plâtres EDF. Cobb 38°, RVAD 30°. IRM normale. Quelle est la meilleure stratégie ?<br />
+- A. Arthrodèse définitive immédiate<br />
+- B. Continuer les plâtres encore 2 ans<br />
+- <strong>C. Mise en place d'un système de croissance guidée (MCGR ou TGR) pour contrôler la progression jusqu'à 10 ans</strong><br />
+- D. Corset Milwaukee seul</p>
+<p><strong>Q11. 🥇</strong> La loi des retours décroissants dans les Growing Rods Traditionnels signifie :<br />
+- <strong>A. Chaque allongement chirurgical corrige moins que le précédent — risque d'auto-fusion iatrogène progressive</strong><br />
+- B. Le gain de correction diminue avec l'âge<br />
+- C. La correction du Cobb diminue progressivement<br />
+- D. Les révisions sont de moins en moins efficaces car les tiges se corrodent</p>
+<p><strong>Q12. 🥇</strong> Le VEPTR est particulièrement indiqué dans les EOS associées à :<br />
+- A. Une scoliose lombaire<br />
+- <strong>B. Un TIS avec fusions costales et/ou anomalies thoraciques majeures</strong><br />
+- C. Une IRM anormale<br />
+- D. Un Cobb &lt; 30°</p>
+<p><strong>Q13. 🥇</strong> La complication spécifique la plus préoccupante du MCGR est :<br />
+- A. La déconnexion des crochets d'ancrage<br />
+- <strong>B. La corrosion métallique avec libération de particules de titane/cobalt-chrome</strong><br />
+- C. La perte de correction lors de chaque allongement<br />
+- D. L'infection systématique nécessitant ablation</p>
+<p><strong>Q14. 💎</strong> Une fille de 7 ans présente une scoliose juvénile T6-L1 Cobb 42°, progression 12° en 6 mois (sous corset Milwaukee 22h/j). T1-T12 height = 19 cm (normale pour l'âge 23 cm). CVF = 68 %. Que faites-vous ?<br />
+- A. Plâtres EDF — traitement de première ligne<br />
+- B. Arthrodèse T6-L1 immédiate<br />
+- <strong>C. Growing rods / MCGR en urgence — le TIS est débutant (T1-T12 réduite + CVF 68%) et la progression est rapide malgré corset</strong><br />
+- D. VEPTR bilatéral — car atteinte costale</p>
+<p><em>Feedback : La situation est urgente : T1-T12 height en dessous de la norme + CVF déjà réduite malgré corset optimal = TIS débutant. Growing rod (MCGR de préférence) pour contrôler la progression et permettre la croissance thoracique jusqu'à 10-12 ans.</em></p>
+<p><strong>Q15. 💎</strong> Lors de la planification d'un MCGR chez un enfant de 4 ans (scoliose T3-T10 Cobb 52°), vous devez éviter :<br />
+- <strong>A. L'ancrage proximal en T1-T2 (risque junctionnel cervicothoracique) — préférer T3-T4 avec crochets laminaires</strong><br />
+- B. D'utiliser des vis pédiculaires<br />
+- C. L'allongement magnétique en debut de traitement<br />
+- D. Le contrôle per-opératoire par fluoroscopie</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Mehta MH.</strong> The rib-vertebral angle in the early diagnosis between resolving and progressive infantile scoliosis. <em>J Bone Joint Surg Br</em>. 1972;54:230–243</li>
+<li><strong>Campbell RM et al.</strong> The characteristics of thoracic insufficiency syndrome associated with fused ribs and congenital scoliosis. <em>J Bone Joint Surg Am</em>. 2003;85:399–408</li>
+<li><strong>Akbarnia BA et al.</strong> Growing Rods. <em>Spine</em>. 2005;30:S46</li>
+<li><strong>Cheung KMC et al.</strong> Magnetically controlled growing rods for severe spinal curvature in young children. <em>Spine</em>. 2012;37:1550–1557</li>
+<li><strong>Lavelle WF et al.</strong> Review MCGR complications. <em>JBJS</em>. 2018</li>
+<li><strong>SOSORT Guidelines 2016</strong> — Early onset scoliosis section</li>
+<li><strong>Lloyd-Roberts GC, Pilcher MF.</strong> Structural idiopathic scoliosis in infancy: a study of the natural history of 100 patients. <em>J Bone Joint Surg Br</em>. 1965;47:520–523</li>
+<li><strong>Dunnill MS.</strong> Postnatal growth of the lung. <em>Thorax</em>. 1962;17:329–333</li>
+<li><strong>McMaster MJ.</strong> Infantile idiopathic scoliosis: can it be prevented? <em>J Bone Joint Surg Br</em>. 1983;65:612–617</li>
+<li><strong>Teoh KH et al.</strong> Metallosis following implantation of magnetically controlled growing rods in the treatment of scoliosis. <em>Bone Joint J</em>. 2016;98-B:1662–1667</li>
+<li><strong>Bess S et al.</strong> Complications of growing-rod treatment for early-onset scoliosis. <em>J Bone Joint Surg Am</em>. 2010;92:2533–2543</li>
+<li><strong>SRS/POSNA.</strong> Early onset scoliosis consensus statement. 2015</li>
+</ul>
+</div>

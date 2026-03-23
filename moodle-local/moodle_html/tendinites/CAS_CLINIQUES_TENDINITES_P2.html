@@ -1,0 +1,1125 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-tendinites-et-tendinopathies">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION TENDINITES ET TENDINOPATHIES</h1>
+<h2 id="partie-23-cas-argent-8-a-13">Partie 2/3 — Cas Argent (8 à 13)</h2>
+<p><strong>Formation</strong> : VERTEX© — Tendinites et Tendinopathies de l'Appareil Locomoteur<br />
+<strong>Code</strong> : CCTEND<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Date</strong> : 21 mars 2026</p>
+<hr />
+<h2 id="cas-argent">🥈 CAS ARGENT</h2>
+<hr />
+<p><a id="cas-8"></a></p>
+<h3 id="cas-n8-epicondylalgie-laterale-resistante-syndrome-du-tunnel-radial">Cas n°8 — Épicondylalgie latérale résistante — syndrome du tunnel radial ?</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M12 (Épicondylalgies), M5 (Examen clinique), M6 (Échographie), M18 (Rééducation)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Diagnostic différentiel entre épicondylalgie latérale et syndrome du tunnel radial — double crush syndrome</p>
+<h4 id="presentation-initiale">Présentation initiale</h4>
+<p>M. Jean-Pierre V., 48 ans, droitier, plombier, consulte pour une douleur persistante de la face latérale du coude droit évoluant depuis <strong>8 mois</strong> malgré un traitement conservateur bien conduit. Il a bénéficié d'un bracelet épicondylien (3 mois), d'un programme d'exercices excentriques avec barre flexible (12 semaines), et de <strong>2 infiltrations de corticostéroïdes</strong> (à 3 mois d'intervalle) — chaque infiltration a soulagé pendant 3 semaines puis la douleur est revenue. La douleur irradie vers l'avant-bras distal. Il ne peut plus tourner un tournevis ni serrer une clé à molette.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun<br />
+- Chirurgicaux : aucun<br />
+- Professionnels : plombier depuis 25 ans, sollicitation intensive du membre supérieur droit (rotation, serrage, vissage)<br />
+- Traitements en cours : paracétamol/codéine (Codoliprane®) en cas de crise</p>
+<h4 id="examen-clinique">Examen clinique</h4>
+<p><strong>Examen « épicondylien » classique</strong> :<br />
+- Test de Cozen : positif (douleur sur l'épicondyle latéral)<br />
+- Test de Mill : positif<br />
+- Pain-free grip : 8 kg à droite vs 42 kg à gauche</p>
+<p><strong>Examen spécifique — recherche de syndrome du tunnel radial</strong> :<br />
+- Palpation : <strong>douleur à la palpation de la masse musculaire 3-4 cm en distal de l'épicondyle latéral</strong> (arcade de Fröhse = bord supérieur du supinateur, lieu de compression du nerf interosseux postérieur [NIP])<br />
+- <strong>Test de supination résistée</strong> (avant-bras en extension et pronation, supination contre résistance) : <strong>positif</strong> — reproduit une douleur profonde dans l'avant-bras proximal, distincte de la douleur épicondylienne<br />
+- <strong>Test d'extension résistée du 3e doigt</strong> (Maudsley) : positif — mais la douleur est ressentie à la fois sur l'épicondyle ET dans l'avant-bras proximal<br />
+- <strong>Rule of nine test</strong> (Loh et al., 2004) : douleur dans le secteur 5 (supinateur) et le secteur 2 (épicondyle latéral) → suggère une double pathologie<br />
+- Examen neurologique distal : <strong>pas de déficit moteur</strong> (extension du poignet et des doigts normale) — élimine un syndrome du NIP complet (paralysie des extenseurs)<br />
+- Tinel sur le nerf radial au bras : négatif<br />
+- Examen cervical : normal (Spurling négatif)</p>
+<div class="vertex-media">
+<strong>📷 MTEND12-S02-001</strong><br/>
+<em>Schéma anatomique de la face latérale du coude : localisation de la douleur épicondylienne (insertion ECRB) vs localisation de la douleur du tunnel radial (arcade de Fröhse, 3-4 cm en distal) — les deux sites sont proches mais distincts</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations">Investigations</h4>
+<p><strong>Radiographies du coude</strong> : normales (pas de calcification, pas d'arthrose huméro-radiale)</p>
+<p><strong>Échographie</strong> :<br />
+- Tendinopathie résiduelle modérée de l'ECRB (zone hypoéchogène à l'insertion)<br />
+- Pas de rupture de l'ECRB<br />
+- Nerf interosseux postérieur : difficilement visualisé (examen opérateur-dépendant)</p>
+<p><strong>IRM du coude droit</strong> (demandée devant la résistance au traitement) :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S06-001</strong><br/>
+<em>IRM du coude droit, coupe axiale T2 FS : hypersignal modéré de l'insertion de l'ECRB (tendinopathie résiduelle) + signal anormal du nerf interosseux postérieur dans le tunnel radial avec œdème de dénervation du muscle supinateur — double pathologie</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Tendinopathie résiduelle de l'ECRB (hypersignal T2 modéré à l'insertion)</li>
+<li><strong>Œdème de dénervation du muscle supinateur</strong> (hypersignal T2 dans le corps du muscle) → signe indirect de compression du NIP dans le tunnel radial</li>
+<li>Pas de lésion intra-articulaire</li>
+</ul>
+<p><strong>Électromyogramme (EMG)</strong> : normal — le syndrome du tunnel radial est souvent <strong>purement sensitif</strong> (douleur) sans anomalie EMG détectable (&lt; 10% de positivité de l'EMG dans cette pathologie)</p>
+<h4 id="questions-progressives">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel diagnostic proposez-vous ? Pourquoi l'échec du traitement conservateur doit-il faire reconsidérer le diagnostic initial ?</p>
+<p><strong>Q2</strong> — Qu'est-ce que le syndrome du tunnel radial ? Quelle est la différence avec le syndrome du nerf interosseux postérieur ?</p>
+<p><strong>Q3</strong> — Comment distinguer cliniquement une épicondylalgie latérale pure d'un syndrome du tunnel radial ?</p>
+<p><strong>Q4</strong> — Peut-on avoir les deux pathologies simultanément ? Quelle est la prévalence de cette association ?</p>
+<p><strong>Q5</strong> — Quelle est la prise en charge thérapeutique de ce patient ?</p>
+<h4 id="reponses-detaillees">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic :</p>
+<p><strong>Diagnostic</strong> : <strong>Association d'une épicondylalgie latérale résiduelle et d'un syndrome du tunnel radial (compression du nerf interosseux postérieur) — « double crush » latéral du coude</strong> (cf. M12 §12.4).</p>
+<p><strong>Pourquoi reconsidérer le diagnostic ?</strong> :<br />
+- <strong>Règle clinique</strong> : toute épicondylalgie latérale résistant à 6 mois de traitement conservateur bien conduit doit faire rechercher un diagnostic différentiel ou associé<br />
+- Les 3 causes principales d'échec sont : (1) syndrome du tunnel radial associé, (2) instabilité postéro-latérale du coude, (3) arthrose huméro-radiale<br />
+- L'IRM montre ici l'œdème de dénervation du supinateur — preuve d'une compression du NIP</p>
+<p><strong>R2</strong> — Syndrome du tunnel radial :</p>
+<p><strong>Anatomie</strong> (cf. M12 §12.4) :<br />
+- Le <strong>nerf radial</strong> se divise en branche superficielle (sensitive) et branche profonde (nerf interosseux postérieur = NIP, moteur pur) au niveau de l'épicondyle latéral<br />
+- Le NIP traverse le <strong>tunnel radial</strong> → 5 sites de compression potentielle :<br />
+  1. Bride fibreuse antérieure au capitellum<br />
+  2. Éventail vasculaire radial récurrent (leash of Henry)<br />
+  3. <strong>Arcade de Fröhse</strong> (bord proximal du supinateur) → site le plus fréquent (70%)<br />
+  4. Bord distal du supinateur<br />
+  5. Bande fibreuse entre ECRB et brachioradial</p>
+<p><strong>Distinction syndrome du tunnel radial vs syndrome du NIP</strong> :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Syndrome du tunnel radial</th>
+<th>Syndrome du NIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Symptôme principal</strong></td>
+<td><strong>Douleur</strong> (pas de déficit)</td>
+<td><strong>Déficit moteur</strong> (drop finger)</td>
+</tr>
+<tr>
+<td><strong>Déficit moteur</strong></td>
+<td>Absent</td>
+<td>Extension des doigts et du pouce paralysée, extension du poignet en déviation radiale</td>
+</tr>
+<tr>
+<td><strong>EMG</strong></td>
+<td>Souvent normal</td>
+<td>Anormal (dénervation des extenseurs)</td>
+</tr>
+<tr>
+<td><strong>Diagnostic</strong></td>
+<td>Clinique (exclusion)</td>
+<td>Clinique + EMG</td>
+</tr>
+</tbody>
+</table>
+<p><strong>R3</strong> — Distinction clinique épicondylalgie vs tunnel radial :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Épicondylalgie latérale</th>
+<th>Syndrome du tunnel radial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Site douloureux</strong></td>
+<td><strong>Épicondyle latéral</strong> (insertion ECRB)</td>
+<td><strong>3-4 cm en distal</strong> (arcade de Fröhse)</td>
+</tr>
+<tr>
+<td><strong>Test de Cozen</strong></td>
+<td>Douleur sur l'épicondyle</td>
+<td>Douleur dans l'avant-bras proximal</td>
+</tr>
+<tr>
+<td><strong>Supination résistée</strong></td>
+<td>Indolore ou peu douloureuse</td>
+<td><strong>Très douloureuse</strong> (compression du NIP par le supinateur)</td>
+</tr>
+<tr>
+<td><strong>Extension résistée du 3e doigt</strong></td>
+<td>Douleur épicondylienne</td>
+<td>Douleur profonde dans l'avant-bras</td>
+</tr>
+<tr>
+<td><strong>Rule of nine test</strong></td>
+<td>Secteur 2 (épicondyle) positif</td>
+<td>Secteur 5 (supinateur) positif</td>
+</tr>
+<tr>
+<td><strong>Réponse aux infiltrations</strong></td>
+<td>Bon soulagement (6 semaines)</td>
+<td><strong>Pas de soulagement</strong> (la pathologie est nerveuse, pas tendineuse)</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : diagnostiquer une « épicondylalgie résistante » et multiplier les infiltrations, alors que le problème est une compression nerveuse que les corticostéroïdes ne peuvent pas traiter.</div>
+
+<p><strong>R4</strong> — Association des deux pathologies :</p>
+<p><strong>Oui</strong>, l'association est fréquente — <strong>5-10% des épicondylalgies latérales</strong> ont un syndrome du tunnel radial associé (Roles &amp; Maudsley, 1972 ; Stanley, 2006) :<br />
+- L'ECRB et le NIP sont <strong>anatomiquement voisins</strong> au niveau du coude latéral<br />
+- La tendinopathie de l'ECRB peut créer un œdème local qui comprime secondairement le NIP<br />
+- Le syndrome du tunnel radial peut être masqué par les symptômes de l'épicondylalgie et ne se révéler qu'après traitement de cette dernière</p>
+<p><strong>Implications pratiques</strong> : chez tout patient avec épicondylalgie résistante, palper systématiquement la zone du supinateur (3-4 cm en distal de l'épicondyle) et tester la supination résistée.</p>
+<p><strong>R5</strong> — Prise en charge thérapeutique :</p>
+<p><strong>Composante épicondylienne</strong> :<br />
+- Poursuivre la rééducation (Tyler Twist avec barre flexible), en y associant le renforcement de la chaîne scapulaire<br />
+- <strong>Pas de nouvelle infiltration de corticostéroïdes</strong> (2 déjà réalisées, effet temporaire → confirme la composante nerveuse)<br />
+- Injection de PRP : option en cas de tendinopathie résiduelle significative (meilleurs résultats que les corticostéroïdes à long terme — Mishra et al., 2014, <em>Am J Sports Med</em>)</p>
+<p><strong>Composante tunnel radial</strong> :<br />
+- <strong>Traitement conservateur</strong> en première intention (6-12 semaines) :<br />
+  - Repos relatif (éviter la supination-pronation répétée)<br />
+  - Attelle de repos nocturne en supination neutre<br />
+  - Exercices de glissement neural (nerve gliding) du nerf radial<br />
+  - Anti-épileptiques à visée antalgique neuropathique (prégabaline ou gabapentine) si douleur nocturne<br />
+- <strong>Test diagnostique infiltratif</strong> : injection de lidocaïne au niveau de l'arcade de Fröhse sous guidage échographique — si disparition temporaire de la douleur → confirme le diagnostic et prédit le succès chirurgical</p>
+<p><strong>Chirurgie</strong> (si échec conservateur à 6 mois) :<br />
+- Décompression du nerf interosseux postérieur : ouverture de l'arcade de Fröhse + section des brides fibreuses<br />
+- Si tendinopathie résiduelle de l'ECRB : débridement tendineux dans le même temps opératoire (procédure de Nirschl)<br />
+- Taux de succès : 70-85% de bons résultats après décompression</p>
+<p><strong>Adaptation professionnelle</strong> :<br />
+- Arrêt de travail de 2-3 semaines<br />
+- Reprise avec outils ergonomiques (tournevis électrique, clé à cliquet)<br />
+- Reclassement professionnel si échec</p>
+<hr />
+<p><a id="cas-9"></a></p>
+<h3 id="cas-n9-tendinopathie-gluteale-chez-une-femme-menopausee">Cas n°9 — Tendinopathie glutéale chez une femme ménopausée</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M15 (Tendinopathies de la hanche), M5 (Examen clinique), M6 (Échographie), M18 (Rééducation)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Diagnostic et prise en charge de la tendinopathie glutéale (anciennement « bursite trochantérienne »)</p>
+<h4 id="presentation-initiale_1">Présentation initiale</h4>
+<p>Mme Isabelle C., 58 ans, ménopausée depuis 5 ans, consulte pour une douleur de la face latérale de la hanche droite évoluant depuis 6 mois. La douleur est maximale en décubitus latéral droit (incapacité de dormir sur le côté droit depuis 3 mois), à la montée des escaliers (phase d'appui unipodal) et à la marche prolongée (&gt; 30 minutes). Son médecin traitant a diagnostiqué une « bursite trochantérienne » et a réalisé 2 infiltrations de corticostéroïdes dans le grand trochanter — soulagement transitoire de 2-3 semaines à chaque fois.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : ménopause à 53 ans (non substituée), lombalgie chronique (discopathie L4-L5 et L5-S1), syndrome dépressif<br />
+- IMC : 28 kg/m²<br />
+- Chirurgicaux : aucun au niveau de la hanche<br />
+- Sportifs : ancienne coureuse à pied (arrêt il y a 10 ans), marche quotidienne</p>
+<h4 id="examen-clinique_1">Examen clinique</h4>
+<ul>
+<li>Marche : <strong>signe de Trendelenburg</strong> positif à droite — lors de la phase d'appui unipodal droit, le bassin bascule vers la gauche (insuffisance des abducteurs droits)</li>
+<li>Inspection : pas de tuméfaction visible, pas d'amyotrophie fessière évidente</li>
+<li>Palpation : <strong>douleur exquise à la palpation du grand trochanter</strong> (facette postéro-supérieure), irradiant vers la face latérale de la cuisse</li>
+<li><strong>Test de FABER</strong> (Flexion-ABduction-External Rotation) : douleur latérale (et non inguinale → pas de coxarthrose)</li>
+<li><strong>Test de résistance en abduction</strong> (patient en décubitus latéral, abduction résistée de la hanche) : <strong>positif et faible</strong> — douleur + déficit de force des abducteurs</li>
+<li><strong>Test de résistance en rotation externe</strong> (hanche en extension) : indolore → petit glutéal non atteint</li>
+<li><strong>Single leg stance</strong> (appui unipodal 30 secondes) : reproduit la douleur dans les 10 premières secondes</li>
+<li>Mobilité de la hanche droite : <strong>complète et indolore</strong> en flexion, rotation interne/externe → pas de coxarthrose</li>
+<li>Examen rachidien : raideur lombaire, pas de radiculalgie</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND15-S01-001</strong><br/>
+<em>Photographie du signe de Trendelenburg : en appui unipodal droit, bascule du bassin vers la gauche — insuffisance des muscles glutéaux moyen et petit fessier droits</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_1">Investigations</h4>
+<p><strong>Radiographie du bassin de face</strong> :<br />
+- Articulation coxo-fémorale droite : interligne articulaire conservé, pas de coxarthrose<br />
+- Grand trochanter : contours réguliers, pas de calcification visible</p>
+<p><strong>Échographie de la hanche droite</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S07-001</strong><br/>
+<em>Échographie du grand trochanter droit : tendinopathie insertionnelle du glutéal moyen sur la facette postéro-supérieure du grand trochanter — épaississement hypoéchogène, irrégularité de la corticale osseuse, bursite péri-trochantérienne modérée</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li><strong>Tendinopathie insertionnelle du glutéal moyen</strong> : épaississement hypoéchogène de l'insertion sur la facette postéro-supérieure du grand trochanter</li>
+<li><strong>Rupture partielle</strong> : zone anéchogène de 8 mm au sein du tendon du glutéal moyen (rupture partielle de la face profonde)</li>
+<li>Bursite péri-trochantérienne modérée (épaississement de la bourse &gt; 2 mm)</li>
+<li>Tendon du glutéal mineur (petit fessier) : aspect normal</li>
+</ul>
+<p><strong>IRM de la hanche droite</strong> (demandée devant la rupture partielle échographique) :<br />
+- Rupture partielle de la face profonde (articulaire) du glutéal moyen sur la facette postéro-supérieure<br />
+- Infiltration graisseuse grade 1 de Goutallier du glutéal moyen<br />
+- Petit fessier : intact<br />
+- Pas de coxarthrose</p>
+<h4 id="questions-progressives_1">Questions progressives</h4>
+<p><strong>Q1</strong> — Pourquoi le diagnostic de « bursite trochantérienne » est-il obsolète ? Quel est le diagnostic correct ?</p>
+<p><strong>Q2</strong> — Quelle est l'analogie entre la tendinopathie glutéale et la pathologie de la coiffe des rotateurs de l'épaule ?</p>
+<p><strong>Q3</strong> — Quels sont les facteurs de risque spécifiques chez cette patiente ?</p>
+<p><strong>Q4</strong> — Pourquoi les infiltrations n'ont-elles pas fonctionné ? Quel programme de rééducation proposez-vous ?</p>
+<p><strong>Q5</strong> — Quelles sont les indications chirurgicales pour une rupture du glutéal moyen ?</p>
+<h4 id="reponses-detaillees_1">Réponses détaillées</h4>
+<p><strong>R1</strong> — Du « bursite trochantérienne » à la tendinopathie glutéale :</p>
+<p><strong>Le terme « bursite trochantérienne » est obsolète</strong> (cf. M15 §15.1) :<br />
+- Les études IRM et chirurgicales ont montré que dans <strong>&gt; 80% des cas diagnostiqués comme « bursite trochantérienne »</strong>, la pathologie principale est une <strong>tendinopathie insertionnelle des muscles glutéaux</strong> (moyen et/ou petit fessier) sur le grand trochanter<br />
+- La bursite est un phénomène <strong>secondaire</strong> (réactionnel) et non la cause primaire<br />
+- Le terme actuel recommandé est <strong>Greater Trochanteric Pain Syndrome (GTPS)</strong> ou <strong>tendinopathie glutéale</strong> (Grimaldi &amp; Fearon, 2015, <em>J Orthop Sports Phys Ther</em>)</p>
+<p><strong>Diagnostic correct</strong> : <strong>Tendinopathie insertionnelle du glutéal moyen droit avec rupture partielle de la face profonde et bursite réactionnelle</strong>.</p>
+<p><strong>R2</strong> — Analogie avec la coiffe des rotateurs :</p>
+<p>La tendinopathie glutéale est considérée comme la <strong>« coiffe des rotateurs de la hanche »</strong> (cf. M15 §15.2) :</p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Coiffe des rotateurs (épaule)</th>
+<th>Glutéaux (hanche)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tendons</strong></td>
+<td>SSP, ISP, SSC, petit rond</td>
+<td>Glutéal moyen, glutéal mineur</td>
+</tr>
+<tr>
+<td><strong>Insertion</strong></td>
+<td>Trochiter huméral</td>
+<td>Grand trochanter fémoral</td>
+</tr>
+<tr>
+<td><strong>Fonction</strong></td>
+<td>Stabilisation/centrage de la tête humérale</td>
+<td>Stabilisation du bassin en appui unipodal</td>
+</tr>
+<tr>
+<td><strong>Zone critique</strong></td>
+<td>Zone critique de Codman (SSP)</td>
+<td>Facette postéro-supérieure du grand trochanter (glutéal moyen)</td>
+</tr>
+<tr>
+<td><strong>Rupture</strong></td>
+<td>SSP le plus fréquent</td>
+<td>Glutéal moyen le plus fréquent</td>
+</tr>
+<tr>
+<td><strong>Signe clinique</strong></td>
+<td>Jobe positif et faible</td>
+<td>Trendelenburg positif</td>
+</tr>
+<tr>
+<td><strong>Classification</strong></td>
+<td>Goutallier (dégénérescence graisseuse)</td>
+<td>Goutallier adapté (dégénérescence graisseuse des glutéaux)</td>
+</tr>
+<tr>
+<td><strong>Population</strong></td>
+<td>Hommes &gt; 50 ans, travailleurs manuels</td>
+<td><strong>Femmes &gt; 50 ans, ménopausées</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>R3</strong> — Facteurs de risque spécifiques :</p>
+<ol>
+<li>
+<p><strong>Sexe féminin + ménopause</strong> (cf. M15 §15.1, M24 §24.1) :<br />
+   - Ratio femme/homme : 3-4:1 pour la tendinopathie glutéale<br />
+   - La carence œstrogénique post-ménopausique → diminution de la synthèse de collagène tendineux → fragilisation<br />
+   - Modification de la morphologie pelvienne : bassin féminin plus large → angle d'insertion du glutéal moyen plus oblique → contraintes en compression sur la facette trochantérienne</p>
+</li>
+<li>
+<p><strong>IMC élevé</strong> (28 kg/m²) :<br />
+   - Surcharge mécanique → augmentation des forces compressives sur les tendons glutéaux à chaque pas<br />
+   - Adipokines pro-inflammatoires systémiques</p>
+</li>
+<li>
+<p><strong>Lombalgie chronique</strong> :<br />
+   - Discopathie L4-L5 → possible atteinte radiculaire L5 infraclinique → dénervation partielle du glutéal moyen (innervation : nerf glutéal supérieur L4-L5-S1)<br />
+   - Altération du schéma de marche → surcharge des abducteurs</p>
+</li>
+<li>
+<p><strong>Décubitus latéral</strong> : compression nocturne directe du grand trochanter → aggrave la tendinopathie et la bursite</p>
+</li>
+</ol>
+<p><strong>R4</strong> — Échec des infiltrations et programme de rééducation :</p>
+<p><strong>Pourquoi les infiltrations ont échoué</strong> :<br />
+- Les infiltrations de corticostéroïdes dans la bourse trochantérienne soulagent transitoirement la <strong>bursite</strong> (composante secondaire) mais ne traitent pas la <strong>tendinopathie</strong> (cause primaire)<br />
+- L'effet antalgique masque la douleur → la patiente reprend ses activités → rechute<br />
+- Les corticostéroïdes n'améliorent pas (et peuvent aggraver) la structure tendineuse</p>
+<p><strong>Programme de rééducation — evidence-based</strong> (Mellor et al., 2018, <em>BMJ</em> — essai LEAP) :</p>
+<p><strong>Phase 1 — Éducation et gestion de la charge (semaines 1-4)</strong> :<br />
+- <strong>Éviter les positions de compression</strong> :<br />
+  - NE PAS dormir sur le côté atteint (décubitus dorsal ou controlatéral avec coussin entre les genoux)<br />
+  - NE PAS croiser les jambes en position assise<br />
+  - NE PAS se tenir debout en appui sur une seule hanche (posture en adduction = compression du tendon sur le trochanter)<br />
+  - NE PAS étirer les glutéaux (piriforme stretch, cross-body stretch) → compression du tendon</p>
+<ul>
+<li><strong>Exercices isométriques d'abduction</strong> :</li>
+<li>Décubitus dorsal, coussin entre le mur et le genou, poussée latérale isométrique : 5 × 30 s, 3 fois/jour</li>
+<li>Debout, face au mur, abduction isométrique contre le mur : 5 × 30 s</li>
+</ul>
+<p><strong>Phase 2 — Renforcement progressif (semaines 5-12)</strong> :<br />
+- Abduction de hanche en décubitus latéral (côté sain en bas) avec bande élastique<br />
+- Pont fessier bilatéral → progression unipodal<br />
+- Squat bilatéral avec bande élastique autour des genoux (activation des abducteurs)<br />
+- Step-up latéral (marche d'escalier)<br />
+- Progression : 3 × 12 RM → 3 × 8 RM → exercices fonctionnels</p>
+<p><strong>Phase 3 — Renforcement fonctionnel (semaines 12-24)</strong> :<br />
+- Appui unipodal progressif<br />
+- Marche en terrain varié, reprise escaliers<br />
+- Single leg squat (si toléré)</p>
+<p><strong>Résultats attendus</strong> : supériorité démontrée de la rééducation vs infiltrations de corticostéroïdes à 12 mois (essai LEAP — Mellor et al., 2018, <em>BMJ</em>) : 78% de succès pour la rééducation vs 58% pour l'infiltration.</p>
+<p><strong>R5</strong> — Indications chirurgicales :</p>
+<p><strong>La chirurgie est rarement nécessaire</strong> (&lt; 5% des cas) — réservée aux échecs du traitement conservateur à <strong>12 mois</strong> (cf. M22 §22.5).</p>
+<p><strong>Indications</strong> :<br />
+- Rupture complète ou sub-complète du glutéal moyen avec déficit fonctionnel significatif (Trendelenburg franc, boiterie majeure)<br />
+- Infiltration graisseuse Goutallier ≤ 2 (au-delà, le muscle n'est plus fonctionnellement récupérable)</p>
+<p><strong>Techniques</strong> :<br />
+- <strong>Réparation tendineuse par ancres</strong> : ré-insertion du glutéal moyen sur le grand trochanter (arthroscopique ou mini-open)<br />
+- <strong>Transfert musculaire</strong> (cas extrêmes) : utilisation du vaste latéral ou du tenseur du fascia lata en cas de rupture irréparable</p>
+<p><strong>Résultats</strong> : 70-85% de bons résultats pour les réparations (si infiltration graisseuse limitée).</p>
+<hr />
+<p><a id="cas-10"></a></p>
+<h3 id="cas-n10-rupture-partielle-de-la-coiffe-chez-un-travailleur-manuel">Cas n°10 — Rupture partielle de la coiffe chez un travailleur manuel</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M14 (Coiffe des rotateurs), M5 (Examen clinique), M6 (Échographie), M18 (Rééducation)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Évaluation et décision thérapeutique devant une rupture partielle de la coiffe</p>
+<h4 id="presentation-initiale_2">Présentation initiale</h4>
+<p>M. Abdelkader T., 50 ans, droitier, électricien, consulte pour une douleur de l'épaule droite apparue il y a 3 semaines après avoir soulevé une armoire électrique lourde (environ 40 kg). La douleur est apparue brutalement, avec une sensation de « craquement » dans l'épaule. Depuis, il décrit une faiblesse du bras droit, une difficulté à lever le bras au-dessus de la tête et des douleurs nocturnes permanentes (réveil toutes les nuits). Il est en arrêt de travail depuis 2 semaines.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun<br />
+- Chirurgicaux : aucun<br />
+- Professionnels : électricien depuis 28 ans, travail fréquent bras en élévation (câblage en hauteur)<br />
+- Sportifs : aucun<br />
+- Épaule droite : 2 épisodes de « tendinite de l'épaule » traités par infiltrations il y a 3 et 5 ans</p>
+<h4 id="examen-clinique_2">Examen clinique</h4>
+<ul>
+<li>Inspection : pas d'amyotrophie visible des fosses supra- et infra-épineuses (durée trop courte pour une amyotrophie), pas d'ecchymose</li>
+<li>Mobilité passive : complète (élévation 170°, RE1 45°, RI main en L1)</li>
+<li>Mobilité active : élévation antérieure limitée à <strong>130°</strong> (vs 170° en passif) → déficit actif/passif = suspicion de rupture</li>
+<li><strong>Arc douloureux</strong> : 60-120° en élévation active</li>
+<li><strong>Test de Jobe</strong> : <strong>positif et faible</strong> — le patient ne peut pas maintenir les bras contre la résistance, le bras tombe → déficit du supra-épineux</li>
+<li><strong>Test du bras tombant</strong> (drop arm) : <strong>positif</strong> — le bras chute à partir de 90° d'abduction passive → rupture significative du SSP</li>
+<li><strong>Test de Patte</strong> (rotation externe résistée coude au corps à 90° d'abduction) : positif et légèrement faible → atteinte débutante de l'infra-épineux</li>
+<li><strong>Test du sous-scapulaire</strong> (belly press, lift-off) : négatif (force conservée)</li>
+<li><strong>Test du palm-up</strong> (Speed) : légère douleur antérieure (long biceps irrité)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND14-S02-001</strong><br/>
+<em>Photographie du test de Jobe : le patient ne parvient pas à maintenir les bras en élévation à 90° dans le plan de la scapula contre résistance — le bras droit tombe (Jobe positif et faible)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_2">Investigations</h4>
+<p><strong>Radiographies de l'épaule droite</strong> :<br />
+- Espace sous-acromial : 8 mm (limite basse de la normale)<br />
+- Acromion type II<br />
+- Pas de migration céphalique de la tête humérale<br />
+- Arthrose acromio-claviculaire débutante</p>
+<p><strong>Échographie</strong> :<br />
+- <strong>Rupture partielle du supra-épineux</strong> (face bursale) de 12 mm de diamètre AP, intéressant 50% de l'épaisseur du tendon<br />
+- Infra-épineux : tendinopathie sans rupture visible<br />
+- Sous-scapulaire : intact<br />
+- Long biceps : en place, tendinopathie modérée<br />
+- Bursite sous-acromiale modérée</p>
+<p><strong>IRM de l'épaule droite</strong> (bilan pré-thérapeutique) :</p>
+<div class="vertex-media">
+<strong>📷 MTEND14-S02-002</strong><br/>
+<em>IRM épaule droite, coupe coronale T2 FS : rupture partielle du supra-épineux face bursale, intéressant 50% de l'épaisseur du tendon sur 12 mm — le bord inférieur (articulaire) du tendon est intact, hypersignal T2 intra-tendineux avec continuité articulaire préservée</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li><strong>Rupture partielle du supra-épineux face bursale</strong>, 12 mm de largeur, 50% de l'épaisseur</li>
+<li>Rétraction : 0 (stade 1 de Patte — pas de rétraction)</li>
+<li>Infiltration graisseuse du SSP : <strong>Goutallier grade 1</strong> (quelques traces graisseuses)</li>
+<li>Infra-épineux : tendinopathie avec hypersignal T2, pas de rupture</li>
+<li>Sous-scapulaire : intact</li>
+<li>Long biceps : tendinopathie, subluxation médiale partielle</li>
+<li>Arthrose acromio-claviculaire débutante</li>
+</ul>
+<h4 id="questions-progressives_2">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Comment classez-vous cette rupture (Ellman, localisation, épaisseur) ?</p>
+<p><strong>Q2</strong> — Comment interprétez-vous le test de Jobe « faible » dans le contexte d'une rupture partielle ? Quel est le mécanisme de la perte de force ?</p>
+<p><strong>Q3</strong> — Faut-il opérer cette rupture partielle ? Quels sont les critères de décision ?</p>
+<p><strong>Q4</strong> — Si le traitement conservateur est choisi, quel programme proposez-vous et quels signes de surveillance recherchez-vous ?</p>
+<p><strong>Q5</strong> — Comment évaluez-vous la réparabilité d'une rupture de la coiffe ? Quels critères sont pronostiques ?</p>
+<h4 id="reponses-detaillees_2">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et classification :</p>
+<p><strong>Diagnostic</strong> : <strong>Rupture partielle du supra-épineux droit, face bursale, grade 2 d'Ellman, sur tendinopathie chronique</strong> (cf. M14 §14.6).</p>
+<p><strong>Classification d'Ellman</strong> (ruptures partielles) :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Épaisseur atteinte</th>
+<th>Profondeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grade 1</td>
+<td>&lt; 25% de l'épaisseur (&lt; 3 mm)</td>
+<td>Superficielle</td>
+</tr>
+<tr>
+<td><strong>Grade 2</strong></td>
+<td><strong>25-50% (3-6 mm)</strong></td>
+<td><strong>Ce patient (50% de l'épaisseur)</strong></td>
+</tr>
+<tr>
+<td>Grade 3</td>
+<td>&gt; 50% (&gt; 6 mm)</td>
+<td>Profonde — proche de la transfixiante</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Localisation</strong> — face bursale :<br />
+- Les ruptures bursales (superficielles) sont moins fréquentes que les ruptures articulaires (profondes) mais sont plus souvent symptomatiques et ont un potentiel de progression vers la rupture complète<br />
+- Face bursale = le SSP se rompt de la surface vers la profondeur → sous l'effet du conflit sous-acromial chronique (acromion type II + travail en élévation)</p>
+<p><strong>R2</strong> — Interprétation du Jobe faible :</p>
+<p>Le test de Jobe faible (douleur + déficit) dans une rupture partielle s'explique par deux mécanismes (cf. M14 §14.4) :<br />
+1. <strong>Inhibition douloureuse</strong> : la douleur inhibe la contraction volontaire maximale du SSP → perte de force « fonctionnelle » (pas forcément structurelle)<br />
+2. <strong>Perte de substance</strong> : une rupture de 50% de l'épaisseur réduit mécaniquement la section résistante du tendon → perte de force « structurelle »</p>
+<p><strong>Le drop arm test positif</strong> est préoccupant : il est habituellement associé aux ruptures transfixiantes — sa positivité avec une rupture partielle de 50% suggère soit :<br />
+- Une sous-estimation de la taille réelle de la rupture (IRM parfois sous-estime les ruptures bursales)<br />
+- Une composante d'inhibition douloureuse majeure</p>
+<p><strong>Implication</strong> : la rupture est « borderline » entre partielle et transfixiante → surveillance rapprochée ou indication chirurgicale.</p>
+<p><strong>R3</strong> — Opérer ou non ? Critères de décision :</p>
+<p><strong>Arguments POUR la chirurgie</strong> :<br />
+- Patient jeune et actif (50 ans, profession manuelle en hauteur)<br />
+- Début traumatique (soulèvement de charge lourde) → potentiel de réparation meilleur qu'une rupture dégénérative pure<br />
+- Rupture grade 2 (50%) avec risque de progression vers la transfixiante<br />
+- Drop arm test positif (signe de gravité)<br />
+- Goutallier grade 1 (muscle encore de bonne qualité) → fenêtre d'opérabilité</p>
+<p><strong>Arguments POUR le traitement conservateur</strong> :<br />
+- Rupture partielle (pas transfixiante)<br />
+- Certaines ruptures partielles guérissent sous traitement conservateur<br />
+- Mobilité passive complète → pas de rétraction capsulaire</p>
+<p><strong>Décision</strong> : dans ce profil (50 ans, travailleur manuel, traumatique, grade 2 de 50%, drop arm positif, Goutallier 1), <strong>la chirurgie est recommandée</strong> — soit réparation arthroscopique, soit complétion de la rupture + réparation :<br />
+- <strong>Si rupture &gt; 50% à l'exploration arthroscopique</strong> : complétion de la rupture (section des fibres restantes) + réparation par ancres de suture (simple row ou double row)<br />
+- <strong>Si rupture &lt; 50% à l'exploration</strong> : débridement + acromioplastie ± réparation</p>
+<p><strong>Alternative</strong> : essai de traitement conservateur de 3 mois avec rééducation intensive — si pas d'amélioration → chirurgie. IRM de contrôle à 3 mois pour évaluer la progression.</p>
+<p><strong>R4</strong> — Traitement conservateur et surveillance :</p>
+<p><strong>Programme</strong> (cf. M18 §18.4) :<br />
+- <strong>Phase 1 (semaines 1-4)</strong> : analgésie, mobilisation douce infra-douloureuse, exercices pendulaires de Codman<br />
+- <strong>Phase 2 (semaines 5-12)</strong> : renforcement progressif des abaisseurs (sous-scapulaire, infra-épineux) et des fixateurs scapulaires (trapèze moyen/inférieur, serratus anterior) — recentrage actif de la tête humérale<br />
+- <strong>Phase 3 (semaines 12-24)</strong> : renforcement global, exercices fonctionnels adaptés au métier</p>
+<p><strong>Signes d'alerte</strong> (passage à la chirurgie) :<br />
+- Aggravation de la force (Jobe de plus en plus faible)<br />
+- Apparition d'une amyotrophie de la fosse supra- ou infra-épineuse<br />
+- Stagnation du déficit actif-passif après 3 mois de rééducation<br />
+- Progression de la rupture sur l'IRM de contrôle (passage à transfixiante)</p>
+<p><strong>Adaptation professionnelle</strong> :<br />
+- Contre-indication au travail bras en élévation (câblage en hauteur) pendant la rééducation<br />
+- Reprise progressive avec limitation des charges &gt; 10 kg en élévation<br />
+- Si chirurgie : arrêt de travail de 4-6 mois</p>
+<p><strong>R5</strong> — Évaluation de la réparabilité :</p>
+<p><strong>Critères de réparabilité d'une rupture de la coiffe</strong> (cf. M14 §14.7) :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Favorable</th>
+<th>Défavorable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Taille</strong></td>
+<td>&lt; 3 cm (petite/moyenne)</td>
+<td>&gt; 5 cm (massive)</td>
+</tr>
+<tr>
+<td><strong>Rétraction</strong> (Patte)</td>
+<td>Stade 1-2 (trochiter-tête)</td>
+<td>Stade 3 (glénoïde)</td>
+</tr>
+<tr>
+<td><strong>Goutallier</strong> (dégénérescence graisseuse)</td>
+<td><strong>≤ 2</strong></td>
+<td>&gt; 2 (irréversible)</td>
+</tr>
+<tr>
+<td><strong>Espace sous-acromial</strong></td>
+<td>&gt; 7 mm</td>
+<td>&lt; 7 mm (migration céphalique)</td>
+</tr>
+<tr>
+<td><strong>Âge</strong></td>
+<td>&lt; 65 ans</td>
+<td>&gt; 75 ans</td>
+</tr>
+<tr>
+<td><strong>Durée</strong></td>
+<td>Aiguë (&lt; 3 mois)</td>
+<td>Chronique (&gt; 12 mois)</td>
+</tr>
+<tr>
+<td><strong>Nombre de tendons</strong></td>
+<td>1 tendon</td>
+<td>≥ 2 tendons</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ce patient</strong> : Patte stade 1 + Goutallier grade 1 + âge 50 ans + début traumatique récent → <strong>excellente réparabilité</strong>, ne pas laisser passer la fenêtre chirurgicale.</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : laisser évoluer une rupture réparable vers l'irréparabilité (Goutallier > 2, rétraction Patte 3) en temporisant trop longtemps avec un traitement conservateur.</div>
+
+<hr />
+<p><a id="cas-11"></a></p>
+<h3 id="cas-n11-tendinopathie-dachille-sous-fluoroquinolones-chez-un-patient-diabetique">Cas n°11 — Tendinopathie d'Achille sous fluoroquinolones chez un patient diabétique</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M8 (Tendinopathie d'Achille), M1 (Biologie du tendon), M24 (Prévention — facteurs systémiques), M18 (Rééducation)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Tendinopathie iatrogène aux fluoroquinolones — physiopathologie, prévention et prise en charge</p>
+<h4 id="presentation-initiale_3">Présentation initiale</h4>
+<p>M. Omar S., 68 ans, diabétique de type 2, consulte en urgence pour des douleurs bilatérales des tendons d'Achille apparues depuis 5 jours. Les douleurs sont symétriques, intenses, d'apparition brutale, avec une sensation d'« œdème » et de raideur des deux chevilles. Il a peur de « se casser le tendon ». Le patient est sous <strong>lévofloxacine 500 mg/j</strong> depuis 10 jours pour une prostatite aiguë bactérienne.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : diabète de type 2 (20 ans, HbA1c 7,8%), insuffisance rénale chronique stade 3 (DFG 42 mL/min), hypertension artérielle, dyslipidémie, goutte (allopurinol 200 mg)<br />
+- Chirurgicaux : aucun au niveau des tendons<br />
+- Traitements en cours : metformine 1 g × 2/j, gliclazide 60 mg, amlodipine 10 mg, atorvastatine 40 mg, allopurinol 200 mg, <strong>lévofloxacine 500 mg × 1/j</strong> (depuis 10 jours), prednisolone 10 mg/j (ajoutée il y a 5 jours pour une poussée inflammatoire articulaire)<br />
+- Antécédent de traitement par ciprofloxacine il y a 2 ans (infection urinaire) : pas de problème tendineux à l'époque</p>
+<h4 id="examen-clinique_3">Examen clinique</h4>
+<ul>
+<li>Inspection : <strong>œdème bilatéral des régions achilléennes</strong>, les deux tendons apparaissent épaissis et « pâteux »</li>
+<li>Palpation : douleur bilatérale diffuse des tendons d'Achille, <strong>maximum du côté gauche</strong> où la douleur est exquise sur toute la longueur du tendon (corps et insertion)</li>
+<li>Pas de solution de continuité palpable (pas de signe de rupture — pas de « coup de hache » ni de dépression)</li>
+<li><strong>Test de Thompson</strong> (compression du mollet en décubitus ventral) : flexion plantaire présente bilatéralement → <strong>pas de rupture complète</strong></li>
+<li>Dorsiflexion passive : 0° bilatéralement (raideur majeure, normal &gt; 10°)</li>
+<li>Montée sur pointe : <strong>impossible</strong> bilatéralement (douleur et faiblesse)</li>
+<li>Marche : boiterie bilatérale, pas à petits pas</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND08-S03-001</strong><br/>
+<em>Photographie clinique : vue postérieure des deux chevilles montrant un épaississement diffus et symétrique des deux tendons d'Achille — noter l'effacement des contours tendineux normaux</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_3">Investigations</h4>
+<p><strong>Échographie bilatérale des tendons d'Achille</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S08-001</strong><br/>
+<em>Échographie comparative des tendons d'Achille : tendon gauche — épaississement diffus majeur (12,8 mm AP), zones hypoéchogènes multiples intra-tendineuses avec perte complète de l'architecture fibrillaire, fissure longitudinale partielle de 15 mm — aspect de tendinopathie sévère diffuse ; tendon droit — épaississement modéré (8,2 mm), zones hypoéchogènes focales</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Tendon gauche</strong> :<br />
+- Épaississement diffus majeur (12,8 mm AP, normal &lt; 6 mm)<br />
+- Zones hypoéchogènes multiples avec perte complète de l'architecture fibrillaire<br />
+- <strong>Fissure longitudinale intra-tendineuse</strong> de 15 mm<br />
+- Néovascularisation diffuse</p>
+<p><strong>Tendon droit</strong> :<br />
+- Épaississement modéré (8,2 mm)<br />
+- Zones hypoéchogènes focales<br />
+- Architecture fibrillaire partiellement conservée<br />
+- Pas de fissure</p>
+<p><strong>Biologie</strong> :<br />
+- CRP : 28 mg/L (contexte infectieux résiduel)<br />
+- Créatinine : 168 µmol/L (DFG 42 mL/min — insuffisance rénale stade 3)<br />
+- Uricémie : 480 µmol/L (hyperuricémie résiduelle malgré allopurinol)<br />
+- HbA1c : 7,8%</p>
+<h4 id="questions-progressives_3">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quel est le mécanisme de la toxicité tendineuse des fluoroquinolones ?</p>
+<p><strong>Q2</strong> — Quels sont les facteurs de risque de tendinopathie aux fluoroquinolones ? Combien en cumule ce patient ?</p>
+<p><strong>Q3</strong> — Quelle est votre conduite à tenir immédiate ?</p>
+<p><strong>Q4</strong> — Quel est le risque de rupture et comment le prévenir ?</p>
+<p><strong>Q5</strong> — Quelle est l'évolution attendue et le programme de rééducation après la phase aiguë ?</p>
+<h4 id="reponses-detaillees_3">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et mécanisme :</p>
+<p><strong>Diagnostic</strong> : <strong>Tendinopathie bilatérale des tendons d'Achille induite par les fluoroquinolones (lévofloxacine), avec fissuration longitudinale gauche</strong> (cf. M24 §24.1.6, M8 §8.8).</p>
+<p><strong>Mécanisme de la toxicité tendineuse des fluoroquinolones</strong> (cf. M1 §1.6, M24 §24.1.6) :<br />
+- <strong>Inhibition de la synthèse de collagène</strong> : les fluoroquinolones inhibent la topoisomérase II (gyrase) bactérienne mais aussi les topoisomérases mitochondriales des ténocytes → altération de la réplication de l'ADN mitochondrial → dysfonction cellulaire<br />
+- <strong>Dégradation matricielle</strong> : activation des <strong>métalloprotéinases matricielles (MMP-1, MMP-3, MMP-13)</strong> → dégradation accélérée de la matrice de collagène<br />
+- <strong>Apoptose des ténocytes</strong> : les fluoroquinolones induisent l'apoptose des ténocytes via le stress oxydatif et l'activation des caspases → perte cellulaire<br />
+- <strong>Chélation du magnésium</strong> : les fluoroquinolones chélatent le Mg²⁺ → altération de la fonction des intégrines (récepteurs de mécanotransduction) → perturbation de la signalisation cellulaire<br />
+- <strong>Résultat net</strong> : dégénérescence tendineuse accélérée, perte de la résistance mécanique, risque de rupture</p>
+<p><strong>Délai d'apparition</strong> : variable — de quelques heures à <strong>6 mois</strong> après le début du traitement, avec un pic entre <strong>1 et 4 semaines</strong> (ici : 5 jours après l'ajout de prednisolone, 10 jours après le début de lévofloxacine).</p>
+<p><strong>R2</strong> — Facteurs de risque :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur de risque</th>
+<th>Risque relatif</th>
+<th>Ce patient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Âge &gt; 60 ans</strong></td>
+<td>× 3-4</td>
+<td>✅ 68 ans</td>
+</tr>
+<tr>
+<td><strong>Corticothérapie concomitante</strong></td>
+<td>× 6-46</td>
+<td>✅ Prednisolone 10 mg/j</td>
+</tr>
+<tr>
+<td><strong>Insuffisance rénale</strong></td>
+<td>× 3-5 (accumulation)</td>
+<td>✅ DFG 42 mL/min</td>
+</tr>
+<tr>
+<td><strong>Diabète</strong></td>
+<td>× 3 (glycation + microangiopathie)</td>
+<td>✅ DT2 depuis 20 ans</td>
+</tr>
+<tr>
+<td><strong>Antécédent de fluoroquinolone</strong></td>
+<td>× 1,5 (sensibilisation)</td>
+<td>✅ Ciprofloxacine il y a 2 ans</td>
+</tr>
+<tr>
+<td><strong>Statines</strong></td>
+<td>× 1,5 (controverse)</td>
+<td>✅ Atorvastatine 40 mg</td>
+</tr>
+<tr>
+<td><strong>Hyperuricémie</strong></td>
+<td>× 1,5-2 (cristaux d'urate)</td>
+<td>✅ Uricémie 480 µmol/L</td>
+</tr>
+<tr>
+<td><strong>Sport/surcharge mécanique</strong></td>
+<td>× 2</td>
+<td>❌ Non</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ce patient cumule 6-7 facteurs de risque</strong> → risque cumulatif de tendinopathie très élevé. <strong>La prescription de lévofloxacine aurait dû être évitée</strong> ou au minimum, une surveillance tendineuse instaurée.</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : prescrire une fluoroquinolone à un patient âgé, diabétique, insuffisant rénal ET sous corticothérapie sans évaluer le risque tendineux. L'association fluoroquinolone + corticostéroïdes est la plus dangereuse (RR × 46 selon une étude de cohorte — van der Linden et al., 2003, *Arthritis Rheum*).</div>
+
+<p><strong>R3</strong> — Conduite à tenir immédiate :</p>
+<ol>
+<li>
+<p><strong>ARRÊT IMMÉDIAT de la lévofloxacine</strong> — mesure la plus urgente<br />
+   - Remplacement par un antibiotique non fluoroquinolone pour compléter le traitement de la prostatite (ex : cotrimoxazole, en adaptant à la fonction rénale)<br />
+   - Contacter l'urologue prescripteur</p>
+</li>
+<li>
+<p><strong>Arrêt ou diminution rapide de la prednisolone</strong> (si possible médicalement)</p>
+</li>
+<li>
+<p><strong>Mise en décharge bilatérale</strong> :<br />
+   - Bottes de marche (type Aircast) bilatérales avec limitation de la dorsiflexion<br />
+   - Cannes anglaises pour soulager la charge sur les tendons<br />
+   - Durée : 2-4 semaines minimum</p>
+</li>
+<li>
+<p><strong>Analgésie</strong> : paracétamol (éviter les AINS en raison de l'insuffisance rénale)</p>
+</li>
+<li>
+<p><strong>Surveillance échographique</strong> rapprochée à 1 et 2 semaines : évaluer l'évolution de la fissure gauche (risque de progression vers la rupture)</p>
+</li>
+<li>
+<p><strong>Déclaration de pharmacovigilance</strong> (ANSM / Centre régional de pharmacovigilance)</p>
+</li>
+</ol>
+<p><strong>R4</strong> — Risque de rupture et prévention :</p>
+<p><strong>Risque de rupture</strong> :<br />
+- Incidence de la rupture sous fluoroquinolones : 0,01-0,1% des prescriptions<br />
+- <strong>Mais chez les patients à haut risque</strong> (ce patient) : risque multiplié par <strong>15-50</strong> → incidence pouvant atteindre 1-2%<br />
+- Le tendon d'Achille est le site le plus fréquent (&gt; 90% des ruptures induites par FQ)<br />
+- La rupture peut survenir jusqu'à <strong>6 mois après</strong> l'arrêt du traitement<br />
+- Dans ce cas, la <strong>fissure longitudinale gauche</strong> est un signe préoccupant → état pré-rupture</p>
+<p><strong>Prévention de la rupture</strong> :<br />
+- Mise en décharge stricte (cf. R3) — surtout à gauche<br />
+- Pas de sport, pas de marche prolongée pendant 6-8 semaines<br />
+- Éviter la dorsiflexion passive forcée<br />
+- Si aggravation de la fissure → immobilisation plâtrée ou botte rigide<br />
+- Seuil chirurgical bas si apparition d'un signe de Thompson positif (rupture complète)</p>
+<p><strong>R5</strong> — Évolution et rééducation :</p>
+<p><strong>Évolution attendue</strong> :<br />
+- Après arrêt de la fluoroquinolone : amélioration progressive sur <strong>3 à 6 mois</strong><br />
+- La récupération structurelle est <strong>lente</strong> car les dommages tendineux persistent après l'arrêt du médicament (les MMP continuent leur activité destructrice pendant plusieurs semaines)<br />
+- Le tendon reste fragile pendant <strong>6-12 mois</strong> après l'épisode</p>
+<p><strong>Programme de rééducation</strong> (après la phase de décharge, semaines 4-6+) :<br />
+- <strong>Phase 1 (semaines 4-8)</strong> : exercices isométriques doux en position neutre (pas de descente en dorsiflexion) — 5 × 20 s, intensité très faible<br />
+- <strong>Phase 2 (semaines 8-16)</strong> : montée sur pointe bilatérale progressive, remise en charge de marche (progressive, terrain plat)<br />
+- <strong>Phase 3 (semaines 16-24)</strong> : renforcement excentrique modéré (protocole d'Alfredson adapté, charges très progressives)<br />
+- <strong>Suivi échographique</strong> : à 1, 3 et 6 mois — évaluer la guérison de la fissure et la normalisation structurelle</p>
+<p><strong>Mesures systémiques complémentaires</strong> :<br />
+- Optimiser le contrôle glycémique (HbA1c &lt; 7%)<br />
+- Optimiser le traitement de la goutte (objectif uricémie &lt; 360 µmol/L)<br />
+- Signaler dans le dossier médical : <strong>CONTRE-INDICATION DÉFINITIVE AUX FLUOROQUINOLONES</strong></p>
+<hr />
+<p><a id="cas-12"></a></p>
+<h3 id="cas-n12-tendinopathie-du-tibial-posterieur-et-pied-plat-acquis-de-ladulte">Cas n°12 — Tendinopathie du tibial postérieur et pied plat acquis de l'adulte</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M10 (Tendinopathies du pied), M5 (Examen clinique), M6 (Échographie), M22 (Chirurgie)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Diagnostic et classification du pied plat acquis de l'adulte sur insuffisance du tibial postérieur</p>
+<h4 id="presentation-initiale_4">Présentation initiale</h4>
+<p>Mme Khadija B., 55 ans, obèse (IMC 34 kg/m²), consulte pour une déformation progressive du pied droit avec douleur de la cheville interne (médiale) évoluant depuis 18 mois. Elle décrit un affaissement de la voûte plantaire (« mon pied s'aplatit »), une douleur derrière la malléole interne aggravée par la marche prolongée, et une difficulté croissante à marcher sur terrain irrégulier. Elle note que sa chaussure droite « se déforme vers l'intérieur ».</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : obésité (IMC 34), hypertension artérielle, diabète de type 2 (HbA1c 7,2%), gonarthrose bilatérale<br />
+- Chirurgicaux : aucun au niveau du pied<br />
+- Sportifs : aucun, sédentaire<br />
+- Pieds : « toujours eu les pieds un peu plats » selon la patiente</p>
+<h4 id="examen-clinique_4">Examen clinique</h4>
+<p><strong>Debout, vue postérieure</strong> :<br />
+- <strong>« Too many toes sign »</strong> positif à droite : en regardant le patient par derrière, on voit les orteils latéraux (4e et 5e) dépasser du côté latéral du talon droit → signe d'abduction excessive de l'avant-pied = insuffisance du tibial postérieur<br />
+- Valgus de l'arrière-pied droit : angle calcanéus-sol estimé à 15° de valgus (normal &lt; 5°)<br />
+- Affaissement de l'arche médiale droite, pied plat visible<br />
+- Pied gauche : plat modéré, symétrique, asymptomatique</p>
+<div class="vertex-media">
+<strong>📷 MTEND10-S01-001</strong><br/>
+<em>Photographie de la vue postérieure des pieds en charge : « too many toes sign » visible à droite (orteils 4 et 5 dépassant latéralement du calcanéum), valgus de l'arrière-pied droit prononcé, effondrement de l'arche médiale</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Examen dynamique</strong> :<br />
+- <strong>Single heel raise test</strong> : la patiente est incapable de réaliser une montée sur pointe unipodale à droite (échec complet) → <strong>insuffisance du tibial postérieur</strong><br />
+- En bilatéral : montée sur pointe possible mais douloureuse à droite<br />
+- L'arrière-pied ne passe <strong>pas en varus</strong> lors de la tentative de montée sur pointe (normalement, l'arrière-pied se « varise » par l'action du tibial postérieur)</p>
+<p><strong>Palpation</strong> :<br />
+- Douleur rétro-malléolaire interne le long du trajet du tendon tibial postérieur<br />
+- Tuméfaction palpable le long de la gaine du tibial postérieur (ténosynovite)</p>
+<p><strong>Mobilité</strong> :<br />
+- Sous-talienne : <strong>mobile</strong> (réductibilité du valgus en décharge) → stade II<br />
+- Médio-tarsienne : souple<br />
+- Cheville (tibio-talienne) : dorsiflexion limitée à 5° (raideur du triceps sural — fréquente dans le pied plat acquis)</p>
+<p><strong>Examen vasculo-nerveux</strong> : pouls pédieux et tibial postérieur présents, pas de trouble trophique</p>
+<h4 id="investigations_4">Investigations</h4>
+<p><strong>Radiographies en charge</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND10-S01-002</strong><br/>
+<em>Radiographie du pied droit en charge, profil : effondrement de l'arche médiale, angle de Méary (axe talus-1er métatarsien) à +15° (normal 0° = axe horizontal), découverture de la tête du talus > 40%</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Profil en charge</strong> :<br />
+- Angle de Méary (axe talus-1er métatarsien) : <strong>+15°</strong> (normal : 0° = alignement horizontal → le talus plonge vers le bas = pied plat)<br />
+- Hauteur de l'arche médiale : effondrée</p>
+<p><strong>Face dorsoplantaire en charge</strong> :<br />
+- Abduction de l'avant-pied (découverture de la tête du talus &gt; 40%)<br />
+- Pas d'arthrose talo-naviculaire (interligne conservé)</p>
+<p><strong>Cheville face en charge</strong> :<br />
+- Valgus de l'arrière-pied : 15°<br />
+- Pas d'arthrose tibio-talienne</p>
+<p><strong>Échographie du tibial postérieur</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S09-001</strong><br/>
+<em>Échographie du tendon tibial postérieur droit, coupe axiale rétro-malléolaire interne : tendon épaissi (8,2 mm vs 5,4 mm à gauche), aspect hétérogène avec zones hypoéchogènes et rupture longitudinale partielle — épanchement dans la gaine (ténosynovite)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Tendon épaissi (8,2 mm vs 5,4 mm à gauche), hétérogène</li>
+<li>Rupture longitudinale partielle (fissuration)</li>
+<li>Ténosynovite (épanchement dans la gaine)</li>
+<li>Pas de rupture complète</li>
+</ul>
+<p><strong>IRM</strong> (bilan pré-thérapeutique) :<br />
+- Tendinopathie sévère du tibial postérieur avec rupture longitudinale partielle<br />
+- Spring ligament (calcanéo-naviculaire plantaire) : atteinte débutante (signal pathologique)<br />
+- Pas d'arthrose sous-talienne ni talo-naviculaire</p>
+<h4 id="questions-progressives_4">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quel est le stade selon la classification de Johnson &amp; Strom modifiée (Myerson) ?</p>
+<p><strong>Q2</strong> — Quel est le rôle du tendon tibial postérieur dans l'architecture du pied et pourquoi son insuffisance conduit-elle au pied plat ?</p>
+<p><strong>Q3</strong> — Le traitement conservateur est-il suffisant à ce stade ? Quel appareillage proposez-vous ?</p>
+<p><strong>Q4</strong> — Quelles sont les indications et les options chirurgicales pour le stade II ?</p>
+<p><strong>Q5</strong> — Quelle est l'évolution naturelle sans traitement et pourquoi il ne faut pas attendre ?</p>
+<h4 id="reponses-detaillees_4">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et classification :</p>
+<p><strong>Diagnostic</strong> : <strong>Pied plat valgus acquis de l'adulte stade II sur insuffisance du tibial postérieur, pied droit</strong> (cf. M10 §10.2).</p>
+<p><strong>Classification de Johnson &amp; Strom / Myerson</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Description</th>
+<th>Mobilité</th>
+<th>Signes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Ténosynovite isolée du TP, pas de déformation</td>
+<td>Mobile</td>
+<td>Douleur rétro-malléolaire, pas de pied plat</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td><strong>Pied plat valgus acquis, déformation souple (réductible)</strong></td>
+<td><strong>Mobile</strong></td>
+<td><strong>Too many toes +, single heel raise impossible, valgus réductible</strong></td>
+</tr>
+<tr>
+<td>IIa</td>
+<td>Découverture &lt; 40%</td>
+<td>Mobile</td>
+<td>Déformation modérée</td>
+</tr>
+<tr>
+<td><strong>IIb</strong></td>
+<td><strong>Découverture &gt; 40%</strong></td>
+<td><strong>Mobile</strong></td>
+<td><strong>Déformation sévère (ce cas)</strong></td>
+</tr>
+<tr>
+<td>III</td>
+<td>Pied plat valgus fixé (irréductible)</td>
+<td><strong>Rigide</strong></td>
+<td>Arthrose sous-talienne</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Valgus tibio-talien (atteinte de la cheville)</td>
+<td>Rigide</td>
+<td>Arthrose de cheville + pied plat</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ce patient est au stade IIb</strong> : déformation souple (réductible en décharge), découverture &gt; 40%, single heel raise impossible.</p>
+<p><strong>R2</strong> — Rôle du tibial postérieur :</p>
+<p>Le tibial postérieur est le <strong>stabilisateur dynamique principal de l'arche médiale</strong> (cf. M10 §10.2.1) :<br />
+- <strong>Action</strong> : inversion du pied (supination + adduction + flexion plantaire), soutien de la voûte médiale, verrouillage du médio-pied lors de la propulsion<br />
+- <strong>Mécanisme de l'insuffisance</strong> :<br />
+  1. Tendinopathie dégénérative du TP → perte de force → incapacité de verrouiller l'arche médiale<br />
+  2. L'arche médiale s'effondre progressivement sous le poids du corps<br />
+  3. Le ligament calcanéo-naviculaire plantaire (spring ligament) est mis en tension secondaire → il s'allonge et se rompt<br />
+  4. La tête du talus « plonge » médialement et plantairement → pied plat valgus acquis<br />
+  5. Le calcanéum part en valgus → le tendon d'Achille tire en valgus → aggravation du cercle vicieux<br />
+  6. <strong>Le valgus calcanéen latéralise le vecteur de force du triceps sural</strong> → le triceps sural devient un pronateur (au lieu d'un supinateur) → accélération de l'effondrement</p>
+<p><strong>Pourquoi le single heel raise est impossible</strong> : le tibial postérieur est nécessaire pour verrouiller l'arche médiale et inverser l'arrière-pied lors de la montée sur pointe → si le TP est insuffisant, l'arrière-pied reste en valgus et la propulsion est impossible.</p>
+<p><strong>R3</strong> — Traitement conservateur :</p>
+<p><strong>Au stade II, le traitement conservateur est un premier essai raisonnable mais souvent insuffisant</strong> (cf. M10 §10.2.3) :</p>
+<p><strong>Appareillage</strong> :<br />
+- <strong>Orthèse plantaire</strong> : orthèse moulée sur mesure avec :<br />
+  - Soutien de la voûte médiale (posted medial arch support)<br />
+  - Coin calcanéen médial (medial heel wedge) de 4-6° → corrige le valgus<br />
+  - Cuvette talonnière profonde<br />
+- <strong>Orthèse articulée de cheville</strong> (AFO — Ankle-Foot Orthosis) : pour les stades IIb avec déformation plus marquée<br />
+  - Type Arizona brace ou UCBL (University of California Biomechanics Laboratory)<br />
+  - Maintient l'arrière-pied en position neutre, soulage le TP</p>
+<p><strong>Rééducation</strong> :<br />
+- Renforcement du tibial postérieur : exercices en inversion résistée (bande élastique), « short foot exercise » (raccourcissement actif de l'arche médiale)<br />
+- Étirement du triceps sural (la raideur du triceps aggrave le valgus)<br />
+- Perte de poids (IMC 34 → objectif IMC &lt; 30)</p>
+<p><strong>Limites</strong> : au stade IIb, le traitement conservateur <strong>contrôle les symptômes</strong> mais <strong>ne corrige pas la déformation</strong> et ne prévient pas la progression vers le stade III. La chirurgie doit être proposée si les symptômes persistent.</p>
+<p><strong>R4</strong> — Options chirurgicales au stade II :</p>
+<p>La chirurgie au stade II est une <strong>chirurgie conservatrice</strong> (préservation des articulations) car les articulations ne sont pas encore arthrosiques (cf. M22 §22.6) :</p>
+<p><strong>Gestes osseux</strong> :<br />
+- <strong>Ostéotomie calcanéenne de médialisation</strong> (Cotton osteotomy) : translation médiale du fragment tubérositaire → corrige le valgus calcanéen, réaligne le vecteur du triceps sural<br />
+- <strong>Allongement de la colonne latérale</strong> (Evans) : ostéotomie du calcanéum antérieur avec greffe → corrige l'abduction de l'avant-pied (si découverture &gt; 40%)</p>
+<p><strong>Gestes tendineux</strong> :<br />
+- <strong>Transfert du tendon du flexor digitorum longus (FDL) sur le naviculaire</strong> : remplace le TP déficient → restaure le soutien dynamique de l'arche médiale<br />
+- Optionnel : débridement/synovectomie du TP dégénéré</p>
+<p><strong>Gestes ligamentaires</strong> :<br />
+- <strong>Réparation/renforcement du spring ligament</strong> (si atteint)</p>
+<p><strong>Geste d'allongement</strong> :<br />
+- <strong>Allongement du tendon d'Achille ou du gastrocnémien</strong> (recession du gastrocnémien de Strayer) : si dorsiflexion &lt; 5° → réduit la force pronante du triceps</p>
+<p><strong>Combinaison typique au stade IIb</strong> : ostéotomie de médialisation calcanéenne + allongement de la colonne latérale (Evans) + transfert FDL + allongement du gastrocnémien.</p>
+<p><strong>Résultats</strong> : 80-90% de bons résultats à 5 ans, correction de la déformation et amélioration fonctionnelle.</p>
+<p><strong>R5</strong> — Évolution naturelle et urgence thérapeutique :</p>
+<p><strong>Sans traitement, le stade II progresse INÉVITABLEMENT</strong> vers le stade III (cf. M10 §10.2.4) :<br />
+1. Le TP continue de se détériorer → la force de stabilisation diminue<br />
+2. Les structures capsulo-ligamentaires (spring ligament, ligament deltoïdien) s'allongent progressivement et deviennent incompétentes<br />
+3. Les articulations sous-talienne et talo-naviculaire subissent une surcharge asymétrique → arthrose secondaire<br />
+4. Le valgus calcanéen se fixe (irréductible) → <strong>stade III</strong></p>
+<p><strong>Au stade III</strong> : les articulations sont arthrosiques → la chirurgie conservatrice n'est plus possible → seule option = <strong>arthrodèse</strong> (double ou triple arthrodèse sous-talienne ± talo-naviculaire ± calcanéo-cuboïdienne) = chirurgie plus lourde, avec perte de mobilité du pied.</p>
+<p><strong>Message clé</strong> : le stade II est la <strong>fenêtre d'opportunité chirurgicale</strong> — on peut encore corriger la déformation en préservant les articulations. Attendre → stade III → arthrodèse.</p>
+<hr />
+<p><a id="cas-13"></a></p>
+<h3 id="cas-n13-tendinopathie-patellaire-bilaterale-chez-un-basketteur-en-pleine-saison">Cas n°13 — Tendinopathie patellaire bilatérale chez un basketteur en pleine saison</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilisés</strong> : M11 (Tendinopathie patellaire), M5 (Examen clinique), M18 (Rééducation), M24 (Prévention — gestion de la charge)<br />
+<strong>Durée estimée</strong> : 25 min<br />
+<strong>Thématique principale</strong> : Gestion d'une tendinopathie patellaire bilatérale chez un athlète en compétition — dilemme charge-repos</p>
+<h4 id="presentation-initiale_5">Présentation initiale</h4>
+<p>M. Adama D., 26 ans, basketteur professionnel (ProB), poste de pivot (intérieur), consulte en <strong>milieu de saison</strong> (janvier) pour des douleurs bilatérales des tendons patellaires évoluant depuis 4 mois. La douleur est prédominante à gauche (pied d'appel). Elle est présente dès l'échauffement, impose un strapping serré des deux genoux pour chaque entraînement, et limite ses performances en match (réduction de sa détente verticale estimée à 20%). Le VISA-P est à 38/100 à gauche et 55/100 à droite. Le joueur est un titulaire indispensable et l'équipe joue le maintien en ProB — la saison se termine en mai (4 mois restants). Il refuse d'être mis au repos.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun<br />
+- Chirurgicaux : aucun<br />
+- Sportifs : basketball depuis l'âge de 10 ans, poste d'intérieur (volume de saut très élevé — rebond, contre, alley-oop)<br />
+- Épisodes précédents : 2 épisodes de « tendinite rotulienne » traités par repos (1 mois) il y a 2 et 4 ans — récidive à chaque reprise<br />
+- Rééducation antérieure : quelques séances de « renforcement » non structuré, sans protocole précis<br />
+- Traitements actuels : ibuprofène 400 mg avant chaque match (auto-médication), glace après les matchs</p>
+<h4 id="examen-clinique_5">Examen clinique</h4>
+<p><strong>Genou gauche</strong> :<br />
+- Douleur exquise au pôle inférieur de la rotule gauche<br />
+- Single leg decline squat : douleur 7/10<br />
+- Extension résistée : douloureuse, force légèrement diminuée<br />
+- Souplesse du quadriceps : test d'Ely positif (raideur du droit fémoral ++), angle poplité 35° (raideur des ischio-jambiers)</p>
+<p><strong>Genou droit</strong> :<br />
+- Douleur modérée au pôle inférieur de la rotule droite<br />
+- Single leg decline squat : douleur 4/10<br />
+- Force conservée</p>
+<p><strong>Examen global</strong> :<br />
+- Taille : 2,01 m, poids : 102 kg<br />
+- Souplesse chaîne postérieure : <strong>très limitée</strong> (angle poplité 35° bilatéral, sit and reach négatif de 12 cm)<br />
+- Force du tronc (core) : déficiente (plank test : 45 s seulement)<br />
+- Proprioception : single leg stance yeux fermés &lt; 10 s bilatéral</p>
+<div class="vertex-media">
+<strong>📷 MTEND11-S02-001</strong><br/>
+<em>Photographie du basketteur en position de réception de saut : alignement du membre inférieur en valgus dynamique du genou gauche (knee valgus) lors de la réception — facteur biomécanique contribuant à la surcharge du tendon patellaire</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_5">Investigations</h4>
+<p><strong>Échographie bilatérale</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S10-001</strong><br/>
+<em>Échographie comparative des tendons patellaires : gauche — épaississement hypoéchogène majeur (9,6 mm AP) du pôle proximal, zone de nécrose focale hypoéchogène, néovascularisation diffuse ; droit — épaississement modéré (7,2 mm), zones hypoéchogènes focales</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Tendon gauche</strong> : épaississement majeur (9,6 mm), nécrose focale, néovascularisation diffuse → <strong>stade dégénératif</strong> (Cook &amp; Purdam stade 3)<br />
+<strong>Tendon droit</strong> : épaississement modéré (7,2 mm), hypoéchogénicité focale → <strong>stade de dérégulation</strong> (stade 2)</p>
+<h4 id="questions-progressives_5">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic et quel est le dilemme thérapeutique ?</p>
+<p><strong>Q2</strong> — L'ibuprofène avant chaque match est-il une stratégie acceptable ? Quels sont les risques ?</p>
+<p><strong>Q3</strong> — Comment gérer la charge d'entraînement pendant la saison tout en maintenant la compétition ?</p>
+<p><strong>Q4</strong> — Quel programme de rééducation « in-season » proposez-vous ?</p>
+<p><strong>Q5</strong> — Quel plan pour la saison prochaine (prévention secondaire) ?</p>
+<h4 id="reponses-detaillees_5">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et dilemme :</p>
+<p><strong>Diagnostic</strong> : <strong>Tendinopathie patellaire bilatérale chronique — stade dégénératif à gauche (Cook stade 3), stade de dérégulation à droite (stade 2) — chez un basketteur professionnel en pleine saison</strong>.</p>
+<p><strong>Le dilemme</strong> (cf. M11 §11.5, M24 §24.3) :<br />
+- <strong>Traitement optimal</strong> : réduction significative de la charge (50-70%) pendant 12-24 semaines + rééducation structurée<br />
+- <strong>Réalité sportive</strong> : joueur titulaire indispensable, maintien de l'équipe en jeu, 4 mois de compétition, refus d'arrêt<br />
+- <strong>Risque</strong> : un tendon au stade dégénératif (gauche) a un risque de <strong>rupture</strong> sous charge maximale (rare mais décrit dans la littérature — 1-3% pour les tendinopathies patellaires dégénératives chez les athlètes de saut)</p>
+<p><strong>Approche pragmatique</strong> : stratégie de « gestion pendant la saison + rééducation intensive en intersaison ». Le repos complet n'est ni réaliste ni souhaitable (déconditionnement → récidive à la reprise, comme les 2 épisodes précédents).</p>
+<p><strong>R2</strong> — Ibuprofène pré-match :</p>
+<p><strong>L'ibuprofène avant chaque match est une stratégie PROBLÉMATIQUE</strong> (cf. M18 §18.5) :</p>
+<p><strong>Risques</strong> :<br />
+1. <strong>Masquage de la douleur</strong> : la douleur est un signal d'alerte → l'AINS la supprime → le joueur dépasse ses limites mécaniques → surcharge tendineuse non perçue → aggravation<br />
+2. <strong>Inhibition de la synthèse de collagène</strong> : les AINS réduisent la synthèse de collagène post-exercice de 25-30% (Christensen et al., 2011, <em>J Appl Physiol</em>) → ralentissement de la réparation tendineuse<br />
+3. <strong>Risques systémiques de l'utilisation chronique</strong> : GI (ulcère), rénal (surtout chez un sportif déshydraté), cardiovasculaire<br />
+4. <strong>Effet placebo</strong> : une partie de l'effet est probablement placebo — l'ibuprofène n'a pas d'efficacité démontrée au-delà de la phase réactive dans les tendinopathies</p>
+<p><strong>Remplacement proposé</strong> :<br />
+- <strong>Exercices isométriques pré-match</strong> (extension isométrique du genou à 60° de flexion, 5 × 45 s) → effet antalgique comparable à l'ibuprofène, sans les effets délétères (Rio et al., 2015)<br />
+- Si analgésie nécessaire : paracétamol uniquement (pas d'effet anti-inflammatoire, pas d'inhibition de la synthèse de collagène)</p>
+<p><strong>R3</strong> — Gestion de la charge en saison :</p>
+<p><strong>Principe</strong> : maintenir la compétition tout en réduisant la charge d'entraînement — <strong>« play but don't train everything »</strong> (cf. M24 §24.3) :</p>
+<p><strong>Réduction ciblée du volume de saut</strong> :<br />
+- <strong>Suppression des exercices de saut purs</strong> en entraînement (plyométrie, exercices de détente, dunks à l'entraînement)<br />
+- Maintien des exercices de saut <strong>en contexte de jeu</strong> uniquement (opposition, scrimmage)<br />
+- Objectif : réduire le volume de saut hebdomadaire de <strong>50-60%</strong> tout en maintenant la spécificité du jeu</p>
+<p><strong>Gestion par périodisation</strong> :<br />
+- Jours de match : match uniquement (pas d'entraînement le matin)<br />
+- J+1 (lendemain de match) : repos complet ou récupération active non impactante (vélo, piscine)<br />
+- J+2 : exercices de rééducation (isométriques + HSR) + entraînement technique sans saut<br />
+- J+3 : entraînement normal avec jeu dirigé<br />
+- J+4 : idem + préparation match</p>
+<p><strong>Monitoring</strong> :<br />
+- Score VISA-P hebdomadaire<br />
+- Douleur pré- et post-entraînement sur EVA<br />
+- <strong>Traffic light model</strong> :<br />
+  - 🟢 Douleur ≤ 2/10 et VISA-P stable : maintenir le plan<br />
+  - 🟡 Douleur 3-5/10 : réduire encore le volume de saut (-30% supplémentaire)<br />
+  - 🔴 Douleur &gt; 5/10 ou VISA-P &lt; 30 : repos match (1-2 matchs)</p>
+<p><strong>R4</strong> — Programme de rééducation in-season :</p>
+<p><strong>Exercices isométriques quotidiens</strong> (cf. M18 §18.2) :<br />
+- Leg extension isométrique à 60° de flexion : 5 × 45 s à 70% MVC, 2 fois/jour (matin + avant entraînement/match)<br />
+- Effet antalgique : commence dans les 15 minutes, dure 4-8 heures<br />
+- Permet de s'entraîner et jouer avec moins de douleur</p>
+<p><strong>Heavy Slow Resistance (HSR) 3 fois/semaine</strong> (cf. M18 §18.3) :<br />
+- Leg press bilatérale : progression 4 × 15 RM → 3 × 6 RM<br />
+- Squat bilatéral (amplitude limitée à 60°) : progression identique<br />
+- <strong>PAS de squat unipodal</strong> (trop de charge sur le tendon en saison)<br />
+- Jours J+2 et J+4 (pas le jour du match ni le lendemain)</p>
+<p><strong>Travail de la chaîne postérieure et du tronc</strong> :<br />
+- Nordic hamstring curl : 3 × 6 (prévention des lésions musculaires et rééquilibrage agoniste-antagoniste)<br />
+- Renforcement du core : planks, side planks, pallof press — 3 × 30 s<br />
+- Étirements du quadriceps et des ischio-jambiers (raideur bilatérale majeure)</p>
+<p><strong>Correction du valgus dynamique</strong> :<br />
+- Travail de la rotation externe de hanche (hip abductors, clamshell)<br />
+- Single leg deadlift → amélioration du contrôle neuromusculaire en appui unipodal</p>
+<div class="vertex-media schema">
+<strong>📐 MTEND18-S03-001</strong><br/>
+<em>Planning hebdomadaire type de gestion de charge in-season pour un basketteur avec tendinopathie patellaire : match, récupération, rééducation et entraînement programmés sur 7 jours</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>R5</strong> — Plan intersaison (prévention secondaire) :</p>
+<p><strong>L'intersaison est la période clé</strong> — c'est le moment de faire le travail de fond que la saison ne permet pas (cf. M24 §24.2) :</p>
+<p><strong>Mois 1-2 (mai-juin) — Phase de rééducation intensive</strong> :<br />
+- Réduction du volume de basketball à 30%<br />
+- HSR : progression vers les charges maximales (3 × 6 RM × 3/semaine)<br />
+- Protocole excentrique de decline squat (25°) si toléré → 3 × 15 × 2/jour<br />
+- Objectif : VISA-P &gt; 70 bilatéralement</p>
+<p><strong>Mois 2-3 (juillet) — Phase de renforcement</strong> :<br />
+- Reprise progressive des sauts (plyométrie légère → drop jumps → sauts spécifiques basketball)<br />
+- Progression de la charge de saut de 10% par semaine (monitored by sRPE)<br />
+- Poursuite du HSR (maintenance)</p>
+<p><strong>Mois 3-4 (août-septembre) — Pré-saison</strong> :<br />
+- Retour aux volumes d'entraînement normaux<br />
+- Monitoring du VISA-P (objectif &gt; 80 au début de saison)<br />
+- Programme de prévention intégré à l'échauffement (FIFA 11+ adapté basketball)</p>
+<p><strong>Facteurs modifiables à corriger</strong> :<br />
+- <strong>Souplesse</strong> : programme quotidien d'étirement du quadriceps et des ischio-jambiers (12 semaines minimum pour un gain durable)<br />
+- <strong>Proprioception</strong> : programme de rééquilibration neuromusculaire<br />
+- <strong>Force du tronc</strong> : objectif plank &gt; 2 min, side plank &gt; 90 s<br />
+- <strong>Correction du valgus dynamique</strong> : programme de contrôle moteur en atterrissage</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : le joueur, soulagé en fin de saison, reprend la pré-saison à pleine intensité sans avoir fait la rééducation de fond → récidive garantie (comme ses 2 épisodes précédents). Le suivi en intersaison est CRITIQUE.</div>
+
+<hr />
+<p><em>Fin de la partie 2/3 — Cas Argent (8 à 13)</em><br />
+<em>Suite : partie 3/3 — Cas Or (14 à 17) et Cas Diamant (18 à 20)</em></p>
+</div>

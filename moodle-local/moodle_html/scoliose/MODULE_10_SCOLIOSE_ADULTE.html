@@ -1,0 +1,748 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-10-scoliose-de-ladulte-et-deformites-rachidiennes-de-ladulte">MODULE 10 — SCOLIOSE DE L'ADULTE ET DÉFORMITÉS RACHIDIENNES DE L'ADULTE</h1>
+<p><strong>Partie IV — Scoliose de l'adulte</strong><br />
+<strong>Durée estimée</strong> : 3h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 9</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>M. Bernard, 64 ans, consulte pour une douleur lombaire chronique invalidante (EVA 7/10), aggravée depuis 2 ans. Radiographies : scoliose dégénérative L1-L5 Cobb 38°, effondrement L3-L4, listésis L4-L5. Il marche moins de 200 m. Son interniste lui a dit : <em>« C'est l'âge, ça ne se traite pas. »</em> Sa fille l'amène en consultation spécialisée. → <em>Que lui proposer ?</em></p>
+</blockquote>
+<p>🧓 <strong>Patient fil rouge</strong> : M. Bernard, 64 ans — scoliose dégénérative lombaire, déséquilibre sagittal.</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Scoliose adulte (de novo) • Scoliose adulte sur SIA évoluée • Scoliose dégénérative • Adjacent segment degeneration • Déséquilibre sagittal • SVA (sagittal vertical axis) • PI-LL mismatch • T1-pelvic angle (T1PA) • Modification de Schwab-SRS • Grades d'ostéotomie (Schwab 1-6) • PSO (pedicle subtraction osteotomy) • VCR (vertebral column resection) • Fusion long segment • Syndrome de translation L4 • Claudication neurogène • Canal lombaire étroit dégénératif • Ostéoporose et rachis • DEXA • Ciment vertébral (augmentation pédiculaire) • Flat back syndrome • Adjacent Level Disease</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Distinguer</strong> les différents types de scoliose de l'adulte et leurs mécanismes respectifs (Bloom : Analyse)</li>
+<li><strong>Évaluer</strong> le déséquilibre sagittal avec les paramètres SRS-Schwab et calculer le PI-LL mismatch (Bloom : Application)</li>
+<li><strong>Sélectionner</strong> la stratégie chirurgicale selon la sévérité de la déformation (décompression seule, fusion courte, fusion longue avec ostéotomies) (Bloom : Évaluation)</li>
+<li><strong>Décrire</strong> les complications spécifiques de la déformité rachidienne adulte et de sa chirurgie (PJK, pseudarthrose, adjacent level disease) (Bloom : Connaissance)</li>
+<li><strong>Planifier</strong> la prise en charge non chirurgicale optimale des patients avec scoliose adulte (Bloom : Application)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La scoliose de novo de l'adulte est :<br />
+- A. Une récidive de SIA adulte<br />
+- <strong>B. Une scoliose dégénérative apparaissant chez un adulte sans antécédent de scoliose, secondaire à la dégénérescence discale asymétrique</strong><br />
+- C. Une scoliose liée à l'ostéoporose<br />
+- D. Identique à la scoliose juvénile</p>
+<p><strong>Q2.</strong> Le SVA (sagittal vertical axis) normal est :<br />
+- A. Inférieur à 20 mm en arrière du plateau sacré<br />
+- <strong>B. Inférieur à 50 mm en avant du plateau sacré</strong> (acceptable &lt; 40 mm)<br />
+- C. Nul<br />
+- D. Supérieur à 100 mm</p>
+<p><strong>Q3.</strong> Le PI-LL mismatch normal est :<br />
+- A. PI = LL exactement<br />
+- B. PI &gt; LL + 20°<br />
+- <strong>C. PI = LL ± 10° (mismatch acceptable &lt; 10°)</strong><br />
+- D. LL &gt; PI de 20°</p>
+<p><strong>Q4.</strong> La PSO (pedicle subtraction osteotomy) permet une correction sagittale de :<br />
+- A. 5–10° par niveau<br />
+- B. 10–15° par niveau<br />
+- <strong>C. 25–35° par niveau</strong><br />
+- D. &gt; 50° par niveau</p>
+<p><strong>Q5.</strong> Le taux de complications majeures d'une chirurgie de déformité rachidienne adulte est :<br />
+- A. &lt; 1 %<br />
+- B. 2–5 %<br />
+- <strong>C. 15–30 % (chirurgie lourde, patients comorbides)</strong><br />
+- D. &gt; 50 %</p>
+<hr />
+<h2 id="101-classification-des-scolioses-de-ladulte">10.1 Classification des scolioses de l'adulte</h2>
+<blockquote>
+<p>[MEDIA: 📊 M10-S01-001 — Infographie classification scoliose adulte]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Définition</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type 1 — SIA persistante</strong></td>
+<td>Scoliose idiopathique non traitée à l'adolescence, persistant à l'âge adulte</td>
+<td>Déformation établie + vieillissement</td>
+</tr>
+<tr>
+<td><strong>Type 2 — De novo (dégénérative)</strong></td>
+<td>Scoliose apparaissant chez un adulte sans antécédent</td>
+<td>Dégénérescence discale asymétrique, affaissement + rotation vertébrale</td>
+</tr>
+<tr>
+<td><strong>Type 3 — Secondaire</strong></td>
+<td>Secondaire à ostéoporose, fracture, tumeur, dégénérescence sur arthrite rhumatoïde</td>
+<td>Causeidentifiable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Épidémiologie</strong> :<br />
+- Prévalence adulte &gt; 60 ans : 35–68 % de toute déviation &gt; 10° (Schwab et al., 2005, <em>Spine</em>)<br />
+- Symptomatique nécessitant prise en charge : 8–12 % des &gt; 60 ans (Schwab et al., 2005)<br />
+- <strong>Tendance croissante</strong> avec le vieillissement de la population</p>
+<hr />
+<h2 id="102-presentation-clinique">10.2 Présentation clinique</h2>
+<h3 id="1021-tableau-clinique">10.2.1 Tableau clinique</h3>
+<p>Le tableau clinique de la scoliose adulte combine :</p>
+<table>
+<thead>
+<tr>
+<th>Symptôme</th>
+<th>Prévalence</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Douleur axiale lombaire</strong></td>
+<td>90 %</td>
+<td>Dégénérescence facettaire, discopathie</td>
+</tr>
+<tr>
+<td><strong>Douleur radiculaire</strong></td>
+<td>60 % (Aebi, 2005, <em>Eur Spine J</em>)</td>
+<td>Sténose foraminale (côté concave)</td>
+</tr>
+<tr>
+<td><strong>Claudication neurogène</strong></td>
+<td>30–40 %</td>
+<td>Canal central sténosé (L3-L4, L4-L5)</td>
+</tr>
+<tr>
+<td><strong>Déséquilibre en avant</strong></td>
+<td>40 % (Aebi, 2005)</td>
+<td>Perte de la lordose → anté-position du centre de masse</td>
+</tr>
+<tr>
+<td><strong>Fatigue musculaire</strong></td>
+<td>+ fréquent</td>
+<td>Contracture compensatrice chronique</td>
+</tr>
+<tr>
+<td><strong>Limitation de marche</strong></td>
+<td>Variable</td>
+<td>Claudication + douleur</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1022-examen-clinique-specifique-a-ladulte">10.2.2 Examen clinique spécifique à l'adulte</h3>
+<ul>
+<li><strong>Fil à plomb</strong> de C7 : SVA en cm depuis coin supéro-antérieur S1</li>
+<li><strong>Angle coronal de C7</strong> par rapport au plateau de S1</li>
+<li><strong>Test d'inclinaison</strong> (forward bend test)</li>
+<li><strong>Évaluation de la démarche</strong> : penchée en avant, genoux fléchis (signe de compensation)</li>
+<li><strong>Test de Romberg</strong> + valeur proprioceptive</li>
+<li><strong>Mesure de la distance oreille-épaule</strong> (décompensation coronale)</li>
+<li><strong>Score HRQOL</strong> : SRS-22, Oswestry Disability Index (ODI), SF-36</li>
+</ul>
+<hr />
+<h2 id="103-classification-srs-schwab">10.3 Classification SRS-Schwab</h2>
+<blockquote>
+<p>[MEDIA: 📊 M10-S03-001 — Tableau complet SRS-Schwab]</p>
+</blockquote>
+<p>La <strong>classification SRS-Schwab</strong> (Schwab et al., 2012, <em>Spine</em>) est la référence pour la déformité rachidienne adulte. Elle intègre les paramètres radiologiques <strong>coronaux ET sagittaux</strong>.</p>
+<h3 id="1031-type-de-courbure-composante-coronale">10.3.1 Type de courbure (composante coronale)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Cobb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T</strong></td>
+<td>Thoracique seul</td>
+<td>≥ 30°</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Thoracolombaire/Lombaire seul</td>
+<td>≥ 30°</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Double courbure</td>
+<td>TH + L ≥ 30° chacune</td>
+</tr>
+<tr>
+<td><strong>N</strong></td>
+<td>Scoliose légère</td>
+<td>&lt; 30°</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1032-modificateurs-sagittaux-3-parametres-chacun-0">10.3.2 Modificateurs sagittaux (3 paramètres, chacun 0/+/++)</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Grade 0 (normal)</th>
+<th>Grade + (modéré)</th>
+<th>Grade ++ (sévère)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PI-LL mismatch</strong></td>
+<td>&lt; 10°</td>
+<td>10–20°</td>
+<td>&gt; 20°</td>
+</tr>
+<tr>
+<td><strong>SVA (sagittal vertical axis)</strong></td>
+<td>&lt; 40 mm</td>
+<td>40–95 mm</td>
+<td>&gt; 95 mm</td>
+</tr>
+<tr>
+<td><strong>T1-pelvic angle (T1PA)</strong></td>
+<td>&lt; 14°</td>
+<td>14–22°</td>
+<td>&gt; 22°</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>💡 Corrélation clinique</strong> : Les grades ++ sont associés à une qualité de vie très altérée (ODI &gt; 40, SRS-22 &lt; 3,5) et à une indication chirurgicale plus forte.</p>
+</blockquote>
+<h3 id="1033-pi-ll-mismatch-la-cle-de-lequilibre-sagittal">10.3.3 PI-LL mismatch — La clé de l'équilibre sagittal</h3>
+<p>$$\text{PI-LL mismatch} = \text{Pelvic Incidence} - \text{Lumbar Lordosis}$$</p>
+<ul>
+<li><strong>Normal</strong> : PI − LL &lt; 10°</li>
+<li><strong>Signification</strong> : Le PI est une constante anatomique (déterminé par la morphologie du bassin). La lordose lombaire devrait "compenser" le PI.</li>
+<li><strong>Mismatch élevé</strong> : La lordose est insuffisante pour le PI du patient → déséquilibre sagittal → rétroversion pelvienne compensatrice (PT élevé) → fléchissement des genoux → douleur et fatigue musculaire</li>
+</ul>
+<p><strong>Exemple M. Bernard</strong> :<br />
+- PI = 58°, Lordose LL = 30° → Mismatch = 28° (grade ++)<br />
+- SVA = 12 cm (&gt; 95 mm = grade ++)<br />
+- → Indication chirurgicale forte (si acceptable sur le plan médical)</p>
+<hr />
+<h2 id="104-imagerie-specifique-de-la-scoliose-adulte">10.4 Imagerie spécifique de la scoliose adulte</h2>
+<h3 id="1041-radio-panoramique-corps-entier-debout-eos">10.4.1 Radio panoramique corps entier debout (EOS)</h3>
+<ul>
+<li><strong>Paramètres à mesurer</strong> : SVA, PI, PT, SS, LL, cyphose thoracique, T1PA, Cobb coronal</li>
+<li><strong>Indispensable</strong> :  la radio panoramique corps entier en charge (pas en décubitus) — posture réelle du patient</li>
+</ul>
+<h3 id="1042-irm-lombaire">10.4.2 IRM lombaire</h3>
+<ul>
+<li><strong>En coupes</strong> axiales et sagittales, coupes sur les zones de compression</li>
+<li>Évaluation des sténoses foraminales et canalaires</li>
+<li>Hernies discales associées</li>
+<li>Qualité osseuse (<strong>signal vertébral</strong>) : suspecter une ostéoporose si signal bas</li>
+</ul>
+<h3 id="1043-scanner">10.4.3 Scanner</h3>
+<ul>
+<li>Planification des vis pédiculaires (morphologie pédiculaire, anomalies)</li>
+<li>Qualité osseuse (mesure de la densité trabéculaire HU = Hounsfield Units)</li>
+<li>Si HU &lt; 110 → risque d'ostéoporose → DEXA obligatoire + traitement préalable</li>
+</ul>
+<h3 id="1044-dexa-et-qualite-osseuse">10.4.4 DEXA et qualité osseuse</h3>
+<table>
+<thead>
+<tr>
+<th>T-score</th>
+<th>Interprétation</th>
+<th>Impact chirurgical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; –1</td>
+<td>Normal</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>–1 à –2,5</td>
+<td>Ostéopénie</td>
+<td>Renforcement ancrage (cement augmentation, crochet crosslinks)</td>
+</tr>
+<tr>
+<td>&lt; –2,5</td>
+<td>Ostéoporose</td>
+<td>Retarder si possible, traitement anti-ostéoporotique préop, augmentation pédiculaire au ciment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="105-traitement-conservateur">10.5 Traitement conservateur</h2>
+<p><strong>Indication</strong> : Scoliose adulte avec douleur modérée, déséquilibre sagittal modéré, comorbidités rendant la chirurgie risquée.</p>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Indications</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kinésithérapie</strong> (renforcement musculaire axial, stabilisation)</td>
+<td>Tout patient douloureux</td>
+<td>Programme 6–12 semaines</td>
+</tr>
+<tr>
+<td><strong>AINS / antalgiques</strong></td>
+<td>Douleur aiguë/subaiguë</td>
+<td>Courts cycles</td>
+</tr>
+<tr>
+<td><strong>Infiltrations épidurales</strong></td>
+<td>Composante radiculaire</td>
+<td>1–3 injections</td>
+</tr>
+<tr>
+<td><strong>Infiltrations facettaires</strong></td>
+<td>Douleur axiale nociceptive</td>
+<td>1–3 injections</td>
+</tr>
+<tr>
+<td><strong>Orthèse corset</strong></td>
+<td>Rarement efficace en traitement de fond ; utile en phase aiguë</td>
+<td>Ponctuel</td>
+</tr>
+<tr>
+<td><strong>Activité physique adaptée</strong></td>
+<td>Tous</td>
+<td>Permanent</td>
+</tr>
+<tr>
+<td><strong>Traitement de l'ostéoporose</strong></td>
+<td>T-score &lt; –2,5</td>
+<td>Bisphosphonates/dénosumab/tériparatide</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⚠️ Le corset ne corrige pas et ne stabilise pas la scoliose adulte de façon durable. Il peut soulager transitoirement.</strong></p>
+</blockquote>
+<hr />
+<h2 id="106-traitement-chirurgical-indications">10.6 Traitement chirurgical — Indications</h2>
+<p><strong>Indications chirurgicales</strong> (consensus SRS) :<br />
+- <strong>Douleur invalidante réfractaire</strong> (ODI &gt; 40) ayant résisté 6 mois de traitement conservateur bien conduit<br />
+- <strong>Déficit neurologique progressif</strong> (parésie, trouble sphinctérien)<br />
+- <strong>Déséquilibre sagittal sévère</strong> (SVA &gt; 95 mm, PI-LL mismatch &gt; 20°) avec handicap fonctionnel<br />
+- <strong>Progression rapide</strong> de la déformation (&gt; 10°/an)<br />
+- <strong>Instabilité documentée</strong> (spondylolisthésis dégénératif évolutif)</p>
+<hr />
+<h2 id="107-techniques-chirurgicales">10.7 Techniques chirurgicales</h2>
+<div class="vertex-media video">
+<strong>🎬 M10-S07-001</strong><br/>
+<em>Animation ostéotomies Schwab</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 M10-S07-002</strong><br/>
+<em>Schéma comparatif PSO vs VCR</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="1071-classification-des-osteotomies-rachidiennes-schwab-et-al-2014-j-neurosurg-spine">10.7.1 Classification des ostéotomies rachidiennes (Schwab et al., 2014, <em>J Neurosurg Spine</em>)</h3>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Nom</th>
+<th>Résection</th>
+<th>Correction potentielle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Facettectomie asymétrique</td>
+<td>Facette articulaire</td>
+<td>5–10°</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Ponte / SPO</td>
+<td>Facette + ligament interépineux</td>
+<td>10–15°</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>PCO (Posterior Column Osteotomy)</td>
+<td>Similaire Ponte, terme utilisé pour les courbures rigides</td>
+<td>5–15°</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>PSO (Pedicle Subtraction Osteotomy)</td>
+<td>Pédicule + coin vertébral postérieur + partie du corps</td>
+<td><strong>25–35°</strong> par niveau</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>VCR partiel</td>
+<td>Corps vertébral partiel</td>
+<td>30–40°</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>VCR complet (Vertebral Column Resection)</td>
+<td>Corps vertébral entier + côtes + disques adjacents</td>
+<td><strong>40–70°</strong> par niveau</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PSO (Grade 4) — Technique de référence pour le déséquilibre sagittal sévère</strong> :<br />
+1. Résection transpédiculaire d'une vertèbre (L2 ou L3 habituellement)<br />
+2. Création d'un défect postérieur en coin<br />
+3. Fermeture de l'ostéotomie par compression = fermeture de coin en avant<br />
+4. Gain moyen : <strong>30°</strong> de lordose sur 1 niveau<br />
+5. Durée opératoire : 6–8h, perte sanguine : 3–5 L en moyenne</p>
+<blockquote>
+<p><strong>⚠️ La PSO</strong> est la procédure la plus hémorragique en chirurgie élective du rachis. Cell-saver obligatoire + planification des transfusions.</p>
+</blockquote>
+<h3 id="1072-strategies-en-fonction-du-tableau-clinique">10.7.2 Stratégies en fonction du tableau clinique</h3>
+<table>
+<thead>
+<tr>
+<th>Tableau</th>
+<th>Stratégie chirurgicale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sténose pure sans déformité majeure</strong></td>
+<td>Décompression seule (laminotomie)</td>
+</tr>
+<tr>
+<td><strong>Sténose + scoliose légère stable</strong></td>
+<td>Décompression + fusion courte (2–3 niveaux)</td>
+</tr>
+<tr>
+<td><strong>Scoliose dégénérative + déséquilibre modéré</strong></td>
+<td>Fusion long segment (L1–S1 ou T10–S1) + ostéotomies Pont</td>
+</tr>
+<tr>
+<td><strong>Déséquilibre sagittal sévère (SVA &gt; 10 cm)</strong></td>
+<td>Fusion long segment + PSO (1 ou 2 niveaux)</td>
+</tr>
+<tr>
+<td><strong>Déformité majeure ++ avec cyphose sévère</strong></td>
+<td>VCR ± traction halo préopératoire</td>
+</tr>
+<tr>
+<td><strong>Patient très fragile (comorbidités ++)</strong></td>
+<td>Décompression seule palliative</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1073-osteoporose-et-ancrage-chirurgical">10.7.3 Ostéoporose et ancrage chirurgical</h3>
+<table>
+<thead>
+<tr>
+<th>Problème</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vis pédiculaire qui tire (pull-out)</td>
+<td><strong>Augmentation au ciment (PMMA ou Ca-P)</strong> dans le pédicule</td>
+</tr>
+<tr>
+<td>Ancrage sacré insuffisant</td>
+<td>Vis iliaques (S2-alar-iliac)</td>
+</tr>
+<tr>
+<td>PJK ostéoporotique</td>
+<td>Bandes sous-laminaires proxima + ancrage T2-T4</td>
+</tr>
+<tr>
+<td>Fracture vertébrale postop</td>
+<td>Correction chirurgicale révision</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="108-complications-specifiques-de-la-chirurgie-adulte">10.8 Complications spécifiques de la chirurgie adulte</h2>
+<blockquote>
+<p>[MEDIA: 📊 M10-S08-001 — Infographie complications et prévention]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Fréquence</th>
+<th>Gravité</th>
+<th>Prévention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PJK — Proximal Junctional Kyphosis</strong></td>
+<td>20–40 % (Kim et al., 2008, <em>Spine</em>)</td>
+<td>Modérée–Sévère</td>
+<td>Bandes proximales, choix niveau proximal</td>
+</tr>
+<tr>
+<td><strong>DJK — Distal Junctional Kyphosis</strong></td>
+<td>5–10 %</td>
+<td>Modérée</td>
+<td>Respect niveaux distaux</td>
+</tr>
+<tr>
+<td><strong>Pseudarthrose</strong></td>
+<td>5–15 %</td>
+<td>Variable</td>
+<td>Greffe abondante, non-fumeur, correction &lt; 80 %</td>
+</tr>
+<tr>
+<td><strong>Hématome épidural</strong></td>
+<td>1–2 %</td>
+<td>Urgent</td>
+<td>Drainage, hémostase</td>
+</tr>
+<tr>
+<td><strong>Infection profonde</strong></td>
+<td>2–5 % (Smith et al., 2011, <em>Spine</em>) (vs 1–2 % pour SIA)</td>
+<td>Grave</td>
+<td>Antibioprophylaxie + prévention osseuse</td>
+</tr>
+<tr>
+<td><strong>Déficit neurologique</strong></td>
+<td>1–5 %</td>
+<td>Grave</td>
+<td>Monitoring neurophysio</td>
+</tr>
+<tr>
+<td><strong>Adjacent level disease (ALD)</strong></td>
+<td>20–30 % à 10 ans (Kim et al., 2008)</td>
+<td>Variable</td>
+<td>Limiter la fusion au nécessaire</td>
+</tr>
+<tr>
+<td><strong>Décompensation coronale</strong></td>
+<td>5–10 %</td>
+<td>Variable</td>
+<td>Respecter l'équilibre coronal</td>
+</tr>
+<tr>
+<td><strong>Insuffisance rénale/hémorragie</strong></td>
+<td>2–5% (PSO)</td>
+<td>Urgent</td>
+<td>Cell-saver, transfusion planifiée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1081-syndrome-du-dos-plat-flat-back-syndrome">10.8.1 Syndrome du dos plat (Flat Back Syndrome)</h3>
+<p><strong>Définition</strong> : Perte de la lordose lombaire iatrogène → patient incapable de se tenir debout + douleurs lombaires sévères.</p>
+<p><strong>Mécanisme</strong> : Fusion distraction (Harrington) sans restaurer la lordose → LL insuffisante → PI-LL mismatch élevé.</p>
+<p><strong>Traitement</strong> : Révision par PSO ou ostéotomies en extension pour restaurer la lordose.</p>
+<blockquote>
+<p>**</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Leçon historique</strong> : Le syndrome du dos plat est la principale complication à long terme des arthrodèses au distracteur de Harrington (1950–1980) → a motivé le développement de l'instrumentation segmentaire prenant en compte le sagittal.</div>
+
+<hr />
+<h2 id="109-cas-clinique-m-bernard-suite">10.9 Cas clinique — M. Bernard (suite)</h2>
+<blockquote>
+<p><strong>Données</strong> : 64 ans, douleur EVA 7/10, ODI 52/100, marche &lt; 200 m, L1-L5 Cobb 38°, PI = 58°, LL = 30° (mismatch 28°), SVA = 12 cm, T1PA = 26°, sténose L3-L4 et L4-L5, listésis L4 grade 1, T-score = –2,8.</p>
+</blockquote>
+<p><strong>Analyse SRS-Schwab</strong> :<br />
+- Type <strong>L</strong> (lombaire Cobb ≥ 30°)<br />
+- PI-LL mismatch : 28° → <strong>grade ++</strong><br />
+- SVA : 12 cm → <strong>grade ++</strong><br />
+- T1PA : 26° → <strong>grade ++</strong></p>
+<p><strong>Prise en charge préopératoire</strong> :<br />
+1. DEXA → T-score –2,8 → <strong>ostéoporose</strong> → tériparatide 20 µg/j pendant 6 mois minimum<br />
+2. Optimiser les comorbidités (HTA, DT2)<br />
+3. Rééducation (musculation core, marche) pour améliorer l'état général<br />
+4. Arrêt tabac (si fumeur) — réduit le risque de pseudarthrose de 50 %</p>
+<p><strong>Option chirurgicale</strong> (discussion multidisciplinaire) :<br />
+- Fusion longue T10–Sacre + vis iliaques<br />
+- PSO en L3 (pour corriger PI-LL mismatch)<br />
+- Augmentation pédiculaire au ciment (ostéoporose)<br />
+- Décompression L3-L4 et L4-L5 intégrée<br />
+- Risque chirurgical estimé (morbidité majeure) : <strong>25–30 %</strong> — à discuter avec le patient et sa famille</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La scoliose de l'adulte est <strong>fréquente</strong> (35–68 % ≥ 60 ans) mais très minoritairement symptomatique.</p>
+<p>📌 <strong>2.</strong> L'équilibre sagittal est le facteur pronostique <strong>N°1</strong> de la qualité de vie — évaluer systématiquement PI-LL, SVA et T1PA.</p>
+<p>📌 <strong>3.</strong> Le <strong>PI-LL mismatch &gt; 20°</strong> (grade ++) est une indication chirurgicale forte si le patient est suffisamment en forme.</p>
+<p>📌 <strong>4.</strong> L'<strong>ostéoporose</strong> doit être dépistée (DEXA) et traitée <strong>avant</strong> toute chirurgie de déformité chez l'adulte de plus de 50 ans.</p>
+<p>📌 <strong>5.</strong> La <strong>PSO</strong> (Schwab grade 4) corrige 25–35° par niveau et est la technique de référence pour le déséquilibre sagittal sévère — mais lourde (hémorragie, durée).</p>
+<p>📌 <strong>6.</strong> Le <strong>taux de complications</strong> dans la déformité adulte est 3–5× plus élevé que dans la SIA — la décision chirurgicale doit être mûrement pesée.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-de-fin-de-module-15-questions">Quiz de fin de module — 15 questions</h2>
+<p><strong>Q1. 🥉</strong> La scoliose de novo (dégénérative) de l'adulte se distingue de la SIA persistante par :<br />
+- A. Sa sévérité plus grande<br />
+- <strong>B. L'absence d'antécédent de scoliose dans l'enfance — elle est secondaire à la dégénérescence discale asymétrique</strong><br />
+- C. Sa localisation systématiquement lombaire gauche<br />
+- D. Son caractère non douloureux</p>
+<p><strong>Q2. 🥉</strong> Le SVA (sagittal vertical axis) est considéré sévèrement augmenté si supérieur à :<br />
+- A. 20 mm<br />
+- B. 50 mm<br />
+- <strong>C. 95 mm</strong><br />
+- D. 150 mm</p>
+<p><strong>Q3. 🥉</strong> La PSO (pedicle subtraction osteotomy) appartient au grade Schwab :<br />
+- A. 1<br />
+- B. 2<br />
+- <strong>C. 4</strong><br />
+- D. 6</p>
+<p><strong>Q4. 🥉</strong> Le taux de complications majeures en chirurgie de déformité adulte est estimé entre :<br />
+- A. 1–5 %<br />
+- B. 5–10 %<br />
+- <strong>C. 15–30 %</strong><br />
+- D. 50–60 %</p>
+<p><strong>Q5. 🥈</strong> Chez un patient avec PI = 65° et lordose lombaire = 35°, le PI-LL mismatch est de :<br />
+- A. 30° (grade ++)<br />
+- B. 20° (grade +)<br />
+- <strong>C. 30° (grade ++)</strong><br />
+- D. 10° (grade +)</p>
+<p><em>Feedback : 65 - 35 = 30° → grade ++ (&gt; 20°).</em></p>
+<p><strong>Q6. 🥈</strong> La modification SRS-Schwab comporte quel nombre de modificateurs sagittaux ?<br />
+- A. 1<br />
+- B. 2<br />
+- <strong>C. 3 (PI-LL, SVA, T1PA)</strong><br />
+- D. 5</p>
+<p><strong>Q7. 🥈</strong> En cas d'ostéoporose (T-score &lt; –2,5), quelle adaptation chirurgicale est recommandée pour les vis pédiculaires ?<br />
+- A. Vis de diamètre réduit<br />
+- <strong>B. Augmentation pédiculaire au ciment (PMMA ou phosphate de calcium)</strong><br />
+- C. Crochet laminaire exclusivement<br />
+- D. Tiges plus fines</p>
+<p><strong>Q8. 🥈</strong> Le syndrome du dos plat (flat back) est principalement une complication iatrogène de :<br />
+- A. L'instrumentation Cotrel-Dubousset<br />
+- <strong>B. L'instrumentation au distracteur de Harrington (historique)</strong><br />
+- C. La PSO mal planifiée<br />
+- D. La TLIF</p>
+<p><strong>Q9. 🥈</strong> Quel score évalue la qualité de vie fonctionnelle spécifiquement dans la déformité rachidienne adulte ?<br />
+- A. SRS-22 seul<br />
+- <strong>B. ODI (Oswestry Disability Index) + SRS-22 associés</strong><br />
+- C. SF-36 seul<br />
+- D. NRS pain seul</p>
+<p><strong>Q10. 🥇</strong> M. Bernard a un PI-LL mismatch de 30°. Pour corriger ce mismatch par PSO, combien de PSO faut-il (correction moyenne 30°/PSO) ?<br />
+- A. 2 PSO<br />
+- <strong>B. 1 PSO (correction cible : mismatch → &lt; 10°, gain de ~20° suffisant sur la lordose)</strong><br />
+- C. 3 PSO<br />
+- D. Pontés osteotomies suffisent</p>
+<p><strong>Q11. 🥇</strong> La VCR (vertebral column resection) est indiquée pour :<br />
+- A. Toute scoliose adulte &gt; 50°<br />
+- <strong>B. Les déformités angulaires rigides sévères nécessitant une correction &gt; 45° sur un niveau (cyphose angulaire post-fracture, malformation grave)</strong><br />
+- C. La scoliose dégénérative standard<br />
+- D. L'ostéoporose avec fracture en coin</p>
+<p><strong>Q12. 🥇</strong> La complication qui survient le plus souvent à 10 ans de recul après fusion longue pour scoliose adulte est :<br />
+- A. Infection tardive<br />
+- <strong>B. Adjacent level disease (dégénérescence accélérée aux niveaux adjacents à la fusion)</strong><br />
+- C. VCR iatrogène<br />
+- D. Pseudarthrose</p>
+<p><strong>Q13. 🥇</strong> Une patiente de 72 ans, DEXA T-score = –3,1, nécessite une fusion T10-sacre + PSO. Quel traitement médical devez-vous initier d'abord ?<br />
+- A. Calcium seul<br />
+- B. Bisphosphonate IV (acide zolédronique) 1 semaine avant la chirurgie<br />
+- <strong>C. Tériparatide 20 µg/j pendant au moins 3–6 mois pour augmenter la masse osseuse avant la chirurgie élective</strong><br />
+- D. DEXA de contrôle dans 2 ans</p>
+<p><strong>Q14. 💎</strong> Un patient est opéré d'une scoliose dégénérative L par fusion T12-S1 + PSO en L3. 8 semaines post-op, il présente une douleur dorsale aiguë au niveau T12. Radio : fracture-tassement de T12, angle de cyphose junctionnelle +18° par rapport au préopératoire. Diagnostic et prise en charge ?<br />
+- <strong>A. PJK sévère avec fracture junctionnelle ostéoporotique → extension de la fusion proximal + vertebroplastie T12 ± revision</strong><br />
+- B. PJK bénin — surveiller<br />
+- C. Fracture de fatigue de l'implant — changer les tiges<br />
+- D. Discithe infectieuse — antibiotiques</p>
+<p><strong>Q15. 💎</strong> Lors d'une PSO en L2, vous constatez une perte des PEM à 70 % d'amplitude bilatéralement lors de la fermeture de l'ostéotomie. Le monitoring ne récupère pas après 10 min. Quelle est votre décision ?<br />
+- A. Continuer la fermeture prudemment<br />
+- <strong>B. Rouvrir partiellement l'ostéotomie pour réduire la compression médullaire, corriger les paramètres systémiques, réaliser un wake-up test si non résolution</strong><br />
+- C. Injecter méthylprednisolone IV en urgence uniquement<br />
+- D. Terminer et traiter une éventuelle complication neurologique en postopératoire</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Schwab F et al.</strong> SRS-Schwab Adult Spinal Deformity Classification: a validation study. <em>Spine</em>. 2012;37:1077–1082</li>
+<li><strong>Schwab F et al.</strong> Radiographical spinopelvic parameters and disability in the setting of adult spinal deformity: a prospective multicenter analysis. <em>Spine</em>. 2005;30:E682–E688</li>
+<li><strong>Schwab F et al.</strong> The comprehensive anatomical spinal osteotomy classification. <em>Neurosurgery</em>. 2014;74:112–120</li>
+<li><strong>Aebi M.</strong> The adult scoliosis. <em>Eur Spine J</em>. 2005;14:925–948</li>
+<li><strong>Kim YJ et al.</strong> Proximal junctional kyphosis in adult spinal deformity after segmental posterior spinal instrumentation and fusion. <em>Spine</em>. 2008;33:2179–2184</li>
+<li><strong>Smith JS et al.</strong> Rates of infection after spine surgery based on 108,419 procedures: a report from the Scoliosis Research Society Morbidity and Mortality Committee. <em>Spine</em>. 2011;36:556–563</li>
+<li><strong>Bridwell KH et al.</strong> PSO for fixed sagittal imbalance. <em>Spine</em>. 2003;28:2093</li>
+<li><strong>Glassman SD et al.</strong> SVA and health status. <em>Spine</em>. 2005;30:1399</li>
+<li><strong>Terran J et al.</strong> SRS-Schwab outcomes. <em>Neurosurgery</em>. 2013;73:E559</li>
+<li><strong>Ploumis A et al.</strong> Cement augmentation. <em>JBJS Am</em>. 2011</li>
+<li><strong>ISSG (International Spine Study Group):</strong> Adult deformity guidelines</li>
+</ul>
+</div>

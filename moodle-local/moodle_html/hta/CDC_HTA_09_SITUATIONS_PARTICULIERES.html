@@ -1,0 +1,406 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-09-situations-particulieres">❤️ PARTIE 09 — SITUATIONS PARTICULIÈRES</h1>
+<h2 id="grossesse-sujet-age-diabete-insuffisance-renale-chronique">Grossesse, sujet âgé, diabète, insuffisance rénale chronique</h2>
+<hr />
+<h1 id="module-33-hta-et-grossesse">MODULE 33 — HTA ET GROSSESSE</h1>
+<h2 id="331-classification-des-troubles-hypertensifs-de-la-grossesse">33.1 Classification des troubles hypertensifs de la grossesse</h2>
+<h3 id="3311-definitions">33.1.1 Définitions</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA33-S01-001 — TABLEAU : classification des HTA gravidiques selon ISSHP 2022]</p>
+</blockquote>
+<p><strong>Classification</strong> (adapté de ISSHP 2022 et ESC/ESH 2023) :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Définition</th>
+<th>Prévalence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTA chronique</strong></td>
+<td>HTA pré-existante ou diagnostiquée &lt; 20 SA</td>
+<td>1-5 %</td>
+</tr>
+<tr>
+<td><strong>HTA gestationnelle</strong></td>
+<td>HTA apparue &gt; 20 SA, sans protéinurie, résolution &lt; 12 semaines post-partum</td>
+<td>6-7 %</td>
+</tr>
+<tr>
+<td><strong>Pré-éclampsie</strong></td>
+<td>HTA &gt; 20 SA + protéinurie (RAC ≥ 30 mg/mmol) ou dysfonction organe cible</td>
+<td>2-5 %</td>
+</tr>
+<tr>
+<td><strong>Pré-éclampsie surajoutée</strong></td>
+<td>HTA chronique + apparition protéinurie ou aggravation brutale</td>
+<td>25 % des HTA chroniques</td>
+</tr>
+<tr>
+<td><strong>Éclampsie</strong></td>
+<td>Pré-éclampsie + convulsions généralisées</td>
+<td>0,1 %</td>
+</tr>
+<tr>
+<td><strong>HELLP syndrome</strong></td>
+<td>Hémolyse + élévation enzymes hépatiques + thrombopénie</td>
+<td>0,5-0,9 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3312-pre-eclampsie">33.1.2 Pré-éclampsie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA33-S01-002 — ALGORITHME : dépistage et diagnostic de la pré-éclampsie — critères cliniques et biologiques]</p>
+</blockquote>
+<p><strong>Critères diagnostiques</strong> (adapté de ISSHP 2022) :<br />
+- PAS ≥ 140 et/ou PAD ≥ 90 mmHg après 20 SA<br />
+- <strong>ET</strong> protéinurie ≥ 300 mg/24h (ou RAC ≥ 30 mg/mmol)<br />
+- <strong>OU</strong> atteinte d'organe cible sans protéinurie :<br />
+  - Thrombopénie &lt; 150 000/mm³<br />
+  - Insuffisance rénale (créatinine &gt; 90 µmol/L)<br />
+  - Cytolyse hépatique (ALAT &gt; 2N)<br />
+  - Œdème pulmonaire<br />
+  - Troubles visuels ou neurologiques</p>
+<p><strong>Facteurs de risque</strong> :<br />
+- Antécédent de pré-éclampsie (RR × 7)<br />
+- Première grossesse (nulliparité)<br />
+- Grossesse multiple<br />
+- HTA chronique<br />
+- Diabète pré-gestationnel<br />
+- Néphropathie chronique<br />
+- Syndrome des antiphospholipides<br />
+- Obésité (IMC &gt; 30)<br />
+- Âge &gt; 40 ans</p>
+<p><strong>Prévention</strong> :<br />
+📋 <strong>RECOMMANDATION</strong> (adapté de ISSHP 2022) :</p>
+<blockquote>
+<p>Aspirine 100-150 mg/j au coucher, débutée entre 12 et 16 SA, poursuivie jusqu'à 36 SA, chez les patientes à haut risque (réduction du risque de pré-éclampsie précoce de 62 %, étude ASPRE 2017).</p>
+</blockquote>
+<h3 id="3313-traitement-de-lhta-pendant-la-grossesse">33.1.3 Traitement de l'HTA pendant la grossesse</h3>
+<p><strong>Seuils de traitement</strong> :<br />
+- HTA non sévère (140-159/90-109) : traitement si PA persistante ≥ 140/90 (CHIPS trial, 2015)<br />
+- HTA sévère (≥ 160/110) : traitement d'urgence immédiat</p>
+<p><strong>Antihypertenseurs autorisés</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Classe</th>
+<th>Dose</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Labétalol</strong></td>
+<td>α+β-bloquant</td>
+<td>200-800 mg/j</td>
+<td>1er choix (oral et IV)</td>
+</tr>
+<tr>
+<td><strong>Méthyldopa</strong> (Aldomet®)</td>
+<td>Antihypertenseur central</td>
+<td>750-3000 mg/j</td>
+<td>Sécurité fœtale bien établie</td>
+</tr>
+<tr>
+<td><strong>Nicardipine</strong></td>
+<td>ICC DHP</td>
+<td>60-120 mg/j</td>
+<td>2e ligne (oral et IV)</td>
+</tr>
+<tr>
+<td><strong>Nifédipine LP</strong></td>
+<td>ICC DHP</td>
+<td>30-60 mg/j</td>
+<td>Alternative, forme LP uniquement</td>
+</tr>
+</tbody>
+</table>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p><strong>Médicaments FORMELLEMENT CONTRE-INDIQUÉS pendant la grossesse</strong> :<br />
+- IEC (tous) : fœtotoxicité (oligoamnios, anurie fœtale, malformations)<br />
+- ARA2 (tous) : mêmes risques que les IEC<br />
+- Inhibiteurs directs de la rénine (aliskirène)<br />
+- Anti-aldostérone (spironolactone) : effet anti-androgénique<br />
+- Aténolol : RCIU<br />
+- Nitroprussiate : toxicité cyanure fœtale</p>
+</blockquote>
+<h3 id="3314-eclampsie-traitement">33.1.4 Éclampsie — traitement</h3>
+<ul>
+<li><strong>Sulfate de magnésium (MgSO4)</strong> : traitement de 1ère intention des convulsions éclamptiques ET prévention chez la pré-éclampsie sévère (étude MAGPIE, 2002)</li>
+<li>Dose : bolus 4 g IV en 20 min, puis 1 g/h pendant 24h</li>
+<li>Surveillance : réflexes ostéo-tendineux, fréquence respiratoire, diurèse, magnésémie</li>
+<li>Extraction fœtale selon le terme et la sévérité</li>
+</ul>
+<hr />
+<h1 id="module-34-hta-du-sujet-age">MODULE 34 — HTA DU SUJET ÂGÉ</h1>
+<h2 id="341-particularites-physiopathologiques">34.1 Particularités physiopathologiques</h2>
+<h3 id="3411-modifications-liees-a-lage">34.1.1 Modifications liées à l'âge</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA34-S01-001 — SCHÉMA : modifications cardiovasculaires liées à l'âge — rigidité artérielle, pression pulsée, profil hémodynamique]</p>
+</blockquote>
+<p><strong>Vieillissement artériel</strong> :<br />
+- Rigidité artérielle croissante (dégénérescence élastine, calcification média)<br />
+- Augmentation de la PAS avec l'âge<br />
+- Diminution de la PAD après 55-60 ans<br />
+- <strong>Pression pulsée augmentée</strong> (PP = PAS - PAD &gt; 60 mmHg) : marqueur de rigidité<br />
+- HTA systolique isolée prédominante (PAS ≥ 140, PAD &lt; 90)</p>
+<p><strong>Particularités hémodynamiques</strong> :<br />
+- Débit cardiaque maintenu ou diminué<br />
+- Résistances vasculaires augmentées<br />
+- Diminution de la compliance artérielle<br />
+- Altération du baroréflexe → variabilité tensionnelle accrue<br />
+- Risque d'hypotension orthostatique et post-prandiale</p>
+<h3 id="3412-cibles-tensionnelles">34.1.2 Cibles tensionnelles</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li><strong>65-79 ans</strong> : cible PAS 130-139 mmHg (si toléré)</li>
+<li><strong>≥ 80 ans</strong> : cible PAS 130-139 mmHg (si toléré, avec prudence)</li>
+<li>PAD : 70-80 mmHg, ne pas descendre en dessous de 70 mmHg</li>
+<li>Adapter selon la fragilité, la tolérance, l'hypotension orthostatique</li>
+<li>Rechercher systématiquement l'hypotension orthostatique</li>
+</ul>
+</blockquote>
+<h3 id="3413-choix-therapeutique">34.1.3 Choix thérapeutique</h3>
+<ul>
+<li><strong>1ère intention</strong> : ICC DHP (amlodipine) ou diurétique thiazidique-like (indapamide)</li>
+<li><strong>2e intention</strong> : IEC/ARA2 (surveillance rénale rapprochée)</li>
+<li><strong>Éviter</strong> : doses initiales élevées, α-bloquants seuls (hypotension orthostatique)</li>
+<li><strong>Commencer bas, aller lentement</strong> (start low, go slow)</li>
+<li>Éviter plus de 3 antihypertenseurs chez le sujet très âgé fragile</li>
+<li>Réévaluation régulière du rapport bénéfice/risque</li>
+</ul>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Chez le patient ≥ 80 ans fragile avec dépendance fonctionnelle, la décision de traiter doit être individualisée. L'étude HYVET (2008) a montré un bénéfice du traitement chez les octogénaires « en bonne santé », mais les patients les plus fragiles étaient exclus.</p>
+</blockquote>
+<hr />
+<h1 id="module-35-hta-et-diabete">MODULE 35 — HTA ET DIABÈTE</h1>
+<h2 id="351-association-hta-diabete">35.1 Association HTA-diabète</h2>
+<h3 id="3511-epidemiologie">35.1.1 Épidémiologie</h3>
+<ul>
+<li><strong>60-80 %</strong> des diabétiques de type 2 sont hypertendus</li>
+<li>L'association HTA + diabète multiplie le risque CV par <strong>4-8</strong></li>
+<li>Mécanismes communs : insulinorésistance, hyperactivité sympathique, dysfonction endothéliale, rétention hydrosodée</li>
+</ul>
+<h3 id="3512-cibles-et-traitement">35.1.2 Cibles et traitement</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023 et ADA 2024) :</p>
+<blockquote>
+<ul>
+<li>Cible : <strong>PAS 120-130 mmHg</strong>, PAD 70-80 mmHg</li>
+<li><strong>1ère intention</strong> : IEC ou ARA2 (néphroprotection, réduction microalbuminurie)</li>
+<li><strong>2e ligne</strong> : + ICC DHP ou diurétique thiazidique-like</li>
+<li><strong>iSGLT2</strong> (si DFG ≥ 20 mL/min) : bénéfice rénal ET cardiaque démontré, effet antihypertenseur modéré (-3 à -5 mmHg PAS)</li>
+<li><strong>Finérénone</strong> si diabète + IRC + albuminurie (FIDELIO/FIGARO)</li>
+<li>Surveillance rénale rapprochée (créatinine, K+, RAC tous les 3-6 mois)</li>
+</ul>
+</blockquote>
+<h3 id="3513-nephropathie-diabetique">35.1.3 Néphropathie diabétique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA35-S01-001 — ALGORITHME : prise en charge de la néphropathie diabétique hypertensive — bloc SRAA + iSGLT2 + finérénone]</p>
+</blockquote>
+<p><strong>Stratégie néphroprotectrice optimale</strong> :<br />
+1. <strong>IEC ou ARA2</strong> à dose maximale tolérée<br />
+2. <strong>+ iSGLT2</strong> (dapagliflozine ou empagliflozine)<br />
+3. <strong>+ Finérénone</strong> si albuminurie persistante<br />
+4. <strong>Cible PA &lt; 120-130 mmHg</strong>, protéinurie &lt; 0,5 g/j<br />
+5. Restriction sodée &lt; 5 g/j</p>
+<hr />
+<h1 id="module-36-hta-et-insuffisance-renale-chronique">MODULE 36 — HTA ET INSUFFISANCE RÉNALE CHRONIQUE</h1>
+<h2 id="361-particularites">36.1 Particularités</h2>
+<h3 id="3611-physiopathologie-de-lhta-dans-lirc">36.1.1 Physiopathologie de l'HTA dans l'IRC</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA36-S01-001 — SCHÉMA : cercle vicieux HTA-IRC — rétention hydrosodée, activation SRAA, rigidité artérielle]</p>
+</blockquote>
+<p><strong>Mécanismes</strong> :<br />
+- Rétention hydrosodée (principal mécanisme)<br />
+- Activation du SRAA<br />
+- Hyperactivité sympathique<br />
+- Dysfonction endothéliale<br />
+- Déficit en NO<br />
+- Rigidité artérielle accélérée<br />
+- Anémie (EPO, activation sympathique compensatrice)<br />
+- Hyperparathyroïdie secondaire (calcifications vasculaires)</p>
+<h3 id="3612-traitement">36.1.2 Traitement</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de KDIGO 2021 et ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li><strong>Cible PAS &lt; 120 mmHg</strong> (mesure standardisée, type SPRINT)</li>
+<li><strong>IEC ou ARA2 obligatoire</strong> si RAC ≥ 30 mg/g</li>
+<li><strong>Diurétique</strong> : thiazidique-like si DFG ≥ 30 ; diurétique de l'anse si DFG &lt; 30</li>
+<li><strong>iSGLT2</strong> si DFG ≥ 20 mL/min (DAPA-CKD, EMPA-KIDNEY)</li>
+<li>Restriction sodée stricte (&lt; 5 g/j)</li>
+<li><strong>Ne jamais associer IEC + ARA2</strong></li>
+<li>Surveillance K+ et créatinine à J7-J14 après chaque modification</li>
+</ul>
+</blockquote>
+<p><strong>Adaptation des diurétiques selon le DFG</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>DFG (mL/min)</th>
+<th>Diurétique recommandé</th>
+<th>Posologie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥ 30</td>
+<td>Indapamide ou chlorthalidone</td>
+<td>1,5-2,5 mg / 12,5-25 mg</td>
+</tr>
+<tr>
+<td>15-29</td>
+<td>Furosémide</td>
+<td>40-250 mg/j (doses élevées)</td>
+</tr>
+<tr>
+<td>&lt; 15 (dialyse)</td>
+<td>Furosémide (si diurèse résiduelle)</td>
+<td>250-500 mg/j</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > L'introduction d'un IEC/ARA2 chez un patient IRC peut provoquer une élévation de la créatinine de 20-30 %. Cette élévation est acceptable si elle reste < 30 % et se stabilise. Au-delà, suspecter une sténose bilatérale des artères rénales.</div>
+
+<hr />
+<h2 id="362-quiz-modules-33-36">36.2 Quiz Modules 33-36</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> Quels antihypertenseurs sont formellement contre-indiqués pendant la grossesse ?<br />
+- A) Labétalol et méthyldopa<br />
+- B) IEC et ARA2<br />
+- C) Nicardipine et nifédipine<br />
+- D) Furosémide et spironolactone</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Les IEC et ARA2 sont formellement contre-indiqués : risque de fœtotoxicité (oligoamnios, anurie fœtale, malformations rénales).</p>
+</blockquote>
+<p><strong>Q2.</strong> Quelle est la cible de PAS chez le sujet de 65-79 ans selon ESC/ESH 2023 ?<br />
+- A) &lt; 120 mmHg<br />
+- B) 130-139 mmHg<br />
+- C) 140-150 mmHg<br />
+- D) &lt; 160 mmHg</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — 130-139 mmHg si toléré, avec surveillance de l'hypotension orthostatique.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Quel traitement est de 1ère intention pour les convulsions éclamptiques ?<br />
+- A) Diazépam<br />
+- B) Phénytoïne<br />
+- C) Sulfate de magnésium<br />
+- D) Valproate</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Le MgSO4 est le traitement de référence de l'éclampsie (étude MAGPIE 2002), supérieur au diazépam et à la phénytoïne.</p>
+</blockquote>
+<p><strong>Q4.</strong> Chez un diabétique avec IRC et albuminurie, quelle est la stratégie néphroprotectrice optimale ?<br />
+- A) ICC seul<br />
+- B) IEC/ARA2 + iSGLT2 + finérénone<br />
+- C) β-bloquant + diurétique<br />
+- D) Diurétique seul</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La triade IEC/ARA2 + iSGLT2 + finérénone est la stratégie néphroprotectrice la plus complète selon les données actuelles (CREDENCE, DAPA-CKD, FIDELIO, FIGARO).</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q5.</strong> L'aspirine à faible dose réduit le risque de pré-éclampsie précoce de combien ?<br />
+- A) 20 %<br />
+- B) 40 %<br />
+- C) 62 %<br />
+- D) 80 %</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — L'étude ASPRE (2017) a montré une réduction de 62 % du risque de pré-éclampsie précoce avec aspirine 150 mg/j entre 12-36 SA chez les patientes à haut risque.</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q6.</strong> Pourquoi les diurétiques thiazidiques sont-ils inefficaces quand le DFG &lt; 30 mL/min ?<br />
+- A) Ils sont métabolisés par le rein<br />
+- B) Leur site d'action (TCD) reçoit insuffisamment de sodium filtré quand le DFG est très bas<br />
+- C) Ils sont contre-indiqués en cas d'IRC<br />
+- D) Ils provoquent une hyperkaliémie</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Avec un DFG très bas, la charge sodée filtrée arrivant au TCD est insuffisante pour que l'inhibition du cotransporteur NaCl produise une natriurèse significative. Les diurétiques de l'anse (site BHA, plus en amont) restent efficaces car ils agissent sur un plus grand pourcentage du sodium filtré.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

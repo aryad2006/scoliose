@@ -1,0 +1,1246 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>VERTEX© — Cours interactif</title>
+<style>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — Cours interactif v2
+   ════════════════════════════════════════════════════════════ */
+
+/* === Layout sidebar + contenu === */
+.vertex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #2d3436;
+}
+
+/* --- Sidebar --- */
+.vertex-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 280px;
+  min-width: 280px;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #F8F9FA;
+  border-right: 1px solid #DEE2E6;
+  padding: 20px 0;
+  font-size: 0.88em;
+  z-index: 100;
+  scrollbar-width: thin;
+}
+.vertex-sidebar::-webkit-scrollbar { width: 5px; }
+.vertex-sidebar::-webkit-scrollbar-thumb { background: #CED4DA; border-radius: 3px; }
+.vertex-sidebar-title {
+  padding: 0 18px 14px;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 1px solid #DEE2E6;
+  margin-bottom: 10px;
+}
+.vertex-sidebar-title::before { content: "📑 "; }
+.vertex-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.vertex-sidebar li { margin: 0; }
+.vertex-sidebar a {
+  display: block;
+  padding: 7px 18px;
+  color: #495057;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+.vertex-sidebar a:hover {
+  background: #E9ECEF;
+  color: var(--vertex-primary, #1565C0);
+}
+.vertex-sidebar a.active {
+  background: #E3F2FD;
+  color: var(--vertex-primary, #1565C0);
+  border-left-color: var(--vertex-primary, #1565C0);
+  font-weight: 600;
+}
+.vertex-sidebar .toc-h3 {
+  padding-left: 34px;
+  font-size: 0.92em;
+  color: #6C757D;
+}
+
+/* --- Contenu principal --- */
+.vertex-content {
+  flex: 1;
+  max-width: 820px;
+  padding: 30px 40px;
+  line-height: 1.75;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+/* === Titres === */
+.vertex-content h1 {
+  color: var(--vertex-primary, #1565C0);
+  border-bottom: 3px solid var(--vertex-primary, #1565C0);
+  padding-bottom: 12px;
+  font-size: 1.85em;
+  margin-top: 0.5em;
+}
+.vertex-content h2 {
+  color: var(--vertex-primary, #1565C0);
+  margin-top: 2.5em;
+  font-size: 1.5em;
+  border-left: 5px solid var(--vertex-primary, #1565C0);
+  padding-left: 14px;
+  scroll-margin-top: 20px;
+}
+.vertex-content h3 {
+  color: #2E7D32;
+  margin-top: 1.8em;
+  font-size: 1.22em;
+  scroll-margin-top: 20px;
+}
+.vertex-content h4 { color: #6A1B9A; margin-top: 1.2em; font-size: 1.05em; }
+
+/* === Encadrés pédagogiques === */
+.vbox {
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 22px 0;
+  border-left: 5px solid;
+}
+.vbox p:last-child { margin-bottom: 0; }
+.vbox-title { font-weight: 700; margin-bottom: 8px; display: block; }
+
+.vbox.clinique    { background:#FFF8E1; border-color:#F57F17; }
+.vbox.clinique    .vbox-title { color:#E65100; }
+.vbox.clinique    .vbox-title::before { content:"🏥 "; }
+.vbox.danger      { background:#FBE9E7; border-color:#C62828; }
+.vbox.danger      .vbox-title { color:#B71C1C; }
+.vbox.danger      .vbox-title::before { content:"⚠️ "; }
+.vbox.approfondi  { background:#E3F2FD; border-color:#1565C0; }
+.vbox.approfondi  .vbox-title { color:#0D47A1; }
+.vbox.approfondi  .vbox-title::before { content:"📖 "; }
+.vbox.astuce      { background:#E8F5E9; border-color:#2E7D32; }
+.vbox.astuce      .vbox-title { color:#1B5E20; }
+.vbox.astuce      .vbox-title::before { content:"💡 "; }
+.vbox.expert      { background:#F3E5F5; border-color:#7B1FA2; }
+.vbox.expert      .vbox-title { color:#6A1B9A; }
+.vbox.expert      .vbox-title::before { content:"🔬 "; }
+.vbox.reflexion   { background:#FFFDE7; border-color:#F9A825; }
+.vbox.reflexion   .vbox-title { color:#F57F17; }
+.vbox.reflexion   .vbox-title::before { content:"🤔 "; }
+.vbox.controverse { background:#ECEFF1; border-color:#546E7A; }
+.vbox.controverse .vbox-title { color:#37474F; }
+.vbox.controverse .vbox-title::before { content:"⚖️ "; }
+.vbox.pertinence  { background:#FFF3E0; border-color:#E65100; }
+.vbox.pertinence  .vbox-title { color:#BF360C; }
+.vbox.pertinence  .vbox-title::before { content:"🎯 "; }
+
+/* === Média placeholder === */
+.vmedia {
+  background: #F3E5F5; border: 2px dashed #9C27B0; border-radius: 10px;
+  padding: 22px; margin: 22px 0; text-align: center; color: #6A1B9A;
+}
+.vmedia-icon { font-size: 2em; display: block; margin-bottom: 6px; }
+.vmedia-code { font-weight: 700; }
+.vmedia-desc { font-style: italic; margin-top: 6px; color: #7B1FA2; }
+.vmedia-note { font-size: 0.8em; color: #9E9E9E; margin-top: 8px; }
+
+/* === QCM interactif === */
+.vqcm {
+  border: 2px solid #E0E0E0; border-radius: 10px;
+  padding: 22px; margin: 25px 0; background: #FAFAFA;
+}
+.vqcm-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.vqcm-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 14px;
+  font-size: 0.82em; font-weight: 700; color: #fff;
+}
+.vqcm-badge.bronze  { background: #F57F17; }
+.vqcm-badge.argent  { background: #78909C; }
+.vqcm-badge.or      { background: #FFB300; color:#333; }
+.vqcm-badge.diamant { background: #00ACC1; }
+.vqcm-question { font-weight: 600; font-size: 1.05em; margin-bottom: 14px; }
+
+/* Options empilées verticalement */
+.vqcm-options { list-style: none; padding: 0; margin: 0 0 15px; }
+.vqcm-options li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 12px 14px; margin: 6px 0; border-radius: 8px;
+  border: 2px solid #E0E0E0; background: #fff;
+  cursor: pointer; transition: all 0.15s ease;
+  user-select: none;
+}
+.vqcm-options li:hover { border-color: #90CAF9; background: #F5F9FF; }
+.vqcm-options li.selected { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vqcm-options li.correct-show { border-color: #2E7D32; background: #E8F5E9; }
+.vqcm-options li.incorrect-show { border-color: #C62828; background: #FFEBEE; }
+.vqcm-options input[type="radio"],
+.vqcm-options input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; accent-color: var(--vertex-primary, #1565C0);
+  width: 18px; height: 18px;
+}
+.vqcm-options label { cursor: pointer; flex: 1; }
+
+/* Bouton valider */
+.vqcm-validate {
+  display: inline-block; padding: 10px 24px; border-radius: 8px;
+  background: var(--vertex-primary, #1565C0); color: #fff; border: none;
+  font-weight: 600; font-size: 0.95em; cursor: pointer;
+  transition: background 0.15s ease;
+}
+.vqcm-validate:hover { filter: brightness(1.1); }
+.vqcm-validate:disabled { background: #CCC; cursor: not-allowed; }
+
+.vqcm-result {
+  margin-top: 14px; padding: 12px 16px; border-radius: 8px;
+  font-weight: 600; display: none;
+}
+.vqcm-result.correct { background: #E8F5E9; color: #1B5E20; }
+.vqcm-result.incorrect { background: #FFEBEE; color: #B71C1C; }
+
+/* Feedback dépliable */
+.vfeedback { margin-top: 12px; border-radius: 8px; overflow: hidden; }
+.vfeedback summary {
+  background: #E3F2FD; padding: 10px 16px; cursor: pointer;
+  font-weight: 600; color: #1565C0; border-radius: 8px;
+  list-style: none;
+}
+.vfeedback summary::-webkit-details-marker { display: none; }
+.vfeedback summary::before { content: "💬 "; }
+.vfeedback .fb-content {
+  padding: 14px 16px; background: #F5F5F5;
+  border-radius: 0 0 8px 8px; line-height: 1.6;
+}
+
+/* === Exercice drag & drop === */
+.vdrag-zone {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 14px 0; padding: 12px; background: #F5F5F5; border-radius: 8px;
+  min-height: 60px;
+}
+.vdrag-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; background: #fff; border: 2px solid #E0E0E0;
+  border-radius: 8px; cursor: grab; user-select: none;
+  transition: all 0.15s ease;
+}
+.vdrag-item:active { cursor: grabbing; }
+.vdrag-item:hover { border-color: #90CAF9; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+.vdrag-item .drag-handle { color: #9E9E9E; font-size: 1.2em; }
+.vdrag-item .drag-handle::before { content: "⠿"; }
+.vdrag-item.drag-over { border-color: var(--vertex-primary, #1565C0); background: #E3F2FD; }
+.vdrag-item.correct-pos { border-color: #2E7D32; background: #E8F5E9; }
+.vdrag-item.incorrect-pos { border-color: #C62828; background: #FFEBEE; }
+
+/* === Textarea auto-resize === */
+.vtext-answer {
+  width: 100%; min-height: 80px; padding: 14px; border: 2px solid #E0E0E0;
+  border-radius: 8px; font-family: inherit; font-size: 0.95em;
+  line-height: 1.6; resize: none; overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+.vtext-answer:focus { border-color: var(--vertex-primary, #1565C0); outline: none; }
+.vtext-answer::placeholder { color: #ADB5BD; }
+
+/* === Exercice structuré === */
+.vexercice {
+  border: 2px solid #26A69A; border-radius: 10px;
+  padding: 22px; margin: 22px 0; background: #E0F2F1;
+}
+.vexercice-title { font-weight: 700; color: #00695C; margin-bottom: 10px; }
+.vexercice-title::before { content: "✏️ "; }
+
+/* === Points clés === */
+.vpoints-cles {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-radius: 12px; padding: 22px 26px; margin: 30px 0;
+  border: 1px solid #A5D6A7;
+}
+.vpoints-cles-title { font-weight:700; font-size:1.2em; color:#1B5E20; margin-bottom:14px; }
+.vpoints-cles-title::before { content: "🔑 "; }
+.vpoints-cles ol { padding-left: 22px; }
+.vpoints-cles li { margin-bottom: 8px; }
+
+/* === Tableaux === */
+.vertex-content table {
+  width: 100%; border-collapse: collapse; margin: 22px 0;
+  font-size: 0.94em; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.vertex-content th {
+  background: var(--vertex-primary, #1565C0); color: #fff;
+  padding: 11px 14px; text-align: left; font-weight: 600;
+}
+.vertex-content td { padding: 9px 14px; border-bottom: 1px solid #E8E8E8; }
+.vertex-content tr:nth-child(even) { background: #F8F9FA; }
+.vertex-content tr:hover { background: #E3F2FD; }
+
+/* === Transition === */
+.vtransition {
+  text-align:center; padding:18px; margin:30px 0; color:#78909C;
+  font-style:italic; border-top:1px dashed #CFD8DC; border-bottom:1px dashed #CFD8DC;
+}
+
+/* === Références === */
+.vrefs {
+  background:#ECEFF1; border-radius:10px; padding:20px 24px;
+  margin:30px 0; font-size:0.88em; color:#546E7A;
+}
+.vrefs-title { font-weight:700; color:#37474F; font-size:1.05em; margin-bottom:10px; }
+.vrefs-title::before { content:"📚 "; }
+.vrefs ul { padding-left:18px; }
+.vrefs li { margin-bottom:4px; }
+
+/* === Footer === */
+.vertex-footer {
+  text-align:center; padding:20px; margin-top:40px;
+  color:#9E9E9E; font-size:0.85em; border-top:1px solid #E0E0E0;
+}
+
+/* Listes & blockquotes */
+.vertex-content ul, .vertex-content ol { padding-left:24px; }
+.vertex-content li { margin-bottom:5px; }
+.vertex-content blockquote {
+  border-left:4px solid #90CAF9; padding:12px 20px;
+  margin:16px 0; background:#F5F5F5; border-radius:0 8px 8px 0;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .vertex-wrapper { flex-direction: column; }
+  .vertex-sidebar {
+    position: relative; width: 100%; min-width: unset;
+    max-height: none; border-right: none; border-bottom: 1px solid #DEE2E6;
+  }
+  .vertex-content { padding: 20px; }
+}
+@media print {
+  .vertex-sidebar { display: none; }
+  .vertex-content { max-width: 100%; padding: 0; }
+}
+</style>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   VERTEX© — JavaScript interactif
+   ════════════════════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Sidebar : scroll spy (highlight section active)
+  const sidebarLinks = document.querySelectorAll('.vertex-sidebar a');
+  const sections = [];
+  sidebarLinks.forEach(link => {
+    const id = link.getAttribute('href')?.replace('#','');
+    if (id) {
+      const el = document.getElementById(id);
+      if (el) sections.push({ el, link });
+    }
+  });
+
+  function updateActive() {
+    let current = null;
+    for (const s of sections) {
+      if (s.el.getBoundingClientRect().top <= 80) current = s;
+    }
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+
+  // ── Sidebar smooth scroll
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const id = this.getAttribute('href')?.replace('#','');
+      const el = document.getElementById(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  // ── QCM : radio/checkbox + validation progressive
+  document.querySelectorAll('.vqcm').forEach(qcm => {
+    const btn = qcm.querySelector('.vqcm-validate');
+    const resultDiv = qcm.querySelector('.vqcm-result');
+    const feedbackEl = qcm.querySelector('.vfeedback');
+    const corrBtn = qcm.querySelector('.vqcm-show-correction');
+    const options = qcm.querySelectorAll('.vqcm-options li');
+    const inputs = qcm.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+
+    // Click on li selects the input
+    options.forEach(li => {
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const input = this.querySelector('input');
+        if (!input || input.disabled) return;
+        if (input.type === 'radio') {
+          inputs.forEach(i => { i.checked = false; i.closest('li').classList.remove('selected','incorrect-show'); });
+          input.checked = true;
+          this.classList.add('selected');
+        } else {
+          input.checked = !input.checked;
+          this.classList.toggle('selected', input.checked);
+          this.classList.remove('incorrect-show');
+        }
+        // Clear previous result message when user changes selection
+        if (resultDiv) resultDiv.style.display = 'none';
+      });
+    });
+
+    // Validate — only shows if wrong, user can retry
+    if (btn) {
+      btn.addEventListener('click', function() {
+        // Check if anything is selected
+        const anySelected = [...inputs].some(i => i.checked);
+        if (!anySelected) return;
+
+        let allCorrect = true;
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          const isSelected = input && input.checked;
+
+          li.classList.remove('correct-show','incorrect-show');
+
+          if (isSelected && !isCorrect) {
+            li.classList.add('incorrect-show');
+            allCorrect = false;
+          }
+          if (!isSelected && isCorrect) {
+            allCorrect = false;
+          }
+        });
+
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          if (allCorrect) {
+            // Correct! Show success, highlight correct answers, disable inputs
+            resultDiv.className = 'vqcm-result correct';
+            resultDiv.textContent = 'Bonne réponse !';
+            options.forEach(li => {
+              const isCorrect = li.dataset.correct === 'true';
+              if (isCorrect) li.classList.add('correct-show');
+              const input = li.querySelector('input');
+              if (input) input.disabled = true;
+            });
+            btn.disabled = true;
+            if (corrBtn) corrBtn.style.display = 'none';
+            if (feedbackEl) feedbackEl.style.display = 'block';
+          } else {
+            // Wrong — show message but keep interactive
+            resultDiv.className = 'vqcm-result incorrect';
+            resultDiv.textContent = 'Réponse incorrecte — réessayez ou cliquez sur « Voir la correction ».';
+            // Show correction button
+            if (corrBtn) corrBtn.style.display = 'inline-block';
+          }
+        }
+      });
+    }
+
+    // Show correction — reveals correct answers, locks the QCM
+    if (corrBtn) {
+      corrBtn.addEventListener('click', function() {
+        options.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          li.classList.remove('selected','incorrect-show','correct-show');
+          if (isCorrect) li.classList.add('correct-show');
+          if (input) input.disabled = true;
+        });
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'vqcm-result incorrect';
+          resultDiv.textContent = 'Voici la bonne réponse :';
+        }
+        btn.disabled = true;
+        corrBtn.style.display = 'none';
+        if (feedbackEl) feedbackEl.style.display = 'block';
+      });
+    }
+  });
+
+  // ── Drag & Drop pour exercices de réarrangement
+  document.querySelectorAll('.vdrag-zone').forEach(zone => {
+    let draggedItem = null;
+
+    zone.querySelectorAll('.vdrag-item').forEach(item => {
+      item.setAttribute('draggable', 'true');
+
+      item.addEventListener('dragstart', function(e) {
+        draggedItem = this;
+        this.style.opacity = '0.5';
+        e.dataTransfer.effectAllowed = 'move';
+      });
+
+      item.addEventListener('dragend', function() {
+        this.style.opacity = '1';
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+
+      item.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        this.classList.add('drag-over');
+      });
+
+      item.addEventListener('dragleave', function() {
+        this.classList.remove('drag-over');
+      });
+
+      item.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        if (draggedItem !== this) {
+          const allItems = [...zone.querySelectorAll('.vdrag-item')];
+          const fromIdx = allItems.indexOf(draggedItem);
+          const toIdx = allItems.indexOf(this);
+          if (fromIdx < toIdx) {
+            zone.insertBefore(draggedItem, this.nextSibling);
+          } else {
+            zone.insertBefore(draggedItem, this);
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartY = 0;
+      item.addEventListener('touchstart', function(e) {
+        draggedItem = this;
+        touchStartY = e.touches[0].clientY;
+        this.style.opacity = '0.7';
+      }, { passive: true });
+
+      item.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.closest('.vdrag-item') && target.closest('.vdrag-item') !== draggedItem) {
+          const over = target.closest('.vdrag-item');
+          zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+          over.classList.add('drag-over');
+        }
+      });
+
+      item.addEventListener('touchend', function(e) {
+        this.style.opacity = '1';
+        const touch = e.changedTouches[0];
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target) {
+          const dropTarget = target.closest('.vdrag-item');
+          if (dropTarget && dropTarget !== draggedItem) {
+            const allItems = [...zone.querySelectorAll('.vdrag-item')];
+            const fromIdx = allItems.indexOf(draggedItem);
+            const toIdx = allItems.indexOf(dropTarget);
+            if (fromIdx < toIdx) {
+              zone.insertBefore(draggedItem, dropTarget.nextSibling);
+            } else {
+              zone.insertBefore(draggedItem, dropTarget);
+            }
+          }
+        }
+        zone.querySelectorAll('.vdrag-item').forEach(i => i.classList.remove('drag-over'));
+      });
+    });
+
+    // Validate drag order + correction + retry
+    const validateBtn = zone.parentElement.querySelector('.vdrag-validate');
+    const correctionBtn = zone.parentElement.querySelector('.vdrag-correction');
+
+    if (validateBtn) {
+      validateBtn.addEventListener('click', function() {
+        const items = zone.querySelectorAll('.vdrag-item');
+        let allCorrect = true;
+        items.forEach(item => {
+          const currentIdx = [...zone.querySelectorAll('.vdrag-item')].indexOf(item);
+          const correctIdx = parseInt(item.dataset.order);
+          item.classList.remove('correct-pos', 'incorrect-pos');
+          if (currentIdx === correctIdx) {
+            item.classList.add('correct-pos');
+          } else {
+            item.classList.add('incorrect-pos');
+            allCorrect = false;
+          }
+          // Disable drag during review
+          item.setAttribute('draggable', 'false');
+          item.style.cursor = 'default';
+        });
+        validateBtn.disabled = true;
+        // Show correction button if not all correct
+        if (correctionBtn && !allCorrect) {
+          correctionBtn.style.display = 'inline-block';
+          correctionBtn.dataset.state = 'show';
+          correctionBtn.textContent = 'Voir la correction';
+        }
+      });
+    }
+
+    if (correctionBtn) {
+      correctionBtn.addEventListener('click', function() {
+        const state = this.dataset.state;
+        const items = [...zone.querySelectorAll('.vdrag-item')];
+
+        if (state === 'show') {
+          // Show correct order: sort items by data-order
+          const sorted = items.slice().sort((a, b) => parseInt(a.dataset.order) - parseInt(b.dataset.order));
+          sorted.forEach(item => {
+            zone.appendChild(item);
+            // Mark: green if user had it right, red if user had it wrong
+            const wasCorrect = item.classList.contains('correct-pos');
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            if (wasCorrect) {
+              item.classList.add('correct-pos');
+            } else {
+              item.classList.add('incorrect-pos');
+            }
+          });
+          this.dataset.state = 'retry';
+          this.textContent = 'Réessayer';
+        } else if (state === 'retry') {
+          // Reset: shuffle items, clear colors, re-enable drag
+          const shuffled = items.slice().sort(() => Math.random() - 0.5);
+          shuffled.forEach(item => {
+            zone.appendChild(item);
+            item.classList.remove('correct-pos', 'incorrect-pos');
+            item.setAttribute('draggable', 'true');
+            item.style.cursor = 'grab';
+          });
+          validateBtn.disabled = false;
+          this.style.display = 'none';
+          this.dataset.state = 'show';
+        }
+      });
+    }
+  });
+
+  // ── Textarea auto-resize
+  document.querySelectorAll('.vtext-answer').forEach(ta => {
+    function autoResize() {
+      ta.style.height = 'auto';
+      ta.style.height = ta.scrollHeight + 'px';
+    }
+    ta.addEventListener('input', autoResize);
+    autoResize();
+  });
+
+});
+</script>
+<style>:root { --vertex-primary: #00838F; }</style></head><body><div class="vertex-wrapper"><nav class="vertex-sidebar"><div class="vertex-sidebar-title">Sommaire</div><ul><li><a href="#s-1-accroche-clinique" class="">Accroche clinique</a></li>
+<li><a href="#s-2-objectifs-d-apprentissage" class="">Objectifs d'apprentissage</a></li>
+<li><a href="#s-3-1-1-organogenèse-pancréatique-des-bourgeons-endodermiques-à-" class="">1.1 — Organogenèse pancréatique : des bourgeons endodermiques à l'organe fonctionnel</a></li>
+<li><a href="#s-4-1-1-1-origine-endodermique-et-signaux-inducteurs" class="toc-h3">1.1.1 — Origine endodermique et signaux inducteurs</a></li>
+<li><a href="#s-5-1-1-2-double-bourgeon-et-rotation-duodénale" class="toc-h3">1.1.2 — Double bourgeon et rotation duodénale</a></li>
+<li><a href="#s-6-1-1-3-chronologie-du-développement-pancréatique-humain" class="toc-h3">1.1.3 — Chronologie du développement pancréatique humain</a></li>
+<li><a href="#s-7-1-2-différenciation-des-cellules-endocrines-la-cascade-des-f" class="">1.2 — Différenciation des cellules endocrines : la cascade des facteurs de transcription</a></li>
+<li><a href="#s-8-1-2-1-des-progéniteurs-multipotents-au-choix-endocrine-le-rô" class="toc-h3">1.2.1 — Des progéniteurs multipotents au choix endocrine : le rôle de Notch</a></li>
+<li><a href="#s-9-1-2-2-la-cascade-pdx1-ngn3-neurod1-pax4-arx-le-destin-cellul" class="toc-h3">1.2.2 — La cascade Pdx1 → Ngn3 → NeuroD1 → Pax4/Arx : le destin cellulaire</a></li>
+<li><a href="#s-10-1-2-3-facteurs-de-transcription-et-diabètes-monogéniques-mod" class="toc-h3">1.2.3 — Facteurs de transcription et diabètes monogéniques (MODY)</a></li>
+<li><a href="#s-11-1-3-architecture-et-composition-cellulaire-des-îlots-de-lang" class="">1.3 — Architecture et composition cellulaire des îlots de Langerhans</a></li>
+<li><a href="#s-12-1-3-1-découverte-historique" class="toc-h3">1.3.1 — Découverte historique</a></li>
+<li><a href="#s-13-1-3-2-organisation-de-l-îlot-humain-un-micro-organe-endocrin" class="toc-h3">1.3.2 — Organisation de l'îlot humain : un micro-organe endocrine</a></li>
+<li><a href="#s-14-1-3-3-vascularisation-exceptionnelle-et-système-porte-intra-" class="toc-h3">1.3.3 — Vascularisation exceptionnelle et système porte intra-insulaire</a></li>
+<li><a href="#s-15-1-3-4-communication-paracrine-le-mini-cerveau-de-l-îlot" class="toc-h3">1.3.4 — Communication paracrine : le « mini-cerveau » de l'îlot</a></li>
+<li><a href="#s-16-1-4-ontogenèse-de-la-masse-cellulaire-et-implications-pour-l" class="">1.4 — Ontogenèse de la masse β-cellulaire et implications pour le diabète</a></li>
+<li><a href="#s-17-1-4-1-dynamique-de-la-masse-cellulaire-au-cours-de-la-vie" class="toc-h3">1.4.1 — Dynamique de la masse β-cellulaire au cours de la vie</a></li>
+<li><a href="#s-18-1-4-2-plasticité-cellulaire-transdifférenciation-et-dédiffér" class="toc-h3">1.4.2 — Plasticité cellulaire : transdifférenciation et dédifférenciation</a></li>
+<li><a href="#s-19-1-4-3-masse-cellulaire-et-types-de-diabète" class="toc-h3">1.4.3 — Masse β-cellulaire et types de diabète</a></li>
+<li><a href="#s-20-1-4-4-implications-thérapeutiques-de-l-embryologie-à-la-méde" class="toc-h3">1.4.4 — Implications thérapeutiques : de l'embryologie à la médecine régénérative</a></li>
+<li><a href="#s-21-auto-évaluation-module-1" class="">Auto-évaluation — Module 1</a></li>
+<li><a href="#s-22-qcm" class="toc-h3">QCM</a></li>
+<li><a href="#s-23-cas-clinique" class="toc-h3">Cas clinique</a></li>
+<li><a href="#s-24-question-de-synthèse" class="toc-h3">Question de synthèse</a></li></ul></nav><main class="vertex-content"><h1>FORMATION DIABÉTOLOGIE — PARTIE I : FONDAMENTAUX</h1>
+<h1>MODULE 1 : EMBRYOLOGIE DU PANCRÉAS — Organogenèse, Différenciation Cellulaire et Îlots de Langerhans</h1>
+<p><strong>Partie</strong> : I — Fondamentaux
+<strong>Durée estimée</strong> : 3h00
+<strong>Niveau</strong> : Fondamental
+<strong>Prérequis</strong> : Connaissances de base en biologie cellulaire et embryologie générale</p>
+<hr />
+<h2 id="s-1-accroche-clinique">Accroche clinique</h2>
+<div class="vbox clinique"><span class="vbox-title">Mise en situation</span>
+Un couple consulte en diabétologie pédiatrique. Leur fils de 8 ans vient d'être diagnostiqué diabétique de type 1. La mère, elle-même DT1 depuis l'adolescence, vous demande : <em>« Pourquoi le pancréas de mon fils a-t-il cessé de fabriquer de l'insuline ? Est-ce que les cellules qui produisent l'insuline étaient normales au départ ? Et pourquoi seulement ces cellules-là sont détruites, pas les autres ? »</em><br>
+> Pour répondre à ces questions — et comprendre pourquoi la cellule β est une cible si singulière de l'auto-immunité — il faut remonter à l'origine : comment le pancréas endocrine se forme pendant la vie embryonnaire, comment les cellules β se différencient et s'organisent en îlots, et pourquoi cette architecture unique les rend vulnérables.
+</div>
+
+<h2 id="s-2-objectifs-d-apprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> les étapes de l'organogenèse pancréatique (bourgeon dorsal et ventral, fusion, rotation duodénale)</li>
+<li><strong>Expliquer</strong> les mécanismes moléculaires de la différenciation des cellules endocrines (Pdx1, Ngn3, NeuroD1, Pax6, Nkx6.1) et leur implication dans les diabètes monogéniques</li>
+<li><strong>Distinguer</strong> les lignages cellulaires du pancréas exocrine et endocrine et leur organisation spatiale au sein des îlots de Langerhans</li>
+<li><strong>Analyser</strong> les conséquences des anomalies du développement pancréatique sur la fonction endocrine</li>
+<li><strong>Relier</strong> l'embryologie aux thérapies régénératives actuelles (reprogrammation cellulaire, cellules souches, différenciation in vitro)</li>
+</ol>
+<hr />
+<h2 id="s-3-1-1-organogenèse-pancréatique-des-bourgeons-endodermiques-à-">1.1 — Organogenèse pancréatique : des bourgeons endodermiques à l'organe fonctionnel</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Pourquoi le pancréas possède-t-il deux canaux excréteurs (Wirsung et Santorini) alors que la plupart des organes n'en ont qu'un ? Et pourquoi la tête du pancréas est-elle « enserrée » dans le cadre duodénal, comme si elle y avait été piégée ?
+</div>
+
+<p>La réponse se trouve dans l'embryologie : le pancréas ne naît pas d'une ébauche unique, mais de <strong>deux bourgeons distincts</strong> qui fusionnent secondairement. Cette double origine explique non seulement l'anatomie canalaire, mais aussi les malformations congénitales et les variations régionales de composition cellulaire.</p>
+<h3 id="s-4-1-1-1-origine-endodermique-et-signaux-inducteurs">1.1.1 — Origine endodermique et signaux inducteurs</h3>
+<p>Le pancréas dérive de l'<strong>endoderme</strong> de la partie caudale de l'intestin antérieur (<em>foregut</em>). Vers la 4ème semaine de développement humain (~jour 26), des signaux provenant des tissus adjacents — notochorde et aorte dorsale — induisent la spécification pancréatique dans une zone précise de l'endoderme intestinal.</p>
+<p>Ce processus repose sur un mécanisme élégant d'<strong>inhibition plutôt que d'activation directe</strong>. Le signal Sonic Hedgehog (<strong>Shh</strong>), normalement exprimé dans tout l'endoderme intestinal, est activement réprimé dans la future zone pancréatique par des facteurs sécrétés par la notochorde (FGF2 et activine βB). Cette inhibition de Shh est la condition <em>sine qua non</em> de la spécification pancréatique : si Shh n'est pas réprimé, l'endoderme se différencie en intestin au lieu de pancréas (Hebrok et al., <em>Genes Dev</em>, 1998).</p>
+<p>Simultanément, l'<strong>acide rétinoïque</strong> (sécrété par le mésoderme) et la voie <strong>Wnt</strong> contribuent à positionner le champ pancréatique le long de l'axe antéro-postérieur. L'ensemble de ces signaux converge pour activer l'expression de <strong>Pdx1</strong> (Pancreatic and Duodenal Homeobox 1), le facteur de transcription maître qui engage irréversiblement les cellules endodermiques vers le destin pancréatique.</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Spécification pancréatique** :<br>
+Retenez la séquence en 3 temps : (1) la notochorde <strong>inhibe Shh</strong> dans l'endoderme → (2) l'<strong>acide rétinoïque</strong> positionne le champ pancréatique → (3) <strong>Pdx1</strong> s'active et engage le destin pancréatique. Sans inhibition de Shh, pas de pancréas — c'est un développement par « permission », pas par activation directe.
+</div>
+
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Les mutations homozygotes de <em>PDX1</em> chez l'humain causent une <strong>agénésie pancréatique</strong> complète (exocrine + endocrine), avec diabète néonatal permanent et insuffisance exocrine. Les mutations hétérozygotes causent un <strong>MODY4</strong> (diabète modéré de l'adulte jeune). Cette corrélation génotype-phénotype illustre le rôle dose-dépendant de Pdx1 : une perte complète = pas de pancréas ; une demi-dose = pancréas formé mais cellules β fragiles (Stoffers et al., <em>Nat Genet</em>, 1997).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S01-002</span><div class="vmedia-desc">Coupe sagittale de l'embryon à S4-5 montrant les signaux moléculaires de spécification pancréatique : Shh inhibé par la notochorde, FGF et acide rétinoïque (Identifiez la zone d'inhibition de Shh et le territoire Pdx1+ qui en résulte)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-5-1-1-2-double-bourgeon-et-rotation-duodénale">1.1.2 — Double bourgeon et rotation duodénale</h3>
+<p>Le développement pancréatique se poursuit par l'émergence de <strong>deux bourgeons</strong> à partir de l'endoderme duodénal :</p>
+<ul>
+<li>Le <strong>bourgeon dorsal</strong> apparaît le premier (~jour 26), directement en regard de la notochorde. Il pousse dans le mésenchyme dorsal et donnera le <strong>corps et la queue</strong> du pancréas définitif.</li>
+<li>Le <strong>bourgeon ventral</strong> apparaît légèrement plus tard, à la base du diverticule hépatique (futur canal cholédoque). Il est initialement situé en position ventrale droite par rapport au duodénum.</li>
+</ul>
+<p>Le phénomène clé qui suit est la <strong>rotation du bourgeon ventral</strong>. Entre les semaines 6 et 7, le bourgeon ventral effectue une rotation de 180° autour du duodénum, accompagnant le canal cholédoque dans son trajet. Il migre de la face ventrale vers la face dorsale, où il <strong>fusionne</strong> avec le bourgeon dorsal vers la 7ème semaine.</p>
+<p>Cette fusion a des conséquences anatomiques directes :</p>
+<table>
+<thead>
+<tr>
+<th>Structure embryonnaire</th>
+<th>Devient chez l'adulte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bourgeon ventral</td>
+<td>Majeure partie de la <strong>tête</strong> + processus unciné</td>
+</tr>
+<tr>
+<td>Bourgeon dorsal</td>
+<td><strong>Corps</strong> et <strong>queue</strong> + partie supérieure de la tête</td>
+</tr>
+<tr>
+<td>Canal du bourgeon ventral</td>
+<td>Canal de <strong>Wirsung</strong> (principal)</td>
+</tr>
+<tr>
+<td>Canal du bourgeon dorsal</td>
+<td>Canal de <strong>Santorini</strong> (accessoire)</td>
+</tr>
+</tbody>
+</table>
+<p>La fusion des deux canaux est variable : chez ~60% des individus, le canal dorsal régresse partiellement et le canal ventral (Wirsung) devient le canal excréteur principal. Cette variabilité explique les variantes anatomiques fréquentes.</p>
+<div class="vbox danger"><span class="vbox-title">Danger</span>
+Pancréas annulaire<strong> : Si le bourgeon ventral se divise en deux lobes qui encerclent le duodénum au lieu de fusionner normalement, le tissu pancréatique forme un anneau autour du duodénum — c'est le </strong>pancréas annulaire**, cause rare mais classique d'obstruction duodénale néonatale (vomissements bilieux, « double bulle » radiologique). L'incidence est estimée à 1/20 000 naissances. Le traitement est chirurgical (duodéno-duodénostomie de contournement, jamais de résection de l'anneau pancréatique car le canal de Wirsung le traverse).
+</div>
+
+<div class="vbox danger"><span class="vbox-title">Piège</span>
+clinique — Pancréas divisum<strong> : Si les canaux des deux bourgeons ne fusionnent pas, chaque bourgeon conserve son propre canal excréteur : c'est le </strong>pancréas divisum<em>*, la variante anatomique la plus fréquente (5-10% de la population). La majorité des porteurs sont asymptomatiques, mais certains développent des épisodes de pancréatite aiguë récidivante car le canal de Santorini (de plus petit calibre) doit alors drainer la majeure partie du suc pancréatique via la papille mineure (Warshaw et al., </em>Gastroenterology*, 1985).
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">🎬</span><span class="vmedia-code">MDIAB01-S01-001</span><div class="vmedia-desc">Animation 3D du développement embryonnaire du pancréas : séquence montrant les bourgeons dorsal et ventral, la rotation du bourgeon ventral autour du duodénum et la fusion (Suivez la rotation du bourgeon ventral et identifiez pourquoi le cholédoque traverse la tête du pancréas chez l'adulte)</div><div class="vmedia-note">Média à intégrer — VIDEO</div></div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S01-003</span><div class="vmedia-desc">Anomalies du développement pancréatique : pancréas annulaire et pancréas divisum en vue schématique (Identifiez le défaut de rotation ou de fusion responsable de chaque anomalie)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-6-1-1-3-chronologie-du-développement-pancréatique-humain">1.1.3 — Chronologie du développement pancréatique humain</h3>
+<p>Le développement pancréatique humain suit un calendrier précis, documenté par les travaux de Jennings et al. (<em>Development</em>, 2015) sur des embryons et fœtus humains :</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Semaine</th>
+<th>Événement clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spécification</td>
+<td>S4 (~J26)</td>
+<td>Inhibition de Shh, activation de Pdx1 dans l'endoderme</td>
+</tr>
+<tr>
+<td>Bourgeonnement</td>
+<td>S4-5</td>
+<td>Émergence des bourgeons dorsal puis ventral</td>
+</tr>
+<tr>
+<td>Rotation-fusion</td>
+<td>S6-7</td>
+<td>Rotation du bourgeon ventral, fusion avec le dorsal</td>
+</tr>
+<tr>
+<td>Branchement</td>
+<td>S6-8</td>
+<td>Ramification épithéliale, formation de l'arbre canalaire</td>
+</tr>
+<tr>
+<td>Différenciation endocrine</td>
+<td>S8-10</td>
+<td>Apparition des premières cellules α (glucagon), puis β (insuline)</td>
+</tr>
+<tr>
+<td>Formation des îlots</td>
+<td>S12-16</td>
+<td>Regroupement des cellules endocrines en amas (proto-îlots)</td>
+</tr>
+<tr>
+<td>Maturation</td>
+<td>S16-20</td>
+<td>Organisation vasculaire, innervation, maturation fonctionnelle</td>
+</tr>
+<tr>
+<td>Maturation tardive</td>
+<td>S20-naissance</td>
+<td>Acquisition progressive de la compétence sécrétoire complète</td>
+</tr>
+</tbody>
+</table>
+<p>Un point fondamental : la <strong>maturation fonctionnelle</strong> des cellules β n'est pas complète à la naissance. Chez l'humain, la réponse insulino-sécrétoire au glucose est encore immature dans les premières semaines de vie. Cette immaturité explique en partie la vulnérabilité métabolique du nouveau-né prématuré et les difficultés d'homéostasie glycémique néonatale.</p>
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement</span>
+La séquence temporelle de différenciation endocrine suit un ordre conservé chez les mammifères : les cellules α (glucagon) apparaissent les premières (~S8), suivies des cellules β (insuline, ~S8-9), puis δ (somatostatine, ~S10) et PP (~S10-12). Les cellules ε (ghréline) sont transitoirement abondantes chez le fœtus puis diminuent drastiquement après la naissance. Cet ordre de différenciation reflète la hiérarchie des facteurs de transcription (voir section 1.2).
+</div>
+
+<div class="vexercice" id="ex_1"><div class="vexercice-title">Micro-exercice</div>
+<p>Classez dans l'ordre chronologique les événements suivants du développement pancréatique humain :</p>
+<div class="vdrag-zone">
+<div class="vdrag-item" data-order="0"><span class="drag-handle"></span><span>(A) Formation des proto-îlots</span></div>
+<div class="vdrag-item" data-order="4"><span class="drag-handle"></span><span>(E) Maturation fonctionnelle des cellules β</span></div>
+<div class="vdrag-item" data-order="3"><span class="drag-handle"></span><span>(D) Expression de Ngn3 et différenciation endocrine</span></div>
+<div class="vdrag-item" data-order="2"><span class="drag-handle"></span><span>(C) Inhibition de Shh par la notochorde</span></div>
+<div class="vdrag-item" data-order="1"><span class="drag-handle"></span><span>(B) Rotation du bourgeon ventral</span></div>
+</div>
+<button class="vqcm-validate vdrag-validate" type="button">Vérifier l'ordre</button>
+<button class="vqcm-validate vdrag-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button>
+<div class="vqcm-result" id="ex_1_result"></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">C → B → D → A → E. La spécification (Shh inhibé) précède le bourgeonnement et la rotation (S4-7), puis la différenciation endocrine (S8-10) commence, les proto-îlots se forment (S12-16), et la maturation fonctionnelle est la dernière étape (S16-naissance).</div></details>
+</div>
+
+<div class="vtransition">Maintenant que vous connaissez l'architecture macroscopique du développement pancréatique, voyons comment, au sein de ces bourgeons, les cellules progénitrices « choisissent » de devenir exocrines ou endocrines — et comment, parmi les cellules endocrines, certaines deviennent des cellules β productrices d'insuline.</div>
+<hr />
+<h2 id="s-7-1-2-différenciation-des-cellules-endocrines-la-cascade-des-f">1.2 — Différenciation des cellules endocrines : la cascade des facteurs de transcription</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Un adolescent est diagnostiqué diabétique à 16 ans. Pas d'obésité, pas d'auto-anticorps, père et grand-père diabétiques. Son diabétologue évoque un « MODY ». Mais pourquoi des mutations dans des gènes de <em>développement embryonnaire</em> causent-elles un diabète qui ne se manifeste qu'à l'adolescence ou à l'âge adulte ?
+</div>
+
+<p>La réponse réside dans le fait que les facteurs de transcription du développement pancréatique ne servent pas qu'une seule fois pendant l'embryogenèse : beaucoup d'entre eux restent <strong>exprimés à l'âge adulte</strong> dans les cellules β matures, où ils contrôlent l'expression de gènes essentiels (insuline, transporteurs de glucose, enzymes métaboliques). Une mutation hétérozygote peut permettre un développement pancréatique quasi normal (la demi-dose suffit pour l'embryogenèse), mais la cellule β adulte, soumise au stress métabolique chronique, finit par décompenser — d'où l'apparition tardive du diabète.</p>
+<h3 id="s-8-1-2-1-des-progéniteurs-multipotents-au-choix-endocrine-le-rô">1.2.1 — Des progéniteurs multipotents au choix endocrine : le rôle de Notch</h3>
+<p>Au stade précoce du développement pancréatique (S5-7), les cellules épithéliales des bourgeons pancréatiques sont des <strong>progéniteurs multipotents</strong> qui co-expriment deux facteurs de transcription clés : <strong>Pdx1</strong> et <strong>Ptf1a</strong>. Ces cellules sont capables de donner naissance aux trois lignages du pancréas :</p>
+<ol>
+<li><strong>Lignage exocrine acinaire</strong> (enzymes digestives : trypsine, lipase, amylase)</li>
+<li><strong>Lignage canalaire</strong> (bicarbonates, arbre de drainage)</li>
+<li><strong>Lignage endocrine</strong> (hormones : insuline, glucagon, somatostatine...)</li>
+</ol>
+<p>Le choix entre ces destins est contrôlé par la voie de signalisation <strong>Notch</strong>, qui fonctionne comme un mécanisme d'<strong>inhibition latérale</strong> : quand une cellule s'engage vers le destin endocrine, elle exprime le ligand Delta à sa surface, activant le récepteur Notch sur les cellules voisines. L'activation de Notch dans ces voisines réprime l'expression de <strong>Ngn3</strong> (Neurogenin 3) et les maintient dans le lignage exocrine ou canalaire (Apelqvist et al., <em>Nature</em>, 1999).</p>
+<p>Ainsi, seule une <strong>minorité</strong> de cellules progénitrices échappe à l'inhibition par Notch et active Ngn3 — ce sont les futurs progéniteurs endocrines. Ce mécanisme explique pourquoi le compartiment endocrine (îlots) ne représente que <strong>1-2% de la masse pancréatique</strong> totale, alors que le tissu exocrine en constitue l'écrasante majorité.</p>
+<div class="vbox expert"><span class="vbox-title">Expert</span>
+Le blocage pharmacologique de la voie Notch (inhibiteurs de γ-sécrétase) augmente massivement le nombre de cellules endocrines dans les modèles animaux et dans les protocoles de différenciation in vitro. Cette observation a des implications pour la médecine régénérative : moduler Notch pourrait théoriquement augmenter la production de cellules β à partir de progéniteurs canalaires résiduels chez l'adulte. Cependant, les essais chez l'adulte restent décevants car la fenêtre de compétence Ngn3 semble fermée dans le pancréas mature (Gu et al., <em>Development</em>, 2002).
+</div>
+
+<h3 id="s-9-1-2-2-la-cascade-pdx1-ngn3-neurod1-pax4-arx-le-destin-cellul">1.2.2 — La cascade Pdx1 → Ngn3 → NeuroD1 → Pax4/Arx : le destin cellulaire</h3>
+<p>Une fois qu'une cellule progénitrice a activé <strong>Ngn3</strong> (le « point de non-retour » vers le destin endocrine), une cascade ordonnée de facteurs de transcription détermine le type cellulaire final. Cette cascade constitue l'un des mécanismes les mieux caractérisés de la biologie du développement :</p>
+<p><strong>Étape 1 — Pdx1 (Pancreatic and Duodenal Homeobox 1)</strong> :
+Exprimé dans tous les progéniteurs pancréatiques précoces, Pdx1 est le facteur « fondateur » du pancréas. Il active l'expression des gènes pancréatiques et reste ensuite exprimé spécifiquement dans les cellules β matures, où il contrôle directement la transcription du gène de l'<strong>insuline</strong>.</p>
+<p><strong>Étape 2 — Ngn3 (Neurogenin 3)</strong> :
+Son expression transitoire (quelques heures) dans un sous-ensemble de progéniteurs marque l'engagement irréversible vers le lignage endocrine. Ngn3 active l'expression de NeuroD1 et de multiples gènes de différenciation endocrine. Les mutations de <em>NGN3</em> chez l'humain causent un <strong>déficit endocrine pancréatique sévère</strong> avec diabète néonatal et malabsorption entéroendocrine (Rubio-Cabezas et al., <em>J Clin Endocrinol Metab</em>, 2011).</p>
+<p><strong>Étape 3 — NeuroD1 (Neurogenic Differentiation 1)</strong> :
+En aval de Ngn3, NeuroD1 consolide le programme endocrine et contribue à la survie des cellules β. Les mutations de <em>NEUROD1</em> causent le <strong>MODY6</strong>, un diabète modéré de l'adulte jeune. NeuroD1 est aussi un co-activateur du promoteur de l'insuline.</p>
+<p><strong>Étape 4 — Le choix β vs α : l'antagonisme Pax4/Arx</strong> :
+C'est le moment décisif. Deux facteurs de transcription s'opposent dans le progéniteur endocrine post-Ngn3 :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Lignage favorisé</th>
+<th>Lignage réprimé</th>
+<th>Conséquence de la perte de fonction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pax4</strong></td>
+<td>β et δ</td>
+<td>α et ε</td>
+<td>Excès de cellules α et ε, absence de cellules β → diabète néonatal</td>
+</tr>
+<tr>
+<td><strong>Arx</strong></td>
+<td>α et ε</td>
+<td>β et δ</td>
+<td>Excès de cellules β, absence de cellules α → hypoglycémies</td>
+</tr>
+</tbody>
+</table>
+<p>Pax4 et Arx s'<strong>inhibent mutuellement</strong> au niveau transcriptionnel : Pax4 réprime le promoteur d'Arx et vice versa. Cette inhibition réciproque crée un « interrupteur binaire » (<em>toggle switch</em>) qui force chaque cellule à choisir un destin — il n'existe pas d'état intermédiaire stable (Collombat et al., <em>J Clin Invest</em>, 2007).</p>
+<div class="vbox astuce"><span class="vbox-title">Astuce</span>
+clinique — Retenir l'antagonisme Pax4/Arx** :<br>
+Pax4 produit les cellules β (et δ) ; Arx produit les cellules α (et ε). Si Pax4 est muté, les cellules β disparaissent et les α prolifèrent → diabète néonatal. Si Arx est muté, c'est l'inverse → hypoglycémies par excès de cellules β. Retenez : Pax4 est le « protecteur β », Arx est le « promoteur α ».
+</div>
+
+<p><strong>Étape 5 — Maturation : Nkx6.1 et MafA</strong> :
+Après le choix Pax4 (destin β), les facteurs <strong>Nkx6.1</strong> et <strong>MafA</strong> finalisent la maturation de la cellule β. MafA est le dernier facteur activé dans la cascade ; il contrôle l'expression à haut niveau du gène de l'insuline et le couplage glucose-sécrétion. L'expression de MafA est un marqueur de cellule β <strong>mature et fonctionnelle</strong> — les protocoles de différenciation in vitro de cellules souches en cellules β cherchent tous à obtenir des cellules MafA-positives comme critère de réussite.</p>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S02-001</span><div class="vmedia-desc">Cascade des facteurs de transcription pancréatiques : de Pdx1 à MafA, avec les branchements exocrine/endocrine et α/β (Suivez le parcours d'une cellule progénitrice jusqu'à la cellule β mature et identifiez à chaque étape le facteur de transcription clé)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<div class="vmedia"><span class="vmedia-icon">📊</span><span class="vmedia-code">MDIAB01-S02-002</span><div class="vmedia-desc">Correspondance facteurs de transcription ↔ diabètes monogéniques (MODY) : tableau visuel reliant chaque gène muté à son phénotype clinique (Identifiez pourquoi GCK/MODY2 donne une hyperglycémie modérée stable alors que HNF1A/MODY3 donne un diabète progressif)</div><div class="vmedia-note">Média à intégrer — INFOGRAPHIE</div></div>
+
+<h3 id="s-10-1-2-3-facteurs-de-transcription-et-diabètes-monogéniques-mod">1.2.3 — Facteurs de transcription et diabètes monogéniques (MODY)</h3>
+<p>La connaissance de la cascade de différenciation a une application clinique directe : chaque facteur de transcription de cette cascade est potentiellement le gène responsable d'un sous-type de diabète monogénique (<strong>MODY</strong> — <em>Maturity Onset Diabetes of the Young</em>).</p>
+<table>
+<thead>
+<tr>
+<th>Gène muté</th>
+<th>Sous-type MODY</th>
+<th>Fréquence</th>
+<th>Phénotype clinique</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GCK</strong></td>
+<td>MODY2</td>
+<td>~30%</td>
+<td>Hyperglycémie modérée stable (5,5-8 mmol/L), pas d'évolution</td>
+<td>Le « glucostat » est réglé plus haut — seuil de sécrétion d'insuline relevé</td>
+</tr>
+<tr>
+<td><strong>HNF1A</strong></td>
+<td>MODY3</td>
+<td>~35%</td>
+<td>Diabète progressif, sensible aux sulfamides, glycosurie rénale</td>
+<td>Défaut de transcription des gènes du métabolisme glucidique β-cellulaire</td>
+</tr>
+<tr>
+<td><strong>HNF4A</strong></td>
+<td>MODY1</td>
+<td>~5%</td>
+<td>Diabète progressif, macrosomie néonatale transitoire</td>
+<td>Défaut de régulation de HNF1A</td>
+</tr>
+<tr>
+<td><strong>PDX1</strong></td>
+<td>MODY4</td>
+<td>Rare</td>
+<td>Diabète modéré, agénésie pancréatique si homozygote</td>
+<td>Facteur fondateur du pancréas</td>
+</tr>
+<tr>
+<td><strong>NEUROD1</strong></td>
+<td>MODY6</td>
+<td>Rare</td>
+<td>Diabète de l'adulte jeune</td>
+<td>Co-activateur du promoteur de l'insuline</td>
+</tr>
+<tr>
+<td><strong>HNF1B</strong></td>
+<td>MODY5</td>
+<td>~5%</td>
+<td>Diabète + kystes rénaux + anomalies génitales</td>
+<td>Facteur de développement réno-pancréatique</td>
+</tr>
+</tbody>
+</table>
+<div class="vbox controverse"><span class="vbox-title">Controverse — Prévalence réelle des MODY</span>
+> Les MODY représentent officiellement 1-5% de tous les diabètes, mais de nombreux auteurs estiment qu'ils sont <strong>massivement sous-diagnostiqués</strong> — jusqu'à 80% des cas seraient étiquetés DT1 ou DT2 par erreur (Shields et al., <em>Diabetologia</em>, 2010). L'enjeu est thérapeutique : un patient MODY3 (HNF1A) mal étiqueté DT2 sous metformine répondrait beaucoup mieux aux sulfamides à faible dose ; un patient MODY2 (GCK) diagnostiqué DT2 reçoit un traitement inutile (l'hyperglycémie modérée du MODY2 ne nécessite habituellement aucun traitement). Le séquençage ciblé devrait être proposé devant toute association : diabète <35 ans + hérédité autosomique dominante + absence d'auto-anticorps + peptide C conservé.
+</div>
+
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+directe<em>* : Chez un patient suspecté MODY, la connaissance de la cascade embryonnaire guide le choix du gène à séquencer en priorité. Un diabète modéré et stable depuis des années oriente vers </em>GCK<em> (MODY2, glucostat relevé). Un diabète progressif avec glycosurie oriente vers </em>HNF1A<em> (MODY3). Un diabète associé à des anomalies rénales oriente vers </em>HNF1B* (MODY5).
+</div>
+
+<div class="vexercice" id="ex_2"><div class="vexercice-title">Micro-exercice</div>
+<p>Un homme de 28 ans, IMC 23, est découvert diabétique (HbA1c 7,2%). Son père et sa grand-mère paternelle sont aussi diabétiques. Anti-GAD, anti-IA2 et anti-ZnT8 sont négatifs. Peptide C normal.</p>
+<div style="margin:12px 0;"><label for="ex_2_q1" style="font-weight:600;color:#00695C;">1. Ce tableau évoque-t-il un DT1, un DT2 ou un MODY ?</label><br><textarea class="vtext-answer" id="ex_2_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_2_q2" style="font-weight:600;color:#00695C;">2. Quels gènes séquenceriez-vous en priorité et pourquoi ?</label><br><textarea class="vtext-answer" id="ex_2_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">Le tableau est typique d'un MODY : âge <35 ans, IMC normal, hérédité autosomique dominante sur 3 générations, absence d'auto-anticorps (élimine le DT1), peptide C conservé (sécrétion endogène maintenue). Les gènes à séquencer en priorité sont HNF1A (MODY3, ~35% des cas) et GCK (MODY2, ~30%), qui représentent ensemble ~65% des MODY. Si négatifs : HNF4A (MODY1), PDX1 (MODY4), NEUROD1 (MODY6).</div></details>
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">🎬</span><span class="vmedia-code">MDIAB01-S02-003</span><div class="vmedia-desc">Animation de l'antagonisme Pax4/Arx : visualisation du choix de destin cellulaire β vs α dans le progéniteur endocrine (Observez comment l'inhibition réciproque crée un interrupteur binaire sans état intermédiaire)</div><div class="vmedia-note">Média à intégrer — VIDEO</div></div>
+
+<div class="vtransition">Les facteurs de transcription déterminent quelles cellules deviennent des cellules β — mais comment ces cellules β, une fois différenciées, s'organisent-elles pour former un organe endocrine fonctionnel ? C'est l'architecture remarquable des îlots de Langerhans.</div>
+<hr />
+<h2 id="s-11-1-3-architecture-et-composition-cellulaire-des-îlots-de-lang">1.3 — Architecture et composition cellulaire des îlots de Langerhans</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Des cellules β isolées en culture sécrètent de l'insuline de manière irrégulière et peu efficace. Les mêmes cellules, regroupées en amas de 1 000 à 3 000 cellules, retrouvent une sécrétion pulsatile et bien régulée. Pourquoi l'architecture de l'îlot est-elle si importante pour la fonction endocrine ?
+</div>
+
+<h3 id="s-12-1-3-1-découverte-historique">1.3.1 — Découverte historique</h3>
+<p>En 1869, un étudiant en médecine de 22 ans, <strong>Paul Langerhans</strong>, soutient sa thèse de doctorat à Berlin sous la direction de Rudolf Virchow. Dans cette thèse, il décrit pour la première fois de « petits amas cellulaires, clairement distincts du tissu glandulaire environnant », dispersés dans le parenchyme pancréatique. Il ne connaît pas leur fonction.</p>
+<p>Il faudra attendre <strong>Édouard Laguesse</strong> (1893) pour proposer que ces amas — qu'il baptise « îlots de Langerhans » en hommage à leur découvreur — constituent une glande endocrine sécrétant une substance régulatrice du métabolisme glucidique. Puis <strong>Frederick Banting et Charles Best</strong> (Toronto, 1921-1922) isolent cette substance, l'<strong>insuline</strong>, à partir d'extraits pancréatiques de chien — découverte qui vaudra le prix Nobel et transformera le pronostic du diabète de type 1, jusqu'alors fatal en quelques mois.</p>
+<h3 id="s-13-1-3-2-organisation-de-l-îlot-humain-un-micro-organe-endocrin">1.3.2 — Organisation de l'îlot humain : un micro-organe endocrine</h3>
+<p>Le pancréas adulte contient environ <strong>1 million d'îlots de Langerhans</strong>, dispersés dans le tissu exocrine comme des « îles dans un océan » acinaire. Chaque îlot est un micro-organe sphéroïde de 50 à 300 μm de diamètre, contenant <strong>1 000 à 3 000 cellules endocrines</strong> de cinq types :</p>
+<table>
+<thead>
+<tr>
+<th>Type cellulaire</th>
+<th>Hormone</th>
+<th>Proportion dans l'îlot humain</th>
+<th>Fonction principale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cellule β</strong></td>
+<td>Insuline (+ peptide C, amyline)</td>
+<td>~50-60%</td>
+<td>↓ Glycémie : stimule captation glucose, lipogenèse, glycogénogenèse</td>
+</tr>
+<tr>
+<td><strong>Cellule α</strong></td>
+<td>Glucagon</td>
+<td>~30-40%</td>
+<td>↑ Glycémie : glycogénolyse, néoglucogenèse hépatique</td>
+</tr>
+<tr>
+<td><strong>Cellule δ</strong></td>
+<td>Somatostatine</td>
+<td>~5-10%</td>
+<td>Inhibition paracrine de l'insuline ET du glucagon</td>
+</tr>
+<tr>
+<td><strong>Cellule PP</strong></td>
+<td>Polypeptide pancréatique</td>
+<td>&lt;5%</td>
+<td>Inhibition de la sécrétion exocrine, satiété</td>
+</tr>
+<tr>
+<td><strong>Cellule ε</strong></td>
+<td>Ghréline</td>
+<td>&lt;1%</td>
+<td>Stimulation de l'appétit, modulation de la sécrétion d'insuline</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Sources : Cabrera et al., PNAS, 2006 ; Brissova et al., J Histochem Cytochem, 2005)</em></p>
+<div class="vbox danger"><span class="vbox-title">Piège</span>
+à connaître — Îlot humain ≠ îlot murin<strong> : La quasi-totalité des manuels de physiologie présente l'îlot de Langerhans selon le modèle murin : un </strong>cœur<strong> compact de cellules β (~70-80%) entouré d'un </strong>manteau<strong> de cellules α en périphérie. </strong>Ce modèle est faux pour l'humain.<strong> L'îlot humain a une architecture </strong>hétérogène<em>* : les cellules α et β sont entremêlées sans organisation concentrique nette, avec des cellules α dispersées à travers tout l'îlot (Bosco et al., </em>Diabetes*, 2010). Cette différence a des implications majeures :<br>
+- Les interactions paracrines α-β sont plus intimes et plus complexes chez l'humain<br>
+- Les résultats obtenus sur îlots murins ne sont pas directement transposables<br>
+- Les stratégies de thérapie cellulaire doivent reconstituer une architecture « humaine », pas « murine »
+</div>
+
+<div class="vmedia"><span class="vmedia-icon">📷</span><span class="vmedia-code">MDIAB01-S03-001</span><div class="vmedia-desc">Immunofluorescence d'un îlot humain : marquage insuline (vert), glucagon (rouge), somatostatine (bleu) (Observez la distribution entremêlée des cellules α et β — comparez mentalement avec le modèle concentrique murin)</div><div class="vmedia-note">Média à intégrer — PHOTO</div></div>
+
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S03-002</span><div class="vmedia-desc">Architecture comparée de l'îlot humain vs murin : distribution cellulaire et flux sanguin (Identifiez pourquoi le modèle murin concentrique ne s'applique pas à l'humain)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-14-1-3-3-vascularisation-exceptionnelle-et-système-porte-intra-">1.3.3 — Vascularisation exceptionnelle et système porte intra-insulaire</h3>
+<p>Les îlots de Langerhans, bien que ne représentant que <strong>1-2% de la masse pancréatique</strong>, reçoivent <strong>10-15% du débit sanguin</strong> du pancréas. Cette disproportion vascularisation/masse (rapport de 5 à 10 par rapport au tissu exocrine) reflète l'importance métabolique du compartiment endocrine et la nécessité d'un apport rapide en nutriments pour la détection du glucose.</p>
+<p>La vascularisation intra-insulaire est organisée en un <strong>système porte</strong> : le sang artériel entre par les artérioles afférentes, traverse un réseau capillaire <strong>fenêtré</strong> (pores de 60-80 nm permettant le passage rapide des hormones) et ressort par les veinules efférentes. L'orientation du flux sanguin au sein de l'îlot a une importance fonctionnelle : chez le rongeur, le flux va du <strong>cœur β vers la périphérie α puis δ</strong>, ce qui expose les cellules α à de fortes concentrations d'insuline — cette insuline locale inhibe directement la sécrétion de glucagon (Bonner-Weir &amp; Orci, <em>Diabetes</em>, 1982).</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Greffe d'îlots<strong> : La vascularisation dense des îlots natifs est </strong>détruite<strong> lors de l'isolement enzymatique pour la greffe. Après transplantation (généralement dans le foie, via la veine porte), les îlots doivent se </strong>revasculariser<em>* à partir de néovaisseaux hépatiques — un processus qui prend 2 à 4 semaines, pendant lesquelles les cellules β centrales souffrent d'ischémie. Cette phase de revascularisation est l'une des causes principales de la perte de 50-70% des îlots greffés dans les premières semaines post-greffe (protocole d'Edmonton, Shapiro et al., </em>N Engl J Med<em>, 2000). Les recherches actuelles portent sur des biomatériaux vascularisés (</em>prevascularized scaffolds*) pour résoudre ce problème.
+</div>
+
+<h3 id="s-15-1-3-4-communication-paracrine-le-mini-cerveau-de-l-îlot">1.3.4 — Communication paracrine : le « mini-cerveau » de l'îlot</h3>
+<p>Les cellules de l'îlot ne fonctionnent pas de manière isolée — elles communiquent par des <strong>signaux paracrines</strong> (hormones locales) et des <strong>jonctions communicantes</strong> (gap junctions) :</p>
+<p><strong>Signaux paracrines</strong> :
+- <strong>Insuline</strong> (β) → <strong>inhibe</strong> la sécrétion de glucagon (α) — boucle de rétrocontrôle directe
+- <strong>Glucagon</strong> (α) → <strong>stimule</strong> la sécrétion d'insuline (β) — amplification de la réponse
+- <strong>Somatostatine</strong> (δ) → <strong>inhibe</strong> à la fois l'insuline ET le glucagon — frein global</p>
+<p>Ce réseau de régulation croisée crée un système de <strong>rétrocontrôle</strong> qui assure une sécrétion hormonale finement coordonnée. La perte de ce réseau (par exemple dans le DT1, où la destruction des cellules β supprime le signal inhibiteur paracrine sur les cellules α) contribue à l'<strong>hyperglucagonémie paradoxale</strong> observée chez les patients DT1 — les cellules α, « libérées » de l'inhibition par l'insuline locale, sécrètent un excès de glucagon même en hyperglycémie.</p>
+<p><strong>Jonctions communicantes (Connexine 36)</strong> :
+Les cellules β sont couplées entre elles par des <strong>jonctions gap</strong> formées de connexine 36 (Cx36). Ce couplage électrique synchronise l'activité oscillatoire des cellules β, produisant des <strong>pulses</strong> d'insuline toutes les 3-6 minutes. Cette pulsatilité est essentielle : le foie répond mieux à l'insuline pulsatile qu'à l'insuline continue — la perte de pulsatilité est un signe précoce de dysfonction β-cellulaire dans le pré-diabète de type 2.</p>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S03-003</span><div class="vmedia-desc">Communication paracrine intra-îlot : boucles de rétrocontrôle entre insuline, glucagon et somatostatine (Identifiez le sens de chaque boucle — stimulation ou inhibition — et prédisez ce qui se passe quand les cellules β sont détruites)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<div class="vmedia"><span class="vmedia-icon">🧊</span><span class="vmedia-code">MDIAB01-S03-004</span><div class="vmedia-desc">Modèle 3D de l'îlot de Langerhans : vascularisation, innervation et distribution cellulaire (Explorez la vascularisation fenêtrée et observez la disproportion débit sanguin/masse par rapport au tissu exocrine)</div><div class="vmedia-note">Média à intégrer — MODELE-3D</div></div>
+
+<p>💡 <strong>Astuce clinique — Communication paracrine intra-îlot</strong> :
+Trois règles à retenir : (1) la somatostatine (cellule δ) est le « frein général » — elle inhibe à la fois l'insuline et le glucagon. (2) L'insuline (cellule β) inhibe directement le glucagon (cellule α) — c'est pourquoi le DT1 s'accompagne d'un excès paradoxal de glucagon. (3) Le glucagon stimule la sécrétion d'insuline — boucle d'amplification qui accélère la réponse post-prandiale.</p>
+<div class="vexercice" id="ex_3"><div class="vexercice-title">Micro-exercice</div>
+<p>Chez un patient DT1 dont 95% des cellules β sont détruites, prédisez :</p>
+<div style="margin:12px 0;"><label for="ex_3_q1" style="font-weight:600;color:#00695C;">1. Le niveau d'insuline circulante</label><br><textarea class="vtext-answer" id="ex_3_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_3_q2" style="font-weight:600;color:#00695C;">2. Le niveau de glucagon circulant</label><br><textarea class="vtext-answer" id="ex_3_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<div style="margin:12px 0;"><label for="ex_3_q3" style="font-weight:600;color:#00695C;">3. L'effet combiné sur la glycémie</label><br><textarea class="vtext-answer" id="ex_3_q3" placeholder="Rédigez votre réponse ici..."></textarea></div>
+<details class="vfeedback" style="margin-top:14px;"><summary>Voir la correction</summary><div class="fb-content">(1) Insuline effondrée (plus de cellules β pour la produire). (2) Glucagon paradoxalement ÉLEVÉ — les cellules α, privées du signal inhibiteur paracrine de l'insuline locale, sécrètent un excès de glucagon. (3) Hyperglycémie sévère par double mécanisme : absence d'insuline (pas de captation glucose) + excès de glucagon (néoglucogenèse hépatique stimulée). C'est la base physiopathologique de l'acidocétose diabétique.</div></details>
+</div>
+
+<div class="vtransition">L'architecture de l'îlot est donc un déterminant majeur de la fonction endocrine. Mais les îlots ne sont pas statiques — leur masse évolue au cours de la vie, avec des implications directes pour la compréhension du diabète et des thérapies régénératives.</div>
+<hr />
+<h2 id="s-16-1-4-ontogenèse-de-la-masse-cellulaire-et-implications-pour-l">1.4 — Ontogenèse de la masse β-cellulaire et implications pour le diabète</h2>
+<div class="vbox reflexion"><span class="vbox-title">Question de réflexion</span>
+Si le pancréas adulte contient environ 1 million d'îlots et que le diabète de type 2 implique une perte de « seulement » 30-50% de la masse β-cellulaire, pourquoi le pancréas ne régénère-t-il pas ces cellules, comme le foie régénère après une hépatectomie ?
+</div>
+
+<h3 id="s-17-1-4-1-dynamique-de-la-masse-cellulaire-au-cours-de-la-vie">1.4.1 — Dynamique de la masse β-cellulaire au cours de la vie</h3>
+<p>La masse β-cellulaire suit une courbe caractéristique au cours de la vie humaine :</p>
+<p><strong>Phase d'expansion (vie fœtale — 2-3 ans)</strong> : la masse β-cellulaire augmente rapidement par <strong>réplication</strong> des cellules β existantes et par <strong>néogenèse</strong> (différenciation de nouveaux progéniteurs). C'est la seule période de la vie où l'expansion est robuste.</p>
+<p><strong>Phase de plateau (enfance — âge adulte)</strong> : la masse β-cellulaire se stabilise, maintenue par un taux de réplication très faible (~0,1-0,5%/jour chez l'adulte) qui compense l'apoptose basale. Le renouvellement complet d'un îlot prend théoriquement <strong>plusieurs années</strong> chez l'humain (Meier et al., <em>Diabetes</em>, 2008).</p>
+<p><strong>Phase de déclin (vieillissement)</strong> : la masse β-cellulaire diminue progressivement avec l'âge, par une combinaison de réduction du taux de réplication et d'augmentation de l'apoptose. Ce déclin contribue à l'intolérance au glucose liée à l'âge.</p>
+<p><strong>Adaptation physiologique</strong> : la masse β-cellulaire peut s'adapter modestement à la demande accrue — par exemple, pendant la <strong>grossesse</strong> (augmentation de ~30-50% de la masse β, sous l'effet de la prolactine et du lactogène placentaire) ou lors de l'<strong>obésité</strong> (compensation partielle de l'insulinorésistance). L'incapacité à maintenir cette adaptation est le mécanisme central du diabète gestationnel et de la transition obésité → DT2.</p>
+<div class="vmedia"><span class="vmedia-icon">📊</span><span class="vmedia-code">MDIAB01-S04-001</span><div class="vmedia-desc">Dynamique de la masse β-cellulaire au cours de la vie : courbe montrant les phases d'expansion, plateau et déclin, avec les facteurs modificateurs (grossesse, obésité, vieillissement) (Identifiez les « fenêtres de vulnérabilité » où la perte de masse β-cellulaire est la plus critique)</div><div class="vmedia-note">Média à intégrer — INFOGRAPHIE</div></div>
+
+<div class="vbox approfondi"><span class="vbox-title">Approfondissement — Pourquoi la régénération β-cellulaire est-elle si limitée chez l'adulte ?</span>
+Contrairement aux hépatocytes (qui peuvent se diviser >70 fois), les cellules β adultes sont dans un état de <strong>quiescence</strong> quasi permanent. Plusieurs mécanismes expliquent ce blocage : (1) les inhibiteurs du cycle cellulaire p16^INK4a et p27^Kip1 sont fortement exprimés dans les cellules β adultes ; (2) la compaction de la chromatine autour des gènes du cycle cellulaire augmente avec l'âge ; (3) les télomères des cellules β se raccourcissent, limitant le nombre de divisions possibles. Les rares cellules β qui se divisent après une agression (pancréatectomie, grossesse) sont principalement des cellules β <strong>jeunes</strong> qui n'ont pas encore acquis ces verrous épigénétiques (Gregg et al., <em>J Clin Endocrinol Metab</em>, 2012).
+</div>
+
+<h3 id="s-18-1-4-2-plasticité-cellulaire-transdifférenciation-et-dédiffér">1.4.2 — Plasticité cellulaire : transdifférenciation et dédifférenciation</h3>
+<p>Les recherches de la dernière décennie ont révélé que les cellules des îlots conservent une certaine <strong>plasticité</strong> :</p>
+<p><strong>Transdifférenciation α → β</strong> : Thorel et al. (<em>Nature</em>, 2010) ont montré chez la souris qu'après ablation quasi totale des cellules β, une fraction de cellules α se <strong>convertit</strong> en cellules β fonctionnelles — elles commencent à exprimer l'insuline tout en conservant transitoirement l'expression du glucagon. Ce mécanisme est lent et insuffisant pour compenser une destruction massive, mais il prouve que la barrière entre lignages n'est pas absolue.</p>
+<p><strong>Dédifférenciation β-cellulaire</strong> : Talchai et al. (<em>Cell</em>, 2012) ont démontré un phénomène encore plus surprenant : sous l'effet du <strong>stress métabolique chronique</strong> (glucotoxicité, lipotoxicité), les cellules β ne meurent pas toutes par apoptose — certaines <strong>se dédifférencient</strong>, perdent l'expression de l'insuline et de MafA, et reviennent à un état progéniteur indifférencié. Ces cellules β « <strong>dormantes</strong> » existent dans le pancréas des patients DT2 et pourraient théoriquement être « réveillées » par une levée du stress métabolique.</p>
+<div class="vbox expert"><span class="vbox-title">Expert — Concept de « remission » du DT2</span>
+La dédifférenciation β-cellulaire fournit une base mécanistique aux observations cliniques de <strong>rémission du DT2</strong> après chirurgie bariatrique ou restriction calorique intensive (étude DiRECT, Lean et al., <em>Lancet</em>, 2018). La levée rapide de la glucolipotoxicité permettrait la <strong>redifférenciation</strong> des cellules β dormantes, restaurant partiellement la sécrétion d'insuline. Cela ne fonctionne que si le patient conserve un réservoir suffisant de cellules β dédifférenciées — d'où l'importance du diagnostic et de l'intervention précoces.
+</div>
+
+<h3 id="s-19-1-4-3-masse-cellulaire-et-types-de-diabète">1.4.3 — Masse β-cellulaire et types de diabète</h3>
+<p>La relation entre masse β-cellulaire et diabète est directe mais quantitativement différente selon le type :</p>
+<table>
+<thead>
+<tr>
+<th>Type de diabète</th>
+<th>Perte de masse β-cellulaire</th>
+<th>Mécanisme</th>
+<th>Timing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DT1</strong></td>
+<td>&gt;80-90%</td>
+<td>Destruction auto-immune (lymphocytes T CD8+)</td>
+<td>Mois à années (phase pré-clinique silencieuse)</td>
+</tr>
+<tr>
+<td><strong>DT2</strong></td>
+<td>~30-50%</td>
+<td>Apoptose + dédifférenciation (glucolipotoxicité)</td>
+<td>Années à décennies</td>
+</tr>
+<tr>
+<td><strong>Néonatal</strong></td>
+<td>Variable</td>
+<td>Agénésie, aplasie ou dysfonction congénitale</td>
+<td>Congénital</td>
+</tr>
+<tr>
+<td><strong>Type 3c</strong></td>
+<td>Variable</td>
+<td>Destruction extrinsèque (pancréatite, chirurgie, cancer)</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Source : Butler et al., Diabetes, 2003 — étude autopsique de référence)</em></p>
+<p>Un point fondamental : dans le DT2, la cellule β ne disparaît pas seulement — elle <strong>dysfonctionne</strong>. Les cellules β restantes (50-70% de la masse) présentent une sécrétion d'insuline altérée (perte de la première phase, amyloïdose insulaire, stress du réticulum endoplasmique). Le déficit sécrétoire est donc <strong>disproportionné</strong> par rapport à la perte de masse.</p>
+<div class="vmedia"><span class="vmedia-icon">📐</span><span class="vmedia-code">MDIAB01-S04-002</span><div class="vmedia-desc">Mécanismes comparés de la perte β-cellulaire dans le DT1 et le DT2 : auto-immunité vs glucolipotoxicité + dédifférenciation (Comparez les cinétiques de destruction et identifiez pourquoi le DT1 progresse plus vite)</div><div class="vmedia-note">Média à intégrer — SCHEMA</div></div>
+
+<h3 id="s-20-1-4-4-implications-thérapeutiques-de-l-embryologie-à-la-méde">1.4.4 — Implications thérapeutiques : de l'embryologie à la médecine régénérative</h3>
+<p>La compréhension de l'embryologie et de la plasticité β-cellulaire a ouvert des voies thérapeutiques concrètes :</p>
+<p><strong>Greffe d'îlots (protocole d'Edmonton)</strong> : Shapiro et al. (<em>N Engl J Med</em>, 2000) ont démontré qu'une perfusion d'îlots isolés dans la veine porte (greffe intra-hépatique) permet de restaurer une sécrétion d'insuline chez des patients DT1. Limites majeures : nécessité de 2-3 donneurs par receveur (perte de 50-70% des îlots), immunosuppression à vie, épuisement progressif du greffon (~10% d'insulino-indépendance à 5 ans). La compréhension de la revascularisation post-greffe (section 1.3) est un axe d'amélioration majeur.</p>
+<p><strong>Cellules souches → cellules β</strong> : Les protocoles de Pagliuca et al. (<em>Cell</em>, 2014) et Rezania et al. (<em>Nat Biotechnol</em>, 2014) reproduisent in vitro la cascade de différenciation embryonnaire (section 1.2) : cellule souche pluripotente → endoderme définitif → endoderme pancréatique (Pdx1+) → progéniteur endocrine (Ngn3+) → cellule β immature → cellule β mature (MafA+, sensible au glucose). Ces cellules sont en essai clinique (Vertex Pharmaceuticals/ViaCyte — essais de phase I/II en cours depuis 2021).</p>
+<p><strong>Encapsulation</strong> : pour éviter l'immunosuppression, les cellules β (greffées ou dérivées de cellules souches) sont enfermées dans des <strong>capsules semi-perméables</strong> qui laissent passer le glucose et l'insuline mais bloquent les cellules immunitaires. L'embryologie guide ici le design : les capsules doivent reproduire un environnement proche de la matrice extracellulaire insulaire (collagène IV, laminine) pour optimiser la survie cellulaire.</p>
+<p><strong>Reprogrammation in vivo</strong> : des approches expérimentales visent à convertir des cellules α en cellules β directement dans le pancréas du patient, en exploitant la plasticité α → β (section 1.4.2) — par exemple via l'expression forcée de Pdx1 et MafA dans les cellules α par des vecteurs viraux adéno-associés (AAV). Résultats prometteurs chez la souris, encore loin de la clinique (📊 Niveau de preuve : V — modèles animaux uniquement).</p>
+<div class="vbox clinique"><span class="vbox-title">Pertinence clinique</span>
+Ce que le praticien doit retenir pour sa pratique** : L'embryologie pancréatique n'est pas une curiosité académique. Elle explique directement (1) pourquoi les mutations de facteurs de transcription causent des MODY, (2) pourquoi les îlots greffés perdent 50-70% de leur masse, (3) pourquoi le DT2 peut entrer en rémission si le stress métabolique est levé précocement, et (4) pourquoi les thérapies cellulaires reproduisent la cascade Pdx1 → Ngn3 → MafA.
+</div>
+
+<hr />
+<div class="vpoints-cles"><div class="vpoints-cles-title">Points clés — Module 1</div><ol>
+<li>Le pancréas dérive de <strong>deux bourgeons endodermiques</strong> (dorsal et ventral) qui fusionnent après rotation du bourgeon ventral autour du duodénum (~S6-7)</li>
+<li>La spécification pancréatique repose sur l'<strong>inhibition de Shh</strong> par la notochorde, conduisant à l'activation de <strong>Pdx1</strong>, le facteur de transcription maître</li>
+<li>La cascade de différenciation endocrine suit l'ordre <strong>Pdx1 → Ngn3 → NeuroD1 → Pax4/Arx → Nkx6.1/MafA</strong> — chaque gène muté correspond à un sous-type de MODY</li>
+<li>L'antagonisme <strong>Pax4 (→ β) vs Arx (→ α)</strong> est l'interrupteur binaire du choix de destin cellulaire endocrine</li>
+<li>L'îlot humain contient ~50-60% de cellules β, ~30-40% de cellules α — avec une architecture <strong>hétérogène</strong> (différente du modèle murin concentrique)</li>
+<li>La communication paracrine intra-îlot (<strong>insuline ⊣ glucagon</strong>, somatostatine ⊣ les deux) est essentielle — sa perte dans le DT1 cause l'hyperglucagonémie paradoxale</li>
+<li>La capacité de régénération β-cellulaire est <strong>très limitée</strong> chez l'adulte — fondement des approches par greffe et thérapie cellulaire</li>
+<li>Les cellules β peuvent se <strong>dédifférencier</strong> sous stress métabolique (DT2) et potentiellement se redifférencier si le stress est levé — base de la rémission du DT2</li>
+</ol></div>
+<hr />
+<h2 id="s-21-auto-évaluation-module-1">Auto-évaluation — Module 1</h2>
+<h3 id="s-22-qcm">QCM</h3>
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 1</span></div><div class="vqcm-question">Le bourgeon pancréatique ventral fusionne avec le bourgeon dorsal après :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_0"><label for="qcm_1_0">A) Migration à travers le mésentère dorsal</label></li>
+<li data-correct="true"><input type="radio" name="qcm_1" id="qcm_1_1"><label for="qcm_1_1">B) Rotation autour du duodénum avec le cholédoque</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_2"><label for="qcm_1_2">C) Invagination dans le mésoderme splanchnique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_1" id="qcm_1_3"><label for="qcm_1_3">D) Résorption de la paroi duodénale ventrale</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Le bourgeon ventral effectue une rotation de 180° autour du duodénum, accompagnant le cholédoque. Cette rotation explique la position finale du canal de Wirsung (bourgeon ventral) qui draine la majeure partie du pancréas, et pourquoi le cholédoque traverse la tête du pancréas chez l'adulte.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 2</span></div><div class="vqcm-question">Quel facteur de transcription est le marqueur du progéniteur endocrine pancréatique (point de non-retour vers le lignage endocrine) ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_0"><label for="qcm_2_0">A) Pdx1</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_1"><label for="qcm_2_1">B) Ptf1a</label></li>
+<li data-correct="true"><input type="radio" name="qcm_2" id="qcm_2_2"><label for="qcm_2_2">C) Ngn3 (Neurogenin 3)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_3"><label for="qcm_2_3">D) MafA</label></li>
+<li data-correct="false"><input type="radio" name="qcm_2" id="qcm_2_4"><label for="qcm_2_4">E) Arx</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Ngn3 est le facteur de transcription obligatoire pour l'engagement vers le lignage endocrine. Son expression transitoire dans les progéniteurs marque le point de non-retour. En amont, Pdx1 est commun à tout le pancréas. En aval, NeuroD1, Pax4/Arx et MafA précisent le sous-type cellulaire. Les mutations de Ngn3 causent un déficit endocrine pancréatique sévère.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 3</span></div><div class="vqcm-question">Une perte de fonction de Pax4 entraîne :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_0"><label for="qcm_3_0">A) Une augmentation massive des cellules β au détriment des cellules α</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_1"><label for="qcm_3_1">B) Une conversion des cellules β en cellules δ</label></li>
+<li data-correct="true"><input type="radio" name="qcm_3" id="qcm_3_2"><label for="qcm_3_2">C) Une augmentation des cellules α et ε au détriment des cellules β et δ</label></li>
+<li data-correct="false"><input type="radio" name="qcm_3" id="qcm_3_3"><label for="qcm_3_3">D) Une agénésie complète du pancréas endocrine</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Pax4 est nécessaire à la spécification des lignages β et δ. En son absence, l'antagoniste Arx n'est plus contrebalancé : les progéniteurs endocrines s'orientent massivement vers les lignages α (glucagon) et ε (ghréline). Résultat : absence de cellules β → diabète néonatal (Collombat et al., J Clin Invest, 2007).</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 4</span></div><div class="vqcm-question">La proportion de cellules β dans un îlot de Langerhans humain adulte normal est d'environ :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_0"><label for="qcm_4_0">A) 20-30%</label></li>
+<li data-correct="true"><input type="radio" name="qcm_4" id="qcm_4_1"><label for="qcm_4_1">B) 50-60%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_2"><label for="qcm_4_2">C) 70-80%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_4" id="qcm_4_3"><label for="qcm_4_3">D) &gt;90%</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">L'îlot humain contient ~50-60% de cellules β (Cabrera et al., PNAS, 2006). Attention au piège : 70-80% est la proportion chez le rongeur, pas chez l'humain. Cette différence est une source fréquente d'erreur dans l'interprétation des données précliniques.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge or">🥇 Or</span><span>QCM 5</span></div><div class="vqcm-question">Un nouveau-né présente un diabète néonatal permanent avec agénésie pancréatique complète (exocrine + endocrine). Quel gène est le plus probablement muté ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_0"><label for="qcm_5_0">A) Ngn3</label></li>
+<li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_1"><label for="qcm_5_1">B) Arx</label></li>
+<li data-correct="true"><input type="radio" name="qcm_5" id="qcm_5_2"><label for="qcm_5_2">C) Pdx1 (mutation homozygote)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_3"><label for="qcm_5_3">D) MafA</label></li>
+<li data-correct="false"><input type="radio" name="qcm_5" id="qcm_5_4"><label for="qcm_5_4">E) Pax6</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Pdx1 est le facteur de transcription maître du développement pancréatique précoce — sa perte complète (homozygote) empêche la formation de l'organe entier (exocrine ET endocrine). Ngn3 n'affecte que le compartiment endocrine. Arx n'affecte que les cellules α. MafA n'intervient qu'à la maturation tardive. Distinction fondamentale entre perte complète (agénésie) et perte partielle (MODY4 si hétérozygote).</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge bronze">🥉 Bronze</span><span>QCM 6</span></div><div class="vqcm-question">Les îlots de Langerhans représentent quelle proportion de la masse pancréatique totale ?</div><ul class="vqcm-options"><li data-correct="true"><input type="radio" name="qcm_6" id="qcm_6_0"><label for="qcm_6_0">A) 1-2%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_6" id="qcm_6_1"><label for="qcm_6_1">B) 10-15%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_6" id="qcm_6_2"><label for="qcm_6_2">C) 25-30%</label></li>
+<li data-correct="false"><input type="radio" name="qcm_6" id="qcm_6_3"><label for="qcm_6_3">D) 40-50%</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Seulement 1-2% de la masse pancréatique, mais ils reçoivent 10-15% du débit sanguin — cette disproportion reflète l'importance métabolique du compartiment endocrine. Le ratio vascularisation/masse est 5-10× supérieur à celui du tissu exocrine.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge argent">🥈 Argent</span><span>QCM 7</span></div><div class="vqcm-question">L'hyperglucagonémie paradoxale observée dans le DT1 s'explique par :</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_7" id="qcm_7_0"><label for="qcm_7_0">A) Une mutation des cellules α</label></li>
+<li data-correct="false"><input type="radio" name="qcm_7" id="qcm_7_1"><label for="qcm_7_1">B) Une stimulation sympathique excessive</label></li>
+<li data-correct="true"><input type="radio" name="qcm_7" id="qcm_7_2"><label for="qcm_7_2">C) La perte du signal inhibiteur paracrine de l'insuline locale sur les cellules α</label></li>
+<li data-correct="false"><input type="radio" name="qcm_7" id="qcm_7_3"><label for="qcm_7_3">D) Une augmentation de la masse de cellules α</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Dans l'îlot normal, l'insuline sécrétée par les cellules β inhibe directement la sécrétion de glucagon par les cellules α voisines (signal paracrine). Quand les cellules β sont détruites (DT1), ce frein paracrine disparaît → les cellules α sécrètent du glucagon de manière non régulée, même en hyperglycémie. Ce double déficit (insuline basse + glucagon élevé) aggrave l'hyperglycémie et contribue à l'acidocétose.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge or">🥇 Or</span><span>QCM 8</span></div><div class="vqcm-question">Dans le protocole de greffe d'îlots (Edmonton), pourquoi 50-70% des îlots greffés sont-ils perdus dans les premières semaines ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_8" id="qcm_8_0"><label for="qcm_8_0">A) Rejet hyperaigu systématique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_8" id="qcm_8_1"><label for="qcm_8_1">B) Toxicité des immunosuppresseurs sur les cellules β</label></li>
+<li data-correct="true"><input type="radio" name="qcm_8" id="qcm_8_2"><label for="qcm_8_2">C) Ischémie liée au délai de revascularisation (2-4 semaines)</label></li>
+<li data-correct="false"><input type="radio" name="qcm_8" id="qcm_8_3"><label for="qcm_8_3">D) Conversion des cellules β en cellules α après greffe</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Les îlots natifs possèdent une vascularisation dense qui est détruite lors de l'isolement enzymatique. Après transplantation intra-hépatique (via la veine porte), les îlots doivent se revasculariser à partir de néovaisseaux — un processus qui prend 2-4 semaines. Pendant ce délai, les cellules β centrales souffrent d'ischémie et meurent. C'est la cause principale de la perte massive initiale et la raison pour laquelle il faut typiquement 2-3 donneurs par receveur.</div></details>
+<hr />
+<div class="vqcm"><div class="vqcm-header"><span class="vqcm-badge diamant">💎 Diamant</span><span>QCM 9</span></div><div class="vqcm-question">Un patient DT2 de 45 ans, obèse (IMC 42), subit une chirurgie bariatrique (sleeve gastrectomy). Trois mois après, son HbA1c passe de 9,2% à 5,8% sans traitement antidiabétique. Quel mécanisme embryologique/cellulaire explique le mieux cette « rémission » ?</div><ul class="vqcm-options"><li data-correct="false"><input type="radio" name="qcm_9" id="qcm_9_0"><label for="qcm_9_0">A) Régénération massive de nouvelles cellules β par néogenèse</label></li>
+<li data-correct="true"><input type="radio" name="qcm_9" id="qcm_9_1"><label for="qcm_9_1">B) Redifférenciation de cellules β « dormantes » dédifférenciées après levée du stress métabolique</label></li>
+<li data-correct="false"><input type="radio" name="qcm_9" id="qcm_9_2"><label for="qcm_9_2">C) Transdifférenciation complète des cellules α en cellules β</label></li>
+<li data-correct="false"><input type="radio" name="qcm_9" id="qcm_9_3"><label for="qcm_9_3">D) Réactivation de la voie Ngn3 chez l'adulte</label></li>
+</ul><button class="vqcm-validate" type="button">Valider ma réponse</button><button class="vqcm-validate vqcm-show-correction" type="button" style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button><div class="vqcm-result"></div></div><details class="vfeedback"><summary>Voir la réponse</summary><div class="fb-content">Sous l'effet de la glucolipotoxicité chronique (DT2), une fraction de cellules β se dédifférencie : elles perdent l'expression de l'insuline et de MafA et reviennent à un état progéniteur (Talchai et al., Cell, 2012). Après chirurgie bariatrique, la perte pondérale rapide et la levée de la glucolipotoxicité permettent la redifférenciation de ces cellules β « dormantes ». Ce n'est pas de la néogenèse (pas de nouveaux progéniteurs) ni de la transdifférenciation α → β (trop lente et marginale chez l'humain). La rémission n'est possible que si le réservoir de cellules dédifférenciées est suffisant — d'où l'importance de l'intervention précoce.</div></details>
+<hr />
+<h3 id="s-23-cas-clinique">Cas clinique</h3>
+<div class="vbox clinique"><span class="vbox-title">Cas</span>
+M. K., 28 ans**<br>
+Diabète diagnostiqué à 24 ans. HbA1c 7,2%. Pas d'épisode d'acidocétose. Père diabétique diagnostiqué à 30 ans, grand-mère paternelle diabétique. IMC 23 kg/m². Anti-GAD, anti-IA2 et anti-ZnT8 négatifs. Peptide C normal (1,8 ng/mL).<br>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge or">🥇 Or</span> <strong style="color:#E65100;">Q1</strong> : Ce tableau est-il compatible avec un DT1, un DT2 ou un MODY ? Justifiez en mobilisant vos connaissances sur les facteurs de transcription du développement pancréatique.<br>
+> <em>Réponse : L'absence d'auto-anticorps élimine le DT1 auto-immun. L'IMC normal et l'absence d'insulinorésistance clinique rendent le DT2 peu probable. L'hérédité autosomique dominante sur 3 générations, l'âge de survenue <35 ans et le peptide C conservé sont les trois critères cardinaux du MODY. Les gènes candidats — tous des facteurs de transcription de la cascade embryonnaire — sont par ordre de fréquence : HNF1A (MODY3, ~35%), GCK (MODY2, ~30%), HNF4A (MODY1), PDX1 (MODY4), NEUROD1 (MODY6). Un séquençage ciblé (panel MODY) doit être prescrit.</em><br></div><textarea class="vtext-answer" id="cas_q1" placeholder="Rédigez votre réponse ici..."></textarea></div>
+> <div style="margin:16px 0; padding:14px; background:#FFF3E0; border-radius:8px; border-left:4px solid #E65100;"><div style="margin-bottom:8px;"><span class="vqcm-badge argent">🥈 Argent</span> <strong style="color:#E65100;">Q2</strong> : Si le séquençage révèle une mutation de GCK (MODY2), quel sera votre attitude thérapeutique et pourquoi ?<br>
+> <em>Réponse : Le MODY2 (GCK) correspond à un « thermostat glycémique » réglé plus haut — le seuil de sécrétion d'insuline est relevé de ~1 mmol/L. L'hyperglycémie est modérée (typiquement 5,5-8 mmol/L à jeun) et STABLE dans le temps (pas de progression). Attitude : PAS de traitement antidiabétique dans la majorité des cas. L'HbA1c reste habituellement <7,5% sans traitement. La metformine et les sulfamides n'améliorent pas significativement le contrôle glycémique car le « glucostat » est simplement réglé plus haut. Exception : surveillance rapprochée pendant la grossesse (risque de macrosomie fœtale).</em></div><textarea class="vtext-answer" id="cas_q2" placeholder="Rédigez votre réponse ici..."></textarea></div>
+</div>
+
+<hr />
+<h3 id="s-24-question-de-synthèse">Question de synthèse</h3>
+<div class="vexercice" style="border-color:#00ACC1; background:#E0F7FA;"><div class="vexercice-title" style="color:#006064;">💎 Question de synthèse</div><p>En quoi la compréhension de l'embryologie et de l'architecture des îlots de Langerhans éclaire-t-elle les stratégies actuelles de thérapie cellulaire du diabète de type 1 ? Développez en 8-10 lignes en abordant : la cascade de différenciation, l'architecture de l'îlot, la vascularisation et l'immunologie.</p><textarea class="vtext-answer" id="synth_1" rows="6" placeholder="Développez votre réponse ici (8-10 lignes)..."></textarea></div>
+<blockquote>
+<p><em>Éléments de réponse : (1) </em><em>Cascade de différenciation</em><em> : les protocoles de différenciation in vitro des iPSC en cellules β reproduisent la cascade Pdx1 → Ngn3 → MafA, chaque étape correspondant à un cocktail de facteurs de croissance spécifique. (2) </em><em>Architecture</em><em> : les cellules β isolées fonctionnent moins bien que les îlots intacts (perte de la communication paracrine et du couplage Cx36) — les approches actuelles reconstituent des « pseudo-îlots » 3D regroupant β, α et δ pour restaurer la signalisation paracrine. (3) </em><em>Vascularisation</em><em> : la perte de 50-70% des îlots post-greffe est liée au délai de revascularisation — les biomatériaux pré-vascularisés visent à résoudre ce problème. (4) </em><em>Immunologie</em><em> : la destruction auto-immune des cellules β dans le DT1 impose soit une immunosuppression (toxique à long terme), soit une encapsulation des cellules greffées dans des dispositifs semi-perméables (glucose et insuline passent, lymphocytes T bloqués).</em></p>
+</blockquote>
+<hr />
+<div class="vrefs"><div class="vrefs-title">Références bibliographiques</div><ul>
+<li>Slack JM. <em>Developmental biology of the pancreas</em>. Development. 1995;121(6):1569-1580.</li>
+<li>Pan FC, Wright C. <em>Pancreas organogenesis: from bud to plexus to gland</em>. Dev Dyn. 2011;240(3):530-565.</li>
+<li>Jennings RE et al. <em>Human pancreas development</em>. Development. 2015;142(18):3126-3137.</li>
+<li>Apelqvist A et al. <em>Notch signalling controls pancreatic cell differentiation</em>. Nature. 1999;400(6747):877-881.</li>
+<li>Gu G et al. <em>Direct evidence for the pancreatic lineage: NGN3+ cells are islet progenitors</em>. Development. 2002;129(10):2447-2457.</li>
+<li>Collombat P et al. <em>Opposing actions of Arx and Pax4 in endocrine pancreas development</em>. J Clin Invest. 2007;117(4):961-970.</li>
+<li>Cabrera O et al. <em>The unique cytoarchitecture of human pancreatic islets</em>. PNAS. 2006;103(7):2334-2339.</li>
+<li>Brissova M et al. <em>Assessment of human pancreatic islet architecture</em>. J Histochem Cytochem. 2005;53(9):1087-1097.</li>
+<li>Bosco D et al. <em>Unique arrangement of alpha- and beta-cells in human islets</em>. Diabetes. 2010;59(5):1202-1210.</li>
+<li>Bonner-Weir S, Orci L. <em>New perspectives on the microvasculature of the islets of Langerhans</em>. Diabetes. 1982;31(10):883-889.</li>
+<li>Butler AE et al. <em>Beta-cell deficit and increased beta-cell apoptosis in humans with type 2 diabetes</em>. Diabetes. 2003;52(1):102-110.</li>
+<li>Meier JJ et al. <em>Beta-cell replication is the primary mechanism subserving the postnatal expansion of beta-cell mass</em>. Diabetes. 2008;57(6):1584-1594.</li>
+<li>Thorel F et al. <em>Conversion of adult pancreatic alpha-cells to beta-cells after extreme beta-cell loss</em>. Nature. 2010;464(7292):1149-1154.</li>
+<li>Talchai C et al. <em>Pancreatic β cell dedifferentiation as a mechanism of diabetic β cell failure</em>. Cell. 2012;150(6):1223-1234.</li>
+<li>Shapiro AM et al. <em>Islet transplantation in seven patients with type 1 diabetes mellitus using a glucocorticoid-free immunosuppressive regimen</em>. N Engl J Med. 2000;343(4):230-238.</li>
+<li>Pagliuca FW et al. <em>Generation of functional human pancreatic β cells in vitro</em>. Cell. 2014;159(2):428-439.</li>
+<li>Rezania A et al. <em>Reversal of diabetes with insulin-producing cells derived in vitro from human pluripotent stem cells</em>. Nat Biotechnol. 2014;32(11):1121-1133.</li>
+<li>Shields BM et al. <em>Maturity-onset diabetes of the young (MODY): how many cases are we missing?</em> Diabetologia. 2010;53(12):2504-2508.</li>
+<li>Lean ME et al. <em>Primary care-led weight management for remission of type 2 diabetes (DiRECT)</em>. Lancet. 2018;391(10120):541-551.</li>
+<li>Stoffers DA et al. <em>Pancreatic agenesis attributable to a single nucleotide deletion in the human IPF1 gene coding sequence</em>. Nat Genet. 1997;15(1):106-110.</li>
+<li>Hebrok M et al. <em>Notochord repression of endodermal Sonic hedgehog permits pancreas development</em>. Genes Dev. 1998;12(11):1705-1713.</li>
+</ul></div>
+<hr />
+<p><em>VERTEX© — Formation Diabétologie — Module 1 : Embryologie du Pancréas</em>
+<em>Ce contenu est destiné à des praticiens confirmés. Il ne se substitue pas au jugement clinique.</em></p><div class="vertex-footer">VERTEX© — Virtual Environment for Real-Time EXpertise<br/>Formation médicale e-learning — doctraining.ma</div></main></div></body></html>

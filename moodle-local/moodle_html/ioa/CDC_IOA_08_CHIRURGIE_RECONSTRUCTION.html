@@ -1,0 +1,371 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-8-chirurgie-et-reconstruction-modules-26-28">Partie 8 — Chirurgie et Reconstruction (Modules 26-28)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-26-principes-chirurgicaux-debridement-et-sequestrectomie">MODULE 26 : PRINCIPES CHIRURGICAUX — DÉBRIDEMENT ET SÉQUESTRECTOMIE</h1>
+<p><strong>Partie</strong> : VIII — Chirurgie et Reconstruction<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 16, 17, 20, 21</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite chronique du fémur après enclouage centromédullaire pour fracture diaphysaire. Fistule permanente depuis 2 ans, multiples cures d'ATB sans succès. Scanner : épaississement cortical, cavité centromédullaire cloisonnée, séquestre intra-canalaire de 6 cm, canal Haversien élargi. *Comment planifier cette chirurgie complexe ? Jusqu'où débrider ? Comment gérer l'espace mort et la stabilité mécanique ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> les principes fondamentaux du débridement chirurgical en chirurgie septique</li>
+<li><strong>Planifier</strong> la séquestrectomie et le curetage radical</li>
+<li><strong>Gérer</strong> l'espace mort résiduel post-débridement</li>
+<li><strong>Maîtriser</strong> les techniques de stabilisation en contexte septique</li>
+<li><strong>Organiser</strong> la chronologie opératoire (stratégie en 1 ou plusieurs temps)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-261-principes-fondamentaux-du-debridement">Section 26.1 — Principes fondamentaux du débridement</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Dogme de la chirurgie septique</strong> : « Dead bone, dead space, dead tissue must go »<br />
+- Le débridement est le geste chirurgical LE PLUS IMPORTANT — les ATB ne compensent pas un débridement insuffisant<br />
+- <strong>Évaluation pré-opératoire</strong> :<br />
+  - Scanner avec reconstruction 3D : cartographie des séquestres, étendue de l'atteinte, épaisseur corticale résiduelle<br />
+  - IRM : extension dans les parties molles, abcès, fistule(s)<br />
+  - Planification 3D (logiciel) : anticipation de la perte de substance osseuse et des options de reconstruction<br />
+  - Évaluation vasculaire (si membre inférieur) : angioscanner ou écho-Doppler si artériopathie suspectée<br />
+  - État nutritionnel et optimisation pré-opératoire (albumine &gt;30 g/L, lymphocytes &gt;1500/mm³)<br />
+- <strong>Classification de Cierny-Mader</strong> : guide la stratégie chirurgicale<br />
+  - Type 1 : médullaire (endosteal)<br />
+  - Type 2 : superficiel (cortical)<br />
+  - Type 3 : localisé (cavitaire, mais os stable)<br />
+  - Type 4 : diffus (instabilité mécanique, résection segmentaire nécessaire)</p>
+<h3 id="section-262-technique-du-debridement-radical">Section 26.2 — Technique du débridement radical</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Séquestrectomie</strong> : extraction de tout fragment osseux dévascularisé<br />
+- <strong>Curetage</strong> : élimination du tissu infecté, granuleux, nécrotique<br />
+- <strong>Paprika sign</strong> : indicateur peropératoire — os cortical/spongieux sain = saignement punctiforme en nappe (comme paprika saupoudré). L'os sain saigne, l'os mort ne saigne pas<br />
+- <strong>Corticotomie</strong> : ouverture de la corticale pour accéder au canal médullaire<br />
+- <strong>Alésage centromédullaire</strong> : alésage du fût fémoral/tibial sur toute la longueur si clou retiré<br />
+- <strong>Prélèvements</strong> : ≥5 prélèvements tissulaires dans des zones différentes AVANT lavage<br />
+- <strong>Irrigation-lavage</strong> : abondant (&gt;6-10L), low-pressure pulsatile lavage recommandé<br />
+- <strong>Hémostase</strong> : soigneuse — l'hématome post-opératoire favorise la surinfection</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA26-S02-001 | 🎬 VIDÉO | Séquestrectomie radicale du tibia : technique chirurgicale pas à pas | Vidéo chirurgicale |<br />
+| MIOA26-S02-002 | 📷 IMAGE | Paprika sign : aspect per-opératoire de l'os sain après curetage | Photo close-up |<br />
+| MIOA26-S02-003 | 📐 SCHÉMA | Débridement selon Cierny-Mader (types 1-4) : schéma opératoire pour chaque type | 4 schémas |</p>
+<h3 id="section-263-gestion-de-lespace-mort">Section 26.3 — Gestion de l'espace mort</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>L'espace mort est l'ennemi</strong> : après débridement, la cavité résiduelle se remplit d'hématome → milieu de culture idéal<br />
+- <strong>Options de comblement</strong> :<br />
+  - <strong>Ciment PMMA antibiotique</strong> :<br />
+    - Forme perles (chaîne de Klemm), forme bloc moulé, spacer articulé<br />
+    - Élution antibiotique locale : vancomycine + gentamicine (synergie anti-staphylococcique)<br />
+    - Temporaire (retrait au 2e temps + greffe) ou semi-définitif<br />
+  - <strong>Greffe osseuse autologue</strong> :<br />
+    - Crête iliaque (spongieux) : gold standard biologique<br />
+    - RIA (Reamer-Irrigator-Aspirator) : prélèvement centromédullaire fémoral, grande quantité de greffon<br />
+    - Greffe vascularisée (péroné) : si perte &gt;6 cm et vascularisation locale compromise<br />
+  - <strong>Membrane induite (Masquelet)</strong> : renvoi détaillé Module 27<br />
+  - <strong>Substituts osseux</strong> :<br />
+    - Sulfate de calcium antibiotique (Stimulan®) : résorbable, élution ATB<br />
+    - Hydroxyapatite / phosphate tricalcique<br />
+    - Bio-verre bioactive (S53P4, BonAlive®) : antibactérien intrinsèque (pH alcalin, pression osmotique)<br />
+  - <strong>Muscle pédiculé</strong> : comblement biologique locorégional (gastrocnémien médial pour le tibia proximal)<br />
+- Choix selon : taille du défect, localisation, vascularisation locale, état du patient</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA26-S03-001 | 📊 INFOGRAPHIE | Options de comblement de l'espace mort : tableau comparatif (ciment, greffe, Masquelet, bio-verre, muscle) | Multicritère incluant taille défect |<br />
+| MIOA26-S03-002 | 📷 IMAGE | Bio-verre S53P4 : aspect macroscopique et mise en place per-opératoire | Photos |<br />
+| MIOA26-S03-003 | 🎬 ANIMATION InfectoSim© | Simulation : choisir le comblement optimal selon le défect osseux et le contexte | Exercice interactif |</p>
+<h3 id="section-264-stabilisation-mecanique-en-terrain-septique">Section 26.4 — Stabilisation mécanique en terrain septique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Fixateur externe</strong> : gold standard en terrain septique (pas de matériel interne dans la zone infectée)<br />
+  - Fixateur monoplan, circulaire (Ilizarov, Taylor Spatial Frame)<br />
+  - Avantages : stabilité, accès aux parties molles, possibilité de transport osseux<br />
+  - Inconvénients : encombrement, infection sur fiches (2-10%) <em>(Parameswaran et al., 2003, Injury)</em>, raideur articulaire<br />
+- <strong>Plaque</strong> : contre-indiquée en terrain septique aigu ; possible en terrain assaini avec couverture antibiotique<br />
+- <strong>Enclouage centromédullaire</strong> : débattu — contre-indiqué si infection aiguë intramédullaire, possible si os bien débridé et nettoyé (clou cimenté antibiotique)<br />
+- <strong>Clou cimenté antibiotique</strong> : clou enrobé de ciment PMMA chargé d'ATB — stabilisation + diffusion antibiotique locale <em>(technique décrite par Paley D et al., 2002, J Orthop Trauma)</em></p>
+<h3 id="points-cles-du-module-26">Points clés du Module 26</h3>
+<ol>
+<li>Le débridement chirurgical radical est le pilier du traitement — les ATB ne remplacent pas un débridement insuffisant</li>
+<li>Le « paprika sign » est le marqueur per-opératoire de l'os sain (saignement punctiforme en nappe)</li>
+<li>L'espace mort post-débridement DOIT être comblé (ciment, greffe, muscle, bio-verre)</li>
+<li>≥5 prélèvements tissulaires dans des zones différentes avant le lavage</li>
+<li>Le fixateur externe est le gold standard de stabilisation en terrain septique</li>
+<li>La planification 3D pré-opératoire (scanner + IRM) est indispensable pour les cas complexes</li>
+</ol>
+<hr />
+<h1 id="module-27-reconstruction-osseuse-masquelet-transport-osseux-techniques-avancees">MODULE 27 : RECONSTRUCTION OSSEUSE — MASQUELET, TRANSPORT OSSEUX, TECHNIQUES AVANCÉES</h1>
+<p><strong>Partie</strong> : VIII — Chirurgie et Reconstruction<br />
+<strong>Durée estimée</strong> : 4h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Module 26</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite post-traumatique tibiale après fracture ouverte Gustilo IIIB. Après débridement radical, défect osseux tibial de 12 cm. Spacer PMMA en place, fixateur externe. CRP normalisée, prélèvements stériles. Couverture cutanée par lambeau de grand dorsal libre (viable). *Comment reconstruire 12 cm de tibia ? Masquelet ou transport osseux ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Maîtriser</strong> la technique de la membrane induite (Masquelet) : indications, technique, résultats</li>
+<li><strong>Comprendre</strong> le transport osseux (Ilizarov) et ses variantes</li>
+<li><strong>Connaître</strong> les autres options de reconstruction (péroné vascularisé, méga-prothèse)</li>
+<li><strong>Choisir</strong> la stratégie de reconstruction adaptée au patient et au défect</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-271-technique-de-la-membrane-induite-masquelet">Section 27.1 — Technique de la membrane induite (Masquelet)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Concept</strong> (Alain-Charles Masquelet ; Masquelet AC et al., 2000, <em>Ann Chir Plast Esthet</em>) : la membrane biologique induite par un spacer PMMA a des propriétés ostéoinductrices qui favorisent la consolidation d'une greffe osseuse<br />
+- <strong>Premier temps</strong> (voir Module 26) :<br />
+  - Débridement radical + résection de l'os infecté<br />
+  - Mise en place d'un spacer PMMA (avec ou sans ATB)<br />
+  - Stabilisation (fixateur externe)<br />
+  - Le spacer INDUIT une membrane biologique richement vascularisée autour de lui (6-8 semaines)<br />
+- <strong>Deuxième temps</strong> (6-8 semaines après le 1er temps, une fois l'infection contrôlée) :<br />
+  - Ouverture soigneuse de la membrane (NE PAS la résequer !)<br />
+  - Retrait du spacer PMMA<br />
+  - Comblement de la cavité avec greffe osseuse autologue (crête iliaque ± RIA)<br />
+  - La membrane contient des facteurs de croissance (VEGF, BMP-2, TGF-β1) et est richement vascularisée → ostéogenèse + ostéoinduction + protection mécanique de la greffe<br />
+  - Fermeture de la membrane autour de la greffe<br />
+- <strong>Résultats</strong> : consolidation dans 85-95% des cas <em>(Masquelet et al., 2000, Ann Chir Plast Esthet)</em> pour des défects de 4-25 cm<br />
+- <strong>Avantages</strong> : technique reproductible, défects importants, pas de matériel complexe<br />
+- <strong>Limites</strong> : 2 interventions minimum, dépendant de la qualité de la membrane et de la quantité de greffe disponible</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA27-S01-001 | 🎬 ANIMATION | Technique de Masquelet : 1er temps (spacer) → membrane induite → 2e temps (greffe) | Animation 3D complète |<br />
+| MIOA27-S01-002 | 📷 IMAGE | Membrane induite ouverte : aspect macroscopique, richement vascularisée | Photos per-opératoires |<br />
+| MIOA27-S01-003 | 📷 IMAGE | Résultats radiographiques : consolidation d'un défect de 15 cm de tibia par Masquelet | Radiographies sériées |<br />
+| MIOA27-S01-004 | 📐 SCHÉMA | Biologie de la membrane induite : facteurs de croissance, vascularisation, ostéoinduction | Schéma moléculaire |</p>
+<h3 id="section-272-transport-osseux-ilizarov-et-variantes">Section 27.2 — Transport osseux (Ilizarov et variantes)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Concept</strong> (Gavriil Ilizarov, 1950s-1980s ; Ilizarov GA, 1989, <em>Clin Orthop Relat Res</em>) : l'os distraction peut régénérer de l'os nouveau grâce à l'ostéogenèse en distraction (« distraction osteogenesis »)<br />
+- <strong>Technique</strong> :<br />
+  - Résection de l'os infecté → défect<br />
+  - Corticotomie à distance de la zone septique<br />
+  - Transport progressif du fragment osseux (1 mm/jour en 4 incréments de 0.25 mm) via fixateur externe circulaire<br />
+  - Le fragment transporté avance progressivement pour combler le défect<br />
+  - À l'extrémité distale : régénérat osseux se forme dans le sillage du fragment transporté<br />
+  - Au site d'accostage (docking site) : greffe de contact ± compression<br />
+- <strong>Fixateur externe</strong> : Ilizarov (anneaux + broches/fiches), Taylor Spatial Frame (hexapode programmable), fixateur monoral motorisé<br />
+- <strong>Variantes</strong> : transport osseux bifocal (2 corticotomies), trifocal (défects très longs), transport sur clou (raccourcit la durée au fixateur)<br />
+- <strong>Résultats</strong> : consolidation 85-95% <em>(Ilizarov, 1989, Clin Orthop Relat Res)</em> mais durée de traitement longue (Index de consolidation : 1-1.5 mois/cm <em>(Paley, 1990, Clin Orthop Relat Res)</em>)<br />
+- <strong>Avantages</strong> : reconstruction biologique, pas de greffe si bon régénérat<br />
+- <strong>Inconvénients</strong> : durée ++, infection sur fiches (2-10%), raideur articulaire, inconfort, compliance nécessaire</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA27-S02-001 | 🎬 ANIMATION | Transport osseux d'Ilizarov : corticotomie, distraction progressive, accostage | Animation 3D |<br />
+| MIOA27-S02-002 | 📷 IMAGE | Fixateur de type Ilizarov et Taylor Spatial Frame | Photos de matériel |<br />
+| MIOA27-S02-003 | 📷 IMAGE | Radiographies sériées : régénérat osseux pendant le transport (J0, J30, J60, J90) | Série radiographique |</p>
+<h3 id="section-273-autres-techniques-de-reconstruction">Section 27.3 — Autres techniques de reconstruction</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Greffe de péroné vascularisé</strong> :<br />
+  - Péroné libre microchirurgical (10-25 cm de greffon disponible)<br />
+  - Indications : défects &gt;6 cm avec environnement local compromis<br />
+  - Avantages : os vascularisé → résistance à l'infection, hypertrophie progressive<br />
+  - Inconvénients : chirurgie longue (microchirurgie vasculaire), risque de fracture de fatigue du greffon, morbidité du site donneur<br />
+- <strong>Méga-prothèses</strong> :<br />
+  - Alternative non biologique pour la reconstruction de défects majeurs<br />
+  - Indications limitées en contexte septique (risque de réinfection sur matériel)<br />
+  - Utilisées en sauvetage après échecs de reconstruction biologique<br />
+- <strong>Allogreffes structurales</strong> :<br />
+  - Os de banque (tête fémorale, diaphyse)<br />
+  - Risque : résorption, non-union, réinfection (os non vascularisé)<br />
+  - Intérêt : impaction grafting (comblement de pertes péri-prothétiques)</p>
+<h3 id="section-274-arbre-decisionnel-choix-de-la-reconstruction">Section 27.4 — Arbre décisionnel : choix de la reconstruction</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Défect &lt;2 cm</strong> : greffe autologue directe (crête iliaque), comblement ciment/substitut<br />
+- <strong>Défect 2-6 cm</strong> : Masquelet (1ère intention), greffe de crête iliaque, RIA<br />
+- <strong>Défect 6-15 cm</strong> : Masquelet OU transport osseux (Ilizarov) — choix selon terrain et expérience de l'équipe<br />
+- <strong>Défect &gt;15 cm</strong> : transport osseux (préféré), péroné vascularisé, combine techniques<br />
+- <strong>Facteurs de choix</strong> : état des tissus mous, vascularisation locale, âge du patient, compliance, expérience du chirurgien</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA27-S04-001 | 📊 INFOGRAPHIE | Arbre décisionnel de reconstruction osseuse selon la taille du défect | Algorithme visuel |<br />
+| MIOA27-S04-002 | 📊 INFOGRAPHIE | Masquelet vs Ilizarov : tableau comparatif — avantages, inconvénients, durée, résultats | Comparaison structurée |<br />
+| MIOA27-S04-003 | 🎬 ANIMATION InfectoSim© | Simulation : planifier la reconstruction d'un défect tibial de 10 cm post-septique | Exercice interactif |</p>
+<h3 id="points-cles-du-module-27">Points clés du Module 27</h3>
+<ol>
+<li>La technique de Masquelet utilise une membrane biologique induite par un spacer PMMA pour favoriser la consolidation de la greffe osseuse (1er temps spacer → 2e temps greffe)</li>
+<li>Le transport osseux d'Ilizarov permet une régénération osseuse biologique par distraction (1 mm/jour)</li>
+<li>Le péroné vascularisé est une option pour les défects &gt;6 cm en environnement compromis</li>
+<li>Le choix de la technique dépend de la taille du défect, des tissus mous, de la vascularisation et de l'expérience du chirurgien</li>
+<li>Consolidation attendue dans 85-95% des cas avec les techniques modernes</li>
+<li>La durée de traitement est longue (transport osseux : 1-1.5 mois/cm de défect)</li>
+</ol>
+<hr />
+<h1 id="module-28-couverture-des-tissus-mous-lambeaux-en-chirurgie-septique">MODULE 28 : COUVERTURE DES TISSUS MOUS — LAMBEAUX EN CHIRURGIE SEPTIQUE</h1>
+<p><strong>Partie</strong> : VIII — Chirurgie et Reconstruction<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Module 26</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite chronique du tibia distal après fracture ouverte. Séquestrectomie radicale réalisée — infection contrôlée. Défect osseux comblé par Masquelet (1er temps). Problème : perte de substance cutanée de 10×6 cm sur la face antéromédiale du tibia (zone sous-cutanée, pas de muscle sous-jacent). *Comment couvrir cette zone ? Quel lambeau choisir pour une couverture durable en terrain septique ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> l'importance de la couverture des tissus mous en chirurgie septique</li>
+<li><strong>Connaître</strong> les principaux lambeaux utilisés en chirurgie septique orthopédique</li>
+<li><strong>Choisir</strong> le lambeau adapté selon la localisation et l'état vasculaire</li>
+<li><strong>Identifier</strong> les complications des lambeaux en terrain septique</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-281-importance-de-la-couverture-dans-la-chaine-septique">Section 28.1 — Importance de la couverture dans la chaîne septique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- « Bone without soft tissue cover will become infected bone »<br />
+- Le tibia est la localisation la plus fréquente d'ostéomyélite chronique PARCE QUE sa face antéromédiale est sous-cutanée (pas de couverture musculaire)<br />
+- <strong>Objectifs de la couverture</strong> :<br />
+  - Apporter de la vascularisation au tissu osseux (lambeau musculaire = angiogenèse)<br />
+  - Oblitérer l'espace mort<br />
+  - Permettre la diffusion des ATB systémiques dans la zone infectée<br />
+  - Protéger mécaniquement le site opératoire<br />
+- <strong>Timing</strong> : couverture dans les 7-10 jours si possible (concept « fix and flap » ; Gopal S et al., 2000, <em>J Bone Joint Surg Br</em>)<br />
+- Collaboration chirurgien orthopédiste + chirurgien plasticien</p>
+<h3 id="section-282-lambeaux-locaux-pedicules">Section 28.2 — Lambeaux locaux (pédiculés)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tibia proximal et genou</strong> :<br />
+  - Lambeau de gastrocnémien médial : workhorse pour le tiers proximal du tibia<br />
+  - Rotation : 90-180°, pédicule vasculaire artère surale médiale<br />
+  - Couverture : exposition prothétique du genou, ostéomyélite tibiale proximale<br />
+- <strong>Tibia moyen</strong> :<br />
+  - Lambeau de soléaire : pour le tiers moyen du tibia<br />
+  - Lambeau hémisoleaire : variante moins mutilante<br />
+  - Lambeau de soléaire inversé : tiers distal<br />
+- <strong>Pied/cheville</strong> :<br />
+  - Lambeau sural à pédicule distal (reverse sural flap) : couverture du talon, malléoles, tendon d'Achille<br />
+  - Lambeaux locaux de rotation<br />
+- <strong>Autres</strong> :<br />
+  - Lambeau de grand fessier : trochanters, ischions (escarre infectée)<br />
+  - Lambeau de vaste latéral/vaste médial : cuisse</p>
+<h3 id="section-283-lambeaux-libres-microchirurgicaux">Section 28.3 — Lambeaux libres (microchirurgicaux)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Indications</strong> : lorsque les lambeaux locaux sont insuffisants ou non disponibles (zone 3/3 distale du tibia, traumatisme étendu ayant détruit les muscles locaux)<br />
+- <strong>Lambeaux libres les plus utilisés en orthopédie septique</strong> :<br />
+  - Grand dorsal (latissimus dorsi) : grande surface, volume important, fiable<br />
+  - Grand droit de l'abdomen (TRAM/VRAM) : alternative<br />
+  - Gracilis : petit volume, pédiculé court, idéal pour défects modérés<br />
+  - ALT (Anterolateral Thigh Flap) : fasciocutané, très polyvalent<br />
+- <strong>Technique</strong> : anastomose microchirurgicale (artère + veine) sur les vaisseaux receveurs (artère tibiale antérieure/postérieure)<br />
+- <strong>Résultats en terrain septique</strong> : taux de succès 90-95% <em>(Yazar et al., 2004, Plast Reconstr Surg)</em> (similaire au non-septique si débridement adéquat)<br />
+- <strong>Complications</strong> : thrombose anastomotique (1-5%), nécrose partielle, sérome, infection du lambeau</p>
+<h3 id="section-284-therapie-par-pression-negative-tpnvac">Section 28.4 — Thérapie par pression négative (TPN/VAC)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>VAC (Vacuum-Assisted Closure)</strong> : système de pression négative (-125 mmHg) appliqué sur la plaie<br />
+- Rôle de pont temporaire en attendant la couverture définitive<br />
+- Avantages : drainage, réduction de l'espace mort, stimulation granulation, réduction charge bactérienne<br />
+- Limites : ne remplace PAS un lambeau, ne couvre pas l'os exposé à long terme<br />
+- VAC-instill : variante avec instillation intermittente d'antiseptique ou d'ATB liquide entre les phases de pression négative</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA28-S02-001 | 📐 SCHÉMA | Choix du lambeau pour le membre inférieur selon le tiers anatomique | Schéma jambe annotée |<br />
+| MIOA28-S02-002 | 📷 IMAGE | Lambeau de gastrocnémien médial : technique chirurgicale et résultat | Photos per-opératoires |<br />
+| MIOA28-S03-001 | 📷 IMAGE | Lambeau libre de grand dorsal pour couverture tibiale distale | Photos pré/post |<br />
+| MIOA28-S04-001 | 📷 IMAGE | VAC therapy sur plaie septique tibiale : aspect à J0, J7, J14 | Photos évolution |<br />
+| MIOA28-S04-002 | 📊 INFOGRAPHIE | Algorithme de couverture des tissus mous en chirurgie septique | Arbre de décision complet |</p>
+<h3 id="points-cles-du-module-28">Points clés du Module 28</h3>
+<ol>
+<li>La couverture des tissus mous est essentielle : l'os exposé sans couverture = infection garantie</li>
+<li>Le tibia est la localisation la plus fréquente d'ostéomyélite chronique car sa face antéromédiale est sous-cutanée</li>
+<li>Lambeaux locaux par tiers du tibia : gastrocnémien (proximal), soléaire (moyen), sural inversé (distal)</li>
+<li>Les lambeaux libres (grand dorsal, ALT, gracilis) sont nécessaires quand les lambeaux locaux manquent</li>
+<li>La VAC est un outil temporaire de bridge — elle ne remplace jamais un lambeau définitif</li>
+<li>Collaboration orthopédiste + plasticien est indispensable pour les cas complexes</li>
+<li>Concept « fix and flap » : fixation osseuse + couverture en urgence (&lt;72h si possible)</li>
+</ol>
+<hr />
+<hr />
+<h2 id="references-partie-viii">RÉFÉRENCES — PARTIE VIII</h2>
+<ol>
+<li>Masquelet AC, Fitoussi F, Begue T, Muller GP. Reconstruction des os longs par membrane induite et autogreffe spongieuse. <em>Ann Chir Plast Esthet</em>. 2000;45(3):346-353.</li>
+<li>Ilizarov GA. The tension-stress effect on the genesis and growth of tissues: Part II. The influence of the rate and frequency of distraction. <em>Clin Orthop Relat Res</em>. 1989;(239):263-285.</li>
+<li>Paley D. Problems, obstacles, and complications of limb lengthening by the Ilizarov technique. <em>Clin Orthop Relat Res</em>. 1990;(250):81-104.</li>
+<li>Parameswaran AD, Roberts CS, Seligson D, et al. Pin tract infection with contemporary external fixation: how much of a problem? <em>Injury</em>. 2003;34(2):135-139.</li>
+<li>Gopal S, Majumder S, Batchelor AG, et al. Fix and flap: the radical orthopaedic and plastic treatment of severe open fractures of the tibia. <em>J Bone Joint Surg Br</em>. 2000;82(7):959-966.</li>
+<li>Paley D, Herzenberg JE. Intramedullary infections treated with antibiotic cement rods. <em>J Orthop Trauma</em>. 2002;16(10):723-729.</li>
+<li>Yazar S, Lin CH, Lin YT, et al. Outcome comparison between free muscle and free fasciocutaneous flaps for reconstruction of distal third and ankle traumatic open tibial fractures. <em>Plast Reconstr Surg</em>. 2004;114(6):1468-1476.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

@@ -1,0 +1,789 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-2-pathologies-et-indications-modules-5-8">Partie 2 — Pathologies et Indications (Modules 5-8)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : II — PATHOLOGIES ET INDICATIONS<br />
+<strong>Modules</strong> : 5 à 8<br />
+<strong>Durée estimée</strong> : ~12 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-5-gonarthrose-physiopathologie-et-histoire-naturelle">MODULE 5 : GONARTHROSE — PHYSIOPATHOLOGIE ET HISTOIRE NATURELLE</h1>
+<p><strong>Durée</strong> : ~3h30 | <strong>Niveau</strong> : Fondamental → Intermédiaire | <strong>Prérequis</strong> : Modules 3-4</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> la structure et les propriétés du cartilage articulaire normal</li>
+<li><strong>Expliquer</strong> les mécanismes physiopathologiques de la dégénérescence cartilagineuse</li>
+<li><strong>Classifier</strong> les stades de la gonarthrose (classifications radiologiques et arthroscopiques)</li>
+<li><strong>Identifier</strong> les facteurs de risque de développement et de progression de la gonarthrose</li>
+<li><strong>Discuter</strong> l'histoire naturelle de la gonarthrose et les options thérapeutiques pré-PTG</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="51-le-cartilage-articulaire-normal">5.1 Le cartilage articulaire normal</h3>
+<ul>
+<li>Structure macroscopique</li>
+<li>Épaisseur : 2-4 mm au genou (plus épais que la hanche)</li>
+<li>Cartilage hyalin : surface lisse, blanc nacré, avasculaire, aneural, alymphatique</li>
+<li>Répartition : plus épais en zone de charge, plus fin en périphérie</li>
+<li>Coefficient de friction : 0.001-0.01 <em>(Mow et al., 1992)</em> (plus glissant que la glace sur la glace !)</li>
+<li>Structure microscopique — 4 zones</li>
+<li>Zone superficielle (tangentielle, 10-20%) : fibres de collagène II tangentielles, chondrocytes aplatis, résistance au cisaillement</li>
+<li>Zone transitionnelle (40-60%) : fibres obliques aléatoires, chondrocytes ronds, transition mécanique</li>
+<li>Zone profonde (radiale, 30%) : fibres perpendiculaires, chondrocytes en colonnes, résistance à la compression</li>
+<li>Zone calcifiée : interface cartilage-os sous-chondral, <em>tidemark</em> (front de calcification)</li>
+<li>Composition biochimique</li>
+<li>Eau : 65-80% (essentiel pour la lubrification et la nutrition)</li>
+<li>Collagène type II : 10-20% (réseau structurel, résistance en traction)</li>
+<li>Protéoglycanes (aggrécane) : 5-10% (résistance en compression, rétention d'eau)</li>
+<li>Chondrocytes : &lt; 5% du volume (cellules métaboliquement actives mais faible densité)</li>
+<li>Glycosaminoglycanes (GAG) : chondroïtine sulfate, kératane sulfate</li>
+<li>Propriétés mécaniques</li>
+<li>Comportement viscoélastique (dépendant du temps et de la vitesse de charge)</li>
+<li>Module d'Young : 0.5-2 MPa en compression (mou par rapport à l'os : 17 000 MPa)</li>
+<li>Fluage (<em>creep</em>) : déformation progressive sous charge constante (compression de l'eau)</li>
+<li>Relaxation de contrainte : diminution de la force sous déformation constante</li>
+<li>Hystérésis : perte d'énergie à chaque cycle charge-décharge → amortissement</li>
+<li>Nutrition et métabolisme</li>
+<li>Pas de vascularisation directe → nutrition par imbibition (diffusion depuis le liquide synovial)</li>
+<li>Cycle charge-décharge : « pompe » le liquide synovial dans et hors du cartilage</li>
+<li>Conséquence : l'immobilisation prolongée affame le cartilage → dégénérescence</li>
+<li>Turnover très lent : collagène = demi-vie &gt; 100 ans <em>(Verzijl et al., 2000)</em> (pas de remplacement possible !)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG05-S01-001</strong><br/>
+<em>Animation de la structure en 4 zones du cartilage articulaire : orientation des fibres, distribution des chondrocytes (Observez la transition mécanique des zones superficielle à profonde)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG05-S01-002</strong><br/>
+<em>Animation du mécanisme de lubrification : film de liquide synovial, weeping lubrication, boundary lubrication (Pourquoi le coefficient de friction est-il si bas ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG05-S01-003</strong><br/>
+<em>Schéma du cycle de nutrition du cartilage par imbibition : charge → expulsion d'eau → décharge → ré-absorption (Expliquez pourquoi le mouvement est essentiel)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="52-physiopathologie-de-la-gonarthrose">5.2 Physiopathologie de la gonarthrose</h3>
+<ul>
+<li>Déséquilibre catabolisme-anabolisme</li>
+<li>Phase initiale : augmentation des MMP (métalloprotéinases), IL-1, TNF-α</li>
+<li>Dégradation du réseau de collagène II → irréversible (pas de réparation)</li>
+<li>Perte de protéoglycanes → perte de la capacité de rétention d'eau → amincissement</li>
+<li>Tentative de réparation : prolifération chondrocytaire (clusters), fibrocartilage (collagène I — inférieur)</li>
+<li>Modifications progressives</li>
+<li>Stade 1 : ramollissement (chondromalacie), fissuration superficielle</li>
+<li>Stade 2 : fissuration profonde, fibrillation, perte de protéoglycanes</li>
+<li>Stade 3 : érosion partielle, mise à nu de l'os sous-chondral par endroits</li>
+<li>Stade 4 : perte totale de cartilage → contact os-sur-os → éburnation</li>
+<li>Remodelage de l'os sous-chondral</li>
+<li>Sclérose sous-chondrale : épaississement et densification sous les zones de surcharge</li>
+<li>Géodes (kystes sous-chondraux) : cavités liquidienne dans l'os sclérotique (mécanisme débattu : intrusion synoviale vs nécrose de contrainte)</li>
+<li>Ostéophytes : excroissances ostéocartilagineuses aux marges articulaires (tentative de stabilisation + augmentation de surface)</li>
+<li>Inflammation synoviale (synovite secondaire)</li>
+<li>Débris cartilagineux → phagocytose → libération de cytokines → inflammation</li>
+<li>Synovite : épaississement, hypervascularisation, épanchement articulaire</li>
+<li>Boucle d'amplification : inflammation → dégradation → débris → inflammation</li>
+<li>Facteurs mécaniques</li>
+<li>Surcharge mécanique chronique (obésité, désaxation, activité intense)</li>
+<li>Modèle de Stokes adapté au genou : surcharge → usure → désaxation → surcharge amplifiée</li>
+<li>Impact traumatique : lésions ostéochondrales → arthrose post-traumatique</li>
+<li>Méniscectomie : perte de l'amortisseur → surcharge focale → arthrose à 15-20 ans</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG05-S02-001</strong><br/>
+<em>Animation de la dégradation progressive du cartilage : stade 1 (ramollissement) → 4 (os-sur-os) avec les modifications cellulaires et matricielles (Identifiez le point de non-retour)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG05-S02-002</strong><br/>
+<em>Schéma du cercle vicieux de la gonarthrose : surcharge → dégradation → inflammation → perte de substance → désaxation → surcharge (Comparez avec le cercle de Stokes de la scoliose)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MPTG05-S02-003</strong><br/>
+<em>Photos arthroscopiques des 4 stades Outerbridge : cartilage normal → ramollissement → fissuration → érosion → os nu (Classifiez chaque image)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="53-classifications-de-la-gonarthrose">5.3 Classifications de la gonarthrose</h3>
+<ul>
+<li>Classification radiologique de Kellgren-Lawrence <em>(Kellgren &amp; Lawrence, 1957, Ann Rheum Dis)</em></li>
+<li>Grade 0 : normal</li>
+<li>Grade 1 : pincement douteux, ostéophytes marginaux possibles</li>
+<li>Grade 2 : ostéophytes certains, pincement modéré</li>
+<li>Grade 3 : ostéophytes multiples, pincement franc, sclérose sous-chondrale, ébauche de déformation</li>
+<li>Grade 4 : pincement sévère/nul (os-sur-os), ostéophytes volumineux, sclérose, déformation</li>
+<li>Limites : reproductibilité inter-observateur modérée, ne prédit pas la douleur</li>
+<li>Classification arthroscopique de l'ICRS (International Cartilage Regeneration &amp; Joint Preservation Society) <em>(Brittberg &amp; Winalski, 2003, J Bone Joint Surg Am)</em></li>
+<li>Grade 0 : normal</li>
+<li>Grade 1 : lésion superficielle (fissures, ramollissement)</li>
+<li>Grade 2 : lésion &lt; 50% de l'épaisseur</li>
+<li>Grade 3 : lésion &gt; 50% de l'épaisseur (3A, 3B, 3C, 3D)</li>
+<li>Grade 4 : lésion trans-chondrale atteignant l'os sous-chondral</li>
+<li>Classification d'Outerbridge <em>(Outerbridge, 1961, J Bone Joint Surg Br)</em> (arthroscopique — genou)</li>
+<li>Grade I : ramollissement, boursouflure</li>
+<li>Grade II : fissuration &lt; 1.5 cm de diamètre</li>
+<li>Grade III : fissuration &gt; 1.5 cm, lésion profonde sans mise à nu de l'os</li>
+<li>Grade IV : os sous-chondral exposé</li>
+<li>Classification d'Ahlbäck <em>(Ahlbäck, 1968, Acta Radiol Suppl)</em> (radiologique — genoux en charge)</li>
+<li>Stade 1 : pincement &lt; 50%</li>
+<li>Stade 2 : disparition de l'interligne</li>
+<li>Stade 3 : usure osseuse &lt; 5 mm</li>
+<li>Stade 4 : usure osseuse 5-15 mm</li>
+<li>Stade 5 : usure osseuse &gt; 15 mm (subluxation)</li>
+<li>Comparaison et utilisation pratique</li>
+<li>Kellgren-Lawrence : le plus utilisé en recherche et dans les recommandations</li>
+<li>Ahlbäck : utilisé en Europe, meilleur pour la planification chirurgicale (quantifie l'usure osseuse)</li>
+<li>ICRS/Outerbridge : utilisés en arthroscopie et pour les lésions focales</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG05-S03-001</strong><br/>
+<em>Radiographies des 5 grades de Kellgren-Lawrence : de normal à os-sur-os (Classifiez chaque image et indiquez le traitement approprié)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG05-S03-002 — Tableau comparatif des 4 classifications : correspondances entre Kellgren-Lawrence, Ahlbäck, ICRS, Outerbridge (Lequel utiliseriez-vous pour planifier une PTG ?)]</p>
+</blockquote>
+<h3 id="54-facteurs-de-risque-de-la-gonarthrose">5.4 Facteurs de risque de la gonarthrose</h3>
+<ul>
+<li>Facteurs non modifiables</li>
+<li>Âge : incidence exponentielle après 50 ans (50% des &gt; 65 ans ont des signes radiologiques) <em>(Felson et al., 1987)</em></li>
+<li>Sexe : femmes &gt; hommes après 55 ans (facteur hormonal, laxité, morphologie)</li>
+<li>Génétique : héritabilité 40-65% <em>(Valdes &amp; Spector, 2011)</em> (gènes du collagène, GDF5, SMAD3)</li>
+<li>Ethnie : variations de prévalence (plus fréquente chez les Asiatiques — usage accroupi)</li>
+<li>Morphologie : varus/valgus constitutionnel, dysplasie</li>
+<li>Facteurs modifiables</li>
+<li>Obésité : facteur #1, chaque kg en plus = 4 kg de surcharge sur le genou <em>(Messier et al., 2005)</em></li>
+<li>Activité professionnelle : travail accroupi, port de charges, escaliers répétés</li>
+<li>Sport : football, rugby, ski → traumatismes → arthrose secondaire</li>
+<li>Traumatismes : fracture articulaire, lésion méniscale, rupture du LCA</li>
+<li>Méniscectomie : multiplie le risque par 5-7 à 20 ans <em>(Englund et al., 2003)</em></li>
+<li>Faiblesse musculaire : quadriceps faible → perte de l'amortissement dynamique</li>
+<li>Facteurs protecteurs</li>
+<li>Activité physique modérée (marche, vélo, natation) → nutrition du cartilage</li>
+<li>Perte de poids : réduction de 5 kg = réduction de 50% des symptômes <em>(Christensen et al., 2007)</em></li>
+<li>Renforcement musculaire : quadriceps et ischio-jambiers → stabilisation dynamique<blockquote>
+<p>[MEDIA: 📊 MPTG05-S04-001 — Infographie des facteurs de risque de la gonarthrose : modifiables vs non modifiables, avec niveau de preuve (Identifiez les 3 facteurs sur lesquels le patient peut agir)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="55-histoire-naturelle-et-traitements-pre-ptg">5.5 Histoire naturelle et traitements pré-PTG</h3>
+<ul>
+<li>Évolution naturelle de la gonarthrose</li>
+<li>Progression lente et non linéaire (poussées d'aggravation)</li>
+<li>Tous les patients n'évoluent pas vers la PTG (stabilisation possible)</li>
+<li>Facteurs de progression rapide : varus &gt; 5°, obésité, lésion méniscale, épanchement récurrent</li>
+<li>Traitements conservateurs avant la PTG</li>
+<li>Mesures hygiéno-diététiques : perte de poids, adaptation des activités</li>
+<li>Kinésithérapie : renforcement quadricipital, proprioception, mobilité</li>
+<li>Traitement médicamenteux : AINS, antalgiques (palier 1-2), topiques</li>
+<li>Infiltrations intra-articulaires : corticoïdes (effet transitoire 3-6 sem), acide hyaluronique (viscosupplémentation — effet modeste), PRP (preuve émergente, résultats variables)</li>
+<li>Orthèses : genouillère de recentrage, orthèse de valgisation (unloading brace)</li>
+<li>Semelles orthopédiques : coin latéral (varus)</li>
+<li>Traitements chirurgicaux conservateurs</li>
+<li>Arthroscopie de débridement (lavage) : plus recommandé (études Moseley et al., 2002 ; Kirkley et al., 2008 — <em>N Engl J Med</em> — niveau I)</li>
+<li>Ostéotomie tibiale de valgisation (OTV) : patient jeune (&lt; 60 ans), varus, compartiment médial isolé, activité sportive</li>
+<li>Ostéotomie fémorale de varisation : rare, valgus fémoral, compartiment latéral</li>
+<li>Microfractures, mosaïcplastie, greffe de chondrocytes : lésions focales chez le patient jeune</li>
+<li>Prothèse unicompartimentale (PUC)</li>
+<li>Alternative à la PTG pour l'arthrose médiale isolée</li>
+<li>Indications strictes : 1 compartiment, LCA intact, flexum &lt; 10°, Cobb &lt; 10°</li>
+<li>Avantages : mini-invasif, préservation des croisés, cinématique plus naturelle</li>
+<li>Limites : indication restrictive, taux de reprise à 15 ans plus élevé que PTG</li>
+<li>Quand passer de la conservation à la PTG ?</li>
+<li>Douleur réfractaire au traitement conservateur bien conduit (≥ 6 mois)</li>
+<li>Retentissement fonctionnel majeur (périmètre de marche, escaliers, sommeil)</li>
+<li>Kellgren-Lawrence ≥ 3 (corrélation radio-clinique)</li>
+<li>L'indication est clinique avant tout, pas uniquement radiologique<blockquote>
+<p>[MEDIA: 📊 MPTG05-S05-001 — Algorithme thérapeutique de la gonarthrose : du diagnostic au remplacement prothétique — arbre décisionnel complet avec niveaux de preuve (Identifiez les points de décision)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG05-S05-002</strong><br/>
+<em>Schéma de l'ostéotomie tibiale de valgisation : principe biomécanique (transfert de charge du médial vers le latéral) avec angles pré et post-opératoires (Chez quel patient est-ce indiqué ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h1 id="module-6-autres-pathologies-necessitant-une-ptg">MODULE 6 : AUTRES PATHOLOGIES NÉCESSITANT UNE PTG</h1>
+<p><strong>Durée</strong> : ~2h30 | <strong>Niveau</strong> : Intermédiaire | <strong>Prérequis</strong> : Module 5</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les étiologies non arthrosiques justifiant une PTG</li>
+<li><strong>Décrire</strong> les particularités diagnostiques et thérapeutiques de chaque pathologie</li>
+<li><strong>Adapter</strong> la stratégie chirurgicale en fonction de l'étiologie</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="61-polyarthrite-rhumatoide-et-rhumatismes-inflammatoires-chroniques">6.1 Polyarthrite rhumatoïde et rhumatismes inflammatoires chroniques</h3>
+<ul>
+<li>Polyarthrite rhumatoïde (PR)</li>
+<li>Atteinte synoviale primaire → pannus → destruction cartilage + os</li>
+<li>Spécificités au genou : atteinte tricompartimentale d'emblée, ostéoporose péri-articulaire, laxité ligamentaire (destruction capsulaire)</li>
+<li>Valgus fréquent (vs varus de l'arthrose primitive)</li>
+<li>Os poreux → risque de fracture peropératoire, fixation cimentée obligatoire</li>
+<li>Biothérapies (anti-TNF, anti-IL6) : gestion périopératoire (fenêtre thérapeutique, risque infectieux)</li>
+<li>Polyarticulaire : évaluer hanche, cheville, épaule, main → séquence chirurgicale logique</li>
+<li>Spondylarthropathies (SpA)</li>
+<li>Spondylarthrite ankylosante, rhumatisme psoriasique, arthrite réactionnelle</li>
+<li>Ossification péri-articulaire → ankylose possible</li>
+<li>Association avec atteinte rachidienne → positionnement peropératoire délicat</li>
+<li>Goutte et chondrocalcinose (CPPD)</li>
+<li>Arthrite micro-cristalline chronique → destruction articulaire</li>
+<li>Goutte tophacée : dépôts d'urate dans la synoviale et le cartilage</li>
+<li>CPPD : dépôts de pyrophosphate de calcium → calcifications méniscales et cartilagineuses</li>
+<li>Risque de poussée post-opératoire (prévention : colchicine périopératoire)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG06-S01-001</strong><br/>
+<em>Radiographies comparatives : gonarthrose primitive (varus, ostéophytes) vs polyarthrite rhumatoïde (valgus, ostéoporose, érosions) (Identifiez les différences clés)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG06-S01-002 — Tableau des adaptations chirurgicales PTG selon l'étiologie rhumatismale (Os poreux, laxité, gestion des biothérapies)]</p>
+</blockquote>
+<h3 id="62-osteonecrose-du-condyle-femoral-onca">6.2 Ostéonécrose du condyle fémoral (ONCA)</h3>
+<ul>
+<li>Ostéonécrose spontanée (SONK, <em>Spontaneous Osteonecrosis of the Knee</em>)</li>
+<li>Terme débattu : probablement fracture sous-chondrale (<em>insufficiency fracture</em>) plutôt que vraie nécrose</li>
+<li>Condyle médial &gt;&gt;&gt; latéral</li>
+<li>Patient âgé (&gt; 60 ans), femme, douleur aiguë sans traumatisme</li>
+<li>IRM : lésion de la plaque sous-chondrale, œdème médullaire, ligne de fracture</li>
+<li>Évolution : guérison possible (petites lésions) ou effondrement articulaire → PTG</li>
+<li>Ostéonécrose secondaire</li>
+<li>Corticothérapie au long cours : nécrose bilatérale, multifocale</li>
+<li>Alcoolisme</li>
+<li>Drépanocytose</li>
+<li>Transplantation d'organe</li>
+<li>Lésions souvent plus étendues que le SONK → PTG plus fréquemment nécessaire</li>
+<li>Particularités pour la PTG</li>
+<li>Os nécrotique fragile → risque d'effondrement sous les coupes</li>
+<li>Possible nécessité de cales métalliques ou de greffe</li>
+<li>Prothèse unicompartimentale (PUC) possible si lésion limitée au compartiment médial</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG06-S02-001</strong><br/>
+<em>IRM d'un SONK du condyle fémoral médial : séquence T2 montrant l'œdème médullaire et la ligne sous-chondrale (Différenciez SONK d'une lésion tumorale)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="63-arthrose-post-traumatique">6.3 Arthrose post-traumatique</h3>
+<ul>
+<li>Fractures articulaires du genou</li>
+<li>Fracture du plateau tibial (Schatzker I-VI) <em>(Schatzker et al., 1979, Clin Orthop)</em> → incongruence articulaire résiduelle</li>
+<li>Fracture supracondylienne du fémur → cal vicieux avec désaxation</li>
+<li>Fracture patellaire → arthrose fémoro-patellaire secondaire</li>
+<li>Particularités pour la PTG</li>
+<li>Matériel d'ostéosynthèse en place (plaques, vis) → retrait en un ou deux temps ?</li>
+<li>Cicatrices cutanées antérieures → planification de l'incision (risque de nécrose cutanée)</li>
+<li>Cal vicieux extra- ou intra-articulaire → coupes correctrices intégrant la correction du cal</li>
+<li>Perte de substance osseuse → cales, augments, ou greffe structurale</li>
+<li>Raideur post-traumatique → release capsulaire extensif, possible arthrolyse</li>
+<li>Résultat fonctionnel généralement inférieur à la PTG primaire sur arthrose primitive</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG06-S03-001</strong><br/>
+<em>Radiographie d'une gonarthrose post-traumatique après fracture du plateau tibial : cal vicieux, pincement, matériel en place (Planifiez l'approche chirurgicale)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="64-sequelles-dosteotomie">6.4 Séquelles d'ostéotomie</h3>
+<ul>
+<li>Gonarthrose après ostéotomie tibiale de valgisation (OTV)</li>
+<li>L'OTV retarde la PTG de 7-10 ans en moyenne <em>(Flecher et al., 2006)</em></li>
+<li>Modifications anatomiques : pente tibiale augmentée, patella baja, déformation métaphysaire, rotation tibiale</li>
+<li>Cicatrices médiales ou latérales → risque de nécrose cutanée</li>
+<li>Particularités techniques : coupes tibiales modifiées, extraction du matériel, risque de fracture</li>
+<li>Genoux en valgus après ostéotomie de varisation (plus rare)</li>
+</ul>
+<h3 id="65-arthropathie-neurogene-charcot">6.5 Arthropathie neurogène (Charcot)</h3>
+<ul>
+<li>Étiologies : diabète, tabès dorsalis (syphilis tertiaire), syringomyélie</li>
+<li>Destruction articulaire massive, perte osseuse, instabilité majeure</li>
+<li>PTG souvent contre-indiquée (risque d'échec élevé) → exception si neuropathie stabilisée</li>
+<li>Si PTG : implant contraint (charnière), suivi rapproché</li>
+</ul>
+<h3 id="66-hemophilie-et-arthropathie-hemophilique">6.6 Hémophilie et arthropathie hémophilique</h3>
+<ul>
+<li>Hémarthrose récurrente → synovite chronique → destruction articulaire</li>
+<li>Classification d'Arnold-Hilgartner <em>(Arnold &amp; Hilgartner, 1977, J Bone Joint Surg Am)</em> (I-V)</li>
+<li>Spécificités : os poreux, rétraction capsulaire, flexum marqué, fibrose intra-articulaire</li>
+<li>Gestion de l'hémostase périopératoire (facteur VIII ou IX, émicizumab)</li>
+<li>Résultats de la PTG : satisfaisants mais plus de complications (infection, raideur)</li>
+</ul>
+<h3 id="67-autres-pathologies">6.7 Autres pathologies</h3>
+<ul>
+<li>Ostéochondromatose synoviale : métaplasie cartilagineuse → corps libres → destruction</li>
+<li>Synovite villonodulaire pigmentée (SVNP) : tumeur bénigne de la synoviale → destruction</li>
+<li>Maladie de Paget : remodelage osseux anarchique → arthrose secondaire, os hypervascularisé</li>
+<li>Acromégalie : hypertrophie osseuse et cartilagineuse → arthrose secondaire</li>
+<li>Hémochromatose : arthropathie par dépôt de fer → destruction articulaire<blockquote>
+<p>[MEDIA: 📊 MPTG06-S07-001 — Tableau synthétique de toutes les étiologies de PTG non arthrosiques : étiologie, spécificité anatomique, adaptation chirurgicale, pronostic (Document de référence)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-7-examen-clinique-du-genou">MODULE 7 : EXAMEN CLINIQUE DU GENOU</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Fondamental → Intermédiaire | <strong>Prérequis</strong> : Module 3</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> un examen clinique systématique du genou pré-PTG</li>
+<li><strong>Évaluer</strong> l'axe du membre inférieur, la mobilité, la stabilité ligamentaire et la force musculaire</li>
+<li><strong>Identifier</strong> les signes cliniques orientant vers des pathologies associées</li>
+<li><strong>Utiliser</strong> les scores cliniques validés (KSS, WOMAC, OKS)</li>
+<li><strong>Documenter</strong> un examen standardisé pour le suivi pré- et post-opératoire</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="71-anamnese-interrogatoire-standardise">7.1 Anamnèse — Interrogatoire standardisé</h3>
+<ul>
+<li>Caractéristiques de la douleur</li>
+<li>Localisation : médiale (compartiment médial), latérale, antérieure (fémoro-patellaire), diffuse, postérieure</li>
+<li>Horaire : mécanique (effort, charge) vs inflammatoire (repos, nuit, dérouillage matinal)</li>
+<li>Évolution : ancienneté, progression, épisodes aigus (poussées congestives)</li>
+<li>Intensité : EVA (Échelle Visuelle Analogique), retentissement fonctionnel</li>
+<li>Retentissement fonctionnel</li>
+<li>Périmètre de marche (minutes/mètres)</li>
+<li>Escaliers : montée et descente (les 2 évaluées séparément)</li>
+<li>Se lever d'une chaise / d'un siège bas</li>
+<li>Chaussage, soins des pieds</li>
+<li>Activités sportives et loisirs (impact sur la qualité de vie)</li>
+<li>Aide technique : canne, déambulateur</li>
+<li>Antécédents importants</li>
+<li>Chirurgies antérieures du genou (méniscectomie, ligamentoplastie, ostéotomie, arthroscopie)</li>
+<li>Traumatismes</li>
+<li>Rhumatismes (PR, goutte, CPPD)</li>
+<li>Infections articulaires antérieures</li>
+<li>Comorbidités : diabète, obésité (IMC), cardiopathie, artériopathie, prise d'anticoagulants</li>
+<li>Allergies : nickel, chrome, cobalt (composants métalliques de PTG)</li>
+<li>Statut tabagique (impact cicatrisation, risque de complications)</li>
+<li>Attentes du patient</li>
+<li>ESSENTIEL : évaluer les attentes réalistes vs irréalistes</li>
+<li>15-20% d'insatisfaction après PTG <em>(Bourne et al., 2010)</em> → majoritairement liée à des attentes irréalistes</li>
+<li>« Qu'attendez-vous de l'opération ? » → question obligatoire pré-opératoire<blockquote>
+<p>[MEDIA: 📊 MPTG07-S01-001 — Checklist d'anamnèse pré-PTG : tous les éléments à recueillir, organisés par catégorie (Document imprimable pour la consultation)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="72-examen-debout-axe-et-morphotype">7.2 Examen debout — Axe et morphotype</h3>
+<ul>
+<li>Inspection debout de face</li>
+<li>Axe du MI : genu varum, genu valgum, neutre</li>
+<li>Usure asymétrique des chaussures (indicateur de désaxation)</li>
+<li>Amyotrophie du quadriceps (mesure comparative à 10 cm et 15 cm du bord supérieur de la patella)</li>
+<li>Flessum en position debout (genou non verrouillé)</li>
+<li>Épanchement visible (effacement des fossettes péri-patellaires)</li>
+<li>Inspection de profil</li>
+<li>Flexum (flessum) : angle résiduel de flexion debout</li>
+<li>Recurvatum : hyperextension</li>
+<li>Profil du quadriceps : atrophie visible</li>
+<li>Examen de la marche</li>
+<li>Boiterie d'esquive (antalgique)</li>
+<li><em>Varus thrust</em> : dérobement latéral en appui monopode (signe d'instabilité latérale)</li>
+<li>Démarche en fauchage (flexum permanent)</li>
+<li>Montée/descente d'escaliers (observation fonctionnelle)</li>
+<li>Mesure clinique de l'axe</li>
+<li>Axe clinique en charge : fil à plomb du centre de la tête fémorale → centre de la cheville</li>
+<li>Distance inter-condylienne (valgus) ou inter-malléolaire (varus)</li>
+<li>Mesure par goniomètre (approximative — la planification radiologique est plus précise)<blockquote>
+<p>[MEDIA: 🎥 MPTG07-S02-001 — Vidéo d'examen clinique debout : inspection de face, de profil, marche — genou varus vs valgus (Identifiez les signes sur la vidéo)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG07-S02-002</strong><br/>
+<em>Schéma de la mesure clinique de l'axe : distance intercondylienne / intermalléolaire (Comment corréler avec le HKA radiologique ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="73-examen-couche-mobilite-articulaire">7.3 Examen couché — Mobilité articulaire</h3>
+<ul>
+<li>Mesure de l'amplitude articulaire</li>
+<li>Flexion active et passive : mesure au goniomètre (rapport bras/cuisse), valeur normale 0-140°</li>
+<li>Extension active et passive : défaut d'extension (flexum), recurvatum</li>
+<li>Flexum (flessum) fixe : résiduel en passif (important pour la classification du plan chirurgical)</li>
+<li>Documenter : flexion/extension (ex. : « 5-0-120 » signifie 5° de flexum, 0° de recurvatum, 120° de flexion)</li>
+<li>Évaluation de la rotule</li>
+<li>Mobilité patellaire : translation médio-latérale, tilt</li>
+<li>Signe du rabot : crépitations fémoro-patellaires en flexion-extension</li>
+<li>Signe de Zohlen (compression patellaire avec contraction du quadriceps)</li>
+<li><em>Apprehension test</em> : latéralisation passive de la patella → anxiété du patient</li>
+<li><em>J-sign</em> : subluxation latérale en extension</li>
+<li>Épanchement articulaire</li>
+<li><strong>Signe du glaçon</strong> (ballottement rotulien) : grands épanchements</li>
+<li>Signe du flot (manœuvre de la vague) : petits épanchements</li>
+<li>Classification de l'épanchement (séreux, hématique, purulent, cristallin)</li>
+<li>Ponction articulaire diagnostique si doute (culture, cristaux, biochimie)<blockquote>
+<p>[MEDIA: 🎥 MPTG07-S03-001 — Vidéo de la mesure de la mobilité du genou au goniomètre : technique standardisée, notation (Pratiquez sur un collègue)]<br />
+[MEDIA: 🎥 MPTG07-S03-002 — Vidéo de la recherche d'un épanchement : signe du glaçon, signe du flot (Comparez petit vs grand épanchement)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="74-examen-couche-stabilite-ligamentaire">7.4 Examen couché — Stabilité ligamentaire</h3>
+<ul>
+<li>Testing du LCM (valgus stress test)</li>
+<li>À 0° et 30° de flexion</li>
+<li>Grade 0 (stable), I (&lt; 5 mm d'ouverture), II (5-10 mm), III (&gt; 10 mm)</li>
+<li>Test à 0° positif → lésion LCM + coque postéro-médiale (grave)</li>
+<li>Testing du LCL (varus stress test)</li>
+<li>À 0° et 30° de flexion</li>
+<li>Même graduation</li>
+<li>Sensibilité du nerf fibulaire commun si laxité latérale</li>
+<li>Testing du LCA</li>
+<li>Lachman test : translation antérieure à 20-30° de flexion (le plus sensible)</li>
+<li>Tiroir antérieur à 90° de flexion</li>
+<li>Pivot shift test : subluxation rotatoire antéro-latérale</li>
+<li><strong>Importance pour la PTG</strong> : un LCA absent ne contre-indique pas la PTG (presque toujours réséqué)</li>
+<li>Testing du LCP</li>
+<li>Tiroir postérieur à 90° de flexion</li>
+<li><em>Sag sign</em> (signe de la pesanteur) : effondrement du tibia en postérieur</li>
+<li><em>Quadriceps active test</em></li>
+<li><strong>Importance pour la PTG</strong> : si LCP incompétent → PTG de type PS (pas CR)</li>
+<li>Testing rotatoire</li>
+<li><em>Dial test</em> (test du cadran à 30° et 90°) : rotation externe comparative</li>
+<li>Inscrire le résultat pour documenter l'enveloppe ligamentaire</li>
+<li>Classification globale de la laxité</li>
+<li>Genou stable (contraintes normales) → CR ou PS standard</li>
+<li>Genou modérément instable (varus/valgus réductible) → PS avec contrainte modérée</li>
+<li>Genou très instable (varus/valgus irréductible ou recurvatum) → implant contraint (VVC, CCK) ou charnière<blockquote>
+<p>[MEDIA: 🎥 MPTG07-S04-001 — Vidéo de l'examen ligamentaire complet du genou : LCM, LCL, Lachman, tiroir postérieur, pivot shift (Pratiquez chaque test)]<br />
+[MEDIA: 📊 MPTG07-S04-002 — Algorithme de choix du niveau de contrainte de l'implant en fonction de l'examen ligamentaire (De CR standard → charnière rotatoire)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="75-examen-vasculaire-et-cutane">7.5 Examen vasculaire et cutané</h3>
+<ul>
+<li>Palpation des pouls</li>
+<li>Artère fémorale, artère poplitée, artère tibiale postérieure, artère pédieuse</li>
+<li>IPS (Indice de Pression Systolique) si doute sur AOMI (<em>Artériopathie Oblitérante des Membres Inférieurs</em>)</li>
+<li>AOMI : facteur de risque de trouble de cicatrisation et d'amputation post-PTG</li>
+<li>Examen cutané</li>
+<li>Cicatrices antérieures : localisation, qualité, adhérences</li>
+<li>État cutané : eczéma, ulcères veineux, dermite, psoriasis</li>
+<li>Varicosités, insuffisance veineuse</li>
+<li>Qualité des téguments : peau fine (corticothérapie), peau irradiée</li>
+<li>Implications chirurgicales</li>
+<li>Incision latérale antérieure : utiliser la cicatrice la plus latérale si plusieurs</li>
+<li>Cicatrices multiples : lambeau de pleine épaisseur entre les incisions (risque de nécrose si pont cutané &lt; 7 cm)</li>
+<li>Ulcères cutanés → contre-indication temporaire (guérison avant PTG)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG07-S05-001</strong><br/>
+<em>Schéma des incisions cutanées du genou : règles de planification en cas de cicatrices multiples — lambeau de pleine épaisseur, pont cutané minimal (Identifiez l'incision la plus sûre)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="76-scores-cliniques-valides">7.6 Scores cliniques validés</h3>
+<ul>
+<li>Knee Society Score (KSS) <em>(Insall JN et al., 1989, Clin Orthop Relat Res)</em> — score du chirurgien</li>
+<li>KSS-Knee score (100 points) : douleur, stabilité, mobilité</li>
+<li>KSS-Function score (100 points) : marche, escaliers</li>
+<li>Nouveau KSS 2011 <em>(Noble PC et al., 2012, Clin Orthop Relat Res)</em> : ajout de scores d'activité et satisfaction</li>
+<li>WOMAC (<em>Western Ontario and McMaster Universities Osteoarthritis Index</em>) <em>(Bellamy et al., 1988, J Rheumatol)</em></li>
+<li>24 questions : douleur (5), raideur (2), fonction (17)</li>
+<li>Score 0-96 (0 = meilleur)</li>
+<li>Le plus utilisé en recherche sur la gonarthrose</li>
+<li>Oxford Knee Score (OKS) <em>(Dawson et al., 1998, J Bone Joint Surg Br)</em></li>
+<li>12 questions, score 12-60 (60 = pire)</li>
+<li>Score du patient, simple à remplir</li>
+<li>Forgotten Joint Score (FJS-12) <em>(Behrend et al., 2012, J Arthroplasty)</em></li>
+<li>12 questions : « oubliez-vous votre prothèse ? »</li>
+<li>Score 0-100 (100 = oublié totalement)</li>
+<li>Discrimine mieux les bons résultats (effet plafond moindre)</li>
+<li>KOOS (<em>Knee injury and Osteoarthritis Outcome Score</em>) <em>(Roos et al., 1998, J Orthop Sports Phys Ther)</em></li>
+<li>42 questions en 5 sous-échelles</li>
+<li>Utilisé surtout pour les patients plus jeunes</li>
+<li>EQ-5D et SF-36 : qualité de vie générale (pas spécifique au genou)<blockquote>
+<p>[MEDIA: 📊 MPTG07-S06-001 — Tableau comparatif des scores cliniques du genou : KSS, WOMAC, OKS, FJS, KOOS — avantages, limites, population cible (Lequel choisissez-vous pour votre pratique ?)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-8-imagerie-du-genou">MODULE 8 : IMAGERIE DU GENOU</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Fondamental → Intermédiaire | <strong>Prérequis</strong> : Modules 3, 7</p>
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Interpréter</strong> les radiographies standard du genou (face, profil, schuss, axiale patella, pangonogramme)</li>
+<li><strong>Mesurer</strong> l'axe mécanique du MI sur pangonogramme (HKA, LDFA, MPTA)</li>
+<li><strong>Utiliser</strong> l'IRM et le scanner dans le bilan pré-PTG</li>
+<li><strong>Planifier</strong> le <em>templating</em> 2D et 3D à partir de l'imagerie</li>
+<li><strong>Identifier</strong> les pièges d'imagerie courants</li>
+</ol>
+<h2 id="contenu-detaille_3">Contenu détaillé</h2>
+<h3 id="81-radiographie-standard-incidences-obligatoires">8.1 Radiographie standard — Incidences obligatoires</h3>
+<ul>
+<li>Cliché de face en charge (AP debout)</li>
+<li>Patient debout, genoux en extension, rotules centrées</li>
+<li>Mesure : interligne articulaire, ostéophytes, sclérose, usure osseuse</li>
+<li>Kellgren-Lawrence : classification sur ce cliché</li>
+<li>Limites : ne montre pas toujours le pincement postérieur (flexion &gt; extension)</li>
+<li>Cliché de face en schuss (<em>Rosenberg view</em>)</li>
+<li>Patient debout, genou fléchi à 30-45°, appui monopode</li>
+<li>Avantage : met en charge la zone portante postérieure du plateau tibial</li>
+<li>Détecte 30% de pincements médiaux méconnus sur le cliché en extension <em>(Rosenberg et al., 1988)</em></li>
+<li><strong>Devrait être systématique</strong> en bilan de gonarthrose</li>
+<li>Cliché de profil strict (genou à 30° de flexion)</li>
+<li>Superposition des condyles fémoraux postérieurs (critère de qualité)</li>
+<li>Mesure : pente tibiale postérieure, hauteur patellaire (Insall-Salvati <em>(Insall J &amp; Salvati E, 1971, Radiology)</em>, Caton-Deschamps <em>(Caton J et al., 1982, Rev Chir Orthop)</em>)</li>
+<li>Recherche : ostéophytes postérieurs, géodes, lésion sous-chondrale</li>
+<li>Patella baja ou alta : impact sur la technique chirurgicale</li>
+<li>Incidence axiale de la patella (30° et 60° de flexion)</li>
+<li>Évaluation de la congruence fémoro-patellaire</li>
+<li>Subluxation, tilt, dysplasie trochléenne</li>
+<li>Pincement fémoro-patellaire isolé (arthrose FP)</li>
+<li>Pangonogramme (télémétrie des membres inférieurs)</li>
+<li>Cliché debout en charge (EOS si disponible)</li>
+<li>Mesure de l'axe mécanique (HKA) : centre tête fémorale → centre cheville</li>
+<li>Mesure des angles segmentaires : LDFA, MPTA, JLCA</li>
+<li>Localisation de la déformation (fémorale, tibiale, ou articulaire)</li>
+<li><strong>Indispensable</strong> avant toute PTG et toute ostéotomie</li>
+<li>EOS : irradiation réduite (facteur 6-9x), reconstruction 3D possible</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG08-S01-001</strong><br/>
+<em>Radiographies comparatives : face en extension vs schuss (Rosenberg) — même patient, pincement visible uniquement en schuss (Pourquoi le schuss est-il plus sensible ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG08-S01-002</strong><br/>
+<em>Technique de mesure sur pangonogramme : HKA, LDFA, MPTA, JLCA — étape par étape sur un cas de genu varum (Calculez les angles sur l'image)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG08-S01-003</strong><br/>
+<em>Mesure de la hauteur patellaire : indices d'Insall-Salvati et de Caton-Deschamps sur un profil de genou (Normale vs patella baja vs patella alta)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="82-scanner-tdm-indications-pre-ptg">8.2 Scanner (TDM) — Indications pré-PTG</h3>
+<ul>
+<li>Indications</li>
+<li>Gonarthrose post-traumatique (évaluation du cal vicieux, de la perte osseuse)</li>
+<li>Séquelle d'ostéotomie (anatomie modifiée)</li>
+<li>PTG de reprise (évaluation de la perte osseuse, classification AORI)</li>
+<li>Planification PSI (guides de coupe personnalisés à partir du scanner)</li>
+<li>Évaluation de la rotation fémorale et tibiale (coupes axiales)</li>
+<li>Mesures spécifiques au scanner</li>
+<li>Rotation fémorale : angle entre le TEA et la ligne condylienne postérieure</li>
+<li>Rotation tibiale : angle entre le tiers interne de la TTA et l'axe bimalléolaire</li>
+<li>Torsion fémorale et tibiale</li>
+<li>Quantification de la perte osseuse (classification AORI en reprise)</li>
+</ul>
+<h3 id="83-irm-indications-pre-ptg">8.3 IRM — Indications pré-PTG</h3>
+<ul>
+<li>Indications</li>
+<li>Suspicion d'ostéonécrose (SONK) : séquences T2 STIR → œdème médullaire, ligne sous-chondrale</li>
+<li>Évaluation des ménisques et des ligaments (si doute sur la stratégie : PUC vs PTG)</li>
+<li>Évaluation de la cartographie du cartilage (IRM quantitative : T2 mapping, dGEMRIC)</li>
+<li>Suspicion de tumeur ou d'infection</li>
+<li>Planification PSI (IRM-based sur certains systèmes)</li>
+<li>Ce que l'IRM n'apporte PAS en routine pour la PTG</li>
+<li>Dans la gonarthrose avancée (KL 3-4), le diagnostic est clinique + radiographique</li>
+<li>L'IRM systématique pré-PTG n'est PAS recommandée (coût, délais, pas d'impact sur la décision)</li>
+</ul>
+<h3 id="84-scintigraphie-et-imagerie-nucleaire">8.4 Scintigraphie et imagerie nucléaire</h3>
+<ul>
+<li>Indications</li>
+<li>Douleur résiduelle après PTG : scintigraphie aux leucocytes marqués (infection ?)</li>
+<li>Descellement aseptique : scintigraphie au Tc-99m → hyperfixation péri-prothétique</li>
+<li>SPECT-CT : précision anatomique + métabolique combinée</li>
+<li>Non indiquée en bilan initial de gonarthrose</li>
+</ul>
+<h3 id="85-planification-preoperatoire-par-limagerie-introduction-au-templating">8.5 Planification préopératoire par l'imagerie (introduction au <em>templating</em>)</h3>
+<ul>
+<li>Templating 2D (traditionnel)</li>
+<li>Radiographie face + profil calibrée + pangonogramme</li>
+<li>Calques transparents ou logiciel (TraumaCad, MediCAD)</li>
+<li>Objectif : déterminer la taille des implants, le niveau de coupe, l'angle de valgus de coupe fémorale, la correction attendue de l'axe</li>
+<li>Précision : ±1 taille dans 80-90% des cas</li>
+<li>Templating 3D (moderne)</li>
+<li>Reconstruction 3D à partir du scanner (ou EOS)</li>
+<li>Logiciels de planification : Materialise, Stryker Blueprint, Zimmer myKnee</li>
+<li>Positionnement virtuel des composants dans les 3 plans</li>
+<li>Simulation de la cinématique post-opératoire</li>
+<li>Impression 3D de guides de coupe (PSI)</li>
+<li>Précision supérieure : positionnement ±1° dans 95% des cas</li>
+<li>Ce que le templating doit déterminer</li>
+<li>Taille du composant fémoral (AP, ML)</li>
+<li>Taille de l'embase tibiale (ML, AP, couverture)</li>
+<li>Épaisseur du plateau en PE (gap d'extension et de flexion)</li>
+<li>Angle de coupe fémorale distale (valgus cut)</li>
+<li>Rotation du composant fémoral (TEA, Whiteside, PCA)</li>
+<li>Pente tibiale</li>
+<li>Resurfaçage patellaire : oui/non, épaisseur</li>
+<li>Nécessité de cales, augments, tiges (planification anticipée)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG08-S05-001</strong><br/>
+<em>Animation du templating 2D pas à pas : calque sur pangonogramme, choix de la taille, vérification de la couverture tibiale et fémorale (Reproduisez la technique)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG08-S05-002</strong><br/>
+<em>Animation du templating 3D : reconstruction scanner, positionnement virtuel des composants, simulation de flexion (Observez les informations supplémentaires par rapport au 2D)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG08-S05-003 — Checklist du templating pré-PTG : 12 paramètres à déterminer avant l'opération (Remplissez cette checklist pour un cas virtuel)]</p>
+</blockquote>
+<hr />
+<h1 id="auto-evaluation-partie-ii">AUTO-ÉVALUATION — PARTIE II</h1>
+<h2 id="questions-transversales-modules-5-8">Questions transversales Modules 5-8</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Quel est le grade Kellgren-Lawrence correspondant à un pincement articulaire franc avec ostéophytes multiples et sclérose sous-chondrale ?<br />
+- A) Grade 1<br />
+- B) Grade 2<br />
+- C) Grade 3<br />
+- D) Grade 4<br />
+- E) Grade 5</p>
+<p><strong>Q2</strong> 🥈 : Quelle incidence radiographique est la plus sensible pour détecter un pincement postérieur du compartiment médial du genou ?<br />
+- A) Face en extension debout<br />
+- B) Profil strict<br />
+- C) Schuss (Rosenberg)<br />
+- D) Axiale de la patella<br />
+- E) Face en décubitus</p>
+<p><strong>Q3</strong> 🥈 : Un patient atteint de polyarthrite rhumatoïde sévère présente un genu valgum de 20°. Lors de la planification de sa PTG, quel problème spécifique devez-vous anticiper ?<br />
+- A) Os sous-chondral très dense et résistant<br />
+- B) Ostéoporose sévère avec risque de fracture peropératoire<br />
+- C) Absence de synovite<br />
+- D) LCA intact et fonctionnel<br />
+- E) Aucune adaptation nécessaire</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 55 ans avec un KSS-Knee de 45/100, un WOMAC de 62/96, et un Kellgren-Lawrence grade 2 demande une PTG. Les infiltrations et la kinésithérapie n'ont été tentées que 2 mois. Que lui recommandez-vous ?<br />
+- A) PTG immédiate (scores cliniques mauvais)<br />
+- B) Poursuite du traitement conservateur (au moins 6 mois, KL faible, patient jeune)<br />
+- C) PUC immédiate<br />
+- D) Ostéotomie tibiale de valgisation<br />
+- E) Arthroscopie de lavage</p>
+<p><strong>Q5</strong> 💎 : Décrivez la chaîne de raisonnement physiopathologique complète qui mène de l'obésité (IMC 35) à la nécessité d'une PTG, en intégrant les notions de biomécanique (forces, KAM), de biochimie (cartilage), et de cercle vicieux.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>Mme Martin, 72 ans</strong>, ancienne aide-soignante, IMC 31. Douleur bilatérale des genoux depuis 8 ans, prédominant à droite. Périmètre de marche : 300 m avec une canne. EVA douleur = 7/10. Genou droit : flexion 0-100°, varus clinique, épanchement modéré, LCM stable, LCL grade I en varus. Radiographie : KL 4 médial droit, KL 3 latéral droit, patella subluxée latéralement. Pangonogramme : HKA = 170°.</p>
+<ol>
+<li>Quelle est la localisation préférentielle de l'arthrose ? Pourquoi ?</li>
+<li>La laxité en varus est-elle réductible ou fixe ? Comment le savez-vous ?</li>
+<li>Quel type d'implant (CR, PS, contraint) préconisez-vous et pourquoi ?</li>
+<li>Faut-il resurfacer la patella ? Argumentez.</li>
+</ol>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 2 — Pathologies et Indications (Modules 5-8)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Ahlbäck S. Osteoarthrosis of the knee: a radiographic investigation. <em>Acta Radiol Suppl</em>. 1968;(277):7-72.</li>
+<li>Arnold WD, Hilgartner MW. Hemophilic arthropathy: current concepts of pathogenesis and management. <em>J Bone Joint Surg Am</em>. 1977;59(3):287-305.</li>
+<li>Bellamy N, Buchanan WW, Goldsmith CH, et al. Validation study of WOMAC: a health status instrument for measuring clinically important patient relevant outcomes. <em>J Rheumatol</em>. 1988;15(12):1833-1840.</li>
+<li>Behrend H, Giesinger K, Giesinger JM, Kuster MS. The "forgotten joint" as the ultimate goal in joint arthroplasty: validation of a new patient-reported outcome measure. <em>J Arthroplasty</em>. 2012;27(3):430-436.</li>
+<li>Bourne RB, Chesworth BM, Davis AM, et al. Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? <em>Clin Orthop Relat Res</em>. 2010;468(1):57-63.</li>
+<li>Brittberg M, Winalski CS. Evaluation of cartilage injuries and repair. <em>J Bone Joint Surg Am</em>. 2003;85-A(Suppl 2):58-69.</li>
+<li>Caton J, Deschamps G, Chambat P, et al. Les mesures de la hauteur de la rotule. <em>Rev Chir Orthop</em>. 1982;68(5):317-325.</li>
+<li>Christensen R, Bartels EM, Astrup A, Bliddal H. Effect of weight reduction in obese patients diagnosed with knee osteoarthritis. <em>Ann Rheum Dis</em>. 2007;66(4):433-439.</li>
+<li>Dawson J, Fitzpatrick R, Murray D, Carr A. Questionnaire on the perceptions of patients about total knee replacement. <em>J Bone Joint Surg Br</em>. 1998;80(1):63-69.</li>
+<li>Englund M, Lohmander LS. Risk factors for symptomatic knee osteoarthritis fifteen to twenty-two years after meniscectomy. <em>Arthritis Rheum</em>. 2003;50(9):2811-2819.</li>
+<li>Felson DT, Naimark A, Anderson J, et al. The prevalence of knee osteoarthritis in the elderly: the Framingham Osteoarthritis Study. <em>Arthritis Rheum</em>. 1987;30(8):914-918.</li>
+<li>Flecher X, Parratte S, Aubaniac JM, Argenson JN. A 12-28-year followup study of closing wedge high tibial osteotomy. <em>Clin Orthop Relat Res</em>. 2006;(452):91-96.</li>
+<li>Insall J, Salvati E. Patella position in the normal knee joint. <em>Radiology</em>. 1971;101(1):101-104.</li>
+<li>Insall JN, Dorr LD, Scott RD, Scott WN. Rationale of the Knee Society clinical rating system. <em>Clin Orthop Relat Res</em>. 1989;(248):13-14.</li>
+<li>Kellgren JH, Lawrence JS. Radiological assessment of osteo-arthrosis. <em>Ann Rheum Dis</em>. 1957;16(4):494-502.</li>
+<li>Kirkley A, Birmingham TB, Litchfield RB, et al. A randomized trial of arthroscopic surgery for osteoarthritis of the knee. <em>N Engl J Med</em>. 2008;359(11):1097-1107.</li>
+<li>Messier SP, Gutekunst DJ, Davis C, DeVita P. Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis. <em>Arthritis Rheum</em>. 2005;52(7):2026-2032.</li>
+<li>Moseley JB, O'Malley K, Petersen NJ, et al. A controlled trial of arthroscopic surgery for osteoarthritis of the knee. <em>N Engl J Med</em>. 2002;347(2):81-88.</li>
+<li>Mow VC, Ratcliffe A, Poole AR. Cartilage and diarthrodial joints as paradigms for hierarchical materials and structures. <em>Biomaterials</em>. 1992;13(2):67-97.</li>
+<li>Noble PC, Scuderi GR, Brekke AC, et al. Development of a new Knee Society scoring system. <em>Clin Orthop Relat Res</em>. 2012;470(1):20-32.</li>
+<li>Outerbridge RE. The etiology of chondromalacia patellae. <em>J Bone Joint Surg Br</em>. 1961;43-B(4):752-757.</li>
+<li>Roos EM, Roos HP, Lohmander LS, et al. Knee Injury and Osteoarthritis Outcome Score (KOOS): development of a self-administered outcome measure. <em>J Orthop Sports Phys Ther</em>. 1998;28(2):88-96.</li>
+<li>Rosenberg TD, Paulos LE, Parker RD, et al. The forty-five-degree posteroanterior flexion weight-bearing radiograph of the knee. <em>J Bone Joint Surg Am</em>. 1988;70(10):1479-1483.</li>
+<li>Schatzker J, McBroom R, Bruce D. The tibial plateau fracture: the Toronto experience 1968-1975. <em>Clin Orthop Relat Res</em>. 1979;(138):94-104.</li>
+<li>Valdes AM, Spector TD. Genetic epidemiology of hip and knee osteoarthritis. <em>Nat Rev Rheumatol</em>. 2011;7(1):23-32.</li>
+<li>Verzijl N, DeGroot J, Thorpe SR, et al. Effect of collagen turnover on the accumulation of advanced glycation end products. <em>J Biol Chem</em>. 2000;275(50):39027-39031.</li>
+</ul>
+</div>

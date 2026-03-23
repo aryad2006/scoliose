@@ -1,0 +1,951 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-diabetologie">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION DIABETOLOGIE</h1>
+<p><strong>Formation</strong> : VERTEX© — Diabetologie Complete<br />
+<strong>Code</strong> : CCDIAB<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Date</strong> : 13 mars 2026<br />
+<strong>Nombre de cas</strong> : 20<br />
+<strong>Badge</strong> : 🔶 DIABETOLOGIE</p>
+<hr />
+<h2 id="table-des-matieres">Table des matieres</h2>
+<h3 id="cas-bronze-application-directe-1-2-modules">🥉 Cas Bronze (application directe — 1-2 modules)</h3>
+<ul>
+<li><a href="#cas-1">Cas n°1 — Acidocetose inaugurale chez un adolescent</a></li>
+<li><a href="#cas-2">Cas n°2 — Decouverte fortuite d'un DT2 chez un patient obese</a></li>
+<li><a href="#cas-3">Cas n°3 — Diabete gestationnel au 2e trimestre</a></li>
+<li><a href="#cas-4">Cas n°4 — Hypoglycemie severe sous insuline</a></li>
+<li><a href="#cas-5">Cas n°5 — Retinopathie diabetique au depistage annuel</a></li>
+<li><a href="#cas-6">Cas n°6 — Plaie du pied chez un diabetique</a></li>
+<li><a href="#cas-7">Cas n°7 — Adaptation des doses d'insuline en basal-bolus</a></li>
+</ul>
+<h3 id="cas-argent-diagnostic-differentiel-3-4-modules">🥈 Cas Argent (diagnostic differentiel — 3-4 modules)</h3>
+<ul>
+<li><a href="#cas-8">Cas n°8 — LADA ou DT2 ? Un diabete atypique a 42 ans</a></li>
+<li><a href="#cas-9">Cas n°9 — Diabete familial precoce : suspicion de MODY</a></li>
+<li><a href="#cas-10">Cas n°10 — Nephropathie diabetique debutante et strategie nephroprotectrice</a></li>
+<li><a href="#cas-11">Cas n°11 — Neuropathie diabetique douloureuse refractaire</a></li>
+<li><a href="#cas-12">Cas n°12 — Echappement aux antidiabetiques oraux dans le DT2</a></li>
+<li><a href="#cas-13">Cas n°13 — Diabete cortico-induit sous corticotherapie prolongee</a></li>
+</ul>
+<h3 id="cas-or-decision-multi-facteurs-5-modules">🥇 Cas Or (decision multi-facteurs — 5+ modules)</h3>
+<ul>
+<li><a href="#cas-14">Cas n°14 — DT1, pompe a insuline et projet de grossesse</a></li>
+<li><a href="#cas-15">Cas n°15 — DT2 complique cardiovasculaire : choix therapeutique optimal</a></li>
+<li><a href="#cas-16">Cas n°16 — Pied de Charcot avec ulcere infecte</a></li>
+<li><a href="#cas-17">Cas n°17 — Acidocetose diabetique severe en reanimation</a></li>
+</ul>
+<h3 id="cas-diamant-complications-echecs-reprises">💎 Cas Diamant (complications, echecs, reprises)</h3>
+<ul>
+<li><a href="#cas-18">Cas n°18 — Complications multiples et insuffisance renale terminale</a></li>
+<li><a href="#cas-19">Cas n°19 — Echec de chirurgie bariatrique et recidive du DT2</a></li>
+<li><a href="#cas-20">Cas n°20 — DT1 instable avec hypoglycemies severes et transplantation d'ilots</a></li>
+</ul>
+<hr />
+<h2 id="cas-bronze">🥉 CAS BRONZE</h2>
+<hr />
+<p><a id="cas-1"></a></p>
+<h3 id="cas-n1-acidocetose-inaugurale-chez-un-adolescent">Cas n°1 — Acidocetose inaugurale chez un adolescent</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 5 (Physiopathologie du DT1), 9 (Diagnostic)<br />
+<strong>Duree estimee</strong> : 20 min<br />
+<strong>Thematique principale</strong> : Diagnostic et prise en charge initiale du DT1</p>
+<h4 id="presentation-initiale">Presentation initiale</h4>
+<p>Lucas, 14 ans, est amene aux urgences par ses parents. Depuis 3 semaines, il presente une polyurie-polydipsie intense avec un lever nocturne 4 a 5 fois par nuit. Il a perdu 6 kg en un mois (passant de 58 a 52 kg pour 168 cm). Depuis 48h, il se plaint de nausees, de douleurs abdominales diffuses et d'une fatigue extreme. Ce matin, sa mere a note une respiration « bizarre, rapide et profonde ».</p>
+<p><strong>Antecedents</strong> :<br />
+- Medicaux : aucun<br />
+- Chirurgicaux : aucun<br />
+- Familiaux : grand-mere maternelle hypothyroidie auto-immune, oncle maternel vitiligo<br />
+- Allergies : aucune<br />
+- Traitement en cours : aucun</p>
+<h4 id="examen-clinique">Examen clinique</h4>
+<ul>
+<li><strong>Etat general</strong> : conscient mais asthenie marquee, Glasgow 15</li>
+<li><strong>Poids</strong> : 52 kg, taille : 168 cm, IMC : 18,4 kg/m²</li>
+<li><strong>Constantes</strong> : PA 100/65 mmHg, FC 110 bpm, FR 28/min (respiration ample, de Kussmaul), T° 37,2°C, SpO2 98%</li>
+<li><strong>Signes de deshydratation</strong> : pli cutane persistant, muqueuses seches, yeux cernes</li>
+<li><strong>Abdomen</strong> : sensible diffusement, pas de defense</li>
+<li><strong>Haleine</strong> : odeur acetonique fruitee (« pomme reinette »)</li>
+<li><strong>Auscultation cardio-pulmonaire</strong> : tachycardie reguliere, pas de souffle, pas de crépitant</li>
+<li><strong>Neurologique</strong> : pas de deficit focal, reflexes presents</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC01-001 — Photographie clinique : respiration de Kussmaul — inspiration ample, profonde et reguliere typique de l'acidocetose (Observez l'amplitude thoracique et la frequence respiratoire)]</p>
+</blockquote>
+<h4 id="biologie-a-larrivee">Biologie a l'arrivee</h4>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur</th>
+<th>Normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycemie veineuse</td>
+<td>4,8 g/L (26,6 mmol/L)</td>
+<td>0,70-1,10 g/L</td>
+</tr>
+<tr>
+<td>pH arteriel</td>
+<td>7,12</td>
+<td>7,35-7,45</td>
+</tr>
+<tr>
+<td>Bicarbonates</td>
+<td>8 mmol/L</td>
+<td>22-26 mmol/L</td>
+</tr>
+<tr>
+<td>pCO2</td>
+<td>18 mmHg</td>
+<td>35-45 mmHg</td>
+</tr>
+<tr>
+<td>Trou anionique</td>
+<td>24 mEq/L</td>
+<td>8-12 mEq/L</td>
+</tr>
+<tr>
+<td>Cetonemie capillaire</td>
+<td>5,8 mmol/L</td>
+<td>&lt; 0,6 mmol/L</td>
+</tr>
+<tr>
+<td>Na+</td>
+<td>132 mmol/L</td>
+<td>135-145 mmol/L</td>
+</tr>
+<tr>
+<td>K+</td>
+<td>5,1 mmol/L</td>
+<td>3,5-5,0 mmol/L</td>
+</tr>
+<tr>
+<td>Creatinine</td>
+<td>95 µmol/L</td>
+<td>50-90 µmol/L</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>12,8%</td>
+<td>&lt; 5,7%</td>
+</tr>
+<tr>
+<td>BU : glucose ++++, cetones +++</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC01-002</strong><br/>
+<em>Schema interpretatif : gaz du sang en acidocetose — triangle pH/HCO3-/pCO2, compensation respiratoire (Calculez le trou anionique et interpretez la compensation)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="questions-progressives">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic</strong> (rappel)</p>
+<blockquote>
+<p>Quel diagnostic posez-vous ? Justifiez en identifiant les 3 criteres diagnostiques de l'acidocetose diabetique (ACD).</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Acidocetose diabetique inaugurale d'un diabete de type 1. Les 3 criteres sont reunis :<br />
+1. <strong>Hyperglycemie</strong> : glycemie 4,8 g/L (&gt; 2,5 g/L)<br />
+2. <strong>Acidose metabolique</strong> : pH 7,12 (&lt; 7,30) avec bicarbonates a 8 mmol/L (&lt; 15 mmol/L)<br />
+3. <strong>Cetose</strong> : cetonemie 5,8 mmol/L (&gt; 3 mmol/L) et cetonurie +++</p>
+<p>La classification de severite selon l'ISPAD 2022 : ACD <strong>severe</strong> (pH &lt; 7,15 et/ou bicarbonates &lt; 5 mmol/L — ici pH 7,12).</p>
+<p><strong>Question 2 — Physiopathologie</strong> (comprehension)</p>
+<blockquote>
+<p>Expliquez le mecanisme de l'hyperkaliemie (K+ 5,1 mmol/L) alors que le stock potassique total de ce patient est probablement diminue. Pourquoi ce paradoxe est-il dangereux pour la suite de la prise en charge ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+L'hyperkaliemie est un <strong>artefact de redistribution</strong> : l'acidose metabolique provoque un transfert du K+ intracellulaire vers le secteur extracellulaire (echange H+/K+ au niveau des membranes cellulaires). Le deficit insulinique aggrave ce transfert car l'insuline stimule normalement la Na+/K+-ATPase qui fait entrer le K+ dans les cellules.</p>
+<p>Le <strong>danger</strong> : le stock potassique total corporel est en realite <strong>severement diminue</strong> (pertes urinaires par diurese osmotique, vomissements). Des que l'on corrige l'acidose et que l'on administre de l'insuline, le K+ rentre massivement dans les cellules → risque d'<strong>hypokaliemie brutale</strong> avec troubles du rythme cardiaque (torsades de pointes, arret cardiaque). La kaliemie doit etre monitoree toutes les 1 a 2 heures et la supplementation potassique debute des que K+ &lt; 5,5 mmol/L.</p>
+<p><strong>Question 3 — Prise en charge therapeutique</strong> (application)</p>
+<blockquote>
+<p>Detaillez le protocole de prise en charge des 6 premieres heures. Quelles sont les 4 composantes essentielles ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Protocole de l'ACD severe (adapte des recommandations ISPAD 2022 et SFD/SFE) :</p>
+<ol>
+<li><strong>Rehydratation IV</strong> : NaCl 0,9% — bolus initial prudent 10 mL/kg sur 1h (pas de bolus rapide chez l'enfant : risque d'oedeme cerebral), puis correction du deficit sur 24-48h (ne pas depasser 1,5 a 2 fois les besoins d'entretien)</li>
+<li><strong>Insulinotherapie IVSE</strong> : insuline rapide 0,05 a 0,1 UI/kg/h, debutee <strong>1 a 2 heures apres le debut de la rehydratation</strong> (pas avant, sauf si hyperkaliemie menacante). Objectif : baisse de la glycemie de 0,5 a 0,75 g/L/h (pas plus rapide)</li>
+<li><strong>Supplementation potassique</strong> : 40 mmol/L de KCl dans la perfusion des que K+ &lt; 5,5 mmol/L (en pratique, des le debut de l'insuline). Si K+ &lt; 3,5 mmol/L : retarder l'insuline jusqu'a correction</li>
+<li><strong>Surveillance rapprochee</strong> : glycemie capillaire horaire, cetonemie toutes les 2h, ionogramme + gaz du sang toutes les 2-4h, scope continu, diurese horaire, score neurologique (Glasgow) toutes les heures</li>
+</ol>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC01-003 — Algorithme de prise en charge de l'acidocetose diabetique — arbre decisionnel en 4 etapes avec seuils de kaliemie et debit d'insuline (Suivez le protocole etape par etape)]</p>
+</blockquote>
+<p><strong>Question 4 — Bilan etiologique</strong> (analyse)</p>
+<blockquote>
+<p>Quels examens biologiques demandez-vous a distance (J3-J5) pour confirmer le type de diabete et rechercher des pathologies auto-immunes associees ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Bilan a distance une fois l'acidocetose resolue :</p>
+<p><strong>Confirmation DT1 auto-immun</strong> :<br />
+- Auto-anticorps anti-ilots : <strong>anti-GAD</strong> (glutamate decarboxylase), <strong>anti-IA2</strong> (tyrosine phosphatase), <strong>anti-ZnT8</strong> (transporteur du zinc), <strong>anti-insuline</strong> (IAA — surtout avant 5 ans)<br />
+- Peptide C a jeun (et stimule) : effondre dans le DT1 (&lt; 0,2 nmol/L a jeun)<br />
+- Typage HLA : recherche des haplotypes a risque (DR3-DQ2, DR4-DQ8) — non obligatoire mais informatif</p>
+<p><strong>Depistage des auto-immunites associees</strong> (polyendocrinopathie) :<br />
+- <strong>Thyroide</strong> : TSH + anti-TPO (thyroidite de Hashimoto : 15-30% des DT1)<br />
+- <strong>Maladie coeliaque</strong> : IgA totales + anti-transglutaminase IgA (5-10% des DT1)<br />
+- <strong>Insuffisance surrenalienne</strong> : cortisol 8h + anti-21-hydroxylase (si symptomes)</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC01-004 — Tableau synthetique : bilan auto-immun du DT1 — auto-anticorps, sensibilite, chronologie d'apparition (Identifiez les anticorps les plus precoces et les plus sensibles)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas">Points cles du cas</h4>
+<ol>
+<li>L'ACD inaugurale revele le DT1 dans 25 a 40% des cas chez l'enfant</li>
+<li>Le trou anionique augmente (&gt; 12) est le marqueur de l'acidose organique par accumulation de corps cetoniques</li>
+<li>L'hyperkaliemie initiale masque un deficit potassique reel — la supplementation est vitale</li>
+<li>La vitesse de correction de la glycemie ne doit pas depasser 0,75 g/L/h (risque d'oedeme cerebral)</li>
+<li>Le bilan auto-immun complet (4 auto-anticorps) est indispensable pour confirmer le mecanisme et depister les pathologies associees</li>
+</ol>
+<hr />
+<p><a id="cas-2"></a></p>
+<h3 id="cas-n2-decouverte-fortuite-dun-dt2-chez-un-patient-obese">Cas n°2 — Decouverte fortuite d'un DT2 chez un patient obese</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 6 (Physiopathologie du DT2), 9 (Diagnostic), 25 (Mesures hygieno-dietetiques)<br />
+<strong>Duree estimee</strong> : 20 min<br />
+<strong>Thematique principale</strong> : Diagnostic, bilan initial et prise en charge du DT2</p>
+<h4 id="presentation-initiale_1">Presentation initiale</h4>
+<p>M. Benali, 54 ans, comptable, consulte son medecin traitant pour un renouvellement d'ordonnance d'antihypertenseur. Il ne se plaint de rien de particulier. Le bilan biologique systematique revele une glycemie a jeun a 1,52 g/L (8,4 mmol/L). Un second prelevement a 3 jours d'intervalle confirme : glycemie a jeun 1,48 g/L (8,2 mmol/L).</p>
+<p><strong>Antecedents</strong> :<br />
+- Medicaux : HTA traitee depuis 5 ans (amlodipine 5 mg), dyslipidemia mixte (non traitee), syndrome d'apnee du sommeil appareille<br />
+- Chirurgicaux : cholecystectomie a 48 ans<br />
+- Familiaux : pere DT2 diagnostique a 50 ans (sous metformine), mere HTA, soeur DT2 a 52 ans<br />
+- Mode de vie : sedentaire (&lt; 2000 pas/jour), tabac 10 cig/jour depuis 30 ans (15 PA), alcool occasionnel<br />
+- Alimentation : repas irreguliers, fast-food 3-4 fois/semaine, sodas quotidiens (~1L/jour)</p>
+<h4 id="examen-clinique_1">Examen clinique</h4>
+<ul>
+<li><strong>Poids</strong> : 102 kg, taille : 172 cm, IMC : 34,5 kg/m² (obesite classe I)</li>
+<li><strong>Tour de taille</strong> : 112 cm (&gt; 94 cm chez l'homme)</li>
+<li><strong>PA</strong> : 145/92 mmHg (sous amlodipine 5 mg)</li>
+<li><strong>Acanthosis nigricans</strong> : plis cervicaux posterieurs et axillaires</li>
+<li><strong>Examen des pieds</strong> : pouls pedieux et tibiaux posterieurs percus, monofilament 10g normal bilateralement</li>
+<li><strong>Auscultation</strong> : pas de souffle carotidien, pas de souffle femoral</li>
+<li><strong>Reste de l'examen</strong> : sans particularite</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC02-001</strong><br/>
+<em>Photographie clinique : acanthosis nigricans cervical et axillaire — hyperkeratose brune veloutee temoin de l'insulinoresistance (Identifiez la localisation et la signification physiopathologique)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="questions-progressives_1">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic</strong> (rappel)</p>
+<blockquote>
+<p>Le diagnostic de diabete est-il confirme ? Rappelez les criteres diagnostiques selon l'ADA 2024 / OMS.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Oui, le diagnostic de diabete est confirme. Selon les criteres ADA 2024 :<br />
+- <strong>Glycemie a jeun ≥ 1,26 g/L (7,0 mmol/L) a deux reprises</strong> : ici 1,52 puis 1,48 g/L → critere rempli<br />
+- Autres criteres (un seul suffit si symptomes) : glycemie ≥ 2 g/L a n'importe quel moment + symptomes cardinaux, ou HGPO 2h ≥ 2 g/L, ou HbA1c ≥ 6,5%</p>
+<p>Le contexte (age 54 ans, obesite abdominale, ATCD familiaux DT2, acanthosis nigricans, sedentarite, absence de cetose) oriente fortement vers un <strong>diabete de type 2</strong>.</p>
+<p><strong>Question 2 — Bilan initial</strong> (application)</p>
+<blockquote>
+<p>Quel bilan complementaire prescrivez-vous lors de la premiere consultation de decouverte du DT2 ? Organisez-le par organe cible.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Bilan initial complet du DT2 selon les recommandations HAS 2023 / ADA 2024 :</p>
+<p><strong>Equilibre glycemique</strong> :<br />
+- HbA1c (reference pour le suivi et la cible therapeutique)</p>
+<p><strong>Renal</strong> (nephropathie) :<br />
+- Creatinine + DFG estime (CKD-EPI)<br />
+- Rapport albumine/creatinine urinaire (RAC) sur echantillon matinal</p>
+<p><strong>Ophtalmologique</strong> (retinopathie) :<br />
+- Fond d'oeil dilate ou retinographie (dans les 3 mois suivant le diagnostic)</p>
+<p><strong>Cardiovasculaire</strong> (risque macrovasculaire) :<br />
+- Bilan lipidique complet (CT, HDL, LDL calcule, TG)<br />
+- ECG de repos 12 derivations<br />
+- Evaluation du risque CV : SCORE2-Diabetes <em>(ESC/EASD 2023)</em></p>
+<p><strong>Hepatique</strong> (MASLD/MASH) :<br />
+- ASAT, ALAT, GGT<br />
+- Score FIB-4 (si anomalies : elastographie hepatique)</p>
+<p><strong>Neuropathie</strong> :<br />
+- Examen des pieds : monofilament 10g, diapason 128 Hz, reflexes achilleens</p>
+<p><strong>Autres</strong> :<br />
+- NFS, ionogramme, TSH (si signes)<br />
+- Uricemie<br />
+- Bilan bucco-dentaire (parodontopathie)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC02-002 — Check-list du bilan initial du DT2 — tableau organise par organe cible avec frequence de suivi (Cochez les examens au fur et a mesure de la consultation)]</p>
+</blockquote>
+<p><strong>Question 3 — Prise en charge initiale</strong> (application)</p>
+<blockquote>
+<p>M. Benali a une HbA1c a 7,8%. Quelle strategie therapeutique proposez-vous en premiere intention ? Justifiez chaque composante.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Strategie multimodale selon l'algorithme ESC/EASD 2023 :</p>
+<p><strong>1. Mesures hygieno-dietetiques (MHD)</strong> — socle therapeutique :<br />
+- <strong>Alimentation</strong> : arret des sodas sucres (economie ~400 kcal/jour), reduction du fast-food, regime mediterraneen, 3 repas structures/jour, objectif -5 a 7% du poids initial sur 6 mois<br />
+- <strong>Activite physique</strong> : objectif progressif 150 min/semaine d'activite moderee (marche rapide), exercice en resistance 2 fois/semaine<br />
+- <strong>Sevrage tabagique</strong> : prioritaire (RCV majore × 2-3 chez le diabetique fumeur)</p>
+<p><strong>2. Metformine</strong> — traitement pharmacologique de 1ere intention :<br />
+- Debut : 500 mg/jour au diner, augmentation progressive (500 mg/semaine) jusqu'a 2000-3000 mg/jour en 2-3 prises<br />
+- Justification : reduction de la production hepatique de glucose, amelioration de la sensibilite a l'insuline, cout faible, securite cardiovasculaire prouvee (UKPDS), pas de prise de poids</p>
+<p><strong>3. Optimisation du risque cardiovasculaire</strong> :<br />
+- HTA non controlee sous amlodipine : ajouter un IEC (ramipril 5 mg) ou ARA2 (double objectif : controle tensionnel ≤ 130/80 mmHg + nephroprotection)<br />
+- Statine haute intensite (atorvastatine 20-40 mg) : cible LDL &lt; 1,0 g/L (patient a haut risque CV)<br />
+- Aspirine : non systematique en prevention primaire chez le diabetique (decider selon RCV individuel)</p>
+<p><strong>4. Education therapeutique structuree</strong> :<br />
+- Comprendre le diabete (maladie chronique, pas de « guerison » mais controle)<br />
+- Autocontrole glycemique (pas systematique dans le DT2 sans insuline, sauf pour motivation)<br />
+- Reconnaissance des signes d'hypoglycemie (peu probable sous metformine seule)</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC02-003 — Algorithme de prise en charge du DT2 nouvellement diagnostique — arbre decisionnel selon HbA1c, risque CV et comorbidites (Situez M. Benali dans l'algorithme et justifiez le choix therapeutique)]</p>
+</blockquote>
+<p><strong>Question 4 — Suivi</strong> (analyse)</p>
+<blockquote>
+<p>A 3 mois, l'HbA1c est a 7,2% sous metformine 2000 mg/jour. La cible est 7%. Que proposez-vous ? Modifiez-vous le traitement ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+L'HbA1c a 7,2% est proche de la cible (7%). La baisse de 0,6 point en 3 mois est significative. La strategie recommandee :<br />
+- <strong>Poursuivre la metformine</strong> a la meme dose<br />
+- <strong>Renforcer les MHD</strong> : evaluer l'adherence au regime, l'activite physique, le sevrage tabagique<br />
+- <strong>Reevaluer a 3 mois supplementaires</strong> (M6) : si HbA1c toujours &gt; 7%, discuter l'ajout d'un 2eme antidiabetique</p>
+<p>Le choix du 2eme agent depend du profil du patient :<br />
+- <strong>Si ASCVD ou haut risque CV</strong> → iSGLT2 (empagliflozine, dapagliflozine) ou GLP-1 RA (semaglutide, liraglutide) — benefice CV prouve<br />
+- <strong>Si priorite perte de poids</strong> → GLP-1 RA (semaglutide SC 1 mg/semaine : perte de poids -5 a 10%) ou tirzepatide (double agoniste GIP/GLP-1)<br />
+- <strong>Si cout un enjeu</strong> → sulfamide (gliclazide LM) — efficace mais risque hypoglycemie et prise de poids</p>
+<h4 id="points-cles-du-cas_1">Points cles du cas</h4>
+<ol>
+<li>Le DT2 est souvent asymptomatique — le depistage cible est essentiel chez les sujets a risque</li>
+<li>L'acanthosis nigricans est un marqueur clinique d'insulinoresistance</li>
+<li>Le bilan initial du DT2 explore systematiquement les 6 organes cibles</li>
+<li>La metformine reste le traitement de 1ere intention sauf contre-indication</li>
+<li>L'approche moderne du DT2 integre d'emblee le risque cardiovasculaire dans le choix therapeutique</li>
+</ol>
+<hr />
+<p><a id="cas-3"></a></p>
+<h3 id="cas-n3-diabete-gestationnel-au-2e-trimestre">Cas n°3 — Diabete gestationnel au 2e trimestre</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 8 (Diabete gestationnel), 30 (Grossesse et diabete)<br />
+<strong>Duree estimee</strong> : 20 min<br />
+<strong>Thematique principale</strong> : Depistage, diagnostic et prise en charge du diabete gestationnel</p>
+<h4 id="presentation-initiale_2">Presentation initiale</h4>
+<p>Mme Dupont, 33 ans, G2P1, est vue a la consultation d'obstetrique a 26 SA pour un suivi de grossesse. Sa premiere grossesse (il y a 4 ans) s'etait deroulee sans complication, avec un nouveau-ne de 3 850 g. Le test O'Sullivan n'avait pas ete realise lors de la premiere grossesse.</p>
+<p><strong>Antecedents</strong> :<br />
+- Medicaux : aucun<br />
+- Chirurgicaux : appendicectomie a 18 ans<br />
+- Familiaux : mere DT2 diagnostiquee a 55 ans, grand-pere paternel DT2<br />
+- Obstetricaux : G2P1, premiere grossesse a terme, voie basse, nouveau-ne 3850 g<br />
+- Traitement en cours : acide folique 0,4 mg/jour (1er trimestre, arrete a 12 SA), fer (Tardyferon)</p>
+<h4 id="donnees-actuelles">Donnees actuelles</h4>
+<ul>
+<li><strong>Poids pre-grossesse</strong> : 78 kg, taille : 164 cm, IMC pre-grossesse : 29 kg/m² (surpoids)</li>
+<li><strong>Prise de poids actuelle</strong> : +9 kg a 26 SA (87 kg)</li>
+<li><strong>PA</strong> : 125/78 mmHg</li>
+<li><strong>BU</strong> : glycosurie +, proteines traces</li>
+<li><strong>Echographie T2 (22 SA)</strong> : biometries au 75e percentile, liquide amniotique normal</li>
+</ul>
+<p>Le medecin prescrit une HGPO 75 g (criteres IADPSG/OMS 2013) :</p>
+<table>
+<thead>
+<tr>
+<th>Temps</th>
+<th>Glycemie</th>
+<th>Seuil diagnostique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T0 (a jeun)</td>
+<td>0,95 g/L (5,3 mmol/L)</td>
+<td>≥ 0,92 g/L</td>
+</tr>
+<tr>
+<td>T1h</td>
+<td>1,92 g/L (10,6 mmol/L)</td>
+<td>≥ 1,80 g/L</td>
+</tr>
+<tr>
+<td>T2h</td>
+<td>1,45 g/L (8,0 mmol/L)</td>
+<td>≥ 1,53 g/L</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC03-001 — Graphique interpretatif : HGPO 75g avec seuils IADPSG — representation graphique des courbes glycemiques avec zones normales et pathologiques (Placez les valeurs de Mme Dupont sur le graphique)]</p>
+</blockquote>
+<h4 id="questions-progressives_2">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic</strong> (rappel)</p>
+<blockquote>
+<p>Le diagnostic de diabete gestationnel (DG) est-il confirme ? Combien de valeurs doivent depasser les seuils ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Oui, le diagnostic de DG est confirme. Selon les criteres IADPSG 2010 (adoptes par l'OMS 2013 et le CNGOF 2010) : <strong>une seule valeur depassant le seuil suffit</strong>. Ici, 2 valeurs sur 3 depassent les seuils :<br />
+- T0 : 0,95 ≥ 0,92 g/L → <strong>positif</strong><br />
+- T1h : 1,92 ≥ 1,80 g/L → <strong>positif</strong><br />
+- T2h : 1,45 &lt; 1,53 g/L → negatif</p>
+<p>Le DG est defini comme un trouble de la tolerance glucidique de severite variable, diagnostique pour la premiere fois pendant la grossesse, qui ne correspond pas a un diabete prealable meconnu <em>(IADPSG, Diabetes Care, 2010)</em>.</p>
+<p><strong>Question 2 — Facteurs de risque</strong> (comprehension)</p>
+<blockquote>
+<p>Identifiez les facteurs de risque de DG presents chez Mme Dupont. Citez les facteurs de risque supplementaires que vous rechercheriez a l'interrogatoire.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Facteurs de risque presents chez Mme Dupont</strong> :<br />
+- Age &gt; 30 ans (33 ans) — non systematiquement retenu, mais l'incidence augmente avec l'age<br />
+- IMC pre-grossesse ≥ 25 kg/m² (ici 29 : surpoids)<br />
+- ATCD familiaux de DT2 au 1er degre (mere DT2)<br />
+- ATCD de macrosomie lors de la 1ere grossesse (3850 g) — seuil souvent fixe a 4000 g, mais 3850 g est a la limite</p>
+<p><strong>Facteurs de risque supplementaires a rechercher</strong> :<br />
+- ATCD personnel de DG lors d'une grossesse anterieure<br />
+- Syndrome des ovaires polykystiques (SOPK)<br />
+- Ethnie a risque (Asie du Sud, Maghreb, Afrique subsaharienne, Amerique latine)<br />
+- Multiparite (≥ 3)<br />
+- ATCD de mort foetale in utero inexpliquee</p>
+<p><strong>Question 3 — Prise en charge</strong> (application)</p>
+<blockquote>
+<p>Detaillez la prise en charge du DG de Mme Dupont. Quand introduisez-vous l'insuline ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Etape 1 — Mesures hygieno-dietetiques (1-2 semaines d'essai)</strong> :<br />
+- Consultation dietetique specialisee : regime a 1800-2000 kcal/jour, fractionne en 3 repas + 2-3 collations<br />
+- Apports glucidiques : 40-50% de la ration, index glycemique bas, fibres<br />
+- Activite physique adaptee : 30 min/jour de marche, natation ou yoga prenatal<br />
+- Autocontrole glycemique : 4-6 glycemies capillaires/jour (a jeun + 2h post-prandial) — <strong>objectifs</strong> : GAJ &lt; 0,95 g/L, GPP 2h &lt; 1,20 g/L</p>
+<p><strong>Etape 2 — Insulinotherapie si echec des MHD apres 1 a 2 semaines</strong> :<br />
+- <strong>Indication</strong> : ≥ 20-30% des glycemies hors cible malgre MHD bien conduites<br />
+- <strong>Type</strong> : insuline rapide (Aspart ou Lispro) en pre-prandial si GPP elevees, et/ou insuline basale (NPH, Detemir — les seules avec AMM grossesse) si GAJ elevees<br />
+- Metformine : alternative possible si refus de l'insuline (hors AMM en France, mais recommandee par NICE 2020) — traverse le placenta</p>
+<p><strong>Surveillance obstetricale renforcee</strong> :<br />
+- Echographie de croissance a 32 et 36 SA (biometries, estimation du poids foetal, liquide amniotique)<br />
+- Monitoring foetal a partir de 36 SA (si insuline)<br />
+- Declenchement a discuter a 39 SA si diabete bien equilibre, plus tot si desequilibre ou macrosomie</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC03-002 — Tableau des objectifs glycemiques pendant la grossesse — GAJ, GPP 1h, GPP 2h avec seuils CNGOF et ADA (Comparez les recommandations francaises et internationales)]</p>
+</blockquote>
+<p><strong>Question 4 — Suivi post-partum</strong> (analyse)</p>
+<blockquote>
+<p>Mme Dupont accouche a 39 SA d'un garcon de 4 120 g. Quel suivi proposez-vous apres l'accouchement ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Post-partum immediat</strong> :<br />
+- Arret de l'insuline des l'accouchement<br />
+- Surveillance de la glycemie du nouveau-ne (risque d'hypoglycemie neonatale par hyperinsulinisme foetal residuel) : glycemie capillaire a H1, H3, H6, H12, H24 — seuil d'intervention &lt; 0,40 g/L<br />
+- Encourager l'allaitement maternel (reduit le risque de DT2 chez la mere et l'enfant)</p>
+<p><strong>Post-partum a moyen terme</strong> :<br />
+- <strong>HGPO 75g a 6-12 semaines post-partum</strong> : verifier la normalisation de la tolerance glucidique (retour a la normale dans 90-95% des cas)<br />
+- Si HGPO normale : glycemie a jeun annuelle ou HbA1c annuelle a vie</p>
+<p><strong>Information sur le pronostic</strong> :<br />
+- Risque de recidive de DG lors des grossesses ulterieures : 30-50%<br />
+- Risque de developper un DT2 dans les 10-25 ans : <strong>50-60%</strong> <em>(Bellamy et al., Lancet, 2009)</em><br />
+- Prevention : maintien du poids de forme, activite physique reguliere, alimentation equilibree</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC03-003 — Courbe de risque cumulatif de DT2 apres un DG — representation graphique sur 25 ans (Identifiez la periode de risque maximal et les mesures preventives)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_2">Points cles du cas</h4>
+<ol>
+<li>Le depistage du DG se fait a 24-28 SA par HGPO 75g (criteres IADPSG : une seule valeur suffit)</li>
+<li>Les MHD sont le traitement de 1ere intention — l'insuline est introduite si echec a 1-2 semaines</li>
+<li>Les objectifs glycemiques sont stricts : GAJ &lt; 0,95 g/L, GPP 2h &lt; 1,20 g/L</li>
+<li>Le DG expose a un risque majeur de DT2 a long terme (50-60% a 25 ans)</li>
+<li>Le suivi post-partum avec HGPO de controle est indispensable</li>
+</ol>
+<hr />
+<p><a id="cas-4"></a></p>
+<h3 id="cas-n4-hypoglycemie-severe-sous-insuline">Cas n°4 — Hypoglycemie severe sous insuline</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 22 (Insulinotherapie), 23 (Technologies : CGM), 24 (Education therapeutique)<br />
+<strong>Duree estimee</strong> : 15 min<br />
+<strong>Thematique principale</strong> : Reconnaissance, traitement et prevention de l'hypoglycemie</p>
+<h4 id="presentation-initiale_3">Presentation initiale</h4>
+<p>Mme Faure, 28 ans, DT1 depuis l'age de 12 ans, est amenee aux urgences par les pompiers. Son conjoint les a appeles a 7h30 car il n'arrivait pas a la reveiller. Elle avait des sueurs profuses et des mouvements anormaux des membres. Le conjoint a administre du glucagon IM (kit GlucaGen 1 mg) et elle a repris conscience apres 10 minutes.</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Insuline Glargine U300 (Toujeo) 22 UI au coucher<br />
+- Insuline Aspart (NovoRapid) selon ratio I/C = 1 UI/10 g de glucides<br />
+- FSI (facteur de sensibilite a l'insuline) : 1 UI diminue la glycemie de 0,40 g/L<br />
+- Capteur de glucose en continu (CGM) : Dexcom G7</p>
+<p><strong>Contexte des dernieres 24h</strong> :<br />
+- La veille au soir, elle a fait un cours de Zumba de 90 minutes (inhabituel — normalement 45 min)<br />
+- Diner tardif a 21h30 apres le sport : salade composee (estimation : 30 g de glucides)<br />
+- Bolus de correction a 23h pour une glycemie a 1,80 g/L : 2 UI d'Aspart<br />
+- Glycemie au coucher (0h) : 1,10 g/L — elle s'est endormie sans collation</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC04-001 — Trace CGM des 24h precedant l'hypoglycemie severe — courbe glycemique avec fleches indiquant le sport, le repas, les bolus et la chute nocturne (Identifiez les erreurs de gestion qui ont conduit a l'hypoglycemie)]</p>
+</blockquote>
+<h4 id="questions-progressives_3">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Analyse de la cause</strong> (comprehension)</p>
+<blockquote>
+<p>Identifiez les facteurs ayant contribue a cette hypoglycemie severe nocturne. Combien de « couches de risque » superposees identifiez-vous ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Au moins <strong>4 facteurs de risque superposes</strong> :</p>
+<ol>
+<li><strong>Activite physique prolongee et inhabituelle</strong> : 90 min de Zumba (au lieu de 45 min habituels) → augmentation de la sensibilite a l'insuline pendant 24-48h post-exercice (effet retarde), captation musculaire du glucose persistante, repletion du glycogene musculaire</li>
+<li><strong>Repas insuffisant apres le sport</strong> : seulement 30 g de glucides (salade composee) — insuffisant pour reconstituer les reserves de glycogene depletees par l'exercice</li>
+<li><strong>Bolus de correction intempestif a 23h</strong> : la glycemie a 1,80 g/L apres un exercice intense n'est pas une « vraie hyperglycemie » — la sensibilite a l'insuline est accrue, le bolus de correction a une puissance amplifiee</li>
+<li><strong>Absence de collation au coucher</strong> : avec une glycemie a 1,10 g/L a minuit et de l'insuline Aspart residuelle active (duree d'action ~4h), une collation de securite etait indispensable</li>
+</ol>
+<p><strong>Question 2 — Classification et traitement</strong> (rappel)</p>
+<blockquote>
+<p>Classifiez cette hypoglycemie selon la classification internationale. Detaillez le traitement d'urgence.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Classification (consensus international ADA/EASD 2023)</strong> :<br />
+- <strong>Niveau 1</strong> (alerte) : glycemie &lt; 0,70 g/L (3,9 mmol/L), patient conscient<br />
+- <strong>Niveau 2</strong> (cliniquement significatif) : glycemie &lt; 0,54 g/L (3,0 mmol/L), patient conscient<br />
+- <strong>Niveau 3</strong> (severe) : <strong>etat cognitif altere necessitant l'intervention d'un tiers</strong> → c'est le cas de Mme Faure (perte de conscience, mouvements anormaux, necessite de glucagon)</p>
+<p><strong>Traitement d'urgence</strong> :<br />
+- <strong>Patient inconscient</strong> : glucagon IM ou SC 1 mg (kit injectable) ou glucagon nasal 3 mg (Baqsimi) — le conjoint a bien agi<br />
+- Alternative : glucagon SC par auto-injecteur (Gvoke 0,5 mg)<br />
+- Aux urgences : G30% IV 20-40 mL en bolus si acces veineux, puis perfusion G10% pour maintenir la glycemie &gt; 1 g/L<br />
+- Apres le reveil : resucrage per os 15-20 g de glucides rapides + collation glucido-proteique</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC04-002 — Algorithme de prise en charge de l'hypoglycemie selon le niveau — arbre decisionnel avec les 3 niveaux, les traitements et la « regle des 15 » (Appliquez la regle des 15-15 : 15g de sucre, recontrolez a 15 min)]</p>
+</blockquote>
+<p><strong>Question 3 — Prevention</strong> (application)</p>
+<blockquote>
+<p>Quelles recommandations donnez-vous a Mme Faure pour prevenir ce type d'episode ? Proposez au moins 5 mesures concretes.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Mesures de prevention personnalisees :</p>
+<ol>
+<li><strong>Reduction de l'insuline basale les jours d'exercice intense</strong> : diminuer la Glargine de 20% les soirs d'activite prolongee (&gt; 60 min) — soit 18 UI au lieu de 22 UI</li>
+<li><strong>Collation de securite systematique au coucher</strong> : si glycemie &lt; 1,20 g/L a minuit apres un exercice, prendre 15-20 g de glucides lents (pain complet, biscuit, barre cerealiere)</li>
+<li><strong>Ne pas corriger une glycemie post-exercice elevee</strong> : apres un effort prolonge, tolerer une glycemie jusqu'a 2 g/L au coucher sans bolus correcteur</li>
+<li><strong>Configurer les alertes CGM</strong> : alarme predictive « urgence basse » a 0,70 g/L et « basse » a 0,80 g/L — avec le Dexcom G7, activer l'alarme « Urgent Low Soon » qui predit l'hypoglycemie 20 min a l'avance</li>
+<li><strong>Former l'entourage</strong> : le conjoint doit savoir utiliser le glucagon (revision annuelle), connaitre les signes d'alerte, et avoir le reflexe de la position laterale de securite</li>
+<li><strong>Discuter la boucle fermee</strong> : un systeme AID (Automated Insulin Delivery) comme le CamAPS FX ou le Medtronic 780G reduirait automatiquement l'administration d'insuline en cas de tendance baissiere</li>
+</ol>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC04-003</strong><br/>
+<em>Schema : impact de l'exercice physique sur la glycemie — double fleche montrant l'effet aigu et l'effet retarde (24-48h) sur la sensibilite a l'insuline (Identifiez la fenetre de risque d'hypoglycemie retardee)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="points-cles-du-cas_3">Points cles du cas</h4>
+<ol>
+<li>L'hypoglycemie severe (niveau 3) necessite l'intervention d'un tiers — c'est une urgence vitale</li>
+<li>L'exercice physique augmente la sensibilite a l'insuline pendant 24-48h — effet retarde piege</li>
+<li>La superposition des facteurs de risque (exercice + sous-alimentation + correction + pas de collation) est le scenario classique de l'hypoglycemie nocturne severe</li>
+<li>La configuration des alertes CGM et la formation de l'entourage sont des mesures de prevention essentielles</li>
+<li>Les systemes de boucle fermee (AID) reduisent de 50-70% le temps en hypoglycemie</li>
+</ol>
+<hr />
+<p><a id="cas-5"></a></p>
+<h3 id="cas-n5-retinopathie-diabetique-au-depistage-annuel">Cas n°5 — Retinopathie diabetique au depistage annuel</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 16 (Retinopathie diabetique), 9 (Diagnostic)<br />
+<strong>Duree estimee</strong> : 15 min<br />
+<strong>Thematique principale</strong> : Depistage, classification et prise en charge de la retinopathie diabetique</p>
+<h4 id="presentation-initiale_4">Presentation initiale</h4>
+<p>M. Kermiche, 62 ans, DT2 depuis 12 ans, est suivi trimestriellement par son medecin traitant. Traitement actuel : metformine 2000 mg/jour + empagliflozine 10 mg/jour. HbA1c actuelle : 7,6%. Lors du depistage annuel de retinopathie, les retinophotographies realisees par l'orthoptiste revelent des anomalies bilaterales.</p>
+<p><strong>Antecedents pertinents</strong> :<br />
+- DT2 depuis 12 ans, desequilibre chronique (HbA1c entre 7,5 et 9% sur les 10 dernieres annees)<br />
+- HTA sous tritherapie (IEC + thiazidique + amlodipine), PA actuelle 142/88 mmHg<br />
+- Dyslipidemia sous atorvastatine 20 mg (LDL 1,05 g/L)<br />
+- Tabagisme actif 20 PA<br />
+- Dernier fond d'oeil il y a 2 ans : retinopathie diabetique non proliferante minime</p>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC05-001</strong><br/>
+<em>Retinophotographie couleur : retinopathie diabetique non proliferante moderee — microanevrysmes multiples, hemorragies punctiformes, exsudats secs, nodules cotonneux dans 2-3 quadrants (Identifiez chaque type de lesion et sa signification)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="rapport-ophtalmologique">Rapport ophtalmologique</h4>
+<p>L'ophtalmologiste interprete les cliches et realise un examen complementaire :</p>
+<p><strong>Oeil droit</strong> :<br />
+- Microanevrysmes dans les 4 quadrants<br />
+- Hemorragies punctiformes dans 2 quadrants<br />
+- Quelques exsudats secs (lipidiques) peri-maculaires<br />
+- 2 nodules cotonneux<br />
+- Pas de neovaisseaux</p>
+<p><strong>Oeil gauche</strong> :<br />
+- Microanevrysmes dans 3 quadrants<br />
+- Hemorragies punctiformes dans 1 quadrant<br />
+- Pas d'exsudat ni de neovaisseaux</p>
+<p><strong>OCT maculaire</strong> :<br />
+- OD : epaisseur maculaire centrale 320 µm (N &lt; 270 µm) — oedeme maculaire debutant<br />
+- OG : epaisseur maculaire centrale 255 µm — normal</p>
+<h4 id="questions-progressives_4">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Classification</strong> (rappel)</p>
+<blockquote>
+<p>Classifiez la retinopathie de chaque oeil selon la classification internationale simplifiee (adapte de l'ETDRS).</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Classification internationale simplifiee de la retinopathie diabetique</strong> <em>(adaptee de Wilkinson et al., Ophthalmology, 2003, basee sur l'ETDRS)</em> :</p>
+<ul>
+<li><strong>OD : Retinopathie diabetique non proliferante (RDNP) moderee</strong> — microanevrysmes + hemorragies et/ou exsudats, mais ne remplissant pas les criteres de la regle 4:2:1 de la RDNP severe</li>
+<li><strong>OG : RDNP minime a moderee</strong> — microanevrysmes + quelques hemorragies dans un seul quadrant</li>
+</ul>
+<p>L'oedeme maculaire a l'OD est un facteur de gravite supplementaire, independant du stade de la retinopathie.</p>
+<p><strong>Question 2 — Prise en charge</strong> (application)</p>
+<blockquote>
+<p>Quel traitement proposez-vous pour l'oeil droit ? Et quel suivi pour l'oeil gauche ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Oeil droit (RDNP moderee + oedeme maculaire)</strong> :<br />
+- L'oedeme maculaire diabetique (OMD) avec epaississement central (320 µm) est une indication de traitement par <strong>injections intravitrennes d'anti-VEGF</strong> (aflibercept ou ranibizumab) en 1ere intention <em>(recommandations SFO 2023, adapte des etudes RISE/RIDE et Protocol T/DRCR.net)</em><br />
+- Schema : charge de 5 injections mensuelles puis protocole « treat-and-extend » (espacement progressif selon la reponse)<br />
+- Objectif : reduction de l'epaisseur maculaire et amelioration de l'acuite visuelle</p>
+<p><strong>Oeil gauche (RDNP minime-moderee, pas d'OMD)</strong> :<br />
+- Pas de traitement ophtalmologique specifique<br />
+- Surveillance rapprochee : fond d'oeil + OCT a 6 mois (au lieu de l'annuel habituel)</p>
+<p><strong>Question 3 — Optimisation medicale</strong> (analyse)</p>
+<blockquote>
+<p>Quelles mesures systemiques sont essentielles pour ralentir la progression de la retinopathie ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+La retinopathie diabetique progresse sous l'effet de 3 facteurs majeurs modifiables :</p>
+<ol>
+<li><strong>Equilibre glycemique</strong> : chaque reduction de 1% de l'HbA1c diminue le risque de progression de la RD de 35-40% <em>(UKPDS, Lancet, 1998 ; DCCT/EDIC)</em>. Cible : HbA1c ≤ 7%, avec une reduction progressive (eviter la normalisation glycemique brutale qui peut aggraver transitoirement la RD — « early worsening »)</li>
+<li><strong>Controle tensionnel strict</strong> : cible ≤ 130/80 mmHg — M. Kermiche est a 142/88, pas a l'objectif. Augmenter l'IEC ou ajouter un bloqueur du SRAA <em>(ACCORD Eye, UKPDS)</em></li>
+<li><strong>Controle lipidique</strong> : fenofibrate 200 mg/jour — seul hypolipemiant ayant demontre un benefice sur la progression de la RD <em>(etudes FIELD et ACCORD Eye)</em>, independamment de son effet sur les lipides. A ajouter a la statine</li>
+<li><strong>Sevrage tabagique</strong> : le tabac aggrave la vasculopathie retinienne</li>
+</ol>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC05-002</strong><br/>
+<em>Schema de la classification RDNP/RDP — progression des lesions des microanevrysmes isoles a la neovascularisation, avec seuils d'intervention therapeutique (Situez le patient dans le continuum)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="points-cles-du-cas_4">Points cles du cas</h4>
+<ol>
+<li>Le depistage annuel de la retinopathie par retinophotographie est obligatoire chez tout diabetique</li>
+<li>La classification internationale distingue RDNP minime, moderee, severe et RD proliferante</li>
+<li>L'oedeme maculaire diabetique est traite par injections intravitrennes d'anti-VEGF</li>
+<li>Les 3 piliers de la prevention : equilibre glycemique, controle tensionnel, fenofibrate</li>
+<li>Le « early worsening » impose une normalisation glycemique progressive, pas brutale</li>
+</ol>
+<hr />
+<p><a id="cas-6"></a></p>
+<h3 id="cas-n6-plaie-du-pied-chez-un-diabetique">Cas n°6 — Plaie du pied chez un diabetique</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 20 (Pied diabetique), 18 (Neuropathie)<br />
+<strong>Duree estimee</strong> : 15 min<br />
+<strong>Thematique principale</strong> : Evaluation et prise en charge initiale du pied diabetique</p>
+<h4 id="presentation-initiale_5">Presentation initiale</h4>
+<p>M. Traore, 67 ans, DT2 depuis 18 ans, consulte pour une plaie sous le pied droit qu'il a remarquee « par hasard » en retirant sa chaussette hier soir. Il ne se souvient pas s'etre blesse et ne ressent aucune douleur. La plaie est presente depuis « probablement plusieurs jours ».</p>
+<p><strong>Antecedents</strong> :<br />
+- DT2 : 18 ans, sous insuline basale (Glargine 36 UI) + metformine 2000 mg + gliclazide LM 60 mg<br />
+- HbA1c : 8,4%<br />
+- Neuropathie peripherique connue (perte de sensibilite au monofilament depuis 5 ans)<br />
+- Arteriopathie des membres inferieurs : IPS 0,7 a droite, 0,85 a gauche (il y a 2 ans)<br />
+- HTA, dyslipidemia traitees<br />
+- Tabagisme sevre depuis 3 ans</p>
+<h4 id="examen-clinique-du-pied-droit">Examen clinique du pied droit</h4>
+<ul>
+<li><strong>Plaie</strong> : ulceration plantaire en regard de la tete du 1er metatarsien, ovalaire, 2 × 1,5 cm, profondeur ~3 mm, fond fibrineux, berges keratosiques</li>
+<li><strong>Signes locaux</strong> : pas d'erytheme peri-lesionnel, pas de chaleur, pas d'ecoulement purulent, pas d'odeur</li>
+<li><strong>Peau</strong> : secheresse cutanee, pilosite absente, anhidrose, deformation en griffe des orteils 2-3-4</li>
+<li><strong>Testing neurologique</strong> : monofilament 10g non percu sur 4/5 sites du pied droit et 3/5 du pied gauche, diapason 128 Hz non percu aux 2 malleoles, reflexes achilleens abolis bilateralement</li>
+<li><strong>Pouls</strong> : pedieux droit non percu, tibial posterieur droit faible, pouls gauches percus</li>
+<li><strong>Temperature cutanee</strong> : pied droit legerement plus froid que le gauche</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC06-001</strong><br/>
+<em>Photographie clinique : ulcere neuropathique plantaire sous tete de M1 — mal perforant plantaire typique avec berges keratosiques et fond fibrineux (Identifiez les signes de neuropathie et d'arteriopathie associes)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="questions-progressives_5">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Classification</strong> (rappel)</p>
+<blockquote>
+<p>Classifiez cette plaie selon la classification de l'Universite du Texas (UT) et identifiez le mecanisme lesionnel.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Classification de l'Universite du Texas</strong> <em>(adapte de Lavery et al., Diabetes Care, 1996)</em> :</p>
+<p>La plaie de M. Traore est classee <strong>Grade 1-B</strong> :<br />
+- <strong>Grade 1</strong> : plaie superficielle ne touchant ni le tendon, ni la capsule articulaire, ni l'os (profondeur 3 mm, fond fibrineux sans structure profonde visible)<br />
+- <strong>Stade B</strong> : presence d'ischemie (IPS 0,7 + pouls pedieux non percu), sans infection clinique (pas d'erytheme, pas de pus)</p>
+<p>Le mecanisme est celui du <strong>mal perforant plantaire</strong> (MPP) : la neuropathie sensitive abolit la douleur protectrice, la neuropathie motrice deforme le pied (griffes d'orteils → hyperpression sous les tetes metatarsiennes), la neuropathie autonome cause secheresse et crevasses. L'hyperpression repetee sur la callosite provoque une effraction cutanee qui passe inapercue.</p>
+<p><strong>Question 2 — Bilan et prise en charge</strong> (application)</p>
+<blockquote>
+<p>Quel bilan complementaire et quelle prise en charge proposez-vous ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Bilan</strong> :<br />
+- <strong>Radiographie du pied droit</strong> (face + 3/4) : rechercher une osteite sous-jacente (osteomyelite du 1er metatarsien), osteoarthropathie, corps etranger<br />
+- <strong>IPS + si possible TcPO2</strong> : evaluer la severite de l'arteriopathie — si TcPO2 &lt; 30 mmHg, le potentiel de cicatrisation est compromis → discuter une revascularisation<br />
+- <strong>Biologie</strong> : NFS, CRP, VS, procalcitonine, HbA1c, glycemie<br />
+- <strong>Prelevement bacteriologique profond</strong> : uniquement si signes d'infection (pas le cas ici — en l'absence d'infection, pas de prelevement superficiel)</p>
+<p><strong>Prise en charge</strong> :<br />
+1. <strong>Mise en decharge stricte</strong> : botte de decharge amovible (type Aircast) ou chaussure de Barouk — le facteur le plus important pour la cicatrisation du MPP<br />
+2. <strong>Soins locaux</strong> : detersion mecanique de la fibrine et des berges keratosiques, pansement hydrogel ou interface (Urgotul), refection tous les 2-3 jours<br />
+3. <strong>Pas d'antibiotherapie</strong> : en l'absence de signes infectieux cliniques (Grade B non infecte)<br />
+4. <strong>Optimisation glycemique</strong> : objectif HbA1c &lt; 8% au minimum, discuter ajout d'un GLP-1 RA ou iSGLT2 (attention : iSGLT2 deconseillee si risque d'amputation — debat persistant)<br />
+5. <strong>Evaluation vasculaire</strong> : avec IPS 0,7, adresser en medecine vasculaire pour angioscanner ou echo-Doppler arteriel des MI<br />
+6. <strong>Suivi rapproche</strong> : revoir a 1 semaine pour evaluer l'evolution</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC06-002 — Algorithme de prise en charge du pied diabetique — arbre decisionnel selon grade UT, infection et ischemie (Situez M. Traore et suivez la branche therapeutique correspondante)]</p>
+</blockquote>
+<p><strong>Question 3 — Prevention</strong> (analyse)</p>
+<blockquote>
+<p>Quelles mesures de prevention secondaire mettez-vous en place chez M. Traore pour eviter les recidives ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+M. Traore est a <strong>haut risque podologique</strong> (grade 3 selon la classification IWGDF 2023 : ATCD d'ulcere + neuropathie + AOMI). Prevention :</p>
+<ol>
+<li><strong>Chaussage therapeutique</strong> : chaussures sur mesure (CHUT — Chaussures a Usage Therapeutique) avec semelles orthopediques moulees pour redistribuer les pressions plantaires — remboursees par la Securite Sociale pour le diabete</li>
+<li><strong>Soins de podologie reguliers</strong> : tous les 2 mois (prise en charge forfaitaire diabete grade 2-3 : 4 a 6 seances/an remboursees)</li>
+<li><strong>Education du patient</strong> :<br />
+   - Inspection quotidienne des pieds (utiliser un miroir pour la plante)<br />
+   - Ne jamais marcher pieds nus<br />
+   - Verifier la temperature de l'eau du bain (&lt; 37°C — pas de thermoreception fiable)<br />
+   - Hydrater les pieds quotidiennement (creme uree 10-20%)<br />
+   - Couper les ongles au carre, pas trop court<br />
+   - Ne jamais utiliser de lame, corne-cutter ou produit coricide</li>
+<li><strong>Suivi podologique et medical</strong> : consultation annuelle en centre de reference du pied diabetique</li>
+</ol>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC06-003</strong><br/>
+<em>Photographie : chaussures therapeutiques sur mesure (CHUT) vs chaussures du commerce — comparaison de l'appui plantaire et de la redistribution des pressions (Identifiez les differences de conception)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="points-cles-du-cas_5">Points cles du cas</h4>
+<ol>
+<li>Le mal perforant plantaire est le mecanisme le plus frequent de l'ulcere diabetique neuropathique</li>
+<li>La classification de l'Universite du Texas guide la prise en charge (grade × stade)</li>
+<li>La mise en decharge est le traitement n°1 — pas d'antibiotique sans infection clinique</li>
+<li>L'IPS et la TcPO2 evaluent le potentiel de cicatrisation</li>
+<li>La prevention repose sur le chaussage therapeutique, la podologie reguliere et l'education</li>
+</ol>
+<hr />
+<p><a id="cas-7"></a></p>
+<h3 id="cas-n7-adaptation-des-doses-dinsuline-en-basal-bolus">Cas n°7 — Adaptation des doses d'insuline en basal-bolus</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilises</strong> : 22 (Insulinotherapie), 24 (Education therapeutique)<br />
+<strong>Duree estimee</strong> : 15 min<br />
+<strong>Thematique principale</strong> : Maniement pratique de l'insuline en schema basal-bolus</p>
+<h4 id="presentation-initiale_6">Presentation initiale</h4>
+<p>Mlle Renaud, 22 ans, DT1 depuis l'age de 9 ans, est suivie en consultation trimestrielle de diabetologie. Elle est sous schema basal-bolus depuis 8 ans. Son HbA1c actuelle est a 8,2% (objectif &lt; 7%). Elle est etudiante en droit et mange de facon irreguliere.</p>
+<p><strong>Schema insulinique actuel</strong> :<br />
+- <strong>Basale</strong> : Insuline Degludec (Tresiba) 18 UI a 22h<br />
+- <strong>Bolus</strong> : Insuline Lispro (Humalog) avant chaque repas<br />
+- <strong>Ratio I/C</strong> : 1 UI pour 10 g de glucides (tous les repas)<br />
+- <strong>FSI</strong> : 1 UI diminue la glycemie de 0,50 g/L<br />
+- <strong>CGM</strong> : FreeStyle Libre 2</p>
+<h4 id="carnet-glycemique-des-7-derniers-jours">Carnet glycemique des 7 derniers jours</h4>
+<table>
+<thead>
+<tr>
+<th>Jour</th>
+<th>Reveil (avant PDJ)</th>
+<th>2h post-PDJ</th>
+<th>Avant dejeuner</th>
+<th>2h post-dejeuner</th>
+<th>Avant diner</th>
+<th>2h post-diner</th>
+<th>Coucher</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lun</td>
+<td>1,45</td>
+<td>2,10</td>
+<td>1,30</td>
+<td>1,60</td>
+<td>1,05</td>
+<td>1,40</td>
+<td>1,20</td>
+</tr>
+<tr>
+<td>Mar</td>
+<td>1,55</td>
+<td>1,90</td>
+<td>1,15</td>
+<td>1,70</td>
+<td>0,95</td>
+<td>1,50</td>
+<td>1,35</td>
+</tr>
+<tr>
+<td>Mer</td>
+<td>1,60</td>
+<td>2,30</td>
+<td>1,40</td>
+<td>1,55</td>
+<td>1,10</td>
+<td>1,30</td>
+<td>1,15</td>
+</tr>
+<tr>
+<td>Jeu</td>
+<td>1,50</td>
+<td>2,00</td>
+<td>1,25</td>
+<td>1,80</td>
+<td>1,00</td>
+<td>1,45</td>
+<td>1,25</td>
+</tr>
+<tr>
+<td>Ven</td>
+<td>1,40</td>
+<td>2,20</td>
+<td>1,35</td>
+<td>1,65</td>
+<td>0,90</td>
+<td>1,55</td>
+<td>1,30</td>
+</tr>
+<tr>
+<td>Sam</td>
+<td>1,35</td>
+<td>1,85</td>
+<td>1,10</td>
+<td>1,50</td>
+<td>0,85</td>
+<td>1,60</td>
+<td>1,10</td>
+</tr>
+<tr>
+<td>Dim</td>
+<td>1,50</td>
+<td>2,15</td>
+<td>1,20</td>
+<td>1,75</td>
+<td>0,80</td>
+<td>1,70</td>
+<td>1,40</td>
+</tr>
+</tbody>
+</table>
+<p><em>Objectifs : a jeun 0,80-1,30 g/L, post-prandial &lt; 1,60 g/L</em></p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC07-001 — Representation AGP (Ambulatory Glucose Profile) sur 14 jours — courbe mediane, interquartiles et percentiles 10-90 avec TIR/TAR/TBR (Interpretez le profil glycemique global et identifiez les periodes a risque)]</p>
+</blockquote>
+<h4 id="questions-progressives_6">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Analyse du profil</strong> (comprehension)</p>
+<blockquote>
+<p>Analysez le carnet glycemique. Identifiez les 2 problemes principaux et la periode la plus problematique de la journee.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Deux problemes principaux :</p>
+<ol>
+<li><strong>Glycemies a jeun trop elevees</strong> : moyenne 1,48 g/L (range 1,35-1,60) — toutes au-dessus de la cible de 1,30 g/L. Probleme = <strong>insuline basale insuffisante</strong> ou phenomene de l'aube</li>
+<li><strong>Glycemies post-petit-dejeuner trop elevees</strong> : moyenne 2,07 g/L (range 1,85-2,30) — toutes au-dessus de la cible de 1,60 g/L. Probleme = <strong>ratio I/C du petit-dejeuner insuffisant</strong> (plus de glucides consommes que prevu, ou insulinoresistance matinale plus marquee)</li>
+</ol>
+<p>La periode la plus problematique est le <strong>matin</strong> (a jeun + post-PDJ), ce qui est classique chez les DT1 : le phenomene de l'aube (secretion de cortisol et de GH en fin de nuit) augmente la production hepatique de glucose et reduit la sensibilite a l'insuline le matin.</p>
+<p>Bon point : les glycemies de l'apres-midi et du soir sont globalement correctes.</p>
+<p><strong>Question 2 — Ajustement des doses</strong> (application)</p>
+<blockquote>
+<p>Proposez les modifications therapeutiques. Justifiez chaque changement avec les regles d'adaptation.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Modification 1 — Augmenter l'insuline basale</strong> :<br />
+- Regle : si GAJ &gt; 1,30 g/L 3 jours consecutifs sans hypoglycemie nocturne → augmenter la basale de 2 UI<br />
+- Proposition : Tresiba <strong>20 UI</strong> au coucher (augmentation de +2 UI, soit +11%)<br />
+- Reevaluer a 3 jours. Si toujours &gt; 1,30 g/L : augmenter de 2 UI supplementaires (max : 2 UI tous les 3 jours)</p>
+<p><strong>Modification 2 — Modifier le ratio I/C du petit-dejeuner</strong> :<br />
+- Regle : si GPP &gt; 1,60 g/L systematiquement pour un repas donne, durcir le ratio I/C de ce repas<br />
+- Proposition : passer le ratio I/C du PDJ de 1/10 a <strong>1/8</strong> (1 UI pour 8 g de glucides au lieu de 10 g)<br />
+- Garder le ratio 1/10 pour le dejeuner et le diner (GPP correctes)</p>
+<p><strong>Modification 3 — Revoir le timing du bolus</strong> :<br />
+- Question a la patiente : prend-elle son bolus juste avant de manger ou 10-15 minutes avant ? L'injection pre-prandiale de Lispro <strong>15 minutes avant le repas</strong> reduit le pic GPP de 0,30 a 0,50 g/L (surtout le matin ou l'insulinoresistance est maximale)</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC07-002</strong><br/>
+<em>Schema pedagogique : les 3 leviers d'ajustement du basal-bolus — basale (a jeun), ratio I/C (post-prandial), FSI (correction) — avec fleches indiquant dans quel sens modifier selon les glycemies (Identifiez quel levier utiliser pour chaque anomalie)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 3 — Calcul de bolus</strong> (application)</p>
+<blockquote>
+<p>Mlle Renaud va manger un sandwich jambon-beurre (60 g de glucides) et sa glycemie avant le dejeuner est a 1,50 g/L (cible : 1,10 g/L). Calculez le bolus total avec le nouveau ratio.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le ratio I/C du dejeuner reste a 1/10 (seul le PDJ a ete modifie) :</p>
+<p><strong>Bolus repas</strong> : 60 g ÷ 10 = <strong>6 UI</strong></p>
+<p><strong>Bolus de correction</strong> :<br />
+- Ecart : 1,50 - 1,10 = 0,40 g/L<br />
+- FSI : 1 UI diminue de 0,50 g/L<br />
+- Correction : 0,40 ÷ 0,50 = <strong>0,8 UI → arrondir a 1 UI</strong></p>
+<p><strong>Bolus total</strong> : 6 + 1 = <strong>7 UI de Lispro</strong>, injectees 10-15 minutes avant le repas</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC07-003 — Calculateur de bolus visuel — schema etape par etape : compter les glucides → diviser par ratio → ajouter correction → verifier l'insuline active residuelle (Calculez votre propre bolus avec les donnees du cas)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_6">Points cles du cas</h4>
+<ol>
+<li>L'analyse du carnet glycemique suit une logique systematique : d'abord le jeun (basale), puis les post-prandiaux (ratios I/C), puis les corrections (FSI)</li>
+<li>Le phenomene de l'aube explique la difficulte du controle matinal chez les DT1</li>
+<li>La regle d'ajustement de la basale : ± 2 UI tous les 3 jours selon les GAJ</li>
+<li>Le ratio I/C peut etre different a chaque repas (plus strict le matin)</li>
+<li>Le timing pre-prandial de l'insuline rapide (15 min avant) reduit significativement le pic post-prandial</li>
+</ol>
+<hr />
+<p><em>Fin de la Partie 1 — Cas Bronze (1-7)</em></p>
+</div>

@@ -1,0 +1,1114 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-tendinites-et-tendinopathies">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION TENDINITES ET TENDINOPATHIES</h1>
+<p><strong>Formation</strong> : VERTEX© — Tendinites et Tendinopathies de l'Appareil Locomoteur<br />
+<strong>Code</strong> : CCTEND<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Date</strong> : 21 mars 2026<br />
+<strong>Nombre de cas</strong> : 20 (partie 1/3 — cas 1 à 7)</p>
+<hr />
+<h2 id="table-des-matieres-generale-20-cas">Table des matières générale (20 cas)</h2>
+<h3 id="cas-bronze-application-directe-1-2-modules">🥉 Cas Bronze (application directe — 1-2 modules)</h3>
+<ul>
+<li><a href="#cas-1">Cas n°1 — Tendinopathie corporéale d'Achille chez un coureur à pied</a></li>
+<li><a href="#cas-2">Cas n°2 — Épicondylalgie latérale typique du bricoleur</a></li>
+<li><a href="#cas-3">Cas n°3 — Ténosynovite de De Quervain post-partum</a></li>
+<li><a href="#cas-4">Cas n°4 — Tendinopathie patellaire chez un volleyeur</a></li>
+<li><a href="#cas-5">Cas n°5 — Conflit sous-acromial et tendinopathie du supra-épineux</a></li>
+<li><a href="#cas-6">Cas n°6 — Doigt à ressaut chez un diabétique</a></li>
+<li><a href="#cas-7">Cas n°7 — Tendinopathie insertionnelle d'Achille chez un randonneur</a></li>
+</ul>
+<h3 id="cas-argent-diagnostic-differentiel-3-4-modules-partie-2">🥈 Cas Argent (diagnostic différentiel — 3-4 modules) <em>(partie 2)</em></h3>
+<ul>
+<li>Cas n°8 — Épicondylalgie latérale résistante — syndrome du tunnel radial ?</li>
+<li>Cas n°9 — Tendinopathie glutéale chez une femme ménopausée</li>
+<li>Cas n°10 — Rupture partielle de la coiffe chez un travailleur manuel</li>
+<li>Cas n°11 — Tendinopathie d'Achille sous fluoroquinolones chez un patient diabétique</li>
+<li>Cas n°12 — Tendinopathie du tibial postérieur et pied plat acquis de l'adulte</li>
+<li>Cas n°13 — Tendinopathie patellaire bilatérale chez un basketteur en pleine saison</li>
+</ul>
+<h3 id="cas-or-decision-multi-facteurs-5-modules-partie-3">🥇 Cas Or (décision multi-facteurs — 5+ modules) <em>(partie 3)</em></h3>
+<ul>
+<li>Cas n°14 — Rupture massive de la coiffe — réparation ou prothèse inversée ?</li>
+<li>Cas n°15 — Tendinopathie d'Achille chronique dégénérative — échec du traitement conservateur</li>
+<li>Cas n°16 — Polytendinopathie sur terrain métabolique — approche systémique</li>
+<li>Cas n°17 — Calcification de la coiffe des rotateurs — trituration, ondes de choc ou arthroscopie ?</li>
+</ul>
+<h3 id="cas-diamant-complications-echecs-reprises-partie-3">💎 Cas Diamant (complications, échecs, reprises) <em>(partie 3)</em></h3>
+<ul>
+<li>Cas n°18 — Rupture du tendon d'Achille — rerupture après réparation chirurgicale</li>
+<li>Cas n°19 — Échec de réparation de la coiffe — options de sauvetage</li>
+<li>Cas n°20 — Tendinopathie patellaire réfractaire chez un athlète de haut niveau — PRP, chirurgie et retour au sport</li>
+</ul>
+<hr />
+<h2 id="cas-bronze">🥉 CAS BRONZE</h2>
+<hr />
+<p><a id="cas-1"></a></p>
+<h3 id="cas-n1-tendinopathie-corporeale-dachille-chez-un-coureur-a-pied">Cas n°1 — Tendinopathie corporéale d'Achille chez un coureur à pied</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M8 (Tendinopathie d'Achille), M1 (Biologie et structure du tendon)<br />
+<strong>Durée estimée</strong> : 20 min<br />
+<strong>Thématique principale</strong> : Diagnostic et prise en charge initiale d'une tendinopathie corporéale d'Achille typique</p>
+<h4 id="presentation-initiale">Présentation initiale</h4>
+<p>M. Karim B., 38 ans, cadre commercial et coureur à pied amateur (45 km/semaine), consulte pour une douleur du tendon d'Achille droit évoluant depuis 6 semaines. La douleur est apparue après un passage de 35 à 55 km/semaine en vue de la préparation d'un semi-marathon. Il décrit une douleur maximale le matin au lever (premiers pas douloureux pendant 5 à 10 minutes), qui diminue à l'échauffement mais revient systématiquement en fin de course.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun antécédent notable, IMC 24 kg/m²<br />
+- Chirurgicaux : aucun<br />
+- Sportifs : course à pied depuis 8 ans, 3-4 sorties/semaine, chaussures de running changées il y a 2 mois (passage d'un drop de 10 mm à 4 mm)<br />
+- Traitement en cours : ibuprofène 400 mg × 2/j depuis 10 jours, sans amélioration significative<br />
+- Allergies : aucune</p>
+<h4 id="examen-clinique">Examen clinique</h4>
+<ul>
+<li>Inspection : épaississement fusiforme visible et palpable du tendon d'Achille droit, à <strong>4 cm de l'insertion calcanéenne</strong> (zone corporéale moyenne), pas de rougeur ni d'ecchymose</li>
+<li>Palpation : <strong>douleur exquise à la palpation de la zone épaissie</strong>, le nodule douloureux se déplace avec le tendon lors de la dorsiflexion de cheville (signe du « arc douloureux mobile » positif — distingue la tendinopathie corporéale de la pathologie du paraténon)</li>
+<li>Test de Royal London Hospital : douleur à la palpation en position neutre, <strong>diminution nette en dorsiflexion maximale</strong> → positif (en faveur d'une tendinopathie corporéale)</li>
+<li>Dorsiflexion passive : 8° à droite vs 15° à gauche → raideur du complexe suro-achilléen</li>
+<li>Montée sur pointe unipodale : possible mais <strong>douloureuse</strong> (3 répétitions avant douleur vs 25 à gauche)</li>
+<li>Examen du pied : hyperpronation modérée en charge, usure postéro-médiale des chaussures</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND08-S01-001</strong><br/>
+<em>Photographie clinique du tendon d'Achille droit : épaississement fusiforme visible à 4 cm de l'insertion calcanéenne, comparaison bilatérale montrant l'asymétrie de calibre</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations">Investigations</h4>
+<p><strong>Score VISA-A</strong> : <strong>52/100</strong> (score &lt; 50 = atteinte sévère ; 50-70 = modérée ; &gt; 70 = légère)</p>
+<p><strong>Échographie musculosquelettique</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S01-001</strong><br/>
+<em>Échographie du tendon d'Achille droit, coupe longitudinale : épaississement fusiforme de la zone corporéale (diamètre AP 9,2 mm vs 5,4 mm à gauche), zones hypoéchogènes intra-tendineuses, perte de l'architecture fibrillaire normale</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MTEND06-S01-002</strong><br/>
+<em>Échographie Doppler puissance du tendon d'Achille droit : néovascularisation intra-tendineuse depuis la face ventrale (antérieure) du tendon — signe de tendinopathie active au stade de dérégulation</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Épaississement fusiforme : diamètre AP <strong>9,2 mm</strong> (normal &lt; 6 mm, côté controlatéral 5,4 mm)</li>
+<li>Zones hypoéchogènes intra-tendineuses dans le corps tendineux</li>
+<li>Perte de l'organisation fibrillaire normale (aspect « moth-eaten »)</li>
+<li>Néovascularisation au Doppler puissance depuis la face antérieure (ventrale) du tendon</li>
+<li>Pas de rupture, pas de calcification, pas de bursite rétro-calcanéenne</li>
+</ul>
+<h4 id="questions-progressives">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quel stade du continuum de Cook &amp; Purdam proposez-vous ? Justifiez par les éléments cliniques et échographiques.</p>
+<p><strong>Q2</strong> — Quels sont les facteurs étiologiques identifiables dans ce cas ? Quel est le rôle du changement de drop des chaussures ?</p>
+<p><strong>Q3</strong> — L'ibuprofène prescrit depuis 10 jours est-il justifié dans une tendinopathie ? Quels sont les arguments pour et contre les AINS ?</p>
+<p><strong>Q4</strong> — Quel programme de rééducation prescrivez-vous ? Détaillez le type d'exercices, les paramètres de charge, la fréquence et la durée.</p>
+<p><strong>Q5</strong> — Le patient peut-il continuer à courir pendant le traitement ? Comment gérer la charge d'entraînement ?</p>
+<h4 id="reponses-detaillees">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et stade du continuum :</p>
+<p><strong>Diagnostic</strong> : <strong>Tendinopathie corporéale d'Achille droite au stade de dérégulation tendineuse</strong> (stade 2 du continuum de Cook &amp; Purdam, cf. M3 §3.2).</p>
+<p><strong>Éléments en faveur</strong> :<br />
+- <strong>Localisation corporéale</strong> (4 cm au-dessus de l'insertion) : zone de moindre vascularisation et de torsion des fibres — site électif de la tendinopathie corporéale (cf. M8 §8.1)<br />
+- <strong>Arc douloureux mobile positif</strong> : le nodule douloureux suit le tendon → pathologie intra-tendineuse (et non du paraténon)<br />
+- <strong>Durée &gt; 3 semaines</strong> : exclut une tendinopathie réactive simple (stade 1)<br />
+- <strong>Échographie</strong> : épaississement fusiforme + zones hypoéchogènes + néovascularisation = dérégulation tendineuse — la présence de néovaisseaux et de zones hypoéchogènes signe un remodelage matriciel désorganisé, dépassant le stade de la simple réponse réactive (cf. M6 §6.3)</p>
+<p><strong>Stade 2 — Dérégulation tendineuse</strong> (et non stade 3 — dégénérative) car :<br />
+- Durée &lt; 3 mois → processus potentiellement réversible<br />
+- Le tendon est épaissi mais sans zones de dégénérescence mucoïde franche ni rupture partielle<br />
+- Le patient est jeune (38 ans) avec un tendon qui avait un volume de charge significatif avant l'épisode</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : confondre « tendinite » et « tendinopathie ». Le terme « tendinite » implique une inflammation, or la majorité des tendinopathies chroniques sont des processus dégénératifs non inflammatoires (absence de cellules inflammatoires sur les biopsies). Le terme correct est « tendinopathie » (cf. M1 §1.4).</div>
+
+<p><strong>R2</strong> — Facteurs étiologiques :</p>
+<p><strong>Erreurs de charge</strong> (facteur principal — cf. M24 §24.1-24.2) :<br />
+- <strong>Augmentation brutale du volume</strong> : +57% en quelques semaines (35 → 55 km/semaine) — la recommandation classique est de ne pas dépasser +10% par semaine (règle empirique, bien que les données probantes soient limitées)<br />
+- <strong>Ratio charge aiguë/charge chronique (ACWR)</strong> : très probablement &gt; 1,5 → zone de danger de blessure (Gabbett, 2016, <em>Br J Sports Med</em>)</p>
+<p><strong>Changement de drop</strong> (facteur contributif majeur — cf. M8 §8.5) :<br />
+- Passage de 10 mm à 4 mm → augmentation de la sollicitation excentrique du complexe suro-achilléen<br />
+- Un drop faible allonge le bras de levier du tendon d'Achille et augmente la course excentrique du triceps sural lors de la phase de mid-stance<br />
+- Ce changement impose une adaptation tendineuse progressive (4-8 semaines minimum) — ici, la transition a été trop rapide</p>
+<p><strong>Autres facteurs</strong> :<br />
+- <strong>Raideur du triceps sural</strong> : dorsiflexion 8° (normal &gt; 10°) → surcharge mécanique du tendon<br />
+- <strong>Hyperpronation</strong> : crée un effet de « whipping » (effet de fouet) sur le tendon d'Achille, augmentant les contraintes en torsion</p>
+<p><strong>R3</strong> — Place des AINS dans la tendinopathie :</p>
+<p><strong>Arguments CONTRE les AINS</strong> (position dominante en 2025 — cf. M18 §18.5) :<br />
+- Les tendinopathies chroniques ne sont <strong>pas des processus inflammatoires</strong> au sens histologique (Cook &amp; Purdam, 2009) → les AINS ciblent un mécanisme qui n'est pas en jeu<br />
+- Les AINS inhibent la synthèse de collagène (effet délétère sur la réparation tendineuse) — démontré <em>in vitro</em> et chez l'animal<br />
+- Effet antalgique transitoire → masque la douleur → risque de surcharge sans signal d'alerte</p>
+<p><strong>Arguments POUR</strong> (nuancés) :<br />
+- Au stade réactif (&lt; 10 jours d'évolution), une courte cure d'AINS peut aider à réduire l'œdème tendineux réactif<br />
+- Effet antalgique utile pour initier la rééducation (fenêtre thérapeutique)</p>
+<p><strong>Conclusion pour ce patient</strong> : l'ibuprofène est <strong>peu justifié</strong> à ce stade (6 semaines d'évolution, stade de dérégulation). Il doit être arrêté. L'analgésie, si nécessaire, peut être assurée par du paracétamol ou des exercices isométriques (effet antalgique démontré — Rio et al., 2015).</p>
+<p><strong>R4</strong> — Programme de rééducation :</p>
+<p><strong>Phase 1 — Analgésie et charge initiale (semaines 1-2)</strong> :<br />
+- <strong>Exercices isométriques</strong> : maintien en montée sur pointe bilatérale, 45 secondes × 5 répétitions, 3 fois/jour — effet antalgique immédiat démontré (Rio et al., 2015, <em>Br J Sports Med</em>)<br />
+- Objectif : réduction de la douleur, début de stimulation mécanique sans aggraver</p>
+<p><strong>Phase 2 — Protocole excentrique d'Alfredson (semaines 3-14)</strong> (cf. M18 §18.2) :<br />
+- <strong>Exercice</strong> : descente excentrique du talon en bord de marche, genou tendu (cible le gastrocnémien) + genou légèrement fléchi (cible le soléaire)<br />
+- <strong>Paramètres</strong> : 3 × 15 répétitions, 2 exercices (genou tendu + fléchi) = 180 répétitions/jour, 7 jours/semaine, 12 semaines minimum<br />
+- <strong>Charge progressive</strong> : commencer au poids du corps, augmenter de 5 kg (sac à dos lesté) lorsque les exercices deviennent indolores<br />
+- <strong>Règle de la douleur</strong> : les exercices doivent être réalisés avec un niveau de douleur tolérable (EVA 3-5/10) — la douleur pendant l'exercice est normale et attendue, elle ne doit pas persister 24 h après</p>
+<p><strong>Alternative</strong> — <strong>Heavy Slow Resistance (HSR)</strong> (Kongsgaard et al., 2009) :<br />
+- Montées sur pointe sur presse à cuisses : 4 × 6-8 RM, progression vers 3 × 15 RM, 3 fois/semaine, 12 semaines<br />
+- Résultats comparables à Alfredson avec meilleure satisfaction patient</p>
+<div class="vertex-media schema">
+<strong>📐 MTEND18-S01-001</strong><br/>
+<em>Schéma du protocole d'Alfredson : position de départ sur pointe, descente excentrique contrôlée en bord de marche, genou tendu puis genou fléchi — 3 × 15 répétitions pour chaque position, 2 fois/jour</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>R5</strong> — Gestion de la charge sportive :</p>
+<p><strong>Le patient ne doit PAS arrêter complètement la course</strong> (cf. M18 §18.1, M24 §24.3) :<br />
+- L'arrêt total → déconditionnement tendineux → rechute à la reprise<br />
+- Réduction du volume à <strong>50% du volume pré-symptomatique</strong> (≈ 20-25 km/semaine)<br />
+- Éviter : les côtes, le fractionné, les terrains en pente, les changements de surface<br />
+- <strong>Traffic light model</strong> de Silbernagel (cf. M8 §8.7) :<br />
+  - 🟢 Vert (douleur ≤ 3/10 pendant et après) : maintenir ou augmenter prudemment (+10%/semaine)<br />
+  - 🟡 Jaune (douleur 4-5/10 pendant, disparaît &lt; 24 h après) : maintenir sans augmenter<br />
+  - 🔴 Rouge (douleur &gt; 5/10 ou persistante &gt; 24 h après) : réduire volume et intensité</p>
+<p><strong>Chaussures</strong> : revenir temporairement au drop de 10 mm pour la course, puis transition très progressive vers le drop de 4 mm (sur 8-12 semaines, en alternant).</p>
+<p><strong>Objectif</strong> : reprise complète à 12-16 semaines, semi-marathon envisageable à 4-6 mois si évolution favorable.</p>
+<hr />
+<p><a id="cas-2"></a></p>
+<h3 id="cas-n2-epicondylalgie-laterale-typique-du-bricoleur">Cas n°2 — Épicondylalgie latérale typique du bricoleur</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M12 (Épicondylalgies), M5 (Examen clinique)<br />
+<strong>Durée estimée</strong> : 20 min<br />
+<strong>Thématique principale</strong> : Diagnostic clinique et traitement conservateur d'une épicondylalgie latérale</p>
+<h4 id="presentation-initiale_1">Présentation initiale</h4>
+<p>M. Rachid M., 52 ans, droitier, comptable et bricoleur passionné, consulte pour une douleur du coude droit évoluant depuis 3 semaines. La douleur est apparue après un week-end de travaux de peinture (3 jours consécutifs de rouleau et pinceau). Elle siège à la face latérale du coude, irradie vers la face dorsale de l'avant-bras, et est aggravée par la préhension (ouvrir un bocal, serrer une poignée de main, soulever une casserole).</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : hypertension artérielle traitée (amlodipine 5 mg), tabagisme actif (15 PA)<br />
+- Chirurgicaux : aucun au niveau du membre supérieur<br />
+- Professionnels : comptable, utilisation intensive de la souris informatique (main droite)<br />
+- Sportifs : aucun<br />
+- Traitements en cours : amlodipine 5 mg/j, paracétamol 1 g × 3/j</p>
+<h4 id="examen-clinique_1">Examen clinique</h4>
+<ul>
+<li>Inspection : pas de tuméfaction, pas d'ecchymose, pas d'amyotrophie</li>
+<li>Palpation : <strong>douleur exquise à la palpation de l'épicondyle latéral</strong>, précisément sur l'insertion de l'extensor carpi radialis brevis (ECRB), juste en avant et en dessous du sommet de l'épicondyle</li>
+<li><strong>Test de Cozen</strong> (extension résistée du poignet, coude en extension, avant-bras en pronation) : <strong>positif</strong> — reproduit la douleur latérale</li>
+<li><strong>Test de Mill</strong> (étirement passif des extenseurs : pronation + flexion du poignet + extension du coude) : <strong>positif</strong></li>
+<li><strong>Test de Maudsley</strong> (extension résistée du 3e doigt) : <strong>positif</strong> — reproduit la douleur, évocateur d'une atteinte spécifique de l'ECRB</li>
+<li>Grip strength : <strong>diminuée de 40%</strong> à droite vs gauche (dynamomètre Jamar)</li>
+<li>Pain-free grip strength : 12 kg à droite vs 38 kg à gauche</li>
+<li>Mobilité du coude : complète, indolore en flexion-extension et pronosupination (pas de limitation articulaire)</li>
+<li>Examen neurologique du membre supérieur : normal — pas de déficit sensitif ou moteur dans le territoire du nerf radial ou du nerf interosseux postérieur</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND12-S01-001</strong><br/>
+<em>Photographie de la manœuvre de Cozen : le praticien résiste l'extension du poignet du patient, coude en extension complète — reproduction de la douleur latérale du coude</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_1">Investigations</h4>
+<p><strong>Score PRTEE</strong> (Patient-Rated Tennis Elbow Evaluation) : <strong>58/100</strong> (0 = aucune gêne, 100 = gêne maximale)</p>
+<p><strong>Radiographies du coude droit (face + profil)</strong> : normales — pas de calcification, pas d'arthrose huméro-radiale</p>
+<p><strong>Échographie</strong> (non indispensable pour le diagnostic initial, mais réalisée) :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S02-001</strong><br/>
+<em>Échographie de l'épicondyle latéral droit, coupe longitudinale : épaississement hypoéchogène de l'insertion de l'ECRB sur l'épicondyle latéral, avec irrégularité corticale de l'enthèse — aspect compatible avec une tendinopathie insertionnelle de l'ECRB</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Épaississement hypoéchogène de l'ECRB à son insertion épicondylienne</li>
+<li>Irrégularité de la corticale de l'épicondyle (remaniements enthésopathiques)</li>
+<li>Pas de rupture, pas de calcification</li>
+<li>Articulation huméro-radiale : pas d'épanchement</li>
+</ul>
+<h4 id="questions-progressives_1">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quels tests cliniques sont les plus fiables pour le confirmer ?</p>
+<p><strong>Q2</strong> — Quels diagnostics différentiels devez-vous évoquer devant une douleur latérale du coude ? Comment les éliminer cliniquement ?</p>
+<p><strong>Q3</strong> — Quelle est votre stratégie thérapeutique de première intention ? Quelle est la place d'une infiltration de corticostéroïdes ?</p>
+<p><strong>Q4</strong> — Quel programme d'exercices prescrivez-vous ? Détaillez les paramètres.</p>
+<p><strong>Q5</strong> — Quels facteurs professionnels et ergonomiques devez-vous adresser ?</p>
+<h4 id="reponses-detaillees_1">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et tests cliniques :</p>
+<p><strong>Diagnostic</strong> : <strong>Épicondylalgie latérale (tennis elbow) — tendinopathie insertionnelle de l'ECRB droit</strong> (cf. M12 §12.1).</p>
+<p>Le terme « épicondylite » est abandonné car la pathologie n'est pas inflammatoire. Il s'agit d'une tendinopathie dégénérative angiofibroblastique de l'ECRB (Nirschl &amp; Pettrone, 1979).</p>
+<p><strong>Tests les plus fiables</strong> (cf. M5 §5.4) :<br />
+- <strong>Test de Cozen</strong> : sensibilité 84%, spécificité 60% — bon test de screening<br />
+- <strong>Test de Maudsley</strong> (extension résistée du 3e doigt) : plus spécifique de l'ECRB car le 3e doigt est le seul dont l'extenseur commun partage une insertion commune avec l'ECRB<br />
+- <strong>Pain-free grip strength</strong> : mesure la plus fiable pour quantifier la sévérité et suivre l'évolution (Stratford et al., 1993) — différence &gt; 10% avec le côté sain est significative<br />
+- <strong>Test de Mill</strong> : étirement passif — très sensible, utile pour confirmer</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : le « tennis elbow » ne touche pas que les joueurs de tennis. Il est causé par des activités de préhension répétée (bricolage, travail manuel, souris informatique) dans > 90% des cas. Seuls 5-10% des cas surviennent chez des tennismen.</div>
+
+<p><strong>R2</strong> — Diagnostics différentiels :</p>
+<table>
+<thead>
+<tr>
+<th>Diagnostic</th>
+<th>Éléments cliniques distinctifs</th>
+<th>Comment l'éliminer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Syndrome du tunnel radial</strong> (compression du NIP)</td>
+<td>Douleur 3-4 cm en distal de l'épicondyle, aggravée par supination résistée, extension résistée du 3e doigt sans douleur épicondylienne</td>
+<td>Palpation : point douloureux distal à l'arcade de Fröhse, pas sur l'épicondyle</td>
+</tr>
+<tr>
+<td><strong>Cervicarthrose C5-C6 irradiée</strong></td>
+<td>Douleur irradiée depuis le cou, reproduite par les mouvements cervicaux (Spurling), pas par les tests épicondyliens</td>
+<td>Examen cervical : Spurling, déficit C6</td>
+</tr>
+<tr>
+<td><strong>Arthrose huméro-radiale</strong></td>
+<td>Douleur en pronosupination, limitation de la rotation, crépitements articulaires</td>
+<td>Mobilité articulaire limitée, radiographie anormale</td>
+</tr>
+<tr>
+<td><strong>Instabilité postéro-latérale du coude</strong></td>
+<td>Antécédent de luxation, appréhension en supination-valgus-extension</td>
+<td>Test du pivot shift latéral</td>
+</tr>
+<tr>
+<td><strong>Ostéochondrite du capitellum</strong></td>
+<td>Adolescent sportif, blocage articulaire intermittent</td>
+<td>Radiographie + IRM</td>
+</tr>
+</tbody>
+</table>
+<p>Dans ce cas, tous les diagnostics différentiels sont éliminés : les tests épicondyliens sont positifs, l'examen neurologique est normal, la mobilité articulaire est complète, les radiographies sont normales.</p>
+<p><strong>R3</strong> — Stratégie thérapeutique de première intention :</p>
+<p><strong>Traitement conservateur</strong> (taux de guérison spontanée à 12 mois : 70-90% — Bisset et al., 2006, <em>BMJ</em>) :</p>
+<ol>
+<li>
+<p><strong>Éducation et modification des activités</strong> :<br />
+   - Éviter les gestes déclencheurs (préhension répétée, activités de bricolage)<br />
+   - Ne pas soulever objets lourds paume vers le bas (supination préférable)<br />
+   - Ergonomie du poste de travail (cf. R5)</p>
+</li>
+<li>
+<p><strong>Bracelet épicondylien</strong> (bande de force) : porté à 2-3 cm en distal de l'épicondyle pendant les activités — réduit la contrainte sur l'insertion de l'ECRB par un effet de contre-force (réduction de 13-15% de la charge tendinopathique — Struijs et al., 2004)</p>
+</li>
+<li>
+<p><strong>Rééducation</strong> (cf. R4)</p>
+</li>
+<li>
+<p><strong>Glace</strong> : 15 min après les activités douloureuses</p>
+</li>
+</ol>
+<p><strong>Place de l'infiltration de corticostéroïdes</strong> (cf. M21 §21.2) :<br />
+- <strong>Effet à court terme</strong> : supérieur au placebo à 6 semaines (soulagement rapide)<br />
+- <strong>Effet à long terme</strong> : DÉLÉTÈRE — taux de récidive à 12 mois significativement plus élevé que le placebo et la rééducation seule (Coombes et al., 2010, <em>Lancet</em> ; Bisset et al., 2006, <em>BMJ</em>)<br />
+- <strong>Conclusion</strong> : infiltration de corticostéroïdes <strong>non recommandée</strong> en première intention pour l'épicondylalgie latérale en 2025. À réserver aux cas réfractaires nécessitant un soulagement rapide pour initier la rééducation.</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : infiltrer en première intention. Les données de niveau 1 montrent que l'infiltration de corticostéroïdes aggrave le pronostic à long terme dans l'épicondylalgie latérale (contrairement aux autres localisations).</div>
+
+<p><strong>R4</strong> — Programme d'exercices :</p>
+<p><strong>Protocole de Tyler</strong> (exercice excentrique avec barre flexible — cf. M18 §18.3) :<br />
+- <strong>Matériel</strong> : barre flexible de type TheraBand FlexBar (résistance verte ou bleue)<br />
+- <strong>Exercice</strong> : torsion de la barre avec la main saine en flexion du poignet, transfert à la main pathologique en extension du poignet, puis descente excentrique lente (déroulement de la torsion) — le « Tyler Twist »<br />
+- <strong>Paramètres</strong> : 3 × 15 répétitions, 1 fois/jour, 8-12 semaines<br />
+- <strong>Progression</strong> : augmenter la résistance de la barre quand l'exercice est indolore (vert → bleu → noir)</p>
+<p><strong>Exercices complémentaires</strong> :<br />
+- Extension excentrique du poignet avec haltère léger (1-2 kg) : bras reposant sur une table, descente lente en flexion, remontée avec l'autre main — 3 × 10, progression de charge<br />
+- Renforcement de la chaîne scapulaire (stabilisateurs de l'épaule) — souvent déficients chez les patients avec épicondylalgie</p>
+<div class="vertex-media schema">
+<strong>📐 MTEND18-S02-001</strong><br/>
+<em>Schéma du Tyler Twist avec barre flexible : 1) torsion avec la main saine, 2) transfert à la main pathologique en extension, 3) descente excentrique lente — 3 × 15 répétitions/jour</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>R5</strong> — Facteurs professionnels et ergonomiques :</p>
+<p><strong>Poste de travail informatique</strong> (comptable) :<br />
+- <strong>Souris</strong> : souris ergonomique verticale ou trackball → réduit l'activation des extenseurs du poignet de 50% par rapport à une souris classique<br />
+- <strong>Clavier</strong> : clavier ergonomique avec appui-poignets, position neutre du poignet (pas d'extension forcée)<br />
+- <strong>Hauteur du plan de travail</strong> : coudes à 90° de flexion, avant-bras reposant sur le bureau<br />
+- <strong>Pauses régulières</strong> : 5 min toutes les 45 min, étirements des extenseurs du poignet</p>
+<p><strong>Bricolage</strong> :<br />
+- Arrêt temporaire des activités de préhension forcée (vissage, ponçage, peinture) pendant 6-8 semaines<br />
+- Reprise progressive avec outils ergonomiques (poignées larges, outils électriques)</p>
+<hr />
+<p><a id="cas-3"></a></p>
+<h3 id="cas-n3-tenosynovite-de-de-quervain-post-partum">Cas n°3 — Ténosynovite de De Quervain post-partum</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M16 (Tendinopathies du poignet et de la main), M5 (Examen clinique)<br />
+<strong>Durée estimée</strong> : 15 min<br />
+<strong>Thématique principale</strong> : Diagnostic et traitement d'une ténosynovite de De Quervain typique</p>
+<h4 id="presentation-initiale_2">Présentation initiale</h4>
+<p>Mme Fatima Z., 32 ans, droitière, mère d'un nourrisson de 6 semaines (premier enfant), consulte pour une douleur du poignet droit apparue progressivement 3 semaines après l'accouchement. La douleur est localisée à la face latérale du poignet (versant radial), irradie vers le pouce et la face dorsale de l'avant-bras. Elle est aggravée par le portage du nourrisson (soulever le bébé en saisissant sous les aisselles) et les gestes de la vie quotidienne (tourner une clé, essorer un tissu, ouvrir un robinet).</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun antécédent notable<br />
+- Obstétricaux : G1P1, accouchement par voie basse sans complication, allaitement maternel en cours<br />
+- Chirurgicaux : aucun<br />
+- Traitements en cours : supplémentation en fer (Tardyferon®) et vitamine D</p>
+<h4 id="examen-clinique_2">Examen clinique</h4>
+<ul>
+<li>Inspection : <strong>tuméfaction modérée</strong> de la région rétro-styloïdienne radiale du poignet droit, pas de rougeur</li>
+<li>Palpation : douleur exquise à la palpation du <strong>1er compartiment dorsal du poignet</strong> (trajets de l'abductor pollicis longus [APL] et de l'extensor pollicis brevis [EPB]), crépitation à la mobilisation active du pouce</li>
+<li><strong>Test de Finkelstein</strong> : <strong>fortement positif</strong> — la déviation ulnaire passive du poignet avec le pouce enroulé dans les doigts reproduit une douleur vive au niveau du 1er compartiment</li>
+<li><strong>Test d'Eichhoff</strong> (variante du Finkelstein, souvent confondu avec lui) : positif</li>
+<li>Préhension pouce-index (pinch grip) : douloureuse et affaiblie</li>
+<li>Mobilité du poignet : complète mais douleur en déviation ulnaire forcée</li>
+<li>Examen neurologique : normal — pas de signes de compression du nerf radial sensitif (branche superficielle)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND16-S01-001</strong><br/>
+<em>Photographie de la manœuvre de Finkelstein : pouce en flexion enroulé dans les doigts, déviation ulnaire passive du poignet par le praticien — reproduction de la douleur au 1er compartiment dorsal</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_2">Investigations</h4>
+<p><strong>Aucune investigation complémentaire n'est nécessaire pour le diagnostic</strong> — le tableau clinique est typique.</p>
+<p>En cas de doute diagnostique, une <strong>échographie</strong> peut confirmer :<br />
+- Épaississement du rétinaculum du 1er compartiment<br />
+- Épanchement dans la gaine synoviale de l'APL et de l'EPB<br />
+- Recherche d'un septum intra-compartimentaire (variante anatomique)</p>
+<h4 id="questions-progressives_2">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quels sont les mécanismes physiopathologiques en jeu dans le post-partum ?</p>
+<p><strong>Q2</strong> — Quels diagnostics différentiels devez-vous évoquer devant une douleur du poignet radial ?</p>
+<p><strong>Q3</strong> — Quel traitement proposez-vous en première intention ? La patiente allaite — cela influence-t-il votre choix ?</p>
+<p><strong>Q4</strong> — Quelle est la place de l'infiltration de corticostéroïdes dans la ténosynovite de De Quervain ? Quel taux de succès ?</p>
+<p><strong>Q5</strong> — En cas d'échec du traitement conservateur, quelle intervention chirurgicale proposez-vous ? Quel piège anatomique devez-vous connaître ?</p>
+<h4 id="reponses-detaillees_2">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et physiopathologie :</p>
+<p><strong>Diagnostic</strong> : <strong>Ténosynovite sténosante du 1er compartiment dorsal du poignet droit (maladie de De Quervain)</strong> (cf. M16 §16.1).</p>
+<p><strong>Physiopathologie</strong> — il ne s'agit PAS d'une inflammation mais d'un <strong>épaississement sténosant du rétinaculum</strong> :<br />
+- Augmentation de volume du rétinaculum fibreux qui recouvre le 1er compartiment dorsal<br />
+- Sténose mécanique de la coulisse ostéofibreuse → friction des tendons APL et EPB<br />
+- Métaplasie fibrocartilagineuse du rétinaculum (épaississement pouvant atteindre 2-4× la normale)</p>
+<p><strong>Facteurs spécifiques au post-partum</strong> (cf. M16 §16.1.4) :<br />
+- <strong>Modifications hormonales</strong> : fluctuations des œstrogènes et de la progestérone → rétention hydrique, modification de la matrice extracellulaire des gaines tendineuses, laxité ligamentaire<br />
+- <strong>Sollicitation mécanique nouvelle</strong> : gestes répétés de portage du nourrisson avec extension/abduction du pouce (soulever sous les aisselles, soutenir la tête) — activité musculaire inhabituelle pour les muscles APL et EPB<br />
+- <strong>Fatigue et privation de sommeil</strong> : facteur systémique contribuant à la vulnérabilité tendineuse<br />
+- Incidence estimée à 0,5-1% des femmes en post-partum</p>
+<p><strong>R2</strong> — Diagnostics différentiels :</p>
+<table>
+<thead>
+<tr>
+<th>Diagnostic</th>
+<th>Éléments distinctifs</th>
+<th>Test clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rhizarthrose</strong> (arthrose trapézo-métacarpienne)</td>
+<td>Douleur à la base du pouce, aggravée par la pince, crépitements à la circumduction du pouce</td>
+<td>Test de grind (rotation-compression TMC) — négatif ici</td>
+</tr>
+<tr>
+<td><strong>Fracture du scaphoïde méconnue</strong></td>
+<td>Douleur en tabatière anatomique, contexte traumatique</td>
+<td>Palpation du scaphoïde, radiographies + scanner si doute</td>
+</tr>
+<tr>
+<td><strong>Syndrome d'intersection</strong></td>
+<td>Douleur plus proximale (4 cm au-dessus du poignet), crépitation en dos de l'avant-bras</td>
+<td>Localisation : 2e compartiment, pas le 1er</td>
+</tr>
+<tr>
+<td><strong>Névralgie du nerf radial sensitif</strong> (syndrome de Wartenberg)</td>
+<td>Paresthésies face dorsale du 1er espace interdigital, signe de Tinel positif sur le nerf radial</td>
+<td>Examen neurologique — normal ici</td>
+</tr>
+<tr>
+<td><strong>Kyste arthro-synovial dorsal</strong></td>
+<td>Tuméfaction visible, transillumination positive</td>
+<td>Inspection — absent ici</td>
+</tr>
+</tbody>
+</table>
+<p><strong>R3</strong> — Traitement de première intention :</p>
+<ol>
+<li><strong>Immobilisation par attelle</strong> : orthèse thermoformée incluant le pouce (spica) en position de repos (poignet à 20° d'extension, pouce en abduction), port continu 4-6 semaines, retrait uniquement pour la toilette</li>
+<li><strong>Adaptation des gestes</strong> : saisir le bébé en glissant les deux mains sous les fesses et la tête plutôt qu'en le soulevant sous les aisselles → réduit la sollicitation de l'APL/EPB</li>
+<li><strong>Analgésie</strong> :<br />
+   - Paracétamol 1 g × 3-4/j → compatible avec l'allaitement<br />
+   - <strong>AINS</strong> : l'ibuprofène est compatible avec l'allaitement (passage minime dans le lait, demi-vie courte) — peut être utilisé en cure courte (7-10 jours)<br />
+   - Glace locale : 10 min × 3-4/j sur la zone douloureuse</li>
+</ol>
+<p><strong>Taux de succès du traitement conservateur seul</strong> : 50-60% (inférieur à l'infiltration) — si échec à 4-6 semaines, proposer l'infiltration.</p>
+<p><strong>R4</strong> — Infiltration de corticostéroïdes :</p>
+<p><strong>Place</strong> : traitement de <strong>deuxième intention</strong> après échec de l'immobilisation, ou de <strong>première intention</strong> si symptômes sévères (cf. M21 §21.3).</p>
+<p><strong>Technique</strong> :<br />
+- Injection péri-tendineuse (dans la gaine, PAS dans le tendon) sous repérage anatomique ou échoguidée<br />
+- Produit : bétaméthasone (Diprostène®) ou triamcinolone (Kenacort®) + lidocaïne 1%<br />
+- Volume : 0,5-1 mL<br />
+- <strong>Piège</strong> : rechercher un septum intra-compartimentaire (variante anatomique présente dans 30-50% des cas) — si septum présent, il faut injecter dans les <strong>2 sous-compartiments</strong> séparément (APL et EPB) sous peine d'échec</p>
+<p><strong>Taux de succès</strong> :<br />
+- <strong>Première infiltration</strong> : 70-83% de guérison (Richie &amp; Briner, 2003, <em>Am J Sports Med</em> ; Peters-Veluthamaningal et al., 2009, <em>Cochrane</em>)<br />
+- <strong>Deuxième infiltration</strong> (si échec de la 1re) : 50-60% de guérison supplémentaire<br />
+- <strong>Allaitement</strong> : l'infiltration unique de corticostéroïdes est compatible avec l'allaitement (passage systémique minime, dose unique faible)</p>
+<p><strong>R5</strong> — Traitement chirurgical et piège anatomique :</p>
+<p><strong>Indication</strong> : échec de 2 infiltrations bien réalisées + immobilisation prolongée (&gt; 3-6 mois de symptômes)</p>
+<p><strong>Technique</strong> (cf. M22 §22.4) :<br />
+- Ouverture du 1er compartiment dorsal sous anesthésie locale ou locorégionale<br />
+- <strong>Incision</strong> : transversale ou oblique, 1-2 cm au-dessus de la styloïde radiale<br />
+- Section longitudinale du rétinaculum fibreux sur toute sa longueur</p>
+<p><strong>Piège anatomique majeur</strong> :<br />
+- <strong>Le septum intra-compartimentaire</strong> : dans 30-50% des cas, le 1er compartiment est divisé en 2 coulisses séparées par un septum fibreux (APL en palmaire, EPB en dorsal). Si le chirurgien ne libère que l'une des deux coulisses → échec chirurgical. Il faut <strong>systématiquement</strong> rechercher et ouvrir le septum.<br />
+- <strong>Le nerf radial sensitif</strong> (branche superficielle) croise le 1er compartiment → risque de lésion iatrogène → névralgie post-opératoire invalidante. Identification et protection obligatoires.</p>
+<p><strong>Taux de succès chirurgical</strong> : &gt; 90% (si le septum est identifié et ouvert).</p>
+<hr />
+<p><a id="cas-4"></a></p>
+<h3 id="cas-n4-tendinopathie-patellaire-chez-un-volleyeur">Cas n°4 — Tendinopathie patellaire chez un volleyeur</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M11 (Tendinopathie patellaire), M5 (Examen clinique)<br />
+<strong>Durée estimée</strong> : 20 min<br />
+<strong>Thématique principale</strong> : Diagnostic et gestion d'une tendinopathie patellaire chez un sportif</p>
+<h4 id="presentation-initiale_3">Présentation initiale</h4>
+<p>M. Youssef A., 22 ans, volleyeur semi-professionnel (Division 2), consulte en début de saison pour une douleur du genou gauche évoluant depuis 4 mois. La douleur siège au <strong>pôle inférieur de la rotule</strong>, apparaît lors des impulsions de saut (attaque et contre) et lors de la réception. Elle était initialement présente uniquement après l'effort, mais depuis 3 semaines elle survient dès l'échauffement et limite ses performances en match. Le patient est inquiet car il a une sélection pour l'équipe nationale dans 3 mois.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : aucun<br />
+- Chirurgicaux : aucun<br />
+- Sportifs : volleyball depuis l'âge de 12 ans, poste d'attaquant central (volume de saut élevé), 5 entraînements/semaine + 1-2 matchs<br />
+- Épisode similaire au genou droit il y a 2 ans, résolu avec 2 mois de repos<br />
+- Traitement en cours : aucun</p>
+<h4 id="examen-clinique_3">Examen clinique</h4>
+<ul>
+<li>Inspection : pas de tuméfaction, pas d'amyotrophie du quadriceps</li>
+<li>Palpation : <strong>douleur exquise à la palpation du pôle inférieur de la rotule</strong> en extension, diminuée lorsque la rotule est comprimée (mise en tension du tendon = compression de l'enthèse)</li>
+<li><strong>Single leg decline squat</strong> (squat unipodal sur plan incliné à 25°) : <strong>reproduit la douleur</strong> au pôle inférieur de la rotule — test le plus spécifique de la tendinopathie patellaire (Purdam et al., 2003)</li>
+<li>Extension résistée du genou : douloureuse, surtout en fin d'extension</li>
+<li>Genou controlatéral : examen normal</li>
+<li>Mobilité du genou : complète, pas de signe méniscal ni ligamentaire</li>
+<li>Souplesse du quadriceps : test d'Ely positif bilatéralement (raideur du droit fémoral)</li>
+<li>Souplesse des ischio-jambiers : angle poplité à 30° bilatéralement (raideur modérée)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND11-S01-001</strong><br/>
+<em>Photographie du single leg decline squat : patient en appui unipodal sur plan incliné à 25°, genou fléchi à 60° — reproduction de la douleur au pôle inférieur de la rotule</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_3">Investigations</h4>
+<p><strong>Score VISA-P</strong> : <strong>42/100</strong> (score &lt; 50 = atteinte sévère)</p>
+<p><strong>Échographie</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S03-001</strong><br/>
+<em>Échographie du tendon patellaire gauche, coupe longitudinale : épaississement hypoéchogène du pôle proximal (insertion rotulienne), 8,4 mm de diamètre AP (normal < 5 mm), néovascularisation au Doppler puissance depuis la pointe de la rotule</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Épaississement hypoéchogène du tendon patellaire proximal (8,4 mm AP vs 4,8 mm à droite)</li>
+<li>Zone hypoéchogène focale à l'insertion rotulienne (enthèse)</li>
+<li>Néovascularisation au Doppler puissance</li>
+<li>Pas de rupture, pas de calcification</li>
+</ul>
+<h4 id="questions-progressives_3">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Pourquoi la localisation au pôle inférieur de la rotule est-elle typique ?</p>
+<p><strong>Q2</strong> — Quelle est la classification de Blazina et quel est le stade de ce patient ?</p>
+<p><strong>Q3</strong> — Le patient peut-il continuer à jouer pendant le traitement ? Comment gérer la charge de saut ?</p>
+<p><strong>Q4</strong> — Quel programme de rééducation proposez-vous ? Exercices isométriques, excentriques ou HSR ?</p>
+<p><strong>Q5</strong> — Quelles sont les options si le traitement conservateur échoue ?</p>
+<h4 id="reponses-detaillees_3">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et localisation :</p>
+<p><strong>Diagnostic</strong> : <strong>Tendinopathie patellaire proximale gauche (jumper's knee)</strong> (cf. M11 §11.1).</p>
+<p><strong>Pourquoi le pôle inférieur de la rotule ?</strong> (cf. M11 §11.1) :<br />
+- L'insertion proximale du tendon patellaire sur la pointe de la rotule est une <strong>enthèse fibro-cartilagineuse</strong> soumise à la fois à des forces de <strong>traction</strong> (extension active) et de <strong>compression</strong> (la surface profonde du tendon est comprimée contre la pointe de la rotule lors de la flexion)<br />
+- Lors du saut, les forces atteignent <strong>5 à 8 fois le poids du corps</strong> au niveau du tendon patellaire, avec un pic de contrainte à l'enthèse proximale<br />
+- La compression répétée de l'enthèse induit des lésions du fibrocartilage et de l'os sous-chondral de la pointe de la rotule → tendinopathie insertionnelle<br />
+- 65-70% des tendinopathies patellaires touchent le <strong>pôle inférieur</strong> (insertion proximale), 20-25% le corps du tendon, 10% le pôle distal (TTA)</p>
+<p><strong>R2</strong> — Classification de Blazina (1973) :</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Description</th>
+<th>Critères</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Douleur après l'effort uniquement</td>
+<td>Pas d'impact fonctionnel</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Douleur en début d'effort, disparaît à l'échauffement, réapparaît après</td>
+<td>Performance maintenue</td>
+</tr>
+<tr>
+<td>III</td>
+<td>Douleur constante pendant et après l'effort</td>
+<td><strong>Performance altérée</strong></td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Rupture du tendon patellaire</td>
+<td>Perte de l'extension active</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ce patient est au stade III</strong> : douleur dès l'échauffement, limitant les performances en match, VISA-P &lt; 50.</p>
+<div class="vertex-alerte"><strong>Limite de la classification de Blazina</strong> : elle ne reflète pas la structure tendineuse (un tendon peut être asymptomatique mais structurellement altéré, et vice versa). Le VISA-P est un outil plus fiable pour monitorer l'évolution.</div>
+
+<p><strong>R3</strong> — Gestion de la charge sportive :</p>
+<p><strong>Le patient peut continuer à jouer</strong> sous conditions strictes (cf. M11 §11.5, M18 §18.1) :<br />
+- L'arrêt total du sport est <strong>contre-productif</strong> : déconditionnement tendineux → rechute à la reprise (comme il y a 2 ans avec « 2 mois de repos » → résolution transitoire puis récidive à la reprise)<br />
+- <strong>Gestion de la charge de saut</strong> (load management) :<br />
+  - Réduire le <strong>volume de saut</strong> en entraînement de 50% (réduction des exercices de bloc et d'attaque pure)<br />
+  - Maintenir les matchs (le volume de saut en match est non modifiable, mais représente &lt; 50% du volume total)<br />
+  - Supprimer les sauts sur surface dure (béton, goudron)<br />
+  - Éviter les squats profonds en musculation (flexion &gt; 90° = pic de compression sur l'enthèse)</p>
+<ul>
+<li><strong>Traffic light model</strong> adapté au saut :</li>
+<li>🟢 Douleur ≤ 2/10 pendant l'activité et &lt; 24 h après : maintenir</li>
+<li>🟡 Douleur 3-5/10 et disparaît &lt; 24 h : réduire le volume de saut de 30%</li>
+<li>🔴 Douleur &gt; 5/10 ou persistante &gt; 24 h : réduire significativement, pas de match</li>
+</ul>
+<p><strong>R4</strong> — Programme de rééducation :</p>
+<p><strong>Phase 1 — Analgésie par exercices isométriques (semaines 1-4)</strong> (cf. M18 §18.2) :<br />
+- <strong>Extension isométrique du genou</strong> sur banc de musculation à 60° de flexion : 5 × 45 secondes à 70% de la contraction maximale volontaire, 3 fois/jour<br />
+- Effet antalgique immédiat (réduction de la douleur de 6,8/10 à 2,4/10 dans les 45 min — Rio et al., 2015)<br />
+- À réaliser <strong>avant</strong> les entraînements et les matchs comme « warm-up antalgique »</p>
+<p><strong>Phase 2 — Heavy Slow Resistance (HSR) (semaines 3-16)</strong> (cf. M18 §18.3) :<br />
+- <strong>Exercices</strong> : squat bilatéral (pas de squat unipodal initialement) + leg press + hack squat<br />
+- <strong>Paramètres</strong> : progression de 4 × 15 RM → 4 × 12 RM → 4 × 10 RM → 3 × 8 RM → 3 × 6 RM<br />
+- <strong>Fréquence</strong> : 3 fois/semaine<br />
+- <strong>Amplitude</strong> : flexion limitée à <strong>60-70°</strong> (éviter la flexion profonde &gt; 90° qui comprime l'enthèse)<br />
+- <strong>Durée</strong> : minimum 12 semaines (idéalement 24 semaines pour un gain structural)</p>
+<p><strong>Pourquoi HSR plutôt qu'excentrique pour le tendon patellaire ?</strong> :<br />
+- Le protocole de decline squat excentrique est efficace mais souvent trop douloureux pour être maintenu pendant la saison<br />
+- Le HSR offre des résultats comparables avec une meilleure satisfaction patient et tolérance (Kongsgaard et al., 2009)</p>
+<p><strong>R5</strong> — Options en cas d'échec conservateur :</p>
+<p>Après <strong>6-12 mois</strong> de rééducation bien conduite sans amélioration significative (VISA-P &lt; 50) :</p>
+<ol>
+<li>
+<p><strong>Injections de PRP</strong> (Platelet-Rich Plasma) — cf. M21 §21.5 :<br />
+   - Données actuelles : résultats modestes, supériorité par rapport au placebo non clairement démontrée pour la tendinopathie patellaire<br />
+   - Protocole : 1-3 injections échoguidées à 2-4 semaines d'intervalle</p>
+</li>
+<li>
+<p><strong>Ondes de choc extracorporelles</strong> (cf. M20 §20.2) :<br />
+   - 3-5 séances à 1 semaine d'intervalle<br />
+   - Taux de succès : 60-70% pour les tendinopathies patellaires chroniques</p>
+</li>
+<li>
+<p><strong>Chirurgie</strong> — en dernier recours (cf. M22 §22.2) :<br />
+   - <strong>Arthroscopie</strong> : résection du pôle inférieur de la rotule (shaving de l'enthèse dégénérative) + débridement du tissu tendinopathique<br />
+   - <strong>Ténotomie percutanée échoguidée</strong> (technique mini-invasive)<br />
+   - Taux de succès : 70-80%, mais retour au sport au même niveau non garanti<br />
+   - Délai de retour : 4-6 mois post-chirurgie</p>
+</li>
+</ol>
+<hr />
+<p><a id="cas-5"></a></p>
+<h3 id="cas-n5-conflit-sous-acromial-et-tendinopathie-du-supra-epineux">Cas n°5 — Conflit sous-acromial et tendinopathie du supra-épineux</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M14 (Coiffe des rotateurs), M5 (Examen clinique)<br />
+<strong>Durée estimée</strong> : 20 min<br />
+<strong>Thématique principale</strong> : Diagnostic d'un conflit sous-acromial avec tendinopathie du supra-épineux sans rupture</p>
+<h4 id="presentation-initiale_4">Présentation initiale</h4>
+<p>Mme Nadia K., 55 ans, droitière, professeure de collège, consulte pour une douleur de l'épaule droite évoluant depuis 2 mois. La douleur est localisée à la face antéro-latérale du deltoïde, irradie vers le bras mais <strong>jamais sous le coude</strong>. Elle est aggravée par les mouvements d'élévation (écrire au tableau, ranger en hauteur, se coiffer) et surtout <strong>par le décubitus latéral droit</strong> (réveils nocturnes). La patiente signale un épisode similaire il y a 3 ans, résolu spontanément en 6 semaines.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : hypothyroïdie substituée (lévothyroxine 75 µg), syndrome dépressif traité (sertraline 50 mg)<br />
+- Chirurgicaux : cholécystectomie (2018)<br />
+- Professionnels : 25 ans d'enseignement, gestes répétés d'écriture au tableau (bras en élévation)<br />
+- Traitements en cours : lévothyroxine, sertraline, paracétamol 1 g × 2/j</p>
+<h4 id="examen-clinique_4">Examen clinique</h4>
+<ul>
+<li>Inspection : pas d'amyotrophie des fosses supra- et infra-épineuses, pas de déformation</li>
+<li>Mobilité passive : <strong>complète</strong> (élévation antérieure 170°, abduction 170°, rotation externe coude au corps 45°, rotation interne main au niveau L1)</li>
+<li>Mobilité active : élévation antérieure complète mais <strong>arc douloureux entre 60° et 120°</strong> (signe du conflit sous-acromial)</li>
+<li><strong>Test de Neer</strong> (élévation antérieure passive du bras en rotation interne, en stabilisant l'omoplate) : <strong>positif</strong> — reproduit la douleur sous-acromiale</li>
+<li><strong>Test de Hawkins-Kennedy</strong> (épaule et coude à 90° de flexion, rotation interne passive) : <strong>positif</strong></li>
+<li><strong>Test de Jobe</strong> (élévation à 90° dans le plan de l'omoplate, pouces vers le bas, résistance) : <strong>positif et fort</strong> — douleur sans déficit de force → tendinopathie du SSP sans rupture</li>
+<li><strong>Test du bras tombant</strong> (drop arm test) : <strong>négatif</strong> — le bras ne tombe pas → pas de rupture transfixiante du SSP</li>
+<li>Test du sous-scapulaire (belly press, lift-off) : négatif</li>
+<li>Test de l'infra-épineux (rotation externe résistée coude au corps) : négatif</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND14-S01-001</strong><br/>
+<em>Photographie du test de Jobe : membre supérieur en élévation à 90° dans le plan de la scapula, pouces vers le bas, résistance par le praticien — le patient résiste avec douleur mais sans déficit moteur</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_4">Investigations</h4>
+<p><strong>Radiographies de l'épaule droite</strong> (face en rotation neutre, rotation externe, profil de Lamy) :<br />
+- Acromion de type II (courbe) selon la classification de Bigliani<br />
+- Pas de calcification tendineuse<br />
+- Espace sous-acromial : 9 mm (normal &gt; 7 mm) → pas de migration céphalique de la tête humérale<br />
+- Arthrose acromio-claviculaire modérée (pincement + ostéophyte inférieur)</p>
+<div class="vertex-media">
+<strong>📷 MTEND14-S01-002</strong><br/>
+<em>Radiographie de l'épaule droite, profil de Lamy (outlet view) : acromion de type II (courbe) selon Bigliani, ostéophyte inférieur acromio-claviculaire empiétant sur l'espace sous-acromial</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Échographie</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S04-001</strong><br/>
+<em>Échographie du supra-épineux droit, coupe longitudinale : tendon d'épaisseur conservée (5,8 mm), aspect hétérogène avec zone hypoéchogène focale sans rupture transfixiante, bursite sous-acromiale modérée (épaississement de la bourse > 2 mm)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Tendon du supra-épineux : épaisseur conservée, zone hypoéchogène focale sans rupture</li>
+<li>Bursite sous-acromiale : épaississement de la bourse (3 mm)</li>
+<li>Infra-épineux, sous-scapulaire : normaux</li>
+<li>Long biceps : dans la gouttière, aspect normal</li>
+</ul>
+<h4 id="questions-progressives_4">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quels éléments cliniques vous orientent vers un conflit sous-acromial avec tendinopathie du SSP sans rupture ?</p>
+<p><strong>Q2</strong> — Comment interprétez-vous un test de Jobe « positif et fort » versus « positif et faible » ?</p>
+<p><strong>Q3</strong> — L'IRM est-elle nécessaire à ce stade ? Quelles sont ses indications dans la pathologie de la coiffe ?</p>
+<p><strong>Q4</strong> — Quel traitement proposez-vous ? Quelle est la place de l'infiltration sous-acromiale ?</p>
+<p><strong>Q5</strong> — Quand faut-il envisager un traitement chirurgical (acromioplastie) ?</p>
+<h4 id="reponses-detaillees_4">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic :</p>
+<p><strong>Diagnostic</strong> : <strong>Conflit sous-acromial extrinsèque avec tendinopathie du supra-épineux sans rupture, épaule droite</strong> (cf. M14 §14.1-14.3).</p>
+<p><strong>Éléments en faveur</strong> :<br />
+- <strong>Arc douloureux 60-120°</strong> : pathognomonique du conflit sous-acromial — dans cette plage de mouvement, le tendon du SSP passe sous l'arche coraco-acromiale et subit une compression mécanique<br />
+- <strong>Tests de conflit positifs</strong> (Neer, Hawkins-Kennedy) : confirment le conflit entre le trochiter et l'acromion<br />
+- <strong>Test de Jobe positif et fort</strong> : douleur liée à la compression du SSP MAIS force conservée → tendon continu, pas de rupture<br />
+- <strong>Mobilité passive complète</strong> : élimine une capsulite rétractile et une omarthrose<br />
+- <strong>Acromion type II</strong> + arthrose AC avec ostéophyte inférieur : facteurs de conflit extrinsèque (réduction mécanique de l'espace sous-acromial)<br />
+- <strong>Échographie</strong> : tendinopathie sans rupture, bursite → confirme le diagnostic</p>
+<p><strong>R2</strong> — Interprétation du test de Jobe :</p>
+<p>Le test de Jobe évalue <strong>spécifiquement</strong> le supra-épineux (cf. M5 §5.3, M14 §14.4) :</p>
+<table>
+<thead>
+<tr>
+<th>Résultat</th>
+<th>Interprétation</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Positif et fort</strong></td>
+<td>Douleur MAIS force normale</td>
+<td>Tendinopathie du SSP <strong>sans rupture</strong> — le tendon est douloureux mais fonctionnel</td>
+</tr>
+<tr>
+<td><strong>Positif et faible</strong></td>
+<td>Douleur ET déficit de force</td>
+<td><strong>Rupture (partielle ou complète) du SSP</strong> — perte de la fonction mécanique</td>
+</tr>
+<tr>
+<td><strong>Négatif et faible</strong></td>
+<td>Pas de douleur MAIS déficit</td>
+<td>Rupture ancienne (&gt; 3 mois) avec amyotrophie — la douleur a disparu mais le déficit persiste</td>
+</tr>
+<tr>
+<td><strong>Négatif et fort</strong></td>
+<td>Ni douleur ni déficit</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+<p>Dans ce cas : positif et fort → <strong>tendinopathie sans rupture</strong>, pronostic favorable sous traitement conservateur.</p>
+<p><strong>R3</strong> — Indications de l'IRM :</p>
+<p><strong>L'IRM n'est PAS nécessaire à ce stade</strong> (cf. M14 §14.5) :</p>
+<p>L'IRM est indiquée dans les situations suivantes :<br />
+- <strong>Test de Jobe faible</strong> (suspicion de rupture)<br />
+- Échec du traitement conservateur à 3-6 mois (bilan préopératoire)<br />
+- Patient jeune (&lt; 50 ans) avec suspicion de rupture traumatique (chute sur l'épaule, luxation)<br />
+- Discordance clinique-échographique</p>
+<p>Ici, le diagnostic est cliniquement et échographiquement clair (tendinopathie sans rupture). L'IRM n'ajouterait pas d'information modifiant la prise en charge.</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : demander une IRM systématiquement pour toute douleur d'épaule. L'échographie a une sensibilité et une spécificité comparables à l'IRM pour le diagnostic des ruptures de la coiffe (> 90%) et est moins coûteuse.</div>
+
+<p><strong>R4</strong> — Traitement :</p>
+<p><strong>1. Rééducation — traitement de première intention</strong> (cf. M18 §18.4) :<br />
+- <strong>Programme de rééducation de la coiffe</strong> : 3 mois minimum, 3 séances/semaine<br />
+- <strong>Exercices</strong> :<br />
+  - Recentrage actif de la tête humérale (abaisseurs de la tête : sous-scapulaire, infra-épineux, grand dorsal)<br />
+  - Renforcement des fixateurs de la scapula (trapèze moyen et inférieur, serratus anterior)<br />
+  - Étirement capsulaire postérieur (cross-body stretch) — souvent une raideur capsulaire postérieure contribue au conflit<br />
+  - Progression vers le renforcement global en chaîne (travail fonctionnel)<br />
+- <strong>Éviter</strong> : les exercices au-dessus de 90° d'élévation, les mouvements de « upright row » et les élévations latérales avec charge</p>
+<p><strong>2. Infiltration sous-acromiale de corticostéroïdes</strong> (cf. M21 §21.1) :<br />
+- <strong>Indication</strong> : adjuvant à la rééducation, pas un traitement isolé<br />
+- <strong>Technique</strong> : injection dans la bourse sous-acromiale (pas dans le tendon), voie latérale ou postérieure<br />
+- <strong>Efficacité</strong> : soulagement de la douleur dans 60-70% des cas à 6 semaines, permettant une rééducation efficace<br />
+- <strong>Limites</strong> : ne pas dépasser 3 infiltrations/an (risque de fragilisation tendineuse avec les injections répétées)<br />
+- Maximum de <strong>3 infiltrations sur la durée de vie</strong> pour certains auteurs (position prudente)</p>
+<p><strong>3. Adaptation des gestes</strong> : éviter l'écriture prolongée au tableau (bras en élévation), utiliser un rétroprojecteur ou un tableau interactif à hauteur réduite</p>
+<p><strong>R5</strong> — Place de la chirurgie :</p>
+<p><strong>Acromioplastie arthroscopique</strong> — indiquée en cas d'échec du traitement conservateur <strong>bien conduit</strong> pendant <strong>au moins 6 mois</strong> (cf. M22 §22.3) :</p>
+<p><strong>Geste chirurgical</strong> :<br />
+- Bursectomie sous-acromiale<br />
+- Résection de la surface inférieure de l'acromion (acromioplastie antéro-inférieure) → suppression du conflit mécanique<br />
+- Résection de l'ostéophyte acromio-claviculaire inférieur si arthrose AC symptomatique (geste de Mumford)</p>
+<p><strong>Résultats</strong> : 75-85% de bons et très bons résultats — mais <strong>pas supérieur à un programme de rééducation bien conduit</strong> dans les études de niveau 1 (Paavola et al., 2018, <em>BMJ</em> — essai FIMPACT ; Beard et al., 2018, <em>Lancet</em> — essai CSAW)</p>
+<div class="vertex-alerte"><strong>Évolution récente</strong> : la tendance actuelle est de **moins opérer** les conflits sous-acromiaux isolés sans rupture, car les essais randomisés contre placebo chirurgical (chirurgie simulée) montrent une absence de supériorité de l'acromioplastie.</div>
+
+<hr />
+<p><a id="cas-6"></a></p>
+<h3 id="cas-n6-doigt-a-ressaut-chez-un-diabetique">Cas n°6 — Doigt à ressaut chez un diabétique</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M16 (Tendinopathies du poignet et de la main), M24 (Prévention — facteurs systémiques)<br />
+<strong>Durée estimée</strong> : 15 min<br />
+<strong>Thématique principale</strong> : Diagnostic et traitement du doigt à ressaut, avec impact du diabète</p>
+<h4 id="presentation-initiale_5">Présentation initiale</h4>
+<p>M. Hassan L., 62 ans, droitier, retraité, diabétique de type 2, consulte pour un blocage intermittent du 4e doigt (annulaire) de la main droite. Depuis 2 mois, il ressent un « accrochage » douloureux du doigt lors de la flexion-extension, surtout le matin au réveil. Depuis 1 semaine, le doigt se bloque en flexion et il doit le « décrocher » manuellement avec l'autre main, ce qui provoque un ressaut douloureux.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : diabète de type 2 depuis 15 ans (HbA1c 8,2%, sous metformine 1 g × 2/j + gliclazide 60 mg/j), hypertension artérielle, dyslipidémie, canal carpien bilatéral opéré il y a 3 ans, capsulite rétractile de l'épaule gauche il y a 5 ans (résolue)<br />
+- IMC : 29 kg/m²<br />
+- Antécédent familial : sa mère avait des doigts à ressaut multiples</p>
+<h4 id="examen-clinique_5">Examen clinique</h4>
+<ul>
+<li>Inspection du 4e doigt droit : pas de tuméfaction visible, pas de rougeur</li>
+<li>Palpation : <strong>nodule douloureux palpable</strong> sur le tendon fléchisseur du 4e doigt au niveau de la <strong>poulie A1</strong> (pli palmaire distal), le nodule roule sous le doigt du praticien</li>
+<li>Mobilisation : le doigt se bloque en flexion à 40° et se déverrouille avec un <strong>ressaut palpable et audible</strong> lors de l'extension passive assistée → <strong>doigt à ressaut grade III</strong> (Quinnell)</li>
+<li>Examen des autres doigts : 3e doigt droit — légère crépitation à la flexion-extension (pré-ressaut), pas de blocage</li>
+<li>Test de Durkan (compression du canal carpien) : négatif (post-opératoire)</li>
+<li>Mains : peau épaisse, Dupuytren débutant (bride palmaire palpable du 5e rayon droit)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND16-S02-001</strong><br/>
+<em>Photographie clinique du doigt à ressaut : 4e doigt droit bloqué en flexion à 40°, le patient tente l'extension active sans succès — le doigt doit être déverrouillé manuellement</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_5">Investigations</h4>
+<p>Aucune imagerie nécessaire — diagnostic clinique.</p>
+<p><strong>Biologie récente</strong> :<br />
+- HbA1c : 8,2% (objectif &lt; 7%)<br />
+- Glycémie à jeun : 1,68 g/L</p>
+<h4 id="questions-progressives_5">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quelle est la classification de Quinnell et quel est le grade ?</p>
+<p><strong>Q2</strong> — Quel est le lien entre le diabète et les pathologies tendineuses des doigts ? Pourquoi ce patient a-t-il un antécédent de canal carpien et de capsulite rétractile ?</p>
+<p><strong>Q3</strong> — Quel traitement proposez-vous pour le grade III ? Quelle est l'efficacité de l'infiltration chez le diabétique ?</p>
+<p><strong>Q4</strong> — En quoi consiste le traitement chirurgical si l'infiltration échoue ? Quels sont les risques spécifiques ?</p>
+<p><strong>Q5</strong> — Comment prévenir l'atteinte des autres doigts ?</p>
+<h4 id="reponses-detaillees_5">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et classification :</p>
+<p><strong>Diagnostic</strong> : <strong>Doigt à ressaut (trigger finger) du 4e doigt droit, grade III de Quinnell</strong> (cf. M16 §16.3).</p>
+<p><strong>Physiopathologie</strong> : épaississement sténosant de la <strong>poulie A1</strong> (rétinaculum au niveau de l'articulation MCP) → le tendon fléchisseur, qui peut présenter un nodule, a du mal à coulisser sous la poulie rétrécie → accrochage puis blocage en flexion.</p>
+<p><strong>Classification de Quinnell</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Crépitation sans ressaut (pré-ressaut)</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Ressaut (accrochage) passif, déverrouillage actif possible</td>
+</tr>
+<tr>
+<td>III</td>
+<td><strong>Blocage en flexion, déverrouillage passif nécessaire</strong> (ce patient)</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Blocage fixé irréductible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>R2</strong> — Diabète et pathologies tendineuses :</p>
+<p>Le diabète est un <strong>facteur de risque systémique majeur</strong> pour les tendinopathies et les pathologies de l'appareil de glissement (cf. M24 §24.1.5) :</p>
+<p><strong>Mécanismes</strong> :<br />
+- <strong>Glycation non enzymatique du collagène</strong> : l'hyperglycémie chronique → accumulation de produits de glycation avancés (AGE) dans les protéines de la matrice extracellulaire tendineuse → cross-links pathologiques du collagène → rigidification, épaississement, perte de compliance<br />
+- <strong>Microangiopathie</strong> : atteinte des microvaisseaux tendineux → ischémie relative → diminution de la capacité de réparation<br />
+- <strong>Neuropathie</strong> : altération de la proprioception → surcharge mécanique non perçue</p>
+<p><strong>Triade diabétique de la main</strong> — ce patient illustre les 3 entités :<br />
+1. <strong>Doigt à ressaut</strong> : prévalence 5-20% chez le diabétique (vs 2% en population générale), souvent multiple<br />
+2. <strong>Canal carpien</strong> : prévalence 14-30% chez le diabétique (épaississement du rétinaculum + neuropathie)<br />
+3. <strong>Capsulite rétractile</strong> (épaule gelée) : prévalence 10-35% chez le diabétique (glycation du collagène capsulaire)</p>
+<p>Le Dupuytren débutant est une 4e pathologie liée au diabète (fibrose de l'aponévrose palmaire).</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : traiter le doigt à ressaut sans optimiser le contrôle glycémique. L'HbA1c à 8,2% est un facteur aggravant — le contrôle du diabète réduit le risque de récidive et d'atteinte des autres doigts.</div>
+
+<p><strong>R3</strong> — Traitement du grade III :</p>
+<p><strong>Infiltration de corticostéroïdes</strong> — première intention pour les grades II et III (cf. M21 §21.3) :<br />
+- <strong>Technique</strong> : injection dans la gaine du fléchisseur au niveau de la poulie A1 (pas dans le tendon)<br />
+- <strong>Produit</strong> : bétaméthasone 1,5 mg ou méthylprednisolone 20-40 mg + lidocaïne 1%<br />
+- <strong>Taux de succès</strong> :<br />
+  - Population générale : 60-75% après 1 infiltration, jusqu'à 85% après 2 infiltrations<br />
+  - <strong>Chez le diabétique</strong> : taux de succès réduit à <strong>40-50%</strong> (vs 70-75% chez les non-diabétiques) — Griggs et al., 1995<br />
+  - Récidive plus fréquente chez le diabétique (30-50% vs 10-20%)<br />
+- <strong>Effet sur la glycémie</strong> : l'infiltration de corticostéroïdes provoque une <strong>hyperglycémie transitoire</strong> pendant 2-5 jours chez le diabétique → prévenir le patient, renforcer l'autosurveillance glycémique, ajuster l'insuline si nécessaire<br />
+- Maximum 2-3 infiltrations par doigt</p>
+<p><strong>R4</strong> — Traitement chirurgical :</p>
+<p><strong>Indication</strong> : échec de 1-2 infiltrations, grade IV (blocage fixé), ou patient préférant la chirurgie d'emblée (cf. M22 §22.4).</p>
+<p><strong>Technique</strong> :<br />
+- <strong>Ouverture chirurgicale de la poulie A1</strong> (pulley release) sous anesthésie locale<br />
+- Incision palmaire transversale de 1-1,5 cm au niveau du pli palmaire distal<br />
+- Section longitudinale de la poulie A1 sur toute sa longueur<br />
+- Vérification de la liberté de coulissement du tendon fléchisseur</p>
+<p><strong>Risques spécifiques</strong> :<br />
+- <strong>Lésion du pédicule vasculo-nerveux collatéral</strong> (surtout pour le pouce et l'index) → identifier et protéger<br />
+- Pour le <strong>pouce</strong> : le nerf collatéral radial croise la poulie A1 → risque iatrogène plus élevé<br />
+- Chez le diabétique : risque d'infection post-opératoire légèrement augmenté, cicatrisation plus lente</p>
+<p><strong>Alternative mini-invasive</strong> : libération percutanée à l'aiguille (technique de Lorthioir) — réalisable en consultation, mais taux de récidive plus élevé chez le diabétique.</p>
+<p><strong>Taux de succès chirurgical</strong> : &gt; 95% (le meilleur traitement pour les grades III-IV)</p>
+<p><strong>R5</strong> — Prévention de l'atteinte des autres doigts :</p>
+<ol>
+<li>
+<p><strong>Optimisation du contrôle glycémique</strong> — mesure la plus importante :<br />
+   - Objectif HbA1c &lt; 7% (voire &lt; 6,5% si possible sans hypoglycémie)<br />
+   - Discuter avec le diabétologue d'une intensification thérapeutique (ajout d'un analogue GLP-1 ou d'un inhibiteur de SGLT2)</p>
+</li>
+<li>
+<p><strong>Surveillance clinique</strong> : le 3e doigt droit présente une crépitation (grade I) → surveillance rapprochée, infiltration précoce si évolution vers un ressaut</p>
+</li>
+<li>
+<p><strong>Exercices d'étirement des fléchisseurs</strong> : étirement passif quotidien des doigts en extension → maintien de la souplesse de l'appareil de glissement</p>
+</li>
+<li>
+<p><strong>Dépistage systématique</strong> des autres pathologies de la main diabétique : Dupuytren (bride du 5e rayon déjà présente), canal carpien (déjà opéré)</p>
+</li>
+</ol>
+<hr />
+<p><a id="cas-7"></a></p>
+<h3 id="cas-n7-tendinopathie-insertionnelle-dachille-chez-un-randonneur">Cas n°7 — Tendinopathie insertionnelle d'Achille chez un randonneur</h3>
+<p><strong>Niveau</strong> : 🥉 Bronze<br />
+<strong>Modules mobilisés</strong> : M8 (Tendinopathie d'Achille — insertionnelle), M6 (Échographie)<br />
+<strong>Durée estimée</strong> : 20 min<br />
+<strong>Thématique principale</strong> : Diagnostic différentiel entre tendinopathie corporéale et insertionnelle d'Achille, spécificités du traitement insertionnel</p>
+<h4 id="presentation-initiale_6">Présentation initiale</h4>
+<p>M. Philippe D., 58 ans, retraité, randonneur passionné (3-4 randonnées de montagne par semaine), consulte pour une douleur du talon droit postérieur évoluant depuis 3 mois. La douleur siège <strong>directement à l'insertion du tendon d'Achille sur le calcanéum</strong> et est aggravée par les montées (flexion dorsale de la cheville en charge) et par le port de chaussures de randonnée à contrefort rigide. Le patient décrit une « bosse » à l'arrière du talon. Il a essayé le protocole d'Alfredson (exercices excentriques en bord de marche) après avoir consulté un site internet, mais les exercices ont <strong>aggravé</strong> sa douleur.</p>
+<p><strong>Antécédents</strong> :<br />
+- Médicaux : goutte traitée (allopurinol 300 mg), dyslipidémie (atorvastatine 20 mg)<br />
+- IMC : 27 kg/m²<br />
+- Chirurgicaux : aucun<br />
+- Sportifs : randonnée de montagne depuis 20 ans, ancien joueur de football</p>
+<h4 id="examen-clinique_6">Examen clinique</h4>
+<ul>
+<li>Inspection : <strong>proéminence osseuse postéro-supérieure du calcanéum</strong> (déformation de Haglund), tuméfaction postérieure du talon</li>
+<li>Palpation : douleur à la pression directe sur l'<strong>insertion calcanéenne</strong> du tendon d'Achille, et non sur le corps du tendon (4-6 cm au-dessus) → localisation insertionnelle</li>
+<li>Test de l'arc douloureux : <strong>négatif</strong> (la zone douloureuse ne se déplace pas avec le tendon lors de la dorsiflexion) → confirme la pathologie insertionnelle et non corporéale</li>
+<li>Dorsiflexion passive : 5° à droite vs 12° à gauche (raideur)</li>
+<li>Montée sur pointe unipodale : douloureuse en fin de descente (mise en tension maximale de l'insertion)</li>
+<li>Examen du pied : pied de morphologie normale, pas de trouble statique majeur</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MTEND08-S02-001</strong><br/>
+<em>Photographie clinique : vue postérieure des talons, déformation de Haglund visible à droite (proéminence postéro-supérieure du calcanéum), comparaison bilatérale</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="investigations_6">Investigations</h4>
+<p><strong>Score VISA-A</strong> : <strong>48/100</strong> (atteinte sévère)</p>
+<p><strong>Radiographie du calcanéum droit (profil)</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND08-S02-002</strong><br/>
+<em>Radiographie de profil du calcanéum droit : proéminence postéro-supérieure du calcanéum (déformation de Haglund), calcification intra-tendineuse à l'insertion du tendon d'Achille, enthésophyte de traction</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li><strong>Déformation de Haglund</strong> : proéminence postéro-supérieure du calcanéum (angle de Fowler-Philip &gt; 75°)</li>
+<li><strong>Calcification intra-tendineuse</strong> à l'insertion du tendon d'Achille (enthésophyte)</li>
+<li>Pas d'érosion osseuse (élimine une enthésite inflammatoire)</li>
+</ul>
+<p><strong>Échographie</strong> :</p>
+<div class="vertex-media">
+<strong>📷 MTEND06-S05-001</strong><br/>
+<em>Échographie du tendon d'Achille droit, insertion calcanéenne : épaississement hypoéchogène de l'enthèse, calcification intra-tendineuse (ombre acoustique), bursite rétro-calcanéenne (collection anéchogène entre le tendon et le calcanéum)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<ul>
+<li>Épaississement hypoéchogène de l'insertion du tendon d'Achille sur le calcanéum</li>
+<li>Calcification intra-tendineuse à l'enthèse (13 × 5 mm)</li>
+<li><strong>Bursite rétro-calcanéenne</strong> (pré-achilléenne) : collection liquidienne entre la face antérieure du tendon et la tubérosité calcanéenne postéro-supérieure</li>
+<li>Corps du tendon d'Achille (zone 2-6 cm) : aspect normal</li>
+</ul>
+<h4 id="questions-progressives_6">Questions progressives</h4>
+<p><strong>Q1</strong> — Quel est votre diagnostic ? Quels éléments distinguent cette tendinopathie insertionnelle de la forme corporéale ?</p>
+<p><strong>Q2</strong> — Qu'est-ce que la déformation de Haglund et quel rôle joue-t-elle dans la pathologie ?</p>
+<p><strong>Q3</strong> — Pourquoi le protocole d'Alfredson a-t-il aggravé les symptômes ? Quelle adaptation est nécessaire pour la forme insertionnelle ?</p>
+<p><strong>Q4</strong> — Quelles sont les options thérapeutiques conservatrices spécifiques à la forme insertionnelle ?</p>
+<p><strong>Q5</strong> — Quelles sont les indications et les techniques chirurgicales ?</p>
+<h4 id="reponses-detaillees_6">Réponses détaillées</h4>
+<p><strong>R1</strong> — Diagnostic et distinction corporéale vs insertionnelle :</p>
+<p><strong>Diagnostic</strong> : <strong>Tendinopathie insertionnelle d'Achille avec déformation de Haglund et bursite rétro-calcanéenne, pied droit</strong> (cf. M8 §8.2).</p>
+<p><strong>Éléments distinctifs</strong> (cf. M8, tableau comparatif §8.1) :</p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Corporéale</th>
+<th><strong>Insertionnelle (ce cas)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Localisation de la douleur</strong></td>
+<td>2-6 cm au-dessus du calcanéum</td>
+<td><strong>À l'insertion calcanéenne</strong></td>
+</tr>
+<tr>
+<td><strong>Arc douloureux mobile</strong></td>
+<td>Positif (nodule se déplace)</td>
+<td><strong>Négatif</strong> (douleur fixe sur l'os)</td>
+</tr>
+<tr>
+<td><strong>Profil du patient</strong></td>
+<td>Sportif, jeune, surcharge</td>
+<td><strong>Âge &gt; 50 ans, Haglund, goutte</strong></td>
+</tr>
+<tr>
+<td><strong>Facteur déclenchant</strong></td>
+<td>Surcharge d'entraînement</td>
+<td><strong>Conflit mécanique chaussure</strong></td>
+</tr>
+<tr>
+<td><strong>Calcification</strong></td>
+<td>Rare</td>
+<td><strong>Fréquente (enthésophyte)</strong></td>
+</tr>
+<tr>
+<td><strong>Bursite</strong></td>
+<td>Non</td>
+<td><strong>Fréquente (rétro-calcanéenne)</strong></td>
+</tr>
+<tr>
+<td><strong>Réponse aux excentriques</strong></td>
+<td>Excellente (Alfredson)</td>
+<td><strong>Mauvaise — aggravation possible</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Le test de l'arc douloureux négatif est un signe clinique clé : la zone douloureuse est fixée sur l'os (enthèse), elle ne se déplace pas avec le tendon.</p>
+<p><strong>R2</strong> — Déformation de Haglund :</p>
+<p><strong>Définition</strong> : proéminence osseuse postéro-supérieure du calcanéum (angle de Fowler-Philip &gt; 75° sur la radiographie de profil), décrite par Patrick Haglund en 1928 (cf. M8 §8.2.2).</p>
+<p><strong>Rôle dans la pathologie</strong> — mécanisme du conflit :<br />
+1. Le Haglund crée un conflit mécanique entre la proéminence osseuse et la face antérieure (profonde) du tendon d'Achille lors de la dorsiflexion de cheville<br />
+2. Compression de la <strong>bourse rétro-calcanéenne</strong> (pré-achilléenne) entre le tendon et le Haglund → <strong>bursite</strong> (inflammation mécanique)<br />
+3. Irritation de la face profonde du tendon → tendinopathie insertionnelle secondaire<br />
+4. Le contrefort rigide de la chaussure de randonnée aggrave le conflit par compression postérieure directe</p>
+<p><strong>Syndrome de Haglund</strong> = association : déformation de Haglund + bursite rétro-calcanéenne + tendinopathie insertionnelle → ce que présente ce patient.</p>
+<p><strong>R3</strong> — Échec d'Alfredson et adaptation insertionnelle :</p>
+<p><strong>Pourquoi Alfredson aggrave la forme insertionnelle</strong> (cf. M18 §18.2, M8 §8.6) :<br />
+- Le protocole d'Alfredson classique utilise la descente excentrique <strong>en dessous du niveau de la marche</strong> (dorsiflexion maximale)<br />
+- Cette dorsiflexion maximale en charge → <strong>compression maximale de l'enthèse</strong> entre le tendon et la proéminence de Haglund → aggravation de la douleur et de la bursite<br />
+- Ce mécanisme de compression est spécifique à l'insertion et ne s'applique pas à la forme corporéale</p>
+<p><strong>Adaptation pour la forme insertionnelle</strong> :<br />
+- Exercices excentriques <strong>au niveau du sol uniquement</strong> (pas de descente en dessous de l'horizontale) → évite la dorsiflexion maximale qui comprime l'enthèse<br />
+- <strong>Protocole isométrique</strong> en première intention : maintien en montée sur pointe, 5 × 45 s, au sol (pas en bord de marche)<br />
+- Le HSR (Heavy Slow Resistance) sur presse à cuisses, sans dorsiflexion maximale, est l'alternative la mieux tolérée</p>
+<div class="vertex-erreur"><strong>Erreur fréquente</strong> : appliquer le même protocole d'Alfredson à toutes les tendinopathies d'Achille sans distinguer la forme corporéale de la forme insertionnelle. Cette erreur est fréquente et source d'échec thérapeutique.</div>
+
+<p><strong>R4</strong> — Traitement conservateur spécifique :</p>
+<ol>
+<li>
+<p><strong>Modification des chaussures</strong> — priorité :<br />
+   - Chaussures de randonnée avec contrefort <strong>souple</strong> ou ouvert en postérieur<br />
+   - Talonnette de surélévation (5-10 mm) → réduit la dorsiflexion en marche → diminue le conflit<br />
+   - Chaussures ouvertes (sandales) au quotidien<br />
+   - Éviter les chaussures à contrefort rigide qui compriment directement le Haglund</p>
+</li>
+<li>
+<p><strong>Exercices adaptés</strong> :<br />
+   - Isométriques au sol (cf. R3) → phase antalgique, 4 semaines<br />
+   - HSR sans dorsiflexion maximale → renforcement progressif, 12 semaines<br />
+   - Étirement du triceps sural en douceur (jamais de dorsiflexion forcée)</p>
+</li>
+<li>
+<p><strong>Ondes de choc extracorporelles</strong> (cf. M20 §20.2) :<br />
+   - Particulièrement efficaces dans les tendinopathies insertionnelles avec calcification<br />
+   - 3-5 séances à 1 semaine d'intervalle<br />
+   - Taux de succès : 60-75% pour les formes insertionnelles calcifiées</p>
+</li>
+<li>
+<p><strong>Infiltration</strong> :<br />
+   - <strong>PAS d'infiltration de corticostéroïdes dans ou autour du tendon d'Achille</strong> → risque de rupture (contre-indication formelle — cf. M21 §21.1)<br />
+   - Infiltration de la <strong>bourse rétro-calcanéenne</strong> sous guidage échographique : acceptable si bursite prédominante (un seul corticostéroïde, injection précise dans la bourse, loin du tendon)</p>
+</li>
+<li>
+<p><strong>Traitement de la goutte</strong> : l'hyperuricémie → dépôts d'urate dans les tendons → tendinopathie. Vérifier l'uricémie, optimiser l'allopurinol (objectif &lt; 360 µmol/L).</p>
+</li>
+</ol>
+<p><strong>R5</strong> — Traitement chirurgical :</p>
+<p><strong>Indication</strong> : échec de 6 mois de traitement conservateur bien conduit.</p>
+<p><strong>Techniques</strong> (cf. M22 §22.1) :</p>
+<ol>
+<li>
+<p><strong>Résection du Haglund</strong> (calcaneoplastie) :<br />
+   - Résection de la proéminence postéro-supérieure du calcanéum<br />
+   - Voie d'abord latérale ou médiale (éviter la voie postérieure médiane → cicatrice sur zone d'appui)<br />
+   - Bursectomie rétro-calcanéenne associée</p>
+</li>
+<li>
+<p><strong>Débridement de l'enthèse</strong> :<br />
+   - Si calcification intra-tendineuse &gt; 50% de la surface d'insertion → débridement avec excision de l'enthésophyte<br />
+   - Si &gt; 50% de l'insertion est détachée → <strong>réancrage du tendon</strong> par ancres de suture</p>
+</li>
+<li>
+<p><strong>Ostéotomie calcanéenne de Zadek</strong> (cas complexes) :<br />
+   - Ostéotomie de fermeture dorsale du calcanéum → relève la tubérosité postéro-supérieure → supprime le conflit</p>
+</li>
+</ol>
+<p><strong>Résultats</strong> : 75-90% de satisfaction à 2 ans. Retour à la randonnée : 3-6 mois post-opératoire.</p>
+<hr />
+<p><em>Fin de la partie 1/3 — Cas Bronze (1 à 7)</em><br />
+<em>Suite : partie 2/3 — Cas Argent (8 à 13)</em></p>
+</div>

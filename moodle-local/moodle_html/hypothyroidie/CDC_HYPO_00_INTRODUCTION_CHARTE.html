@@ -1,0 +1,341 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-hypothyroidies">🦋 CAHIER DES CHARGES — FORMATION HYPOTHYROÏDIES</h1>
+<h2 id="formation-vertex-endocrinologie-hypothyroidies">Formation VERTEX© — Endocrinologie : Hypothyroïdies</h2>
+<hr />
+<h2 id="identite-de-la-formation">Identité de la formation</h2>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titre</strong></td>
+<td>Hypothyroïdies — du Diagnostic à la Prise en Charge Optimale</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>HYPO</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>Mars 2026</td>
+</tr>
+<tr>
+<td><strong>Auteur</strong></td>
+<td>Professeur Émérite en Endocrinologie — Diabétologie</td>
+</tr>
+<tr>
+<td><strong>Public cible</strong></td>
+<td>Médecins généralistes, internes en médecine, endocrinologues confirmés</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>18-22 heures de formation</td>
+</tr>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>38 modules, 11 parties</td>
+</tr>
+<tr>
+<td><strong>Cas cliniques</strong></td>
+<td>30 cas progressifs (Bronze → Diamant)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="code-couleur">Code couleur</h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Titres principaux</td>
+<td>Violet améthyste</td>
+<td><strong>#7D3C98</strong></td>
+<td>H1, tableaux en-tête</td>
+</tr>
+<tr>
+<td>Accentuation</td>
+<td>Bleu ardoise</td>
+<td><strong>#2E4057</strong></td>
+<td>H2, encadrés, bordures</td>
+</tr>
+<tr>
+<td>Corps de texte</td>
+<td>Gris anthracite</td>
+<td>#2C3E50</td>
+<td>Texte courant</td>
+</tr>
+<tr>
+<td>Fond tableaux pair</td>
+<td>Lavande</td>
+<td>#EBD5F5</td>
+<td>Lignes paires</td>
+</tr>
+<tr>
+<td>Fond encadrés clés</td>
+<td>Violet pâle</td>
+<td>#F5EEF8</td>
+<td>Points pratiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="plan-general-de-la-formation">Plan général de la formation</h2>
+<h3 id="partie-01-embryologie-anatomie-et-histologie-thyroidiennes-m01-m03">PARTIE 01 — Embryologie, Anatomie et Histologie Thyroïdiennes (M01-M03)</h3>
+<ul>
+<li>M01 : Embryologie de la thyroïde — du bourgeon médian aux ectopies</li>
+<li>M02 : Anatomie thyroïdienne — vascularisation, innervation, rapports chirurgicaux</li>
+<li>M03 : Histologie — follicule thyroïdien, cellules folliculaires, cellules C parafolliculaires</li>
+</ul>
+<h3 id="partie-02-physiologie-thyroidienne-m04-m07">PARTIE 02 — Physiologie Thyroïdienne (M04-M07)</h3>
+<ul>
+<li>M04 : Axe hypothalamo-hypophyso-thyroïdien — TRH, TSH, rétrocontrôle</li>
+<li>M05 : Biosynthèse des hormones thyroïdiennes — captation de l'iode, organification, couplage</li>
+<li>M06 : Transport et métabolisme périphérique — T4 → T3, désiodases, T3 inverse</li>
+<li>M07 : Effets biologiques des hormones thyroïdiennes — cellulaires, métaboliques, systémiques</li>
+</ul>
+<h3 id="partie-03-physiopathologie-et-etiologies-m08-m11">PARTIE 03 — Physiopathologie et Étiologies (M08-M11)</h3>
+<ul>
+<li>M08 : Mécanismes des hypothyroïdies primaires — auto-immunes, carentielles, iatrogènes</li>
+<li>M09 : Thyroïdite de Hashimoto — immunologie, génétique, histoire naturelle</li>
+<li>M10 : Hypothyroïdies iatrogènes — chirurgie, RAI, médicaments (amiodarone, lithium, immunothérapies)</li>
+<li>M11 : Hypothyroïdies congénitales — dysgénésies, dyshormonogenèses, dépistage néonatal</li>
+</ul>
+<h3 id="partie-04-tableau-clinique-m12-m14">PARTIE 04 — Tableau Clinique (M12-M14)</h3>
+<ul>
+<li>M12 : Syndrome hypothyroïdien constitué — signes cardinaux, par appareil</li>
+<li>M13 : Hypothyroïdie frustre (infraclinique) — définition, évolution naturelle, seuils de traitement</li>
+<li>M14 : Myxœdème sévère et coma myxœdémateux — urgence médicale</li>
+</ul>
+<h3 id="partie-05-examens-paracliniques-m15-m17">PARTIE 05 — Examens Paracliniques (M15-M17)</h3>
+<ul>
+<li>M15 : TSH — sensibilité, spécificité, pièges d'interprétation (malades hospitalisés, médicaments)</li>
+<li>M16 : T4 libre, T3 libre, anticorps (anti-TPO, anti-Tg, anti-récepteurs TSH)</li>
+<li>M17 : Échographie thyroïdienne, scintigraphie, cytoponction — indications et interprétation</li>
+</ul>
+<h3 id="partie-06-formes-cliniques-particulieres-m18-m21">PARTIE 06 — Formes Cliniques Particulières (M18-M21)</h3>
+<ul>
+<li>M18 : Hypothyroïdie et grossesse — risques materno-fœtaux, cibles TSH par trimestre</li>
+<li>M19 : Hypothyroïdie de l'enfant et de l'adolescent — retard statural, retard pubertaire</li>
+<li>M20 : Hypothyroïdie du sujet âgé — présentation atypique, risque cardiaque, initiation prudente</li>
+<li>M21 : Hypothyroïdie et comorbidités (insuffisance cardiaque, troubles psychiatriques, obésité)</li>
+</ul>
+<h3 id="partie-07-diagnostic-et-depistage-m22-m24">PARTIE 07 — Diagnostic et Dépistage (M22-M24)</h3>
+<ul>
+<li>M22 : Stratégie diagnostique — arbre décisionnel, indications de la TSH</li>
+<li>M23 : Dépistage néonatal — programme national, interprétation, conduite à tenir</li>
+<li>M24 : Dépistage chez l'adulte — populations cibles, fréquence, recommandations HAS/ETA</li>
+</ul>
+<h3 id="partie-08-traitement-par-levothyroxine-m25-m28">PARTIE 08 — Traitement par Lévothyroxine (M25-M28)</h3>
+<ul>
+<li>M25 : Lévothyroxine — pharmacologie, formulations, galénique</li>
+<li>M26 : Initiation et titration — doses selon l'âge, le poids, la pathologie causale</li>
+<li>M27 : Surveillance biologique — délais, intervalles, cibles TSH selon le contexte</li>
+<li>M28 : Difficultés thérapeutiques — non-observance, interactions, malabsorption, variations saisonnières</li>
+</ul>
+<h3 id="partie-09-situations-particulieres-et-therapeutiques-m29-m32">PARTIE 09 — Situations Particulières et Thérapeutiques (M29-M32)</h3>
+<ul>
+<li>M29 : Grossesse sous lévothyroxine — adaptation des doses, surveillance intensifiée</li>
+<li>M30 : Hypothyroïdie sous amiodarone — type 1 vs type 2, prise en charge</li>
+<li>M31 : Hypothyroïdie iatrogène post-immunothérapie (ICI) — oncologie, diagnostic, traitement</li>
+<li>M32 : Hypothyroïdie et chirurgie — péri-opératoire, urgences chirurgicales</li>
+</ul>
+<h3 id="partie-10-hypothyroidies-secondaires-et-tertiaires-m33-m35">PARTIE 10 — Hypothyroïdies Secondaires et Tertiaires (M33-M35)</h3>
+<ul>
+<li>M33 : Hypothyroïdies centrales — causes hypophysaires et hypothalamiques, diagnostic</li>
+<li>M34 : Insuffisance thyréotrope — évaluation axe HHT, remplacement hormonal global</li>
+<li>M35 : Résistance aux hormones thyroïdiennes (RTH) — génétique, clinique, piège diagnostique</li>
+</ul>
+<h3 id="partie-11-innovations-et-perspectives-m36-m38">PARTIE 11 — Innovations et Perspectives (M36-M38)</h3>
+<ul>
+<li>M36 : Combinaison LT4+LT3 — preuves actuelles, sous-groupes bénéficiaires</li>
+<li>M37 : Nouvelles formulations et voies d'administration — LT4 liquide, comprimés sans lactose, IV</li>
+<li>M38 : Perspectives futures — triiodothyronine à libération prolongée, thérapies géniques, IA dans le suivi</li>
+</ul>
+<hr />
+<h2 id="conventions-editoriales">Conventions éditoriales</h2>
+<h3 id="tags-media">Tags MEDIA</h3>
+<pre><code>&gt; [MEDIA: {EMOJI} MHYPO{module}-S{section}-{numéro} — {DESCRIPTION}]
+</code></pre>
+<p><strong>Émojis par type</strong> :<br />
+- 📊 Tableau / Schéma<br />
+- 🔬 Image histologique / microscopie<br />
+- 📈 Courbe / Graphique<br />
+- 🎬 Vidéo / Animation<br />
+- 💊 Médicament / Prescription<br />
+- 🔍 Zoom clinique<br />
+- ⚕️ Geste technique</p>
+<h3 id="niveaux-de-quiz">Niveaux de quiz</h3>
+<ul>
+<li>🥉 <strong>Bronze</strong> — Connaissances fondamentales (application directe)</li>
+<li>🥈 <strong>Argent</strong> — Application clinique (diagnostics différentiels)</li>
+<li>🥇 <strong>Or</strong> — Expertise (décision multi-facteurs)</li>
+<li>💎 <strong>Diamant</strong> — Excellence (situations complexes, données de la littérature)</li>
+</ul>
+<h3 id="encadres-normalises">Encadrés normalisés</h3>
+<h2 id="-point-pratique-conseil-clinique-immediatement-applicable">- 💡 <strong>POINT PRATIQUE</strong> — conseil clinique immédiatement applicable</h2>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : erreur fréquente à éviter
+- 🚨 **URGENCE** — situation nécessitant une action immédiate
+- 📋 **RECOMMANDATION** — guideline (toujours précéder de « adapté de »)
+- 🔬 **EVIDENCE** — étude clé avec résultats</div>
+
+<hr />
+<h2 id="etudes-de-reference">Études de référence</h2>
+<table>
+<thead>
+<tr>
+<th>Étude</th>
+<th>Année</th>
+<th>Thème</th>
+<th>Résultat clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Whickham Survey</strong></td>
+<td>1977/1995</td>
+<td>Histoire naturelle HT</td>
+<td>5 % progression HT frustre/an vers hypothyroïdie constituée</td>
+</tr>
+<tr>
+<td><strong>TRUST</strong></td>
+<td>2017</td>
+<td>Traitement HT frustre ≥ 65 ans</td>
+<td>Pas de bénéfice symptomatique du traitement</td>
+</tr>
+<tr>
+<td><strong>THYROID-LIFE</strong></td>
+<td>2019</td>
+<td>LT4 vs LT4+LT3</td>
+<td>Équivalence globale, bénéfice sous-groupes</td>
+</tr>
+<tr>
+<td><strong>NEJM HYPOTHYROIDISM</strong></td>
+<td>2019</td>
+<td>Revue</td>
+<td>Recommandations actualisées traitement</td>
+</tr>
+<tr>
+<td><strong>ETA Guidelines</strong></td>
+<td>2012/2023</td>
+<td>Hypothyroïdie grossesse</td>
+<td>Cibles TSH par trimestre</td>
+</tr>
+<tr>
+<td><strong>HAS</strong></td>
+<td>2019/2024</td>
+<td>Hypothyroïdie - France</td>
+<td>Recommandations nationales</td>
+</tr>
+<tr>
+<td><strong>NACB NACB</strong></td>
+<td>2022</td>
+<td>Dépistage TSH</td>
+<td>Intervalles recommandés</td>
+</tr>
+<tr>
+<td><strong>TRIM-HYPO</strong></td>
+<td>2021</td>
+<td>LT4 formulation liquide</td>
+<td>Meilleure absorption, TSH plus stable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="anti-plagiat-et-attributions">Anti-plagiat et attributions</h2>
+<p>Toute classification, recommandation ou donnée chiffrée est précédée de la mention <strong>« adapté de »</strong> avec la source. Les formulations sont prescriptives et pédagogiques, non reproduites des sources originales. Les études sont citées par leur acronyme et leur revue de publication uniquement.</p>
+<hr />
+<p><em>Formation VERTEX© — Tous droits réservés — Mars 2026</em></p>
+</div>

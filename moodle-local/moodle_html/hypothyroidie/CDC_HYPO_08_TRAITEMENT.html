@@ -1,0 +1,611 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-08-traitement-par-levothyroxine">PARTIE 08 — Traitement par Lévothyroxine</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-25-levothyroxine-pharmacologie">MODULE 25 — Lévothyroxine : Pharmacologie</h2>
+<h3 id="251-mecanisme-daction-et-cinetique">25.1 Mécanisme d'action et cinétique</h3>
+<p>La <strong>lévothyroxine sodique (LT4)</strong> est la thyroxine de synthèse (T4), eutomère lévogyre biologiquement actif.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO25-S1-001 — Pharmacocinétique de la lévothyroxine : absorption, distribution, métabolisme, élimination]</p>
+</blockquote>
+<p><strong>Pharmacocinétique</strong> (adapté de Jonklaas et al., Thyroid 2014) :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Biodisponibilité orale</td>
+<td>60-80 % (comprimé à jeun)</td>
+</tr>
+<tr>
+<td>Demi-vie</td>
+<td>6-7 jours</td>
+</tr>
+<tr>
+<td>Liaison protéique</td>
+<td>&gt; 99 % (TBG, TTR, albumine)</td>
+</tr>
+<tr>
+<td>Fraction libre active</td>
+<td>0,02-0,03 %</td>
+</tr>
+<tr>
+<td>Métabolisme</td>
+<td>Désiodation DIO1/DIO2 (foie, rein, muscle) → T3</td>
+</tr>
+<tr>
+<td>Élimination</td>
+<td>Hépatobiliaire, urinaire</td>
+</tr>
+<tr>
+<td>Volume de distribution</td>
+<td>8-10 L/kg</td>
+</tr>
+<tr>
+<td>Délai action sur TSH</td>
+<td>4-6 semaines</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conversion T4 → T3</strong> : 80 % de la T3 circulante provient de la désiodation périphérique de la LT4 exogène.</p>
+<hr />
+<h3 id="252-formulations-disponibles">25.2 Formulations disponibles</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO25-S2-001 — Formes galéniques de la lévothyroxine disponibles en France : comprimés, solution buvable, gel mou]</p>
+</blockquote>
+<p><strong>En France (adapté de ANSM 2023)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Forme</th>
+<th>Spécialités</th>
+<th>Dosages</th>
+<th>Particularité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comprimé (excipient lactose)</td>
+<td>Levothyrox®, Euthyrox®</td>
+<td>25-200 µg</td>
+<td>Formulation historique</td>
+</tr>
+<tr>
+<td>Comprimé (sans lactose)</td>
+<td>L-Thyroxin Henning®</td>
+<td>25-200 µg</td>
+<td>Intolérance lactose</td>
+</tr>
+<tr>
+<td>Solution buvable</td>
+<td>Tsoludose®</td>
+<td>13-200 µg/mL</td>
+<td>Enfant, sonde naso-gastrique, malabsorption</td>
+</tr>
+<tr>
+<td>Gel mou (softgel)</td>
+<td>Tirosint®</td>
+<td>25-150 µg</td>
+<td>Aclorhidrie, gastrectomie</td>
+</tr>
+<tr>
+<td>Injectable IV</td>
+<td>Préparation hospitalière</td>
+<td>Variable</td>
+<td>Coma myxœdémateux uniquement</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — La formulation de référence a changé en France en 2017 (Levothyrox® nouvelle formule). Certains patients présentent des symptômes lors du changement de marque ou de formulation, liés à des variations d'absorption individuelles. Ne pas changer de marque sans raison médicale ; si changement nécessaire, contrôler TSH à 6-8 semaines.</p>
+<hr />
+<h3 id="253-conditions-optimales-de-prise">25.3 Conditions optimales de prise</h3>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : La prise dans de mauvaises conditions réduit l'absorption de 30-50 % et peut mimer une résistance au traitement.</div>
+
+<p><strong>Conditions optimales</strong> :<br />
+- À jeun depuis au moins <strong>30-60 minutes</strong><br />
+- Avec un verre d'eau <strong>seule</strong> (café, thé réduit l'absorption)<br />
+- Au moins <strong>2h avant</strong> : café, soja, fibres en excès<br />
+- Au moins <strong>4h avant</strong> : calcium, fer, magnésium, cholestyramine, IPP (en cas d'aclorhidrie relative, les IPP peuvent réduire l'absorption de 10-15 %)</p>
+<p><strong>Alternative validée</strong> : prise au coucher (à jeun depuis 2h) → absorption équivalente ou supérieure à la prise matinale (adapté de Bolk et al., Arch Int Med 2010)</p>
+<hr />
+<h3 id="quiz-module-25">QUIZ MODULE 25</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la demi-vie de la lévothyroxine ?<br />
+A) 24 heures B) 48 heures C) 3 jours <strong>D) 6-7 jours</strong></p>
+<p><strong>🥈 Q2</strong> — Une patiente sous Levothyrox® 100 µg/j voit sa TSH monter de 1,5 à 7,5 mUI/L sans changement de dose. Quel facteur d'interférence explorer en priorité ?<br />
+A) Néoplasie <strong>B) Prise simultanée de calcium, de café, ou d'IPP — modifier les conditions de prise, contrôle à 6 semaines</strong> C) Arrêt de la pilule D) Exercice physique intense</p>
+<p><strong>🥇 Q3</strong> — Quel avantage la solution buvable de lévothyroxine présente-t-elle par rapport aux comprimés ?<br />
+<strong>A) Absorption non pH-dépendante — meilleure stabilité de la TSH chez les patients avec aclorhidrie, gastrectomie, ou maladie cœliaque (adapté de Benvenga et al., TRIM-HYPO 2021)</strong></p>
+<p><strong>💎 Q4</strong> — Quelle proportion de la T3 circulante provient de la désiodation périphérique de la LT4 exogène chez un patient athyréotique sous LT4 seule ?<br />
+<strong>A) ~80 % — mais cette conversion peut être insuffisante chez les patients homozygotes DIO2 Thr92Ala, qui maintiennent une T3L basse malgré TSH normalisée et bénéficient potentiellement de l'ajout de LT3</strong></p>
+<hr />
+<h2 id="module-26-initiation-et-titration">MODULE 26 — Initiation et Titration</h2>
+<h3 id="261-dose-de-depart-selon-le-profil">26.1 Dose de départ selon le profil</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO26-S1-001 — Tableau des doses initiales de LT4 selon l'âge, le poids et la comorbidité cardiovasculaire]</p>
+</blockquote>
+<p><strong>Formule de la dose de substitution complète</strong> (adulte) :</p>
+<pre><code>Dose LT4 (µg/j) = 1,5-1,7 µg × poids corporel idéal (kg)
+</code></pre>
+<p>Exemples : 60 kg → 90-100 µg/j ; 70 kg → 100-120 µg/j ; 80 kg → 120-135 µg/j</p>
+<p><strong>Dosages initiaux selon le profil</strong> (adapté de Jonklaas et al., Thyroid 2014) :</p>
+<table>
+<thead>
+<tr>
+<th>Profil patient</th>
+<th>Dose initiale</th>
+<th>Titration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adulte &lt; 60 ans, sans cardiopathie</td>
+<td>50-75 µg/j</td>
+<td>Paliers de 25 µg/4-6 semaines</td>
+</tr>
+<tr>
+<td>&gt; 60 ans ou cardiopathie ischémique</td>
+<td>12,5-25 µg/j</td>
+<td>Paliers de 12,5-25 µg/6-8 semaines</td>
+</tr>
+<tr>
+<td>HT congénitale (nourrisson)</td>
+<td>10-15 µg/kg/j</td>
+<td>Ajustement mensuel</td>
+</tr>
+<tr>
+<td>HT sévère avec T4L très basse</td>
+<td>25-50 µg/j</td>
+<td>Montée prudente</td>
+</tr>
+<tr>
+<td>Grossesse</td>
+<td>50-100 µg/j d'emblée</td>
+<td>Selon TSH</td>
+</tr>
+<tr>
+<td>Cancer thyroïdien post-thyroïdectomie</td>
+<td>2,0-2,5 µg/kg/j (suppression)</td>
+<td>Cible TSH 0,1-0,5 mUI/L</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="262-titration-et-cibles-therapeutiques">26.2 Titration et cibles thérapeutiques</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO26-S2-001 — Cinétique de normalisation de la TSH sous LT4 : délai 4-6 semaines expliqué par la demi-vie]</p>
+</blockquote>
+<p><strong>Délai avant contrôle</strong> : <strong>4-6 semaines</strong> minimum après toute modification (délai pharmacocinétique lié à la demi-vie de 7 jours)</p>
+<p><strong>Cibles TSH selon le contexte</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Cible TSH (mUI/L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adulte &lt; 65 ans, HT simple</td>
+<td>0,5 – 2,5</td>
+</tr>
+<tr>
+<td>&gt; 65 ans</td>
+<td>0,5 – 3,0</td>
+</tr>
+<tr>
+<td>&gt; 80 ans</td>
+<td>1,0 – 4,0</td>
+</tr>
+<tr>
+<td>Grossesse T1</td>
+<td>&lt; 2,5</td>
+</tr>
+<tr>
+<td>Grossesse T2-T3</td>
+<td>&lt; 3,0</td>
+</tr>
+<tr>
+<td>Cancer thyroïdien haut risque (TSH suppressive)</td>
+<td>0,1 – 0,5</td>
+</tr>
+<tr>
+<td>Cancer thyroïdien faible risque, phase de surveillance</td>
+<td>0,5 – 2,0</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Une TSH dans les normes ne garantit pas l'euthyroïdie tissulaire. Certains patients ont une T3L basse malgré TSH normalisée sous LT4 seule, en raison d'une conversion T4→T3 insuffisante.</div>
+
+<hr />
+<h3 id="263-paliers-daugmentation-progressifs">26.3 Paliers d'augmentation progressifs</h3>
+<p><strong>Protocole standard adulte</strong> :<br />
+- J1 : 50 µg/j (ou 25 µg si sujet âgé/coronarien)<br />
+- J30 : Contrôle TSH — si TSH &gt; 4 : augmenter de 25 µg<br />
+- J60 : Contrôle TSH — ajuster si nécessaire<br />
+- Dose d'entretien atteinte en 3-4 mois en général</p>
+<p><strong>Signes de surdosage à surveiller</strong> :<br />
+- Palpitations, tachycardie<br />
+- Insomnie, irritabilité, tremblements fins<br />
+- Sudation excessive, intolérance à la chaleur<br />
+- Amaigrissement, diarrhée<br />
+- TSH effondrée (&lt; 0,1 mUI/L) → réduire la dose</p>
+<hr />
+<h3 id="quiz-module-26">QUIZ MODULE 26</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la formule de calcul de la dose substitutive complète en LT4 chez l'adulte ?<br />
+A) 1 µg/kg/j <strong>B) 1,5-1,7 µg/kg de poids idéal/j</strong> C) 100 µg fixe/j D) 2,5 µg/kg/j</p>
+<p><strong>🥈 Q2</strong> — Un patient de 68 ans, coronarien connu, TSH à 14 mUI/L. Quelle dose initiale de LT4 ?<br />
+A) 100 µg/j <strong>B) 12,5-25 µg/j avec ECG préalable</strong> C) 50 µg/j D) Initier seulement si TSH &gt; 20 mUI/L</p>
+<p><strong>🥇 Q3</strong> — Une patiente de 40 ans traite un cancer papillaire thyroïdien haut risque post-thyroïdectomie totale. Quelle est la cible TSH ?<br />
+A) 0,5-2,0 mUI/L (normale) <strong>B) 0,1-0,5 mUI/L (TSH suppressive)</strong> C) &lt; 0,01 mUI/L D) &gt; 2 mUI/L pour protéger l'os</p>
+<p><strong>💎 Q4</strong> — Après thyroïdectomie totale, un patient sous LT4 150 µg/j a une TSH normalisée à 1,2 mUI/L mais se plaint de fatigue persistante et d'une T3L à 3,2 pmol/L (limite basse). Quelle est la cause probable et que proposer ?<br />
+<strong>A) Mauvaise conversion T4→T3 (athyréose privée des cellules C et folliculaires productrices de T3 intrathyroïdienne) — envisager combinaison LT4+LT3 en vérifiant polymorphisme DIO2 Thr92Ala, cible T3L dans le tiers supérieur de la norme</strong></p>
+<hr />
+<h2 id="module-27-surveillance-biologique">MODULE 27 — Surveillance Biologique</h2>
+<h3 id="271-delais-et-intervalles-de-surveillance">27.1 Délais et intervalles de surveillance</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO27-S1-001 — Calendrier de surveillance TSH : initiation, phase de titration, entretien, situations particulières]</p>
+</blockquote>
+<p><strong>Surveillance en phase d'initiation</strong> :<br />
+- 4-6 semaines après chaque modification de dose<br />
+- Jusqu'à stabilisation de la TSH dans la cible</p>
+<p><strong>Surveillance en entretien stable</strong> (adapté de HAS 2019) :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Rythme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HT substituée stable, &lt; 60 ans</td>
+<td>Annuelle</td>
+</tr>
+<tr>
+<td>&gt; 60 ans ou coronarien</td>
+<td>Semestrielle (risque sur TSH trop basse)</td>
+</tr>
+<tr>
+<td>Grossesse</td>
+<td>Mensuelle T1, toutes les 6-8 semaines T2-T3</td>
+</tr>
+<tr>
+<td>Cancer thyroïdien sous TSH suppressive</td>
+<td>Semestrielle + T4L</td>
+</tr>
+<tr>
+<td>Variation de poids &gt; 10 %</td>
+<td>Contrôle ponctuel</td>
+</tr>
+<tr>
+<td>Nouveau médicament interférant</td>
+<td>Contrôle à 6-8 semaines</td>
+</tr>
+<tr>
+<td>Changement de formulation</td>
+<td>Contrôle à 6-8 semaines</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="272-quels-parametres-surveiller">27.2 Quels paramètres surveiller ?</h3>
+<p><strong>TSH seule</strong> : suffit dans la majorité des cas de suivi d'HT primaire traitée</p>
+<p><strong>TSH + T4L</strong> indiqués dans :<br />
+- Hypothyroïdie centrale (la TSH n'est pas le bon marqueur)<br />
+- Grossesse (T4L cible en plus de la TSH)<br />
+- Discordance clinique / TSH<br />
+- Introduction d'amiodarone (T4L de référence)<br />
+- Syndrome de résistance aux hormones thyroïdiennes</p>
+<p><strong>TSH + T4L + T3L</strong> dans :<br />
+- Suivi combinaison LT4+LT3<br />
+- Suspicion de NTIS<br />
+- Hyperthyroïdie à T3</p>
+<hr />
+<h3 id="273-pieges-du-suivi">27.3 Pièges du suivi</h3>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Ne pas contrôler la TSH dans les 4-6 premières semaines sans modification préalable de dose = interprétation à l'état d'équilibre seulement.</div>
+
+<p><strong>Erreurs fréquentes de suivi</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Erreur</th>
+<th>Conséquence</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contrôle TSH &lt; 4 semaines après modification</td>
+<td>TSH non à l'état d'équilibre, interprétation fausse</td>
+<td>Respecter les 4-6 semaines</td>
+</tr>
+<tr>
+<td>Prise de LT4 juste avant le prélèvement</td>
+<td>T4L faussement élevée, TSH faussement basse</td>
+<td>Prélèvement avant la prise du matin</td>
+</tr>
+<tr>
+<td>Ajout d'IPP sans réévaluation</td>
+<td>Absorption réduite</td>
+<td>Contrôle TSH à 6-8 semaines</td>
+</tr>
+<tr>
+<td>Utilisation T3L seule pour suivi</td>
+<td>Demi-vie de 19h → variations importantes</td>
+<td>Utiliser T4L + TSH en routine</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-27">QUIZ MODULE 27</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la fréquence recommandée de la surveillance TSH en entretien stable chez un adulte de 45 ans sous LT4 ?<br />
+A) Tous les 3 mois <strong>B) Annuelle</strong> C) Tous les 2 ans D) Pas de surveillance nécessaire</p>
+<p><strong>🥈 Q2</strong> — Un patient sous LT4 prend son comprimé juste avant le prélèvement sanguin. Quelle est l'interprétation du bilan TSH 1,8 / T4L 35 pmol/L (supérieure à la normale) ?<br />
+A) Surdosage en LT4, réduire la dose <strong>B) T4L faussement élevée par pic post-absorption — répéter avant la prise le lendemain</strong> C) Résistance aux hormones thyroïdiennes D) Erreur de laboratoire</p>
+<p><strong>🥇 Q3</strong> — Pourquoi la TSH est-elle un marqueur inadapté dans l'hypothyroïdie centrale ?<br />
+<strong>A) La relation log-linéaire TSH/T4L est rompue : l'axe hypophysaire ne sécrète pas de TSH en quantité proportionnelle à la carence en T4L. La TSH peut être normale ou basse malgré une T4L effondrée → utiliser la T4L comme marqueur cible</strong></p>
+<p><strong>💎 Q4</strong> — Quel paramètre biologique permet de dépister un surdosage en LT4 chez un patient avec un cancer thyroïdien à risque élevé traité par TSH suppressive ?<br />
+<strong>A) TSH &lt; 0,1 mUI/L est la cible mais une TSH indétectable et une T4L &gt; 30 pmol/L signalent un surdosage potentiel — surveiller aussi le rythme cardiaque, la densité osseuse (DXA annuelle), et la recherche de FA paroxystique par ECG ou Holter</strong></p>
+<hr />
+<h2 id="module-28-difficultes-therapeutiques">MODULE 28 — Difficultés Thérapeutiques</h2>
+<h3 id="281-non-observance">28.1 Non-observance</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO28-S1-001 — Test de non-observance : profil TSH paradoxale, stratégies d'amélioration]</p>
+</blockquote>
+<p><strong>Prévalence</strong> : 30-50 % des patients sous LT4 ont une prise irrégulière (adapté de Baumgartner et al., 2023)</p>
+<p><strong>Profil biologique évocateur de non-observance</strong> :<br />
+- TSH fluctuante d'un contrôle à l'autre (très haute puis normale)<br />
+- T4L élevée lors du contrôle (prise massive la veille = "rattrapage")<br />
+- Test de non-observance : TSH avant prise + TSH 2h après prise → discordance si non-observant habituel</p>
+<p><strong>Stratégies d'amélioration</strong> :<br />
+- Dosette ou pilulier hebdomadaire<br />
+- Alarme quotidienne sur smartphone<br />
+- Prise au coucher plutôt que le matin (meilleure régularité pour certains)<br />
+- <strong>LT4 en dose hebdomadaire</strong> : chez le non-observant avéré, 7× la dose journalière en une prise hebdomadaire est possible (adapté de Bolk et al., 2009) — TSH légèrement plus variable mais efficace</p>
+<hr />
+<h3 id="282-malabsorption">28.2 Malabsorption</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO28-S2-001 — Causes de malabsorption de la LT4 et solutions thérapeutiques]</p>
+</blockquote>
+<p><strong>Causes de malabsorption de la LT4</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Mécanisme</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maladie cœliaque</td>
+<td>Atrophie villositaire</td>
+<td>Régime sans gluten + ↑ dose + solution buvable</td>
+</tr>
+<tr>
+<td>Gastrectomie/bypass</td>
+<td>↓ surface absorption</td>
+<td>Solution buvable ou gel mou</td>
+</tr>
+<tr>
+<td>Aclorhidrie</td>
+<td>pH gastrique ↑ → ↓ dissolution</td>
+<td>IPP remplacer par H2-bloquants si possible, gel mou</td>
+</tr>
+<tr>
+<td>Helicobacter pylori</td>
+<td>Gastrite atrophique</td>
+<td>Éradication HP → normalisation TSH</td>
+</tr>
+<tr>
+<td>MICI</td>
+<td>Inflammation intestinale</td>
+<td>Traitement MICI, ↑ dose LT4</td>
+</tr>
+<tr>
+<td>Insuffisance pancréatique exocrine</td>
+<td>↓ enzymes</td>
+<td>Extraits pancréatiques avant LT4</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — Chez tout patient nécessitant des doses de LT4 &gt; 2 µg/kg/j sans hyperthyroïdie biologique, suspecter une malabsorption ou une non-observance. Doser TSH avant et 2h après la prise de LT4 à la seringue dans le service.</p>
+<hr />
+<h3 id="283-interactions-medicamenteuses">28.3 Interactions médicamenteuses</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO28-S3-001 — Tableau complet des interactions médicamenteuses avec la lévothyroxine]</p>
+</blockquote>
+<p><strong>Médicaments réduisant l'absorption de LT4</strong> (adapté de Grossmann et al., 2022) :</p>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Mécanisme</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calcium carbonate</td>
+<td>Chélation</td>
+<td>Intervalle ≥ 4h</td>
+</tr>
+<tr>
+<td>Fer (sulfate ferreux)</td>
+<td>Chélation</td>
+<td>Intervalle ≥ 4h</td>
+</tr>
+<tr>
+<td>Aluminium (antiacides)</td>
+<td>Adsorption</td>
+<td>Intervalle ≥ 2h</td>
+</tr>
+<tr>
+<td>Cholestyramine</td>
+<td>Fixation biliaire</td>
+<td>Intervalle ≥ 4h</td>
+</tr>
+<tr>
+<td>Sucralfate</td>
+<td>Complexation</td>
+<td>Intervalle ≥ 2h</td>
+</tr>
+<tr>
+<td>Soja (isoflavones)</td>
+<td>↓ absorption intestinale</td>
+<td>Éviter ou intervalle ≥ 2h</td>
+</tr>
+<tr>
+<td>IPP</td>
+<td>↑ pH gastrique</td>
+<td>Envisager gel mou</td>
+</tr>
+<tr>
+<td>Lait, café</td>
+<td>Ralentissement vidange</td>
+<td>Prise à jeun strict</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Médicaments augmentant le catabolisme de LT4</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Médicament</th>
+<th>Mécanisme</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rifampicine</td>
+<td>Induction CYP3A4 → ↑ élimination</td>
+<td>↑ dose LT4</td>
+</tr>
+<tr>
+<td>Carbamazépine, phénytoine</td>
+<td>Induction enzymes hépatiques</td>
+<td>↑ dose LT4</td>
+</tr>
+<tr>
+<td>Phénobarbital</td>
+<td>Induction UGT1A</td>
+<td>↑ dose LT4</td>
+</tr>
+<tr>
+<td>Sertindole, Sertraline</td>
+<td>Compétition liaison protéines</td>
+<td>Surveiller TSH</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="284-variations-saisonnieres-et-ponderales">28.4 Variations saisonnières et pondérales</h3>
+<p><strong>Variations saisonnières de la TSH</strong> :<br />
+- TSH naturellement plus haute en hiver (jusqu'à 40 % supérieure à l'été — adapté de Peeters 2012)<br />
+- Ne pas augmenter systématiquement la dose sur une TSH haute en janvier<br />
+- Contrôle à confirmer en toute saison avant décision thérapeutique</p>
+<p><strong>Variations pondérales</strong> :<br />
+- Prise de poids &gt; 10 % → TSH à doser, dose LT4 à adapter si TSH élevée<br />
+- Perte de poids &gt; 10 % → risque de surdosage relatif → TSH à contrôler</p>
+<p><strong>Vieillissement et besoin en LT4</strong> :<br />
+- Métabolisme de la LT4 ralentit avec l'âge → réduction progressive de la dose souvent nécessaire après 70 ans<br />
+- TSH de contrôle tous les 6-12 mois chez l'octogénaire sous LT4</p>
+<hr />
+<h3 id="quiz-module-28">QUIZ MODULE 28</h3>
+<p><strong>🥉 Q1</strong> — Quel intervalle minimal entre la prise de fer et la lévothyroxine est recommandé ?<br />
+A) 1h B) 2h <strong>C) 4h</strong> D) 8h</p>
+<p><strong>🥈 Q2</strong> — Une patiente sous LT4 100 µg/j voit sa TSH s'élever à 12 mUI/L à chaque hiver et se normaliser chaque été. Elle est asymptomatique. Quelle est la conduite ?<br />
+A) Augmenter définitivement la dose <strong>B) Variation saisonnière physiologique — contrôle au printemps avant décision, éducation sur la variabilité TSH</strong> C) Thyroïdectomie D) Changer de formulation</p>
+<p><strong>🥇 Q3</strong> — Un patient sous LT4 150 µg/j (&gt; 2 µg/kg/j) a persistance d'une TSH élevée malgré bonne observance. La prise de la dose à la seringue devant l'infirmière normalise la TSH en 2 semaines. Quel diagnostic ?<br />
+<strong>A) Malabsorption confirmée par le test de prise supervisée</strong> B) Non-observance psychogène C) Résistance vraie aux hormones thyroïdiennes D) Macro-TSH</p>
+<p><strong>💎 Q4</strong> — Quelle est la base moléculaire de l'augmentation du besoin en LT4 sous rifampicine ?<br />
+<strong>A) Induction de la CYP3A4 et des UGT hépatiques par la rifampicine → augmentation de la glucuro-conjugaison de la T4 et de son élimination biliaire → réduction de la T4L circulante → élévation de la TSH → besoin de 30-50 % de dose LT4 supplémentaire</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 08 — Traitement par Lévothyroxine — Mars 2026</em></p>
+</div>

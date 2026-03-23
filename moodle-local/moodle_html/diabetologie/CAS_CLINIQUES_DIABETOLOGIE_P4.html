@@ -1,0 +1,835 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-diabetologie">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION DIABETOLOGIE</h1>
+<h2 id="partie-4-cas-diamant-18-20">Partie 4 — Cas Diamant (18-20)</h2>
+<hr />
+<h2 id="cas-diamant">💎 CAS DIAMANT</h2>
+<hr />
+<p><a id="cas-18"></a></p>
+<h3 id="cas-n18-complications-multiples-et-insuffisance-renale-terminale">Cas n°18 — Complications multiples et insuffisance renale terminale</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilises</strong> : 16 (Retinopathie), 17 (Nephropathie), 18 (Neuropathie), 19 (Macroangiopathie), 22 (Insulinotherapie), 30 (Situations complexes), 32 (Prise en charge terminale)<br />
+<strong>Duree estimee</strong> : 40 min<br />
+<strong>Thematique principale</strong> : Prise en charge du diabete complique stade terminal — strategie therapeutique integree, dialyse et transplantation</p>
+<hr />
+<h4 id="presentation-initiale">Presentation initiale</h4>
+<p>M. Karim, 58 ans, DT1 depuis l'age de 12 ans (46 ans de diabete), est adresse en consultation pluridisciplinaire nephro-diabetologique. Son parcours de soins est marque par des decennies de desequilibre glycemique (HbA1c moyenne historique estimee a 10-11%).</p>
+<p><strong>Bilan des complications</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Stade</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nephropathie diabetique</td>
+<td>Stade G5 (IRC terminale)</td>
+<td>DFG 8 mL/min, RAC &gt; 3000 mg/g, en predialyse</td>
+</tr>
+<tr>
+<td>Retinopathie</td>
+<td>Stade terminal</td>
+<td>Cecite bilaterale depuis 3 ans (glaucome neovascul. + decollements retiniens)</td>
+</tr>
+<tr>
+<td>Neuropathie sensitive</td>
+<td>Severe</td>
+<td>Pied insensible (monofilament absent), 2 amputations: 3e orteil D (2019), 2e orteil G (2022)</td>
+</tr>
+<tr>
+<td>Neuropathie autonome</td>
+<td>Avancee</td>
+<td>Gastroparesis (vidange gastrique 60% a 4h), hypotension orthostatique, dysfonction vesicale</td>
+</tr>
+<tr>
+<td>Coronaropathie</td>
+<td>Multitronculaire</td>
+<td>Pontage aorto-coronarien triple (2021), FEVG 40%</td>
+</tr>
+<tr>
+<td>AOMI</td>
+<td>Bilaterale</td>
+<td>IPS 0,55 bilateralement, claudication a 100 m</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Traitement actuel</strong> :<br />
+- Insuline basale-bolus : Degludec 28 UI soir + Lispro prandiale (doses variables 6-10 UI)<br />
+- HbA1c : 8,9% — mais attention : la valeur est <strong>artificiellement basse</strong> en IRC terminale (hemolyse + duree de vie diminuee des GR)<br />
+- Furosemide 80 mg × 2, sevelamer 800 mg × 3 (chelatateur de phosphore)<br />
+- Bisoprolol 5 mg, amlodipine 10 mg, rilmenidine 1 mg, aspirine 75 mg<br />
+- Atorvastatine 40 mg, eplerenone 25 mg<br />
+- Erythropoietine (EPO) 10 000 UI SC/semaine<br />
+- Poids : 72 kg (sec estimé), taille : 170 cm, IMC : 24,9<br />
+- PA assis : 148/88 mmHg, PA debout : 116/72 mmHg (HOT de 32 mmHg systolique)<br />
+- Alimentation : hypoproteique (0,6 g/kg/j) imposee par le nephrologue</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC18-001 — Frise chronologique des complications de M. Karim — 46 ans de DT1 avec apparition progressive des complications sur timeline (Identifiez la sequence habituelle d'apparition des complications microvasculaires)]</p>
+</blockquote>
+<hr />
+<h4 id="questions-progressives">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Strategie de suppleance renale</strong> (decision complexe)</p>
+<blockquote>
+<p>M. Karim arrive en stade G5 predialytique. Quelles sont les options de suppleance renale ? Comparez leurs avantages et inconvenients dans le contexte specifique d'un diabetique complique. Quelle option privilegiez-vous et pourquoi ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Les 3 options de suppleance renale</strong> :</p>
+<p><strong>1. Hemodialyse (HD) en centre</strong> :<br />
+- Avantages : surveillance medicale 3×/semaine, controle efficace du volume, pas de manipulation quotidienne<br />
+- Inconvenients dans le DT1 complique :<br />
+  - <strong>Acces vasculaire</strong> : la fistule arterio-veineuse (FAV) est compromise par l'AOMI severe (IPS 0,55) et les pontages — risque de non-maturation, de vol vasculaire<br />
+  - <strong>Instabilite hemodynamique</strong> : la neuropathie autonome + l'IC (FEVG 40%) majorent le risque d'episodes hypotensifs per-dialytiques<br />
+  - <strong>Controle glycemique</strong> : les dialyses exposent a des hypoglycemies (dialysat sans glucose ou avec glucose 5 mmol/L)<br />
+  - <strong>Vision</strong> : la cecite limite l'autonomie pour les trajets x3/semaine</p>
+<p><strong>2. Dialyse peritoneale (DP)</strong> :<br />
+- Avantages : domicile, continuite du mode de vie, meilleur controle tensionnel et volémique progressif, preservation de la fonction renale residuelle plus longue<br />
+- Inconvenients chez M. Karim :<br />
+  - La <strong>neuropathie autonome</strong> (gastroparesis) peut reduire l'efficacite de la DP (paroi peritoneale moins performante)<br />
+  - La <strong>cecite</strong> rend les manipulations des poches difficiles — mais les systemes automatises (APD nocturne = dialyse peritoneale automatisee) sont accessibles avec aide a domicile<br />
+  - Risque de peritonite (immunodepression diabetique)<br />
+  - <strong>Absorption intraperi. du glucose</strong> : la DP apporte 100-200 g de glucose/jour → prise de poids, aggravation du controle glycemique</p>
+<p><strong>3. Transplantation renale (TR) seule</strong> :<br />
+- Avantages : amelioration spectaculaire de la survie (vs dialyse : mortalite divisee par 3 a 5), qualite de vie, correction partielle des complications<br />
+- Inconvenients :<br />
+  - <strong>Risque cardio-vasculaire pre-transplantation</strong> : M. Karim a une coronaropathie severe (PAC 2021, FEVG 40%) → le bilan pre-TR inclut une coronarographie systematique, une echocardiographie de stress. Son risque operatoire est eleve<br />
+  - La TR seule ne corrige pas le diabete — le greffon renal souffira a nouveau de la nephropathie diabetique</p>
+<p><strong>4. Transplantation pancreas-rein simultanee (SPK — Simultaneous Pancreas-Kidney)</strong> :<br />
+- <strong>Option ideale pour un DT1 avec IRC terminale</strong> <em>(recommandations EASD/ERA 2024)</em> :<br />
+  - Double benefice : guerison definitive du diabete + rein fonctionnel<br />
+  - La normoglycemie post-transplantation stoppe la progression de toutes les complications (retinopathie stabilisee, neuropathie amelioree, risque CV reduit)<br />
+  - Survie du patient meilleure qu'avec une TR seule dans le DT1<br />
+  - <strong>MAIS</strong> : contre-indication relative ici car FEVG 40% → discussion avec le comite de transplantation (seuil habituel FEVG &lt; 35% = contre-indication absolue — ici FEVG 40% : a discuter avec bilan CV complet)</p>
+<p><strong>Conclusion pour M. Karim</strong> :<br />
+- <strong>Court terme</strong> : Mise en dialyse peritoneale automatisee (APD) avec aide infirmiere a domicile (solution adaptee a la cecite et a l'autonomie)<br />
+- <strong>Moyen terme</strong> : Evaluation pre-transplantation SPK (bilan coronarien, echocardio de stress, bilan vasculaire) en vue d'une inscription sur liste si la FEVG se stabilise sous traitement optimise</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC18-002</strong><br/>
+<em>Tableau comparatif HD vs DP vs TR vs SPK dans le DT1 complique — criteres de choix, contre-indications specifiques et survie a 5 ans (Argumentez le choix pour M. Karim)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 2 — Gestion du diabete en predialyse et sous dialyse</strong> (application avancee)</p>
+<blockquote>
+<p>Quelles adaptations therapeutiques du diabete imposent la predialyse et l'IRC terminale ? Quels antidiabetiques sont contre-indiques et pourquoi ? Comment adapter l'insulinotherapie ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Antidiabetiques contre-indiques ou a adapter en IRC terminale</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Contre-indication</th>
+<th>Raison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metformine</td>
+<td><strong>Contre-indiquee si DFG &lt; 30</strong></td>
+<td>Accumulation → acidose lactique fatale</td>
+</tr>
+<tr>
+<td>Sulfamides (gliclazide, glimepiride)</td>
+<td><strong>Contre-indiques si DFG &lt; 30</strong></td>
+<td>Accumulation du principe actif et metabolites actifs → hypoglycemies prolongees et severes</td>
+</tr>
+<tr>
+<td>iSGLT2 (empagliflozine, dapagliflozine)</td>
+<td><strong>Inefficaces si DFG &lt; 20</strong></td>
+<td>Mecanisme renal requis pour l'effet hypoglycemiant</td>
+</tr>
+<tr>
+<td>GLP-1 RA</td>
+<td>A utiliser avec precaution (DFG 8)</td>
+<td>Risque de deshydratation + nausees aggravent l'uremie</td>
+</tr>
+<tr>
+<td>iDPP4 (sitagliptine)</td>
+<td>Reducation de dose si DFG &lt; 45</td>
+<td>Sitagliptine 25 mg/j si DFG 15-30 ; 25 mg/j tolere en stade G5</td>
+</tr>
+<tr>
+<td>Finerenone</td>
+<td><strong>Contre-indiquee si DFG &lt; 25</strong></td>
+<td>Hyperkaliemie majeure en IRC severe</td>
+</tr>
+<tr>
+<td>Pioglitazone</td>
+<td>Deconseille</td>
+<td>Retention hydrosodee, oedemes, IC potentialisee</td>
+</tr>
+</tbody>
+</table>
+<p><strong>M. Karim est deja sous insuline basale-bolus : c'est le traitement de reference en IRC terminale.</strong></p>
+<p><strong>Adaptations de l'insulinotherapie en IRC terminale</strong> :<br />
+1. <strong>Reduire les doses d'insuline de 25-50%</strong> :<br />
+   - L'IRC diminue la clairance de l'insuline (demi-vie allongee) ET diminue la gluconeogenese renale<br />
+   - Risque majeur d'<strong>hypoglycemies prolongees</strong> si pas de reduction<br />
+2. <strong>Adapter selon la glycemie capillaire rapprochee</strong> :<br />
+   - La <strong>gastroparesis</strong> decale et irregularise l'absorption des glucides → les bolus prandiaux doivent etre administres <strong>apres le repas</strong> (pas avant), en fonction de ce qui a ete ingere reellement<br />
+3. <strong>Cible glycemique relachee</strong> :<br />
+   - HbA1c cible en IRC terminale : <strong>7,5-8,5%</strong> (eviter l'hypoglycemie &gt; corriger l'hyperglycemie)<br />
+   - Utiliser la <strong>fructosamine ou le fructosamine-glycoalbumine</strong> plutot que l'HbA1c (qui est faussement basse en IRC)<br />
+4. <strong>Monitorage en continu (CGM)</strong> :<br />
+   - Le CGM (FreeStyle Libre 3 ou Dexcom G7) est particulierement utile chez le patient aveugle avec gastroparesis (alertes d'hypoglycemie en continu)<br />
+   - L'INCA (capteur Dexcom G7) est remboursable en France chez le DT1 sous insuline</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC18-003 — Tableau d'adaptation des doses d'insuline en IRC G3 a G5 et sous dialyse — guide pratique avec pourcentages de reduction et cas particuliers de la gastroparesis (Recalculez les doses de M. Karim)]</p>
+</blockquote>
+<p><strong>Question 3 — Prise en charge globale et qualite de vie</strong> (synthese ethique)</p>
+<blockquote>
+<p>M. Karim vous dit : « Docteur, j'ai vecu 46 ans avec le diabete, j'en peux plus des complications. Si la transplantation est possible, je suis pret a tout. Mais si ce n'est pas possible, je prefere une fin de vie sereine plutot que des annees de dialyse eprouvantes. » Comment abordez-vous cette situation ? Quels sont les elements du projet de soins personnalise ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p>Cette situation illustre la <strong>complexite ethique du diabete complique stade terminal</strong>. La demarche suit les principes de la loi Leonetti-Claeys (2016) et des recommandations de soins palliatifs en insuffisance renale :</p>
+<p><strong>1. Ecoute et validation</strong> :<br />
+- La parole de M. Karim est centrale : il exprime clairement des preferences informees (acceptation de la transplantation, refus de la dialyse « pour se maintenir en vie a tout prix »)<br />
+- Ces preferences doivent etre documentees dans le dossier comme <strong>directives anticipees</strong></p>
+<p><strong>2. Evaluation reelle de la transplantabilite</strong> :<br />
+- Organiser dans les 4 semaines : echocardio de stress + coronarographie si indication, bilan vasculaire complet (echo-Doppler des membres + echo-Doppler des arteres iliaques — indispensable pour planifier l'anastomose), bilan infectieux pre-greffe<br />
+- Si FEVG &gt; 35% et coronaires revascularisables → dossier SPK discutable en RCP nationale de transplantation (centre de reference)<br />
+- Si contre-indication formelle a la transplantation → transition vers le scenario 2</p>
+<p><strong>3. Si la transplantation est possible</strong> :<br />
+- Inscription sur la liste SPK (Agence de la Biomedecine)<br />
+- Duree d'attente moyenne SPK en France : 3-5 ans → mise en dialyse peritoneale intermediaire<br />
+- Projet de soins : maintien de l'autonomie a domicile, suivi pluridisciplinaire (nephrologue, diabetologue, chirurgien vasculaire, ophtalmo, assistante sociale)</p>
+<p><strong>4. Si la transplantation est contre-indiquee</strong> :<br />
+- Discussion franche avec M. Karim sur les options :<br />
+  - Dialyse de confort avec objectif qualitatif (pas uniquement quantitatif)<br />
+  - Traitement conservateur (non-dialyse) avec soins de support : controle des symptomes uremiques, confort, soutien psychologique, soins palliatifs<br />
+- Un patient informe peut refuser la dialyse — ce choix est ethiquement et legalement respecte en France<br />
+- <strong>Prise en charge palliative nephro-diabetologique</strong> : controle de la douleur (neuropathie), anti-prurigineux, gestion de la dyspnee, accompagnement psychologique et spirituel</p>
+<p><strong>5. La decision appartient au patient</strong> :<br />
+- Reunion de concertation pluridisciplinaire (RCP) avec le patient et sa famille<br />
+- Redaction des directives anticipees avec un professionnel de sante<br />
+- Designation d'une personne de confiance (loi Leonetti-Claeys)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC18-004 — Schema du projet de soins personnalise en IRC terminale diabetique — arbre decisionnel transplantation vs dialyse vs traitement conservateur avec les elements ethiques (Appliquez la demarche a M. Karim)]</p>
+</blockquote>
+<hr />
+<h4 id="points-cles-du-cas">Points cles du cas</h4>
+<ol>
+<li>La transplantation SPK est la meilleure option pour un DT1 avec IRC terminale : elle guerit le diabete ET remplace le rein</li>
+<li>L'HbA1c est artificiellement basse en IRC — utiliser la fructosamine ou l'albumine glycuee</li>
+<li>En IRC terminale, les doses d'insuline doivent etre reduites de 25-50% (clairance reduite + gluconeogenese renale diminuee)</li>
+<li>La gastroparesis impose un bolus d'insuline post-prandial (pas pre-prandial)</li>
+<li>Le projet de soins personnalise et les directives anticipees sont des outils essentiels chez le diabetique en stade terminal</li>
+</ol>
+<hr />
+<p><a id="cas-19"></a></p>
+<h3 id="cas-n19-echec-de-chirurgie-bariatrique-et-recidive-du-dt2">Cas n°19 — Echec de chirurgie bariatrique et recidive du DT2</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilises</strong> : 28 (Obesite et DT2), 26-27 (ADO et injectables), 29 (Strategie globale), 5 (Physiopathologie), 31 (Situations complexes)<br />
+<strong>Duree estimee</strong> : 40 min<br />
+<strong>Thematique principale</strong> : Mecanismes de la remission et de la recidive du DT2 apres chirurgie metabolique — strategies therapeutiques post-bariatriques</p>
+<hr />
+<h4 id="presentation-initiale_1">Presentation initiale</h4>
+<p>Mme Jacqueline, 52 ans, est adressee en consultation specialisee de diabetologie par son chirurgien bariatrique. Elle a eu une <strong>sleeve gastrectomie</strong> il y a 6 ans pour une obesite morbide (BMI 44 kg/m²) avec DT2 sous metformine + sulfamide.</p>
+<p><strong>Histoire de la maladie</strong> :<br />
+- <strong>Post-operatoire immediat</strong> : remission complete du DT2 a J30 (HbA1c passee de 8,2% a 5,6% sans traitement antidiabetique), perte de 45 kg en 18 mois (BMI 28 kg/m²)<br />
+- <strong>Annees 1-3</strong> : DT2 en remission complete, arret de tous les antidiabetiques<br />
+- <strong>Annee 4</strong> : reprise ponderable progressive (+12 kg), reapparition d'une glycemie a jeun &gt; 1,26 g/L<br />
+- <strong>Annee 5</strong> : HbA1c 6,8% — DT2 recidive, reprise de la metformine<br />
+- <strong>Annee 6 (maintenant)</strong> : HbA1c 8,1%, BMI 34 kg/m², echec de la metformine seule</p>
+<p><strong>Bilan actuel</strong> :<br />
+- Poids : 91 kg (repris 28 kg depuis le nadir post-op)<br />
+- PA : 138/84 mmHg<br />
+- LDL : 1,12 g/L (non traite)<br />
+- DFG : 72 mL/min (RAC 42 mg/g — microalbuminurie debutante)<br />
+- Peptide C a jeun : 1,8 ng/mL (reserve insulinoseraitoire conservee → DT2 confirme)<br />
+- Bilan nutritionnel : carence en vitamine D (18 ng/mL), carence en B12 (178 pmol/L), ferritine 18 µg/L (depleted)<br />
+- Bilan hormonaux : TSH 2,1 mUI/L, Cortisol 8h normal, IGF-1 normal</p>
+<p><strong>Antecedents chirurgicaux</strong> :<br />
+- Sleeve gastrectomie (2020) — pas de complications chirurgicales<br />
+- Ogivale fonctionnelle confirmee par Rx de transit (pas de sténose)<br />
+- Transit baryté : videange gastrique rapide (dumping)</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC19-001 — Courbe d'evolution du poids et de l'HbA1c de Mme Jacqueline de J0 a J6 ans post-sleeve — remission puis recidive avec le courbe de rebond ponderal (Identifiez le nadir et la sequence temporelle de la recidive)]</p>
+</blockquote>
+<hr />
+<h4 id="questions-progressives_1">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Mecanismes de la remission et de la recidive</strong> (comprehension physiopathologique)</p>
+<blockquote>
+<p>Expliquez les mecanismes par lesquels la sleeve gastrectomie a entraine la remission du DT2. Quels sont les mecanismes de la recidive 4 ans apres ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Mecanismes de la remission du DT2 apres sleeve gastrectomie</strong> :</p>
+<p>La remission est rapide (J30) — elle PRECEDE la perte de poids maximale → elle n'est pas uniquement due a la restriction calorique.</p>
+<p><strong>1. Mecanismes independants de la perte de poids (precoces)</strong> :<br />
+- <strong>Reduction de la ghreline</strong> : la sleeve excise le fundus gastrique, principale source de ghreline (hormone orexigene). La baisse de la ghreline reduit l'appetit ET ameliore directement la sensibilite a l'insuline<br />
+- <strong>Modification du flux biliaire</strong> : la vidange gastrique acceleree modifie la circulation entero-hepatique des acides biliaires → activation des recepteurs FXR et TGR5 → amelioration de la sensibilite hepatique et musculaire a l'insuline<br />
+- <strong>Augmentation du GLP-1 et du PYY</strong> : la vidange gastrique plus rapide vers l'ileon stimule les cellules L intestinales → pic de GLP-1 post-prandial multiplié par 3-5 → secretion insulinique augmentee, effet incretine majore</p>
+<p><strong>2. Mecanismes lies a la perte de poids (tardifs)</strong> :<br />
+- Reduction de la masse adipocytaire → diminution de la secretion de cytokines pro-inflammatoires (TNF-alpha, IL-6) et d'acides gras libres → amelioration de la sensibilite a l'insuline<br />
+- Reduction de la steatose hepatique → amelioration de la sensibilite hepatique a l'insuline</p>
+<p><strong>Mecanismes de la recidive</strong> :</p>
+<p><strong>1. Reprise pondérale</strong> (cause principale, 60-70% des recidives) :<br />
+- Adaptation comportementale : contournement de la sleeve par grignotage de boissons sucrees ou d'aliments a haute densite energetique (chocolat, fromage, chips)<br />
+- Dilatation progressive de la poche gastrique residuelle (visible au transit baryté)<br />
+- Reduction de la satiete percue (adaptation des recepteurs a la ghrelime residuelle)</p>
+<p><strong>2. Epuisement des cellules beta</strong> :<br />
+- La remission n'est possible que si la reserve insulinosecretoire etait suffisante initialement<br />
+- Avec le temps, la masse des cellules beta continue de decroitre (physiopathologie naturelle du DT2 + toxicite du glucose chronique)<br />
+- Le peptide C residuel de Mme Jacqueline (1,8 ng/mL) montre que la reserve est encore presente mais diminuee</p>
+<p><strong>3. Diminution de l'effet incretine</strong> :<br />
+- L'effet GLP-1 se normalise partiellement avec le temps<br />
+- La composition du microbiome intestinal evolue, reduisant certains effets metaboliques favorables</p>
+<p><strong>4. Vieillissement et facteurs genetiques</strong> :<br />
+- La progression naturelle du DT2 se poursuit → la chirurgie retarde mais ne supprime pas le processus de fond</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC19-002</strong><br/>
+<em>Schema des mecanismes d'action de la sleeve gastrectomie sur le DT2 — voies independantes et dependantes de la perte de poids avec les hormones impliquees (Expliquez a Mme Jacqueline pourquoi son diabete reapparait)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 2 — Strategie therapeutique apres echec de la sleeve</strong> (decision multi-facteurs)</p>
+<blockquote>
+<p>Mme Jacqueline vous demande : « Est-ce qu'une 2eme operation pourrait m'aider ? » Evaluez les options therapeutiques medicales ET chirurgicales. Quelle strategie proposez-vous ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>1. Optimisation medicale en priorite</strong> :</p>
+<p>Avant toute decision chirurgicale, une strategie medicale optimisee doit etre tentee pendant 6-12 mois :</p>
+<ul>
+<li><strong>Semaglutide SC (Ozempic) 0,5-1 mg/semaine → 2 mg/semaine</strong> : c'est le traitement de choix en post-bariatrique. Le GLP-1 RA mime l'effet incretine perdu, reduit l'apport calorique (action hypothalamique), favorise la reperte pondérale (-10 a -15%). L'essai SUSTAIN-FORTE (semaglutide 2 mg) montre une reduction de l'HbA1c de 2,2% et du poids de 9,7 kg vs placebo</li>
+<li><strong>OU Tirzepatide (Mounjaro) 5 → 15 mg/semaine</strong> : double agoniste GIP/GLP-1 — reduction de l'HbA1c de 2,4% et du poids de -13 a -22 kg dans SURPASS → encore plus efficace que le semaglutide sur la perte de poids</li>
+<li><strong>iSGLT2 (empagliflozine 10 mg)</strong> : en association, apporte un benefice complementaire sur la glycemie, le poids et la PA</li>
+<li><strong>Metformine</strong> : a maintenir (benefice de base, bien tolere)</li>
+</ul>
+<p><strong>Prise en charge nutritionnelle indispensable</strong> :<br />
+- Consultation dieteticienne specialisee bariatrique : reprogrammer les comportements alimentaires (eviction des sucres liquides, mastication prolongee, repas structures)<br />
+- Psychologue : traitement des troubles du comportement alimentaire (grignotage emotionnel, alimentation compulsive)<br />
+- Activite physique prescrite : 150 min/semaine a intensite moderee + renforcement musculaire</p>
+<p><strong>Correction des carences nutritionnelles</strong> :<br />
+- Vitamine D : 800-2000 UI/jour<br />
+- Vitamine B12 : 1000 µg/jour SC ou sublinguale (la sleeve reduit l'absorption)<br />
+- Fer : 80-100 mg/jour de fer element (fumarate ferreux ou sulfate)</p>
+<p><strong>2. Options de reintervention chirurgicale</strong> :</p>
+<p>Si echec medical a 6-12 mois, evaluer en RCP bariatrique pluridisciplinaire :</p>
+<table>
+<thead>
+<tr>
+<th>Option chirurgicale</th>
+<th>Principe</th>
+<th>Avantages</th>
+<th>Risques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conversion sleeve → bypass gastrique (RYGB)</td>
+<td>Ajout d'une derivation intestinale</td>
+<td>Perte de poids supplementaire -20-30%, effet incretine majore, meilleure remission DT2</td>
+<td>Risque chirurgical de la reintervention (adherences, fistule) ; carences nutritionnelles majeures</td>
+</tr>
+<tr>
+<td>Conversion sleeve → SADI-S (ou OAGB)</td>
+<td>Anse unique courte (one anastomose)</td>
+<td>Moins complexe que le RYGB, resultats proches</td>
+<td>Malabsorption graisses et vitamines</td>
+</tr>
+<tr>
+<td>Dilatation gastrique + revision de sleeve</td>
+<td>Resleeve</td>
+<td>Limites : la physiopathologie est differente de la premiere sleeve</td>
+<td>Risque de fuite, resultats mediocres a long terme</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommandation actuelle</strong> <em>(IFSO/SOARD 2023)</em> : la conversion sleeve → <strong>RYGB</strong> est la technique la plus etudiee en cas d'echec de sleeve avec recidive du DT2. Les taux de remission du DT2 atteignent 60-70% a 2 ans apres conversion.</p>
+<p><strong>Conclusion pour Mme Jacqueline</strong> :<br />
+1. Debuter semaglutide SC 0,5 mg/semaine avec titration progressive, maintenir metformine, ajouter empagliflozine<br />
+2. Encadrement dietetique et psychologique intensif (suivi mensuel)<br />
+3. Reevaluation a 6 mois : si HbA1c &gt; 7,5% et BMI &gt; 32 avec refus de la situation → dossier de conversion sleeve → RYGB en RCP bariatrique</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC19-003 — Algorithme de prise en charge de la recidive du DT2 apres chirurgie bariatrique — du traitement medical a la reintervention chirurgicale (Appliquez l'algorithme a Mme Jacqueline)]</p>
+</blockquote>
+<p><strong>Question 3 — Complications nutritionnelles post-bariatriques</strong> (application)</p>
+<blockquote>
+<p>Detaillez la surveillance et le traitement des carences nutritionnelles de Mme Jacqueline. Quelles sont les complications neurologiques specifiques a rechercher ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Bilan de carences de Mme Jacqueline</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Carence</th>
+<th>Valeur</th>
+<th>Seuil</th>
+<th>Consequence potentielle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vitamine D</td>
+<td>18 ng/mL</td>
+<td>&lt; 20 : insuffisance</td>
+<td>Osteomalacie, myopathie, risque fracturaire majore</td>
+</tr>
+<tr>
+<td>Vitamine B12</td>
+<td>178 pmol/L</td>
+<td>&lt; 200 : carence</td>
+<td>Neuropathie peripherique, anemie megaloblastique, troubles cognitifs</td>
+</tr>
+<tr>
+<td>Ferritine</td>
+<td>18 µg/L</td>
+<td>&lt; 30 : depleted</td>
+<td>Anemie ferriprive, fatigue, chute de cheveux</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mecanismes specifiques de la sleeve</strong> :<br />
+- La sleeve reduit le volume gastrique et donc la secretion de <strong>facteur intrinseque</strong> → malabsorption de la B12 (qui necessite le complexe B12-FI pour etre absorbee au niveau de l'ileon)<br />
+- La reduction de l'acidite gastrique (hypochlorhydrie post-op) reduit l'absorption du <strong>fer non hemique</strong> et du <strong>calcium</strong><br />
+- La <strong>bile</strong> est modifiee → absorption reduite des vitamines liposolubles (D, A, E, K)</p>
+<p><strong>Supplementation recommandee apres sleeve</strong> <em>(EASO/IFSO 2023)</em> :<br />
+- <strong>Multivitamines specialisees post-bariatriques</strong> : Azarga Bari, Barinutrics, Optivit (une prise/jour)<br />
+- <strong>Vitamine D</strong> : 800-2000 UI/jour (viser 30-60 ng/mL), associee a <strong>calcium</strong> 1000-1500 mg/jour (carbonate non, citrate de calcium = seule forme absorbable sans acide gastrique)<br />
+- <strong>Vitamine B12</strong> : 1000 µg/jour en sublingual ou SC mensuel (ne pas donner en comprime oral classique : absorption gastro-intestinale insuffisante)<br />
+- <strong>Fer</strong> : 80-100 mg/jour de fer element, en dehors des repas, avec vitamine C pour favoriser l'absorption<br />
+- <strong>Thiamine (B1)</strong> : supplementation preventive recommandee chez tous les patients (surtout si vomissements frequents) → carence aigue en B1 = encephalopathie de Wernicke</p>
+<p><strong>Complications neurologiques specifiques a rechercher</strong> :</p>
+<ol>
+<li>
+<p><strong>Polyneuropathie post-bariatrique</strong> (PNP) :<br />
+   - Due aux carences en B12, B1, E, cuivre<br />
+   - Clinique : paresthesies distales « en chaussettes », trouble de la marche, ataxie sensitive<br />
+   - Diagnostic : electroneuromyogramme (ENMG) + dosage B12, thiamine, cuivre, zinc<br />
+   - <strong>Distinction difficile avec la neuropathie diabetique</strong> : la PNP post-bariatrique + la neuropathie diabetique peuvent coexister — l'ENMG permet de differencier (axonale vs demyelinisante)</p>
+</li>
+<li>
+<p><strong>Encephalopathie de Wernicke</strong> (urgence) :<br />
+   - Triade : confusion + trouble oculomoteur (nystagmus, paralysie oculomotrice) + ataxie cerebelleuse<br />
+   - Cause : carence aigue en thiamine (B1) — surtout si vomissements post-op prolonges<br />
+   - Traitement : <strong>thiamine IV 500 mg × 3/jour pendant 3 jours</strong> (urgence absolue — le glucose IV sans thiamine est fatal)</p>
+</li>
+<li>
+<p><strong>Syndrome de dumping</strong> (frequence apres sleeve) :<br />
+   - Early dumping : 15-30 min apres le repas — tachycardie, sueurs, malaise (passage rapide des sucres dans l'intestin → pic insulinique)<br />
+   - Late dumping : 1-3h apres le repas — hypoglycemie post-prandiale (pic insulinique decale)<br />
+   - Le late dumping est souvent diagnostique a tort comme hypoglycemie « diabetique » — erreur a eviter</p>
+</li>
+</ol>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC19-004 — Plan de supplementation nutritionnelle post-sleeve gastrectomie — calendrier de surveillance des vitamines et mineraux + seuils d'alerte (Elaborez le plan de supplementation de Mme Jacqueline)]</p>
+</blockquote>
+<hr />
+<h4 id="points-cles-du-cas_1">Points cles du cas</h4>
+<ol>
+<li>La remission du DT2 apres sleeve est multifactorielle (ghreline, GLP-1, acides biliaires) — elle precede la perte de poids → mecanisme independant de la restriction calorique</li>
+<li>La recidive du DT2 survient dans 30-50% des cas a 5-10 ans — principalement liee a la reprise pondérale et a l'epuisement des cellules beta</li>
+<li>Le tirzepatide ou le semaglutide sont les traitements de choix en post-bariatrique avec recidive de DT2</li>
+<li>La conversion sleeve → RYGB est l'option chirurgicale la mieux evaluee en cas d'echec</li>
+<li>La carence en vitamine B12 apres sleeve est systematique — supplementation en sublingual ou SC obligatoire a vie</li>
+</ol>
+<hr />
+<p><a id="cas-20"></a></p>
+<h3 id="cas-n20-dt1-instable-avec-hypoglycemies-severes-et-transplantation-dilots">Cas n°20 — DT1 instable avec hypoglycemies severes et transplantation d'ilots</h3>
+<p><strong>Niveau</strong> : 💎 Diamant<br />
+<strong>Modules mobilises</strong> : 22 (Insulinotherapie), 23 (Technologies du diabete), 24 (Education), 25 (Hypoglycemie), 32 (Transplantation), 5 (Physiopathologie DT1)<br />
+<strong>Duree estimee</strong> : 45 min<br />
+<strong>Thematique principale</strong> : DT1 « brittle » avec non-perception des hypoglycemies — boucle fermee avancee et criteres de transplantation d'ilots</p>
+<hr />
+<h4 id="presentation-initiale_2">Presentation initiale</h4>
+<p>M. Antoine, 38 ans, DT1 depuis l'age de 6 ans (32 ans de DT1), est hospitalise en diabetologie specialisee apres sa <strong>3eme admission pour hypoglycemie severe</strong> en 8 mois. Ses proches signalent qu'il est « impossible a controler » — son medecin traitant parle de « diabete instable ou brittle ».</p>
+<p><strong>Contexte psychosocial</strong> :<br />
+- Ingenieur, celibataire, vit seul<br />
+- 2 enfants (garde partielle) — les episodes d'hypoglycemie severes ont conduit une juge familiale a restreindre temporairement la garde<br />
+- Permis de conduire suspendu (2 malaises au volant)<br />
+- Arret de travail prolonge (6 mois) — son employeur menace de licenciement<br />
+- Anxiete severo (HAD score anxiete 17/21), symptomes depressifs (PHQ-9 : 15/27)<br />
+- Signalement de la situation par son diabetologue de ville a une equipe specialisee</p>
+<p><strong>Caracteristiques glycemiques</strong> (CGM FreeStyle Libre 3, 14 jours) :<br />
+- HbA1c : 9,2% — mais paradoxal car le TIR est seulement 28%<br />
+- TBR (&lt; 70 mg/dL) : <strong>22%</strong> (soit 5h16 par jour en hypoglycemie !)<br />
+- TBR &lt; 54 mg/dL : <strong>11%</strong> (2h40/jour en hypoglycemie severe)<br />
+- TAR (&gt; 180 mg/dL) : 50%<br />
+- Coefficient de variation (CV) : 48% (très instable — normal &lt; 36%)<br />
+- IAR (Insulin Autonomy Ratio) : 1,9 (ratio bolus/basal eleve = gestion chaotique)</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Pompe Tandem t:slim X2 avec algorithme Control-IQ (boucle fermee hybride)<br />
+- Insuline Humalog (Lispro) U100<br />
+- DTQ estimee : 52 UI/jour<br />
+- Doses de correction tres frequentes (8-12 bolus de correction/jour en plus des bolus prandiaux)</p>
+<p><strong>Bilan des hypoglycemies severes</strong> :<br />
+- <strong>Episode 1 (mars)</strong> : convulsions a domicile, intervention SAMU, glucagon IM par voisin<br />
+- <strong>Episode 2 (juillet)</strong> : malaise au volant, accident de la route sans victime, glycemie 0,28 g/L a l'arrivee des secours<br />
+- <strong>Episode 3 (novembre)</strong> : retrouve inconscient par son fils (9 ans), glycemie 0,21 g/L, 2 ampoules de G30% IV aux urgences</p>
+<p><strong>Bilan etiologique deja realise</strong> :<br />
+- Insuffisance surrenalienne associee : test au Synacthene negatif (exclue)<br />
+- Maladie coeliaque (sérologie anti-transglutaminase) : negative<br />
+- Insuffisance ante-hypophysaire : IGF-1 et test ITT normaux<br />
+- Anticorps anti-insuline : negatifs<br />
+- Adherence au suivi : bonne, le patient est medicalise et curieux</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC20-001 — Rapport AGP de M. Antoine sur 14 jours — profil typique du DT1 brittle avec hypoglycemies nocturnes massives, rebounds hyperglycemiques (Effet Somogyi), variabilite extreme (CV 48%) (Analysez le profil glycemique en detail)]</p>
+</blockquote>
+<hr />
+<h4 id="questions-progressives_2">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic de la non-perception des hypoglycemies</strong> (analyse)</p>
+<blockquote>
+<p>Definissez la non-perception des hypoglycemies (IAH — Impaired Awareness of Hypoglycemia). Quels sont les mecanismes. Comment la diagnostiquer et la quantifier chez M. Antoine ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Definition de l'IAH (Impaired Awareness of Hypoglycemia)</strong> :<br />
+- Etat acquis dans lequel le patient <strong>ne ressent pas les symptomes adrenergiomes</strong> (tremblements, palpitations, sueurs) qui precedent normalement les signes neuroglycopeniques (confusion, perte de conscience)<br />
+- Prevalence dans le DT1 : <strong>20-25%</strong> des patients — majoree apres 15-20 ans d'evolution<br />
+- Consequence directe : la premiere manifestation est la neuroglycopenie severe (convulsion, coma) sans signe avant-coureur → risque d'accident, de mort soudaine</p>
+<p><strong>Mecanismes de l'IAH</strong> :</p>
+<ol>
+<li>
+<p><strong>Epuisement des contra-regulateurs hormonaux</strong> :<br />
+   - La glucagonemie en reponse a l'hypoglycemie est abolie apres quelques annees de DT1 (destruction des cellules alpha pancréatiques par le processus auto-immun ET par les hypoglycemies repetees)<br />
+   - La reponse adrenergiome (adrenaline, noradrenaline) est egalement erodee apres des episodes hypoglycemiques frequents</p>
+</li>
+<li>
+<p><strong>Adaptation cerebrale a l'hypoglycemie chronique</strong> :<br />
+   - Le cerveau « s'habitue » a des glycemies basses → les recepteurs hypothalamiques detectent l'hypoglycemie a un seuil plus bas (&lt; 0,50 g/L au lieu de &lt; 0,70 g/L)<br />
+   - Le transport du glucose cerebral est augmente (upregulation des transporteurs GLUT1) → le cerveau consomme le glucose plus efficacement a des concentrations basses → moins de symptomes neuroglycopeniques precoces<br />
+   - Ce phenomene est <strong>reversible</strong> : 2-3 semaines de normoglycemie stricte sans aucune hypoglycemie permettent de « reeduquer » le seuil de perception</p>
+</li>
+<li>
+<p><strong>Cycle vicieux des hypoglycemies repetees</strong> :<br />
+   - Chaque hypoglycemie abaisse encore le seuil de perception → spirale descendante vers l'IAH severe</p>
+</li>
+</ol>
+<p><strong>Diagnostic de l'IAH chez M. Antoine</strong> :</p>
+<p><strong>Score de Clarke</strong> (questionnaire valide de 8 questions) :<br />
+- Chaque reponse « A » (le patient ne ressent pas les symptomes d'hypoglycemie) score 1 point<br />
+- Score ≥ 4 = <strong>IAH confirmee</strong><br />
+- Score de M. Antoine : 6/8 → IAH severe</p>
+<p><strong>Score de Gold</strong> (score subjectif) :<br />
+- « Combien de fois sur les 6 derniers mois avez-vous ete en hypoglycemie severe sans l'avoir percu ? »<br />
+- Score 1 (toujours perception normale) a 7 (jamais de perception)<br />
+- M. Antoine : 6/7 → IAH severe</p>
+<p><strong>CGM confirmatif</strong> :<br />
+- Un TBR &lt; 54 mg/dL de 11% chez un patient qui dit « ne pas ressentir ses hypoglycemies » confirme le diagnostic<br />
+- La discordance HbA1c 9,2% / TBR 22% est characteristique du brittle DT1 avec IAH : l'hyperglycemie rebond post-hypoglycemie fait monter l'HbA1c</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC20-002</strong><br/>
+<em>Schema physiopathologique de l'IAH — cycle des hypoglycemies repetees, adaptation cerebrale et erosion des contre-regulateurs avec la courbe de rehabilitation du seuil de perception (Identifiez les mecanismes chez M. Antoine)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 2 — Optimisation technologique : vers la boucle fermee totale</strong> (application avancee)</p>
+<blockquote>
+<p>La boucle fermee hybride (Control-IQ) n'est pas suffisante. Quelles ameliorations technologiques proposez-vous ? Discutez les indications et limites de la boucle fermee totale (TLC) et de l'insuline inhalable.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Analyse de l'echec de la boucle fermee hybride</strong> :<br />
+Le Control-IQ est une <strong>boucle fermee hybride</strong> : elle automatise le basal et peut donner des bolus automatiques de correction, MAIS elle necessite que le patient :<br />
+1. Annonce les repas et saisisse les grammes de glucides (bolus prandial manuel)<br />
+2. Confirme les bolus de correction</p>
+<p>Chez M. Antoine, l'echec vient de :<br />
+- Bolus de repas imprecis ou oublies → hyperglycemie post-prandiale → surbolus de correction → rebond hypoglycemique<br />
+- Activite physique non anticipee<br />
+- Probablement un profil de pompe non optimal (debit de base trop eleve)</p>
+<p><strong>Optimisations technologiques en 4 niveaux</strong> :</p>
+<p><strong>Niveau 1 — Optimisation du systeme actuel</strong> :<br />
+- Ajustement du profil basal et des ratios I/C avec le teledebriefing des donnees CGM (Glooko, LibreView)<br />
+- Activation du mode « exercice » avant les activites physiques (reduction temporaire du basal)<br />
+- Education renforcee sur la saisie des glucides (precision ± 10 g)<br />
+- Cible glycemique relevee temporairement a 140 mg/dL pendant 3-4 semaines pour « rehabiliter » le seuil de perception</p>
+<p><strong>Niveau 2 — Boucle fermee avancee (AID de 3e generation)</strong> :<br />
+- <strong>Omnipod 5</strong> (sans tubulure) avec algorithme Horizon — calcul predicitif renforcé, integration des activites via actigraphie<br />
+- <strong>Medtronic 780G</strong> en mode SmartGuard avec capteur Guardian 4 — le 780G est le systeme avec le meilleur TIR prouve en essai clinique (&gt; 78%)<br />
+- L'objectif est de maintenir une cible de 100 mg/dL avec les nouvelles formulations des algorithmes</p>
+<p><strong>Niveau 3 — Boucle fermee totale (TLC) ou bihormonale</strong> :<br />
+- La <strong>TLC</strong> (Total Loop Closed) automatise AUSSI les bolus prandiaux — le patient n'a plus besoin d'annoncer les repas<br />
+- En cours de validation (etudes CLOSE AP, iLet/Bionic Pancreas) — pas encore disponible en routine en France en 2026 mais access ATU probable<br />
+- <strong>Boucle bihormonale</strong> : pompe delivrant a la fois insuline (bolus) ET glucagon (en cas d'hypoglycemie) — le glucagon previent les hypoglycemies prolongees. Systemes : DIABELOOP DBLHU (Phase III), iLet bihormonale</p>
+<p><strong>Niveau 4 — Insuline ultra-rapide</strong> :<br />
+- <strong>Insuline Lispro formulation ultra-rapide</strong> (URLi, Lyumjev) ou <strong>insuline Aspart ultra-rapide</strong> (Fiasp) : debut d'action en 2-3 min (vs 10-15 min pour Humalog/Novorapid) — ameliore le profil post-prandial, reduit les corrections<br />
+- <strong>Insuline inhalable (Afrezza)</strong> : non disponible en France en 2026 (disponible aux USA) — pic a 12-15 min, action totale 2h30 → ideal pour les corrections rapides post-prandiales</p>
+<p><strong>Pour M. Antoine</strong> :<br />
+1. Passage au <strong>Medtronic 780G</strong> + remplacement Humalog par <strong>Lispro URLi (Lyumjev)</strong> — etape immediatement realisable<br />
+2. Inscription dans un protocole d'acces a la <strong>boucle fermee totale</strong> ou bihormonale si disponible<br />
+3. Evaluation a 3 mois : si TBR &lt; 4% et CV &lt; 36% → objectifs atteints</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC20-003</strong><br/>
+<em>Schema comparatif des niveaux de boucle fermee — hybride vs avancee vs totale vs bihormonale — avec les differents systemes disponibles et les niveaux de preuve (Evaluez le niveau adapte a M. Antoine)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 3 — Criteres et deroulement de la transplantation d'ilots</strong> (synthese)</p>
+<blockquote>
+<p>Malgre 6 mois d'optimisation technologique (Medtronic 780G + URLi), M. Antoine a encore 3 hypoglycemies severes. Son diabetologue evoque la transplantation d'ilots de Langerhans. Quels sont les criteres, le deroulement, les resultats attendus et les limites de cette procedure ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :</p>
+<p><strong>Criteres d'eligibilite a la transplantation d'ilots</strong> <em>(recommandations EASD/IPITA 2024 et HAS 2023)</em> :</p>
+<p><strong>Criteres obligatoires</strong> :<br />
+1. <strong>DT1 confirme</strong> avec C-peptide efface (&lt; 0,1 ng/mL) — M. Antoine a C-peptide &lt; 0,05 ng/mL<br />
+2. <strong>IAH severe</strong> (score Clarke ≥ 4 ou Gold ≥ 4) — M. Antoine : Clarke 6, Gold 6 → critere rempli<br />
+3. <strong>Hypoglycemies severes malgre optimisation maximale</strong> : ≥ 2 hypoglycemies severes/an malgre optimisation technologique et educationnelle (M. Antoine : 3 en 8 mois malgre Medtronic 780G → critere rempli)<br />
+4. <strong>Age</strong> 18-65 ans (M. Antoine : 38 ans)<br />
+5. <strong>IMC &lt; 28 kg/m²</strong> (l'obesite augmente les besoins en ilots transplantes) — M. Antoine IMC 24 : OK<br />
+6. <strong>Absence de contre-indications</strong> :<br />
+   - Insuffisance renale (DFG &lt; 40) : non, DFG de M. Antoine 88 mL/min<br />
+   - Immunosuppression contre-indiquee (tumeur active, infection grave) : a verifier<br />
+   - Dependance a l'alcool ou aux drogues, compliance insuffisante : non</p>
+<p><strong>Criteres d'exclusion potentiels</strong> :<br />
+- <strong>Anxiete/depression severes</strong> (score HAD anxiete 17, PHQ-9 15) : la prise en charge psychiatrique pre-transplantation est obligatoire — M. Antoine doit etre stabilise psychologiquement avant de s'engager dans une immunosuppression a vie<br />
+- Allergie aux immunosuppresseurs</p>
+<p><strong>Deroulement de la procedure</strong> :</p>
+<ol>
+<li>
+<p><strong>Bilan pre-transplantation</strong> (3-6 mois) :<br />
+   - Immunologie : typage HLA, recherche d'anticorps anti-HLA (PRA), crossmatch<br />
+   - Bilan metabolique complet, bilan cardiovasculaire, dentaire, infectieux (serotheques)<br />
+   - Psychologique : evaluation et traitement de l'anxiete/depression — minimum 3 mois de suivi psy avant inscription<br />
+   - Inscription sur la liste Eurotransplant/ABM (Agence de la Biomedecine)</p>
+</li>
+<li>
+<p><strong>Procedure de transplantation</strong> :<br />
+   - Sous anesthesie locale ou locoregionale<br />
+   - Les ilots sont isoles du pancreas d'un donneur en etat de mort encephalique (preparation en laboratoire specialise : 50 000 ilots/kg)<br />
+   - Injection dans la <strong>veine porte hepatique</strong> par voie percutanee (ponction echoguidee trans-hepatique) — les ilots se logent dans les sinusoides hepatiques<br />
+   - 1 a 3 injections peuvent etre necessaires (1 ou 2 donneurs pour obtenir une masse suffisante)<br />
+   - Duree : 1-2h par injection, J1 a J30 entre les injections</p>
+</li>
+<li>
+<p><strong>Immunosuppression</strong> (a vie) :<br />
+   - Induction : anti-thymocytes ou basiliximab (anti-CD25)<br />
+   - Entretien : <strong>tacrolimus</strong> (inhibiteur calcineurine) + <strong>mycophenolate mofetil</strong> (MMF) sans corticoides (les corticoides sont diabetogenes et detruisent les ilots)<br />
+   - Surveillance : dosages residuels de tacrolimus, NFS, creatinine, bilan hepatique</p>
+</li>
+</ol>
+<p><strong>Resultats attendus</strong> <em>(meta-analyse CITR 2024 — Collaborative Islet Transplant Registry)</em> :<br />
+- <strong>Independance insulinique</strong> a 1 an : 60-70% des patients<br />
+- <strong>Independance insulinique</strong> a 5 ans : 40-50% (les ilots s'epuisent progressivement)<br />
+- <strong>Absence d'hypoglycemie severe</strong> : 90% des patients a 1 an (meme en cas de non-independance insulinique — c'est le resultat le plus important)<br />
+- Amelioration de la qualite de vie : specataculaire meme sans independence insulinique (retour du permis de conduire, reprise du travail)<br />
+- <strong>Limite principale</strong> : l'immunosuppression a vie expose aux infections opportunistes, cancers (lymphomes EBV), nephrotoxicite du tacrolimus</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC20-004 — Comparaison transplantation d'ilots vs transplantation SPK vs optimisation technologique dans le DT1 brittle — tableau des indications, resultats et risques avec recommandations actuelles (Positionnez la transplantation d'ilots dans l'arsenal therapeutique)]</p>
+<p>[MEDIA: 📊 MDIAB-CC20-005 — Courbes de survie de la fonction des ilots transplantes — pourcentage d'independance insulinique et d'absence d'hypoglycemies severes a 1, 3 et 5 ans apres transplantation d'ilots (Presentez les resultats a M. Antoine)]</p>
+</blockquote>
+<hr />
+<h4 id="points-cles-du-cas_2">Points cles du cas</h4>
+<ol>
+<li>L'IAH (non-perception des hypoglycemies) touche 20-25% des DT1 apres 15-20 ans — score de Clarke ≥ 4 confirme le diagnostic</li>
+<li>La rehabilitation du seuil de perception est possible en 2-3 semaines de normoglycemie stricte (cible glycemique relevee temporairement)</li>
+<li>La transplantation d'ilots est indiquee dans le DT1 brittle avec IAH severe et hypoglycemies severes refractaires a l'optimisation maximale</li>
+<li>Le benefice principal de la transplantation d'ilots n'est pas l'independance insulinique (40-50% a 5 ans) mais la suppression des hypoglycemies severes (90% a 1 an)</li>
+<li>L'immunosuppression a vie est le prix a payer — elle doit etre evaluee dans le contexte de la qualite de vie du patient</li>
+</ol>
+<hr />
+<h2 id="synthese-finale-formation-diabetologie-complete">SYNTHESE FINALE — FORMATION DIABETOLOGIE COMPLETE</h2>
+<h3 id="tableau-recapitulatif-des-20-cas-cliniques">Tableau recapitulatif des 20 cas cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>N°</th>
+<th>Titre</th>
+<th>Niveau</th>
+<th>Modules cles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Acidocetose inaugurale (adolescent)</td>
+<td>🥉 Bronze</td>
+<td>Physiopathologie DT1, diagnostic</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Decouverte fortuite DT2 (obese)</td>
+<td>🥉 Bronze</td>
+<td>Depistage, ADO</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Diabete gestationnel (T2)</td>
+<td>🥉 Bronze</td>
+<td>Grossesse, insuline</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hypoglycemie severe sous insuline</td>
+<td>🥉 Bronze</td>
+<td>Hypoglycemie, glucagon</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Retinopathie au depistage</td>
+<td>🥉 Bronze</td>
+<td>Retinopathie, FO</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Plaie du pied (mal perforant)</td>
+<td>🥉 Bronze</td>
+<td>Pied diabetique</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Adaptation basal-bolus</td>
+<td>🥉 Bronze</td>
+<td>Insulinotherapie</td>
+</tr>
+<tr>
+<td>8</td>
+<td>LADA vs DT2 (42 ans)</td>
+<td>🥈 Argent</td>
+<td>Diagnostic differentiel</td>
+</tr>
+<tr>
+<td>9</td>
+<td>MODY (diabete monogenique)</td>
+<td>🥈 Argent</td>
+<td>Genetique, MODY</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Nephropathie debutante</td>
+<td>🥈 Argent</td>
+<td>Nephroprotection, iSGLT2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Neuropathie douloureuse refractaire</td>
+<td>🥈 Argent</td>
+<td>Neuropathie, douleur</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Echappement aux ADO</td>
+<td>🥈 Argent</td>
+<td>Escalade therapeutique, GLP-1 RA</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Diabete cortico-induit</td>
+<td>🥈 Argent</td>
+<td>Corticoides, insuline</td>
+</tr>
+<tr>
+<td>14</td>
+<td>DT1 + pompe + grossesse</td>
+<td>🥇 Or</td>
+<td>Pompe, grossesse, TIR</td>
+</tr>
+<tr>
+<td>15</td>
+<td>DT2 post-SCA (prevention secondaire)</td>
+<td>🥇 Or</td>
+<td>iSGLT2, GLP-1 RA, cardioprotection</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Pied de Charcot + osteomyelite</td>
+<td>🥇 Or</td>
+<td>Charcot, infection, chirurgie</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Acidocetose severe (reanimation)</td>
+<td>🥇 Or</td>
+<td>Protocole ACD, reanimation</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Complications multiples + IRC terminale</td>
+<td>💎 Diamant</td>
+<td>SPK, dialyse, ethique</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Echec sleeve + recidive DT2</td>
+<td>💎 Diamant</td>
+<td>Bariatrique, incretines</td>
+</tr>
+<tr>
+<td>20</td>
+<td>DT1 brittle + IAH + transplantation d'ilots</td>
+<td>💎 Diamant</td>
+<td>Boucle fermee, ilots</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Fin de la Partie 4 — Cas Diamant (18-20)</em></p>
+<p><em>Cahier de Cas Cliniques Diabetologie — COMPLET (20 cas, 4 parties)</em></p>
+</div>

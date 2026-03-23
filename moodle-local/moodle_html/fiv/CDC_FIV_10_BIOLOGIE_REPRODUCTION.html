@@ -1,0 +1,744 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-10-biologie-de-la-reproduction">🩷 PARTIE 10 — BIOLOGIE DE LA REPRODUCTION</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-amp">Formation VERTEX© — Fécondation In Vitro et AMP</h2>
+<hr />
+<h1 id="table-des-matieres-partie-10">TABLE DES MATIÈRES — PARTIE 10</h1>
+<ul>
+<li><a href="#module-33">Module 33 — Le laboratoire de FIV : organisation et qualité</a></li>
+<li><a href="#module-34">Module 34 — Andrologie biologique et techniques de sélection spermatique</a></li>
+<li><a href="#module-35">Module 35 — Évaluation embryonnaire : de la morphologie à l'IA</a></li>
+</ul>
+<hr />
+<h1 id="module-33">MODULE 33 — Le Laboratoire de FIV : Organisation et Qualité</h1>
+<p>🟢 <strong>BIOLOGISTE</strong></p>
+<h2 id="331-architecture-du-laboratoire">33.1 Architecture du laboratoire</h2>
+<div class="vertex-media">
+<strong>📷 MFIV33-S1-001</strong><br/>
+<em>Plan type d'un laboratoire de FIV : zones de tri ovocytaire, ICSI, culture, cryo — flux des gamètes et embryons, normes environnementales</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Normes environnementales</strong> :<br />
+- <strong>Salle blanche</strong> : ISO 5-7 (classe 100-10 000 particules/m³)<br />
+- <strong>Pression positive</strong> : gradient de pression + filtration HEPA (prévention contamination)<br />
+- <strong>Absence de COV</strong> (Composés Organiques Volatils) : matériaux biocompatibles, pas de peinture fraîche, pas de parfum, filtration au charbon actif<br />
+- <strong>Température</strong> contrôlée : 25 ± 1°C (hors incubateurs)<br />
+- <strong>Éclairage</strong> : lumière réduite (dommages UV sur gamètes et embryons)</p>
+<p><strong>Zones fonctionnelles</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Fonction</th>
+<th>Équipement principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recueil</strong></td>
+<td>Recueil spermatique</td>
+<td>Salle dédiée, étiquetage immédiat</td>
+</tr>
+<tr>
+<td><strong>Tri ovocytaire</strong></td>
+<td>Identification des ovocytes post-ponction</td>
+<td>PSM classe II, platine chauffante, binoculaire</td>
+</tr>
+<tr>
+<td><strong>Salle ICSI</strong></td>
+<td>Micro-injection spermatique</td>
+<td>Microscope inversé, micromanipulateur</td>
+</tr>
+<tr>
+<td><strong>Culture</strong></td>
+<td>Incubation embryonnaire</td>
+<td>Incubateurs tri-gas, time-lapse</td>
+</tr>
+<tr>
+<td><strong>Cryopréservation</strong></td>
+<td>Vitrification/dévitrification</td>
+<td>Cuves N₂ liquide, zone de manipulation</td>
+</tr>
+<tr>
+<td><strong>PGT</strong></td>
+<td>Biopsie trophectoderme</td>
+<td>Laser, tubes PCR, hotte dédiée</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="332-equipement-essentiel">33.2 Équipement essentiel</h2>
+<div class="vertex-media">
+<strong>📷 MFIV33-S2-001</strong><br/>
+<em>Équipement du laboratoire FIV : incubateurs benchtop, microscope inversé avec micromanipulateur, time-lapse EmbryoScope+, cuves de stockage N₂</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Incubateurs</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Caractéristiques</th>
+<th>Avantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grande chambre</strong> (K-MINC, Thermo Fisher)</td>
+<td>Volume élevé, atmosphère partagée</td>
+<td>Coût réduit, capacité</td>
+</tr>
+<tr>
+<td><strong>Benchtop</strong> (EmbryoScope+, GERI, MIRI)</td>
+<td>Petites chambres individuelles, tri-gas (5% O₂, 6% CO₂, 89% N₂)</td>
+<td>Récupération rapide pH/T° à l'ouverture, time-lapse intégré</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conditions de culture optimales</strong> :<br />
+- <strong>Température</strong> : 37,0 ± 0,1°C (stabilité critique)<br />
+- <strong>CO₂</strong> : 5-6 % (maintien pH 7,2-7,4 du milieu)<br />
+- <strong>O₂</strong> : <strong>5 %</strong> (faible O₂ — reproduit les conditions tubaires) vs 20 % (atmosphérique) → la culture à faible O₂ améliore le taux de blastulation (Cochrane Bontekoe 2012)<br />
+- <strong>Humidité</strong> : &gt; 95 % (prévention évaporation des microgouttes)</p>
+<hr />
+<h2 id="333-controle-qualite-et-kpi">33.3 Contrôle qualité et KPI</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV33-S3-001 — KPI du laboratoire FIV : taux de fécondation, clivage, blastulation, grossesse — benchmarks ESHRE/Alpha et Vienna consensus]</p>
+</blockquote>
+<p><strong>Key Performance Indicators (KPI)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Seuil de compétence</th>
+<th>Seuil de référence (benchmark)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taux de fécondation FIV classique</td>
+<td>≥ 60 %</td>
+<td>≥ 65 %</td>
+</tr>
+<tr>
+<td>Taux de fécondation ICSI</td>
+<td>≥ 65 %</td>
+<td>≥ 70 %</td>
+</tr>
+<tr>
+<td>Taux de clivage J2</td>
+<td>≥ 95 %</td>
+<td>≥ 99 %</td>
+</tr>
+<tr>
+<td>Taux de blastulation (J5-J6)</td>
+<td>≥ 35 %</td>
+<td>≥ 50 %</td>
+</tr>
+<tr>
+<td>Taux de survie post-vitrification ovocytaire</td>
+<td>≥ 85 %</td>
+<td>≥ 90 %</td>
+</tr>
+<tr>
+<td>Taux de survie post-vitrification blastocyste</td>
+<td>≥ 90 %</td>
+<td>≥ 95 %</td>
+</tr>
+<tr>
+<td>Taux de grossesse clinique/transfert (&lt; 38 ans)</td>
+<td>≥ 25 %</td>
+<td>≥ 35 %</td>
+</tr>
+<tr>
+<td>Taux d'implantation (&lt; 38 ans)</td>
+<td>≥ 20 %</td>
+<td>≥ 30 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Audit qualité</strong> :<br />
+- Audit interne annuel des KPI<br />
+- Accréditation <strong>COFRAC ISO 15189</strong> (obligatoire en France pour les laboratoires de biologie médicale)<br />
+- Rapport annuel à l'<strong>Agence de la biomédecine</strong> (obligatoire — registre national AMP)<br />
+- Certification ESHRE (optionnelle, label de qualité européen)</p>
+<hr />
+<h2 id="334-tracabilite-et-amp-vigilance">33.4 Traçabilité et AMP-vigilance</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV33-S4-001 — Systèmes de traçabilité en FIV : étiquetage code-barres, RFID, témoin électronique RI Witness — prévention des erreurs d'identification]</p>
+</blockquote>
+<p>🚨 <strong>URGENCE</strong> — Une erreur d'identification de gamètes/embryons est l'événement le plus grave en AMP (conséquence irréversible).</p>
+<p><strong>Systèmes de prévention</strong> :<br />
+- <strong>Double identification manuelle</strong> : vérification de l'identité à chaque manipulation par 2 personnes<br />
+- <strong>Témoin électronique</strong> : RI Witness, Gidget, Matcher → étiquettes RFID sur chaque boîte de culture, alerte sonore si non-correspondance<br />
+- <strong>Code-barres</strong> : étiquetage systématique des tubes de ponction, boîtes de culture, paillettes de vitrification</p>
+<p><strong>AMP-vigilance</strong> (déclaration obligatoire à l'ABM) :<br />
+- Erreurs d'identification (gamètes, embryons)<br />
+- Contamination croisée (cuves de stockage)<br />
+- Incidents matériel (panne incubateur, perte de température)<br />
+- Perte de gamètes ou d'embryons<br />
+- Effets indésirables (SHO sévère, complications infectieuses)</p>
+<hr />
+<h3 id="quiz-module-33">QUIZ MODULE 33</h3>
+<p><strong>🥉 Q1</strong> 🟢 — Quelles sont les conditions de culture optimales en laboratoire de FIV ?<br />
+<strong>R</strong> : Température 37,0 ± 0,1°C, CO₂ 5-6 %, O₂ 5 % (faible O₂ — meilleur taux de blastulation), humidité &gt; 95 %, absence de COV, pression positive. Culture à faible O₂ reproduit les conditions tubaires et améliore la qualité embryonnaire (Cochrane Bontekoe 2012).</p>
+<p><strong>🥉 Q2</strong> 🟢 — Quelles sont les normes environnementales d'un laboratoire de FIV ?<br />
+<strong>R</strong> : (1) <strong>Salle blanche</strong> ISO 5-7 (classe 100-10 000 particules/m³) ; (2) <strong>Pression positive</strong> avec filtration HEPA ; (3) <strong>Absence de COV</strong> (matériaux biocompatibles, pas de peinture fraîche, pas de parfum, filtration au charbon actif) ; (4) <strong>Température</strong> contrôlée 25 ± 1°C (hors incubateurs) ; (5) <strong>Éclairage</strong> réduit (dommages UV sur gamètes et embryons). Les COV sont un facteur sous-estimé de baisse de la qualité embryonnaire.</p>
+<p><strong>🥉 Q3</strong> 🟢 — Citez les 6 zones fonctionnelles d'un laboratoire de FIV et leur équipement principal.<br />
+<strong>R</strong> : (1) <strong>Recueil</strong> : salle dédiée au recueil spermatique, étiquetage immédiat ; (2) <strong>Tri ovocytaire</strong> : PSM classe II, platine chauffante, binoculaire ; (3) <strong>Salle ICSI</strong> : microscope inversé + micromanipulateur ; (4) <strong>Culture</strong> : incubateurs tri-gas, time-lapse ; (5) <strong>Cryopréservation</strong> : cuves N₂ liquide, zone de manipulation dédiée ; (6) <strong>PGT</strong> : laser de biopsie, tubes PCR, hotte dédiée.</p>
+<p><strong>🥈 Q4</strong> 🟢 — Quels sont les 4 KPI les plus importants pour évaluer la performance d'un laboratoire de FIV ?<br />
+<strong>R</strong> : (1) Taux de fécondation ICSI ≥ 70 % ; (2) Taux de blastulation ≥ 50 % ; (3) Taux de survie post-vitrification ≥ 90 % ; (4) Taux de grossesse clinique/transfert ≥ 35 % (&lt; 38 ans). Ces KPI sont définis par le Vienna consensus et les benchmarks ESHRE/Alpha. L'audit interne est annuel, l'accréditation COFRAC ISO 15189 est obligatoire en France.</p>
+<p><strong>🥈 Q5</strong> 🟢 — Quelle est la différence entre un incubateur grande chambre et un incubateur benchtop ? Quel est l'avantage clinique ?<br />
+<strong>R</strong> : <strong>Grande chambre</strong> (K-MINC, Thermo Fisher) : volume élevé, atmosphère partagée entre tous les embryons, coût réduit. <strong>Benchtop</strong> (EmbryoScope+, GERI, MIRI) : petites chambres individuelles, tri-gas (5 % O₂, 6 % CO₂, 89 % N₂), time-lapse intégré. Avantage clinique du benchtop : <strong>récupération rapide du pH et de la température</strong> à l'ouverture (petite chambre → moins de perturbation) + culture ininterrompue grâce au time-lapse (pas besoin de sortir les embryons pour les observer).</p>
+<p><strong>🥈 Q6</strong> 🟢 — Pourquoi la culture à 5 % d'O₂ est-elle supérieure à 20 % (atmosphérique) ?<br />
+<strong>R</strong> : La culture à <strong>5 % O₂</strong> (faible O₂) reproduit les conditions physiologiques de la trompe et de l'utérus (5-8 % O₂). La culture à 20 % (atmosphérique) expose les embryons au stress oxydatif (ROS) → dommages ADN et mitochondriaux. Cochrane Bontekoe 2012 : la culture à faible O₂ <strong>améliore le taux de blastulation</strong> et les taux de grossesse clinique. C'est la norme dans les centres de qualité.</p>
+<p><strong>🥇 Q7</strong> 🟢 — Quels événements doivent être déclarés en AMP-vigilance à l'ABM ?<br />
+<strong>R</strong> : Déclaration obligatoire : (1) <strong>Erreurs d'identification</strong> de gamètes ou d'embryons (le plus grave — conséquences irréversibles) ; (2) <strong>Contamination croisée</strong> des cuves de stockage ; (3) <strong>Incidents matériel</strong> : panne d'incubateur, perte de température, défaillance du système de stockage N₂ ; (4) <strong>Perte de gamètes ou d'embryons</strong> ; (5) <strong>Effets indésirables graves</strong> : SHO sévère, complications infectieuses post-ponction. Le rapport annuel à l'ABM est obligatoire (registre national AMP).</p>
+<p><strong>💎 Q8</strong> 🟢 — Comment prévenir les erreurs d'identification en laboratoire de FIV ?<br />
+<strong>R</strong> : Triple barrière : (1) Double identification manuelle par 2 personnes à chaque manipulation critique (ponction, ICSI, transfert, vitrification) ; (2) Témoin électronique (RI Witness — RFID) avec alarme si non-correspondance ; (3) Code-barres sur tous les contenants. Déclaration obligatoire de tout incident à l'AMP-vigilance (Agence de la biomédecine). Le témoin électronique a réduit les erreurs d'identification de &gt; 99 % dans les centres équipés.</p>
+<p><strong>💎 Q9</strong> 🟢 — Vrai ou Faux (4 affirmations sur le laboratoire FIV) :<br />
+1. L'accréditation COFRAC ISO 15189 est optionnelle pour les laboratoires d'AMP en France.<br />
+2. La culture à 20 % d'O₂ est acceptable si l'incubateur est de bonne qualité.<br />
+3. Le parfum du personnel de laboratoire peut affecter la qualité embryonnaire.<br />
+4. Le taux de blastulation de référence (benchmark) est ≥ 50 %.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — l'accréditation COFRAC ISO 15189 est <strong>obligatoire</strong> pour tous les laboratoires de biologie médicale en France (donc les laboratoires d'AMP). (2) <strong>FAUX</strong> — la qualité de l'incubateur ne compense pas la concentration en O₂. La culture à 20 % expose les embryons au stress oxydatif → la culture à 5 % O₂ est supérieure (Cochrane Bontekoe 2012). (3) <strong>VRAI</strong> — les COV (dont les parfums) sont toxiques pour les gamètes et embryons. C'est pourquoi les laboratoires de FIV exigent l'absence de COV, y compris les parfums et déodorants du personnel. (4) <strong>VRAI</strong> — le Vienna consensus définit un seuil de compétence à ≥ 35 % et un benchmark (référence) à ≥ 50 % pour le taux de blastulation J5-J6.</p>
+<hr />
+<h1 id="module-34">MODULE 34 — Andrologie Biologique et Techniques de Sélection Spermatique</h1>
+<p>🟢 <strong>BIOLOGISTE</strong></p>
+<h2 id="341-analyse-spermatique-approfondie">34.1 Analyse spermatique approfondie</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV34-S1-001 — Au-delà du spermogramme : CASA, morphologie assistée, fragmentation ADN — techniques et interprétation avancées]</p>
+</blockquote>
+<p><strong>CASA (Computer Assisted Sperm Analysis)</strong> :<br />
+- Analyse cinétique automatisée : VCL (vélocité curvilinéaire), VSL (vélocité linéaire), VAP (vélocité moyenne), ALH (amplitude de déplacement latéral de la tête), BCF (fréquence de battement)<br />
+- Classification automatique : mobiles progressifs rapides / lents / non progressifs / immobiles<br />
+- Avantage : objectivité, reproductibilité<br />
+- Limite : calibration inter-appareils, définition des seuils</p>
+<p><strong>Morphologie assistée (IVOS II, SCA)</strong> :<br />
+- Analyse morphométrique automatisée de la tête spermatique (longueur, largeur, surface, périmètre, vacuoles)<br />
+- Corrélation avec la classification de Kruger strict (formes normales ≥ 4 %)<br />
+- IMSI (Intracytoplasmic Morphologically Selected Sperm Injection) : sélection à <strong>× 6 300</strong> — identification des vacuoles nucléaires → utilité non démontrée en non-sélectionné (IMSI trial — Teixeira, pas de bénéfice)</p>
+<hr />
+<h2 id="342-fragmentation-de-ladn-spermatique-approfondissement">34.2 Fragmentation de l'ADN spermatique — Approfondissement</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV34-S2-001 — Tests de fragmentation ADN spermatique : SCSA (DFI), TUNEL, SCD (Halo) — techniques, seuils, arbre décisionnel thérapeutique]</p>
+</blockquote>
+<p><strong>Mécanismes de la fragmentation</strong> :<br />
+1. <strong>Stress oxydatif</strong> (ROS — espèces réactives de l'oxygène) → cassures simple et double brin<br />
+2. <strong>Apoptose défectueuse</strong> (spermatogenèse anormale → spermatozoïdes apoptotiques non éliminés)<br />
+3. <strong>Compaction déficiente</strong> de la chromatine (protamination incomplète → ADN vulnérable)<br />
+4. <strong>Transit épididymaire</strong> prolongé (abstinence longue → ↑ DFI)</p>
+<p><strong>Stratégies thérapeutiques si DFI élevé</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Stratégie</th>
+<th>Mécanisme</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antioxydants oraux (Vit C 1g + E 400 UI + Zinc + Sélénium) 3 mois</td>
+<td>↓ ROS</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>Réduction abstinence (éjaculation J-1 avant recueil)</td>
+<td>↓ temps transit épididymaire</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>MACS (Magnetic Activated Cell Sorting)</td>
+<td>Élimination spermatozoïdes apoptotiques (annexine V)</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>Microfluidique (ZyMōt, Fertile Plus)</td>
+<td>Sélection sans centrifugation → ↓ ROS</td>
+<td>Émergent</td>
+</tr>
+<tr>
+<td><strong>TESE</strong> (spermatozoïdes testiculaires)</td>
+<td>DFI testiculaire &lt; DFI éjaculé</td>
+<td>Élevé (Esteves 2017)</td>
+</tr>
+<tr>
+<td>Cure de varicocèle</td>
+<td>↓ stress thermique et oxydatif</td>
+<td>Modéré</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="343-techniques-avancees-de-selection-spermatique">34.3 Techniques avancées de sélection spermatique</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV34-S3-001 — Techniques de sélection spermatique avancées : MACS, microfluidique, PICSI, Zeta potential — comparaison et indications]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Principe</th>
+<th>Avantage</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gradient de densité</strong></td>
+<td>Centrifugation sur gradient (45/90 %)</td>
+<td>Standard, bien validé</td>
+<td>Routine</td>
+</tr>
+<tr>
+<td><strong>Swim-up</strong></td>
+<td>Migration ascendante des mobiles</td>
+<td>Simple, peu de matériel</td>
+<td>Normospermie</td>
+</tr>
+<tr>
+<td><strong>MACS</strong></td>
+<td>Élimination des apoptotiques (annexine V magnétique)</td>
+<td>↓ DFI dans la sélection finale</td>
+<td>DFI élevé, RIF</td>
+</tr>
+<tr>
+<td><strong>Microfluidique</strong></td>
+<td>Sélection passive sans centrifugation (canaux microfluidiques)</td>
+<td>Pas de ROS par centrifugation, sélection douce</td>
+<td>DFI élevé, OATS</td>
+</tr>
+<tr>
+<td><strong>PICSI</strong></td>
+<td>Sélection par liaison acide hyaluronique</td>
+<td>Spermatozoïdes matures (récepteur HA)</td>
+<td>FCS à répétition</td>
+</tr>
+<tr>
+<td><strong>Zeta potential</strong></td>
+<td>Tri par charge de surface membranaire</td>
+<td>Spermatozoïdes intacts (charge -16 à -20 mV)</td>
+<td>Recherche</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="344-spermatozoides-testiculaires">34.4 Spermatozoïdes testiculaires</h2>
+<p>🟢 <strong>BIOLOGISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV34-S4-001 — Traitement des biopsies testiculaires (TESE/micro-TESE) : dissection mécanique, identification des spermatozoïdes, cryopréservation — vidéo laboratoire]</p>
+</blockquote>
+<p><strong>Traitement de la biopsie</strong> :<br />
+1. Réception du fragment testiculaire dans du milieu tamponné (37°C)<br />
+2. <strong>Dissection mécanique</strong> fine (aiguilles + lames sous binoculaire) → libération des spermatozoïdes<br />
+3. ± <strong>Dissection enzymatique</strong> (collagénase 0,5 mg/mL, 30-60 min) si dissection mécanique insuffisante<br />
+4. <strong>Identification</strong> au microscope inversé (×200-400) : spermatozoïdes mobiles vs immobiles<br />
+5. Si immobiles : <strong>test de vitalité</strong> → test hypo-osmotique (gonflement de la queue = vivant) ou pentoxifylline (stimulation mobilité résiduelle) ou test au laser (mouvement de la queue après impulsion laser = vivant)<br />
+6. <strong>Cryopréservation</strong> si excédentaires (paillettes — congélation lente ou vitrification)</p>
+<p><strong>Résultats</strong> :<br />
+- TESE classique : taux de retrieval 50 % (azoospermie non obstructive)<br />
+- <strong>Micro-TESE</strong> (Schlegel 1999) : taux de retrieval 40-60 % (guidage microscopique → identification des tubules dilatés, contenant des spermatozoïdes)<br />
+- MESA (azoospermie obstructive) : taux de retrieval &gt; 95 %</p>
+<hr />
+<h3 id="quiz-module-34">QUIZ MODULE 34</h3>
+<p><strong>🥉 Q1</strong> 🟢 — Quelle est la différence entre le gradient de densité et la microfluidique pour la préparation spermatique ?<br />
+<strong>R</strong> : Le gradient de densité utilise la centrifugation (gravité → séparation par densité des spermatozoïdes mobiles) — standard mais génère du stress oxydatif (ROS par centrifugation). La microfluidique utilise des canaux de dimensions microscopiques où seuls les spermatozoïdes à mobilité progressive traversent — pas de centrifugation = pas de ROS, sélection plus douce. La microfluidique est émergente et recommandée si DFI élevé.</p>
+<p><strong>🥉 Q2</strong> 🟢 — Quels sont les 4 mécanismes de la fragmentation de l'ADN spermatique ?<br />
+<strong>R</strong> : (1) <strong>Stress oxydatif</strong> (ROS) → cassures simple et double brin — mécanisme le plus fréquent ; (2) <strong>Apoptose défectueuse</strong> (spermatogenèse anormale → spermatozoïdes apoptotiques non éliminés) ; (3) <strong>Compaction déficiente</strong> de la chromatine (protamination incomplète → ADN vulnérable aux lésions) ; (4) <strong>Transit épididymaire prolongé</strong> (abstinence longue → ↑ DFI). La compréhension du mécanisme oriente le traitement.</p>
+<p><strong>🥉 Q3</strong> 🟢 — Citez les 3 tests de fragmentation ADN spermatique et leurs seuils.<br />
+<strong>R</strong> : (1) <strong>SCSA</strong> (Sperm Chromatin Structure Assay) — cytométrie en flux → DFI (DNA Fragmentation Index). Seuil : DFI &gt; 30 % = élevé ; (2) <strong>TUNEL</strong> (Terminal deoxynucleotidyl transferase dUTP Nick End Labeling) — fluorescence → seuil &gt; 36 % ; (3) <strong>SCD / test Halo</strong> (Sperm Chromatin Dispersion) — microscopie → absence de halo de dispersion = ADN fragmenté. Le SCSA et le TUNEL sont les plus validés cliniquement.</p>
+<p><strong>🥈 Q4</strong> 🟢 — Comparez les 6 techniques de sélection spermatique et leurs indications.<br />
+<strong>R</strong> : (1) <strong>Gradient de densité</strong> : standard, bien validé → routine ; (2) <strong>Swim-up</strong> : simple, migration ascendante → normospermie ; (3) <strong>MACS</strong> : élimination des apoptotiques (annexine V magnétique), ↓ DFI → DFI élevé, RIF ; (4) <strong>Microfluidique</strong> (ZyMōt) : sélection sans centrifugation → DFI élevé, OATS ; (5) <strong>PICSI</strong> : liaison acide hyaluronique, sélection de spermatozoïdes matures → FCS à répétition ; (6) <strong>Zeta potential</strong> : tri par charge de surface → recherche uniquement.</p>
+<p><strong>🥈 Q5</strong> 🟢 — Un patient présente un DFI (TUNEL) à 45 % avec spermogramme normal et 2 FCS après ICSI. Quelle est votre stratégie biologique ?<br />
+<strong>R</strong> : DFI très élevé (&gt; 36 %) = facteur probable des FCS. Stratégie : (1) Antioxydants oraux 3 mois ; (2) Réduction de l'abstinence à 24h ; (3) Sélection par MACS ou microfluidique ; (4) Si persistance DFI élevé malgré traitement → <strong>TESE</strong> (DFI testiculaire &lt; DFI éjaculé — Esteves 2017) + ICSI avec spermatozoïdes testiculaires ; (5) Cure de varicocèle si varicocèle clinique grade II-III (↓ DFI de 30-40 % à 6 mois post-op).</p>
+<p><strong>🥈 Q6</strong> 🟢 — Quelle est la différence entre TESE classique, micro-TESE et MESA ? Quelles sont les indications respectives ?<br />
+<strong>R</strong> : <strong>TESE classique</strong> : biopsie testiculaire à l'aveugle, taux de retrieval 50 % → azoospermie non obstructive (1ère intention). <strong>Micro-TESE</strong> (Schlegel 1999) : dissection sous microscope opératoire, identification des tubules dilatés contenant des spermatozoïdes, taux de retrieval 40-60 % → azoospermie non obstructive (après échec TESE ou d'emblée si Klinefelter, microdélétion AZFc). <strong>MESA</strong> : aspiration microchirurgicale épididymaire, taux &gt; 95 % → azoospermie <strong>obstructive</strong> (CBAVD, post-vasectomie).</p>
+<p><strong>🥇 Q7</strong> 🟢 — Qu'est-ce que l'IMSI et pourquoi n'est-il plus recommandé en routine ?<br />
+<strong>R</strong> : L'IMSI (Intracytoplasmic Morphologically Selected Sperm Injection) est une ICSI avec sélection spermatique à <strong>× 6 300</strong> (vs × 200-400 en ICSI standard) permettant l'identification des vacuoles nucléaires. L'IMSI trial (Teixeira) n'a montré <strong>aucun bénéfice</strong> sur le taux de naissance vivante par rapport à l'ICSI standard. Raisons : (1) procédure longue et coûteuse ; (2) les vacuoles ne corrèlent pas de manière fiable avec le DFI ou l'euploïdie ; (3) la sélection morphologique seule ne prédit pas la compétence génétique du spermatozoïde.</p>
+<p><strong>💎 Q8</strong> 🟢 — Micro-TESE chez un patient Klinefelter (47,XXY) : le biologiste identifie 3 spermatozoïdes immobiles au microscope après dissection. Comment vérifier leur viabilité et les utiliser en ICSI ?<br />
+<strong>R</strong> : Tests de viabilité : (1) <strong>Test hypo-osmotique</strong> (HOS) : placement en milieu hypotonique → si la queue gonfle/s'enroule = membrane intacte = vivant ; (2) <strong>Pentoxifylline</strong> (3,6 mM) : stimulation de la mobilité résiduelle via l'AMPc — si mouvement de la queue même minime = vivant ; (3) <strong>Test au laser</strong> (OCTAX laser) : impulsion laser à la pointe de la queue → si mouvement d'enroulement = vivant (spécifique mais nécessite équipement). Si viable → ICSI immédiate (pas de centrifugation supplémentaire). Si excédentaire → cryopréservation en microgoutte (technique micro-TESE freeze). Conseil génétique : PGT-A recommandé (risque d'aneuploïdies ↑ chez Klinefelter mais &gt; 95 % des embryons ont un caryotype normal).</p>
+<p><strong>💎 Q9</strong> 🟢 — Vrai ou Faux (4 affirmations sur l'andrologie biologique) :<br />
+1. Un spermogramme normal exclut une fragmentation ADN spermatique élevée.<br />
+2. La réduction de l'abstinence à 24h diminue le DFI.<br />
+3. Les spermatozoïdes testiculaires ont un DFI plus bas que les spermatozoïdes éjaculés.<br />
+4. Le PICSI sélectionne les spermatozoïdes par leur capacité de liaison à l'acide hyaluronique.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — un DFI élevé peut coexister avec un spermogramme strictement normal (concentration, mobilité, morphologie normales). C'est pourquoi le DFI est un examen complémentaire indépendant, indiqué en cas de RIF ou de FCS inexpliquées. (2) <strong>VRAI</strong> — l'abstinence prolongée augmente le temps de transit épididymaire → ↑ stress oxydatif → ↑ DFI. La réduction à 24h est une stratégie simple et efficace. (3) <strong>VRAI</strong> — les spermatozoïdes testiculaires n'ont pas subi le transit épididymaire (source principale de ROS) → DFI testiculaire &lt; DFI éjaculé (Esteves 2017). C'est la justification de la TESE en cas de DFI élevé réfractaire. (4) <strong>VRAI</strong> — le PICSI utilise des boîtes avec une couche d'acide hyaluronique ; seuls les spermatozoïdes matures (exprimant le récepteur HA) s'y lient → sélection fonctionnelle.</p>
+<hr />
+<h1 id="module-35">MODULE 35 — Évaluation Embryonnaire : de la Morphologie à l'IA</h1>
+<p>🟢 <strong>BIOLOGISTE</strong></p>
+<h2 id="351-evaluation-morphologique-classique">35.1 Évaluation morphologique classique</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV35-S1-001 — Classification embryonnaire jour par jour : J1 (2PN), J2 (4 cellules), J3 (8 cellules), J5 (blastocyste Gardner) — atlas photographique avec grades]</p>
+</blockquote>
+<h3 id="3511-j1-zygote-16-18h-post-inseminationicsi">35.1.1 J1 — Zygote (16-18h post-insémination/ICSI)</h3>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Normal</th>
+<th>Anormal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pronuclei</td>
+<td><strong>2 PN</strong> centraux, symétriques</td>
+<td>1 PN (parthénogenèse ?), 3 PN (dispermie/non-extrusion GP2)</td>
+</tr>
+<tr>
+<td>Corps polaires</td>
+<td>2 (1er et 2ème)</td>
+<td>Fragmentés, absents</td>
+</tr>
+<tr>
+<td>Halos pronucléaires</td>
+<td>NPB (nucleolar precursor bodies) alignés au centre</td>
+<td>NPB dispersés (association pronostique discutée)</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE</strong> : Un zygote à **3 PN** doit être éliminé (triploïdie → non viable, risque de môle partielle). Un zygote à **1 PN** peut être un artefact d'observation (PN asynchrones) → re-vérifier à H+2.</div>
+
+<h3 id="3512-j2-j3-embryon-clive">35.1.2 J2-J3 — Embryon clivé</h3>
+<table>
+<thead>
+<tr>
+<th>Jour</th>
+<th>Stade attendu</th>
+<th>Critères de qualité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>J2</strong></td>
+<td>4 cellules</td>
+<td>Régularité de taille, fragmentation &lt; 10 %, pas de multinucléation</td>
+</tr>
+<tr>
+<td><strong>J3</strong></td>
+<td>8 cellules</td>
+<td>Régularité, fragmentation &lt; 10 %, début de compaction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Classification de la fragmentation</strong> :<br />
+- <strong>Grade I</strong> : &lt; 10 % → excellent pronostic<br />
+- <strong>Grade II</strong> : 10-25 % → bon pronostic<br />
+- <strong>Grade III</strong> : 25-50 % → pronostic réduit<br />
+- <strong>Grade IV</strong> : &gt; 50 % → très faible implantation (non transféré)</p>
+<h3 id="3513-j5-j6-blastocyste-classification-de-gardner">35.1.3 J5-J6 — Blastocyste (classification de Gardner)</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV35-S1-002 — Classification de Gardner des blastocystes : expansion 1-6, ICM A/B/C, TE A/B/C — atlas photographique de chaque grade]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Grade A</th>
+<th>Grade B</th>
+<th>Grade C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Expansion</strong> (1-6)</td>
+<td>6 = hatching/hatched</td>
+<td>4 = expansé</td>
+<td>1-2 = cavité naissante</td>
+</tr>
+<tr>
+<td><strong>ICM</strong> (masse cellulaire interne)</td>
+<td>Compact, bien défini, nombreuses cellules</td>
+<td>Moins défini, quelques cellules</td>
+<td>Très peu de cellules ou absent</td>
+</tr>
+<tr>
+<td><strong>TE</strong> (trophectoderme)</td>
+<td>Cohésif, nombreuses cellules, couche continue</td>
+<td>Moins de cellules, quelques irrégularités</td>
+<td>Très peu de cellules, discontinu</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemples de notation</strong> :<br />
+- <strong>4AA</strong> : blastocyste expansé, ICM excellent, TE excellent → pronostic optimal<br />
+- <strong>3BB</strong> : blastocyste en expansion, ICM et TE corrects → bon pronostic<br />
+- <strong>2BC</strong> : blastocyste précoce, ICM correct, TE pauvre → pronostic modéré</p>
+<p><strong>Corrélation morphologie-euploïdie</strong> (Capalbo, <em>Hum Reprod</em>, 2014) :<br />
+- Blastocyste de bonne morphologie (≥ 3BB) : 60 % euploïde chez &lt; 35 ans<br />
+- Blastocyste de mauvaise morphologie (&lt; 3CC) : 40 % euploïde → la morphologie n'est PAS un prédicteur fiable de l'euploïdie</p>
+<hr />
+<h2 id="352-morphocinetique-et-time-lapse">35.2 Morphocinétique et time-lapse</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV35-S2-001 — Time-lapse embryonnaire (EmbryoScope+) : paramètres morphocinétiques clés (t2, t5, tB, cc2, s2), algorithmes de sélection — KIDScore, iDAScore]</p>
+</blockquote>
+<p><strong>Principe</strong> : le time-lapse capture une image de chaque embryon toutes les <strong>10-20 minutes</strong> sur 11 plans focaux → film complet du développement embryonnaire → analyse des timings de division cellulaire</p>
+<p><strong>Paramètres morphocinétiques clés</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Définition</th>
+<th>Valeur optimale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>t2</strong></td>
+<td>Temps de la 1ère division (2 cellules)</td>
+<td>25-27h post-ICSI</td>
+</tr>
+<tr>
+<td><strong>t3</strong></td>
+<td>Temps 3 cellules</td>
+<td>36-38h</td>
+</tr>
+<tr>
+<td><strong>t5</strong></td>
+<td>Temps 5 cellules</td>
+<td>48-52h</td>
+</tr>
+<tr>
+<td><strong>tSB</strong></td>
+<td>Start of blastulation</td>
+<td>96-106h</td>
+</tr>
+<tr>
+<td><strong>tB</strong></td>
+<td>Blastocyste complet</td>
+<td>106-114h</td>
+</tr>
+<tr>
+<td><strong>cc2</strong></td>
+<td>t3 - t2 (durée du 2ème cycle cellulaire)</td>
+<td>&lt; 12h</td>
+</tr>
+<tr>
+<td><strong>s2</strong></td>
+<td>t4 - t3 (synchronicité de la 2ème division)</td>
+<td>&lt; 1h (idéal : divisions synchrones)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Algorithmes de sélection</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Algorithme</th>
+<th>Développeur</th>
+<th>Type</th>
+<th>Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KIDScore D3 / D5</strong></td>
+<td>Vitrolife</td>
+<td>Score statistique basé sur les timings</td>
+<td>AUC 0,65-0,70</td>
+</tr>
+<tr>
+<td><strong>iDAScore</strong></td>
+<td>Vitrolife</td>
+<td><strong>Deep learning</strong> sur images time-lapse</td>
+<td>AUC 0,70-0,75</td>
+</tr>
+<tr>
+<td><strong>ERICA</strong></td>
+<td>ESHRE/Alpha</td>
+<td>Consensus d'experts</td>
+<td>Score catégoriel</td>
+</tr>
+<tr>
+<td><strong>Life Whisperer</strong></td>
+<td>LifeWhisperer AI</td>
+<td>CNN sur images fixes J5</td>
+<td>AUC 0,70</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Limites du time-lapse</strong> :<br />
+- Pas de bénéfice démontré en <strong>RCT</strong> sur le taux de naissance vivante (Armstrong et al., Cochrane 2019)<br />
+- Coût élevé (équipement + consommables)<br />
+- Avantage confirmé : <strong>culture ininterrompue</strong> (pas d'ouverture de l'incubateur) + documentation complète du développement</p>
+<hr />
+<h2 id="353-intelligence-artificielle-pour-la-selection-embryonnaire">35.3 Intelligence artificielle pour la sélection embryonnaire</h2>
+<blockquote>
+<p>[MEDIA: 📊 MFIV35-S3-001 — IA et sélection embryonnaire : CNN sur time-lapse, prédiction implantation, prédiction euploïdie — algorithmes commerciaux et niveau de preuve]</p>
+</blockquote>
+<p><strong>Algorithmes commerciaux</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Outil</th>
+<th>Développeur</th>
+<th>Input</th>
+<th>Output</th>
+<th>Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>iDAScore</strong></td>
+<td>Vitrolife</td>
+<td>Images time-lapse + timings</td>
+<td>Score 1-9,9 (potentiel implantation)</td>
+<td>Tran, <em>Hum Reprod</em>, 2019</td>
+</tr>
+<tr>
+<td><strong>Life Whisperer</strong></td>
+<td>LifeWhisperer</td>
+<td>Image fixe J5 blastocyste</td>
+<td>Probabilité implantation</td>
+<td>Chavez-Badiola, <em>Hum Reprod</em>, 2020</td>
+</tr>
+<tr>
+<td><strong>CHLOE (Fairtility)</strong></td>
+<td>Fairtility/Alife</td>
+<td>Time-lapse complet</td>
+<td>Prédiction euploïdie + implantation</td>
+<td>Études retrospectives</td>
+</tr>
+<tr>
+<td><strong>AIVF EMA</strong></td>
+<td>AIVF</td>
+<td>Images + données cliniques</td>
+<td>Automated Morphological Assessment</td>
+<td>CE-IVDR en cours</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Performances</strong> :<br />
+- AUC 0,70-0,80 pour prédiction d'implantation (supérieur aux embryologistes juniors, comparable aux seniors)<br />
+- IA ne remplace PAS l'embryologiste mais <strong>assiste</strong> la décision (outil d'aide)</p>
+<p><strong>Enjeux</strong> :<br />
+1. <strong>Biais de dataset</strong> : entraînement sur populations occidentales → transférabilité ?<br />
+2. <strong>Explicabilité</strong> : "black box" → le clinicien ne sait pas pourquoi l'IA choisit cet embryon<br />
+3. <strong>Réglementation</strong> : CE-IVDR / FDA → dispositif médical IA → processus long<br />
+4. <strong>Acceptabilité</strong> : patients et praticiens → confiance dans un algorithme pour choisir leur embryon ?</p>
+<hr />
+<h2 id="354-tests-non-invasifs-et-metabolomiques">35.4 Tests non-invasifs et métabolomiques</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MFIV35-S4-001 — niPGT et métabolomique : ADN cellulaire libre dans le milieu de culture, profil métabolique du milieu — approches non-invasives émergentes]</p>
+</blockquote>
+<p><strong>niPGT (non-invasive PGT)</strong> :<br />
+- Principe : analyse de l'ADN cellulaire libre (cfDNA) libéré par l'embryon dans le milieu de culture (spent culture media)<br />
+- Technique : NGS sur le milieu de culture à J5-J6<br />
+- Avantage : pas de biopsie trophectoderme (pas de dommage embryonnaire)<br />
+- Résultats : concordance 70-85 % avec PGT-A classique (variable selon études)<br />
+- Limite : contamination ADN maternel (cellules cumulus résiduelles), cfDNA en faible quantité<br />
+- Statut : <strong>en validation</strong> — pas encore recommandé en routine clinique (Rubio, <em>Fertil Steril</em>, 2020)</p>
+<p><strong>Métabolomique du milieu de culture</strong> :<br />
+- Analyse du profil de consommation/sécrétion de l'embryon (glucose, pyruvate, acides aminés, lipides)<br />
+- Corrélation avec la viabilité embryonnaire (embryons viables : consommation de pyruvate ↑, sécrétion de lactate ↓)<br />
+- Stade : recherche, pas d'application clinique standardisée</p>
+<hr />
+<h3 id="quiz-module-35">QUIZ MODULE 35</h3>
+<p><strong>🥉 Q1</strong> 🟢 — Décrivez la classification de Gardner pour les blastocystes et donnez un exemple de notation avec pronostic.<br />
+<strong>R</strong> : 3 critères : (1) Expansion (1-6) ; (2) ICM — masse cellulaire interne (A = compact bien défini, B = moins défini, C = peu de cellules) ; (3) TE — trophectoderme (A = cohésif continu, B = irrégulier, C = discontinu). Exemple : <strong>4AA</strong> = blastocyste expansé + ICM excellent + TE excellent → pronostic d'implantation optimal (40-50 % par transfert). <strong>3BC</strong> = blastocyste en expansion + ICM correct + TE pauvre → pronostic modéré (15-20 %).</p>
+<p><strong>🥉 Q2</strong> 🟢 — Que doit observer l'embryologiste à J1 (16-18h post-ICSI) et pourquoi un zygote à 3 PN doit-il être éliminé ?<br />
+<strong>R</strong> : Observation J1 : présence de <strong>2 pronuclei (2 PN)</strong> centraux et symétriques = fécondation normale. Corps polaires : 2 (1er + 2ème). NPB (nucleolar precursor bodies) : alignés au centre (pronostique discuté). <strong>Zygote à 3 PN</strong> : triploïdie (dispermie ou non-extrusion du 2ème globule polaire) → non viable, risque de môle partielle → <strong>élimination obligatoire</strong>. Piège : un zygote à 1 PN peut être un artefact d'observation (PN asynchrones) → re-vérifier à H+2 avant d'éliminer.</p>
+<p><strong>🥉 Q3</strong> 🟢 — Quels sont les 4 grades de fragmentation embryonnaire et leur signification pronostique ?<br />
+<strong>R</strong> : <strong>Grade I</strong> : &lt; 10 % de fragmentation → excellent pronostic ; <strong>Grade II</strong> : 10-25 % → bon pronostic ; <strong>Grade III</strong> : 25-50 % → pronostic réduit ; <strong>Grade IV</strong> : &gt; 50 % → très faible implantation, non transféré. La fragmentation est évaluée à J2 (4 cellules attendues) et J3 (8 cellules). En plus de la fragmentation, vérifier : régularité de taille des blastomères et absence de multinucléation.</p>
+<p><strong>🥈 Q4</strong> 🟢 — Quels sont les paramètres morphocinétiques prédictifs de la qualité embryonnaire en time-lapse ?<br />
+<strong>R</strong> : Paramètres les plus discriminants : (1) <strong>cc2</strong> (t3-t2 = durée du 2ème cycle) &lt; 12h → bon pronostic ; (2) <strong>s2</strong> (t4-t3 = synchronicité de la division) &lt; 1h → bon pronostic (divisions synchrones) ; (3) <strong>t5</strong> (temps 5 cellules) entre 48-52h → développement normal ; (4) <strong>tB</strong> (blastocyste) entre 106-114h → timing optimal. Un embryon avec des divisions très retardées ou très asynchrones a un pronostic d'implantation réduit.</p>
+<p><strong>🥈 Q5</strong> 🟢 — La morphologie seule est-elle un bon prédicteur de l'euploïdie embryonnaire ?<br />
+<strong>R</strong> : <strong>Non</strong> — la corrélation morphologie-euploïdie est imparfaite. Capalbo (<em>Hum Reprod</em>, 2014) : un blastocyste de bonne morphologie (≥ 3BB) est euploïde dans seulement <strong>60 % des cas</strong> chez &lt; 35 ans. Un blastocyste de mauvaise morphologie (&lt; 3CC) est encore euploïde dans <strong>40 % des cas</strong>. Conclusion : la morphologie n'est PAS un prédicteur fiable de l'euploïdie → c'est pourquoi le PGT-A existe (analyse génétique directe). L'IA (iDAScore) améliore la prédiction mais ne remplace pas le PGT-A.</p>
+<p><strong>🥈 Q6</strong> 🟢 — Quelles sont les limites du time-lapse en embryologie et pourquoi est-il quand même utilisé ?<br />
+<strong>R</strong> : <strong>Limites</strong> : (1) Pas de bénéfice démontré en <strong>RCT</strong> sur le taux de naissance vivante (Armstrong et al., Cochrane 2019) ; (2) Coût élevé (équipement + consommables) ; (3) Les algorithmes de sélection (KIDScore, iDAScore) ont une AUC de 0,65-0,75 — meilleure que l'évaluation subjective mais pas parfaite. <strong>Pourquoi l'utiliser quand même</strong> : (1) <strong>Culture ininterrompue</strong> (pas d'ouverture de l'incubateur → stabilité pH/T°) = avantage confirmé ; (2) Documentation complète du développement embryonnaire (médico-légale et pédagogique) ; (3) Détection d'événements invisibles à l'évaluation ponctuelle (division directe, reverse cleavage, multinucléation transitoire).</p>
+<p><strong>🥇 Q7</strong> 🟢 — Qu'est-ce que le niPGT et quelles sont ses limites actuelles ?<br />
+<strong>R</strong> : Le <strong>niPGT</strong> (non-invasive PGT) analyse l'ADN cellulaire libre (cfDNA) libéré par l'embryon dans le milieu de culture (spent culture media) par NGS à J5-J6. Avantage : pas de biopsie trophectoderme → pas de dommage embryonnaire. <strong>Limites</strong> : (1) Concordance avec le PGT-A classique variable : 70-85 % seulement ; (2) Contamination ADN maternel (cellules cumulus résiduelles) → faux positifs ; (3) cfDNA en très faible quantité → amplification difficile ; (4) Statut : <strong>en validation</strong> — pas recommandé en routine (Rubio, <em>Fertil Steril</em>, 2020). Le niPGT est prometteur mais ne remplace pas encore la biopsie trophectoderme.</p>
+<p><strong>🥇 Q8</strong> 🟢 — Citez les 4 enjeux éthiques majeurs de l'IA en sélection embryonnaire.<br />
+<strong>R</strong> : (1) <strong>Biais de dataset</strong> : les algorithmes sont entraînés sur des populations occidentales → transférabilité discutable vers d'autres populations (ethnies, protocoles différents) ; (2) <strong>Explicabilité</strong> : les CNN sont des « black boxes » → le clinicien ne sait pas pourquoi l'IA choisit cet embryon → problème de responsabilité médicale ; (3) <strong>Réglementation</strong> : l'IA en sélection embryonnaire = dispositif médical → processus CE-IVDR / FDA long et coûteux ; (4) <strong>Acceptabilité</strong> : confiance des patients et praticiens dans un algorithme pour choisir leur embryon → enjeu de communication et de consentement éclairé.</p>
+<p><strong>💎 Q9</strong> 🟢 — Un embryologiste hésite entre 2 blastocystes J5 pour un SET chez une patiente de 36 ans : embryon A = 4AA, iDAScore 8,2 ; embryon B = 3BB, iDAScore 8,7. Lequel transférer et comment justifier ?<br />
+<strong>R</strong> : Situation de discordance morphologie-IA. L'embryon B a un score IA supérieur (8,7 vs 8,2) malgré une morphologie inférieure (3BB vs 4AA). Décision : <strong>transférer l'embryon B</strong> (iDAScore 8,7). Justification : (1) l'IA intègre des paramètres morphocinétiques invisibles à l'œil (timings de division, patterns de compaction, synchronicité) en plus de la morphologie finale ; (2) la morphologie seule (Gardner) a une valeur prédictive positive limitée (AUC 0,60 vs 0,70-0,75 pour l'IA) ; (3) l'iDAScore a été validé sur &gt; 100 000 embryons (Tran 2019) avec une performance supérieure à l'évaluation morphologique standard. Vitrifier l'embryon A (4AA) pour un TEC ultérieur si nécessaire. <strong>Remarque</strong> : dans un centre sans IA, l'embryon 4AA serait logiquement choisi → l'IA apporte une information additionnelle non visible à l'œil.</p>
+<p><strong>💎 Q10</strong> 🟢 — Vrai ou Faux (4 affirmations sur l'évaluation embryonnaire) :<br />
+1. Un zygote à 1 PN doit toujours être éliminé.<br />
+2. Le time-lapse améliore le taux de naissance vivante par rapport à l'évaluation morphologique standard.<br />
+3. Le niPGT est recommandé en routine comme alternative au PGT-A classique.<br />
+4. L'IA en sélection embryonnaire assiste l'embryologiste mais ne le remplace pas.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — un zygote à 1 PN peut être un artefact d'observation (pronuclei asynchrones). Il faut re-vérifier à H+2. Si 2 PN apparaissent → fécondation normale. Seul le 3 PN est éliminé systématiquement. (2) <strong>FAUX</strong> — aucun RCT n'a démontré de bénéfice du time-lapse sur le taux de naissance vivante (Armstrong, Cochrane 2019). L'avantage est la culture ininterrompue et la documentation complète. (3) <strong>FAUX</strong> — le niPGT est en validation (concordance 70-85 % avec PGT-A, contamination ADN maternel possible). Pas de recommandation en routine (Rubio 2020). (4) <strong>VRAI</strong> — l'IA (iDAScore, Life Whisperer, CHLOE) atteint une AUC de 0,70-0,80 mais reste un outil d'aide à la décision. L'embryologiste garde la responsabilité finale du choix embryonnaire, en intégrant le contexte clinique que l'IA ne connaît pas.</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 10 — Biologie de la reproduction — Mars 2026</em></p>
+</div>

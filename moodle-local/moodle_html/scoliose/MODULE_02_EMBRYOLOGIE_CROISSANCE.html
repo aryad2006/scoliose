@@ -1,0 +1,886 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-2-embryologie-et-croissance-du-rachis">MODULE 2 — EMBRYOLOGIE ET CROISSANCE DU RACHIS</h1>
+<p><strong>Partie I — Fondamentaux et Sciences de Base</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Module 1 (Anatomie du rachis)</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Sophie revient en consultation 6 semaines après la première visite. Sa mère pose une question que de nombreuses familles soulèvent : <em>« Est-ce qu'elle était déjà comme ça à la naissance ? Est-ce qu'on aurait pu le détecter avant ? »</em> Le chirurgien explique que pour comprendre la scoliose idiopathique, il faut d'abord comprendre comment le rachis se forme, grandit, et pourquoi cette croissance peut être asymétrique.</p>
+<p>→ <em>Ce module vous donne les bases embryologiques et de croissance indispensables pour comprendre l'histoire naturelle de la scoliose et les enjeux du traitement.</em></p>
+</blockquote>
+<p>🧑‍🤝‍🧑 <strong>Patiente fil rouge</strong> : Sophie, 13 ans — nous allons analyser son potentiel de croissance résiduel et évaluer le risque de progression de sa scoliose.</p>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Somite • Sclérotome • Dermatome • Myotome • Chondrification • Ossification enchondrale • Neurulation • Hémivertèbre • Barre osseuse • Vertèbre papillon • Ring apophysis (apophyse en anneau) • Indice de Risser • Triradiate cartilage • Stade de Tanner • Classification de Sanders • Courbe de Diméglio • Pic de vitesse de croissance (PVC) • Phénomène de Roux</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> les étapes du développement embryologique du rachis, de la notochorde à l'ossification vertébrale (Bloom : Connaissance)</li>
+<li><strong>Expliquer</strong> les mécanismes de chondrification et d'ossification enchondrale et leurs perturbations responsables des anomalies congénitales (Bloom : Compréhension)</li>
+<li><strong>Interpréter</strong> l'indice de Risser sur une radiographie et en déduire le potentiel de croissance résiduel d'un patient (Bloom : Application)</li>
+<li><strong>Analyser</strong> le risque de progression d'une scoliose en fonction des paramètres de maturité squelettique (Bloom : Analyse)</li>
+<li><strong>Relier</strong> la vitesse de croissance pubertaire aux épisodes de progression scoliotique (Bloom : Synthèse)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions-avant-de-commencer">Pré-test — 5 questions (avant de commencer)</h2>
+<p><em>Ces questions évaluent vos connaissances initiales. Les réponses ne sont pas corrigées maintenant.</em></p>
+<p><strong>Q1.</strong> À quel stade embryonnaire apparaissent les somites ?<br />
+- A. Semaine 2 (disque embryonnaire)<br />
+- B. <strong>Semaine 3-4</strong> ✗ <em>(réponse révélée en fin de module)</em><br />
+- C. Semaine 6<br />
+- D. Semaine 8</p>
+<p><strong>Q2.</strong> L'indice de Risser 0 signifie :<br />
+- A. Squelette mature<br />
+- B. Ossification de l'aileron iliaque complète<br />
+- C. <strong>Absence d'ossification de l'aileron iliaque</strong> ✗<br />
+- D. Cartilage triradié fermé</p>
+<p><strong>Q3.</strong> Le pic de vitesse de croissance (PVC) précède la ménarche de :<br />
+- A. 6 mois<br />
+- B. <strong>1 an</strong> ✗<br />
+- C. 2 ans<br />
+- D. 3 ans</p>
+<p><strong>Q4.</strong> Une hémivertèbre entièrement segmentée est responsable de :<br />
+- A. Aucune déformation<br />
+- B. <strong>La déformation scoliotique congénitale la plus sévère</strong> ✗<br />
+- C. Une scoliose fonctionnelle uniquement<br />
+- D. Une cyphose uniquement</p>
+<p><strong>Q5.</strong> Le phénomène de Roux (Hueter-Volkmann appliqué à la croissance) stipule que :<br />
+- A. La compression stimule la croissance vertébrale<br />
+- B. <strong>La compression inhibe la croissance ; la traction la stimule</strong> ✗<br />
+- C. La croissance est indépendante des contraintes mécaniques<br />
+- D. La traction inhibe la croissance</p>
+<hr />
+<h2 id="21-developpement-embryologique-du-rachis">2.1 Développement embryologique du rachis</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi certaines scolioses sont-elles présentes dès la naissance (congénitales) tandis que la grande majorité se développe à l'adolescence ? La réponse tient en partie dans les mécanismes de développement embryonnaire que nous allons détailler.</p>
+<h3 id="211-de-la-notochorde-aux-somites">2.1.1 De la notochorde aux somites</h3>
+<p>Le rachis se forme entre la <strong>3e et la 8e semaine</strong> de développement embryonnaire, à partir de la <strong>notochorde</strong> — une structure mésodermique axiale qui constitue le "signal organisateur" du développement du système musculo-squelettique axial.</p>
+<div class="vertex-media video">
+<strong>🎬 M02-S01-001</strong><br/>
+<em>Animation formation des somites et sclérotomes (semaines 3 à 8)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p><strong>Séquence de développement</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Semaine</th>
+<th>Événement clé</th>
+<th>Structure formée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3</td>
+<td>Formation de la notochorde</td>
+<td>Axe mésodermique</td>
+</tr>
+<tr>
+<td>S3-S4</td>
+<td>Neurulation primaire</td>
+<td>Tube neural (futur canal rachidien)</td>
+</tr>
+<tr>
+<td>S3-S5</td>
+<td>Somitogenèse</td>
+<td>42-44 paires de somites</td>
+</tr>
+<tr>
+<td>S4-S5</td>
+<td>Différenciation des somites</td>
+<td>Sclérotome, dermatome, myotome</td>
+</tr>
+<tr>
+<td>S5-S6</td>
+<td>Condensation et segmentation des sclérotomes</td>
+<td>Ébauches cartilagineuses vertébrales</td>
+</tr>
+<tr>
+<td>S6-S8</td>
+<td>Chondrification</td>
+<td>Vertèbres cartilagineuses</td>
+</tr>
+<tr>
+<td>S8-Naissance</td>
+<td>Ossification primaire</td>
+<td>Centres d'ossification primaires</td>
+</tr>
+<tr>
+<td>Naissance-25 ans</td>
+<td>Ossification secondaire</td>
+<td>Apophyses, ring apophysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Les somites</strong> : structures mésodermiques paires formées par segmentation du mésoderme para-axial. Chaque paire de somites se différencie en :<br />
+- <strong>Sclérotome</strong> (partie ventrale et médiale) → colonne vertébrale et côtes<br />
+- <strong>Myotome</strong> (partie dorsale) → muscles du tronc<br />
+- <strong>Dermatome</strong> (partie superficielle) → derme</p>
+<h4 id="resegmentation-le-mecanisme-cle-des-vertebres">Résegmentation — le mécanisme clé des vertèbres</h4>
+<p>Un point fondamental souvent méconnu : <strong>chaque vertèbre ne dérive pas d'un seul somite</strong>. Par un phénomène de <strong>résegmentation</strong>, la moitié caudale d'un somite fusionne avec la moitié crâniale du somite suivant pour former une vertèbre. Ce mécanisme :<br />
+- Explique pourquoi les nerfs spinaux émergent entre deux vertèbres (et non à travers elles)<br />
+- Préserve la continuité musculaire (les muscles restent ipso-segmentaires)<br />
+- Crée des plans de clivage qui deviendront les disques intervertébraux</p>
+<div class="vertex-media schema">
+<strong>📐 M02-S01-003</strong><br/>
+<em>Schéma résegmentation des somites → vertèbres</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="212-chondrification-et-ossification-vertebrale">2.1.2 Chondrification et ossification vertébrale</h3>
+<h4 id="phase-de-chondrification-s5-s8">Phase de chondrification (S5-S8)</h4>
+<p>Chaque ébauche vertébrale connaît une <strong>chondrification en deux temps</strong> :<br />
+1. Centres de chondrification <strong>centraux</strong> (corps vertébral) — au nombre de 2<br />
+2. Centres de chondrification <strong>neuraux</strong> (arcs postérieurs) — au nombre de 2</p>
+<p>Ces 4 centres fusionnent pour former la vertèbre cartilagineuse. La <strong>notochorde</strong>, refoulée vers le centre du futur disque, persistera comme le <strong>nucleus pulposus</strong>.</p>
+<div class="vertex-media video">
+<strong>🎬 M02-S01-002</strong><br/>
+<em>Animation chondrification et ossification vertébrale (4 centres)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h4 id="phase-dossification-primaire-8e-semaine-naissance">Phase d'ossification primaire (8e semaine – Naissance)</h4>
+<p>Trois centres d'ossification primaires apparaissent dans chaque vertèbre cartilagineuse :<br />
+- <strong>1 centre corporéal</strong> : corps vertébral<br />
+- <strong>2 centres neuraux</strong> : un de chaque côté, pour les arcs postérieurs (pédicule + lame + processus transverse)</p>
+<p>Ces centres sont visibles à la radiographie à partir de la naissance.</p>
+<p><strong>Fusion des arcs postérieurs</strong> :<br />
+| Segment | Age de fusion arcs postérieurs |<br />
+|---------|-------------------------------|<br />
+| Cervical | 3-4 ans |<br />
+| Thoracique | 3-5 ans |<br />
+| Lombaire | 4-6 ans |</p>
+<h4 id="centres-dossification-secondaires-puberte-25-ans">Centres d'ossification secondaires (puberté – 25 ans)</h4>
+<p>Cinq centres d'ossification secondaires apparaissent à la puberté :<br />
+- <strong>2 ring apophyses</strong> (apophyses en anneau ou épiphyses annulaires) : plateaux vertébraux supérieur et inférieur<br />
+- <strong>2 processus transverses</strong> (extrémités)<br />
+- <strong>1 processus épineux</strong> (pointe) — important pour le compte de Risser</p>
+<p>La <strong>ring apophysis</strong> est particulièrement importante :<br />
+- Visible à la radiographie à partir de 12-13 ans<br />
+- Se fusionne définitivement au corps vertébral vers <strong>18-25 ans</strong><br />
+- Sa non-fusion est une source de hernies discales "apophysaires" chez l'adolescent<br />
+- Sa progression (de postérieure vers antérieure) reflète la <strong>maturité squelettique vertébrale</strong></p>
+<div class="vertex-media schema">
+<strong>📐 M02-S01-004</strong><br/>
+<em>Schéma anomalies de segmentation (hémivertèbre, barre, papillon)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="213-neurulation-formation-du-canal-rachidien">2.1.3 Neurulation — formation du canal rachidien</h3>
+<p>La <strong>neurulation primaire</strong> (S3-S4) forme le <strong>tube neural</strong> à partir de la plaque neurale ectodermique. Ce tube se ferme en « fermeture éclair » de sa partie centrale vers ses pôles :<br />
+- Neuropore crânial : fermeture à J28 (S4)<br />
+- Neuropore caudal : fermeture à J28-30 (S4)</p>
+<p><strong>Défauts de neurulation</strong> → dysraphismes spinaux :<br />
+- Spina bifida aperta (myéloméningocèle) — neuropore caudal non fermé<br />
+- Spina bifida occulta — défaut de fermeture osseux sans hernie durale<br />
+- Moelle attachée (<em>tethered cord</em>) — ancrage anormal de la moelle<br />
+- Syringomyélie — dilatation kystique du canal épendymaire</p>
+<p><strong>Importance pour la scoliose</strong> : les dysraphismes peuvent coexister avec une scoliose (scoliose associée à un dysraphisme) et constituent une <strong>indication formelle à l'IRM</strong> avant toute chirurgie.</p>
+<div class="vertex-media video">
+<strong>🎬 M02-S01-003</strong><br/>
+<em>Animation neurulation (tube neural) et dysraphismes</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="214-anomalies-de-segmentation-bases-de-la-scoliose-congenitale">2.1.4 Anomalies de segmentation — bases de la scoliose congénitale</h3>
+<p>Les anomalies congénitales du rachis résultent de perturbations de la segmentation (S4-S6). On distingue :</p>
+<h4 id="defauts-de-formation">Défauts de formation</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Déformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hémivertèbre entièrement segmentée</td>
+<td>Demi-vertèbre avec disques des deux côtés</td>
+<td>+++/scoliose 2-3°/an (McMaster &amp; Ohtsuka, 1982)</td>
+</tr>
+<tr>
+<td>Hémivertèbre semi-segmentée</td>
+<td>Demi-vertèbre fusionnée d'un côté</td>
+<td>++</td>
+</tr>
+<tr>
+<td>Hémivertèbre non segmentée (intercalée)</td>
+<td>Demi-vertèbre fusionnée des deux côtés</td>
+<td>+/-</td>
+</tr>
+<tr>
+<td>Coin vertébral</td>
+<td>Réduction asymétrique d'une vertèbre</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Vertèbre papillon</td>
+<td>Fente vertébrale sagittale (persistance notochorde)</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<h4 id="defauts-de-segmentation">Défauts de segmentation</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Déformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barre unilatérale</td>
+<td>Fusion de deux vertèbres d'un seul côté</td>
+<td>+++/cyphoscoliose</td>
+</tr>
+<tr>
+<td>Barre bilatérale</td>
+<td>Bloc vertébral bilatéral (Klippel-Feil)</td>
+<td>Compensatoire</td>
+</tr>
+<tr>
+<td>Barre + hémivertèbre controlatérale</td>
+<td>Combinaison la plus sévère</td>
+<td>++++/5-10°/an</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-media schema">
+<strong>📐 M02-S01-004</strong><br/>
+<em>Schéma comparatif anomalies de segmentation (vue frontale)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Règle pratique</strong> : La <strong>barre unilatérale + hémivertèbre controlatérale</strong> est la forme la plus progressive (5-10° par an ; McMaster &amp; Ohtsuka, 1982, <em>J Bone Joint Surg Am</em>) et la plus difficile à corriger — intervention précoce obligatoire avant 5 ans.</p>
+<hr />
+<h2 id="22-croissance-rachidienne">2.2 Croissance rachidienne</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Sophie est à J+6 semaines. Ses radiographies EOS montrent un Risser 0. Ses parents vous demandent : « Dans 2 ans, est-ce que la scoliose sera pire ? » Comment chiffrer ce risque ?</p>
+<h3 id="221-cinetique-de-croissance-du-rachis">2.2.1 Cinétique de croissance du rachis</h3>
+<p>La croissance du rachis est <strong>biphasique</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Âge</th>
+<th>Vitesse de croissance T1-L5</th>
+<th>Équivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1</td>
+<td>0-5 ans</td>
+<td>2 cm/an</td>
+<td>Croissance infantile rapide</td>
+</tr>
+<tr>
+<td>Plateau</td>
+<td>5-10 ans</td>
+<td>1 cm/an</td>
+<td>Croissance lente stable</td>
+</tr>
+<tr>
+<td><strong>Pic pubertaire (PVC)</strong></td>
+<td><strong>11-13 ans (F) / 13-15 ans (M)</strong></td>
+<td><strong>2-3 cm/an</strong></td>
+<td><strong>Période critique scoliose</strong></td>
+</tr>
+<tr>
+<td>Post-pubertaire</td>
+<td>&gt; Ménarche</td>
+<td>&lt; 0,5 cm/an</td>
+<td>Décélération rapide</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 M02-S02-003 — Infographie vitesse de croissance rachidienne par âge et sexe]</p>
+</blockquote>
+<p><strong>Points clés</strong> :<br />
+- La longueur totale du rachis adulte (T1-S1) est d'environ <strong>50 cm</strong> +/- 3 cm<br />
+- La contribution thoracique (T1-T12) représente 60% de la hauteur du tronc<br />
+- Le <strong>pic de vitesse de croissance (PVC)</strong> est le moment de <strong>risque maximal</strong> de progression scoliotique</p>
+<div class="vertex-media video">
+<strong>🎬 M02-S02-004</strong><br/>
+<em>Animation pic de croissance pubertaire et scoliose</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="222-mecanismes-de-croissance-vertebrale">2.2.2 Mécanismes de croissance vertébrale</h3>
+<p>La croissance vertébrale en hauteur s'effectue par <strong>ossification enchondrale</strong> à partir des <strong>ring apophyses</strong> (équivalent des cartilages de conjugaison des os longs) :</p>
+<p><strong>Loi de Hueter-Volkmann</strong> (phénomène de Roux) :</p>
+<blockquote>
+<p>« La pression inhibe la croissance enchondrale ; la traction la stimule »</p>
+</blockquote>
+<p>Cette loi est <strong>fondamentale</strong> pour comprendre l'auto-aggravation de la scoliose :<br />
+- En présence d'une courbure scoliotique, le côté concave subit une pression → <strong>inhibition de croissance</strong> → cunéiformisation discale et vertébrale<br />
+- Le côté convexe est en traction relative → <strong>stimulation de croissance</strong> → vertèbres plus hautes du côté convexe<br />
+- → Cercle vicieux de Stokes (étudié en Module 3)</p>
+<div class="vertex-media schema">
+<strong>📐 M02-S02-001</strong><br/>
+<em>Schéma croissance enchondrale et loi de Hueter-Volkmann</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="223-croissance-du-thorax-et-implications-pour-la-scoliose">2.2.3 Croissance du thorax et implications pour la scoliose</h3>
+<p>La cyphose thoracique et la rotation vertébrale modifient la <strong>cinématique de la cage thoracique</strong> :<br />
+- Chaque vertèbre thoracique rotée entraîne une côte correspondante<br />
+- La bosse thoracique (<strong>gibbosité</strong>) est la projection surfacique de cette rotation<br />
+- La déformation thoracique réduit le <strong>volume pulmonaire</strong> (risque d'insuffisance respiratoire si Cobb &gt; 70-80°, Cobb &gt; 100° = cor pulmonale)</p>
+<p><strong>Croissance des côtes</strong> : terminée à ~16 ans chez la fille, 18 ans chez le garçon — d'où l'intérêt de la <strong>chirurgie de préservation de croissance</strong> avant la fusion des côtes.</p>
+<hr />
+<h2 id="23-maturation-squelettique">2.3 Maturation squelettique</h2>
+<h3 id="231-indice-de-risser">2.3.1 Indice de Risser</h3>
+<p>L'<strong>indice de Risser</strong> (Risser, 1958, <em>J Bone Joint Surg Am</em>) évalue la maturité squelettique par l'observation de l'<strong>ossification de l'apophyse iliaque</strong> (aileron iliaque) sur la radiographie de bassin debout.</p>
+<blockquote>
+<p>[MEDIA: 📊 M02-S03-001 — Infographie indice de Risser 0-5 avec exemples radiographiques annotés]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Description</th>
+<th>Signification clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risser 0</strong></td>
+<td>Aucune ossification visible</td>
+<td>Pic de croissance non atteint ou en cours — risque maximal</td>
+</tr>
+<tr>
+<td><strong>Risser 1</strong></td>
+<td>Ossification &lt; 25% de l'aileron</td>
+<td>PVC en cours — risque très élevé</td>
+</tr>
+<tr>
+<td><strong>Risser 2</strong></td>
+<td>Ossification 25–50%</td>
+<td>Décélération début — risque élevé</td>
+</tr>
+<tr>
+<td><strong>Risser 3</strong></td>
+<td>Ossification 50–75%</td>
+<td>Fin du PVC — risque modéré</td>
+</tr>
+<tr>
+<td><strong>Risser 4</strong></td>
+<td>Ossification &gt; 75% (non fusionnée)</td>
+<td>Croissance quasi terminée — faible risque</td>
+</tr>
+<tr>
+<td><strong>Risser 5</strong></td>
+<td>Fusion complète de l'apophyse</td>
+<td>Maturité squelettique — croissance terminée</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Technique de lecture</strong> :<br />
+- Radiographie de bassin de face (incluse dans le téléradiogramme EOS)<br />
+- L'ossification progresse de <strong>latéral vers médial</strong> (donc le Risser se lit de la crête iliaque externe vers l'épine iliaque postéro-supérieure)<br />
+- Les stades 0-1 correspondent au <strong>pic de croissance pubertaire</strong> — toute scoliose Cobb &gt; 20° à ce stade doit être suivie de près</p>
+<p><strong>Application clinique pour Sophie</strong> :<br />
+Sophie, 13 ans, Risser 0 → elle est AU DÉBUT de sa puberté squelettique. Son potentiel de croissance résiduel est <strong>maximal</strong>. Cette donnée est cruciale pour la décision thérapeutique (voir Module 8 : SIA — indications corset).</p>
+<blockquote>
+<p><strong>Calcul du risque de progression</strong> (Lonstein &amp; Carlson, 1984, <em>J Bone Joint Surg Am</em>) :<br />
+Score = (Angle de Cobb × 3 – [Risser × 3 + Age × 3]) / 10<br />
+- Sophie : si Cobb = 25°, Risser 0, 13 ans → (75 – 0 – 39) / 10 = 3,6 → <strong>Risque de progression : 68%</strong></p>
+</blockquote>
+<h3 id="232-cartilage-triradie-triradiate-cartilage">2.3.2 Cartilage triradié (triradiate cartilage)</h3>
+<p>Le <strong>cartilage triradié</strong> est la synchondrose en « Y » qui unit les trois composantes osseuses de l'acétabulum (ilion, ischion, pubis).</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Description</th>
+<th>Corrélation maturation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouvert</td>
+<td>Synchondrose visible</td>
+<td>Immaturité squelettique — Risser 0-1</td>
+</tr>
+<tr>
+<td>En fermeture</td>
+<td>Synchondrose rétrécie</td>
+<td>Début maturité — Risser 1-2</td>
+</tr>
+<tr>
+<td>Fermé</td>
+<td>Fusion complète</td>
+<td>Risser 1-3 selon les individus</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Importance clinique</strong> : Le triradiate cartilage se ferme <strong>avant</strong> le début de l'ossification de Risser. Donc un triradiate cartilage ouvert = patient encore plus immature que Risser 0 ne le suggère. Cette information affine le pronostic de progression.</p>
+<h3 id="233-stades-de-tanner">2.3.3 Stades de Tanner</h3>
+<p>Les <strong>stades de Tanner</strong> (Tanner, 1962) évaluent la maturité pubertaire clinique :</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Fille (caractères sexuels)</th>
+<th>Corrélation Risser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>Prépubertaire</td>
+<td>Risser 0 (avant PVC)</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Début développement mammaire (bourgeons)</td>
+<td>Risser 0-1 — PVC en approche</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Croissance mammaire, pilosité pubienne</td>
+<td>Risser 0-1 — PVC (moment critique)</td>
+</tr>
+<tr>
+<td><strong>T4</strong></td>
+<td><strong>Ménarche</strong></td>
+<td><strong>Risser 1-2 — fin du PVC</strong></td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Morphologie adulte</td>
+<td>Risser 3-5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Point clé</strong> : La <strong>ménarche</strong> (stade T4) survient en général <strong>12 mois APRÈS</strong> le pic de vitesse de croissance. Donc une jeune fille qui vient d'avoir ses premières règles a déjà passé le pire de sa période à risque.</p>
+<blockquote>
+<p>[MEDIA: 📊 M02-S03-002 — Infographie corrélation Risser / Tanner / PVC / ménarche (frise chronologique)]</p>
+</blockquote>
+<h3 id="234-classification-de-sanders">2.3.4 Classification de Sanders</h3>
+<p>La <strong>classification de Sanders</strong> (Sanders et al., 2008, <em>J Bone Joint Surg Am</em>) évalue la maturité squelettique par l'examen radiographique de la <strong>main et du poignet gauche</strong> (atlas Greulich &amp; Pyle), en se concentrant sur les épiphyses des métacarpes et des phalanges.</p>
+<div class="vertex-media schema">
+<strong>📐 M02-S03-003</strong><br/>
+<em>Schéma Sanders classification (stades 1-8 avec correspondance Risser)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Stade Sanders</th>
+<th>Description</th>
+<th>Corrélation PVC</th>
+<th>Corrélation Risser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SS1-SS2</td>
+<td>Épiphyses plus petites que les diaphyses</td>
+<td>Avant PVC</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>SS3</strong></td>
+<td><strong>Épiphyse métacarpe III = diaphyse</strong></td>
+<td><strong>PVC imminent</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>SS4</strong></td>
+<td><strong>Épiphyse métacarpe III &gt; diaphyse</strong></td>
+<td><strong>PVC en cours</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>SS5</td>
+<td>Épiphyses en casquette (capping)</td>
+<td>Post-PVC</td>
+<td>0-1</td>
+</tr>
+<tr>
+<td>SS6</td>
+<td>Caps sur la plupart des phalanges</td>
+<td>Post-PVC</td>
+<td>1-2</td>
+</tr>
+<tr>
+<td>SS7</td>
+<td>Épiphyses commencent à fusionner</td>
+<td>Post-PVC</td>
+<td>2-3</td>
+</tr>
+<tr>
+<td>SS8</td>
+<td>Épiphyses fusionnées</td>
+<td>Croissance terminée</td>
+<td>4-5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Avantage de Sanders</strong> : plus précis que Risser aux stades 3-4, surtout pour les stades péri-picaux (SS3-SS4) qui sont les plus critiques pour la scoliose.</p>
+<h3 id="235-courbe-de-dimeglio">2.3.5 Courbe de Diméglio</h3>
+<p>La <strong>courbe de Diméglio</strong> (Diméglio, 1990) représente la croissance du rachis T1-L5 en fonction de l'âge, permettant d'estimer le <strong>potentiel de croissance résiduel</strong> en centimètres.</p>
+<blockquote>
+<p>[MEDIA: 📊 M02-S03-004 — Courbe de Diméglio : croissance T1-L5 par âge (garçon/fille) avec zones à risque scoliose]</p>
+</blockquote>
+<p><strong>Points caractéristiques</strong> (fille) :<br />
+- Naissance : T1-L5 = 19 cm<br />
+- 5 ans : T1-L5 = 27 cm (croissance infantile : +8 cm)<br />
+- 10 ans : T1-L5 = 32 cm (croissance juvénile : +5 cm)<br />
+- 14 ans : T1-L5 = 38 cm (PVC : +6 cm en 2-3 ans)<br />
+- 18 ans : T1-L5 = 39 cm (quasi adulte)</p>
+<p><strong>Calcul de la perte de hauteur</strong> par la scoliose :<br />
+Pour une scoliose thoracique (T5-T12), la perte de hauteur est estimée par la formule de Bjure (Bjure et al., 1968) :</p>
+<blockquote>
+<p><strong>Perte de hauteur (cm) = 0,016 × (angle de Cobb - 30)</strong><br />
+(Pour Cobb = 60° : perte = 0,016 × 30 = 0,48 cm de hauteur T5-T12)</p>
+</blockquote>
+<hr />
+<h2 id="24-cas-clinique-sophie-evaluation-du-potentiel-de-croissance">2.4 Cas clinique — Sophie : évaluation du potentiel de croissance</h2>
+<h3 id="presentation">Présentation</h3>
+<p>Sophie, 13 ans, consulte pour scoliose découverte au dépistage scolaire. L'examen clinique montre :<br />
+- <strong>Pubertaire</strong> : seins stade Tanner T3, pilosité pubienne T3. <strong>Pas encore de ménarche</strong><br />
+- <strong>Taille</strong> : 155 cm (grandissement de 6 cm cette année — PVC en cours !)<br />
+- <strong>Radiographies EOS</strong> : <br />
+  - Scoliose thoracique droite T5-T12, Cobb = 28°<br />
+  - Rotation vertébrale : Nash-Moe grade II en T9<br />
+  - <strong>Risser 0</strong>, triradiate cartilage ouvert<br />
+  - Main gauche : Sanders SS3 (PVC imminent → stade critique)</p>
+<h3 id="analyse-du-potentiel-de-croissance">Analyse du potentiel de croissance</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Risser</td>
+<td>0</td>
+<td>Potentiel maximal</td>
+</tr>
+<tr>
+<td>Triradiate cartilage</td>
+<td>Ouvert</td>
+<td>Encore avant Risser 1</td>
+</tr>
+<tr>
+<td>Tanner</td>
+<td>T3, pas de ménarche</td>
+<td>PVC en cours</td>
+</tr>
+<tr>
+<td>Sanders</td>
+<td>SS3</td>
+<td>PVC imminent / début</td>
+</tr>
+<tr>
+<td>Vitesse de croissance</td>
+<td>6 cm/an</td>
+<td>PVC confirmé</td>
+</tr>
+<tr>
+<td>Courbe Diméglio</td>
+<td>Pente maximale</td>
+<td>2-3 cm de croissance rachidienne restant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="calcul-du-risque-de-progression-lonstein-carlson">Calcul du risque de progression (Lonstein-Carlson)</h3>
+<p>Le <strong>Risque de Lonstein-Carlson</strong> = Formula :</p>
+<blockquote>
+<p>Risque = f(Cobb, Risser, Age)<br />
+Pour Cobb 28°, Risser 0, 13 ans → <strong>Risque de progression : ~68%</strong></p>
+</blockquote>
+<h3 id="decision-therapeutique">Décision thérapeutique</h3>
+<p>→ <strong>Traitement par orthèse (corset) fortement indiqué</strong> (Cobb 25-40°, Risser 0-2, squelette immature) :<br />
+- Objectif : prévenir la progression jusqu'à la fin de la croissance<br />
+- Type : TLSO (thoraco-lombo-sacré) — Boston, Rigo-Chêneau, ou équivalent<br />
+- Port 18-20h/jour minimum (étude BrAIST : port ≥ 18h/j → 72% de succès vs 48% dans le groupe observation ; Weinstein et al., 2013, <em>N Engl J Med</em>)</p>
+<hr />
+<h2 id="atelier-vertex-simulation-de-la-croissance">🎯 Atelier VERTEX© — Simulation de la croissance</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Comprendre visuellement comment la croissance asymétrique amplifie la déformation scoliotique.</p>
+<h3 id="protocole">Protocole</h3>
+<p><strong>Étape 1 — Créer le modèle de Sophie au stade initial</strong></p>
+<pre><code>POST /api/spine
+{
+  &quot;patient_age&quot;: 13,
+  &quot;patient_height_cm&quot;: 155
+}
+</code></pre>
+<p>→ Récupérer l'ID du modèle : <code>spine_id</code></p>
+<p><strong>Étape 2 — Appliquer une scoliose légère (Cobb 25°)</strong></p>
+<pre><code>POST /api/spine/{spine_id}/scoliosis
+{
+  &quot;cobb_angle&quot;: 25,
+  &quot;apex_vertebra&quot;: &quot;T9&quot;,
+  &quot;curve_type&quot;: &quot;right_thoracic&quot;
+}
+</code></pre>
+<p><strong>Étape 3 — Lancer une simulation longitudinale sur 2 ans avec potentiel de croissance élevé</strong></p>
+<pre><code>POST /api/longitudinal/run
+{
+  &quot;spine_id&quot;: &quot;{spine_id}&quot;,
+  &quot;duration_months&quot;: 24,
+  &quot;initial_asymmetry&quot;: 0.08,
+  &quot;growth_remaining_cm&quot;: 2.5
+}
+</code></pre>
+<p><strong>Étape 4 — Comparer avec un patient à croissance terminée</strong><br />
+Même protocole avec <code>growth_remaining_cm: 0</code> → observer que la progression est quasi nulle.</p>
+<h3 id="questions-dinterpretation">Questions d'interprétation</h3>
+<ol>
+<li>Quelle est la différence d'angle de Cobb entre les deux simulations à 24 mois ?</li>
+<li>À quel moment la progression est-elle la plus rapide sur la courbe ?</li>
+<li>Comment le pic de vitesse de croissance se manifeste-t-il sur les variations de <code>max_cobb_angle</code> mois par mois ?</li>
+</ol>
+<hr />
+<h2 id="points-cles-a-retenir-infographie-recapitulative">Points clés à retenir (infographie récapitulative)</h2>
+<blockquote>
+<p>[MEDIA: 📊 M02-S04-001 — Infographie récapitulative Module 2 : embryologie + croissance + Risser]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>À retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Somitogenèse</td>
+<td>S3-S5 ; résegmentation → chaque vertèbre = ½ somite cranial + ½ somite caudal</td>
+</tr>
+<tr>
+<td>Hémivertèbre</td>
+<td>Anomalie la plus déformante ; segmentée bilatéralement = pire pronostic</td>
+</tr>
+<tr>
+<td>Risser 0</td>
+<td>Croissance maximale restante ; risque maximal de progression scoliotique</td>
+</tr>
+<tr>
+<td>PVC</td>
+<td>12 mois AVANT la ménarche ; période de progression rapide</td>
+</tr>
+<tr>
+<td>Hueter-Volkmann</td>
+<td>Compression inhibe croissance → cunéiformisation → cercle vicieux</td>
+</tr>
+<tr>
+<td>Sanders SS3-SS4</td>
+<td>Stades les plus critiques pour la scoliose = PVC imminent/en cours</td>
+</tr>
+<tr>
+<td>Triradiate cartilage ouvert</td>
+<td>Signe d'immaturité plus précoce que Risser 0</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quiz-fin-de-module-15-questions-a-difficulte-progressive">Quiz fin de module — 15 questions à difficulté progressive</h2>
+<h3 id="niveau-bronze-connaissances-de-base-questions-1-a-5">🥉 Niveau Bronze (connaissances de base) — Questions 1 à 5</h3>
+<p><strong>Q1.</strong> À quelle semaine de développement embryonnaire débute la somitogenèse ?<br />
+- A. Semaine 2<br />
+- B. <strong>Semaine 3-4</strong> ✓<br />
+- C. Semaine 6<br />
+- D. Semaine 10</p>
+<p><strong>Q2.</strong> Combien de centres d'ossification primaires possède une vertèbre thoracique ?<br />
+- A. 1<br />
+- B. 2<br />
+- <strong>C. 3</strong> ✓<br />
+- D. 5</p>
+<p><strong>Q3.</strong> Que représente le Risser 5 ?<br />
+- A. Début de l'ossification de l'aileron iliaque<br />
+- B. 75% d'ossification<br />
+- <strong>C. Fusion complète de l'apophyse iliaque = maturité squelettique</strong> ✓<br />
+- D. Fermeture du triradiate cartilage</p>
+<p><strong>Q4.</strong> Le nucleus pulposus du disque intervertébral est le vestige de :<br />
+- A. Du sclérotome<br />
+- B. Du myotome<br />
+- <strong>C. De la notochorde</strong> ✓<br />
+- D. De l'arc neural</p>
+<p><strong>Q5.</strong> À quel stade de Tanner survient généralement la ménarche ?<br />
+- A. T2<br />
+- B. T3<br />
+- <strong>C. T4</strong> ✓<br />
+- D. T5</p>
+<h3 id="niveau-argent-comprehension-et-application-questions-6-a-10">🥈 Niveau Argent (compréhension et application) — Questions 6 à 10</h3>
+<p><strong>Q6.</strong> Une hémivertèbre entièrement segmentée génère en moyenne une progression de combien de degrés par an ?<br />
+- A. 0,5°/an<br />
+- B. 1°/an<br />
+- <strong>C. 2-3°/an</strong> ✓<br />
+- D. 10°/an</p>
+<p><strong>Q7.</strong> Chez Sophie (13 ans, Risser 0, Cobb 28°, Sanders SS3), quel traitement est le plus approprié ?<br />
+- A. Surveillance simple<br />
+- <strong>B. Corset (orthèse TLSO) ≥ 18h/jour</strong> ✓<br />
+- C. Chirurgie d'emblée<br />
+- D. Rééducation seule (Schroth)</p>
+<p><strong>Q8.</strong> La loi de Hueter-Volkmann (phénomène de Roux) prédit qu'en présence d'une courbure scoliotique :<br />
+- A. La croissance s'accélère du côté concave<br />
+- <strong>B. La croissance est inhibée du côté concave (compression) et stimulée du côté convexe (traction)</strong> ✓<br />
+- C. La croissance est identique des deux côtés<br />
+- D. La croissance vertébrale s'arrête complètement</p>
+<p><strong>Q9.</strong> Le triradiate cartilage fermé signifie que le patient est :<br />
+- A. Risser 0<br />
+- B. Risser 0-1 minimum<br />
+- <strong>C. Au moins Risser 1 (la fermeture précède souvent Risser 1-2)</strong> ✓<br />
+- D. Risser 5</p>
+<p><strong>Q10.</strong> Une jeune fille présente : Tanner T2, Sanders SS3, triradiate cartilage ouvert, Risser 0. Quel est son risque de progression si Cobb = 22° ?<br />
+- A. &lt; 20% (faible)<br />
+- B. 30-40% (modéré)<br />
+- <strong>C. &gt; 60-70% (élevé) — tous les marqueurs d'immaturité maximale</strong> ✓<br />
+- D. 100% (certaine)</p>
+<h3 id="niveau-or-analyse-et-synthese-questions-11-a-13">🥇 Niveau Or (analyse et synthèse) — Questions 11 à 13</h3>
+<p><strong>Q11.</strong> Un garçon de 14 ans présente une scoliose thoracique gauche (atypique) à 35°, Risser 1. À l'IRM, on découvre une syringomyélie T4-T8. Ce résultat :<br />
+- A. Ne change pas la prise en charge — opérer directement la scoliose<br />
+- B. Implique de traiter d'abord la syringomyélie avant toute chirurgie de déformation<br />
+- <strong>C. Implique une consultation neurochirurgicale urgente — la scoliose peut être secondaire à la syringomyélie ; traiter la cause peut stabiliser la courbure</strong> ✓<br />
+- D. Implique un corset uniquement</p>
+<p><strong>Q12.</strong> Vous planifiez une chirurgie de type vertebral body tethering (VBT) chez un patient Risser 0. L'objectif biomécanique de cette technique est de :<br />
+- <strong>A. Créer une traction asymétrique du côté convexe pour inhiber sa croissance tout en laissant le côté concave croître librement (loi de Hueter-Volkmann appliquée)</strong> ✓<br />
+- B. Fusionner définitivement les vertèbres de l'apex<br />
+- C. Corriger mécaniquement la déformation par translation<br />
+- D. Décomprimer le canal rachidien</p>
+<p><strong>Q13.</strong> Chez un enfant de 4 ans porteur d'une hémivertèbre T10 gauche entièrement segmentée avec 30° de scoliose et 15° de cyphose, la meilleure stratégie est :<br />
+- A. Attendre et surveiller jusqu'à 10 ans<br />
+- B. Corset à plein temps jusqu'à la puberté<br />
+- <strong>C. Exérèse de l'hémivertèbre + arthrodèse courte avant 5 ans : arrêter la progression (2-3°/an) avant qu'une chirurgie longue de sauvetage ne soit nécessaire</strong> ✓<br />
+- D. Tiges de croissance (growing rods) uniquement</p>
+<h3 id="niveau-diamant-expert-questions-14-15">💎 Niveau Diamant (expert) — Questions 14-15</h3>
+<p><strong>Q14.</strong> Un garçon de 12 ans mesure 170 cm (taille père : 182 cm, mère : 165 cm). Son Sanders est SS3, Risser 0, triradiate cartilage ouvert. Vous estimez son potentiel de croissance total résiduel. En utilisant la formule de prédiction de taille adulte et la courbe de Diméglio, sa croissance rachidienne restante T1-L5 est estimée à :<br />
+- A. 0,5 cm<br />
+- <strong>B. 4-5 cm</strong> ✓ (garçon au PVC avec grande taille parentale → 15-20 cm de croissance totale restante dont ~4-5 cm thoraco-lombaires)<br />
+- C. 8 cm<br />
+- D. 12 cm</p>
+<p><strong>Q15.</strong> Le phénomène de "adding on" décrit la progression scoliotique après la fusion squelettique. Il affecte principalement :<br />
+- <strong>A. Les vertèbres instrumentées sous la vertèbre limitante distale, par décompensation progressive de la jonction thoraco-lombaire</strong> ✓<br />
+- B. Les vertèbres fusionnées elles-mêmes qui se déforment après la chirurgie<br />
+- C. Les vertèbres cervicales par compensation à distance<br />
+- D. Le bassin par remodelage pelvien tardif</p>
+<hr />
+<h2 id="post-test-5-questions-apres-le-module">Post-test — 5 questions (après le module)</h2>
+<p><em>Comparez vos réponses avec le pré-test pour mesurer votre progression.</em></p>
+<p><strong>Q1.</strong> À quel stade embryonnaire apparaissent les somites ? → <strong>Semaine 3-4</strong> ✓</p>
+<p><strong>Q2.</strong> L'indice de Risser 0 signifie : → <strong>Absence d'ossification de l'aileron iliaque</strong> ✓</p>
+<p><strong>Q3.</strong> Le pic de vitesse de croissance (PVC) précède la ménarche de : → <strong>1 an environ</strong> ✓</p>
+<p><strong>Q4.</strong> Une hémivertèbre entièrement segmentée est responsable de : → <strong>La déformation scoliotique congénitale la plus sévère (2-3°/an)</strong> ✓</p>
+<p><strong>Q5.</strong> Le phénomène de Roux stipule que : → <strong>La compression inhibe la croissance ; la traction la stimule (loi de Hueter-Volkmann)</strong> ✓</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<h3 id="articles-fondamentaux">Articles fondamentaux</h3>
+<ul>
+<li>Lonstein JE, Carlson JM. <em>The prediction of curve progression in untreated idiopathic scoliosis during growth</em>. JBJS 1984;66:1061-71.</li>
+<li>Sanders JO et al. <em>Predicting scoliosis progression from skeletal maturity: a simplified classification during adolescence</em>. JBJS 2008;90:540-53.</li>
+<li>Dimeglio A, Bonnel F. <em>Le rachis en croissance</em>. Springer-Verlag, Paris 1990.</li>
+<li>Little DG et al. <em>The natural history and management of congenital spinal anomalies</em>. Spine 2000.</li>
+<li>Risser JC. <em>The iliac apophysis: an invaluable sign in the management of scoliosis</em>. Clin Orthop 1958;11:111-119.</li>
+<li>Tanner JM. <em>Growth at Adolescence</em>. 2nd ed. Oxford: Blackwell; 1962.</li>
+<li>McMaster MJ, Ohtsuka K. <em>The natural history of congenital scoliosis: a study of 251 patients</em>. J Bone Joint Surg Am 1982;64(8):1128-1147.</li>
+<li>Weinstein SL, Dolan LA, Wright JG, Dobbs MB. <em>Effects of bracing in adolescents with idiopathic scoliosis</em>. N Engl J Med 2013;369(16):1512-1521.</li>
+<li>Bjure J, Grimby G, Nachemson A. <em>Correction of body height in predicting spirometric values in scoliotic patients</em>. Scand J Clin Lab Invest 1968;21:191-192.</li>
+</ul>
+<h3 id="pour-aller-plus-loin">Pour aller plus loin</h3>
+<ul>
+<li>[MEDIA: 📷 M02-RES-001 — Atlas Greulich &amp; Pyle (radiographies de référence maturation main)]</li>
+<li>[MEDIA: 🎬 M02-RES-002 — Webinar "Sanders : comment lire la radio de la main" (20 min)]</li>
+<li>Berwick DC et al. <em>Scoliosis Research Society</em> — www.srs.org (ressources patients et praticiens)</li>
+<li>Classification de Lenke : www.lenke.wustl.edu</li>
+</ul>
+<h3 id="liens-vers-les-modules-suivants">Liens vers les modules suivants</h3>
+<p>→ <strong>Module 3</strong> : Biomécanique du rachis et de la scoliose — comprendre le cercle vicieux de Stokes<br />
+→ <strong>Module 8</strong> : Scoliose idiopathique de l'adolescent — appliquer ces données à la décision thérapeutique</p>
+<hr />
+<p><em>Module 2 validé — Score minimal requis : 70% (10/15 questions)</em><br />
+<em>Prochaine étape : Module 3 — Biomécanique du rachis et de la scoliose</em></p>
+</div>

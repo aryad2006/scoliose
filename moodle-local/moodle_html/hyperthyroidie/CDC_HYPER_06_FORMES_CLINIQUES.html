@@ -1,0 +1,522 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-06-formes-cliniques-particulieres">PARTIE 06 — Formes Cliniques Particulières</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-18-hyperthyroidie-et-grossesse">MODULE 18 — Hyperthyroïdie et Grossesse</h2>
+<h3 id="181-hyperthyroidie-gestationnelle-hg">18.1 Hyperthyroïdie gestationnelle (HG)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER18-S1-001 — Hyperthyroïdie gestationnelle vs Basedow en grossesse : tableau différentiel clinico-biologique]</p>
+</blockquote>
+<p><strong>Définition</strong> : TSH effondrée ± T4L légèrement élevée en début de grossesse, liée au pic d'hCG</p>
+<p><strong>Épidémiologie</strong> :<br />
+- Prévalence : <strong>1-3 %</strong> des grossesses<br />
+- Pic : T1 (S8-S12), parallèle au pic d'hCG<br />
+- Spontanément résolutive au T2 (déclin de l'hCG)</p>
+<p><strong>Comparaison HG vs Basedow en grossesse</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>HG</th>
+<th>Basedow gestationnel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAb</td>
+<td>Négatifs</td>
+<td><strong>Positifs</strong></td>
+</tr>
+<tr>
+<td>Anti-TPO</td>
+<td>Négatifs</td>
+<td>Souvent positifs</td>
+</tr>
+<tr>
+<td>Goitre</td>
+<td>Non</td>
+<td>Possible</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Non</td>
+<td>Possible</td>
+</tr>
+<tr>
+<td>Hyperémèse</td>
+<td>Oui (souvent associée)</td>
+<td>Non</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>Symptomatique, hydratation</td>
+<td><strong>ATS (PTU T1, MMI T2-T3)</strong></td>
+</tr>
+<tr>
+<td>Evolution</td>
+<td>Résolution spontanée T2</td>
+<td>Persistante ± aggravation post-partum</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hyperemesis gravidarum + HG</strong> :<br />
+- 50-60 % des hyperémèses sévères ont une HG biologique<br />
+- hCG très élevée (grossesse gémellaire, môle hydatiforme) → HG plus sévère<br />
+- Traitement : hydratation IV, antiémétiques, pas d'ATS si T4L &lt; 2 × normale</p>
+<hr />
+<h3 id="182-maladie-de-basedow-en-grossesse">18.2 Maladie de Basedow en grossesse</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER18-S2-001 — Risques materno-fœtaux du Basedow non contrôlé pendant la grossesse : tableau des complications]</p>
+</blockquote>
+<p><strong>Risques si Basedow non contrôlé</strong> (adapté de ETA 2018) :</p>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Mère</th>
+<th>Fœtus/Néonatal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fausse couche</td>
+<td>× 2-4</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Prématurité</td>
+<td>× 2</td>
+<td>Risque sepsis, détresse resp.</td>
+</tr>
+<tr>
+<td>Prééclampsie</td>
+<td>× 2-3</td>
+<td>RCIU, faible poids</td>
+</tr>
+<tr>
+<td>Crise thyrotoxique</td>
+<td>Rare mais mortalité élevée</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Insuffisance cardiaque</td>
+<td>Possible</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Hyperthyroïdie fœtale</td>
+<td>—</td>
+<td>TRAb &gt;&gt; 3 × normale → TRAb fœtaux</td>
+</tr>
+<tr>
+<td>Hypothyroïdie fœtale</td>
+<td>—</td>
+<td>Surdosage ATS ou TBAb maternels</td>
+</tr>
+<tr>
+<td>Hyperthyroïdie néonatale</td>
+<td>—</td>
+<td>TRAb maternels persistants (1-5 % Basedow)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="183-traitement-du-basedow-pendant-la-grossesse">18.3 Traitement du Basedow pendant la grossesse</h3>
+<p><strong>Choix du médicament selon le trimestre</strong> (adapté de ETA 2018, ATA 2016) :</p>
+<table>
+<thead>
+<tr>
+<th>Trimestre</th>
+<th>ATS recommandé</th>
+<th>Dose</th>
+<th>Raison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T1 (S1-S12)</strong></td>
+<td><strong>PTU</strong></td>
+<td>50-150 mg × 2-3/j</td>
+<td>Tératogénicité MMI (aplasie cutis, atrésie choanale)</td>
+</tr>
+<tr>
+<td><strong>T2-T3 (S13-S40)</strong></td>
+<td><strong>MMI/Carbimazole</strong></td>
+<td>5-20 mg/j (1 prise)</td>
+<td>Risque hépatotoxicité PTU, observance</td>
+</tr>
+<tr>
+<td><strong>Transition T1→T2</strong></td>
+<td>Switch PTU → MMI à S12-S14</td>
+<td>Progressif</td>
+<td>Réduire exposition PTU long terme</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cibles thérapeutiques</strong> :<br />
+- T4L en limite haute de la normale pour la grossesse (ou légèrement élevée)<br />
+- TSH peut rester effondrée (acceptable si T4L contrôlée)<br />
+- <strong>Dose minimale efficace d'ATS</strong> pour éviter l'hypothyroïdie fœtale (les ATS passent le placenta)<br />
+- Schéma "bloc-substitution" <strong>CONTRE-INDIQUÉ</strong> pendant la grossesse (le MMI + LT4 = double dose d'ATS pour le fœtus sans le LT4 qui, lui, passe peu)</p>
+<p><strong>Surveillance</strong> :<br />
+- TSH + T4L toutes les 4 semaines au T1, toutes les 6-8 semaines au T2-T3<br />
+- TRAb à S22-S26 : si &gt; 3 × normale → surveillance fœtale renforcée (écho cardiaque fœtal, FC)<br />
+- TRAb &gt; 3 × normale à S36 → surveillance néonatale obligatoire (TSH + T4L à J2-J5)</p>
+<hr />
+<h3 id="184-post-partum-et-basedow">18.4 Post-partum et Basedow</h3>
+<p><strong>Rechute basedowienne post-partum</strong> :<br />
+- Fréquente : 60-80 % des Basedow connus<br />
+- Délai : 2-6 mois post-partum (rebond immunitaire)<br />
+- TRAb qui remontent après accouchement → hyperthyroïdie</p>
+<p><strong>Choix de l'ATS pendant l'allaitement</strong> :<br />
+- <strong>MMI préféré</strong> (passage lacté &lt; PTU en pratique, monitoring hépatique pour PTU)<br />
+- Dose ≤ 20-30 mg/j MMI : faible passage lacté, pas d'effet mesurable sur le nourrisson<br />
+- PTU 450 mg/j max si allaitement (mais hépatotoxicité PTU maternelle à surveiller)<br />
+- RAI : <strong>contre-indiquée</strong> pendant l'allaitement (délai 3-6 mois minimum après arrêt)</p>
+<hr />
+<h3 id="quiz-module-18">QUIZ MODULE 18</h3>
+<p><strong>🥉 Q1</strong> — Pourquoi le schéma bloc-substitution (MMI + LT4) est-il contre-indiqué pendant la grossesse ?<br />
+<strong>A) Les ATS passent le placenta → effet hypothyroïdiant sur le fœtus. Si on ajoute de la LT4 pour compenser la TSH maternelle mais que le LT4 ne passe pas significativement le placenta, le fœtus subit les ATS sans bénéficier de la LT4 compensatoire → hypothyroïdie fœtale. Utiliser la dose minimale d'ATS.</strong></p>
+<p><strong>🥈 Q2</strong> — Une femme basedowienne sous PTU 150 mg/j depuis 8 semaines tombe enceinte à 8 SA. Quelle est la conduite ?<br />
+<strong>A) Continuer PTU au T1 (PTU préféré au T1). À S12-S14 : switch vers MMI/carbimazole. Contrôle TSH + T4L toutes les 4 semaines. TRAb à S22-S26. Utiliser la dose minimale d'ATS pour maintenir T4L dans la limite haute de la norme.</strong></p>
+<p><strong>💎 Q3</strong> — Quel est le mécanisme de l'hyperthyroïdie néonatale transitoire dans le Basedow maternel ?<br />
+<strong>A) Les TRAb maternels (IgG) passent le placenta librement (transport Fc-récepteur) dès S16-S20 et s'accumulent dans la circulation fœtale. Les TRAb stimulants (TSAb) activent le TSHR thyroïdien fœtal → hyperthyroïdie néonatale dans les 1-5 % des cas de Basedow avec TRAb élevés. L'hyperthyroïdie persiste jusqu'à la catabolisation des IgG maternelles (demi-vie 21 jours) → résolution en 2-6 semaines. Traitement néonatal : MMI + propranolol si symptômes.</strong></p>
+<hr />
+<h2 id="module-19-hyperthyroidie-de-lenfant-et-de-ladolescent">MODULE 19 — Hyperthyroïdie de l'Enfant et de l'Adolescent</h2>
+<h3 id="191-epidemiologie-et-etiologies-pediatriques">19.1 Épidémiologie et étiologies pédiatriques</h3>
+<p><strong>Prévalence</strong> : 1/10 000 enfants, pic à la puberté (10-15 ans)</p>
+<p><strong>Étiologies pédiatriques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Fréquence</th>
+<th>Particularité pédiatrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maladie de Basedow</strong></td>
+<td>85-90 %</td>
+<td>Souvent au moment de la puberté</td>
+</tr>
+<tr>
+<td><strong>Adénome toxique</strong></td>
+<td>5-10 %</td>
+<td>Nourrisson (mutation TSHR germinale)</td>
+</tr>
+<tr>
+<td><strong>GMNT congénital</strong></td>
+<td>Rare</td>
+<td>Mutation TSHR germinale (AD)</td>
+</tr>
+<tr>
+<td><strong>TSH-ome</strong></td>
+<td>Très rare</td>
+<td>Adolescent</td>
+</tr>
+<tr>
+<td><strong>McCune-Albright</strong></td>
+<td>Rare</td>
+<td>Mutation somatique GNAS, hyperthyroïdie + lésions fibro-dysplasiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="192-particularites-cliniques-du-basedow-pediatrique">19.2 Particularités cliniques du Basedow pédiatrique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER19-S2-001 — Signes cliniques du Basedow de l'enfant : ressemblances et différences avec l'adulte]</p>
+</blockquote>
+<p><strong>Spécificités</strong> :<br />
+- <strong>Croissance accélérée</strong> (avance de taille, maturation osseuse avancée) — paradoxe du retard statural dans l'hypothyroïdie<br />
+- <strong>Difficultés scolaires</strong> (attention, mémoire, agitation — confondu avec TDAH)<br />
+- <strong>Troubles du comportement</strong> (irritabilité, anxiété, pleurs fréquents)<br />
+- <strong>Tachycardie à l'effort</strong> (attention sportive scolaire)<br />
+- <strong>TAO plus rare</strong> que chez l'adulte, généralement moins sévère<br />
+- <strong>Goitre</strong> : présent dans 90 % des cas (plus fréquent que chez l'adulte)</p>
+<p><strong>Particularités biologiques</strong> :<br />
+- TRAb très élevés dans la forme pédiatrique<br />
+- Anti-TPO souvent ++</p>
+<hr />
+<h3 id="193-traitement-du-basedow-pediatrique">19.3 Traitement du Basedow pédiatrique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER19-S3-001 — Algorithme thérapeutique Basedow pédiatrique : ATS, RAI, chirurgie selon l'âge et la récidive]</p>
+</blockquote>
+<p><strong>Stratégie thérapeutique</strong> (adapté de ATA 2016, ESPE 2022) :</p>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Avantages chez l'enfant</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MMI (1ère ligne)</strong></td>
+<td>Efficace, non invasif</td>
+<td>Rechutes fréquentes (60-70 %)</td>
+</tr>
+<tr>
+<td><strong>RAI</strong></td>
+<td>Définitif si &gt; 5 ans</td>
+<td>Hypothyroïdie définitive ; prudence &lt; 5 ans (risque théorique thyroïde carcinogène chez l'enfant)</td>
+</tr>
+<tr>
+<td><strong>Thyroïdectomie totale</strong></td>
+<td>Définitif, immédiat</td>
+<td>Risques chirurgicaux (parathyroïdes, NLR), anesthésie pédiatrique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Posologie MMI pédiatrique</strong> : 0,2-0,5 mg/kg/j (max 30 mg/j) en 1-2 prises</p>
+<p><strong>Durée ATS en pédiatrie</strong> :<br />
+- Traitement long : 24-48 mois (vs 12-18 mois adulte)<br />
+- Taux de rémission plus faible (25-30 % à 2 ans)<br />
+- Traitement définitif si rechute ou if effets indésirables</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — L'éducation des parents et de l'enfant est fondamentale : reconnaître les signes d'agranulocytose (fièvre, maux de gorge → arrêt ATS + NFS urgente).</p>
+<hr />
+<h3 id="quiz-module-19">QUIZ MODULE 19</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la particularité de croissance dans le Basedow pédiatrique ?<br />
+<strong>A) Accélération de la vitesse de croissance et avance de maturation osseuse (AO) — à l'inverse de l'hypothyroïdie. Cette avance peut masquer une petite taille finale si l'os se soude prématurément.</strong></p>
+<p><strong>🥈 Q2</strong> — Un enfant de 8 ans, Basedow connu sous MMI, présente une fièvre à 38,8°C avec pharyngite. Quelle est la conduite immédiate ?<br />
+<strong>A) Arrêt immédiat du MMI. NFS urgente (agranulocytose ≤ 500 PNN = contre-indication absolue à la reprise). Hospitalisation si agranulocytose confirmée (G-CSF, isolement protecteur, antibiotiques si sepsis). Ne jamais reprendre l'ATS causale en cas d'agranulocytose avérée.</strong></p>
+<p><strong>💎 Q3</strong> — Quel syndrome génétique est associé à une hyperthyroïdie néonatale par mutation germinale gain-de-fonction du TSHR ?<br />
+<strong>A) Hyperthyroïdie congénitale non auto-immune — mutation hétérozygote gain-de-fonction du gène TSHR (transmission AD) → activation constitutive TSHR → hyperthyroïdie dès la naissance. À distinguer du Basedow néonatal (transitoire, lié aux TRAb maternels). La mutation somatique (non germinale) du même gène donne l'adénome de Plummer.</strong></p>
+<hr />
+<h2 id="module-20-hyperthyroidie-du-sujet-age">MODULE 20 — Hyperthyroïdie du Sujet Âgé</h2>
+<h3 id="201-presentation-clinique-atypique">20.1 Présentation clinique atypique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER20-S1-001 — Comparaison hyperthyroïdie adulte jeune vs sujet âgé : présentation clinique et pièges diagnostiques]</p>
+</blockquote>
+<p><strong>"Hyperthyroïdie apathique" du sujet âgé</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Signe classique</th>
+<th>Adulte jeune</th>
+<th>Sujet âgé (≥ 65 ans)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tachycardie</td>
+<td>Presque toujours</td>
+<td>Modérée (β-bloquants fréquents)</td>
+</tr>
+<tr>
+<td>Amaigrissement</td>
+<td>Souvent</td>
+<td><strong>Prédominant — anorexie</strong></td>
+</tr>
+<tr>
+<td>Nervosité, agitation</td>
+<td>Fréquente</td>
+<td>Souvent <strong>apathie, dépression</strong></td>
+</tr>
+<tr>
+<td>Thermophobie</td>
+<td>Fréquente</td>
+<td>Moins évidente</td>
+</tr>
+<tr>
+<td>Goitre</td>
+<td>Fréquent</td>
+<td><strong>Souvent absent</strong> (GMNT plongeant)</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Possible</td>
+<td>Rare</td>
+</tr>
+<tr>
+<td>Fibrillation atriale</td>
+<td>15 %</td>
+<td><strong>25-35 %</strong></td>
+</tr>
+<tr>
+<td>Insuffisance cardiaque</td>
+<td>Rare</td>
+<td><strong>20-25 % des cas</strong></td>
+</tr>
+<tr>
+<td>Myopathie</td>
+<td>Modérée</td>
+<td><strong>Majeure, chutes</strong></td>
+</tr>
+<tr>
+<td>Ostéoporose</td>
+<td>Modérée</td>
+<td><strong>Fractures</strong> ++</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Chez le sujet âgé, l'hyperthyroïdie peut se présenter uniquement par une FA réfractaire, une cachexie inexpliquée, une insuffisance cardiaque à débit élevé ou un syndrome confusionnel. Doser la TSH devant tout tableau de ce type.</div>
+
+<hr />
+<h3 id="202-gmnt-toxique-et-sujet-age">20.2 GMNT toxique et sujet âgé</h3>
+<p><strong>Caractéristiques</strong> :<br />
+- GMNT toxique = étiologie principale des hyperthyroïdies du sujet âgé (&gt; 50 ans)<br />
+- Évolution progressive (10-20 ans de goitre simple avant l'autonomisation)<br />
+- Goitre parfois plongeant (substernal) → dyspnée, dysphagie, syndrome cave supérieur<br />
+- TRAb négatifs (autonomie, pas d'auto-immunité)<br />
+- T3-toxicosis fréquente (T4L normale, T3L élevée)</p>
+<p><strong>Risques spécifiques du traitement</strong> :<br />
+- RAI : traitement de choix chez l'âgé (évite l'anesthésie), mais hypothyroïdie post-RAI fréquente<br />
+- Chirurgie : risque opératoire majoré (comorbidités), mais nécessaire si compression cervicale<br />
+- ATS (MMI) : préparation uniquement ou traitement au long cours si refus du traitement définitif</p>
+<hr />
+<h3 id="203-fa-dans-le-contexte-de-lhyperthyroidie-du-sujet-age">20.3 FA dans le contexte de l'hyperthyroïdie du sujet âgé</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER20-S3-001 — Prise en charge de la FA thyrotoxique : anticoagulation, contrôle de la fréquence, cardioversion différée]</p>
+</blockquote>
+<p><strong>Stratégie de prise en charge</strong> (adapté de ATA 2016, ESC 2021) :</p>
+<p><strong>Étape 1 — Contrôle de la fréquence</strong> :<br />
+- Bêta-bloquants (métoprolol ou bisoprolol) si pas de CI<br />
+- Si CI aux BB : diltiazem ou vérapamil (bradycardisants calciques)<br />
+- FC cible : 60-80/min</p>
+<p><strong>Étape 2 — Anticoagulation</strong> :<br />
+- Recommandée si <strong>CHA₂DS₂-VASc ≥ 2</strong> (H) ou ≥ 3 (F) dans le contexte de FA<br />
+- AVK ou AOD (adapté au patient âgé)<br />
+- Même si TSH se normalise, la FA peut récidiver</p>
+<p><strong>Étape 3 — Traitement de l'hyperthyroïdie</strong> :<br />
+- Euthyroïdie → retour en rythme sinusal spontané dans <strong>50-60 %</strong> des cas à 12-16 semaines</p>
+<p><strong>Étape 4 — Cardioversion (si FA persistante après normalisation TSH)</strong> :<br />
+- Attendre 12-16 semaines d'euthyroïdie stable<br />
+- Cardioversion électrique ou pharmacologique (amiodarone contre-indiquée dans ce contexte !)<br />
+- Si persistance FA après 6 mois d'euthyroïdie → ablation par radiofréquence à discuter</p>
+<hr />
+<h3 id="quiz-module-20">QUIZ MODULE 20</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la forme d'hyperthyroïdie la plus fréquente chez le sujet âgé ?<br />
+A) Maladie de Basedow <strong>B) Goitre multinodulaire toxique</strong> C) Thyroïdite silencieuse D) Hyperthyroïdie médicamenteuse</p>
+<p><strong>🥈 Q2</strong> — Un patient de 78 ans présente une perte de 8 kg en 3 mois, FA, asthénie, sans nervosité ni goitre. TSH à 0,02 mUI/L. Quelle est la conduite ?<br />
+<strong>A) Hyperthyroïdie apathique du sujet âgé (GMNT probable). Bilan : T4L + T3L (T3-toxicosis possible) + TRAb + scintigraphie/écho. Traitement : MMI pour préparer la normalisation, puis RAI ou chirurgie selon goitre et comorbidités. Anticoagulation pour la FA.</strong></p>
+<p><strong>💎 Q3</strong> — Pourquoi l'amiodarone est-elle contre-indiquée pour cardioverter une FA chez un patient avec hyperthyroïdie thyrotoxique ?<br />
+<strong>A) L'amiodarone contient 37 % d'iode → surcharge iodée → risque de Jod-Basedow ou d'hyperthyroïdie amiodaronée → aggravation de la thyrotoxicose. De plus, l'amiodarone inhibe la conversion T4→T3 mais augmente la T4L → interprétation biologique perturbée. Contre-indication absolue dans ce contexte. Alternative : bisoprolol (contrôle fréquence) + cardioversion électrique après éuthyroïdie stabilisée.</strong></p>
+<hr />
+<h2 id="module-21-hyperthyroidie-et-comorbidites">MODULE 21 — Hyperthyroïdie et Comorbidités</h2>
+<h3 id="211-hyperthyroidie-et-osteoporose">21.1 Hyperthyroïdie et ostéoporose</h3>
+<p><strong>Mécanismes</strong> (adapté de Vestergaard et al., 2002) :<br />
+- TRα active les ostéoclastes → ↑ résorption osseuse<br />
+- ↑ Calciurie → ↓ PTH → ↓ calcium → ↑ remodeling<br />
+- Perte osseuse : 0,5-1 %/mois en hyperthyroïdie active (cortical &gt; trabéculaire)</p>
+<p><strong>Populations à risque majeur</strong> :<br />
+- Femme post-ménopausée avec Basedow ou GMNT non contrôlé<br />
+- Patient sous TSH suppressive au long cours (cancer thyroïdien)<br />
+- Hyperthyroïdie frustre prolongée (TSH &lt; 0,1 mUI/L)</p>
+<p><strong>Prise en charge</strong> :<br />
+- Traiter l'hyperthyroïdie est la priorité (récupération partielle de la densité osseuse)<br />
+- DXA avant traitement et à 12 mois<br />
+- Supplémentation calcium + vitamine D systématique<br />
+- Bisphosphonates si ostéoporose confirmée</p>
+<hr />
+<h3 id="212-hyperthyroidie-et-infertilite">21.2 Hyperthyroïdie et infertilité</h3>
+<p><strong>Impact de l'hyperthyroïdie</strong> :<br />
+- ↑ SHBG → ↓ testostérone libre (homme : gynécomastie, dysfonction érectile)<br />
+- ↑ SHBG → modification de la pulsatilité LH/FSH<br />
+- Oligoménorrhée, aménorrhée<br />
+- ↑ fausse couche spontanée<br />
+- Cycles anovulatoires</p>
+<p><strong>Conduite</strong> : Normaliser la TSH avant tout projet de grossesse</p>
+<hr />
+<h3 id="213-hyperthyroidie-et-troubles-psychiatriques">21.3 Hyperthyroïdie et troubles psychiatriques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER21-S3-001 — Hyperthyroïdie et troubles psychiatriques : anxiété, manie, psychose thyrotoxique]</p>
+</blockquote>
+<p><strong>Manifestations psychiatriques</strong> :<br />
+- Anxiété généralisée (80 % des hyperthyroïdiens)<br />
+- Insomnie, agitation psychomotrice<br />
+- Dépression paradoxale (liée à l'épuisement catabolique)<br />
+- <strong>Psychose thyrotoxique</strong> : rare, délire, hallucinations — urgence<br />
+- <strong>Manie</strong> chez les bipolaires : hyperthyroïdie peut déclencher un épisode maniaque</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Toute anxiété récente chez un sujet sans antécédent psychiatrique, ou tout épisode maniaque inaugural, doit faire doser la TSH. La correction de l'hyperthyroïdie résout souvent les symptômes sans traitement psychiatrique spécifique.</p>
+<hr />
+<h3 id="quiz-module-21">QUIZ MODULE 21</h3>
+<p><strong>🥉 Q1</strong> — Quel est le marqueur le plus approprié pour évaluer le retentissement osseux de l'hyperthyroïdie ?<br />
+A) Calcémie totale B) PTH <strong>C) DXA (densitométrie osseuse) + CTX (marqueur de résorption)</strong> D) Phosphatases alcalines totales</p>
+<p><strong>🥈 Q2</strong> — Une patiente de 48 ans post-ménopausée présente un Basedow depuis 3 ans insuffisamment contrôlé. Son T-score lombaire est à -2,8. Quelle est la stratégie ?<br />
+<strong>A) Traitement définitif du Basedow prioritaire (RAI ou chirurgie — récupération partielle de la DMO attendue). Calcium 1 000 mg/j + vitamine D 800-1 000 UI/j. Bisphosphonate (alendronate ou risédronate) car T-score &lt; -2,5 = ostéoporose constituée avec hyperthyroïdie = double facteur de risque fracturaire.</strong></p>
+<p><strong>💎 Q3</strong> — Quel est le mécanisme de la gynécomastie chez l'homme hyperthyroïdien ?<br />
+<strong>A) ↑ SHBG (Sex Hormone Binding Globulin) par les hormones thyroïdiennes (transactivation TRβ1 hépatique du gène SHBG) → ↓ testostérone libre (fraction biodisponible) + ↑ conversion périphérique des androgènes en estrogènes (aromatisation augmentée par le tissu adipeux réduit mais le ratio estrogènes/androgènes libres augmente) → gynécomastie. Réversible après traitement de l'hyperthyroïdie.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 06 — Formes Cliniques Particulières — Mars 2026</em></p>
+</div>

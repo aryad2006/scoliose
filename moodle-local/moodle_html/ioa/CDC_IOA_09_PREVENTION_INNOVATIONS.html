@@ -1,0 +1,400 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-9-prevention-et-innovations-modules-29-30">Partie 9 — Prévention et Innovations (Modules 29-30)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-29-prevention-antibioprophylaxie-environnement-et-strategies-de-reduction-du-risque">MODULE 29 : PRÉVENTION — ANTIBIOPROPHYLAXIE, ENVIRONNEMENT ET STRATÉGIES DE RÉDUCTION DU RISQUE</h1>
+<p><strong>Partie</strong> : IX — Prévention et Innovations<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-6</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Audit du bloc opératoire d'orthopédie : taux d'infection du site opératoire (ISO) = 2.8% (national : 1.5%). Analyse des pratiques : antibioprophylaxie administrée 45 minutes après l'incision dans 30% des cas, flux laminaire en panne depuis 3 semaines, trafic en salle opératoire non contrôlé, 15% des patients obèses non dépistés en pré-opératoire pour colonisation au SARM. *Comment réduire ce taux d'infection ? Quelles mesures ont le plus fort niveau de preuve ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> l'antibioprophylaxie chirurgicale selon les recommandations</li>
+<li><strong>Optimiser</strong> l'environnement du bloc opératoire pour la chirurgie prothétique</li>
+<li><strong>Évaluer</strong> et corriger les facteurs de risque pré-opératoires modifiables</li>
+<li><strong>Appliquer</strong> les recommandations de la SFAR/OMS/CDC pour la prévention des ISO</li>
+<li><strong>Organiser</strong> un programme de surveillance des ISO</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-291-antibioprophylaxie-chirurgicale">Section 29.1 — Antibioprophylaxie chirurgicale</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principes</strong> :<br />
+  - Concentration efficace d'ATB au niveau du site opératoire AU MOMENT DE L'INCISION<br />
+  - Administration : 30-60 minutes avant l'incision (idéalement 30 min pour les céphalosporines, 60-120 min pour la vancomycine)<br />
+  - Molécule de référence : <strong>CÉFAZOLINE</strong> 2g IV (3g si poids &gt;120 kg)<br />
+  - Alternative (allergie β-lactamines) : vancomycine 15 mg/kg IV (en 60 min) OU clindamycine 900 mg IV<br />
+  - Réinjection : céfazoline toutes les 4h si chirurgie prolongée (demi-vie courte)<br />
+- <strong>Durée</strong> : dose unique ou maximum 24h post-opératoire — JAMAIS au-delà !<br />
+  - Étude PARITY (JBJS, 2022) : prophylaxie 24h = prophylaxie 5 jours pour les fractures fermées opérées<br />
+  - Fractures ouvertes : voir Module 17 (48-72h selon Gustilo)<br />
+- <strong>Cas particuliers</strong> :<br />
+  - Dépistage SARM nasal pré-opératoire : si positif → décolonisation mupirocine nasale + chlorhexidine douche ; ajout vancomycine à l'antibioprophylaxie<br />
+  - Allergie pénicilline : évaluation allergologique, céfazoline possible dans 95% des « allergies » déclarées aux pénicillines<br />
+  - Reprise chirurgicale précoce (&lt;30 jours) : renouveler la prophylaxie</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA29-S01-001 | 📊 INFOGRAPHIE | Protocole d'antibioprophylaxie en chirurgie orthopédique : timing, molécule, dose, réinjection | Protocole visuel |<br />
+| MIOA29-S01-002 | 📐 SCHÉMA | Timeline antibioprophylaxie : fenêtre optimale d'administration par rapport à l'incision | Chronologie |<br />
+| MIOA29-S01-003 | 📊 INFOGRAPHIE | Décolonisation SARM pré-opératoire : protocole complet | Checklist |</p>
+<h3 id="section-292-environnement-du-bloc-operatoire">Section 29.2 — Environnement du bloc opératoire</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Flux laminaire</strong> (Ultra-Clean Air) :<br />
+  - Données historiques (Lidwell, Lancet 1982) : réduction des ISO prothétiques de 3.4% → 0.9% avec flux + ATB prophylaxie<br />
+  - Controverses récentes : études observationnelles remettant en question le bénéfice additionnel du flux laminaire (registres suédois, néo-zélandais)<br />
+  - Consensus actuel : recommandé mais pas obligatoire ; le taux de renouvellement d'air (≥20 vol/h) est plus important que le type de flux<br />
+- <strong>Seuils de particules et contamination aérienne</strong> :<br />
+  - ISO 5 (classe 100) : ≤3 520 particules ≥0.5 µm/m³ — recommandé pour la chirurgie prothétique<br />
+  - Contrôle bactériologique de l'air : ≤10 UFC/m³ en activité<br />
+- <strong>Trafic en salle opératoire</strong> : chaque ouverture de porte = augmentation de la contamination aérienne → politique de restriction du trafic<br />
+- <strong>Habillage chirurgical</strong> : casaque imperméable, double gantage, cagoule/scaphandre (réduction des desquamations)<br />
+- <strong>Antisepsie cutanée pré-opératoire</strong> :<br />
+  - 2 douches pré-opératoires à la chlorhexidine (veille + matin de l'intervention)<br />
+  - Antisepsie du site opératoire : povidone iodée alcoolique ou chlorhexidine alcoolique (CHG-OH préféré car activité rémanente)<br />
+  - Dépilation : tonte (PAS de rasage) le jour de l'intervention</p>
+<h3 id="section-293-optimisation-pre-operatoire-du-patient">Section 29.3 — Optimisation pré-opératoire du patient</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Facteurs modifiables</strong> :<br />
+  - Diabète : HbA1c &lt;8%, glycémie péri-opératoire &lt;180 mg/dL<br />
+  - Obésité : IMC idéalement &lt;40 (risque ISO multipliés par 2-3 si IMC &gt;40)<br />
+  - Tabac : sevrage ≥4-6 semaines avant la chirurgie<br />
+  - Malnutrition : albumine &gt;30 g/L, lymphocytes &gt;1500/mm³ — complémentation nutritionnelle si nécessaire<br />
+  - Anémie : optimisation pré-opératoire (fer IV, EPO) pour réduire les transfusions (transfusion = facteur de risque d'ISO !)<br />
+  - Colonisation SARM : dépistage nasal + décolonisation si positif<br />
+  - Infection à distance : traiter toute infection (urinaire, dentaire, cutanée) avant chirurgie programmée<br />
+- <strong>Consultation pré-opératoire infectiologique</strong> : recommandée pour les reprises prothétiques et les patients à haut risque</p>
+<h3 id="section-294-techniques-per-operatoires-de-prevention">Section 29.4 — Techniques per-opératoires de prévention</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Ciment antibiotique</strong> : ajout systématique de gentamicine ± vancomycine au ciment de scellement prothétique en chirurgie de 1ère intention<br />
+  - Registres scandinaves : réduction du risque d'infection de 40-50% <em>(Engesæter et al., 2003, Acta Orthop)</em> (PTH, PTG)<br />
+  - Dose recommandée : ≤2g d'ATB/40g de ciment (ne pas compromettre les propriétés mécaniques)<br />
+- <strong>Vancomycine poudre locale</strong> : application dans la plaie (rachis surtout) — efficacité démontrée en chirurgie rachidienne instrumentée<br />
+- <strong>Irrigation antiseptique</strong> : bétadine diluée (3.5%) en lavage per-opératoire (étude FLOW <em>(FLOW Investigators, N Engl J Med, 2015)</em> pour les fractures ouvertes — pas de supériorité)<br />
+- <strong>Drainage post-opératoire</strong> : pas de bénéfice prouvé pour la prévention de l'ISO en arthroplastie (tendance à l'abandon)<br />
+- <strong>Durée opératoire</strong> : facteur de risque indépendant — chaque 30 min supplémentaire = +50% de risque d'ISO <em>(Cheng et al., 2017, J Arthroplasty)</em></p>
+<h3 id="section-295-surveillance-et-registres">Section 29.5 — Surveillance et registres</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Surveillance des ISO</strong> : obligation réglementaire en France (réseau ISO-RAISIN → maintenant SPARE-SSI)<br />
+- Taux cibles : PTH &lt;1%, PTG &lt;1.5%, rachis instrumenté &lt;2% <em>(RAISIN/INCISO, rapport national)</em><br />
+- <strong>Indicateurs</strong> : taux brut d'ISO, ratio standardisé d'incidence (SIR), score NNIS (durée opératoire, ASA, contamination)<br />
+- Retour d'information aux chirurgiens : effet prouvé sur la réduction des ISO (Hawthorne effect)<br />
+- Registres prothétiques nationaux : données de survie incluant la révision pour infection</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA29-S04-001 | 📊 INFOGRAPHIE | Checklist de prévention des ISO en chirurgie orthopédique prothétique | Checklist OMS adaptée |<br />
+| MIOA29-S04-002 | 📐 SCHÉMA | Les 10 commandements de la prévention des ISO | Visuel mémorisable |<br />
+| MIOA29-S05-001 | 📊 INFOGRAPHIE | Registres de surveillance des ISO : indicateurs et taux cibles | Tableau de bord |</p>
+<h3 id="points-cles-du-module-29">Points clés du Module 29</h3>
+<ol>
+<li>L'antibioprophylaxie (céfazoline 2g IV, 30 min avant l'incision) est la mesure la plus efficace pour prévenir l'ISO</li>
+<li>Durée maximale de la prophylaxie : 24h post-opératoire — jamais au-delà</li>
+<li>Dépistage et décolonisation du SARM en pré-opératoire réduisent les ISO staphylococciques</li>
+<li>Optimisation pré-opératoire : HbA1c, nutrition, sevrage tabac, traitement des infections à distance</li>
+<li>Le ciment antibiotique réduit le risque d'infection prothétique de 40-50% (registres scandinaves)</li>
+<li>La surveillance des ISO avec retour aux chirurgiens est obligatoire et efficace</li>
+<li>La durée opératoire est un facteur de risque indépendant (+50% de risque par 30 min additionnelles)</li>
+</ol>
+<hr />
+<h1 id="module-30-recherche-et-innovations-phagotherapie-peptides-antimicrobiens-biomateriaux-intelligence-artificielle">MODULE 30 : RECHERCHE ET INNOVATIONS — PHAGOTHÉRAPIE, PEPTIDES ANTIMICROBIENS, BIOMATÉRIAUX, INTELLIGENCE ARTIFICIELLE</h1>
+<p><strong>Partie</strong> : IX — Prévention et Innovations<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 3, 4, 11, 13</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Infection périprothétique chronique du genou à *S. aureus* SARM, résistant à la rifampicine ET aux fluoroquinolones. 3 révisions chirurgicales antérieures (2 DAIR échoués, 1 changement en 2 temps échoué). Options conventionnelles épuisées. L'équipe du CRIOA propose une thérapie par phages anti-*S. aureus* en compassionnel. *Qu'est-ce que la phagothérapie ? Est-ce l'avenir du traitement des IOA résistantes ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> les principes de la phagothérapie et son état d'avancement</li>
+<li><strong>Connaître</strong> les peptides antimicrobiens et leur potentiel thérapeutique</li>
+<li><strong>Évaluer</strong> les biomatériaux anti-infectieux innovants</li>
+<li><strong>Appréhender</strong> le rôle de l'intelligence artificielle dans le diagnostic et la prédiction des IOA</li>
+<li><strong>Situer</strong> les axes de recherche translationnelle en IOA</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-301-phagotherapie">Section 30.1 — Phagothérapie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Concept</strong> : utilisation de bactériophages (virus spécifiques des bactéries) pour détruire les bactéries pathogènes<br />
+- <strong>Histoire</strong> : Félix d'Hérelle (Institut Pasteur, 1917) → utilisation courante en URSS → renaissance mondiale au XXIe siècle face à l'antibiorésistance<br />
+- <strong>Principes</strong> :<br />
+  - Spécificité étroite : chaque phage attaque un spectre bactérien limité → phagogramme (antibiogramme des phages)<br />
+  - Auto-amplification : les phages se multiplient au site d'infection<br />
+  - Action anti-biofilm : certains phages possèdent des dépolymérases qui dégradent la matrice extracellulaire du biofilm<br />
+  - Synergie phage-antibiotique (PAS = Phage-Antibiotic Synergy) : les ATB sub-inhibiteurs augmentent la réplication des phages<br />
+- <strong>Applications en IOA</strong> :<br />
+  - Infections chroniques résistantes aux ATB conventionnels<br />
+  - Utilisation compassionnelle (ATU en France, via le Comité de phagothérapie — Hospices Civils de Lyon, AP-HP)<br />
+  - Administration : locale (per-opératoire), intraveineuse, intra-articulaire<br />
+  - Essais cliniques en cours : PhagoPTG (Lyon ; <em>voir ClinicalTrials.gov</em>), PHOSA (Bordeaux ; <em>voir ClinicalTrials.gov</em>), WHO-endorsed studies<br />
+- <strong>Résultats</strong> : séries de cas encourageantes (succès 50-80% en compassionnel) <em>(Ferry et al., 2020, Clin Infect Dis)</em>, mais pas encore d'essai randomisé contrôlé de grande taille<br />
+- <strong>Défis</strong> : production GMP (Good Manufacturing Practice), réglementation (médicament ou produit biologique ?), résistance bactérienne aux phages (émergence rapide), élargissement du spectre (cocktails de phages)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA30-S01-001 | 🎬 ANIMATION | Phagothérapie : cycle lytique du bactériophage, action anti-biofilm, synergie avec ATB | Animation 3D |<br />
+| MIOA30-S01-002 | 📐 SCHÉMA | Phagogramme : sélection du cocktail de phages pour un patient | Schéma procédural |<br />
+| MIOA30-S01-003 | 📊 INFOGRAPHIE | Phagothérapie en IOA : état des lieux 2026 — essais, résultats, limites | Tableau synthétique |</p>
+<h3 id="section-302-peptides-antimicrobiens-pam">Section 30.2 — Peptides antimicrobiens (PAM)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Définition</strong> : petites protéines cationiques de défense immunitaire innée avec activité antimicrobienne directe<br />
+- <strong>Exemples</strong> : défensines (α, β), cathelicidines (LL-37), lactoferricine, magainine<br />
+- <strong>Mécanisme d'action</strong> : perturbation de la membrane bactérienne (pores transmembranaires), activité anti-biofilm, immunomodulation<br />
+- <strong>Avantages théoriques</strong> : spectre large, action rapide, faible risque de résistance, activité anti-biofilm<br />
+- <strong>Applications en développement</strong> :<br />
+  - Coating d'implants orthopédiques : revêtement de PAM sur titane/acier<br />
+  - Incorporation dans les ciments et hydrogels<br />
+  - Administration locale<br />
+- <strong>Limites actuelles</strong> : cytotoxicité potentielle, coût de production, instabilité in vivo, peu d'essais cliniques avancés</p>
+<h3 id="section-303-biomateriaux-anti-infectieux-innovants">Section 30.3 — Biomatériaux anti-infectieux innovants</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Coating d'implants</strong> :<br />
+  - Revêtement argent : effet bactéricide, utilisé sur certaines méga-prothèses tumorales (Agluna®, Mutars®)<br />
+  - Revêtement titane-cuivre (TiCu) : activité antimicrobienne intrinsèque<br />
+  - Revêtement hydrogel + ATB : libération prolongée<br />
+  - Surface nano-texturée : effet mécano-bactéricide (nanopillars, ailes de cigale biomimétique)<br />
+  - Revêtement anti-adhésion : PEG, phosphorylcholine → empêche l'adhésion bactérienne initiale<br />
+- <strong>Ciments nouvelle génération</strong> :<br />
+  - Ciment résorbable antibiotique (sulfate de calcium, phosphate de calcium)<br />
+  - Hydrogels injectables : libération locale prolongée d'ATB + facteurs de croissance<br />
+  - Ciment thermosensible : liquide à température ambiante, solide à 37°C<br />
+- <strong>Bio-verre S53P4</strong> (BonAlive®) : antibactérien intrinsèque (pH alcalin local + osmolarité élevée), substitut osseux + comblement + anti-infectieux<br />
+- <strong>Impression 3D</strong> :<br />
+  - Spacers PMMA imprimés en 3D (anatomiques, patient-spécifiques)<br />
+  - Implants en titane poreux imprimés en 3D avec coating antibiotique<br />
+  - Guides de coupe patient-spécifiques pour la chirurgie de révision</p>
+<h3 id="section-304-intelligence-artificielle-et-ioa">Section 30.4 — Intelligence artificielle et IOA</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>IA et diagnostic</strong> :<br />
+  - Algorithmes de deep learning pour la détection de l'ostéomyélite en IRM (sensibilité 90-95%)<br />
+  - Analyse automatisée des radiographies : détection de descellement prothétique<br />
+  - NLP (Natural Language Processing) : extraction automatisée des données de surveillance des ISO dans les dossiers médicaux<br />
+- <strong>IA et prédiction</strong> :<br />
+  - Modèles prédictifs du risque d'ISO : machine learning intégrant &gt;50 variables pré/per-opératoires<br />
+  - Prédiction de l'échec du DAIR vs changement prothétique<br />
+  - Prédiction de la résistance bactérienne aux ATB à partir des données génomiques<br />
+- <strong>IA et planification chirurgicale</strong> :<br />
+  - Planification 3D automatisée de la résection osseuse<br />
+  - Simulation de la reconstruction (Masquelet, transport osseux)<br />
+  - Guides chirurgicaux patient-spécifiques générés par IA<br />
+- <strong>Limites</strong> : validation clinique insuffisante, biais des données d'entraînement, interprétabilité des modèles, questions éthiques</p>
+<h3 id="section-305-autres-axes-de-recherche">Section 30.5 — Autres axes de recherche</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Vaccination anti-<em>S. aureus</em></strong> : plusieurs candidats en développement, aucun succès à ce jour (SA4Ag de Pfizer : échec en phase III <em>(Fowler et al., 2020, N Engl J Med)</em>)<br />
+- <strong>Immunothérapie passive</strong> : anticorps monoclonaux anti-toxines staphylococciques (anti-alpha-hémolysine, anti-PVL)<br />
+- <strong>Quorum sensing inhibitors</strong> : bloquer la communication bactérienne pour inhiber la formation de biofilm<br />
+- <strong>CRISPR-Cas</strong> encodé dans des phages : ciblage spécifique des gènes de résistance bactérienne<br />
+- <strong>Métaméta-analyse du microbiome osseux</strong> : remise en question du dogme de la stérilité osseuse<br />
+- <strong>Biofilm disruption</strong> : enzymes (dispersine B, DNase), ultrasons focalisés, champs électriques pulsés<br />
+- <strong>Nanotechnologies</strong> : nanoparticules d'argent, nanocapsules d'ATB, nanovecteurs ciblés</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA30-S03-001 | 📷 IMAGE | Coating d'implant : surface nano-texturée biomimétique (microscope électronique) | Image MEB |<br />
+| MIOA30-S03-002 | 📊 INFOGRAPHIE | Biomatériaux anti-infectieux innovants : panorama 2026 | Roadmap technologique |<br />
+| MIOA30-S04-001 | 📐 SCHÉMA | IA en IOA : applications diagnostiques, prédictives et chirurgicales | Schéma récapitulatif |<br />
+| MIOA30-S05-001 | 📊 INFOGRAPHIE | Perspectives de recherche IOA 2026-2036 : feuille de route | Timeline prospective |<br />
+| MIOA30-S05-002 | 🎬 ANIMATION InfectoSim© | Simulation finale : cas complexe intégrant toutes les innovations (phagothérapie, biomatériaux, IA) | Exercice synthèse |</p>
+<h3 id="points-cles-du-module-30">Points clés du Module 30</h3>
+<ol>
+<li>La phagothérapie est l'innovation la plus avancée en IOA résistante : usage compassionnel en France, essais randomisés en cours</li>
+<li>Les peptides antimicrobiens ont un potentiel comme coating d'implants mais restent en développement préclinique</li>
+<li>Les biomatériaux anti-infectieux (coating argent, nanosurfaces, bio-verre) sont progressivement utilisés en pratique clinique</li>
+<li>L'IA peut améliorer le diagnostic (imagerie), la prédiction du risque d'ISO et la planification chirurgicale</li>
+<li>La vaccination anti-S. aureus reste un objectif majeur non atteint</li>
+<li>L'approche multimodale combinant phages + ATB + biomatériaux + IA est probablement l'avenir</li>
+<li>La recherche translationnelle en IOA est un domaine en pleine expansion</li>
+</ol>
+<hr />
+<h2 id="synthese-de-la-partie-ix-grille-dauto-evaluation">SYNTHÈSE DE LA PARTIE IX — GRILLE D'AUTO-ÉVALUATION</h2>
+<h3 id="quiz-recapitulatif-modules-29-30">Quiz récapitulatif (Modules 29-30)</h3>
+<p><strong>Niveau Bronze 🥉</strong> :<br />
+1. Quel antibiotique est le standard de la prophylaxie en chirurgie orthopédique ? (<em>céfazoline</em>)<br />
+2. Quel est le timing optimal d'administration de l'antibioprophylaxie ? (<em>30-60 min avant l'incision</em>)<br />
+3. Quelle est la durée maximale recommandée de la prophylaxie ? (<em>24h</em>)</p>
+<p><strong>Niveau Argent 🥈</strong> :<br />
+1. Quels sont les 3 facteurs pré-opératoires modifiables les plus impactants pour réduire le risque d'ISO ?<br />
+2. Quel est le mécanisme d'action des bactériophages sur le biofilm ?<br />
+3. Quels sont les critères de réinjection de la céfazoline ?</p>
+<p><strong>Niveau Or 🥇</strong> :<br />
+1. Expliquez la synergie phage-antibiotique (PAS) et ses implications thérapeutiques<br />
+2. Comparez les avantages et inconvénients du ciment antibiotique vs bio-verre S53P4 pour le comblement osseux septique<br />
+3. Décrivez le protocole complet de dépistage et décolonisation du SARM en pré-opératoire</p>
+<p><strong>Niveau Diamant 💎</strong> :<br />
+1. Un patient présente une infection périprothétique à SARM résistant à la rifampicine et aux FQ. Les 2 tentatives de DAIR et un changement en 2 temps ont échoué. Proposez une stratégie thérapeutique innovante argumentée en intégrant les développements récents<br />
+2. Proposez un programme de surveillance des ISO dans votre établissement incluant les indicateurs, les seuils d'alerte et les actions correctives<br />
+3. Évaluez le niveau de preuve actuel de la phagothérapie en IOA et argumentez pour ou contre son intégration dans les recommandations de bonnes pratiques</p>
+<hr />
+<h2 id="tableau-recapitulatif-global-de-la-formation-ioa">TABLEAU RÉCAPITULATIF GLOBAL DE LA FORMATION IOA</h2>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Modules</th>
+<th>Titre</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>1-4</td>
+<td>Histoire et Fondamentaux</td>
+<td>14h</td>
+</tr>
+<tr>
+<td>II</td>
+<td>5-6</td>
+<td>Immunologie et Terrain</td>
+<td>7h</td>
+</tr>
+<tr>
+<td>III</td>
+<td>7-10</td>
+<td>Diagnostic</td>
+<td>14h</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>11-13</td>
+<td>Antibiothérapie</td>
+<td>10h30</td>
+</tr>
+<tr>
+<td>V</td>
+<td>14-17</td>
+<td>Ostéomyélite</td>
+<td>14h</td>
+</tr>
+<tr>
+<td>VI</td>
+<td>18-21</td>
+<td>Arthrite Septique et Infection Périprothétique</td>
+<td>15h</td>
+</tr>
+<tr>
+<td>VII</td>
+<td>22-25</td>
+<td>Infections Spécifiques</td>
+<td>14h</td>
+</tr>
+<tr>
+<td>VIII</td>
+<td>26-28</td>
+<td>Chirurgie et Reconstruction</td>
+<td>12h</td>
+</tr>
+<tr>
+<td>IX</td>
+<td>29-30</td>
+<td>Prévention et Innovations</td>
+<td>6h30</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>30</strong></td>
+<td></td>
+<td><strong>~107h</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr />
+<h2 id="references-partie-ix">RÉFÉRENCES — PARTIE IX</h2>
+<ol>
+<li>Engesæter LB, Lie SA, Espehaug B, et al. Antibiotic prophylaxis in total hip arthroplasty: effects of antibiotic prophylaxis systemically and in bone cement on the revision rate of 22,170 primary hip replacements. <em>Acta Orthop Scand</em>. 2003;74(6):644-651.</li>
+<li>Cheng H, Chen BP, Soleas IM, et al. Prolonged operative duration increases risk of surgical site infections: a systematic review. <em>Surg Infect</em>. 2017;18(6):722-735.</li>
+<li>RAISIN/INCISO. Surveillance des infections du site opératoire en France — Rapport national. Santé publique France.</li>
+<li>Ferry T, Kolenda C, Briot T, et al. Past and future of phage therapy and phage-derived proteins in patients with bone and joint infection. <em>Viruses</em>. 2020;12(12):1403.</li>
+<li>FLOW Investigators. A trial of wound irrigation in the initial management of open fracture wounds. <em>N Engl J Med</em>. 2015;373(27):2629-2641.</li>
+<li>Fowler VG, Allen KB, Moreira ED, et al. Effect of an investigational vaccine for preventing <em>Staphylococcus aureus</em> infections after cardiothoracic surgery: a randomized trial. <em>JAMA</em>. 2013;309(13):1368-1378.</li>
+<li>Lidwell OM, Lowbury EJ, Whyte W, et al. Effect of ultraclean air in operating rooms on deep sepsis in the joint after total hip or knee replacement. <em>BMJ</em>. 1982;285(6334):10-14.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

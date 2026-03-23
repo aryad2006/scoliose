@@ -1,0 +1,341 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-06-complications-de-lhta">❤️ PARTIE 06 — COMPLICATIONS DE L'HTA</h1>
+<h2 id="retentissement-cardiaque-cerebral-renal-vasculaire-et-ophtalmologique">Retentissement cardiaque, cérébral, rénal, vasculaire et ophtalmologique</h2>
+<hr />
+<h1 id="module-20-complications-cardiaques">MODULE 20 — COMPLICATIONS CARDIAQUES</h1>
+<h2 id="201-cardiopathie-hypertensive">20.1 Cardiopathie hypertensive</h2>
+<h3 id="2011-histoire-naturelle">20.1.1 Histoire naturelle</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA20-S01-001 — SCHÉMA : histoire naturelle de la cardiopathie hypertensive — du remodelage à l'insuffisance cardiaque]</p>
+</blockquote>
+<p><strong>Continuum de la cardiopathie hypertensive</strong> :<br />
+1. <strong>HVG concentrique</strong> → remodelage adaptatif initial (normalisation contrainte pariétale par loi de Laplace)<br />
+2. <strong>Dysfonction diastolique</strong> → trouble de la relaxation puis augmentation des pressions de remplissage<br />
+3. <strong>Insuffisance cardiaque à FEVG préservée (ICFEp)</strong> → dyspnée d'effort, congestion<br />
+4. <strong>Dilatation VG</strong> → transition vers HVG excentrique<br />
+5. <strong>Insuffisance cardiaque à FEVG réduite (ICFEr)</strong> → cardiomyopathie dilatée hypertensive terminale</p>
+<h3 id="2012-insuffisance-cardiaque">20.1.2 Insuffisance cardiaque</h3>
+<p><strong>ICFEp (FEVG ≥ 50 %)</strong> :<br />
+- Représente 50 % des IC, l'HTA en est la cause principale<br />
+- Critères diagnostiques (ESC 2021) : symptômes + FEVG ≥ 50 % + pressions de remplissage élevées (E/e' &gt; 14, BNP &gt; 35 pg/mL ou NT-proBNP &gt; 125 pg/mL)<br />
+- Score H2FPEF (Mayo Clinic) ou HFA-PEFF (ESC) pour le diagnostic en zone grise</p>
+<p><strong>ICFEr (FEVG &lt; 40 %)</strong> :<br />
+- Stade tardif de la cardiopathie hypertensive<br />
+- Traitement codifié : IEC/ARA2/ARNI + β-bloquant + anti-aldostérone + iSGLT2</p>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC 2021, IC) :</p>
+<blockquote>
+<p>Chez l'hypertendu avec IC, les cibles tensionnelles sont identiques (&lt; 130/80), mais le choix des antihypertenseurs est dicté par le type d'IC. Les ICC dihydropyridines sont contre-indiqués dans l'ICFEr (effet inotrope négatif). Les iSGLT2 (dapagliflozine, empagliflozine) ont un bénéfice prouvé dans ICFEr ET ICFEp.</p>
+</blockquote>
+<h3 id="2013-fibrillation-auriculaire">20.1.3 Fibrillation auriculaire</h3>
+<ul>
+<li>Prévalence de FA chez l'hypertendu : <strong>15-20 %</strong> (vs 2-3 % population générale)</li>
+<li>L'HTA est le <strong>facteur de risque le plus fréquent</strong> de FA (odds ratio 1,5-2)</li>
+<li>Mécanismes : dilatation OG, fibrose auriculaire, remodelage électrique</li>
+<li>Conséquences : risque embolique (AVC × 5), insuffisance cardiaque, mortalité</li>
+<li>Anticoagulation systématique si CHA₂DS₂-VASc ≥ 1 (homme) ou ≥ 2 (femme)</li>
+</ul>
+<hr />
+<h1 id="module-21-complications-cerebrales">MODULE 21 — COMPLICATIONS CÉRÉBRALES</h1>
+<h2 id="211-avc-et-hta">21.1 AVC et HTA</h2>
+<h3 id="2111-epidemiologie">21.1.1 Épidémiologie</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHTA21-S01-001 — GRAPHIQUE : relation PA-risque d'AVC — réduction linéaire avec le traitement]</p>
+</blockquote>
+<ul>
+<li>L'HTA est responsable de <strong>54 %</strong> de tous les AVC dans le monde</li>
+<li><strong>AVC ischémique</strong> (80 %) : thrombose athéromateuse ou embolie (souvent FA liée à l'HTA)</li>
+<li><strong>AVC hémorragique</strong> (15 %) : rupture de micro-anévrismes de Charcot-Bouchard</li>
+<li><strong>Hémorragie sous-arachnoïdienne</strong> (5 %) : rupture d'anévrisme</li>
+<li>Réduction du risque d'AVC de <strong>35-40 %</strong> pour chaque baisse de 10 mmHg de PAS</li>
+</ul>
+<h3 id="2112-avc-ischemique-et-gestion-de-la-pa-en-phase-aigue">21.1.2 AVC ischémique et gestion de la PA en phase aiguë</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA21-S01-002 — ALGORITHME : gestion de la PA en phase aiguë d'AVC ischémique]</p>
+</blockquote>
+<p><strong>Principes</strong> (adapté de ESC/ESH 2023 et AHA/ASA 2019) :<br />
+- <strong>Si thrombolyse IV (rt-PA)</strong> : PA doit être &lt; 185/110 mmHg AVANT et &lt; 180/105 mmHg pendant les 24h suivantes<br />
+- <strong>Si thrombectomie</strong> : mêmes seuils<br />
+- <strong>Sans reperfusion</strong> : ne traiter que si PA &gt; 220/120 mmHg (risque d'aggraver la pénombre ischémique)<br />
+- Agents : nicardipine IV ou urapidil IV</p>
+<h3 id="2113-avc-hemorragique">21.1.3 AVC hémorragique</h3>
+<ul>
+<li>Cible : <strong>PAS 130-140 mmHg</strong> dans les premières heures (étude INTERACT2, 2013)</li>
+<li>Réduction du risque d'expansion de l'hématome</li>
+<li>Nicardipine IV en première intention</li>
+</ul>
+<h3 id="2114-prevention-secondaire-post-avc">21.1.4 Prévention secondaire post-AVC</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<p>Après un AVC ischémique ou hémorragique, le traitement antihypertenseur doit être initié ou repris après la phase aiguë (&gt; 72h pour AVC ischémique). Cible : PAS 120-130 mmHg. Perindopril + indapamide (étude PROGRESS) réduit la récidive d'AVC de 28 %.</p>
+</blockquote>
+<hr />
+<h2 id="212-encephalopathie-hypertensive-et-troubles-cognitifs">21.2 Encéphalopathie hypertensive et troubles cognitifs</h2>
+<h3 id="2121-encephalopathie-hypertensive">21.2.1 Encéphalopathie hypertensive</h3>
+<p><strong>Définition</strong> : syndrome neurologique aigu lié à une élévation brutale de la PA, dépassant les capacités d'autorégulation cérébrale.</p>
+<p><strong>Clinique</strong> :<br />
+- Céphalées sévères, vomissements<br />
+- Troubles visuels (flou, amaurose)<br />
+- Confusion, somnolence<br />
+- Convulsions (si non traitée)<br />
+- Signes focaux possibles (diagnostic différentiel : AVC)</p>
+<p><strong>Imagerie</strong> : syndrome d'encéphalopathie postérieure réversible (PRES) — œdème de la substance blanche occipito-pariétale en IRM</p>
+<h3 id="2122-declin-cognitif-et-demence-vasculaire">21.2.2 Déclin cognitif et démence vasculaire</h3>
+<ul>
+<li>L'HTA à mi-vie (40-65 ans) augmente le risque de démence de <strong>60 %</strong></li>
+<li>Le traitement antihypertenseur réduit le risque de démence de <strong>12 %</strong> (méta-analyse, Lancet Neurology 2020)</li>
+<li>La PA cible &lt; 130 mmHg pourrait offrir une meilleure protection cognitive (sous-analyse SPRINT-MIND)</li>
+</ul>
+<hr />
+<h1 id="module-22-complications-renales">MODULE 22 — COMPLICATIONS RÉNALES</h1>
+<h2 id="221-nephropathie-hypertensive">22.1 Néphropathie hypertensive</h2>
+<h3 id="2211-epidemiologie-et-mecanismes">22.1.1 Épidémiologie et mécanismes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA22-S01-001 — SCHÉMA : physiopathologie de la néphrangiosclérose — de l'hyalinose à la glomérulosclérose]</p>
+</blockquote>
+<ul>
+<li>L'HTA est la <strong>2e cause d'IRC terminale</strong> en France (25 %, après le diabète)</li>
+<li><strong>Néphrangiosclérose bénigne</strong> : évolution lente, protéinurie modérée (&lt; 1 g/j), reins de taille diminuée</li>
+<li><strong>Néphrangiosclérose maligne</strong> : insuffisance rénale rapidement progressive, HTA maligne, microangiopathie</li>
+</ul>
+<h3 id="2212-protection-renale">22.1.2 Protection rénale</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de KDIGO 2021 et ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li><strong>Blocage du SRAA obligatoire</strong> si RAC ≥ 30 mg/g : IEC ou ARA2 (jamais les deux)</li>
+<li><strong>Cible PA : &lt; 120 mmHg</strong> (PAS, mesure standardisée)</li>
+<li><strong>iSGLT2</strong> (dapagliflozine, empagliflozine) : bénéfice néphroprotecteur additionnel, indépendant du diabète (DAPA-CKD, EMPA-KIDNEY)</li>
+<li><strong>Finérénone</strong> (MRA non stéroïdien) : bénéfice additionnel chez le diabétique avec IRC (FIDELIO-DKD, FIGARO-DKD)</li>
+<li><strong>Éviter les néphrotoxiques</strong> : AINS, produits de contraste iodé sans précaution, aminosides</li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="module-23-complications-vasculaires">MODULE 23 — COMPLICATIONS VASCULAIRES</h1>
+<h2 id="231-atherosclerose-acceleree">23.1 Athérosclérose accélérée</h2>
+<h3 id="2311-arteriopathie-des-membres-inferieurs">23.1.1 Artériopathie des membres inférieurs</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA23-S01-001 — SCHÉMA : stades de l'AOMI de Leriche-Fontaine et classification de Rutherford]</p>
+</blockquote>
+<ul>
+<li>L'HTA augmente le risque d'AOMI de <strong>40-50 %</strong></li>
+<li>Dépistage : <strong>IPS</strong> (seuil &lt; 0,9), palpation des pouls, questionnaire de claudication</li>
+<li>Classification de Fontaine :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Asymptomatique (IPS &lt; 0,9)</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Claudication intermittente (IIa &gt; 200 m, IIb &lt; 200 m)</td>
+</tr>
+<tr>
+<td>III</td>
+<td>Douleurs de décubitus</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Troubles trophiques (ulcères, gangrène)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2312-anevrisme-de-laorte-abdominale">23.1.2 Anévrisme de l'aorte abdominale</h3>
+<ul>
+<li>Prévalence 3-5 % chez les hommes &gt; 65 ans hypertendus</li>
+<li>Dépistage échographique recommandé : homme 65-75 ans fumeur ou ancien fumeur</li>
+<li>Seuil chirurgical : diamètre ≥ 55 mm ou croissance &gt; 10 mm/an</li>
+<li>L'HTA est un facteur de risque de rupture (contrainte pariétale)</li>
+</ul>
+<h3 id="2313-dissection-aortique">23.1.3 Dissection aortique</h3>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>La dissection aortique est une urgence vitale absolue. Mortalité de 1-2 %/heure sans traitement. L'HTA est le principal facteur de risque (75 % des cas). Classification de Stanford : type A (aorte ascendante, chirurgie urgente) et type B (aorte descendante, traitement médical ± endovasculaire).</p>
+</blockquote>
+<hr />
+<h1 id="module-24-complications-ophtalmologiques">MODULE 24 — COMPLICATIONS OPHTALMOLOGIQUES</h1>
+<h2 id="241-retinopathie-hypertensive-detaillee">24.1 Rétinopathie hypertensive détaillée</h2>
+<h3 id="2411-classification-de-wong-mitchell">24.1.1 Classification de Wong-Mitchell</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHTA24-S01-001 — FOND D'ŒIL COMPARATIF : les 4 stades de rétinopathie hypertensive avec photos annotées]</p>
+</blockquote>
+<p><strong>Classification simplifiée de Wong-Mitchell</strong> (adapté de Wong &amp; Mitchell, NEJM 2004) :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Signes</th>
+<th>Association pronostique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aucun</td>
+<td>Pas d'anomalie</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Léger</td>
+<td>Rétrécissement artériolaire généralisé ou focal, signe du croisement, artères en fil d'argent</td>
+<td>HTA chronique</td>
+</tr>
+<tr>
+<td>Modéré</td>
+<td>Hémorragies rétiniennes (flammes ou points), exsudats cotonneux, exsudats durs</td>
+<td>Risque d'AVC × 2, mortalité CV × 2</td>
+</tr>
+<tr>
+<td>Sévère</td>
+<td>Grade modéré + <strong>œdème papillaire</strong></td>
+<td>HTA maligne, mortalité très élevée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2412-choroidopathie-et-neuropathie-optique-hypertensive">24.1.2 Choroïdopathie et neuropathie optique hypertensive</h3>
+<ul>
+<li><strong>Choroïdopathie hypertensive</strong> : taches d'Elschnig (zones d'ischémie choroïdienne), décollement séreux rétinien</li>
+<li><strong>Neuropathie optique ischémique antérieure</strong> : l'HTA est un facteur de risque</li>
+<li><strong>Occlusion vasculaire rétinienne</strong> : OACR (artère centrale), OVCR (veine centrale), aggravée par l'HTA</li>
+</ul>
+<hr />
+<h2 id="242-quiz-modules-20-24">24.2 Quiz Modules 20-24</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> L'HTA est responsable de quel pourcentage des AVC dans le monde ?<br />
+- A) 20 %<br />
+- B) 35 %<br />
+- C) 54 %<br />
+- D) 75 %</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — L'HTA est responsable de 54 % de tous les AVC, en étant le facteur de risque le plus important et le plus modifiable.</p>
+</blockquote>
+<p><strong>Q2.</strong> Quelle est la position de l'HTA parmi les causes d'IRC terminale en France ?<br />
+- A) 1ère cause<br />
+- B) 2e cause (après le diabète)<br />
+- C) 3e cause<br />
+- D) 5e cause</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — 2e cause (25 %) après le diabète (30 %), suivie des glomérulonéphrites.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Quel est le seuil de PA avant thrombolyse IV d'un AVC ischémique ?<br />
+- A) &lt; 220/120<br />
+- B) &lt; 185/110<br />
+- C) &lt; 160/100<br />
+- D) &lt; 140/90</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — PA &lt; 185/110 mmHg avant et &lt; 180/105 mmHg pendant les 24h post-thrombolyse.</p>
+</blockquote>
+<p><strong>Q4.</strong> Quelle classe médicamenteuse a démontré un bénéfice néphroprotecteur additionnel, indépendant du diabète ?<br />
+- A) Les β-bloquants<br />
+- B) Les inhibiteurs calciques<br />
+- C) Les iSGLT2<br />
+- D) Les α-bloquants</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Les iSGLT2 (dapagliflozine, empagliflozine) ont un bénéfice néphroprotecteur prouvé indépendamment du diabète (DAPA-CKD, EMPA-KIDNEY).</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q5.</strong> Quel signe au fond d'œil définit le passage à la rétinopathie hypertensive sévère (HTA maligne) ?<br />
+- A) Le rétrécissement artériolaire<br />
+- B) Le signe du croisement<br />
+- C) Les hémorragies rétiniennes<br />
+- D) L'œdème papillaire</p>
+<blockquote>
+<p><strong>Réponse : D</strong> — L'œdème papillaire (stade IV de KWB / grade sévère de Wong-Mitchell) est le marqueur définissant l'HTA maligne.</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q6.</strong> Dans la dissection aortique de type A, quelle est la mortalité sans traitement dans les premières 48h ?<br />
+- A) 10 %<br />
+- B) 25 %<br />
+- C) 50 % (1-2 %/heure)<br />
+- D) 80 %</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Environ 50 % de mortalité à 48h sans chirurgie (1-2 %/heure), justifiant la chirurgie en urgence absolue pour le type A.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

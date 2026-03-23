@@ -1,0 +1,470 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-05-examens-paracliniques">PARTIE 05 — Examens Paracliniques</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-15-tsh-t4l-et-t3l-en-hyperthyroidie">MODULE 15 — TSH, T4L et T3L en Hyperthyroïdie</h2>
+<h3 id="151-tsh-marqueur-de-premiere-ligne">15.1 TSH — Marqueur de première ligne</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER15-S1-001 — Interprétation de la TSH en hyperthyroïdie : niveaux de suppression et signification clinique]</p>
+</blockquote>
+<p><strong>Niveaux de suppression de la TSH et signification</strong> (adapté de Bahn et al., Thyroid 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>TSH (mUI/L)</th>
+<th>Interprétation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0,1 – 0,4</td>
+<td>Hyperthyroïdie frustre</td>
+<td>T4L + T3L + étiologie</td>
+</tr>
+<tr>
+<td>0,01 – 0,1</td>
+<td>Hyperthyroïdie modérée</td>
+<td>T4L + T3L + étiologie urgente</td>
+</tr>
+<tr>
+<td>&lt; 0,01</td>
+<td>Hyperthyroïdie sévère (ou crise)</td>
+<td>T4L + T3L + urgence</td>
+</tr>
+<tr>
+<td>Indétectable (0)</td>
+<td>Crise thyrotoxique probable</td>
+<td>Traitement d'urgence sans attendre</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — Les doseurs de 3ème génération détectent la TSH jusqu'à 0,001 mUI/L. Une TSH "indétectable" traduit une suppression hypophysaire complète — elle ne différencie pas la cause (Basedow, GMNT, factice...).</p>
+<hr />
+<h3 id="152-pieges-dinterpretation-de-la-tsh-en-hyperthyroidie">15.2 Pièges d'interprétation de la TSH en hyperthyroïdie</h3>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : 5 situations où la TSH basse NE traduit PAS une hyperthyroïdie :</div>
+
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>TSH</th>
+<th>T4L</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grossesse T1 (hCG élevée)</td>
+<td>↓ légère (0,1-0,4)</td>
+<td>Normale</td>
+<td>Stimulation TSHR par hCG</td>
+</tr>
+<tr>
+<td>NTIS (sick euthyroid)</td>
+<td>↓ (phase aiguë)</td>
+<td>Basse ou normale</td>
+<td>Frein central (dopamine/glucocorticoïdes endogènes)</td>
+</tr>
+<tr>
+<td>Médicaments (dopamine, corticoïdes hautes doses)</td>
+<td>↓</td>
+<td>Normale</td>
+<td>Inhibition sécrétoire centrale</td>
+</tr>
+<tr>
+<td>Hypothyroïdie récemment traitée</td>
+<td>↓ transitoire</td>
+<td>Normale ou ↑ légère</td>
+<td>Inertie de la récupération hypophysaire (TSH reste basse 6-8 semaines)</td>
+</tr>
+<tr>
+<td>Mélanome hypophysaire (destruction)</td>
+<td>↓</td>
+<td>Basse</td>
+<td>Pas d'hyperthyroïdie — insuffisance thyréotrope</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="153-t4-libre-evaluation-de-la-severite">15.3 T4 libre — Évaluation de la sévérité</h3>
+<p><strong>Valeurs de référence T4L</strong> : 10-25 pmol/L (adulte)</p>
+<p><strong>Signification en hyperthyroïdie</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>T4L (pmol/L)</th>
+<th>Sévérité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25-35</td>
+<td>Hyperthyroïdie légère</td>
+</tr>
+<tr>
+<td>35-50</td>
+<td>Hyperthyroïdie modérée</td>
+</tr>
+<tr>
+<td>&gt; 50-60</td>
+<td>Hyperthyroïdie sévère</td>
+</tr>
+<tr>
+<td>&gt; 80-100</td>
+<td>Crise thyrotoxique potentielle</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Situations où la T4L est trompeuse</strong> :<br />
+- <strong>Amiodarone</strong> : T4L élevée par inhibition DIO1 (accumulation T4) même en euthyroïdie → regarder la TSH<br />
+- <strong>Grossesse</strong> : T4L légèrement basse (TBG élevée, dilution) — utiliser les normes trimestre-spécifiques<br />
+- <strong>Anticorps anti-T4</strong> (rares) : faux résultats</p>
+<hr />
+<h3 id="154-t3-libre-hyperthyroidie-a-t3">15.4 T3 libre — Hyperthyroïdie à T3</h3>
+<p><strong>Valeurs de référence T3L</strong> : 3,5-6,5 pmol/L</p>
+<p><strong>Hyperthyroïdie à T3 isolée (T3-toxicosis)</strong> :<br />
+- TSH effondrée + <strong>T3L élevée</strong> + T4L normale<br />
+- Représente <strong>5-10 % des hyperthyroïdies</strong><br />
+- Plus fréquente dans le GMNT et l'adénome de Plummer<br />
+- Mécanisme : désiodation préférentielle T4→T3 dans les nodules autonomes (DIO1 suractivée)<br />
+- Risque diagnostique : si on ne dose que la T4L → faux négatif !</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Devant toute TSH effondrée avec T4L normale, TOUJOURS doser la T3L. Une T3-toxicosis non diagnostiquée peut évoluer vers une crise thyrotoxique.</div>
+
+<hr />
+<h3 id="quiz-module-15">QUIZ MODULE 15</h3>
+<p><strong>🥉 Q1</strong> — Une femme enceinte de 10 SA a TSH à 0,2 mUI/L, T4L normale. Que décidez-vous ?<br />
+<strong>A) Hyperthyroïdie gestationnelle par stimulation TSHR par le pic d'hCG — surveillance simple (doser T4L tous les 4 semaines au T1), pas de traitement si T4L normale et patiente asymptomatique. Différencier d'un Basedow (TRAb).</strong></p>
+<p><strong>🥈 Q2</strong> — Qu'est-ce que la T3-toxicosis et comment la diagnostiquer ?<br />
+<strong>A) Hyperthyroïdie à T3 isolée : TSH effondrée + T3L élevée + T4L normale. Diagnostic : doser systématiquement T3L si TSH effondrée avec T4L normale. Plus fréquente dans le GMNT et l'adénome de Plummer.</strong></p>
+<p><strong>💎 Q3</strong> — Un patient sous amiodarone 200 mg/j a T4L à 40 pmol/L (haute) mais TSH à 1,5 mUI/L. Interprétation ?<br />
+<strong>A) Euthyroïdie sous amiodarone — la T4L élevée est attendue (inhibition DIO1 → accumulation T4, réduction conversion T4→T3). La TSH normale est le marqueur de l'euthyroïdie. Chercher une hyperthyroïdie amiodaronée uniquement si TSH est effondrée (&lt; 0,1 mUI/L).</strong></p>
+<hr />
+<h2 id="module-16-trab-anti-tpo-anti-tg-et-t3-totale">MODULE 16 — TRAb, Anti-TPO, Anti-Tg et T3 Totale</h2>
+<h3 id="161-anticorps-anti-recepteurs-tsh-trab">16.1 Anticorps anti-récepteurs TSH (TRAb)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER16-S1-001 — Méthodes de dosage des TRAb : compétitifs (TBI) vs fonctionnels (TSAb bioassay)]</p>
+</blockquote>
+<p><strong>Types et méthodes de dosage</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type TRAb</th>
+<th>Méthode</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TBI</strong> (Thyroid-Binding Inhibitory)</td>
+<td>Compétition avec TSH radiomarquée sur TSHR</td>
+<td>Détecte tous types (stimulants + bloquants + neutres)</td>
+</tr>
+<tr>
+<td><strong>TSAb</strong> (Stimulating)</td>
+<td>Bioassay cellulaire (AMPc)</td>
+<td>Distingue les stimulants des bloquants</td>
+</tr>
+<tr>
+<td><strong>M22 compétitif</strong></td>
+<td>Anticorps monoclonal humain M22</td>
+<td>Spécificité ↑ pour les TSAb stimulants</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Valeurs de référence (adapté de ATA 2016)</strong> :<br />
+- TRAb (TBI) : négatif &lt; <strong>1,75 UI/L</strong> (selon le test)<br />
+- Très élevés (&gt; 10-15 UI/L) : Basedow sévère, risque de TAO aggravée, passage transplacentaire</p>
+<p><strong>Utilisation clinique des TRAb</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Indication</th>
+<th>Apport</th>
+<th>Décision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnostic Basedow</td>
+<td>Confirmation étiologique</td>
+<td>TRAb + = Basedow confirmé</td>
+</tr>
+<tr>
+<td>Suivi Basedow sous ATS</td>
+<td>Prédiction de rechute</td>
+<td>TRAb + à l'arrêt → haut risque rechute</td>
+</tr>
+<tr>
+<td>Grossesse avec Basedow</td>
+<td>Risque fœtal</td>
+<td>TRAb × 3-5 normes au T3 → surveillance néonatale</td>
+</tr>
+<tr>
+<td>Hyperthyroïdie du post-partum</td>
+<td>Différencier Basedow de thyroïdite</td>
+<td>TRAb + = Basedow (traitement ATS)</td>
+</tr>
+<tr>
+<td>Bilan préopératoire de TAO</td>
+<td>Évaluation activité auto-immune</td>
+<td>TRAb ++ = TAO potentiellement active</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="162-anti-tpo-et-anti-tg-dans-lhyperthyroidie">16.2 Anti-TPO et Anti-Tg dans l'hyperthyroïdie</h3>
+<p><strong>Anti-TPO en hyperthyroïdie</strong> :<br />
+- <strong>Positifs dans le Basedow</strong> (60-80 % des cas) — reflet du terrain auto-immun thyroïdien<br />
+- <strong>Négatifs</strong> dans le GMNT, l'adénome de Plummer, la thyroïdite de De Quervain<br />
+- <strong>Positifs</strong> dans la thyroïdite silencieuse (comme dans le Hashimoto)<br />
+- Ne permettent pas de distinguer Basedow de Hashimoto en phase d'euthyroïdie (tous deux positifs)</p>
+<p><strong>Anti-Tg</strong> :<br />
+- Positifs dans 50-60 % des Basedow (moins spécifiques)<br />
+- Utiles si anti-TPO négatifs + suspicion Basedow</p>
+<hr />
+<h3 id="163-thyroglobuline-tg-et-t3-totale">16.3 Thyroglobuline (Tg) et T3 totale</h3>
+<p><strong>T3 totale</strong> :<br />
+- Intérêt limité en routine (T3L préférable)<br />
+- Utile si interférence protéique suspectée<br />
+- T3 totale très élevée (&gt; 6-8 nmol/L) peut orienter vers une hyperthyroïdie sévère</p>
+<p><strong>Thyroglobuline</strong> :<br />
+- <strong>Effondrée</strong> dans la thyrotoxicose factice (T3/T4 exogènes → TSH effondrée → pas de Tg produite)<br />
+- <strong>Élevée</strong> dans toutes les hyperthyroïdies vraies (Basedow, GMNT, thyroïdites)<br />
+- <strong>Très élevée</strong> dans les métastases thyroïdiennes fonctionnelles (struma ovarii, métastases cancer thyroïdien)<br />
+- Clé diagnostique : thyrotoxicose factice = seul tableau où T4L haute + Tg effondrée</p>
+<blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> — Devant un tableau de thyrotoxicose avec Tg indétectable : penser à la thyrotoxicose factice (prise secrète de LT4 ou LT3). Interroger sur la profession (personnel médical, accès aux médicaments), les régimes amaigrissants.</p>
+</blockquote>
+<hr />
+<h3 id="quiz-module-16">QUIZ MODULE 16</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la signification d'un TRAb élevé chez une femme au 3ème trimestre de grossesse basedowienne ?<br />
+<strong>A) TRAb ≥ 3-5 fois la norme → passage transplacentaire → risque d'hyperthyroïdie néonatale (temporaire, liée aux TRAb maternels). Surveillance pédiatrique néonatale obligatoire : TSH + T4L néonatale à J2-J5.</strong></p>
+<p><strong>🥈 Q2</strong> — Comment différencier biologiquement une thyrotoxicose factice d'une hyperthyroïdie vraie ?<br />
+<strong>A) Thyrotoxicose factice : TSH effondrée + T4L élevée + </strong>Tg indétectable<strong> (pas de production thyroïdienne endogène). Hyperthyroïdie vraie : TSH effondrée + T4L élevée + </strong>Tg élevée<strong> (production thyroïdienne active). La Tg est le marqueur clé de différenciation.</strong></p>
+<p><strong>💎 Q3</strong> — Un patient avec un Basedow traité par ATS a ses TRAb qui se négativent à M18. Quelle est la signification pronostique ?<br />
+<strong>A) TRAb négatifs = rémission immunologique en cours — excellent marqueur de rémission. Risque de rechute significativement réduit (risque de rechute ≈ 15-20 % vs 60-70 % si TRAb persistants). Possibilité d'envisager l'arrêt des ATS à M18-24 avec surveillance TSH mensuelle pendant 3 mois puis trimestrielle.</strong></p>
+<hr />
+<h2 id="module-17-imagerie-et-explorations-thyroidiennes">MODULE 17 — Imagerie et Explorations Thyroïdiennes</h2>
+<h3 id="171-scintigraphie-thyroidienne">17.1 Scintigraphie thyroïdienne</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER17-S1-001 — Atlas scintigraphique : Basedow (diffuse), GMNT (hétérogène), adénome Plummer (foyer unique), thyroïdite (blanche)]</p>
+</blockquote>
+<p><strong>Traceurs</strong> :<br />
+- <strong>¹²³I</strong> : préféré (demi-vie 13h, irradiation modérée, mesure réelle de la captation iodée)<br />
+- <strong>⁹⁹ᵐTc</strong> (pertechnétate) : rapidité (30 min), faible irradiation, mais ne mesure pas l'organification iodée<br />
+- <strong>¹³¹I</strong> : thérapeutique uniquement</p>
+<p><strong>Valeurs de référence (captation ¹²³I)</strong> :<br />
+- Normale : 10-35 % à 24h<br />
+- Élevée (Basedow, GMNT) : 50-90 %<br />
+- Effondrée (thyroïdite, thyrotoxicose factice) : &lt; 1-5 %</p>
+<p><strong>Profils scintigraphiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Tableau</th>
+<th>Aspect</th>
+<th>Captation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basedow</strong></td>
+<td>Fixation diffuse, homogène, symétrique</td>
+<td>Élevée (50-90 %)</td>
+</tr>
+<tr>
+<td><strong>GMNT toxique</strong></td>
+<td>Hétérogène, zones chaudes multiples</td>
+<td>Élevée ou normale</td>
+</tr>
+<tr>
+<td><strong>Adénome Plummer</strong></td>
+<td>Foyer unique hyperfixant, reste glande éteint</td>
+<td>Variable (chaud)</td>
+</tr>
+<tr>
+<td><strong>Thyroïdite De Quervain</strong></td>
+<td>Blanche (effondrée)</td>
+<td>&lt; 1-2 %</td>
+</tr>
+<tr>
+<td><strong>Thyroïdite silencieuse/post-partum</strong></td>
+<td>Blanche</td>
+<td>&lt; 1-2 %</td>
+</tr>
+<tr>
+<td><strong>Thyrotoxicose factice</strong></td>
+<td>Blanche (pas de captation endogène)</td>
+<td>&lt; 1 %</td>
+</tr>
+<tr>
+<td><strong>Struma ovarii</strong></td>
+<td>Fixation cervicale nulle, pelvienne ++</td>
+<td>Variable (pelvienne)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contre-indications</strong> :<br />
+- Grossesse (absolue), allaitement (délai 24h pour ⁹⁹ᵐTc, 3-7j pour ¹²³I)<br />
+- Surcharge iodée récente (produit de contraste : délai 4-6 semaines, amiodarone : attendre washout)</p>
+<hr />
+<h3 id="172-echographie-doppler-thyroidienne">17.2 Échographie-Doppler thyroïdienne</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER17-S2-001 — Échographies thyroïdiennes comparatives en hyperthyroïdie : Basedow (hypervascularisé) vs thyroïdite (hypoéchogène) vs GMNT (nodulaire)]</p>
+</blockquote>
+<p><strong>Intérêt de l'échographie</strong> :<br />
+- Volume thyroïdien (guide le traitement : RAI vs chirurgie selon volume)<br />
+- Caractérisation des nodules (EU-TIRADS — contexte GMNT)<br />
+- Vascularisation Doppler couleur</p>
+<p><strong>Vascularisation Doppler en hyperthyroïdie</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Tableau</th>
+<th>Vascularisation Doppler</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basedow</strong></td>
+<td>↑↑↑ (inferno)</td>
+<td>Toute la glande hypervascularisée</td>
+</tr>
+<tr>
+<td><strong>Thyroïdite De Quervain</strong></td>
+<td>↓ ou absente</td>
+<td>Destruction vasculaire</td>
+</tr>
+<tr>
+<td><strong>Thyroïdite silencieuse</strong></td>
+<td>↓ à normale</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>GMNT</strong></td>
+<td>Variable par zone</td>
+<td>Nodules autonomes ± vascularisés</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aspects spécifiques au Basedow</strong> :<br />
+- Hypoéchogénicité diffuse (infiltrat lymphocytaire)<br />
+- Volumes augmentés × 2-4<br />
+- Débit artériel artère thyroïdienne supérieure &gt; 100 cm/s (normal &lt; 40 cm/s)<br />
+- Aspect en "feu de brousse" ou "inferno" au Doppler couleur</p>
+<hr />
+<h3 id="173-irm-orbitaire-dans-la-tao">17.3 IRM orbitaire dans la TAO</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER17-S3-001 — IRM orbitaire dans la TAO : évaluation des muscles oculomoteurs, tissu graisseux, compression nerf optique]</p>
+</blockquote>
+<p><strong>Protocole IRM orbitaire</strong> :<br />
+- Séquences coronales et axiales (T1 + T2 + STIR)<br />
+- Évaluation : muscles oculomoteurs (diamètre, signal), tissu graisseux rétro-orbitaire, compression nerf optique (entonnoir apical)<br />
+- Signal T2 élevé des muscles = œdème = phase ACTIVE (candidat corticoïdes)<br />
+- Signal T2 bas = fibrose = phase INACTIVE (chirurgie de réhabilitation uniquement)</p>
+<p><strong>Index diagnostique</strong> :<br />
+- Diamètre normal muscles oculomoteurs (droit médial) : &lt; 4,5 mm<br />
+- TAO : 6-15 mm possible<br />
+- Nerf optique : compression si muscles &gt; 10 mm au niveau de l'apex</p>
+<hr />
+<h3 id="174-tep-fdg-dans-la-thyroidite-et-les-hyperthyroidies">17.4 TEP-FDG dans la thyroïdite et les hyperthyroïdies</h3>
+<p><strong>Indications</strong> :<br />
+- Thyroïdite de De Quervain (fixation FDG ++ si VSR haute) — confirmée sans scintigraphie possible<br />
+- Découverte fortuite d'incidentalome thyroïdien (fixation FDG isolée → bilan EU-TIRADS + ponction)<br />
+- Cancer thyroïdien dédifférencié (suivi Tg + anti-Tg élevés avec scintigraphie ¹³¹I négative)<br />
+- TAO active : FDG + orbitaire peut guider la décision thérapeutique</p>
+<hr />
+<h3 id="quiz-module-17">QUIZ MODULE 17</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la captation ¹²³I à 24h attendue dans la maladie de Basedow ?<br />
+A) &lt; 5 % B) 10-35 % <strong>C) 50-90 %</strong> D) 100 %</p>
+<p><strong>🥈 Q2</strong> — La scintigraphie montre une fixation cervicale nulle avec une fixation pelvienne. Quel diagnostic évoquer ?<br />
+<strong>A) Struma ovarii — tissu thyroïdien ectopique dans un tératome ovarien, fonctionnellement autonome. La scintigraphie corps entier avec ¹³¹I est le seul examen permettant de localiser un struma ovarii et d'éliminer des métastases.</strong></p>
+<p><strong>🥇 Q3</strong> — Comment l'échographie-Doppler distingue-t-elle un Basedow d'une thyroïdite silencieuse en phase thyrotoxique ?<br />
+<strong>A) Basedow : hypervascularisation diffuse massive (débit artère thyroïdienne supérieure &gt; 100 cm/s, aspect "inferno"). Thyroïdite silencieuse : vascularisation réduite ou normale (destruction → pas de synthèse active). Cette distinction évite la scintigraphie chez la femme qui allaite.</strong></p>
+<p><strong>💎 Q4</strong> — Pourquoi une surcharge iodée récente (produit de contraste IV il y a 3 semaines) invalide-t-elle la scintigraphie thyroïdienne à l'¹²³I ?<br />
+<strong>A) L'iode stable (¹²⁷I) du produit de contraste est en excès dans le pool iodé → compétition avec le ¹²³I radioactif pour la captation par le NIS → le ¹²³I est capté en moindre quantité → fixation faussement basse → scintigraphie non interprétable. Délai à respecter : 4-6 semaines après injection IV, 8-12 semaines après coronarographie (volume iodé plus important). Pour l'amiodarone : attendre le washout (6-12 mois).</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 05 — Examens Paracliniques — Mars 2026</em></p>
+</div>

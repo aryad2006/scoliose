@@ -1,0 +1,421 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-3-impact-biomecanique-et-articulaire-modules-10-12">Partie 3 — Impact biomécanique et articulaire (Modules 10-12)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-10-biomecanique-de-la-surcharge-ponderale-forces-articulaires-marche-equilibre-sagittal">MODULE 10 : BIOMÉCANIQUE DE LA SURCHARGE PONDÉRALE — FORCES ARTICULAIRES, MARCHE, ÉQUILIBRE SAGITTAL</h1>
+<p><strong>Partie</strong> : III — Impact biomécanique et articulaire<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-5</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 55 ans, IMC 38, consulte pour gonalgie bilatérale prédominant au compartiment médial. L'examen retrouve un varus mécanique de 5°. Le morphotype est androïde avec un abdomen proéminent. *Quelle est la surcharge réelle transmise au genou chez ce patient ? Comment l'obésité modifie-t-elle la biomécanique de la marche, l'équilibre sagittal rachidien et les contraintes sur toutes les articulations portantes ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Quantifier</strong> les forces articulaires au genou, à la hanche et au rachis en fonction de l'IMC</li>
+<li><strong>Analyser</strong> les modifications de la marche chez l'obèse (cinématique et cinétique)</li>
+<li><strong>Expliquer</strong> l'impact de l'obésité sur l'équilibre sagittal rachidien et la lordose lombaire</li>
+<li><strong>Comprendre</strong> les effets de la surcharge pondérale sur le pied, la cheville et les tissus mous</li>
+<li><strong>Utiliser</strong> les principes biomécaniques pour guider la décision chirurgicale chez l'obèse</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-101-forces-articulaires-et-surcharge-ponderale">Section 10.1 — Forces articulaires et surcharge pondérale</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Rappel biomécanique fondamental</strong> : lors de la marche, la force de réaction articulaire au genou atteint 2 à 4 fois le poids du corps (à chaque pas) en raison du bras de levier musculaire et des moments de force ; à la hanche, cette force atteint 2,5 à 5 fois le poids du corps (Bergmann et al., <em>J Biomech</em>, 2001 — données de prothèses instrumentées)</li>
+<li><strong>Amplification mécanique</strong> : pour un patient de 120 kg (IMC 40), la force au genou peut atteindre 360-480 kg à chaque pas (vs 180-240 kg pour un patient de 60 kg) — l'excès de 60 kg se traduit par une surcharge articulaire de 180-240 kg supplémentaires à chaque pas</li>
+<li><strong>Moment adducteur au genou</strong> : le principal déterminant de la charge au compartiment médial du genou ; augmenté chez l'obèse en raison de l'élargissement de la base de sustentation, du varus mécanique et de l'augmentation du bras de levier (Messier et al., <em>Obesity</em>, 2014) ; le moment adducteur est corrélé à la progression radiographique de l'arthrose médiale</li>
+<li><strong>Forces à la hanche</strong> : amplification similaire ; l'obésité est associée à une augmentation du moment abducteur de hanche, sollicitant davantage les muscles glutéaux (source de tendinopathie du moyen fessier et de syndrome douloureux du grand trochanter)</li>
+<li><strong>Rachis</strong> : la charge sur le disque L5-S1 atteint 3 à 6 fois le poids du corps lors du lever d'un objet au sol — chez l'obèse, cette force peut dépasser 1000 N de surcharge additionnelle ; le « ventre proéminent » crée un bras de levier antérieur augmenté qui accroît le moment de flexion lombaire</li>
+<li><strong>Dose articulaire cumulative</strong> : concept de « dose mécanique » = force × nombre de pas × durée — la charge cumulative sur une vie est considérablement augmentée chez l'obèse, même si le nombre de pas quotidiens est paradoxalement souvent réduit</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO10-S01-001 | 🎬 ANIMATION | Forces articulaires au genou pendant la marche — normal vs obèse, données Bergmann | Animation biomécanique clé |<br />
+| MOBO10-S01-002 | 📐 SCHÉMA | Bras de levier et moment adducteur au genou — impact du poids et du varus | Schéma mécanique |<br />
+| MOBO10-S01-003 | 📊 INFOGRAPHIE | Amplification des forces articulaires par articulation (genou, hanche, rachis, cheville) selon l'IMC | Tableau quantitatif |<br />
+| MOBO10-S01-004 | 🎬 ANIMATION | Simulation ObesSim© — forces articulaires pour différents IMC (25, 30, 35, 40, 45) | Simulation interactive |</p>
+<h3 id="section-102-analyse-de-la-marche-chez-lobese">Section 10.2 — Analyse de la marche chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Modifications cinématiques</strong> :</li>
+<li>Vitesse de marche réduite (Browning &amp; Kram, <em>J Biomech</em>, 2007) — l'obèse marche 15-25% plus lentement que le normopondéral</li>
+<li>Longueur de pas raccourcie, largeur de pas augmentée (base de sustentation élargie pour compenser le centre de gravité antérieur et l'encombrement des cuisses)</li>
+<li>Phase d'appui prolongée, phase oscillante raccourcie — temps de double appui augmenté (marche plus « prudente »)</li>
+<li>Flexion de genou en phase oscillante réduite — le patient obèse « traîne » davantage les pieds (risque de chute)</li>
+<li>Réduction de la mobilité de hanche en extension terminale</li>
+<li><strong>Modifications cinétiques</strong> :</li>
+<li>Moment adducteur de genou (KAM, <em>knee adduction moment</em>) augmenté — facteur biomécanique le plus étudié dans la gonarthrose de l'obèse (Harding et al., <em>Gait Posture</em>, 2012)</li>
+<li>Moment de flexion de hanche augmenté (sollicitation accrue des fléchisseurs)</li>
+<li>Puissance musculaire relative (par kg de poids corporel) réduite — le patient obèse a une force musculaire absolue souvent normale ou augmentée mais insuffisante relativement à sa masse</li>
+<li>Forces de réaction au sol (GRF) augmentées en amplitude mais souvent réduites en durée normalisée</li>
+<li><strong>Coût énergétique de la marche</strong> : augmenté de 30-50% chez l'obèse (consommation d'O₂ par mètre parcouru) — fatigue précoce, limitation du périmètre de marche</li>
+<li><strong>Risque de chute</strong> : augmenté chez l'obèse — instabilité posturale (centre de gravité antérieur + inertie accrue), proprioception altérée, temps de réaction augmenté ; les conséquences des chutes sont aussi plus graves (énergie cinétique accrue, fractures plus complexes)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO10-S02-001 | 🎬 ANIMATION | Analyse de la marche comparée — normopondéral vs obèse (cinématique et cinétique) | Animation comparative clé |<br />
+| MOBO10-S02-002 | 📐 SCHÉMA | Modifications cinématiques de la marche chez l'obèse — pas, base de sustentation, phases | Schéma didactique |<br />
+| MOBO10-S02-003 | 📊 INFOGRAPHIE | Risque de chute chez l'obèse — facteurs biomécaniques et conséquences traumatiques | Infographie de risque |</p>
+<h3 id="section-103-equilibre-sagittal-et-obesite">Section 10.3 — Équilibre sagittal et obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Concept d'équilibre sagittal</strong> : le rachis en position érigée maintient un équilibre sagittal grâce à l'interaction de la lordose cervicale, la cyphose thoracique, la lordose lombaire et l'incidence pelvienne — le centre de gravité est maintenu sur la ligne C7-S1 (fil à plomb sagittal, ou SVA — <em>sagittal vertical axis</em>)</li>
+<li><strong>Impact de l'obésité</strong> :</li>
+<li>L'abdomen proéminent déplace le centre de gravité vers l'avant → le rachis compense par une hyperlordose lombaire pour maintenir la tête au-dessus du bassin</li>
+<li>Augmentation de l'inclinaison pelvienne (<em>pelvic tilt</em>) — rétroversion du bassin compensatrice</li>
+<li>Augmentation de la pente sacrée (<em>sacral slope</em>) dans les obésités modérées ; diminution dans les obésités sévères avec décompensation sagittale</li>
+<li>SVA augmenté dans les obésités sévères — décompensation sagittale antérieure (le patient « tombe en avant »)</li>
+<li><strong>Conséquences</strong> :</li>
+<li>Surcharge des facettes articulaires postérieures (hyperlordose) → arthrose facettaire, sténose foraminale</li>
+<li>Augmentation de la pression intradiscale antérieure (disques L4-L5 et L5-S1) → dégénérescence discale accélérée</li>
+<li>Fatigue des muscles extenseurs du rachis (érecteurs du spinae, multifides) → lombalgie chronique</li>
+<li>En cas de décompensation sagittale : syndrome de « flat back » acquis, marche en flexion du tronc, utilisation des mains sur les cuisses pour se maintenir vertical (signe de la main sur les cuisses, indicateur clinique de perte d'alignement sagittal)</li>
+<li><strong>Implications chirurgicales</strong> : la planification d'une arthrodèse ou d'une instrumentation rachidienne chez l'obèse doit impérativement intégrer l'équilibre sagittal — les formules de Schwab (Schwab et al., <em>Spine</em>, 2010) et les paramètres pelviens (incidence pelvienne, version pelvienne, pente sacrée) doivent guider la correction</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO10-S03-001 | 🎬 ANIMATION | Équilibre sagittal normal vs obèse — déplacement du centre de gravité, compensation, décompensation | Animation 3D clé |<br />
+| MOBO10-S03-002 | 📐 SCHÉMA | Paramètres sagittaux — SVA, lordose, incidence pelvienne, pente sacrée — modifications chez l'obèse | Schéma radiographique |<br />
+| MOBO10-S03-003 | 📐 SCHÉMA | Cascade de décompensation sagittale dans l'obésité — hyperlordose → rétroversion → SVA+ | Schéma séquentiel |</p>
+<h3 id="section-104-impact-sur-le-pied-la-cheville-et-les-tissus-mous">Section 10.4 — Impact sur le pied, la cheville et les tissus mous</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Pied plat acquis de l'obèse</strong> : l'excès de charge provoque un affaissement progressif de l'arche longitudinale médiale — dysfonction du tibial postérieur (tendinopathie puis rupture progressive) ; aboutit à un valgus de l'arrière-pied et un aplatissement de l'arche ; plus fréquent chez les obèses que dans la population générale (Wearing et al., <em>Obes Rev</em>, 2006)</li>
+<li><strong>Fasciite plantaire</strong> : pathologie du pied la plus fréquente chez l'obèse — épaississement et inflammation de l'aponévrose plantaire ; l'IMC est le facteur de risque le plus puissant de fasciite plantaire (Riddle et al., <em>J Bone Joint Surg Am</em>, 2003) ; traitement souvent plus long et plus résistant chez l'obèse</li>
+<li><strong>Arthrose de cheville</strong> : moins fréquente que genou/hanche mais l'obésité augmente le risque ; les forces à la cheville atteignent 5-6 fois le poids du corps à la course et 2-3 fois à la marche</li>
+<li><strong>Hallux valgus</strong> : prévalence augmentée par la surcharge (élargissement de l'avant-pied)</li>
+<li><strong>Tissus mous péri-articulaires</strong> :</li>
+<li>Bursite trochantérienne (syndrome douloureux du grand trochanter) — fréquente chez l'obèse</li>
+<li>Tendinopathie du tendon d'Achille — la charge sur le tendon est proportionnelle au poids corporel</li>
+<li>Syndrome du canal carpien — l'obésité est un facteur de risque indépendant (augmentation de la pression dans le canal carpien par infiltration graisseuse du tissu synovial)</li>
+<li>Lymphœdème — fréquent chez l'obèse morbide, complique les incisions chirurgicales</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO10-S04-001 | 📐 SCHÉMA | Pied plat acquis de l'obèse — dysfonction du tibial postérieur, affaissement de l'arche | Schéma anatomique |<br />
+| MOBO10-S04-002 | 📊 INFOGRAPHIE | Pathologies du pied et de la cheville liées à l'obésité — fasciite, pied plat, hallux valgus | Tableau synthétique |<br />
+| MOBO10-S04-003 | 📐 SCHÉMA | Syndrome du canal carpien et obésité — mécanisme physiopathologique | Schéma anatomique |</p>
+<h3 id="points-cles-du-module-10">Points clés du Module 10</h3>
+<ol>
+<li>La force au genou atteint 2-4× le poids du corps à chaque pas — la surcharge articulaire est amplifiée de façon multiplicative</li>
+<li>Le moment adducteur de genou (KAM) est le principal facteur biomécanique de progression de la gonarthrose médiale chez l'obèse</li>
+<li>L'obèse marche plus lentement, avec une base de sustentation plus large et un coût énergétique augmenté de 30-50%</li>
+<li>L'obésité déplace le centre de gravité vers l'avant, entraînant une hyperlordose compensatrice puis une décompensation sagittale</li>
+<li>Le pied plat acquis et la fasciite plantaire sont des pathologies très fréquentes chez l'obèse</li>
+<li>Le risque de chute est augmenté chez l'obèse — instabilité posturale et conséquences traumatiques plus graves</li>
+<li>La planification chirurgicale rachidienne doit impérativement intégrer l'équilibre sagittal modifié par l'obésité</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (forces articulaires au genou, modifications de la marche, définition de l'équilibre sagittal)</li>
+<li>3 QCM Argent (moment adducteur, amplification mécanique, pied plat acquis)</li>
+<li>2 QCM Or (décompensation sagittale chez l'obèse, planification chirurgicale avec paramètres sagittaux)</li>
+<li>1 QCM Diamant (cas clinique : obèse IMC 42, lombalgie + gonarthrose + fasciite — analyse biomécanique intégrée de la cascade de surcharge)</li>
+<li>1 QROC : « Expliquez comment une surcharge de 30 kg se traduit en forces articulaires au genou, à la hanche et au rachis lombaire pendant la marche. Quantifiez. »</li>
+</ul>
+<hr />
+<h1 id="module-11-arthrose-et-obesite-arthrose-mecanique-vs-metabolique-role-des-adipokines">MODULE 11 : ARTHROSE ET OBÉSITÉ — ARTHROSE MÉCANIQUE VS MÉTABOLIQUE, RÔLE DES ADIPOKINES</h1>
+<p><strong>Partie</strong> : III — Impact biomécanique et articulaire<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 3, 10</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 60 ans, IMC 36, consultation pour gonarthrose bilatérale et arthrose digitale (nodules de Bouchard et Heberden). Les mains ne sont pas des articulations portantes. *Pourquoi l'obésité est-elle un facteur de risque d'arthrose des mains ? Existe-t-il un mécanisme d'arthrose « métabolique » lié au tissu adipeux, indépendant de la charge mécanique ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Distinguer</strong> l'arthrose mécanique (charge pondérale) de l'arthrose métabolique (adipokines, inflammation systémique)</li>
+<li><strong>Expliquer</strong> le rôle des adipokines dans la physiopathologie de l'arthrose (leptine, adiponectine, résistine, visfatine)</li>
+<li><strong>Analyser</strong> les données épidémiologiques liant obésité et arthrose (genou, hanche, main, rachis)</li>
+<li><strong>Évaluer</strong> l'impact de la perte de poids sur la progression de l'arthrose</li>
+<li><strong>Discuter</strong> les implications thérapeutiques de l'arthrose métabolique</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-111-epidemiologie-de-larthrose-liee-a-lobesite">Section 11.1 — Épidémiologie de l'arthrose liée à l'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Gonarthrose</strong> : l'obésité est le principal facteur de risque modifiable — le risque relatif de gonarthrose est d'environ 2,5 à 4,6 pour les obèses par rapport aux normopondéraux (Coggon et al., <em>Arthritis Rheum</em>, 2001 ; Zheng &amp; Chen, <em>Osteoarthritis Cartilage</em>, 2015) ; la fraction attribuable est la plus élevée de tous les facteurs de risque (environ 25-35% des cas de gonarthrose sont attribuables à l'obésité dans les études populationnelles)</li>
+<li><strong>Coxarthrose</strong> : association plus faible que pour le genou mais significative — risque relatif d'environ 1,5-2,0 pour les obèses (Jiang et al., <em>Osteoarthritis Cartilage</em>, 2011) ; mécanisme principalement mécanique (charge axiale sur la hanche)</li>
+<li><strong>Arthrose digitale</strong> : association significative — risque relatif d'environ 1,5-2,0, démontrant un mécanisme non mécanique (les doigts ne sont pas des articulations portantes) ; argument principal en faveur de l'arthrose métabolique (Yusuf et al., <em>Ann Rheum Dis</em>, 2010)</li>
+<li><strong>Arthrose rachidienne</strong> : association avec la discopathie dégénérative et l'arthrose facettaire ; mécanisme mixte (mécanique + métabolique) ; les obèses ont plus de hernies discales et de sténoses canalaires</li>
+<li><strong>Sexe et obésité</strong> : les femmes obèses ont un risque d'arthrose plus élevé que les hommes obèses à IMC équivalent — rôle des œstrogènes, de la répartition de la masse grasse (gynoïde) et des facteurs hormonaux post-ménopausiques</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO11-S01-001 | 📊 INFOGRAPHIE | Risque relatif d'arthrose selon l'IMC et par articulation (genou, hanche, main, rachis) | Graphique épidémiologique |<br />
+| MOBO11-S01-002 | 📐 SCHÉMA | Argument pour l'arthrose métabolique — l'arthrose des mains chez l'obèse | Schéma argumentatif |</p>
+<h3 id="section-112-arthrose-mecanique-role-de-la-surcharge-ponderale">Section 11.2 — Arthrose mécanique : rôle de la surcharge pondérale</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Mécanisme de charge</strong> : la surcharge chronique sur le cartilage articulaire dépasse la capacité d'adaptation des chondrocytes et de la matrice extracellulaire — les protéoglycanes (agrécane) sont dégradées plus rapidement qu'elles ne sont synthétisées, le collagène de type II se fibrille, l'eau quitte le cartilage (perte du module de compression)</li>
+<li><strong>Mécano-transduction pathologique</strong> : les chondrocytes possèdent des mécanorécepteurs (intégrines, canaux ioniques sensibles à l'étirement) qui répondent à la charge mécanique — une charge physiologique est chondro-protectrice (stimule la synthèse de matrice), mais une surcharge chronique active les voies cataboliques (MMP-13, ADAMTS-5, NF-κB) (Guilak, <em>J Biomech</em>, 2011)</li>
+<li><strong>Usure du cartilage</strong> : le compartiment médial du genou supporte 60-70% de la charge en position debout — chez l'obèse en varus, cette proportion peut atteindre 80-90% → usure asymétrique médiale, pincement de l'interligne médial, augmentation progressive du varus (cercle vicieux)</li>
+<li><strong>Atteinte de l'os sous-chondral</strong> : la surcharge entraîne un remodelage de l'os sous-chondral — sclérose, formation d'ostéophytes, géodes sous-chondrales ; l'os sous-chondral sclérosé transmet moins efficacement les forces, augmentant la contrainte sur le cartilage restant</li>
+<li><strong>Ménisques</strong> : les ménisques sont des amortisseurs qui répartissent la charge — les déchirures méniscales sont plus fréquentes chez l'obèse (lésions dégénératives) et participent à la cascade arthrosique ; la méniscectomie chez un obèse accélère considérablement l'arthrose</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO11-S02-001 | 🎬 ANIMATION | Mécano-transduction du chondrocyte — charge physiologique vs surcharge pathologique | Animation cellulaire 3D |<br />
+| MOBO11-S02-002 | 📐 SCHÉMA | Cercle vicieux de l'arthrose médiale — surcharge → usure → varus → surcharge accrue | Schéma circulaire |<br />
+| MOBO11-S02-003 | 📐 SCHÉMA | Remodelage de l'os sous-chondral dans l'arthrose de l'obèse — sclérose, géodes, ostéophytes | Schéma histologique |</p>
+<h3 id="section-113-arthrose-metabolique-le-role-des-adipokines-et-de-linflammation">Section 11.3 — Arthrose métabolique : le rôle des adipokines et de l'inflammation</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Concept d'arthrose métabolique</strong> : proposé par Berenbaum (Berenbaum, <em>Osteoarthritis Cartilage</em>, 2013) — l'arthrose chez l'obèse n'est pas seulement mécanique mais a une composante métabolique liée à l'inflammation systémique de bas grade et aux adipokines sécrétées par le tissu adipeux viscéral et le tissu adipeux intra-articulaire (corps adipeux de Hoffa)</li>
+<li><strong>Adipokines et cartilage</strong> :</li>
+<li><strong>Leptine</strong> : présente dans le liquide synovial ; exerce des effets cataboliques sur les chondrocytes (↑ MMP-1, MMP-3, MMP-13, ↑ NO) ; les chondrocytes arthrosiques expriment davantage de récepteurs à la leptine (OB-R) — corrélation entre le taux de leptine synoviale et la sévérité de l'arthrose (Dumond et al., <em>Arthritis Rheum</em>, 2003)</li>
+<li><strong>Adiponectine</strong> : effets controversés — considérée comme anti-inflammatoire au niveau systémique mais peut exercer des effets pro-inflammatoires au niveau articulaire ; son rôle dans l'arthrose reste débattu</li>
+<li><strong>Résistine et visfatine</strong> : pro-inflammatoires — augmentent la production de cytokines cataboliques synoviales (TNF-α, IL-1β, IL-6) ; la visfatine (NAMPT) active la voie NF-κB dans les chondrocytes</li>
+<li><strong>Corps adipeux de Hoffa (infrapatellar fat pad)</strong> : tissu adipeux intra-articulaire derrière le tendon rotulien ; sécrète activement des adipokines et des cytokines pro-inflammatoires (Source locale d'inflammation dans l'arthrose fémoro-patellaire) ; hypertrophié chez l'obèse — visible en IRM comme un signal hyperintense en séquences STIR</li>
+<li><strong>Produits de glycation avancée (AGEs)</strong> : formés par la glycation non enzymatique des protéines — accumulés dans le cartilage et le collagène des obèses diabétiques ; rigidifient la matrice cartilagineuse (perte de compliance), activent les récepteurs RAGE sur les chondrocytes → signalisation inflammatoire (DeGroot et al., <em>Arthritis Rheum</em>, 2004)</li>
+<li><strong>Syndrome métabolique et arthrose</strong> : le syndrome métabolique (indépendamment de l'IMC) est un facteur de risque d'arthrose — chaque composante (HTA, dyslipidémie, hyperglycémie, obésité viscérale) contribue à l'inflammation articulaire ; concept d'« articulation métabolique »</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO11-S03-001 | 🎬 ANIMATION | Double mécanisme de l'arthrose chez l'obèse — mécanique (haut) + métabolique (bas) | Animation intégrative clé |<br />
+| MOBO11-S03-002 | 📐 SCHÉMA | Adipokines et cartilage — effets de la leptine, résistine, visfatine sur les chondrocytes | Schéma cellulaire |<br />
+| MOBO11-S03-003 | 📐 SCHÉMA | Corps adipeux de Hoffa — anatomie, hypertrophie chez l'obèse, sécrétion d'adipokines | Schéma IRM corrélé |<br />
+| MOBO11-S03-004 | 📐 SCHÉMA | AGEs et cartilage — glycation, rigidification, activation RAGE | Schéma moléculaire |</p>
+<h3 id="section-114-perte-de-poids-et-arthrose-benefices-et-donnees-probantes">Section 11.4 — Perte de poids et arthrose : bénéfices et données probantes</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Essai ADAPT</strong> (Messier et al., <em>Arthritis Rheum</em>, 2004) : combinaison perte de poids + exercice produisant la plus grande amélioration de la fonction et de la douleur dans la gonarthrose — la perte de poids de 5% est associée à une réduction de 18% de la charge au genou</li>
+<li><strong>Essai IDEA</strong> (Messier et al., <em>JAMA</em>, 2013) : perte de poids intensive de 10% vs 5% chez des patients arthrosiques du genou — la perte de poids de 10% produit des améliorations significativement supérieures de la douleur, de la fonction et de l'inflammation</li>
+<li><strong>Seuils de perte de poids</strong> : les recommandations OARSI (2014) et EULAR ciblent une perte de poids d'au moins 5-10% du poids corporel pour obtenir un bénéfice cliniquement significatif sur l'arthrose ; chaque kg perdu réduit la force au genou d'environ 4 kg par pas (Messier et al., <em>Arthritis Rheum</em>, 2005)</li>
+<li><strong>Réversibilité de l'arthrose métabolique</strong> : la perte de poids réduit les adipokines circulantes, la CRP et les marqueurs du catabolisme cartilagineux (CTX-II) — effet mécanique ET métabolique ; cependant, les lésions cartilagineuses structurales (pincement, ostéophytes) ne régressent généralement pas</li>
+<li><strong>Impact sur les biomarqueurs</strong> : réduction de la CRP (marqueur inflammatoire systémique), de la leptine synoviale, des MMP — la perte de poids modifie l'environnement biochimique articulaire favorablement</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO11-S04-001 | 📊 INFOGRAPHIE | Essais ADAPT et IDEA — résultats clés, réduction de la douleur et de l'inflammation | Données d'essais |<br />
+| MOBO11-S04-002 | 📐 SCHÉMA | Impact de la perte de poids — effet mécanique (réduction de charge) + métabolique (réduction des adipokines) | Double effet |<br />
+| MOBO11-S04-003 | 🎬 ANIMATION | Simulation ObesSim© — effet de la perte de 10 kg sur les forces au genou et les biomarqueurs | Simulation |</p>
+<h3 id="points-cles-du-module-11">Points clés du Module 11</h3>
+<ol>
+<li>L'obésité multiplie le risque de gonarthrose par 2,5 à 4,6 — c'est le principal facteur de risque modifiable</li>
+<li>L'arthrose des mains chez l'obèse démontre l'existence d'un mécanisme non mécanique (arthrose métabolique)</li>
+<li>Les adipokines (leptine, résistine, visfatine) exercent des effets cataboliques directs sur les chondrocytes</li>
+<li>Le corps adipeux de Hoffa est une source locale d'inflammation dans l'arthrose fémoro-patellaire</li>
+<li>Les AGEs rigidifient le cartilage et activent les voies inflammatoires via les récepteurs RAGE</li>
+<li>Chaque kg perdu réduit la force au genou d'environ 4 kg par pas</li>
+<li>Une perte de poids de 5-10% produit un bénéfice cliniquement significatif sur l'arthrose</li>
+<li>La perte de poids améliore l'arthrose par un double mécanisme : mécanique ET métabolique</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (facteur de risque principal de gonarthrose, arthrose métabolique, définition adipokines)</li>
+<li>3 QCM Argent (leptine et chondrocyte, rôle du Hoffa, seuil de perte de poids bénéfique)</li>
+<li>2 QCM Or (essai ADAPT/IDEA, AGEs et arthrose diabétique)</li>
+<li>1 QCM Diamant (cas clinique : patient obèse diabétique, arthrose genou + mains + rachis — analyse physiopathologique différenciant les composantes mécanique et métabolique, stratégie thérapeutique intégrée)</li>
+<li>1 QROC : « Pourquoi l'obésité est-elle un facteur de risque d'arthrose des articulations non portantes comme les mains ? Décrivez les mécanismes moléculaires impliqués. »</li>
+</ul>
+<hr />
+<h1 id="module-12-tendinopathies-fasciite-plantaire-et-pathologies-des-tissus-mous-chez-lobese">MODULE 12 : TENDINOPATHIES, FASCIITE PLANTAIRE ET PATHOLOGIES DES TISSUS MOUS CHEZ L'OBÈSE</h1>
+<p><strong>Partie</strong> : III — Impact biomécanique et articulaire<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 3, 10</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 50 ans, IMC 35, consulte pour une douleur plantaire inférieure bilatérale, prédominant au lever et aux premiers pas. L'examen retrouve une douleur à la palpation du tubercule médial du calcanéus et une voûte plantaire aplatie bilatéralement. L'échographie montre un épaississement de l'aponévrose plantaire > 5 mm. Il présente également une tendinopathie du tendon d'Achille gauche et un syndrome du canal carpien bilatéral. *Comment l'obésité prédispose-t-elle à ces pathologies des tissus mous « à distance » de l'excès de charge ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> les mécanismes par lesquels l'obésité favorise les tendinopathies et les pathologies des tissus mous</li>
+<li><strong>Diagnostiquer</strong> et traiter la fasciite plantaire chez le patient obèse</li>
+<li><strong>Connaître</strong> les tendinopathies associées à l'obésité (tendon d'Achille, coiffe des rotateurs, épicondyliens, tibial postérieur)</li>
+<li><strong>Comprendre</strong> le lien entre obésité et syndrome du canal carpien</li>
+<li><strong>Adapter</strong> les traitements des pathologies des tissus mous au contexte d'obésité</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-121-mecanismes-des-tendinopathies-liees-a-lobesite">Section 12.1 — Mécanismes des tendinopathies liées à l'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Surcharge mécanique</strong> : les tendons des membres inférieurs (Achille, rotulien, tibial postérieur, aponévrose plantaire) sont soumis à des forces proportionnelles au poids corporel — surcharge chronique → microlésions → dégénérescence tendineuse</li>
+<li><strong>Inflammation systémique</strong> : les adipokines (leptine, TNF-α, IL-6) affectent le métabolisme tendineux — les ténocytes expriment des récepteurs aux adipokines ; l'inflammation chronique de bas grade favorise la tendinopathie dégénérative plutôt que la réparation (Gaida et al., <em>Rheumatology</em>, 2009)</li>
+<li><strong>Dyslipidémie et tendons</strong> : l'hypercholestérolémie est associée aux tendinopathies — dépôts de cholestérol dans les tendons (xanthomes tendineux dans les formes sévères), modification de la matrice tendineuse par les lipides oxydés (Tilley et al., <em>Muscles Ligaments Tendons J</em>, 2015)</li>
+<li><strong>Hyperglycémie et glycation</strong> : chez l'obèse diabétique, la glycation du collagène tendineux (AGEs) rigidifie les tendons, les rend cassants et moins élastiques — le « tendon diabétique » cicatrise mal et est plus susceptible aux ruptures</li>
+<li><strong>Hypoxie tissulaire</strong> : l'obésité est associée à une microcirculation déficiente dans les tendons (athérosclérose des vascularisations tendineuses) — les tendons, déjà peu vascularisés (zones « watershed »), deviennent encore plus vulnérables</li>
+<li><strong>Double mécanisme</strong> : comme pour l'arthrose, la tendinopathie de l'obèse associe une composante mécanique (surcharge) ET une composante métabolique (inflammation, dyslipidémie, glycation) — ceci explique pourquoi l'obèse développe des tendinopathies même d'articulations non portantes</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO12-S01-001 | 📐 SCHÉMA | Mécanismes de la tendinopathie chez l'obèse — surcharge + inflammation + dyslipidémie + glycation | Schéma intégratif |<br />
+| MOBO12-S01-002 | 📐 SCHÉMA | Tendon sain vs tendon dégénératif de l'obèse — histologie comparée | Schéma histologique |</p>
+<h3 id="section-122-fasciite-plantaire-et-pathologies-du-pied-chez-lobese">Section 12.2 — Fasciite plantaire et pathologies du pied chez l'obèse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Épidémiologie</strong> : l'IMC est le facteur de risque le plus puissant de fasciite plantaire non athlétique — odd ratio d'environ 5,6 pour les obèses (IMC ≥ 30) par rapport aux normopondéraux (Riddle et al., <em>J Bone Joint Surg Am</em>, 2003) ; la fasciite plantaire touche environ 10-15% des obèses à un moment de leur vie</li>
+<li><strong>Physiopathologie</strong> : surcharge mécanique de l'aponévrose plantaire (enthèse calcanéenne) → microdéchirures → dégénérescence (fasciose plus que fasciite — le terme « fasciite » est en réalité un abus de langage car il y a peu d'infiltrat inflammatoire histologique) ; l'épaisseur de l'aponévrose (normale &lt; 4 mm) dépasse souvent 6-8 mm en échographie</li>
+<li><strong>Diagnostic</strong> : douleur au premier pas du matin (talalgies matinales), douleur à la palpation du tubercule médial du calcanéus ; radiographie : épine calcanéenne (présente dans 50% des cas mais aussi chez les asymptomatiques — pas de corrélation directe symptôme/épine) ; échographie : meilleur examen, épaississement &gt; 4 mm, zones hypoéchogènes, perte de l'architecture fibrillaire</li>
+<li><strong>Traitement chez l'obèse</strong> :</li>
+<li><strong>Fondamental</strong> : perte de poids — seule mesure ciblant la cause</li>
+<li>Orthèses plantaires : semelles avec soutien de la voûte et coussin talonnier — efficacité prouvée (Landorf et al., <em>J Foot Ankle Res</em>, 2010)</li>
+<li>Étirements : protocole d'étirement de l'aponévrose plantaire et du triceps sural (protocole de DiGiovanni)</li>
+<li>Ondes de choc extracorporelles : efficacité modérée à 3-6 mois</li>
+<li>Infiltration de corticoïdes : effet antalgique temporaire (4-6 semaines) mais risque d'atrophie du coussinet plantaire et de rupture de l'aponévrose — à limiter (1-2 infiltrations maximum)</li>
+<li>PRP : résultats prometteurs mais données encore insuffisantes</li>
+<li>Chirurgie (aponévrotomie) : en dernier recours après 6-12 mois de traitement conservateur inefficace — résultats moins prévisibles chez l'obèse</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO12-S02-001 | 📐 SCHÉMA | Anatomie de l'aponévrose plantaire — enthèse calcanéenne, zones de surcharge | Schéma anatomique |<br />
+| MOBO12-S02-002 | 📷 IMAGE | Échographie de fasciite plantaire chez l'obèse — épaississement, zones hypoéchogènes | Image échographique |<br />
+| MOBO12-S02-003 | 📊 INFOGRAPHIE | Algorithme de traitement de la fasciite plantaire chez l'obèse | Algorithme thérapeutique |</p>
+<h3 id="section-123-autres-tendinopathies-et-syndromes-canalaires-associes-a-lobesite">Section 12.3 — Autres tendinopathies et syndromes canalaires associés à l'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Tendinopathie du tendon d'Achille</strong> : l'obésité est un facteur de risque établi (RR environ 2) ; la surcharge mécanique sur le tendon calcanéen est directement proportionnelle au poids corporel ; risque de rupture augmenté — la rupture chez l'obèse est plus difficile à traiter chirurgicalement (accès chirurgical, cicatrisation)</li>
+<li><strong>Tendinopathie de la coiffe des rotateurs</strong> : association débattue mais des données épidémiologiques suggèrent que l'obésité augmente le risque (Wendelboe et al., <em>Bone Joint Surg Br</em>, 2004) — mécanisme principalement métabolique (adipokines, microcirculation) plutôt que mécanique (l'épaule n'est pas une articulation portante)</li>
+<li><strong>Épicondylite / épitrochléite</strong> : association avec l'obésité rapportée dans certaines études transversales — mécanisme métabolique probable</li>
+<li><strong>Dysfonction du tibial postérieur</strong> : tendinopathie puis rupture progressive → pied plat acquis → déformation en valgus de l'arrière-pied ; favorisée par la surcharge mécanique et l'inflammation chronique</li>
+<li><strong>Syndrome du canal carpien</strong> : l'obésité est un facteur de risque indépendant bien établi (RR environ 2-3) — mécanisme : augmentation de la pression dans le canal carpien par infiltration graisseuse du tissu synovial, rétention hydrique, augmentation du volume des structures dans le canal (Werner et al., <em>Arch Phys Med Rehabil</em>, 1994) ; le traitement conservateur (attelle, infiltration) est souvent moins efficace chez l'obèse</li>
+<li><strong>Syndrome du canal tarsien</strong> : compression du nerf tibial postérieur au niveau de la malléole médiale — favorisé par le pied plat acquis et le valgus de l'arrière-pied chez l'obèse</li>
+<li><strong>Maladie de Dupuytren</strong> : association possible avec le syndrome métabolique</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO12-S03-001 | 📊 INFOGRAPHIE | Tendinopathies et syndromes canalaires associés à l'obésité — articulations portantes et non portantes | Tableau anatomique global |<br />
+| MOBO12-S03-002 | 📐 SCHÉMA | Dysfonction du tibial postérieur — de la tendinopathie au pied plat acquis | Schéma évolutif |<br />
+| MOBO12-S03-003 | 📐 SCHÉMA | Syndrome du canal carpien chez l'obèse — augmentation de la pression intracanalaire | Schéma anatomique |</p>
+<h3 id="points-cles-du-module-12">Points clés du Module 12</h3>
+<ol>
+<li>Les tendinopathies de l'obèse ont un double mécanisme : surcharge mécanique ET inflammation métabolique (adipokines, dyslipidémie, glycation)</li>
+<li>L'IMC est le facteur de risque le plus puissant de fasciite plantaire non athlétique (OR ≈ 5,6)</li>
+<li>Le « tendon diabétique » est rigidifié par la glycation du collagène (AGEs) — cicatrisation altérée</li>
+<li>L'obésité favorise les tendinopathies d'articulations non portantes (coiffe, épicondyliens) par voie métabolique</li>
+<li>Le syndrome du canal carpien est 2-3 fois plus fréquent chez l'obèse — infiltration graisseuse intracanalaire</li>
+<li>La perte de poids est le traitement le plus efficace à long terme de la fasciite plantaire de l'obèse</li>
+<li>Les traitements conservateurs des tendinopathies sont souvent moins efficaces chez l'obèse — nécessité d'une approche multimodale</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (facteur de risque de fasciite plantaire, diagnostic échographique, mécanisme de surcharge tendineuse)</li>
+<li>3 QCM Argent (double mécanisme tendinopathie, syndrome du canal carpien, tendon diabétique)</li>
+<li>2 QCM Or (dysfonction tibial postérieur, traitement multimodal fasciite chez l'obèse)</li>
+<li>1 QCM Diamant (cas clinique : obèse diabétique avec fasciite plantaire bilatérale résistante + pied plat acquis + canal carpien — plan de traitement intégré ciblant les mécanismes mécanique et métabolique)</li>
+<li>1 QROC : « Expliquez pourquoi l'obèse développe des tendinopathies même au niveau des articulations non portantes. Illustrez par des exemples cliniques. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-iii-modules-10-12">Références bibliographiques — Partie III (Modules 10-12)</h2>
+<ol>
+<li>Berenbaum F. Osteoarthritis as an inflammatory disease (osteoarthritis is not osteoarthrosis!). <em>Osteoarthritis Cartilage</em>. 2013;21(1):16-21.</li>
+<li>Bergmann G, Deuretzbacher G, Heller M, et al. Hip contact forces and gait patterns from routine activities. <em>J Biomech</em>. 2001;34(7):859-871.</li>
+<li>Browning RC, Kram R. Effects of obesity on the biomechanics of walking at different speeds. <em>Med Sci Sports Exerc</em>. 2007;39(9):1632-1641.</li>
+<li>Coggon D, Reading I, Croft P, et al. Knee osteoarthritis and obesity. <em>Int J Obes</em>. 2001;25(5):622-627.</li>
+<li>DeGroot J, Verzijl N, Wenting-van Wijk MJ, et al. Accumulation of advanced glycation end products as a molecular mechanism for aging as a risk factor in osteoarthritis. <em>Arthritis Rheum</em>. 2004;50(4):1207-1215.</li>
+<li>Dumond H, Presle N, Terlain B, et al. Evidence for a key role of leptin in osteoarthritis. <em>Arthritis Rheum</em>. 2003;48(11):3118-3129.</li>
+<li>Gaida JE, Alfredson H, Kiss ZS, et al. Asymptomatic Achilles tendon pathology is associated with a central fat distribution in men and a peripheral fat distribution in women: a cross sectional study of 298 individuals. <em>BMC Musculoskelet Disord</em>. 2010;11:41.</li>
+<li>Guilak F. Biomechanical factors in osteoarthritis. <em>Best Pract Res Clin Rheumatol</em>. 2011;25(6):815-823.</li>
+<li>Harding GT, Hubley-Kozey CL, Dunbar MJ, et al. Body mass index affects knee joint mechanics during gait differently with and without moderate knee osteoarthritis. <em>Osteoarthritis Cartilage</em>. 2012;20(11):1234-1242.</li>
+<li>Jiang L, Tian W, Wang Y, et al. Body mass index and susceptibility to knee osteoarthritis: a systematic review and meta-analysis. <em>Joint Bone Spine</em>. 2012;79(3):291-297.</li>
+<li>Landorf KB, Keenan AM, Herbert RD. Effectiveness of foot orthoses to treat plantar fasciitis: a randomized trial. <em>Arch Intern Med</em>. 2006;166(12):1305-1310.</li>
+<li>Messier SP, Gutekunst DJ, Davis C, DeVita P. Weight loss reduces knee-joint loads in overweight and obese older adults with knee osteoarthritis. <em>Arthritis Rheum</em>. 2005;52(7):2026-2032.</li>
+<li>Messier SP, Loeser RF, Miller GD, et al. Exercise and dietary weight loss in overweight and obese older adults with knee osteoarthritis: the Arthritis, Diet, and Activity Promotion Trial. <em>Arthritis Rheum</em>. 2004;50(5):1501-1510.</li>
+<li>Messier SP, Mihalko SL, Legault C, et al. Effects of intensive diet and exercise on knee joint loads, inflammation, and clinical outcomes among overweight and obese adults with knee osteoarthritis: the IDEA randomized clinical trial. <em>JAMA</em>. 2013;310(12):1263-1273.</li>
+<li>Messier SP, Pater M, O'Connell M, et al. Gait analysis of knee OA patients and relationship to body mass. <em>Obesity</em>. 2014;22(8):1792-1797.</li>
+<li>Riddle DL, Pulisic M, Pidcoe P, Johnson RE. Risk factors for plantar fasciitis: a matched case-control study. <em>J Bone Joint Surg Am</em>. 2003;85(5):872-877.</li>
+<li>Schwab F, Patel A, Ungar B, Farcy JP, Lafage V. Adult spinal deformity — postoperative standing imbalance: how much can you tolerate? An overview of key parameters in assessing alignment and planning corrective surgery. <em>Spine</em>. 2010;35(25):2224-2231.</li>
+<li>Tilley BJ, Cook JL, Docking SI, Gaida JE. Is higher serum cholesterol associated with altered tendon structure or tendon pain? A systematic review. <em>Br J Sports Med</em>. 2015;49(23):1504-1509.</li>
+<li>Wearing SC, Hennig EM, Byrne NM, Steele JR, Hills AP. Musculoskeletal disorders associated with obesity: a biomechanical perspective. <em>Obes Rev</em>. 2006;7(3):239-250.</li>
+<li>Wendelboe AM, Hegmann KT, Gren LH, et al. An association between body-mass index and shoulder disorders. <em>J Bone Joint Surg Br</em>. 2004;86(Suppl III):251.</li>
+<li>Werner RA, Albers JW, Franzblau A, Armstrong TJ. The relationship between body mass index and the diagnosis of carpal tunnel syndrome. <em>Muscle Nerve</em>. 1994;17(6):632-636.</li>
+<li>Yusuf E, Nelissen RG, Ioan-Facsinay A, et al. Association between weight or body mass index and hand osteoarthritis: a systematic review. <em>Ann Rheum Dis</em>. 2010;69(4):761-765.</li>
+<li>Zheng H, Chen C. Body mass index and risk of knee osteoarthritis: systematic review and meta-analysis. <em>Osteoarthritis Cartilage</em>. 2015;23(1):22-28.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>
