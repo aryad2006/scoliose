@@ -10,6 +10,7 @@ define('CLI_SCRIPT', true);
 require_once(__DIR__ . '/config.php');
 require_once($CFG->libdir  . '/accesslib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+require_once($CFG->dirroot . '/course/modlib.php');
 require_once($CFG->dirroot . '/mod/page/lib.php');
 require_once($CFG->dirroot . '/lib/modinfolib.php');
 
