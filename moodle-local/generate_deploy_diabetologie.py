@@ -127,6 +127,7 @@ function add_section($courseid, $num, $name) {
     $s->summaryformat = FORMAT_HTML;
     $s->sequence      = '';
     $s->visible       = 1;
+    $s->timemodified  = time();
     $s->id = $DB->insert_record('course_sections', $s);
     return $s->id;
 }
@@ -136,23 +137,38 @@ function add_page($courseid, $sid, $title, $html_b64) {
     $content = base64_decode($html_b64);
 
     $page = new stdClass();
-    $page->course        = $courseid;
-    $page->name          = $title;
-    $page->intro         = '';
-    $page->introformat   = FORMAT_HTML;
-    $page->content       = $content;
-    $page->contentformat = FORMAT_HTML;
-    $page->timemodified  = time();
+    $page->course          = $courseid;
+    $page->name            = $title;
+    $page->intro           = '';
+    $page->introformat     = FORMAT_HTML;
+    $page->content         = $content;
+    $page->contentformat   = FORMAT_HTML;
+    $page->legacyfiles     = 0;
+    $page->legacyfileslast = null;
+    $page->display         = 0;
+    $page->displayoptions  = '';
+    $page->revision        = 0;
+    $page->timemodified    = time();
     $page->id = $DB->insert_record('page', $page);
 
     $cm = new stdClass();
-    $cm->course     = $courseid;
-    $cm->module     = $DB->get_field('modules', 'id', ['name' => 'page']);
-    $cm->instance   = $page->id;
-    $cm->section    = $sid;
-    $cm->visible    = 1;
-    $cm->completion = 0;
-    $cm->added      = time();
+    $cm->course               = $courseid;
+    $cm->module               = $DB->get_field('modules', 'id', ['name' => 'page']);
+    $cm->instance             = $page->id;
+    $cm->section              = $sid;
+    $cm->visible              = 1;
+    $cm->visibleold           = 1;
+    $cm->groupmode            = 0;
+    $cm->groupingid           = 0;
+    $cm->completion           = 0;
+    $cm->completiongradeitemnumber = null;
+    $cm->completionview       = 0;
+    $cm->completionexpected   = 0;
+    $cm->showdescription      = 0;
+    $cm->deletioninprogress   = 0;
+    $cm->added                = time();
+    $cm->score                = 0;
+    $cm->indent               = 0;
     $cm->id = $DB->insert_record('course_modules', $cm);
 
     $seq = $DB->get_field('course_sections', 'sequence', ['id' => $sid]);

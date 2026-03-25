@@ -226,6 +226,7 @@ function get_or_create_section($courseid, $sectionnum, $sectionname) {
         $section->summaryformat = FORMAT_HTML;
         $section->sequence      = '';
         $section->visible       = 1;
+        $section->timemodified  = time();
         $section->id = $DB->insert_record('course_sections', $section);
     } else {
         $DB->set_field('course_sections', 'name', $sectionname, ['id' => $section->id]);
@@ -238,24 +239,39 @@ function add_page_to_section($courseid, $sectionid, $sectionnum, $title, $conten
 
     // Créer le module "page"
     $page = new stdClass();
-    $page->course         = $courseid;
-    $page->name           = $title;
-    $page->intro          = '';
-    $page->introformat    = FORMAT_HTML;
-    $page->content        = $content;
-    $page->contentformat  = FORMAT_HTML;
-    $page->timemodified   = time();
+    $page->course          = $courseid;
+    $page->name            = $title;
+    $page->intro           = '';
+    $page->introformat     = FORMAT_HTML;
+    $page->content         = $content;
+    $page->contentformat   = FORMAT_HTML;
+    $page->legacyfiles     = 0;
+    $page->legacyfileslast = null;
+    $page->display         = 0;
+    $page->displayoptions  = '';
+    $page->revision        = 0;
+    $page->timemodified    = time();
     $page->id = $DB->insert_record('page', $page);
 
     // Créer le course_module
     $cm = new stdClass();
-    $cm->course     = $courseid;
-    $cm->module     = $DB->get_field('modules', 'id', ['name' => 'page']);
-    $cm->instance   = $page->id;
-    $cm->section    = $sectionid;
-    $cm->visible    = 1;
-    $cm->completion = 0;
-    $cm->added      = time();
+    $cm->course               = $courseid;
+    $cm->module               = $DB->get_field('modules', 'id', ['name' => 'page']);
+    $cm->instance             = $page->id;
+    $cm->section              = $sectionid;
+    $cm->visible              = 1;
+    $cm->visibleold           = 1;
+    $cm->groupmode            = 0;
+    $cm->groupingid           = 0;
+    $cm->completion           = 0;
+    $cm->completiongradeitemnumber = null;
+    $cm->completionview       = 0;
+    $cm->completionexpected   = 0;
+    $cm->showdescription      = 0;
+    $cm->deletioninprogress   = 0;
+    $cm->score                = 0;
+    $cm->indent               = 0;
+    $cm->added                = time();
     $cm->id = $DB->insert_record('course_modules', $cm);
 
     // Ajouter à la séquence de la section
