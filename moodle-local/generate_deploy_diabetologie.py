@@ -177,8 +177,24 @@ function add_page($courseid, $sid, $title, $html_b64) {
     return $cm->id;
 }
 
-// ── Numsections ──────────────────────────────────────────────────
-$DB->set_field('course', 'numsections', 11, ['id' => $courseid]);
+// ── Numsections (Moodle 4.x → course_format_options) ─────────────
+$fopt = $DB->get_record('course_format_options', [
+    'courseid'  => $courseid,
+    'format'    => 'topics',
+    'sectionid' => 0,
+    'name'      => 'numsections',
+]);
+if ($fopt) {
+    $DB->set_field('course_format_options', 'value', 11, ['id' => $fopt->id]);
+} else {
+    $opt = new stdClass();
+    $opt->courseid  = $courseid;
+    $opt->format    = 'topics';
+    $opt->sectionid = 0;
+    $opt->name      = 'numsections';
+    $opt->value     = 11;
+    $DB->insert_record('course_format_options', $opt);
+}
 
 // ── Sections et pages ────────────────────────────────────────────
 """)
