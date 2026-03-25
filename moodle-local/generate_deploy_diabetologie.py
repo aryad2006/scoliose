@@ -123,24 +123,45 @@ function vertex_add_section($courseid, $num, $name) {
     return $section->id;
 }
 
-function vertex_add_page($courseid, $sectionnum, $title, $html_b64) {
-    global $DB, $CFG;
+function vertex_add_page($courseid, $sectionid, $title, $html_b64) {
+    global $DB;
     $content = base64_decode($html_b64);
-    $courseobj = get_course($courseid);
 
-    $data = new stdClass();
-    $data->modulename    = 'page';
-    $data->course        = $courseid;
-    $data->section       = $sectionnum;
-    $data->visible       = 1;
-    $data->name          = $title;
-    $data->intro         = '';
-    $data->introformat   = FORMAT_HTML;
-    $data->content       = $content;
-    $data->contentformat = FORMAT_HTML;
-    $data->display       = 0;
+    $page = new stdClass();
+    $page->course          = $courseid;
+    $page->name            = $title;
+    $page->intro           = '';
+    $page->introformat     = FORMAT_HTML;
+    $page->content         = $content;
+    $page->contentformat   = FORMAT_HTML;
+    $page->legacyfiles     = 0;
+    $page->legacyfileslast = null;
+    $page->display         = 0;
+    $page->displayoptions  = '';
+    $page->revision        = 0;
+    $page->timemodified    = time();
+    $page->id = $DB->insert_record('page', $page);
 
-    $cm = add_moduleinfo($data, $courseobj);
+    $cm = new stdClass();
+    $cm->course            = $courseid;
+    $cm->module            = $DB->get_field('modules', 'id', ['name' => 'page']);
+    $cm->instance          = $page->id;
+    $cm->section           = $sectionid;
+    $cm->visible           = 1;
+    $cm->visibleold        = 1;
+    $cm->groupmode         = 0;
+    $cm->groupingid        = 0;
+    $cm->completion        = 0;
+    $cm->showdescription   = 0;
+    $cm->deletioninprogress = 0;
+    $cm->score             = 0;
+    $cm->indent            = 0;
+    $cm->added             = time();
+    $cm->id = $DB->insert_record('course_modules', $cm);
+
+    $seq = $DB->get_field('course_sections', 'sequence', ['id' => $sectionid]);
+    $seq = $seq ? $seq . ',' . $cm->id : (string)$cm->id;
+    $DB->set_field('course_sections', 'sequence', $seq, ['id' => $sectionid]);
     return $cm->id;
 }
 
@@ -166,7 +187,7 @@ function vertex_add_page($courseid, $sectionnum, $title, $html_b64) {
             b64_str   = b64(fpath)
             safe_title = title.replace("'", "\\'")
             lines.append(
-                f"vertex_add_page($courseid, {sec_idx}, '{safe_title}', '{b64_str}');\n"
+                f"vertex_add_page($courseid, $sid, '{safe_title}', '{b64_str}');\n"
             )
             total += 1
 
