@@ -302,43 +302,51 @@ Le praticien doit systématiquement évoquer les causes de diabète secondaire, 
 
 ### QCM
 
-**QCM 1** 🥉 : Le seuil de GAJ définissant le diabète est :
-- A) ≥ 1,10 g/L
-- B) ≥ 1,20 g/L
-- C) ≥ 1,26 g/L ✅
-- D) ≥ 1,40 g/L
+**Q1.** Le seuil de GAJ définissant le diabète est :
+a) ≥ 1,10 g/L
+b) ≥ 1,20 g/L
+c) ≥ 1,26 g/L
+d) ≥ 1,40 g/L
 
-> *Feedback : Le seuil de 1,26 g/L (7,0 mmol/L) a été établi par l'OMS et l'ADA comme correspondant au seuil d'apparition de la rétinopathie diabétique dans les études épidémiologiques. Ce seuil nécessite une confirmation par une 2ème mesure si le patient est asymptomatique.*
-
----
-
-**QCM 2** 🥈 : Un patient asymptomatique a une GAJ à 1,30 g/L et une HbA1c à 6,2%. Quelle est la conduite à tenir ?
-- A) Le diagnostic de diabète est posé (GAJ ≥ 1,26)
-- B) Recontrôler la GAJ sur un autre jour ✅
-- C) L'HbA1c < 6,5% exclut le diabète
-- D) Réaliser une HGPO immédiatement
-
-> *Feedback : Chez un patient asymptomatique, une seule GAJ ≥ 1,26 g/L ne suffit pas — il faut confirmer par une 2ème mesure sur un autre jour. Si les deux critères sont discordants (GAJ diabétique, HbA1c non diabétique), c'est le critère positif (GAJ) qui doit être recontrôlé. Si la 2ème GAJ est ≥ 1,26, le diagnostic est posé malgré l'HbA1c « normale ».*
+<details><summary>💡 Réponse</summary>
+**c)** Le seuil de 1,26 g/L (7,0 mmol/L) a été établi par l'OMS et l'ADA comme correspondant au seuil d'apparition de la rétinopathie diabétique dans les études épidémiologiques. Ce seuil nécessite une confirmation par une 2ème mesure si le patient est asymptomatique.
+</details>
 
 ---
 
-**QCM 3** 🥈 : L'HbA1c ne doit PAS être utilisée pour le diagnostic de diabète dans laquelle de ces situations ?
-- A) Patient sédentaire de 55 ans
-- B) Patiente drépanocytaire homozygote HbSS ✅
-- C) Patient sous metformine
-- D) Patient hypertendu sous IEC
+**Q2.** Un patient asymptomatique a une GAJ à 1,30 g/L et une HbA1c à 6,2%. Quelle est la conduite à tenir ?
+a) Le diagnostic de diabète est posé (GAJ ≥ 1,26)
+b) Recontrôler la GAJ sur un autre jour
+c) L'HbA1c < 6,5% exclut le diabète
+d) Réaliser une HGPO immédiatement
 
-> *Feedback : Les hémoglobinopathies (HbS, HbC, thalassémie) interfèrent avec de nombreuses méthodes de dosage de l'HbA1c (HPLC, immunoessai) et le turn-over érythrocytaire modifié fausse l'interprétation. Chez ces patients, utiliser la GAJ ou l'HGPO pour le diagnostic.*
+<details><summary>💡 Réponse</summary>
+**b)** Chez un patient asymptomatique, une seule GAJ ≥ 1,26 g/L ne suffit pas — il faut confirmer par une 2ème mesure sur un autre jour. Si les deux critères sont discordants (GAJ diabétique, HbA1c non diabétique), c'est le critère positif (GAJ) qui doit être recontrôlé. Si la 2ème GAJ est ≥ 1,26, le diagnostic est posé malgré l'HbA1c « normale ».
+</details>
 
 ---
 
-**QCM 4** 🥇 : Un patient de 45 ans, IMC 21, consulte pour polyurie-polydipsie depuis 3 semaines. Glycémie veineuse à 3,50 g/L, cétonurie +++. Le diagnostic de diabète est-il posé ?
-- A) Non, il faut confirmer par une 2ème glycémie
-- B) Non, il faut doser l'HbA1c
-- C) Oui, la glycémie ≥ 2,00 g/L avec symptômes cardinaux suffit ✅
-- D) Il faut d'abord faire une HGPO
+**Q3.** L'HbA1c ne doit PAS être utilisée pour le diagnostic de diabète dans laquelle de ces situations ?
+a) Patient sédentaire de 55 ans
+b) Patiente drépanocytaire homozygote HbSS
+c) Patient sous metformine
+d) Patient hypertendu sous IEC
 
-> *Feedback : En présence de symptômes cardinaux (polyurie, polydipsie) + glycémie ≥ 2,00 g/L, le diagnostic de diabète est posé SANS confirmation. De plus, la présence de cétonurie oriente vers un DT1. La priorité est la prise en charge urgente (recherche d'acidocétose, insulinothérapie).*
+<details><summary>💡 Réponse</summary>
+**b)** Les hémoglobinopathies (HbS, HbC, thalassémie) interfèrent avec de nombreuses méthodes de dosage de l'HbA1c (HPLC, immunoessai) et le turn-over érythrocytaire modifié fausse l'interprétation. Chez ces patients, utiliser la GAJ ou l'HGPO pour le diagnostic.
+</details>
+
+---
+
+**Q4.** Un patient de 45 ans, IMC 21, consulte pour polyurie-polydipsie depuis 3 semaines. Glycémie veineuse à 3,50 g/L, cétonurie +++. Le diagnostic de diabète est-il posé ?
+a) Non, il faut confirmer par une 2ème glycémie
+b) Non, il faut doser l'HbA1c
+c) Oui, la glycémie ≥ 2,00 g/L avec symptômes cardinaux suffit
+d) Il faut d'abord faire une HGPO
+
+<details><summary>💡 Réponse</summary>
+**c)** En présence de symptômes cardinaux (polyurie, polydipsie) + glycémie ≥ 2,00 g/L, le diagnostic de diabète est posé SANS confirmation. De plus, la présence de cétonurie oriente vers un DT1. La priorité est la prise en charge urgente (recherche d'acidocétose, insulinothérapie).
+</details>
 
 ---
 

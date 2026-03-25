@@ -344,95 +344,118 @@ La compréhension de l'embryologie et de la plasticité β-cellulaire a ouvert d
 
 ### QCM
 
-**QCM 1** 🥉 : Le bourgeon pancréatique ventral fusionne avec le bourgeon dorsal après :
-- A) Migration à travers le mésentère dorsal
-- B) Rotation autour du duodénum avec le cholédoque ✅
-- C) Invagination dans le mésoderme splanchnique
-- D) Résorption de la paroi duodénale ventrale
+**Q1.** Le bourgeon pancréatique ventral fusionne avec le bourgeon dorsal après :
+a) Migration à travers le mésentère dorsal
+b) Rotation autour du duodénum avec le cholédoque
+c) Invagination dans le mésoderme splanchnique
+d) Résorption de la paroi duodénale ventrale
 
-> *Feedback : Le bourgeon ventral effectue une rotation de 180° autour du duodénum, accompagnant le cholédoque. Cette rotation explique la position finale du canal de Wirsung (bourgeon ventral) qui draine la majeure partie du pancréas, et pourquoi le cholédoque traverse la tête du pancréas chez l'adulte.*
-
----
-
-**QCM 2** 🥉 : Quel facteur de transcription est le marqueur du progéniteur endocrine pancréatique (point de non-retour vers le lignage endocrine) ?
-- A) Pdx1
-- B) Ptf1a
-- C) Ngn3 (Neurogenin 3) ✅
-- D) MafA
-- E) Arx
-
-> *Feedback : Ngn3 est le facteur de transcription obligatoire pour l'engagement vers le lignage endocrine. Son expression transitoire dans les progéniteurs marque le point de non-retour. En amont, Pdx1 est commun à tout le pancréas. En aval, NeuroD1, Pax4/Arx et MafA précisent le sous-type cellulaire. Les mutations de Ngn3 causent un déficit endocrine pancréatique sévère.*
+<details><summary>💡 Réponse</summary>
+**b)** Le bourgeon ventral effectue une rotation de 180° autour du duodénum, accompagnant le cholédoque. Cette rotation explique la position finale du canal de Wirsung (bourgeon ventral) qui draine la majeure partie du pancréas, et pourquoi le cholédoque traverse la tête du pancréas chez l'adulte.
+</details>
 
 ---
 
-**QCM 3** 🥈 : Une perte de fonction de Pax4 entraîne :
-- A) Une augmentation massive des cellules β au détriment des cellules α
-- B) Une conversion des cellules β en cellules δ
-- C) Une augmentation des cellules α et ε au détriment des cellules β et δ ✅
-- D) Une agénésie complète du pancréas endocrine
+**Q2.** Quel facteur de transcription est le marqueur du progéniteur endocrine pancréatique (point de non-retour vers le lignage endocrine) ?
+a) Pdx1
+b) Ptf1a
+c) Ngn3 (Neurogenin 3)
+d) MafA
+e) Arx
 
-> *Feedback : Pax4 est nécessaire à la spécification des lignages β et δ. En son absence, l'antagoniste Arx n'est plus contrebalancé : les progéniteurs endocrines s'orientent massivement vers les lignages α (glucagon) et ε (ghréline). Résultat : absence de cellules β → diabète néonatal (Collombat et al., J Clin Invest, 2007).*
-
----
-
-**QCM 4** 🥈 : La proportion de cellules β dans un îlot de Langerhans humain adulte normal est d'environ :
-- A) 20-30%
-- B) 50-60% ✅
-- C) 70-80%
-- D) >90%
-
-> *Feedback : L'îlot humain contient ~50-60% de cellules β (Cabrera et al., PNAS, 2006). Attention au piège : 70-80% est la proportion chez le rongeur, pas chez l'humain. Cette différence est une source fréquente d'erreur dans l'interprétation des données précliniques.*
+<details><summary>💡 Réponse</summary>
+**c)** Ngn3 est le facteur de transcription obligatoire pour l'engagement vers le lignage endocrine. Son expression transitoire dans les progéniteurs marque le point de non-retour. En amont, Pdx1 est commun à tout le pancréas. En aval, NeuroD1, Pax4/Arx et MafA précisent le sous-type cellulaire. Les mutations de Ngn3 causent un déficit endocrine pancréatique sévère.
+</details>
 
 ---
 
-**QCM 5** 🥇 : Un nouveau-né présente un diabète néonatal permanent avec agénésie pancréatique complète (exocrine + endocrine). Quel gène est le plus probablement muté ?
-- A) Ngn3
-- B) Arx
-- C) Pdx1 (mutation homozygote) ✅
-- D) MafA
-- E) Pax6
+**Q3.** Une perte de fonction de Pax4 entraîne :
+a) Une augmentation massive des cellules β au détriment des cellules α
+b) Une conversion des cellules β en cellules δ
+c) Une augmentation des cellules α et ε au détriment des cellules β et δ
+d) Une agénésie complète du pancréas endocrine
 
-> *Feedback : Pdx1 est le facteur de transcription maître du développement pancréatique précoce — sa perte complète (homozygote) empêche la formation de l'organe entier (exocrine ET endocrine). Ngn3 n'affecte que le compartiment endocrine. Arx n'affecte que les cellules α. MafA n'intervient qu'à la maturation tardive. Distinction fondamentale entre perte complète (agénésie) et perte partielle (MODY4 si hétérozygote).*
-
----
-
-**QCM 6** 🥉 : Les îlots de Langerhans représentent quelle proportion de la masse pancréatique totale ?
-- A) 1-2% ✅
-- B) 10-15%
-- C) 25-30%
-- D) 40-50%
-
-> *Feedback : Seulement 1-2% de la masse pancréatique, mais ils reçoivent 10-15% du débit sanguin — cette disproportion reflète l'importance métabolique du compartiment endocrine. Le ratio vascularisation/masse est 5-10× supérieur à celui du tissu exocrine.*
+<details><summary>💡 Réponse</summary>
+**c)** Pax4 est nécessaire à la spécification des lignages β et δ. En son absence, l'antagoniste Arx n'est plus contrebalancé : les progéniteurs endocrines s'orientent massivement vers les lignages α (glucagon) et ε (ghréline). Résultat : absence de cellules β → diabète néonatal (Collombat et al., J Clin Invest, 2007).
+</details>
 
 ---
 
-**QCM 7** 🥈 : L'hyperglucagonémie paradoxale observée dans le DT1 s'explique par :
-- A) Une mutation des cellules α
-- B) Une stimulation sympathique excessive
-- C) La perte du signal inhibiteur paracrine de l'insuline locale sur les cellules α ✅
-- D) Une augmentation de la masse de cellules α
+**Q4.** La proportion de cellules β dans un îlot de Langerhans humain adulte normal est d'environ :
+a) 20-30%
+b) 50-60%
+c) 70-80%
+d) >90%
 
-> *Feedback : Dans l'îlot normal, l'insuline sécrétée par les cellules β inhibe directement la sécrétion de glucagon par les cellules α voisines (signal paracrine). Quand les cellules β sont détruites (DT1), ce frein paracrine disparaît → les cellules α sécrètent du glucagon de manière non régulée, même en hyperglycémie. Ce double déficit (insuline basse + glucagon élevé) aggrave l'hyperglycémie et contribue à l'acidocétose.*
-
----
-
-**QCM 8** 🥇 : Dans le protocole de greffe d'îlots (Edmonton), pourquoi 50-70% des îlots greffés sont-ils perdus dans les premières semaines ?
-- A) Rejet hyperaigu systématique
-- B) Toxicité des immunosuppresseurs sur les cellules β
-- C) Ischémie liée au délai de revascularisation (2-4 semaines) ✅
-- D) Conversion des cellules β en cellules α après greffe
-
-> *Feedback : Les îlots natifs possèdent une vascularisation dense qui est détruite lors de l'isolement enzymatique. Après transplantation intra-hépatique (via la veine porte), les îlots doivent se revasculariser à partir de néovaisseaux — un processus qui prend 2-4 semaines. Pendant ce délai, les cellules β centrales souffrent d'ischémie et meurent. C'est la cause principale de la perte massive initiale et la raison pour laquelle il faut typiquement 2-3 donneurs par receveur.*
+<details><summary>💡 Réponse</summary>
+**b)** L'îlot humain contient ~50-60% de cellules β (Cabrera et al., PNAS, 2006). Attention au piège : 70-80% est la proportion chez le rongeur, pas chez l'humain. Cette différence est une source fréquente d'erreur dans l'interprétation des données précliniques.
+</details>
 
 ---
 
-**QCM 9** 💎 : Un patient DT2 de 45 ans, obèse (IMC 42), subit une chirurgie bariatrique (sleeve gastrectomy). Trois mois après, son HbA1c passe de 9,2% à 5,8% sans traitement antidiabétique. Quel mécanisme embryologique/cellulaire explique le mieux cette « rémission » ?
-- A) Régénération massive de nouvelles cellules β par néogenèse
-- B) Redifférenciation de cellules β « dormantes » dédifférenciées après levée du stress métabolique ✅
-- C) Transdifférenciation complète des cellules α en cellules β
-- D) Réactivation de la voie Ngn3 chez l'adulte
+**Q5.** Un nouveau-né présente un diabète néonatal permanent avec agénésie pancréatique complète (exocrine + endocrine). Quel gène est le plus probablement muté ?
+a) Ngn3
+b) Arx
+c) Pdx1 (mutation homozygote)
+d) MafA
+e) Pax6
 
-> *Feedback : Sous l'effet de la glucolipotoxicité chronique (DT2), une fraction de cellules β se dédifférencie : elles perdent l'expression de l'insuline et de MafA et reviennent à un état progéniteur (Talchai et al., Cell, 2012). Après chirurgie bariatrique, la perte pondérale rapide et la levée de la glucolipotoxicité permettent la redifférenciation de ces cellules β « dormantes ». Ce n'est pas de la néogenèse (pas de nouveaux progéniteurs) ni de la transdifférenciation α → β (trop lente et marginale chez l'humain). La rémission n'est possible que si le réservoir de cellules dédifférenciées est suffisant — d'où l'importance de l'intervention précoce.*
+<details><summary>💡 Réponse</summary>
+**c)** Pdx1 est le facteur de transcription maître du développement pancréatique précoce — sa perte complète (homozygote) empêche la formation de l'organe entier (exocrine ET endocrine). Ngn3 n'affecte que le compartiment endocrine. Arx n'affecte que les cellules α. MafA n'intervient qu'à la maturation tardive. Distinction fondamentale entre perte complète (agénésie) et perte partielle (MODY4 si hétérozygote).
+</details>
+
+
+---
+
+**Q6.** Les îlots de Langerhans représentent quelle proportion de la masse pancréatique totale ?
+a) 1-2%
+b) 10-15%
+c) 25-30%
+d) 40-50%
+
+<details><summary>💡 Réponse</summary>
+**a)** Seulement 1-2% de la masse pancréatique, mais ils reçoivent 10-15% du débit sanguin — cette disproportion reflète l'importance métabolique du compartiment endocrine. Le ratio vascularisation/masse est 5-10× supérieur à celui du tissu exocrine.
+</details>
+
+
+---
+
+**Q7.** L'hyperglucagonémie paradoxale observée dans le DT1 s'explique par :
+a) Une mutation des cellules α
+b) Une stimulation sympathique excessive
+c) La perte du signal inhibiteur paracrine de l'insuline locale sur les cellules α
+d) Une augmentation de la masse de cellules α
+
+<details><summary>💡 Réponse</summary>
+**c)** Dans l'îlot normal, l'insuline sécrétée par les cellules β inhibe directement la sécrétion de glucagon par les cellules α voisines (signal paracrine). Quand les cellules β sont détruites (DT1), ce frein paracrine disparaît → les cellules α sécrètent du glucagon de manière non régulée, même en hyperglycémie. Ce double déficit (insuline basse + glucagon élevé) aggrave l'hyperglycémie et contribue à l'acidocétose.
+</details>
+
+
+---
+
+**Q8.** Dans le protocole de greffe d'îlots (Edmonton), pourquoi 50-70% des îlots greffés sont-ils perdus dans les premières semaines ?
+a) Rejet hyperaigu systématique
+b) Toxicité des immunosuppresseurs sur les cellules β
+c) Ischémie liée au délai de revascularisation (2-4 semaines)
+d) Conversion des cellules β en cellules α après greffe
+
+<details><summary>💡 Réponse</summary>
+**c)** Les îlots natifs possèdent une vascularisation dense qui est détruite lors de l'isolement enzymatique. Après transplantation intra-hépatique (via la veine porte), les îlots doivent se revasculariser à partir de néovaisseaux — un processus qui prend 2-4 semaines. Pendant ce délai, les cellules β centrales souffrent d'ischémie et meurent. C'est la cause principale de la perte massive initiale et la raison pour laquelle il faut typiquement 2-3 donneurs par receveur.
+</details>
+
+
+---
+
+**Q9.** Un patient DT2 de 45 ans, obèse (IMC 42), subit une chirurgie bariatrique (sleeve gastrectomy). Trois mois après, son HbA1c passe de 9,2% à 5,8% sans traitement antidiabétique. Quel mécanisme embryologique/cellulaire explique le mieux cette « rémission » ?
+a) Régénération massive de nouvelles cellules β par néogenèse
+b) Redifférenciation de cellules β « dormantes » dédifférenciées après levée du stress métabolique
+c) Transdifférenciation complète des cellules α en cellules β
+d) Réactivation de la voie Ngn3 chez l'adulte
+
+<details><summary>💡 Réponse</summary>
+**b)** Sous l'effet de la glucolipotoxicité chronique (DT2), une fraction de cellules β se dédifférencie : elles perdent l'expression de l'insuline et de MafA et reviennent à un état progéniteur (Talchai et al., Cell, 2012). Après chirurgie bariatrique, la perte pondérale rapide et la levée de la glucolipotoxicité permettent la redifférenciation de ces cellules β « dormantes ». Ce n'est pas de la néogenèse (pas de nouveaux progéniteurs) ni de la transdifférenciation α → β (trop lente et marginale chez l'humain). La rémission n'est possible que si le réservoir de cellules dédifférenciées est suffisant — d'où l'importance de l'intervention précoce.
+</details>
+
 
 ---
 

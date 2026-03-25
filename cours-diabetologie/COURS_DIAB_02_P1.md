@@ -329,45 +329,55 @@ La **logique du dépistage** est aujourd'hui claire : identifier les sujets au s
 
 ## Auto-évaluation — Module 5
 
-**QCM 1** 🥉 : Combien d'auto-anticorps positifs faut-il pour définir le stade 1 du DT1 selon le modèle Eisenbarth/Insel ?
-- A) ≥ 1
-- B) ≥ 2 ✅
-- C) ≥ 3
-- D) Les 4
+**Q1.** Combien d'auto-anticorps positifs faut-il pour définir le stade 1 du DT1 selon le modèle Eisenbarth/Insel ?
+a) ≥ 1
+b) ≥ 2
+c) ≥ 3
+d) Les 4
 
-> *Feedback : Le stade 1 est défini par la présence de ≥ 2 auto-anticorps parmi anti-GAD, anti-IA2, anti-ZnT8, IAA, avec normoglycémie. Un seul auto-anticorps positif est associé à un risque plus faible et n'est pas classé comme stade 1.*
-
----
-
-**QCM 2** 🥈 : L'hétérozygotie HLA DR3/DR4 confère un risque de DT1 d'environ :
-- A) 0,3% (risque population générale)
-- B) 1-2%
-- C) 5% ✅
-- D) 50%
-
-> *Feedback : L'hétérozygotie DR3/DR4 confère le risque le plus élevé (~5% de risque absolu à vie vs 0,3% en population générale). Ce risque élevé s'explique par la formation d'un hétérodimère DQ trans-complémentaire (DQA1*05:01/DQB1*03:02) particulièrement efficace pour présenter les autoantigènes β-cellulaires.*
+<details><summary>💡 Réponse</summary>
+**b)** Le stade 1 est défini par la présence de ≥ 2 auto-anticorps parmi anti-GAD, anti-IA2, anti-ZnT8, IAA, avec normoglycémie. Un seul auto-anticorps positif est associé à un risque plus faible et n'est pas classé comme stade 1.
+</details>
 
 ---
 
-**QCM 3** 🥇 : Le teplizumab est un anticorps monoclonal dirigé contre :
-- A) Le TNF-α
-- B) Le CD20 des lymphocytes B
-- C) Le CD3 des lymphocytes T ✅
-- D) L'IL-6
+**Q2.** L'hétérozygotie HLA DR3/DR4 confère un risque de DT1 d'environ :
+a) 0,3% (risque population générale)
+b) 1-2%
+c) 5%
+d) 50%
 
-> *Feedback : Le teplizumab est un anti-CD3 non mitogénique (humanisé FcR non-binding) qui module l'activité des lymphocytes T, induisant une anergie et une augmentation des Treg. L'essai TrialNet TN-10 (Herold et al., NEJM 2019) a montré un retard de ~2 ans dans la progression du stade 2 au stade 3 du DT1.*
+<details><summary>💡 Réponse</summary>
+**c)** L'hétérozygotie DR3/DR4 confère le risque le plus élevé (~5% de risque absolu à vie vs 0,3% en population générale). Ce risque élevé s'explique par la formation d'un hétérodimère DQ trans-complémentaire (DQA1*05:01/DQB1*03:02) particulièrement efficace pour présenter les autoantigènes β-cellulaires.
+</details>
+
+---
+
+**Q3.** Le teplizumab est un anticorps monoclonal dirigé contre :
+a) Le TNF-α
+b) Le CD20 des lymphocytes B
+c) Le CD3 des lymphocytes T
+d) L'IL-6
+
+<details><summary>💡 Réponse</summary>
+**c)** Le teplizumab est un anti-CD3 non mitogénique (humanisé FcR non-binding) qui module l'activité des lymphocytes T, induisant une anergie et une augmentation des Treg. L'essai TrialNet TN-10 (Herold et al., NEJM 2019) a montré un retard de ~2 ans dans la progression du stade 2 au stade 3 du DT1.
+</details>
 
 ---
 
 **Cas clinique** 💎 : Le frère jumeau monozygote de la patiente de l'accroche est testé. Il a des anti-GAD positifs à 85 UI/mL et des anti-ZnT8 positifs. Sa glycémie à jeun est 0,95 g/L et son HGPO est normale. À quel stade se situe-t-il ? Quelle conduite tenir ?
 
-> **Q1** : À quel stade se situe-t-il ?
+**Q1** : À quel stade se situe-t-il ?
 
-> *Réponse : Stade 1 (≥ 2 auto-anticorps positifs — anti-GAD + anti-ZnT8 — avec normoglycémie, HGPO normale). La GAJ à 0,95 g/L est en zone normale (< 1,00 g/L).*
+<details><summary>💡 Réponse</summary>
+Stade 1 (≥ 2 auto-anticorps positifs — anti-GAD + anti-ZnT8 — avec normoglycémie, HGPO normale). La GAJ à 0,95 g/L est en zone normale (< 1,00 g/L).
+</details>
 
-> **Q2** : Quelle conduite tenir ?
+**Q2** : Quelle conduite tenir ?
 
-> *Réponse : (1) Suivi métabolique régulier : HGPO et HbA1c tous les 6 mois pour détecter la progression vers le stade 2. (2) Discussion de l'inclusion dans un programme de suivi type TrialNet pour un suivi standardisé et l'accès aux essais thérapeutiques. (3) Discussion du teplizumab si progression vers le stade 2 (le patient a 14 ans, soit ≥ 8 ans = critère d'âge rempli pour l'AMM FDA). (4) Information et éducation de la famille sur les signes d'alerte du diabète : polyurie, polydipsie, amaigrissement, asthénie. (5) Pas d'insulinothérapie à ce stade — le patient n'est pas diabétique. Le risque de progression vers le DT1 clinique est d'environ 44% à 5 ans et quasi 100% à vie.*
+<details><summary>💡 Réponse</summary>
+(1) Suivi métabolique régulier : HGPO et HbA1c tous les 6 mois pour détecter la progression vers le stade 2. (2) Discussion de l'inclusion dans un programme de suivi type TrialNet pour un suivi standardisé et l'accès aux essais thérapeutiques. (3) Discussion du teplizumab si progression vers le stade 2 (le patient a 14 ans, soit ≥ 8 ans = critère d'âge rempli pour l'AMM FDA). (4) Information et éducation de la famille sur les signes d'alerte du diabète : polyurie, polydipsie, amaigrissement, asthénie. (5) Pas d'insulinothérapie à ce stade — le patient n'est pas diabétique. Le risque de progression vers le DT1 clinique est d'environ 44% à 5 ans et quasi 100% à vie.
+</details>
 
 ---
 

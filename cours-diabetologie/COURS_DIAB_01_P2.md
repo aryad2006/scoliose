@@ -344,43 +344,55 @@ L'atteinte de l'innervation pancréatique a des conséquences spécifiques, souv
 
 ### QCM
 
-**QCM 1** 🥉 : Quelle proportion du débit sanguin pancréatique total est dirigée vers les îlots de Langerhans ?
-- A) 1-2%
-- B) 5-7%
-- C) 10-15% ✅
-- D) 25-30%
+**Q1.** Quelle proportion du débit sanguin pancréatique total est dirigée vers les îlots de Langerhans ?
+a) 1-2%
+b) 5-7%
+c) 10-15%
+d) 25-30%
 
-> *Feedback : Les îlots représentent 1-2% de la masse pancréatique mais reçoivent 10-15% du débit sanguin — cette disproportion vascularisation/masse reflète leur activité métabolique intense et leur rôle endocrine majeur.*
+<details><summary>💡 Réponse</summary>
+**c)** Les îlots représentent 1-2% de la masse pancréatique mais reçoivent 10-15% du débit sanguin — cette disproportion vascularisation/masse reflète leur activité métabolique intense et leur rôle endocrine majeur.
+</details>
 
----
-
-**QCM 2** 🥈 : Le gradient d'insulinémie porto-systémique signifie que :
-- A) La concentration d'insuline est identique dans la veine porte et dans la circulation systémique
-- B) La concentration d'insuline est 2-3× plus élevée dans la veine porte que dans la circulation systémique ✅
-- C) Le glucagon est capté à 90% par le foie
-- D) Le peptide C est capté à 50% par le foie
-
-> *Feedback : Environ 50% de l'insuline sécrétée est captée au premier passage hépatique. Le foie « voit » donc des concentrations d'insuline 2-3× supérieures à celles mesurées en périphérie. Le peptide C (co-sécrété avec l'insuline) n'est PAS capté par le foie, ce qui en fait un marqueur fiable de la sécrétion endogène.*
 
 ---
 
-**QCM 3** 🥈 : Quel nerf est responsable de la « phase céphalique » de la sécrétion d'insuline ?
-- A) Le nerf grand splanchnique
-- B) Le nerf vague (X) ✅
-- C) Le nerf phrénique
-- D) Le nerf récurrent laryngé
+**Q2.** Le gradient d'insulinémie porto-systémique signifie que :
+a) La concentration d'insuline est identique dans la veine porte et dans la circulation systémique
+b) La concentration d'insuline est 2-3× plus élevée dans la veine porte que dans la circulation systémique
+c) Le glucagon est capté à 90% par le foie
+d) Le peptide C est capté à 50% par le foie
 
-> *Feedback : Le nerf vague (X), composante parasympathique, stimule la sécrétion d'insuline via l'acétylcholine et les récepteurs muscariniques M3 des cellules β. La phase céphalique correspond à une sécrétion d'insuline anticipatoire déclenchée par la vue, l'odeur et le goût des aliments, avant même l'absorption glucidique.*
+<details><summary>💡 Réponse</summary>
+**b)** Environ 50% de l'insuline sécrétée est captée au premier passage hépatique. Le foie « voit » donc des concentrations d'insuline 2-3× supérieures à celles mesurées en périphérie. Le peptide C (co-sécrété avec l'insuline) n'est PAS capté par le foie, ce qui en fait un marqueur fiable de la sécrétion endogène.
+</details>
+
 
 ---
 
-**QCM 4** 🥇 : Un patient de 50 ans avec pancréatite chronique calcifiante développe un diabète insulinorequérant. Ce diabète est classé :
-- A) DT1
-- B) DT2
-- C) Diabète de type 3c (pancréatique) ✅
-- D) LADA
+**Q3.** Quel nerf est responsable de la « phase céphalique » de la sécrétion d'insuline ?
+a) Le nerf grand splanchnique
+b) Le nerf vague (X)
+c) Le nerf phrénique
+d) Le nerf récurrent laryngé
 
-> *Feedback : Le diabète de type 3c (ou diabète pancréatoprive) est causé par la destruction du parenchyme pancréatique (pancréatite chronique, cancer, hémochromatose, mucoviscidose, chirurgie). Il se distingue du DT1 (auto-immun) et du DT2 (insulinorésistance) par son étiologie et ses caractéristiques : atteinte combinée exocrine + endocrine, carence en glucagon (risque d'hypoglycémies sévères), élastase fécale basse.*
+<details><summary>💡 Réponse</summary>
+**b)** Le nerf vague (X), composante parasympathique, stimule la sécrétion d'insuline via l'acétylcholine et les récepteurs muscariniques M3 des cellules β. La phase céphalique correspond à une sécrétion d'insuline anticipatoire déclenchée par la vue, l'odeur et le goût des aliments, avant même l'absorption glucidique.
+</details>
+
+
+---
+
+**Q4.** Un patient de 50 ans avec pancréatite chronique calcifiante développe un diabète insulinorequérant. Ce diabète est classé :
+a) DT1
+b) DT2
+c) Diabète de type 3c (pancréatique)
+d) LADA
+
+<details><summary>💡 Réponse</summary>
+**c)** Le diabète de type 3c (ou diabète pancréatoprive) est causé par la destruction du parenchyme pancréatique (pancréatite chronique, cancer, hémochromatose, mucoviscidose, chirurgie). Il se distingue du DT1 (auto-immun) et du DT2 (insulinorésistance) par son étiologie et ses caractéristiques : atteinte combinée exocrine + endocrine, carence en glucagon (risque d'hypoglycémies sévères), élastase fécale basse.
+</details>
+
 
 ---
 

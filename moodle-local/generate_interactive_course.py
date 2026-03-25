@@ -402,103 +402,166 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // ── QCM : radio/checkbox + validation progressive
+  // ── QCM : radio à choix unique — élimination progressive
+  // Règle : mauvaise réponse → rouge + désactivée (ne peut plus être sélectionnée)
+  // Bonne réponse → verte + feedback s'ouvre automatiquement
+  // Quand toutes les mauvaises options sont épuisées → la bonne s'affiche automatiquement
+  // Pas de bouton "Voir la correction"
   document.querySelectorAll('.vqcm').forEach(qcm => {
     const btn = qcm.querySelector('.vqcm-validate');
     const resultDiv = qcm.querySelector('.vqcm-result');
     const feedbackEl = qcm.querySelector('.vfeedback');
-    const corrBtn = qcm.querySelector('.vqcm-show-correction');
     const options = qcm.querySelectorAll('.vqcm-options li');
-    const inputs = qcm.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+    const inputs = qcm.querySelectorAll('input[type="radio"]');
 
-    // Click on li selects the input
+    function lockCorrect() {
+      // Verrouille le QCM en affichant la bonne réponse en vert + ouvre le feedback
+      options.forEach(li => {
+        const input = li.querySelector('input');
+        const isCorrect = li.dataset.correct === 'true';
+        li.classList.remove('selected');
+        if (isCorrect) li.classList.add('correct-show');
+        if (input) input.disabled = true;
+      });
+      if (btn) btn.disabled = true;
+      if (resultDiv) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'vqcm-result correct';
+        resultDiv.textContent = '✓ Bonne réponse !';
+      }
+      if (feedbackEl) feedbackEl.open = true;
+    }
+
+    // Clic sur une option (li) — sélectionne le radio si pas désactivé
     options.forEach(li => {
       li.addEventListener('click', function(e) {
         if (e.target.tagName === 'INPUT') return;
         const input = this.querySelector('input');
         if (!input || input.disabled) return;
-        if (input.type === 'radio') {
-          inputs.forEach(i => { i.checked = false; i.closest('li').classList.remove('selected','incorrect-show'); });
-          input.checked = true;
-          this.classList.add('selected');
-        } else {
-          input.checked = !input.checked;
-          this.classList.toggle('selected', input.checked);
-          this.classList.remove('incorrect-show');
-        }
-        // Clear previous result message when user changes selection
+        // Désélectionner les autres non-désactivées
+        options.forEach(other => {
+          const otherInput = other.querySelector('input');
+          if (!otherInput || otherInput.disabled) return;
+          otherInput.checked = false;
+          other.classList.remove('selected');
+        });
+        input.checked = true;
+        this.classList.add('selected');
         if (resultDiv) resultDiv.style.display = 'none';
       });
     });
 
-    // Validate — only shows if wrong, user can retry
     if (btn) {
       btn.addEventListener('click', function() {
-        // Check if anything is selected
-        const anySelected = [...inputs].some(i => i.checked);
-        if (!anySelected) return;
-
-        let allCorrect = true;
-        options.forEach(li => {
+        const selectedLi = [...options].find(li => {
           const input = li.querySelector('input');
-          const isCorrect = li.dataset.correct === 'true';
-          const isSelected = input && input.checked;
-
-          li.classList.remove('correct-show','incorrect-show');
-
-          if (isSelected && !isCorrect) {
-            li.classList.add('incorrect-show');
-            allCorrect = false;
-          }
-          if (!isSelected && isCorrect) {
-            allCorrect = false;
-          }
+          return input && input.checked;
         });
+        if (!selectedLi) return;
 
-        if (resultDiv) {
-          resultDiv.style.display = 'block';
-          if (allCorrect) {
-            // Correct! Show success, highlight correct answers, disable inputs
-            resultDiv.className = 'vqcm-result correct';
-            resultDiv.textContent = 'Bonne réponse !';
-            options.forEach(li => {
-              const isCorrect = li.dataset.correct === 'true';
-              if (isCorrect) li.classList.add('correct-show');
-              const input = li.querySelector('input');
-              if (input) input.disabled = true;
-            });
-            btn.disabled = true;
-            if (corrBtn) corrBtn.style.display = 'none';
-            if (feedbackEl) feedbackEl.style.display = 'block';
-          } else {
-            // Wrong — show message but keep interactive
+        const isCorrect = selectedLi.dataset.correct === 'true';
+
+        if (isCorrect) {
+          lockCorrect();
+        } else {
+          // Mauvaise réponse : rouge + désactivée définitivement
+          const input = selectedLi.querySelector('input');
+          selectedLi.classList.remove('selected');
+          selectedLi.classList.add('incorrect-show');
+          if (input) { input.checked = false; input.disabled = true; }
+
+          if (resultDiv) {
+            resultDiv.style.display = 'block';
             resultDiv.className = 'vqcm-result incorrect';
-            resultDiv.textContent = 'Réponse incorrecte — réessayez ou cliquez sur « Voir la correction ».';
-            // Show correction button
-            if (corrBtn) corrBtn.style.display = 'inline-block';
+            resultDiv.textContent = '✗ Réponse incorrecte — réessayez.';
+          }
+
+          // Vérifier s'il ne reste qu'une seule option disponible (= la bonne)
+          const remaining = [...options].filter(li => {
+            const inp = li.querySelector('input');
+            return inp && !inp.disabled;
+          });
+          if (remaining.length === 1 && remaining[0].dataset.correct === 'true') {
+            // Une seule option restante et c'est la bonne → affichage automatique
+            lockCorrect();
           }
         }
       });
     }
+  });
 
-    // Show correction — reveals correct answers, locks the QCM
-    if (corrBtn) {
-      corrBtn.addEventListener('click', function() {
+  // ── QCM à choix multiple (checkboxes) — même logique d'élimination progressive
+  // Mauvaise option cochée → rouge + désactivée
+  // Bonne option cochée → verte + verrouillée (confirmée)
+  // Quand toutes les bonnes sont trouvées → feedback s'ouvre automatiquement
+  document.querySelectorAll('.vqcm-multi').forEach(qcm => {
+    const btn = qcm.querySelector('.vqcm-validate');
+    const resultDiv = qcm.querySelector('.vqcm-result');
+    const feedbackEl = qcm.querySelector('.vfeedback');
+    const options = qcm.querySelectorAll('.vqcm-options li');
+    const totalCorrect = [...options].filter(li => li.dataset.correct === 'true').length;
+
+    function checkComplete() {
+      const confirmedCorrect = [...options].filter(li =>
+        li.classList.contains('correct-show')
+      ).length;
+      if (confirmedCorrect >= totalCorrect) {
         options.forEach(li => {
           const input = li.querySelector('input');
-          const isCorrect = li.dataset.correct === 'true';
-          li.classList.remove('selected','incorrect-show','correct-show');
-          if (isCorrect) li.classList.add('correct-show');
           if (input) input.disabled = true;
         });
+        if (btn) btn.disabled = true;
         if (resultDiv) {
           resultDiv.style.display = 'block';
-          resultDiv.className = 'vqcm-result incorrect';
-          resultDiv.textContent = 'Voici la bonne réponse :';
+          resultDiv.className = 'vqcm-result correct';
+          resultDiv.textContent = '✓ Toutes les bonnes réponses trouvées !';
         }
-        btn.disabled = true;
-        corrBtn.style.display = 'none';
-        if (feedbackEl) feedbackEl.style.display = 'block';
+        if (feedbackEl) feedbackEl.open = true;
+      }
+    }
+
+    // Clic sur li → toggle checkbox si pas désactivée
+    options.forEach(li => {
+      li.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const input = this.querySelector('input');
+        if (!input || input.disabled) return;
+        input.checked = !input.checked;
+        this.classList.toggle('selected', input.checked);
+      });
+    });
+
+    if (btn) {
+      btn.addEventListener('click', function() {
+        const selectedOptions = [...options].filter(li => {
+          const input = li.querySelector('input');
+          return input && input.checked && !input.disabled;
+        });
+        if (selectedOptions.length === 0) return;
+
+        let hasError = false;
+        selectedOptions.forEach(li => {
+          const input = li.querySelector('input');
+          const isCorrect = li.dataset.correct === 'true';
+          li.classList.remove('selected');
+          if (isCorrect) {
+            // Bonne réponse confirmée → verte + verrouillée
+            li.classList.add('correct-show');
+            if (input) input.disabled = true;
+          } else {
+            // Mauvaise réponse → rouge + désactivée
+            li.classList.add('incorrect-show');
+            if (input) { input.checked = false; input.disabled = true; }
+            hasError = true;
+          }
+        });
+
+        if (hasError && resultDiv) {
+          resultDiv.style.display = 'block';
+          resultDiv.className = 'vqcm-result incorrect';
+          resultDiv.textContent = '✗ Certaines réponses sont incorrectes — continuez.';
+        }
+        checkComplete();
       });
     }
   });
@@ -604,16 +667,23 @@ document.addEventListener('DOMContentLoaded', function() {
             item.classList.add('incorrect-pos');
             allCorrect = false;
           }
-          // Disable drag during review
-          item.setAttribute('draggable', 'false');
-          item.style.cursor = 'default';
+          // Drag reste actif pour permettre de réessayer
         });
-        validateBtn.disabled = true;
-        // Show correction button if not all correct
-        if (correctionBtn && !allCorrect) {
-          correctionBtn.style.display = 'inline-block';
-          correctionBtn.dataset.state = 'show';
-          correctionBtn.textContent = 'Voir la correction';
+        if (allCorrect) {
+          // Tout correct : verrouiller
+          items.forEach(item => {
+            item.setAttribute('draggable', 'false');
+            item.style.cursor = 'default';
+          });
+          validateBtn.disabled = true;
+          if (correctionBtn) correctionBtn.style.display = 'none';
+        } else {
+          // Pas tout correct : garder le drag actif, montrer le bouton correction
+          if (correctionBtn) {
+            correctionBtn.style.display = 'inline-block';
+            correctionBtn.dataset.state = 'show';
+            correctionBtn.textContent = 'Voir la correction';
+          }
         }
       });
     }
@@ -815,7 +885,7 @@ def preprocess_md(md_text: str) -> str:
         if answer:
             html += (
                 f'<details class="vfeedback" style="margin-top:14px;">'
-                f'<summary>Voir la correction</summary>'
+                f'<summary>Réponse attendue</summary>'
                 f'<div class="fb-content">{answer}</div></details>\n'
             )
 
@@ -825,6 +895,55 @@ def preprocess_md(md_text: str) -> str:
     md_text = re.sub(
         r'✏️\s*\*{0,2}(Micro-exercice|Exercice)[^*]*\*{0,2}\s*[:—]\s*(.+?)(?=\n\n(?!>)|(?=\n## )|\Z)',
         _repl_exercice, md_text, flags=re.DOTALL
+    )
+
+    # ── Nouveau format QCM : **Q1.** question\na) ...\n<details>💡 Réponse</details>
+    # → converti en format **QCM N** 🥉 : avec ✅ pour le transformateur existant
+    _qcm_new_counter = [0]
+
+    def _repl_qcm_new(m):
+        _qcm_new_counter[0] += 1
+        question = m.group(1).strip()
+        options_raw = m.group(2).strip()
+        details_content = m.group(3).strip()
+
+        # Extraire la lettre correcte depuis le contenu <details> : **b)** ou **B)**
+        correct_match = re.search(r'\*\*([a-zA-Z])\)', details_content)
+        correct_letter = correct_match.group(1).upper() if correct_match else None
+
+        # Extraire le feedback (texte après **b)** ...)
+        feedback = re.sub(r'^\*\*[a-zA-Z]\)\*\*\s*', '', details_content).strip()
+        # Nettoyer les balises markdown dans le feedback
+        feedback = feedback.replace('\n', ' ').strip()
+
+        # Parser les options (a) ... b) ... c) ...)
+        opts = re.findall(r'^([a-zA-Z])\)\s*(.+)$', options_raw, re.MULTILINE)
+
+        lines = [f'**QCM {_qcm_new_counter[0]}** 🥉 : {question}']
+        for letter, text in opts:
+            marker = ' ✅' if correct_letter and letter.upper() == correct_letter else ''
+            lines.append(f'- {letter.upper()}) {text.strip()}{marker}')
+        lines.append('')
+        if feedback:
+            lines.append(f'> *Feedback : {feedback}*')
+        return '\n'.join(lines)
+
+    md_text = re.sub(
+        r'\*\*Q(\d+)\.\*\*\s+(.+?)\n'          # **Q1.** question
+        r'((?:[a-zA-Z]\)\s*.+\n?)+)'            # a) ... b) ... c) ...
+        r'\n?<details><summary>.*?</summary>\n?' # <details><summary>💡 Réponse</summary>
+        r'([\s\S]+?)'                             # contenu de la réponse
+        r'</details>',
+        lambda m: _repl_qcm_new(
+            type('M', (), {
+                'group': lambda self, i, _m=m: (
+                    m.group(2) if i == 1 else
+                    m.group(3) if i == 2 else
+                    m.group(4)
+                )
+            })()
+        ),
+        md_text, flags=re.MULTILINE
     )
 
     return md_text
@@ -928,22 +1047,21 @@ def _transform_qcm(html: str) -> str:
                 f'</li>\n'
             )
 
+        qcm_class = 'vqcm-multi' if input_type == 'checkbox' else 'vqcm'
         r = (
-            f'<div class="vqcm">'
+            f'<div class="{qcm_class}">'
             f'<div class="vqcm-header">'
             f'<span class="vqcm-badge {bcls}">{emoji} {btxt}</span>'
             f'<span>{label}</span></div>'
             f'<div class="vqcm-question">{question}</div>'
             f'<ul class="vqcm-options">{opts_out}</ul>'
             f'<button class="vqcm-validate" type="button">Valider ma réponse</button>'
-            f'<button class="vqcm-validate vqcm-show-correction" type="button" '
-            f'style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button>'
             f'<div class="vqcm-result"></div>'
         )
 
         if feedback:
             r += (
-                f'<details class="vfeedback" style="display:none">'
+                f'<details class="vfeedback">'
                 f'<summary>Voir l\'explication</summary>'
                 f'<div class="fb-content">{feedback}</div></details>'
             )
@@ -1002,22 +1120,21 @@ def _transform_qcm_raw(html: str) -> str:
                 f'</li>\n'
             )
 
+        qcm_class = 'vqcm-multi' if input_type == 'checkbox' else 'vqcm'
         r = (
-            f'<div class="vqcm">'
+            f'<div class="{qcm_class}">'
             f'<div class="vqcm-header">'
             f'<span class="vqcm-badge {bcls}">{emoji} {btxt}</span>'
             f'<span>{label}</span></div>'
             f'<div class="vqcm-question">{question}</div>'
             f'<ul class="vqcm-options">{opts_out}</ul>'
             f'<button class="vqcm-validate" type="button">Valider ma réponse</button>'
-            f'<button class="vqcm-validate vqcm-show-correction" type="button" '
-            f'style="display:none; margin-left:10px; background:#78909C;">Voir la correction</button>'
             f'<div class="vqcm-result"></div>'
         )
 
         if feedback:
             r += (
-                f'<details class="vfeedback" style="display:none">'
+                f'<details class="vfeedback">'
                 f'<summary>Voir l\'explication</summary>'
                 f'<div class="fb-content">{feedback}</div></details>'
             )
@@ -1109,25 +1226,18 @@ def _transform_cas_cliniques(html: str) -> str:
         r += '</div>'
         return r
 
-    # Matcher : **Q1** 🥇 : question\n> *Réponse : texte*
-    # ou : <strong>Q1</strong> 🥇 : question ... <em>Réponse : texte</em>
-    pattern = (
-        r'<strong>(Q\d+)</strong>\s*('
-        + '|'.join(re.escape(e) for e in ['🥉','🥈','🥇','💎'])
-        + r')\s*[:：]\s*(.*?)'
-        r'(?:\n>\s*\*(?:Réponse|Réponse attendue)\s*[:：]\s*(.*?)\*)?'
-        r'(?=\s*(?:<strong>Q\d+|</div>|\n>?\s*<strong>|\Z))'
-    )
-    html = re.sub(pattern, _repl_question, html, flags=re.DOTALL)
-
-    # Aussi matcher le format HTML (après conversion markdown)
+    # Un seul pattern unifié pour HTML (après conversion markdown)
+    # Contextes possibles :
+    #   - blockquote Python-Markdown : </p>\n<p><em>Réponse : ...</em></p>\n<p><strong>Q2
+    #   - vbox _repl_box : <br>\n> <em>Réponse : ...</em><br>\n> <strong>Q2
+    badges_re = '|'.join(re.escape(e) for e in ['🥉','🥈','🥇','💎'])
     pattern_html = (
         r'<strong>(Q\d+)</strong>\s*('
-        + '|'.join(re.escape(e) for e in ['🥉','🥈','🥇','💎'])
-        + r')\s*[:：]\s*(.*?)'
-        r'(?:<br\s*/?>)?\s*'
-        r'(?:<em>(?:Réponse|Réponse attendue)\s*[:：]\s*(.*?)</em>)?'
-        r'(?=\s*(?:<strong>Q\d+|</div>|<hr|$))'
+        + badges_re
+        + r')\s*[:：]\s*'
+        r'((?:(?!<em>(?:Réponse|Réponse attendue)).)*?)'   # groupe 3 : question (stoppe avant <em>Réponse)
+        r'(?:<em>(?:Réponse|Réponse attendue)\s*[:：]\s*(.*?)</em>(?:<br[^>]*>)?)?'  # groupe 4 : réponse + <br> optionnel
+        r'(?=\s*>?\s*(?:</p>|<strong>Q\d+|</div>|</blockquote>|<hr|$))'  # lookahead : accepte > optionnel
     )
     html = re.sub(pattern_html, _repl_question, html, flags=re.DOTALL)
 
@@ -1143,6 +1253,9 @@ def _transform_questions_synthese(html: str) -> str:
         _synth_counter[0] += 1
         sid = f'synth_{_synth_counter[0]}'
         question = m.group(1).strip()
+        answer_raw = (m.group(2) or '').strip()
+        # Nettoyer "Éléments de réponse :" en tête
+        answer = re.sub(r'^(?:Éléments?\s+de\s+réponse|Réponse(?:\s+attendue)?)\s*[:：]\s*', '', answer_raw, flags=re.IGNORECASE).strip()
 
         r = (
             f'<div class="vexercice" style="border-color:#00ACC1; background:#E0F7FA;">'
@@ -1150,13 +1263,20 @@ def _transform_questions_synthese(html: str) -> str:
             f'<p>{question}</p>'
             f'<textarea class="vtext-answer" id="{sid}" rows="6" '
             f'placeholder="Développez votre réponse ici (8-10 lignes)..."></textarea>'
-            f'</div>'
         )
+        if answer:
+            r += (
+                f'<details class="vfeedback" style="margin-top:10px;">'
+                f'<summary>Réponse attendue</summary>'
+                f'<div class="fb-content">{answer}</div></details>'
+            )
+        r += '</div>'
         return r
 
-    # Pattern : 💎 **Question ouverte** : texte
+    # Pattern : 💎 **Question ouverte** : texte + blockquote réponse optionnel
     html = re.sub(
-        r'<p>💎\s*<strong>Question ouverte</strong>\s*[:：]\s*(.*?)</p>',
+        r'<p>💎\s*<strong>Question ouverte</strong>\s*[:：]\s*(.*?)</p>\s*'
+        r'(?:<blockquote>\s*<p><em>(.*?)</em></p>\s*</blockquote>)?',
         _repl_synth, html, flags=re.DOTALL
     )
 
@@ -1292,7 +1412,7 @@ def generate_formation(key: str, config: dict, output_dir: Path, preview: bool =
     files = sorted(d.glob("COURS_*.md"))
     if not files:
         print(f"  [SKIP] {key} — aucun COURS_*.md"); return 0
-    fdir = output_dir / key
+    fdir = output_dir / f"COURS-DEFINITIF-{key.upper()}"
     fdir.mkdir(parents=True, exist_ok=True)
     print(f"\n  📘 {config['name']} — {len(files)} fichiers")
     count = 0

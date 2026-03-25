@@ -380,53 +380,68 @@ Dans le DT2, les cellules α présentent une **résistance à l'inhibition** : e
 
 ### QCM
 
-**QCM 1** 🥉 : Quelle enzyme est considérée comme le « capteur de glucose » de la cellule β ?
-- A) Hexokinase I
-- B) Glucokinase (Hexokinase IV) ✅
-- C) Phosphofructokinase
-- D) Pyruvate kinase
+**Q1.** Quelle enzyme est considérée comme le « capteur de glucose » de la cellule β ?
+a) Hexokinase I
+b) Glucokinase (Hexokinase IV)
+c) Phosphofructokinase
+d) Pyruvate kinase
 
-> *Feedback : La glucokinase (hexokinase IV) a un Km élevé (~8 mM) proche de la glycémie normale, n'est pas inhibée par son produit, et fonctionne comme un véritable « glucostat ». Ses mutations causent le MODY2 (inactivatrices) ou l'hyperinsulinisme congénital (activatrices).*
+<details><summary>💡 Réponse</summary>
+**b)** La glucokinase (hexokinase IV) a un Km élevé (~8 mM) proche de la glycémie normale, n'est pas inhibée par son produit, et fonctionne comme un véritable « glucostat ». Ses mutations causent le MODY2 (inactivatrices) ou l'hyperinsulinisme congénital (activatrices).
+</details>
 
----
-
-**QCM 2** 🥉 : L'effet incrétine explique quel pourcentage de la sécrétion postprandiale d'insuline chez le sujet sain ?
-- A) 10-20%
-- B) 30-40%
-- C) 50-70% ✅
-- D) >90%
-
-> *Feedback : L'effet incrétine (GLP-1 + GIP) est responsable de 50-70% de la sécrétion d'insuline en réponse à un repas oral (Nauck et al., 1986). Ce phénomène explique pourquoi la voie orale stimule 2-3 fois plus la sécrétion d'insuline que la voie IV à glycémie identique.*
 
 ---
 
-**QCM 3** 🥈 : Les sulfamides hypoglycémiants agissent en :
-- A) Stimulant la sécrétion de GLP-1
-- B) Inhibant la DPP-4
-- C) Fermant les canaux K~ATP~ indépendamment du glucose ✅
-- D) Activant la glucokinase
+**Q2.** L'effet incrétine explique quel pourcentage de la sécrétion postprandiale d'insuline chez le sujet sain ?
+a) 10-20%
+b) 30-40%
+c) 50-70%
+d) >90%
 
-> *Feedback : Les sulfamides se lient au SUR1 du canal K~ATP~ et le ferment indépendamment du ratio ATP/ADP → sécrétion d'insuline même quand la glycémie est basse → risque d'hypoglycémie. C'est le mécanisme opposé à l'action glucose-dépendante du GLP-1.*
+<details><summary>💡 Réponse</summary>
+**c)** L'effet incrétine (GLP-1 + GIP) est responsable de 50-70% de la sécrétion d'insuline en réponse à un repas oral (Nauck et al., 1986). Ce phénomène explique pourquoi la voie orale stimule 2-3 fois plus la sécrétion d'insuline que la voie IV à glycémie identique.
+</details>
 
----
-
-**QCM 4** 🥈 : Quelle est la demi-vie du GLP-1 natif dans la circulation ?
-- A) 2-3 minutes ✅
-- B) 20-30 minutes
-- C) 2-3 heures
-- D) 12-24 heures
-
-> *Feedback : Le GLP-1 natif a une demi-vie très courte (2-3 min) due à la dégradation rapide par la DPP-4. Les analogues thérapeutiques (liraglutide, sémaglutide, dulaglutide) sont modifiés structurellement pour résister à la DPP-4 et avoir des demi-vies de plusieurs heures à plusieurs jours.*
 
 ---
 
-**QCM 5** 🥇 : Un patient DT1 depuis 15 ans ne ressent plus les signes d'hypoglycémie. Quel est le mécanisme principal ?
-- A) Neuropathie périphérique des extrémités
-- B) Perte de la réponse glucagon puis de la réponse adrénergique à l'hypoglycémie ✅
-- C) Adaptation centrale au glucose bas
-- D) Absorption rapide de l'insuline injectée
+**Q3.** Les sulfamides hypoglycémiants agissent en :
+a) Stimulant la sécrétion de GLP-1
+b) Inhibant la DPP-4
+c) Fermant les canaux K~ATP~ indépendamment du glucose
+d) Activant la glucokinase
 
-> *Feedback : Hypoglycemia unawareness : perte séquentielle de la réponse glucagon (premières années du DT1, par disparition du signal paracrine insulinique intra-îlot) puis abaissement du seuil de la réponse adrénergique (HAAF, après hypoglycémies récurrentes). Le risque d'hypoglycémie sévère est multiplié par 25 (Cryer, 2006). La stratégie thérapeutique repose sur l'évitement strict des hypoglycémies pour remonter le seuil adrénergique.*
+<details><summary>💡 Réponse</summary>
+**c)** Les sulfamides se lient au SUR1 du canal K~ATP~ et le ferment indépendamment du ratio ATP/ADP → sécrétion d'insuline même quand la glycémie est basse → risque d'hypoglycémie. C'est le mécanisme opposé à l'action glucose-dépendante du GLP-1.
+</details>
+
+
+---
+
+**Q4.** Quelle est la demi-vie du GLP-1 natif dans la circulation ?
+a) 2-3 minutes
+b) 20-30 minutes
+c) 2-3 heures
+d) 12-24 heures
+
+<details><summary>💡 Réponse</summary>
+**a)** Le GLP-1 natif a une demi-vie très courte (2-3 min) due à la dégradation rapide par la DPP-4. Les analogues thérapeutiques (liraglutide, sémaglutide, dulaglutide) sont modifiés structurellement pour résister à la DPP-4 et avoir des demi-vies de plusieurs heures à plusieurs jours.
+</details>
+
+
+---
+
+**Q5.** Un patient DT1 depuis 15 ans ne ressent plus les signes d'hypoglycémie. Quel est le mécanisme principal ?
+a) Neuropathie périphérique des extrémités
+b) Perte de la réponse glucagon puis de la réponse adrénergique à l'hypoglycémie
+c) Adaptation centrale au glucose bas
+d) Absorption rapide de l'insuline injectée
+
+<details><summary>💡 Réponse</summary>
+**b)** Hypoglycemia unawareness : perte séquentielle de la réponse glucagon (premières années du DT1, par disparition du signal paracrine insulinique intra-îlot) puis abaissement du seuil de la réponse adrénergique (HAAF, après hypoglycémies récurrentes). Le risque d'hypoglycémie sévère est multiplié par 25 (Cryer, 2006). La stratégie thérapeutique repose sur l'évitement strict des hypoglycémies pour remonter le seuil adrénergique.
+</details>
+
 
 ---
 

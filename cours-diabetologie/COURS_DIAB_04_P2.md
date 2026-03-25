@@ -188,23 +188,29 @@ Bien que le DT2 soit le diagnostic le plus fréquent chez le patient en surpoids
 
 ### QCM
 
-**QCM 1** 🥉 : Quel pourcentage de patients DT2 sont asymptomatiques au moment du diagnostic ?
-- A) ~10%
-- B) ~30%
-- C) ~50% ✅
-- D) ~80%
+**Q1.** Quel pourcentage de patients DT2 sont asymptomatiques au moment du diagnostic ?
+a) ~10%
+b) ~30%
+c) ~50%
+d) ~80%
 
-> *Feedback : Environ 50% des DT2 sont découverts fortuitement, chez des patients strictement asymptomatiques, lors d'un bilan biologique systématique. Le DT2 évolue en moyenne 5-10 ans avant d'être diagnostiqué, ce qui explique que des complications microvasculaires soient déjà présentes chez 20-30% des patients au diagnostic.*
+<details><summary>💡 Réponse</summary>
+**c)** Environ 50% des DT2 sont découverts fortuitement, chez des patients strictement asymptomatiques, lors d'un bilan biologique systématique. Le DT2 évolue en moyenne 5-10 ans avant d'être diagnostiqué, ce qui explique que des complications microvasculaires soient déjà présentes chez 20-30% des patients au diagnostic.
+</details>
+
 
 ---
 
-**QCM 2** 🥈 : Le bilan initial au diagnostic de DT2 doit inclure systématiquement :
-- A) Un fond d'œil et une microalbuminurie ✅
-- B) Une coronarographie
-- C) Un dosage des auto-anticorps
-- D) Une HGPO
+**Q2.** Le bilan initial au diagnostic de DT2 doit inclure systématiquement :
+a) Un fond d'œil et une microalbuminurie
+b) Une coronarographie
+c) Un dosage des auto-anticorps
+d) Une HGPO
 
-> *Feedback : Le fond d'œil (ou rétinographie) et la microalbuminurie (RAC urinaire) sont systématiques car 20-30% des DT2 ont déjà des complications microvasculaires au diagnostic (le diabète évolue en moyenne depuis 5-10 ans avant d'être diagnostiqué). La coronarographie n'est pas systématique (ECG de repos + évaluation clinique en 1ère intention). Les auto-anticorps ne sont dosés que si la présentation est atypique. L'HGPO n'a plus d'indication une fois le diabète diagnostiqué.*
+<details><summary>💡 Réponse</summary>
+**a)** Le fond d'œil (ou rétinographie) et la microalbuminurie (RAC urinaire) sont systématiques car 20-30% des DT2 ont déjà des complications microvasculaires au diagnostic (le diabète évolue en moyenne depuis 5-10 ans avant d'être diagnostiqué). La coronarographie n'est pas systématique (ECG de repos + évaluation clinique en 1ère intention). Les auto-anticorps ne sont dosés que si la présentation est atypique. L'HGPO n'a plus d'indication une fois le diabète diagnostiqué.
+</details>
+
 
 ---
 

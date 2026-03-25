@@ -209,33 +209,42 @@ La durée de la lune de miel est variable : **quelques semaines à 1-2 ans**, ex
 
 ### QCM
 
-**QCM 1** 🥉 : Le seuil rénal du glucose au-delà duquel apparaît la glucosurie est d'environ :
-- A) 1,00 g/L
-- B) 1,26 g/L
-- C) 1,80 g/L ✅
-- D) 2,50 g/L
+**Q1.** Le seuil rénal du glucose au-delà duquel apparaît la glucosurie est d'environ :
+a) 1,00 g/L
+b) 1,26 g/L
+c) 1,80 g/L
+d) 2,50 g/L
 
-> *Feedback : Le seuil rénal du glucose est d'environ 1,80 g/L (10 mmol/L). Au-delà, la capacité de réabsorption tubulaire du SGLT2 est saturée et le glucose « déborde » dans les urines → glucosurie → polyurie osmotique. Les iSGLT2 abaissent ce seuil pharmacologiquement.*
+<details><summary>💡 Réponse</summary>
+**c)** Le seuil rénal du glucose est d'environ 1,80 g/L (10 mmol/L). Au-delà, la capacité de réabsorption tubulaire du SGLT2 est saturée et le glucose « déborde » dans les urines → glucosurie → polyurie osmotique. Les iSGLT2 abaissent ce seuil pharmacologiquement.
+</details>
 
----
-
-**QCM 2** 🥈 : Chez un enfant en ACD sévère (pH 7,05), quel est le principal danger lié à la correction ?
-- A) Hypernatrémie
-- B) Œdème cérébral ✅
-- C) Hyperglycémie rebond
-- D) Rhabdomyolyse
-
-> *Feedback : L'œdème cérébral survient dans 0,5-1% des ACD pédiatriques et a une mortalité de 20-25%. Les facteurs de risque incluent : âge jeune, sévérité de l'ACD, correction trop rapide du glucose ou du sodium, perfusion de bicarbonates, volume de réhydratation excessif dans les premières heures.*
 
 ---
 
-**QCM 3** 🥇 : Un enfant en ACD a un K+ plasmatique à 5,2 mmol/L à l'admission. Faut-il supplémenter en potassium ?
-- A) Non, le K+ est élevé
-- B) Oui, car le K+ total corporel est deplété malgré le K+ plasmatique normal ou élevé ✅
-- C) Uniquement si le K+ descend sous 3,0 mmol/L
-- D) Jamais avant 24h
+**Q2.** Chez un enfant en ACD sévère (pH 7,05), quel est le principal danger lié à la correction ?
+a) Hypernatrémie
+b) Œdème cérébral
+c) Hyperglycémie rebond
+d) Rhabdomyolyse
 
-> *Feedback : Le K+ plasmatique est faussement rassurant en ACD. L'acidose fait sortir le K+ des cellules (échange H+/K+), masquant une déplétion potassique totale sévère (pertes urinaires massives). Dès le début de l'insulinothérapie + correction de l'acidose, le K+ rentre massivement dans les cellules → risque d'hypokaliémie sévère (arythmies). Règle : supplémenter en K+ dès que la kaliémie est < 5,5 mmol/L et la diurèse est établie. Si K+ < 3,5 mmol/L à l'admission, débuter le K+ AVANT l'insuline.*
+<details><summary>💡 Réponse</summary>
+**b)** L'œdème cérébral survient dans 0,5-1% des ACD pédiatriques et a une mortalité de 20-25%. Les facteurs de risque incluent : âge jeune, sévérité de l'ACD, correction trop rapide du glucose ou du sodium, perfusion de bicarbonates, volume de réhydratation excessif dans les premières heures.
+</details>
+
+
+---
+
+**Q3.** Un enfant en ACD a un K+ plasmatique à 5,2 mmol/L à l'admission. Faut-il supplémenter en potassium ?
+a) Non, le K+ est élevé
+b) Oui, car le K+ total corporel est deplété malgré le K+ plasmatique normal ou élevé
+c) Uniquement si le K+ descend sous 3,0 mmol/L
+d) Jamais avant 24h
+
+<details><summary>💡 Réponse</summary>
+**b)** Le K+ plasmatique est faussement rassurant en ACD. L'acidose fait sortir le K+ des cellules (échange H+/K+), masquant une déplétion potassique totale sévère (pertes urinaires massives). Dès le début de l'insulinothérapie + correction de l'acidose, le K+ rentre massivement dans les cellules → risque d'hypokaliémie sévère (arythmies). Règle : supplémenter en K+ dès que la kaliémie est < 5,5 mmol/L et la diurèse est établie. Si K+ < 3,5 mmol/L à l'admission, débuter le K+ AVANT l'insuline.
+</details>
+
 
 ---
 

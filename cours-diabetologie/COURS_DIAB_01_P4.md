@@ -284,47 +284,55 @@ Cependant, cette adaptation est **lente** (plusieurs jours sont nécessaires pou
 
 ## QCM — Auto-évaluation
 
-**QCM 1** 🥉 : Quel organe est responsable de la majorité du captage du glucose stimulé par l'insuline en période postprandiale ?
+**Q1.** Quel organe est responsable de la majorité du captage du glucose stimulé par l'insuline en période postprandiale ?
+a) Le foie
+b) Le cerveau
+c) Le muscle squelettique
+d) Le tissu adipeux
 
-- A) Le foie
-- B) Le cerveau
-- C) Le muscle squelettique ✅
-- D) Le tissu adipeux
+<details><summary>💡 Réponse</summary>
+**c)** Le muscle squelettique capte ~75-80% du glucose stimulé par l'insuline via la translocation de GLUT4. Le tissu adipeux ne capte que ~5% du glucose, malgré son rôle indirect majeur via la régulation de la lipolyse et les adipokines.
+</details>
 
-> *Feedback : Le muscle squelettique capte ~75-80% du glucose stimulé par l'insuline via la translocation de GLUT4. Le tissu adipeux ne capte que ~5% du glucose, malgré son rôle indirect majeur via la régulation de la lipolyse et les adipokines.*
-
----
-
-**QCM 2** 🥈 : La metformine réduit la glycémie à jeun principalement en :
-
-- A) Stimulant la sécrétion d'insuline
-- B) Inhibant l'absorption intestinale du glucose
-- C) Réduisant la production hépatique de glucose (néoglucogenèse) ✅
-- D) Augmentant l'excrétion rénale de glucose
-
-> *Feedback : La metformine active l'AMPK hépatique et inhibe le complexe I mitochondrial, réduisant la néoglucogenèse. Elle ne stimule pas la sécrétion d'insuline (pas d'effet insulinosécréteur → pas de risque d'hypoglycémie en monothérapie). L'excrétion rénale de glucose est le mécanisme des inhibiteurs de SGLT2, pas de la metformine.*
 
 ---
 
-**QCM 3** 🥈 : L'exercice physique favorise le captage musculaire du glucose par une voie :
+**Q2.** La metformine réduit la glycémie à jeun principalement en :
+a) Stimulant la sécrétion d'insuline
+b) Inhibant l'absorption intestinale du glucose
+c) Réduisant la production hépatique de glucose (néoglucogenèse)
+d) Augmentant l'excrétion rénale de glucose
 
-- A) Exclusivement insulino-dépendante (PI3K/Akt)
-- B) Indépendante de l'insuline, via l'AMPK et le calcium ✅
-- C) Dépendante du glucagon
-- D) Médiée par le GLP-1
+<details><summary>💡 Réponse</summary>
+**c)** La metformine active l'AMPK hépatique et inhibe le complexe I mitochondrial, réduisant la néoglucogenèse. Elle ne stimule pas la sécrétion d'insuline (pas d'effet insulinosécréteur → pas de risque d'hypoglycémie en monothérapie). L'excrétion rénale de glucose est le mécanisme des inhibiteurs de SGLT2, pas de la metformine.
+</details>
 
-> *Feedback : La contraction musculaire active la translocation de GLUT4 via la voie AMPK (↑ AMP/ATP) et la voie calcium/CaMKII, toutes deux indépendantes de l'insuline. C'est pourquoi l'exercice améliore le captage du glucose même chez le patient insulinorésistant dont la voie IRS-1/PI3K/Akt est défectueuse.*
 
 ---
 
-**QCM 4** 🥇 : Patient DT2, GAJ 1,60 g/L, GPP H+2 2,00 g/L. Quels mécanismes expliquent ces anomalies ?
+**Q3.** L'exercice physique favorise le captage musculaire du glucose par une voie :
+a) Exclusivement insulino-dépendante (PI3K/Akt)
+b) Indépendante de l'insuline, via l'AMPK et le calcium
+c) Dépendante du glucagon
+d) Médiée par le GLP-1
 
-- A) GAJ : ↑ production hépatique de glucose ; GPP : ↓ captage musculaire du glucose ✅
-- B) GAJ : ↓ captage musculaire ; GPP : ↑ production hépatique
-- C) GAJ et GPP : déficit de sécrétion d'insuline uniquement
-- D) GAJ : ↑ absorption intestinale ; GPP : ↓ production hépatique
+<details><summary>💡 Réponse</summary>
+**b)** La contraction musculaire active la translocation de GLUT4 via la voie AMPK (↑ AMP/ATP) et la voie calcium/CaMKII, toutes deux indépendantes de l'insuline. C'est pourquoi l'exercice améliore le captage du glucose même chez le patient insulinorésistant dont la voie IRS-1/PI3K/Akt est défectueuse.
+</details>
 
-> *Feedback : La GAJ élevée reflète l'insulinorésistance hépatique (néoglucogenèse non freinée par l'insuline + hyperglucagonémie paradoxale). La GPP élevée reflète l'insulinorésistance musculaire (translocation de GLUT4 réduite) associée à un déficit incrétine. Cette distinction a une implication thérapeutique directe : la metformine cible la GAJ (néoglucogenèse), tandis que les incrétines (agonistes GLP-1, iDPP-4) ciblent préférentiellement la GPP (sécrétion d'insuline glucose-dépendante + ralentissement de la vidange gastrique).*
+
+---
+
+**Q4.** Patient DT2, GAJ 1,60 g/L, GPP H+2 2,00 g/L. Quels mécanismes expliquent ces anomalies ?
+a) GAJ : ↑ production hépatique de glucose ; GPP : ↓ captage musculaire du glucose
+b) GAJ : ↓ captage musculaire ; GPP : ↑ production hépatique
+c) GAJ et GPP : déficit de sécrétion d'insuline uniquement
+d) GAJ : ↑ absorption intestinale ; GPP : ↓ production hépatique
+
+<details><summary>💡 Réponse</summary>
+**a)** La GAJ élevée reflète l'insulinorésistance hépatique (néoglucogenèse non freinée par l'insuline + hyperglucagonémie paradoxale). La GPP élevée reflète l'insulinorésistance musculaire (translocation de GLUT4 réduite) associée à un déficit incrétine. Cette distinction a une implication thérapeutique directe : la metformine cible la GAJ (néoglucogenèse), tandis que les incrétines (agonistes GLP-1, iDPP-4) ciblent préférentiellement la GPP (sécrétion d'insuline glucose-dépendante + ralentissement de la vidange gastrique).
+</details>
+
 
 ---
 

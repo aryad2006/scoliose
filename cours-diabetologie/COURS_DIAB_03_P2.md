@@ -260,53 +260,68 @@ Le suivi du patient prédiabétique doit être structuré et régulier pour main
 
 ### QCM
 
-**QCM 1** 🥉 : Le seuil d'IFG selon l'OMS est :
-- A) ≥ 0,90 g/L
-- B) ≥ 1,00 g/L (seuil ADA)
-- C) ≥ 1,10 g/L ✅
-- D) ≥ 1,26 g/L
+**Q1.** Le seuil d'IFG selon l'OMS est :
+a) ≥ 0,90 g/L
+b) ≥ 1,00 g/L (seuil ADA)
+c) ≥ 1,10 g/L
+d) ≥ 1,26 g/L
 
-> *Feedback : L'OMS et la HAS retiennent le seuil de 1,10 g/L pour l'IFG, tandis que l'ADA a abaissé son seuil à 1,00 g/L en 2003. En pratique française, on utilise le seuil OMS de 1,10 g/L.*
+<details><summary>💡 Réponse</summary>
+**c)** L'OMS et la HAS retiennent le seuil de 1,10 g/L pour l'IFG, tandis que l'ADA a abaissé son seuil à 1,00 g/L en 2003. En pratique française, on utilise le seuil OMS de 1,10 g/L.
+</details>
 
----
-
-**QCM 2** 🥈 : L'étude DPP a démontré que les MHD intensives réduisent le risque de DT2 de :
-- A) 25%
-- B) 31%
-- C) 58% ✅
-- D) 72%
-
-> *Feedback : Les MHD intensives (perte de poids 5-7%, exercice 150 min/semaine) ont réduit le risque de 58% vs placebo, et la metformine de 31%. La pioglitazone (étude ACT NOW) a montré -72% mais n'est pas recommandée en prévention en raison de ses effets secondaires.*
 
 ---
 
-**QCM 3** 🥈 : L'ADA recommande d'envisager la metformine en prévention du DT2 chez les sujets prédiabétiques présentant :
-- A) GAJ isolée à 1,12 g/L sans autre facteur de risque
-- B) IMC ≥ 35 kg/m², âge < 60 ans ✅
-- C) HbA1c 5,8% isolée
-- D) Antécédent de DT1 familial
+**Q2.** L'étude DPP a démontré que les MHD intensives réduisent le risque de DT2 de :
+a) 25%
+b) 31%
+c) 58%
+d) 72%
 
-> *Feedback : L'ADA réserve la metformine en prévention aux sujets prédiabétiques à très haut risque : IMC ≥ 35 kg/m², âge < 60 ans, femmes avec antécédent de DG. Chez les autres, les MHD intensives restent l'intervention de première intention.*
+<details><summary>💡 Réponse</summary>
+**c)** Les MHD intensives (perte de poids 5-7%, exercice 150 min/semaine) ont réduit le risque de 58% vs placebo, et la metformine de 31%. La pioglitazone (étude ACT NOW) a montré -72% mais n'est pas recommandée en prévention en raison de ses effets secondaires.
+</details>
 
----
-
-**QCM 4** 🥇 : Concernant le risque de progression du prédiabète vers le DT2, quelle combinaison confère le risque annuel le plus élevé ?
-- A) IFG isolée
-- B) IGT isolée
-- C) HbA1c 5,7-6,4% isolée
-- D) IFG + IGT combinées ✅
-
-> *Feedback : La combinaison IFG + IGT confère le risque le plus élevé de progression (~10-12%/an), car elle témoigne d'une atteinte à la fois de la régulation hépatique du glucose (IFG = insulinorésistance hépatique) et de la captation périphérique post-prandiale (IGT = insulinorésistance musculaire + déficit sécrétoire). L'IGT isolée (~6-10%/an) a un risque supérieur à l'IFG isolée (~5-8%/an).*
 
 ---
 
-**QCM 5** 🥉 : Le score FINDRISC est un outil de :
-- A) Diagnostic du diabète de type 2
-- B) Dépistage familial du DT1
-- C) Pré-sélection des sujets à risque avant dépistage biologique du DT2 ✅
-- D) Suivi de l'efficacité du traitement antidiabétique
+**Q3.** L'ADA recommande d'envisager la metformine en prévention du DT2 chez les sujets prédiabétiques présentant :
+a) GAJ isolée à 1,12 g/L sans autre facteur de risque
+b) IMC ≥ 35 kg/m², âge < 60 ans
+c) HbA1c 5,8% isolée
+d) Antécédent de DT1 familial
 
-> *Feedback : Le FINDRISC (Finnish Diabetes Risk Score) est un questionnaire en 8 items qui évalue le risque de DT2 à 10 ans. Un score ≥ 12 justifie un dosage de la GAJ. C'est un outil de pré-tri (pas un outil diagnostique) — simple, gratuit, sans prise de sang.*
+<details><summary>💡 Réponse</summary>
+**b)** L'ADA réserve la metformine en prévention aux sujets prédiabétiques à très haut risque : IMC ≥ 35 kg/m², âge < 60 ans, femmes avec antécédent de DG. Chez les autres, les MHD intensives restent l'intervention de première intention.
+</details>
+
+
+---
+
+**Q4.** Concernant le risque de progression du prédiabète vers le DT2, quelle combinaison confère le risque annuel le plus élevé ?
+a) IFG isolée
+b) IGT isolée
+c) HbA1c 5,7-6,4% isolée
+d) IFG + IGT combinées
+
+<details><summary>💡 Réponse</summary>
+**d)** La combinaison IFG + IGT confère le risque le plus élevé de progression (~10-12%/an), car elle témoigne d'une atteinte à la fois de la régulation hépatique du glucose (IFG = insulinorésistance hépatique) et de la captation périphérique post-prandiale (IGT = insulinorésistance musculaire + déficit sécrétoire). L'IGT isolée (~6-10%/an) a un risque supérieur à l'IFG isolée (~5-8%/an).
+</details>
+
+
+---
+
+**Q5.** Le score FINDRISC est un outil de :
+a) Diagnostic du diabète de type 2
+b) Dépistage familial du DT1
+c) Pré-sélection des sujets à risque avant dépistage biologique du DT2
+d) Suivi de l'efficacité du traitement antidiabétique
+
+<details><summary>💡 Réponse</summary>
+**c)** Le FINDRISC (Finnish Diabetes Risk Score) est un questionnaire en 8 items qui évalue le risque de DT2 à 10 ans. Un score ≥ 12 justifie un dosage de la GAJ. C'est un outil de pré-tri (pas un outil diagnostique) — simple, gratuit, sans prise de sang.
+</details>
+
 
 ---
 

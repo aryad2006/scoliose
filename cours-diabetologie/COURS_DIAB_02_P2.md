@@ -327,45 +327,55 @@ L'obésité est le facteur de risque modifiable le plus puissant du DT2. Le risq
 
 ## Auto-évaluation — Module 6
 
-**QCM 1** 🥉 : Le HOMA-IR se calcule par :
-- A) Glycémie à jeun / insulinémie à jeun
-- B) Insulinémie à jeun × glycémie à jeun / 22,5 ✅
-- C) HbA1c × glycémie à jeun
-- D) Peptide C / glycémie
+**Q1.** Le HOMA-IR se calcule par :
+a) Glycémie à jeun / insulinémie à jeun
+b) Insulinémie à jeun × glycémie à jeun / 22,5
+c) HbA1c × glycémie à jeun
+d) Peptide C / glycémie
 
-> *Feedback : HOMA-IR = insulinémie à jeun (µU/mL) × glycémie à jeun (mmol/L) / 22,5. Un HOMA-IR élevé (>2,5-3) suggère une insulinorésistance. C'est une méthode simple et accessible en pratique courante, bien que moins précise que le clamp euglycémique.*
-
----
-
-**QCM 2** 🥈 : Dans l'« octet omineux » de DeFronzo, quel organe est ciblé par les iSGLT2 ?
-- A) Le foie
-- B) Le pancréas
-- C) Le rein ✅
-- D) Le cerveau
-
-> *Feedback : Les iSGLT2 ciblent le rein en inhibant la réabsorption du glucose dans le tubule proximal → glucosurie thérapeutique. Le rein fait partie de l'octet omineux car dans le DT2, le seuil rénal de glucose est anormalement élevé (↑ expression de SGLT2), ce qui contribue au maintien de l'hyperglycémie.*
+<details><summary>💡 Réponse</summary>
+**b)** HOMA-IR = insulinémie à jeun (µU/mL) × glycémie à jeun (mmol/L) / 22,5. Un HOMA-IR élevé (>2,5-3) suggère une insulinorésistance. C'est une méthode simple et accessible en pratique courante, bien que moins précise que le clamp euglycémique.
+</details>
 
 ---
 
-**QCM 3** 🥇 : L'étude DiRECT (Taylor et al., 2018) a démontré que la rémission du DT2 est possible par :
-- A) Insulinothérapie intensive précoce
-- B) Restriction calorique drastique avec perte de poids significative ✅
-- C) Exercice physique intense seul
-- D) Combinaison metformine + aGLP-1
+**Q2.** Dans l'« octet omineux » de DeFronzo, quel organe est ciblé par les iSGLT2 ?
+a) Le foie
+b) Le pancréas
+c) Le rein
+d) Le cerveau
 
-> *Feedback : L'étude DiRECT a montré que 46% des patients DT2 récent (<6 ans) obtenaient une rémission (HbA1c < 6,5% sans traitement) après un programme de restriction calorique (825-853 kcal/j pendant 12-20 semaines) suivi d'une réintroduction alimentaire progressive, avec perte de poids moyenne de 10 kg. Ce résultat soutient le concept de dédifférenciation réversible des cellules β.*
+<details><summary>💡 Réponse</summary>
+**c)** Les iSGLT2 ciblent le rein en inhibant la réabsorption du glucose dans le tubule proximal → glucosurie thérapeutique. Le rein fait partie de l'octet omineux car dans le DT2, le seuil rénal de glucose est anormalement élevé (↑ expression de SGLT2), ce qui contribue au maintien de l'hyperglycémie.
+</details>
+
+---
+
+**Q3.** L'étude DiRECT (Taylor et al., 2018) a démontré que la rémission du DT2 est possible par :
+a) Insulinothérapie intensive précoce
+b) Restriction calorique drastique avec perte de poids significative
+c) Exercice physique intense seul
+d) Combinaison metformine + aGLP-1
+
+<details><summary>💡 Réponse</summary>
+**b)** L'étude DiRECT a montré que 46% des patients DT2 récent (<6 ans) obtenaient une rémission (HbA1c < 6,5% sans traitement) après un programme de restriction calorique (825-853 kcal/j pendant 12-20 semaines) suivi d'une réintroduction alimentaire progressive, avec perte de poids moyenne de 10 kg. Ce résultat soutient le concept de dédifférenciation réversible des cellules β.
+</details>
 
 ---
 
 **Cas clinique** 💎 : M. D. (accroche) débute la metformine 1 g/j. À 6 mois, HbA1c 7,2%. Son bilan montre : insulinémie à jeun 28 µU/mL (N 5-15), peptide C 3,8 ng/mL (N 0,8-3,5), TG 2,8 g/L, HDL-c 0,32 g/L, tour de taille 112 cm.
 
-> **Q1** : Analysez ce profil en utilisant le concept de l'octet omineux.
+**Q1** : Analysez ce profil en utilisant le concept de l'octet omineux.
 
-> *Réponse : (1) L'hyperinsulinisme compensatoire (insulinémie 28, HOMA-IR élevé) confirme une insulinorésistance majeure — mécanismes #1 (muscle), #2 (foie), #5 (tissu adipeux) de l'octet. (2) Le peptide C élevé (3,8 ng/mL) montre une sécrétion β-cellulaire encore préservée mais insuffisante — mécanisme #3 (cellule β en voie de décompensation). (3) La dyslipidémie athérogène (TG 2,8 g/L, HDL 0,32 g/L) traduit la lipotoxicité et l'insulinorésistance hépatique (↑ VLDL) — mécanismes #2 et #5. (4) L'obésité viscérale (tour de taille 112 cm) est le moteur de l'ensemble — mécanisme #5 en premier lieu et #8 (probable dérégulation de l'appétit).*
+<details><summary>💡 Réponse</summary>
+(1) L'hyperinsulinisme compensatoire (insulinémie 28, HOMA-IR élevé) confirme une insulinorésistance majeure — mécanismes #1 (muscle), #2 (foie), #5 (tissu adipeux) de l'octet. (2) Le peptide C élevé (3,8 ng/mL) montre une sécrétion β-cellulaire encore préservée mais insuffisante — mécanisme #3 (cellule β en voie de décompensation). (3) La dyslipidémie athérogène (TG 2,8 g/L, HDL 0,32 g/L) traduit la lipotoxicité et l'insulinorésistance hépatique (↑ VLDL) — mécanismes #2 et #5. (4) L'obésité viscérale (tour de taille 112 cm) est le moteur de l'ensemble — mécanisme #5 en premier lieu et #8 (probable dérégulation de l'appétit).
+</details>
 
-> **Q2** : Proposez un ajustement thérapeutique ciblant au moins 3 mécanismes différents.
+**Q2** : Proposez un ajustement thérapeutique ciblant au moins 3 mécanismes différents.
 
-> *Réponse : (a) ↑ metformine à 2 g/j — foie/néoglucogenèse (mécanisme #2). (b) + aGLP-1 (sémaglutide 0,5 puis 1 mg/semaine) — cible 4 mécanismes : cellule β/potentialisation glucose-dépendante (#3), cellule α/↓ glucagon (#4), intestin/effet incrétine (#6), cerveau/satiété → perte de poids (#8). (c) Renforcement des MHD + programme structuré d'exercice physique (150 min/semaine) — muscle/↑ captage GLUT4 via AMPK (#1) + tissu adipeux/↓ lipolyse (#5). Alternative complémentaire : ajout d'un iSGLT2 (empagliflozine ou dapagliflozine) pour cibler le rein (#7) avec bénéfice cardiovasculaire et pondéral additionnel. Total : 7-8/8 mécanismes ciblés.*
+<details><summary>💡 Réponse</summary>
+(a) ↑ metformine à 2 g/j — foie/néoglucogenèse (mécanisme #2). (b) + aGLP-1 (sémaglutide 0,5 puis 1 mg/semaine) — cible 4 mécanismes : cellule β/potentialisation glucose-dépendante (#3), cellule α/↓ glucagon (#4), intestin/effet incrétine (#6), cerveau/satiété → perte de poids (#8). (c) Renforcement des MHD + programme structuré d'exercice physique (150 min/semaine) — muscle/↑ captage GLUT4 via AMPK (#1) + tissu adipeux/↓ lipolyse (#5). Alternative complémentaire : ajout d'un iSGLT2 (empagliflozine ou dapagliflozine) pour cibler le rein (#7) avec bénéfice cardiovasculaire et pondéral additionnel. Total : 7-8/8 mécanismes ciblés.
+</details>
 
 ---
 
