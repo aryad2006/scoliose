@@ -1,0 +1,534 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-3-diagnostic-modules-7-10">Partie 3 — Diagnostic (Modules 7-10)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-7-diagnostic-clinique-et-biologique-des-ioa">MODULE 7 : DIAGNOSTIC CLINIQUE ET BIOLOGIQUE DES IOA</h1>
+<p><strong>Partie</strong> : III — Diagnostic<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-6</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Boiterie depuis 48h, refus de marcher, fièvre à 38.8°C. Pas de traumatisme rapporté. Examen : limitation douloureuse de la rotation interne de hanche droite, pas de signes cutanés. NFS : GB 14 500/mm³ (82% PNN), CRP 78 mg/L. *Arthrite septique de hanche ou rhume de hanche ? Comment trancher ? Quels critères vous aident à décider ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Reconnaître</strong> les présentations cliniques des IOA selon le site et l'âge</li>
+<li><strong>Appliquer</strong> les critères prédictifs de Kocher (arthrite septique de hanche de l'enfant)</li>
+<li><strong>Interpréter</strong> les marqueurs biologiques inflammatoires (CRP, VS, PCT, GB, IL-6)</li>
+<li><strong>Distinguer</strong> les présentations aiguës, subaiguës et chroniques</li>
+<li><strong>Connaître</strong> les pièges diagnostiques et diagnostics différentiels</li>
+<li><strong>Organiser</strong> la démarche diagnostique de manière systématique</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-71-semiologie-clinique-des-ioa-aigues">Section 7.1 — Sémiologie clinique des IOA aiguës</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Signes généraux</strong> : fièvre (absente dans 50% des IOA post-chirurgicales !), frissons, altération de l'état général<br />
+- <strong>Signes locaux</strong> :<br />
+  - Os : douleur exquise métaphysaire (ostéomyélite enfant), œdème, chaleur, rougeur, impotence fonctionnelle<br />
+  - Articulation : épanchement (fluctuation), limitation douloureuse active et passive, position antalgique<br />
+  - Matériel : douleur persistante ou récurrente après chirurgie, écoulement de plaie, désunion cicatricielle, fistule<br />
+- <strong>Particularités selon l'âge</strong> :<br />
+  - Nouveau-né : pseudo-paralysie, irritabilité, sepsis<br />
+  - Nourrisson : boiterie, pleurs à la mobilisation, fièvre inconstante<br />
+  - Enfant : présentation classique (douleur + fièvre + impotence)<br />
+  - Adulte : présentation souvent atténuée, surtout en post-chirurgical<br />
+  - Sujet âgé : tableau souvent fruste, apyrexie fréquente, confusion<br />
+- <strong>Examen clinique systématique</strong> : palpation osseuse, mobilité articulaire, examen vasculo-nerveux, recherche de porte d'entrée</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA07-S01-001 | 📐 SCHÉMA | Sémiologie clinique de l'ostéomyélite aiguë de l'enfant — points de palpation métaphysaire | Squelette enfant annoté |<br />
+| MIOA07-S01-002 | 📷 IMAGE | Arthrite septique du genou — épanchement clinique, position antalgique en flexion | Photo clinique |<br />
+| MIOA07-S01-003 | 📷 IMAGE | Infection post-opératoire de plaie chirurgicale — écoulement, rougeur péri-cicatricielle | Photo clinique |<br />
+| MIOA07-S01-004 | 📊 INFOGRAPHIE | Particularités cliniques par tranche d'âge (nouveau-né → sujet âgé) | Tableau comparatif |</p>
+<h3 id="section-72-presentations-subaigues-et-chroniques">Section 7.2 — Présentations subaiguës et chroniques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>IOA subaiguë</strong> : évolution &gt;2 semaines, symptômes atténués, biologie modérément perturbée<br />
+  - Abcès de Brodie : forme subaiguë d'ostéomyélite métaphysaire — lésion lytique bien limitée avec sclérose périlésionnelle<br />
+  - Spondylodiscite subaiguë : dorsalgie/lombalgie progressive, raideur rachidienne<br />
+- <strong>IOA chronique</strong> (&gt;4-6 semaines) :<br />
+  - Fistule cutanée chronique = quasi-pathognomonique d'ostéomyélite chronique (ou d'infection sur matériel)<br />
+  - Épisodes d'exacerbation et de rémission<br />
+  - Douleur chronique<br />
+  - Amyotrophie, raideur articulaire<br />
+  - Biologie souvent peu perturbée (CRP normale possible !)<br />
+- <strong>Rechute vs réinfection</strong> : même germe (rechute) vs germe différent (réinfection) — implications thérapeutiques différentes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA07-S02-001 | 📷 IMAGE | Abcès de Brodie typique (radiographie + IRM) | Images radiologiques annotées |<br />
+| MIOA07-S02-002 | 📷 IMAGE | Fistule cutanée chronique sur ostéomyélite chronique du tibia | Photo clinique |<br />
+| MIOA07-S02-003 | 📊 INFOGRAPHIE | IOA aiguë vs subaiguë vs chronique : comparaison clinico-biologique | Tableau de 3 colonnes |</p>
+<h3 id="section-73-marqueurs-biologiques-inflammatoires">Section 7.3 — Marqueurs biologiques inflammatoires</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>CRP (C-Reactive Protein)</strong> :<br />
+  - Marqueur le plus utilisé, sensibilité &gt;90% <em>(Berbari et al., 2010)</em><br />
+  - Délai d'élévation : 6-12h, pic à 48h, demi-vie 19h <em>(Pepys &amp; Hirschfield, 2003, J Clin Invest)</em><br />
+  - Cinétique de décroissance : marqueur de réponse au traitement<br />
+  - Valeur seuil : &gt;10 mg/L suspect, &gt;50 mg/L fortement évocateur (contexte dépendant)<br />
+  - ATTENTION : CRP masquée par tocilizumab !<br />
+- <strong>VS (Vitesse de Sédimentation)</strong> :<br />
+  - Moins spécifique que la CRP, élévation plus lente (48-72h), normalisation lente (semaines)<br />
+  - Utile en suivi de l'ostéomyélite chronique<br />
+  - Faux positifs : anémie, myélome, grossesse, inflammation chronique<br />
+- <strong>Procalcitonine (PCT)</strong> :<br />
+  - Plus spécifique de l'infection bactérienne (vs inflammation stérile)<br />
+  - Sensibilité modérée en IOA (pas d'infection bactériémique systématique)<br />
+  - Utile si suspicion de bactériémie associée<br />
+- <strong>NFS</strong> : hyperleucocytose à PNN (inconstante, surdout chez l'adulte), leucopénie possible (immunodéprimé, sepsis sévère)<br />
+- <strong>IL-6</strong> : marqueur précoce (élévation en 2-4h), utile en post-opératoire (élévation &gt;J3 = suspect d'infection)<br />
+- <strong>Fibrinogène</strong> : marqueur de phase aiguë, souvent élevé<br />
+- <strong>Cinétique biologique post-opératoire normale</strong> : CRP pic à J2-J3, retour à la normale à J14-J21</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA07-S03-001 | 📊 INFOGRAPHIE | Cinétique des marqueurs biologiques : CRP, VS, PCT, IL-6 — courbes temporelles | Graphiques superposés |<br />
+| MIOA07-S03-002 | 📐 SCHÉMA | Cinétique post-opératoire normale de la CRP — quand suspecter une infection | Courbe avec zone d'alerte |<br />
+| MIOA07-S03-003 | 📊 INFOGRAPHIE | Tableau comparatif CRP vs VS vs PCT vs IL-6 : sensibilité, spécificité, délai, demi-vie | Tableau synthétique |<br />
+| MIOA07-S03-004 | 📐 SCHÉMA | Algorithme biologique devant une suspicion d'IOA | Arbre décisionnel |</p>
+<h3 id="section-74-criteres-predictifs-et-scores-diagnostiques">Section 7.4 — Critères prédictifs et scores diagnostiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Critères de Kocher</strong> (arthrite septique de hanche de l'enfant) :<br />
+  1. Fièvre &gt;38.5°C<br />
+  2. Non-appui (refus de marcher)<br />
+  3. CRP &gt;20 mg/L<br />
+  4. GB &gt;12 000/mm³<br />
+  - Probabilité : 0 critère = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99.6% <em>(Kocher et al., 1999, J Bone Joint Surg Am)</em><br />
+  - Critère ajouté par Caird <em>(Caird et al., 2006, J Bone Joint Surg Am)</em> : VS &gt;40 mm/h<br />
+- <strong>Score de MSIS</strong> <em>(Parvizi et al., 2011, Clin Orthop Relat Res)</em> (Musculoskeletal Infection Society) pour l'infection périprothétique :<br />
+  - Critères majeurs : fistule communicante, 2 cultures positives au même germe<br />
+  - Critères mineurs : CRP élevée, VS élevée, leucocytes du liquide articulaire, % PNN, alpha-défensine, histologie<br />
+- <strong>Critères ICM</strong> (International Consensus Meeting, 2018) pour l'infection périprothétique <em>(Parvizi et al., 2018, J Arthroplasty)</em><br />
+- <strong>Critères IDSA</strong> pour le diagnostic d'ostéomyélite du pied diabétique</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA07-S04-001 | 📊 INFOGRAPHIE | Critères de Kocher — abaque de probabilité (0-4 critères) | Illustration visuelle frappante |<br />
+| MIOA07-S04-002 | 📊 INFOGRAPHIE | Score MSIS / ICM 2018 — grille de scoring pour infection périprothétique | Tableau de scoring |<br />
+| MIOA07-S04-003 | 📐 SCHÉMA | Algorithme décisionnel devant une suspicion d'arthrite septique de l'enfant | Arbre décisionnel |</p>
+<h3 id="points-cles-du-module-7">Points clés du Module 7</h3>
+<ol>
+<li>La fièvre est absente dans 50% des IOA post-chirurgicales — ne jamais exclure une infection sur l'absence de fièvre</li>
+<li>La CRP est le marqueur biologique le plus utile : sensibilité &gt;90%, cinétique rapide, bon marqueur de suivi</li>
+<li>La CRP post-opératoire normale pic à J2-J3 et revient à la normale en 2-3 semaines — une réascension après J3 doit faire suspecter une infection</li>
+<li>Les critères de Kocher (4 critères) permettent de prédire la probabilité d'arthrite septique de hanche de l'enfant</li>
+<li>Le score MSIS/ICM 2018 est la référence pour le diagnostic d'infection périprothétique</li>
+<li>La fistule cutanée communicante = infection du matériel jusqu'à preuve du contraire</li>
+</ol>
+<hr />
+<h1 id="module-8-imagerie-des-infections-osteoarticulaires">MODULE 8 : IMAGERIE DES INFECTIONS OSTÉOARTICULAIRES</h1>
+<p><strong>Partie</strong> : III — Diagnostic<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Module 7</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Diabétique, lombalgie fébrile depuis 3 semaines, aggravation progressive. Radiographies du rachis lombaire : aspect « normal ». IRM : hyposignal T1 et hypersignal T2 des plateaux vertébraux L3-L4 avec prise de gadolinium, érosion du disque. *Pourquoi la radiographie est-elle « normale » alors que l'IRM montre déjà des signes avancés ? Quel est le délai d'apparition des signes radiographiques dans l'ostéomyélite ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les signes radiographiques des IOA et leur chronologie d'apparition</li>
+<li><strong>Maîtriser</strong> la sémiologie IRM des infections osseuses et articulaires</li>
+<li><strong>Utiliser</strong> le scanner et l'échographie dans les IOA de manière appropriée</li>
+<li><strong>Interpréter</strong> les examens de médecine nucléaire (scintigraphie, TEP-TDM)</li>
+<li><strong>Distinguer</strong> infection de tumeur, de fracture de contrainte, de nécrose avasculaire par l'imagerie</li>
+<li><strong>Choisir</strong> l'examen d'imagerie le plus pertinent selon le contexte clinique</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-81-radiographies-standard">Section 8.1 — Radiographies standard</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Délai d'apparition</strong> : signes visibles seulement après 10-21 jours (30-50% de perte osseuse nécessaire) <em>(Gold et al., 1991)</em><br />
+- Radiographie NORMALE en phase aiguë → n'élimine JAMAIS une IOA<br />
+- <strong>Signes d'ostéomyélite</strong> :<br />
+  - Précoce : œdème des parties molles, effacement des plans graisseux<br />
+  - Intermédiaire : ostéolyse mal limitée (métaphyse ++), réaction périostée (lamellaire, spiculée)<br />
+  - Tardif : séquestre (fragment dense entouré de lyse), involucrum, cloaque<br />
+  - Chronique : sclérose, épaississement cortical, séquestre, déformation<br />
+- <strong>Signes d'arthrite septique</strong> : épanchement articulaire (élargissement de l'interligne), érosions sous-chondrales, pincement de l'interligne, ostéopénie péri-articulaire<br />
+- <strong>Signes d'infection sur matériel</strong> : lyse péri-implant, descellement (liseré &gt;2mm), défaut de consolidation<br />
+- <strong>Spondylodiscite</strong> : pincement discal, érosion des plateaux vertébraux (en miroir), rectangularisation du corps vertébral</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA08-S01-001 | 📷 IMAGE | Ostéomyélite aiguë du tibia — radiographie normale à J5 vs ostéolyse à J21 | Comparaison séquentielle |<br />
+| MIOA08-S01-002 | 📷 IMAGE | Ostéomyélite chronique — séquestre, involucrum, cloaque (radiographie annotée) | Image iconique |<br />
+| MIOA08-S01-003 | 📷 IMAGE | Spondylodiscite L3-L4 — érosion en miroir des plateaux, pincement discal | Cliché latéral annoté |<br />
+| MIOA08-S01-004 | 📷 IMAGE | Infection sur PTG — lyse péri-implant, liseré de descellement &gt;2mm | Radiographie annotée |<br />
+| MIOA08-S01-005 | 📊 INFOGRAPHIE | Chronologie d'apparition des signes radiographiques dans l'ostéomyélite | Timeline visuelle |</p>
+<h3 id="section-82-irm-lexamen-de-reference">Section 8.2 — IRM : l'examen de référence</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Sensibilité &gt;95%, spécificité &gt;85-90%</strong> pour les IOA <em>(Kapoor et al., 2007)</em> — examen de référence<br />
+- <strong>Séquences indispensables</strong> : T1 (anatomie), T2 Fat-Sat / STIR (œdème/inflammation), T1 gadolinium (vascularisation, abcès)<br />
+- <strong>Sémiologie IRM de l'ostéomyélite</strong> :<br />
+  - Hyposignal T1 (infiltration médullaire), hypersignal T2/STIR (œdème), prise de contraste (vascularisation, abcès)<br />
+  - Abcès : collection bien limitée avec prise de contraste périphérique (« ring enhancement »)<br />
+  - Séquestre : hyposignal T1 et T2 (os nécrosé) au sein de l'hypersignal inflammatoire<br />
+  - Abcès sous-périosté : collection entre cortex et périoste, prise de gadolinium<br />
+- <strong>Sémiologie IRM de l'arthrite septique</strong> : épanchement articulaire (hypersignal T2), synovite (prise de contraste épaisse), érosion sous-chondrale, œdème péri-articulaire<br />
+- <strong>Sémiologie IRM de la spondylodiscite</strong> : atteinte discale + 2 plateaux adjacents, hyposignal T1 / hypersignal T2, prise de contraste, abcès paravertébral / épidural<br />
+- <strong>Signe du « penumbra sign »</strong> : halo T1 iso/hypersignal autour de l'abcès = signe spécifique d'abcès de Brodie<br />
+- <strong>Limites</strong> : artefacts métalliques (implants), coût, disponibilité, contre-indications (pacemaker, claustrophobie)<br />
+- <strong>IRM et matériel</strong> : séquences optimisées (MARS, MAVRIC-SL) pour réduire les artefacts</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA08-S02-001 | 📷 IMAGE | IRM d'ostéomyélite tibiale — séquences T1, T2 STIR, T1 gadolinium côte à côte | 3 coupes annotées |<br />
+| MIOA08-S02-002 | 📷 IMAGE | Abcès sous-périosté en IRM — collection avec ring enhancement | Image IRM annotée |<br />
+| MIOA08-S02-003 | 📷 IMAGE | Spondylodiscite en IRM : T1/T2/Gado — atteinte discale et des 2 plateaux | Coupes sagittales annotées |<br />
+| MIOA08-S02-004 | 📷 IMAGE | Abcès de Brodie en IRM — penumbra sign | Image caractéristique |<br />
+| MIOA08-S02-005 | 📊 INFOGRAPHIE | Sémiologie IRM des IOA — tableau synthétique T1/T2/Gado par pathologie | Matrice visuelle |</p>
+<h3 id="section-83-scanner-tdm">Section 8.3 — Scanner (TDM)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Indications</strong> : évaluation de la destruction osseuse, séquestre (mieux vu qu'en IRM), planification chirurgicale (3D), ponction/biopsie guidée<br />
+- <strong>Avantages</strong> : excellente résolution osseuse, artefacts métalliques moins gênants qu'IRM standard, reconstruction 3D, rapidité<br />
+- <strong>Limites</strong> : irradiation, sensibilité inférieure à l'IRM pour les stades précoces<br />
+- <strong>Arthro-scanner</strong> : injection intra-articulaire de contraste, utile si IRM impossible (contre-indication, matériel)<br />
+- <strong>Scanner injecté</strong> : recherche de collections, abcès, fistules — cartographie préopératoire</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA08-S03-001 | 📷 IMAGE | Scanner montrant un séquestre tibial (meilleure visualisation qu'en radiographie) | Reconstruction 3D + coupe axiale |<br />
+| MIOA08-S03-002 | 📷 IMAGE | Scanner du rachis — spondylodiscite avec abcès paravertébral | Coupes axiales et sagittales |<br />
+| MIOA08-S03-003 | 📊 INFOGRAPHIE | IRM vs Scanner : indications comparées dans les IOA | Tableau de décision |</p>
+<h3 id="section-84-echographie">Section 8.4 — Échographie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Indications principales</strong> : détection d'épanchement articulaire (hanche ++ chez l'enfant), collections des parties molles, guidage de ponction<br />
+- <strong>Arthrite septique de hanche de l'enfant</strong> : échographie = 1er examen (épaississement capsulaire &gt;5mm, épanchement)<br />
+- <strong>Limites</strong> : ne visualise pas l'os cortical, opérateur-dépendant<br />
+- <strong>Doppler</strong> : hypervascularisation synoviale, abcès des parties molles</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA08-S04-001 | 📷 IMAGE | Échographie de hanche de l'enfant — épanchement articulaire (normal vs arthrite septique) | Images côte à côte |<br />
+| MIOA08-S04-002 | 📷 IMAGE | Échographie d'un abcès des parties molles — collection hypoéchogène | Image annotée |</p>
+<h3 id="section-85-medecine-nucleaire-scintigraphie-et-tep-tdm">Section 8.5 — Médecine nucléaire : scintigraphie et TEP-TDM</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Scintigraphie osseuse au Tc-99m</strong> :<br />
+  - Très sensible (&gt;95%) <em>(Love et al., 2004)</em> mais peu spécifique<br />
+  - Hyperfixation en 3 phases (vasculaire, tissulaire, osseuse)<br />
+  - Utile : IOA multifocale, recherche de foyers à distance, enfant (corps entier)<br />
+  - Limites : ne distingue pas infection de fracture, de tumeur<br />
+- <strong>Scintigraphie aux leucocytes marqués (In-111 ou Tc-99m HMPAO)</strong> :<br />
+  - Plus spécifique que la scintigraphie standard<br />
+  - Utile : infection sur matériel (articulation périphérique), infection chronique<br />
+  - Limites : technique complexe, peu disponible, durée (24-48h)<br />
+- <strong>TEP-TDM au 18F-FDG</strong> :<br />
+  - Sensibilité et spécificité excellentes (&gt;90% dans de nombreux contextes) <em>(Termaat et al., 2005, J Bone Joint Surg Am)</em><br />
+  - Avantages : corps entier, détection de foyers multiples, bonne performance en contexte postopératoire et sur matériel<br />
+  - Limites : coût, faux positifs (inflammation post-chirurgicale récente, tumeur)<br />
+  - SUVmax : aide à distinguer infection de processus non infectieux (seuil débattu)<br />
+- <strong>Choix de l'examen de médecine nucléaire selon le contexte</strong> : arbre décisionnel</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA08-S05-001 | 📷 IMAGE | Scintigraphie 3 phases : ostéomyélite du tibia vs cellulite des parties molles | Comparaison diagnostique |<br />
+| MIOA08-S05-002 | 📷 IMAGE | TEP-TDM 18F-FDG : spondylodiscite L4-L5 avec hyperfixation discale et vertébrale | Image fusion PET/CT |<br />
+| MIOA08-S05-003 | 📷 IMAGE | TEP-TDM : infection de PTG avec hyperfixation péri-prothétique | Image caractéristique |<br />
+| MIOA08-S05-004 | 📊 INFOGRAPHIE | Algorithme de choix de l'imagerie selon le type d'IOA suspectée | Arbre décisionnel complet |</p>
+<h3 id="points-cles-du-module-8">Points clés du Module 8</h3>
+<ol>
+<li>La radiographie standard est NORMALE dans les 10-21 premiers jours d'une ostéomyélite — une radiographie normale n'élimine jamais une IOA</li>
+<li>L'IRM est l'examen de référence (sensibilité &gt;95%) — séquences T1, T2 Fat-Sat/STIR, T1 gadolinium</li>
+<li>Le séquestre est mieux vu au scanner qu'en IRM ou en radiographie</li>
+<li>L'échographie est le 1er examen en cas de suspicion d'arthrite septique de hanche chez l'enfant</li>
+<li>La TEP-TDM au 18F-FDG est de plus en plus utilisée, avec d'excellentes performances, notamment pour les infections sur matériel et les spondylodiscites</li>
+<li>Le « penumbra sign » en IRM est un signe spécifique de l'abcès de Brodie</li>
+</ol>
+<hr />
+<h1 id="module-9-diagnostic-microbiologique-prelevements-cultures-biologie-moleculaire">MODULE 9 : DIAGNOSTIC MICROBIOLOGIQUE — PRÉLÈVEMENTS, CULTURES, BIOLOGIE MOLÉCULAIRE</h1>
+<p><strong>Partie</strong> : III — Diagnostic<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 3, 7</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">PTH posée il y a 3 ans. Douleur progressive depuis 6 mois. CRP = 22 mg/L. Ponction de hanche : liquide clair, 3200 leucocytes/mm³ (68% PNN). Alpha-défensine : positive. Cultures standard : négatives à J+7. PCR universelle 16S : *Cutibacterium acnes*. *Pourquoi les cultures étaient-elles négatives ? Quelle est la valeur de l'alpha-défensine ? De la PCR 16S ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Maîtriser</strong> les techniques de prélèvement microbiologique en contexte d'IOA (ponction, prélèvements per-opératoires)</li>
+<li><strong>Connaître</strong> les règles des prélèvements per-opératoires (≥5 échantillons, fenêtre ATB)</li>
+<li><strong>Interpréter</strong> les résultats des cultures (nombre de prélèvements positifs, concordance)</li>
+<li><strong>Comprendre</strong> les apports de la biologie moléculaire (PCR 16S/28S, PCR spécifiques, NGS)</li>
+<li><strong>Utiliser</strong> les biomarqueurs du liquide articulaire (leucocytes, % PNN, alpha-défensine, D-lactate)</li>
+<li><strong>Connaître</strong> la sonication des implants et son indication</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-91-ponction-articulaire-technique-et-interpretation">Section 9.1 — Ponction articulaire : technique et interprétation</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Indications</strong> : toute articulation suspecte d'infection (native ou prothétique)<br />
+- <strong>Technique</strong> : asepsie chirurgicale, SANS antibiotique préalable (fenêtre ATB ≥14 jours si possible), en dehors d'ATB locaux (ciment)<br />
+- <strong>Analyse du liquide articulaire</strong> :<br />
+  - Cytologie : leucocytes, % PNN — seuils selon articulation native vs prothétique<br />
+  - Articulation NATIVE : &gt;50 000 leucocytes/mm³ avec &gt;90% PNN = très suspect arthrite septique<br />
+  - Articulation PROTHÉTIQUE : seuils plus bas — &gt;3000 leucocytes/mm³ (chronique) ou &gt;10 000 (aigu) avec &gt;80% PNN<br />
+  - Biochimie : glucose (diminué), lactate (augmenté), protéines (augmentées)<br />
+- <strong>Culture standard</strong> : inoculation aérobie + anaérobie, incubation ≥14 jours si matériel<br />
+- <strong>Biomarqueurs innovants du liquide articulaire</strong> :<br />
+  - <strong>Alpha-défensine</strong> : peptide antimicrobien, sensibilité 97%, spécificité 97% <em>(Deirmengian et al., 2014, Clin Orthop Relat Res)</em> — excellent test<br />
+  - <strong>Leucocyte esterase</strong> (bandelette urinaire appliquée au liquide articulaire) : test rapide, bonne sensibilité<br />
+  - <strong>D-lactate</strong> : produit par les bactéries, non par les cellules humaines — marqueur prometteur<br />
+  - <strong>CRP synoviale</strong> (dosage local)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA09-S01-001 | 🎬 ANIMATION | Technique de ponction articulaire aseptique (genou, hanche) — pas à pas | Animation procédurale |<br />
+| MIOA09-S01-002 | 📷 IMAGE | Aspects macroscopiques du liquide articulaire : normal, inflammatoire, septique, hémorragique | 4 tubes côte à côte |<br />
+| MIOA09-S01-003 | 📊 INFOGRAPHIE | Seuils cytologiques du liquide articulaire : natif vs prothétique, aigu vs chronique | Tableau de seuils |<br />
+| MIOA09-S01-004 | 📐 SCHÉMA | Alpha-défensine : mécanisme, sensibilité/spécificité, interprétation | Schéma explicatif |</p>
+<h3 id="section-92-prelevements-per-operatoires-les-regles-dor">Section 9.2 — Prélèvements per-opératoires : les règles d'or</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Règle des ≥5 prélèvements</strong> (IDSA ; Osmon et al., 2013, <em>Clin Infect Dis</em> ; consensus français) : au minimum 5 échantillons tissulaires profonds, sur des sites différents<br />
+- <strong>Critères d'interprétation</strong> : ≥3 prélèvements positifs au même germe sur 5 = infection confirmée ; 1 seul positif = possible contamination<br />
+- <strong>Fenêtre antibiotique</strong> : arrêt des ATB ≥14 jours avant les prélèvements chirurgicaux (sauf urgence vitale)<br />
+- <strong>Types de prélèvements</strong> : tissu péri-implant, membrane péri-prothétique, tissu osseux, liquide articulaire, os (biopsie)<br />
+- <strong>Conditions de transport</strong> : milieu de transport anaérobie, acheminement rapide (&lt;2h), flacons d'hémoculture (en appoint)<br />
+- <strong>Incubation prolongée</strong> : ≥14 jours pour les cultures sur matériel (C. acnes !)<br />
+- <strong>Écouvillonnage superficiel</strong> : À PROSCRIRE (contamination par la flore cutanée, faible corrélation avec les germes profonds)<br />
+- <strong>Histologie per-opératoire</strong> : ≥5 PNN/champ (×400) dans ≥5 champs = infection (critère de Feldman modifié ; Feldman et al., 1995)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA09-S02-001 | 📐 SCHÉMA | Sites de prélèvement per-opératoire — genou prothétique (5 sites annotés) | Schéma anatomique |<br />
+| MIOA09-S02-002 | 📊 INFOGRAPHIE | Critères d'interprétation : 1/5, 2/5, 3/5 prélèvements positifs — signification | Abaque visuel |<br />
+| MIOA09-S02-003 | </p>
+<div class="vertex-alerte"><strong>ENCADRÉ | INTERDIT</strong> : écouvillonnage superficiel de fistule | Encadré danger |
+| MIOA09-S02-004 | 📷 IMAGE | Histologie per-opératoire d'une membrane infectée : infiltrat de PNN | Photo microscopique |</div>
+
+<h3 id="section-93-sonication-des-implants">Section 9.3 — Sonication des implants</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principe</strong> : ultrasons de basse intensité appliqués à l'implant retiré → détachement mécanique des bactéries du biofilm → mise en culture du sonicat<br />
+- <strong>Supériorité</strong> : sensibilité 30-40% supérieure aux prélèvements tissulaires standard <em>(Trampuz et al., 2007, N Engl J Med)</em>, surtout après ATB préalable<br />
+- <strong>Indications</strong> : tout implant retiré pour suspicion d'infection (prothèse, matériel d'ostéosynthèse, spacer)<br />
+- <strong>Protocole</strong> : immersion de l'implant en solution stérile, sonication 1 min à 40 kHz, mise en culture du liquide<br />
+- <strong>Interprétation</strong> : seuil quantitatif (&gt;50 UFC/mL = positif significatif pour certaines études)<br />
+- <strong>Limites</strong> : disponibilité, standardisation incomplète, nécessité d'un laboratoire équipé</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA09-S03-001 | 🎬 ANIMATION | Principe de la sonication : ultrasons → détachement du biofilm → culture | Animation technique |<br />
+| MIOA09-S03-002 | 📷 IMAGE | Bac de sonication avec implant PTH | Photo de laboratoire |<br />
+| MIOA09-S03-003 | 📊 INFOGRAPHIE | Sonication vs cultures tissulaires : comparaison des performances | Tableau méta-analytique |</p>
+<h3 id="section-94-biologie-moleculaire-pcr-et-sequencage">Section 9.4 — Biologie moléculaire : PCR et séquençage</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>PCR universelle 16S (bactéries) / 28S-ITS (champignons)</strong> :<br />
+  - Amplifie le gène de l'ARN ribosomal → identification du genre et de l'espèce par séquençage<br />
+  - Avantages : identification même après ATB, cultures négatives, germes fastidieux<br />
+  - Limites : pas d'antibiogramme, contamination possible, ne distingue pas vivant/mort, coût<br />
+- <strong>PCR spécifiques</strong> : mecA (SARM), vanA/vanB (ERV), blaKPC, blaNDM (EPC)<br />
+  - Résultat en quelques heures → adaptation rapide de l'ATB<br />
+- <strong>MALDI-TOF</strong> : identification rapide à partir d'une colonie (ou directement du liquide) en quelques minutes<br />
+- <strong>NGS (Next-Generation Sequencing) métagénomique</strong> :<br />
+  - Séquençage de tout l'ADN présent dans l'échantillon → identification exhaustive<br />
+  - Détection de flores mixtes, germes impossibles à cultiver<br />
+  - Limites : coût élevé, complexité d'interprétation, contamination, pas d'antibiogramme phénotypique<br />
+  - Application émergente : infections chroniques réfractaires</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA09-S04-001 | 🎬 ANIMATION | PCR universelle 16S : principe (extraction ADN → amplification → séquençage → identification) | Animation moléculaire |<br />
+| MIOA09-S04-002 | 📐 SCHÉMA | MALDI-TOF : principe (ionisation → vol → spectre → identification) | Schéma technique simplifié |<br />
+| MIOA09-S04-003 | 📊 INFOGRAPHIE | Comparatif : culture vs PCR 16S vs MALDI-TOF vs NGS | Tableau multicritère |<br />
+| MIOA09-S04-004 | 📐 SCHÉMA | Algorithme de diagnostic microbiologique combiné (culture + sonication + PCR) | Arbre décisionnel |</p>
+<h3 id="points-cles-du-module-9">Points clés du Module 9</h3>
+<ol>
+<li>≥5 prélèvements per-opératoires sur des sites différents avec ≥14 jours de fenêtre antibiotique</li>
+<li>≥3 prélèvements positifs au même germe sur 5 = infection confirmée</li>
+<li>L'écouvillonnage superficiel de fistule est INTERDIT (contamination, non représentatif)</li>
+<li>La sonication augmente la sensibilité de 30-40% par rapport aux prélèvements tissulaires seuls</li>
+<li>L'alpha-défensine du liquide articulaire a une sensibilité et spécificité de ~97%</li>
+<li>La PCR universelle 16S identifie les germes même après antibiothérapie, mais ne fournit pas d'antibiogramme</li>
+<li>L'incubation prolongée ≥14 jours est indispensable pour détecter <em>C. acnes</em> et certains germes à croissance lente</li>
+</ol>
+<hr />
+<h1 id="module-10-classifications-des-infections-osseuses-et-articulaires">MODULE 10 : CLASSIFICATIONS DES INFECTIONS OSSEUSES ET ARTICULAIRES</h1>
+<p><strong>Partie</strong> : III — Diagnostic<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 7-9</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite chronique du tibia moyen après fracture ouverte Gustilo IIIB traitée il y a 3 ans. Fistule intermittente, séquestre central visible au scanner, sclérose corticale diffuse. Patient diabétique, fumeur, HbA1c 8.5%. *Comment classer cette atteinte selon Cierny-Mader ? Quel est le type anatomique ? Quelle est la classe de l'hôte ? En quoi cela change-t-il votre stratégie ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> la classification de Cierny-Mader pour l'ostéomyélite</li>
+<li><strong>Utiliser</strong> les classifications de Tsukayama et de Zimmerli/ICM pour les infections périprothétiques</li>
+<li><strong>Connaître</strong> la classification de Waldvogel pour l'ostéomyélite</li>
+<li><strong>Comprendre</strong> la classification de l'infection sur matériel d'ostéosynthèse (FRI)</li>
+<li><strong>Relier</strong> chaque classification à la décision thérapeutique</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-101-classification-de-waldvogel-osteomyelite">Section 10.1 — Classification de Waldvogel (ostéomyélite)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Classification historique <em>(Waldvogel et al., 1970, N Engl J Med)</em> basée sur la <strong>physiopathologie</strong> :<br />
+  1. Ostéomyélite hématogène<br />
+  2. Ostéomyélite par foyer contigu (avec ou sans insuffisance vasculaire)<br />
+  3. Ostéomyélite chronique<br />
+- Simple mais limitée : ne guide pas le traitement chirurgical</p>
+<h3 id="section-102-classification-de-cierny-mader-osteomyelite">Section 10.2 — Classification de Cierny-Mader (ostéomyélite)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Classification la plus utilisée (1985, révisée 2003) <em>(adapté de Cierny et al., 2003, Clin Orthop Relat Res)</em> — base <strong>anatomique</strong> + <strong>statut de l'hôte</strong><br />
+- <strong>4 types anatomiques</strong> :<br />
+  - Type I : Médullaire (endostée) — infection limitée à la cavité médullaire<br />
+  - Type II : Superficielle (cortex externe) — érosion corticale externe, sous le périoste<br />
+  - Type III : Localisée — séquestre cortical localisé, os stable pré- et post-débridement<br />
+  - Type IV : Diffuse — atteinte étendue, instabilité osseuse pré- et/ou post-débridement<br />
+- <strong>3 classes d'hôte</strong> :<br />
+  - Classe A : hôte normal<br />
+  - Classe B : hôte compromis (Bs = systémique, BL = local, BLS = les deux)<br />
+  - Classe C : traitement &gt; maladie (suppression seule)<br />
+- <strong>Matrice 4×3</strong> : 12 combinaisons possibles → stratégie thérapeutique graduée<br />
+- Impact sur la décision : curetage seul (IA) → séquestrectomie + comblement (IIIA) → résection segmentaire + reconstruction (IVA) → traitement suppressif (xC)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA10-S02-001 | 📐 SCHÉMA | 4 types anatomiques de Cierny-Mader — dessins en coupe d'os | 4 illustrations côte à côte |<br />
+| MIOA10-S02-002 | 📊 INFOGRAPHIE | Matrice Cierny-Mader 4×3 avec stratégie thérapeutique pour chaque case | Tableau illustré et coloré |<br />
+| MIOA10-S02-003 | 📐 SCHÉMA | Algorithme thérapeutique guidé par Cierny-Mader | Arbre de décision |</p>
+<h3 id="section-103-classifications-des-infections-periprothetiques">Section 10.3 — Classifications des infections périprothétiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Classification de Tsukayama</strong> <em>(Tsukayama et al., 1996, J Arthroplasty)</em> :<br />
+  - Type I : Culture per-opératoire positive inattendue (≥2 prélèvements)<br />
+  - Type II : Infection postopératoire précoce (&lt;4 semaines)<br />
+  - Type III : Infection hématogène tardive aiguë (symptômes &lt;4 semaines)<br />
+  - Type IV : Infection chronique tardive (symptômes &gt;4 semaines)<br />
+- <strong>Classification de Zimmerli</strong> <em>(Zimmerli et al., 2004, N Engl J Med)</em> (simplifiée, basée sur le délai) :<br />
+  - Précoce : &lt;3 mois post-chirurgie<br />
+  - Retardée (<em>delayed</em>) : 3-24 mois<br />
+  - Tardive : &gt;24 mois (hématogène ou chronique de bas grade)<br />
+- <strong>Consensus ICM 2018</strong> : classification basée sur les critères diagnostiques (scores)<br />
+- <strong>Impact thérapeutique</strong> :<br />
+  - Précoce/hématogène + biofilm immature (&lt;4 semaines de symptômes) → DAIR possible<br />
+  - Chronique/biofilm mature (&gt;4 semaines) → changement d'implant (1 temps ou 2 temps)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA10-S03-001 | 📊 INFOGRAPHIE | Classification de Tsukayama — 4 types avec exemples cliniques et traitement | Tableau visuel |<br />
+| MIOA10-S03-002 | 📊 INFOGRAPHIE | Classification de Zimmerli — timeline avec types et traitements | Frise chronologique |<br />
+| MIOA10-S03-003 | 📐 SCHÉMA | Algorithme thérapeutique de l'infection périprothétique selon la classification | Arbre de décision complet |</p>
+<h3 id="section-104-classification-fri-fracture-related-infection">Section 10.4 — Classification FRI (Fracture-Related Infection)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Concept de FRI (2018, consensus international) <em>(Metsemakers et al., 2018, Injury)</em> : standardisation de la définition d'infection sur matériel d'ostéosynthèse<br />
+- <strong>Critères confirmatifs</strong> : fistule communicante, germe identifié (≥2 prélèvements), pus per-opératoire<br />
+- <strong>Critères évocateurs</strong> : signes cliniques, biologiques, radiologiques sans preuve microbiologique formelle<br />
+- Intérêt : uniformiser la recherche et le suivi, comparer les séries<br />
+- Stratégie thérapeutique : selon consolidation osseuse (consolidée vs non consolidée), stabilité du matériel, germe</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA10-S04-001 | 📊 INFOGRAPHIE | Critères de FRI : confirmatifs vs évocateurs | Tableau dichotomique |<br />
+| MIOA10-S04-002 | 📐 SCHÉMA | Algorithme de prise en charge de la FRI | Arbre de décision |</p>
+<h3 id="points-cles-du-module-10">Points clés du Module 10</h3>
+<ol>
+<li>La classification de Cierny-Mader (4 types anatomiques × 3 classes d'hôte) est la référence pour l'ostéomyélite</li>
+<li>Le type anatomique guide le geste chirurgical ; la classe de l'hôte module l'agressivité du traitement</li>
+<li>Pour les infections périprothétiques, la durée des symptômes (&lt;4 semaines vs &gt;4 semaines) est le critère pivot (DAIR vs changement)</li>
+<li>La classification de Tsukayama distingue 4 types d'infection périprothétique selon le moment et le mode de survenue</li>
+<li>Le concept de FRI standardise la définition de l'infection sur matériel d'ostéosynthèse</li>
+</ol>
+<hr />
+<h2 id="references-bibliographiques-partie-3">Références bibliographiques (Partie 3)</h2>
+<ul>
+<li>Berbari EF, Marculescu CE, Sia I, et al. Culture-negative prosthetic joint infection. <em>Clin Infect Dis</em>. 2007;45(9):1113-1119. (Berbari et al., 2010 — données mises à jour)</li>
+<li>Caird MS, Flynn JM, Leung YL, et al. Factors distinguishing septic arthritis from transient synovitis of the hip in children. <em>J Bone Joint Surg Am</em>. 2006;88(6):1251-1257.</li>
+<li>Cierny G, Mader JT, Penninck JJ. A clinical staging system for adult osteomyelitis. <em>Clin Orthop Relat Res</em>. 2003;414:7-24.</li>
+<li>Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? <em>Clin Orthop Relat Res</em>. 2014;472(11):3254-3262.</li>
+<li>Feldman DS, Lonner JH, Desai P, Zuckerman JD. The role of intraoperative frozen sections in revision total joint arthroplasty. <em>J Bone Joint Surg Am</em>. 1995;77(12):1807-1813.</li>
+<li>Gold RH, Hawkins RA, Katz RD. Bacterial osteomyelitis: findings on plain radiography, CT, MR, and scintigraphy. <em>AJR Am J Roentgenol</em>. 1991;157(2):365-370.</li>
+<li>Kapoor A, Page S, Lavalley M, et al. Magnetic resonance imaging for diagnosing foot osteomyelitis. <em>Arch Intern Med</em>. 2007;167(2):125-132.</li>
+<li>Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children. <em>J Bone Joint Surg Am</em>. 1999;81(12):1662-1670.</li>
+<li>Love C, Marwin SE, Palestro CJ. Nuclear medicine and the infected joint replacement. <em>Semin Nucl Med</em>. 2004;34(4):254-264.</li>
+<li>Metsemakers WJ, Morgenstern M, McNally MA, et al. Fracture-related infection: a consensus on definition from an international expert group. <em>Injury</em>. 2018;49(3):505-510.</li>
+<li>Osmon DR, Berbari EF, Berendt AR, et al. Diagnosis and management of prosthetic joint infection: clinical practice guidelines by the IDSA. <em>Clin Infect Dis</em>. 2013;56(1):e1-e25.</li>
+<li>Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection. <em>Clin Orthop Relat Res</em>. 2011;469(11):2992-2994.</li>
+<li>Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection. <em>J Arthroplasty</em>. 2018;33(5):1309-1314.</li>
+<li>Pepys MB, Hirschfield GM. C-reactive protein: a critical update. <em>J Clin Invest</em>. 2003;111(12):1805-1812.</li>
+<li>Termaat MF, Raijmakers PG, Scholten HJ, et al. The accuracy of diagnostic imaging for the assessment of chronic osteomyelitis. <em>J Bone Joint Surg Am</em>. 2005;87(11):2464-2471.</li>
+<li>Trampuz A, Piper KE, Jacobson MJ, et al. Sonication of removed hip and knee prostheses for diagnosis of infection. <em>N Engl J Med</em>. 2007;357(7):654-663.</li>
+<li>Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty. <em>J Arthroplasty</em>. 1996;11(5):553-563.</li>
+<li>Waldvogel FA, Medoff G, Swartz MN. Osteomyelitis: a review of clinical features, therapeutic considerations and unusual aspects. <em>N Engl J Med</em>. 1970;282(4):198-206.</li>
+<li>Zimmerli W, Trampuz A, Ochsner PE. Prosthetic-joint infections. <em>N Engl J Med</em>. 2004;351(16):1645-1654.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

@@ -1,0 +1,460 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-14-cyphose-lordose-et-deformites-sagittales">MODULE 14 — CYPHOSE, LORDOSE ET DÉFORMITÉS SAGITTALES</h1>
+<p><strong>Partie VI — Déformités sagittales</strong><br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 13</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Nathan, 16 ans, sportif, consulte pour une « bosse dans le dos » gênante esthétiquement et douloureuse. Sa mère pensait que c'était une mauvaise posture. Radio : cyphose thoracique T4-T12 de 68°, avec irrégularités des plateaux vertébraux.</p>
+<p>→ <em>La cyphose est souvent bénigne (posturale) mais peut être pathologique (Scheuermann). Ce module couvre l'ensemble des déformités sagittales du rachis.</em></p>
+</blockquote>
+<p>🧒 <strong>Patient fil rouge</strong> : Nathan, 16 ans, Scheuermann thoracique, Cobb 68°.</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Cyphose thoracique normale (20–40°) • Hypercyphose • Cyphose de Scheuermann • Critères de Sorensen • Nœuds de Schmorl • Cunéiformisation vertébrale • Cyphose posturale • Cyphose congénitale • Spondylodiscite • Fracture en coin ostéoporotique • Cyphose post-traumatique • Lordose cervicale • Lordose lombaire • Hyperlordose • Rectifications • Effacement lordose lombaire • Balance sagittale • Syndrome de Bertolotti • Déséquilibre sagittal</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Classer</strong> les cyphoses selon leur étiologie (posturale, Scheuermann, congénitale, post-fracture, post-infectieuse) (Bloom : Analyse)</li>
+<li><strong>Diagnostiquer</strong> une maladie de Scheuermann selon les critères de Sorensen (Bloom : Application)</li>
+<li><strong>Sélectionner</strong> le traitement adapté à la forme et à la sévérité (Bloom : Évaluation)</li>
+<li><strong>Interpréter</strong> les paramètres sagittaux (PI, LL, SVA) dans le contexte des déformités rachidiennes (Bloom : Compréhension)</li>
+<li><strong>Reconnaître</strong> les indications chirurgicales dans les cyphoses sévères (Bloom : Analyse)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La cyphose thoracique normale (T4-T12) est comprise entre :<br />
+- A. 0–20°<br />
+- <strong>B. 20–40°</strong> (Stagnara, T5-T12)<br />
+- C. 40–60°<br />
+- D. 10–50°</p>
+<p><strong>Q2.</strong> Les critères de Sorensen diagnostiques de la maladie de Scheuermann sont :<br />
+- <strong>A. Cunéiformisation ≥ 5° sur ≥ 3 vertèbres consécutives</strong><br />
+- B. Cyphose &gt; 40°<br />
+- C. Nœuds de Schmorl sur ≥ 2 vertèbres<br />
+- D. Doulour dorsale &gt; 3 mois</p>
+<p><strong>Q3.</strong> La cyphose posturale se distingue de Scheuermann par :<br />
+- <strong>A. La réductibilité complète en hyperextension et l'absence de cunéiformisation vertébrale</strong><br />
+- B. Son angle Cobb plus élevé<br />
+- C. Son apparition plus jeune<br />
+- D. La présence de nœuds de Schmorl</p>
+<p><strong>Q4.</strong> La complication neurologique qui contre-indique l'extension progressive en traction est :<br />
+- A. Parésie modérée<br />
+- <strong>B. Paraplégie ou parésie sévère</strong> (correction contre-indiquée brutalement)<br />
+- C. Douleur radiculaire<br />
+- D. Hyperréflexie</p>
+<p><strong>Q5.</strong> Le seuil de cyphose thoracique à partir duquel la chirurgie est généralement discutée est :<br />
+- A. 40°<br />
+- B. 55°<br />
+- <strong>C. 70–75°</strong> (avec persistance des douleurs et de la déformation malgré traitement conservateur)<br />
+- D. &gt; 90° uniquement</p>
+<hr />
+<h2 id="141-rappels-parametres-sagittaux-normaux">14.1 Rappels — Paramètres sagittaux normaux</h2>
+<div class="vertex-media schema">
+<strong>📐 M14-S01-001</strong><br/>
+<em>Infographie valeurs normales des courbures sagittales</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Courbure</th>
+<th>Région</th>
+<th>Valeur normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lordose cervicale</strong></td>
+<td>C2-C7</td>
+<td>20–40°</td>
+</tr>
+<tr>
+<td><strong>Cyphose thoracique</strong></td>
+<td>T4-T12</td>
+<td>20–45°</td>
+</tr>
+<tr>
+<td><strong>Lordose lombaire</strong></td>
+<td>L1-S1</td>
+<td>40–60°</td>
+</tr>
+<tr>
+<td><strong>Incidence pelvienne</strong></td>
+<td>—</td>
+<td>Variable (40–65°)</td>
+</tr>
+<tr>
+<td><strong>Pente sacrée</strong></td>
+<td>—</td>
+<td>30–40°</td>
+</tr>
+<tr>
+<td><strong>Version pelvienne</strong></td>
+<td>—</td>
+<td>10–20°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Concept de la "balance sagittale"</strong> :<br />
+- Le rachis équilibré conserve le centre de gravité <strong>au-dessus du promontoire sacré</strong> (SVA &lt; 40 mm)<br />
+- Chaque courbure compense les autres : cyphose thoracique ↑ → lordose lombaire adaptative ↑</p>
+<hr />
+<h2 id="142-cyphose-posturale">14.2 Cyphose posturale</h2>
+<p><strong>Définition</strong> : Hypercyphose thoracique <strong>réductible</strong> chez un adolescent, sans modifications structurales des vertèbres.</p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Âge d'apparition</td>
+<td>10–15 ans</td>
+</tr>
+<tr>
+<td>Cobb typique</td>
+<td>45–55°</td>
+</tr>
+<tr>
+<td>Réductibilité</td>
+<td>Complète en hyperextension</td>
+</tr>
+<tr>
+<td>Radio</td>
+<td>Normale (pas de cunéiformisation)</td>
+</tr>
+<tr>
+<td>Évolution</td>
+<td>Régressif avec traitement physique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Traitement</strong> :<br />
+- Rééducation posturale intensive (renforcement paravertébral, étirements pectoraux)<br />
+- La cyphose posturale répond <strong>très bien</strong> à la rééducation<br />
+- Pas d'indication chirurgicale<br />
+- Corset (Cervico-thoracique) si &gt; 55° et persistance malgré rééducation (rare)</p>
+<hr />
+<h2 id="143-maladie-de-scheuermann">14.3 Maladie de Scheuermann</h2>
+<blockquote>
+<p>[MEDIA: 📊 M14-S03-001 — Schéma diagnostic Scheuermann / Sorensen]</p>
+</blockquote>
+<div class="vertex-media video">
+<strong>🎬 M14-S03-002</strong><br/>
+<em>Animation physiopathologie Scheuermann</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="1431-definition-et-criteres-diagnostiques">14.3.1 Définition et critères diagnostiques</h3>
+<p><strong>Critères de Sorensen (radio)</strong> :<br />
+- <strong>Cunéiformisation vertébrale ≥ 5° sur ≥ 3 vertèbres consécutives</strong> (critère principal)<br />
+- Irrégularités des plateaux vertébraux<br />
+- Nœuds de Schmorl (hernie intradiscale à travers les plateaux)<br />
+- Disques étroits<br />
+- Courbure thoracique mal réductible en hyperextension</p>
+<h3 id="1432-physiopathologie">14.3.2 Physiopathologie</h3>
+<ul>
+<li><strong>Mécanisme</strong> : Ostéochondrose de croissance des plateaux vertébraux → cartilage de croissance vulnérable → hyperpression antérieure → cunéiformisation progressive</li>
+<li><strong>Facteurs favorisants</strong> : charges axiales répétées pendant la croissance (agriculture, sports à impact), prédisposition génétique</li>
+<li><strong>Chronologie</strong> : Typiquement entre 12 et 16 ans (pic de croissance)</li>
+</ul>
+<h3 id="1433-formes-cliniques">14.3.3 Formes cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>Forme</th>
+<th>Apex</th>
+<th>Prévalence</th>
+<th>Symptômes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thoracique</strong></td>
+<td>T7-T9</td>
+<td>75 %</td>
+<td>Douleur dorsale + déformation</td>
+</tr>
+<tr>
+<td><strong>Thoracolombaire</strong></td>
+<td>T10-T12</td>
+<td>20 %</td>
+<td>Douleur lombaire haute, soulèvement d'objets douloureux</td>
+</tr>
+<tr>
+<td><strong>Lombaire</strong></td>
+<td>L1-L3</td>
+<td>5 %</td>
+<td>Douleur lombaire, peu de déformation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1434-prise-en-charge-selon-la-severite">14.3.4 Prise en charge selon la sévérité</h3>
+<table>
+<thead>
+<tr>
+<th>Cobb</th>
+<th>Risser</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 45°</td>
+<td>Tout âge</td>
+<td>Rééducation (étirements pectoraux + renforcement dorsal)</td>
+</tr>
+<tr>
+<td>45–70°</td>
+<td>0–2 (croissance)</td>
+<td><strong>Corset Milwaukee ou corset d'hyperextension</strong> (23h/j) + rééducation</td>
+</tr>
+<tr>
+<td>45–70°</td>
+<td>4–5 (maturité)</td>
+<td>Rééducation seule — chirurgie si douleur réfractaire</td>
+</tr>
+<tr>
+<td><strong>&gt; 70–75°</strong></td>
+<td>Tout âge</td>
+<td><strong>Discussion chirurgicale</strong> si douleur + échec conservateur</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Corset de Scheuermann</strong> :<br />
+- Corset d'hyperextension (Milwaukee, TLSO Méhon d'hyperextension)<br />
+- Principe : force de correction en extension sur l'apex cyphotique<br />
+- Résultat modéré (~20–30 % de correction)</p>
+<h3 id="1435-chirurgie-de-la-cyphose-de-scheuermann">14.3.5 Chirurgie de la cyphose de Scheuermann</h3>
+<p><strong>Indications</strong> :<br />
+- Cobb ≥ 70–75° + douleur réfractaire (&gt; 6 mois de traitement conservateur)<br />
+- Déficit neurologique (très rare, myélopathie par cyphose aiguë)<br />
+- Déformation esthétique majeure inacceptable avec demande forte du patient</p>
+<p><strong>Technique</strong> :<br />
+- <strong>Arthrodèse posterieure</strong> avec Ponte osteotomies sur 3–5 niveaux pour restaurer la flexibilité<br />
+- Niveaux de fusion : T2/T3 → T12 (sélectionner rigoureusement les vertèbres limites)<br />
+- <strong>Correction cible</strong> : ramener la cyphose à 40–50°<br />
+- Si très rigide (&lt; 40 % de correction passive) → voie antérieure complémentaire (discectomies libératrices)</p>
+<p><strong>Résultats</strong> :<br />
+- Correction moyenne : 55–65 % du Cobb initial (Bradford et al., 1974 ; Lowe, 1999)<br />
+- Satisfaction 85–90 %<br />
+- Complications : PJK (30 % si dépassement de la correction — Kim et al., 2008), neurologiques (rare)</p>
+<hr />
+<h2 id="144-cyphose-congenitale">14.4 Cyphose congénitale</h2>
+<p><strong>Types</strong> (selon McMaster &amp; Singh, 1999, <em>J Bone Joint Surg Am</em>) :<br />
+- <strong>Type I</strong> (défaut de formation, aplasie ventrale) : progression rapide → myélopathie possible<br />
+- <strong>Type II</strong> (défaut de segmentation, barre antérieure) : progression lente<br />
+- <strong>Type III</strong> (mixte)</p>
+<blockquote>
+<p><strong>⭐ La cyphose congénitale de type I est une URGENCE</strong> : risque de myélopathie par compression médullaire antérieure → chirurgie précoce impérative (résection + fusion).</p>
+</blockquote>
+<hr />
+<h2 id="145-cyphose-post-traumatique">14.5 Cyphose post-traumatique</h2>
+<p><strong>Mécanisme</strong> : Fracture en coin (tassement antérieur) → ciphose angulaire résiduelle</p>
+<p><strong>Classification des fractures vertébrales</strong> (AO/TLICS — Vaccaro et al., 2005, <em>Spine</em>) :<br />
+- Fractures par compression → risque de cyphose résiduelle si &gt; 30–40 %<br />
+- Fractures burst → canal intéressé + cyphose potentielle</p>
+<p><strong>Traitement</strong> :<br />
+- Fracture aiguë : vertébroplastie / cyphoplastie si ostéoporotique + douleur<br />
+- Cyphose établie et invalidante : ostéotomie + fusion</p>
+<hr />
+<h2 id="146-cyphose-de-ladulte-osteoporotique">14.6 Cyphose de l'adulte ostéoporotique</h2>
+<ul>
+<li><strong>Multiple fractures en coin</strong> → cyphose progressive → "Dowager's hump" (bosse de la veuve)</li>
+<li>Prophylaxie : traitement ostéoporose (bisphosphonates, dénosumab, tériparatide) + Ca2+ + vitamine D</li>
+<li><strong>Cyphoplastie par ballonnet</strong> : restauration partielle de la hauteur vertébrale + analgésie → 70 % de succès antalgique</li>
+</ul>
+<hr />
+<h2 id="147-rectification-de-la-lordose-lombaire">14.7 Rectification de la lordose lombaire</h2>
+<p><strong>Lordose lombaire efface</strong> : disparition de la lordose → dos plat lombaire</p>
+<p><strong>Causes</strong> :<br />
+- Contracture réflexe (lombalgie aiguë, hernie discale)<br />
+- Séquelle chirurgicale (flat back, Module 10)<br />
+- Spondylarthropathie inflammatoire (SA)</p>
+<p><strong>Conséquences</strong> :<br />
+- Déformation posturale en avant<br />
+- Surcharge musculaire → fatigue chronique<br />
+- PI-LL mismatch → repercussion équilibre global</p>
+<hr />
+<h2 id="148-cas-clinique-nathan-suite">14.8 Cas clinique — Nathan (suite)</h2>
+<blockquote>
+<p><strong>Nathan, 16 ans, Scheuermann thoracique T4-T12 Cobb 68°, Risser 2, douleur EVA 5/10, rééducation 3 mois sans amélioration.</strong></p>
+</blockquote>
+<p><strong>Analyse</strong> :<br />
+- Critères de Sorensen : cunéiformisation sur T6-T7-T8 ≥ 5° (confirmée à la radio)<br />
+- Type thoracique T4-T12, Cobb 68° → <strong>modérément sévère</strong><br />
+- Risser 2 → croissance active</p>
+<p><strong>Décision</strong> :<br />
+1. <strong>Corset d'hyperextension</strong> (type Milwaukee ou Boston hyperextension) à 23h/j<br />
+2. Rééducation posturale renforcée (étirements pectoraux, natation, musculation dorsale)<br />
+3. Contrôle radio à 4 mois dans le corset<br />
+4. Si correction &lt; 15° dans le corset → discuter la chirurgie (Cobb &gt; 70° avec progression probable)</p>
+<p><strong>Si Cobb progresse à 75° à 18 mois</strong> → fusion T3-T12 (Ponte osteotomies T5-T10) + instrumentation pédiculaire.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La <strong>cyphose posturale</strong> est complètement réductible et répond à la rééducation — ne pas opérer.</p>
+<p>📌 <strong>2.</strong> La <strong>maladie de Scheuermann</strong> est diagnostiquée par les critères de Sorensen : cunéiformisation ≥ 5° sur ≥ 3 niveaux consécutifs.</p>
+<p>📌 <strong>3.</strong> Le corset dans Scheuermann est indiqué pour les Cobb 45–70° pendant la croissance (Risser 0–2).</p>
+<p>📌 <strong>4.</strong> La chirurgie de la cyphose est discutée à partir de <strong>70–75°</strong> avec douleur réfractaire.</p>
+<p>📌 <strong>5.</strong> La <strong>cyphose congénitale type I</strong> est une urgence chirurgicale (risque myélopathique).</p>
+<p>📌 <strong>6.</strong> La cyphose ostéoporotique multiple → traitement de fond (anti-ostéoporotiques) + cyphoplastie en phase aiguë.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-12-questions">Quiz — 12 questions</h2>
+<p><strong>Q1. 🥉</strong> La cyphose thoracique normale (T4-T12) est comprise entre :<br />
+- <strong>A. 20–45°</strong><br />
+- B. 10–20°<br />
+- C. 45–60°<br />
+- D. 0–15°</p>
+<p><strong>Q2. 🥉</strong> Les critères de Sorensen pour le diagnostic de Scheuermann exigent :<br />
+- A. Cobb &gt; 45° seul<br />
+- <strong>B. Cunéiformisation ≥ 5° sur ≥ 3 vertèbres consécutives</strong><br />
+- C. Nœuds de Schmorl sur ≥ 5 vertèbres<br />
+- D. Douleur chronique + imagerie</p>
+<p><strong>Q3. 🥉</strong> La principale différence entre cyphose posturale et Scheuermann est :<br />
+- <strong>A. La réductibilité complète en extension = posturale ; persistance + cunéiformisation = Scheuermann</strong><br />
+- B. L'âge d'apparition<br />
+- C. La sévérité du Cobb<br />
+- D. Les nœuds de Schmorl</p>
+<p><strong>Q4. 🥈</strong> Dans Scheuermann, le corset d'hyperextension est indiqué pour un Cobb de :<br />
+- A. &lt; 40°<br />
+- <strong>B. 45–70° avec Risser 0–2</strong><br />
+- C. &gt; 75°<br />
+- D. Tout Cobb quel que soit le Risser</p>
+<p><strong>Q5. 🥈</strong> Le seuil chirurgical dans Scheuermann est généralement fixé à :<br />
+- A. &gt; 50°<br />
+- B. &gt; 60°<br />
+- <strong>C. &gt; 70–75° avec douleur réfractaire malgré traitement conservateur</strong><br />
+- D. &gt; 90°</p>
+<p><strong>Q6. 🥈</strong> La cyphose congénitale de type I nécessite une chirurgie précoce car elle expose au risque de :<br />
+- A. Scoliose secondaire<br />
+- <strong>B. Myélopathie par compression médullaire antérieure progressive</strong><br />
+- C. Fracture pathologique<br />
+- D. Impuissance fonctionnelle pelvienne</p>
+<p><strong>Q7. 🥈</strong> La cyphoplastie par ballonnet est indiquée dans :<br />
+- A. La cyphose de Scheuermann<br />
+- B. La scoliose congénitale<br />
+- <strong>C. Les fractures par tassement ostéoporotiques récentes avec douleur importante</strong><br />
+- D. La cyphose posturale</p>
+<p><strong>Q8. 🥇</strong> Nathan a un Scheuermann Cobb 72°, Risser 3. Quelle est la procédure chirurgicale adaptée ?<br />
+- A. Corset seul — trop risqué opérer<br />
+- <strong>B. Arthrodèse postérieure T3-T12 avec Ponte osteotomies sur 3–5 niveaux thoraciques pour corriger la cyphose et restaurer la mobilité sagittale</strong><br />
+- C. PSO lombaire<br />
+- D. VCR thoracique</p>
+<p><strong>Q9. 🥇</strong> La principale complication chirurgicale spécifique à la correction de la cyphose (iatrogène) est :<br />
+- A. Infection profonde<br />
+- <strong>B. PJK (proximal junctional kyphosis) par sur-correction ou mauvais choix du niveau proximal</strong><br />
+- C. Pseudarthrose isolée<br />
+- D. Paralysie transitoire</p>
+<p><strong>Q10. 🥇</strong> Une cyphose thoracique Scheuermann dont la mesure passive en hyperextension (bending latéral) passe de 76° → 42° est considérée comme :<br />
+- A. Rigide<br />
+- <strong>B. Flexible (&gt; 40 % de réduction = bonne indication chirurgicale par voie postérieure seule)</strong><br />
+- C. Opérable uniquement par voie antérieure<br />
+- D. Non opérable</p>
+<p><strong>Q11. 💎</strong> Patient de 45 ans, antécédent de fusion Harrington L2-L5 (historique, 1980), se présente avec un recul lombaire + impossibilité de se tenir droit ("il se penche en avant"). SVA = 9 cm, PI = 52°, LL = 24°. Diagnostic et prise en charge :<br />
+- <strong>A. Flat back syndrome iatrogène sur fusion Harrington sans restauration de la lordose. Indication de révision par désinstrumentation + PSO L2 ou L3 pour restaurer la lordose (LL cible = PI ± 10° = 42–52°)</strong><br />
+- B. Simple dégénérescence discale — traitement médical<br />
+- C. Indépendamment, IRM urgente pour hernie discale<br />
+- D. Kinésithérapie posturale</p>
+<p><strong>Q12. 💎</strong> Quelle est la correction sagittale cible après chirurgie d'une cyphose de Scheuermann à 75° ?<br />
+- A. 0° (rectification complète)<br />
+- <strong>B. 40–50° (cyphose physiologique restaurée/réduite à la normale haute)</strong><br />
+- C. &lt; 30°<br />
+- D. 60° (correction de 20 % seulement pour éviter PJK)</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Scheuermann HW.</strong> Classic paper 1921. <em>Ugeskr. Laeger</em>.</li>
+<li><strong>Bradford DS, Moe JH, Montalvo FJ, Winter RB.</strong> Scheuermann's kyphosis and roundback deformity: results of Milwaukee brace treatment. <em>J Bone Joint Surg Am</em>. 1974;56(4):740–758</li>
+<li><strong>Lowe TG.</strong> Scheuermann's disease. <em>Orthop Clin North Am</em>. 1999;30(3):475–487</li>
+<li><strong>McMaster MJ, Singh H.</strong> Natural history of congenital kyphosis and kyphoscoliosis. <em>J Bone Joint Surg Am</em>. 1999;81(10):1367–1383</li>
+<li><strong>Vaccaro AR, Lehman RA, Hurlbert RJ et al.</strong> A new classification of thoracolumbar injuries: the importance of injury morphology, the integrity of the posterior ligamentous complex, and neurologic status. <em>Spine</em>. 2005;30(20):2325–2333</li>
+<li><strong>Kim YJ, Bridwell KH, Lenke LG et al.</strong> Proximal junctional kyphosis in adult spinal deformity after segmental posterior spinal instrumentation and fusion. <em>Spine</em>. 2008;33(20):2179–2184</li>
+<li><strong>Grevitt M et al.</strong> PSO for sagittal imbalance. <em>Spine</em>. 2003</li>
+</ul>
+</div>

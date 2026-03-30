@@ -1,0 +1,673 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-3-implants-et-conception-modules-9-12">Partie 3 — Implants et Conception (Modules 9-12)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : III — IMPLANTS ET CONCEPTION<br />
+<strong>Modules</strong> : 9 à 12<br />
+<strong>Durée estimée</strong> : ~14 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-9-design-et-conception-fonctionnelle-des-ptg">MODULE 9 : DESIGN ET CONCEPTION FONCTIONNELLE DES PTG</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Modules 3-4</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> les principes de design d'une PTG et les compromis biomécaniques</li>
+<li><strong>Différencier</strong> les types de contrainte : CR, PS, CS, VVC, Charnière</li>
+<li><strong>Analyser</strong> la géométrie des composants et leur influence sur la cinématique</li>
+<li><strong>Comparer</strong> les philosophies de design : médial pivot, J-curve, single-radius, multi-radius</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="91-principes-fondamentaux-du-design-prothetique">9.1 Principes fondamentaux du design prothétique</h3>
+<ul>
+<li>Les 3 missions d'une PTG</li>
+<li><strong>Restaurer la mobilité</strong> : flexion 0-120° minimum (objectif &gt; 125°)</li>
+<li><strong>Restaurer la stabilité</strong> : dans tous les plans, à tous les angles de flexion</li>
+<li><strong>Transmettre les charges</strong> : sans usure excessive ni descellement</li>
+<li>Le paradoxe fondamental du design PTG</li>
+<li>Plus de liberté de mouvement → moins de stabilité intrinsèque → plus de dépendance aux tissus mous</li>
+<li>Plus de contrainte mécanique → plus de stabilité → plus de contrainte à l'interface os-implant → risque de descellement</li>
+<li>Tout design est un compromis entre mobilité et stabilité</li>
+<li>Degrés de liberté à restaurer</li>
+<li>Extension-flexion (mouvement principal)</li>
+<li>Rotation interne-externe (≈15° en flexion)</li>
+<li>Translation antéro-postérieure (rollback)</li>
+<li>Varus-valgus (limité, 1-2° physiologiques)</li>
+<li>Translation médio-latérale (minime)</li>
+<li>Compression-distraction (limitée par les ligaments)</li>
+<li>Historique du design — Les grandes familles</li>
+<li>Années 1970 : designs contraints (charnière) = taux d'échec élevé (descellement)</li>
+<li>Années 1970-80 : designs non contraints (era Insall : Total Condylar, IB-II) = meilleurs résultats</li>
+<li>Années 1990 : raffinement (mobile bearing, médial pivot, haute flexion)</li>
+<li>Années 2000-2020 : individualisation (PSI, robotique, alignement cinématique)</li>
+<li>Futur : design patient-spécifique (personnalisation complète)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG09-S01-001</strong><br/>
+<em>Animation du paradoxe stabilité vs mobilité : spectre des designs de la charnière (full constraint) au resurfaçage (minimal constraint) avec les compromis de chaque (Placez votre implant idéal sur ce spectre)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="92-composant-femoral">9.2 Composant fémoral</h3>
+<ul>
+<li>Anatomie de la surface articulaire fémorale</li>
+<li>Surface articulaire : 2 condyles + trochlée + rainure intercondylienne</li>
+<li>Rayon de courbure : variable de l'extension à la flexion (J-curve naturelle)</li>
+<li>Asymétrie médio-latérale : condyle médial plus large et plus long que le latéral</li>
+<li>Géométrie du composant fémoral</li>
+<li><strong>Single-radius</strong> (ex : Zimmer NexGen, Stryker Triathlon)<ul>
+<li>Un seul rayon de courbure sagittal de 0° à ~90° de flexion</li>
+<li>Avantage : isométrie du LCM/LCL → stabilité médio-latérale constante, biomécanique du quadriceps optimisée (bras de levier constant)</li>
+<li>Inconvénient : ne reproduit pas l'anatomie (le genou a 4-7 rayons de courbure)</li>
+</ul>
+</li>
+<li><strong>Multi-radius</strong> (ex : Smith &amp; Nephew Genesis II, DePuy Attune)<ul>
+<li>Rayons de courbure progressivement décroissants de l'extension vers la flexion</li>
+<li>Avantage : plus anatomique, reproduction du rollback</li>
+<li>Inconvénient : point de transition entre rayons → instabilité théorique en mid-flexion (controversé)</li>
+</ul>
+</li>
+<li><strong>J-curve</strong> (asymétrique)<ul>
+<li>Rayon de courbure médial ≠ latéral</li>
+<li>Condyle médial : rayon plus constant (pivot médial — faible translation)</li>
+<li>Condyle latéral : rayon décroissant (encourage le rollback latéral)</li>
+<li>Avantage : reproduction de la cinématique médial-pivot du genou normal</li>
+</ul>
+</li>
+<li>Coupe fémorale distale : angle de valgus (5-7° pour l'alignement mécanique)</li>
+<li>Coupe fémorale postérieure : rotation (3° de rotation externe par rapport à la PCA → // TEA)</li>
+<li>Boîtage : épaulement (box cut) pour le tenon de la came (PS) — sacrifice supplémentaire d'os</li>
+<li>Dimensions antéro-postérieures : dimensionnement crucial pour la hauteur patellaire et l'overhang</li>
+<li>Taille : correspondance taille fémorale / taille tibiale pas toujours 1:1</li>
+<li>Options de tailles intermédiaires (narrower femurs — designs gender-specific débattus)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG09-S02-001</strong><br/>
+<em>Animation comparative single-radius vs multi-radius vs J-curve : mouvement de flexion de 0° à 130° avec point de contact et rayon de courbure affichés (Quel design produit le rollback le plus physiologique ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG09-S02-002</strong><br/>
+<em>Schéma de la coupe fémorale distale et postérieure : angle de valgus, rotation externe, box cut, dimensionnement AP (Identifiez les repères anatomiques pour chaque coupe)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="93-composant-tibial-embase-metallique">9.3 Composant tibial (embase métallique)</h3>
+<ul>
+<li>Fonctions de l'embase tibiale</li>
+<li>Transmission des charges du PE vers l'os sous-chondral tibial</li>
+<li>Support du plateau en PE (fixe ou mobile)</li>
+<li>Fixation à l'os (ciment, tige, quilles, ailettes)</li>
+<li>Géométrie</li>
+<li>Forme : symétrique (D/G interchangeable) vs anatomique (D/G spécifique)</li>
+<li>Couverture : maximiser la couverture du plateau tibial coupé (éviter l'overhang — douleur, et le underhang — surcharge focale)</li>
+<li>Épaisseur : minimale pour préserver la résistance mécanique, sans excès pour la flexion</li>
+<li>Fixation tibiale</li>
+<li>Cimentée : gold standard, résultats prouvés à 20+ ans</li>
+<li>Quille centrale ± ailettes : stabilité rotatoire immédiate</li>
+<li>Vis supplémentaires : si os de mauvaise qualité</li>
+<li>Non cimentée (press-fit + hydroxyapatite/porose coating) : pour patients jeunes, os de bonne qualité — résultats à long terme plus débattus</li>
+<li>Fixation hybride : fémur non cimenté + tibia cimenté (compromis)</li>
+<li>Pente tibiale</li>
+<li>Pente postérieure naturelle : 5-10° (médiane : 7°)</li>
+<li>Impact sur la cinématique : une pente plus importante favorise le rollback et la flexion mais augmente la sollicitation du LCA (absent en PTG) et la contrainte sur le LCP</li>
+<li>Recommandation : reproduire la pente naturelle (±3°) ou pente de 3-5° si LCP réséqué (PS)</li>
+<li>Excès de pente → subluxation tibiale antérieure, instabilité en flexion</li>
+<li>Insuffisance de pente → limitation de flexion</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG09-S03-001</strong><br/>
+<em>Schéma de l'embase tibiale : couverture optimale, modes de fixation (quille, ailettes, vis, ciment) — vue de dessus et coupe sagittale (Optimisez la couverture pour ce plateau tibial virtuel)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="94-insert-en-polyethylene-plateau-pe">9.4 Insert en polyéthylène (plateau PE)</h3>
+<ul>
+<li>Types d'inserts</li>
+<li><strong>Insert fixe</strong> (<em>fixed bearing</em>) : verrouillé dans l'embase métallique<ul>
+<li>Design dominant (&gt; 80% des PTG dans le monde) <em>(AOANJRR Annual Report, 2023)</em></li>
+<li>Contraintes de cisaillement à l'interface PE-métal → usure du backside (face inférieure)</li>
+<li>Mécanisme de verrouillage : pions, clips, barres, rail périphérique</li>
+</ul>
+</li>
+<li><strong>Insert mobile</strong> (<em>mobile bearing</em>)<ul>
+<li>Le PE peut tourner et/ou glisser sur l'embase métallique</li>
+<li>Types : rotation pure (rotating platform, ex : DePuy LCS <em>(Buechel &amp; Pappas, 2004, Clin Orthop Relat Res)</em>), rotation + AP (meniscal bearing), glissement simple (LCS)</li>
+<li>Avantages théoriques : conformité articulaire + mobilité → usure moindre du PE, self-alignment</li>
+<li>Inconvénients : complexité, risque de dislocation du PE (<em>spin-out</em>), nécessité de balance ligamentaire parfaite</li>
+<li>Résultats cliniques : <strong>pas de supériorité démontrée</strong> vs fixed bearing à 15-20 ans <em>(Hofstede et al., 2015, Cochrane Database Syst Rev)</em></li>
+</ul>
+</li>
+<li>Géométrie de la surface articulaire (vue de dessus)</li>
+<li>Conformité : degré de congruence entre le condyle fémoral et la surface du PE</li>
+<li>Haute conformité → meilleure répartition des contraintes → moins d'usure → mais moins de rotation/translation</li>
+<li>Basse conformité → plus de liberté → plus de contrainte de contact → usure potentiellement plus élevée</li>
+<li>Compromis géométrique optimal : conformité élevée en extension (stabilité, répartition des charges), conformité moindre en flexion (permet la rotation et le rollback)</li>
+<li>Géométrie spéciale</li>
+<li>Design à haute flexion (<em>high-flex</em>) : PE échancrée postérieurement pour permettre &gt; 130° sans impingement</li>
+<li>Design anatomique (médial pivot) : surface médiale concave et profonde + surface latérale plus plate et convexe</li>
+<li>Design guidé (<em>guided motion</em>) : rail antéro-postérieur médial qui guide le mouvement</li>
+<li>Design ultra-congruent (UC/DC) : lèvre antérieure surélevée, substitut de la came PS mais sans le box cut fémoral</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG09-S04-001</strong><br/>
+<em>Animation comparative fixed bearing vs mobile bearing : mouvement de flexion-extension avec rotation du PE visible (Quand le mobile bearing est-il théoriquement supérieur ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG09-S04-002</strong><br/>
+<em>Schéma des géométries d'insert : flat, concave, lipped, médial pivot, ultra-congruent — vue de dessus et coupe sagittale (Associez chaque géométrie à son indication clinique)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="95-mecanisme-de-contrainte-cr-ps-cs-vvc-charniere">9.5 Mécanisme de contrainte — CR, PS, CS, VVC, Charnière</h3>
+<ul>
+<li><strong>CR</strong> (<em>Cruciate Retaining</em> — conservation du LCP)</li>
+<li>LCA réséqué, LCP conservé</li>
+<li>Le LCP fournit la stabilité postérieure et guide le rollback</li>
+<li>Avantage : préservation maximale de l'os fémoral (pas de box cut), kinesthésie du LCP (proprioception)</li>
+<li>Inconvénient : dépendant d'un LCP fonctionnel, risque de contrainte excessive du LCP → douleur, limitation de flexion</li>
+<li>Tendance historique : très populaire au Japon, en perte de vitesse en Occident</li>
+<li><strong>PS</strong> (<em>Posterior Stabilized</em> — sacrifiant le LCP)</li>
+<li>LCA et LCP réséqués → substitution par un mécanisme came-poteau (<em>cam-post</em>)</li>
+<li>Came : excroissance sur la surface supérieure du PE</li>
+<li>Poteau : éminence intercondylienne fémorale (dans le box cut)</li>
+<li>Le contact came-poteau guide le rollback à partir de ~70° de flexion</li>
+<li>Avantage : résultat plus prévisible, indépendant du LCP, meilleur rollback → potentiellement meilleure flexion</li>
+<li>Inconvénient : box cut (sacrifice osseux intercondylien), risque de fracture supracondylienne (affaiblissement), risque de dislocation de la came (<em>cam-post jump</em>)</li>
+<li>Usure spécifique : usure du poteau (contact cyclique came-poteau)</li>
+<li><strong>CS</strong> (<em>Cruciate Substituting</em> / Ultra-Congruent)</li>
+<li>Design intermédiaire : pas de came-poteau mais PE avec lèvre antérieure surélevée</li>
+<li>Stabilité AP par conformité géométrique (pas de contact came-poteau)</li>
+<li>Avantage : pas de box cut, pas de risque de dislocation came-poteau</li>
+<li>Inconvénient : rollback moindre que PS</li>
+<li>Tendance croissante (compromis populaire)</li>
+<li><strong>VVC</strong> (<em>Varus-Valgus Constrained</em> / CCK <em>Condylar Constrained Knee</em>)</li>
+<li>Design PS renforcé : poteau plus grand, résistant aux contraintes varus-valgus</li>
+<li>Indication : laxité médio-latérale non compensable par la balance ligamentaire</li>
+<li>Exemples : LCCK (Zimmer), TC3 (DePuy)</li>
+<li>Contrainte supplémentaire → transfert de forces à l'interface os-implant → tige intramédullaire recommandée</li>
+<li><strong>Charnière rotatoire</strong> (<em>Rotating Hinge</em>)</li>
+<li>Charnière mécanique entre fémur et tibia avec rotation autour d'un axe</li>
+<li>Indication : instabilité massive, perte osseuse majeure, résection tumorale</li>
+<li>Avantage : stabilité maximale</li>
+<li>Inconvénient : contraintes maximales à l'interface → descellement, fixation lourde (tiges longues IM), pas d'activité sportive</li>
+<li>Dernière option dans l'algorithme de contrainte</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG09-S05-001</strong><br/>
+<em>Animation comparative des 5 niveaux de contrainte : CR → PS → CS → VVC → Charnière — mouvement de flexion-extension, stabilité varus-valgus, box cut visible (Construisez votre algorithme de choix)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG09-S05-002</strong><br/>
+<em>Schéma du mécanisme came-poteau (PS) : contact à 70° de flexion, guidage du rollback, risque de cam-post jump (Quand ce mécanisme est-il activé ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG09-S05-003 — Tableau comparatif des 5 niveaux de contrainte : indication, sacrifice osseux, dépendance ligamentaire, contrainte à l'interface, survie à 15 ans (Document de référence)]</p>
+</blockquote>
+<h3 id="96-resurfacage-patellaire">9.6 Resurfaçage patellaire</h3>
+<ul>
+<li>Resurfaçage vs non-resurfaçage : le plus ancien débat de la PTG</li>
+<li>Resurfaçage systématique (USA, Australie — &gt; 80%) : élimine la douleur antérieure résiduelle</li>
+<li>Non-resurfaçage (France, UK, certains pays d'Europe — 30-60%) : préservation de l'os, risque fracturaire moindre</li>
+<li>Études randomisées : résultats globalement similaires, mais le <strong>taux de reprise pour douleur antérieure est plus élevé sans resurfaçage</strong> (registres National Joint Registry, AOANJRR)</li>
+<li>Composant patellaire</li>
+<li>Design : bouton en PE tout-PE (<em>all-poly</em>) — le plus utilisé</li>
+<li>Fixation : ciment avec 3 pions</li>
+<li>Épaisseur résiduelle de la patella : ≥ 12-15 mm après coupe (risque de fracture)</li>
+<li>Tracking patellaire : <em>no-thumb test</em> (la patella doit centrer spontanément sans aide du pouce du chirurgien)</li>
+<li>Option intermédiaire : <em>onlay</em> (ajout sans résection osseuse — expérimental)</li>
+</ul>
+<hr />
+<h1 id="module-10-materiaux-des-ptg">MODULE 10 : MATÉRIAUX DES PTG</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Module 9</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les matériaux utilisés dans chaque composant de la PTG</li>
+<li><strong>Expliquer</strong> la tribologie (science du frottement et de l'usure) de l'articulation prothétique</li>
+<li><strong>Comparer</strong> les générations de polyéthylène et leur impact sur la longévité</li>
+<li><strong>Discuter</strong> la problématique des allergies aux métaux</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="101-alliages-metalliques-composants-femoral-et-tibial">10.1 Alliages métalliques — Composants fémoral et tibial</h3>
+<ul>
+<li>Alliage cobalt-chrome-molybdène (CoCrMo)</li>
+<li>Le plus utilisé pour le composant fémoral (&gt; 90% des PTG)</li>
+<li>Excellente résistance à l'usure, bonne résistance à la corrosion</li>
+<li>Module d'Young : ~220 GPa <em>(ASTM F75)</em> (très rigide)</li>
+<li>Finition de surface : polissage miroir (Ra &lt; 0.05 μm) — réduction de l'usure du PE</li>
+<li>Composition : Co 55-65%, Cr 25-30%, Mo 5-7% <em>(ASTM F75)</em></li>
+<li>Acier inoxydable (316L)</li>
+<li>Moins utilisé aujourd'hui (instruments surtout)</li>
+<li>Moins résistant à la corrosion que CoCr</li>
+<li>Titane (Ti-6Al-4V)</li>
+<li>Utilisé pour l'embase tibiale et les tiges/augments</li>
+<li>Moins rigide que CoCr (module d'Young : ~110 GPa <em>(ASTM F136)</em>) → meilleur transfert de charge osseuse</li>
+<li>Excellente ostéo-intégration (surface poreuse, revêtement HA)</li>
+<li>NE PAS utiliser comme surface articulaire (résistance à l'usure insuffisante — scratching → usure catastrophique du PE)</li>
+<li>Excellent pour la non-cimentée : trabecular titanium, titanium fibre mesh, hydroxyapatite coating</li>
+<li>Oxinium® (Zr-2.5Nb oxydé) — Smith &amp; Nephew</li>
+<li>Oxyde de zirconium en surface (céramique) sur substrat métallique (zirconium-niobium)</li>
+<li>Dureté de surface × 2 vs CoCr, rugosité quasi nulle</li>
+<li>Réduit l'usure du PE de 50-85% in vitro</li>
+<li>Avantage : pas de risque de fracture (vs céramique pure), excellente résistance à l'usure</li>
+<li>Limite : coût supérieur, résultats cliniques à très long terme encore émergents</li>
+<li>Indication idéale : patient jeune, haut niveau d'activité</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG10-S01-001</strong><br/>
+<em>Photos microscopiques des surfaces des alliages : CoCr poli vs Ti-6Al-4V poreux vs Oxinium — comparaison de la rugosité et de la structure (Lequel est articulaire ? Lequel est pour l'ostéointégration ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="102-polyethylene-evolution-et-generations">10.2 Polyéthylène — Évolution et générations</h3>
+<ul>
+<li>Polyéthylène UHMWPE conventionnel (historique)</li>
+<li>Ultra-High Molecular Weight Polyethylene</li>
+<li>Poids moléculaire : 3-6 millions g/mol</li>
+<li>Stérilisation par irradiation gamma (25-40 kGy) en air ambiant → radicaux libres → oxydation → dégradation à long terme</li>
+<li>Usure linéaire : 0.1-0.2 mm/an <em>(Devane et al., 1997, Clin Orthop)</em> → débris de PE → ostéolyse → descellement (le principal mode d'échec historique)</li>
+<li>Polyéthylène hautement réticulé — 1ère génération (XLPE / HXLPE)</li>
+<li>Irradiation à haute dose (50-100 kGy) : crée des liaisons covalentes inter-chaînes (<em>cross-links</em>)</li>
+<li>Traitement post-irradiation : refusion (<em>remelting</em>) ou recuit (<em>annealing</em>) pour éliminer les radicaux libres</li>
+<li>Usure linéaire réduite de 50-95% vs conventionnel (0.01-0.05 mm/an) <em>(Bragdon et al., 2013, J Arthroplasty)</em></li>
+<li>Inconvénient de la refusion : perte de résistance mécanique (cristallinité diminuée) → fractures de PE rapportées</li>
+<li>Inconvénient du recuit : radicaux libres résiduels → oxydation tardive possible</li>
+<li>Polyéthylène réticulé — 2ème génération (avec antioxydant)</li>
+<li>Ajout de vitamine E (α-tocophérol) comme antioxydant</li>
+<li>Deux procédés : diffusion (trempage dans la vitamine E après irradiation) ou mélange (incorporation avant irradiation)</li>
+<li>Avantage : réticulation + stabilité oxydative + propriétés mécaniques préservées</li>
+<li>Exemples : Vitamin E PE (Biomet), VERILAST (Smith &amp; Nephew), X3 (Stryker)</li>
+<li>Considéré comme le standard actuel pour les PTG modernes</li>
+<li>Impact clinique</li>
+<li>Le XLPE a drastiquement réduit l'ostéolyse péri-prothétique (&lt; 1% à 10 ans vs 10-20% avec le conventionnel) <em>(Glyn-Jones et al., 2015, Lancet)</em></li>
+<li>Registres australien et scandinave : amélioration continue de la survie des PTG corrélée à l'adoption du XLPE</li>
+<li>Question résiduelle : comportement du XLPE à &gt; 20 ans (peu de recul encore)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG10-S02-001</strong><br/>
+<em>Schéma comparatif des 3 générations de PE : structure moléculaire (chaînes non réticulées → réticulées → réticulées + vitamine E), processus de fabrication, taux d'usure attendu (Pourquoi la réticulation réduit-elle l'usure ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG10-S02-002 — Graphique d'évolution de l'usure linéaire du PE sur 20 ans : conventionnel vs XLPE 1ère génération vs XLPE 2ème génération (Projetez la quantité de débris à 15 ans pour chaque génération)]</p>
+</blockquote>
+<h3 id="103-ciment-osseux-pmma">10.3 Ciment osseux (PMMA)</h3>
+<ul>
+<li>PolyMéthylMéthacrylate (PMMA)</li>
+<li>Pas une colle, mais un comblement mécanique (<em>grout</em>) : interdigitation dans l'os spongieux</li>
+<li>Composant poudre + composant liquide → polymérisation exothermique (70-80°C)</li>
+<li>Résistance en compression : 70-100 MPa (excellent)</li>
+<li>Résistance en traction : faible (20 MPa) → mode de rupture dominant</li>
+<li>Ciment avec antibiotiques</li>
+<li>Gentamicine, tobramycine, vancomycine</li>
+<li>Libération locale → concentration élevée au site chirurgical</li>
+<li>Prophylaxie primaire : débattu (recommandé dans certains pays scandinaves)</li>
+<li>Révision septique : utilisation systématique (spacer en ciment avec antibiotiques)</li>
+<li>Technique de cimentation</li>
+<li>Lavage pulsé (pulse lavage) → nettoyage de l'os spongieux</li>
+<li>Séchage méticuleux</li>
+<li>Application du ciment en phase visqueuse</li>
+<li>Pressurisation (thumb pressurization ou pressurizer)</li>
+<li>Manteau de ciment ≥ 2 mm d'épaisseur idéale</li>
+<li>Retrait des excès de ciment (impingement sur PE, débris de ciment)</li>
+</ul>
+<h3 id="104-allergies-aux-metaux">10.4 Allergies aux métaux</h3>
+<ul>
+<li>Prévalence dans la population : 10-15% (nickel ++), 1-3% (cobalt, chrome) <em>(Thyssen et al., 2007, Contact Dermatitis)</em></li>
+<li>Manifestations : dermatite de contact, urticaire, eczéma péri-prothétique</li>
+<li>Types de réactions</li>
+<li>Type IV (hypersensibilité retardée, médiation cellulaire) : la plus fréquente</li>
+<li>Type I (IgE-médiée) : exceptionnelle aux métaux d'implants</li>
+<li>Bilan allergologique pré-PTG</li>
+<li>Patch test (test épicutané) : recommandé si antécédent de dermatite de contact aux métaux</li>
+<li>Panel : nickel, chrome, cobalt, molybdène, vanadium, titane</li>
+<li>Interprétation : un patch test positif n'indique PAS nécessairement une réaction à l'implant (sensibilité et spécificité limitées)</li>
+<li>Options pour les patients allergiques</li>
+<li>Composant Oxinium® (sans nickel, sans chrome)</li>
+<li>Composant titane nitrure (TiN, revêtement céramique)</li>
+<li>Composant tout-PE (all-poly tibia — historique, peu utilisé)</li>
+<li>Composant CoCr recouvert de zircone ou de TiN<blockquote>
+<p>[MEDIA: 📊 MPTG10-S04-001 — Algorithme de prise en charge du patient allergique aux métaux avant PTG : interrogatoire, patch test, choix de l'implant (Appliquez cet algorithme à un cas de patch test positif au nickel)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-11-cinematique-des-ptg-analyse-du-mouvement">MODULE 11 : CINÉMATIQUE DES PTG — ANALYSE DU MOUVEMENT</h1>
+<p><strong>Durée</strong> : ~3h30 | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 4, 9</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Analyser</strong> la cinématique d'un genou normal et comparer avec celle d'un genou prothésé</li>
+<li><strong>Identifier</strong> les anomalies cinématiques spécifiques à chaque type de design</li>
+<li><strong>Interpréter</strong> les données d'analyse du mouvement (fluoroscopie, analyse de marche)</li>
+<li><strong>Discuter</strong> le concept de cinématique personnalisée et les dernières innovations</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="111-rappel-cinematique-du-genou-normal">11.1 Rappel : cinématique du genou normal</h3>
+<ul>
+<li>Mouvement de flexion-extension</li>
+<li>Combinaison de roulement (<em>roll</em>) et de glissement (<em>slide</em>)</li>
+<li>Rapport roll/slide : élevé en début de flexion (roulement dominant), inversé en fin de flexion (glissement dominant)</li>
+<li>Rollback : translation postérieure du point de contact fémoro-tibial en flexion</li>
+<li><strong>Rollback asymétrique</strong> : latéral &gt; médial (C'est la clé de la cinématique normale)</li>
+<li>Condyle médial : quasi stationnaire (pivot médial), translation AP ≈ 2 mm</li>
+<li>Condyle latéral : translation postérieure de 10-20 mm</li>
+<li>Rotation interne-externe automatique</li>
+<li>Rotation externe automatique du tibia en extension terminale (<em>screw-home mechanism</em>)</li>
+<li>~15° de rotation externe de 90° de flexion → extension complète</li>
+<li>Verrouillage en extension → stabilité debout</li>
+<li><em>Medial pivot</em> — Le concept physiologique</li>
+<li>Le genou normal fonctionne comme un « pivot médial »</li>
+<li>Le condyle médial est le centre de rotation dans le plan transverse</li>
+<li>Le condyle latéral pivote autour du condyle médial (comme un compas)</li>
+<li>Ce concept a inspiré des designs spécifiques (médial pivot, Micro-Port EVOLUTION)</li>
+</ul>
+<h3 id="112-cinematique-du-genou-prothetique-anomalies-et-compromis">11.2 Cinématique du genou prothétique — Anomalies et compromis</h3>
+<ul>
+<li>Anomalies cinématiques des PTG conventionnelles</li>
+<li><strong>Rollback paradoxal</strong> (<em>paradoxical anterior translation</em>) : le fémur glisse vers l'avant en flexion au lieu de reculer</li>
+<li>Conséquences : réduction du bras de levier du quadriceps, impingement PE postérieur, limitation de flexion</li>
+<li>Cause : LCP insuffisant (CR) ou mécanisme cam-post non encore engagé (PS &lt; 70°)</li>
+<li><strong>Médial pivot inversé</strong> : pivot latéral au lieu de médial → sensation de genou « mécanique »</li>
+<li><strong>Réduction de la rotation interne-externe</strong> : surtout avec les inserts hautement conformes</li>
+<li><strong>Absence de screw-home</strong> : pas de verrouillage en extension</li>
+<li>Cinématique CR vs PS</li>
+<li>CR : rollback plus variable et dépendant de la tension du LCP — rollback paradoxal dans ~25% des cas <em>(Dennis et al., 2003, J Arthroplasty)</em></li>
+<li>PS : rollback plus prévisible (engagement du cam-post à 70-90°), mais cinématique rigide (pas de variabilité naturelle)</li>
+<li>Ni l'un ni l'autre ne reproduit fidèlement la cinématique normale</li>
+<li>Cinématique du mobile bearing</li>
+<li>Rotation de l'insert → meilleure conformité fonctionnelle</li>
+<li>Réduction théorique des contraintes de cisaillement au PE</li>
+<li>En pratique : la rotation de l'insert est minime (&lt; 5° dans la plupart des études fluoroscopiques)</li>
+<li>La promesse cinématique du mobile bearing n'est que partiellement tenue</li>
+<li>Cinématique du design médial pivot (Advance Medial Pivot, MicroPort)</li>
+<li>Surface médiale hautement conforme (concavité profonde) → pivot médial naturel</li>
+<li>Surface latérale plate → permet le rollback latéral</li>
+<li>Résultats fluoroscopiques : meilleure reproduction de la cinématique normale</li>
+<li>Controverses : contraintes plus élevées sur la surface médiale → usure locale ?</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG11-S02-001</strong><br/>
+<em>Animation fluoroscopique comparant rollback normal, rollback paradoxal (CR), et rollback guidé par cam-post (PS) — vue sagittale avec tracé du point de contact (Identifiez l'anomalie cinématique)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG11-S02-002</strong><br/>
+<em>Animation du pivot médial : genou normal vs design médial pivot vs design symétrique — vue axiale du tibia avec tracé des trajectoires des condyles (Lequel est le plus physiologique ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="113-methodes-danalyse-de-la-cinematique">11.3 Méthodes d'analyse de la cinématique</h3>
+<ul>
+<li>Fluoroscopie dynamique</li>
+<li>Vidéo-radiographie en temps réel pendant le mouvement</li>
+<li><em>Single-plane</em> ou <em>bi-plane</em> (plus précis)</li>
+<li>Reconstruction 2D/3D du mouvement (model-based RSA)</li>
+<li>Gold standard pour l'analyse cinématique in vivo</li>
+<li>Limitations : irradiation, temps d'acquisition, mouvements lents uniquement</li>
+<li>Analyse de marche (gait lab)</li>
+<li>Capteurs optiques (marqueurs réfléchissants), plateformes de force, EMG</li>
+<li>Variables cinétiques : moments, forces de réaction au sol</li>
+<li>Variables cinématiques : angles articulaires dans les 3 plans</li>
+<li>Interprétation : comparaison avec la norme, latéral vs opéré</li>
+<li>Utilisée en recherche, peu en pratique clinique courante</li>
+<li>Capteurs embarqués (<em>wearable sensors</em>)</li>
+<li>Centrales inertielles (IMU) : accéléromètre, gyroscope, magnétomètre</li>
+<li>Suivi continu en conditions de vie réelles</li>
+<li>Applications émergentes : monitoring post-opératoire, télérééducation</li>
+<li>KneeSim© : visualisation interactive de la cinématique simulée</li>
+<li>RSA (Radiostereometric Analysis)</li>
+<li>Billes de tantale insérées dans l'os et l'implant</li>
+<li>Mesure de la migration de l'implant avec une précision de 0.1 mm</li>
+<li>Prédiction précoce du descellement (migration &gt; 0.2 mm à 1 an → risque de descellement)</li>
+<li>Gold standard pour l'évaluation des nouveaux implants en phase de validation</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG11-S03-001</strong><br/>
+<em>Animation de la fluoroscopie bi-plan : acquisition, reconstruction 3D, mesure du rollback et de la rotation (Interprétez les données d'un cas réel)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="114-vers-la-cinematique-personnalisee">11.4 Vers la cinématique personnalisée</h3>
+<ul>
+<li>Alignement cinématique (KA, <em>Kinematic Alignment</em>)</li>
+<li>Restaurer la cinématique native du patient (pas un axe mécanique « universel »)</li>
+<li>Coupes osseuses qui restaurent l'épaisseur du cartilage + os réséqués (proportionnelles)</li>
+<li>Résultat : la PTG restaure l'axe préarthrosique du patient</li>
+<li>Résultats cliniques prometteurs : scores fonctionnels potentiellement supérieurs, meilleure satisfaction</li>
+<li>Controverses : tolérance de l'implant aux malalignements, résultats à long terme ?</li>
+<li>Alignement mécanique restreint (rMA)</li>
+<li>Compromis : axe mécanique comme cible mais avec une zone de tolérance (±3°)</li>
+<li>Ajustement dans la « zone de sécurité » d'alignement</li>
+<li>Alignement fonctionnel (FA)</li>
+<li>Optimisation patient-spécifique basée sur la cinématique et la laxité ligamentaire</li>
+<li>Assisté par robotique : mesure peropératoire des gaps et de la cinématique</li>
+<li>Tendance actuelle la plus prometteuse</li>
+<li>Implants patient-spécifiques (<em>custom implants</em>)</li>
+<li>Scanner ou IRM → reconstruction 3D → design de l'implant sur mesure</li>
+<li>Conformité et couverture optimales</li>
+<li>Exemples : ConforMIS iTotal, Symbios</li>
+<li>Coût élevé, résultats cliniques pas (encore) supérieurs aux implants standards</li>
+<li>Avenir : intelligence artificielle pour optimiser le design</li>
+</ul>
+<hr />
+<h1 id="module-12-panorama-des-implants-disponibles">MODULE 12 : PANORAMA DES IMPLANTS DISPONIBLES</h1>
+<p><strong>Durée</strong> : ~3h30 | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Modules 9-10</p>
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les principaux systèmes de PTG disponibles sur le marché</li>
+<li><strong>Comparer</strong> les caractéristiques distinctives de chaque système</li>
+<li><strong>Choisir</strong> un implant adapté au profil du patient</li>
+<li><strong>Interpréter</strong> les données des registres nationaux d'arthroplastie</li>
+</ol>
+<h2 id="contenu-detaille_3">Contenu détaillé</h2>
+<h3 id="121-les-grandes-familles-commerciales">12.1 Les grandes familles commerciales</h3>
+<ul>
+<li><strong>Zimmer Biomet</strong></li>
+<li>NexGen® : single-radius, CR/PS, le plus implanté dans le monde (&gt; 10 millions) <em>(données Zimmer Biomet, source commerciale)</em>, résultats à 20+ ans</li>
+<li>Persona® : successeur du NexGen, anatomique (D/G), 10 tailles + narrow, cementless option</li>
+<li>Persona IQ® : capteur intégré (suivi cinématique post-opératoire, smart implant)</li>
+<li><strong>DePuy Synthes (Johnson &amp; Johnson)</strong></li>
+<li>PFC Sigma® : multi-radius, CR/PS, résultats prouvés à 15+ ans</li>
+<li>Attune® : successeur, « S-curve » (surface patellaire anatomique), rotating platform ou fixed bearing</li>
+<li>Attune Revision® : système modulaire complet</li>
+<li><strong>Stryker</strong></li>
+<li>Triathlon® : single-radius, CR/PS, le plus implanté en Europe, compatible avec le robot MAKO®</li>
+<li>Triathlon Tritanium® : version non cimentée (trabecular titanium)</li>
+<li><strong>Smith &amp; Nephew</strong></li>
+<li>Genesis II® : multi-radius, CR/PS, excellent track record</li>
+<li>LEGION™ / VERILAST™ : Oxinium fémoral + XLPE avec vitamine E</li>
+<li>JOURNEY II® : design bi-cruciate stabilized (BCS) — reproduit le rollback asymétrique sans LCA ni LCP</li>
+<li><strong>MicroPort (anciennement Wright Medical)</strong></li>
+<li>EVOLUTION® Medial Pivot : design médial pivot, conformité médiale élevée, CS ou PS</li>
+<li>ADVANCE® : version historique du médial pivot</li>
+<li><strong>Autres acteurs</strong></li>
+<li>Exactech Optetrak Logic® : multi-radius, CR/PS</li>
+<li>ConforMIS iTotal® : patient-spécifique (custom implant à partir du scanner)</li>
+<li>Symbios : patient-spécifique (custom, made in Switzerland)</li>
+<li>Medacta GMK® : navigation/robotique MyKnee®</li>
+</ul>
+<h3 id="122-registres-nationaux-darthroplastie-les-donnees-probantes">12.2 Registres nationaux d'arthroplastie — Les données probantes</h3>
+<ul>
+<li>Principaux registres</li>
+<li><strong>AOANJRR</strong> (Australie) : le plus complet, &gt; 1 million de PTG, suivi à 20+ ans <em>(AOANJRR Annual Report, 2023)</em></li>
+<li><strong>NJR</strong> (UK) : &gt; 1.2 million de PTG, rapport annuel <em>(NJR Annual Report, 2023)</em></li>
+<li><strong>SKAR</strong> (Suède) : le plus ancien, référence historique <em>(SKAR Annual Report, 2023)</em></li>
+<li><strong>NZJR</strong> (Nouvelle-Zélande)</li>
+<li>France : données PMSI (pas de registre dédié, volonté politique en cours)</li>
+<li>Ce que les registres nous apprennent</li>
+<li>Survie globale des PTG : <strong>96-97% à 10 ans</strong>, 90-93% à 20 ans <em>(AOANJRR 2023 ; Evans et al., 2019, Lancet)</em></li>
+<li>Meilleurs résultats : fixation cimentée, PE hautement réticulé, composants validés par les registres</li>
+<li>Taux de reprise : 0.5-1%/an (cumulative)</li>
+<li>Causes de reprise (par fréquence) : infection (25%), instabilité (20%), descellement aseptique (18%), douleur inexpliquée (10%), raideur (8%), usure (7%), fracture péri-prothétique (5%) <em>(Sharkey et al., 2014, Clin Orthop)</em></li>
+<li><strong>Les implants avec le meilleur track record sont les moins « innovants »</strong> — les registres montrent que la nouveauté n'est pas toujours synonyme de progrès</li>
+<li>Benchmarking ODEP (<em>Orthopaedic Data Evaluation Panel</em>, www.odep.org.uk)</li>
+<li>Classifie les implants selon leur niveau de preuve (1A<em> → 13A</em>)</li>
+<li>10A* = au moins 10 ans de données à &gt; 95% de survie pour ≥ 500 patients</li>
+<li>Recommandation NICE (UK) : n'utiliser que des implants avec benchmark ODEP ≥ 5A</li>
+<li><em>Beyond compliance</em> : registre comme outil de pharmacovigilance des implants<blockquote>
+<p>[MEDIA: 📊 MPTG12-S02-001 — Graphique de survie de Kaplan-Meier des principaux systèmes de PTG à 20 ans (données AOANJRR/NJR) — comparaison par design (CR vs PS) et fixation (cimentée vs non cimentée) (Identifiez le meilleur taux de survie)]<br />
+[MEDIA: 📊 MPTG12-S02-002 — Infographie des causes de reprise de PTG : pie chart avec pourcentage de chaque cause, évolution dans le temps (Comment les causes ont-elles changé avec le XLPE ?)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="123-comment-choisir-un-implant-pour-un-patient-donne">12.3 Comment choisir un implant pour un patient donné ?</h3>
+<ul>
+<li>Algorithme de choix</li>
+<li><strong>Étape 1 — Niveau de contrainte</strong> : stabilité ligamentaire → CR, PS, CS, VVC, ou charnière</li>
+<li><strong>Étape 2 — Fixation</strong> : qualité osseuse → cimentée (standard), non cimentée (os jeune, bon), hybride</li>
+<li><strong>Étape 3 — PE</strong> : durée de vie attendue → XLPE 2ème génération systématique</li>
+<li><strong>Étape 4 — Rotule</strong> : resurfaçage selon habitude chirurgicale et étiologie</li>
+<li><strong>Étape 5 — Design spécifique</strong> : single-radius vs multi-radius, médial pivot — selon préférence et formation</li>
+<li><strong>Étape 6 — Vérification registre</strong> : implant avec ODEP ≥ 5A, survie prouvée</li>
+<li>Facteurs patient-spécifiques</li>
+<li>Âge &lt; 55 ans : XLPE Vit E, Oxinium, non cimenté → longévité maximale</li>
+<li>Âge &gt; 70 ans : cimentée, CR ou PS standard → fiabilité prouvée</li>
+<li>Allergie métallique : Oxinium ou TiN</li>
+<li>Obésité (IMC &gt; 35) : PE plus épais, cimentée, attention à la taille</li>
+<li>Genou instable (PR, post-traumatique) : PS ou VVC, cimentée avec tige</li>
+<li>Sportif : XLPE, considérer mobile bearing ou médial pivot<blockquote>
+<p>[MEDIA: 📊 MPTG12-S03-001 — Algorithme de choix de l'implant PTG : arbre décisionnel complet intégrant le profil patient, le bilan ligamentaire, la qualité osseuse, l'étiologie, et le niveau d'activité (Appliquez cet algorithme à 3 cas virtuels)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="auto-evaluation-partie-iii">AUTO-ÉVALUATION — PARTIE III</h1>
+<h2 id="questions-transversales-modules-9-12">Questions transversales Modules 9-12</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Quelle est la différence fondamentale entre un design CR et un design PS ?<br />
+- A) Le CR utilise du PE hautement réticulé, le PS non<br />
+- B) Le CR conserve le LCP et n'a pas de box cut, le PS sacrifie le LCP et utilise un mécanisme came-poteau<br />
+- C) Le CR est toujours non cimenté, le PS toujours cimenté<br />
+- D) Le CR est pour les genoux valgus, le PS pour les genoux varus</p>
+<p><strong>Q2</strong> 🥈 : Un polyéthylène XLPE de 2ème génération contient :<br />
+- A) De la vitamine C comme antioxydant<br />
+- B) De la vitamine E (α-tocophérol) comme antioxydant<br />
+- C) Du calcium pour la calcification<br />
+- D) Du collagène pour l'ostéo-intégration</p>
+<p><strong>Q3</strong> 🥈 : Le « rollback paradoxal » est :<br />
+- A) Un mouvement postérieur excessif du fémur en extension<br />
+- B) Une translation antérieure du fémur en flexion (au lieu de postérieur)<br />
+- C) Une rotation externe excessive du tibia<br />
+- D) Un mouvement normal du genou prothétique</p>
+<p><strong>Q4</strong> 🥇 : Un chirurgien utilise un design médial pivot CR pour un genou dont le LCP est dégénératif. Lors d'un suivi fluoroscopique à 6 mois, il constate un rollback paradoxal médial et une laxité en flexion. Quelle est la cause la plus probable et quelle est la solution ?</p>
+<p><strong>Q5</strong> 💎 : Comparez systématiquement le positionnement en alignement mécanique (MA) vs alignement cinématique (KA) vs alignement fonctionnel (FA) pour un patient de 60 ans avec un varus de 8° dont 3° est d'origine fémorale et 5° est d'origine tibiale. Décrivez les angles de coupes dans chaque philosophie et les implications cinématiques.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>M. Lefèvre, 52 ans</strong>, sportif (tennis, ski), IMC 26, sans allergie connue. Gonarthrose médiale du genou droit, KL 3, HKA 175° (varus). LCA intact, LCP fonctionnel. Score KSS-Knee 55/100, WOMAC 48/96. Traitement conservateur bien conduit pendant 2 ans sans amélioration suffisante. Attentes élevées : « Je veux retrouver le ski et le tennis ».</p>
+<ol>
+<li>PUC ou PTG ? Argumentez pour et contre.</li>
+<li>Si PTG : CR ou PS ? Justifiez.</li>
+<li>Quel type de PE et quel matériau fémoral recommandez-vous pour ce patient jeune et actif ?</li>
+<li>Cimentée ou non cimentée ? Argumentez.</li>
+<li>Quelles attentes du patient devez-vous tempérer et comment ?</li>
+</ol>
+</blockquote>
+<hr />
+<hr />
+<h2 id="references-partie-iii">Références — Partie III</h2>
+<ul>
+<li>AOANJRR. <em>Australian Orthopaedic Association National Joint Replacement Registry — Annual Report 2023</em>. Adelaide: AOA.</li>
+<li>ASTM F75-18. <em>Standard Specification for Cobalt-28 Chromium-6 Molybdenum Alloy Castings and Casting Alloy for Surgical Implants</em>. ASTM International.</li>
+<li>ASTM F136-13. <em>Standard Specification for Wrought Titanium-6Aluminum-4Vanadium ELI Alloy for Surgical Implant Applications</em>. ASTM International.</li>
+<li>Bragdon CR et al. (2013). Third-body wear of highly cross-linked polyethylene in a hip simulator. <em>J Arthroplasty</em>, 28(7), 1120–1125.</li>
+<li>Buechel FF, Pappas MJ (2004). Long-term survivorship analysis of cruciate-sparing versus cruciate-sacrificing knee prostheses using meniscal bearings. <em>Clin Orthop Relat Res</em>, 429, 227–235.</li>
+<li>Dennis DA et al. (2003). In vivo anteroposterior femorotibial translation of total knee arthroplasty: a multicenter analysis. <em>J Arthroplasty</em>, 18(6 Suppl 1), 6–10.</li>
+<li>Devane PA et al. (1997). Measurement of polyethylene wear in metal-backed acetabular cups. <em>Clin Orthop Relat Res</em>, 344, 159–165.</li>
+<li>Evans JT et al. (2019). How long does a knee replacement last? A systematic review and meta-analysis. <em>Lancet</em>, 393(10172), 655–663.</li>
+<li>Glyn-Jones S et al. (2015). Osteoarthritis. <em>Lancet</em>, 386(9991), 376–387.</li>
+<li>Hofstede SN et al. (2015). Mobile bearing vs fixed bearing prostheses for posterior cruciate retaining total knee arthroplasty. <em>Cochrane Database Syst Rev</em>, (2), CD012108.</li>
+<li>NJR. <em>National Joint Registry for England, Wales, Northern Ireland and the Isle of Man — Annual Report 2023</em>. London: NJR.</li>
+<li>ODEP. <em>Orthopaedic Data Evaluation Panel</em>. www.odep.org.uk.</li>
+<li>Sharkey PF et al. (2014). Why are total knee arthroplasties failing today — Has anything changed after 10 years? <em>Clin Orthop Relat Res</em>, 472(12), 7–15.</li>
+<li>SKAR. <em>Swedish Knee Arthroplasty Register — Annual Report 2023</em>. Lund: SKAR.</li>
+<li>Thyssen JP et al. (2007). The epidemiology of contact allergy in the general population — prevalence and main findings. <em>Contact Dermatitis</em>, 57(5), 287–299.</li>
+</ul>
+<p><em>Fin de la Partie 3 — Implants et Conception (Modules 9-12)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

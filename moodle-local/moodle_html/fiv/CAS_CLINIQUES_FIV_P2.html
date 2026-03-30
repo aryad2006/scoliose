@@ -1,0 +1,591 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-fiv-amp-partie-2-cas-11-a-17">CAS CLINIQUES — FIV / AMP — Partie 2 (Cas 11 à 17)</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-assistance-medicale-a-la-procreation">Formation VERTEX© — Fécondation In Vitro et Assistance Médicale à la Procréation</h2>
+<h3 id="niveaux-argent-et-or">Niveaux Argent 🥈 et Or 🥇</h3>
+<hr />
+<blockquote>
+<p><strong>Instructions pédagogiques</strong> : Les cas de cette partie mobilisent plusieurs modules simultanément et exigent un raisonnement clinique intégratif. Lisez l'intégralité de l'énoncé avant de répondre.</p>
+</blockquote>
+<hr />
+<h2 id="cas-11-monitorage-de-stimulation-decision-de-coasting-vs-trigger-agoniste">CAS 11 🥈 — Monitorage de Stimulation : Décision de Coasting vs Trigger Agoniste</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-11 — Monitorage folliculaire J10 : &gt; 20 follicules, E2 élevé, arbre décisionnel trigger]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme K., 28 ans, 1ère FIV. SOPK modéré (AMH 6,5 ng/mL, CFA 24). Protocole antagoniste, FSH 125 UI/j.</p>
+<p><strong>Monitorage J10</strong> :<br />
+- Échographie : <strong>22 follicules &gt; 14 mm</strong>, dont 10 ≥ 17 mm. Ovaires 8 cm bilatéraux<br />
+- E2 : <strong>5 800 pg/mL</strong> (&gt; 5 000 = seuil d'alerte SHO)<br />
+- Progestérone : 0,9 ng/mL (&lt; 1,5 → pas de lutéinisation prématurée)<br />
+- LH : 1,2 UI/L (supprimée par antagoniste)<br />
+- Endomètre : 10 mm triple ligne</p>
+<hr />
+<p><strong>Q1 🥈</strong> — Analysez les données du monitorage et identifiez les signaux d'alerte.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Signaux d'alerte de SHO sévère</strong> :<br />
+1. <strong>≥ 20 follicules &gt; 14 mm</strong> → critère majeur (ici 22)<br />
+2. <strong>E2 &gt; 5 000 pg/mL</strong> → 2e critère majeur (ici 5 800). Corrélation : ~200-300 pg/mL par follicule ≥ 14 mm (22 × 250 ≈ 5 500 → cohérent)<br />
+3. <strong>SOPK</strong> → facteur de risque principal<br />
+4. <strong>28 ans, 1ère FIV</strong> → pas d'antécédent de réponse connue</p>
+<p><strong>Éléments rassurants</strong> :<br />
+- Progestérone &lt; 1,5 → pas de lutéinisation prématurée<br />
+- Endomètre correct (10 mm triple ligne)<br />
+- Antagoniste en place (LH supprimée)</p>
+<p>→ <strong>Déclenchement possible</strong> (critères atteints : ≥ 3 follicules ≥ 17 mm) mais en mode <strong>sécurité maximale</strong>.</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Le gynécologue hésite entre 3 options : (A) trigger hCG + transfert frais, (B) coasting 2 jours puis trigger hCG, (C) trigger agoniste + freeze-all. Argumentez chaque option et choisissez.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>(A) Trigger hCG + transfert frais</strong> : ❌ <strong>DANGEREUX</strong><br />
+- hCG (demi-vie 5-7 jours) + 22 follicules + E2 5 800 → risque de SHO sévère majeur<br />
+- Si grossesse → SHO tardif aggravé par hCG endogène → potentiellement critique</p>
+<p><strong>(B) Coasting</strong> (arrêt FSH 2 jours, attente que E2 diminue, puis trigger hCG) : ⚠️ <strong>Sous-optimal</strong><br />
+- Le coasting réduit l'E2 mais ne supprime pas le risque de SHO<br />
+- Retarde le déclenchement → certains follicules deviennent post-matures<br />
+- Niveau de preuve faible, résultats inconsistants dans la littérature<br />
+- Si l'E2 reste &gt; 5 000 après coasting, le problème persiste</p>
+<p><strong>(C) Trigger agoniste + freeze-all</strong> : ✅ <strong>CHOIX OPTIMAL</strong><br />
+- Trigger agoniste (Décapeptyl 0,2 mg) → pic LH endogène bref (24-36h) → réduction SHO de 95 % <em>(Youssef 2014)</em><br />
+- Freeze-all → pas d'hCG endogène (pas de grossesse) → pas de SHO tardif<br />
+- Cabergoline 0,5 mg/j × 8 jours en post-ponction (inhibition VEGFR-2)<br />
+- TEC 2-3 mois plus tard<br />
+- Taux cumulatif IDENTIQUE à un transfert frais</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Rappel</strong> : le trigger agoniste est **impossible** en protocole long agoniste (récepteurs GnRH désensibilisés) → une raison de plus pour utiliser le protocole antagoniste en SOPK.</div>
+
+<hr />
+<p><strong>Q3 🥇</strong> — Trigger agoniste réalisé. Ponction 36h plus tard : 20 ovocytes. ICSI : 16 fécondés. J5 : 8 blastocystes vitrifiés. Post-ponction : SHO léger spontanément résolutif à J+5. TEC 3 mois plus tard : transfert d'un 4AA → β-hCG J14 = 320 UI/L. Grossesse évolutive.</p>
+<p><strong>Pourquoi le SHO ne s'est-il pas aggravé ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Le SHO ne s'est pas aggravé grâce à <strong>3 mécanismes de protection combinés</strong> :</p>
+<ol>
+<li><strong>Trigger agoniste</strong> : le pic de LH endogène est court (24-36h) vs hCG (5-7 jours). La stimulation de la granulosa lutéinisée est transitoire → production de VEGF brève et limitée</li>
+<li><strong>Freeze-all</strong> : pas de grossesse → pas d'hCG endogène → pas de SHO tardif (le SHO tardif lié à l'hCG endogène de la grossesse est le plus grave et le plus prolongé)</li>
+<li><strong>Cabergoline</strong> : agoniste dopaminergique D2 → inhibe la phosphorylation de VEGFR-2 → réduit la perméabilité capillaire</li>
+</ol>
+<p>Le SHO léger observé (J+1 à J+5) = SHO précoce résiduel dû à la ponction elle-même et à la lutéinisation transitoire. Auto-résolutif en l'absence d'hCG.</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Trigger agoniste + freeze-all = quasi-éliminateur du SHO sévère<br />
+2. Le coasting est une option sous-optimale et de moins en moins utilisée<br />
+3. SHO précoce (trigger) se résout en 5-7 jours si pas de grossesse<br />
+4. SHO tardif (grossesse) est plus grave et plus prolongé</p>
+</blockquote>
+<hr />
+<h2 id="cas-12-transfert-dembryon-congele-tec-choix-du-protocole-et-complications">CAS 12 🥇 — Transfert d'Embryon Congelé (TEC) : Choix du Protocole et Complications</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-12 — TEC : 3 protocoles (naturel modifié, substitué, stimulé), avantages et risques]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme L., 36 ans, 2 blastocystes vitrifiés (4AB, 3BB) d'un cycle précédent (freeze-all pour progestérone &gt; 1,5 ng/mL au trigger). Cycles réguliers (28 jours). Pas d'endométriose. IMC 23.</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Quel protocole de TEC choisissez-vous pour cette patiente et pourquoi ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p>Trois protocoles possibles, comparaison :</p>
+<table>
+<thead>
+<tr>
+<th>Protocole</th>
+<th>Principe</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Naturel modifié</strong></td>
+<td>Cycle spontané + hCG quand follicule ≥ 17 mm → transfert hCG+5</td>
+<td>Corps jaune naturel, moins de médications</td>
+<td>Surveillance rapprochée, risque d'ovulation prématurée, annulation si anovulation</td>
+</tr>
+<tr>
+<td><strong>Substitué</strong></td>
+<td>E2V croissant → endomètre ≥ 7 mm → progestérone → transfert P+5</td>
+<td>Flexible (planifiable), pas de surveillance folliculaire</td>
+<td><strong>Pas de corps jaune</strong> → risque obstétrical accru (prééclampsie)</td>
+</tr>
+<tr>
+<td><strong>Stimulé</strong></td>
+<td>FSH faibles doses → follicule → hCG → transfert hCG+5</td>
+<td>Corps jaune, bon contrôle</td>
+<td>Risque de réponse multifolliculaire</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choix pour Mme L.</strong> : <strong>Cycle naturel modifié</strong> (préféré car cycles réguliers, pas d'anovulation, corps jaune physiologique, absence de risque obstétrical lié au cycle substitué).</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Point critique</strong> : le cycle substitué sans corps jaune est associé à un **risque accru de prééclampsie** *(Von Versen-Hoynck, Hypertension 2020)*. Chez une patiente avec cycles réguliers, le cycle naturel modifié est préférable.</div>
+
+<hr />
+<p><strong>Q2 🥇</strong> — Cycle naturel modifié. J12 : follicule dominant 18 mm, E2 = 250 pg/mL, LH 8 UI/L (pas encore de pic). Vous déclenchez par hCG 5 000 UI. Quand planifiez-vous le transfert du blastocyste et quel soutien lutéal prescrivez-vous ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<ul>
+<li><strong>Transfert</strong> : à <strong>hCG + 5 jours</strong> (= 5 jours après le trigger hCG, correspondant à J5 de développement embryonnaire = stade blastocyste)</li>
+<li><strong>Jour du transfert</strong> : si hCG à J12 → transfert à J17</li>
+<li><strong>Décongélation</strong> (réchauffement) du meilleur blastocyste (4AB) le matin du transfert</li>
+<li><strong>Soutien lutéal</strong> : progestérone vaginale 200 mg × 2-3/j, débutée le soir du trigger. En cycle naturel modifié, le corps jaune produit déjà de la progestérone → le soutien est un complément</li>
+<li><strong>β-hCG</strong> : J12 post-transfert</li>
+</ul>
+<hr />
+<p><strong>Q3 🥇</strong> — β-hCG J12 = 195 UI/L. β-hCG J14 = 410 UI/L. Échographie 6 SA : sac intra-utérin, vésicule vitelline visible, pas encore d'activité cardiaque. Contrôle 7 SA : activité cardiaque positive, embryon 8 mm. Grossesse évolutive.</p>
+<p><strong>Si la patiente avait eu un cycle substitué, quels risques obstétricaux spécifiques auraient été accrus ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Risques spécifiques du <strong>cycle substitué (pas de corps jaune)</strong> :<br />
+1. <strong>Prééclampsie</strong> : risque accru par l'absence de corps jaune → absence de relaxine et de VEGF physiologiques du corps jaune qui contribuent à l'adaptation vasculaire maternelle <em>(Von Versen-Hoynck, Hypertension 2020)</em><br />
+2. <strong>HTA gravidique</strong><br />
+3. <strong>Saignement du 1er trimestre</strong> : plus fréquent si soutien lutéal insuffisant<br />
+4. <strong>Insuffisance placentaire</strong> potentielle</p>
+<p>Le corps jaune produit non seulement de la progestérone mais aussi de la relaxine, du VEGF et des prostaglandines qui favorisent l'adaptation vasculaire maternelle au 1er trimestre. En cycle substitué, toute cette biologie est absente.</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Cycle naturel modifié préférable si cycles réguliers (corps jaune = protection)<br />
+2. Blastocyste vitrification → transfert à hCG+5 (naturel modifié) ou P+5 (substitué)<br />
+3. Le cycle substitué augmente le risque de prééclampsie (absence de corps jaune)<br />
+4. Taux de survie post-réchauffement blastocyste &gt; 95-99 %</p>
+</blockquote>
+<hr />
+<h2 id="cas-13-sho-severe-tardif-avec-grossesse-prise-en-charge-hospitaliere">CAS 13 🥇 — SHO Sévère Tardif avec Grossesse : Prise en Charge Hospitalière</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-13 — SHO sévère tardif : cascade physiopathologique VEGF, critères Golan, prise en charge hospitalière]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme M., 30 ans, FIV-ICSI avec transfert frais (trigger hCG dans un autre centre). À J16 post-transfert : β-hCG = 680 UI/L (grossesse débutante). À J20 : douleurs abdominales diffuses, distension majeure, dyspnée de décubitus, prise de poids 4 kg en 4 jours. Oligurie (400 mL/24h).</p>
+<p><strong>Bilan aux urgences</strong> :<br />
+- Hématocrite : <strong>48 %</strong> (N &lt; 45 %)<br />
+- Leucocytes : 22 G/L<br />
+- Créatinine : <strong>135 µmol/L</strong> (N &lt; 90)<br />
+- Albumine : <strong>22 g/L</strong> (N 35-50)<br />
+- ASAT/ALAT : 65/72 UI/L (élevées)<br />
+- Na⁺ : 128 mmol/L (hyponatrémie de dilution)<br />
+- Échographie : ovaires 15 cm bilatéraux, <strong>ascite abondante</strong>, épanchement pleural droit modéré</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Classifiez ce SHO et expliquez pourquoi il est tardif.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>SHO sévère/critique</strong> (classification Golan) :<br />
+- Ht &gt; 45 % ✅ (48 %)<br />
+- Oligurie &lt; 500 mL/24h ✅ (400 mL)<br />
+- Créatinine élevée ✅ (135 µmol/L)<br />
+- Ascite tendue + épanchement pleural ✅<br />
+- Hypoalbuminémie sévère ✅ (22 g/L)<br />
+- Ovaires &gt; 12 cm ✅ (15 cm)<br />
+- Cytolyse hépatique ✅</p>
+<p><strong>SHO tardif</strong> : apparition à J16-J20 post-transfert. Le SHO tardif est lié à l'<strong>hCG endogène</strong> de la grossesse débutante (β-hCG 680 UI/L → production continue de VEGF par la granulosa lutéinisée). Le SHO précoce (J3-J7) est lié à l'hCG du trigger et s'auto-résout. Le tardif est <strong>auto-entretenu</strong> par la grossesse → plus grave, plus prolongé (2-4 semaines).</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Détaillez votre prise en charge hospitalière complète.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Hospitalisation en service de soins intensifs gynécologiques</strong> :</p>
+<p><strong>1. Remplissage vasculaire</strong> :<br />
+- NaCl 0,9 % IV : 1-2 L dans les 2 premières heures, puis ajusté à la diurèse (objectif &gt; 0,5 mL/kg/h)<br />
+- Ringer Lactate possible en alternative<br />
+- Surveillance horaire de la diurèse (sonde urinaire si oligurie &lt; 0,5 mL/kg/h)</p>
+<p><strong>2. Correction de l'hypoalbuminémie</strong> :<br />
+- <strong>Albumine 20 %</strong> : perfusion car albuminémie &lt; 30 g/L → restaurer la pression oncotique → mobiliser les fluides du 3e secteur<br />
+- Objectif albumine &gt; 25 g/L</p>
+<p><strong>3. Anticoagulation prophylactique</strong> :<br />
+- <strong>Enoxaparine 40 mg/j SC</strong> (HBPM) : risque thrombotique 4-10 % des SHO sévères<br />
+- Territoires inhabituels : jugulaire interne, sinus veineux cérébral, Budd-Chiari (veines sus-hépatiques)<br />
+- À poursuivre jusqu'à résolution complète du SHO</p>
+<p><strong>4. Paracentèse échoguidée</strong> :<br />
+- Indication : ascite tendue avec gêne respiratoire, dyspnée de décubitus<br />
+- Drainage lent (500-1 000 mL/h) pour éviter l'hypotension<br />
+- Peut être répétée (tous les 2-3 jours si réaccumulation)</p>
+<p><strong>5. Surveillance</strong> :<br />
+- Poids 2×/j, périmètre abdominal<br />
+- Bilan quotidien : Ht, NFS, créatinine, ionogramme, albumine, bilan hépatique<br />
+- Diurèse horaire<br />
+- SpO₂ continue (épanchement pleural → insuffisance respiratoire possible)<br />
+- Échographie de contrôle à J+3</p>
+<p><strong>6. Médicaments</strong> :<br />
+- <strong>Paracétamol</strong> pour la douleur<br />
+- <strong>AINS CONTRE-INDIQUÉS</strong> (néphrotoxicité → aggravation de l'insuffisance rénale)<br />
+- <strong>Diurétiques CONTRE-INDIQUÉS</strong> (aggraveraient l'hémoconcentration et la thrombose — l'oligurie est fonctionnelle, liée à la fuite vers le 3e secteur)</p>
+<p><strong>7. Ne PAS interrompre la grossesse</strong> sauf détresse vitale maternelle incontrôlable. Le SHO se résout spontanément en 2-4 semaines avec la stabilisation du β-hCG.</p>
+<hr />
+<p><strong>Q3 🥇</strong> — À J+3 d'hospitalisation : Ht 42 % (amélioration), diurèse 1 200 mL/24h, créatinine 95 µmol/L, albumine 28 g/L. Paracentèse réalisée (2 L drainés). La patiente va mieux mais demande : « Docteur, pourquoi mon ancien centre m'a-t-il fait un transfert frais alors que c'était risqué ? »</p>
+<p><strong>Comment répondez-vous ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p>Réponse honnête et professionnelle :</p>
+<ol>
+<li>
+<p><strong>Le transfert frais après trigger hCG dans un contexte de réponse excessive était un choix à haut risque</strong>. Les recommandations actuelles préconisent le <strong>trigger agoniste + freeze-all</strong> chez les patientes à risque de SHO (SOPK, &gt; 15-20 follicules, E2 &gt; 3 500-5 000 pg/mL)</p>
+</li>
+<li>
+<p><strong>Cependant</strong>, tous les centres ne suivent pas les mêmes protocoles, et le jugement clinique au moment du déclenchement peut varier. Certains centres privilégient encore le transfert frais pour des raisons de taux de grossesse par cycle (pression économique, indicateurs)</p>
+</li>
+<li>
+<p><strong>Le plus important maintenant</strong> est que la grossesse évolue et que le SHO est en cours de résolution. La survie maternelle n'est quasiment jamais en jeu si le SHO est correctement pris en charge</p>
+</li>
+<li>
+<p><strong>Pour les futurs cycles</strong> (si cette grossesse ne va pas à terme) : demander systématiquement un protocole antagoniste + trigger agoniste + freeze-all</p>
+</li>
+</ol>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Leçon</strong> : ce cas illustre l'importance du protocole **antagoniste + trigger agoniste + freeze-all** chez toute patiente à risque de SHO. Le SHO sévère tardif est quasi éliminable.</div>
+
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. SHO tardif = lié à l'hCG endogène de la grossesse (auto-entretenu, plus grave)<br />
+2. AINS et diurétiques = CONTRE-INDIQUÉS dans le SHO<br />
+3. Remplissage + albumine + HBPM + paracentèse = piliers du traitement<br />
+4. Thrombose dans 4-10 % des SHO sévères (territoires inhabituels)<br />
+5. Ne pas interrompre la grossesse sauf détresse vitale</p>
+</blockquote>
+<hr />
+<h2 id="cas-14-pgt-a-chez-la-patiente-de-40-ans-benefice-limites-et-mosaicisme">CAS 14 🥇 — PGT-A chez la Patiente de 40 Ans : Bénéfice, Limites et Mosaïcisme</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-14 — PGT-A : biopsie trophectoderme J5, résultats NGS, dilemme du mosaïcisme]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme N., 40 ans, cadre supérieure. 2e FIV-ICSI. AMH 1,2 ng/mL, CFA 7.</p>
+<p><strong>1ère FIV</strong> : 6 ovocytes, 5 MII, 4 fécondés, 2 blastocystes transférés (sans PGT-A) → β-hCG positif → FC à 9 SA (trisomie 16 à l'analyse du produit d'expulsion).</p>
+<p><strong>2e FIV</strong> : 7 ovocytes, 6 MII, 5 fécondés. J5 : 3 blastocystes vitrifiés. Le couple demande un PGT-A.</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Le PGT-A est-il justifié chez cette patiente ? Argumentez.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Oui, le PGT-A est raisonnablement justifié ici.</strong> Arguments :</p>
+<p><strong>POUR</strong> :<br />
+- 40 ans → taux d'aneuploïdie <strong>50-60 %</strong> des embryons<br />
+- ATCD de FC sur trisomie 16 → confirmation que l'aneuploïdie est un problème actif<br />
+- Bénéfice démontré chez les &gt; 38 ans : <strong>52 % vs 33 %</strong> taux de naissance par transfert <em>(Rubio 2017)</em><br />
+- Réduction du risque de FC (évite de transférer des embryons trisomiques)<br />
+- Réduction du « temps vers le bébé » (pas de transferts inutiles)</p>
+<p><strong>CONTRE</strong> (limites à expliquer au couple) :<br />
+- 3 blastocystes seulement → si tous aneuploïdes, <strong>rien à transférer</strong><br />
+- STAR trial (Munné 2019) : pas de bénéfice cumulatif (mais population &lt; 38 ans)<br />
+- <strong>Mosaïcisme</strong> : biopsie de 5-10 cellules de trophectoderme ≠ reflet exact de l'embryon entier. Faux positifs possibles (embryons viables classés aneuploïdes)</p>
+<p><strong>Décision</strong> : PGT-A raisonnable. Counseling génétique obligatoire. Informer sur le risque de « tout perdre ».</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Résultats PGT-A (NGS sur biopsie trophectoderme) :<br />
+- Embryon 1 (4AA) : <strong>Trisomie 21</strong> → aneuploïde<br />
+- Embryon 2 (3AB) : <strong>Euploïde 46,XY</strong> → transférable<br />
+- Embryon 3 (3BB) : <strong>Mosaïque trisomie 8, 25 %</strong> → intermédiaire</p>
+<p><strong>Interprétez chaque résultat.</strong></p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Embryon 1 (T21)</strong> : non transférable. La trisomie 21 est l'aneuploïdie autosomique viable la plus fréquente mais aboutit au syndrome de Down → transfert exclu.</p>
+<p><strong>Embryon 2 (euploïde 46,XY)</strong> : <strong>candidat prioritaire au transfert</strong>. Taux d'implantation attendu ~45-50 % en euploïde confirmé à 40 ans.</p>
+<p><strong>Embryon 3 (mosaïque T8, 25 %)</strong> :<br />
+- Mosaïcisme <strong>faible</strong> (&lt; 40 %) → possibilité d'autocorrection embryonnaire <em>(confinement placentaire)</em><br />
+- La trisomie 8 complète est rare mais viable (syndrome de Warkany)<br />
+- La biopsie de trophectoderme ne reflète pas nécessairement l'ICM → la mosaïque peut être limitée au placenta<br />
+- <strong>Position PGDIS 2019</strong> : les mosaïques faibles peuvent être transférées APRÈS l'euploïde, avec counseling génétique et consentement éclairé<br />
+- En pratique : garder l'embryon 3 en réserve si l'embryon 2 échoue</p>
+<hr />
+<p><strong>Q3 🥇</strong> — Transfert de l'embryon 2 (euploïde). β-hCG J14 = 380 UI/L. Grossesse évolutive. Le couple demande : « Si ça n'avait pas marché, aurait-on pu transférer l'embryon mosaïque ? Et y a-t-il un risque pour l'enfant à naître d'un embryon euploïde au PGT-A ? »</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Sur l'embryon mosaïque</strong> :<br />
+- Oui, un transfert de mosaïque faible est envisageable en 2e intention (PGDIS 2019)<br />
+- Counseling : risque de trisomie 8 en mosaïque &lt; 5 % (autocorrection fréquente)<br />
+- Suivi : amniocentèse recommandée si grossesse (vérification caryotype fœtal)<br />
+- Hiérarchie des mosaïques : les monosomies et trisomies autosomiques non viables (T13, T18, T21) ne sont jamais transférées ; les mosaïques d'aneuploïdies rarement viables et à faible pourcentage peuvent être discutées</p>
+<p><strong>Sur le risque pour l'enfant euploïde</strong> :<br />
+- Le PGT-A réduit le risque d'aneuploïdie mais <strong>n'élimine pas 100 % des risques</strong> :<br />
+  - Concordance biopsie-embryon : ~95-98 % (erreurs possibles)<br />
+  - L'amniocentèse standard (T13, T18, T21) reste proposée selon l'âge et le souhait du couple<br />
+  - Le PGT-A ne détecte pas les anomalies géniques (mutations ponctuelles) ni les anomalies de structure &lt; 5-10 Mb<br />
+- Les enfants nés après PGT-A n'ont pas de risque accru de malformations par rapport à la FIV sans PGT-A</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. PGT-A raisonnable chez &gt; 38 ans (Rubio 2017 : 52 % vs 33 %)<br />
+2. Mosaïcisme faible peut être transféré en 2e intention (counseling + amniocentèse)<br />
+3. La biopsie de trophectoderme n'est pas représentative à 100 %<br />
+4. PGT-A réduit le risque mais n'élimine pas 100 % des aneuploïdies</p>
+</blockquote>
+<hr />
+<h2 id="cas-15-grossesse-heterotopique-post-fiv-diagnostic-et-prise-en-charge">CAS 15 🥇 — Grossesse Hétérotopique Post-FIV : Diagnostic et Prise en Charge</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-15 — Grossesse hétérotopique post-FIV : sac intra-utérin + masse annexielle, incidence 1/100 en AMP]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme O., 34 ans. FIV-ICSI avec DET (double transfert, centre étranger). β-hCG J14 = 1 200 UI/L (élevé). Échographie 5,5 SA : sac intra-utérin + image annexielle gauche suspecte (masse hétérogène 15 mm, halo vasculaire au Doppler).</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Quel diagnostic évoquez-vous et quelle est l'incidence en AMP ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Grossesse hétérotopique</strong> : coexistence d'une grossesse intra-utérine (GIU) et d'une grossesse extra-utérine (GEU) simultanées.</p>
+<p><strong>Incidence</strong> :<br />
+- En grossesse spontanée : extrêmement rare (1/30 000)<br />
+- <strong>En AMP : 1/100</strong> (× 300) — due au transfert de plusieurs embryons et aux manipulations utérines</p>
+<p>Ici, le DET (double transfert) augmente encore le risque. Le β-hCG très élevé (1 200 à J14) est cohérent avec 2 sites d'implantation.</p>
+<hr />
+<p><strong>Q2 🥇</strong> — L'image annexielle se confirme à l'échographie de contrôle J+5 : masse de 20 mm, activité cardiaque dans la masse annexielle. GIU : sac 12 mm, vésicule vitelline visible. Quelle est votre prise en charge ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Prise en charge chirurgicale de la GEU en préservant la GIU</strong> :</p>
+<ol>
+<li><strong>Cœlioscopie</strong> en semi-urgence (pas d'attente car risque de rupture tubaire)</li>
+<li><strong>Salpingectomie gauche</strong> (ablation de la trompe portant la GEU). La salpingotomie conservatrice est moins sûre et risque de laisser du tissu trophoblastique → β-hCG persistant</li>
+<li><strong>Pas de méthotrexate</strong> : CONTRE-INDIQUÉ car il détruirait aussi la GIU</li>
+<li><strong>Manipulation douce</strong> : minimiser le traumatisme utérin pendant la cœlioscopie</li>
+<li><strong>Surveillance post-opératoire</strong> : β-hCG à J+3 et J+7 (devrait diminuer transitoirement puis reprendre la cinétique de la GIU seule)</li>
+<li><strong>Échographie de contrôle</strong> : vérifier la vitalité de la GIU à J+7 post-opératoire</li>
+</ol>
+<hr />
+<p><strong>Q3 🥇</strong> — Post-op : β-hCG J+3 = 800 UI/L (baisse transitoire attendue), puis J+10 = 2 500 UI/L (reprise de l'ascension). Écho : GIU évolutive, embryon avec activité cardiaque. Grossesse unique évolutive.</p>
+<p><strong>Comment aurait-on pu prévenir cette complication ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Prévention</strong> :<br />
+1. <strong>SET (Single Embryo Transfer)</strong> au lieu du DET → réduit le taux de grossesse gémellaire (20-25 % → 2-3 %) ET le risque de grossesse hétérotopique<br />
+2. Le SET cumulé (frais + TEC) donne un taux de naissance comparable au DET <em>(Pandian, Cochrane 2013)</em><br />
+3. Le DET n'est plus recommandé chez &lt; 38 ans, 1er-2e cycle, avec blastocystes de bonne qualité<br />
+4. La politique de transfert doit être discutée AVANT le cycle, pas le jour du transfert</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège diagnostique</strong> : en AMP, une β-hCG élevée + image annexielle = toujours évoquer la grossesse hétérotopique AVANT de rassurer sur la GIU.</div>
+
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Grossesse hétérotopique : 1/100 en AMP (vs 1/30 000 en spontané)<br />
+2. Méthotrexate = CONTRE-INDIQUÉ si GIU associée<br />
+3. Salpingectomie par cœlioscopie en préservant la GIU<br />
+4. SET = prévention des grossesses multiples et hétérotopiques</p>
+</blockquote>
+<hr />
+<h2 id="cas-16-endometrite-chronique-et-echec-repete-dimplantation-rif">CAS 16 🥇 — Endométrite Chronique et Échec Répété d'Implantation (RIF)</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-16 — RIF : bilan de 2e intention, biopsie endométriale CD138, traitement antibiotique]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme P., 34 ans. 3 transferts de blastocystes de bonne qualité (2 × 4AA, 1 × 4AB), 0 grossesse. Bilan standard normal (trompes, cavité utérine, spermogramme, caryotypes, SAPL négatif).</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Définissez le RIF et énumérez les causes à rechercher.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>RIF (Repeated Implantation Failure)</strong> : absence de grossesse clinique après le transfert de ≥ 3 embryons de bonne qualité ou ≥ 2 blastocystes chez une femme &lt; 40 ans.</p>
+<p><strong>Causes</strong> (par fréquence) :<br />
+1. <strong>Facteur embryonnaire</strong> (50-60 %) : aneuploïdie non détectée (pas de PGT-A), qualité ovocytaire/spermatique<br />
+2. <strong>Facteur endométrial</strong> (20-30 %) :<br />
+   - <strong>Endométrite chronique</strong> : prévalence 30-40 % dans le RIF <em>(Cicinelli 2015)</em><br />
+   - Polype, cloison, synéchie (déjà exclus par hystéroscopie)<br />
+   - Adénomyose<br />
+   - Fenêtre d'implantation déplacée (ERA)<br />
+3. <strong>Facteur immunologique</strong> (5-10 %) : SAPL, facteurs thrombophiliques<br />
+4. <strong>Facteur masculin occulte</strong> (5-10 %) : DFI élevé malgré spermogramme normal<br />
+5. <strong>Inexpliqué</strong> (10-20 %)</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Vous prescrivez une biopsie endométriale. Résultat : <strong>CD138 = 8/10 HPF</strong> (seuil ≥ 1/10 HPF). Diagnostic ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Endométrite chronique</strong> confirmée.</p>
+<p>Les plasmocytes (CD138+) dans le stroma endométrial signent une inflammation chronique asymptomatique. Contrairement à l'endométrite aiguë (fièvre, douleurs), l'endométrite chronique est <strong>silencieuse</strong> — l'hystéroscopie peut être normale (sensibilité limitée : micro-polypes, hyperémie focale, aspect fraise — mais souvent manqués).</p>
+<p><strong>Prévalence</strong> : 30-40 % dans le RIF, vs 10-15 % dans la population infertile générale.</p>
+<p><strong>Germes impliqués</strong> : Ureaplasma, Mycoplasma, Chlamydia, entérobactéries, streptocoque B.</p>
+<hr />
+<p><strong>Q3 🥇</strong> — Détaillez votre traitement et le suivi.</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Traitement</strong> :<br />
+1. <strong>1ère ligne</strong> : <strong>doxycycline 200 mg/j × 14 jours</strong> (100 mg × 2/j)<br />
+2. Si allergie tétracyclines : azithromycine 500 mg J1 puis 250 mg J2-J5, ou métronidazole + ciprofloxacine<br />
+3. <strong>Probiotiques vaginaux</strong> en complément (restauration du microbiome — lactobacilles)</p>
+<p><strong>Suivi</strong> :<br />
+1. <strong>Biopsie endométriale de contrôle</strong> à M+1 (cycle suivant) : CD138 doit être &lt; 1/10 HPF<br />
+2. <strong>Taux de guérison</strong> : 60-70 % après 1ère ligne <em>(Cicinelli 2015)</em><br />
+3. Si persistance : 2e ligne antibiotique (adapter selon culture endométriale si disponible), considérer EMMA/ALICE (analyse du microbiome endométrial)<br />
+4. <strong>Si guérison confirmée</strong> → TEC au cycle suivant avec le protocole habituel</p>
+<p><strong>Pronostic post-traitement</strong> : amélioration significative des taux d'implantation après guérison de l'endométrite chronique.</p>
+<hr />
+<p><strong>Q4 🥇</strong> — Biopsie de contrôle M+1 : CD138 = 0/10 HPF → guérie. TEC du 4AA restant → β-hCG J14 = 290 UI/L → grossesse évolutive.</p>
+<p><strong>Quels examens NE faut-il PAS recommander en routine dans le RIF ?</strong></p>
+<p><strong>Réponse Q4</strong> :</p>
+<p><strong>Examens NON recommandés en routine</strong> :<br />
+1. <strong>Scratching endométrial</strong> : RÉFUTÉ par Lensen (NEJM 2019, n=1 364). Aucun bénéfice<br />
+2. <strong>NK circulantes</strong> (cellules Natural Killer sanguines) : les NK sanguines ne reflètent PAS les NK utérines. Dosage NON informatif pour l'endomètre<br />
+3. <strong>PRP intra-utérin</strong> : en recherche, pas de bénéfice prouvé par RCT<br />
+4. <strong>G-CSF</strong> : résultats contradictoires, pas recommandé en routine<br />
+5. <strong>GH (hormone de croissance)</strong> : quelques données mais pas de RCT robuste</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège</strong> : beaucoup de ces traitements sont proposés par des centres « add-on friendly » sans validation. Le système HFEA « traffic light » classe ces interventions selon leur niveau de preuve (vert/ambre/rouge).</div>
+
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. RIF : biopsie endométriale CD138 = examen clé (30-40 % d'endométrite chronique)<br />
+2. Doxycycline 200 mg/j × 14 jours = 1ère ligne<br />
+3. Contrôle biopsie à M+1 obligatoire<br />
+4. Scratching = RÉFUTÉ (Lensen, NEJM 2019)<br />
+5. NK circulantes = NON informatives pour l'endomètre</p>
+</blockquote>
+<hr />
+<h2 id="cas-17-ethique-et-decision-partagee-embryons-surnumeraires-et-fin-de-projet-parental">CAS 17 🥇 — Éthique et Décision Partagée : Embryons Surnuméraires et Fin de Projet Parental</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-17 — Devenir des embryons surnuméraires : 4 options légales en France, arbre décisionnel]</p>
+</blockquote>
+<p><strong>Patients</strong> : Mme et M. Q. — 38 et 40 ans. 2 enfants nés par FIV (2022 et 2024). Projet parental terminé. <strong>5 embryons vitrifiés</strong> restants au centre d'AMP. Le centre les contacte pour la consultation annuelle sur le devenir des embryons.</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Quelles sont les 4 options légales en France pour le devenir des embryons surnuméraires ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p>Les 4 options légales (loi de bioéthique) :</p>
+<ol>
+<li><strong>Poursuite du projet parental</strong> : les embryons restent vitrifiés pour un futur transfert. Le couple confirme chaque année</li>
+<li><strong>Don à un autre couple</strong> (accueil d'embryons) : anonymat, autorisation du Tribunal de Grande Instance. ~200-300 cas/an en France. L'enfant issu du don pourra accéder à ses origines à sa majorité (loi 2021)</li>
+<li><strong>Don à la recherche scientifique</strong> : régime de déclaration (loi 2021). Règle des 14 jours (développement in vitro max 14 jours). Recherche sur cellules souches embryonnaires, développement embryonnaire précoce</li>
+<li><strong>Destruction</strong> (cessation de conservation) : après confirmation écrite des deux membres du couple. Délai de réflexion de 3 mois</li>
+</ol>
+<p><strong>En cas de désaccord</strong> entre les deux membres : les embryons sont <strong>conservés</strong> jusqu'à accord. En cas de divorce/séparation : les deux doivent consentir. Si l'un refuse toute option, conservation maintenue.</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Le couple est divisé : Mme Q. souhaite le don à un autre couple. M. Q. souhaite la destruction. Comment gérez-vous cette situation ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<ol>
+<li>
+<p><strong>Écoute des deux positions</strong> : chacun doit pouvoir exprimer ses motivations sans jugement<br />
+   - Mme Q. : peut ressentir un lien émotionnel avec les embryons, ne souhaite pas leur destruction, valorise l'idée d'aider un couple infertile<br />
+   - M. Q. : peut ressentir un malaise à l'idée d'un enfant génétiquement sien élevé par un autre couple, crainte de « frères/sœurs inconnus »</p>
+</li>
+<li>
+<p><strong>Cadre légal</strong> : en cas de désaccord, <strong>aucune option ne peut être imposée</strong>. Les embryons restent conservés tant que le désaccord persiste. Le centre ne peut pas détruire ni donner sans l'accord des deux</p>
+</li>
+<li>
+<p><strong>Proposition</strong> :<br />
+   - Orienter vers un <strong>psychologue spécialisé en AMP</strong> pour accompagner la réflexion<br />
+   - Proposer un <strong>délai</strong> (6 mois-1 an) et une nouvelle consultation<br />
+   - Explorer l'option du <strong>don à la recherche</strong> comme compromis potentiel (les embryons ne donnent pas naissance à un enfant mais contribuent à la science)<br />
+   - Informer que la conservation peut durer longtemps (pas de limite légale absolue) mais que le centre sollicitera une confirmation annuelle</p>
+</li>
+<li>
+<p><strong>Ne jamais</strong> : forcer une décision, minimiser l'attachement émotionnel, culpabiliser l'un des partenaires</p>
+</li>
+</ol>
+<hr />
+<p><strong>Q3 🥈</strong> — Finalement, après 6 mois de réflexion et un accompagnement psychologique, le couple consent au don à la recherche. Quels sont les cadres réglementaires de la recherche sur l'embryon en France ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Cadre réglementaire (loi 2021)</strong> :<br />
+1. <strong>Régime de déclaration</strong> auprès de l'ABM (Agence de la Biomédecine) — plus d'autorisation préalable<br />
+2. <strong>Consentement écrit</strong> des deux membres du couple, révocable à tout moment<br />
+3. <strong>Règle des 14 jours</strong> : l'embryon ne peut être cultivé in vitro au-delà de 14 jours de développement<br />
+4. <strong>Projets autorisés</strong> : recherche fondamentale sur le développement embryonnaire, dérivation de cellules souches embryonnaires (lignées hES), tests de médicaments sur modèle embryonnaire<br />
+5. <strong>Interdit</strong> : CRISPR germinal sur embryon destiné à un projet parental, développement au-delà de 14 jours, implantation d'un embryon ayant subi une modification génétique<br />
+6. <strong>Comité d'éthique</strong> de l'institution de recherche = avis consultatif<br />
+7. L'embryon ne peut être réimplanté après avoir été utilisé en recherche</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. 4 options légales pour les embryons surnuméraires en France<br />
+2. En cas de désaccord : conservation maintenue, aucune option imposable<br />
+3. Accompagnement psychologique essentiel dans cette décision<br />
+4. Recherche sur embryon : régime de déclaration (2021), règle des 14 jours<br />
+5. L'accueil d'embryons reste rare (~200-300 cas/an en France)</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 2 — 7 cas cliniques (2 Argent, 5 Or)</em></p>
+<hr />
+<p><strong>Récapitulatif Partie 2 :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cas</th>
+<th>Niveau</th>
+<th>Thème</th>
+<th>Modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>🥈🥇</td>
+<td>Monitorage, coasting vs trigger agoniste</td>
+<td>M14, M15, M36</td>
+</tr>
+<tr>
+<td>12</td>
+<td>🥇</td>
+<td>TEC : choix du protocole, risques du cycle substitué</td>
+<td>M24, M22</td>
+</tr>
+<tr>
+<td>13</td>
+<td>🥇</td>
+<td>SHO sévère tardif avec grossesse</td>
+<td>M36, M15</td>
+</tr>
+<tr>
+<td>14</td>
+<td>🥇</td>
+<td>PGT-A à 40 ans, mosaïcisme</td>
+<td>M26, M39</td>
+</tr>
+<tr>
+<td>15</td>
+<td>🥇</td>
+<td>Grossesse hétérotopique post-FIV</td>
+<td>M22, M32, M20</td>
+</tr>
+<tr>
+<td>16</td>
+<td>🥇</td>
+<td>RIF, endométrite chronique, CD138</td>
+<td>M38, M30</td>
+</tr>
+<tr>
+<td>17</td>
+<td>🥇🥈</td>
+<td>Éthique : embryons surnuméraires, décision partagée</td>
+<td>M41, M42</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>CAS_CLINIQUES_FIV_P2.md — Formation VERTEX© FIV/AMP — 20 mars 2026</em></p>
+</div>

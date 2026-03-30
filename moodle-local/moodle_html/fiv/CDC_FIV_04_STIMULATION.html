@@ -1,0 +1,1231 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-fiv-et-amp">CAHIER DES CHARGES — FORMATION FIV ET AMP</h1>
+<h2 id="partie-4-stimulation-ovarienne-modules-12-15">Partie 4 — Stimulation ovarienne (Modules 12-15)</h2>
+<p><strong>Date</strong> : 17 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Fécondation In Vitro et Assistance Médicale à la Procréation<br />
+<strong>Plateforme</strong> : VERTEX© / ReproSim©</p>
+<hr />
+<h1 id="module-12-pharmacologie-de-la-stimulation-ovarienne-des-gonadotrophines-aux-analogues-du-gnrh">MODULE 12 : PHARMACOLOGIE DE LA STIMULATION OVARIENNE — DES GONADOTROPHINES AUX ANALOGUES DU GnRH</h1>
+<p><strong>Partie</strong> : IV — Stimulation ovarienne<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 4-7 (anatomie et physiologie de la reproduction), Module 8 (bilan d'infertilité), Modules 9-11 (réserve ovarienne, folliculogenèse, spermatogenèse)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🟣 BIOLOGISTE 🟠 PHARMACIEN</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme R., 33 ans, SOPK confirmé (AMH 9,2 ng/mL, CFA 38), est adressée pour sa première tentative de FIV après échec de 4 cycles d'IIU sous clomifène. Vous prescrivez une stimulation en protocole antagoniste avec FSH recombinante. L'interne vous demande : *« Pourquoi ne prescrit-on pas un protocole long agoniste ici ? Et pourquoi Rekovelle plutôt que Gonal-F ? La follitropine delta, c'est quoi la différence avec la follitropine alpha ? »* Derrière ces questions se cache toute la pharmacologie de la stimulation ovarienne — un arsenal thérapeutique riche, en constante évolution, dont la maîtrise conditionne directement le succès de chaque cycle de FIV et la sécurité de chaque patiente.</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'axe hypothalamo-hypophyso-gonadique (HHG) et le rôle de la GnRH pulsatile dans la régulation de la sécrétion de FSH et LH, en expliquant comment les protocoles de stimulation exploitent ou détournent cette physiologie</li>
+<li><strong>Différencier</strong> les gonadotrophines exogènes disponibles (FSH recombinante — follitropine alpha, bêta, delta ; FSH urinaire purifiée ; HMG ; LH recombinante ; corifollitropine alfa) selon leur pharmacocinétique, leur mode d'action et leurs indications spécifiques</li>
+<li><strong>Expliquer</strong> les mécanismes d'action des analogues agonistes du GnRH (flare-up puis down-regulation) et des antagonistes du GnRH (blocage compétitif immédiat), et justifier le choix de l'un ou l'autre selon le profil de la patiente</li>
+<li><strong>Maîtriser</strong> la pharmacologie du déclenchement de l'ovulation (hCG, agoniste GnRH, kisspeptine) et ses implications pour la prévention du SHO</li>
+<li><strong>Intégrer</strong> le rôle du clomifène et du létrozole dans les stratégies de mild stimulation et d'IIU, en identifiant leurs avantages et limites pharmacologiques</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-121-rappel-de-laxe-hypothalamo-hypophyso-gonadique-la-physiologie-que-la-stimulation-detourne">Section 12.1 — Rappel de l'axe hypothalamo-hypophyso-gonadique : la physiologie que la stimulation détourne</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi la GnRH est-elle sécrétée de manière pulsatile et non continue ? Que se passe-t-il si l'on administre un analogue de la GnRH en continu pendant 14 jours — et pourquoi exploite-t-on cet effet en FIV ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'axe HHG comme un système de régulation finement orchestré, dont la compréhension est indispensable pour rationaliser chaque prescription de stimulation ovarienne :</p>
+<ul>
+<li>
+<p><strong>GnRH pulsatile — le chef d'orchestre</strong> : le module doit expliquer que la GnRH (<em>Gonadotropin-Releasing Hormone</em>) est un décapeptide sécrété par les neurones hypothalamiques du noyau arqué de manière <strong>pulsatile</strong> — environ un pulse toutes les 60-90 minutes en phase folliculaire, s'accélérant en période préovulatoire, et se ralentissant en phase lutéale (~180-240 min). Cette pulsatilité est essentielle : une fréquence rapide favorise la sécrétion de <strong>LH</strong>, une fréquence lente favorise la sécrétion de <strong>FSH</strong> <em>(Knobil, Science, 1980 ; Belchetz et al., Science, 1978)</em>. L'administration <strong>continue</strong> de GnRH (ou d'un agoniste) provoque une phase initiale de stimulation (<em>flare-up</em>) suivie d'une <strong>désensibilisation</strong> des récepteurs hypophysaires (down-regulation) — c'est le fondement pharmacologique des protocoles agonistes longs.</p>
+</li>
+<li>
+<p><strong>FSH et LH endogènes — les effecteurs ovariens</strong> : le module doit détailler les rôles complémentaires de la FSH (recrutement et croissance folliculaire, aromatase des cellules de la granulosa, production d'estradiol) et de la LH (stimulation des cellules de la thèque — production d'androgènes, substrats de l'aromatase ; maintien du follicule dominant ; déclenchement de la maturation ovocytaire finale). Le concept de <strong>seuil de FSH</strong> (<em>FSH threshold</em> et <em>FSH window</em> de Brown, 1978) doit être expliqué : chaque follicule a un seuil de FSH en dessous duquel il entre en atrésie — la stimulation ovarienne vise à maintenir la FSH au-dessus du seuil du plus grand nombre de follicules possible, dépassant la sélection naturelle du follicule dominant.</p>
+</li>
+<li>
+<p><strong>Rétrocontrôle — le système de freinage</strong> : le module doit présenter les boucles de rétrocontrôle négatif (E2 et inhibine B sur FSH, progestérone sur GnRH en phase lutéale) et le rétrocontrôle <strong>positif</strong> (pic d'E2 ≥200 pg/mL pendant ≥50h déclenchant le pic de LH — mécanisme du pic préovulatoire naturel). En FIV, on cherche à <strong>empêcher</strong> ce pic de LH prématuré tout en maintenant la croissance folliculaire — c'est la raison d'être des analogues du GnRH.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — PULSE</strong> (Rôle de la pulsatilité GnRH) :<br />
+<strong>P</strong>ulsatilité = <strong>U</strong>nique mode fonctionnel — <strong>L</strong>ent = FSH — <strong>S</strong>peed = LH — <strong>E</strong>n continu = désensibilisation (down-regulation)</p>
+<p>📖 <strong>Approfondissement — L'expérience fondatrice de Knobil</strong><br />
+Ernst Knobil démontra en 1980 sur le singe rhésus que la destruction du noyau arqué (abolissant la sécrétion pulsatile de GnRH) provoquait un hypogonadisme complet, réversible uniquement par l'administration de GnRH <strong>pulsatile</strong> — l'administration continue étant inefficace après la phase initiale de flare-up. Cette expérience princeps fonde la pharmacologie des agonistes GnRH en AMP <em>(Knobil, Recent Prog Horm Res, 1980)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Complétez le tableau suivant :<br />
+| Fréquence GnRH | Gonadotrophine favorisée | Phase du cycle |<br />
+|----------------|------------------------|----------------|<br />
+| Rapide (~60 min) | ? | ? |<br />
+| Lente (~180 min) | ? | ? |<br />
+| Continue (agoniste) | Phase initiale : ? | Puis : ? |<br />
+→ <em>Réponses : Rapide → LH → phase folliculaire tardive/préovulatoire ; Lente → FSH → phase lutéale ; Continue → flare-up (LH + FSH) → désensibilisation (suppression)</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV12-S01-001</td>
+<td>📐 SCHÉMA</td>
+<td>Axe HHG complet — neurones à GnRH, antéhypophyse, ovaire, boucles de rétrocontrôle (Identifiez les 3 niveaux de régulation et les 2 types de rétrocontrôle)</td>
+</tr>
+<tr>
+<td>MFIV12-S01-002</td>
+<td>🎬 ANIMATION</td>
+<td>Pulsatilité GnRH : représentation dynamique de la fréquence variable et ses effets sur FSH/LH (Observez comment le ralentissement en phase lutéale favorise la fenêtre FSH)</td>
+</tr>
+<tr>
+<td>MFIV12-S01-003</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Concept de seuil FSH et fenêtre FSH — stimulation mono- vs multifolliculaire</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-122-gonadotrophines-exogenes-de-la-fsh-recombinante-a-la-corifollitropine-alfa">Section 12.2 — Gonadotrophines exogènes : de la FSH recombinante à la corifollitropine alfa</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Toutes les FSH recombinantes sont-elles interchangeables ? Pourquoi la follitropine delta (Rekovelle) a-t-elle été développée alors que la follitropine alpha (Gonal-F) existait depuis plus de 20 ans — et que change le dosage individualisé par AMH et poids corporel ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter chaque gonadotrophine exogène disponible en précisant son mode de production, sa pharmacocinétique, ses particularités cliniques et ses indications optimales :</p>
+<ul>
+<li>
+<p><strong>FSH recombinante — follitropine alpha (Gonal-F)</strong> : le module doit décrire la première gonadotrophine recombinante humaine, produite en cellules CHO (<em>Chinese Hamster Ovary</em>) par technologie de l'ADN recombinant, commercialisée depuis 1995. Pharmacocinétique : demi-vie ~24h après injection SC, pic sérique à 12-24h, état d'équilibre atteint en 3-4 jours. Dosage habituel : 150-300 UI/jour selon l'âge, l'AMH et le CFA. Le module doit expliquer que la follitropine alpha contient un profil de glycosylation spécifique qui influence sa bioactivité et sa clairance rénale — les différentes préparations de FSH ne sont donc pas strictement bioéquivalentes <em>(Olijve et al., Mol Hum Reprod, 1996)</em>.</p>
+</li>
+<li>
+<p><strong>FSH recombinante — follitropine bêta (Puregon/Follistim)</strong> : le module doit différencier la follitropine bêta (également produite en cellules CHO), qui présente un profil de glycosylation légèrement différent de la follitropine alpha, se traduisant par une activité spécifique (UI/mg de protéine) comparable mais une pharmacocinétique subtillement distincte. Les essais cliniques comparatifs n'ont pas montré de différence significative d'efficacité <em>(Bergh et al., Hum Reprod, 1997)</em>, mais le module doit mentionner que la variabilité inter-lots est moindre pour les recombinantes que pour les urinaires.</p>
+</li>
+<li>
+<p><strong>FSH recombinante — follitropine delta (Rekovelle)</strong> : le module doit présenter cette innovation majeure — première gonadotrophine produite en cellules humaines (lignée PER.C6), avec un profil de glycosylation <strong>humain natif</strong> et une activité biologique plus prévisible. La particularité révolutionnaire est le <strong>dosage individualisé</strong> : la posologie est calculée en µg (et non en UI) selon l'<strong>AMH sérique</strong> et le <strong>poids corporel</strong> de la patiente, grâce à un algorithme validé dans l'essai ESTHER-1 <em>(Nyboe Andersen et al., Hum Reprod, 2017)</em>. Le module doit expliquer que ce dosage vise à obtenir 8-14 ovocytes (réponse optimale) tout en réduisant le risque de SHO chez les hyper-répondeuses et d'annulation chez les faibles répondeuses.</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — Pourquoi le profil de glycosylation importe</strong><br />
+Les gonadotrophines sont des glycoprotéines hétérodimériques (sous-unité alpha commune, sous-unité bêta spécifique). La glycosylation (ajout de chaînes oligosaccharidiques N- et O-liées) influence la <strong>demi-vie plasmatique</strong> (plus les chaînes sont riches en acide sialique, plus la clairance rénale est lente), l'<strong>affinité pour le récepteur FSH-R</strong> et la <strong>bioactivité in vivo</strong>. La follitropine delta, produite en cellules humaines, porte un profil de glycosylation identique à la FSH endogène, ce qui pourrait expliquer une pharmacocinétique plus prévisible <em>(Olsson et al., Reprod Biomed Online, 2014)</em>.</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>FSH urinaire hautement purifiée (Fostimon, Bravelle)</strong> : le module doit présenter les gonadotrophines urinaires extraites de l'urine de femmes ménopausées, contenant principalement de la FSH avec des traces d'activité LH. Avantages : longue expérience clinique (&gt;30 ans), coût inférieur. Inconvénients : variabilité inter-lots, protéines urinaires co-purifiées, voie SC ou IM.</p>
+</li>
+<li>
+<p><strong>HMG — Menopur</strong> (<em>Human Menopausal Gonadotropin</em>) : le module doit expliquer que le HMG est un mélange de FSH et de <strong>LH</strong> (activité LH provenant de l'hCG co-purifiée) extrait d'urine de femmes ménopausées, dans un ratio FSH:LH d'environ 1:1. L'activité LH du Menopur provient principalement de l'<strong>hCG urinaire</strong> co-extraite (et non de la LH native, instable). Le module doit préciser les indications spécifiques : patientes en protocole long agoniste (où la LH endogène est supprimée par la down-regulation) nécessitant un apport exogène de LH pour maintenir la stéroïdogenèse thécale et éviter un <strong>environnement hypo-LH</strong> délétère (follicules « vides », E2 bas malgré une croissance folliculaire).</p>
+</li>
+<li>
+<p><strong>LH recombinante — Luveris</strong> : le module doit présenter la lutropine alfa, LH recombinante produite en cellules CHO, commercialisée pour la supplémentation en LH chez les patientes en <strong>déficit profond de LH</strong> (hypogonadisme hypogonadotrope, down-regulation profonde en protocole agoniste long). Pharmacocinétique : demi-vie courte (~10-12h), nécessitant des injections quotidiennes. Le module doit citer l'essai de référence <em>(Humaidan et al., Hum Reprod Update, 2012)</em> montrant le bénéfice de la supplémentation en LH chez les patientes &gt;35 ans en protocole antagoniste.</p>
+</li>
+<li>
+<p><strong>Corifollitropine alfa (Elonva)</strong> : le module doit présenter cette FSH recombinante à <strong>longue durée d'action</strong>, obtenue par fusion de la sous-unité bêta de la FSH avec le CTP (<em>C-Terminal Peptide</em>) de la sous-unité bêta de l'hCG — ce qui augmente la demi-vie plasmatique à <strong>65h</strong> (vs ~24h pour la FSH standard). Une injection unique d'Elonva (100 µg si ≤60 kg, 150 µg si &gt;60 kg) remplace les 7 premiers jours d'injections quotidiennes de FSH. Le module doit discuter les avantages (compliance, confort patient, réduction du nombre d'injections) et les limites (impossibilité de réduire la dose en cours de stimulation, risque accru de SHO chez les hyper-répondeuses — d'où la contre-indication en cas de SOPK ou CFA &gt;20) <em>(Devroey et al., Hum Reprod, 2009 — essai ENGAGE)</em>.</p>
+</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Corifollitropine alfa et SOPK**
+> L'Elonva est **contre-indiquée** chez les patientes présentant un SOPK ou un CFA >20 follicules. Sa longue demi-vie (65h) rend impossible l'ajustement posologique en cas de réponse excessive — le risque de SHO sévère est significativement augmenté. En cas de réponse excessive sous Elonva, il est impossible de « baisser la dose » comme avec les FSH quotidiennes : la molécule reste active pendant plusieurs jours après l'injection unique.</div>
+
+<blockquote>
+<p>💡 <strong>Mnémonique — FRLCE</strong> (Les 5 types de FSH exogène) :<br />
+<strong>F</strong>ollitropine alpha (Gonal-<strong>F</strong>) — <strong>R</strong>ekovelle (follitropine delta, dosage AMH) — <strong>L</strong>ongue durée (Elonva — corifollitropine) — <strong>C</strong>lassique urinaire (Fostimon) — <strong>E</strong>xtra LH (Menopur = HMG)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Une patiente de 38 ans, AMH 0,8 ng/mL, CFA 5, IMC 22, entre en protocole antagoniste. Quel type de gonadotrophine choisissez-vous et pourquoi ?<br />
+a) Elonva 150 µg injection unique<br />
+b) Gonal-F 300 UI/jour<br />
+c) Rekovelle (dose calculée selon AMH/poids)<br />
+d) Menopur 225 UI/jour seul<br />
+→ <em>Réponse : b ou c sont acceptables. L'Elonva (a) est risquée chez une faible répondeuse car la dose ne peut être ajustée. Le Menopur seul (d) ne fournit que ~50% de FSH. Gonal-F 300 UI ou Rekovelle avec dose maximale individualisée sont les choix rationnels. Certains centres ajoutent du Luveris (LH) chez les &gt;35 ans pour optimiser la stéroïdogenèse (cf. Module 13, protocoles pour poor responders).</em></p>
+<p>🏥 <strong>Pertinence clinique — Le coût des gonadotrophines</strong><br />
+Le coût d'un cycle de stimulation varie de 500 à 2500 € selon la molécule et la dose. La follitropine delta (Rekovelle) est plus onéreuse par unité mais le dosage individualisé peut réduire le nombre de cycles en optimisant la réponse dès la première tentative. L'AMP est remboursée en France à 100% jusqu'à 43 ans (4 tentatives de FIV) — le praticien doit intégrer le rapport coût-efficacité dans sa prescription <em>(Trew et al., Reprod Biomed Online, 2019)</em>.</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV12-S02-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Tableau comparatif des gonadotrophines : FSHr alpha/bêta/delta, urinaire, HMG, LHr, corifollitropine — pharmacocinétique, posologie, particularités (Identifiez la molécule optimale pour 3 profils de patientes)</td>
+</tr>
+<tr>
+<td>MFIV12-S02-002</td>
+<td>📐 SCHÉMA</td>
+<td>Structure moléculaire des gonadotrophines : sous-unités alpha/bêta, glycosylation, CTP de la corifollitropine</td>
+</tr>
+<tr>
+<td>MFIV12-S02-003</td>
+<td>📊 GRAPHIQUE</td>
+<td>Courbes pharmacocinétiques comparées : FSH alpha vs delta vs corifollitropine (taux sériques sur 7 jours)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-123-analogues-du-gnrh-agonistes-et-antagonistes-deux-philosophies-de-controle-du-pic-de-lh">Section 12.3 — Analogues du GnRH : agonistes et antagonistes — deux philosophies de contrôle du pic de LH</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Si les agonistes du GnRH provoquent initialement un flare-up (libération massive de LH et FSH), pourquoi les utilise-t-on en stimulation ovarienne ? Ne risque-t-on pas de déclencher une ovulation prématurée avec ce flare-up ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les deux classes d'analogues du GnRH comme deux stratégies pharmacologiques distinctes pour atteindre le même objectif — empêcher le pic prématuré de LH pendant la stimulation — en détaillant les mécanismes moléculaires, la pharmacocinétique et les implications cliniques :</p>
+<ul>
+<li>
+<p><strong>Agonistes du GnRH</strong> : le module doit expliquer le mécanisme biphasique des agonistes — (1) phase de <strong>flare-up</strong> (J1-J7) : l'agoniste stimule les récepteurs GnRH-R hypophysaires, provoquant une libération massive de FSH et LH (effet exploité dans les protocoles courts « flare-up ») ; (2) phase de <strong>down-regulation</strong> (après J10-14) : l'occupation continue des récepteurs provoque leur internalisation et la désensibilisation du gonadotrope — la LH et la FSH tombent à des niveaux de castration <em>(Conn &amp; Crowley, N Engl J Med, 1991)</em>. Les molécules disponibles doivent être détaillées : <strong>triptoréline</strong> (Décapeptyl — formes quotidienne 0,1 mg SC et retard LP 3 mg IM), <strong>leuproréline</strong> (Enantone — LP 3,75 mg), <strong>buséréline</strong> (Suprefact — spray nasal ou SC), <strong>nafaréline</strong> (Synarel — spray nasal). Le module doit comparer les voies d'administration (SC, IM, nasale), les demi-vies et les durées de suppression.</p>
+</li>
+<li>
+<p><strong>Antagonistes du GnRH</strong> : le module doit expliquer que les antagonistes se lient au récepteur GnRH-R de manière <strong>compétitive</strong> sans l'activer — blocage <strong>immédiat</strong> (en quelques heures) de la sécrétion de LH et FSH, sans phase de flare-up. Molécules : <strong>cétrorélix</strong> (Cetrotide — 0,25 mg SC/jour ou 3 mg SC dose unique) et <strong>ganirelix</strong> (Orgalutran — 0,25 mg SC/jour). Le module doit souligner l'avantage majeur : durée de traitement réduite (5-6 jours d'antagoniste vs 14-21 jours de down-regulation agoniste), pas de symptômes de castration pendant la down-regulation, et possibilité de déclenchement par agoniste GnRH (pour prévention du SHO — impossible en protocole agoniste car les récepteurs sont déjà désensibilisés).</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — Agoniste vs antagoniste : lequel est supérieur ?</strong><br />
+La méta-analyse Cochrane <em>(Al-Inany et al., Cochrane Database Syst Rev, 2016)</em> comparant protocoles agonistes et antagonistes a montré des taux de naissance vivante comparables, avec un risque de SHO significativement réduit sous antagoniste (OR 0,63 ; IC 95% 0,50-0,81). Cependant, certains centres rapportent un nombre d'ovocytes légèrement inférieur en protocole antagoniste, ce qui fait débat. La tendance internationale actuelle favorise les protocoles antagonistes comme standard de première intention (recommandation ESHRE, 2019), mais les protocoles agonistes longs restent utilisés dans des indications spécifiques (endométriose sévère, préparation au PGT). Le praticien doit connaître les deux approches et individualiser le choix (📊 Niveau de preuve : I — méta-analyse de RCTs).</p>
+<p>📖 <strong>Approfondissement — Pharmacologie moléculaire des récepteurs GnRH-R</strong><br />
+Le récepteur GnRH-R est un récepteur couplé aux protéines G (GPCR) à 7 domaines transmembranaires, unique parmi les GPCRs par l'absence de queue C-terminale cytoplasmique — ce qui ralentit sa désensibilisation et explique pourquoi la down-regulation par les agonistes nécessite 10-14 jours. Les antagonistes du GnRH de troisième génération (cétrorélix, ganirelix) ont été conçus pour avoir une haute affinité de liaison sans effet histaminolibérateur (contrairement aux antagonistes de première génération qui provoquaient des réactions anaphylactoïdes) <em>(Herbst, Reprod Biomed Online, 2003)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai ou Faux — justifiez chaque réponse :<br />
+1. Un agoniste du GnRH administré en continu pendant 21 jours provoque une suppression complète de la FSH et de la LH → <em>VRAI — down-regulation après la phase de flare-up</em><br />
+2. Un antagoniste du GnRH provoque un flare-up initial avant de bloquer l'axe → <em>FAUX — blocage compétitif immédiat, pas de flare-up</em><br />
+3. On peut déclencher l'ovulation par un bolus d'agoniste GnRH chez une patiente sous protocole long agoniste → <em>FAUX — les récepteurs sont déjà désensibilisés, pas de réponse au bolus d'agoniste ; le déclenchement par agoniste n'est possible que chez les patientes sous protocole antagoniste</em><br />
+4. Le protocole antagoniste réduit significativement le risque de SHO → <em>VRAI — possibilité de trigger agoniste + freeze-all (cf. Module 15)</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV12-S03-001</td>
+<td>🎬 ANIMATION</td>
+<td>Mécanisme d'action agoniste GnRH : flare-up → down-regulation — visualisation dynamique de l'internalisation des récepteurs (Observez la cinétique : pourquoi faut-il 14 jours ?)</td>
+</tr>
+<tr>
+<td>MFIV12-S03-002</td>
+<td>🎬 ANIMATION</td>
+<td>Mécanisme d'action antagoniste GnRH : blocage compétitif immédiat — comparaison avec l'agoniste (Comparez le délai d'action et l'absence de flare-up)</td>
+</tr>
+<tr>
+<td>MFIV12-S03-003</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Tableau comparatif agoniste vs antagoniste : mécanisme, délai, durée, risque SHO, possibilité trigger agoniste</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-124-declenchement-de-lovulation-et-molecules-adjuvantes-hcg-clomifene-letrozole-et-kisspeptine">Section 12.4 — Déclenchement de l'ovulation et molécules adjuvantes : hCG, clomifène, létrozole et kisspeptine</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi utilise-t-on l'hCG pour déclencher l'ovulation alors que le pic ovulatoire naturel est un pic de LH ? Et pourquoi le clomifène, un anti-estrogène, stimule-t-il paradoxalement l'ovulation ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les molécules de déclenchement et les agents adjuvants en expliquant la logique pharmacologique qui sous-tend leur utilisation :</p>
+<ul>
+<li>
+<p><strong>hCG — déclenchement standard</strong> : le module doit expliquer que l'<strong>hCG</strong> (Ovitrelle — choriogonadotropine alfa 250 µg SC ; Pregnyl — hCG urinaire 5000-10000 UI IM) déclenche l'ovulation parce que l'hCG se lie au <strong>récepteur LH/hCG-R</strong> avec une affinité comparable à la LH mais une demi-vie beaucoup plus longue (24-36h vs 20 min pour la LH). Cette longue demi-vie assure un soutien lutéal initial mais augmente le risque de <strong>SHO</strong> (stimulation prolongée du VEGF par les cellules de la granulosa lutéinisées). Le timing standard est de <strong>34-36 heures</strong> avant la ponction ovocytaire (le pic de LH naturel déclenche l'ovulation ~36h après). Les détails du déclenchement et de la prévention du SHO seront approfondis au Module 15.</p>
+</li>
+<li>
+<p><strong>Clomifène (Clomid)</strong> : le module doit expliquer le mécanisme paradoxal du clomifène, <strong>modulateur sélectif des récepteurs aux estrogènes</strong> (SERM) — il bloque les récepteurs E2 au niveau hypothalamique, ce qui supprime le rétrocontrôle négatif de l'estradiol et provoque une augmentation de la sécrétion de GnRH/FSH endogène. Posologie habituelle : 50-150 mg/jour de J2 à J6. Indications principales : induction de l'ovulation dans les anovulations (SOPK — première ligne selon les guidelines ESHRE 2023), IIU, et <em>mild stimulation</em> en FIV (en association avec une faible dose de FSH). Effets secondaires : bouffées de chaleur, céphalées, troubles visuels (rares), effet anti-estrogénique sur l'endomètre (amincissement — limitation d'usage en FIV frais) et la glaire cervicale.</p>
+</li>
+<li>
+<p><strong>Létrozole (Femara)</strong> : le module doit présenter cet <strong>inhibiteur de l'aromatase</strong> de 3e génération qui bloque la conversion des androgènes en estrogènes dans les cellules de la granulosa et les tissus périphériques. La baisse d'E2 lève le rétrocontrôle négatif hypothalamique → augmentation de FSH endogène → stimulation folliculaire. Avantage par rapport au clomifène : pas d'effet anti-estrogénique sur l'endomètre (l'effet est transitoire, l'endomètre reste réceptif), demi-vie courte (45h). Posologie : 2,5-5 mg/jour de J2 à J6. Le module doit citer l'essai princeps AMETHYST <em>(Diamond et al., N Engl J Med, 2015)</em> montrant la supériorité du létrozole sur le clomifène pour l'induction de l'ovulation dans le SOPK (taux d'ovulation et de naissance vivante supérieurs).</p>
+</li>
+<li>
+<p><strong>Kisspeptine — la frontière de la recherche</strong> : le module doit mentionner la kisspeptine, neuropeptide hypothalamique qui stimule les neurones à GnRH et représente une alternative potentielle pour le déclenchement de l'ovulation. Les études de phase II <em>(Abbara et al., J Clin Invest, 2015 ; Jayasena et al., J Clin Endocrinol Metab, 2014)</em> montrent que la kisspeptine-54 peut déclencher la maturation ovocytaire avec un risque de SHO quasi nul (stimulation physiologique, brève, du pic de LH). Le module doit préciser que la kisspeptine n'est pas encore commercialisée (usage recherche uniquement) mais constitue une piste prometteuse (📊 Niveau de preuve : II — études de phase II).</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — CLK</strong> (Les 3 adjuvants oraux en stimulation) :<br />
+<strong>C</strong>lomifène (anti-E2 hypothalamique → ↑FSH) — <strong>L</strong>étrozole (anti-aromatase → ↓E2 → ↑FSH) — <strong>K</strong>isspeptine (stimulation directe GnRH → ↑LH — recherche)</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Clomifène et endomètre fin**
+> Le clomifène, en bloquant les récepteurs E2 endométriaux, peut provoquer un **amincissement endométrial** (<7 mm) incompatible avec l'implantation. En FIV avec transfert frais, cette limitation est majeure. Le létrozole n'a pas cet effet (action transitoire sur l'aromatase, pas de blocage des récepteurs E2). Si l'endomètre est <7 mm sous clomifène, le praticien doit envisager un switch vers le létrozole ou une stratégie freeze-all.</div>
+
+<blockquote>
+<p>✏️ <strong>Micro-exercice</strong> : Associez chaque molécule à son mécanisme d'action principal :<br />
+| Molécule | Mécanisme |<br />
+|----------|-----------|<br />
+| hCG (Ovitrelle) | A. Blocage récepteurs E2 hypothalamiques → ↑FSH |<br />
+| Clomifène | B. Activation récepteur LH/hCG-R → maturation ovocytaire |<br />
+| Létrozole | C. Stimulation neurones GnRH → pic LH physiologique |<br />
+| Kisspeptine | D. Inhibition aromatase → ↓E2 → ↑FSH |<br />
+→ <em>Réponses : hCG-B, Clomifène-A, Létrozole-D, Kisspeptine-C</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV12-S04-001</td>
+<td>📐 SCHÉMA</td>
+<td>Sites d'action des différentes molécules sur l'axe HHG : hCG (ovaire), clomifène (hypothalamus), létrozole (granulosa + périphérie), kisspeptine (neurones GnRH)</td>
+</tr>
+<tr>
+<td>MFIV12-S04-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Clomifène vs létrozole : comparaison mécanisme, effet endométrial, indications, résultats (essai AMETHYST)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-125-pharmacocinetique-comparee-effets-secondaires-et-contre-indications">Section 12.5 — Pharmacocinétique comparée, effets secondaires et contre-indications</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi certaines patientes développent un SHO sévère avec 150 UI de FSH tandis que d'autres ne répondent pas à 450 UI ? La pharmacogénomique pourrait-elle permettre de prédire la réponse individuelle ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit synthétiser les données pharmacocinétiques et de sécurité de l'ensemble des molécules présentées, en insistant sur les contre-indications absolues et les effets indésirables graves :</p>
+<ul>
+<li>
+<p><strong>Effets secondaires des gonadotrophines</strong> : réaction locale au site d'injection (10-20%), SHO (complication principale — détaillée au Module 15), grossesses multiples (corrélation directe avec le nombre de follicules matures — le risque est géré par la politique de SET, <em>single embryo transfer</em>), céphalées, distension abdominale, labilité émotionnelle. Le module doit préciser qu'il n'y a <strong>pas d'augmentation prouvée du risque de cancer de l'ovaire</strong> lié à la stimulation ovarienne, malgré une crainte historique — les études de cohorte à long terme (&gt;20 ans de suivi) sont rassurantes <em>(Vassard et al., Hum Reprod, 2019 ; Brinton et al., Fertil Steril, 2014)</em> (📊 Niveau de preuve : II — études de cohorte).</p>
+</li>
+<li>
+<p><strong>Contre-indications des gonadotrophines</strong> : tumeurs dépendantes des stéroïdes sexuels (cancer du sein, cancer de l'endomètre non traité), kyste ovarien fonctionnel &gt;25 mm (risque de torsion sous stimulation), grossesse, saignement génital de cause non diagnostiquée, insuffisance ovarienne primaire (FSH &gt;40 UI/L sans follicules recrutables).</p>
+</li>
+<li>
+<p><strong>Effets secondaires des analogues GnRH agonistes</strong> : en phase de down-regulation — bouffées de chaleur, sécheresse vaginale, céphalées, labilité émotionnelle, perte de densité osseuse (réversible) — ces effets sont transitoires (14-21 jours). Contre-indication : grossesse (risque tératogène).</p>
+</li>
+<li>
+<p><strong>Effets secondaires des antagonistes GnRH</strong> : réaction locale au site d'injection (rougeur, œdème — cétrorélix &gt; ganirelix), céphalées (rares). Profil de tolérance globalement excellent <em>(Tarlatzis &amp; Kolibianakis, Reprod Biomed Online, 2007)</em>.</p>
+</li>
+<li>
+<p><strong>Pharmacogénomique de la stimulation</strong> : le module doit mentionner les polymorphismes du <strong>récepteur FSH-R</strong> (Asn680Ser — les patientes homozygotes Ser/Ser nécessitent des doses de FSH plus élevées pour une réponse équivalente) et du gène <strong>FSHR</strong> qui influencent la réponse ovarienne. La pharmacogénomique est une piste prometteuse pour la personnalisation des doses mais n'est pas encore intégrée en routine clinique <em>(Simoni &amp; Casarini, Front Endocrinol, 2014)</em> (📊 Niveau de preuve : III).</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — Polymorphisme FSHR Asn680Ser et dose de FSH</strong><br />
+Le polymorphisme le plus étudié du récepteur FSH est le SNP Asn680Ser (position 680 de l'exon 10). Les patientes homozygotes <strong>Ser/Ser</strong> présentent un récepteur moins sensible à la FSH, nécessitant des doses ~20-30% plus élevées pour obtenir une réponse folliculaire comparable aux homozygotes <strong>Asn/Asn</strong>. Certains centres intègrent ce génotypage dans l'algorithme de dosage initial. Cette approche de pharmacogénomique appliquée à l'AMP pourrait à terme révolutionner la prescription de gonadotrophines <em>(Laven, Front Endocrinol, 2019)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Une patiente de 29 ans, sans antécédent, AMH 4,5 ng/mL, est sous protocole antagoniste avec Gonal-F 150 UI/jour depuis J2. À J6 de stimulation, elle présente 22 follicules &gt;10 mm en échographie et un E2 à 2800 pg/mL. Quelles mesures pharmacologiques envisagez-vous ?<br />
+→ <em>Réponse : (1) Réduction de la dose de FSH (coasting — arrêt ou diminution) ; (2) Poursuite de l'antagoniste GnRH ; (3) Si déclenchement nécessaire : trigger par agoniste GnRH (et non hCG) + stratégie freeze-all pour prévention du SHO (cf. Module 15). Référer à la section 15.3 pour la prise en charge complète du risque de SHO.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV12-S05-001</td>
+<td>📊 TABLEAU</td>
+<td>Synthèse pharmacocinétique : demi-vie, voie, posologie, CI de chaque molécule (Utilisez ce tableau comme aide-mémoire en consultation)</td>
+</tr>
+<tr>
+<td>MFIV12-S05-002</td>
+<td>📐 SCHÉMA</td>
+<td>Arbre décisionnel : choix de la gonadotrophine selon profil AMH/CFA/âge/IMC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-12">Points clés — Module 12</h2>
+<ol>
+<li>L'axe HHG fonctionne par <strong>pulsatilité</strong> de la GnRH — la fréquence des pulses détermine le ratio FSH/LH ; l'administration continue provoque une down-regulation exploitée par les protocoles agonistes longs</li>
+<li>Les <strong>FSH recombinantes</strong> (alpha, bêta, delta) diffèrent par leur glycosylation et leur mode de dosage — la follitropine delta (Rekovelle) introduit le dosage individualisé par AMH/poids</li>
+<li>Le <strong>HMG (Menopur)</strong> apporte une activité LH complémentaire indispensable dans les protocoles agonistes longs et chez les patientes &gt;35 ans</li>
+<li>La <strong>corifollitropine alfa</strong> (Elonva) remplace 7 jours de FSH en une injection mais est contre-indiquée en cas de risque d'hyper-réponse (SOPK, CFA &gt;20)</li>
+<li>Les <strong>agonistes GnRH</strong> agissent en deux phases (flare-up puis down-regulation) ; les <strong>antagonistes</strong> bloquent immédiatement et réversiblement le récepteur GnRH-R</li>
+<li>Le protocole <strong>antagoniste</strong> est le standard actuel de première intention (risque de SHO réduit, durée de traitement moindre) — les protocoles agonistes gardent des indications spécifiques</li>
+<li>Le <strong>clomifène</strong> et le <strong>létrozole</strong> stimulent la FSH endogène par des mécanismes distincts — le létrozole est préféré dans le SOPK (essai AMETHYST) et n'altère pas l'endomètre</li>
+</ol>
+<h2 id="auto-evaluation-module-12">Auto-évaluation — Module 12</h2>
+<p><strong>QCM 1</strong> : Quel est le mécanisme de la down-regulation par les agonistes du GnRH ?<br />
+a) Blocage compétitif du récepteur GnRH-R<br />
+b) Internalisation des récepteurs GnRH-R après stimulation continue<br />
+c) Inhibition directe de la synthèse de FSH au niveau hypophysaire<br />
+d) Stimulation permanente du rétrocontrôle négatif par l'estradiol<br />
+→ <em>Réponse : b — L'administration continue d'agoniste provoque l'internalisation des récepteurs après la phase de flare-up (a = mécanisme des antagonistes ; c = incorrect ; d = incorrect)</em></p>
+<p><strong>QCM 2</strong> : Quelle est la particularité de la follitropine delta (Rekovelle) par rapport aux autres FSH recombinantes ?<br />
+a) Elle est administrée par voie nasale<br />
+b) Sa posologie est calculée en fonction de l'AMH et du poids corporel<br />
+c) Elle a une demi-vie de 65 heures<br />
+d) Elle contient de l'activité LH<br />
+→ <em>Réponse : b — Rekovelle est la première FSH dont le dosage est individualisé par AMH et poids (algorithme ESTHER-1). La demi-vie de 65h (c) correspond à la corifollitropine alfa (Elonva). L'activité LH (d) est celle du HMG.</em></p>
+<p><strong>QCM 3</strong> : Pourquoi le déclenchement par agoniste GnRH est-il impossible en protocole long agoniste ?<br />
+a) L'agoniste ne peut pas se lier aux récepteurs GnRH en présence d'un autre agoniste<br />
+b) Les récepteurs GnRH-R sont déjà désensibilisés/internalisés par la down-regulation<br />
+c) L'agoniste provoque un SHO plus sévère que l'hCG<br />
+d) La demi-vie de l'agoniste est trop longue<br />
+→ <em>Réponse : b — Après 14-21 jours de down-regulation, les récepteurs GnRH-R sont internalisés : un bolus d'agoniste ne peut pas provoquer de flare-up. Le trigger agoniste n'est possible qu'en protocole antagoniste (récepteurs GnRH-R intacts).</em></p>
+<p><strong>Cas clinique court</strong> : Mme T., 31 ans, SOPK (AMH 12 ng/mL, CFA 42), 1re FIV. L'interne propose un protocole long agoniste avec Elonva. Identifiez les deux erreurs de prescription et proposez une alternative.<br />
+→ <em>Réponse : (1) L'Elonva est contre-indiquée en cas de SOPK/CFA &gt;20 (risque SHO majeur, dose non ajustable) ; (2) Le protocole long agoniste est à risque de SHO chez cette patiente hyper-répondeuse (impossibilité de trigger agoniste). Alternative : protocole antagoniste avec FSH à faible dose (100-150 UI/jour), trigger par agoniste GnRH, stratégie freeze-all (cf. Modules 13 et 15).</em></p>
+<p><strong>Question de synthèse</strong> : Expliquez en 8-10 lignes pourquoi le protocole antagoniste avec trigger par agoniste GnRH et freeze-all est devenu le standard de prise en charge des patientes à risque de SHO (SOPK, AMH élevée, CFA &gt;20).</p>
+<h2 id="references-bibliographiques-module-12">Références bibliographiques — Module 12</h2>
+<ul>
+<li>Knobil E. <em>The neuroendocrine control of the menstrual cycle</em>. Recent Prog Horm Res. 1980;36:53-88.</li>
+<li>Belchetz PE et al. <em>Hypophysial responses to continuous and intermittent delivery of hypothalamic gonadotropin-releasing hormone</em>. Science. 1978;202:631-633.</li>
+<li>Conn PM, Crowley WF. <em>Gonadotropin-releasing hormone and its analogs</em>. N Engl J Med. 1991;324:93-103.</li>
+<li>Olijve W et al. <em>Molecular biology and biochemistry of human recombinant follicle stimulating hormone</em>. Mol Hum Reprod. 1996;2:371-382.</li>
+<li>Nyboe Andersen A et al. <em>Individualized versus conventional ovarian stimulation for IVF: a randomized controlled trial</em>. Hum Reprod. 2017;32:2117-2125.</li>
+<li>Devroey P et al. <em>A double-blind, noninferiority RCT comparing corifollitropin alfa and recombinant FSH during the first 7 days of ovarian stimulation</em>. Hum Reprod. 2009;24:3019-3027.</li>
+<li>Al-Inany HG et al. <em>GnRH antagonists are safer than agonists: an update of a Cochrane review</em>. Cochrane Database Syst Rev. 2016;(2):CD001750.</li>
+<li>Diamond MP et al. <em>Letrozole, gonadotropin, or clomiphene for unexplained infertility</em>. N Engl J Med. 2015;373:1230-1240.</li>
+<li>Abbara A et al. <em>Kisspeptin-54 as a trigger for egg maturation in IVF</em>. J Clin Invest. 2015;125:3667-3677.</li>
+<li>Simoni M, Casarini L. <em>Mechanisms in endocrinology: genetics of FSH action</em>. Front Endocrinol. 2014;5:26.</li>
+<li>Humaidan P et al. <em>LH supplementation in ovarian stimulation</em>. Hum Reprod Update. 2012;18:135-149.</li>
+</ul>
+<hr />
+<h1 id="module-13-protocoles-de-stimulation-ovarienne-du-protocole-long-au-duostim">MODULE 13 : PROTOCOLES DE STIMULATION OVARIENNE — DU PROTOCOLE LONG AU DuoStim</h1>
+<p><strong>Partie</strong> : IV — Stimulation ovarienne<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire-Expert<br />
+<strong>Prérequis</strong> : Module 12 (pharmacologie de la stimulation ovarienne), Modules 8-11 (bilan d'infertilité, réserve ovarienne)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🟣 BIOLOGISTE</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Mme L., 39 ans, AMH 0,6 ng/mL, CFA 4, a eu une première tentative de FIV en protocole antagoniste standard (Gonal-F 300 UI/jour) — résultat : 2 ovocytes ponctionnés, 1 fécondé, transfert d'un embryon J3 de qualité moyenne, bêta-hCG négatif. Elle revient désemparée : *« On m'a dit qu'il n'y avait pas grand-chose à faire avec si peu d'ovocytes. Est-ce vrai ? N'existe-t-il pas d'autres protocoles ? »* Derrière cette question se cache tout l'enjeu de l'individualisation des protocoles de stimulation — du protocole long classique aux stratégies innovantes comme le DuoStim et l'approche POSEIDON pour les faibles répondeuses.</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les protocoles de stimulation ovarienne standardisés (long agoniste, court agoniste, antagoniste flexible, antagoniste fixe) en précisant les étapes, la chronologie et les indications de chacun</li>
+<li><strong>Comparer</strong> les stratégies de mild stimulation, natural cycle IVF et DuoStim en identifiant les profils de patientes qui en bénéficient</li>
+<li><strong>Appliquer</strong> un arbre décisionnel pour le choix du protocole optimal selon le profil de la patiente (âge, AMH, CFA, IMC, antécédents de stimulation, SOPK, endométriose)</li>
+<li><strong>Maîtriser</strong> les protocoles adaptés aux faibles répondeuses (critères de Bologne, classification POSEIDON, Shanghai protocol) et aux hyper-répondeuses (SOPK)</li>
+<li><strong>Utiliser</strong> le simulateur ReproSim© pour modéliser l'effet de différents protocoles sur la cohorte folliculaire et optimiser la stratégie de stimulation</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-131-le-protocole-long-agoniste-le-classique-historique">Section 13.1 — Le protocole long agoniste : le classique historique</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le protocole long agoniste a été le gold standard pendant plus de 20 ans. Pourquoi a-t-il été progressivement détrôné par le protocole antagoniste, alors que certains centres l'utilisent encore dans des indications spécifiques ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le protocole long agoniste comme le protocole historique de référence, en détaillant sa logique, ses étapes et ses limites :</p>
+<ul>
+<li>
+<p><strong>Principe</strong> : down-regulation hypophysaire par un agoniste GnRH débuté en <strong>phase lutéale</strong> du cycle précédent (J21), suivie de la stimulation gonadotrope une fois la suppression confirmée (FSH &lt;5, E2 &lt;50 pg/mL, absence de kyste &gt;10 mm). La down-regulation nécessite 14-21 jours, la stimulation dure 10-12 jours en moyenne.</p>
+</li>
+<li>
+<p><strong>Étapes détaillées</strong> : le module doit décrire chronologiquement — (1) Début agoniste J21 du cycle N-1 (triptoréline 0,1 mg SC/jour ou forme retard 3 mg IM) ; (2) Vérification de la down-regulation à J2-3 du cycle N (écho : pas de kyste, endomètre fin ; biologie : E2 &lt;50 pg/mL, FSH &lt;5 UI/L) ; (3) Début de la stimulation gonadotrope (FSH ± HMG) à dose adaptée ; (4) Poursuite de l'agoniste à demi-dose (0,05 mg/jour) pendant toute la stimulation pour maintenir la suppression ; (5) Monitorage (cf. Module 14) ; (6) Déclenchement par hCG quand ≥3 follicules ≥17 mm.</p>
+</li>
+<li>
+<p><strong>Avantages</strong> : suppression complète du pic prématuré de LH (taux d'annulation pour lutéinisation prématurée très bas, &lt;2%), cohorte folliculaire homogène (synchronisation), flexibilité de programmation (la ponction peut être planifiée). <strong>Inconvénients</strong> : durée prolongée (4-5 semaines), symptômes de castration pendant la down-regulation, nombre d'injections élevé, impossibilité de trigger par agoniste (risque SHO), coût supérieur.</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Quand préférer encore un protocole long agoniste ?</strong><br />
+Le protocole long agoniste reste préféré dans certaines situations : (1) <strong>Endométriose sévère</strong> (stade III-IV) — la phase de down-regulation réduit l'activité inflammatoire péritonéale et améliore le taux d'implantation <em>(Sallam et al., Cochrane Database Syst Rev, 2006)</em> ; (2) <strong>Préparation à un PGT</strong> nécessitant une cohorte folliculaire homogène pour biopsie synchronisée ; (3) Patientes ayant présenté un pic de LH prématuré malgré un protocole antagoniste bien conduit.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Reconstituez la chronologie du protocole long agoniste en ordonnant les étapes :<br />
+A. Déclenchement hCG / B. Vérification down-regulation J2-3 / C. Début agoniste J21 / D. Stimulation FSH 10-12 jours / E. Ponction J+36h<br />
+→ <em>Ordre correct : C → B → D → A → E</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV13-S01-001</td>
+<td>📐 SCHÉMA</td>
+<td>Chronologie du protocole long agoniste — frise temporelle J21 à ponction (Identifiez les 5 étapes clés et la durée totale)</td>
+</tr>
+<tr>
+<td>MFIV13-S01-002</td>
+<td>📊 GRAPHIQUE</td>
+<td>Courbes hormonales (FSH, LH, E2) pendant le protocole long agoniste — phases de suppression et de stimulation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-132-le-protocole-antagoniste-le-standard-actuel">Section 13.2 — Le protocole antagoniste : le standard actuel</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le protocole antagoniste est devenu le standard international. Mais faut-il préférer le schéma flexible (antagoniste quand follicule ≥14 mm) ou le schéma fixe (antagoniste systématique à J5-6) ? Y a-t-il une différence d'efficacité ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le protocole antagoniste comme le standard de première intention, en distinguant les deux variantes :</p>
+<ul>
+<li>
+<p><strong>Protocole antagoniste flexible</strong> : début de la FSH à J2 du cycle (sans prétraitement agoniste), ajout de l'antagoniste GnRH (cétrorélix 0,25 mg ou ganirelix 0,25 mg SC/jour) lorsqu'un <strong>follicule atteint ≥14 mm</strong> ou lorsque l'<strong>E2 dépasse 300 pg/mL</strong> — critère adopté pour prévenir un pic de LH prématuré. Le module doit préciser que l'antagoniste est généralement introduit vers J6-8 de stimulation (variable selon la cinétique folliculaire).</p>
+</li>
+<li>
+<p><strong>Protocole antagoniste fixe</strong> : même principe mais l'antagoniste est débuté <strong>systématiquement à J5 ou J6</strong> de stimulation, indépendamment de la taille folliculaire. Avantage : simplicité, pas de risque d'oublier l'introduction de l'antagoniste en cas de réponse rapide. Inconvénient théorique : quelques jours d'antagoniste « inutiles » si les follicules n'ont pas encore atteint 14 mm.</p>
+</li>
+<li>
+<p><strong>Comparaison flexible vs fixe</strong> : le module doit citer la méta-analyse montrant l'absence de différence significative en termes de taux de grossesse entre les deux approches <em>(Al-Inany et al., Reprod Biomed Online, 2005)</em> — le choix est une question de préférence du centre et de praticité (📊 Niveau de preuve : I).</p>
+</li>
+<li>
+<p><strong>Avantages du protocole antagoniste</strong> (vs agoniste long) : durée réduite (~10-12 jours total), pas de phase de down-regulation, pas de symptômes de castration, possibilité de <strong>trigger par agoniste GnRH</strong> (prévention SHO — cf. Module 15), coût réduit, confort patient. Le module doit préciser que le nombre d'ovocytes est comparable ou légèrement inférieur au protocole long, mais le taux de naissance vivante cumulé (incluant les TEC) est équivalent.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — SAFE</strong> (Avantages du protocole antagoniste) :<br />
+<strong>S</strong>HO réduit (trigger agoniste possible) — <strong>A</strong>ntagoniste = durée courte — <strong>F</strong>lexibilité (flexible ou fixe) — <strong>E</strong>fficacité comparable au long agoniste</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme K., 34 ans, AMH 3,2 ng/mL, CFA 14, protocole antagoniste flexible, Gonal-F 200 UI/jour depuis J2. À J7, l'échographie montre : follicule dominant 15 mm, 8 follicules entre 10-13 mm, E2 = 680 pg/mL. L'antagoniste a-t-il été débuté ? Si non, faut-il le débuter maintenant ? Justifiez.<br />
+→ <em>Réponse : Oui, l'antagoniste doit être débuté immédiatement — le follicule dominant a dépassé 14 mm et l'E2 dépasse 300 pg/mL. Tout retard expose au risque de pic de LH prématuré avec lutéinisation folliculaire et annulation de cycle.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV13-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Chronologie du protocole antagoniste flexible vs fixe — frise comparative (Comparez le moment d'introduction de l'antagoniste)</td>
+</tr>
+<tr>
+<td>MFIV13-S02-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Comparaison protocole long agoniste vs antagoniste : durée, injections, risque SHO, taux de grossesse, coût</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-133-protocoles-alternatifs-mild-stimulation-natural-cycle-duostim-et-random-start">Section 13.3 — Protocoles alternatifs : mild stimulation, natural cycle, DuoStim et random start</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La FIV en cycle naturel (sans stimulation) donne un seul ovocyte. Le taux de grossesse par cycle est très faible (~7-10%). Pourtant, certaines équipes la défendent. Quel est l'argument ? Et le DuoStim, qui consiste à stimuler deux fois dans le même cycle, ne va-t-il pas « épuiser » la réserve ovarienne ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les protocoles alternatifs comme des stratégies adaptées à des situations cliniques spécifiques, et non comme des « protocoles de second choix » :</p>
+<ul>
+<li>
+<p><strong>Mild stimulation</strong> (<em>mini-IVF</em>) : FSH à faible dose (100-150 UI/jour) ± clomifène (100 mg J2-J6) ou létrozole (5 mg J2-J6), protocole antagoniste. Objectif : 2-7 ovocytes. Indications : patientes souhaitant réduire le risque de SHO, contraintes financières (cycles répétés à faible coût), réserve ovarienne normale mais souhait de limiter les injections. Le module doit citer les travaux de Nargund et al. montrant un taux de naissance vivante cumulé comparable au protocole conventionnel lorsque 2-3 cycles mild sont réalisés <em>(Nargund et al., Reprod Biomed Online, 2017)</em>.</p>
+</li>
+<li>
+<p><strong>Natural cycle IVF</strong> : aucune stimulation gonadotrope — monitorage du follicule dominant naturel, ponction de l'ovocyte unique, ICSI. Taux de grossesse par cycle : 7-10% <em>(Pelinck et al., Hum Reprod, 2002)</em>. Indications : patientes ne répondant pas à la stimulation (futilité de l'hyperstimulation), contre-indication aux gonadotrophines, choix philosophique de la patiente (refus de stimulation). Le module doit discuter honnêtement les limites (taux de ponction blanche ~15%, taux d'annulation élevé) et les avantages (absence de SHO, coût minimal, pas d'injections).</p>
+</li>
+<li>
+<p><strong>DuoStim (double stimulation)</strong> : le module doit présenter cette stratégie innovante consistant à réaliser <strong>deux stimulations ovariennes dans le même cycle menstruel</strong> — une première stimulation en phase folliculaire (classique), ponction, puis une deuxième stimulation immédiate en phase lutéale, deuxième ponction. Les ovocytes recueillis lors des deux ponctions sont vitrifiés ou fécondés et les embryons congelés (freeze-all obligatoire). Le module doit expliquer que le DuoStim repose sur la découverte que des <strong>vagues de recrutement folliculaire</strong> se produisent aussi en phase lutéale — le concept de « folliculogenèse continue » (<em>wave theory</em> de Baerwald et al., 2003). Indications : faibles répondeuses (accumulation rapide d'ovocytes/embryons), oncofertilité urgente (maximiser le rendement avant chimiothérapie).</p>
+</li>
+<li>
+<p><strong>Random start</strong> : stimulation débutée à <strong>n'importe quel moment du cycle</strong> (pas nécessairement J2) — en urgence pour préservation de fertilité avant chimiothérapie (oncofertilité). Le module doit citer les données montrant que le rendement ovocytaire et la qualité embryonnaire ne sont pas significativement altérés par un random start <em>(Cakmak et al., Fertil Steril, 2013)</em>.</p>
+</li>
+<li>
+<p><strong>Protocoles pour faibles répondeuses</strong> : le module doit présenter les <strong>critères de Bologne</strong> (ESHRE, 2011) — au moins 2 des 3 critères : (1) âge ≥40 ans, (2) antécédent de réponse faible (≤3 ovocytes), (3) CFA &lt;5-7 ou AMH &lt;0,5-1,1 ng/mL. La <strong>classification POSEIDON</strong> (Humaidan et al., 2016) stratifie les faibles répondeuses en 4 groupes selon l'âge et les biomarqueurs, permettant une approche plus ciblée. Le <strong>Shanghai protocol</strong> (double stimulation folliculaire + lutéale) est une variante du DuoStim spécifiquement développée pour les patientes POSEIDON <em>(Kuang et al., Reprod Biomed Online, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>Protocoles pour SOPK</strong> : le module doit détailler l'approche spécifique — protocole <strong>antagoniste</strong> (jamais agoniste long — risque SHO majeur), FSH à faible dose (100-150 UI/jour), trigger par <strong>agoniste GnRH</strong> (et non hCG), stratégie <strong>freeze-all</strong> systématique en cas de réponse excessive (&gt;15 follicules), +/- létrozole adjuvant (réduit l'E2 et le risque SHO). L'essai TRIGGER <em>(Youssef et al., Hum Reprod, 2014)</em> a démontré que cette approche réduit le SHO sévère de &gt;90%.</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — DuoStim et qualité ovocytaire en phase lutéale</strong><br />
+La qualité des ovocytes recueillis lors de la stimulation lutéale du DuoStim est-elle comparable à celle de la phase folliculaire ?<br />
+- <strong>Pour</strong> : Ubaldi et al. (2016) — taux de blastulation et taux d'euploïdie (PGT-A) comparables entre les deux ponctions dans une cohorte de faibles répondeuses<br />
+- <strong>Contre</strong> : certaines équipes rapportent un taux de maturation ovocytaire légèrement inférieur en phase lutéale et un taux d'implantation par embryon tendanciellement plus bas<br />
+- <strong>Synthèse</strong> : le DuoStim est une stratégie validée pour l'accumulation d'ovocytes chez les faibles répondeuses, mais les données à long terme sont encore limitées (📊 Niveau de preuve : III — études de cohorte)</p>
+<p>🧊 <strong>Exercice ReproSim©</strong> : Ouvrez le simulateur ReproSim© en mode « Protocole de stimulation ». Paramétrez le profil suivant : femme 38 ans, AMH 0,7 ng/mL, CFA 5, poids 62 kg.<br />
+1. Simulez un protocole antagoniste standard (Gonal-F 300 UI/jour) — observez le nombre de follicules recrutés et le rendement ovocytaire prédit<br />
+2. Simulez un protocole DuoStim (stimulation folliculaire + lutéale) — comparez le nombre total d'ovocytes accumulés<br />
+3. Simulez un protocole avec HMG (Menopur 225 UI) + GH adjuvante — observez l'effet de la co-stimulation<br />
+→ <em>Comparez les trois stratégies en termes de rendement, de coût et de durée totale. Quelle est votre recommandation personnalisée pour cette patiente ?</em></p>
+<p>✏️ <strong>Micro-exercice</strong> : Classez les protocoles suivants du plus au moins invasif (nombre d'injections et durée totale) :<br />
+A. Protocole long agoniste / B. Natural cycle IVF / C. Protocole antagoniste flexible / D. Mild stimulation + clomifène / E. DuoStim<br />
+→ <em>Ordre : A (le plus long : 4-5 semaines, ~40 injections) &gt; E (~3-4 semaines avec 2 stimulations) &gt; C (~12-14 jours, ~15-20 injections) &gt; D (~10-12 jours, ~8-12 injections) &gt; B (le moins : 0 injection de stimulation)</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV13-S03-001</td>
+<td>📐 SCHÉMA</td>
+<td>Frises comparatives des 6 protocoles : long agoniste, court agoniste, antagoniste, mild, natural cycle, DuoStim (Comparez les durées et les moments clés)</td>
+</tr>
+<tr>
+<td>MFIV13-S03-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Classification POSEIDON : 4 groupes de faibles répondeuses — critères et stratégie adaptée</td>
+</tr>
+<tr>
+<td>MFIV13-S03-003</td>
+<td>📐 SCHÉMA</td>
+<td>Arbre décisionnel : choix du protocole selon profil patiente (âge, AMH, CFA, SOPK, endométriose, oncofertilité)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-134-arbre-decisionnel-comment-choisir-le-protocole-optimal-pour-chaque-patiente">Section 13.4 — Arbre décisionnel : comment choisir le protocole optimal pour chaque patiente</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Face à une patiente en première tentative de FIV, quels sont les 5 paramètres cliniques qui orientent votre choix de protocole ? Et comment modifiez-vous votre stratégie après un échec ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit proposer un arbre décisionnel structuré, applicable en pratique quotidienne, intégrant les données des Modules 8-12 :</p>
+<ul>
+<li>
+<p><strong>Paramètres de décision</strong> : le module doit lister et hiérarchiser les paramètres : (1) Réserve ovarienne (AMH + CFA = les deux déterminants principaux) ; (2) Âge de la patiente ; (3) IMC ; (4) Antécédent de réponse à une stimulation précédente (le meilleur prédicteur est la réponse antérieure) ; (5) Pathologie associée (SOPK, endométriose, IOP) ; (6) Contexte (urgence oncofertilité, préservation sociétale).</p>
+</li>
+<li>
+<p><strong>Algorithme simplifié</strong> :</p>
+</li>
+<li><strong>Normo-répondeuse</strong> (AMH 1,2-3,5, CFA 8-15) → Protocole antagoniste flexible, FSH 150-225 UI, trigger hCG ou agoniste</li>
+<li><strong>Hyper-répondeuse/SOPK</strong> (AMH &gt;3,5, CFA &gt;15) → Protocole antagoniste, FSH faible dose (100-150 UI) ou Rekovelle, trigger agoniste, freeze-all</li>
+<li><strong>Faible répondeuse POSEIDON 1-2</strong> (jeune, AMH basse) → Protocole antagoniste, FSH haute dose (300-450 UI) ± LH, ou DuoStim</li>
+<li><strong>Faible répondeuse POSEIDON 3-4</strong> (âgée, AMH basse) → Protocole antagoniste haute dose, DuoStim, ou mild/natural cycle (accumulation embryonnaire)</li>
+<li><strong>Endométriose sévère</strong> → Protocole long agoniste (bénéfice de la down-regulation) ou antagoniste avec prétraitement estro-progestatif</li>
+<li><strong>Oncofertilité urgente</strong> → Random start ± DuoStim</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — L'échec du premier cycle : comment adapter ?</strong><br />
+Après un échec de FIV, le praticien doit analyser systématiquement : nombre d'ovocytes obtenus (réponse), taux de maturité, taux de fécondation, qualité embryonnaire, épaisseur endométriale, taux de progestérone au déclenchement. Si la réponse était insuffisante : augmenter la dose, ajouter de la LH, envisager le DuoStim. Si la réponse était excessive : réduire la dose, privilégier le freeze-all. Si la qualité embryonnaire était médiocre malgré une bonne réponse : évoquer une cause spermatique ou ovocytaire (cf. Modules 18-20).</p>
+<p>✏️ <strong>Micro-exercice</strong> : Pour chacun des 3 profils suivants, proposez le protocole optimal :<br />
+1. Femme 28 ans, AMH 8,5 ng/mL, CFA 35, SOPK → <em>?</em><br />
+2. Femme 41 ans, AMH 0,4 ng/mL, CFA 3 → <em>?</em><br />
+3. Femme 33 ans, AMH 2,5 ng/mL, CFA 12, endométriose stade IV → <em>?</em><br />
+→ <em>Réponses : (1) Antagoniste, FSH faible dose (100-150 UI), trigger agoniste, freeze-all ; (2) DuoStim ou antagoniste haute dose (FSH 300-450 + LH), ou mild stimulation répétée ; (3) Long agoniste (bénéfice down-regulation sur endométriose) ou antagoniste avec prétraitement dienogest 2 mois</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV13-S04-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Arbre décisionnel complet du choix de protocole — format poster imprimable (Suivez les branches selon le profil de votre prochaine patiente)</td>
+</tr>
+<tr>
+<td>MFIV13-S04-002</td>
+<td>📊 TABLEAU</td>
+<td>Synthèse comparative : 8 protocoles, 6 critères (durée, injections, ovocytes, SHO, coût, indications principales)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-13">Points clés — Module 13</h2>
+<ol>
+<li>Le <strong>protocole long agoniste</strong> (down-regulation lutéale) reste indiqué dans l'endométriose sévère et la préparation au PGT, malgré sa durée et ses contraintes</li>
+<li>Le <strong>protocole antagoniste</strong> (flexible ou fixe) est le standard international de première intention — durée réduite, risque SHO moindre, efficacité comparable</li>
+<li>La <strong>mild stimulation</strong> et le <strong>natural cycle</strong> sont des alternatives valides pour des indications spécifiques (refus de stimulation, budget limité, accumulation progressive)</li>
+<li>Le <strong>DuoStim</strong> exploite les vagues folliculaires et permet d'accumuler des ovocytes en un seul cycle — stratégie majeure pour les faibles répondeuses et l'oncofertilité</li>
+<li>La <strong>classification POSEIDON</strong> stratifie les faibles répondeuses en 4 groupes, permettant une approche thérapeutique ciblée</li>
+<li>Le choix du protocole repose sur 5 paramètres clés : AMH, CFA, âge, IMC et antécédent de stimulation</li>
+<li>L'adaptation du protocole après un échec est un acte médical majeur qui nécessite une analyse systématique du cycle précédent</li>
+</ol>
+<h2 id="auto-evaluation-module-13">Auto-évaluation — Module 13</h2>
+<p><strong>QCM 1</strong> : Dans un protocole long agoniste, quand débute-t-on l'agoniste GnRH ?<br />
+a) J2 du cycle de stimulation<br />
+b) J21 du cycle précédent (phase lutéale)<br />
+c) J5-6 du cycle de stimulation<br />
+d) Le jour du déclenchement<br />
+→ <em>Réponse : b — L'agoniste est débuté en phase lutéale (J21) pour obtenir une down-regulation complète avant le début de la stimulation.</em></p>
+<p><strong>QCM 2</strong> : Quel protocole est recommandé en première intention pour une patiente SOPK (AMH 10 ng/mL, CFA 40) en FIV ?<br />
+a) Protocole long agoniste + Elonva<br />
+b) Protocole antagoniste + FSH faible dose + trigger agoniste + freeze-all<br />
+c) Mild stimulation avec clomifène seul<br />
+d) Natural cycle IVF<br />
+→ <em>Réponse : b — Le protocole antagoniste avec FSH faible dose, trigger par agoniste GnRH (pas hCG) et freeze-all est la stratégie validée pour minimiser le risque de SHO chez les patientes SOPK hyper-répondeuses.</em></p>
+<p><strong>Cas clinique court</strong> : M. et Mme V., 36 ans, infertilité tubaire bilatérale. Mme V. a un AMH de 2,8 ng/mL, CFA 12. Première FIV : protocole antagoniste, Gonal-F 200 UI/jour, 12 ovocytes ponctionnés, 8 MII, 6 fécondés (ICSI), 3 blastocystes J5. Transfert d'un blastocyste — bêta-hCG positive, grossesse évolutive. Les 2 blastocystes restants sont vitrifiés. Deux ans plus tard, Mme V. revient pour un deuxième enfant. Son AMH est maintenant à 1,8 ng/mL, CFA 9. Comment adaptez-vous le protocole ?<br />
+→ <em>Réponse : (1) TEC des 2 blastocystes vitrifiés en priorité (avant toute nouvelle stimulation) ; (2) Si échec des TEC : nouveau cycle de stimulation avec protocole antagoniste, dose de FSH augmentée (250-300 UI/jour pour compenser la baisse d'AMH), surveillance rapprochée. Le protocole antagoniste reste adapté (pas d'indication au long agoniste). Envisager l'ajout de LH (Luveris ou HMG) vu l'âge de 38 ans.</em></p>
+<p><strong>Question de synthèse</strong> : Décrivez en 8-10 lignes le principe du DuoStim, ses indications principales et ses limites actuelles.</p>
+<h2 id="references-bibliographiques-module-13">Références bibliographiques — Module 13</h2>
+<ul>
+<li>Sallam HN et al. <em>Long-term pituitary down-regulation before in vitro fertilization for endometriosis</em>. Cochrane Database Syst Rev. 2006;(1):CD004635.</li>
+<li>Al-Inany HG et al. <em>Flexible versus fixed GnRH antagonist regimen</em>. Reprod Biomed Online. 2005;10:524-531.</li>
+<li>Nargund G et al. <em>Mild stimulation for IVF: a systematic review</em>. Reprod Biomed Online. 2017;34:573-583.</li>
+<li>Baerwald AR et al. <em>A new model for ovarian follicular development during the human menstrual cycle</em>. Fertil Steril. 2003;80:116-122.</li>
+<li>Ubaldi FM et al. <em>Luteal phase ovarian stimulation for poor responders</em>. Fertil Steril. 2016;106:1424-1434.</li>
+<li>Cakmak H et al. <em>Effective method for emergency fertility preservation: random-start controlled ovarian stimulation</em>. Fertil Steril. 2013;100:1673-1680.</li>
+<li>Kuang Y et al. <em>Luteal-phase ovarian stimulation is feasible for producing competent oocytes</em>. Reprod Biomed Online. 2014;29:684-691.</li>
+<li>Humaidan P et al. <em>The POSEIDON group: defining low prognosis in ART</em>. Hum Reprod. 2016;31:1411-1413.</li>
+<li>Youssef MA et al. <em>GnRH agonist trigger in PCOS patients</em>. Hum Reprod. 2014;29:1164-1170.</li>
+<li>Ferraretti AP et al. <em>ESHRE consensus on the definition of poor response</em>. Hum Reprod. 2011;26:1616-1624.</li>
+</ul>
+<hr />
+<h1 id="module-14-monitorage-de-la-stimulation-ovarienne-echographie-et-biologie">MODULE 14 : MONITORAGE DE LA STIMULATION OVARIENNE — ÉCHOGRAPHIE ET BIOLOGIE</h1>
+<p><strong>Partie</strong> : IV — Stimulation ovarienne<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 12-13 (pharmacologie et protocoles de stimulation), Module 4 (anatomie appareil reproducteur)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 ÉCHOGRAPHISTE 🟣 BIOLOGISTE</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Mme G., 35 ans, est à J9 de stimulation sous protocole antagoniste (Gonal-F 200 UI/jour + Orgalutran depuis J7). L'échographie de monitorage montre : ovaire droit — 3 follicules de 18 mm, 2 de 15 mm, 4 de 12 mm ; ovaire gauche — 2 follicules de 17 mm, 3 de 14 mm, 2 de 11 mm. L'E2 est à 3200 pg/mL, la LH à 1,8 UI/L, la progestérone à 0,9 ng/mL, l'endomètre à 9 mm en triple ligne. *Déclenchez-vous ce soir ? L'E2 est-il trop élevé ? La progestérone est-elle acceptable ? Combien d'ovocytes matures pouvez-vous espérer ?* Chaque réponse dépend de votre maîtrise du monitorage — l'art de lire simultanément l'échographie et la biologie pour prendre la bonne décision au bon moment.</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> un monitorage échographique de stimulation ovarienne (compte folliculaire, mesure du diamètre moyen, identification des follicules matures ≥17-18 mm) et interpréter les résultats en temps réel</li>
+<li><strong>Interpréter</strong> les marqueurs biologiques du monitorage (estradiol, LH, progestérone) et corréler les données biologiques aux données échographiques</li>
+<li><strong>Évaluer</strong> l'endomètre sous stimulation (épaisseur, aspect triple ligne, score endométrial) et son impact sur la décision de transfert frais vs freeze-all</li>
+<li><strong>Appliquer</strong> les critères de déclenchement, de coasting et d'annulation de cycle selon les données intégrées écho + biologie</li>
+<li><strong>Adapter</strong> la dose de gonadotrophines en fonction de la réponse folliculaire et biologique au cours de la stimulation</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-141-monitorage-echographique-technique-mesures-et-interpretation">Section 14.1 — Monitorage échographique : technique, mesures et interprétation</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Un follicule de 18 mm contient-il toujours un ovocyte mature ? Et un follicule de 14 mm peut-il donner un ovocyte fécondable ? La taille folliculaire est-elle un bon prédicteur de la maturité ovocytaire ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le monitorage échographique comme un acte médical technique exigeant, dont la qualité conditionne directement le succès de la FIV :</p>
+<ul>
+<li>
+<p><strong>Technique de monitorage</strong> : échographie endovaginale (sonde 5-9 MHz), patiente vessie vide, examen systématique des deux ovaires (balayage complet, mesure de chaque follicule &gt;10 mm). Le <strong>diamètre moyen</strong> de chaque follicule est calculé sur 2 dimensions perpendiculaires (moyenne des 2 plus grands diamètres dans un plan). Le module doit insister sur les pièges techniques : follicules coalescents (2 follicules accolés mesurés comme un seul), follicules cachés derrière l'utérus, ovaire haut et latéral difficilement accessible.</p>
+</li>
+<li>
+<p><strong>Seuils de maturité folliculaire</strong> : le module doit présenter les seuils consensuels — un follicule est considéré comme <strong>mature</strong> lorsque son diamètre moyen atteint <strong>17-18 mm</strong> (contenant un ovocyte en métaphase II dans ~80% des cas). Les follicules de <strong>14-16 mm</strong> (intermédiaires) ont ~50% de chance de contenir un ovocyte mature au moment de la ponction. Les follicules &lt;12 mm donnent rarement un ovocyte mature. Le module doit nuancer : il n'existe pas de corrélation parfaite entre taille folliculaire et maturité ovocytaire — certains follicules de 20 mm contiennent un ovocyte immature (atrétique ou post-mature) et certains follicules de 14 mm donnent un ovocyte MII de bonne qualité <em>(Wittmaack et al., Fertil Steril, 1994)</em>.</p>
+</li>
+<li>
+<p><strong>Fréquence des contrôles</strong> : le module doit proposer un schéma standard — J6 (premier contrôle : vérification du recrutement), J8 (évaluation de la croissance, ajustement de dose), J10 (décision de déclenchement ou poursuite), puis quotidien si nécessaire. La vitesse de croissance folliculaire est d'environ <strong>1,5-2 mm/jour</strong> sous stimulation — ce qui permet de prédire la date de déclenchement <em>(Macklon &amp; Fauser, Hum Reprod Update, 2000)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — L'asynchronie folliculaire, le défi quotidien</strong><br />
+En pratique, les follicules ne croissent pas tous à la même vitesse. Un écart &gt;6 mm entre le follicule dominant et les plus petits follicules pose un dilemme : déclencher tôt (risque d'immaturité des petits follicules) ou attendre (risque de sur-maturation du dominant avec progestérone élevée). L'objectif est d'avoir <strong>≥3 follicules ≥17 mm</strong> tout en conservant un E2 et une progestérone dans les limites acceptables. L'approche « trigger for the majority » est la stratégie la plus courante.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme P., J8 de stimulation, échographie : OD — 2 × 16 mm, 3 × 13 mm, 2 × 10 mm ; OG — 1 × 17 mm, 2 × 14 mm, 1 × 11 mm. E2 = 1800 pg/mL. Estimez : (a) le nombre de follicules matures prévisibles au moment de la ponction (si déclenchement à J10) ; (b) le nombre total d'ovocytes espérés.<br />
+→ <em>Réponse : (a) Si déclenchement J10 (croissance ~2 mm/jour en 2 jours) : follicules ≥17 mm = ceux actuellement ≥13 mm, soit ~8 follicules ; (b) Ovocytes espérés = ~80% des follicules &gt;14 mm au moment de la ponction, soit ~6-8 ovocytes, dont ~70-80% matures (MII).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV14-S01-001</td>
+<td>📷 ÉCHOGRAPHIE</td>
+<td>Images échographiques de monitorage : follicules à J6, J8, J10 — progression de la taille (Mesurez les diamètres et estimez la date optimale de déclenchement)</td>
+</tr>
+<tr>
+<td>MFIV14-S01-002</td>
+<td>🎬 VIDÉO</td>
+<td>Technique de mesure folliculaire endovaginale — balayage systématique, pièges (coalescence, follicule postérieur)</td>
+</tr>
+<tr>
+<td>MFIV14-S01-003</td>
+<td>📊 GRAPHIQUE</td>
+<td>Courbe de croissance folliculaire sous stimulation : vitesse normale (~2 mm/j) vs lente vs rapide</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-142-monitorage-biologique-estradiol-lh-progesterone-la-correlation-echo-bio">Section 14.2 — Monitorage biologique : estradiol, LH, progestérone — la corrélation écho-bio</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi dose-t-on l'estradiol sérique pendant le monitorage alors que l'échographie montre directement les follicules ? Quel est l'apport additionnel de la biologie par rapport à l'imagerie seule ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les marqueurs biologiques du monitorage comme des compléments indispensables de l'échographie, apportant des informations que l'imagerie seule ne fournit pas :</p>
+<ul>
+<li>
+<p><strong>Estradiol (E2) sérique</strong> : le module doit expliquer que l'E2 est produit par les cellules de la granulosa des follicules en croissance — il reflète la <strong>masse folliculaire active</strong> (nombre × taille des follicules). La corrélation empirique est d'environ <strong>200-300 pg/mL par follicule mature</strong> (≥17 mm) <em>(Fauser &amp; Van Heusden, Endocr Rev, 1997)</em>. Un E2 trop bas par rapport au nombre de follicules suggère une stéroïdogenèse déficiente (follicules « vides » ou déficit en LH). Un E2 trop élevé (&gt;3500-4000 pg/mL) est un facteur de risque majeur de SHO — le praticien doit alors envisager le coasting ou le trigger agoniste (cf. Module 15).</p>
+</li>
+<li>
+<p><strong>LH sérique</strong> : le module doit présenter la surveillance de la LH comme un outil de détection du <strong>pic prématuré de LH</strong>. Sous protocole antagoniste, la LH doit rester &lt;10 UI/L. Un pic de LH (&gt;10-15 UI/L avec montée rapide) malgré l'antagoniste est une urgence — il impose un déclenchement immédiat ou une annulation. La fréquence de ce phénomène est faible (&lt;5%) avec les antagonistes actuels mais non nulle.</p>
+</li>
+<li>
+<p><strong>Progestérone</strong> : le module doit expliquer que la progestérone sérique en fin de stimulation reflète la <strong>lutéinisation prématurée</strong> des cellules de la granulosa. Le seuil consensuel (mais débattu) est de <strong>&lt;1,5 ng/mL</strong> le jour du déclenchement — au-delà, l'avance de maturation endométriale compromet l'implantation en transfert frais. Le module doit citer l'étude princeps de Bosch et al. (2010) montrant une réduction significative du taux de grossesse quand la progestérone dépasse 1,5 ng/mL. La stratégie dans ce cas : déclencher, ponctionner, mais opter pour le <strong>freeze-all</strong> (congélation de tous les embryons) et transfert différé en cycle ultérieur <em>(Bosch et al., Fertil Steril, 2010)</em> (📊 Niveau de preuve : II).</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — Le seuil de progestérone : 1,0 ou 1,5 ng/mL ?</strong><br />
+Le seuil de progestérone au-delà duquel le transfert frais est déconseillé fait l'objet d'un débat :<br />
+- <strong>Seuil strict (1,0 ng/mL)</strong> : certaines équipes (Venetis et al., 2013) montrent un impact négatif dès 1,0 ng/mL sur le taux d'implantation<br />
+- <strong>Seuil classique (1,5 ng/mL)</strong> : le seuil le plus utilisé en pratique, validé par plusieurs études de cohorte<br />
+- <strong>Approche nuancée</strong> : le ratio P4/nombre de follicules ≥14 mm pourrait être plus informatif que la valeur absolue de progestérone — une P4 de 1,8 ng/mL avec 20 follicules est moins inquiétante qu'une P4 de 1,8 avec 5 follicules<br />
+La tendance actuelle est au freeze-all « libéral » dès que la progestérone suscite un doute (📊 Niveau de preuve : III).</p>
+<p>💡 <strong>Mnémonique — ELP</strong> (Les 3 marqueurs biologiques du monitorage) :<br />
+<strong>E</strong>stradiol (masse folliculaire — 200-300/follicule mature) — <strong>L</strong>H (pic prématuré — &lt;10) — <strong>P</strong>rogestérone (lutéinisation — &lt;1,5 ng/mL)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme G. (accroche clinique) : E2 = 3200 pg/mL, 5 follicules ≥17 mm. Le ratio E2/follicule mature est-il cohérent ? Calculez et interprétez.<br />
+→ <em>Réponse : 3200/5 = 640 pg/mL/follicule. C'est supérieur au ratio attendu (200-300). Cela suggère que des follicules intermédiaires (14-16 mm) contribuent également à la production d'E2, ou que la stéroïdogenèse est particulièrement active. Ce n'est pas un signe d'alerte en soi, mais combiné au nombre total de follicules (&gt;15), il faut évaluer le risque de SHO.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV14-S02-001</td>
+<td>📊 GRAPHIQUE</td>
+<td>Corrélation E2/nombre de follicules : courbe normale et zones d'alerte (SHO, follicules vides)</td>
+</tr>
+<tr>
+<td>MFIV14-S02-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Interprétation intégrée écho + bio : tableau décisionnel (E2 haut/bas × follicules nombreux/rares × P4 haute/basse)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-143-evaluation-de-lendometre-et-criteres-de-decision-declenchement-coasting-annulation">Section 14.3 — Évaluation de l'endomètre et critères de décision : déclenchement, coasting, annulation</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Un endomètre de 6 mm en triple ligne le jour du déclenchement — transférez-vous un embryon frais ou optez-vous pour le freeze-all ? Et si l'endomètre mesure 14 mm, est-ce « trop épais » ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'évaluation endométriale et les critères de décision comme l'aboutissement du monitorage — le moment où toutes les données convergent pour guider l'action :</p>
+<ul>
+<li>
+<p><strong>Évaluation de l'endomètre</strong> : le module doit détailler les critères échographiques — épaisseur mesurée en coupe sagittale médiane (double couche), seuil minimal <strong>≥7 mm</strong> pour un transfert frais (en dessous, taux d'implantation significativement réduit — <em>(Kasius et al., Hum Reprod Update, 2014)</em>). L'aspect en <strong>triple ligne</strong> (pattern trilaminar) est le pattern optimal — il traduit un endomètre prolifératif réceptif. Un aspect <strong>hyperéchogène homogène</strong> peut indiquer une lutéinisation prématurée. Le score endométrial optimal combine épaisseur ≥8 mm + triple ligne + flux Doppler sous-endométrial présent.</p>
+</li>
+<li>
+<p><strong>Critères de déclenchement</strong> : le module doit synthétiser les critères consensuels — déclenchement lorsque <strong>≥3 follicules atteignent ≥17 mm</strong>, E2 cohérent avec le nombre de follicules, P4 &lt;1,5 ng/mL, endomètre ≥7 mm. Le choix du trigger (hCG vs agoniste GnRH) dépend du risque de SHO (cf. Module 15).</p>
+</li>
+<li>
+<p><strong>Coasting</strong> : le module doit décrire cette stratégie de prévention du SHO consistant à <strong>arrêter les gonadotrophines</strong> (stop FSH) tout en maintenant l'antagoniste GnRH, et à surveiller quotidiennement la décroissance de l'E2 avant de déclencher. Le coasting est indiqué quand l'E2 dépasse ~4000-5000 pg/mL avec de nombreux follicules. Le déclenchement est effectué quand l'E2 redescend sous 3500 pg/mL. Le module doit préciser les limites : le coasting prolongé (&gt;3-4 jours) peut compromettre la qualité ovocytaire par sur-maturation <em>(Mansour et al., Fertil Steril, 2005)</em>.</p>
+</li>
+<li>
+<p><strong>Critères d'annulation de cycle</strong> : le module doit lister les situations justifiant l'annulation — (1) réponse excessive incontrôlable (&gt;30 follicules, E2 &gt;6000 malgré coasting — risque SHO critique) ; (2) réponse insuffisante (&lt;2 follicules ≥14 mm malgré dose maximale) ; (3) pic de LH prématuré non contrôlé par l'antagoniste ; (4) progestérone &gt;2 ng/mL avec &lt;3 follicules matures ; (5) kyste ovarien apparu en cours de stimulation.</p>
+</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger — La progestérone élevée</strong> : ne pas transférer en frais**
+> Une progestérone ≥1,5 ng/mL le jour du déclenchement doit conduire à une stratégie **freeze-all** (congélation de tous les embryons, transfert différé). Transférer en frais avec une progestérone élevée expose à un décalage de la fenêtre d'implantation, réduisant le taux de grossesse de 10-15% selon les études *(Venetis et al., Hum Reprod Update, 2013)*. Le praticien ne doit pas céder à la pression de la patiente qui souhaite « en finir rapidement » — le TEC aura un meilleur pronostic.</div>
+
+<blockquote>
+<p>✏️ <strong>Micro-exercice</strong> : Décision clinique. À J10, Mme S. : 4 follicules ≥18 mm, 3 × 15 mm, 5 × 12 mm. E2 = 4800 pg/mL. P4 = 1,1 ng/mL. Endomètre 8 mm triple ligne. LH = 2,1 UI/L. Quelle est votre décision ?<br />
+→ <em>Réponse : L'E2 est élevé (4800 pg/mL) avec de nombreux follicules — risque de SHO. Deux options : (1) Trigger agoniste GnRH ce soir + freeze-all (le plus sûr) ; (2) Coasting 1-2 jours (arrêt FSH, poursuite antagoniste), contrôle E2 quotidien, trigger quand E2 &lt;3500. La P4 est acceptable (1,1 &lt;1,5) mais en freeze-all la question ne se pose plus. Option 1 recommandée.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV14-S03-001</td>
+<td>📷 ÉCHOGRAPHIE</td>
+<td>Endomètre sous stimulation : triple ligne vs hyperéchogène — corrélation avec réceptivité</td>
+</tr>
+<tr>
+<td>MFIV14-S03-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Algorithme de décision de fin de stimulation : déclencher / coaster / annuler — critères intégrés écho + bio</td>
+</tr>
+<tr>
+<td>MFIV14-S03-003</td>
+<td>📐 SCHÉMA</td>
+<td>Synthèse du monitorage : timeline J2-J12, contrôles écho + bio, seuils décisionnels</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-14">Points clés — Module 14</h2>
+<ol>
+<li>Le monitorage échographique mesure la <strong>croissance folliculaire</strong> (~2 mm/jour sous stimulation) — un follicule ≥17-18 mm contient un ovocyte mature dans ~80% des cas</li>
+<li>L'<strong>estradiol sérique</strong> reflète la masse folliculaire active (~200-300 pg/mL par follicule mature) et permet de dépister le risque de SHO (&gt;3500 pg/mL = alerte)</li>
+<li>La <strong>LH</strong> doit rester supprimée sous antagoniste (&lt;10 UI/L) — un pic prématuré impose un déclenchement immédiat</li>
+<li>La <strong>progestérone</strong> &gt;1,5 ng/mL le jour du déclenchement compromet l'implantation en transfert frais → stratégie freeze-all</li>
+<li>L'<strong>endomètre</strong> optimal mesure ≥7-8 mm en aspect triple ligne — un endomètre fin ou hyperéchogène indique un freeze-all</li>
+<li>Le <strong>coasting</strong> (arrêt FSH, poursuite antagoniste) est une stratégie de réduction du risque de SHO à utiliser avec prudence (max 3-4 jours)</li>
+<li>L'annulation de cycle est une décision difficile mais nécessaire face à une réponse incontrôlable ou une lutéinisation prématurée</li>
+</ol>
+<h2 id="auto-evaluation-module-14">Auto-évaluation — Module 14</h2>
+<p><strong>QCM 1</strong> : Quelle est la corrélation empirique entre estradiol sérique et nombre de follicules matures ?<br />
+a) 50-100 pg/mL par follicule mature<br />
+b) 200-300 pg/mL par follicule mature<br />
+c) 500-700 pg/mL par follicule mature<br />
+d) 1000 pg/mL par follicule mature<br />
+→ <em>Réponse : b — La corrélation classique est de 200-300 pg/mL par follicule ≥17 mm, utile pour évaluer la cohérence écho-bio.</em></p>
+<p><strong>QCM 2</strong> : Quel est le seuil de progestérone au-delà duquel le transfert frais est déconseillé ?<br />
+a) 0,5 ng/mL<br />
+b) 1,0 ng/mL<br />
+c) 1,5 ng/mL<br />
+d) 2,5 ng/mL<br />
+→ <em>Réponse : c — Le seuil consensuel (le plus utilisé) est 1,5 ng/mL, au-delà duquel l'avance de maturation endométriale compromet l'implantation. Certaines équipes utilisent 1,0 ng/mL (seuil strict).</em></p>
+<p><strong>Cas clinique court</strong> : Mme A., 32 ans, J9, protocole antagoniste. Écho : OD — 1 × 20 mm, 1 × 18 mm, 2 × 16 mm, 3 × 13 mm ; OG — 2 × 17 mm, 1 × 15 mm, 2 × 12 mm. E2 = 1200 pg/mL. 5 follicules ≥17 mm. Calculez le ratio E2/follicule mature. Que suspectez-vous ? Quel est le dosage à ajouter ?<br />
+→ <em>Réponse : Ratio = 1200/5 = 240 pg/mL/follicule — dans la norme basse mais acceptable. Cependant, les 5 follicules intermédiaires (13-16 mm) devraient aussi contribuer — un E2 de 1200 avec 12 follicules &gt;12 mm est plutôt bas, évoquant un possible </em><em>déficit en LH</em><em> (la LH est nécessaire à la stéroïdogenèse thécale). Vérifier la LH sérique. Si LH &lt;1 UI/L : ajouter de la LH exogène (Luveris 75 UI/jour ou switch vers HMG — Menopur). Cf. Module 12, section 12.2.</em></p>
+<p><strong>Question de synthèse</strong> : Décrivez les critères intégrés (échographiques et biologiques) qui vous conduisent à décider le déclenchement de l'ovulation. Précisez les situations où vous opteriez pour un coasting plutôt qu'un déclenchement immédiat.</p>
+<h2 id="references-bibliographiques-module-14">Références bibliographiques — Module 14</h2>
+<ul>
+<li>Wittmaack FM et al. <em>Follicle size at time of oocyte retrieval predicts fertilization rate and embryo quality</em>. Fertil Steril. 1994;62:283-287.</li>
+<li>Macklon NS, Fauser BC. <em>Follicle-stimulating hormone and advanced follicle development in the human</em>. Hum Reprod Update. 2000;6:597-605.</li>
+<li>Fauser BC, Van Heusden AM. <em>Manipulation of human ovarian function: physiological concepts and clinical consequences</em>. Endocr Rev. 1997;18:71-106.</li>
+<li>Bosch E et al. <em>Circulating progesterone levels and ongoing pregnancy rates in controlled ovarian stimulation cycles for IVF</em>. Fertil Steril. 2010;94:2491-2496.</li>
+<li>Venetis CA et al. <em>Is progesterone elevation on the day of human chorionic gonadotrophin administration associated with the probability of pregnancy in IVF?</em>. Hum Reprod Update. 2013;19:164-176.</li>
+<li>Kasius A et al. <em>Endometrial thickness and pregnancy rates after IVF: a systematic review and meta-analysis</em>. Hum Reprod Update. 2014;20:530-541.</li>
+<li>Mansour R et al. <em>Coasting in IVF: a review</em>. Fertil Steril. 2005;84:1487-1494.</li>
+</ul>
+<hr />
+<h1 id="module-15-declenchement-de-lovulation-et-prevention-du-sho">MODULE 15 : DÉCLENCHEMENT DE L'OVULATION ET PRÉVENTION DU SHO</h1>
+<p><strong>Partie</strong> : IV — Stimulation ovarienne<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire-Expert<br />
+<strong>Prérequis</strong> : Modules 12-14 (pharmacologie, protocoles, monitorage)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔴 URGENTISTE 🟣 BIOLOGISTE</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Mme B., 28 ans, SOPK, protocole antagoniste, Gonal-F 150 UI/jour. À J10 : 22 follicules >14 mm, E2 = 5200 pg/mL. Vous déclenchez par agoniste GnRH (Décapeptyl 0,2 mg). Ponction à H+36 : 18 ovocytes. Freeze-all. Trois jours après la ponction, elle appelle : distension abdominale, nausées, prise de 2 kg en 24 heures, dyspnée à l'effort. Son échographie montre des ovaires à 8 cm, une lame d'ascite dans le Douglas. *C'est un SHO précoce — et pourtant vous avez utilisé le trigger agoniste. Comment est-ce possible ? Que faites-vous maintenant ?* Le SHO reste la complication la plus redoutée de la stimulation ovarienne — sa compréhension physiopathologique et sa prévention sont des compétences critiques.</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comparer</strong> les trois modalités de déclenchement de l'ovulation (hCG, agoniste GnRH, double trigger) en termes d'efficacité, de sécurité et d'indication</li>
+<li><strong>Maîtriser</strong> le timing du déclenchement (34-36h avant la ponction) et les critères folliculaires de déclenchement</li>
+<li><strong>Expliquer</strong> la physiopathologie du SHO (rôle central du VEGF, perméabilité capillaire, troisième secteur) et sa classification (Golan — léger, modéré, sévère, critique)</li>
+<li><strong>Identifier</strong> les facteurs de risque de SHO et appliquer les stratégies de prévention à chaque étape du parcours FIV</li>
+<li><strong>Prendre en charge</strong> un SHO modéré à sévère (traitement ambulatoire vs hospitalier, remplissage, albumine, paracentèse)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-151-les-trois-modalites-de-declenchement-hcg-agoniste-gnrh-et-double-trigger">Section 15.1 — Les trois modalités de déclenchement : hCG, agoniste GnRH et double trigger</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le déclenchement par agoniste GnRH réduit drastiquement le risque de SHO — alors pourquoi ne l'utilise-t-on pas systématiquement chez toutes les patientes ? Quel est le « prix à payer » de la sécurité ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter chaque modalité de déclenchement en expliquant sa logique physiologique et ses conséquences cliniques :</p>
+<ul>
+<li>
+<p><strong>Déclenchement par hCG (standard)</strong> : le module doit rappeler que l'hCG (Ovitrelle 250 µg SC ou Pregnyl 5000-10000 UI IM) se lie au récepteur LH/hCG-R et mime le pic de LH naturel, déclenchant la maturation ovocytaire finale (reprise de la méiose, passage de prophase I à métaphase II), la lutéinisation des cellules de la granulosa et la rupture folliculaire (en l'absence de ponction, ~36h après). La <strong>longue demi-vie</strong> de l'hCG (24-36h, vs 20 min pour la LH) assure un soutien lutéal efficace mais provoque une stimulation prolongée du <strong>VEGF</strong> (<em>Vascular Endothelial Growth Factor</em>) par les cellules de la granulosa lutéinisées — c'est le mécanisme central du SHO. Le timing de ponction est de <strong>34-36 heures</strong> post-injection.</p>
+</li>
+<li>
+<p><strong>Déclenchement par agoniste GnRH</strong> : le module doit expliquer que l'injection d'un bolus d'agoniste GnRH (triptoréline — Décapeptyl 0,2 mg SC) chez une patiente sous protocole <strong>antagoniste</strong> (dont les récepteurs GnRH-R ne sont pas désensibilisés) provoque un <strong>flare-up</strong> aigu — libération endogène massive de LH et FSH par l'antéhypophyse. Ce pic endogène de LH est suffisant pour déclencher la maturation ovocytaire mais il est <strong>bref</strong> (pic à H+4, retour au nadir en 24-36h) — contrairement au pic d'hCG qui persiste &gt;72h. Conséquence : l'insuffisance lutéale est quasi constante (le corps jaune n'est pas soutenu), imposant soit un soutien lutéal renforcé, soit un <strong>freeze-all</strong> (pas de transfert frais — pas besoin de soutien lutéal). L'avantage majeur : réduction de &gt;90% du risque de SHO <em>(Youssef et al., Cochrane Database Syst Rev, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>Double trigger (agoniste + hCG faible dose)</strong> : le module doit présenter cette stratégie intermédiaire — injection simultanée d'un agoniste GnRH ET d'une faible dose d'hCG (1000-1500 UI au lieu de 5000-10000) pour combiner le pic endogène de LH (maturation optimale) et un soutien lutéal suffisant (hCG faible dose) tout en limitant le risque de SHO. Indications : patientes à risque modéré de SHO souhaitant un transfert frais, ou faibles répondeuses (le double trigger maximise le rendement ovocytaire) <em>(Griffin et al., Hum Reprod, 2014)</em>.</p>
+</li>
+<li>
+<p><strong>Critères de déclenchement</strong> : le module doit synthétiser les critères consensuels — <strong>≥3 follicules ≥17 mm</strong> (seuil minimal pour justifier la ponction), E2 cohérent, P4 &lt;1,5 ng/mL, LH supprimée. Le déclenchement est programmé pour une <strong>ponction à 34-36h</strong> — ce délai correspond à la durée nécessaire pour la reprise de la méiose (passage de GV à MI à MII) et l'expansion du cumulus. Un timing trop court (&lt;33h) donne des ovocytes immatures ; un timing trop long (&gt;38h) risque l'ovulation spontanée <em>(Lambalk et al., Hum Reprod, 2017)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — HAD</strong> (Les 3 triggers) :<br />
+<strong>H</strong>CG (standard — longue durée — risque SHO) — <strong>A</strong>goniste GnRH (bref — sûr — insuffisance lutéale) — <strong>D</strong>ouble trigger (compromis — hCG faible dose + agoniste)</p>
+<p>🔬 <strong>Expert — Pourquoi le trigger agoniste ne prévient pas toujours le SHO</strong><br />
+Comme l'illustre le cas de Mme B. (accroche clinique), un SHO « précoce » peut survenir même après trigger agoniste. Deux mécanismes sont en cause : (1) le flare-up endogène lui-même produit un pic de LH qui, chez les patientes très sensibles (SOPK), peut suffire à stimuler le VEGF ; (2) rarement, une composante auto-immune ou une hypersensibilité ovarienne au VEGF est incriminée. Le SHO post-trigger agoniste est typiquement léger à modéré et de résolution spontanée en 7-10 jours (absence de hCG exogène pour entretenir le processus). Le SHO « tardif » (lié à l'hCG de grossesse) ne survient pas en freeze-all <em>(Humaidan et al., Hum Reprod, 2013)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai ou Faux :<br />
+1. Le déclenchement par agoniste GnRH est possible en protocole long agoniste → <em>FAUX — les récepteurs sont désensibilisés</em><br />
+2. Le timing optimal entre trigger et ponction est de 34-36 heures → <em>VRAI</em><br />
+3. Le double trigger combine agoniste GnRH + hCG pleine dose → <em>FAUX — hCG faible dose (1000-1500 UI)</em><br />
+4. Après trigger agoniste seul, le transfert frais nécessite un soutien lutéal renforcé → <em>VRAI — ou freeze-all</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV15-S01-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Comparaison des 3 triggers : hCG / agoniste / double — mécanisme, durée du pic, risque SHO, soutien lutéal</td>
+</tr>
+<tr>
+<td>MFIV15-S01-002</td>
+<td>🎬 ANIMATION</td>
+<td>Timeline trigger → ponction : séquence physiologique H0 à H+36 (reprise méiose, expansion cumulus, lutéinisation)</td>
+</tr>
+<tr>
+<td>MFIV15-S01-003</td>
+<td>📐 SCHÉMA</td>
+<td>Arbre décisionnel : choix du trigger selon profil de risque SHO (E2, nombre follicules, SOPK)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-152-physiopathologie-du-sho-le-vegf-et-la-cascade-de-permeabilite-capillaire">Section 15.2 — Physiopathologie du SHO : le VEGF et la cascade de perméabilité capillaire</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le SHO est la seule complication iatrogène potentiellement mortelle en AMP. Pourquoi les ovaires stimulés produisent-ils une substance (VEGF) qui provoque un syndrome de fuite capillaire systémique — quel est le « sens physiologique » de cette réponse ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la physiopathologie du SHO de manière mécanistique, en construisant une chaîne de raisonnement depuis le stimulus initial jusqu'aux complications systémiques :</p>
+<ul>
+<li>
+<p><strong>Le VEGF : médiateur central</strong> : le module doit expliquer que les cellules de la granulosa lutéinisées produisent du <strong>VEGF</strong> (<em>Vascular Endothelial Growth Factor</em>) sous l'effet de l'hCG (ou du pic de LH). Physiologiquement, le VEGF assure la <strong>néoangiogenèse du corps jaune</strong> — il est essentiel à la formation du réseau vasculaire qui nourrit le corps jaune et produit la progestérone nécessaire à la grossesse. En stimulation ovarienne, la multiplication des corps jaunes (un par follicule ponctionné) provoque une production <strong>massive</strong> et non physiologique de VEGF <em>(Gómez et al., Hum Reprod, 2002)</em>.</p>
+</li>
+<li>
+<p><strong>Cascade pathologique</strong> : VEGF → augmentation de la <strong>perméabilité capillaire</strong> (via activation des récepteurs VEGFR-2 endothéliaux) → extravasation de liquide riche en protéines vers le <strong>troisième secteur</strong> (cavité péritonéale = ascite, cavité pleurale = épanchement pleural, péricarde = épanchement péricardique rare) → hémoconcentration (augmentation de l'hématocrite) → hypercoagulabilité → risque de <strong>thrombose veineuse</strong> (pelvienne, des membres inférieurs, cérébrale) — complication la plus grave. Simultanément, la déplétion intravasculaire provoque une hypovolémie, une hypotension, une insuffisance rénale fonctionnelle (oligurie) et des troubles électrolytiques (hyperkaliémie, hyponatrémie).</p>
+</li>
+<li>
+<p><strong>SHO précoce vs tardif</strong> : le module doit distinguer le SHO <strong>précoce</strong> (J3-J7 post-ponction, lié au trigger hCG) du SHO <strong>tardif</strong> (J12-J17, lié à l'hCG de grossesse endogène). Le SHO tardif ne survient qu'en cas de grossesse évolutive après transfert frais — d'où l'intérêt majeur du <strong>freeze-all</strong> pour l'éliminer.</p>
+</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Approfondissement — Le système rénine-angiotensine ovarien</strong><br />
+Le système rénine-angiotensine intra-ovarien est activé par l'hCG et contribue à la physiopathologie du SHO. L'angiotensine II ovarienne potentialise l'effet du VEGF sur la perméabilité vasculaire et stimule la production de prostaglandines pro-inflammatoires. Les inhibiteurs de l'enzyme de conversion (IEC) ont été étudiés comme traitement adjuvant du SHO mais les résultats sont inconsistants <em>(Gómez et al., J Clin Endocrinol Metab, 2006)</em> (📊 Niveau de preuve : IV).</p>
+<p>✏️ <strong>Micro-exercice</strong> : Reconstituez la chaîne physiopathologique du SHO en ordonnant les étapes :<br />
+A. Ascite, épanchement pleural / B. Thrombose veineuse / C. VEGF massif / D. hCG se lie aux récepteurs LH/hCG-R des cellules de la granulosa / E. Hémoconcentration et hypercoagulabilité / F. Perméabilité capillaire augmentée / G. Extravasation vers le 3e secteur / H. Multiples corps jaunes après stimulation<br />
+→ <em>Ordre : H → D → C → F → G → A → E → B</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV15-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Physiopathologie du SHO : chaîne VEGF → perméabilité → 3e secteur → hémoconcentration → thrombose (Suivez les flèches et identifiez les 3 cibles thérapeutiques)</td>
+</tr>
+<tr>
+<td>MFIV15-S02-002</td>
+<td>🎬 ANIMATION</td>
+<td>Extravasation capillaire : animation de la fuite protéique vers le péritoine sous l'effet du VEGF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-153-classification-facteurs-de-risque-et-prevention-du-sho">Section 15.3 — Classification, facteurs de risque et prévention du SHO</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Peut-on réduire le risque de SHO à zéro ? Avec les protocoles antagonistes, le trigger agoniste et le freeze-all, le SHO sévère devrait avoir disparu — pourquoi persiste-t-il encore ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la classification, les facteurs de risque et surtout les stratégies de prévention, en insistant sur la responsabilité du prescripteur :</p>
+<ul>
+<li>
+<p><strong>Classification de Golan</strong> <em>(adaptée de Golan et al., Hum Reprod, 1989)</em> : le module doit présenter les 4 grades de sévérité — <strong>léger</strong> (distension abdominale, nausées, ovaires &lt;8 cm), <strong>modéré</strong> (douleur abdominale, vomissements, ascite échographique, ovaires 8-12 cm), <strong>sévère</strong> (ascite clinique ± épanchement pleural, hématocrite &gt;45%, créatinine 1,0-1,5 mg/dL, oligurie, ovaires &gt;12 cm), <strong>critique</strong> (défaillance hépatique, SDRA, insuffisance rénale, thromboembolie, hématocrite &gt;55%). Le module doit préciser que la mortalité du SHO critique est estimée à 1-3/100 000 cycles dans les pays développés.</p>
+</li>
+<li>
+<p><strong>Facteurs de risque</strong> : le module doit lister les facteurs validés — <strong>SOPK</strong> (risque × 5-10), <strong>AMH élevée</strong> (&gt;3,5 ng/mL), <strong>CFA élevé</strong> (&gt;24), <strong>âge jeune</strong> (&lt;30 ans), <strong>IMC bas</strong> (&lt;20 kg/m²), <strong>antécédent de SHO</strong>, <strong>E2 &gt;3500 pg/mL</strong> le jour du déclenchement, <strong>&gt;15 follicules</strong> &gt;11 mm, <strong>hCG trigger</strong> (vs agoniste), <strong>grossesse</strong> (SHO tardif). Le module doit insister sur le fait que le <strong>premier facteur modifiable</strong> est le choix du protocole et du trigger par le prescripteur.</p>
+</li>
+<li>
+<p><strong>Stratégies de prévention</strong> — le module doit détailler un arsenal multi-niveaux :</p>
+</li>
+<li><strong>Avant la stimulation</strong> : identification des patientes à risque (AMH, CFA), choix du protocole antagoniste, dose de FSH individualisée (faible dose chez les hyper-répondeuses)</li>
+<li><strong>Pendant la stimulation</strong> : monitorage rapproché, coasting si E2 excessif, ajustement de dose</li>
+<li><strong>Au déclenchement</strong> : trigger par <strong>agoniste GnRH</strong> (et non hCG) chez les patientes à risque</li>
+<li><strong>Après la ponction</strong> : <strong>freeze-all</strong> (supprime le SHO tardif lié à la grossesse), <strong>cabergoline</strong> 0,5 mg/jour pendant 8 jours (antagoniste dopaminergique D2 qui inhibe la phosphorylation du VEGFR-2 et réduit la perméabilité vasculaire — <em>(Alvarez et al., Fertil Steril, 2007)</em>), albumine IV (débattu), volume de rinçage folliculaire limité</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Le SHO tue encore**
+> Malgré les progrès, le SHO sévère survient dans 1-5% des cycles stimulés et les formes critiques dans 0,1-0,5%. Des décès sont encore rapportés chaque année dans le monde. La principale cause de mortalité est la **thromboembolie** (thrombose veineuse cérébrale, embolie pulmonaire). Toute patiente présentant un SHO modéré ou sévère doit recevoir une **thromboprophylaxie** par HBPM (énoxaparine 40 mg/jour SC) jusqu'à résolution complète des symptômes *(Practice Committee of ASRM, Fertil Steril, 2016)*.</div>
+
+<blockquote>
+<p>💡 <strong>Mnémonique — SAFE-IVF</strong> (Prévention du SHO) :<br />
+<strong>S</strong>creening (AMH, CFA, SOPK) — <strong>A</strong>ntagoniste (protocole) — <strong>F</strong>aible dose FSH — <strong>E</strong>xit hCG (trigger agoniste) — <strong>I</strong>ce (freeze-all) — <strong>V</strong>EGF blocker (cabergoline) — <strong>F</strong>ollow-up rapproché</p>
+<p>✏️ <strong>Micro-exercice</strong> : Classez les patientes suivantes par ordre de risque de SHO (du plus élevé au plus bas) :<br />
+A. 35 ans, AMH 2,5 ng/mL, CFA 12, protocole antagoniste<br />
+B. 27 ans, AMH 9,0 ng/mL, CFA 38, SOPK, protocole antagoniste<br />
+C. 41 ans, AMH 0,5 ng/mL, CFA 3<br />
+D. 30 ans, AMH 4,0 ng/mL, CFA 20, antécédent de SHO modéré<br />
+→ <em>Ordre : B (le plus élevé — SOPK, AMH très élevée, CFA &gt;24, jeune) &gt; D (AMH élevée + antécédent SHO) &gt; A (risque standard) &gt; C (risque quasi nul — faible réserve)</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV15-S03-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Classification de Golan : 4 grades de SHO avec critères cliniques, biologiques et échographiques</td>
+</tr>
+<tr>
+<td>MFIV15-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Stratégie de prévention multi-niveaux du SHO : avant / pendant / au déclenchement / après ponction</td>
+</tr>
+<tr>
+<td>MFIV15-S03-003</td>
+<td>📊 TABLEAU</td>
+<td>Facteurs de risque de SHO : facteurs non modifiables (SOPK, âge, AMH) vs modifiables (protocole, trigger, freeze-all)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-154-prise-en-charge-du-sho-ambulatoire-hospitalier-et-situations-critiques">Section 15.4 — Prise en charge du SHO : ambulatoire, hospitalier et situations critiques</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Une patiente SHO sévère avec ascite sous tension et hématocrite à 52% : faut-il drainer l'ascite en urgence ou remplir d'abord ? L'ordre des gestes change le pronostic.</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la prise en charge du SHO de manière structurée et opérationnelle, avec des conduites à tenir claires selon la sévérité :</p>
+<ul>
+<li>
+<p><strong>SHO léger</strong> (ambulatoire) : repos relatif (pas d'alitement strict — risque thrombotique), hydratation orale abondante (&gt;2L/jour), antalgiques (paracétamol — AINS contre-indiqués car néphrotoxicité en contexte d'hypovolémie), surveillance du poids quotidien (+2 kg/24h = alerte), contrôle clinique à J+2-3.</p>
+</li>
+<li>
+<p><strong>SHO modéré</strong> (ambulatoire rapproché ou hospitalisation courte) : biologie (NFS — hématocrite, ionogramme, créatinine, bilan hépatique, albumine), échographie (taille ovarienne, quantification ascite), hydratation IV si nausées/vomissements empêchent la voie orale, <strong>HBPM</strong> prophylactique (énoxaparine 40 mg/jour), cabergoline 0,5 mg/jour. Surveillance toutes les 48h.</p>
+</li>
+<li>
+<p><strong>SHO sévère</strong> (hospitalisation) : le module doit détailler la prise en charge hospitalière — <strong>remplissage IV</strong> en première intention (NaCl 0,9% ou Ringer Lactate, débit adapté à la clinique et à l'hématocrite — objectif : hématocrite &lt;40%, diurèse &gt;20-30 mL/h). <strong>Albumine humaine</strong> 20-25% (50-100 g IV) si l'hématocrite reste &gt;45% malgré le remplissage cristalloïde ou si l'albuminémie &lt;25 g/L — l'albumine exerce un effet oncotique qui attire le liquide du troisième secteur vers le compartiment vasculaire. <strong>Paracentèse</strong> (ponction d'ascite échoguidée) si l'ascite est sous tension avec dyspnée, compromission respiratoire ou oligurie persistante — le drainage soulage immédiatement la dyspnée et améliore la perfusion rénale. Le module doit préciser la technique : ponction échoguidée transabdominale (pas transvaginale — risque de lésion ovarienne), drainage lent (max 1-2 L par séance), remplissage simultané par albumine. <strong>HBPM</strong> systématique à dose curative si signes de thrombose.</p>
+</li>
+<li>
+<p><strong>SHO critique</strong> : le module doit alerter sur les situations nécessitant un transfert en réanimation — SDRA (<em>Syndrome de Détresse Respiratoire Aiguë</em>), insuffisance rénale organique (créatinine &gt;2 mg/dL, anurie), thromboembolie confirmée (EP, thrombose veineuse cérébrale), défaillance hépatique (transaminases &gt;3N, TP &lt;50%), tamponnade (épanchement péricardique compressif). Le pronostic dépend de la rapidité de la prise en charge. La mortalité est estimée à 1-3/100 000 cycles.</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — L'erreur classique : remplir avant de drainer</strong><br />
+Face à une ascite sous tension avec dyspnée et oligoanurie, le réflexe « remplir d'abord » est correct dans la plupart des situations hypovolémiques — mais dans le SHO, la pression intra-abdominale élevée comprime les veines rénales et le diaphragme. Un remplissage agressif sans drainage préalable peut aggraver la dyspnée et provoquer un OAP sur hypovolémie relative. La stratégie optimale est <strong>concomitante</strong> : début de remplissage IV modéré + paracentèse rapide pour décomprimer <em>(Aboulghar &amp; Mansour, Hum Reprod Update, 2003)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme B. (accroche clinique), J+3 post-ponction : ascite clinique, dyspnée au repos, hématocrite 48%, albumine 22 g/L, créatinine 1,3 mg/dL, diurèse 400 mL/24h. Rédigez votre prescription de prise en charge (5 éléments essentiels).<br />
+→ <em>Réponse : (1) Hospitalisation en gynécologie ou réanimation ; (2) Remplissage IV : NaCl 0,9% 500 mL + Albumine 20% 100 mL IV ; (3) Paracentèse échoguidée (drainage 1-1,5 L) ; (4) HBPM : énoxaparine 40 mg SC/jour ; (5) Surveillance : hématocrite et créatinine /12h, diurèse horaire, poids quotidien, SpO2. Objectifs : hématocrite &lt;40%, diurèse &gt;30 mL/h.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV15-S04-001</td>
+<td>📐 SCHÉMA</td>
+<td>Algorithme de prise en charge du SHO selon sévérité : léger (ambulatoire) → modéré (surveillance rapprochée) → sévère (hospitalisation) → critique (réanimation)</td>
+</tr>
+<tr>
+<td>MFIV15-S04-002</td>
+<td>🎬 VIDÉO</td>
+<td>Technique de paracentèse échoguidée dans le SHO : positionnement, repérage échographique, drainage lent</td>
+</tr>
+<tr>
+<td>MFIV15-S04-003</td>
+<td>📊 TABLEAU</td>
+<td>Ordonnance type du SHO sévère : remplissage, albumine, paracentèse, HBPM, surveillance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-15">Points clés — Module 15</h2>
+<ol>
+<li>Le <strong>trigger hCG</strong> est le standard mais sa longue demi-vie stimule le VEGF et augmente le risque de SHO ; le <strong>trigger agoniste</strong> est plus sûr mais provoque une insuffisance lutéale</li>
+<li>Le <strong>double trigger</strong> (agoniste + hCG faible dose) est un compromis adapté aux patientes à risque modéré souhaitant un transfert frais</li>
+<li>Le timing trigger → ponction est de <strong>34-36 heures</strong> — un timing inapproprié compromet la maturité ovocytaire</li>
+<li>Le <strong>VEGF</strong> est le médiateur central du SHO — il provoque une perméabilité capillaire systémique avec extravasation vers le troisième secteur</li>
+<li>La <strong>prévention</strong> du SHO repose sur une stratégie multi-niveaux : screening, protocole antagoniste, FSH faible dose, trigger agoniste, freeze-all, cabergoline</li>
+<li>La <strong>thromboembolie</strong> est la complication la plus dangereuse du SHO — HBPM systématique dès le stade modéré</li>
+<li>La prise en charge du SHO sévère associe <strong>remplissage IV + albumine + paracentèse + HBPM</strong> — en contexte d'ascite sous tension, le drainage et le remplissage doivent être concomitants</li>
+</ol>
+<h2 id="auto-evaluation-module-15">Auto-évaluation — Module 15</h2>
+<p><strong>QCM 1</strong> : Quel est le médiateur central de la physiopathologie du SHO ?<br />
+a) L'estradiol<br />
+b) La progestérone<br />
+c) Le VEGF (Vascular Endothelial Growth Factor)<br />
+d) L'hCG directement<br />
+→ <em>Réponse : c — Le VEGF, produit par les cellules de la granulosa lutéinisées sous l'effet de l'hCG, augmente la perméabilité capillaire et provoque le syndrome de fuite. L'hCG (d) est le stimulus mais pas le médiateur effecteur.</em></p>
+<p><strong>QCM 2</strong> : Pourquoi le freeze-all prévient-il le SHO tardif ?<br />
+a) La congélation détruit le VEGF dans les embryons<br />
+b) L'absence de grossesse évite l'hCG endogène qui entretiendrait la stimulation des corps jaunes<br />
+c) Le freeze-all réduit la taille des ovaires<br />
+d) La vitrification diminue la perméabilité capillaire<br />
+→ <em>Réponse : b — Le SHO tardif est entretenu par l'hCG de grossesse. Sans transfert, pas de grossesse, pas d'hCG endogène, pas de SHO tardif. Les corps jaunes régressent spontanément en ~10 jours.</em></p>
+<p><strong>QCM 3</strong> : Quel est le seuil d'hématocrite nécessitant une hospitalisation dans le SHO ?<br />
+a) &gt;38%<br />
+b) &gt;42%<br />
+c) &gt;45%<br />
+d) &gt;55%<br />
+→ <em>Réponse : c — Un hématocrite &gt;45% traduit une hémoconcentration significative (SHO sévère) justifiant une hospitalisation. &gt;55% (d) correspond au SHO critique nécessitant la réanimation.</em></p>
+<p><strong>Cas clinique court</strong> : Mme F., 30 ans, 1re FIV pour infertilité tubaire. AMH 5,2 ng/mL, CFA 25. Protocole antagoniste, Gonal-F 150 UI/jour. À J10 : 18 follicules &gt;14 mm, E2 = 4500 pg/mL. Quel trigger choisissez-vous et pourquoi ? Transférez-vous un embryon frais ?<br />
+→ <em>Réponse : (1) Trigger par agoniste GnRH (Décapeptyl 0,2 mg) — l'E2 est &gt;3500 avec &gt;15 follicules chez une patiente jeune à AMH élevée → risque de SHO majeur si trigger hCG. (2) Freeze-all obligatoire — pas de transfert frais (triple protection : agoniste trigger + freeze-all élimine SHO tardif + pas de soutien lutéal nécessaire). (3) Cabergoline 0,5 mg/jour × 8 jours post-ponction. (4) Surveillance à J+3 et J+5 post-ponction (clinique, échographie ovarienne, hématocrite si symptômes). TEC programmé 1-2 mois plus tard.</em></p>
+<p><strong>Question de synthèse</strong> : Décrivez la physiopathologie du SHO en 10 lignes en utilisant la chaîne : stimulus (hCG) → médiateur (VEGF) → conséquence vasculaire → complications systémiques. Précisez pourquoi le trigger agoniste et le freeze-all interrompent cette chaîne à des niveaux différents.</p>
+<h2 id="references-bibliographiques-module-15">Références bibliographiques — Module 15</h2>
+<ul>
+<li>Golan A et al. <em>Ovarian hyperstimulation syndrome: an update review</em>. Obstet Gynecol Surv. 1989;44:430-440.</li>
+<li>Youssef MA et al. <em>GnRH agonist for final oocyte maturation: a Cochrane review</em>. Cochrane Database Syst Rev. 2014;(4):CD010324.</li>
+<li>Griffin D et al. <em>Dual trigger with GnRH agonist and low-dose hCG</em>. Hum Reprod. 2014;29:1583-1588.</li>
+<li>Gómez R et al. <em>Vascular endothelial growth factor in ovarian hyperstimulation syndrome</em>. Hum Reprod. 2002;17:2733-2741.</li>
+<li>Alvarez C et al. <em>Dopamine agonist cabergoline reduces VEGF secretion and OHSS</em>. Fertil Steril. 2007;88:724-729.</li>
+<li>Aboulghar MA, Mansour RT. <em>Ovarian hyperstimulation syndrome: classifications and critical analysis</em>. Hum Reprod Update. 2003;9:275-289.</li>
+<li>Humaidan P et al. <em>GnRH agonist trigger and individualized luteal support</em>. Hum Reprod. 2013;28:2511-2521.</li>
+<li>Lambalk CB et al. <em>Timing of human chorionic gonadotropin and oocyte maturation</em>. Hum Reprod. 2017;32:1282-1287.</li>
+<li>Practice Committee of ASRM. <em>Prevention and treatment of moderate and severe OHSS</em>. Fertil Steril. 2016;106:1634-1647.</li>
+<li>Brinton LA et al. <em>Ovarian cancer risk after IVF: a large cohort study</em>. Fertil Steril. 2014;101:1127-1134.</li>
+</ul>
+<hr />
+<p><em>Fin de la Partie 4 — Stimulation ovarienne (Modules 12-15). La Partie 5 abordera la ponction ovocytaire échoguidée, le recueil spermatique et les techniques de préparation des gamètes.</em></p>
+</div>

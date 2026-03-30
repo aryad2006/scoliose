@@ -1,0 +1,894 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-fiv-et-amp">CAHIER DES CHARGES — FORMATION FIV ET AMP</h1>
+<h2 id="partie-7-cryopreservation-modules-23-25">Partie 7 — Cryopréservation (Modules 23-25)</h2>
+<p><strong>Date</strong> : 17 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Fécondation In Vitro et Assistance Médicale à la Procréation<br />
+<strong>Plateforme</strong> : VERTEX© / ReproSim©</p>
+<hr />
+<h1 id="module-23-cryobiologie-et-vitrification-principes-et-techniques">MODULE 23 : CRYOBIOLOGIE ET VITRIFICATION — PRINCIPES ET TECHNIQUES</h1>
+<p><strong>Partie</strong> : VII — Cryopréservation<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire-Expert<br />
+<strong>Prérequis</strong> : Modules 16-19 (ponction ovocytaire, FIV/ICSI, culture embryonnaire, classification embryonnaire), Module 4 (biologie cellulaire de l'ovocyte et de l'embryon)<br />
+<strong>Tags</strong> : 🔷 BIOLOGISTE 🔶 CLINICIEN</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme L., 32 ans, stimulée en protocole antagoniste pour sa 1re tentative de FIV-ICSI — ponction fructueuse de 18 ovocytes, 14 matures, 11 fécondés (2PN). À J5, votre laboratoire dispose de 4 blastocystes de bonne qualité (2 × 4AA, 1 × 4AB, 1 × 3BB Gardner). Vous transférez un blastocyste 4AA en frais. Restent 3 blastocystes. L'embryologiste vous demande : *« Vitrification ou congélation lente ? Cryotop ou Cryolock ? Et pour le blastocyste 3BB, est-ce que ça vaut le coup de le vitrifier ? »* Derrière cette question technique se cache un enjeu biologique fondamental : comment suspendre la vie cellulaire à -196°C sans la détruire, puis la réveiller intacte des mois ou des années plus tard ? La cryopréservation est la révolution silencieuse de l'AMP — celle qui a transformé un cycle de FIV en une réserve de chances cumulatives.</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> les mécanismes physico-chimiques de la cryolésion cellulaire (cristallisation intracellulaire, déshydratation osmotique, stress oxydatif) et les stratégies pour les prévenir</li>
+<li><strong>Comparer</strong> la congélation lente programmée et la vitrification en termes de principes biophysiques, taux de survie et résultats cliniques</li>
+<li><strong>Décrire</strong> la technique de vitrification ovocytaire et embryonnaire pas-à-pas (équilibration, chargement, plongeon, réchauffement)</li>
+<li><strong>Identifier</strong> les propriétés pharmacologiques des cryoprotecteurs perméatifs et non perméatifs et leur rôle respectif</li>
+<li><strong>Appliquer</strong> les exigences réglementaires de traçabilité et de sécurité du stockage en azote liquide</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-231-cryobiologie-fondamentale-pourquoi-le-froid-tue-et-comment-le-dompter">Section 23.1 — Cryobiologie fondamentale : pourquoi le froid tue (et comment le dompter)</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : L'eau représente 70-80% du volume cellulaire. Lorsque la température descend sous 0°C, l'eau gèle — mais la glace occupe un volume 9% supérieur à l'eau liquide. Selon vous, pourquoi ce simple changement de phase est-il létal pour la cellule, et comment peut-on l'empêcher sans modifier la cellule elle-même ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les bases physico-chimiques de la cryolésion cellulaire, en montrant que le défi de la cryopréservation se résume à un paradoxe biophysique : refroidir suffisamment pour arrêter tout métabolisme (-196°C, azote liquide), tout en empêchant la formation de cristaux de glace intracellulaires qui perforent les membranes et détruisent le cytosquelette.</p>
+<ul>
+<li>
+<p><strong>Cristallisation intracellulaire</strong> : le module doit expliquer que la formation de cristaux de glace à l'intérieur de la cellule constitue l'événement létal principal. Lors d'un refroidissement lent sans cryoprotection, l'eau intracellulaire gèle en cristaux dont les arêtes tranchantes perforent les membranes plasmique et organellaires (mitochondries, réticulum endoplasmique), détruisent le fuseau méiotique de l'ovocyte (structure particulièrement fragile composée de microtubules thermosensibles) et fragmentent l'ADN. La taille et la morphologie des cristaux dépendent de la vitesse de refroidissement : un refroidissement très lent produit de gros cristaux extracellulaires (moins dangereux), tandis qu'un refroidissement intermédiaire (1-10°C/min sans cryoprotecteur) génère des cristaux intracellulaires de taille moyenne — les plus destructeurs <em>(Mazur, Cryobiology, 1963 — théorie à deux facteurs)</em>.</p>
+</li>
+<li>
+<p><strong>Déshydratation osmotique</strong> : le module doit décrire le second mécanisme de cryolésion. Lorsque la glace se forme dans le milieu extracellulaire, la concentration en solutés du liquide résiduel non gelé augmente brutalement — créant un gradient osmotique qui aspire l'eau hors de la cellule. Cette déshydratation peut atteindre 80-90% du volume cellulaire. Si elle est excessive, les membranes se plissent irréversiblement, les protéines se dénaturent par augmentation de la force ionique intracellulaire, et les lipides membranaires subissent des transitions de phase (passage de la phase fluide à la phase gel). Le module doit souligner que cette déshydratation est aussi le <em>principe même</em> de la congélation lente contrôlée — l'objectif étant de déshydrater la cellule <em>juste assez</em> pour éviter la glace intracellulaire, mais <em>pas trop</em> pour éviter les dommages osmotiques <em>(Meryman, Cryobiology, 1971)</em>.</p>
+</li>
+<li>
+<p><strong>Cryoprotecteurs</strong> : le module doit présenter les deux familles de cryoprotecteurs comme les outils pharmacologiques qui permettent de naviguer entre les deux écueils (glace intracellulaire et déshydratation létale) :</p>
+</li>
+<li>
+<p><strong>Perméatifs</strong> (traversent la membrane cellulaire) : <strong>DMSO</strong> (diméthylsulfoxyde — molécule historique, Polge et al. 1949, pénétration rapide, toxicité dose-dépendante), <strong>éthylène glycol</strong> (EG — pénétration rapide, toxicité modérée, devenu le standard en vitrification humaine), <strong>propanediol</strong> (PROH/1,2-propanediol — utilisé historiquement en congélation lente ovocytaire, pénétration lente). Le module doit expliquer le mécanisme d'action : ces petites molécules pénètrent la cellule et <strong>remplacent partiellement l'eau intracellulaire</strong>, abaissant le point de congélation et augmentant la viscosité du milieu — rendant la formation de cristaux de glace thermodynamiquement défavorable. Leur toxicité est liée à leur concentration et à la durée d'exposition, d'où l'importance du timing précis lors des protocoles de vitrification.</p>
+</li>
+<li>
+<p><strong>Non perméatifs</strong> (restent dans le milieu extracellulaire) : <strong>sucrose</strong> et <strong>tréhalose</strong> — disaccharides qui augmentent l'osmolarité extracellulaire, provoquant une déshydratation cellulaire contrôlée avant le refroidissement. Ils stabilisent également les membranes lipidiques en remplaçant les molécules d'eau au niveau des têtes polaires des phospholipides (hypothèse du remplacement de l'eau — <em>water replacement hypothesis</em>, Crowe et al., 1984). Le tréhalose présente un intérêt particulier car certains organismes anhydrobiotiques (tardigrades, <em>Artemia</em>) l'utilisent naturellement pour survivre à la dessiccation.</p>
+</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Approfondissement — La théorie des deux facteurs de Mazur (1963)</strong><br />
+Peter Mazur a formalisé le dilemme fondamental de la cryobiologie : si le refroidissement est trop lent, la cellule subit une déshydratation osmotique excessive (dommages de solution) ; si le refroidissement est trop rapide, l'eau intracellulaire n'a pas le temps de sortir et gèle en cristaux intracellulaires (dommages de cristallisation). Pour chaque type cellulaire, il existe une <strong>vitesse de refroidissement optimale</strong> qui minimise les deux types de dommages. Pour les ovocytes humains (cellule très volumineuse, rapport surface/volume défavorable, faible perméabilité hydraulique), cette vitesse optimale en congélation lente est d'environ <strong>-0,3°C/min</strong> — extrêmement lente <em>(Mazur, Science, 1970)</em>. La vitrification contourne ce dilemme en éliminant <em>toute</em> formation de glace.</p>
+<p>💡 <strong>Mnémonique — GLACE</strong> (Les 5 mécanismes de cryolésion) :<br />
+<strong>G</strong>lace intracellulaire (cristaux perforants) — <strong>L</strong>ésions membranaires (transitions de phase lipidiques) — <strong>A</strong>ugmentation de la force ionique (dénaturation protéique) — <strong>C</strong>ytosquelette détruit (fuseau méiotique ++) — <strong>E</strong>ffets osmotiques (volume excédentaire)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Classez les cryoprotecteurs suivants selon leur perméabilité membranaire (perméatif vs non perméatif) et indiquez leur mécanisme d'action principal :<br />
+1. DMSO — 2. Sucrose — 3. Éthylène glycol — 4. Tréhalose — 5. Propanediol<br />
+→ <em>1. DMSO : perméatif — remplace l'eau intracellulaire, abaisse le point de congélation. 2. Sucrose : non perméatif — déshydratation osmotique extracellulaire + stabilisation membranaire. 3. EG : perméatif — même mécanisme que le DMSO, pénétration rapide. 4. Tréhalose : non perméatif — même mécanisme que le sucrose, utilisé naturellement par les organismes anhydrobiotiques. 5. PROH : perméatif — pénétration plus lente, historiquement utilisé en congélation lente ovocytaire.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV23-S01-001</td>
+<td>🎬 ANIMATION</td>
+<td>Formation progressive de cristaux de glace intracellulaires — de la nucléation à la perforation membranaire (Observez la différence entre cristallisation lente et rapide)</td>
+</tr>
+<tr>
+<td>MFIV23-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Diagramme de Mazur — courbe en U de la survie cellulaire en fonction de la vitesse de refroidissement (Identifiez la zone de dommages osmotiques et la zone de cristallisation)</td>
+</tr>
+<tr>
+<td>MFIV23-S01-003</td>
+<td>📐 SCHÉMA</td>
+<td>Mode d'action comparé des cryoprotecteurs perméatifs et non perméatifs au niveau membranaire</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chaîne de raisonnement</strong> : Eau intracellulaire (70-80% du volume) → Refroidissement → Nucléation cristalline → Croissance des cristaux de glace → Perforation des membranes et destruction du fuseau méiotique → Mort cellulaire. Solution : cryoprotecteurs (remplacement de l'eau + déshydratation contrôlée) + vitesse de refroidissement adaptée → Vitrification (état vitreux amorphe sans cristaux) → Survie cellulaire &gt;90%.</p>
+<p>Après ces bases biophysiques, voyons comment deux approches radicalement différentes — congélation lente et vitrification — tentent de résoudre ce même défi.</p>
+<hr />
+<h3 id="section-232-congelation-lente-vs-vitrification-deux-philosophies-un-vainqueur">Section 23.2 — Congélation lente vs vitrification : deux philosophies, un vainqueur</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La congélation lente programmée a permis la première naissance après transfert d'embryon congelé en 1984 (Zeilmaker et al.). Pourtant, cette technique est aujourd'hui quasiment abandonnée pour les ovocytes et les blastocystes. Selon vous, quel a été le facteur décisif qui a rendu la vitrification supérieure ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'évolution historique de la congélation lente à la vitrification, en expliquant pourquoi cette dernière a constitué une véritable révolution technique et biologique dans les années 2005-2010 :</p>
+<ul>
+<li>
+<p><strong>Congélation lente programmée</strong> : le module doit décrire cette technique historique — refroidissement progressif à <strong>-0,3°C/min</strong> à l'aide d'un congélateur programmable, <strong>ensemencement</strong> (<em>seeding</em>) manuel ou automatique à <strong>-7°C</strong> (provocation volontaire de la nucléation cristalline extracellulaire pour éviter une surfusion incontrôlée), descente lente jusqu'à -30/-40°C, puis plongeon dans l'azote liquide à <strong>-196°C</strong>. Le cryoprotecteur utilisé est généralement le PROH (1,2-propanediol) à 1,5 M + sucrose. Le module doit expliquer que la logique est de <strong>déshydrater progressivement</strong> la cellule : les cristaux se forment d'abord dans le milieu extracellulaire, l'eau sort lentement de la cellule par osmose, et le cytoplasme résiduel se concentre en solutés et cryoprotecteurs. Résultats historiques : taux de survie ovocytaire post-décongélation <strong>~60%</strong> (Chen, 1986) — insuffisant pour une utilisation clinique efficace de la congélation ovocytaire, car la perte de 40% des ovocytes réduit considérablement les chances cumulatives. Pour les embryons au stade clivage, les résultats étaient acceptables (survie ~80%, Lassalle et al., 1985), ce qui explique pourquoi la congélation lente a persisté plus longtemps pour les embryons que pour les ovocytes.</p>
+</li>
+<li>
+<p><strong>Vitrification — la révolution Kuwayama</strong> : le module doit présenter la vitrification comme un changement de paradigme fondamental, popularisée pour l'application clinique humaine par Masashige Kuwayama (Kato Ladies Clinic, Tokyo) à partir de 2005 <em>(Kuwayama et al., Reprod Biomed Online, 2005)</em>. Le principe est radicalement différent : au lieu de tolérer la formation de glace extracellulaire (congélation lente), la vitrification l'élimine totalement. Le refroidissement est <strong>ultra-rapide</strong> (&gt;<strong>20 000°C/min</strong>, voire &gt;40 000°C/min avec le Cryotop), obtenu en plongeant directement un volume minimal de milieu (&lt;<strong>1 µL</strong>) dans l'azote liquide. La concentration élevée en cryoprotecteurs (<strong>15% DMSO + 15% EG + 0,5 M sucrose</strong> — protocole Kuwayama typique) augmente considérablement la viscosité du milieu, empêchant la réorganisation moléculaire nécessaire à la cristallisation. Le résultat est un passage direct de l'état liquide à un <strong>état vitreux amorphe</strong> (<em>glass-like state</em>) — un solide non cristallin, transparent, sans structure ordonnée. Le taux de survie ovocytaire post-réchauffement atteint <strong>&gt;90-97%</strong> <em>(Cobo et al., Fertil Steril, 2008)</em> — une amélioration si spectaculaire qu'elle a rendu la congélation ovocytaire cliniquement viable et a ouvert la voie à la préservation de la fertilité.</p>
+</li>
+<li>
+<p><strong>Supports de vitrification</strong> : le module doit détailler les différents supports développés pour minimiser le volume de milieu entourant l'ovocyte ou l'embryon (principe du <strong>volume minimal</strong> — <em>minimum volume cooling</em>, MVC) :</p>
+</li>
+<li><strong>Cryotop</strong> (Kitazato, Japon) : le support de référence, inventé par Kuwayama — languette de polypropylène ultrafine sur laquelle l'ovocyte ou l'embryon est déposé dans &lt;0,1 µL de milieu, recouvert d'un capuchon protecteur. Taux de refroidissement &gt;<strong>23 000°C/min</strong>.</li>
+<li><strong>Cryolock</strong> (Biodimex) : système similaire, languette fermée avec capuchon intégré.</li>
+<li><strong>Cryoleaf</strong> (Orient Gene Biotech) : feuille ultrafine, volume ~0,1 µL.</li>
+<li>Le module doit expliquer pourquoi le volume minimal est essentiel : plus le volume est faible, plus le taux de refroidissement est élevé (transfert thermique plus rapide par unité de masse), et plus la probabilité de cristallisation résiduelle diminue.</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — Systèmes ouverts vs fermés en vitrification</strong><br />
+Les supports de vitrification « ouverts » (Cryotop classique) impliquent un contact direct entre le milieu contenant l'embryon et l'azote liquide — ce qui maximise le taux de refroidissement mais expose théoriquement à un risque de <strong>contamination croisée</strong> par des pathogènes potentiellement présents dans l'azote liquide (virus, bactéries — Bielanski et al., <em>Hum Reprod</em>, 2000 ont démontré la survie de virus dans l'azote liquide contaminé expérimentalement).<br />
+- <strong>Pour les systèmes ouverts</strong> : aucun cas de contamination croisée documenté en pratique clinique humaine sur &gt;1 million de cycles ; taux de survie maximaux ; standard de facto mondial <em>(Kuwayama, 2007)</em><br />
+- <strong>Pour les systèmes fermés</strong> : principe de précaution ; exigence réglementaire dans certains pays (directive européenne 2004/23/CE sur la traçabilité des tissus) ; les systèmes fermés modernes (Rapid-i, Cryotech) atteignent des taux de survie proches des systèmes ouverts <em>(Panagiotidis et al., Reprod Biomed Online, 2013)</em><br />
+- <strong>Synthèse actuelle</strong> : la majorité des centres utilisent des systèmes ouverts avec azote liquide vierge (non recyclé) et stockage en phase vapeur pour le stockage à long terme. L'ESHRE recommande une évaluation du risque au cas par cas (📊 Niveau de preuve : III-IV).</p>
+<p>💡 <strong>Mnémonique — VITRI</strong> (Les 5 conditions de la vitrification réussie) :<br />
+<strong>V</strong>itesse ultra-rapide (&gt;20 000°C/min) — <strong>I</strong>mportante concentration de cryoprotecteurs (15% DMSO + 15% EG) — <strong>T</strong>rès petit volume (&lt;1 µL) — <strong>R</strong>échauffement aussi critique que le refroidissement — <strong>I</strong>mmersion directe dans l'azote liquide</p>
+<p>✏️ <strong>Micro-exercice</strong> : Complétez le tableau comparatif :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Congélation lente</th>
+<th>Vitrification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vitesse de refroidissement</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Concentration en cryoprotecteurs</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Volume de milieu</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Formation de glace</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Taux de survie ovocytaire</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Équipement spécifique</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>→ <em>Congélation lente : -0,3°C/min / 1,5 M PROH + sucrose / ~200 µL (paillette) / Oui (extracellulaire contrôlée) / ~60% / Congélateur programmable. Vitrification : &gt;20 000°C/min / 15% DMSO + 15% EG + 0,5 M sucrose / &lt;1 µL (Cryotop) / Non (état vitreux amorphe) / &gt;90-97% / Supports MVC + azote liquide.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV23-S02-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Congélation lente vs vitrification — comparaison visuelle des deux approches (Identifiez où la glace se forme dans chaque technique)</td>
+</tr>
+<tr>
+<td>MFIV23-S02-002</td>
+<td>📷 PHOTO</td>
+<td>Supports de vitrification : Cryotop, Cryolock, Cryoleaf — échelle millimétrique (Repérez la zone de dépôt de l'embryon et estimez le volume)</td>
+</tr>
+<tr>
+<td>MFIV23-S02-003</td>
+<td>🎬 VIDÉO</td>
+<td>Technique de vitrification Cryotop pas-à-pas — du prélèvement de l'embryon au plongeon dans l'azote liquide</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Quand la vitrification a changé la donne : le cas de la congélation ovocytaire</strong><br />
+Avant la vitrification (pré-2005), la congélation ovocytaire était considérée comme peu fiable : le taux de survie de ~60% en congélation lente rendait l'autoconservation et l'oncofertilité ovocytaire peu attractives. La publication de Kuwayama en 2005 (taux de survie &gt;90%) a provoqué un changement de paradigme : en 2013, l'ASRM a retiré le label « expérimental » de la vitrification ovocytaire <em>(Practice Committee, ASRM, Fertil Steril, 2013)</em>. Depuis, le nombre de cycles de vitrification ovocytaire a augmenté exponentiellement — plus de 50 000 cycles/an aux États-Unis en 2023 (SART). La vitrification a rendu possible la préservation sociétale de la fertilité (Module 25) et a transformé l'oncofertilité d'une option théorique en une réalité clinique quotidienne.</p>
+</blockquote>
+<p>La technique de vitrification repose sur un protocole de manipulation précis, chronométré à la seconde. La section suivante en détaille les étapes critiques.</p>
+<hr />
+<h3 id="section-233-vitrification-pas-a-pas-protocole-rechauffement-et-tracabilite">Section 23.3 — Vitrification pas-à-pas : protocole, réchauffement et traçabilité</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le réchauffement (<em>warming</em>) d'un ovocyte ou d'un embryon vitrifié est souvent considéré comme plus critique que le refroidissement lui-même. Pourquoi ? Quel phénomène physique redoutable menace la cellule pendant la phase de réchauffement ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le protocole de vitrification et de réchauffement dans leur dimension opérationnelle, en insistant sur les étapes critiques, les points de vigilance et les erreurs à éviter :</p>
+<ul>
+<li>
+<p><strong>Vitrification ovocytaire — protocole Cryotop</strong> : le module doit décrire les étapes pas-à-pas du protocole de référence <em>(adapté de Kuwayama et al., 2005)</em> :<br />
+  1. <strong>Équilibration</strong> (~15 min) : l'ovocyte est placé dans un milieu contenant 7,5% DMSO + 7,5% EG (demi-concentration finale). Cette étape permet aux cryoprotecteurs perméatifs de pénétrer progressivement la cellule, remplaçant une partie de l'eau intracellulaire. L'ovocyte se rétracte initialement (sortie d'eau par osmose) puis regonfle partiellement (entrée des cryoprotecteurs). La durée doit être respectée : trop courte, les cryoprotecteurs n'ont pas pénétré suffisamment ; trop longue, la toxicité cumulative augmente.<br />
+  2. <strong>Vitrification</strong> (~60 secondes) : l'ovocyte est transféré dans le milieu de vitrification final (15% DMSO + 15% EG + 0,5 M sucrose). Le temps d'exposition est <strong>critique</strong> — 45 à 60 secondes maximum. Pendant ce court laps de temps, le sucrose non perméatif provoque une déshydratation osmotique rapide complémentaire. L'ovocyte est aspiré avec un volume minimal de milieu et déposé sur la languette du Cryotop.<br />
+  3. <strong>Plongeon</strong> : le Cryotop est plongé directement dans l'azote liquide à -196°C. Le refroidissement est quasi instantané grâce au volume minimal. Le capuchon protecteur est positionné sous l'azote liquide.<br />
+  4. <strong>Stockage</strong> : le Cryotop est transféré dans une cuve d'azote liquide (canister identifié, gobelet dédié). La température doit rester en permanence sous -150°C — toute remontée au-dessus de la <strong>température de transition vitreuse</strong> (-130°C) provoque une dévitrification (recristallisation) irréversible.</p>
+</li>
+<li>
+<p><strong>Vitrification embryonnaire</strong> : le module doit distinguer la vitrification au stade clivage (J3) et au stade blastocyste (J5/J6). Le blastocyste est devenu le stade de vitrification préférentiel pour plusieurs raisons : (1) le blastocyste a franchi l'activation du génome embryonnaire — il est biologiquement plus robuste ; (2) les cellules endommagées par la vitrification représentent une proportion plus faible du nombre total de cellules (un blastocyste compte 100-200 cellules vs 6-8 au stade clivage — la perte de quelques cellules du trophectoderme est mieux tolérée) ; (3) les taux de survie post-réchauffement des blastocystes vitrifiés dépassent <strong>95-99%</strong> <em>(Cobo et al., Fertil Steril, 2012)</em>. Le module doit cependant mentionner que les embryons au stade clivage restent vitrifiés dans certaines situations (faible cohorte, transfert prévu à J3, congélation de convenance).</p>
+</li>
+<li>
+<p><strong>Réchauffement (<em>warming</em>)</strong> : le module doit insister sur le fait que le réchauffement est aussi critique que le refroidissement — peut-être davantage. Le risque principal est la <strong>dévitrification</strong> : si le réchauffement est trop lent, la cellule traverse la zone de température dangereuse (-130°C à -30°C) pendant laquelle l'eau résiduelle peut recristalliser en formant des cristaux de glace à partir de l'état vitreux <em>(Rall, Reprod Biomed Online, 2003)</em>. Le réchauffement doit être <strong>ultra-rapide</strong> — le Cryotop est plongé directement dans un milieu à 37°C contenant 1 M de sucrose. La dilution des cryoprotecteurs se fait ensuite en <strong>3 étapes décroissantes</strong> de sucrose (1 M → 0,5 M → 0,25 M → milieu de culture) pour éviter un choc osmotique brutal : si les cryoprotecteurs intracellulaires étaient dilués d'un coup, l'eau entrerait massivement dans la cellule (gonflement létal — <em>osmotic shock</em>).</p>
+</li>
+<li>
+<p><strong>Stockage et traçabilité</strong> : le module doit présenter les exigences réglementaires — cuves d'azote liquide avec <strong>capteurs de température en continu</strong> (alarme si &gt;-150°C), <strong>double identification</strong> (nom + date de naissance + numéro de dossier AMP sur chaque support), <strong>registre de traçabilité</strong> informatisé (qui a vitrifié, quand, quel support, quel emplacement dans la cuve), <strong>contrôle du niveau d'azote</strong> (remplissage automatique ou vérification quotidienne), législation française (loi de bioéthique 2021 — durée de conservation des embryons, consentement annuel du couple, sort des embryons en cas de séparation ou décès).</p>
+</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Les 3 erreurs fatales de la vitrification**
+> 1. **Exposition trop longue au milieu de vitrification** (>90 sec) : toxicité cumulée DMSO + EG → lyse cellulaire
+> 2. **Rupture de la chaîne du froid** (remontée >-130°C même transitoire) : dévitrification → cristallisation intracellulaire → mort cellulaire irréversible
+> 3. **Réchauffement trop lent** (Cryotop laissé à l'air ambiant avant le milieu à 37°C) : même risque de dévitrification que pour le stockage. Le transfert cuve → milieu chaud doit être effectué en **<1 seconde**.</div>
+
+<blockquote>
+<p>🔬 <strong>Expert — La température de transition vitreuse (Tg)</strong><br />
+L'état vitreux est métastable : thermodynamiquement, le système « voudrait » cristalliser, mais la viscosité extrême (&gt;10¹³ Pa·s) empêche tout mouvement moléculaire. La <strong>température de transition vitreuse</strong> (Tg ≈ -130°C pour les solutions de cryoprotecteurs utilisées en AMP) est le seuil en dessous duquel la viscosité est suffisante pour maintenir l'état amorphe. Au-dessus de Tg, les molécules retrouvent une mobilité suffisante pour s'organiser en réseau cristallin — c'est la <strong>dévitrification</strong>, plus dangereuse que la cristallisation initiale car elle survient dans une cellule déjà fragilisée. Le stockage doit donc être maintenu bien en dessous de Tg — l'azote liquide à -196°C offre une marge de sécurité de 66°C <em>(Fahy &amp; Wowk, Methods Mol Biol, 2015)</em>.</p>
+<p>💡 <strong>Mnémonique — CHAUD</strong> (Les 4 étapes du réchauffement) :<br />
+<strong>C</strong>ryotop sorti de l'azote → <strong>H</strong>ot sucrose 1 M à 37°C immédiatement (&lt;1 sec) → <strong>A</strong>tténuation progressive du sucrose (3 paliers) → <strong>U</strong>tilisation dans les 2 heures post-réchauffement — <strong>D</strong>élai minimal entre réchauffement et transfert</p>
+<p>✏️ <strong>Micro-exercice</strong> : Remettez dans l'ordre chronologique les étapes de la vitrification-réchauffement d'un blastocyste :<br />
+a) Plongeon du Cryotop dans l'azote liquide — b) Équilibration 7,5% DMSO + 7,5% EG pendant 15 min — c) Dilution progressive du sucrose (1 M → 0,5 M → 0,25 M) — d) Transfert dans le milieu de vitrification 15% DMSO + 15% EG + 0,5 M sucrose pendant 60 sec — e) Immersion dans milieu chaud 1 M sucrose à 37°C — f) Dépôt sur la languette Cryotop avec volume minimal — g) Stockage en cuve azote liquide — h) Culture 2-4h et évaluation de la réexpansion<br />
+→ <em>Ordre correct : b → d → f → a → g → e → c → h</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV23-S03-001</td>
+<td>🎬 VIDÉO</td>
+<td>Protocole complet de vitrification Cryotop — chronomètre visible pour chaque étape (Notez le temps exact d'exposition au milieu de vitrification)</td>
+</tr>
+<tr>
+<td>MFIV23-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Courbe osmotique de l'ovocyte pendant l'équilibration et la vitrification — rétraction puis regonflement partiel</td>
+</tr>
+<tr>
+<td>MFIV23-S03-003</td>
+<td>📷 PHOTO</td>
+<td>Cuve d'azote liquide avec système de traçabilité informatisé — identification des canisters et gobelets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-23">Points clés — Module 23</h2>
+<ol>
+<li>La <strong>cristallisation intracellulaire</strong> est l'événement létal principal de la cryopréservation — les cristaux de glace perforent les membranes et détruisent le fuseau méiotique ovocytaire</li>
+<li>Les <strong>cryoprotecteurs perméatifs</strong> (DMSO, EG, PROH) remplacent l'eau intracellulaire et abaissent le point de congélation ; les <strong>non perméatifs</strong> (sucrose, tréhalose) provoquent une déshydratation osmotique contrôlée et stabilisent les membranes</li>
+<li>La <strong>congélation lente</strong> (-0,3°C/min, ensemencement -7°C) tolère la glace extracellulaire mais offre un taux de survie ovocytaire insuffisant (~60%)</li>
+<li>La <strong>vitrification</strong> (&gt;20 000°C/min, 15% DMSO + 15% EG + 0,5 M sucrose, volume &lt;1 µL) élimine toute formation de cristaux — taux de survie ovocytaire <strong>&gt;90-97%</strong></li>
+<li>Le <strong>réchauffement</strong> est aussi critique que le refroidissement : la dévitrification (recristallisation) survient si le réchauffement traverse trop lentement la zone Tg-(-30°C)</li>
+<li>La dilution des cryoprotecteurs se fait en <strong>3 paliers de sucrose</strong> décroissants pour éviter le choc osmotique</li>
+<li>Le <strong>blastocyste</strong> est le stade préférentiel de vitrification embryonnaire (robustesse, proportionnalité des dommages, taux de survie &gt;95-99%)</li>
+<li>La <strong>traçabilité</strong> est une exigence réglementaire : double identification, registre informatisé, capteurs de température en continu</li>
+</ol>
+<h2 id="auto-evaluation-module-23">Auto-évaluation — Module 23</h2>
+<p><strong>QCM 1</strong> : Quel est le mécanisme létal principal de la cryolésion cellulaire en l'absence de cryoprotecteur ?<br />
+a) La déshydratation osmotique<br />
+b) La cristallisation intracellulaire<br />
+c) La toxicité de l'azote liquide<br />
+d) La dénaturation thermique des protéines à basse température<br />
+→ <em>Réponse : b — La formation de cristaux de glace intracellulaires perfore les membranes et détruit les organites. (a) contribue aux dommages mais n'est pas l'événement létal principal. (c) est faux — l'azote liquide est chimiquement inerte. (d) est marginal à ces températures.</em></p>
+<p><strong>QCM 2</strong> : Quelle est la concentration typique de cryoprotecteurs dans un protocole de vitrification type Kuwayama ?<br />
+a) 1,5 M propanediol + sucrose<br />
+b) 5% DMSO + 5% EG<br />
+c) 15% DMSO + 15% EG + 0,5 M sucrose<br />
+d) 30% glycérol pur<br />
+→ <em>Réponse : c — C'est le protocole standard de vitrification Cryotop. (a) correspond à la congélation lente. (b) est insuffisant pour la vitrification (demi-concentration d'équilibration). (d) n'est pas utilisé en AMP humaine.</em></p>
+<p><strong>QCM 3</strong> : Pourquoi le blastocyste est-il le stade préférentiel de vitrification embryonnaire ?<br />
+a) Le blastocyste est plus petit que l'embryon au stade clivage<br />
+b) Le blastocyste contient plus de cellules — les dommages cryogéniques affectent proportionnellement moins de cellules<br />
+c) Le blastocyste est résistant au gel grâce à sa zone pellucide plus épaisse<br />
+d) La vitrification n'est techniquement pas possible au stade clivage<br />
+→ <em>Réponse : b — Un blastocyste compte 100-200 cellules ; la perte de quelques cellules du trophectoderme est tolérée. (a) est faux — le blastocyste est plus volumineux. (c) est faux — la zona pellucida est amincie au stade blastocyste. (d) est faux — la vitrification au stade clivage est pratiquée.</em></p>
+<p><strong>Cas clinique court</strong> : Votre embryologiste vous alerte : le capteur de température de la cuve n°3 a enregistré un pic à -125°C pendant 45 minutes la nuit précédente (défaillance du système de remplissage automatique en azote liquide). La cuve contenait 47 paillettes/Cryotops appartenant à 28 patientes.<br />
+1. Quel est le risque biologique pour les échantillons ?<br />
+2. Quelle conduite à tenir immédiate et à moyen terme ?<br />
+→ <em>1. La température de transition vitreuse est d'environ -130°C. À -125°C pendant 45 min, les échantillons ont dépassé Tg — risque de dévitrification partielle et de recristallisation. Les dommages dépendent de la durée d'exposition et de la composition exacte des milieux. Le pronostic est défavorable pour une partie des échantillons. 2. Immédiat : vérifier le niveau d'azote, restaurer la température &lt;-196°C, documenter l'incident. Moyen terme : déclaration à l'Agence de la biomédecine (vigilance AMP), information des 28 patientes, proposition de réchauffement-évaluation de la survie cellulaire pour les patientes en demande de TEC, discussion du pronostic altéré en consultation.</em></p>
+<p><strong>Question de synthèse</strong> : Comparez la congélation lente et la vitrification en 8 à 10 lignes, en expliquant les principes biophysiques, les avantages et limites de chaque technique, et les raisons de la supériorité clinique de la vitrification pour la cryopréservation ovocytaire.</p>
+<h2 id="glossaire-des-termes-introduits-module-23">Glossaire des termes introduits — Module 23</h2>
+<p>Ce module introduit les termes suivants : <strong>cryobiologie</strong>, <strong>cristallisation intracellulaire</strong>, <strong>nucléation</strong>, <strong>déshydratation osmotique</strong>, <strong>cryoprotecteur perméatif</strong>, <strong>cryoprotecteur non perméatif</strong>, <strong>DMSO</strong> (diméthylsulfoxyde), <strong>éthylène glycol</strong> (EG), <strong>propanediol</strong> (PROH), <strong>sucrose</strong>, <strong>tréhalose</strong>, <strong>congélation lente programmée</strong>, <strong>ensemencement</strong> (<em>seeding</em>), <strong>vitrification</strong>, <strong>état vitreux amorphe</strong>, <strong>température de transition vitreuse</strong> (Tg), <strong>Cryotop</strong>, <strong>Cryolock</strong>, <strong>Cryoleaf</strong>, <strong>volume minimal</strong> (<em>minimum volume cooling</em>), <strong>dévitrification</strong>, <strong>réchauffement</strong> (<em>warming</em>), <strong>choc osmotique</strong>, <strong>traçabilité AMP</strong>.</p>
+<h2 id="references-bibliographiques-module-23">Références bibliographiques — Module 23</h2>
+<ul>
+<li>Mazur P. <em>Kinetics of water loss from cells at subzero temperatures and the likelihood of intracellular freezing</em>. J Gen Physiol. 1963;47:347-369.</li>
+<li>Mazur P. <em>Cryobiology: the freezing of biological systems</em>. Science. 1970;168:939-949.</li>
+<li>Meryman HT. <em>Osmotic stress as a mechanism of freezing injury</em>. Cryobiology. 1971;8:489-500.</li>
+<li>Polge C, Smith AU, Parkes AS. <em>Revival of spermatozoa after vitrification and dehydration at low temperatures</em>. Nature. 1949;164:666.</li>
+<li>Crowe JH et al. <em>Preservation of membranes in anhydrobiotic organisms: the role of trehalose</em>. Science. 1984;223:701-703.</li>
+<li>Kuwayama M et al. <em>Highly efficient vitrification method for cryopreservation of human oocytes</em>. Reprod Biomed Online. 2005;11:300-308.</li>
+<li>Kuwayama M. <em>Highly efficient vitrification for cryopreservation of human oocytes and embryos: the Cryotop method</em>. Theriogenology. 2007;67:73-80.</li>
+<li>Cobo A et al. <em>Comparison of concomitant outcome achieved with fresh and cryopreserved donor oocytes vitrified by the Cryotop method</em>. Fertil Steril. 2008;89:1657-1664.</li>
+<li>Cobo A et al. <em>Is vitrification of oocytes useful for fertility preservation for age-related fertility decline and in cancer patients?</em>. Fertil Steril. 2012;96:277-285.</li>
+<li>Rall WF. <em>Avoidance of microbial cross-contamination of cryopreserved gametes, embryos, cells, and tissues during storage</em>. Reprod Biomed Online. 2003;7:9-18.</li>
+<li>Bielanski A et al. <em>Viral contamination of embryos cryopreserved in liquid nitrogen</em>. Hum Reprod. 2000;15:2457-2459.</li>
+<li>Fahy GM, Wowk B. <em>Principles of ice-free cryopreservation by vitrification</em>. Methods Mol Biol. 2015;1257:21-82.</li>
+<li>Panagiotidis Y et al. <em>Open versus closed vitrification of blastocysts: a randomized controlled trial</em>. Reprod Biomed Online. 2013;26:470-476.</li>
+</ul>
+<hr />
+<h1 id="module-24-transfert-dembryon-congele-tec-protocoles-et-resultats">MODULE 24 : TRANSFERT D'EMBRYON CONGELÉ (TEC) — PROTOCOLES ET RÉSULTATS</h1>
+<p><strong>Partie</strong> : VII — Cryopréservation<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Module 23 (cryobiologie et vitrification), Modules 7-10 (physiologie endométriale, fenêtre d'implantation), Module 12 (protocoles de stimulation ovarienne)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 ÉCHOGRAPHISTE</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Mme B., 34 ans, a bénéficié d'une FIV-ICSI pour facteur tubaire bilatéral. Le transfert frais d'un blastocyste 4AA a échoué (βhCG négatif). Elle dispose de 2 blastocystes vitrifiés (4AB et 3BB). Son cycle menstruel est régulier (28-30 jours), elle ovule spontanément (courbe de température biphasique). L'interne vous demande : *« On la programme en cycle naturel ou en cycle substitué ? Et si elle ovule un week-end, on fait quoi ? »* Le TEC est devenu le mode de transfert majoritaire dans de nombreux centres — en France, plus de 50% des transferts sont désormais des TEC *(ABM, rapport annuel 2023)*. Le choix du protocole de préparation endométriale influence non seulement la logistique du centre, mais aussi le pronostic obstétrical de la grossesse.</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les trois protocoles de préparation endométriale pour le TEC (cycle naturel, cycle substitué, cycle stimulé) et leurs indications respectives</li>
+<li><strong>Argumenter</strong> le choix du protocole en fonction du profil de la patiente (cycles réguliers vs irréguliers, SOPK, insuffisance ovarienne)</li>
+<li><strong>Expliquer</strong> le rationnel et les indications de la stratégie <em>freeze-all</em> (vitrification de tous les embryons, pas de transfert frais)</li>
+<li><strong>Comparer</strong> les résultats obstétricaux des TEC en cycle naturel et en cycle substitué à la lumière des données récentes</li>
+<li><strong>Appliquer</strong> le monitorage du TEC en cycle naturel (échographie + LH sérique/urinaire)</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-241-tec-en-cycle-naturel-utiliser-la-physiologie-comme-alliee">Section 24.1 — TEC en cycle naturel : utiliser la physiologie comme alliée</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le cycle naturel n'utilise aucune hormone exogène — il repose entièrement sur la folliculogenèse et l'ovulation spontanées de la patiente. Selon vous, pourquoi ce protocole « simple » n'est-il pas systématiquement préféré ? Quel en est le principal inconvénient opérationnel ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter le TEC en cycle naturel comme le protocole le plus physiologique, en détaillant le monitorage, le timing du transfert et les avantages/inconvénients :</p>
+<ul>
+<li>
+<p><strong>Principe</strong> : le module doit expliquer que le TEC en cycle naturel repose sur le monitorage de l'ovulation spontanée de la patiente. Le corps jaune qui résulte de l'ovulation produit la progestérone endogène nécessaire à la transformation sécrétoire de l'endomètre et à la réceptivité endométriale. Aucune hormone exogène n'est administrée (ou seulement un soutien lutéal léger par progestérone vaginale dans certains protocoles — débattu). Le timing du transfert est calé sur le pic de <strong>LH</strong> : transfert à <strong>LH + 5 jours</strong> pour un blastocyste (J5), ou <strong>LH + 3 jours</strong> pour un embryon au stade clivage (J3) — reproduisant la chronologie naturelle embryon-endomètre.</p>
+</li>
+<li>
+<p><strong>Monitorage</strong> : le module doit détailler le suivi échographique et biologique — début du monitorage à <strong>J8-J10</strong> du cycle (pour un cycle de 28 jours), échographie pelvienne (croissance folliculaire, épaisseur endométriale) + dosage de <strong>LH sérique ou urinaire</strong> tous les 1-2 jours à partir du moment où le follicule dominant atteint 14-16 mm. Le pic de LH est détecté soit par dosage sanguin (&gt;20 UI/L, augmentation ≥2× la valeur basale), soit par test urinaire (<em>OPK — ovulation predictor kit</em>). Le jour du pic de LH est défini comme <strong>LH + 0</strong>. Certains centres utilisent un déclenchement par hCG (5 000-10 000 UI) lorsque le follicule atteint 17-18 mm pour mieux contrôler le timing (<strong>cycle naturel modifié</strong>) — ce qui convertit un monitorage d'observation en un monitorage interventionnel <em>(Fatemi et al., Hum Reprod, 2010)</em>.</p>
+</li>
+<li>
+<p><strong>Avantages</strong> : pas d'hormones exogènes (tolérance, coût), endomètre préparé physiologiquement avec corps jaune fonctionnel (progestérone + relaxine + facteurs vasoactifs lutéaux), profil obstétrical favorable (voir Section 24.3).</p>
+</li>
+<li>
+<p><strong>Inconvénients</strong> : timing imprévisible de l'ovulation (ponctions/transferts le week-end, contraintes organisationnelles pour le laboratoire), annulation du cycle si l'ovulation est manquée (LH non détectée) ou si l'ovulation survient prématurément. Le module doit mentionner que le taux d'annulation en cycle naturel pur est de <strong>10-20%</strong> selon les séries <em>(Groenewoud et al., Hum Reprod Update, 2017)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — Le cycle naturel modifié : un compromis pragmatique</strong><br />
+De nombreux centres préfèrent le <strong>cycle naturel modifié</strong> (déclenchement hCG quand le follicule ≥17 mm) au cycle naturel pur. Le déclenchement fixe le jour de l'ovulation (hCG + 0), ce qui permet de programmer le réchauffement et le transfert avec certitude (hCG + 5 pour un blastocyste, hCG + 3 pour un J3). Le taux d'annulation chute sous <strong>5%</strong>. Les résultats en termes de taux de grossesse sont comparables au cycle naturel pur <em>(Fatemi et al., 2010)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme B. (accroche clinique) a un follicule dominant de 18 mm à J12 avec un endomètre de 9 mm trilamellaire. Le dosage de LH sérique à J12 = 8 UI/L (baseline), J13 = 25 UI/L.<br />
+1. Le pic de LH est-il survenu ? Quel jour ?<br />
+2. Quand programmez-vous le réchauffement et le transfert de son blastocyste 4AB ?<br />
+→ <em>1. Oui — LH a triplé entre J12 et J13, le pic est à J13 (LH + 0 = J13). 2. Transfert de blastocyste (J5) à LH + 5 = J18. Le réchauffement est programmé le matin du J18 (2-4h avant le transfert).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV24-S01-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Chronologie du TEC en cycle naturel — du J1 au transfert : monitorage écho + LH, ovulation, fenêtre de transfert (Identifiez le jour LH+0 et calculez la date de transfert pour un blastocyste)</td>
+</tr>
+<tr>
+<td>MFIV24-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Cycle naturel pur vs cycle naturel modifié (hCG) — arbre décisionnel et différences de monitorage</td>
+</tr>
+</tbody>
+</table>
+<p>Le cycle naturel n'est cependant pas adapté à toutes les patientes. Pour celles dont les cycles sont irréguliers ou absents, le cycle substitué offre une alternative standardisée.</p>
+<hr />
+<h3 id="section-242-tec-en-cycle-substitue-et-en-cycle-stimule-controle-hormonal-et-debats">Section 24.2 — TEC en cycle substitué et en cycle stimulé : contrôle hormonal et débats</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le cycle substitué (<em>artificial cycle</em>) bloque l'ovulation et remplace entièrement les hormones ovariennes par de l'estradiol et de la progestérone exogènes. L'endomètre est « prêt » sans qu'il y ait de corps jaune. Or, le corps jaune ne produit pas seulement de la progestérone — il sécrète aussi de la relaxine, de l'inhibine A, du VEGF. Pensez-vous que cette absence de corps jaune puisse avoir des conséquences obstétricales ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les protocoles de TEC en cycle substitué et en cycle stimulé, et les comparer au cycle naturel en termes de résultats et de risques obstétricaux :</p>
+<ul>
+<li>
+<p><strong>TEC en cycle substitué (<em>artificial cycle</em>)</strong> : le module doit décrire le protocole — <strong>estradiol</strong> oral (Progynova® 6 mg/j) ou transdermique (patchs) débuté à J1-J3 du cycle, pendant 10-14 jours, pour obtenir un endomètre ≥7 mm trilamellaire. La <strong>progestérone</strong> est ajoutée ensuite (Utrogestan® 600-800 mg/j intravaginal, ou progestérone injectable IM 50-100 mg/j). Le transfert de blastocyste est programmé au <strong>5e jour complet de progestérone</strong> (P + 5). L'ovulation est soit bloquée par l'estradiol seul (à forte dose, rétrocontrôle négatif sur FSH et LH), soit par un analogue GnRH agoniste ou antagoniste préalable. Le module doit souligner les avantages logistiques : <strong>timing entièrement contrôlé</strong> (pas de monitorage du pic de LH, transfert programmable n'importe quel jour), <strong>pas d'ovulation</strong> (pas de risque d'annulation), adapté aux patientes avec cycles irréguliers, insuffisance ovarienne, don d'ovocytes, ou GPA.</p>
+</li>
+<li>
+<p><strong>Risques obstétricaux du cycle substitué</strong> : le module doit présenter les données récentes qui ont ébranlé le dogme de l'équivalence entre cycle naturel et cycle substitué. Plusieurs études observationnelles et méta-analyses ont montré un surrisque de <strong>prééclampsie</strong> dans les grossesses issues de TEC en cycle substitué par rapport au TEC en cycle naturel : <strong>OR 2,0-3,0</strong> <em>(Saito et al., Obstet Gynecol, 2019 ; von Versen-Höynck et al., Hypertension, 2019)</em>. L'hypothèse physiopathologique dominante est l'<strong>absence de corps jaune</strong> : en cycle substitué, il n'y a pas d'ovulation, donc pas de corps jaune, donc pas de sécrétion de <strong>relaxine</strong> (vasodilatateur), pas d'adaptation vasculaire placentaire précoce. Le module doit mentionner la méta-analyse de Ginström Ernstad et al. (<em>BJOG</em>, 2019) confirmant ce surrisque, tout en notant que les RCT manquent encore pour affirmer une causalité (📊 Niveau de preuve : II-III). Un surrisque de <strong>macrosomie</strong> (<em>large for gestational age</em>, LGA) a également été rapporté <em>(Maheshwari et al., Fertil Steril, 2018)</em>.</p>
+</li>
+<li>
+<p><strong>TEC en cycle stimulé</strong> : le module doit présenter cette troisième option — stimulation ovarienne à <strong>faible dose de FSH</strong> (50-75 UI/j gonadotrophines) pour obtenir 1-2 follicules matures, déclenchement par <strong>hCG</strong> + soutien de la phase lutéale par progestérone. L'indication principale est la patiente avec <strong>cycles irréguliers</strong> mais ovaires fonctionnels (SOPK en particulier), chez qui le cycle naturel est imprévisible et le cycle substitué expose au surrisque obstétrical. Le module doit mentionner que les données sur le cycle stimulé sont moins abondantes mais suggèrent un profil obstétrical intermédiaire entre le cycle naturel et le cycle substitué.</p>
+</li>
+<li>
+<p><strong>Comparaison des 3 protocoles</strong> : le module doit présenter un tableau comparatif synthétique et citer les RCT et méta-analyses clés. La méta-analyse de Ghobara et al. (<em>Cochrane Database Syst Rev</em>, 2021) conclut à une absence de différence significative en termes de taux de naissance vivante entre les protocoles, mais les études plus récentes sur les risques obstétricaux commencent à faire pencher la balance en faveur du cycle naturel (modifié) quand c'est possible.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Cycle naturel</th>
+<th>Cycle substitué</th>
+<th>Cycle stimulé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hormones exogènes</td>
+<td>Aucune (ou hCG trigger)</td>
+<td>E2 + progestérone</td>
+<td>FSH faible dose + hCG + P4</td>
+</tr>
+<tr>
+<td>Corps jaune</td>
+<td>Oui (endogène)</td>
+<td>Non</td>
+<td>Oui (1-2 follicules)</td>
+</tr>
+<tr>
+<td>Monitorage</td>
+<td>Écho + LH (3-5 visites)</td>
+<td>Écho seule (2-3 visites)</td>
+<td>Écho + E2 (3-4 visites)</td>
+</tr>
+<tr>
+<td>Timing contrôlable</td>
+<td>Non (ou partiellement si hCG)</td>
+<td>Oui (programmable)</td>
+<td>Partiellement</td>
+</tr>
+<tr>
+<td>Risque prééclampsie</td>
+<td>Référence</td>
+<td>OR 2,0-3,0</td>
+<td>Intermédiaire (données limitées)</td>
+</tr>
+<tr>
+<td>Indication idéale</td>
+<td>Cycles réguliers, ovulation spontanée</td>
+<td>IOP, don d'ovocytes, cycles absents</td>
+<td>SOPK, cycles irréguliers</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources : Ghobara et al., Cochrane 2021 ; Ginström Ernstad et al., BJOG 2019 ; Saito et al., 2019</em></p>
+<blockquote>
+<p>⚖️ <strong>Controverse — Cycle naturel vs cycle substitué pour le TEC : un changement de paradigme en cours ?</strong><br />
+Pendant deux décennies, le cycle substitué a été favorisé dans de nombreux centres pour sa commodité logistique. Les données accumulées depuis 2018-2019 sur le surrisque de prééclampsie (absence de corps jaune) ont amorcé un virage vers le cycle naturel (modifié) quand la patiente ovule spontanément.<br />
+- <strong>Pour le cycle naturel</strong> : profil obstétrical supérieur, pas d'hormones exogènes, corps jaune fonctionnel, moindre coût <em>(von Versen-Höynck et al., 2019)</em><br />
+- <strong>Pour le cycle substitué</strong> : timing parfaitement contrôlé, pas de risque d'annulation, indispensable si pas d'ovulation, résultats reproductifs non inférieurs <em>(Ghobara et al., Cochrane, 2021)</em><br />
+- <strong>Synthèse actuelle</strong> : tendance croissante au cycle naturel (modifié) en première intention chez les femmes ovulatoires. Les RCT en cours (essai ANTARCTICA, essai PROTEC) devraient trancher définitivement d'ici 2026-2027 (📊 Niveau de preuve : II-III).</p>
+<p>💡 <strong>Mnémonique — CORPS</strong> (Pourquoi le corps jaune manque en cycle substitué) :<br />
+<strong>C</strong>orpus luteum absent — <strong>O</strong>R prééclampsie × 2-3 — <strong>R</strong>elaxine absente (vasodilatation ↓) — <strong>P</strong>lacentation altérée — <strong>S</strong>urveillance obstétricale renforcée</p>
+<p>✏️ <strong>Micro-exercice</strong> : Pour chaque patiente, indiquez le protocole de TEC le plus adapté et justifiez :<br />
+1. Mme A., 31 ans, cycles réguliers 28j, ovulation spontanée documentée, 2 blastocystes vitrifiés<br />
+2. Mme C., 42 ans, insuffisance ovarienne prématurée (AMH indosable), don d'ovocytes, 3 blastocystes vitrifiés<br />
+3. Mme D., 29 ans, SOPK (cycles de 45-90 jours, anovulation fréquente), 2 blastocystes vitrifiés<br />
+→ <em>1. Cycle naturel modifié (hCG trigger) — ovulation spontanée, profil obstétrical optimal. 2. Cycle substitué — obligatoire car pas d'ovulation possible (IOP). 3. Cycle stimulé (FSH faible dose) — cycles irréguliers rendant le cycle naturel imprévisible, mais ovaires fonctionnels ; permet d'obtenir un corps jaune.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV24-S02-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Les 3 protocoles de TEC en parallèle — timeline, hormones, monitorage (Comparez la présence/absence de corps jaune dans chaque protocole)</td>
+</tr>
+<tr>
+<td>MFIV24-S02-002</td>
+<td>📊 GRAPHIQUE</td>
+<td>Risque de prééclampsie selon le type de cycle TEC — forest plot simplifié (Identifiez l'OR et l'intervalle de confiance pour chaque comparaison)</td>
+</tr>
+</tbody>
+</table>
+<p>La question du TEC est indissociable d'une stratégie plus large : faut-il systématiquement vitrifier tous les embryons et différer le transfert ?</p>
+<hr />
+<h3 id="section-243-strategie-freeze-all-et-resultats-du-tec">Section 24.3 — Stratégie <em>freeze-all</em> et résultats du TEC</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Lors d'une stimulation ovarienne standard, le taux de progestérone sérique augmente parfois dès le jour du déclenchement (élévation prématurée de la progestérone — <em>premature progesterone rise</em>). Selon vous, quel impact cela peut-il avoir sur la réceptivité endométriale, et comment la stratégie <em>freeze-all</em> résout-elle ce problème ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter la stratégie <em>freeze-all</em> et les résultats globaux du TEC par rapport au transfert frais :</p>
+<ul>
+<li><strong>Stratégie <em>freeze-all</em></strong> : le module doit définir cette approche — <strong>vitrification de tous les embryons obtenus</strong>, sans transfert frais, avec TEC différé sur un cycle ultérieur. Les indications principales sont :</li>
+<li><strong>Risque de SHO</strong> (<em>syndrome d'hyperstimulation ovarienne</em>) : chez les hyper-répondeuses (&gt;15-20 ovocytes) et surtout après déclenchement par agoniste GnRH, le <em>freeze-all</em> élimine le risque de SHO tardif (la grossesse aggraverait le SHO via la sécrétion de βhCG) — indication formelle <em>(Devroey et al., Fertil Steril, 2011)</em>.</li>
+<li><strong>Progestérone élevée le jour du trigger</strong> : une progestérone sérique &gt;1,5 ng/mL le jour du déclenchement est associée à une avance de la fenêtre d'implantation (endomètre en phase sécrétoire avancée par rapport au stade embryonnaire) et à une diminution du taux d'implantation en transfert frais. Le <em>freeze-all</em> permet de transférer sur un endomètre non « altéré » par la stimulation <em>(Bosch et al., Fertil Steril, 2010)</em>.</li>
+<li><strong>PGT</strong> (diagnostic préimplantatoire) : les résultats de la biopsie trophectodermique nécessitent 7-14 jours d'analyse (NGS) — le transfert frais est impossible, le <em>freeze-all</em> est systématique.</li>
+<li>
+<p><strong>Accumulation embryonnaire</strong> (<em>embryo banking</em>) : chez les <em>poor responders</em> (faible réponse ovarienne), plusieurs cycles de stimulation successifs permettent d'accumuler des embryons vitrifiés avant de transférer le meilleur — augmentant les chances cumulatives <em>(Cobo et al., Reprod Biomed Online, 2012)</em>.</p>
+</li>
+<li>
+<p><strong>Résultats du TEC — transfert congelé vs frais</strong> : le module doit présenter les grandes RCT comparant le TEC au transfert frais. L'essai <strong>FreET</strong> (Vuong et al., <em>N Engl J Med</em>, 2018 — 782 femmes, SOPK) a montré un taux de naissance vivante significativement supérieur avec le <em>freeze-all</em> (49,3% vs 40,5%, p=0,004) chez les patientes SOPK. Cependant, l'essai <strong>E-Freeze</strong> (Stormlund et al., <em>N Engl J Med</em>, 2020 — 460 femmes, population générale) n'a pas montré de supériorité du <em>freeze-all</em> chez les normo-répondeuses (taux cumulatif de naissance vivante : 62,7% vs 60,5%, NS). Le module doit conclure que le <em>freeze-all</em> systématique n'est pas justifié en population générale, mais qu'il est bénéfique dans des indications ciblées (SHO, progestérone élevée, PGT, SOPK) (📊 Niveau de preuve : I — RCT de bonne qualité).</p>
+</li>
+<li>
+<p><strong>Risques obstétricaux spécifiques du TEC</strong> : le module doit mentionner que les grossesses singletons issues de TEC présentent un profil obstétrical distinct des transferts frais — plus de macrosomie (<strong>LGA</strong>, <em>large for gestational age</em>, OR 1,5-2,0) et plus de prééclampsie (OR 1,3-1,8), mais moins de prématurité et moins de <em>small for gestational age</em> (SGA) <em>(Maheshwari et al., Hum Reprod Update, 2018)</em>. Le module doit relier ces observations au type de cycle de préparation endométriale (cf. Section 24.2 — le surrisque de prééclampsie est principalement porté par les cycles substitués sans corps jaune).</p>
+</li>
+</ul>
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — La progestérone le jour du trigger : un biomarqueur décisionnel</strong><br />
+La mesure de la progestérone sérique le jour du déclenchement est devenue un outil décisionnel clé. Un seuil &gt;1,5 ng/mL (certains centres utilisent &gt;1,0 ou &gt;2,0 ng/mL) indique une transformation sécrétoire avancée de l'endomètre, désynchronisant l'embryon et la fenêtre d'implantation. La décision de <em>freeze-all</em> peut être prise le jour même du trigger — d'où l'importance de disposer du résultat de la progestérone avant le déclenchement <em>(Bosch et al., 2010 ; Venetis et al., Hum Reprod Update, 2013)</em>.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Vrai/Faux — justifiez chaque réponse :<br />
+1. Le <em>freeze-all</em> systématique améliore le taux cumulatif de naissance vivante chez toutes les patientes.<br />
+2. L'indication principale du <em>freeze-all</em> est la prévention du SHO tardif.<br />
+3. Les grossesses TEC singletons présentent un risque de macrosomie (LGA) supérieur aux transferts frais.<br />
+4. Une progestérone sérique à 2,0 ng/mL le jour du trigger est rassurante pour un transfert frais.<br />
+→ <em>1. FAUX — l'essai E-Freeze (2020) n'a pas montré de supériorité en population générale. Le bénéfice est ciblé (SHO, SOPK, progestérone élevée, PGT). 2. VRAI — c'est l'indication formelle historique. 3. VRAI — OR 1,5-2,0 selon Maheshwari et al., 2018. 4. FAUX — une progestérone &gt;1,5 ng/mL le jour du trigger est un signal d'avance de la fenêtre d'implantation, justifiant un </em>freeze-all<em>.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV24-S03-001</td>
+<td>📊 GRAPHIQUE</td>
+<td>Essai FreET vs E-Freeze — taux de naissance vivante <em>freeze-all</em> vs transfert frais selon la population (Comparez les résultats SOPK vs normo-répondeuses)</td>
+</tr>
+<tr>
+<td>MFIV24-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Arbre décisionnel : transfert frais ou <em>freeze-all</em> ? (intégrant SHO, progestérone, PGT, cohorte embryonnaire)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-24">Points clés — Module 24</h2>
+<ol>
+<li>Le TEC en <strong>cycle naturel</strong> (ou naturel modifié — hCG trigger) est le protocole le plus physiologique, avec un profil obstétrical favorable (corps jaune fonctionnel, relaxine)</li>
+<li>Le transfert de blastocyste est programmé à <strong>LH + 5</strong> (ou hCG + 5) et le J3 à <strong>LH + 3</strong></li>
+<li>Le TEC en <strong>cycle substitué</strong> (E2 + progestérone, pas d'ovulation) offre un timing parfaitement contrôlé mais expose à un surrisque de <strong>prééclampsie</strong> (OR 2-3) lié à l'absence de corps jaune</li>
+<li>Le TEC en <strong>cycle stimulé</strong> (FSH faible dose) est une alternative pour les patientes avec cycles irréguliers et ovaires fonctionnels</li>
+<li>La stratégie <strong><em>freeze-all</em></strong> est indiquée en cas de risque de SHO, progestérone élevée au trigger, PGT ou accumulation embryonnaire — mais n'est pas bénéfique en routine (essai E-Freeze 2020)</li>
+<li>Chez les patientes <strong>SOPK</strong>, le <em>freeze-all</em> améliore significativement le taux de naissance vivante (essai FreET 2018)</li>
+<li>Les grossesses TEC singletons ont un profil obstétrical distinct : plus de <strong>macrosomie</strong> (LGA) et de prééclampsie, moins de prématurité et de SGA</li>
+<li>La tendance actuelle est au <strong>cycle naturel modifié en première intention</strong> chez les femmes ovulatoires, réservant le cycle substitué aux situations sans ovulation possible</li>
+</ol>
+<h2 id="auto-evaluation-module-24">Auto-évaluation — Module 24</h2>
+<p><strong>QCM 1</strong> : Quel est le timing optimal du transfert de blastocyste en TEC cycle naturel ?<br />
+a) Jour de l'ovulation (LH + 0)<br />
+b) LH + 2<br />
+c) LH + 5<br />
+d) LH + 7<br />
+→ <em>Réponse : c — Le blastocyste (J5) est transféré à LH + 5 pour respecter la synchronisation embryo-endométriale. (a) et (b) sont trop précoces — l'endomètre n'est pas encore en phase sécrétoire avancée. (d) est trop tardif — la fenêtre d'implantation est fermée.</em></p>
+<p><strong>QCM 2</strong> : Quel est le principal risque obstétrical associé au TEC en cycle substitué par rapport au cycle naturel ?<br />
+a) Grossesse extra-utérine<br />
+b) Prématurité<br />
+c) Prééclampsie<br />
+d) Malformations fœtales<br />
+→ <em>Réponse : c — Le surrisque de prééclampsie (OR 2-3) est lié à l'absence de corps jaune et de sécrétion de relaxine. (a) n'est pas spécifiquement augmenté. (b) est plutôt diminué en TEC vs transfert frais. (d) n'est pas lié au type de cycle de préparation.</em></p>
+<p><strong>QCM 3</strong> : Parmi les indications suivantes du <em>freeze-all</em>, laquelle est soutenue par un essai randomisé de niveau I ?<br />
+a) Patiente &gt;40 ans<br />
+b) Progestérone sérique &gt;1,5 ng/mL au trigger chez une normo-répondeuse<br />
+c) Patiente SOPK à risque de SHO<br />
+d) Premier cycle de FIV en population générale<br />
+→ <em>Réponse : c — L'essai FreET (Vuong et al., NEJM 2018) a démontré la supériorité du freeze-all chez les SOPK (niveau I). (b) est une indication reconnue mais basée sur des études observationnelles. (d) est réfutée par l'essai E-Freeze (non-supériorité du freeze-all en population générale).</em></p>
+<p><strong>Cas clinique court</strong> : Mme F., 37 ans, 2e tentative ICSI, protocole antagoniste, 22 ovocytes ponctionnés, déclenchement par agoniste GnRH (Decapeptyl®) pour prévention du SHO, progestérone au trigger = 2,3 ng/mL. À J5 : 5 blastocystes dont 2 de grade 4AA, 2 de grade 4AB, 1 de grade 3BB.<br />
+1. Transférez-vous un embryon frais ? Justifiez.<br />
+2. Quel protocole de TEC proposerez-vous au cycle suivant si Mme F. a des cycles réguliers de 30 jours ?<br />
+→ <em>1. Non — triple indication de freeze-all : (a) hyper-répondeuse avec 22 ovocytes, trigger agoniste pour prévention SHO — un transfert frais annulerait le bénéfice du trigger agoniste (risque de SHO tardif si grossesse) ; (b) progestérone au trigger élevée (2,3 ng/mL &gt; 1,5) — fenêtre d'implantation avancée ; (c) 5 blastocystes disponibles — les chances cumulatives sont excellentes. 2. Cycle naturel modifié (hCG trigger) — cycles réguliers permettant un monitorage physiologique, corps jaune endogène optimal pour le pronostic obstétrical.</em></p>
+<p><strong>Question de synthèse</strong> : Rédigez un argumentaire clinique de 8 à 10 lignes expliquant pourquoi la tendance actuelle en AMP est de favoriser le cycle naturel (modifié) plutôt que le cycle substitué pour le TEC chez les femmes ovulatoires, en citant les données clés et les mécanismes physiopathologiques.</p>
+<h2 id="glossaire-des-termes-introduits-module-24">Glossaire des termes introduits — Module 24</h2>
+<p>Ce module introduit les termes suivants : <strong>TEC</strong> (transfert d'embryon congelé), <strong>cycle naturel</strong>, <strong>cycle naturel modifié</strong>, <strong>cycle substitué</strong> (<em>artificial cycle</em>), <strong>cycle stimulé</strong>, <strong>pic de LH</strong>, <strong>LH + 0</strong>, <strong>progestérone exogène</strong>, <strong>estradiol transdermique</strong>, <strong>soutien de la phase lutéale</strong>, <strong>freeze-all</strong>, <strong>progestérone au trigger</strong>, <strong>élévation prématurée de progestérone</strong> (<em>premature progesterone rise</em>), <strong>accumulation embryonnaire</strong> (<em>embryo banking</em>), <strong>LGA</strong> (<em>large for gestational age</em>), <strong>SGA</strong> (<em>small for gestational age</em>), <strong>relaxine</strong>, <strong>essai FreET</strong>, <strong>essai E-Freeze</strong>, <strong>prééclampsie</strong>.</p>
+<h2 id="references-bibliographiques-module-24">Références bibliographiques — Module 24</h2>
+<ul>
+<li>Fatemi HM et al. <em>Natural versus artificial cycle for frozen embryo transfer: a randomized study</em>. Hum Reprod. 2010;25:8-13.</li>
+<li>Groenewoud ER et al. <em>What is the optimal means of preparing the endometrium in frozen-thawed embryo transfer cycles? A systematic review and meta-analysis</em>. Hum Reprod Update. 2017;23:255-261.</li>
+<li>Ghobara T et al. <em>Cycle regimens for frozen-thawed embryo transfer</em>. Cochrane Database Syst Rev. 2021;7:CD003414.</li>
+<li>Saito K et al. <em>Perinatal outcomes in frozen embryo transfer cycles with different endometrial preparation protocols</em>. Obstet Gynecol. 2019;133:467-475.</li>
+<li>von Versen-Höynck F et al. <em>Absence of corpus luteum and preeclampsia risk in frozen embryo transfer</em>. Hypertension. 2019;73:640-649.</li>
+<li>Ginström Ernstad E et al. <em>Outcomes of frozen-thawed embryo transfer in relation to endometrial preparation</em>. BJOG. 2019;126:1061-1069.</li>
+<li>Maheshwari A et al. <em>Is frozen embryo transfer better for mothers and babies? Can cumulative meta-analysis provide a definitive answer?</em>. Hum Reprod Update. 2018;24:35-58.</li>
+<li>Bosch E et al. <em>Circulating progesterone levels and ongoing pregnancy rates in controlled ovarian stimulation cycles for in vitro fertilization</em>. Fertil Steril. 2010;94:2458-2462.</li>
+<li>Venetis CA et al. <em>Is progesterone elevation on the day of human chorionic gonadotrophin administration associated with the probability of pregnancy?</em>. Hum Reprod Update. 2013;19:164-179.</li>
+<li>Vuong LN et al. <em>IVF transfer of fresh or frozen embryos in women without polycystic ovaries</em>. N Engl J Med. 2018;378:137-147.</li>
+<li>Stormlund S et al. <em>Freeze-all strategy versus fresh embryo transfer in IVF</em>. N Engl J Med. 2020;382:629-637.</li>
+<li>Devroey P et al. <em>A strategy for preventing severe OHSS</em>. Fertil Steril. 2011;95:1462-1466.</li>
+</ul>
+<hr />
+<h1 id="module-25-preservation-de-la-fertilite-oncofertilite-et-autoconservation">MODULE 25 : PRÉSERVATION DE LA FERTILITÉ — ONCOFERTILITÉ ET AUTOCONSERVATION</h1>
+<p><strong>Partie</strong> : VII — Cryopréservation<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire-Expert<br />
+<strong>Prérequis</strong> : Module 23 (cryobiologie et vitrification), Module 12 (stimulation ovarienne — protocoles), Module 5 (réserve ovarienne, AMH, CFA)<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 ONCOLOGUE 🔷 ÉTHIQUE</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Mlle T., 28 ans, enseignante, célibataire, vient de recevoir le diagnostic d'un lymphome de Hodgkin stade IIA. L'hématologue prévoit une chimiothérapie par ABVD (adriamycine, bléomycine, vinblastine, dacarbazine) × 6 cycles, possiblement suivie d'une escalade par BEACOPP si réponse insuffisante. Le BEACOPP contient du **cyclophosphamide** — agent alkylant à forte gonadotoxicité. L'AMH pré-thérapeutique est à 3,2 ng/mL (réserve ovarienne normale). L'hématologue vous contacte en urgence : *« La chimio commence dans 12 jours. Est-ce qu'on a le temps de préserver sa fertilité ? Et si elle avait 14 ans au lieu de 28, ferait-on la même chose ? »* La préservation de la fertilité est un droit des patients confrontés à un traitement gonadotoxique — l'oncologue a l'obligation légale et éthique d'informer et d'orienter vers un spécialiste de la reproduction *avant* le début du traitement *(loi de bioéthique 2004, renforcée en 2011 et 2021)*.</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les indications de préservation de la fertilité (oncologiques, auto-immunes, chirurgicales, de genre) et les niveaux de gonadotoxicité des principaux traitements</li>
+<li><strong>Prescrire</strong> un protocole de stimulation ovarienne en urgence (<em>random start</em>) et organiser une vitrification ovocytaire en 10-14 jours</li>
+<li><strong>Expliquer</strong> la technique et les indications de la cryoconservation de cortex ovarien chez la femme adulte et prépubère</li>
+<li><strong>Appliquer</strong> le cadre législatif français de l'autoconservation ovocytaire (loi de bioéthique 2021) et conseiller une patiente sur l'âge optimal et le nombre d'ovocytes</li>
+<li><strong>Connaître</strong> les options de préservation de la fertilité masculine (congélation spermatique, tissu testiculaire prépubertaire)</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-251-preservation-de-la-fertilite-feminine-indications-et-vitrification-ovocytaire-en-urgence">Section 25.1 — Préservation de la fertilité féminine : indications et vitrification ovocytaire en urgence</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi les agents alkylants (cyclophosphamide, busulfan, melphalan) sont-ils les chimiothérapies les plus gonadotoxiques ? Pensez au mécanisme d'action de ces molécules et à la biologie particulière du pool de follicules primordiaux.</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les indications de préservation de la fertilité et la technique de vitrification ovocytaire en situation d'urgence oncologique :</p>
+<ul>
+<li><strong>Indications médicales</strong> : le module doit lister les situations justifiant une préservation de la fertilité :</li>
+<li><strong>Oncofertilité</strong> : chimiothérapie gonadotoxique — les <strong>agents alkylants</strong> (cyclophosphamide, busulfan, melphalan, chlorambucil, procarbazine) sont les plus toxiques car ils provoquent des liaisons covalentes inter-brins de l'ADN dans les cellules de la granulosa et les ovocytes des follicules primordiaux quiescents (ces cellules, bien que non proliférantes, sont vulnérables aux lésions directes de l'ADN). La gonadotoxicité est dose-dépendante et cumulative <em>(Meirow &amp; Nugent, Hum Reprod Update, 2001)</em>. Le module doit classer les protocoles selon leur risque : risque élevé (BEACOPP, conditionnement pour greffe de moelle), risque intermédiaire (ABVD seul, CHOP), risque faible (vincristine seule, méthotrexate faible dose).</li>
+<li><strong>Radiothérapie pelvienne</strong> : la dose létale pour le pool folliculaire est estimée à <strong>&lt;2 Gy</strong> pour une femme de 40 ans et <strong>~6 Gy</strong> pour une femme de 20 ans <em>(Wallace et al., Hum Reprod, 2005)</em> — des doses très faibles. La radiothérapie abdominale ou pelvienne (lymphomes, sarcomes, tumeurs gynécologiques) menace directement la réserve ovarienne.</li>
+<li><strong>Chirurgie ovarienne bilatérale</strong> : endométriomes bilatéraux récidivants, tumeurs borderline bilatérales, syndrome de Turner en mosaïque (réserve ovarienne diminuée précocement).</li>
+<li><strong>Maladies auto-immunes</strong> traitées par cyclophosphamide (lupus systémique sévère, vascularites — protocole CYCLOPS ou NIH).</li>
+<li>
+<p><strong>Transition de genre</strong> (homme transgenre avant hormonothérapie par testostérone ou chirurgie d'affirmation de genre — ovariectomie bilatérale).</p>
+</li>
+<li>
+<p><strong>Vitrification ovocytaire en urgence — <em>random start</em></strong> : le module doit expliquer que la stimulation ovarienne en oncofertilité ne peut pas attendre le début d'un nouveau cycle menstruel. Le protocole de <strong><em>random start</em></strong> permet de débuter la stimulation <strong>à n'importe quel moment du cycle</strong> (phase folliculaire, lutéale, ou même pendant les règles). Le rationnel est basé sur la théorie des <strong>vagues folliculaires</strong> <em>(Baerwald et al., Fertil Steril, 2003)</em> — plusieurs cohortes de follicules antraux sont recrutées au cours d'un même cycle, pas seulement en début de phase folliculaire. Le module doit décrire le protocole : <strong>antagoniste GnRH</strong> (Cetrotide® ou Orgalutran®) débuté simultanément avec les gonadotrophines (FSH 150-300 UI/j) dès la première consultation, monitorage échographique rapproché, <strong>déclenchement</strong> par agoniste GnRH (Decapeptyl® — préféré au hCG pour minimiser le risque de SHO et permettre une récupération rapide) ou <strong>double trigger</strong> (agoniste + hCG faible dose), ponction ovocytaire <strong>10-14 jours</strong> après le début de la stimulation, vitrification immédiate des ovocytes matures.</p>
+</li>
+<li>
+<p><strong>Nombre d'ovocytes cible</strong> : le module doit présenter l'analyse de Cobo et al. (2016) sur les courbes de survie cumulée — le taux de naissance vivante cumulative augmente avec le nombre d'ovocytes vitrifiés, avec un plateau à environ <strong>15-20 ovocytes</strong> pour les femmes &lt;36 ans (taux cumulatif de naissance ~70-85%). Chez les femmes de &gt;36 ans, le nombre d'ovocytes nécessaire augmente considérablement en raison de la hausse du taux d'aneuploïdies. Un cycle unique de stimulation suffit souvent chez les bonnes répondeuses ; chez les <em>poor responders</em> ou si le délai avant chimiothérapie le permet, un 2e cycle (DuoStim ou cycle séquentiel) peut être proposé pour augmenter le nombre d'ovocytes.</p>
+</li>
+<li>
+<p><strong>Analogues GnRH pendant la chimiothérapie</strong> : le module doit présenter l'utilisation des analogues GnRH agonistes (Decapeptyl® LP, Enantone®) pendant la chimiothérapie comme mesure complémentaire de <strong>protection gonadique</strong> — le mécanisme supposé est la mise au repos de l'axe gonadotrope (suppression de FSH) réduisant le recrutement folliculaire et la quiescence ovarienne. Les données sont controversées : l'essai POEMS (Moore et al., <em>N Engl J Med</em>, 2015) a montré un bénéfice significatif (insuffisance ovarienne prématurée 8% vs 22%), mais les méta-analyses sont hétérogènes (📊 Niveau de preuve : II — résultats divergents selon les populations et les critères de jugement). L'AMH post-traitement est un marqueur de la <strong>réserve ovarienne résiduelle</strong> et doit être dosée 3-6 mois après la fin de la chimiothérapie.</p>
+</li>
+</ul>
+<blockquote>
+<p>🔬 <strong>Expert — Cryoconservation de cortex ovarien : quand la stimulation est impossible</strong><br />
+La cryoconservation de cortex ovarien est la seule option pour les patientes <strong>prépubères</strong> (pas de stimulation possible avant la puberté) ou lorsque le délai avant chimiothérapie est trop court (&lt;7 jours) ou que la stimulation est contre-indiquée (tumeur hormonodépendante, urgence vitale). La technique consiste en une <strong>ovariectomie partielle laparoscopique</strong> (ou biopsie de cortex), découpe en fragments de 1-2 mm d'épaisseur (contenant des milliers de follicules primordiaux), congélation lente dans un milieu contenant du DMSO, et stockage à -196°C. La <strong>greffe ultérieure</strong> (après rémission) se fait sur un site <strong>orthotopique</strong> (ovaire restant, ligament large — restaure la fertilité naturelle et la fonction endocrine) ou <strong>hétérotopique</strong> (avant-bras, paroi abdominale — accès facilité mais ovulation impossible). Le premier enfant né après greffe de cortex ovarien a été rapporté par Donnez et al. (<em>Lancet</em>, 2004). Plus de <strong>200 naissances mondiales</strong> ont été rapportées depuis <em>(ESHRE, Hum Reprod, 2020 — la technique n'est plus considérée comme expérimentale)</em>. Risque théorique : réintroduction de cellules malignes avec le greffon (évaluation histologique et moléculaire pré-greffe obligatoire, CI en cas de leucémie aiguë avec envahissement ovarien).</p>
+<p>💡 <strong>Mnémonique — URGENT</strong> (Préservation de la fertilité en oncologie — checklist) :<br />
+<strong>U</strong>rgence — consulter un spécialiste de la reproduction dans les 24-48h — <strong>R</strong>éserve ovarienne — doser AMH + CFA immédiatement — <strong>G</strong>onadotoxicité — évaluer le risque du protocole de chimiothérapie — <strong>E</strong>stimulation — <em>random start</em> possible quel que soit le jour du cycle — <strong>N</strong>ombre — viser ≥15 ovocytes si possible — <strong>T</strong>raçabilité — consentement éclairé, CECOS, loi de bioéthique</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Les 3 erreurs à ne jamais commettre en oncofertilité**
+> 1. **Ne pas informer la patiente** de la possibilité de préserver sa fertilité avant la chimiothérapie — obligation légale (art. L2141-11 du Code de la santé publique)
+> 2. **Attendre le début d'un nouveau cycle** pour commencer la stimulation — le *random start* permet de gagner 2-3 semaines
+> 3. **Retarder la chimiothérapie de plus de 2-3 semaines** pour la préservation — le pronostic oncologique est prioritaire. La vitrification ovocytaire est compatible avec un délai de 10-14 jours.</div>
+
+<blockquote>
+<p>✏️ <strong>Micro-exercice</strong> : Mlle T. (accroche clinique) consulte le surlendemain du diagnostic. AMH 3,2 ng/mL, CFA 18 follicules, J16 du cycle (phase lutéale). La chimiothérapie est prévue dans 13 jours.<br />
+1. Pouvez-vous commencer une stimulation ovarienne alors qu'elle est en phase lutéale ?<br />
+2. Quel protocole prescrivez-vous ?<br />
+3. Combien d'ovocytes pouvez-vous espérer obtenir ?<br />
+→ <em>1. Oui — protocole random start, stimulation possible à n'importe quel moment du cycle. 2. Antagoniste GnRH (Cetrotide® 0,25 mg/j dès J1 de stimulation) + FSH 225-300 UI/j, monitorage écho + E2 à J5-J6-J8-J10, déclenchement par agoniste GnRH (Decapeptyl® 0,2 mg) quand ≥3 follicules ≥17 mm, ponction 36h après. 3. Avec un CFA de 18 et une AMH de 3,2 ng/mL (bonne répondeuse), on peut espérer 12-18 ovocytes matures en un cycle — compatible avec l'objectif de ≥15 ovocytes. Timing : stimulation J16 → ponction ~J27 = 11 jours. Chimio J29 — timing respecté.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV25-S01-001</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Classification des chimiothérapies par niveau de gonadotoxicité — risque élevé/intermédiaire/faible (Identifiez les agents alkylants et leur mécanisme de lésion folliculaire)</td>
+</tr>
+<tr>
+<td>MFIV25-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Protocole <em>random start</em> — timeline de la consultation à la ponction en 10-14 jours</td>
+</tr>
+<tr>
+<td>MFIV25-S01-003</td>
+<td>📊 GRAPHIQUE</td>
+<td>Courbes de Cobo et al. (2016) — taux cumulatif de naissance vivante selon le nombre d'ovocytes vitrifiés et l'âge (Comparez les courbes &lt;35 ans et &gt;35 ans)</td>
+</tr>
+</tbody>
+</table>
+<p>La préservation médicale de la fertilité concerne les patientes confrontées à un traitement gonadotoxique. Depuis 2021, la loi française autorise également la préservation sans indication médicale. Voyons ce que cela change.</p>
+<hr />
+<h3 id="section-252-autoconservation-ovocytaire-preservation-societale-et-preservation-masculine">Section 25.2 — Autoconservation ovocytaire (préservation sociétale) et préservation masculine</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La loi de bioéthique de 2021 a autorisé en France l'autoconservation ovocytaire sans indication médicale. Cette décision a été saluée comme une avancée pour l'autonomie reproductive des femmes. Mais elle soulève une question fondamentale : l'autoconservation « libère-t-elle » réellement les femmes de la pression de l'horloge biologique, ou crée-t-elle une fausse assurance ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'autoconservation ovocytaire et la préservation de la fertilité masculine dans leurs dimensions médicales, réglementaires, éthiques et sociologiques :</p>
+<ul>
+<li>
+<p><strong>Cadre législatif français</strong> : le module doit détailler la <strong>loi de bioéthique du 2 août 2021</strong> — elle autorise l'autoconservation de gamètes (ovocytes et spermatozoïdes) sans indication médicale pour toute personne majeure (art. L2141-12 du Code de la santé publique). Conditions : âge de 29 à 37 ans pour les femmes (décret d'application), consentement éclairé après entretien avec un médecin et un psychologue, prise en charge par l'assurance maladie de la stimulation et de la ponction (actes médicaux remboursés), <strong>conservation aux frais de la patiente</strong> (environ 40-60€/an dans les CECOS). Le module doit mentionner que les décrets d'application n'ont été publiés qu'en 2022 et que l'accès effectif reste inégal sur le territoire (délais d'attente de 6-18 mois dans certains CECOS).</p>
+</li>
+<li>
+<p><strong>Âge optimal de l'autoconservation</strong> : le module doit présenter les données montrant que l'efficacité de l'autoconservation dépend fondamentalement de l'<strong>âge au moment de la vitrification</strong>. L'analyse de Doyle et al. (<em>Fertil Steril</em>, 2016) et Goldman et al. (<em>Fertil Steril</em>, 2017) montre que :</p>
+</li>
+<li><strong>Avant 35 ans</strong> : le taux d'utilisation cumulative par ovocyte est maximal — environ <strong>5-7%</strong> de naissance vivante par ovocyte décongelé. Avec 15-20 ovocytes, le taux cumulatif de naissance vivante est de <strong>70-85%</strong>.</li>
+<li><strong>35-37 ans</strong> : le taux diminue — il faut 20-25 ovocytes pour atteindre un taux cumulatif comparable.</li>
+<li>
+<p><strong>&gt;38 ans</strong> : le taux d'aneuploïdies augmente exponentiellement (50% à 38 ans, &gt;70% à 42 ans) — le nombre d'ovocytes nécessaire devient prohibitif (&gt;30) et le taux de succès par ovocyte chute à 2-3%. Le module doit insister : l'autoconservation après 38 ans offre une <strong>assurance limitée</strong> et ne doit pas être présentée comme une garantie.</p>
+</li>
+<li>
+<p><strong>Counseling et aspects éthiques</strong> : le module doit présenter les enjeux éthiques et sociologiques de l'autoconservation — le risque de <strong>fausse assurance</strong> (<em>false reassurance</em>) chez les femmes qui reportent leur projet de grossesse en pensant avoir « sécurisé » leur fertilité ; le paradoxe socio-économique (les femmes qui autoconservent sont souvent des cadres à haut revenu — accès inégalitaire) ; le <strong>taux d'utilisation réel</strong> des ovocytes autoconservés est faible (5-20% selon les séries — Hammarberg et al., <em>Hum Reprod</em>, 2017), ce qui signifie que la majorité des femmes conçoivent naturellement et n'utilisent jamais leurs ovocytes. Le module doit aborder la notion de « plan B reproductif » : l'autoconservation est une assurance, pas un plan A <em>(ESHRE Task Force, Hum Reprod Open, 2020)</em>.</p>
+</li>
+<li>
+<p><strong>Préservation de la fertilité masculine</strong> : le module doit présenter la <strong>congélation spermatique</strong> pré-chimiothérapie comme la technique standard — recueil par masturbation, évaluation des paramètres spermatiques (OMS 2021), cryoconservation dans les <strong>CECOS</strong> (<em>Centre d'étude et de conservation des œufs et du sperme humain</em>) dans un milieu avec glycérol, stockage en paillettes à -196°C. La technique est simple, rapide (1-2 recueils en 48h), non invasive et très efficace. Le module doit mentionner l'autoconservation spermatique sociétale (également autorisée par la loi de 2021, 29-45 ans pour les hommes).</p>
+</li>
+<li>
+<p><strong>Préservation prépubertaire masculine</strong> : le module doit présenter la cryoconservation de <strong>tissu testiculaire</strong> chez le garçon prépubère (pas de spermatogenèse, donc pas de spermatozoïdes à congeler). La technique — biopsie testiculaire chirurgicale, congélation de fragments de tissu contenant des spermatogonies souches — est encore <strong>expérimentale</strong>. La maturation in vitro de spermatogonies et la xénotransplantation sont des pistes de recherche, mais aucune naissance humaine n'a été obtenue à ce jour à partir de tissu testiculaire prépubertaire <em>(Picton et al., Hum Reprod, 2015)</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p>⚖️ <strong>Controverse — Autoconservation ovocytaire : autonomie reproductive ou pression sociétale ?</strong><br />
+L'autoconservation divise les spécialistes et les éthiciens :<br />
+- <strong>Pour</strong> : autonomie reproductive des femmes, extension de la fenêtre de fertilité, égalité avec les hommes (qui peuvent concevoir tardivement), réduction de la pression du couple à procréer « dans les temps » <em>(ESHRE Task Force, 2020)</em><br />
+- <strong>Contre</strong> : médicalisation de la reproduction normale, fausse assurance pour les femmes &gt;36 ans, pression des employeurs (Apple et Facebook ont proposé de financer l'autoconservation de leurs employées — dérive ?), surmédicalisation (stimulation ovarienne avec ses risques), coût pour la collectivité, taux d'utilisation très faible <em>(Mertes &amp; Pennings, Hum Reprod, 2011)</em><br />
+- <strong>Synthèse actuelle</strong> : l'autoconservation est une option légitime dans le cadre d'un counseling éclairé et non directif. Le praticien doit informer sans encourager ni décourager, en insistant sur les limites (âge, nombre d'ovocytes) et en présentant des données chiffrées réalistes (📊 Niveau de preuve : III-IV pour les données d'efficacité à long terme).</p>
+<p>💡 <strong>Mnémonique — TRENTE</strong> (Autoconservation — les chiffres clés) :<br />
+<strong>T</strong>rente-cinq ans = âge seuil d'efficacité optimale — <strong>R</strong>éserve = AMH + CFA à doser avant — <strong>E</strong>ffectif = 15-20 ovocytes pour un taux cumulatif acceptable — <strong>N</strong>on-garantie = c'est une assurance, pas une certitude — <strong>T</strong>aux d'utilisation = seulement 5-20% des femmes utilisent leurs ovocytes — <strong>E</strong>ntrée = 29-37 ans en France (loi 2021)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Mme G., 34 ans, célibataire, cadre en entreprise, souhaite une autoconservation ovocytaire. AMH = 2,1 ng/mL, CFA = 12.<br />
+1. Est-elle éligible selon la loi de bioéthique 2021 ?<br />
+2. Combien d'ovocytes devez-vous viser et combien de cycles de stimulation cela nécessitera-t-il probablement ?<br />
+3. Quel élément essentiel du counseling devez-vous aborder ?<br />
+→ <em>1. Oui — 34 ans, dans la tranche 29-37 ans. 2. Objectif : 15-20 ovocytes. Avec un CFA de 12 et une AMH de 2,1 (répondeuse normale-modérée), on peut espérer 8-12 ovocytes matures par cycle. Il faudra probablement 2 cycles de stimulation. 3. L'autoconservation est une assurance, pas une garantie — à 34 ans avec 15-20 ovocytes, le taux cumulatif de naissance vivante est de ~70-80%. Cependant, 80-95% des femmes qui autoconservent n'utilisent jamais leurs ovocytes (conception spontanée). La grossesse naturelle avant 37 ans reste le plan A.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV25-S02-001</td>
+<td>📊 GRAPHIQUE</td>
+<td>Taux cumulatif de naissance vivante selon le nombre d'ovocytes vitrifiés et l'âge — Goldman et al. 2017 (Identifiez le nombre d'ovocytes nécessaire à 34 ans vs 39 ans pour un taux &gt;60%)</td>
+</tr>
+<tr>
+<td>MFIV25-S02-002</td>
+<td>📊 INFOGRAPHIE</td>
+<td>Cadre législatif français de l'autoconservation — loi 2021, conditions, parcours, coûts</td>
+</tr>
+<tr>
+<td>MFIV25-S02-003</td>
+<td>📐 SCHÉMA</td>
+<td>Cryoconservation de cortex ovarien — de l'ovariectomie partielle à la greffe orthotopique (Identifiez les étapes et les sites de greffe possibles)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-25">Points clés — Module 25</h2>
+<ol>
+<li>La préservation de la fertilité est une <strong>obligation légale</strong> d'information avant tout traitement gonadotoxique (loi de bioéthique 2004/2011/2021)</li>
+<li>Les <strong>agents alkylants</strong> (cyclophosphamide, busulfan) sont les chimiothérapies les plus gonadotoxiques — lésions directes de l'ADN des follicules primordiaux quiescents</li>
+<li>Le protocole <strong><em>random start</em></strong> permet de débuter la stimulation à n'importe quel moment du cycle, avec ponction en <strong>10-14 jours</strong> — adapté à l'urgence oncologique</li>
+<li>L'objectif est de vitrifier <strong>≥15 ovocytes</strong> si possible — le taux cumulatif de naissance vivante atteint 70-85% chez les &lt;36 ans (Cobo et al., 2016)</li>
+<li>La <strong>cryoconservation de cortex ovarien</strong> est la seule option pour les patientes prépubères ou quand la stimulation est impossible — &gt;200 naissances mondiales, technique non expérimentale depuis ESHRE 2020</li>
+<li>Les <strong>analogues GnRH</strong> pendant la chimiothérapie offrent une protection gonadique complémentaire (essai POEMS — niveau II, résultats divergents)</li>
+<li>L'<strong>autoconservation ovocytaire</strong> est autorisée en France depuis 2021 (29-37 ans) — efficacité optimale <strong>avant 35 ans</strong>, taux d'utilisation réel faible (5-20%)</li>
+<li>La <strong>congélation spermatique</strong> pré-chimiothérapie est simple, rapide et efficace — la cryoconservation de tissu testiculaire prépubertaire reste expérimentale</li>
+</ol>
+<h2 id="auto-evaluation-module-25">Auto-évaluation — Module 25</h2>
+<p><strong>QCM 1</strong> : Quel est l'âge optimal pour l'autoconservation ovocytaire selon les données d'efficacité ?<br />
+a) Avant 30 ans<br />
+b) Avant 35-36 ans<br />
+c) Avant 40 ans<br />
+d) Avant 45 ans<br />
+→ <em>Réponse : b — L'efficacité par ovocyte est maximale avant 35 ans (taux de naissance vivante ~5-7% par ovocyte). Après 38 ans, le taux d'aneuploïdies augmente exponentiellement et le rendement chute. (a) serait idéal biologiquement mais la loi française fixe l'âge minimal à 29 ans. (c) et (d) offrent un rendement insuffisant.</em></p>
+<p><strong>QCM 2</strong> : Quelle est la seule technique de préservation de la fertilité applicable chez une fille prépubère de 8 ans avant chimiothérapie ?<br />
+a) Vitrification ovocytaire après stimulation<br />
+b) Analogue GnRH seul<br />
+c) Cryoconservation de cortex ovarien<br />
+d) Maturation in vitro d'ovocytes<br />
+→ <em>Réponse : c — La stimulation ovarienne est impossible avant la puberté (pas de follicules antraux recrutables). La cryoconservation de cortex ovarien (ovariectomie partielle laparoscopique) permet de stocker des milliers de follicules primordiaux pour une greffe ultérieure. (b) n'est pas un moyen de préservation autonome. (d) n'est pas validée cliniquement dans ce contexte.</em></p>
+<p><strong>QCM 3</strong> : Quel est l'avantage principal du protocole <em>random start</em> en oncofertilité ?<br />
+a) Il évite la stimulation ovarienne<br />
+b) Il permet de débuter la stimulation à n'importe quel moment du cycle, sans attendre les règles<br />
+c) Il garantit plus d'ovocytes qu'un protocole standard<br />
+d) Il est moins coûteux qu'un protocole antagoniste classique<br />
+→ <em>Réponse : b — Le random start repose sur la théorie des vagues folliculaires et permet de gagner 2-3 semaines de délai critique en oncologie. (a) est faux — la stimulation est bien nécessaire. (c) est non démontré — le rendement est comparable au protocole standard. (d) est faux — le coût est similaire.</em></p>
+<p><strong>Cas clinique court</strong> : M. R., 25 ans, diagnostic de séminome testiculaire stade I. Orchidectomie gauche réalisée. Avant le début d'une chimiothérapie adjuvante par carboplatine (1 cycle AUC7), l'urologue vous adresse le patient pour préservation de la fertilité. Spermogramme : oligoasthénospermie modérée (concentration 8 M/mL, mobilité progressive 25%).<br />
+1. Quelle technique de préservation proposez-vous ?<br />
+2. Le spermogramme altéré modifie-t-il votre indication ?<br />
+3. Combien de recueils recommandez-vous et dans quel délai ?<br />
+→ <em>1. Congélation spermatique au CECOS — technique standard, rapide, non invasive. 2. Non — l'oligoasthénospermie ne contre-indique pas la congélation. Même des paramètres très altérés permettent une utilisation ultérieure en ICSI (1 spermatozoïde vivant suffit par ovocyte). L'altération est d'ailleurs fréquente chez les patients avec tumeur testiculaire (effet paracrine, fièvre, stress). 3. Idéalement 2-3 recueils espacés de 48-72h avant le début de la chimiothérapie. Avec un seul testicule restant et une chimiothérapie gonadotoxique, la congélation est absolument indiquée.</em></p>
+<p><strong>Question de synthèse</strong> : Une patiente de 29 ans, diagnostiquée avec un cancer du sein ER+ (récepteurs aux estrogènes positifs), doit recevoir une chimiothérapie néoadjuvante comprenant du cyclophosphamide. Décrivez votre stratégie complète de préservation de la fertilité : bilan initial, protocole de stimulation adapté (en tenant compte du statut ER+), objectif d'ovocytes, mesures complémentaires, et éléments de counseling.</p>
+<h2 id="glossaire-des-termes-introduits-module-25">Glossaire des termes introduits — Module 25</h2>
+<p>Ce module introduit les termes suivants : <strong>oncofertilité</strong>, <strong>gonadotoxicité</strong>, <strong>agents alkylants</strong>, <strong>cyclophosphamide</strong>, <strong>random start</strong>, <strong>vagues folliculaires</strong>, <strong>double trigger</strong>, <strong>cryoconservation de cortex ovarien</strong>, <strong>greffe orthotopique</strong>, <strong>greffe hétérotopique</strong>, <strong>analogue GnRH</strong> (protection gonadique), <strong>AMH post-traitement</strong>, <strong>autoconservation ovocytaire</strong> (préservation sociétale), <strong>loi de bioéthique 2021</strong>, <strong>CECOS</strong>, <strong>taux d'utilisation cumulative</strong>, <strong>congélation spermatique</strong>, <strong>tissu testiculaire prépubertaire</strong>, <strong>spermatogonies souches</strong>.</p>
+<h2 id="references-bibliographiques-module-25">Références bibliographiques — Module 25</h2>
+<ul>
+<li>Meirow D, Nugent D. <em>The effects of radiotherapy and chemotherapy on female reproduction</em>. Hum Reprod Update. 2001;7:535-543.</li>
+<li>Wallace WH et al. <em>Predicting age of ovarian failure after radiation to a field that includes the ovaries</em>. Int J Radiat Oncol Biol Phys. 2005;62:738-744.</li>
+<li>Baerwald AR et al. <em>A new model for ovarian follicular development during the human menstrual cycle</em>. Fertil Steril. 2003;80:116-122.</li>
+<li>Moore HCF et al. <em>Goserelin for ovarian protection during breast-cancer adjuvant chemotherapy (POEMS/S0230)</em>. N Engl J Med. 2015;372:923-932.</li>
+<li>Cobo A et al. <em>Oocyte vitrification as an efficient option for elective fertility preservation</em>. Fertil Steril. 2016;105:755-764.</li>
+<li>Doyle JO et al. <em>Successful elective and medically indicated oocyte vitrification and warming for autologous in vitro fertilization</em>. Fertil Steril. 2016;106:1356-1361.</li>
+<li>Goldman RH et al. <em>Predicting the likelihood of live birth for elective oocyte cryopreservation: a counseling tool for physicians and patients</em>. Hum Reprod. 2017;32:853-859.</li>
+<li>Donnez J et al. <em>Livebirth after orthotopic transplantation of cryopreserved ovarian tissue</em>. Lancet. 2004;364:1405-1410.</li>
+<li>ESHRE Task Force. <em>ESHRE guideline: female fertility preservation</em>. Hum Reprod Open. 2020;2020:hoaa052.</li>
+<li>Hammarberg K et al. <em>Reproductive experiences of women who cryopreserved oocytes for non-medical reasons</em>. Hum Reprod. 2017;32:575-581.</li>
+<li>Mertes H, Pennings G. <em>Social egg freezing: for better, not for worse</em>. Reprod Biomed Online. 2011;23:824-829.</li>
+<li>Picton HM et al. <em>A European perspective on testicular tissue cryopreservation for fertility preservation in prepubertal and adolescent boys</em>. Hum Reprod. 2015;30:2463-2475.</li>
+<li>Loi n°2021-1017 du 2 août 2021 relative à la bioéthique. <em>Journal Officiel de la République Française</em>. 2021.</li>
+</ul>
+<hr />
+<p><em>Fin de la Partie 7 — Cryopréservation (Modules 23-25). La Partie 8 abordera les techniques avancées — diagnostic préimplantatoire (PGT-A, PGT-M, PGT-SR), mosaïcisme embryonnaire et biopsie trophectodermique.</em></p>
+</div>

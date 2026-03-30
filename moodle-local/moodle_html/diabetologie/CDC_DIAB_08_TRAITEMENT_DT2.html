@@ -1,0 +1,845 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-8-traitement-du-diabete-de-type-2-modules-25-29">Partie 8 — Traitement du Diabète de Type 2 (Modules 25-29)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-25-mesures-hygieno-dietetiques-alimentation-activite-physique-perte-de-poids">MODULE 25 : MESURES HYGIÉNO-DIÉTÉTIQUES — ALIMENTATION, ACTIVITÉ PHYSIQUE, PERTE DE POIDS</h1>
+<p><strong>Partie</strong> : VIII — Traitement du DT2<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 6, 13</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">M. A., 48 ans, DT2 découvert il y a 3 mois (HbA1c 7,3 %), IMC 34 kg/m², sédentaire, alimentation déséquilibrée (boissons sucrées quotidiennes, fast-food 3×/semaine). Son médecin lui a dit : « On va d'abord essayer le régime et le sport. » Trois mois plus tard, il a perdu 6 kg (−7 %), arrêté les sodas, marche 30 min/jour. HbA1c : 6,4 %. *Les mesures hygiéno-diététiques ne sont pas un « préalable » au traitement médical — elles SONT le traitement fondamental du DT2, capable à elles seules de normaliser l'HbA1c chez de nombreux patients.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> une alimentation adaptée au DT2 : principes, macronutriments, index glycémique, régimes méditerranéen et DASH</li>
+<li><strong>Prescrire</strong> un programme d'activité physique personnalisé : type, intensité, durée, précautions</li>
+<li><strong>Comprendre</strong> l'impact de la perte de poids sur la rémission du DT2</li>
+<li><strong>Connaître</strong> les indications et résultats de la chirurgie bariatrique dans le DT2</li>
+<li><strong>Intégrer</strong> les MHD dans la stratégie thérapeutique globale</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-1-alimentation-et-dt2">Section 1 — Alimentation et DT2</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Principes généraux</strong> (recommandations ADA 2024, HAS, EASD) : pas de « régime diabétique » unique ; alimentation équilibrée, individualisée, culturellement adaptée, durable ; pas d'interdits alimentaires stricts (approche non-restrictive pour favoriser l'adhésion)</li>
+<li><strong>Macronutriments</strong> :</li>
+<li>Glucides : 45-55 % des apports caloriques ; privilégier les glucides complexes, index glycémique (IG) bas (légumineuses, céréales complètes, légumes) ; charge glycémique (CG = IG × quantité de glucides) ; limiter les sucres ajoutés (&lt; 10 % des calories, OMS), les boissons sucrées (association forte avec le DT2 — Malik et al., Diabetes Care, 2010)</li>
+<li>Lipides : 30-35 % des calories ; favoriser les acides gras mono-insaturés (huile d'olive, avocat, oléagineux) et polyinsaturés (oméga-3 — poissons gras) ; limiter les graisses saturées (&lt; 10 %), supprimer les graisses trans</li>
+<li>Protéines : 15-20 % des calories (0,8-1 g/kg/j si IRC, protéines végétales à favoriser)</li>
+<li>Fibres : ≥ 25-30 g/j (ralentissent l'absorption glucidique, améliorent la sensibilité à l'insuline)</li>
+<li><strong>Régimes à fort niveau de preuve</strong> :</li>
+<li><strong>Régime méditerranéen</strong> : le plus étudié dans le DT2, réduction des événements CV de 30 % (PREDIMED — Estruch et al., N Engl J Med, 2018), amélioration du contrôle glycémique, de la dyslipidémie et de la stéatose ; composants : huile d'olive, fruits/légumes, légumineuses, poissons, noix, vin modéré</li>
+<li><strong>Régime DASH</strong> : effet antihypertenseur, amélioration du profil métabolique</li>
+<li><strong>Low-carb et very low-carb (keto)</strong> : réduction glucides à 50-130 g/j (low-carb) ou &lt; 50 g/j (keto) ; efficacité à court terme sur HbA1c et perte de poids ; préoccupations : durabilité, effet sur les lipides, risque ACD sous iSGLT2 ; position ADA 2024 : option acceptable à court-moyen terme avec suivi médical</li>
+<li><strong>Jeûne intermittent</strong> (16:8, 5:2) : données émergentes favorables sur le poids et l'HbA1c ; risque d'hypoglycémie sous sulfonylurées/insuline → adaptation posologique nécessaire</li>
+<li><strong>Édulcorants</strong> : les édulcorants non nutritifs (aspartame, sucralose, stévia) sont acceptables en quantité modérée ; pas d'effet prouvé sur le contrôle glycémique à long terme ; controverses sur le microbiote (Suez et al., Nature, 2014)</li>
+<li><strong>Alcool</strong> : modération (≤ 1 verre/j femmes, ≤ 2 verres/j hommes) ; attention aux hypoglycémies sous insuline/sulfonylurées ; les calories de l'alcool (7 kcal/g)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🍽️ MDIAB25-S01-001 — ASSIETTE IDÉALE DU DT2 (modèle du plat : 50 % légumes, 25 % féculents IG bas, 25 % protéines + matière grasse de qualité)]</p>
+<p>[MEDIA: 📊 MDIAB25-S01-002 — TABLEAU INDEX GLYCÉMIQUE DES ALIMENTS COURANTS (classés IG bas &lt; 55, moyen 55-70, élevé &gt; 70)]</p>
+<p>[MEDIA: 📋 MDIAB25-S01-003 — COMPARATIF RÉGIMES DANS LE DT2 (méditerranéen, DASH, low-carb, keto, jeûne intermittent — preuves, avantages, limites)]</p>
+</blockquote>
+<h3 id="section-2-activite-physique">Section 2 — Activité physique</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Recommandations</strong> (ADA 2024, OMS) : ≥ 150 min/semaine d'activité aérobie modérée (marche rapide, vélo, natation) OU ≥ 75 min d'intensité vigoureuse ; renforcement musculaire ≥ 2 séances/semaine ; réduction du temps de sédentarité (se lever toutes les 30 min)</li>
+<li><strong>Bénéfices</strong> : ↓ HbA1c de 0,4-0,7 % (méta-analyse Umpierre et al., JAMA, 2011), amélioration sensibilité à l'insuline (72h post-exercice), ↓ risque CV de 25-40 %, ↓ mortalité toutes causes, ↓ dépression, amélioration stéatose hépatique</li>
+<li><strong>Types d'exercice et effet glycémique</strong> :</li>
+<li>Aérobie : ↓ glycémie pendant et après l'effort (↑ captation musculaire glucose GLUT4-indépendante)</li>
+<li>Résistance : amélioration sensibilité à l'insuline à long terme, ↑ masse maigre, ↓ sarcopénie</li>
+<li>Combiné (aérobie + résistance) : effet supérieur à chacun séparément sur l'HbA1c</li>
+<li><strong>Précautions</strong> : ECG d'effort si DT2 à très haut risque CV + sédentaire souhaitant activité intense ; adaptation des traitements hypoglycémiants (↓ sulfonylurées/insuline les jours d'exercice) ; examen des pieds ; hydratation</li>
+<li><strong>Prescription d'activité physique</strong> : ordonnance APA (activité physique adaptée — loi 2016 en France), sport sur ordonnance, consultation sport-santé</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🏃 MDIAB25-S02-001 — PROGRAMME TYPE ACTIVITÉ PHYSIQUE POUR DT2 SÉDENTAIRE (progression semaine par semaine sur 12 semaines)]</p>
+</blockquote>
+<h3 id="section-3-perte-de-poids-et-remission-du-dt2">Section 3 — Perte de poids et rémission du DT2</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Impact de la perte de poids</strong> :</li>
+<li>Chaque kg perdu → ↓ HbA1c de 0,1 %</li>
+<li>Perte de 5 % du poids → amélioration significative de l'HbA1c, PA, lipides</li>
+<li>Perte de 10-15 % → rémission du DT2 possible (normalisation glycémie sans traitement)</li>
+<li><strong>Étude DiRECT</strong> (Lean et al., Lancet, 2018) : programme de perte de poids intensive (remplacement repas 825-853 kcal/j pendant 12-20 semaines → réintroduction alimentaire progressive → maintenance) ; résultats : rémission du DT2 chez 46 % des patients à 1 an (86 % si perte &gt; 15 kg) ; rémission maintenue chez 36 % à 2 ans ; mécanisme : dé-stéatose hépatique + restauration de la 1ère phase de sécrétion d'insuline</li>
+<li><strong>Chirurgie bariatrique</strong> (recommandations HAS 2009, ADA/IFSO 2022) :</li>
+<li>Indications DT2 : IMC ≥ 40 ou IMC ≥ 35 avec comorbidités (DT2 mal contrôlé = comorbidité) ; recommandation émergente : IMC ≥ 30 avec DT2 non contrôlé (ADA 2024, avis d'experts)</li>
+<li>Techniques : sleeve gastrectomie (la plus pratiquée), bypass gastrique en Y de Roux (le plus efficace sur le DT2), bypass en oméga, anneau gastrique (en voie d'abandon)</li>
+<li>Résultats métaboliques : rémission DT2 chez 40-80 % à 5 ans (étude STAMPEDE — Schauer et al., N Engl J Med, 2017) ; bypass &gt; sleeve pour la rémission DT2 ; mécanismes : perte de poids + effets entéro-hormonaux (↑ GLP-1, PYY, modifications du microbiote, acides biliaires)</li>
+<li>Risques : carences nutritionnelles (B12, fer, calcium, vitamines liposolubles → supplémentation à vie), dumping syndrome, lithiase biliaire, complications chirurgicales (2-5 %), reprise pondérale à long terme</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB25-S03-001 — RÉSULTATS DiRECT (taux de rémission selon perte de poids : 0 %, 7 %, 34 %, 57 %, 86 % pour perte &lt; 5, 5-10, 10-15, &gt; 15 kg)]</p>
+<p>[MEDIA: 📋 MDIAB25-S03-002 — COMPARATIF TECHNIQUES BARIATRIQUES (sleeve vs bypass — mécanisme, perte de poids, rémission DT2, complications)]</p>
+</blockquote>
+<h2 id="points-cles-module-25">Points clés — Module 25</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Les MHD sont le traitement fondamental du DT2, maintenu à toutes les étapes<br />
+2. Régime méditerranéen : le plus fort niveau de preuve (PREDIMED — ↓ 30 % événements CV)<br />
+3. Activité physique : ≥ 150 min/sem aérobie + 2 séances résistance → ↓ HbA1c 0,4-0,7 %<br />
+4. Perte de 5 % du poids → amélioration métabolique ; 10-15 % → rémission possible (DiRECT)<br />
+5. Chirurgie bariatrique : rémission DT2 chez 40-80 % à 5 ans (STAMPEDE), bypass &gt; sleeve<br />
+6. Low-carb/keto : efficace à court terme mais durabilité incertaine<br />
+7. Pas d'interdits alimentaires stricts — approche non-restrictive pour l'adhésion</p>
+</blockquote>
+<h2 id="auto-evaluation-module-25">Auto-évaluation — Module 25</h2>
+<h3 id="qcm-progressifs-8-questions">QCM progressifs (8 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel régime alimentaire a le plus fort niveau de preuve dans le DT2 ?<br />
+A. Régime hyperprotéiné<br />
+B. Régime méditerranéen<br />
+C. Régime cétogène strict<br />
+D. Régime sans gluten</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le régime méditerranéen (PREDIMED) réduit les événements CV de 30 % et améliore le contrôle glycémique, la dyslipidémie et la stéatose hépatique. C'est le régime le plus étudié et le plus recommandé dans le DT2.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Quelle durée d'activité physique aérobie modérée est recommandée par semaine chez le DT2 ?<br />
+A. 30 min<br />
+B. 75 min<br />
+C. ≥ 150 min<br />
+D. 300 min</p>
+<blockquote>
+<p>✅ <strong>C</strong> — ≥ 150 min/semaine d'activité aérobie modérée (marche rapide, vélo, natation) OU ≥ 75 min d'intensité vigoureuse + ≥ 2 séances de renforcement musculaire/semaine.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Quel est le taux de rémission du DT2 dans l'étude DiRECT chez les patients ayant perdu &gt; 15 kg ?<br />
+A. 20 %<br />
+B. 46 %<br />
+C. 86 %<br />
+D. 100 %</p>
+<blockquote>
+<p>✅ <strong>C</strong> — DiRECT montre un taux de rémission de 86 % chez les patients ayant perdu &gt; 15 kg, grâce à la dé-stéatose hépatique et la restauration de la 1ère phase de sécrétion d'insuline.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Quelle technique bariatrique est la plus efficace pour la rémission du DT2 ?<br />
+A. Anneau gastrique<br />
+B. Sleeve gastrectomie<br />
+C. Bypass gastrique en Y de Roux<br />
+D. Ballon intragastrique</p>
+<blockquote>
+<p>✅ <strong>C</strong> — Le bypass gastrique en Y de Roux est la technique la plus efficace sur le DT2, grâce à la combinaison perte de poids + effets entéro-hormonaux (↑ GLP-1/PYY, modifications microbiote, acides biliaires).</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : Pourquoi l'activité combinée (aérobie + résistance) est-elle supérieure à chaque type seul dans le DT2 ?<br />
+A. C'est plus amusant<br />
+B. L'aérobie ↓ glycémie aiguë (captation musculaire) + la résistance ↑ masse maigre et sensibilité à l'insuline à long terme → effets complémentaires<br />
+C. Seule la résistance a un effet glycémique<br />
+D. L'aérobie augmente la masse grasse</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'exercice aérobie améliore la captation musculaire du glucose pendant et après l'effort, tandis que le renforcement musculaire augmente la masse maigre (principal site de captation du glucose) et la sensibilité à l'insuline à long terme. La combinaison a un effet synergique.</p>
+</blockquote>
+<p><strong>Q6 — 🥇 Or</strong> : Quel est le mécanisme de la rémission du DT2 par perte de poids selon le modèle DiRECT ?<br />
+A. Augmentation de la sécrétion de glucagon<br />
+B. Dé-stéatose hépatique → restauration sensibilité hépatique à l'insuline + dé-stéatose pancréatique → restauration 1ère phase sécrétion insuline<br />
+C. Augmentation de la taille des îlots de Langerhans<br />
+D. Modification du génotype</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le modèle « twin cycle hypothesis » (Taylor, Diabetologia, 2008) explique la rémission par : (1) dé-stéatose hépatique → ↓ production hépatique de glucose → ↓ glycémie à jeun, (2) dé-stéatose pancréatique → restauration de la fonction β-cellulaire et de la 1ère phase de sécrétion.</p>
+</blockquote>
+<p><strong>Q7 — 💎 Diamant</strong> : Un DT2 de 45 ans, IMC 42, HbA1c 9,2 % sous metformine + sémaglutide, PA 145/92, LDL 1,30 g/L. Faut-il proposer la chirurgie bariatrique ? Argumentez.</p>
+<blockquote>
+<p>✅ Oui, la chirurgie bariatrique est indiquée : IMC ≥ 40 (critère suffisant seul) + DT2 mal contrôlé (HbA1c 9,2 %) + HTA. Préalable : évaluation multidisciplinaire (endocrinologue, chirurgien, diététicien, psychologue), bilan nutritionnel, endoscopie digestive haute. Technique recommandée : bypass en Y de Roux (meilleure rémission DT2). Résultat attendu : rémission DT2 60-80 %, amélioration HTA, ↓ risque CV. Suivi à vie obligatoire (carences, reprise pondérale).</p>
+</blockquote>
+<p><strong>Q8 — 💎 Diamant</strong> : Un DT2 demande votre avis sur le régime cétogène. Que lui répondez-vous ?</p>
+<blockquote>
+<p>✅ Le régime cétogène (&lt; 50 g glucides/j) montre une efficacité à court terme sur l'HbA1c (↓ 0,5-1 %) et la perte de poids, mais : (1) durabilité incertaine (&gt; 50 % d'abandon à 1 an), (2) risque d'hypoglycémie si sous sulfonylurées/insuline → adaptation obligatoire, (3) risque d'ACD eucétonique si sous iSGLT2, (4) effet sur le LDL-c variable (augmentation possible), (5) difficile socialement. L'ADA 2024 accepte le low-carb comme option à court-moyen terme avec suivi médical. Je préférerais un régime méditerranéen (meilleur niveau de preuve long terme, plus durable) avec réduction modérée des glucides raffinés.</p>
+</blockquote>
+<hr />
+<h1 id="module-26-antidiabetiques-oraux-metformine-sulfonylurees-inhibiteurs-dpp-4">MODULE 26 : ANTIDIABÉTIQUES ORAUX — METFORMINE, SULFONYLURÉES, INHIBITEURS DPP-4</h1>
+<p><strong>Partie</strong> : VIII — Traitement du DT2<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Module 6</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Mme J., 54 ans, DT2 découvert il y a 2 mois (HbA1c 8,1 %), IMC 29, pas de complication. Son médecin instaure la metformine 500 mg × 2/j avec augmentation progressive. À 3 mois, HbA1c : 7,2 %. La metformine est bien tolérée. Faut-il ajouter un 2e antidiabétique ? Si oui, lequel ? *Le choix de la 2e ligne après la metformine n'est plus dicté uniquement par l'HbA1c mais par le profil cardio-rénal du patient — un changement de paradigme.*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> la metformine : mécanisme, posologie, titration, contre-indications, surveillance</li>
+<li><strong>Connaître</strong> les sulfonylurées et les glinides : mécanisme, indications, risques (hypoglycémie, prise de poids)</li>
+<li><strong>Prescrire</strong> les inhibiteurs de la DPP-4 (gliptines) : mécanisme, avantages (neutralité pondérale, pas d'hypo)</li>
+<li><strong>Connaître</strong> les thiazolidinediones (pioglitazone) et les inhibiteurs de l'alpha-glucosidase</li>
+<li><strong>Choisir</strong> le traitement en fonction du profil patient (cardio-rénal, pondéral, risque hypo)</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-1-metformine">Section 1 — Metformine</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Mécanisme d'action</strong> : biguanide ; activation AMPK → ↓ production hépatique de glucose (néoglucogenèse ↓), ↑ sensibilité musculaire à l'insuline, ↓ absorption intestinale du glucose ; pas de stimulation de la sécrétion d'insuline → pas d'hypoglycémie en monothérapie</li>
+<li><strong>Pharmacologie</strong> : biodisponibilité 50-60 %, pas de métabolisme hépatique, élimination rénale → accumulation si IRC</li>
+<li><strong>Efficacité</strong> : ↓ HbA1c de 1-1,5 % ; UKPDS (1998) : seul ADO ayant montré une réduction de la mortalité dans le DT2 en surpoids → « 1ère intention incontestée » pendant 25 ans</li>
+<li><strong>Posologie</strong> : débuter 500 mg/j (au repas du soir), augmenter de 500 mg/semaine selon tolérance ; dose optimale 2000 mg/j (1000 mg × 2 ou 850 mg × 3) ; dose maximale 3000 mg/j</li>
+<li><strong>Effets secondaires</strong> : GI (nausées, diarrhée, douleurs abdominales — 20-30 %, améliorés par titration progressive et prise aux repas) ; formes LP (metformine XR) : meilleure tolérance GI ; carence en vitamine B12 (5-10 % long terme → dosage annuel si traitement prolongé, supplémentation si carence)</li>
+<li><strong>Contre-indications</strong> : DFG &lt; 30 mL/min (arrêt), dose réduite 1 g/j si DFG 30-45 ; insuffisance hépatique sévère ; situations d'anoxie tissulaire (IC aiguë, choc, détresse respiratoire) ; injection de produit de contraste iodé (arrêt 48h) ; chirurgie majeure ; intoxication alcoolique aiguë</li>
+<li><strong>Acidose lactique associée à la metformine (MALA)</strong> : rare (5 cas/100 000 patients-années) mais gravissime (mortalité 30-50 %) ; survient presque toujours en cas d'accumulation (IRC, déshydratation, sepsis) → respect des CI et situations d'arrêt temporaire</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB26-S01-001 — MÉCANISME D'ACTION METFORMINE (activation AMPK → effets hépatique, musculaire, intestinal)]</p>
+<p>[MEDIA: 📋 MDIAB26-S01-002 — TABLEAU METFORMINE (posologie, titration, CI, situations d'arrêt, surveillance)]</p>
+</blockquote>
+<h3 id="section-2-sulfonylurees-et-glinides-secretagogues">Section 2 — Sulfonylurées et glinides (sécrétagogues)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Sulfonylurées (SU)</strong> — mécanisme : liaison au récepteur SUR1 (canal K-ATP) → fermeture canaux → dépolarisation → sécrétion insuline (même en dehors du repas → risque hypo)</li>
+<li>Molécules : gliclazide (Diamicron® LM 30-120 mg — préféré car métabolisme hépatique, profil CV favorable — étude ADVANCE), glimépiride (Amarel® 1-6 mg), glibenclamide (Daonil® — à éviter si IRC, sujet âgé)</li>
+<li>Efficacité : ↓ HbA1c 1-1,5 %</li>
+<li>Effets secondaires : <strong>hypoglycémie</strong> (risque principal, surtout glibenclamide → métabolites actifs, sujet âgé, IRC, repas sauté) ; prise de poids (+2-3 kg)</li>
+<li>CI : IRC sévère (sauf gliclazide prudemment), insuffisance hépatique sévère, grossesse</li>
+<li>Place actuelle : en recul au profit des iSGLT2 et aGLP-1 (pas de bénéfice cardio-rénal prouvé), mais reste utilisée dans certains pays/contextes (coût faible, large disponibilité)</li>
+<li><strong>Glinides</strong> (répaglinide — Novonorm®) : même mécanisme que SU mais demi-vie courte (1h) → effet « couvre-repas » ; prise au début de chaque repas, pas de prise si pas de repas ; moindre risque hypo que SU ; utilisable si IRC modérée ; efficacité : ↓ HbA1c 0,5-1 %</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB26-S02-001 — MÉCANISME SÉCRÉTAGOGUES (liaison SUR1 → fermeture K-ATP → dépolarisation → sécrétion insuline)]</p>
+<p>[MEDIA: 📋 MDIAB26-S02-002 — COMPARATIF SULFONYLURÉES (gliclazide vs glimépiride vs glibenclamide — posologie, métabolisme, risque hypo, CI)]</p>
+</blockquote>
+<h3 id="section-3-inhibiteurs-de-la-dpp-4-gliptines">Section 3 — Inhibiteurs de la DPP-4 (gliptines)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Mécanisme</strong> : inhibition de la dipeptidyl peptidase-4 → ↑ GLP-1 et GIP endogènes (×2-3 les taux physiologiques) → sécrétion insuline glucose-dépendante ↑ + glucagon ↓ ; pas d'hypoglycémie (effet incrétin glucose-dépendant) ; pas de perte de poids (neutre)</li>
+<li><strong>Molécules</strong> :</li>
+<li>Sitagliptine (Januvia® 100 mg/j) — le plus prescrit, adaptation si IRC</li>
+<li>Vildagliptine (Galvus® 50 mg × 2/j) — CI si insuffisance hépatique</li>
+<li>Saxagliptine (Onglyza® 5 mg/j) — signal IC (étude SAVOR-TIMI 53 → augmentation hospitalisation IC) → précaution si IC</li>
+<li>Linaglyptine (Trajenta® 5 mg/j) — pas d'ajustement rénal (élimination biliaire) → avantage si IRC</li>
+<li>Alogliptine (Vipidia® 25 mg/j) — adaptation si IRC</li>
+<li><strong>Efficacité</strong> : ↓ HbA1c 0,5-0,8 % (modeste vs aGLP-1)</li>
+<li><strong>CVOT</strong> : sécurité CV démontrée (non-infériorité), pas de bénéfice CV démontré (contrairement aux aGLP-1 et iSGLT2) → position dans la stratégie : option si contre-indication/intolérance aux aGLP-1 et iSGLT2</li>
+<li><strong>Effets secondaires</strong> : rares (rhinopharyngite, céphalées, pancréatite : signal débattu mais non confirmé)</li>
+<li><strong>Combinaisons fixes</strong> : sitagliptine + metformine (Janumet®), vildaglyptine + metformine (Eucreas®) → amélioration de l'observance</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB26-S03-001 — MÉCANISME iDPP-4 (DPP-4 dégrade GLP-1 → inhibition → ↑ GLP-1 → sécrétion insuline glucose-dépendante)]</p>
+<p>[MEDIA: 📋 MDIAB26-S03-002 — COMPARATIF GLIPTINES (molécule, posologie, ajustement rénal, CVOT, particularités)]</p>
+</blockquote>
+<h3 id="section-4-autres-antidiabetiques-oraux">Section 4 — Autres antidiabétiques oraux</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Pioglitazone</strong> (Actos® 15-45 mg/j) : thiazolidinedione, agoniste PPARγ → ↑ sensibilité à l'insuline (adipocyte → redistribution graisse viscérale→SC, ↑ adiponectine) ; efficacité : ↓ HbA1c 0,5-1,4 % ; étude PROactive : réduction 16 % critère CV secondaire ; bénéfice dans la MASH ; ES : prise de poids (+3-5 kg), rétention hydrique (CI dans IC), fractures osseuses (femmes ménopausées), risque cancer de vessie (débattu, retiré en France en 2011) ; utilisée aux USA, Japon, certains pays</li>
+<li><strong>Inhibiteurs de l'alpha-glucosidase</strong> (acarbose — Glucor® 50-100 mg × 3, miglitol) : ralentissent la digestion des glucides complexes → ↓ glycémie post-prandiale ; efficacité modeste (↓ HbA1c 0,5-0,8 %) ; ES : flatulences, ballonnements (30-50 %) → mauvaise tolérance → usage limité ; étude STOP-NIDDM : prévention DT2 chez les prédiabétiques</li>
+<li><strong>Place dans la stratégie</strong> : pioglitazone = niche (MASH, intolérance autres ADO) ; acarbose = peu utilisé en Europe/USA, encore prescrit en Asie</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB26-S04-001 — TABLEAU RÉCAPITULATIF TOUS ADO (classe, mécanisme, ↓ HbA1c, risque hypo, effet poids, bénéfice CV, CI principales)]</p>
+</blockquote>
+<h2 id="points-cles-module-26">Points clés — Module 26</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Metformine : 1ère intention incontestée, ↓ HbA1c 1-1,5 %, pas d'hypo, seul ADO avec réduction mortalité (UKPDS)<br />
+2. Titration progressive (500 mg/sem), LP si intolérance GI, arrêt si DFG &lt; 30<br />
+3. Doser B12 annuellement sous metformine prolongée<br />
+4. Sulfonylurées : ↓ HbA1c 1-1,5 %, mais risque d'hypoglycémie et prise de poids ; gliclazide préféré<br />
+5. iDPP-4 : ↓ HbA1c 0,5-0,8 %, pas d'hypo, poids neutre, sécurité CV mais pas de bénéfice CV<br />
+6. Linagliptine : seul iDPP-4 sans ajustement rénal<br />
+7. Saxagliptine : précaution si IC (signal SAVOR)<br />
+8. Le choix de la 2e ligne n'est plus dicté par l'HbA1c mais par le profil cardio-rénal</p>
+</blockquote>
+<h2 id="auto-evaluation-module-26">Auto-évaluation — Module 26</h2>
+<h3 id="qcm-progressifs-10-questions">QCM progressifs (10 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est le mécanisme d'action principal de la metformine ?<br />
+A. Stimulation de la sécrétion d'insuline<br />
+B. Activation de l'AMPK → ↓ production hépatique de glucose<br />
+C. Inhibition de l'alpha-glucosidase<br />
+D. Blocage des canaux K-ATP</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La metformine active l'AMPK, réduisant la néoglucogenèse hépatique (principal mécanisme), augmentant la sensibilité musculaire et réduisant l'absorption intestinale du glucose. Elle ne stimule pas la sécrétion d'insuline → pas d'hypoglycémie en monothérapie.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Pourquoi la metformine ne provoque-t-elle pas d'hypoglycémie en monothérapie ?<br />
+A. Car elle est dosée trop faiblement<br />
+B. Car elle n'agit pas sur la sécrétion d'insuline<br />
+C. Car elle n'est pas absorbée<br />
+D. Car elle augmente le glucagon</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La metformine est un insulino-sensibilisateur, pas un sécrétagogue. Elle ne stimule pas la sécrétion d'insuline → pas de risque d'hypoglycémie quand elle est utilisée seule.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Pourquoi le gliclazide est-il préféré aux autres sulfonylurées ?<br />
+A. Plus puissant<br />
+B. Métabolisme hépatique (pas de métabolites actifs rénaux), profil CV favorable (ADVANCE), moindre risque d'hypoglycémie vs glibenclamide<br />
+C. Moins cher<br />
+D. Prise unique par semaine</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le gliclazide a un métabolisme hépatique sans métabolites actifs rénaux (utilisable prudemment en IRC modérée), un profil CV favorable dans ADVANCE, et un risque d'hypoglycémie moindre que le glibenclamide.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Quel iDPP-4 ne nécessite pas d'ajustement posologique en cas d'IRC ?<br />
+A. Sitagliptine<br />
+B. Vildagliptine<br />
+C. Linagliptine<br />
+D. Alogliptine</p>
+<blockquote>
+<p>✅ <strong>C</strong> — La linagliptine (Trajenta®) a une élimination principalement biliaire → pas d'ajustement de dose nécessaire quel que soit le DFG. C'est son avantage principal par rapport aux autres gliptines.</p>
+</blockquote>
+<p><strong>Q5 — 🥈 Argent</strong> : L'UKPDS a montré un bénéfice unique de la metformine. Lequel ?<br />
+A. Meilleure baisse de l'HbA1c de tous les ADO<br />
+B. Seul ADO ayant démontré une réduction de la mortalité toutes causes dans le DT2 en surpoids<br />
+C. Prévention du DT2<br />
+D. Réduction des complications microvasculaires supérieure aux sulfonylurées</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'UKPDS (1998) a montré que la metformine était le seul ADO à réduire significativement la mortalité toutes causes et les IDM chez les DT2 en surpoids, au-delà de son effet glycémique. Ce résultat a ancré la metformine comme 1ère intention.</p>
+</blockquote>
+<p><strong>Q6 — 🥇 Or</strong> : Quel signal de sécurité a été identifié avec la saxagliptine dans l'étude SAVOR-TIMI 53 ?<br />
+A. Risque de cancer du pancréas<br />
+B. Augmentation des hospitalisations pour insuffisance cardiaque<br />
+C. Risque d'AVC<br />
+D. Pancréatite aiguë</p>
+<blockquote>
+<p>✅ <strong>B</strong> — SAVOR-TIMI 53 a montré une augmentation significative des hospitalisations pour IC avec la saxagliptine (HR 1,27, IC 1,07-1,51). Ce signal n'a pas été retrouvé avec les autres iDPP-4 mais justifie la prudence chez les patients à risque d'IC.</p>
+</blockquote>
+<p><strong>Q7 — 💎 Diamant</strong> : Un patient DT2 de 65 ans, DFG 28 mL/min, sous metformine 2 g/j + gliclazide 60 mg. HbA1c 8,5 %. Que modifiez-vous ?</p>
+<blockquote>
+<p>✅ (1) <strong>Arrêt metformine</strong> (DFG &lt; 30 → CI) ; (2) <strong>Prudence gliclazide</strong> : réduction posologique ou relais ; (3) Introduction <strong>iSGLT2</strong> (empagliflozine ou dapagliflozine — initiation possible jusqu'à DFG 20, bénéfice néphroprotecteur ++, CREDENCE/DAPA-CKD) ; (4) Si HbA1c encore élevée : <strong>linagliptine</strong> (pas d'ajustement rénal) ou <strong>agoniste GLP-1</strong> (sémaglutide/dulaglutide — pas d'ajustement, bénéfice rénal FLOW) ; (5) Surveiller : adapter les doses d'insuline si nécessaire (clairance réduite → risque hypo) ; (6) Adresser au néphrologue (DFG &lt; 30).</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-26">Cas clinique intégré — Module 26</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : M. B., 52 ans, DT2 découvert il y a 6 mois</strong></p>
+<p>M. B. sous metformine 2 g/j bien tolérée. HbA1c à 6 mois : 7,6 % (initiale 8,3 %). IMC 27. PA 128/78. LDL-c 0,85 g/L sous rosuvastatine. Pas de complication micro/macrovasculaire. DFG 88 mL/min. RAC &lt; 30 mg/g. ECG normal.</p>
+<p><strong>Questions :</strong><br />
+1. L'HbA1c est-elle à l'objectif ? Quelle est la cible pour ce patient ?<br />
+2. Faut-il ajouter un 2e antidiabétique ? Si oui, quel profil cardio-rénal oriente le choix ?<br />
+3. Comparez les options : iDPP-4 vs iSGLT2 vs aGLP-1 pour ce patient sans complication.<br />
+4. Si vous choisissez une gliptine, laquelle et pourquoi ?<br />
+5. Quand réévaluer et quels critères pour changer de stratégie ?</p>
+</blockquote>
+<hr />
+<h1 id="module-27-traitements-injectables-non-insuliniques-agonistes-glp-1-et-doubletriple-agonistes">MODULE 27 : TRAITEMENTS INJECTABLES NON INSULINIQUES — AGONISTES GLP-1 ET DOUBLE/TRIPLE AGONISTES</h1>
+<p><strong>Partie</strong> : VIII — Traitement du DT2<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Avancé<br />
+<strong>Prérequis</strong> : Modules 3, 6, 26</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">M. F., 56 ans, DT2 depuis 8 ans, IMC 38, HbA1c 8,9 % sous metformine 2 g/j + empagliflozine 10 mg. Antécédent d'IDM il y a 2 ans. DFG 65 mL/min. Il aimerait « perdre du poids en même temps que traiter le diabète ». Son médecin lui propose le sémaglutide 1 mg/semaine. *Les agonistes du GLP-1 ont révolutionné le traitement du DT2 en combinant efficacité glycémique, perte de poids et protection cardiovasculaire — et les double/triple agonistes promettent d'aller encore plus loin.*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> le mécanisme d'action des agonistes GLP-1 : effet incrétin, ralentissement vidange gastrique, satiété centrale</li>
+<li><strong>Prescrire</strong> les différents agonistes GLP-1 : sémaglutide, liraglutide, dulaglutide, exénatide</li>
+<li><strong>Connaître</strong> les résultats des CVOT et les indications cardio-réno-métaboliques</li>
+<li><strong>Comprendre</strong> le tirzépatide (double agoniste GIP/GLP-1) et les triple agonistes</li>
+<li><strong>Gérer</strong> les effets secondaires et les précautions d'emploi</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-1-pharmacologie-des-agonistes-glp-1">Section 1 — Pharmacologie des agonistes GLP-1</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Mécanisme d'action</strong> (effet pléiotrope) :</li>
+<li><strong>Pancréas</strong> : sécrétion insuline glucose-dépendante ↑ (pas d'hypo en monothérapie), suppression glucagon ↓</li>
+<li><strong>Estomac</strong> : ralentissement vidange gastrique → ↓ pic glycémique post-prandial, satiété précoce</li>
+<li><strong>Cerveau</strong> : action sur l'hypothalamus (noyaux arqué et paraventriculaire) → ↓ appétit, ↓ prise alimentaire, ↓ « food noise » (pensées obsédantes liées à la nourriture)</li>
+<li><strong>Foie</strong> : ↓ stéatose, ↓ inflammation (données MASH)</li>
+<li><strong>Cœur et vaisseaux</strong> : effets anti-inflammatoires, anti-athérosclérotiques, ↓ PA (−2-4 mmHg)</li>
+<li><strong>Molécules disponibles</strong> :</li>
+<li><strong>Exénatide</strong> (Byetta® BID, Bydureon® hebdo) : basé sur l'exendine-4 (monstre de Gila) ; le 1er aGLP-1 commercialisé ; ↓ HbA1c 0,8-1,5 %, perte de poids 2-4 kg</li>
+<li><strong>Liraglutide</strong> (Victoza® 1,2-1,8 mg/j ; Saxenda® 3 mg/j = indication obésité) : analogue GLP-1 97 % homologie ; ↓ HbA1c 1-1,5 %, perte de poids 3-5 kg ; CVOT : LEADER (↓ 22 % mortalité CV)</li>
+<li><strong>Dulaglutide</strong> (Trulicity® 0,75-4,5 mg/sem) : fusion GLP-1 + Fc IgG4 → longue durée ; ↓ HbA1c 1-1,5 %, perte de poids 3-5 kg ; CVOT : REWIND (↓ 12 % MACE, inclus 69 % prévention primaire)</li>
+<li><strong>Sémaglutide SC</strong> (Ozempic® 0,25-0,5-1-2 mg/sem) : le plus puissant ; ↓ HbA1c 1,5-1,8 %, perte de poids 5-7 kg (dose 1 mg) à 6-10 kg (dose 2 mg) ; CVOT : SUSTAIN-6 (↓ 26 % MACE), SELECT (↓ 20 % MACE chez les obèses non DT2 — Lincoff et al., N Engl J Med, 2023)</li>
+<li><strong>Sémaglutide oral</strong> (Rybelsus® 3-7-14 mg/j) : formulation orale avec SNAC (sodium N-[8-(2-hydroxybenzoyl) amino] caprylate) → absorption gastrique ; prise à jeun avec ≤ 120 mL d'eau, 30 min avant tout aliment/boisson ; ↓ HbA1c 1-1,4 % ; CVOT : PIONEER 6 (non-infériorité CV)</li>
+<li><strong>Sémaglutide SC haute dose</strong> (Wegovy® 2,4 mg/sem = indication obésité) : perte de poids 15-17 % (STEP 1 — Wilding et al., N Engl J Med, 2021) ; SELECT : bénéfice CV chez les obèses sans DT2</li>
+<li><strong>Effets secondaires</strong> :</li>
+<li>GI : nausées (15-20 %, surtout en titration), vomissements, diarrhée → titration progressive obligatoire</li>
+<li>Pancréatite : signal préclinique, non confirmé dans les essais randomisés ; prudence si ATCD de pancréatite</li>
+<li>Lithiase biliaire : risque accru (perte de poids rapide)</li>
+<li>Rétinopathie : signal avec sémaglutide dans SUSTAIN-6 (aggravation RD) → probablement « early worsening » lié à l'amélioration glycémique rapide → surveillance ophtalmologique si RD préexistante</li>
+<li>Tumeurs thyroïdiennes : risque théorique de carcinome médullaire thyroïdien (CMT) chez le rongeur → CI si ATCD personnel ou familial de CMT ou NEM2</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB27-S01-001 — MÉCANISME D'ACTION PLÉIOTROPE aGLP-1 (effets pancréatiques + gastriques + centraux + hépatiques + CV)]</p>
+<p>[MEDIA: 📊 MDIAB27-S01-002 — COMPARATIF aGLP-1 (molécule, fréquence, ↓ HbA1c, perte de poids, CVOT, ES, posologie)]</p>
+<p>[MEDIA: 📊 MDIAB27-S01-003 — FOREST PLOT CVOT aGLP-1 (LEADER, SUSTAIN-6, REWIND, PIONEER 6, SELECT — MACE, mortalité CV)]</p>
+</blockquote>
+<h3 id="section-2-tirzepatide-et-doubletriple-agonistes">Section 2 — Tirzépatide et double/triple agonistes</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Tirzépatide</strong> (Mounjaro® 2,5-5-7,5-10-12,5-15 mg/sem) — double agoniste GIP/GLP-1 :</li>
+<li>Mécanisme : activation simultanée des récepteurs GIP et GLP-1 → effet incrétin synergique + effet central sur l'appétit supérieur aux mono-agonistes GLP-1</li>
+<li>Efficacité : études SURPASS → ↓ HbA1c 2,0-2,4 % (SURPASS-2 : tirzépatide 15 mg &gt; sémaglutide 1 mg — Del Prato et al., N Engl J Med, 2021), perte de poids 12-15 % à la dose maximale</li>
+<li>Indication obésité : Zepbound® ; SURMOUNT-1 : perte de poids −20,9 % avec 15 mg (Jastreboff et al., N Engl J Med, 2022)</li>
+<li>CVOT en cours : SURPASS-CVOT → résultats attendus 2025-2026</li>
+<li>ES : similaires aux aGLP-1 (nausées, diarrhée) ; titration progressive indispensable</li>
+<li><strong>Sémaglutide haute dose (doses futures)</strong> : doses &gt; 2 mg en développement pour optimiser la perte de poids et les effets métaboliques</li>
+<li><strong>Triple agonistes (GLP-1/GIP/glucagon)</strong> :</li>
+<li>Rétaporsen (LY3437943) — triple agoniste en développement (Eli Lilly) : activation GLP-1 + GIP + récepteur du glucagon → perte de poids supérieure (thermogenèse par glucagon ↑), amélioration MASH (glucagon → ↓ lipogenèse hépatique) ; résultats phase 2 prometteurs (perte de poids &gt; 20 %)</li>
+<li>Survodutide (BI 456906) : double agoniste GLP-1/glucagon (Boehringer) → données MASH (↓ stéatose, ↓ fibrose)</li>
+<li><strong>Agonistes combinés à l'amyline</strong> : cagrilintide + sémaglutide (CagriSema) → combinaison amyline + GLP-1 → perte de poids et contrôle glycémique supérieurs au sémaglutide seul (études REDEFINE)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB27-S02-001 — SURPASS-2 : TIRZÉPATIDE vs SÉMAGLUTIDE (↓ HbA1c et perte de poids par dose — head-to-head)]</p>
+<p>[MEDIA: 🔬 MDIAB27-S02-002 — SCHÉMA TRIPLE AGONISME GLP-1/GIP/GLUCAGON (effets de chaque récepteur + synergie)]</p>
+<p>[MEDIA: 📊 MDIAB27-S02-003 — TIMELINE DÉVELOPPEMENT AGONISTES (exénatide 2005 → liraglutide 2010 → sémaglutide 2017 → tirzépatide 2022 → triple agonistes 2025+)]</p>
+</blockquote>
+<h3 id="section-3-inhibiteurs-du-sglt2-rappel-oriente-traitement">Section 3 — Inhibiteurs du SGLT2 (rappel orienté traitement)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Mécanisme</strong> : inhibition du cotransporteur SGLT2 (tubule proximal) → glycosurie → ↓ glycémie (indépendant de l'insuline), perte calorique 200-300 kcal/j → perte de poids, natriurèse/diurèse osmotique → ↓ PA</li>
+<li><strong>Molécules</strong> :</li>
+<li>Empagliflozine (Jardiance® 10-25 mg/j) — EMPA-REG OUTCOME, EMPEROR</li>
+<li>Dapagliflozine (Forxiga® 10 mg/j) — DECLARE, DAPA-HF, DAPA-CKD</li>
+<li>Canagliflozine (Invokana® 100-300 mg/j) — CANVAS, CREDENCE ; signal amputation CANVAS (non confirmé)</li>
+<li>Ertugliflozine (Steglatro® 5-15 mg/j) — VERTIS CV (non-infériorité CV, pas de supériorité)</li>
+<li><strong>Efficacité</strong> : ↓ HbA1c 0,5-1 %, perte de poids 2-4 kg, ↓ PAS 3-5 mmHg</li>
+<li><strong>Bénéfices prouvés au-delà du glucose</strong> : cardioprotection (↓ mortalité CV, ↓ hospitalisation IC), néphroprotection (↓ progression MRC), IC (ICFEr ET ICFEp)</li>
+<li><strong>ES</strong> :</li>
+<li>Infections génitales mycosiques (10-15 % — candidose vulvovaginale/balanite → hygiène, traitement antifungique local)</li>
+<li>Infections urinaires (modeste augmentation)</li>
+<li>Acidocétose euglycémique (rare, &lt; 0,1 % ; favorisée par : jeûne, chirurgie, alcool, régime cétogène, réduction insuline → ATTENTION aux DT1 ou LADA non diagnostiqué sous iSGLT2)</li>
+<li>Gangrène de Fournier (exceptionnel, signal FDA)</li>
+<li>Hypotension orthostatique (diurèse osmotique → sujet âgé, diurétiques associés)</li>
+<li>Amputation (signal CANVAS avec canagliflozine → non confirmé avec les autres molécules)</li>
+<li><strong>CI</strong> : DFG &lt; 20 (pas d'initiation), DT1 (hors AMM), hypersensibilité</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB27-S03-001 — TABLEAU iSGLT2 (molécule, posologie, CVOT, bénéfice CV/rénal/IC, ES principaux)]</p>
+</blockquote>
+<h2 id="points-cles-module-27">Points clés — Module 27</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Agonistes GLP-1 : triple action (insuline ↑, glucagon ↓, appétit ↓) → ↓ HbA1c + perte de poids + protection CV<br />
+2. Sémaglutide 1 mg : ↓ HbA1c 1,5-1,8 %, perte de poids 5-7 kg, ↓ MACE 26 % (SUSTAIN-6)<br />
+3. SELECT : bénéfice CV du sémaglutide chez les obèses SANS DT2<br />
+4. Tirzépatide (double agoniste GIP/GLP-1) : ↓ HbA1c &gt; 2 %, perte de poids 12-15 % → supérieur au sémaglutide (SURPASS-2)<br />
+5. Triple agonistes (GLP-1/GIP/glucagon) : perte de poids &gt; 20 %, bénéfice MASH → en développement<br />
+6. CagriSema (amyline + GLP-1) : combinaison prometteuse<br />
+7. iSGLT2 : bénéfice triple (CV + rénal + IC), indépendant de l'HbA1c<br />
+8. Acidocétose euglycémique sous iSGLT2 : rare mais grave → attention si jeûne, chirurgie, LADA méconnu<br />
+9. Titration progressive obligatoire pour les aGLP-1 (tolérance GI)<br />
+10. CI aGLP-1 : ATCD CMT ou NEM2</p>
+</blockquote>
+<h2 id="auto-evaluation-module-27">Auto-évaluation — Module 27</h2>
+<h3 id="qcm-progressifs-10-questions_1">QCM progressifs (10 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est le mécanisme central de la perte de poids sous agoniste GLP-1 ?<br />
+A. Malabsorption intestinale<br />
+B. Action hypothalamique → ↓ appétit et prise alimentaire<br />
+C. Augmentation du métabolisme de base<br />
+D. Lipolyse directe</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Les aGLP-1 agissent sur les noyaux hypothalamiques (arqué, paraventriculaire) pour réduire l'appétit et la prise alimentaire. Ils ralentissent aussi la vidange gastrique (satiété précoce).</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Pourquoi les agonistes GLP-1 ne provoquent-ils pas d'hypoglycémie en monothérapie ?<br />
+A. Ils ne stimulent pas l'insuline<br />
+B. Leur effet insulino-sécréteur est glucose-dépendant<br />
+C. Ils augmentent le glucagon<br />
+D. Ils bloquent l'absorption du glucose</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'effet incrétin des aGLP-1 est glucose-dépendant : la sécrétion d'insuline stimulée et la suppression du glucagon s'arrêtent quand la glycémie baisse, évitant l'hypoglycémie.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Dans l'étude SURPASS-2, quel résultat a été observé en comparant tirzépatide 15 mg et sémaglutide 1 mg ?<br />
+A. Sémaglutide supérieur sur tous les critères<br />
+B. Tirzépatide supérieur sur la baisse d'HbA1c ET la perte de poids<br />
+C. Pas de différence significative<br />
+D. Tirzépatide inférieur</p>
+<blockquote>
+<p>✅ <strong>B</strong> — SURPASS-2 est le premier essai head-to-head : le tirzépatide 15 mg est supérieur au sémaglutide 1 mg pour la baisse d'HbA1c (−2,37 % vs −1,86 %) et la perte de poids (−11,2 kg vs −5,7 kg).</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Quelle contre-indication absolue est commune à tous les agonistes GLP-1 ?<br />
+A. Insuffisance rénale<br />
+B. Antécédent personnel ou familial de carcinome médullaire thyroïdien ou NEM2<br />
+C. Obésité<br />
+D. HTA</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Tous les aGLP-1 sont contre-indiqués si ATCD de CMT ou NEM2, en raison du risque théorique de tumeurs thyroïdiennes C observé chez les rongeurs (effet pharmacologique exagéré sur les récepteurs GLP-1 thyroïdiens du rongeur, non reproduit chez l'humain).</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : L'étude SELECT a montré quel résultat inédit du sémaglutide ?<br />
+A. Bénéfice CV uniquement chez les DT2<br />
+B. Réduction de 20 % des MACE chez les obèses/surpoids SANS DT2<br />
+C. Aggravation du risque CV<br />
+D. Aucun effet significatif</p>
+<blockquote>
+<p>✅ <strong>B</strong> — SELECT (Lincoff et al., 2023) a montré pour la 1ère fois un bénéfice CV d'un aGLP-1 chez des patients obèses/surpoids avec MCV établie SANS DT2 (réduction 20 % MACE). Résultat historique élargissant les indications au-delà du diabète.</p>
+</blockquote>
+<p><strong>Q6 — 🥇 Or</strong> : Qu'est-ce que l'acidocétose euglycémique sous iSGLT2 et comment la prévenir ?<br />
+A. Cétose avec hyperglycémie &gt; 3 g/L, fréquente et bénigne<br />
+B. ACD avec glycémie normale ou peu élevée (&lt; 2,50 g/L), rare mais grave ; favorisée par jeûne, chirurgie, alcool, régime cétogène ; prévention : arrêt iSGLT2 3 jours avant chirurgie programmée, éviter le jeûne prolongé<br />
+C. Acidose lactique, sans rapport avec les cétones<br />
+D. Complication uniquement du DT1</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'ACD euglycémique sous iSGLT2 est un piège diagnostique : glycémie &lt; 2,50 g/L mais cétones élevées (le diagnostic est retardé car « la glycémie est normale »). Prévention : arrêt 3 jours avant chirurgie, éviter jeûne prolongé, attention aux LADA méconnus.</p>
+</blockquote>
+<p><strong>Q7 — 💎 Diamant</strong> : M. F. (accroche) : DT2, IMC 38, IDM ancien, sous metformine + empagliflozine. Vous ajoutez sémaglutide 1 mg/sem. Quel bénéfice global attendez-vous ?</p>
+<blockquote>
+<p>✅ Bénéfice multidimensionnel : (1) <strong>Glycémique</strong> : ↓ HbA1c 1,5 % supplémentaire (de 8,9 → cible ~7,4 %) ; (2) <strong>Pondéral</strong> : perte de poids 5-7 kg (voire plus si dose augmentée à 2 mg) ; (3) <strong>CV</strong> : réduction 22-26 % MACE (LEADER/SUSTAIN-6) — bénéfice additionnel à l'empagliflozine qui protège surtout contre l'IC, le sémaglutide protège contre les événements athérosclérotiques ; (4) <strong>Hépatique</strong> : amélioration potentielle MASLD (probable chez ce patient obèse) ; (5) <strong>Rénal</strong> : bénéfice émergent (FLOW). Triple protection : metformine (base) + empagliflozine (IC + rénal) + sémaglutide (athérosclérose + poids).</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-27">Cas clinique intégré — Module 27</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Mme R., 50 ans, DT2 depuis 5 ans</strong></p>
+<p>Mme R., DT2 sous metformine 2 g/j. HbA1c : 8,7 %. IMC : 42. PA : 135/85 sous amlodipine. LDL-c : 0,65 sous atorvastatine 40 mg. DFG 92 mL/min. RAC &lt; 30. Pas d'ATCD CV. FO normal. Elle veut « perdre du poids et ne pas avoir à se piquer ».</p>
+<p><strong>Questions :</strong><br />
+1. Quelles options thérapeutiques combinent efficacité glycémique ET perte de poids significative ?<br />
+2. Sémaglutide oral vs sémaglutide SC : comparez pour cette patiente.<br />
+3. Tirzépatide vs sémaglutide SC : quel choix et pourquoi ?<br />
+4. Discutez l'indication de la chirurgie bariatrique chez cette patiente.<br />
+5. Comment titrez-vous le sémaglutide SC pour minimiser les effets GI ?</p>
+</blockquote>
+<hr />
+<h1 id="module-28-insulinotherapie-du-dt2-initiation-schemas-intensification">MODULE 28 : INSULINOTHÉRAPIE DU DT2 — INITIATION, SCHÉMAS, INTENSIFICATION</h1>
+<p><strong>Partie</strong> : VIII — Traitement du DT2<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 22, 26-27</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">M. P., 64 ans, DT2 depuis 16 ans, sous metformine 2 g/j + empagliflozine + sémaglutide 1 mg/sem. HbA1c : 9,1 %. IMC : 28. Pas de complication rénale. Son médecin lui dit qu'il faut « passer à l'insuline ». Le patient est anxieux : « L'insuline, c'est la fin, non ? Ça veut dire que mon diabète s'est aggravé ? » *L'initiation de l'insuline dans le DT2 est souvent retardée par « l'inertie thérapeutique » et la peur du patient — alors qu'elle est une étape naturelle de la progression de la maladie.*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les indications de l'insulinothérapie dans le DT2</li>
+<li><strong>Choisir</strong> le schéma d'initiation adapté : basale seule, basale + aGLP-1, premix, basal-bolus</li>
+<li><strong>Titrer</strong> l'insuline basale selon les algorithmes (FPG-driven)</li>
+<li><strong>Accompagner</strong> le patient dans l'acceptation et l'éducation à l'insuline</li>
+<li><strong>Connaître</strong> l'insuline icodec hebdomadaire dans le DT2</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-1-indications-et-levee-des-freins">Section 1 — Indications et levée des freins</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Indications de l'insuline dans le DT2</strong> :</li>
+<li>HbA1c très élevée (&gt; 10 %) au diagnostic avec symptômes d'insulinopénie (amaigrissement, cétose) → insuline d'emblée (temporaire le plus souvent)</li>
+<li>Échec de la trithérapie orale/injectable optimisée → insuline basale</li>
+<li>Contre-indications ou intolérance aux ADO</li>
+<li>Situations transitoires : corticothérapie, infection sévère, chirurgie, grossesse</li>
+<li>Diabète « en fin de course β-cellulaire » : déclin progressif de la fonction β-cellulaire (UKPDS : ~50 % des DT2 nécessitent l'insuline après 10 ans)</li>
+<li><strong>Inertie thérapeutique</strong> : retard moyen de 3-7 ans entre l'indication et l'initiation de l'insuline (Khunti et al., Diabetes Care, 2013) ; causes : médecin (complexité, temps, crainte hypo), patient (peur des injections, stigmatisation, « échec »)</li>
+<li><strong>Lever les freins</strong> : dédramatiser (« l'insuline n'est pas une punition mais une aide naturelle »), rassurer (aiguilles 4 mm quasi indolores), montrer les dispositifs (stylos modernes, injection simple), expliquer la progression naturelle du DT2</li>
+</ul>
+<h3 id="section-2-schemas-dinsulinotherapie-du-dt2">Section 2 — Schémas d'insulinothérapie du DT2</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Insuline basale seule (BOT — Basal Oral/Other Therapy)</strong> : 1ère étape habituelle</li>
+<li>Maintenir les ADO (metformine ++ et iSGLT2/aGLP-1 si bénéfice CV/rénal)</li>
+<li>Insuline basale au coucher (ou au matin selon les préférences) : dégludec, glargine U100/U300</li>
+<li>Dose initiale : 10 UI/j ou 0,1-0,2 UI/kg/j</li>
+<li>Titration : augmentation de 2 UI tous les 3 jours jusqu'à glycémie à jeun 0,80-1,30 g/L (algorithme « Treat to Target » — Riddle et al., Diabetes Care, 2003)</li>
+<li>Avantages : 1 injection/j, association aGLP-1 possible (complémentarité basale-prandiale)</li>
+<li><strong>Association fixe basale + aGLP-1</strong> :</li>
+<li>iDegLira (Xultophy® : dégludec + liraglutide) : titration simple (16-50 doses-step/j), ↓ HbA1c 1,8 % avec perte de poids et peu d'hypos</li>
+<li>iGlarLixi (Soliqua® : glargine + lixisénatide) : option similaire</li>
+<li>Avantage : simplification (1 injection, 1 stylo), complémentarité des mécanismes (basale = jeun, aGLP-1 = post-prandial + poids)</li>
+<li><strong>Insulines prémixes</strong> (mélanges fixes rapide/basale) : prémix 25/75 (lispro/lispro protamine), 30/70 (aspart/aspart protamine), 50/50 ; 1-2 injections/j ; moins de flexibilité mais plus simple si patient non éduqué au comptage ; utilisées dans certains contextes (pays en développement, personnes âgées)</li>
+<li><strong>Schéma basal-bolus</strong> : intensification si insuline basale + ADO insuffisants → ajout bolus prandial au repas le plus hyperglycémiant (basal-plus) → puis 2-3 bolus (basal-bolus complet) ; dose de bolus : 4 UI ou 10 % de la basale au repas principal</li>
+<li><strong>Insuline icodec hebdomadaire</strong> : ONWARDS 1-6 → non-infériorité vs basale quotidienne ; avantages : 1 injection/semaine → observance ↑, charge réduite ; précautions : titration plus lente, risque d'hypo plus prolongée ; indiquée surtout dans le DT2 (études DT1 en cours)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB28-S02-001 — ALGORITHME INITIATION INSULINE DT2 (basale seule → basale + aGLP-1 → basale-plus → basal-bolus — critères de passage)]</p>
+<p>[MEDIA: 📊 MDIAB28-S02-002 — PROTOCOLE TITRATION BASALE « TREAT TO TARGET » (dose initiale, augmentation, cible glycémie à jeun)]</p>
+<p>[MEDIA: 📋 MDIAB28-S02-003 — COMPARATIF ASSOCIATIONS FIXES BASALE + aGLP-1 (iDegLira vs iGlarLixi — composants, posologie, titration, résultats)]</p>
+</blockquote>
+<h3 id="section-3-gestion-pratique-et-education">Section 3 — Gestion pratique et éducation</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Auto-titration par le patient</strong> : protocole simple (ex. : « augmentez de 2 UI si glycémie à jeun &gt; 1,30 g/L pendant 3 jours consécutifs ») → autonomisation → résultats comparables à la titration médicale</li>
+<li><strong>Arrêt ou réduction des sécrétagogues</strong> : arrêter les sulfonylurées lors de l'initiation de l'insuline basale (risque hypo additif), maintenir metformine + iSGLT2 + aGLP-1</li>
+<li><strong>Surveillance</strong> : glycémie à jeun quotidienne pendant la titration, puis selon schéma ; HbA1c tous les 3 mois ; adaptation si hypos, maladie intercurrente</li>
+<li><strong>Prise de poids sous insuline</strong> : mécanisme (anabolisme + correction glucosurie → rétention calorique) ; prévention : association avec aGLP-1 ou iSGLT2 (compensent le gain pondéral)</li>
+<li><strong>Passage à l'insuline icodec</strong> : calcul de la dose hebdomadaire (dose quotidienne × 7), titration tous les 7 jours, attention au risque hypo si ajustement trop rapide</li>
+</ul>
+<h2 id="points-cles-module-28">Points clés — Module 28</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. ~50 % des DT2 nécessitent l'insuline après 10 ans (progression naturelle)<br />
+2. L'inertie thérapeutique retarde l'insuline de 3-7 ans → impact pronostique négatif<br />
+3. BOT (basale + ADO) : schéma de départ, dose initiale 10 UI ou 0,1-0,2 UI/kg/j<br />
+4. Titration « Treat to Target » : +2 UI tous les 3 jours jusqu'à glycémie à jeun 0,80-1,30 g/L<br />
+5. Maintenir metformine + iSGLT2 + aGLP-1, ARRÊTER les sulfonylurées<br />
+6. Associations fixes (iDegLira, iGlarLixi) : 1 injection/j, complémentarité basale + incrétin<br />
+7. Icodec (1 injection/semaine) : simplification majeure dans le DT2<br />
+8. Lever les freins : dédramatiser, éducation technique, stylos modernes, aiguilles 4 mm</p>
+</blockquote>
+<h2 id="auto-evaluation-module-28">Auto-évaluation — Module 28</h2>
+<h3 id="qcm-progressifs-8-questions_1">QCM progressifs (8 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quelle est la dose initiale habituelle d'insuline basale dans le DT2 ?<br />
+A. 0,5 UI/kg/j<br />
+B. 10 UI/j ou 0,1-0,2 UI/kg/j<br />
+C. 50 UI/j<br />
+D. 1 UI/kg/j</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La dose initiale est de 10 UI/j ou 0,1-0,2 UI/kg/j, avec titration progressive selon la glycémie à jeun.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Faut-il arrêter la metformine quand on démarre l'insuline basale dans le DT2 ?<br />
+A. Oui, toujours<br />
+B. Non, la maintenir (sauf CI) — et maintenir aussi iSGLT2 et aGLP-1<br />
+C. Oui, pour éviter l'acidose lactique<br />
+D. La remplacer par une sulfonylurée</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Maintenir la metformine (effet complémentaire, pas de surrisque hypo), les iSGLT2 (bénéfice CV/rénal) et les aGLP-1 (bénéfice CV + poids). En revanche, ARRÊTER les sulfonylurées (risque hypo additif avec l'insuline).</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Quel est le retard moyen entre l'indication et l'initiation de l'insuline dans le DT2 (inertie thérapeutique) ?<br />
+A. 3-6 mois<br />
+B. 3-7 ans<br />
+C. 1 mois<br />
+D. &gt; 10 ans</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'inertie thérapeutique retarde l'insuline de 3-7 ans en moyenne (Khunti et al., 2013), exposant le patient à des années d'hyperglycémie chronique avec accumulation de complications irréversibles.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Quel avantage de l'association fixe iDegLira (Xultophy®) ?<br />
+A. 3 injections par jour<br />
+B. 1 injection/j combinant basale (dégludec) + aGLP-1 (liraglutide) → ↓ HbA1c + perte de poids + peu d'hypos<br />
+C. Insuline seule à forte dose<br />
+D. Pas de titration nécessaire</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'iDegLira combine dans 1 injection/j les avantages complémentaires du dégludec (couverture basale) et du liraglutide (couverture post-prandiale + perte de poids + peu d'hypos). La titration est simple (16-50 doses-step/j).</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : Comment titrer l'insuline basale selon le protocole « Treat to Target » ?<br />
+A. Augmenter de 10 UI chaque semaine<br />
+B. Augmenter de 2 UI tous les 3 jours si glycémie à jeun &gt; 1,30 g/L, jusqu'à cible 0,80-1,30 g/L<br />
+C. Doubler la dose chaque mois<br />
+D. Dose fixe sans modification</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le protocole « Treat to Target » (Riddle, 2003) prévoit une augmentation progressive de 2 UI tous les 3 jours si la glycémie à jeun reste &gt; 1,30 g/L. Le patient peut réaliser cette titration lui-même.</p>
+</blockquote>
+<p><strong>Q6 — 💎 Diamant</strong> : M. P. (accroche) passe sous dégludec 10 UI au coucher. Décrivez la stratégie complète d'initiation, titration et suivi.</p>
+<blockquote>
+<p>✅ (1) <strong>Initiation</strong> : dégludec 10 UI au coucher (ou matin si préfère), maintenir metformine + empagliflozine + sémaglutide ; (2) <strong>Éducation</strong> : technique d'injection (aiguille 4 mm, rotation sites cuisse/abdomen), auto-surveillance glycémie à jeun quotidienne, resucrage si hypo ; (3) <strong>Titration</strong> : augmenter de 2 UI tous les 3 jours si GAJ &gt; 1,30 g/L, réduire de 2 UI si GAJ &lt; 0,70 g/L ; (4) <strong>Suivi</strong> : HbA1c à M3 → si ≥ 7 %, envisager basale-plus (ajout 1 bolus au repas principal) ; (5) <strong>Psychologie</strong> : rassurer (« l'insuline est une hormone naturelle que votre pancréas ne produit plus assez »), montrer la simplicité du stylo, impliquer le conjoint.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-28">Cas clinique intégré — Module 28</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Mme W., 70 ans, DT2 depuis 20 ans</strong></p>
+<p>Mme W. sous metformine 1,5 g/j + gliclazide 120 mg + sitagliptine 100 mg. HbA1c : 9,3 %. IMC : 26. DFG 52 mL/min. RAC 120 mg/g. RDNP modérée. Vit seule, IDE 1×/j pour HTAttt.</p>
+<p><strong>Questions :</strong><br />
+1. Quelles modifications thérapeutiques proposez-vous avant l'insuline ?<br />
+2. Si l'insuline est nécessaire, quel schéma d'initiation choisissez-vous pour cette patiente âgée vivant seule ?<br />
+3. Gliclazide : la maintenez-vous ou l'arrêtez-vous ? Justifiez.<br />
+4. L'insuline icodec serait-elle avantageuse ici ? Pourquoi ?<br />
+5. Quelle cible d'HbA1c fixez-vous et pourquoi ?</p>
+</blockquote>
+<hr />
+<h1 id="module-29-strategie-therapeutique-globale-du-dt2-algorithmes-et-personnalisation">MODULE 29 : STRATÉGIE THÉRAPEUTIQUE GLOBALE DU DT2 — ALGORITHMES ET PERSONNALISATION</h1>
+<p><strong>Partie</strong> : VIII — Traitement du DT2<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Modules 25-28</p>
+<h2 id="accroche-clinique_4">Accroche clinique</h2>
+<div class="vertex-accroche">Vous revoyez 4 patients DT2 dans votre consultation de l'après-midi : (1) M. X., 45 ans, IMC 38, DT2 récent, pas de complication ; (2) Mme Y., 62 ans, DT2 avec ICFEr (FEVG 30 %) ; (3) M. Z., 70 ans, DT2 avec DFG 25 mL/min ; (4) Mme W., 55 ans, DT2 avec coronaropathie. *La stratégie thérapeutique du DT2 en 2024-2025 n'est plus « centrée sur le glucose » mais « centrée sur le patient et ses organes cibles » — le même HbA1c chez ces 4 patients justifie des traitements fondamentalement différents.*</div>
+
+<h2 id="objectifs-dapprentissage_4">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> l'algorithme thérapeutique ESC/EASD 2023 et ADA/EASD 2022 centré sur les organes cibles</li>
+<li><strong>Personnaliser</strong> les cibles glycémiques selon le profil patient</li>
+<li><strong>Intégrer</strong> les considérations cardio-réno-métaboliques dans le choix des traitements</li>
+<li><strong>Gérer</strong> la déprescription et la simplification thérapeutique</li>
+<li><strong>Connaître</strong> les algorithmes futurs intégrant les nouvelles classes</li>
+</ol>
+<h2 id="structure-du-contenu_4">Structure du contenu</h2>
+<h3 id="section-1-changement-de-paradigme-du-glucocentrisme-au-cardio-reno-metabolisme">Section 1 — Changement de paradigme : du « glucocentrisme » au « cardio-réno-métabolisme »</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Évolution historique</strong> : UKPDS (1998) → contrôle glycémique réduit complications micro ; ADVANCE/ACCORD/VADT (2008) → pas de bénéfice macro en contrôle intensif chez DT2 ancien ; EMPA-REG/LEADER (2015-2016) → bénéfice CV indépendant du glucose → changement de paradigme</li>
+<li><strong>Algorithme ESC/EASD 2023</strong> (adapté de Marx et al., Eur Heart J, 2023) : le choix du traitement est guidé en 1er par le profil cardio-rénal, PAS par l'HbA1c :</li>
+<li><strong>DT2 + MCVA établie</strong> (coronaropathie, AVC, AOMI) → aGLP-1 à bénéfice CV prouvé (sémaglutide, liraglutide, dulaglutide) ± iSGLT2 → INDÉPENDAMMENT de l'HbA1c et de la metformine</li>
+<li><strong>DT2 + IC</strong> → iSGLT2 (empagliflozine ou dapagliflozine) → classe I → indépendamment de l'HbA1c</li>
+<li><strong>DT2 + MRC</strong> (DFG &lt; 60 et/ou RAC &gt; 30) → iSGLT2 + IEC/ARA2 + finérénone → aGLP-1 si besoin glycémique supplémentaire</li>
+<li><strong>DT2 sans complication CV/rénale</strong> → metformine 1ère intention, puis 2e ligne selon profil : poids (aGLP-1 ou tirzépatide), coût (iDPP-4, SU), risque hypo (iDPP-4, aGLP-1, iSGLT2)</li>
+<li><strong>Cibles glycémiques personnalisées</strong> (ADA 2024) :</li>
+<li>HbA1c &lt; 7 % : cible standard (majorité des patients)</li>
+<li>HbA1c &lt; 6,5 % : DT2 récent, espérance de vie longue, sans complication, sans risque hypo</li>
+<li>HbA1c &lt; 8 % : patient âgé fragile, comorbidités sévères, espérance de vie limitée, hypoglycémies fréquentes</li>
+<li>HbA1c &lt; 8,5 % : patient très âgé, dépendant, fin de vie → priorité = confort, éviter les hypos</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB29-S01-001 — ALGORITHME ESC/EASD 2023 (arbre décisionnel : MCVA → IC → MRC → sans complication — choix thérapeutique)]</p>
+<p>[MEDIA: 📋 MDIAB29-S01-002 — TABLEAU CIBLES HbA1c PERSONNALISÉES (profil patient, cible, justification)]</p>
+</blockquote>
+<h3 id="section-2-arbres-decisionnels-pratiques">Section 2 — Arbres décisionnels pratiques</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Arbre 1 — DT2 avec MCVA</strong> : metformine + aGLP-1 (sémaglutide 1 mg ou liraglutide 1,8 mg) + iSGLT2 → si HbA1c pas à l'objectif → insuline basale → basal-bolus</li>
+<li><strong>Arbre 2 — DT2 avec IC</strong> : iSGLT2 (classe I) + metformine → aGLP-1 si objectif glycémique non atteint → insuline si nécessaire ; ÉVITER : pioglitazone (rétention hydrique), saxagliptine (signal IC)</li>
+<li><strong>Arbre 3 — DT2 avec MRC</strong> : iSGLT2 (dès DFG ≥ 20) + IEC/ARA2 (dès A2) + finérénone (si DFG ≥ 25, K+ &lt; 5, RAC ≥ 30) → aGLP-1 si besoin glycémique → adaptation ADO au DFG (cf. module 17)</li>
+<li><strong>Arbre 4 — DT2 obèse sans complication</strong> : metformine + aGLP-1 (sémaglutide) ou tirzépatide → iSGLT2 → si HbA1c élevée → insuline ; discuter chirurgie bariatrique si IMC ≥ 35 + échec médical</li>
+<li><strong>Arbre 5 — DT2 du sujet âgé</strong> : simplification thérapeutique, éviter les hypos, cible HbA1c individualisée (&lt; 8 % si fragile), déprescription si risque &gt; bénéfice (arrêt SU si hypos, simplification schéma insulinique)</li>
+<li><strong>Déprescription</strong> : quand et comment arrêter un traitement : critères (rémission du DT2 → DiRECT, post-bariatrique, surdosage relatif avec hypos → sujet âgé), progressivité, surveillance rapprochée</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB29-S02-001 — ARBRES DÉCISIONNELS 4 PROFILS (MCVA, IC, MRC, obèse sans complication — algorithmes visuels)]</p>
+<p>[MEDIA: 📋 MDIAB29-S02-002 — CHECK-LIST ANNUELLE DT2 (examen clinique, bilan biologique, dépistage complications, ajustement traitement)]</p>
+</blockquote>
+<h3 id="section-3-perspectives-et-algorithmes-futurs">Section 3 — Perspectives et algorithmes futurs</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Intégration du tirzépatide</strong> : position dans l'algorithme à mesure des résultats CVOT (SURPASS-CVOT attendu)</li>
+<li><strong>Triple agonistes</strong> : potentiel de simplification thérapeutique (1 molécule couvrant glycémie + poids + MASH + CV)</li>
+<li><strong>Médecine de précision</strong> : phénotypage du DT2 (clusters d'Ahlqvist — Lancet Diabetes Endocrinol, 2018) → 5 sous-types de diabète avec pronostic et réponse thérapeutique différents (SAID, SIDD, SIRD, MOD, MARD) → traitement personnalisé basé sur le cluster</li>
+<li><strong>Intelligence artificielle</strong> : algorithmes de recommandation thérapeutique basés sur les données patient (profil clinique, biologique, génomique) → aide à la décision ; systèmes de titration automatisée (insuline basale)</li>
+<li><strong>Place de la rémission</strong> : l'objectif de rémission du DT2 (HbA1c &lt; 6,5 % sans traitement à 3 mois — consensus ADA 2021) doit être intégré dans la stratégie précoce (intervention pondérale intensive chez le DT2 récent)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB29-S03-001 — CLUSTERS D'AHLQVIST (5 sous-types DT2 — caractéristiques, pronostic, réponse thérapeutique)]</p>
+<p>[MEDIA: 🔮 MDIAB29-S03-002 — ALGORITHME FUTUR INTÉGRANT TIRZÉPATIDE ET TRIPLE AGONISTES (projection)]</p>
+</blockquote>
+<h2 id="points-cles-module-29">Points clés — Module 29</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Le choix thérapeutique est guidé par le profil CARDIO-RÉNAL, pas seulement par l'HbA1c<br />
+2. MCVA → aGLP-1 à bénéfice CV + iSGLT2, indépendamment de l'HbA1c<br />
+3. IC → iSGLT2 (classe I ESC 2023), indépendamment du statut diabétique<br />
+4. MRC → iSGLT2 + IEC/ARA2 + finérénone (4 piliers KDIGO)<br />
+5. Obésité → aGLP-1 (sémaglutide) ou tirzépatide → chirurgie bariatrique si IMC ≥ 35 + échec<br />
+6. Cibles HbA1c personnalisées : &lt; 7 % standard, &lt; 6,5 % si jeune/récent, &lt; 8 % si fragile/âgé<br />
+7. Déprescription chez le sujet âgé : simplifier, éviter les hypos, arrêter les SU si risque &gt; bénéfice<br />
+8. Clusters d'Ahlqvist : 5 sous-types de DT2 → médecine de précision<br />
+9. Rémission possible si intervention précoce (DiRECT) → intégrer dans la stratégie</p>
+</blockquote>
+<h2 id="auto-evaluation-module-29">Auto-évaluation — Module 29</h2>
+<h3 id="qcm-progressifs-10-questions_2">QCM progressifs (10 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est le critère principal qui guide le choix thérapeutique dans le DT2 selon ESC/EASD 2023 ?<br />
+A. Le taux d'HbA1c<br />
+B. Le profil cardio-rénal du patient<br />
+C. Le coût du traitement<br />
+D. L'âge du patient</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'algorithme ESC/EASD 2023 est centré sur les organes cibles : MCVA → aGLP-1, IC → iSGLT2, MRC → iSGLT2 + finérénone. Le choix est guidé par le profil cardio-rénal, indépendamment de l'HbA1c de départ.</p>
+</blockquote>
+<p><strong>Q2 — 🥈 Argent</strong> : Chez un DT2 avec ICFEr (FEVG 30 %), quel traitement est recommandé en priorité ?<br />
+A. Sulfonylurée<br />
+B. iSGLT2 (empagliflozine ou dapagliflozine)<br />
+C. Pioglitazone<br />
+D. Inhibiteur DPP-4 (saxagliptine)</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'iSGLT2 est recommandé classe I (ESC 2023) dans l'ICFEr, indépendamment du statut diabétique. La pioglitazone est contre-indiquée (rétention hydrique) et la saxagliptine doit être évitée (signal IC dans SAVOR).</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Quelle cible d'HbA1c fixez-vous chez un patient DT2 de 82 ans, fragile, avec comorbidités ?<br />
+A. &lt; 6,5 %<br />
+B. &lt; 7 %<br />
+C. &lt; 8 %<br />
+D. &lt; 9 %</p>
+<blockquote>
+<p>✅ <strong>C</strong> — Chez un patient âgé fragile avec comorbidités, la cible est &lt; 8 % (ADA 2024). La priorité est d'éviter les hypoglycémies et les effets secondaires. Une cible trop stricte augmenterait le risque d'hypos sans bénéfice prouvé sur les complications.</p>
+</blockquote>
+<p><strong>Q4 — 🥇 Or</strong> : Un DT2 de 55 ans avec coronaropathie (IDM ancien), HbA1c 6,8 % sous metformine seule. Faut-il ajouter un traitement ?<br />
+A. Non, l'HbA1c est à l'objectif<br />
+B. Oui, un aGLP-1 à bénéfice CV (sémaglutide ou liraglutide) + un iSGLT2, INDÉPENDAMMENT de l'HbA1c<br />
+C. Oui, une sulfonylurée<br />
+D. Oui, de l'insuline basale</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'algorithme ESC/EASD 2023 recommande un aGLP-1 à bénéfice CV prouvé et/ou un iSGLT2 chez tout DT2 avec MCVA établie, INDÉPENDAMMENT de l'HbA1c. Le bénéfice CV est indépendant de l'effet glycémique.</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : Que sont les clusters d'Ahlqvist et quel est leur intérêt ?<br />
+A. Des groupes de gènes du diabète<br />
+B. 5 sous-types de diabète (SAID, SIDD, SIRD, MOD, MARD) basés sur des variables cliniques, avec des pronostics et réponses thérapeutiques différents → médecine de précision<br />
+C. Des classifications anatomiques du pancréas<br />
+D. Des stades de sévérité de l'HbA1c</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Ahlqvist et al. (2018) ont identifié 5 clusters de diabète basés sur l'âge, l'IMC, l'HbA1c, le HOMA-B, le HOMA-IR et les auto-anticorps. Ex : SIRD (insulino-résistant sévère) a le plus haut risque rénal → iSGLT2 prioritaire. Cette approche ouvre la voie à la personnalisation thérapeutique.</p>
+</blockquote>
+<p><strong>Q6 — 💎 Diamant</strong> : Prescrivez l'ordonnance complète pour chacun des 4 patients de l'accroche clinique.</p>
+<blockquote>
+<p>✅ <strong>(1) M. X., 45 ans, IMC 38, DT2 récent, sans complication</strong> : MHD intensives + metformine 2 g/j + sémaglutide 1 mg/sem (ou tirzépatide) pour perte de poids + contrôle glycémique ; discuter chirurgie bariatrique si perte insuffisante ; cible HbA1c &lt; 6,5 %.<br />
+<strong>(2) Mme Y., 62 ans, ICFEr FEVG 30 %</strong> : empagliflozine 10 mg (classe I) + metformine 2 g/j + agoniste GLP-1 si besoin glycémique ; sacubitril/valsartan, bêtabloquant, ARM (traitement IC) ; PAS de pioglitazone, PAS de saxagliptine ; cible HbA1c &lt; 7 %.<br />
+<strong>(3) M. Z., 70 ans, DFG 25 mL/min</strong> : dapagliflozine 10 mg (poursuite si déjà initié à DFG &gt; 20, néphroprotection), IEC/ARA2, finérénone si K+ &lt; 5 ; ARRÊT metformine (DFG &lt; 30), linagliptine si besoin glycémique ; aGLP-1 (sémaglutide) si besoin ; adapter doses insuline ; adresser au néphrologue ; cible HbA1c &lt; 8 %.<br />
+<strong>(4) Mme W., 55 ans, coronaropathie</strong> : metformine + sémaglutide 1 mg/sem (LEADER/SUSTAIN-6) + empagliflozine 10 mg (EMPA-REG) ; statine forte dose + IEC ; cible HbA1c &lt; 7 %, LDL &lt; 0,55 g/L.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-29">Cas clinique intégré — Module 29</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Dr M., médecin généraliste, revoit ses 3 patients DT2 en fin de journée</strong></p>
+<p><strong>Patient 1</strong> : M. L., 48 ans, DT2 depuis 2 ans, IMC 36, HbA1c 7,8 %, pas de complication, sous metformine 2 g/j seule.<br />
+<strong>Patient 2</strong> : Mme C., 68 ans, DT2 depuis 15 ans, DFG 42, RAC 320 mg/g, HbA1c 8,1 %, sous metformine 1 g/j + gliclazide 60 mg.<br />
+<strong>Patient 3</strong> : M. D., 75 ans, DT2 depuis 22 ans, ICFEp, HbA1c 7,2 %, sous metformine 2 g/j + sitagliptine 100 mg + glargine U100 16 UI.</p>
+<p><strong>Pour chaque patient :</strong><br />
+1. Identifiez le profil cardio-rénal.<br />
+2. Appliquez l'algorithme ESC/EASD 2023.<br />
+3. Proposez les modifications thérapeutiques.<br />
+4. Fixez la cible HbA1c personnalisée.<br />
+5. Planifiez le suivi.</p>
+</blockquote>
+<h3 id="question-de-synthese">Question de synthèse</h3>
+<blockquote>
+<p>🔄 <strong>Synthèse</strong> : Construisez un algorithme décisionnel unique pour le traitement du DT2, intégrant les 5 profils de patients (MCVA, IC, MRC, obèse, sujet âgé), en indiquant pour chaque profil le traitement de 1ère, 2e et 3e ligne, les cibles glycémiques et les traitements à éviter.</p>
+</blockquote>
+<hr />
+<h2 id="references-bibliographiques-partie-8">Références bibliographiques — Partie 8</h2>
+<ol>
+<li>Estruch R, Ros E, Salas-Salvadó J et al. (PREDIMED). « Primary prevention of cardiovascular disease with a Mediterranean diet supplemented with extra-virgin olive oil or nuts. » <em>N Engl J Med</em>, 2018; 378(25): e34.</li>
+<li>Umpierre D, Ribeiro PA, Kramer CK et al. « Physical activity advice only or structured exercise training and association with HbA1c levels in type 2 diabetes. » <em>JAMA</em>, 2011; 305(17): 1790-1799.</li>
+<li>Lean MEJ, Leslie WS, Barnes AC et al. (DiRECT). « Primary care-led weight management for remission of type 2 diabetes. » <em>Lancet</em>, 2018; 391(10120): 541-551.</li>
+<li>Schauer PR, Bhatt DL, Kirwan JP et al. (STAMPEDE). « Bariatric surgery versus intensive medical therapy for diabetes — 5-year outcomes. » <em>N Engl J Med</em>, 2017; 376(7): 641-651.</li>
+<li>Riddle MC, Rosenstock J, Gerich J (Treat to Target). « The treat-to-target trial: randomized addition of glargine or human NPH insulin to oral therapy. » <em>Diabetes Care</em>, 2003; 26(11): 3080-3086.</li>
+<li>Del Prato S, Kahn SE, Pavo I et al. (SURPASS-2). « Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes. » <em>N Engl J Med</em>, 2021; 385(6): 503-515.</li>
+<li>Jastreboff AM, Aronne LJ, Ahmad NN et al. (SURMOUNT-1). « Tirzepatide once weekly for the treatment of obesity. » <em>N Engl J Med</em>, 2022; 387(3): 205-216.</li>
+<li>Lincoff AM, Brown-Frandsen K, Colhoun HM et al. (SELECT). « Semaglutide and cardiovascular outcomes in obesity without diabetes. » <em>N Engl J Med</em>, 2023; 389(24): 2221-2232.</li>
+<li>Wilding JPH, Batterham RL, Calanna S et al. (STEP 1). « Once-weekly semaglutide in adults with overweight or obesity. » <em>N Engl J Med</em>, 2021; 384(11): 989-1002.</li>
+<li>Marx N, Federici M, Schütt K et al. « 2023 ESC Guidelines for the management of cardiovascular disease in patients with diabetes. » <em>Eur Heart J</em>, 2023; 44(39): 4043-4140.</li>
+<li>Khunti K, Wolden ML, Thorsted BL et al. « Clinical inertia in people with type 2 diabetes. » <em>Diabetes Care</em>, 2013; 36(11): 3411-3417.</li>
+<li>Ahlqvist E, Storm P, Käräjämäki A et al. « Novel subgroups of adult-onset diabetes and their association with outcomes. » <em>Lancet Diabetes Endocrinol</em>, 2018; 6(5): 361-369.</li>
+<li>Malik VS, Popkin BM, Bray GA et al. « Sugar-sweetened beverages and risk of metabolic syndrome and type 2 diabetes. » <em>Diabetes Care</em>, 2010; 33(11): 2477-2483.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🔶 <strong>DIABÉTOLOGIE</strong> | Partie 8/12 | Couleur : Bleu pétrole <code>#1A5276</code><br />
+<em>Document généré pour la plateforme VERTEX© — Formation Diabétologie Complète</em></p>
+</blockquote>
+</div>

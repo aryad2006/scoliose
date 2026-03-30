@@ -1,0 +1,378 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-5-osteomyelite-modules-14-17">Partie 5 — Ostéomyélite (Modules 14-17)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-14-osteomyelite-aigue-hematogene-de-lenfant">MODULE 14 : OSTÉOMYÉLITE AIGUË HÉMATOGÈNE DE L'ENFANT</h1>
+<p><strong>Partie</strong> : V — Ostéomyélite<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 2, 3, 4, 7, 8</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Fièvre à 39.8°C depuis 3 jours, douleur exquise de l'extrémité inférieure du fémur gauche, boiterie, refus d'appui. Pas de traumatisme. CRP = 145 mg/L. Radiographie : normal. IRM : hypersignal T2 métaphysaire fémoral distal avec abcès sous-périosté. Hémoculture : *S. aureus* PVL+. *Urgence chirurgicale ou traitement médical seul ? Quelles sont les formes graves à redouter avec un S. aureus PVL+ ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Reconnaître</strong> les signes cliniques de l'ostéomyélite aiguë de l'enfant</li>
+<li><strong>Connaître</strong> les germes en cause selon l'âge</li>
+<li><strong>Comprendre</strong> la physiopathologie vasculaire métaphysaire</li>
+<li><strong>Définir</strong> les indications chirurgicales (ponction-drainage, fenêtre corticale)</li>
+<li><strong>Prescrire</strong> le traitement ATB adapté (probabiliste puis documenté)</li>
+<li><strong>Identifier</strong> les formes compliquées (PVL+, multifocale, thrombophlébite)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-141-epidemiologie-et-agents-pathogenes-selon-lage">Section 14.1 — Épidémiologie et agents pathogènes selon l'âge</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Incidence : 1-13/100 000 enfants/an, prédominance masculine (2:1) <em>(Dartnell et al., 2012, J Bone Joint Surg Br)</em><br />
+- Pic d'âge : 5-15 ans (pic de croissance métaphysaire)<br />
+- <strong>Germes par tranche d'âge</strong> :<br />
+  - Nouveau-né (&lt;3 mois) : <em>S. aureus</em>, <em>Streptocoque B</em>, BGN (<em>E. coli</em>, <em>Klebsiella</em>)<br />
+  - Nourrisson (3 mois-4 ans) : <em>S. aureus</em>, <em>Kingella kingae</em> (1ère cause dans certaines séries)<br />
+  - Enfant (&gt;4 ans) : <em>S. aureus</em> (60-90%) <em>(Kaplan, 2005, Pediatr Clin North Am)</em>, <em>Streptococcus pyogenes</em>, <em>S. pneumoniae</em><br />
+  - Drépanocytaire : <em>Salmonella</em> (classique !), <em>S. aureus</em><br />
+- <strong>S. aureus PVL+</strong> : formes nécrosantes sévères, ostéomyélite multifocale, thrombophlébite septique, abcès multiples, haute mortalité si retard diagnostique<br />
+- Hémocultures positives dans 30-50% des cas <em>(Peltola &amp; Pääkkönen, 2014, N Engl J Med)</em></p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA14-S01-001 | 📊 INFOGRAPHIE | Germes de l'ostéomyélite de l'enfant selon l'âge | Tableau par tranche d'âge |<br />
+| MIOA14-S01-002 | 📐 SCHÉMA | Localisations préférentielles de l'ostéomyélite hématogène de l'enfant (fémur distal, tibia proximal, humérus proximal) | Squelette enfant annoté |<br />
+| MIOA14-S01-003 | 📷 IMAGE | IRM d'ostéomyélite métaphysaire fémorale distale chez l'enfant | Coupes T1, T2, Gado |</p>
+<h3 id="section-142-presentation-clinique-et-diagnostic">Section 14.2 — Présentation clinique et diagnostic</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Tableau typique : fièvre + douleur métaphysaire exquise + impotence fonctionnelle + boiterie/refus de marche<br />
+- Palpation métaphysaire systématique : « point douloureux métaphysaire » = signe cardinal<br />
+- Nouveau-né : pseudo-paralysie, irritabilité, sepsis — pas de localisation évidente<br />
+- <strong>Bilan minimal</strong> : NFS, CRP, hémocultures (×2-3), radiographies bilatérales comparatives<br />
+- <strong>IRM</strong> : examen de référence — dans les 24-48h si suspicion clinique forte, en urgence si suspicion de forme compliquée<br />
+- Radiographie : normale les 10-14 premiers jours, utile pour éliminer d'autres diagnostics (fracture, tumeur)<br />
+- Échographie : abcès sous-périosté, épanchement articulaire associé (hanche ++)<br />
+- <strong>Diagnostics différentiels</strong> : fracture de fatigue, tumeur (sarcome d'Ewing, ostéosarcome !), crise vaso-occlusive drépanocytaire, arthrite juvénile idiopathique, cellulite</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA14-S02-001 | 📐 SCHÉMA | Examen clinique : points de palpation métaphysaire | Schéma des zones |<br />
+| MIOA14-S02-002 | 📊 INFOGRAPHIE | Bilan initial devant une suspicion d'ostéomyélite aiguë de l'enfant | Checklist |<br />
+| MIOA14-S02-003 | 📷 IMAGE | Diagnostics différentiels en imagerie : ostéomyélite vs Ewing vs ostéosarcome | IRM comparatives |<br />
+| MIOA14-S02-004 | 📐 SCHÉMA | Algorithme diagnostique de l'ostéomyélite aiguë de l'enfant | Arbre décisionnel |</p>
+<h3 id="section-143-traitement-medical-antibiotherapie">Section 14.3 — Traitement médical : antibiothérapie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Urgence</strong> : antibiothérapie IV dès les prélèvements réalisés (hémocultures ± ponction osseuse)<br />
+- ATB probabiliste : oxacilline ou céfamandole (couvre SASM) ; si &lt;4 ans : amoxicilline-ac. clavulanique (couvre <em>K. kingae</em>)<br />
+- Relais oral précoce (J3-J5) si : apyrexie, CRP ↓↓, bonne tolérance digestive — étude POET <em>(Li HK et al., N Engl J Med, 2019)</em><br />
+- Durée totale : <strong>3-4 semaines</strong> (consensus actuel vs 6 semaines historique)<br />
+- Schéma court validé : études finlandaises <em>(Peltola et al., Pediatr Infect Dis J, 2010)</em>, CRP comme guide de durée<br />
+- Suivi : CRP à J3, J7, J14, puis hebdomadaire ; radiographie à M1, M3, M6</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA14-S03-001 | 📊 INFOGRAPHIE | Protocole d'antibiothérapie de l'ostéomyélite aiguë de l'enfant | Protocole structuré |<br />
+| MIOA14-S03-002 | 📐 SCHÉMA | Relais IV → oral : critères et timing | Arbre décisionnel |</p>
+<h3 id="section-144-indications-chirurgicales">Section 14.4 — Indications chirurgicales</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- La majorité des ostéomyélites aiguës de l'enfant guérissent sous <strong>ATB seuls</strong> (sans chirurgie)<br />
+- <strong>Indications chirurgicales</strong> :<br />
+  - Abcès sous-périosté &gt; 3-5mm (drainage chirurgical ou ponction-aspiration)<br />
+  - Absence d'amélioration à 48-72h d'ATB adapté<br />
+  - Abcès intra-osseux volumineux<br />
+  - Arthrite septique associée (drainage articulaire obligatoire)<br />
+  - <em>S. aureus</em> PVL+ avec complications nécrosantes<br />
+  - Formes multifocales sévères<br />
+- <strong>Techniques chirurgicales</strong> : ponction-aspiration, fenêtre corticale + curetage, drainage d'abcès sous-périosté, lavage articulaire (en cas d'arthrite associée)<br />
+- Le débridement extensif de type adulte est rarement nécessaire chez l'enfant</p>
+<h3 id="section-145-formes-compliquees-et-rare">Section 14.5 — Formes compliquées et rare</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Ostéomyélite à S. aureus PVL+</strong> : formes multifocales, nécrosantes, thrombophlébite septique (veine fémorale, cave), abcès pulmonaires métastatiques, mortalité 5-10% <em>(Bocchini et al., 2006, Clin Infect Dis)</em>, prise en charge en réanimation<br />
+- <strong>Arthrite septique associée</strong> : hanche et épaule (métaphyse intra-capsulaire), urgence chirurgicale de drainage<br />
+- <strong>Ostéomyélite multifocale</strong> : scintigraphie corps entier, hémocultures PVL recherché en urgence<br />
+- <strong>CRMO (Chronic Recurrent Multifocal Osteomyelitis)</strong> : pathologie auto-inflammatoire, PAS infectieuse (diagnostic différentiel !), pas d'ATB</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA14-S05-001 | 📷 IMAGE | Ostéomyélite PVL+ multifocale — IRM corps entier | IRM spectaculaire |<br />
+| MIOA14-S05-002 | 📐 SCHÉMA | Thrombophlébite septique : physiopathologie et complications | Schéma vasculaire |<br />
+| MIOA14-S05-003 | 📊 INFOGRAPHIE | CRMO vs ostéomyélite infectieuse — tableau de diagnostic différentiel | Comparatif |</p>
+<h3 id="points-cles-du-module-14">Points clés du Module 14</h3>
+<ol>
+<li>L'ostéomyélite aiguë de l'enfant touche la métaphyse des os longs avec un pic entre 5-15 ans</li>
+<li><em>S. aureus</em> est le germe principal ; <em>K. kingae</em> est la 1ère cause chez l'enfant &lt;4 ans</li>
+<li>La radiographie est NORMALE les 10-14 premiers jours — l'IRM est l'examen de référence</li>
+<li>La majorité guérit sous ATB seuls ; la chirurgie est réservée aux abcès et aux formes compliquées</li>
+<li>Le relais oral précoce (J3-J5) et la durée courte (3-4 semaines) sont validés par des études récentes</li>
+<li>Les formes PVL+ sont potentiellement graves : multifocales, nécrosantes, thrombophlébite septique</li>
+<li>La CRMO est auto-inflammatoire et NE NÉCESSITE PAS d'antibiotiques (diagnostic différentiel !)</li>
+</ol>
+<hr />
+<h1 id="module-15-osteomyelite-aigue-et-subaigue-de-ladulte">MODULE 15 : OSTÉOMYÉLITE AIGUË ET SUBAIGUË DE L'ADULTE</h1>
+<p><strong>Partie</strong> : V — Ostéomyélite<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Module 14</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Douleur progressive du tibia droit depuis 6 semaines, fébricule intermittente (37.8°C). Diabétique type 2. Radiographie : lésion lytique métaphysaire proximale tibiale avec halo de sclérose. IRM : cavité en hypersignal T2 avec prise de contraste périphérique et penumbra sign. Biopsie scanno-guidée : *S. aureus* SASM. *Abcès de Brodie ? Quelle prise en charge ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Distinguer</strong> les formes aiguës, subaiguës (Brodie) et chroniques chez l'adulte</li>
+<li><strong>Identifier</strong> les facteurs de risque spécifiques de l'adulte</li>
+<li><strong>Maîtriser</strong> le diagnostic et le traitement de l'abcès de Brodie</li>
+<li><strong>Comprendre</strong> les différences avec l'enfant (vascularisation, germes, présentation)</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-151-particularites-de-losteomyelite-hematogene-de-ladulte">Section 15.1 — Particularités de l'ostéomyélite hématogène de l'adulte</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Beaucoup plus rare que chez l'enfant<br />
+- Localisations : vertèbres (spondylodiscite &gt;&gt;&gt; os longs), os périphériques si immunodépression, UDIV, drépanocytaire adulte<br />
+- Porte d'entrée : urinaire, cutanée, dentaire, endocardite, cathéters<br />
+- Germes : <em>S. aureus</em> (50%), streptocoques, BGN (sujet âgé, urinaire), <em>M. tuberculosis</em> (rachis)<br />
+- Présentation souvent subaiguë ou chronique (diagnostic retardé)</p>
+<h3 id="section-152-labces-de-brodie">Section 15.2 — L'abcès de Brodie</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Forme subaiguë d'ostéomyélite : cavité intra-osseuse collectée, bien limitée, entourée de sclérose<br />
+- Localisation : métaphyse des os longs (identique aux enfants), parfois transphysaire<br />
+- Germe : <em>S. aureus</em> (le plus fréquent), mais cultures souvent négatives (30-50%) <em>(Olasinde et al., 2003)</em><br />
+- Imagerie : lésion lytique ronde/ovale, sclérose périlésionnelle, penumbra sign en IRM<br />
+- Diagnostic différentiel : tumeur osseuse (ostéome ostéoïde, histiocytose, lymphome, métastase)<br />
+- Traitement : biopsie pour identification de germe + ATB 6 semaines ; curetage chirurgical si volumineux ou échec du traitement médical</p>
+<h3 id="section-153-osteomyelite-vertebrale-renvoi-module-22">Section 15.3 — Ostéomyélite vertébrale (renvoi Module 22)</h3>
+<ul>
+<li>Renvoi détaillé vers Module 22 (Spondylodiscite)</li>
+<li>Place de l'ostéomyélite hématogène dans l'atteinte vertébrale de l'adulte</li>
+</ul>
+<h3 id="points-cles-du-module-15">Points clés du Module 15</h3>
+<ol>
+<li>L'ostéomyélite hématogène de l'adulte atteint préférentiellement le rachis (spondylodiscite)</li>
+<li>L'abcès de Brodie est la forme subaiguë classique : cavité intra-osseuse, sclérose périlésionnelle, penumbra sign en IRM</li>
+<li>Les cultures de l'abcès de Brodie sont négatives dans 30-50% des cas</li>
+<li>Le diagnostic différentiel principal est la tumeur osseuse</li>
+</ol>
+<hr />
+<h1 id="module-16-osteomyelite-chronique-physiopathologie-et-traitement">MODULE 16 : OSTÉOMYÉLITE CHRONIQUE — PHYSIOPATHOLOGIE ET TRAITEMENT</h1>
+<p><strong>Partie</strong> : V — Ostéomyélite<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 4, 14, 15</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Ostéomyélite chronique du tibia droit, rémontant à une fracture ouverte il y a 15 ans. Épisodes d'exacerbation-rémission, fistule intermittente sur la face antéromédiale. Scanner : séquestre cortical de 8 cm, sclérose étendue, involucrum incomplet. CRP = 12 mg/L (à peine élevée !). *Quel est votre plan ? Peut-on guérir cette ostéomyélite chronique de 15 ans ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> la physiopathologie de la chronicité (séquestre, biofilm, dormance)</li>
+<li><strong>Classer</strong> l'ostéomyélite chronique selon Cierny-Mader</li>
+<li><strong>Planifier</strong> le traitement chirurgical radical (séquestrectomie, curetage, résection segmentaire)</li>
+<li><strong>Choisir</strong> le comblement adapté (ciment, greffe, substituts)</li>
+<li><strong>Prescrire</strong> l'antibiothérapie post-chirurgicale adaptée</li>
+<li><strong>Gérer</strong> les échecs et les récidives</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-161-physiopathologie-de-la-chronicite">Section 16.1 — Physiopathologie de la chronicité</h3>
+<ul>
+<li>Séquestre comme sanctuaire bactérien inaccessible</li>
+<li>Biofilm mature irréversible</li>
+<li>SCV dormantes dans les ostéocytes</li>
+<li>Sclérose corticale = tissu avasculaire, impénétrable aux ATB</li>
+<li>Cercle vicieux : infection → nécrose → séquestre → réinfection</li>
+<li>La CRP peut être NORMALE dans l'ostéomyélite chronique quiescente</li>
+</ul>
+<h3 id="section-162-traitement-chirurgical-radical">Section 16.2 — Traitement chirurgical radical</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principe fondamental</strong> : excision complète de tout le tissu infecté et nécrosé (séquestrectomie + curetage radical)<br />
+- <strong>Séquestrectomie</strong> : extraction du séquestre, curetage de la cavité, avivage des berges jusqu'à l'os sain (« paprika sign » = os vascularisé saignant en nappe)<br />
+- <strong>Résection segmentaire</strong> : Cierny IV — résection de la totalité du segment infecté (instabilité mécanique → reconstruction nécessaire)<br />
+- <strong>Comblement de l'espace mort</strong> : OBLIGATOIRE, sinon récidive<br />
+  - Ciment PMMA chargé d'ATB (temporaire ou définitif)<br />
+  - Greffe osseuse spongieuse autologue (crête iliaque, RIA) — en 1 ou 2 temps<br />
+  - Membrane induite (Masquelet) — combler les pertes osseuses &gt;4-6 cm<br />
+  - Substituts osseux : sulfate de calcium, hydroxyapatite, bio-verre<br />
+- <strong>Papineau</strong> (ostéotomie-comblement à ciel ouvert) : technique historique, encore utilisée dans certaines situations<br />
+- <strong>Couverture des tissus mous</strong> : souvent nécessaire (peau fragile, fistule, cicatrice) — lambeaux locaux ou libres (renvoi Module 28)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA16-S02-001 | 🎬 ANIMATION | Séquestrectomie radicale : technique pas à pas | Animation chirurgicale 3D |<br />
+| MIOA16-S02-002 | 📷 IMAGE | « Paprika sign » : os sain vascularisé après curetage radical | Photo per-opératoire |<br />
+| MIOA16-S02-003 | 📷 IMAGE | Comblement par ciment antibiotique après séquestrectomie | Photo + radiographie |<br />
+| MIOA16-S02-004 | 📐 SCHÉMA | Algorithme thérapeutique de l'ostéomyélite chronique selon Cierny-Mader | Arbre de décision complet |<br />
+| MIOA16-S02-005 | 📊 INFOGRAPHIE | Options de comblement : ciment, greffe, Masquelet, bio-verre — tableau comparatif | Multicritère |</p>
+<h3 id="section-163-antibiotherapie-de-losteomyelite-chronique">Section 16.3 — Antibiothérapie de l'ostéomyélite chronique</h3>
+<ul>
+<li>Post-chirurgicale : 6-12 semaines d'ATB adapté au germe</li>
+<li>Traitement suppressif chronique : si patient Cierny C (contre-indication chirurgicale), ATB oral au long cours (doxycycline, TMP-SMX, amoxicilline)</li>
+<li>Pas de rôle de la rifampicine si pas de matériel en place</li>
+</ul>
+<h3 id="section-164-recidives-et-gestion-des-echecs">Section 16.4 — Récidives et gestion des échecs</h3>
+<ul>
+<li>Taux de récidive : 15-30% malgré traitement optimal <em>(Lew &amp; Waldvogel, 2004, Lancet)</em></li>
+<li>Causes d'échec : débridement insuffisant, mauvais comblement, défaut de couverture cutanée, immunodépression, germe résistant</li>
+<li>Re-chirurgie : nouvelle séquestrectomie, résection plus étendue</li>
+<li>Amputation : dernier recours, discutée en RCP après multiples échecs, évaluation qualité de vie</li>
+</ul>
+<h3 id="points-cles-du-module-16">Points clés du Module 16</h3>
+<ol>
+<li>L'ostéomyélite chronique est une maladie chirurgicale : les antibiotiques seuls ne guérissent pas si le séquestre n'est pas retiré</li>
+<li>Le débridement doit être radical : excision jusqu'à l'os sain saignant (« paprika sign »)</li>
+<li>L'espace mort après séquestrectomie DOIT être comblé (ciment, greffe, Masquelet)</li>
+<li>La CRP peut être normale dans l'ostéomyélite chronique — ne jamais conclure à l'absence d'infection sur une CRP normale</li>
+<li>Le taux de récidive reste de 15-30% même avec un traitement optimal</li>
+<li>L'amputation est le dernier recours, discutée en RCP après échecs multiples</li>
+</ol>
+<hr />
+<h1 id="module-17-osteomyelite-post-traumatique-et-sur-fracture-ouverte">MODULE 17 : OSTÉOMYÉLITE POST-TRAUMATIQUE ET SUR FRACTURE OUVERTE</h1>
+<p><strong>Partie</strong> : V — Ostéomyélite<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Module 16</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">AVP moto, fracture ouverte du tibia Gustilo IIIB. Parage chirurgical + fixateur externe en urgence. ATB prophylactique par amoxicilline-acide clavulanique 48h. À J+10, fièvre, écoulement trouble par la plaie. Prélèvements : *Pseudomonas aeruginosa*. *Était-ce prévisible ? L'antibioprophylaxie était-elle adaptée ? Quelle est votre stratégie ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Évaluer</strong> le risque infectieux selon la classification de Gustilo-Anderson</li>
+<li><strong>Maîtriser</strong> l'antibioprophylaxie des fractures ouvertes</li>
+<li><strong>Diagnostiquer</strong> l'infection post-traumatique précoce et tardive</li>
+<li><strong>Traiter</strong> l'ostéomyélite post-traumatique (débridement, fixation, couverture, ATB)</li>
+<li><strong>Appliquer</strong> le concept de FRI (Fracture-Related Infection)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-171-fractures-ouvertes-classification-et-risque-infectieux">Section 17.1 — Fractures ouvertes : classification et risque infectieux</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Classification de Gustilo-Anderson</strong> <em>(Gustilo &amp; Anderson, 1976, J Bone Joint Surg Am ; Gustilo et al., 1984, J Bone Joint Surg Am)</em> — taux d'infection approximatifs :<br />
+  - Type I : plaie &lt;1cm, fracture simple → risque infection 0-2%<br />
+  - Type II : plaie 1-10 cm, contamination modérée → risque 2-10%<br />
+  - Type IIIA : plaie &gt;10cm, couverture cutanée possible → risque 10-25%<br />
+  - Type IIIB : perte de substance cutanée, périoste dénudé, lambeau nécessaire → risque 25-50%<br />
+  - Type IIIC : lésion vasculaire nécessitant réparation → risque 25-50% + risque amputatoire<br />
+- <strong>Facteurs de risque additionnels</strong> : tabac, diabète, polytraumatisme, délai de prise en charge, contamination tellurique</p>
+<h3 id="section-172-antibioprophylaxie-et-premiers-soins">Section 17.2 — Antibioprophylaxie et premiers soins</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Recommandations</strong> :<br />
+  - Gustilo I-II : céphalosporine 1re gén (céfazoline) 24-48h<br />
+  - Gustilo III : céphalosporine + aminoside (gentamicine) 48-72h ; ajouter pénicilline si contamination tellurique (Clostridium)<br />
+- Parage chirurgical précoce : dans les 6-12h idéalement (débat sur l'urgence absolue vs semi-urgence)<br />
+- Irrigation : sérum physiologique abondant (low-pressure pulsatile lavage vs high-pressure débattu)<br />
+- Fixation : fixateur externe (Gustilo III), enclouage centromédullaire (Gustilo I-II après parage), jamais de plaque sur fracture fortement contaminée<br />
+- Couverture des parties molles : impératif dans les 7-10 jours (lambeau si IIIB)<br />
+- Attitude « fix and flap » (Gopal) : fixation + lambeau dans les 72h si possible</p>
+<h3 id="section-173-diagnostic-et-traitement-de-linfection-post-traumatique">Section 17.3 — Diagnostic et traitement de l'infection post-traumatique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Infection précoce vs tardive : &lt;4 semaines (germes nosocomiaux) vs &gt;4 semaines (chronicité)<br />
+- Diagnostic : clinique (désunion, écoulement, fièvre) + biologie (CRP) + imagerie (scanner, IRM si matériel compatible)<br />
+- Prélèvements profonds au bloc opératoire (≥5)<br />
+- <strong>Traitement</strong> :<br />
+  - Débridement chirurgical radical + stabilisation de la fracture<br />
+  - Si fracture non consolidée : maintien/changement de fixation (clou, fixateur externe) + débridement itératif<br />
+  - Si fracture consolidée : ablation matériel + séquestrectomie + comblement<br />
+  - ATB adaptée 6-12 semaines<br />
+  - Concept FRI : consolidation osseuse = objectif parallèle au contrôle de l'infection</p>
+<h3 id="section-174-transport-osseux-et-reconstruction-secondaire">Section 17.4 — Transport osseux et reconstruction secondaire</h3>
+<ul>
+<li>Pertes osseuses &gt;4-6 cm : membrane induite (Masquelet), transport osseux (Ilizarov), méga-prothèse</li>
+<li>Délai de reconstruction : une fois l'infection maîtrisée (stérilisation confirmée)</li>
+<li>Renvoi détaillé vers Module 27</li>
+</ul>
+<h3 id="points-cles-du-module-17">Points clés du Module 17</h3>
+<ol>
+<li>Le risque infectieux augmente avec la sévérité de la fracture ouverte : 0-2% (Gustilo I) à 25-50% (Gustilo IIIB-C)</li>
+<li>L'antibioprophylaxie doit couvrir le <em>S. aureus</em> (céfazoline) ; ajout d'aminoside pour Gustilo III</li>
+<li>Le parage précoce et la couverture rapide des parties molles sont essentiels pour prévenir l'infection</li>
+<li>L'objectif double est de contrôler l'infection ET d'obtenir la consolidation osseuse</li>
+<li>Le concept de FRI standardise le diagnostic de l'infection sur fracture</li>
+</ol>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Bocchini CE, Hulten KG, Mason EO, et al. Panton-Valentine leukocidin genes are associated with enhanced inflammatory response and local disease in acute hematogenous <em>Staphylococcus aureus</em> osteomyelitis in children. <em>Clin Infect Dis</em>. 2006;43(2):164-171.</li>
+<li>Dartnell J, Ramachandran M, Katchburian M. Haematogenous acute and subacute paediatric osteomyelitis: a systematic review of the literature. <em>J Bone Joint Surg Br</em>. 2012;94(5):584-595.</li>
+<li>Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. <em>J Bone Joint Surg Am</em>. 1976;58(4):453-458.</li>
+<li>Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures: a new classification of type III open fractures. <em>J Bone Joint Surg Am</em>. 1984;66(2):218-228.</li>
+<li>Kaplan SL. Osteomyelitis in children. <em>Pediatr Clin North Am</em>. 2005;52(3):795-810.</li>
+<li>Lew DP, Waldvogel FA. Osteomyelitis. <em>Lancet</em>. 2004;364(9431):369-379.</li>
+<li>Li HK, Rombach I, Zamber R, et al. Oral versus intravenous antibiotics for bone and joint infection (OVIVA/POET). <em>N Engl J Med</em>. 2019;380(5):425-436.</li>
+<li>Olasinde AA, Oluwadiya KS, Adegbehingbe OO. Treatment of Brodie’s abscess: excellent results from curettage, bone grafting, and antibiotics. <em>Singapore Med J</em>. 2003;44(3):130-132.</li>
+<li>Peltola H, Pääkkönen M. Acute osteomyelitis in children. <em>N Engl J Med</em>. 2014;370(4):352-360.</li>
+<li>Peltola H, Pääkkönen M, Kallio P, et al. Short- versus long-term antimicrobial treatment for acute hematogenous osteomyelitis of childhood. <em>Pediatr Infect Dis J</em>. 2010;29(12):1123-1128.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

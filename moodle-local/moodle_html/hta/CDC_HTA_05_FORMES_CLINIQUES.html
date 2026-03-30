@@ -1,0 +1,596 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-05-formes-cliniques-particulieres-de-lhta">❤️ PARTIE 05 — FORMES CLINIQUES PARTICULIÈRES DE L'HTA</h1>
+<h2 id="hta-blouse-blanche-masquee-resistante-et-urgences-hypertensives">HTA blouse blanche, masquée, résistante et urgences hypertensives</h2>
+<hr />
+<h1 id="module-16-hta-blouse-blanche">MODULE 16 — HTA BLOUSE BLANCHE</h1>
+<h2 id="161-definition-et-physiopathologie">16.1 Définition et physiopathologie</h2>
+<h3 id="1611-definition">16.1.1 Définition</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA16-S01-001 — SCHÉMA : concept d'HTA blouse blanche — PA cabinet vs PA ambulatoire]</p>
+</blockquote>
+<p><strong>HTA blouse blanche</strong> (adapté de ESC/ESH 2023) :<br />
+- PA au cabinet <strong>≥ 140/90 mmHg</strong> de façon répétée<br />
+- PA hors cabinet (MAPA diurne ou automesure) <strong>&lt; 135/85 mmHg</strong><br />
+- Prévalence : <strong>10-15 %</strong> de la population consultant pour HTA<br />
+- Plus fréquente chez : femmes, sujets âgés, non-fumeurs, HTA grade 1</p>
+<h3 id="1612-mecanismes">16.1.2 Mécanismes</h3>
+<ul>
+<li>Réaction d'alerte en présence du personnel soignant</li>
+<li>Activation sympathique réflexe (élévation fréquence cardiaque et PA)</li>
+<li>Persistance du réflexe malgré des consultations répétées</li>
+<li>Prédisposition : anxiété, personnalité réactive</li>
+</ul>
+<h3 id="1613-pronostic">16.1.3 Pronostic</h3>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'HTA blouse blanche n'est pas totalement bénigne. La méta-analyse d'Huang et al. (JAMA 2019) montre un surrisque modéré par rapport à la normotension : mortalité toutes causes + 36 %, événements CV + 12 % (non significatif après ajustement). Le risque principal est la <strong>progression vers une HTA permanente</strong> (30-40 % à 10 ans).</p>
+</blockquote>
+<h3 id="1614-prise-en-charge">16.1.4 Prise en charge</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li>Pas de traitement médicamenteux systématique</li>
+<li>MHD recommandées</li>
+<li>Suivi annuel par automesure ou MAPA</li>
+<li>Traitement médicamenteux si : AAOC, risque CV élevé, ou progression vers HTA permanente</li>
+<li>Réévaluation du statut tensionnel tous les 1-2 ans</li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="module-17-hta-masquee">MODULE 17 — HTA MASQUÉE</h1>
+<h2 id="171-definition-et-epidemiologie">17.1 Définition et épidémiologie</h2>
+<h3 id="1711-definition">17.1.1 Définition</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA17-S01-001 — SCHÉMA : HTA masquée — PA normale au cabinet, élevée en ambulatoire]</p>
+</blockquote>
+<p><strong>HTA masquée</strong> (adapté de ESC/ESH 2023) :<br />
+- PA au cabinet <strong>&lt; 140/90 mmHg</strong><br />
+- PA hors cabinet (MAPA diurne ou automesure) <strong>≥ 135/85 mmHg</strong><br />
+- Prévalence : <strong>10-15 %</strong> de la population générale, jusqu'à <strong>30-50 %</strong> des hypertendus traités apparemment contrôlés<br />
+- Diagnostic impossible sans mesure hors cabinet</p>
+<h3 id="1712-facteurs-favorisants">17.1.2 Facteurs favorisants</h3>
+<ul>
+<li>Sexe masculin, jeune âge</li>
+<li>Tabagisme actif</li>
+<li>Consommation d'alcool</li>
+<li>Activité physique intense (HTA d'effort)</li>
+<li>Stress professionnel (HTA professionnelle)</li>
+<li>Syndrome métabolique, diabète</li>
+<li>IRC</li>
+</ul>
+<h3 id="1713-sous-types-dhta-masquee">17.1.3 Sous-types d'HTA masquée</h3>
+<table>
+<thead>
+<tr>
+<th>Sous-type</th>
+<th>Caractéristique</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTA masquée diurne</td>
+<td>PA diurne élevée, PA cabinet normale</td>
+<td>Stress professionnel, activité physique</td>
+</tr>
+<tr>
+<td>HTA masquée nocturne</td>
+<td>PA nocturne élevée, PA diurne et cabinet normales</td>
+<td>SAHOS, IRC, dysautonomie</td>
+</tr>
+<tr>
+<td>HTA masquée d'effort</td>
+<td>PA d'effort élevée</td>
+<td>Réponse sympathique exagérée</td>
+</tr>
+<tr>
+<td>HTA masquée non contrôlée</td>
+<td>Sous traitement, PA cabinet OK, PA ambulatoire non contrôlée</td>
+<td>Couverture insuffisante sur 24h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1714-pronostic-et-prise-en-charge">17.1.4 Pronostic et prise en charge</h3>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'HTA masquée confère un risque CV comparable voire supérieur à l'HTA permanente. L'étude IDACO (Stergiou et al., Hypertension 2014) montre un risque de mortalité CV multiplié par 2,1 par rapport à la normotension vraie.</p>
+</blockquote>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li>Traitement médicamenteux recommandé (même logique que l'HTA permanente)</li>
+<li>Cible : PA ambulatoire &lt; 135/85 mmHg (diurne) et &lt; 130/80 mmHg (24h)</li>
+<li>MHD associées</li>
+<li>Rechercher et traiter les causes (SAHOS, stress)</li>
+<li>Suivi par MAPA ou automesure (la PA cabinet est non informative)</li>
+</ul>
+</blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > L'HTA masquée non contrôlée (sous traitement) est la situation la plus insidieuse : le médecin et le patient pensent que la PA est contrôlée car les mesures au cabinet sont normales. Seule l'automesure systématique ou la MAPA périodique permettent de la détecter.</div>
+
+<hr />
+<h1 id="module-18-hta-resistante">MODULE 18 — HTA RÉSISTANTE</h1>
+<h2 id="181-definition-et-prevalence">18.1 Définition et prévalence</h2>
+<h3 id="1811-definition">18.1.1 Définition</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA18-S01-001 — ALGORITHME : démarche diagnostique devant une HTA résistante]</p>
+</blockquote>
+<p><strong>HTA résistante</strong> (adapté de ESC/ESH 2023) :<br />
+- PA <strong>≥ 140/90 mmHg</strong> (cabinet) malgré :<br />
+  - <strong>Trithérapie</strong> à doses optimales<br />
+  - Incluant obligatoirement un <strong>diurétique</strong> (thiazidique ou thiazidique-like)<br />
+  - Les 3 classes habituellement : <strong>IEC/ARA2 + ICC + diurétique</strong><br />
+  - <strong>Observance vérifiée</strong><br />
+  - <strong>MHD respectées</strong><br />
+- Confirmation par <strong>MAPA ou automesure</strong> (exclure pseudo-résistance par effet blouse blanche)</p>
+<h3 id="1812-prevalence">18.1.2 Prévalence</h3>
+<ul>
+<li><strong>10-15 %</strong> des hypertendus traités</li>
+<li><strong>Résistance vraie</strong> (après exclusion de la pseudo-résistance) : <strong>5-8 %</strong></li>
+<li>Prévalence en augmentation (vieillissement, obésité, IRC)</li>
+</ul>
+<h3 id="1813-pseudo-resistance-a-exclure-imperativement">18.1.3 Pseudo-résistance (à exclure impérativement)</h3>
+<table>
+<thead>
+<tr>
+<th>Cause de pseudo-résistance</th>
+<th>Fréquence</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effet blouse blanche</td>
+<td>30-40 %</td>
+<td>MAPA/AMT</td>
+</tr>
+<tr>
+<td>Non-observance</td>
+<td>25-50 %</td>
+<td>Dosages plasmatiques, entretien motivationnel</td>
+</tr>
+<tr>
+<td>Brassard inadapté</td>
+<td>10 %</td>
+<td>Brassard adapté à la circonférence brachiale</td>
+</tr>
+<tr>
+<td>Doses sous-optimales</td>
+<td>15-20 %</td>
+<td>Optimiser les posologies</td>
+</tr>
+<tr>
+<td>Association non synergique</td>
+<td>10 %</td>
+<td>Revoir les associations</td>
+</tr>
+<tr>
+<td>Substances hypertensives</td>
+<td>5-10 %</td>
+<td>Interrogatoire médicamenteux</td>
+</tr>
+<tr>
+<td>Apport sodé excessif</td>
+<td>30-50 %</td>
+<td>Natriurèse des 24h (objectif &lt; 100 mmol/j)</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>La non-observance est la première cause de pseudo-résistance. Les dosages plasmatiques des antihypertenseurs (par LC-MS/MS) révèlent que <strong>25-50 %</strong> des patients « résistants » ne prennent pas correctement leur traitement. Cette technique est de plus en plus accessible et devrait être proposée avant d'intensifier le traitement.</p>
+</blockquote>
+<h2 id="182-bilan-etiologique-de-lhta-resistante">18.2 Bilan étiologique de l'HTA résistante</h2>
+<h3 id="1821-causes-secondaires-a-rechercher">18.2.1 Causes secondaires à rechercher</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA18-S02-001 — TABLEAU : causes d'HTA secondaire dans l'HTA résistante — prévalence et dépistage]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Cause secondaire</th>
+<th>Prévalence dans HTA résistante</th>
+<th>Examen de dépistage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hyperaldostéronisme primaire</td>
+<td>15-20 %</td>
+<td>Rapport aldostérone/rénine</td>
+</tr>
+<tr>
+<td>Sténose artère rénale</td>
+<td>5-10 %</td>
+<td>Écho-Doppler rénal, angio-TDM</td>
+</tr>
+<tr>
+<td>SAHOS</td>
+<td>60-80 %</td>
+<td>Polygraphie/polysomnographie</td>
+</tr>
+<tr>
+<td>Néphropathie parenchymateuse</td>
+<td>3-5 %</td>
+<td>Créatinine, RAC, échographie rénale</td>
+</tr>
+<tr>
+<td>Phéochromocytome</td>
+<td>1-2 %</td>
+<td>Métanéphrines libres plasmatiques</td>
+</tr>
+<tr>
+<td>Cushing</td>
+<td>&lt; 1 %</td>
+<td>Cortisol libre urinaire 24h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1822-traitement-de-lhta-resistante-vraie">18.2.2 Traitement de l'HTA résistante vraie</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023 et étude PATHWAY-2) :</p>
+<blockquote>
+<p><strong>4e antihypertenseur de choix : spironolactone 25-50 mg/j</strong><br />
+- Efficacité démontrée par PATHWAY-2 (2015) : réduction supplémentaire de PAS de 8,7 mmHg vs placebo<br />
+- Supérieure à la doxazosine et au bisoprolol en 4e ligne<br />
+- Surveillance : kaliémie et créatinine à J7-J14 puis tous les 3 mois<br />
+- Contre-indication : DFG &lt; 30, K+ &gt; 5 mmol/L<br />
+- Alternative : éplérénone 50-100 mg/j (moins de gynécomastie)</p>
+</blockquote>
+<p><strong>Si échec de la spironolactone</strong> :<br />
+- Bisoprolol 5-10 mg si FC &gt; 70 bpm<br />
+- Doxazosine LP 4-8 mg<br />
+- Clonidine (patch ou oral)<br />
+- Minoxidil (HTA sévère réfractaire)<br />
+- Discussion de dénervation rénale</p>
+<hr />
+<h1 id="module-19-urgences-et-crises-hypertensives">MODULE 19 — URGENCES ET CRISES HYPERTENSIVES</h1>
+<h2 id="191-definitions">19.1 Définitions</h2>
+<h3 id="1911-terminologie">19.1.1 Terminologie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA19-S01-001 — TABLEAU : classification des crises hypertensives — urgence vs poussée]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Poussée hypertensive</strong> (urgency)</td>
+<td>PAS ≥ 180 et/ou PAD ≥ 110 mmHg, <strong>SANS</strong> atteinte d'organe cible aiguë</td>
+<td>Traitement oral, pas d'hospitalisation systématique</td>
+</tr>
+<tr>
+<td><strong>Urgence hypertensive</strong> (emergency)</td>
+<td>PAS ≥ 180 et/ou PAD ≥ 110 mmHg, <strong>AVEC</strong> atteinte d'organe cible aiguë</td>
+<td>Hospitalisation USIC/réa, traitement IV</td>
+</tr>
+</tbody>
+</table>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>La distinction entre poussée et urgence hypertensive est CRITIQUE. C'est l'atteinte d'organe cible qui définit l'urgence, PAS le niveau de PA seul. Un patient avec PA à 200/120 mmHg sans symptôme ni signe de retentissement aigu est une poussée, pas une urgence.</p>
+</blockquote>
+<h3 id="1912-atteintes-dorgane-cible-aigues">19.1.2 Atteintes d'organe cible aiguës</h3>
+<p><strong>Atteintes définissant l'urgence hypertensive</strong> :<br />
+- <strong>Neurologiques</strong> : encéphalopathie hypertensive, AVC ischémique ou hémorragique, hémorragie sous-arachnoïdienne<br />
+- <strong>Cardiaques</strong> : syndrome coronarien aigu, insuffisance cardiaque aiguë (OAP), dissection aortique<br />
+- <strong>Rénales</strong> : insuffisance rénale aiguë, hématurie macroscopique<br />
+- <strong>Ophtalmologiques</strong> : rétinopathie hypertensive stade III-IV (hémorragies, exsudats, œdème papillaire)<br />
+- <strong>Vasculaires</strong> : dissection aortique, éclampsie<br />
+- <strong>Microangiopathie</strong> : anémie hémolytique, thrombopénie (syndrome HUS/TTP-like)</p>
+<h2 id="192-poussee-hypertensive">19.2 Poussée hypertensive</h2>
+<h3 id="1921-prise-en-charge">19.2.1 Prise en charge</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA19-S02-001 — ALGORITHME : prise en charge de la poussée hypertensive au cabinet]</p>
+</blockquote>
+<p><strong>Principes</strong> :<br />
+1. <strong>Repos au calme</strong> pendant 15-30 minutes, puis recontrôle de la PA<br />
+2. Rechercher un <strong>facteur déclenchant</strong> : douleur, anxiété, rétention urinaire, arrêt du traitement<br />
+3. <strong>Traitement oral</strong> : reprendre ou ajuster le traitement antihypertenseur<br />
+4. <strong>Pas de traitement IV</strong>, pas de sublingual rapide (nifédipine sublinguale PROSCRITE)<br />
+5. Objectif : <strong>réduction progressive</strong> de la PA sur 24-48h</p>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>La nifédipine sublinguale (Adalate® sublingual) est FORMELLEMENT CONTRE-INDIQUÉE dans la poussée hypertensive. Elle provoque une chute tensionnelle brutale et imprévisible, responsable d'AVC ischémiques et d'IDM.</p>
+</blockquote>
+<h2 id="193-urgence-hypertensive">19.3 Urgence hypertensive</h2>
+<h3 id="1931-principes-de-traitement">19.3.1 Principes de traitement</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA19-S03-001 — ALGORITHME : prise en charge de l'urgence hypertensive en USIC]</p>
+</blockquote>
+<p><strong>Règles de réduction tensionnelle</strong> (adapté de ESC/ESH 2023) :<br />
+- <strong>Première heure</strong> : réduction de <strong>25 % maximum</strong> de la PAM<br />
+- <strong>2-6 heures</strong> : PA cible 160/100-110 mmHg<br />
+- <strong>24-48 heures</strong> : normalisation progressive vers la cible<br />
+- <strong>Exception</strong> : dissection aortique → PAS &lt; 120 mmHg et FC &lt; 60 bpm en &lt; 20 minutes</p>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p>Une réduction trop rapide et trop importante de la PA dans l'urgence hypertensive est DANGEREUSE. Elle peut provoquer une ischémie cérébrale (zone de pénombre), coronaire ou rénale par dépassement de la limite inférieure d'autorégulation.</p>
+</blockquote>
+<h3 id="1932-agents-intraveineux">19.3.2 Agents intraveineux</h3>
+<blockquote>
+<p>[MEDIA: 💊 MHTA19-S03-002 — TABLEAU : antihypertenseurs IV dans l'urgence hypertensive — choix selon l'organe cible atteint]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Classe</th>
+<th>Début d'action</th>
+<th>Durée</th>
+<th>Indication privilégiée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nicardipine</strong> (Loxen®)</td>
+<td>ICC dihydropyridine</td>
+<td>5-15 min</td>
+<td>30-40 min</td>
+<td>Universel (sauf dissection)</td>
+</tr>
+<tr>
+<td><strong>Labétalol</strong> (Trandate®)</td>
+<td>α+β-bloquant</td>
+<td>5-10 min</td>
+<td>3-6 h</td>
+<td>Dissection, pré-éclampsie, AVC</td>
+</tr>
+<tr>
+<td><strong>Urapidil</strong> (Eupressyl®)</td>
+<td>α1-bloquant + 5-HT1A</td>
+<td>5-10 min</td>
+<td>4-6 h</td>
+<td>Universel, peu de tachycardie</td>
+</tr>
+<tr>
+<td><strong>Nitroprussiate</strong></td>
+<td>Vasodilatateur NO</td>
+<td>Immédiat</td>
+<td>1-2 min</td>
+<td>IC aiguë (monitoring strict)</td>
+</tr>
+<tr>
+<td><strong>Nitroglycérine</strong></td>
+<td>Veinodilatateur</td>
+<td>2-5 min</td>
+<td>5-10 min</td>
+<td>SCA, OAP</td>
+</tr>
+<tr>
+<td><strong>Esmolol</strong></td>
+<td>β1-bloquant</td>
+<td>1-2 min</td>
+<td>10-20 min</td>
+<td>Dissection, tachyarythmie</td>
+</tr>
+<tr>
+<td><strong>Furosémide</strong></td>
+<td>Diurétique de l'anse</td>
+<td>5-15 min</td>
+<td>2 h</td>
+<td>OAP (diurèse, pas vasodilatation)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1933-choix-therapeutique-selon-le-tableau-clinique">19.3.3 Choix thérapeutique selon le tableau clinique</h3>
+<table>
+<thead>
+<tr>
+<th>Situation clinique</th>
+<th>Traitement de 1ère intention</th>
+<th>Précautions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encéphalopathie</td>
+<td>Nicardipine ou labétalol ou urapidil</td>
+<td>Réduction lente (25 % PAM/h)</td>
+</tr>
+<tr>
+<td>AVC ischémique</td>
+<td>Nicardipine ou urapidil</td>
+<td>PAS &lt; 185 si thrombolyse ; sinon &lt; 220</td>
+</tr>
+<tr>
+<td>AVC hémorragique</td>
+<td>Nicardipine</td>
+<td>Cible PAS 130-140 mmHg</td>
+</tr>
+<tr>
+<td>Dissection aortique</td>
+<td>Esmolol + nicardipine</td>
+<td>PAS &lt; 120, FC &lt; 60, en &lt; 20 min</td>
+</tr>
+<tr>
+<td>SCA</td>
+<td>Nitroglycérine ± labétalol</td>
+<td>Éviter les vasodilatateurs artériels purs</td>
+</tr>
+<tr>
+<td>OAP</td>
+<td>Nitroglycérine + furosémide</td>
+<td>VNI si besoin</td>
+</tr>
+<tr>
+<td>Pré-éclampsie/éclampsie</td>
+<td>Labétalol ou nicardipine + MgSO4</td>
+<td>CI : IEC, ARA2, nitroprussiate</td>
+</tr>
+<tr>
+<td>Phéochromocytome</td>
+<td>Phentolamine ± nicardipine</td>
+<td>JAMAIS de β-bloquant seul (crise adrénergique)</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > Dans le phéochromocytome, l'administration d'un β-bloquant SEUL (sans α-bloquant préalable) est formellement contre-indiquée : le blocage β2 vasculaire laisse l'effet α libre, provoquant une vasoconstriction paradoxale et une crise hypertensive potentiellement mortelle.</div>
+
+<hr />
+<h2 id="194-hta-maligne">19.4 HTA maligne</h2>
+<h3 id="1941-definition-et-caracteristiques">19.4.1 Définition et caractéristiques</h3>
+<p><strong>HTA maligne</strong> (adapté de van den Born et al., J Hypertension 2019) :<br />
+- PA sévèrement élevée (habituellement PAS &gt; 200 et/ou PAD &gt; 120 mmHg)<br />
+- <strong>Rétinopathie hypertensive stade III-IV</strong> (critère obligatoire)<br />
+- <strong>Microangiopathie thrombotique</strong> : anémie hémolytique (schizocytes), thrombopénie, élévation LDH<br />
+- Insuffisance rénale rapidement progressive<br />
+- Encéphalopathie possible</p>
+<p><strong>Physiopathologie</strong> :<br />
+- Dépassement de l'autorégulation vasculaire<br />
+- Nécrose fibrinoïde artériolaire<br />
+- CIVD localisée<br />
+- Cercle vicieux : ischémie rénale → activation SRAA → aggravation HTA</p>
+<h3 id="1942-pronostic">19.4.2 Pronostic</h3>
+<ul>
+<li>Mortalité à 1 an si non traitée : <strong>80 %</strong></li>
+<li>Mortalité à 5 ans sous traitement moderne : <strong>10-15 %</strong></li>
+<li>Évolution vers l'IRC terminale : 20-30 % malgré le traitement</li>
+</ul>
+<hr />
+<h2 id="195-quiz-modules-16-19">19.5 Quiz Modules 16-19</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> Quelle est la définition de l'HTA blouse blanche ?<br />
+- A) PA élevée partout<br />
+- B) PA élevée au cabinet, normale en ambulatoire<br />
+- C) PA normale au cabinet, élevée en ambulatoire<br />
+- D) PA variable au cabinet</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — PA ≥ 140/90 au cabinet et &lt; 135/85 en ambulatoire (MAPA ou automesure).</p>
+</blockquote>
+<p><strong>Q2.</strong> Quel est le critère qui distingue l'urgence de la poussée hypertensive ?<br />
+- A) Le niveau de PA<br />
+- B) L'âge du patient<br />
+- C) L'atteinte d'organe cible aiguë<br />
+- D) La durée de l'élévation tensionnelle</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — C'est l'atteinte aiguë d'un organe cible (cerveau, cœur, rein, rétine, aorte) qui définit l'urgence, indépendamment du niveau de PA.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Quel est le 4e antihypertenseur de choix dans l'HTA résistante ?<br />
+- A) Bisoprolol<br />
+- B) Spironolactone<br />
+- C) Doxazosine<br />
+- D) Clonidine</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La spironolactone 25-50 mg/j est le 4e antihypertenseur de référence (étude PATHWAY-2, 2015), supérieure au bisoprolol et à la doxazosine.</p>
+</blockquote>
+<p><strong>Q4.</strong> Quelle réduction de PA est recommandée dans la première heure d'une urgence hypertensive ?<br />
+- A) 10 % de la PAM<br />
+- B) 25 % de la PAM maximum<br />
+- C) 50 % de la PA<br />
+- D) Normalisation immédiate</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Maximum 25 % de la PAM en 1 heure. Une réduction trop rapide est dangereuse (ischémie par dépassement de l'autorégulation).</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q5.</strong> La première cause de pseudo-résistance dans l'HTA est :<br />
+- A) L'effet blouse blanche<br />
+- B) La non-observance<br />
+- C) L'apport sodé excessif<br />
+- D) Les doses sous-optimales</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La non-observance est retrouvée chez 25-50 % des patients « résistants ». Les dosages plasmatiques des antihypertenseurs permettent de la documenter objectivement.</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q6.</strong> Dans la dissection aortique, quels sont les objectifs tensionnels à atteindre en &lt; 20 minutes ?<br />
+- A) PAS &lt; 140, FC &lt; 80<br />
+- B) PAS &lt; 120, FC &lt; 60<br />
+- C) PAM &lt; 80<br />
+- D) PAS &lt; 160, FC &lt; 70</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — PAS &lt; 120 mmHg et FC &lt; 60 bpm en moins de 20 minutes (esmolol + nicardipine), pour réduire la contrainte pariétale (dP/dt) et limiter l'extension de la dissection.</p>
+</blockquote>
+<p><strong>Q7.</strong> Pourquoi la nifédipine sublinguale est-elle proscrite dans les crises hypertensives ?<br />
+- A) Elle est inefficace<br />
+- B) Elle provoque une chute tensionnelle brutale et imprévisible<br />
+- C) Elle est contre-indiquée en cas d'HTA<br />
+- D) Elle augmente la PA</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Absorption erratique, chute PA imprévisible (jusqu'à -80 mmHg), responsable d'AVC ischémiques et IDM par hypoperfusion brutale.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

@@ -1,0 +1,1309 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-fiv-et-amp">CAHIER DES CHARGES — FORMATION FIV ET AMP</h1>
+<h2 id="partie-2-fondamentaux-de-la-reproduction-modules-4-7">Partie 2 — Fondamentaux de la reproduction (Modules 4-7)</h2>
+<p><strong>Date</strong> : 16 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Fécondation In Vitro et Assistance Médicale à la Procréation<br />
+<strong>Plateforme</strong> : VERTEX© / ReproSim©</p>
+<hr />
+<h1 id="module-4-anatomie-de-lappareil-reproducteur-feminin-de-lovaire-a-luterus-anatomie-chirurgicale-pour-lamp">MODULE 4 : ANATOMIE DE L'APPAREIL REPRODUCTEUR FÉMININ — DE L'OVAIRE À L'UTÉRUS, ANATOMIE CHIRURGICALE POUR L'AMP</h1>
+<p><strong>Partie</strong> : II — Fondamentaux de la reproduction<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Connaissances de base en anatomie pelvienne<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🔶 ÉCHOGRAPHISTE</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Lors d'une ponction ovocytaire échoguidée, vous repérez l'ovaire gauche en position haute, latérale, collé contre les vaisseaux iliaques. La trajectoire de ponction habituelle est dangereuse — risque de ponction vasculaire. Votre connaissance des rapports anatomiques de l'ovaire avec les structures vasculaires pelviennes va déterminer si vous pouvez ponctionner cet ovaire en sécurité ou si vous devez renoncer. *L'anatomie n'est pas un exercice académique : en AMP, elle conditionne directement la faisabilité et la sécurité des gestes techniques.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'anatomie macroscopique et la vascularisation de l'ovaire, incluant les rapports chirurgicaux essentiels pour la ponction échoguidée</li>
+<li><strong>Expliquer</strong> l'anatomie de la trompe utérine (segments, muqueuse ciliée) et son rôle dans le transport ovocytaire et la fécondation naturelle — et pourquoi son obstruction est l'indication princeps de la FIV</li>
+<li><strong>Détailler</strong> l'anatomie de l'utérus (corps, isthme, col, endomètre) et ses variations cycliques en lien avec l'échographie de monitorage et le transfert embryonnaire</li>
+<li><strong>Reconnaître</strong> l'anatomie échographique normale de l'appareil génital féminin et les principales variantes/pathologies impactant l'AMP</li>
+<li><strong>Identifier</strong> les dangers anatomiques spécifiques lors de la ponction ovocytaire (vaisseaux iliaques, uretère, rectum, vessie)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-41-lovaire-anatomie-macroscopique-vascularisation-et-rapports-chirurgicaux">Section 4.1 — L'ovaire : anatomie macroscopique, vascularisation et rapports chirurgicaux</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi la position anatomique de l'ovaire est-elle si variable d'une patiente à l'autre, et en quoi cette variabilité complique-t-elle la ponction ovocytaire échoguidée ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter l'anatomie ovarienne sous l'angle spécifique de l'AMP — chaque élément anatomique doit être relié à sa pertinence pour la ponction, l'échographie ou la stimulation :</p>
+<ul>
+<li>
+<p><strong>Morphologie et position</strong> : ovaire organe pair, en forme d'amande, dimensions normales 3 × 2 × 1 cm chez la femme en période d'activité génitale (volume ~3-8 mL), surface lisse chez la jeune femme puis progressivement irrégulière avec l'âge (cicatrices d'ovulation — stigmas). Position dans la <strong>fossette ovarienne</strong> (fossette de Krause) — paroi pelvienne latérale, entre les vaisseaux iliaques en arrière et le ligament large. La position est très variable : l'ovaire est mobile, suspendu par le ligament infundibulo-pelvien (ligament suspenseur de l'ovaire, contenant les vaisseaux ovariens) en haut et le ligament propre de l'ovaire (ligament utéro-ovarien) en bas. Après chirurgie pelvienne, grossesse ou endométriose, l'ovaire peut être adhérent en position haute latérale (contre les vaisseaux iliaques), médiane (derrière l'utérus — cul-de-sac de Douglas), ou prolabé dans le cul-de-sac vaginal postérieur.</p>
+</li>
+<li>
+<p><strong>Vascularisation artérielle</strong> : artère ovarienne (branche directe de l'aorte abdominale, naissant sous les artères rénales, L2-L3), descendant dans le rétropéritoine, croisant l'uretère en avant, pénétrant le ligament infundibulo-pelvien pour atteindre le hile ovarien. <strong>Anastomose utéro-ovarienne</strong> : l'artère ovarienne s'anastomose avec la branche tubaire de l'artère utérine dans le mésovarium — cette anastomose assure une double vascularisation de l'ovaire. Pertinence AMP : la connaissance de cette vascularisation est essentielle pour la ponction échoguidée (repérage pré-ponction par Doppler des vaisseaux iliaques et de l'artère ovarienne au hile).</p>
+</li>
+<li>
+<p><strong>Drainage veineux</strong> : plexus pampiniforme ovarien → veine ovarienne droite (→ VCI) et veine ovarienne gauche (→ veine rénale gauche). Pertinence : les varicocèles pelviennes (dilatation du plexus pampiniforme) sont parfois visibles en échographie et peuvent être confondues avec des follicules en monitorage.</p>
+</li>
+<li>
+<p><strong>Innervation</strong> : plexus ovarien (sympathique T10-L1, parasympathique S2-S4). Pertinence : la douleur lors de la ponction ovocytaire est induite par la distension de la capsule ovarienne et la pénétration de l'aiguille — le bloc paracervical (anesthésie locale) bloque les fibres S2-S4 mais pas complètement les fibres T10-L1, d'où la nécessité d'une sédation complémentaire.</p>
+</li>
+<li>
+<p><strong>Rapports anatomiques dangereux pour la ponction</strong> : le module doit détailler les structures à risque lors de la ponction transvaginale échoguidée :</p>
+</li>
+<li><strong>Vaisseaux iliaques</strong> (artère iliaque interne/externe, veine iliaque) — en arrière et latéralement, à quelques millimètres de l'ovaire en fossette ovarienne. Risque : hémorragie rétropéritonéale potentiellement létale</li>
+<li><strong>Uretère</strong> — croise le ligament infundibulo-pelvien, passe sous l'artère utérine au niveau du paramètre (« l'eau coule sous le pont »). Risque théorique : lésion urétérale (exceptionnelle)</li>
+<li><strong>Rectum/sigmoïde</strong> — en arrière de l'ovaire dans le cul-de-sac de Douglas. Risque : perforation intestinale (exceptionnelle, &lt;0,01%)</li>
+<li><strong>Vessie</strong> — en avant, normalement vidée avant la ponction. Risque quasi nul si vessie vide</li>
+</ul>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Danger</strong> : Repérage vasculaire pré-ponction**
+> Avant toute ponction ovocytaire échoguidée, un repérage Doppler des vaisseaux iliaques est **obligatoire**. La trajectoire de l'aiguille de ponction (du fond vaginal vers l'ovaire) doit éviter les vaisseaux iliaques. Un ovaire collé contre les vaisseaux iliaques, dont la ponction nécessiterait de traverser un vaisseau major, doit être **considéré comme inaccessible** — ne jamais ponctionner à travers un vaisseau, même de petit calibre, identifié au Doppler.</div>
+
+<blockquote>
+<p>🏥 <strong>Pertinence clinique — L'ovaire post-chirurgical</strong><br />
+Après kystectomie pour endométriome, chirurgie pour torsion d'annexe ou grossesse extra-utérine, l'ovaire est souvent adhérent dans une position inhabituelle (haut et latéral contre la paroi pelvienne, ou médian derrière l'utérus). Ces adhérences modifient les rapports anatomiques normaux et rendent la ponction plus complexe et risquée. L'échographie pré-ponction doit systématiquement évaluer la position ovarienne et planifier la trajectoire de l'aiguille — les patientes ayant un antécédent chirurgical pelvien doivent être identifiées en consultation de pré-FIV.</p>
+<p>✏️ <strong>Micro-exercice</strong> : Sur un schéma en coupe sagittale du pelvis, identifiez :<br />
+1. La position de l'ovaire dans la fossette ovarienne<br />
+2. Les vaisseaux iliaques (artère et veine) en arrière<br />
+3. Le trajet de l'uretère par rapport au ligament infundibulo-pelvien<br />
+4. La trajectoire théorique de l'aiguille de ponction depuis le cul-de-sac vaginal postérieur<br />
+→ <em>Quelle structure est la plus à risque si la trajectoire est trop latérale et profonde ?</em><br />
+→ <em>L'artère iliaque interne ou externe — hémorragie rétropéritonéale</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV04-S01-001</td>
+<td>🖼️ ILLUSTRATION</td>
+<td>Anatomie macroscopique de l'ovaire — vue antérieure, ligaments, vascularisation, rapports</td>
+</tr>
+<tr>
+<td>MFIV04-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Coupe sagittale du pelvis féminin : ovaire, vaisseaux iliaques, uretère, rectum — trajectoire de ponction</td>
+</tr>
+<tr>
+<td>MFIV04-S01-003</td>
+<td>📐 SCHÉMA</td>
+<td>Vascularisation ovarienne : artère ovarienne, artère utérine, anastomose, plexus pampiniforme</td>
+</tr>
+<tr>
+<td>MFIV04-S01-004</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Pelvis féminin en 3D : ovaire mobile, vascularisation, repérage des dangers (mode « trajectoire de ponction »)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-42-la-trompe-uterine-anatomie-fonctionnelle-et-pertinence-pour-lamp">Section 4.2 — La trompe utérine : anatomie fonctionnelle et pertinence pour l'AMP</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La trompe utérine est le lieu naturel de la fécondation. Pourquoi la FIV a-t-elle été inventée précisément pour contourner la trompe, et en quoi un hydrosalpinx non traité (trompe dilatée remplie de liquide) réduit-il les chances de succès de la FIV ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Anatomie descriptive</strong> : trompe de Fallope (trompe utérine), conduit musculo-membraneux de 10-12 cm, 4 segments de dedans en dehors :</li>
+<li><strong>Partie interstitielle</strong> (intramurale) : traverse le myomètre, lumière étroite ~1 mm</li>
+<li><strong>Isthme</strong> : segment court et étroit (3-4 cm, lumière 1-2 mm), paroi musculaire épaisse</li>
+<li><strong>Ampoule</strong> : segment long et dilaté (5-8 cm, lumière 5-8 mm) — <strong>lieu de la fécondation naturelle</strong> (tiers externe de l'ampoule)</li>
+<li>
+<p><strong>Pavillon (infundibulum)</strong> : extrémité évasée bordée de franges (fimbriae) — la frange ovarique (frange de Richard) est attachée à l'ovaire et guide la captation de l'ovocyte</p>
+</li>
+<li>
+<p><strong>Muqueuse tubaire</strong> : le module doit détailler l'histologie fonctionnelle — épithélium cylindrique avec deux types cellulaires :</p>
+</li>
+<li><strong>Cellules ciliées</strong> : battement ciliaire dirigé vers l'utérus (10-12 battements/sec), assurant le transport de l'ovocyte et de l'embryon</li>
+<li>
+<p><strong>Cellules sécrétoires</strong> : produisent le fluide tubaire (nutriments — glucose, pyruvate, lactate, acides aminés — facteurs de croissance, glycoprotéines) indispensable à la capacitation spermatique, la fécondation et le développement embryonnaire précoce</p>
+</li>
+<li>
+<p><strong>Rôle fonctionnel dans la reproduction naturelle</strong> : le module doit expliquer la triple fonction tubaire — captation de l'ovocyte (franges du pavillon + courant de liquide péritonéal + contractions), transport bidirectionnel (spermatozoïdes vers l'ampoule, ovocyte/embryon vers l'utérus), et environnement de fécondation/développement précoce. La FIV remplace ces trois fonctions par des interventions techniques : la ponction échoguidée (au lieu de la captation), le laboratoire (au lieu de l'ampoule), et le transfert embryonnaire (au lieu du transport tubaire).</p>
+</li>
+<li>
+<p><strong>Pathologie tubaire et AMP</strong> : l'obstruction tubaire bilatérale (salpingite, endométriose tubaire, salpingectomie) fut l'<strong>indication princeps</strong> de la FIV (cas de Lesley Brown). L'<strong>hydrosalpinx</strong> (trompe dilatée, remplie de liquide inflammatoire) mérite une attention particulière : l'étude princeps de Strandell et al. (<em>NEJM</em>, 1999) démontra que l'hydrosalpinx réduit les taux d'implantation en FIV de ~50% — le liquide tubaire toxique reflue dans la cavité utérine et altère l'endomètre/l'embryon. Recommandation ESHRE : salpingectomie ou occlusion tubaire proximale avant FIV en cas d'hydrosalpinx visible à l'échographie.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Astuce clinique — Hydrosalpinx et FIV</strong> : <em>« Hydrosalpinx visible = salpingectomie avant FIV »</em> — règle simplifiée mais efficace. Si l'hydrosalpinx est visible à l'échographie (image tubulaire anéchogène latéro-utérine), le traitement préalable (salpingectomie laparoscopique ou occlusion tubaire proximale par clips) améliore significativement les taux de grossesse en FIV (OR 1,75, Cochrane Johnson et al., 2010).</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV04-S02-001</td>
+<td>🖼️ ILLUSTRATION</td>
+<td>Anatomie de la trompe utérine : 4 segments, muqueuse ciliée, lieu de fécondation</td>
+</tr>
+<tr>
+<td>MFIV04-S02-002</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Coupe histologique de la muqueuse tubaire — cellules ciliées et sécrétoires</td>
+</tr>
+<tr>
+<td>MFIV04-S02-003</td>
+<td>📐 SCHÉMA</td>
+<td>Hydrosalpinx : mécanisme de réduction de la fertilité (reflux de liquide toxique → altération endomètre/embryon)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-43-luterus-anatomie-du-corps-uterin-de-lendometre-et-du-col-implications-pour-la-fiv">Section 4.3 — L'utérus : anatomie du corps utérin, de l'endomètre et du col — implications pour la FIV</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le transfert embryonnaire est le dernier geste de la chaîne FIV. Un cathéter souple doit traverser le canal cervical et déposer l'embryon dans la cavité utérine, à 1-2 cm du fond. En quoi la connaissance de l'anatomie utérine (anteversion, rétroversion, col sténosé, malformation) conditionne-t-elle le succès de ce geste ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Corps utérin</strong> : organe musculaire piriforme (longueur totale ~7-8 cm, dont corps ~5 cm), trois couches — séreuse (péritoine), myomètre (muscle lisse, 3 couches : longitudinale externe, plexiforme médiane, circulaire interne), endomètre (muqueuse glandulaire hormonodépendante). Position : normalement en <strong>antéversion-antéflexion</strong> (angle de 120° entre col et vagin, angle de 170° entre corps et col). Variantes : utérus rétroversé (20% des femmes), utérus dextroversé ou lévoversé. L'orientation utérine modifie la technique de transfert embryonnaire (angle du cathéter, pression sur le fond vaginal antérieur ou postérieur).</p>
+</li>
+<li>
+<p><strong>Endomètre — anatomie cyclique</strong> : le module doit décrire les variations morphologiques de l'endomètre au cours du cycle menstruel en lien avec l'échographie de monitorage :</p>
+</li>
+<li><strong>Phase proliférative</strong> (phase folliculaire) : endomètre croissant sous l'effet de l'estradiol, aspect échographique en <strong>triple ligne</strong> (3 lignes hyperéchogènes — cavité + interface de la zone basale, endomètre hypoéchogène entre les lignes). Épaisseur croissante : 4-6 mm en début de phase → 8-14 mm en fin de phase</li>
+<li><strong>Phase sécrétoire</strong> (phase lutéale) : sous l'effet de la progestérone, transformation glandulaire, aspect échographique <strong>hyperéchogène homogène</strong> (perte du triple ligne). Épaisseur maximale 10-16 mm</li>
+<li>
+<p><strong>Pertinence AMP</strong> : un endomètre ≥7 mm en triple ligne au moment du déclenchement est associé à de meilleurs taux d'implantation. Un endomètre &lt;7 mm est un facteur de mauvais pronostic (Kasius et al., <em>Human Reproduction Update</em>, 2014)</p>
+</li>
+<li>
+<p><strong>Cavité utérine</strong> : normalement virtuelle (parois antérieure et postérieure accolées), triangulaire vue en hystéroscopie (fond utérin plat ou discrètement convexe, deux ostia tubaires aux cornes). Pathologies intracavitaires impactant la FIV : polype endométrial (prévalence 10-30% en AMP, résection recommandée avant FIV si ≥1 cm), synéchies (adhérences intracavitaires — syndrome d'Asherman, réduction de la surface d'implantation), fibrome sous-muqueux (FIGO type 0, 1, 2 — impact négatif sur l'implantation, myomectomie hystéroscopique recommandée avant transfert).</p>
+</li>
+<li>
+<p><strong>Col utérin</strong> : le module doit décrire l'anatomie du canal endocervical (longueur 2-3 cm, muqueuse glandulaire produisant la glaire cervicale, orifice interne et orifice externe). En AMP, le col est le passage obligé du cathéter de transfert. Difficultés : col sténosé (post-conisation, post-curetage, constitutionnel), col dévié (utérus rétroversé, antéfléchi), canal tortueux. Solutions : dilatation cervicale préalable (bougie de Hegar, quelques jours avant le transfert), mandrin rigide avant le cathéter souple, transfert sous échoguidage direct.</p>
+</li>
+<li>
+<p><strong>Malformations utérines</strong> : le module doit présenter les principales malformations müllériennes et leur impact sur l'AMP, classées selon la classification ESHRE/ESGE (2013) :</p>
+</li>
+<li><strong>Utérus cloisonné</strong> (U2) : le plus fréquent, cloison partielle ou complète, associé à des fausses couches à répétition — résection hystéroscopique avant FIV (bénéfice discuté mais pratiqué)</li>
+<li><strong>Utérus bicorne</strong> (U3) : 2 hémi-cavités, myomètre entre les 2, pas de traitement chirurgical standard</li>
+<li><strong>Utérus unicorne</strong> (U4) : un seul hémi-utérus, réserve ovarienne potentiellement réduite si corne rudimentaire</li>
+<li><strong>Utérus didelphe</strong> (double utérus, U3b) : rare, 2 hémi-utérus avec 2 cols</li>
+<li>Le diagnostic repose sur l'<strong>échographie 3D</strong> (gold standard non invasif) et l'IRM (cas complexes)</li>
+</ul>
+<blockquote>
+<p>✏️ <strong>Micro-exercice</strong> : Vous réalisez une échographie pré-FIV. L'endomètre mesure 5 mm à J12 avec un aspect homogène (pas de triple ligne). Que concluez-vous et quelle décision clinique prenez-vous ?<br />
+→ <em>Un endomètre &lt;7 mm à J12 est un facteur de mauvais pronostic pour l'implantation. L'absence de triple ligne suggère une réponse endométriale insuffisante à l'estradiol (ou une transformation sécrétoire prématurée si la progestérone est élevée). Options : augmenter la dose d'estradiol, reporter le transfert (freeze-all et TEC dans un cycle mieux préparé), envisager un bilan endométrial (hystéroscopie, ERA).</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV04-S03-001</td>
+<td>🖼️ ILLUSTRATION</td>
+<td>Anatomie de l'utérus : corps, isthme, col, endomètre, myomètre — coupe sagittale et frontale</td>
+</tr>
+<tr>
+<td>MFIV04-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Variations cycliques de l'endomètre : aspect échographique en phase proliférative (triple ligne) vs sécrétoire (hyperéchogène)</td>
+</tr>
+<tr>
+<td>MFIV04-S03-003</td>
+<td>📐 SCHÉMA</td>
+<td>Malformations utérines : classification ESHRE/ESGE — utérus normal, cloisonné, bicorne, unicorne, didelphe</td>
+</tr>
+<tr>
+<td>MFIV04-S03-004</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Utérus en 3D : cathéter de transfert traversant le canal cervical, dépôt embryonnaire échoguidé</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-44-anatomie-echographique-pelvienne-normale-ce-que-le-praticien-amp-doit-voir">Section 4.4 — Anatomie échographique pelvienne normale : ce que le praticien AMP doit voir</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Échographie transvaginale systématique en AMP</strong> : le module doit décrire la technique standardisée d'exploration échographique pelvienne en contexte de FIV — sonde endovaginale haute fréquence (5-9 MHz), exploration systématique des deux ovaires (position, taille, CFA — compte folliculaire antral), de l'utérus (taille, orientation, endomètre, myomètre, pathologie intracavitaire), du cul-de-sac de Douglas (liquide libre, endométriose profonde), et des trompes (normalement non visibles — si visible, suspecter un hydrosalpinx).</p>
+</li>
+<li>
+<p><strong>Images de référence</strong> : le module doit fournir les images échographiques normales commentées — ovaire normal avec follicules antraux (2-9 mm), utérus en coupe sagittale et transversale, endomètre en triple ligne, col utérin, Doppler des artères utérines et ovariennes.</p>
+</li>
+<li>
+<p><strong>Pièges échographiques en AMP</strong> : veine iliaque mimant un follicule (Doppler !), endométriome mimant un corps jaune, polype endométrial non vu en période proliférative (SonoHSG nécessaire), adénomyose méconnue.</p>
+</li>
+</ul>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV04-S04-001</td>
+<td>📐 SCHÉMA ÉCHO</td>
+<td>Atlas échographique : ovaire normal (CFA), utérus sagittal, endomètre triple ligne, col</td>
+</tr>
+<tr>
+<td>MFIV04-S04-002</td>
+<td>📐 SCHÉMA ÉCHO</td>
+<td>Pièges échographiques en AMP : veine iliaque vs follicule, endométriome vs corps jaune</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-4">Points clés — Module 4</h2>
+<ol>
+<li>L'ovaire est un organe mobile dont la position est <strong>variable</strong> — l'échographie pré-ponction doit systématiquement évaluer les rapports avec les vaisseaux iliaques</li>
+<li>La vascularisation ovarienne est assurée par l'artère ovarienne (branche de l'aorte) et l'anastomose utéro-ovarienne — repérage Doppler <strong>obligatoire</strong> avant ponction</li>
+<li>La trompe utérine est le lieu naturel de la fécondation — son obstruction est l'indication princeps de la FIV</li>
+<li>L'<strong>hydrosalpinx</strong> réduit les chances de FIV de ~50% — salpingectomie avant FIV recommandée</li>
+<li>L'endomètre ≥7 mm en triple ligne est un critère de réceptivité favorable au moment du transfert</li>
+<li>Les <strong>malformations utérines</strong> (utérus cloisonné principalement) doivent être dépistées par échographie 3D avant FIV</li>
+<li>Le passage du cathéter de transfert dépend de l'orientation utérine (antéflexion/rétroversion) et de la perméabilité cervicale</li>
+</ol>
+<h2 id="auto-evaluation-module-4">Auto-évaluation — Module 4</h2>
+<h3 id="qcm-8-questions">QCM (8 questions)</h3>
+<p><strong>QCM 1</strong> 🥉 : Quel est le segment de la trompe où se produit la fécondation naturelle ?<br />
+- A) La partie interstitielle<br />
+- B) L'isthme<br />
+- C) L'ampoule (tiers externe) ✅<br />
+- D) Le pavillon</p>
+<p><strong>QCM 2</strong> 🥉 : Quel est l'aspect échographique de l'endomètre optimal pour le transfert embryonnaire ?<br />
+- A) Hyperéchogène homogène, &lt;5 mm<br />
+- B) Triple ligne, ≥7 mm ✅<br />
+- C) Hypoéchogène, &gt;15 mm<br />
+- D) Hétérogène avec zones liquidiennes</p>
+<p><strong>QCM 3</strong> 🥈 : Quelle structure constitue le principal danger anatomique lors de la ponction ovocytaire transvaginale échoguidée ?<br />
+- A) La vessie<br />
+- B) Le rectum<br />
+- C) Les vaisseaux iliaques ✅<br />
+- D) Le ligament rond</p>
+<p><strong>QCM 4</strong> 🥈 : Pourquoi un hydrosalpinx réduit-il les chances de succès de la FIV ?<br />
+- A) Il comprime l'ovaire<br />
+- B) Son liquide inflammatoire reflue dans la cavité utérine et altère l'endomètre et l'embryon ✅<br />
+- C) Il provoque une infection chronique des ovaires<br />
+- D) Il empêche la stimulation ovarienne</p>
+<p><strong>QCM 5</strong> 🥇 : Quelle malformation utérine est la plus fréquente et la plus associée aux fausses couches à répétition ?<br />
+- A) L'utérus bicorne<br />
+- B) L'utérus cloisonné ✅<br />
+- C) L'utérus unicorne<br />
+- D) L'utérus didelphe</p>
+<p><strong>QCM 6</strong> 🥇 : D'où provient l'artère ovarienne ?<br />
+- A) De l'artère iliaque interne<br />
+- B) De l'artère utérine<br />
+- C) De l'aorte abdominale (sous les artères rénales) ✅<br />
+- D) De l'artère mésentérique inférieure</p>
+<p><strong>QCM 7</strong> 💎 : Une patiente a un utérus rétroversé avec un col en antéflexion marquée. Lors du transfert embryonnaire, quelle adaptation technique est recommandée ?<br />
+- A) Transfert sans échoguidage<br />
+- B) Utilisation d'un mandrin rigide pour redresser la trajectoire, puis introduction du cathéter souple sous échoguidage ✅<br />
+- C) Report du transfert<br />
+- D) Transfert par voie laparoscopique</p>
+<p><strong>QCM 8</strong> 💎 : Quel examen non invasif est considéré comme le gold standard pour le diagnostic des malformations utérines ?<br />
+- A) L'hystérosalpingographie<br />
+- B) L'échographie 2D<br />
+- C) L'échographie 3D ✅<br />
+- D) L'hystéroscopie</p>
+<hr />
+<h1 id="module-5-physiologie-ovarienne-et-folliculogenese-du-follicule-primordial-au-corps-jaune">MODULE 5 : PHYSIOLOGIE OVARIENNE ET FOLLICULOGENÈSE — DU FOLLICULE PRIMORDIAL AU CORPS JAUNE</h1>
+<p><strong>Partie</strong> : II — Fondamentaux de la reproduction<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Module 4<br />
+<strong>Tags</strong> : 🟣 TOUS</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Mme R., 38 ans, consulte pour le résultat de son bilan de fertilité. Son AMH est à 0,8 ng/mL et son CFA à 5 (2 ovaires). Vous devez lui expliquer que sa réserve ovarienne est diminuée : *« Mais docteur, je n'ai que 38 ans ! Ma mère a eu des enfants jusqu'à 42 ans ! Combien d'ovules me reste-t-il ? »* Pour répondre avec précision et honnêteté, le praticien doit comprendre la folliculogenèse — comment se constitue la réserve ovarienne dès la vie fœtale, comment elle s'épuise inexorablement au cours de la vie, et comment la stimulation ovarienne en FIV « recrute » des follicules qui seraient autrement perdus par atrésie.</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> la constitution de la réserve ovarienne pendant la vie fœtale et son déclin progressif au cours de la vie (modèle de Faddy-Gosden)</li>
+<li><strong>Expliquer</strong> les étapes de la folliculogenèse — du follicule primordial au follicule dominant — et les régulateurs moléculaires à chaque étape (AMH, signalisation intra-ovarienne, FSH)</li>
+<li><strong>Détailler</strong> le concept de fenêtre FSH et la théorie du seuil de Brown, fondement de la stimulation ovarienne</li>
+<li><strong>Décrire</strong> les mécanismes de l'ovulation (cascade protéolytique, rôle du pic de LH) et la formation/fonction du corps jaune</li>
+<li><strong>Relier</strong> ces connaissances physiologiques aux principes de la stimulation ovarienne en FIV (recrutement d'une cohorte, prevention de l'atrésie)</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-51-la-reserve-ovarienne-constitution-ftale-et-declin-programme">Section 5.1 — La réserve ovarienne : constitution fœtale et déclin programmé</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Contrairement aux spermatogonies souches qui produisent des spermatozoïdes pendant toute la vie adulte, les ovogonies cessent de se multiplier avant la naissance. Pourquoi cette asymétrie fondamentale entre les deux sexes, et quelles conséquences a-t-elle sur la fertilité féminine ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Constitution de la réserve ovarienne</strong> : le module doit décrire la chronologie de la gamétogenèse féminine — les cellules germinales primordiales (PGC) migrent du sac vitellin vers les crêtes génitales (5ᵉ semaine de développement), prolifèrent par mitose pour former les <strong>ovogonies</strong> (pic de 6-7 millions à 20 semaines de gestation), puis entrent en méiose I (prophase I — stade dictyotène) et sont entourées par une couche de cellules folliculaires aplaties pour former les <strong>follicules primordiaux</strong>. À la naissance, le nombre est réduit à <strong>1-2 millions</strong> (atrésie massive in utero). À la puberté, ~300 000-500 000. Au cours de la vie reproductive, ~400-500 ovocytes seront ovulés — les ~299 500 restants seront perdus par <strong>atrésie</strong> (apoptose folliculaire).</p>
+</li>
+<li>
+<p><strong>Modèle de Faddy-Gosden</strong> : le module doit présenter le modèle mathématique de déclin de la réserve ovarienne (Faddy et al., <em>Human Reproduction</em>, 1992 ; mise à jour Wallace &amp; Kelsey, <em>PLoS One</em>, 2010). La décroissance suit une courbe bi-exponentielle : déclin lent jusqu'à ~37-38 ans, puis accélération marquée. Le <strong>seuil critique</strong> de ~25 000 follicules est atteint vers 37-38 ans — en dessous, la fertilité diminue rapidement. La ménopause survient quand la réserve atteint ~1 000 follicules (âge moyen : 51 ans, intervalle 45-55 ans). Ce modèle explique pourquoi la fertilité diminue nettement après 35-38 ans et chute après 40 ans.</p>
+</li>
+<li>
+<p><strong>Marqueurs de la réserve ovarienne</strong> : le module doit présenter les marqueurs utilisés en AMP pour estimer la réserve ovarienne résiduelle :</p>
+</li>
+<li><strong>AMH</strong> (hormone anti-müllérienne) : produite par les cellules de la granulosa des follicules pré-antraux et petits antraux (2-8 mm), corrélée au pool de follicules recrutables. Normes : &lt;1,1 ng/mL = diminished ovarian reserve, 1,1-3,5 ng/mL = normal, &gt;5 ng/mL = excès (suspicion SOPK). Non cyclique — dosable n'importe quand dans le cycle</li>
+<li><strong>CFA</strong> (Compte Folliculaire Antral) : nombre de follicules de 2-9 mm visibles à l'échographie (les 2 ovaires). Corrélation avec l'AMH (r=0,7-0,8). Seuils : &lt;5 = diminished, 5-15 = normal, &gt;20 = excès</li>
+<li>
+<p><strong>FSH/E2 à J2-J3</strong> : FSH élevée (&gt;10-12 UI/L) avec E2 élevé (&gt;80 pg/mL) à J3 — signe indirect de diminution de la réserve (feedback négatif insuffisant)</p>
+</li>
+<li>
+<p><strong>Implications pour la stimulation ovarienne</strong> : la stimulation par FSH exogène ne crée pas de nouveaux follicules — elle <strong>sauve de l'atrésie</strong> les follicules de la cohorte recruté qui auraient été perdus sans l'apport de FSH supraphysiologique. Le nombre de follicules recrutables (et donc le nombre d'ovocytes obtenus par ponction) est directement corrélé à la réserve ovarienne résiduelle (AMH, CFA). Une patiente avec AMH &lt;0,5 ng/mL et CFA &lt;3 aura une réponse pauvre même avec de fortes doses de FSH — on ne peut pas stimuler ce qui n'existe plus.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — La réserve ovarienne : « 7-2-0,5-0,4 »</strong><br />
+- <strong>7</strong> millions d'ovogonies à 20 semaines de gestation<br />
+- <strong>2</strong> millions de follicules primordiaux à la naissance<br />
+- <strong>500 000</strong> (0,5 M) à la puberté<br />
+- <strong>400-500</strong> ovulations au cours de la vie reproductive<br />
+- Le reste (~99,9%) est perdu par <strong>atrésie</strong></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV05-S01-001</td>
+<td>📈 COURBE</td>
+<td>Modèle de Faddy-Gosden : déclin de la réserve ovarienne de la vie fœtale à la ménopause — courbe bi-exponentielle</td>
+</tr>
+<tr>
+<td>MFIV05-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Constitution de la réserve ovarienne : PGC → ovogonies → follicules primordiaux, avec chiffres à chaque étape</td>
+</tr>
+<tr>
+<td>MFIV05-S01-003</td>
+<td>📊 TABLEAU</td>
+<td>Marqueurs de réserve ovarienne : AMH, CFA, FSH/E2 — normes, seuils, interprétation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-52-folliculogenese-du-follicule-primordial-au-follicule-dominant">Section 5.2 — Folliculogenèse : du follicule primordial au follicule dominant</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Chaque mois, environ 15-20 follicules sont « recrutés » par l'élévation de la FSH — mais un seul sera sélectionné comme dominant et ovulera. Les 14-19 autres mourront par atrésie. En FIV, l'objectif est de sauver ces follicules voués à l'atrésie. Comment la FSH exogène réalise-t-elle ce sauvetage ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Folliculogenèse basale (indépendante des gonadotrophines)</strong> : le module doit décrire les étapes précoces de développement folliculaire, qui durent ~9-12 mois et sont régulées par des facteurs locaux (paracrines/autocrines), <strong>indépendamment de la FSH</strong> :</li>
+<li><strong>Follicule primordial</strong> : ovocyte arrêté en prophase I (dictyotène) entouré d'une couche de cellules folliculaires aplaties. Quiescence régulée par des signaux inhibiteurs (AMH — produite par les follicules en croissance, inhibe le recrutement de nouveaux primordiaux; PTEN/PI3K pathway)</li>
+<li><strong>Activation/recrutement initial</strong> : sortie de quiescence de quelques follicules (~30/jour), sous l'influence de facteurs activateurs (KIT/Steel, mTOR, BMP-4/7). Ce recrutement initial est continu et ne dépend pas du cycle menstruel</li>
+<li><strong>Follicule primaire</strong> : ovocyte entouré d'une couche de cellules de la granulosa cuboïdes. Formation de la <strong>zone pellucide</strong> (ZP — glycoprotéines ZP1-4, matrice extracellulaire entourant l'ovocyte)</li>
+<li>
+<p><strong>Follicule secondaire</strong> (pré-antral) : 2-6 couches de cellules de la granulosa, apparition de la <strong>thèque interne</strong> (vascularisée, récepteurs LH, production d'androgènes — androstènedione, testostérone). La granulosa produit l'<strong>AMH</strong> et le <strong>GDF-9</strong> (Growth Differentiation Factor 9), et le <strong>BMP-15</strong> (Bone Morphogenetic Protein 15) — facteurs essentiels de croissance folliculaire</p>
+</li>
+<li>
+<p><strong>Folliculogenèse terminale (dépendante de la FSH)</strong> : </p>
+</li>
+<li><strong>Follicule antral</strong> (follicule tertiaire) : formation de la cavité antrale remplie de liquide folliculaire, diamètre 2-10 mm. C'est à ce stade que le follicule devient <strong>sensible à la FSH</strong> (expression des récepteurs FSHR sur les cellules de la granulosa). Les follicules antraux constituent la <strong>cohorte recruitable</strong> — ce sont eux que l'on compte par CFA échographique</li>
+<li><strong>Recrutement cyclique</strong> : l'élévation intercyclique de la FSH (J1-J5 du cycle) « recrute » une cohorte de 5-20 follicules antraux qui entrent en croissance terminale</li>
+<li><strong>Théorie du seuil de Brown</strong> (Brown, 1978) : le module doit expliquer ce concept fondamental — chaque follicule a un <strong>seuil de FSH</strong> au-dessous duquel il ne peut croître et entre en atrésie. Le follicule <strong>dominant</strong> (celui qui a le seuil de FSH le plus bas, ou qui a acquis le plus de récepteurs FSHR) continue de croître même quand la FSH baisse (rétrocontrôle négatif par l'estradiol et l'inhibine B). Les follicules non dominants (seuil de FSH plus élevé) passent sous leur seuil quand la FSH baisse → atrésie</li>
+<li>
+<p><strong>Sélection du dominant</strong> : le follicule dominant acquiert des <strong>récepteurs LH</strong> sur ses cellules de la granulosa (vers 12-14 mm), ce qui lui permet de répondre à la LH en plus de la FSH — synergie qui accélère sa croissance et sa production d'estradiol. La théorie des <strong>« deux cellules, deux gonadotrophines »</strong> : la thèque (LH → androgènes) et la granulosa (FSH → aromatase → conversion des androgènes en estradiol) coopèrent pour la stéroïdogenèse folliculaire</p>
+</li>
+<li>
+<p><strong>Application à la stimulation FIV</strong> : en FIV, l'injection de FSH exogène maintient le taux de FSH <strong>au-dessus du seuil</strong> de tous les follicules de la cohorte — empêchant l'atrésie des follicules non dominants. Résultat : développement multi-folliculaire (5-20 follicules) au lieu du mono-folliculaire physiologique. C'est le principe fondamental de la stimulation ovarienne contrôlée.</p>
+</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Approfondissement — « Deux cellules, deux gonadotrophines »</strong><br />
+Le concept de coopération thèque-granulosa (Falck, 1959 ; théorie formalisée par Armstrong et Dorrington, 1977) explique la production d'estradiol par le follicule dominant :<br />
+1. <strong>Thèque interne</strong> : récepteurs LH → stimulation de CYP17 → conversion du cholestérol en <strong>androstènedione</strong> et <strong>testostérone</strong><br />
+2. Les androgènes diffusent vers la <strong>granulosa</strong> adjacente<br />
+3. <strong>Granulosa</strong> : récepteurs FSH → stimulation de l'<strong>aromatase</strong> (CYP19) → conversion des androgènes en <strong>estradiol</strong> (E2) et <strong>estrone</strong> (E1)</p>
+<p>Ce modèle explique pourquoi :<br />
+- La FSH seule (sans LH) peut suffire en stimulation (les androgènes thécaux sont produits par la LH endogène résiduelle, même sous agoniste GnRH)<br />
+- Un excès de LH peut être délétère (excès d'androgènes thécaux → état androgénique folliculaire — « LH ceiling effect » de Hillier)<br />
+- L'ajout de LH recombinante peut être bénéfique chez les hypo-répondeuses (apport de substrat androgénique pour l'aromatase)</p>
+<p>✏️ <strong>Micro-exercice</strong> : Une patiente sous stimulation a un E2 de 300 pg/mL à J8 avec 3 follicules ≥14 mm et 6 follicules de 10-13 mm.<br />
+1. Calculez l'E2 attendu par follicule mature (~100 pg/mL par follicule ≥14 mm)<br />
+→ <em>3 × 100 = 300 pg/mL — cohérent, bonne corrélation écho-biologique</em><br />
+2. Les 6 follicules de 10-13 mm vont-ils atteindre la maturité avec la dose actuelle de FSH ?<br />
+→ <em>Probablement certains (ceux proches de 13 mm), pas tous — ils sont au-dessus de leur seuil FSH actuellement, mais les plus petits passeront sous le seuil si la FSH est maintenue à dose constante. Augmenter la dose pourrait recruter les retardataires, mais aussi augmenter le risque de SHO.</em></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV05-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Folliculogenèse complète : follicule primordial → primaire → secondaire → antral → dominant → ovulation, avec facteurs régulateurs à chaque étape</td>
+</tr>
+<tr>
+<td>MFIV05-S02-002</td>
+<td>📐 SCHÉMA</td>
+<td>Théorie du seuil de Brown : courbe de FSH, seuils folliculaires, sélection du dominant, atrésie des non dominants</td>
+</tr>
+<tr>
+<td>MFIV05-S02-003</td>
+<td>📐 SCHÉMA</td>
+<td>Modèle « deux cellules, deux gonadotrophines » : thèque (LH → androgènes) + granulosa (FSH → aromatase → E2)</td>
+</tr>
+<tr>
+<td>MFIV05-S02-004</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Simulation de folliculogenèse : visualisation de la cohorte folliculaire, effet de la FSH sur le recrutement multi-folliculaire vs mono-folliculaire</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-53-ovulation-corps-jaune-et-phase-luteale">Section 5.3 — Ovulation, corps jaune et phase lutéale</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Le pic de LH est le signal physiologique de l'ovulation. En FIV, il est remplacé par une injection de hCG (structurellement similaire à la LH) ou un bolus d'agoniste du GnRH. Pourquoi le timing du déclenchement (36 heures avant la ponction) est-il si critique ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Le pic de LH et la cascade ovulatoire</strong> : le module doit décrire les événements déclenchés par le pic de LH (ou l'injection de hCG en FIV) :</li>
+<li><strong>Reprise de la méiose</strong> : l'ovocyte sort du stade dictyotène (prophase I) → métaphase I → expulsion du 1er globule polaire → arrêt en <strong>métaphase II</strong> (MII) — l'ovocyte est maintenant « mature » et fécondable. Ce processus prend ~36 heures chez l'humain</li>
+<li><strong>Lutéinisation précoce</strong> : les cellules de la granulosa commencent à se lutéiniser (expression de récepteurs LH, production de progestérone)</li>
+<li><strong>Expansion du cumulus</strong> : les cellules du cumulus oophorus sécrètent de l'acide hyaluronique sous l'effet de l'EGF-like (amphiréguline, épiréguline, bétacelluline) — le cumulus s'expande et se « mucifie », détachant le complexe cumulus-ovocyte (COC) de la paroi folliculaire</li>
+<li>
+<p><strong>Rupture folliculaire</strong> : cascade protéolytique (métalloprotéases MMP, activateur du plasminogène, prostaglandines PGE2 et PGF2α, histamine) → fragilisation de la paroi folliculaire et de la surface ovarienne (stigma) → rupture → expulsion du COC dans la cavité péritonéale → captation par les franges tubaires</p>
+</li>
+<li>
+<p><strong>Le timing de la ponction</strong> : en FIV, la ponction ovocytaire est réalisée <strong>34-36 heures</strong> après l'injection de hCG (ou le bolus d'agoniste GnRH) — suffisamment tard pour que les ovocytes aient complété leur maturation (MII), mais <strong>avant</strong> la rupture folliculaire spontanée (qui survient vers ~38-40 heures). Ponctionner trop tôt (ovocytes immatures — GV ou MI) ou trop tard (ovulation spontanée — follicules vides) compromet le cycle.</p>
+</li>
+<li>
+<p><strong>Le corps jaune</strong> : le module doit décrire la transformation post-ovulatoire du follicule rompu en corps jaune — les cellules de la granulosa et de la thèque interne se lutéinisent (accumulation de lipides, vascularisation intense — angiogenèse VEGF-dépendante), produisant principalement de la <strong>progestérone</strong> (~25-50 mg/jour) et de l'estradiol. Le corps jaune a une durée de vie de ~14 jours (phase lutéale fixe) — en l'absence de grossesse, il régresse (lutéolyse), la progestérone et l'estradiol chutent, et la menstruation survient. En cas de grossesse, le corps jaune est « sauvé » par l'hCG embryonnaire (→ corps jaune gravidique, fonctionnel jusqu'à 8-10 SA).</p>
+</li>
+<li>
+<p><strong>Phase lutéale et FIV</strong> : en FIV, la phase lutéale est perturbée par la stimulation ovarienne (aspiration des cellules de la granulosa lors de la ponction, inhibition de la LH par les analogues du GnRH) — d'où la nécessité d'un <strong>soutien lutéal</strong> systématique (progestérone vaginale/IM/SC — cf. Module 21).</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Astuce clinique — « 36 heures, ni plus ni moins »</strong><br />
+Le timing de la ponction par rapport au déclenchement est critique :<br />
+- <strong>&lt;32 heures</strong> : risque d'ovocytes immatures (taux de MII réduit)<br />
+- <strong>34-36 heures</strong> : timing optimal (ovocytes en MII, follicules intacts)<br />
+- <strong>&gt;38-40 heures</strong> : risque d'ovulation spontanée (follicules vides à la ponction)<br />
+L'injection de hCG/agoniste est donc programmée précisément pour que la ponction soit réalisable dans le créneau de 34-36 heures — souvent injection le soir (22h) pour ponction le lendemain matin (8-10h).</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV05-S03-001</td>
+<td>📐 SCHÉMA</td>
+<td>Cascade ovulatoire : pic de LH → reprise méiose → expansion cumulus → rupture folliculaire → ovulation, avec timing (0-40h)</td>
+</tr>
+<tr>
+<td>MFIV05-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Formation et fonction du corps jaune : lutéinisation, production de progestérone, sauvetage par hCG ou lutéolyse</td>
+</tr>
+<tr>
+<td>MFIV05-S03-003</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Simulation d'ovulation : follicule dominant → stigma → rupture → expulsion du COC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-5">Points clés — Module 5</h2>
+<ol>
+<li>La réserve ovarienne est constituée pendant la vie fœtale (~7 millions d'ovogonies à 20 SA) et décline inexorablement — ~1-2 M à la naissance, ~300-500 K à la puberté</li>
+<li>Le modèle de <strong>Faddy-Gosden</strong> prédit un déclin accéléré après <strong>37-38 ans</strong> — fondement de l'urgence reproductive</li>
+<li>L'<strong>AMH</strong> et le <strong>CFA</strong> sont les meilleurs marqueurs de la réserve ovarienne recrutable</li>
+<li>La <strong>théorie du seuil de Brown</strong> explique la sélection du follicule dominant et le mécanisme de la stimulation multi-folliculaire en FIV</li>
+<li>Le modèle <strong>« deux cellules, deux gonadotrophines »</strong> (thèque/LH + granulosa/FSH → E2) est le fondement de la stéroïdogenèse folliculaire</li>
+<li>La ponction ovocytaire doit être réalisée <strong>34-36 heures</strong> après le déclenchement (ovocytes MII, avant ovulation spontanée)</li>
+<li>Le corps jaune post-ponction est insuffisant → soutien lutéal <strong>obligatoire</strong> en FIV</li>
+</ol>
+<h2 id="auto-evaluation-module-5">Auto-évaluation — Module 5</h2>
+<h3 id="qcm-8-questions_1">QCM (8 questions)</h3>
+<p><strong>QCM 1</strong> 🥉 : Combien de follicules primordiaux une femme possède-t-elle à la naissance ?<br />
+- A) 100 000<br />
+- B) 500 000<br />
+- C) 1-2 millions ✅<br />
+- D) 7 millions</p>
+<p><strong>QCM 2</strong> 🥉 : Quel marqueur est le mieux corrélé à la réserve de follicules recrutables ?<br />
+- A) FSH à J3<br />
+- B) Estradiol à J3<br />
+- C) AMH ✅<br />
+- D) Progestérone à J22</p>
+<p><strong>QCM 3</strong> 🥈 : Selon la théorie du seuil de Brown, comment la stimulation ovarienne par FSH exogène obtient-elle un développement multi-folliculaire ?<br />
+- A) En créant de nouveaux follicules primordiaux<br />
+- B) En maintenant la FSH au-dessus du seuil de tous les follicules de la cohorte, empêchant l'atrésie ✅<br />
+- C) En accélérant la croissance du follicule dominant<br />
+- D) En inhibant la production d'AMH</p>
+<p><strong>QCM 4</strong> 🥈 : Dans le modèle « deux cellules, deux gonadotrophines », quelle cellule produit les androgènes (substrat de l'aromatase) ?<br />
+- A) La cellule de la granulosa<br />
+- B) La cellule de la thèque interne ✅<br />
+- C) La cellule du cumulus<br />
+- D) L'ovocyte</p>
+<p><strong>QCM 5</strong> 🥇 : Quel est le timing optimal de la ponction ovocytaire après l'injection de hCG ?<br />
+- A) 12-16 heures<br />
+- B) 24-28 heures<br />
+- C) 34-36 heures ✅<br />
+- D) 42-48 heures</p>
+<p><strong>QCM 6</strong> 🥇 : Pourquoi le soutien de la phase lutéale est-il obligatoire en FIV ?<br />
+- A) Car la stimulation FSH inhibe la production de progestérone<br />
+- B) Car l'aspiration des cellules de la granulosa lors de la ponction et l'inhibition de la LH par les analogues GnRH compromettent la fonction du corps jaune ✅<br />
+- C) Car les embryons in vitro nécessitent plus de progestérone<br />
+- D) Car les patientes FIV ont un défaut congénital de la phase lutéale</p>
+<p><strong>QCM 7</strong> 💎 : Quel facteur de croissance produit par les follicules pré-antraux et petits antraux est utilisé comme marqueur de la réserve ovarienne ?<br />
+- A) GDF-9<br />
+- B) BMP-15<br />
+- C) AMH (hormone anti-müllérienne) ✅<br />
+- D) Inhibine A</p>
+<p><strong>QCM 8</strong> 💎 : À partir de quel âge le modèle de Faddy-Gosden prédit-il une accélération du déclin de la réserve ovarienne ?<br />
+- A) 30 ans<br />
+- B) 33-35 ans<br />
+- C) 37-38 ans ✅<br />
+- D) 42 ans</p>
+<hr />
+<h1 id="module-6-reproduction-masculine-spermatogenese-andrologie-et-evaluation-spermatique">MODULE 6 : REPRODUCTION MASCULINE — SPERMATOGENÈSE, ANDROLOGIE ET ÉVALUATION SPERMATIQUE</h1>
+<p><strong>Partie</strong> : II — Fondamentaux de la reproduction<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Module 4<br />
+<strong>Tags</strong> : 🔷 CLINICIEN 🟢 BIOLOGISTE</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 34 ans reçoit les résultats de son spermogramme réalisé dans le cadre d'un bilan de couple. Concentration : 3 millions/mL (normale >16 M/mL), mobilité progressive : 12% (normale >30%), morphologie Kruger : 1% (normale >4%). *« Docteur, est-ce que ça veut dire que je suis stérile ? Est-ce qu'on peut quand même faire un bébé ? »* La réponse est cruciale et nuancée : cette OAT sévère exclut l'insémination et la FIV classique, mais l'ICSI permet de féconder avec un seul spermatozoïde. Pour comprendre ce diagnostic et adapter la stratégie, le praticien doit maîtriser la spermatogenèse, l'évaluation spermatique standardisée et les techniques de sélection.</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'anatomie testiculaire fonctionnelle (tubes séminifères, cellules de Sertoli et de Leydig, barrière hémato-testiculaire)</li>
+<li><strong>Expliquer</strong> les étapes de la spermatogenèse (mitose, méiose, spermiogenèse) et sa durée (~74 jours)</li>
+<li><strong>Interpréter</strong> un spermogramme selon les normes OMS 2021 (6ᵉ édition) et classifier les anomalies (OATS)</li>
+<li><strong>Connaître</strong> les principaux marqueurs de qualité spermatique au-delà du spermogramme standard (fragmentation ADN, SCSA, TUNEL)</li>
+<li><strong>Relier</strong> les paramètres spermatiques aux indications respectives d'insémination, FIV classique et ICSI</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-61-anatomie-testiculaire-et-axe-hypothalamo-hypophyso-testiculaire">Section 6.1 — Anatomie testiculaire et axe hypothalamo-hypophyso-testiculaire</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Anatomie du testicule</strong> : organe pair, ovoïde, 4 × 3 × 2,5 cm, volume 15-25 mL (orchidimètre de Prader), situé dans le scrotum (maintien de la température à ~34-35°C — 2-3°C sous la température corporelle, indispensable à la spermatogenèse). Structure interne : 200-300 <strong>lobules testiculaires</strong> contenant chacun 1-4 tubes séminifères (longueur totale ~250 m par testicule). <strong>Tubes séminifères</strong> : paroi composée d'une membrane basale, de <strong>cellules de Sertoli</strong> (cellules de soutien, formant la barrière hémato-testiculaire par jonctions serrées, nourrissant et protégeant les cellules germinales) et de <strong>cellules germinales</strong> à différents stades de maturation (spermatogonies à la base → spermatocytes → spermatides → spermatozoïdes vers la lumière). <strong>Tissu interstitiel</strong> : contient les <strong>cellules de Leydig</strong> (production de testostérone sous l'effet de la LH), les vaisseaux sanguins et les macrophages.</p>
+</li>
+<li>
+<p><strong>Axe hypothalamo-hypophyso-testiculaire</strong> : GnRH (hypothalamus, pulsatile) → FSH + LH (hypophyse antérieure) → FSH stimule les cellules de Sertoli (support de la spermatogenèse, production d'inhibine B, d'ABP — androgen binding protein) ; LH stimule les cellules de Leydig (production de testostérone). Rétrocontrôle négatif : testostérone inhibe GnRH et LH ; inhibine B inhibe FSH. Pertinence AMP : dosage FSH élevé + testostérone basse + inhibine B basse = insuffisance testiculaire primaire (pronostic défavorable pour la spermatogenèse, indication de micro-TESE si azoospermie).</p>
+</li>
+<li>
+<p><strong>Voies excrétrices</strong> : tubes séminifères → rete testis → canaux efférents → <strong>épididyme</strong> (tête, corps, queue — 6 m de long, maturation épididymaire ~12 jours : acquisition de la mobilité progressive, modifications de la membrane spermatique) → canal déférent → canal éjaculateur → urètre prostatique. Glandes annexes : vésicules séminales (60% du liquide séminal — fructose, prostaglandines), prostate (20% — phosphatases acides, zinc, citrate), glandes de Cowper (mucus).</p>
+</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Approfondissement — La barrière hémato-testiculaire</strong><br />
+Les jonctions serrées entre cellules de Sertoli adjacentes divisent le tube séminifère en un compartiment basai (spermatogonies — accessible au système immunitaire) et un compartiment adluminal (spermatocytes et spermatides — protégé du système immunitaire). Cette barrière explique pourquoi les spermatozoïdes (cellules haploïdes, exprimant des antigènes « non-soi » car formés après la puberté, donc après l'établissement de la tolérance immunitaire) ne sont pas détruits par le système immunitaire. Une rupture de cette barrière (traumatisme, infection, chirurgie) peut entraîner la formation d'<strong>auto-anticorps anti-spermatozoïdes</strong> (MAR test positif) — cause d'infertilité.</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV06-S01-001</td>
+<td>🖼️ ILLUSTRATION</td>
+<td>Anatomie du testicule : lobules, tubes séminifères, cellules de Sertoli, cellules de Leydig, voies excrétrices</td>
+</tr>
+<tr>
+<td>MFIV06-S01-002</td>
+<td>📐 SCHÉMA</td>
+<td>Axe hypothalamo-hypophyso-testiculaire : GnRH → FSH/LH → Sertoli/Leydig → rétrocontrôle</td>
+</tr>
+<tr>
+<td>MFIV06-S01-003</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Coupe histologique de tube séminifère — identification des stades de maturation germinale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-62-spermatogenese-de-la-spermatogonie-au-spermatozoide-mature">Section 6.2 — Spermatogenèse : de la spermatogonie au spermatozoïde mature</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Durée et rendement</strong> : la spermatogenèse complète dure ~74 jours (+ 12 jours de maturation épididymaire = ~86 jours du début de la différenciation à l'éjaculat). Production quotidienne : ~100-200 millions de spermatozoïdes par jour (les deux testicules). La spermatogenèse est continue de la puberté à la fin de vie (contrairement à l'ovogenèse), bien que la qualité et la quantité diminuent après 40-50 ans.</p>
+</li>
+<li>
+<p><strong>Étapes</strong> :</p>
+</li>
+<li><strong>Phase mitotique</strong> : les spermatogonies souches (type A dark, A pale) se renouvellent par mitose et produisent des spermatogonies de type B, qui se divisent pour donner des <strong>spermatocytes I</strong> (diploïdes, 2n=46)</li>
+<li><strong>Phase méiotique</strong> : le spermatocyte I subit la <strong>méiose I</strong> (appariement des homologues, crossing-over, séparation → spermatocytes II, haploïdes 1n=23 mais 2c) puis la <strong>méiose II</strong> (division équationnelle → <strong>spermatides</strong> rondes, 1n=23, 1c). Durée de la méiose : ~24 jours</li>
+<li>
+<p><strong>Spermiogenèse</strong> : transformation morphologique profonde de la spermatide ronde en <strong>spermatozoïde</strong> mature — condensation de la chromatine (remplacement des histones par des protamines → super-compaction de l'ADN), formation de l'<strong>acrosome</strong> (vésicule de Golgi → coiffe acrosomique contenant les enzymes protéolytiques — acrosine, hyaluronidase), formation du <strong>flagelle</strong> (axonème 9+2 microtubules, pièce intermédiaire avec mitochondries hélicoïdales), élimination du cytoplasme résiduel (corps résiduel phagocyté par les cellules de Sertoli). Durée : ~24 jours</p>
+</li>
+<li>
+<p><strong>Pertinence AMP</strong> : la durée de 74 jours explique pourquoi les effets d'un traitement (arrêt du tabac, antioxydants, varicocélectomie) ou d'une agression (fièvre, médicament gonadotoxique) ne se manifestent sur le spermogramme qu'après <strong>3 mois</strong>. Il faut toujours attendre ≥3 mois pour réévaluer un spermogramme après un événement ou un traitement.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — « 74 jours + 12 jours = 3 mois »</strong><br />
+La spermatogenèse dure 74 jours (tube séminifère) + 12 jours (maturation épididymaire) ≈ <strong>86 jours ≈ 3 mois</strong>. C'est pourquoi :<br />
+- Le délai d'abstinence recommandé est de 2-5 jours (pas de 3 mois !)<br />
+- Tout spermogramme anormal doit être <strong>recontrôlé à 3 mois</strong> (une fièvre 3 mois plus tôt peut expliquer une anomalie transitoire)<br />
+- Les effets d'un traitement de l'infertilité masculine ne sont évaluables qu'après <strong>3 mois</strong></p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV06-S02-001</td>
+<td>📐 SCHÉMA</td>
+<td>Spermatogenèse complète : spermatogonie → spermatocyte I → spermatocyte II → spermatide → spermatozoïde, avec durée de chaque phase</td>
+</tr>
+<tr>
+<td>MFIV06-S02-002</td>
+<td>📐 SCHÉMA</td>
+<td>Spermiogenèse : transformation de la spermatide ronde — condensation chromatine, acrosome, flagelle, perte du cytoplasme</td>
+</tr>
+<tr>
+<td>MFIV06-S02-003</td>
+<td>🖼️ ILLUSTRATION</td>
+<td>Anatomie du spermatozoïde mature : tête (acrosome, noyau), pièce intermédiaire (mitochondries), flagelle (axonème)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-63-spermogramme-normes-oms-2021-et-interpretation-clinique">Section 6.3 — Spermogramme : normes OMS 2021 et interprétation clinique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Conditions de recueil</strong> : le module doit détailler les conditions standardisées — recueil par masturbation, dans un récipient stérile, après un <strong>délai d'abstinence de 2-7 jours</strong> (OMS 2021, 6ᵉ édition recommandant 2-7 jours), au laboratoire ou transporté dans les 60 minutes à température corporelle. En cas d'anomalie, un <strong>deuxième spermogramme</strong> à ≥3 mois est obligatoire.</p>
+</li>
+<li>
+<p><strong>Normes OMS 2021 (6ᵉ édition)</strong> — valeurs de référence (5ᵉ percentile de la population fertile) :</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Norme OMS 2021 (6ᵉ ed.)</th>
+<th>Seuil ancien (5ᵉ ed., 2010)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Volume</td>
+<td>≥1,4 mL</td>
+<td>≥1,5 mL</td>
+</tr>
+<tr>
+<td>Concentration</td>
+<td>≥16 millions/mL</td>
+<td>≥15 millions/mL</td>
+</tr>
+<tr>
+<td>Nombre total</td>
+<td>≥39 millions</td>
+<td>≥39 millions</td>
+</tr>
+<tr>
+<td>Mobilité progressive (a+b)</td>
+<td>≥30%</td>
+<td>≥32%</td>
+</tr>
+<tr>
+<td>Mobilité totale (a+b+c)</td>
+<td>≥42%</td>
+<td>≥40%</td>
+</tr>
+<tr>
+<td>Vitalité</td>
+<td>≥54%</td>
+<td>≥58%</td>
+</tr>
+<tr>
+<td>Morphologie (Kruger strict)</td>
+<td>≥4%</td>
+<td>≥4%</td>
+</tr>
+<tr>
+<td>Leucocytes</td>
+<td>&lt;1 million/mL</td>
+<td>&lt;1 million/mL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Classification des anomalies</strong> :</li>
+<li><strong>Oligozoospermie</strong> : concentration &lt;16 M/mL (légère : 5-16, modérée : 1-5, sévère : &lt;1)</li>
+<li><strong>Asthénozoospermie</strong> : mobilité progressive &lt;30%</li>
+<li><strong>Tératozoospermie</strong> : formes typiques &lt;4% (Kruger strict)</li>
+<li><strong>OAT</strong> (oligo-asthéno-tératozoospermie) : combinaison des 3 — fréquent</li>
+<li><strong>Azoospermie</strong> : absence totale de spermatozoïdes (à confirmer après centrifugation) — obstructive (obstruction des voies excrétrices, FSH normale) vs non obstructive (déficit de spermatogenèse, FSH élevée)</li>
+<li>
+<p><strong>Cryptozoospermie</strong> : spermatozoïdes retrouvés uniquement après centrifugation</p>
+</li>
+<li>
+<p><strong>Indications AMP selon le spermogramme</strong> :</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Spermogramme</th>
+<th>Technique recommandée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NSMI (nombre de spermatozoïdes mobiles inséminables) ≥5 millions après TMS</td>
+<td>IIU possible</td>
+</tr>
+<tr>
+<td>NSMI 0,5-5 millions</td>
+<td>FIV classique</td>
+</tr>
+<tr>
+<td>NSMI &lt;0,5 million ou OAT sévère</td>
+<td>ICSI</td>
+</tr>
+<tr>
+<td>Azoospermie</td>
+<td>TESE/micro-TESE + ICSI</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Piège</strong> : Un seul spermogramme ne suffit pas**
+> Le spermogramme varie physiologiquement d'un mois à l'autre (variation intra-individuelle de 20-30%). Un résultat anormal doit **toujours** être confirmé par un 2ᵉ spermogramme à ≥3 mois. Les causes transitoires d'anomalie : fièvre récente (grippe, COVID → altération pendant 3 mois), prise médicamenteuse (sulfasalazine, cimétidine, stéroïdes anabolisants), stress aigu, infection (orchite ourlienne).</div>
+
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV06-S03-001</td>
+<td>📊 TABLEAU</td>
+<td>Normes OMS 2021 vs OMS 2010 : comparaison des valeurs de référence</td>
+</tr>
+<tr>
+<td>MFIV06-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Arbre décisionnel : spermogramme → classification → indication AMP (IIU, FIV, ICSI, TESE)</td>
+</tr>
+<tr>
+<td>MFIV06-S03-003</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Morphologie spermatique selon Kruger strict : spermatozoïde normal vs anomalies de la tête, pièce intermédiaire, flagelle</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-64-au-dela-du-spermogramme-fragmentation-de-ladn-et-techniques-avancees">Section 6.4 — Au-delà du spermogramme : fragmentation de l'ADN et techniques avancées</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Fragmentation de l'ADN spermatique</strong> : le module doit présenter ce marqueur de qualité spermatique non évalué par le spermogramme standard. Mécanismes : stress oxydatif (ROS — espèces réactives de l'oxygène), défaut de compaction de la chromatine (remplacement incomplet histones → protamines), apoptose défectueuse, dommages exogènes (tabac, chaleur, toxiques). Tests disponibles :</li>
+<li><strong>SCSA</strong> (Sperm Chromatin Structure Assay) — cytométrie en flux, mesure du DFI (<em>DNA Fragmentation Index</em>)</li>
+<li><strong>TUNEL</strong> (Terminal deoxynucleotidyl transferase dUTP Nick End Labeling) — marquage fluorescent des cassures ADN</li>
+<li><strong>SCD</strong> (Sperm Chromatin Dispersion) — test des halos, plus accessible</li>
+<li>
+<p><strong>Seuils</strong> : DFI &gt;30% = impact négatif sur les résultats FIV/ICSI (Zini et al., <em>Human Reproduction</em>, 2008 ; Simon et al., <em>Fertility and Sterility</em>, 2017)</p>
+</li>
+<li>
+<p><strong>Conduite à tenir si DFI élevé</strong> : antioxydants (vitamines C, E, coenzyme Q10, zinc, sélénium — bénéfice modéré), arrêt du tabac, réduction de l'abstinence (éjaculations fréquentes réduisent le temps de séjour épididymaire et le stress oxydatif), techniques de sélection spermatique (MACS, microfluidique, ZyMōt), TESE (les spermatozoïdes testiculaires ont un DFI significativement inférieur aux éjaculés — Esteves et al., <em>J Urol</em>, 2015).</p>
+</li>
+<li>
+<p><strong>Capacitation et réaction acrosomique</strong> : le module doit rappeler le concept de capacitation (modifications membranaires nécessaires à la fécondation — efflux cholestérol, influx calcium, hyperactivation motile) et la réaction acrosomique (exocytose de l'acrosome libérant les enzymes de pénétration de la zona pellucida). En ICSI, ces étapes sont contournées — le spermatozoïde n'a pas besoin d'être capacité ni d'avoir une réaction acrosomique fonctionnelle, ce qui explique le succès de l'ICSI même avec des spermatozoïdes de très mauvaise qualité.</p>
+</li>
+</ul>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV06-S04-001</td>
+<td>📐 SCHÉMA</td>
+<td>Fragmentation de l'ADN spermatique : mécanismes (stress oxydatif, défaut de compaction, apoptose) et tests (SCSA, TUNEL, SCD)</td>
+</tr>
+<tr>
+<td>MFIV06-S04-002</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Test SCD (halo test) : spermatozoïde avec ADN intact (grand halo) vs fragmenté (petit halo ou absent)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-6">Points clés — Module 6</h2>
+<ol>
+<li>La spermatogenèse dure <strong>~74 jours</strong> — tout contrôle de spermogramme doit attendre <strong>≥3 mois</strong> après un événement</li>
+<li>Les normes OMS 2021 (6ᵉ édition) définissent les valeurs de référence du spermogramme : concentration ≥16 M/mL, mobilité progressive ≥30%, morphologie ≥4%</li>
+<li>Un seul spermogramme anormal ne suffit pas — <strong>confirmation à 3 mois</strong> obligatoire</li>
+<li>L'indication d'ICSI est posée si NSMI &lt;0,5 million ou OAT sévère — un seul spermatozoïde suffit</li>
+<li>La <strong>fragmentation de l'ADN</strong> (DFI &gt;30%) est un facteur de mauvais pronostic non détecté par le spermogramme standard</li>
+<li>En ICSI, la capacitation et la réaction acrosomique sont <strong>contournées</strong> — le spermatozoïde n'a besoin ni de mobilité optimale ni d'acrosome fonctionnel</li>
+</ol>
+<h2 id="auto-evaluation-module-6">Auto-évaluation — Module 6</h2>
+<h3 id="qcm-6-questions">QCM (6 questions)</h3>
+<p><strong>QCM 1</strong> 🥉 : Quelle est la durée approximative de la spermatogenèse complète (du début de la différenciation à l'éjaculat) ?<br />
+- A) 30 jours<br />
+- B) 50 jours<br />
+- C) ~86 jours (74 + 12 de maturation épididymaire) ✅<br />
+- D) 120 jours</p>
+<p><strong>QCM 2</strong> 🥈 : Quelle est la norme OMS 2021 pour la concentration spermatique ?<br />
+- A) ≥5 M/mL<br />
+- B) ≥10 M/mL<br />
+- C) ≥16 M/mL ✅<br />
+- D) ≥20 M/mL</p>
+<p><strong>QCM 3</strong> 🥈 : Un patient a une concentration de 2 M/mL, mobilité progressive 8%, morphologie 0%. Quel est le diagnostic et la technique AMP indiquée ?<br />
+- A) Oligozoospermie légère → IIU<br />
+- B) OAT sévère → ICSI ✅<br />
+- C) Azoospermie → micro-TESE<br />
+- D) Spermogramme normal → conception naturelle</p>
+<p><strong>QCM 4</strong> 🥇 : Pourquoi les spermatozoïdes testiculaires (TESE) ont-ils un DFI inférieur aux spermatozoïdes éjaculés ?<br />
+- A) Car ils sont plus nombreux<br />
+- B) Car ils n'ont pas subi le stress oxydatif du transit épididymaire et du stockage ✅<br />
+- C) Car ils sont plus mobiles<br />
+- D) Car la biopsie sélectionne les meilleurs</p>
+<p><strong>QCM 5</strong> 🥇 : Quel est le seuil de DFI (DNA Fragmentation Index) au-dessus duquel un impact négatif sur les résultats FIV/ICSI est attendu ?<br />
+- A) &gt;10%<br />
+- B) &gt;20%<br />
+- C) &gt;30% ✅<br />
+- D) &gt;50%</p>
+<p><strong>QCM 6</strong> 💎 : Pourquoi l'ICSI fonctionne-t-elle même avec des spermatozoïdes de très mauvaise qualité morphologique ?<br />
+- A) Car l'aiguille d'injection compense les anomalies motiles<br />
+- B) Car la technique contourne toutes les barrières naturelles (zona pellucida, réaction acrosomique, capacitation) — seul l'ADN dans le noyau est nécessaire ✅<br />
+- C) Car les milieux de culture réparent les anomalies<br />
+- D) Car l'ovocyte compense les défauts spermatiques</p>
+<hr />
+<h1 id="module-7-fecondation-naturelle-et-implantation-les-processus-que-la-fiv-reproduit-in-vitro">MODULE 7 : FÉCONDATION NATURELLE ET IMPLANTATION — LES PROCESSUS QUE LA FIV REPRODUIT IN VITRO</h1>
+<p><strong>Partie</strong> : II — Fondamentaux de la reproduction<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 5 et 6<br />
+<strong>Tags</strong> : 🟣 TOUS</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Un couple consultant en AMP vous pose la question : *« Mais comment ça se passe naturellement, la fécondation ? Si on comprend le processus normal, on comprendra mieux pourquoi la FIV est nécessaire chez nous et ce qui va être fait différemment. »* Cette demande est parfaitement légitime. La FIV reproduit (ou contourne) chaque étape de la fécondation naturelle et de l'implantation. Comprendre ces processus physiologiques permet de saisir la logique de chaque geste technique de l'AMP — et d'identifier ce qui peut dysfonctionner.</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les mécanismes du transport spermatique dans le tractus génital féminin et du transport ovocytaire dans la trompe</li>
+<li><strong>Expliquer</strong> les étapes moléculaires de la fécondation (liaison à la zona pellucida, réaction acrosomique, fusion membranaire, blocage de la polyspermie, formation des pronuclei)</li>
+<li><strong>Détailler</strong> le développement pré-implantatoire de l'embryon du zygote au blastocyste (J0-J5/J6)</li>
+<li><strong>Décrire</strong> les mécanismes de l'implantation embryonnaire (apposition, adhésion, invasion) et la fenêtre d'implantation</li>
+<li><strong>Relier</strong> chaque étape physiologique à son équivalent en FIV/ICSI (ponction = captation, ICSI = fécondation, culture = transport tubaire, transfert = implantation)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-71-transport-des-gametes-le-parcours-du-combattant">Section 7.1 — Transport des gamètes : le parcours du combattant</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Transport spermatique</strong> : sur les ~200-300 millions de spermatozoïdes déposés dans le vagin lors de l'éjaculation, seuls ~200-500 atteignent le site de fécondation (ampoule tubaire) — un taux d'attrition de &gt;99,99%. Le parcours comporte des étapes sélectives : passage de la glaire cervicale (barrière pour les spermatozoïdes immobiles ou anormaux — la glaire pré-ovulatoire œstrogénisée est filante et perméable, tandis que la glaire progestéronique est épaisse et imperméable), transport utérin (contractions myométriales, transport passif et actif), stockage dans le réservoir tubaire isthmique (les spermatozoïdes se lient à l'épithélium isthmique et y sont « stockés » pendant des heures, subissant la capacitation), libération progressive vers l'ampoule au moment de l'ovulation. En FIV, tout ce parcours est contourné — les spermatozoïdes sont directement mis en contact avec les ovocytes (FIV classique) ou injectés dans le cytoplasme (ICSI).</p>
+</li>
+<li>
+<p><strong>Transport ovocytaire</strong> : après l'ovulation (rupture du stigma), le complexe cumulus-ovocyte (COC) est capté par les franges du pavillon tubaire (captation active — mouvements ciliaires, courants de liquide péritonéal). Le COC est transporté vers l'ampoule par les battements ciliaires et les contractions modérées de la musculature tubaire. La fécondation se produit dans le <strong>tiers externe de l'ampoule</strong>, dans les 12-24 heures suivant l'ovulation (l'ovocyte a une durée de vie fécondable limitée à ~12-24h en métaphase II). En FIV, la ponction échoguidée remplace la captation tubaire — l'ovocyte est aspiré directement du follicule.</p>
+</li>
+</ul>
+<h3 id="section-72-la-fecondation-evenement-moleculaire-dune-complexite-remarquable">Section 7.2 — La fécondation : événement moléculaire d'une complexité remarquable</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : Si la fécondation in vivo nécessite des centaines de spermatozoïdes au contact de l'ovocyte et une réaction acrosomique fonctionnelle, comment expliquer que l'ICSI fonctionne avec un seul spermatozoïde immobilisé, injecté directement sans réaction acrosomique ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>Étapes de la fécondation naturelle</strong> :<br />
+  1. <strong>Pénétration du cumulus</strong> : les spermatozoïdes capacités traversent la matrice d'acide hyaluronique du cumulus oophorus grâce à la hyaluronidase membranaire et à l'hyperactivation motile<br />
+  2. <strong>Liaison à la zona pellucida</strong> : les spermatozoïdes se lient aux glycoprotéines de la zona — modèle classique : liaison primaire à <strong>ZP3</strong> (récepteur primaire) puis liaison secondaire à <strong>ZP2</strong>. Note : ce modèle, principalement établi chez la souris, est discuté chez l'humain — les données récentes (Avella et al., <em>J Cell Biol</em>, 2014) suggèrent un rôle plus complexe de ZP2 et ZP1<br />
+  3. <strong>Réaction acrosomique</strong> : exocytose du contenu acrosomique (acrosine, hyaluronidase, autres protéases) — fusion de la membrane acrosomique externe avec la membrane plasmique du spermatozoïde, libération des enzymes, digestion locale de la zona pellucida<br />
+  4. <strong>Pénétration de la zona</strong> : le spermatozoïde traverse la zona par une combinaison d'activité enzymatique et de poussée mécanique (hyperactivation du flagelle)<br />
+  5. <strong>Fusion des membranes</strong> : la membrane post-acrosomique du spermatozoïde fusionne avec la membrane plasmique de l'ovocyte. Rôle de la protéine <strong>IZUMO1</strong> (membrane spermatique) et de son récepteur <strong>JUNO</strong> (membrane ovocytaire) — découverte par Inoue et al., <em>Nature</em>, 2005 (IZUMO1) et Bianchi et al., <em>Nature</em>, 2014 (JUNO)<br />
+  6. <strong>Activation ovocytaire</strong> : l'entrée du spermatozoïde déclenche des oscillations calciques dans l'ovocyte (libération de <strong>PLCζ</strong> — phospholipase C zêta — par le spermatozoïde → hydrolyse de PIP2 → production d'IP3 → libération de Ca²⁺ du réticulum endoplasmique → oscillations calciques répétées). Ces oscillations calciques sont le signal d'activation ovocytaire :</p>
+<ul>
+<li>Exocytose des <strong>granules corticaux</strong> → modification de la zona pellucida (<strong> blocage de la polyspermie</strong> — ZP2 clivée par l'ovastacine, zona imperméable aux spermatozoïdes surnuméraires)</li>
+<li>Dégradation de JUNO en surface (blocage membranaire de la polyspermie)</li>
+<li><strong>Reprise de la méiose II</strong> → expulsion du 2ᵉ globule polaire → pronucleus femelle (haploïde)<br />
+  7. <strong>Formation des pronuclei</strong> : le noyau spermatique se décondense (protamines remplacées par histones) → pronucleus masculin. Les deux pronuclei migrent vers le centre de l'ovocyte. L'observation de <strong>2 pronuclei (2PN)</strong> à H16-18 post-insémination est le signe de fécondation normale en FIV/ICSI. 1PN = activation sans fécondation (ou fécondation anormale) ; 3PN = polyspermie (en FIV classique) ou échec de la 2ᵉ division méiotique<br />
+  8. <strong>Syngamie</strong> : les pronuclei se rapprochent, les membranes pronucléaires se dissolvent, les chromosomes s'alignent sur un fuseau mitotique commun → <strong>première division cellulaire</strong> → zygote à 2 cellules (stade 2-cell)</li>
+</ul>
+</li>
+<li>
+<p><strong>Comparaison fécondation naturelle vs ICSI</strong> :</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Fécondation naturelle</th>
+<th>ICSI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pénétration cumulus</td>
+<td>Spermatozoïde capacité</td>
+<td>Ovocyte dénudé par hyaluronidase</td>
+</tr>
+<tr>
+<td>Liaison zona</td>
+<td>ZP3/ZP2</td>
+<td>Contournée (pipette pénètre la zona)</td>
+</tr>
+<tr>
+<td>Réaction acrosomique</td>
+<td>Indispensable</td>
+<td>Non nécessaire</td>
+</tr>
+<tr>
+<td>Fusion membranaire</td>
+<td>IZUMO1-JUNO</td>
+<td>Contournée (injection directe)</td>
+</tr>
+<tr>
+<td>Activation ovocytaire</td>
+<td>PLCζ → oscillations Ca²⁺</td>
+<td>PLCζ toujours nécessaire (le spermatozoïde libère PLCζ dans le cytoplasme)</td>
+</tr>
+<tr>
+<td>Blocage polyspermie</td>
+<td>Granules corticaux</td>
+<td>Inutile (1 seul spermatozoïde injecté)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🔬 <strong>Expert — Échec d'activation ovocytaire en ICSI</strong><br />
+Rarement, l'ICSI échoue car le spermatozoïde ne contient pas suffisamment de PLCζ fonctionnel (globozoospermie — absence d'acrosome, défaut de PLCζ). La solution : <strong>activation ovocytaire artificielle (AOA)</strong> par calcium ionophore (A23187 ou ionomycine), qui mime les oscillations calciques et active l'ovocyte indépendamment du spermatozoïde (cf. Module 29).</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV07-S02-001</td>
+<td>🎬 ANIMATION</td>
+<td>Séquence complète de fécondation naturelle : capacitation → liaison zona → réaction acrosomique → fusion → activation ovocytaire → pronuclei → syngamie</td>
+</tr>
+<tr>
+<td>MFIV07-S02-002</td>
+<td>📐 SCHÉMA</td>
+<td>Activation ovocytaire : PLCζ → IP3 → oscillations Ca²⁺ → granules corticaux → blocage polyspermie + reprise méiose II</td>
+</tr>
+<tr>
+<td>MFIV07-S02-003</td>
+<td>📐 SCHÉMA</td>
+<td>Comparaison fécondation naturelle vs ICSI : étapes contournées, étapes conservées</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-73-developpement-pre-implantatoire-du-zygote-au-blastocyste">Section 7.3 — Développement pré-implantatoire : du zygote au blastocyste</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : La culture embryonnaire en laboratoire de FIV reproduit le développement pré-implantatoire qui se déroule normalement dans la trompe utérine. Quelles sont les conditions critiques (température, pH, oxygène, nutriments) que le laboratoire doit maintenir pour simuler l'environnement tubaire ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Chronologie du développement</strong> (in vivo et en FIV) :</li>
+<li><strong>J0-J1</strong> : Zygote — 2 pronuclei (2PN) visibles H16-18, syngamie H20-22, 1ère division mitotique H25-27 → stade 2 cellules</li>
+<li><strong>J2</strong> : 4 cellules (2 divisions) — les blastomères sont totipotents</li>
+<li><strong>J3</strong> : 8 cellules — <strong>activation du génome embryonnaire (EGA)</strong> : le génome embryonnaire prend le relais des ARN maternels stockés dans l'ovocyte. Avant ce stade, le développement est dirigé principalement par les ARN et protéines maternels. C'est un point critique : les embryons porteurs d'anomalies génomiques graves s'arrêtent souvent ici</li>
+<li><strong>J4</strong> : <strong>Morula</strong> — 16-32 cellules, compaction (les cellules se resserrent par des jonctions E-cadhérine), début de la différenciation ICM/TE</li>
+<li><strong>J5</strong> : <strong>Blastocyste</strong> — cavité blastocœlique, différenciation en :<ul>
+<li><strong>ICM</strong> (Inner Cell Mass, masse cellulaire interne) — donnera l'embryon proprement dit</li>
+<li><strong>TE</strong> (Trophectoderme) — donnera le placenta (trophoblaste)<br />
+Classification de Gardner : expansion (1-6), ICM (A/B/C), TE (A/B/C) — ex. « 4AA » = blastocyste expansé, bon ICM, bon TE</li>
+</ul>
+</li>
+<li>
+<p><strong>J6-J7</strong> : <strong>Éclosion</strong> (<em>hatching</em>) — le blastocyste rompt la zona pellucida et en sort, prêt pour l'implantation</p>
+</li>
+<li>
+<p><strong>In vivo vs in vitro</strong> : en FIV, la culture embryonnaire se déroule dans un incubateur à 37°C, 6% CO₂, 5% O₂ (culture à faible O₂ reproduisant l'environnement tubaire physiologique — 2-8% O₂ vs 20% atmosphérique), dans des milieux de culture spécialisés (séquentiels — G1/G2 Vitrolife — ou uniques — Global Medium). Le passage de J3 à J5 est un « filtre naturel » — seuls ~40-50% des embryons à J3 atteignent le stade blastocyste, sélectionnant les embryons les plus compétents.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Mnémonique — Développement embryonnaire : « 2-4-8-M-B »</strong><br />
+- <strong>J1</strong> : <strong>2</strong> cellules<br />
+- <strong>J2</strong> : <strong>4</strong> cellules<br />
+- <strong>J3</strong> : <strong>8</strong> cellules (activation du génome)<br />
+- <strong>J4</strong> : <strong>M</strong>orula (compaction)<br />
+- <strong>J5</strong> : <strong>B</strong>lastocyste (cavité, ICM/TE)</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV07-S03-001</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Développement embryonnaire J0-J6 : série de photos-time-lapse — 2PN → 2c → 4c → 8c → morula → blastocyste → éclosion</td>
+</tr>
+<tr>
+<td>MFIV07-S03-002</td>
+<td>📐 SCHÉMA</td>
+<td>Classification de Gardner pour les blastocystes : expansion (1-6), ICM (A-C), TE (A-C) avec exemples photographiques</td>
+</tr>
+<tr>
+<td>MFIV07-S03-003</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Simulation de développement embryonnaire : culture virtuelle J0-J5, observation des paramètres morphocinétiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="section-74-limplantation-embryonnaire-le-dialogue-materno-embryonnaire">Section 7.4 — L'implantation embryonnaire : le dialogue materno-embryonnaire</h3>
+<blockquote>
+<p>🤔 <strong>Question de réflexion</strong> : L'implantation est souvent qualifiée de « boîte noire » de l'AMP — c'est l'étape la moins contrôlable et la plus fréquemment responsable de l'échec de la FIV. Pourquoi est-il si difficile d'améliorer les taux d'implantation, et que sait-on du dialogue moléculaire entre l'embryon et l'endomètre ?</p>
+</blockquote>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li>
+<p><strong>La fenêtre d'implantation</strong> : le module doit expliquer que l'endomètre n'est réceptif à l'embryon que pendant une période limitée — la <strong>fenêtre d'implantation</strong> (FI), entre <strong>J20 et J24</strong> du cycle menstruel (soit 6-10 jours après le pic de LH, ou P+5 à P+9 après le début de la progestérone en cycle substitué). En dehors de cette fenêtre, l'endomètre est non réceptif et l'embryon ne peut s'implanter. Les marqueurs de réceptivité incluent les <strong>pinopodes</strong> (protusions apicales des cellules épithéliales endométriales), la modulation des mucines (diminution de MUC1 — barrière d'adhésion), l'expression de facteurs d'adhésion (intégrines αvβ3, ostéopontine), et les facteurs sécrétés (LIF — leukemia inhibitory factor, HB-EGF — heparin-binding EGF).</p>
+</li>
+<li>
+<p><strong>Les étapes de l'implantation</strong> :<br />
+  1. <strong>Apposition</strong> : le blastocyste éclos se rapproche de l'endomètre et s'y appose, le pôle trophectodermal (TE) face à l'épithélium endométrial. Signal : le blastocyste exprime L-sélectine → liaison aux glucides endométriaux<br />
+  2. <strong>Adhésion</strong> : le TE adhère à l'épithélium via des intégrines (αvβ3 TE ↔ ostéopontine endomètre), des facteurs de croissance (HB-EGF → récepteur ErbB4 du TE), et des cytokines (LIF, IL-1β — dialogue bidirectionnel)<br />
+  3. <strong>Invasion</strong> : le trophoblaste invasif (cytotrophoblaste extravilleux) pénètre l'épithélium et envahit le stroma endométrial et les artères spiralées (remodelage vasculaire). Le degré d'invasion est finement régulé — excès : placenta accreta ; déficit : pré-éclampsie, RCIU</p>
+</li>
+<li>
+<p><strong>Pertinence AMP</strong> : le taux d'implantation en FIV est de ~30-40% par embryon transféré chez les &lt;35 ans (et chute avec l'âge). L'échec d'implantation est la cause la plus fréquente d'échec de la FIV — plus que l'échec de fécondation ou de culture. Les stratégies pour améliorer la réceptivité endométriale incluent :</p>
+</li>
+<li>Choix du timing de transfert (cycle naturel vs substitué en TEC)</li>
+<li>ERA (Endometrial Receptivity Array — test transcriptomique de la fenêtre d'implantation — cf. Module 24)</li>
+<li>Scratching endométrial (bénéfice non confirmé — Lensen et al., <em>NEJM</em>, 2019)</li>
+<li>Culture du blastocyste de qualité (la qualité embryonnaire reste le facteur dominant)</li>
+</ul>
+<blockquote>
+<p>📖 <strong>Approfondissement — Le test ERA (Endometrial Receptivity Array)</strong><br />
+Développé par Díaz-Gimeno et al. (<em>Fertility and Sterility</em>, 2011, Igenomix), l'ERA analyse l'expression de 238 gènes endométriaux par biopsie réalisée pendant la fenêtre d'implantation théorique. Le test classe l'endomètre en « réceptif », « pré-réceptif » ou « post-réceptif ». Chez les patientes en échec répété d'implantation (RIF), ~25% ont un décalage de la fenêtre d'implantation → ajustement du timing de la progestérone. Les preuves d'efficacité clinique restent débattues (étude ERA-RCT 2022 — résultats mitigés), mais le test est largement utilisé dans les centres de référence.</p>
+</blockquote>
+<p><strong>Médias</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MFIV07-S04-001</td>
+<td>📐 SCHÉMA</td>
+<td>Les 3 étapes de l'implantation : apposition → adhésion → invasion, avec molécules clés</td>
+</tr>
+<tr>
+<td>MFIV07-S04-002</td>
+<td>📐 SCHÉMA</td>
+<td>Fenêtre d'implantation : J20-J24, rôle de la progestérone, pinopodes, marqueurs de réceptivité</td>
+</tr>
+<tr>
+<td>MFIV07-S04-003</td>
+<td>🔬 MICROSCOPIE</td>
+<td>Histologie de l'endomètre réceptif : glandes spiralées, pinopodes, réaction décidualisée</td>
+</tr>
+<tr>
+<td>MFIV07-S04-004</td>
+<td>🧊 MODÈLE 3D</td>
+<td>ReproSim© — Simulation d'implantation : blastocyste → apposition → invasion trophoblastique</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-module-7">Points clés — Module 7</h2>
+<ol>
+<li>Sur ~300 millions de spermatozoïdes éjaculés, seuls ~200-500 atteignent le site de fécondation — la fécondation naturelle est un processus hautement sélectif</li>
+<li>La fécondation implique la liaison à la zona pellucida (ZP3/ZP2), la réaction acrosomique, la fusion membranaire (<strong>IZUMO1-JUNO</strong>) et l'activation ovocytaire (<strong>PLCζ → oscillations Ca²⁺</strong>)</li>
+<li>En ICSI, les étapes de pénétration du cumulus, liaison à la zona et réaction acrosomique sont <strong>contournées</strong> — mais l'activation ovocytaire par PLCζ reste nécessaire</li>
+<li>Le développement pré-implantatoire suit une chronologie précise : 2c (J1) → 4c (J2) → 8c (J3, activation du génome) → morula (J4) → <strong>blastocyste</strong> (J5, ICM + TE)</li>
+<li>L'<strong>activation du génome embryonnaire</strong> au stade 8 cellules (J3) est un filtre biologique : les embryons défectueux s'arrêtent souvent ici</li>
+<li>La <strong>fenêtre d'implantation</strong> (J20-J24) est la période limitée pendant laquelle l'endomètre est réceptif — en dehors, l'implantation est impossible</li>
+<li>L'<strong>échec d'implantation</strong> est la cause la plus fréquente d'échec de FIV — la réceptivité endométriale et la qualité embryonnaire sont les deux déterminants majeurs</li>
+</ol>
+<h2 id="auto-evaluation-module-7">Auto-évaluation — Module 7</h2>
+<h3 id="qcm-6-questions_1">QCM (6 questions)</h3>
+<p><strong>QCM 1</strong> 🥉 : Où se produit la fécondation naturelle ?<br />
+- A) Dans la cavité utérine<br />
+- B) Dans le tiers externe de l'ampoule tubaire ✅<br />
+- C) Dans l'isthme tubaire<br />
+- D) Dans le cul-de-sac de Douglas</p>
+<p><strong>QCM 2</strong> 🥈 : Quelle protéine spermatique est responsable de l'activation ovocytaire (oscillations calciques) ?<br />
+- A) L'acrosine<br />
+- B) IZUMO1<br />
+- C) PLCζ (phospholipase C zêta) ✅<br />
+- D) ZP3</p>
+<p><strong>QCM 3</strong> 🥈 : À quel stade de développement embryonnaire l'activation du génome embryonnaire (EGA) se produit-elle chez l'humain ?<br />
+- A) 2 cellules<br />
+- B) 4 cellules<br />
+- C) 8 cellules (J3) ✅<br />
+- D) Blastocyste (J5)</p>
+<p><strong>QCM 4</strong> 🥇 : Quelle est la fenêtre d'implantation physiologique de l'endomètre ?<br />
+- A) J10-J14 du cycle<br />
+- B) J14-J18 du cycle<br />
+- C) J20-J24 du cycle ✅<br />
+- D) J26-J28 du cycle</p>
+<p><strong>QCM 5</strong> 🥇 : En ICSI, laquelle de ces étapes de la fécondation naturelle est encore nécessaire au succès ?<br />
+- A) La réaction acrosomique<br />
+- B) La liaison à la zona pellucida<br />
+- C) La fusion IZUMO1-JUNO<br />
+- D) La libération de PLCζ par le spermatozoïde → activation ovocytaire ✅</p>
+<p><strong>QCM 6</strong> 💎 : Que signifie l'observation de 3 pronuclei (3PN) à H16-18 après insémination en FIV classique ?<br />
+- A) Une fécondation normale<br />
+- B) Une polyspermie (pénétration de 2 spermatozoïdes) ou un échec d'expulsion du 2ᵉ globule polaire ✅<br />
+- C) Un échec de fécondation<br />
+- D) Une activation parthénogénétique</p>
+<hr />
+<h2 id="references-bibliographiques-partie-2-fondamentaux">RÉFÉRENCES BIBLIOGRAPHIQUES — PARTIE 2 (FONDAMENTAUX)</h2>
+<h3 id="anatomie-et-physiologie-ovarienne">Anatomie et physiologie ovarienne</h3>
+<ul>
+<li>Faddy MJ, Gosden RG, Gougeon A, et al. Accelerated disappearance of ovarian follicles in mid-life. <em>Hum Reprod</em>. 1992;7(10):1342-1346.</li>
+<li>Wallace WHB, Kelsey TW. Human ovarian reserve from conception to the menopause. <em>PLoS One</em>. 2010;5(1):e8772.</li>
+<li>Gougeon A. Regulation of ovarian follicular development in primates: facts and hypotheses. <em>Endocr Rev</em>. 1996;17(2):121-155.</li>
+<li>Brown JB. Pituitary control of ovarian function. <em>Aust N Z J Obstet Gynaecol</em>. 1978;18(1):46-54.</li>
+</ul>
+<h3 id="spermatogenese-et-andrologie">Spermatogenèse et andrologie</h3>
+<ul>
+<li>World Health Organization. <em>WHO Laboratory Manual for the Examination and Processing of Human Semen</em>. 6th ed. Geneva: WHO; 2021.</li>
+<li>Zini A, Boman JM, Belzile E, Ciampi A. Sperm DNA damage is associated with an increased risk of pregnancy loss after IVF and ICSI. <em>Hum Reprod</em>. 2008;23(12):2663-2668.</li>
+<li>Simon L, Zini A, Dyachenko A, et al. A systematic review and meta-analysis to determine the effect of sperm DNA damage on in vitro fertilization and intracytoplasmic sperm injection outcome. <em>Asian J Androl</em>. 2017;19(1):80-90.</li>
+</ul>
+<h3 id="fecondation-et-implantation">Fécondation et implantation</h3>
+<ul>
+<li>Bianchi E, Doe B, Goulding D, Wright GJ. Juno is the egg Izumo receptor and is essential for mammalian fertilization. <em>Nature</em>. 2014;508(7497):483-487.</li>
+<li>Inoue N, Ikawa M, Isotani A, Okabe M. The immunoglobulin superfamily protein Izumo is required for sperm to fuse with eggs. <em>Nature</em>. 2005;434(7030):234-238.</li>
+<li>Díaz-Gimeno P, Horcajadas JA, Martínez-Conejero JA, et al. A genomic diagnostic tool for human endometrial receptivity based on the transcriptomic signature. <em>Fertil Steril</em>. 2011;95(1):50-60.</li>
+<li>Strandell A, Lindhard A, Waldenström U, et al. Hydrosalpinx and IVF outcome: a prospective, randomized multicentre trial in Scandinavia on salpingectomy prior to IVF. <em>Hum Reprod</em>. 1999;14(11):2762-2769.</li>
+<li>Kasius A, Smit JG, Torrance HL, et al. Endometrial thickness and pregnancy rates after IVF: a systematic review and meta-analysis. <em>Hum Reprod Update</em>. 2014;20(4):530-541.</li>
+</ul>
+<h3 id="classification-et-pgt">Classification et PGT</h3>
+<ul>
+<li>Gardner DK, Schoolcraft WB. In-vitro culture of human blastocysts. In: Jansen R, Mortimer D, eds. <em>Towards Reproductive Certainty</em>. Parthenon Publishing; 1999:378-388.</li>
+<li>Cabrera O, Berman DM, Kenyon NS, et al. The unique cytoarchitecture of human pancreatic islets has implications for islet cell function. <em>Proc Natl Acad Sci USA</em>. 2006;103(7):2334-2339.</li>
+</ul>
+</div>

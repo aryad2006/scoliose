@@ -1,0 +1,602 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-02-physiologie-thyroidienne">🦋 PARTIE 02 — PHYSIOLOGIE THYROÏDIENNE</h1>
+<h2 id="de-la-biosynthese-hormonale-aux-effets-cellulaires">De la biosynthèse hormonale aux effets cellulaires</h2>
+<hr />
+<h1 id="module-04-axe-hypothalamo-hypophyso-thyroidien">MODULE 04 — AXE HYPOTHALAMO-HYPOPHYSO-THYROÏDIEN</h1>
+<h2 id="41-trh-hypothalamique">4.1 TRH hypothalamique</h2>
+<h3 id="411-structure-et-secretion">4.1.1 Structure et sécrétion</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO04-S01-001 — SCHÉMA : axe HPT — TRH (noyau paraventriculaire) → système porte → thyréotropes hypophysaires → TSH → TSHR thyroïdien → T4/T3 → rétrocontrôle négatif]</p>
+</blockquote>
+<p>La <strong>TRH</strong> (Thyrotropin-Releasing Hormone) est un tripeptide : <strong>pyroglutamyl-histidyl-prolinamide</strong> (pGlu-His-Pro-NH₂). Elle est synthétisée dans les <strong>neurones parvocellulaires du noyau paraventriculaire</strong> (NPV) hypothalamique à partir d'un précurseur de 242 acides aminés (pro-TRH), libérée dans le <strong>système porte hypothalamo-hypophysaire</strong>.</p>
+<p><strong>Facteurs stimulant la TRH</strong> :<br />
+- Froid (voie catécholaminergique ascendante)<br />
+- Baisse de T3 intracellulaire hypothalamique<br />
+- Noradrénaline, sérotonine</p>
+<p><strong>Facteurs inhibant la TRH</strong> :<br />
+- T3 élevée (rétrocontrôle direct)<br />
+- Glucocorticoïdes (inhibent transcription pro-TRH)<br />
+- Somatostatine, dopamine<br />
+- Cytokines (IL-1β, TNF-α) → mécanisme central du sick euthyroid syndrome</p>
+<h3 id="412-variabilite-de-la-tsh">4.1.2 Variabilité de la TSH</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO04-S01-002 — GRAPHIQUE : rythme circadien de la TSH — pic nocturne (2-4h), nadir après-midi]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Effet sur TSH</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pic nocturne (2-4h)</td>
+<td>+30-50 %</td>
+<td>Horloge circadienne (NSC)</td>
+</tr>
+<tr>
+<td>Grossesse (T1, pic hCG)</td>
+<td>Baisse (peut &lt; 0,1 mUI/L)</td>
+<td>hCG stimule TSHR via sous-unité α commune</td>
+</tr>
+<tr>
+<td>Sujet âgé (&gt; 70 ans)</td>
+<td>Tendance à augmenter</td>
+<td>Décalage des valeurs de référence avec l'âge</td>
+</tr>
+<tr>
+<td>Maladie aiguë sévère</td>
+<td>Variable (souvent ↓)</td>
+<td>Sick euthyroid syndrome, dopamine, glucocorticoïdes</td>
+</tr>
+<tr>
+<td>Jeûne prolongé</td>
+<td>↓ T3, TSH basse</td>
+<td>Adaptation métabolique (↑ DIO3)</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>La relation TSH/T4L est <strong>log-linéaire</strong> : une multiplication par 2 de la T4L entraîne une division par ~10 de la TSH. Cela explique la sensibilité extraordinaire du dosage de TSH comme outil de dépistage — une TSH à 10 mUI/L représente une déficience bien plus sévère qu'une TSH à 5 mUI/L.</p>
+</blockquote>
+<h2 id="42-tsh-hypophysaire">4.2 TSH hypophysaire</h2>
+<h3 id="421-structure-et-recepteur">4.2.1 Structure et récepteur</h3>
+<p><strong>TSH</strong> : glycoprotéine hétérodimérique :<br />
+- <strong>Sous-unité α</strong> : commune à TSH, LH, FSH et hCG (gène CGAS unique)<br />
+- <strong>Sous-unité β</strong> : spécifique, confère la spécificité pour le TSHR<br />
+- Demi-vie : 50-60 minutes</p>
+<p><strong>Récepteur TSHR</strong> (GPCR, protéine Gs) → activation adénylyl cyclase → AMPc → PKA → stimulation de toutes les fonctions thyréocytaires (NIS, TPO, Tg, endocytose colloïde, croissance cellulaire).</p>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > La hCG partage la sous-unité α avec la TSH et peut stimuler le TSHR. Au 1er trimestre de grossesse (pic hCG à 10-12 SA), la TSH peut être physiologiquement < 0,1 mUI/L sans pathologie. Ne pas confondre avec une hyperthyroïdie vraie.</div>
+
+<hr />
+<h2 id="43-quiz-module-04">4.3 Quiz Module 04</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> La TRH est un :<br />
+- A) Polypeptide de 242 acides aminés<br />
+- B) Tripeptide (pyroglutamyl-histidyl-prolinamide)<br />
+- C) Stéroïde hypothalamique<br />
+- D) Glycoprotéine à deux sous-unités</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La TRH est un tripeptide synthétisé à partir de la pro-TRH.</p>
+</blockquote>
+<p><strong>Q2.</strong> La sous-unité α de la TSH est partagée avec :<br />
+- A) Le cortisol et l'ACTH<br />
+- B) La GH et l'IGF-1<br />
+- C) La LH, la FSH et la hCG<br />
+- D) La prolactine et l'ocytocine</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — La sous-unité α est commune à TSH, LH, FSH et hCG (glycoprotéines hypophysaires).</p>
+</blockquote>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Une femme enceinte de 10 SA a une TSH à 0,15 mUI/L avec T4L normale, sans signe de thyrotoxicose. La conduite à tenir est :<br />
+- A) Initier un traitement antithyroïdien<br />
+- B) Réaliser une scintigraphie thyroïdienne<br />
+- C) Surveiller : TSH basse physiologique par stimulation hCG<br />
+- D) Doser immédiatement les TRAb</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — TSH basse physiologique au 1er trimestre par effet TSH-like de la hCG (pic à 10-12 SA). La T4L normale confirme l'absence d'hyperthyroïdie vraie.</p>
+</blockquote>
+<h3 id="or">🥇 Or</h3>
+<p><strong>Q4.</strong> Un patient sous hydrocortisone à forte dose (100 mg/j) pour insuffisance surrénalienne aiguë en réanimation a une TSH à 0,3 mUI/L. La T4L est légèrement basse. Faut-il débuter un traitement par LT4 ?<br />
+- A) Oui, immédiatement<br />
+- B) Non : les glucocorticoïdes inhibent la TSH (effet central), ce n'est pas une hypothyroïdie vraie<br />
+- C) Oui si la T3L est basse<br />
+- D) Oui après une scintigraphie</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Les glucocorticoïdes à forte dose inhibent la sécrétion de TRH et de TSH (effet central). La TSH basse ne reflète pas une hypothyroïdie primaire. Réévaluer la TSH à distance du traitement aigu.</p>
+</blockquote>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q5.</strong> Expliquez pourquoi la TSH bioinactive (dans l'hypothyroïdie centrale) peut être dosée normalement par immunoessai mais être inefficace pour stimuler la thyroïde.</p>
+<blockquote>
+<p><strong>Réponse</strong> : La glycosylation de la TSH (ajout de chaînes oligosaccharidiques) est induite par la TRH. Dans l'hypothyroïdie centrale (déficit en TRH), la TSH produite est peu ou pas glycosylée. Or les immunoessais dosent la TSH selon une propriété immunologique (reconnaissance par anticorps) indépendante de la glycosylation. Mais la glycosylation est indispensable à la bioactivité (liaison fonctionnelle au TSHR, signalisation AMPc, demi-vie prolongée). Résultat : dosage de TSH "normal" avec thyroïde non stimulée → T4L basse. C'est pourquoi dans le diagnostic d'hypothyroïdie centrale, on doit utiliser la T4L (et non la TSH seule) comme indicateur de substitution.</p>
+</blockquote>
+<hr />
+<h1 id="module-05-biosynthese-des-hormones-thyroidiennes">MODULE 05 — BIOSYNTHÈSE DES HORMONES THYROÏDIENNES</h1>
+<h2 id="51-captation-de-liode">5.1 Captation de l'iode</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO05-S01-001 — SCHÉMA : voie de biosynthèse thyroïdienne — NIS → organification → TPO/DUOX2 → couplage → Tg → sécrétion]</p>
+</blockquote>
+<h3 id="511-nis-captation-active">5.1.1 NIS : captation active</h3>
+<p>Le <strong>NIS</strong> (Sodium-Iodide Symporter, SLC5A5) est un cotransporteur basolatéral qui concentre l'iode dans le thyréocyte avec un gradient de concentration de 20 à 100 fois la concentration plasmatique.</p>
+<ul>
+<li>Énergie fournie par le gradient Na+ (Na/K-ATPase basolatérale)</li>
+<li>Stochiométrie : 2 Na+ pour 1 I-</li>
+<li>Régulation : induit par la TSH, inhibé par l'excès d'iode (effet Wolff-Chaikoff)</li>
+<li>Mutations inactivatrices NIS → hypothyroïdie congénitale avec défaut d'organification</li>
+</ul>
+<h2 id="52-organification-et-couplage">5.2 Organification et couplage</h2>
+<h3 id="521-thyroperoxydase-tpo-et-duox2">5.2.1 Thyroperoxydase (TPO) et DUOX2</h3>
+<p>La <strong>TPO</strong> catalyse deux réactions essentielles :<br />
+1. <strong>Oxydation</strong> de l'iodure (I-) en iode actif (I+) en présence de H₂O₂ (généré par DUOX2/DUOXA2)<br />
+2. <strong>Organification</strong> : iodation des résidus tyrosine de la thyroglobuline → MIT (3-monoiodotyrosine) et DIT (3,5-diiodotyrosine)<br />
+3. <strong>Couplage</strong> :<br />
+   - MIT + DIT → <strong>T3</strong> (triiodothyronine)<br />
+   - DIT + DIT → <strong>T4</strong> (thyroxine, tétraiodothyronine)</p>
+<h3 id="522-thyroglobuline-tg">5.2.2 Thyroglobuline (Tg)</h3>
+<p>Glycoprotéine homodimérique (660 kDa), 2748 acides aminés, 66-70 résidus tyrosine. Substrat de la TPO. Stockée dans la colloïde folliculaire comme réserve hormonale pour 2-3 mois.</p>
+<h2 id="53-secretion">5.3 Sécrétion</h2>
+<ol>
+<li><strong>Endocytose</strong> de la colloïde (macropinocytose, micropinocytose selon la stimulation TSH)</li>
+<li><strong>Fusion</strong> phagosome-lysosome → protéolyse cathepsines B, D, L</li>
+<li><strong>Libération</strong> T4 et T3 libres dans le thyréocyte → diffusion vers les capillaires</li>
+<li><strong>Recyclage</strong> des iodotyrosines (MIT, DIT) par DEHAL1</li>
+</ol>
+<p><strong>Ratio de sécrétion</strong> : T4/T3 ~ 20:1 en conditions basales.</p>
+<h2 id="54-effets-de-liode">5.4 Effets de l'iode</h2>
+<table>
+<thead>
+<tr>
+<th>Phénomène</th>
+<th>Mécanisme</th>
+<th>Conséquence clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wolff-Chaikoff</strong></td>
+<td>Excès iode → inhibition organification (iodolipides inhibiteurs)</td>
+<td>Hypothyroïdie transitoire (amiodarone, produit de contraste, Lugol)</td>
+</tr>
+<tr>
+<td><strong>Échappement</strong></td>
+<td>↓ expression NIS → ↓ captation iode → levée inhibition</td>
+<td>Retour à l'euthyroïdie chez sujet normal (J3-J10)</td>
+</tr>
+<tr>
+<td><strong>Jod-Basedow</strong></td>
+<td>Excès iode + nodule autonome → hyperthyroïdie</td>
+<td>Sur goitre multinodulaire en zone de carence ancienne</td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de OMS 2007) :</p>
+<blockquote>
+<p>Apports journaliers recommandés en iode : <strong>150 µg/j</strong> (adulte), <strong>250 µg/j</strong> (femme enceinte et allaitante). La France est en situation d'apport suffisant depuis la généralisation du sel iodé, mais certaines populations (végétaliens, femmes enceintes) restent à risque de carence relative.</p>
+</blockquote>
+<hr />
+<h2 id="55-quiz-module-05">5.5 Quiz Module 05</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Le couplage de deux DIT forme :<br />
+- A) La T3<br />
+- B) La T4<br />
+- C) La reverse T3<br />
+- D) La MIT</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — DIT + DIT → T4 (tétraiodothyronine, 4 atomes d'iode).</p>
+</blockquote>
+<p><strong>Q2.</strong> La thyroglobuline est stockée :<br />
+- A) Dans les granules intracellulaires du thyréocyte<br />
+- B) Dans la colloïde folliculaire<br />
+- C) Dans le plasma<br />
+- D) Dans les vaisseaux lymphatiques</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La thyroglobuline est stockée dans la colloïde folliculaire (espace extracellulaire), constituant la réserve hormonale de 2-3 mois.</p>
+</blockquote>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un patient reçoit de l'amiodarone depuis 6 mois. Sa TSH est à 12 mUI/L et sa T4L à 9 pmol/L. L'amiodarone provoque cette hypothyroïdie par :<br />
+- A) Inhibition directe du TSHR<br />
+- B) Destruction auto-immune des thyréocytes<br />
+- C) Effet Wolff-Chaikoff persistant : excès d'iode → inhibition de l'organification<br />
+- D) Stimulation de la dégradation de la T4</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — L'amiodarone libère massivement de l'iode (6 mg/j vs besoin de 150 µg/j), provoquant un effet Wolff-Chaikoff persistant chez les patients prédisposés (Hashimoto, thyroïde dysfonctionnelle).</p>
+</blockquote>
+<h3 id="or_1">🥇 Or</h3>
+<p><strong>Q4.</strong> Un enfant de 6 mois a une hypothyroïdie congénitale avec goitre volumineux, scintigraphie montrant une thyroïde en place et hypercaptante, mais un test au perchlorate positif (test de décharge). Quel gène suspecter ?<br />
+- A) NKX2-1<br />
+- B) TPO ou DUOX2 (défaut d'organification)<br />
+- C) NIS (défaut de captation)<br />
+- D) TSHR (résistance à la TSH)</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le test au perchlorate positif (décharge de l'iode non organifié &gt; 10 % de la captation initiale) signe un défaut d'organification → mutations TPO, DUOX2, DUOXA2 ou DEHAL1. La thyroïde est en place et hypercaptante car la captation (NIS) est normale mais l'utilisation de l'iode est déficiente.</p>
+</blockquote>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q5.</strong> Expliquez pourquoi la préparation au Lugol avant thyroïdectomie pour Basedow permet de réduire le risque hémorragique peropératoire.</p>
+<blockquote>
+<p><strong>Réponse</strong> : L'excès d'iode du Lugol provoque : (1) Effet Wolff-Chaikoff → blocage de la synthèse hormonale → réduction de la thyrotoxicose préopératoire, (2) Effet vasculaire direct : l'excès d'iode provoque une vasoconstriction des capillaires thyroïdiens et réduit l'hypervascularisation caractéristique du Basedow (débit pouvant atteindre 1 L/min en crise), (3) Réduction du volume thyroïdien par assèchement de la colloïde. Le Lugol est administré 10-15 jours avant la chirurgie, jamais seul (risque d'exacerbation initiale).</p>
+</blockquote>
+<hr />
+<h1 id="module-06-transport-et-metabolisme-peripherique">MODULE 06 — TRANSPORT ET MÉTABOLISME PÉRIPHÉRIQUE</h1>
+<h2 id="61-proteines-de-transport">6.1 Protéines de transport</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO06-S01-001 — TABLEAU : protéines de transport des HT — TBG, TTR, albumine — proportions et affinités]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Protéine</th>
+<th>Proportion (T4)</th>
+<th>Affinité</th>
+<th>Variations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TBG</strong> (Thyroxine-Binding Globulin)</td>
+<td>70-75 %</td>
+<td>Très haute (Kd 10⁻¹⁰ M)</td>
+<td>↑ estrogènes, grossesse, hépatite ; ↓ androgènes, cirrhose, néphrotique</td>
+</tr>
+<tr>
+<td><strong>Transthyrétine (TTR)</strong></td>
+<td>15-20 %</td>
+<td>Haute (Kd 10⁻⁸ M)</td>
+<td>↓ inflammation aiguë (réactant négatif)</td>
+</tr>
+<tr>
+<td><strong>Albumine</strong></td>
+<td>10 %</td>
+<td>Faible (Kd 10⁻⁶ M)</td>
+<td>↓ dénutrition, syndrome néphrotique, cirrhose</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fraction libre</strong> : seule fraction biologiquement active<br />
+- <strong>T4L</strong> : 0,03 % de T4 totale (12-22 pmol/L)<br />
+- <strong>T3L</strong> : 0,3 % de T3 totale (3,5-7 pmol/L)</p>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > La T4 totale est fortement influencée par les protéines de transport. Une femme enceinte aura une T4 totale élevée (TBG augmentée) mais une T4L normale. Toujours doser la **T4L** pour évaluer la fonction thyroïdienne réelle, surtout en cas de modification des protéines de transport.</div>
+
+<h2 id="62-desiodases">6.2 Désiodases</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO06-S02-001 — SCHÉMA : voies de conversion T4 → T3 et T4 → rT3 — DIO1, DIO2, DIO3 — tissus cibles]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Désiodase</th>
+<th>Localisation</th>
+<th>Réaction</th>
+<th>Caractéristique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DIO1</strong></td>
+<td>Foie, rein, thyroïde</td>
+<td>T4→T3 et rT3→T2</td>
+<td>Basse affinité, inhibée par PTU</td>
+</tr>
+<tr>
+<td><strong>DIO2</strong></td>
+<td>Cerveau, hypophyse, cœur, muscle</td>
+<td>T4→T3 (haute affinité)</td>
+<td>Source principale de T3 tissulaire</td>
+</tr>
+<tr>
+<td><strong>DIO3</strong></td>
+<td>Placenta, cerveau fœtal</td>
+<td>T4→rT3, T3→T2</td>
+<td>Inactivation, protection fœtale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Demi-vies</strong> : T4 = 7 jours / T3 = 18-24h / rT3 = quelques heures.</p>
+<p><strong>Conversion périphérique</strong> : 80 % de la T3 circulante provient de la conversion périphérique T4→T3 (essentiellement foie et rein via DIO1) ; 20 % de la sécrétion thyroïdienne directe.</p>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>Le polymorphisme <strong>Thr92Ala de DIO2</strong> (présent chez 12-16 % de la population) réduirait la conversion T4→T3 dans certains tissus, notamment le cerveau. Des études observationnelles suggèrent que ces patients répondent mieux à la combinaison LT4+LT3 (THYROID-LIFE 2019), mais les preuves restent insuffisantes pour modifier les recommandations actuelles.</p>
+</blockquote>
+<h2 id="63-transporteurs-membranaires">6.3 Transporteurs membranaires</h2>
+<table>
+<thead>
+<tr>
+<th>Transporteur</th>
+<th>Gène</th>
+<th>Localisation</th>
+<th>Mutation → Phénotype</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MCT8</strong></td>
+<td>SLC16A2 (lié à X)</td>
+<td>Cerveau (BHE, neurones)</td>
+<td>Syndrome d'Allan-Herndon-Dudley : retard mental sévère + T3 très élevée + T4 basse</td>
+</tr>
+<tr>
+<td><strong>MCT10</strong></td>
+<td>SLC16A10</td>
+<td>Muscle, foie</td>
+<td>Rôle moins défini</td>
+</tr>
+<tr>
+<td><strong>OATP1C1</strong></td>
+<td>SLCO1C1</td>
+<td>Capillaires cérébraux, astrocytes</td>
+<td>Haute affinité pour T4 → conversion DIO2 locale</td>
+</tr>
+</tbody>
+</table>
+<h2 id="64-reverse-t3-et-sick-euthyroid-syndrome">6.4 Reverse T3 et sick euthyroid syndrome</h2>
+<p>La <strong>rT3</strong> (3,3',5'-triiodothyronine) est biologiquement <strong>inactive</strong>, produite par désiodation de la position 5 interne de T4 (par DIO3 et DIO1).</p>
+<p><strong>Sick euthyroid syndrome</strong> (NTIS — Non-Thyroidal Illness Syndrome) :<br />
+- <strong>Profil</strong> : TSH normale ou basse, T3L basse, T4L normale ou basse, <strong>rT3 élevée</strong><br />
+- Mécanisme : cytokines (IL-6, TNF-α) → activation DIO3 → conversion T4 vers rT3 (pas vers T3)<br />
+- Causes : sepsis, grande chirurgie, IDM, insuffisance cardiaque sévère, brûlures, jeûne<br />
+- <strong>Ne pas traiter</strong> par LT4 ou LT3 (marqueur de gravité, pas cause de surmortalité)</p>
+<hr />
+<h2 id="65-quiz-module-06">6.5 Quiz Module 06</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quelle protéine assure 70-75 % du transport de la T4 ?<br />
+- A) Albumine<br />
+- B) Transthyrétine<br />
+- C) TBG (Thyroxine-Binding Globulin)<br />
+- D) Céruléoplasmine</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — La TBG est la principale protéine de transport de la T4 malgré une faible concentration, grâce à sa très haute affinité.</p>
+</blockquote>
+<p><strong>Q2.</strong> La DIO2 est la principale source de T3 dans :<br />
+- A) Le foie et les reins<br />
+- B) Le cerveau, l'hypophyse et le cœur<br />
+- C) Le placenta fœtal<br />
+- D) Les globules rouges</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — DIO2 (haute affinité, T4→T3) est prédominante dans le cerveau, l'hypophyse et le cœur — tissus où la T3 locale est critique.</p>
+</blockquote>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un patient en réanimation pour choc septique sévère a une TSH à 0,4 mUI/L, T4L à 8 pmol/L, T3L à 2 pmol/L (basse), rT3 élevée. Que faire ?<br />
+- A) Initier LT4 en urgence<br />
+- B) Initier T3 IV (liothyronine)<br />
+- C) Ne pas traiter : sick euthyroid syndrome, marqueur de gravité non causal<br />
+- D) Doser les anti-TPO</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Le tableau est typique du NTIS. Les essais randomisés n'ont pas montré de bénéfice de la substitution thyroïdienne dans ce contexte.</p>
+</blockquote>
+<h3 id="or_2">🥇 Or</h3>
+<p><strong>Q4.</strong> Un garçon de 3 ans a un retard mental sévère, une hypotonie, et un profil biologique : T3L = 12 pmol/L (très élevée), T4L = 4 pmol/L (très basse), TSH normale. Quel est le diagnostic et le mécanisme ?<br />
+- A) Hashimoto néonatal<br />
+- B) Syndrome d'Allan-Herndon-Dudley (mutation MCT8)<br />
+- C) Hypothyroïdie congénitale par athyréose<br />
+- D) Résistance aux hormones thyroïdiennes (RTHβ)</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Sans MCT8, la T3 ne peut entrer dans les neurones → accumulation plasmatique T3 (non consommée) + T4 massivement convertie en T3 par DIO1. Le cerveau est hypothyroïdien fonctionnel malgré la T3 plasmatique élevée.</p>
+</blockquote>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q5.</strong> Un patient sous LT4 pour hypothyroïdie de Hashimoto a une TSH normalisée à 1,8 mUI/L mais se plaint de fatigue persistante et de brouillard cognitif. Sa T3L est à la limite basse de la normale (3,6 pmol/L). Le génotypage révèle une mutation Thr92Ala homozygote de DIO2. Comment expliquer et quelle stratégie thérapeutique envisager ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : La mutation Thr92Ala de DIO2 réduit la conversion T4→T3 dans certains tissus (dont le cerveau). Sous monothérapie LT4, le cerveau peut être en hypothyroïdie fonctionnelle relative malgré une TSH normale. Stratégie : (1) Discussion d'un essai thérapeutique LT4+LT3 (combinaison), avec ratio LT4/LT3 ~14:1 ; (2) Cible : T3L dans le tiers supérieur de la normale, TSH dans l'intervalle normal bas ; (3) Surveillance cardiovasculaire (risque de tachycardie, trouble du rythme avec LT3) ; (4) Si amélioration symptomatique documentée → poursuite. Note : niveau de preuve faible (grade C), décision individualisée avec le patient.</p>
+</blockquote>
+<hr />
+<h1 id="module-07-effets-biologiques-des-hormones-thyroidiennes">MODULE 07 — EFFETS BIOLOGIQUES DES HORMONES THYROÏDIENNES</h1>
+<h2 id="71-recepteurs-nucleaires-tr">7.1 Récepteurs nucléaires TR</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO07-S01-001 — SCHÉMA : isoformes TRα et TRβ — distribution tissulaire et conséquences des mutations]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Isoforme</th>
+<th>Gène</th>
+<th>Tissus principaux</th>
+<th>Clinique si mutation inactivatrice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TRα1</strong></td>
+<td>THRA</td>
+<td>Cœur, muscle, os, intestin, cerveau</td>
+<td>RTHα : bradycardie, constipation, retard osseux, retard mental</td>
+</tr>
+<tr>
+<td><strong>TRβ1</strong></td>
+<td>THRB</td>
+<td>Foie, rein</td>
+<td>Hypercholestérolémie, résistance hépatique</td>
+</tr>
+<tr>
+<td><strong>TRβ2</strong></td>
+<td>THRB</td>
+<td><strong>Hypophyse, hypothalamus</strong></td>
+<td>RTHβ : TSH non freinée + signes paradoxaux hypo/hyper</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mécanisme génomique</strong> :<br />
+T3 → TR + RXR → hétérodimère → fixation sur TRE (Thyroid Response Elements) → recrutement co-activateurs → activation transcriptionnelle<br />
+<em>(En l'absence de T3 : TR recrute co-répresseurs → répression active)</em></p>
+<h2 id="72-genes-cibles-et-traductions-cliniques">7.2 Gènes cibles et traductions cliniques</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO07-S02-001 — TABLEAU : principaux gènes cibles des HT par organe et conséquences cliniques de l'hypothyroïdie]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Organe</th>
+<th>Gène cible</th>
+<th>Effet HT</th>
+<th>Signe d'hypothyroïdie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tous</strong></td>
+<td>Na/K-ATPase</td>
+<td>↑ BMR, thermogenèse</td>
+<td>Frilosité, ralentissement métabolique</td>
+</tr>
+<tr>
+<td><strong>Cœur</strong></td>
+<td>MHC-α, SERCA2a</td>
+<td>Inotropie+, chronotropie+, lusitropie+</td>
+<td>Bradycardie, épanchement péricardique, dysfonction diastolique</td>
+</tr>
+<tr>
+<td><strong>Foie</strong></td>
+<td>LDL-R</td>
+<td>↑ clairance LDL-C</td>
+<td>LDL-C élevé (20-40 %), hypercholestérolémie</td>
+</tr>
+<tr>
+<td><strong>Cerveau</strong></td>
+<td>MBP, PLP, synapthines</td>
+<td>Myélinisation, synaptogenèse</td>
+<td>Ralentissement idéo-moteur, crétinisme (si congénital)</td>
+</tr>
+<tr>
+<td><strong>Os</strong></td>
+<td>Ostéocalcine, collagène</td>
+<td>↑ remodelage osseux</td>
+<td>Retard statural chez l'enfant, épiphyses en mosaïque</td>
+</tr>
+<tr>
+<td><strong>Graisse brune</strong></td>
+<td>UCP1</td>
+<td>Thermogenèse adaptative</td>
+<td>Frilosité, prise de poids</td>
+</tr>
+<tr>
+<td><strong>Muscle</strong></td>
+<td>CK-MM</td>
+<td>Contractilité</td>
+<td>Myalgies, CPK élevées</td>
+</tr>
+</tbody>
+</table>
+<h2 id="73-resistance-aux-hormones-thyroidiennes-rth">7.3 Résistance aux hormones thyroïdiennes (RTH)</h2>
+<p><strong>RTHβ</strong> (mutation THRB hétérozygote, dominant négatif) :<br />
+- TSH élevée ou normale + <strong>T3L et T4L élevées</strong> (phénotype paradoxal)<br />
+- Tachycardie (TRα fonctionnel exposé à T3 élevée) + constipation/bradypsychie (TRβ résistant)<br />
+- Diagnostic différentiel : adénome thyréotrope (IRM hypophysaire + sous-unité α libre)</p>
+<p><strong>RTHα</strong> (mutation THRA) :<br />
+- TSH normale, T3L haute, T4L basse<br />
+- Bradycardie, constipation sévère, retard osseux, retard intellectuel</p>
+<hr />
+<h2 id="74-quiz-module-07">7.4 Quiz Module 07</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> En hypothyroïdie, le LDL-cholestérol est élevé car :<br />
+- A) La synthèse de cholestérol est augmentée<br />
+- B) Les récepteurs LDL hépatiques sont moins exprimés (LDL-R est un gène cible de TRβ1)<br />
+- C) La lipoprotéine lipase est inhibée<br />
+- D) L'albumine transporte moins les LDL</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — TRβ1 stimule l'expression du LDL-R hépatique. En hypothyroïdie, LDL-R ↓ → clairance LDL ↓ → LDL-C plasmatique ↑.</p>
+</blockquote>
+<h3 id="argent_3">🥈 Argent</h3>
+<p><strong>Q2.</strong> Pourquoi la réflexogramme achilléen est-il allongé (&gt; 400 ms) dans l'hypothyroïdie ?<br />
+- A) Neuropathie périphérique démyélinisante<br />
+- B) Réduction de la SERCA2a → ralentissement du recyclage du calcium → relaxation musculaire lente<br />
+- C) Accumulation de myxœdème dans les tendons<br />
+- D) Bradycardie réflexe</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La SERCA2a est un gène cible de T3 dans le muscle aussi. Sa réduction ralentit le pompage du Ca²⁺ hors du cytoplasme → phase de relaxation lente (allongement de la décontraction musculaire). C'est un signe clinique classique mais peu sensible (spécificité 85 %).</p>
+</blockquote>
+<h3 id="or_3">🥇 Or</h3>
+<p><strong>Q3.</strong> Un patient de 35 ans a une TSH à 5,8 mUI/L, T4L à 24 pmol/L (élevée), T3L à 9,1 pmol/L (élevée), FC 102/min. Son frère a le même profil. Quel est le diagnostic le plus probable et comment le confirmer ?<br />
+- A) Adénome thyréotrope → IRM hypophysaire<br />
+- B) Syndrome RTHβ → séquençage gène THRB<br />
+- C) Hashimoto phase hashitoxicose<br />
+- D) Hyperthyroïdie auto-immune bilatérale</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — TSH non freinée + T3/T4 élevées + antécédent familial = RTHβ (THRB). Confirmation : séquençage de THRB (&gt; 3 000 mutations répertoriées). Différenciation avec adénome thyréotrope : IRM hypophysaire normale + contexte familial + sous-unité α libre normale.</p>
+</blockquote>
+<h3 id="diamant_3">💎 Diamant</h3>
+<p><strong>Q4.</strong> Dans le syndrome RTHβ, pourquoi les bêtabloquants contrôlent la tachycardie sans aggraver les symptômes d'hypothyroïdie dans les tissus TRβ-résistants ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : Les bêtabloquants bloquent les récepteurs β-adrénergiques dont l'expression est augmentée par T3 (via TRα1 dans le cœur). Cela contrôle la tachycardie et les palpitations sans interférer avec le mécanisme d'action génomique de T3 sur les récepteurs TR. Les tissus TRβ-résistants (foie, hypophyse) voient déjà l'action de T3 amoindrie par la mutation — les bêtabloquants n'aggravent pas cette résistance car ils agissent en aval (récepteurs adrénergiques, non TR). En revanche, les antithyroïdiens de synthèse réduiraient la T3 et aggraveraient l'hypothyroïdie des tissus TRβ-résistants — ils sont contre-indiqués dans le RTHβ asymptomatique.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

@@ -1,0 +1,432 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-01-embryologie-anatomie-et-histologie-thyroidiennes">PARTIE 01 — Embryologie, Anatomie et Histologie Thyroïdiennes</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-01-embryologie-de-la-thyroide">MODULE 01 — Embryologie de la Thyroïde</h2>
+<h3 id="11-origine-embryologique">1.1 Origine embryologique</h3>
+<p>La thyroïde est la première glande endocrine à se différencier au cours de l'embryogenèse humaine.</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER01-S1-001 — Séquence d'embryologie thyroïdienne : du foramen caecum à la loge thyroïdienne — illustrations étape par étape]</p>
+</blockquote>
+<p><strong>Chronologie du développement</strong> (adapté de Vassart et Dumont, 1992) :</p>
+<table>
+<thead>
+<tr>
+<th>Stade</th>
+<th>Événement embryologique</th>
+<th>Gène(s) clé(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>J20-J22</strong></td>
+<td>Épaississement endodermique pharyngé — ébauche thyroïdienne</td>
+<td>NKX2-1 (TTF-1)</td>
+</tr>
+<tr>
+<td><strong>J24</strong></td>
+<td>Formation du diverticule thyroïdien (foramen caecum, base de langue)</td>
+<td>PAX8, FOXE1</td>
+</tr>
+<tr>
+<td><strong>J24-J50</strong></td>
+<td>Migration cranio-caudale le long du tractus thyréoglosse</td>
+<td>NKX2-1, FOXE1</td>
+</tr>
+<tr>
+<td><strong>J50</strong></td>
+<td>Position cervicale définitive — isthme + 2 lobes</td>
+<td>NKX2-1, PAX8</td>
+</tr>
+<tr>
+<td><strong>J60-J70</strong></td>
+<td>Différenciation folliculaire, synthèse de thyroglobuline</td>
+<td>TSHR (J70)</td>
+</tr>
+<tr>
+<td><strong>J70-J80</strong></td>
+<td>Apparition des cellules C (d'origine neural crest — corps ultimobranchiaux)</td>
+<td>ASCL1, PHOX2B</td>
+</tr>
+<tr>
+<td><strong>T2 (S20)</strong></td>
+<td>Fonctionnalité complète — captation iode, synthèse T4</td>
+<td>Tous</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tractus thyréoglosse</strong> :<br />
+- Reliquat du trajet de migration — normalement involué avant la naissance<br />
+- Persistance → <strong>kyste du tractus thyréoglosse</strong> (masse médiane cervicale, se déplace à la déglutition)<br />
+- Peut contenir du tissu thyroïdien fonctionnel (10-45 % des cas)</p>
+<hr />
+<h3 id="12-anomalies-embryologiques-a-lorigine-dhyperthyroidies">1.2 Anomalies embryologiques à l'origine d'hyperthyroïdies</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER01-S2-001 — Anomalies embryologiques thyroïdiennes : ectopie linguale, hemiagenésie, struma ovarii]</p>
+</blockquote>
+<p><strong>Struma ovarii</strong> :<br />
+- Tissu thyroïdien ectopique dans un tératome ovarien mature (0,5-1 % des tératomes)<br />
+- Peut développer une hyperthyroïdie autonome ou un carcinome thyroïdien<br />
+- Diagnostic : scintigraphie corps entier ¹³¹I (fixation pelvienne sans fixation cervicale)</p>
+<p><strong>Thyroïde linguale</strong> :<br />
+- Tissu thyroïdien résiduel à la base de la langue — peut être le seul tissu thyroïdien fonctionnel<br />
+- Peut se gorger de TSH en cas d'hypothyroïdie → masse linguale évolutive</p>
+<p><strong>Hémiagenésie thyroïdienne</strong> :<br />
+- Absence d'un lobe (plus souvent gauche)<br />
+- Le lobe restant peut devenir autonome et développer une hyperthyroïdie</p>
+<hr />
+<h3 id="13-facteurs-genetiques-du-developpement-thyroidien">1.3 Facteurs génétiques du développement thyroïdien</h3>
+<p><strong>Gènes de développement thyroïdien</strong> (adapté de De Felice et Di Lauro, Endocr Rev 2004) :</p>
+<table>
+<thead>
+<tr>
+<th>Gène</th>
+<th>Protéine</th>
+<th>Rôle</th>
+<th>Anomalie si muté</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NKX2-1 (TTF-1)</strong></td>
+<td>Facteur transcription</td>
+<td>Migration + différenciation folliculaire</td>
+<td>Athyréose, hypothyroïdie congénitale</td>
+</tr>
+<tr>
+<td><strong>FOXE1 (TTF-2)</strong></td>
+<td>Facteur Forkhead</td>
+<td>Migration (J24-J50)</td>
+<td>Ectopie thyroïdienne</td>
+</tr>
+<tr>
+<td><strong>PAX8</strong></td>
+<td>Facteur Paired box</td>
+<td>Différenciation folliculaire (NIS, TPO, Tg)</td>
+<td>Hypoplasie thyroïdienne</td>
+</tr>
+<tr>
+<td><strong>TSHR</strong></td>
+<td>Récepteur TSH</td>
+<td>Croissance + fonctionnalité</td>
+<td>Hypoplasie (perte fonct.) ou Basedow (gain fonct. si mutation somatique)</td>
+</tr>
+<tr>
+<td><strong>HHEX</strong></td>
+<td>Facteur homeobox</td>
+<td>Initiation bourgeon thyroïdien</td>
+<td>Athyréose</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — Dans les hyperthyroïdies, les mutations somatiques (non germinales) des gènes <strong>TSHR</strong> et <strong>GNAS</strong> (Gαs) sont responsables de l'autonomisation des nodules thyroïdiens dans le goitre multinodulaire toxique et l'adénome de Plummer.</p>
+<hr />
+<h3 id="quiz-module-01">QUIZ MODULE 01</h3>
+<p><strong>🥉 Q1</strong> — Quelle est l'origine embryologique de la thyroïde ?<br />
+A) Mésoderme cervical <strong>B) Endoderme du plancher pharyngé</strong> C) Crête neurale D) Épiblaste</p>
+<p><strong>🥈 Q2</strong> — Une patiente de 30 ans présente une hyperthyroïdie sans fixation cervicale à la scintigraphie ¹³¹I mais avec une fixation pelvienne gauche. Quel diagnostic évoquer ?<br />
+<strong>A) Struma ovarii — tissu thyroïdien ectopique dans un tératome ovarien, fonctionnellement autonome</strong></p>
+<p><strong>🥇 Q3</strong> — Quel gène muté de façon somatique est responsable de l'autonomisation des nodules dans le goitre multinodulaire toxique ?<br />
+A) PAX8 <strong>B) TSHR (mutation gain de fonction)</strong> C) NKX2-1 D) FOXE1</p>
+<p><strong>💎 Q4</strong> — Expliquer pourquoi une thyroïde linguale non diagnostiquée peut provoquer une hypothyroïdie paradoxale après RAI pour hyperthyroïdie.<br />
+<strong>A) Si la thyroïde linguale est le seul tissu thyroïdien fonctionnel, la RAI cible principalement la glande cervicale ectopique (fixation maximale là où la TSH est élevée) mais le struma lingual peut avoir une captation différente. Surtout, en post-RAI, si toute la masse thyroïdienne est détruite, le patient devient hypothyroïdien. Importance de la cartographie scintigraphique préthérapeutique.</strong></p>
+<hr />
+<h2 id="module-02-anatomie-thyroidienne">MODULE 02 — Anatomie Thyroïdienne</h2>
+<h3 id="21-anatomie-macroscopique">2.1 Anatomie macroscopique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER02-S1-001 — Anatomie de la thyroïde : vue antérieure et latérale, rapports anatomiques clés]</p>
+</blockquote>
+<p><strong>Caractéristiques morphologiques normales</strong> :<br />
+- Forme en <strong>H</strong> ou papillon (2 lobes + isthme ± lobe pyramidal)<br />
+- Poids : <strong>15-20 g</strong> (femme) ; 20-25 g (homme)<br />
+- Lobes : hauteur 4-6 cm, largeur 2-3 cm, épaisseur 1,5-2 cm<br />
+- Isthme : devant les 2e-3e anneaux trachéaux<br />
+- Lobe pyramidal (de Lalouette) : présent dans 50-80 % des sujets (reliquat tractus thyréoglosse)</p>
+<p><strong>Dans la maladie de Basedow</strong> :<br />
+- Goitre <strong>homogène, vasculaire, soufflant</strong> (frémissement perçu à la palpation = augmentation du débit)<br />
+- Volume souvent × 2-5 vs normal</p>
+<p><strong>Dans le GMN toxique</strong> :<br />
+- Goitre <strong>hétérogène, nodulaire</strong> — palpation de plusieurs nodules de tailles variées<br />
+- Volume souvent important (&gt; 50 g)</p>
+<hr />
+<h3 id="22-vascularisation-cle-chirurgicale">2.2 Vascularisation — Clé chirurgicale</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER02-S2-001 — Vascularisation thyroïdienne : artères thyroïdiennes supérieures et inférieures, artère thyroïdea ima, drainage veineux]</p>
+</blockquote>
+<p><strong>Artères thyroïdiennes</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Artère</th>
+<th>Origine</th>
+<th>Territoire</th>
+<th>Débit (Basedow)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supérieure</strong> (× 2)</td>
+<td>Carotide externe</td>
+<td>Pôle supérieur</td>
+<td>↑↑↑ (à lier en premier)</td>
+</tr>
+<tr>
+<td><strong>Inférieure</strong> (× 2)</td>
+<td>Tronc thyro-cervical (sous-clavière)</td>
+<td>Pôles inférieurs + parathyroïdes</td>
+<td>↑↑↑</td>
+</tr>
+<tr>
+<td><strong>Thyroïdea ima</strong></td>
+<td>Aorte/tronc brachio-céphalique</td>
+<td>Isthme</td>
+<td>Présente dans 10 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Débit sanguin dans la maladie de Basedow</strong> :<br />
+- <strong>Normal</strong> : 50-100 mL/min<br />
+- <strong>Basedow actif</strong> : 500-1 000 mL/min (× 10)<br />
+- Vascularisation visible à l'écho-Doppler — aspect en <strong>"inferno"</strong> ou <strong>"feu de brousse"</strong></p>
+<p><strong>Veines thyroïdiennes</strong> (drainage) :<br />
+- Supérieures et moyennes → veine jugulaire interne<br />
+- Inférieures → tronc veineux brachio-céphalique</p>
+<hr />
+<h3 id="23-rapports-nerveux-importance-chirurgicale-majeure">2.3 Rapports nerveux — Importance chirurgicale majeure</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER02-S3-001 — Trajet des nerfs récurrents laryngés et branches du nerf laryngé supérieur — anatomie chirurgicale]</p>
+</blockquote>
+<p><strong>Nerf laryngé récurrent (NLR)</strong> :<br />
+- Branche du nerf vague (X)<br />
+- <strong>Droit</strong> : court, croise la sous-clavière droite, trajet oblique<br />
+- <strong>Gauche</strong> : long, crosse l'aorte au ligament artériel, remonté dans le sillon trachéo-œsophagien<br />
+- Rapport : passe derrière l'artère thyroïdienne inférieure (variable)<br />
+- Lésion → <strong>dysphonie</strong> (unilatérale) ou <strong>aphonie + détresse respiratoire</strong> (bilatérale)</p>
+<p><strong>Nerf laryngé supérieur (NLS)</strong> :<br />
+- Branche externe : motrice (muscle crico-thyroïdien)<br />
+- Lésion → modification de la voix (perte des aigus, fatigabilité vocale)</p>
+<p><strong>Glandes parathyroïdes</strong> :<br />
+- 4 glandes (2 supérieures + 2 inférieures), 30-60 mg chacune<br />
+- Vascularisation via artère thyroïdienne inférieure<br />
+- Risque de dévascularisation lors de la thyroïdectomie totale → hypoparathyroïdie post-opératoire</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Dans la maladie de Basedow hypervascularisée, le NLR peut être déplacé et son trajet modifié. La dissection chirurgicale doit systématiquement identifier le NLR avant toute ligature artérielle.</div>
+
+<hr />
+<h3 id="24-rapports-anatomiques-importance-clinique">2.4 Rapports anatomiques — Importance clinique</h3>
+<table>
+<thead>
+<tr>
+<th>Rapport</th>
+<th>Structure</th>
+<th>Conséquence si compression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Antérieur</strong></td>
+<td>Muscles sous-hyoïdiens, aponévrose</td>
+<td>Goitre visible à l'inspection</td>
+</tr>
+<tr>
+<td><strong>Postérieur</strong></td>
+<td>Trachée, œsophage</td>
+<td>Dyspnée, dysphagie (goitre volumineux)</td>
+</tr>
+<tr>
+<td><strong>Latéral</strong></td>
+<td>Carotide commune, jugulaire interne, vague</td>
+<td>Compression vasculo-nerveuse (rare)</td>
+</tr>
+<tr>
+<td><strong>Supérieur</strong></td>
+<td>Larynx (cart. thyroïde)</td>
+<td>Dysphagie haute</td>
+</tr>
+<tr>
+<td><strong>Inférieur</strong></td>
+<td>Médiastin supérieur</td>
+<td>Goitre plongeant (dyspnée ++)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="quiz-module-02">QUIZ MODULE 02</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la caractéristique auscultatoire typique d'un goitre basedowien très vascularisé ?<br />
+A) Souffle diastolique <strong>B) Frémissement ou souffle systolique au-dessus de la thyroïde</strong> C) Silence auscultoire D) Bruits de déglutition amplifiés</p>
+<p><strong>🥈 Q2</strong> — Lors d'une thyroïdectomie totale pour Basedow, quelle complication bilatérale du nerf laryngé récurrent constitue une urgence vitale ?<br />
+<strong>A) Paralysie bilatérale des cordes vocales → fermeture glottique → asphyxie — urgence de trachéotomie ou intubation immédiate</strong></p>
+<p><strong>🥇 Q3</strong> — Pourquoi le débit sanguin thyroïdien est-il 10× supérieur à la normale dans la maladie de Basedow active ?<br />
+<strong>A) Les TRAb stimulants activent le TSHR de façon constitutive → ↑ captation iodée, ↑ synthèse hormonale → ↑ demande métabolique → vasodilatation artériolaire via NO + VEGF → ↑ néovascularisation (effet trophique direct de la TSH/TRAb sur l'endothélium thyroïdien)</strong></p>
+<p><strong>💎 Q4</strong> — Quel est le risque d'une ligation précoce de l'artère thyroïdienne inférieure lors d'une thyroïdectomie totale pour Basedow ?<br />
+<strong>A) Dévascularisation des 4 glandes parathyroïdes (vascularisation exclusive ou quasi-exclusive via l'artère thyroïdienne inférieure) → hypoparathyroïdie définitive avec hypocalcémie sévère — prévention : ligature distale à proximité de la glande + autotransplantation parathyroïdienne si glande dévascularisée identifiée</strong></p>
+<hr />
+<h2 id="module-03-histologie-thyroidienne">MODULE 03 — Histologie Thyroïdienne</h2>
+<h3 id="31-organisation-histologique-normale">3.1 Organisation histologique normale</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER03-S1-001 — Histologie thyroïdienne normale vs Basedow vs thyroïdite de De Quervain : comparaison microscopique]</p>
+</blockquote>
+<p><strong>Unité fonctionnelle : le follicule thyroïdien</strong></p>
+<p>Structure en sphère creuse :<br />
+- Paroi : monocouche de <strong>thyréocytes</strong> (cellules folliculaires cubiques) posés sur membrane basale<br />
+- Centre : <strong>colloïde</strong> (thyroglobuline + hormones stockées)<br />
+- Cellules C (parafolliculaires) : inter-folliculaires, sécrétant la <strong>calcitonine</strong></p>
+<p><strong>Dimensions folliculaires normales</strong> :<br />
+- Diamètre : 50-500 µm (variable selon l'état de stimulation)<br />
+- TSH forte → follicules petits, thyréocytes hauts (hyperactivité)<br />
+- TSH basse → follicules distendus, thyréocytes plats (repos)</p>
+<hr />
+<h3 id="32-histologie-du-basedow">3.2 Histologie du Basedow</h3>
+<p><strong>Aspects histologiques caractéristiques</strong> (adapté de LiVolsi, 1994) :</p>
+<table>
+<thead>
+<tr>
+<th>Signe histologique</th>
+<th>Description</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hyperplasie folliculaire diffuse</td>
+<td>Follicules petits, nombreux</td>
+<td>Stimulation TRAb</td>
+</tr>
+<tr>
+<td>Thyréocytes hauts, columnaires</td>
+<td>Aspect en palissade</td>
+<td>Hyperactivité sécrétoire</td>
+</tr>
+<tr>
+<td>Pliage de l'épithélium</td>
+<td>Projections papillaires intraluminales</td>
+<td>Hyperstimulation</td>
+</tr>
+<tr>
+<td>Colloïde raréfié</td>
+<td>Bords festonnés (scalloping)</td>
+<td>Endocytose intense</td>
+</tr>
+<tr>
+<td>Infiltrat lymphocytaire</td>
+<td>Agrégats lymphoïdes interstitiels</td>
+<td>Auto-immunité</td>
+</tr>
+<tr>
+<td>Vascularisation ++</td>
+<td>Capillaires dilatés interfolliculaires</td>
+<td>↑ débit sanguin</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPER03-S2-001 — Histologie Basedow coloration HE × 200 : hyperplasie folliculaire, colloïde festonné, infiltrat lymphoïde]</p>
+</blockquote>
+<hr />
+<h3 id="33-histologie-du-goitre-multinodulaire-toxique">3.3 Histologie du goitre multinodulaire toxique</h3>
+<p><strong>Aspects</strong> :<br />
+- Nodules folliculaires autonomes (cellules mutées TSHR gain-de-fonction)<br />
+- Voisinage de zones normales ou quiescentes<br />
+- Pas d'infiltrat lymphocytaire diffus (contrairement au Basedow)<br />
+- Parfois: nécrose, hémorragie intra-nodulaire, calcifications dystrophiques</p>
+<hr />
+<h3 id="34-histologie-des-thyroidites-hyperthyroidiennes">3.4 Histologie des thyroïdites hyperthyroïdiennes</h3>
+<p><strong>Thyroïdite subaiguë de De Quervain</strong> :<br />
+- Infiltrat granulomateux avec cellules géantes multinucléées (phagocytant la colloïde)<br />
+- Destruction folliculaire → libération massive d'hormones stockées → thyrotoxicose<br />
+- Évolution : fibrose partielle → restitution ad integrum (90 %)</p>
+<p><strong>Thyroïdite silencieuse / post-partum (phase hyperthyroïdienne)</strong> :<br />
+- Thyroïdite lymphocytaire auto-immune avec infiltrat CD8+ destructeur<br />
+- Pas de granulome (différencie de De Quervain)<br />
+- Destruction folliculaire → phase thyrotoxique transitoire</p>
+<hr />
+<h3 id="quiz-module-03">QUIZ MODULE 03</h3>
+<p><strong>🥉 Q1</strong> — Quel est l'aspect histologique caractéristique du colloïde dans la maladie de Basedow ?<br />
+A) Colloïde abondant et dense <strong>B) Colloïde raréfié aux bords festonnés (scalloping)</strong> C) Colloïde absent D) Colloïde calcifié</p>
+<p><strong>🥈 Q2</strong> — Quelle est la différence histologique essentielle entre la thyroïdite de De Quervain et la thyroïdite silencieuse ?<br />
+<strong>A) De Quervain : granulomes avec cellules géantes multinucléées (phagocytant la colloïde) — thyroïdite silencieuse : infiltrat lymphocytaire pur, pas de granulome</strong></p>
+<p><strong>🥇 Q3</strong> — Pourquoi la biopsie thyroïdienne n'est-elle pas indispensable dans le diagnostic de la maladie de Basedow ?<br />
+<strong>A) Le diagnostic est clinico-biologique (TRAb stimulants positifs + tableau thyrotoxique + éventuellement écho-Doppler) — la biopsie n'apporte pas d'information thérapeutique supplémentaire dans les formes typiques. Elle est réservée aux nodules suspects EU-TIRADS 4-5 associés.</strong></p>
+<p><strong>💎 Q4</strong> — Dans un goitre multinodulaire toxique, les nodules "chauds" à la scintigraphie correspondent-ils à des lésions bénignes ou malignes ?<br />
+<strong>A) Les nodules hyperfixants (chauds) autonomes sont quasi-exclusivement bénins (&lt; 1 % de malignité) — ils ont une activité fonctionnelle excessive mais la suppression de la TSH réduit le risque de dégénérescence maligne. Les nodules "froids" dans le même goitre ont un risque de malignité de 5-15 % et nécessitent une cytoponction si &gt; 10-15 mm EU-TIRADS 4-5.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 01 — Embryologie, Anatomie et Histologie — Mars 2026</em></p>
+</div>

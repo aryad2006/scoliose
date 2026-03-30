@@ -1,0 +1,689 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-2-physiopathologie-de-lhta">❤️ PARTIE 2 — PHYSIOPATHOLOGIE DE L'HTA</h1>
+<h2 id="mecanismes-de-lhta-essentielle-et-dysfonction-des-systemes-de-regulation">Mécanismes de l'HTA essentielle et dysfonction des systèmes de régulation</h2>
+<hr />
+<h1 id="module-05-hta-essentielle-mecanismes-multifactoriels">MODULE 05 — HTA ESSENTIELLE — MÉCANISMES MULTIFACTORIELS</h1>
+<h2 id="95-des-hta-polygenique-environnementale-complexe">95 % des HTA : polygénique, environnementale, complexe</h2>
+<hr />
+<h2 id="objectifs-pedagogiques">Objectifs pédagogiques</h2>
+<ul>
+<li>Définir l'HTA essentielle et la distinguer de l'HTA secondaire</li>
+<li>Identifier les facteurs génétiques prédisposant à l'HTA</li>
+<li>Analyser les facteurs environnementaux contributifs</li>
+<li>Comprendre le concept de mosaïque physiopathologique de l'HTA</li>
+</ul>
+<hr />
+<h2 id="1-definition-et-epidemiologie">1. Définition et épidémiologie</h2>
+<h3 id="11-hta-essentielle-vs-secondaire">1.1 HTA essentielle vs secondaire</h3>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>HTA essentielle (primaire)</th>
+<th>HTA secondaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fréquence</td>
+<td>90-95 % des HTA</td>
+<td>5-10 % des HTA</td>
+</tr>
+<tr>
+<td>Cause</td>
+<td>Multifactorielle (gènes + environnement)</td>
+<td>Cause identifiable (rénale, endocrinienne...)</td>
+</tr>
+<tr>
+<td>Âge de début</td>
+<td>Progressif, 30-50 ans</td>
+<td>Variable, parfois brutal</td>
+</tr>
+<tr>
+<td>Histoire familiale</td>
+<td>Souvent positive</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>Antihypertenseurs au long cours</td>
+<td>Étiologique si possible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-la-mosaique-de-page-1949">1.2 La mosaïque de Page (1949)</h3>
+<p>Irvine Page a proposé en 1949 le concept de « mosaïque » de l'HTA : la PA est le résultat de l'interaction de multiples facteurs interconnectés, et l'HTA résulte du dérèglement d'un ou plusieurs de ces facteurs.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHTA05-S01-001 — SCHÉMA : la mosaïque de Page — facteurs interagissant dans la régulation de la PA]</p>
+</blockquote>
+<p><strong>Facteurs de la mosaïque</strong> :<br />
+- Débit cardiaque<br />
+- Résistances périphériques<br />
+- Volémie<br />
+- Viscosité sanguine<br />
+- Élasticité artérielle<br />
+- Réactivité vasculaire<br />
+- Facteurs nerveux (sympathique)<br />
+- Facteurs humoraux (SRAA, catécholamines)<br />
+- Facteurs rénaux (pression-natriurèse)</p>
+<hr />
+<h2 id="2-facteurs-genetiques">2. Facteurs génétiques</h2>
+<h3 id="21-heritabilite-de-la-pa">2.1 Héritabilité de la PA</h3>
+<p>L'héritabilité de la PA est estimée entre 30 et 50 %. Les études GWAS (Genome-Wide Association Studies) ont identifié plus de 1000 loci génétiques associés à la PA, chacun avec un effet individuel faible (&lt; 1 mmHg par allèle à risque).</p>
+<p><strong>Formes monogéniques d'HTA</strong> (rares mais instructives) :</p>
+<table>
+<thead>
+<tr>
+<th>Maladie</th>
+<th>Gène</th>
+<th>Mécanisme</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syndrome de Liddle</td>
+<td>SCNN1B/G (ENaC)</td>
+<td>Gain de fonction du canal sodium</td>
+<td>Amiloride</td>
+</tr>
+<tr>
+<td>Hyperaldostéronisme glucocorticoïde-remédiable (GRA)</td>
+<td>Gène chimérique CYP11B1/B2</td>
+<td>Aldostérone régulée par l'ACTH</td>
+<td>Dexaméthasone</td>
+</tr>
+<tr>
+<td>Syndrome d'excès apparent de minéralocorticoïdes (AME)</td>
+<td>HSD11B2</td>
+<td>Déficit 11β-HSD2 → cortisol active le MR</td>
+<td>Spironolactone</td>
+</tr>
+<tr>
+<td>Syndrome de Gordon</td>
+<td>WNK1/WNK4</td>
+<td>↑ réabsorption NaCl au TCD</td>
+<td>Thiazidiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-facteurs-environnementaux">3. Facteurs environnementaux</h2>
+<h3 id="31-le-sel-nacl-facteur-majeur">3.1 Le sel (NaCl) — facteur majeur</h3>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'étude INTERSALT (1988, 52 populations, 32 pays) a démontré une corrélation positive entre apport sodé et niveau de PA. Les populations avec un apport &lt; 3 g/jour de sel (Yanomami, Amazonie) ont une PA moyenne de 95/61 mmHg sans augmentation avec l'âge. L'étude DASH-Sodium (2001) a confirmé qu'une réduction de l'apport sodé de 8 à 4 g/jour abaisse la PAS de 5-7 mmHg.</p>
+</blockquote>
+<p><strong>Sensibilité au sel</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Sensibles au sel (~50 %)</th>
+<th>Résistants au sel (~50 %)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Réponse à ↑ sel</td>
+<td>↑ PA significative (&gt; 5 mmHg)</td>
+<td>PA stable</td>
+</tr>
+<tr>
+<td>Profil</td>
+<td>Sujet âgé, noir, diabétique, IRC</td>
+<td>Sujet jeune, caucasien</td>
+</tr>
+<tr>
+<td>Mécanisme</td>
+<td>Défaut d'excrétion rénale du Na⁺</td>
+<td>Adaptation rénale normale</td>
+</tr>
+<tr>
+<td>Conséquence</td>
+<td>Sur-risque CV même si PA normalisée</td>
+<td>Moindre risque</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-autres-facteurs-environnementaux">3.2 Autres facteurs environnementaux</h3>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Effet sur la PA</th>
+<th>Mécanisme</th>
+<th>Niveau de preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Excès de sel</td>
+<td>↑ PAS 5-7 mmHg</td>
+<td>↑ Volémie, dysfonction endothéliale</td>
+<td>Élevé (DASH-Sodium)</td>
+</tr>
+<tr>
+<td>Excès d'alcool</td>
+<td>↑ PAS 5-10 mmHg</td>
+<td>↑ Sympathique, cortisol</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Obésité</td>
+<td>↑ PAS 5-10 mmHg par 10 kg</td>
+<td>↑ Sympathique, SRAA, insulinorésistance</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Sédentarité</td>
+<td>↑ PAS 5-6 mmHg vs actifs</td>
+<td>↑ Sympathique, rigidité artérielle</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Stress chronique</td>
+<td>↑ PAS 5-10 mmHg</td>
+<td>↑ Sympathique, cortisol</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>Tabac</td>
+<td>↑ PA aiguë transitoire</td>
+<td>↑ Sympathique (nicotine)</td>
+<td>Élevé (risque CV global)</td>
+</tr>
+<tr>
+<td>Faible apport en K⁺</td>
+<td>↑ PA</td>
+<td>↓ Natriurèse, ↑ tonus vasculaire</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>Carence en vitamine D</td>
+<td>Association avec HTA</td>
+<td>Activation SRAA ?</td>
+<td>Faible</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-quiz-module-05">4. Quiz — Module 05</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quelle proportion des HTA est « essentielle » (sans cause identifiable) ?<br />
+- A) 50-60 %<br />
+- B) 70-80 %<br />
+- C) 90-95 % ✓<br />
+- D) 100 %</p>
+<p><strong>Q2.</strong> Quel est l'apport en sel recommandé pour réduire la PA selon l'ESC/ESH 2023 ?<br />
+- A) &lt; 3 g/jour<br />
+- B) &lt; 5 g/jour ✓<br />
+- C) &lt; 8 g/jour<br />
+- D) &lt; 12 g/jour</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Dans le syndrome de Liddle, quel est le mécanisme de l'HTA et quel est le traitement spécifique ?<br />
+- A) Excès d'aldostérone, traité par spironolactone<br />
+- B) Gain de fonction du canal ENaC, traité par amiloride ✓<br />
+- C) Excès de cortisol, traité par dexaméthasone<br />
+- D) Sténose des artères rénales, traitée par angioplastie</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q4.</strong> L'étude INTERSALT a montré que certaines populations isolées (Yanomami) ont une PA moyenne de 95/61 mmHg sans augmentation avec l'âge. Quelles conclusions physiopathologiques en tirez-vous concernant le rôle de l'environnement vs la génétique dans l'HTA essentielle ?</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) L'absence d'HTA liée à l'âge dans ces populations suggère que l'augmentation de la PA avec l'âge n'est pas une fatalité biologique mais une conséquence environnementale ; (2) Facteurs protecteurs : très faible apport sodé (&lt; 1 g/jour), activité physique intense, absence d'obésité, pas d'alcool ; (3) Quand ces populations migrent vers un environnement « occidental », leur PA augmente → preuve de l'impact environnemental ; (4) Cependant, la susceptibilité individuelle varie → interaction gène-environnement ; (5) Implication : l'HTA essentielle est une « maladie de civilisation » en grande partie évitable.</p>
+</blockquote>
+<hr />
+<h1 id="module-06-dysfonction-endotheliale-et-stress-oxydatif">MODULE 06 — DYSFONCTION ENDOTHÉLIALE ET STRESS OXYDATIF</h1>
+<h2 id="le-premier-maillon-de-la-chaine-pathologique">Le premier maillon de la chaîne pathologique</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_1">Objectifs pédagogiques</h2>
+<ul>
+<li>Définir la dysfonction endothéliale et ses mécanismes</li>
+<li>Analyser le rôle du stress oxydatif dans l'HTA</li>
+<li>Comprendre la relation entre dysfonction endothéliale et remodelage vasculaire</li>
+<li>Identifier les implications thérapeutiques</li>
+</ul>
+<hr />
+<h2 id="1-dysfonction-endotheliale-dans-lhta">1. Dysfonction endothéliale dans l'HTA</h2>
+<h3 id="11-desequilibre-no-endotheline-1">1.1 Déséquilibre NO / Endothéline-1</h3>
+<p>Dans l'HTA, la balance vasodilatatrice/vasoconstrictrice de l'endothélium est perturbée au profit de la vasoconstriction.</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Normal</th>
+<th>HTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Production de NO</td>
+<td>Normale</td>
+<td>↓↓ (découplage de la eNOS, dégradation par ROS)</td>
+</tr>
+<tr>
+<td>Biodisponibilité du NO</td>
+<td>Normale</td>
+<td>↓↓↓ (inactivation par O₂⁻)</td>
+</tr>
+<tr>
+<td>Endothéline-1</td>
+<td>Faible</td>
+<td>↑↑</td>
+</tr>
+<tr>
+<td>Prostacycline (PGI₂)</td>
+<td>Normale</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>Thromboxane A₂</td>
+<td>Faible</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Espèces réactives de l'oxygène (ROS)</td>
+<td>Faibles</td>
+<td>↑↑↑</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA06-S01-001 — SCHÉMA : dysfonction endothéliale dans l'HTA — déséquilibre NO/ET-1, rôle du stress oxydatif]</p>
+</blockquote>
+<h3 id="12-le-stress-oxydatif">1.2 Le stress oxydatif</h3>
+<p>Le stress oxydatif résulte d'un déséquilibre entre la production d'espèces réactives de l'oxygène (ROS) et les systèmes antioxydants.</p>
+<p><strong>Sources de ROS dans l'HTA</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Enzyme</th>
+<th>Produit</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NADPH oxydase</td>
+<td>NOX1, NOX2, NOX4</td>
+<td>O₂⁻ (superoxyde)</td>
+<td>Inactivation du NO → ↓ vasodilatation</td>
+</tr>
+<tr>
+<td>eNOS découplée</td>
+<td>eNOS sans BH4</td>
+<td>O₂⁻ au lieu de NO</td>
+<td>eNOS devient pro-oxydante</td>
+</tr>
+<tr>
+<td>Xanthine oxydase</td>
+<td>Xanthine oxydase</td>
+<td>O₂⁻, H₂O₂</td>
+<td>Dommages tissulaires</td>
+</tr>
+<tr>
+<td>Mitochondries</td>
+<td>Chaîne respiratoire</td>
+<td>O₂⁻</td>
+<td>Dysfonction mitochondriale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-remodelage-vasculaire">2. Remodelage vasculaire</h2>
+<h3 id="21-types-de-remodelage-arteriel-dans-lhta">2.1 Types de remodelage artériel dans l'HTA</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Artères concernées</th>
+<th>Mécanisme</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hypertrophique eutrophique</td>
+<td>Artérioles (résistance)</td>
+<td>Réarrangement des CML sans ↑ masse</td>
+<td>↑ Résistances, ↓ lumière</td>
+</tr>
+<tr>
+<td>Hypertrophique hypertrophique</td>
+<td>Artères moyennes</td>
+<td>↑ Épaisseur média (prolifération CML)</td>
+<td>↑ Rigidité, ↓ compliance</td>
+</tr>
+<tr>
+<td>Remodelage aortique</td>
+<td>Aorte</td>
+<td>↑ Collagène, ↓ élastine, calcifications</td>
+<td>Rigidité aortique, ↑ PP, ↑ VOP</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🖼️ MHTA06-S02-001 — HISTOLOGIE COMPARÉE : artériole normale vs artériole hypertrophiée dans l'HTA — épaississement de la média]</p>
+</blockquote>
+<p>🔑 Le remodelage vasculaire est à la fois une conséquence de l'HTA (contrainte mécanique) et une cause de son aggravation (↑ résistances, ↓ compliance) — c'est le cercle vicieux du remodelage hypertensif.</p>
+<hr />
+<h2 id="3-quiz-module-06">3. Quiz — Module 06</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quelle molécule vasodilatatrice est principalement diminuée dans la dysfonction endothéliale ?<br />
+- A) L'endothéline-1<br />
+- B) Le monoxyde d'azote (NO) ✓<br />
+- C) L'angiotensine II<br />
+- D) Le thromboxane A₂</p>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q2.</strong> Pourquoi les antioxydants oraux (vitamines C, E) n'ont-ils pas montré de bénéfice dans la prévention cardiovasculaire malgré le rôle établi du stress oxydatif dans l'HTA ?</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) Les antioxydants oraux n'atteignent pas les compartiments subcellulaires où les ROS sont produits (mitochondrie, membrane) ; (2) Le stress oxydatif est un effet secondaire de mécanismes physiopathologiques plus profonds (activation SRAA, sympathique) ; (3) Les ROS ont aussi des rôles physiologiques (signalisation cellulaire) — les bloquer globalement est délétère ; (4) Les études HOPE et HPS n'ont montré aucun bénéfice de la vitamine E ; (5) Les médicaments qui réduisent le stress oxydatif « en amont » (IEC, statines) sont bénéfiques car ils ciblent la cause, pas la conséquence.</p>
+</blockquote>
+<hr />
+<h1 id="module-07-hyperactivite-sympathique-et-hta">MODULE 07 — HYPERACTIVITÉ SYMPATHIQUE ET HTA</h1>
+<h2 id="le-systeme-nerveux-autonome-comme-moteur-de-lhta">Le système nerveux autonome comme moteur de l'HTA</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_2">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire les preuves de l'hyperactivité sympathique dans l'HTA</li>
+<li>Analyser les mécanismes centraux et périphériques</li>
+<li>Comprendre le rôle de l'obésité et du SAS dans l'activation sympathique</li>
+<li>Identifier les cibles thérapeutiques anti-sympathiques</li>
+</ul>
+<hr />
+<h2 id="1-preuves-de-lhyperactivite-sympathique-dans-lhta">1. Preuves de l'hyperactivité sympathique dans l'HTA</h2>
+<h3 id="11-donnees-experimentales-et-cliniques">1.1 Données expérimentales et cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>Preuve</th>
+<th>Méthode</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Noradrénaline plasmatique</td>
+<td>Dosage</td>
+<td>↑ 10-30 % dans l'HTA essentielle</td>
+</tr>
+<tr>
+<td>Activité sympathique musculaire (MSNA)</td>
+<td>Microneurographie</td>
+<td>↑ fréquence des burst dans l'HTA</td>
+</tr>
+<tr>
+<td>Spillover de noradrénaline</td>
+<td>Technique isotopique</td>
+<td>↑ libération rénale et cardiaque de NA</td>
+</tr>
+<tr>
+<td>Variabilité de la FC</td>
+<td>Analyse spectrale</td>
+<td>↓ ratio HF/LF (prédominance sympathique)</td>
+</tr>
+<tr>
+<td>Barosensibilité</td>
+<td>Test phényléphrine</td>
+<td>↓ sensibilité baroréflexe dans l'HTA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-mecanismes-de-lhyperactivite-sympathique">1.2 Mécanismes de l'hyperactivité sympathique</h3>
+<table>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Localisation</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↓ Sensibilité baroréflexe</td>
+<td>Centres bulbaires</td>
+<td>↓ Frein vagal, ↑ tonus sympathique</td>
+</tr>
+<tr>
+<td>Activation centrale (angiotensine II cérébrale)</td>
+<td>Organe subfornical, area postrema</td>
+<td>↑ Décharge sympathique centrale</td>
+</tr>
+<tr>
+<td>Insulinorésistance / Hyperinsulinisme</td>
+<td>Hypothalamus</td>
+<td>↑ Tonus sympathique rénal</td>
+</tr>
+<tr>
+<td>Syndrome d'apnées du sommeil</td>
+<td>Chémorécepteurs</td>
+<td>Hypoxie intermittente → ↑ sympathique</td>
+</tr>
+<tr>
+<td>Obésité viscérale</td>
+<td>Adipocytes → leptine</td>
+<td>Leptine stimule le sympathique central</td>
+</tr>
+<tr>
+<td>Inflammation chronique</td>
+<td>Cytokines pro-inflammatoires</td>
+<td>↑ Réactivité sympathique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA07-S01-001 — SCHÉMA : mécanismes de l'hyperactivité sympathique dans l'HTA — voies centrales et périphériques]</p>
+</blockquote>
+<p>📋 <strong>RECOMMANDATION</strong> :</p>
+<blockquote>
+<p>La dénervation rénale, qui interrompt les fibres sympathiques afférentes et efférentes rénales, a montré un bénéfice modeste mais significatif dans les études SPYRAL HTN-ON MED (2022) et RADIANCE-HTN TRIO (2022). L'ESC/ESH 2023 la considère comme une option dans l'HTA résistante après optimisation du traitement pharmacologique (recommandation de classe IIb).</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-07">2. Quiz — Module 07</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel examen mesure directement l'activité sympathique musculaire ?<br />
+- A) L'ECG Holter<br />
+- B) La microneurographie (MSNA) ✓<br />
+- C) Le dosage de rénine<br />
+- D) La MAPA</p>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q2.</strong> Comment l'obésité viscérale contribue-t-elle à l'hyperactivité sympathique ?<br />
+- A) Par compression mécanique des vaisseaux<br />
+- B) Par sécrétion de leptine qui stimule les centres sympathiques ✓<br />
+- C) Par augmentation du débit cardiaque uniquement<br />
+- D) Par diminution de la fréquence cardiaque</p>
+<hr />
+<h1 id="module-08-role-du-rein-dans-lhta-essentielle">MODULE 08 — RÔLE DU REIN DANS L'HTA ESSENTIELLE</h1>
+<h2 id="la-relation-pression-natriurese-et-les-anomalies-renales-de-lhta">La relation pression-natriurèse et les anomalies rénales de l'HTA</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_3">Objectifs pédagogiques</h2>
+<ul>
+<li>Approfondir le concept de Guyton (courbe pression-natriurèse)</li>
+<li>Décrire le rôle du nombre de néphrons dans la prédisposition à l'HTA</li>
+<li>Analyser les anomalies tubulaires du transport sodé</li>
+<li>Comprendre l'hypothèse de Brenner (réduction néphronique)</li>
+</ul>
+<hr />
+<h2 id="1-lhypothese-de-brenner-nombre-de-nephrons-et-hta">1. L'hypothèse de Brenner — nombre de néphrons et HTA</h2>
+<p>👤 <strong>PORTRAIT — BARRY BRENNER (1937-2018)</strong> :</p>
+<blockquote>
+<p>Néphrologue à Harvard, Brenner a proposé en 1988 l'hypothèse selon laquelle un nombre réduit de néphrons à la naissance (hypoplasie néphronique) prédispose à l'HTA à l'âge adulte par surcharge fonctionnelle des néphrons restants.</p>
+</blockquote>
+<p><strong>L'hypothèse de Brenner</strong> (adapté de Brenner, AJKD 1988) :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Effet</th>
+<th>Conséquence à long terme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Petit poids de naissance (&lt; 2500 g)</td>
+<td>↓ Nombre de néphrons (~600 000 vs 1 000 000)</td>
+<td>↑ Risque d'HTA à l'âge adulte</td>
+</tr>
+<tr>
+<td>Prématurité</td>
+<td>↓ Néphrogenèse (complète à 36 SA)</td>
+<td>↑ Risque d'HTA et d'IRC</td>
+</tr>
+<tr>
+<td>Retard de croissance intra-utérin</td>
+<td>↓ Néphrons, programmation fœtale</td>
+<td>HTA + syndrome métabolique</td>
+</tr>
+<tr>
+<td>Néphrectomie (donneur vivant)</td>
+<td>↓ 50 % de la masse néphronique</td>
+<td>↑ Modeste du risque d'HTA</td>
+</tr>
+</tbody>
+</table>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>Keller et al. (NEJM, 2003) ont montré en autopsie que les patients hypertendus avaient en moyenne 702 000 néphrons par rein vs 1 429 000 chez les normotendus — soit une réduction de 50 %. L'hypothèse de Barker-Brenner (programmation fœtale) est aujourd'hui largement acceptée.</p>
+</blockquote>
+<h3 id="12-transport-tubulaire-du-sodium-et-hta">1.2 Transport tubulaire du sodium et HTA</h3>
+<p><strong>Anomalies du transport sodé dans l'HTA essentielle</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Segment tubulaire</th>
+<th>Transporteur</th>
+<th>Anomalie dans l'HTA</th>
+<th>Cible thérapeutique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tube proximal</td>
+<td>NHE3 (échangeur Na⁺/H⁺)</td>
+<td>↑ Réabsorption Na⁺</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Anse de Henle</td>
+<td>NKCC2 (co-transporteur Na-K-2Cl)</td>
+<td>↑ Réabsorption Na⁺</td>
+<td>Diurétiques de l'anse (furosémide)</td>
+</tr>
+<tr>
+<td>Tube contourné distal</td>
+<td>NCC (co-transporteur Na-Cl)</td>
+<td>↑ Réabsorption Na⁺</td>
+<td>Thiazidiques</td>
+</tr>
+<tr>
+<td>Tube collecteur</td>
+<td>ENaC (canal sodium épithélial)</td>
+<td>↑ Activité (aldostérone, Liddle)</td>
+<td>Amiloride, spironolactone</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA08-S01-001 — SCHÉMA : transport tubulaire du sodium le long du néphron — sites d'action des diurétiques]</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-08">2. Quiz — Module 08</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Selon l'hypothèse de Brenner, quel facteur de risque périnatal prédispose à l'HTA à l'âge adulte ?<br />
+- A) Le poids de naissance élevé (&gt; 4000 g)<br />
+- B) Le petit poids de naissance (&lt; 2500 g) ✓<br />
+- C) La naissance post-terme<br />
+- D) Le sexe masculin</p>
+<p><strong>Q2.</strong> Quel diurétique agit sur le co-transporteur NCC du tube contourné distal ?<br />
+- A) Le furosémide<br />
+- B) L'hydrochlorothiazide ✓<br />
+- C) L'amiloride<br />
+- D) L'acétazolamide</p>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q3.</strong> Intégrez les concepts de Guyton (courbe pression-natriurèse), Brenner (réduction néphronique) et Barker (programmation fœtale) pour construire un modèle physiopathologique cohérent de l'HTA essentielle.</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) Barker : malnutrition in utero / RCIU → programmation fœtale → ↓ nombre de néphrons + modifications épigénétiques du SRAA ; (2) Brenner : ↓ néphrons → ↑ charge par néphron → hyperfiltration compensatrice → sclérose glomérulaire progressive → ↓ capacité d'excrétion sodée ; (3) Guyton : le rein ne peut plus excréter le Na⁺ à une PA normale → déplacement de la courbe pression-natriurèse vers la droite → la PA doit augmenter pour maintenir l'équilibre sodé ; (4) Facteurs environnementaux (sel, obésité) s'ajoutent à cette prédisposition ; (5) Le cercle vicieux : HTA → lésions rénales → ↓ néphrons fonctionnels → aggravation de l'HTA.</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 2 — Physiopathologie</em><br />
+<em>Prochaine partie : Épidémiologie et diagnostic</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

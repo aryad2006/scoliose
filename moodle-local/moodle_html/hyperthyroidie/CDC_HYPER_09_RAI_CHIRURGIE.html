@@ -1,0 +1,546 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-09-traitement-iode-radioactif-et-chirurgie">PARTIE 09 — Traitement : Iode Radioactif et Chirurgie</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-29-radioiodotherapie-rai">MODULE 29 — Radioiodothérapie (RAI)</h2>
+<h3 id="291-mecanisme-et-principes">29.1 Mécanisme et principes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER29-S1-001 — Mécanisme de la RAI : captation de l'¹³¹I par le NIS, rayonnement β, destruction sélective du parenchyme thyroïdien]</p>
+</blockquote>
+<p><strong>Physique de l'¹³¹I</strong> :<br />
+- Isotope radioactif de l'iode : <strong>demi-vie 8,02 jours</strong><br />
+- Désintégration β⁻ (93 %) → rayonnement β : portée 0,5-2 mm → <strong>destruction sélective</strong> du parenchyme<br />
+- Désintégration γ (7 %) → imagerie scintigraphique<br />
+- Dose absorbée thyroïde : 50-300 Gy selon l'activité administrée</p>
+<p><strong>Mécanisme de destruction</strong> :<br />
+- ¹³¹I capté sélectivement par le NIS (comme l'iode stable)<br />
+- Rayonnement β → ionisation de l'ADN → mort cellulaire → fibrose progressive<br />
+- Délai d'action : <strong>4-12 semaines</strong> pour atteindre l'euthyroïdie ou l'hypothyroïdie<br />
+- Hypothyroïdie définitive après RAI : <strong>40-80 %</strong> à 1 an selon la dose</p>
+<hr />
+<h3 id="292-dosimetrie-et-calcul-de-la-dose">29.2 Dosimétrie et calcul de la dose</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER29-S2-001 — Formules de calcul de la dose de RAI : fixation, volume thyroïdien, activité administrée]</p>
+</blockquote>
+<p><strong>Formule de calcul de l'activité (GBq)</strong> (adapté de Marinelli, 1950) :</p>
+<pre><code>Activité (GBq) = [Dose absorbée (Gy) × Volume thyroïdien (g)] / [Captation 24h (%) × T_eff]
+</code></pre>
+<p><strong>Dose absorbée cible</strong> :<br />
+- Euthyroïdie visée : 60-80 Gy → activité variable<br />
+- Hypothyroïdie intentionnelle : &gt; 150 Gy → activité plus élevée</p>
+<p><strong>Activités pratiques habituelles</strong> :<br />
+- Basedow : 400-600 MBq (10-15 mCi) — dose ablative courante<br />
+- GMNT : 600-1000 MBq (15-25 mCi) — volume plus grand<br />
+- Adénome Plummer : 300-500 MBq (8-13 mCi) — captation focale</p>
+<p><strong>Facteurs influençant la dose</strong> :<br />
+- Volume thyroïdien (VT) : plus grand → dose plus élevée<br />
+- Captation ¹²³I à 24h : plus haute → dose moindre (meilleure efficacité)<br />
+- Antécédent de MMI (réduction de la captation) : adapter la dose ou arrêter MMI 5-7j avant</p>
+<hr />
+<h3 id="293-indications-et-contre-indications">29.3 Indications et contre-indications</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER29-S3-001 — Indications et contre-indications de la RAI selon l'étiologie et le contexte patient]</p>
+</blockquote>
+<p><strong>Indications de la RAI</strong> (adapté de ATA 2016, HAS 2019) :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>RAI recommandée</th>
+<th>Commentaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basedow après échec/rechute ATS</strong></td>
+<td>Oui</td>
+<td>Traitement définitif de 1ère intention après 1ère rechute</td>
+</tr>
+<tr>
+<td><strong>GMNT toxique</strong></td>
+<td>Oui</td>
+<td>Réduction de 40-60 % du volume, normalisation hormonale</td>
+</tr>
+<tr>
+<td><strong>Adénome de Plummer</strong></td>
+<td>Oui</td>
+<td>Ciblage du nodule autonome</td>
+</tr>
+<tr>
+<td><strong>Basedow chez patient &gt; 65 ans</strong></td>
+<td>Préférentielle</td>
+<td>Évite l'anesthésie à risque</td>
+</tr>
+<tr>
+<td><strong>Refus de chirurgie</strong></td>
+<td>Oui</td>
+<td>Traitement non invasif</td>
+</tr>
+<tr>
+<td><strong>Chirurgie à haut risque</strong></td>
+<td>Oui</td>
+<td>Alternative à la chirurgie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Contre-indications</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Contre-indication</th>
+<th>Absolue</th>
+<th>Relative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grossesse</strong></td>
+<td>Absolue</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Allaitement</strong></td>
+<td>Absolue (délai 3-6 mois post-arrêt)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TAO modérée-sévère active</td>
+<td>—</td>
+<td>Relative (risque aggravation)</td>
+</tr>
+<tr>
+<td>Goitre plongeant volumineux avec compression</td>
+<td>—</td>
+<td>Chirurgie préférée</td>
+</tr>
+<tr>
+<td>Souhait de grossesse &lt; 6 mois</td>
+<td>—</td>
+<td>Délai à respecter</td>
+</tr>
+<tr>
+<td>Nodule(s) suspect(s) non ponctionné(s)</td>
+<td>—</td>
+<td>Ponction d'abord</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="294-preparation-a-la-rai">29.4 Préparation à la RAI</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER29-S4-001 — Protocole de préparation à la RAI : arrêt ATS, régime pauvre en iode, protection des proches]</p>
+</blockquote>
+<p><strong>Étapes de préparation</strong> :</p>
+<ol>
+<li>
+<p><strong>Arrêt des ATS</strong> : MMI 5-7 jours avant la RAI (permet la récupération de la captation ¹²³I)<br />
+   - Si hyperthyroïdie sévère : garder MMI jusqu'à la RAI, reprendre 3-7j après si nécessaire (risque "stunning" diminué)</p>
+</li>
+<li>
+<p><strong>Régime pauvre en iode</strong> : 7-14 jours avant RAI<br />
+   - Éviter : algues, fruits de mer, produits de contraste, sel iodé, médicaments iodés<br />
+   - Objectif : augmenter la captation de l'¹³¹I</p>
+</li>
+<li>
+<p><strong>Évaluation de la captation</strong> : Mesure ¹²³I à 24h (si centre équipé) → calcul de la dose</p>
+</li>
+<li>
+<p><strong>Protection des proches</strong> :<br />
+   - Distanciation de 2m pendant 48h<br />
+   - Pas de contact rapproché avec enfants &lt; 5 ans, femmes enceintes pendant 5-7j<br />
+   - Arrêt de travail si contact avec public (5-7 jours selon activité administrée)<br />
+   - Pas d'allaitement (si en cours : arrêt définitif)</p>
+</li>
+<li>
+<p><strong>TAO préexistante</strong> : corticoïdes oraux systématiques (prednisone 0,3 mg/kg/j pendant 3 mois puis décroissance) pour protéger la TAO</p>
+</li>
+</ol>
+<hr />
+<h3 id="quiz-module-29">QUIZ MODULE 29</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la demi-vie de l'¹³¹I ?<br />
+A) 24h B) 13h <strong>C) 8 jours</strong> D) 30 jours</p>
+<p><strong>🥈 Q2</strong> — Pourquoi le MMI doit-il être arrêté 5-7 jours avant la RAI ?<br />
+<strong>A) Le MMI réduit la captation de l'iode par le NIS (par diminution de l'expression du NIS et réduction de la demande en iode thyroïdienne). L'arrêt permet la récupération de la captation de l'¹³¹I → meilleure efficacité de la RAI.</strong></p>
+<p><strong>🥇 Q3</strong> — Pourquoi la RAI est-elle contre-indiquée dans la TAO modérée-sévère active sans protection corticoïde ?<br />
+<strong>A) La RAI libère des antigènes thyroïdiens (Tg, TPO, TSHR) lors de la destruction thyroïdienne → stimulation du système immunitaire → ↑ TRAb circulants → aggravation de la TAO. La protection par corticoïdes systémiques (prednisone 0,3 mg/kg/j pendant 3 mois) prévient cette aggravation (adapté de Bartalena et al., NEJM 1998).</strong></p>
+<p><strong>💎 Q4</strong> — Comparer la dosimétrie personnalisée vs la dose fixe dans la RAI du Basedow.<br />
+<strong>A) Dose fixe (ex. 555 MBq pour tous) : simple, reproductible, moins de scintigraphie préthérapeutique, mais taux d'hypothyroïdie variable et incertain. Dosimétrie personnalisée (Marinelli) : calcul basé sur volume thyroïdien + captation 24h → dose adaptée, taux d'hypothyroïdie plus prévisible (70-90 % à 1 an si objectif ablatif intentionnel). Meta-analyses : pas de supériorité claire d'une méthode sur l'autre pour le contrôle de l'hyperthyroïdie — la dosimétrie est préférée dans les centres équipés (adapté de Alexander et Larsen, 2002).</strong></p>
+<hr />
+<h2 id="module-30-suivi-post-rai-et-resistance">MODULE 30 — Suivi Post-RAI et Résistance</h2>
+<h3 id="301-suivi-biologique-post-rai">30.1 Suivi biologique post-RAI</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPER30-S1-001 — Évolution de la TSH et T4L après RAI pour Basedow : de l'hyperthyroïdie à l'hypothyroïdie — courbe type]</p>
+</blockquote>
+<p><strong>Chronologie post-RAI</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Délai</th>
+<th>Biologie attendue</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1-J7</td>
+<td>Aggravation possible T4L (libération hormonale)</td>
+<td>Propranolol si symptômes ; ± reprendre MMI transitoire</td>
+</tr>
+<tr>
+<td>J14-J28</td>
+<td>Début de baisse T4L, TSH reste effondrée</td>
+<td>Surveillance</td>
+</tr>
+<tr>
+<td>M1-M3</td>
+<td>T4L normalise ou baisse — TSH commence à remonter</td>
+<td>TSH + T4L mensuels</td>
+</tr>
+<tr>
+<td>M3-M6</td>
+<td>TSH remonte → hypothyroïdie fréquente</td>
+<td>Initier LT4 si TSH &gt; 10 ou sympt.</td>
+</tr>
+<tr>
+<td>M6-M12</td>
+<td>État stable : euthyroïdie ou hypothyroïdie</td>
+<td>TSH trimestrielle</td>
+</tr>
+<tr>
+<td>&gt; 12 mois</td>
+<td>Hypothyroïdie définitive (40-80 %)</td>
+<td>LT4 si nécessaire</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quand initier la LT4 post-RAI</strong> :<br />
+- Si hypothyroïdie symptomatique à tout moment<br />
+- Si TSH &gt; 10 mUI/L, même asymptomatique<br />
+- Traitement préventif discuté dans certains centres (LT4 dès J2-J7 pour maintenir l'euthyroïdie)</p>
+<hr />
+<h3 id="302-persistance-ou-rechute-apres-rai">30.2 Persistance ou rechute après RAI</h3>
+<p><strong>Causes d'échec de la RAI</strong> :<br />
+- Volume thyroïdien trop grand (&gt; 80 mL)<br />
+- Captation initiale trop faible (&lt; 30 %) → réduire l'iode alimentaire + arrêt MMI rigoureux<br />
+- Dose insuffisante administrée<br />
+- Hyperthyroïdie très active (turnover rapide de l'¹³¹I)<br />
+- MMI repris trop tôt après RAI (&lt; 7 jours) → radioprotection partielle des thyréocytes</p>
+<p><strong>Délai d'évaluation</strong> : 6 mois post-RAI minimum</p>
+<p><strong>Traitement en cas d'échec</strong> :<br />
+- 2ème dose de RAI (activité souvent augmentée de 20-50 %)<br />
+- Thyroïdectomie si 2ème dose impossible ou goitre très volumineux</p>
+<hr />
+<h3 id="303-aggravation-de-la-tao-apres-rai">30.3 Aggravation de la TAO après RAI</h3>
+<p><strong>Incidence</strong> : aggravation TAO dans <strong>15-25 %</strong> des Basedow avec TAO après RAI sans corticoïdes (adapté de Bartalena et al., NEJM 1998)</p>
+<p><strong>Mécanisme</strong> : libération d'antigènes thyroïdiens → ↑ TRAb → ↑ activité fibroblastes orbitaires</p>
+<p><strong>Prévention</strong> :<br />
+- Corticoïdes systémiques (prednisone 0,3 mg/kg/j, durée 3 mois, décroissance progressive)<br />
+- Éradication tabagique avant RAI (tabac × 5-8 le risque de TAO sévère)<br />
+- Si TAO déjà modérée-sévère active → RAI à éviter ou différer → chirurgie préférentielle</p>
+<hr />
+<h3 id="quiz-module-30">QUIZ MODULE 30</h3>
+<p><strong>🥉 Q1</strong> — À quel délai évaluer l'efficacité de la RAI pour le Basedow ?<br />
+A) 1 mois B) 3 mois <strong>C) 6 mois</strong> D) 12 mois</p>
+<p><strong>🥈 Q2</strong> — Un patient traité par RAI à M3 a TSH à 42 mUI/L (hypothyroïdie profonde) et T4L basse. Que faire ?<br />
+<strong>A) Hypothyroïdie post-RAI — initier LT4 à la dose substitutive appropriée pour l'âge (1,5-1,7 µg/kg/j si &lt; 60 ans). Contrôle TSH à 6 semaines. Traitement à vie probable.</strong></p>
+<p><strong>💎 Q3</strong> — Quel traitement protège la TAO lors de la RAI pour le Basedow ?<br />
+<strong>A) Prednisone orale 0,3 mg/kg/j débutée 1-3 jours après la RAI, poursuivie 1 mois à la même dose, puis décroissance sur 2-3 mois (durée totale 3 mois). Ce protocole réduit le risque d'aggravation de TAO de 25 % à &lt; 5 % (adapté de Bartalena et al., NEJM 1998). Contre-indiqué si diabète déséquilibré, ostéoporose sévère, ou antécédents psychiatriques sous corticoïdes.</strong></p>
+<hr />
+<h2 id="module-31-thyroidectomie">MODULE 31 — Thyroïdectomie</h2>
+<h3 id="311-indications-chirurgicales">31.1 Indications chirurgicales</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER31-S1-001 — Indications de la thyroïdectomie dans les hyperthyroïdies : tableau par étiologie]</p>
+</blockquote>
+<p><strong>Indications de thyroïdectomie</strong> (adapté de ATA 2016) :</p>
+<table>
+<thead>
+<tr>
+<th>Indication</th>
+<th>Type d'intervention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basedow avec goitre volumineux (&gt; 80 mL)</td>
+<td>Thyroïdectomie totale</td>
+</tr>
+<tr>
+<td>Basedow avec TAO modérée-sévère active</td>
+<td>Thyroïdectomie totale (+ protection TAO)</td>
+</tr>
+<tr>
+<td>Basedow avec allergie ATS + contre-indication RAI</td>
+<td>Thyroïdectomie totale</td>
+</tr>
+<tr>
+<td>Basedow avec suspicion de carcinome associé</td>
+<td>Thyroïdectomie totale</td>
+</tr>
+<tr>
+<td>GMNT avec compression cervicale</td>
+<td>Thyroïdectomie totale ou subtotale</td>
+</tr>
+<tr>
+<td>GMNT avec plongement médiastinal</td>
+<td>Thyroïdectomie totale ± sternotomie</td>
+</tr>
+<tr>
+<td>Adénome Plummer &gt; 4 cm</td>
+<td>Lobectomie ou thyroïdectomie totale</td>
+</tr>
+<tr>
+<td>Crise thyrotoxique si médicaments inefficaces</td>
+<td>Thyroïdectomie totale urgente</td>
+</tr>
+<tr>
+<td>Grossesse avec Basedow non contrôlé (T2)</td>
+<td>Thyroïdectomie totale T2 si nécessaire</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="312-preparation-a-la-thyroidectomie">31.2 Préparation à la thyroïdectomie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER31-S2-001 — Protocole de préparation à la thyroïdectomie du Basedow : ATS, Lugol, bêta-bloquants, délai]</p>
+</blockquote>
+<p><strong>Protocole standard de préparation</strong> :</p>
+<p><strong>Étape 1 — Euthyroïdie clinique et biologique obligatoire</strong> (adapté de Bahn et al., 2011) :<br />
+- ATS (MMI) jusqu'à normalisation de la T4L et de la TSH<br />
+- Délai : 4-8 semaines en général</p>
+<p><strong>Étape 2 — Lugol 10-15 jours avant la chirurgie</strong> :<br />
+- Solution de Lugol : 8 gouttes × 3/j (= 8-12 mg d'iode/j)<br />
+- Ou KI 500 mg × 2/j<br />
+- Effets : ↓ Vascularisation thyroïdienne (↓ débit artériel), ↓ libération hormonale<br />
+- Réduction des pertes sanguines per-opératoires de 30-50 %<br />
+- ⚠️ Ne pas dépasser 14 jours (risque d'échappement Wolff-Chaikoff puis Jod-Basedow)</p>
+<p><strong>Étape 3 — Bêta-bloquants</strong> (si tachycardie persistante) :<br />
+- Propranolol ou bisoprolol jusqu'à la veille de l'intervention<br />
+- Reprendre en post-opératoire si FC &gt; 90/min</p>
+<p><strong>Bilan pré-opératoire</strong> :<br />
+- Nasofibroscopie (évaluation cordes vocales — base, risque NLR)<br />
+- Calcémie + PTH (parathyroïdes en base)<br />
+- Bilan thyroïdien complet<br />
+- Écho-cervicale (volume, vascularisation)</p>
+<hr />
+<h3 id="313-complications-de-la-thyroidectomie">31.3 Complications de la thyroïdectomie</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER31-S3-001 — Complications de la thyroïdectomie : fréquence, présentation, prise en charge]</p>
+</blockquote>
+<p><strong>Complications spécifiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Fréquence</th>
+<th>Présentation</th>
+<th>Prise en charge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Paralysie NLR</strong> (transitoire)</td>
+<td>3-5 %</td>
+<td>Dysphonie post-op</td>
+<td>Rééducation orthophonique ; résolution 3-6 mois</td>
+</tr>
+<tr>
+<td><strong>Paralysie NLR</strong> (définitive)</td>
+<td>0,5-1 %</td>
+<td>Dysphonie permanente</td>
+<td>Injection de médialisation, phonochirurgie</td>
+</tr>
+<tr>
+<td><strong>Paralysie bilatérale NLR</strong></td>
+<td>&lt; 0,5 %</td>
+<td><strong>Stridor, asphyxie</strong></td>
+<td><strong>Urgence — trachéotomie</strong></td>
+</tr>
+<tr>
+<td><strong>Hypoparathyroïdie</strong> (transitoire)</td>
+<td>10-20 %</td>
+<td>Hypocalcémie J1-J3</td>
+<td>Calcium oral/IV + alphacalcidol transitoire</td>
+</tr>
+<tr>
+<td><strong>Hypoparathyroïdie</strong> (définitive)</td>
+<td>1-3 %</td>
+<td>Hypocalcémie permanente</td>
+<td>Calcium + analogues vitamine D à vie</td>
+</tr>
+<tr>
+<td><strong>Hématome compressif</strong></td>
+<td>0,3-1 %</td>
+<td>Dyspnée, stridor post-op</td>
+<td><strong>Urgence — évacuation chirurgicale</strong></td>
+</tr>
+<tr>
+<td><strong>Hypothyroïdie</strong> (attendue)</td>
+<td>100 % (TT)</td>
+<td>TSH élevée post-op</td>
+<td>LT4 dès J1-J2</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>URGENCE</strong> — Tout hématome cervical compressif post-thyroïdectomie = urgence vitale (obstruction des voies aériennes). Ouverture immédiate de la plaie au lit du patient si détresse respiratoire → retour au bloc chirurgical.</p>
+</blockquote>
+<hr />
+<h3 id="314-type-dintervention">31.4 Type d'intervention</h3>
+<p><strong>Thyroïdectomie totale (TT)</strong> :<br />
+- Traitement de référence du Basedow (rémission garantie, TRAb qui disparaissent)<br />
+- Risque d'hypothyroïdie définitive = 100 % → LT4 à vie<br />
+- Risque de complications augmenté vs thyroïdectomie subtotale</p>
+<p><strong>Thyroïdectomie quasi-totale / subtotale</strong> :<br />
+- Laisse un petit moignon de tissu (2-5 g)<br />
+- Espoir de préserver la fonction parathyroïdienne<br />
+- Risque de récidive de l'hyperthyroïdie (5-15 % si moignon en Basedow)<br />
+- De moins en moins recommandée pour le Basedow</p>
+<p><strong>Lobectomie</strong> :<br />
+- Adénome de Plummer isolé ≤ 4 cm sans suspicion de malignité</p>
+<hr />
+<h3 id="quiz-module-31">QUIZ MODULE 31</h3>
+<p><strong>🥉 Q1</strong> — Pourquoi administrer du Lugol avant une thyroïdectomie pour Basedow ?<br />
+<strong>A) Double effet du Lugol en préparation chirurgicale : (1) Effet Wolff-Chaikoff → inhibition transitoire de la synthèse hormonale (réduction de T4L) ; (2) ↓ Vascularisation et taille du goitre par séquestration iodée → réduction des pertes sanguines per-opératoires de 30-50 %. À administrer 10-14 jours avant l'intervention, pas plus longtemps (risque d'échappement).</strong></p>
+<p><strong>🥈 Q2</strong> — Un patient est J2 post-thyroïdectomie totale. Il présente des fourmillements péribuccaux et des crampes des mains. Quel bilan et traitement ?<br />
+<strong>A) Signes d'hypocalcémie par hypoparathyroïdie post-opératoire. Bilan : calcémie ionisée (ou totale corrigée albuminémie) + magnésémie + PTH. Si calcémie &lt; 1,9 mmol/L ou symptômes sévères (signe de Chvostek, Trousseau) : gluconate de calcium IV (1-2 g sur 10-20 min), puis calcium oral + alphacalcidol (0,25-0,5 µg/j). Suivi calcémie toutes les 24h.</strong></p>
+<p><strong>💎 Q3</strong> — Pourquoi la thyroïdectomie est-elle préférée à la RAI chez un patient basedowien avec TAO modérée-sévère active ?<br />
+<strong>A) La RAI libère des antigènes thyroïdiens → ↑ TRAb → aggravation de la TAO (même avec corticoïdes protecteurs dans 5-15 % des cas). La thyroïdectomie totale réduit la charge antigénique (suppression totale de la thyroïde) → ↓ TRAb plus rapide → amélioration de la TAO dans 50-75 % des cas. De plus, la chirurgie offre un résultat immédiat sur l'hyperthyroïdie, réduisant la stimulation immunitaire thyroïdienne (adapté de Perros et al., EUGOGO 2018).</strong></p>
+<hr />
+<h2 id="module-32-situations-particulieres-chirurgicales-et-urgences">MODULE 32 — Situations Particulières Chirurgicales et Urgences</h2>
+<h3 id="321-basedow-decouvert-pendant-la-grossesse">32.1 Basedow découvert pendant la grossesse</h3>
+<p><strong>Stratégie selon le trimestre</strong> (adapté de ETA 2018) :</p>
+<table>
+<thead>
+<tr>
+<th>Trimestre</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T1</strong></td>
+<td>PTU + bêta-bloquants courts (propranolol à doses minimales) ; <strong>chirurgie contre-indiquée</strong> (tératoger)</td>
+</tr>
+<tr>
+<td><strong>T2</strong></td>
+<td>Switch vers MMI à S12-S14 ; chirurgie possible au T2 si ATS non efficaces (meilleure période)</td>
+</tr>
+<tr>
+<td><strong>T3</strong></td>
+<td>MMI ou PTU (si contre-indication MMI) ; <strong>RAI et chirurgie déconseillées</strong> (risque obstétrical prématurité)</td>
+</tr>
+<tr>
+<td><strong>Post-partum</strong></td>
+<td>Toutes options possibles (RAI délai 3-6 mois allaitement)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="322-crise-thyrotoxique-peri-operatoire">32.2 Crise thyrotoxique péri-opératoire</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER32-S2-001 — Prévention et traitement de la crise thyrotoxique péri-opératoire]</p>
+</blockquote>
+<p><strong>Causes</strong> :<br />
+- Thyroïdectomie sans préparation adéquate<br />
+- Libération massive d'hormones lors de la manipulation chirurgicale<br />
+- Infection post-opératoire déclenchante</p>
+<p><strong>Prévention</strong> :<br />
+- Euthyroïdie biologique OBLIGATOIRE avant toute chirurgie thyroïdienne<br />
+- Lugol 10-14 jours avant (↓ vascularisation, ↓ libération hormonale)<br />
+- Bêta-bloquants maintenus en péri-opératoire</p>
+<p><strong>Traitement si crise per-opératoire</strong> :<br />
+- PTU 600-1 000 mg par SNG (ou préparation rectale si impossible)<br />
+- Lugol par SNG (≥ 1h après PTU)<br />
+- Hydrocortisone 100 mg IV<br />
+- Propranolol IV 1-2 mg<br />
+- Refroidissement actif (si T° &gt; 39°C)<br />
+- Transfer en réanimation</p>
+<hr />
+<h3 id="quiz-module-32">QUIZ MODULE 32</h3>
+<p><strong>🥉 Q1</strong> — À quel trimestre peut-on opérer une thyroïdectomie pour Basedow non contrôlé pendant la grossesse ?<br />
+A) T1 <strong>B) T2 (idéalement S14-S22)</strong> C) T3 D) Post-partum uniquement</p>
+<p><strong>🥈 Q2</strong> — Quelles sont les conditions sine qua non pour opérer un patient basedowien ?<br />
+<strong>A) (1) Euthyroïdie clinique et biologique confirmée (TSH normalisée) sous ATS ; (2) Lugol 10-14 jours avant (réduction vascularisation) ; (3) NFS + calcémie de base pré-opératoires ; (4) Nasofibroscopie pré-opératoire (état cordes vocales) ; (5) Bêta-bloquants maintenu si FC &gt; 80/min.</strong></p>
+<p><strong>💎 Q3</strong> — Un patient opéré d'un goitre toxique sans préparation correcte présente en salle de réveil T° 39,5°C, FC 148/min, confusion. Score Burch-Wartofsky à 55. Quelle conduite d'urgence ?<br />
+<strong>A) Crise thyrotoxique post-opératoire : PTU 600-1000 mg par SNG (ou rectal) ; attendre 1h puis Lugol par SNG ; Hydrocortisone 100 mg IV ; Propranolol 1-2 mg IV lent (ECG continu) ; réfrigération active (vessie de glace, non aspirine) ; paracétamol IV ; transfert immédiat en réanimation ; monitoring ECG continu ; traitement du facteur déclenchant identifié.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 09 — RAI et Chirurgie — Mars 2026</em></p>
+</div>

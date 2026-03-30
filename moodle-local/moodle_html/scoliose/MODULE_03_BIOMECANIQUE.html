@@ -1,0 +1,807 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-3-biomecanique-du-rachis-et-de-la-scoliose">MODULE 3 — BIOMÉCANIQUE DU RACHIS ET DE LA SCOLIOSE</h1>
+<p><strong>Partie I — Fondamentaux et Sciences de Base</strong><br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Modules 1 (Anatomie) et 2 (Embryologie/Croissance)</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Un mois après le début du corset, la mère de Sophie questionne le chirurgien : <em>« Pourquoi la scoliose empire-t-elle si on ne fait rien ? Le corset peut-il vraiment arrêter cette spirale ? »</em> Le chirurgien dessine alors un diagramme : une flèche qui s'emballe sur elle-même. <em>« C'est le cercle vicieux de Stokes. Pour comprendre comment on peut l'interrompre, il faut d'abord comprendre la biomécanique. »</em></p>
+<p>→ <em>Ce module est le cœur mécanique du cours. Il explique POURQUOI la scoliose s'aggrave, COMMENT les forces fonctionnent sur le rachis, et sur QUELS principes reposent les traitements.</em></p>
+</blockquote>
+<p>🧑‍🤝‍🧑 <strong>Patient fil rouge</strong> : Sophie, 13 ans — on analyse les forces qui agissent sur sa courbure T5-T12, Cobb 28°.</p>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Zone neutre (Panjabi) • Zone élastique • Couplage des mouvements • Règle de Lovett • Centre de rotation instantanée (CRI) • Cercle vicieux de Stokes • Loi de Hueter-Volkmann • Cunéiformisation discale • Cunéiformisation vertébrale • Rotation axiale (AVR — Apical Vertebral Rotation) • Gibbosité • Plan de déformation maximale (PMD) • Flambage d'Euler • Cantilever • Zone stable • Zone instable • Manœuvre de dérotation (Cotrel-Dubousset) • Distraction de Harrington • Compression segmentaire</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> les axes de mouvement du rachis dans les trois plans et les mécanismes de couplage (Bloom : Connaissance)</li>
+<li><strong>Expliquer</strong> le cercle vicieux de Stokes et son rôle dans l'auto-aggravation de la scoliose (Bloom : Compréhension)</li>
+<li><strong>Analyser</strong> la déformation scoliotique comme phénomène tridimensionnel, en distinguant les composantes frontale, sagittale et axiale (Bloom : Analyse)</li>
+<li><strong>Comparer</strong> les différentes générations d'instrumentation chirurgicale et leurs principes biomécaniques (Bloom : Évaluation)</li>
+<li><strong>Appliquer</strong> les principes biomécaniques pour identifier les forces à l'œuvre sur la simulation VERTEX© (Bloom : Application)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> Le couplage des mouvements rachidiens signifie :<br />
+- A. Que les mouvements de deux vertèbres sont toujours opposés<br />
+- B. <strong>Qu'un mouvement principal entraîne automatiquement un mouvement secondaire dans un autre plan</strong><br />
+- C. Que la rotation seule est possible<br />
+- D. Que les mouvements de flexion et d'extension sont équivalents</p>
+<p><strong>Q2.</strong> Le cercle vicieux de Stokes est initié par :<br />
+- A. Une fracture vertébrale<br />
+- B. Une infection discale<br />
+- <strong>C. Une asymétrie de charge créant une croissance asymétrique qui aggrave l'asymétrie de charge</strong><br />
+- D. Une raideur musculaire unilatérale</p>
+<p><strong>Q3.</strong> La manœuvre de dérotation de Cotrel-Dubousset consiste à :<br />
+- A. Compresser les vertèbres apicales<br />
+- B. <strong>Rotation de la tige précintrée de 90° pour transformer la courbure scoliotique en lordose</strong><br />
+- C. Distraction pure comme Harrington<br />
+- D. Ancrage aux processus épineux</p>
+<p><strong>Q4.</strong> La zone neutre de Panjabi est la zone de mouvement où :<br />
+- A. Le disque est le plus rigide<br />
+- B. <strong>La résistance des structures passives est minimale — zone de laxité</strong><br />
+- C. Les muscles ne jouent aucun rôle<br />
+- D. La pression intradiscale est maximale</p>
+<p><strong>Q5.</strong> Le syndrome de flatback est une complication associée à :<br />
+- A. L'instrumentation de Cotrel-Dubousset<br />
+- <strong>B. L'instrumentation de Harrington — distraction pure entraînant perte de lordose lombaire</strong><br />
+- C. La vis pédiculaire de Roy-Camille<br />
+- D. La technique de Luque</p>
+<hr />
+<h2 id="31-biomecanique-rachidienne-normale">3.1 Biomécanique rachidienne normale</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Lorsque Sophie se penche pour attacher ses chaussures, combien de structures différentes contribuent à ce mouvement simple ? Quelle est la charge exercée sur le disque L3-L4 dans cette position ?</p>
+<h3 id="311-axes-de-mouvement-du-rachis">3.1.1 Axes de mouvement du rachis</h3>
+<p>Le rachis est un système articulé à <strong>6 degrés de liberté</strong> par segment fonctionnel :<br />
+- <strong>3 rotations</strong> : flexion/extension (Rx), inclinaison latérale (Ry), rotation axiale (Rz)<br />
+- <strong>3 translations</strong> : antéro-postérieure, latérale, axiale</p>
+<p>Mais ces degrés de liberté sont <strong>couplés et contraints</strong> par la géométrie des surfaces articulaires.</p>
+<div class="vertex-media video">
+<strong>🎬 M03-S01-001</strong><br/>
+<em>Animation axes de mouvement du rachis dans les 3 plans</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h4 id="amplitudes-physiologiques-par-segment">Amplitudes physiologiques par segment</h4>
+<table>
+<thead>
+<tr>
+<th>Mouvement</th>
+<th>Cervical</th>
+<th>Thoracique</th>
+<th>Lombaire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flexion totale</td>
+<td>80-90°</td>
+<td>20-45°</td>
+<td>40-60°</td>
+</tr>
+<tr>
+<td>Extension totale</td>
+<td>70°</td>
+<td>25-45°</td>
+<td>20-35°</td>
+</tr>
+<tr>
+<td>Inclinaison latérale</td>
+<td>45°</td>
+<td>20-30°</td>
+<td>20-30°</td>
+</tr>
+<tr>
+<td>Rotation axiale</td>
+<td>70-80°</td>
+<td>30-35°</td>
+<td>5-10°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Distribution de la mobilité</strong> :<br />
+- La rotation axiale est dominée par le rachis <strong>cervical</strong> (C1-C2 : 50% de la rotation cervicale)<br />
+- La rotation thoracique est relativement libre (peu contraindue) → contribue à la rotation scoliotique<br />
+- La rotation lombaire est très limitée par l'orientation sagittale des facettes</p>
+<h3 id="312-le-couplage-des-mouvements-regle-de-lovett">3.1.2 Le couplage des mouvements — règle de Lovett</h3>
+<p><strong>Définition</strong> : deux mouvements sont couplés si un mouvement principal en entraîne un second de façon systématique et non évitable.</p>
+<p><strong>Règle de Lovett</strong> (Lovett, 1907, <em>Lateral Curvature of the Spine</em>) : Au rachis thoracique et lombaire, <strong>l'inclinaison latérale et la rotation axiale sont couplées</strong>. La diretion du couplage varie selon le niveau et la posture :<br />
+- Rachis thoracique : inclinaison droite → rotation droite (couplage ipsilatéral)<br />
+- Rachis lombaire en lordose : inclinaison droite → rotation gauche (couplage contralatéral)<br />
+- Rachis lombaire en flexion : couplage inversé</p>
+<p><strong>Importance pour la scoliose</strong> : La déformation scoliotique est une exagération pathologique de ce couplage. La courbure frontale s'accompagne obligatoirement d'une rotation axiale des vertèbres — c'est l'<strong>essence tridimensionnelle de la scoliose</strong>.</p>
+<div class="vertex-media video">
+<strong>🎬 M03-S01-001</strong><br/>
+<em>Animation couplage inclinaison/rotation selon le niveau rachidien</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="313-repartition-des-charges-piliers-anterieur-et-posterieur">3.1.3 Répartition des charges — piliers antérieur et postérieur</h3>
+<p>Le segment fonctionnel de Junghans supporte les charges selon le modèle des <strong>deux piliers</strong> :</p>
+<p><strong>Pilier antérieur</strong> (corps vertébraux + disques) :<br />
+- Supporte <strong>80%</strong> des contraintes en compression axiale<br />
+- La pression intradiscale en position debout est de <strong>0,5-0,7 MPa</strong> (L3-L4)<br />
+- En flexion antérieure avec un objet de 20 kg : <strong>jusqu'à 2,3 MPa</strong> (Nachemson, 1966, <em>Clin Orthop</em>)</p>
+<p><strong>Pilier postérieur</strong> (facettes + arcs postérieurs) :<br />
+- Supporte <strong>20%</strong> des contraintes axiales<br />
+- Supporte <strong>jusqu'à 30%</strong> en position d'extension<br />
+- Transfère les forces de cisaillement</p>
+<div class="vertex-media schema">
+<strong>📐 M03-S01-002</strong><br/>
+<em>Schéma répartition des charges pilier antérieur/postérieur</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="pressions-intradiscales-selon-nachemson-l3-l4-en-reference-750n-corps">Pressions intradiscales selon Nachemson (L3-L4 en référence 750N corps)</h4>
+<table>
+<thead>
+<tr>
+<th>Position / activité</th>
+<th>Pression relative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Couché sur le dos</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Debout</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Assis sans soutien lombaire</td>
+<td>140%</td>
+</tr>
+<tr>
+<td>Flexion antérieure 20°</td>
+<td>150%</td>
+</tr>
+<tr>
+<td>Flexion + soulèvement 20 kg</td>
+<td>210%</td>
+</tr>
+<tr>
+<td>Flexion + soulèvement + rotation</td>
+<td>260%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="314-concept-de-zone-neutre-panjabi">3.1.4 Concept de zone neutre (Panjabi)</h3>
+<p>Manohar Panjabi (1992, <em>J Spinal Disord</em>) a décrit la <strong>zone neutre</strong> comme la portion de l'amplitude articulaire normale où les structures passives (disque, ligaments, capsules) exercent une résistance minimale au mouvement.</p>
+<div class="vertex-media schema">
+<strong>📐 M03-S01-003</strong><br/>
+<em>Courbe couple-déplacement : zone neutre vs zone élastique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Formule</strong> :</p>
+<blockquote>
+<p>Amplitude totale = Zone neutre (ZN) + Zone élastique (ZE)</p>
+</blockquote>
+<p><strong>Importance clinique</strong> :<br />
+- Une ZN élargie = instabilité segmentaire (dégénérescence discale, trauma)<br />
+- Les muscles stabilisateurs <strong>compensent</strong> une ZN élargie — ce qui explique la douleur chronique après chirurgie rachidienne (muscles fatiguant pour compenser)<br />
+- Dans la scoliose : l'apex de la courbure développe une ZN <strong>asymétrique</strong> → les segments apicaux se positionner spontanément en rotation</p>
+<h3 id="315-centre-de-gravite-et-equilibre-postural">3.1.5 Centre de gravité et équilibre postural</h3>
+<p>Le <strong>centre de gravité</strong> du corps humain se projette <strong>en avant</strong> de L4-L5 chez l'adulte. Le rachis est donc en équilibre <strong>instable</strong> en position debout :<br />
+- Les muscles para-vertébraux travaillent en contraction permanente (20-30% de leur capacité maximale)<br />
+- L'équilibre sagittal est maintenu par le tripode équilibre pelvien-rachis-membres inférieurs<br />
+- La <strong>ligne de plomb de C7</strong> (C7 plumb line) doit passer dans ou près du promontoire sacré en situation d'équilibre</p>
+<p><strong>Dans la scoliose</strong> : la ligne de plomb est décalée latéralement → <strong>décompensation coronale</strong> → muscles travaillent asymétriquement → fatigue musculaire + douleur.</p>
+<hr />
+<h2 id="32-biomecanique-de-la-deformation-scoliotique">3.2 Biomécanique de la déformation scoliotique</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi une scoliose de 15° peut-elle rester stable pendant 20 ans chez un adulte, mais progresser de 3° par mois chez Sophie à 13 ans ? La réponse est dans le cercle vicieux.</p>
+<h3 id="321-la-loi-de-hueter-volkmann-rappel-et-application">3.2.1 La loi de Hueter-Volkmann — rappel et application</h3>
+<p><em>Déjà introduite en Module 2, développée ici en biomécanique.</em></p>
+<p><strong>Énoncé complet</strong> :</p>
+<blockquote>
+<p>« La pression intermittente inhibe la croissance enchondrale ; la traction intermittente la stimule. La pression permanente l'inhibe de façon irréversible (nécrose du cartilage de croissance). »</p>
+</blockquote>
+<p><strong>Application à la scoliose</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Zone vertébrale</th>
+<th>Contrainte</th>
+<th>Effet sur croissance</th>
+<th>Conséquence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Côté concave</td>
+<td>Compression</td>
+<td>Inhibition</td>
+<td>Vertèbre + basse côté concave</td>
+</tr>
+<tr>
+<td>Côté convexe</td>
+<td>Traction</td>
+<td>Stimulation</td>
+<td>Vertèbre + haute côté convexe</td>
+</tr>
+<tr>
+<td>Disque côté concave</td>
+<td>Compression</td>
+<td>Cunéiformisation</td>
+<td>Coin discal concave</td>
+</tr>
+<tr>
+<td>Disque côté convexe</td>
+<td>Traction</td>
+<td>Expansion</td>
+<td>Disque triangulaire base convexe</td>
+</tr>
+</tbody>
+</table>
+<p>→ Le résultat est une <strong>cunéiformisation</strong> progressive de la vertèbre et du disque, amplifiant la courbure frontale.</p>
+<h3 id="322-cercle-vicieux-de-stokes-le-modele-de-hueter-volkmann-dynamique">3.2.2 Cercle vicieux de Stokes — le modèle de Hueter-Volkmann dynamique</h3>
+<p>Ian Stokes (Stokes et al., 1996, <em>Spine</em>) a modélisé l'auto-aggravation de la scoliose idiopathique :</p>
+<blockquote>
+<p>[MEDIA: 📊 M03-S02-001 — Diagramme complet cercle vicieux de Stokes avec flèches causales]</p>
+</blockquote>
+<p><strong>Séquence du cercle vicieux</strong> :</p>
+<pre><code>1. Asymétrie initiale (ex: 5° de courbure)
+         ↓
+2. Asymétrie des charges mécaniques sur les vertèbres apicales
+         ↓
+3. Loi de Hueter-Volkmann : croissance ↓ côté concave, croissance ↑ côté convexe
+         ↓
+4. Cunéiformisation discale et vertébrale → AGGRAVATION de la courbure
+         ↓
+5. Asymétrie accrue → retour à l'étape 2 (BOUCLE)
+</code></pre>
+<p><strong>Seuil critique</strong> : En dessous d'une certaine courbure (estimée à <strong>10-15°</strong>), les mécanismes de stabilisation (tonicité musculaire, proprioception) compensent. Au-dessus de ce seuil et pendant la croissance, le cercle vicieux peut s'emballer.</p>
+<p><strong>Modèle mathématique de Stokes</strong> :</p>
+<blockquote>
+<p>dCobb/dt = k × f(croissance) × g(Cobb)<br />
+Où k est une constante de progression et f, g des fonctions croissantes</p>
+</blockquote>
+<p><strong>Implication thérapeutique directe</strong> :<br />
+- Le corset <strong>interrompt le cercle vicieux</strong> en redistribuant les charges (diminution de la contrainte côté concave, mise en traction côté convexe)<br />
+- L'objectif n'est PAS de corriger la scoliose mais de <strong>s'opposer au cercle vicieux</strong> pendant la croissance</p>
+<h3 id="323-deformation-tridimensionnelle-les-3-plans">3.2.3 Déformation tridimensionnelle — les 3 plans</h3>
+<p>La scoliose est une déformation <strong>tridimensionnelle</strong>, pas une simple courbure dans le plan frontal :</p>
+<div class="vertex-media video">
+<strong>🎬 M03-S02-002</strong><br/>
+<em>Animation déformation 3D scoliotique : plan frontal + sagittal + axial</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h4 id="plan-frontal-coronal">Plan frontal (coronal)</h4>
+<ul>
+<li><strong>Angle de Cobb</strong> : paramètre de référence (mesuré sur la radiographie de face)</li>
+<li>Courbure primaire (majeure) + courbures secondaires (compensatoires)</li>
+<li>Les courbures compensatoires sont structurales ou fonctionnelles</li>
+</ul>
+<h4 id="plan-sagittal">Plan sagittal</h4>
+<ul>
+<li><strong>Hypocyphose thoracique</strong> : la scoliose thoracique droite typique s'accompagne d'une <strong>réduction de la cyphose thoracique</strong> (paradoxal mais constant) → thorax aplati, dos "plat"</li>
+<li>Mécanisme : la rotation vertébrale projette les corps vertébraux vers l'arrière à l'apex → réduction de la cyphose</li>
+<li><strong>Importance chirurgicale</strong> : restaurer la cyphose thoracique est aussi important que corriger la courbure frontale</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 M03-S02-003</strong><br/>
+<em>Schéma modification sagittale dans la SIA : hypocyphose thoracique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="plan-axial-transversal-la-composante-oubliee">Plan axial (transversal) — la composante oubliée</h4>
+<p>C'est la composante la <strong>moins visible</strong> mais la plus importante pour la gibbosité :</p>
+<p><strong>Rotation vertébrale apicale (AVR)</strong> :<br />
+- À l'apex d'une scoliose thoracique droite, les corps vertébraux <strong>tournent vers la droite</strong> (convexité)<br />
+- Les processus épineux se déplacent vers la <strong>gauche</strong> (concavité) — base de la mesure de Nash-Moe<br />
+- Les côtes droites (côté convexe) partent vers l'arrière → <strong>gibbosité costale</strong><br />
+- Les côtes gauches (côté concave) partent vers l'avant → <strong>dépression antérieure</strong></p>
+<p><strong>Mesure de la rotation</strong> :<br />
+| Méthode | Repère | Avantages | Inconvénients |<br />
+|---------|--------|-----------|---------------|<br />
+| Nash-Moe | Position du pédicule / corps | Simple, reproducible | Semi-quantitative (grades I-IV) |<br />
+| Perdriolle | Rotation dans le corps vertébral | Plus précise | Nécessite torsionmètre |<br />
+| Raimondi | Pédicule + corps | Combinée | Complexe |<br />
+| EOS 3D | Reconstruction informatique | Gold standard 3D | Coûteux |</p>
+<div class="vertex-media schema">
+<strong>📐 M03-S02-004</strong><br/>
+<em>Schéma mesure rotation vertébrale : Nash-Moe grades I-IV comparés</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Gibbosité</strong> (angle de gibbosité au scoliomètre de Bunnell) = manifestation surfacique de la rotation axiale. Seuil de détection au dépistage : <strong>≥ 5-7°</strong> au scoliomètre.</p>
+<h3 id="324-plan-de-deformation-maximale-pdm">3.2.4 Plan de déformation maximale (PDM)</h3>
+<p>Par définition (Stagnara 1984), la scoliose est mieux appréciée dans son <strong>plan de déformation maximale</strong> (PDM), qui est le plan perpendiculaire à l'axe d'une rotation de la colonne qui maximise l'angle de Cobb observable.</p>
+<p><strong>Angle du PDM</strong> par rapport au plan frontal : généralement <strong>20-30°</strong> dans les scolioses thoraciques droites.</p>
+<p><strong>Conséquence</strong> : La radiographie standard (plan frontal) <strong>sous-estime toujours</strong> l'amplitude réelle de la déformation, qui est plus grande dans le PDM.</p>
+<div class="vertex-media schema">
+<strong>📐 M03-S02-005</strong><br/>
+<em>Schéma plan de déformation maximale et angle de Stagnara</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h2 id="33-biomecanique-de-la-correction-chirurgicale">3.3 Biomécanique de la correction chirurgicale</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Le chirurgien qui opère Sophie dans 2 ans (si le corset échoue) devra choisir entre différentes techniques de correction. Sur quels principes biomécaniques reposent-elles ? Peut-on corriger la scoliose dans les 3 plans simultanément ?</p>
+<h3 id="331-principe-de-distraction-harrington-1962">3.3.1 Principe de distraction — Harrington (1962)</h3>
+<p>Paul Harrington (Harrington, 1962, <em>J Bone Joint Surg Am</em>) a révolutionné la chirurgie avec sa tige de distraction appliquée du côté <strong>concave</strong> de la courbe.</p>
+<div class="vertex-media">
+<strong>📷 M03-S03-001</strong><br/>
+<em>Photo instrumentation Harrington (tige de distraction + tige de compression)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>Principe biomécanique</strong> :<br />
+1. Accrochage d'une tige au crochet supérieur (laminaire) et inférieur (laminaire)<br />
+2. <strong>Distraction</strong> du côté concave → force de traction axiale → correction frontale<br />
+3. Compression optionnelle du côté convexe (tige courte)</p>
+<p><strong>Limites mécaniques</strong> :<br />
+- Correction <strong>2D uniquement</strong> : corrige le plan frontal mais ignore la rotation axiale<br />
+- Distraction du côté concave → <strong>perte de lordose lombaire</strong> (flatback syndrome)<br />
+- Points d'ancrage peu nombreux → risque de libération des crochets<br />
+- Instrumentations sur <strong>plusieurs niveaux</strong> → longueurs de fusion longues</p>
+<p><strong>Syndrome de flatback</strong> : complication tardive de Harrington. La distraction rectifie la lordose lombaire → le patient se retrouve avec un déséquilibre sagittal → douleurs chroniques, difficulty de horizontalisation du regard. Solution : ostéotomies correctrices secondaires.</p>
+<h3 id="332-principe-de-fixation-segmentaire-luque-1976">3.3.2 Principe de fixation segmentaire — Luque (1976)</h3>
+<p>Eduardo Luque a introduit les <strong>fils sous-laminaires</strong> (wires) permettant d'ancrer la tige sur plusieurs niveaux (fixation segmentaire).</p>
+<p><strong>Avantages</strong> :<br />
+- Correction par translation segmentaire (attirer chaque vertèbre vers la tige)<br />
+- Meilleure répartition des forces → fusion plus fiable<br />
+- Utilisé encore aujourd'hui pour les scolioses neuromusculaires (Unité de Galveston)</p>
+<p><strong>Inconvénients</strong> :<br />
+- Passage de fils sous les lames → risque neurologique plus élevé (moelle spinale)<br />
+- Technique chirurgicale longue et délicate<br />
+- Correction 3D limitée (pas de dérotation)</p>
+<h3 id="333-derotation-cotrel-dubousset-1984">3.3.3 Dérotation — Cotrel-Dubousset (1984)</h3>
+<p>La révolution de Cotrel et Dubousset est <strong>conceptuelle</strong> : corriger les 3 plans simultanément.</p>
+<div class="vertex-media video">
+<strong>🎬 M03-S03-002</strong><br/>
+<em>Animation manœuvre de dérotation Cotrel-Dubousset (séquence pas-à-pas)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p><strong>Principes biomécaniques spécifiques</strong> :</p>
+<h4 id="la-manuvre-de-derotation-rod-rotation">La manœuvre de dérotation (rod rotation)</h4>
+<ol>
+<li>La tige est précintrée dans le plan frontal (épousant la courbure scoliotique)</li>
+<li>La tige est montée dans les crochets en position "à plat" (tige dans le plan sagittal)</li>
+<li><strong>Rotation de 90°</strong> de la tige → la courbure frontale devient une <strong>cyphose</strong></li>
+<li>Ce faisant, la rotation axiale se corrige partiellement</li>
+</ol>
+<p><strong>Résultat</strong> : correction dans les 3 plans simultanément.</p>
+<h4 id="crochets-polyaxiaux-et-ancrage-multisegmentaire">Crochets polyaxiaux et ancrage multisegmentaire</h4>
+<p>La tige CD utilise des <strong>crochets</strong> (laminaires, transpédiculaires, transverses) aux points d'ancrage, avec une barre transversale de liaison (DTT — Device for Transverse Traction) qui augmente la rigidité torsionnelle du montage.</p>
+<h4 id="cantilever-vs-bending-in-situ">Cantilever vs bending in situ</h4>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Principe</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cantilever</strong></td>
+<td>Tige montée droite, attirée progressivement vers les crochets</td>
+<td>Courbures raides</td>
+</tr>
+<tr>
+<td><strong>In situ bending</strong></td>
+<td>Tige précintrée en S et immédiatement montée</td>
+<td>Courbures souples</td>
+</tr>
+</tbody>
+</table>
+<h3 id="334-vis-pediculaires-4e-generation-1990-2000">3.3.4 Vis pédiculaires — 4e génération (1990-2000)</h3>
+<p>L'introduction des <strong>vis pédiculaires</strong> (Roy-Camille 1963, Suk 1994 pour la scoliose) a constitué la dernière grande révolution.</p>
+<div class="vertex-media schema">
+<strong>📐 M03-S03-003</strong><br/>
+<em>Schéma anatomie du pédicule et trajectoire des vis pédiculaires</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Supériorité biomécanique</strong> :<br />
+- Ancrage aux <strong>3 colonnes</strong> (antérieure + postérieure + moyenne)<br />
+- Force de correction <strong>3 fois supérieure</strong> aux crochets<br />
+- Pas de passage intracanal → sécurité neurologique accrue<br />
+- Possibilité de <strong>dérotation directe</strong> (direct vertebral rotation — DVR) : chaque vis devient un levier pour déroder la vertèbre</p>
+<p><strong>Technique DVR (Direct Vertebral Rotation)</strong> :</p>
+<pre><code>1. Vis pédiculaires en place (apex + vertèbres adjacentes)
+2. Tige montée
+3. Rotation simultanée des vis → dérotation vertébrale directe en T (transverse plane)
+4. Résultat : correction axiale supérieure à la manœuvre CD classique
+</code></pre>
+<h3 id="335-zone-stable-et-zone-instable-de-harrington">3.3.5 Zone stable et zone instable de Harrington</h3>
+<p><strong>Zone stable</strong> (Harrington, 1962, <em>J Bone Joint Surg Am</em>) : zone délimitée par les lignes verticales passant par les bords latéraux du sacrum sur la radiographie de face.</p>
+<p><strong>Zone instable</strong> : vertebre(s) dont les extrémités tombent en dehors de la zone stable.</p>
+<p><strong>Règle clinique</strong> (sélection du niveau de fusion bas) :</p>
+<blockquote>
+<p>La <strong>vertèbre limitante inférieure</strong> doit être dans la zone stable ET horizontale (≤ 5° d'obliquité) → sinon, risque de décompensation coronale post-opératoire.</p>
+</blockquote>
+<div class="vertex-media schema">
+<strong>📐 M03-S03-004</strong><br/>
+<em>Schéma zone stable de Harrington avec vertèbre limitante inférieure</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h2 id="34-histoire-de-la-chirurgie-de-la-scoliose">3.4 Histoire de la chirurgie de la scoliose</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Comment une technique chirurgicale peut-elle être "révolutionnaire" dans les années 1980 et devenir obsolète 20 ans plus tard ? L'histoire de la chirurgie de la scoliose illustre parfaitement l'évolution accélérée de la médecine.</p>
+<h3 id="341-chronologie-de-linstrumentation">3.4.1 Chronologie de l'instrumentation</h3>
+<blockquote>
+<p>[MEDIA: 📊 M03-S04-001 — Frise chronologique complète de l'instrumentation rachidienne 1911-2025]</p>
+</blockquote>
+<h4 id="ere-pre-instrumentale-1900-1962">Ère pré-instrumentale (1900-1962)</h4>
+<ul>
+<li><strong>Albee et Hibbs (1911)</strong> : première arthrodèse postérieure par greffon osseux (Hibbs utilisait les arcs postérieurs broyés). Résultats : correction 15-25%, pseudarthrose 20-30%.</li>
+<li><strong>Plâtres de Risser (1950s)</strong> : immobilisation étendue post-opératoire (3-6 mois en plâtre). Contraignant mais permettant des fusions solides.</li>
+<li><strong>Limitation</strong> : sans instrumentation, correction insuffisante dès que Cobb &gt; 40°.</li>
+</ul>
+<h4 id="ere-harrington-1962-1984">Ère Harrington (1962-1984)</h4>
+<ul>
+<li><strong>Paul Harrington (1962)</strong> : tige de distraction. Réduction du taux de pseudarthrose à 5-10% (Harrington, 1962). Révolution mondiale.</li>
+<li>Diffusion en Europe dans les années 1970.</li>
+<li><strong>Complications</strong> : syndrome de flatback, libération de crochets, neurologie (taux &lt; 1% avec monitoring SSEP ; Reames et al., 2011, <em>Spine</em>).</li>
+</ul>
+<h4 id="ere-luque-1976-1984">Ère Luque (1976-1984)</h4>
+<ul>
+<li><strong>Eduardo Luque (Mexique)</strong> : fils sous-laminaires. Indiqué en Amérique Latine pour les grandes scolioses neuromusculaires.</li>
+<li>La fixation segmentaire permettait une meilleure répartition des forces mais le risque neurologique limitait son adoption.</li>
+</ul>
+<h4 id="ere-cotrel-dubousset-1984-1995">Ère Cotrel-Dubousset (1984-1995)</h4>
+<ul>
+<li><strong>Yves Cotrel et Jean Dubousset (France, 1984)</strong> : instrumentation CD. Véritable révolution mondiale.</li>
+<li>Premières corrections tridimensionnelles.</li>
+<li>Diffusion internationale rapide.</li>
+<li>Modifications : TSRH, Isola, Moss Miami — toutes dérivées du concept CD.</li>
+</ul>
+<h4 id="ere-des-vis-pediculaires-1994-present">Ère des vis pédiculaires (1994-présent)</h4>
+<ul>
+<li><strong>Young-Jin Kim et Seung-Woo Suk (Corée, 1994)</strong> : démonstration de la sécurité et supériorité des vis pédiculaires dans la scoliose.</li>
+<li><strong>Dérotation vertébrale directe</strong> (Kim, 2004) : nouveau paradigme de correction 3D.</li>
+<li>Réduction des niveaux de fusion (grâce à la puissance d'ancrage).</li>
+</ul>
+<h4 id="ere-moderne-2005-present">Ère moderne (2005-présent)</h4>
+<ul>
+<li><strong>Navigation / Robotique</strong> : O-arm + StealthStation, ROSA Spine, Mazor X — réduction du taux de malposition de vis à &lt; 2%.</li>
+<li><strong>Chirurgie de préservation de croissance</strong> :</li>
+<li>Growing rods (tiges de croissance) — allongement itératif</li>
+<li>VEPTR (Vertical Expandable Prosthetic Titanium Rib)</li>
+<li>Vertebral Body Tethering (VBT) — Betz 2019 — fixation flexible côté convexe</li>
+<li><strong>Approche Antérieure Mini-Invasive</strong> (VATS - Video Assisted Thoracic Surgery) pour les arthrodèses antérieures</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 M03-S04-002</strong><br/>
+<em>Photos comparatives matériel chirurgical : Harrington vs CD vs vis pédiculaires vs VBT</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="342-evolution-philosophique-des-objectifs-de-correction">3.4.2 Évolution philosophique des objectifs de correction</h3>
+<table>
+<thead>
+<tr>
+<th>Ère</th>
+<th>Objectif principal</th>
+<th>Mesure de succès</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pré-instrumentale</td>
+<td>Arthrodèse solide</td>
+<td>Pas de progression</td>
+</tr>
+<tr>
+<td>Harrington</td>
+<td>Correction frontale</td>
+<td>Réduction angle Cobb</td>
+</tr>
+<tr>
+<td>CD</td>
+<td>Correction 3D</td>
+<td>Réduction Cobb + équilibre coronal</td>
+</tr>
+<tr>
+<td>Vis pédiculaires</td>
+<td>Correction 3D + équilibre sagittal</td>
+<td>Cobb + SVA + paramètres pelviens</td>
+</tr>
+<tr>
+<td>Moderne</td>
+<td>Résultats centrés patient</td>
+<td>CROM, SRS-22r, ODI + objectifs biomécaniques</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Patient-Reported Outcomes (PROMs)</strong> : la révolution actuelle mesure non plus la correction radiographique mais la <strong>qualité de vie du patient</strong> :<br />
+- <strong>SRS-22r</strong> : questionnaire Scoliosis Research Society (fonction, douleur, image corporelle, santé mentale, satisfaction)<br />
+- <strong>Scores de Cobb &gt; résultats fonctionnels</strong> : un chirurgien peut obtenir une excellente correction et un mauvais SRS-22r</p>
+<hr />
+<h2 id="35-atelier-vertex-simulation-biomecanique">3.5 Atelier VERTEX© — Simulation biomécanique</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Visualiser les forces mécaniques sur un rachis scoliotique et comparer les effets de la distraction, translation, et dérotation.</p>
+<h3 id="protocole-experimental">Protocole expérimental</h3>
+<p><strong>Étape 1 — Créer une scoliose thoracique droite T5-T12 Cobb 35°</strong></p>
+<pre><code class="language-json">POST /api/spine
+{ &quot;patient_age&quot;: 13 }
+
+POST /api/spine/{id}/scoliosis
+{
+  &quot;cobb_angle&quot;: 35,
+  &quot;apex_vertebra&quot;: &quot;T9&quot;,
+  &quot;curve_type&quot;: &quot;right_thoracic&quot;
+}
+</code></pre>
+<p><strong>Étape 2 — Simuler une correction par distraction (principe Harrington)</strong></p>
+<pre><code class="language-json">POST /api/spine/{id}/solve
+{
+  &quot;load_type&quot;: &quot;distraction&quot;,
+  &quot;force_n&quot;: 200,
+  &quot;side&quot;: &quot;concave&quot;,
+  &quot;level_top&quot;: &quot;T5&quot;,
+  &quot;level_bottom&quot;: &quot;T12&quot;
+}
+</code></pre>
+<p>→ Observer la correction frontale, noter la modification sagittale (perte de cyphose prévisible)</p>
+<p><strong>Étape 3 — Simuler une instrumentation par vis pédiculaires avec dérotation</strong></p>
+<pre><code class="language-json">POST /api/spine/{id}/place_screw
+{
+  &quot;vertebra&quot;: &quot;T7&quot;,
+  &quot;entry_point&quot;: &quot;right&quot;,
+  &quot;trajectory_degrees&quot;: 5
+}
+</code></pre>
+<p>→ Répéter pour T5-T12 bilatéralement</p>
+<p><strong>Étape 4 — Appliquer la correction</strong></p>
+<pre><code class="language-json">POST /api/spine/{id}/correction
+{
+  &quot;technique&quot;: &quot;derotation&quot;,
+  &quot;correction_target_cobb&quot;: 10
+}
+</code></pre>
+<p>→ Observer la correction dans les 3 plans + calcul automatique des paramètres de correction</p>
+<p><strong>Questions d'interprétation</strong> :<br />
+1. Quelle technique donne la meilleure correction frontale ?<br />
+2. Quelle technique préserve le mieux la cyphose thoracique sagittale ?<br />
+3. Dans quel cas la correction par vis-dérotation est-elle supérieure à la distraction simple ?</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>[MEDIA: 📊 M03-S05-001 — Infographie récapitulative Module 3 : biomécanique et histoire de la chirurgie]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>À retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zone neutre (Panjabi)</td>
+<td>Zone de laxité physiologique — augmentée en cas d'instabilité</td>
+</tr>
+<tr>
+<td>Couplage</td>
+<td>Inclinaison latérale → toujours couplée à rotation axiale</td>
+</tr>
+<tr>
+<td>Cercle vicieux de Stokes</td>
+<td>Auto-aggravation par Hueter-Volkmann - s'emballe surtout pendant la croissance</td>
+</tr>
+<tr>
+<td>Déformation 3D</td>
+<td>Frontal (Cobb) + sagittal (hypocyphose) + axial (rotation → gibbosité)</td>
+</tr>
+<tr>
+<td>Harrington</td>
+<td>Distraction 2D → correction frontale seule → flatback</td>
+</tr>
+<tr>
+<td>CD 1984</td>
+<td>Dérotation de tige 90° → correction 3 plans simultanément</td>
+</tr>
+<tr>
+<td>Vis pédiculaires</td>
+<td>Ancrage 3 colonnes + DVR → correction 3D supérieure</td>
+</tr>
+<tr>
+<td>Zone stable</td>
+<td>Vertèbre limitante inférieure doit être dans la zone stable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quiz-fin-de-module-15-questions">Quiz fin de module — 15 questions</h2>
+<h3 id="bronze-questions-1-a-5">🥉 Bronze — Questions 1 à 5</h3>
+<p><strong>Q1.</strong> Combien de degrés de liberté possède un segment intervertébral ?<br />
+- A. 3<br />
+- B. 4<br />
+- <strong>C. 6</strong> ✓<br />
+- D. 9</p>
+<p><strong>Q2.</strong> Le côté concave d'une scoliose subit quelle contrainte mécanique ?<br />
+- <strong>A. Compression → inhibition de croissance (Hueter-Volkmann)</strong> ✓<br />
+- B. Traction → stimulation de croissance<br />
+- C. Aucune contrainte significative<br />
+- D. Cisaillement uniquement</p>
+<p><strong>Q3.</strong> La gibbosité dorsale est la manifestation clinique de :<br />
+- A. La courbure frontale (angle de Cobb)<br />
+- <strong>B. La rotation axiale des vertèbres apicales (AVR)</strong> ✓<br />
+- C. La perte de cyphose thoracique<br />
+- D. L'inégalité de longueur des membres inférieurs</p>
+<p><strong>Q4.</strong> Quel chirurgien a introduit la manœuvre de dérotation de tige en 1984 ?<br />
+- A. Paul Harrington<br />
+- B. Eduardo Luque<br />
+- <strong>C. Yves Cotrel et Jean Dubousset</strong> ✓<br />
+- D. Geoffrey Suk</p>
+<p><strong>Q5.</strong> Le syndrome de flatback est une complication de :<br />
+- <strong>A. L'instrumentation de Harrington</strong> ✓<br />
+- B. La vis pédiculaire de Roy-Camille<br />
+- C. La dérotation CD<br />
+- D. La technique de Luque</p>
+<h3 id="argent-questions-6-a-10">🥈 Argent — Questions 6 à 10</h3>
+<p><strong>Q6.</strong> Le plan de déformation maximale (PDM) d'une scoliose thoracique droite typique est orienté à : <br />
+- A. 0° (plan frontal strictement)<br />
+- <strong>B. 20-30° par rapport au plan frontal</strong> ✓<br />
+- C. 45°<br />
+- D. 90° (plan sagittal)</p>
+<p><strong>Q7.</strong> Dans le cercle vicieux de Stokes, que se passe-t-il si la courbure reste en dessous de 10-15° pendant la croissance ?<br />
+- A. Elle progresse obligatoirement<br />
+- <strong>B. Les mécanismes de stabilisation (muscles, proprioception) peuvent compenser → la progression n'est pas inévitable</strong> ✓<br />
+- C. Elle régresse spontanément<br />
+- D. Elle se stabilise toujours à 10°</p>
+<p><strong>Q8.</strong> La dérotation vertébrale directe (DVR) utilise les vis pédiculaires comme :<br />
+- A. Simple point d'ancrage passif<br />
+- B. <strong>Levier actif pour déroder chaque vertèbre directement dans le plan transversal</strong> ✓<br />
+- C. Point de distraction uniquement<br />
+- D. Point de compression</p>
+<p><strong>Q9.</strong> La pression intradiscale en L3-L4 lors de la flexion + soulèvement de 20 kg + rotation est de combien par rapport à la position debout ?<br />
+- A. Identique (100%)<br />
+- B. 150%<br />
+- <strong>C. 260% (données Nachemson)</strong> ✓<br />
+- D. 400%</p>
+<p><strong>Q10.</strong> La zone stable de Harrington est définie par :<br />
+- A. Les lignes passant par les bords du corps vertébral apical<br />
+- <strong>B. Les lignes verticales passant par les bords latéraux du sacrum sur la radiographie de face</strong> ✓<br />
+- C. Les bords des pédicules de L5<br />
+- D. La ligne de plomb de C7</p>
+<h3 id="or-questions-11-a-13">🥇 Or — Questions 11 à 13</h3>
+<p><strong>Q11.</strong> Un chirurgien veut opérer une scoliose lombaire L1-L5 Cobb 50° chez une patiente de 45 ans (adulte). Son SVA est de +8 cm (déséquilibre sagittal sévère), PI-LL mismatch = +20°. En plus de la correction coronale, il doit :<br />
+- A. Se concentrer uniquement sur la correction coronale<br />
+- B. Allonger la fusion jusqu'au bassin par principe<br />
+- <strong>C. Restaurer la lordose lombaire (réduire le PI-LL mismatch à &lt; 10°) et diminuer le SVA &lt; 5 cm — la correction sagittale est le déterminant dominant de la qualité de vie à long terme chez l'adulte</strong> ✓<br />
+- D. Utiliser uniquement Harrington car c'est le plus sûr pour l'adulte</p>
+<p><strong>Q12.</strong> La technique VBT (Vertebral Body Tethering) utilise laquelle des lois biomécaniques pour corriger la scoliose ?<br />
+- A. Principe de distraction (Harrington)<br />
+- B. Dérotation de tige (Cotrel-Dubousset)<br />
+- <strong>C. Loi de Hueter-Volkmann : le lien antéro-latéral côté convexe crée une compression asymétrique inhibant la croissance convexe tout en laissant la concavité croître → correction progressive</strong> ✓<br />
+- D. Ancrage aux 3 colonnes (vis pédiculaires)</p>
+<p><strong>Q13.</strong> Lors de la correction d'une scoliose thoracique double majeure (T6-T12 droit, T12-L4 gauche), l'objectif de correction est :<br />
+- A. Corriger à 0° les deux courbures<br />
+- B. Corriger uniquement la courbure majeure<br />
+- <strong>C. Obtenir un équilibre coronal (ligne de plomb de C7 sur sacrum) + restaurer la cyphose thoracique + maintenir la lordose lombaire — les chiffres absolus de Cobb sont secondaires</strong> ✓<br />
+- D. Corriger la courbure lombaire en priorité</p>
+<h3 id="diamant-questions-14-15">💎 Diamant — Questions 14-15</h3>
+<p><strong>Q14.</strong> Vous étudiez un modèle VERTEX© d'une scoliose T5-L2 Cobb 60°, rotation apicale Nash-Moe grade III, hypocyphose thoracique (10°). Vous placez une instrumentation avec vis pédiculaires bilatérales T5-L2 et réalisez une DVR complète. Le résultat biomécanique attendu dans les 3 plans est (choisir la réponse la plus rigouteuse) :<br />
+- A. Correction frontale à 10°, pas de changement sagittal, rotation résiduelle grade I<br />
+- <strong>B. Correction frontale 10-20°, RESTAURATION de la cyphose thoracique (l'instrument dans les 3 plans = la correction sagittale suit la dérotation axiale), rotation grade I-II résiduelle</strong> ✓<br />
+- C. Correction frontale à 0° (correction totale), aplatissement complet de la cyphose<br />
+- D. La correction axiale n'est pas possible avec les vis pédiculaires seules</p>
+<p><strong>Q15.</strong> Un modèle EF (éléments finis) de vertèbre scoliotique montre que la contrainte maximale sur la ring apophyse concave est de 4 MPa (contre 0,9 MPa normal). En utilisant la loi de Hueter-Volkmann, calculer le taux de ralentissement de croissance prédit du côté concave :<br />
+- A. 20% d'inhibition<br />
+- B. 50% d'inhibition<br />
+- <strong>C. ~70-80% d'inhibition — la contrainte dépasse 3-4 fois le seuil physiologique ; au-dessus de 2x ce seuil, la loi de Hueter-Volkmann prédit une inhibition quasi-totale de la croissance enchondrale</strong> ✓<br />
+- D. 100% — croissance totalement arrêtée immédiatement</p>
+<hr />
+<h2 id="post-test-5-questions">Post-test — 5 questions</h2>
+<p><strong>Q1.</strong> Le couplage signifie que ___ → <strong>un mouvement entraîne un second mouvement dans un autre plan</strong> ✓</p>
+<p><strong>Q2.</strong> Le cercle vicieux de Stokes initie par ___ → <strong>asymétrie de charge → Hueter-Volkmann → cunéiformisation → aggravation</strong> ✓</p>
+<p><strong>Q3.</strong> La manœuvre CD consiste à ___ → <strong>rotation de 90° de la tige précintrée pour convertir la courbure frontale en cyphose → correction 3 plans</strong> ✓</p>
+<p><strong>Q4.</strong> La zone neutre de Panjabi est ___ → <strong>zone de faible résistance passive — laxité segmentaire</strong> ✓</p>
+<p><strong>Q5.</strong> Le syndrome de flatback est dû à ___ → <strong>distraction de Harrington → perte de lordose lombaire</strong> ✓</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<h3 id="articles-fondamentaux">Articles fondamentaux</h3>
+<ul>
+<li>Stokes IA. <em>Mechanical effects on skeletal growth</em>. J Musculoskel Neuronal Interact 2002;2:277-280.</li>
+<li>Stokes IA, Spence H, Aronsson DD, Kilmer N. <em>Mechanical modulation of vertebral body growth: implications for scoliosis progression</em>. Spine 1996;21:1162-7.</li>
+<li>Panjabi MM. <em>The stabilizing system of the spine. Part I. Function, dysfunction, adaptation and enhancement</em>. J Spinal Disord 1992;5:383-9.</li>
+<li>Cotrel Y, Dubousset J, Guillaumat M. <em>New universal instrumentation in spinal surgery</em>. Clin Orthop 1988;227:10-23.</li>
+<li>Suk SI, Lee CK, Kim WJ et al. <em>Segmental pedicle screw fixation in the treatment of thoracic idiopathic scoliosis</em>. Spine 1995;20:1399-405.</li>
+<li>Harrington PR. <em>Treatment of scoliosis: correction and internal fixation by spine instrumentation</em>. J Bone Joint Surg Am 1962;44:591-610.</li>
+<li>Lovett RW. <em>Lateral Curvature of the Spine and Round Shoulders</em>. Philadelphia: P. Blakiston’s Son; 1907.</li>
+<li>Reames DL, Smith JS, Fu KM, et al. <em>Complications in the surgical treatment of 19,360 cases of pediatric scoliosis</em>. Spine 2011;36(18):1484-1491.</li>
+</ul>
+<h3 id="pour-aller-plus-loin">Pour aller plus loin</h3>
+<ul>
+<li>[MEDIA: 🎬 M03-RES-001 — Masterclass vidéo "Manœuvre de dérotation CD : step by step" (45 min)]</li>
+<li>[MEDIA: 📊 M03-RES-002 — Infographie histoire complète de l'instrumentation rachidienne]</li>
+<li>Nachemson AL. <em>The load on lumbar disks in different positions of the body</em>. Clin Orthop 1966;45:107-22.</li>
+</ul>
+<h3 id="liens">Liens</h3>
+<p>→ <strong>Module 4</strong> : Définitions et épidémiologie — comprendre qui développe une scoliose et pourquoi<br />
+→ <strong>Module 9</strong> : Traitement chirurgical — appliquer ces principes biomécaniques aux techniques opératoires<br />
+→ <strong>Atelier VERTEX©</strong> : simulation avancée solver FEM (accès après validation Module 3)</p>
+<hr />
+<p><em>Module 3 validé — Score minimal : 70% (10/15)</em><br />
+<em>Prochaine étape : Module 4 — Définitions et épidémiologie de la scoliose</em></p>
+</div>

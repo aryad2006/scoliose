@@ -1,0 +1,575 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-7-reeducation-et-innovations-modules-27-28">Partie 7 — Rééducation et Innovations (Modules 27-28)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : VII — RÉÉDUCATION, SUIVI ET INNOVATIONS<br />
+<strong>Modules</strong> : 27 à 28<br />
+<strong>Durée estimée</strong> : ~8 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-27-reeducation-et-suivi-post-operatoire">MODULE 27 : RÉÉDUCATION ET SUIVI POST-OPÉRATOIRE</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Intermédiaire | <strong>Prérequis</strong> : Modules 16, 20-21</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> un protocole de rééducation post-PTG basé sur les preuves</li>
+<li><strong>Gérer</strong> la douleur post-opératoire par une approche multimodale</li>
+<li><strong>Organiser</strong> le suivi post-opératoire à court, moyen et long terme</li>
+<li><strong>Identifier</strong> les signes d'alerte nécessitant une réévaluation chirurgicale</li>
+<li><strong>Conseiller</strong> le patient sur le retour aux activités et au sport</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="271-protocole-raaceras-recuperation-amelioree-apres-chirurgie">27.1 Protocole RAAC/ERAS — Récupération améliorée après chirurgie</h3>
+<ul>
+<li>Principes de la RAAC (<em>Rehabilitation Accélérée Après Chirurgie</em> / ERAS <em>Enhanced Recovery After Surgery</em> ; Kehlet H, <em>Br J Anaesth</em>, 1997)</li>
+<li>Approche standardisée et multidisciplinaire (chirurgien, anesthésiste, kinésithérapeute, infirmier, psychologue)</li>
+<li>Objectif : réduire la durée de séjour, accélérer la récupération, réduire les complications</li>
+<li>Résultats : DMS (durée moyenne de séjour) réduite de 7-10 jours → 2-4 jours (certains centres font l'ambulatoire — J0) (Kehlet &amp; Thienpont, 2013, <em>Acta Orthop</em>)</li>
+<li>Phase pré-opératoire (prehabilitation)</li>
+<li>Information du patient : parcours de soins, attentes, exercices à pratiquer avant l'opération</li>
+<li>Kinésithérapie préopératoire : renforcement du quadriceps (squats partiels, SLR), mobilité, endurance</li>
+<li>Optimisation nutritionnelle : protéines (1.5 g/kg/j), vitamine D, fer si anémie</li>
+<li>Gestion de l'anxiété : techniques de relaxation, rencontre avec des patients opérés</li>
+<li>Preuve : la prehabilitation réduit la DMS et améliore les scores fonctionnels précoces (niveau B)</li>
+<li>Phase peropératoire</li>
+<li>Analgésie multimodale (cf. 27.2)</li>
+<li>Infiltrations péri-articulaires (<em>Local Infiltration Analgesia</em> — LIA) : cocktail ropivacaïne + kétorolac + adrénaline + ± corticoïde</li>
+<li>Bloc nerveux régional : bloc du canal des adducteurs (<em>adductor canal block</em>) — préféré au bloc fémoral (préservation du quadriceps)</li>
+<li>Garrot minimal ou pas de garrot</li>
+<li>Gestion de l'hémorragie : acide tranexamique IV (1-2 g) → réduction des pertes sanguines de 40-50%, réduction des transfusions (Xie et al., 2015, <em>J Bone Joint Surg Am</em>)</li>
+<li>Phase post-opératoire immédiate (J0-J1)</li>
+<li>Lever le jour même de l'opération (J0) — le plus tôt possible</li>
+<li>Marche assistée (déambulateur ou cannes) quelques heures après l'opération</li>
+<li>Cryothérapie continue ou intermittente</li>
+<li>Mobilisation passive du genou (CPM — <em>Continuous Passive Motion</em> : efficacité débattue, tendance à l'abandon dans les protocoles RAAC modernes)</li>
+<li>Exercices actifs : contractions isométriques du quadriceps (quad sets), SLR (straight leg raise), flexion-extension active assistée</li>
+<li>Objectif J1 : flexion 70-80°, extension complète, marche 20 m avec aide<blockquote>
+<p>[MEDIA: 🎥 MPTG27-S01-001 — Vidéo du protocole RAAC post-PTG : lever J0, marche assistée, exercices au lit, cryothérapie, escaliers J1-J2 (Reproduisez la séquence de rééducation J0)]<br />
+[MEDIA: 📊 MPTG27-S01-002 — Timeline du protocole RAAC : J-30 (prehab) → J0 (chirurgie) → J1 (lever) → J3 (sortie) → S6 (auto-rééducation) → M3 (sport léger) → M12 (résultat optimal) (Imprimez pour le patient)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="272-gestion-de-la-douleur-approche-multimodale">27.2 Gestion de la douleur — Approche multimodale</h3>
+<ul>
+<li>Philosophie : combiner plusieurs classes d'antalgiques à faibles doses → synergie, moins d'effets secondaires</li>
+<li>Protocole multimodal standard</li>
+<li><strong>Avant l'opération</strong> : paracétamol 1g + celecoxib 200 mg (1h avant incision)</li>
+<li><strong>Peropératoire</strong> : LIA (Local Infiltration Analgesia) + bloc du canal des adducteurs</li>
+<li><strong>Post-opératoire</strong> :<ul>
+<li>Paracétamol 1g × 4/j (systématique, pendant 5-7 jours)</li>
+<li>AINS (kétorolac → ibuprofène) × 3-5 jours (si pas de contre-indication)</li>
+<li>Gabapentine ou prégabaline (anti-hyperalgésie, réduction de la douleur neuropathique) → en déclin dans les protocoles récents (effets secondaires : somnolence, confusion chez le sujet âgé)</li>
+<li>Opioïdes : en SECOURS uniquement (tramadol &lt; oxycodone/morphine), durée minimale (&lt; 5 jours idéalement)</li>
+<li>Dexaméthasone 8 mg IV (1 dose pré-opératoire) : réduit les nausées et l'inflammation (preuve niveau A) (De Oliveira GS et al., <em>Br J Anaesth</em>, 2011)</li>
+</ul>
+</li>
+<li><strong>Cryothérapie</strong> : packs de froid ou système de circulation (Cryocuff, Game Ready) × 20 min/2h les 48 premières heures</li>
+<li><strong>TENS</strong> (<em>Transcutaneous Electrical Nerve Stimulation</em>) : efficacité modérée, bien toléré</li>
+<li>Gestion des opioïdes</li>
+<li>Épidémie opioïde : sensibilisation des équipes et des patients</li>
+<li>Objectif : PTG « opioid-free » ou « opioid-sparing » → possible avec le protocole multimodal</li>
+<li>L'utilisation prolongée d'opioïdes (&gt; 3 mois) est un facteur de risque de mauvais résultat post-PTG (douleur chronique, dépendance)<blockquote>
+<p>[MEDIA: 📊 MPTG27-S02-001 — Protocole antalgique multimodal post-PTG : chronologie des médicaments de J-1 à J+30, avec posologies et alternatives (Document de prescription type)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="273-programme-de-reeducation-phases-et-exercices">27.3 Programme de rééducation — Phases et exercices</h3>
+<ul>
+<li><strong>Phase 1 : Protection et récupération précoce (J0 → S3)</strong></li>
+<li>Objectifs : contrôle de la douleur et de l'œdème, mobilité progressive, autonomie de marche</li>
+<li>Exercices :<ul>
+<li>Isométriques du quadriceps (quad sets) : 10 × 10 s, 4 séries/jour</li>
+<li>Straight leg raise (SLR) : 10 × 3 séries</li>
+<li>Flexion-extension active assistée (talon glissant sur le lit)</li>
+<li>Pompes de la cheville (prévention TVP)</li>
+<li>Marche avec cannes, progressive (50 m → 500 m)</li>
+</ul>
+</li>
+<li>Objectifs à S3 : flexion ≥ 90°, extension 0°, marche 500 m avec 1 canne, escaliers (montée)</li>
+<li><strong>Phase 2 : Renforcement et mobilité (S3 → S12)</strong></li>
+<li>Objectifs : gain de mobilité vers 110-120°, renforcement musculaire, proprioception</li>
+<li>Exercices :<ul>
+<li>Vélo d'appartement (dès que flexion ≥ 100° — la pédale passe)</li>
+<li>Squats partiels (0-60°) contre mur ou avec chaise</li>
+<li>Step-ups (montées de marche — 10-15 cm progressif)</li>
+<li>Renforcement des ischio-jambiers (curls résistance élastique)</li>
+<li>Proprioception : appui unipodal, plateformes instables</li>
+<li>Marche sans canne (progressif)</li>
+<li>Hydrothérapie / balnéothérapie (si cicatrice fermée &gt; J21)</li>
+</ul>
+</li>
+<li>Objectifs à S12 : flexion ≥ 110°, extension 0°, marche sans canne, escaliers (montée et descente), vélo 20 min</li>
+<li><strong>Phase 3 : Optimisation et retour aux activités (M3 → M12)</strong></li>
+<li>Objectifs : activation sportive légère, endurance, oubli du genou prothétique</li>
+<li>Exercices :<ul>
+<li>Renforcement progressif en salle (presse à cuisse, extensions, curls)</li>
+<li>Marche en terrain varié (randonnée légère)</li>
+<li>Natation (crawl et dos → brasse à éviter les premiers mois — rotation tibiale)</li>
+<li>Golf, vélo sur route, marche nordique</li>
+<li>Retour au tennis (doubles) vers M6 si confortable</li>
+<li>Retour au ski alpin (piste facile) vers M6-M12 si bon niveau pré-opératoire et accord du chirurgien</li>
+</ul>
+</li>
+<li>Auto-rééducation : le patient doit devenir autonome dans ses exercices (programme écrit + vidéos)<blockquote>
+<p>[MEDIA: 🎥 MPTG27-S03-001 — Vidéo des exercices de rééducation par phase : Phase 1 (J0-S3), Phase 2 (S3-S12), Phase 3 (M3-M12) — démonstration par un kinésithérapeute (Vidéo fournie au patient sur l'application VERTEX©)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG27-S03-002</strong><br/>
+<em>Programme de rééducation imprimable : calendrier semaine par semaine (S1 → S12) avec les exercices, le nombre de séries/répétitions, et les objectifs à atteindre (Document patient)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="274-suivi-post-operatoire-calendrier">27.4 Suivi post-opératoire — Calendrier</h3>
+<ul>
+<li>Consultations de suivi</li>
+<li><strong>J15-J21</strong> : contrôle de la cicatrice, retrait des agrafes/fils, radiographie de contrôle, amplitude articulaire, gestion de la douleur</li>
+<li><strong>6 semaines (S6)</strong> : radiographie de contrôle, évaluation de la mobilité (objectif ≥ 90°), évaluation de la marche, décision sur la canne</li>
+<li><strong>3 mois (M3)</strong> : radiographie, scores cliniques (KSS, WOMAC, OKS), évaluation de la fonction, autorisation sportive légère</li>
+<li><strong>1 an (M12)</strong> : radiographie de référence, scores cliniques (comparaison pré-opératoire), FJS-12, satisfaction, autorisation sportive étendue</li>
+<li><strong>Annuel (A2, A5, A10, A15, A20...)</strong> : radiographie (recherche de liserés, usure, descellement), score clinique, évaluation de la fonction</li>
+<li><strong>À vie</strong> : suivi à vie recommandé (minimum tous les 5 ans après A10)</li>
+<li>Radiographies de suivi</li>
+<li>Cliché standard : face + profil en charge</li>
+<li>Pangonogramme : à M3 et si suspicion de désaxation</li>
+<li>Radiographie de la rotule : si douleur antérieure</li>
+<li>Signes d'alerte nécessitant une consultation anticipée</li>
+<li>Fièvre &gt; 38.5°C avec genou rouge et chaud → infection ?</li>
+<li>Douleur brutale avec gonflement → hémarthrose ? fracture ?</li>
+<li>Pied tombant → lésion nerveuse ?</li>
+<li>Dérobement à la marche → instabilité ?</li>
+<li>Raideur progressive (flexion qui diminue) → arthrofibrose ?</li>
+<li>Dyspnée/douleur thoracique → embolie pulmonaire ?<blockquote>
+<p>[MEDIA: 📊 MPTG27-S04-001 — Calendrier de suivi post-PTG de J0 à 20 ans : consultations, examens, scores à chaque étape — avec les signes d'alerte (Document imprimable pour le patient et le médecin traitant)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="275-retour-au-sport-apres-ptg">27.5 Retour au sport après PTG</h3>
+<ul>
+<li>Données de la littérature</li>
+<li>75-85% des patients retournent à une activité sportive après PTG (Healy et al., 2008, <em>Clin Orthop Relat Res</em>)</li>
+<li>Types de sport : marche (90%), vélo (80%), natation (70%), golf (60%), randonnée (50%), ski (20-30%), tennis (20-25%) (Healy et al., 2008)</li>
+<li>Le niveau pré-opératoire est le meilleur prédicteur du niveau post-opératoire</li>
+<li>Classification des sports après PTG</li>
+<li><strong>Recommandés</strong> (faible impact) : marche, vélo, natation, golf, danse de salon, jardinage</li>
+<li><strong>Autorisés avec précaution</strong> (impact modéré) : randonnée, tennis (doubles), ski alpin (piste), bowling, aviron</li>
+<li><strong>Déconseillés</strong> (haut impact) : course à pied (compétition), football, rugby, basketball, arts martiaux, squash</li>
+<li><strong>Controversés</strong> : course à pied loisir (jogging) — certains chirurgiens autorisent le jogging léger &lt; 30 min × 2/semaine si bonne cinématique et bon PE</li>
+<li>Impact du sport sur la longévité de la prothèse</li>
+<li>L'usure du PE est corrélée au nombre de cycles de charge (pas seulement au poids)</li>
+<li>Sport = plus de cycles → usure potentiellement accélérée</li>
+<li>XLPE 2ème génération → usure quasi nulle même avec activité élevée → le paradigme change</li>
+<li>L'inactivité augmente le risque cardiovasculaire et l'obésité → le sport modéré est BÉNÉFIQUE même avec une PTG<blockquote>
+<p>[MEDIA: 📊 MPTG27-S05-001 — Classification des sports après PTG : feu vert (recommandé), feu orange (prudence), feu rouge (déconseillé) — avec les conditions pour chaque sport (Infographie pour la consultation)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="276-syndrome-douloureux-regional-complexe-sdrc-anciennement-algodystrophie">27.6 Syndrome douloureux régional complexe (SDRC — anciennement algodystrophie)</h3>
+<ul>
+<li>Incidence après PTG : 1-5% (probablement sous-diagnostiqué) (Burns et al., 2006, <em>J Arthroplasty</em>)</li>
+<li>Présentation : douleur disproportionnée, brûlante, allodynie, œdème, rougeur, raideur progressive, troubles sudoraux et vasomoteurs</li>
+<li>Diagnostic : critères de Budapest (au moins 1 symptôme dans 3/4 catégories et 1 signe dans 2/4 catégories) (Harden RN et al., <em>Pain Med</em>, 2010)</li>
+<li>Imagerie : scintigraphie osseuse (hyperfixation diffuse), IRM (œdème osseux étendu)</li>
+<li>Traitement</li>
+<li>Analgésie : gabapentine/prégabaline, triptizol (amitriptyline faible dose), TENS</li>
+<li>Kinésithérapie douce : mobilisation active, hydrothérapie, imagerie motrice (mirror therapy)</li>
+<li>Bains écossais (alternance chaud-froid)</li>
+<li>Blocs sympathiques (stellaire pour MS, lombaire pour MI) : efficacité variable</li>
+<li>Vitamine C en prévention (500 mg/j × 50 jours) : preuve de niveau B pour la réduction du risque de SDRC (Zollinger PE et al., <em>J Bone Joint Surg Am</em>, 2007)</li>
+<li>Corticothérapie courte (prednisone 30 mg × 3 semaines) : en phase chaude, efficacité modérée</li>
+<li>Durée : 6-18 mois, récupération complète dans 60-70% des cas (Sandroni et al., 2003, <em>Pain</em>)</li>
+<li>Impact : le SDRC est responsable d'une proportion significative des « douleurs inexpliquées » après PTG</li>
+</ul>
+<hr />
+<h1 id="module-28-innovations-et-perspectives">MODULE 28 : INNOVATIONS ET PERSPECTIVES</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Avancé → Expert | <strong>Prérequis</strong> : Tous les modules précédents</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Analyser</strong> les innovations technologiques récentes et en cours en arthroplastie du genou</li>
+<li><strong>Évaluer</strong> le niveau de preuve de chaque innovation (hype vs evidence)</li>
+<li><strong>Anticiper</strong> les évolutions futures de la chirurgie prothétique du genou</li>
+<li><strong>Développer</strong> un esprit critique face à l'innovation industrielle</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="281-intelligence-artificielle-ia-en-arthroplastie-du-genou">28.1 Intelligence artificielle (IA) en arthroplastie du genou</h3>
+<ul>
+<li>Applications actuelles</li>
+<li>Planification préopératoire automatisée : segmentation des images (CT/IRM), positionnement optimal des composants par deep learning</li>
+<li>Prédiction du résultat : modèles ML prédisant le score fonctionnel post-opératoire à partir des données pré-opératoires (précision 75-85%) (Ramkumar et al., 2019, <em>J Arthroplasty</em>)</li>
+<li>Détection des complications : algorithmes de détection précoce de l'infection (sur données biologiques séquentielles), prédiction du descellement (sur l'analyse des radiographies séquentielles)</li>
+<li>Registres augmentés par IA : extraction automatique des données, natural language processing (NLP) sur les comptes rendus opératoires</li>
+<li>Applications émergentes</li>
+<li>Design d'implants générés par IA : optimisation topologique → formes d'implants impossibles à concevoir manuellement</li>
+<li>Chirurgie autonome : le pas suivant après la chirurgie assistée → le robot opère sous supervision (TSolution One → futur)</li>
+<li>Digital twin (jumeau numérique) : modèle numérique patient-spécifique du genou → simulation de la cinématique post-opératoire AVANT l'opération → choix du meilleur alignment, du meilleur implant</li>
+<li>KneeSim© : intégration du jumeau numérique dans le module d'enseignement du genou de VERTEX©</li>
+<li>Niveau de preuve</li>
+<li>La plupart des applications IA sont au stade de validation (Phase II-III analogue aux médicaments)</li>
+<li>Aucune IA n'est approuvée par la FDA/marquage CE comme dispositif autonome de planification PTG (à ce jour)</li>
+<li>Risque de biais algorithmique : les IA sont entraînées sur des populations spécifiques (Caucasiennes, obèses ?) → transférabilité incertaine</li>
+<li>La machine ne remplacera pas le chirurgien (mais le chirurgien qui utilise l'IA remplacera celui qui ne l'utilise pas)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG28-S01-001</strong><br/>
+<em>Animation du Digital Twin : du scanner patient → reconstruction 3D → simulation de PTG avec différents alignements → comparaison cinématique → choix optimal (Explorez les 3 alignements sur un cas virtuel dans KneeSim©)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="282-biologie-et-regeneration-du-cartilage">28.2 Biologie et régénération du cartilage</h3>
+<ul>
+<li>Thérapies cellulaires</li>
+<li>Implantation de chondrocytes autologues (ACI/MACI) : lésions focales chez le jeune, pas pour la gonarthrose diffuse</li>
+<li>Cellules souches mésenchymateuses (MSC) : injections intra-articulaires → résultats modestes et controversés pour ralentir la gonarthrose</li>
+<li>Thérapie génique : modification des chondrocytes pour surproduire des facteurs anti-inflammatoires (TissueGene-C → Phase III en Corée du Sud ; Lee B et al., <em>Osteoarthritis Cartilage</em>, 2021)</li>
+<li>Bioprinting / ingénierie tissulaire</li>
+<li>Impression 3D de scaffolds chargés en chondrocytes → cartilage néo-formé in vitro</li>
+<li>Défi : les propriétés mécaniques du cartilage bioimprimé sont encore insuffisantes (10-30% du cartilage natif)</li>
+<li>Horizon : pas avant 10-15 ans pour une application clinique en gonarthrose</li>
+<li>Impact potentiel sur la PTG</li>
+<li>Si la régénération du cartilage devient réalité → le nombre de PTG pourrait diminuer (ou être retardé)</li>
+<li>Actuellement : aucune thérapie biologique ne peut remplacer une PTG en gonarthrose avancée (KL 3-4)</li>
+<li>Les thérapies biologiques sont complémentaires (ralentir la progression précoce) et non substitutives</li>
+</ul>
+<h3 id="283-nouveaux-materiaux-et-implants">28.3 Nouveaux matériaux et implants</h3>
+<ul>
+<li>Céramique articulaire pour le genou</li>
+<li>Céramique-sur-PE : composant fémoral en céramique (zirconie ou alumine) → réduction de l'usure</li>
+<li>Exemples : CeraTough (Kyoto Ceramics), Ceramys (Mathys)</li>
+<li>Avantage : pas d'allergie métallique, excellente résistance à l'usure, biocompatibilité</li>
+<li>Inconvénient : risque de fracture (réduit avec les nouvelles formulations), coût, transition de la couche céramique sous contraintes cycliques</li>
+<li>Statut : utilisée en Asie (Japon, Corée), peu en Europe et aux USA</li>
+<li>Polyéthylène de 3ème génération</li>
+<li>XLPE antioxydant + renforcement mécanique (nanotechnologie, fibres de carbone)</li>
+<li>Objectif : usure quasi nulle ET résistance mécanique totale</li>
+<li>Stade : recherche pré-clinique</li>
+<li>Implants imprimés en 3D</li>
+<li>Fabrication additive (SLM, EBM) → structures lattice (treillis) → porosité contrôlée</li>
+<li>Avantage : ostéo-intégration optimale (porosité et taille des pores contrôlées), module d'Young ajustable (réduction du stress-shielding)</li>
+<li>Applications actuelles : cônes et manchons de reprise, augments personnalisés</li>
+<li>Futur : implants primaires entièrement imprimés en 3D → personnalisation morphologique et mécanique</li>
+<li>Smart implants — Prothèses connectées</li>
+<li>Persona IQ (Zimmer Biomet) : capteur d'activité intégré dans le PE → mesure du nombre de pas, des forces, de la cinématique → transmission Bluetooth → application mobile et portail chirurgien</li>
+<li><strong>Données</strong> : 200 000 pas/jour, cycles de charge par activité, suivi de la rééducation à distance</li>
+<li>Détection précoce des changements : un patient qui diminue son activité → alerte possible (instabilité ? douleur ? complication ?)</li>
+<li>Recherche : compréhension de la cinématique in vivo en conditions réelles (vs le lab)</li>
+<li>Questions : durée de vie de la batterie (&gt; 20 ans ?), cybersécurité des données de santé, coût-efficacité</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG28-S03-001</strong><br/>
+<em>Photos d'implants imprimés en 3D : structure lattice en titane, cône de reprise personnalisé, comparaison avec le forgeage conventionnel (Identifiez les avantages de la fabrication additive)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG28-S03-002</strong><br/>
+<em>Animation du smart implant Persona IQ : capteur intégré, transmission des données, tableau de bord chirurgien, alerte de déviation (Explorez les données de suivi d'un patient à M6)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="284-robotique-de-demain">28.4 Robotique de demain</h3>
+<ul>
+<li>Robotique autonome</li>
+<li>TSolution One (THINK Surgical) : le robot réalise les coupes de manière autonome après planification</li>
+<li>MAKO FLASH : version « micro-robot » montée sur le lit opératoire → footprint réduit</li>
+<li>Tendance : miniaturisation, réduction du coût, autonomie croissante</li>
+<li>Réalité augmentée et réalité mixte</li>
+<li>HoloLens (Microsoft) : lunettes de réalité mixte → superposition 3D de la planification sur l'anatomie réelle</li>
+<li>Navigation sans trackers : tracking optique par caméras intégrées (ISAR — <em>Intelligent Surgical Augmented Reality</em>)</li>
+<li>Avantage : pas de broches invasives, visualisation intuitive</li>
+<li>Limite : précision encore inférieure à la navigation conventionnelle (mais en amélioration rapide)</li>
+<li>Télé-chirurgie</li>
+<li>Concept : le chirurgien opère à distance via un robot → accessibilité dans les zones isolées</li>
+<li>Précédent : opération Lindbergh (2001 ; Marescaux J et al., <em>Nature</em>, 2001) — cholécystectomie Strasbourg → New York</li>
+<li>En PTG : pas encore de cas clinique publié (latence réseau, sécurité)</li>
+<li>5G → réduction de la latence → pourrait rendre la télé-PTG possible techniquement</li>
+</ul>
+<h3 id="285-medecine-personnalisee-et-predictive">28.5 Médecine personnalisée et prédictive</h3>
+<ul>
+<li>Biomarqueurs de progression de la gonarthrose</li>
+<li>CTX-II (télopeptide du collagène II urinaire) : marqueur de dégradation du cartilage</li>
+<li>COMP (Cartilage Oligomeric Matrix Protein) : marqueur dans le sang</li>
+<li>Objectif : identifier les patients à risque de progression rapide → traitement précoce → retarder la PTG</li>
+<li>Génomique et pharmacogénomique</li>
+<li>Identification des variants génétiques associés à la gonarthrose (GDF5, SMAD3, COL11A1)</li>
+<li>Prédiction de la réponse au traitement (AINS, biothérapies)</li>
+<li>Pharmacogénomique de la douleur : prédiction des patients « non-répondeurs » aux opioïdes (CYP2D6)</li>
+<li>Implant patient-spécifique 2.0</li>
+<li>IA + scanner → design de l'implant adapté à la morphologie du patient + à sa cinématique native + à son niveau d'activité</li>
+<li>PSI (guides personnalisés) → PSA (prothèse personnalisée) → PSK (cinématique personnalisée)</li>
+<li>Coût : diminuera avec l'impression 3D métal → démocratisation à horizon 2030-2035</li>
+</ul>
+<h3 id="286-enjeux-ethiques-medico-legaux-et-economiques">28.6 Enjeux éthiques, médico-légaux et économiques</h3>
+<ul>
+<li>Conflits d'intérêts industrie-chirurgien</li>
+<li>Le chirurgien concepteur d'implant (<em>surgeon-designer</em>) : rôle légitime mais conflits potentiels</li>
+<li>Transparence obligatoire (Sunshine Act, base Transparence Santé France)</li>
+<li>L'innovation doit être évaluée AVANT d'être adoptée à grande échelle (registres, études contrôlées)</li>
+<li>Dispositifs médicaux — Réglementation</li>
+<li>Marquage CE (Europe) : exigences renforcées depuis le Règlement MDR 2017/745 (mai 2021)</li>
+<li>FDA (USA) : 510(k) (prédical similaire) vs PMA (<em>Premarket Approval</em> — plus exigeant)</li>
+<li>Le scandale des prothèses défectueuses (ASR DePuy, Poly Insert Locking Mechanism failures) → renforcement de la vigilance</li>
+<li>ODEP : évaluation indépendante des implants par les données probantes</li>
+<li>Coût-efficacité de la PTG</li>
+<li>Coût d'une PTG primaire : 8 000-15 000 € (France, tarif GHS) (Losina et al., 2009, <em>N Engl J Med</em>)</li>
+<li>QALY (Quality-Adjusted Life Year) : la PTG est l'une des interventions chirurgicales les plus coût-efficaces en médecine (&lt; 10 000 €/QALY gagné) (Losina et al., 2009)</li>
+<li>Reprise : coût × 3-5 vs primaire (hospitalisation prolongée, implants de reprise, réhabilitation)</li>
+<li>La prévention (perte de poids, activité physique, traitement précoce) est encore plus coût-efficace</li>
+<li>Questions sociétales</li>
+<li>Vieillissement de la population → augmentation prévisible de 30-50% du nombre de PTG d'ici 2030 (Kurtz et al., 2007, <em>J Bone Joint Surg Am</em>)</li>
+<li>Explosion de la demande vs capacité chirurgicale limitée → la robotique et l'IA peuvent-elles aider à absorber la demande ?</li>
+<li>Inégalités d'accès : pays en développement, zones rurales → la télé-chirurgie et les implants à moindre coût sont-ils la solution ?</li>
+<li>Développement durable : empreinte carbone de la chirurgie (bloc opératoire = 30% de l'empreinte hospitalière), recyclage des implants retirés, dispositifs à usage unique vs réutilisables<blockquote>
+<p>[MEDIA: 📊 MPTG28-S06-001 — Infographie des enjeux d'avenir de la PTG : timeline 2025-2040 avec les innovations attendues (IA, bioprinting, smart implants, robotique autonome, télé-chirurgie) et leur niveau de maturité (TRL) (Anticipez l'impact sur votre pratique)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="auto-evaluation-partie-vii-finale">AUTO-ÉVALUATION — PARTIE VII (FINALE)</h1>
+<h2 id="questions-transversales-modules-27-28">Questions transversales Modules 27-28</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Dans un protocole RAAC, à quel moment le patient doit-il se lever après une PTG ?<br />
+- A) J3 (3ème jour post-opératoire)<br />
+- B) J0 (le jour même de l'opération)<br />
+- C) J7 (1 semaine)<br />
+- D) Quand la douleur le permet (pas de timing imposé)</p>
+<p><strong>Q2</strong> 🥈 : Quelle est la classe médicamenteuse la plus importante du protocole antalgique multimodal post-PTG ?<br />
+- A) Les opioïdes forts (morphine)<br />
+- B) Le paracétamol en association avec les AINS<br />
+- C) Les corticoïdes IV à haute dose<br />
+- D) Les benzodiazépines</p>
+<p><strong>Q3</strong> 🥈 : L'acide tranexamique (Exacyl) est utilisé en peropératoire de PTG pour :<br />
+- A) Prévenir l'infection<br />
+- B) Réduire les pertes sanguines et les transfusions<br />
+- C) Accélérer la cicatrisation cutanée<br />
+- D) Prévenir la maladie thromboembolique</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 72 ans, sportif modéré (golf, marche), présente un FJS-12 de 25/100 à M12 post-PTG, avec flexion de 115° et extension complète, radiographies normales, et pas de complication identifiable. Que faites-vous ?<br />
+- A) Rien, le résultat est bon<br />
+- B) Évaluation psychologique (catastrophisme, kinésiophobie), optimisation de la rééducation, questionnaire de satisfaction ciblé<br />
+- C) Reprise chirurgicale<br />
+- D) Changement du PE</p>
+<p><strong>Q5</strong> 💎 : Analysez de manière critique une innovation de votre choix en PTG (smart implant, IA de planification, robotique autonome, bioprinting, ou implant personnalisé par IA). Pour l'innovation choisie, décrivez : (a) le principe technologique, (b) le niveau de preuve actuel (études cliniques, registres, cas), (c) les avantages théoriques, (d) les risques et limites, (e) le TRL (<em>Technology Readiness Level</em>), (f) la date estimée de diffusion clinique large, et (g) votre position personnelle argumentée.</p>
+<h3 id="cas-clinique-final-integratif">Cas clinique final — Intégratif</h3>
+<blockquote>
+<p>🏥 <strong>Mme Chen, 62 ans</strong>, professeure de pilates, IMC 23, pas de comorbidité. Gonarthrose médiale bilatérale progressive depuis 5 ans. Traitements conservateurs bien conduits pendant 3 ans (kinésithérapie, infiltrations HA × 3, PRP × 2, perte de 3 kg supplémentaires). Le genou droit est KL 4 (os-sur-os médial, schuss), HKA 172° (varus 8°). Le gauche est KL 3. LCA et LCP intacts bilatéralement. Flexion droite 0-120°, gauche 0-130°. Pas de douleur FP.</p>
+<p>Elle demande :<br />
+1. « Peut-on opérer les deux genoux en même temps ? » → Répondez avec les arguments pour et contre la PTG bilatérale simultanée.<br />
+2. « Pourrai-je reprendre le pilates ? Le yoga ? » → Répondez avec les données de la littérature.<br />
+3. « J'ai lu qu'il existait des prothèses connectées et des robots. Faut-il attendre 5 ans pour avoir mieux ? » → Répondez honnêtement avec le niveau de preuve actuel.<br />
+4. Pour le genou droit : PUC médiale ou PTG ? Si PTG : CR ou PS ? Quel alignement (MA, KA, FA) ? Quel PE ? Cimentée ou non ? Robotique ou non ? Justifiez chaque choix.<br />
+5. Rédigez le protocole de rééducation post-opératoire personnalisé pour cette patiente (J0 → M12) en tenant compte de son profil sportif.</p>
+</blockquote>
+<hr />
+<h1 id="conclusion-generale-formation-ptg">CONCLUSION GÉNÉRALE — FORMATION PTG</h1>
+<h2 id="synthese-de-la-formation">Synthèse de la formation</h2>
+<p>La formation VERTEX© en Prothèse Totale du Genou couvre, en <strong>28 modules</strong> répartis en <strong>7 parties</strong>, l'intégralité du spectre de connaissances nécessaires à la maîtrise de cette intervention — de l'embryologie au smart implant, de la première incision à la reprise itérative.</p>
+<h3 id="acquis-attendus-en-fin-de-formation">Acquis attendus en fin de formation</h3>
+<table>
+<thead>
+<tr>
+<th>Compétence</th>
+<th>Niveau</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anatomie et biomécanique du genou</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>Physiopathologie de la gonarthrose</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>Examen clinique et imagerie pré-PTG</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>Design et matériaux des implants</td>
+<td>Avancé-Expert</td>
+</tr>
+<tr>
+<td>Technique chirurgicale primaire</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>Navigation et robotique</td>
+<td>Avancé</td>
+</tr>
+<tr>
+<td>Gestion des complications</td>
+<td>Expert</td>
+</tr>
+<tr>
+<td>Reprise et cas complexes</td>
+<td>Avancé</td>
+</tr>
+<tr>
+<td>Rééducation et suivi</td>
+<td>Avancé</td>
+</tr>
+<tr>
+<td>Innovations et esprit critique</td>
+<td>Avancé</td>
+</tr>
+</tbody>
+</table>
+<h3 id="volume-horaire-total">Volume horaire total</h3>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Modules</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I — Fondamentaux</td>
+<td>1-4</td>
+<td>~13h30</td>
+</tr>
+<tr>
+<td>II — Pathologies &amp; Indications</td>
+<td>5-8</td>
+<td>~12h</td>
+</tr>
+<tr>
+<td>III — Implants &amp; Conception</td>
+<td>9-12</td>
+<td>~14h</td>
+</tr>
+<tr>
+<td>IV — Planification &amp; Chirurgie</td>
+<td>13-19</td>
+<td>~24h</td>
+</tr>
+<tr>
+<td>V — Résultats &amp; Complications</td>
+<td>20-23</td>
+<td>~14h</td>
+</tr>
+<tr>
+<td>VI — Reprises &amp; Cas Complexes</td>
+<td>24-26</td>
+<td>~12h</td>
+</tr>
+<tr>
+<td>VII — Rééducation &amp; Innovations</td>
+<td>27-28</td>
+<td>~8h</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>28 modules</strong></td>
+<td><strong>~97h30</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="certification-vertex">Certification VERTEX©</h3>
+<ul>
+<li><strong>Bronze</strong> 🥉 : QCM fondamentaux (Modules 1-8) → score ≥ 70%</li>
+<li><strong>Argent</strong> 🥈 : QCM intermédiaires (Modules 9-19) + cas cliniques simples → score ≥ 75%</li>
+<li><strong>Or</strong> 🥇 : QCM avancés (Modules 20-26) + cas cliniques complexes → score ≥ 80%</li>
+<li><strong>Diamant</strong> 💎 : Questions de synthèse (Module 27-28) + soutenance d'un cas clinique personnel → évaluation par un jury d'experts</li>
+</ul>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Burns AWR, Parker DA, Coolican MRJ, Rajaratnam K. Complex regional pain syndrome complicating total knee arthroplasty. <em>J Arthroplasty</em>. 2006;21(4):538-542.</li>
+<li>De Oliveira GS, Almeida MD, Benzon HT, McCarthy RJ. Perioperative single dose of dexamethasone for postoperative pain. <em>Br J Anaesth</em>. 2011;107(2):127-136.</li>
+<li>Harden RN, Bruehl S, Perez RSGM, et al. Validation of proposed diagnostic criteria (the "Budapest Criteria") for complex regional pain syndrome. <em>Pain Med</em>. 2010;11(8):1115-1125.</li>
+<li>Healy WL, Sharma S, Schwartz B, Iorio R. Athletic activity after total joint arthroplasty. <em>Clin Orthop Relat Res</em>. 2008;466(2):424-431.</li>
+<li>Kehlet H. Multimodal approach to control postoperative pathophysiology and rehabilitation. <em>Br J Anaesth</em>. 1997;78(5):606-617.</li>
+<li>Kehlet H, Thienpont E. Fast-track knee arthroplasty — status and future challenges. <em>Acta Orthop</em>. 2013;84(1):1-2.</li>
+<li>Kurtz S, Ong K, Lau E, Mowat F, Halpern M. Projections of primary and revision hip and knee arthroplasty in the United States from 2005 to 2030. <em>J Bone Joint Surg Am</em>. 2007;89(4):780-785.</li>
+<li>Lee B, Parvizi J, Engel L, et al. TissueGene-C (TG-C) for treatment of knee osteoarthritis. <em>Osteoarthritis Cartilage</em>. 2021;29(Suppl 1):S255-S256.</li>
+<li>Losina E, Walensky RP, Kessler CL, et al. Cost-effectiveness of total knee arthroplasty in the United States. <em>N Engl J Med</em>. 2009;361(6):619-620.</li>
+<li>Marescaux J, Leroy J, Gagner M, et al. Transatlantic robot-assisted telesurgery. <em>Nature</em>. 2001;413(6854):379-380.</li>
+<li>Ramkumar PN, Navarro SM, Haeberle HS, et al. Development and validation of a machine learning algorithm after primary total joint arthroplasty. <em>J Arthroplasty</em>. 2019;34(10):2422-2428.</li>
+<li>Sandroni P, Benrud-Larson LM, McClelland RL, Low PA. Complex regional pain syndrome type I: incidence and prevalence in Olmsted County. <em>Pain</em>. 2003;103(1-2):199-207.</li>
+<li>Xie J, Hu Q, Huang Q, Ma J, Pei F. Comparison of intravenous versus topical tranexamic acid in primary total knee arthroplasty. <em>J Bone Joint Surg Am</em>. 2015;97(24):2001-2008.</li>
+<li>Zollinger PE, Tuinebreijer WE, Breederveld RS, Kreis RW. Can vitamin C prevent complex regional pain syndrome in patients with wrist fractures? <em>J Bone Joint Surg Am</em>. 2007;89(7):1424-1431.</li>
+</ul>
+<hr />
+<p><em>Fin de la Partie 7 — Rééducation et Innovations (Modules 27-28)</em><br />
+<em>Fin du Cahier des Charges — Formation PTG — VERTEX©</em><br />
+<em>Version 1.0 — Mars 2026</em></p>
+</div>

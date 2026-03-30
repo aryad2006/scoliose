@@ -1,0 +1,454 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-13-scolioses-syndromiques">MODULE 13 — SCOLIOSES SYNDROMIQUES</h1>
+<p><strong>Partie V — Scolioses secondaires et particulières</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 12</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Camille, 12 ans, grande et mince (1m72 pour 42 kg), est connue pour un syndrome de Marfan. Consultation pour douleurs dorsales et déformation. Radio : scoliose thoracolombaire droite Cobb 42°, dolicho-scoliose (courbure longue et flexible). Sa cardiologuee a découvert une dilatation aortique de 38 mm.</p>
+<p>→ <em>Les scolioses syndromiques posent des problèmes spécifiques : risque systémique propre au syndrome, évolution atypique, complications chirugicales particulières.</em></p>
+</blockquote>
+<p>🧒 <strong>Patiente fil rouge</strong> : Camille, 12 ans, Marfan, Cobb 42°, dilatation aortique 38 mm.</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Scoliose syndromique • Syndrome de Marfan (FBN1) • Test de Ghent • Ectopie du cristallin • Dilatation aortique (Z-score) • Neurofibromatose de type 1 (NF1) • Scoliose dystrophique NF1 • Syndrome d'Ehlers-Danlos (SED) • Ostéogenèse imparfaite (OI) • Bisphosphonates dans l'OI • Achondroplasie • Prader-Willi • Scoliose Rett • Scoliose Angelman • β-bloquants prophylactiques et aorte</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Identifier</strong> les syndromes les plus fréquemment associés à la scoliose et leurs caractéristiques cliniques (Bloom : Connaissance)</li>
+<li><strong>Adapter</strong> le bilan préopératoire aux risques systémiques spécifiques de chaque syndrome (Bloom : Application)</li>
+<li><strong>Comparer</strong> le comportement des scolioses syndromiques aux scolioses idiopathiques (Bloom : Analyse)</li>
+<li><strong>Planifier</strong> la prise en charge en collaboration multidisciplinaire (Bloom : Évaluation)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> Le syndrome de Marfan est lié à une mutation du gène :<br />
+- A. <em>COL1A1</em><br />
+- <strong>B. <em>FBN1</em> (fibrilline-1)</strong><br />
+- C. <em>NF1</em><br />
+- D. <em>TSC1</em></p>
+<p><strong>Q2.</strong> Dans la NF1, les scolioses dystrophiques se caractérisent par :<br />
+- A. Des courbures longues et flexibles<br />
+- <strong>B. Des courbures courtes (4–6 vertèbres), angulaires, rigides, avec érosions costales et foramens élargis</strong><br />
+- C. Des courbures identiques à la SIA<br />
+- D. Des courbures preferentiellement lombaires</p>
+<p><strong>Q3.</strong> La contre-indication opératoire absolue dans le syndrome de Marfan est :<br />
+- A. Cobb &lt; 40°<br />
+- B. Dissection aortique asymptomatique<br />
+- <strong>C. Dilatation aortique &gt; 45 mm non opérée</strong> (risque de dissection per-opératoire)<br />
+- D. Ectopie du cristallin</p>
+<p><strong>Q4.</strong> L'ostéogenèse imparfaite type III est caractérisée par :<br />
+- A. Fractures légères à l'effort<br />
+- <strong>B. Fractures spontanées dès la naissance, nanisme sévère, scolioses quasi-universelles</strong><br />
+- C. Sclérotiques blanches normales<br />
+- D. Forme la plus bénigne</p>
+<p><strong>Q5.</strong> La scoliose dans la neurofibromatose type 1 représente :<br />
+- <strong>A. 10–30 % des patients NF1, dont 10 % de forme dystrophique (grave)</strong><br />
+- B. &lt; 5 % des patients NF1<br />
+- C. 80 % des patients NF1<br />
+- D. Uniquement en cas de neurofibromes spinaux associés</p>
+<hr />
+<h2 id="131-syndrome-de-marfan">13.1 Syndrome de Marfan</h2>
+<h3 id="1311-generalites">13.1.1 Généralités</h3>
+<ul>
+<li><strong>Prévalence</strong> : 1/5 000 à 1/10 000</li>
+<li><strong>Gène</strong> : <em>FBN1</em> (fibrilline-1, chromosome 15) — transmission autosomique dominante</li>
+<li><strong>Diagnostic</strong> : Critères de Ghent révisés 2010 (score systémique + aorte + ectopie cristallin + génétique)</li>
+</ul>
+<h3 id="1312-scoliose-dans-marfan">13.1.2 Scoliose dans Marfan</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prévalence scoliose</td>
+<td>60–70 % des Marfan (Sponseller et al., 1995, <em>J Bone Joint Surg Am</em>)</td>
+</tr>
+<tr>
+<td>Type de courbe</td>
+<td>Variable — souvent double, thoracolombaire</td>
+</tr>
+<tr>
+<td>Flexibilité</td>
+<td><strong>Hypermobile</strong> — corrigibilité importante mais récidive fréquente</td>
+</tr>
+<tr>
+<td>Particularité</td>
+<td><strong>Dolicho-scoliose</strong> : courbures longues, membres longs, thorax étroit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Comportement atypique</strong> :<br />
+- La <strong>flexibilité élevée</strong> rend la correction facile mais augmente le risque de <strong>pseudarthrose</strong> (tissus conjonctifs laxes = consolidation difficile)<br />
+- Risque de <strong>correction excessif</strong> → surveiller l'équilibre<br />
+- Résultats moins bons qu'en SIA à long terme (25–30 % de reintervention à 10 ans)</p>
+<h3 id="1313-bilan-preoperatoire-specifique-marfan">13.1.3 Bilan préopératoire spécifique Marfan</h3>
+<table>
+<thead>
+<tr>
+<th>Examen</th>
+<th>Objectif</th>
+<th>Seuil d'alerte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Échocardiographie + Z-score aortique</strong></td>
+<td>Dépister dilatation aorte</td>
+<td>Z-score &gt; 3 ou &gt; 45 mm = contre-indication relative</td>
+</tr>
+<tr>
+<td><strong>IRM médullaire</strong></td>
+<td>Ectasie durale (1/3 des Marfan), méga-dure-mère</td>
+<td>Dure-mère amincie → risque de brèche</td>
+</tr>
+<tr>
+<td><strong>Consultation ophtalmologique</strong></td>
+<td>Ectopie cristallin</td>
+<td>Anesthésie à adapter si mauvaise coopération</td>
+</tr>
+<tr>
+<td><strong>Bilan coagulation</strong></td>
+<td>Fragile</td>
+<td>Standard</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ Règle absolue</strong> : Ne jamais opérer la scoliose si l'aorte est &gt; 45 mm et n'est pas opérée — risque de dissection aortique peropératoire lethal.</p>
+</blockquote>
+<h3 id="1314-traitement-medical-associe">13.1.4 Traitement médical associé</h3>
+<ul>
+<li><strong>β-bloquants</strong> (aténolol, carvédilol) : réduisent la progression de la dilatation aortique</li>
+<li><strong>Losartan</strong> : alternative/complément (antagoniste TGF-β)</li>
+<li>Suivi cardiologique annuel</li>
+</ul>
+<hr />
+<h2 id="132-neurofibromatose-de-type-1-nf1">13.2 Neurofibromatose de type 1 (NF1)</h2>
+<h3 id="1321-generalites">13.2.1 Généralités</h3>
+<ul>
+<li><strong>Prévalence</strong> : 1/3 000 (Friedman, 1999) — la plus fréquente des phacomatoses</li>
+<li><strong>Gène</strong> : <em>NF1</em> (neurofibromine, chromosome 17q) — autosomique dominant</li>
+<li><strong>Critères diagnostiques</strong> : ≥ 2 parmi : taches café-au-lait &gt; 5 mm × 6, éphélides axillaires/inguinales, neurofibromes (≥ 2 ou 1 plexiforme), gliome optique, nodules de Lisch, lésion osseuse distinctive, parent NF1</li>
+</ul>
+<h3 id="1322-scolioses-dans-nf1-deux-types">13.2.2 Scolioses dans NF1 : deux types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Caractéristiques</th>
+<th>Pronostic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Non-dystrophique</strong></td>
+<td>Identique SIA, long, flexible</td>
+<td>Bon, traitement comme SIA</td>
+</tr>
+<tr>
+<td><strong>Dystrophique</strong></td>
+<td>Courte (4–6 niveaux), angulaire, rigide, foramens élargis, érosions côtes en crayon, vertèbres en coins, neurofibromes intrarachidiens</td>
+<td><strong>Grave</strong> — progression rapide, risque neurologique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Diagnostic du type dystrophique</strong> : critères de Crawford :<br />
+- ≥ 4 des signes suivants : scalloping vertébral, foramens élargis, érosion costale en crayon, côte ruban, angulation vertébrale, vertèbre en coin</p>
+<h3 id="1323-prise-en-charge">13.2.3 Prise en charge</h3>
+<p><strong>Dystrophique</strong> :<br />
+- IRM systématique (neurofibromes intrarachidiens fréquents)<br />
+- Chirurgie précoce (&lt; 25°) si type dystrophique confirmé<br />
+- Fusion combinée antérieure + postérieure (risque élevé de pseudarthrose si postérieure seule)<br />
+- <strong>Ne pas retarder</strong> — les neurofibromes peuvent évoluer rapidement</p>
+<p><strong>Non-dystrophique</strong> :<br />
+- Même traitement que SIA</p>
+<hr />
+<h2 id="133-syndrome-dehlers-danlos-sed">13.3 Syndrome d'Ehlers-Danlos (SED)</h2>
+<ul>
+<li><strong>Type</strong> : SED hypermobile (hEDS) le plus souvent</li>
+<li><strong>Prévalence scoliose</strong> : 30–50 % des hEDS</li>
+<li><strong>Comportement</strong> : Courbures flexibles, correction facile mais <strong>pseudarthrose fréquente</strong> (collagène déficient)</li>
+<li><strong>Chirurgie</strong> : Eviter si possible, correction conservatrice maximale ; si chirurgie = renforcement de l'ancrage, utilisation de croix multiples</li>
+</ul>
+<hr />
+<h2 id="134-osteogenese-imparfaite-oi">13.4 Ostéogenèse imparfaite (OI)</h2>
+<h3 id="classification-de-sillence-sillence-et-al-1979-j-med-genet">Classification de Sillence (Sillence et al., 1979, <em>J Med Genet</em>)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Sévérité</th>
+<th>Scoliose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Légère</td>
+<td>20–30 %</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Létale périnatale</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td><strong>Sévère</strong></td>
+<td><strong>Quasi-universelle (&gt; 80 %)</strong> (Engelbert et al., 1998)</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Modérée</td>
+<td>30–50 %</td>
+</tr>
+<tr>
+<td>V–XII</td>
+<td>Variantes</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prise-en-charge-de-la-scoliose-dans-loi">Prise en charge de la scoliose dans l'OI</h3>
+<ul>
+<li><strong>Bisphosphonates</strong> (acide zolédronique IV) : réduisent les fractures, augmentent la densité osseuse → réduisent la progression de la scoliose chez certains patients</li>
+<li><strong>Chirurgie</strong> :</li>
+<li>Risque hémorragique majeur (fragilité vasculaire)</li>
+<li>Vis pédiculaires difficiles (os mou) → augmentation pédiculaire ± tiges téléscopiques</li>
+<li>Anesthésie particulière : hyperthermie maligne rapportée, dents fragiles (laryngoscopie prudente)</li>
+</ul>
+<hr />
+<h2 id="135-achondroplasie">13.5 Achondroplasie</h2>
+<ul>
+<li><strong>Gène</strong> : <em>FGFR3</em> (gain de fonction)</li>
+<li>Scoliose présente dans 10–20 % des achondroplasies</li>
+<li>Souvent associée à <strong>sténose canalaire</strong> (canal trop étroit) → symptômes neurologiques</li>
+<li>Risque de compression <strong>foraminale</strong> sévère</li>
+<li><strong>Chirurgie</strong> : décompression souvent prioritaire sur la correction de la scoliose</li>
+</ul>
+<hr />
+<h2 id="136-prader-willi-angelman-rett">13.6 Prader-Willi, Angelman, Rett</h2>
+<table>
+<thead>
+<tr>
+<th>Syndrome</th>
+<th>Scoliose</th>
+<th>Particularité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prader-Willi</strong></td>
+<td>60–80 % (Holm et al., 1993)</td>
+<td>Obésité complique l'anesthésie + difficulté de correction</td>
+</tr>
+<tr>
+<td><strong>Rett</strong></td>
+<td>80–90 % (Kerr et al., 2003)</td>
+<td>Progressive, longue, commence jeune — souvent chirurgie</td>
+</tr>
+<tr>
+<td><strong>Angelman</strong></td>
+<td>15–30 %</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="137-approche-multidisciplinaire">13.7 Approche multidisciplinaire</h2>
+<p><strong>Pour toute scoliose syndromique</strong>, la prise en charge implique :</p>
+<table>
+<thead>
+<tr>
+<th>Spécialiste</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chirurgien rachidien</strong></td>
+<td>Chirurgie, planification</td>
+</tr>
+<tr>
+<td><strong>Cardiologue</strong> (Marfan, SED)</td>
+<td>Aorte, dysrythmies</td>
+</tr>
+<tr>
+<td><strong>Pneumologue</strong> (OI, Prader-Willi)</td>
+<td>CVF, VNI postop</td>
+</tr>
+<tr>
+<td><strong>Généticien</strong></td>
+<td>Conseil génétique, diagnostic, suivi</td>
+</tr>
+<tr>
+<td><strong>Anesthésiste spécialisé</strong></td>
+<td>Adaptation anesthésie (Marfan, OI)</td>
+</tr>
+<tr>
+<td><strong>Rééducateur</strong></td>
+<td>Pré et post-chirurgie</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> Les scolioses syndromiques doivent être reconnues car elles nécessitent un bilan systémique spécifique.</p>
+<p>📌 <strong>2.</strong> Dans le <strong>Marfan</strong> : contrôle cardiaque (aorte) obligatoire avant toute chirurgie ; la pseudarthrose est un risque majeur.</p>
+<p>📌 <strong>3.</strong> La <strong>NF1 dystrophique</strong> est une urgence chirurgicale relative : progression rapide, fusion combinée obligatoire.</p>
+<p>📌 <strong>4.</strong> Dans l'<strong>OI</strong> : bisphosphonates preventifs, anesthésie spécialisée, ancrage difficile.</p>
+<p>📌 <strong>5.</strong> Ces scolioses s'inscrivent toujours dans une prise en charge <strong>multidisciplinaire</strong> impliquant généticien, cardiologue et anesthésiste spécialisé.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-10-questions">Quiz — 10 questions</h2>
+<p><strong>Q1. 🥉</strong> Le gène muté dans le syndrome de Marfan est :<br />
+- A. <em>COL1A1</em><br />
+- <strong>B. <em>FBN1</em></strong><br />
+- C. <em>NF1</em><br />
+- D. <em>FGFR3</em></p>
+<p><strong>Q2. 🥉</strong> La scoliose dystrophique dans NF1 se distingue par :<br />
+- <strong>A. Une courbure courte (4–6 niveaux), angulaire, avec foramens élargis et érosions costales</strong><br />
+- B. Une courbure longue flexible identique à la SIA<br />
+- C. Son caractère systématiquement lombaire<br />
+- D. L'absence de risque neurologique</p>
+<p><strong>Q3. 🥉</strong> Dans l'OI de type III, la prévalence de la scoliose est :<br />
+- A. 20 %<br />
+- B. 50 %<br />
+- <strong>C. &gt; 80 %</strong><br />
+- D. 100 %</p>
+<p><strong>Q4. 🥈</strong> Quelle contre-indication opératoire absolue doit être recherchée avant chirurgie scoliotique chez un patient Marfan ?<br />
+- A. LL &lt; 40°<br />
+- <strong>B. Dilatation aortique &gt; 45 mm non réparée</strong><br />
+- C. Flexibilité &gt; 70 %<br />
+- D. Ectopie du cristallin bilatérale</p>
+<p><strong>Q5. 🥈</strong> L'ectasie durale dans le Marfan est une complication spécifique qui nécessite :<br />
+- A. Un traitement chirurgical immédiat<br />
+- <strong>B. Une attention particulière lors de la mise en place des vis pédiculaires (risque de brèche durale)</strong><br />
+- C. Une CI à la chirurgie<br />
+- D. Une IRM diagnostique uniquement</p>
+<p><strong>Q6. 🥈</strong> Le traitement médical qui réduit la progression de la scoliose dans l'OI est :<br />
+- A. Corticoïdes<br />
+- <strong>B. Bisphosphonates (acide zolédronique IV)</strong><br />
+- C. GH (hormone de croissance)<br />
+- D. Calcium seul</p>
+<p><strong>Q7. 🥇</strong> Avant d'opérer Camille (Marfan, aorte 38 mm), vous devez :<br />
+- A. Refuser la chirurgie définitivement<br />
+- B. Opérer sans attendre — l'aorte à 38 mm n'est pas à risque<br />
+- <strong>C. Discuter avec le cardiologue : Z-score actuel, vitesse de croissance aortique, β-bloquants optimisés. Si aorte stable, chirurgie scoliotique faisable avec monitoring TA peropératoire strict et éviter la manipulation aortique</strong><br />
+- D. Fusionner uniquement les niveaux douloureux</p>
+<p><strong>Q8. 🥇</strong> Dans NF1 dystrophique, pourquoi une fusion postérieure seule est-elle insuffisante ?<br />
+- <strong>A. Le risque de pseudarthrose est très élevé dans les courbures angulaires rigides — la fusion antérieure (discectomie + greffe interbody) est nécessaire pour assurer la consolidation</strong><br />
+- B. La voie antérieure seule suffit<br />
+- C. À cause des neurofibromes postérieurs<br />
+- D. Pour protéger la moelle</p>
+<p><strong>Q9. 💎</strong> Camille (Marfan) est opérée d'une fusion T4-L2. À J3, l'infirmière signale une fuite de LCR en regard de l'incision. Conduite à tenir ?<br />
+- <strong>A. Décubitus strict + fermeture hermétique de la plaie (re-suture étanche, patch de fibrine), drainage lombaire temporaire si persistance. La brèche durale est plus fréquente dans Marfan (ectasie durale)</strong><br />
+- B. Re-opération immédiate<br />
+- C. Antibiotiques seuls<br />
+- D. Simple pansement compressif</p>
+<p><strong>Q10. 💎</strong> Un patient NF1 de 10 ans présente une scoliose dystrophique T7-T11 Cobb 40°. IRM : neurofibrome T9 intrarachidien extra-dural comprimant la moelle (&lt; 30 % du canal). Décision ?<br />
+- <strong>A. Résection neurochirurgicale du neurofibrome PUIS fusion combinée antérieure + postérieure T5-T12, idéalement dans le même temps opératoire ou à court terme</strong><br />
+- B. Fusion postérieure seule immédiate<br />
+- C. Surveillance du neurofibrome, arthrodèse seule<br />
+- D. Chimiothérapie pour le neurofibrome puis arthrodèse dans 2 ans</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Sillence DO, Senn A, Danks DM.</strong> Genetic heterogeneity in osteogenesis imperfecta. <em>J Med Genet</em>. 1979;16(2):101–116</li>
+<li><strong>Sponseller PD, Hobbs W, Riley LH, Pyeritz RE.</strong> The thoracolumbar spine in Marfan syndrome. <em>J Bone Joint Surg Am</em>. 1995;77(6):867–876</li>
+<li><strong>Friedman JM.</strong> Epidemiology of neurofibromatosis type 1. <em>Am J Med Genet</em>. 1999;89(1):1–6</li>
+<li><strong>Engelbert RH, Pruijs HE, Beemer FA et al.</strong> Osteogenesis imperfecta in childhood: treatment strategies. <em>Arch Phys Med Rehabil</em>. 1998;79(12):1590–1594</li>
+<li><strong>Holm VA, Cassidy SB, Butler MG et al.</strong> Prader-Willi syndrome: consensus diagnostic criteria. <em>Pediatrics</em>. 1993;91(2):398–402</li>
+<li><strong>Kerr AM, Webb P, Prescott RJ, Milne Y.</strong> Results of surgery for scoliosis in Rett syndrome. <em>J Child Neurol</em>. 2003;18(10):703–708</li>
+<li><strong>Dietz HC et al.</strong> Marfan syndrome. <em>NEJM</em>. 2005;352:2368</li>
+<li><strong>Crawford AH.</strong> NF1 spinal scoliosis. <em>Spine</em>. 2007</li>
+<li><strong>Golan D et al.</strong> OI and scoliosis. <em>Spine Deformity</em>. 2017</li>
+<li><strong>Loeys BL et al.</strong> Ghent revised criteria Marfan. <em>J Med Genet</em>. 2010</li>
+</ul>
+</div>

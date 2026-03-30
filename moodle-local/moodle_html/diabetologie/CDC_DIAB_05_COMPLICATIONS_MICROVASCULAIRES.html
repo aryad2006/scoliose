@@ -1,0 +1,867 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-5-complications-microvasculaires-modules-16-18">Partie 5 — Complications Microvasculaires (Modules 16-18)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-16-retinopathie-diabetique-depistage-classification-traitement">MODULE 16 : RÉTINOPATHIE DIABÉTIQUE — DÉPISTAGE, CLASSIFICATION, TRAITEMENT</h1>
+<p><strong>Partie</strong> : V — Complications microvasculaires<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Avancé<br />
+<strong>Prérequis</strong> : Modules 5-6, 14</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme D., 52 ans, DT2 découvert il y a 12 ans, HbA1c oscillant entre 8,5 et 9,5 % ces 5 dernières années. Elle consulte pour « vision floue depuis 2 mois ». Le fond d'œil révèle des hémorragies rétiniennes en flammèches, des exsudats secs en couronne maculaire et des microanévrismes diffus. L'OCT montre un œdème maculaire cystoïde de 450 µm d'épaisseur. *La rétinopathie diabétique reste la première cause de cécité avant 65 ans dans les pays industrialisés — et pourtant, un dépistage annuel aurait permis une prise en charge bien plus précoce.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> la physiopathologie de la rétinopathie diabétique : hyperglycémie → voie des polyols, PKC, AGE, stress oxydatif → dysfonction endothéliale → rupture BHR</li>
+<li><strong>Classer</strong> la rétinopathie selon la classification internationale simplifiée (ETDRS adaptée) : absente, RDNP minime, modérée, sévère (règle du 4-2-1), RDP</li>
+<li><strong>Interpréter</strong> les examens complémentaires : rétinophotographie, OCT maculaire, angiographie à la fluorescéine, OCT-angiographie</li>
+<li><strong>Appliquer</strong> les stratégies de dépistage : rythme, modalités (mydriase/non-mydriase), télé-ophtalmologie, IA de screening</li>
+<li><strong>Prescrire</strong> le traitement adapté au stade : contrôle glycémique, IVT anti-VEGF (ranibizumab, aflibercept, faricimab), photocoagulation panrétinienne, corticoïdes intravitréens</li>
+<li><strong>Gérer</strong> les situations à risque : grossesse, amélioration glycémique rapide (« early worsening »), chirurgie de la cataracte</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-1-epidemiologie-et-physiopathologie-retinienne">Section 1 — Épidémiologie et physiopathologie rétinienne</h3>
+<blockquote>
+<p>Le module doit présenter les données épidémiologiques actuelles de la rétinopathie diabétique :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Épidémiologie</strong> : prévalence globale ~35 % des diabétiques (toutes formes), ~7 % de RDP, ~7 % d'œdème maculaire diabétique (OMD) ; incidence cumulée à 20 ans : ~80 % DT1, ~60 % DT2 (données Wisconsin Epidemiologic Study of Diabetic Retinopathy — Klein et al., 1984-2008)</li>
+<li><strong>Facteurs de risque</strong> : durée du diabète (facteur principal), équilibre glycémique (DCCT : réduction de 76 % du risque de RD par contrôle intensif — DCCT Research Group, N Engl J Med, 1993), HTA (UKPDS : réduction de 34 % par contrôle tensionnel strict — UKPDS Group, BMJ, 1998), dyslipidémie, néphropathie associée, grossesse</li>
+<li><strong>Physiopathologie</strong> : le module doit détailler les 4 voies biochimiques majeures activées par l'hyperglycémie chronique :</li>
+<li>Voie des polyols (aldose réductase → sorbitol → fructose → déplétion NADPH → stress oxydatif)</li>
+<li>Activation de la protéine kinase C (PKC-β → VEGF ↑, endothéline-1 ↑, TGF-β ↑)</li>
+<li>Glycation non enzymatique (AGE → récepteur RAGE → NF-κB → inflammation)</li>
+<li>Voie des hexosamines (UDP-GlcNAc → modification post-traductionnelle → dysfonction cellulaire)</li>
+<li><strong>Conséquences vasculaires</strong> : perte des péricytes → microanévrismes → rupture de la barrière hémato-rétinienne (BHR) interne → exsudation → ischémie → néovascularisation VEGF-dépendante</li>
+<li><strong>Rôle de l'inflammation</strong> : leucostase, activation microgliale, cytokines pro-inflammatoires (IL-1β, TNF-α, MCP-1)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB16-S01-001 — SCHÉMA VOIES BIOCHIMIQUES DE L'HYPERGLYCÉMIE RÉTINIENNE (polyols, PKC, AGE, hexosamines → dysfonction endothéliale → rupture BHR)]</p>
+<p>[MEDIA: 📊 MDIAB16-S01-002 — GRAPHIQUE PRÉVALENCE RD EN FONCTION DE LA DURÉE DU DIABÈTE (DT1 vs DT2, données Klein et al.)]</p>
+<p>[MEDIA: 🔬 MDIAB16-S01-003 — SCHÉMA PROGRESSION MICROVASCULAIRE (péricyte normal → perte péricytaire → microanévrisme → rupture BHR → ischémie → néovascularisation)]</p>
+</blockquote>
+<h3 id="section-2-classification-et-semiologie-du-fond-dil">Section 2 — Classification et sémiologie du fond d'œil</h3>
+<blockquote>
+<p>Le module doit présenter la classification internationale et la sémiologie rétinienne :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Classification internationale simplifiée</strong> (adaptée de l'ETDRS — Wilkinson et al., Ophthalmology, 2003) :</li>
+<li><strong>Pas de RD apparente</strong> : aucune anomalie</li>
+<li><strong>RDNP minime</strong> : microanévrismes isolés uniquement</li>
+<li><strong>RDNP modérée</strong> : microanévrismes + hémorragies punctiformes, exsudats secs, nodules cotonneux (&lt; seuil sévère)</li>
+<li><strong>RDNP sévère</strong> : règle du 4-2-1 (hémorragies rétiniennes dans 4 quadrants OU veines en chapelet dans ≥ 2 quadrants OU AMIR dans ≥ 1 quadrant) — risque de progression vers RDP de 50 % à 1 an</li>
+<li><strong>RDP</strong> : néovaisseaux prérétiniens ou prépapillaires ± hémorragie intravitréenne ± décollement de rétine tractionnel</li>
+<li><strong>Œdème maculaire diabétique (OMD)</strong> : classification à part, peut survenir à tout stade ; OMD cliniquement significatif (adapté de l'ETDRS) : épaississement rétinien ≤ 500 µm du centre, exsudats secs ≤ 500 µm du centre avec épaississement adjacent, zone d'épaississement ≥ 1 diamètre papillaire dont une partie ≤ 1 DP du centre</li>
+<li><strong>Sémiologie détaillée</strong> : le module doit illustrer chaque lésion élémentaire avec rétinophotographies commentées :</li>
+<li>Microanévrismes (points rouges &lt; 125 µm)</li>
+<li>Hémorragies punctiformes (intra-rétiniennes profondes) et en flammèches (couche des fibres)</li>
+<li>Exsudats secs (dépôts lipidiques jaunes, disposition circinée)</li>
+<li>Nodules cotonneux (ischémie focale couche des fibres)</li>
+<li>AMIR (anomalies microvasculaires intra-rétiniennes — shunts)</li>
+<li>Veines en chapelet (irrégularités calibre veineux = ischémie sévère)</li>
+<li>Néovaisseaux (pré-rétiniens, pré-papillaires — aspect en « dentelle »)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 👁️ MDIAB16-S02-001 — ATLAS RÉTINOPHOTOGRAPHIQUE LÉSIONS ÉLÉMENTAIRES (microanévrismes, hémorragies, exsudats, nodules cotonneux, AMIR, néovaisseaux — photos commentées)]</p>
+<p>[MEDIA: 📋 MDIAB16-S02-002 — TABLEAU CLASSIFICATION INTERNATIONALE SIMPLIFIÉE RD (stade, lésions, risque de progression, CAT)]</p>
+<p>[MEDIA: 👁️ MDIAB16-S02-003 — COMPARATIF OCT MACULAIRE NORMAL vs OMD FOCAL vs OMD DIFFUS (coupes transversales annotées)]</p>
+</blockquote>
+<h3 id="section-3-depistage-et-examens-complementaires">Section 3 — Dépistage et examens complémentaires</h3>
+<blockquote>
+<p>Le module doit présenter les stratégies de dépistage et les outils diagnostiques :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Dépistage systématique</strong> (recommandations HAS 2010, ADA 2024, AAO 2024) :</li>
+<li>DT1 : premier dépistage à 5 ans du diagnostic (3 ans si puberté), puis annuel</li>
+<li>DT2 : dépistage dès le diagnostic (RD présente dans 20 % des cas au diagnostic), puis annuel</li>
+<li>Grossesse : fond d'œil avant conception ou au 1er trimestre, puis trimestriel, puis post-partum</li>
+<li>Rythme adapté : tous les 2 ans si DT2 bien équilibré sans RD depuis &gt; 2 examens normaux consécutifs</li>
+<li><strong>Rétinophotographie</strong> : 2 champs minimum (macula + papille), non mydriatique en dépistage, mydriatique si anomalie ; télé-ophtalmologie (réseau OPHDIAT en France — Massin et al., Diabetes Care, 2008)</li>
+<li><strong>Intelligence artificielle</strong> : algorithmes de screening validés FDA (IDx-DR/LumineticsCore — Abràmoff et al., npj Digital Medicine, 2018 ; EyeArt — Bhaskaranand et al., JAMA Ophthalmol, 2019) ; sensibilité &gt; 87 %, spécificité &gt; 90 % pour RDNP modérée référable ; limites (qualité image, cas limites, responsabilité médico-légale)</li>
+<li><strong>OCT maculaire</strong> : examen de référence pour l'OMD ; mesure épaisseur rétinienne centrale (normale &lt; 300 µm selon appareil) ; identification compartiments liquidiens (intrarétinien, sous-rétinien) ; biomarqueurs pronostiques (DRIL, points hyperréflectifs, état de la ligne ellipsoïde)</li>
+<li><strong>Angiographie à la fluorescéine</strong> : indications (RDNP sévère/RDP, OMD réfractaire, diagnostic différentiel) ; signes (diffusion, non-perfusion capillaire, néovaisseaux) ; effets indésirables (nausées 5 %, allergie &lt; 1 %, anaphylaxie &lt; 0,05 %)</li>
+<li><strong>OCT-angiographie (OCTA)</strong> : non invasive, visualisation des plexus capillaires superficiel et profond, zone avasculaire fovéolaire, détection néovaisseaux ; limites (champ limité, artefacts de mouvement)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB16-S03-001 — ALGORITHME DÉCISIONNEL DÉPISTAGE RD (DT1 vs DT2, rythme, télé-ophtalmologie, critères de référence ophtalmologique)]</p>
+<p>[MEDIA: 🖥️ MDIAB16-S03-002 — CAPTURE D'ÉCRAN IA SCREENING RD (image rétinienne + analyse automatisée + niveau de confiance + recommandation)]</p>
+<p>[MEDIA: 👁️ MDIAB16-S03-003 — COMPARATIF IMAGERIE RÉTINIENNE (rétinophoto couleur vs angiographie fluorescéine vs OCT vs OCTA — même patient RDNP sévère)]</p>
+</blockquote>
+<h3 id="section-4-traitement-de-la-retinopathie-diabetique">Section 4 — Traitement de la rétinopathie diabétique</h3>
+<blockquote>
+<p>Le module doit présenter la prise en charge thérapeutique selon le stade :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Contrôle des facteurs de risque</strong> : optimisation glycémique (cible HbA1c individualisée), contrôle tensionnel (cible &lt; 130/80 mmHg), traitement dyslipidémie ; fénofibrate (effet rétino-protecteur indépendant des lipides — études FIELD et ACCORD Eye, Chew et al., N Engl J Med, 2010)</li>
+<li><strong>Attention au « early worsening »</strong> : aggravation paradoxale de la RD lors de l'amélioration glycémique rapide (↓ HbA1c &gt; 2 % en 6 mois) ; mécanisme : vasoconstriction rétinienne par normalisation glycémique → ischémie relative ; CAT : dépistage renforcé, amélioration progressive de l'HbA1c</li>
+<li><strong>Injections intravitréennes (IVT) anti-VEGF</strong> — traitement de 1ère intention de l'OMD avec atteinte centrale :</li>
+<li>Ranibizumab 0,5 mg (Lucentis®) — études RISE/RIDE, RESTORE</li>
+<li>Aflibercept 2 mg (Eylea®) — étude VIVID/VISTA ; nouvelle formulation 8 mg (Eylea HD®) — étude PHOTON (intervalles prolongés jusqu'à 16 semaines)</li>
+<li>Faricimab 6 mg (Vabysmo®) — anti-VEGF-A + anti-Ang-2 bispecifique — études YOSEMITE/RHINE (non-infériorité avec intervalles jusqu'à 16 semaines)</li>
+<li>Protocole : induction 3-5 IVT mensuelles puis PRN ou treat-and-extend ; gain moyen +8-10 lettres ETDRS à 1 an</li>
+<li><strong>Photocoagulation panrétinienne (PPR)</strong> : traitement de référence de la RDP ; étude DRS (réduction de 50 % du risque de cécité sévère — DRS Research Group, 1978) ; technique : 1200-1600 impacts, 3-4 séances, laser argon ou multispot (PASCAL) ; effets secondaires : restriction champ visuel, héméralopie, douleur, OMD post-PPR</li>
+<li><strong>Comparaison IVT anti-VEGF vs PPR dans la RDP</strong> : étude DRCR.net Protocol S (Gross et al., JAMA, 2015) — ranibizumab non inférieur à PPR à 2 ans avec meilleur champ visuel et moins d'OMD ; mais compliance aux IVT nécessaire</li>
+<li><strong>Corticoïdes intravitréens</strong> : 2e intention si OMD réfractaire aux anti-VEGF ou pseudo-phaque ; implant de dexaméthasone 0,7 mg (Ozurdex® — étude MEAD, 4-6 mois) ; implant de fluocinolone 0,19 mg (Iluvien® — étude FAME, 3 ans) ; effets secondaires : cataracte (50-80 %), hypertonie oculaire (30-40 %)</li>
+<li><strong>Vitrectomie</strong> : indications (hémorragie intravitréenne persistante &gt; 1-3 mois, décollement de rétine tractionnel menaçant/atteignant la macula, RDP floride ne répondant pas au traitement)</li>
+<li><strong>Traitements émergents</strong> : anti-VEGF à libération prolongée (port delivery system — PDS ranibizumab), inhibiteurs de la voie du complément, thérapie génique (RGX-314 — vecteur AAV codant pour ranibizumab), biothérapies anti-Ang-2, agonistes du récepteur Tie-2</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB16-S04-001 — ALGORITHME THÉRAPEUTIQUE RD SELON STADE (RDNP minime → surveillance, RDNP sévère → surveillance rapprochée ± anti-VEGF, RDP → PPR ± anti-VEGF, OMD → anti-VEGF 1ère ligne)]</p>
+<p>[MEDIA: 💉 MDIAB16-S04-002 — COMPARATIF MOLÉCULES ANTI-VEGF DANS L'OMD (ranibizumab, aflibercept, faricimab — mécanisme, posologie, essais, intervalles)]</p>
+<p>[MEDIA: 👁️ MDIAB16-S04-003 — PHOTOS AVANT/APRÈS PPR (rétinophoto pré-PPR avec néovaisseaux vs post-PPR avec impacts laser et régression néovasculaire)]</p>
+</blockquote>
+<h2 id="points-cles-module-16">Points clés — Module 16</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. La RD est la 1ère cause de cécité avant 65 ans — dépistage annuel obligatoire (rétinophotographie)<br />
+2. Classification : RDNP minime → modérée → sévère (règle 4-2-1) → RDP (néovaisseaux)<br />
+3. L'OMD est une entité distincte, possible à tout stade, 1ère cause de baisse d'acuité visuelle<br />
+4. Traitement OMD central : IVT anti-VEGF en 1ère intention (faricimab, aflibercept 8 mg = intervalles prolongés)<br />
+5. Traitement RDP : PPR reste le standard ; anti-VEGF alternatif si compliance assurée (Protocol S)<br />
+6. Attention au « early worsening » : amélioration glycémique rapide peut aggraver la RD → surveillance renforcée<br />
+7. L'IA de screening (IDx-DR, EyeArt) permet un dépistage autonome en soins primaires<br />
+8. Le fénofibrate a un effet rétino-protecteur indépendant de son effet lipidique (FIELD, ACCORD Eye)</p>
+</blockquote>
+<h2 id="auto-evaluation-module-16">Auto-évaluation — Module 16</h2>
+<h3 id="qcm-progressifs-12-questions">QCM progressifs (12 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quelle est la lésion la plus précoce de la rétinopathie diabétique ?<br />
+A. Néovaisseaux prépapillaires<br />
+B. Microanévrismes<br />
+C. Hémorragie intravitréenne<br />
+D. Nodules cotonneux</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Les microanévrismes sont les premières lésions visibles, résultant de la perte des péricytes. Leur présence isolée définit la RDNP minime.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : À quel rythme le dépistage de la RD doit-il être réalisé chez un DT2 bien équilibré sans rétinopathie ?<br />
+A. Tous les 6 mois<br />
+B. Tous les ans<br />
+C. Tous les 2 ans (si ≥ 2 FO normaux consécutifs)<br />
+D. Tous les 5 ans</p>
+<blockquote>
+<p>✅ <strong>C</strong> — Les recommandations permettent un espacement à 2 ans si DT2 bien équilibré et ≥ 2 FO normaux consécutifs. Sinon, rythme annuel.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : La règle du « 4-2-1 » définit la RDNP sévère. Que signifie-t-elle ?<br />
+A. 4 IVT par an, 2 séances PPR, 1 vitrectomie<br />
+B. 4 quadrants d'hémorragies OU 2 quadrants de veines en chapelet OU 1 quadrant d'AMIR<br />
+C. 4 microanévrismes par quadrant, 2 nodules cotonneux, 1 exsudat sec<br />
+D. 4 mois de suivi, 2 OCT, 1 angiographie</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La règle 4-2-1 (hémorragies dans 4 quadrants OU veines en chapelet dans ≥ 2 quadrants OU AMIR dans ≥ 1 quadrant) définit la RDNP sévère avec un risque de 50 % de progression vers la RDP à 1 an.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Quel examen est la référence pour le diagnostic et le suivi de l'œdème maculaire diabétique ?<br />
+A. Rétinophotographie couleur<br />
+B. Angiographie à la fluorescéine<br />
+C. OCT maculaire<br />
+D. Échographie mode B</p>
+<blockquote>
+<p>✅ <strong>C</strong> — L'OCT maculaire permet de mesurer l'épaisseur rétinienne centrale, d'identifier les compartiments liquidiens et les biomarqueurs pronostiques (DRIL, points hyperréflectifs, ligne ellipsoïde).</p>
+</blockquote>
+<p><strong>Q5 — 🥈 Argent</strong> : Quel est le traitement de 1ère intention de l'OMD avec atteinte centrale ?<br />
+A. Photocoagulation maculaire en grille<br />
+B. Injections intravitréennes d'anti-VEGF<br />
+C. Corticoïdes intravitréens (Ozurdex®)<br />
+D. Vitrectomie</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Les IVT anti-VEGF sont le traitement de 1ère intention de l'OMD central, avec un gain moyen de +8-10 lettres ETDRS à 1 an (études RISE/RIDE, VIVID/VISTA, YOSEMITE/RHINE).</p>
+</blockquote>
+<p><strong>Q6 — 🥈 Argent</strong> : Qu'est-ce que le phénomène d'« early worsening » ?<br />
+A. Aggravation de la RD après chirurgie de la cataracte<br />
+B. Aggravation paradoxale de la RD lors d'une amélioration glycémique rapide<br />
+C. Progression rapide de la RD pendant la grossesse<br />
+D. Aggravation de l'OMD après PPR</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'« early worsening » est l'aggravation paradoxale de la RD lorsque l'HbA1c diminue de &gt; 2 % en 6 mois, par vasoconstriction rétinienne et ischémie relative. Il justifie une surveillance ophtalmologique renforcée et une amélioration glycémique progressive.</p>
+</blockquote>
+<p><strong>Q7 — 🥇 Or</strong> : Quel avantage du faricimab par rapport aux anti-VEGF conventionnels ?<br />
+A. Meilleure acuité visuelle finale<br />
+B. Mécanisme bispecifique anti-VEGF-A + anti-Ang-2 permettant des intervalles prolongés<br />
+C. Absence totale d'effets secondaires<br />
+D. Administration en collyre</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le faricimab est le premier anti-VEGF bispecifique (anti-VEGF-A + anti-Ang-2), normalisant la vasculature rétinienne et permettant des intervalles jusqu'à 16 semaines (études YOSEMITE/RHINE).</p>
+</blockquote>
+<p><strong>Q8 — 🥇 Or</strong> : Dans l'étude Protocol S (DRCR.net), quel est le résultat principal comparant ranibizumab vs PPR dans la RDP ?<br />
+A. La PPR est supérieure en termes d'acuité visuelle<br />
+B. Le ranibizumab est non inférieur à la PPR avec meilleur champ visuel et moins d'OMD<br />
+C. Le ranibizumab est inférieur à la PPR<br />
+D. Pas de différence significative sur aucun critère</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Protocol S montre la non-infériorité du ranibizumab vs PPR à 2 ans, avec un champ visuel mieux préservé et moins d'OMD secondaire, mais nécessitant une compliance aux injections répétées.</p>
+</blockquote>
+<p><strong>Q9 — 🥇 Or</strong> : Quel effet du fénofibrate sur la rétinopathie diabétique ?<br />
+A. Aucun effet prouvé<br />
+B. Effet rétino-protecteur uniquement via la baisse des triglycérides<br />
+C. Effet rétino-protecteur indépendant de l'effet lipidique (FIELD, ACCORD Eye)<br />
+D. Aggravation de la rétinopathie</p>
+<blockquote>
+<p>✅ <strong>C</strong> — Le fénofibrate réduit la progression de la RD de 30-40 % indépendamment de son effet sur les lipides (études FIELD et ACCORD Eye). Le mécanisme implique des effets anti-inflammatoires et anti-apoptotiques via PPARα.</p>
+</blockquote>
+<p><strong>Q10 — 🥇 Or</strong> : Quels sont les effets secondaires principaux des corticoïdes intravitréens dans l'OMD ?<br />
+A. Hémorragie intravitréenne et décollement de rétine<br />
+B. Cataracte (50-80 %) et hypertonie oculaire (30-40 %)<br />
+C. Endophtalmie et atrophie optique<br />
+D. Kératite et sécheresse oculaire</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Les corticoïdes intravitréens (Ozurdex®, Iluvien®) induisent fréquemment une cataracte (50-80 %) et une hypertonie oculaire (30-40 %), ce qui limite leur utilisation en 1ère intention et favorise leur emploi chez les patients pseudo-phaques.</p>
+</blockquote>
+<p><strong>Q11 — 💎 Diamant</strong> : Une patiente DT1 de 28 ans, enceinte de 8 SA, a une RDNP modérée. Quelle surveillance ophtalmologique proposez-vous ?<br />
+A. Fond d'œil annuel comme habituellement<br />
+B. Fond d'œil trimestriel pendant la grossesse + post-partum<br />
+C. Fond d'œil uniquement au 3e trimestre<br />
+D. PPR préventive immédiate</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La grossesse est un facteur de risque majeur de progression de la RD. La surveillance doit être trimestrielle (1er, 2e, 3e trimestre) avec un contrôle post-partum. En cas de progression rapide vers une RDNP sévère/RDP, la PPR doit être réalisée pendant la grossesse.</p>
+</blockquote>
+<p><strong>Q12 — 💎 Diamant</strong> : Un patient DT2 avec une RDP à haut risque et un OMD central bilatéral. Quelle stratégie thérapeutique proposez-vous ?<br />
+A. PPR seule bilatérale<br />
+B. IVT anti-VEGF seules bilatérales<br />
+C. IVT anti-VEGF pour l'OMD + PPR pour la RDP, en débutant par les anti-VEGF<br />
+D. Vitrectomie bilatérale d'emblée</p>
+<blockquote>
+<p>✅ <strong>C</strong> — En cas d'association RDP + OMD central, la stratégie recommandée est de débuter par les IVT anti-VEGF (qui traitent l'OMD et peuvent faire régresser partiellement la néovascularisation), puis de compléter par la PPR pour la RDP. La PPR en premier pourrait aggraver l'OMD.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-16">Cas clinique intégré — Module 16</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : M. R., 58 ans, DT2 depuis 15 ans</strong></p>
+<p>M. R., chauffeur routier, DT2 traité par metformine + gliclazide. HbA1c : 9,2 %. HTA traitée par ramipril 10 mg (PA : 148/92 mmHg). Pas de fond d'œil depuis 4 ans. Consulte pour renouvellement de son permis de conduire.</p>
+<p><strong>Rétinophotographie</strong> : hémorragies rétiniennes dans les 4 quadrants, veines en chapelet dans 2 quadrants, quelques AMIR. Exsudats secs en couronne maculaire OG.<br />
+<strong>OCT OG</strong> : épaisseur maculaire centrale 520 µm, kystes intrarétiniens, liquide sous-rétinien.<br />
+<strong>AV</strong> : OD 8/10, OG 4/10.</p>
+<p><strong>Questions :</strong><br />
+1. Quel est le stade de la rétinopathie ? Justifiez par la règle du 4-2-1.<br />
+2. Quel diagnostic complémentaire portez-vous à l'OG ? Argumentez.<br />
+3. Quelle prise en charge ophtalmologique proposez-vous ?<br />
+4. Quelles mesures non ophtalmologiques sont indispensables ?<br />
+5. Quelles implications pour le permis de conduire de catégorie professionnelle ?</p>
+</blockquote>
+<h3 id="question-de-synthese">Question de synthèse</h3>
+<blockquote>
+<p>🔄 <strong>Synthèse</strong> : Décrivez l'algorithme complet de prise en charge d'un patient diabétique depuis le dépistage de la RD jusqu'au traitement, en intégrant : rythme de dépistage, examens complémentaires selon le stade, traitement de la RDNP sévère/RDP, traitement de l'OMD, et surveillance post-thérapeutique.</p>
+</blockquote>
+<hr />
+<h1 id="module-17-nephropathie-diabetique-du-depistage-a-la-dialyse">MODULE 17 : NÉPHROPATHIE DIABÉTIQUE — DU DÉPISTAGE À LA DIALYSE</h1>
+<p><strong>Partie</strong> : V — Complications microvasculaires<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Avancé<br />
+<strong>Prérequis</strong> : Modules 5-6, 14</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">M. K., 62 ans, DT2 depuis 18 ans, se présente avec un bilan biologique réalisé en ville : créatinine 185 µmol/L (DFG estimé CKD-EPI 35 mL/min/1,73 m²), albuminurie sur échantillon 850 mg/g de créatinine. Il est traité par metformine 2 g/j et gliclazide 60 mg/j. Sa PA est à 155/95 mmHg sous amlodipine 10 mg. Il n'a jamais eu de dosage d'albuminurie auparavant. *La néphropathie diabétique est la 1ère cause d'insuffisance rénale terminale dans le monde — ce patient a déjà un stade G3b A3, une prise en charge précoce aurait changé son pronostic rénal.*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'histoire naturelle de la néphropathie diabétique selon les stades de Mogensen (DT1) et leur adaptation au DT2</li>
+<li><strong>Interpréter</strong> les marqueurs de dépistage : albuminurie (RAC), DFG estimé (CKD-EPI 2021), classification KDIGO</li>
+<li><strong>Connaître</strong> la physiopathologie glomérulaire : hyperfiltration, expansion mésangiale, glomérulosclérose nodulaire (Kimmelstiel-Wilson)</li>
+<li><strong>Prescrire</strong> le traitement néphroprotecteur : bloqueurs du SRAA, iSGLT2, finérénone</li>
+<li><strong>Adapter</strong> le traitement antidiabétique au stade d'IRC</li>
+<li><strong>Savoir</strong> quand adresser au néphrologue et préparer la suppléance rénale</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-1-epidemiologie-et-physiopathologie-renale">Section 1 — Épidémiologie et physiopathologie rénale</h3>
+<blockquote>
+<p>Le module doit présenter la physiopathologie de l'atteinte rénale diabétique :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Épidémiologie</strong> : la néphropathie diabétique (ND) est la 1ère cause d'insuffisance rénale terminale (IRT) dans le monde (30-50 % des patients en dialyse) ; prévalence de la MRC chez les diabétiques : ~40 % (DT1 et DT2 confondus) ; incidence cumulée d'IRT à 30 ans : ~20 % DT1 (en amélioration grâce au contrôle glycémique et tensionnel), variable DT2</li>
+<li><strong>Physiopathologie hémodynamique</strong> : le module doit détailler les mécanismes :</li>
+<li>Phase précoce : hyperfiltration glomérulaire (DFG &gt; 130-150 mL/min) par vasodilatation afférente (hyperglycémie → cotransporteur SGLT2 → réabsorption glucose-sodium ↑ → ↓ NaCl au macula densa → ↓ feedback tubulo-glomérulaire → vasodilatation afférente) + vasoconstriction efférente (angiotensine II) → ↑ pression intraglomérulaire</li>
+<li>Phase intermédiaire : épaississement membrane basale glomérulaire, expansion mésangiale, perte des podocytes → albuminurie progressive</li>
+<li>Phase avancée : glomérulosclérose nodulaire (nodules de Kimmelstiel-Wilson — pathognomoniques), fibrose tubulo-interstitielle → déclin DFG</li>
+<li><strong>Physiopathologie métabolique</strong> : les mêmes voies que la RD (polyols, PKC, AGE, hexosamines) + activation SRAA local rénal + inflammation (NF-κB, TGF-β, CTGF) + fibrose (transition épithélio-mésenchymateuse)</li>
+<li><strong>Facteurs de risque de progression</strong> : mauvais contrôle glycémique, HTA (surtout systolique), tabac, dyslipidémie, albuminurie de base élevée, origine ethnique (Afro-Américains, Amérindiens, Hispaniques), facteurs génétiques</li>
+<li><strong>Non-diabetic kidney disease (NDKD)</strong> : 20-40 % des patients diabétiques avec MRC n'ont pas de ND typique ; indices cliniques : hématurie glomérulaire, absence de RD associée, déclin DFG rapide atypique, début brutal → biopsie rénale à discuter</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB17-S01-001 — SCHÉMA PHYSIOPATHOLOGIE GLOMÉRULAIRE (hyperfiltration → expansion mésangiale → glomérulosclérose — rôle SGLT2, SRAA, podocytes)]</p>
+<p>[MEDIA: 🔬 MDIAB17-S01-002 — HISTOLOGIE RÉNALE COMPARÉE (glomérule normal vs expansion mésangiale diffuse vs nodules de Kimmelstiel-Wilson vs glomérulosclérose avancée)]</p>
+<p>[MEDIA: 📊 MDIAB17-S01-003 — COURBE HISTOIRE NATURELLE ND (DFG et albuminurie en fonction du temps — stades de Mogensen)]</p>
+</blockquote>
+<h3 id="section-2-depistage-classification-et-diagnostic">Section 2 — Dépistage, classification et diagnostic</h3>
+<blockquote>
+<p>Le module doit présenter le dépistage et la classification de la maladie rénale chronique diabétique :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Dépistage</strong> (recommandations KDIGO 2024, HAS, ADA 2024) :</li>
+<li><strong>Albuminurie</strong> : rapport albumine/créatinine urinaire (RAC) sur échantillon matinal ; seuils : normal &lt; 30 mg/g, modérément augmentée (A2, ex-« microalbuminurie ») 30-300 mg/g, sévèrement augmentée (A3, ex-« macroalbuminurie ») &gt; 300 mg/g ; confirmation sur 2/3 échantillons à 3-6 mois d'intervalle (faux positifs : fièvre, exercice, infection urinaire, HTA déséquilibrée, insuffisance cardiaque)</li>
+<li><strong>DFG estimé</strong> : formule CKD-EPI 2021 (sans coefficient ethnique) recommandée ; cystatine C si doute (IMC extrêmes, amyotrophie, régime végétarien)</li>
+<li><strong>Rythme</strong> : DT1 à partir de 5 ans de diabète, DT2 dès le diagnostic ; annuel (RAC + créatinine + DFG)</li>
+<li><strong>Classification KDIGO</strong> (adapté de KDIGO 2024) : matrice bidimensionnelle DFG (G1-G5) × albuminurie (A1-A3) → couleur de risque (vert, jaune, orange, rouge, rouge foncé) → fréquence de surveillance et urgence de prise en charge</li>
+<li><strong>Stades de Mogensen</strong> (adapté de Mogensen, Diabetologia, 1983 — référence historique DT1) :</li>
+<li>Stade 1 : hyperfiltration (DFG ↑, normoalbuminurie)</li>
+<li>Stade 2 : lésions histologiques silencieuses (normoalbuminurie, épaississement MB)</li>
+<li>Stade 3 : néphropathie incipiens (microalbuminurie 30-300 mg/g, DFG normal/↑)</li>
+<li>Stade 4 : néphropathie avérée (macroalbuminurie &gt; 300 mg/g, HTA, déclin DFG ~10 mL/min/an sans traitement)</li>
+<li>Stade 5 : insuffisance rénale terminale (DFG &lt; 15, dialyse)</li>
+<li><strong>Quand biopsier ?</strong> : indications de ponction-biopsie rénale chez le diabétique : hématurie glomérulaire, protéinurie sans RD associée (la concordance rétinopatho-néphropathie est un argument fort pour la ND), déclin DFG &gt; 5 mL/min/an, syndrome néphrotique d'apparition brutale, durée de diabète &lt; 5 ans avec néphropathie, signes extrarénaux de maladie systémique</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB17-S02-001 — MATRICE KDIGO HEAT MAP (DFG G1-G5 × Albuminurie A1-A3 — couleurs de risque, fréquence de surveillance)]</p>
+<p>[MEDIA: 📊 MDIAB17-S02-002 — ALGORITHME DÉPISTAGE ET CONFIRMATION ALBUMINURIE (échantillon matinal → confirmation → classification → CAT)]</p>
+<p>[MEDIA: 📋 MDIAB17-S02-003 — TABLEAU INDICATIONS DE BIOPSIE RÉNALE CHEZ LE DIABÉTIQUE (critères, arguments pour ND typique vs atypique)]</p>
+</blockquote>
+<h3 id="section-3-traitement-nephroprotecteur">Section 3 — Traitement néphroprotecteur</h3>
+<blockquote>
+<p>Le module doit présenter les stratégies de néphroprotection fondées sur les preuves :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Bloqueurs du système rénine-angiotensine-aldostérone (SRAA)</strong> :</li>
+<li>IEC (ramipril, énalapril, lisinopril) ou ARA2 (losartan, irbésartan, valsartan) en 1ère intention si albuminurie ≥ A2 même si PA normale</li>
+<li>Preuves : étude RENAAL (losartan — Brenner et al., N Engl J Med, 2001 : réduction de 16 % du doublement de créatinine), IDNT (irbésartan — Lewis et al., N Engl J Med, 2001), IRMA-2 (irbésartan prévention progression micro→macroalbuminurie)</li>
+<li>Précautions : surveillance créatinine + kaliémie à J7-J14 post-introduction ; tolérer ↑ créatinine ≤ 30 % ; ne pas associer IEC + ARA2 (étude ONTARGET : pas de bénéfice rénal, plus d'effets indésirables — Yusuf et al., N Engl J Med, 2008)</li>
+<li>Cible tensionnelle : &lt; 130/80 mmHg (&lt; 120 mmHg systolique si albuminurie &gt; 1 g/g selon KDIGO 2021)</li>
+<li><strong>Inhibiteurs du SGLT2 (iSGLT2)</strong> — révolution néphroprotectrice :</li>
+<li>Mécanisme rénal : restauration du feedback tubulo-glomérulaire → vasoconstriction afférente → ↓ pression intraglomérulaire → ↓ hyperfiltration et albuminurie ; effets additionnels (natriurèse, ↓ poids, ↓ uricémie, ↓ inflammation tubulo-interstitielle)</li>
+<li>Preuves dans la ND : CREDENCE (canagliflozine — Perkovic et al., N Engl J Med, 2019 : réduction de 30 % du critère rénal composite, arrêt prématuré pour efficacité), DAPA-CKD (dapagliflozine — Heerspink et al., N Engl J Med, 2020 : réduction de 39 % du critère rénal, bénéfice aussi chez non-diabétiques), EMPA-KIDNEY (empagliflozine — Herrington et al., N Engl J Med, 2023 : réduction de 28 % progression MRC)</li>
+<li>Indications KDIGO 2024 : iSGLT2 recommandé pour tout patient DT2 avec DFG ≥ 20 mL/min ET RAC ≥ 30 mg/g ; à poursuivre même si DFG &lt; 20 jusqu'à la dialyse</li>
+<li>« Dip and recovery » : baisse initiale du DFG de 3-5 mL/min (réversible, reflet de la correction hémodynamique) → ne pas arrêter le traitement</li>
+<li><strong>Finérénone</strong> (antagoniste sélectif non stéroïdien des récepteurs des minéralocorticoïdes — ARM) :</li>
+<li>Preuves : FIDELIO-DKD (Bakris et al., N Engl J Med, 2020 : réduction de 18 % du critère rénal composite), FIGARO-DKD (Pitt et al., N Engl J Med, 2021 : réduction de 13 % du critère CV), analyse poolée FIDELITY (bénéfice rénal ET cardiovasculaire)</li>
+<li>Indications KDIGO 2024 : finérénone recommandée en add-on (IEC/ARA2 + iSGLT2 déjà en place) si DFG ≥ 25 mL/min, K+ &lt; 5 mmol/L, RAC ≥ 30 mg/g</li>
+<li>Surveillance : kaliémie à M1 puis tous les 4 mois ; risque principal = hyperkaliémie (mais moindre que spironolactone grâce à la sélectivité)</li>
+<li><strong>Pilier combiné KDIGO 2024</strong> : IEC/ARA2 + iSGLT2 + finérénone + contrôle glycémique (HbA1c individualisée) + statine → « 4 piliers de la néphroprotection diabétique »</li>
+<li><strong>Contrôle glycémique adapté</strong> : cible HbA1c ≤ 7 % en général, à individualiser selon DFG (attention aux hypoglycémies en IRC avancée — clairance réduite de l'insuline)</li>
+<li><strong>Autres mesures</strong> : restriction sodée &lt; 5 g/j, apport protéique 0,8 g/kg/j si DFG &lt; 30, sevrage tabagique, activité physique adaptée, correction anémie (EPO si Hb &lt; 10 g/dL), traitement acidose métabolique (bicarbonates si HCO3- &lt; 22 mmol/L)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🏗️ MDIAB17-S03-001 — SCHÉMA MÉCANISME NÉPHROPROTECTEUR iSGLT2 (feedback tubulo-glomérulaire, vasoconstriction afférente, ↓ pression intraglomérulaire)]</p>
+<p>[MEDIA: 📊 MDIAB17-S03-002 — GRAPHIQUE COMPARATIF ESSAIS NÉPHROPROTECTION (RENAAL, CREDENCE, DAPA-CKD, EMPA-KIDNEY, FIDELIO — critère rénal composite, NNT)]</p>
+<p>[MEDIA: 📋 MDIAB17-S03-003 — ALGORITHME KDIGO 2024 NÉPHROPROTECTION DT2 (4 piliers : SRAA + iSGLT2 + finérénone + contrôle métabolique — critères d'introduction et surveillance)]</p>
+</blockquote>
+<h3 id="section-4-adaptation-therapeutique-et-preparation-a-la-suppleance">Section 4 — Adaptation thérapeutique et préparation à la suppléance</h3>
+<blockquote>
+<p>Le module doit présenter l'adaptation des traitements en IRC et la préparation à la suppléance :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Adaptation des antidiabétiques au DFG</strong> (adapté de recommandations KDIGO 2024, SFD/SFNDT 2023) :</li>
+<li>Metformine : maintien jusqu'à DFG ≥ 30 (dose réduite 1 g/j si DFG 30-45), arrêt si DFG &lt; 30 ; situations d'arrêt temporaire (iode, chirurgie, déshydratation)</li>
+<li>iSGLT2 : initiation si DFG ≥ 20, poursuite jusqu'à dialyse pour néphroprotection (effet glycémique diminué si DFG &lt; 45)</li>
+<li>Sulfonylurées : privilégier gliclazide (métabolisme hépatique) ; éviter glibenclamide (métabolites actifs accumulés → hypoglycémie)</li>
+<li>Inhibiteurs DPP-4 : adaptation posologique (sauf linagliptine — pas d'ajustement)</li>
+<li>Agonistes GLP-1 : pas d'adaptation posologique (sémaglutide, dulaglutide, liraglutide) ; données néphroprotectrices émergentes (FLOW — sémaglutide : réduction de 24 % du critère rénal composite, Perkovic et al., N Engl J Med, 2024)</li>
+<li>Insuline : doses souvent à réduire de 25-50 % si DFG &lt; 30 (clairance rénale réduite) → risque hypoglycémique accru ; privilégier analogues avec profil pharmacocinétique stable</li>
+<li><strong>Quand adresser au néphrologue</strong> : DFG &lt; 30, déclin DFG &gt; 5 mL/min/an, RAC &gt; 300 mg/g persistant, hyperkaliémie récurrente, HTA résistante, suspicion NDKD, préparation suppléance</li>
+<li><strong>Préparation à la suppléance</strong> : information dès DFG &lt; 20, choix éclairé (hémodialyse, dialyse péritonéale, transplantation rénale ± pancréatique), abord vasculaire (fistule artério-veineuse) à créer dès DFG &lt; 15-20, inscription sur liste de transplantation préemptive si éligible</li>
+<li><strong>Transplantation rein-pancréas</strong> : option pour DT1 avec IRT — greffe simultanée rein-pancréas (SPK) : survie du greffon rénal ~90 % à 5 ans, insulino-indépendance ~85 % à 5 ans</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB17-S04-001 — TABLEAU ADAPTATION ANTIDIABÉTIQUES SELON DFG (molécule, seuil DFG, adaptation posologique, précautions)]</p>
+<p>[MEDIA: 📊 MDIAB17-S04-002 — ALGORITHME PARCOURS PATIENT IRC DIABÉTIQUE (du dépistage à la suppléance — seuils DFG, étapes clés, intervenants)]</p>
+</blockquote>
+<h2 id="points-cles-module-17">Points clés — Module 17</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. La ND est la 1ère cause d'IRT dans le monde — dépistage annuel : RAC + DFG estimé (CKD-EPI 2021)<br />
+2. L'hyperfiltration glomérulaire (rôle SGLT2 dans le feedback tubulo-glomérulaire) est le mécanisme initiateur<br />
+3. Classification KDIGO bidimensionnelle : DFG (G1-G5) × albuminurie (A1-A3) → niveau de risque<br />
+4. Les 4 piliers KDIGO 2024 : IEC/ARA2 + iSGLT2 + finérénone + contrôle métabolique<br />
+5. CREDENCE, DAPA-CKD, EMPA-KIDNEY : les iSGLT2 réduisent de 28-39 % la progression rénale<br />
+6. FIDELIO/FIGARO : la finérénone ajoute un bénéfice rénal et CV en add-on<br />
+7. FLOW : le sémaglutide montre un bénéfice néphroprotecteur (réduction 24 % critère rénal)<br />
+8. Le « dip and recovery » des iSGLT2 est attendu et bénin → ne pas arrêter le traitement<br />
+9. Adapter les antidiabétiques au DFG : attention metformine (stop si &lt; 30), insuline (réduire doses si &lt; 30)<br />
+10. Adresser au néphrologue si DFG &lt; 30, déclin rapide, ou suspicion de NDKD</p>
+</blockquote>
+<h2 id="auto-evaluation-module-17">Auto-évaluation — Module 17</h2>
+<h3 id="qcm-progressifs-12-questions_1">QCM progressifs (12 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est l'examen de dépistage de la néphropathie diabétique ?<br />
+A. Protéinurie des 24 heures<br />
+B. Rapport albumine/créatinine urinaire (RAC) sur échantillon matinal<br />
+C. Créatinine urinaire isolée<br />
+D. Échographie rénale</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le RAC sur échantillon matinal est l'examen de dépistage recommandé (KDIGO, ADA, HAS), à confirmer sur 2/3 prélèvements. La protéinurie des 24h est abandonnée en dépistage (peu fiable, mauvaise compliance).</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : À partir de quel seuil d'albuminurie parle-t-on d'albuminurie modérément augmentée (ex-microalbuminurie) ?<br />
+A. &gt; 10 mg/g<br />
+B. &gt; 30 mg/g<br />
+C. &gt; 150 mg/g<br />
+D. &gt; 300 mg/g</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Albuminurie A2 (modérément augmentée) : RAC 30-300 mg/g. A3 (sévèrement augmentée) : &gt; 300 mg/g. Normal (A1) : &lt; 30 mg/g.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Quel est le mécanisme de l'hyperfiltration glomérulaire précoce dans le diabète ?<br />
+A. Vasoconstriction de l'artériole afférente<br />
+B. Vasodilatation afférente (par ↑ réabsorption SGLT2 → ↓ NaCl macula densa → ↓ feedback TG) + vasoconstriction efférente (angiotensine II)<br />
+C. Obstruction tubulaire par glycosurie<br />
+D. Nécrose papillaire</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'hyperglycémie augmente la réabsorption glucose-sodium via SGLT2, diminuant le NaCl au macula densa, désactivant le feedback tubulo-glomérulaire (vasodilatation afférente). L'angiotensine II provoque la vasoconstriction efférente. Le résultat est une augmentation de la pression intraglomérulaire.</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : Pourquoi ne doit-on pas associer IEC + ARA2 en néphroprotection ?<br />
+A. Interaction pharmacocinétique rendant les deux molécules inefficaces<br />
+B. L'étude ONTARGET a montré l'absence de bénéfice rénal avec plus d'hyperkaliémie et d'hypotension<br />
+C. L'association provoque systématiquement une insuffisance rénale aiguë<br />
+D. Les deux molécules ont le même mécanisme d'action exact</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'étude ONTARGET (Yusuf et al., 2008) a montré que le double blocage IEC + ARA2 n'apportait pas de bénéfice rénal supplémentaire mais augmentait significativement le risque d'hyperkaliémie, d'hypotension et d'insuffisance rénale aiguë.</p>
+</blockquote>
+<p><strong>Q5 — 🥈 Argent</strong> : Qu'est-ce que le « dip and recovery » des iSGLT2 ?<br />
+A. Une chute irréversible du DFG nécessitant l'arrêt du traitement<br />
+B. Une baisse initiale du DFG de 3-5 mL/min, réversible, reflétant la correction hémodynamique glomérulaire<br />
+C. Une augmentation paradoxale de l'albuminurie<br />
+D. Une fluctuation de l'HbA1c</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le « dip and recovery » est une baisse initiale attendue et bénigne du DFG de 3-5 mL/min, reflétant la vasoconstriction de l'artériole afférente et la réduction de l'hyperfiltration. C'est un marqueur de bonne réponse hémodynamique — il ne faut pas arrêter le traitement.</p>
+</blockquote>
+<p><strong>Q6 — 🥈 Argent</strong> : Quelle est l'indication de la finérénone selon KDIGO 2024 ?<br />
+A. En 1ère intention avant les IEC/ARA2<br />
+B. En remplacement des iSGLT2<br />
+C. En add-on (IEC/ARA2 + iSGLT2 déjà en place) si DFG ≥ 25, K+ &lt; 5, RAC ≥ 30<br />
+D. Uniquement si DFG &lt; 15</p>
+<blockquote>
+<p>✅ <strong>C</strong> — La finérénone est recommandée en 3e ligne de néphroprotection, en addition aux IEC/ARA2 et iSGLT2, chez les patients DT2 avec DFG ≥ 25 mL/min, K+ &lt; 5 mmol/L et RAC ≥ 30 mg/g (KDIGO 2024).</p>
+</blockquote>
+<p><strong>Q7 — 🥇 Or</strong> : L'étude CREDENCE a montré quel bénéfice de la canagliflozine dans la ND ?<br />
+A. Réduction de 10 % du critère rénal composite<br />
+B. Réduction de 30 % du critère rénal composite, arrêt prématuré pour efficacité<br />
+C. Absence de bénéfice rénal significatif<br />
+D. Bénéfice uniquement chez les non-diabétiques</p>
+<blockquote>
+<p>✅ <strong>B</strong> — CREDENCE (Perkovic et al., 2019) a montré une réduction de 30 % du critère rénal composite (IRT, doublement créatinine, décès rénal/CV) avec la canagliflozine vs placebo chez des DT2 avec albuminurie et DFG 30-90. L'essai a été arrêté prématurément pour bénéfice.</p>
+</blockquote>
+<p><strong>Q8 — 🥇 Or</strong> : Quelle adaptation de la metformine si le DFG est entre 30 et 45 mL/min ?<br />
+A. Arrêt immédiat de la metformine<br />
+B. Maintien à dose maximale (3 g/j)<br />
+C. Réduction à 1 g/j maximum avec surveillance rapprochée<br />
+D. Passage à la metformine à libération prolongée sans ajustement</p>
+<blockquote>
+<p>✅ <strong>C</strong> — La metformine peut être maintenue jusqu'à un DFG de 30 mL/min mais la dose doit être réduite (maximum 1 g/j si DFG 30-45) avec surveillance de la fonction rénale et arrêt temporaire en cas de situation à risque d'acidose lactique.</p>
+</blockquote>
+<p><strong>Q9 — 🥇 Or</strong> : Quel argument clinique majeur oriente vers une néphropathie non diabétique (NDKD) chez un patient diabétique ?<br />
+A. Présence d'une rétinopathie diabétique associée<br />
+B. Albuminurie progressive sur plusieurs années<br />
+C. Hématurie glomérulaire avec absence de rétinopathie diabétique<br />
+D. HTA associée</p>
+<blockquote>
+<p>✅ <strong>C</strong> — L'absence de RD associée et la présence d'une hématurie glomérulaire sont des « red flags » de NDKD, car la concordance rétino-néphropathie est un argument fort pour la ND typique. Une biopsie rénale doit être discutée.</p>
+</blockquote>
+<p><strong>Q10 — 🥇 Or</strong> : Quelle est la cible tensionnelle chez un patient DT2 avec albuminurie &gt; 1 g/g selon KDIGO 2021 ?<br />
+A. &lt; 140/90 mmHg<br />
+B. &lt; 130/80 mmHg<br />
+C. PAS &lt; 120 mmHg (mesure standardisée au cabinet)<br />
+D. &lt; 150/90 mmHg</p>
+<blockquote>
+<p>✅ <strong>C</strong> — KDIGO 2021 recommande une cible de PAS &lt; 120 mmHg (mesure standardisée) chez les patients avec albuminurie sévère, basée sur les résultats de SPRINT et les analyses post-hoc de RENAAL/IDNT.</p>
+</blockquote>
+<p><strong>Q11 — 💎 Diamant</strong> : Un patient DT2 avec DFG 28 mL/min, RAC 650 mg/g, sous ramipril 10 mg + empagliflozine 10 mg, K+ 4,8 mmol/L. Peut-on ajouter de la finérénone ?<br />
+A. Oui, car DFG ≥ 25, K+ &lt; 5, RAC ≥ 30 — tous les critères KDIGO sont remplis<br />
+B. Non, car le DFG est trop bas<br />
+C. Non, car l'empagliflozine est déjà en place<br />
+D. Oui, mais uniquement après arrêt de l'empagliflozine</p>
+<blockquote>
+<p>✅ <strong>A</strong> — Les critères KDIGO 2024 pour l'introduction de la finérénone sont tous remplis : DFG ≥ 25 (ici 28), K+ &lt; 5 (ici 4,8), RAC ≥ 30 (ici 650), et le patient est déjà sous IEC/ARA2 + iSGLT2. Surveillance de la kaliémie à M1.</p>
+</blockquote>
+<p><strong>Q12 — 💎 Diamant</strong> : M. T., 55 ans, DT1 depuis 30 ans, DFG 12 mL/min, sous insuline basale-bolus, IEC, iSGLT2. Quelles mesures de préparation à la suppléance ?<br />
+A. Attendre que le DFG atteigne 5 mL/min pour commencer les discussions<br />
+B. Information sur les modalités (HD, DP, transplantation), création fistule AV, inscription liste transplantation rein-pancréas préemptive, réduction doses insuline<br />
+C. Débuter la dialyse immédiatement<br />
+D. Transplantation pancréatique isolée</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Avec un DFG à 12 mL/min, la préparation à la suppléance est urgente : information éclairée (HD, DP, transplantation), création de la fistule AV (maturation 6-8 semaines), et chez ce DT1 de 55 ans, l'inscription préemptive pour greffe simultanée rein-pancréas (SPK) doit être discutée. Les doses d'insuline doivent être réduites (clairance rénale diminuée).</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-17">Cas clinique intégré — Module 17</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Mme L., 54 ans, DT2 depuis 12 ans</strong></p>
+<p>Mme L., DT2 sous metformine 2 g/j + sémaglutide 1 mg/sem. HbA1c : 7,8 %. PA : 145/88 mmHg sans traitement antihypertenseur. Bilan annuel : créatinine 98 µmol/L (DFG CKD-EPI 58 mL/min), RAC 180 mg/g (confirmé sur 2 prélèvements). Fond d'œil : RDNP minime.</p>
+<p><strong>Questions :</strong><br />
+1. Classez cette patiente selon KDIGO (stade DFG + albuminurie + couleur de risque).<br />
+2. Quels traitements néphroprotecteurs devez-vous introduire et dans quel ordre ?<br />
+3. Faut-il adapter la metformine ? Et le sémaglutide ?<br />
+4. Quel bilan complémentaire demandez-vous ?<br />
+5. Quel est le rythme de surveillance recommandé pour ce stade KDIGO ?</p>
+</blockquote>
+<h3 id="question-de-synthese_1">Question de synthèse</h3>
+<blockquote>
+<p>🔄 <strong>Synthèse</strong> : Construisez l'algorithme de néphroprotection KDIGO 2024 étape par étape pour un patient DT2 avec DFG 45 mL/min et RAC 250 mg/g, en précisant les 4 piliers, l'ordre d'introduction, les critères de surveillance et les seuils d'alerte pour chaque traitement.</p>
+</blockquote>
+<hr />
+<h1 id="module-18-neuropathie-diabetique-polyneuropathie-neuropathie-autonome-douleur-neuropathique">MODULE 18 : NEUROPATHIE DIABÉTIQUE — POLYNEUROPATHIE, NEUROPATHIE AUTONOME, DOULEUR NEUROPATHIQUE</h1>
+<p><strong>Partie</strong> : V — Complications microvasculaires<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Avancé<br />
+<strong>Prérequis</strong> : Modules 5-6, 14</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">M. B., 65 ans, DT2 depuis 20 ans, HbA1c 8,3 %, consulte pour des « brûlures » et des « fourmillements » aux pieds qui l'empêchent de dormir depuis 6 mois. L'examen retrouve une hypoesthésie en chaussettes, des réflexes achilléens abolis bilatéralement, un test au monofilament 10 g positif (4/8 points insensibles). De plus, il signale des épisodes de vertiges au lever et une diarrhée nocturne intermittente. *La neuropathie diabétique touche jusqu'à 50 % des diabétiques — sa détection précoce est cruciale car elle conditionne le risque de pied diabétique et d'hypoglycémies non ressenties.*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Classer</strong> les différentes formes de neuropathie diabétique : polyneuropathie distale symétrique (PNDS), neuropathies focales/multifocales, neuropathie autonome</li>
+<li><strong>Réaliser</strong> le dépistage clinique : monofilament 10 g, diapason 128 Hz, réflexes achilléens, score NDS (Neuropathy Disability Score)</li>
+<li><strong>Évaluer</strong> la douleur neuropathique : questionnaire DN4, échelle EVA, retentissement fonctionnel</li>
+<li><strong>Diagnostiquer</strong> la neuropathie autonome cardiaque (NAC) et ses implications pronostiques</li>
+<li><strong>Prescrire</strong> le traitement de la douleur neuropathique selon les recommandations (ADA 2024, NICE 2024)</li>
+<li><strong>Identifier</strong> les formes atypiques nécessitant un diagnostic différentiel</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-1-epidemiologie-physiopathologie-et-classification">Section 1 — Épidémiologie, physiopathologie et classification</h3>
+<blockquote>
+<p>Le module doit présenter la physiopathologie de l'atteinte nerveuse diabétique :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Épidémiologie</strong> : prévalence de la PNDS ~30-50 % des diabétiques (toutes formes) ; la PNDS est la forme la plus fréquente (&gt;75 % des neuropathies diabétiques) ; neuropathie autonome cardiaque (NAC) : 20-65 % selon les critères ; la neuropathie est le principal facteur de risque du pied diabétique (module 20)</li>
+<li><strong>Physiopathologie</strong> : atteinte combinée métabolique et vasculaire :</li>
+<li><strong>Atteinte métabolique directe</strong> : voie des polyols (accumulation sorbitol dans les cellules de Schwann → œdème, déplétion myo-inositol), glycation des protéines nerveuses (neurofilaments, tubuline, myéline), stress oxydatif (mitochondrial, NADPH oxydase), voie PKC → ↓ Na+/K+ ATPase → ralentissement conduction</li>
+<li><strong>Microangiopathie des vasa nervorum</strong> : épaississement membrane basale des capillaires endoneuraux, ↓ flux sanguin endoneurial → hypoxie neuronale</li>
+<li><strong>Dégénérescence axonale</strong> : atteinte « length-dependent » (les fibres les plus longues sont touchées en premier → distribution « en chaussettes » puis « en gants »)</li>
+<li><strong>Démyélinisation segmentaire</strong> secondaire</li>
+<li><strong>Rôle du canal sodique Nav1.7</strong> dans la douleur neuropathique (hyperexcitabilité des nocicepteurs)</li>
+<li><strong>Classification</strong> (adapté de Thomas, Diabetologia, 1997 et ADA 2017) :</li>
+<li><strong>Polyneuropathies symétriques</strong> : PNDS (sensitivo-motrice, la plus fréquente), polyneuropathie autonome, polyneuropathie sensitivo-motrice proximale (amyotrophie diabétique)</li>
+<li><strong>Neuropathies focales et multifocales</strong> : mononeuropathies crâniennes (III, VI, VII), mononeuropathies des membres (médian, cubital, fibulaire), radiculopathies/plexopathies (thoracique, lombosacrée), amyotrophie diabétique (syndrome de Bruns-Garland)</li>
+<li><strong>Formes mixtes et atypiques</strong> : neuropathie induite par le traitement (« treatment-induced neuropathy of diabetes » — TIND, ex-« névrite insulinique » : apparition/aggravation de neuropathie douloureuse + dysautonomie lors d'une amélioration glycémique rapide, ↓ HbA1c &gt; 2 % en 3 mois)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🔬 MDIAB18-S01-001 — SCHÉMA PHYSIOPATHOLOGIE NEUROPATHIE (voie des polyols dans cellule de Schwann, microangiopathie vasa nervorum, dégénérescence axonale distale)]</p>
+<p>[MEDIA: 📋 MDIAB18-S01-002 — CLASSIFICATION COMPLÈTE NEUROPATHIES DIABÉTIQUES (tableau : type, fréquence, mécanisme, présentation, pronostic)]</p>
+<p>[MEDIA: 🧍 MDIAB18-S01-003 — SCHÉMA DISTRIBUTION « LENGTH-DEPENDENT » (atteinte en chaussettes → gants → tronc, proportionnelle à la longueur axonale)]</p>
+</blockquote>
+<h3 id="section-2-polyneuropathie-distale-symetrique-depistage-et-diagnostic">Section 2 — Polyneuropathie distale symétrique : dépistage et diagnostic</h3>
+<blockquote>
+<p>Le module doit présenter le dépistage et le diagnostic de la PNDS :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Dépistage systématique</strong> (recommandations ADA 2024, HAS) :</li>
+<li>DT2 : dès le diagnostic, puis annuel</li>
+<li>DT1 : à partir de 5 ans de diabète, puis annuel</li>
+<li>Examen minimum : monofilament 10 g + au moins 1 test parmi : diapason 128 Hz, pic-touche, réflexes achilléens</li>
+<li><strong>Tests cliniques détaillés</strong> :</li>
+<li><strong>Monofilament de Semmes-Weinstein 10 g</strong> : technique standardisée (3 sites par pied : pulpe hallux, têtes M1, M5 — certains protocoles 4 sites ajoutant la voûte), application perpendiculaire, flexion en C, durée 1 seconde ; résultat positif (perte de sensation) si ≥ 1 site insensible → risque de pied diabétique</li>
+<li><strong>Diapason 128 Hz</strong> : vibration sur l'hallux (face dorsale tête M1), résultat positif si patient ne perçoit plus la vibration alors que l'examinateur la perçoit encore ; évalue les grosses fibres myélinisées (sensibilité profonde)</li>
+<li><strong>Pic-touche (Neurotip®)</strong> : évalue la sensibilité douloureuse (petites fibres)</li>
+<li><strong>Réflexes achilléens</strong> : abolition bilatérale = atteinte des grosses fibres myélinisées</li>
+<li><strong>Score NDS (Neuropathy Disability Score)</strong> (adapté de Young et al., Diabetologia, 1993) : score composite (réflexes achilléens + perception vibratoire + pic-touche + perception thermique) : 0-2 normal, 3-5 légère, 6-8 modérée, 9-10 sévère</li>
+<li><strong>Symptômes</strong> : distinction fibres atteintes :</li>
+<li>Grosses fibres myélinisées (Aβ) : engourdissement, paresthésies, ataxie, marche instable</li>
+<li>Petites fibres (Aδ, C) : brûlures, piqûres, allodynie, hyperalgésie, douleurs nocturnes prédominantes</li>
+<li>Fibres motrices : faiblesse distale tardive, atrophie interosseux, orteils en griffe</li>
+<li><strong>Examens complémentaires</strong> (si diagnostic incertain) :</li>
+<li>Électroneuromyographie (ENMG) : ↓ vitesses de conduction sensitives puis motrices, ↓ amplitudes ; normal si atteinte isolée des petites fibres</li>
+<li>Biopsie cutanée (punch 3 mm cheville + cuisse) : quantification densité intra-épidermique des fibres nerveuses (IENFD) — gold standard pour neuropathie des petites fibres</li>
+<li>Corneal confocal microscopy (CCM) : non invasive, corrélée à IENFD</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🩺 MDIAB18-S02-001 — TECHNIQUE MONOFILAMENT 10g (sites d'application, positionnement, interprétation — photos pas-à-pas)]</p>
+<p>[MEDIA: 📋 MDIAB18-S02-002 — SCORE NDS COMPLET (tableau : composants, cotation, interprétation, seuils)]</p>
+<p>[MEDIA: 📊 MDIAB18-S02-003 — ALGORITHME DIAGNOSTIQUE PNDS (dépistage clinique → confirmation → diagnostic différentiel → orientation)]</p>
+</blockquote>
+<h3 id="section-3-neuropathie-autonome-diabetique">Section 3 — Neuropathie autonome diabétique</h3>
+<blockquote>
+<p>Le module doit présenter les différentes atteintes du système nerveux autonome :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Neuropathie autonome cardiaque (NAC)</strong> — la plus importante pronostiquement :</li>
+<li>Prévalence : 20 % DT1 à 20 ans, 15-35 % DT2</li>
+<li>Pronostic : mortalité multipliée par 3-5 (Maser et al., Diabetes Care, 2003) ; associée aux arythmies, ischémie silencieuse, mort subite</li>
+<li>Dépistage : tests cardiovasculaires d'Ewing (adapté de Ewing &amp; Clarke, BMJ, 1982) :<ul>
+<li>Variation de la FC à la respiration profonde (6 cycles/min → ratio E/I ; anormal si &lt; 1,10)</li>
+<li>Épreuve de Valsalva (ratio RR max/RR min ; anormal si &lt; 1,10)</li>
+<li>Réponse FC à l'orthostatisme (ratio 30/15 ; anormal si &lt; 1,00)</li>
+<li>Réponse PA à l'orthostatisme (↓ PAS &gt; 20 mmHg ou PAD &gt; 10 mmHg = hypotension orthostatique)</li>
+<li>Réponse PA au handgrip isométrique (↑ PAD &lt; 10 mmHg = anormal)</li>
+</ul>
+</li>
+<li>Stades : précoce (1 test anormal), confirmée (2-3 tests anormaux), sévère (hypotension orthostatique)</li>
+<li>Conséquences pratiques : tachycardie de repos (FC &gt; 100 bpm), ischémie myocardique silencieuse (dépistage par ECG d'effort ou scintigraphie), allongement QTc → risque arythmie, mauvaise tolérance à l'exercice physique → adaptation du programme d'activité</li>
+<li><strong>Neuropathie autonome digestive</strong> :</li>
+<li><strong>Gastroparésie diabétique</strong> : retard de vidange gastrique → nausées, vomissements, satiété précoce, ballonnements, variabilité glycémique postprandiale erratique ; diagnostic : scintigraphie de vidange gastrique (rétention &gt; 10 % à 4h) ; traitement : mesures diététiques (petits repas fractionnés, pauvres en graisses et fibres), métoclopramide (attention effets extrapyramidaux, durée limitée), érythromycine IV (agoniste motiline, efficacité transitoire), prucalopride (hors AMM), stimulation gastrique électrique (Enterra®) si réfractaire</li>
+<li><strong>Diarrhée diabétique</strong> : diarrhée nocturne caractéristique, aqueuse, non sanglante ; diagnostic d'exclusion ; traitement : lopéramide, cholestyramine si malabsorption sels biliaires, antibiotiques si pullulation bactérienne</li>
+<li><strong>Constipation</strong> : la plus fréquente des atteintes digestives (60 %)</li>
+<li><strong>Neuropathie autonome génito-urinaire</strong> :</li>
+<li>Dysfonction érectile : prévalence 35-75 % des hommes diabétiques ; dépistage systématique (IIEF-5) ; étiologie mixte (neuropathique + vasculaire + psychologique) ; traitement : IPDE5 (sildénafil, tadalafil) en 1ère intention, IIC prostaglandine E1 en 2e intention</li>
+<li>Vessie neurogène : résidu post-mictionnel &gt; 100 mL → autosondages si sévère</li>
+<li>Dysfonction sexuelle féminine : sécheresse vaginale, dyspareunie, anorgasmie — sous-diagnostiquée</li>
+<li><strong>Neuropathie autonome sudorale</strong> : anhidrose distale → peau sèche, fissures → porte d'entrée pied diabétique ; hyperhidrose compensatrice tronculaire ; Sudoscan® : mesure de la fonction sudorale (conductance électrochimique cutanée) — outil de dépistage émergent</li>
+<li><strong>Hypoglycémies non ressenties</strong> : perte de la réponse adrénergique à l'hypoglycémie (« hypoglycemia unawareness ») — conséquence gravissime de la NAC ; seuil abaissé de déclenchement des symptômes → risque d'hypoglycémie sévère × 6 ; CAT : relèvement des cibles glycémiques, éviction stricte des hypoglycémies pendant 2-3 semaines → restauration partielle de la perception (« hypoglycemia awareness restoration »)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB18-S03-001 — TABLEAU TESTS D'EWING NAC (test, technique, seuil normal/anormal, interprétation — illustration pour chaque test)]</p>
+<p>[MEDIA: 🫀 MDIAB18-S03-002 — SCHÉMA CONSÉQUENCES NAC (tachycardie repos, ischémie silencieuse, hypotension orthostatique, QTc allongé, hypoglycémie non ressentie)]</p>
+<p>[MEDIA: 📋 MDIAB18-S03-003 — ALGORITHME GASTROPARÉSIE DIABÉTIQUE (suspicion → scintigraphie → traitement par paliers : diététique → prokinétiques → stimulation gastrique)]</p>
+</blockquote>
+<h3 id="section-4-traitement-de-la-douleur-neuropathique">Section 4 — Traitement de la douleur neuropathique</h3>
+<blockquote>
+<p>Le module doit présenter la prise en charge de la douleur neuropathique diabétique :</p>
+</blockquote>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Évaluation de la douleur</strong> : questionnaire DN4 (≥ 4/10 = douleur neuropathique probable — Bouhassira et al., Pain, 2005), EVA/EN douleur, retentissement (sommeil, qualité de vie, anxiété/dépression — questionnaires PHQ-9, GAD-7), distinction douleur neuropathique positive (brûlures, allodynie) vs négative (engourdissement, hypoesthésie)</li>
+<li><strong>Traitement étiologique</strong> : optimisation glycémique (seul traitement ayant montré un ralentissement de la progression — DCCT/EDIC pour DT1, effet plus modeste pour DT2) ; attention au TIND si amélioration trop rapide</li>
+<li><strong>Traitement pharmacologique de la douleur</strong> (adapté des recommandations ADA 2024, NICE 2024, Bril et al., Neurology, 2024) :</li>
+<li><strong>1ère ligne</strong> (choix selon profil patient, comorbidités, effets secondaires) :<ul>
+<li>Prégabaline 150-600 mg/j en 2 prises (antiépileptique, ligand α2δ) : NNT ~5 ; ES : somnolence, prise de poids, vertiges ; CI : insuffisance rénale sévère (ajuster dose)</li>
+<li>Duloxétine 60-120 mg/j en 1 prise (IRSNA) : NNT ~5 ; ES : nausées, céphalées, sécheresse buccale ; avantage si dépression/anxiété associée ; CI : insuffisance hépatique</li>
+<li>Gabapentine 900-3600 mg/j en 3 prises (antiépileptique, ligand α2δ) : NNT ~6 ; ajuster en IRC</li>
+<li>Amitriptyline 25-75 mg/j au coucher (antidépresseur tricyclique) : NNT ~3 (le plus efficace mais le plus d'ES) ; ES : anticholinergiques (bouche sèche, constipation, rétention urinaire, confusion) ; CI relative chez le sujet âgé, pathologie cardiaque (allongement QTc)</li>
+</ul>
+</li>
+<li><strong>2e ligne</strong> : association de 2 molécules de 1ère ligne à doses sub-optimales (étude COMBO-DN : duloxétine + prégabaline supérieure à la monothérapie à dose optimale — Tesfaye et al., Lancet, 2022)</li>
+<li><strong>3e ligne</strong> : tramadol (opioïde faible) ; capsaïcine patch 8 % (Qutenza®) — application locale 30 min sur les pieds, efficacité 3 mois, réalisée en centre spécialisé ; tapentadol</li>
+<li><strong>À éviter</strong> : opioïdes forts en traitement chronique (risque de dépendance, efficacité limitée long terme)</li>
+<li><strong>Traitements non pharmacologiques</strong> : TENS (neurostimulation transcutanée), stimulation médullaire (si douleur réfractaire — études Slangen et al., Diabetes Care, 2014), thérapie cognitivo-comportementale, exercice physique régulier (amélioration de la douleur et de la qualité de vie), acupuncture (niveau de preuve faible)</li>
+<li><strong>Traitements émergents</strong> : inhibiteurs de l'aldose réductase (épalréstat — commercialisé au Japon), anticorps anti-NGF, thérapie génique (VM202 — plasmide codant pour HGF), inhibiteurs de PARP</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB18-S04-001 — ALGORITHME TRAITEMENT DOULEUR NEUROPATHIQUE (1ère ligne : prégabaline/duloxétine/gabapentine/amitriptyline → 2e ligne : bithérapie → 3e ligne : tramadol/capsaïcine)]</p>
+<p>[MEDIA: 📊 MDIAB18-S04-002 — COMPARATIF MOLÉCULES 1ère LIGNE (NNT, NNH, profil ES, ajustement IRC, comorbidités favorisant le choix)]</p>
+<p>[MEDIA: 📋 MDIAB18-S04-003 — QUESTIONNAIRE DN4 ILLUSTRÉ (10 items, seuil ≥ 4, sensibilité 83 %, spécificité 90 %)]</p>
+</blockquote>
+<h2 id="points-cles-module-18">Points clés — Module 18</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. La PNDS touche 30-50 % des diabétiques — dépistage annuel par monofilament 10 g + diapason/réflexes<br />
+2. Distribution « length-dependent » : en chaussettes → gants (fibres longues touchées en premier)<br />
+3. Petites fibres = douleurs (brûlures, allodynie) ; grosses fibres = engourdissement, ataxie, chutes<br />
+4. La NAC est un marqueur pronostique majeur (mortalité ×3-5) → dépistage par tests d'Ewing<br />
+5. Hypoglycémie non ressentie : conséquence gravissime de la NAC → relèvement des cibles glycémiques<br />
+6. Gastroparésie : variabilité glycémique erratique → scintigraphie de vidange gastrique → prokinétiques<br />
+7. Douleur neuropathique : 1ère ligne = prégabaline OU duloxétine OU gabapentine OU amitriptyline<br />
+8. COMBO-DN : la bithérapie duloxétine + prégabaline est supérieure à la monothérapie optimale<br />
+9. TIND : aggravation neuropathique paradoxale si ↓ HbA1c &gt; 2 % en 3 mois → amélioration progressive<br />
+10. Le contrôle glycémique est le seul traitement étiologique de la neuropathie (DCCT/EDIC)</p>
+</blockquote>
+<h2 id="auto-evaluation-module-18">Auto-évaluation — Module 18</h2>
+<h3 id="qcm-progressifs-13-questions">QCM progressifs (13 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quel est le test de dépistage de base de la neuropathie diabétique en consultation ?<br />
+A. Électroneuromyogramme<br />
+B. Monofilament de Semmes-Weinstein 10 g<br />
+C. Biopsie cutanée<br />
+D. IRM des nerfs périphériques</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le monofilament 10 g est le test de dépistage de base, simple, rapide et reproductible. Un résultat positif (≥ 1 site insensible) identifie les patients à risque de pied diabétique. L'ENMG n'est pas un test de dépistage.</p>
+</blockquote>
+<p><strong>Q2 — 🥉 Bronze</strong> : Quelle est la forme la plus fréquente de neuropathie diabétique ?<br />
+A. Mononeuropathie du III<br />
+B. Polyneuropathie distale symétrique (PNDS)<br />
+C. Neuropathie autonome cardiaque<br />
+D. Amyotrophie diabétique</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La PNDS représente &gt; 75 % des neuropathies diabétiques. Elle touche d'abord les fibres sensitives distales des membres inférieurs selon un gradient « length-dependent ».</p>
+</blockquote>
+<p><strong>Q3 — 🥉 Bronze</strong> : Quel score au questionnaire DN4 est en faveur d'une douleur neuropathique ?<br />
+A. ≥ 2/10<br />
+B. ≥ 4/10<br />
+C. ≥ 6/10<br />
+D. ≥ 8/10</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Un score DN4 ≥ 4/10 a une sensibilité de 83 % et une spécificité de 90 % pour le diagnostic de douleur neuropathique (Bouhassira et al., 2005).</p>
+</blockquote>
+<p><strong>Q4 — 🥈 Argent</strong> : L'atteinte des petites fibres (Aδ, C) se manifeste principalement par :<br />
+A. Ataxie et troubles de l'équilibre<br />
+B. Brûlures, douleurs lancinantes, allodynie, douleurs nocturnes<br />
+C. Faiblesse musculaire proximale<br />
+D. Abolition des réflexes ostéo-tendineux</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Les petites fibres (Aδ, C) véhiculent la sensibilité thermique et douloureuse. Leur atteinte provoque des douleurs neuropathiques positives : brûlures, piqûres, allodynie, hyperalgésie, prédominance nocturne. L'ENMG est normal (il n'explore que les grosses fibres).</p>
+</blockquote>
+<p><strong>Q5 — 🥈 Argent</strong> : Quel est l'examen de référence pour diagnostiquer une neuropathie des petites fibres quand l'ENMG est normal ?<br />
+A. IRM médullaire<br />
+B. Biopsie cutanée avec quantification IENFD<br />
+C. Potentiels évoqués somesthésiques<br />
+D. Dosage des anticorps anti-gangliosides</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La biopsie cutanée (punch 3 mm) avec quantification de la densité intra-épidermique des fibres nerveuses (IENFD) est le gold standard pour le diagnostic de neuropathie des petites fibres. L'ENMG est normal car il n'explore que les grosses fibres myélinisées.</p>
+</blockquote>
+<p><strong>Q6 — 🥈 Argent</strong> : Quels sont les tests de dépistage de la NAC les plus précoces ?<br />
+A. Variation FC à la respiration profonde et ratio 30/15 à l'orthostatisme<br />
+B. Recherche d'hypotension orthostatique<br />
+C. ECG 12 dérivations standard<br />
+D. Holter tensionnel</p>
+<blockquote>
+<p>✅ <strong>A</strong> — Les tests parasympathiques (variation FC à la respiration profonde, ratio 30/15 à l'orthostatisme) sont les premiers altérés dans la NAC. L'hypotension orthostatique (test sympathique) est un signe tardif de NAC sévère.</p>
+</blockquote>
+<p><strong>Q7 — 🥈 Argent</strong> : Pourquoi la NAC aggrave-t-elle le risque d'hypoglycémie sévère ?<br />
+A. Elle provoque une insulinorésistance accrue<br />
+B. Elle abolit la réponse adrénergique contre-régulatrice → hypoglycémie non ressentie<br />
+C. Elle augmente l'absorption intestinale du glucose<br />
+D. Elle diminue la clairance rénale de l'insuline</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La NAC abolit la réponse sympatho-adrénergique (tachycardie, tremblements, sueurs) qui alerte normalement le patient lors d'une hypoglycémie. Sans ces symptômes d'alerte, l'hypoglycémie progresse sans être ressentie vers la neuroglycopénie sévère (risque ×6 d'hypoglycémie sévère).</p>
+</blockquote>
+<p><strong>Q8 — 🥇 Or</strong> : Quel résultat principal de l'étude COMBO-DN (Tesfaye et al., Lancet, 2022) ?<br />
+A. La monothérapie à haute dose est toujours supérieure à la bithérapie<br />
+B. La bithérapie duloxétine + prégabaline est supérieure à la monothérapie optimale<br />
+C. Les opioïdes sont supérieurs aux antiépileptiques<br />
+D. La capsaïcine est le traitement le plus efficace</p>
+<blockquote>
+<p>✅ <strong>B</strong> — COMBO-DN a montré que l'association duloxétine + prégabaline à doses sub-optimales était plus efficace que la monothérapie à dose optimale, avec un profil d'effets secondaires acceptable. Cela justifie la bithérapie en 2e ligne.</p>
+</blockquote>
+<p><strong>Q9 — 🥇 Or</strong> : Qu'est-ce que le TIND (Treatment-Induced Neuropathy of Diabetes) ?<br />
+A. Neuropathie causée par la metformine<br />
+B. Aggravation/apparition de neuropathie douloureuse + dysautonomie lors d'une amélioration glycémique rapide (↓ HbA1c &gt; 2 % en 3 mois)<br />
+C. Neuropathie induite par les statines<br />
+D. Neuropathie post-chirurgicale</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le TIND (ex-« névrite insulinique ») associe neuropathie douloureuse sévère + dysautonomie (incluant aggravation de la RD) lors d'une normalisation glycémique trop rapide. Le mécanisme implique la régénération neuronale aberrante et l'ischémie endoneural. Prévention : amélioration glycémique progressive.</p>
+</blockquote>
+<p><strong>Q10 — 🥇 Or</strong> : Comment diagnostiquer une gastroparésie diabétique ?<br />
+A. Fibroscopie gastrique<br />
+B. Scintigraphie de vidange gastrique (rétention &gt; 10 % à 4h)<br />
+C. Transit baryté<br />
+D. Manométrie œsophagienne</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La scintigraphie de vidange gastrique est l'examen de référence. Le repas test standardisé (œufs marqués au Tc-99m) est imagé à 0, 1, 2 et 4 heures. Une rétention &gt; 10 % à 4 heures confirme le diagnostic. La fibroscopie est utile pour exclure une cause obstructive.</p>
+</blockquote>
+<p><strong>Q11 — 🥇 Or</strong> : Parmi les traitements de 1ère ligne de la douleur neuropathique, lequel a le meilleur NNT mais le plus d'effets secondaires ?<br />
+A. Prégabaline<br />
+B. Duloxétine<br />
+C. Amitriptyline<br />
+D. Gabapentine</p>
+<blockquote>
+<p>✅ <strong>C</strong> — L'amitriptyline (tricyclique) a le meilleur NNT (~3) mais aussi le plus d'effets secondaires anticholinergiques (bouche sèche, constipation, rétention urinaire, confusion, allongement QTc). Elle est contre-indiquée relativement chez le sujet âgé et en cas de pathologie cardiaque.</p>
+</blockquote>
+<p><strong>Q12 — 💎 Diamant</strong> : M. A., 70 ans, DT2, NAC sévère avec hypotension orthostatique (PAS de 145 couché → 105 debout). Il chute fréquemment. Quelle prise en charge proposez-vous ?<br />
+A. Augmenter les antihypertenseurs pour contrôler la PA couchée<br />
+B. Mesures posturales + bas de contention + fludrocortisone/midodrine, éviter les diurétiques et les antihypertenseurs à risque<br />
+C. Ablation du nœud sinusal<br />
+D. Perfusion de sérum physiologique quotidienne</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La prise en charge de l'hypotension orthostatique de la NAC sévère comprend : mesures posturales (lever progressif, surélever tête du lit), contention élastique, hydratation + apport sodé, fludrocortisone 100-200 µg/j (minéralocorticoïde) et/ou midodrine 2,5-10 mg ×3/j (α-agoniste). Éviter les diurétiques, les α-bloquants, et réduire les antihypertenseurs favorisants.</p>
+</blockquote>
+<p><strong>Q13 — 💎 Diamant</strong> : Un patient DT2 de 55 ans présente une atteinte motrice proximale asymétrique du membre inférieur droit avec amyotrophie quadricipitale sévère et douleurs intenses, apparue en quelques semaines. Quel diagnostic évoquez-vous et quelle est l'évolution attendue ?<br />
+A. PNDS classique — évolution progressive et irréversible<br />
+B. Syndrome de Bruns-Garland (amyotrophie diabétique/plexopathie lombosacrée) — évolution spontanément favorable en 12-24 mois<br />
+C. Compression radiculaire L3-L4 — nécessitant une chirurgie urgente<br />
+D. Myopathie diabétique — traitement par corticoïdes</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le syndrome de Bruns-Garland (amyotrophie diabétique) est une plexopathie/radiculopathie lombosacrée aiguë/subaiguë, asymétrique, avec douleur intense et amyotrophie proximale. Le mécanisme est probablement microvasculitique. L'évolution est spontanément favorable en 12-24 mois avec récupération partielle à complète, mais la phase douloureuse peut nécessiter un traitement antalgique intensif.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-18">Cas clinique intégré — Module 18</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique : Mme P., 62 ans, DT2 depuis 16 ans</strong></p>
+<p>Mme P. consulte pour des douleurs des pieds à type de brûlures, prédominantes la nuit, l'empêchant de supporter le drap sur les pieds. EVA douleur 7/10. DN4 : 6/10. Traitée par metformine 2 g/j + empagliflozine 10 mg. HbA1c : 7,4 %. PA : 132/78 mmHg.</p>
+<p>Examen : hypoesthésie en chaussettes, monofilament positif (3/8 sites insensibles bilatéralement), réflexes achilléens abolis, diapason diminué aux malléoles. Peau sèche des pieds, fissure talonnière droite. FC de repos : 95 bpm. Épreuve d'orthostatisme : PAS 138 couché → 112 debout.</p>
+<p><strong>Questions :</strong><br />
+1. Caractérisez la neuropathie (type, fibres atteintes, sévérité selon NDS approximatif).<br />
+2. Quels éléments évoquent une neuropathie autonome associée ? Quels tests complémentaires demandez-vous ?<br />
+3. Quel traitement de la douleur neuropathique proposez-vous en 1ère intention ? Justifiez.<br />
+4. Quelle prise en charge du pied proposez-vous devant le monofilament positif et la fissure ?<br />
+5. Si duloxétine 60 mg insuffisante à 4 semaines, quelle stratégie de 2e ligne ?</p>
+</blockquote>
+<h3 id="question-de-synthese_2">Question de synthèse</h3>
+<blockquote>
+<p>🔄 <strong>Synthèse</strong> : Construisez un algorithme de dépistage et de prise en charge globale de la neuropathie diabétique intégrant : dépistage PNDS (tests cliniques), dépistage NAC (tests d'Ewing), évaluation de la douleur (DN4), traitement étiologique, traitement symptomatique par paliers, et mesures de prévention du pied diabétique.</p>
+</blockquote>
+<hr />
+<h2 id="references-bibliographiques-partie-5">Références bibliographiques — Partie 5</h2>
+<ol>
+<li>Klein R, Klein BE, Moss SE et al. « The Wisconsin Epidemiologic Study of Diabetic Retinopathy: a review. » <em>Diabetes Metab Rev</em>, 1989; 5(7): 559-570.</li>
+<li>DCCT Research Group. « The effect of intensive treatment of diabetes on the development and progression of long-term complications in insulin-dependent diabetes mellitus. » <em>N Engl J Med</em>, 1993; 329(14): 977-986.</li>
+<li>UKPDS Group. « Tight blood pressure control and risk of macrovascular and microvascular complications in type 2 diabetes: UKPDS 38. » <em>BMJ</em>, 1998; 317(7160): 703-713.</li>
+<li>Wilkinson CP, Ferris FL, Klein RE et al. « Proposed international clinical diabetic retinopathy and diabetic macular edema disease severity scales. » <em>Ophthalmology</em>, 2003; 110(9): 1677-1682.</li>
+<li>Massin P, Chabouis A, Erginay A et al. « OPHDIAT: a telemedical network screening system for diabetic retinopathy. » <em>Diabetes Care</em>, 2008; 31(3): 391-396.</li>
+<li>Chew EY, Davis MD, Danis RP et al. (ACCORD Eye Study). « The effects of medical management on the progression of diabetic retinopathy in persons with type 2 diabetes. » <em>Ophthalmology</em>, 2014; 121(12): 2443-2451.</li>
+<li>Gross JG, Glassman AR, Jampol LM et al. (DRCR.net Protocol S). « Panretinal photocoagulation vs intravitreous ranibizumab for proliferative diabetic retinopathy. » <em>JAMA</em>, 2015; 314(20): 2137-2146.</li>
+<li>Abràmoff MD, Lavin PT, Birch M et al. « Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices. » <em>npj Digital Medicine</em>, 2018; 1: 39.</li>
+<li>Mogensen CE. « Microalbuminuria, blood pressure and diabetic renal disease: origin and development of ideas. » <em>Diabetologia</em>, 1999; 42(3): 263-285.</li>
+<li>Brenner BM, Cooper ME, de Zeeuw D et al. (RENAAL). « Effects of losartan on renal and cardiovascular outcomes in patients with type 2 diabetes and nephropathy. » <em>N Engl J Med</em>, 2001; 345(12): 861-869.</li>
+<li>Perkovic V, Jardine MJ, Neal B et al. (CREDENCE). « Canagliflozin and renal outcomes in type 2 diabetes and nephropathy. » <em>N Engl J Med</em>, 2019; 380(24): 2295-2306.</li>
+<li>Heerspink HJL, Stefánsson BV, Correa-Rotter R et al. (DAPA-CKD). « Dapagliflozin in patients with chronic kidney disease. » <em>N Engl J Med</em>, 2020; 383(15): 1436-1446.</li>
+<li>Herrington WG, Staplin N, Wanner C et al. (EMPA-KIDNEY). « Empagliflozin in patients with chronic kidney disease. » <em>N Engl J Med</em>, 2023; 388(2): 117-127.</li>
+<li>Bakris GL, Agarwal R, Anker SD et al. (FIDELIO-DKD). « Effect of finerenone on chronic kidney disease outcomes in type 2 diabetes. » <em>N Engl J Med</em>, 2020; 383(23): 2219-2229.</li>
+<li>Pitt B, Filippatos G, Agarwal R et al. (FIGARO-DKD). « Cardiovascular events with finerenone in kidney disease and type 2 diabetes. » <em>N Engl J Med</em>, 2021; 385(24): 2252-2263.</li>
+<li>Perkovic V, Tuttle KR, Rossing P et al. (FLOW). « Effects of semaglutide on chronic kidney disease in patients with type 2 diabetes. » <em>N Engl J Med</em>, 2024; 391(2): 109-121.</li>
+<li>Young MJ, Boulton AJM, MacLeod AF et al. « A multicentre study of the prevalence of diabetic peripheral neuropathy in the United Kingdom hospital clinic population. » <em>Diabetologia</em>, 1993; 36(2): 150-154.</li>
+<li>Bouhassira D, Attal N, Alchaar H et al. « Comparison of pain syndromes associated with nervous or somatic lesions and development of a new neuropathic pain diagnostic questionnaire (DN4). » <em>Pain</em>, 2005; 114(1-2): 29-36.</li>
+<li>Ewing DJ, Clarke BF. « Diagnosis and management of diabetic autonomic neuropathy. » <em>BMJ</em>, 1982; 285(6346): 916-918.</li>
+<li>Maser RE, Mitchell BD, Vinik AI, Freeman R. « The association between cardiovascular autonomic neuropathy and mortality in individuals with diabetes: a meta-analysis. » <em>Diabetes Care</em>, 2003; 26(6): 1895-1901.</li>
+<li>Tesfaye S, Sloan G, Petrie J et al. (COMBO-DN). « Comparison of amitriptyline supplemented with pregabalin, pregabalin supplemented with amitriptyline, and duloxetine supplemented with pregabalin for the treatment of diabetic peripheral neuropathic pain. » <em>Lancet</em>, 2022; 400(10353): 680-690.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🔶 <strong>DIABÉTOLOGIE</strong> | Partie 5/12 | Couleur : Bleu pétrole <code>#1A5276</code><br />
+<em>Document généré pour la plateforme VERTEX© — Formation Diabétologie Complète</em></p>
+</blockquote>
+</div>

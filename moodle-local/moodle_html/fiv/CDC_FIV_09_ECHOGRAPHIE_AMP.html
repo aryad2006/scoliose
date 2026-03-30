@@ -1,0 +1,721 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-09-echographie-en-amp">🩷 PARTIE 09 — ÉCHOGRAPHIE EN AMP</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-amp">Formation VERTEX© — Fécondation In Vitro et AMP</h2>
+<hr />
+<h1 id="table-des-matieres-partie-09">TABLE DES MATIÈRES — PARTIE 09</h1>
+<ul>
+<li><a href="#module-30">Module 30 — Échographie pelvienne diagnostique en infertilité</a></li>
+<li><a href="#module-31">Module 31 — Échographie de monitorage folliculaire</a></li>
+<li><a href="#module-32">Module 32 — Échographie interventionnelle en AMP</a></li>
+</ul>
+<hr />
+<h1 id="module-30">MODULE 30 — Échographie Pelvienne Diagnostique en Infertilité</h1>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<h2 id="301-technique-et-materiel">30.1 Technique et matériel</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S1-001</strong><br/>
+<em>Échographie transvaginale en AMP : sonde haute fréquence, positionnement, plans de coupe standardisés — atlas technique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Matériel</strong> :<br />
+- Sonde endovaginale haute fréquence <strong>5-9 MHz</strong> (résolution axiale &lt; 1 mm)<br />
+- Échographe avec mode Doppler couleur et pulsé<br />
+- Sonde convexe abdominale 3,5-5 MHz (transfert échoguidé, hystéroscopie)<br />
+- Module 3D/4D (évaluation utérine, CFA automatisé — SonoAVC)</p>
+<p><strong>Technique standardisée</strong> :<br />
+1. <strong>Patiente</strong> : vessie vide, position gynécologique<br />
+2. <strong>Balayage systématique</strong> : utérus (sagittal → transversal), ovaire droit puis gauche, Douglas<br />
+3. <strong>Mesures</strong> : utérus (L × AP × T), endomètre (épaisseur en sagittal médian), ovaires (L × AP × T, volume = 0,523 × L × AP × T), CFA bilatéral<br />
+4. <strong>Doppler</strong> : artères utérines (PI, RI, notch), vascularisation ovarienne et sous-endométriale</p>
+<hr />
+<h2 id="302-compte-des-follicules-antraux-cfa">30.2 Compte des follicules antraux (CFA)</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S2-001</strong><br/>
+<em>Technique du CFA : identification des follicules 2-9 mm, comptage ovaire par ovaire, pièges diagnostiques — atlas échographique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Technique standardisée</strong> :<br />
+- Réaliser entre <strong>J2 et J5</strong> du cycle (avant recrutement d'un follicule dominant)<br />
+- Compter les follicules mesurant <strong>2 à 9 mm</strong> (antraux) sur chaque ovaire<br />
+- Balayage lent de pôle à pôle, rotation de la sonde pour ne pas manquer de follicule<br />
+- Inclure les deux ovaires dans le total</p>
+<p><strong>Interprétation</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>CFA total (2 ovaires)</th>
+<th>Interprétation</th>
+<th>Implication AMP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 5</td>
+<td>Réserve ovarienne diminuée (DOR)</td>
+<td>Réponse pauvre attendue, adapter dose/protocole</td>
+</tr>
+<tr>
+<td>5-7</td>
+<td>Réserve basse</td>
+<td>Réponse sub-optimale probable</td>
+</tr>
+<tr>
+<td>8-15</td>
+<td><strong>Réserve normale</strong></td>
+<td>Réponse standard</td>
+</tr>
+<tr>
+<td>16-20</td>
+<td>Réserve haute</td>
+<td>Risque de sur-réponse, dose FSH modérée</td>
+</tr>
+<tr>
+<td>&gt; 20</td>
+<td>Très élevée (SOPK probable)</td>
+<td><strong>Risque SHO +++</strong>, protocole antagoniste + trigger agoniste</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Corrélation AMH-CFA</strong> :<br />
+- r = 0,7-0,8 → concordance élevée mais imparfaite<br />
+- Discordance AMH haute / CFA bas → vérifier technique de comptage (ovaire inaccessible ?)<br />
+- Discordance AMH basse / CFA normal → possible déplétion folliculaire récente</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE</strong> : Ne pas confondre follicules antraux (2-9 mm, anéchogènes, ronds) avec des vaisseaux (vérifier en Doppler couleur), des kystes d'inclusion (paroi épaisse), ou des follicules d'un cycle précédent (> 10 mm en J2 = kyste résiduel → reporter le cycle).</div>
+
+<p><strong>SonoAVC (Automated Volume Calculation)</strong> :<br />
+- Module 3D automatisé : balayage volumique puis comptage automatique des structures anéchogènes sphéroïdes 2-10 mm<br />
+- Avantage : reproductibilité inter-opérateur améliorée (Deb et al., <em>Ultrasound Obstet Gynecol</em>, 2009)<br />
+- Limite : nécessite acquisition 3D de qualité, post-traitement</p>
+<hr />
+<h2 id="303-evaluation-uterine">30.3 Évaluation utérine</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S3-001</strong><br/>
+<em>Pathologies utérines impactant la FIV : fibromes classification FIGO, polypes, adénomyose, synéchies — atlas écho 2D/3D</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="3031-fibromes-uterins">30.3.1 Fibromes utérins</h3>
+<p><strong>Classification FIGO 2011 et impact sur l'implantation</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type FIGO</th>
+<th>Description</th>
+<th>Impact FIV</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Sous-muqueux pédiculé, entièrement intra-cavitaire</td>
+<td><strong>Majeur</strong></td>
+<td>Résection hystéroscopique obligatoire</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Sous-muqueux &gt; 50 % intra-cavitaire</td>
+<td><strong>Majeur</strong></td>
+<td>Résection hystéroscopique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sous-muqueux &lt; 50 % intra-cavitaire</td>
+<td><strong>Probable</strong></td>
+<td>Résection recommandée</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Intramural au contact de l'endomètre</td>
+<td>Discuté</td>
+<td>Résection si &gt; 4-5 cm</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Intramural pur</td>
+<td><strong>Minimal</strong> si &lt; 4 cm</td>
+<td>Surveillance</td>
+</tr>
+<tr>
+<td>5-7</td>
+<td>Sous-séreux</td>
+<td><strong>Aucun</strong></td>
+<td>Abstention</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3032-adenomyose">30.3.2 Adénomyose</h3>
+<p><strong>Signes échographiques</strong> :<br />
+- Asymétrie myométriale antéro-postérieure<br />
+- Kystes myométriaux (lacunes anéchogènes dans le myomètre)<br />
+- Stries linéaires hyperéchogènes (éventail sous-endométrial)<br />
+- Épaississement de la zone jonctionnelle &gt; 12 mm (mieux visible en IRM)<br />
+- Aspect globuleux de l'utérus</p>
+<p><strong>Impact FIV</strong> : ↓ taux d'implantation de 25-30 % (Vercellini, <em>Hum Reprod Update</em>, 2014). Traitement pré-FIV : analogue GnRH 2-3 mois → améliore réceptivité.</p>
+<h3 id="3033-malformations-uterines-echo-3d">30.3.3 Malformations utérines — Écho 3D</h3>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S3-002</strong><br/>
+<em>Malformations utérines en écho 3D : utérus cloisonné, bicorne, unicorne, didelphe — coupe coronale reconstruite, classification ESHRE/ESGE</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<ul>
+<li><strong>Écho 3D</strong> = examen de référence (reconstruction coronale de la cavité)</li>
+<li>Utérus cloisonné (U2) : cloison fibreuse → résection hystéroscopique si complète</li>
+<li>Utérus bicorne (U3) : indentation fundique &gt; 50 %, 2 cornes → pas de chirurgie systématique</li>
+<li>Utérus unicorne (U4) : cavité unique asymétrique → surveillance obstétricale</li>
+<li>Utérus didelphe (U3c) : 2 corps utérins distincts → rare, pronostic variable</li>
+</ul>
+<h3 id="3034-polypes-endometriaux">30.3.4 Polypes endométriaux</h3>
+<ul>
+<li>Formations hyperéchogènes intra-cavitaires, souvent pédiculées</li>
+<li>Mieux vus en phase proliférative (endomètre fin autour du polype)</li>
+<li><strong>SonoHSG</strong> (HyCoSy/HyFoSy) améliore la détection (sensibilité 95 %)</li>
+<li>Résection hystéroscopique avant FIV (polype &gt; 1 cm ou toute taille si RIF)</li>
+</ul>
+<hr />
+<h2 id="304-evaluation-ovarienne">30.4 Évaluation ovarienne</h2>
+<h3 id="3041-ovaires-normaux-et-pathologiques">30.4.1 Ovaires normaux et pathologiques</h3>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S4-001</strong><br/>
+<em>Morphologie ovarienne en AMP : ovaire normal, ovaire SOPK (> 20 follicules, volume > 10 mL), endométriome, tératome — atlas</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Pathologie</th>
+<th>Aspect échographique</th>
+<th>Impact FIV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ovaire SOPK</strong></td>
+<td>≥ 20 follicules 2-9 mm et/ou volume &gt; 10 mL (Rotterdam 2003 révisé 2018)</td>
+<td>Risque SHO, adapter protocole</td>
+</tr>
+<tr>
+<td><strong>Endométriome</strong></td>
+<td>Kyste à contenu finement échogène homogène ("ground glass"), paroi épaisse</td>
+<td>↓ réserve locale, kystectomie discutée</td>
+</tr>
+<tr>
+<td><strong>Tératome (dermoïde)</strong></td>
+<td>Contenu hétérogène (graisse, calcification, cheveux), ombre postérieure</td>
+<td>Pas d'impact direct, surveiller</td>
+</tr>
+<tr>
+<td><strong>Cystadénome séreux</strong></td>
+<td>Kyste anéchogène à paroi fine, uniloculaire</td>
+<td>Ponction si gêne pour ponction</td>
+</tr>
+<tr>
+<td><strong>Ovaire inaccessible</strong></td>
+<td>Post-chirurgie, adhérences, haut situé</td>
+<td>Ponction transabdominale ?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3042-sonohsg-hycosy-hyfosy">30.4.2 SonoHSG (HyCoSy / HyFoSy)</h3>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong></p>
+<ul>
+<li>Injection intra-utérine de mousse de contraste (ExEm Foam — HyFoSy)</li>
+<li>Visualisation du passage tubaire bilatéral en temps réel</li>
+<li>Étude FOAM (Dreyer et al., <em>NEJM</em>, 2017) : taux de grossesse comparable HSG vs SonoHSG</li>
+<li>Avantage : pas d'irradiation, ambulatoire, réalisable en consultation</li>
+<li>Remplacement progressif de l'HSG radiologique dans de nombreux centres</li>
+</ul>
+<hr />
+<h2 id="305-echo-doppler-uterin-et-ovarien">30.5 Écho-Doppler utérin et ovarien</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV30-S5-001</strong><br/>
+<em>Doppler des artères utérines et ovariennes : mesure du PI et RI, signification du notch protodiastolique, corrélation avec la réceptivité</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Artères utérines</strong> :<br />
+- Mesure au niveau du croisement avec l'artère iliaque externe<br />
+- <strong>PI (Index de Pulsatilité)</strong> : normal &lt; 3 en phase folliculaire, &lt; 2,5 péri-ovulatoire<br />
+- <strong>Notch protodiastolique</strong> : persitance en phase lutéale = mauvaise vascularisation endométriale → discuté comme facteur de mauvais pronostic<br />
+- Vascularisation sous-endométriale en Doppler énergie : corrélation avec la réceptivité (controversé)</p>
+<p><strong>Artères ovariennes</strong> :<br />
+- PSV (Peak Systolic Velocity) augmente pendant la stimulation → marqueur de vascularisation folliculaire<br />
+- Follicule dominant : néovascularisation périfolliculaire (ring of fire)</p>
+<hr />
+<h3 id="quiz-module-30">QUIZ MODULE 30</h3>
+<p><strong>🥉 Q1</strong> 🔶 — Quelle est la technique standardisée du CFA et quels sont les seuils d'interprétation ?<br />
+<strong>R</strong> : Écho transvaginale J2-J5, sonde 5-9 MHz, comptage des follicules 2-9 mm sur les 2 ovaires. CFA &lt; 5 = DOR, 8-15 = normal, &gt; 20 = SOPK probable. Corrélation AMH r = 0,7-0,8.</p>
+<p><strong>🥉 Q2</strong> 🔶 — Quel matériel est nécessaire pour une évaluation échographique complète en AMP ?<br />
+<strong>R</strong> : (1) Sonde endovaginale haute fréquence <strong>5-9 MHz</strong> (résolution axiale &lt; 1 mm) — examen de référence ; (2) Échographe avec mode Doppler couleur et pulsé (repérage vasculaire, évaluation vascularisation) ; (3) Sonde convexe abdominale 3,5-5 MHz (transfert échoguidé, écho 1er trimestre) ; (4) Module 3D/4D (évaluation utérine — malformations, CFA automatisé par SonoAVC).</p>
+<p><strong>🥉 Q3</strong> 🔶 — Qu'est-ce que le SonoAVC et quel est son avantage principal ?<br />
+<strong>R</strong> : Le <strong>SonoAVC</strong> (Automated Volume Calculation) est un module 3D de comptage automatisé des follicules antraux. Principe : balayage volumique puis détection automatique des structures anéchogènes sphéroïdes 2-10 mm. Avantage principal : <strong>reproductibilité inter-opérateur améliorée</strong> (Deb et al., <em>Ultrasound Obstet Gynecol</em>, 2009). Limite : nécessite une acquisition 3D de qualité et un post-traitement.</p>
+<p><strong>🥈 Q4</strong> 🔶 — Comment différenciez-vous échographiquement un utérus cloisonné d'un utérus bicorne ?<br />
+<strong>R</strong> : En <strong>écho 3D</strong> (coupe coronale reconstruite) : utérus <strong>cloisonné</strong> = contour fundique externe convexe ou plat + cloison interne divisant la cavité ; utérus <strong>bicorne</strong> = indentation fundique externe &gt; 50 % (concavité du fond) + 2 cornes divergentes. La distinction est cruciale : le cloisonné se traite par résection hystéroscopique, le bicorne ne se traite généralement pas.</p>
+<p><strong>🥈 Q5</strong> 🔶 — Quel est l'impact des fibromes sur la FIV selon la classification FIGO ?<br />
+<strong>R</strong> : Impact proportionnel à la proximité avec la cavité : types <strong>0 et 1</strong> (sous-muqueux &gt; 50 % intra-cavitaire) = impact <strong>majeur</strong> → résection hystéroscopique obligatoire ; type <strong>2</strong> (&lt; 50 % intra-cavitaire) = impact probable → résection recommandée ; type <strong>3</strong> (intramural au contact de l'endomètre) = discuté → résection si &gt; 4-5 cm ; type <strong>4</strong> (intramural pur &lt; 4 cm) = impact minimal → surveillance ; types <strong>5-7</strong> (sous-séreux) = <strong>aucun impact</strong> → abstention.</p>
+<p><strong>🥈 Q6</strong> 🔶 — Comment différenciez-vous un polype endométrial d'un fibrome sous-muqueux à l'échographie ?<br />
+<strong>R</strong> : <strong>Polype</strong> : formation hyperéchogène intra-cavitaire, souvent pédiculée, avec un pédicule vasculaire unique en Doppler (« feeding vessel sign »), mieux vue en phase proliférative quand l'endomètre est fin. <strong>Fibrome sous-muqueux</strong> : formation hypoéchogène (tissu musculaire), arrondie, avec un cône d'ombre postérieur, vascularisation périphérique en Doppler. La <strong>SonoHSG</strong> (HyFoSy) améliore la distinction (sensibilité 95 %) en créant un contraste autour de la lésion.</p>
+<p><strong>🥈 Q7</strong> 🔶 — Que mesurez-vous au Doppler des artères utérines et que signifie un notch protodiastolique persistant ?<br />
+<strong>R</strong> : Mesure au croisement avec l'artère iliaque externe : <strong>PI</strong> (Index de Pulsatilité, normal &lt; 3 en folliculaire, &lt; 2,5 péri-ovulatoire) et <strong>RI</strong> (Index de Résistance). Le <strong>notch protodiastolique</strong> = encoche de vitesse en protodiastole. Sa persistance en phase lutéale témoigne d'une <strong>résistance vasculaire utérine élevée</strong> = mauvaise vascularisation endométriale, discuté comme facteur de mauvais pronostic d'implantation (controversé).</p>
+<p><strong>🥇 Q8</strong> 🔶 — Que signifie une discordance AMH élevée / CFA bas chez une patiente en bilan d'infertilité ?<br />
+<strong>R</strong> : L'AMH et le CFA sont corrélés (r = 0,7-0,8) mais la concordance est imparfaite. Discordance AMH haute / CFA bas → <strong>vérifier la technique de comptage</strong> : (1) ovaire inaccessible ou partiellement masqué par l'utérus ou une anse digestive ; (2) comptage réalisé trop tard dans le cycle (follicule dominant &gt; 10 mm fausant le compte) ; (3) erreur de technique (balayage trop rapide). Conduite : reprendre le CFA entre J2-J5 avec un balayage lent de pôle à pôle, éventuellement utiliser le SonoAVC.</p>
+<p><strong>🥇 Q9</strong> 🔶 — Qu'est-ce que la SonoHSG (HyFoSy) et quels sont ses avantages par rapport à l'HSG radiologique ?<br />
+<strong>R</strong> : La <strong>SonoHSG</strong> (HyFoSy — Hysterosalpingo-Foam Sonography) consiste à injecter une mousse de contraste intra-utérine (ExEm Foam) et visualiser son passage tubaire bilatéral en temps réel par échographie. Avantages : (1) <strong>pas d'irradiation</strong> ; (2) réalisable en ambulatoire, en consultation ; (3) pas de produit iodé (allergie) ; (4) évalue simultanément l'utérus et les ovaires. Étude FOAM (Dreyer et al., <em>NEJM</em>, 2017) : taux de grossesse comparable HSG vs SonoHSG. Remplacement progressif de l'HSG dans de nombreux centres.</p>
+<p><strong>💎 Q10</strong> 🔶 — Une patiente de 34 ans en bilan d'infertilité a une échographie montrant : utérus globuleux avec asymétrie myométriale, kystes myométriaux de 2-4 mm, stries hyperéchogènes sous-endométriales. CFA = 12 bilatéral. Interprétez et proposez une conduite.<br />
+<strong>R</strong> : <strong>Adénomyose</strong> (signes classiques : utérus globuleux + asymétrie + kystes myométriaux + stries). CFA normal. Impact : ↓ taux d'implantation de 25-30 %. Conduite : (1) IRM de confirmation (zone jonctionnelle &gt; 12 mm) ; (2) Pré-traitement par analogue GnRH 2-3 mois avant FIV (↓ volume utérin, amélioration réceptivité — Niu 2013) ; (3) Protocole antagoniste standard ; (4) Discuter freeze-all + TEC en cycle substitué avec supplémentation progestérone renforcée (progestérone vaginale + dydrogestérone) ; (5) Surveillance écho endomètre (triple ligne, ≥ 7 mm) avant transfert.</p>
+<p><strong>💎 Q11</strong> 🔶 — Patiente de 32 ans, bilan d'infertilité. Écho : CFA = 8, ovaire droit contient un kyste de 4 cm à contenu finement échogène homogène (« ground glass »), paroi épaisse. Le gynécologue propose une kystectomie bilatérale avant FIV. Quelle erreur potentielle identifiez-vous ?<br />
+<strong>R</strong> : Le kyste décrit est un <strong>endométriome</strong> (aspect « ground glass » typique). L'erreur est de proposer une <strong>kystectomie</strong> : (1) l'endométriome est unilatéral (pas bilatéral — une kystectomie bilatérale n'a pas de sens ici) ; (2) la kystectomie d'un endométriome &lt; 4 cm <strong>n'améliore pas</strong> le taux de grossesse en FIV (Benschop, Cochrane 2010) ; (3) la kystectomie détruit du cortex ovarien → ↓ AMH de 30-40 % par ovaire opéré → perte de réserve ovarienne irréversible. Conduite correcte : FIV directe ; si l'endométriome gêne la ponction → sclérose échoguidée à l'éthanol (moins invasif, préserve le cortex).</p>
+<hr />
+<h1 id="module-31">MODULE 31 — Échographie de Monitorage Folliculaire</h1>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<h2 id="311-principes-du-monitorage">31.1 Principes du monitorage</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV31-S1-001</strong><br/>
+<em>Monitorage folliculaire en stimulation ovarienne : chronologie des échographies, corrélation taille/maturité, critères de déclenchement</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Objectifs</strong> :<br />
+1. <strong>Sécurité</strong> : prévenir le SHO (identifier la sur-réponse ≥ 20 follicules et/ou E2 &gt; 5 000)<br />
+2. <strong>Efficacité</strong> : optimiser le timing du déclenchement (maximum d'ovocytes matures)<br />
+3. <strong>Ajustement de dose</strong> : adapter la posologie FSH selon la réponse</p>
+<p><strong>Calendrier</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Jour stimulation</th>
+<th>Échographie</th>
+<th>Biologie</th>
+<th>Décision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1-J2</td>
+<td>Basale (CFA, kyste résiduel ?)</td>
+<td>E2, LH, P</td>
+<td>Démarrer FSH ?</td>
+</tr>
+<tr>
+<td>J5-J6</td>
+<td>1er contrôle</td>
+<td>E2</td>
+<td>Ajuster dose FSH</td>
+</tr>
+<tr>
+<td>J7-J8</td>
+<td>2ème contrôle</td>
+<td>E2 ± LH</td>
+<td>Introduire antagoniste</td>
+</tr>
+<tr>
+<td>J9-J10</td>
+<td>Contrôle pré-trigger</td>
+<td>E2, LH, P</td>
+<td>Déclenchement ?</td>
+</tr>
+<tr>
+<td>J10-J12</td>
+<td>Contrôle final</td>
+<td>E2, P</td>
+<td><strong>Trigger</strong></td>
+</tr>
+<tr>
+<td>J12-J14</td>
+<td>—</td>
+<td>—</td>
+<td><strong>Ponction</strong> (36h post-trigger)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="312-mesure-folliculaire">31.2 Mesure folliculaire</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV31-S2-001</strong><br/>
+<em>Mesure des follicules ovariens : technique des 2 diamètres perpendiculaires, classification par taille, corrélation maturité ovocytaire</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Technique</strong> :<br />
+- 2 diamètres perpendiculaires dans le plus grand plan de section → <strong>moyenne</strong><br />
+- Mesurer individuellement chaque follicule ≥ <strong>10 mm</strong><br />
+- Follicules &lt; 10 mm : compter globalement<br />
+- Classer par ovaire (droit/gauche) et par taille décroissante</p>
+<p><strong>Cinétique de croissance</strong> :<br />
+- Cycle naturel : 1-2 mm/jour<br />
+- Stimulation : 1-3 mm/jour (dépend de la dose FSH et de la sensibilité ovarienne)</p>
+<p><strong>Corrélation taille-maturité</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Taille folliculaire (mm)</th>
+<th>Maturité ovocytaire attendue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 14</td>
+<td>Vésicule germinative (immature)</td>
+</tr>
+<tr>
+<td>14-16</td>
+<td>Métaphase I (en maturation)</td>
+</tr>
+<tr>
+<td><strong>17-22</strong></td>
+<td><strong>Métaphase II (mature)</strong> — cible</td>
+</tr>
+<tr>
+<td>&gt; 24</td>
+<td>Post-mature, risque de lutéinisation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> — En protocole antagoniste, les follicules de 15-16 mm au moment du trigger donnent souvent des ovocytes matures (vs 18-20 mm en protocole long agoniste). La cible pour le trigger varie selon le protocole.</p>
+</blockquote>
+<p><strong>Critères de déclenchement</strong> :<br />
+- ≥ <strong>3 follicules ≥ 17 mm</strong> (protocole standard)<br />
+- ≥ 2 follicules ≥ 18 mm (mild stimulation / natural cycle modifié)<br />
+- E2 corrélé (~200-300 pg/mL par follicule ≥ 14 mm)<br />
+- <strong>E2 &lt; 5 000 pg/mL</strong> pour sécurité SHO (si &gt; 5 000 → trigger agoniste + freeze-all)<br />
+- Progestérone &lt; 1,5 ng/mL (sinon freeze-all)</p>
+<hr />
+<h2 id="313-evaluation-endometriale-pendant-la-stimulation">31.3 Évaluation endométriale pendant la stimulation</h2>
+<div class="vertex-media schema">
+<strong>📐 MFIV31-S3-001</strong><br/>
+<em>Endomètre en stimulation : mesure de l'épaisseur, aspect triple ligne vs hyperéchogène, seuils de réceptivité</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Mesure</strong> :<br />
+- Coupe sagittale médiane de l'utérus<br />
+- Épaisseur maximale (incluant les 2 couches fonctionnelles)<br />
+- Évaluation de l'aspect (triple ligne, homogène hyperéchogène)</p>
+<p><strong>Interprétation</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Épaisseur (mm)</th>
+<th>Aspect</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 7</td>
+<td>Triple ligne</td>
+<td><strong>Fin</strong> — implantation compromise (OR 0,4)</td>
+</tr>
+<tr>
+<td><strong>7-14</strong></td>
+<td><strong>Triple ligne</strong></td>
+<td><strong>Optimal</strong> — taux d'implantation maximal</td>
+</tr>
+<tr>
+<td>&gt; 14</td>
+<td>Triple ligne</td>
+<td>Pas de bénéfice supplémentaire</td>
+</tr>
+<tr>
+<td>Toute épaisseur</td>
+<td><strong>Hyperéchogène homogène</strong></td>
+<td>Transformation sécrétoire prématurée → freeze-all</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE</strong> : Un endomètre fin (< 7 mm) sous stimulation standard peut être dû à : (1) effet anti-estrogénique du clomifène ; (2) synéchies (Asherman) ; (3) infection chronique (endométrite) ; (4) variant anatomique. Conduite : vérifier par hystéroscopie, augmenter E2 exogène, discuter freeze-all si endomètre reste < 7 mm malgré E2 élevé.</div>
+
+<hr />
+<h2 id="314-monitorage-en-cycle-naturel-et-tec">31.4 Monitorage en cycle naturel et TEC</h2>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<p><strong>Cycle naturel (TEC ou IIU)</strong> :<br />
+- Suivi du follicule dominant : J10-J12 → mesure + E2 + LH<br />
+- Follicule dominant ≥ 17-18 mm + LH en ascension = ovulation imminente<br />
+- Pic LH (&gt; 20-40 UI/L) → ovulation dans 24-36h<br />
+- Corps jaune en écho : masse hétérogène avec vascularisation périphérique (ring of fire)<br />
+- TEC en cycle naturel : transfert à LH+7 (J5 blastocyste)</p>
+<p><strong>Cycle substitué (TEC)</strong> :<br />
+- Pas de monitorage folliculaire (ovulation bloquée)<br />
+- Surveillance de l'endomètre sous E2V croissant : écho J12-J14 → triple ligne ≥ 7 mm → débuter progestérone<br />
+- Transfert blastocyste à P+5</p>
+<hr />
+<h3 id="quiz-module-31">QUIZ MODULE 31</h3>
+<p><strong>🥉 Q1</strong> 🔶 — Quels sont les critères de déclenchement de l'ovulation en stimulation standard ?<br />
+<strong>R</strong> : ≥ 3 follicules ≥ 17 mm + E2 corrélé (~200-300 pg/mL par follicule ≥ 14 mm) + E2 &lt; 5 000 pg/mL (sécurité SHO) + progestérone &lt; 1,5 ng/mL. Si critères non remplis : poursuivre la stimulation 1-2 jours ou ajuster la dose.</p>
+<p><strong>🥉 Q2</strong> 🔶 — Quelle est la technique standardisée de mesure folliculaire et quels follicules mesurez-vous individuellement ?<br />
+<strong>R</strong> : Technique : 2 diamètres perpendiculaires dans le plus grand plan de section → <strong>moyenne des 2 diamètres</strong>. Mesurer individuellement chaque follicule ≥ <strong>10 mm</strong>. Les follicules &lt; 10 mm sont comptés globalement. Classer par ovaire (droit/gauche) et par taille décroissante. Cinétique : 1-3 mm/jour sous stimulation.</p>
+<p><strong>🥉 Q3</strong> 🔶 — Quel est le calendrier type du monitorage échographique en stimulation ?<br />
+<strong>R</strong> : J1-J2 : écho basale (CFA, kyste résiduel ?) + E2/LH/P ; J5-J6 : 1er contrôle + E2 → ajustement dose FSH ; J7-J8 : 2ème contrôle + E2 ± LH → introduction antagoniste ; J9-J10 : contrôle pré-trigger + E2/LH/P → décision déclenchement ; J10-J12 : contrôle final → <strong>trigger</strong> ; J12-J14 : <strong>ponction</strong> (36h post-trigger).</p>
+<p><strong>🥈 Q4</strong> 🔶 — Quelle est la corrélation entre taille folliculaire et maturité ovocytaire ?<br />
+<strong>R</strong> : &lt; 14 mm = vésicule germinative (immature) ; 14-16 mm = métaphase I (en maturation) ; <strong>17-22 mm = métaphase II (mature)</strong> — cible du déclenchement ; &gt; 24 mm = post-mature (risque de lutéinisation). Point pratique : en protocole antagoniste, les follicules de 15-16 mm au moment du trigger donnent souvent des ovocytes matures (vs 18-20 mm en protocole long agoniste).</p>
+<p><strong>🥈 Q5</strong> 🔶 — Comment interprétez-vous un endomètre hyperéchogène homogène à J10 de stimulation avec E2 = 2 500 pg/mL et P = 2,1 ng/mL ?<br />
+<strong>R</strong> : <strong>Élévation prématurée de la progestérone</strong> (P &gt; 1,5 ng/mL) avec transformation sécrétoire de l'endomètre (aspect hyperéchogène = imprégnation progestéronique). La fenêtre d'implantation est avancée → transfert frais compromis. Conduite : poursuivre la stimulation et le trigger normalement (la qualité ovocytaire n'est PAS affectée) mais <strong>freeze-all</strong> (vitrification de tous les embryons) + TEC au cycle suivant.</p>
+<p><strong>🥈 Q6</strong> 🔶 — Quelles sont les causes d'un endomètre fin (&lt; 7 mm) sous stimulation et quelle est la conduite à tenir ?<br />
+<strong>R</strong> : Causes : (1) Effet anti-estrogénique du clomifène (la plus fréquente) ; (2) Synéchies utérines (Asherman) ; (3) Endométrite chronique ; (4) Variant anatomique individuel. Conduite : (1) Hystéroscopie pour éliminer synéchies/endométrite ; (2) Augmenter l'E2 exogène (E2V per os ou patch) ; (3) Si endomètre reste &lt; 7 mm malgré E2 élevé → <strong>freeze-all</strong> + TEC en cycle substitué avec E2V croissant ; (4) Adjuvants discutés : aspirine faible dose, sildénafil vaginal (controversé). Impact : endomètre &lt; 7 mm = OR 0,4 pour l'implantation.</p>
+<p><strong>🥇 Q7</strong> 🔶 — Quelle est la différence entre le monitorage en cycle naturel et en cycle substitué pour un TEC ?<br />
+<strong>R</strong> : <strong>Cycle naturel</strong> : suivi du follicule dominant J10-J12 → mesure + E2 + LH ; ovulation détectée quand follicule ≥ 17-18 mm + pic LH (&gt; 20-40 UI/L) → transfert à LH+7 pour un blastocyste J5. <strong>Cycle substitué</strong> : ovulation bloquée, pas de monitorage folliculaire ; surveillance de l'endomètre sous E2V croissant ; écho J12-J14 → si triple ligne ≥ 7 mm → débuter progestérone ; transfert blastocyste à P+5. Avantage du cycle substitué : planification facile. Avantage du cycle naturel : pas de substitution hormonale.</p>
+<p><strong>🥇 Q8</strong> 🔶 — À J2 de stimulation, l'écho basale montre un kyste ovarien de 18 mm sur l'ovaire droit. Quelle est votre conduite ?<br />
+<strong>R</strong> : Un follicule &gt; 10 mm en J2 = <strong>kyste résiduel</strong> du cycle précédent. Conduite : (1) Doser E2 et progestérone — si E2 &gt; 75 pg/mL ou P &gt; 1,5 ng/mL → kyste fonctionnel actif → <strong>reporter le cycle</strong> (risque d'ovulation précoce sous FSH, faussement interprétée comme réponse à la stimulation) ; (2) Si E2 et P bas → kyste inactif (possible corps jaune en régression) → démarrage possible avec surveillance rapprochée ; (3) Ne PAS ponctionner le kyste systématiquement. Le kyste résiduel est un piège classique qui peut fausser le comptage folliculaire et le monitorage.</p>
+<p><strong>💎 Q9</strong> 🔶 — J8 de stimulation chez une patiente SOPK : écho montre 28 follicules (12 de 12-16 mm, 16 de 8-11 mm), E2 = 4 200 pg/mL. La patiente a des douleurs pelviennes. Détaillez votre conduite en précisant le rôle de l'échographiste.<br />
+<strong>R</strong> : <strong>Sur-réponse chez SOPK</strong> → risque SHO sévère imminent. Rôle de l'échographiste : (1) Compter précisément tous les follicules &gt; 10 mm (ici ≥ 12) ; (2) Mesurer les ovaires (volume probablement &gt; 100 mL) ; (3) Rechercher de l'ascite dans le Douglas ; (4) Évaluer la vascularisation ovarienne en Doppler. Conduite clinique : (1) Stop FSH immédiatement (coasting court 1-2 jours si nécessaire) ; (2) Trigger agoniste GnRH UNIQUEMENT (jamais hCG) ; (3) Freeze-all obligatoire ; (4) Cabergoline 0,5 mg/j × 8 jours ; (5) HBPM prophylactique si IMC élevé ; (6) Surveillance post-ponction rapprochée (poids/périmètre abdominal/diurèse quotidien, écho J+3 si douleurs).</p>
+<p><strong>💎 Q10</strong> 🔶 — Vrai ou Faux (4 affirmations sur le monitorage) :<br />
+1. Un E2 &gt; 5 000 pg/mL le jour du trigger est acceptable si les follicules sont de bonne taille.<br />
+2. La progestérone altère la qualité ovocytaire quand elle s'élève prématurément.<br />
+3. En cycle naturel pour TEC, le transfert d'un blastocyste se fait à LH+7.<br />
+4. La cinétique de croissance folliculaire est de 1-3 mm/jour sous stimulation.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — E2 &gt; 5 000 pg/mL = risque SHO sévère → trigger agoniste + freeze-all obligatoire, quel que soit l'aspect des follicules. (2) <strong>FAUX</strong> — l'élévation prématurée de la progestérone n'affecte PAS la qualité ovocytaire ; elle avance la fenêtre d'implantation endométriale → seul le transfert frais est compromis, d'où le freeze-all. (3) <strong>VRAI</strong> — en cycle naturel, le blastocyste J5 est transféré à LH+7 (synchronisation fenêtre d'implantation). (4) <strong>VRAI</strong> — la croissance folliculaire sous stimulation est de 1-3 mm/jour selon la dose de FSH et la sensibilité ovarienne.</p>
+<hr />
+<h1 id="module-32">MODULE 32 — Échographie Interventionnelle en AMP</h1>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<h2 id="321-ponction-ovocytaire-echoguidee">32.1 Ponction ovocytaire échoguidée</h2>
+<div class="vertex-media video">
+<strong>🎬 MFIV32-S1-001</strong><br/>
+<em>Ponction ovocytaire échoguidée transvaginale : technique pas-à-pas, positionnement de l'aiguille, aspiration folliculaire, vidéo commentée</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="3211-rappel-technique-cf-m16">32.1.1 Rappel technique (cf. M16)</h3>
+<p><strong>Installation</strong> :<br />
+- Sonde endovaginale + guide de ponction (angle fixe, calibration préalable)<br />
+- Aiguille de ponction <strong>17G</strong> (simple lumière pour aspiration, ou double lumière pour aspiration + rinçage)<br />
+- Système d'aspiration sous pression négative (-120 à -150 mmHg)<br />
+- Tubes collecteurs pré-chauffés (37°C), milieu tamponné HEPES<br />
+- Laboratoire adjacent (transmission immédiate des tubes à l'embryologiste)</p>
+<p><strong>Focus échographiste</strong> :<br />
+1. <strong>Repérage pré-ponction</strong> : localisation des ovaires par rapport aux vaisseaux iliaques et à l'uretère (Doppler couleur pour identifier les vaisseaux)<br />
+2. <strong>Trajectoire d'aspiration</strong> : paroi vaginale → cul-de-sac latéral → ovaire (trajet le plus court, éviter les anses digestives et les vaisseaux)<br />
+3. <strong>Visualisation de l'aiguille</strong> : la ligne de pointillés du guide doit être calibrée précisément (vérification avant chaque séance)<br />
+4. <strong>Aspiration follicule par follicule</strong> : l'aiguille est visible comme une ligne hyperéchogène → positionnée au centre du follicule → aspiration → le follicule se collabe en temps réel<br />
+5. <strong>Rinçage</strong> (si aiguille double lumière) : injection de milieu de rinçage si le liquide aspiré ne contient pas l'ovocyte (flash du follicule)</p>
+<h3 id="3212-ovaires-difficiles-dacces">32.1.2 Ovaires difficiles d'accès</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ovaire haut situé (post-chirurgie, obésité)</td>
+<td>Pression abdominale externe par un assistant</td>
+</tr>
+<tr>
+<td>Ovaire derrière l'utérus</td>
+<td>Abord controlatéral (traverser le fond utérin — rare, controversé)</td>
+</tr>
+<tr>
+<td>Ovaire adhérent au cæcum/sigmoïde</td>
+<td>Trajectoire prudente avec guidage Doppler, ponction transintestinale exceptionnelle (antibioprophylaxie)</td>
+</tr>
+<tr>
+<td>Ovaire unique (post-ovariectomie)</td>
+<td>Accès habituel ou transabdominal si inaccessible par voie vaginale</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3213-complications-de-la-ponction">32.1.3 Complications de la ponction</h3>
+<table>
+<thead>
+<tr>
+<th>Complication</th>
+<th>Incidence</th>
+<th>Diagnostic</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hémorragie intrapéritonéale</strong></td>
+<td>0,1-0,5 %</td>
+<td>Douleur post-ponction + défense + épanchement écho</td>
+<td>Surveillance ± cœlioscopie si instabilité</td>
+</tr>
+<tr>
+<td><strong>Ponction vasculaire iliaque</strong></td>
+<td>Exceptionnelle</td>
+<td>Sang artériel dans le tube, hypotension</td>
+<td>Compression + surveillance ± chirurgie</td>
+</tr>
+<tr>
+<td><strong>Infection pelvienne</strong></td>
+<td>0,01-0,5 %</td>
+<td>Fièvre J3-J7, douleur, CRP élevée</td>
+<td>Antibiotiques IV ± drainage</td>
+</tr>
+<tr>
+<td><strong>Torsion d'annexe</strong></td>
+<td>0,08-0,2 %</td>
+<td>Douleur aiguë, ovaire volumineux immobile en Doppler</td>
+<td>Cœlioscopie urgente (détorsion)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🚨 <strong>URGENCE</strong> — Toute douleur abdominale aiguë avec défense dans les 24-48h post-ponction = écho urgente (recherche épanchement, visualisation ovarienne) ± cœlioscopie exploratrice si instabilité hémodynamique.</p>
+</blockquote>
+<hr />
+<h2 id="322-transfert-embryonnaire-echoguide">32.2 Transfert embryonnaire échoguidé</h2>
+<div class="vertex-media video">
+<strong>🎬 MFIV32-S2-001</strong><br/>
+<em>Transfert embryonnaire échoguidé transabdominal : positionnement de la sonde, visualisation du cathéter, flash de dépôt — vidéo technique</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong> 🔷 <strong>CLINICIEN</strong></p>
+<p><strong>Technique d'échoguidage</strong> :<br />
+1. <strong>Sonde convexe abdominale</strong> 3,5-5 MHz, positionnée en sus-pubien<br />
+2. <strong>Vessie semi-pleine</strong> (≈ 200-300 mL — permet une fenêtre acoustique et redresse l'utérus antéversé)<br />
+3. Visualisation de l'utérus en coupe sagittale médiane — endomètre visible (ligne hyperéchogène)<br />
+4. Le clinicien insère le <strong>cathéter souple</strong> (Wallace, Cook, Frydman) à travers le col<br />
+5. Visualisation du cathéter : <strong>ligne hyperéchogène</strong> progressant dans la cavité utérine<br />
+6. <strong>Dépôt de l'embryon</strong> : "flash" hyperéchogène (bulle d'air ± milieu de culture) visible à <strong>1-2 cm du fond utérin</strong><br />
+7. Retrait lent du cathéter → vérification sous microscope qu'il ne contient pas l'embryon (rétention)</p>
+<p><strong>Supériorité du transfert échoguidé</strong> :<br />
+- Méta-analyse Abou-Setta et al., Cochrane 2014 : <strong>↑ 40 % du taux de grossesse clinique</strong> avec échoguidage vs transfert à l'aveugle<br />
+- Mécanisme : positionnement optimal (zone de réceptivité maximale), évitement du trauma fundique, confirmation du dépôt</p>
+<blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> — Si la vessie est trop pleine (&gt; 500 mL), l'utérus est comprimé et le passage du cathéter est difficile. Si trop vide, la fenêtre acoustique est insuffisante. Demander à la patiente de boire 500 mL d'eau 1h avant le transfert, puis ajuster par vidange partielle si nécessaire.</p>
+</blockquote>
+<hr />
+<h2 id="323-autres-gestes-echoguides-en-amp">32.3 Autres gestes échoguidés en AMP</h2>
+<h3 id="3231-ponction-dhydrosalpinx">32.3.1 Ponction d'hydrosalpinx</h3>
+<ul>
+<li><strong>Avant FIV</strong> si hydrosalpinx visible à l'écho et salpingectomie refusée ou impossible</li>
+<li>Aspiration transvaginale échoguidée du liquide tubaire</li>
+<li>± Sclérose à l'éthanol (débattu — risque chimique)</li>
+<li>Efficacité temporaire (récidive fréquente) → salpingectomie reste le gold standard</li>
+</ul>
+<h3 id="3232-reduction-embryonnaire">32.3.2 Réduction embryonnaire</h3>
+<ul>
+<li><strong>Indication</strong> : grossesse triple+ (exceptionnelle avec SET, possible après grossesse spontanée ou stimulation)</li>
+<li>Technique : injection de <strong>KCl intracardiaque</strong> échoguidé à 11-13 SA</li>
+<li>Risque de perte fœtale : 5-7 % pour réduction de triplet à jumeaux</li>
+<li>Counseling éthique et psychologique indispensable</li>
+</ul>
+<h3 id="3233-echographie-du-1er-trimestre-post-fiv">32.3.3 Échographie du 1er trimestre post-FIV</h3>
+<p>🔶 <strong>ÉCHOGRAPHISTE</strong></p>
+<ul>
+<li><strong>5 SA</strong> : sac gestationnel intra-utérin visible (diamètre moyen &gt; 5 mm)</li>
+<li><strong>6 SA</strong> : vésicule vitelline visible</li>
+<li><strong>6-7 SA</strong> : embryon avec activité cardiaque visible (LCC mesurable)</li>
+<li><strong>Grossesse gémellaire</strong> : détermination de la chorionicité (MCBA vs BCBA) — <strong>un seul sac + une membrane = MCBA</strong> (risque STT) vs <strong>deux sacs = BCBA</strong></li>
+<li><strong>GEU post-FIV</strong> : incidence 2-5 %, rechercher systématiquement en l'absence de sac intra-utérin à 5 SA avec βhCG &gt; 1 500 UI/L</li>
+<li><strong>Grossesse hétérotopique</strong> : 1/100 en AMP (vs 1/30 000 naturel) → toujours vérifier les annexes même si grossesse intra-utérine confirmée</li>
+</ul>
+<hr />
+<h3 id="quiz-module-32">QUIZ MODULE 32</h3>
+<p><strong>🥉 Q1</strong> 🔶 — Pourquoi le transfert embryonnaire échoguidé est-il supérieur au transfert à l'aveugle ?<br />
+<strong>R</strong> : L'échoguidage transabdominal permet : (1) positionnement optimal du cathéter à 1-2 cm du fond utérin (zone de réceptivité maximale) ; (2) visualisation directe du dépôt (flash) confirmant le positionnement ; (3) évitement du trauma du fond utérin (contractions → expulsion embryonnaire). Méta-analyse Abou-Setta (Cochrane 2014) : ↑ 40 % du taux de grossesse clinique.</p>
+<p><strong>🥉 Q2</strong> 🔶 — Quel est le rôle de l'échographiste pendant la ponction ovocytaire ?<br />
+<strong>R</strong> : (1) <strong>Repérage pré-ponction</strong> : localisation des ovaires par rapport aux vaisseaux iliaques et à l'uretère (Doppler couleur) ; (2) <strong>Trajectoire</strong> : paroi vaginale → cul-de-sac latéral → ovaire (trajet le plus court, éviter anses digestives et vaisseaux) ; (3) <strong>Calibration</strong> : vérifier la ligne de pointillés du guide de ponction avant chaque séance ; (4) <strong>Aspiration</strong> : positionner l'aiguille (ligne hyperéchogène) au centre du follicule → aspiration → visualiser le collapsus folliculaire en temps réel ; (5) <strong>Rinçage</strong> : si aiguille double lumière, flush du follicule si le liquide ne contient pas l'ovocyte.</p>
+<p><strong>🥉 Q3</strong> 🔶 — Quels sont les repères échographiques du 1er trimestre post-FIV ?<br />
+<strong>R</strong> : <strong>5 SA</strong> : sac gestationnel intra-utérin visible (diamètre moyen &gt; 5 mm) ; <strong>6 SA</strong> : vésicule vitelline visible ; <strong>6-7 SA</strong> : embryon avec activité cardiaque + LCC mesurable. Grossesse gémellaire : déterminer la chorionicité — un seul sac + une membrane fine = <strong>MCBA</strong> (risque STT 10-15 %) vs deux sacs distincts = <strong>BCBA</strong>. La détermination de la chorionicité est cruciale et doit être faite au 1er trimestre (impossible à déterminer après 14 SA).</p>
+<p><strong>🥈 Q4</strong> 🔶 — Citez les complications de la ponction ovocytaire et les mesures préventives.<br />
+<strong>R</strong> : (1) Hémorragie intrapéritonéale (0,1-0,5 %) — prévention : repérage Doppler des vaisseaux iliaques, trajet court ; (2) Infection pelvienne (0,01-0,5 %) — prévention : antisepsie vaginale avec sérum physiologique (pas d'antiseptique chimique = toxique pour les ovocytes), antibioprophylaxie si ATCD infectieux ; (3) Torsion d'annexe (0,08-0,2 %) — prévention : repos relatif post-ponction, éviter l'activité physique intense ; (4) Ponction vasculaire (exceptionnelle) — prévention : Doppler pré-ponction systématique.</p>
+<p><strong>🥈 Q5</strong> 🔶 — Quelles sont les solutions pour ponctionner un ovaire difficile d'accès ?<br />
+<strong>R</strong> : (1) <strong>Ovaire haut situé</strong> (post-chirurgie, obésité) : pression abdominale externe par un assistant pour abaisser l'ovaire ; (2) <strong>Ovaire derrière l'utérus</strong> : abord controlatéral (traverser le fond utérin — rare, controversé) ; (3) <strong>Ovaire adhérent au cæcum/sigmoïde</strong> : trajectoire prudente avec guidage Doppler, ponction transintestinale exceptionnelle (antibioprophylaxie obligatoire) ; (4) <strong>Ovaire unique</strong> (post-ovariectomie) : accès habituel ou transabdominal si inaccessible par voie vaginale.</p>
+<p><strong>🥈 Q6</strong> 🔶 — Quelle est la technique de l'échoguidage du transfert embryonnaire et quel est le rôle du remplissage vésical ?<br />
+<strong>R</strong> : Technique : sonde convexe abdominale 3,5-5 MHz en sus-pubien, coupe sagittale médiane. Le cathéter souple (Wallace, Cook, Frydman) apparaît comme une ligne hyperéchogène progressant dans la cavité. Le dépôt se voit comme un « flash » hyperéchogène (bulle d'air) à <strong>1-2 cm du fond utérin</strong>. Après retrait : vérification microscopique du cathéter (rétention ?). <strong>Vessie</strong> : semi-pleine (~200-300 mL) = fenêtre acoustique + redressement de l'utérus antéversé. Si trop pleine (&gt; 500 mL) → utérus comprimé, passage difficile. Si trop vide → pas de fenêtre acoustique.</p>
+<p><strong>🥇 Q7</strong> 🔶 — Pourquoi faut-il toujours vérifier les annexes en écho post-FIV même si une grossesse intra-utérine est confirmée ?<br />
+<strong>R</strong> : La <strong>grossesse hétérotopique</strong> (GIU + GEU simultanée) a une incidence de <strong>1/100 en AMP</strong> (vs 1/30 000 en grossesse spontanée — × 300). Ceci est dû au transfert de plusieurs embryons ou à la migration d'un embryon vers la trompe. Rechercher systématiquement : masse annexielle, épanchement pelvien, anneau tubaire. Une grossesse intra-utérine confirmée n'exclut PAS une GEU associée en AMP. Le diagnostic tardif peut être dramatique (rupture tubaire).</p>
+<p><strong>🥇 Q8</strong> 🔶 — Quelle conduite tenir devant un hydrosalpinx visible à l'écho avant FIV ?<br />
+<strong>R</strong> : L'hydrosalpinx diminue le taux de grossesse en FIV de 50 % (effet toxique du liquide tubaire sur l'endomètre et l'embryon). Traitement de référence : <strong>salpingectomie</strong> laparoscopique avant FIV (méta-analyse Johnson, Cochrane 2004 : ↑ taux de grossesse de 50 %). Si salpingectomie refusée ou impossible : aspiration transvaginale échoguidée du liquide tubaire (efficacité temporaire, récidive fréquente) ± sclérose à l'éthanol (débattu). Alternative : occlusion tubaire proximale (clips) pour empêcher le reflux.</p>
+<p><strong>💎 Q9</strong> 🔶 — Une patiente consulte à J+5 post-ponction (18 ovocytes récupérés) avec douleur pelvienne droite aiguë, vomissements, FC 110 bpm, TA 95/60 mmHg. L'écho montre un ovaire droit de 8 cm, immobile, sans flux Doppler intra-ovarien, et un épanchement pelvien modéré. Quel est votre diagnostic et votre conduite ?<br />
+<strong>R</strong> : <strong>Torsion d'annexe droite</strong> (ovaire volumineux post-stimulation, absence de flux Doppler = ischémie, douleur aiguë, signes hémodynamiques). Conduite : (1) <strong>Cœlioscopie en urgence</strong> pour détorsion (conservation ovarienne prioritaire — l'ovaire peut récupérer même après 24-48h d'ischémie) ; (2) Évaluation de la viabilité ovarienne per-opératoire (reperfusion après détorsion → coloration rosée = viable) ; (3) Ovariopexie (fixation pour prévenir la récidive) si ovaire viable ; (4) Ovariectomie uniquement si nécrose irréversible ; (5) Anticoagulation post-opératoire (risque thromboembolique élevé dans le contexte de stimulation ovarienne). Diagnostic différentiel : hémorragie intrapéritonéale post-ponction (mais le flux Doppler absent est spécifique de la torsion).</p>
+<p><strong>💎 Q10</strong> 🔶 — Patiente après FIV-ICSI, βhCG positive à J14, écho à 5 SA+3 : sac gestationnel intra-utérin de 8 mm avec vésicule vitelline. En vérifiant les annexes, vous trouvez une masse hétérogène de 2 cm en annexe gauche avec un anneau hyperéchogène et un discret épanchement du Douglas. Diagnostic et conduite ?<br />
+<strong>R</strong> : <strong>Grossesse hétérotopique</strong> (GIU + GEU tubaire gauche). Incidence 1/100 en AMP. Conduite : (1) <strong>Confirmation</strong> : le sac intra-utérin est évolutif (vésicule vitelline visible → viable) ; l'image annexielle gauche est suspecte de GEU (anneau tubaire + épanchement) ; (2) <strong>Cœlioscopie en urgence</strong> : salpingectomie gauche (ne PAS utiliser le méthotrexate — contre-indiqué car grossesse intra-utérine évolutive souhaitée) ; (3) Surveillance échographique rapprochée de la GIU après intervention ; (4) Progestérone de soutien ; (5) Le pronostic de la GIU est bon si le traitement chirurgical est précoce. Piège : ne pas confondre avec un corps jaune hémorragique (vascularisation périphérique en « ring of fire » au Doppler, pas d'anneau tubaire).</p>
+<p><strong>💎 Q11</strong> 🔶 — Vrai ou Faux (4 affirmations sur l'échographie interventionnelle en AMP) :<br />
+1. L'antisepsie vaginale à la bétadine est recommandée avant la ponction ovocytaire.<br />
+2. La ponction transintestinale d'un follicule est toujours contre-indiquée.<br />
+3. La GEU post-FIV survient dans 2-5 % des cas.<br />
+4. Après le transfert, il faut vérifier au microscope que l'embryon n'est pas resté dans le cathéter.</p>
+<p><strong>R</strong> : (1) <strong>FAUX</strong> — les antiseptiques chimiques (bétadine, chlorhexidine) sont <strong>toxiques pour les ovocytes</strong>. L'antisepsie vaginale se fait au sérum physiologique. (2) <strong>FAUX</strong> — la ponction transintestinale est exceptionnelle mais réalisable (ovaire adhérent au cæcum/sigmoïde) avec antibioprophylaxie obligatoire et guidage Doppler prudent. (3) <strong>VRAI</strong> — l'incidence de GEU post-FIV est de 2-5 % (facteurs : pathologie tubaire sous-jacente, reflux embryonnaire). (4) <strong>VRAI</strong> — après retrait lent du cathéter, vérification obligatoire sous microscope par l'embryologiste que l'embryon a bien été déposé (rétention dans le cathéter = 1-3 % → re-transfert immédiat si rétention).</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 09 — Échographie en AMP — Mars 2026</em></p>
+</div>

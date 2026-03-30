@@ -1,0 +1,662 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-05-examens-paracliniques">PARTIE 05 — Examens Paracliniques</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-15-tsh-le-marqueur-pivot">MODULE 15 — TSH : Le Marqueur Pivot</h2>
+<h3 id="151-principe-et-methodes-de-dosage">15.1 Principe et méthodes de dosage</h3>
+<p>La TSH est dosée par méthode <strong>immunométrique en sandwich</strong> (IRMA ou ELISA) avec deux anticorps monoclonaux ciblant des épitopes distincts de la molécule.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO15-S1-001 — Évolution des générations de dosage TSH : sensibilité fonctionnelle et limites de détection]</p>
+</blockquote>
+<p><strong>Générations de dosage (adapté de Dufour, 2007)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Génération</th>
+<th>Sensibilité fonctionnelle</th>
+<th>Plage détectable</th>
+<th>Utilité clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1ère (RIA)</td>
+<td>1-2 mUI/L</td>
+<td>TSH haute</td>
+<td>Hypothyroïdie uniquement</td>
+</tr>
+<tr>
+<td>2ème (IRMA)</td>
+<td>0,1-0,2 mUI/L</td>
+<td>Normale + haute</td>
+<td>+ Hyperthyroïdie franche</td>
+</tr>
+<tr>
+<td>3ème (IFMA)</td>
+<td>0,01-0,02 mUI/L</td>
+<td>Normale + très basse</td>
+<td>+ Hyperthyroïdie frustre</td>
+</tr>
+<tr>
+<td>4ème</td>
+<td>0,001-0,002 mUI/L</td>
+<td>Infime</td>
+<td>Recherche, situations complexes</td>
+</tr>
+</tbody>
+</table>
+<p>Les analyseurs automatisés actuels sont de <strong>3ème génération</strong>, suffisants pour la pratique clinique.</p>
+<hr />
+<h3 id="152-valeurs-de-reference-et-variabilite">15.2 Valeurs de référence et variabilité</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO15-S2-001 — Distribution de la TSH dans une population euthyroïdienne : log-normal, percentiles 2,5-97,5]</p>
+</blockquote>
+<p><strong>Intervalles de référence (adapté de Surks et Hollowell, 2007)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>TSH normale (mUI/L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adulte 18-60 ans</td>
+<td>0,4 – 4,0</td>
+</tr>
+<tr>
+<td>&gt; 60 ans</td>
+<td>0,4 – 6,0 (jusqu'à 7,5 &gt; 80 ans)</td>
+</tr>
+<tr>
+<td>Grossesse T1</td>
+<td>0,1 – 2,5</td>
+</tr>
+<tr>
+<td>Grossesse T2</td>
+<td>0,2 – 3,0</td>
+</tr>
+<tr>
+<td>Grossesse T3</td>
+<td>0,3 – 3,5</td>
+</tr>
+<tr>
+<td>Nouveau-né (J3)</td>
+<td>15 – 50 (pic physiologique)</td>
+</tr>
+<tr>
+<td>Nourrisson 1-11 mois</td>
+<td>1,7 – 9,1</td>
+</tr>
+<tr>
+<td>Enfant 1-15 ans</td>
+<td>0,7 – 5,7</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Les valeurs de référence varient selon les réactifs et les laboratoires. Toujours interpréter avec les normes du laboratoire. Un écart interméthodes de 20-30 % est possible.</div>
+
+<p><strong>Variabilité intra-individuelle</strong> (adapté de Andersen et al., 2002) :<br />
+- Coefficient de variation intra-individuel : <strong>10-15 %</strong><br />
+- Variation diurne (rythme circadien) : pic nocturne (00h-04h) = 2× valeur diurne<br />
+- Prélèvement recommandé : matin à jeun, avant 10h</p>
+<hr />
+<h3 id="153-relation-tsht4-libre-la-cle-de-linterpretation">15.3 Relation TSH–T4 libre : la clé de l'interprétation</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO15-S3-001 — Courbe log-linéaire TSH vs T4L : sensibilité de la TSH comme amplificateur biologique]</p>
+</blockquote>
+<p>La relation entre TSH et T4L est <strong>log-linéaire</strong> : une diminution de 50 % de la T4L entraîne une multiplication par 100 de la TSH.</p>
+<p>Cette relation exponentielle explique :<br />
+- La <strong>haute sensibilité</strong> de la TSH pour détecter les hypothyroïdies légères<br />
+- La <strong>lenteur de normalisation</strong> de la TSH après correction d'une hypothyroïdie (4-6 semaines)<br />
+- L'<strong>inadéquation</strong> de la TSH dans les hypothyroïdies centrales (relation rompue)</p>
+<hr />
+<h3 id="154-pieges-dinterpretation-de-la-tsh">15.4 Pièges d'interprétation de la TSH</h3>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : La TSH isolée ne suffit pas dans 5 situations critiques</div>
+
+<h4 id="1541-tsh-elevee-sans-hypothyroidie-vraie">15.4.1 TSH élevée sans hypothyroïdie vraie</h4>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>TSH</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Macro-TSH</strong></td>
+<td>↑↑</td>
+<td>Complexe TSH–IgG non filtré par rein</td>
+</tr>
+<tr>
+<td><strong>Anticorps hétérophiles</strong></td>
+<td>↑ faussement</td>
+<td>Interférence avec les anticorps du test</td>
+</tr>
+<tr>
+<td><strong>Insuffisance surrénalienne</strong></td>
+<td>↑ modérée</td>
+<td>Levée du frein glucocorticoïde sur TSH</td>
+</tr>
+<tr>
+<td><strong>Récupération post-maladie</strong></td>
+<td>↑ transitoire</td>
+<td>Rebond TSH après NTIS</td>
+</tr>
+<tr>
+<td><strong>Grossesse précoce</strong></td>
+<td>↑ modérée</td>
+<td>Modification des valeurs de référence</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1542-tsh-normale-ou-basse-sans-euthyroidie-vraie">15.4.2 TSH normale ou basse sans euthyroïdie vraie</h4>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>TSH</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hypothyroïdie centrale</strong></td>
+<td>Basse ou normale</td>
+<td>Hyposécrétion TSH</td>
+</tr>
+<tr>
+<td><strong>NTIS (euthyroid sick)</strong></td>
+<td>Variable</td>
+<td>Suppression centrale</td>
+</tr>
+<tr>
+<td><strong>Amiodarone</strong></td>
+<td>↑ transitoire puis N</td>
+<td>Inhibition DIO1, T4 élevée</td>
+</tr>
+<tr>
+<td><strong>Dopamine/corticoïdes</strong></td>
+<td>↓</td>
+<td>Frein hypothalamique</td>
+</tr>
+<tr>
+<td><strong>Hyperthyroïdie récente traitée</strong></td>
+<td>Basse → N lente</td>
+<td>Inertie des freins hypophysaires</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1543-medicaments-interferant-avec-la-tsh">15.4.3 Médicaments interférant avec la TSH</h4>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO15-S4-001 — Tableau des médicaments interférant avec la TSH et leur mécanisme]</p>
+</blockquote>
+<p><strong>Médicaments élevant la TSH</strong> (adapté de Haugen, 2009) :<br />
+- Amiodarone (phase initiale), lithium, dopaminergiques antagonistes (métoclopramide, halopéridol)<br />
+- Sunitinib, sorafénib (anti-angiogéniques), ICI (nivolumab, pembrolizumab)<br />
+- Cholestyramine, hydroxychloroquine</p>
+<p><strong>Médicaments abaissant la TSH</strong> :<br />
+- Glucocorticoïdes (&gt; 20 mg/j prednisone), dopamine IV, dobutamine<br />
+- Octréotide, somatostatine, méthadone<br />
+- Surdosage en hormones thyroïdiennes exogènes</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Chez un malade hospitalisé, une TSH modérément élevée (&lt; 10 mUI/L) est à contrôler à distance de l'hospitalisation. Une décision thérapeutique ne doit pas être prise sur ce résultat seul.</p>
+<hr />
+<h3 id="155-indications-du-dosage-tsh">15.5 Indications du dosage TSH</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO15-S5-001 — Algorithme d'utilisation de la TSH en médecine générale : qui, quand, comment]</p>
+</blockquote>
+<p><strong>TSH indiquée</strong> (adapté de HAS, 2019) :<br />
+1. Suspicion clinique d'hypo- ou d'hyperthyroïdie<br />
+2. Surveillance sous lévothyroxine<br />
+3. Suivi d'une thyroïdite<br />
+4. Bilan de dépression, dyslipidémie, bradycardie, constipation, troubles cognitifs<br />
+5. Grossesse (T1 systématique si facteurs de risque)<br />
+6. Dépistage néonatal (buvard J3)<br />
+7. Avant tout traitement par amiodarone, lithium, ICI</p>
+<p><strong>TSH non indiquée</strong> :<br />
+- En première intention dans le bilan étiologique (vient après la TSH)<br />
+- Surveillance rapprochée (&lt; 6 semaines) après modification de dose LT4</p>
+<hr />
+<h3 id="quiz-module-15">QUIZ MODULE 15</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la sensibilité fonctionnelle d'un analyseur TSH de 3ème génération ?<br />
+A) 1-2 mUI/L B) 0,1-0,2 mUI/L <strong>C) 0,01-0,02 mUI/L</strong> D) 0,001 mUI/L</p>
+<p><strong>🥈 Q2</strong> — Une TSH à 6,5 mUI/L est prélevée chez un homme de 78 ans hospitalisé pour pneumonie. Quelle est votre interprétation ?<br />
+A) Hypothyroïdie primaire confirmée B) Hypothyroïdie centrale possible <strong>C) Résultat à confirmer à distance de l'hospitalisation</strong> D) Initier LT4 immédiatement</p>
+<p><strong>🥇 Q3</strong> — Chez un patient sous amiodarone, la TSH est à 8 mUI/L à J15 de traitement. Quelle est l'explication la plus probable ?<br />
+<strong>A) Inhibition transitoire de DIO1 → accumulation T4 → frein TSH paradoxal</strong> B) Hypothyroïdie induite par amiodarone C) Erreur de prélèvement D) Anticorps anti-TSH</p>
+<p><strong>💎 Q4</strong> — Une TSH est à 45 mUI/L avec T4L normale et absence de symptômes. Quelle anomalie suspectez-vous ?<br />
+A) Hypothyroïdie frustre grade 3 <strong>B) Macro-TSH ou anticorps hétérophiles</strong> C) Hypothyroïdie de la grossesse D) Insuffisance surrénalienne</p>
+<hr />
+<h2 id="module-16-t4l-t3l-et-anticorps-thyroidiens">MODULE 16 — T4L, T3L et Anticorps Thyroïdiens</h2>
+<h3 id="161-t4-libre-t4l">16.1 T4 libre (T4L)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO16-S1-001 — Méthodes de dosage T4L : dialyse à l'équilibre (gold standard) vs immunométrique (pratique courante)]</p>
+</blockquote>
+<p>La <strong>T4 libre</strong> représente 0,02-0,03 % de la T4 totale, la fraction biologiquement active.</p>
+<p><strong>Valeurs de référence (adulte)</strong> : 10–25 pmol/L (soit 0,8–1,9 ng/dL selon les unités)</p>
+<p><strong>Indications de la T4L</strong> (adapté de HAS, 2019) :<br />
+- Confirmation d'une hypothyroïdie primaire (TSH élevée + T4L basse)<br />
+- Évaluation de la sévérité (T4L très basse = hypothyroïdie sévère)<br />
+- Hypothyroïdie centrale (TSH inadaptée, T4L basse = diagnostic)<br />
+- Surveillance en grossesse (T4L &gt; TSH comme cible)<br />
+- Patient sous amiodarone (T4L élevée = attendu sous amiodarone)</p>
+<p><strong>Pièges du dosage T4L</strong> :<br />
+- <strong>Grossesse</strong> : les méthodes immunométriques sous-estiment la T4L en raison de l'élévation de la TBG → dialyse à l'équilibre préférable si disponible<br />
+- <strong>Syndrome de T4L élevée</strong> sous amiodarone sans hyperthyroïdie<br />
+- <strong>Variation analytique</strong> selon les méthodes (jusqu'à 40 % d'écart)</p>
+<hr />
+<h3 id="162-t3-libre-t3l">16.2 T3 libre (T3L)</h3>
+<p><strong>Valeurs de référence</strong> : 3,5–6,5 pmol/L (2,3–4,2 pg/mL)</p>
+<p><strong>Indications de la T3L</strong> :<br />
+- Hypothyroïdie traitée avec symptômes persistants (T3L abaissée malgré TSH normale sous LT4 seule ?)<br />
+- Hyperthyroïdie à T3 (T3L élevée isolée)<br />
+- Suivi combinaison LT4+LT3 (éviter surdosage T3)<br />
+- Recherche syndrome de NTIS (T3L effondrée)</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : La T3L a une demi-vie de 19h (vs 7 jours pour T4L). Une prise de T3 exogène le matin du prélèvement fausse le résultat. Prélèvement à jeun, avant la prise.</div>
+
+<hr />
+<h3 id="163-anticorps-anti-thyroperoxydase-anti-tpo">16.3 Anticorps anti-thyropéroxydase (anti-TPO)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO16-S3-001 — Fréquence des anti-TPO selon l'âge et le sexe : données épidémiologiques]</p>
+</blockquote>
+<p><strong>Valeurs seuil</strong> : Positif si &gt; 35 UI/mL (adapté de Dayan et Daniels, 1996)</p>
+<p><strong>Signification clinique</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Contexte</th>
+<th>anti-TPO</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HT frustre + anti-TPO +</td>
+<td>Risque élevé</td>
+<td>Progression vers HT constituée : 5 %/an → 20 %/an</td>
+</tr>
+<tr>
+<td>Euthyroïdie + anti-TPO +</td>
+<td>Surveillance</td>
+<td>Risque modéré, thyroïdite de Hashimoto infraclinique</td>
+</tr>
+<tr>
+<td>Grossesse + anti-TPO +</td>
+<td>Risque élevé</td>
+<td>Thyroïdite du post-partum (50 %), hypothyroïdie gravidique</td>
+</tr>
+<tr>
+<td>HT constituée + anti-TPO +</td>
+<td>Confirmation étiologique</td>
+<td>Thyroïdite de Hashimoto</td>
+</tr>
+<tr>
+<td>anti-TPO – + TSH ↑</td>
+<td>Cause non auto-immune</td>
+<td>Chercher autre étiologie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Faux positifs des anti-TPO</strong> :<br />
+- Diabète de type 1 (25 %), polyarthrite rhumatoïde, lupus<br />
+- Faibles titres (35-100 UI/mL) non spécifiques</p>
+<hr />
+<h3 id="164-anticorps-anti-thyroglobuline-anti-tg">16.4 Anticorps anti-thyroglobuline (anti-Tg)</h3>
+<p><strong>Valeurs seuil</strong> : Positif si &gt; 115 UI/mL (variable selon laboratoire)</p>
+<p><strong>Indications spécifiques</strong> :<br />
+1. <strong>Cancer thyroïdien</strong> : Tg utilisée comme marqueur de suivi → anti-Tg interfèrent et faussent le dosage de Tg → mesure indispensable en parallèle<br />
+2. <strong>Hashimoto anti-TPO négatif</strong> : 10-15 % des cas ont anti-Tg seuls positifs<br />
+3. <strong>Complémentarité diagnostique</strong> : anti-TPO + anti-Tg = sensibilité maximale pour Hashimoto</p>
+<hr />
+<h3 id="165-anticorps-anti-recepteurs-tsh-trab">16.5 Anticorps anti-récepteurs TSH (TRAb)</h3>
+<p><strong>Types</strong> :<br />
+- <strong>Stimulants (TSAb)</strong> : maladie de Basedow<br />
+- <strong>Bloquants (TBAb)</strong> : hypothyroïdie par blocage du TSHR (rare, &lt; 5 % des HT)<br />
+- <strong>Neutres</strong> : sans effet sur le TSHR</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Les TRAb bloquants peuvent être responsables d'une hypothyroïdie profonde avec goitre, imitant un Hashimoto. À suspecter si HT auto-immune sévère, évolutive, résistante.</div>
+
+<p><strong>Intérêt en pratique</strong> :<br />
+- Basedow : confirmer le diagnostic, prédire la rechute, suivi grossesse<br />
+- Hypothyroïdie par TBAb bloquants : diagnostic différentiel, pronostic (réversibilité possible)<br />
+- Passage transplacentaire → hypothyroïdie néonatale transitoire</p>
+<hr />
+<h3 id="166-thyroglobuline-tg">16.6 Thyroglobuline (Tg)</h3>
+<p><strong>Rôle</strong> : protéine de stockage des hormones, 100 % sécrétée par le tissu thyroïdien</p>
+<p><strong>Valeurs normales</strong> : 3–40 µg/L (variable selon volume thyroïdien)</p>
+<p><strong>Indications principales</strong> :<br />
+1. Marqueur de <strong>récidive</strong> du cancer thyroïdien différencié post-thyroïdectomie totale<br />
+2. Confirmation d'<strong>athyréose</strong> (Tg indétectable chez un nouveau-né = agenèse)<br />
+3. <strong>Hyperthyroïdie factice</strong> : Tg effondrée (ingestion d'hormones exogènes) vs Tg élevée (cause endogène)</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Le dosage de la Tg doit toujours être accompagné du dosage des anti-Tg. Si anti-Tg positifs, la Tg peut être faussement basse (interférence) et la surveillance oncologique devient plus difficile.</p>
+<hr />
+<h3 id="quiz-module-16">QUIZ MODULE 16</h3>
+<p><strong>🥉 Q1</strong> — Quel est le seuil de positivité des anticorps anti-TPO ?<br />
+A) 10 UI/mL B) 20 UI/mL <strong>C) 35 UI/mL</strong> D) 100 UI/mL</p>
+<p><strong>🥈 Q2</strong> — Chez une femme en début de grossesse avec TSH à 3,5 mUI/L et anti-TPO à 180 UI/mL, quelle est la conduite à tenir ?<br />
+A) Initier LT4 immédiatement B) Rassurer, bilan normal <strong>C) Surveillance rapprochée TSH, risque de thyroïdite du post-partum</strong> D) Echographie urgente</p>
+<p><strong>🥇 Q3</strong> — Un patient traité pour cancer thyroïdien différencié a une Tg indétectable mais des anti-Tg à 350 UI/mL. Quelle interprétation ?<br />
+A) Guérison certaine <strong>B) Tg possiblement sous-estimée par interférence, surveillance par TEP-FDG</strong> C) Récidive certaine D) Erreur de prélèvement</p>
+<p><strong>💎 Q4</strong> — Une patiente présente une hypothyroïdie profonde avec TRAb positifs de type bloquant. Quelle caractéristique distingue cette entité de la thyroïdite de Hashimoto classique ?<br />
+<strong>A) Réversibilité possible si disparition des TRAb bloquants, écho morphologiquement moins altérée</strong> B) Anti-TPO toujours négatifs C) Réponse rapide à la corticothérapie D) Absence de goitre</p>
+<hr />
+<h2 id="module-17-imagerie-et-cytologie-thyroidiennes">MODULE 17 — Imagerie et Cytologie Thyroïdiennes</h2>
+<h3 id="171-echographie-thyroidienne">17.1 Échographie thyroïdienne</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO17-S1-001 — Échographies thyroïdiennes : aspect normal vs Hashimoto vs nodule suspect]</p>
+</blockquote>
+<p><strong>Technique</strong> : Sonde linéaire 7,5-15 MHz, patient en décubitus dorsal, cou en hyperextension</p>
+<p><strong>Paramètres évalués</strong> :<br />
+- Volume (normal : 10-20 mL chez la femme, 15-25 mL chez l'homme)<br />
+- Échogénicité (hypo, iso, hyper par rapport aux muscles)<br />
+- Hétérogénéité<br />
+- Vascularisation Doppler<br />
+- Nodules (caractéristiques EU-TIRADS)</p>
+<p><strong>Aspect échographique de la thyroïdite de Hashimoto</strong> (adapté de ETA 2013) :</p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Description</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hypoéchogénicité diffuse</td>
+<td>Glande sombre, hétérogène</td>
+<td>Infiltration lymphocytaire</td>
+</tr>
+<tr>
+<td>Pseudo-nodules</td>
+<td>Zones hypoéchogènes arrondies</td>
+<td>Follicules lymphoïdes</td>
+</tr>
+<tr>
+<td>Aspect micronodulaire</td>
+<td>Texture grossière</td>
+<td>Fibrose + inflammation</td>
+</tr>
+<tr>
+<td>Hypervascularisation</td>
+<td>Doppler couleur</td>
+<td>Phase inflammatoire active</td>
+</tr>
+<tr>
+<td>Atrophie</td>
+<td>Volume &lt; 6 mL</td>
+<td>Hashimoto atrophiant évancé</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Les pseudo-nodules de Hashimoto peuvent mimer de vrais nodules. En cas de doute, une cytoponction à l'aiguille fine est justifiée pour éliminer un lymphome thyroïdien (complication rare de Hashimoto).</div>
+
+<hr />
+<h3 id="172-classification-eu-tirads-thyroid-imaging-reporting-and-data-system">17.2 Classification EU-TIRADS (Thyroid Imaging Reporting and Data System)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO17-S2-001 — Tableau EU-TIRADS : caractéristiques des nodules et seuils de ponction]</p>
+</blockquote>
+<p><strong>Classification EU-TIRADS 2017 (adapté de Russ et al., Eur Thyroid J 2017)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Description</th>
+<th>Risque malignité</th>
+<th>Conduite à tenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EU-TIRADS 1</td>
+<td>Pas de nodule</td>
+<td>—</td>
+<td>Pas d'action</td>
+</tr>
+<tr>
+<td>EU-TIRADS 2</td>
+<td>Bénin (kyste pur)</td>
+<td>0 %</td>
+<td>Pas de ponction</td>
+</tr>
+<tr>
+<td>EU-TIRADS 3</td>
+<td>Faiblement suspect</td>
+<td>&lt; 2 %</td>
+<td>Ponction si &gt; 20 mm</td>
+</tr>
+<tr>
+<td>EU-TIRADS 4</td>
+<td>Modérément suspect</td>
+<td>6-17 %</td>
+<td>Ponction si &gt; 15 mm</td>
+</tr>
+<tr>
+<td>EU-TIRADS 5</td>
+<td>Très suspect</td>
+<td>&gt; 26 %</td>
+<td>Ponction si &gt; 10 mm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caractéristiques de malignité</strong> (signes EU-TIRADS 4-5) :<br />
+- Hypoéchogénicité marquée<br />
+- Contours irréguliers ou spiculés<br />
+- Microcalcifications<br />
+- Taller than wide (hauteur &gt; largeur)<br />
+- Extension extra-thyroïdienne</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — En présence d'une thyroïdite de Hashimoto, l'échographie est difficile à interpréter. La classification EU-TIRADS s'applique, mais le seuil de ponction peut être abaissé en cas d'atypies morphologiques.</p>
+<hr />
+<h3 id="173-scintigraphie-thyroidienne">17.3 Scintigraphie thyroïdienne</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO17-S3-001 — Scintigraphies thyroïdiennes : normal, Basedow, Hashimoto, goitre multinodulaire]</p>
+</blockquote>
+<p><strong>Traceurs</strong> :<br />
+- Iode 123 (¹²³I) : diagnostic, demi-vie 13h, faible irradiation<br />
+- Technétium 99m (⁹⁹ᵐTc) : diagnostic, demi-vie 6h, très faible irradiation, ne mesure pas l'organisation<br />
+- Iode 131 (¹³¹I) : thérapeutique, demi-vie 8j, haute irradiation</p>
+<p><strong>Indications de la scintigraphie dans l'hypothyroïdie</strong> (adapté de ETA 2013) :</p>
+<table>
+<thead>
+<tr>
+<th>Indication</th>
+<th>Apport</th>
+<th>Interprétation attendue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dépistage néonatal positif (TSH &gt; 20)</td>
+<td>Dysgénésie vs dyshormonogenèse</td>
+<td>Ectopie, agenèse, glande en place</td>
+</tr>
+<tr>
+<td>Nodule hypofonctionnel à l'écho</td>
+<td>Éliminer nodule froid suspect</td>
+<td>Froid = ponction obligatoire</td>
+</tr>
+<tr>
+<td>Thyroïdite après accouchement</td>
+<td>Déterminer phase</td>
+<td>Phase I : blanche ; phase II : captation normale</td>
+</tr>
+<tr>
+<td>Goitre plongeant</td>
+<td>Extension médiastinale</td>
+<td>Cartographie complète</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Scintigraphie dans le Hashimoto</strong> :<br />
+- Aspect hétérogène, captation variable (diminuée, normale, augmentée selon la phase)<br />
+- <strong>Non recommandée</strong> en routine dans le diagnostic de Hashimoto (diagnostic clinico-biologique)<br />
+- Contre-indiquée pendant la grossesse</p>
+<hr />
+<h3 id="174-cytoponction-a-laiguille-fine-caf-fna">17.4 Cytoponction à l'aiguille fine (CAF / FNA)</h3>
+<blockquote>
+<p>[MEDIA: ⚕️ MHYPO17-S4-001 — Technique de cytoponction thyroïdienne écho-guidée : étapes et matériel]</p>
+</blockquote>
+<p><strong>Technique</strong> : Aiguille 25-27G, aspiration ± échoguidage, 2-3 passages, cytologie conventionnelle ou en milieu liquide</p>
+<p><strong>Classification de Bethesda (2023)</strong> (adapté de Cibas et Ali, Thyroid 2023) :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Libellé</th>
+<th>Risque malignité</th>
+<th>Conduite à tenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I</td>
+<td>Non diagnostique / insuffisant</td>
+<td>N/A</td>
+<td>Reponction</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Bénin</td>
+<td>0-3 %</td>
+<td>Surveillance échographique</td>
+</tr>
+<tr>
+<td>III</td>
+<td>Atypie de signification indéterminée (ASI)</td>
+<td>10-30 %</td>
+<td>Reponction ou moléculaire</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Néoplasme folliculaire</td>
+<td>25-40 %</td>
+<td>Lobectomie</td>
+</tr>
+<tr>
+<td>V</td>
+<td>Suspect de malignité</td>
+<td>50-75 %</td>
+<td>Thyroïdectomie ou lobectomie</td>
+</tr>
+<tr>
+<td>VI</td>
+<td>Malin</td>
+<td>&gt; 97 %</td>
+<td>Thyroïdectomie totale</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Dans la thyroïdite de Hashimoto, la cytologie révèle des lymphocytes et des cellules de Hürthle — cet aspect peut être classé Bethesda III (ASI) par erreur. Toujours indiquer le contexte auto-immun au cytopathologiste.</div>
+
+<p><strong>Analyse moléculaire complémentaire</strong> (Bethesda III-IV) :<br />
+- Panel ThyroSeq v3 / Afirma GEC : différenciation bénin vs malin<br />
+- Mutations BRAF V600E (carcinome papillaire), RAS, TERT promoteur</p>
+<hr />
+<h3 id="175-autres-examens-dimagerie">17.5 Autres examens d'imagerie</h3>
+<p><strong>TDM cervicale</strong> :<br />
+- Goitre plongeant, compression trachéale, planification chirurgicale<br />
+- Contre-indiquée si projet de scintigraphie ou RAI dans les 6-8 semaines (iode contrasté)</p>
+<p><strong>IRM cervicale</strong> :<br />
+- Alternative au TDM sans irradiation ni iode<br />
+- Rapports vasculaires complexes, goitre plongeant</p>
+<p><strong>TEP-FDG</strong> :<br />
+- Non indiquée en première intention pour hypothyroïdie<br />
+- Suivi cancer thyroïdien Tg-négative / anti-Tg élevés<br />
+- Découverte fortuite de thyroid incidentaloma FDG-avide (risque malignité 30-35 %)</p>
+<hr />
+<h3 id="quiz-module-17">QUIZ MODULE 17</h3>
+<p><strong>🥉 Q1</strong> — Quelle classification est utilisée pour les nodules thyroïdiens à l'échographie ?<br />
+A) BIRADS B) RADS <strong>C) EU-TIRADS</strong> D) LUNA</p>
+<p><strong>🥈 Q2</strong> — Une cytoponction thyroïdienne revient Bethesda IV (néoplasme folliculaire). Quelle est la conduite ?<br />
+A) Surveillance simple B) Thyroïdectomie totale d'emblée <strong>C) Lobectomie (ou complétée par test moléculaire)</strong> D) Radioiodothérapie</p>
+<p><strong>🥇 Q3</strong> — Chez une patiente avec thyroïdite de Hashimoto connue, la cytologie d'un pseudo-nodule revient Bethesda III. Quelle est votre interprétation ?<br />
+A) Malignité certaine, thyroïdectomie urgente <strong>B) ASI dans contexte Hashimoto — informer le cytopathologiste, reponction à 3-6 mois ou test moléculaire</strong> C) Bénin, pas de suivi D) RAI thérapeutique</p>
+<p><strong>💎 Q4</strong> — Une découverte fortuite au TEP-FDG montre une fixation thyroïdienne focale non planifiée. Quelle est la conduite à tenir ?<br />
+<strong>A) Risque de malignité 30-35 % — Écho thyroïdienne + cytoponction si nodule &gt; 10 mm EU-TIRADS 4-5</strong> B) Aucune action, faux positif fréquent C) Scintigraphie ¹²³I en première intention D) Thyroïdectomie totale d'emblée</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 05 — Examens Paracliniques — Mars 2026</em></p>
+</div>

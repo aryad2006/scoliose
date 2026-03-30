@@ -1,0 +1,810 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-1-lobesite-fondamentaux-medicaux-modules-1-5">Partie 1 — L'Obésité : Fondamentaux médicaux (Modules 1-5)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-1-epidemiologie-definitions-et-classifications-de-loms-a-la-super-obesite">MODULE 1 : ÉPIDÉMIOLOGIE, DÉFINITIONS ET CLASSIFICATIONS — DE L'OMS À LA SUPER-OBÉSITÉ</h1>
+<p><strong>Partie</strong> : I — L'Obésité : Fondamentaux médicaux<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental<br />
+<strong>Prérequis</strong> : Aucun</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 52 ans, IMC 43 kg/m², tour de taille 138 cm, est adressé en consultation orthopédique pour une gonarthrose bilatérale invalidante. Son médecin traitant mentionne « obésité morbide, diabète de type 2, HTA, SAOS appareillé ». L'interne s'interroge : *quelle est la différence entre obésité grade II et grade III ? Qu'est-ce que la « super-obésité » ? Comment quantifier objectivement le risque opératoire lié à cette surcharge pondérale ? Et pourquoi l'IMC seul est-il un indicateur insuffisant ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Définir</strong> l'obésité selon les critères de l'OMS et distinguer les différents grades (I, II, III, super-obésité) (OMS, <em>Technical Report Series</em> 894, 2000)</li>
+<li><strong>Calculer</strong> et interpréter l'IMC, le tour de taille et le rapport taille-hanche en pratique clinique</li>
+<li><strong>Décrire</strong> l'épidémiologie mondiale et nationale de l'obésité, ses tendances évolutives et ses projections (NCD-RisC, <em>Lancet</em>, 2017)</li>
+<li><strong>Expliquer</strong> les limites de l'IMC comme indicateur unique (obésité sarcopénique, athlètes, distribution de la masse grasse)</li>
+<li><strong>Distinguer</strong> l'obésité androïde (viscérale, métaboliquement active) de l'obésité gynoïde (sous-cutanée)</li>
+<li><strong>Identifier</strong> le concept d'obésité métaboliquement saine (<em>metabolically healthy obesity</em>, MHO) et ses controverses</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-11-definitions-et-classification-de-lobesite">Section 1.1 — Définitions et classification de l'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<p>Le module doit présenter les définitions internationales de l'obésité en s'appuyant sur les critères de l'OMS (<em>Technical Report Series</em> 894, 2000) et de la Haute Autorité de Santé (HAS, recommandations 2011, actualisées 2022) :</p>
+<ul>
+<li><strong>Indice de Masse Corporelle (IMC)</strong> : formule IMC = poids (kg) / taille² (m²), interprétation selon les seuils OMS</li>
+<li><strong>Classification OMS</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>IMC (kg/m²)</th>
+<th>Risque de comorbidités</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insuffisance pondérale</td>
+<td>&lt; 18,5</td>
+<td>Accru (autres risques)</td>
+</tr>
+<tr>
+<td>Poids normal</td>
+<td>18,5 – 24,9</td>
+<td>Référence</td>
+</tr>
+<tr>
+<td>Surpoids (pré-obésité)</td>
+<td>25,0 – 29,9</td>
+<td>Accru</td>
+</tr>
+<tr>
+<td>Obésité grade I (modérée)</td>
+<td>30,0 – 34,9</td>
+<td>Élevé</td>
+</tr>
+<tr>
+<td>Obésité grade II (sévère)</td>
+<td>35,0 – 39,9</td>
+<td>Très élevé</td>
+</tr>
+<tr>
+<td>Obésité grade III (morbide ou massive)</td>
+<td>≥ 40,0</td>
+<td>Extrêmement élevé</td>
+</tr>
+<tr>
+<td>Super-obésité</td>
+<td>≥ 50,0</td>
+<td>Maximal</td>
+</tr>
+<tr>
+<td>Super-super-obésité</td>
+<td>≥ 60,0</td>
+<td>Maximal</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Tour de taille</strong> : marqueur de l'adiposité viscérale, plus prédictif du risque cardiovasculaire que l'IMC seul (Lean et al., <em>Lancet</em>, 1995) — seuils : ≥ 94 cm chez l'homme européen, ≥ 80 cm chez la femme européenne (IDF, 2006), avec des seuils ethnospécifiques</li>
+<li><strong>Rapport taille-hanche</strong> : seuils pathologiques (&gt; 0,90 homme, &gt; 0,85 femme)</li>
+<li><strong>Limites de l'IMC</strong> : ne distingue pas la masse grasse de la masse maigre, ne reflète pas la distribution de la graisse, inadapté chez les athlètes musclés, les sujets âgés sarcopéniques, les amputés ; variations ethniques (seuils abaissés pour les populations asiatiques : surpoids ≥ 23, obésité ≥ 25 selon l'OMS régional Pacifique occidental)</li>
+<li><strong>Composition corporelle</strong> : impédancemétrie bioélectrique (BIA), absorptiométrie biphotonique (DXA), scanner (quantification de la graisse viscérale), IRM — avantages et limites de chaque méthode</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO01-S01-001 | 📊 INFOGRAPHIE | Classification OMS de l'obésité — échelle visuelle avec silhouettes et seuils d'IMC | Infographie fondamentale |<br />
+| MOBO01-S01-002 | 📐 SCHÉMA | Mesure du tour de taille — technique correcte au niveau de la crête iliaque | Schéma technique |<br />
+| MOBO01-S01-003 | 📊 INFOGRAPHIE | IMC vs composition corporelle — 3 patients même IMC mais compositions différentes (athlète, normal, sarcopénique obèse) | Illustre les limites de l'IMC |<br />
+| MOBO01-S01-004 | 🎬 ANIMATION | Distribution androïde vs gynoïde de la graisse — impact métabolique différentiel | Animation 3D comparative |</p>
+<h3 id="section-12-epidemiologie-mondiale-de-lobesite-une-pandemie-silencieuse">Section 1.2 — Épidémiologie mondiale de l'obésité : une pandémie silencieuse</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Données mondiales</strong> : en 2022, environ 890 millions d'adultes obèses dans le monde (IMC ≥ 30), soit une prévalence d'environ 16% des adultes (OMS, <em>World Obesity Atlas</em>, 2024) ; la prévalence mondiale de l'obésité a doublé entre 1990 et 2022</li>
+<li><strong>Données françaises</strong> : prévalence de l'obésité estimée à 17,0% des adultes en 2020 (étude Esteban, Santé publique France), en augmentation constante depuis ObÉpi 1997 (8,5%) ; gradient socio-économique marqué (prévalence 2× plus élevée chez les ouvriers que chez les cadres) ; gradient géographique (Nord, Outre-mer &gt; Sud, Île-de-France)</li>
+<li><strong>Données américaines</strong> : prévalence de l'obésité estimée à 42,4% des adultes en 2017-2018 (Hales et al., <em>JAMA</em>, 2020 ; NHANES), obésité sévère (IMC ≥ 40) estimée à 9,2%</li>
+<li><strong>Projections</strong> : selon le <em>World Obesity Atlas</em> 2024, les modélisations prévoient qu'environ 1,9 milliard d'adultes pourraient être obèses en 2035 si les tendances actuelles se poursuivent</li>
+<li><strong>Coût économique</strong> : l'obésité représente un coût estimé à 2-7% des dépenses de santé dans les pays développés (Tremmel et al., <em>Int J Environ Res Public Health</em>, 2017) ; en France, le coût estimé se situe entre 10 et 20 milliards d'euros par an selon les méthodologies</li>
+<li><strong>Impact orthopédique</strong> : dans les registres nationaux d'arthroplastie, environ 30 à 40% des patients bénéficiant d'une PTG présentent un IMC ≥ 30 (données NJR, AJRR) ; l'obésité est identifiée comme un facteur de risque indépendant de complications dans ces registres</li>
+<li><strong>Obésité pédiatrique</strong> : les estimations OMS indiquent qu'environ 39 millions d'enfants de moins de 5 ans et 340 millions d'enfants/adolescents de 5-19 ans étaient en surpoids ou obèses en 2020 — conséquences musculosquelettiques en forte augmentation</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO01-S02-001 | 📊 INFOGRAPHIE | Carte mondiale de la prévalence de l'obésité — gradient colorimétrique par pays | Carte interactive |<br />
+| MOBO01-S02-002 | 📊 INFOGRAPHIE | Évolution de la prévalence de l'obésité en France (1997-2020) — courbe ObÉpi/Esteban | Graphique temporel |<br />
+| MOBO01-S02-003 | 📊 INFOGRAPHIE | Impact orthopédique — % de patients obèses dans les registres d'arthroplastie | Données de registre |<br />
+| MOBO01-S02-004 | 📐 SCHÉMA | Coût économique de l'obésité — pyramide des dépenses directes et indirectes | Schéma économique |</p>
+<h3 id="section-13-obesite-androide-vs-gynoide-la-topographie-de-la-graisse-compte">Section 1.3 — Obésité androïde vs gynoïde : la topographie de la graisse compte</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Obésité androïde (viscérale, abdominale, « en pomme »)</strong> : accumulation préférentielle intra-abdominale (graisse viscérale autour des viscères), métaboliquement la plus dangereuse — association forte avec le syndrome métabolique, le diabète de type 2, les maladies cardiovasculaires, l'inflammation systémique (Després &amp; Lemieux, <em>Nature</em>, 2006)</li>
+<li><strong>Obésité gynoïde (sous-cutanée, « en poire »)</strong> : accumulation préférentielle glutéo-fémorale (hanches, cuisses, fesses), risque métabolique moindre mais surcharge mécanique articulaire significative (genoux, hanches)</li>
+<li><strong>Graisse viscérale vs sous-cutanée</strong> : la graisse viscérale est plus richement vascularisée, plus innervée, plus sensible aux catécholamines, produit davantage d'adipokines pro-inflammatoires (TNF-α, IL-6), draine directement dans le système porte hépatique (hypothèse portale de Björntorp, 1990)</li>
+<li><strong>Quantification de la graisse viscérale</strong> : tour de taille (approche clinique simple), scanner abdominal au niveau L4-L5 (surface de graisse viscérale en cm², seuil pathologique environ 100-130 cm² selon les études), IRM, BIA segmentaire</li>
+<li><strong>Obésité métaboliquement saine (MHO)</strong> : concept controversé — sujet obèse (IMC ≥ 30) sans syndrome métabolique, sans insulinorésistance, sans inflammation ; selon les données de suivi à long terme, la majorité évolue vers un phénotype métaboliquement malsain à 10-20 ans (Eckel et al., <em>Lancet</em>, 2018) ; en orthopédie, le risque de complications chirurgicales paraît intermédiaire entre les sujets de poids normal et les obèses métaboliquement malsains</li>
+<li><strong>Obésité sarcopénique</strong> : coexistence d'une masse grasse élevée et d'une masse musculaire faible (sarcopénie), aggravant le pronostic fonctionnel et chirurgical — concept essentiel en gériatrie et en orthopédie du sujet âgé (Batsis &amp; Villareal, <em>Nat Rev Endocrinol</em>, 2018)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO01-S03-001 | 📐 SCHÉMA | Distribution androïde vs gynoïde — silhouettes comparatives avec zones de dépôt graisseux | Schéma anatomique |<br />
+| MOBO01-S03-002 | 🎬 ANIMATION | Graisse viscérale : drainage portal, production d'adipokines, conséquences métaboliques | Animation physiopathologique |<br />
+| MOBO01-S03-003 | 📷 IMAGE | Scanner abdominal — mesure de la surface de graisse viscérale au niveau L4-L5 | Image annotée |<br />
+| MOBO01-S03-004 | 📊 INFOGRAPHIE | Obésité métaboliquement saine vs malsaine — critères, évolution, impact orthopédique | Tableau comparatif |</p>
+<h3 id="section-14-implications-orthopediques-des-differentes-categories-dobesite">Section 1.4 — Implications orthopédiques des différentes catégories d'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Gradation du risque orthopédique selon l'IMC</strong> : les données des registres nationaux d'arthroplastie montrent une augmentation progressive des complications chirurgicales avec l'IMC (Kerkhoffs et al., <em>JBJS Am</em>, 2012)</li>
+<li><strong>Seuils d'IMC et décision chirurgicale</strong> : controverse — certaines équipes proposent de reporter la chirurgie élective au-dessus d'un IMC de 40 (voire 35), d'autres considèrent qu'il n'existe pas de seuil absolu (AAOS <em>Clinical Practice Guidelines</em>, 2015, position révisée 2022 ; NICE, 2020) ; les sociétés savantes évoluent vers une approche individualisée plutôt qu'un seuil fixe d'IMC</li>
+<li><strong>Super-obésité (IMC ≥ 50)</strong> : données limitées mais risque de complications considérablement accru — les études observationnelles rapportent des taux d'infection du site opératoire de 5-15% (vs environ 1-2% pour les patients de poids normal) après arthroplastie du genou (Werner et al., <em>JBJS Am</em>, 2015)</li>
+<li><strong>Impact de la perte de poids préopératoire</strong> : les études observationnelles suggèrent qu'une perte de poids d'environ 5% avant arthroplastie pourrait être associée à une réduction des complications, bien que le niveau de preuve reste modéré (Inacio et al., <em>JBJS Am</em>, 2014)</li>
+<li><strong>Obésité sarcopénique et risque opératoire</strong> : risque majoré de complications et de résultats fonctionnels moins satisfaisants — la sarcopénie est un facteur de risque indépendant de morbi-mortalité postopératoire en orthopédie</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO01-S04-001 | 📊 INFOGRAPHIE | Gradation du risque de complications selon l'IMC — données des registres NJR/AJRR | Graphique en barres |<br />
+| MOBO01-S04-002 | 📐 SCHÉMA | Arbre décisionnel — évaluation du patient obèse avant chirurgie orthopédique élective | Algorithme clinique |<br />
+| MOBO01-S04-003 | 🎬 ANIMATION | Impact de la perte de poids préopératoire sur les complications — simulation ObesSim© | Animation interactive |</p>
+<h3 id="points-cles-du-module-1">Points clés du Module 1</h3>
+<ol>
+<li>L'obésité est définie par un IMC ≥ 30 kg/m² selon l'OMS, avec 3 grades de sévérité croissante et le concept de super-obésité (≥ 50)</li>
+<li>L'IMC seul est insuffisant : le tour de taille, la composition corporelle et la distribution de la graisse sont essentiels</li>
+<li>L'obésité androïde (viscérale) est métaboliquement plus dangereuse que l'obésité gynoïde</li>
+<li>L'obésité sarcopénique (masse grasse élevée + masse musculaire faible) est un facteur de risque opératoire majeur</li>
+<li>Environ 30-40% des patients d'arthroplastie sont obèses — ces données issues des registres soulignent l'ampleur du problème</li>
+<li>Le concept d'obésité métaboliquement saine est controversé — la majorité évolue vers un phénotype malsain</li>
+<li>La décision chirurgicale chez l'obèse doit être individualisée, sans seuil d'IMC absolu selon les dernières recommandations</li>
+<li>La perte de poids préopératoire est souhaitable mais son impact sur les complications reste débattu</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (classification OMS, seuils de tour de taille, définition de la super-obésité)</li>
+<li>3 QCM Argent (obésité androïde vs gynoïde, obésité sarcopénique, limites de l'IMC)</li>
+<li>2 QCM Or (MHO et risque chirurgical, interprétation d'un bilan de composition corporelle)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 42, diabétique, tour de taille 145 cm — évaluation globale du risque, décision chirurgicale, optimisation pré-opératoire)</li>
+<li>1 QROC : « Pourquoi l'IMC seul est-il un indicateur insuffisant pour évaluer le risque opératoire d'un patient obèse en chirurgie orthopédique ? Argumentez en intégrant les concepts de distribution de la graisse, d'obésité sarcopénique et de profil métabolique. »</li>
+</ul>
+<hr />
+<h1 id="module-2-physiopathologie-de-lobesite-neuroendocrinologie-genetique-et-environnement">MODULE 2 : PHYSIOPATHOLOGIE DE L'OBÉSITÉ — NEUROENDOCRINOLOGIE, GÉNÉTIQUE ET ENVIRONNEMENT</h1>
+<p><strong>Partie</strong> : I — L'Obésité : Fondamentaux médicaux<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Module 1</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 38 ans, IMC 46, vous dit : « Docteur, j'ai tout essayé, je n'arrive pas à maigrir. C'est familial, ma mère et mes deux sœurs sont aussi obèses. » Un autre patient, 55 ans, IMC 36, a perdu 25 kg après un bypass gastrique il y a 3 ans mais a repris 12 kg en 18 mois. *Comment la régulation de la balance énergétique fonctionne-t-elle ? Pourquoi le corps « résiste-t-il » à la perte de poids ? Quel est le rôle de la génétique vs l'environnement dans l'obésité ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Expliquer</strong> la régulation neuroendocrinienne de la balance énergétique : rôles de l'hypothalamus, de la leptine, de la ghréline et du système mélanocortinergique (Schwartz et al., <em>Nature</em>, 2000)</li>
+<li><strong>Décrire</strong> le concept de « set point » pondéral et les mécanismes de résistance à la perte de poids (thermogenèse adaptative, modifications hormonales post-régime)</li>
+<li><strong>Distinguer</strong> les facteurs génétiques (obésité monogénique vs polygénique), épigénétiques et environnementaux de l'obésité</li>
+<li><strong>Analyser</strong> le rôle du microbiote intestinal dans la régulation de la masse grasse</li>
+<li><strong>Comprendre</strong> les mécanismes de la dérégulation de l'appétit (hédonisme alimentaire, circuits de récompense)</li>
+<li><strong>Intégrer</strong> les conséquences de ces mécanismes sur les stratégies thérapeutiques et la rechute pondérale</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-21-regulation-de-la-balance-energetique-lhypothalamus-chef-dorchestre">Section 2.1 — Régulation de la balance énergétique : l'hypothalamus, chef d'orchestre</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Balance énergétique</strong> : apports caloriques vs dépense énergétique (métabolisme de base + thermogenèse alimentaire + activité physique + thermogenèse adaptative) ; obésité = déséquilibre chronique positif, apparemment simple mais formidablement complexe dans sa régulation</li>
+<li><strong>Contrôle hypothalamique</strong> : le noyau arqué de l'hypothalamus contient deux populations neuronales clés (Schwartz et al., <em>Nature</em>, 2000) :</li>
+<li>Neurones <strong>NPY/AgRP</strong> (orexigènes) : stimulent l'appétit, réduisent la dépense énergétique</li>
+<li>Neurones <strong>POMC/CART</strong> (anorexigènes) : réduisent l'appétit, augmentent la dépense énergétique</li>
+<li><strong>Leptine</strong> : hormone sécrétée par les adipocytes proportionnellement à la masse grasse (Zhang et al., <em>Nature</em>, 1994) ; signal de satiété à long terme ; agit sur les neurones du noyau arqué (inhibe NPY/AgRP, active POMC/CART) ; chez l'obèse, la leptinémie est élevée mais il existe une résistance à la leptine (insensibilisation des récepteurs hypothalamiques, perturbation du transport à travers la barrière hémato-encéphalique)</li>
+<li><strong>Ghréline</strong> : « hormone de la faim », sécrétée par l'estomac avant les repas, stimule l'appétit via les neurones NPY/AgRP ; diminue après bypass gastrique (un des mécanismes de l'efficacité bariatrique) (Cummings et al., <em>N Engl J Med</em>, 2002)</li>
+<li><strong>Insuline</strong> : signal adipostatique à long terme (comme la leptine), agit sur l'hypothalamus ; l'hyperinsulinémie de l'obèse contribue à la résistance cérébrale</li>
+<li><strong>Autres signaux</strong> : GLP-1 (incrétine, satiété, base de la pharmacothérapie moderne — cf. Module 8), PYY (colon, satiété), CCK (duodénum, satiété postprandiale), oxyntomoduline</li>
+<li><strong>Set point pondéral</strong> : concept selon lequel l'organisme « défend » un poids donné — après perte de poids, les mécanismes adaptatifs (↓ leptine, ↑ ghréline, ↓ thermogenèse) tendent à restaurer le poids initial ; explique les rechutes pondérales après régime (Sumithran et al., <em>N Engl J Med</em>, 2011)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO02-S01-001 | 🎬 ANIMATION | Régulation hypothalamique de la balance énergétique — noyau arqué, NPY/AgRP vs POMC/CART, signaux périphériques | Animation clé du module |<br />
+| MOBO02-S01-002 | 📐 SCHÉMA | Circuit leptine-hypothalamus — sécrétion, transport, récepteurs, résistance chez l'obèse | Schéma physiologique |<br />
+| MOBO02-S01-003 | 📐 SCHÉMA | Ghréline, GLP-1, PYY, CCK — signaux de faim et de satiété | Schéma intégratif |<br />
+| MOBO02-S01-004 | 📊 INFOGRAPHIE | Set point pondéral — réponses hormonales à la perte de poids (Sumithran, NEJM 2011) | Adaptation des données |</p>
+<h3 id="section-22-genetique-de-lobesite-du-gene-a-lenvironnement">Section 2.2 — Génétique de l'obésité : du gène à l'environnement</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Héritabilité de l'obésité</strong> : les études de jumeaux estiment l'héritabilité de l'IMC entre 40 et 70% (Stunkard et al., <em>N Engl J Med</em>, 1986) — la composante génétique est majeure mais modulée par l'environnement</li>
+<li><strong>Obésité monogénique</strong> (rare, &lt; 5% des obésités sévères) :</li>
+<li>Déficience en leptine : mutation du gène <em>LEP</em> (Montague et al., <em>Nature</em>, 1997), obésité massive dès l'enfance, traitée par leptine recombinante (metreleptine)</li>
+<li>Mutation du récepteur de la leptine (<em>LEPR</em>)</li>
+<li>Déficience en POMC : obésité + insuffisance surrénalienne + cheveux roux</li>
+<li>Mutation du récepteur MC4R : la cause monogénique la plus fréquente (environ 2-5% des obésités sévères de l'enfant) (Farooqi et al., <em>N Engl J Med</em>, 2003) — prédisposition à l'hyperphagie, traitable par setmelanotide (agoniste MC4R, approuvé par la FDA et l'EMA)</li>
+<li>Syndrome de Prader-Willi : hypotonie néonatale → hyperphagie et obésité massive, cause génétique (délétion 15q11-13 paternelle)</li>
+<li>Syndrome de Bardet-Biedl, syndrome d'Alström</li>
+<li><strong>Obésité polygénique</strong> (commune) : interaction de centaines de variants génétiques à faible effet — les études d'association pangénomique (GWAS) ont identifié plus de 950 loci associés à l'IMC (Yengo et al., <em>Hum Mol Genet</em>, 2018 ; GIANT Consortium) ; le gène <em>FTO</em> est le plus solidement associé (effet modeste : environ +0,39 kg/m² par allèle à risque)</li>
+<li><strong>Interaction gène-environnement</strong> : la prédisposition génétique s'exprime dans un environnement obésogène (alimentation ultra-transformée, sédentarité, stress, perturbateurs endocriniens)</li>
+<li><strong>Épigénétique</strong> : modifications de l'expression génique sans changement de séquence ADN (méthylation, acétylation des histones) — l'alimentation maternelle pendant la grossesse influence l'épigénome fœtal et le risque d'obésité ultérieur (programmation fœtale, hypothèse de Barker)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO02-S02-001 | 📐 SCHÉMA | Voie leptine-mélanocortine — mutations monogéniques et leurs conséquences | Schéma génétique |<br />
+| MOBO02-S02-002 | 📊 INFOGRAPHIE | Obésité monogénique vs polygénique — fréquence, pénétrance, traitabilité | Tableau comparatif |<br />
+| MOBO02-S02-003 | 🎬 ANIMATION | Interaction gène-environnement — même génotype dans différents environnements | Animation pédagogique |<br />
+| MOBO02-S02-004 | 📐 SCHÉMA | Épigénétique et programmation fœtale — impact de l'alimentation maternelle | Schéma intergénérationnel |</p>
+<h3 id="section-23-environnement-obesogene-et-microbiote-intestinal">Section 2.3 — Environnement obésogène et microbiote intestinal</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Environnement obésogène</strong> : concept de Swinburn et al. (<em>Lancet</em>, 2011) — l'environnement moderne favorise l'excès calorique et la sédentarité simultanément (alimentation ultra-transformée, taille des portions, marketing alimentaire, urbanisation, motorisation, temps d'écran)</li>
+<li><strong>Aliments ultra-transformés</strong> : classification NOVA (Monteiro et al., <em>Public Health Nutr</em>, 2018) ; les ultra-transformés représenteraient 30-60% des apports caloriques dans les pays industrialisés ; rôle du sucre ajouté, des graisses saturées, des additifs, de la faible densité nutritionnelle</li>
+<li><strong>Sédentarité et inactivité physique</strong> : l'OMS recommande au minimum 150-300 minutes d'activité physique d'intensité modérée par semaine pour les adultes ; la sédentarité est identifiée comme un facteur de risque indépendant de mortalité (Ekelund et al., <em>Lancet</em>, 2016)</li>
+<li><strong>Microbiote intestinal</strong> : les études fondatrices de Turnbaugh et al. (<em>Nature</em>, 2006) ont montré que le microbiote des souris obèses (ob/ob) diffère de celui des souris minces (ratio Firmicutes/Bacteroidetes modifié) ; la transplantation de microbiote de souris obèses à des souris germ-free entraîne une prise de poids ; chez l'humain, des travaux (Le Chatelier et al., <em>Nature</em>, 2013) ont identifié une diminution de la diversité microbienne chez les sujets obèses ; la chirurgie bariatrique modifie profondément le microbiote</li>
+<li><strong>Perturbateurs endocriniens</strong> : concept d'« obésogènes chimiques » — certaines substances (bisphénol A, phtalates, pesticides organochlorés) pourraient favoriser l'adipogenèse et la prise de poids (Heindel et al., <em>Reprod Toxicol</em>, 2017) — rôle encore débattu</li>
+<li><strong>Stress et privation de sommeil</strong> : le stress chronique (↑ cortisol → adipogenèse viscérale) et la privation de sommeil (↓ leptine, ↑ ghréline, insulinorésistance) sont des facteurs contributifs reconnus</li>
+<li><strong>Facteurs socio-économiques</strong> : gradient socio-économique inversé dans les pays développés (obésité plus fréquente dans les classes défavorisées), posant des questions de justice sociale en santé</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO02-S03-001 | 📊 INFOGRAPHIE | Environnement obésogène — facteurs alimentaires, sédentarité, stress, sommeil, perturbateurs | Schéma intégratif |<br />
+| MOBO02-S03-002 | 🎬 ANIMATION | Microbiote et obésité — expériences de Turnbaugh, ratio Firmicutes/Bacteroidetes | Animation biologique |<br />
+| MOBO02-S03-003 | 📐 SCHÉMA | Classification NOVA des aliments — du non transformé à l'ultra-transformé | Schéma en 4 catégories |<br />
+| MOBO02-S03-004 | 📐 SCHÉMA | Perturbateurs endocriniens et adipogenèse — mécanismes d'action | Schéma cellulaire |</p>
+<h3 id="section-24-neurobiologie-de-la-prise-alimentaire-et-circuits-de-recompense">Section 2.4 — Neurobiologie de la prise alimentaire et circuits de récompense</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Double système de régulation</strong> : régulation homéostatique (hypothalamus, faim/satiété physiologiques) vs régulation hédonique (circuits de récompense, plaisir alimentaire) — chez l'obèse, le système hédonique peut dominer le système homéostatique</li>
+<li><strong>Circuits de récompense</strong> : le système dopaminergique mésolimbique (aire tegmentale ventrale → noyau accumbens) est activé par la nourriture palatable (riche en sucre et en graisse) de manière comparable aux substances addictives (Volkow et al., <em>Nat Neurosci</em>, 2005) ; les sujets obèses montrent une diminution de la disponibilité des récepteurs D2 de la dopamine (Wang et al., <em>Lancet</em>, 2001)</li>
+<li><strong>Addiction alimentaire</strong> : concept controversé mais de plus en plus étayé — critères du Yale Food Addiction Scale (YFAS, Gearhardt et al., 2009) ; certains aliments ultra-transformés (très sucrés, très gras) activent les mêmes circuits que les drogues ; la prévalence de l'addiction alimentaire est estimée à 15-25% dans la population obèse</li>
+<li><strong>Rôle du cortex préfrontal</strong> : régulation cognitive de l'appétit, inhibition des impulsions — capacité de contrôle exécutif réduite chez certains sujets obèses</li>
+<li><strong>Implications thérapeutiques</strong> : la compréhension de ces mécanismes explique pourquoi les approches purement volontaristes (« mangez moins, bougez plus ») sont souvent insuffisantes ; rationalise l'utilisation de la pharmacothérapie ciblant ces circuits</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO02-S04-001 | 🎬 ANIMATION | Régulation homéostatique vs hédonique de la prise alimentaire | Animation cérébrale 3D |<br />
+| MOBO02-S04-002 | 📐 SCHÉMA | Circuit de récompense dopaminergique — activation par la nourriture palatable vs substances addictives | Schéma neuroanatomique |<br />
+| MOBO02-S04-003 | 📊 INFOGRAPHIE | Addiction alimentaire — critères YFAS, prévalence, implications cliniques | Infographie synthétique |</p>
+<h3 id="points-cles-du-module-2">Points clés du Module 2</h3>
+<ol>
+<li>La balance énergétique est régulée par l'hypothalamus (neurones NPY/AgRP vs POMC/CART) et des signaux périphériques (leptine, ghréline, GLP-1, insuline)</li>
+<li>L'obèse est en état de résistance à la leptine — la leptinémie est élevée mais l'hypothalamus ne « l'entend » plus</li>
+<li>Le set point pondéral explique la résistance à la perte de poids et les rechutes après régime</li>
+<li>L'héritabilité de l'IMC est estimée entre 40-70%, avec des formes monogéniques rares mais traitables (MC4R, leptine)</li>
+<li>L'environnement obésogène (aliments ultra-transformés, sédentarité) est le principal moteur de la pandémie d'obésité</li>
+<li>Le microbiote intestinal joue un rôle dans la régulation de la masse grasse — sa modification est un des mécanismes de la chirurgie bariatrique</li>
+<li>Les circuits de récompense cérébraux (dopamine) sont activés par les aliments palatables, ce qui peut contribuer au concept d'addiction alimentaire</li>
+<li>La complexité neurobiologique de l'obésité rationalise l'usage des pharmacothérapies modernes et réfute le paradigme simpliste de la « faiblesse de volonté »</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (neurones du noyau arqué, rôle de la leptine, rôle de la ghréline)</li>
+<li>3 QCM Argent (résistance à la leptine, set point, obésité monogénique MC4R)</li>
+<li>2 QCM Or (interaction gène-environnement, microbiote et chirurgie bariatrique)</li>
+<li>1 QCM Diamant (cas clinique : enfant 8 ans, IMC 35, hyperphagie insatiable, parents obèses — raisonnement génétique, indication de bilan moléculaire, options thérapeutiques)</li>
+<li>1 QROC : « Expliquez les mécanismes par lesquels l'organisme résiste à la perte de poids après un régime restrictif. Intégrez les rôles de la leptine, de la ghréline et de la thermogenèse adaptative. »</li>
+</ul>
+<hr />
+<h1 id="module-3-tissu-adipeux-et-inflammation-adipokines-syndrome-metabolique-et-inflammation-chronique">MODULE 3 : TISSU ADIPEUX ET INFLAMMATION — ADIPOKINES, SYNDROME MÉTABOLIQUE ET INFLAMMATION CHRONIQUE</h1>
+<p><strong>Partie</strong> : I — L'Obésité : Fondamentaux médicaux<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-2</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 58 ans, IMC 38, consulte pour une gonarthrose tricompartimentale douloureuse. Son bilan biologique montre : CRP 12 mg/L (normale < 5), glycémie à jeun 1,18 g/L, HbA1c 6,3%, HDL 0,38 g/L, triglycérides 2,4 g/L, tour de taille 108 cm. *Pourquoi cette arthrose est-elle si inflammatoire malgré l'absence de cristaux ? Quel est le lien entre son syndrome métabolique et la dégradation de son cartilage ? L'obésité dégrade-t-elle les articulations uniquement par la surcharge mécanique, ou existe-t-il un mécanisme chimique ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> le tissu adipeux comme un organe endocrine à part entière, sécrétant des adipokines aux effets systémiques (Trayhurn &amp; Beattie, <em>Proc Nutr Soc</em>, 2001)</li>
+<li><strong>Identifier</strong> les principales adipokines pro-inflammatoires (leptine, TNF-α, IL-6, résistine) et anti-inflammatoires (adiponectine) et leur impact articulaire</li>
+<li><strong>Expliquer</strong> le concept d'inflammation chronique de bas grade chez l'obèse et ses conséquences musculosquelettiques</li>
+<li><strong>Définir</strong> le syndrome métabolique selon les critères IDF/AHA/NHLBI harmonisés (Alberti et al., <em>Circulation</em>, 2009) et son impact sur les résultats orthopédiques</li>
+<li><strong>Comprendre</strong> le concept d'arthrose métabolique et le rôle du tissu adipeux infra-patellaire (Hoffa) (Berenbaum et al., <em>Nat Rev Rheumatol</em>, 2013)</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-31-le-tissu-adipeux-un-organe-endocrine">Section 3.1 — Le tissu adipeux : un organe endocrine</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Révolution conceptuelle</strong> : le tissu adipeux était considéré comme un simple réservoir d'énergie ; depuis les travaux fondateurs sur la leptine (Zhang et al., <em>Nature</em>, 1994) et les publications de Trayhurn &amp; Beattie (<em>Proc Nutr Soc</em>, 2001), il est reconnu comme un véritable organe endocrine, paracrine et autocrine</li>
+<li><strong>Types de tissu adipeux</strong> :</li>
+<li><strong>Tissu adipeux blanc (TAB)</strong> : stockage d'énergie sous forme de triglycérides, sécrétion d'adipokines (principal tissu impliqué dans l'obésité)</li>
+<li><strong>Tissu adipeux brun (TABr)</strong> : thermogenèse (protéine découplante UCP1), présent chez le nourrisson et en quantité réduite chez l'adulte (zones supraclaviculaires, paravertébrales) — la stimulation du tissu brun est une piste thérapeutique émergente contre l'obésité</li>
+<li><strong>Tissu adipeux beige</strong> : adipocytes « browning-capable » au sein du TAB, activables par le froid et l'exercice (irisine) — capacité thermogénique inductible</li>
+<li><strong>Adipokines</strong> : plus de 600 facteurs bioactifs sécrétés par le tissu adipeux (Fasshauer &amp; Blüher, <em>Trends Pharmacol Sci</em>, 2015) ; les principaux sont :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Adipokine</th>
+<th>Effet métabolique</th>
+<th>Effet articulaire</th>
+<th>Variation chez l'obèse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leptine</strong></td>
+<td>Satiété, régulation énergétique</td>
+<td>Pro-inflammatoire articulaire, stimule les MMP, favorise la dégradation cartilagineuse</td>
+<td>↑↑↑ (proportionnelle à la masse grasse)</td>
+</tr>
+<tr>
+<td><strong>Adiponectine</strong></td>
+<td>Insulinosensibilisant, anti-inflammatoire</td>
+<td>Controversé (pro ou anti-dégénératif selon le contexte)</td>
+<td>↓↓ (diminuée)</td>
+</tr>
+<tr>
+<td><strong>TNF-α</strong></td>
+<td>Pro-inflammatoire, insulinorésistance</td>
+<td>Stimulation des MMP, inhibition de la synthèse de collagène II et protéoglycanes</td>
+<td>↑↑</td>
+</tr>
+<tr>
+<td><strong>IL-6</strong></td>
+<td>Pro-inflammatoire, hépatotoxique</td>
+<td>Stimulation des MMP, promotion de la synovite</td>
+<td>↑↑</td>
+</tr>
+<tr>
+<td><strong>Résistine</strong></td>
+<td>Insulinorésistance</td>
+<td>Pro-inflammatoire articulaire, stimulation de la dégradation cartilagineuse</td>
+<td>↑</td>
+</tr>
+<tr>
+<td><strong>Visfatine</strong></td>
+<td>Rôle enzymatique (NAMPT)</td>
+<td>Pro-inflammatoire, stimule la production de PGE2 dans les chondrocytes</td>
+<td>↑</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Infiltration macrophagique</strong> : dans l'obésité, les macrophages infiltrent le tissu adipeux et constituent un contingent cellulaire prépondérant dans la sécrétion de cytokines pro-inflammatoires (Weisberg et al., <em>J Clin Invest</em>, 2003) — polarisation M1 (pro-inflammatoire) vs M2 (anti-inflammatoire) ; chez l'obèse, prédominance M1</li>
+<li><strong>Hypoxie du tissu adipeux</strong> : l'hypertrophie des adipocytes conduit à une hypoxie relative (distance accrue entre les adipocytes et les capillaires), activant HIF-1α et amplifiant l'inflammation</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO03-S01-001 | 🎬 ANIMATION | Le tissu adipeux comme organe endocrine — sécrétion d'adipokines, effets systémiques | Animation fondamentale |<br />
+| MOBO03-S01-002 | 📐 SCHÉMA | Tissu adipeux blanc vs brun vs beige — morphologie, fonction, UCP1 | Schéma comparatif |<br />
+| MOBO03-S01-003 | 📊 INFOGRAPHIE | Tableau des principales adipokines — effet métabolique, articulaire, variation chez l'obèse | Tableau synthétique |<br />
+| MOBO03-S01-004 | 🎬 ANIMATION | Infiltration macrophagique du tissu adipeux — polarisation M1/M2, production de cytokines | Animation cellulaire |</p>
+<h3 id="section-32-syndrome-metabolique-definitions-et-impact-orthopedique">Section 3.2 — Syndrome métabolique : définitions et impact orthopédique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Définition harmonisée</strong> (Alberti et al., <em>Circulation</em>, 2009 — consensus IDF/AHA/NHLBI) : présence de ≥ 3 critères parmi :</li>
+<li>Tour de taille élevé (seuils ethnospécifiques : ≥ 94 cm homme européen, ≥ 80 cm femme européenne)</li>
+<li>Triglycérides ≥ 1,50 g/L (ou traitement en cours)</li>
+<li>HDL-cholestérol &lt; 0,40 g/L (homme) ou &lt; 0,50 g/L (femme) (ou traitement en cours)</li>
+<li>Pression artérielle ≥ 130/85 mmHg (ou traitement en cours)</li>
+<li>Glycémie à jeun ≥ 1,00 g/L (ou diabète de type 2 connu)</li>
+<li><strong>Prévalence</strong> : estimée à environ 20-25% de la population adulte française, et à environ 60-75% des patients obèses (IMC ≥ 30)</li>
+<li><strong>Insulinorésistance</strong> : mécanisme central du syndrome métabolique — les adipokines pro-inflammatoires (TNF-α, IL-6) altèrent la signalisation de l'insuline dans les muscles, le foie et le tissu adipeux ; conséquence : hyperinsulinémie compensatoire → épuisement pancréatique → diabète de type 2</li>
+<li><strong>Impact orthopédique du syndrome métabolique</strong> :</li>
+<li>Arthrose accélérée : effet indépendant de l'IMC — le syndrome métabolique est un facteur de risque indépendant d'arthrose du genou (Zhuo et al., <em>Clin Rheumatol</em>, 2012)</li>
+<li>Complications chirurgicales : les données des registres suggèrent que le diabète est associé à un risque accru d'infection du site opératoire après arthroplastie (Marchant et al., <em>Clin Orthop Relat Res</em>, 2009) ; l'HTA augmente le risque hémorragique ; la dyslipidémie peut altérer la cicatrisation microvasculaire</li>
+<li>Stéatose hépatique : perturbation du métabolisme des médicaments (anesthésiques, anticoagulants), risque hémorragique accru</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO03-S02-001 | 📊 INFOGRAPHIE | Critères du syndrome métabolique — définition harmonisée IDF/AHA/NHLBI | Schéma en 5 critères |<br />
+| MOBO03-S02-002 | 🎬 ANIMATION | Insulinorésistance — mécanisme, rôle des adipokines, cercle vicieux | Animation métabolique |<br />
+| MOBO03-S02-003 | 📐 SCHÉMA | Impact du syndrome métabolique sur les résultats orthopédiques — infection, arthrose, cicatrisation | Schéma en réseau |</p>
+<h3 id="section-33-inflammation-chronique-de-bas-grade-et-arthrose-metabolique">Section 3.3 — Inflammation chronique de bas grade et arthrose métabolique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Inflammation chronique de bas grade</strong> : chez l'obèse, les taux circulants de CRP, IL-6, TNF-α et fibrinogène sont chroniquement élevés (2-3 fois la normale) — ce n'est pas une inflammation aiguë mais un état pro-inflammatoire permanent, systémique, contribuant à la dégradation cartilagineuse et aux complications chirurgicales</li>
+<li><strong>Concept d'arthrose métabolique</strong> (Berenbaum et al., <em>Nat Rev Rheumatol</em>, 2013) : l'arthrose de l'obèse n'est pas uniquement mécanique — les adipokines circulantes (leptine, résistine, visfatine), l'hyperglycémie et la dyslipidémie contribuent directement à la dégradation du cartilage par des mécanismes biologiques :</li>
+<li>La leptine stimule directement la production de MMP-1 et MMP-13 par les chondrocytes</li>
+<li>L'hyperglycémie favorise la formation de produits de glycation avancée (AGEs) dans le cartilage, altérant les propriétés mécaniques du collagène II</li>
+<li>Le cholestérol et ses oxystérols activent les voies inflammatoires dans les chondrocytes</li>
+<li>L'arthrose des mains chez l'obèse (articulations non portantes) est un argument fort en faveur de la composante métabolique</li>
+<li><strong>Tissu adipeux infra-patellaire (graisse de Hoffa)</strong> : réservoir local d'adipokines aux propriétés pro-inflammatoires, situé en contact direct avec le cartilage articulaire du genou (Clockaerts et al., <em>Osteoarthritis Cartilage</em>, 2010) ; son inflammation contribue à la synovite et à la chondrolyse</li>
+<li><strong>Implications cliniques</strong> : la perte de poids (que ce soit par régime ou par chirurgie bariatrique) est associée dans les études observationnelles à une diminution des marqueurs inflammatoires et une amélioration des symptômes arthrosiques (Richette et al., <em>Ann Rheum Dis</em>, 2011)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO03-S03-001 | 🎬 ANIMATION | Arthrose métabolique — adipokines, AGEs, action sur les chondrocytes, dégradation cartilagineuse | Animation clé |<br />
+| MOBO03-S03-002 | 📐 SCHÉMA | Graisse de Hoffa — localisation anatomique, sécrétion d'adipokines, impact sur le cartilage | Schéma anatomique |<br />
+| MOBO03-S03-003 | 📊 INFOGRAPHIE | Arthrose mécanique vs métabolique — arguments, mécanismes, implications thérapeutiques | Tableau comparatif |<br />
+| MOBO03-S03-004 | 📐 SCHÉMA | Effet de la leptine et de l'hyperglycémie sur les chondrocytes — voies de signalisation | Schéma moléculaire |</p>
+<h3 id="points-cles-du-module-3">Points clés du Module 3</h3>
+<ol>
+<li>Le tissu adipeux est un organe endocrine sécrétant plus de 600 facteurs bioactifs — ce n'est plus un simple réservoir d'énergie</li>
+<li>La leptine, en plus de son rôle dans la satiété, a des effets articulaires directs pro-inflammatoires et pro-dégradatifs</li>
+<li>L'infiltration macrophagique du tissu adipeux (polarisation M1) amplifie l'inflammation systémique de l'obèse</li>
+<li>Le syndrome métabolique (≥ 3 critères IDF/AHA) est un facteur de risque indépendant de complications orthopédiques</li>
+<li>L'arthrose de l'obèse est autant métabolique que mécanique — les adipokines dégradent le cartilage même des articulations non portantes</li>
+<li>La graisse de Hoffa est un réservoir local d'adipokines pro-inflammatoires en contact direct avec le cartilage du genou</li>
+<li>L'hyperglycémie chronique altère le cartilage via les produits de glycation avancée (AGEs)</li>
+<li>La perte de poids améliore les marqueurs inflammatoires et les symptômes arthrosiques</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (principales adipokines, critères du syndrome métabolique, tissu adipeux blanc vs brun)</li>
+<li>3 QCM Argent (rôle articulaire de la leptine, arthrose métabolique, insulinorésistance)</li>
+<li>2 QCM Or (impact du syndrome métabolique sur les résultats arthroplastiques, argument des mains pour l'arthrose métabolique)</li>
+<li>1 QCM Diamant (cas clinique : patiente obèse, arthrose digitale bilatérale + gonarthrose, syndrome métabolique complet — raisonnement physiopathologique intégré)</li>
+<li>1 QROC : « Comment le tissu adipeux contribue-t-il directement à la dégradation du cartilage articulaire, indépendamment de la surcharge mécanique ? »</li>
+</ul>
+<hr />
+<h1 id="module-4-comorbidites-de-lobesite-cardiovasculaires-respiratoires-metaboliques-psychologiques">MODULE 4 : COMORBIDITÉS DE L'OBÉSITÉ — CARDIOVASCULAIRES, RESPIRATOIRES, MÉTABOLIQUES, PSYCHOLOGIQUES</h1>
+<p><strong>Partie</strong> : I — L'Obésité : Fondamentaux médicaux<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-3</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 61 ans, IMC 44, est programmé pour une PTG droite. Son anesthésiste note dans le bilan préopératoire : HTA sous trithérapie, DT2 sous metformine + semaglutide, SAOS sévère (IAH 42/h, sous CPAP nocturne), dyslipidémie mixte sous statine, NASH confirmée à la biopsie, TVP idiopathique il y a 5 ans. Son score ASA est 3. *Comment chacune de ces comorbidités impacte-t-elle le risque opératoire de ce patient ? Quelles sont les priorités d'optimisation préopératoire ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Lister</strong> les principales comorbidités de l'obésité classées par système (cardiovasculaire, respiratoire, métabolique, hépatique, rénal, psychologique, cancérologique)</li>
+<li><strong>Évaluer</strong> l'impact de chaque comorbidité sur le risque opératoire en chirurgie orthopédique</li>
+<li><strong>Appliquer</strong> les scores de risque préopératoire (ASA, STOP-BANG pour le SAOS, OS-MRS pour la chirurgie bariatrique)</li>
+<li><strong>Identifier</strong> le SAOS comme facteur de risque majeur en chirurgie orthopédique et connaître les stratégies de dépistage et de gestion</li>
+<li><strong>Comprendre</strong> la morbi-mortalité de l'obésité et son impact sur l'espérance de vie</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-41-comorbidites-cardiovasculaires">Section 4.1 — Comorbidités cardiovasculaires</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Hypertension artérielle (HTA)</strong> : présente chez environ 50-60% des patients obèses (données Framingham) ; mécanismes : hyperactivation sympathique, rétention hydrosodée, hyperinsulinémie, compression rénale par la graisse périnéphrique ; l'obésité est identifiée comme un facteur de risque majeur d'HTA résistante (≥ 3 antihypertenseurs à dose optimale) ; impact opératoire : saignement peropératoire accru, instabilité hémodynamique, risque d'AVC périopératoire</li>
+<li><strong>Insuffisance cardiaque</strong> : l'obésité augmente le risque d'insuffisance cardiaque en raison de l'augmentation du volume circulant, de l'hypertrophie ventriculaire gauche et de la cardiomyopathie de l'obèse (Kenchaiah et al., <em>N Engl J Med</em>, 2002) ; évaluation préopératoire : échocardiographie si doute clinique (dyspnée, œdèmes), BNP ou NT-proBNP</li>
+<li><strong>Maladie coronaire</strong> : risque accru chez l'obèse ; dépistage préopératoire selon le score de Lee révisé et les recommandations ESC/ESA 2022</li>
+<li><strong>Fibrillation atriale (FA)</strong> : association avec l'obésité, le SAOS et la dilatation de l'oreillette gauche ; impact sur l'anticoagulation périopératoire</li>
+<li><strong>Maladie veineuse thromboembolique (MVTE)</strong> : l'obésité est un facteur de risque indépendant de TVP/EP (OR environ 2-3) ; stase veineuse des membres inférieurs, état pro-thrombotique (fibrinogène ↑, PAI-1 ↑, facteur VIII ↑), immobilisation postopératoire prolongée chez l'obèse ; thromboprophylaxie renforcée indispensable (cf. Module 21)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO04-S01-001 | 📊 INFOGRAPHIE | Comorbidités cardiovasculaires de l'obésité — prévalence, mécanismes, impact opératoire | Schéma en réseau |<br />
+| MOBO04-S01-002 | 📐 SCHÉMA | Physiopathologie de l'HTA chez l'obèse — 4 mécanismes principaux | Schéma intégratif |<br />
+| MOBO04-S01-003 | 📐 SCHÉMA | Maladie veineuse thromboembolique chez l'obèse — triade de Virchow aggravée | Schéma physiopathologique |</p>
+<h3 id="section-42-comorbidites-respiratoires">Section 4.2 — Comorbidités respiratoires</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Syndrome d'apnées obstructives du sommeil (SAOS)</strong> : prévalence estimée à 40-90% chez les patients obèses morbides (Punjabi, <em>Proc Am Thorac Soc</em>, 2008) ; mécanisme : infiltration graisseuse des parois pharyngées, réduction du calibre des voies aériennes supérieures ; dépistage par questionnaire STOP-BANG (≥ 5 = haut risque) et confirmation par polysomnographie</li>
+<li><strong>Impact opératoire du SAOS</strong> : risque accru d'intubation difficile, de dépression respiratoire postopératoire (sensibilité accrue aux opioïdes), de désaturation, de séjour prolongé en soins intensifs</li>
+<li><strong>Gestion périopératoire</strong> : le patient doit être appareillé par CPAP préopératoire (idéalement ≥ 2 semaines avant), maintien de la CPAP en postopératoire, réduction des opioïdes, surveillance en unité adaptée</li>
+<li><strong>Syndrome obésité-hypoventilation (SOH, syndrome de Pickwick)</strong> : combinaison d'obésité (IMC ≥ 30) et d'hypercapnie diurne (PaCO2 &gt; 45 mmHg) en l'absence d'autre cause ; forme sévère pouvant conduire à l'insuffisance respiratoire chronique et au cœur pulmonaire ; la VNI (ventilation non invasive) est le traitement de référence</li>
+<li><strong>Compliance pulmonaire diminuée</strong> : la surcharge pondérale thoraco-abdominale réduit la compliance pulmonaire et la capacité résiduelle fonctionnelle (CRF), créant des atélectasies basales ; en décubitus dorsal (position opératoire), ces anomalies sont amplifiées</li>
+<li><strong>Asthme et obésité</strong> : association établie — phénotype asthmatique spécifique de l'obèse (moins d'éosinophilie, plus de résistance aux corticoïdes inhalés, rôle de l'inflammation systémique)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO04-S02-001 | 🎬 ANIMATION | SAOS — infiltration graisseuse pharyngée, apnées, conséquences systémiques | Animation anatomique 3D |<br />
+| MOBO04-S02-002 | 📊 INFOGRAPHIE | Score STOP-BANG — items, interprétation, conduite à tenir | Infographie pratique |<br />
+| MOBO04-S02-003 | 📐 SCHÉMA | Compliance pulmonaire chez l'obèse — position debout vs décubitus dorsal, atélectasies | Schéma respiratoire |</p>
+<h3 id="section-43-comorbidites-metaboliques-et-hepatiques">Section 4.3 — Comorbidités métaboliques et hépatiques</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Diabète de type 2 (DT2)</strong> : l'obésité est le facteur de risque modifiable le plus important du DT2 — environ 80-90% des patients diabétiques de type 2 sont en surpoids ou obèses ; lien physiopathologique via l'insulinorésistance induite par les adipokines (cf. Module 3) ; impact opératoire : retard de cicatrisation, risque infectieux accru (ISO ≥ 2× si HbA1c &gt; 7-8%), neuropathie (douleur chronique, ulcères), micro/macroangiopathie ; la cible préopératoire est une HbA1c &lt; 8% (idéalement &lt; 7%) selon les recommandations NICE et SFAR</li>
+<li><strong>Dyslipidémie</strong> : hypertriglycéridémie, HDL bas, LDL petites et denses ; athérosclérose accélérée ; impact sur la cicatrisation microvasculaire</li>
+<li><strong>Stéatose hépatique non alcoolique (NAFLD/MAFLD)</strong> et stéatohépatite non alcoolique (NASH) : prévalence estimée à 75-90% chez les obèses morbides ; impact : perturbation du métabolisme hépatique des médicaments (anesthésiques, anticoagulants), risque de coagulopathie si insuffisance hépatocellulaire, screening préopératoire (bilan hépatique, échographie, FibroScan® si nécessaire)</li>
+<li><strong>Hyperuricémie et goutte</strong> : prévalence augmentée chez l'obèse, risque d'arthrite goutteuse postopératoire, confusion diagnostique avec l'infection du site opératoire</li>
+<li><strong>Néphropathie</strong> : glomérulosclérose liée à l'obésité, adaptation posologique des médicaments à élimination rénale</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO04-S03-001 | 📊 INFOGRAPHIE | Comorbidités métaboliques — DT2, dyslipidémie, NASH, hyperuricémie — prévalence et impact opératoire | Tableau synthétique |<br />
+| MOBO04-S03-002 | 📐 SCHÉMA | Cercle vicieux obésité-insulinorésistance-DT2 — rôle des adipokines | Schéma en cercle |<br />
+| MOBO04-S03-003 | 📐 SCHÉMA | NAFLD/NASH — spectre de la maladie hépatique chez l'obèse | Schéma progressif |</p>
+<h3 id="section-44-comorbidites-psychologiques-et-qualite-de-vie">Section 4.4 — Comorbidités psychologiques et qualité de vie</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Dépression</strong> : les méta-analyses montrent une association bidirectionnelle entre obésité et dépression (Luppino et al., <em>Arch Gen Psychiatry</em>, 2010) ; prévalence estimée à 20-30% chez les patients obèses consultant en chirurgie ; impact opératoire : compliance thérapeutique réduite, rééducation compromise, douleur chronique postopératoire, satisfaction chirurgicale moindre</li>
+<li><strong>Anxiété</strong> : prévalence augmentée, peur de la chirurgie, catastrophisme</li>
+<li><strong>Troubles du comportement alimentaire (TCA)</strong> : binge eating disorder (hyperphagie boulimique) présent chez environ 20-30% des candidats à la chirurgie bariatrique (de Zwaan, <em>Int J Obes</em>, 2001) ; grignotage nocturne (night eating syndrome) ; impact sur les résultats de la chirurgie bariatrique et sur le parcours pré-arthroplastie</li>
+<li><strong>Stigmatisation liée au poids (<em>weight bias</em>)</strong> : discrimination sociale et médicale ; impact sur l'accès aux soins, la relation médecin-patient, l'adhésion thérapeutique ; le praticien doit être conscient de ses propres biais (cf. Module 25)</li>
+<li><strong>Qualité de vie</strong> : impact majeur sur toutes les dimensions (physique, psychologique, sociale) — scores SF-36, EQ-5D significativement altérés ; la chirurgie (bariatrique et/ou orthopédique) améliore la qualité de vie</li>
+<li><strong>Impact opératoire</strong> : l'évaluation psychologique préopératoire est recommandée (et obligatoire avant chirurgie bariatrique) ; prise en charge multidisciplinaire incluant psychologue/psychiatre</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO04-S04-001 | 📊 INFOGRAPHIE | Comorbidités psychologiques de l'obésité — dépression, anxiété, TCA, stigmatisation | Infographie transversale |<br />
+| MOBO04-S04-002 | 📐 SCHÉMA | Boucle bidirectionnelle obésité-dépression — mécanismes biologiques et psychologiques | Schéma circulaire |<br />
+| MOBO04-S04-003 | 📐 SCHÉMA | Weight bias en médecine — manifestations, conséquences, stratégies de débiaisement | Schéma éducatif |</p>
+<h3 id="section-45-autres-comorbidites-et-mortalite">Section 4.5 — Autres comorbidités et mortalité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Cancer</strong> : l'obésité est un facteur de risque reconnu pour au moins 13 types de cancers (Lauby-Secretan et al., <em>N Engl J Med</em>, 2016, IARC Working Group) — côlon, sein post-ménopausique, endomètre, rein, foie, pancréas, etc. ; impact sur la survie et les métastases osseuses</li>
+<li><strong>Insuffisance veineuse et lymphœdème</strong> : impact sur la cicatrisation des incisions chirurgicales des membres inférieurs</li>
+<li><strong>Fertilité et endocrinologie</strong> : syndrome des ovaires polykystiques (SOPK), hypogonadisme masculin (conversion périphérique des androgènes en estrogènes par l'aromatase adipocytaire)</li>
+<li><strong>Reflux gastro-œsophagien (RGO)</strong> : très fréquent chez l'obèse, risque d'inhalation en périopératoire (induction à séquence rapide, protection des voies aériennes)</li>
+<li><strong>Mortalité</strong> : les méta-analyses de grande ampleur (Global BMI Mortality Collaboration, <em>Lancet</em>, 2016) montrent une relation en J entre l'IMC et la mortalité toutes causes, avec un risque significativement accru à partir d'un IMC ≥ 30 ; la mortalité augmente d'environ 30% par 5 unités d'IMC au-dessus de 25</li>
+<li><strong>Paradoxe de l'obésité en chirurgie</strong> : certaines études observationnelles ont rapporté une mortalité postopératoire non significativement différente, voire paradoxalement moindre chez les patients en surpoids (IMC 25-30) comparés aux patients de poids normal, dans certaines situations chirurgicales (Mullen et al., <em>Ann Surg</em>, 2009) — ce phénomène, encore mal compris, pourrait être lié à des biais de sélection (patients obèses opérés étant en meilleur état général) et ne doit pas être interprété comme un bénéfice de l'obésité</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO04-S05-001 | 📊 INFOGRAPHIE | Comorbidités de l'obésité — vue systémique (cardiovasculaire, respiratoire, métabolique, psychologique, cancérologique) | Schéma du corps humain |<br />
+| MOBO04-S05-002 | 📐 SCHÉMA | Courbe en J — IMC vs mortalité toutes causes (Global BMI Collaboration) | Graphique adapté |<br />
+| MOBO04-S05-003 | 📐 SCHÉMA | Paradoxe de l'obésité — explications possibles, biais de sélection | Schéma analytique |</p>
+<h3 id="points-cles-du-module-4">Points clés du Module 4</h3>
+<ol>
+<li>L'obésité est associée à de multiples comorbidités cardiovasculaires (HTA, IC, MVTE), respiratoires (SAOS, SOH), métaboliques (DT2, NASH, dyslipidémie) et psychologiques (dépression, TCA)</li>
+<li>Le SAOS touche 40-90% des obèses morbides — dépistage systématique par STOP-BANG avant toute chirurgie</li>
+<li>Le diabète est un facteur majeur de risque infectieux postopératoire — cible HbA1c &lt; 8% en préopératoire</li>
+<li>La NASH altère le métabolisme hépatique des médicaments périopératoires</li>
+<li>La dépression et les TCA impactent la compliance et les résultats chirurgicaux</li>
+<li>La stigmatisation liée au poids affecte l'accès aux soins — le praticien doit être conscient de ses propres biais</li>
+<li>L'obésité est un facteur de risque reconnu pour 13 types de cancers</li>
+<li>Le « paradoxe de l'obésité » en chirurgie est probablement lié à des biais de sélection et ne doit pas minimiser l'impact de l'obésité</li>
+</ol>
+<h3 id="auto-evaluation_3">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (critères STOP-BANG, cible HbA1c préopératoire, paradoxe de l'obésité)</li>
+<li>3 QCM Argent (SAOS et risque opératoire, NASH et pharmacocinétique, TCA et chirurgie)</li>
+<li>2 QCM Or (évaluation multisystémique préopératoire, comorbidités cardiovasculaires et décision chirurgicale)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 48, SAOS sévère, DT2 déséquilibré, NASH, programmé pour PTG — planification complète de l'optimisation préopératoire)</li>
+<li>1 QROC : « Décrivez les 5 comorbidités les plus impactantes pour le risque opératoire en chirurgie orthopédique chez un patient obèse morbide et les stratégies d'optimisation correspondantes. »</li>
+</ul>
+<hr />
+<h1 id="module-5-evaluation-globale-du-patient-obese-bilan-clinique-biologique-et-fonctionnel">MODULE 5 : ÉVALUATION GLOBALE DU PATIENT OBÈSE — BILAN CLINIQUE, BIOLOGIQUE ET FONCTIONNEL</h1>
+<p><strong>Partie</strong> : I — L'Obésité : Fondamentaux médicaux<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-4</p>
+<h2 id="accroche-clinique_4">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 56 ans, IMC 41, est adressé pour une coxarthrose gauche douloureuse. Avant de programmer une PTH, vous devez réaliser une évaluation préopératoire complète. *Comment organiser le bilan d'un patient obèse morbide avant une chirurgie orthopédique élective ? Quels sont les examens indispensables ? À qui faut-il l'adresser ? Existe-t-il un protocole d'optimisation standardisé ?*</div>
+
+<h2 id="objectifs-dapprentissage_4">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> un examen clinique adapté au patient obèse (difficultés d'examen, repères modifiés)</li>
+<li><strong>Prescrire</strong> le bilan biologique préopératoire complet (métabolique, nutritionnel, inflammatoire, coagulation)</li>
+<li><strong>Appliquer</strong> les scores de risque opératoire (ASA, STOP-BANG, score de Caprini, Lee révisé)</li>
+<li><strong>Organiser</strong> le parcours d'optimisation préopératoire multidisciplinaire</li>
+<li><strong>Évaluer</strong> l'état fonctionnel et les attentes du patient obèse (scores WOMAC, KSS, HHS, SF-36)</li>
+</ol>
+<h2 id="structure-du-contenu_4">Structure du contenu</h2>
+<h3 id="section-51-examen-clinique-du-patient-obese-difficultes-et-adaptations">Section 5.1 — Examen clinique du patient obèse : difficultés et adaptations</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Difficultés de l'examen clinique</strong> : repères osseux masqués par le pannicule adipeux (épines iliaques, grand trochanter, interligne articulaire du genou), palpation profonde impossible, auscultation diminuée (paroi thoracique épaisse), mesure de la TA nécessitant un brassard adapté (brassard bariatrique ou mesure au poignet)</li>
+<li><strong>Examen articulaire</strong> : mobilité articulaire possiblement limitée par les tissus mous (flessum de genou, limitation de la rotation interne de hanche par le pannicule abdominal) — distinguer la limitation articulaire mécanique (arthrose) de la limitation par obstacle des tissus mous</li>
+<li><strong>Évaluation de la marche</strong> : analyse du schéma de marche (élargissement du polygone de sustentation, marche en rotation externe, boiterie de Trendelenburg chez l'obèse), test de marche de 6 minutes (distance réduite, désaturation possible)</li>
+<li><strong>Évaluation de la peau</strong> : intertrigo (plis cutanés), dermite, colonisation bactérienne ou fongique des zones de macération — ces zones correspondent souvent au trajet des incisions chirurgicales (genou, hanche), augmentant le risque infectieux</li>
+<li><strong>Imagerie</strong> : qualité réduite des radiographies (surexposition nécessaire, pénétration des rayons insuffisante chez le super-obèse), scanner/IRM avec limitations de poids/diamètre de la table (seuils souvent entre 150 et 200 kg, vérifier la capacité de l'appareil)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO05-S01-001 | 📷 IMAGE | Intertrigo des plis cutanés chez l'obèse — zone d'incision de PTG | Photo clinique annotée |<br />
+| MOBO05-S01-002 | 📐 SCHÉMA | Difficultés de l'examen clinique chez l'obèse — repères masqués, brassard adapté | Schéma pratique |<br />
+| MOBO05-S01-003 | 🎬 ANIMATION | Limitation de mouvement par obstacle des tissus mous vs limitation articulaire mécanique | Animation comparative |</p>
+<h3 id="section-52-bilan-biologique-preoperatoire">Section 5.2 — Bilan biologique préopératoire</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Bilan</th>
+<th>Examens</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Métabolique</strong></td>
+<td>Glycémie à jeun, HbA1c, bilan lipidique complet (LDL, HDL, TG), TSH</td>
+<td>Dépistage DT2, dyslipidémie, hypothyroïdie</td>
+</tr>
+<tr>
+<td><strong>Nutritionnel</strong></td>
+<td>Albumine, pré-albumine, fer, ferritine, coefficient de saturation de la transferrine, vitamine D (25-OH), vitamine B12, folates, calcium, phosphore</td>
+<td>Dépistage des carences (fréquentes chez l'obèse, surtout post-bariatrique)</td>
+</tr>
+<tr>
+<td><strong>Inflammatoire</strong></td>
+<td>CRP, VS</td>
+<td>Niveau d'inflammation basale (attention à l'interprétation chez l'obèse — CRP chroniquement élevée)</td>
+</tr>
+<tr>
+<td><strong>Hépatique</strong></td>
+<td>ASAT, ALAT, γGT, phosphatases alcalines, bilirubine, TP/INR</td>
+<td>Dépistage NASH, insuffisance hépatique subclinique</td>
+</tr>
+<tr>
+<td><strong>Rénal</strong></td>
+<td>Créatinine, DFG estimé (CKD-EPI), protéinurie/albuminurie</td>
+<td>Néphropathie de l'obèse, adaptation posologique</td>
+</tr>
+<tr>
+<td><strong>Hématologique</strong></td>
+<td>NFS, TP, TCA, fibrinogène</td>
+<td>Évaluation coagulation, anémie</td>
+</tr>
+<tr>
+<td><strong>Cardiaque</strong></td>
+<td>BNP ou NT-proBNP (si signes cardiaques)</td>
+<td>Dépistage insuffisance cardiaque subclinique</td>
+</tr>
+<tr>
+<td><strong>Uricémie</strong></td>
+<td>Acide urique</td>
+<td>Risque de goutte postopératoire</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Dépistage infectieux préopératoire</strong> : portage nasal de <em>Staphylococcus aureus</em> (écouvillon nasal), décontamination par mupirocine si positif — l'obésité augmente le taux de portage (environ 25-30%)</li>
+<li><strong>Hémoglobine cible</strong> : optimiser l'hémoglobine préopératoire (cible &gt; 12 g/dL femme, &gt; 13 g/dL homme) — le patient obèse a un risque majoré d'anémie ferriprive (inflammation chronique, carences nutritionnelles)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO05-S02-001 | 📊 INFOGRAPHIE | Bilan biologique préopératoire du patient obèse — tableau complet avec justifications | Tableau de référence |<br />
+| MOBO05-S02-002 | 📐 SCHÉMA | Algorithme d'interprétation de la CRP chez l'obèse — basale vs infection | Algorithme clinique |</p>
+<h3 id="section-53-scores-de-risque-et-consultation-danesthesie">Section 5.3 — Scores de risque et consultation d'anesthésie</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Score ASA</strong> : classification I à V ; la majorité des patients obèses morbides sont ASA 3 (pathologie systémique sévère)</li>
+<li><strong>Score STOP-BANG</strong> : dépistage du SAOS — tout score ≥ 3 est considéré comme intermédiaire, ≥ 5 est un risque élevé ; polysomnographie si score ≥ 5 et certains profils cliniques</li>
+<li><strong>Score de Caprini</strong> : évaluation du risque thromboembolique — l'obésité seule apporte 2 points ; les patients obèses opérés d'arthroplastie cumulent souvent ≥ 7 points (risque très élevé)</li>
+<li><strong>Score de Lee révisé</strong> : risque cardiaque périopératoire — indications d'examens complémentaires cardiologiques</li>
+<li><strong>Score OS-MRS</strong> (<em>Obesity Surgery Mortality Risk Score</em>) : développé pour la chirurgie bariatrique mais utile en chirurgie élective chez l'obèse — 5 variables (âge ≥ 45 ans, IMC ≥ 50, homme, HTA, risque EP élevé)</li>
+<li><strong>Consultation d'anesthésie</strong> : anticipation de l'intubation difficile (Mallampati, score de Cormack-Lehane), évaluation de la ventilation (compliance, CRF), pharmacocinétique adaptée, choix des techniques d'ALR</li>
+<li><strong>Consultation multidisciplinaire</strong> : endocrinologue/diabétologue (si DT2), nutritionniste (évaluation carences, programme d'amaigrissement), pneumologue (si SAOS), cardiologue (si cardiopathie), psychologue (si TCA, dépression)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO05-S03-001 | 📊 INFOGRAPHIE | Comparaison des scores de risque — ASA, STOP-BANG, Caprini, Lee, OS-MRS | Tableau comparatif |<br />
+| MOBO05-S03-002 | 📐 SCHÉMA | Parcours de consultation multidisciplinaire du patient obèse avant chirurgie orthopédique | Algorithme organisationnel |<br />
+| MOBO05-S03-003 | 📐 SCHÉMA | Évaluation de l'intubation difficile chez l'obèse — Mallampati, Cormack-Lehane, morphologie cervicale | Schéma pratique |</p>
+<h3 id="section-54-programme-doptimisation-preoperatoire">Section 5.4 — Programme d'optimisation préopératoire</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Protocole d'optimisation pondérale</strong> : dans l'idéal, perte de poids d'au minimum 5-10% de la masse corporelle avant chirurgie élective (arthroplastie) ; les données observationnelles suggèrent une réduction cliniquement significative des complications (Inacio et al., <em>JBJS Am</em>, 2014) ; cette recommandation doit être mise en balance avec le risque de retarder excessivement la chirurgie et les données récentes remettant en cause l'exigence d'un seuil d'IMC strict (cf. Module 25)</li>
+<li><strong>Programme nutritionnel préopératoire</strong> : correction des carences (fer, vitamine D, B12, protéines), régime protéiné si perte de poids rapide préchirurgicale, collaboration diététicien</li>
+<li><strong>Optimisation glycémique</strong> : cible HbA1c &lt; 8% (idéalement &lt; 7%) ; adaptation du traitement antidiabétique ; considérer les agonistes GLP-1 qui procurent une perte de poids significative (cf. Module 8)</li>
+<li><strong>Reconditionnement physique préopératoire (prehabilitation)</strong> : programme d'exercices supervisés (vélo en décharge, aquagym, renforcement musculaire adapté) pour améliorer la capacité fonctionnelle et la récupération postopératoire</li>
+<li><strong>Décolonisation nasale</strong> : mupirocine nasale + douche à la chlorhexidine en préopératoire</li>
+<li><strong>Organisation logistique</strong> : vérifier la capacité de la table opératoire (tables bariatriques jusqu'à 350-450 kg), la taille des instruments (rétracteurs longs, champs opératoires bariatriques), la disponibilité du matériel d'imagerie adapté (fluoroscope à haute pénétration)</li>
+<li><strong>Chronologie</strong> : présenter le programme d'optimisation de manière réaliste et bienveillante, en évitant la stigmatisation ; impliquer le patient dans la décision</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO05-S04-001 | 📐 SCHÉMA | Programme d'optimisation préopératoire — chronologie (J-90 à J-0) | Timeline opératoire |<br />
+| MOBO05-S04-002 | 📊 INFOGRAPHIE | Checklist préopératoire du patient obèse — bilan, consultations, logistique | Checklist clinique |<br />
+| MOBO05-S04-003 | 🎬 ANIMATION | Simulation ObesSim© — impact de l'optimisation préopératoire sur le risque de complications | Simulation interactive |</p>
+<h3 id="points-cles-du-module-5">Points clés du Module 5</h3>
+<ol>
+<li>L'examen clinique de l'obèse est difficile (repères masqués, palpation limitée) — adapter les techniques</li>
+<li>Le bilan préopératoire doit être exhaustif : métabolique, nutritionnel, inflammatoire, hépatique, cardiaque</li>
+<li>La CRP est chroniquement élevée chez l'obèse — ne pas l'interpréter comme une infection sans contexte</li>
+<li>Le dépistage STOP-BANG du SAOS est obligatoire avant toute chirurgie chez l'obèse</li>
+<li>L'optimisation pondérale préopératoire (cible 5-10% de perte) est souhaitable mais ne doit pas retarder excessivement la prise en charge</li>
+<li>La prehabilitation (reconditionnement physique préopératoire) améliore la récupération</li>
+<li>L'organisation logistique (table bariatrique, instruments, imagerie) doit être anticipée</li>
+<li>L'approche multidisciplinaire (anesthésiste, nutritionniste, diabétologue, psychologue) est indispensable</li>
+</ol>
+<h3 id="auto-evaluation_4">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (brassard adapté, bilan biologique, score ASA)</li>
+<li>3 QCM Argent (score STOP-BANG, colonisation staphylococcique, limitation mécanique vs tissus mous)</li>
+<li>2 QCM Or (programme d'optimisation préopératoire, interprétation de la CRP chez l'obèse)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 51, DT2, SAOS, planification complète préopératoire multidisciplinaire pour une PTG — décisions séquentielles)</li>
+<li>1 QROC : « Détaillez le programme d'optimisation préopératoire d'un patient obèse morbide (IMC 45) programmé pour une PTG élective dans 3 mois. Incluez les volets pondéral, nutritionnel, glycémique, respiratoire et le reconditionnement physique. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-i-modules-1-5">Références bibliographiques — Partie I (Modules 1-5)</h2>
+<ol>
+<li>Alberti KGMM, Eckel RH, Grundy SM, et al. Harmonizing the metabolic syndrome: a joint interim statement of the IDF/AHA/NHLBI/WHF/IAS/IASO. <em>Circulation</em>. 2009;120(16):1640-1645.</li>
+<li>Batsis JA, Villareal DT. Sarcopenic obesity in older adults: aetiology, epidemiology and treatment strategies. <em>Nat Rev Endocrinol</em>. 2018;14(9):513-537.</li>
+<li>Berenbaum F, Eymard F, Houard X. Osteoarthritis, inflammation and obesity. <em>Curr Opin Rheumatol</em>. 2013;25(1):114-118.</li>
+<li>Clockaerts S, Bastiaansen-Jenniskens YM, Runhaar J, et al. The infrapatellar fat pad should be considered as an active osteoarthritic joint tissue. <em>Osteoarthritis Cartilage</em>. 2010;18(7):876-882.</li>
+<li>Cummings DE, Weigle DS, Frayo RS, et al. Plasma ghrelin levels after diet-induced weight loss or gastric bypass surgery. <em>N Engl J Med</em>. 2002;346(21):1623-1630.</li>
+<li>Després JP, Lemieux I. Abdominal obesity and metabolic syndrome. <em>Nature</em>. 2006;444(7121):881-887.</li>
+<li>Ekelund U, Steene-Johannessen J, Brown WJ, et al. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? <em>Lancet</em>. 2016;388(10051):1302-1310.</li>
+<li>Farooqi IS, Keogh JM, Yeo GSH, Lank EJ, Cheetham T, O'Rahilly S. Clinical spectrum of obesity and mutations in the melanocortin 4 receptor gene. <em>N Engl J Med</em>. 2003;348(12):1085-1095.</li>
+<li>Fasshauer M, Blüher M. Adipokines in health and disease. <em>Trends Pharmacol Sci</em>. 2015;36(7):461-470.</li>
+<li>Global BMI Mortality Collaboration. Body-mass index and all-cause mortality: individual-participant-data meta-analysis of 239 prospective studies. <em>Lancet</em>. 2016;388(10046):776-786.</li>
+<li>Hales CM, Carroll MD, Fryar CD, Ogden CL. Prevalence of obesity and severe obesity among adults: United States, 2017-2018. <em>NCHS Data Brief</em>. 2020;(360):1-8.</li>
+<li>Inacio MCS, Kritz-Silverstein D, Raman R, et al. The impact of pre-operative weight loss on incidence of surgical site infection and readmission rates after total joint arthroplasty. <em>J Arthroplasty</em>. 2014;29(3):458-464.</li>
+<li>Kenchaiah S, Evans JC, Levy D, et al. Obesity and the risk of heart failure. <em>N Engl J Med</em>. 2002;347(5):305-313.</li>
+<li>Kerkhoffs GMMJ, Servien E, Dunn W, et al. The influence of obesity on the complication rate and outcome of total knee arthroplasty. <em>J Bone Joint Surg Am</em>. 2012;94(20):1839-1844.</li>
+<li>Lauby-Secretan B, Scoccianti C, Loomis D, et al. Body fatness and cancer — viewpoint of the IARC Working Group. <em>N Engl J Med</em>. 2016;375(8):794-798.</li>
+<li>Le Chatelier E, Nielsen T, Qin J, et al. Richness of human gut microbiome correlates with metabolic markers. <em>Nature</em>. 2013;500(7464):541-546.</li>
+<li>Lean MEJ, Han TS, Morrison CE. Waist circumference as a measure for indicating need for weight management. <em>BMJ</em>. 1995;311(6998):158-161.</li>
+<li>Luppino FS, de Wit LM, Bouvy PF, et al. Overweight, obesity, and depression: a systematic review and meta-analysis of longitudinal studies. <em>Arch Gen Psychiatry</em>. 2010;67(3):220-229.</li>
+<li>Marchant MH Jr, Viens NA, Cook C, Vail TP, Bolognesi MP. The impact of glycemic control and diabetes mellitus on perioperative outcomes after total joint arthroplasty. <em>J Bone Joint Surg Am</em>. 2009;91(7):1621-1629.</li>
+<li>Montague CT, Farooqi IS, Whitehead JP, et al. Congenital leptin deficiency is associated with severe early-onset obesity in humans. <em>Nature</em>. 1997;387(6636):903-908.</li>
+<li>NCD Risk Factor Collaboration (NCD-RisC). Worldwide trends in body-mass index, underweight, overweight, and obesity from 1975 to 2016. <em>Lancet</em>. 2017;390(10113):2627-2642.</li>
+<li>Punjabi NM. The epidemiology of adult obstructive sleep apnea. <em>Proc Am Thorac Soc</em>. 2008;5(2):136-143.</li>
+<li>Richette P, Poitou C, Garnero P, et al. Benefits of massive weight loss on symptoms, systemic inflammation and cartilage turnover in obese patients with knee osteoarthritis. <em>Ann Rheum Dis</em>. 2011;70(1):139-144.</li>
+<li>Schwartz MW, Woods SC, Porte D Jr, Seeley RJ, Baskin DG. Central nervous system control of food intake. <em>Nature</em>. 2000;404(6778):661-671.</li>
+<li>Stunkard AJ, Sørensen TIA, Hanis C, et al. An adoption study of human obesity. <em>N Engl J Med</em>. 1986;314(4):193-198.</li>
+<li>Sumithran P, Prendergast LA, Delbridge E, et al. Long-term persistence of hormonal adaptations to weight loss. <em>N Engl J Med</em>. 2011;365(17):1597-1604.</li>
+<li>Swinburn BA, Sacks G, Hall KD, et al. The global obesity pandemic: shaped by global drivers and local environments. <em>Lancet</em>. 2011;378(9793):804-814.</li>
+<li>Trayhurn P, Beattie JH. Physiological role of adipose tissue: white adipose tissue as an endocrine and secretory organ. <em>Proc Nutr Soc</em>. 2001;60(3):329-339.</li>
+<li>Turnbaugh PJ, Ley RE, Mahowald MA, et al. An obesity-associated gut microbiome with increased capacity for energy harvest. <em>Nature</em>. 2006;444(7122):1027-1031.</li>
+<li>Volkow ND, Wang GJ, Fowler JS, Telang F. Overlapping neuronal circuits in addiction and obesity: evidence of systems pathology. <em>Philos Trans R Soc Lond B Biol Sci</em>. 2008;363(1507):3191-3200.</li>
+<li>Weisberg SP, McCann D, Desai M, Rosenbaum M, Leibel RL, Ferrante AW Jr. Obesity is associated with macrophage accumulation in adipose tissue. <em>J Clin Invest</em>. 2003;112(12):1796-1808.</li>
+<li>Werner BC, Evans CL, Carothers JT, Browne JA. Primary total knee arthroplasty in super-obese patients: dramatically higher postoperative complication rates even compared to revision surgery. <em>J Arthroplasty</em>. 2015;30(5):849-853.</li>
+<li>World Health Organization. Obesity: preventing and managing the global epidemic. <em>WHO Technical Report Series</em> 894. Geneva: WHO; 2000.</li>
+<li>Yengo L, Sidorenko J, Kemper KE, et al. Meta-analysis of genome-wide association studies for height and body mass index in approximately 700,000 individuals of European ancestry. <em>Hum Mol Genet</em>. 2018;27(20):3641-3649.</li>
+<li>Zhang Y, Proenca R, Maffei M, et al. Positional cloning of the mouse obese gene and its human homologue. <em>Nature</em>. 1994;372(6505):425-432.</li>
+<li>Zhuo Q, Yang W, Chen J, Wang Y. Metabolic syndrome meets osteoarthritis. <em>Nat Rev Rheumatol</em>. 2012;8(12):729-737.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

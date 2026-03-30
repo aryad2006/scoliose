@@ -1,0 +1,897 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-5-classification-des-scolioses">MODULE 5 — CLASSIFICATION DES SCOLIOSES</h1>
+<p><strong>Partie II — La Scoliose : Définition, Classification et Diagnostic</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-4</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Le chirurgien présente le dossier de Sophie à la réunion de concertation pluridisciplinaire (RCP) de chirurgie rachidienne. Il inscrit sur le tableau : <em>« SIA, 13 ans, T5-T12 droite, Cobb 28°, Risser 0, Lenke 1A-N. »</em> Ses collègues hochez la tête — en cinq caractères, ils savent exactement de quelle scoliose il s'agit, quel est le pattern de courbure, et quel sera le niveau de fusion si la chirurgie est nécessaire.</p>
+<p>→ <em>Ce module enseigne les systèmes de classification utilisés en pratique clinique quotidienne : un langage commun indispensable pour la communication en équipe et la planification chirurgicale.</em></p>
+</blockquote>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Classification de King-Moe (Types I-V) • Classification de Lenke (Types 1-6) • Modificateur lombaire (A, B, C) • Modificateur thoracique sagittal (−, N, +) • Courbure structurale vs non structurale (critère de Lenke) • Signe de Nash-Moe (modified Nash and Moe) • Vertèbre apicale • Vertèbre neutre • Vertèbre stable • Classification SRS-Schwab • PI-LL mismatch • SVA (Sagittal Vertical Axis) • Obliquité pelvienne • Classification de Rigo • Scoliose de classe A/B/C (Rigo)</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Appliquer</strong> la classification de King-Moe et connaître ses limites (Bloom : Application)</li>
+<li><strong>Déterminer</strong> le type Lenke 1-6 d'une scoliose idiopathique à partir d'une radiographie annotée (Bloom : Application)</li>
+<li><strong>Attribuer</strong> les modificateurs lombaires (A, B, C) et sagittaux (−, N, +) (Bloom : Application)</li>
+<li><strong>Sélectionner</strong> les niveaux de fusion appropriés selon le type Lenke (Bloom : Analyse)</li>
+<li><strong>Utiliser</strong> la classification SRS-Schwab pour évaluer une scoliose adulte (Bloom : Application)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La classification de Lenke comporte combien de types de courbures principaux ?<br />
+- A. 3<br />
+- B. 4<br />
+- <strong>C. 6</strong><br />
+- D. 10</p>
+<p><strong>Q2.</strong> Le modificateur lombaire C dans la classification de Lenke signifie :<br />
+- A. La courbure lombaire est non structurale<br />
+- B. La courbure lombaire est modérément structurale<br />
+- <strong>C. L'apex lombaire est clairement à gauche de la ligne centrale vertébrale (CSVL)</strong><br />
+- D. La cyphose thoracique est augmentée</p>
+<p><strong>Q3.</strong> La classification SRS-Schwab est principalement utilisée pour :<br />
+- A. La scoliose idiopathique de l'adolescent<br />
+- B. La scoliose congénitale<br />
+- <strong>C. La scoliose dégénérative de l'adulte</strong><br />
+- D. La scoliose neuromusculaire</p>
+<p><strong>Q4.</strong> Un type Lenke 1 correspond à :<br />
+- A. Courbure double thoracique<br />
+- <strong>B. Courbure principale thoracique uniquement (thoracolombaire/lombaire non structurale)</strong><br />
+- C. Courbure thoracolombaire/lombaire principale<br />
+- D. Courbure double majeure</p>
+<p><strong>Q5.</strong> Dans la classification de King-Moe, le type V concerne :<br />
+- A. Une double courbure lombaire<br />
+- B. Une courbure thoracique gauche<br />
+- <strong>C. Une courbure thoracique haute bilatérale</strong><br />
+- D. Une triple courbure</p>
+<hr />
+<h2 id="51-classification-de-king-moe-classification-historique">5.1 Classification de King-Moe (classification historique)</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Pourquoi remplacer une classification qui fonctionne ? La classification de King-Moe, publiée en 1983, était le standard pendant 15 ans. Qu'est-ce qui la rendait insuffisante ?</p>
+<h3 id="511-description-des-types">5.1.1 Description des types</h3>
+<p>La classification de King-Moe (King et al., 1983, <em>J Bone Joint Surg Am</em>) définit <strong>5 types</strong> de scolioses idiopathiques de l'adolescent, basée sur la radiographie de face et les bending films :</p>
+<blockquote>
+<p>[MEDIA: 📊 M05-S01-001 — Schéma comparatif King-Moe Types I-V avec radiographies représentatives]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Courbure à fusionner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong></td>
+<td>Courbure en S : thoracique &lt; lombaire ; les deux courbures croisent la ligne médiane</td>
+<td>Thoracique + lombaire</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td>Courbure en S : thoracique &gt; lombaire ; les deux croisent la ligne médiane</td>
+<td>Thoracique seule</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td>Courbure thoracique pure ; lombaire ne croise pas la ligne médiane</td>
+<td>Thoracique seule</td>
+</tr>
+<tr>
+<td><strong>IV</strong></td>
+<td>Courbure thoracique longue fusant dans L4 (L4 inclinée vers la courbure thoracique)</td>
+<td>Thoracique long</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>Courbure thoracique double ; T1 inclinée vers la courbure thoracique haute</td>
+<td>Double thoracique</td>
+</tr>
+</tbody>
+</table>
+<h3 id="512-limites-et-raisons-du-remplacement">5.1.2 Limites et raisons du remplacement</h3>
+<ul>
+<li><strong>Pas de dimension sagittale</strong> : King-Moe ignore entièrement le profil sagittal</li>
+<li><strong>Pas de dimension axiale</strong> : la rotation vertébrale n'est pas intégrée</li>
+<li><strong>Ambiguïté</strong> : les types II et III sont difficiles à distinguer en pratique</li>
+<li><strong>Pas de type thoracolombaire/lombaire</strong> principal isolé</li>
+<li><strong>Mauvaise reproductibilité inter-observateur</strong> (kappa = 0,61)</li>
+<li>La classification de Lenke (2001) a supplanté King-Moe → pratiquement <strong>abandonné</strong> après 2005</li>
+</ul>
+<hr />
+<h2 id="52-classification-de-lenke-2001-standard-actuel">5.2 Classification de Lenke (2001) — Standard actuel</h2>
+<p>La classification de <strong>Lawrence Lenke</strong> (Lenke et al., 2001, <em>J Bone Joint Surg Am</em>) est le <strong>gold standard</strong> actuel pour les scolioses idiopathiques de l'adolescent. Elle est tridimensionnelle, reproductible, et directement liée à la stratégie de fusion.</p>
+<blockquote>
+<p>[MEDIA: 📊 M05-S02-001 — Infographie complète classification de Lenke : 6 types + modificateur lombaire + modificateur sagittal]</p>
+</blockquote>
+<h3 id="521-principes-fondamentaux">5.2.1 Principes fondamentaux</h3>
+<p>La classification Lenke repose sur <strong>3 composantes</strong> :<br />
+1. <strong>Type de courbure (1-6)</strong> : basé sur les régions thoracique proximale, thoracique principale, et thoracolombaire/lombaire<br />
+2. <strong>Modificateur lombaire (A, B, C)</strong> : position de la courbure lombaire par rapport à la CSVL<br />
+3. <strong>Modificateur sagittal (−, N, +)</strong> : cyphose thoracique T5-T12</p>
+<p>Pour attribuer le type, on utilise les <strong>radiographies de bending</strong> (inclinaison latérale gauche et droite) pour déterminer si chaque région est <strong>structurale</strong> ou <strong>non structurale</strong>.</p>
+<p><strong>Critères de structuralité</strong> (courbure = structurale si l'un des critères est rempli) :<br />
+- Cobb ≥ 25° sur le bending film controlatéral<br />
+- Cyphose thoracique ≥ 20° (T2-T5 ou T10-L2)</p>
+<h3 id="522-les-6-types-de-courbures-lenke">5.2.2 Les 6 types de courbures Lenke</h3>
+<blockquote>
+<p>[MEDIA: 🧊 M05-S02-002 — Modèle 3D BioDigital : 6 types Lenke interactifs (visualisation 3D de chaque type)]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Nom</th>
+<th>TP</th>
+<th>TM</th>
+<th>TL/L</th>
+<th>Fusionner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Main thoracic</td>
+<td>Non struct</td>
+<td><strong>Struct</strong></td>
+<td>Non struct</td>
+<td>TM seul</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Double thoracique</td>
+<td><strong>Struct</strong></td>
+<td><strong>Struct</strong></td>
+<td>Non struct</td>
+<td>TP + TM</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Double majeur</td>
+<td>Non struct</td>
+<td><strong>Struct</strong></td>
+<td><strong>Struct</strong></td>
+<td>TM + TL/L</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Triple majeur</td>
+<td><strong>Struct</strong></td>
+<td><strong>Struct</strong></td>
+<td><strong>Struct</strong></td>
+<td>TP + TM + TL/L</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Thoracolombaire/lombaire</td>
+<td>Non struct</td>
+<td>Non struct</td>
+<td><strong>Struct</strong></td>
+<td>TL/L seul</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Thoracolombaire/lombaire – thoracique principale</td>
+<td>Non struct</td>
+<td><strong>Struct</strong> (minor)</td>
+<td><strong>Struct</strong></td>
+<td>TM + TL/L</td>
+</tr>
+</tbody>
+</table>
+<p><em>TP = Thoracique proximale (T1-T5) ; TM = Thoracique principale (T6-T11) ; TL/L = Thoracolombaire/lombaire (T12-L4)</em></p>
+<p><strong>Type 1 (Main thoracic)</strong> — le plus fréquent (50-55% des SIA ; Lenke et al., 2001) :<br />
+- Scoliose thoracique droite principale<br />
+- Lombaire non structurale → <strong>ne fusionner que le thoracique</strong><br />
+- Exemple de Sophie : type <strong>1</strong></p>
+<p><strong>Type 2 (Double thoracique)</strong> :<br />
+- La région thoracique proximale (T1-T4) est également structurale — typiquement une courbure thoracique haute gauche<br />
+- T1 est incliné vers la gauche sur la radiographie de face<br />
+- Si on ne fusionne pas la région thoracique haute → déséquilibre des épaules post-opératoire</p>
+<p><strong>Type 3 (Double majeur)</strong> :<br />
+- Les deux courbures (TM + TL/L) sont majeures → <strong>fusion longue</strong> obligatoire<br />
+- Difficulté : préserver autant de niveaux mobiles que possible tout en couvrant toutes les courbures structurales</p>
+<p><strong>Type 4 (Triple majeur)</strong> :<br />
+- Forme la plus englobante<br />
+- Rare (&lt; 5%)<br />
+- Fait souvent appel à une fusion jusqu'à L3-L4</p>
+<p><strong>Type 5 (Thoracolombaire/lombaire principale)</strong> :<br />
+- Courbure lombaire gauche prédominante — moins fréquent (10-15%)<br />
+- La courbure thoracique est compensatoire non structurale → ne pas la fusionner<br />
+- Résultat esthétique important : corriger la gibbosité lombaire sans artifice thoracique</p>
+<p><strong>Type 6 (TL/L-TM)</strong> :<br />
+- La courbure TL/L est la principale mais la TM est également structurale (Cobb proche ou supérieur à la TL/L)<br />
+- Limite avec le type 3 : la règle de base est que si Cobb TL/L &gt; Cobb TM → type 6 ; si Cobb TM &gt; Cobb TL/L → type 3</p>
+<h3 id="523-modificateur-lombaire-a-b-c">5.2.3 Modificateur lombaire (A, B, C)</h3>
+<p>Le modificateur lombaire évalue la position de la <strong>partie apicale de la courbure lombaire</strong> par rapport à la <strong>Ligne Centrale Vertébrale Sacrée (CSVL)</strong> — ligne verticale passant par le milieu du sacrum.</p>
+<div class="vertex-media schema">
+<strong>📐 M05-S02-003</strong><br/>
+<em>Schéma CSVL et modificateurs A/B/C avec exemples radiographiques annotés</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Modificateur</th>
+<th>Définition</th>
+<th>Implication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>La CSVL passe entre les deux pédicules de l'apex lombaire</td>
+<td>Lombaire bien centré → sélection courte (ne pas inclure le lombaire dans la fusion)</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>La CSVL touche le bord du corps vertébral de l'apex lombaire</td>
+<td>Lombaire modérément décentré → frontière → discuter l'inclusion</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>La CSVL est complètement latérale par rapport à l'apex lombaire</td>
+<td>Lombaire franchement décentré → risque de décompensation si non fusionné</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Règle pratique</strong> :<br />
+- Modificateur <strong>A</strong> ou <strong>B</strong> → la courbure lombaire est peu problématique ; on peut souvent ne fusionner que le thoracique<br />
+- Modificateur <strong>C</strong> → la courbure lombaire est significative ; risque de progression lombaire post-opératoire si non incluse dans la fusion</p>
+<h3 id="524-modificateur-sagittal-thoracique-n">5.2.4 Modificateur sagittal thoracique (−, N, +)</h3>
+<p>Le modificateur sagittal évalue la cyphose thoracique <strong>T5-T12</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Modificateur</th>
+<th>Cyphose T5-T12</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>−</strong> (hypo)</td>
+<td>&lt; 10°</td>
+<td>Hypocyphose thoracique (typique de la SIA thoracique)</td>
+</tr>
+<tr>
+<td><strong>N</strong> (normal)</td>
+<td>10-40°</td>
+<td>Cyphose normale</td>
+</tr>
+<tr>
+<td><strong>+</strong> (hyper)</td>
+<td>&gt; 40°</td>
+<td>Hypercyphose thoracique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Importance chirurgicale</strong> :<br />
+- SIA avec hypercyphose (+) : peut nécessiter des manœuvres spécifiques de correction sagittale (pré-cintrage de la tige, compression antérieure)<br />
+- SIA avec hypocyphose (−) : la correction par dérotation restaure souvent spontanément une cyphose normale</p>
+<h3 id="525-application-pratique-les-42-types-possibles">5.2.5 Application pratique — Les 42 types possibles</h3>
+<p><strong>Formule</strong> : Type (1-6) + Modificateur lombaire (A, B, C) + Modificateur sagittal (−, N, +)</p>
+<p><strong>Exemples courants</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Interprétation</th>
+<th>Patient typique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1A−</strong></td>
+<td>Main thoracique, lombaire centré, hypocyphose</td>
+<td>Sophie (type le plus fréquent de SIA)</td>
+</tr>
+<tr>
+<td><strong>1B−</strong></td>
+<td>Main thoracique, lombaire tangent, hypocyphose</td>
+<td>Forme intermédiaire</td>
+</tr>
+<tr>
+<td><strong>1CN</strong></td>
+<td>Main thoracique, lombaire décentré, cyphose normale</td>
+<td>Risque de décompensation → fusion plus longue</td>
+</tr>
+<tr>
+<td><strong>2AN</strong></td>
+<td>Double thoracique, lombaire centré, cyphose normale</td>
+<td>Fusion jusqu'en thoracique haute</td>
+</tr>
+<tr>
+<td><strong>3CN</strong></td>
+<td>Double majeur, lombaire décentré, cyphose normale</td>
+<td>Fusion longue T-L obligatoire</td>
+</tr>
+<tr>
+<td><strong>5CN</strong></td>
+<td>TL/L principale, lombaire décentré, cyphose normale</td>
+<td>Fusion lombaire gauche</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Comment le type Lenke oriente la fusion</strong> — Règles de base :</p>
+<ol>
+<li><strong>Seules les courbures structurales</strong> doivent être incluses dans la fusion</li>
+<li>La <strong>vertèbre limitante inférieure</strong> doit être dans la zone stable, horizontale (&lt; 5°)</li>
+<li>Le niveau de fusion proximal doit être neutre (pas d'inclinaison T1-T4)</li>
+<li>Pour les types 1A−/1B− : fusion typique <strong>T4 ou T5 à T11 ou T12</strong></li>
+</ol>
+<blockquote>
+<p>[MEDIA: 📊 M05-S02-004 — Tableau de sélection des niveaux de fusion selon le type Lenke (recommandations SRS)]</p>
+</blockquote>
+<h3 id="526-reproductibilite-de-lenke">5.2.6 Reproductibilité de Lenke</h3>
+<ul>
+<li>Kappa pour le type de courbure : <strong>0.92</strong> (excellent)</li>
+<li>Kappa pour le modificateur lombaire : <strong>0.87</strong> (excellent)</li>
+<li>Kappa pour le modificateur sagittal : <strong>0.72</strong> (bon)<br />
+<em>(Lenke et al., 2001, J Bone Joint Surg Am ; Niemeyer et al., 2006, Spine)</em></li>
+<li>Bien supérieur à King-Moe (kappa = 0,61 ; Cummings et al., 1998, <em>J Bone Joint Surg Am</em>)</li>
+</ul>
+<hr />
+<h2 id="53-classification-de-la-scoliose-congenitale">5.3 Classification de la scoliose congénitale</h2>
+<p>La scoliose congénitale se classe selon le <strong>mécanisme embryologique</strong> (Module 2.1.4) :</p>
+<div class="vertex-media schema">
+<strong>📐 M05-S03-001</strong><br/>
+<em>Schéma classification scoliose congénitale : défauts de formation + défauts de segmentation</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="defauts-de-formation">Défauts de formation</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Risque progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hémivertèbre entièrement segmentée</td>
+<td>Demi-vertèbre avec 2 disques</td>
+<td>+++ (2-3°/an)</td>
+</tr>
+<tr>
+<td>Hémivertèbre semi-segmentée</td>
+<td>Fused d'un côté</td>
+<td>++</td>
+</tr>
+<tr>
+<td>Hémivertèbre non segmentée</td>
+<td>Intercalée, fused des 2 côtés</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Coin vertébral</td>
+<td>Diminution asymétrique</td>
+<td>+</td>
+</tr>
+<tr>
+<td>Vertèbre papillon</td>
+<td>Fente médiane</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="defauts-de-segmentation">Défauts de segmentation</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Risque progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Barre unilatérale</td>
+<td>Fusion une colonne</td>
+<td>++</td>
+</tr>
+<tr>
+<td>Bloc vertébral bilatéral (Klippel-Feil cervical)</td>
+<td>Fusion 2 colonnes</td>
+<td>Non progressif</td>
+</tr>
+<tr>
+<td><strong>Barre + hémivertèbre controlatérale</strong></td>
+<td><strong>Combinaison</strong></td>
+<td><strong>++++ (5-10°/an)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="54-classification-srs-schwab-scoliose-de-ladulte">5.4 Classification SRS-Schwab — Scoliose de l'adulte</h2>
+<p>La classification <strong>SRS-Schwab</strong> (Schwab et al., 2012, <em>Spine</em>) a été développée par Frank Schwab et la Scoliosis Research Society pour les scolioses dégénératives de l'adulte. Elle integre les paramètres sagittaux dont on sait qu'ils déterminent la qualité de vie.</p>
+<blockquote>
+<p>[MEDIA: 📊 M05-S04-001 — Infographie SRS-Schwab : types de courbures + modificateurs sagittaux]</p>
+</blockquote>
+<h3 id="types-de-courbures-6-types">Types de courbures (6 types)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T</strong></td>
+<td>Thoracique seule (courbure ≥ 30°)</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>Thoracolombaire/lombaire principale (≥ 30°)</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Double majeur (≥ 30° x 2)</td>
+</tr>
+<tr>
+<td><strong>N</strong></td>
+<td>Pas de courbure ≥ 30° (déséquilibre sagittal "pur")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modificateurs-sagittaux-3-modificateurs">Modificateurs sagittaux (3 modificateurs)</h3>
+<p>Trois paramètres sagittaux sont évalués, chacun gradé 0/+/++ :</p>
+<table>
+<thead>
+<tr>
+<th>Modificateur</th>
+<th>Paramètre</th>
+<th>0 (Normal)</th>
+<th>+ (Modéré)</th>
+<th>++ (Sévère)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PI-LL</strong></td>
+<td>Incidence pelvienne – lordose lombaire mismatch</td>
+<td>&lt; 10°</td>
+<td>10-20°</td>
+<td>&gt; 20°</td>
+</tr>
+<tr>
+<td><strong>SVA</strong></td>
+<td>Sagittal Vertical Axis (déséquilibre sagittal global)</td>
+<td>&lt; 4 cm</td>
+<td>4-9,5 cm</td>
+<td>≥ 9,5 cm</td>
+</tr>
+<tr>
+<td><strong>PT</strong></td>
+<td>Pente pelvienne (retroversion du bassin)</td>
+<td>&lt; 20°</td>
+<td>20-30°</td>
+<td>≥ 30°</td>
+</tr>
+</tbody>
+</table>
+<p><em>Seuils validés par Schwab et al., 2012, Spine</em></p>
+<p><strong>PI-LL mismatch</strong> — paramètre clé :</p>
+<blockquote>
+<p>PI-LL mismatch = Incidence Pelvienne (PI) – Lordose Lombaire (LL)<br />
+Normal : PI-LL &lt; 10°<br />
+Si PI-LL &gt; 10° → insuffisance de lordose → compensation par retroversion du bassin (↑PT) et flexion des genoux → douleur, fatigue, mauvaise qualité de vie</p>
+</blockquote>
+<p><strong>Exemple</strong> : Patient adulte avec PI = 55°, LL = 30° → PI-LL = 25° → modificateur PI-LL ++ → objectif chirurgical : restaurer LL à 45-55° (PI-LL &lt; 10°)</p>
+<h3 id="correlation-avec-les-proms-patient-reported-outcomes">Corrélation avec les PROMs (Patient Reported Outcomes)</h3>
+<p>Les 3 modificateurs sagittaux corrèlent fortement avec le score SRS-22r et l'ODI (Oswestry Disability Index) :<br />
+- <strong>SVA &gt; 9,5 cm</strong> : corrèle avec une incapacité sévère (ODI &gt; 40)<br />
+- <strong>PI-LL &gt; 20°</strong> : corrèle avec douleur lombaire et claudication importantes<br />
+- La correction des modificateurs sagittaux améliore la qualité de vie <strong>indépendamment de la correction coronale</strong></p>
+<hr />
+<h2 id="55-classifications-tridimensionnelles-3d">5.5 Classifications tridimensionnelles (3D)</h2>
+<p>🤔 <strong>Question de réflexion</strong> : Si la radiographie standard sous-estime la vraie déformation 3D, comment classer précisément une scoliose dans tous ses plans ?</p>
+<div class="vertex-media video">
+<strong>🎬 M05-S05-001</strong><br/>
+<em>Animation classification 3D : mise en évidence de la déformation dans les 3 plans (frontal+sagittal+axial)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="551-classification-3d-de-lenke-en-developpement">5.5.1 Classification 3D de Lenke (en développement)</h3>
+<p>Extension du Lenke 2D intégrant :<br />
+- L'angle de déformation maximale de Stagnara (plan de déformation maximale)<br />
+- La rotation vertébrale apicale (AVR mesurée en EOS 3D)<br />
+- La déformation sagittale régionale</p>
+<p>Non encore standardisée universellement — utilisée dans les centres de recherche dotés d'EOS.</p>
+<h3 id="552-classification-de-rigo-pour-le-traitement-par-corset">5.5.2 Classification de Rigo (pour le traitement par corset)</h3>
+<p>La classification de <strong>Manuel Rigo</strong> (Rigo et al., 2010, <em>Scoliosis</em> ; SOSORT) évalue la scoliose en <strong>vue axiale</strong> pour adapter la construction du corset Chêneau ou Rigo-Chêneau.</p>
+<blockquote>
+<p>[MEDIA: 🧊 M05-S05-002 — Modèle 3D interactif classification Rigo A1-E2 avec formes de corset correspondantes]</p>
+</blockquote>
+<p><strong>Logique</strong> : Le corset agit dans les 3 plans. La position des côtes et la forme du tronc en vue axiale détermine les zones d'appui et les "fenêtres" du corset.</p>
+<p><strong>Types principaux</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Type Rigo</th>
+<th>Caractéristiques</th>
+<th>Forme du tronc en axial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A1</strong></td>
+<td>Thoracique droite, lombaire non structurale — équilibre coronal bon</td>
+<td>Asymétrie thoracique simple</td>
+</tr>
+<tr>
+<td><strong>A2</strong></td>
+<td>Thoracique droite avec lombaire légère</td>
+<td>Double convexité modérée</td>
+</tr>
+<tr>
+<td><strong>A3</strong></td>
+<td>Thoracolombaire ou lombaire principale</td>
+<td>Rotation lombaire prédominante</td>
+</tr>
+<tr>
+<td><strong>B1</strong></td>
+<td>Double courbure (thoracique + lombaire) symétrique</td>
+<td>Deux gibbosités</td>
+</tr>
+<tr>
+<td><strong>B2</strong></td>
+<td>Double courbure asymétrique</td>
+<td>Gibbosité thoracique &gt; lombaire</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>Courbure thoracique gauche (atypique)</td>
+<td>Rare — vérifier pathologie sous-jacente</td>
+</tr>
+<tr>
+<td><strong>E1/E2</strong></td>
+<td>Formes complexes avec composante cervicale</td>
+<td>Instrumentation haute</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Application en CFAO</strong> (Conception et Fabrication Assistée par Ordinateur) : la classification Rigo est utilisée par les orthoprothésistes pour la fabrication numérique du corset.</p>
+<h3 id="553-classification-srs-3d-projet-en-cours">5.5.3 Classification SRS 3D (projet en cours)</h3>
+<p>La Scoliosis Research Society travaille à une classification 3D standardisée basée sur l'imagerie EOS sterEOS, intégrant :<br />
+- Le plan de déformation maximale<br />
+- La lordose thoracique (souvent oubliée)<br />
+- La rotation axiale globale<br />
+- Les paramètres sagittaux régionaux</p>
+<p><strong>Futur de la classification</strong> : L'intelligence artificielle (deep learning appliqué aux reconstructions EOS 3D) permettra probablement une classification automatique reproductible dans les années à venir.</p>
+<hr />
+<h2 id="56-classification-des-scolioses-neuromusculaires">5.6 Classification des scolioses neuromusculaires</h2>
+<h3 id="selon-letiologie-neurologique">Selon l'étiologie neurologique</h3>
+<table>
+<thead>
+<tr>
+<th>Catégorie</th>
+<th>Sous-types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lésion du neurone moteur supérieur</td>
+<td>IMC, syringomyélie, tumeur moelle</td>
+</tr>
+<tr>
+<td>Lésion du neurone moteur inférieur</td>
+<td>SMA, poliomyéliite, spina bifida</td>
+</tr>
+<tr>
+<td>Dystrophies musculaires</td>
+<td>DMD, Becker, dystrophie myotonique</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classification-de-sarwark-sarwahi">Classification de Sarwark-Sarwahi</h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+<th>Fusion optimale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pelvi-thoracique</strong></td>
+<td>Longue courbure de C jusqu'au bassin, obliquité pelvienne sévère</td>
+<td>T2 à pelvis (Galveston / vis iliaques)</td>
+</tr>
+<tr>
+<td><strong>Thoracique</strong></td>
+<td>Courbure mainly thoracique, pelvis relativement horizontal</td>
+<td>T2-L3</td>
+</tr>
+<tr>
+<td><strong>Thoracolombaire</strong></td>
+<td>Jonction TL + pelvis modérément oblique</td>
+<td>T4-pelvis</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="57-application-pratique-classer-sophie">5.7 Application pratique — Classer Sophie</h2>
+<p><strong>Données de Sophie</strong> :<br />
+- Radiographie de face : courbure thoracique droite T5-T12, Cobb = 28°, apex T9<br />
+- Bending droit (inclinaison gauche) : thoracique se réduit à 15° → <strong>non structurale selon Lenke (&lt; 25°)</strong><br />
+- Bending gauche (inclinaison droite) : thoracique reste à 22°<br />
+- Région thoracique proximale (T1-T4) : Cobb 8°, pas de structuralité<br />
+- Région thoracolombaire/lombaire : Cobb 18°, se réduit à 8° au bending → <strong>non structurale</strong><br />
+- CSVL passe entre les pédicules de L2 (apex lombaire) → <strong>modificateur A</strong><br />
+- Cyphose T5-T12 = 18° → entre 10-40° → <strong>modificateur N</strong></p>
+<p><strong>Classification</strong> : <strong>1AN</strong><br />
+- Type <strong>1</strong> : thoracique principale seule, les autres non structurales<br />
+- Modificateur <strong>A</strong> : lombaire bien centré<br />
+- Modificateur <strong>N</strong> : cyphose normale</p>
+<p><strong>Implications chirurgicales</strong> (si corset échoue) :<br />
+- Fusion thoracique seule : T4 ou T5 jusqu'à T11 ou T12<br />
+- Pas de descente en lombaire (modificateur A)<br />
+- Tige cyphosante en thoracique pour maintenir le profil (modificateur N = cyphose à préserver)<br />
+- Correction cible : Cobb post-op &lt; 25° (60-70% de correction)</p>
+<hr />
+<h2 id="atelier-vertex-classification-lenke-interactive">🎯 Atelier VERTEX© — Classification Lenke interactive</h2>
+<h3 id="protocole">Protocole</h3>
+<p><strong>Créer 3 modèles correspondant à différents types Lenke et comparer les stratégies de correction :</strong></p>
+<p><strong>Modèle 1 — Lenke 1AN (Sophie)</strong></p>
+<pre><code class="language-json">POST /api/spine/{id}/scoliosis
+{ &quot;cobb_angle&quot;: 28, &quot;apex_vertebra&quot;: &quot;T9&quot;, &quot;curve_type&quot;: &quot;right_thoracic&quot; }
+</code></pre>
+<p><strong>Modèle 2 — Lenke 5CN (lombaire gauche principale)</strong></p>
+<pre><code class="language-json">POST /api/spine/{id2}/scoliosis
+{ &quot;cobb_angle&quot;: 35, &quot;apex_vertebra&quot;: &quot;L2&quot;, &quot;curve_type&quot;: &quot;left_lumbar&quot; }
+</code></pre>
+<p><strong>Modèle 3 — Lenke 3CN (double majeur)</strong></p>
+<pre><code class="language-json">POST /api/spine/{id3}/scoliosis
+{ &quot;cobb_angle&quot;: 45, &quot;apex_vertebra&quot;: &quot;T9&quot;, &quot;curve_type&quot;: &quot;right_thoracic&quot; }
+// Puis ajouter courbure secondaire lombaire...
+</code></pre>
+<p><strong>Simulation de correction pour chaque modèle :</strong></p>
+<pre><code class="language-json">POST /api/spine/{id}/correction
+{ &quot;technique&quot;: &quot;derotation&quot;, &quot;correction_target_cobb&quot;: 15 }
+</code></pre>
+<p>→ Comparer les résultats et discuter la différence de fusion nécessaire pour chaque type.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>[MEDIA: 📊 M05-S08-001 — Infographie récapitulative Module 5 : classification Lenke + SRS-Schwab]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>À retenir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lenke type 1</td>
+<td>Thoracique principale uniquement — le plus fréquent (50-55%)</td>
+</tr>
+<tr>
+<td>Modificateur A</td>
+<td>Lombaire entre les pédicules de la CSVL → ne pas fusionner le lombaire</td>
+</tr>
+<tr>
+<td>Modificateur C</td>
+<td>Lombaire clairement latéral → risque si non fusionné</td>
+</tr>
+<tr>
+<td>SRS-Schwab</td>
+<td>Pour la scoliose adulte — PI-LL, SVA, PT comme modificateurs sagittaux</td>
+</tr>
+<tr>
+<td>PI-LL mismatch &gt; 10°</td>
+<td>Insuffisance de lordose → déséquilibre sagittal → douleur → à corriger chirurgicalement</td>
+</tr>
+<tr>
+<td>Rigo</td>
+<td>Pour la fabrication personnalisée des corsets (méthode CFAO)</td>
+</tr>
+<tr>
+<td>King-Moe</td>
+<td>Histórique — remplacé par Lenke depuis 2001</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quiz-fin-de-module-15-questions">Quiz fin de module — 15 questions</h2>
+<h3 id="bronze-questions-1-a-5">🥉 Bronze — Questions 1 à 5</h3>
+<p><strong>Q1.</strong> La classification de Lenke type 1 indique une scoliose :<br />
+- A. Thoracolombaire principale seule<br />
+- <strong>B. Thoracique principale seule (TL/L et thoracique proximale non structurales)</strong> ✓<br />
+- C. Double thoracique<br />
+- D. Triple majeure</p>
+<p><strong>Q2.</strong> Dans la classification de Lenke, une courbure est dite structurale si sur le bending controlatéral elle reste à :<br />
+- A. &lt; 15°<br />
+- <strong>B. ≥ 25°</strong> ✓<br />
+- C. &lt; 5°<br />
+- D. ≥ 40°</p>
+<p><strong>Q3.</strong> La CSVL (Ligne Centrale Vertébrale Sacrée) passe par :<br />
+- A. Le corps de L5<br />
+- <strong>B. Le milieu du sacrum</strong> ✓<br />
+- C. Le centre du disque L5-S1<br />
+- D. L'épine iliaque postéro-supérieure</p>
+<p><strong>Q4.</strong> Le modificateur sagittal N dans la classification de Lenke correspond à une cyphose T5-T12 de :<br />
+- A. &lt; 10°<br />
+- <strong>B. 10-40°</strong> ✓<br />
+- C. &gt; 40°<br />
+- D. &gt; 60°</p>
+<p><strong>Q5.</strong> La classification SRS-Schwab évalue en priorité :<br />
+- A. La rotation vertébrale<br />
+- <strong>B. L'équilibre sagittal (PI-LL, SVA, PT)</strong> ✓<br />
+- C. La cyphose thoracique uniquement<br />
+- D. La densité osseuse</p>
+<h3 id="argent-questions-6-a-10">🥈 Argent — Questions 6 à 10</h3>
+<p><strong>Q6.</strong> Sophie (Cobb T5-T12 = 28°, CSVL entre les pédicules L2, cyphose T5-T12 = 18°, TL/L = 18° non structurale) a quel type Lenke ?<br />
+- A. 1BN<br />
+- <strong>B. 1AN</strong> ✓<br />
+- C. 3AN<br />
+- D. 1CN</p>
+<p><strong>Q7.</strong> Pour un type Lenke 2AN, les niveaux de fusion doivent inclure :<br />
+- <strong>A. Thoracique proximale (T1-T4) + thoracique principale (T5-T12)</strong> ✓<br />
+- B. Thoracique principale seule<br />
+- C. Triple fusion (thoracique + TL/L)<br />
+- D. TL/L seule</p>
+<p><strong>Q8.</strong> Un patient adulte de 58 ans, PI = 60°, LL = 32°, SVA = 12 cm. Son code SRS-Schwab est :<br />
+- A. L-0/0/0<br />
+- <strong>B. L-++/++/+</strong> ✓ (PI-LL = 28° → ++ ; SVA = 12 cm → ++ ; calculer PT pour le 3e modificateur)<br />
+- C. L-+/+/+<br />
+- D. N-0/0/0</p>
+<p><strong>Q9.</strong> Pour le modificateur lombaire B dans la classification de Lenke, il est recommandé de :<br />
+- A. Ne jamais inclure le lombaire dans la fusion<br />
+- B. Toujours inclure le lombaire dans la fusion<br />
+- <strong>C. Décider au cas par cas selon la courbure globale et la décompensation prévisible</strong> ✓<br />
+- D. Appliquer les mêmes règles que le modificateur C</p>
+<p><strong>Q10.</strong> La classification de Rigo est spécifiquement utilisée pour :<br />
+- A. Planifier la chirurgie d'arthrodèse<br />
+- <strong>B. Adapter la construction du corset Chêneau/Rigo-Chêneau à la forme tridimensionnelle du tronc</strong> ✓<br />
+- C. Évaluer la maturation squelettique<br />
+- D. Classifier la scoliose adulte</p>
+<h3 id="or-questions-11-a-13">🥇 Or — Questions 11 à 13</h3>
+<p><strong>Q11.</strong> Vous opérez une scoliose Lenke 1CN (Cobb thoracique 50°, modificateur C). Vous décidez de ne pas inclure la courbure lombaire dans la fusion. Quel est le risque principal ?<br />
+- <strong>A. Décompensation coronale post-opératoire — le lombaire décentré (modificateur C) se décompensera sans fusion, le patient sera déséquilibré latéralement</strong> ✓<br />
+- B. Syndrome de flatback<br />
+- C. Pseudarthrose de la jonction thoracolombaire<br />
+- D. Aucun risque, car la lombaire n'est pas structurale</p>
+<p><strong>Q12.</strong> Comparer l'évolution attendue à 20 ans post-op d'un même patient Cobb TM 55° opéré avec deux stratégies : (A) corset seule sans chirurgie ; (B) chirurgie arthrodèse T4-T12. Concernant la progression :<br />
+- A. (A) et (B) donnent les mêmes résultats à 20 ans<br />
+- B. (A) est supérieur : évite les risques chirurgicaux<br />
+- <strong>C. (B) stabilise définitivement la courbure dans les niveaux fusionnés ; (A) risque de progression de 1°/an à l'âge adulte si Cobb &gt; 50° — les scolioses thoraciques &gt; 50° progressent chez l'adulte même après la fin de la croissance</strong> ✓<br />
+- D. La progression à l'âge adulte n'existe pas pour les scolioses idiopathiques</p>
+<p><strong>Q13.</strong> Un type Lenke 3CN avec Cobb TM = 48°, Cobb TL/L = 45°, CSVL clairement latérale à l'apex lombaire, cyphose normale. Pour ce patient, la décision sur les niveaux de fusion est :<br />
+- A. Thoracique uniquement (TM seul)<br />
+- <strong>B. Double fusion (TM + TL/L) avec vertèbre limitante inférieure dans la zone stable, horizontale, typiquement L3 ou L4</strong> ✓<br />
+- C. Triple fusion systématique jusqu'au sacrum<br />
+- D. Thoracique proximale + TM uniquement</p>
+<h3 id="diamant-questions-14-15">💎 Diamant — Questions 14-15</h3>
+<p><strong>Q14.</strong> Lors d'une étude de reproductibilité de la classification Lenke, vous trouvez un kappa de 0.45 pour le modificateur lombaire ABC dans votre équipe. Pour améliorer ce résultat, la première mesure doit être :<br />
+- A. Adopter une autre classification (King-Moe)<br />
+- <strong>B. Organiser une session d'enseignement avec des cas représentatifs des 3 modificateurs, en insistant sur la technique standardisée de tracé de la CSVL</strong> ✓<br />
+- C. Abandonner le modificateur lombaire et utiliser uniquement le type de courbure<br />
+- D. Utiliser le scanner au lieu des radiographies</p>
+<p><strong>Q15.</strong> Pour un même patient Lenke 1AN-N, deux chirurgiens proposent des niveaux de fusion différents : chirurgien A (T4-T11), chirurgien B (T5-T12). Dans quel cas la fusion plus proximale (T4) du chirurgien A est-elle justifiée ?<br />
+- A. Pour tous les patients Lenke 1<br />
+- <strong>B. Lorsque T1 est inclinée ≥ 5° vers la convexité (risque de déséquilibre des épaules) ou que le niveau proximal T5 présente un disque de jonction en coin &gt; 10°</strong> ✓<br />
+- C. Pour les patients de grande taille uniquement<br />
+- D. La fusion T4 n'est jamais justifiée pour un type Lenke 1</p>
+<hr />
+<h2 id="post-test-5-questions">Post-test — 5 questions</h2>
+<p><strong>Q1.</strong> La classification de Lenke comporte __ types → <strong>6</strong> ✓<br />
+<strong>Q2.</strong> Sophie (thoracique principale, lombaire centré, cyphose normale) → <strong>Lenke 1AN</strong> ✓<br />
+<strong>Q3.</strong> PI-LL mismatch &gt; 10° signifie → <strong>insuffisance de lordose lombaire → déséquilibre sagittal</strong> ✓<br />
+<strong>Q4.</strong> Courbure structurale selon Lenke → <strong>Cobb ≥ 25° sur le bending controlatéral</strong> ✓<br />
+<strong>Q5.</strong> Modificateur lombaire C → <strong>apex lombaire clairement latéral à la CSVL</strong> ✓</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<h3 id="articles-fondamentaux">Articles fondamentaux</h3>
+<ul>
+<li>Lenke LG et al. <em>Adolescent idiopathic scoliosis: a new classification to determine extent of spinal arthrodesis</em>. JBJS 2001;83-A:1169-81.</li>
+<li>King HA et al. <em>The selection of fusion levels in thoracic idiopathic scoliosis</em>. JBJS 1983;65:1302-13.</li>
+<li>Schwab FJ et al. <em>Adult spinal deformity: a quantification of various radiographic parameters. The SRS-Schwab classification</em>. Spine 2009.</li>
+<li>Rigo M et al. <em>Intraobserver and interobserver agreement in the assessment of Lenke type in adolescent idiopathic scoliosis</em>. Spine 2006.</li>
+<li>Cummings RJ, Loveless EA, Campbell J, et al. <em>Interobserver reliability and intraobserver reproducibility of the system of King et al.</em>. J Bone Joint Surg Am 1998;80:1107-1111.</li>
+<li>Niemeyer T, Wolf A, Kluba S, et al. <em>Interobserver and intraobserver agreement of Lenke and King classifications</em>. Spine 2006;31:2103-2107.</li>
+<li>Schwab F, Ungar B, Blondel B, et al. <em>SRS-Schwab adult spinal deformity classification</em>. Spine 2012;37(12):1077-1082.</li>
+<li>Rigo M, Villagrasa M, Gallo D. <em>A specific scoliosis classification correlating with brace treatment</em>. Scoliosis 2010;5:1.</li>
+</ul>
+<h3 id="pour-aller-plus-loin">Pour aller plus loin</h3>
+<ul>
+<li>[MEDIA: 🎬 M05-RES-001 — Webinar Dr. Lenke : "My classification 20 years later" (45 min)]</li>
+<li>[MEDIA: 📊 M05-RES-002 — Outil en ligne de classification Lenke (cas interactifs)]</li>
+<li>Site SRS : www.srs.org/professionals/online-learning-resources</li>
+</ul>
+<h3 id="liens-intersections">Liens intersections</h3>
+<p>→ <strong>Module 9</strong> : Traitement chirurgical — appliquer la classification Lenke à la sélection des niveaux<br />
+→ <strong>Module 12</strong> : Scoliose adulte — approfondir la classification SRS-Schwab</p>
+<hr />
+<p><em>Module 5 validé — Score minimal : 70% (10/15)</em><br />
+<em>Prochaine étape : Module 6 — Examen clinique de la scoliose</em></p>
+</div>

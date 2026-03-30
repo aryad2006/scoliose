@@ -1,0 +1,584 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-hyperthyroidies-partie-1-cas-1-a-10">CAS CLINIQUES — Hyperthyroïdies — Partie 1 (Cas 1 à 10)</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<h3 id="niveaux-bronze-et-argent">Niveaux Bronze 🥉 et Argent 🥈</h3>
+<hr />
+<blockquote>
+<p><strong>Instructions pédagogiques</strong> : Chaque cas est structuré en 4 étapes progressives. Lisez l'énoncé, répondez aux questions, puis consultez les corrections. Les cas couvrent les présentations les plus fréquentes en médecine générale et hospitalière.</p>
+</blockquote>
+<hr />
+<h2 id="cas-01-palpitations-et-amaigrissement-chez-une-femme-jeune">CAS 01 🥉 — Palpitations et Amaigrissement chez une Femme Jeune</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-01 — Basedow classique : triade palpitations/amaigrissement/goitre chez femme en âge de procréer]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Marie, 28 ans, infirmière, non fumeuse, pas d'antécédent personnel notable.</p>
+<p><strong>Motif de consultation</strong> : Palpitations depuis 3 mois, perte de poids de 6 kg malgré appétit conservé, nervosité, insomnie.</p>
+<p><strong>Anamnèse complémentaire</strong> : Règles irrégulières depuis 2 mois. Transpiration excessive. Sa mère a une thyroïde "qui ne fonctionne pas bien" (sous lévothyroxine).</p>
+<p><strong>Examen clinique</strong> :<br />
+- FC : 108 bpm, régulière. PA : 145/70 mmHg. T° : 37,2°C. Poids : 53 kg (poids habituel 59 kg)<br />
+- Thyroïde : <strong>goitre diffus, souple, non douloureux</strong>, souffle systolique à l'auscultation du cou<br />
+- Tremblement fin des extrémités. Peau chaude et moite. Réflexes ostéotendineux vifs<br />
+- <strong>Yeux</strong> : regard brillant, légère <strong>rétraction palpébrale supérieure</strong> bilatérale, pas de proptose mesurable</p>
+<p><strong>Q1 🥉</strong> — Quel est le diagnostic le plus probable ? Quels sont les éléments cliniques qui l'orientent ?</p>
+<p><strong>Réponse Q1</strong> : Maladie de Basedow très probable. Arguments : femme jeune + goitre diffus + syndrome thyrotoxique complet (palpitations, amaigrissement, nervosité, hypersudation, tachycardie) + ATCD familial thyroïdien + rétraction palpébrale (signe d'atteinte des muscles lisses) + souffle systolique cervical (hypervascularisation). La triade de Basedow = goitre diffus + hyperthyroïdie + manifestations oculaires.</p>
+<p><strong>Q2 🥉</strong> — Quels examens biologiques demandez-vous en première intention ?</p>
+<p><strong>Réponse Q2</strong> : TSH + T4L + T3L + <strong>TRAb</strong> (Abs récepteur TSH). En complément : NFS (lymphocytose relative fréquente), glycémie (hyperglycémie relative), bilan hépatique (avant ATS), créatinine, ECBU (avant RAI si envisagé). Pas de bilan auto-immun exhaustif d'emblée.</p>
+<p><strong>Résultats biologiques</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong> (N : 0,4-4,0)<br />
+- T4L : <strong>58 pmol/L</strong> (N : 12-22)<br />
+- T3L : <strong>12,5 pmol/L</strong> (N : 3,5-6,5)<br />
+- TRAb : <strong>18,5 UI/L</strong> (N &lt; 1,75) ← fortement positifs<br />
+- NFS : leucocytes 5,8 G/L, lymphocytes 42 %, plaquettes normales<br />
+- ALAT : 38 UI/L (normale)</p>
+<p><strong>Q3 🥈</strong> — Le diagnostic est confirmé. Quelle prise en charge thérapeutique initiez-vous ? Discutez le choix du médicament anti-thyroïdien.</p>
+<p><strong>Réponse Q3</strong> : Diagnostic confirmé = <strong>Maladie de Basedow</strong>. Traitement :<br />
+1. <strong>Méthimazole (Néomercazole)</strong> : 20-40 mg/j en 2 prises. Préféré au PTU chez la non-enceinte (moins d'hépatotoxicité grave). Objectif : normaliser T4L en 4-6 semaines.<br />
+2. <strong>Bêta-bloquant</strong> : propranolol 40 mg × 3/j (symptômes cardiovasculaires). À maintenir jusqu'à euthyroïdie, puis décroissance progressive.<br />
+3. <strong>Informer</strong> : risque d'agranulocytose (fièvre + maux de gorge = consultation urgente + NFS), hépatotoxicité, tératogénicité (contraception efficace indispensable).<br />
+4. Bilan ophtalmologique : évaluer TAO (CAS, proptose Hertel).<br />
+5. Consultation endocrinologie pour décision ultérieure (RAI vs chirurgie si rechute).</p>
+<p><strong>Q4 💎</strong> — À 18 mois de traitement par MMI, T4L normale, TSH normalisée à 1,2 mUI/L. TRAb à 2,1 UI/L (diminués mais encore positifs). Calculez le score GREAT et commentez la décision thérapeutique.</p>
+<p><strong>Réponse Q4</strong> : <strong>Score GREAT</strong> = Grade 0 (goitre non volumineux, &lt; 40 mL) + TRAb positifs (&gt; 1,75 UI/L) + Euthyroïdie rapide (T4L normalisée &lt; 6 semaines, information non précisée dans le cas — supposons 8 semaines → 0) + TRAb encore positifs à la fin → score GREAT ≈ 1-2 (faible à intermédiaire). <strong>Décision</strong> : TRAb persistants positifs à 18 mois = facteur de rechute. Probabilité rechute si arrêt ATS : 50-70 %. Options : (1) Prolonger ATS 6 mois supplémentaires + réévaluer TRAb ; (2) Discuter traitement définitif (RAI ou chirurgie) d'emblée si souhait de grossesse dans les 2 ans (RAI CI grossesse 6 mois, chirurgie possible en euthyroïdie). Ici, femme en âge de procréer souhaitant grossesse → privilégier chirurgie (thyroïdectomie totale) avec curatif rapide et TRAb décroissants post-op.</p>
+<hr />
+<h2 id="cas-02-decouverte-fortuite-dune-tsh-basse-au-bilan-annuel">CAS 02 🥉 — Découverte Fortuite d'une TSH Basse au Bilan Annuel</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-02 — Hyperthyroïdie frustre sur GMNT : découverte fortuite, patient asymptomatique &gt; 65 ans, décision de traitement]</p>
+</blockquote>
+<p><strong>Patient</strong> : Jean-Pierre, 70 ans, retraité, fumeur 20 PA sevré depuis 5 ans. ATCD : HTA traitée (amlodipine), dyslipidémie (atorvastatine). Aucune plainte thyroïdienne.</p>
+<p><strong>Circonstance</strong> : Bilan biologique annuel demandé par son médecin traitant.</p>
+<p><strong>Résultats biologiques</strong> :<br />
+- TSH : <strong>0,08 mUI/L</strong> (N : 0,4-4,0)<br />
+- T4L : <strong>15 pmol/L</strong> (normale : 12-22)<br />
+- T3L : <strong>5,8 pmol/L</strong> (normale : 3,5-6,5)<br />
+- TRAb : <strong>&lt; 0,5 UI/L</strong> (négatifs)</p>
+<p><strong>Examen clinique</strong> : Patient en bon état général. FC 76 bpm régulière. Pas de palpitations. Thyroïde : <strong>goitre nodulaire bilatéral palpable</strong>, non douloureux, nodule prédominant en lobe droit.</p>
+<p><strong>Q1 🥉</strong> — Comment interprétez-vous ces résultats biologiques ? Quel est le syndrome en cause ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Hyperthyroïdie frustre</strong> (subclinique) : TSH effondrée (&lt; 0,1 mUI/L) avec T4L et T3L dans les valeurs normales. TRAb négatifs excluent le Basedow. Le contexte clinique (goitre nodulaire bilatéral, âge &gt; 65 ans) oriente vers un <strong>Goitre Multinodulaire Toxique (GMNT)</strong>.</p>
+<p><strong>Q2 🥉</strong> — Quels examens complémentaires demandez-vous pour confirmer l'étiologie ?</p>
+<p><strong>Réponse Q2</strong> :<br />
+1. <strong>Échographie thyroïdienne</strong> : volume du goitre, cartographie nodulaire, classification EU-TIRADS<br />
+2. <strong>Scintigraphie thyroïdienne</strong> (¹²³I ou ⁹⁹ᵐTc) : zones d'autonomie thyroïdienne (foyers chauds = nodules autonomes), parenchyme inter-nodulaire supprimé<br />
+3. <strong>Anti-TPO</strong> (exclure terrain auto-immun)<br />
+4. <strong>ECG</strong> : recherche FA silencieuse (risque × 3 chez &gt; 65 ans avec TSH &lt; 0,1)</p>
+<p><strong>Résultats complémentaires</strong> :<br />
+- Écho : goitre 48 mL, nodule droit 2,8 cm EU-TIRADS 3, nodule gauche 1,5 cm EU-TIRADS 2<br />
+- Scintigraphie : <strong>fixation hétérogène avec zones hyperfixantes bilatérales</strong> et parenchyme inter-nodulaire supprimé ← GMNT toxique confirmé<br />
+- Anti-TPO : négatifs. ECG : rythme sinusal, FC 76 bpm</p>
+<p><strong>Q3 🥈</strong> — Ce patient de 70 ans avec hyperthyroïdie frustre sur GMNT doit-il être traité ? Argumentez votre réponse.</p>
+<p><strong>Réponse Q3</strong> : <strong>Oui, traitement recommandé</strong>. Arguments :<br />
+- TSH &lt; 0,1 mUI/L + âge &gt; 65 ans = recommandation formelle de traitement (ATA 2016, HAS 2019)<br />
+- Risques documentés : FA (RR 3,1 × à 12 ans — Cappola JAMA 2006), déminéralisation osseuse, décompensation cardiaque<br />
+- GMNT = pas de rémission spontanée (contrairement au Basedow)<br />
+- Pas de traitement ATS au long cours dans le GMNT (pas curatif)<br />
+- <strong>Option préférentielle : RAI (¹³¹I)</strong> — élimine les zones d'autonomie, bien toléré chez le sujet âgé, ambulatoire<br />
+- Alternative si goitre volumineux (48 mL) et compression : chirurgie (thyroïdectomie totale)<br />
+- Pré-traitement par MMI 2-4 semaines pour normaliser la fonction avant RAI (éviter crise thyrotoxique)</p>
+<p><strong>Q4 💎</strong> — Calculez la dose de RAI selon la formule de Marinelli pour ce goitre, sachant que la fixation de l'¹²³I à 24h est de 22 % et que l'objectif est une activité absorbée de 150 Gy.</p>
+<p><strong>Réponse Q4</strong> : Formule de Marinelli : <strong>Activité (MBq) = [dose absorbée (Gy) × masse (g)] / [fixation (fraction) × T½ effectif (jours) × facteur de conversion]</strong>. Simplifiée : <strong>A (MBq) = 2,96 × masse (g) × dose souhaitée (Gy) / fixation (%)</strong>. Avec : masse ≈ 48 g (1 g ≈ 1 mL), dose = 150 Gy, fixation = 22 % : <strong>A = 2,96 × 48 × 150 / 22 ≈ 970 MBq</strong> (soit environ 26 mCi). En pratique : 740-1 110 MBq selon les centres pour un GMNT (doses plus élevées que Basedow car captation plus faible). Résultat attendu : euthyroïdie à 3-6 mois dans 50-70 % des cas, hypothyroïdie progressive dans 40-50 % à 5 ans.</p>
+<hr />
+<h2 id="cas-03-fievre-douleur-cervicale-et-hyperthyroidie-transitoire">CAS 03 🥉 — Fièvre, Douleur Cervicale et Hyperthyroïdie Transitoire</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-03 — Thyroïdite de De Quervain : contexte viral, douleur cervicale irradiant aux oreilles, VSR élevée, scintigraphie blanche]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Sophie, 35 ans, institutrice. ATCD : néant. Consultation aux urgences pour douleur cervicale antérieure intense irradiant aux deux oreilles depuis 4 jours, fièvre à 38,8°C, frissons, myalgies. Notion d'épisode rhinopharyngé 3 semaines auparavant.</p>
+<p><strong>Examen clinique</strong> :<br />
+- T° : 38,8°C. FC : 102 bpm. PA : 130/75 mmHg<br />
+- <strong>Thyroïde : goitre diffus, TRÈS DOULOUREUSE à la palpation</strong>, irradiation à la mâchoire<br />
+- Pas d'adénopathie cervicale. Pharynx : normale. ORL : normale</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,03 mUI/L</strong>, T4L : <strong>28 pmol/L</strong>, T3L : <strong>8,1 pmol/L</strong><br />
+- <strong>VSR : 78 mm/h</strong> (N &lt; 20), CRP : 112 mg/L<br />
+- NFS : hyperleucocytose 12 G/L à polynucléaires. TRAb : <strong>négatifs</strong><br />
+- Anti-TPO : <strong>négatifs</strong></p>
+<p><strong>Q1 🥉</strong> — Quel est votre diagnostic ? Quels arguments le confirment ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Thyroïdite de De Quervain</strong> (thyroïdite granulomateuse subaiguë). Arguments : douleur thyroïdienne intense irradiant aux oreilles, fièvre &gt; 38°C, contexte viral récent (rhinopharyngite), VSR très élevée (78 mm/h), CRP élevée, TRAb négatifs, anti-TPO négatifs. L'hyperthyroïdie est <strong>destructive</strong> (relargage T4/T3 par lyse thyréocytaire), non auto-immune, non synthétique.</p>
+<p><strong>Q2 🥉</strong> — Quel examen confirmera l'étiologie et quel résultat attendez-vous ?</p>
+<p><strong>Réponse Q2</strong> : <strong>Scintigraphie thyroïdienne</strong> (¹²³I ou ⁹⁹ᵐTc) → résultat attendu : <strong>fixation effondrée ou nulle</strong> ("scintigraphie blanche") — la thyroïde détruite ne capte plus l'iode. C'est le reflet de la destruction thyréocytaire : la thyroïde ne synthétise plus rien mais relarguée ses stocks. Diagnostic différentiel exclu : Basedow (fixation élevée), GMNT (hétérogène), thyrotoxicose factice (aussi blanche mais Tg effondrée).</p>
+<p><strong>Q3 🥈</strong> — Quelle est la prise en charge thérapeutique de cette thyroïdite de De Quervain ?</p>
+<p><strong>Réponse Q3</strong> :<br />
+1. <strong>Anti-inflammatoires AINS</strong> en première intention : ibuprofène 400 mg × 3/j, 2-4 semaines. Efficaces dans 60-70 % des formes légères-modérées.<br />
+2. <strong>Corticoïdes si résistance AINS</strong> (douleurs persistantes + VSR &gt; 50 après 2 semaines) : prednisone <strong>40 mg/j</strong> pendant 2 semaines, décroissance progressive sur 6-8 semaines. Efficacité spectaculaire (douleurs disparaissent en 48-72h).<br />
+3. <strong>Bêta-bloquant</strong> (propranolol 20-40 mg × 3/j) : si palpitations + tachycardie symptomatique. À arrêter dès normalisation de la FC.<br />
+4. <strong>PAS d'ATS</strong> (MMI/PTU) : inutiles (pas de synthèse hormonale excessive, seulement relargage).<br />
+5. Information patiente : évolution en 3 phases — hyper (2-8 semaines) → hypo transitoire (2-6 semaines) → euthyroïdie (&gt; 90 % des cas).</p>
+<p><strong>Q4 💎</strong> — À 3 mois, la patiente revient avec fatigue intense, prise de poids de 3 kg, TSH à 12 mUI/L, T4L basse à 8 pmol/L. Comment interprétez-vous et gérez-vous cette nouvelle situation ?</p>
+<p><strong>Réponse Q4</strong> : <strong>Phase hypothyroïdienne</strong> de la thyroïdite de De Quervain — transitoire dans la majorité des cas. La destruction thyréocytaire a épuisé les stocks → déficit fonctionnel temporaire pendant la régénération. Prise en charge : (1) Vérifier VSR et CRP (si encore élevées : thyroïdite encore active) ; (2) Si hypothyroïdie symptomatique (fatigue, prise de poids) : substitution par <strong>LT4 50-75 µg/j</strong> temporaire ; (3) Réévaluation TSH à <strong>3-6 mois</strong> : si normalisée, tentative de sevrage LT4 avec surveillance TSH ; (4) Dans 90-95 % des cas = <strong>récupération complète</strong> sans séquelle ; (5) Risque de récidive : 2-4 %, surtout pendant viroses ultérieures.</p>
+<hr />
+<h2 id="cas-04-basedow-et-grossesse-au-premier-trimestre">CAS 04 🥈 — Basedow et Grossesse au Premier Trimestre</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-04 — Basedow découvert en T1 grossesse : diagnostic différentiel HG, choix PTU vs MMI, surveillance fœtale TRAb]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Amina, 31 ans, 10 SA. Première grossesse. Nausées intenses, vomissements, palpitations, nervosité.</p>
+<p><strong>Antécédent</strong> : Hyperthyroïdie traitée par MMI il y a 4 ans, guérie depuis 2 ans (TRAb négatifs à l'arrêt). A repris contact avec son endocrinologue en début de grossesse.</p>
+<p><strong>Biologie à 10 SA</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong>, T4L : <strong>32 pmol/L</strong>, T3L : <strong>10,2 pmol/L</strong><br />
+- TRAb : <strong>9,5 UI/L</strong> (fortement positifs)<br />
+- hCG : 85 000 UI/L (normale pour 10 SA : 25 000-100 000)<br />
+- NFS, bilan hépatique : normaux</p>
+<p><strong>Q1 🥈</strong> — Comment distinguez-vous un Basedow récidivant d'une hyperthyroïdie gestationnelle (HG) dans ce contexte ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Basedow (ce cas)</th>
+<th>HG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAb</td>
+<td><strong>Positifs (9,5 UI/L)</strong></td>
+<td>Négatifs</td>
+</tr>
+<tr>
+<td>hCG</td>
+<td>Normal pour terme</td>
+<td>Très élevée (&gt; 100 000)</td>
+</tr>
+<tr>
+<td>Goitre</td>
+<td>Possible</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Possible</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td>Antécédent</td>
+<td><strong>Basedow connu</strong></td>
+<td>Aucun</td>
+</tr>
+<tr>
+<td>Évolution</td>
+<td>Persistante, peut aggraver</td>
+<td>Régressive après 12-14 SA</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>ATS obligatoires</td>
+<td>Symptomatique seulement</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion : Basedow récidivant</strong> (TRAb très élevés, ATCD de Basedow, T4L 3× la normale).</p>
+<p><strong>Q2 🥈</strong> — Quel anti-thyroïdien de synthèse choisissez-vous et à quelle dose ? Justifiez.</p>
+<p><strong>Réponse Q2</strong> : <strong>PTU (Propylthiouracile)</strong> en priorité au 1er trimestre :<br />
+- Le MMI est tératogène au T1 (aplasie cutis congénitale, atrésie des choanes, fistule trachéo-œsophagienne)<br />
+- PTU : risque tératogène possible mais bien plus faible que MMI au T1<br />
+- Dose : <strong>PTU 100-150 mg × 3/j</strong> (ajuster selon T4L cible : légèrement supérieure à la normale haute, pour éviter l'hypothyroïdie fœtale)<br />
+- <strong>Passage transplacentaire PTU</strong> : moindre que MMI (plus forte liaison protéique)<br />
+- <strong>Switch MMI → PTU en T1</strong> recommandé si patiente était sous MMI en périconceptionnelle<br />
+- <strong>Switch PTU → MMI en T2</strong> recommandé (hépatotoxicité PTU plus préoccupante au long cours)<br />
+- Objectif T4L : dans le <strong>tiers supérieur de la normale</strong> ou légèrement au-dessus (pour éviter hypothyroïdie fœtale car fœtus dépend de T4 maternelle jusqu'à 12-14 SA)</p>
+<p><strong>Q3 💎</strong> — TRAb à 9,5 UI/L à 10 SA. Quelles sont les implications pour le fœtus et le nouveau-né, et quelle surveillance proposez-vous ?</p>
+<p><strong>Réponse Q3</strong> : TRAb élevés (&gt; 3-5 × la normale) → <strong>risque de Basedow fœtal et néonatal</strong> :<br />
+- TRAb traversent la placenta (IgG) → stimulent le TSHR fœtal<br />
+- <strong>Hyperthyroïdie fœtale</strong> : tachycardie &gt; 160 bpm, RCIU, hydramnios, goitre fœtal à l'écho<br />
+- <strong>Hyperthyroïdie néonatale</strong> : transitoire (durée = demi-vie des TRAb = 3-12 semaines après naissance), mais peut nécessiter traitement ATS néonatal<br />
+- <strong>Hypothyroïdie fœtale iatrogène</strong> si surdosage en ATS maternel (neutralisation TRAb endogène + blocage synthèse hormonale fœtale)</p>
+<p><strong>Surveillance proposée</strong> :<br />
+1. TRAb à <strong>32-36 SA</strong> : si &gt; 3-5 × normale → risque élevé Basedow fœtal/néonatal<br />
+2. <strong>Écho morphologique fœtale</strong> : FC fœtale, goitre (hyper &gt; hypo), biométrie<br />
+3. Avertir la <strong>maternité + néonatologie</strong> : Basedow néonatal possible<br />
+4. Bilan néonatal à J3 : TSH + T4L + TRAb<br />
+5. Si tachycardie fœtale &gt; 160 bpm persistante : discussion Lugol fœtal via amniocentèse (exceptionnel)</p>
+<hr />
+<h2 id="cas-05-fibrillation-auriculaire-revelatrice">CAS 05 🥈 — Fibrillation Auriculaire Révélatrice</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-05 — FA thyrotoxique chez sujet de 65 ans : Basedow apathique, cardioversion différée, anticoagulation]</p>
+</blockquote>
+<p><strong>Patient</strong> : Michel, 65 ans, retraité, comorbidités : HTA, pas de cardiopathie connue. Consulte aux urgences pour palpitations irrégulières depuis 48h, légère dyspnée à l'effort.</p>
+<p><strong>ECG</strong> : FA non valvulaire, FC moyenne 120 bpm.</p>
+<p><strong>Examen clinique</strong> : Poids 68 kg (perdu 4 kg en 3 mois sans le noter). Thyroïde : goitre discret palpé. Pas de signe oculaire. Légère asthénie, mais <strong>pas de nervosité, pas de tremblement</strong>.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong>, T4L : <strong>45 pmol/L</strong>, T3L : <strong>11,2 pmol/L</strong><br />
+- TRAb : <strong>12,5 UI/L</strong> (positifs)<br />
+- NFS : normale. BNP : 320 pg/mL. Troponine : normale. ECG : FA sans autre anomalie</p>
+<p><strong>Q1 🥈</strong> — Quel concept illustre ce cas clinique ? Pourquoi l'hyperthyroïdie était-elle méconnue jusqu'à présent ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Hyperthyroïdie "apathique"</strong> (ou oligosymptomatique) du sujet âgé. Chez le sujet &gt; 60 ans, la thyrotoxicose peut se présenter sans les signes classiques (nervosité, tremblements, hypersudation) mais avec des manifestations cardiovasculaires prédominantes (FA, décompensation cardiaque, angor). Raisons : (1) réponse bêta-adrénergique atténuée avec l'âge ; (2) interprétation des symptômes comme "vieillissement normal" ; (3) pas de demande de TSH systématique. La <strong>FA inexpliquée</strong> chez &gt; 60 ans impose TOUJOURS une TSH.</p>
+<p><strong>Q2 🥈</strong> — Quelle prise en charge urgente et différée proposez-vous ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Urgence (J0-J7)</strong> :<br />
+1. <strong>Contrôle de la FC</strong> : bêta-bloquant IV (aténolol 25-50 mg/j ou bisoprolol) — objectif FC &lt; 90 bpm au repos<br />
+2. <strong>Anticoagulation</strong> : HBPM puis AVK/AOD — FA thyrotoxique = risque thromboembolique élevé (CHA₂DS₂-VASc ≥ 2 ici). Ne PAS cardioverser avant euthyroïdie (récidive quasi-certaine en hyperthyroïdie)<br />
+3. <strong>MMI</strong> : 30-40 mg/j — normaliser T4L en 4-6 semaines (étiologie Basedow confirmée par TRAb)<br />
+4. Bilan cardiaque : écho cœur (fraction d'éjection ? cardiomyopathie rythmique ?)</p>
+<p><strong>Différé (après euthyroïdie, ≥ 4-6 semaines)</strong> :<br />
+1. Tentative de <strong>cardioversion électrique externe (CEE)</strong> sous anticoagulation efficace depuis ≥ 3 semaines<br />
+2. Si retour sinusal spontané (50-70 % des FA thyrotoxiques) : pas de CEE nécessaire<br />
+3. Décision sur <strong>traitement définitif</strong> Basedow (RAI préféré chez homme de 65 ans)<br />
+4. Anticoagulation : maintenir selon CHA₂DS₂-VASc persistant (HTA ≥ 2 → poursuite AOD)</p>
+<p><strong>Q3 💎</strong> — La T4L se normalise à 6 semaines. La FA persiste. L'échocardiographie montre une FEVG à 45 %. Comment interprétez-vous et que décidez-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Cardiomyopathie rythmique</strong> (ou cardiomyopathie thyrotoxique) — FEVG basse par tachycardie chronique + effet direct des hormones thyroïdiennes sur le myocarde (augmentation de la contractilité puis épuisement). Prise en charge : (1) Anticoagulation maintenue (FEVG &lt; 50 % + FA) ; (2) CEE tentée après 3 semaines d'anticoagulation efficace et euthyroïdie confirmée — la restauration du rythme sinusal est urgente pour récupération cardiaque ; (3) Traitement IC si FEVG &lt; 40 % : IEC + bêta-bloquant ; (4) Traitement définitif Basedow : RAI après euthyroïdie &gt; 3 mois stable ; (5) Suivi échocardiographique : récupération FEVG attendue dans 3-12 mois si rythme sinusal restauré.</p>
+<hr />
+<h2 id="cas-06-crise-thyrotoxique-en-post-operatoire">CAS 06 🥈 — Crise Thyrotoxique en Post-Opératoire</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-06 — Crise thyrotoxique déclenchée par chirurgie d'urgence chez Basedow non contrôlé : score Burch-Wartofsky, traitement en réanimation]</p>
+</blockquote>
+<p><strong>Patient</strong> : Rachid, 45 ans, connu pour maladie de Basedow sous MMI depuis 6 mois, observance incomplète depuis 2 mois. Opéré en urgence pour appendicite aiguë sous anesthésie générale.</p>
+<p><strong>J1 post-opératoire</strong> : Fièvre à 40,2°C, agitation, confusion, tachycardie à 160 bpm, PA 90/60 mmHg, vomissements, diarrhée.</p>
+<p><strong>Biologie urgente</strong> : TSH &lt; 0,01 mUI/L, T4L 72 pmol/L, T3L 18 pmol/L, glycémie 8,2 mmol/L, CRP 180 mg/L, NFS : leucocytes 14 G/L (contexte infectieux post-op), troponine 0,8 ng/mL.</p>
+<p><strong>Q1 🥈</strong> — Calculez le score de Burch-Wartofsky et interprétez-le.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Valeur</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Température</td>
+<td>40,2°C</td>
+<td>30 pts</td>
+</tr>
+<tr>
+<td>Dysfonction SNC</td>
+<td>Confusion</td>
+<td>20 pts</td>
+</tr>
+<tr>
+<td>Dysfonction cardiovasculaire</td>
+<td>FC 160 bpm</td>
+<td>25 pts</td>
+</tr>
+<tr>
+<td>Insuffisance cardiaque</td>
+<td>Légère (PA basse)</td>
+<td>5 pts</td>
+</tr>
+<tr>
+<td>Dysfonction digestive</td>
+<td>Vomissements + diarrhée</td>
+<td>10 pts</td>
+</tr>
+<tr>
+<td>Facteur précipitant identifié</td>
+<td>Chirurgie</td>
+<td>10 pts</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td><strong>100 pts</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Score Burch-Wartofsky = 100 pts</strong> (&gt; 45 = crise thyrotoxique certaine). Urgence vitale absolue.</p>
+<p><strong>Q2 🥈</strong> — Détaillez la prise en charge en réanimation de cette crise thyrotoxique.</p>
+<p><strong>Réponse Q2</strong> : <strong>Traitement de la crise thyrotoxique (Burch-Wartofsky ≥ 45)</strong> :</p>
+<p><strong>Séquence OBLIGATOIRE (dans l'ordre)</strong> :<br />
+1. <strong>PTU 500-1 000 mg per os ou SNG</strong> (loading dose) — 1 HEURE AVANT LUGOL<br />
+2. <strong>Solution de Lugol</strong> (500 mg iodure/mL) : 10-20 gouttes × 3/j — donné 1h après PTU (bloquer la libération thyroïdienne par effet Wolff-Chaikoff ; si donné avant PTU → utilisation comme substrat synthèse = aggravation)<br />
+3. <strong>Propranolol</strong> IV : 1-5 mg lent IVD sous monitoring cardio, puis oral 60-80 mg × 4/j<br />
+4. <strong>Hydrocortisone</strong> 100 mg IV × 3/j (insuffisance surrénalienne relative + inhibe conversion T4→T3)<br />
+5. <strong>Sédation/antipyrétiques</strong> : paracétamol IV (PAS d'AINS, PAS d'aspirine — déplacement T4 de l'albumine)<br />
+6. <strong>Refroidissement physique</strong> : glace, matelas refroidissant<br />
+7. <strong>Réanimation hémodynamique</strong> : remplissage vasculaire + amines si choc<br />
+8. Traitement de la cause déclenchante (ici : antibiotiques post-appendicectomie)</p>
+<p><strong>Q3 💎</strong> — À J3, amélioration partielle (T° 38,5°C, FC 110 bpm, confusion résiduelle). Le consentement n'est pas recueillable. Quelles options discutez-vous avec la famille ?</p>
+<p><strong>Réponse Q3</strong> : Crise thyrotoxique résistante = mortalité &gt; 20 %. Options :<br />
+1. <strong>Plasmaphérèse</strong> : retrait direct des hormones thyroïdiennes circulantes (T4L et T3L) + TRAb → réduction rapide des hormones en 24-48h. Indication : réfractaire au traitement médical maximal.<br />
+2. <strong>Cholestyramine</strong> 4 g × 4/j : chélation T4/T3 dans le cycle entéro-hépatique → accélère l'élimination.<br />
+3. <strong>Thyroïdectomie totale d'urgence</strong> : traitement définitif, mortalité chirurgicale 10-15 % en crise mais à peser si réanimation seule insuffisante. Préparation : MMI + bêta-bloquants + Lugol pré-opératoires (même court délai).<br />
+4. <strong>Discussion éthique avec famille</strong> : décisions en équipe (réanimateur, endocrinologue, chirurgien), démarche collégiale (loi Leonetti si décision de limitation thérapeutique).</p>
+<hr />
+<h2 id="cas-07-hyperthyroidie-sous-amiodarone">CAS 07 🥈 — Hyperthyroïdie sous Amiodarone</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-07 — HAT type 1 vs type 2 : patient sous amiodarone pour FA, diagnostic différentiel par scintigraphie et IL-6]</p>
+</blockquote>
+<p><strong>Patient</strong> : Alain, 72 ans, sous amiodarone 200 mg/j depuis 3 ans pour FA persistante. Cardiologue satisfait (FA contrôlée). Bilan thyroïdien annuel : TSH brusquement effondrée.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong> (stable à 0,8 mUI/L depuis 2 ans)<br />
+- T4L : <strong>48 pmol/L</strong> (était à 28 pmol/L : attention aux valeurs élevées attendues sous amiodarone)<br />
+- T3L : <strong>7,5 pmol/L</strong> (légèrement élevée)<br />
+- TRAb : <strong>négatifs</strong> (&lt; 0,5 UI/L)<br />
+- <strong>IL-6 : 85 pg/mL</strong> (normale &lt; 5)<br />
+- CRP : 45 mg/L<br />
+- Thyroglobuline : <strong>4 850 ng/mL</strong> (très élevée)</p>
+<p><strong>Examen clinique</strong> : Thyroïde difficile à palper (habitus), pas de douleur à la palpation. Pas de fièvre.</p>
+<p><strong>Écho-Doppler</strong> : thyroïde de taille normale, <strong>vascularisation DIMINUÉE</strong> au Doppler couleur.</p>
+<p><strong>Q1 🥈</strong> — Quelle est votre interprétation et quel est le type d'hyperthyroïdie amiodaronée ?</p>
+<p><strong>Réponse Q1</strong> : <strong>HAT type 2 (thyroïdite destructive)</strong> :<br />
+- TRAb négatifs → pas de Basedow<br />
+- Thyroïde normale avant (sans GMNT documenté)<br />
+- IL-6 très élevée (85 pg/mL) → inflammation destructive<br />
+- Tg très élevée (relargage massif lors de la lyse thyréocytaire)<br />
+- Hypovascularisation Doppler (thyroïde "épuisée")<br />
+- Scintigraphie attendue : fixation effondrée (non réalisée car suspicion HAT2 forte)<br />
+- Contexte : zones de suffisance iodée, thyroïde antérieurement normale</p>
+<p><strong>Q2 🥈</strong> — L'amiodarone peut-elle être arrêtée ? Quel traitement initiez-vous ?</p>
+<p><strong>Réponse Q2</strong> :<br />
+1. <strong>Discussion cardiologue</strong> : FA récurrente sous amiodarone = dépendance cardiologique. Risque d'arrêt : récidive FA avec TE. Décision collégiale.<br />
+2. Si arrêt impossible : <strong>maintenir l'amiodarone</strong> + traiter l'hyperthyroïdie.<br />
+3. <strong>Traitement HAT2</strong> : <strong>Prednisone 40-60 mg/j</strong> — efficacité rapide (2-4 semaines). Réponse attendue : ↓ T4L de 50 % en 4 semaines.<br />
+4. Surveillance : TSH + T4L toutes les 4 semaines, décroissance progressive prednisone sur 3-6 mois.<br />
+5. Pas de RAI (fixation trop basse). Thionamides inutiles (pas de synthèse).</p>
+<p><strong>Q3 💎</strong> — À 8 semaines de prednisone 40 mg/j, T4L encore à 36 pmol/L, TSH toujours &lt; 0,01. L'équipe cardiologique ne peut pas arrêter l'amiodarone. Quelle est la décision ?</p>
+<p><strong>Réponse Q3</strong> : Résistance aux corticoïdes &gt; 6-8 semaines = <strong>indication de thyroïdectomie totale d'urgence semi-différée</strong> :<br />
+1. Ajouter <strong>PTU 600 mg/j</strong> (peut légèrement contribuer à ↓ la conversion T4→T3) + maintenir prednisone 40 mg/j pendant la préparation chirurgicale.<br />
+2. Bêta-bloquant : propranolol 40-80 mg × 3/j (si toléré cardiologiquement).<br />
+3. Consultation anesthésiste + chirurgien endocrinien : risque chirurgical élevé (72 ans, cardiopathie, thyrotoxicose active) → balance bénéfice/risque. Mortalité péri-opératoire 3-5 % mais mortalité de la thyrotoxicose non contrôlée &gt; 10 %.<br />
+4. Post-opératoire : substitution LT4 immédiate (50-75 µg/j) + surveillance calcium/PTH (parathyroïdes).</p>
+<hr />
+<h2 id="cas-08-hyperthyroidie-chez-lenfant-de-10-ans">CAS 08 🥈 — Hyperthyroïdie chez l'Enfant de 10 Ans</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-08 — Basedow pédiatrique : diagnostic, particularités de la prise en charge, MMI pédiatrique, retentissement scolaire]</p>
+</blockquote>
+<p><strong>Patient</strong> : Lucas, 10 ans. Amené par ses parents pour chute des résultats scolaires, agitation, difficultés de concentration depuis 4 mois. La maîtresse évoque un "trouble de l'attention". Perte de poids de 3 kg.</p>
+<p><strong>Antécédents familiaux</strong> : Mère sous lévothyroxine (Hashimoto).</p>
+<p><strong>Examen clinique</strong> :<br />
+- FC : 106 bpm, PA : 120/60 mmHg. Poids : 32 kg (courbe de poids fléchissante)<br />
+- <strong>Goitre diffus, souple, non douloureux</strong>. Exophtalmie bilatérale légère (proptose 18 mm à l'Hertel)<br />
+- Tremblement fin. Peau moite. Érythème palmaire<br />
+- <strong>Retard pubertaire</strong> : stade Tanner 1 (retard possible)</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong>, T4L : <strong>52 pmol/L</strong>, T3L : <strong>15,2 pmol/L</strong><br />
+- TRAb : <strong>15,8 UI/L</strong> (fortement positifs)</p>
+<p><strong>Q1 🥈</strong> — Quelles sont les particularités de la maladie de Basedow chez l'enfant ?</p>
+<p><strong>Réponse Q1</strong> : Particularités pédiatriques du Basedow :<br />
+1. <strong>Présentation atypique</strong> : troubles scolaires, agitation (diagnostic différentiel TDAH), énurésie secondaire<br />
+2. <strong>Retentissement de la thyrotoxicose chronique</strong> : accélération de la vitesse de croissance → avance staturale, mais fermeture prématurée des épiphyses → risque petite taille définitive<br />
+3. <strong>Retard pubertaire paradoxal</strong> : malgré accélération staturo-pondérale, retard de la maturation pubertaire (hormones thyroïdiennes → inhibent l'axe gonadotrope)<br />
+4. <strong>Taux de rechute très élevé</strong> : 70-80 % vs 50 % adulte → durée ATS plus longue (4-5 ans vs 18 mois)<br />
+5. <strong>Atteinte osseuse</strong> : déminéralisation rapide (os en croissance + thyrotoxicose)<br />
+6. <strong>TRAb très élevés</strong> : fréquent en pédiatrie, rémission moins fréquente</p>
+<p><strong>Q2 🥈</strong> — Quel traitement initiez-vous ? Quelles sont les spécificités pédiatriques ?</p>
+<p><strong>Réponse Q2</strong> : Traitement :<br />
+1. <strong>MMI (Méthimazole)</strong> 0,5-1 mg/kg/j chez l'enfant &gt; 10 ans (dose max 30 mg/j). Ici : 32 kg × 0,8 mg/kg ≈ <strong>25 mg/j</strong>. PTU non recommandé en pédiatrie (hépatotoxicité grave).<br />
+2. <strong>Bêta-bloquant</strong> : propranolol 1 mg/kg/j en 3 prises (vérifier CI asthme).<br />
+3. Surveillance NFS et bilan hépatique avant début + tous les 3 mois.<br />
+4. <strong>Durée prolongée</strong> : 4-5 ans (vs 18 mois adulte) pour espérer rémission.<br />
+5. Accompagnement pédopsychiatrique/scolaire si troubles concentrationnels persistants.<br />
+6. Bilan ophtalmologique (TAO légère ici, pas de traitement spécifique immédiat).</p>
+<p><strong>Q3 💎</strong> — À 4 ans de MMI, TRAb persistants à 4,2 UI/L. La famille demande quel traitement définitif choisir. Discutez RAI vs chirurgie chez cet enfant maintenant âgé de 14 ans.</p>
+<p><strong>Réponse Q3</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>RAI</th>
+<th>Chirurgie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Âge minimum consensus</td>
+<td><strong>&gt; 10-15 ans selon centres</strong> (&gt; 10 ans ATA 2016)</td>
+<td>Pas de limite d'âge</td>
+</tr>
+<tr>
+<td>Efficacité</td>
+<td>80-90 % euthyroïdie/hypothyroïdie</td>
+<td>&gt; 95 %</td>
+</tr>
+<tr>
+<td>Hypothyroïdie permanente</td>
+<td>80-100 %</td>
+<td>&gt; 95 %</td>
+</tr>
+<tr>
+<td>Risque</td>
+<td>Irradiation thyroïdienne (cancer très rare en théorie)</td>
+<td>Chirurgical (NLR, parathyroïdes)</td>
+</tr>
+<tr>
+<td>TRAb</td>
+<td>Déclinent progressivement</td>
+<td>Déclinent plus vite post-op</td>
+</tr>
+<tr>
+<td>Grossesse</td>
+<td>CI 6 mois minimum</td>
+<td>Possible rapidement après</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td>Peut aggraver</td>
+<td>Neutre</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommandation</strong> : À 14 ans, les deux options sont acceptables. Chez un adolescent avec TRAb très élevés et TAO légère, la <strong>chirurgie (thyroïdectomie totale)</strong> est souvent préférée par les experts européens : (1) résultats définitifs rapides ; (2) pas d'irradiation thyroïdienne chez un jeune ; (3) TRAb décroissent plus vite → TAO moins de risque d'aggravation. Préparation : éuthyroïdie sous MMI, arrêt MMI + Lugol 10 j avant, chirurgien expérimenté en pédiatrie endocrinienne.</p>
+<hr />
+<h2 id="cas-09-decouverte-dun-nodule-hyperfixant">CAS 09 🥉 — Découverte d'un Nodule Hyperfixant</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-09 — Adénome de Plummer : nodule chaud solitaire, mutation TSHR gain-de-fonction, traitement par RAI ou chirurgie]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Nathalie, 52 ans, pas d'antécédent. Consulte pour palpitation légère, amaigrissement de 2 kg en 2 mois.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,05 mUI/L</strong>, T4L : <strong>26 pmol/L</strong>, T3L : <strong>7,8 pmol/L</strong><br />
+- TRAb : <strong>négatifs</strong></p>
+<p><strong>Échographie</strong> : <strong>nodule droit unique de 2,5 cm</strong>, EU-TIRADS 3 (modérément suspect). Lobe gauche : normal, pas d'autre nodule.</p>
+<p><strong>Scintigraphie ¹²³I</strong> : <strong>foyer chaud unique</strong> en lobe droit, parenchyme adjacent et lobe gauche <strong>supprimés</strong> (non fixants).</p>
+<p><strong>Q1 🥉</strong> — Quel est le diagnostic ? Quel est le mécanisme physiopathologique ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Adénome toxique de Plummer</strong> (adénome thyroïdien autonome solitaire). Mécanisme : <strong>mutation somatique gain-de-fonction du récepteur TSHR</strong> dans les cellules du nodule → activation constitutive de l'adénylyl cyclase → production hormonale indépendante de la TSH → suppression du parenchyme thyroïdien normal par feedback négatif. Les mutations les plus fréquentes sont dans les domaines transmembranaires 5 et 6 du TSHR (Asp727Glu, Ala623Ile, etc.). Confirmation : scintigraphie avec foyer chaud unique + parenchyme supprimé + TRAb négatifs + nodule solitaire.</p>
+<p><strong>Q2 🥉</strong> — Quel traitement proposez-vous et pourquoi la cytoponction n'est-elle pas réalisée ?</p>
+<p><strong>Réponse Q2</strong> :<br />
+<strong>Pas de cytoponction</strong> : les nodules "chauds" à la scintigraphie ont un risque de malignité &lt; 1 % (les cellules cancéreuses ne captent pas l'iode → elles ne fixent pas la scintigraphie → un nodule chaud = bénin avec quasi-certitude). La ponction n'apporte rien.</p>
+<p><strong>Traitement</strong> (2 options équivalentes) :<br />
+1. <strong>RAI (¹³¹I)</strong> : activité ciblée sur le foyer chaud autonome. Dose ≈ 370-740 MBq. Le parenchyme normal supprimé n'est pas atteint → pas d'hypothyroïdie dans 80 % des cas (le parenchyme récupère après disparition du foyer chaud). Risque résiduel : 10-20 % d'hypothyroïdie à 10 ans.<br />
+2. <strong>Chirurgie (lobectomie droite)</strong> : exérèse du lobe porteur, préservation du lobe gauche → risque d'hypothyroïdie très faible. À préférer si nodule &gt; 3 cm ou suspicion insuffisante sur la cytologie.</p>
+<p>Ici, nodule 2,5 cm, patiente de 52 ans sans CI au RAI → <strong>RAI préféré</strong> (ambulatoire, moins invasif).</p>
+<hr />
+<h2 id="cas-10-thyroidite-post-partum">CAS 10 🥈 — Thyroïdite Post-Partum</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-10 — Thyroïdite post-partum : phase hyperthyroïdienne à 3 mois post-partum, risque d'hypothyroïdie permanente, lien avec Hashimoto]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Céline, 33 ans, primipare. Accouchement normal à 39 SA, allaitement maternel. Consultation à 3 mois post-partum pour palpitations, nervosité, insomnie depuis 2 semaines. Examen clinique : thyroïde discrètement augmentée, non douloureuse, FC 98 bpm.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,02 mUI/L</strong>, T4L : <strong>24 pmol/L</strong>, T3L : <strong>7,1 pmol/L</strong><br />
+- TRAb : <strong>négatifs</strong><br />
+- Anti-TPO : <strong>positifs à 450 UI/mL</strong> (N &lt; 34)<br />
+- VSR : 12 mm/h (normale). CRP : 2 mg/L (normale)</p>
+<p><strong>Q1 🥉</strong> — Quel est le diagnostic ? Comment le distinguez-vous d'un Basedow du post-partum ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Thyroïdite post-partum</strong> (phase hyperthyroïdienne).</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Thyroïdite post-partum (ce cas)</th>
+<th>Basedow post-partum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAb</td>
+<td><strong>Négatifs</strong></td>
+<td>Positifs</td>
+</tr>
+<tr>
+<td>Anti-TPO</td>
+<td><strong>Positifs +++</strong></td>
+<td>Parfois positifs</td>
+</tr>
+<tr>
+<td>VSR</td>
+<td><strong>Normale</strong></td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Phase hyper</td>
+<td>Auto-limitée (2-3 mois)</td>
+<td>Persistante</td>
+</tr>
+<tr>
+<td>Phase hypo</td>
+<td><strong>Fréquente (60-80 %)</strong></td>
+<td>Rare (sauf après RAI/chirurgie)</td>
+</tr>
+<tr>
+<td>Scintigraphie</td>
+<td>Blanche (si réalisée)</td>
+<td>Élevée diffuse</td>
+</tr>
+<tr>
+<td>Traitement</td>
+<td>Bêta-bloquants ± LT4</td>
+<td>ATS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Q2 🥉</strong> — Quelle est la prise en charge immédiate, et que faut-il lui expliquer sur l'évolution ?</p>
+<p><strong>Réponse Q2</strong> :<br />
+1. <strong>Phase hyperthyroïdienne</strong> : si symptômes cardiovasculaires → propranolol 20-40 mg/j (compatible allaitement à faibles doses). Pas d'ATS (thyroïdite destructive, pas de synthèse hormonale excessive).<br />
+2. <strong>Allaitement</strong> : compatible avec propranolol à faibles doses. TRAb négatifs = pas de risque pour le nourrisson.<br />
+3. <strong>Évolution attendue</strong> (à expliquer) :<br />
+   - Phase hyper : 2-3 mois → disparition spontanée<br />
+   - Phase hypo dans 60-80 % : fatigue, prise de poids, dépression → substitution LT4 si TSH &gt; 10 mUI/L ou symptômes<br />
+   - Récupération euthyroïdie définitive : 50-60 % à 12 mois<br />
+   - Risque de <strong>Hashimoto permanent</strong> : 25-30 % (anti-TPO élevés = marqueur de terrain auto-immun)<br />
+   - Récidive lors des grossesses ultérieures : 70 %</p>
+<p><strong>Q3 💎</strong> — À 8 mois post-partum, TSH à 18 mUI/L, T4L basse, fatigue intense, dépression. Quelle décision prenez-vous et quel est le risque spécifique dans le contexte ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypothyroïdie post-thyroïdite post-partum</strong> → traitement par LT4 :<br />
+1. Initiation LT4 1-2 µg/kg/j (ici ≈ 75-100 µg/j selon poids post-partum)<br />
+2. Objectif TSH : 0,5-2,5 mUI/L (objectif strict si grossesse prochaine envisagée)<br />
+3. <strong>Risque spécifique du post-partum</strong> : dépression du post-partum aggravée ou masquée par hypothyroïdie → dépistage Edinburgh Postnatal Depression Scale ; si score ≥ 13 → suivi psychiatrique parallèle<br />
+4. <strong>Test de sevrage LT4</strong> à 12 mois : tentative d'arrêt avec surveillance TSH. Si TSH &gt; 10 après 6 semaines de sevrage → hypothyroïdie permanente (Hashimoto) → LT4 définitive<br />
+5. Surveillance anti-TPO : si très élevés (&gt; 500 UI/mL) → risque Hashimoto permanent accru. Information pour grossesses futures : TSH à T1 de toute grossesse ultérieure.</p>
+<hr />
+<p><em>Formation VERTEX© — Cas Cliniques Hyperthyroïdies — Partie 1 (Cas 1-10) — Mars 2026</em></p>
+</div>

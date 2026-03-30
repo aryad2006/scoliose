@@ -1,0 +1,464 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ioa">CAHIER DES CHARGES — FORMATION IOA</h1>
+<h2 id="partie-6-arthrite-septique-et-infection-periprothetique-modules-18-21">Partie 6 — Arthrite Septique et Infection Périprothétique (Modules 18-21)</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire (IOA)<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-18-arthrite-septique-de-larticulation-native">MODULE 18 : ARTHRITE SEPTIQUE DE L'ARTICULATION NATIVE</h1>
+<p><strong>Partie</strong> : VI — Arthrite Septique et Infection Périprothétique<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 2, 3, 7</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Genou droit chaud, gonflé, douloureux depuis 3 jours, fièvre 38.5°C. Antécédent d'infiltration de corticoïdes du genou droit il y a 10 jours pour gonarthrose. Ponction articulaire : liquide purulent, 85 000 GB/mm³ (92% PNN). Cristaux : absents. Examen direct : cocci Gram+ en amas. *Urgence ? Quel traitement ? L'infiltration est-elle en cause ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Reconnaître</strong> le tableau clinique d'arthrite septique native</li>
+<li><strong>Différencier</strong> arthrite septique et arthrite microcristalline</li>
+<li><strong>Pratiquer</strong> et interpréter la ponction articulaire diagnostique</li>
+<li><strong>Prescrire</strong> l'antibiothérapie adaptée</li>
+<li><strong>Indiquer</strong> et réaliser le lavage articulaire chirurgical</li>
+<li><strong>Évaluer</strong> le pronostic fonctionnel articulaire</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-181-epidemiologie-et-physiopathologie-articulaire">Section 18.1 — Épidémiologie et physiopathologie articulaire</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Incidence : 2-10/100 000/an <em>(Kaandorp et al., 1997)</em> ; pic bimodal (&lt;5 ans et &gt;65 ans)<br />
+- Articulation synoviale : cible idéale (vascularisée, pas de membrane basale endothéliale dans la synoviale)<br />
+- 3 voies de contamination : hématogène (principale), inoculation directe (infiltration, chirurgie, plaie pénétrante), contiguïté (ostéomyélite métaphysaire intra-capsulaire)<br />
+- <strong>Localisations</strong> <em>(Kaandorp et al., 1997)</em> : genou (50%), hanche (20%), épaule (10%), cheville (7%), poignet, coude, doigts<br />
+- <strong>Effet de l'infection sur le cartilage</strong> : destruction rapide (48-72h) par protéases bactériennes + enzymes leucocytaires + pression intra-articulaire + toxines → dommage irréversible<br />
+- Urgence : chaque heure de retard thérapeutique aggrave le pronostic fonctionnel</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA18-S01-001 | 🎬 ANIMATION | Physiopathologie de l'arthrite septique : contamination → destruction du cartilage | Animation chronologique |<br />
+| MIOA18-S01-002 | 📐 SCHÉMA | Les 3 voies de contamination articulaire | Schéma anatomique |<br />
+| MIOA18-S01-003 | 📊 INFOGRAPHIE | Distribution des localisations d'arthrite septique | Diagramme avec squelette |</p>
+<h3 id="section-182-diagnostic-clinico-biologique">Section 18.2 — Diagnostic clinico-biologique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tableau typique</strong> : monoarthrite aiguë fébrile avec impotence fonctionnelle sévère<br />
+- Genou : gros genou chaud, rouge, douloureux, épanchement sous tension, flexum antalgique<br />
+- Hanche : douleur inguinale, rotation externe douloureuse, position antalgique (flexion-abduction-rotation externe), palpation articulaire impossible → diagnostic souvent tardif chez l'adulte<br />
+- <strong>Ponction articulaire : pierre angulaire du diagnostic</strong> :<br />
+  - Urgence : toute monoarthrite aiguë fébrile doit être ponctiée<br />
+  - Aspect macroscopique : purulent ou trouble<br />
+  - Cytologie : &gt; 50 000 GB/mm³ (souvent &gt;100 000) avec &gt; 90% PNN<br />
+  - Recherche de cristaux : INDISPENSABLE (éliminer goutte/chondrocalcinose) — NB : arthrite septique et microcristalline peuvent COEXISTER<br />
+  - Examen bactériologique : Gram + culture (aéro-anaérobie)<br />
+  - Culture positive dans 70-90% des cas <em>(Margaretten et al., 2007, JAMA)</em><br />
+- <strong>Germes</strong> :<br />
+  - <em>S. aureus</em> : 60% des cas (adulte) <em>(Goldenberg, 1998, Lancet)</em><br />
+  - <em>Streptocoques</em> : 15-20%<br />
+  - <em>Neisseria gonorrhoeae</em> : sujet jeune, polyarthrite migratrice → monoarthrite<br />
+  - <em>K. kingae</em> : enfant &lt;4 ans<br />
+  - BGN : sujet âgé, immunodéprimé, UDIV<br />
+  - <em>Mycobacterium tuberculosis</em> : arthrite chronique, mono-viscérale<br />
+- <strong>Diagnostics différentiels</strong> :<br />
+  - Arthrite microcristalline (goutte, CCA) — cristaux visibles en microscopie polarisée<br />
+  - Arthrite réactionnelle<br />
+  - Poussée de PR<br />
+  - Hémarthrose sur anticoagulant</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA18-S02-001 | 📷 IMAGE | Genou septique : aspect clinique (tuméfaction, rougeur) | Photo clinique |<br />
+| MIOA18-S02-002 | 🎬 VIDÉO | Ponction articulaire du genou : technique, aspect du liquide | Vidéo procédurale |<br />
+| MIOA18-S02-003 | 📐 SCHÉMA | Algorithme : ponction articulaire → interprétation → décision | Arbre complet |<br />
+| MIOA18-S02-004 | 📊 INFOGRAPHIE | Liquide articulaire : septique vs mécanique vs inflammatoire vs microcristallin | Tableau comparatif |</p>
+<h3 id="section-183-traitement-antibiotherapie-et-lavage-articulaire">Section 18.3 — Traitement : antibiothérapie et lavage articulaire</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Antibiothérapie</strong> :<br />
+  - Urgence dès la ponction réalisée<br />
+  - Probabiliste anti-staphylococcique (oxacilline ou céfazoline) + aminoside si sepsis<br />
+  - Adaptation à l'antibiogramme dès résultat<br />
+  - Durée : <strong>4-6 semaines</strong> (accord professionnel, pas d'étude randomisée adulte)<br />
+  - Relais oral dès l'amélioration clinico-biologique (J3-J7)<br />
+- <strong>Lavage articulaire</strong> :<br />
+  - <strong>Genou, épaule, cheville</strong> : lavage arthroscopique (gold standard), répété si nécessaire<br />
+  - <strong>Hanche</strong> : arthrotomie chirurgicale (lavage arthroscopique possible mais plus complexe)<br />
+  - Quand ? En urgence dans les 24h, idéalement &lt;12h<br />
+  - Lavage abondant (&gt;10L) + synovectomie si synoviale très épaissie<br />
+  - Drainage aspiratif 48h<br />
+  - Ponctions-aspirations itératives : alternative acceptable si patient inopérable (comorbidités)<br />
+- <strong>Immobilisation</strong> : controversée — mobilisation passive précoce recommandée pour préserver le cartilage</p>
+<h3 id="section-184-pronostic-et-sequelles">Section 18.4 — Pronostic et séquelles</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Mortalité : 5-15% (sujet âgé, comorbidés, poly-articulaire) <em>(Weston et al., 1999)</em><br />
+- Séquelles articulaires permanentes : 30-50% des cas <em>(Weston et al., 1999)</em><br />
+- Facteurs de mauvais pronostic : âge &gt;65 ans, retard diagnostique &gt;48h, hanche, immunodépression, <em>S. aureus</em><br />
+- Arthrose secondaire : quasi constante après arthrite septique<br />
+- Arthrodèse : option de sauvetage (cheville, épaule, genou)<br />
+- Rôle de la kinésithérapie dans la récupération (renvoi Module 28)</p>
+<h3 id="points-cles-du-module-18">Points clés du Module 18</h3>
+<ol>
+<li>Toute monoarthrite aiguë fébrile est une arthrite septique jusqu'à preuve du contraire → PONCTION EN URGENCE</li>
+<li>Le cartilage est détruit en 48-72h → urgence diagnostique et thérapeutique</li>
+<li>Liquide articulaire septique : &gt;50 000 GB/mm³, &gt;90% PNN, bactéries au Gram + culture</li>
+<li>Toujours chercher des cristaux : arthrite septique et microcristalline peuvent coexister</li>
+<li>S. aureus est le 1er germe chez l'adulte ; K. kingae chez l'enfant &lt;4 ans</li>
+<li>Lavage articulaire en urgence + antibiothérapie IV = traitement de référence</li>
+<li>Séquelles articulaires dans 30-50% des cas malgré traitement adapté</li>
+</ol>
+<hr />
+<h1 id="module-19-infection-periprothetique-diagnostic-et-classification">MODULE 19 : INFECTION PÉRIPROTHÉTIQUE — DIAGNOSTIC ET CLASSIFICATION</h1>
+<p><strong>Partie</strong> : VI — Arthrite Septique et Infection Périprothétique<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 7, 9, 10</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Prothèse totale de hanche droite posée il y a 2 ans. Douleur inguinale droite progressive depuis 6 mois, pas de fièvre, marche limitée à 200m. CRP = 18 mg/L. Radiographie : liseré >2mm progressif, ostéolyse zones I et VII de DeLee-Charnley *(DeLee & Charnley, 1976, Clin Orthop)*. Suspicion d'infection chronique ? Descellement septique vs aseptique ? *Comment faire la part des choses ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Définir</strong> l'infection périprothétique et sa classification temporelle (Tsukayama/Zimmerli)</li>
+<li><strong>Appliquer</strong> les critères diagnostiques (MSIS <em>(Parvizi et al., 2011, Clin Orthop Relat Res)</em> / ICM 2018)</li>
+<li><strong>Interpréter</strong> les examens complémentaires (biologie, imagerie, ponction, alpha-défensine)</li>
+<li><strong>Distinguer</strong> descellement septique et aseptique</li>
+<li><strong>Évaluer</strong> les facteurs pronostiques</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-191-epidemiologie-et-facteurs-de-risque">Section 19.1 — Épidémiologie et facteurs de risque</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Incidence : PTH 0.5-2%, PTG 1-2.5%, prothèse d'épaule 1-4%, prothèse de coude 3-8% <em>(Kurtz et al., 2012, J Arthroplasty)</em><br />
+- Coût moyen d'un sepsis sur prothèse : 50 000-100 000 € (traitement complet) <em>(Kurtz et al., 2012)</em><br />
+- <strong>Facteurs de risque pré-opératoires</strong> :<br />
+  - Diabète (OR 1.5-2), obésité IMC&gt;40 (OR 2-3), immunosuppression, polyarthrite rhumatoïde<br />
+  - ATCD de révision prothétique, ATCD d'infection articulaire<br />
+  - Malnutrition (albumine &lt;35 g/L), anémie<br />
+  - Tabagisme actif, ASA ≥3<br />
+- <strong>Facteurs de risque per-opératoires</strong> :<br />
+  - Durée opératoire &gt;2.5h, reprise précoce, hématome post-opératoire<br />
+  - Contamination per-opératoire (flux laminaire mal positionné, trafic bloc opératoire)<br />
+- <strong>Facteurs de risque post-opératoires</strong> :<br />
+  - Bactériémie à distance (infection urinaire, dentaire, cutanée)<br />
+  - Désunion cicatricielle, hématome non drainé</p>
+<h3 id="section-192-classification-temporelle">Section 19.2 — Classification temporelle</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Classification de Tsukayama</strong> <em>(Tsukayama et al., 1996, J Arthroplasty)</em> :<br />
+  - Type I : Culture per-opératoire positive (découverte fortuite) — ≥2 échantillons positifs au même germe<br />
+  - Type II : Infection post-opératoire précoce (&lt;4 semaines) — S. aureus, BGN<br />
+  - Type III : Infection hématogène aiguë (&gt;4 semaines, mais début brutal, articulation fonctionnelle avant) — S. aureus, streptocoques<br />
+  - Type IV : Infection chronique tardive (&gt;4 semaines, insidieux) — SCN, Cutibacterium acnes, entérocoques<br />
+- <strong>Classification de Zimmerli (NEJM 2004)</strong> :<br />
+  - Précoce (&lt;3 mois post-op) : germes virulents, contamination per-opératoire<br />
+  - Retardée (3-24 mois) : germes de faible virulence, mode insidieux<br />
+  - Tardive (&gt;24 mois) : hématogène, début aigu<br />
+- <strong>Lien entre classification et stratégie thérapeutique</strong> : déterminant ++</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA19-S02-001 | 📊 INFOGRAPHIE | Classifications de Tsukayama et Zimmerli — correspondances et germes | Infographie comparative |<br />
+| MIOA19-S02-002 | 📐 SCHÉMA | Timeline des infections périprothétiques : de l'implantation à la bactériémie tardive | Frise chronologique |</p>
+<h3 id="section-193-demarche-diagnostique">Section 19.3 — Démarche diagnostique</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Critères ICM 2018 (International Consensus Meeting)</strong> <em>(Parvizi et al., 2018, J Arthroplasty)</em> :<br />
+  - Critère majeur (1 seul suffit) : fistule communiquant avec l'articulation, ou ≥2 cultures positives au même germe<br />
+  - Critères mineurs (score ≥6 = infection) :<br />
+    - CRP &gt;10 mg/L (2 pts), VS &gt;30 mm/h (2 pts)<br />
+    - Leucocytes synoviaux &gt;3000/µL (3 pts), % PNN synoviaux &gt;80% (2 pts)<br />
+    - Alpha-défensine positive (3 pts) — spécificité 97% <em>(Deirmengian et al., 2014)</em><br />
+    - Histologie : &gt;5 PNN/champ HPF (3 pts)<br />
+  - Score : ≥6 = infection probable, 2-5 = doute, ≤1 = infection peu probable<br />
+- <strong>Biologie sérique</strong> : CRP +++, VS (moins spécifique), IL-6 (normalisation rapide), D-dimères (nouveau marqueur)<br />
+- <strong>Imagerie</strong> :<br />
+  - Radiographies standards : liseré progressif, ostéolyse, descellement (MAIS non spécifique septique/aseptique)<br />
+  - Scanner avec réduction d'artefacts métalliques<br />
+  - Scintigraphie aux leucocytes marqués : spécificité ~85%<br />
+  - PET-scan au 18F-FDG : sensibilité élevée, spécificité variable<br />
+  - IRM : séquences réduction artefacts métalliques (MARS/SEMAC)<br />
+- <strong>Ponction articulaire</strong> :<br />
+  - INDISPENSABLE avant toute reprise chirurgicale pour suspicion d'infection<br />
+  - Fenêtre antibiotique 14 jours minimum<br />
+  - Cytologie + culture en milieu enrichi (14 jours)<br />
+  - Alpha-défensine : test immuno-chromatographique rapide ou ELISA<br />
+  - Leucocyte estérase : test bandelette rapide orientatif</p>
+<h3 id="section-194-prelevements-per-operatoires-et-criteres-histologiques">Section 19.4 — Prélèvements per-opératoires et critères histologiques</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Règle des 5 prélèvements</strong> (IDSA) : ≥5 biopsies tissulaires péri-prothétiques dans des zones différentes<br />
+- Culture prolongée 14 jours (milieux aéro-anaérobie)<br />
+- ≥2 prélèvements positifs au même germe = infection confirmée<br />
+- 1 seul prélèvement positif : possible contaminant, interprétation prudente<br />
+- <strong>Histologie</strong> (examen extemporané + définitif) : ≥5 PNN/champ HPF (400×), 10 champs → sensibilité 80%, spécificité 90% <em>(Feldman et al., 1995)</em><br />
+- <strong>Sonication de l'implant</strong> : détache le biofilm → culture, augmente la sensibilité de 30-40%<br />
+- <strong>PCR 16S/MALDI-TOF</strong> : utile si cultures négatives sous ATB ou germes fastidieux</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA19-S04-001 | 📐 SCHÉMA | Procédure de prélèvements per-opératoires (5 sites, conditionnement, transport) | Schéma technique |<br />
+| MIOA19-S04-002 | 📷 IMAGE | Sonication d'un implant : matériel et résultats | Photo de laboratoire |<br />
+| MIOA19-S04-003 | 📊 INFOGRAPHIE | Grille ICM 2018 : scoring critères majeurs et mineurs | Score interactif |</p>
+<h3 id="points-cles-du-module-19">Points clés du Module 19</h3>
+<ol>
+<li>L'infection périprothétique touche 1-2% des PTH/PTG — coût médico-économique majeur</li>
+<li>La classification temporelle (Tsukayama/Zimmerli) détermine la stratégie thérapeutique</li>
+<li>Critères ICM 2018 : score combinant CRP, cytologie synoviale, alpha-défensine, histologie — seuil ≥6</li>
+<li>L'alpha-défensine a une spécificité de 97% — meilleur marqueur biologique actuel</li>
+<li>≥5 prélèvements per-opératoires, fenêtre ATB 14 jours, culture 14 jours, sonication</li>
+<li>Ponction articulaire obligatoire avant toute reprise pour suspicion d'infection</li>
+<li>La distinction septique/aseptique est FONDAMENTALE car le traitement est radicalement différent</li>
+</ol>
+<hr />
+<h1 id="module-20-dair-debridement-antibiotiques-irrigation-retention">MODULE 20 : DAIR — DÉBRIDEMENT, ANTIBIOTIQUES, IRRIGATION, RÉTENTION</h1>
+<p><strong>Partie</strong> : VI — Arthrite Septique et Infection Périprothétique<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Module 19</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">PTG gauche posée il y a 15 jours. Depuis J7, rougeur, chaleur, écoulement séreux de la cicatrice, fièvre 38.2°C. CRP remontée à 205 mg/L (était à 35 à J5). Radiographies : implant en bonne position. *Infection post-opératoire précoce. DAIR ou changement ? Quels sont les critères de décision ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Définir</strong> les indications du DAIR (conservation de la prothèse)</li>
+<li><strong>Comprendre</strong> les critères de sélection des patients éligibles au DAIR</li>
+<li><strong>Décrire</strong> la technique chirurgicale du DAIR</li>
+<li><strong>Prescrire</strong> l'antibiothérapie post-DAIR avec bi-thérapie rifampicine</li>
+<li><strong>Évaluer</strong> les résultats et facteurs d'échec du DAIR</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-201-indications-et-contre-indications-du-dair">Section 20.1 — Indications et contre-indications du DAIR</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Conditions d'éligibilité</strong> (ALL doivent être remplis) :<br />
+  - Infection aiguë : &lt;4 semaines depuis l'apparition des symptômes (critères de « l'infection aiguë »)<br />
+  - Post-opératoire précoce (&lt;30 jours) OU hématogène aiguë (symptômes &lt;3 semaines)<br />
+  - Implant stable (pas de descellement mécanique)<br />
+  - Pas de fistule chronique<br />
+  - État des tissus mous acceptable (pas de nécrose étendue, possibilité de fermeture)<br />
+  - Germe sensible à la rifampicine et aux fluoroquinolones (pour bi-thérapie orale)<br />
+- <strong>Contre-indications RELATIVES au DAIR</strong> :<br />
+  - SARM (succès DAIR 30-40% vs 70% pour SASM) <em>(Senneville et al., 2011)</em><br />
+  - Polyéthylène non échangeable<br />
+  - Symptômes &gt;4 semaines<br />
+  - Fistule<br />
+  - Multiples reprises antérieures</p>
+<h3 id="section-202-technique-chirurgicale">Section 20.2 — Technique chirurgicale</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Arthrotomie large (même voie d'abord)<br />
+- Synovectomie radicale<br />
+- Lavage abondant (&gt;9L de sérum physiologique)<br />
+- Échange des pièces mobiles : polyéthylène (insert tibial PTG, liner acétabulaire PTH), tête fémorale modulaire<br />
+- NE PAS déposer les implants fixés et stables<br />
+- Prélèvements multiples (≥5) AVANT lavage<br />
+- Fermeture sur drain aspiratif<br />
+- Nombre de DAIR : 1, maximum 2 tentatives — au-delà, changement prothétique</p>
+<h3 id="section-203-antibiotherapie-post-dair">Section 20.3 — Antibiothérapie post-DAIR</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Phase d'attaque IV</strong> (2-4 semaines) : ATB IV adaptée au germe<br />
+- <strong>Phase d'entretien orale</strong> (10-12 semaines pour staphylocoques, 6-8 semaines pour streptocoques) :<br />
+  - STAPHYLOCOQUE : <strong>rifampicine + fluoroquinolone</strong> (lévofloxacine ou ofloxacine) — combinaison clé anti-biofilm<br />
+  - NE JAMAIS donner la rifampicine en monothérapie (résistance en 24-48h !)<br />
+  - Alternative si FQ contre-indiquée : rifampicine + cotrimoxazole / acide fusidique / clindamycine<br />
+  - Streptocoque : amoxicilline + rifampicine (ou FQ)<br />
+  - BGN : fluoroquinolone (ciprofloxacine) seule possible<br />
+- Étude majeure : <strong>Zimmerli (JAMA 1998)</strong> — rifampicine + ciprofloxacine vs ciprofloxacine seule → 100% vs 58% de succès</p>
+<h3 id="section-204-resultats-et-facteurs-dechec">Section 20.4 — Résultats et facteurs d'échec</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Taux de succès global du DAIR : 60-75% <em>(Byren et al., 2009, Clin Infect Dis)</em><br />
+- <strong>Facteurs de bon pronostic</strong> : infection précoce (&lt;7 jours), SASM, bi-thérapie rifampicine, 1er DAIR<br />
+- <strong>Facteurs d'échec</strong> : SARM (30-40% succès), symptômes &gt;4 semaines, Gram-négatif, polymicrobien, immunodéprimé, échec d'un 1er DAIR<br />
+- En cas d'échec de DAIR → changement prothétique en 1 ou 2 temps (Modules 21)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA20-S04-001 | 📊 INFOGRAPHIE | Algorithme décisionnel : DAIR vs changement prothétique | Arbre de décision |<br />
+| MIOA20-S04-002 | 📐 SCHÉMA | Technique chirurgicale du DAIR (synovectomie, changement insert, lavage) | Schéma technique |<br />
+| MIOA20-S04-003 | 📊 INFOGRAPHIE | Antibiothérapie post-DAIR : protocole rifampicine + compagnon selon germe | Tableau protocole |<br />
+| MIOA20-S04-004 | 🎬 ANIMATION InfectoSim© | Simulation : évaluer un patient pour DAIR vs changement — critères de sélection | Exercice interactif |</p>
+<h3 id="points-cles-du-module-20">Points clés du Module 20</h3>
+<ol>
+<li>DAIR = conservation de la prothèse — réservé aux infections aiguës (&lt;4 semaines), implant stable, pas de fistule</li>
+<li>Technique : synovectomie + lavage abondant + échange des pièces mobiles + ≥5 prélèvements</li>
+<li>Bi-thérapie rifampicine + FQ = pierre angulaire du traitement des infections staphylococciques sur matériel</li>
+<li>JAMAIS de rifampicine en monothérapie (risque de résistance immédiat)</li>
+<li>Taux de succès 60-75% ; SARM = facteur d'échec majeur (succès ~30-40%)</li>
+<li>Maximum 2 tentatives de DAIR avant de passer au changement prothétique</li>
+</ol>
+<hr />
+<h1 id="module-21-changement-prothetique-en-1-ou-2-temps-strategies-de-sauvetage">MODULE 21 : CHANGEMENT PROTHÉTIQUE EN 1 OU 2 TEMPS — STRATÉGIES DE SAUVETAGE</h1>
+<p><strong>Partie</strong> : VI — Arthrite Septique et Infection Périprothétique<br />
+<strong>Durée estimée</strong> : 4h30<br />
+<strong>Niveau</strong> : Expert<br />
+<strong>Prérequis</strong> : Modules 19, 20</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">PTH gauche infectée chronique (3 ans post-op). Fistule inguinale depuis 6 mois. Ponction : *S. epidermidis* multi-résistant (R rifampicine, R FQ, S vancomycine, S daptomycine). Scanner : descellement complet des 2 composants, ostéolyse majeure zone II-III de Gruen. DAIR exclu (fistule + chronique + germe résistant). *1 temps ou 2 temps ? Comment reconstruire avec cette perte osseuse ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Choisir</strong> entre un changement en 1 temps et en 2 temps selon la situation clinique</li>
+<li><strong>Décrire</strong> la technique du changement en 2 temps avec spacer</li>
+<li><strong>Prescrire</strong> l'antibiothérapie inter-temps</li>
+<li><strong>Déterminer</strong> le bon timing pour la réimplantation</li>
+<li><strong>Connaître</strong> les stratégies de sauvetage (arthrodèse, résection, amputation)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-211-changement-en-1-temps">Section 21.1 — Changement en 1 temps</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principe</strong> : dépose + réimplantation dans la même intervention chirurgicale<br />
+- <strong>Indications</strong> (plutôt européennes, tradition scandinave et française) :<br />
+  - Germe identifié et sensible avant la chirurgie<br />
+  - Pas de fistule complexe<br />
+  - Perte osseuse modérée (pas de reconstruction majeure nécessaire)<br />
+  - Tissus mous de bonne qualité<br />
+  - Patient pouvant supporter une chirurgie longue<br />
+- <strong>Avantages</strong> : 1 seule intervention, pas de spacer, reprise fonctionnelle plus rapide, coût réduit, moins de complications liées à l'immobilisation<br />
+- <strong>Technique</strong> : dépose complète, curetage radical, ciment de scellement chargé ATB, +/- greffe osseuse, réimplantation avec ciment ATB<br />
+- <strong>Résultats</strong> : taux de guérison 85-95% (dans des indications bien sélectionnées)</p>
+<h3 id="section-212-changement-en-2-temps-gold-standard-historique">Section 21.2 — Changement en 2 temps (gold standard historique)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principe</strong> : 1er temps = dépose + spacer ; 2ème temps = réimplantation après stérilisation<br />
+- <strong>1er temps chirurgical</strong> :<br />
+  - Dépose de tous les implants + extraction du ciment<br />
+  - Curetage radical de tout le tissu infecté<br />
+  - Prélèvements multiples (≥5)<br />
+  - Mise en place du <strong>spacer</strong> : ciment PMMA chargé d'ATB haute dose (vancomycine + gentamicine)<br />
+    - Spacer articulé (mobile) : préserve la mobilité, facilite le 2e temps<br />
+    - Spacer statique : plus stable si perte osseuse sévère ou infection sévère<br />
+- <strong>Inter-temps</strong> :<br />
+  - ATB IV 6 semaines puis relais oral (durée totale 8-12 semaines selon les centres)<br />
+  - Fenêtre ATB avant le 2e temps : 2-6 semaines sans ATB<br />
+  - Critères de réimplantation : CRP normalisée, ponction du spacer stérile, bon état des tissus mous<br />
+- <strong>2e temps chirurgical</strong> (8-16 semaines après le 1er temps) :<br />
+  - Retrait du spacer, prélèvements (≥5), lavage<br />
+  - Réimplantation prothétique (ciment +/- chargé ATB)<br />
+  - +/- greffes osseuses (impaction grafting, allogreffes structurales)<br />
+- <strong>Résultats</strong> : taux de guérison 85-95% <em>(Kunutsor et al., 2015, Arch Orthop Trauma Surg)</em></p>
+<h3 id="section-213-comparaison-1-temps-vs-2-temps">Section 21.3 — Comparaison 1 temps vs 2 temps</h3>
+<ul>
+<li><strong>Méta-analyses</strong> : pas de supériorité claire du 2 temps vs 1 temps en termes d'éradication <em>(Kunutsor et al., 2015, Arch Orthop Trauma Surg)</em></li>
+<li><strong>Tendance internationale</strong> : élargissement des indications du 1 temps (coût-efficacité, qualité de vie)</li>
+<li><strong>Facteurs décisionnels</strong> :</li>
+<li>1 temps si : germe connu sensible, sinus/fistule absent, perte osseuse modérée, bon état général</li>
+<li>2 temps si : germe résistant/inconnu, fistule, perte osseuse sévère, insuffisance des tissus mous, échec préalable</li>
+</ul>
+<h3 id="section-214-strategies-de-sauvetage">Section 21.4 — Stratégies de sauvetage</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- Quand les changements échouent (&lt; 5-10% des cas) :<br />
+  - <strong>Résection-arthroplastie (Girdlestone)</strong> : hanche — résection tête fémorale + nettoyage, pas de réimplantation. Résultat fonctionnel médiocre mais éradication de l'infection. Inégalité de longueur, instabilité, marche avec aides<br />
+  - <strong>Arthrodèse</strong> : genou — fusion osseuse, supprime la douleur mais supprime la mobilité. Technique : enclouage centromédullaire, fixateur externe, greffe<br />
+  - <strong>Amputation</strong> : dernier recours absolu, discutée en RCP. Indications : infection incontrôlable mettant en jeu le pronostic vital, douleur chronique invalidante, membre non fonctionnel<br />
+  - <strong>Traitement suppressif chronique</strong> : ATB au long cours (indéfini) chez le patient non opérable (Cierny C)<br />
+- Place de la RCP multidisciplinaire (CRIOA — Centre de Référence des IOA) : recommandation d'adresser les cas complexes aux CRIOA</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MIOA21-S01-001 | 📷 IMAGE | Changement en 1 temps : per-opératoire et radiographies | Série d'images |<br />
+| MIOA21-S02-001 | 📷 IMAGE | Spacer en ciment antibiotique : articulé vs statique | Photos comparatives |<br />
+| MIOA21-S02-002 | 🎬 ANIMATION | Changement en 2 temps : technique chirurgicale complète (1er temps et 2e temps) | Animation chirurgicale 3D |<br />
+| MIOA21-S02-003 | 📐 SCHÉMA | Timeline du changement en 2 temps (1er temps → ATB → fenêtre → contrôle → 2e temps) | Chronologie |<br />
+| MIOA21-S03-001 | 📊 INFOGRAPHIE | 1 temps vs 2 temps : critères de choix | Tableau décisionnel |<br />
+| MIOA21-S04-001 | 📷 IMAGE | Résection-arthroplastie de Girdlestone : radiographie post-opératoire | Radiographie |<br />
+| MIOA21-S04-002 | 📊 INFOGRAPHIE | Stratégies de sauvetage : algorithme quand tout échoue | Arbre de décision |<br />
+| MIOA21-S04-003 | 🎬 ANIMATION InfectoSim© | Simulation : choix stratégique (DAIR vs 1 temps vs 2 temps vs sauvetage) selon le cas clinique | Exercice interactif |</p>
+<h3 id="points-cles-du-module-21">Points clés du Module 21</h3>
+<ol>
+<li>Le changement en 2 temps avec spacer est le gold standard historique (guérison 85-95%)</li>
+<li>Le changement en 1 temps a des résultats comparables dans des indications sélectionnées et offre des avantages fonctionnels</li>
+<li>Le spacer antibiotique assure une diffusion locale d'ATB + maintien de l'espace articulaire pendant l'inter-temps</li>
+<li>La réimplantation nécessite : CRP normale, ponction stérile, bon état des tissus mous</li>
+<li>Girdlestone, arthrodèse, amputation = sauvetage ultime après échecs multiples</li>
+<li>Les cas complexes doivent être adressés aux CRIOA (Centres de Référence)</li>
+<li>Le traitement suppressif est une option chez le patient inopérable</li>
+</ol>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Byren I, Bejon P, Atkins BL, et al. One hundred and twelve infected arthroplasties treated with ‘DAIR’ (debridement, antibiotics and implant retention): antibiotic duration and outcome. <em>J Antimicrob Chemother</em>. 2009;63(6):1264-1271.</li>
+<li>Deirmengian C, Kardos K, Kilmartin P, et al. Diagnosing periprosthetic joint infection: has the era of the biomarker arrived? <em>Clin Orthop Relat Res</em>. 2014;472(11):3254-3262.</li>
+<li>DeLee JG, Charnley J. Radiological demarcation of cemented sockets in total hip replacement. <em>Clin Orthop Relat Res</em>. 1976;(121):20-32.</li>
+<li>Feldman DS, Lonner JH, Desai P, et al. The role of intraoperative frozen sections in revision total joint arthroplasty. <em>J Bone Joint Surg Am</em>. 1995;77(12):1807-1813.</li>
+<li>Goldenberg DL. Septic arthritis. <em>Lancet</em>. 1998;351(9097):197-202.</li>
+<li>Kaandorp CJE, Dinant HJ, van de Laar MAFJ, et al. Incidence and sources of native and prosthetic joint infection: a community based prospective survey. <em>Ann Rheum Dis</em>. 1997;56(8):470-475.</li>
+<li>Kunutsor SK, Whitehouse MR, Blom AW, et al. Re-infection outcomes following one- and two-stage surgical revision of infected hip prosthesis: a systematic review and meta-analysis. <em>Arch Orthop Trauma Surg</em>. 2015;135(6):755-767.</li>
+<li>Kurtz SM, Lau E, Watson H, et al. Economic burden of periprosthetic joint infection in the United States. <em>J Arthroplasty</em>. 2012;27(8 Suppl):61-65.e1.</li>
+<li>Margaretten ME, Kohlwes J, Moore D, et al. Does this adult patient have septic arthritis? <em>JAMA</em>. 2007;297(13):1478-1488.</li>
+<li>Parvizi J, Zmistowski B, Berbari EF, et al. New definition for periprosthetic joint infection: from the Workgroup of the MSIS. <em>Clin Orthop Relat Res</em>. 2011;469(11):2992-2994.</li>
+<li>Parvizi J, Tan TL, Goswami K, et al. The 2018 definition of periprosthetic joint infection: an evidence-based and validated criteria. <em>J Arthroplasty</em>. 2018;33(5):1309-1314.e2.</li>
+<li>Senneville E, Joulie D, Legout L, et al. Outcome and predictors of treatment failure in total hip/knee prosthetic joint infections due to <em>Staphylococcus aureus</em>. <em>Clin Infect Dis</em>. 2011;53(4):334-340.</li>
+<li>Tsukayama DT, Estrada R, Gustilo RB. Infection after total hip arthroplasty: a study of the treatment of one hundred and six infections. <em>J Bone Joint Surg Am</em>. 1996;78(4):512-523.</li>
+<li>Weston VC, Jones AC, Bradbury N, et al. Clinical features and outcome of septic arthritis in a single UK Health District 1982-1991. <em>Ann Rheum Dis</em>. 1999;58(4):214-219.</li>
+<li>Zimmerli W, Widmer AF, Blatter M, et al. Role of rifampin for treatment of orthopedic implant-related staphylococcal infections. <em>JAMA</em>. 1998;279(19):1537-1541.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

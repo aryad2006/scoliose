@@ -1,0 +1,1311 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-complete-sur-les-tendinites-et-tendinopathies-de-lappareil-locomoteur">CAHIER DES CHARGES — FORMATION COMPLÈTE SUR LES TENDINITES ET TENDINOPATHIES DE L'APPAREIL LOCOMOTEUR</h1>
+<h2 id="partie-0-introduction-generale-charte-graphique-et-architecture-pedagogique">Partie 0 — Introduction générale, Charte graphique et Architecture pédagogique</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Statut</strong> : Document fondateur — Cahier des charges complet<br />
+<strong>Plateforme</strong> : VERTEX© — Formation médicale en ligne<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies de l'Appareil Locomoteur — <em>Tendinopathies of the Musculoskeletal System</em></p>
+<hr />
+<h1 id="table-des-matieres-partie-0">TABLE DES MATIÈRES — PARTIE 0</h1>
+<ol>
+<li><a href="#1-synthèse-exécutive">Synthèse exécutive</a></li>
+<li><a href="#2-public-cible-et-prérequis">Public cible et prérequis</a></li>
+<li><a href="#3-architecture-pédagogique-globale">Architecture pédagogique globale</a></li>
+<li><a href="#4-charte-graphique-unifiée--plateforme-vertex">Charte graphique unifiée — Plateforme VERTEX©</a></li>
+<li><a href="#5-code-couleur--formation-tendinites">Code couleur — Formation Tendinites</a></li>
+<li><a href="#6-règles-décriture-du-contenu">Règles d'écriture du contenu</a></li>
+<li><a href="#7-structure-des-fichiers-du-cdc">Structure des fichiers du CDC</a></li>
+<li><a href="#8-correspondance-inter-formations">Correspondance inter-formations</a></li>
+</ol>
+<hr />
+<h1 id="1-synthese-executive">1. SYNTHÈSE EXÉCUTIVE</h1>
+<h2 id="11-ce-quest-cette-formation">1.1 Ce qu'est cette formation</h2>
+<p>La <strong>Formation Tendinites et Tendinopathies</strong> est un programme e-learning complet destiné aux chirurgiens orthopédistes, médecins du sport, rhumatologues, kinésithérapeutes et médecins de médecine physique et de réadaptation, couvrant <strong>l'intégralité</strong> du sujet — de la biologie tendineuse fondamentale aux thérapies biologiques de pointe, en passant par la physiopathologie du continuum tendinopathique, le diagnostic clinique et échographique, les tendinopathies topographiques (Achille, coiffe, épicondylalgies, tendon patellaire, glutéales, etc.), les traitements conservateurs et chirurgicaux, et la rééducation spécialisée.</p>
+<p>Elle constitue la <strong>seizième formation</strong> de la plateforme VERTEX©, après les Formations Scoliose (🔵), PTG (🟢), IOA (🟤). Les formations partagent :</p>
+<ul>
+<li>La même <strong>plateforme LMS</strong> (architecture, authentification, évaluation)</li>
+<li>La même <strong>charte graphique</strong> de base (typographie, mise en page, icônes)</li>
+<li>Les mêmes <strong>règles d'écriture pédagogique</strong> (cas cliniques, mnémoniques, niveaux de profondeur)</li>
+<li>Les mêmes <strong>standards d'évaluation</strong> (Bronze → Diamant, cas cliniques progressifs)</li>
+<li>Le même <strong>moteur de simulation</strong> VERTEX© (adapté : TendonSim© pour la modélisation de charge tendineuse, la simulation d'exercices excentriques, la planification d'infiltrations échoguidées)</li>
+</ul>
+<h2 id="12-perimetre-de-la-formation-tendinites">1.2 Périmètre de la formation Tendinites</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>25 modules organisés en 8 parties</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>~80-90 heures de contenu</td>
+</tr>
+<tr>
+<td><strong>Niveau</strong></td>
+<td>Fondamental → Intermédiaire → Expert</td>
+</tr>
+<tr>
+<td><strong>Spécialités</strong></td>
+<td>Chirurgie orthopédique, médecine du sport, rhumatologie, médecine physique et de réadaptation (MPR), kinésithérapie</td>
+</tr>
+<tr>
+<td><strong>Couverture</strong></td>
+<td>Biologie tendineuse, physiopathologie du continuum, biomécanique, diagnostic clinique et échographique, IRM, tendinopathies par localisation (Achille, coiffe, coude, genou, hanche, pied, poignet, main), thérapies conservatrices, thérapies biologiques (PRP, ondes de choc, prolothérapie), chirurgie des tendinopathies, rééducation spécialisée, prévention, innovations</td>
+</tr>
+<tr>
+<td><strong>Simulation</strong></td>
+<td>TendonSim© — module VERTEX© dédié (modélisation charge-capacité tendineuse, simulation d'exercices excentriques/isométriques, planification d'infiltration échoguidée 3D)</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>Certificat VERTEX© Tendinites, éligible DPC/CME</td>
+</tr>
+<tr>
+<td><strong>Langue</strong></td>
+<td>Français (traduction EN/ES/AR prévue)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-objectifs-pedagogiques-globaux">1.3 Objectifs pédagogiques globaux</h2>
+<p>À l'issue de cette formation, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> la structure, la biologie et la biomécanique du tendon normal, et les mécanismes de réparation tendineuse</li>
+<li><strong>Expliquer</strong> le continuum pathologique de Cook &amp; Purdam (tendinopathie réactive → dérégulation → dégénérative) et ses implications cliniques (Cook &amp; Purdam, <em>Br J Sports Med</em>, 2009)</li>
+<li><strong>Diagnostiquer</strong> une tendinopathie en utilisant l'examen clinique ciblé, l'échographie musculosquelettique et l'IRM</li>
+<li><strong>Distinguer</strong> les différentes tendinopathies topographiques (Achille, coiffe, épicondylalgies, patellaire, glutéale, tibial postérieur, fibulaires, poignet) et leur prise en charge spécifique</li>
+<li><strong>Prescrire</strong> un programme de rééducation fondé sur les preuves (exercices excentriques, isométriques, HSR, gestion de la charge)</li>
+<li><strong>Évaluer</strong> les indications, l'efficacité et les limites des thérapies biologiques (PRP, ondes de choc, prolothérapie) et des infiltrations</li>
+<li><strong>Poser les indications chirurgicales</strong> en cas d'échec du traitement conservateur et connaître les principales techniques opératoires</li>
+<li><strong>Gérer</strong> les ruptures tendineuses aiguës (Achille, coiffe, biceps, quadriceps)</li>
+<li><strong>Prévenir</strong> les tendinopathies par la gestion de la charge, le renforcement préventif et la correction biomécanique</li>
+<li><strong>Intégrer</strong> les innovations (cellules souches, scaffolds, bioingénierie tendineuse, intelligence artificielle en imagerie)</li>
+</ol>
+<hr />
+<h1 id="2-public-cible-et-prerequis">2. PUBLIC CIBLE ET PRÉREQUIS</h1>
+<h2 id="21-public-cible">2.1 Public cible</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Public</th>
+<th>Modules obligatoires</th>
+<th>Modules optionnels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveau 1 — Fondamental</strong></td>
+<td>Internes orthopédie/médecine du sport, médecins généralistes, kinésithérapeutes</td>
+<td>Modules 1-6, 8-9, 11, 14-15, 21-22</td>
+<td>23-25</td>
+</tr>
+<tr>
+<td><strong>Niveau 2 — Intermédiaire</strong></td>
+<td>Résidents séniors, CCA, chirurgiens/rhumatologues en début de pratique, kinésithérapeutes spécialisés</td>
+<td>Modules 1-20, 21-22</td>
+<td>23-25</td>
+</tr>
+<tr>
+<td><strong>Niveau 3 — Expert</strong></td>
+<td>Chirurgiens orthopédistes spécialisés, médecins du sport référents, chercheurs</td>
+<td>Modules 1-25 (intégralité)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-prerequis">2.2 Prérequis</h2>
+<ul>
+<li>Diplôme de médecine ou de kinésithérapie (ou en cours d'obtention)</li>
+<li>Connaissances de base en anatomie de l'appareil locomoteur</li>
+<li>Connaissances de base en biomécanique (souhaitées mais non obligatoires — le Module 2 couvre les fondamentaux)</li>
+<li>Connaissances de base en échographie musculosquelettique (souhaitées — le Module 5 reprend les bases)</li>
+</ul>
+<hr />
+<h1 id="3-architecture-pedagogique-globale">3. ARCHITECTURE PÉDAGOGIQUE GLOBALE</h1>
+<h2 id="31-organisation-en-8-parties-25-modules">3.1 Organisation en 8 parties — 25 modules</h2>
+<pre><code>FORMATION TENDINITES ET TENDINOPATHIES DE L'APPAREIL LOCOMOTEUR
+│
+├── PARTIE I — FONDAMENTAUX TENDINEUX (Modules 1-4)
+│   ├── Module 1  : Biologie et structure du tendon — Du collagène à l'organe
+│   ├── Module 2  : Biomécanique tendineuse — Charge, déformation et adaptation
+│   ├── Module 3  : Physiopathologie des tendinopathies — Le continuum de Cook &amp; Purdam
+│   └── Module 4  : Vascularisation, innervation et cicatrisation tendineuse
+│
+├── PARTIE II — DIAGNOSTIC DES TENDINOPATHIES (Modules 5-7)
+│   ├── Module 5  : Examen clinique des tendinopathies — Tests et manœuvres par localisation
+│   ├── Module 6  : Échographie musculosquelettique des tendons — Technique et sémiologie
+│   └── Module 7  : IRM et imagerie avancée des tendinopathies — Élastographie, doppler puissance
+│
+├── PARTIE III — TENDINOPATHIES DU MEMBRE INFÉRIEUR — CHEVILLE ET PIED (Modules 8-10)
+│   ├── Module 8  : Tendinopathie du tendon d'Achille — Corporéale et insertionnelle
+│   ├── Module 9  : Rupture du tendon d'Achille — Traitement fonctionnel vs chirurgical
+│   └── Module 10 : Tendinopathies du pied et de la cheville — Tibial postérieur, fibulaires, tibial antérieur
+│
+├── PARTIE IV — TENDINOPATHIES DU MEMBRE INFÉRIEUR — GENOU ET HANCHE (Modules 11-13)
+│   ├── Module 11 : Tendinopathie patellaire (Jumper's knee) — Du sportif au sédentaire
+│   ├── Module 12 : Tendinopathies du genou — Quadricipitale, patte d'oie, bandelette ilio-tibiale
+│   └── Module 13 : Tendinopathies glutéales et GTPS — Le syndrome douloureux du grand trochanter
+│
+├── PARTIE V — TENDINOPATHIES DU MEMBRE SUPÉRIEUR (Modules 14-17)
+│   ├── Module 14 : Tendinopathie de la coiffe des rotateurs — Du conflit sous-acromial à la rupture
+│   ├── Module 15 : Épicondylalgies — Tennis elbow et golfer's elbow
+│   ├── Module 16 : Tendinopathies du poignet et de la main — De Quervain, fléchisseurs, extenseurs
+│   └── Module 17 : Tendinopathies du biceps et du triceps — Long biceps, biceps distal, triceps
+│
+├── PARTIE VI — TRAITEMENTS CONSERVATEURS (Modules 18-20)
+│   ├── Module 18 : Rééducation des tendinopathies — Excentriques, isométriques, HSR
+│   ├── Module 19 : Thérapies physiques — Ondes de choc, ultrasons, laser, cryothérapie
+│   └── Module 20 : Thérapies biologiques et infiltrations — PRP, corticoïdes, prolothérapie, acide hyaluronique
+│
+├── PARTIE VII — TRAITEMENTS CHIRURGICAUX (Modules 21-23)
+│   ├── Module 21 : Principes chirurgicaux des tendinopathies chroniques — Peignage, débridement, transferts
+│   ├── Module 22 : Chirurgie de la coiffe des rotateurs — Arthroscopie, réparation, techniques avancées
+│   └── Module 23 : Chirurgie des ruptures tendineuses — Achille, biceps, quadriceps, extenseurs
+│
+└── PARTIE VIII — PRÉVENTION, RECHERCHE ET INNOVATIONS (Modules 24-25)
+    ├── Module 24 : Prévention des tendinopathies — Gestion de la charge, biomécanique, terrain
+    └── Module 25 : Recherche et innovations — Cellules souches, scaffolds, bioingénierie, IA
+</code></pre>
+<h2 id="32-structure-standardisee-de-chaque-module">3.2 Structure standardisée de chaque module</h2>
+<p>Chaque module suit le <strong>même format</strong> que les autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>) :</p>
+<ol>
+<li><strong>En-tête</strong> : titre, partie, durée, niveau, prérequis</li>
+<li><strong>Accroche clinique</strong> : vignette patient ou mise en situation réelle (3-5 lignes)</li>
+<li><strong>Objectifs d'apprentissage</strong> : 3-7 objectifs formulés avec un verbe d'action (taxonomie de Bloom)</li>
+<li><strong>Sections de contenu</strong> : 3-6 sections principales</li>
+<li><strong>Points clés</strong> : 5-8 messages essentiels</li>
+<li><strong>Auto-évaluation</strong> : 5-10 questions (QCM, QROC, cas clinique court)</li>
+<li><strong>Références bibliographiques</strong> : sources vérifiables</li>
+</ol>
+<h2 id="33-parcours-praticien-deblocage-sequentiel">3.3 Parcours praticien — Déblocage séquentiel</h2>
+<pre><code>Module 1 → Module 2 → Module 3 → Module 4
+                                       ↓
+          Module 5 → Module 6 → Module 7
+                                    ↓
+Module 8 → Module 9 → Module 10
+                           ↓
+Module 11 → Module 12 → Module 13
+                             ↓
+Module 14 → Module 15 → Module 16 → Module 17
+                                         ↓
+          Module 18 → Module 19 → Module 20
+                                       ↓
+          Module 21 → Module 22 → Module 23
+                                       ↓
+                  Module 24 → Module 25
+</code></pre>
+<ul>
+<li>Score ≥ 70% requis pour passer au module suivant</li>
+<li>2 tentatives autorisées par quiz</li>
+<li>Feedback immédiat avec explication et référence bibliographique</li>
+</ul>
+<h2 id="34-systeme-de-quiz-difficulte-progressive-identique-aux-autres-formations">3.4 Système de quiz — Difficulté progressive (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Icône</th>
+<th>Type de question</th>
+<th>% du quiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bronze</strong></td>
+<td>🥉</td>
+<td>Connaissance pure (rappel, définitions)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Argent</strong></td>
+<td>🥈</td>
+<td>Compréhension et application (cas simples)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Or</strong></td>
+<td>🥇</td>
+<td>Analyse et raisonnement clinique (cas complexes)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>💎</td>
+<td>Synthèse et décision thérapeutique multi-facteurs</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="4-charte-graphique-unifiee-plateforme-vertex">4. CHARTE GRAPHIQUE UNIFIÉE — PLATEFORME VERTEX©</h1>
+<h2 id="41-identite-visuelle-de-la-plateforme">4.1 Identité visuelle de la plateforme</h2>
+<p>La plateforme VERTEX© repose sur une identité visuelle <strong>commune</strong> à toutes les formations, garantissant la cohérence et la reconnaissance de marque.</p>
+<h3 id="411-typographie-identique-aux-autres-formations">4.1.1 Typographie (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Police</th>
+<th>Poids</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titres de partie (H1)</strong></td>
+<td>Montserrat</td>
+<td>Bold (700)</td>
+<td>32-36px</td>
+</tr>
+<tr>
+<td><strong>Titres de module (H2)</strong></td>
+<td>Montserrat</td>
+<td>SemiBold (600)</td>
+<td>26-30px</td>
+</tr>
+<tr>
+<td><strong>Titres de section (H3)</strong></td>
+<td>Montserrat</td>
+<td>Medium (500)</td>
+<td>22-24px</td>
+</tr>
+<tr>
+<td><strong>Sous-sections (H4)</strong></td>
+<td>Open Sans</td>
+<td>SemiBold (600)</td>
+<td>18-20px</td>
+</tr>
+<tr>
+<td><strong>Corps de texte</strong></td>
+<td>Open Sans</td>
+<td>Regular (400)</td>
+<td>16px, line-height 1.6</td>
+</tr>
+<tr>
+<td><strong>Légendes / notes</strong></td>
+<td>Open Sans</td>
+<td>Light (300)</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><strong>Code / formules</strong></td>
+<td>JetBrains Mono</td>
+<td>Regular</td>
+<td>14px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="412-mise-en-page-identique-aux-autres-formations">4.1.2 Mise en page (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Spécification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Largeur max contenu</strong></td>
+<td>900px (centré)</td>
+</tr>
+<tr>
+<td><strong>Marges latérales</strong></td>
+<td>60px minimum (responsive)</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-sections</strong></td>
+<td>48px</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-paragraphes</strong></td>
+<td>24px</td>
+</tr>
+<tr>
+<td><strong>Bordures d'encadrés</strong></td>
+<td>3px solid, border-radius 8px</td>
+</tr>
+<tr>
+<td><strong>Ombres</strong></td>
+<td>box-shadow: 0 2px 8px rgba(0,0,0,0.08)</td>
+</tr>
+<tr>
+<td><strong>Coins arrondis</strong></td>
+<td>8px (encadrés), 12px (cartes), 50% (avatars)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="413-iconographie-identique-aux-autres-formations-specifique">4.1.3 Iconographie (identique aux autres formations + spécifique)</h3>
+<table>
+<thead>
+<tr>
+<th>Icône</th>
+<th>Usage</th>
+<th>Emoji / SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td>Pertinence clinique</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td>Danger / Critique</td>
+<td>Rouge</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Approfondissement</td>
+<td>Bleu</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>Astuce / Mnémonique</td>
+<td>Vert clair</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td>Expert</td>
+<td>Violet</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td>Réflexion</td>
+<td>Jaune</td>
+</tr>
+<tr>
+<td>🧊</td>
+<td>Modèle 3D</td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td>📐</td>
+<td>Schéma</td>
+<td>Gris-bleu</td>
+</tr>
+<tr>
+<td>🎬</td>
+<td>Animation / Vidéo</td>
+<td>Rouge-orange</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Infographie</td>
+<td>Vert</td>
+</tr>
+<tr>
+<td>📷</td>
+<td>Photo clinique</td>
+<td>Gris</td>
+</tr>
+<tr>
+<td>🦴</td>
+<td>Tendon / Structure (spécifique TEND)</td>
+<td>Ivoire</td>
+</tr>
+<tr>
+<td>💪</td>
+<td>Rééducation / Exercice (spécifique TEND)</td>
+<td>Bleu-vert</td>
+</tr>
+<tr>
+<td>🔊</td>
+<td>Ondes de choc / Thérapie physique (spécifique TEND)</td>
+<td>Gris-violet</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-code-couleur-formation-tendinites">5. CODE COULEUR — FORMATION TENDINITES</h1>
+<h2 id="51-palette-principale-formation-tendinites">5.1 Palette principale — Formation Tendinites 🦴</h2>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Gris-bleu acier (Tendon)</td>
+<td><code>#5D6D7E</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Bleu-gris lumineux</td>
+<td><code>#85929E</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Gris perle</td>
+<td><code>#AEB6BF</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé</td>
+<td><code>#FAFBFC</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Gris-bleu très pâle</td>
+<td><code>#EBF0F5</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+<tr>
+<td><strong>Succès</strong></td>
+<td>Vert médical</td>
+<td><code>#27AE60</code></td>
+<td>Validations, scores positifs (commun)</td>
+</tr>
+<tr>
+<td><strong>Alerte</strong></td>
+<td>Orange tendinite</td>
+<td><code>#E67E22</code></td>
+<td>Alertes spécifiques (surcharge, rupture)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Justification du gris-bleu acier</strong> : Le gris-bleu acier évoque la texture fibreuse du collagène tendineux et la solidité de la structure tendineuse. Il se distingue clairement du bleu cobalt (Scoliose), du vert (PTG) et du rouge bordeaux (IOA), permettant une identification instantanée de la formation.</p>
+</blockquote>
+<h3 id="elements-communs-partages-entre-toutes-les-formations">Éléments communs (partagés entre toutes les formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Texte principal</strong></td>
+<td>Noir doux</td>
+<td><code>#2C3E50</code></td>
+<td>Corps de texte, toutes formations</td>
+</tr>
+<tr>
+<td><strong>Texte secondaire</strong></td>
+<td>Gris moyen</td>
+<td><code>#7F8C8D</code></td>
+<td>Légendes, métadonnées</td>
+</tr>
+<tr>
+<td><strong>Fond neutre</strong></td>
+<td>Gris très clair</td>
+<td><code>#F7F9F9</code></td>
+<td>Fond de tableaux alternés</td>
+</tr>
+<tr>
+<td><strong>Bordures</strong></td>
+<td>Gris clair</td>
+<td><code>#D5D8DC</code></td>
+<td>Séparateurs, bordures de tableaux</td>
+</tr>
+<tr>
+<td><strong>Or (réussite)</strong></td>
+<td>Or</td>
+<td><code>#F39C12</code></td>
+<td>Badges, certificats</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>Bleu diamant</td>
+<td><code>#3498DB</code></td>
+<td>Niveau diamant quiz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-hierarchie-typographique-coloree-formation-tendinites">5.2 Hiérarchie typographique colorée — Formation Tendinites 🦴</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Style</th>
+<th>Couleur</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H1 — Titre de partie</strong></td>
+<td>Montserrat Bold 34px, MAJUSCULES</td>
+<td><code>#5D6D7E</code> gris-bleu acier</td>
+<td>PARTIE I — FONDAMENTAUX TENDINEUX</td>
+</tr>
+<tr>
+<td><strong>H2 — Titre de module</strong></td>
+<td>Montserrat SemiBold 28px</td>
+<td><code>#5D6D7E</code> gris-bleu acier</td>
+<td>MODULE 8 : TENDINOPATHIE DU TENDON D'ACHILLE</td>
+</tr>
+<tr>
+<td><strong>H3 — Titre de section</strong></td>
+<td>Montserrat Medium 22px</td>
+<td><code>#85929E</code> bleu-gris lumineux</td>
+<td>8.1 Tendinopathie corporéale — Le noyau douloureux</td>
+</tr>
+<tr>
+<td><strong>H4 — Sous-section</strong></td>
+<td>Open Sans SemiBold 18px</td>
+<td><code>#2C3E50</code> noir doux</td>
+<td>Protocole d'Alfredson</td>
+</tr>
+<tr>
+<td><strong>Bandeau latéral</strong></td>
+<td>—</td>
+<td><code>#5D6D7E</code> fond, texte blanc</td>
+<td>Navigation module</td>
+</tr>
+<tr>
+<td><strong>Badge formation</strong></td>
+<td>Pill 24px</td>
+<td><code>#5D6D7E</code> fond, blanc</td>
+<td>🦴 TENDINITES</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-encadres-code-couleur-partage-identique-aux-autres-formations">5.3 Encadrés — Code couleur partagé (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Nom</th>
+<th>Bordure gauche</th>
+<th>Fond</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td><strong>Pertinence clinique</strong></td>
+<td><code>#E67E22</code> orange</td>
+<td><code>#FDF2E9</code></td>
+<td>Lien concept → pratique clinique</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td><strong>Danger / Critique</strong></td>
+<td><code>#E74C3C</code> rouge</td>
+<td><code>#FDEDEC</code></td>
+<td>Risque de rupture, erreur dangereuse</td>
+</tr>
+<tr>
+<td>📖</td>
+<td><strong>Approfondissement</strong></td>
+<td><code>#3498DB</code> bleu</td>
+<td><code>#EBF5FB</code></td>
+<td>Mécanisme, recherche, biologie</td>
+</tr>
+<tr>
+<td>💡</td>
+<td><strong>Astuce / Mnémonique</strong></td>
+<td><code>#2ECC71</code> vert</td>
+<td><code>#EAFAF1</code></td>
+<td>Aide-mémoire, truc de praticien</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td><strong>Expert</strong></td>
+<td><code>#9B59B6</code> violet</td>
+<td><code>#F4ECF7</code></td>
+<td>Détail avancé, technique fine</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td><strong>Réflexion</strong></td>
+<td><code>#F1C40F</code> jaune</td>
+<td><code>#FEF9E7</code></td>
+<td>Question ouverte, problème</td>
+</tr>
+<tr>
+<td>🦴</td>
+<td><strong>Focus tendineux</strong> (nouveau)</td>
+<td><code>#5D6D7E</code> gris-bleu</td>
+<td><code>#EBF0F5</code></td>
+<td>Focus biologique/structural tendineux</td>
+</tr>
+<tr>
+<td>💪</td>
+<td><strong>Rééducation</strong> (nouveau)</td>
+<td><code>#1ABC9C</code> vert-turquoise</td>
+<td><code>#E8F8F5</code></td>
+<td>Protocoles d'exercices, rééducation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="54-sidebar-de-navigation-formation-tendinites">5.4 Sidebar de navigation — Formation Tendinites 🦴</h2>
+<pre><code>┌──────────────────────┐
+│  🦴 TENDINITES        │  ← Fond #5D6D7E, texte blanc
+│  ────────────────    │
+│  PARTIE I            │  ← Texte #AEB6BF (gris clair)
+│   ▸ M1 Biologie      │  ← Texte blanc
+│   ▸ M2 Biomécanique  │
+│   ▸ M3 Physiopath.   │
+│   ► M4 Vascularisat. │  ← Module actif : fond #85929E
+│  PARTIE II           │
+│   ▸ M5 Examen clin.  │
+│   ▸ M6 Échographie   │
+│   ▸ M7 IRM           │
+│  PARTIE III          │
+│   ▸ M8 Achille       │
+│   ▸ M9 Rupture Ach.  │
+│   ▸ M10 Pied/Cheville│
+│  PARTIE IV           │
+│   ▸ M11 Patellaire   │
+│   ▸ M12 Genou        │
+│   ▸ M13 Glutéales    │
+│  PARTIE V            │
+│   ▸ M14 Coiffe       │
+│   ▸ M15 Coude        │
+│   ▸ M16 Poignet/Main │
+│   ▸ M17 Biceps/Tricep│
+│  PARTIE VI           │
+│   ▸ M18 Rééducation  │
+│   ▸ M19 Thérap. phys.│
+│   ▸ M20 PRP/Infiltr. │
+│  PARTIE VII          │
+│   ▸ M21 Chirurgie    │
+│   ▸ M22 Coiffe chir. │
+│   ▸ M23 Ruptures     │
+│  PARTIE VIII         │
+│   ▸ M24 Prévention   │
+│   ▸ M25 Innovations  │
+└──────────────────────┘
+</code></pre>
+<hr />
+<h1 id="6-regles-decriture-du-contenu">6. RÈGLES D'ÉCRITURE DU CONTENU</h1>
+<p>Les règles d'écriture sont <strong>identiques</strong> à celles des autres formations VERTEX© (cf. <code>REGLES_ECRITURE_CONTENU.md</code>). Voici un résumé des principes fondamentaux, adaptés au contexte Tendinites :</p>
+<h2 id="61-principes-inchanges">6.1 Principes inchangés</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Règle</th>
+<th>Applicable TEND</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Jamais de fait sans explication (mécanisme + conséquence clinique)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chaînes de raisonnement obligatoires (biologie → physiopath. → diagnostic → traitement)</td>
+<td>✅ Adapté</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Controverses et niveaux de preuve (📊, ⚖️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Trois niveaux de profondeur (Essentiel / Approfondi / Expert)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Minimum 2 vignettes cliniques par module</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Minimum 1 question de réflexion par section (🤔)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Minimum 1 micro-exercice par section (✏️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Minimum 3 mnémoniques par module (💡)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Minimum 1 exercice TendonSim© par module (si applicable)</td>
+<td>✅ Adapté (VERTEX → TendonSim)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1 encadré pour 500 mots minimum</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Format des marqueurs médias : <code>&gt; [MEDIA: {EMOJI} {CODE} — {TITRE} ({INSTRUCTION})]</code></td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vouvoiement systématique</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Formulations interdites</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>14</td>
+<td>≥ 300 mots par sous-section</td>
+<td>✅ Identique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>**</p>
+</blockquote>
+<div class="vertex-alerte"><strong>Originalité et propriété intellectuelle</strong> : Les règles d'originalité du contenu et de prévention du plagiat définies à la **section 13 de `REGLES_ECRITURE_CONTENU.md`** s'appliquent intégralement à cette formation. Tout contenu doit être reformulé dans un style original, toute statistique ou classification doit être sourcée, et la checklist anti-plagiat (§13.7) doit être validée pour chaque module.</div>
+
+<h2 id="62-adaptations-specifiques-tendinites">6.2 Adaptations spécifiques Tendinites</h2>
+<table>
+<thead>
+<tr>
+<th>Adaptation</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simulateur</strong></td>
+<td>TendonSim© au lieu de VERTEX© rachis, KneeSim© ou InfectoSim©. Scénarios tendinites : modélisation charge-capacité tendineuse, simulation d'exercices (excentriques, isométriques, HSR), planification d'infiltration PRP/corticoïdes échoguidée 3D, simulation de progression du continuum tendinopathique</td>
+</tr>
+<tr>
+<td><strong>Patient fil rouge</strong></td>
+<td>Un patient fil rouge par partie — parcours d'un patient sportif depuis les premiers symptômes de surcharge jusqu'à la guérison ou la chirurgie</td>
+</tr>
+<tr>
+<td><strong>Particularité biomécanique</strong></td>
+<td>Intégrer systématiquement les forces de traction, la charge de rupture, le modèle stress-strain dans chaque section topographique</td>
+</tr>
+<tr>
+<td><strong>Particularité sportive</strong></td>
+<td>Chaque tendinopathie DOIT mentionner les sports à risque, les facteurs biomécaniques spécifiques et les critères de retour au sport</td>
+</tr>
+<tr>
+<td><strong>Photos cliniques et vidéos</strong></td>
+<td>Vidéos d'examen clinique (tests spécifiques), vidéos d'échographie dynamique, vidéos d'exercices de rééducation</td>
+</tr>
+<tr>
+<td><strong>Imagerie systématique</strong></td>
+<td>Chaque tendinopathie topographique DOIT comporter des images échographiques et IRM annotées</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-marqueurs-medias-codification-tendinites">6.3 Marqueurs médias — Codification Tendinites</h2>
+<pre><code>&gt; [MEDIA: {EMOJI} MTEND{module}-S{section}-{numéro} — {TITRE} ({INSTRUCTION_PÉDAGOGIQUE})]
+</code></pre>
+<ul>
+<li>Préfixe <strong>MTEND</strong> pour distinguer des médias scoliose (M), PTG (MPTG) et IOA (MIOA)</li>
+<li>Exemple : <code>MTEND08-S02-005</code> = Formation Tendinites, Module 8, Section 2, 5ème média</li>
+</ul>
+<hr />
+<h1 id="7-structure-des-fichiers-du-cdc">7. STRUCTURE DES FICHIERS DU CDC</h1>
+<p>Le présent cahier des charges est organisé en <strong>9 fichiers</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fichier</th>
+<th>Contenu</th>
+<th>Modules couverts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>CDC_TEND_00_INTRODUCTION_CHARTE.md</code></td>
+<td>Introduction, charte graphique, code couleur, règles d'écriture</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>CDC_TEND_01_FONDAMENTAUX.md</code></td>
+<td>Biologie, biomécanique, physiopathologie, vascularisation/cicatrisation</td>
+<td>Modules 1-4</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>CDC_TEND_02_DIAGNOSTIC.md</code></td>
+<td>Examen clinique, échographie, IRM</td>
+<td>Modules 5-7</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>CDC_TEND_03_ACHILLE.md</code></td>
+<td>Tendinopathie d'Achille, rupture, tendons du pied/cheville</td>
+<td>Modules 8-10</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>CDC_TEND_04_COIFFE.md</code></td>
+<td>Coiffe des rotateurs — tendinopathie, calcifiante, rupture</td>
+<td>Module 14</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>CDC_TEND_05_COUDE_GENOU.md</code></td>
+<td>Épicondylalgies, patellaire, genou, hanche/glutéales</td>
+<td>Modules 11-13, 15</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>CDC_TEND_06_POIGNET_BICEPS.md</code></td>
+<td>Poignet/main, biceps, triceps</td>
+<td>Modules 16-17</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>CDC_TEND_07_TRAITEMENTS.md</code></td>
+<td>Rééducation, thérapies physiques, biologiques, chirurgie</td>
+<td>Modules 18-23</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>CDC_TEND_08_PREVENTION_INNOVATIONS.md</code></td>
+<td>Prévention, recherche, innovations</td>
+<td>Modules 24-25</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="8-correspondance-inter-formations">8. CORRESPONDANCE INTER-FORMATIONS</h1>
+<h2 id="81-modules-partages-transversaux">8.1 Modules partagés / transversaux</h2>
+<p>Certains concepts sont communs à plusieurs formations. Le LMS gère les <strong>renvois croisés</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formation Scoliose</th>
+<th>Formation PTG</th>
+<th>Formation IOA</th>
+<th>Formation Tendinites</th>
+<th>Type de partage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anatomie musculosquelettique</td>
+<td>Module 1</td>
+<td>Module 3</td>
+<td>Module 2</td>
+<td>Module 1</td>
+<td>Contenu adapté au contexte tendineux</td>
+</tr>
+<tr>
+<td>Coiffe des rotateurs</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 14</td>
+<td>Traitement exhaustif en TEND</td>
+</tr>
+<tr>
+<td>Rééducation postopératoire</td>
+<td>Module 18</td>
+<td>Module 27</td>
+<td>Module 27</td>
+<td>Module 18, 22</td>
+<td>Spécificités tendineuses</td>
+</tr>
+<tr>
+<td>PRP et thérapies biologiques</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 20, 25</td>
+<td>Traitement approfondi en TEND</td>
+</tr>
+<tr>
+<td>Échographie musculosquelettique</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 6</td>
+<td>Traitement complet en TEND</td>
+</tr>
+<tr>
+<td>Biomécanique</td>
+<td>Module 3</td>
+<td>Module 4</td>
+<td>—</td>
+<td>Module 2</td>
+<td>Focus tendineux spécifique</td>
+</tr>
+<tr>
+<td>Tendinopathie Achille</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Modules 8-9</td>
+<td>Exclusif TEND</td>
+</tr>
+<tr>
+<td>Épicondylalgies</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 15</td>
+<td>Exclusif TEND</td>
+</tr>
+<tr>
+<td>Retour au sport</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Module 24</td>
+<td>Traitement approfondi en TEND</td>
+</tr>
+<tr>
+<td>Infection sur matériel (lien si chirurgie tendineuse)</td>
+<td>Module 22</td>
+<td>Module 23</td>
+<td>Modules 18-21</td>
+<td>Module 21</td>
+<td>Renvoi vers IOA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="82-simulation-tendonsim-vs-autres-simulateurs">8.2 Simulation TendonSim© vs autres simulateurs</h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>VERTEX© Rachis (Scoliose)</th>
+<th>KneeSim© (PTG)</th>
+<th>InfectoSim© (IOA)</th>
+<th>TendonSim© (Tendinites)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anatomie simulée</strong></td>
+<td>Rachis C3-S1</td>
+<td>Genou</td>
+<td>Os/articulation multi-site</td>
+<td>Tendons multi-sites</td>
+</tr>
+<tr>
+<td><strong>Focus principal</strong></td>
+<td>Biomécanique, correction 3D</td>
+<td>Cinématique, placement implant</td>
+<td>Infection, biofilm</td>
+<td>Charge tendineuse, rééducation</td>
+</tr>
+<tr>
+<td><strong>Simulation unique</strong></td>
+<td>Croissance, progression</td>
+<td>Usure PE, descellement</td>
+<td>Cinétique ATB, biofilm</td>
+<td>Courbe charge-déformation, continuum pathologique</td>
+</tr>
+<tr>
+<td><strong>Chirurgie virtuelle</strong></td>
+<td>Vis pédiculaires, cintrage tige</td>
+<td>Coupes, équilibrage</td>
+<td>Débridement 3D</td>
+<td>Peignage, réparation arthroscopique</td>
+</tr>
+<tr>
+<td><strong>Scénarios spécifiques</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Choix ATB, résistance</td>
+<td>Planification rééducation (charge progressive), infiltration échoguidée 3D, simulation excentriques</td>
+</tr>
+<tr>
+<td><strong>Moteur</strong></td>
+<td>Julia + Three.js</td>
+<td>Même stack</td>
+<td>Même stack + pharmacocinétique</td>
+<td>Même stack + modèles biomécaniques tendineux</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="annexe-a-glossaire-des-abreviations-tendinites">ANNEXE A — GLOSSAIRE DES ABRÉVIATIONS TENDINITES</h1>
+<table>
+<thead>
+<tr>
+<th>Abréviation</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TEND</td>
+<td>Tendinites/Tendinopathies</td>
+</tr>
+<tr>
+<td>HSR</td>
+<td><em>Heavy Slow Resistance</em> (exercices de résistance lourde lente)</td>
+</tr>
+<tr>
+<td>ESWT</td>
+<td><em>Extracorporeal Shock Wave Therapy</em> (ondes de choc extracorporelles)</td>
+</tr>
+<tr>
+<td>PRP</td>
+<td><em>Platelet-Rich Plasma</em> (plasma riche en plaquettes)</td>
+</tr>
+<tr>
+<td>CSM</td>
+<td>Cellules Souches Mésenchymateuses</td>
+</tr>
+<tr>
+<td>BMA</td>
+<td><em>Bone Marrow Aspirate</em> (aspirat de moelle osseuse)</td>
+</tr>
+<tr>
+<td>EVA</td>
+<td>Échelle Visuelle Analogique</td>
+</tr>
+<tr>
+<td>VISA</td>
+<td><em>Victorian Institute of Sport Assessment</em> (score fonctionnel tendinopathie)</td>
+</tr>
+<tr>
+<td>VISA-A</td>
+<td>Score VISA pour le tendon d'Achille</td>
+</tr>
+<tr>
+<td>VISA-P</td>
+<td>Score VISA pour la tendinopathie patellaire</td>
+</tr>
+<tr>
+<td>DASH</td>
+<td><em>Disabilities of the Arm, Shoulder and Hand</em></td>
+</tr>
+<tr>
+<td>PRTEE</td>
+<td><em>Patient-Rated Tennis Elbow Evaluation</em></td>
+</tr>
+<tr>
+<td>GTPS</td>
+<td><em>Greater Trochanteric Pain Syndrome</em></td>
+</tr>
+<tr>
+<td>ECRB</td>
+<td><em>Extensor Carpi Radialis Brevis</em></td>
+</tr>
+<tr>
+<td>FHL</td>
+<td><em>Flexor Hallucis Longus</em></td>
+</tr>
+<tr>
+<td>SSP</td>
+<td>Supra-épineux (<em>Supraspinatus</em>)</td>
+</tr>
+<tr>
+<td>ISP</td>
+<td>Infra-épineux (<em>Infraspinatus</em>)</td>
+</tr>
+<tr>
+<td>SSC</td>
+<td>Sous-scapulaire (<em>Subscapularis</em>)</td>
+</tr>
+<tr>
+<td>TM</td>
+<td>Petit rond (<em>Teres Minor</em>)</td>
+</tr>
+<tr>
+<td>LBT</td>
+<td><em>Long Biceps Tendon</em> (tendon du long biceps)</td>
+</tr>
+<tr>
+<td>AMIC</td>
+<td><em>Autologous Matrix-Induced Chondrogenesis</em></td>
+</tr>
+<tr>
+<td>ECU</td>
+<td><em>Extensor Carpi Ulnaris</em></td>
+</tr>
+<tr>
+<td>FCR</td>
+<td><em>Flexor Carpi Radialis</em></td>
+</tr>
+<tr>
+<td>APL</td>
+<td><em>Abductor Pollicis Longus</em></td>
+</tr>
+<tr>
+<td>EPB</td>
+<td><em>Extensor Pollicis Brevis</em></td>
+</tr>
+<tr>
+<td>IRM</td>
+<td>Imagerie par Résonance Magnétique</td>
+</tr>
+<tr>
+<td>TDM</td>
+<td>Tomodensitométrie (Scanner)</td>
+</tr>
+<tr>
+<td>US</td>
+<td>Ultrasons / Échographie</td>
+</tr>
+<tr>
+<td>PDGF</td>
+<td><em>Platelet-Derived Growth Factor</em></td>
+</tr>
+<tr>
+<td>VEGF</td>
+<td><em>Vascular Endothelial Growth Factor</em></td>
+</tr>
+<tr>
+<td>TGF-β</td>
+<td><em>Transforming Growth Factor Beta</em></td>
+</tr>
+<tr>
+<td>IGF-1</td>
+<td><em>Insulin-Like Growth Factor 1</em></td>
+</tr>
+<tr>
+<td>MMP</td>
+<td>Matrix Metalloproteinase</td>
+</tr>
+<tr>
+<td>TIMP</td>
+<td><em>Tissue Inhibitor of Metalloproteinase</em></td>
+</tr>
+<tr>
+<td>GAG</td>
+<td>Glycosaminoglycane</td>
+</tr>
+<tr>
+<td>ECM</td>
+<td><em>Extracellular Matrix</em> (matrice extracellulaire)</td>
+</tr>
+<tr>
+<td>ROS</td>
+<td><em>Reactive Oxygen Species</em> (espèces réactives de l'oxygène)</td>
+</tr>
+<tr>
+<td>NSAID</td>
+<td><em>Nonsteroidal Anti-Inflammatory Drug</em> (AINS)</td>
+</tr>
+<tr>
+<td>AINS</td>
+<td>Anti-Inflammatoire Non Stéroïdien</td>
+</tr>
+<tr>
+<td>DPC</td>
+<td>Développement Professionnel Continu</td>
+</tr>
+<tr>
+<td>CME</td>
+<td><em>Continuing Medical Education</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr />
+<h1 id="references">RÉFÉRENCES</h1>
+<ol>
+<li>Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. <em>Br J Sports Med</em>. 2009;43(6):409-416. doi:10.1136/bjsm.2008.051193</li>
+</ol>
+<hr />
+<p><em>Ce document (Partie 0) constitue le socle commun de la Formation Tendinites. Les parties suivantes (1 à 8) détaillent le contenu pédagogique module par module.</em></p>
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

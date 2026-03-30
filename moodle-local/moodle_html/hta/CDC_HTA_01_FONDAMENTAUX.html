@@ -1,0 +1,1096 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-1-fondamentaux-cardiovasculaires">❤️ PARTIE 1 — FONDAMENTAUX CARDIOVASCULAIRES</h1>
+<h2 id="anatomie-vasculaire-physiologie-circulatoire-et-regulation-de-la-pression-arterielle">Anatomie vasculaire, physiologie circulatoire et régulation de la pression artérielle</h2>
+<hr />
+<h1 id="module-01-anatomie-vasculaire-et-hemodynamique">MODULE 01 — ANATOMIE VASCULAIRE ET HÉMODYNAMIQUE</h1>
+<h2 id="larbre-arteriel-de-laorte-aux-arterioles-architecture-dun-systeme-sous-pression">L'arbre artériel, de l'aorte aux artérioles — architecture d'un système sous pression</h2>
+<hr />
+<h2 id="objectifs-pedagogiques">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire l'anatomie fonctionnelle de l'arbre artériel systémique</li>
+<li>Distinguer les artères élastiques (compliance) des artères musculaires (résistance)</li>
+<li>Comprendre les déterminants physiques de la pression artérielle</li>
+<li>Analyser la relation entre structure vasculaire et fonction hémodynamique</li>
+</ul>
+<hr />
+<h2 id="1-anatomie-fonctionnelle-de-larbre-arteriel">1. Anatomie fonctionnelle de l'arbre artériel</h2>
+<h3 id="11-organisation-generale">1.1 Organisation générale</h3>
+<p>L'arbre artériel se divise en trois compartiments fonctionnels distincts, chacun jouant un rôle spécifique dans la régulation de la pression artérielle.</p>
+<blockquote>
+<p>[MEDIA: 🖼️ MHTA01-S01-001 — SCHÉMA ANATOMIQUE : l'arbre artériel systémique — aorte, artères élastiques, artères musculaires, artérioles]</p>
+</blockquote>
+<p><strong>Les trois compartiments artériels</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Compartiment</th>
+<th>Exemples</th>
+<th>Diamètre</th>
+<th>Paroi</th>
+<th>Fonction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Artères élastiques (conductrices)</td>
+<td>Aorte, carotides, iliaques, sous-clavières</td>
+<td>10-25 mm</td>
+<td>Riche en fibres élastiques (lamelles élastiques)</td>
+<td>Amortissement de l'onde pulsatile (effet Windkessel)</td>
+</tr>
+<tr>
+<td>Artères musculaires (distributrices)</td>
+<td>Radiale, fémorale, coronaires, rénales</td>
+<td>1-10 mm</td>
+<td>Riche en cellules musculaires lisses (CML)</td>
+<td>Distribution du débit aux organes</td>
+</tr>
+<tr>
+<td>Artérioles (résistives)</td>
+<td>Artérioles pré-capillaires</td>
+<td>10-300 μm</td>
+<td>CML prédominantes, innervation sympathique dense</td>
+<td>Détermination des résistances périphériques</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-structure-de-la-paroi-arterielle">1.2 Structure de la paroi artérielle</h3>
+<p>La paroi artérielle comporte trois tuniques concentriques, de l'intérieur vers l'extérieur :</p>
+<blockquote>
+<p>[MEDIA: 🖼️ MHTA01-S01-002 — COUPE HISTOLOGIQUE SCHÉMATIQUE : les trois tuniques de la paroi artérielle — intima, média, adventice]</p>
+</blockquote>
+<p><strong>Les trois tuniques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Tunique</th>
+<th>Composition</th>
+<th>Fonction</th>
+<th>Altération dans l'HTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intima</td>
+<td>Endothélium + lame basale + sous-endothélium</td>
+<td>Barrière, régulation du tonus (NO, endothéline)</td>
+<td>Dysfonction endothéliale, athérosclérose</td>
+</tr>
+<tr>
+<td>Média</td>
+<td>CML + matrice extracellulaire (élastine, collagène)</td>
+<td>Tonus vasculaire, compliance</td>
+<td>Hypertrophie CML, fibrose, rigidité</td>
+</tr>
+<tr>
+<td>Adventice</td>
+<td>Tissu conjonctif, vasa vasorum, nervi vasorum</td>
+<td>Nutrition, innervation</td>
+<td>Fibrose péri-adventicielle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-lendothelium-vasculaire-un-organe-a-part-entiere">1.3 L'endothélium vasculaire — un organe à part entière</h3>
+<p>L'endothélium n'est pas une simple barrière passive. Pesant environ 1,5 kg chez l'adulte et couvrant une surface de 400-700 m², il constitue le plus grand organe endocrine du corps humain.</p>
+<p><strong>Fonctions de l'endothélium vasculaire</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Fonction</th>
+<th>Médiateurs vasodilatateurs</th>
+<th>Médiateurs vasoconstricteurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tonus vasculaire</td>
+<td>NO (monoxyde d'azote), PGI₂ (prostacycline), EDHF</td>
+<td>Endothéline-1 (ET-1), TXA₂, angiotensine II locale</td>
+</tr>
+<tr>
+<td>Hémostase</td>
+<td>PGI₂, NO, thrombomoduline</td>
+<td>Facteur von Willebrand, facteur tissulaire</td>
+</tr>
+<tr>
+<td>Inflammation</td>
+<td>—</td>
+<td>VCAM-1, ICAM-1, MCP-1, IL-6</td>
+</tr>
+<tr>
+<td>Perméabilité</td>
+<td>—</td>
+<td>VEGF</td>
+</tr>
+<tr>
+<td>Croissance cellulaire</td>
+<td>NO (anti-prolifératif)</td>
+<td>ET-1, PDGF, FGF (pro-prolifératifs)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA01-S01-003 — SCHÉMA : balance vasodilatatrice/vasoconstrictrice de l'endothélium — rôle du NO et de l'endothéline-1]</p>
+</blockquote>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Le monoxyde d'azote (NO) est la molécule clé de la vasodilatation endothélium-dépendante. Produit par la NO synthase endothéliale (eNOS) à partir de la L-arginine, le NO diffuse vers les CML et active la guanylate cyclase soluble → GMPc → relaxation musculaire lisse. Dans l'HTA chronique, la production de NO est réduite (dysfonction endothéliale), contribuant à l'augmentation des résistances périphériques.</p>
+</blockquote>
+<hr />
+<h2 id="2-hemodynamique-arterielle">2. Hémodynamique artérielle</h2>
+<h3 id="21-lequation-fondamentale-de-la-pression-arterielle">2.1 L'équation fondamentale de la pression artérielle</h3>
+<p>La pression artérielle (PA) est déterminée par deux paramètres hémodynamiques fondamentaux :</p>
+<p><strong>PA = DC × RPT</strong></p>
+<p>Où :<br />
+- <strong>PA</strong> = Pression artérielle (mmHg)<br />
+- <strong>DC</strong> = Débit cardiaque (L/min) = Volume d'éjection systolique (VES) × Fréquence cardiaque (FC)<br />
+- <strong>RPT</strong> = Résistances périphériques totales (dynes.s.cm⁻⁵)</p>
+<blockquote>
+<p>[MEDIA: 📊 MHTA01-S02-001 — SCHÉMA : l'équation PA = DC × RPT avec les déterminants de chaque composante]</p>
+</blockquote>
+<p><strong>Déterminants du débit cardiaque</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Composante</th>
+<th>Déterminants</th>
+<th>Influence sur la PA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Volume d'éjection systolique (VES)</td>
+<td>Précharge, contractilité, postcharge</td>
+<td>↑ VES → ↑ PAS</td>
+</tr>
+<tr>
+<td>Fréquence cardiaque (FC)</td>
+<td>Système nerveux autonome, hormones</td>
+<td>↑ FC → ↑ PA (surtout diastolique)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Déterminants des résistances périphériques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur</th>
+<th>Effet</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rayon artériolaire</td>
+<td>↓ rayon → ↑↑↑ RPT (loi de Poiseuille : R ∝ 1/r⁴)</td>
+<td>Vasoconstriction des CML</td>
+</tr>
+<tr>
+<td>Viscosité sanguine</td>
+<td>↑ viscosité → ↑ RPT</td>
+<td>Polyglobulie, déshydratation</td>
+</tr>
+<tr>
+<td>Longueur du réseau</td>
+<td>↑ longueur → ↑ RPT (marginal)</td>
+<td>Obésité (réseau vasculaire étendu)</td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> :</p>
+<blockquote>
+<p>La loi de Poiseuille est fondamentale : les résistances sont inversement proportionnelles à la puissance 4 du rayon. Une réduction de 10 % du diamètre artériolaire entraîne une augmentation de 50 % des résistances. C'est pourquoi les artérioles sont le site principal de régulation de la PA.</p>
+</blockquote>
+<h3 id="22-pression-arterielle-systolique-diastolique-et-pulsee">2.2 Pression artérielle systolique, diastolique et pulsée</h3>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Définition</th>
+<th>Déterminants principaux</th>
+<th>Valeur normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PAS (systolique)</td>
+<td>Pression maximale lors de l'éjection ventriculaire</td>
+<td>VES, compliance aortique, onde de réflexion</td>
+<td>&lt; 120 mmHg</td>
+</tr>
+<tr>
+<td>PAD (diastolique)</td>
+<td>Pression minimale en fin de diastole</td>
+<td>RPT, FC, compliance aortique</td>
+<td>&lt; 80 mmHg</td>
+</tr>
+<tr>
+<td>PP (pulsée)</td>
+<td>PAS - PAD</td>
+<td>Compliance aortique, VES</td>
+<td>30-50 mmHg</td>
+</tr>
+<tr>
+<td>PAM (moyenne)</td>
+<td>PAD + 1/3 PP</td>
+<td>DC × RPT</td>
+<td>70-100 mmHg</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📈 MHTA01-S02-002 — COURBE : forme de l'onde de pression artérielle — composantes systolique, diastolique, pulsée, onde de réflexion]</p>
+</blockquote>
+<h3 id="23-leffet-windkessel-et-la-rigidite-arterielle">2.3 L'effet Windkessel et la rigidité artérielle</h3>
+<p>L'aorte et les grosses artères élastiques jouent un rôle d'amortisseur : elles se distendent pendant la systole (stockant l'énergie cinétique) et reculent pendant la diastole (restituant le flux). Ce mécanisme, appelé « effet Windkessel » (chambre à air), transforme un débit pulsatile en débit quasi-continu dans les capillaires.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHTA01-S02-003 — ANIMATION : effet Windkessel — distension aortique en systole et restitution élastique en diastole]</p>
+</blockquote>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>La rigidité artérielle (mesurée par la vitesse de l'onde de pouls, VOP) est un facteur de risque cardiovasculaire indépendant. Une VOP carotido-fémorale &gt; 10 m/s est un marqueur de rigidité artérielle augmentée et d'atteinte des organes cibles (recommandation ESC/ESH 2023).</p>
+</blockquote>
+<hr />
+<h2 id="3-quiz-module-01">3. Quiz — Module 01</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quelle est l'équation fondamentale de la pression artérielle ?<br />
+- A) PA = FC × VES<br />
+- B) PA = DC × RPT ✓<br />
+- C) PA = PAS - PAD<br />
+- D) PA = Volume sanguin × Compliance</p>
+<p><strong>Q2.</strong> Quel compartiment artériel détermine principalement les résistances périphériques totales ?<br />
+- A) L'aorte<br />
+- B) Les artères musculaires<br />
+- C) Les artérioles ✓<br />
+- D) Les capillaires</p>
+<p><strong>Q3.</strong> Selon la loi de Poiseuille, si le rayon artériolaire diminue de 50 %, de combien les résistances augmentent-elles ?<br />
+- A) 2 fois<br />
+- B) 4 fois<br />
+- C) 8 fois<br />
+- D) 16 fois ✓</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q4.</strong> Quelle molécule produite par l'endothélium est le principal vasodilatateur endogène ?<br />
+- A) L'endothéline-1<br />
+- B) Le monoxyde d'azote (NO) ✓<br />
+- C) L'angiotensine II<br />
+- D) Le thromboxane A₂</p>
+<p><strong>Q5.</strong> Quel est le seuil de VOP carotido-fémorale retenu par l'ESC/ESH comme marqueur de rigidité artérielle ?<br />
+- A) &gt; 6 m/s<br />
+- B) &gt; 8 m/s<br />
+- C) &gt; 10 m/s ✓<br />
+- D) &gt; 12 m/s</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q6.</strong> Expliquez pourquoi la pression pulsée augmente avec l'âge et pourquoi elle est un facteur de risque cardiovasculaire indépendant chez le sujet âgé.</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) Avec l'âge, la paroi aortique perd ses fibres élastiques (remplacées par du collagène) → rigidité aortique → perte de l'effet Windkessel ; (2) La PAS augmente car l'aorte rigide n'absorbe plus l'éjection systolique ; (3) La PAD diminue car l'aorte rigide ne restitue plus le flux en diastole ; (4) La PP augmente → surcharge systolique du VG → HVG ; (5) L'augmentation de la PP est associée à un risque accru d'AVC, d'IDM et de mortalité CV, indépendamment de la PAM.</p>
+</blockquote>
+<hr />
+<h1 id="module-02-physiologie-de-la-regulation-de-la-pression-arterielle">MODULE 02 — PHYSIOLOGIE DE LA RÉGULATION DE LA PRESSION ARTÉRIELLE</h1>
+<h2 id="les-trois-etages-de-regulation-immediat-intermediaire-long-terme">Les trois étages de régulation : immédiat, intermédiaire, long terme</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_1">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire les mécanismes de régulation à court terme (secondes-minutes) de la PA</li>
+<li>Analyser les mécanismes de régulation à moyen terme (heures-jours)</li>
+<li>Expliquer les mécanismes de régulation à long terme (jours-semaines)</li>
+<li>Comprendre l'interaction entre les différents systèmes de régulation</li>
+</ul>
+<hr />
+<h2 id="1-regulation-a-court-terme-le-baroreflexe-secondes-minutes">1. Régulation à court terme — le baroréflexe (secondes-minutes)</h2>
+<h3 id="11-les-barorecepteurs-arteriels">1.1 Les barorécepteurs artériels</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA02-S01-001 — SCHÉMA : localisation des barorécepteurs — sinus carotidien et crosse aortique — et arc réflexe]</p>
+</blockquote>
+<p><strong>Caractéristiques des barorécepteurs</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Localisation</th>
+<th>Nerf afférent</th>
+<th>Centre intégrateur</th>
+<th>Réponse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sinus carotidien</td>
+<td>Nerf de Hering (branche du IX)</td>
+<td>Noyau du tractus solitaire (NTS)</td>
+<td>Modulation FC, contractilité, tonus vasculaire</td>
+</tr>
+<tr>
+<td>Crosse aortique</td>
+<td>Nerf de Cyon (branche du X)</td>
+<td>Noyau du tractus solitaire</td>
+<td>Idem</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Arc baroréflexe</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Stimulus</td>
+<td>↑ PA → distension de la paroi artérielle → activation des barorécepteurs</td>
+</tr>
+<tr>
+<td>2. Afférence</td>
+<td>Signal nerveux via nerfs IX et X vers le NTS (bulbe)</td>
+</tr>
+<tr>
+<td>3. Intégration</td>
+<td>NTS → activation du noyau dorsal moteur du vague + inhibition du centre vasomoteur</td>
+</tr>
+<tr>
+<td>4. Efférence</td>
+<td>↑ tonus vagal (parasympathique) + ↓ tonus sympathique</td>
+</tr>
+<tr>
+<td>5. Réponse</td>
+<td>↓ FC, ↓ contractilité, vasodilatation → ↓ PA</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > Le baroréflexe se « reset » en quelques jours en cas d'HTA chronique : il continue à fonctionner mais autour d'un point de consigne plus élevé. C'est pourquoi le baroréflexe ne peut pas, à lui seul, prévenir l'HTA chronique — il stabilise la PA autour de la nouvelle valeur pathologique.</div>
+
+<h3 id="12-les-chemorecepteurs">1.2 Les chémorécepteurs</h3>
+<p>Les chémorécepteurs périphériques (glomus carotidien, corps aortiques) et centraux (plancher du 4e ventricule) participent à la régulation de la PA en réponse aux variations de PaO₂, PaCO₂ et pH.</p>
+<hr />
+<h2 id="2-regulation-a-moyen-terme-heures-jours">2. Régulation à moyen terme (heures-jours)</h2>
+<h3 id="21-le-systeme-renine-angiotensine-aldosterone-sraa">2.1 Le système rénine-angiotensine-aldostérone (SRAA)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA02-S02-001 — SCHÉMA COMPLET : cascade du SRAA — de la rénine à l'aldostérone, avec sites d'action des médicaments]</p>
+</blockquote>
+<p><strong>Cascade du SRAA</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Enzyme/Hormone</th>
+<th>Substrat → Produit</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rénine (juxta-glomérulaire rénale)</td>
+<td>Angiotensinogène → Angiotensine I</td>
+<td>Clivage hépatique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ECA (Enzyme de Conversion de l'Angiotensine)</td>
+<td>Angiotensine I → Angiotensine II</td>
+<td>Pulmonaire principalement</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Angiotensine II</td>
+<td>—</td>
+<td>Vasoconstricteur puissant, stimule l'aldostérone</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Aldostérone (corticosurrénale)</td>
+<td>—</td>
+<td>Réabsorption Na⁺ et H₂O, excrétion K⁺</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Actions de l'angiotensine II</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Récepteur</th>
+<th>Localisation</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>CML vasculaires</td>
+<td>Vasoconstriction puissante</td>
+</tr>
+<tr>
+<td>AT1</td>
+<td>Cortex surrénalien</td>
+<td>Sécrétion d'aldostérone</td>
+</tr>
+<tr>
+<td>AT1</td>
+<td>Tube proximal rénal</td>
+<td>Réabsorption de Na⁺</td>
+</tr>
+<tr>
+<td>AT1</td>
+<td>Hypothalamus</td>
+<td>Sécrétion d'ADH, soif</td>
+</tr>
+<tr>
+<td>AT1</td>
+<td>Système nerveux sympathique</td>
+<td>Potentialisation du tonus sympathique</td>
+</tr>
+<tr>
+<td>AT1</td>
+<td>Cœur</td>
+<td>Hypertrophie, fibrose</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>Endothélium, rein</td>
+<td>Vasodilatation, anti-prolifération (contre-régulation)</td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> :</p>
+<blockquote>
+<p>Le SRAA est la cible thérapeutique principale de l'HTA. Les IEC bloquent l'ECA (étape 2), les ARA2 bloquent le récepteur AT1 de l'angiotensine II (étape 3), les anti-aldostérones bloquent l'aldostérone (étape 4), et l'aliskiren bloque la rénine (étape 1). Selon l'ESC/ESH 2023, IEC ou ARA2 sont recommandés en première intention dans la majorité des situations.</p>
+</blockquote>
+<h3 id="22-le-systeme-nerveux-sympathique">2.2 Le système nerveux sympathique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA02-S02-002 — SCHÉMA : innervation sympathique cardiovasculaire — centres bulbaires, chaîne ganglionnaire, organes cibles]</p>
+</blockquote>
+<p><strong>Effets cardiovasculaires du système sympathique</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Récepteur</th>
+<th>Localisation</th>
+<th>Effet</th>
+<th>Médiateur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>α₁</td>
+<td>CML vasculaires</td>
+<td>Vasoconstriction</td>
+<td>Noradrénaline</td>
+</tr>
+<tr>
+<td>α₂</td>
+<td>Terminaisons pré-synaptiques</td>
+<td>Rétrocontrôle négatif (↓ libération NA)</td>
+<td>Noradrénaline</td>
+</tr>
+<tr>
+<td>β₁</td>
+<td>Cœur (nœud sinusal, myocarde)</td>
+<td>↑ FC, ↑ contractilité, ↑ vitesse de conduction</td>
+<td>Noradrénaline, adrénaline</td>
+</tr>
+<tr>
+<td>β₂</td>
+<td>CML vasculaires (muscle, foie)</td>
+<td>Vasodilatation</td>
+<td>Adrénaline circulante</td>
+</tr>
+<tr>
+<td>β₁</td>
+<td>Appareil juxta-glomérulaire</td>
+<td>↑ sécrétion de rénine</td>
+<td>Noradrénaline</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-les-peptides-natriuretiques-anp-bnp-cnp">2.3 Les peptides natriurétiques (ANP, BNP, CNP)</h3>
+<table>
+<thead>
+<tr>
+<th>Peptide</th>
+<th>Source</th>
+<th>Stimulus</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ANP (Atrial Natriuretic Peptide)</td>
+<td>Oreillettes</td>
+<td>Distension auriculaire</td>
+<td>Natriurèse, vasodilatation, ↓ rénine et aldostérone</td>
+</tr>
+<tr>
+<td>BNP (Brain Natriuretic Peptide)</td>
+<td>Ventricules</td>
+<td>Surcharge volumique/pression</td>
+<td>Idem ANP + marqueur d'insuffisance cardiaque</td>
+</tr>
+<tr>
+<td>CNP (C-type Natriuretic Peptide)</td>
+<td>Endothélium</td>
+<td>Shear stress</td>
+<td>Vasodilatation locale, anti-prolifératif</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-regulation-a-long-terme-jours-semaines">3. Régulation à long terme (jours-semaines)</h2>
+<h3 id="31-le-rein-organe-cle-de-la-regulation-a-long-terme">3.1 Le rein — organe clé de la régulation à long terme</h3>
+<p>Le rein est le déterminant ultime de la PA à long terme par son contrôle de la volémie (relation pression-natriurèse).</p>
+<blockquote>
+<p>[MEDIA: 📊 MHTA02-S03-001 — COURBE : relation pression-natriurèse — déplacement de la courbe dans l'HTA essentielle]</p>
+</blockquote>
+<p><strong>Courbe pression-natriurèse</strong> (adapté de Guyton, 1991) :<br />
+- Quand la PA augmente → ↑ natriurèse (excrétion de Na⁺ et H₂O) → ↓ volémie → ↓ PA<br />
+- Quand la PA diminue → ↓ natriurèse → ↑ volémie → ↑ PA<br />
+- Dans l'HTA essentielle, cette courbe est déplacée vers la droite : le rein nécessite une PA plus élevée pour excréter la même quantité de Na⁺</p>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>Arthur Guyton (1919-2003) a démontré que le rein est le régulateur ultime de la PA à long terme. Sa théorie (Guyton, 1991) stipule qu'une HTA chronique ne peut se maintenir que si la courbe pression-natriurèse est anormale, c'est-à-dire si le rein est incapable d'excréter normalement le sodium à une PA normale.</p>
+</blockquote>
+<hr />
+<h2 id="4-tableau-synthetique-des-systemes-de-regulation">4. Tableau synthétique des systèmes de régulation</h2>
+<table>
+<thead>
+<tr>
+<th>Système</th>
+<th>Délai d'action</th>
+<th>Durée d'effet</th>
+<th>Mécanisme principal</th>
+<th>Cible thérapeutique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baroréflexe</td>
+<td>Secondes</td>
+<td>Minutes</td>
+<td>Modulation nerveuse autonome</td>
+<td>Bêtabloquants, antihypertenseurs centraux</td>
+</tr>
+<tr>
+<td>Chémoréflexe</td>
+<td>Secondes</td>
+<td>Minutes</td>
+<td>Réponse à l'hypoxie/hypercapnie</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SRAA</td>
+<td>Minutes-heures</td>
+<td>Jours-semaines</td>
+<td>Angiotensine II, aldostérone</td>
+<td>IEC, ARA2, anti-aldostérones, IDR</td>
+</tr>
+<tr>
+<td>Sympathique</td>
+<td>Secondes</td>
+<td>Heures</td>
+<td>Noradrénaline, adrénaline</td>
+<td>Bêtabloquants, alphabloquants, centraux</td>
+</tr>
+<tr>
+<td>ADH (vasopressine)</td>
+<td>Minutes</td>
+<td>Heures</td>
+<td>Réabsorption d'eau (canal collecteur)</td>
+<td>Vaptans</td>
+</tr>
+<tr>
+<td>Peptides natriurétiques</td>
+<td>Minutes</td>
+<td>Heures</td>
+<td>Natriurèse, vasodilatation</td>
+<td>Sacubitril (inhibiteur de la néprilysine)</td>
+</tr>
+<tr>
+<td>Rein (pression-natriurèse)</td>
+<td>Heures-jours</td>
+<td>Permanent</td>
+<td>Excrétion de Na⁺ et H₂O</td>
+<td>Diurétiques, restriction sodée</td>
+</tr>
+<tr>
+<td>Remodelage vasculaire</td>
+<td>Semaines-mois</td>
+<td>Permanent</td>
+<td>Hypertrophie CML, fibrose</td>
+<td>Tous les antihypertenseurs (indirect)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA02-S04-001 — SCHÉMA INTÉGRATIF : les trois étages de régulation de la PA — court, moyen, long terme]</p>
+</blockquote>
+<hr />
+<h2 id="5-quiz-module-02">5. Quiz — Module 02</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Où sont situés les barorécepteurs artériels principaux ?<br />
+- A) Dans les veines caves<br />
+- B) Dans le sinus carotidien et la crosse aortique ✓<br />
+- C) Dans les artères rénales<br />
+- D) Dans le ventricule gauche</p>
+<p><strong>Q2.</strong> Quel est l'enzyme qui convertit l'angiotensine I en angiotensine II ?<br />
+- A) La rénine<br />
+- B) L'enzyme de conversion de l'angiotensine (ECA) ✓<br />
+- C) La néprilysine<br />
+- D) L'aldostérone synthase</p>
+<p><strong>Q3.</strong> Quel organe est le régulateur ultime de la PA à long terme selon Guyton ?<br />
+- A) Le cœur<br />
+- B) Le cerveau<br />
+- C) Le rein ✓<br />
+- D) La surrénale</p>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q4.</strong> Pourquoi le baroréflexe ne peut-il pas prévenir l'HTA chronique ?<br />
+- A) Parce qu'il ne fonctionne plus après 50 ans<br />
+- B) Parce qu'il se « reset » autour de la nouvelle valeur de PA ✓<br />
+- C) Parce qu'il n'agit que sur la fréquence cardiaque<br />
+- D) Parce qu'il est inhibé par les médicaments antihypertenseurs</p>
+<p><strong>Q5.</strong> Quel récepteur de l'angiotensine II est responsable de la vasoconstriction ?<br />
+- A) AT2<br />
+- B) AT1 ✓<br />
+- C) MR (récepteur minéralocorticoïde)<br />
+- D) β₁</p>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q6.</strong> Expliquez le concept de « déplacement de la courbe pression-natriurèse » dans l'HTA essentielle et ses implications thérapeutiques.</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) Dans l'HTA essentielle, la courbe pression-natriurèse est déplacée vers la droite : le rein nécessite une PA plus élevée pour excréter la même quantité de Na⁺ ; (2) Ce déplacement peut être causé par une activation du SRAA, une hyperactivité sympathique, une réduction du nombre de néphrons, ou une anomalie du transport tubulaire du Na⁺ ; (3) Implications : les diurétiques corrigent partiellement ce défaut en forçant la natriurèse ; les IEC/ARA2 corrigent l'activation du SRAA ; la restriction sodée réduit la charge de Na⁺ à excréter.</p>
+</blockquote>
+<hr />
+<h1 id="module-03-le-systeme-renine-angiotensine-aldosterone-en-detail">MODULE 03 — LE SYSTÈME RÉNINE-ANGIOTENSINE-ALDOSTÉRONE EN DÉTAIL</h1>
+<h2 id="du-glomerule-a-la-surrenale-la-cascade-hormonale-de-la-pa">Du glomérule à la surrénale — la cascade hormonale de la PA</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_2">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire en détail chaque composante du SRAA</li>
+<li>Analyser les voies alternatives du SRAA (ECA2, angiotensine 1-7, voie des chymases)</li>
+<li>Comprendre le SRAA tissulaire (cardiaque, vasculaire, rénal, cérébral)</li>
+<li>Identifier les mécanismes d'échappement et de contre-régulation</li>
+</ul>
+<hr />
+<h2 id="1-la-renine-enzyme-cle-du-sraa">1. La rénine — enzyme clé du SRAA</h2>
+<h3 id="11-secretion-de-la-renine">1.1 Sécrétion de la rénine</h3>
+<p>La rénine est sécrétée par les cellules juxta-glomérulaires de l'artériole afférente rénale.</p>
+<p><strong>Stimuli de sécrétion de la rénine</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Stimulus</th>
+<th>Mécanisme</th>
+<th>Situation clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↓ Pression de perfusion rénale</td>
+<td>Barorécepteurs de l'artériole afférente</td>
+<td>Sténose artère rénale, hypotension</td>
+</tr>
+<tr>
+<td>↓ Na⁺ au tube distal</td>
+<td>Macula densa (feedback tubulo-glomérulaire)</td>
+<td>Déplétion sodée, diurétiques</td>
+</tr>
+<tr>
+<td>↑ Stimulation β₁ sympathique</td>
+<td>Récepteurs β₁ des cellules juxta-glomérulaires</td>
+<td>Stress, exercice, insuffisance cardiaque</td>
+</tr>
+<tr>
+<td>↓ Angiotensine II</td>
+<td>Rétrocontrôle négatif levé</td>
+<td>IEC, ARA2</td>
+</tr>
+<tr>
+<td>Prostaglandines (PGI₂, PGE₂)</td>
+<td>Stimulation directe</td>
+<td>AINS = ↓ rénine (risque)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Inhibiteurs de la sécrétion de rénine</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Inhibiteur</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>↑ Angiotensine II</td>
+<td>Rétrocontrôle négatif direct</td>
+</tr>
+<tr>
+<td>↑ PA</td>
+<td>Barorécepteurs de l'artériole afférente</td>
+</tr>
+<tr>
+<td>↑ Na⁺ au tube distal</td>
+<td>Macula densa</td>
+</tr>
+<tr>
+<td>ANP</td>
+<td>Inhibition directe de la sécrétion</td>
+</tr>
+<tr>
+<td>AINS</td>
+<td>↓ Prostaglandines rénales stimulatrices</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHTA03-S01-001 — SCHÉMA : appareil juxta-glomérulaire — cellules granulaires, macula densa, artérioles afférente et efférente]</p>
+</blockquote>
+<h3 id="12-les-voies-alternatives-du-sraa">1.2 Les voies alternatives du SRAA</h3>
+<p>Le SRAA « classique » (rénine → angiotensine I → ECA → angiotensine II) est complété par des voies alternatives :</p>
+<table>
+<thead>
+<tr>
+<th>Voie</th>
+<th>Enzyme</th>
+<th>Produit</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classique</td>
+<td>ECA</td>
+<td>Angiotensine II</td>
+<td>Vasoconstriction, rétention Na⁺</td>
+</tr>
+<tr>
+<td>Chymases</td>
+<td>Chymase (cœur, vaisseaux)</td>
+<td>Angiotensine II</td>
+<td>Vasoconstriction (non bloquée par les IEC !)</td>
+</tr>
+<tr>
+<td>ECA2</td>
+<td>ECA2</td>
+<td>Angiotensine 1-7</td>
+<td>Vasodilatation, anti-fibrose, anti-inflammatoire</td>
+</tr>
+<tr>
+<td>Récepteur MAS</td>
+<td>—</td>
+<td>Ang 1-7 → récepteur MAS</td>
+<td>Effet protecteur cardiovasculaire</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>L'ECA2 est le récepteur d'entrée du SARS-CoV-2. L'axe ECA2/Angiotensine 1-7/MAS est un axe contre-régulateur protecteur du SRAA. Les IEC et ARA2 augmentent l'expression d'ECA2 — ce qui a suscité un débat (résolu) pendant la pandémie COVID-19 : les études BRACE CORONA et REPLACE COVID ont confirmé que ces traitements doivent être poursuivis.</p>
+</blockquote>
+<hr />
+<h2 id="2-laldosterone-au-dela-de-la-retention-sodee">2. L'aldostérone — au-delà de la rétention sodée</h2>
+<h3 id="21-actions-de-laldosterone">2.1 Actions de l'aldostérone</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Mécanisme</th>
+<th>Organe cible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Réabsorption Na⁺</td>
+<td>↑ expression ENaC (canal sodium épithélial)</td>
+<td>Tube collecteur rénal</td>
+</tr>
+<tr>
+<td>Excrétion K⁺</td>
+<td>↑ sécrétion K⁺</td>
+<td>Tube collecteur</td>
+</tr>
+<tr>
+<td>Excrétion H⁺</td>
+<td>↑ sécrétion H⁺</td>
+<td>Tube collecteur</td>
+</tr>
+<tr>
+<td>Fibrose cardiaque</td>
+<td>↑ synthèse de collagène</td>
+<td>Myocarde</td>
+</tr>
+<tr>
+<td>Fibrose vasculaire</td>
+<td>Remodelage artériel</td>
+<td>Paroi vasculaire</td>
+</tr>
+<tr>
+<td>Dysfonction endothéliale</td>
+<td>↓ NO, ↑ stress oxydatif</td>
+<td>Endothélium</td>
+</tr>
+<tr>
+<td>Inflammation</td>
+<td>↑ cytokines pro-inflammatoires</td>
+<td>Systémique</td>
+</tr>
+</tbody>
+</table>
+<p>📋 <strong>RECOMMANDATION</strong> :</p>
+<blockquote>
+<p>L'aldostérone a des effets délétères bien au-delà de la rétention sodée : fibrose cardiaque, remodelage vasculaire, dysfonction endothéliale. Ces effets « non génomiques » justifient l'utilisation des antagonistes des récepteurs minéralocorticoïdes (ARM : spironolactone, éplérénone, finérénone) non seulement dans l'HTA résistante (PATHWAY-2) mais aussi dans l'insuffisance cardiaque et la néphropathie diabétique.</p>
+</blockquote>
+<hr />
+<h2 id="3-quiz-module-03">3. Quiz — Module 03</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Où sont situées les cellules qui sécrètent la rénine ?<br />
+- A) Dans le cortex surrénalien<br />
+- B) Dans l'artériole afférente glomérulaire (cellules juxta-glomérulaires) ✓<br />
+- C) Dans le tube proximal<br />
+- D) Dans l'endothélium pulmonaire</p>
+<p><strong>Q2.</strong> Quel effet principal l'aldostérone exerce-t-elle sur le tube collecteur rénal ?<br />
+- A) Excrétion de Na⁺<br />
+- B) Réabsorption de Na⁺ et excrétion de K⁺ ✓<br />
+- C) Réabsorption de K⁺<br />
+- D) Excrétion de glucose</p>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Pourquoi les IEC ne bloquent-ils pas totalement la production d'angiotensine II ?<br />
+- A) Parce que les IEC sont toujours sous-dosés<br />
+- B) Parce que des voies alternatives (chymases) produisent de l'angiotensine II sans passer par l'ECA ✓<br />
+- C) Parce que les IEC se dégradent rapidement<br />
+- D) Parce que l'angiotensine II est stockée dans les tissus</p>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q4.</strong> Comparez les mécanismes d'action des IEC et des ARA2 au niveau du SRAA. Quels avantages théoriques chaque classe offre-t-elle et pourquoi ne les associe-t-on pas ?</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : IEC : bloquent l'ECA → ↓ angiotensine II + ↑ bradykinine (vasodilatation, mais cause de la toux) ; ne bloquent pas les chymases. ARA2 : bloquent le récepteur AT1 → déviation vers AT2 (effets protecteurs) ; pas de toux ; ne bloquent pas la dégradation de la bradykinine. Association IEC + ARA2 : essai ONTARGET (2008) — pas de bénéfice additionnel mais ↑ effets indésirables (hyperkaliémie, IRA). Contre-indiquée par ESC/ESH 2023.</p>
+</blockquote>
+<hr />
+<h1 id="module-04-variabilite-tensionnelle-et-rythme-circadien">MODULE 04 — VARIABILITÉ TENSIONNELLE ET RYTHME CIRCADIEN</h1>
+<h2 id="la-pa-nest-pas-un-chiffre-fixe-variabilite-dipping-et-implications-cliniques">La PA n'est pas un chiffre fixe — variabilité, dipping et implications cliniques</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_3">Objectifs pédagogiques</h2>
+<ul>
+<li>Comprendre la variabilité physiologique de la PA</li>
+<li>Décrire le rythme circadien de la PA et le profil nycthéméral</li>
+<li>Analyser les implications cliniques du profil dipper/non-dipper</li>
+<li>Identifier les facteurs influençant la variabilité tensionnelle</li>
+</ul>
+<hr />
+<h2 id="1-variabilite-physiologique-de-la-pa">1. Variabilité physiologique de la PA</h2>
+<h3 id="11-les-sources-de-variabilite">1.1 Les sources de variabilité</h3>
+<table>
+<thead>
+<tr>
+<th>Type de variabilité</th>
+<th>Échelle temporelle</th>
+<th>Cause</th>
+<th>Amplitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Battement à battement</td>
+<td>Secondes</td>
+<td>Respiration, baroréflexe</td>
+<td>5-10 mmHg</td>
+</tr>
+<tr>
+<td>Posturale</td>
+<td>Minutes</td>
+<td>Orthostatisme, décubitus</td>
+<td>10-20 mmHg</td>
+</tr>
+<tr>
+<td>Circadienne</td>
+<td>24 heures</td>
+<td>Sommeil/veille, activité, SNA</td>
+<td>10-20 %</td>
+</tr>
+<tr>
+<td>Jour à jour</td>
+<td>Jours</td>
+<td>Stress, alimentation, sel</td>
+<td>5-15 mmHg</td>
+</tr>
+<tr>
+<td>Saisonnière</td>
+<td>Mois</td>
+<td>Température ambiante</td>
+<td>5-10 mmHg</td>
+</tr>
+<tr>
+<td>Long terme</td>
+<td>Années</td>
+<td>Vieillissement, athérosclérose</td>
+<td>Progressive</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-le-rythme-circadien-de-la-pa">1.2 Le rythme circadien de la PA</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHTA04-S01-001 — GRAPHIQUE : profil tensionnel nycthéméral sur 24h — courbe type avec dip nocturne, surge matinal, activité diurne]</p>
+</blockquote>
+<p><strong>Profil nycthéméral normal</strong> :<br />
+- <strong>Surge matinal</strong> (06h-10h) : ↑ rapide de la PA de 20-30 mmHg au réveil (activation sympathique)<br />
+- <strong>Plateau diurne</strong> (10h-20h) : PA relativement stable, modulée par l'activité<br />
+- <strong>Dip nocturne</strong> (00h-06h) : ↓ de la PA de 10-20 % par rapport aux valeurs diurnes (baisse du tonus sympathique)</p>
+<h3 id="13-classification-des-profils-nycthemeraux-mapa">1.3 Classification des profils nycthéméraux (MAPA)</h3>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>Dip nocturne (%)</th>
+<th>Prévalence</th>
+<th>Risque CV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dipper normal</td>
+<td>10-20 %</td>
+<td>60-70 %</td>
+<td>Référence</td>
+</tr>
+<tr>
+<td>Non-dipper</td>
+<td>&lt; 10 %</td>
+<td>20-25 %</td>
+<td>↑ 20-30 %</td>
+</tr>
+<tr>
+<td>Reverse dipper (riser)</td>
+<td>PA nocturne &gt; PA diurne</td>
+<td>5-10 %</td>
+<td>↑ 50-80 %</td>
+</tr>
+<tr>
+<td>Extreme dipper</td>
+<td>&gt; 20 %</td>
+<td>5-10 %</td>
+<td>↑ risque ischémique nocturne</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > Le profil non-dipper ou reverse dipper est associé à un sur-risque cardiovasculaire significatif et doit faire rechercher : syndrome d'apnées du sommeil, HTA secondaire (phéochromocytome, hyperaldostéronisme), insuffisance rénale chronique, neuropathie autonome (diabète), travail posté. Il n'est identifiable que par la MAPA sur 24h.</div>
+
+<h3 id="14-le-surge-matinal">1.4 Le surge matinal</h3>
+<p>Le pic tensionnel matinal (morning blood pressure surge) correspond à l'augmentation rapide de la PA dans les 2 premières heures suivant le lever. Il est responsable de la surincidence matinale des AVC (40 % entre 6h et 12h) et des IDM.</p>
+<blockquote>
+<p>[MEDIA: 📈 MHTA04-S01-002 — GRAPHIQUE : incidence des événements cardiovasculaires sur 24h — pic matinal d'AVC et d'IDM]</p>
+</blockquote>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'étude JAMP (Japan Ambulatory Blood Pressure Monitoring Prospective, 2019) a montré que la PA nocturne est un prédicteur de mortalité CV plus puissant que la PA de cabinet ou la PA diurne ambulatoire. Chaque augmentation de 20 mmHg de la PAS nocturne est associée à une augmentation de 18 % du risque de mortalité CV.</p>
+</blockquote>
+<hr />
+<h2 id="2-implications-cliniques-de-la-variabilite-tensionnelle">2. Implications cliniques de la variabilité tensionnelle</h2>
+<h3 id="21-variabilite-visite-a-visite-vvv">2.1 Variabilité visite-à-visite (VVV)</h3>
+<p>La variabilité de la PAS entre les consultations (visit-to-visit variability, VVV) est un facteur de risque CV indépendant.</p>
+<p>🔬 <strong>EVIDENCE</strong> :</p>
+<blockquote>
+<p>L'analyse de Rothwell (ASCOT-BPLA, Lancet 2010) a montré que la VVV de la PAS est un prédicteur d'AVC plus puissant que la PA moyenne. Les inhibiteurs calciques (amlodipine) réduisent davantage la VVV que les bêtabloquants (aténolol), ce qui pourrait expliquer leur supériorité dans la prévention de l'AVC.</p>
+</blockquote>
+<hr />
+<h2 id="3-quiz-module-04">3. Quiz — Module 04</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel est le pourcentage de baisse nocturne de la PA chez un patient « dipper » normal ?<br />
+- A) &lt; 5 %<br />
+- B) 10-20 % ✓<br />
+- C) 20-30 %<br />
+- D) &gt; 30 %</p>
+<p><strong>Q2.</strong> À quel moment de la journée survient le pic de fréquence des AVC et des IDM ?<br />
+- A) La nuit (00h-06h)<br />
+- B) Le matin (06h-12h) ✓<br />
+- C) L'après-midi (14h-18h)<br />
+- D) Le soir (20h-00h)</p>
+<h3 id="argent_3">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un patient présente une PA nocturne supérieure à sa PA diurne sur la MAPA. Quel est son profil et quelle pathologie faut-il rechercher en priorité ?<br />
+- A) Extreme dipper — hypotension orthostatique<br />
+- B) Reverse dipper (riser) — syndrome d'apnées du sommeil ✓<br />
+- C) Dipper normal — pas de recherche supplémentaire<br />
+- D) Non-dipper — dysfonction érectile</p>
+<h3 id="diamant_3">💎 Diamant</h3>
+<p><strong>Q4.</strong> L'étude de Rothwell (Lancet 2010) a montré que la variabilité visite-à-visite de la PA est un facteur de risque CV indépendant. Quelles classes d'antihypertenseurs réduisent le mieux cette variabilité et quelles implications cliniques en tirez-vous ?</p>
+<blockquote>
+<p><strong>Éléments de réponse</strong> : (1) Les ICC (amlodipine) et les diurétiques réduisent le mieux la VVV ; (2) Les bêtabloquants (aténolol) et les IEC augmentent la VVV ; (3) Cela pourrait expliquer la supériorité des ICC dans la prévention de l'AVC (ASCOT-BPLA) ; (4) En pratique : chez un patient avec variabilité tensionnelle importante (HTA « labile »), privilégier ICC + diurétique ; (5) Limites : la VVV dépend aussi de la compliance, de la technique de mesure et de facteurs non pharmacologiques.</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 1 — Fondamentaux cardiovasculaires</em><br />
+<em>Prochaine partie : Physiopathologie de l'HTA</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

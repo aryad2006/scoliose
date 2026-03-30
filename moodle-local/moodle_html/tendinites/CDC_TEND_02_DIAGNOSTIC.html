@@ -1,0 +1,512 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-2-diagnostic-des-tendinopathies-modules-5-7">Partie 2 — Diagnostic des tendinopathies (Modules 5-7)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-5-examen-clinique-des-tendinopathies-tests-et-manuvres-par-localisation">MODULE 5 : EXAMEN CLINIQUE DES TENDINOPATHIES — TESTS ET MANŒUVRES PAR LOCALISATION</h1>
+<p><strong>Partie</strong> : II — Diagnostic des tendinopathies<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-4</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Bricoleur passionné, consulte pour une douleur du coude droit apparue progressivement après des travaux de peinture (pinceau rouleau pendant 3 jours). La douleur siège à la face latérale du coude, irradie vers l'avant-bras, et est aggravée par la préhension. *Comment distinguer une épicondylalgie latérale vraie d'une pathologie cervicale irradiée, d'un syndrome du tunnel radial ou d'une arthrose huméro-radiale ? Quels tests cliniques sont les plus fiables ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> un examen clinique systématique d'une tendinopathie (inspection, palpation, testing actif/passif/résisté, tests spécifiques)</li>
+<li><strong>Maîtriser</strong> les tests spécifiques de chaque tendinopathie par localisation (Achille, coiffe, coude, genou, hanche, pied)</li>
+<li><strong>Interpréter</strong> la sensibilité et la spécificité des principaux tests cliniques</li>
+<li><strong>Distinguer</strong> une tendinopathie d'un diagnostic différentiel (neuropathie, arthrose, enthésopathie inflammatoire)</li>
+<li><strong>Évaluer</strong> la sévérité et le stade du continuum par l'examen clinique</li>
+<li><strong>Utiliser</strong> les scores fonctionnels validés (VISA-A, VISA-P, DASH, PRTEE, Oxford Shoulder Score)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-51-examen-clinique-systematique-la-methode-universelle">Section 5.1 — Examen clinique systématique : la méthode universelle</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Interrogatoire structuré</strong> :<br />
+  - Mode de début : brutal (rupture ?) ou progressif (tendinopathie chronique) — contexte déclenchant (changement d'activité, surcharge)<br />
+  - Caractéristiques de la douleur : localisation précise (corps, insertion, JMT), intensité (EVA), horaire (mécanique = effort, inflammatoire = nuit/repos), facteurs aggravants/soulageants<br />
+  - « Warm-up phenomenon » : douleur présente au démarrage, diminuant à l'échauffement, reprenant après l'effort — pathognomonique des tendinopathies<br />
+  - Raideur matinale : durée (&gt;30 min = composante inflammatoire systémique possible)<br />
+  - Histoire sportive/professionnelle : volume, intensité, changements récents, geste technique<br />
+  - Antécédents : infiltrations préalables, traitements, récidives, pathologies systémiques (diabète, dyslipidémie, rhumatisme inflammatoire), médicaments (fluoroquinolones, statines)<br />
+- <strong>Inspection</strong> : gonflement fusiforme local, érythème (rare), amyotrophie (chronique), déformation (rupture chronique de la coiffe = épaule pseudo-paralytique)<br />
+- <strong>Palpation</strong> : le module doit présenter la recherche d'un noyau douloureux focal sur le tendon, dont la spécificité est estimée à 80-90% pour la tendinopathie (Cook &amp; Purdam, <em>Br J Sports Med</em>, 2009), l'épaississement, la crépitation (ténosynovite) et le gap (rupture)<br />
+- <strong>Testing</strong> :<br />
+  - <strong>Actif</strong> : reproduction de la douleur par contraction active contre résistance dans l'axe du tendon = test isométrique résisté<br />
+  - <strong>Passif</strong> : mise en tension du tendon par étirement passif — douleur d'étirement<br />
+  - <strong>Résisté</strong> : contraction isométrique maximale — douleur si tendinopathie, faiblesse si rupture<br />
+  - <strong>Triade de Cyriax</strong> : passif indolore + actif douloureux + résisté douloureux = lésion tendineuse (vs passif douloureux = lésion articulaire)<br />
+- <strong>Tests spécifiques</strong> par localisation : voir sections suivantes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND05-S01-001 | 📊 INFOGRAPHIE | Interrogatoire structuré d'une tendinopathie — check-list des questions essentielles | Format aide-mémoire |<br />
+| MTEND05-S01-002 | 📐 SCHÉMA | Triade de Cyriax — algorithme : passif/actif/résisté → diagnostic lésionnel | Arbre décisionnel |<br />
+| MTEND05-S01-003 | 🎬 ANIMATION | Warm-up phenomenon — courbe de douleur au cours de l'activité (U inversé) | Graphique animé |<br />
+| MTEND05-S01-004 | 📊 INFOGRAPHIE | Diagnostics différentiels d'une douleur tendineuse par région | Tableau par localisation |</p>
+<h3 id="section-52-tests-specifiques-du-tendon-dachille-et-de-la-cheville">Section 5.2 — Tests spécifiques du tendon d'Achille et de la cheville</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Palpation systématique</strong> : pincement en arc du tendon, recherche du noyau douloureux (corporéal 2-6 cm vs insertionnel), recherche de gap (rupture)<br />
+- <strong>Test de Thompson (Simmonds)</strong> : patient en décubitus ventral, pied hors de la table, compression du mollet → normalement : flexion plantaire passive ; en cas de rupture : pas de mouvement — sensibilité très élevée (~96%) et spécificité élevée (~93%) selon Maffulli (<em>Clin Sports Med</em>, 1998)<br />
+- <strong>Arc douloureux de la cheville</strong> : le point douloureux maximal se déplace avec le tendon lors de la dorsiflexion-flexion plantaire (tendinopathie corporéale) ou reste fixe (insertionnelle/paratendinite)<br />
+- <strong>Single leg heel rise test</strong> : patient sur un pied, montée sur pointe → évalue la force et l'endurance (nombre de répétitions) — norme &gt;25 répétitions. Diminué dans les tendinopathies et les ruptures partielles<br />
+- <strong>Matles test</strong> : décubitus ventral, flexion du genou à 90° → le pied doit rester en flexion plantaire ; en cas de rupture, le pied tombe en position neutre<br />
+- <strong>Royal London Hospital (RLH) test</strong> : palpation du noyau douloureux maximal → le point douloureux diminue en dorsiflexion (la tension réduit la douleur de palpation dans les tendinopathies corporéales)<br />
+- <strong>Tests de la cheville</strong> :<br />
+  - Testing résisté des fibulaires (éversion résistée) → tendinopathie des fibulaires<br />
+  - Testing résisté du tibial postérieur (inversion résistée en flexion plantaire) → tendinopathie du tibial postérieur<br />
+  - Test du « too many toes sign » : vue postérieure en charge, visibilité des orteils latéraux → insuffisance du tibial postérieur (pied plat acquis)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND05-S02-001 | 🎥 VIDÉO | Test de Thompson — technique, interprétation positif vs négatif | Vidéo clinique démonstration |<br />
+| MTEND05-S02-002 | 🎥 VIDÉO | Single leg heel rise test — réalisation et comptage | Vidéo clinique |<br />
+| MTEND05-S02-003 | 📐 SCHÉMA | Arc douloureux mobile (corporéal) vs fixe (insertionnel) | 2 schémas comparatifs |<br />
+| MTEND05-S02-004 | 🎥 VIDÉO | Too many toes sign — vue postérieure | Vidéo clinique |<br />
+| MTEND05-S02-005 | 📊 INFOGRAPHIE | Sensibilité et spécificité des tests du tendon d'Achille | Tableau de performances |</p>
+<h3 id="section-53-tests-specifiques-de-la-coiffe-des-rotateurs">Section 5.3 — Tests spécifiques de la coiffe des rotateurs</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tests du supra-épineux (SSP)</strong> :<br />
+  - Test de Jobe (Empty Can) : épaule 90° abduction, 30° antépulsion, pouce vers le bas, résistance à l'abaissement — douleur (tendinopathie) ou faiblesse (rupture) — Se ~79%, Sp ~53% (Hegedus et al., <em>Br J Sports Med</em>, 2012)<br />
+  - Test de Jobe modifié (Full Can) : même position, pouce vers le haut — moins douloureux, plus spécifique des ruptures<br />
+- <strong>Tests de l'infra-épineux (ISP)</strong> :<br />
+  - Test de Patte : épaule 90° abduction, coude fléchi 90°, résistance à la rotation externe — Se ~92%, Sp ~30% (Hegedus et al., 2012)<br />
+  - Rotation externe résistée coude au corps (ER1) : bras collé, coude 90°, résistance RE — teste l'ISP (plus spécifique que Patte)<br />
+  - Drop arm sign : incapacité de maintenir le bras en rotation externe coude au corps → rupture ISP<br />
+  - External rotation lag sign (ERLS) : placer passivement en RE maximale coude au corps → le bras retombe en rotation interne → rupture ISP massive<br />
+- <strong>Tests du sous-scapulaire (SSC)</strong> :<br />
+  - Belly press test : patient pousse sur son ventre en rotation interne maximale → faiblesse = rupture SSC — Se ~64%, Sp ~90% (Hegedus et al., 2012)<br />
+  - Bear hug test : main sur l'épaule controlatérale, résister au décrochage en rotation externe — Se ~60%, Sp ~92% (Hegedus et al., 2012)<br />
+  - Lift-off test (Gerber) : main dans le dos en RI, essayer de décoller la main du dos — incapacité = rupture SSC<br />
+  - Internal rotation lag sign (IRLS)<br />
+- <strong>Tests du long biceps (LBT)</strong> :<br />
+  - Speed test : épaule 60° flexion, coude en extension, avant-bras en supination, résistance à la flexion → douleur dans la gouttière bicipitale — Se ~63%, Sp ~55% (Hegedus et al., 2012)<br />
+  - Yergason test : coude fléchi 90°, résistance à la supination → douleur gouttière bicipitale<br />
+  - Test de Palm-up (identique au Speed)<br />
+- <strong>Tests de conflit</strong> :<br />
+  - Neer sign : élévation passive maximale en RI → douleur par compression du SSP sous l'acromion — Se ~72%, Sp ~60% (Hegedus et al., 2012)<br />
+  - Hawkins-Kennedy : épaule 90° flexion, rotation interne forcée → douleur — Se ~79%, Sp ~59% (Hegedus et al., 2012)<br />
+  - Test de Yocum : main sur l'épaule opposée, coude levé contre résistance — conflit sous-acromial<br />
+- <strong>Tests de calcification tendineuse</strong> : arc douloureux entre 60-120° d'abduction active (la calcification est comprimée sous l'acromion dans cet arc)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND05-S03-001 | 🎥 VIDÉO | Test de Jobe (Empty Can) — technique et interprétation | Vidéo clinique |<br />
+| MTEND05-S03-002 | 🎥 VIDÉO | Test de Patte et rotation externe résistée coude au corps | Vidéo clinique |<br />
+| MTEND05-S03-003 | 🎥 VIDÉO | Belly press, Bear hug et Lift-off test (sous-scapulaire) | Vidéo clinique |<br />
+| MTEND05-S03-004 | 🎥 VIDÉO | Tests de conflit — Neer, Hawkins-Kennedy | Vidéo clinique |<br />
+| MTEND05-S03-005 | 📊 INFOGRAPHIE | Sensibilité et spécificité de tous les tests de la coiffe — tableau récapitulatif | Aide-mémoire |<br />
+| MTEND05-S03-006 | 📐 SCHÉMA | Arc douloureux de la calcification tendineuse (60-120°) | Schéma de l'arc |</p>
+<h3 id="section-54-tests-specifiques-du-coude-du-genou-et-de-la-hanche">Section 5.4 — Tests spécifiques du coude, du genou et de la hanche</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Épicondylalgie latérale (tennis elbow)</strong> :<br />
+  - Test de Cozen : poing fermé, poignet en extension, résistance à l'extension du poignet → douleur épicondyle latéral — sensibilité élevée (~84%) mais spécificité faible (Dorf et al., <em>Am J Sports Med</em>, 2007)<br />
+  - Test de Mill : étirement passif des extenseurs (flexion du poignet + pronation, coude en extension) → douleur<br />
+  - Chair test (test de la chaise) : soulever une chaise par le dossier avec le bras en pronation → douleur<br />
+  - Test de Maudsley : extension résistée du 3ème doigt → douleur épicondyle (ECRB)<br />
+  - Assessment du syndrome du tunnel radial (diagnostic différentiel) : douleur plus distale (3-4 travers de doigt), test de supination résistée coude en extension<br />
+- <strong>Épicondylalgie médiale (golfer's elbow)</strong> :<br />
+  - Résistance à la flexion du poignet en supination → douleur épicondyle médial<br />
+  - Résistance à la pronation → douleur<br />
+  - Étirement passif (extension poignet + supination) → douleur<br />
+- <strong>Tendinopathie patellaire (jumper's knee)</strong> :<br />
+  - Palpation du pôle inférieur de la rotule en extension du genou → douleur exquise<br />
+  - Test du decline squat : squat sur plan incliné à 25° → reproduction de la douleur (spécifique)<br />
+  - Single leg decline squat : plus discriminant (unilatéral)<br />
+  - Test isométrique résisté : extension résistée du genou à 30° de flexion → douleur<br />
+- <strong>Tendinopathies glutéales (GTPS)</strong> :<br />
+  - Palpation du grand trochanter → douleur (mais non spécifique)<br />
+  - Test de Trendelenburg modifié : appui monopodal 30 secondes → douleur ± signe de Trendelenburg (déficit moyen fessier)<br />
+  - FADER test (Flexion, ADDuction, External Rotation) : douleur latérale de hanche<br />
+  - Résistance à l'abduction en décubitus latéral → douleur (tendinopathie du moyen fessier)<br />
+  - Test de la dérotation externe résistée en décubitus latéral<br />
+  - Single leg stand test 30 secondes : reproduction de la douleur latérale = Se 100% pour GTPS (Grimaldi, 2017)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND05-S04-001 | 🎥 VIDÉO | Tests de l'épicondylalgie latérale — Cozen, Mill, Maudsley | Vidéo clinique |<br />
+| MTEND05-S04-002 | 🎥 VIDÉO | Test du decline squat — tendinopathie patellaire | Vidéo clinique |<br />
+| MTEND05-S04-003 | 🎥 VIDÉO | Tests des tendinopathies glutéales — Trendelenburg, abduction résistée, FADER | Vidéo clinique |<br />
+| MTEND05-S04-004 | 📊 INFOGRAPHIE | Synthèse des tests par localisation — Se/Sp de chaque test | Tableau récapitulatif complet |</p>
+<h3 id="section-55-scores-fonctionnels-valides-et-evaluation-de-la-severite">Section 5.5 — Scores fonctionnels validés et évaluation de la sévérité</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>VISA-A (Victorian Institute of Sport Assessment — Achilles)</strong> : 8 questions, score 0-100, évalue la douleur, la fonction, l'activité — validé pour la tendinopathie d'Achille, en français<br />
+- <strong>VISA-P</strong> : idem pour la tendinopathie patellaire — 8 questions, score 0-100<br />
+- <strong>DASH (Disabilities of Arm, Shoulder, Hand)</strong> : 30 questions, score 0-100, membre supérieur global<br />
+- <strong>PRTEE (Patient-Rated Tennis Elbow Evaluation)</strong> : 15 questions, score 0-100, spécifique épicondylalgie<br />
+- <strong>Oxford Shoulder Score (OSS)</strong> : 12 questions, score 0-48, épaule — validé pour la coiffe<br />
+- <strong>Constant-Murley Score</strong> : score composite (douleur, activité quotidienne, mobilité, force) — hétéro-évaluation<br />
+- <strong>HAGOS (Hip And Groin Outcome Score)</strong> : hanche et aine<br />
+- <strong>Évaluation de la sévérité clinique</strong> : staging basé sur la douleur et la limitation fonctionnelle<br />
+  - Stade 1 : douleur après activité uniquement<br />
+  - Stade 2 : douleur en début d'activité, disparaît à l'échauffement, revient après<br />
+  - Stade 3 : douleur pendant l'activité, limitant la performance<br />
+  - Stade 4 : douleur au repos et pendant l'activité<br />
+  - Stade 5 : douleur permanente, limitation des activités quotidiennes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND05-S05-001 | 📊 INFOGRAPHIE | Questionnaire VISA-A complet — version française | Formulaire reproductible |<br />
+| MTEND05-S05-002 | 📊 INFOGRAPHIE | Tableau des scores fonctionnels par localisation — quel score pour quelle tendinopathie | Aide au choix |<br />
+| MTEND05-S05-003 | 📐 SCHÉMA | Staging de sévérité clinique (stades 1-5) avec correspondance au continuum de Cook | Échelle visuelle |</p>
+<h3 id="points-cles-du-module-5">Points clés du Module 5</h3>
+<ol>
+<li>Le « warm-up phenomenon » (douleur au démarrage qui diminue à l'échauffement) est pathognomonique des tendinopathies</li>
+<li>La triade de Cyriax (passif indolore + actif/résisté douloureux) oriente vers une lésion tendineuse</li>
+<li>Le test de Thompson est le plus fiable pour le diagnostic de rupture du tendon d'Achille (Se ~96%, Sp ~93% ; Maffulli, 1998)</li>
+<li>Les tests de Jobe, Patte et Belly press évaluent respectivement le SSP, l'ISP et le SSC</li>
+<li>Le decline squat est le test le plus spécifique de la tendinopathie patellaire</li>
+<li>Le single leg stand 30 secondes a une sensibilité de 100% pour le GTPS</li>
+<li>Les scores VISA-A et VISA-P sont les outils de suivi validés pour les tendinopathies d'Achille et patellaire</li>
+<li>La palpation d'un noyau douloureux focal sur le tendon a une spécificité estimée à 80-90% pour la tendinopathie (Cook &amp; Purdam, 2009)</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (tests et leur cible)</li>
+<li>3 QCM Argent (interprétation des tests, sensibilité/spécificité)</li>
+<li>2 QCM Or (diagnostic différentiel guidé par l'examen clinique)</li>
+<li>1 QCM Diamant (cas clinique complexe : patient avec douleur de coude — différencier tunnel radial, épicondylalgie, radiculopathie C6)</li>
+<li>1 QROC : « Décrivez la séquence d'examen clinique d'une suspicion de rupture du tendon d'Achille, en listant les tests et leur interprétation. »</li>
+</ul>
+<hr />
+<h1 id="module-6-echographie-musculosquelettique-des-tendons-technique-et-semiologie">MODULE 6 : ÉCHOGRAPHIE MUSCULOSQUELETTIQUE DES TENDONS — TECHNIQUE ET SÉMIOLOGIE</h1>
+<p><strong>Partie</strong> : II — Diagnostic des tendinopathies<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Module 5</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Réalise une échographie du tendon d'Achille droit d'un patient de 48 ans avec douleur chronique. Il observe un épaississement fusiforme du tendon (12 mm vs 6 mm controlatéral), une zone hypoéchogène intra-tendineuse, et une néovascularisation marquée au doppler puissance. Le patient lui demande : « C'est une tendinite, docteur ? » *Comment interpréter ces signes échographiques ? Correspondent-ils à une phase réactive ou dégénérative du continuum ? La néovascularisation est-elle un bon ou un mauvais signe ? Faut-il opérer ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Maîtriser</strong> la technique d'examen échographique des principaux tendons (réglages, positionnement, coupes)</li>
+<li><strong>Reconnaître</strong> l'aspect échographique normal du tendon (fibrillaire, hyperéchogène, anisotropie)</li>
+<li><strong>Identifier</strong> les signes échographiques de tendinopathie (épaississement, hypoéchogénicité, néovascularisation, calcifications)</li>
+<li><strong>Distinguer</strong> les différents stades du continuum par l'échographie</li>
+<li><strong>Diagnostiquer</strong> les ruptures partielles et complètes par l'échographie</li>
+<li><strong>Réaliser</strong> un examen doppler puissance pour évaluer la néovascularisation</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-61-bases-techniques-reglages-et-positionnement">Section 6.1 — Bases techniques : réglages et positionnement</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Sonde</strong> : sonde linéaire haute fréquence (12-18 MHz pour les tendons superficiels, 7-12 MHz pour les tendons profonds — coiffe, glutéaux)<br />
+- <strong>Réglages essentiels</strong> : profondeur, gain, focalisation, fréquence, mode harmonique<br />
+- <strong>Anisotropie</strong> : <strong>piège majeur</strong> de l'échographie tendineuse — le tendon apparaît hypoéchogène si la sonde n'est pas perpendiculaire aux fibres → faux positif de tendinopathie. TOUJOURS s'assurer que la sonde est perpendiculaire au tendon<br />
+- <strong>Coupes obligatoires</strong> : grand axe (longitudinal) + petit axe (transversal) — toujours les 2<br />
+- <strong>Doppler puissance (power Doppler)</strong> : réglages (PRF basse 500-800 Hz, gain maximal sans artefact), pression minimale de la sonde (compression = squash les néovaisseaux)<br />
+- <strong>Examen bilatéral comparatif</strong> : TOUJOURS comparer avec le côté sain — l'épaississement relatif est plus fiable que la mesure absolue<br />
+- <strong>Positionnement du patient</strong> par tendon : voir sections suivantes</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND06-S01-001 | 📐 SCHÉMA | Anisotropie — sonde perpendiculaire (normoéchogène) vs oblique (faussement hypoéchogène) | Schéma + image écho comparative |<br />
+| MTEND06-S01-002 | 🎥 VIDÉO | Réglages de base pour l'échographie tendineuse — démonstration pratique | Vidéo tutorial |<br />
+| MTEND06-S01-003 | 📐 SCHÉMA | Coupes grand axe et petit axe — ce qu'on voit dans chaque plan | 2 images annotées |<br />
+| MTEND06-S01-004 | 🎥 VIDÉO | Réglage du doppler puissance — PRF, gain, pression minimum | Vidéo tutorial |</p>
+<h3 id="section-62-aspect-echographique-normal-et-pathologique-du-tendon">Section 6.2 — Aspect échographique normal et pathologique du tendon</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendon normal</strong> :<br />
+  - Grand axe : aspect fibrillaire caractéristique (lignes parallèles hyperéchogènes = fibres de collagène, séparées par des lignes hypoéchogènes = endoténon)<br />
+  - Petit axe : aspect ponctué hyperéchogène (dots = sections des fascicules)<br />
+  - Contours nets, épaisseur régulière, pas de signal doppler intra-tendineux<br />
+  - Épaisseur normale par tendon (valeurs de référence d'après Bianchi &amp; Martinoli, <em>Ultrasound of the Musculoskeletal System</em>, Springer, 2007) : Achille = 4-6 mm, patellaire = 3-4 mm, SSP = 5-7 mm<br />
+- <strong>Signes de tendinopathie</strong> :<br />
+  - <strong>Épaississement</strong> : &gt;2 mm vs controlatéral (ou &gt;seuil absolu) — signe le plus précoce et le plus sensible (seuil décrit par Bianchi &amp; Martinoli, 2007)<br />
+  - <strong>Hypoéchogénicité</strong> : zones focales ou diffuses — perte de l'aspect fibrillaire → remplacement par matrice désorganisée (protéoglycanes, eau)<br />
+  - <strong>Perte de l'aspect fibrillaire</strong> : désorganisation de l'échostructure interne<br />
+  - <strong>Néovascularisation (doppler puissance)</strong> : vaisseaux intra-tendineux traversant du paraténon vers la zone lésée — corrélation avec la douleur (Ohberg classification Grade 1-4)<br />
+  - <strong>Calcifications</strong> : foci hyperéchogènes avec ou sans ombre postérieure (dépend de la taille et de la densité)<br />
+  - <strong>Fissures intra-tendineuses</strong> : zones hypoéchogènes linéaires (fissures longitudinales, cleavage)<br />
+- <strong>Signes de rupture partielle</strong> : zone hypoéchogène/anéchogène focale, discontinuité partielle des fibres, élargissement focal<br />
+- <strong>Signes de rupture complète</strong> : discontinuité de toutes les fibres, gap anéchogène (rempli d'hématome), rétraction des moignons, signe du « battant de cloche » (Dynamic sonography)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND06-S02-001 | 📷 IMAGE | Échographie du tendon d'Achille normal — grand axe fibrillaire | Image écho annotée |<br />
+| MTEND06-S02-002 | 📷 IMAGE | Tendinopathie d'Achille — épaississement, hypoéchogénicité, perte fibrillaire | Image écho annotée |<br />
+| MTEND06-S02-003 | 📷 IMAGE | Doppler puissance positif — néovascularisation grade 3-4 | Image écho couleur |<br />
+| MTEND06-S02-004 | 📷 IMAGE | Calcification tendineuse de la coiffe — hyperéchogène avec ombre postérieure | Image écho annotée |<br />
+| MTEND06-S02-005 | 📷 IMAGE | Rupture complète du tendon d'Achille — gap anéchogène, rétraction | Image écho annotée |<br />
+| MTEND06-S02-006 | 📊 INFOGRAPHIE | Classification de Ohberg de la néovascularisation (Grade 0-4) | Échelle visuelle |<br />
+| MTEND06-S02-007 | 📊 INFOGRAPHIE | Épaisseurs normales par tendon — valeurs de référence | Tableau chiffré |</p>
+<h3 id="section-63-echographie-par-localisation-protocoles-standardises">Section 6.3 — Échographie par localisation : protocoles standardisés</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Tendon d'Achille</strong> : patient en décubitus ventral, pieds hors de la table, position neutre — coupes longitudinales et transversales de l'insertion calcanéenne au muscle — mesure de l'épaisseur (AP maximale), recherche de la zone hypoéchogène, doppler, insertion (Haglund, bursite rétro-calcanéenne)<br />
+- <strong>Coiffe des rotateurs</strong> : patient assis, épaule en position neutre → évaluation systématique : SSP (rotation interne modifiée de Crass ou Middleton), ISP (main controlatérale sur épaule), SSC (rotation externe, bras en supination), LBT (gouttière bicipitale, coupe axiale)<br />
+- <strong>Épicondyliens latéraux</strong> : patient assis coude fléchi à 90°, avant-bras en pronation → sonde sur l'épicondyle latéral, coupes longitudinales et transversales → évaluation de l'ECRB (le tendon le plus profond, le plus souvent atteint), CEO (Common Extensor Origin)<br />
+- <strong>Tendon patellaire</strong> : patient en décubitus dorsal, genou fléchi à 20-30° (coussin sous le creux poplité) → coupe longitudinale et transversale → pôle inférieur de la rotule, épaisseur, hypoéchogénicité, doppler<br />
+- <strong>Tendons glutéaux</strong> : patient en décubitus latéral, hanche en légère flexion → sonde sur le grand trochanter → coupes longitudinales et transversales des tendons du moyen et petit fessier sur leurs facettes respectives (antérieure, latérale, postérieure)<br />
+- <strong>Tendons du poignet</strong> : de Quervain (1er compartiment dorsal, APL et EPB), ECU (6ème compartiment)</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND06-S03-001 | 🎥 VIDÉO | Protocole échographique du tendon d'Achille — démonstration complète | Vidéo tutorial |<br />
+| MTEND06-S03-002 | 🎥 VIDÉO | Protocole échographique de la coiffe — 4 tendons + LBT | Vidéo tutorial |<br />
+| MTEND06-S03-003 | 🎥 VIDÉO | Protocol échographique de l'épicondyle latéral — ECRB, CEO | Vidéo tutorial |<br />
+| MTEND06-S03-004 | 🎥 VIDÉO | Protocole échographique du tendon patellaire | Vidéo tutorial |<br />
+| MTEND06-S03-005 | 📐 SCHÉMA | Positions du patient pour chaque examen — illustrations | Guide de positionnement |</p>
+<h3 id="section-64-echographie-interventionnelle-infiltrations-echoguidees">Section 6.4 — Échographie interventionnelle : infiltrations échoguidées</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Principes</strong> : guidage en temps réel de l'aiguille → précision du site d'injection → efficacité ↑, complications ↓<br />
+- <strong>Techniques</strong> : approche dans le plan (in-plane, aiguille visible sur toute sa longueur) vs hors du plan (out-of-plane, seule la pointe est visible) — in-plane préféré pour les tendons<br />
+- <strong>Produits injectés</strong> :<br />
+  - Corticoïdes : péri-tendineux (JAMAIS intra-tendineux !) — bourse sous-acromiale, gaine des fibulaires, gaine de De Quervain, bourse trochantérienne<br />
+  - PRP : intra-tendineux sous guidage échographique direct — techniques de fenestration (barbotage)<br />
+  - Acide hyaluronique péritendineux<br />
+  - Anesthésique local : test diagnostique (disparition immédiate de la douleur = confirmation du diagnostic)<br />
+- <strong>Barbotage échoguidé des calcifications</strong> : ponction-aspiration-lavage de la calcification de la coiffe sous guidage échographique → aspiration du contenu calcique, lavage au sérum physiologique — taux de succès 60-80%<br />
+- <strong>High-Volume Injection (HVI)</strong> : injection de grand volume (30-50 mL) de sérum physiologique + anesthésique entre le tendon et le paraténon → stripping des néovaisseaux/néonerfs — utilisé pour le tendon d'Achille</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND06-S04-001 | 🎥 VIDÉO | Infiltration échoguidée — approche in-plane, visualisation de l'aiguille | Vidéo technique |<br />
+| MTEND06-S04-002 | 🎥 VIDÉO | Barbotage échoguidé d'une calcification de la coiffe | Vidéo interventionnelle |<br />
+| MTEND06-S04-003 | 📐 SCHÉMA | In-plane vs out-of-plane — positionnement de la sonde et de l'aiguille | 2 schémas comparatifs |<br />
+| MTEND06-S04-004 | 🎥 VIDÉO | High-Volume Injection (HVI) du tendon d'Achille | Vidéo technique |<br />
+| MTEND06-S04-005 | 📐 SCHÉMA | Sites d'injection péri-tendineuse (JAMAIS intra-tendineux pour les corticoïdes) | Alertes de sécurité |</p>
+<h3 id="points-cles-du-module-6">Points clés du Module 6</h3>
+<ol>
+<li>L'anisotropie est le piège majeur de l'échographie tendineuse — TOUJOURS s'assurer de la perpendicularité sonde-tendon</li>
+<li>L'examen bilatéral comparatif est OBLIGATOIRE — l'épaississement relatif est le signe le plus sensible</li>
+<li>La néovascularisation au doppler puissance corrèle avec la douleur (classification d'Ohberg)</li>
+<li>Les corticoïdes doivent être injectés en péri-tendineux, JAMAIS en intra-tendineux (risque de rupture)</li>
+<li>Le barbotage échoguidé des calcifications de la coiffe est efficace dans 60-80% des cas</li>
+<li>L'échographie est l'examen de première intention pour les tendinopathies — en temps réel, dynamique, comparatif, peu coûteux, sans irradiation</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (réglages, aspect normal, signes de base)</li>
+<li>3 QCM Argent (identification des pathologies, protocoles)</li>
+<li>2 QCM Or (interprétation d'images échographiques, diagnostic différentiel)</li>
+<li>1 QCM Diamant (cas avec images écho : interpréter, stade du continuum, décision thérapeutique)</li>
+<li>1 QROC : « Décrivez les signes échographiques qui distinguent une tendinopathie réactive d'une tendinopathie dégénérative du tendon d'Achille. »</li>
+</ul>
+<hr />
+<h1 id="module-7-irm-et-imagerie-avancee-des-tendinopathies-elastographie-doppler-puissance">MODULE 7 : IRM ET IMAGERIE AVANCÉE DES TENDINOPATHIES — ÉLASTOGRAPHIE, DOPPLER PUISSANCE</h1>
+<p><strong>Partie</strong> : II — Diagnostic des tendinopathies<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 5, 6</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Consulte pour une douleur chronique de l'épaule droite depuis 12 mois, résistante à la rééducation. L'échographie est « peu contributive » selon le radiologue de ville. L'IRM de l'épaule montre un signal intermédiaire en T1 et un hypersignal hétérogène en T2 au sein du supra-épineux, sans discontinuité franche. *S'agit-il d'une tendinopathie simple, d'une rupture partielle ou d'une rupture transmurale ? L'IRM peut-elle surestimer la lésion ? Quand l'IRM est-elle indispensable et quand l'échographie suffit-elle ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Interpréter</strong> les séquences IRM des tendons (T1, T2, PD fat sat, STIR) et la sémiologie fondamentale</li>
+<li><strong>Distinguer</strong> tendinopathie, rupture partielle et rupture complète en IRM</li>
+<li><strong>Comparer</strong> les performances diagnostiques de l'échographie et de l'IRM selon la localisation</li>
+<li><strong>Comprendre</strong> les principes de l'élastographie et son application aux tendinopathies</li>
+<li><strong>Connaître</strong> les indications et limites des autres modalités (scanner, radiographie standard)</li>
+<li><strong>Intégrer</strong> les résultats d'imagerie dans la stratégie diagnostique globale</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-71-irm-des-tendons-sequences-et-semiologie-fondamentale">Section 7.1 — IRM des tendons : séquences et sémiologie fondamentale</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Séquences clés</strong> :<br />
+  - T1 : bon contraste anatomique, tendon en hyposignal homogène<br />
+  - T2 / PD fat sat : sensible aux anomalies de signal intra-tendineux (eau, œdème, muchoïde)<br />
+  - STIR : suppression de graisse par inversion-récupération, sensible à l'œdème<br />
+  - T2<em> (gradient echo) : artéfact de susceptibilité (calcifications), détection des corps étrangers<br />
+- </em><em>Tendon normal en IRM</em><em> : hyposignal homogène sur TOUTES les séquences (pauvre en eau, riche en collagène organisé)<br />
+- </em><em>Artefact d'angle magique</em><em> : à 55° par rapport au champ magnétique principal B0, le tendon apparaît en hypersignal T1 et PD → FAUX positif ! Les séquences T2 longues TE (&gt;37 ms) éliminent cet artefact<br />
+- </em><em>Sémiologie des tendinopathies</em>* :<br />
+  - Tendinopathie : épaississement + signal intermédiaire intra-tendineux en T2 (↑ eau/protéoglycanes)<br />
+  - Rupture partielle : zone d'hypersignal T2 focal avec discontinuité partielle des fibres (face articulaire, face bursale, intra-substance)<br />
+  - Rupture complète : discontinuité transmurale, gap liquidien, rétraction du moignon<br />
+  - Péritendinite / paratendinite : hypersignal T2 autour du tendon (dans le paraténon)<br />
+  - Calcification : hyposignal T1 et T2 (zone « noire ») — mieux vu en radiographie ou scanner</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND07-S01-001 | 📷 IMAGE | IRM tendon d'Achille normal — T1 et PD fat sat | Images IRM annotées |<br />
+| MTEND07-S01-002 | 📷 IMAGE | IRM tendinopathie d'Achille — épaississement, signal intermédiaire en PD fat sat | Images IRM annotées |<br />
+| MTEND07-S01-003 | 📷 IMAGE | IRM rupture complète du tendon d'Achille — gap, rétraction | Images IRM annotées |<br />
+| MTEND07-S01-004 | 📷 IMAGE | Artefact d'angle magique — comparaison TE court vs TE long | 2 images comparatives |<br />
+| MTEND07-S01-005 | 📊 INFOGRAPHIE | Sémiologie IRM des tendinopathies — tableau récapitulatif | Signal par séquence |</p>
+<h3 id="section-72-irm-de-la-coiffe-des-rotateurs-classification-des-ruptures">Section 7.2 — IRM de la coiffe des rotateurs : classification des ruptures</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Classification des ruptures du SSP en IRM</strong> :<br />
+  - Face articulaire (partial articular-side) — la plus fréquente, PASTA lesion<br />
+  - Face bursale (partial bursal-side)<br />
+  - Intra-substance (délamination)<br />
+  - Transfixiante (complète) : petite (&lt;1 cm), moyenne (1-3 cm), large (3-5 cm), massive (&gt;5 cm) — classification de Cofield<br />
+- <strong>Rétraction tendineuse</strong> : classification de Patte (stade 1-3) — influence le pronostic de réparation<br />
+- <strong>Dégénérescence graisseuse du muscle</strong> : classification de Goutallier (stade 0-4) sur les coupes sagittales — irréversible si stade ≥3<br />
+  - Stade 0 : pas de graisse<br />
+  - Stade 1 : quelques stries graisseuses<br />
+  - Stade 2 : graisse &lt; muscle<br />
+  - Stade 3 : graisse = muscle<br />
+  - Stade 4 : graisse &gt; muscle → muscle non fonctionnel, réparation inutile<br />
+- <strong>Distance acromion-tête humérale</strong> : &lt;6 mm = migration supérieure → coiffe non réparable, indication de prothèse inversée<br />
+- <strong>Arthro-IRM (arthroscanner IRM)</strong> : injection intra-articulaire de gadolinium → sensibilité supérieure pour les ruptures partielles face articulaire</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND07-S02-001 | 📷 IMAGE | IRM rupture partielle face articulaire du SSP — PD fat sat coupe coronale | Image annotée |<br />
+| MTEND07-S02-002 | 📷 IMAGE | IRM rupture transfixiante du SSP — rétraction, dégénérescence graisseuse | Coupe coronale + sagittale |<br />
+| MTEND07-S02-003 | 📊 INFOGRAPHIE | Classification de Goutallier (stade 0-4) — illustrations IRM | Série d'images représentatives |<br />
+| MTEND07-S02-004 | 📊 INFOGRAPHIE | Classification de Patte (stade 1-3) — rétraction tendineuse | Coupes coronales annotées |<br />
+| MTEND07-S02-005 | 📐 SCHÉMA | Types de rupture : face articulaire, bursale, intra-substance, transfixiante | 4 dessins comparatifs |</p>
+<h3 id="section-73-echographie-vs-irm-performances-comparees-et-indications-respectives">Section 7.3 — Échographie vs IRM : performances comparées et indications respectives</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Performances diagnostiques comparées</strong> (méta-analyses de Lenza et al., de Jesus et al.) :<br />
+  - Rupture complète de la coiffe : écho Se ~92% Sp ~94% vs IRM Se ~91% Sp ~97% → performances comparables (de Jesus et al., <em>AJR</em>, 2009 ; Lenza et al., <em>Cochrane Database Syst Rev</em>, 2013)<br />
+  - Rupture partielle de la coiffe : écho Se ~67% Sp ~94% vs IRM Se ~67% Sp ~94% → les deux sont modestes (de Jesus et al., 2009)<br />
+  - Tendon d'Achille : échographie suffisante dans la majorité des cas, IRM si doute diagnostique<br />
+  - Tendon patellaire : échographie de première intention<br />
+  - Épicondyliens : échographie de première intention<br />
+- <strong>Avantages de l'échographie</strong> : temps réel, dynamique, examen bilatéral, doppler, interactivité avec le patient, coût faible, pas de contre-indication, infiltration échoguidée immédiate<br />
+- <strong>Avantages de l'IRM</strong> : champ de vue large, vision globale (muscle, cartilage, os, labrum), pas d'opérateur-dépendance (reproductibilité), meilleure pour les structures profondes, meilleure pour la planification chirurgicale<br />
+- <strong>Indications de l'IRM</strong> :<br />
+  - Bilan pré-opératoire (évaluation de la rétraction, de la dégénérescence graisseuse)<br />
+  - Discordance entre clinique et échographie<br />
+  - Structures profondes (hanche, labrum)<br />
+  - Évaluation du cartilage et de l'os sous-chondral (arthrose associée)<br />
+  - Contexte médico-légal</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND07-S03-001 | 📊 INFOGRAPHIE | Performances comparées écho vs IRM par localisation — Se/Sp | Tableau de synthèse |<br />
+| MTEND07-S03-002 | 📊 INFOGRAPHIE | Indications respectives écho vs IRM — algorithme décisionnel | Arbre de décision |<br />
+| MTEND07-S03-003 | 📐 SCHÉMA | Avantages/inconvénients écho vs IRM — comparaison côte à côte | 2 colonnes |</p>
+<h3 id="section-74-imagerie-avancee-elastographie-radiographie-scanner">Section 7.4 — Imagerie avancée : élastographie, radiographie, scanner</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Élastographie</strong> :<br />
+  - Principe : mesure de la rigidité (élasticité) des tissus par échographie ou IRM<br />
+  - Élastographie de déformation (strain elastography) : compression manuelle → carte de rigidité relative (couleur)<br />
+  - Élastographie par ondes de cisaillement (shear wave elastography, SWE) : mesure quantitative de la rigidité (kPa ou m/s)<br />
+  - Application aux tendons : tendon sain = rigide = bleu ; tendon tendinopathique = mou = rouge/vert<br />
+  - Valeurs de référence (Aubry et al., <em>Eur Radiol</em>, 2013) : Achille sain ~300 kPa, Achille tendinopathique &lt;200 kPa<br />
+  - Intérêt : détection précoce de la tendinopathie (avant les signes échographiques conventionnels), monitoring de la rééducation<br />
+  - Limites : variabilité inter-observateur, pas encore en routine clinique, valeurs de référence peu standardisées<br />
+- <strong>Radiographie standard</strong> :<br />
+  - Rôle limité dans les tendinopathies (les tendons ne sont pas visibles)<br />
+  - Indications : calcifications (tendinite calcifiante de la coiffe, Achille insertionnelle), Haglund (proéminence calcanéenne postéro-supérieure), enthésophytes, fractures d'avulsion, arthrose associée<br />
+  - Cliché de face et profil systématique en première intention<br />
+- <strong>Scanner (TDM)</strong> :<br />
+  - Moins de place que l'IRM pour les tendinopathies<br />
+  - Utile pour : calcifications (bilan précis), pièges diagnostic (fracture de stress, tumeur), arthroscanner épaule (alternative à l'arthro-IRM, meilleure résolution spatiale pour l'os)<br />
+- <strong>Scintigraphie / TEP</strong> : pas d'indication dans les tendinopathies en routine</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND07-S04-001 | 📷 IMAGE | Élastographie SWE du tendon d'Achille — cartographie couleur (sain vs pathologique) | Image écho annotée |<br />
+| MTEND07-S04-002 | 📷 IMAGE | Radiographie — calcification de la coiffe (face + profil) | Cliché annoté |<br />
+| MTEND07-S04-003 | 📷 IMAGE | Radiographie latérale — déformation de Haglund | Cliché annoté |<br />
+| MTEND07-S04-004 | 📐 SCHÉMA | Principe de l'élastographie par ondes de cisaillement (SWE) | Schéma physique |<br />
+| MTEND07-S04-005 | 📊 INFOGRAPHIE | Algorithme d'imagerie des tendinopathies : radio → écho → IRM → quand ? | Arbre décisionnel |</p>
+<h3 id="points-cles-du-module-7">Points clés du Module 7</h3>
+<ol>
+<li>L'artefact d'angle magique est un piège IRM majeur : hypersignal T1/PD à 55° sans vraie pathologie — utiliser les séquences T2 longues TE</li>
+<li>La classification de Goutallier (dégénérescence graisseuse) est essentielle pour la décision de réparabilité de la coiffe</li>
+<li>L'échographie et l'IRM ont des performances comparables pour les ruptures complètes de la coiffe (~92% ; de Jesus et al., 2009)</li>
+<li>L'échographie est l'examen de 1ère intention pour la plupart des tendinopathies ; l'IRM est réservée au bilan pré-opératoire ou à la discordance clinico-échographique</li>
+<li>L'élastographie par ondes de cisaillement (SWE) peut détecter la tendinopathie avant les signes échographiques conventionnels</li>
+<li>La radiographie standard reste utile pour les calcifications, l'arthrose associée et la maladie de Haglund</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (séquences IRM, signal normal, artefacts)</li>
+<li>3 QCM Argent (classification de Goutallier, interprétation IRM)</li>
+<li>2 QCM Or (choix écho vs IRM selon le contexte, interprétation d'images)</li>
+<li>1 QCM Diamant (cas clinique complet : clinique + écho + IRM → diagnostic, stade, décision)</li>
+<li>1 QROC : « Un patient a une IRM de l'épaule montrant un signal intermédiaire dans le SSP en T1 et PD avec un temps d'écho court. Ce signal disparaît en PD fat sat avec un TE long. Quelle est votre interprétation ? »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-2-diagnostic">Références bibliographiques (Partie 2 — Diagnostic)</h2>
+<ol>
+<li>Aubry S, Nueffer JP, Tanter M, et al. Viscoelasticity in Achilles tendonopathy: quantitative assessment by using real-time shear-wave elastography. <em>Eur Radiol</em>. 2013;23(5):1402-1409.</li>
+<li>Bianchi S, Martinoli C. <em>Ultrasound of the Musculoskeletal System</em>. Springer; 2007.</li>
+<li>Cook JL, Purdam CR. Is tendon pathology a continuum? A pathology model to explain the clinical presentation of load-induced tendinopathy. <em>Br J Sports Med</em>. 2009;43(6):409-416.</li>
+<li>de Jesus JO, Parker L, Frangos AJ, Nazarian LN. Accuracy of MRI, MR arthrography, and ultrasound in the diagnosis of rotator cuff tears: a meta-analysis. <em>AJR Am J Roentgenol</em>. 2009;192(6):1701-1707.</li>
+<li>Dorf ER, Chhabra AB, Golish SR, McGinty JL, Pannunzio ME. Effect of elbow position on grip strength in the evaluation of lateral epicondylitis. <em>Am J Sports Med</em>. 2007;35(2):296-301.</li>
+<li>Grimaldi A, Mellor R, Hodges P, Bennell K, Wajswelner H, Vicenzino B. Gluteal tendinopathy: a review of mechanisms, assessment and management. <em>Sports Med</em>. 2015;45(8):1107-1119.</li>
+<li>Hegedus EJ, Goode AP, Cook CE, et al. Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests. <em>Br J Sports Med</em>. 2012;46(14):964-978.</li>
+<li>Lenza M, Buchbinder R, Takwoingi Y, Johnston RV, Hanchard NC, Faloppa F. Magnetic resonance imaging, magnetic resonance arthrography and ultrasonography for assessing rotator cuff tears in people with shoulder pain for whom surgery is being considered. <em>Cochrane Database Syst Rev</em>. 2013;(9):CD009020.</li>
+<li>Maffulli N. The clinical diagnosis of subcutaneous tear of the Achilles tendon: a prospective study in 174 patients. <em>Am J Sports Med</em>. 1998;26(2):266-270.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

@@ -1,0 +1,679 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-hyperthyroidies-partie-2-cas-11-a-20">CAS CLINIQUES — Hyperthyroïdies — Partie 2 (Cas 11 à 20)</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<h3 id="niveaux-argent-et-or">Niveaux Argent 🥈 et Or 🥇</h3>
+<hr />
+<h2 id="cas-11-exophtalmie-isolee-sans-hyperthyroidie">CAS 11 🥈 — Exophtalmie Isolée sans Hyperthyroïdie</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-11 — TAO euthy­roïdienne : exophtalmie bilatérale avec TSH normale, TRAb positifs, score CAS, traitement par méthylprednisolone IV]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Isabelle, 44 ans. Consultation ophtalmologique pour "gros yeux" progressifs depuis 6 mois, diplopie intermittente en regard latéral gauche.</p>
+<p><strong>Examen ophtalmologique</strong> :<br />
+- Exophtalmie bilatérale : OD 21 mm / OG 23 mm (Hertel, N &lt; 19-20 mm)<br />
+- Rétraction palpébrale supérieure bilatérale. Diplopie en abduction OG (atteinte muscle droit externe)<br />
+- <strong>Acuité visuelle normale</strong>. Fundus : normal. <strong>PIO normale</strong></p>
+<p><strong>Biologie thyroïdienne</strong> :<br />
+- TSH : <strong>1,8 mUI/L</strong> (normale)<br />
+- T4L : <strong>15 pmol/L</strong> (normale)<br />
+- <strong>TRAb : 8,5 UI/L</strong> (très positifs)<br />
+- Anti-TPO : positifs (220 UI/mL)</p>
+<p><strong>Score CAS (Clinical Activity Score) EUGOGO</strong> :<br />
+- Douleur orbitaire spontanée : <strong>oui</strong> (+1)<br />
+- Douleur à l'occlomotricité : <strong>oui</strong> (+1)<br />
+- Rougeur palpébrale : <strong>non</strong> (0)<br />
+- Chémosis : <strong>non</strong> (0)<br />
+- Caroncule œdématiée : <strong>non</strong> (0)<br />
+- Augmentation proptose ≥ 2 mm en 1 mois : <strong>non</strong> (0)<br />
+- Diminution mobilité ≥ 8° en 1 mois : <strong>oui</strong> (+1)<br />
+- <strong>CAS total = 3/7</strong></p>
+<p><strong>Q1 🥈</strong> — Comment interprétez-vous cette TAO avec TSH normale ? Ce tableau est-il possible ?</p>
+<p><strong>Réponse Q1</strong> : <strong>TAO euthyroïdienne</strong> — présente dans <strong>5-10 % des TAO</strong> (EUGOGO). Possible car :<br />
+1. La TAO est directement liée aux <strong>TRAb</strong> (stimulation des fibroblastes orbitaires par anti-TSHR) et non à la valeur de TSH<br />
+2. TRAb ici très positifs (8,5 UI/L) = confirmation auto-immune, même sans hyperthyroïdie active<br />
+3. L'hyperthyroïdie peut précéder, suivre ou être concomitante à la TAO → ici euthyroïdie au moment du diagnostic<br />
+4. <strong>20-30 % des TAO</strong> apparaissent pendant la phase d'euthyroïdie post-traitement Basedow<br />
+5. La surveillance thyroïdienne est impérative : Basedow peut se déclarer à tout moment (TRAb positifs)</p>
+<p><strong>Q2 🥈</strong> — Calculez le niveau de sévérité TAO selon EUGOGO et déterminez la prise en charge.</p>
+<p><strong>Réponse Q2</strong> :<br />
+- CAS = 3/7 → <strong>TAO active</strong> (CAS ≥ 3)<br />
+- Sévérité : exophtalmie 23 mm (&gt; 20 mm) + diplopie intermittente + rétraction palpébrale → <strong>TAO modérée-sévère</strong><br />
+- Acuité visuelle normale → <strong>pas de menace visuelle</strong></p>
+<p><strong>Classification</strong> : TAO modérée-sévère active.</p>
+<p><strong>Prise en charge</strong> :<br />
+1. <strong>Méthylprednisolone IV</strong> (protocole EUGOGO) : 500 mg × 6 cures hebdomadaires (dose cumulée 3 g) + pause 2 semaines + 250 mg × 6 cures (dose cumulée total 4,5 g)<br />
+2. <strong>Sélénium</strong> : non indiqué (formes modérées-sévères — seulement légères)<br />
+3. <strong>Bilan avant traitement</strong> : NFS, glycémie, TA, bilan hépatique, ECBU, densité osseuse, sérologies (VHB, CMV)<br />
+4. Surveillance ophtalmologique mensuelle pendant traitement (CAS, acuité, Hertel)<br />
+5. <strong>Surveiller TSH/TRAb</strong> : risque de déclencher Basedow (corticoïdes peuvent paradoxalement ↑ TRAb)</p>
+<p><strong>Q3 💎</strong> — Après 3 mois de méthylprednisolone IV, CAS redescend à 1, proptose stable à 22 mm, diplopie persistante. Quelle est la suite du traitement ?</p>
+<p><strong>Réponse Q3</strong> : TAO inactive (CAS &lt; 3) mais avec séquelles :<br />
+1. <strong>Phase active terminée</strong> → ne pas continuer les corticoïdes (inutiles hors activité)<br />
+2. <strong>Diplopie résiduelle</strong> → chirurgie de rééducation oculaire (strabisme) : correction par prisme d'abord, puis chirurgie des muscles oculomoteurs si stable depuis 3-6 mois<br />
+3. <strong>Exophtalmie résiduelle 22 mm</strong> → si esthétiquement/fonctionnellement inacceptable : <strong>décompression orbitaire</strong> (chirurgie osseuse des parois orbitaires) → à proposer si stable ≥ 6 mois en phase inactive<br />
+4. <strong>Téprotumumab</strong> : aurait été plus efficace sur la proptose si utilisé en phase active → option à discuter si accès disponible (hors AMM Europe)<br />
+5. Chirurgie palpébrale (rétraction) : après 6-12 mois d'inactivité TAO</p>
+<hr />
+<h2 id="cas-12-hyperthyroidie-et-osteoporose">CAS 12 🥈 — Hyperthyroïdie et Ostéoporose</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-12 — Ostéoporose thyrotoxique : TSH supprimée chronique, fracture vertébrale, traitement simultané hyperthyroïdie et ostéoporose]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Françoise, 58 ans, ménopausée depuis 5 ans. Consulte pour douleurs dorsales depuis 3 semaines après effort minime.</p>
+<p><strong>Biologie</strong> : TSH 0,02 mUI/L, T4L 38 pmol/L, TRAb négatifs. Bilan phosphocalcique : calcémie 2,35 mmol/L, PTH 18 pg/mL (basse), phosphatases alcalines 145 UI/L (↑).</p>
+<p><strong>Radiographie rachidienne</strong> : <strong>fracture-tassement de T12</strong> (Genant grade 2).</p>
+<p><strong>DXA</strong> (ostéodensitométrie) :<br />
+- Rachis lombaire L1-L4 : T-score <strong>-2,8</strong> (ostéoporose)<br />
+- Col fémoral : T-score <strong>-2,4</strong> (ostéoporose)</p>
+<p><strong>Antécédents</strong> : goitre nodulaire bilatéral évoluant depuis 10 ans, suivi irrégulier.</p>
+<p><strong>Q1 🥈</strong> — Quel est le lien physiopathologique entre hyperthyroïdie chronique et ostéoporose ?</p>
+<p><strong>Réponse Q1</strong> : La thyrotoxicose chronique cause une <strong>ostéoporose thyrotoxique</strong> par :<br />
+1. <strong>Accélération du remodelage osseux</strong> : T3 stimule directement les ostéoclastes (via TRα1 sur les ostéoclastes) → résorption osseuse &gt; formation<br />
+2. <strong>↑ Calcium urinaire</strong> (hypercalciurie) : mobilisation calcique accélérée<br />
+3. <strong>↓ PTH</strong> (freinée par hypercalcémie relative) → atténue la formation osseuse<br />
+4. <strong>Cycle de remodelage raccourci</strong> : balance négative cumulée sur des années<br />
+5. <strong>Risque fracturaire</strong> : TSH &lt; 0,1 mUI/L chronique → × 2 risque fracture vertébrale et hanche (Bauer JAMA 2001)<br />
+6. Ici : 10 ans d'hyperthyroïdie subclinique/constituée → accumulation lésions osseuses irréversibles partiellement</p>
+<p><strong>Q2 🥈</strong> — Quelle est la prise en charge globale (hyperthyroïdie + ostéoporose) ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Hyperthyroïdie</strong> (GMNT toxique probable → scintigraphie à confirmer) :<br />
+1. MMI 20-30 mg/j → euthyroïdie en 4-6 semaines<br />
+2. Traitement définitif : <strong>RAI (¹³¹I)</strong> préféré chez femme de 58 ans ménopausée, GMNT</p>
+<p><strong>Ostéoporose</strong> (fracture vertébrale T-score &lt; -2,5) :<br />
+1. <strong>Biphosphonate</strong> : acide zolédronique 5 mg IV/an ou risédronate 35 mg/semaine<br />
+2. Calcium + Vitamine D : 1 200 mg/j + 800-1 000 UI/j<br />
+3. Réévaluation DXA à 2-3 ans<br />
+4. Orthèse de soutien lombaire temporaire (fracture T12)<br />
+5. Kinésithérapie : renforcement musculaire para-vertébral, prévention des chutes</p>
+<p><strong>Q3 💎</strong> — Quelle est la récupération osseuse attendue après traitement de l'hyperthyroïdie, et quel est l'impact du traitement anti-ostéoporotique sur ce pronostic ?</p>
+<p><strong>Réponse Q3</strong> : Récupération osseuse après normalisation thyroïdienne :<br />
+1. <strong>Partielle et lente</strong> : la densité minérale osseuse (DMO) remonte de 3-5 % par an à la hanche et 4-8 % au rachis dans les 2 premières années post-traitement<br />
+2. <strong>Récupération incomplète</strong> : le déficit osseux accumulé (ici 10 ans) n'est jamais entièrement récupéré → d'où la nécessité du traitement anti-ostéoporotique<br />
+3. <strong>Biphosphonates</strong> en plus du traitement thyroïdien : Greenspan et al. (1994) — ↑ DMO lombaire de 7,8 % vs 4,2 % sous euthyroïdie seule. L'association synergique (traitement thyroïdien + biphosphonate) est supérieure à chacun seul<br />
+4. <strong>Suivi biologique</strong> : normalisation des marqueurs de remodelage (CTx urinaire, ostéocalcine) en 6-12 mois post-euthyroïdie<br />
+5. Risque fracturaire résiduel × 1,5 même euthyroïdienne à long terme si fracture initiale → justifie traitement anti-ostéoporotique au long cours (5-10 ans minimum)</p>
+<hr />
+<h2 id="cas-13-basedow-resistant-aux-ats-choix-therapeutique-complexe">CAS 13 🥇 — Basedow Résistant aux ATS — Choix Thérapeutique Complexe</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-13 — Basedow récidivant après 2 cures d'ATS : score GREAT élevé, allergie MMI, contre-indications multiples au RAI et à la chirurgie]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Christine, 38 ans, fumeuse 30 PA, obèse (IMC 34). Basedow diagnostiqué il y a 4 ans. Deux cures d'ATS (MMI) de 18 mois chacune. Deux rechutes après arrêt.</p>
+<p><strong>Dernier épisode</strong> : TSH &lt; 0,01, T4L 42 pmol/L, TRAb 11,2 UI/L.</p>
+<p><strong>Score GREAT</strong> :<br />
+- Goitre &gt; 40 mL (écho : 52 mL) : <strong>+1</strong><br />
+- TRAb &gt; 3 × normale : <strong>+1</strong><br />
+- Pas d'euthyroïdie en 4 semaines sous MMI : <strong>+1</strong> (au premier traitement)<br />
+- Tabac : <strong>+1</strong><br />
+- <strong>Total : 4 points → rechute quasi-certaine</strong></p>
+<p><strong>Complications</strong> :<br />
+- <strong>Allergie MMI</strong> : rash cutané grade 3 lors du 2ème traitement → CI définitive<br />
+- <strong>Bilan pré-RAI</strong> : TRAb &gt; 5 UI/L, TAO modérée-sévère active (CAS 4), proptose 22 mm</p>
+<p><strong>Q1 🥇</strong> — Compte tenu du score GREAT et de l'allergie au MMI, quelle stratégie globale adoptez-vous ?</p>
+<p><strong>Réponse Q1</strong> : Situation complexe — plusieurs obstacles :<br />
+1. <strong>MMI CI</strong> (allergie grade 3) → PTU seul disponible parmi les ATS<br />
+2. <strong>Score GREAT 4/4</strong> → rechute certaine si ATS seuls → traitement définitif indiqué<br />
+3. <strong>RAI relatif CI</strong> : TAO active + fumeuse + TRAb très élevés = risque d'aggravation TAO majeur post-RAI (même avec corticoïdes préventifs)<br />
+4. <strong>Chirurgie</strong> : option de choix malgré obésité (IMC 34 = risque opératoire accru mais acceptable)</p>
+<p><strong>Stratégie</strong> :<br />
+1. <strong>PTU 300-450 mg/j</strong> pour contrôle thyroïdien avant chirurgie (PTU ici car MMI CI)<br />
+2. <strong>Traitement TAO en parallèle</strong> : méthylprednisolone IV (activer EUGOGO) avant toute décision chirurgie<br />
+3. <strong>Thyroïdectomie totale</strong> après euthyroïdie + TAO contrôlée (CAS &lt; 3) : préparation Lugol 10 j + bêta-bloquant<br />
+4. Consultation tabacologie urgente (tabac × 2 risque TAO aggravation)</p>
+<p><strong>Q2 🥇</strong> — En attendant l'euthyroïdie, comment préparez-vous la chirurgie et quelles en sont les complications attendues dans ce contexte ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Préparation chirurgicale</strong> :<br />
+1. PTU pour euthyroïdie (T4L normale, TSH 0,5-2 mUI/L)<br />
+2. Lugol 3 gouttes × 3/j pendant 7-10 j avant chirurgie (réduction vascularisation)<br />
+3. Propranolol 40 mg × 3/j (contrôle FC)<br />
+4. Consultation anesthésie (obésité : VAS, intubation difficile, ventilation en Trendelenburg difficile)<br />
+5. Nasofibroscopie pré-opératoire (état des cordes vocales)</p>
+<p><strong>Complications spécifiques</strong> dans ce contexte :<br />
+1. <strong>Risque hémorragique</strong> : goitre volumineux (52 mL) + Lugol (réduit mais ne supprime pas) → drainage post-opératoire<br />
+2. <strong>Risque de NLR</strong> : goitre droit plus volumineux → dissection difficile → identificationnerveuse obligatoire (neuromonitorage)<br />
+3. <strong>Hypoparathyroïdie</strong> : obésité → dissection plus difficile → risque accru d'exérèse parathyroïdes<br />
+4. <strong>Obésité</strong> : cicatrisation difficile, risque infectieux, thrombose veineuse (HBPM + contention)<br />
+5. <strong>Crise thyrotoxique</strong> si préparation incomplète</p>
+<p><strong>Q3 💎</strong> — Post-opératoire J3 : calcium corrigé à 1,92 mmol/L, paresthésies des extrémités, signe de Chvostek positif. Quelle est la prise en charge immédiate et à long terme ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypoparathyroïdie post-opératoire</strong>. Urgence :</p>
+<p><strong>Traitement immédiat (hypocalcémie symptomatique)</strong> :<br />
+1. Gluconate de calcium 10 % : 10-20 mL IV en bolus lent (10 min), sous monitoring ECG<br />
+2. Puis perfusion continue : 40 mL gluconate calcium dans 500 mL G5 sur 6h<br />
+3. Calcitriol (Rocaltrol) 0,25-0,5 µg × 2/j → activateur rapide de l'absorption intestinale du calcium (effet dès 24-48h vs vitamine D native en semaines)<br />
+4. Calcium oral 1 500-3 000 mg/j dès alimentation possible<br />
+5. Surveillance calcémie, magnésémie toutes les 6h initialement</p>
+<p><strong>Évaluation du caractère définitif</strong> (à 3-6 mois) :<br />
+- Si PTH restent basses (&lt; 15 pg/mL) → hypoparathyroïdie définitive probable<br />
+- Traitement définitif : calcitriol + calcium oral<br />
+- Thérapie de substitution PTH : Natpara (PTH humaine recombinante) → si calcitriol insuffisant ou hypercalciurie limitante</p>
+<hr />
+<h2 id="cas-14-t3-toxicosis-sur-adenome-de-plummer">CAS 14 🥇 — T3-Toxicosis sur Adénome de Plummer</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-14 — T3-toxicosis : TSH effondrée + T3L élevée isolée + T4L normale, adénome toxique 3 cm, conversion préférentielle T4→T3 intra-nodulaire]</p>
+</blockquote>
+<p><strong>Patient</strong> : Bernard, 67 ans. Palpitations épisodiques. Bilan réalisé par cardiologue.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,03 mUI/L</strong><br />
+- T4L : <strong>19 pmol/L</strong> (<strong>NORMALE</strong> : 12-22)<br />
+- T3L : <strong>9,8 pmol/L</strong> (<strong>ÉLEVÉE</strong> : N 3,5-6,5)<br />
+- TRAb : négatifs</p>
+<p><strong>Échographie</strong> : nodule gauche unique de 3,2 cm, EU-TIRADS 2. Lobe droit : normal.</p>
+<p><strong>Scintigraphie</strong> : <strong>foyer chaud gauche unique</strong>, parenchyme droit supprimé.</p>
+<p><strong>Q1 🥇</strong> — Quel est le mécanisme de la T3-toxicosis et pourquoi est-elle fréquente dans les adénomes toxiques ?</p>
+<p><strong>Réponse Q1</strong> : <strong>T3-toxicosis</strong> = hyperthyroïdie à T3 isolée (TSH effondrée + T3L élevée + T4L normale). Mécanisme dans les adénomes toxiques :<br />
+1. Le tissu autonome (mutant TSHR gain-de-fonction) surexprime la <strong>désiodase de type 1 (D1)</strong> et la <strong>désiodase de type 2 (D2)</strong> → conversion intranodulaire préférentielle T4 → T3<br />
+2. Résultat : production disproportionnelle de T3 par le nodule autonome<br />
+3. T3L élevée inhibe le parenchyme normal → T4 d'origine du parenchyme normal ↓<br />
+4. T4L reste dans les valeurs normales car la production totale de T4 n'est pas augmentée<br />
+5. Prévalence : 20-30 % des adénomes toxiques et des GMNT toxiques débutants<br />
+6. Détection : dosage systématique de la T3L (pas seulement T4L) quand TSH effondrée</p>
+<p><strong>Q2 🥇</strong> — Comment s'assurer que ce nodule "chaud" n'est pas malin ?</p>
+<p><strong>Réponse Q2</strong> :<br />
+- <strong>Nodule chaud (hyperfixant) à la scintigraphie = bénin dans &gt; 99 % des cas</strong><br />
+- Mécanisme : les cellules cancéreuses thyroïdiennes dédifférenciées ont perdu le NIS (sodium-iodure symporteur) → elles ne captent pas l'iode → elles n'apparaissent pas "chaudes"<br />
+- <strong>Pas de cytoponction</strong> (FNA) sur un nodule chaud : inutile et risque faux négatifs<br />
+- Exception : si zone "froide" dans le nodule chaud → biopsie de la zone froide (risque de cancer associé)<br />
+- Ici : nodule entièrement chaud, EU-TIRADS 2 (faiblement suspect) → pas d'indication de cytoponction</p>
+<p><strong>Q3 💎</strong> — Ce patient de 67 ans a une FA persistante connue et une insuffisance rénale modérée (DFG 45 mL/min). Discutez la stratégie thérapeutique de son adénome toxique en tenant compte de ses comorbidités.</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Enjeux</strong> : âge 67 ans + FA + IRC DFG 45 → 3 comorbidités influençant le choix :</p>
+<p><strong>RAI (¹³¹I)</strong> :<br />
+- Avantages : ambulatoire, minimal, curatif dans 80 % à 1ère dose<br />
+- Précautions IRC : DFG 45 → clairance rénale de l'iode-131 réduite → demi-vie effective prolongée → exposition des tissus non thyroïdiens accrue → ajuster la dose (réduire légèrement si DFG &lt; 30)<br />
+- DFG 45 = précaution mais pas CI formelle (CI absolue &lt; 20 mL/min)<br />
+- FA : contrôler avant RAI → MMI courte durée + bêta-bloquant</p>
+<p><strong>Chirurgie (lobectomie gauche)</strong> :<br />
+- Risque anesthésique : âge + IRC + FA (anticoagulée probablement)<br />
+- Avantages : guérison immédiate, pas de risque hypothyroïdie (lobe droit préservé)</p>
+<p><strong>Décision</strong> : <strong>RAI préféré</strong> chez 67 ans avec comorbidités. Précautions spécifiques :<br />
+1. Arrêt MMI 3 jours avant RAI<br />
+2. Régime pauvre en iode 2 semaines avant<br />
+3. Adaptation dose RAI pour DFG 45 (réduire de 10-15 %)<br />
+4. Hydratation abondante post-RAI (dilution et élimination rénale de l'¹³¹I)<br />
+5. Anticoagulation maintenue péri-procédure (FA)<br />
+6. Surveillance TSH + T4L + créatinine à J30, M3, M6, M12</p>
+<hr />
+<h2 id="cas-15-hyperthyroidie-gestationnelle-vs-basedow-diagnostic-differentiel">CAS 15 🥇 — Hyperthyroïdie Gestationnelle vs Basedow : Diagnostic Différentiel</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-15 — Hyperthyroïdie gestationnelle transitoire : hCG très élevée, hyperemesis gravidarum, diagnostic différentiel Basedow, traitement symptomatique uniquement]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Emma, 26 ans, 10 SA, grossesse gémellaire bichoriale biamniotique. Hospitalisée pour hyperemesis gravidarum (vomissements incoercibles, perte de poids 5 kg, cétones 3+).</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,01 mUI/L</strong>, T4L : <strong>28 pmol/L</strong>, T3L : <strong>7,2 pmol/L</strong><br />
+- TRAb : <strong>&lt; 0,5 UI/L</strong> (négatifs)<br />
+- hCG : <strong>285 000 UI/L</strong> (N 10 SA gémellaire : 80 000-250 000 → légèrement élevée)</p>
+<p><strong>Examen clinique</strong> : thyroïde non palpable, pas de goitre, pas de signe oculaire.</p>
+<p><strong>Q1 🥇</strong> — Comment affirmez-vous le diagnostic d'hyperthyroïdie gestationnelle (HG) plutôt qu'un Basedow ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Ce cas (HG)</th>
+<th>Basedow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRAb</td>
+<td><strong>Négatifs</strong></td>
+<td>Positifs</td>
+</tr>
+<tr>
+<td>Goitre</td>
+<td><strong>Absent</strong></td>
+<td>Souvent présent</td>
+</tr>
+<tr>
+<td>TAO</td>
+<td><strong>Absente</strong></td>
+<td>Parfois présente</td>
+</tr>
+<tr>
+<td>hCG</td>
+<td><strong>Très élevée</strong> (gémellaire)</td>
+<td>Normale pour terme</td>
+</tr>
+<tr>
+<td>T4L</td>
+<td>Élévation modérée</td>
+<td>Souvent très élevée</td>
+</tr>
+<tr>
+<td>Vomissements</td>
+<td><strong>Hyperemesis gravidarum</strong></td>
+<td>Rares</td>
+</tr>
+<tr>
+<td>Évolution attendue</td>
+<td>Régression après 14 SA</td>
+<td>Persistance ou aggravation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mécanisme HG</strong> : hCG et TSH partagent une sous-unité α commune → stimulation croisée du TSHR par hCG en excès → hyperthyroïdie fonctionnelle transitoire. Plus fréquente dans les grossesses gémellaires, môle hydatiforme, syndrome de McCune-Albright.</p>
+<p><strong>Q2 🥇</strong> — Quels sont les risques fœtaux de l'HG non traitée et ceux d'un traitement ATS inutile ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Risques de l'HG non traitée</strong> (acceptables si modérée) :<br />
+- Si T4L &lt; 2× la normale + TSH &gt; 0,01 mUI/L + pas de symptômes graves → surveillance seule<br />
+- Principale complication : déshydratation maternelle + dénutrition (hyperemesis)</p>
+<p><strong>Risques d'un traitement ATS inutile</strong> (PTU ou MMI) :<br />
+1. <strong>Hypothyroïdie fœtale iatrogène</strong> : ATS traversent la placenta → bloquent synthèse thyroïdienne fœtale → retard développement neurologique<br />
+2. <strong>Tératogénicité MMI T1</strong> : aplasie cutis, atrésie des choanes (même si HG, pas de raison de traiter avec ATS)<br />
+3. <strong>Hépatotoxicité PTU</strong> inutile</p>
+<p><strong>Conclusion</strong> : L'HG ne justifie <strong>JAMAIS d'ATS</strong>. Traitement = symptomatique :<br />
+1. Antiémétiques (ondansétron, métoclopramide)<br />
+2. Réhydratation IV (sérum glucosé + potassium)<br />
+3. Thiamine (Vit B1) prévention encéphalopathie de Gayet-Wernicke<br />
+4. Hospitalisation si vomissements incoercibles, déshydratation, hypokaliémie</p>
+<p><strong>Q3 💎</strong> — À 16 SA, les vomissements ont cessé, la TSH est remontée à 0,35 mUI/L, T4L à 18 pmol/L. À 26 SA, nouveau contrôle : TSH &lt; 0,01 mUI/L, T4L 38 pmol/L, TRAb 7,8 UI/L. Comment expliquez-vous cette nouvelle hyperthyroïdie et que décidez-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Récidive avec TRAb positifs</strong> → changement de diagnostic : ce n'est plus une HG mais un <strong>Basedow démasqué au 2ème trimestre</strong> (l'HG avait initialement masqué un Basedow sous-jacent, ou le Basedow s'est développé après normalisation de l'HG). Prise en charge :<br />
+1. <strong>Confirmation</strong> : TRAb positifs = Basedow certain (95 % de sensibilité)<br />
+2. <strong>Traitement ATS</strong> : à 26 SA (2ème trimestre) → <strong>MMI</strong> de préférence (PTU au T1 seulement, risque hépatotoxicité long cours)<br />
+3. <strong>Dose MMI</strong> : 10-20 mg/j, objectif T4L dans le tiers supérieur de la normale ou légèrement au-dessus<br />
+4. <strong>Surveillance fœtale</strong> : TRAb à 32-36 SA, écho fœtale FC + goitre<br />
+5. <strong>Avertir maternité</strong> : accouchement dans maternité niveau II minimum, bilan néonatal à J3</p>
+<hr />
+<h2 id="cas-16-hyperthyroidie-infraclinique-chez-un-sujet-de-78-ans">CAS 16 🥇 — Hyperthyroïdie Infraclinique chez un Sujet de 78 Ans</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-16 — GMNT apathique du sujet très âgé : risque de décompensation cardiaque, évaluation bénéfice/risque du traitement, fragilité gériatrique]</p>
+</blockquote>
+<p><strong>Patient</strong> : Henri, 78 ans, en EHPAD. Démence légère (MMSE 22/30). ATCD : HTA, fibrillation auriculaire chronique anticoagulée (rivaroxaban), insuffisance rénale chronique DFG 38 mL/min.</p>
+<p><strong>Bilan réalisé suite à une décompensation cardiaque</strong> :<br />
+- TSH : <strong>0,04 mUI/L</strong>, T4L : <strong>22 pmol/L</strong> (limite supérieure)<br />
+- T3L : <strong>4,8 pmol/L</strong> (normale basse)<br />
+- TRAb : négatifs<br />
+- BNP : 1 850 pg/mL</p>
+<p><strong>Examen</strong> : goitre nodulaire bilatéral ancien connu. FC moyenne en FA : 95 bpm (bien contrôlé).</p>
+<p><strong>Q1 🥇</strong> — Cette hyperthyroïdie frustre est-elle la cause principale de la décompensation cardiaque ou un facteur contributif ? Argumentez.</p>
+<p><strong>Réponse Q1</strong> : <strong>Facteur contributif probable</strong> :<br />
+1. TSH 0,04 mUI/L + FA chronique mal contrôlée → la thyrotoxicose légère augmente la réponse ventriculaire (FC plus rapide en FA → ↓ remplissage diastolique → ↓ débit)<br />
+2. La décompensation a probablement plusieurs causes : HTA mal contrôlée, IRC, dysfonction diastolique âge-liée, PLUS aggravation par hyperthyroïdie subclinique<br />
+3. Pas de T4L franchement élevée → rôle direct limité sur la contractilité mais rôle chronotrope (FA plus rapide)<br />
+4. Le BNP très élevé (1 850) témoigne d'une IC décompensée multifactorielle<br />
+5. <strong>Attribuer à la seule hyperthyroïdie frustre serait réducteur</strong> → bilan cardiaque complet (écho, Holter ECG, bilan ischémique si approprié)</p>
+<p><strong>Q2 🥇</strong> — En tenant compte de la fragilité gériatrique, quelle est votre stratégie de traitement de l'hyperthyroïdie ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Évaluation gériatrique</strong> : démence légère, DFG 38, FA chronique, EHPAD → patient fragile avec polymédication.</p>
+<p><strong>Décision de traitement</strong> : Traiter — TSH &lt; 0,1 mUI/L + âge &gt; 65 ans + cardiopathie = indication formelle même chez le sujet fragile.</p>
+<p><strong>Choix thérapeutique</strong> :<br />
+1. <strong>RAI (¹³¹I) préféré</strong> chez sujet âgé fragile : minimal, ambulatoire, une seule administration, pas d'interaction médicamenteuse<br />
+   - DFG 38 → clairance ralentie → adapter dose (réduire légèrement) + hydratation abondante<br />
+   - Pas besoin de consentement formel si représentant légal (tutelle/curatelle) co-décide<br />
+2. <strong>Préparation</strong> : MMI 10-20 mg/j pendant 4-6 semaines pour euthyroïdie avant RAI (protège d'une crise post-RAI)<br />
+3. <strong>Pas de chirurgie</strong> chez un patient de 78 ans fragile sans urgence<br />
+4. <strong>Bêta-bloquant</strong> : risque de bradycardie (AFC + bêta-bloquant) → prudence, faible dose si tachycardie symptomatique</p>
+<p><strong>Q3 💎</strong> — À 4 mois post-RAI, TSH à 45 mUI/L, T4L basse, patient confusion et asthénie intense. Comment diagnostiquez-vous et gérez-vous cet hypothyroïdie sévère chez un patient dément ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypothyroïdie sévère post-RAI</strong> (attendue, mais aggravée ici) :</p>
+<p><strong>Difficultés diagnostiques</strong> : la confusion peut être attribuée à la démence → risque de non-diagnostic → toujours doser TSH si aggravation cognitive chez patient suivi pour pathologie thyroïdienne.</p>
+<p><strong>Traitement</strong> :<br />
+1. LT4 initiation prudente : <strong>12,5-25 µg/j</strong> (pas 50 µg d'emblée) — risque d'angor ou FA rapide si introduction trop rapide chez patient âgé avec cardiopathie<br />
+2. Augmentation paliers de 12,5-25 µg toutes les 4-6 semaines (vs 2 semaines chez jeune adulte)<br />
+3. Objectif TSH : 1,0-4,0 mUI/L (cible moins stricte pour éviter excès chez sujet âgé)<br />
+4. <strong>Surveillance ECG</strong> : LT4 peut aggraver FA (accélération)<br />
+5. <strong>Communication à l'EHPAD</strong> : formation des soignants au suivi biologique mensuel<br />
+6. <strong>Vérification interactions</strong> : rivaroxaban + LT4 (pas d'interaction directe mais INR si AVK → à vérifier)<br />
+7. Tuteur légal à informer des décisions thérapeutiques</p>
+<hr />
+<h2 id="cas-17-hyperthyroidie-et-troubles-psychiatriques">CAS 17 🥇 — Hyperthyroïdie et Troubles Psychiatriques</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-17 — Basedow et accès maniaque : hyperthyroïdie déclenchant un épisode maniaque chez patient bipolaire, lithium et hyperthyroïdie]</p>
+</blockquote>
+<p><strong>Patient</strong> : Thomas, 35 ans, suivi en psychiatrie pour trouble bipolaire de type I stabilisé sous <strong>lithium</strong> (Li 0,8 mmol/L). Hospitalisé en psychiatrie pour accès maniaque aigu (agitation, insomnie totale, idées de grandeur, fuite des idées).</p>
+<p><strong>Bilan systématique en entrée</strong> :<br />
+- <strong>Lithiémie : 0,9 mmol/L</strong> (zone thérapeutique)<br />
+- TSH : <strong>&lt; 0,01 mUI/L</strong>, T4L : <strong>48 pmol/L</strong>, T3L : <strong>14,2 pmol/L</strong><br />
+- TRAb : <strong>14,5 UI/L</strong> (très positifs)<br />
+- NFS, rénal, hépatique : normaux</p>
+<p><strong>Q1 🥇</strong> — Quelle est la relation physiopathologique entre hyperthyroïdie et troubles de l'humeur ?</p>
+<p><strong>Réponse Q1</strong> :<br />
+1. <strong>T3 et T4 modulent directement la neurotransmission</strong> : ↑ sensibilité aux catécholamines (dopamine, noradrénaline) → tableaux de type maniaque ou anxieux<br />
+2. <strong>T3 et les antidépresseurs</strong> : T3 potentialise les antidépresseurs tricycliques et les IMAO → thyrotoxicose peut simuler ou aggraver un état maniaque<br />
+3. <strong>Axe thyroïdien et troubles bipolaires</strong> : le trouble bipolaire est associé à une prévalence accrue de dysthyroïdies auto-immunes (Hashimoto type 2 et Basedow)<br />
+4. <strong>Lithium</strong> : inhibe la libération thyroïdienne (Wolff-Chaikoff prolongé) et inhibe la désiodation T4→T3 → peut masquer ou retarder le diagnostic d'hyperthyroïdie (mais ici TSH très effondrée malgré lithium)<br />
+5. <strong>Diagnostic différentiel</strong> : manie vs thyrotoxicose → la distinction nécessite systématiquement un bilan thyroïdien dans tout épisode maniaque</p>
+<p><strong>Q2 🥇</strong> — Comment gérez-vous l'hyperthyroïdie en maintenant l'équilibre psychiatrique ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Problème</strong> : lithium = stabilisateur de l'humeur INDISPENSABLE, mais le lithium a des effets complexes sur la thyroïde :<br />
+- Avantage : inhibe la libération thyroïdienne (→ utile dans le contrôle de la crise)<br />
+- Inconvénient : peut induire hypothyroïdie à long terme</p>
+<p><strong>Décision</strong> :<br />
+1. <strong>Maintenir le lithium</strong> (équilibre psychiatrique prioritaire)<br />
+2. <strong>MMI</strong> 30-40 mg/j pour contrôle thyroïdien<br />
+3. <strong>Bêta-bloquant</strong> (propranolol) : traite à la fois la tachycardie thyrotoxique ET peut réduire l'agitation maniaque (propriétés anxiolytiques)<br />
+4. <strong>Coordination psychiatrie-endocrinologie</strong> : éviter que le traitement de l'un n'aggrave l'autre<br />
+5. Surveillance lithiémie rapprochée (MMI peut modifier l'excrétion rénale du lithium)<br />
+6. Traitement définitif après stabilisation : RAI (patient homme, 35 ans, pas de désir d'enfant immédiat → RAI acceptable)</p>
+<p><strong>Q3 💎</strong> — Après guérison du Basedow (RAI avec hypothyroïdie permanente), le patient est équilibré sous LT4 75 µg/j + lithium. 6 mois plus tard, TSH 22 mUI/L, T4L basse. À quoi pensez-vous et comment gérez-vous ?</p>
+<p><strong>Réponse Q3</strong> : <strong>Hypothyroïdie aggravée par le lithium</strong> :<br />
+1. <strong>Mécanisme</strong> : lithium inhibe la désiodation T4→T3, réduit la libération thyroïdienne, et peut induire une hypothyroïdie profonde en association avec l'hypothyroïdie post-RAI<br />
+2. <strong>Gestion</strong> : augmenter LT4 (ici insuffisante à 75 µg) → titrer jusqu'à TSH dans la cible (1-3 mUI/L)<br />
+3. <strong>Ne pas arrêter le lithium</strong> : déséquilibre bipolaire &gt;&gt; inconvénient thyroïdien<br />
+4. <strong>Objectif TSH modifié sous lithium</strong> : 1-3 mUI/L (pas &lt; 1 → risque d'aggravation bipolaire, pas &gt; 5 → hypothyroïdie symptomatique)<br />
+5. <strong>Surveillance renforcée</strong> : TSH tous les 3 mois (instabilité sous lithium)<br />
+6. <strong>Information patient</strong> : l'hypothyroïdie sous lithium peut mimer ou aggraver une dépression bipolaire → distinguer avant de modifier le traitement psychiatrique</p>
+<hr />
+<h2 id="cas-18-thyrotoxicose-factice-par-lt3">CAS 18 🥇 — Thyrotoxicose Factice par LT3</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-18 — Thyrotoxicose factice à la liothyronine : T3L très élevée + T4L basse + Tg effondrée, contexte de prise cachée chez sportive]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Léa, 25 ans, coureuse de fond de haut niveau. Adressée pour amaigrissement, tachycardie, bilan thyroïdien anormal découvert lors d'une visite médicale sportive.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>0,02 mUI/L</strong><br />
+- T4L : <strong>7 pmol/L</strong> (<strong>BASSE</strong> : N 12-22)<br />
+- T3L : <strong>22,5 pmol/L</strong> (<strong>TRÈS ÉLEVÉE</strong> : N 3,5-6,5)<br />
+- TRAb : négatifs<br />
+- Anti-TPO : négatifs<br />
+- <strong>Tg : 0,3 ng/mL</strong> (<strong>effondrée</strong> : N 2-35)<br />
+- Scintigraphie : <strong>blanche</strong> (fixation nulle)</p>
+<p><strong>Q1 🥇</strong> — Quel est le tableau clinico-biologique et comment l'expliquez-vous ?</p>
+<p><strong>Réponse Q1</strong> : <strong>Thyrotoxicose factice à la liothyronine (LT3 / Cynomel)</strong> — profil caractéristique :<br />
+1. <strong>T3L très élevée + T4L basse</strong> = clé du diagnostic → l'exogène LT3 inhibe complètement la thyroïde endogène → plus de production de T4 endogène → T4L basse<br />
+2. <strong>TSH effondrée</strong> : suppression hypophysaire par T3 exogène<br />
+3. <strong>Tg effondrée</strong> : thyroïde endogène silencieuse (supprimée)<br />
+4. <strong>Scintigraphie blanche</strong> : pas de captation (thyroïde supprimée)<br />
+5. <strong>TRAb négatifs</strong> : pas de Basedow<br />
+6. Contexte sportif : LT3 utilisée comme "brûleur de graisse" ou agent dopant (amélioration utilisation substrats énergétiques, métabolisme de base accéléré)</p>
+<p><strong>Q2 🥇</strong> — Comment abordez-vous la patiente et quelle est la prise en charge ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Approche non accusatrice</strong> :<br />
+1. Présenter les résultats biologiques sans jugement : "Ces résultats montrent quelque chose d'inhabituel qui nécessite une explication"<br />
+2. Informer des <strong>risques cardiovasculaires</strong> (arythmies, mort subite à l'effort), osseux, et musculaires de la T3 en excès<br />
+3. <strong>Prise en charge</strong> :<br />
+   - Arrêt immédiat de la prise de LT3<br />
+   - Surveillance TSH + T4L + T3L : normalisation attendue en 2-3 semaines<br />
+   - Pas de traitement thyroïdien actif (la thyroïde reprendra sa fonction seule)<br />
+   - <strong>Déclaration pharmacovigilance</strong> si produit provient d'un site illicite ou d'un "complément alimentaire"<br />
+   - Accompagnement psychologique (TCA associé ?)<br />
+   - Information sur les règles antidopage (T3 = substance interdite en compétition par l'AMA)</p>
+<p><strong>Q3 💎</strong> — Comment différenciez-vous biologiquement une thyrotoxicose factice à LT4 d'une thyrotoxicose factice à LT3 ? Y a-t-il des situations où les deux sont prises simultanément ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>LT4 exogène</th>
+<th>LT3 exogène</th>
+<th>LT4 + LT3 (desiccated thyroid)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td>Effondrée</td>
+<td>Effondrée</td>
+<td>Effondrée</td>
+</tr>
+<tr>
+<td>T4L</td>
+<td><strong>Élevée</strong></td>
+<td><strong>BASSE</strong></td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>T3L</td>
+<td>Élevée (conversion)</td>
+<td><strong>TRÈS ÉLEVÉE</strong></td>
+<td>Très élevée</td>
+</tr>
+<tr>
+<td>Tg</td>
+<td>Effondrée</td>
+<td>Effondrée</td>
+<td>Effondrée</td>
+</tr>
+<tr>
+<td>Scintigraphie</td>
+<td>Blanche</td>
+<td>Blanche</td>
+<td>Blanche</td>
+</tr>
+<tr>
+<td>Clé diagnostique</td>
+<td>T4L/T3L élevées + Tg ↓</td>
+<td><strong>T3L ↑↑ + T4L basse</strong></td>
+<td>T3L très élevée + T4L élevée</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prise simultanée LT4 + LT3</strong> : courante dans le contexte de la "médecine intégrative" (extraits thyroïdiens porcins de type Armour Thyroid ou NDT — Natural Desiccated Thyroid) contenant T4 et T3 en proportion fixe (80/20). Profil biologique : T4L et T3L élevées + Tg effondrée. La prise de NDT est légale mais souvent non prescrite → informer sur les risques avant de "gérer" le traitement.</p>
+<hr />
+<h2 id="cas-19-syndrome-de-resistance-aux-hormones-thyroidiennes-rth">CAS 19 🥇 — Syndrome de Résistance aux Hormones Thyroïdiennes (RTHβ)</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-19 — RTHβ : TSH normale-haute + T4L/T3L élevées, mutation THRB, diagnostic différentiel TSHome, pas de traitement chez l'adulte euthyroïdien]</p>
+</blockquote>
+<p><strong>Patient</strong> : Marc, 42 ans. Consultation endocrinologique suite à découverte fortuite lors d'un bilan préopératoire.</p>
+<p><strong>Biologie</strong> :<br />
+- TSH : <strong>4,8 mUI/L</strong> (légèrement élevée)<br />
+- T4L : <strong>35 pmol/L</strong> (3× la normale)<br />
+- T3L : <strong>9,8 pmol/L</strong> (2× la normale)<br />
+- TRAb : négatifs. Anti-TPO : négatifs</p>
+<p><strong>IRM hypophysaire</strong> : <strong>normale</strong>, pas d'adénome.</p>
+<p><strong>Antécédents familiaux</strong> : sa mère a les mêmes anomalies biologiques, traitée initialement pour "hyperthyroïdie" avec RC anormal.</p>
+<p><strong>Examen clinique</strong> : asymptomatique, pas de tachycardie, pas de signe de thyrotoxicose. Légère <strong>dyslexie</strong> dans l'enfance.</p>
+<p><strong>Q1 🥇</strong> — Quel est le diagnostic et quels arguments permettent d'éliminer un TSHome ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Diagnostic évoqué : RTHβ (Syndrome de Résistance aux Hormones Thyroïdiennes β)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Ce cas (RTHβ)</th>
+<th>TSHome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td><strong>Haute-normale (4,8)</strong></td>
+<td>Normale ou élevée</td>
+</tr>
+<tr>
+<td>T4L/T3L</td>
+<td>Élevées</td>
+<td>Élevées</td>
+</tr>
+<tr>
+<td>α-GSU/TSH</td>
+<td><strong>&lt; 1</strong> (attendu)</td>
+<td><strong>&gt; 1</strong></td>
+</tr>
+<tr>
+<td>IRM hypophysaire</td>
+<td><strong>NORMALE</strong></td>
+<td>Adénome visible</td>
+</tr>
+<tr>
+<td>ATCD familiaux</td>
+<td><strong>OUI (dominance autosomale)</strong></td>
+<td>Non</td>
+</tr>
+<tr>
+<td>Symptômes</td>
+<td><strong>Peu/pas</strong> (résistance TSH + TH)</td>
+<td>Hyperthyroïdie</td>
+</tr>
+<tr>
+<td>Réponse TRH</td>
+<td><strong>Présente</strong></td>
+<td>Abolie/paradoxale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Confirmation</strong> : séquençage du gène THRB → mutation hétérozygote du domaine de liaison du ligand (&gt; 200 mutations différentes décrites)</p>
+<p><strong>Q2 🥇</strong> — Quelle est la prise en charge d'un RTHβ asymptomatique chez l'adulte ?</p>
+<p><strong>Réponse Q2</strong> : <strong>PAS de traitement dans la RTHβ asymptomatique</strong> :<br />
+1. <strong>Traiter les hormones thyroïdiennes élevées serait une ERREUR</strong> : les tissus résistants (hypophyse, cœur, os, cerveau) ont besoin de taux élevés pour un effet normal → traiter = hypothyroïdie dans les tissus résistants<br />
+2. Informer le patient : ce n'est pas une maladie grave mais une variation génétique<br />
+3. <strong>Éviter</strong> le RAI, les ATS, la chirurgie thyroïdienne (aucun bénéfice, risque d'hypothyroïdie iatrogène avec séquelles des tissus résistants)<br />
+4. <strong>Surveillance annuelle</strong> : TSH + T4L (stabilité de la résistance)<br />
+5. <strong>Conseil génétique</strong> : transmission autosomale dominante → 50 % des enfants atteints<br />
+6. <strong>Grossesse</strong> : surveillance accrue (fœtus peut avoir ou non la mutation → réponse différente aux hormones maternelles)</p>
+<p><strong>Q3 💎</strong> — Ce patient a des ATCD de troubles de l'attention dans l'enfance et dyslexie. Son fils de 8 ans présente les mêmes anomalies biologiques. Quelles sont les implications pour l'enfant et comment le suivez-vous ?</p>
+<p><strong>Réponse Q3</strong> : RTHβ chez l'enfant — particularités :<br />
+1. <strong>TDAH et dyslexie</strong> : fréquents dans la RTHβ pédiatrique (hypothyroïdie relative dans les tissus neuronaux malgré T4L élevée)<br />
+2. <strong>Retard staturo-pondéral</strong> : si hypothyroïdie relative au niveau osseux (TSHβ résistante mais TRα sensible → os souvent normaux)<br />
+3. <strong>Prise en charge</strong> :<br />
+   - Pas d'ATS (contre-indiqué)<br />
+   - <strong>L-triiodothyronine (LT3) à forte dose</strong> : parfois utilisée pour "saturer" les récepteurs partiellement résistants dans les tissus cibles → résultats variables<br />
+   - <strong>TRIAC (acide triiodoacétique)</strong> : analogue de T3 à forte affinité pour TRβ → utilisé dans les RTHβ sévères de l'enfant (efficacité partiellement documentée)<br />
+   - Soutien scolaire adapté pour TDAH/dyslexie<br />
+4. <strong>Surveillance à vie</strong> : TSH + T4L annuels, évaluation du développement cognitif, DXA à l'adulte</p>
+<hr />
+<h2 id="cas-20-hyperthyroidie-infraclinique-decision-de-surveillance-vs-traitement">CAS 20 🥈 — Hyperthyroïdie Infraclinique : Décision de Surveillance vs Traitement</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-HYPER-20 — Algorithme de décision pour hyperthyroïdie frustre : TSH 0,2 mUI/L chez femme de 48 ans asymptomatique, risques cardiovasculaire et osseux]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Martine, 48 ans, secrétaire, ménopause récente (1 an). ATCD : pas de cardiopathie, densitométrie osseuse il y a 2 ans : T-score rachis -1,8 (ostéopénie), hanche -1,2.</p>
+<p><strong>Bilan annuel de son médecin traitant</strong> :<br />
+- TSH : <strong>0,18 mUI/L</strong> (confirmée 6 semaines plus tard : 0,21 mUI/L)<br />
+- T4L : <strong>17 pmol/L</strong> (normale)<br />
+- T3L : <strong>5,2 pmol/L</strong> (normale)<br />
+- TRAb : <strong>négatifs</strong>. Anti-TPO : négatifs</p>
+<p><strong>Échographie</strong> : <strong>goitre diffus homogène</strong> 25 mL, pas de nodule individualisé.</p>
+<p><strong>Q1 🥈</strong> — Comment classifiez-vous cette hyperthyroïdie frustre et quelle est son étiologie probable ?</p>
+<p><strong>Réponse Q1</strong> :<br />
+- <strong>Hyperthyroïdie frustre</strong> : TSH persistante &lt; 0,4 mUI/L (confirmée à 6 semaines) avec T4L et T3L normales<br />
+- <strong>TSH entre 0,1 et 0,4 mUI/L</strong> : catégorie intermédiaire (ni &lt; 0,1 = risque élevé, ni normale)<br />
+- TRAb négatifs + goitre diffus homogène + ménopause récente → <strong>Basedow infraclinique possible</strong> (même si TRAb négatifs dans 10 % des Basedow)<br />
+- Scintigraphie pourrait préciser : si fixation diffuse élevée → Basedow ; si hétérogène → GMNT débutant</p>
+<p><strong>Q2 🥈</strong> — Doit-on traiter cette patiente de 48 ans ? Utilisez l'algorithme de l'ATA 2016.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Selon ATA 2016 (TSH 0,1-0,4 mUI/L)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Facteur de risque</th>
+<th>Présent ?</th>
+<th>Décision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age &gt; 65 ans</td>
+<td>Non</td>
+<td>Non obligatoire</td>
+</tr>
+<tr>
+<td>Cardiopathie connue</td>
+<td>Non</td>
+<td>Non obligatoire</td>
+</tr>
+<tr>
+<td>Ostéoporose sévère (T-score &lt; -2,5)</td>
+<td><strong>Non</strong> (T-score -1,8 = ostéopénie seulement)</td>
+<td>Non obligatoire</td>
+</tr>
+<tr>
+<td>Symptômes</td>
+<td><strong>Non</strong></td>
+<td>Surveillance acceptable</td>
+</tr>
+<tr>
+<td>TSH &lt; 0,1 mUI/L</td>
+<td><strong>Non</strong> (0,18-0,21)</td>
+<td>Traitement pas impératif</td>
+</tr>
+<tr>
+<td>Grossesse</td>
+<td>Non</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Décision</strong> : <strong>Surveillance renforcée</strong> plutôt que traitement immédiat. Mais plusieurs arguments pour traiter :<br />
+1. Ménopause récente → risque fracturaire accru (déjà ostéopénie)<br />
+2. Risque de progression vers TSH &lt; 0,1 mUI/L<br />
+3. Âge 48 ans + &gt; 10 ans d'espérance de vie → cumul du risque osseux et cardiovasculaire</p>
+<p><strong>Recommandation personnalisée</strong> : discuter avec la patiente les risques/bénéfices. Proposer bilan étiologique (TRAb + scintigraphie) + suivi TSH à 3-6 mois + DXA de contrôle à 1 an. Si TSH passe &lt; 0,1 ou progression ostéopénie → traiter.</p>
+<p><strong>Q3 💎</strong> — Si TSH chute à 0,06 mUI/L à 6 mois, avec T4L toujours normale et apparition d'une ostéopénie progressive (T-score rachis -2,1). La scintigraphie montre une fixation diffuse élevée. Quel est le bilan complet et la décision thérapeutique définitive ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Bilan final</strong> :<br />
+- TSH &lt; 0,1 + T4L normale + fixation diffuse scintigraphie → <strong>Basedow frustre</strong><br />
+- Doser TRAb de nouveau (peut se positiver progressivement)<br />
+- DXA : aggravation ostéopénie<br />
+- ECG : Holter 24h (FA silencieuse ?)</p>
+<p><strong>Décision thérapeutique</strong> :<br />
+- TSH &lt; 0,1 mUI/L = traitement RECOMMANDÉ (quel que soit l'âge, selon ATA 2016)<br />
+- Patiente ménopausée avec ostéopénie progressive → risque osseux documenté → traiter urgence modérée<br />
+- <strong>Options</strong> : MMI 10-20 mg/j pour 12-18 mois. Si TRAb positifs : discuter traitement définitif (RAI)<br />
+- <strong>Ostéopénie</strong> : calcium 1 200 mg/j + vitamine D 800 UI/j. DXA annuelle jusqu'à normalisation TSH<br />
+- <strong>Suivi</strong> : TSH/T4L à 6 semaines → titration MMI → normalisation TSH objectif 0,5-2 mUI/L</p>
+<hr />
+<p><em>Formation VERTEX© — Cas Cliniques Hyperthyroïdies — Partie 2 (Cas 11-20) — Mars 2026</em></p>
+</div>

@@ -1,0 +1,470 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-10-hta-secondaire">❤️ PARTIE 10 — HTA SECONDAIRE</h1>
+<h2 id="hyperaldosteronisme-primaire-hta-renale-pheochromocytome-cushing-et-autres-causes">Hyperaldostéronisme primaire, HTA rénale, phéochromocytome, Cushing et autres causes</h2>
+<hr />
+<h1 id="module-37-hyperaldosteronisme-primaire">MODULE 37 — HYPERALDOSTÉRONISME PRIMAIRE</h1>
+<h2 id="371-definition-et-epidemiologie">37.1 Définition et épidémiologie</h2>
+<h3 id="3711-generalites">37.1.1 Généralités</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA37-S01-001 — SCHÉMA : physiopathologie de l'hyperaldostéronisme primaire — sécrétion autonome d'aldostérone et ses conséquences]</p>
+</blockquote>
+<p><strong>Hyperaldostéronisme primaire (HAP)</strong> (adapté de Funder et al., JCEM 2016) :<br />
+- Sécrétion <strong>autonome et excessive</strong> d'aldostérone par les glandes surrénales<br />
+- Indépendante de la rénine (rénine basse, aldostérone élevée → rapport élevé)<br />
+- <strong>Prévalence réelle</strong> : 5-10 % des hypertendus (largement sous-diagnostiqué)<br />
+- <strong>Prévalence dans l'HTA résistante</strong> : 15-20 %</p>
+<h3 id="3712-formes-etiologiques">37.1.2 Formes étiologiques</h3>
+<table>
+<thead>
+<tr>
+<th>Forme</th>
+<th>Fréquence</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Adénome unilatéral</strong> (Conn)</td>
+<td>35-40 %</td>
+<td>Chirurgie (surrénalectomie) = guérison</td>
+</tr>
+<tr>
+<td><strong>Hyperplasie bilatérale</strong></td>
+<td>55-60 %</td>
+<td>Médicamenteux (anti-aldostérone)</td>
+</tr>
+<tr>
+<td><strong>Carcinome surrénalien</strong></td>
+<td>&lt; 1 %</td>
+<td>Chirurgie + chimiothérapie</td>
+</tr>
+<tr>
+<td><strong>Hyperaldostéronisme familial</strong></td>
+<td>&lt; 1 %</td>
+<td>Variable selon le type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="372-depistage-et-diagnostic">37.2 Dépistage et diagnostic</h2>
+<h3 id="3721-situations-de-depistage">37.2.1 Situations de dépistage</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023 et Endocrine Society 2016) :</p>
+<blockquote>
+<p>Dépister l'HAP dans les situations suivantes :<br />
+- HTA résistante ou difficile à contrôler<br />
+- Hypokaliémie spontanée ou sous faible dose de diurétique<br />
+- HTA avec découverte fortuite d'incidentalome surrénalien<br />
+- HTA d'apparition précoce (&lt; 40 ans) ou sévère<br />
+- Antécédent familial d'HAP ou d'AVC &lt; 40 ans</p>
+</blockquote>
+<h3 id="3722-test-de-depistage-rapport-aldosteronerenine-rar">37.2.2 Test de dépistage : rapport aldostérone/rénine (RAR)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA37-S02-001 — ALGORITHME : dépistage et confirmation de l'HAP — du RAR au test de confirmation]</p>
+</blockquote>
+<p><strong>Conditions de prélèvement</strong> (crucial pour l'interprétation) :<br />
+- Matin (8h-10h), après 2h de lever et 15 min en position assise<br />
+- Kaliémie normale (corriger l'hypokaliémie avant)<br />
+- Régime normosodé<br />
+- Arrêter les anti-aldostérone 4 à 6 semaines avant<br />
+- Les IEC/ARA2 peuvent abaisser le RAR (faux négatif) → discuter l'arrêt</p>
+<p><strong>Interprétation</strong> (adapté de Rossi et al., J Hypertension 2015) :<br />
+- <strong>Aldostérone</strong> &gt; 150 pmol/L (55 pg/mL) ET <strong>RAR</strong> &gt; 30 (aldostérone en pmol/L / rénine en mUI/L)<br />
+- Sensibilité : 70-80 %, Spécificité : 70-80 %</p>
+<h3 id="3723-tests-de-confirmation">37.2.3 Tests de confirmation</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Principe</th>
+<th>Positivité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Charge sodée</strong> (4 j)</td>
+<td>Freinage aldostérone par expansion volémique</td>
+<td>Aldostérone urinaire &gt; 12 µg/j à J4</td>
+</tr>
+<tr>
+<td><strong>Perfusion de NaCl 2L/4h</strong></td>
+<td>Freinage en aigu</td>
+<td>Aldostérone &gt; 10 ng/dL à H4</td>
+</tr>
+<tr>
+<td><strong>Test au fludrocortisone</strong></td>
+<td>Freinage par minéralocorticoïde exogène</td>
+<td>Aldostérone &gt; 6 ng/dL à J4</td>
+</tr>
+<tr>
+<td><strong>Test au captopril</strong></td>
+<td>Freinage par IEC</td>
+<td>Aldostérone non freinée (&gt; 30 % baseline)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3724-lateralisation">37.2.4 Latéralisation</h3>
+<p><strong>TDM surrénalien</strong> : première imagerie (détection d'adénome &gt; 1 cm)<br />
+- Sensibilité 70 % (peut manquer les adénomes &lt; 1 cm et hyperplasies)</p>
+<p><strong>Cathétérisme des veines surrénaliennes (CVS)</strong> :<br />
+- Gold standard pour la latéralisation avant chirurgie<br />
+- Prélèvements bilatéraux simultanés ou séquentiels<br />
+- <strong>Index de latéralisation</strong> &gt; 4 (côté dominant) : unilatéral<br />
+- Indispensable avant décision chirurgicale si TDM non concluant</p>
+<h3 id="3725-traitement">37.2.5 Traitement</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC/ESH 2023) :</p>
+<blockquote>
+<ul>
+<li><strong>Forme unilatérale</strong> : surrénalectomie laparoscopique → guérison de l'hypokaliémie dans 100 % des cas, normalisation de la PA dans 35-60 % des cas, amélioration dans 100 %</li>
+<li><strong>Forme bilatérale</strong> : spironolactone 25-100 mg/j (ou éplérénone 50-150 mg/j si gynécomastie) + régime désodé</li>
+<li>Corriger l'hypokaliémie avant toute chirurgie</li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="module-38-hta-dorigine-renale-et-vasculaire">MODULE 38 — HTA D'ORIGINE RÉNALE ET VASCULAIRE</h1>
+<h2 id="381-stenose-des-arteres-renales-sar">38.1 Sténose des artères rénales (SAR)</h2>
+<h3 id="3811-etiologies">38.1.1 Étiologies</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA38-S01-001 — IMAGERIE : sténose athéromateuse vs dysplasie fibromusculaire — artériographie comparée]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Étiologie</th>
+<th>Profil</th>
+<th>Localisation</th>
+<th>Prévalence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Athéromateuse</strong></td>
+<td>Homme &gt; 55 ans, FDR CV</td>
+<td>Ostium, tiers proximal</td>
+<td>90 %</td>
+</tr>
+<tr>
+<td><strong>Dysplasie fibromusculaire (DFM)</strong></td>
+<td>Femme jeune 25-50 ans</td>
+<td>Tiers moyen, « collier de perles »</td>
+<td>10 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3812-clinique">38.1.2 Clinique</h3>
+<p><strong>Signes évocateurs de SAR</strong> :<br />
+- HTA d'apparition brutale ou résistante<br />
+- Détérioration de la fonction rénale sous IEC/ARA2<br />
+- HTA chez le sujet &lt; 35 ans (DFM) ou &gt; 55 ans avec FDR CV multiples<br />
+- Souffle para-ombilical (auscultation des artères rénales)<br />
+- Asymétrie des reins (&gt; 1,5 cm à l'échographie)<br />
+- Flash pulmonary edema (OAP sans dysfonction cardiaque évidente)</p>
+<h3 id="3813-diagnostic">38.1.3 Diagnostic</h3>
+<ul>
+<li><strong>Écho-Doppler rénal</strong> : dépistage (sensibilité 85-90 %, vitesse systolique intra-rénale &gt; 1,8 m/s)</li>
+<li><strong>Angio-TDM</strong> ou <strong>Angio-IRM</strong> : confirmation et bilan pré-interventionnel</li>
+<li><strong>Artériographie</strong> : gold standard, traitement possible en même temps</li>
+</ul>
+<h3 id="3814-traitement">38.1.4 Traitement</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de ESC 2017, guidelines AOMI) :</p>
+<blockquote>
+<ul>
+<li><strong>SAR athéromateuse</strong> : traitement médical en première intention (statine + antihypertenseur + aspirine)</li>
+<li><strong>Revascularisation</strong> (angioplastie ± stent) : si HTA résistante, détérioration rénale progressive, OAP récidivant, HTA maligne</li>
+<li><strong>DFM</strong> : angioplastie (sans stent) en 1ère intention → excellents résultats (normalisation PA dans 50-60 %)</li>
+<li>Éviter IEC/ARA2 si SAR bilatérale (risque IRA)</li>
+</ul>
+</blockquote>
+<h2 id="382-nephropathies-parenchymateuses">38.2 Néphropathies parenchymateuses</h2>
+<ul>
+<li>Toutes les néphropathies chroniques peuvent causer une HTA (rétention hydrosodée + activation SRAA)</li>
+<li>L'HTA aggrave à son tour la néphropathie (cercle vicieux)</li>
+<li>Traitement : IEC/ARA2 + diurétique adapté au DFG + restriction sodée + iSGLT2</li>
+</ul>
+<h2 id="383-coarctation-de-laorte">38.3 Coarctation de l'aorte</h2>
+<p><strong>Définition</strong> : rétrécissement congénital de l'aorte (le plus souvent isthme aortique, après l'artère sous-clavière gauche)</p>
+<p><strong>Clinique</strong> :<br />
+- HTA aux membres supérieurs, PA basse aux membres inférieurs<br />
+- <strong>IPS paradoxalement inversé</strong> : PA bras &gt; PA jambes<br />
+- Pouls fémoraux diminués ou abolis<br />
+- Souffle inter-scapulaire systolique<br />
+- Dilatation des artères intercostales (image en « entailles costales » sur la radio thorax)</p>
+<p><strong>Diagnostic</strong> : écho-Doppler, angio-IRM, angio-TDM</p>
+<p><strong>Traitement</strong> : correction chirurgicale ou endovasculaire (stent)</p>
+<hr />
+<h1 id="module-39-pheochromocytome-cushing-et-autres-causes">MODULE 39 — PHÉOCHROMOCYTOME, CUSHING ET AUTRES CAUSES</h1>
+<h2 id="391-pheochromocytome-et-paragangliome">39.1 Phéochromocytome et paragangliome</h2>
+<h3 id="3911-generalites">39.1.1 Généralités</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA39-S01-001 — SCHÉMA : localisations du phéochromocytome et des paragangliomes — catécholamines sécrétées]</p>
+</blockquote>
+<p><strong>Définition</strong> :<br />
+- <strong>Phéochromocytome</strong> : tumeur des cellules chromaffines de la <strong>médullosurrénale</strong><br />
+- <strong>Paragangliome</strong> : tumeur des cellules chromaffines <strong>extra-surrénaliennes</strong> (chaîne sympathique, région cervicale)<br />
+- Prévalence : 0,1-0,6 % des hypertendus, mais <strong>mortalité élevée</strong> si non diagnostiqué</p>
+<h3 id="3912-clinique-triade-de-menard">39.1.2 Clinique — triade de Menard</h3>
+<ul>
+<li><strong>Céphalées</strong> pulsatiles intenses</li>
+<li><strong>Sueurs</strong> profuses</li>
+<li><strong>Palpitations</strong> / tachycardie</li>
+</ul>
+<p><strong>Types d'HTA</strong> :<br />
+- HTA <strong>permanente</strong> (50-60 %)<br />
+- HTA <strong>paroxystique</strong> (15-20 %) : crises hypertensives sévères avec retour à la normale<br />
+- HTA permanente avec <strong>poussées paroxystiques</strong> (20-25 %)<br />
+- Normotension (rare, 5-15 %)</p>
+<p><strong>Facteurs déclenchants des crises</strong> :<br />
+- Compression abdominale, anesthésie, opiacés<br />
+- β-bloquants sans α-blocage préalable (risque majeur !)<br />
+- Glucagon, histamine, métoclopramide</p>
+<h3 id="3913-diagnostic-biologique">39.1.3 Diagnostic biologique</h3>
+<p>📋 <strong>RECOMMANDATION</strong> (adapté de Lenders et al., JCEM 2014 — Endocrine Society) :</p>
+<blockquote>
+<p><strong>Test de référence : métanéphrines libres plasmatiques</strong> (sensibilité 97 %, spécificité 91 %)<br />
+- Alternative : métanéphrines urinaires des 24h (sensibilité 90 %, spécificité 95 %)<br />
+- Prélèvement en position allongée après 20 min de repos<br />
+- Seuil : &gt; 3 fois la normale → très évocateur de phéochromocytome</p>
+</blockquote>
+<h3 id="3914-localisation">39.1.4 Localisation</h3>
+<ul>
+<li><strong>TDM surrénalien</strong> (1er examen) : sensibilité 90 % pour tumeurs &gt; 1 cm</li>
+<li><strong>IRM</strong> : si allergie iode ou femme enceinte</li>
+<li><strong>TEP-DOPA</strong> ou <strong>scintigraphie MIBG</strong> : formes extra-surrénaliennes, multiples, récidives</li>
+</ul>
+<h3 id="3915-traitement">39.1.5 Traitement</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA39-S01-002 — ALGORITHME : préparation préopératoire du phéochromocytome]</p>
+</blockquote>
+<p><strong>Préparation préopératoire</strong> (10-14 jours) :<br />
+1. <strong>α-bloquants</strong> (phentolamine ou doxazosine) en PREMIER<br />
+2. Puis β-bloquants si nécessaire (tachycardie résiduelle)<br />
+3. Hydratation intensive</p>
+<p>🚨 <strong>URGENCE</strong> :</p>
+<blockquote>
+<p><strong>Ne JAMAIS débuter par un β-bloquant</strong> dans le phéochromocytome ! Le blocage β2 sans α-blocage préalable supprime la vasodilatation β2-médiée, laissant l'effet α1 vasoconstricteur libre → crise hypertensive potentiellement mortelle.</p>
+</blockquote>
+<p><strong>Chirurgie</strong> : surrénalectomie laparoscopique (voie d'abord standard)<br />
+- Risque per-opératoire : poussées hypertensives lors de la manipulation → nicardipine IV ou phentolamine<br />
+- Suivi à vie (risque de récidive ou de localisation extra-surrénalienne secondaire)</p>
+<hr />
+<h2 id="392-syndrome-de-cushing">39.2 Syndrome de Cushing</h2>
+<h3 id="3921-hta-dans-le-cushing">39.2.1 HTA dans le Cushing</h3>
+<ul>
+<li>L'HTA est présente dans <strong>75-80 %</strong> des syndromes de Cushing</li>
+<li>Mécanismes : activation des récepteurs minéralocorticoïdes par le cortisol, activation sympathique, augmentation de l'angiotensinogène</li>
+</ul>
+<h3 id="3922-diagnostic">39.2.2 Diagnostic</h3>
+<p><strong>Signes cliniques évocateurs</strong> :<br />
+- Obésité faciotronculaire, faciès lunaire, bosse de bison<br />
+- Vergetures pourpres larges (&gt; 1 cm)<br />
+- Amyotrophie proximale<br />
+- Fragilité cutanée, ecchymoses spontanées<br />
+- Ostéoporose, fractures pathologiques<br />
+- Hirsutisme, troubles des règles<br />
+- Diabète, dyslipidémie</p>
+<p><strong>Bilan de dépistage</strong> :<br />
+1. <strong>Cortisol libre urinaire des 24h</strong> × 2 (&gt; 3N = évocateur)<br />
+2. <strong>Test de freinage minute</strong> (1 mg déxaméthasone, 23h → cortisol 8h suivant, seuil : &lt; 50 nmol/L)<br />
+3. <strong>Cortisol salivaire nocturne</strong> (perte du cycle circadien)</p>
+<p><strong>Diagnostic étiologique</strong> :<br />
+- ACTH plasmatique matin<br />
+- ACTH-dépendant : adénome hypophysaire (maladie de Cushing), sécrétion ectopique<br />
+- ACTH-indépendant : adénome ou carcinome surrénalien</p>
+<hr />
+<h2 id="393-apnees-du-sommeil-sahos">39.3 Apnées du sommeil (SAHOS)</h2>
+<h3 id="3931-hta-et-sahos">39.3.1 HTA et SAHOS</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHTA39-S03-001 — SCHÉMA : mécanismes de l'HTA dans le SAHOS — hypoxie, chémoreflexe, activation sympathique]</p>
+</blockquote>
+<ul>
+<li>Prévalence du SAHOS chez l'hypertendu : <strong>30-40 %</strong></li>
+<li>Prévalence de l'HTA chez le SAHOS : <strong>50-80 %</strong></li>
+<li><strong>HTA nocturne et non-dipper</strong> : marqueurs typiques du SAHOS</li>
+<li>Mécanismes : hypoxie intermittente → chémoreflexe → activation sympathique → vasoconstriction → HTA diurne persistante</li>
+</ul>
+<h3 id="3932-depistage-et-traitement">39.3.2 Dépistage et traitement</h3>
+<ul>
+<li><strong>Questionnaire de Berlin</strong> ou <strong>d'Epworth</strong> : dépistage clinique</li>
+<li><strong>Polygraphie ventilatoire nocturne</strong> (IAH ≥ 15/h : SAHOS modéré à sévère)</li>
+<li><strong>Traitement</strong> : PPC (Pression Positive Continue) → réduction PA de -2 à -5 mmHg PAS</li>
+<li>Effet modéré sur la PA mais amélioration du profil nycthéméral et de la qualité du sommeil</li>
+</ul>
+<hr />
+<h2 id="394-autres-causes-dhta-secondaire">39.4 Autres causes d'HTA secondaire</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHTA39-S04-001 — TABLEAU SYNOPTIQUE : causes rares d'HTA secondaire — présentation, dépistage, traitement]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Prévalence</th>
+<th>Signes évocateurs</th>
+<th>Dépistage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hypothyroïdie</td>
+<td>1-2 %</td>
+<td>Bradycardie, asthénie, prise de poids</td>
+<td>TSH</td>
+</tr>
+<tr>
+<td>Hyperthyroïdie</td>
+<td>0,5-1 %</td>
+<td>Tachycardie, amaigrissement, tremblement</td>
+<td>TSH</td>
+</tr>
+<tr>
+<td>Hyperparathyroïdie</td>
+<td>0,5 %</td>
+<td>Hypercalcémie, lithiases</td>
+<td>Ca2+, PTH</td>
+</tr>
+<tr>
+<td>Acromégalie</td>
+<td>&lt; 0,1 %</td>
+<td>Extrémités élargies, prognathisme</td>
+<td>IGF-1</td>
+</tr>
+<tr>
+<td>Polycythémie vraie</td>
+<td>&lt; 0,1 %</td>
+<td>Pléthore, prurit, splénomégalie</td>
+<td>NFS, EPO</td>
+</tr>
+<tr>
+<td>Coarctation</td>
+<td>0,1 %</td>
+<td>ΔPA bras/jambes, souffle dorsal</td>
+<td>Écho-Doppler</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="395-quiz-module-37-39">39.5 Quiz Module 37-39</h2>
+<h3 id="bronze-connaissances-fondamentales">🥉 Bronze — Connaissances fondamentales</h3>
+<p><strong>Q1.</strong> Quel est le test de dépistage de l'hyperaldostéronisme primaire ?<br />
+- A) Cortisol libre urinaire<br />
+- B) Rapport aldostérone/rénine<br />
+- C) Métanéphrines plasmatiques<br />
+- D) Test de freinage à la dexaméthasone</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le rapport aldostérone/rénine (RAR) est le test de dépistage de 1ère intention de l'HAP.</p>
+</blockquote>
+<p><strong>Q2.</strong> La triade de Menard dans le phéochromocytome associe :<br />
+- A) HTA + bradycardie + flush<br />
+- B) Céphalées + sueurs + palpitations<br />
+- C) Obésité + vergetures + HTA<br />
+- D) Polyurie + polydipsie + HTA</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La triade classique du phéochromocytome : céphalées pulsatiles, sueurs, palpitations/tachycardie.</p>
+</blockquote>
+<h3 id="argent-application-clinique">🥈 Argent — Application clinique</h3>
+<p><strong>Q3.</strong> Pourquoi ne faut-il jamais débuter par un β-bloquant dans le phéochromocytome ?<br />
+- A) Car il est inefficace<br />
+- B) Car il bloque la vasodilatation β2, laissant l'effet α1 vasoconstricteur libre → crise hypertensive<br />
+- C) Car il provoque une bradycardie<br />
+- D) Car il est contre-indiqué</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Sans α-blocage préalable, le β-bloquant supprime la vasodilatation β2 médiée, potentialisant l'effet vasoconstricteur α1 des catécholamines en excès.</p>
+</blockquote>
+<h3 id="or-expertise">🥇 Or — Expertise</h3>
+<p><strong>Q4.</strong> Quel test a la meilleure sensibilité pour le diagnostic de phéochromocytome ?<br />
+- A) Catécholamines urinaires 24h<br />
+- B) Métanéphrines urinaires 24h<br />
+- C) Métanéphrines libres plasmatiques<br />
+- D) Test de stimulation par le glucagon</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — Les métanéphrines libres plasmatiques ont la meilleure sensibilité (97 %) pour le diagnostic de phéochromocytome (métabolites stables, moins sensibles aux facteurs préanalytiques).</p>
+</blockquote>
+<h3 id="diamant-excellence">💎 Diamant — Excellence</h3>
+<p><strong>Q5.</strong> Un patient avec HAP et adénome unilatéral confirmé par cathétérisme des veines surrénaliennes est opéré. Quel taux de guérison de l'HTA peut-on espérer ?<br />
+- A) 100 % de guérison<br />
+- B) 35-60 % de guérison (normalisation PA), 100 % d'amélioration<br />
+- C) 10-15 %<br />
+- D) La chirurgie ne change pas la PA</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Après surrénalectomie pour adénome de Conn : guérison (normalisation PA sans traitement) dans 35-60 %, amélioration (réduction du nombre de médicaments) dans 100 %. La persistance d'HTA est liée aux lésions vasculaires préexistantes ou à une hyperplasie controlatérale.</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

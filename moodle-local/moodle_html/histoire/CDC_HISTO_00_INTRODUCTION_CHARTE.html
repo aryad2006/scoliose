@@ -1,0 +1,458 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-histoire-de-lorthopedie">🦴 CAHIER DES CHARGES — FORMATION HISTOIRE DE L'ORTHOPÉDIE</h1>
+<h2 id="de-lantiquite-a-nos-jours-5000-ans-dinnovation-au-service-du-squelette">De l'Antiquité à nos jours : 5000 ans d'innovation au service du squelette</h2>
+<hr />
+<p><strong>Badge formation</strong> : 🦴 HISTOIRE DE L'ORTHOPÉDIE<br />
+<strong>Date</strong> : 14 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Histoire de l'Orthopédie — Des origines à l'ère bionique<br />
+<strong>Plateforme</strong> : VERTEX© (Virtual Environment for Rachis Training and EXploration)<br />
+<strong>Public cible</strong> : Chirurgiens orthopédistes, internes, médecins généralistes, kinésithérapeutes, historiens de la médecine<br />
+<strong>Prérequis</strong> : Connaissances médicales de base<br />
+<strong>Durée estimée</strong> : 30 heures (auto-formation)<br />
+<strong>Couleur dominante</strong> : Bordeaux historique <code>#8B1A1A</code><br />
+<strong>Couleur accent</strong> : Or antique <code>#B8860B</code></p>
+<hr />
+<h2 id="1-objectifs-pedagogiques-generaux">1. OBJECTIFS PÉDAGOGIQUES GÉNÉRAUX</h2>
+<h3 id="11-objectif-principal">1.1 Objectif principal</h3>
+<p>Retracer l'évolution complète de l'orthopédie depuis les premières traces de traitement des fractures dans l'Antiquité jusqu'aux technologies bioniques et à la médecine régénérative du XXIe siècle, en mettant en lumière les figures fondatrices, les innovations clés, les ruptures conceptuelles et les contextes socio-historiques qui ont façonné cette discipline.</p>
+<h3 id="12-objectifs-specifiques">1.2 Objectifs spécifiques</h3>
+<p>À l'issue de cette formation, l'apprenant sera capable de :</p>
+<ol>
+<li>Situer chronologiquement les grandes étapes de l'orthopédie dans leur contexte historique</li>
+<li>Identifier les figures fondatrices et leurs contributions majeures</li>
+<li>Comprendre l'évolution des concepts biomécaniques et chirurgicaux</li>
+<li>Analyser les ruptures technologiques qui ont transformé la pratique</li>
+<li>Apprécier l'impact des guerres et des catastrophes sur l'avancée de la discipline</li>
+<li>Relier les innovations passées aux pratiques contemporaines</li>
+<li>Développer une vision prospective de l'orthopédie de demain</li>
+</ol>
+<hr />
+<h2 id="2-architecture-de-la-formation">2. ARCHITECTURE DE LA FORMATION</h2>
+<h3 id="21-plan-general-7-parties-25-modules">2.1 Plan général — 7 parties, 25 modules</h3>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Titre</th>
+<th>Modules</th>
+<th>Période couverte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>Introduction et charte</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>01</td>
+<td>Antiquité et Moyen Âge</td>
+<td>M01-M04</td>
+<td>~3000 av. J.-C. – 1450</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Renaissance et Époque Classique</td>
+<td>M05-M08</td>
+<td>1450 – 1800</td>
+</tr>
+<tr>
+<td>03</td>
+<td>XIXe siècle — Naissance de l'orthopédie moderne</td>
+<td>M09-M13</td>
+<td>1800 – 1900</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Première moitié du XXe siècle</td>
+<td>M14-M17</td>
+<td>1900 – 1950</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Seconde moitié du XXe siècle</td>
+<td>M18-M21</td>
+<td>1950 – 2000</td>
+</tr>
+<tr>
+<td>06</td>
+<td>XXIe siècle et perspectives futures</td>
+<td>M22-M25</td>
+<td>2000 – 2030+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-liste-detaillee-des-modules">2.2 Liste détaillée des modules</h3>
+<p><strong>PARTIE 1 — ANTIQUITÉ ET MOYEN ÂGE (M01-M04)</strong></p>
+<ul>
+<li><strong>M01</strong> : L'orthopédie dans l'Égypte ancienne et la Mésopotamie</li>
+<li><strong>M02</strong> : La médecine osseuse gréco-romaine (Hippocrate, Galien, Celse)</li>
+<li><strong>M03</strong> : L'orthopédie dans les médecines orientales (arabe, indienne, chinoise)</li>
+<li><strong>M04</strong> : Le Moyen Âge occidental — entre stagnation et transmission</li>
+</ul>
+<p><strong>PARTIE 2 — RENAISSANCE ET ÉPOQUE CLASSIQUE (M05-M08)</strong></p>
+<ul>
+<li><strong>M05</strong> : La Renaissance anatomique (Vésale, Paré, Fabrice d'Acquapendente)</li>
+<li><strong>M06</strong> : Nicolas Andry et la naissance du mot « orthopédie » (1741)</li>
+<li><strong>M07</strong> : Les chirurgiens des Lumières (Petit, Pott, Hunter, Desault)</li>
+<li><strong>M08</strong> : Les premières institutions orthopédiques et la gymnastique médicale</li>
+</ul>
+<p><strong>PARTIE 3 — XIXe SIÈCLE (M09-M13)</strong></p>
+<ul>
+<li><strong>M09</strong> : L'anesthésie et l'antisepsie — les deux révolutions</li>
+<li><strong>M10</strong> : Les pères fondateurs (Stromeyer, Little, Sayre, Volkmann, Ollier)</li>
+<li><strong>M11</strong> : La radiographie de Röntgen (1895) — voir à travers le corps</li>
+<li><strong>M12</strong> : L'ostéosynthèse pionnière — vis, plaques et premières fixations</li>
+<li><strong>M13</strong> : L'orthopédie pédiatrique et la lutte contre la poliomyélite</li>
+</ul>
+<p><strong>PARTIE 4 — PREMIÈRE MOITIÉ DU XXe SIÈCLE (M14-M17)</strong></p>
+<ul>
+<li><strong>M14</strong> : La Première Guerre mondiale — traumatologie de masse et innovations</li>
+<li><strong>M15</strong> : L'entre-deux-guerres — structuration académique et premières prothèses</li>
+<li><strong>M16</strong> : La Seconde Guerre mondiale — antibiotiques, fixateurs externes, réhabilitation</li>
+<li><strong>M17</strong> : Smith-Petersen, Küntscher et les fondations de l'ostéosynthèse moderne</li>
+</ul>
+<p><strong>PARTIE 5 — SECONDE MOITIÉ DU XXe SIÈCLE (M18-M21)</strong></p>
+<ul>
+<li><strong>M18</strong> : Sir John Charnley et la révolution de l'arthroplastie totale de hanche</li>
+<li><strong>M19</strong> : L'essor de l'ostéosynthèse AO/ASIF (Müller, Allgöwer, Willenegger)</li>
+<li><strong>M20</strong> : L'arthroscopie — de la curiosité diagnostique à la chirurgie mini-invasive</li>
+<li><strong>M21</strong> : Ilizarov et la révolution de l'ostéogenèse en distraction</li>
+</ul>
+<p><strong>PARTIE 6 — XXIe SIÈCLE ET PERSPECTIVES (M22-M25)</strong></p>
+<ul>
+<li><strong>M22</strong> : La chirurgie assistée par ordinateur et la robotique orthopédique</li>
+<li><strong>M23</strong> : Les biomatériaux et l'impression 3D en orthopédie</li>
+<li><strong>M24</strong> : La médecine régénérative — cellules souches, thérapie génique, ingénierie tissulaire</li>
+<li><strong>M25</strong> : L'orthopédie de demain — exosquelettes, implants intelligents, IA chirurgicale</li>
+</ul>
+<hr />
+<h2 id="3-conventions-et-charte">3. CONVENTIONS ET CHARTE</h2>
+<h3 id="31-tags-medias">3.1 Tags médias</h3>
+<p>Format : <code>&gt; [MEDIA: {EMOJI} MHISTO{module}-S{section}-{numéro} — {TITRE}]</code></p>
+<p>Types de médias utilisés :<br />
+- 🖼️ : Illustrations historiques, gravures, portraits<br />
+- 📜 : Documents d'époque, manuscrits, traités originaux<br />
+- 🗺️ : Cartes géographiques, diffusion des connaissances<br />
+- 🔬 : Instruments chirurgicaux historiques<br />
+- 📊 : Frises chronologiques, timelines interactives<br />
+- 🎬 : Vidéos documentaires, reconstitutions<br />
+- 🏛️ : Lieux historiques, musées, collections<br />
+- 📷 : Photographies d'époque</p>
+<h3 id="32-quiz">3.2 Quiz</h3>
+<ul>
+<li>8-12 questions par module</li>
+<li>4 niveaux de difficulté : 🥉 Bronze, 🥈 Argent, 🥇 Or, 💎 Diamant</li>
+<li>Questions contextualisées : relier les faits historiques aux pratiques actuelles</li>
+</ul>
+<h3 id="33-code-couleur">3.3 Code couleur</h3>
+<ul>
+<li><strong>Bordeaux historique <code>#8B1A1A</code></strong> : titres H1 et H2</li>
+<li><strong>Or antique <code>#B8860B</code></strong> : titres H3, accents, dates clés</li>
+<li><strong>Fond parchemin</strong> : encadrés « Document d'époque »</li>
+<li><strong>Fond gris clair</strong> : encadrés « Contexte historique »</li>
+</ul>
+<h3 id="34-encadres-speciaux">3.4 Encadrés spéciaux</h3>
+<ul>
+<li><strong>📜 DOCUMENT D'ÉPOQUE</strong> : citations et extraits de textes originaux</li>
+<li><strong>👤 PORTRAIT</strong> : biographies condensées des figures clés</li>
+<li><strong>🔑 ÉTAPE CLÉ</strong> : jalons fondamentaux de l'histoire orthopédique</li>
+<li><strong>🔗 LIEN AVEC LA PRATIQUE ACTUELLE</strong> : pont entre passé et présent</li>
+<li><strong>⚔️ CONTEXTE HISTORIQUE</strong> : événements socio-politiques influençant la discipline</li>
+</ul>
+<hr />
+<h2 id="4-sources-et-references-bibliographiques">4. SOURCES ET RÉFÉRENCES BIBLIOGRAPHIQUES</h2>
+<h3 id="41-ouvrages-de-reference">4.1 Ouvrages de référence</h3>
+<ol>
+<li><strong>Peltier LF</strong> — <em>Orthopedics: A History and Iconography</em>, Norman Publishing, 1993</li>
+<li><strong>Le Vay D</strong> — <em>The History of Orthopaedics</em>, Parthenon Publishing, 1990</li>
+<li><strong>Rang M</strong> — <em>The Story of Orthopaedics</em>, W.B. Saunders, 2000</li>
+<li><strong>Buckwalter JA, Einhorn TA, Simon SR</strong> — <em>Orthopaedic Basic Science</em>, AAOS, 2000</li>
+<li><strong>Bick EM</strong> — <em>Source Book of Orthopaedics</em>, Hafner, 1968 (réédition)</li>
+<li><strong>Mostofi SB</strong> — <em>Who's Who in Orthopedics</em>, Springer, 2005</li>
+<li><strong>Valentin B</strong> — <em>Geschichte der Orthopädie</em>, Thieme, 1961</li>
+<li><strong>Andry N</strong> — <em>L'Orthopédie ou l'Art de prévenir et de corriger dans les enfants les difformités du corps</em>, 1741 (texte original)</li>
+<li><strong>Malgaigne JF</strong> — <em>Traité des fractures et des luxations</em>, Baillière, 1847</li>
+<li><strong>Charnley J</strong> — <em>Low Friction Arthroplasty of the Hip</em>, Springer, 1979</li>
+</ol>
+<h3 id="42-articles-et-revues">4.2 Articles et revues</h3>
+<ul>
+<li>Journal of Bone and Joint Surgery (JBJS) — articles historiques</li>
+<li>Clinical Orthopaedics and Related Research (CORR) — section « History »</li>
+<li>Revue de Chirurgie Orthopédique et Traumatologique (RCOT) — articles rétrospectifs</li>
+<li>Bulletin de l'Académie Nationale de Médecine — archives historiques</li>
+</ul>
+<h3 id="43-ressources-museographiques">4.3 Ressources muséographiques</h3>
+<ul>
+<li>Musée d'Histoire de la Médecine, Paris (Université Paris-Cité)</li>
+<li>Hunterian Museum, Royal College of Surgeons, Londres</li>
+<li>Deutsches Orthopädisches Geschichts- und Forschungsmuseum, Francfort</li>
+<li>Musée Dupuytren, Paris (collections transférées)</li>
+<li>National Museum of Health and Medicine, Washington D.C.</li>
+</ul>
+<hr />
+<h2 id="5-anti-plagiat-et-attribution">5. ANTI-PLAGIAT ET ATTRIBUTION</h2>
+<ul>
+<li>Toute donnée historique est formulée de manière prescriptive (reformulation originale)</li>
+<li>Les citations directes sont entre guillemets avec attribution complète</li>
+<li>Les dates et faits sont vérifiés par recoupement de sources multiples</li>
+<li>Les classifications et nomenclatures sont indiquées « adapté de [source] »</li>
+<li>Les illustrations historiques tombées dans le domaine public sont identifiées comme telles</li>
+</ul>
+<hr />
+<h2 id="6-frise-chronologique-synthetique">6. FRISE CHRONOLOGIQUE SYNTHÉTIQUE</h2>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO00-S06-001 — FRISE CHRONOLOGIQUE INTERACTIVE : 5000 ans d'orthopédie]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Période</th>
+<th>Événement clé</th>
+<th>Figure(s)</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~2600 av. J.-C.</td>
+<td>Premières attelles égyptiennes</td>
+<td>Prêtres-médecins</td>
+<td>Première immobilisation documentée</td>
+</tr>
+<tr>
+<td>~1600 av. J.-C.</td>
+<td>Papyrus Edwin Smith</td>
+<td>Imhotep (attribué)</td>
+<td>Premier traité de traumatologie</td>
+</tr>
+<tr>
+<td>~400 av. J.-C.</td>
+<td><em>Peri Arthron</em> et <em>Peri Agmon</em></td>
+<td>Hippocrate</td>
+<td>Fondements de la réduction des fractures</td>
+</tr>
+<tr>
+<td>~170 ap. J.-C.</td>
+<td>Anatomie systématique</td>
+<td>Galien</td>
+<td>Nomenclature osseuse et musculaire</td>
+</tr>
+<tr>
+<td>~1000</td>
+<td><em>Canon de la médecine</em></td>
+<td>Avicenne (Ibn Sina)</td>
+<td>Synthèse gréco-arabe</td>
+</tr>
+<tr>
+<td>1543</td>
+<td><em>De Humani Corporis Fabrica</em></td>
+<td>André Vésale</td>
+<td>Révolution anatomique</td>
+</tr>
+<tr>
+<td>1545</td>
+<td><em>La Méthode de traicter les playes</em></td>
+<td>Ambroise Paré</td>
+<td>Chirurgie moderne des plaies</td>
+</tr>
+<tr>
+<td>1741</td>
+<td><em>L'Orthopédie</em></td>
+<td>Nicolas Andry</td>
+<td>Naissance du mot et du concept</td>
+</tr>
+<tr>
+<td>1768</td>
+<td>Description du mal de Pott</td>
+<td>Percivall Pott</td>
+<td>Tuberculose vertébrale</td>
+</tr>
+<tr>
+<td>1831</td>
+<td>Première ténotomie sous-cutanée</td>
+<td>Louis Stromeyer</td>
+<td>Chirurgie orthopédique conservatrice</td>
+</tr>
+<tr>
+<td>1846</td>
+<td>Première anesthésie à l'éther</td>
+<td>William Morton</td>
+<td>Chirurgie indolore</td>
+</tr>
+<tr>
+<td>1867</td>
+<td>Antisepsie chirurgicale</td>
+<td>Joseph Lister</td>
+<td>Réduction de la mortalité infectieuse</td>
+</tr>
+<tr>
+<td>1895</td>
+<td>Découverte des rayons X</td>
+<td>Wilhelm Röntgen</td>
+<td>Diagnostic radiologique</td>
+</tr>
+<tr>
+<td>1907</td>
+<td>Première ostéosynthèse par plaque</td>
+<td>Albin Lambotte</td>
+<td>Fixation interne des fractures</td>
+</tr>
+<tr>
+<td>1914-18</td>
+<td>Traumatologie de guerre</td>
+<td>Nombreux</td>
+<td>Traction, fixation externe, greffes</td>
+</tr>
+<tr>
+<td>1936</td>
+<td>Clou centromédullaire</td>
+<td>Gerhard Küntscher</td>
+<td>Enclouage intramédullaire</td>
+</tr>
+<tr>
+<td>1940</td>
+<td>Prothèse de hanche moule</td>
+<td>Marius Smith-Petersen</td>
+<td>Première arthroplastie</td>
+</tr>
+<tr>
+<td>1943</td>
+<td>Pénicilline en clinique</td>
+<td>Alexander Fleming / Florey</td>
+<td>Révolution anti-infectieuse</td>
+</tr>
+<tr>
+<td>1958</td>
+<td>Fondation AO/ASIF</td>
+<td>Müller, Allgöwer et al.</td>
+<td>Systématisation de l'ostéosynthèse</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Arthroplastie basse friction</td>
+<td>Sir John Charnley</td>
+<td>Prothèse totale de hanche moderne</td>
+</tr>
+<tr>
+<td>1951-80</td>
+<td>Ostéogenèse en distraction</td>
+<td>Gavriil Ilizarov</td>
+<td>Régénération osseuse dirigée</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Arthroscopie opératoire</td>
+<td>Masaki Watanabe</td>
+<td>Chirurgie mini-invasive articulaire</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Navigation chirurgicale</td>
+<td>Plusieurs équipes</td>
+<td>Chirurgie assistée par ordinateur</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Implants sur mesure 3D</td>
+<td>Plusieurs équipes</td>
+<td>Personnalisation prothétique</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Chirurgie robotique</td>
+<td>MAKO, ROSA, NAVIO</td>
+<td>Précision sub-millimétrique</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>IA et médecine régénérative</td>
+<td>Recherche mondiale</td>
+<td>Vers l'orthopédie augmentée</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

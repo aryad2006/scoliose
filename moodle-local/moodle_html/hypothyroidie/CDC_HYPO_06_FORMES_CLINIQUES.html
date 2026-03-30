@@ -1,0 +1,569 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-06-formes-cliniques-particulieres">PARTIE 06 — Formes Cliniques Particulières</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-18-hypothyroidie-et-grossesse">MODULE 18 — Hypothyroïdie et Grossesse</h2>
+<h3 id="181-epidemiologie-et-enjeux">18.1 Épidémiologie et enjeux</h3>
+<p>L'hypothyroïdie manifeste touche <strong>0,3-0,5 %</strong> des grossesses, l'hypothyroïdie frustre <strong>2-3 %</strong> (adapté de Stagnaro-Green et al., ATA 2011).</p>
+<p>Les conséquences sont maternelles et fœtales :</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO18-S1-001 — Conséquences de l'hypothyroïdie maternelle sur le fœtus selon le trimestre : fenêtres développementales]</p>
+</blockquote>
+<p><strong>Conséquences maternelles</strong> :<br />
+- Avortement spontané (RR × 2)<br />
+- Prééclampsie, HTA gravidique<br />
+- Anémie, décollement placentaire<br />
+- Césarienne, hémorragie du post-partum<br />
+- Dépression du post-partum</p>
+<p><strong>Conséquences fœtales</strong> (surtout T1) :<br />
+- Retard neuro-intellectuel (QI moyen réduit de 7 points si HT maternelle non traitée)<br />
+- Troubles de la myélinisation<br />
+- Prématurité, RCIU, mort in utero<br />
+- Hypothyroïdie néonatale transitoire (TRAb bloquants)</p>
+<hr />
+<h3 id="182-physiologie-thyroidienne-en-grossesse">18.2 Physiologie thyroïdienne en grossesse</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO18-S2-001 — Variations de la TSH, TBG, hCG et T4 totale au cours de la grossesse normale]</p>
+</blockquote>
+<p><strong>Modifications thyroïdiennes normales</strong> (adapté de Glinoer, Thyroid 1999) :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Variation</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TBG</strong></td>
+<td>↑ × 2-3</td>
+<td>Œstrogènes → ↑ synthèse hépatique, ↓ dégradation</td>
+</tr>
+<tr>
+<td><strong>T4 totale</strong></td>
+<td>↑ × 1,5</td>
+<td>Adaptation à l'augmentation de TBG</td>
+</tr>
+<tr>
+<td><strong>T4 libre</strong></td>
+<td>↓ légère</td>
+<td>Dilution (hémodilution), TBG élevée</td>
+</tr>
+<tr>
+<td><strong>hCG</strong></td>
+<td>Pic T1</td>
+<td>Stimulation du TSHR (activité TSH-like)</td>
+</tr>
+<tr>
+<td><strong>TSH</strong></td>
+<td>↓ T1 (0,1-2,5)</td>
+<td>Frein hCG sur TSH</td>
+</tr>
+<tr>
+<td><strong>Iode urinaire</strong></td>
+<td>↑ fuite</td>
+<td>↑ FGR, clairance iodée élevée</td>
+</tr>
+<tr>
+<td><strong>Volume thyroïdien</strong></td>
+<td>↑ 20-30 %</td>
+<td>↑ demande iodée, hCG</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — La T4 totale n'est pas interprétable en grossesse (multiplier la borne supérieure par 1,5 après T1). Utiliser la T4L ou, si possible, la dialyse à l'équilibre.</p>
+<hr />
+<h3 id="183-valeurs-cibles-de-tsh-par-trimestre">18.3 Valeurs cibles de TSH par trimestre</h3>
+<p><strong>Recommandations ATA 2017 / ETA 2023 (adapté)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Trimestre</th>
+<th>Cible TSH (mUI/L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1er trimestre</strong></td>
+<td>&lt; 2,5 (idéalement 0,5-1,5)</td>
+</tr>
+<tr>
+<td><strong>2ème trimestre</strong></td>
+<td>&lt; 3,0</td>
+</tr>
+<tr>
+<td><strong>3ème trimestre</strong></td>
+<td>&lt; 3,5</td>
+</tr>
+<tr>
+<td><strong>Post-partum</strong></td>
+<td>0,5-4,0 (retour normes habituelles)</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Une TSH à 3,2 mUI/L est normale chez un adulte, mais traduit une hypothyroïdie frustre au T1. L'interprétation de la TSH en grossesse exige des valeurs de référence trimestre-spécifiques.</div>
+
+<hr />
+<h3 id="184-depistage-et-prise-en-charge">18.4 Dépistage et prise en charge</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO18-S4-001 — Algorithme dépistage et traitement hypothyroïdie en grossesse : de la préconception au post-partum]</p>
+</blockquote>
+<p><strong>Dépistage ciblé (adapté de ATA 2017)</strong> — femmes à risque :<br />
+- ATCD personnels ou familiaux de thyropathie auto-immune<br />
+- Anti-TPO ou anti-Tg positifs connus<br />
+- Goitre<br />
+- RAI ou chirurgie thyroïdienne antérieure<br />
+- Diabète de type 1 ou maladie auto-immune<br />
+- Fausse couche répétée ou infertilité<br />
+- Zone de carence iodée<br />
+- Obésité (IMC &gt; 40 kg/m²)</p>
+<p><strong>Conduite à tenir</strong> :<br />
+- <strong>HT constituée</strong> préconceptionnelle → optimiser TSH &lt; 2,5 avant conception, augmenter LT4 dès grossesse confirmée (+25-30 %)<br />
+- <strong>HT frustre</strong> (TSH 2,5-10 mUI/L) avec anti-TPO + → traiter par LT4<br />
+- <strong>HT frustre</strong> sans anti-TPO → décision au cas par cas selon TSH et ATCD<br />
+- <strong>Anti-TPO +</strong> seuls (TSH normale) → surveillance mensuelle T1, puis T2/T3</p>
+<p><strong>Supplémentation en iode</strong> :<br />
+- 150-200 µg/j de KI recommandés dès préconception jusqu'à fin d'allaitement<br />
+- En France (carence modérée) : supplémentation recommandée mais non systématiquement prescrite</p>
+<hr />
+<h3 id="185-adaptation-de-la-dose-de-levothyroxine-en-grossesse">18.5 Adaptation de la dose de lévothyroxine en grossesse</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO18-S5-001 — Protocole d'augmentation de dose LT4 en grossesse : prise en charge pratique]</p>
+</blockquote>
+<p><strong>Femme déjà sous LT4</strong> :<br />
+- Dès grossesse confirmée : <strong>augmenter la dose de 25-30 %</strong> (règle des 2 comprimés supplémentaires par semaine)<br />
+- Contrôle TSH + T4L à <strong>4-6 semaines</strong> de chaque modification<br />
+- Fréquence de surveillance : toutes les 4-6 semaines au T1, puis toutes les 6-8 semaines T2-T3</p>
+<p><strong>Après l'accouchement</strong> :<br />
+- Retour à la dose préconceptionnelle dès J1 post-partum<br />
+- TSH de contrôle à 6 semaines du post-partum<br />
+- Surveillance thyroïdite du post-partum (voir M10)</p>
+<hr />
+<h3 id="quiz-module-18">QUIZ MODULE 18</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la cible de TSH au 1er trimestre de grossesse ?<br />
+A) &lt; 4,0 mUI/L B) &lt; 3,0 mUI/L <strong>C) &lt; 2,5 mUI/L</strong> D) &lt; 1,0 mUI/L</p>
+<p><strong>🥈 Q2</strong> — Une femme enceinte de 8 SA sous LT4 100 µg/j, TSH préconceptionnelle à 1,8 mUI/L. Comment adapter le traitement ?<br />
+A) Ne pas modifier <strong>B) Augmenter de 25-30 % (125 µg/j) dès maintenant, contrôle TSH à 4-6 semaines</strong> C) Attendre TSH de contrôle avant toute modification D) Arrêter LT4 pendant le T1</p>
+<p><strong>🥇 Q3</strong> — Une femme avec anti-TPO à 250 UI/mL, TSH à 2,2 mUI/L, 6 SA. Quelle est la conduite ?<br />
+A) Initier LT4 car anti-TPO élevés <strong>B) Surveillance mensuelle TSH au T1, pas de traitement si TSH &lt; 2,5</strong> C) Scintigraphie thyroïdienne D) Écho-Doppler thyroïdien urgent</p>
+<p><strong>💎 Q4</strong> — Quel est le mécanisme de l'effet frein de l'hCG sur la TSH au 1er trimestre ?<br />
+<strong>A) L'hCG partage une sous-unité α avec la TSH et stimule faiblement le TSHR, inhibant la sécrétion hypophysaire de TSH par rétrocontrôle</strong> B) L'hCG bloque directement la TRH hypothalamique C) L'hCG stimule la sécrétion de somatostatine D) L'hCG inhibe la conversion T4→T3 placentaire</p>
+<hr />
+<h2 id="module-19-hypothyroidie-de-lenfant-et-de-ladolescent">MODULE 19 — Hypothyroïdie de l'Enfant et de l'Adolescent</h2>
+<h3 id="191-hypothyroidie-congenitale-rappel-clinique">19.1 Hypothyroïdie congénitale (rappel clinique)</h3>
+<p>L'hypothyroïdie congénitale (incidence 1/3 000 naissances) est détectée par dépistage néonatal (Module 11).</p>
+<p><strong>Si traitement tardif ou absent</strong> :<br />
+- <strong>Crétinisme</strong> : retard mental sévère, surdité, spasticité<br />
+- Ces formes sont désormais exceptionnelles dans les pays dotés d'un programme de dépistage</p>
+<hr />
+<h3 id="192-hypothyroidie-acquise-de-lenfant">19.2 Hypothyroïdie acquise de l'enfant</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO19-S2-001 — Courbe staturale : cassure de la vitesse de croissance révélatrice d'hypothyroïdie chez l'enfant]</p>
+</blockquote>
+<p><strong>Cause principale</strong> : Thyroïdite de Hashimoto (auto-immune)<br />
+- Incidence : 1,3/1 000 filles, 0,3/1 000 garçons (sex-ratio 4:1)<br />
+- Pic de fréquence : 8-15 ans, période péri-pubertaire</p>
+<p><strong>Manifestations cliniques spécifiques pédiatriques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Description</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cassure staturale</strong></td>
+<td>Ralentissement vitesse de croissance &lt; -1 DS/an</td>
+<td>Déficit de sécrétion IGF-1/GH</td>
+</tr>
+<tr>
+<td><strong>Avance d'âge osseux</strong></td>
+<td>Paradoxale en cas d'HT longue durée</td>
+<td>Confusion avec puberté précoce</td>
+</tr>
+<tr>
+<td><strong>Retard pubertaire</strong></td>
+<td>Aménorrhée primaire, retard de développement</td>
+<td>Inhibition axe gonadotrope</td>
+</tr>
+<tr>
+<td><strong>Pseudo-précocité pubertaire</strong></td>
+<td>Ménarche prématurée, gynécomastie</td>
+<td>Effet FSH-like de la TSH très élevée (signe de Van Wyk)</td>
+</tr>
+<tr>
+<td><strong>Difficultés scolaires</strong></td>
+<td>Trouble de l'attention, lenteur</td>
+<td>Ralentissement cognitif</td>
+</tr>
+<tr>
+<td><strong>Myopathie</strong></td>
+<td>Hypertrophie musculaire (syndrome de Kocher-Debré-Sémélaigne)</td>
+<td>Infiltration mucoïde</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Une cassure de la courbe de croissance doit systématiquement faire doser la TSH. Le diagnostic d'hypothyroïdie peut être posé avant l'apparition de tout autre signe clinique.</div>
+
+<hr />
+<h3 id="193-traitement-de-lhypothyroidie-de-lenfant">19.3 Traitement de l'hypothyroïdie de l'enfant</h3>
+<p><strong>Posologie LT4 selon l'âge</strong> (adapté de ETA 2014, Jonklaas et al.) :</p>
+<table>
+<thead>
+<tr>
+<th>Âge</th>
+<th>Dose LT4 (µg/kg/j)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-3 mois</td>
+<td>10-15</td>
+</tr>
+<tr>
+<td>3-6 mois</td>
+<td>8-10</td>
+</tr>
+<tr>
+<td>6-12 mois</td>
+<td>6-8</td>
+</tr>
+<tr>
+<td>1-5 ans</td>
+<td>5-6</td>
+</tr>
+<tr>
+<td>6-12 ans</td>
+<td>4-5</td>
+</tr>
+<tr>
+<td>&gt; 12 ans</td>
+<td>2-3</td>
+</tr>
+<tr>
+<td>Adulte</td>
+<td>1,5-1,7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cibles thérapeutiques pédiatriques</strong> :<br />
+- TSH : 0,5-2,0 mUI/L (enfant traité pour hypothyroïdie congénitale ou acquise)<br />
+- T4L : limite supérieure de la normale pour l'âge<br />
+- Rythme de surveillance : tous les 6-12 mois en période stable, plus fréquent si croissance active ou modification de dose</p>
+<hr />
+<h3 id="194-hypothyroidie-et-puberte">19.4 Hypothyroïdie et puberté</h3>
+<p><strong>Effet de l'HT non traitée sur l'axe gonadotrope</strong> :</p>
+<p>La TSH très élevée stimule de façon croisée les récepteurs FSH (homologie structurale des sous-unités alpha) → <strong>syndrome de Van Wyk-Grumbach</strong> :<br />
+- Développement mammaire prématuré<br />
+- Ménarche avant 8 ans<br />
+- Galactorrhée (prolactine élevée secondairement)<br />
+- Kyste ovarien bilatéral (stimulation FSH-like)</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Un syndrome de Van Wyk-Grumbach ne nécessite pas de traitement spécifique (agonistes GnRH) : la correction de l'hypothyroïdie suffit à régresser les signes de pseudo-précocité pubertaire.</p>
+<hr />
+<h3 id="quiz-module-19">QUIZ MODULE 19</h3>
+<p><strong>🥉 Q1</strong> — Quel est le pic de fréquence de la thyroïdite de Hashimoto chez l'enfant ?<br />
+A) 2-5 ans B) 5-8 ans <strong>C) 8-15 ans</strong> D) &gt; 15 ans</p>
+<p><strong>🥈 Q2</strong> — Une fillette de 10 ans présente une cassure de la courbe de croissance depuis 18 mois, IMC normal, TSH à 18 mUI/L, T4L basse. Quel traitement initier et à quelle dose ?<br />
+A) LT4 1,5 µg/kg/j <strong>B) LT4 4-5 µg/kg/j, contrôle TSH à 4-6 semaines</strong> C) LT4 10 µg/kg/j D) Attendre bilan osseux avant traitement</p>
+<p><strong>🥇 Q3</strong> — Une adolescente de 13 ans présente des ménarches à 8 ans, galactorrhée et kyste ovarien bilatéral. TSH à 95 mUI/L. Quelle est le diagnostic ?<br />
+<strong>A) Syndrome de Van Wyk-Grumbach sur hypothyroïdie sévère non traitée</strong> B) Tumeur sécrétante de FSH C) Puberté précoce centrale idiopathique D) Syndrome de Stein-Leventhal</p>
+<p><strong>💎 Q4</strong> — Quel est le mécanisme de l'hypertrophie musculaire dans le syndrome de Kocher-Debré-Sémélaigne ?<br />
+<strong>A) Accumulation de glycoaminoglycanes (infiltration mucoïde) et réduction de la dégradation des protéines musculaires dans un contexte de ralentissement métabolique</strong> B) Hyperkaliémie chronique C) Autoanticorps anti-musculaires D) Déficit en créatine</p>
+<hr />
+<h2 id="module-20-hypothyroidie-du-sujet-age">MODULE 20 — Hypothyroïdie du Sujet Âgé</h2>
+<h3 id="201-prevalence-et-particularites">20.1 Prévalence et particularités</h3>
+<p>L'hypothyroïdie (constituée + frustre) touche <strong>15-20 %</strong> des femmes de plus de 65 ans (adapté de Hollowell et al., 2002).</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO20-S1-001 — Prévalence hypothyroïdie selon l'âge et le sexe : données NHANES III]</p>
+</blockquote>
+<p><strong>Évolution physiologique de la TSH avec l'âge</strong> :<br />
+- La TSH augmente physiologiquement avec l'âge : la borne supérieure normale peut atteindre 6-7 mUI/L chez l'octogénaire (adapté de Surks et Hollowell, 2007)<br />
+- Importance de l'utilisation des valeurs de référence adaptées à l'âge pour éviter le surtraitement</p>
+<hr />
+<h3 id="202-presentation-clinique-atypique">20.2 Présentation clinique atypique</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO20-S2-001 — Comparaison signes cliniques hypothyroïdie adulte jeune vs sujet âgé]</p>
+</blockquote>
+<p><strong>Spécificités du sujet âgé</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Adulte jeune</th>
+<th>Sujet âgé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asthénie</td>
+<td>Présente</td>
+<td>Difficile à distinguer de la polypathologie</td>
+</tr>
+<tr>
+<td>Bradycardie</td>
+<td>Fréquente</td>
+<td>Peut être masquée par β-bloquants</td>
+</tr>
+<tr>
+<td>Syndrome dépressif</td>
+<td>Présent</td>
+<td>Mimé par la dépression sénile</td>
+</tr>
+<tr>
+<td>Troubles cognitifs</td>
+<td>Rares</td>
+<td>Mimés par démence débutante</td>
+</tr>
+<tr>
+<td>Hypothermie</td>
+<td>Peu fréquente</td>
+<td>Risque majeur (mortalité ++)</td>
+</tr>
+<tr>
+<td>Insuffisance cardiaque</td>
+<td>Rare</td>
+<td>Décompensation d'une ICC existante</td>
+</tr>
+<tr>
+<td>Ralentissement moteur</td>
+<td>Franc</td>
+<td>Confondu avec maladie de Parkinson</td>
+</tr>
+<tr>
+<td>Myopathie</td>
+<td>Possible</td>
+<td>Confondue avec sarcopénie</td>
+</tr>
+<tr>
+<td>Constipation</td>
+<td>Présente</td>
+<td>Polypathologie, médicaments</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Tout bilan de syndrome confusionnel aigu, de chute, de décompensation cardiaque inexpliquée, ou de démence rapidement progressive chez le sujet âgé doit inclure un dosage de TSH.</div>
+
+<hr />
+<h3 id="203-risque-cardiovasculaire-du-traitement-chez-le-sujet-age">20.3 Risque cardiovasculaire du traitement chez le sujet âgé</h3>
+<blockquote>
+<p>[MEDIA: 📈 MHYPO20-S3-001 — Risques associés au surdosage en LT4 chez le sujet âgé : fibrillation atriale, perte osseuse]</p>
+</blockquote>
+<p><strong>Risques spécifiques au sujet âgé sous LT4</strong> :<br />
+- <strong>Fibrillation atriale</strong> : risque × 3 si TSH &lt; 0,1 mUI/L chez ≥ 65 ans<br />
+- <strong>Perte osseuse</strong> : suppression chronique de la TSH → ostéoporose accélérée (TR os)<br />
+- <strong>Angine de poitrine</strong> : levée du freinage métabolique → démasquage insuffisance coronarienne latente</p>
+<hr />
+<h3 id="204-initiation-prudente-de-la-levothyroxine-chez-le-sujet-age">20.4 Initiation prudente de la lévothyroxine chez le sujet âgé</h3>
+<p><strong>Règle d'initiation chez &gt; 65 ans ou coronarien</strong> (adapté de HAS 2019) :</p>
+<ol>
+<li>Commencer à <strong>12,5-25 µg/j</strong> (vs 50 µg/j chez l'adulte jeune)</li>
+<li>Augmenter par paliers de 12,5-25 µg toutes les <strong>4-8 semaines</strong></li>
+<li>Cible TSH <strong>0,5-3,0 mUI/L</strong> (ne pas viser TSH basse)</li>
+<li>Ne pas traiter les HT frustres asymptomatiques ≥ 65 ans (TRUST trial 2017)</li>
+<li>ECG avant initiation si facteur de risque cardiovasculaire</li>
+</ol>
+<p>💡 <strong>POINT PRATIQUE</strong> — En cas de cardiopathie ischémique connue, une hospitalisation brève peut être justifiée pour initier la LT4 sous surveillance ECG continue (risque d'aggravation de l'angor).</p>
+<hr />
+<h3 id="205-traitement-de-lhypothyroidie-frustre-du-sujet-age">20.5 Traitement de l'hypothyroïdie frustre du sujet âgé</h3>
+<p><strong>Données de l'essai TRUST 2017 (adapté de Stott et al., NEJM 2017)</strong> :<br />
+- 737 patients ≥ 65 ans avec HT frustre (TSH 4,6-19,9 mUI/L)<br />
+- Randomisation LT4 vs placebo<br />
+- <strong>Résultat principal</strong> : Pas de différence significative sur le score de symptômes hypothyroïdiens, ni sur la qualité de vie à 1 an<br />
+- <strong>Conclusion</strong> : Le traitement de l'HT frustre asymptomatique chez ≥ 65 ans n'est pas recommandé en routine</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : TRUST ne s'applique qu'aux patients asymptomatiques ≥ 65 ans. Si TSH > 10 mUI/L, si anti-TPO +, si symptômes présents, ou si TSH en augmentation rapide, le traitement reste justifié quel que soit l'âge.</div>
+
+<hr />
+<h3 id="quiz-module-20">QUIZ MODULE 20</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la dose initiale de LT4 recommandée chez un sujet de 72 ans avec hypothyroïdie constitutive ?<br />
+A) 50 µg/j d'emblée B) 100 µg/j <strong>C) 12,5-25 µg/j</strong> D) Pas de traitement avant 80 ans</p>
+<p><strong>🥈 Q2</strong> — Un patient de 78 ans, HT frustre TSH 5,8 mUI/L, asymptomatique, pas de comorbidité thyroïdienne connue. Quelle est la conduite ?<br />
+A) LT4 25 µg/j immédiatement <strong>B) Surveillance (contrôle TSH à 6 mois), pas de traitement selon TRUST</strong> C) LT4 50 µg/j D) Thyroïdectomie</p>
+<p><strong>🥇 Q3</strong> — Une femme de 80 ans sous LT4 100 µg/j présente une fibrillation atriale paroxystique, TSH à 0,05 mUI/L. Quelle est la conduite ?<br />
+<strong>A) Réduire la dose de LT4 pour cible TSH 0,5-2,0 mUI/L, contrôle à 6 semaines — la TSH basse favorise la FA</strong> B) Augmenter la LT4, la FA n'est pas liée C) Arrêter la LT4 définitivement D) Ajouter un anti-thyroïdien de synthèse</p>
+<p><strong>💎 Q4</strong> — Quel est le mécanisme par lequel une hypothyroïdie peut décompenser une insuffisance cardiaque chez le sujet âgé ?<br />
+<strong>A) Réduction de la contractilité myocardique (expression ↓ chaîne lourde myosine α, ↓ SERCA2), bradycardie, augmentation des résistances vasculaires — se surajoute à une cardiopathie préexistante</strong> B) Augmentation de la volémie par rétention sodique C) Fibrillation ventriculaire D) Hyponatrémie de dilution</p>
+<hr />
+<h2 id="module-21-hypothyroidie-et-comorbidites">MODULE 21 — Hypothyroïdie et Comorbidités</h2>
+<h3 id="211-hypothyroidie-et-insuffisance-cardiaque">21.1 Hypothyroïdie et insuffisance cardiaque</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO21-S1-001 — Impact de l'hypothyroïdie sur la fonction cardiaque : mécanismes moléculaires et conséquences hémodynamiques]</p>
+</blockquote>
+<p><strong>Interactions bidirectionnelles</strong> :</p>
+<p><strong>HT → ICC</strong> :<br />
+- ↓ contractilité (↓ chaînes α-myosine, ↓ SERCA2a)<br />
+- ↓ fréquence cardiaque (bradycardie sinusale)<br />
+- ↑ résistances vasculaires systémiques<br />
+- ↓ débit cardiaque<br />
+- Épanchement péricardique (myxœdème)</p>
+<p><strong>Médicaments anti-ICC interférant avec la thyroïde</strong> :<br />
+- Amiodarone (anti-arythmique) → hypothyroïdie ou hyperthyroïdie (Module 10)<br />
+- Digoxine : absorption ↓ si malabsorption, effets modifiés par le statut thyroïdien</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Toujours doser la TSH avant d'initier l'amiodarone et tous les 6 mois pendant le traitement. Toujours doser la TSH lors du bilan d'une insuffisance cardiaque inexpliquée ou réfractaire.</p>
+<hr />
+<h3 id="212-hypothyroidie-et-troubles-psychiatriques">21.2 Hypothyroïdie et troubles psychiatriques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO21-S2-001 — Hypothyroïdie et dépression : mécanismes neurobiologiques et réponse au traitement]</p>
+</blockquote>
+<p><strong>Association HT – dépression</strong> :<br />
+- Prévalence de la dépression chez hypothyroïdiens non traités : <strong>30-50 %</strong><br />
+- Mécanismes : ↓ sérotonine (TR régule MAO), ↓ noradrénaline, ↓ dopamine, ↓ débit sanguin cérébral</p>
+<p><strong>Particularités cliniques</strong> :<br />
+- Dépression résistante aux antidépresseurs : doser TSH systématiquement<br />
+- Hypothyroïdie peut déclencher un épisode maniaque chez bipolaire<br />
+- Association HT – schizophrénie décrite (causalité discutée)</p>
+<p><strong>Conduite à tenir</strong> :<br />
+- Corriger l'HT avant d'attribuer la dépression à une cause psychiatrique primaire<br />
+- Si dépression persistante sous LT4 avec TSH normalisée → envisager combinaison LT4+LT3 (rôle de T3 dans la neurotransmission)</p>
+<hr />
+<h3 id="213-hypothyroidie-et-obesite">21.3 Hypothyroïdie et obésité</h3>
+<p><strong>Relation complexe</strong> :<br />
+- L'HT peut induire une prise de poids (≤ 5-8 kg) par : ↓ métabolisme de base, rétention hydrosodée, ↓ lipolyse<br />
+- L'obésité peut induire une TSH modérément élevée (2,5-5 mUI/L) par : hyperleptinémie, insulino-résistance → TSH faussement haute sans hypothyroïdie vraie</p>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Une TSH légèrement élevée chez un patient obèse ne traduit pas nécessairement une hypothyroïdie primaire. La perte de poids normalise souvent la TSH. Ne pas traiter une HT frustre de l'obèse sans évaluation complète.</div>
+
+<p><strong>Attentes thérapeutiques réalistes</strong> :<br />
+- La correction de l'HT ne réduit que modestement le poids (réduction de la composante hydrique)<br />
+- Les patients hypothyroïdiens traités ne perdent pas plus de poids que les euthyroïdiens (méta-analyses)<br />
+- Informer les patients pour éviter les attentes irréalistes</p>
+<hr />
+<h3 id="214-hypothyroidie-et-syndrome-metabolique">21.4 Hypothyroïdie et syndrome métabolique</h3>
+<p><strong>Liens physiopathologiques</strong> (adapté de Duntas et al., 2011) :</p>
+<table>
+<thead>
+<tr>
+<th>Composante syndrome métabolique</th>
+<th>Impact HT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dyslipidémie</td>
+<td>LDL ↑↑ (↓ récepteurs LDL, ↓ lipolyse)</td>
+</tr>
+<tr>
+<td>HTA</td>
+<td>↑ résistances vasculaires (FR modeste)</td>
+</tr>
+<tr>
+<td>Hyperglycémie</td>
+<td>↑ insulino-résistance (léger)</td>
+</tr>
+<tr>
+<td>Tour de taille</td>
+<td>↑ rétention hydrique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dyslipidémie hypothyroïdienne</strong> :<br />
+- LDL : + 30-50 % en moyenne<br />
+- HDL : légèrement diminué<br />
+- Triglycérides : légèrement augmentés<br />
+- LDL se normalise chez 90 % des patients après correction de l'HT</p>
+<p>💡 <strong>POINT PRATIQUE</strong> — Toujours éliminer une hypothyroïdie avant d'initier une statine pour dyslipidémie. La correction de l'HT peut suffire à normaliser le bilan lipidique et éviter une statinothérapie inutile.</p>
+<hr />
+<h3 id="215-hypothyroidie-et-fertilite">21.5 Hypothyroïdie et fertilité</h3>
+<p><strong>Impact de l'HT sur la fertilité</strong> :<br />
+- Anovulation par suppression de l'axe LH/FSH (hyperprolactinémie secondaire à la TRH)<br />
+- Cycles irréguliers, aménorrhée, spanioménorrhée<br />
+- Avortements répétés (même en HT frustre avec anti-TPO +)</p>
+<p><strong>Correction avant conception</strong> :<br />
+- TSH &lt; 2,5 mUI/L avant conception recommandée chez toute femme avec ATCD de thyropathie</p>
+<hr />
+<h3 id="quiz-module-21">QUIZ MODULE 21</h3>
+<p><strong>🥉 Q1</strong> — Quel bilan lipidique oriente vers une hypothyroïdie sous-jacente ?<br />
+A) HDL bas isolé <strong>B) LDL élevé avec triglycérides augmentés</strong> C) Hypertriglycéridémie isolée D) Chylomicronémie</p>
+<p><strong>🥈 Q2</strong> — Un patient de 55 ans, obèse (IMC 38), TSH à 4,2 mUI/L, sans symptôme thyroïdien. Quelle est la conduite ?<br />
+A) Initier LT4 immédiatement <strong>B) Contrôle TSH après amaigrissement de 5 kg, TSH souvent normalisée par la perte de poids</strong> C) Echographie thyroïdienne urgente D) Scintigraphie thyroïdienne</p>
+<p><strong>🥇 Q3</strong> — Quelle est la prévalence de la dépression chez les patients hypothyroïdiens non traités ?<br />
+A) 5-10 % B) 15-20 % <strong>C) 30-50 %</strong> D) &gt; 70 %</p>
+<p><strong>💎 Q4</strong> — Un patient présente une dépression résistante à 2 antidépresseurs successifs. TSH à 3,8 mUI/L (normale). Quelle étiologie thyroïdienne explorer ?<br />
+<strong>A) Hypothyroïdie frustre avec anti-TPO +, ou résistance aux hormones thyroïdiennes (RTHβ), ou T3L basse malgré T4L normale (faible conversion) — envisager ajout T3 si T3L basse</strong> B) Aucune, la TSH étant normale l'hypothyroïdie est exclue C) HT centrale D) Pseudo-hypothyroïdie psychiatrique</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 06 — Formes Cliniques Particulières — Mars 2026</em></p>
+</div>

@@ -1,0 +1,792 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-5-seconde-moitie-du-xxe-siecle-1950-2000">🦴 PARTIE 5 — SECONDE MOITIÉ DU XXe SIÈCLE (1950-2000)</h1>
+<h2 id="lage-dor-arthroplastie-aoasif-arthroscopie-ilizarov">L'âge d'or : arthroplastie, AO/ASIF, arthroscopie, Ilizarov</h2>
+<hr />
+<h1 id="module-18-sir-john-charnley-et-la-revolution-de-larthroplastie-de-hanche">MODULE 18 — SIR JOHN CHARNLEY ET LA RÉVOLUTION DE L'ARTHROPLASTIE DE HANCHE</h1>
+<h2 id="low-friction-arthroplasty-la-prothese-qui-a-change-le-monde">Low Friction Arthroplasty — la prothèse qui a changé le monde</h2>
+<hr />
+<h2 id="objectifs-pedagogiques">Objectifs pédagogiques</h2>
+<ul>
+<li>Analyser le parcours et les innovations de Sir John Charnley</li>
+<li>Comprendre les principes de la « low friction arthroplasty »</li>
+<li>Décrire l'invention du ciment osseux PMMA et du couple polyéthylène-métal</li>
+<li>Évaluer l'impact de Charnley sur l'arthroplastie moderne</li>
+</ul>
+<hr />
+<h2 id="1-sir-john-charnley-1911-1982">1. Sir John Charnley (1911-1982)</h2>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO18-S01-001 — PORTRAIT : Sir John Charnley dans son atelier-laboratoire, Wrightington Hospital, Lancashire, ~1970]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — SIR JOHN CHARNLEY (1911-1982)</strong> :</p>
+<blockquote>
+<p>Chirurgien orthopédiste anglais, Charnley est considéré comme le plus grand innovateur de l'histoire de l'orthopédie du XXe siècle. Formé à Manchester, il s'installe à l'hôpital de Wrightington (Lancashire) en 1958, où il développe patiemment sa « low friction arthroplasty » (arthroplastie à faible frottement). Ingénieur autant que chirurgien, il conçoit lui-même ses implants, invente l'utilisation du ciment PMMA en orthopédie, développe les salles opératoires à flux laminaire et introduit le couple polyéthylène-métal qui reste la référence mondiale 60 ans plus tard. Anobli en 1977.</p>
+</blockquote>
+<h3 id="11-le-cheminement-vers-la-solution">1.1 Le cheminement vers la solution</h3>
+<p><strong>Chronologie des travaux de Charnley</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Étape</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1958</td>
+<td>Cup arthroplasty en PTFE (Teflon)</td>
+<td>Échec catastrophique — usure massive, ostéolyse</td>
+</tr>
+<tr>
+<td>1959-60</td>
+<td>Introduction du ciment PMMA (polyméthacrylate de méthyle)</td>
+<td>Fixation prothétique fiable</td>
+</tr>
+<tr>
+<td>1960</td>
+<td>Remplacement de la tête fémorale par petite tête métallique (22,225 mm)</td>
+<td>Réduction des forces de frottement</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Remplacement du PTFE par le polyéthylène haute densité (UHMWPE)</td>
+<td>Couple tribologique viable</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Première « Low Friction Arthroplasty » complète</td>
+<td>Succès durable — survie &gt; 25 ans</td>
+</tr>
+<tr>
+<td>1969</td>
+<td>Salle opératoire à flux laminaire + scaphandre</td>
+<td>Réduction du taux d'infection de 7 % à 0,5 %</td>
+</tr>
+<tr>
+<td>1972</td>
+<td><em>Acta Orthopaedica Scandinavica</em> — résultats à 10 ans</td>
+<td>Validation scientifique</td>
+</tr>
+<tr>
+<td>1979</td>
+<td>Publication de <em>Low Friction Arthroplasty of the Hip</em></td>
+<td>Bible de l'arthroplastie</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO18-S01-002 — PROTHÈSE DE CHARNLEY : composants originaux — tige fémorale en acier, tête 22 mm, cupule en UHMWPE, ciment PMMA]</p>
+</blockquote>
+<h3 id="12-les-trois-innovations-cles">1.2 Les trois innovations clés</h3>
+<p><strong>1. Le ciment osseux PMMA</strong></p>
+<p>Charnley observe des dentistes utiliser le polyméthacrylate de méthyle pour fixer les prothèses dentaires. Il adapte ce matériau pour fixer les implants orthopédiques dans l'os spongieux, créant une interface mécanique stable.</p>
+<p><strong>2. Le couple polyéthylène-métal</strong></p>
+<p>Après l'échec du PTFE (Teflon), Charnley découvre le polyéthylène à ultra-haut poids moléculaire (UHMWPE) grâce à un vendeur de matériaux plastiques. Ce matériau, combiné à une tête fémorale métallique de petit diamètre, crée un couple tribologique à faible frottement et faible usure.</p>
+<p><strong>3. La salle à flux laminaire</strong></p>
+<p>Pour réduire le taux d'infection, Charnley conçoit une salle opératoire à flux laminaire (air ultra-propre) et un scaphandre chirurgical. Le taux d'infection chute de 7 % à 0,5 %.</p>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« La chirurgie orthopédique est essentiellement une chirurgie mécanique. Pour résoudre un problème mécanique, il faut penser en ingénieur. Le choix des matériaux, les forces de frottement, l'usure — ce sont des problèmes d'ingénierie, pas de médecine. »</em><br />
+— Sir John Charnley (adapté)</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>La prothèse de Charnley (1962) est l'implant orthopédique le plus réussi de l'histoire. Avec une survie à 25 ans supérieure à 80 %, elle a soulagé des millions de patients arthrosiques dans le monde et reste la référence à laquelle toutes les prothèses de hanche modernes sont comparées.</p>
+</blockquote>
+<h3 id="13-lheritage-de-charnley-evolution-de-la-pth">1.3 L'héritage de Charnley — évolution de la PTH</h3>
+<p><strong>Générations de prothèses de hanche après Charnley</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Génération</th>
+<th>Période</th>
+<th>Innovation</th>
+<th>Couple tribologique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1ère</td>
+<td>1962-1980</td>
+<td>Charnley originale, cimentée</td>
+<td>PE-métal, petite tête</td>
+</tr>
+<tr>
+<td>2ème</td>
+<td>1980-1990</td>
+<td>Tiges non cimentées, revêtement HA</td>
+<td>PE-métal, tête 28 mm</td>
+</tr>
+<tr>
+<td>3ème</td>
+<td>1990-2005</td>
+<td>PE hautement réticulé, céramique</td>
+<td>Céramique-PE, céramique-céramique</td>
+</tr>
+<tr>
+<td>4ème</td>
+<td>2005-2015</td>
+<td>Double mobilité, têtes grand diamètre</td>
+<td>Métal-métal (abandonné), céramique-PE réticulé</td>
+</tr>
+<tr>
+<td>5ème</td>
+<td>2015+</td>
+<td>Implants sur mesure (3D), navigation, robotique</td>
+<td>Céramique-XLPE, robot</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO18-S01-003 — FRISE : évolution des prothèses totales de hanche de Charnley (1962) à la PTH robotisée (2025)]</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-18">2. Quiz — Module 18</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> En quelle année Sir John Charnley a-t-il réalisé sa première « Low Friction Arthroplasty » complète ?<br />
+- A) 1958<br />
+- B) 1960<br />
+- C) 1962 ✓<br />
+- D) 1970</p>
+<p><strong>Q2.</strong> Quel matériau Charnley a-t-il utilisé comme ciment osseux ?<br />
+- A) Résine époxy<br />
+- B) Polyméthacrylate de méthyle (PMMA) ✓<br />
+- C) Silicone<br />
+- D) Plâtre de Paris</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Pourquoi Charnley a-t-il choisi une tête fémorale de petit diamètre (22,225 mm) ?<br />
+- A) Par économie de matière<br />
+- B) Pour réduire les forces de frottement et l'usure du polyéthylène ✓<br />
+- C) Pour faciliter la pose<br />
+- D) Par habitude chirurgicale</p>
+<p><strong>Q4.</strong> Comment Charnley a-t-il réduit le taux d'infection prothétique de 7 % à 0,5 % ?<br />
+- A) Par antibiothérapie seule<br />
+- B) Par salle opératoire à flux laminaire et scaphandre ✓<br />
+- C) Par stérilisation de la prothèse au formol<br />
+- D) Par sélection stricte des patients</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q5.</strong> Sir John Charnley a qualifié sa première utilisation du PTFE (Teflon) de « plus grande erreur de ma carrière ». Analysez cet échec et expliquez comment il a conduit au succès du UHMWPE.</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) Le PTFE s'use massivement en quelques années, produisant des débris microscopiques ; (2) Ces débris provoquent une réaction inflammatoire granulomateuse → ostéolyse périprothétique → descellement ; (3) Charnley reconnaît l'erreur, reprend tous ses patients et cherche un meilleur matériau ; (4) Le UHMWPE, découvert par hasard, présente une résistance à l'usure 500 fois supérieure au PTFE ; (5) L'échec du PTFE a permis de comprendre le mécanisme d'usure-ostéolyse (« particle disease ») qui guide encore la recherche tribologique.</p>
+</blockquote>
+<hr />
+<h1 id="module-19-laoasif-en-action">MODULE 19 — L'AO/ASIF EN ACTION</h1>
+<h2 id="muller-allgower-willenegger-la-systematisation-mondiale">Müller, Allgöwer, Willenegger — la systématisation mondiale</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_1">Objectifs pédagogiques</h2>
+<ul>
+<li>Décrire le système AO : implants, instruments, classification, enseignement</li>
+<li>Analyser l'évolution des principes AO (fixation rigide → fixation biologique)</li>
+<li>Comprendre la classification AO des fractures</li>
+<li>Évaluer l'impact mondial de l'AO sur la formation des chirurgiens</li>
+</ul>
+<hr />
+<h2 id="1-le-systeme-ao-une-revolution-integree">1. Le système AO — une révolution intégrée</h2>
+<h3 id="11-les-composantes-du-systeme-ao">1.1 Les composantes du système AO</h3>
+<table>
+<thead>
+<tr>
+<th>Composante</th>
+<th>Description</th>
+<th>Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Implants</td>
+<td>Plaques DCP, vis corticales/spongieuses, clous</td>
+<td>Standardisation mondiale</td>
+</tr>
+<tr>
+<td>Instruments</td>
+<td>Perceuses, tarauds, pinces de réduction</td>
+<td>Instrumentarium dédié</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Classification AO/Müller des fractures</td>
+<td>Langage universel</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Dossier AO standardisé</td>
+<td>Base de données mondiale</td>
+</tr>
+<tr>
+<td>Enseignement</td>
+<td>Cours AO (&gt; 500 000 chirurgiens formés)</td>
+<td>Formation continue structurée</td>
+</tr>
+<tr>
+<td>Recherche</td>
+<td>AO Research Institute (Davos)</td>
+<td>Recherche translationnelle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-la-classification-ao-des-fractures">1.2 La classification AO des fractures</h3>
+<p>Développée par Maurice Müller, la classification AO est le système de classification des fractures le plus utilisé au monde.</p>
+<p><strong>Structure de la classification AO</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Code</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Os</td>
+<td>1-9</td>
+<td>1=humérus, 2=radius/ulna, 3=fémur, 4=tibia/fibula...</td>
+</tr>
+<tr>
+<td>Segment</td>
+<td>1-3</td>
+<td>1=proximal, 2=diaphysaire, 3=distal</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>A, B, C</td>
+<td>A=simple, B=cunéiforme, C=complexe</td>
+</tr>
+<tr>
+<td>Groupe</td>
+<td>1, 2, 3</td>
+<td>Sous-classification de gravité</td>
+</tr>
+<tr>
+<td>Sous-groupe</td>
+<td>.1, .2, .3</td>
+<td>Détail fin</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO19-S01-001 — SCHÉMA : classification AO/Müller des fractures — arbre décisionnel avec exemples radiographiques]</p>
+</blockquote>
+<h3 id="13-levolution-des-implants-ao">1.3 L'évolution des implants AO</h3>
+<p><strong>Chronologie des implants AO</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Implant</th>
+<th>Principe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1958</td>
+<td>Vis AO corticale et spongieuse</td>
+<td>Compression interfragmentaire</td>
+</tr>
+<tr>
+<td>1960s</td>
+<td>Plaque DCP (Dynamic Compression Plate)</td>
+<td>Compression par la forme des trous</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Vis-plaque DHS (Dynamic Hip Screw)</td>
+<td>Fixation des fractures du col et du massif trochantérien</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Fixateur externe AO/ASIF</td>
+<td>Fixation externe standardisée</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Plaque LCP (Locking Compression Plate)</td>
+<td>Vis verrouillées + compression</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Plaques anatomiques pré-modelées</td>
+<td>Adaptation à chaque os</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>LISS (Less Invasive Stabilization System)</td>
+<td>Plaque pontante mini-invasive</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Plaques VA-LCP (Variable Angle)</td>
+<td>Vis verrouillées à angle variable</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>Implants patient-specific (3D)</td>
+<td>Personnalisation complète</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO19-S01-002 — COLLECTION : évolution des plaques AO de la DCP (1960s) à la VA-LCP (2020s)]</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-19">2. Quiz — Module 19</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Que signifie l'acronyme AO dans AO/ASIF ?<br />
+- A) Association Orthopédique<br />
+- B) Arbeitsgemeinschaft für Osteosynthesefragen (Groupe de travail pour les questions d'ostéosynthèse) ✓<br />
+- C) Association of Orthopaedists<br />
+- D) Alliance Orthopédique</p>
+<p><strong>Q2.</strong> Combien de chirurgiens l'AO a-t-elle formés à travers le monde ?<br />
+- A) 50 000<br />
+- B) 100 000<br />
+- C) Plus de 500 000 ✓<br />
+- D) Plus de 1 million</p>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q3.</strong> Comment la plaque LCP (Locking Compression Plate) combine-t-elle les principes de fixation absolue et relative en un seul implant ?</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) Les trous combinés permettent l'utilisation de vis standard (compression) ou verrouillées (stabilité angulaire) ; (2) Utilisée en mode compression → stabilité absolue pour fractures articulaires ; (3) Utilisée en mode pontant avec vis verrouillées → stabilité relative pour fractures diaphysaires comminutives ; (4) Le chirurgien choisit le mode selon le type de fracture et la philosophie de traitement.</p>
+</blockquote>
+<hr />
+<h1 id="module-20-larthroscopie">MODULE 20 — L'ARTHROSCOPIE</h1>
+<h2 id="de-la-curiosite-diagnostique-a-la-chirurgie-mini-invasive">De la curiosité diagnostique à la chirurgie mini-invasive</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_2">Objectifs pédagogiques</h2>
+<ul>
+<li>Retracer l'histoire de l'arthroscopie depuis les premiers endoscopes</li>
+<li>Décrire les contributions de Takagi, Watanabe et Jackson</li>
+<li>Analyser l'explosion de l'arthroscopie dans les années 1980-2000</li>
+<li>Évaluer l'impact de l'arthroscopie sur la chirurgie du sport</li>
+</ul>
+<hr />
+<h2 id="1-les-pionniers-de-larthroscopie">1. Les pionniers de l'arthroscopie</h2>
+<h3 id="11-chronologie-de-larthroscopie">1.1 Chronologie de l'arthroscopie</h3>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Innovateur</th>
+<th>Innovation</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1806</td>
+<td>Philip Bozzini</td>
+<td>Premier endoscope (Lichtleiter)</td>
+<td>Exploration des cavités</td>
+</tr>
+<tr>
+<td>1912</td>
+<td>Severin Nordentoft</td>
+<td>Premier examen endoscopique d'un genou (Copenhague)</td>
+<td>Première arthroscopie</td>
+</tr>
+<tr>
+<td>1918</td>
+<td>Kenji Takagi</td>
+<td>Arthroscopie du genou avec cystoscope modifié (Tokyo)</td>
+<td>Première série</td>
+</tr>
+<tr>
+<td>1931</td>
+<td>Michael Burman</td>
+<td>Première publication avec atlas (New York)</td>
+<td>Documentation photographique</td>
+</tr>
+<tr>
+<td>1957</td>
+<td>Masaki Watanabe</td>
+<td>Arthroscope No. 21 — premier instrument dédié</td>
+<td>Instrument pratique</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Masaki Watanabe</td>
+<td>Première méniscectomie arthroscopique</td>
+<td>Première chirurgie arthroscopique</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Robert Jackson</td>
+<td>Introduction de l'arthroscopie en Amérique du Nord</td>
+<td>Diffusion occidentale</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Lanny Johnson, Jack McGinty</td>
+<td>Instrumentation motorisée (shaver)</td>
+<td>Chirurgie arthroscopique opératoire</td>
+</tr>
+<tr>
+<td>1982</td>
+<td>David Dandy</td>
+<td>Reconstruction du LCA sous arthroscopie</td>
+<td>Chirurgie ligamentaire mini-invasive</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Plusieurs</td>
+<td>Arthroscopie de l'épaule, du poignet, de la cheville</td>
+<td>Extension à toutes les articulations</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Plusieurs</td>
+<td>Arthroscopie de hanche</td>
+<td>Dernière articulation « conquise »</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO20-S01-001 — FRISE CHRONOLOGIQUE : histoire de l'arthroscopie de Bozzini (1806) à l'arthroscopie de hanche (2000s)]</p>
+</blockquote>
+<h3 id="12-masaki-watanabe-1911-1995-le-pere-de-larthroscopie">1.2 Masaki Watanabe (1911-1995) — le père de l'arthroscopie</h3>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO20-S01-002 — PORTRAIT : Masaki Watanabe avec son arthroscope No. 21, Tokyo, ~1960]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — MASAKI WATANABE (1911-1995)</strong> :</p>
+<blockquote>
+<p>Chirurgien orthopédiste à Tokyo, élève de Kenji Takagi, Watanabe développe l'arthroscope No. 21 (1957), premier instrument d'arthroscopie véritablement utilisable en clinique. En 1962, il réalise la première méniscectomie arthroscopique de l'histoire. Il forme les premiers chirurgiens occidentaux, dont Robert Jackson (Canada), qui diffuse la technique en Amérique du Nord.</p>
+</blockquote>
+<h3 id="13-lexplosion-de-larthroscopie-1980-2000">1.3 L'explosion de l'arthroscopie (1980-2000)</h3>
+<p><strong>Applications arthroscopiques développées (1980-2000)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Articulation</th>
+<th>Procédures arthroscopiques</th>
+<th>Chirurgien(s) clé(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genou</td>
+<td>Méniscectomie, reconstruction LCA, microfractures</td>
+<td>Watanabe, Jackson, Steadman</td>
+</tr>
+<tr>
+<td>Épaule</td>
+<td>Réparation coiffe, Bankart, acromioplastie</td>
+<td>Caspari, Snyder, Burkhart</td>
+</tr>
+<tr>
+<td>Cheville</td>
+<td>Débridement, microfractures, arthrodèse</td>
+<td>Guhl, van Dijk</td>
+</tr>
+<tr>
+<td>Poignet</td>
+<td>Triangulaire, ligaments scapho-lunaires</td>
+<td>Whipple</td>
+</tr>
+<tr>
+<td>Coude</td>
+<td>Corps étrangers, arthrolyse</td>
+<td>Andrews, Morrey</td>
+</tr>
+<tr>
+<td>Hanche</td>
+<td>Labrum, conflit fémoro-acétabulaire</td>
+<td>Ganz (open), Byrd (arthroscopique)</td>
+</tr>
+</tbody>
+</table>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>L'arthroscopie a transformé la chirurgie du sport en permettant des interventions mini-invasives avec récupération rapide. La reconstruction arthroscopique du LCA, la réparation méniscale et la chirurgie de la coiffe des rotateurs sous arthroscopie sont devenues les interventions orthopédiques les plus fréquentes au monde.</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-20">2. Quiz — Module 20</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Qui a réalisé la première méniscectomie arthroscopique de l'histoire ?<br />
+- A) Robert Jackson<br />
+- B) Masaki Watanabe ✓<br />
+- C) Kenji Takagi<br />
+- D) Lanny Johnson</p>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q2.</strong> Quel arthroscope, développé par Watanabe en 1957, est considéré comme le premier instrument d'arthroscopie cliniquement utilisable ?<br />
+- A) Arthroscope No. 13<br />
+- B) Arthroscope No. 21 ✓<br />
+- C) Arthroscope No. 24<br />
+- D) Arthroscope No. 30</p>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q3.</strong> Discutez des limites de l'arthroscopie et des indications qui ont été remises en question par les études de haut niveau de preuve (arthroscopie du genou arthrosique, acromioplastie arthroscopique).</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) L'essai de Moseley (2002, NEJM) montre que l'arthroscopie du genou arthrosique n'est pas supérieure au placebo ; (2) L'essai FIMPACT (2013) : la méniscectomie arthroscopique pour déchirure dégénérative n'est pas supérieure à la kinésithérapie ; (3) L'essai CSAW (2018) : l'acromioplastie arthroscopique n'est pas supérieure au placebo ; (4) Ces résultats ont conduit à une réduction massive des indications arthroscopiques dégénératives ; (5) L'arthroscopie reste indiquée pour les lésions traumatiques (LCA, ménisque en anse de seau, Bankart).</p>
+</blockquote>
+<hr />
+<h1 id="module-21-ilizarov-et-la-revolution-de-losteogenese-en-distraction">MODULE 21 — ILIZAROV ET LA RÉVOLUTION DE L'OSTÉOGENÈSE EN DISTRACTION</h1>
+<h2 id="lanneau-magique-de-kourgan-regenerer-los-par-la-tension">L'anneau magique de Kourgan — régénérer l'os par la tension</h2>
+<hr />
+<h2 id="objectifs-pedagogiques_3">Objectifs pédagogiques</h2>
+<ul>
+<li>Retracer le parcours exceptionnel de Gavriil Ilizarov</li>
+<li>Comprendre les principes de l'ostéogenèse en distraction</li>
+<li>Décrire les applications cliniques de la méthode d'Ilizarov</li>
+<li>Analyser la diffusion mondiale de la technique</li>
+</ul>
+<hr />
+<h2 id="1-gavriil-abramovich-ilizarov-1921-1992">1. Gavriil Abramovich Ilizarov (1921-1992)</h2>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO21-S01-001 — PORTRAIT : Gavriil Ilizarov avec son fixateur circulaire, Institut de Kourgan, URSS, ~1980]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — GAVRIIL ABRAMOVICH ILIZAROV (1921-1992)</strong> :</p>
+<blockquote>
+<p>Né dans une famille pauvre du Caucase (actuelle Géorgie), Ilizarov étudie la médecine à Simferopol (Crimée) et est envoyé comme jeune médecin dans un hôpital isolé de Sibérie occidentale (Dolgovka, puis Kourgan). Avec des moyens rudimentaires — il fabrique son premier fixateur à partir de pièces de bicyclette — il développe une technique révolutionnaire : l'ostéogenèse en distraction. Ignoré par l'establishment médical soviétique pendant 20 ans, il ne sera reconnu en Occident qu'en 1981, lorsqu'il traite avec succès le champion olympique de saut en hauteur Valery Brumel, et que les chirurgiens italiens (Catagni, Paley) découvrent ses travaux.</p>
+</blockquote>
+<h3 id="11-le-fixateur-circulaire-dilizarov">1.1 Le fixateur circulaire d'Ilizarov</h3>
+<p><strong>Composants du fixateur</strong> :<br />
+- Anneaux métalliques reliés par tiges filetées<br />
+- Broches fines (1,5-1,8 mm) transfixiantes, tendues<br />
+- Charnières et rotules pour les corrections angulaires<br />
+- Système de distraction/compression par les tiges filetées (0,25 mm × 4/jour = 1 mm/jour)</p>
+<blockquote>
+<p>[MEDIA: 🔬 MHISTO21-S01-002 — FIXATEUR D'ILIZAROV : composants et montage — anneaux, broches, tiges filetées, charnières]</p>
+</blockquote>
+<h3 id="12-les-principes-biologiques">1.2 Les principes biologiques</h3>
+<p><strong>La loi de « tension-stress » d'Ilizarov</strong> (adapté d'Ilizarov, 1989) :</p>
+<blockquote>
+<p>« La traction progressive et graduelle exercée sur les tissus vivants crée des contraintes qui stimulent et maintiennent la régénération et la croissance active des structures tissulaires. »</p>
+</blockquote>
+<p><strong>Protocole de distraction</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Durée</th>
+<th>Action</th>
+<th>Biologie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latence</td>
+<td>5-7 jours</td>
+<td>Repos après ostéotomie</td>
+<td>Formation du cal fibro-vasculaire</td>
+</tr>
+<tr>
+<td>Distraction</td>
+<td>Variable (1 mm/jour)</td>
+<td>Allongement progressif</td>
+<td>Formation du régénat osseux (néo-ostéogenèse)</td>
+</tr>
+<tr>
+<td>Consolidation</td>
+<td>2× durée de distraction</td>
+<td>Fixateur en place, pas de distraction</td>
+<td>Minéralisation et maturation du régénat</td>
+</tr>
+<tr>
+<td>Ablation</td>
+<td>—</td>
+<td>Retrait du fixateur</td>
+<td>Os régénéré porteur</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO21-S01-003 — SCHÉMA BIOLOGIQUE : les phases de l'ostéogenèse en distraction — du cal fibro-vasculaire à l'os mature]</p>
+</blockquote>
+<h3 id="13-applications-cliniques">1.3 Applications cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Indication</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allongement de membre</td>
+<td>Inégalité de longueur, nanisme</td>
+<td>Allongements de 3-20 cm</td>
+</tr>
+<tr>
+<td>Pseudarthrose</td>
+<td>Non-consolidation récalcitrante</td>
+<td>Guérison par transport osseux</td>
+</tr>
+<tr>
+<td>Infection osseuse (ostéomyélite)</td>
+<td>Résection de l'os infecté + transport osseux</td>
+<td>Reconstruction biologique</td>
+</tr>
+<tr>
+<td>Correction de déformation</td>
+<td>Malunion, déformations congénitales</td>
+<td>Correction progressive 3D</td>
+</tr>
+<tr>
+<td>Régénération tissulaire</td>
+<td>Pertes de substance osseuse</td>
+<td>Comblement par distraction</td>
+</tr>
+</tbody>
+</table>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« Quand j'ai commencé à travailler à Kourgan, je n'avais presque rien — pas d'instruments, pas de livres, pas de collègues pour discuter. Mais j'avais des patients avec des fractures non consolidées, des infections chroniques, des membres courts. Et j'avais une idée : si l'on tire doucement sur un os coupé, il se régénère. La nature fait le travail, il suffit de lui donner les bonnes conditions. »</em><br />
+— Gavriil Ilizarov, entretien avec la BBC, 1989 (adapté)</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>La méthode d'Ilizarov a démontré que l'os peut se régénérer par traction progressive — une capacité biologique insoupçonnée avant ses travaux. Ce principe a ouvert la voie à l'allongement des membres, au transport osseux pour les pertes de substance, et à l'ostéogenèse en distraction maxillo-faciale.</p>
+</blockquote>
+<h3 id="14-heritage-et-evolutions-modernes">1.4 Héritage et évolutions modernes</h3>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Innovation</th>
+<th>Développeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1951-80</td>
+<td>Fixateur circulaire original</td>
+<td>Ilizarov</td>
+</tr>
+<tr>
+<td>1983</td>
+<td>Taylor Spatial Frame (TSF)</td>
+<td>J. Charles Taylor</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Clou d'allongement motorisé (ISKD)</td>
+<td>Cole/Dean</td>
+</tr>
+<tr>
+<td>2009</td>
+<td>Clou d'allongement magnétique (PRECICE)</td>
+<td>Ellipse Technologies</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Hexapode (TL-HEX, Ortho-SUV)</td>
+<td>Plusieurs</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>Planification informatique 3D</td>
+<td>Plusieurs</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO21-S01-004 — FRISE : de l'anneau d'Ilizarov au clou d'allongement magnétique PRECICE]</p>
+</blockquote>
+<p>🔗 <strong>LIEN AVEC LA PRATIQUE ACTUELLE</strong> :</p>
+<blockquote>
+<p>Le clou d'allongement magnétique (PRECICE) a remplacé le fixateur circulaire pour de nombreuses indications d'allongement, offrant le même résultat biologique avec un confort patient incomparablement supérieur. Cependant, les fixateurs circulaires (Taylor Spatial Frame) restent indispensables pour les corrections multidimensionnelles complexes.</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-21">2. Quiz — Module 21</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Dans quel pays Ilizarov a-t-il développé sa technique ?<br />
+- A) Allemagne<br />
+- B) Italie<br />
+- C) URSS (Russie) ✓<br />
+- D) États-Unis</p>
+<p><strong>Q2.</strong> Quel est le rythme de distraction standard dans la méthode d'Ilizarov ?<br />
+- A) 0,5 mm/jour<br />
+- B) 1 mm/jour (en 4 fois) ✓<br />
+- C) 2 mm/jour<br />
+- D) 5 mm/jour</p>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Quel athlète célèbre a été traité par Ilizarov, contribuant à faire connaître sa méthode en Occident ?<br />
+- A) Nadia Comăneci<br />
+- B) Valery Brumel (champion olympique de saut en hauteur) ✓<br />
+- C) Sergei Bubka<br />
+- D) Alexander Karelin</p>
+<h3 id="diamant_3">💎 Diamant</h3>
+<p><strong>Q4.</strong> Comparez la méthode d'Ilizarov (fixateur externe circulaire) et le clou d'allongement magnétique (PRECICE) pour l'allongement des membres. Avantages et inconvénients de chaque approche.</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : Ilizarov : avantages — polyvalence (correction 3D), transport osseux, coût modéré ; inconvénients — infection aux broches (30 %), inconfort majeur, cicatrices, durée de port longue. PRECICE : avantages — pas de fixateur externe, confort, moins d'infections ; inconvénients — coût élevé, pas de correction angulaire, risque de défaillance mécanique, allongement maximal limité (~8 cm).</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 5 — Seconde moitié du XXe siècle</em><br />
+<em>Prochaine partie : XXIe siècle et perspectives futures</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

@@ -1,0 +1,903 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-7-imagerie-de-la-scoliose">MODULE 7 — IMAGERIE DE LA SCOLIOSE</h1>
+<p><strong>Partie II — Évaluation clinique et paraclinique</strong><br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1 à 6</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Deux ans ont passé. Sophie, maintenant 15 ans, revient en consultation avec une radiographie réalisée en urgence après une chute de vélo — le radiologue a découvert une scoliose thoracique droite. Le chirurgien regarde le cliché : <em>« Cette radio a été faite en décubitus, elle n'est pas exploitable pour me donner un angle de Cobb fiable. Et il me manque le profil. »</em> Il prescrit une téléradiographie debout en biplans.</p>
+<p>→ <em>Ce module vous apprend à demander le bon examen, à lire les images avec rigueur, et à en extraire toutes les informations nécessaires pour décider du traitement.</em></p>
+</blockquote>
+<p>🧑‍🤝‍🧑 <strong>Patiente fil rouge</strong> : Sophie, 15 ans — on analyse son dossier radiologique initial et on discute de l'indication d'une IRM.</p>
+<hr />
+<h2 id="termes-cles-introduits-dans-ce-module">Termes clés introduits dans ce module</h2>
+<p>Téléradiographie debout • Biplans • Angle de Cobb • Vertèbre limite (end-vertebra) • Vertèbre apicale • Vertèbre neutre • Vertèbre stable • Rotation vertébrale (Nash-Moe, Perdriolle) • Gibbosité costale (angle ATR) • Signe de Risser • Triradiate cartilage • Cyphose thoracique (T4-T12) • Lordose lombaire (L1-L5) • Incidence pelvienne (PI) • Pente sacrée (SS) • Version pelvienne (PT) • CVA (coronal vertical axis) • SVA (sagittal vertical axis) • C7 plumb line • Fulcrum bending • Système EOS (sterEOS) • SterEOS reconstruction 3D • Syringomyélie • Malformation de Chiari • Moelle attachée (tethered cord) • DEXA-scan</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> les conditions techniques d'une téléradiographie debout exploitable (Bloom : Connaissance)</li>
+<li><strong>Mesurer</strong> l'angle de Cobb avec répétabilité, et interpréter la rotation vertébrale selon Nash-Moe et Perdriolle (Bloom : Application)</li>
+<li><strong>Calculer</strong> les paramètres sagittaux et pelviens sur radio debout profil (Bloom : Application)</li>
+<li><strong>Distinguer</strong> les indications de l'IRM, du scanner et des clichés dynamiques selon la présentation clinique (Bloom : Analyse)</li>
+<li><strong>Interpréter</strong> une reconstruction EOS 3D pour préparer une argumentation thérapeutique (Bloom : Évaluation)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La mesure de l'angle de Cobb nécessite :<br />
+- A. La courbure en décubitus dorsal<br />
+- <strong>B. Les plateaux des vertèbres limites supérieure et inférieure de la courbure, en position debout</strong><br />
+- C. Une IRM dans le plan frontal<br />
+- D. Une mesure clinique avec le scoliomètre</p>
+<p><em>Feedback : L'angle de Cobb se mesure obligatoirement sur une téléradiographie debout ; le décubitus sous-corrige la courbure en favorisant la réduction gravitaire partielle.</em></p>
+<p><strong>Q2.</strong> Le grade 3 de Nash-Moe correspond à :<br />
+- A. Pédicule symétrique (pas de rotation)<br />
+- B. Pédicule convexe légèrement déplacé<br />
+- <strong>C. Pédicule convexe déplacé au centre du corps vertébral</strong><br />
+- D. Disparition du pédicule convexe</p>
+<p><em>Feedback : Nash-Moe cotera 0 (symétrie), 1 (convexe en quartier externe), 2 (convexe déplacé à mi-chemin), 3 (convexe au centre), 4 (pédicule convexe au-delà du centre).</em></p>
+<p><strong>Q3.</strong> Le système EOS présente quel avantage principal par rapport à la radiographie conventionnelle ?<br />
+- A. Meilleure résolution des tissus mous<br />
+- <strong>B. Acquisition biphasée debout à demi-dose de rayonnement, permettant une reconstruction 3D</strong><br />
+- C. Pas d'utilisation des rayons X<br />
+- D. Acquisition en dynamique (temps réel)</p>
+<p><strong>Q4.</strong> Chez un adolescent avec scoliose thoracique gauche, le bilan radiologique initial doit inclure systématiquement :<br />
+- A. Scanner cervico-thoracique<br />
+- B. Scintigraphie osseuse<br />
+- <strong>C. IRM du rachis entier (syringomyélie, Chiari, moelle attachée)</strong><br />
+- D. Électroneuromyogramme des membres inférieurs</p>
+<p><em>Feedback : Une scoliose thoracique gauche est atypique, évocatrice d'une anomalie intracanalaire sous-jacente — l'IRM est systématique.</em></p>
+<p><strong>Q5.</strong> L'incidence pelvienne (PI) est :<br />
+- A. Un paramètre dynamique qui varie avec la position<br />
+- <strong>B. Un paramètre fixe anatomique, angle entre la perpendiculaire au plateau sacré et la droite reliant ce plateau au centre des têtes fémorales</strong><br />
+- C. Mesurable uniquement sur IRM<br />
+- D. Équivalent à la version pelvienne</p>
+<hr />
+<h2 id="71-radiographie-standard-conditions-techniques">7.1 Radiographie standard — Conditions techniques</h2>
+<h3 id="711-la-teleradiographie-du-rachis-entier">7.1.1 La téléradiographie du rachis entier</h3>
+<div class="vertex-media">
+<strong>📷 M07-S01-001</strong><br/>
+<em>Radiographie annotée : mesure angle de Cobb étape par étape</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p><strong>L'examen de référence</strong> pour le bilan et le suivi de toute scoliose structurale est la <strong>téléradiographie du rachis entier debout</strong>, en incidences <strong>face et profil simultanées</strong>.</p>
+<h4 id="conditions-de-realisation-indispensables">Conditions de réalisation indispensables</h4>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Standard requis</th>
+<th>Conséquence si non respecté</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position</strong></td>
+<td>Debout, pieds joints ou genoux fléchis si inégalité des membres</td>
+<td>Assis : sous-estimation ; décubitus : réduction artificielle</td>
+</tr>
+<tr>
+<td><strong>Bras</strong></td>
+<td>Posés sur des supports (en avant à hauteur des clavicules)</td>
+<td>Bras pendants = artefacts d'épaules sur cliché thoracique</td>
+</tr>
+<tr>
+<td><strong>Champ</strong></td>
+<td>Occiput → têtes fémorales</td>
+<td>Paramètres pelviens impossibles si coupes trop hautes</td>
+</tr>
+<tr>
+<td><strong>Inspiration</strong></td>
+<td>Expiration standard (ni inspiration ni expiration forcée)</td>
+<td>Variation de cyphose thoracique apparente</td>
+</tr>
+<tr>
+<td><strong>Marqueurs</strong></td>
+<td>Côté droit marqué (R)</td>
+<td>Risque d'inversion</td>
+</tr>
+<tr>
+<td><strong>Qualité du dos</strong></td>
+<td>Rachis visible en totalité, sans rotation de tube</td>
+<td>Fausse asymétrie si rotation du capteur</td>
+</tr>
+</tbody>
+</table>
+<h4 id="indications-de-la-teleradiographie">Indications de la téléradiographie</h4>
+<ul>
+<li>Bilan initial de toute déformation suspectée</li>
+<li>Suivi tous les 6 à 12 mois (croissance active)</li>
+<li>Évaluation du corset (radio dans le corset si indiqué à 3 mois)</li>
+<li>Bilan préopératoire</li>
+<li>Suivi postopératoire (1 mois, 1 an, 2 ans, puis tous les 2-5 ans)</li>
+</ul>
+<blockquote>
+<p><strong>🔴 Principe de radioprotection ALARA</strong> : Réduire le nombre de clichés. Le système EOS réduit la dose de 60–80 % par rapport à la radiographie conventionnelle et doit être la norme lorsqu'il est disponible.</p>
+</blockquote>
+<hr />
+<h3 id="712-mesure-de-langle-de-cobb">7.1.2 Mesure de l'angle de Cobb</h3>
+<div class="vertex-media">
+<strong>📷 M07-S01-001</strong><br/>
+<em>Radiographie annotée : mesure étape par étape</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 M07-S01-A</strong><br/>
+<em>Animation interactive : identifier les vertèbres limites, tracer les perpendiculaires</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p><strong>Définition</strong> : L'angle de Cobb est l'angle formé par les perpendiculaires aux plateaux des <strong>vertèbres limites</strong> (end-vertebrae) d'une courbure.</p>
+<h4 id="methode-de-mesure-4-etapes">Méthode de mesure — 4 étapes</h4>
+<p><strong>Étape 1 — Identifier la courbure</strong><br />
+Délimiter visuellement la courbure en repérant les vertèbres dont l'inclinaison est maximale vers la concavité.</p>
+<p><strong>Étape 2 — Identifier les vertèbres limites</strong><br />
+- <strong>Vertèbre limite supérieure</strong> : vertèbre la plus inclinée vers la concavité en haut de la courbure (plateau supérieur le plus oblique)<br />
+- <strong>Vertèbre limite inférieure</strong> : vertèbre la plus inclinée vers la concavité en bas de la courbure</p>
+<p><strong>Étape 3 — Tracer les droites</strong><br />
+- Droite parallèle au plateau supérieur de la vertèbre limite supérieure<br />
+- Droite parallèle au plateau inférieur de la vertèbre limite inférieure<br />
+- Tracer les perpendiculaires à ces deux droites</p>
+<p><strong>Étape 4 — Mesurer l'angle</strong><br />
+L'angle formé par l'intersection de ces deux perpendiculaires = <strong>angle de Cobb</strong>.</p>
+<blockquote>
+<p><strong>Alternative directe</strong> : tracer directement les droites tangentes aux plateaux et mesurer l'angle qu'elles forment — résultat identique (angle alternes-internes).</p>
+</blockquote>
+<h4 id="terminologie-associee">Terminologie associée</h4>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vertèbre apicale</strong></td>
+<td>Vertèbre la plus éloignée de l'axe vertical, la plus horizontale, la plus dérotée (apex de la courbe)</td>
+</tr>
+<tr>
+<td><strong>Vertèbre stable</strong></td>
+<td>Vertèbre la plus basse bisectée par la ligne centrale sacro-pelvieure (CSVL)</td>
+</tr>
+<tr>
+<td><strong>Vertèbre neutre</strong></td>
+<td>Vertèbre la plus basse ne présentant pas de rotation nette</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reproductibilite-et-precision">Reproductibilité et précision</h4>
+<ul>
+<li>Variabilité inter-observateur : <strong>± 3–5°</strong> (Morrissy et al., 1990, <em>J Bone Joint Surg Am</em> ; erreur inhérente à la méthode manuelle)</li>
+<li>Progression significative : <strong>≥ 5°</strong> sur deux radios comparables</li>
+<li>Les logiciels numériques (sterEOS, Surgimap) améliorent la reproductibilité</li>
+</ul>
+<hr />
+<h3 id="713-mesure-de-la-rotation-vertebrale">7.1.3 Mesure de la rotation vertébrale</h3>
+<div class="vertex-media schema">
+<strong>📐 M07-S01-002</strong><br/>
+<em>Schéma mesure rotation : Nash-Moe et Perdriolle</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p>La rotation axiale des vertèbres constitue la troisième dimension de la déformation scoliotique et est évaluée sur la <strong>radiographie de face</strong>.</p>
+<h4 id="methode-nash-moe-nash-moe-1969-j-bone-joint-surg-am">Méthode Nash-Moe (Nash &amp; Moe, 1969, <em>J Bone Joint Surg Am</em>)</h4>
+<p>Méthode semi-quantitative basée sur la position du <strong>pédicule convexe</strong> dans le corps vertébral :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0</strong></td>
+<td>Pédicules symétriques de part et d'autre des bords vertébraux</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>Pédicule convexe légèrement déplacé vers l'intérieur (zone externe)</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Pédicule convexe déplacé à mi-chemin vers le centre</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Pédicule convexe au centre du corps vertébral</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Pédicule convexe au-delà du centre (vers la concavité)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Avantages</em> : Simple, rapide. <em>Inconvénient</em> : subjectivité, pas de valeur en degrés.</p>
+<h4 id="methode-de-perdriolle-perdriolle-1979-perdriolle-vidal-1985-spine">Méthode de Perdriolle (Perdriolle, 1979 ; Perdriolle &amp; Vidal, 1985, <em>Spine</em>)</h4>
+<p>Méthode quantitative utilisant un <strong>torsionmètre</strong> (rapporteur spécial de Perdriolle) positionné sur le corps vertébral pour mesurer directement l'angle de rotation en degrés.</p>
+<ul>
+<li><strong>Précision</strong> : ± 3°</li>
+<li>Mesure possible sans matériel spécial par les logiciels actuels</li>
+</ul>
+<h4 id="methode-de-raimondi">Méthode de Raimondi</h4>
+<p>Variante numérique basée sur le rapport pédicule/largeur vertébrale.</p>
+<hr />
+<h3 id="714-parametres-sagittaux-et-pelviens">7.1.4 Paramètres sagittaux et pelviens</h3>
+<div class="vertex-media">
+<strong>📷 M07-S01-003</strong><br/>
+<em>Radiographie annotée : paramètres sagittaux et pelviens</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p>La radio de <strong>profil</strong> est tout aussi essentielle que la radio de face. Elle évalue :</p>
+<h4 id="courbures-sagittales">Courbures sagittales</h4>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Mesure</th>
+<th>Valeur normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cyphose thoracique</strong></td>
+<td>Cobb T4-T12 (ou T5-T12)</td>
+<td>20–40°</td>
+</tr>
+<tr>
+<td><strong>Lordose lombaire</strong></td>
+<td>Cobb L1-S1 (ou L1-L5)</td>
+<td>40–60°</td>
+</tr>
+<tr>
+<td><strong>Cyphose thoraco-lombaire</strong></td>
+<td>À mesurer si aplatie ou hypercyphose jonctionnelle</td>
+<td>&lt; 10°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hypocyphose thoracique</strong> (cyphose &lt; 20°) : quasi-pathognomonique de la SIA thoracique — associée aux courbures rigides et au « flat back ».</p>
+<p><strong>Hypercyphose thoracique</strong> (cyphose &gt; 40–50°) : évoquer une maladie de Scheuermann, une scoliose congénitale, une neurofibromatose.</p>
+<h4 id="parametres-pelviens-triangle-pelvien-de-duval-beaupere">Paramètres pelviens — Triangle pelvien de Duval-Beaupère</h4>
+<blockquote>
+<p><strong>⭐ Point clé</strong> : Ces trois paramètres sont liés par la relation fondamentale : <strong>PI = PT + SS</strong> (Duval-Beaupère et al., 1992 ; Legaye et al., 1998, <em>Eur Spine J</em>)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Abréviation</th>
+<th>Définition</th>
+<th>Valeur normale adulte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Incidence pelvienne</strong></td>
+<td>PI</td>
+<td>Angle fixe anatomique : entre la perpendiculaire au plateau sacré et la droite joignant le centre du plateau sacré au centre des têtes fémorales</td>
+<td>50–55°</td>
+</tr>
+<tr>
+<td><strong>Pente sacrée</strong></td>
+<td>SS (sacral slope)</td>
+<td>Angle du plateau sacré avec l'horizontale</td>
+<td>35–45°</td>
+</tr>
+<tr>
+<td><strong>Version pelvienne</strong></td>
+<td>PT (pelvic tilt)</td>
+<td>Angle de la droite centre-sacré/têtes fémorales avec la verticale</td>
+<td>10–15°</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relation clinique fondamentale</strong> :<br />
+- <strong>PI détermine la lordose nécessaire</strong> : Lordose lombaire cible = PI ± 10°<br />
+- Un <strong>PI-LL mismatch &gt; 10°</strong> est un facteur de décompensation sagittale et de douleur dans la scoliose adulte</p>
+<h4 id="parametres-dequilibre-global">Paramètres d'équilibre global</h4>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Définition</th>
+<th>Valeur normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SVA</strong> (sagittal vertical axis)</td>
+<td>Distance horizontale entre la verticale issue de C7 et le bord postérieur de S1</td>
+<td>&lt; 50 mm (avant)</td>
+</tr>
+<tr>
+<td><strong>CVA</strong> (coronal vertical axis)</td>
+<td>Distance entre la verticale issue de C7 et la ligne médiane sacrée</td>
+<td>&lt; 20 mm</td>
+</tr>
+<tr>
+<td><strong>C7 plumb line</strong></td>
+<td>Ligne verticale issue du centre du corps de C7</td>
+<td>Doit passer par/derrière S1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="715-signe-de-risser-et-triradiate-cartilage">7.1.5 Signe de Risser et triradiate cartilage</h3>
+<div class="vertex-media schema">
+<strong>📐 M07-S01-004</strong><br/>
+<em>Schéma Risser 0-5 avec illustrations osseuses</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Signe de Risser</strong> (Risser, 1958, <em>Clin Orthop Relat Res</em>) = ossification progressive de l'apophyse iliaque (crête iliaque), de dehors en dedans.</p>
+<table>
+<thead>
+<tr>
+<th>Grade Risser</th>
+<th>Ossification</th>
+<th>Croissance résiduelle estimée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Aucune ossification visible</td>
+<td>Croissance importante (pic de vitesse possible)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>25% extérieur</td>
+<td>Croissance active (18–24 mois)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>50%</td>
+<td>Croissance active (~15 mois)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>75%</td>
+<td>Décélération de croissance (~10 mois)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100% sans fusion</td>
+<td>Croissance quasi terminée (~4 mois)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fusion complète avec l'ilium</td>
+<td>Maturité squelettique</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Limitation de Risser</strong> : Il évalue la maturité squelettique mais peut sous-estimer la croissance résiduelle chez les filles jeunes — faire figurer avec le stade de Tanner, l'âge osseux et, si besoin, la classification de Sanders (IRM carpe).</div>
+
+<p><strong>Triradiate cartilage</strong> = cartilage de croissance en Y à l'acétabulum (jonction ilium/ischium/pubis). Il est <strong>ouvert</strong> tant qu'il y a un potentiel de croissance important, et se <strong>ferme</strong> peu avant la ménarche chez la fille. Sa fermeture annonce l'approche de Risser 0 → Risser 1.</p>
+<hr />
+<h2 id="72-radiographies-dynamiques">7.2 Radiographies dynamiques</h2>
+<div class="vertex-media">
+<strong>📷 M07-S02-001</strong><br/>
+<em>Comparatif bending films droit/gauche (courbures primaires vs compensatrices)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<p>Les clichés dynamiques permettent d'évaluer la <strong>flexibilité</strong> des courbures avant un traitement (chirurgie, corset), de distinguer les courbures <strong>structurales</strong> (rigides) des courbures <strong>non structurales</strong> (compensatrices, réductibles).</p>
+<h3 id="721-bending-films-cliches-dinclinaison-laterale">7.2.1 Bending films (clichés d'inclinaison latérale)</h3>
+<p><strong>Technique</strong> : Patient debout ou allongé, se penchant vers la droite puis vers la gauche au maximum.</p>
+<p><strong>Interprétation</strong> :<br />
+- <strong>Courbure principale</strong> : souvent peu réductible sur le bending controlatéral<br />
+- <strong>Courbure compensatrice</strong> : se réduit &lt; 25° ou disparaît sur le bending ipsilatéral correspondant<br />
+- <strong>Critère de Lenke de flexibilité</strong> : une courbure est dite flexible si elle se réduit à &lt; 25° sur le bending (ou &gt; 50% de réduction)</p>
+<h3 id="722-cliches-en-traction-craniale">7.2.2 Clichés en traction crâniale</h3>
+<ul>
+<li>Patient allongé, traction axiale sous fluoroscopie</li>
+<li>Alternative aux bending pour les patients peu coopérants</li>
+<li>Utile pour les courbures thoraciques rigides sévères</li>
+</ul>
+<h3 id="723-fulcrum-bending-radiographs">7.2.3 Fulcrum bending radiographs</h3>
+<ul>
+<li>Patient en décubitus latéral sur un appui cylindrique placé à l'apex</li>
+<li>Évalue la flexibilité des courbures thoraciques = bon prédicteur de la correction chirurgicale</li>
+<li><strong>Indice de flexibilité (Fulcrum Flexibility Index, FFI)</strong>: rapport entre la correction sur fulcrum et la correction obtenue en chirurgie</li>
+</ul>
+<h3 id="724-push-prone-radiographs">7.2.4 Push-prone radiographs</h3>
+<ul>
+<li>Patient en décubitus ventral, poussé latéralement par l'examinateur</li>
+<li>Simulation de la correction possible avec halo lors d'une traction</li>
+</ul>
+<hr />
+<h2 id="73-systeme-eos">7.3 Système EOS</h2>
+<div class="vertex-media">
+<strong>📷 M07-S03-001</strong><br/>
+<em>Photo système EOS + exemple reconstruction 3D sterEOS</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 M07-S03-002</strong><br/>
+<em>Animation reconstruction 3D sterEOS</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="731-principe-de-fonctionnement">7.3.1 Principe de fonctionnement</h3>
+<p>Le système <strong>EOS</strong> (dénommé ainsi en hommage à Georges Charpak, prix Nobel) utilise deux détecteurs à gaz <strong>bi-planaires</strong> (face + profil) qui balayent simultanément le patient en position <strong>debout</strong>, de la tête jusqu'aux pieds.</p>
+<p><strong>Avantages techniques</strong> :<br />
+- <strong>Dose de rayonnement réduite de 60–80 %</strong> par rapport à la radiographie conventionnelle (Deschênes et al., 2010, <em>Spine</em> ; en raison de la faible énergie des détecteurs à fils de Charpak)<br />
+- Acquisition <strong>simultanée</strong> face et profil : pas de rotation du patient entre les deux clichés<br />
+- Clichés debout de la tête aux pieds : paramètres pelviens et fémoraux inclus<br />
+- Base pour la <strong>reconstruction 3D (sterEOS)</strong> entièrement en charge</p>
+<h3 id="732-reconstruction-3d-stereos">7.3.2 Reconstruction 3D sterEOS</h3>
+<p>À partir des deux clichés biplans, un logiciel de reconstruction semi-automatique permet d'obtenir :<br />
+- Un <strong>modèle 3D vertébral personnalisé</strong> (contours osseux, pédicules, corps)<br />
+- Des mesures <strong>tridimensionnelles</strong> (rotation, sollicitation, plan de déformation maximale)<br />
+- Un <strong>indice de sollicitation thoracique</strong> (3D-Cobb, gibbosité calculée)<br />
+- La <strong>reconstruction pelvienne 3D</strong> (calcul précis PI, SS, PT)</p>
+<blockquote>
+<p><strong>🔑 Point clinique</strong> : La reconstruction 3D permet de dissocier les composantes dans les trois plans, d'identifier le plan de déformation maximale (PMD), et de planifier la correction chirurgicale en 3D.</p>
+</blockquote>
+<h3 id="733-mesures-3d-disponibles">7.3.3 Mesures 3D disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Mesure</th>
+<th>Définition</th>
+<th>Avantage vs 2D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Angle de Cobb 3D</strong></td>
+<td>Dans le plan de déformation maximale (non le plan frontal)</td>
+<td>Plus représentatif de la vraie déformation</td>
+</tr>
+<tr>
+<td><strong>Axial rotation 3D</strong></td>
+<td>Rotation de chaque verèbre mesurée en 3D</td>
+<td>Précision &gt; Nash-Moe</td>
+</tr>
+<tr>
+<td><strong>Torsion inter-apophysaire</strong></td>
+<td>Torsion entre deux vertèbres adjacentes</td>
+<td>Impossible en 2D</td>
+</tr>
+<tr>
+<td><strong>Volume thoracique</strong></td>
+<td>Estimation indirecte du volume pulmonaire</td>
+<td>Corrèle avec la CVF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="74-irm-imagerie-par-resonance-magnetique">7.4 IRM (Imagerie par Résonance Magnétique)</h2>
+<div class="vertex-media">
+<strong>📷 M07-S04-001</strong><br/>
+<em>IRM annotée : syringomyélie, malformation de Chiari, moelle attachée</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="741-indications-de-lirm-dans-la-scoliose">7.4.1 Indications de l'IRM dans la scoliose</h3>
+<p>L'IRM n'est <strong>pas systématique</strong> dans la scoliose idiopathique de l'adolescent (SIA) typique, mais est <strong>obligatoire</strong> dans les situations suivantes :</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scoliose thoracique gauche</strong></td>
+<td>Atypique pour une SIA — évoquer anomalie intracanalaire</td>
+</tr>
+<tr>
+<td><strong>Scoliose infantile et juvénile (&lt; 10 ans)</strong></td>
+<td>20–25 % d'anomalies intracanalaires</td>
+</tr>
+<tr>
+<td><strong>Progression rapide (&gt; 10°/an)</strong></td>
+<td>Peut signer une pathologie sous-jacente</td>
+</tr>
+<tr>
+<td><strong>Anomalie neurologique (signes déficitaires, asymétrie des réflexes)</strong></td>
+<td>Compression médullaire</td>
+</tr>
+<tr>
+<td><strong>Douleur nocturne, atypique, persistante</strong></td>
+<td>Tumeur, infection</td>
+</tr>
+<tr>
+<td><strong>Cyphose atypique associée</strong></td>
+<td>Chiari, syrinx</td>
+</tr>
+<tr>
+<td><strong>Hyporeflexie, clonus, signe de Babinski</strong></td>
+<td>Moelle attachée, syrinx</td>
+</tr>
+<tr>
+<td><strong>Scoliose congénitale</strong></td>
+<td>Anomalies intracanalaires associées dans 40 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="742-anomalies-intracanalaires-a-rechercher">7.4.2 Anomalies intracanalaires à rechercher</h3>
+<h4 id="malformation-de-chiari-i">Malformation de Chiari I</h4>
+<p>Herniation des amygdales cérébelleuses à &gt; 5 mm sous le plan du trou occipital.</p>
+<ul>
+<li><strong>Fréquence</strong> dans la scoliose pédiatrique : 2–4 % (Rajasekaran et al., 2010, <em>J Bone Joint Surg Br</em>)</li>
+<li><strong>Association</strong> : syringomyélie (présente dans 60–80 % des Chiari I avec scoliose) (Milhorat et al., 1999, <em>J Neurosurg</em>)</li>
+<li><strong>Mécanisme</strong> : perturbation de la proprioception et du contrôle postural</li>
+<li><strong>Traitement</strong> : décompression sous-occipitale (chirurgie) → peut permettre la régression de la scoliose si opérée tôt</li>
+</ul>
+<h4 id="syringomyelie">Syringomyélie</h4>
+<p>Cavité liquidienne intramédullaire.</p>
+<ul>
+<li><strong>Présence</strong> : 4–5 % des scolioses pédiatriques (Rajasekaran et al., 2010)</li>
+<li><strong>Évocateur</strong> : scoliose atypique, progression rapide, troubles neurologiques</li>
+<li><strong>IRM</strong> : séquences T2 sagittales et axiales sur rachis entier</li>
+<li><strong>Traitement</strong> de la cause avant toute correction chirurgicale de la scoliose</li>
+</ul>
+<h4 id="moelle-attachee-tethered-cord">Moelle attachée (tethered cord)</h4>
+<p>Filum terminal épaissi (&gt; 2 mm) ou lipoméningocèle fixant la moelle en position basse.</p>
+<ul>
+<li><strong>Fréquence</strong> : 1–2 % des scolioses pédiatriques (Rajasekaran et al., 2010)</li>
+<li><strong>Signes évocateurs</strong> : taches cutanées lombaires (fossette, touffe de poils), troubles sphinctériens</li>
+<li><strong>Traitement chirurgical</strong> necesssaire avant la correction de la scoliose</li>
+</ul>
+<h3 id="743-protocol-dirm-rachis-entier-pour-scoliose">7.4.3 Protocol d'IRM rachis entier pour scoliose</h3>
+<ul>
+<li><strong>Séquences minimales</strong> :</li>
+<li>Sagittal T1 et T2 (rachis entier, de la fosse postérieure au coccyx)</li>
+<li>Axial T2 (niveaux à risque ou anomalie identifiée)</li>
+<li>CISS si suspicion de Chiari (haute résolution de la charnière)</li>
+<li><strong>Conditions techniques</strong> : IRM 1,5 ou 3T, antennes de rachis complètes</li>
+<li><strong>Anesthésie</strong> : parfois nécessaire chez l'enfant &lt; 5 ans</li>
+</ul>
+<hr />
+<h2 id="75-scanner-tdm-tomodensitometrie">7.5 Scanner (TDM — Tomodensitométrie)</h2>
+<h3 id="751-indications-principales">7.5.1 Indications principales</h3>
+<p>Le scanner n'est pas l'examen de première intention du fait de l'irradiation, mais reste indispensable dans certaines situations :</p>
+<table>
+<thead>
+<tr>
+<th>Indication</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scoliose congénitale</strong></td>
+<td>Caractérisation des malformations (hémivertèbre, barre, bloc)</td>
+</tr>
+<tr>
+<td><strong>Planification chirurgicale</strong></td>
+<td>Taille et morphologie des pédicules, navigation préopératoire</td>
+</tr>
+<tr>
+<td><strong>Évaluation de la fusion postopératoire</strong></td>
+<td>Détection des pseudarthroses</td>
+</tr>
+<tr>
+<td><strong>Tumeur vertébrale</strong></td>
+<td>Érosion corticale, extension</td>
+</tr>
+<tr>
+<td><strong>Fracture intercurrente</strong></td>
+<td>Traumatologie associée</td>
+</tr>
+</tbody>
+</table>
+<h3 id="752-reconstruction-3d-scanner">7.5.2 Reconstruction 3D scanner</h3>
+<ul>
+<li>Reconstitution isotropique multiplanaire (MPR : coronale, sagittale, axiale)</li>
+<li><strong>Rendu volumique (VRT)</strong> : visualisation des malformations congénitales</li>
+<li><strong>Segmentation pédiculaire</strong> : taille, axe et angle de chaque pédicule pour implantation des vis</li>
+<li><strong>Ostéodensitométrie TDM</strong> : mesure par TDM de la densité trabéculaire vertébrale (alternative DEXA)</li>
+</ul>
+<h3 id="753-navigation-peroperatoire-ct-guidee">7.5.3 Navigation peropératoire CT-guidée</h3>
+<p>Le scanner préopératoire peut être utilisé pour :<br />
+- <strong>Navigation 3D</strong> en peropératoire (système O-Arm + StealthStation, Brainlab…)<br />
+- <strong>Implantation guidée des vis pédiculaires</strong> avec contrôle en temps réel<br />
+- <strong>Fusion IRM/TDM</strong> pour repérer les structures nobles (moelle, aorte)</p>
+<hr />
+<h2 id="76-imagerie-nucleaire">7.6 Imagerie nucléaire</h2>
+<h3 id="761-scintigraphie-osseuse-bone-scan">7.6.1 Scintigraphie osseuse (bone scan)</h3>
+<ul>
+<li><strong>Indication</strong> : Douleur rachidienne atypique, suspicion de spondylolyse, lésion de découverte fortuite</li>
+<li><strong>Injection</strong> : Technétium-99m methylene diphosphonate (99mTc-MDP)</li>
+<li><strong>Hyperfixation</strong> → activité osseuse (fracture de fatigue, tumeur bénigne bénigne active, spondylodiscite)</li>
+<li><strong>Défaut de fixation</strong> → infarctus osseux, métastase ostéolytique</li>
+</ul>
+<h3 id="762-spect-ct">7.6.2 SPECT-CT</h3>
+<p>Couplage de la scintigraphie 3D (SPECT) avec un scanner en un seul examen.</p>
+<ul>
+<li><strong>Avantage</strong> : localisation anatomique précise d'un foyer hyperfixant</li>
+<li><strong>Indication</strong> : Spondylolyse de l'adolescent sportif, douleur lombaire chronique post-chirurgicale</li>
+</ul>
+<hr />
+<h2 id="77-echographie-rachidienne">7.7 Échographie rachidienne</h2>
+<ul>
+<li>Pas d'indication validée pour la mesure de la courbure scoliotique en routine</li>
+<li>Recherche : utilisation comme outil de <strong>dépistage non irradiant</strong> (corrélation avec l'angle de Cobb ~80 %, résultats prometteurs mais non validés en pratique courante)</li>
+<li><strong>Dépistage néonatal</strong> : échographie de la charnière lombosacrée chez les nouveau-nés avec fossette sacrée suspecte (déterminer si communication épidurale)</li>
+</ul>
+<hr />
+<h2 id="78-evaluation-de-la-densite-osseuse">7.8 Évaluation de la densité osseuse</h2>
+<blockquote>
+<p><strong>🔑 Pertinence</strong> : La qualité osseuse conditionne la tenue des vis pédiculaires et le risque de fracture de cage intersomatique.</p>
+</blockquote>
+<h3 id="dexa-dual-energy-x-ray-absorptiometry">DEXA (Dual-Energy X-ray Absorptiometry)</h3>
+<ul>
+<li><strong>Indication systématique</strong> avant toute chirurgie instrumentée chez l'adulte &gt; 50 ans</li>
+<li><strong>Mesure</strong> : T-score et Z-score au rachis lombaire et col fémoral</li>
+<li><strong>Seuils</strong> :</li>
+<li>T-score &gt; −1 : normal</li>
+<li>T-score −1 à −2,5 : ostéopénie</li>
+<li>T-score &lt; −2,5 : ostéoporose → traitement préopératoire recommandé (bisphosphonates, tériparatide)</li>
+<li><em>(Seuils définis par l'OMS, 1994, WHO Technical Report Series 843)</em></li>
+</ul>
+<hr />
+<h2 id="79-cas-clinique-interpretation-radiologique">7.9 Cas clinique — Interprétation radiologique</h2>
+<h3 id="cas-1-sophie-15-ans">Cas 1 — Sophie, 15 ans</h3>
+<p><strong>Données</strong> : Téléradiographie debout biplans.</p>
+<p>Sur la <strong>radio de face</strong> :<br />
+- Courbure thoracique droite, apex T8<br />
+- Vertèbre limite sup. : T5 — Vertèbre limite inf. : T11<br />
+- Angle de Cobb = <strong>34°</strong><br />
+- Rotation apicale : Nash-Moe grade 2 (pédicule convexe déplacé à mi-chemin)<br />
+- Risser = <strong>1</strong> (apophyse iliaque 25% ossifiée)</p>
+<p>Sur la <strong>radio de profil</strong> :<br />
+- Cyphose T4-T12 = <strong>18°</strong> (hypocyphose thoracique)<br />
+- Lordose L1-L5 = <strong>48°</strong><br />
+- PI = <strong>53°</strong> — SS = <strong>38°</strong> — PT = <strong>15°</strong><br />
+- SVA = <strong>+12 mm</strong> (C7 légèrement en avant de S1 → dans les limites normales)</p>
+<p><strong>Questions à se poser</strong> :<br />
+1. Est-ce une scoliose idiopathique typique ? → Courbe thoracique droite, adolescente → <strong>OUI, typique</strong><br />
+2. Faut-il une IRM ? → Pas de signes atypiques, courbe droite → <strong>non indiquée en première intention</strong><br />
+3. Quel Risser pour évaluer la progression ? → <strong>Risser 1 → risque élevé de progression</strong> (score de Lonstein-Carlson élevé)</p>
+<h3 id="cas-2-lucas-9-ans">Cas 2 — Lucas, 9 ans</h3>
+<p><strong>Données</strong> : Découverte de scoliose lors d'un bilan de suivi neurologique. Scoliose thoracique gauche T4-T10, Cobb 22°. Quelques asymétries des réflexes ostéotendineux.</p>
+<p><strong>Analyse</strong> : Courbe <strong>gauche + enfant jeune + asymétrie neurologique</strong> = 3 signes atypiques.</p>
+<p>→ <strong>IRM du rachis entier indispensable et urgente.</strong></p>
+<p>Résultat : Syringomyélie de T3 à T8, malformation de Chiari I (herniation &lt; 7 mm). Adressé en neurochirurgie.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La téléradiographie debout biplans est l'examen de référence — ni décubitus, ni assis.</p>
+<p>📌 <strong>2.</strong> L'angle de Cobb se mesure sur les <strong>vertèbres limites</strong>, pas sur l'apex. La variation minimale significative est <strong>± 5°</strong>.</p>
+<p>📌 <strong>3.</strong> La rotation vertébrale est la dimension cachée de la scoliose — Nash-Moe sur radio de face, quantifiée par Perdriolle.</p>
+<p>📌 <strong>4.</strong> Les paramètres pelviens (PI, SS, PT) sont aussi importants que l'angle de Cobb — un déséquilibre sagittal tue la qualité de vie.</p>
+<p>📌 <strong>5.</strong> L'EOS est la norme actuelle : même information, 60–80 % de dose en moins + reconstruction 3D.</p>
+<p>📌 <strong>6.</strong> L'IRM est <strong>obligatoire</strong> dans toute situation atypique : courbe gauche, enfant &lt; 10 ans, signes neurologiques, progression rapide.</p>
+<p>📌 <strong>7.</strong> Le scanner est réservé aux scolioses congénitales et à la planification chirurgicale — pas un examen de routine.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-de-fin-de-module-15-questions">Quiz de fin de module — 15 questions</h2>
+<p><strong>Q1. 🥉</strong> Quelle position est obligatoire pour réaliser une téléradiographie du rachis interprétable ?</p>
+<ul>
+<li>A. Décubitus dorsal</li>
+<li><strong>B. Debout, pieds joints</strong></li>
+<li>C. Assis jambes pendantes</li>
+<li>D. En suspension céphalique</li>
+</ul>
+<p><em>Feedback : Le décubitus réduit artificiellement la courbure par décharge gravitaire. Seule la position debout reflète la déformation réelle en charge.</em></p>
+<hr />
+<p><strong>Q2. 🥉</strong> Lors de la mesure de l'angle de Cobb, les vertèbres limites sont celles dont :</p>
+<ul>
+<li><strong>A. Les plateaux sont les plus inclinés vers la concavité</strong></li>
+<li>B. Les plateaux sont parfaitement horizontaux</li>
+<li>C. Le corps est le plus cunéiforme</li>
+<li>D. Les pédicules sont absents</li>
+</ul>
+<hr />
+<p><strong>Q3. 🥉</strong> Le signe de Risser 0 signifie :</p>
+<ul>
+<li>A. Maturité squelettique complète</li>
+<li><strong>B. Aucune ossification de l'apophyse iliaque = croissance active</strong></li>
+<li>C. Fusion complète de la crête iliaque</li>
+<li>D. Risser impossible à coter (image floue)</li>
+</ul>
+<hr />
+<p><strong>Q4. 🥉</strong> La cyphose thoracique normale (T4–T12) est de :</p>
+<ul>
+<li>A. 0–10°</li>
+<li><strong>B. 20–40°</strong></li>
+<li>C. 50–70°</li>
+<li>D. 80–90°</li>
+</ul>
+<hr />
+<p><strong>Q5. 🥉</strong> Le triradiate cartilage permet d'évaluer :</p>
+<ul>
+<li>A. La qualité de l'os iliaque</li>
+<li><strong>B. Le potentiel de croissance résiduel (ouvert = croissance importante encore présente)</strong></li>
+<li>C. L'épaisseur du cartilage articulaire de la hanche</li>
+<li>D. La densité osseuse de l'ischium</li>
+</ul>
+<hr />
+<p><strong>Q6. 🥈</strong> Quel signe clinique ou radiologique doit faire demander une IRM systématique dans un contexte de scoliose pédiatrique ?</p>
+<ul>
+<li>A. Scoliose thoracique droite à 28° chez une fille de 13 ans, Risser 1</li>
+<li><strong>B. Scoliose thoracique gauche à 20° chez un garçon de 9 ans</strong></li>
+<li>C. Progression de 6° en 6 mois chez une fille de 14 ans, Risser 2</li>
+<li>D. Gibbosité thoracique de 10° sans déficit neurologique</li>
+</ul>
+<p><em>Feedback : La scoliose thoracique gauche est atypique et évoque une pathologie intracanalaire (syringomyélie, Chiari). L'IRM est systématique.</em></p>
+<hr />
+<p><strong>Q7. 🥈</strong> Sur un bending film gauche, la courbure thoracique droite se réduit à 20°. Initialement à 42°. Que peut-on conclure ?</p>
+<ul>
+<li><strong>A. Cette courbure est flexible (réduction &gt; 50%) — courbure compensatrice possible ou structurale mais mobile</strong></li>
+<li>B. La courbure est rigide car elle dépasse encore 20°</li>
+<li>C. Aucune conclusion radiologique ne peut être tirée</li>
+<li>D. La courbure est certainement compensatrice</li>
+</ul>
+<hr />
+<p><strong>Q8. 🥈</strong> Quel avantage principal justifie l'utilisation du système EOS par rapport à la radiographie conventionnelle ?</p>
+<ul>
+<li>A. Meilleure résolution spatiale</li>
+<li><strong>B. Réduction de la dose d'irradiation de 60–80 % avec reconstruction 3D possible en position debout</strong></li>
+<li>C. Acquisition dynamique en temps réel</li>
+<li>D. Absence totale de rayonnement X</li>
+</ul>
+<hr />
+<p><strong>Q9. 🥈</strong> La mesure de la rotation vertébrale selon Nash-Moe se base sur :</p>
+<ul>
+<li>A. La cunéiformisation du corps vertébral</li>
+<li>B. L'asymétrie des processus transverses</li>
+<li><strong>C. La position du pédicule convexe par rapport au corps vertébral en face</strong></li>
+<li>D. La distance interpédiculaire</li>
+</ul>
+<hr />
+<p><strong>Q10. 🥈</strong> L'incidence pelvienne (PI) est :</p>
+<ul>
+<li>A. Un paramètre dynamique qui augmente en flexion</li>
+<li>B. Une mesure équivalente à la lordose lombaire</li>
+<li><strong>C. Un paramètre anatomique fixe, égal à PT + SS</strong></li>
+<li>D. Mesurable uniquement par IRM</li>
+</ul>
+<hr />
+<p><strong>Q11. 🥇</strong> Un patient adulte de 62 ans en bilan de scoliose dégénérative présente sur téléradiographie debout profil : PI = 65°, lordose lombaire = 35°. Que concluez-vous ?</p>
+<ul>
+<li>A. Paramètres dans la normale</li>
+<li><strong>B. PI–LL mismatch = 30° &gt; 10° → déséquilibre sagittal significatif, planification d'une correction lordosante</strong></li>
+<li>C. La lordose est trop élevée</li>
+<li>D. Aucune conclusion possible sans mesure de la cyphose thoracique</li>
+</ul>
+<p><em>Feedback : La lordose cible = PI ± 10° → ici cible = 55–65°. La lordose mesurée à 35° est très insuffisante, mismatch de 30°, facteur majeur de douleur et de chutes.</em></p>
+<hr />
+<p><strong>Q12. 🥇</strong> Chez une enfant de 8 ans avec scoliose thoracique haute droite T2-T6 et Cobb 25°, l'IRM montre une syringomyélie de T2 à T5 et une malformation de Chiari I. Quelle est la bonne prise en charge ?</p>
+<ul>
+<li><strong>A. Adresser en neurochirurgie en priorité — correction de la cause (décompression sous-occipitale) avant toute correction de la scoliose</strong></li>
+<li>B. Proposer immédiatement une arthrodèse postérieure T2-T6</li>
+<li>C. Mettre en corset TLSO et réévaluer à 6 mois</li>
+<li>D. Traitement médicamenteux de la syringomyélie</li>
+</ul>
+<hr />
+<p><strong>Q13. 🥇</strong> Parmi les éléments suivants, lequel ne modifie PAS la valeur de l'angle de Cobb ?</p>
+<ul>
+<li>A. La position debout vs décubitus</li>
+<li><strong>B. La mesure sur radio numérique vs analogique (si technique correcte)</strong></li>
+<li>C. La sélection des vertèbres limites par deux observateurs différents</li>
+<li>D. La qualité du cliché (rotation du tube)</li>
+</ul>
+<hr />
+<p><strong>Q14. 💎</strong> Chez un adolescent de 12 ans opéré d'une scoliose T6-L2, une radio de contrôle à 2 ans montre une hypercyphose junctionnelle proximale (PJK) avec T5-T6 à 24° &gt; T5-T12 global de 30°. Quelle mesure radiologique définit formellement un PJK ?</p>
+<ul>
+<li>A. SVA &gt; 50 mm</li>
+<li><strong>B. Angle Cobb T5-T6 supérieur de ≥ 10° à l'angle global T5-T12 en postopératoire, versus préopératoire</strong></li>
+<li>C. Risser &lt; 3 en postopératoire</li>
+<li>D. Pi–LL mismatch &gt; 20°</li>
+</ul>
+<hr />
+<p><strong>Q15. 💎</strong> Un chirurgien planifie une arthrodèse T10-L4 pour une scoliose de l'adulte avec PI = 50°, lordose actuelle = 25°, SVA = +8 cm. Il prévoit une cage TLIF lordosante à L4-L5 de 10° et une PSO à L3 de 20°. Quelle sera la lordose reconstruite si la lordose sus-jacente (T12-L3) est de 10° et L4-L5 apporte 20° ?</p>
+<ul>
+<li><strong>A. Lordose reconstruite ≈ 10° (T12-L3) + 20° (L4-L5, incluant la PSO) + 20° (PSO grade 3) = environ 50° → dans la cible PI-10 = 40°</strong></li>
+<li>B. 30°</li>
+<li>C. 70°</li>
+<li>D. Impossible à calculer sans scanner</li>
+</ul>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Livre</strong> : Lenke LG et al. <em>Scoliosis Research Society Atlas of Spinal Deformity</em>, SRS, 2021</li>
+<li><strong>Article</strong> : Cobb JR. Outline for study of scoliosis. <em>Instr Course Lect</em>. 1948;5:261–275</li>
+<li><strong>Article</strong> : Nash CL, Moe JH. A study of vertebral rotation. <em>J Bone Joint Surg Am</em>. 1969;51:223–229</li>
+<li><strong>Article</strong> : Morrissy RT et al. Measurement of the Cobb angle on radiographs of patients who have scoliosis. <em>J Bone Joint Surg Am</em>. 1990;72:320–327</li>
+<li><strong>Article</strong> : Duval-Beaupère G et al. A barycentremetric study of the sagittal shape of spine and pelvis. <em>Ann Biomed Eng</em>. 1992;20:451–462</li>
+<li><strong>Article</strong> : Legaye J et al. Pelvic incidence: a fundamental pelvic parameter for 3D regulation of spinal sagittal curves. <em>Eur Spine J</em>. 1998;7:99–103</li>
+<li><strong>Article</strong> : Deschênes S et al. Diagnostic imaging of spinal deformities: reducing patients radiation dose with a new slot-scanning X-ray imager. <em>Spine</em>. 2010;35:989–994</li>
+<li><strong>Article</strong> : Rajasekaran S et al. Natural history of intraspinal anomalies in patients with congenital scoliosis. <em>J Bone Joint Surg Br</em>. 2010;92:1234–1239</li>
+<li><strong>Article</strong> : Milhorat TH et al. Chiari I malformation redefined. <em>J Neurosurg</em>. 1999;91:1069–1076</li>
+<li><strong>Article</strong> : Perdriolle R. <em>La scoliose : son étude tridimensionnelle</em>. Paris: Maloine; 1979</li>
+<li><strong>Article</strong> : Risser JC. The iliac apophysis: an invaluable sign in the management of scoliosis. <em>Clin Orthop Relat Res</em>. 1958;11:111–119</li>
+<li><strong>Article</strong> : OMS. Assessment of fracture risk and its application to screening for postmenopausal osteoporosis. <em>WHO Technical Report Series 843</em>. 1994</li>
+<li><strong>Logiciel</strong> : sterEOS — EOS imaging (documentation technique)</li>
+<li><strong>Guideline</strong> : SRS Standardization of Terminology, 2021</li>
+<li><strong>Article</strong> : Farcy JP et al. Sagittal morphology and equilibrium of pelvis and spine. <em>Eur Spine J</em>. 1998;7:99–103</li>
+</ul>
+</div>

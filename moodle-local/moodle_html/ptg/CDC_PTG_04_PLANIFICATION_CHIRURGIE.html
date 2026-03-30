@@ -1,0 +1,783 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-4-planification-et-chirurgie-modules-13-19">Partie 4 — Planification et Chirurgie (Modules 13-19)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : IV — PLANIFICATION PRÉOPÉRATOIRE ET TECHNIQUES CHIRURGICALES<br />
+<strong>Modules</strong> : 13 à 19<br />
+<strong>Durée estimée</strong> : ~24 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-13-planification-preoperatoire">MODULE 13 : PLANIFICATION PRÉOPÉRATOIRE</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Modules 8, 9, 12</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> un bilan préopératoire complet (médical, imagerie, biologique)</li>
+<li><strong>Planifier</strong> la correction de l'axe et le positionnement des implants</li>
+<li><strong>Anticiper</strong> les difficultés chirurgicales et prévoir les stratégies de secours</li>
+<li><strong>Informer</strong> le patient et obtenir un consentement éclairé adapté</li>
+</ol>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="131-bilan-medical-preoperatoire">13.1 Bilan médical préopératoire</h3>
+<ul>
+<li>Évaluation des comorbidités</li>
+<li>Cardiopathie : ECG, écho cardiaque si nécessaire, avis cardiologique</li>
+<li>Diabète : HbA1c &lt; 7.5-8% <em>(Jämsen et al., 2010, Acta Orthop)</em> (seuil recommandé pour risque d'infection)</li>
+<li>Obésité : IMC &gt; 40 = risque relatif d'infection × 3-4 <em>(Namba et al., 2005, J Arthroplasty)</em> → discussion bariatrique ?</li>
+<li>AOMI : IPS, échodoppler si pouls absents</li>
+<li>Insuffisance rénale : DFG, adaptation des doses d'antibiotiques</li>
+<li>Immunodépression : biothérapies (fenêtre thérapeutique), corticothérapie, VIH</li>
+<li>Tabagisme : sevrage ≥ 4-6 semaines avant chirurgie (cicatrisation, infection)</li>
+<li>Risque thromboembolique</li>
+<li>Score de Caprini <em>(Caprini JA, Thromb Res, 2012)</em> ou équivalent</li>
+<li>Antécédent de TVP/EP : bilan de thrombophilie si non fait</li>
+<li>Arrêt des anticoagulants : INR &lt; 1.5 le jour de la chirurgie, relais par HBPM</li>
+<li>Protocole de prophylaxie : HBPM ou AOD (rivaroxaban, apixaban) pendant 14-35 jours</li>
+<li>Risque infectieux — Dépistage</li>
+<li>Portage nasal de <em>Staphylococcus aureus</em> (MRSA) : écouvillon nasal préopératoire</li>
+<li>Décontamination : mupirocine nasale (5 jours) + douches à la chlorhexidine</li>
+<li>ECBU (bandelette urinaire → ECBU si positif) : traiter toute infection urinaire avant la chirurgie</li>
+<li>Examen dentaire : éradication des foyers infectieux dentaires</li>
+<li>Dermatologie : aucune lésion cutanée au membre opéré (eczéma, ulcère, mycose)</li>
+<li>Bilan biologique</li>
+<li>NFS, CRP, VS (référence pré-opératoire, exclure infection évolutive)</li>
+<li>Ionogramme, créatinine, glycémie</li>
+<li>Groupe sanguin, RAI (anticipation transfusion — rare en PTG primaire)</li>
+<li>Bilan de coagulation : TP, TCA</li>
+<li>Albumine si patient dénutri (albuminémie &lt; 35 g/L → risque de complication × 2-5) <em>(Bohl et al., 2016, J Arthroplasty)</em><blockquote>
+<p>[MEDIA: 📊 MPTG13-S01-001 — Checklist du bilan préopératoire complet de PTG : 45 items organisés par système (cardiovasculaire, métabolique, infectieux, hématologique) — format imprimable (Cochez chaque item pour votre patient)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="132-planification-par-limagerie-determination-de-laxe-cible">13.2 Planification par l'imagerie — Détermination de l'axe cible</h3>
+<ul>
+<li>Philosophie d'alignement mécanique (MA — classique)</li>
+<li>Objectif : HKA = 180° ± 3° (axe mécanique neutre)</li>
+<li>Coupe fémorale distale : perpendiculaire à l'axe mécanique fémoral (valgus cut 5-7°)</li>
+<li>Coupe tibiale : perpendiculaire à l'axe mécanique tibial (90°)</li>
+<li>Rotation fémorale : 3° RE par rapport à la PCA (// TEA)</li>
+<li>Pente tibiale : 0-3° (PS) ou 3-7° (CR, reproduire la pente native)</li>
+<li>Joint line obliquity (JLO) : la ligne articulaire doit être parallèle au sol en appui</li>
+<li>Philosophie d'alignement cinématique (KA)</li>
+<li>Objectif : restaurer l'axe préarthrosique (pas nécessairement 180°)</li>
+<li>Coupe fémorale : reproduire l'épaisseur du cartilage usé + la coupe osseuse (coupes proportionnelles)</li>
+<li>Exemple : si 2 mm d'usure médiale du fémur → coupe médiale 2 mm plus épaisse que latérale → valgus réduit</li>
+<li>Avantage : balance ligamentaire « automatique » (pas de release)</li>
+<li>Zone de sécurité : HKA entre 174° et 186° recommandé</li>
+<li>Philosophie d'alignement fonctionnel (FA)</li>
+<li>Robotique nécessaire (MAKO, ROSA, CORI, etc.)</li>
+<li>Coupes guidées par les gaps de flexion-extension mesurés en peropératoire</li>
+<li>Ajustement en temps réel de la balance ligamentaire</li>
+<li>Le plus personnalisé des 3 approches</li>
+<li>Templating — Taille des composants</li>
+<li>Fémoral : dimension AP (pas d'overhang → douleur, pas de trop petit → notching)</li>
+<li>Tibial : couverture maximale du plateau coupé (pas de dépassement médial → LCM douleur)</li>
+<li>PE : épaisseur déterminée par les gaps (extension gap = flexion gap idéalement)</li>
+<li>Rotule : épaisseur composant + os résiduel ≥ 22-25 mm (épaisseur originale ≈)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG13-S02-001</strong><br/>
+<em>Schéma comparatif MA vs KA vs FA : angles de coupe fémorale et tibiale, axe résultant, positionnement du composant sur un même patient (Comparez les 3 planifications)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG13-S02-002</strong><br/>
+<em>Animation du templating 2D sur pangonogramme : étape par étape — mesure du HKA, calcul du valgus cut, choix de la taille, vérification de la ligne articulaire (Reproduisez sur un cas fourni)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="133-gestion-des-anticoagulants-et-antiagregants">13.3 Gestion des anticoagulants et antiagrégants</h3>
+<ul>
+<li>Aspirine : ne pas arrêter (consensus récent : risque hémorragique mineur)</li>
+<li>Clopidogrel : arrêt 5-7 jours avant, relais aspirine selon indication</li>
+<li>AVK : arrêt 5 jours, relais HBPM quand INR &lt; 2, reprise J+1 post-opératoire</li>
+<li>AOD : arrêt 48-72h selon molécule et clairance de la créatinine</li>
+<li>Double antiagrégation (post-stent coronaire) : concertation cardiologue +++</li>
+</ul>
+<h3 id="134-information-et-consentement-du-patient">13.4 Information et consentement du patient</h3>
+<ul>
+<li>Information obligatoire (article L.1111-2 du Code de la Santé Publique)</li>
+<li>Bénéfices attendus : soulagement de la douleur (85-90% de bons résultats), amélioration de la mobilité et de la fonction <em>(Bourne et al., 2010, Clin Orthop)</em></li>
+<li>Risques : infection (1-2%), TVP/EP (1-5% symptomatique), lésion vasculaire ou nerveuse (&lt; 1%), fracture peropératoire (&lt; 1%), raideur (5-10%), douleur résiduelle (10-20%), descellement (&lt; 5% à 10 ans) <em>(Bourne et al., 2010, Clin Orthop)</em></li>
+<li>Alternatives : traitement conservateur, ostéotomie, PUC</li>
+<li>Résultats à long terme : survie de la prothèse (95-97% à 10 ans, 90% à 20 ans)</li>
+<li>Délai de récupération : 3-6 mois pour retour à la vie quotidienne, 6-12 mois pour résultat optimal</li>
+<li>Gestion des attentes</li>
+<li>« Le genou prothétique ne sera jamais un genou normal »</li>
+<li>Flexion attendue : 110-125° (pas les 140° du genou normal)</li>
+<li>Activités possibles : marche, vélo, natation, golf, randonnée, ski de fond</li>
+<li>Activités déconseillées : course à pied (haute fréquence), football, rugby, sports de contact</li>
+<li>Sports débattus : tennis (doubles OK, simple prudent), ski alpin (niveau confirmé, piste)</li>
+<li>15-20% d'insatisfaction <em>(Scott et al., 2012, Bone Joint J)</em> → majorité liée aux attentes irréalistes, pas à un « raté technique »</li>
+<li>Consentement écrit : document spécifique PTG, signé, copie au patient</li>
+</ul>
+<hr />
+<h1 id="module-14-technique-chirurgicale-voies-dabord">MODULE 14 : TECHNIQUE CHIRURGICALE — VOIES D'ABORD</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Modules 3, 13</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les voies d'abord standard et alternatives du genou pour la PTG</li>
+<li><strong>Choisir</strong> la voie d'abord adaptée au morphotype et à la pathologie</li>
+<li><strong>Réaliser</strong> les étapes d'exposition de l'articulation</li>
+<li><strong>Identifier</strong> les structures à risque durant l'abord</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="141-voie-dabord-mediale-parapatellaire-standard">14.1 Voie d'abord médiale parapatellaire (standard)</h3>
+<ul>
+<li>Incision cutanée</li>
+<li>Médiane antérieure, 12-15 cm, centrée sur la patella</li>
+<li>Du pôle supérieur de la patella à la TTA (tubérosité tibiale antérieure)</li>
+<li>Si cicatrices antérieures : utiliser la cicatrice la plus latérale</li>
+<li>Arthrotomie médiale parapatellaire</li>
+<li>Division du tendon quadricipital en son tiers médial</li>
+<li>Poursuite le long du bord médial de la patella</li>
+<li>Division du rétinaculum médial</li>
+<li>Prolongement le long du bord médial du tendon rotulien jusqu'à la TTA</li>
+<li>Exposition de l'articulation</li>
+<li>Luxation (ou éversion) de la patella latéralement</li>
+<li>Flexion progressive du genou à 90°</li>
+<li>Release du cul-de-sac sous-quadricipital (synovectomie antérieure)</li>
+<li>Résection du ligament adipeux de Hoffa (partiellement) pour exposition</li>
+<li>Résection des ménisques</li>
+<li>Résection du LCA (systématique en PTG standard)</li>
+<li>Ostéophytes : excision minutieuse (médiale, latérale, postérieure, intercondylienne)</li>
+<li>Avantages</li>
+<li>Universelle : adaptable à tous les morphotypes</li>
+<li>Exposition large et sûre</li>
+<li>Reproductible, technique la plus enseignée</li>
+<li>Inconvénients</li>
+<li>Section du VMO (Vastus Medialis Obliquus) → retard de récupération du quadriceps</li>
+<li>Risque de dévascularisation partielle de la patella (artère géniculée supéro-médiale)<blockquote>
+<p>[MEDIA: 🎥 MPTG14-S01-001 — Vidéo chirurgicale de la voie médiale parapatellaire — de l'incision cutanée à l'exposition complète de l'articulation (Identifiez chaque plan anatomique traversé)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG14-S01-002</strong><br/>
+<em>Schéma de l'arthrotomie médiale parapatellaire : tracé de l'incision, structures traversées, vascularisation patellaire (Quel vaisseau est à risque ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="142-voie-mediale-sous-vaste-subvastus">14.2 Voie médiale sous-vaste (subvastus)</h3>
+<ul>
+<li>Technique : arthrotomie passant sous le bord inférieur du VMO (pas de section musculaire)</li>
+<li>Avantage : préservation de l'appareil extenseur (récupération plus rapide du quadriceps)</li>
+<li>Inconvénient : exposition plus limitée (difficile si BMI &gt; 35, genou valgus, genou raide)</li>
+<li>Indication idéale : genou standard varus, IMC &lt; 30, bonne mobilité pré-opératoire</li>
+</ul>
+<h3 id="143-voie-mediale-mid-vaste-midvastus">14.3 Voie médiale mid-vaste (midvastus)</h3>
+<ul>
+<li>Technique : division du VMO dans le sens de ses fibres sur 3-4 cm proximalement</li>
+<li>Compromis entre parapatellaire standard et subvastus</li>
+<li>Avantage : exposition correcte avec moindre atteinte du VMO</li>
+<li>Inconvénient : risque de lésion du nerf du VMO (branche du nerf fémoral)</li>
+</ul>
+<h3 id="144-voie-laterale">14.4 Voie latérale</h3>
+<ul>
+<li>Indication : genu valgum sévère (&gt; 15-20°) avec contracture latérale</li>
+<li>Technique : arthrotomie latérale parapatellaire, luxation médiale de la patella</li>
+<li>Avantage : release latéral dans le même plan que l'abord, meilleure correction du valgus</li>
+<li>Inconvénient : technique moins familière, risque sur l'artère géniculée supéro-latérale, turndown du tendon quadricipital parfois nécessaire</li>
+<li>Variante : voie de Keblish (release in-out, ostéotomie de la TTA de l'extérieur vers l'intérieur)</li>
+</ul>
+<h3 id="145-voies-mini-invasives-mis">14.5 Voies mini-invasives (MIS)</h3>
+<ul>
+<li>Principe : incision cutanée &lt; 10 cm, arthrotomie limitée, pas d'éversion de la rotule</li>
+<li>Techniques : MIS-subvastus, MIS-midvastus, quad-sparing</li>
+<li>Avantages théoriques : récupération plus rapide, douleur moindre, esthétique</li>
+<li>Inconvénients prouvés : exposition insuffisante → risque de malpositionnement, courbe d'apprentissage longue, temps opératoire augmenté, pas de bénéfice à long terme démontré</li>
+<li>Position actuelle : en déclin, sauf pour les chirurgiens très expérimentés avec navigation/robotique</li>
+</ul>
+<h3 id="146-technique-de-roux-goldthwait-turndown-du-tendon-quadricipital">14.6 Technique de Roux-Goldthwait (turndown du tendon quadricipital)</h3>
+<ul>
+<li>Indication : genoux très raides (flexion &lt; 60° pré-opératoire), PTG de reprise avec ankylose</li>
+<li>Technique : snip du tendon quadricipital en VY ou en V inversé ou ostéotomie de la TTA → relèvement de l'appareil extenseur pour exposition</li>
+<li>Variantes : quadriceps snip (extension oblique proximale), TTA osteotomy (abaissement de la TTA avec vis)</li>
+<li>Complication spécifique : déficit d'extension active post-opératoire (retard de cicatrisation)<blockquote>
+<p>[MEDIA: 📊 MPTG14-S06-001 — Tableau comparatif des voies d'abord : parapatellaire, subvastus, midvastus, latérale, MIS — avantages, inconvénients, indications (Choisissez la voie pour 4 profils de patients)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-15-technique-chirurgicale-coupes-osseuses-et-balance-ligamentaire">MODULE 15 : TECHNIQUE CHIRURGICALE — COUPES OSSEUSES ET BALANCE LIGAMENTAIRE</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 4, 9, 13, 14</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Maîtriser</strong> la séquence des coupes osseuses (fémur proximal, tibia, chanfrein, box cut)</li>
+<li><strong>Appliquer</strong> la technique de balance ligamentaire (<em>gap balancing</em> vs <em>measured resection</em>)</li>
+<li><strong>Corriger</strong> les déformations en varus et en valgus par des gestes de <em>release</em></li>
+<li><strong>Évaluer</strong> les gaps d'extension et de flexion et ajuster le positionnement</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="151-principes-de-base-les-2-philosophies">15.1 Principes de base — Les 2 philosophies</h3>
+<ul>
+<li><strong>Measured resection</strong> (résection mesurée — « bone referencing »)</li>
+<li>Coupes osseuses réalisées en premier selon des repères anatomiques osseux</li>
+<li>Résection fémorale distale : épaisseur = épaisseur du composant (9-10 mm + cartilage manquant)</li>
+<li>Résection fémorale postérieure : idem, référencée sur les condyles postérieurs</li>
+<li>Résection tibiale : 8-10 mm sous le point le plus haut (ou le moins usé)</li>
+<li>La balance ligamentaire est ajustée APRÈS les coupes (release si nécessaire)</li>
+<li>Avantage : reproductible, hauteur de la ligne articulaire préservée</li>
+<li>
+<p>Inconvénient : la balance ligamentaire est secondaire → asymétrie des gaps possible</p>
+</li>
+<li>
+<p><strong>Gap balancing</strong> (équilibrage des espaces)</p>
+</li>
+<li>La balance ligamentaire est réalisée AVANT les coupes fémorales</li>
+<li>Coupe tibiale en premier → release ligamentaire pour obtenir un gap d'extension rectangulaire et symétrique</li>
+<li>Rotation et taille fémorale déterminées par le gap de flexion (le fémur s'adapte au gap)</li>
+<li>Avantage : gaps toujours symétriques → stabilité optimale</li>
+<li>
+<p>Inconvénient : risque d'élévation ou d'abaissement de la ligne articulaire, rotation fémorale non anatomique si les ligaments sont asymétriques</p>
+</li>
+<li>
+<p><strong>Approche hybride</strong> (la plus adoptée actuellement)</p>
+</li>
+<li>Coupes osseuses référencées sur l'anatomie (measured resection)</li>
+<li>Vérification des gaps avec espaceurs ou tenseurs</li>
+<li>Ajustement fin par release si nécessaire</li>
+<li>Tendance moderne : la robotique permet les 2 approches simultanément</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG15-S01-001</strong><br/>
+<em>Schéma comparatif measured resection vs gap balancing : séquence des étapes, influence sur les gaps, rotation fémorale (Lequel utiliseriez-vous en première intention ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="152-coupe-tibiale">15.2 Coupe tibiale</h3>
+<ul>
+<li>Repérage de la pente tibiale naturelle (profil radiographique ou navigation)</li>
+<li>Guide de coupe extra-médullaire (standard en PTG)</li>
+<li>Tige extra-médullaire alignée le long de l'axe mécanique tibial</li>
+<li>Repère proximal : centre du plateau tibial (milieu des épines tibiales)</li>
+<li>Repère distal : centre de la cheville (milieu de la malléole médiale et latérale)</li>
+<li>Réglage de la pente postérieure (0-7° selon le design CR ou PS)</li>
+<li>Hauteur de coupe</li>
+<li>Résection minimale : 8-10 mm sous le point le plus haut du plateau (compartiment le moins usé)</li>
+<li>Préserver l'os sain → longévité de la fixation, facilite la reprise future</li>
+<li>Insert PE minimal : 8-10 mm (la plupart des systèmes)</li>
+<li>Rotation tibiale</li>
+<li>Axe de référence : tiers médial de la TTA → centre du plateau tibial</li>
+<li>Alternative : bord postéro-médial du plateau tibial (plus fiable en cas de TTA déviée)</li>
+<li>La rotation tibiale est souvent déterminée par la couverture optimale du plateau coupé</li>
+<li>Vérification</li>
+<li>Valgus stress test sur le plateau coupé → gap médio-latéral symétrique ?</li>
+<li>Si asymétrique : release ligamentaire ou re-coupe</li>
+</ul>
+<h3 id="153-coupe-femorale-distale">15.3 Coupe fémorale distale</h3>
+<ul>
+<li>Guide de coupe intra-médullaire (standard en PTG)</li>
+<li>Entrée du guide IM : 1 cm au-dessus de la trochlée, au milieu, dans le canal fémoral</li>
+<li>Angle de valgus de coupe : mesuré sur le pangonogramme (angle entre l'axe mécanique et l'axe anatomique du fémur = 5-7°, moyenne 6°)</li>
+<li>Confirmation par navigation ou robotique</li>
+<li>Résection distale</li>
+<li>Épaisseur = épaisseur du composant (condyle le moins usé comme référence)</li>
+<li>Typiquement 9-10 mm côté sain, 7-8 mm côté usé + 2 mm de cartilage manquant</li>
+<li>Restaurer la ligne articulaire à son niveau original</li>
+</ul>
+<h3 id="154-coupe-femorale-posterieure-et-rotation">15.4 Coupe fémorale postérieure et rotation</h3>
+<ul>
+<li>Repères de rotation fémorale</li>
+<li><strong>Axe transépicondylien (TEA)</strong> : du sulcus de l'épicondyle médial à l'apex de l'épicondyle latéral</li>
+<li><strong>Ligne de Whiteside</strong> <em>(Whiteside LA, J Bone Joint Surg Am, 2002)</em> (axe antéro-postérieur de la trochlée) → perpendiculaire au TEA</li>
+<li><strong>Ligne condylienne postérieure (PCA)</strong> : re + 3° RE = // TEA (dans un genou standard en varus)</li>
+<li>En valgus : PCA non fiable (condyle latéral postérieur hypoplasique) → utiliser TEA et Whiteside</li>
+<li>En post-ostéotomie : repères modifiés → scanner pré-opératoire recommandé</li>
+<li>Technique de rotation</li>
+<li>Habituellement : 3° de rotation externe par rapport à la PCA</li>
+<li>Vérification par la référence au TEA et à la ligne de Whiteside</li>
+<li>Si les 3 repères concordent → confiance dans la rotation</li>
+<li>Si discordance → priorité au TEA (le plus fiable anatomiquement)</li>
+<li>En gap balancing : la rotation est déterminée par le gap de flexion (le fémur s'aligne sur le gap rectangulaire en flexion)</li>
+</ul>
+<h3 id="155-balance-ligamentaire-correction-du-varus">15.5 Balance ligamentaire — Correction du varus</h3>
+<ul>
+<li>Séquence de release médial (varus progressif)</li>
+<li><strong>Étape 1</strong> : résection des ostéophytes médiales (souvent suffisant pour 5° de correction)</li>
+<li><strong>Étape 2</strong> : release de la manchette périostée tibiale médiale (<em>deep MCL release</em>) — « peler » le LCM profond de la surface tibiale</li>
+<li><strong>Étape 3</strong> : release du LCM superficiel (SMcL) — relever la manchette sous-périostée distalement</li>
+<li><strong>Étape 4</strong> : pie-crusting (ponctions multiples à l'aiguille) du LCM superficiel jusqu'à obtention de l'équilibre</li>
+<li><strong>Étape 5 (rare)</strong> : release du tendon de la patte d'oie (sartorius, gracilis, semi-tendineux)</li>
+<li><strong>Étape 6 (extrême)</strong> : release du LCP (conversion en PS si nécessaire)</li>
+<li>Principe cardinal : release progressif, millimétrique, itératif — JAMAIS de release massif en une seule fois</li>
+<li>Vérification : gap d'extension rectangulaire (espaceur), valgus stress test sous scopie</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG15-S05-001</strong><br/>
+<em>Animation de la séquence de release médial : étape par étape, avec gap measurement avant et après chaque release (Pratiquez le release progressif sur le simulateur)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="156-balance-ligamentaire-correction-du-valgus">15.6 Balance ligamentaire — Correction du valgus</h3>
+<ul>
+<li>Plus complexe que le varus (structures latérales plus rigides, nerf fibulaire à risque)</li>
+<li>Séquence de release latéral</li>
+<li><strong>Étape 1</strong> : résection des ostéophytes latéraux</li>
+<li><strong>Étape 2</strong> : release du rétinaculum latéral (améliore aussi le tracking patellaire)</li>
+<li><strong>Étape 3</strong> : release de la bandelette ilio-tibiale (IT band) au niveau de la ligne articulaire (<em>pie-crusting</em> prudent)</li>
+<li><strong>Étape 4</strong> : release du LCL (ligament collatéral latéral) — attention !</li>
+<li><strong>Étape 5</strong> : release du tendon du poplité (<em>popliteus tendon</em>) — proximalement</li>
+<li><strong>Étape 6</strong> : release de la coque postéro-latérale (PLC)</li>
+<li><strong>Étape 7 (rare)</strong> : ostéotomie fémorale latérale (<em>downsize</em> du condyle fémoral latéral)</li>
+<li>Si instabilité résiduelle : VVC ou charnière</li>
+<li>Risque du nerf fibulaire commun (sciatique poplité externe)</li>
+<li>À risque si correction du valgus &gt; 10-15° (stretching du nerf)</li>
+<li>Prévention : ne pas surcorriger en valgus, flexion du genou 30° en post-opératoire</li>
+<li>Si paresthésies post-opératoire : extension immédiate du genou → décompression si pas d'amélioration</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG15-S06-001</strong><br/>
+<em>Animation de la séquence de release latéral pour genu valgum : structures libérées, mesure du gap, alerte nerf fibulaire (Identifiez le nerf fibulaire dans l'animation)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="157-gap-balancing-final-extension-et-flexion">15.7 Gap balancing final — Extension et flexion</h3>
+<ul>
+<li>Gap d'extension doit être égal au gap de flexion (extension gap = flexion gap)</li>
+<li>Si extension gap &gt; flexion gap :</li>
+<li>Fémur « trop petit » (AP) → augmenter la taille fémorale d'une taille ou augmenter la coupe postérieure</li>
+<li>Ou PE trop fin en flexion → augmenter le PE mais alors trop serré en extension → downsize fémoral</li>
+<li>Si extension gap &lt; flexion gap :</li>
+<li>Fémur « trop gros » → réduire la taille fémorale ou augmenter l'épaisseur de la coupe distale</li>
+<li>Ou PE trop épais en flexion → réduire, mais attention à la stabilité en extension</li>
+<li>Les déséquilibres des gaps sont LA cause principale d'instabilité et de raideur post-opératoire</li>
+<li>La robotique (MAKO, ROSA, etc.) mesure les gaps en temps réel → ajustement dynamique</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG15-S07-001</strong><br/>
+<em>Schéma des 4 scénarios de déséquilibre des gaps : extension > flexion, extension < flexion, asymétrie médio-latérale en extension, asymétrie en flexion — avec la solution pour chacun (Résolvez 4 cas de gaps déséquilibrés)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h1 id="module-16-technique-chirurgicale-etapes-operatoires">MODULE 16 : TECHNIQUE CHIRURGICALE — ÉTAPES OPÉRATOIRES</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 14, 15</p>
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Réaliser</strong> une PTG étape par étape dans un ordre logique et sûr</li>
+<li><strong>Vérifier</strong> le positionnement des composants et le tracking patellaire</li>
+<li><strong>Gérer</strong> les problèmes peropératoires courants (fracture, saignement, exposition difficile)</li>
+<li><strong>Fermer</strong> par plans de manière structurée</li>
+</ol>
+<h2 id="contenu-detaille_3">Contenu détaillé</h2>
+<h3 id="161-installation-du-patient">16.1 Installation du patient</h3>
+<ul>
+<li>Position : décubitus dorsal, genou libre (sans support latéral — le genou doit pouvoir fléchir à &gt; 120°)</li>
+<li>Support latéral de cuisse (optionnel) pour maintenir le MI en position</li>
+<li>Garrot pneumatique : ischiatique, pression 250-300 mmHg (au-dessus de la PAS + 100 mmHg)</li>
+<li>Utilisation débattue : avec garrot (champ exsangue, meilleur cimentation) vs sans garrot (moins de douleur post-opératoire, pas de syndrome de garrot)</li>
+<li>Tendance actuelle : abandon du garrot (ou utilisation uniquement pour la cimentation — « tourniquet only for cementing »)</li>
+<li>Champs stériles : jusqu'à la racine du MI, MI libre et mobile</li>
+<li>Antibioprophylaxie : céfazoline 2g IV (ou céfuroxime), 30-60 min avant incision, re-dose à 2h</li>
+</ul>
+<h3 id="162-sequence-operatoire-standard-measured-resection-voie-mediale-parapatellaire">16.2 Séquence opératoire standard (measured resection, voie médiale parapatellaire)</h3>
+<ol>
+<li><strong>Incision et exposition</strong> (cf. Module 14)</li>
+<li><strong>Coupe tibiale</strong> (cf. Module 15)</li>
+<li><strong>Coupe fémorale distale</strong> (cf. Module 15)</li>
+<li><strong>Dimensionnement fémoral</strong> (AP) : positionner le guide AP sur le fémur distal coupé, mesurer la taille (selon la méthode du système — anterior referencing ou posterior referencing)</li>
+<li><strong>Coupe fémorale antérieure et postérieure</strong> (chamfrain/chanfreins)</li>
+<li><strong>Coupe intercondylienne (box cut)</strong> si PS : création de la boîte pour le tenon de la came</li>
+<li><strong>Essai des composants d'essai</strong> : composant fémoral d'essai + embase tibiale d'essai + insert PE d'essai</li>
+<li><strong>Vérification des gaps</strong> : extension (0°) et flexion (90°) — gaps rectangulaires et symétriques</li>
+<li><strong>Vérification de la mobilité</strong> : flexion &gt; 120°, extension complète (pas de flexum)</li>
+<li><strong>Tracking patellaire</strong> : <em>no-thumb test</em> (la patella doit centrer dans la trochlée prothétique sans aide)</li>
+<li><strong>Préparation de la patella</strong> (si resurfaçage) : éversion, sclérose de la surface antérieure, marquage de l'épaisseur résiduelle</li>
+<li><strong>Retrait des composants d'essai</strong></li>
+<li><strong>Lavage pulsé</strong> (pulse lavage, 2-3L NaCl) : nettoyage méticuleux de l'os spongieux</li>
+<li><strong>Séchage</strong> : tamponnement, pas de saignement actif avant cimentation</li>
+<li><strong>Cimentation</strong> : ciment en phase visqueuse, application sur la surface tibiale ET sur le composant, pressurisation, positionnement du plateau + du fémur + de la patella, retrait des excès de ciment AVANT polymérisation complète</li>
+<li><strong>Polymérisation</strong> : maintien en extension avec pression douce (5-10 minutes selon ciment)</li>
+<li><strong>Réduction du genou</strong> : vérification finale de la mobilité, de la stabilité, de l'axe, du tracking patellaire</li>
+<li><strong>Hémostase</strong> : libération du garrot (si utilisé), électrocoagulation, optionnel : drain aspiratif (tendance : sans drain)</li>
+<li><strong>Fermeture par plans</strong><blockquote>
+<p>[MEDIA: 🎥 MPTG16-S02-001 — Vidéo chirurgicale complète d'une PTG primaire — voie médiale parapatellaire, measured resection (Identifiez chaque étape et la vérification correspondante)]</p>
+</blockquote>
+</li>
+</ol>
+<div class="vertex-media video">
+<strong>🎬 MPTG16-S02-002</strong><br/>
+<em>Animation 3D étape par étape : vue en coupe et en transparence de chaque coupe osseuse, positionnement des guides, essai des composants (Suivez la séquence en parallèle du texte)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="163-fermeture-par-plans">16.3 Fermeture par plans</h3>
+<ul>
+<li>Plan 1 : capsule et rétinaculum médial — suture résorbable tressée (Vicryl 1-0 ou PDS)</li>
+<li>Plan 2 : fascia sous-cutané — suture résorbable (Vicryl 2-0)</li>
+<li>Plan 3 : peau — suture intradermique (Monocryl 3-0) ou agrafes (retrait J+14-21)</li>
+<li>Pansement : compresse stérile, bande cohésive, pas de pansement compressif circulaire (risque compartiment)</li>
+<li>Attelle de cryothérapie (optionnel) : réduction de l'œdème et de la douleur</li>
+</ul>
+<h3 id="164-gestion-peroperatoire-des-complications">16.4 Gestion peropératoire des complications</h3>
+<ul>
+<li>Fracture peropératoire</li>
+<li>Fracture du condyle fémoral médial ou latéral : vis de fixation, augment, conversion en composant plus contraint</li>
+<li>Fracture du plateau tibial : vis, ciment, tige longue</li>
+<li>Fracture patellaire : cerclage ou résection si comminution</li>
+<li>Lésion tendineuse</li>
+<li>Rupture du tendon rotulien à l'insertion sur la TTA : réparation immédiate + cerclage de protection</li>
+<li>Avulsion du LCM : réparation + conversion en implant plus contraint</li>
+<li>Lésion vasculaire (artère poplitée — exceptionnel)</li>
+<li>Scie oscillante postérieure : la plus dangereuse → ne jamais scier « à l'aveugle »</li>
+<li>CAT : tamponnade, appel chirurgien vasculaire immédiat</li>
+<li>L'artère poplitée est à 6-10 mm de la capsule postérieure en extension <em>(Zaidi et al., 1999)</em> (plus proche en flexion)</li>
+</ul>
+<hr />
+<h1 id="module-17-navigation-assistee-par-ordinateur">MODULE 17 : NAVIGATION ASSISTÉE PAR ORDINATEUR</h1>
+<p><strong>Durée</strong> : ~2h30 | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Modules 15-16</p>
+<h2 id="objectifs-dapprentissage_4">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les principes de la navigation assistée par ordinateur (CAS)</li>
+<li><strong>Comparer</strong> les résultats de la navigation vs la technique conventionnelle</li>
+<li><strong>Identifier</strong> les limites et indications préférentielles de la navigation</li>
+</ol>
+<h2 id="contenu-detaille_4">Contenu détaillé</h2>
+<h3 id="171-principes-de-la-navigation">17.1 Principes de la navigation</h3>
+<ul>
+<li>Système de repérage 3D</li>
+<li>Trackers infrarouges (réfléchissants ou actifs) fixés au fémur et au tibia (2 broches bicorticales chacun)</li>
+<li>Caméra infrarouge positionnée face au champ opératoire</li>
+<li>Le système calcule la position 3D du fémur et du tibia en temps réel</li>
+<li>Enregistrement anatomique (<em>registration</em>)</li>
+<li>Palpation de repères anatomiques avec un pointeur calibré</li>
+<li>Centre de la tête fémorale : par rotation circumduction de la hanche (cinématique)</li>
+<li>Centre de la cheville : par palpation des malléoles (ou tracker au pied)</li>
+<li>Axe mécanique reconstitué numériquement</li>
+<li>Guidage des coupes</li>
+<li>La navigation affiche en temps réel l'orientation de la scie (valgus/varus, pente, rotation)</li>
+<li>Le chirurgien ajuste le guide de coupe jusqu'à atteindre la cible planifiée</li>
+<li>Pas de guide IM → avantage : pas de fracture au guide, pas d'emboles graisseux</li>
+<li>Vérification peropératoire</li>
+<li>Après chaque coupe : vérification de l'orientation réelle</li>
+<li>Après essai des composants : axe mécanique, gaps, mobilité — tout affiché en temps réel</li>
+</ul>
+<h3 id="172-resultats-de-la-navigation">17.2 Résultats de la navigation</h3>
+<ul>
+<li>Précision de l'alignement</li>
+<li>Proportion de PTG dans la zone cible (HKA 180° ± 3°) : 90-95% (navigation) vs 75-85% (conventionnel) <em>(Mason et al., 2007 ; Fu et al., 2012)</em></li>
+<li>Réduction des <em>outliers</em> (malpositionnement &gt; 3°) de 50%</li>
+<li>Résultats cliniques</li>
+<li>Scores fonctionnels : pas de différence significative avec le conventionnel dans les méta-analyses</li>
+<li>Controversé : effet plafond des scores → les 2 techniques donnent de bons résultats en moyenne</li>
+<li>Registres (AOANJRR) : tendance à une meilleure survie à &gt; 10 ans pour les PTG naviguées (p significatif mais effet marginal)</li>
+<li>Coût et temps opératoire</li>
+<li>Temps opératoire augmenté de 10-15 minutes <em>(Fu et al., 2012)</em> (courbe d'apprentissage)</li>
+<li>Coût du système (300-500 k€), amortissement sur le volume</li>
+<li>Coût par procédure : trackers à usage unique (200-400 €)</li>
+<li>Limites</li>
+<li>Navigation imageless (la plus courante) : précision dépendante de la qualité du <em>registration</em></li>
+<li>Pas de guidage haptique (pas de « contrôle robotique » de la scie)</li>
+<li>Pas de planification basée sur la cinématique ou les gaps (vs robotique)</li>
+</ul>
+<hr />
+<h1 id="module-18-chirurgie-assistee-par-robotique">MODULE 18 : CHIRURGIE ASSISTÉE PAR ROBOTIQUE</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Avancé | <strong>Prérequis</strong> : Module 17</p>
+<h2 id="objectifs-dapprentissage_5">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les systèmes robotiques disponibles pour la PTG</li>
+<li><strong>Expliquer</strong> le workflow robotique de la planification à l'implantation</li>
+<li><strong>Comparer</strong> les résultats de la robotique vs la navigation vs le conventionnel</li>
+<li><strong>Discuter</strong> les philosophies de planification permises par la robotique (MA, KA, FA)</li>
+</ol>
+<h2 id="contenu-detaille_5">Contenu détaillé</h2>
+<h3 id="181-systemes-robotiques-disponibles">18.1 Systèmes robotiques disponibles</h3>
+<ul>
+<li><strong>MAKO® (Stryker)</strong> — Bras robotisé avec retour haptique</li>
+<li>Planification pré-opératoire sur scanner (CT-based)</li>
+<li>Bras robotique semi-actif : le chirurgien guide le bras, la robotique empêche de sortir de la zone planifiée (haptic boundary)</li>
+<li>Résection osseuse à la fraise (milling) — pas de scie oscillante pour les coupes fémorales</li>
+<li>Mesure des gaps en temps réel sous tension (capteur intégré)</li>
+<li>Système le plus répandu dans le monde pour la PTG robotisée</li>
+<li><strong>ROSA® (Zimmer Biomet)</strong> — Bras robotisé avec guide de coupe</li>
+<li>Scanner ou imageless (sans CT)</li>
+<li>Le bras robotique positionne le guide de coupe → le chirurgien scie avec une scie standard</li>
+<li>Avantage : transition plus naturelle depuis la technique conventionnelle</li>
+<li>Innovation récente : intégration KneeSim© pour visualisation cinématique</li>
+<li><strong>CORI® (Smith &amp; Nephew)</strong> — Robotique portable (handheld)</li>
+<li>Pièce à main robotisée (mini-robot) plutôt qu'un bras robotique</li>
+<li>Plus compact, plus rapide à installer</li>
+<li>Scanner ou imageless</li>
+<li>Mesure des gaps et guidage des coupes</li>
+<li><strong>VELYS® (DePuy Synthes / J&amp;J)</strong> — Bras robotisé</li>
+<li>Intégration complète avec le système d'implants Attune</li>
+<li>Imageless (pas de CT pré-opératoire)</li>
+<li>Mise sur le marché récente, données cliniques émergentes</li>
+<li><strong>Autres</strong> : NAVIO (Smith &amp; Nephew, fusion avec CORI), OMNIBotics (Corin), TSolution One (THINK Surgical — autonome)</li>
+</ul>
+<h3 id="182-workflow-robotique-mako-comme-exemple">18.2 Workflow robotique — MAKO comme exemple</h3>
+<ol>
+<li><strong>Imagerie pré-opératoire</strong> : scanner du genou + de la hanche + de la cheville (protocole spécifique)</li>
+<li><strong>Planification 3D</strong> : segmentation osseuse, positionnement virtuel des implants, détermination des coupes et de l'axe cible</li>
+<li><strong>Jour opératoire — Installation</strong> : trackers fémoraux et tibiaux (broches), registration (vérification de la concordance modèle 3D / anatomie réelle)</li>
+<li><strong>Vérification de l'axe</strong> : contrôle de l'axe mécanique en station debout (méthode de la rotation de hanche pour le centre de la tête fémorale)</li>
+<li><strong>Coupes osseuses robotisées</strong> : le bras guide la fraise dans la zone planifiée, les limites haptiques empêchent de dépasser les contours prévus</li>
+<li><strong>Mesure des gaps en temps réel</strong> : le robot mesure le gap d'extension et de flexion sous tension ligamentaire, avec le PE d'essai</li>
+<li><strong>Ajustement dynamique</strong> : si les gaps ne sont pas équilibrés, le chirurgien peut modifier le plan en temps réel (ajout de rotation fémorale, modification de résection, etc.)</li>
+<li><strong>Essai et validation</strong> : composants d'essai → cinématique → tracking patellaire → validation</li>
+<li><strong>Implantation définitive</strong> : cimentation standard</li>
+</ol>
+<div class="vertex-media video">
+<strong>🎬 MPTG18-S02-001</strong><br/>
+<em>Animation du workflow MAKO complet : du scanner pré-opératoire à l'implantation finale, avec visualisation des boundaries haptiques et des mesures de gaps (Suivez chaque étape)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 🎥 MPTG18-S02-002 — Vidéo chirurgicale d'une PTG assistée par MAKO : installation, registration, coupes, vérification (Comparez avec la vidéo conventionnelle du Module 16)]</p>
+</blockquote>
+<h3 id="183-resultats-de-la-robotique">18.3 Résultats de la robotique</h3>
+<ul>
+<li>Précision</li>
+<li>Alignement dans la zone cible : 95-98% (robotique) vs 90-95% (navigation) vs 75-85% (conventionnel) <em>(Kayani et al., 2018, Bone Joint J)</em></li>
+<li>Positionnement des composants : ±1° et ±1 mm dans les 3 plans <em>(Kayani et al., 2018, Bone Joint J)</em></li>
+<li>Réduction des outliers à &lt; 5%</li>
+<li>Résultats cliniques</li>
+<li>À court terme (&lt; 2 ans) : tendance à de meilleurs scores fonctionnels précoces, récupération plus rapide</li>
+<li>À moyen terme (5 ans) : résultats similaires ou légèrement supérieurs (données émergeantes)</li>
+<li>À long terme (&gt; 10 ans) : données insuffisantes (technologie trop récente)</li>
+<li>Satisfaction : potentiellement meilleure (perception de technologie « de pointe » — effet halo ?)</li>
+<li>Avantages spécifiques à la robotique</li>
+<li>Permet l'alignement cinématique et fonctionnel de manière sûre (zone de sécurité garantie par les limites haptiques)</li>
+<li>Mesure objective des gaps (reproductible vs subjective en conventionnel)</li>
+<li>Courbe d'apprentissage mesurable (le système enregistre les données de chaque cas)</li>
+<li>Données post-opératoires (base de données pour recherche et amélioration continue)</li>
+<li>Limites</li>
+<li>Coût : investissement 1-2 M€ + consommables 500-1500 €/procédure</li>
+<li>Temps opératoire : +10-20 min (décroît avec l'expérience)</li>
+<li>Dépendance technologique : panne = retour au conventionnel (le chirurgien doit maîtriser les 2)</li>
+<li>CT-based → irradiation pré-opératoire (sauf ROSA/CORI imageless)</li>
+<li>Marketing ≠ preuve clinique → attention aux conflits d'intérêts<blockquote>
+<p>[MEDIA: 📊 MPTG18-S03-001 — Tableau comparatif : conventionnel vs navigation vs robotique — précision, résultats, coût, temps, données probantes (Où se situe le meilleur rapport bénéfice/coût ?)]</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="184-lavenir-de-la-robotique-en-ptg">18.4 L'avenir de la robotique en PTG</h3>
+<ul>
+<li>Intelligence artificielle</li>
+<li>Planification automatisée par deep learning (segmentation, positionnement optimal)</li>
+<li>Prédiction du résultat fonctionnel basée sur les paramètres peropératoires</li>
+<li>Apprentissage continu : le système s'améliore avec chaque cas opéré</li>
+<li>Réalité augmentée (AR)</li>
+<li>Superposition de la planification 3D sur la vue réelle du chirurgien (lunettes AR)</li>
+<li>Navigation sans trackers externes (tracking optique intégré aux lunettes)</li>
+<li>Stade expérimental mais prometteur</li>
+<li>Robotique autonome</li>
+<li>TSolution One (THINK Surgical) : le robot réalise les coupes de manière autonome</li>
+<li>Le chirurgien supervise mais n'opère pas manuellement → changement de paradigme</li>
+<li>Questions éthiques et médico-légales : responsabilité en cas d'erreur ?</li>
+<li>Capteurs embarqués (<em>smart implants</em>)</li>
+<li>Persona IQ (Zimmer Biomet) : capteur dans le PE → mesure des forces et de la cinématique in vivo</li>
+<li>Suivi post-opératoire à distance (télémédecine)</li>
+<li>Données pour la recherche (compréhension de l'usure, de la cinématique en vie réelle)</li>
+</ul>
+<hr />
+<h1 id="module-19-prothese-unicompartimentale-puc-et-alternatives">MODULE 19 : PROTHÈSE UNICOMPARTIMENTALE (PUC) ET ALTERNATIVES</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Intermédiaire → Avancé | <strong>Prérequis</strong> : Modules 5, 9, 15</p>
+<h2 id="objectifs-dapprentissage_6">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Sélectionner</strong> les patients candidats à une PUC vs PTG</li>
+<li><strong>Réaliser</strong> la technique chirurgicale d'une PUC médiale</li>
+<li><strong>Comparer</strong> les résultats PUC vs PTG vs ostéotomie</li>
+<li><strong>Connaître</strong> les alternatives : PUC latérale, bi-unicompartimentale, prothèse fémoro-patellaire</li>
+</ol>
+<h2 id="contenu-detaille_6">Contenu détaillé</h2>
+<h3 id="191-indications-et-contre-indications-de-la-puc-mediale">19.1 Indications et contre-indications de la PUC médiale</h3>
+<ul>
+<li>Indications (critères classiques — Oxford)</li>
+<li>Arthrose médiale unicompartimentale isolée</li>
+<li>LCA intact et fonctionnel</li>
+<li>Flexum corrigible (&lt; 10°)</li>
+<li>Arc de flexion ≥ 100°</li>
+<li>Déformation en varus ≤ 10° (corrigible passivement)</li>
+<li>Pas d'atteinte radiologique du compartiment latéral ou de la fémoro-patellaire (sur schuss et axiale)</li>
+<li>Contre-indications</li>
+<li>Arthrite inflammatoire (PR, SpA)</li>
+<li>Surcharge pondérale sévère (IMC &gt; 35 — relatif)</li>
+<li>Activité physique très intense (risque d'usure accélérée)</li>
+<li>Atteinte des 2 compartiments ou de la FP</li>
+<li>LCA absent ou non fonctionnel</li>
+<li>Évolution des critères (tendances modernes)</li>
+<li>Âge : plus de limite supérieure (les résultats sont bons même chez les &gt; 80 ans)</li>
+<li>Atteinte FP modérée : tolérable si asymptomatique (pas de douleur antérieure)</li>
+<li>IMC : seuil relevé à 35-40 dans certaines séries récentes</li>
+<li>Tendance à élargir les indications grâce à la robotique (positionnement plus précis)</li>
+</ul>
+<h3 id="192-technique-chirurgicale-puc-mediale-oxford-mobile-bearing">19.2 Technique chirurgicale — PUC médiale (Oxford mobile bearing)</h3>
+<ul>
+<li>Voie d'abord : mini-invasive médiale (6-8 cm), subvastus</li>
+<li>Vérification du LCA, du compartiment latéral, de la FP</li>
+<li>Coupes osseuses minimales : coupe tibiale horizontale (perpendiculaire à l'axe tibial mécanique), coupe fémorale postérieure (intramédullaire), coupe fémorale distale (guide spécifique)</li>
+<li>Composants : fémoral CoCr, plateau PE mobile (rotating/sliding), embase tibiale (cimentée)</li>
+<li>Balance ligamentaire : le PE mobile s'auto-adapte (auto-centrage) → pas de release nécessaire</li>
+<li>Avantages vs PTG : conservation du LCA et du LCP, os préservé, cinématique plus naturelle, récupération plus rapide, morbidité moindre</li>
+<li>Inconvénients : indication restreinte, courbe d'apprentissage (surtout Oxford mobile), risque de dislocation du PE mobile (1-2%), taux de reprise plus élevé que PTG à 15-20 ans (registres)</li>
+</ul>
+<h3 id="193-puc-laterale">19.3 PUC latérale</h3>
+<ul>
+<li>Beaucoup plus rare (5-10% des PUC)</li>
+<li>Indication : arthrose latérale isolée (post-méniscectomie latérale, valgus modéré)</li>
+<li>Technique et résultats : comparables à la PUC médiale mais poids d'expérience moindre</li>
+</ul>
+<h3 id="194-bi-unicompartimentale-biuc">19.4 Bi-unicompartimentale (BiUC)</h3>
+<ul>
+<li>Concept : 2 PUC (médiale + latérale) sans toucher à la FP</li>
+<li>Préserve les 2 croisés (LCA + LCP) → cinématique la plus physiologique</li>
+<li>Indication très restrictive : arthrose bi-compartimentale fémoro-tibiale isolée, LCA et LCP intacts, pas d'atteinte FP → rare</li>
+<li>Résultats : séries limitées mais encourageants</li>
+</ul>
+<h3 id="195-prothese-femoro-patellaire-pfp">19.5 Prothèse fémoro-patellaire (PFP)</h3>
+<ul>
+<li>Indication : arthrose fémoro-patellaire isolée sévère (KL 3-4) avec compartiments fémoro-tibiaux préservés</li>
+<li>Conditions : pas de subluxation patellaire fixe, pas de dysplasie trochléenne sévère non corrigible</li>
+<li>Technique : implant trochléen métallique + bouton rotulien PE</li>
+<li>Résultats : 85-90% de survie à 10 ans mais taux de progression vers PTG non négligeable (15-20% à 15 ans)</li>
+</ul>
+<h3 id="196-puc-vs-osteotomie-vs-ptg-algorithme-decisionnel">19.6 PUC vs ostéotomie vs PTG — Algorithme décisionnel</h3>
+<ul>
+<li>Patient &lt; 55 ans, actif, varus modéré, arthrose médiale isolée :</li>
+<li>Ostéotomie (OTV) si IMC normal, activité physique élevée, pas de désir de résultat définitif</li>
+<li>PUC si souhaite un résultat plus immédiat et moins de contrainte de rééducation</li>
+<li>Patient 55-70 ans, arthrose médiale isolée, LCA intact :</li>
+<li>PUC = choix optimal (meilleure cinématique, récupération rapide)</li>
+<li>PTG si critères PUC non remplis</li>
+<li>Patient &gt; 70 ans :</li>
+<li>PUC ou PTG (les 2 sont indiqués, choix du chirurgien)</li>
+<li>La PTG a un taux de reprise plus faible à très long terme<blockquote>
+<p>[MEDIA: 📊 MPTG19-S06-001 — Algorithme décisionnel : PUC vs OTV vs PTG — selon l'âge, l'activité, la sévérité, les critères anatomiques (Appliquez l'algorithme à 4 cas cliniques virtuels)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="auto-evaluation-partie-iv">AUTO-ÉVALUATION — PARTIE IV</h1>
+<h2 id="questions-transversales-modules-13-19">Questions transversales Modules 13-19</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Quelle est l'incidence de la voie d'abord standard pour une PTG primaire ?<br />
+- A) Latérale parapatellaire<br />
+- B) Postérieure<br />
+- C) Médiale parapatellaire<br />
+- D) Antéro-latérale (Hardinge)</p>
+<p><strong>Q2</strong> 🥈 : Dans un genou varus, quelle est la première étape du release médial ?<br />
+- A) Section du LCM superficiel<br />
+- B) Section des ischio-jambiers<br />
+- C) Résection des ostéophytes médiales<br />
+- D) Section du LCP</p>
+<p><strong>Q3</strong> 🥈 : Le MAKO est un système robotique qui :<br />
+- A) Réalise les coupes de manière totalement autonome<br />
+- B) Positionne un guide de coupe pour une scie conventionnelle<br />
+- C) Guide la fraise du chirurgien avec des limites haptiques basées sur un scanner pré-opératoire<br />
+- D) N'utilise aucune imagerie pré-opératoire</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 48 ans, sportif, présente une gonarthrose médiale isolée (KL 3) avec un LCA rompu et reconstruit il y a 10 ans (plastie fonctionnelle). Peut-il bénéficier d'une PUC médiale ?<br />
+- A) Oui, le LCA a été reconstruit<br />
+- B) Non, le LCA natif est absent<br />
+- C) Oui, si la plastie est fonctionnelle au Lachman test (strict négatif)<br />
+- D) Non, il est trop jeune</p>
+<p><strong>Q5</strong> 💎 : Un chirurgien réalise une PTG conventionnelle sur un genou valgus de 18° chez une patiente de 68 ans, polyarthrite rhumatoïde. Décrivez : (a) la voie d'abord que vous choisissez et pourquoi, (b) la séquence complète de release latéral, (c) les contrôles cliniques peropératoires à effectuer (nerf fibulaire, axe, balance ligamentaire), (d) le niveau de contrainte de l'implant et la fixation.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>M. Nakamura, 65 ans</strong>, ingénieur retraité, aime le golf et la marche en montagne. Gonarthrose médiale droite, KL 3, HKA 175°. LCA un peu lâche (Lachman I), LCP fonctionnel. Flexion 0-130°. IMC 27. Pas de douleur fémoro-patellaire. Le compartiment latéral est parfaitement sain au schuss.</p>
+<ol>
+<li>Ce patient est-il candidat à une PUC ? Discutez chaque critère.</li>
+<li>Si PUC : quel système (Oxford mobile vs fixed bearing) et pourquoi ?</li>
+<li>Si l'on opte pour une PTG (par prudence vis-à-vis du LCA) : CR ou PS ?</li>
+<li>Comment utiliseriez-vous la robotique pour optimiser cette intervention ?</li>
+</ol>
+</blockquote>
+<hr />
+<hr />
+<h2 id="references-partie-iv">Références — Partie IV</h2>
+<ul>
+<li>Bohl DD et al. (2016). Serum albumin predicts survival and postoperative course following surgery for geriatric hip fracture. <em>J Arthroplasty</em>, 31(12), 2867–2871.</li>
+<li>Bourne RB et al. (2010). Patient satisfaction after total knee arthroplasty: who is satisfied and who is not? <em>Clin Orthop Relat Res</em>, 468(1), 57–63.</li>
+<li>Caprini JA (2012). Risk assessment as a guide for the prevention of the many faces of venous thromboembolism. <em>Thromb Res</em>, 130(Suppl 1), S13–S18.</li>
+<li>Fu Y et al. (2012). Computer-assisted navigation in total knee arthroplasty reduces alignment outliers compared with conventional methods. <em>J Arthroplasty</em>, 27(7), 1297–1302.</li>
+<li>Jämsen E et al. (2010). Obesity, diabetes, and perioperative outcomes in patients undergoing total joint arthroplasty. <em>Acta Orthop</em>, 81(2), 185–189.</li>
+<li>Kayani B et al. (2018). Robotic-arm assisted total knee arthroplasty is associated with improved early functional recovery and reduced time to hospital discharge. <em>Bone Joint J</em>, 100-B(7), 930–937.</li>
+<li>Mason JB et al. (2007). Meta-analysis of alignment outcomes in computer-assisted total knee arthroplasty surgery. <em>J Arthroplasty</em>, 22(8), 1097–1106.</li>
+<li>Namba RS et al. (2005). Obesity and perioperative morbidity in total hip and total knee arthroplasty patients. <em>J Arthroplasty</em>, 20(7 Suppl 3), 46–50.</li>
+<li>Scott CEH et al. (2012). Satisfaction after total knee replacement is usually high, but what are we measuring? <em>Bone Joint J</em>, 94-B(11 Suppl A), 80–82.</li>
+<li>Whiteside LA (2002). Soft tissue balancing: the knee. <em>J Bone Joint Surg Am</em>, 84(2), 317–322.</li>
+<li>Zaidi SH et al. (1999). The popliteal artery in total knee replacement: a topographical study. <em>Orthopedics</em>, 22(5), 481–483.</li>
+</ul>
+<p><em>Fin de la Partie 4 — Planification et Chirurgie (Modules 13-19)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

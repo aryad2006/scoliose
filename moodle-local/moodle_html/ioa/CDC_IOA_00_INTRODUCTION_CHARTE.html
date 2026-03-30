@@ -1,0 +1,1411 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-complete-sur-linfection-osseuse-et-articulaire-de-lappareil-locomoteur-ioa">CAHIER DES CHARGES — FORMATION COMPLÈTE SUR L'INFECTION OSSEUSE ET ARTICULAIRE DE L'APPAREIL LOCOMOTEUR (IOA)</h1>
+<h2 id="partie-0-introduction-generale-charte-graphique-et-architecture-pedagogique">Partie 0 — Introduction générale, Charte graphique et Architecture pédagogique</h2>
+<p><strong>Date</strong> : 8 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Statut</strong> : Document fondateur — Cahier des charges complet<br />
+<strong>Plateforme</strong> : VERTEX© — Formation médicale en ligne<br />
+<strong>Formation</strong> : Infection Osseuse et Articulaire de l'Appareil Locomoteur (IOA) — <em>Musculoskeletal Infections</em></p>
+<hr />
+<h1 id="table-des-matieres-partie-0">TABLE DES MATIÈRES — PARTIE 0</h1>
+<ol>
+<li><a href="#1-synthèse-exécutive">Synthèse exécutive</a></li>
+<li><a href="#2-public-cible-et-prérequis">Public cible et prérequis</a></li>
+<li><a href="#3-architecture-pédagogique-globale">Architecture pédagogique globale</a></li>
+<li><a href="#4-charte-graphique-unifiée--plateforme-vertex">Charte graphique unifiée — Plateforme VERTEX©</a></li>
+<li><a href="#5-code-couleur-tri-formation-scoliose--ptg--ioa">Code couleur tri-formation (Scoliose + PTG + IOA)</a></li>
+<li><a href="#6-règles-décriture-du-contenu">Règles d'écriture du contenu</a></li>
+<li><a href="#7-structure-des-fichiers-du-cdc">Structure des fichiers du CDC</a></li>
+<li><a href="#8-correspondance-inter-formations">Correspondance inter-formations</a></li>
+</ol>
+<hr />
+<h1 id="1-synthese-executive">1. SYNTHÈSE EXÉCUTIVE</h1>
+<h2 id="11-ce-quest-cette-formation">1.1 Ce qu'est cette formation</h2>
+<p>La <strong>Formation Infection Osseuse et Articulaire (IOA)</strong> est un programme e-learning complet destiné aux chirurgiens orthopédistes, infectiologues, microbiologistes et médecins impliqués dans la prise en charge des infections de l'appareil locomoteur, couvrant <strong>l'intégralité</strong> du sujet — de l'histoire des infections osseuses à l'antibiothérapie de pointe, en passant par la physiopathologie du biofilm, le diagnostic microbiologique avancé, les techniques chirurgicales de débridement et de reconstruction, et les cas complexes multirécidivants.</p>
+<p>Elle constitue la <strong>troisième formation</strong> de la plateforme VERTEX©, après la Formation Scoliose (25 modules, ~75h) et la Formation PTG (28 modules, ~80h). Les trois formations partagent :</p>
+<ul>
+<li>La même <strong>plateforme LMS</strong> (architecture, authentification, évaluation)</li>
+<li>La même <strong>charte graphique</strong> de base (typographie, mise en page, icônes)</li>
+<li>Les mêmes <strong>règles d'écriture pédagogique</strong> (cas cliniques, mnémoniques, niveaux de profondeur)</li>
+<li>Les mêmes <strong>standards d'évaluation</strong> (Bronze → Diamant, cas cliniques progressifs)</li>
+<li>Le même <strong>moteur de simulation</strong> VERTEX© (adapté : InfectoSim© pour la modélisation de diffusion antibiotique, cinétique du biofilm, planification chirurgicale)</li>
+</ul>
+<h2 id="12-perimetre-de-la-formation-ioa">1.2 Périmètre de la formation IOA</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>30 modules organisés en 9 parties</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>~85-95 heures de contenu</td>
+</tr>
+<tr>
+<td><strong>Niveau</strong></td>
+<td>Interne avancé → chirurgien confirmé → expert</td>
+</tr>
+<tr>
+<td><strong>Spécialités</strong></td>
+<td>Chirurgie orthopédique, infectiologie, microbiologie, médecine interne</td>
+</tr>
+<tr>
+<td><strong>Couverture</strong></td>
+<td>Histoire, microbiologie, physiopathologie, biofilm, immunologie, ostéomyélite (enfant/adulte), arthrite septique, infections sur matériel, infections du rachis, infections du pied diabétique, tuberculose ostéoarticulaire, infections fongiques/parasitaires, diagnostic biologique/imagerie, antibiothérapie, traitement chirurgical, reconstruction, prévention, recherche</td>
+</tr>
+<tr>
+<td><strong>Simulation</strong></td>
+<td>InfectoSim© — module VERTEX© dédié (cinétique antibiotique, modélisation du biofilm, planification de débridement 3D)</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>Certificat VERTEX© IOA, éligible DPC/CME</td>
+</tr>
+<tr>
+<td><strong>Langue</strong></td>
+<td>Français (traduction EN/ES/AR prévue)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-objectifs-pedagogiques-globaux">1.3 Objectifs pédagogiques globaux</h2>
+<p>À l'issue de cette formation, le praticien sera capable de :</p>
+<ol>
+<li><strong>Retracer</strong> l'histoire des infections osseuses et comprendre l'évolution des concepts physiopathologiques et thérapeutiques</li>
+<li><strong>Maîtriser</strong> la microbiologie des infections ostéoarticulaires (bactériologie, biofilm, résistances, mycobactéries, champignons)</li>
+<li><strong>Expliquer</strong> la physiopathologie de l'infection osseuse (voies de contamination, séquestration, nécrose, biofilm, immunité locale)</li>
+<li><strong>Diagnostiquer</strong> une infection ostéoarticulaire en utilisant les outils cliniques, biologiques, d'imagerie et microbiologiques de manière appropriée</li>
+<li><strong>Classifier</strong> les infections selon les systèmes reconnus (Cierny-Mader, McPherson, Tsukayama, etc.)</li>
+<li><strong>Prescrire</strong> une antibiothérapie adaptée (probabiliste puis documentée, durée, voie, combinaisons, spécificités de l'os)</li>
+<li><strong>Planifier et réaliser</strong> le traitement chirurgical (débridement, séquestrectomie, DAIR, changement en 1 ou 2 temps, techniques de comblement, lambaux, fixation externe)</li>
+<li><strong>Gérer</strong> les situations complexes (infections multirécidivantes, germes multirésistants, terrain fragile, ostéomyélite chronique, amputation)</li>
+<li><strong>Prévenir</strong> les infections ostéoarticulaires (antibioprophylaxie, mesures environnementales, ciment chargé)</li>
+<li><strong>Intégrer</strong> les innovations (phagothérapie, peptides antimicrobiens, ciments/spacers intelligents, détection moléculaire rapide, IA diagnostique)</li>
+</ol>
+<hr />
+<h1 id="2-public-cible-et-prerequis">2. PUBLIC CIBLE ET PRÉREQUIS</h1>
+<h2 id="21-public-cible">2.1 Public cible</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Public</th>
+<th>Modules obligatoires</th>
+<th>Modules optionnels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveau 1 — Fondamental</strong></td>
+<td>Internes orthopédie/infectiologie, médecins généralistes, urgentistes</td>
+<td>Modules 1-10, 15-17, 25-26</td>
+<td>27-28</td>
+</tr>
+<tr>
+<td><strong>Niveau 2 — Intermédiaire</strong></td>
+<td>Résidents séniors, CCA, chirurgiens en début de pratique, infectiologues</td>
+<td>Modules 1-22, 25-26</td>
+<td>23-24, 27-30</td>
+</tr>
+<tr>
+<td><strong>Niveau 3 — Expert</strong></td>
+<td>Chirurgiens septiques confirmés, référents IOA, chercheurs</td>
+<td>Modules 1-30 (intégralité)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-prerequis">2.2 Prérequis</h2>
+<ul>
+<li>Diplôme de médecine (ou en cours d'obtention)</li>
+<li>Connaissances de base en anatomie de l'appareil locomoteur</li>
+<li>Connaissances de base en microbiologie (souhaitées mais non obligatoires — le Module 3 couvre les fondamentaux)</li>
+<li>Connaissances de base en pharmacologie des antibiotiques (souhaitées — le Module 7 reprend les bases)</li>
+</ul>
+<hr />
+<h1 id="3-architecture-pedagogique-globale">3. ARCHITECTURE PÉDAGOGIQUE GLOBALE</h1>
+<h2 id="31-organisation-en-9-parties-30-modules">3.1 Organisation en 9 parties — 30 modules</h2>
+<pre><code>FORMATION IOA — INFECTION OSSEUSE ET ARTICULAIRE DE L'APPAREIL LOCOMOTEUR
+│
+├── PARTIE I — HISTOIRE ET FONDAMENTAUX (Modules 1-4)
+│   ├── Module 1  : Histoire des infections osseuses — Des origines à l'ère moderne
+│   ├── Module 2  : Anatomie et vascularisation osseuse appliquées à l'infection
+│   ├── Module 3  : Microbiologie des infections ostéoarticulaires
+│   └── Module 4  : Physiopathologie de l'infection osseuse et biofilm
+│
+├── PARTIE II — IMMUNOLOGIE ET TERRAIN (Modules 5-6)
+│   ├── Module 5  : Immunologie de l'os et réponse de l'hôte
+│   └── Module 6  : Facteurs de risque et terrain — Diabète, immunodépression, dénutrition
+│
+├── PARTIE III — DIAGNOSTIC (Modules 7-10)
+│   ├── Module 7  : Diagnostic clinique et biologique des IOA
+│   ├── Module 8  : Imagerie des infections ostéoarticulaires
+│   ├── Module 9  : Diagnostic microbiologique — Prélèvements, cultures, biologie moléculaire
+│   └── Module 10 : Classifications des infections osseuses et articulaires
+│
+├── PARTIE IV — ANTIBIOTHÉRAPIE (Modules 11-13)
+│   ├── Module 11 : Pharmacologie des antibiotiques en contexte osseux
+│   ├── Module 12 : Antibiothérapie probabiliste et documentée des IOA
+│   └── Module 13 : Antibiotiques locaux — Ciment, spacers, billes, coatings
+│
+├── PARTIE V — OSTÉOMYÉLITE (Modules 14-17)
+│   ├── Module 14 : Ostéomyélite aiguë hématogène de l'enfant
+│   ├── Module 15 : Ostéomyélite aiguë et subaiguë de l'adulte
+│   ├── Module 16 : Ostéomyélite chronique — Physiopathologie et traitement
+│   └── Module 17 : Ostéomyélite post-traumatique et sur fracture ouverte
+│
+├── PARTIE VI — ARTHRITE SEPTIQUE ET INFECTIONS PÉRIPROTHÉTIQUES (Modules 18-21)
+│   ├── Module 18 : Arthrite septique native — Diagnostic et traitement
+│   ├── Module 19 : Infection périprothétique — Diagnostic et classification
+│   ├── Module 20 : Infection périprothétique — DAIR et changement en un temps
+│   └── Module 21 : Infection périprothétique — Changement en deux temps et sauvetage
+│
+├── PARTIE VII — INFECTIONS SPÉCIFIQUES (Modules 22-25)
+│   ├── Module 22 : Infections du rachis — Spondylodiscite et abcès épidural
+│   ├── Module 23 : Infections du pied diabétique — Du mal perforant à l'amputation
+│   ├── Module 24 : Tuberculose ostéoarticulaire — Du mal de Pott aux atteintes périphériques
+│   └── Module 25 : Infections fongiques, parasitaires et à mycobactéries atypiques
+│
+├── PARTIE VIII — TECHNIQUES CHIRURGICALES ET RECONSTRUCTION (Modules 26-28)
+│   ├── Module 26 : Principes chirurgicaux du traitement des IOA — Débridement, séquestrectomie
+│   ├── Module 27 : Reconstruction osseuse après infection — Masquelet, transport osseux, greffes
+│   └── Module 28 : Couverture des tissus mous — Lambeaux et chirurgie plastique en contexte septique
+│
+└── PARTIE IX — PRÉVENTION, RECHERCHE ET INNOVATIONS (Modules 29-30)
+    ├── Module 29 : Prévention des infections ostéoarticulaires — Antibioprophylaxie et environnement
+    └── Module 30 : Recherche et innovations — Phagothérapie, peptides antimicrobiens, IA, biomatériaux
+</code></pre>
+<h2 id="32-structure-standardisee-de-chaque-module">3.2 Structure standardisée de chaque module</h2>
+<p>Chaque module suit le <strong>même format</strong> que les Formations Scoliose et PTG (cf. <code>REGLES_ECRITURE_CONTENU.md</code>) :</p>
+<ol>
+<li><strong>En-tête</strong> : titre, partie, durée, niveau, prérequis</li>
+<li><strong>Accroche clinique</strong> : vignette patient ou mise en situation réelle (3-5 lignes)</li>
+<li><strong>Objectifs d'apprentissage</strong> : 3-7 objectifs (verbes de Bloom)</li>
+<li><strong>Sections de contenu</strong> : 3-6 sections principales</li>
+<li><strong>Points clés</strong> : 5-8 messages essentiels</li>
+<li><strong>Auto-évaluation</strong> : 5-10 questions (QCM, QROC, cas clinique)</li>
+<li><strong>Références bibliographiques</strong> : sources vérifiables</li>
+</ol>
+<h2 id="33-parcours-praticien-deblocage-sequentiel">3.3 Parcours praticien — Déblocage séquentiel</h2>
+<pre><code>Module 1 → Module 2 → Module 3 → Module 4
+                                       ↓
+                  Module 5 → Module 6
+                                 ↓
+Module 7 → Module 8 → Module 9 → Module 10
+                                       ↓
+          Module 11 → Module 12 → Module 13
+                                       ↓
+Module 14 → Module 15 → Module 16 → Module 17
+                                         ↓
+Module 18 → Module 19 → Module 20 → Module 21
+                                         ↓
+Module 22 → Module 23 → Module 24 → Module 25
+                                         ↓
+          Module 26 → Module 27 → Module 28
+                                       ↓
+                  Module 29 → Module 30
+</code></pre>
+<ul>
+<li>Score ≥ 70% requis pour passer au module suivant</li>
+<li>2 tentatives autorisées par quiz</li>
+<li>Feedback immédiat avec explication et référence bibliographique</li>
+</ul>
+<h2 id="34-systeme-de-quiz-difficulte-progressive-identique-aux-autres-formations">3.4 Système de quiz — Difficulté progressive (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Icône</th>
+<th>Type de question</th>
+<th>% du quiz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bronze</strong></td>
+<td>🥉</td>
+<td>Connaissance pure (rappel, définitions)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Argent</strong></td>
+<td>🥈</td>
+<td>Compréhension et application (cas simples)</td>
+<td>30%</td>
+</tr>
+<tr>
+<td><strong>Or</strong></td>
+<td>🥇</td>
+<td>Analyse et raisonnement clinique (cas complexes)</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>💎</td>
+<td>Synthèse et décision médico-chirurgicale (scénarios multi-facteurs)</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="4-charte-graphique-unifiee-plateforme-vertex">4. CHARTE GRAPHIQUE UNIFIÉE — PLATEFORME VERTEX©</h1>
+<h2 id="41-identite-visuelle-de-la-plateforme">4.1 Identité visuelle de la plateforme</h2>
+<p>La plateforme VERTEX© repose sur une identité visuelle <strong>commune</strong> à toutes les formations, garantissant la cohérence et la reconnaissance de marque.</p>
+<h3 id="411-typographie-identique-aux-autres-formations">4.1.1 Typographie (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Police</th>
+<th>Poids</th>
+<th>Taille</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titres de partie (H1)</strong></td>
+<td>Montserrat</td>
+<td>Bold (700)</td>
+<td>32-36px</td>
+</tr>
+<tr>
+<td><strong>Titres de module (H2)</strong></td>
+<td>Montserrat</td>
+<td>SemiBold (600)</td>
+<td>26-30px</td>
+</tr>
+<tr>
+<td><strong>Titres de section (H3)</strong></td>
+<td>Montserrat</td>
+<td>Medium (500)</td>
+<td>22-24px</td>
+</tr>
+<tr>
+<td><strong>Sous-sections (H4)</strong></td>
+<td>Open Sans</td>
+<td>SemiBold (600)</td>
+<td>18-20px</td>
+</tr>
+<tr>
+<td><strong>Corps de texte</strong></td>
+<td>Open Sans</td>
+<td>Regular (400)</td>
+<td>16px, line-height 1.6</td>
+</tr>
+<tr>
+<td><strong>Légendes / notes</strong></td>
+<td>Open Sans</td>
+<td>Light (300)</td>
+<td>14px</td>
+</tr>
+<tr>
+<td><strong>Code / formules</strong></td>
+<td>JetBrains Mono</td>
+<td>Regular</td>
+<td>14px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="412-mise-en-page-identique-aux-autres-formations">4.1.2 Mise en page (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Spécification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Largeur max contenu</strong></td>
+<td>900px (centré)</td>
+</tr>
+<tr>
+<td><strong>Marges latérales</strong></td>
+<td>60px minimum (responsive)</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-sections</strong></td>
+<td>48px</td>
+</tr>
+<tr>
+<td><strong>Espacement inter-paragraphes</strong></td>
+<td>24px</td>
+</tr>
+<tr>
+<td><strong>Bordures d'encadrés</strong></td>
+<td>3px solid, border-radius 8px</td>
+</tr>
+<tr>
+<td><strong>Ombres</strong></td>
+<td>box-shadow: 0 2px 8px rgba(0,0,0,0.08)</td>
+</tr>
+<tr>
+<td><strong>Coins arrondis</strong></td>
+<td>8px (encadrés), 12px (cartes), 50% (avatars)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="413-iconographie-identique-aux-autres-formations">4.1.3 Iconographie (identique aux autres formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Icône</th>
+<th>Usage</th>
+<th>Emoji / SVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td>Pertinence clinique</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td>Danger / Critique</td>
+<td>Rouge</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Approfondissement</td>
+<td>Bleu</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>Astuce / Mnémonique</td>
+<td>Vert clair</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td>Expert</td>
+<td>Violet</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td>Réflexion</td>
+<td>Jaune</td>
+</tr>
+<tr>
+<td>🧊</td>
+<td>Modèle 3D</td>
+<td>Cyan</td>
+</tr>
+<tr>
+<td>📐</td>
+<td>Schéma</td>
+<td>Gris-bleu</td>
+</tr>
+<tr>
+<td>🎬</td>
+<td>Animation / Vidéo</td>
+<td>Rouge-orange</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Infographie</td>
+<td>Vert</td>
+</tr>
+<tr>
+<td>📷</td>
+<td>Photo clinique</td>
+<td>Gris</td>
+</tr>
+<tr>
+<td>🦠</td>
+<td>Microbiologie (spécifique IOA)</td>
+<td>Vert-jaune</td>
+</tr>
+<tr>
+<td>💊</td>
+<td>Antibiothérapie (spécifique IOA)</td>
+<td>Bleu-violet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-principes-de-design-communs-identiques">4.2 Principes de design communs (identiques)</h2>
+<table>
+<thead>
+<tr>
+<th>Principe</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clarté</strong></td>
+<td>Hiérarchie visuelle claire — titres, sous-titres, corps de texte immédiatement distinguables</td>
+</tr>
+<tr>
+<td><strong>Cohérence</strong></td>
+<td>Mêmes composants UI, mêmes encadrés, mêmes icônes pour toutes les formations</td>
+</tr>
+<tr>
+<td><strong>Accessibilité</strong></td>
+<td>Contraste AAA (WCAG 2.1), polices lisibles, alt-text sur toutes les images</td>
+</tr>
+<tr>
+<td><strong>Professionnalisme médical</strong></td>
+<td>Tons sobres et sérieux, pas de couleurs criardes, images HD</td>
+</tr>
+<tr>
+<td><strong>Responsive</strong></td>
+<td>Adapté desktop (70% des usages), tablette (25%), mobile (5%)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-code-couleur-tri-formation-scoliose-ptg-ioa">5. CODE COULEUR TRI-FORMATION (SCOLIOSE + PTG + IOA)</h1>
+<h2 id="51-palette-principale-par-formation">5.1 Palette principale par formation</h2>
+<p>Chaque formation possède sa <strong>couleur dominante</strong> qui l'identifie immédiatement sur la plateforme.</p>
+<h3 id="formation-scoliose">Formation Scoliose 🦴</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Bleu profond (Cobalt médical)</td>
+<td><code>#1A5276</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Bleu ciel</td>
+<td><code>#2E86C1</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Bleu-gris</td>
+<td><code>#85929E</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé</td>
+<td><code>#FAFCFE</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Bleu très pâle</td>
+<td><code>#EBF5FB</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formation-ptg">Formation PTG 🦵</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Vert émeraude (Chirurgical)</td>
+<td><code>#0E6655</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Vert jade</td>
+<td><code>#1ABC9C</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Vert-gris</td>
+<td><code>#7DCEA0</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé</td>
+<td><code>#FAFEFA</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Vert très pâle</td>
+<td><code>#E8F8F5</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formation-ioa">Formation IOA 🦠</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dominante</strong></td>
+<td>Rouge bordeaux (Infectiologie)</td>
+<td><code>#922B21</code></td>
+<td>En-têtes H1, bandeau supérieur, sidebar</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Rouge corail</td>
+<td><code>#E74C3C</code></td>
+<td>Liens, boutons primaires, icônes actives</td>
+</tr>
+<tr>
+<td><strong>Secondaire</strong></td>
+<td>Rouge-gris</td>
+<td><code>#CD6155</code></td>
+<td>Texte secondaire, bordures</td>
+</tr>
+<tr>
+<td><strong>Fond principal</strong></td>
+<td>Blanc cassé rosé</td>
+<td><code>#FEF9F8</code></td>
+<td>Fond de page</td>
+</tr>
+<tr>
+<td><strong>Fond encadré</strong></td>
+<td>Rouge très pâle</td>
+<td><code>#FDEDEC</code></td>
+<td>Fond des encadrés 📖</td>
+</tr>
+<tr>
+<td><strong>Succès</strong></td>
+<td>Vert médical</td>
+<td><code>#27AE60</code></td>
+<td>Validations, scores positifs (commun)</td>
+</tr>
+<tr>
+<td><strong>Alerte</strong></td>
+<td>Jaune sécurité</td>
+<td><code>#F39C12</code></td>
+<td>Alertes spécifiques IOA (résistance, allergie)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Justification du rouge bordeaux</strong> : Le rouge bordeaux évoque le monde de l'infectiologie (alerte, urgence, sang, inflammation) tout en restant sobre et professionnel. Il se distingue clairement du bleu (Scoliose) et du vert (PTG), permettant une identification instantanée de la formation.</p>
+</blockquote>
+<h3 id="elements-communs-partages-entre-les-3-formations">Éléments communs (partagés entre les 3 formations)</h3>
+<table>
+<thead>
+<tr>
+<th>Rôle</th>
+<th>Couleur</th>
+<th>Hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Texte principal</strong></td>
+<td>Noir doux</td>
+<td><code>#2C3E50</code></td>
+<td>Corps de texte, toutes formations</td>
+</tr>
+<tr>
+<td><strong>Texte secondaire</strong></td>
+<td>Gris moyen</td>
+<td><code>#7F8C8D</code></td>
+<td>Légendes, métadonnées</td>
+</tr>
+<tr>
+<td><strong>Fond neutre</strong></td>
+<td>Gris très clair</td>
+<td><code>#F7F9F9</code></td>
+<td>Fond de tableaux alternés</td>
+</tr>
+<tr>
+<td><strong>Bordures</strong></td>
+<td>Gris clair</td>
+<td><code>#D5D8DC</code></td>
+<td>Séparateurs, bordures de tableaux</td>
+</tr>
+<tr>
+<td><strong>Or (réussite)</strong></td>
+<td>Or</td>
+<td><code>#F39C12</code></td>
+<td>Badges, certificats</td>
+</tr>
+<tr>
+<td><strong>Diamant</strong></td>
+<td>Bleu diamant</td>
+<td><code>#3498DB</code></td>
+<td>Niveau diamant quiz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-hierarchie-typographique-coloree-formation-ioa">5.2 Hiérarchie typographique colorée — Formation IOA 🦠</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Style</th>
+<th>Couleur</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>H1 — Titre de partie</strong></td>
+<td>Montserrat Bold 34px, MAJUSCULES</td>
+<td><code>#922B21</code> rouge bordeaux</td>
+<td>PARTIE I — HISTOIRE ET FONDAMENTAUX</td>
+</tr>
+<tr>
+<td><strong>H2 — Titre de module</strong></td>
+<td>Montserrat SemiBold 28px</td>
+<td><code>#922B21</code> rouge bordeaux</td>
+<td>MODULE 3 : MICROBIOLOGIE DES IOA</td>
+</tr>
+<tr>
+<td><strong>H3 — Titre de section</strong></td>
+<td>Montserrat Medium 22px</td>
+<td><code>#E74C3C</code> rouge corail</td>
+<td>3.1 Staphylococcus aureus — Le roi des IOA</td>
+</tr>
+<tr>
+<td><strong>H4 — Sous-section</strong></td>
+<td>Open Sans SemiBold 18px</td>
+<td><code>#2C3E50</code> noir doux</td>
+<td>Facteurs de virulence</td>
+</tr>
+<tr>
+<td><strong>Bandeau latéral</strong></td>
+<td>—</td>
+<td><code>#922B21</code> fond, texte blanc</td>
+<td>Navigation module</td>
+</tr>
+<tr>
+<td><strong>Badge formation</strong></td>
+<td>Pill 24px</td>
+<td><code>#922B21</code> fond, blanc</td>
+<td>🦠 INFECTION OSSEUSE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-encadres-code-couleur-partage-identique-aux-autres-formations">5.3 Encadrés — Code couleur partagé (identique aux autres formations)</h2>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Nom</th>
+<th>Bordure gauche</th>
+<th>Fond</th>
+<th>Usage identique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏥</td>
+<td><strong>Pertinence clinique</strong></td>
+<td><code>#E67E22</code> orange</td>
+<td><code>#FDF2E9</code></td>
+<td>Lien concept → pratique clinique/chirurgicale</td>
+</tr>
+<tr>
+<td>⚠️</td>
+<td><strong>Danger / Critique</strong></td>
+<td><code>#E74C3C</code> rouge</td>
+<td><code>#FDEDEC</code></td>
+<td>Risque vital, erreur dangereuse, résistance</td>
+</tr>
+<tr>
+<td>📖</td>
+<td><strong>Approfondissement</strong></td>
+<td><code>#3498DB</code> bleu</td>
+<td><code>#EBF5FB</code></td>
+<td>Mécanisme, recherche, biologie</td>
+</tr>
+<tr>
+<td>💡</td>
+<td><strong>Astuce / Mnémonique</strong></td>
+<td><code>#2ECC71</code> vert</td>
+<td><code>#EAFAF1</code></td>
+<td>Aide-mémoire, truc de praticien</td>
+</tr>
+<tr>
+<td>🔬</td>
+<td><strong>Expert</strong></td>
+<td><code>#9B59B6</code> violet</td>
+<td><code>#F4ECF7</code></td>
+<td>Détail avancé, technique fine</td>
+</tr>
+<tr>
+<td>🤔</td>
+<td><strong>Réflexion</strong></td>
+<td><code>#F1C40F</code> jaune</td>
+<td><code>#FEF9E7</code></td>
+<td>Question ouverte, problème</td>
+</tr>
+<tr>
+<td>🦠</td>
+<td><strong>Microbiologie</strong> (nouveau)</td>
+<td><code>#922B21</code> bordeaux</td>
+<td><code>#F9EBEA</code></td>
+<td>Focus microbiologique spécifique</td>
+</tr>
+<tr>
+<td>💊</td>
+<td><strong>Antibiothérapie</strong> (nouveau)</td>
+<td><code>#8E44AD</code> violet foncé</td>
+<td><code>#F5EEF8</code></td>
+<td>Protocoles antibiotiques, posologies</td>
+</tr>
+</tbody>
+</table>
+<h2 id="54-navigation-plateforme-identification-visuelle">5.4 Navigation plateforme — Identification visuelle</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│  VERTEX©                                              🔔  👤 Dr. Martin   │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│                                                                             │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐             │
+│  │  🦴 SCOLIOSE    │  │  🦵 PTG          │  │  🦠 INFECTION   │            │
+│  │  ▔▔▔▔▔▔▔▔▔▔▔▔▔  │  │  ▔▔▔▔▔▔▔▔▔▔▔▔▔  │  │  ▔▔▔▔▔▔▔▔▔▔▔▔▔  │           │
+│  │  Fond: #1A5276  │  │  Fond: #0E6655  │  │  Fond: #922B21  │            │
+│  │  25 modules     │  │  28 modules     │  │  30 modules     │            │
+│  │  75h            │  │  80h            │  │  90h            │            │
+│  │  ████████░░ 75% │  │  ██░░░░░░░░ 15% │  │  ░░░░░░░░░░  0% │           │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘             │
+│                                                                             │
+│  Formations à venir :                                                       │
+│  ┌─────────────────┐  ┌─────────────────┐                                   │
+│  │  🧠 NEUROCHIR.  │  │  🦴 PTH          │                                  │
+│  │  À venir Q4'26  │  │  À venir 2027   │                                  │
+│  └─────────────────┘  └─────────────────┘                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h2 id="55-sidebar-de-navigation-formation-ioa">5.5 Sidebar de navigation — Formation IOA 🦠</h2>
+<pre><code>┌──────────────────────┐
+│  🦠 INFECTION OSS.   │  ← Fond #922B21, texte blanc
+│  ────────────────    │
+│  PARTIE I            │  ← Texte #F5B7B1 (rouge clair)
+│   ▸ M1 Histoire     │  ← Texte blanc
+│   ▸ M2 Anatomie vasc│
+│   ▸ M3 Microbiologie│
+│   ► M4 Physiopath.  │  ← Module actif : fond #E74C3C
+│  PARTIE II           │
+│   ▸ M5 Immunologie  │
+│   ▸ M6 Terrain      │
+│  PARTIE III          │
+│   ▸ M7 Diag. cliniq.│
+│   ▸ M8 Imagerie     │
+│   ▸ M9 Microbio.    │
+│   ▸ M10 Classif.    │
+│  PARTIE IV           │
+│   ▸ M11 Pharmaco.   │
+│   ▸ M12 ATB thérapie│
+│   ▸ M13 ATB locaux  │
+│  ...                 │
+└──────────────────────┘
+</code></pre>
+<hr />
+<h1 id="6-regles-decriture-du-contenu">6. RÈGLES D'ÉCRITURE DU CONTENU</h1>
+<p>Les règles d'écriture sont <strong>identiques</strong> à celles des Formations Scoliose et PTG (cf. <code>REGLES_ECRITURE_CONTENU.md</code>). Voici un résumé des principes fondamentaux, adaptés au contexte IOA :</p>
+<h2 id="61-principes-inchanges">6.1 Principes inchangés</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Règle</th>
+<th>Applicable IOA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Jamais de fait sans explication (mécanisme + conséquence clinique)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chaînes de raisonnement obligatoires (microbiologie → physiopath. → diagnostic → traitement)</td>
+<td>✅ Adapté</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Controverses et niveaux de preuve (📊, ⚖️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Trois niveaux de profondeur (Essentiel / Approfondi / Expert)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Minimum 2 vignettes cliniques par module</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Minimum 1 question de réflexion par section (🤔)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Minimum 1 micro-exercice par section (✏️)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Minimum 3 mnémoniques par module (💡)</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Minimum 1 exercice InfectoSim© par module (si applicable)</td>
+<td>✅ Adapté (VERTEX → InfectoSim)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1 encadré pour 500 mots minimum</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Format des marqueurs médias : <code>&gt; [MEDIA: {EMOJI} {CODE} — {TITRE} ({INSTRUCTION})]</code></td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Vouvoiement systématique</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Formulations interdites</td>
+<td>✅ Identique</td>
+</tr>
+<tr>
+<td>14</td>
+<td>≥ 300 mots par sous-section</td>
+<td>✅ Identique</td>
+</tr>
+</tbody>
+</table>
+<h2 id="62-adaptations-specifiques-ioa">6.2 Adaptations spécifiques IOA</h2>
+<table>
+<thead>
+<tr>
+<th>Adaptation</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Simulateur</strong></td>
+<td>InfectoSim© au lieu de VERTEX© rachis ou KneeSim©. Scénarios IOA : cinétique antibiotique osseuse, modélisation du biofilm, planification chirurgicale de débridement 3D, simulation de résistances</td>
+</tr>
+<tr>
+<td><strong>Patient fil rouge</strong></td>
+<td>Un patient fil rouge par partie — parcours d'un patient depuis le diagnostic jusqu'à la guérison ou la récidive</td>
+</tr>
+<tr>
+<td><strong>Particularité microbiologique</strong></td>
+<td>Intégrer systématiquement l'antibiogramme, les CMI, les interactions médicamenteuses dans chaque cas clinique</td>
+</tr>
+<tr>
+<td><strong>Particularité pluridisciplinaire</strong></td>
+<td>Chaque cas clinique complexe DOIT mentionner la RCP (Réunion de Concertation Pluridisciplinaire) et les rôles de chaque intervenant (chirurgien, infectiologue, microbiologiste, radiologue)</td>
+</tr>
+<tr>
+<td><strong>Photos cliniques</strong></td>
+<td>Plus nombreuses qu'en scoliose/PTG — photos de plaies, fistules, séquestres, résultats de reconstruction</td>
+</tr>
+<tr>
+<td><strong>Données biologiques</strong></td>
+<td>Tableaux de valeurs biologiques systématiques (CRP, VS, GB, PCT) avec cinétique temporelle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="63-marqueurs-medias-codification-ioa">6.3 Marqueurs médias — Codification IOA</h2>
+<pre><code>&gt; [MEDIA: {EMOJI} MIOA{module}-S{section}-{numéro} — {TITRE} ({INSTRUCTION_PÉDAGOGIQUE})]
+</code></pre>
+<ul>
+<li>Préfixe <strong>MIOA</strong> pour distinguer des médias scoliose (M) et PTG (MPTG)</li>
+<li>Exemple : <code>MIOA03-S02-005</code> = Formation IOA, Module 3, Section 2, 5ème média</li>
+</ul>
+<hr />
+<h1 id="7-structure-des-fichiers-du-cdc">7. STRUCTURE DES FICHIERS DU CDC</h1>
+<p>Le présent cahier des charges est organisé en <strong>10 fichiers</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fichier</th>
+<th>Contenu</th>
+<th>Modules couverts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>CDC_IOA_00_INTRODUCTION_CHARTE.md</code></td>
+<td>Introduction, charte graphique, code couleur, règles d'écriture</td>
+<td>—</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>CDC_IOA_01_HISTOIRE_FONDAMENTAUX.md</code></td>
+<td>Histoire, anatomie vasculaire, microbiologie, physiopathologie</td>
+<td>Modules 1-4</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>CDC_IOA_02_IMMUNOLOGIE_TERRAIN.md</code></td>
+<td>Immunologie osseuse, facteurs de risque</td>
+<td>Modules 5-6</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>CDC_IOA_03_DIAGNOSTIC.md</code></td>
+<td>Diagnostic clinique, biologique, imagerie, microbiologique, classifications</td>
+<td>Modules 7-10</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>CDC_IOA_04_ANTIBIOTHERAPIE.md</code></td>
+<td>Pharmacologie, antibiothérapie systémique et locale</td>
+<td>Modules 11-13</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>CDC_IOA_05_OSTEOMYELITE.md</code></td>
+<td>Ostéomyélite enfant, adulte, chronique, post-traumatique</td>
+<td>Modules 14-17</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>CDC_IOA_06_ARTHRITE_PERIPROTHETIQUE.md</code></td>
+<td>Arthrite septique, infections périprothétiques</td>
+<td>Modules 18-21</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>CDC_IOA_07_INFECTIONS_SPECIFIQUES.md</code></td>
+<td>Spondylodiscite, pied diabétique, tuberculose, fongiques</td>
+<td>Modules 22-25</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>CDC_IOA_08_CHIRURGIE_RECONSTRUCTION.md</code></td>
+<td>Techniques chirurgicales, reconstruction, couverture</td>
+<td>Modules 26-28</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>CDC_IOA_09_PREVENTION_INNOVATIONS.md</code></td>
+<td>Prévention, recherche, innovations</td>
+<td>Modules 29-30</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="8-correspondance-inter-formations">8. CORRESPONDANCE INTER-FORMATIONS</h1>
+<h2 id="81-modules-partages-transversaux">8.1 Modules partagés / transversaux</h2>
+<p>Certains concepts sont communs aux trois formations. Le LMS gère les <strong>renvois croisés</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Formation Scoliose</th>
+<th>Formation PTG</th>
+<th>Formation IOA</th>
+<th>Type de partage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anatomie osseuse (structure, vascularisation)</td>
+<td>Module 1 §1.1</td>
+<td>Module 3 §3.1</td>
+<td>Module 2 §2.1</td>
+<td>Contenu adapté au contexte</td>
+</tr>
+<tr>
+<td>Matériaux d'ostéosynthèse (titane, CoCr, PE, ciment)</td>
+<td>Module 15 §15.1</td>
+<td>Modules 10, 12</td>
+<td>Module 13 §13.1</td>
+<td>Focus adhésion bactérienne en IOA</td>
+</tr>
+<tr>
+<td>Infection site opératoire / périprothétique</td>
+<td>Module 22 (scoliose)</td>
+<td>Module 23 (PTG)</td>
+<td>Modules 18-21 (IOA)</td>
+<td>Traitement exhaustif en IOA</td>
+</tr>
+<tr>
+<td>Imagerie (radio, scanner, IRM)</td>
+<td>Module 7</td>
+<td>Module 8</td>
+<td>Module 8</td>
+<td>Sémiologie spécifique infection en IOA</td>
+</tr>
+<tr>
+<td>Infection rachidienne</td>
+<td>Module 22 (scoliose)</td>
+<td>—</td>
+<td>Module 22 (IOA)</td>
+<td>Traitement complet en IOA</td>
+</tr>
+<tr>
+<td>Antibioprophylaxie chirurgicale</td>
+<td>Module 17 §17.5</td>
+<td>Module 21 §21.7</td>
+<td>Module 29</td>
+<td>Traitement approfondi en IOA</td>
+</tr>
+<tr>
+<td>Complications générales chirurgie</td>
+<td>Module 17</td>
+<td>Module 21</td>
+<td>Module 29 §29.2</td>
+<td>Focus infection en IOA</td>
+</tr>
+<tr>
+<td>Rééducation post-chirurgie septique</td>
+<td>Module 18</td>
+<td>Module 27</td>
+<td>Module 27 §27.4</td>
+<td>Spécificités contexte infectieux</td>
+</tr>
+</tbody>
+</table>
+<h2 id="82-simulation-infectosim-vs-vertex-rachis-vs-kneesim">8.2 Simulation InfectoSim© vs VERTEX© Rachis vs KneeSim©</h2>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>VERTEX© Rachis (Scoliose)</th>
+<th>KneeSim© (PTG)</th>
+<th>InfectoSim© (IOA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Anatomie simulée</strong></td>
+<td>Rachis C3-S1</td>
+<td>Genou : fémur/tibia/patella</td>
+<td>Os long, articulation, rachis (multi-site)</td>
+</tr>
+<tr>
+<td><strong>Focus principal</strong></td>
+<td>Biomécanique, correction 3D</td>
+<td>Cinématique, placement implant</td>
+<td>Infection, diffusion ATB, biofilm</td>
+</tr>
+<tr>
+<td><strong>Simulation unique</strong></td>
+<td>Croissance, progression scoliose</td>
+<td>Usure PE, descellement long terme</td>
+<td>Cinétique ATB osseuse, croissance biofilm</td>
+</tr>
+<tr>
+<td><strong>Chirurgie virtuelle</strong></td>
+<td>Vis pédiculaires, cintrage tige</td>
+<td>Coupes, équilibrage ligamentaire</td>
+<td>Débridement 3D, séquestrectomie virtuelle</td>
+</tr>
+<tr>
+<td><strong>Scénarios spécifiques</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Choix ATB selon CMI, simulation résistance, planning membrane induite</td>
+</tr>
+<tr>
+<td><strong>Moteur</strong></td>
+<td>Julia + Three.js</td>
+<td>Même stack</td>
+<td>Même stack + modèles pharmacocinétiques</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="annexe-a-glossaire-des-abreviations-ioa">ANNEXE A — GLOSSAIRE DES ABRÉVIATIONS IOA</h1>
+<table>
+<thead>
+<tr>
+<th>Abréviation</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IOA</td>
+<td>Infection Ostéo-Articulaire</td>
+</tr>
+<tr>
+<td>SARM</td>
+<td><em>Staphylococcus aureus</em> Résistant à la Méticilline (<em>MRSA</em>)</td>
+</tr>
+<tr>
+<td>SASM</td>
+<td><em>Staphylococcus aureus</em> Sensible à la Méticilline (<em>MSSA</em>)</td>
+</tr>
+<tr>
+<td>SCN</td>
+<td>Staphylocoque à Coagulase Négative</td>
+</tr>
+<tr>
+<td>BLSE</td>
+<td>Bêta-Lactamase à Spectre Étendu</td>
+</tr>
+<tr>
+<td>EPC</td>
+<td>Entérobactérie Productrice de Carbapénémase</td>
+</tr>
+<tr>
+<td>BMR</td>
+<td>Bactérie Multi-Résistante</td>
+</tr>
+<tr>
+<td>BHRe</td>
+<td>Bactérie Hautement Résistante émergente</td>
+</tr>
+<tr>
+<td>CMI</td>
+<td>Concentration Minimale Inhibitrice (<em>MIC</em>)</td>
+</tr>
+<tr>
+<td>CMB</td>
+<td>Concentration Minimale Bactéricide</td>
+</tr>
+<tr>
+<td>ATB</td>
+<td>Antibiotique</td>
+</tr>
+<tr>
+<td>CRP</td>
+<td>C-Reactive Protein</td>
+</tr>
+<tr>
+<td>VS</td>
+<td>Vitesse de Sédimentation</td>
+</tr>
+<tr>
+<td>PCT</td>
+<td>Procalcitonine</td>
+</tr>
+<tr>
+<td>NFS</td>
+<td>Numération Formule Sanguine</td>
+</tr>
+<tr>
+<td>GB</td>
+<td>Globules Blancs</td>
+</tr>
+<tr>
+<td>PNN</td>
+<td>Polynucléaires Neutrophiles</td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>Interleukine-6</td>
+</tr>
+<tr>
+<td>PCR</td>
+<td><em>Polymerase Chain Reaction</em></td>
+</tr>
+<tr>
+<td>MALDI-TOF</td>
+<td><em>Matrix-Assisted Laser Desorption Ionization — Time Of Flight</em></td>
+</tr>
+<tr>
+<td>NGS</td>
+<td><em>Next-Generation Sequencing</em></td>
+</tr>
+<tr>
+<td>ASP</td>
+<td>Arthroscopie</td>
+</tr>
+<tr>
+<td>DAIR</td>
+<td><em>Debridement, Antibiotics, Implant Retention</em></td>
+</tr>
+<tr>
+<td>TEP</td>
+<td>Tomographie par Émission de Positons</td>
+</tr>
+<tr>
+<td>IRM</td>
+<td>Imagerie par Résonance Magnétique</td>
+</tr>
+<tr>
+<td>TDM</td>
+<td>Tomodensitométrie (Scanner)</td>
+</tr>
+<tr>
+<td>LBA</td>
+<td>Lavage Broncho-Alvéolaire</td>
+</tr>
+<tr>
+<td>RCP</td>
+<td>Réunion de Concertation Pluridisciplinaire</td>
+</tr>
+<tr>
+<td>CRIOAC</td>
+<td>Centre de Référence des IOA Complexes</td>
+</tr>
+<tr>
+<td>MI</td>
+<td>Membrane Induite (technique de Masquelet)</td>
+</tr>
+<tr>
+<td>TOD</td>
+<td>Transport Osseux Distraction</td>
+</tr>
+<tr>
+<td>VAC</td>
+<td><em>Vacuum-Assisted Closure</em> (pansement à pression négative)</td>
+</tr>
+<tr>
+<td>PMMA</td>
+<td>Polyméthacrylate de Méthyle (ciment)</td>
+</tr>
+<tr>
+<td>BMP</td>
+<td><em>Bone Morphogenetic Protein</em></td>
+</tr>
+<tr>
+<td>PVL</td>
+<td>Leucocidine de Panton-Valentine</td>
+</tr>
+<tr>
+<td>TSST</td>
+<td><em>Toxic Shock Syndrome Toxin</em></td>
+</tr>
+<tr>
+<td>SEA/SEB</td>
+<td>Entérotoxines Staphylococciques A/B</td>
+</tr>
+<tr>
+<td>FQ</td>
+<td>Fluoroquinolone</td>
+</tr>
+<tr>
+<td>RIF</td>
+<td>Rifampicine</td>
+</tr>
+<tr>
+<td>TMP-SMX</td>
+<td>Triméthoprime-Sulfaméthoxazole (Bactrim®)</td>
+</tr>
+<tr>
+<td>OPAT</td>
+<td><em>Outpatient Parenteral Antibiotic Therapy</em></td>
+</tr>
+<tr>
+<td>DPC</td>
+<td>Développement Professionnel Continu</td>
+</tr>
+<tr>
+<td>CME</td>
+<td><em>Continuing Medical Education</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Ce document (Partie 0) constitue le socle commun de la Formation IOA. Les parties suivantes (1 à 9) détaillent le contenu pédagogique module par module.</em></p>
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+</div>

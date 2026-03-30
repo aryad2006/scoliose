@@ -1,0 +1,457 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-07-diagnostic-et-depistage">PARTIE 07 — Diagnostic et Dépistage</h1>
+<h2 id="formation-vertex-hypothyroidies">Formation VERTEX© — Hypothyroïdies</h2>
+<hr />
+<h2 id="module-22-strategie-diagnostique">MODULE 22 — Stratégie Diagnostique</h2>
+<h3 id="221-principes-de-la-demarche-diagnostique">22.1 Principes de la démarche diagnostique</h3>
+<p>La stratégie diagnostique de l'hypothyroïdie repose sur un <strong>raisonnement en deux étapes</strong> :<br />
+1. <strong>Confirmer</strong> l'hypothyroïdie par la biologie (TSH ± T4L)<br />
+2. <strong>Identifier</strong> l'étiologie (clinique + biologie ± imagerie)</p>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO22-S1-001 — Algorithme diagnostique global hypothyroïdie : de la TSH à l'étiologie en 4 étapes]</p>
+</blockquote>
+<hr />
+<h3 id="222-arbre-decisionnel-principal">22.2 Arbre décisionnel principal</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO22-S2-001 — Arbre décisionnel complet : TSH → T4L → étiologie → traitement]</p>
+</blockquote>
+<p><strong>Étape 1 — TSH de dépistage/suspicion</strong> :</p>
+<pre><code>TSH &lt; 0,4 mUI/L → → → Hyperthyroïdie (bilan spécifique)
+TSH 0,4 – 4,0 mUI/L → → Euthyroïdie (répéter si suspicion clinique forte)
+TSH 4,0 – 10 mUI/L → → Hypothyroïdie frustre → Étape 2
+TSH &gt; 10 mUI/L → → → Hypothyroïdie constituée → Étape 2
+</code></pre>
+<p><strong>Étape 2 — T4L si TSH anormale</strong> :</p>
+<pre><code>TSH ↑ + T4L basse → Hypothyroïdie primaire constituée → Étape 3 (étiologie)
+TSH ↑ + T4L normale → Hypothyroïdie frustre → Étape 3 (étiologie)
+TSH normale + T4L basse → Hypothyroïdie centrale → IRM hypophysaire + bilan hormonal
+TSH basse + T4L basse → Hypothyroïdie centrale sévère → Prise en charge urgente
+</code></pre>
+<p><strong>Étape 3 — Bilan étiologique</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>Examens</th>
+<th>Diagnostic probable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH ↑ + anti-TPO +</td>
+<td>Anti-TPO, anti-Tg</td>
+<td>Hashimoto</td>
+</tr>
+<tr>
+<td>TSH ↑ + échographie Hashimoto</td>
+<td>Echo-Doppler</td>
+<td>Hashimoto avec ou sans nodule</td>
+</tr>
+<tr>
+<td>TSH ↑ + ATCD chirurgie thyroïdienne</td>
+<td>Anamnèse</td>
+<td>HT post-chirurgicale</td>
+</tr>
+<tr>
+<td>TSH ↑ + amiodarone</td>
+<td>Anamnèse + T4L élevée</td>
+<td>HT amiodarone</td>
+</tr>
+<tr>
+<td>TSH ↑ + lithium/ICI</td>
+<td>Anamnèse</td>
+<td>HT iatrogène</td>
+</tr>
+<tr>
+<td>TSH ↑ + nouveau-né</td>
+<td>Dépistage néonatal</td>
+<td>Dysgénésie/dyshormonogenèse</td>
+</tr>
+<tr>
+<td>TSH normale + T4L basse</td>
+<td>IRM hypophysaire, bilan hormonal complet</td>
+<td>Hypothyroïdie centrale</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="223-diagnostic-differentiel">22.3 Diagnostic différentiel</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO22-S3-001 — Tableau des diagnostics différentiels par signe cardinal : quand penser à autre chose]</p>
+</blockquote>
+<p><strong>Signes pouvant mimer une hypothyroïdie</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Signe</th>
+<th>Diagnostics différentiels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asthénie + prise de poids</td>
+<td>Dépression, syndrome de Cushing, apnée du sommeil</td>
+</tr>
+<tr>
+<td>Bradycardie</td>
+<td>BAV, béta-bloquants, insuffisance cardiaque</td>
+</tr>
+<tr>
+<td>Constipation</td>
+<td>Colopathie fonctionnelle, médicaments, maladie de Hirschsprung</td>
+</tr>
+<tr>
+<td>Troubles cognitifs</td>
+<td>Démence, dépression, encéphalite</td>
+</tr>
+<tr>
+<td>Myopathie</td>
+<td>Myopathie inflammatoire (PM/DM), dystrophies, statines</td>
+</tr>
+<tr>
+<td>Hyponatrémie</td>
+<td>SIADH, insuffisance surrénalienne, cirrhose</td>
+</tr>
+<tr>
+<td>Hyperlipidémie</td>
+<td>Dyslipidémie familiale, syndrome néphrotique, hypothyroïdie sous-jacente</td>
+</tr>
+<tr>
+<td>Anémie normocytaire</td>
+<td>Anémie ferriprive, B12/folates, anémie inflammatoire</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> — L'hypothyroïdie est le grand imitateur endocrinien : doser la TSH devant toute polysymptomatologie non expliquée, avant de poser un diagnostic de dépression, fibromyalgie, ou vieillissement normal.</p>
+<hr />
+<h3 id="224-situations-particulieres-complexes">22.4 Situations particulières complexes</h3>
+<h4 id="2241-tsh-elevee-isolee-sans-symptome">22.4.1 TSH élevée isolée sans symptôme</h4>
+<p><strong>Démarche</strong> :<br />
+1. Vérifier l'heure du prélèvement (variation circadienne — pic nocturne)<br />
+2. Vérifier les médicaments<br />
+3. Contrôler à 6-8 semaines sur un nouveau prélèvement matinal<br />
+4. Doser T4L et anti-TPO si confirmation</p>
+<h4 id="2242-discordance-clinique-biologie">22.4.2 Discordance clinique / biologie</h4>
+<p><strong>Symptômes persistants malgré TSH normalisée sous LT4</strong> :<br />
+- Vérifier l'observance et les conditions de prise<br />
+- Doser T3L (T3L basse = mauvaise conversion T4→T3)<br />
+- Rechercher cause associée (dépression, apnée du sommeil, fibromyalgie)<br />
+- Envisager combinaison LT4+LT3 (Module 36)</p>
+<h4 id="2243-patient-hospitalise-ntis-sick-euthyroid">22.4.3 Patient hospitalisé (NTIS / sick euthyroid)</h4>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Chez le malade hospitalisé en réanimation ou souffrant d'une maladie chronique sévère, la TSH peut être basse, normale ou légèrement élevée sans refléter le statut thyroïdien réel. Ne pas initier de traitement thyroïdien sur un bilan réalisé en phase aiguë.</div>
+
+<p><strong>NTIS (Non-Thyroidal Illness Syndrome)</strong> :<br />
+- T3L effondrée (↓ DIO1, ↑ DIO3)<br />
+- T4L variable (basse = pronostic sévère)<br />
+- TSH variable (basse en phase aiguë, rebond modéré en phase de récupération)<br />
+- Traitement : celui de la maladie causale, pas de LT4</p>
+<hr />
+<h3 id="quiz-module-22">QUIZ MODULE 22</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la première étape du diagnostic d'hypothyroïdie ?<br />
+A) T4L <strong>B) TSH</strong> C) Anti-TPO D) Échographie thyroïdienne</p>
+<p><strong>🥈 Q2</strong> — TSH à 12 mUI/L, T4L normale chez un patient de 45 ans asymptomatique. Quel bilan complémentaire est indiqué ?<br />
+A) IRM hypophysaire urgente <strong>B) Anti-TPO, échographie thyroïdienne, bilan lipidique</strong> C) Scintigraphie ¹²³I D) Cytoponction thyroïdienne</p>
+<p><strong>🥇 Q3</strong> — TSH basse et T4L basse chez un patient en réanimation sous dopamine depuis 48h. Quelle est l'interprétation ?<br />
+<strong>A) NTIS probable (sick euthyroid syndrome) + frein de la dopamine sur la TSH — ne pas traiter</strong> B) Hypothyroïdie centrale confirmée — initier LT4 IV C) Hyperthyroïdie centrale D) Artefact d'analyse</p>
+<p><strong>💎 Q4</strong> — Un patient avec TSH à 25 mUI/L et T4L basse ne répond pas à 3 mois de LT4 bien conduite. Quelles hypothèses diagnostiques explorer ?<br />
+<strong>A) Non-observance (vérifier TSH avant et 2h après prise de LT4), malabsorption (maladie cœliaque, gastrectomie, aclorhidrie), interactions médicamenteuses (IPP, calcium, cholestyramine), ou hypothyroïdie centrale associée à une résistance</strong></p>
+<hr />
+<h2 id="module-23-depistage-neonatal">MODULE 23 — Dépistage Néonatal</h2>
+<h3 id="231-programme-national-francais">23.1 Programme national français</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO23-S1-001 — Circuit de dépistage néonatal : du buvard à la prise en charge — délais et acteurs]</p>
+</blockquote>
+<p><strong>Organisation en France (adapté de AFDPHE, 2023)</strong> :<br />
+- <strong>Naissance</strong> : prélèvement capillaire sur buvard à <strong>J2-J3</strong> de vie<br />
+- <strong>Analyse centralisée</strong> dans les CRDN (Centres Régionaux de Dépistage Néonatal)<br />
+- <strong>Paramètre mesuré</strong> : TSH (méthode immunofluorimétrique)<br />
+- <strong>Seuil d'appel</strong> : TSH &gt; <strong>20 mUI/L sang total</strong> (correspondant à ~15 mUI/L sérique)<br />
+- <strong>Délai</strong> : résultat en 24-48h, traitement avant J14</p>
+<hr />
+<h3 id="232-resultats-et-interpretation">23.2 Résultats et interprétation</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO23-S2-001 — Algorithme d'interprétation du dépistage néonatal thyroïdien]</p>
+</blockquote>
+<p><strong>TSH sur buvard J3</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Résultat</th>
+<th>Conduite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 20 mUI/L sang total</td>
+<td>Normal — pas d'action</td>
+</tr>
+<tr>
+<td>20-40 mUI/L</td>
+<td>Contrôle TSH/T4L sérique immédiat — traitement si confirmé</td>
+</tr>
+<tr>
+<td>&gt; 40 mUI/L</td>
+<td>Hypothyroïdie congénitale probable — traitement urgent sans attendre confirmation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Confirmation diagnostique</strong> :<br />
+1. <strong>TSH et T4L sériques</strong> (prélèvement veineux)<br />
+2. <strong>Scintigraphie thyroïdienne</strong> (¹²³I ou ⁹⁹ᵐTc) pour différencier :<br />
+   - Ectopie (lingual, sublinguale) → dysgénésie<br />
+   - Agenèse → pas de fixation<br />
+   - Glande en place → dyshormonogenèse (gène NIS, TPO, DUOX2, TG)<br />
+3. <strong>Âge osseux</strong> (retard osseux si HT prénatal prolongé)<br />
+4. <strong>Bilan familial</strong> si dyshormonogenèse (transmission AR)</p>
+<hr />
+<h3 id="233-traitement-et-suivi">23.3 Traitement et suivi</h3>
+<p><strong>Initiation du traitement</strong> :<br />
+- <strong>LT4 orale</strong> : 10-15 µg/kg/j (dose initiale pédiatrique)<br />
+- Objectif : T4L dans le tiers supérieur de la norme, TSH 0,5-2 mUI/L<br />
+- <strong>Délai maximal</strong> : <strong>avant J14</strong> pour prévenir les séquelles neuro-développementales<br />
+- Comprimé écrasé dans 1-2 mL d'eau, eau seule — jamais dans le lait (absorption réduite par le calcium)</p>
+<p><strong>Surveillance</strong> :<br />
+- TSH + T4L à 2 semaines, puis mensuelle les 6 premiers mois, puis tous les 3 mois jusqu'à 2 ans<br />
+- Test de sevrage à 3 ans (glande en place) : TSH et T4L à 4 semaines d'arrêt → si normaux = pas d'hypothyroïdie permanente (dyshormonogenèse légère)</p>
+<p><strong>Pronostic</strong> :<br />
+- Traitement précoce (&lt; J14) → développement neurologique <strong>normal</strong><br />
+- Traitement tardif → séquelles irréversibles proportionnelles au délai</p>
+<hr />
+<h3 id="234-faux-negatifs-du-depistage">23.4 Faux négatifs du dépistage</h3>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Causes de faux négatifs :
+- Prématuré (axe HPT immature, pic TSH retardé) → refaire à J7-J14
+- Transfusion sanguine avant le prélèvement → dilution des marqueurs
+- Surcharge iodée (antiseptiques chez la mère) → inhibition transitoire de la thyroïde → pic TSH retardé
+- Hypothyroïdie centrale (TSH normale avec T4L basse) → non détectée par le programme TSH</div>
+
+<p>💡 <strong>POINT PRATIQUE</strong> — Le programme de dépistage néonatal ne détecte pas les hypothyroïdies centrales. Devant un nouveau-né avec symptômes évocateurs et buvard normal, doser T4L sériques.</p>
+<hr />
+<h3 id="quiz-module-23">QUIZ MODULE 23</h3>
+<p><strong>🥉 Q1</strong> — Quel est le seuil de TSH sur buvard J3 déclenchant un bilan de confirmation ?<br />
+A) &gt; 10 mUI/L B) &gt; 15 mUI/L <strong>C) &gt; 20 mUI/L sang total</strong> D) &gt; 40 mUI/L</p>
+<p><strong>🥈 Q2</strong> — Un buvard J3 revient à 28 mUI/L. Quelle est la conduite immédiate ?<br />
+A) Attendre buvard J7 <strong>B) Prélèvement TSH/T4L sérique urgent — traitement si confirmé, sans dépasser J14</strong> C) Scintigraphie d'emblée D) Initier LT4 sans confirmation biologique</p>
+<p><strong>🥇 Q3</strong> — Un prématuré de 28 SA a un buvard normal à J3. À J10, il développe une hypothermie et une jaunisse prolongée. Quelle est la conduite ?<br />
+<strong>A) Refaire TSH/T4L sérique — l'axe HPT est immature chez le prématuré, le pic TSH peut être retardé, et le buvard J3 est possiblement faux négatif</strong> B) C'est une physiologie normale du prématuré C) Démarrer LT4 empiriquement D) Bilan infectieux uniquement</p>
+<p><strong>💎 Q4</strong> — Quel type d'hypothyroïdie congénitale n'est PAS détecté par le programme de dépistage néonatal sur TSH ?<br />
+<strong>A) L'hypothyroïdie congénitale centrale (insuffisance en TSH hypophysaire) — TSH normale ou basse avec T4L basse</strong> B) Dysgénésie thyroïdienne C) Dyshormonogenèse D) Ectopie sublinguale</p>
+<hr />
+<h2 id="module-24-depistage-chez-ladulte">MODULE 24 — Dépistage chez l'Adulte</h2>
+<h3 id="241-populations-cibles">24.1 Populations cibles</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO24-S1-001 — Populations cibles pour le dépistage de l'hypothyroïdie chez l'adulte : tableau des facteurs de risque]</p>
+</blockquote>
+<p><strong>Dépistage recommandé (adapté de HAS 2019, ATA 2012)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Fréquence recommandée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Femme &gt; 60 ans</td>
+<td>TSH tous les 5 ans</td>
+</tr>
+<tr>
+<td>Femme enceinte avec FR</td>
+<td>TSH dès T1</td>
+</tr>
+<tr>
+<td>ATCD thyroïdien personnel</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Anti-TPO ou anti-Tg connus</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Traitement par amiodarone</td>
+<td>TSH avant + tous les 6 mois</td>
+</tr>
+<tr>
+<td>Traitement par lithium</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Traitement par ICI (immunothérapie)</td>
+<td>TSH avant + toutes les 6-12 semaines</td>
+</tr>
+<tr>
+<td>Syndrome de Turner</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Syndrome de Down</td>
+<td>TSH annuelle (dès l'enfance)</td>
+</tr>
+<tr>
+<td>Diabète de type 1</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Irradiation cervicale</td>
+<td>TSH annuelle</td>
+</tr>
+<tr>
+<td>Atteinte auto-immune connue (polyarthrite, MICI, Sjögren)</td>
+<td>TSH annuelle</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="242-depistage-en-population-generale">24.2 Dépistage en population générale</h3>
+<p><strong>Position des sociétés savantes</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Organisation</th>
+<th>Recommandation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ATA 2012</strong></td>
+<td>Dépistage TSH à partir de 35 ans, tous les 5 ans</td>
+</tr>
+<tr>
+<td><strong>ETA 2013</strong></td>
+<td>Pas de dépistage universel mais dépistage des groupes à risque</td>
+</tr>
+<tr>
+<td><strong>HAS 2019</strong></td>
+<td>Pas de dépistage systématique en population générale — dépistage ciblé</td>
+</tr>
+<tr>
+<td><strong>USPSTF</strong></td>
+<td>Preuves insuffisantes pour recommander un dépistage universel</td>
+</tr>
+</tbody>
+</table>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : Le dépistage non ciblé de la TSH entraîne une surdiagnostic d'hypothyroïdie frustre (TSH 4-10 mUI/L), avec risque de surtraitement, notamment chez le sujet âgé. Appliquer les recommandations de dépistage ciblé plutôt que systématique.</div>
+
+<hr />
+<h3 id="243-cout-efficacite-du-depistage">24.3 Coût-efficacité du dépistage</h3>
+<p><strong>Arguments pour le dépistage ciblé</strong> :<br />
+- L'HT est fréquente (prevalence 5-10 % femmes)<br />
+- Traitement efficace, peu coûteux (LT4)<br />
+- Conséquences cardiovasculaires (dyslipidémie, HTA)<br />
+- Impact sur la qualité de vie<br />
+- Facilement détecté par TSH unique</p>
+<p><strong>Arguments contre le dépistage universel</strong> :<br />
+- Prévalence de l'HT constituée asymptomatique faible en population générale jeune<br />
+- TRUST montre que le traitement de l'HT frustre ≥ 65 ans n'améliore pas les symptômes<br />
+- Surtraitement potentiel → fibrillation atriale, ostéoporose<br />
+- Coût-efficacité non démontré dans des analyses rigoureuses</p>
+<hr />
+<h3 id="244-cas-particulier-depistage-avant-traitements-immunomodulateurs">24.4 Cas particulier : dépistage avant traitements immunomodulateurs</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO24-S4-001 — Protocole de surveillance thyroïdienne sous immunothérapie anti-PD1/PD-L1]</p>
+</blockquote>
+<p><strong>Avant immunothérapie anti-PD1/PD-L1 (ICI)</strong> (adapté de Brahmer et al., ASCO 2018) :<br />
+1. TSH + T4L de référence avant J1<br />
+2. TSH + T4L à chaque cycle (toutes les 3-6 semaines) ou si symptômes<br />
+3. Phase aigüe : thyroïdite → TSH basse, T4L haute (traitement symptomatique uniquement)<br />
+4. Phase hypothyroïdie : TSH élevée → initier LT4 (ne pas suspendre l'ICI pour hypothyroïdie modérée)</p>
+<p><strong>Avant traitement par amiodarone</strong> :<br />
+1. TSH + T4L + anti-TPO avant initiation<br />
+2. TSH tous les 6 mois pendant traitement<br />
+3. TSH pendant 2 ans après arrêt (demi-vie longue de l'amiodarone)</p>
+<p><strong>Avant lithothérapie</strong> :<br />
+1. TSH + T4L + créatinine + ECG avant initiation<br />
+2. TSH tous les 6 mois la première année, puis annuelle</p>
+<hr />
+<h3 id="quiz-module-24">QUIZ MODULE 24</h3>
+<p><strong>🥉 Q1</strong> — Quelle population doit bénéficier d'une surveillance thyroïdienne annuelle sans autre facteur de risque ?<br />
+A) Toute femme après 40 ans B) Tout patient diabétique <strong>C) Patient sous amiodarone — TSH tous les 6 mois</strong> D) Tout patient sous statine</p>
+<p><strong>🥈 Q2</strong> — Faut-il proposer un dépistage systématique de la TSH à toute la population générale adulte selon la HAS 2019 ?<br />
+A) Oui, à partir de 35 ans <strong>B) Non — dépistage ciblé sur les groupes à risque uniquement</strong> C) Oui, tous les 10 ans après 50 ans D) Oui, chez toutes les femmes</p>
+<p><strong>🥇 Q3</strong> — Un patient reçoit du nivolumab pour mélanome métastatique depuis 6 semaines. TSH à 0,08 mUI/L avec T4L haute, sans symptôme. Quelle est la conduite ?<br />
+A) Arrêter le nivolumab immédiatement <strong>B) Thyroïdite auto-immune précoce aux ICI (phase hyperthyroïdienne) — traitement symptomatique (bêta-bloquants si besoin), surveillance TSH/T4L — ne pas arrêter l'ICI</strong> C) Initier antithyroïdiens de synthèse D) Carbimazole + arrêt nivolumab</p>
+<p><strong>💎 Q4</strong> — Pourquoi le syndrome de Down est-il une indication de dépistage annuel de la TSH dès l'enfance ?<br />
+<strong>A) Fréquence élevée de thyroïdite auto-immune (prévalence 15-20 % dans la trisomie 21, due à un déséquilibre immunitaire lié à la surexpression de gènes du chromosome 21 impliqués dans la réponse immunitaire) et risque de retard développemental surajouté si HT non traitée</strong> B) Risque de cancer thyroïdien C) Carence iodée systématique D) Anomalie génétique du NIS</p>
+<hr />
+<p><em>Formation VERTEX© — Partie 07 — Diagnostic et Dépistage — Mars 2026</em></p>
+</div>

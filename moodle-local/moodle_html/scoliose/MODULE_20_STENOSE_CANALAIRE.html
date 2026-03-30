@@ -1,0 +1,318 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-20-canal-lombaire-etroit-et-stenose-canalaire">MODULE 20 — CANAL LOMBAIRE ÉTROIT ET STÉNOSE CANALAIRE</h1>
+<p><strong>Partie IX — Pathologies dégénératives</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1 à 7, Module 19</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Geneviève, 67 ans, retraitée, consulte pour une douleur bilatérale aux jambes à la marche depuis 18 mois. Elle ne peut parcourir que 200 m avant de devoir s'asseoir. Le vélo est indolore. Son médecin suspecte une artériopathie...</p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Canal lombaire étroit (CLE) • Sténose foraminale • Claudio intermittente neurogène • Artériopathie oblitérante des membres inférieurs (AOMI) • Classification de Schizas • Cauda equina • Décompression • Laminectomie • Foraminotomie • Fusion associée • Score Zurich Claudication Questionnaire (ZCQ)</p>
+<hr />
+<h2 id="201-physiopathologie-et-classification">20.1 Physiopathologie et classification</h2>
+<p><strong>Sténose</strong> = rétrécissement du canal rachidien comprimant les racines de la queue de cheval.</p>
+<p><strong>Mécanismes combinés</strong> :<br />
+- Protrusion discale (antérieure)<br />
+- Hypertrophie des ligaments jaunes (postérieure) → épaisseur normale &lt; 3 mm, pathologique &gt; 5 mm<br />
+- Ostéophytes articulaires postérieurs (latérale)<br />
+- Subluxation facettaire ou spondylolisthésis dégénératif</p>
+<p><strong>Classification de Schizas</strong> (Schizas et al., 2010, <em>Spine</em>) <strong>(IRM axial T2)</strong> :<br />
+| Grade | Aspect | Signal LCR |<br />
+|-------|--------|-----------|<br />
+| A | Contenu graisseux entourant les racines | Visible |<br />
+| B | Racines clairement visibles | Absent |<br />
+| C | Racines non distinctes | Absent |<br />
+| D | Pas de racine visible | Absent |</p>
+<hr />
+<h2 id="202-presentation-clinique-claudication-intermittente-neurogene">20.2 Présentation clinique — Claudication intermittente neurogène</h2>
+<p><strong>Caractéristiques</strong> :<br />
+- Douleur, faiblesse ou paresthésies bilatérales (parfois asymétriques) aux membres inférieurs<br />
+- Déclenchée par la marche et la station debout prolongée<br />
+- <strong>Soulagée par la position assise ou la flexion du tronc</strong> (ouverture du canal en flexion)<br />
+- <strong>Périmètre de marche</strong> réduit progressivement</p>
+<p><strong>Signe caractéristique</strong> : le patient marche spontanément penché en avant (posture cambrée douloureuse vs posture fléchie soulagée).</p>
+<h3 id="diagnostic-differentiel-avec-aomi">Diagnostic différentiel avec AOMI</h3>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>Claudication neurogène</th>
+<th>AOMI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position soulageant la douleur</strong></td>
+<td><strong>Assis / penché en avant</strong></td>
+<td>Arrêt debout ou couché</td>
+</tr>
+<tr>
+<td><strong>Vélo</strong></td>
+<td>Non douloureux</td>
+<td>Douloureux</td>
+</tr>
+<tr>
+<td><strong>Montée des escaliers</strong></td>
+<td>Moins douloureuse</td>
+<td>Douloureuse</td>
+</tr>
+<tr>
+<td><strong>Pouls distaux</strong></td>
+<td>Normaux</td>
+<td>Absents ou diminués</td>
+</tr>
+<tr>
+<td><strong>IPS</strong></td>
+<td>Normal</td>
+<td>&lt; 0,9</td>
+</tr>
+<tr>
+<td><strong>Douleur de repos</strong></td>
+<td>Absente</td>
+<td>Fréquente dans les formes sévères</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⭐ Le vélo stationnaire = test clinique pratique : si indolore → origine rachidienne probable.</p>
+</blockquote>
+<hr />
+<h2 id="203-imagerie">20.3 Imagerie</h2>
+<p><strong>IRM lombaire sans injection</strong> : examen de référence<br />
+- Surface dure de sac &lt; 100 mm² = sténose significative<br />
+- Schizas C–D corrèlent avec claudio sévère</p>
+<p><strong>Scanner</strong> (TDM lombaire) : complète l'IRM<br />
+- Mesure du diamètre antéropostérieur (normal &gt; 11 mm, sténose critique &lt; 8 mm)<br />
+- Évalue les ostéophytes, les calcifications</p>
+<p><strong>Myéloscanner</strong> : si IRM impossible (pacemaker non-compatible), ou doute diagnostique</p>
+<hr />
+<h2 id="204-traitement-conservateur">20.4 Traitement conservateur</h2>
+<p><strong>Indication</strong> : sténose légère à modérée sans déficit neurologique</p>
+<table>
+<thead>
+<tr>
+<th>Traitement</th>
+<th>Preuve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antalgiques (paracétamol, AINS)</td>
+<td>Niveau 2</td>
+</tr>
+<tr>
+<td>Infiltration épidurale de corticoïdes</td>
+<td>Niveau 1 (bénéfice à 3–6 mois)</td>
+</tr>
+<tr>
+<td>Kinésithérapie (renforcement core, marche progressive)</td>
+<td>Niveau 2</td>
+</tr>
+<tr>
+<td>Programme marche (flexion)</td>
+<td>Niveau 2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Déambulateur</strong> : améliore le périmètre de marche (position en flexion).</p>
+<hr />
+<h2 id="205-traitement-chirurgical">20.5 Traitement chirurgical</h2>
+<p><strong>Indications</strong> :<br />
+- Déficit neurologique progressif<br />
+- Claudication invalidante réfractaire au traitement conservateur &gt; 3–6 mois<br />
+- Syndrome de la queue de cheval (urgence)</p>
+<h3 id="laminectomie-foraminotomie">Laminectomie ± foraminotomie</h3>
+<p><strong>Technique</strong> :<br />
+1. Voie postérieure médiane<br />
+2. Résection des lames vertébrales ± épineuses<br />
+3. Ligamentotomie jaune bilatérale<br />
+4. Foraminotomie si sténose foraminale associée</p>
+<p><strong>Résultats</strong> :<br />
+- Amélioration du périmètre de marche dans 70–80 % des cas<br />
+- Résultats qui se maintiennent à 4 ans (SPORT trial)</p>
+<h3 id="quand-ajouter-une-fusion">Quand ajouter une fusion ?</h3>
+<table>
+<thead>
+<tr>
+<th>Indication de fusion</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spondylolisthésis dégénératif</strong> ≥ grade I</td>
+<td>Instabilité associée — si pas de fusion, risque de progression jusqu'à 30 %</td>
+</tr>
+<tr>
+<td>Déformation scoliotique dégénérative</td>
+<td>Déséquilibre sagittal ou frontal</td>
+</tr>
+<tr>
+<td>Sténose étendue (&gt; 3 niveaux)</td>
+<td>Risque d'instabilité post-décompression</td>
+</tr>
+<tr>
+<td>Discopathie sévère au niveau décompressé</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>SPORT Trial (NEJM 2008)</strong> :<br />
+- Spondylolisthésis + sténose : fusion + décompression &gt; décompression seule (pas de différence à 4 ans sans fusion pour sténose pure sans instabilité)</p>
+<hr />
+<h2 id="206-stenose-foraminale">20.6 Sténose foraminale</h2>
+<p><strong>Définition</strong> : rétrécissement du foramen affectant une seule racine (vs sténose centrale bilatérale).</p>
+<p><strong>Clinique</strong> : monoradiculopathie (similaire hernie discale).</p>
+<p><strong>Traitement</strong> : infiltration foraminale ou foraminotomie ciblée.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La claudication neurogène est soulagée par la <strong>position assise / penchée en avant</strong> (flexion du rachis = ouverture du canal).</p>
+<p>📌 <strong>2.</strong> Le <strong>vélo indolore</strong> oriente vers une origine rachidienne et non vasculaire.</p>
+<p>📌 <strong>3.</strong> L'IRM mesure la sévérité (Schizas A-D) ; diamètre AP &lt; 8 mm = sténose critique.</p>
+<p>📌 <strong>4.</strong> La <strong>laminectomie</strong> améliore 70–80 % des patients claudicants réfractaires.</p>
+<p>📌 <strong>5.</strong> La <strong>fusion est nécessaire</strong> si spondylolisthésis associé (stabilité) ou scoliose dégénérative.</p>
+<p>📌 <strong>6.</strong> Le syndrome de la queue de cheval = URGENCE chirurgicale même dans un contexte de CLE.</p>
+</blockquote>
+<hr />
+<h2 id="references">Références</h2>
+<ol>
+<li>Schizas C, Theumann N, Burn A, et al. Qualitative grading of severity of lumbar spinal stenosis based on the morphology of the dural sac on magnetic resonance images. <em>Spine</em>. 2010;35(21):1919-1924.</li>
+<li>Weinstein JN, Tosteson TD, Lurie JD, et al. Surgical versus nonsurgical therapy for lumbar spinal stenosis (SPORT). <em>N Engl J Med</em>. 2008;358(8):794-810.</li>
+<li>Kreiner DS, Shaffer WO, Baisden JL, et al. An evidence-based clinical guideline for the diagnosis and treatment of degenerative lumbar spinal stenosis (update). <em>Spine J</em>. 2013;13(7):734-743.</li>
+</ol>
+<hr />
+<h2 id="quiz-10-questions">Quiz — 10 questions</h2>
+<p><strong>Q1. 🥉</strong> La claudication intermittente neurogène est soulagée :<br />
+- <strong>A. Par la position assise ou penchée en avant</strong><br />
+- B. Par l'arrêt debout<br />
+- C. Par l'élévation du membre inférieur<br />
+- D. Par la marche rapide</p>
+<p><strong>Q2. 🥉</strong> En IRM, une épaisseur du ligament jaune &gt; __ mm est pathologique :<br />
+- A. 1 mm<br />
+- B. 3 mm<br />
+- <strong>C. 5 mm</strong><br />
+- D. 10 mm</p>
+<p><strong>Q3. 🥉</strong> Le test clinique rapide distinguant AOMI et claudication neurogène est :<br />
+- A. Le Lasègue<br />
+- <strong>B. Le vélo stationnaire (indolore en cas de claudication neurogène)</strong><br />
+- C. L'IRM<br />
+- D. Le Doppler artériel</p>
+<p><strong>Q4. 🥈</strong> Geneviève (67 ans, claudio 200 m, vélo indolore, pouls distaux normaux) : que cherchez-vous en priorité ?<br />
+- <strong>A. IRM lombaire — sténose canalaire probable (grade Schizas)</strong><br />
+- B. Écho-Doppler artériel des membres inférieurs<br />
+- C. Bilan cardiaque<br />
+- D. Rachiographie thoracique</p>
+<p><strong>Q5. 🥈</strong> La surface dure de sac significative en IRM sachant la sténose est :<br />
+- <strong>A. &lt; 100 mm²</strong><br />
+- B. &lt; 200 mm²<br />
+- C. &lt; 50 mm²<br />
+- D. &gt; 150 mm²</p>
+<p><strong>Q6. 🥈</strong> Quelle est l'indication chirurgicale ABSOLUE d'une sténose lombaire ?<br />
+- A. Sténose Schizas A sur IRM<br />
+- B. Limitation du périmètre de marche à 500 m<br />
+- <strong>C. Syndrome de la queue de cheval (rétention urinaire + troubles sphinctériens)</strong><br />
+- D. Douleur au repos EVA 4</p>
+<p><strong>Q7. 🥈</strong> La décompression seule (laminectomie) sans fusion est suffisante pour :<br />
+- A. Spondylolisthésis grade II + sténose<br />
+- <strong>B. Sténose pure sans instabilité ni spondylolisthésis</strong><br />
+- C. Scoliose dégénérative &gt; 30°<br />
+- D. Sténose étendue ≥ 4 niveaux</p>
+<p><strong>Q8. 🥇</strong> Le SPORT Trial montre que dans le spondylolisthésis dégénératif + sténose :<br />
+- A. La décompression seule est suffisante<br />
+- <strong>B. La fusion + décompression est supérieure à la décompression seule</strong><br />
+- C. Le traitement conservateur est équivalent à la chirurgie<br />
+- D. L'infiltration épiduale suffit à 90 %</p>
+<p><strong>Q9. 🥇</strong> Après laminectomie L4-L5 pour sténose, à J3 le patient présente une douleur en courant froid dans le membre inférieur gauche et une faiblesse légère. Examen sans urgence immédiate. Quelle est la cause la plus probable ?<br />
+- A. Récidive de sténose immédiate<br />
+- B. Thrombose veineuse profonde<br />
+- <strong>C. Hématome épidural post-opératoire — IRM urgent et surveillance neurologique rapprochée</strong><br />
+- D. Sidération radiculaire transitoire (probable si &lt; 6 semaines et pas de progression)</p>
+<p><strong>Q10. 💎</strong> Geneviève a eu une laminectomie L3-L5. À 2 ans, elle reconsulte pour une douleur lombaire et un recul de périmètre de marche à 100 m. TDM : ostéophytose cicatricielle + instabilité L4-L5. Quelle est la prise en charge ?<br />
+- <strong>A. Arthrodèse L4-L5 instrumentée — instabilité iatrogène post-laminectomie → fusion secondaire nécessaire</strong><br />
+- B. Réopération avec nouvelle laminectomie<br />
+- C. Reprise de kinésithérapie exclusive<br />
+- D. Discectomie endoscopique</p>
+</div>

@@ -1,0 +1,423 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-diabetologie-complete">CAHIER DES CHARGES — FORMATION DIABÉTOLOGIE COMPLÈTE</h1>
+<h2 id="partie-9-situations-particulieres-modules-30-33">Partie 9 — Situations Particulières (Modules 30-33)</h2>
+<p><strong>Date</strong> : 13 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Diabétologie Complète<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-30-diabete-et-grossesse-pregestationnel-et-gestationnel">MODULE 30 : DIABÈTE ET GROSSESSE — PRÉGESTATIONNEL ET GESTATIONNEL</h1>
+<p><strong>Partie</strong> : IX — Situations particulières<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Modules 8, 12-13, 16-17, 22</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Mme E., 32 ans, DT1 depuis 14 ans, sous boucle fermée hybride (CamAPS FX). HbA1c : 7,4 %. Elle souhaite une grossesse. Fond d'œil : RDNP minime. DFG 95 mL/min. RAC < 30 mg/g. Pas de neuropathie. Son diabétologue lui explique que la programmation préconceptionnelle est « la consultation la plus importante de sa vie ». *Le diabète prégestationnel expose à des risques majeurs pour la mère et l'enfant — seule une préparation rigoureuse peut les minimiser.*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Organiser</strong> la programmation préconceptionnelle chez la femme DT1 et DT2</li>
+<li><strong>Fixer</strong> les objectifs glycémiques pendant la grossesse (HbA1c, TIR, cibles glycémiques)</li>
+<li><strong>Adapter</strong> l'insulinothérapie au cours de la grossesse (évolution des besoins)</li>
+<li><strong>Dépister</strong> et prendre en charge le diabète gestationnel (critères IADPSG)</li>
+<li><strong>Connaître</strong> les complications materno-fœtales et la surveillance obstétricale</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-1-diabete-pregestationnel-dt1-et-dt2">Section 1 — Diabète prégestationnel (DT1 et DT2)</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Programmation préconceptionnelle</strong> : consultation idéale ≥ 3-6 mois avant la conception :</li>
+<li>Cible HbA1c &lt; 6,5 % AVANT la conception (&lt; 7 % acceptable si sans hypo sévère)</li>
+<li>Acide folique 5 mg/j (dose élevée) dès la programmation jusqu'à 12 SA</li>
+<li>Bilan complications : fond d'œil (RD → traiter avant grossesse si RDNP sévère/RDP), rein (RAC, DFG), neuropathie, ECG ± écho si FRCV</li>
+<li>Médicaments tératogènes : ARRÊT IEC/ARA2 (risque malformatif rénal, oligohydramnios), statines (risque théorique), iSGLT2, aGLP-1, iDPP-4 ; remplacer par : antihypertenseurs autorisés (alpha-méthyldopa, labétalol, nifédipine)</li>
+<li>Contraception efficace TANT QUE les objectifs ne sont pas atteints</li>
+<li><strong>Risques materno-fœtaux</strong> du diabète prégestationnel :</li>
+<li>Malformations congénitales : risque × 2-4 vs population générale (corrélé à l'HbA1c péri-conceptionnelle : &lt; 6,5 % → risque similaire à la population générale ; &gt; 10 % → risque × 10) ; types : cardiaques (CIV, transposition), neurales (spina bifida, anencéphalie), rénales, squelettiques ; syndrome de régression caudale (rare mais très spécifique)</li>
+<li>Macrosomie : poids &gt; 4000 g ou &gt; 90e percentile ; hyperinsulinisme fœtal réactionnel à l'hyperglycémie maternelle → anabolisme excessif ; risque : dystocie des épaules, lésion du plexus brachial, césarienne</li>
+<li>Hydramnios, prématurité, mort fœtale in utero (si diabète déséquilibré)</li>
+<li>Mère : aggravation RD (early worsening si amélioration glycémique rapide → FO trimestriel), pré-éclampsie (risque × 4), césarienne</li>
+<li><strong>Objectifs glycémiques pendant la grossesse</strong> (ADA 2024) :</li>
+<li>GAJ : 0,60-0,95 g/L</li>
+<li>Glycémie 1h post-prandiale : &lt; 1,40 g/L</li>
+<li>Glycémie 2h post-prandiale : &lt; 1,20 g/L</li>
+<li>HbA1c &lt; 6 % si possible sans hypos (&lt; 6,5 % acceptable)</li>
+<li>CGM : TIR (63-140 mg/dL) ≥ 70 %, TBR (&lt; 63 mg/dL) &lt; 4 %</li>
+<li><strong>Adaptation insulinothérapie</strong> :</li>
+<li>T1 : besoins ↓ 10-20 % (nausées, hypos fréquentes) → vigilance hypoglycémies</li>
+<li>T2 : besoins ↑ progressivement (hormones placentaires : HPL, progestérone, cortisol → insulinorésistance)</li>
+<li>T3 : besoins × 2-3 vs pré-grossesse (pic à 35-36 SA)</li>
+<li>Post-partum : chute brutale des besoins → ↓ immédiate des doses de 50 % → risque hypo</li>
+<li>Boucle fermée CamAPS FX : validée pendant la grossesse (AiDAPT — Stewart et al., N Engl J Med, 2023)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB30-S01-001 — COURBE BESOINS INSULINIQUES PENDANT LA GROSSESSE (T1 ↓, T2 ↑ progressif, T3 pic, post-partum chute)]</p>
+<p>[MEDIA: 📋 MDIAB30-S01-002 — CHECK-LIST PROGRAMMATION PRÉCONCEPTIONNELLE (HbA1c, FO, rein, médicaments, acide folique, contraception)]</p>
+</blockquote>
+<h3 id="section-2-diabete-gestationnel">Section 2 — Diabète gestationnel</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Définition</strong> : trouble de la tolérance glucidique diagnostiqué pour la 1ère fois pendant la grossesse (excluant le diabète préexistant méconnu)</li>
+<li><strong>Dépistage</strong> (stratégie IADPSG/OMS/ADA — adapté de Metzger et al., Diabetes Care, 2010) :</li>
+<li><strong>En début de grossesse</strong> (T1, si facteurs de risque) : GAJ ≥ 0,92 g/L → DG ; GAJ ≥ 1,26 g/L → DT2 préexistant méconnu</li>
+<li><strong>À 24-28 SA</strong> (systématique ou ciblé selon les pays) : HGPO 75 g (pas 100 g), dosage à T0, T1h, T2h ; seuils IADPSG : T0 ≥ 0,92 g/L OU T1h ≥ 1,80 g/L OU T2h ≥ 1,53 g/L → 1 seule valeur positive suffit</li>
+<li>Facteurs de risque : âge &gt; 35 ans, IMC ≥ 25, ATCD DG, ATCD familial DT2, macrosomie antérieure, origine ethnique à risque</li>
+<li>Étude HAPO (Metzger et al., N Engl J Med, 2008) : relation continue entre glycémie maternelle et complications fœtales (macrosomie, hyperinsulinisme néonatal, césarienne, pré-éclampsie) → pas de seuil franc → seuils IADPSG définis par un OR ≥ 1,75</li>
+<li><strong>Prise en charge</strong> :</li>
+<li>MHD : 1ère intention (diététique adaptée + activité physique modérée 30 min/j) → suffisantes dans 70-85 % des cas</li>
+<li>Objectifs : GAJ &lt; 0,95 g/L, glycémie 2h post-prandiale &lt; 1,20 g/L</li>
+<li>Insuline : si objectifs non atteints après 1-2 semaines de MHD → insuline (rapide et/ou basale) ; metformine : alternative controversée (traverse le placenta → données de sécurité rassurantes à court terme — étude MiG, mais interrogations sur le développement à long terme de l'enfant)</li>
+<li>Surveillance fœtale : échographies de croissance, Doppler ombilical/utérin si HTA, monitoring du RCF au T3</li>
+<li><strong>Post-partum</strong> : arrêt de l'insuline immédiatement après l'accouchement ; reclassification à 6-12 semaines : HGPO 75 g → DT2 ? intolérance au glucose ? normalisation ? ; risque de DT2 à long terme : 50 % dans les 10-20 ans → dépistage annuel à vie (GAJ ou HbA1c), prévention (MHD, allaitement ≥ 6 mois — effet protecteur)</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB30-S02-001 — ALGORITHME DÉPISTAGE DG (T1 : GAJ si FR → 24-28 SA : HGPO 75g → seuils IADPSG → PEC)]</p>
+<p>[MEDIA: 📊 MDIAB30-S02-002 — RÉSULTATS HAPO (relation continue glycémie maternelle → macrosomie, hyperinsulinisme, césarienne — courbes OR)]</p>
+</blockquote>
+<h2 id="points-cles-module-30">Points clés — Module 30</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. Programmation préconceptionnelle = consultation essentielle (HbA1c &lt; 6,5 %, FO, rein, médicaments)<br />
+2. Acide folique 5 mg/j dès la programmation (dose élevée chez la diabétique)<br />
+3. ARRÊT IEC/ARA2, statines, iSGLT2, aGLP-1 AVANT conception<br />
+4. Besoins insuliniques : ↓ T1, ↑ T2-T3 (× 2-3), chute post-partum<br />
+5. CamAPS FX : seule boucle fermée validée pendant la grossesse (AiDAPT)<br />
+6. DG : HGPO 75 g à 24-28 SA, seuils IADPSG (0,92/1,80/1,53), 1 valeur suffit<br />
+7. DG : MHD d'abord (suffisantes 70-85 %), insuline si échec<br />
+8. Post-DG : risque DT2 50 % à 10-20 ans → dépistage annuel à vie</p>
+</blockquote>
+<h2 id="auto-evaluation-module-30">Auto-évaluation — Module 30</h2>
+<h3 id="qcm-progressifs-10-questions">QCM progressifs (10 questions)</h3>
+<p><strong>Q1 — 🥉 Bronze</strong> : Quelle cible d'HbA1c avant la conception chez une femme DT1 ?<br />
+A. &lt; 8 %  B. &lt; 7 %  C. &lt; 6,5 %  D. &lt; 5,5 %</p>
+<blockquote>
+<p>✅ <strong>C</strong> — HbA1c &lt; 6,5 % avant la conception réduit le risque de malformations congénitales à un niveau comparable à la population générale.</p>
+</blockquote>
+<p><strong>Q2 — 🥈 Argent</strong> : Quels médicaments doivent être arrêtés avant la grossesse chez une DT2 ?<br />
+A. Metformine et insuline  B. IEC/ARA2, statines, iSGLT2, aGLP-1  C. Tous les antidiabétiques  D. Uniquement l'aspirine</p>
+<blockquote>
+<p>✅ <strong>B</strong> — IEC/ARA2 (tératogènes rénaux), statines (risque théorique), iSGLT2 et aGLP-1 (pas de données de sécurité suffisantes). La metformine et l'insuline sont autorisées.</p>
+</blockquote>
+<p><strong>Q3 — 🥈 Argent</strong> : Quels sont les seuils IADPSG pour le diagnostic de DG à l'HGPO 75 g ?<br />
+A. T0 ≥ 1,26, T2h ≥ 2,00  B. T0 ≥ 0,92, T1h ≥ 1,80, T2h ≥ 1,53  C. T0 ≥ 1,10, T2h ≥ 1,40  D. T0 ≥ 0,80, T2h ≥ 1,20</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Seuils IADPSG : GAJ ≥ 0,92 g/L OU 1h ≥ 1,80 g/L OU 2h ≥ 1,53 g/L. Une seule valeur anormale suffit pour le diagnostic.</p>
+</blockquote>
+<p><strong>Q4 — 🥇 Or</strong> : Comment évoluent les besoins insuliniques au cours de la grossesse chez une DT1 ?<br />
+A. Stables tout au long  B. ↓ T1 (hypos fréquentes), ↑ progressif T2-T3 (× 2-3 pic à 35-36 SA), chute brutale post-partum  C. ↑ uniquement au T1  D. ↓ progressive jusqu'à l'accouchement</p>
+<blockquote>
+<p>✅ <strong>B</strong> — T1 : ↓ besoins 10-20 % (nausées, sensibilité accrue → hypos) ; T2-T3 : ↑ progressive (hormones placentaires → insulinorésistance, besoins × 2-3) ; post-partum : chute immédiate → ↓ doses de 50 %.</p>
+</blockquote>
+<p><strong>Q5 — 🥇 Or</strong> : Quel est le risque à long terme pour une femme ayant eu un DG ?<br />
+A. Aucun  B. 50 % de DT2 dans les 10-20 ans  C. 100 % de DT2 dans les 5 ans  D. 10 % de DT1</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le DG est un marqueur de risque majeur de DT2 : 50 % des femmes développeront un DT2 dans les 10-20 ans. D'où le dépistage annuel à vie (GAJ ou HbA1c) et la prévention (MHD, allaitement).</p>
+</blockquote>
+<p><strong>Q6 — 💎 Diamant</strong> : Construisez le parcours de soins d'une femme DT1 de la programmation préconceptionnelle au post-partum.</p>
+<blockquote>
+<p>✅ <strong>Pré-conception</strong> (≥ 3-6 mois) : HbA1c &lt; 6,5 %, FO + bilan rénal + ECG, acide folique 5 mg, arrêt IEC/ARA2, contraception efficace. <strong>T1</strong> : ↓ basale 10-20 %, surveillance hypos, FO de référence, échographie datation. <strong>T2</strong> : ↑ progressive insuline, FO T2, dépistage pré-éclampsie (PA, albuminurie, Doppler utérin), aspirine 150 mg/j si risque (jusqu'à 36 SA), échographie morphologique + croissance. <strong>T3</strong> : ↑ majeure insuline (× 2-3), FO T3, monitoring fœtal rapproché, discussion accouchement (programmation si macrosomie, césarienne si complications). <strong>Accouchement</strong> : insuline IVSE pendant le travail, cible 0,70-1,10 g/L. <strong>Post-partum</strong> : ↓ doses 50 % immédiatement, allaitement encouragé, FO post-partum, reprise IEC si besoin, contraception.</p>
+</blockquote>
+<hr />
+<h1 id="module-31-diabete-et-chirurgie-gestion-peri-operatoire">MODULE 31 : DIABÈTE ET CHIRURGIE — GESTION PÉRI-OPÉRATOIRE</h1>
+<p><strong>Partie</strong> : IX — Situations particulières<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 14, 22, 28</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">M. T., 67 ans, DT2 sous insuline basale (glargine 28 UI) + metformine + empagliflozine, HbA1c 7,8 %, doit être opéré d'une prothèse totale de hanche dans 2 semaines. L'anesthésiste vous contacte : « Comment gère-t-on son traitement ? Quand arrête-t-on quoi ? »</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Évaluer</strong> le risque péri-opératoire du patient diabétique</li>
+<li><strong>Adapter</strong> les traitements antidiabétiques en pré, per et post-opératoire</li>
+<li><strong>Gérer</strong> la glycémie péri-opératoire (cibles, protocole d'insuline IVSE)</li>
+<li><strong>Prévenir</strong> les complications : hypoglycémie, hyperglycémie, ACD, infection</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-1-evaluation-pre-operatoire-et-adaptation-des-traitements">Section 1 — Évaluation pré-opératoire et adaptation des traitements</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Évaluation</strong> : HbA1c récente (si &gt; 8,5-9 % → discuter report chirurgie élective), bilan cardio-rénal (dépistage IMS si FRCV), examen des pieds (prévention escarres), bilan infectieux</li>
+<li><strong>Adaptation des traitements</strong> (adapté de recommandations SFAR/SFD 2019, NHS Diabetes 2023) :</li>
+<li><strong>Metformine</strong> : arrêt la veille au soir et le matin de l'intervention (risque acidose lactique si hypoperfusion) ; reprise dès reprise alimentaire et fonction rénale stable</li>
+<li><strong>iSGLT2</strong> : arrêt <strong>3 jours</strong> avant la chirurgie programmée (risque ACD euglycémique péri-opératoire) ; reprise dès alimentation normale et fonction rénale stable</li>
+<li><strong>aGLP-1</strong> : recommandation émergente de suspendre 1 semaine avant (risque de contenu gastrique résiduel → aspiration sous AG — données récentes ASA 2023, consensus en évolution) ; vérifier les recommandations locales</li>
+<li><strong>Sulfonylurées</strong> : arrêt le matin de l'intervention (risque hypo si jeûne)</li>
+<li><strong>iDPP-4</strong> : peuvent être maintenus (pas de risque hypo, pas de risque spécifique)</li>
+<li><strong>Insuline basale</strong> : maintenir à dose réduite (−20-30 %) la veille et le matin ; NE PAS arrêter totalement (risque ACD chez DT1, hyperglycémie sévère chez DT2)</li>
+<li><strong>Insuline rapide</strong> : arrêt si patient à jeun</li>
+<li><strong>Chirurgie en urgence</strong> : pas de report possible → évaluation rapide (glycémie, cétonémie, ionogramme, gaz du sang), correction de l'hyperglycémie/ACD avant le bloc si possible</li>
+</ul>
+<h3 id="section-2-gestion-per-et-post-operatoire">Section 2 — Gestion per et post-opératoire</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Cibles glycémiques péri-opératoires</strong> : 1,10-1,80 g/L (consensus NICE/ADA) ; éviter &lt; 0,70 g/L et &gt; 2,00 g/L</li>
+<li><strong>Protocole insuline IVSE</strong> : pour les chirurgies majeures, DT1, ou hyperglycémie &gt; 2,00 g/L → protocole standardisé avec titration horaire selon glycémie ; association systématique glucose IV (G5 % ou G10 %) si patient à jeun sous insuline IVSE</li>
+<li><strong>Chirurgie ambulatoire</strong> : patient opéré en dernier sur le programme (maximiser le temps de jeûne le plus court), maintien basale −20 %, reprise des ADO dès alimentation orale</li>
+<li><strong>Retour en chambre</strong> : glycémie horaire pendant 6h puis toutes les 4h ; reprise du schéma habituel dès alimentation normale ; attention aux corticoïdes (anti-inflammatoires, anti-émétiques → hyperglycémie)</li>
+<li><strong>Prévention des complications</strong> : antibioprophylaxie standard, prévention TVP (HBPM), soins de pieds (positionnement, prévention escarres talonnières), reprise alimentation précoce</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB31-S02-001 — TABLEAU GESTION PÉRI-OPÉRATOIRE DES ADO ET INSULINE (molécule, quand arrêter, quand reprendre)]</p>
+<p>[MEDIA: 📋 MDIAB31-S02-002 — PROTOCOLE INSULINE IVSE PÉRI-OPÉRATOIRE (vitesse selon glycémie, débit glucose, surveillance)]</p>
+</blockquote>
+<h2 id="points-cles-module-31">Points clés — Module 31</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. iSGLT2 : arrêt 3 jours avant chirurgie (risque ACD euglycémique)<br />
+2. Metformine : arrêt la veille au soir, reprise dès alimentation + fonction rénale OK<br />
+3. Insuline basale : JAMAIS arrêter (↓ 20-30 %), rapide arrêtée si jeûne<br />
+4. Cible glycémique péri-opératoire : 1,10-1,80 g/L<br />
+5. aGLP-1 : suspendre 1 semaine avant (risque résidu gastrique → aspiration)</p>
+</blockquote>
+<h2 id="auto-evaluation-module-31">Auto-évaluation — Module 31</h2>
+<h3 id="qcm-progressifs-5-questions">QCM progressifs (5 questions)</h3>
+<p><strong>Q1 — 🥈 Argent</strong> : Quand arrêter un iSGLT2 avant une chirurgie programmée ?<br />
+A. La veille  B. 3 jours avant  C. Le matin  D. Pas nécessaire</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'iSGLT2 doit être arrêté 3 jours avant une chirurgie programmée pour prévenir l'ACD euglycémique péri-opératoire.</p>
+</blockquote>
+<p><strong>Q2 — 🥈 Argent</strong> : Faut-il arrêter l'insuline basale le jour de la chirurgie ?<br />
+A. Oui, arrêt complet  B. Non, maintenir à dose réduite (−20-30 %)  C. Doubler la dose  D. Remplacer par du glucose IV seul</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'insuline basale doit être maintenue à dose réduite (−20-30 %). L'arrêt total expose au risque d'ACD (DT1) ou d'hyperglycémie sévère (DT2).</p>
+</blockquote>
+<p><strong>Q3 — 🥇 Or</strong> : Quelle est la cible glycémique péri-opératoire ?<br />
+A. 0,70-1,00 g/L  B. 1,10-1,80 g/L  C. 2,00-3,00 g/L  D. &lt; 0,50 g/L</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La cible est 1,10-1,80 g/L (consensus NICE/ADA). Éviter l'hypoglycémie (&lt; 0,70 → complications neurologiques sous AG) et l'hyperglycémie (&gt; 2,00 → infection, retard cicatrisation).</p>
+</blockquote>
+<p><strong>Q4 — 💎 Diamant</strong> : M. T. (accroche) : planifiez sa gestion péri-opératoire complète.</p>
+<blockquote>
+<p>✅ <strong>J-3</strong> : arrêt empagliflozine. <strong>J-1 soir</strong> : arrêt metformine, glargine à 22 UI (−20 %). <strong>J0 matin</strong> : glargine 22 UI, pas de rapide (jeûne), glucose capillaire au bloc, insuline IVSE si glycémie &gt; 2,00 g/L. <strong>Per-op</strong> : perfusion G5 % + insuline IVSE si besoin, glycémie horaire, cible 1,10-1,80. <strong>Post-op</strong> : glycémie /4h, reprise glargine dose habituelle dès J1, reprise metformine dès alimentation orale + DFG vérifié, reprise empagliflozine J3-J5 post-op si alimentation normale. Attention : HBPM pour TVP, soins pieds.</p>
+</blockquote>
+<hr />
+<h1 id="module-32-diabete-en-reanimation-et-situations-aigues">MODULE 32 : DIABÈTE EN RÉANIMATION ET SITUATIONS AIGUËS</h1>
+<p><strong>Partie</strong> : IX — Situations particulières<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Avancé<br />
+<strong>Prérequis</strong> : Modules 14, 22</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Patient de 72 ans, DT2, admis en réanimation pour pneumonie sévère et sepsis. Glycémie d'entrée : 3,80 g/L. Pas de cétose. Sous noradrénaline + antibiothérapie. Corticothérapie envisagée. *L'hyperglycémie de stress en réanimation est un facteur de mortalité indépendant — mais le contrôle glycémique trop strict augmente le risque d'hypoglycémie et la mortalité.*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> l'hyperglycémie de stress en réanimation (mécanismes)</li>
+<li><strong>Appliquer</strong> les protocoles d'insulinothérapie IV en réanimation (cibles, IVSE)</li>
+<li><strong>Gérer</strong> le diabète sous corticothérapie</li>
+<li><strong>Prendre en charge</strong> l'hyperglycémie d'entrée aux urgences (distinguer diabétique connu/inconnu)</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-1-hyperglycemie-de-stress-en-reanimation">Section 1 — Hyperglycémie de stress en réanimation</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Mécanismes</strong> : hormones de stress (cortisol, catécholamines, glucagon, GH) → néoglucogenèse ↑, glycogénolyse ↑, insulinorésistance ↑ ; cytokines pro-inflammatoires (TNF-α, IL-6) → insulinorésistance ; nutrition parentérale/entérale ; corticoïdes ; repos au lit</li>
+<li><strong>Impact pronostique</strong> : hyperglycémie &gt; 1,80 g/L = facteur de mortalité indépendant en réanimation (méta-analyses) ; mais hypoglycémie &lt; 0,70 g/L = également facteur de surmortalité</li>
+<li><strong>Étude NICE-SUGAR</strong> (Finfer et al., N Engl J Med, 2009) : contrôle glycémique intensif (0,81-1,08 g/L) vs conventionnel (&lt; 1,80 g/L) → mortalité ↑ dans le groupe intensif (27,5 % vs 24,9 %, p=0,02) principalement par hypoglycémies → fin du « tight glycemic control » en réa → cible 1,40-1,80 g/L</li>
+<li><strong>Cibles glycémiques en réanimation</strong> (ADA 2024, SSC 2021) : 1,40-1,80 g/L pour la plupart des patients ; glycémie &gt; 1,80 g/L → initier insuline IVSE ; éviter &lt; 0,70 g/L</li>
+<li><strong>Protocole insuline IVSE</strong> : algorithmes à paliers (Yale, Portland) ; dosage glycémie capillaire /1-2h ; adaptation du débit selon la tendance ; perfusion glucose si patient à jeun</li>
+<li><strong>Transition IVSE → sous-cutané</strong> : dès que le patient mange → chevaucher 2h (insuline SC basale injectée 2h avant arrêt IVSE) ; dose basale = 60-80 % du débit moyen IVSE sur les dernières 6h × 24</li>
+</ul>
+<h3 id="section-2-diabete-et-corticotherapie">Section 2 — Diabète et corticothérapie</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Effet hyperglycémiant des corticoïdes</strong> : insulinorésistance hépatique et musculaire ↑, ↑ néoglucogenèse ; profil : hyperglycémie prédominant l'après-midi et le soir (pic d'action des corticoïdes matinaux)</li>
+<li><strong>Diabète cortico-induit</strong> : nouveau diabète survenant sous corticothérapie ; prévalence : 20-50 % des patients sous corticoïdes à dose &gt; 7,5 mg/j de prednisone équivalent ; facteurs de risque : prédiabète, ATCD DG, obésité, corticothérapie forte dose</li>
+<li><strong>Prise en charge</strong> :</li>
+<li>DT2 connu + corticoïdes : anticiper l'hyperglycémie → renforcer le traitement (ajout insuline NPH matin si corticoïdes matinaux — cinétique parallèle ; ou augmenter doses basale et bolus)</li>
+<li>Diabète cortico-induit : metformine si modéré, insuline si HbA1c élevée ou hyperglycémie sévère</li>
+<li>Réévaluation à la décroissance des corticoïdes : ↓ parallèle des ADO/insuline</li>
+<li>Bolus de méthylprednisolone IV : hyperglycémie majeure pendant 24-48h → insuline IVSE</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB32-S02-001 — PROFIL GLYCÉMIQUE SOUS CORTICOÏDES (pic hyperglycémie après-midi/soir avec corticoïdes matinaux)]</p>
+<p>[MEDIA: 📋 MDIAB32-S02-002 — ALGORITHME PEC HYPERGLYCÉMIE SOUS CORTICOÏDES (dépistage → metformine si modéré → insuline si sévère → ajustement à la décroissance)]</p>
+</blockquote>
+<h2 id="points-cles-module-32">Points clés — Module 32</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. NICE-SUGAR : contrôle glycémique intensif en réa → surmortalité → cible 1,40-1,80 g/L<br />
+2. Insuline IVSE : seul traitement de l'hyperglycémie en réa, glycémie /1-2h<br />
+3. Transition IVSE → SC : chevaucher 2h, basale = 60-80 % du débit moyen × 24<br />
+4. Corticoïdes : hyperglycémie prédominante après-midi/soir → insuline NPH le matin<br />
+5. Diabète cortico-induit : 20-50 % sous prednisone &gt; 7,5 mg/j</p>
+</blockquote>
+<h2 id="auto-evaluation-module-32">Auto-évaluation — Module 32</h2>
+<h3 id="qcm-progressifs-5-questions_1">QCM progressifs (5 questions)</h3>
+<p><strong>Q1 — 🥈 Argent</strong> : Quelle cible glycémique en réanimation selon NICE-SUGAR ?<br />
+A. 0,80-1,10 g/L  B. 1,40-1,80 g/L  C. 2,00-3,00 g/L  D. &lt; 0,70 g/L</p>
+<blockquote>
+<p>✅ <strong>B</strong> — NICE-SUGAR a montré que le contrôle intensif (0,81-1,08) augmentait la mortalité. La cible recommandée est 1,40-1,80 g/L.</p>
+</blockquote>
+<p><strong>Q2 — 🥇 Or</strong> : Comment transitionnez-vous de l'insuline IVSE vers le sous-cutané ?<br />
+A. Arrêt brutal IVSE et début SC le lendemain  B. Injection basale SC 2h avant arrêt IVSE, dose = 60-80 % du débit moyen × 24  C. Passage direct aux ADO  D. IVSE au long cours</p>
+<blockquote>
+<p>✅ <strong>B</strong> — Le chevauchement de 2h évite la fenêtre d'hyperglycémie. La dose basale est calculée à 60-80 % du débit IVSE moyen des dernières 6h × 24.</p>
+</blockquote>
+<p><strong>Q3 — 🥇 Or</strong> : Un patient DT2 sous corticoïdes matinaux présente des hyperglycémies systématiques à 16h-20h. Quel ajustement ?<br />
+A. Augmenter la metformine  B. Ajouter une insuline NPH le matin (cinétique parallèle aux corticoïdes)  C. Ajouter un iSGLT2  D. Ne rien changer</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'insuline NPH injectée le matin a un pic d'action à 4-8h coïncidant avec le pic hyperglycémique des corticoïdes matinaux (après-midi/soir). C'est le choix logique pharmacocinétique.</p>
+</blockquote>
+<hr />
+<h1 id="module-33-diabete-et-sport-performance-adaptation-haute-competition">MODULE 33 : DIABÈTE ET SPORT — PERFORMANCE, ADAPTATION, HAUTE COMPÉTITION</h1>
+<p><strong>Partie</strong> : IX — Situations particulières<br />
+<strong>Durée estimée</strong> : 2h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 22-23, 25</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Marc, 28 ans, DT1 depuis 12 ans, cycliste amateur de niveau régional, prépare une cyclosportive de 120 km avec 2000 m de dénivelé. Sous boucle fermée (Omnipod 5 + Dexcom G7). HbA1c : 6,8 %. Il veut savoir comment adapter son traitement pour la compétition. *Chaque année, des sportifs DT1 participent à des Ironman, des marathons et des ultras — le diabète ne doit plus être un frein à la performance, mais sa gestion pendant l'effort demande une expertise spécifique.*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Comprendre</strong> la physiologie de l'exercice chez le diabétique (réponse glycémique selon le type d'effort)</li>
+<li><strong>Adapter</strong> l'insulinothérapie et la nutrition pour différents types de sport</li>
+<li><strong>Prévenir</strong> les hypoglycémies pendant et après l'effort (dont tardives)</li>
+<li><strong>Accompagner</strong> le sportif de haut niveau DT1</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-1-physiologie-et-adaptation">Section 1 — Physiologie et adaptation</h3>
+<p><strong>Contenu obligatoire :</strong></p>
+<ul>
+<li><strong>Physiologie normale</strong> : exercice → ↑ captation musculaire glucose (GLUT4, contraction-dépendant, indépendant de l'insuline) + ↓ sécrétion insuline + ↑ glucagon → homéostasie glycémique maintenue</li>
+<li><strong>Spécificités DT1</strong> : l'insuline exogène ne diminue pas pendant l'effort → captation musculaire ↑ sans ↓ insulinémie → risque hypoglycémie ; contre-régulation altérée (neuropathie autonome, hypos répétées) ; risque hyperglycémie si exercice intense/anaérobie (catécholamines)</li>
+<li><strong>Recommandations</strong> (adapté de Riddell et al., Lancet Diabetes Endocrinol, 2017 — consensus ISPAD/ADCES) :</li>
+<li>Glycémie cible pré-exercice : 1,26-1,80 g/L (126-180 mg/dL)</li>
+<li>Si &lt; 0,90 g/L → collation 15-30 g glucides avant effort</li>
+<li>Si &gt; 2,70 g/L avec cétones → NE PAS faire d'exercice</li>
+<li>Adaptations selon type :<ul>
+<li>Aérobie &gt; 30 min : ↓ bolus 25-75 %, ↓ basale 20-50 % (ou débit temporaire −50 % pompe), collation glucidique toutes les 30-60 min (30-60 g/h)</li>
+<li>Résistance/HIIT : pas de réduction systématique du bolus (risque hyperglycémie initiale), correction prudente post-effort</li>
+<li>Effort mixte (compétition) : stratégie combinée</li>
+</ul>
+</li>
+<li>Post-exercice : risque hypoglycémie tardive (6-15h, surtout nocturne) → ↓ basale 20 % la nuit, collation coucher, CGM +++</li>
+<li><strong>Nutrition sportive</strong> : glucides rapides pendant l'effort (gels, boissons isotoniques), adaptation selon durée et intensité ; protéines et glucides en récupération</li>
+<li><strong>Sport de haut niveau</strong> : DT1 et compétition (exemples : cyclisme, triathlon, football, rugby) ; antidopage et insuline (AUT — Autorisation d'Usage à des fins Thérapeutiques obligatoire) ; suivi médical renforcé</li>
+</ul>
+<blockquote>
+<p>[MEDIA: 🏃 MDIAB33-S01-001 — ALGORITHME GESTION GLYCÉMIQUE AUTOUR DE L'EXERCICE (pré-effort, pendant, post-effort — seuils, actions)]</p>
+<p>[MEDIA: 📊 MDIAB33-S01-002 — RÉPONSE GLYCÉMIQUE SELON TYPE D'EXERCICE (aérobie → hypo, résistance → hyper initiale puis hypo, HIIT → variable)]</p>
+</blockquote>
+<h2 id="points-cles-module-33">Points clés — Module 33</h2>
+<blockquote>
+<p>🎯 <strong>Essentiel à retenir</strong><br />
+1. DT1 et sport : l'insuline exogène ne diminue pas → risque hypo si exercice aérobie<br />
+2. Glycémie cible pré-exercice : 1,26-1,80 g/L ; &lt; 0,90 → collation ; &gt; 2,70 + cétones → pas d'exercice<br />
+3. Aérobie &gt; 30 min : ↓ bolus 25-75 %, ↓ basale 20-50 %, collation 30-60 g/h<br />
+4. Hypoglycémie tardive post-exercice : 6-15h → ↓ basale nocturne, collation coucher<br />
+5. AUT obligatoire pour l'insuline en compétition officielle</p>
+</blockquote>
+<h2 id="auto-evaluation-module-33">Auto-évaluation — Module 33</h2>
+<h3 id="qcm-progressifs-5-questions_2">QCM progressifs (5 questions)</h3>
+<p><strong>Q1 — 🥈 Argent</strong> : Quelle est la glycémie cible avant un exercice aérobie prolongé chez un DT1 ?<br />
+A. &lt; 0,70 g/L  B. 1,26-1,80 g/L  C. &gt; 3,00 g/L  D. 0,90-1,00 g/L</p>
+<blockquote>
+<p>✅ <strong>B</strong> — La glycémie cible pré-exercice est 1,26-1,80 g/L (126-180 mg/dL). Trop bas → risque hypo rapide ; trop haut avec cétones → ACD à l'effort.</p>
+</blockquote>
+<p><strong>Q2 — 🥇 Or</strong> : Pourquoi l'exercice de résistance/HIIT peut-il provoquer une hyperglycémie initiale ?<br />
+A. Absorption accrue de glucose intestinal  B. Décharge catécholaminergique → néoglucogenèse et glycogénolyse  C. Insulinorésistance permanente  D. Erreur de bolus</p>
+<blockquote>
+<p>✅ <strong>B</strong> — L'exercice intense/anaérobie provoque une décharge d'adrénaline et de noradrénaline → glycogénolyse hépatique et néoglucogenèse → hyperglycémie transitoire. Chez le DT1, l'insuline exogène ne peut contrebalancer immédiatement.</p>
+</blockquote>
+<p><strong>Q3 — 💎 Diamant</strong> : Marc (accroche) : cyclosportive 120 km, ~5h d'effort. Planifiez sa gestion complète.</p>
+<blockquote>
+<p>✅ <strong>Veille</strong> : dîner riche en glucides complexes, basale habituelle. <strong>Matin</strong> : petit-déjeuner 3h avant départ (100-120 g glucides, bolus ↓ 50 %), glycémie cible départ 1,50-1,80 g/L. <strong>Pompe</strong> : débit temporaire −50 à −80 % dès 1h avant le départ et pendant toute la course. <strong>Pendant</strong> : 40-60 g glucides/h (gels, boissons isotoniques), CGM en continu sur le guidon, cible 1,00-1,80 g/L ; si &lt; 0,90 → gel immédiat + ↓ débit. <strong>Post-course</strong> : collation glucides + protéines dans les 30 min, surveillance CGM 24h, basale ↓ 20-30 % la nuit suivante, collation coucher, alerte CGM &lt; 70 mg/dL.</p>
+</blockquote>
+<h3 id="cas-clinique-integre-module-33">Cas clinique intégré — Module 33</h3>
+<blockquote>
+<p>📝 <strong>Cas clinique</strong> : Un adolescent DT1 de 15 ans, footballeur en centre de formation, veut continuer sa carrière. HbA1c 7,5 %, sous boucle fermée. Il s'entraîne 5×/semaine (2h/séance) et a des hypos récurrentes post-entraînement. Comment l'accompagnez-vous ?</p>
+</blockquote>
+<hr />
+<h2 id="references-bibliographiques-partie-9">Références bibliographiques — Partie 9</h2>
+<ol>
+<li>Stewart ZA, Wilinska ME, Hartnell S et al. (AiDAPT). « Closed-loop insulin delivery during pregnancy in women with type 1 diabetes. » <em>N Engl J Med</em>, 2023; 389(8): 689-698.</li>
+<li>Metzger BE, Lowe LP, Dyer AR et al. (HAPO Study Cooperative Research Group). « Hyperglycemia and adverse pregnancy outcomes. » <em>N Engl J Med</em>, 2008; 358(19): 1991-2002.</li>
+<li>Metzger BE, Gabbe SG, Persson B et al. (IADPSG). « International association of diabetes and pregnancy study groups recommendations on the diagnosis and classification of hyperglycemia in pregnancy. » <em>Diabetes Care</em>, 2010; 33(3): 676-682.</li>
+<li>Finfer S, Chittock DR, Su SY et al. (NICE-SUGAR Study Investigators). « Intensive versus conventional glucose control in critically ill patients. » <em>N Engl J Med</em>, 2009; 360(13): 1283-1297.</li>
+<li>Riddell MC, Gallen IW, Smart CE et al. « Exercise management in type 1 diabetes: a consensus statement. » <em>Lancet Diabetes Endocrinol</em>, 2017; 5(5): 377-390.</li>
+</ol>
+<hr />
+<blockquote>
+<p>🔶 <strong>DIABÉTOLOGIE</strong> | Partie 9/12 | Couleur : Bleu pétrole <code>#1A5276</code><br />
+<em>Document généré pour la plateforme VERTEX© — Formation Diabétologie Complète</em></p>
+</blockquote>
+</div>

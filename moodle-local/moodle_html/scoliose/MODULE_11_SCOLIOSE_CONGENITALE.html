@@ -1,0 +1,489 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-11-scoliose-congenitale-et-malformations-vertebrales">MODULE 11 — SCOLIOSE CONGÉNITALE ET MALFORMATIONS VERTÉBRALES</h1>
+<p><strong>Partie V — Scolioses secondaires et particulières</strong><br />
+<strong>Durée estimée</strong> : 2h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 10</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Léa, 6 mois, est adressée en consultation suite à une radiographie thoracique lors d'une pneumopathie. L'image montre une hémivertèbre thoracique droite T7 avec une déviation latérale de 18°. Les parents sont effarés : <em>« C'est génétique ? On ne l'a pas vu sur l'échographie ? Est-ce que ça va rester comme ça ? »</em></p>
+</blockquote>
+<p>👶 <strong>Patiente fil rouge</strong> : Léa, 6 mois — hémivertèbre T7 droite, Cobb 18°.</p>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Scoliose congénitale • Hémivertèbre (fully segmented, semi-segmented, non-segmented, incarcérée) • Barre osseuse (unilatérale, bilatérale) • Malformation de formation • Malformation de segmentation • Classification de McMaster • Progression spontanée • VACTERL (Vertebral Anal Cardiac Tracheo-Esophageal Renal Limb) • MURCS • Résection d'hémivertèbre (HERVR) • Fusion in situ précoce • Hemi-epiphysiodèse • Exérèse + arthrodèse courte • Anomalies associées (rénales, cardiaques, spinales) • VATER association</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Classer</strong> les malformations vertébrales selon la classification de McMaster (défauts de formation/segmentation) (Bloom : Connaissance)</li>
+<li><strong>Prédire</strong> la progression spontanée selon le type d'anomalie vertébrale (Bloom : Application)</li>
+<li><strong>Identifier</strong> les anomalies systémiques associées à rechercher systématiquement (Bloom : Analyse)</li>
+<li><strong>Sélectionner</strong> la stratégie chirurgicale appropriée selon le type et la localisation (Bloom : Évaluation)</li>
+<li><strong>Expliquer</strong> les avantages de la chirurgie précoce (&lt; 5 ans) dans les hémivertèbres progressives (Bloom : Compréhension)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> Une hémivertèbre "fully segmented" est définie par :<br />
+- A. Hémivertèbre sans disques adjacents<br />
+- <strong>B. Hémivertèbre avec deux disques libres (au-dessus et en-dessous) — potentiel de croissance maximal</strong><br />
+- C. Hémivertèbre partiellement fusionnée<br />
+- D. Hémivertèbre en position cervicale</p>
+<p><strong>Q2.</strong> Quel type de malformation vertébrale a le plus fort potentiel de progression ?<br />
+- A. Hémivertèbre non-segmentée<br />
+- <strong>B. Barre osseuse unilatérale + hémivertèbre controlatérale</strong><br />
+- C. Hémivertèbre incarcérée<br />
+- D. Cunéiforme vertébral</p>
+<p><strong>Q3.</strong> La recherche d'anomalies rénales est systématique devant une scoliose congénitale car leur fréquence est estimée à :<br />
+- <strong>A. 15–20 %</strong><br />
+- B. 1–2 %<br />
+- C. 40–50 %<br />
+- D. &lt; 1 %</p>
+<p><strong>Q4.</strong> La résection d'hémivertèbre est idéalement réalisée avant quel âge ?<br />
+- <strong>A. 5 ans (idéalement 1–5 ans)</strong><br />
+- B. 10 ans<br />
+- C. 15 ans<br />
+- D. Après la puberté</p>
+<p><strong>Q5.</strong> L'acronyme VACTERL désigne une association malformative incluant les anomalies :<br />
+- <strong>A. Vertébrales, Anales, Cardiaques, Trachéo-Esophagiennes, Rénales et des membres (Limbs)</strong><br />
+- B. Vasculaires, Articulaires, Crâniennes, Tibiales, Ectodermiques, Radiales, Lombaires<br />
+- C. Scoliose vertébrale seule<br />
+- D. Vertèbres + Avant-bras + Côtes + Tympan + Estomac + Reins + Lèvres</p>
+<hr />
+<h2 id="111-epidemiologie-et-embryologie">11.1 Épidémiologie et embryologie</h2>
+<div class="vertex-media video">
+<strong>🎬 M11-S01-001</strong><br/>
+<em>Animation embryologie vertébrale (4–8 semaines)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p><strong>Incidence</strong> : 0,5–1 pour 1 000 naissances (McMaster, 1982)</p>
+<p><strong>Origine embryologique</strong> :<br />
+- Se produit à <strong>4–8 semaines de gestation</strong> (segmentation vertébrale = 4–6 semaines)<br />
+- Les somites se différencient en sclérotomes (partie rachidienne) et myotomes<br />
+- Une anomalie de segmentation ou de formation d'un sclérotome → malformation vertébrale</p>
+<p><strong>Génétique</strong> :<br />
+- Sporadique dans la majorité des cas<br />
+- Mutations décrites : <em>TBX6</em> (hémivertèbre thoracolombaire), <em>DLL3</em> (dysostose spondylocostale)</p>
+<hr />
+<h2 id="112-classification-des-malformations-vertebrales-mcmaster-ohtsuka-1982-j-bone-joint-surg-am">11.2 Classification des malformations vertébrales (McMaster &amp; Ohtsuka, 1982, <em>J Bone Joint Surg Am</em>)</h2>
+<div class="vertex-media schema">
+<strong>📐 M11-S02-001</strong><br/>
+<em>Schéma classification McMaster des défauts de formation et segmentation</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="1121-defauts-de-formation-asymetrie-de-formation">11.2.1 Défauts de formation (asymétrie de formation)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Pronostic de progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hémivertèbre fully segmented</strong></td>
+<td>2 disques libres, croissance maximale</td>
+<td><strong>Élevé</strong> (2–5°/an)</td>
+</tr>
+<tr>
+<td><strong>Hémivertèbre semi-segmented</strong></td>
+<td>1 disque libre (fusion 1 côté)</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td><strong>Hémivertèbre non-segmented</strong></td>
+<td>Fusionnée aux deux vertèbres adjacentes</td>
+<td><strong>Faible</strong> (progression lente)</td>
+</tr>
+<tr>
+<td><strong>Hémivertèbre incarcérée</strong></td>
+<td>Répartition équilibrée au sein de la courbure</td>
+<td><strong>Très faible</strong> — souvent stable</td>
+</tr>
+<tr>
+<td><strong>Vertèbre cunéiforme</strong></td>
+<td>Corps vertébral en coin</td>
+<td>Variable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1122-defauts-de-segmentation-asymetrie-de-segmentation">11.2.2 Défauts de segmentation (asymétrie de segmentation)</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Pronostic de progression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Barre osseuse unilatérale</strong></td>
+<td>Pont osseux unilatéral entre 2 vertèbres</td>
+<td><strong>Modéré à élevé</strong></td>
+</tr>
+<tr>
+<td><strong>Barre + hémivertèbre controlatérale</strong></td>
+<td>Pire combinaison possible</td>
+<td><strong>Maximum</strong> (le côté barre ne grandit pas, l'hémivertèbre pousse)</td>
+</tr>
+<tr>
+<td><strong>Bloc vertébral (barre bilatérale)</strong></td>
+<td>Fusion bilatérale</td>
+<td><strong>Faible</strong> — stable</td>
+</tr>
+<tr>
+<td><strong>Côtes fusionnées</strong></td>
+<td>Anomalie costale associée</td>
+<td>Aggravation du TIS</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⭐ Règle pronostique</strong> : La <strong>barre osseuse unilatérale + hémivertèbre controlatérale</strong> est la combinaison la plus agressive — progression de 10–15°/an garantie sans traitement (McMaster, 1982).</p>
+</blockquote>
+<hr />
+<h2 id="113-bilan-malformatif-anomalies-associees">11.3 Bilan malformatif — Anomalies associées</h2>
+<blockquote>
+<p><strong>Principe</strong> : La scoliose congénitale n'est presque jamais isolée — elle fait partie d'un syndrome malformatif.</p>
+</blockquote>
+<h3 id="1131-anomalies-vertebro-spinales-irm-systematique">11.3.1 Anomalies vertébro-spinales (IRM systématique)</h3>
+<table>
+<thead>
+<tr>
+<th>Anomalie</th>
+<th>Fréquence</th>
+<th>Importance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Syringomyélie</strong></td>
+<td>15–25 % (Bradford, 1988)</td>
+<td>Risque neurologique lors de la correction</td>
+</tr>
+<tr>
+<td><strong>Moelle attachée (tethered cord)</strong></td>
+<td>10–20 % (Bradford, 1988)</td>
+<td>Libération préalable requise si symptomatique</td>
+</tr>
+<tr>
+<td><strong>Diastématomyélie</strong></td>
+<td>5–8 %</td>
+<td>Correction CI jusqu'à résolution</td>
+</tr>
+<tr>
+<td><strong>Anomalie de Chiari I</strong></td>
+<td>5–10 %</td>
+<td>Rarement symptomatique</td>
+</tr>
+<tr>
+<td><strong>Diastematomyélie</strong></td>
+<td>3–5 %</td>
+<td>Spi bifida</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>⚠️ IRM médullaire obligatoire avant toute chirurgie de scoliose congénitale</strong></p>
+</blockquote>
+<h3 id="1132-anomalies-systemiques">11.3.2 Anomalies systémiques</h3>
+<table>
+<thead>
+<tr>
+<th>Système</th>
+<th>Anomalie</th>
+<th>Fréquence</th>
+<th>Bilan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cardio-vasculaire</strong></td>
+<td>Cardiopathies congénitales</td>
+<td>10–25 %</td>
+<td>Échocardiographie</td>
+</tr>
+<tr>
+<td><strong>Rénal</strong></td>
+<td>Agénésie, rein en fer à cheval, PUJ</td>
+<td>15–20 %</td>
+<td>Échographie rénale</td>
+</tr>
+<tr>
+<td><strong>Gastro-intestinal</strong></td>
+<td>Atrésie anale, TE, Hirschsprung</td>
+<td>5–10 %</td>
+<td>Surveillance clinique</td>
+</tr>
+<tr>
+<td><strong>Membres</strong></td>
+<td>Hypoplasie radiale, Sprengel</td>
+<td>10–15 %</td>
+<td>Bilan clinique</td>
+</tr>
+<tr>
+<td><strong>Auditif</strong></td>
+<td>Surdité</td>
+<td>10 %</td>
+<td>Audiogramme</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1133-association-vacterl">11.3.3 Association VACTERL</h3>
+<p>Présence ≥ 3 des composantes : <strong>V</strong>ertébrales + <strong>A</strong>nomalies anales + <strong>C</strong>ardiaques + <strong>T</strong>racheo-<strong>E</strong>sophagiennes + <strong>R</strong>énales + <strong>L</strong>imbs (membres).</p>
+<blockquote>
+<p>Bilan VACTERL systématique devant toute scoliose congénitale : écho cardiaque, écho rénale, radiographie des membres, consultation gastro si besoin.</p>
+</blockquote>
+<hr />
+<h2 id="114-histoire-naturelle-et-surveillance">11.4 Histoire naturelle et surveillance</h2>
+<h3 id="regles-pratiques-de-surveillance">Règles pratiques de surveillance</h3>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Surveillance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 5 ans, courbure &lt; 30°, type stable</td>
+<td>Radio tous les 6 mois</td>
+</tr>
+<tr>
+<td>&lt; 5 ans, courbure progressive ou &gt; 25°</td>
+<td>Discussion chirurgicale précoce</td>
+</tr>
+<tr>
+<td>&gt; 5 ans, courbure &gt; 30° progressive</td>
+<td>Chirurgie recommandée</td>
+</tr>
+<tr>
+<td>Fully segmented thoracique</td>
+<td>Chirurgie recommandée (haut potentiel)</td>
+</tr>
+<tr>
+<td>Non-segmented ou incarcérée, stable</td>
+<td>Surveillance prolongée possible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Particularité</strong> : Le <strong>scanner</strong> est nécessaire pour caractériser précisément les malformations (qualité TDM 3D reconstruction &gt; radio simple pour les barres osseuses).</p>
+<hr />
+<h2 id="115-traitement-chirurgical-principes">11.5 Traitement chirurgical — Principes</h2>
+<div class="vertex-media video">
+<strong>🎬 M11-S05-001</strong><br/>
+<em>Animation résection hémivertèbre</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="1151-hemi-epiphysiodese-in-situ-fusion">11.5.1 Hemi-épiphysiodèse (in situ fusion)</h3>
+<p><strong>Indication</strong> : Courbures légères (&lt; 25°) chez le jeune enfant, type favorable (non progressif).</p>
+<p><strong>Principe</strong> : Arthrodèse du côté convexe uniquement → freine la croissance asymétrique du côté convexe → correction progressive.</p>
+<p><strong>Limite</strong> : Efficace seulement si croissance résiduelle importante (&lt; 5–6 ans).</p>
+<h3 id="1152-resection-dhemivertebre-hervr-hemivertebra-resection">11.5.2 Résection d'hémivertèbre (HERVR — Hemivertebra Resection)</h3>
+<p><strong>Indication</strong> : <strong>Gold standard</strong> pour les hémivertèbres fully segmented progressives, idéalement &lt; 5 ans.</p>
+<p><strong>Avantages de la chirurgie précoce</strong> :<br />
+- Courbures encore flexibles → meilleure correction<br />
+- Fusion courte (2–3 niveaux) → préserve la mobilité<br />
+- Prévient la déformation secondaire des vertèbres adjacentes</p>
+<p><strong>Technique simplifiée</strong> :<br />
+1. Abord postérieur ou combiné (antérieur + postérieur)<br />
+2. Résection complète du pédicule + corps de l'hémivertèbre + disques adjacents<br />
+3. Fermeture de l'espace par compression<br />
+4. Instrumentation courte pédicul (2 niveaux de chaque côté)</p>
+<p><strong>Résultats</strong> : Correction de 60–80 % dans les bonnes indications (&lt; 5 ans, fully segmented).</p>
+<h3 id="1153-fusion-courte-in-situ">11.5.3 Fusion courte in situ</h3>
+<p><strong>Indication</strong> : Malformations non opérables (syringomyélie non traitée, comorbidités), ou courbures stables menaçant de progresser.</p>
+<p><strong>Technique</strong> : Arthrodèse postérieure courte sans correction — stabilisation de la courbure.</p>
+<p><strong>Inconvénient</strong> : Ne corrige pas la déformation, sacrifice de mobilité.</p>
+<h3 id="1154-gestion-des-anomalies-medullaires-associees">11.5.4 Gestion des anomalies médullaires associées</h3>
+<table>
+<thead>
+<tr>
+<th>Anomalie</th>
+<th>Timing chirurgical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Moelle attachée symptomatique</strong></td>
+<td>Libération AVANT la correction scoliotique</td>
+</tr>
+<tr>
+<td><strong>Syringomyélie active (Chiari)</strong></td>
+<td>Décompression cranio-cervicale AVANT la scoliose</td>
+</tr>
+<tr>
+<td><strong>Diastématomyélie</strong></td>
+<td>Résection de l'éperon osseux AVANT la correction</td>
+</tr>
+<tr>
+<td><strong>Moelle attachée asymptomatique</strong></td>
+<td>Discussion cas par cas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="116-cas-clinique-lea-suite">11.6 Cas clinique — Léa (suite)</h2>
+<blockquote>
+<p><strong>Données</strong> : 6 mois, hémivertèbre T7 droite, fully segmented, Cobb 18°. Pas d'anomalie médullaire à l'IRM. Échographie cardiaque normale. Échographie rénale : rein gauche légèrement plus petit mais fonctionnel.</p>
+</blockquote>
+<p><strong>Plan</strong> :<br />
+1. <strong>Surveillance</strong> à 6 mois (radio de contrôle à 12 mois)<br />
+2. Si progression ≥ 5° → discuter résection d'hémivertèbre à 18 mois–2 ans<br />
+3. Consultation avec le cardiologue pédiatre (même si écho normale à 6 mois — contrôle à 1 an)<br />
+4. Information aux parents : maladie souvent opérable avec excellents résultats si précoce</p>
+<p><strong>Pronostic communiqué</strong> : Une hémivertèbre fully segmented T7 progression probable (~2–5°/an). La résection précoce (1–5 ans) donne les meilleurs résultats fonctionnels.</p>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La scoliose congénitale est due à des malformations vertébrales de <strong>formation</strong> (hémivertèbre) ou de <strong>segmentation</strong> (barre osseuse).</p>
+<p>📌 <strong>2.</strong> La <strong>barre + hémivertèbre controlatérale</strong> est le tableau le plus agressif (10–15°/an).</p>
+<p>📌 <strong>3.</strong> <strong>IRM médullaire + échographie cardiaque + échographie rénale</strong> sont systématiques.</p>
+<p>📌 <strong>4.</strong> La <strong>résection d'hémivertèbre précoce</strong> (&lt; 5 ans) dans les hémivertèbres fully segmented progressives donne les meilleurs résultats.</p>
+<p>📌 <strong>5.</strong> Toute anomalie médullaire (syringomyélie, moelle attachée) doit être <strong>traitée avant</strong> la correction scoliotique.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-10-questions">Quiz — 10 questions</h2>
+<p><strong>Q1. 🥉</strong> Quelle hémivertèbre a le plus fort potentiel de progression ?<br />
+- <strong>A. Fully segmented (2 disques libres)</strong><br />
+- B. Non-segmented<br />
+- C. Incarcérée<br />
+- D. Semi-segmented</p>
+<p><strong>Q2. 🥉</strong> Quel bilan est SYSTÉMATIQUE devant toute scoliose congénitale ?<br />
+- A. Scintigraphie osseuse<br />
+- <strong>B. IRM médullaire + échographie cardiaque + échographie rénale</strong><br />
+- C. DEXA<br />
+- D. Test génétique VACTERL</p>
+<p><strong>Q3. 🥉</strong> La fréquence des anomalies rénales dans la scoliose congénitale est d'environ :<br />
+- A. 2–3 %<br />
+- <strong>B. 15–20 %</strong><br />
+- C. 40 %<br />
+- D. &lt; 1 %</p>
+<p><strong>Q4. 🥈</strong> L'association VACTERL comprend les anomalies :<br />
+- <strong>A. Vertébrale, Anale, Cardiaque, Trachéo-Esophagienne, Rénale, Membres</strong><br />
+- B. Vasculaire, Articulaire, Costo, Tibiale, Externe, Rachidienne, Lombaire</p>
+<p><strong>Q5. 🥈</strong> Devant une syringomyélie active associée à une scoliose congénitale, l'ordre des interventions est :<br />
+- A. Correction scoliotique puis décompression<br />
+- <strong>B. Décompression cranio-cervicale (Chiari) ou libération médullaire EN PREMIER, puis correction scoliotique</strong><br />
+- C. Simultanément<br />
+- D. La syringomyélie ne contre-indique pas la correction</p>
+<p><strong>Q6. 🥈</strong> La résection d'hémivertèbre (HERVR) est idéalement réalisée avant :<br />
+- A. 1 an<br />
+- <strong>B. 5 ans</strong> (idéalement 1–5 ans)<br />
+- C. 10 ans<br />
+- D. La puberté</p>
+<p><strong>Q7. 🥇</strong> Une barre osseuse unilatérale + hémivertèbre controlatérale progresse spontanément d'environ :<br />
+- A. 1–2°/an<br />
+- B. 5°/an<br />
+- <strong>C. 10–15°/an</strong><br />
+- D. Variable sans règle</p>
+<p><strong>Q8. 🥇</strong> L'hemi-épiphysiodèse dans la scoliose congénitale consiste à :<br />
+- A. Grefferle côté concave pour forcer la croissance<br />
+- <strong>B. Arthrodèse du côté convexe pour freiner la croissance asymétrique et permettre la correction progressive</strong><br />
+- C. Résection d'hémivertèbre et fusion<br />
+- D. Traction progressive</p>
+<p><strong>Q9. 💎</strong> Un enfant de 14 mois présente une hémivertèbre L1 droite fully segmented, Cobb L12-L3 = 30°, progression 8° en 6 mois. IRM : moelle attachée asymptomatique. Quelle décision ?<br />
+- <strong>A. Libération de moelle attachée PUIS résection d'hémivertèbre dans le même temps ou à court terme</strong><br />
+- B. Résection d'hémivertèbre immédiate sans libérer la moelle (asymptomatique)<br />
+- C. Attendre 5 ans<br />
+- D. Corset plâtré</p>
+<p><strong>Q10. 💎</strong> Scanner 3D d'une scoliose congénitale T5-T8 Cobb 45° à 4 ans montre une barre osseuse unilatérale gauche T6-T7 + hémivertèbre droite T8. IRM : normale. Quel est le traitement de choix ?<br />
+- A. Growing rod MCGR<br />
+- B. Fusion in situ sans résection<br />
+- <strong>C. Résection de la barre + résection de l'hémivertèbre + arthrodèse courte : traitement combiné de la double pathologie</strong><br />
+- D. Corset EDF</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>McMaster MJ, Ohtsuka K.</strong> The natural history of congenital scoliosis: a study of two hundred and fifty-one patients. <em>J Bone Joint Surg Am</em>. 1982;64(8):1128–1147</li>
+<li><strong>McMaster MJ.</strong> Congenital scoliosis caused by a unilateral failure of vertebral segmentation with contralateral hemivertebrae. <em>Spine</em>. 1998;23(9):998–1005</li>
+<li><strong>Bradford DS.</strong> Neurological complications in Scheuermann's disease and congenital spinal anomalies. <em>Spine</em>. 1988;13(10):1162–1170</li>
+<li><strong>Ruf M, Harms J.</strong> Hemivertebra resection by a posterior approach: innovative operative technique and first results. <em>Spine</em>. 2002;27(10):1116–1123</li>
+<li><strong>Winter RB, Moe JH, Eilers VE.</strong> Congenital scoliosis: a study of 234 patients treated and untreated. <em>J Bone Joint Surg Am</em>. 1968;50(1):1–15</li>
+<li><strong>Shaheen A et al.</strong> VACTERL association. <em>J Pediatr Surg</em>. 2014</li>
+<li><strong>Hedequist D, Emans J.</strong> Congenital scoliosis: a review and update. <em>J Pediatr Orthop</em>. 2007;27(1):106–116</li>
+</ul>
+</div>

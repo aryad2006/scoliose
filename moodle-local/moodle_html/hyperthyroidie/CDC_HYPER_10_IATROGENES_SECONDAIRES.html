@@ -1,0 +1,598 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-10-hyperthyroidies-iatrogenes-et-formes-secondaires">PARTIE 10 — Hyperthyroïdies Iatrogènes et Formes Secondaires</h1>
+<h2 id="formation-vertex-hyperthyroidies">Formation VERTEX© — Hyperthyroïdies</h2>
+<hr />
+<h2 id="module-33-hyperthyroidie-amiodaronee">MODULE 33 — Hyperthyroïdie Amiodaronée</h2>
+<h3 id="331-physiopathologie-de-lamiodarone">33.1 Physiopathologie de l'amiodarone</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER33-S1-001 — Amiodarone et thyroïde : structure iodée, effets sur TSH/T4L/T3L, mécanismes des deux types d'hyperthyroïdie]</p>
+</blockquote>
+<p><strong>L'amiodarone : un médicament profondément thyroïdotrope</strong> :</p>
+<p><strong>Composition</strong> :<br />
+- Amiodarone = 37 % iode en poids<br />
+- Comprimé à 200 mg contient <strong>75 mg d'iode organique</strong><br />
+- Libération d'environ <strong>7 mg d'iode libre/jour</strong> par désiodation<br />
+- Apport quotidien &gt;&gt; besoin thyroïdien (150 µg/j) → <strong>surcharge iodée chronique</strong><br />
+- Demi-vie très longue : <strong>40-55 jours</strong> → effets persistants après arrêt (jusqu'à 9 mois)</p>
+<p><strong>Effets sur la biologie thyroïdienne sous amiodarone (valeurs normales modifiées)</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur attendue sous amiodarone</th>
+<th>Interprétation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TSH</td>
+<td><strong>Légèrement élevée (0,5-3 mUI/L)</strong> en début</td>
+<td>Effet Wolff-Chaikoff transitoire</td>
+</tr>
+<tr>
+<td>T4L</td>
+<td><strong>Élevée</strong> (jusqu'à 2× la normale)</td>
+<td>Inhibition désiodase D1 : ↓ T4→T3</td>
+</tr>
+<tr>
+<td>T3L</td>
+<td><strong>Basse-normale</strong></td>
+<td>Inhibition D1 : ↓ conversion T4→T3</td>
+</tr>
+<tr>
+<td>rT3</td>
+<td><strong>Très élevée</strong></td>
+<td>Accumulation par inhibition D1</td>
+</tr>
+<tr>
+<td>TSH à l'état stable</td>
+<td><strong>Normale</strong></td>
+<td>Adaptation hypothalamo-hypophysaire</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>PIÈGE</strong> — Sous amiodarone stable, une T4L élevée avec TSH normale est ATTENDUE et ne signifie pas hyperthyroïdie. Le diagnostic repose sur la clinique + TSH effondrée + T4L très élevée + T3L normale ou haute.</p>
+</blockquote>
+<hr />
+<h3 id="332-hyperthyroidie-amiodaronee-type-1-hat1">33.2 Hyperthyroïdie amiodaronée type 1 (HAT1)</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER33-S2-001 — HAT1 vs HAT2 : mécanismes différents, clinique similaire, diagnostic différentiel par scintigraphie et IL-6]</p>
+</blockquote>
+<p><strong>Mécanisme</strong> : <strong>excès d'iode sur thyroïde pathologique préexistante</strong></p>
+<p><strong>Terrain</strong> :<br />
+- <strong>GMNT préexistant</strong> (zone de carence iodée, nodules autonomes)<br />
+- Basedow méconnu (TRAb positifs)<br />
+- Thyroïde autonome subclinique<br />
+- Plus fréquent en zones de <strong>carence iodée</strong> (Europe du Sud, Afrique)</p>
+<p><strong>Physiopathologie</strong> :<br />
+- Surcharge iodée → <strong>Jod-Basedow</strong> → activation des nodules autonomes<br />
+- La thyroïde pathologique échappe au phénomène de Wolff-Chaikoff<br />
+- Production hyperthyroïdienne autonome indépendante du contrôle TSH</p>
+<p><strong>Caractéristiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>HAT1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thyroïde</td>
+<td>Pathologique (GMNT, nodules)</td>
+</tr>
+<tr>
+<td>Scintigraphie ¹²³I</td>
+<td>Fixation <strong>présente</strong> (faible mais réelle)</td>
+</tr>
+<tr>
+<td>Vascularisation Doppler</td>
+<td><strong>Hypervascularisation</strong></td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td>Normale ou légèrement ↑</td>
+</tr>
+<tr>
+<td>CRP</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Thyroglobuline</td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>TRAb</td>
+<td>Positifs si Basedow sous-jacent</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Traitement HAT1</strong> :<br />
+1. <strong>Maintenir ou arrêter l'amiodarone</strong> selon impératif cardiologique (souvent impossible d'arrêter)<br />
+2. <strong>Thionamides à doses élevées</strong> : MMI 40-60 mg/j ou PTU 600 mg/j<br />
+3. Efficacité <strong>retardée</strong> (6-12 semaines) car stock iodé considérable<br />
+4. Si résistance ou urgence : <strong>thyroïdectomie totale</strong> (traitement définitif)<br />
+5. RAI : <strong>efficacité réduite</strong> (faible fixation thyroïdienne sous charge iodée)</p>
+<hr />
+<h3 id="333-hyperthyroidie-amiodaronee-type-2-hat2">33.3 Hyperthyroïdie amiodaronée type 2 (HAT2)</h3>
+<p><strong>Mécanisme</strong> : <strong>thyroïdite destructive par toxicité directe de l'amiodarone</strong></p>
+<p><strong>Terrain</strong> :<br />
+- Thyroïde <strong>normale</strong> avant traitement<br />
+- Plus fréquent en zones de <strong>suffisance iodée</strong> (USA, Royaume-Uni)<br />
+- Pas de pathologie thyroïdienne préexistante identifiable</p>
+<p><strong>Physiopathologie</strong> :<br />
+- Amiodarone et son métabolite (déséthylamiodarone) : <strong>toxicité directe</strong> sur les thyréocytes<br />
+- <strong>Lyse cellulaire</strong> → relargage massif de T4, T3, Tg<br />
+- Inflammation : ↑ IL-6 (marqueur clé)<br />
+- <strong>Auto-limitée</strong> en théorie (mais durée variable, parfois hyperthyroïdie prolongée)</p>
+<p><strong>Caractéristiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>HAT2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thyroïde</td>
+<td>Normale ou légèrement augmentée</td>
+</tr>
+<tr>
+<td>Scintigraphie ¹²³I</td>
+<td>Fixation <strong>effondrée ou nulle</strong></td>
+</tr>
+<tr>
+<td>Vascularisation Doppler</td>
+<td><strong>Hypovascularisation</strong> ou normale</td>
+</tr>
+<tr>
+<td>IL-6</td>
+<td><strong>Très élevée</strong> (&gt; 30 pg/mL, parfois &gt; 100)</td>
+</tr>
+<tr>
+<td>CRP</td>
+<td>Élevée</td>
+</tr>
+<tr>
+<td>Thyroglobuline</td>
+<td><strong>Très élevée</strong> (relargage massif)</td>
+</tr>
+<tr>
+<td>TRAb</td>
+<td>Négatifs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Traitement HAT2</strong> :<br />
+1. <strong>Corticoïdes</strong> en première intention : Prednisone <strong>40-60 mg/j</strong> pendant 3-6 mois puis décroissance<br />
+2. Réponse habituellement <strong>rapide</strong> (2-4 semaines)<br />
+3. Thionamides : peu efficaces (thyroïde ne synthétise pas, elle relarguée)<br />
+4. Si résistance aux corticoïdes &gt; 6-8 semaines : thyroïdectomie totale</p>
+<hr />
+<h3 id="334-forme-mixte-hat-mixte">33.4 Forme mixte (HAT mixte)</h3>
+<p><strong>Prévalence</strong> : 20-30 % des cas (adapté de Eskes et al., 2012)</p>
+<p><strong>Diagnostic</strong> : critères intermédiaires, réponse partielle aux corticoïdes + aux thionamides</p>
+<p><strong>Traitement</strong> : <strong>association MMI + prednisone</strong> en première intention</p>
+<hr />
+<h3 id="335-algorithme-diagnostique-de-lhat">33.5 Algorithme diagnostique de l'HAT</h3>
+<pre><code>Suspicion HAT (TSH effondrée sous amiodarone)
+         ↓
+TSH + T4L + T3L + TRAb + Anti-TPO
+IL-6 + CRP + Tg + Écho-Doppler
+         ↓
+Scintigraphie ¹²³I (si possible — souvent impossible)
+         ↓
+┌─────────────────────┬───────────────────────┐
+│     HAT1            │        HAT2           │
+│ Fixation présente   │ Fixation effondrée    │
+│ Hypervascularisation│ Hypo/avascularisation │
+│ IL-6 normale        │ IL-6 très élevée      │
+│ TRAb ± positifs     │ TRAb négatifs         │
+│ GMNT préexistant    │ Thyroïde normale      │
+│         ↓           │         ↓             │
+│   MMI + (arrêt AMI) │  Prednisone 40-60 mg  │
+└─────────────────────┴───────────────────────┘
+</code></pre>
+<p><strong>Cas particuliers</strong> :<br />
+- <strong>Arrêt amiodarone</strong> : toujours discuter avec cardiologue (arythmie réfractaire → bénéfice cardiaque &gt; risque thyroïdien)<br />
+- <strong>Cœur transplanté</strong> : sensibilité accrue à la thyrotoxicose (dénervation myocardique)<br />
+- <strong>Urgence</strong> : thyrotoxicose sévère non contrôlée → thyroïdectomie sous couverture maximale</p>
+<hr />
+<h3 id="quiz-module-33">QUIZ MODULE 33</h3>
+<p><strong>🥉 Q1</strong> — Quel est l'apport quotidien en iode de l'amiodarone à 200 mg/j, et comment cela impacte-t-il la biologie thyroïdienne normale ?<br />
+<strong>A) L'amiodarone 200 mg/j libère ≈ 7 mg d'iode libre/j (soit 40× le besoin quotidien). Sous amiodarone STABLE, la T4L est élevée (inhibition désiodase D1), la T3L est basse-normale, et la TSH est normale. Ces valeurs sont ATTENDUES et ne signifient pas hyperthyroïdie.</strong></p>
+<p><strong>🥈 Q2</strong> — Comment différencier biologiquement et par imagerie une HAT1 d'une HAT2 ?<br />
+<strong>A) HAT1 (Jod-Basedow) : scintigraphie avec fixation résiduelle, hypervascularisation Doppler, IL-6 normale, thyroïde pathologique préexistante. HAT2 (thyroïdite destructive) : scintigraphie blanche (fixation nulle), hypovascularisation Doppler, IL-6 très élevée (&gt; 30-100 pg/mL), CRP élevée, Tg très élevée, thyroïde antérieurement normale.</strong></p>
+<p><strong>💎 Q3</strong> — Un patient sous amiodarone pour FA réfractaire développe une HAT2 sévère non contrôlée par 6 semaines de prednisone 60 mg/j. Le cardiologue refuse l'arrêt de l'amiodarone. Quelle est la stratégie optimale ?<br />
+<strong>A) Thyroïdectomie totale en urgence semi-différée (après préparation médicale maximale) : association PTU 600 mg/j + prednisone 40 mg/j + propranolol + solution de Lugol ± iodure de potassium pour réduire la vascularisation. La chirurgie est le seul traitement définitif en cas de résistance aux corticoïdes + impossibilité d'arrêt amiodarone + RAI non réalisable (faible captation). Mortalité péri-opératoire 2-3 % dans ce contexte, à peser vs mortalité de la thyrotoxicose non contrôlée.</strong></p>
+<hr />
+<h2 id="module-34-thyroidite-post-ici-inhibiteurs-de-checkpoint-immunitaire">MODULE 34 — Thyroïdite Post-ICI (Inhibiteurs de Checkpoint Immunitaire)</h2>
+<h3 id="341-epidemiologie-et-classes-dici">34.1 Épidémiologie et classes d'ICI</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER34-S1-001 — Incidence des dysthyroïdies selon la classe d'ICI : anti-PD1, anti-PD-L1, anti-CTLA4 et combinaisons — tableau comparatif]</p>
+</blockquote>
+<p><strong>Classes d'ICI et cibles</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Agents</th>
+<th>Cible</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anti-PD-1</td>
+<td>Pembrolizumab, Nivolumab</td>
+<td>PD-1 (lymphocyte T)</td>
+<td>↑ activité lymphocytaire T</td>
+</tr>
+<tr>
+<td>Anti-PD-L1</td>
+<td>Atézolizumab, Durvalumab</td>
+<td>PD-L1 (cellule tumorale)</td>
+<td>Idem</td>
+</tr>
+<tr>
+<td>Anti-CTLA-4</td>
+<td>Ipilimumab</td>
+<td>CTLA-4 (lymphocyte T)</td>
+<td>↑ expansion clonale T</td>
+</tr>
+<tr>
+<td>Combinaison</td>
+<td>Nivolumab + Ipilimumab</td>
+<td>PD-1 + CTLA-4</td>
+<td>Effet synergique + toxicité ++</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Incidence des dysthyroïdies</strong> (adapté de Barroso-Sousa et al., JAMA Oncol 2018) :</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Hyperthyroïdie</th>
+<th>Hypothyroïdie</th>
+<th>Toute dysthyroïdie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anti-PD-1</td>
+<td>2-3 %</td>
+<td>7-10 %</td>
+<td>10-15 %</td>
+</tr>
+<tr>
+<td>Anti-PD-L1</td>
+<td>0,5-2 %</td>
+<td>5-8 %</td>
+<td>7-12 %</td>
+</tr>
+<tr>
+<td>Anti-CTLA-4</td>
+<td>1-2 %</td>
+<td>4-6 %</td>
+<td>5-8 %</td>
+</tr>
+<tr>
+<td><strong>Combinaison</strong></td>
+<td><strong>3-5 %</strong></td>
+<td><strong>15-22 %</strong></td>
+<td><strong>20-30 %</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Facteurs de risque de dysthyroïdie ICI</strong> :<br />
+- Anti-TPO positifs avant traitement (× 3-4 le risque)<br />
+- Sexe féminin<br />
+- Combinaison ICI vs monothérapie<br />
+- Certains cancers (mélanome, carcinome rénal)</p>
+<hr />
+<h3 id="342-phase-hyperthyroidienne-post-ici-mecanisme">34.2 Phase hyperthyroïdienne post-ICI — Mécanisme</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER34-S2-001 — Chronologie de la thyroïdite post-ICI : phase hyperthyroïdienne transitoire (destructive) → hypothyroïdie permanente dans 60-80% des cas]</p>
+</blockquote>
+<p><strong>Mécanisme</strong> : <strong>thyroïdite auto-immune destructive médiée par les lymphocytes CD8+</strong></p>
+<p><strong>Séquence temporelle</strong> :<br />
+1. <strong>Administration ICI</strong> → levée de l'inhibition des lymphocytes T cytotoxiques<br />
+2. <strong>Inflammation thyroïdienne</strong> (CD8+ infiltrant le parenchyme) → destruction thyréocytes<br />
+3. <strong>Phase hyperthyroïdienne</strong> : relargage T4/T3 (durée 2-6 semaines)<br />
+4. <strong>Phase hypothyroïdienne</strong> : destruction progressive → déficit en 60-80 % des cas<br />
+5. <strong>Récupération</strong> : &lt; 20 % des cas retrouvent une fonction normale</p>
+<p><strong>Chronologie typique</strong> :<br />
+- Délai apparition : <strong>6-12 semaines</strong> après 1ère injection (plus précoce avec combinaisons)<br />
+- Phase hyper : 2-6 semaines, souvent <strong>asymptomatique</strong> ou peu symptomatique<br />
+- Phase hypo : persistante dans 60-80 % (surveillance TSH à long terme indispensable)</p>
+<p><strong>Distinction de Basedow post-ICI</strong> (plus rare) :<br />
+- TRAb positifs<br />
+- Phase hyperthyroïdienne <strong>persistante</strong> (non auto-limitée)<br />
+- Nécessite thionamides (MMI)<br />
+- Thyroïdite post-ICI = TRAb négatifs, phase hyper transitoire</p>
+<hr />
+<h3 id="343-grades-et-prise-en-charge-oncologique">34.3 Grades et prise en charge oncologique</h3>
+<p><strong>Classification CTCAE v5.0 — Toxicité thyroïdienne</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Définition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grade 1</td>
+<td>TSH modifiée, asymptomatique</td>
+<td>Surveillance TSH, <strong>pas d'arrêt ICI</strong></td>
+</tr>
+<tr>
+<td>Grade 2</td>
+<td>Symptômes légers/modérés, TSH &lt; 0,1 ou &gt; 10 mUI/L</td>
+<td>Traitement symptomatique, <strong>pas d'arrêt ICI</strong></td>
+</tr>
+<tr>
+<td>Grade 3</td>
+<td>Symptômes sévères, hospitalisation requise</td>
+<td><strong>Suspendre ICI</strong>, corticoïdes si Basedow</td>
+</tr>
+<tr>
+<td>Grade 4</td>
+<td>Urgence vitale (crise thyrotoxique)</td>
+<td><strong>Arrêt définitif ICI</strong>, traitement urgence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prise en charge de la phase hyperthyroïdienne</strong> :<br />
+- Phase hyper légère-modérée (grade 1-2) : <strong>bêta-bloquants</strong> (propranolol 20-40 mg/j)<br />
+- Phase hyper sévère : thionamides si Basedow TRAb+, sinon symptomatique<br />
+- <strong>Ne jamais interrompre l'ICI pour grade 1-2</strong> (bénéfice oncologique &gt;&gt; risque thyroïdien)</p>
+<hr />
+<h3 id="quiz-module-34">QUIZ MODULE 34</h3>
+<p><strong>🥉 Q1</strong> — Quelle est la séquence temporelle typique d'une thyroïdite post-ICI ?<br />
+<strong>A) Phase hyperthyroïdienne transitoire (2-6 semaines) par destruction thyréocytaire CD8+ → phase hypothyroïdienne dans 60-80 % des cas. Délai d'apparition : 6-12 semaines après la 1ère injection. La récupération euthyroïdienne est rare (&lt; 20 %).</strong></p>
+<p><strong>🥈 Q2</strong> — Dans quelle situation faut-il envisager l'arrêt de l'ICI pour toxicité thyroïdienne ?<br />
+<strong>A) Grade 3 (symptômes sévères, hospitalisation) → suspension temporaire de l'ICI + corticoïdes si indication. Grade 4 (urgence vitale, crise thyrotoxique) → arrêt définitif de l'ICI. Pour les grades 1-2 (majorité des cas), l'ICI est maintenu et seul le traitement symptomatique (bêta-bloquants, LT4 si hypothyroïdie) est ajouté.</strong></p>
+<p><strong>💎 Q3</strong> — Comment distinguer une thyroïdite auto-immune post-ICI d'un véritable Basedow induit par l'ICI, et quelle est la différence thérapeutique ?<br />
+<strong>A) Thyroïdite post-ICI : TRAb négatifs, scintigraphie blanche (fixation effondrée), phase hyperthyroïdienne auto-limitée (2-6 semaines), traitement = bêta-bloquants + surveillance. Basedow post-ICI : TRAb positifs (mécanisme d'activation clonale T → production TRAb stimulants), fixation élevée à la scintigraphie, phase hyperthyroïdienne persistante, traitement = thionamides (MMI). La distinction est cliniquement importante car le traitement et le pronostic sont différents.</strong></p>
+<hr />
+<h2 id="module-35-formes-secondaires-rares">MODULE 35 — Formes Secondaires Rares</h2>
+<h3 id="351-thyrotoxicose-factice">35.1 Thyrotoxicose factice</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER35-S1-001 — Profil biologique et étiologique de la thyrotoxicose factice : T4L haute + Tg effondrée + scintigraphie blanche — diagnostic différentiel]</p>
+</blockquote>
+<p><strong>Définition</strong> : ingestion <strong>exogène</strong> d'hormones thyroïdiennes (T4 et/ou T3) à dose supra-physiologique</p>
+<p><strong>Contextes étiologiques</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Profil</th>
+<th>Clé diagnostique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LT4 en excès</strong> (iatrogenique)</td>
+<td>T4L haute, T3L haute ou normale</td>
+<td>Dose inadaptée, non-observance intermittente</td>
+</tr>
+<tr>
+<td><strong>LT4 intentionnelle</strong> (perte poids, dopage)</td>
+<td>T4L haute, Tg effondrée</td>
+<td>Nier la prise, contexte sportif/alimentaire</td>
+</tr>
+<tr>
+<td><strong>LT3 (Cynomel, liothyronine)</strong></td>
+<td>T3L très haute, T4L <strong>basse</strong></td>
+<td>T4L basse = clé (pas de synthèse endogène T4)</td>
+</tr>
+<tr>
+<td><strong>Extraits thyroïdiens</strong> (desiccated thyroid)</td>
+<td>T3L/T4L élevées</td>
+<td>Usage "médecine intégrative", automédication</td>
+</tr>
+<tr>
+<td><strong>"Brûleurs de graisse"</strong> frauduleux</td>
+<td>Variable</td>
+<td>Produits contaminés, déclaration pharmacovigilance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Profil biologique de la thyrotoxicose factice</strong> :</p>
+<pre><code>T4L ou T3L élevée
++ Tg EFFONDRÉE (&lt; 1 µg/L) ← clé du diagnostic
++ Scintigraphie BLANCHE (fixation nulle)
++ TRAb négatifs
++ Anti-TPO négatifs (sauf Hashimoto associé)
+</code></pre>
+<blockquote>
+<p>💡 <strong>Tg basse = thyroïde silencieuse</strong> — L'exogène hormonal inhibe complètement la thyroïde endogène → Tg effondrée. Exception : si goitre/nodule préexistant, Tg peut être moins basse.</p>
+</blockquote>
+<p><strong>Prise en charge</strong> :<br />
+1. Confrontation bienveillante + arrêt de la source exogène<br />
+2. Suivi biologique (normalisation TSH en 4-8 semaines)<br />
+3. Si trouble comportemental (TCA, orthorexie) → prise en charge spécialisée<br />
+4. Déclaration pharmacovigilance si produit contaminé</p>
+<hr />
+<h3 id="352-struma-ovarii">35.2 Struma ovarii</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER35-S2-001 — Struma ovarii : tératome ovarien contenant tissu thyroïdien fonctionnel — scintigraphie corps entier avec fixation pelvienne, absence de fixation cervicale]</p>
+</blockquote>
+<p><strong>Définition</strong> : <strong>tératome ovarien</strong> (kyste dermoïde) contenant plus de 50 % de tissu thyroïdien fonctionnel</p>
+<p><strong>Épidémiologie</strong> : rare — &lt; 3 % des tératomes ovariens, 0,3 % des tumeurs ovariennes</p>
+<p><strong>Particularités</strong> :<br />
+- Tissu thyroïdien ovarien <strong>indépendant du contrôle TSH</strong> → peut devenir autonome<br />
+- Struma ovarii <strong>toxique</strong> : &lt; 5 % des struma ovarii (le plus souvent euthyroïdien)<br />
+- Peut coexister avec un struma ovarien <strong>malin</strong> (carcinome thyroïdien)</p>
+<p><strong>Diagnostic</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T4L haute + TSH effondrée</td>
+<td>Hyperthyroïdie confirmée</td>
+</tr>
+<tr>
+<td>TRAb négatifs, Tg normale</td>
+<td>Pas de Basedow, pas de factice</td>
+</tr>
+<tr>
+<td>Écho thyroïde</td>
+<td><strong>Normale ou petite</strong> (thyroïde cervicale supprimée)</td>
+</tr>
+<tr>
+<td>Écho pelvienne / IRM</td>
+<td><strong>Masse ovarienne complexe</strong> (tissu hétérogène)</td>
+</tr>
+<tr>
+<td><strong>Scintigraphie corps entier</strong></td>
+<td>Fixation <strong>pelvienne</strong> + absence fixation cervicale ← DIAGNOSTIC</td>
+</tr>
+<tr>
+<td>Tg</td>
+<td>Peut être élevée si composante maligne</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Traitement</strong> :<br />
+- <strong>Ovariectomie</strong> (chirurgie laparoscopique ou laparotomie selon taille)<br />
+- Si malignité : thyroïdectomie + RAI (traitement des métastases thyroïdiennes)<br />
+- Résolution de l'hyperthyroïdie après exérèse</p>
+<hr />
+<h3 id="353-metastases-thyroidiennes-secretantes-thyroide-ectopique">35.3 Métastases thyroïdiennes sécrétantes (thyroïde ectopique)</h3>
+<p><strong>Définition</strong> : <strong>métastases fonctionnelles</strong> de carcinomes thyroïdiens différenciés (papillaire ou folliculaire) produisant des hormones thyroïdiennes</p>
+<p><strong>Mécanisme</strong> :<br />
+- Métastases osseuses, pulmonaires ou ganglionnaires massives de carcinome folliculaire<br />
+- Tissu tumoral conserve la capacité de synthèse hormonale<br />
+- Cas rapportés : thyrotoxicose sévère par métastases pulmonaires diffuses (syndrome de "poumon enneigé")</p>
+<p><strong>Diagnostic</strong> :<br />
+- Tg <strong>très élevée</strong> (100-10 000 µg/L selon masse tumorale)<br />
+- Scintigraphie ¹³¹I corps entier : fixation extra-thyroïdienne (pulmonaire, osseuse)<br />
+- Scanner/TEP-FDG : localisation des métastases</p>
+<p><strong>Traitement</strong> :<br />
+- RAI à fortes doses (3 700-7 400 MBq) : traitement des métastases fonctionnelles<br />
+- Thyroïdectomie si thyroïde en place<br />
+- Sunitinib/Sorafénib (thérapies ciblées) si résistance au RAI</p>
+<hr />
+<h3 id="354-adenome-thyreotrope-tshome-revision-et-complements-therapeutiques">35.4 Adénome thyréotrope (TSHome) — Révision et compléments thérapeutiques</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPER35-S3-001 — TSHome : IRM hypophysaire macro vs micro-adénome, rapport α-GSU/TSH &gt; 1, réponse aux analogues de la somatostatine]</p>
+</blockquote>
+<p><strong>Rappel diagnostic</strong> (Module 23.3) :<br />
+- TSH normale ou haute + T4L/T3L élevées + α-GSU/TSH &gt; 1 + IRM : adénome</p>
+<p><strong>Traitement</strong> (adapté de Beck-Peccoz et al., Nat Rev Endocrinol 2013) :</p>
+<p><strong>1er ligne : Chirurgie</strong> (transsphénoïdale endoscopique)<br />
+- Macroadénomes (&gt; 10 mm) : résection chirurgicale rarement complète<br />
+- Microadénomes : guérison dans 70-80 %<br />
+- Critères guérison : TSH normalisée + T4L normale + α-GSU normale</p>
+<p><strong>2ème ligne : Analogues de la somatostatine (ASS)</strong><br />
+- Octréotide LAR 20-30 mg/mois ou Lanréotide 120 mg/mois<br />
+- Contrôle hormonal : 80-90 %<br />
+- Réduction volumique adénome : 40-50 %<br />
+- Traitement néoadjuvant (réduire la taille avant chirurgie) ou substitutif (si chirurgie incomplète)</p>
+<p><strong>3ème ligne : Radiochirurgie stéréotaxique (Gamma Knife)</strong><br />
+- Si résidu post-opératoire non accessible aux ASS<br />
+- Contrôle tumoral : 90 %, contrôle hormonal : 50-60 %<br />
+- Délai d'action : 12-24 mois</p>
+<p><strong>Traitement adjuvant de l'hyperthyroïdie pendant la préparation chirurgicale</strong> :<br />
+- MMI (réduire la thyrotoxicose)<br />
+- Jamais de RAI (inutile car hyperthyroïdie secondaire)</p>
+<hr />
+<h3 id="quiz-module-35">QUIZ MODULE 35</h3>
+<p><strong>🥉 Q1</strong> — Quel est le profil biologique pathognomonique de la thyrotoxicose factice à la lévothyroxine ?<br />
+<strong>A) T4L élevée + TSH effondrée + Tg effondrée (&lt; 1 µg/L) + scintigraphie thyroïdienne blanche (fixation nulle) + TRAb négatifs. La Tg effondrée est la clé : l'exogène hormonal supprime la thyroïde endogène qui ne produit plus rien.</strong></p>
+<p><strong>🥈 Q2</strong> — Comment la scintigraphie permet-elle de diagnostiquer un struma ovarii ?<br />
+<strong>A) La scintigraphie corps entier au ¹²³I ou au ⁹⁹ᵐTc montre une FIXATION PELVIENNE avec ABSENCE de fixation cervicale (thyroïde cervicale supprimée par l'autonomie de la thyroïde ectopique ovarienne). C'est le signe pathognomonique du struma ovarii toxique. Elle est confirmée par l'IRM pelvienne montrant la masse ovarienne complexe.</strong></p>
+<p><strong>💎 Q3</strong> — Un patient de 55 ans présente une hyperthyroïdie avec TSH à 2,5 mUI/L (normale), T4L 3× la normale, T3L 2× la normale. α-GSU/TSH = 1,8. L'IRM hypophysaire montre un macroadénome de 18 mm. Quel est le traitement de référence et sa probabilité de guérison ?<br />
+<strong>A) TSHome (adénome thyréotrope) avec macroadénome de 18 mm. Traitement de référence : chirurgie transsphénoïdale endoscopique. Probabilité de guérison complète : 70-80 % pour les microadénomes, significativement plus faible pour les macroadénomes (40-60 %) en raison des extensions suprasellaires et de l'envahissement des sinus caverneux. Préparation préopératoire : analogues de la somatostatine (octréotide LAR) pendant 3-6 mois pour réduire le volume tumoral, améliorer le champ opératoire et contrôler la thyrotoxicose. Si résidu post-op : octréotide LAR au long cours + radiochirurgie stéréotaxique.</strong></p>
+<hr />
+<p><em>Formation VERTEX© — Partie 10 — Hyperthyroïdies Iatrogènes et Formes Secondaires — Mars 2026</em></p>
+</div>

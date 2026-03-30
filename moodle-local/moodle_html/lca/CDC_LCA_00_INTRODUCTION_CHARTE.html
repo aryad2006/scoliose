@@ -1,0 +1,1135 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-complete-ligament-croise-anterieur">🦴 CAHIER DES CHARGES — FORMATION COMPLÈTE LIGAMENT CROISÉ ANTÉRIEUR</h1>
+<h2 id="de-lembryologie-du-genou-a-la-reprise-du-sport-maitrise-exhaustive-du-lca">De l'embryologie du genou à la reprise du sport : maîtrise exhaustive du LCA</h2>
+<hr />
+<p><strong>Badge formation</strong> : 🦴 LCA<br />
+<strong>Date</strong> : 20 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Statut</strong> : Document fondateur — Cahier des charges complet<br />
+<strong>Formation</strong> : Ligament Croisé Antérieur — <em>Anterior Cruciate Ligament</em><br />
+<strong>Plateforme</strong> : VERTEX© (Virtual Environment for Rachis Training and EXploration)</p>
+<hr />
+<h1 id="table-des-matieres-partie-0">TABLE DES MATIÈRES — PARTIE 0</h1>
+<ol>
+<li><a href="#1-synthèse-exécutive">Synthèse exécutive</a></li>
+<li><a href="#2-public-cible-et-prérequis">Public cible et prérequis</a></li>
+<li><a href="#3-architecture-pédagogique-globale">Architecture pédagogique globale</a></li>
+<li><a href="#4-code-couleur--formation-lca">Code couleur — Formation LCA</a></li>
+<li><a href="#5-conventions-et-charte">Conventions et charte</a></li>
+<li><a href="#6-structure-des-fichiers-du-cdc">Structure des fichiers du CDC</a></li>
+<li><a href="#7-références-bibliographiques-fondatrices">Références bibliographiques fondatrices</a></li>
+</ol>
+<hr />
+<h1 id="1-synthese-executive">1. SYNTHÈSE EXÉCUTIVE</h1>
+<h2 id="11-ce-quest-cette-formation">1.1 Ce qu'est cette formation</h2>
+<p>La <strong>Formation Ligament Croisé Antérieur</strong> est un programme e-learning exhaustif couvrant <strong>l'intégralité</strong> de la pathologie du LCA — depuis l'embryologie et le développement du genou, l'anatomie descriptive et fonctionnelle du pivot central, la biomécanique ligamentaire, l'épidémiologie et les mécanismes lésionnels, le diagnostic clinique et par imagerie, les lésions associées (ménisques, cartilage, ligaments collatéraux, fractures ostéochondrales), l'histoire naturelle du genou déficient en LCA, le traitement conservateur, les techniques de reconstruction chirurgicale (autogreffes, allogreffes, techniques anatomiques), la rééducation structurée par phases, la prévention primaire et secondaire, les complications, les reprises chirurgicales, les situations particulières (enfant, sportif de haut niveau, genou multi-ligamentaire), et les innovations (biothérapies, ligaments synthétiques, ingénierie tissulaire, IA en rééducation).</p>
+<p>Elle constitue la <strong>onzième formation</strong> de la plateforme VERTEX©.</p>
+<h2 id="12-perimetre-de-la-formation-lca">1.2 Périmètre de la formation LCA</h2>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Détail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre de modules</strong></td>
+<td>42 modules organisés en 12 parties</td>
+</tr>
+<tr>
+<td><strong>Durée estimée</strong></td>
+<td>~140-160 heures de contenu</td>
+</tr>
+<tr>
+<td><strong>Niveau</strong></td>
+<td>Fondamental → Intermédiaire → Expert</td>
+</tr>
+<tr>
+<td><strong>Spécialités concernées</strong></td>
+<td>Chirurgie orthopédique, médecine du sport, rhumatologie, radiologie (IRM/écho), médecine physique et réadaptation (MPR), kinésithérapie, médecine générale</td>
+</tr>
+<tr>
+<td><strong>Couverture — Embryologie</strong></td>
+<td>Développement embryonnaire du genou (semaines 4-12), chondrification, cavitation articulaire, morphogenèse du pivot central (LCA/LCP), rôle de Wnt/BMP/GDF-5, vascularisation embryonnaire, développement méniscal simultané</td>
+</tr>
+<tr>
+<td><strong>Couverture — Anatomie</strong></td>
+<td>Anatomie osseuse du genou (fémur distal, plateau tibial, patella), anatomie ligamentaire exhaustive (LCA : faisceaux antéro-médial AM et postéro-latéral PL, insertions fémorale et tibiale, vascularisation par artère géniculée moyenne, innervation — mécanorécepteurs de Ruffini/Pacini/Golgi), ménisques (anatomie, vascularisation zonale — zone rouge/rouge-blanc/blanc), cartilage articulaire, appareil extenseur, ligaments collatéraux (LCM, LCL), point d'angle postéro-externe (PAPE — LCL, tendon poplité, ligament poplité arqué, ligament poplité-fibulaire), point d'angle postéro-interne (PAPI — ligament oblique postérieur, corne postérieure ménisque médial), capsule, bourse synoviale</td>
+</tr>
+<tr>
+<td><strong>Couverture — Biomécanique</strong></td>
+<td>Cinématique du genou (flexion-extension, rotations, translations), rôle du LCA (frein primaire de la translation tibiale antérieure, frein secondaire de la rotation interne), notion de pivot central, cinématique de roulement-glissement, biomécanique des faisceaux AM/PL (isométrie, tension différentielle), rôle stabilisateur dynamique (quadriceps, ischio-jambiers, gastrocnémiens), biomécanique de la marche et de la course, forces appliquées au LCA (2-4× poids du corps au pivoting), proprioception et contrôle neuromusculaire</td>
+</tr>
+<tr>
+<td><strong>Couverture — Épidémiologie et mécanismes</strong></td>
+<td>Incidence (200 000-400 000/an USA, 45 000/an France), sports à risque (football, ski, basket, handball, rugby), mécanismes lésionnels (valgus-rotation externe, pivot-shift sans contact = 70 %, contact direct = 30 %), facteurs de risque intrinsèques (sexe féminin ×2-8, morphologie intercondylienne étroite, pente tibiale postérieure, laxité constitutionnelle, hormones — cycle menstruel, déficit neuromusculaire) et extrinsèques (terrain, chaussures, conditions météo, fatigue), scores de risque (Landing Error Scoring System — LESS), épidémiologie pédiatrique (augmentation ×350 % en 20 ans)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Diagnostic clinique</strong></td>
+<td>Interrogatoire (mécanisme, craquement, hémarthrose aiguë, instabilité), examen clinique structuré (épanchement, Lachman — sensibilité 87 %, pivot-shift — spécificité 98 %, tiroir antérieur, test de Slocum, recurvatum externe en rotation, dial test, tests méniscaux — McMurray/Thessaly/Apley, tests ligaments collatéraux), classification des laxités (IKDC), scores fonctionnels (Lysholm, IKDC subjectif, KOOS, Tegner, ACL-RSI), examen comparatif, examen sous anesthésie générale</td>
+</tr>
+<tr>
+<td><strong>Couverture — Imagerie</strong></td>
+<td>Radiographies standard (Schuss, incidence de Rosenberg, long axe membre inférieur), signes indirects (fracture de Segond, encoche condylienne postéro-latérale — Deep lateral femoral notch sign), IRM du genou (séquences optimales, anatomie IRM du LCA — signal, morphologie, signes directs de rupture, signes indirects — bone bruise kissing pattern, classification des lésions méniscales Stoller, lésions chondrales ICRS, lésions LCM/LCL), arthro-IRM, arthrographie, échographie du genou (tendons, ligaments collatéraux), scanner (bilan osseux, planification), imagerie dynamique (KT-1000/2000, GNRB, Telos)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Lésions associées</strong></td>
+<td>Lésions méniscales (déchirures longitudinales, en anse de seau, radiaires, horizontales, complexes, rampe méniscale postéro-médiale — hidden lesion, réparabilité selon zone), lésions chondrales (classification ICRS, osteochondral defects), lésions du LCM (classification Hughston — grades I-III), lésions du PAPE/PAPI, fractures associées (Segond, plateau tibial), triade malheureuse d'O'Donoghue, pentade</td>
+</tr>
+<tr>
+<td><strong>Couverture — Histoire naturelle</strong></td>
+<td>Genou déficient en LCA (dégénérescence méniscale et chondrale accélérée), classification des patients (coper vs non-coper vs adapter — Fitzgerald 2000), risque arthrosique à long terme (×5-10 à 15-20 ans — Lohmander, AJSM 2004), donnée de survie méniscale sans reconstruction (Shelbourne 2000), qualité de vie et limitations fonctionnelles</td>
+</tr>
+<tr>
+<td><strong>Couverture — Traitement conservateur</strong></td>
+<td>Indications (patient sédentaire, genou stable, coper), protocole de rééducation sans chirurgie (renforcement musculaire, proprioception, reprise d'activités), orthèses fonctionnelles, modifications d'activité, critères de basculement vers la chirurgie, résultats à long terme du traitement conservateur (Frobell, NEJM 2010 + suivi 5 ans 2013)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Traitement chirurgical</strong></td>
+<td>Techniques de reconstruction : greffe os-tendon rotulien-os (OTO/BTB — Kenneth Jones), greffe ischio-jambiers (DIDT — 4 brins, Hamstring), greffe quadriceps tendon (QT — full thickness vs partial), allogreffes (indications, risques), techniques mono-faisceau vs double-faisceaux, reconstruction anatomique (positionnement des tunnels — over-the-top, transportale, outside-in, rétrograde), fixation (vis d'interférence résorbables/métalliques, endobouton, agrafe, all-inside), augmentation ligamentaire (Internal Brace — Arthrex), chirurgie arthroscopique technique pas-à-pas, gestion des tunnels (taille, position, classification Rue — mismatch), sutures méniscales concomitantes (techniques all-inside, inside-out, outside-in), traitement cartilagineux associé (microfractures, mosaïcoplastie, MACI), ostéotomie tibiale de valgisation (OTV) associée (genou varus + LCA)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Rééducation</strong></td>
+<td>Protocoles de rééducation structurés par phases (phase 1 : protection J0-S6, phase 2 : renforcement S6-M3, phase 3 : reprise fonctionnelle M3-M6, phase 4 : retour au sport M6-M9/12), objectifs par phase (ROM, force, proprioception, geste sportif), critères de passage inter-phases, tests fonctionnels (isocinétique — ratio IJ/Q ≥ 85 %, hop tests — LSI ≥ 90 %, Y-Balance, SEBT), critères de retour au sport (RTS) — consensus 2016, programmes de prévention neuromusculaire (FIFA 11+, PEP, Sportsmetrics, Nordic Hamstring), réathlétisation par sport, rééducation accélérée vs conservatrice, complications de la rééducation (arthrofibrose, cyclope lesion)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Complications</strong></td>
+<td>Arthrofibrose (classification Shelbourne — types I-IV), cyclope lesion (nodule fibreux intercondylien), douleur antérieure du genou, infection du greffon, rupture itérative (4-25 % selon population), lésion contro-latérale, laxité résiduelle, syndrome du cyclope, tunnel widening, échec de fixation, complications vasculo-nerveuses (artère poplitée, nerf fibulaire commun)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Révisions et reprises</strong></td>
+<td>Bilan d'échec (technique vs biologique vs traumatique), imagerie pré-révision (scanner avec tunnels, IRM), classification des tunnels (Rue — confluence, mismatch), techniques de révision (one-stage vs two-stage — comblement tunnels puis reconstruction, hardware removal, greffe de comblement osseux — cylindres tricorticaux), choix du greffon de révision, résultats des révisions (inférieurs à la primo-reconstruction — MARS group, AJSM 2014)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Situations particulières</strong></td>
+<td>LCA pédiatrique (physes ouvertes, techniques physe-sparing — Micheli all-epiphyseal, transphysaire partiel, ilio-tibial band), LCA chez la femme (facteurs de risque spécifiques, prévention ciblée), sportif de haut niveau (timing chirurgical, protocole accéléré, critères RTS élite), genou multi-ligamentaire (luxation du genou — Kennedy, traitement en urgence vs différé, bilan vasculaire — angioscanner), LCA sur arthrose débutante (OTV + LCA), LCA bilatéral, LCA et ménisque irréparable (méniscectomie + LCA + allogreffe méniscale ?), LCA chez le patient &gt; 40 ans</td>
+</tr>
+<tr>
+<td><strong>Couverture — Prévention</strong></td>
+<td>Programmes de prévention primaire (FIFA 11+, PEP program, Sportsmetrics, Knäkontroll), efficacité démontrée (↓ 50-70 % incidence LCA — Sugimoto méta-analyse 2015), composantes clés (plyométrie, renforcement IJ, équilibre, feedback neuromusculaire), prévention secondaire (après reconstruction — ↓ re-rupture 60 % avec programme neuromusculaire), compliance et implémentation (barrières coaches/athlètes, stratégies d'adhésion)</td>
+</tr>
+<tr>
+<td><strong>Couverture — Innovations</strong></td>
+<td>PRP et biothérapies (augmentation de la cicatrisation du greffon — Figueroa, <em>AJSM</em> 2018), cellules souches mésenchymateuses (MSC), ingénierie tissulaire (scaffolds de collagène, ligaments bioartificiels), ligaments synthétiques (LARS — historique et résultats controversés, Neoligaments), reconstruction avec préservation du moignon (healing-enhanced repair — BEAR implant, Murray et al., <em>NEJM</em> 2024), imagerie fonctionnelle peropératoire (navigation, réalité augmentée), robotique en chirurgie ligamentaire, IA et machine learning pour la prédiction du risque de re-rupture et l'optimisation de la rééducation (wearables, capteurs inertiels), impression 3D pour planification chirurgicale</td>
+</tr>
+<tr>
+<td><strong>Simulation</strong></td>
+<td>VERTEX© — module dédié : simulation de reconstruction LCA arthroscopique (positionnement des tunnels, passage de la greffe, fixation), simulation d'examen clinique (Lachman virtuel, pivot-shift), modélisation biomécanique du genou avec/sans LCA</td>
+</tr>
+<tr>
+<td><strong>Certification</strong></td>
+<td>Certificat VERTEX© LCA, éligible DPC/CME</td>
+</tr>
+<tr>
+<td><strong>Langue</strong></td>
+<td>Français (traduction EN prévue)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-objectifs-pedagogiques-globaux">1.3 Objectifs pédagogiques globaux</h2>
+<p>À l'issue de cette formation, le praticien sera capable de :</p>
+<ol>
+<li><strong>Décrire</strong> l'embryologie du genou et la morphogenèse du pivot central (LCA/LCP) depuis la 4ème semaine de développement</li>
+<li><strong>Maîtriser</strong> l'anatomie descriptive et fonctionnelle du LCA (faisceaux AM/PL, insertions, vascularisation, innervation) et des structures associées (ménisques, LCM, LCL, PAPE, PAPI)</li>
+<li><strong>Expliquer</strong> la biomécanique du LCA (frein primaire de la TTA, rôle dans le contrôle rotatoire, interaction avec les stabilisateurs dynamiques)</li>
+<li><strong>Identifier</strong> les facteurs de risque intrinsèques et extrinsèques de rupture du LCA et les mécanismes lésionnels (sans contact vs contact)</li>
+<li><strong>Réaliser</strong> un examen clinique structuré du genou aigu et chronique (Lachman, pivot-shift, tiroir, tests méniscaux, tests ligaments collatéraux)</li>
+<li><strong>Interpréter</strong> les examens d'imagerie (radiographies, IRM — signes directs et indirects, arthrométrie)</li>
+<li><strong>Diagnostiquer</strong> les lésions associées (méniscales, chondrales, ligamentaires) et évaluer leur impact sur la stratégie thérapeutique</li>
+<li><strong>Comprendre</strong> l'histoire naturelle du genou déficient en LCA et le risque arthrosique à long terme</li>
+<li><strong>Poser</strong> l'indication chirurgicale vs conservatrice selon le profil du patient (âge, niveau d'activité, lésions associées, statut coper/non-coper)</li>
+<li><strong>Maîtriser</strong> les techniques de reconstruction du LCA (OTO, DIDT, QT, allogreffe) et leurs avantages/inconvénients respectifs</li>
+<li><strong>Réaliser</strong> (ou assister) une reconstruction arthroscopique du LCA : positionnement anatomique des tunnels, passage de la greffe, fixation</li>
+<li><strong>Prescrire</strong> et superviser un protocole de rééducation structuré par phases avec critères objectifs de progression</li>
+<li><strong>Appliquer</strong> les critères de retour au sport (RTS) basés sur les tests fonctionnels (isocinétique, hop tests, Y-Balance, questionnaires psychologiques)</li>
+<li><strong>Dépister</strong> et prendre en charge les complications (arthrofibrose, cyclope, re-rupture, douleur antérieure)</li>
+<li><strong>Planifier</strong> une chirurgie de révision en cas d'échec de la primo-reconstruction</li>
+<li><strong>Adapter</strong> la prise en charge aux situations particulières (enfant, femme, sportif élite, genou multi-ligamentaire, arthrose)</li>
+<li><strong>Mettre en œuvre</strong> les programmes de prévention primaire validés (FIFA 11+, PEP) et évaluer leur efficacité</li>
+<li><strong>Connaître</strong> les innovations (BEAR, biothérapies, IA, robotique) et leur niveau de preuve</li>
+</ol>
+<h2 id="14-ce-qui-distingue-cette-formation">1.4 Ce qui distingue cette formation</h2>
+<table>
+<thead>
+<tr>
+<th>Public</th>
+<th>Angle spécifique</th>
+<th>Modules à focus renforcé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internes en chirurgie orthopédique</strong></td>
+<td>Technique chirurgicale, geste arthroscopique, planification</td>
+<td>M19-M26, M33-M35</td>
+</tr>
+<tr>
+<td><strong>Chirurgiens orthopédistes</strong></td>
+<td>Indications, techniques avancées, révisions, situations complexes</td>
+<td>M18-M38</td>
+</tr>
+<tr>
+<td><strong>Médecins du sport</strong></td>
+<td>Diagnostic clinique, décision thérapeutique, RTS, prévention</td>
+<td>M10-M17, M27-M32, M39-M40</td>
+</tr>
+<tr>
+<td><strong>Radiologues</strong></td>
+<td>IRM du genou, arthrométrie, imagerie de révision</td>
+<td>M13-M16</td>
+</tr>
+<tr>
+<td><strong>Kinésithérapeutes / MPR</strong></td>
+<td>Rééducation par phases, tests fonctionnels, réathlétisation, prévention</td>
+<td>M27-M32, M39-M40</td>
+</tr>
+<tr>
+<td><strong>Médecins généralistes</strong></td>
+<td>Diagnostic initial, orientation, suivi post-opératoire</td>
+<td>M10-M12, M17-M18, M27</td>
+</tr>
+</tbody>
+</table>
+<p>Tags de public :<br />
+- 🔷 <strong>CHIRURGIEN</strong> — pertinent pour orthopédistes et internes<br />
+- 🏥 <strong>MÉDECIN DU SPORT</strong> — pertinent pour médecins du sport et généralistes<br />
+- 🔶 <strong>RADIOLOGUE</strong> — pertinent pour imagerie<br />
+- 🟢 <strong>KINÉ/MPR</strong> — pertinent pour kinésithérapeutes et rééducateurs<br />
+- 🟣 <strong>TOUS</strong> — pertinent pour l'ensemble des publics</p>
+<hr />
+<h1 id="2-public-cible-et-prerequis">2. PUBLIC CIBLE ET PRÉREQUIS</h1>
+<h2 id="21-public-cible">2.1 Public cible</h2>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Public</th>
+<th>Modules obligatoires</th>
+<th>Modules optionnels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Niveau 1 — Fondamental</strong></td>
+<td>Internes début de cursus, médecins généralistes, kinésithérapeutes en formation</td>
+<td>M01-M18, M27-M29, M39-M40</td>
+<td>M19-M26, M30-M38, M41-M42</td>
+</tr>
+<tr>
+<td><strong>Niveau 2 — Intermédiaire</strong></td>
+<td>Internes fin de cursus, médecins du sport, kinésithérapeutes spécialisés, radiologues</td>
+<td>M01-M32, M39-M40</td>
+<td>M33-M38, M41-M42</td>
+</tr>
+<tr>
+<td><strong>Niveau 3 — Expert</strong></td>
+<td>Chirurgiens orthopédistes, chirurgiens du sport, experts en ligamentoplastie</td>
+<td>M01-M42 (intégralité)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-prerequis">2.2 Prérequis</h2>
+<ul>
+<li>Diplôme de médecine (ou en cours) ou diplôme de kinésithérapie</li>
+<li>Connaissances de base en anatomie du membre inférieur</li>
+<li>Pour les modules chirurgicaux (M19-M26) : formation chirurgicale en cours ou validée</li>
+<li>Pour les modules d'imagerie (M13-M16) : bases en lecture IRM recommandées</li>
+</ul>
+<hr />
+<h1 id="3-architecture-pedagogique-globale">3. ARCHITECTURE PÉDAGOGIQUE GLOBALE</h1>
+<h2 id="31-plan-general-12-parties-42-modules">3.1 Plan général — 12 parties, 42 modules</h2>
+<table>
+<thead>
+<tr>
+<th>Partie</th>
+<th>Titre</th>
+<th>Modules</th>
+<th>Contenu</th>
+<th>Heures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>00</strong></td>
+<td><strong>Introduction et charte</strong></td>
+<td>—</td>
+<td>Plan, conventions, bibliographie fondatrice</td>
+<td>1h</td>
+</tr>
+<tr>
+<td><strong>01</strong></td>
+<td><strong>Embryologie et développement du genou</strong></td>
+<td>M01-M03</td>
+<td>Embryologie articulaire, morphogenèse du pivot central, développement méniscal</td>
+<td>10h</td>
+</tr>
+<tr>
+<td><strong>02</strong></td>
+<td><strong>Anatomie du genou et du LCA</strong></td>
+<td>M04-M07</td>
+<td>Ostéologie, ligaments (LCA faisceaux AM/PL, LCP, collatéraux), ménisques, cartilage, PAPE/PAPI, vascularisation, innervation</td>
+<td>16h</td>
+</tr>
+<tr>
+<td><strong>03</strong></td>
+<td><strong>Biomécanique du genou et du LCA</strong></td>
+<td>M08-M09</td>
+<td>Cinématique, rôle stabilisateur du LCA, proprioception, stabilisateurs dynamiques</td>
+<td>8h</td>
+</tr>
+<tr>
+<td><strong>04</strong></td>
+<td><strong>Épidémiologie et mécanismes lésionnels</strong></td>
+<td>M10-M12</td>
+<td>Incidence, facteurs de risque, mécanismes sans contact/contact, lésions associées, scores de risque</td>
+<td>12h</td>
+</tr>
+<tr>
+<td><strong>05</strong></td>
+<td><strong>Diagnostic clinique</strong></td>
+<td>M13-M15</td>
+<td>Examen clinique structuré, tests spéciaux, scores fonctionnels, examen sous AG</td>
+<td>12h</td>
+</tr>
+<tr>
+<td><strong>06</strong></td>
+<td><strong>Imagerie du genou lésé</strong></td>
+<td>M16-M18</td>
+<td>Radiographies, IRM (signes directs/indirects, ménisques, cartilage), arthrométrie, scanner</td>
+<td>14h</td>
+</tr>
+<tr>
+<td><strong>07</strong></td>
+<td><strong>Histoire naturelle et décision thérapeutique</strong></td>
+<td>M19-M21</td>
+<td>Genou déficient en LCA, coper/non-coper, indications chirurgicales vs conservatrices, traitement fonctionnel</td>
+<td>10h</td>
+</tr>
+<tr>
+<td><strong>08</strong></td>
+<td><strong>Reconstruction chirurgicale du LCA</strong></td>
+<td>M22-M28</td>
+<td>Greffons (OTO, DIDT, QT, allogreffe), technique arthroscopique, tunnels anatomiques, fixation, gestes associés (ménisque, cartilage, ostéotomie)</td>
+<td>24h</td>
+</tr>
+<tr>
+<td><strong>09</strong></td>
+<td><strong>Rééducation et retour au sport</strong></td>
+<td>M29-M33</td>
+<td>Protocoles par phases, tests fonctionnels (isocinétique, hop tests), critères RTS, réathlétisation, rééducation accélérée vs conservatrice</td>
+<td>16h</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>Complications et révisions</strong></td>
+<td>M34-M37</td>
+<td>Arthrofibrose, cyclope, re-rupture, infections, bilan d'échec, chirurgie de révision</td>
+<td>14h</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>Situations particulières et prévention</strong></td>
+<td>M38-M40</td>
+<td>LCA pédiatrique, femme/sport, genou multi-ligamentaire, prévention primaire (FIFA 11+), prévention secondaire</td>
+<td>10h</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>Innovations et perspectives</strong></td>
+<td>M41-M42</td>
+<td>BEAR implant, biothérapies, ligaments synthétiques, IA, robotique, ingénierie tissulaire</td>
+<td>8h</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>TOTAL</strong></td>
+<td><strong>~155h</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="32-detail-des-modules">3.2 Détail des modules</h2>
+<h3 id="partie-01-embryologie-et-developpement-du-genou-m01-m03">Partie 01 — Embryologie et Développement du Genou (M01-M03)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M01</strong></td>
+<td>Embryologie articulaire du genou</td>
+<td>4h</td>
+<td>Développement embryonnaire du membre inférieur (semaines 4-8 — bourgeon de membre, condensation mésenchymateuse, chondrification, interzone articulaire), facteurs moléculaires de la morphogenèse articulaire (<strong>GDF-5/BMP</strong>, Wnt14, Noggin — rôle dans la cavitation articulaire), formation de la cavité articulaire par apoptose et cavitation (semaine 7-8), développement des surfaces articulaires (fémur distal, plateau tibial), ossification enchondrale, centres d'ossification secondaires (condyles fémoraux — naissance, tubérosité tibiale antérieure — 10-12 ans), chronologie de la maturation osseuse du genou</td>
+</tr>
+<tr>
+<td><strong>M02</strong></td>
+<td>Morphogenèse du pivot central et des ménisques</td>
+<td>3h</td>
+<td>Développement du <strong>LCA</strong> : apparition dès la <strong>semaine 7-8</strong> à partir du blastème mésenchymateux intercondylien, différenciation progressive des faisceaux AM et PL (semaine 9-10), maturation du réseau de collagène (type I dominant, types III et V accessoires), développement simultané du <strong>LCP</strong> (en arrière du LCA), innervation embryonnaire (mécanorécepteurs dès la semaine 10), vascularisation embryonnaire (artère géniculée moyenne), développement des <strong>ménisques</strong> (condensation mésenchymateuse — semaine 8, vascularisation initialement complète puis régression progressive vers configuration adulte — zone rouge périphérique, zone blanche avasculaire centrale), anomalies de développement (ménisque discoïde, agénésie du LCA — rarissime)</td>
+</tr>
+<tr>
+<td><strong>M03</strong></td>
+<td>Croissance et maturation du genou de l'enfant à l'adulte</td>
+<td>3h</td>
+<td>Croissance des physes fémorale distale et tibiale proximale (contribution respective à la longueur du membre — fémur distal = <strong>70 %</strong> de la croissance fémorale, tibia proximal = <strong>55 %</strong> de la croissance tibiale), maturation du cartilage de croissance et fermeture des physes (filles 14-16 ans, garçons 16-18 ans — importance pour la chirurgie du LCA pédiatrique), évolution de l'alignement des membres inférieurs avec l'âge (genu varum physiologique → genu valgum physiologique → alignement neutre à 7-8 ans), morphogenèse de l'échancrure intercondylienne (notch width index — NWI), pente tibiale postérieure (développement et variations anatomiques — impact sur le risque de rupture du LCA), évolution de la laxité ligamentaire avec l'âge et la maturation (laxité constitutionnelle chez l'enfant vs adulte)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-02-anatomie-du-genou-et-du-lca-m04-m07">Partie 02 — Anatomie du Genou et du LCA (M04-M07)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M04</strong></td>
+<td>Ostéologie et surfaces articulaires du genou</td>
+<td>4h</td>
+<td><strong>Fémur distal</strong> : condyles médial (plus long, plus étroit → rôle dans la rotation automatique de Fick) et latéral, trochlée fémorale (angle de trochlée, dysplasie trochléenne — classification Dejour), échancrure intercondylienne (dimensions, NWI — Notch Width Index &lt; 0,2 = facteur de risque LCA, Resident's ridge), épicondyles (insertion LCM, LCL). <strong>Tibia proximal</strong> : plateaux tibiaux médial (concave, plus grand) et latéral (convexe, plus petit — rôle dans la mobilité rotatoire), éminence intercondylaire (épines tibiales — insertion du LCA), tubérosité tibiale antérieure (TTA — insertion du tendon rotulien), <strong>pente tibiale postérieure</strong> (normale 7-10° — pente &gt; 12° = facteur de risque rupture LCA et de laxité résiduelle post-reconstruction, mesure sur radiographie de profil). <strong>Patella</strong> : facettes articulaires, crête médiane, patella alta/baja (index Caton-Deschamps), rôle dans l'appareil extenseur. <strong>Fibula proximale</strong> : articulation tibio-fibulaire proximale, insertion LCL et biceps fémoral</td>
+</tr>
+<tr>
+<td><strong>M05</strong></td>
+<td>Anatomie du ligament croisé antérieur</td>
+<td>4h</td>
+<td><strong>Insertions</strong> : insertion fémorale (face médiale du condyle fémoral latéral, en arrière du Resident's ridge, empreinte semi-lunaire 16-18 mm, repère arthroscopique — over-the-top position, horloge 10h30 genou droit / 1h30 genou gauche), insertion tibiale (aire intercondylaire antérieure, en avant et latéral par rapport à l'épine tibiale médiale, empreinte ovale 11 × 17 mm, repères — corne antérieure ménisque latéral, ligament interméniscal transverse). <strong>Faisceaux</strong> : <strong>faisceau antéro-médial (AM)</strong> — tendu en flexion (frein principal de la TTA en flexion &gt; 30°), <strong>faisceau postéro-latéral (PL)</strong> — tendu en extension (rôle dans la stabilité rotatoire en extension), interaction des faisceaux au cours de la flexion-extension (torsion hélicoïdale). <strong>Dimensions</strong> : longueur 31-38 mm, largeur 7-12 mm à mi-substance. <strong>Histologie</strong> : collagène de type I (90 %), fibres ondulées (crimp pattern), fibroblastes, matrice extracellulaire (protéoglycanes, élastine). <strong>Vascularisation</strong> : artère géniculée moyenne (branche de l'artère poplitée) → réseau synovial enveloppant le LCA, vascularisation intrinsèque pauvre (hypo-vascularisation relative de la zone médiane → mauvais potentiel de cicatrisation). <strong>Innervation</strong> : mécanorécepteurs (Ruffini — 40 % → proprioception position, Pacini — 25 % → accélération, Golgi-like — 20 % → tension maximale, terminaisons libres — 15 % → nociception), rôle proprioceptif majeur du LCA (réflexe neuromusculaire de protection — boucle LCA-ischio-jambiers)</td>
+</tr>
+<tr>
+<td><strong>M06</strong></td>
+<td>Ménisques, cartilage et ligaments collatéraux</td>
+<td>4h</td>
+<td><strong>Ménisques</strong> : morphologie (ménisque médial en C, ménisque latéral en O quasi-circulaire — plus mobile), insertions (cornes antérieures et postérieures, ligament ménisco-fémoral de Humphry/Wrisberg, ligament coronaire, capsule), <strong>vascularisation zonale</strong> (zone rouge-rouge = périphérique vascularisée → réparable, zone rouge-blanc = intermédiaire → réparable selon conditions, zone blanc-blanc = centrale avasculaire → non réparable — résection), fonction (transmission des charges — 50-70 % en extension, 85 % en flexion, amortissement, congruence, stabilisation, lubrification), <strong>lésion de rampe</strong> (rampe méniscale postéro-médiale — hidden lesion de Staubli — prévalence 17-24 % des ruptures LCA, diagnostic arthroscopique par exploration systématique du récessus postéro-médial). <strong>Cartilage articulaire</strong> : structure en 4 zones (superficielle, transitionnelle, profonde, calcifiée), composition (collagène type II, protéoglycanes, eau 70-80 %), propriétés biomécaniques (viscoélasticité), classification des lésions (ICRS 0-4). <strong>LCM</strong> (ligament collatéral médial) : faisceau superficiel (long, résistant — frein primaire valgus) et faisceau profond (ménisco-fémoral et ménisco-tibial — ancrage méniscal). <strong>LCL</strong> (ligament collatéral latéral) : rond, tendu du condyle latéral fémoral à la tête fibulaire (frein primaire varus)</td>
+</tr>
+<tr>
+<td><strong>M07</strong></td>
+<td>Point d'angle postéro-externe (PAPE), PAPI, capsule et structures neurovasculaires</td>
+<td>4h</td>
+<td><strong>PAPE</strong> (coin postéro-latéral) : anatomie complexe — LCL, tendon du muscle poplité (rôle de stabilisateur rotatoire externe), ligament poplité-fibulaire, ligament poplité arqué, coque condylienne postéro-latérale, importance chirurgicale dans les lésions multi-ligamentaires (instabilité rotatoire postéro-latérale si lésé), tests cliniques spécifiques (dial test &gt; 10° à 30° = lésion isolée PAPE, &gt; 10° à 30° ET 90° = PAPE + LCP). <strong>PAPI</strong> (coin postéro-médial) : ligament oblique postérieur (POL), expansion du semi-membraneux, corne postérieure du ménisque médial (rôle de stabilisateur secondaire de la TTA — sacrifice de la corne postérieure ménisque médial = aggravation majeure de la laxité antérieure), coque condylienne postéro-médiale. <strong>Capsule articulaire</strong> : capsule fibreuse (épaisse postérieurement — coque condylienne, fine antéro-latéralement), synoviale (revêtement interne, plis synoviaux — plica), bourse sous-quadricipitale (cul-de-sac supra-patellaire), bourse poplitée. <strong>Structures neurovasculaires</strong> : artère poplitée (rapport postérieur étroit avec la capsule postérieure — risque en luxation du genou), nerf fibulaire commun (contourne le col de la fibula — risque dans les lésions du PAPE et en chirurgie latérale), nerf tibial, artères et veines géniculées (5 branches articulaires)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-03-biomecanique-du-genou-et-du-lca-m08-m09">Partie 03 — Biomécanique du Genou et du LCA (M08-M09)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M08</strong></td>
+<td>Cinématique et biomécanique articulaire du genou</td>
+<td>4h</td>
+<td><strong>Degrés de liberté</strong> : 6 DDL (3 rotations + 3 translations — flexion/extension, rotation interne/externe, varus/valgus, translation antéro-postérieure, compression/distraction, translation médio-latérale), <strong>cinématique de flexion-extension</strong> (roulement-glissement — roulement pur 0-20° puis glissement progressif, mouvement de vis hélicoïdale — rotation automatique de Fick : rotation externe tibiale 5-10° en extension terminale par asymétrie condylienne), <strong>surfaces de contact</strong> (déplacement postérieur du point de contact avec la flexion — important pour le positionnement des tunnels), forces transmises au genou (3-5× poids du corps à la marche, 7-10× à la course, 12-15× au pivoting/atterrissage — pic de force sur le LCA lors du pivoting : 2 000-3 000 N vs résistance ultime du LCA : 2 160 N ± 157 — Woo, <em>JBJS</em> 1991), rôle des ménisques dans la biomécanique (augmentation congruence, distribution des charges, amortissement des chocs), impact de la méniscectomie (↑ pression de contact 200-300 %)</td>
+</tr>
+<tr>
+<td><strong>M09</strong></td>
+<td>Rôle biomécanique du LCA et stabilisateurs dynamiques</td>
+<td>4h</td>
+<td><strong>Rôle du LCA</strong> : frein primaire (86 %) de la <strong>translation tibiale antérieure</strong> (TTA), frein secondaire de la <strong>rotation interne</strong> tibiale, frein de l'hyperextension. <strong>Faisceaux et isométrie</strong> : AM tendu en flexion (frein de la TTA en flexion — test de Lachman), PL tendu en extension et en rotation (frein du pivot-shift — stabilité rotatoire), concept d'isométrie (aucun point n'est parfaitement isométrique — variation de longueur 4-7 mm sur l'arc de flexion, implications pour le positionnement des tunnels), point isométrique relatif (centre de l'empreinte fémorale — over-the-top position). <strong>Stabilisateurs dynamiques</strong> : ischio-jambiers (semi-tendineux, semi-membraneux, biceps fémoral — synergistes du LCA car tirent le tibia en postérieur), quadriceps (antagoniste du LCA car tire le tibia en antérieur — force cisaillante antérieure maximale 0-60° de flexion → importance de la rééducation en CKC), gastrocnémiens (stabilisateurs postérieurs), muscle poplité (stabilisateur rotatoire externe). <strong>Proprioception</strong> : boucle neuromusculaire LCA→ischio-jambiers (afférence proprioceptive → réponse motrice de contraction protectrice), altération proprioceptive après rupture du LCA (temps de réaction musculaire allongé — Beard, <em>JBJS</em> 1993), plasticité neuromusculaire post-reconstruction (récupération proprioceptive partielle via les mécanorécepteurs du greffon)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-04-epidemiologie-et-mecanismes-lesionnels-m10-m12">Partie 04 — Épidémiologie et Mécanismes Lésionnels (M10-M12)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M10</strong></td>
+<td>Épidémiologie de la rupture du LCA</td>
+<td>4h</td>
+<td>Incidence (200 000-400 000/an USA, 45 000/an France, 1/3 500 habitants/an), augmentation séculaire (+350 % chez l'enfant en 20 ans — Werner 2016), distribution par âge (pic 15-25 ans — sport), sex-ratio (femme/homme = 2-8× selon le sport — Hewett 2006, Prodromos 2007), <strong>sports à risque</strong> (football — 40 % des ruptures en France, ski — 20 %, basketball, handball — très haute incidence en Scandinavie, rugby, volleyball, arts martiaux), registres nationaux (Registre SANTI-France, Swedish ACL Registry — SNKLR, MOON Group USA, NKLR Norvège), coût socio-économique (coût moyen d'une reconstruction + rééducation : 10 000-25 000 € en France, 20 000-50 000 $ aux USA, arrêt de travail moyen 6-9 mois)</td>
+</tr>
+<tr>
+<td><strong>M11</strong></td>
+<td>Facteurs de risque de rupture du LCA</td>
+<td>4h</td>
+<td><strong>Facteurs intrinsèques non modifiables</strong> : sexe féminin (↑ valgus dynamique, ↓ largeur échancrure, ↑ laxité, ↑ pente tibiale, facteurs hormonaux — variation de laxité ligamentaire au cours du cycle menstruel, risque ↑ en phase pré-ovulatoire — Beynnon <em>JOSPT</em> 2006), morphologie de l'échancrure intercondylienne (NWI &lt; 0,2 — Souryal 1988), <strong>pente tibiale postérieure</strong> (&gt; 12° = ×3,5 risque — Bisson 2003, Webb 2013), laxité constitutionnelle (score Beighton ≥ 4), antécédent familial (composante génétique — polymorphismes du collagène COL1A1, COL5A1, COL12A1 — Posthumus, September <em>BJSM</em> 2009), âge (pic de risque 15-25 ans). <strong>Facteurs intrinsèques modifiables</strong> : déficit neuromusculaire (dominance ligamentaire, dominance quadricipitale, dominance de la jambe, déficit du tronc — modèle de Hewett 2005), IMC élevé, déconditionnement. <strong>Facteurs extrinsèques</strong> : type de sport (pivoting +++), surface de jeu (gazon artificiel vs naturel — débat), conditions météo (terrain sec = plus d'accroche = plus de pivot fixé), chaussures (crampons hauts — ↑ accroche rotatoire), niveau de compétition (élite vs récréatif — données contradictoires), fatigue (4ème quart-temps, fin de saison — Alentorn-Geli 2009)</td>
+</tr>
+<tr>
+<td><strong>M12</strong></td>
+<td>Mécanismes lésionnels et lésions associées</td>
+<td>4h</td>
+<td><strong>Mécanisme sans contact (70 %)</strong> : décélération brusque + changement de direction, réception de saut en valgus-rotation externe (pivot fixé, genou quasi-tendu 0-30° de flexion, quadriceps dominant, déficit de contrôle du tronc), vidéo-analyse (Olsen 2004, Boden 2000 — pattern de "position of no return"), <strong>mécanisme avec contact (30 %)</strong> : traumatisme direct en valgus (tackle en football/rugby), hyperextension forcée, contact en rotation. <strong>Bone bruise</strong> : contusion osseuse sous-chondrale par impaction des surfaces articulaires au moment de la subluxation → <strong>pattern pathognomonique</strong> en IRM : condyle fémoral latéral postérieur + plateau tibial latéral antérieur (kissing contusion). <strong>Lésions méniscales associées</strong> : présentes dans <strong>50-75 %</strong> des ruptures aiguës du LCA (ménisque latéral &gt; médial en aigu, ménisque médial &gt; latéral en chronique), lésion de rampe postéro-médiale (Staubli — 17-24 %), anse de seau avec blocage. <strong>Lésions chondrales</strong> : 20-40 % des ruptures aiguës (condyle fémoral latéral, plateau tibial latéral). <strong>Lésions ligamentaires associées</strong> : LCM (triade d'O'Donoghue — LCA + LCM + ménisque médial), LCL/PAPE (pentade — luxation du genou, atteinte vasculaire possible). <strong>Fracture de Segond</strong> : fracture-avulsion de la marge latérale du plateau tibial (insertion du ligament capsulaire antéro-latéral et tractus ilio-tibial) — <strong>pathognomonique</strong> de la rupture du LCA (sensibilité faible 9 % mais spécificité 100 %)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-05-diagnostic-clinique-m13-m15">Partie 05 — Diagnostic Clinique (M13-M15)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M13</strong></td>
+<td>Interrogatoire et examen clinique du genou aigu</td>
+<td>4h</td>
+<td>🟣 <strong>Interrogatoire</strong> : circonstances (sport, mécanisme — contact/sans contact, position du pied et du genou), symptômes immédiats (<strong>craquement audible</strong> — 56-85 %, <strong>impotence fonctionnelle immédiate</strong>, sensation de "déboîtement", <strong>hémarthrose rapide</strong> &lt; 12h — présente dans 72 % des ruptures LCA), évolution (gonflement, boiterie, instabilité lors de changements de direction, épisodes de dérobement — giving way). <strong>Examen clinique aigu</strong> (souvent limité par la douleur et l'épanchement) : inspection (gonflement, ecchymose — signe du pinceau, attitude antalgique en flexion), épanchement (choc rotulien, signe du glaçon, signe du flot — mesure périmètre supra-patellaire vs controlatéral), ponction articulaire (hémarthrose = sang + graisse si fracture ostéochondrale associée), palpation (douleur ligamentaire, interligne articulaire — ménisques, col fibulaire — nerf fibulaire). <strong>Règle clinique</strong> : hémarthrose aiguë traumatique du genou = <strong>rupture du LCA dans 72 %</strong> des cas (Noyes, <em>CORR</em> 1980)</td>
+</tr>
+<tr>
+<td><strong>M14</strong></td>
+<td>Tests spéciaux du LCA et des structures associées</td>
+<td>4h</td>
+<td>🟣 <strong>Tests du LCA</strong> : <strong>Lachman</strong> (flexion 20-30°, translation tibiale antérieure, arrêt mou vs dur — sensibilité <strong>87 %</strong>, spécificité <strong>93 %</strong> — test le plus sensible en aigu), <strong>tiroir antérieur</strong> (flexion 90°, translation antérieure du tibia — sensibilité 48-62 % en aigu car protection des ischio-jambiers — meilleur en chronique et sous AG), <strong>pivot-shift</strong> (Galway-MacIntosh — extension → flexion sous valgus + rotation interne → ressaut rotatoire de réduction à 20-30° de flexion — spécificité <strong>98 %</strong> mais sensibilité faible en veille 24 % car douloureux → meilleur sous AG, test le plus corrélé à l'instabilité fonctionnelle), <strong>Slocum</strong> (tiroir antérieur en rotation interne/externe → différencie instabilité antéro-médiale vs antéro-latérale), <strong>KT-1000/GNRB</strong> (arthrométrie instrumentale — différentiel &gt; 3 mm = rupture du LCA). <strong>Tests méniscaux</strong> : McMurray (rotation + extension → claquement à l'interligne), Thessaly (test en charge, rotation à 20° de flexion — sensibilité 89 %), Apley (compression-rotation en décubitus ventral). <strong>Tests ligaments collatéraux</strong> : testing en valgus à 0° et 30° (LCM — classification Hughston grades I-III), testing en varus (LCL). <strong>Tests PAPE</strong> : dial test (rotation externe à 30° et 90° — genou en décubitus ventral), recurvatum externe en rotation (genou en décubitus dorsal → hyperextension + rotation externe = PAPE). <strong>Tests LCP</strong> : tiroir postérieur, step-off (perte du step-off tibial antérieur), Godfrey (sag test)</td>
+</tr>
+<tr>
+<td><strong>M15</strong></td>
+<td>Scores fonctionnels et classification des laxités</td>
+<td>4h</td>
+<td>🟣 <strong>Classification IKDC</strong> (International Knee Documentation Committee) : évaluation objective de la laxité (grade A normal → D très anormal), 4 domaines (laxité, amplitudes, examen fonctionnel, signes cliniques). <strong>Scores fonctionnels</strong> : <strong>Lysholm</strong> (100 pts — douleur, instabilité, blocage, gonflement, boiterie, escaliers, squat, appui), <strong>IKDC subjectif</strong> (questionnaire validé — 18 items, échelle 0-100), <strong>KOOS</strong> (Knee injury and Osteoarthritis Outcome Score — 5 sous-échelles : symptômes, douleur, AVQ, sport, qualité de vie), <strong>Tegner</strong> (niveau d'activité 0-10 — 10 = football national, 6 = sport pivot récréatif, 3 = natation), <strong>ACL-RSI</strong> (Anterior Cruciate Ligament - Return to Sport after Injury — dimension psychologique du retour au sport, 12 items, seuil &gt; 56 % = bonne probabilité de RTS — Webster 2008). <strong>Arthrométrie</strong> : <strong>KT-1000/KT-2000</strong> (mesure instrumentale de la TTA en mm à 134 N et 89 N, différentiel bilatéral &gt; 3 mm = rupture du LCA), <strong>GNRB</strong> (arthrométrie robotisée — mesure reproductible de la laxité antérieure et de la compliance ligamentaire, seuil &gt; 3 mm de différentiel), <strong>Telos</strong> (stress radiographique — mesure de la TTA sous contrainte). <strong>Examen sous AG</strong> : indiqué en pré-opératoire pour quantifier précisément la laxité (Lachman, tiroir, pivot-shift sans défense musculaire), classification en grades (I = 3-5 mm, II = 5-10 mm, III = &gt; 10 mm), évaluation de l'arrêt (dur = partielle ? mou = complète)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-06-imagerie-du-genou-lese-m16-m18">Partie 06 — Imagerie du Genou Lésé (M16-M18)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M16</strong></td>
+<td>Radiographies et signes indirects</td>
+<td>4h</td>
+<td>🔶 Radiographies standard (face en charge, profil strict en flexion 30°, incidence de <strong>Schuss</strong> — échancrure intercondylienne, axiale de rotule 30°, <strong>incidence de Rosenberg</strong> — flexion 45° en charge = dépistage précoce arthrose fémoro-tibiale), signes indirects de rupture LCA : <strong>fracture de Segond</strong> (avulsion capsulo-ligamentaire antéro-latérale du plateau tibial — pathognomonique LCA), <strong>Deep lateral femoral notch sign</strong> (encoche sulcus profond &gt; 2 mm du condyle fémoral latéral postéro-latéral = bone bruise/fracture impaction — Woods &amp; Chapman), avulsion de l'épine tibiale (classification Meyers-McKeever types I-IV — surtout pédiatrique), fractures ostéochondrales associées, signes d'arthrose débutante (pincement interligne, ostéophytes). <strong>Télémétrie</strong> : goniométrie digitale (axe mécanique fémoro-tibial — HKA angle, pente tibiale sur profil — mesure sur radio de profil strict)</td>
+</tr>
+<tr>
+<td><strong>M17</strong></td>
+<td>IRM du genou : LCA, ménisques, cartilage</td>
+<td>6h</td>
+<td>🔶 <strong>Séquences optimales</strong> : PD fat-sat (plan sagittal — LCA, plan coronal — collatéraux/ménisques, plan axial — patella/trochlée), T2 fat-sat (œdème osseux, épanchement), T1 (anatomie osseuse, moelle), 3D DESS ou 3D PD SPACE (cartilage haute résolution). <strong>LCA en IRM</strong> — anatomie normale : bande hypointense oblique du condyle latéral au plateau tibial, parallèle à la ligne de Blumensaat en extension, signal homogène, contours nets, 2 faisceaux visibles en coupes obliques. <strong>Signes directs de rupture</strong> : discontinuité du ligament, signal hyperintense T2 diffus (rupture complète), horizontalisation du LCA (angle &lt; 45° avec le plateau tibial), absence de visualisation, masse amorphe de signal hétérogène dans l'échancrure. <strong>Signes indirects</strong> : <strong>bone bruise</strong> en miroir (kissing contusion — condyle fémoral latéral postérieur + plateau tibial latéral antérieur — pattern pathognomonique, sensibilité 80 %), rupture de la ligne de Blumensaat, tiroir antérieur spontané en IRM (uncovering du plateau tibial postérieur), buckling du LCP, subluxation antérieure du tibia &gt; 5 mm. <strong>Ménisques en IRM</strong> : classification de <strong>Stoller</strong> (grade 1 = signal ponctiforme intrameniscal, grade 2 = signal linéaire intrameniscal n'atteignant pas la surface, grade 3 = signal linéaire atteignant la surface = déchirure), types de déchirures (longitudinale/verticale, anse de seau — fragment déplacé "double PCL sign", radiaire, horizontale, complexe, lésion de rampe postéro-médiale), diagnostic d'instabilité méniscale (déplacement, fragment luxé). <strong>Cartilage en IRM</strong> : classification ICRS sur IRM (amincissement focal, fissuration, perte de substance, os exposé), séquences dédiées (3D DESS, dGEMRIC — cartilage mapping T2/T1rho). <strong>Lésions collatérales</strong> : LCM (épaississement, signal hyperintense T2, discontinuité — corrélation grades Hughston), PAPE (lésion poplitée, LCL, capsule postéro-latérale)</td>
+</tr>
+<tr>
+<td><strong>M18</strong></td>
+<td>Scanner, arthrométrie et imagerie de planification</td>
+<td>4h</td>
+<td>🔶🔷 <strong>Scanner</strong> : indications (fractures articulaires associées, bilan osseux pré-révision — évaluation des tunnels, planification d'ostéotomie), mesure de la pente tibiale (plus précise qu'en radiographie), mesure de la rotation fémorale et tibiale (scanner en rotation), évaluation des tunnels de révision (scanner 3D avec reconstruction — taille, position, confluence, communication). <strong>Arthrométrie</strong> : <strong>KT-1000/KT-2000</strong> (technique de mesure, reproductibilité, seuils diagnostiques — ≥ 3 mm de différentiel bilatéral à 134 N = sensibilité 92 %, spécificité 95 %), <strong>GNRB</strong> (robotisé — mesure automatique standardisée, calcul de la compliance ligamentaire, élasticité = ratio force/déplacement, avantage vs KT : reproductibilité supérieure — Collette 2012). <strong>Imagerie fonctionnelle dynamique</strong> : radiographies en stress (Telos — tiroir antérieur sous contrainte, mesure de la TTA en mm), écho dynamique (Lachman échographique — recherche émergeante). <strong>Imagerie de planification chirurgicale</strong> : mesure des tunnels anatomiques en IRM (centre de l'empreinte fémorale et tibiale), planification 3D (reconstruction 3D du fémur et du tibia à partir du scanner — logiciels de navigation), impression 3D pour simulation pré-opératoire (modèles anatomiques personnalisés)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-07-histoire-naturelle-et-decision-therapeutique-m19-m21">Partie 07 — Histoire Naturelle et Décision Thérapeutique (M19-M21)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M19</strong></td>
+<td>Histoire naturelle du genou déficient en LCA</td>
+<td>4h</td>
+<td>🟣 Concept de <strong>genou ACL-déficient</strong> (instabilité chronique, épisodes de giving way, dégénérescence progressive), <strong>survie méniscale</strong> sans reconstruction (Shelbourne 2000 — ↑ lésions méniscales secondaires avec le temps, 50 % de lésion méniscale médiale à 5 ans), <strong>arthrose</strong> post-rupture LCA (Lohmander, <em>AJSM</em> 2004 — 50-70 % de signes radiographiques d'arthrose à 15-20 ans, y compris après reconstruction ; Oiestad 2009 — méta-analyse : prévalence arthrose 0-13 % si LCA isolé, 21-48 % si lésion méniscale associée), facteurs de progression arthrosique (méniscectomie +++ — principale cause d'arthrose post-LCA, lésion chondrale initiale, surpoids, malalignement, niveau d'activité), retentissement fonctionnel (instabilité lors des activités de pivot → diminution du niveau d'activité sportive, impact sur la qualité de vie — KOOS, Lysholm), adaptation musculaire (hypertrophie ischio-jambiers compensatrice chez les "copers")</td>
+</tr>
+<tr>
+<td><strong>M20</strong></td>
+<td>Coper vs non-coper : classification fonctionnelle et décision</td>
+<td>3h</td>
+<td>🟣 <strong>Classification fonctionnelle</strong> (Fitzgerald 2000, Eastlack 2005) : <strong>Coper</strong> = patient capable de maintenir un niveau d'activité satisfaisant SANS reconstruction (compensation neuromusculaire efficace, pas de giving way, tests fonctionnels normaux), <strong>Non-coper</strong> = épisodes de giving way récurrents, instabilité lors des AVQ ou du sport, tests fonctionnels déficitaires, <strong>Adapter</strong> = patient qui réduit volontairement son niveau d'activité pour éviter l'instabilité. <strong>Critères de screening</strong> (Fitzgerald) : hop test LSI &gt; 90 %, KOS-ADLS &gt; 80 %, Tegner ≥ 80 % du pré-lésionnel, pas de giving way depuis la blessure → si tous les critères positifs = potentiel coper. <strong>Traitement des copers</strong> : rééducation neuromusculaire intensive + surveillance clinique régulière + critères de basculement vers la chirurgie (giving way, lésion méniscale secondaire, diminution du niveau d'activité). <strong>Importance de la décision partagée</strong> : information du patient sur les 3 options (reconstruction, rééducation seule, modification d'activité), risques et bénéfices de chaque option, objectifs du patient (retour au sport de pivot vs activités linéaires)</td>
+</tr>
+<tr>
+<td><strong>M21</strong></td>
+<td>Indications chirurgicales et traitement conservateur</td>
+<td>3h</td>
+<td>🔷🟣 <strong>Indications de reconstruction chirurgicale</strong> : patient jeune actif souhaitant reprendre le sport de pivot, non-coper (giving way récurrent), lésion méniscale réparable associée (la suture méniscale est plus efficace si combinée à la reconstruction LCA — stabilisation du genou protège la suture), lésion multi-ligamentaire, laxité objective grade II-III, demande fonctionnelle élevée (Tegner &gt; 5). <strong>Contre-indications relatives</strong> : patient sédentaire/Tegner &lt; 4, genou arthrosique avancé (KL ≥ 3), comorbidités générales (âge &gt; 50 ans — relative, pas absolue), refus de la rééducation prolongée. <strong>Traitement conservateur</strong> : indications (coper, patient sédentaire, patient &gt; 40 ans sans instabilité fonctionnelle, refus de chirurgie), protocole (rééducation intensive — renforcement IJ/quadriceps, proprioception, reprise progressive, orthèse fonctionnelle si besoin), résultats (Frobell, <em>NEJM</em> 2010 — "structured rehabilitation + optional delayed ACL reconstruction vs early ACL reconstruction" : pas de différence significative à 2 ans sur le score KOOS4 ; suivi à 5 ans : 51 % des patients du groupe conservateur ont finalement été opérés — cross-over ; interprétation : le traitement conservateur est une option initiale raisonnable avec possibilité de reconstruction différée si échec). <strong>Timing de la chirurgie</strong> : reconstruction précoce (&lt; 3 semaines — avantage : pas de lésion méniscale secondaire, inconvénient : risque d'arthrofibrose si genou inflammatoire) vs reconstruction différée (6-8 semaines — genou sec, mobilités complètes, quadriceps récupéré — timing préféré par la majorité des centres)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-08-reconstruction-chirurgicale-du-lca-m22-m28">Partie 08 — Reconstruction Chirurgicale du LCA (M22-M28)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M22</strong></td>
+<td>Greffon os-tendon rotulien-os (OTO / BTB)</td>
+<td>4h</td>
+<td>🔷 Historique (Kenneth Jones 1963, Clancy 1982), technique de prélèvement (incision longitudinale médiane, prélèvement du tiers central du tendon rotulien avec baguettes osseuses patellaire 10 × 25 mm et tibiale 10 × 25 mm, préparation du greffon sur table de mayo — tubulisation), avantages (fixation os-os → cicatrisation osseuse rapide 6-8 semaines, rigidité initiale élevée, gold standard historique, résistance ultime 2 977 N — Noyes, <em>JBJS</em> 1984), inconvénients (douleur antérieure du genou 10-30 %, risque de fracture patellaire, tendinopathie rotulienne, esthétique — cicatrice antérieure, position agenouillée difficile), résultats (taux de re-rupture 4-8 %, retour au sport 75-85 %), indications préférentielles (sportif de haut niveau jeune, sport de contact, révision)</td>
+</tr>
+<tr>
+<td><strong>M23</strong></td>
+<td>Greffon ischio-jambiers (DIDT / Hamstring)</td>
+<td>4h</td>
+<td>🔷 Historique et technique de prélèvement (incision oblique antéro-médiale sur la patte d'oie, identification et prélèvement du <strong>semi-tendineux</strong> et du <strong>gracilis</strong> au stripper tendineux, préparation en 4 brins — diamètre ≥ 8 mm obligatoire, sinon ajouter un brin ou changer de technique), avantages (moins de douleur antérieure, cicatrice discrète, prélèvement peu morbide, bonne intégration biologique), inconvénients (fixation tendineuse → cicatrisation tendons dans les tunnels plus lente, ↓ force de rotation interne et de flexion profonde 10-15 % — impact sur les sports nécessitant la flexion profonde, diamètre variable — facteur de re-rupture si &lt; 8 mm — Magnussen 2012, Conte 2014), résultats (taux de re-rupture comparable au BTB 5-10 %, retour au sport 70-80 %), régénération des ischio-jambiers (reconstitution tendineuse dans 70-80 % des cas à 12 mois — insertion souvent plus proximale), indications préférentielles (femmes, patients soucieux de la douleur antérieure, sport sans contact, patient &gt; 30 ans)</td>
+</tr>
+<tr>
+<td><strong>M24</strong></td>
+<td>Greffon tendon quadricipital (QT) et allogreffes</td>
+<td>3h</td>
+<td>🔷 <strong>Tendon quadricipital (QT)</strong> : technique (prélèvement du tendon quadricipital — full thickness avec pastille osseuse patellaire, ou partial thickness sans os — half QT), avantages (diamètre large et constant, surface de section &gt; DIDT, pas de sacrifice des ischio-jambiers, moins de douleur antérieure que le BTB), inconvénients (technique de prélèvement moins standardisée, learning curve), résultats (émergents — Slone 2015, Cavaignac 2017 — résultats comparables au BTB et au DIDT, tendance à ↓ douleur antérieure vs BTB), popularité croissante (adoption par de nombreux centres experts). <strong>Allogreffes</strong> : types (tendon rotulien, Achille, tibial antérieur/postérieur, fascia lata), avantages (pas de morbidité du site donneur, disponibilité, greffon de grande taille), inconvénients (risque infectieux — stérilisation/irradiation → altération des propriétés biomécaniques, intégration plus lente, coût, disponibilité en France — limitée, taux de re-rupture plus élevé chez le jeune sportif — MARS group, <em>JBJS</em> 2014 : × 2,8 vs autogreffe), indications (révisions, multi-ligamentaire, patient &gt; 40 ans, ligamentoplastie épargnant les autogreffes)</td>
+</tr>
+<tr>
+<td><strong>M25</strong></td>
+<td>Technique arthroscopique : tunnels, positionnement et fixation</td>
+<td>4h</td>
+<td>🔷 <strong>Installation</strong> (décubitus dorsal, garrot pneumatique, arthroscopie standard — voie antéro-latérale optique, voie antéro-médiale instrumentale, ± voie accessoire transportale pour le tunnel fémoral), <strong>exploration arthroscopique</strong> (bilan lésionnel — LCA, LCP, ménisques, cartilage, synoviale, échancrure — encochoplastie si nécessaire), <strong>positionnement du tunnel tibial</strong> : visée tibiale (angle 55-65°), point d'entrée (face antéro-médiale du tibia, 1-2 cm médial par rapport à la TTA), point de sortie intra-articulaire (centre de l'empreinte tibiale du LCA — en arrière du ligament interméniscal transverse, à mi-distance entre les épines tibiales), contrôle arthroscopique du guide et du tunnel, <strong>positionnement du tunnel fémoral</strong> : transportale (voie antéro-médiale en hyper-flexion &gt; 120° — positionnement anatomique +++, tunnel plus court, angulation oblique) vs outside-in (guide fémoral transcondylien — positionnement plus reproductible, tunnel plus long), repères arthroscopiques (Resident's ridge = limite antérieure de l'empreinte fémorale, bifurcate ridge = séparation AM/PL, over-the-top position = limite postérieure), position horaire (10h30 genou droit, 1h30 genou gauche — centre de l'empreinte fémorale), <strong>forage des tunnels</strong> (diamètre adapté au greffon — BTB : tunnel osseux 10 mm, DIDT : tunnel 8-9 mm selon diamètre du greffon), <strong>passage du greffon</strong> (traction par fils tracteurs, positionnement dans les tunnels, mise en tension en extension), <strong>fixation fémorale</strong> : vis d'interférence (résorbable — PLLA/HA, ou titane — pour BTB os-os), endobouton (cortical suspensory fixation — pour DIDT — TightRope, Endobutton CL, boucle ajustable), fixation all-inside (rétrograde), <strong>fixation tibiale</strong> : vis d'interférence, agrafe + vis, poteau + ligature, vis d'interférence résorbable + vis de secours. <strong>Mono-faisceau vs double-faisceaux</strong> : reconstruction anatomique mono-faisceau (standard actuel — positionnement au centre de l'empreinte), double-faisceaux (2 tunnels fémoral + 2 tunnels tibiaux — technique AM/PL, avantage théorique : meilleure stabilité rotatoire, inconvénient : complexité technique, pas de supériorité clinique démontrée en méta-analyse — Meredick 2008, Chen 2017 — abandon relatif)</td>
+</tr>
+<tr>
+<td><strong>M26</strong></td>
+<td>Augmentation ligamentaire et techniques spéciales</td>
+<td>3h</td>
+<td>🔷 <strong>Augmentation ligamentaire (Internal Brace)</strong> : concept (renforcement du greffon par un ruban synthétique haute résistance — FiberTape Arthrex — protégeant le greffon pendant la phase de ligamentisation), technique (passage du ruban en parallèle du greffon, fixation aux mêmes points), résultats préliminaires (↓ laxité résiduelle, ↓ re-rupture ? — données émergentes, Smith 2020), débat (protection mécanique vs limitation de la maturation biologique). <strong>Reconstruction avec préservation du moignon</strong> (ACL remnant-preserving reconstruction) : concept (conservation du moignon natif du LCA pour préserver la vascularisation et les mécanorécepteurs → amélioration de la proprioception et de la revascularisation du greffon), technique (passage du greffon à travers ou à côté du moignon), résultats (quelques études suggérant une meilleure proprioception — Kim, <em>Arthroscopy</em> 2011 — mais résultats à long terme manquants). <strong>Reconstruction avec reconstruction du ligament antéro-latéral (ALL)</strong> : concept anatomique (Claes 2013, Helito 2013 — ligament antéro-latéral du genou, distinct du tractus ilio-tibial), reconstruction combinée LCA + ALL (Sonnery-Cottet — Lyon, technique de ténodèse latérale extra-articulaire ou reconstruction anatomique ALL), rationnel (amélioration du contrôle rotatoire → ↓ pivot-shift résiduel → ↓ re-rupture ?), résultats (étude STABILITY 2024 — Getgood et al., <em>NEJM</em> — ↓ significative re-rupture avec LCA + ténodèse latérale extra-articulaire vs LCA seul chez les jeunes sportifs &lt; 25 ans, NNT = 8), indications (patient &lt; 25 ans, sport de pivot, pivot-shift grade 2-3, pente tibiale &gt; 12°, signe de Segond, révision)</td>
+</tr>
+<tr>
+<td><strong>M27</strong></td>
+<td>Gestes associés : ménisque, cartilage, ostéotomie</td>
+<td>4h</td>
+<td>🔷 <strong>Suture méniscale</strong> concomitante à la reconstruction LCA : indications (déchirure en zone rouge ou rouge-blanc, déchirure longitudinale/verticale &lt; 4 cm, patient jeune), techniques (all-inside — implants FasT-Fix, ULTRA FastFix, RapidLoc ; inside-out — canules avec aiguilles, suture au point postérieur par mini-abord ; outside-in — aiguilles transcutanées vers l'intérieur), taux de cicatrisation (85-95 % si combiné à la reconstruction LCA vs 60-70 % si suture isolée sur genou instable — DeHaven 2004), <strong>lésion de rampe</strong> (diagnostic : exploration systématique du récessus postéro-médial en portale postéro-médial, suture par voie postéro-médiale ou transcapsulaire — all-inside). <strong>Traitement cartilagineux</strong> : microfractures de Steadman (lésion &lt; 2 cm², condyle fémoral — comblement par caillot fibrineux/fibrocartilage), mosaïcoplastie (Hangody — cylindres ostéo-chondraux autologues, lésion 1-4 cm²), MACI (Matrix-induced Autologous Chondrocyte Implantation — 2 temps opératoires, lésion &gt; 2-4 cm²). <strong>Ostéotomie tibiale de valgisation (OTV)</strong> : indication (genu varum &gt; 5° + instabilité LCA chronique + arthrose fémoro-tibiale médiale débutante → l'OTV réduit les contraintes médiales ET détend les structures latérales, améliorant la laxité antérieure), technique (OTV d'ouverture médiale de Lobenhoffer — cale + plaque — ou OTV de fermeture latérale de Coventry), <strong>OTV + reconstruction LCA</strong> : en 1 temps (OTV puis LCA) ou 2 temps (OTV → cicatrisation 3-6 mois → LCA), résultats (amélioration fonctionnelle si indication bien posée — Bonin, <em>KSSTA</em> 2004)</td>
+</tr>
+<tr>
+<td><strong>M28</strong></td>
+<td>Période péri-opératoire et ligamentisation du greffon</td>
+<td>2h</td>
+<td>🔷🟢 <strong>Période péri-opératoire</strong> : antibioprophylaxie (céfazoline 2g IV), thromboprophylaxie (HBPM 14-45 jours selon facteurs de risque — discuté, certains centres ne prescrivent pas systématiquement en chirurgie arthroscopique isolée), anesthésie (AG ou rachianesthésie + bloc fémoral/adducteur pour analgésie post-opératoire — bloc nerveux périphérique ↓ douleur mais attention au risque de chute par ↓ force quadricipitale), drainage (discuté — pas systématique), attelle en extension (J0-J15 ou J0-S6 selon protocole, amovible pour rééducation), mise en charge (appui partiel puis complet selon greffon et gestes associés — appui complet dès J1 si LCA isolé sans suture méniscale, appui partiel 6 semaines si suture méniscale). <strong>Ligamentisation du greffon</strong> : processus de maturation biologique du greffon tendineux en structure ligamentaire (Amiel 1986, Claes 2011) — phases : (1) nécrose avasculaire (0-4 semaines — le greffon est mécaniquement fragile), (2) revascularisation et repopulation cellulaire (4-12 semaines), (3) remodelage du collagène (3-12 mois — réorientation des fibres, maturation), (4) maturation (12-24 mois — le greffon n'atteint jamais 100 % des propriétés du LCA natif — 50-80 % de la résistance à 2 ans). <strong>Implications cliniques</strong> : la période 6 semaines-6 mois est la plus vulnérable (revascularisation incomplète, collagène en remodelage → risque maximal de re-rupture si reprise trop précoce)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-09-reeducation-et-retour-au-sport-m29-m33">Partie 09 — Rééducation et Retour au Sport (M29-M33)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M29</strong></td>
+<td>Phase 1 — Protection et récupération initiale (J0-S6)</td>
+<td>3h</td>
+<td>🟢 Objectifs (contrôle de l'inflammation, récupération des amplitudes 0-90°, réveil du quadriceps, autonomie de marche), techniques (cryothérapie — Game Ready, compression, TENS antalgique, mobilisation passive continue — CPM controversé, exercices d'extension passive complète — prone hang, heel prop, contractions isométriques quadriceps — quad sets, SLR — Straight Leg Raise, marche avec cannes → sevrage progressif), <strong>critères de passage phase 2</strong> (extension passive complète = 0°, flexion ≥ 90°, pas d'épanchement clinique, SLR sans déficit d'extension active, marche sans boiterie sans cannes)</td>
+</tr>
+<tr>
+<td><strong>M30</strong></td>
+<td>Phase 2 — Renforcement et récupération fonctionnelle (S6-M3)</td>
+<td>3h</td>
+<td>🟢 Objectifs (récupération des amplitudes complètes, renforcement musculaire global — quadriceps +++, proprioception de base), techniques (vélo stationnaire, renforcement en <strong>chaîne cinétique fermée CKC</strong> — squat partiel, presse, step-up/step-down — sécurité : évite la translation tibiale antérieure vs chaîne ouverte OKC — leg extension prudent 90-60° uniquement, <strong>renforcement des ischio-jambiers</strong> — curl, Nordic hamstring — protecteurs du greffon, proprioception — plateau instable, bosu, exercices yeux fermés, travail de la marche — éliminer toute boiterie résiduelle, exercice en piscine — portance), <strong>critères de passage phase 3</strong> (flexion ≥ 120°, extension = 0°, force quadriceps ≥ 60 % du controlatéral, pas de douleur ni épanchement, proprioception de base acquise)</td>
+</tr>
+<tr>
+<td><strong>M31</strong></td>
+<td>Phase 3 — Reprise fonctionnelle et pré-athlétisation (M3-M6)</td>
+<td>3h</td>
+<td>🟢 Objectifs (renforcement avancé, reprise de la course à pied, début de la pliométrie, travail sportif non-pivot), techniques (renforcement CKC avancé — squat complet, fentes, step-up latéral, leg press unilatérale, renforcement OKC — leg extension arc complet si toléré, <strong>course à pied</strong> — début M3-M4 sur tapis roulant puis terrain plat, progression 10 %/semaine, <strong>plyométrie de base</strong> — sauts bipodaux, drop jump, box jump — attention à la qualité du mouvement : valgus dynamique = RED FLAG, gainage et travail du core — planche, side planche, pallof press), <strong>critères de passage phase 4</strong> (course 20 min sans douleur, force quadriceps ≥ 70 % controlatéral, single leg squat sans valgus dynamique, pas d'épanchement post-effort)</td>
+</tr>
+<tr>
+<td><strong>M32</strong></td>
+<td>Phase 4 — Réathlétisation et retour au sport (M6-M9/12)</td>
+<td>4h</td>
+<td>🟢🏥 Objectifs (retour au sport spécifique, tests fonctionnels validés, préparation psychologique), techniques (plyométrie avancée — sauts unipodaux, sauts latéraux, multi-directionnels, travail de <strong>changement de direction</strong> — cutting progressif, pivot, <strong>gestes sportifs spécifiques</strong> — dribble, tir, plaquage, chute en ski, entraînement collectif → compétition progressive), <strong>tests fonctionnels de RTS</strong> : <strong>isocinétique</strong> (ratio IJ/Q ≥ 85 % à 60°/s, déficit quadricipitale &lt; 10-15 % vs controlatéral = LSI ≥ 85-90 %), <strong>hop tests</strong> (single hop for distance, triple hop, crossover hop, 6-m timed hop — Limb Symmetry Index <strong>LSI ≥ 90 %</strong> sur les 4 tests), <strong>Y-Balance Test</strong> (Star Excursion Balance Test simplifié — asymétrie &lt; 4 cm), <strong>questionnaires psychologiques</strong> (ACL-RSI &gt; 56 %, TSK-11 — Tampa Scale of Kinesiophobia &lt; seuil). <strong>Critères de RTS (consensus 2016 — Grindem, Logerstedt)</strong> : temps minimum ≥ <strong>9 mois</strong> post-opératoire (chaque mois supplémentaire de retard dans le RTS avant 9 mois ↓ le taux de re-rupture de 51 % — Grindem, <em>BJSM</em> 2016), LSI ≥ 90 % sur isocinétique + hop tests, pas de douleur ni épanchement, confiance psychologique (ACL-RSI &gt; 56 %), <strong>passage des critères = autorisation médicale de RTS</strong></td>
+</tr>
+<tr>
+<td><strong>M33</strong></td>
+<td>Rééducation accélérée vs conservatrice et cas particuliers</td>
+<td>3h</td>
+<td>🟢🔷 <strong>Protocole accéléré</strong> (Shelbourne — retour au sport 4-6 mois — extension immédiate, appui complet J1, CKC précoce, course M2, sport M4-6) : résultats (pas d'augmentation de la laxité résiduelle — Shelbourne 2005, mais taux de re-rupture ? → réservé aux centres experts et patients sélectionnés). <strong>Protocole conservateur</strong> (retour au sport 9-12 mois — progression lente, critères stricts de passage inter-phases) : avantage = ligamentisation plus avancée, ↓ re-rupture (Grindem 2016). <strong>Suture méniscale associée</strong> : limitation de la flexion &gt; 90° pendant 6 semaines, pas de squat profond ni de course avant M4, impact sur le timing de RTS (prolongé). <strong>Arthrofibrose</strong> (cf. M34) : prise en charge spécifique de la raideur — mobilisation sous AG, arthrolyse arthroscopique. <strong>Douleur antérieure du genou</strong> : fréquente (10-30 % avec BTB), prise en charge — renforcement excentrique du quadriceps, taping, semelles, mobilisation patellaire. <strong>Rééducation post-révision</strong> : protocole plus conservateur (ligamentisation plus lente — os + greffon + os de comblement), RTS à 12-18 mois minimum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-10-complications-et-revisions-m34-m37">Partie 10 — Complications et Révisions (M34-M37)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M34</strong></td>
+<td>Arthrofibrose et cyclope lesion</td>
+<td>4h</td>
+<td>🔷🟢 <strong>Arthrofibrose</strong> : définition (perte de mobilité &gt; 10° en extension et/ou &gt; 20° en flexion vs controlatéral à 6 mois post-opératoire), classification de Shelbourne (type 1 — perte d'extension &lt; 10°, type 2 — perte d'extension &gt; 10° avec flexion normale, type 3 — perte d'extension + flexion, type 4 — patella infera + raideur globale), facteurs de risque (chirurgie trop précoce en phase inflammatoire, rééducation insuffisante, ATCD de raideur, greffon BTB, genu recurvatum pré-opératoire perdu), prévention (timing chirurgical : genou "froid" = sec, mobile, quadriceps actif → J21-S6 post-trauma, extension passive complète J1 post-opératoire, rééducation précoce agressive), traitement (mobilisation douce persévérante → mobilisation sous AG si plateau de récupération → arthrolyse arthroscopique si échec → programme de rééducation intensif post-arthrolyse). <strong>Cyclope lesion</strong> : nodule de tissu fibreux (cyclope = aspect en "œil de cyclope" au milieu du nodule) dans l'échancrure intercondylienne, en avant du greffon, résultat de la prolifération de tissu de granulation + impingement du moignon du LCA ou du greffon, symptôme = déficit d'extension terminale avec arrêt dur (butée mécanique) ≠ arthrofibrose (pas de butée mécanique), diagnostic (IRM — nodule en T2 dans l'échancrure antérieure), traitement (résection arthroscopique — résultats excellents, récidive rare)</td>
+</tr>
+<tr>
+<td><strong>M35</strong></td>
+<td>Re-rupture et lésion contro-latérale</td>
+<td>3h</td>
+<td>🔷🟣 <strong>Épidémiologie</strong> : taux de re-rupture du greffon 4-25 % (variable selon âge, sport, greffon, protocole de RTS — Wiggins 2016), taux de rupture du LCA contro-latéral 2-20 % (cumul à 5-15 ans), <strong>facteurs de risque de re-rupture</strong> : âge &lt; 25 ans (×4 — Webster KSSTA 2014), retour au sport de pivot à haut niveau (×3), retour au sport avant 9 mois (×7 — Grindem 2016), greffon de diamètre &lt; 8 mm (×2,3 — Magnussen 2012), tunnel fémoral non anatomique (trop antérieur — isométrique → ↓ contrôle rotatoire), allogreffe chez le jeune (×2,8 — MARS 2014), pente tibiale postérieure élevée &gt; 12° (×3,5), absence de ténodèse latérale extra-articulaire chez les patients à risque (STABILITY 2024). <strong>Diagnostic de re-rupture</strong> : récidive de giving way, Lachman redevenu positif, IRM (discontinuité du greffon, re-bone bruise), arthrométrie (↑ différentiel &gt; 3 mm). <strong>Prévention de la re-rupture</strong> : programme de prévention neuromusculaire post-reconstruction (↓ 60 % de re-rupture — Hewett 2013), respect du délai 9 mois minimum, passage des critères fonctionnels (hop tests LSI ≥ 90 %, isocinétique LSI ≥ 90 %), renforcement des ischio-jambiers +++</td>
+</tr>
+<tr>
+<td><strong>M36</strong></td>
+<td>Autres complications</td>
+<td>3h</td>
+<td>🔷 <strong>Infection du greffon</strong> : incidence (0,3-1,7 %), micro-organismes (Staphylococcus epidermidis/aureus — 50 %, Propionibacterium acnes), diagnostic (genou rouge, chaud, douloureux, fièvre, CRP élevée, ponction articulaire — leucocytes &gt; 25 000/mm³), traitement (lavage arthroscopique + antibiothérapie IV 6 semaines → conservation du greffon si diagnostic précoce vs ablation du greffon si échec), <strong>tunnel widening</strong> (élargissement progressif des tunnels osseux — incidence 25-100 % à 2 ans, mécanisme : micromouvements du greffon, réaction ostéolytique du LCR articulaire, vis résorbables), conséquence clinique (souvent asymptomatique, mais problème en cas de révision → tunnels élargis), <strong>douleur antérieure du genou</strong> (10-30 % avec BTB, mécanismes : tendinopathie du reliquat rotulien, névrome du nerf infra-patellaire — branche du nerf saphène, patella baja — raccourcissement du tendon rotulien), <strong>complications neurovasculaires</strong> (rares : lésion de l'artère poplitée — tunnel fémoral postérieur, lésion du nerf infra-patellaire — 50-70 % d'hypoesthésie transitoire avec DIDT, lésion du nerf fibulaire commun — chirurgie latérale/PAPE), <strong>syndrome du cyclope</strong> (cf. M34), <strong>fracture patellaire post-prélèvement BTB</strong> (0,5-2 %, facteur de risque : baguette osseuse trop large ou trop profonde)</td>
+</tr>
+<tr>
+<td><strong>M37</strong></td>
+<td>Chirurgie de révision du LCA</td>
+<td>4h</td>
+<td>🔷 <strong>Bilan d'échec</strong> : 3 catégories — (1) <strong>échec technique</strong> (tunnel mal positionné — trop antérieur ou trop vertical, fixation insuffisante, conflit du greffon dans l'échancrure, tension inadéquate), (2) <strong>échec biologique</strong> (non-incorporation du greffon, tunnel widening, allogreffe), (3) <strong>échec traumatique</strong> (re-traumatisme sur greffon normalement intégré et bien positionné). <strong>Bilan pré-révision</strong> : scanner 3D avec reconstruction des tunnels (mesure de la taille, position, confluence — classification de Rue), IRM (état du greffon, lésions associées), arthrométrie, évaluation de l'alignement (HKA, pente tibiale). <strong>Technique</strong> : <strong>révision en 1 temps</strong> (si tunnels bien positionnés et de taille acceptable — ablation de l'ancien greffon, reperçage des tunnels, nouveau greffon — idéalement autogreffe QT ou BTB si pas déjà utilisé, allogreffe en dernier recours), <strong>révision en 2 temps</strong> (si tunnels mal positionnés, confluence, widening &gt; 14-16 mm — 1er temps : ablation matériel + comblement osseux des tunnels — cylindres tricorticaux iliaque, allogreffe osseuse, substitut osseux — puis 2ème temps à 3-6 mois : reconstruction dans de nouveaux tunnels). <strong>Résultats des révisions</strong> : inférieurs à la primo-reconstruction — MARS Group, <em>AJSM</em> 2014 (IKDC subjectif : 72 vs 82, KOOS sport : 55 vs 75, taux de re-re-rupture 4 %, retour au sport au niveau pré-lésionnel 40-50 % vs 65-75 % en primo). <strong>Rééducation post-révision</strong> : plus conservatrice, RTS à 12-18 mois minimum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-11-situations-particulieres-et-prevention-m38-m40">Partie 11 — Situations Particulières et Prévention (M38-M40)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M38</strong></td>
+<td>LCA pédiatrique et chez la femme</td>
+<td>4h</td>
+<td>🔷🟣 <strong>LCA pédiatrique</strong> : augmentation massive de l'incidence (+350 % en 20 ans — Werner 2016), problématique des physes ouvertes (risque d'épiphysiodèse → déformation axiale, inégalité de longueur), techniques adaptées selon la maturité squelettique : <strong>all-epiphyseal</strong> (Micheli — tunnels entièrement intra-épiphysaires, respect total des physes — patient Tanner 1-2), <strong>transphysaire partiel</strong> (tunnel tibial transphysaire + tunnel fémoral épiphysaire, ou inversement — Tanner 3-4), <strong>transphysaire classique</strong> (tunnels transphysaires standard — patient quasi-mature, Tanner 5, stades de Risser 4-5 — physes en voie de fermeture), alternative historique : <strong>ilio-tibial band</strong> (MacIntosh — extra-articulaire, abandonnée au profit des techniques physe-sparing), résultats (taux de re-rupture très élevé chez l'enfant : 15-25 % — risque lié au jeune âge + retour au sport pivot, taux contro-latéral 10-20 %). <strong>LCA chez la femme</strong> : facteurs de risque spécifiques (valgus dynamique du genou ↑, NWI ↓, laxité ↑, pente tibiale ↑, cycle menstruel — phase pré-ovulatoire : ↑ relaxine et estrogènes → ↑ laxité ligamentaire, pattern neuromusculaire à risque — dominance quadricipitale, déficit contrôle du tronc), programmes de prévention spécifiques (PEP, FIFA 11+ — ↓ 50-70 % du risque — Sugimoto 2015), résultats de reconstruction (comparables aux hommes si même greffon et même protocole)</td>
+</tr>
+<tr>
+<td><strong>M39</strong></td>
+<td>Genou multi-ligamentaire et luxation du genou</td>
+<td>3h</td>
+<td>🔷 <strong>Luxation du genou</strong> : classification de Kennedy (type I — LCA ou LCP isolé, type II — LCA + LCP, type III — LCA + LCP + LCM ou LCL, type IV — LCA + LCP + LCM + LCL, type V — fracture-luxation), <strong>urgence vasculaire</strong> (atteinte de l'artère poplitée dans 20-40 % des luxations — angioscanner systématique en urgence, examen vasculaire clinique — pouls distaux, IPS, temps de recoloration), atteinte du nerf fibulaire commun (15-25 %), réduction en urgence + immobilisation + bilan vasculaire, <strong>traitement</strong> : aigu (ligamentoplastie multi-ligamentaire en 1 temps à 2-3 semaines — réparation LCM/PAPE/PAPI + reconstruction LCA/LCP, ou réparation précoce + reconstruction différée — 2 temps), résultats (fonctionnels satisfaisants 70-80 % mais inférieurs aux ligamentoplasties isolées), réeducation prolongée (12-18 mois). <strong>Combinaisons fréquentes</strong> : LCA + LCM (la plus fréquente — LCM grade I-II : traitement conservateur + reconstruction LCA, LCM grade III : discuté — reconstruction LCM simultanée ou réparation), LCA + PAPE (instabilité rotatoire ++ — reconstruction combinée recommandée)</td>
+</tr>
+<tr>
+<td><strong>M40</strong></td>
+<td>Prévention primaire et secondaire des ruptures du LCA</td>
+<td>3h</td>
+<td>🟢🏥🟣 <strong>Prévention primaire</strong> : programmes neuromusculaires validés : <strong>FIFA 11+</strong> (échauffement structuré 20 min — course, exercices de force, d'équilibre et de plyométrie, ↓ 50 % des blessures du genou — Soligard <em>BMJ</em> 2008, ↓ 64 % des ruptures LCA — Thorborg 2017), <strong>PEP Program</strong> (Prevent injury and Enhance Performance — Mandelbaum <em>AJSM</em> 2005 : ↓ 74 % des ruptures LCA en football féminin), <strong>Sportsmetrics</strong> (Hewett — programme de 6 semaines, plyométrie + renforcement + flexibilité), <strong>Knäkontroll</strong> (programme suédois — ↓ 64 % des blessures du genou chez les footballeuses). <strong>Composantes clés</strong> (méta-analyse Sugimoto 2015) : plyométrie (composante la plus efficace), renforcement des ischio-jambiers (Nordic hamstring — ↓ blessures IJ + protection LCA), exercices d'équilibre et de proprioception, feedback neuromusculaire (correction du valgus dynamique), renforcement du tronc et des hanches (abducteurs, rotateurs externes). <strong>Prévention secondaire</strong> (après reconstruction) : même type de programme, compliance post-reconstruction (↓ 60 % de re-rupture si programme neuromusculaire maintenu — Hewett 2013), programmes de retour au sport avec critères objectifs (cf. M32). <strong>Implémentation</strong> : barrières (compliance des coaches 30-50 %, compliance des athlètes variable, perception "perte de temps d'entraînement"), stratégies (intégration dans l'échauffement, leadership des capitaines, soutien des fédérations — FFF programme "Mon genou, j'y tiens")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="partie-12-innovations-et-perspectives-m41-m42">Partie 12 — Innovations et Perspectives (M41-M42)</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Titre</th>
+<th>Durée</th>
+<th>Contenu clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M41</strong></td>
+<td>Biothérapies, BEAR implant et ligaments synthétiques</td>
+<td>4h</td>
+<td>🔷🟣 <strong>PRP (Platelet-Rich Plasma)</strong> : application au site de fixation du greffon (↑ cicatrisation os-tendon ?), résultats contradictoires (méta-analyse Figueroa <em>AJSM</em> 2018 — pas de bénéfice significatif sur la laxité résiduelle ou le taux de re-rupture, possible ↓ douleur précoce), utilisation croissante malgré l'absence de preuve solide. <strong>Cellules souches mésenchymateuses (MSC)</strong> : application (injection intra-articulaire ou application sur le greffon), objectif (accélération de la ligamentisation, amélioration de la cicatrisation méniscale), stade (essais cliniques de phase I-II, résultats préliminaires encourageants — Silva 2020). <strong>BEAR (Bridge-Enhanced ACL Repair)</strong> : concept révolutionnaire (Murray et al., Boston — réparation du LCA natif au lieu de reconstruction, implant de collagène bovin + PRP placé entre les extrémités rompues → cicatrisation biologique du LCA natif), essai randomisé (Murray et al., <em>NEJM</em> 2024 — BEAR vs reconstruction DIDT : résultats fonctionnels comparables à 2 ans, avantage = préservation du tissu natif et des mécanorécepteurs, pas de morbidité du site donneur), limites (réparation possible uniquement si rupture proximale avec moignon distal suffisant — 60-70 % des ruptures, résultats à long terme inconnus, coût de l'implant). <strong>Ligaments synthétiques</strong> : historique (LARS — Ligament Augmentation and Reconstruction System — polyester PET, populaire en Europe 2005-2015, résultats à moyen terme controversés — taux de rupture et de synovite 15-30 % à 5-10 ans → retrait relatif en France), nouvelles générations (Neoligaments, scaffolds biodégradables en PLLA/PCL), ingénierie tissulaire (scaffolds ensemencés de fibroblastes ou MSC — bioligament, recherche préclinique). <strong>Thérapie génique</strong> : transfert de gènes de facteurs de croissance (VEGF, PDGF, TGF-β) dans le greffon → amélioration de la vascularisation et de la cicatrisation (stade pré-clinique — modèles animaux)</td>
+</tr>
+<tr>
+<td><strong>M42</strong></td>
+<td>IA, robotique et perspectives 2030</td>
+<td>4h</td>
+<td>🟣 <strong>Intelligence artificielle</strong> : prédiction du risque de rupture du LCA (modèles de machine learning intégrant morphologie IRM + cinématique 3D + données neuromusculaires — Hébert-Losier 2020), prédiction du risque de re-rupture (modèles intégrant âge + greffon + sport + tests fonctionnels), optimisation de la rééducation (capteurs inertiels — wearables IMU — mesure en temps réel de la cinématique du genou pendant la marche/course/sauts → feedback neuromusculaire automatisé → correction du valgus dynamique en temps réel), analyse vidéo par IA (détection automatique des patterns de mouvement à risque — Landing Error Scoring System automatisé). <strong>Robotique chirurgicale</strong> : systèmes de navigation (Orthopilot, Stryker Navigation — aide au positionnement des tunnels, visualisation 3D des repères anatomiques), robotique active (Mako — pour l'arthroplastie, en développement pour la ligamentoplastie — positionnement robotisé des guides de tunnels), réalité augmentée (AR) peropératoire (superposition holographique des repères anatomiques sur le champ opératoire — Microsoft HoloLens, Medacta AR). <strong>Impression 3D</strong> : planification pré-opératoire (modèles anatomiques personnalisés du genou à partir du scanner), guides de tunnels personnalisés (patient-specific guides — PSI), bioprinting de scaffolds (impression 3D de matrices de collagène pour l'ingénierie tissulaire ligamentaire — recherche). <strong>Perspectives 2030</strong> : BEAR implant en routine (si résultats à long terme confirmés — paradigm shift de la reconstruction vers la réparation), bioligament personnalisé (scaffold + MSC autologues → ligament biologique sur mesure), rééducation pilotée par IA (programme personnalisé adapté en temps réel par capteurs + algorithme), prévention de masse par IA (screening neuromusculaire systématique des jeunes sportifs + programme correctif individualisé), réduction de 80 % de l'incidence des ruptures LCA par les programmes de prévention universels (si implémentation &gt; 90 % — objectif ambitieux)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="4-code-couleur-formation-lca">4. CODE COULEUR — FORMATION LCA</h1>
+<h2 id="41-couleurs-principales">4.1 Couleurs principales</h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Couleur</th>
+<th>Code hex</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Couleur dominante</strong></td>
+<td>Bleu orthopédie</td>
+<td><code>#0D47A1</code></td>
+<td>Titres H1, H2, bandeau formation</td>
+</tr>
+<tr>
+<td><strong>Couleur accent</strong></td>
+<td>Vert chirurgical</td>
+<td><code>#2E7D32</code></td>
+<td>Titres H3, encadrés techniques chirurgicales</td>
+</tr>
+<tr>
+<td><strong>Fond alerte urgence</strong></td>
+<td>Rouge vif</td>
+<td><code>#D32F2F</code> fond <code>#FFEBEE</code></td>
+<td>Luxation du genou, lésion vasculaire, infection</td>
+</tr>
+<tr>
+<td><strong>Fond recommandation</strong></td>
+<td>Bleu guidelines</td>
+<td><code>#1565C0</code> fond <code>#E3F2FD</code></td>
+<td>Guidelines ESSKA/AAOS/SFA</td>
+</tr>
+<tr>
+<td><strong>Fond bonne pratique</strong></td>
+<td>Vert clinique</td>
+<td><code>#388E3C</code> fond <code>#E8F5E9</code></td>
+<td>Protocoles validés, bonnes pratiques</td>
+</tr>
+<tr>
+<td><strong>Fond rééducation</strong></td>
+<td>Orange kiné</td>
+<td><code>#E65100</code> fond <code>#FFF3E0</code></td>
+<td>Spécifique kinésithérapeutes/MPR</td>
+</tr>
+<tr>
+<td><strong>Fond imagerie</strong></td>
+<td>Violet radio</td>
+<td><code>#6A1B9A</code> fond <code>#F3E5F5</code></td>
+<td>Spécifique radiologues</td>
+</tr>
+<tr>
+<td><strong>Fond biomécanique</strong></td>
+<td>Gris acier</td>
+<td><code>#455A64</code> fond <code>#ECEFF1</code></td>
+<td>Biomécanique, cinématique</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-tags-de-public">4.2 Tags de public</h2>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Public</th>
+<th>Couleur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔷 <strong>CHIRURGIEN</strong></td>
+<td>Orthopédistes, internes</td>
+<td>Bleu</td>
+</tr>
+<tr>
+<td>🏥 <strong>MÉDECIN DU SPORT</strong></td>
+<td>Médecins du sport, généralistes</td>
+<td>Rouge</td>
+</tr>
+<tr>
+<td>🔶 <strong>RADIOLOGUE</strong></td>
+<td>Radiologues, imagerie</td>
+<td>Violet</td>
+</tr>
+<tr>
+<td>🟢 <strong>KINÉ/MPR</strong></td>
+<td>Kinésithérapeutes, rééducateurs</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>🟣 <strong>TOUS</strong></td>
+<td>Ensemble des publics</td>
+<td>Gris</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-conventions-et-charte">5. CONVENTIONS ET CHARTE</h1>
+<h2 id="51-tags-medias">5.1 Tags médias</h2>
+<p>Format : <code>&gt; [MEDIA: {EMOJI} MLCA{module}-S{section}-{numéro} — {TITRE}]</code></p>
+<p>Types de médias :<br />
+- 🔬 : Images histologiques (ligament, cartilage, ménisque)<br />
+- 📷 : Photos cliniques (tests cliniques, arthroscopie, chirurgie)<br />
+- 📊 : Schémas, algorithmes, arbres décisionnels<br />
+- 🖼️ : Illustrations anatomiques et biomécaniques<br />
+- 🎬 : Vidéos de gestes (arthroscopie, reconstruction, rééducation)<br />
+- 📈 : Courbes, graphiques, données épidémiologiques<br />
+- 🦴 : Imagerie (radiographies, IRM, scanner, arthroscopie)<br />
+- 🏥 : Cas cliniques illustrés<br />
+- 📐 : Schémas biomécaniques et cinématiques</p>
+<h2 id="52-quiz">5.2 Quiz</h2>
+<ul>
+<li>8-12 questions par module</li>
+<li>4 niveaux : 🥉 Bronze, 🥈 Argent, 🥇 Or, 💎 Diamant</li>
+<li>Questions intégrant les recommandations ESSKA, AAOS, SFA, HAS</li>
+<li>Questions spécifiques par public : tag 🔷🏥🔶🟢🟣</li>
+</ul>
+<h2 id="53-cas-cliniques-progressifs">5.3 Cas cliniques progressifs</h2>
+<ul>
+<li><strong>Minimum 30 cas cliniques</strong> répartis en 2 parties</li>
+<li>Niveaux : 8 Bronze, 8 Argent, 8 Or, 6 Diamant</li>
+<li>Cas multi-publics : chirurgien + radiologue + kiné intégrés dans les cas Or et Diamant</li>
+<li>Réponses détaillées avec justifications biomécaniques et références</li>
+</ul>
+<h2 id="54-encadres-speciaux">5.4 Encadrés spéciaux</h2>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Nom</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🚨 <strong>URGENCE</strong></td>
+<td>Situations nécessitant une prise en charge immédiate (luxation du genou, lésion vasculaire)</td>
+<td></td>
+</tr>
+<tr>
+<td>📋 <strong>RECOMMANDATION</strong></td>
+<td>Guidelines ESSKA, AAOS, SFA, HAS</td>
+<td></td>
+</tr>
+<tr>
+<td>💡 <strong>POINT PRATIQUE</strong></td>
+<td>Astuces cliniques et chirurgicales</td>
+<td></td>
+</tr>
+<tr>
+<td>⚠️ <strong>PIÈGE</strong></td>
+<td>Erreurs diagnostiques et thérapeutiques fréquentes</td>
+<td></td>
+</tr>
+<tr>
+<td>🔬 <strong>EXPERT</strong></td>
+<td>Détail technique avancé (chirurgie, biomécanique)</td>
+<td></td>
+</tr>
+<tr>
+<td>🔷 <strong>CHIRURGIEN</strong></td>
+<td>Section spécifique chirurgiens</td>
+<td></td>
+</tr>
+<tr>
+<td>🏥 <strong>MED SPORT</strong></td>
+<td>Section spécifique médecins du sport</td>
+<td></td>
+</tr>
+<tr>
+<td>🔶 <strong>RADIO</strong></td>
+<td>Section spécifique radiologues</td>
+<td></td>
+</tr>
+<tr>
+<td>🟢 <strong>KINÉ</strong></td>
+<td>Section spécifique kinésithérapeutes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="55-simulation-vertex">5.5 Simulation VERTEX©</h2>
+<p>Chaque partie comporte au minimum 1 exercice de simulation :</p>
+<ul>
+<li><strong>Simulation d'examen clinique</strong> : Lachman virtuel, pivot-shift, testing ligamentaire (Parties 05)</li>
+<li><strong>Simulation d'interprétation IRM</strong> : diagnostic de rupture LCA, lésions méniscales, bone bruise (Partie 06)</li>
+<li><strong>Simulation de reconstruction arthroscopique</strong> : positionnement des tunnels, passage de la greffe, fixation (Partie 08)</li>
+<li><strong>Simulation biomécanique</strong> : modélisation 3D du genou avec/sans LCA, impact de la position des tunnels sur l'isométrie (Partie 03/08)</li>
+<li><strong>Simulation de rééducation</strong> : progression par phases, tests fonctionnels virtuels, analyse cinématique (Partie 09)</li>
+<li><strong>Scénarios de complications</strong> : arthrofibrose progressive, re-rupture, infection (Partie 10)</li>
+</ul>
+<hr />
+<h1 id="6-structure-des-fichiers-du-cdc">6. STRUCTURE DES FICHIERS DU CDC</h1>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Contenu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CDC_LCA_00_INTRODUCTION_CHARTE.md</code></td>
+<td>Ce document — architecture, conventions, bibliographie</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_01_EMBRYOLOGIE.md</code></td>
+<td>Partie 01 — Embryologie et développement (M01-M03)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_02_ANATOMIE.md</code></td>
+<td>Partie 02 — Anatomie du genou et du LCA (M04-M07)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_03_BIOMECANIQUE.md</code></td>
+<td>Partie 03 — Biomécanique (M08-M09)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_04_EPIDEMIOLOGIE.md</code></td>
+<td>Partie 04 — Épidémiologie et mécanismes (M10-M12)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_05_DIAGNOSTIC_CLINIQUE.md</code></td>
+<td>Partie 05 — Diagnostic clinique (M13-M15)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_06_IMAGERIE.md</code></td>
+<td>Partie 06 — Imagerie (M16-M18)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_07_HISTOIRE_NATURELLE.md</code></td>
+<td>Partie 07 — Histoire naturelle et décision (M19-M21)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_08_CHIRURGIE.md</code></td>
+<td>Partie 08 — Reconstruction chirurgicale (M22-M28)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_09_REEDUCATION.md</code></td>
+<td>Partie 09 — Rééducation et retour au sport (M29-M33)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_10_COMPLICATIONS.md</code></td>
+<td>Partie 10 — Complications et révisions (M34-M37)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_11_SITUATIONS_PREVENTION.md</code></td>
+<td>Partie 11 — Situations particulières et prévention (M38-M40)</td>
+</tr>
+<tr>
+<td><code>CDC_LCA_12_INNOVATIONS.md</code></td>
+<td>Partie 12 — Innovations et perspectives (M41-M42)</td>
+</tr>
+<tr>
+<td><code>CAS_CLINIQUES_LCA_P1.md</code></td>
+<td>Cas cliniques 1-15 (Bronze/Argent)</td>
+</tr>
+<tr>
+<td><code>CAS_CLINIQUES_LCA_P2.md</code></td>
+<td>Cas cliniques 16-30 (Or/Diamant)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="7-references-bibliographiques-fondatrices">7. RÉFÉRENCES BIBLIOGRAPHIQUES FONDATRICES</h1>
+<ol>
+<li><strong>Woo SL</strong> et al. Tensile properties of the human femur-anterior cruciate ligament-tibia complex. <em>Am J Sports Med.</em> 1991;19(3):217-225.</li>
+<li><strong>Noyes FR</strong> et al. Biomechanical analysis of human ligament grafts used in knee ligament repairs and reconstructions. <em>JBJS.</em> 1984;66(3):344-352.</li>
+<li><strong>Hewett TE</strong> et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes. <em>Am J Sports Med.</em> 2005;33(4):492-501.</li>
+<li><strong>Frobell RB</strong> et al. A randomized trial of treatment for acute anterior cruciate ligament tears. <em>NEJM.</em> 2010;363(4):331-342.</li>
+<li><strong>Lohmander LS</strong> et al. The long-term consequence of anterior cruciate ligament and meniscus injuries: osteoarthritis. <em>Am J Sports Med.</em> 2007;35(10):1756-1769.</li>
+<li><strong>Grindem H</strong> et al. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study. <em>Br J Sports Med.</em> 2016;50(13):804-808.</li>
+<li><strong>Getgood A</strong> et al. Lateral extra-articular tenodesis reduces failure of hamstring tendon autograft anterior cruciate ligament reconstruction: 2-year outcomes from the STABILITY study randomized clinical trial. <em>Am J Sports Med.</em> 2020;48(2):285-297.</li>
+<li><strong>Murray MM</strong> et al. Bridge-Enhanced Anterior Cruciate Ligament Repair vs Anterior Cruciate Ligament Reconstruction. <em>NEJM.</em> 2024 (BEAR trial).</li>
+<li><strong>Shelbourne KD</strong> et al. Incidence of subsequent injury to either knee within 5 years after anterior cruciate ligament reconstruction with patellar tendon autograft. <em>Am J Sports Med.</em> 2009;37(2):246-251.</li>
+<li><strong>Sonnery-Cottet B</strong> et al. Anterolateral Ligament Reconstruction Is Associated With Significantly Reduced ACL Graft Rupture Rates at a Minimum Follow-up of 2 Years. <em>Am J Sports Med.</em> 2017;45(7):1547-1557.</li>
+<li><strong>Claes S</strong> et al. Anatomy of the anterolateral ligament of the knee. <em>J Anat.</em> 2013;223(4):321-328.</li>
+<li><strong>Sugimoto D</strong> et al. Specific exercise effects of preventive neuromuscular training intervention on anterior cruciate ligament injury risk reduction in young females: meta-analysis and subgroup analysis. <em>Br J Sports Med.</em> 2015;49(5):282-289.</li>
+<li><strong>Magnussen RA</strong> et al. Graft size and patient age are predictors of early revision after anterior cruciate ligament reconstruction with hamstring autograft. <em>Arthroscopy.</em> 2012;28(4):526-531.</li>
+<li><strong>MARS Group.</strong> Descriptive epidemiology of the Multicenter ACL Revision Study (MARS) cohort. <em>Am J Sports Med.</em> 2010;38(10):1979-1986.</li>
+<li><strong>Amiel D</strong> et al. Ligament structure, chemistry, and physiology. <em>Daniel DM, Akeson WH, O'Connor JJ, eds. Knee Ligaments.</em> 1990:77-91.</li>
+<li><strong>Beynnon BD</strong> et al. The effect of estradiol and progesterone on knee and ankle joint laxity. <em>Am J Sports Med.</em> 2005;33(9):1298-1304.</li>
+<li><strong>Soligard T</strong> et al. Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial. <em>BMJ.</em> 2008;337:a2469.</li>
+<li><strong>Beard DJ</strong> et al. Reflex hamstring contraction latency in anterior cruciate ligament deficiency. <em>J Orthop Res.</em> 1994;12(2):219-228.</li>
+<li><strong>Gardner MJ, Helfet DL.</strong> Anterior cruciate ligament reconstruction. <em>Operative Techniques in Orthopaedics.</em> 2005.</li>
+<li><strong>Staubli HU, Rauschning W.</strong> Tibial attachment area of the anterior cruciate ligament in the extended knee position. <em>Knee Surg Sports Traumatol Arthrosc.</em> 1994;2(3):138-146.</li>
+</ol>
+<hr />
+<p><em>Formation VERTEX© — Partie 00 — Introduction et Charte — LCA — Mars 2026</em></p>
+</div>

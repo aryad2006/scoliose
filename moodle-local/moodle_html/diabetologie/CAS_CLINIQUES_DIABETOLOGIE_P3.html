@@ -1,0 +1,633 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-diabetologie">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION DIABETOLOGIE</h1>
+<h2 id="partie-3-cas-or-14-17">Partie 3 — Cas Or (14-17)</h2>
+<hr />
+<h2 id="cas-or">🥇 CAS OR</h2>
+<hr />
+<p><a id="cas-14"></a></p>
+<h3 id="cas-n14-dt1-pompe-a-insuline-et-projet-de-grossesse">Cas n°14 — DT1, pompe a insuline et projet de grossesse</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilises</strong> : 22 (Insulinotherapie), 23 (Technologies), 24 (Education), 30 (Grossesse et diabete), 16 (Retinopathie)<br />
+<strong>Duree estimee</strong> : 30 min<br />
+<strong>Thematique principale</strong> : Optimisation pre-conceptionnelle du DT1 et gestion de la grossesse sous pompe</p>
+<h4 id="presentation-initiale">Presentation initiale</h4>
+<p>Mme Leclerc, 31 ans, DT1 depuis l'age de 14 ans, consulte en diabetologie avec un projet de grossesse. Elle est sous pompe a insuline (Medtronic 780G en boucle fermee hybride) depuis 3 ans, avec capteur Guardian 4.</p>
+<p><strong>Bilan actuel</strong> :<br />
+- HbA1c : 7,4%<br />
+- TIR (Time in Range 70-180 mg/dL) : 62% (objectif grossesse &gt; 70%)<br />
+- TBR (&lt; 70 mg/dL) : 5% (objectif grossesse &lt; 4%)<br />
+- TAR (&gt; 180 mg/dL) : 33%<br />
+- GMI (Glucose Management Indicator) : 7,1%<br />
+- Retinopathie : RDNP minime (quelques microanevrysmes) — FO il y a 8 mois<br />
+- Nephropathie : RAC 18 mg/g (normal), DFG 95 mL/min<br />
+- Neuropathie : pas de signe clinique<br />
+- Thyroide : TSH 3,1 mUI/L, anti-TPO negatifs<br />
+- PA : 118/72 mmHg<br />
+- Poids : 63 kg, taille : 165 cm, IMC : 23,1</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Pompe Medtronic 780G avec mode Auto (cible 100 mg/dL)<br />
+- Insuline Lispro U100 dans la pompe<br />
+- Debit basal total : ~18 UI/jour, bolus ~16 UI/jour (DTQ ~34 UI)<br />
+- Acide folique 0,4 mg/jour (recemment debute)<br />
+- Contraception actuelle : DIU cuivre</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC14-001 — Rapport AGP de Mme Leclerc — profil glycemique 14 jours avec TIR/TAR/TBR et courbe mediane montrant la variabilite glycemique diurne (Identifiez les periodes de TAR et les leviers d'optimisation)]</p>
+</blockquote>
+<h4 id="questions-progressives">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Bilan pre-conceptionnel</strong> (application)</p>
+<blockquote>
+<p>Quel bilan pre-conceptionnel realisez-vous ? Quels sont les objectifs a atteindre AVANT d'autoriser la grossesse ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Bilan pre-conceptionnel complet du DT1</strong> <em>(adapte des recommandations SFD/CNGOF 2023 et ADA 2024)</em> :</p>
+<p><strong>Bilan ophtalmologique</strong> :<br />
+- FO dilate + OCT maculaire : la retinopathie existante (RDNP minime) peut s'aggraver pendant la grossesse, surtout si normalisation glycemique rapide → FO de reference INDISPENSABLE avant conception<br />
+- Suivi : FO trimestriel pendant la grossesse</p>
+<p><strong>Bilan renal</strong> :<br />
+- RAC urinaire + DFG : ici normaux, bon pronostic<br />
+- Si RAC &gt; 300 mg/g ou DFG &lt; 45 : risque de pre-eclampsie majore — discussion pluridisciplinaire</p>
+<p><strong>Bilan cardiaque</strong> :<br />
+- ECG de repos<br />
+- Si DT1 &gt; 20 ans ou facteurs de risque : echocardiographie ± epreuve d'effort</p>
+<p><strong>Bilan thyroidien</strong> :<br />
+- TSH + anti-TPO : ici normaux, mais a recontrôler au 1er trimestre (risque d'hypothyroidie)</p>
+<p><strong>Bilan infectieux</strong> :<br />
+- Serologies : rubeole, toxoplasmose, CMV, VIH, VHB, VHC, syphilis</p>
+<p><strong>Supplementation</strong> :<br />
+- <strong>Acide folique 5 mg/jour</strong> (pas 0,4 mg !) : dose elevee recommandee dans le diabete pre-gestationnel pour reduire le risque de malformations du tube neural (risque × 2-5 chez la mere diabetique)</p>
+<p><strong>Objectifs glycemiques AVANT la conception</strong> :<br />
+- <strong>HbA1c &lt; 6,5%</strong> idealement (&lt; 7% acceptable) — ici 7,4% : trop elevee<br />
+- <strong>TIR &gt; 70%</strong> (ici 62% : insuffisant)<br />
+- <strong>TBR &lt; 4%</strong> (ici 5% : a reduire)<br />
+- Pas de medications teratogenes : verifier l'absence de statine, IEC, ARA2 (pas le cas ici — bon point)</p>
+<p><strong>Conclusion</strong> : Mme Leclerc n'est pas prete pour la grossesse. Optimisation necessaire pendant 3-6 mois.</p>
+<p><strong>Question 2 — Optimisation de la pompe</strong> (application avancee)</p>
+<blockquote>
+<p>Comment optimisez-vous le controle glycemique avec le systeme de boucle fermee pour atteindre les objectifs pre-conceptionnels ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Optimisation en 4 axes :</p>
+<p><strong>1. Reduire la cible glycemique de l'algorithme</strong> :<br />
+- Passer la cible du mode Auto de 100 mg/dL a <strong>100 mg/dL avec « cible temporaire » a 120 mg/dL desactivee</strong> — en pratique, la cible la plus basse disponible<br />
+- Note : pendant la grossesse, certains systemes permettent un mode « grossesse » (Medtronic 780G n'a pas de cible &lt; 100 mg/dL)</p>
+<p><strong>2. Ameliorer le comptage des glucides</strong> :<br />
+- Consultation dietetique pour revoir les estimations glucidiques (principal facteur de TAR)<br />
+- Utiliser des outils digitaux (appli de comptage : mySugr, Gluci-Chek)<br />
+- Privilegier les repas a index glycemique bas pour reduire les pics</p>
+<p><strong>3. Optimiser les ratios I/C et le pre-bolus</strong> :<br />
+- Si les TAR sont post-prandiaux : durcir les ratios I/C de 10-15%<br />
+- Insister sur le <strong>pre-bolus 15-20 min avant le repas</strong> — le systeme AID ne dispense pas du bolus anticipe</p>
+<p><strong>4. Gerer le TBR</strong> :<br />
+- Analyser les 5% de TBR : nocturne ? Post-exercice ? Si pattern identifie → adapter le debit basal temporaire<br />
+- Pendant la grossesse, l'objectif TBR &lt; 4% est crucial (l'hypoglycemie maternelle ne nuit pas au foetus mais est dangereuse pour la mere)</p>
+<p><strong>Reevaluation a 3 mois</strong> : si HbA1c &lt; 6,5-7% et TIR &gt; 70% → feu vert pour la grossesse.</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC14-002</strong><br/>
+<em>Schema des objectifs glycemiques pre-conceptionnels et pendant la grossesse — comparaison des cibles TIR, HbA1c, GAJ et GPP entre hors grossesse et grossesse (Identifiez les differences de cibles)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 3 — Gestion pendant la grossesse</strong> (synthese)</p>
+<blockquote>
+<p>Mme Leclerc est maintenant enceinte a 8 SA. HbA1c 6,3%, TIR 72%. Quel suivi diabetologique et obstetrical mettez-vous en place ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Suivi diabetologique rapproche</strong> :<br />
+- <strong>Consultation de diabetologie toutes les 2-4 semaines</strong> (pas trimestrielle)<br />
+- <strong>Objectifs glycemiques de grossesse</strong> (adapte ADA 2024) :<br />
+  - GAJ : 0,63-0,95 g/L (3,5-5,3 mmol/L)<br />
+  - GPP 1h : &lt; 1,40 g/L (7,8 mmol/L)<br />
+  - GPP 2h : &lt; 1,20 g/L (6,7 mmol/L)<br />
+  - HbA1c &lt; 6,0% si possible sans hypoglycemie<br />
+  - TIR (63-140 mg/dL en grossesse) &gt; 70%, TBR &lt; 54 mg/dL : &lt; 1%</p>
+<ul>
+<li><strong>Adaptation des doses d'insuline</strong> :</li>
+<li>T1 : les besoins diminuent souvent de 10-20% (risque d'hypoglycemie)</li>
+<li>T2 : les besoins augmentent progressivement (+30-50%)</li>
+<li>T3 : les besoins peuvent doubler (insulinoresistance placentaire majeure par HPL, cortisol, progesterone)</li>
+<li>Post-partum immediat : chute brutale des besoins (diviser par 2 immediatement)</li>
+</ul>
+<p><strong>Suivi ophtalmologique</strong> :<br />
+- <strong>FO trimestriel</strong> obligatoire (la RDNP minime peut progresser — risque de « early worsening » si amelioration glycemique rapide)<br />
+- Si aggravation → traitement laser ou anti-VEGF possible pendant la grossesse (ranibizumab prefere)</p>
+<p><strong>Suivi obstetrical</strong> :<br />
+- Echographies : T1 (datation + clarte nucale), T2 (morphologie + echocardiographie foetale a 22 SA — risque de cardiopathie × 3-5), T3 (croissance, biometries, liquide amniotique)<br />
+- Echographies de croissance supplementaires a 28, 32, 36 SA<br />
+- Doppler ombilical et uterin si pre-eclampsie<br />
+- Declenchement a 38-39 SA si bon equilibre, plus tot si desequilibre ou complications<br />
+- <strong>Aspirine 100-150 mg/jour</strong> a partir de 12 SA jusqu'a 36 SA (prevention pre-eclampsie — recommandation universelle chez la diabetique pre-gestationnelle)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC14-003 — Planning de suivi de la grossesse diabetique — timeline avec consultations, examens et moments cles (Planifiez le calendrier de suivi de Mme Leclerc)]</p>
+<p>[MEDIA: 📊 MDIAB-CC14-004 — Graphique de l'evolution des besoins en insuline au cours de la grossesse — courbe en U inverse avec T1 (baisse), T2-T3 (hausse), post-partum (chute) (Anticipez les adaptations de dose a chaque trimestre)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas">Points cles du cas</h4>
+<ol>
+<li>L'HbA1c cible pre-conceptionnelle est &lt; 6,5% (idealement) dans le DT1</li>
+<li>L'acide folique doit etre a dose elevee (5 mg/jour) chez la diabetique</li>
+<li>Le FO pre-conceptionnel et trimestriel est obligatoire (risque d'aggravation de la retinopathie)</li>
+<li>Les besoins en insuline suivent une courbe typique : baisse T1, hausse T2-T3, chute post-partum</li>
+<li>L'aspirine a faible dose est recommandee a partir de 12 SA pour la prevention de la pre-eclampsie</li>
+</ol>
+<hr />
+<p><a id="cas-15"></a></p>
+<h3 id="cas-n15-dt2-complique-cardiovasculaire-choix-therapeutique-optimal">Cas n°15 — DT2 complique cardiovasculaire : choix therapeutique optimal</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilises</strong> : 19 (Risque CV), 26-27 (ADO, injectables), 29 (Strategie globale), 17 (Nephropathie)<br />
+<strong>Duree estimee</strong> : 30 min<br />
+<strong>Thematique principale</strong> : Prise en charge cardio-metabolique integree du DT2 a haut risque</p>
+<h4 id="presentation-initiale_1">Presentation initiale</h4>
+<p>M. Lambert, 63 ans, DT2 depuis 11 ans, est adresse par son cardiologue apres la pose d'un stent actif sur l'IVA proximale pour un syndrome coronarien aigu ST- il y a 3 semaines. Le cardiologue note un « diabete a optimiser ».</p>
+<p><strong>ATCD cardio-vasculaires</strong> :<br />
+- SCA ST- traite par angioplastie + stent actif IVA proximale (J21)<br />
+- FEVG post-SCA : 48% (dysfonction VG moderee)<br />
+- Coronarographie : lesions diffuses tritroncaulaires (stent IVA + stenoses non significatives CD et Cx)<br />
+- AOMI : IPS 0,75 bilateralement (asymptomatique)</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Post-SCA : aspirine 75 mg + clopidogrel 75 mg (DAPT 12 mois)<br />
+- Bisoprolol 5 mg, ramipril 10 mg, eplerenone 25 mg<br />
+- Atorvastatine 80 mg (LDL actuel : 0,62 g/L)<br />
+- Pantoprazole 20 mg<br />
+- <strong>Diabete</strong> : metformine 2000 mg + gliclazide LM 90 mg (depuis 6 ans) — HbA1c 8,3%</p>
+<p><strong>Profil</strong> :<br />
+- Poids : 91 kg, taille : 174 cm, IMC : 30 kg/m²<br />
+- PA : 128/76 mmHg (sous tritherapie)<br />
+- DFG : 58 mL/min, RAC : 120 mg/g (A2)<br />
+- NT-proBNP : 620 pg/mL (eleve — insuffisance cardiaque debutante)</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC15-001</strong><br/>
+<em>Schema du risque cardio-renal du patient DT2 — interconnexion maladie coronaire, insuffisance cardiaque, nephropathie avec les classes therapeutiques a benefice prouve (Identifiez les 3 comorbidites de M. Lambert)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="questions-progressives_1">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Evaluation du risque</strong> (analyse)</p>
+<blockquote>
+<p>Categorizez le risque cardiovasculaire de M. Lambert. Le SCORE2-Diabetes est-il applicable ici ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+M. Lambert est en <strong>prevention secondaire</strong> (SCA documente) → le SCORE2-Diabetes n'est <strong>pas applicable</strong> (il est reserve a la prevention primaire).</p>
+<p><strong>Categorisation du risque</strong> <em>(ESC/EASD 2023)</em> :<br />
+- <strong>Tres haut risque cardiovasculaire</strong> : ASCVD documentee (stent IVA)<br />
+- Facteurs aggravants : FEVG 48% (IC debutante), AOMI (IPS 0,75), nephropathie (DFG 58, RAC 120), lesions tritronculaires</p>
+<p><strong>Cibles therapeutiques</strong> :<br />
+- LDL : <strong>&lt; 0,55 g/L</strong> (tres haut risque) — ici 0,62, pas a l'objectif<br />
+- PA : <strong>&lt; 130/80 mmHg</strong> — ici 128/76 : a l'objectif<br />
+- HbA1c : 7-8% acceptable (eviter l'hypoglycemie post-SCA) — ici 8,3% : a reduire modestement</p>
+<p><strong>Question 2 — Modification du traitement antidiabetique</strong> (application)</p>
+<blockquote>
+<p>Quels changements proposez-vous dans le traitement antidiabetique ? Justifiez chaque decision par les donnees d'evidence.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+La strategie antidiabetique doit etre entierement revue pour privilegier les classes a <strong>benefice cardiovasculaire et renal prouve</strong> :</p>
+<p><strong>1. Arreter le gliclazide</strong> :<br />
+- Les sulfamides n'ont aucun benefice CV prouve<br />
+- Risque d'hypoglycemie (dangereux post-SCA — arythmie, ischemiemyocardique)<br />
+- Prise de poids</p>
+<p><strong>2. Ajouter un iSGLT2 — INDISPENSABLE</strong> :<br />
+- <strong>Empagliflozine 10 mg</strong> ou <strong>dapagliflozine 10 mg/jour</strong><br />
+- Triple benefice chez M. Lambert :<br />
+  - <strong>Cardioprotection</strong> : reduction de 35% des hospitalisations pour IC <em>(EMPA-REG, DECLARE)</em><br />
+  - <strong>Nephroprotection</strong> : reduction de 39% de la progression de la MRC <em>(DAPA-CKD, EMPA-KIDNEY)</em><br />
+  - <strong>Anti-hyperglycemiant</strong> : reduction HbA1c 0,5-0,8%<br />
+- Compatible avec le DFG 58 mL/min (initiation autorisee jusqu'a DFG 20)<br />
+- Attention : l'eplerenone est deja prescrite → surveiller le K+ (risque d'hyperkaliemie avec IEC + eplerenone + iSGLT2 + nephropathie)</p>
+<p><strong>3. Ajouter un GLP-1 RA — FORTEMENT RECOMMANDE</strong> :<br />
+- <strong>Semaglutide SC 1 mg/semaine</strong> (ou liraglutide 1,8 mg/jour)<br />
+- Benefice : reduction de 26% des MACE <em>(SUSTAIN-6)</em>, perte de poids -5 a 10%, pas d'hypoglycemie<br />
+- En <strong>prevention secondaire</strong>, le GLP-1 RA est recommande independamment de l'HbA1c <em>(ESC/EASD 2023)</em> — c'est un traitement cardioprotecteur, pas seulement antidiabetique</p>
+<p><strong>4. Maintenir la metformine</strong> :<br />
+- Securite CV, cout faible, synergie avec les autres classes<br />
+- Reduction de dose si DFG &lt; 45 : ici 58, pas de modification necessaire</p>
+<p><strong>5. Ajouter la finerenone</strong> (4eme pilier) :<br />
+- DT2 + RAC 120 mg/g + DFG 58 → indication de la finerenone <em>(FIDELIO-DKD/FIGARO-DKD)</em><br />
+- MAIS : eplerenone deja prescrite (ARM steroidien pour l'IC) → ne PAS associer finerenone + eplerenone (double ARM = hyperkaliemie majeure). La finerenone pourrait remplacer l'eplerenone si le cardiologue est d'accord, mais cette decision est pluridisciplinaire</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC15-002 — Algorithme ESC/EASD 2023 du traitement du DT2 avec ASCVD — arbre decisionnel avec les 3 piliers (iSGLT2 + GLP-1 RA + metformine) et les niveaux de preuve (Appliquez l'algorithme a M. Lambert)]</p>
+</blockquote>
+<p><strong>Question 3 — Gestion du LDL residuel</strong> (analyse)</p>
+<blockquote>
+<p>Le LDL de M. Lambert est a 0,62 g/L sous atorvastatine 80 mg. La cible est &lt; 0,55 g/L. Que proposez-vous ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le LDL n'est pas a la cible (0,62 vs &lt; 0,55 g/L requis en tres haut risque). Options :</p>
+<p><strong>1. Ajouter ezetimibe 10 mg/jour</strong> :<br />
+- Reduction supplementaire du LDL de 15-20% (0,62 × 0,80 = ~0,50 g/L → cible atteinte)<br />
+- Bien tolere, peu d'effets secondaires<br />
+- Essai IMPROVE-IT : benefice CV prouve en post-SCA</p>
+<p><strong>2. Si cible non atteinte sous statine + ezetimibe → anti-PCSK9</strong> :<br />
+- Evolocumab (Repatha) 140 mg SC/2 semaines ou alirocumab (Praluent) 75-150 mg SC/2 semaines<br />
+- Reduction du LDL de 50-60% supplementaires<br />
+- Essais FOURIER et ODYSSEY OUTCOMES : benefice CV en prevention secondaire</p>
+<p>Pour M. Lambert : commencer par ezetimibe (suffisant pour atteindre la cible), reserver les anti-PCSK9 en cas d'echec.</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC15-003 — Ordonnance optimisee de M. Lambert — comparaison avant/apres avec justification de chaque modification et niveaux de preuve (Verifiez l'absence d'interaction et la coherence globale)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_1">Points cles du cas</h4>
+<ol>
+<li>En prevention secondaire, iSGLT2 et GLP-1 RA sont indiques independamment de l'HbA1c (cardioprotection)</li>
+<li>Les sulfamides doivent etre arretes chez le patient coronarien (hypoglycemie dangereuse)</li>
+<li>L'iSGLT2 offre un triple benefice : cardioprotection + nephroprotection + controle glycemique</li>
+<li>Le LDL cible en tres haut risque est &lt; 0,55 g/L — l'ezetimibe est le complement de 1ere ligne</li>
+<li>Attention aux interactions K+ : IEC + ARM + iSGLT2 + MRC = surveillance potassique rapprochee</li>
+</ol>
+<hr />
+<p><a id="cas-16"></a></p>
+<h3 id="cas-n16-pied-de-charcot-avec-ulcere-infecte">Cas n°16 — Pied de Charcot avec ulcere infecte</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilises</strong> : 20 (Pied diabetique), 18 (Neuropathie), 19 (Macroangiopathie), 31 (Situations aigues)<br />
+<strong>Duree estimee</strong> : 30 min<br />
+<strong>Thematique principale</strong> : Neuro-osteoarthropathie de Charcot et gestion multidisciplinaire du pied diabetique complexe</p>
+<h4 id="presentation-initiale_2">Presentation initiale</h4>
+<p>M. Nguyen, 59 ans, DT2 depuis 22 ans, est adresse en urgence par son medecin traitant pour un pied gauche « rouge, chaud et gonfle » avec un ulcere de la voute plantaire d'ou s'ecoule un liquide purulent. Il ne ressent qu'une douleur « sourde, pas vraiment douloureuse » cotee a 2/10.</p>
+<p><strong>Antecedents</strong> :<br />
+- DT2 mal equilibre (HbA1c habituelle 9-10%), sous insuline basale-bolus depuis 8 ans<br />
+- Neuropathie sensitive severe (monofilament non percu depuis 10 ans)<br />
+- RDNP severe traitee par laser (PPR bilaterale)<br />
+- Nephropathie : DFG 42 mL/min, RAC 350 mg/g<br />
+- AOMI operee : pontage femoro-poplite gauche il y a 5 ans<br />
+- Tabagisme sevre</p>
+<h4 id="examen-clinique-du-pied-gauche">Examen clinique du pied gauche</h4>
+<ul>
+<li><strong>Pied globalement deforme</strong> : affaissement de l'arche mediale, pied en « tampon buvard » (rocker-bottom), elargissement du medio-pied</li>
+<li><strong>Peau</strong> : erytheme diffus de la face dorsale, chaleur au toucher (delta &gt; 2°C vs pied droit au thermometre infrarouge), oedeme du dos du pied</li>
+<li><strong>Ulcere</strong> : face plantaire medio-pied, 3 × 2 cm, profond (contact osseux au stylet), ecoulement purulent verdatre malodorant</li>
+<li><strong>Testing osseux</strong> : probe-to-bone test <strong>positif</strong> (le stylet metallique touche l'os)</li>
+<li><strong>Pouls</strong> : pedieux gauche non percu (pontage), tibial posterieur gauche percu faiblement</li>
+<li><strong>Temperature</strong> : pied gauche 35,2°C, pied droit 33,0°C (delta &gt; 2°C)</li>
+<li><strong>Signes generaux</strong> : T° 38,2°C, FC 92/min, PA 130/80, CRP 120 mg/L, leucocytes 14 500/mm³</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC16-001</strong><br/>
+<em>Photographie clinique : pied de Charcot en phase aigue avec deformation en « tampon buvard » et ulcere plantaire infecte (Identifiez les 3 problemes superposes : Charcot + ulcere + infection)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MDIAB-CC16-002</strong><br/>
+<em>Radiographie du pied gauche face + profil — effondrement de l'arche mediale, fragmentation osseuse du medio-pied (Lisfranc), subluxation tarso-metatarsienne (Classifiez selon Eichenholtz)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="questions-progressives_2">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic</strong> (analyse)</p>
+<blockquote>
+<p>Identifiez les 3 problemes superposes. Classifiez le Charcot et l'infection.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Probleme 1 — Neuro-osteoarthropathie de Charcot (pied de Charcot)</strong> :<br />
+- <strong>Phase aigue</strong> (stade 1 d'Eichenholtz) : pied rouge, chaud (delta &gt; 2°C), oedemateux, avec fragmentation osseuse radiographique<br />
+- Localisation : <strong>type II de Sanders-Frykberg</strong> (medio-pied, articulation de Lisfranc) — la localisation la plus frequente (60%)<br />
+- La neuropathie severe abolit la douleur protectrice → le patient marche sur un pied fracture sans le savoir → cycle de destruction osteo-articulaire (inflammation → resorption osseuse → fragmentation → deformation)</p>
+<p><strong>Probleme 2 — Ulcere profond infecte</strong> :<br />
+- Classification UT : <strong>Grade 3-C</strong> (contact osseux = atteinte osseuse, + infection clinique)<br />
+- Infection classifiee <strong>moderee a severe</strong> selon l'IWGDF 2023 : erytheme peri-lesionnel, pus, signes systemiques (fievre, leucocytose, CRP elevee)</p>
+<p><strong>Probleme 3 — Osteomyelite probable</strong> :<br />
+- Le <strong>probe-to-bone test positif</strong> a une valeur predictive positive de 89% pour l'osteomyelite <em>(Grayson et al., JAMA, 1995)</em><br />
+- L'association fievre + CRP 120 + contact osseux + pus rend le diagnostic d'osteomyelite <strong>quasi certain</strong></p>
+<p><strong>Question 2 — Bilan d'imagerie</strong> (application)</p>
+<blockquote>
+<p>Quels examens d'imagerie demandez-vous en urgence ? Comment distinguez-vous le Charcot aigu de l'osteomyelite a l'imagerie ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Examens a demander</strong> :</p>
+<ol>
+<li><strong>Radiographie du pied (face + profil + 3/4)</strong> : deja realisee → fragmentation osseuse du medio-pied, effondrement de l'arche</li>
+<li><strong>IRM du pied</strong> (examen de reference) :<br />
+   - Distingue Charcot vs osteomyelite : le Charcot touche les articulations (oedeme peri-articulaire diffus, fragmentation), l'osteomyelite touche l'os en regard de l'ulcere (oedeme medullaire focal, rehaussement, trajet fistuleux)<br />
+   - Ici, les 2 coexistent probablement (Charcot du medio-pied + osteomyelite de l'os en contact avec l'ulcere)</li>
+<li><strong>Scintigraphie aux leucocytes marques</strong> (si IRM non conclusive) : tres specifique pour l'infection osseuse</li>
+<li><strong>Echo-Doppler arteriel du MI gauche</strong> : verifier la permeabilite du pontage femoro-poplite</li>
+</ol>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC16-003</strong><br/>
+<em>Schema IRM comparatif : Charcot aigu vs osteomyelite — patterns de signal en T1, T2, STIR et post-gadolinium (Differenciez les 2 entites sur les images)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 3 — Prise en charge multidisciplinaire</strong> (synthese)</p>
+<blockquote>
+<p>Detaillez la prise en charge complete. Quelles sont les equipes impliquees ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Urgences — J0-J3</strong> :</p>
+<ol>
+<li>
+<p><strong>Mise en decharge totale et immobilisation</strong> :<br />
+   - Alitement strict + elevation du membre<br />
+   - <strong>TCC (Total Contact Cast) ou botte immobilisante</strong> : c'est le traitement n°1 du Charcot aigu — immobilisation pour stopper le cycle de destruction<br />
+   - Pas d'appui pendant 6-12 semaines minimum (phase de coalescence)</p>
+</li>
+<li>
+<p><strong>Antibiotherapie probabiliste IV</strong> (infection moderee-severe) :<br />
+   - <strong>Piperacilline-tazobactam 4g/6h IV</strong> (couverture BGN, anaerobies, cocci G+)<br />
+   - OU amoxicilline-acide clavulanique 2g/8h + fluoroquinolone (si allergie)<br />
+   - Adaptation a l'antibiogramme des que le prelevement profond est disponible<br />
+   - Prelevement bacteriologique : <strong>prelevement profond per-operatoire</strong> (pas d'ecouvillon superficiel — fiabilite mediocre)</p>
+</li>
+<li>
+<p><strong>Avis chirurgical</strong> :<br />
+   - Debridement chirurgical de l'ulcere + prelevements osseux (biopsie pour bacteriologie et anatomopathologie)<br />
+   - Si osteomyelite confirmee : discuter resection osseuse limitee (exerese de l'os infecte) vs antibiotherapie prolongee (6-8 semaines)<br />
+   - Chirurgie de reconstruction du Charcot (arthrodese medio-pied) : uniquement en phase chronique (stade 3 d'Eichenholtz), pas en phase aigue</p>
+</li>
+<li>
+<p><strong>Optimisation glycemique</strong> :<br />
+   - Insulinotherapie IVSE en phase aigue (objectif glycemique 1,40-1,80 g/L en infection)<br />
+   - Relais SC une fois l'infection controlee</p>
+</li>
+<li>
+<p><strong>Evaluation vasculaire</strong> :<br />
+   - Echo-Doppler du pontage femoro-poplite : si thrombose → revascularisation en urgence (la cicatrisation est impossible sans flux arteriel adequat)</p>
+</li>
+</ol>
+<p><strong>Equipes impliquees</strong> :<br />
+- Diabetologie, chirurgie orthopedique du pied, chirurgie vasculaire, infectiologie, radiologie, podologie, soins infirmiers specialises</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC16-004 — Timeline de prise en charge du pied de Charcot infecte — J0 a M12 avec les phases d'immobilisation, chirurgie et reeducation (Planifiez le parcours de soins complet)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_2">Points cles du cas</h4>
+<ol>
+<li>Le pied de Charcot aigu = pied rouge, chaud, gonfle, indolore chez un neuropathe → urgence diagnostique</li>
+<li>Le probe-to-bone test positif a une VPP de 89% pour l'osteomyelite</li>
+<li>L'IRM est l'examen cle pour distinguer Charcot et osteomyelite</li>
+<li>La mise en decharge totale (TCC) est le pilier du traitement du Charcot aigu</li>
+<li>L'antibiotherapie de l'osteomyelite du pied dure 6-8 semaines apres prelevement profond</li>
+</ol>
+<hr />
+<p><a id="cas-17"></a></p>
+<h3 id="cas-n17-acidocetose-diabetique-severe-en-reanimation">Cas n°17 — Acidocetose diabetique severe en reanimation</h3>
+<p><strong>Niveau</strong> : 🥇 Or<br />
+<strong>Modules mobilises</strong> : 5 (Physiopathologie DT1), 31 (Reanimation), 22 (Insulinotherapie), 9 (Diagnostic)<br />
+<strong>Duree estimee</strong> : 30 min<br />
+<strong>Thematique principale</strong> : Prise en charge de l'ACD severe en soins intensifs — protocole detaille</p>
+<h4 id="presentation-initiale_3">Presentation initiale</h4>
+<p>Mme Dubois, 24 ans, DT1 connue depuis 8 ans, est amenee au SAU par les pompiers. Son colocataire l'a trouvee semi-consciente dans sa chambre. Il rapporte qu'elle a un syndrome grippal depuis 4 jours avec fievre, nausees et vomissements repetes. Elle a « arrete son insuline car elle ne mangeait pas ».</p>
+<p><strong>A l'arrivee aux urgences</strong> :<br />
+- Glasgow : 10 (E3 V3 M4) — obnubilation<br />
+- FR : 34/min, respiration ample de Kussmaul<br />
+- FC : 128 bpm, PA : 85/50 mmHg (hypotension)<br />
+- T° : 38,8°C<br />
+- SpO2 : 97%<br />
+- Poids estime : 55 kg</p>
+<p><strong>Traitement habituel</strong> :<br />
+- Pompe a insuline (OmniPod 5) avec Lispro — mais la pompe est deconnectee depuis 2 jours (« elle ne la supportait plus avec la fievre »)<br />
+- Pas de schema de secours par stylos</p>
+<div class="vertex-media">
+<strong>📷 MDIAB-CC17-001</strong><br/>
+<em>Photographie clinique : patiente en acidocetose severe — deshydratation majeure, respiration de Kussmaul, signe du pli cutane (Evaluez la severite de la deshydratation)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h4 id="biologie-dentree">Biologie d'entree</h4>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur</th>
+<th>Normale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycemie</td>
+<td>5,80 g/L (32,2 mmol/L)</td>
+<td>0,70-1,10</td>
+</tr>
+<tr>
+<td>pH arteriel</td>
+<td>6,95</td>
+<td>7,35-7,45</td>
+</tr>
+<tr>
+<td>Bicarbonates</td>
+<td>4 mmol/L</td>
+<td>22-26</td>
+</tr>
+<tr>
+<td>pCO2</td>
+<td>12 mmHg</td>
+<td>35-45</td>
+</tr>
+<tr>
+<td>Trou anionique</td>
+<td>32 mEq/L</td>
+<td>8-12</td>
+</tr>
+<tr>
+<td>Cetonemie</td>
+<td>7,2 mmol/L</td>
+<td>&lt; 0,6</td>
+</tr>
+<tr>
+<td>Na+</td>
+<td>128 mmol/L</td>
+<td>135-145</td>
+</tr>
+<tr>
+<td>Na+ corrige</td>
+<td>138 mmol/L</td>
+<td></td>
+</tr>
+<tr>
+<td>K+</td>
+<td>5,8 mmol/L</td>
+<td>3,5-5,0</td>
+</tr>
+<tr>
+<td>Creatinine</td>
+<td>185 µmol/L</td>
+<td>50-90</td>
+</tr>
+<tr>
+<td>Lactates</td>
+<td>3,2 mmol/L</td>
+<td>&lt; 2,0</td>
+</tr>
+<tr>
+<td>Troponine</td>
+<td>45 ng/L</td>
+<td>&lt; 14</td>
+</tr>
+<tr>
+<td>Lipase</td>
+<td>280 UI/L (N &lt; 60)</td>
+<td>Elevee</td>
+</tr>
+<tr>
+<td>BU</td>
+<td>Glucose ++++, Cetones ++++</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="questions-progressives_3">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Evaluation de la severite</strong> (analyse)</p>
+<blockquote>
+<p>Classifiez la severite de cette ACD. Identifiez tous les criteres de gravite justifiant l'admission en reanimation.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>ACD SEVERE</strong> selon l'ADA 2024 et l'ISPAD :<br />
+- pH &lt; 7,00 (ici 6,95) → <strong>critique</strong> (seuil de severite maximale)<br />
+- Bicarbonates &lt; 5 mmol/L (ici 4 mmol/L)<br />
+- Cetonemie &gt; 6 mmol/L (ici 7,2)</p>
+<p><strong>Criteres d'admission en reanimation</strong> :<br />
+1. <strong>pH &lt; 7,00</strong> — acidose metabolique menacante<br />
+2. <strong>Glasgow &lt; 12</strong> — troubles de conscience (risque d'inhalation)<br />
+3. <strong>Instabilite hemodynamique</strong> — PA 85/50 (choc hypovolemique par deshydratation massive)<br />
+4. <strong>Hyperkaliemie</strong> — K+ 5,8 mmol/L (risque de trouble du rythme → ECG urgent)<br />
+5. <strong>Insuffisance renale aigue</strong> — creatinine 185 µmol/L (fonctionnelle par deshydratation)<br />
+6. <strong>Elevation de la troponine</strong> — 45 ng/L (souffrance myocardique dans le contexte de tachycardie + acidose + deshydratation — pas un SCA mais une troponine de stress)<br />
+7. <strong>Hyperlipasemie</strong> — lipase 280 UI/L : pancréatite aigue metabolique (complication de l'ACD par hypertriglyceridemie et agression acide du pancreas)<br />
+8. <strong>Hyperlactatemie</strong> — 3,2 mmol/L : hypoperfusion tissulaire</p>
+<p><strong>Question 2 — Protocole de reanimation</strong> (application)</p>
+<blockquote>
+<p>Detaillez le protocole heure par heure des 6 premieres heures. Quelles sont les erreurs a eviter ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>H0 — Mesures immediates</strong> :<br />
+- <strong>Scope continu</strong> : ECG, SpO2, PA invasive (KTA)<br />
+- <strong>2 voies veineuses peripheriques</strong> (16G) — pose d'un catheter veineux central si VVP difficiles<br />
+- <strong>Sonde urinaire</strong> : diurese horaire (objectif &gt; 0,5 mL/kg/h)<br />
+- <strong>ECG 12 derivations</strong> : rechercher les signes d'hyperkaliemie (ondes T pointues, elargissement QRS)<br />
+- <strong>Intubation NON recommandee</strong> sauf arret respiratoire imminent (l'intubation supprime la compensation respiratoire → aggravation fatale du pH)</p>
+<p><strong>H0-H1 — Rehydratation</strong> :<br />
+- <strong>NaCl 0,9% : 1000 mL en 30-60 min</strong> (adulte deshydrate + hypotension)<br />
+- Puis 500 mL/h pendant 4h, puis 250 mL/h<br />
+- Deficit hydrique estime : 6-9 L (100 mL/kg)<br />
+- <strong>Switch au G5% + NaCl quand glycemie &lt; 2,5 g/L</strong> (pour maintenir le debit d'insuline sans hypoglycemie)</p>
+<p><strong>H1-H2 — Insulinotherapie IVSE</strong> :<br />
+- <strong>Ne PAS debuter l'insuline avant d'avoir un K+ confirme ≥ 3,5 mmol/L</strong> (ici K+ 5,8 → on peut debuter)<br />
+- Bolus : <strong>pas de bolus</strong> chez l'adulte jeune (risque d'oedeme cerebral)<br />
+- Debit : <strong>0,1 UI/kg/h</strong> IVSE = 5,5 UI/h (arrondi a 5 UI/h)<br />
+- Objectif : baisse de la glycemie de <strong>0,5-0,75 g/L/h</strong> — si baisse trop rapide, reduire le debit a 0,05 UI/kg/h</p>
+<p><strong>H0+ — Supplementation potassique</strong> :<br />
+- K+ 5,8 → ne PAS supplementer immediatement, mais des que K+ &lt; 5,5 (ce qui arrive rapidement sous insuline + rehydratation)<br />
+- Objectif : maintenir K+ entre 4,0 et 5,0 mmol/L<br />
+- 20-40 mmol/L de KCl dans chaque litre de perfusion<br />
+- <strong>Si K+ &lt; 3,5 : ARRETER l'insuline</strong> jusqu'a correction (risque d'arret cardiaque par hypokaliemie)</p>
+<p><strong>H2-H6 — Surveillance et ajustements</strong> :<br />
+- Glycemie capillaire horaire<br />
+- Ionogramme + gaz du sang toutes les 2h<br />
+- Cetonemie toutes les 2h (la resolution de la cetose, pas la glycemie, guide l'arret de l'IVSE)<br />
+- Glasgow horaire</p>
+<p><strong>Criteres de resolution de l'ACD</strong> :<br />
+- pH &gt; 7,30 ET bicarbonates &gt; 18 mmol/L ET cetonemie &lt; 0,6 mmol/L ET patient alimente</p>
+<p><strong>Erreurs a eviter</strong> :<br />
+1. ❌ <strong>Ne pas administrer de bicarbonates de sodium</strong> sauf pH &lt; 6,90 (ici 6,95 → discutable, mais le consensus est de ne pas en donner sauf acidose extreme car le bicarbonate aggrave l'hypokaliemie et le risque d'oedeme cerebral)<br />
+2. ❌ <strong>Ne pas corriger la glycemie trop vite</strong> (&gt; 1 g/L/h → oedeme cerebral)<br />
+3. ❌ <strong>Ne pas arreter l'insuline quand la glycemie baisse</strong> — continuer l'IVSE et ajouter du glucose (la cetose met plus de temps a se resoudre que l'hyperglycemie)<br />
+4. ❌ <strong>Ne pas oublier de chercher le facteur declenchant</strong> : ici, l'arret de l'insuline + infection virale intercurrente</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC17-002 — Protocole de reanimation de l'ACD severe heure par heure — tableau avec debits de perfusion, insuline, potassium et seuils d'alerte (Suivez le protocole etape par etape)]</p>
+<p>[MEDIA: 📊 MDIAB-CC17-003 — Courbes d'evolution typique des parametres sur 24h — glycemie, pH, bicarbonates, cetonemie, kaliemie (Identifiez la discordance entre la correction de la glycemie et celle de la cetose)]</p>
+</blockquote>
+<p><strong>Question 3 — Education post-ACD et prevention</strong> (synthese)</p>
+<blockquote>
+<p>L'ACD est resolue a H24. Quel schema de relais par voie SC et quelle education proposez-vous a la sortie ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Relais insuline SC</strong> :<br />
+- La premiere injection SC d'insuline basale doit etre faite <strong>2 heures AVANT l'arret de l'IVSE</strong> (chevauchement necessaire pour eviter le rebond d'ACD)<br />
+- Schema basal-bolus par stylos en attendant la remise en route de la pompe : Degludec 14 UI au coucher + Lispro avant chaque repas (ratio I/C 1/10)<br />
+- <strong>Remise en route de la pompe</strong> : uniquement quand la patiente est stable, alimentee, et que l'education de secours a ete faite</p>
+<p><strong>Regles vitales a enseigner</strong> :<br />
+1. <strong>JAMAIS arreter l'insuline</strong>, meme en cas de maladie ou de jeune — adapter les doses mais ne jamais les stopper (une infection augmente les besoins en insuline de 30-50%)<br />
+2. <strong>Regles des jours de maladie</strong> :<br />
+   - Controler la glycemie toutes les 2-4h<br />
+   - Controler la cetonemie capillaire si glycemie &gt; 2,5 g/L<br />
+   - Si cetonemie &gt; 1,5 mmol/L → correction d'insuline rapide + appel immediat au diabetologue<br />
+   - Hydratation renforcee : 1,5 a 2 L d'eau/jour minimum<br />
+3. <strong>Toujours avoir un schema de secours par stylos</strong> si la pompe tombe en panne<br />
+4. <strong>Kit d'urgence</strong> : stylos d'insuline rapide + basale + bandelettes de cetonemie + glucagon</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC17-004 — Fiche patient : regles des jours de maladie — algorithme simple avec pictogrammes pour l'autogestion en cas de fievre/vomissements (Remettez cette fiche a la patiente)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_3">Points cles du cas</h4>
+<ol>
+<li>Le pH &lt; 7,00 et le Glasgow &lt; 12 justifient l'admission en reanimation</li>
+<li>L'insuline IVSE ne doit JAMAIS etre arretee tant que la cetose n'est pas resolue — ajouter du glucose</li>
+<li>Le potassium est le parametre le plus dangereux : surveiller toutes les 2h, supplementer des que &lt; 5,5</li>
+<li>Les bicarbonates IV ne sont pas recommandes sauf pH &lt; 6,90</li>
+<li>L'arret de l'insuline lors d'une infection est la cause la plus frequente d'ACD evitable</li>
+</ol>
+<hr />
+<p><em>Fin de la Partie 3 — Cas Or (14-17)</em></p>
+</div>

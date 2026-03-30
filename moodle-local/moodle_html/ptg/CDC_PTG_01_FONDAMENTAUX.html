@@ -1,0 +1,1037 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-ptg">CAHIER DES CHARGES — FORMATION PTG</h1>
+<h2 id="partie-1-fondamentaux-et-sciences-de-base-modules-1-4">Partie 1 — Fondamentaux et Sciences de base (Modules 1-4)</h2>
+<p><strong>Formation</strong> : Prothèse Totale du Genou (PTG)<br />
+<strong>Partie</strong> : I — FONDAMENTAUX ET SCIENCES DE BASE<br />
+<strong>Modules</strong> : 1 à 4<br />
+<strong>Durée estimée</strong> : ~14 heures<br />
+<strong>Couleur dominante</strong> : 🟢 Vert émeraude <code>#0E6655</code></p>
+<hr />
+<h1 id="module-1-histoire-de-larthroplastie-du-genou">MODULE 1 : HISTOIRE DE L'ARTHROPLASTIE DU GENOU</h1>
+<p><strong>Durée</strong> : ~3h | <strong>Niveau</strong> : Fondamental | <strong>Prérequis</strong> : Aucun</p>
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<p>À l'issue de ce module, le praticien sera capable de :<br />
+1. <strong>Retracer</strong> l'évolution historique de la chirurgie articulaire du genou, des premières résections aux PTG modernes<br />
+2. <strong>Identifier</strong> les innovations de rupture qui ont façonné le design actuel des PTG<br />
+3. <strong>Expliquer</strong> pourquoi chaque génération d'implant a succédé à la précédente (succès et échecs)<br />
+4. <strong>Citer</strong> les contributions majeures des pionniers (Glück, Walldius, Gunston, Insall, Freeman, etc.)<br />
+5. <strong>Comprendre</strong> comment les leçons de l'histoire éclairent les choix de conception actuels</p>
+<h2 id="contenu-detaille">Contenu détaillé</h2>
+<h3 id="11-ere-pre-prothetique-avant-1860">1.1 Ère pré-prothétique (avant 1860)</h3>
+<ul>
+<li>Les premières descriptions de l'arthrite du genou dans l'Antiquité (Hippocrate, Galien)</li>
+<li>Les traitements historiques : repos, cataplasmes, saignées, attelles</li>
+<li>Premières résections articulaires au XIXe siècle :</li>
+<li><strong>Jules Péan</strong> (1894) : première arthroplastie par interposition (membrane animale)</li>
+<li>Park (1781) et Moreau (1792) : premières résections articulaires documentées</li>
+<li>Fergusson (1861) : résection articulaire du genou pour ankylose</li>
+<li>Arthroplasties d'interposition :</li>
+<li>Interposition de tissu mou (fascia lata, muscle, graisse)</li>
+<li>Baer (1918) : interposition de chromo-membrane porcine</li>
+<li>Campbell (1940) : arthroplastie par interposition de fascia lata</li>
+<li>Smith-Petersen (moule en vitalium pour la hanche — 1939, concept transposable)</li>
+<li>Limites de l'ère pré-prothétique : infection, ankylose, instabilité, résultats imprévisibles<blockquote>
+<p>[MEDIA: 📊 MPTG01-S01-001 — Frise chronologique de l'ère pré-prothétique (De l'Antiquité au XXe siècle — identifiez les tentatives fondatrices et leurs limites)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG01-S01-002</strong><br/>
+<em>Illustrations historiques des premières résections articulaires (Observez l'absence totale de fixation — quels problèmes cela posait-il ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="12-premieres-protheses-a-charniere-la-generation-contrainte-1940-1970">1.2 Premières prothèses à charnière — La génération contrainte (1940-1970)</h3>
+<ul>
+<li><strong>Themistoclès Glück</strong> (1891) : première prothèse articulaire de l'histoire</li>
+<li>Charnière en ivoire fixée au ciment de colophane</li>
+<li>Concept visionnaire mais échec par infection (pas d'asepsie moderne)</li>
+<li>Importance historique : poser le concept de remplacement articulaire</li>
+<li><strong>Walldius</strong> (1951) : prothèse à charnière en acier inoxydable puis en Vitallium</li>
+<li>Premier implant reproductible</li>
+<li>Fixation sans ciment (press-fit dans l'os)</li>
+<li>Résultats décevants : descellement précoce, fractures, infection</li>
+<li><strong>Shiers</strong> (1954) : charnière métallique avec axe fixe</li>
+<li>Concept mono-axial : flexion/extension uniquement</li>
+<li>Absence totale de rotation → contraintes massives sur l'os → descellement</li>
+<li><strong>GUEPAR</strong> (1967-1970) : charnière française (Groupe pour l'Utilisation et l'Étude des Prothèses Articulaires du Genou)</li>
+<li>Charnière avec butée d'hyperextension</li>
+<li>Équipe pluridisciplinaire française pionnière</li>
+<li>Résultats meilleurs mais complications persistantes (descellement, infection, fracture supracondylienne)</li>
+<li><strong>Leçon historique</strong> : une prothèse trop contrainte transmet 100% des contraintes à l'interface os-implant → descellement mécanique inévitable</li>
+<li>L'articulation du genou n'est PAS une charnière simple</li>
+<li>Nécessité de comprendre la cinématique réelle du genou pour concevoir un implant durable</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG01-S02-001</strong><br/>
+<em>Photos des implants historiques : Glück (ivoire), Walldius (Vitallium), GUEPAR (Observez l'évolution du volume métallique et de la contrainte)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG01-S02-002</strong><br/>
+<em>Schéma biomécanique de la prothèse à charnière : toutes les forces de rotation/cisaillement se transmettent à l'interface os-implant → descellement (Comparez avec la cinématique du genou naturel)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG01-S02-003 — Tableau des résultats des prothèses de 1re génération : taux de descellement, infection, survie (Analysez pourquoi la survie était &lt; 5 ans)]</p>
+</blockquote>
+<h3 id="13-naissance-de-la-ptg-moderne-protheses-condylaires-1970-1985">1.3 Naissance de la PTG moderne — Prothèses condylaires (1970-1985)</h3>
+<ul>
+<li><strong>Frank Gunston</strong> (1968-1971) : première prothèse condylaire (resurfaçage polyfocal)</li>
+<li>Élève de Charnley (hanche) → transposition du concept au genou</li>
+<li>Polyéthylène sur métal, fixé au PMMA (ciment de Charnley)</li>
+<li>Resurfaçage séparé des deux condyles (4 composants)</li>
+<li>Révolution conceptuelle : passer de la charnière (contrainte) au resurfaçage (semi-contraint)</li>
+<li><strong>Freeman-Swanson</strong> (1970) : première PTG à plateau tibial continu (un seul composant tibial)</li>
+<li>Sacrifice des deux croisés</li>
+<li>Introduction du concept de stabilisation par la congruence géométrique</li>
+<li>Premiers résultats reproductibles</li>
+<li><strong>John Insall</strong> et la <em>Total Condylar Prosthesis</em> (TCP, 1973) :</li>
+<li><strong>Révolution Insall</strong> : design qui va devenir le standard mondial</li>
+<li>Sacrifice du LCA et du LCP</li>
+<li>Composants fémoraux anatomiques, plateau tibial en PE sur embase métallique</li>
+<li>Composant patellaire en PE (all-poly) — innovation majeure</li>
+<li>Résultats excellents à 10 ans (&gt; 90% survie) <em>(Insall et al., 1982, J Bone Joint Surg Am)</em></li>
+<li><strong>Principe fondateur</strong> : coupes osseuses géométriques + équilibrage des tissus mous</li>
+<li><strong>Insall-Burstein</strong> <em>Posterior Stabilized</em> (IB PS, 1978) :</li>
+<li>Came fémorale (<em>cam</em>) + poteau tibial (<em>post</em>) remplacent l'action du LCP</li>
+<li>Meilleure flexion, rollback mécanique contrôlé</li>
+<li>Design qui domine encore aujourd'hui dans les PS modernes</li>
+<li><strong>Cloutier</strong> et la prothèse <em>cruciate retaining</em> (CR, ~1980) :</li>
+<li>Conservation du LCP intact</li>
+<li>Rollback physiologique maintenu par le LCP</li>
+<li>Débat CR vs PS qui perdure encore en 2026</li>
+<li><strong>Apports des années 1970-80</strong> :</li>
+<li>Standardisation de l'instrumentation de coupe (guides mécaniques)</li>
+<li>Introduction du ciment acrylique (PMMA) systématique (Charnley → genou)</li>
+<li>Premiers systèmes de tailles progressives (6-8 tailles)</li>
+<li>Premiers scores cliniques standardisés (HSS score — Insall JN et al., 1976, J Bone Joint Surg Am)</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG01-S03-001</strong><br/>
+<em>Photos des implants : Gunston (polyfocal), Freeman-Swanson, TCP Insall, IB-PS (Observez l'évolution du design condylaire et la surface de contact)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG01-S03-002</strong><br/>
+<em>Animation du concept de came-poteau (PS Insall-Burstein) : en flexion, la came fémorale pousse sur le poteau tibial → rollback mécanique contrôlé (Comparez avec le rollback naturel du LCP)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG01-S03-003 — Frise chronologique 1968-1985 : les innovations clés et leur impact sur la survie des implants (De 40% à 10 ans → 90% à 10 ans)]</p>
+</blockquote>
+<h3 id="14-ere-de-maturation-et-standardisation-1985-2005">1.4 Ère de maturation et standardisation (1985-2005)</h3>
+<ul>
+<li>Généralisation des PTG dans le monde occidental</li>
+<li>Explosion du nombre de PTG : de 50 000/an (USA, 1985) à 500 000/an (2005) <em>(Kurtz et al., 2007, J Bone Joint Surg Am)</em></li>
+<li>Démocratisation des instruments de coupe intra- et extra-médullaires</li>
+<li>Standardisation des voies d'abord (médiale parapatellaire)</li>
+<li>Évolution des designs :</li>
+<li>Introduction du plateau mobile (<em>mobile bearing</em>) — Buechel &amp; Pappas (LCS, 1977-1985)</li>
+<li>Débat plateau fixe vs plateau mobile (rotation, usure, stabilité)</li>
+<li>PTG à haute flexion (<em>high-flex</em>) — designs pour les populations asiatiques (seiza, prière)</li>
+<li>Évolution des composants patellaires (all-poly vs metal-backed, resurfaçage vs non-resurfaçage)</li>
+<li>Révolution des matériaux :</li>
+<li>Polyéthylène conventionnel UHMWPE → usure et ostéolyse</li>
+<li>Introduction du polyéthylène réticulé (<em>cross-linked</em>, XLPE) — fin des années 1990</li>
+<li>Réduction drastique des taux d'usure (facteur 5-10x)</li>
+<li>Oxinium (zirconium oxydé) — Smith &amp; Nephew, 2001</li>
+<li>Céramiques (genou) — essais limités</li>
+<li>Technique chirurgicale :</li>
+<li>Codification de l'équilibrage ligamentaire (Insall, Whiteside, Krackow)</li>
+<li>Introduction de l'axe mécanique comme référence (vs axe anatomique)</li>
+<li>Premiers guides de coupe extra-médullaires pour le tibia</li>
+<li>Développement des prothèses de reprise (tiges, cales, sleeves)</li>
+<li>Résultats à long terme :</li>
+<li>Séries historiques à 15-20 ans : survie &gt; 90% (registres suédois, finlandais)</li>
+<li>Identification des modes d'échec principaux : descellement aseptique, usure du PE, instabilité, infection<blockquote>
+<p>[MEDIA: 📊 MPTG01-S04-001 — Graphique d'évolution du nombre de PTG/an dans le monde (1970-2025) — croissance exponentielle (Identifiez les facteurs de cette croissance)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG01-S04-002</strong><br/>
+<em>Comparaison plateau fixe vs plateau mobile : photos d'implants et schéma du mouvement (Quel est l'avantage théorique de la mobilité ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG01-S04-003 — Courbes de survie des registres nordiques (15-20 ans) : les grands designs historiques (Observez la convergence vers &gt; 90% à 15 ans)]</p>
+</blockquote>
+<h3 id="15-ere-technologique-moderne-2005-aujourdhui">1.5 Ère technologique moderne (2005-aujourd'hui)</h3>
+<ul>
+<li>Navigation assistée par ordinateur (CAS, <em>Computer-Assisted Surgery</em>) :</li>
+<li>Navigation optique (Brainlab, Stryker, Zimmer) — années 2000</li>
+<li>Promesse d'alignement plus précis — résultats cliniques controversés</li>
+<li>Temps opératoire augmenté, courbe d'apprentissage</li>
+<li>Instrumentation spécifique au patient (<em>Patient-Specific Instrumentation</em>, PSI) :</li>
+<li>Guides de coupe sur mesure à partir du scanner/IRM du patient</li>
+<li>Promesse : coupes plus précises, moins de temps, moins d'instruments</li>
+<li>Résultats cliniques mitigés (méta-analyses 2015-2023)</li>
+<li>Chirurgie robotique assistée :</li>
+<li>ROBODOC (genou, 2000 — premiers essais, résultats décevants)</li>
+<li>Mako (Stryker, 2006 hanche → 2017 PTG totale) — bras robotique semi-actif</li>
+<li>ROSA (Zimmer Biomet, 2019) — système ouvert</li>
+<li>CORI (Smith &amp; Nephew, 2020) — imagerie optique</li>
+<li>Navio (Smith &amp; Nephew, 2012 → PUC, puis PTG)</li>
+<li>Promesses : précision sub-millimétrique, respect de l'enveloppe ligamentaire</li>
+<li>Données émergentes en 2026 : résultats prometteurs mais recul insuffisant</li>
+<li>Alignement personnalisé (<em>kinematic alignment</em>, KA) :</li>
+<li>Concept de Howell (2006-2012) : aligner l'implant sur l'anatomie native du patient (vs alignement mécanique neutre) <em>(Howell SM et al., 2012, Clin Orthop Relat Res)</em></li>
+<li><em>Restricted kinematic alignment</em> (rKA) — compromis FM+KA</li>
+<li><em>Functional alignment</em> — Oussedik, Lustig</li>
+<li>Débat majeur 2020-2026 : MA vs KA vs rKA vs FA</li>
+<li>Implants personnalisés (custom-made) :</li>
+<li>ConforMIS (2004) : premiers implants entièrement personnalisés à partir du scanner</li>
+<li>Origin (USA), Symbios (Suisse) : solutions alternatives</li>
+<li>Impression 3D d'augments et implants de reprise</li>
+<li>Intelligence artificielle :</li>
+<li>Prédiction des résultats (machine learning sur registres nationaux)</li>
+<li>Planification automatisée (positionnement optimal de l'implant)</li>
+<li>Détection précoce du descellement (capteurs embarqués)</li>
+<li>Biologie et frontières :</li>
+<li>Thérapie cellulaire et régénérative (PRP, cellules souches, échafaudages) — pré-PTG</li>
+<li>Capteurs intra-prothétiques (Verasense, OrthoSensor) — mesure peropératoire de la pression</li>
+<li>Implants instrumentés connectés (suivi postopératoire temps réel) — projets de recherche<blockquote>
+<p>[MEDIA: 📊 MPTG01-S05-001 — Frise chronologique des innovations technologiques 2005-2026 (navigation → PSI → robotique → IA)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG01-S05-002</strong><br/>
+<em>Animation comparant les 3 philosophies d'alignement : mécanique neutre (MA), cinématique (KA), fonctionnel (FA) (Observez la position de l'interligne dans chaque cas)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MPTG01-S05-003</strong><br/>
+<em>Photos des systèmes robotiques actuels : Mako, ROSA, CORI (Comparez les interfaces et le type de guidage)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="16-chronologie-synthetique-et-lecons-de-lhistoire">1.6 Chronologie synthétique et leçons de l'histoire</h3>
+<ul>
+<li>Frise chronologique intégrée (1891 → 2026) avec les jalons majeurs</li>
+<li>Leçons historiques pour le chirurgien d'aujourd'hui :</li>
+<li>« Toute contrainte mécanique non absorbée par les tissus mous est transmise à l'interface os-implant » (leçon des charnières)</li>
+<li>« Le polyéthylène est le maillon faible de toute arthroplastie » (leçon de l'usure)</li>
+<li>« L'alignement de l'implant détermine la survie à long terme plus que le design » (leçon des registres)</li>
+<li>« Le meilleur implant est celui qui reproduit au mieux la cinématique native sans excéder la tolérance mécanique des matériaux » (synthèse moderne)</li>
+<li>« La technologie ne remplace pas la technique chirurgicale — elle l'augmente » (leçon de la robotique)<blockquote>
+<p>[MEDIA: 📊 MPTG01-S06-001 — Grande frise chronologique synthétique 1891-2026 : toutes les générations d'implants, les innovations, les pionniers (Document de référence à imprimer)]</p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h1 id="module-2-embryologie-et-croissance-du-genou">MODULE 2 : EMBRYOLOGIE ET CROISSANCE DU GENOU</h1>
+<p><strong>Durée</strong> : ~2h30 | <strong>Niveau</strong> : Fondamental | <strong>Prérequis</strong> : Aucun</p>
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> le développement embryologique du genou (de la 4ème semaine à la naissance)</li>
+<li><strong>Expliquer</strong> la formation des ménisques, des ligaments croisés et de la cavité articulaire</li>
+<li><strong>Identifier</strong> les anomalies de développement du genou et leurs conséquences à l'âge adulte</li>
+<li><strong>Comprendre</strong> la croissance osseuse péri-articulaire du genou et l'impact des troubles d'axe sur la gonarthrose</li>
+<li><strong>Relier</strong> les connaissances embryologiques aux constatations peropératoires</li>
+</ol>
+<h2 id="contenu-detaille_1">Contenu détaillé</h2>
+<h3 id="21-developpement-embryologique-du-membre-inferieur">2.1 Développement embryologique du membre inférieur</h3>
+<ul>
+<li>Bourgeon de membre inférieur (4ème-5ème semaine)</li>
+<li>Mésenchyme, condensation cellulaire, différenciation chondrogénique</li>
+<li>Zone d'activité polarisante (ZPA), AER (<em>Apical Ectodermal Ridge</em>)</li>
+<li>Gènes Hox et morphogènes (Shh, FGF, Wnt) — spécification proximo-distale</li>
+<li>Chondrification du fémur et du tibia (6ème-7ème semaine)</li>
+<li>Formation des ébauches cartilagineuses</li>
+<li>Apparition de l'interzone articulaire (future cavité du genou)</li>
+<li>Cavitation de l'interzone : apoptose cellulaire → formation de la cavité synoviale</li>
+<li>Rotation embryologique du membre inférieur</li>
+<li>Rotation médiale de 90° (le genou « pointe vers l'avant »)</li>
+<li>Conséquences sur l'axe mécanique et l'alignement du fémur/tibia</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG02-S01-001</strong><br/>
+<em>Animation du développement du bourgeon du membre inférieur (semaines 4-8) : condensation → chondrification → cavitation (Observez la formation de l'interzone articulaire)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG02-S01-002</strong><br/>
+<em>Schéma de la rotation embryologique du membre inférieur (90° médial) : position initiale vs finale (Reliez cela à l'alignement du genou adulte)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="22-formation-de-larticulation-du-genou">2.2 Formation de l'articulation du genou</h3>
+<ul>
+<li>Formation des ménisques</li>
+<li>Différenciation à partir du mésenchyme de l'interzone (8ème semaine)</li>
+<li>Ménisque médial et latéral : morphologie précoce, vascularisation initiale complète</li>
+<li>Régression vasculaire progressive (de la périphérie vers le centre) durant la vie fœtale et postnatale</li>
+<li>Ménisque discoïde : anomalie de développement (persistance de la forme embryonnaire)</li>
+<li>Formation des ligaments croisés</li>
+<li>LCA et LCP : différenciation précoce (8ème semaine), avant la cavitation complète</li>
+<li>Position intra-articulaire mais extra-synoviale (enveloppés par le pli synovial postérieur)</li>
+<li>Insertions fémorales et tibiales définitives dès la 12ème semaine</li>
+<li>Formation des ligaments collatéraux</li>
+<li>LCM : large, attaché au ménisque médial (expliquer la lésion combinée LCM + ménisque)</li>
+<li>LCL : cordiforme, indépendant du ménisque latéral</li>
+<li>Formation de la patella</li>
+<li>Ébauche cartilagineuse dans le tendon quadricipital (12ème semaine)</li>
+<li>Ossification endochondrale progressive (3-5 ans postnatal)</li>
+<li>Os sésamoïde le plus grand du corps</li>
+<li>Formation de la membrane synoviale et de la capsule</li>
+<li>Synoviale : couche interne de l'interzone, production de liquide synovial</li>
+<li>Capsule fibreuse : couche externe, renforcée par les ligaments</li>
+<li>Culs-de-sac synoviaux : sous-quadricipital (suprapatellaire), postéro-médial, postéro-latéral</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG02-S02-001</strong><br/>
+<em>Animation de la formation des ménisques et des ligaments croisés (semaines 7-12) (Observez que les croisés se forment AVANT la cavitation complète)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG02-S02-002</strong><br/>
+<em>Schéma du ménisque discoïde : forme embryonnaire persistante vs ménisque normal (Quel est le risque à l'âge adulte ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG02-S02-003</strong><br/>
+<em>Animation de l'ossification de la patella (3-5 ans) : centres d'ossification multiples → fusion (Expliquez la patella bipartite)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="23-croissance-osseuse-peri-articulaire-du-genou">2.3 Croissance osseuse péri-articulaire du genou</h3>
+<ul>
+<li>Physes du fémur distal et du tibia proximal</li>
+<li>Physe distale du fémur : contribue à ~70% de la croissance en longueur du fémur et ~40% de la croissance totale du MI <em>(Pritchett, 1992 ; Dimeglio, 2001)</em></li>
+<li>Physe proximale du tibia : contribue à ~55% de la croissance en longueur du tibia <em>(Pritchett, 1992)</em></li>
+<li>« Le genou fait pousser le membre » — règle clinique fondamentale</li>
+<li>Conséquences : une épiphysiodèse autour du genou a un impact majeur sur la longueur du MI</li>
+<li>Centres d'ossification secondaires</li>
+<li>Noyau d'ossification du condyle fémoral (36ème semaine — marqueur de maturité fœtale)</li>
+<li>Noyau d'ossification du plateau tibial proximal (naissance)</li>
+<li>Tubérosité tibiale antérieure (TTA) — ossification et fusion (10-15 ans)</li>
+<li>Maladie d'Osgood-Schlatter : apophysite de traction de la TTA chez l'adolescent</li>
+<li>Développement de l'axe mécanique du membre inférieur</li>
+<li>Genu varum physiologique (0-2 ans)</li>
+<li>Genu valgum physiologique (2-4 ans, pic à 3 ans)</li>
+<li>Alignement neutre progressif (6-7 ans)</li>
+<li>Persistance d'un valgus physiologique de 5-7° (angle HKA ~177°)</li>
+<li>Pathologies de croissance impactant le genou adulte</li>
+<li>Maladie de Blount (tibia vara) → gonarthrose médiale précoce</li>
+<li>Rachitisme → déformations en varus/valgus</li>
+<li>Traumatismes physaires (pont d'épiphysiodèse) → désaxation progressive</li>
+<li>Ostéochondrite disséquante (OCD) du genou — genou de l'adolescent<blockquote>
+<p>[MEDIA: 📊 MPTG02-S03-001 — Infographie de la contribution des physes à la croissance du MI (« Le genou fait pousser le membre ») (Calculez l'impact d'une épiphysiodèse fémorale distale à 10 ans)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG02-S03-002</strong><br/>
+<em>Animation de l'évolution de l'axe du MI (0-7 ans) : varum → valgum → neutre (Observez le pic de valgum physiologique à 3 ans)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG02-S03-003</strong><br/>
+<em>Schéma des centres d'ossification autour du genou : fémur distal, tibia proximal, TTA, patella (Identifiez les zones à risque d'apophysite)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="24-implications-chirurgicales-de-lembryologie">2.4 Implications chirurgicales de l'embryologie</h3>
+<ul>
+<li>Compréhension de la vascularisation méniscale</li>
+<li>Zone rouge-rouge (périphérique), rouge-blanche (transitionnelle), blanche-blanche (centrale)</li>
+<li>Explication embryologique : la vascularisation régresse du centre vers la périphérie</li>
+<li>Conséquence chirurgicale : seules les lésions périphériques peuvent cicatriser</li>
+<li>Anatomie des croisés et leur rapport à la synoviale</li>
+<li>Intra-articulaire mais extra-synovial → pas de cicatrisation spontanée</li>
+<li>Explication embryologique : formation dans l'interzone, avant la cavitation synoviale</li>
+<li>Patella bipartite et fragments accessoires</li>
+<li>Embryologie : fusion incomplète des centres d'ossification</li>
+<li>Diagnostic différentiel avec fracture patellaire</li>
+<li>Prévalence : 2-3% de la population <em>(Oohashi et al., 2006)</em></li>
+<li>Ménisque discoïde</li>
+<li>Prévalence : 3-5% (population occidentale), 10-15% (population asiatique) <em>(Kim et al., 2006)</em></li>
+<li>Forme embryonnaire persistante → instabilité, lésion mécanique</li>
+<li>Wrisberg variant : fixation postérieure uniquement → « claquement du genou »</li>
+<li>Impact sur la planification d'une PTG (anatomie méniscale atypique)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG02-S04-001</strong><br/>
+<em>Schéma des zones vasculaires du ménisque (R-R, R-B, B-B) avec explication embryologique (Pourquoi la zone centrale ne cicatrise-t-elle pas ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h1 id="module-3-anatomie-chirurgicale-du-genou">MODULE 3 : ANATOMIE CHIRURGICALE DU GENOU</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Fondamental → Intermédiaire | <strong>Prérequis</strong> : Module 2</p>
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> l'ostéologie du fémur distal, du tibia proximal et de la patella avec les repères chirurgicaux</li>
+<li><strong>Identifier</strong> les ligaments, les ménisques et les structures capsulaires du genou</li>
+<li><strong>Connaître</strong> la neuroanatomie et la vascularisation péri-articulaire du genou</li>
+<li><strong>Maîtriser</strong> l'anatomie musculaire de l'appareil extenseur et des compartiments postérieur et latéral</li>
+<li><strong>Relier</strong> chaque structure anatomique à son rôle dans la PTG (repère de coupe, équilibrage, préservation)</li>
+</ol>
+<h2 id="contenu-detaille_2">Contenu détaillé</h2>
+<h3 id="31-osteologie-du-femur-distal">3.1 Ostéologie du fémur distal</h3>
+<ul>
+<li>Morphologie condylienne</li>
+<li>Condyle médial : plus large, plus long, plus courbe que le latéral</li>
+<li>Condyle latéral : plus symétrique, rayon de courbure plus constant</li>
+<li>Dissymétrie condylienne → rotation en flexion (screw-home mechanism)</li>
+<li>Angle condylien postérieur (<em>posterior condylar angle</em>, PCA) : ~3° de rotation externe</li>
+<li>Trochlée fémorale</li>
+<li>Sillon trochléen : profondeur, angle trochléen de déjà</li>
+<li>Facette latérale plus haute et plus large → stabilité patellaire</li>
+<li>Dysplasie trochléenne (classification de Dejour A-D) <em>(Dejour et al., 1990, Rev Chir Orthop)</em> → instabilité patellaire et implications pour la PTG</li>
+<li>Repères chirurgicaux du fémur distal</li>
+<li>Axe anatomique fémoral (5-7° de valgus par rapport à l'axe mécanique)</li>
+<li>Axe transépicondylien (TEA) : <em>surgical TEA</em> vs <em>clinical TEA</em></li>
+<li>Ligne de Whiteside (axe antéropostérieur trochléen)</li>
+<li>Angle condylien postérieur (PCA)</li>
+<li>Point d'entrée du canal médullaire (fossette intercondylienne)</li>
+<li>Relations spatiales entre ces repères : essentielles pour la rotation du composant fémoral</li>
+<li>Métaphyse et diaphyse fémorale distale</li>
+<li>Angle fémoral distal latéral (LDFA) : ~87° (valgus mécanique de 3°)</li>
+<li>Offset médiolatéral : condyle médial plus distal que le latéral (~3 mm)</li>
+<li>Morphologie en « boîte » de l'échancrure intercondylienne → dimensions pour le design PS (came-poteau)<blockquote>
+<p>[MEDIA: 🧊 MPTG03-S01-001 — Modèle 3D interactif du fémur distal : condyles, trochlée, échancrure, repères de rotation (Identifiez le TEA, la ligne de Whiteside et la ligne condylienne postérieure)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S01-002</strong><br/>
+<em>Schéma des repères de rotation fémorale : TEA, ligne de Whiteside, PCA — et leur inconstance (Pourquoi utiliser au moins 2 repères ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG03-S01-003</strong><br/>
+<em>Animation de la dissymétrie condylienne : le condyle médial est plus long et plus courbe → screw-home mechanism (Observez la rotation automatique en extension terminale)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="32-osteologie-du-tibia-proximal">3.2 Ostéologie du tibia proximal</h3>
+<ul>
+<li>Plateaux tibiaux</li>
+<li>Plateau médial : concave (congruent), plus grand, en forme de C</li>
+<li>Plateau latéral : convexe (incongruent), plus petit, en forme de O</li>
+<li>Dissymétrie des plateaux → rôle des ménisques dans la congruence</li>
+<li>Pente tibiale postérieure (<em>posterior tibial slope</em>) : ~5-7° en médial, ~7-10° en latéral</li>
+<li>Épines tibiales (éminence intercondylienne)</li>
+<li>Épine médiale et latérale : insertions des ligaments croisés</li>
+<li>Repère chirurgical : centre de rotation du genou</li>
+<li>Tubérosité tibiale antérieure (TTA)</li>
+<li>Insertion du tendon patellaire</li>
+<li>Repère pour l'axe de rotation du tibia</li>
+<li>Relation avec la rotation tibiale (TT-TG : distance tubérosité-gorge trochléenne)</li>
+<li>Repères chirurgicaux du tibia proximal</li>
+<li>Centre du plateau tibial (repère pour le positionnement du embase tibiale)</li>
+<li>1/3 médial de la TTA → axe de visée de la cloche tibiale</li>
+<li>Bord postéro-médial du tibia (repère du guide extra-médullaire)</li>
+<li>Taille et forme du plateau : asymétrie médio-latérale → importance du sizing<blockquote>
+<p>[MEDIA: 🧊 MPTG03-S02-001 — Modèle 3D interactif du tibia proximal : plateaux, épines, TTA, surface articulaire (Identifiez la concavité médiale et la convexité latérale)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S02-002</strong><br/>
+<em>Schéma de la pente tibiale postérieure : mesure sur radiographie latérale, valeurs normales et impact sur la cinématique (Comment la pente influence-t-elle le rollback ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="33-patella-et-appareil-extenseur">3.3 Patella et appareil extenseur</h3>
+<ul>
+<li>Morphologie patellaire</li>
+<li>Facette latérale (plus grande), facette médiale, crête médiane (ridge)</li>
+<li>Odd facet médiale (facette marginale)</li>
+<li>Classification morphologique de Wiberg (I, II, III) <em>(Wiberg, 1941, Acta Orthop Scand Suppl)</em> → impact sur le resurfaçage</li>
+<li>Épaisseur patellaire : 22-25 mm (importance pour le resurfaçage : épaisseur résiduelle minimale 12-15 mm)</li>
+<li>Appareil extenseur</li>
+<li>Quadriceps (4 chefs) : droit fémoral, vaste latéral, vaste médial, vaste intermédiaire</li>
+<li>Vaste médial oblique (VMO) : inserction distale oblique, rôle stabilisateur médial de la patella</li>
+<li>Tendon quadricipital (tri-laminaire) → insertion patellaire supérieure</li>
+<li>Tendon patellaire (ligament patellaire) → insertion TTA</li>
+<li>Rétinaculums médial et latéral</li>
+<li>Aileron rotulien latéral : rôle dans le <em>tracking</em> patellaire</li>
+<li>Biomécanique patellofémorale</li>
+<li>Angle Q (<em>quadriceps angle</em>) : angle entre le vecteur du quadriceps et le tendon patellaire</li>
+<li>Normal : ♂ 10-15°, ♀ 15-20° <em>(Livingston, 2002)</em></li>
+<li>Angle Q augmenté → latéralisation de la patella</li>
+<li>Forces de contact fémoro-patellaires : augmentent avec la flexion (0.5x poids à 30° → 7-8x poids en full squat) <em>(Reilly &amp; Martens, 1972)</em></li>
+<li>J-sign : latéralisation brutale de la patella en extension terminale</li>
+<li>Implications chirurgicales pour la PTG</li>
+<li>Voie d'abord médiale parapatellaire : section du rétinaculum médial → risque de maltracking</li>
+<li>Resurfaçage patellaire : technique de coupe (épaisseur résiduelle ≥ 12 mm), positionnement (médialisation, pas de rotation)</li>
+<li>Release latéral (libération de l'aileron) : indications, technique, risque de fracture patellaire par dévascularisation<blockquote>
+<p>[MEDIA: 🧊 MPTG03-S03-001 — Modèle 3D de la patella et de l'appareil extenseur : quadriceps, tendon patellaire, rétinaculums (Identifiez le VMO et son rôle stabilisateur)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S03-002</strong><br/>
+<em>Schéma de l'angle Q et des forces patellofémorales en flexion (Calculez la force de contact à 90° de flexion pour un patient de 80 kg)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG03-S03-003</strong><br/>
+<em>Animation du tracking patellaire normal vs maltracking : vue axiale de la patella dans la trochlée (Observez le J-sign en extension)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="34-ligaments-du-genou">3.4 Ligaments du genou</h3>
+<ul>
+<li>Ligament croisé antérieur (LCA)</li>
+<li>Anatomie : 2 faisceaux (antéro-médial, postéro-latéral)</li>
+<li>Insertion fémorale : face médiale du condyle latéral (postérieure)</li>
+<li>Insertion tibiale : aire intercondylienne antérieure</li>
+<li>Rôle mécanique : empêche la translation antérieure du tibia, stabilisateur en rotation</li>
+<li><strong>Implication PTG</strong> : le LCA est systématiquement sacrifié dans la quasi-totalité des PTG (sauf BCR)</li>
+<li>Ligament croisé postérieur (LCP)</li>
+<li>Anatomie : 2 faisceaux (antéro-latéral, postéro-médial)</li>
+<li>Insertion fémorale : face latérale du condyle médial (antérieure)</li>
+<li>Insertion tibiale : rétrospinale (aire intercondylienne postérieure)</li>
+<li>Rôle mécanique : empêche la translation postérieure du tibia, contrôle le rollback en flexion</li>
+<li><strong>Implication PTG</strong> : DÉBAT MAJEUR — conserver (CR) ou sacrifier (PS/CS) ?<ul>
+<li>Si conservé : rollback physiologique maintenu, meilleure proprioception (théorique)</li>
+<li>Si sacrifié : meilleure flexion, correction des déformations en flexion plus facile, moins de risque de rupture tardive</li>
+</ul>
+</li>
+<li>Ligament collatéral médial (LCM)</li>
+<li>Couche superficielle (sMCL) : large, résistant, inséré sur la métaphyse tibiale (~6 cm sous l'interligne)</li>
+<li>Couche profonde (dMCL) : attachée au ménisque médial et à la capsule</li>
+<li>Ligament oblique postérieur (POL) : renfort postéro-médial</li>
+<li>Rôle : stabilisation en valgus</li>
+<li><strong>Implication PTG</strong> : la tension du LCM doit être équilibrée avec le LCL → « gap balancing »</li>
+<li>Release séquentiel du LCM dans les genoux en varus fixe (technique Insall/Whiteside)</li>
+<li>Ligament collatéral latéral (LCL)</li>
+<li>Cordiforme, insertion : épicondyle latéral → tête de la fibula</li>
+<li>Indépendant du ménisque latéral (contrairement au LCM)</li>
+<li>Rôle : stabilisation en varus</li>
+<li><strong>Implication PTG</strong> : rarement relâché (sauf genoux en valgus fixe → release pie-crusting du LCL + PLC)</li>
+<li>Corner postéro-latéral (PLC)</li>
+<li>Complexe anatomique : LCL + tendon du poplité + ligament poplité-fibulaire + coque condylienne postéro-latérale</li>
+<li>Rôle : stabilisation en varus, rotation externe, prévention de l'hyperextension</li>
+<li><strong>Implication PTG</strong> : lésion ou laxité du PLC → instabilité postéro-latérale après PTG → nécessité d'un implant plus contraint</li>
+<li>Corner postéro-médial (PMC)</li>
+<li>POL, expansion du semi-membraneux, capsule postéro-médiale</li>
+<li>Rôle : stabilisation en rotation interne, résistance au valgus en flexion<blockquote>
+<p>[MEDIA: 🧊 MPTG03-S04-001 — Modèle 3D interactif des 4 ligaments principaux du genou : LCA, LCP, LCM, LCL (Activez la transparence pour voir les insertions fémorales et tibiales)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG03-S04-002</strong><br/>
+<em>Animation du rôle du LCP dans le rollback en flexion : le condyle fémoral recule sur le plateau tibial (Comparez le mouvement naturel avec un rollback prothétique CR vs PS)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S04-003</strong><br/>
+<em>Schéma du release séquentiel du LCM dans un genou varus : étapes successives (Identifiez l'ordre de release : dMCL → sMCL → POL → semimembranosus)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="35-menisques">3.5 Ménisques</h3>
+<ul>
+<li>Ménisque médial</li>
+<li>Forme de C ouvert, attaché à la capsule et au dMCL sur toute sa longueur</li>
+<li>Moins mobile que le latéral → plus vulnérable aux lésions</li>
+<li>Corne postérieure : zone la plus fréquemment lésée</li>
+<li>Translation antéro-postérieure : ~5 mm</li>
+<li>Ménisque latéral</li>
+<li>Forme de O (presque circulaire), moins attaché à la capsule (hiatus poplité postéro-latéral)</li>
+<li>Plus mobile que le médial → translation AP ~11 mm</li>
+<li>Couverture du plateau tibial latéral supérieure (~80% vs ~50% en médial)</li>
+<li>Ligament ménisco-fémoral (Humphry antérieur, Wrisberg postérieur)</li>
+<li>Fonctions des ménisques</li>
+<li>Transmission et répartition des charges (50-70% des charges en extension, 85% en flexion)</li>
+<li>Amortissement des chocs (viscoélasticité)</li>
+<li>Stabilisation secondaire (surtout en l'absence de LCA)</li>
+<li>Lubrification articulaire</li>
+<li>Proprioception (mécanorécepteurs)</li>
+<li>Implications pour la PTG</li>
+<li>La méniscectomie totale accélère la gonarthrose (surcharge du compartiment → arthrose en 15-20 ans)</li>
+<li>L'état des ménisques au moment de la PTG : réséqués lors de la chirurgie</li>
+<li>Méniscectomie préalable → accélération vers la PTG (étude cas-témoins, registres)<blockquote>
+<p>[MEDIA: 🧊 MPTG03-S05-001 — Modèle 3D des ménisques vue supérieure sur le plateau tibial : attaches, zones vasculaires, hiatus poplité (Comparez la couverture médiale vs latérale)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG03-S05-002</strong><br/>
+<em>Animation de la transmission des charges avec et sans ménisques : répartition concentrique vs contact ponctuel (Observez l'augmentation de la pression de contact après méniscectomie)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="36-vascularisation-du-genou">3.6 Vascularisation du genou</h3>
+<ul>
+<li>Réseau vasculaire péri-articulaire (cercle anastomotique géniculé)</li>
+<li>Artères géniculées supérieures médiale et latérale</li>
+<li>Artère géniculée moyenne (vascularise les croisés et la synoviale)</li>
+<li>Artères géniculées inférieures médiale et latérale</li>
+<li>Artère récurrente tibiale antérieure</li>
+<li>Artère descendante du genou (branche de l'artère fémorale)</li>
+<li>Réseau anastomotique riche → sécurité vasculaire mais risque d'hématome</li>
+<li>Artère poplitée</li>
+<li>Trajet postérieur (facteur de risque peropératoire majeur)</li>
+<li>Distance artère poplitée — face postérieure du tibia proximal : ~9 mm en extension <em>(Zaidi et al., 1999)</em>, plus proche en flexion</li>
+<li><strong>Risque chirurgical</strong> : lésion par l'ostéotome ou la scie lors de la coupe tibiale postérieure, ou par un écarteur postérieur</li>
+<li>Anomalies de trajet (piège poplité — rare mais vital)</li>
+<li>Vascularisation de la patella</li>
+<li>Artères géniculées + artère tibiale antérieure récurrente → réseau anastomotique</li>
+<li>Branches principales : artères rétinaculaires médiales et latérales</li>
+<li><strong>Risque chirurgical</strong> : la libération de l'aileron latéral supprime les artères rétinaculaires latérales → nécrose avasculaire patellaire possible → fracture patellaire avasculaire</li>
+<li>Règle chirurgicale : ne JAMAIS faire un release latéral ET un release médial en même temps (dévascularisation complète)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S06-001</strong><br/>
+<em>Schéma du cercle anastomotique géniculé : artères géniculées, distances par rapport aux repères osseux (Identifiez les zones à risque lors de la dissection)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: </p>
+</blockquote>
+<div class="vertex-alerte"><strong>MPTG03-S06-002 — Schéma de la distance artère poplitée</strong> : tibia postérieur en extension vs flexion (Pourquoi opère-t-on genou fléchi à 90° ?)]</div>
+
+<h3 id="37-innervation-du-genou">3.7 Innervation du genou</h3>
+<ul>
+<li>Nerf sciatique poplité externe (fibulaire commun)</li>
+<li>Trajet : contourne la tête de la fibula (superficiel, vulnérable)</li>
+<li>Distance du col de la fibula à l'interligne : ~4-5 cm</li>
+<li><strong>Risque chirurgical majeur</strong> : neuropraxie par traction ou compression lors de la correction d'un valgus sévère (incidence 0.3-2%) <em>(Idusuyi &amp; Morrey, 1996)</em></li>
+<li>Conduite à tenir si paralysie postopératoire : retirer le pansement compressif, fléchir le genou à 30°, EMG à 3 semaines</li>
+<li>Nerf tibial (sciatique poplité interne)</li>
+<li>Trajet postérieur, protégé par le gastrocnémien médial</li>
+<li>Moins vulnérable mais risque lors des releases postéro-médiaux étendus</li>
+<li>Nerfs sensitifs</li>
+<li>Branche infra-patellaire du nerf saphène : traverse le bord antéro-médial du genou</li>
+<li><strong>Section quasi systématique</strong> lors de l'incision médiale parapatellaire → hypoesthésie antéro-médiale chez 50-80% des patients <em>(Mistry &amp; Callaghan, 1996)</em> (annoncer en préop !)</li>
+<li>Nerf cutané latéral de la cuisse : rare conflit avec les guides de coupe</li>
+<li>Implications pour la PTG</li>
+<li>Correction d'un valgus &gt; 15-20° : surveillance du nerf fibulaire commun peropératoire et postopératoire</li>
+<li>Information préopératoire obligatoire : hypoesthésie antéro-médiale</li>
+<li>Douleur neuropathique résiduelle : 5-10% des patients après PTG (diagnostic différentiel)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S07-001</strong><br/>
+<em>Schéma du trajet du nerf fibulaire commun autour de la tête de la fibula : distance par rapport à l'interligne (Situez le risque lors d'une correction de valgus)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S07-002</strong><br/>
+<em>Schéma de la branche infra-patellaire du nerf saphène : trajet et zone sectionnée lors de l'incision standard (Expliquez au patient l'hypoesthésie attendue)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="38-anatomie-de-surface-et-reperes-palpatoires">3.8 Anatomie de surface et repères palpatoires</h3>
+<ul>
+<li>Repères osseux palpables : épicondyles (médial &gt; latéral), TTA, bord supérieur de la patella, interligne articulaire, tête de la fibula</li>
+<li>Repères pour les coupes chirurgicales</li>
+<li>Entrée du canal médullaire fémoral : 1 cm en avant de l'insertion du LCP</li>
+<li>Centre du plateau tibial : entre les épines</li>
+<li>Axe mécanique du tibia : centre cheville → centre genou</li>
+<li>Topographie du creux poplité</li>
+<li>Limites : biceps (latéral), semi-tendineux et semi-membraneux (médial), gastrocnémiens (inférieur)</li>
+<li>Contenu : artère et veine poplitées, nerf tibial, nerf fibulaire commun</li>
+<li>Profondeur et rapports chirurgicaux</li>
+</ul>
+<div class="vertex-media">
+<strong>📷 MPTG03-S08-001</strong><br/>
+<em>Photo clinique annotée des repères palpatoires du genou : vue antérieure, médiale, latérale (Identifiez chaque repère sur votre propre genou)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG03-S08-002</strong><br/>
+<em>Schéma du creux poplité : limites, contenu vasculo-nerveux (Identifiez les structures à risque lors de la dissection postérieure)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<hr />
+<h1 id="module-4-biomecanique-du-genou-normal-et-pathologique">MODULE 4 : BIOMÉCANIQUE DU GENOU NORMAL ET PATHOLOGIQUE</h1>
+<p><strong>Durée</strong> : ~4h | <strong>Niveau</strong> : Fondamental → Intermédiaire | <strong>Prérequis</strong> : Modules 2-3</p>
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Analyser</strong> les mouvements du genou dans les 3 plans (6 degrés de liberté)</li>
+<li><strong>Expliquer</strong> la cinématique du genou normal (rollback, screw-home, pivot médial)</li>
+<li><strong>Quantifier</strong> les forces et les contraintes au niveau du genou dans les activités de la vie quotidienne</li>
+<li><strong>Comprendre</strong> les principes d'alignement du membre inférieur (axe mécanique, axe anatomique)</li>
+<li><strong>Décrire</strong> les modifications biomécaniques dans le genou arthrosique (surcharge, désaxation, instabilité)</li>
+<li><strong>Relier</strong> la biomécanique normale aux exigences de conception d'une PTG</li>
+</ol>
+<h2 id="contenu-detaille_3">Contenu détaillé</h2>
+<h3 id="41-cinematique-du-genou-normal-6-degres-de-liberte">4.1 Cinématique du genou normal — 6 degrés de liberté</h3>
+<ul>
+<li>Le genou n'est PAS une charnière</li>
+<li>3 rotations : flexion/extension, rotation interne/externe, varus/valgus (physiologique)</li>
+<li>3 translations : antéro-postérieure, médio-latérale, compression/distraction</li>
+<li>En pratique : l'articulation est un complexe polycentriqueà géométrie variable</li>
+<li>Flexion-extension</li>
+<li>Arc de mobilité normal : 0° (extension complète) → 140-155° (flexion maximale)</li>
+<li>Centre de rotation instantané : non fixe, se déplace postérieurement en flexion</li>
+<li>Rapport flexion active vs passive : flexion passive &gt; active (hamstrings vs gravity)</li>
+<li>Hyperextension : 0-5° (genu recurvatum au-delà)</li>
+<li>Rollback fémoral</li>
+<li><strong>Concept fondamental</strong> : en flexion, le condyle fémoral recule (roule et glisse) sur le plateau tibial</li>
+<li>Rollback latéral &gt; médial → le condyle médial est un « pivot » (roll-back différentiel)</li>
+<li>Conséquence : le centre de rotation se déplace postérieurement → le bras de levier du quadriceps augmente → force musculaire plus efficace en flexion profonde</li>
+<li>Si le rollback est insuffisant (conflit postérieur) → limitation de flexion</li>
+<li>Si le rollback est excessif (instabilité postérieure) → sensation d'instabilité</li>
+<li>Screw-home mechanism (rotation automatique en extension terminale)</li>
+<li>Lors de l'extension terminale (20° → 0°) : le tibia effectue une rotation externe de ~10° (ou le fémur une rotation interne)</li>
+<li>Explication : le condyle médial (plus long) continue de rouler alors que le latéral est déjà « arrivé »</li>
+<li>Le LCA se tend et « verrouille » l'articulation en extension complète</li>
+<li>Significance clinique : le screw-home stabilise le genou debout (économie musculaire)</li>
+<li><strong>Implication PTG</strong> : la plupart des PTG ne reproduisent pas le screw-home → compensation musculaire nécessaire</li>
+<li>Pivot médial (<em>medial pivot</em>)</li>
+<li>Concept moderne (Freeman &amp; Pinskerova, 2005, <em>J Biomech</em>) : le condyle médial est le centre de rotation</li>
+<li>Le condyle latéral tourne autour du condyle médial (rotation interne/externe)</li>
+<li>Le mouvement est majoritairement latéral, le médial bouge très peu (~2 mm AP) tandis que le latéral se déplace de 10-20 mm <em>(Dennis et al., 1996 ; Freeman &amp; Pinskerova, 2005)</em></li>
+<li>Lien avec le design <em>medial pivot</em> (Zimmer Biomet, Medacta) → stabilité accrue en centre (théorique)</li>
+<li>Débat scientifique actif (2020-2026)</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S01-001</strong><br/>
+<em>Animation des 6 DDL du genou : flexion/extension, rotation int/ext, varus/valgus, translation AP, ML, compression (Observez que ce n'est PAS une charnière)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S01-002</strong><br/>
+<em>Animation du rollback fémoral : les condyles reculent sur les plateaux, le latéral plus que le médial (Comparez avec un mouvement de charnière simple)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S01-003</strong><br/>
+<em>Animation du screw-home mechanism en extension terminale : rotation automatique du tibia (Pourquoi le genou se « verrouille-t-il » debout ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="42-forces-et-contraintes-au-genou">4.2 Forces et contraintes au genou</h3>
+<ul>
+<li>Forces de compression tibio-fémorales <em>(D'Lima et al., 2005 ; Kutzner et al., 2010)</em></li>
+<li>Marche sur plat : 2.5-3x le poids du corps (BWt)</li>
+<li>Montée d'escaliers : 3.5-4x BWt</li>
+<li>Descente d'escaliers : 4-5x BWt</li>
+<li>Squat profond : 6-8x BWt</li>
+<li>Course : 4-7x BWt</li>
+<li>Pour un patient de 80 kg : forces de 2 000 à 6 400 N sur le genou</li>
+<li>Répartition médiale vs latérale</li>
+<li>En position neutre (axe mécanique normal) : 60% médial, 40% latéral <em>(Harrington, 1983)</em></li>
+<li>En varus de 5° : 75-80% médial → surcharge médiale → arthrose</li>
+<li>En valgus de 5° : 60-70% latéral → surcharge latérale</li>
+<li>Concept de « levier de force » : 1° de désaxation = ~5% de transfert de charge</li>
+<li>Forces patellofémorales</li>
+<li>Marche : 0.5-1x BWt</li>
+<li>Escaliers : 3-4x BWt</li>
+<li>Squat : 7-8x BWt</li>
+<li>Se lever d'une chaise : 3-4x BWt</li>
+<li>Pression de contact fémoro-patellaire : augmente avec la flexion (surface de contact augmente mais moins vite que la force)</li>
+<li>Moments de force autour du genou</li>
+<li>Moment d'adduction (varus) à la marche : ~3-4% BWt × hauteur</li>
+<li>KAM (<em>Knee Adduction Moment</em>) : corrélé à la progression de la gonarthrose</li>
+<li>Cible thérapeutique : réduire le KAM (orthèses, semelles, ostéotomie, PTG)</li>
+<li>Contraintes dans les ménisques, les ligaments et le cartilage</li>
+<li>Contraintes de compression dans le cartilage : 1-5 MPa (marche), 10-15 MPa (squat)</li>
+<li>Seuil de rupture du cartilage : ~25-35 MPa</li>
+<li>Contraintes de traction dans le LCA : 100-500 N (marche), 1 500-2 200 N (rupture) <em>(Woo et al., 1991)</em></li>
+<li>Usure du cartilage : 0.02-0.05 mm/an (genou normal), 0.1-0.3 mm/an (arthrosique) <em>(Woo et al., 1991)</em><blockquote>
+<p>[MEDIA: 📊 MPTG04-S02-001 — Infographie des forces tibio-fémorales dans les activités quotidiennes (en x BWt) : marche, escaliers, squat, course (Calculez les forces pour un patient de 90 kg)]</p>
+</blockquote>
+</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG04-S02-002</strong><br/>
+<em>Schéma de la répartition médio-latérale des charges : genou neutre vs varus vs valgus (Observez le transfert de charge avec la désaxation)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S02-003</strong><br/>
+<em>Animation dynamique des forces au genou pendant un cycle de marche (gait cycle) : forces tibio-fémorales et patellofémorales (Identifiez les pics de contrainte)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="43-alignement-du-membre-inferieur">4.3 Alignement du membre inférieur</h3>
+<ul>
+<li>Axe mécanique du membre inférieur</li>
+<li>Définition : ligne du centre de la tête fémorale → centre de la cheville</li>
+<li>Passe normalement par le centre du genou (0-1° de varus)</li>
+<li>Angle HKA (<em>Hip-Knee-Ankle</em>) : normalement 177-180°</li>
+<li>Varus mécanique : HKA &lt; 177° (axe passe en médial du genou)</li>
+<li>Valgus mécanique : HKA &gt; 183° (axe passe en latéral)</li>
+<li>Axe anatomique fémoral</li>
+<li>Diaphyse fémorale : décalée en valgus de 5-7° par rapport à l'axe mécanique</li>
+<li>Angle « valgus de coupe » fémorale distale : 5-7° (permet une coupe perpendiculaire à l'axe mécanique)</li>
+<li>Variabilité individuelle : 3-9° (nécessité de planification individualisée)</li>
+<li>Angles péri-articulaires</li>
+<li>LDFA (<em>Lateral Distal Femoral Angle</em>) : 85-90° (moy. 87°, valgus constitutionnel)</li>
+<li>MPTA (<em>Medial Proximal Tibial Angle</em>) : 85-90° (moy. 87°)</li>
+<li>JLCA (<em>Joint Line Congruency Angle</em>) : 0-2° (usure articulaire = augmentation)</li>
+<li>CORA (<em>Center Of Rotation of Angulation</em>) : localisation de la déformation</li>
+<li>Alignement dans le plan sagittal</li>
+<li>Flexum physiologique : 0-5° acceptable</li>
+<li>Recurvatum : hyper-laxité ou séquellaire</li>
+<li>Pente tibiale : 5-7° (impact sur la stabilité antéro-postérieure de la PTG)</li>
+<li>Alignement dans le plan axial (rotation)</li>
+<li>Rotation fémorale : 3° de rotation externe par rapport à la ligne condylienne postérieure</li>
+<li>Rotation tibiale : 0-5° rotation externe relative au fémur</li>
+<li><em>Malalignment syndrome</em> (Paley) : contribution fémorale vs tibiale au désaxation</li>
+<li><strong>Philosophies d'alignement pour la PTG</strong></li>
+<li>Alignement mécanique neutre (MA) : cible = HKA 180° → coupes perpendiculaires à l'axe mécanique</li>
+<li>Alignement cinématique (KA, Howell) : reproduire l'axe constitutionnel du patient</li>
+<li>Alignement cinématique restreint (rKA) : KA avec limites de sécurité</li>
+<li>Alignement fonctionnel (FA) : ajuster per-opératoirement selon l'enveloppe ligamentaire</li>
+<li>Débat actif en 2026 — aucun consensus définitif</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MPTG04-S03-001</strong><br/>
+<em>Schéma de l'axe mécanique du MI : centre tête fémorale → centre cheville, angle HKA, comparaison neutre/varus/valgus (Mesurez l'HKA sur les 3 exemples)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG04-S03-002</strong><br/>
+<em>Schéma des angles péri-articulaires : LDFA, MPTA, JLCA — valeurs normales et pathologiques (Identifiez la localisation de la déformation : fémorale, tibiale, ou articulaire)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S03-003</strong><br/>
+<em>Animation comparative des 4 philosophies d'alignement : MA, KA, rKA, FA — position de l'interligne et orientation des coupes (En quoi diffèrent-elles cliniquement ?)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="44-biomecanique-du-genou-arthrosique">4.4 Biomécanique du genou arthrosique</h3>
+<ul>
+<li>Modifications mécaniques dans la gonarthrose</li>
+<li>Destruction progressive du cartilage → contact os-sur-os → douleur, crépitations</li>
+<li>Perte de hauteur de l'interligne → désaxation progressive (varus dans 70% des cas)</li>
+<li>Rétraction capsulo-ligamentaire du côté concave (médial dans le varus)</li>
+<li>Distension ligamentaire du côté convexe (latéral dans le varus)</li>
+<li>Ostéophytes : tentative de stabilisation par augmentation de la surface de contact</li>
+<li>Sclérose sous-chondrale : remodelage osseux sous la charge excessive</li>
+<li>Géodes (kystes sous-chondraux) : intrusion de liquide synovial dans l'os sclérotique</li>
+<li>Cercle vicieux biomécanique de la gonarthrose</li>
+<li>Surcharge mécanique → dégradation du cartilage → inflammation → perte de substance → désaxation → surcharge accrue → boucle</li>
+<li>Parallèle avec le cercle vicieux de Stokes dans la scoliose (mais articulaire, non rachidien)</li>
+<li>Modifications de la cinématique arthrosique</li>
+<li>Perte du rollback normal → conflit postérieur</li>
+<li>Réduction de la rotation interne/externe</li>
+<li>Perte du screw-home mechanism</li>
+<li>Contracture en flexion (flexum, <em>flexion contracture</em>) → augmentation des forces patellofémorales</li>
+<li>Instabilité médio-latérale dans les stades avancés</li>
+<li>Compensation par la marche en varus thrust (<em>lateral thrust</em>)</li>
+<li>Implications pour la planification de la PTG</li>
+<li>Évaluation de l'état ligamentaire (laxité, rétraction) → choix du niveau de contrainte de l'implant</li>
+<li>Évaluation de la perte osseuse (usure, géodes) → nécessité de cales, augments, ou greffe</li>
+<li>Évaluation de la déformation (fixe vs réductible) → technique de correction</li>
+<li>Objectif biomécanique de la PTG : restaurer l'axe mécanique ET l'enveloppe ligamentaire</li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S04-001</strong><br/>
+<em>Animation du cercle vicieux biomécanique de la gonarthrose : surcharge → usure → désaxation → surcharge accrue (Comparez avec le cercle de Stokes)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<div class="vertex-media schema">
+<strong>📐 MPTG04-S04-002</strong><br/>
+<em>Schéma des modifications osseuses : sclérose, géodes, ostéophytes, pincement — sur une radiographie annotée (Identifiez chaque signe et son mécanisme)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<div class="vertex-media">
+<strong>📷 MPTG04-S04-003</strong><br/>
+<em>Radiographies comparatives : gonarthrose stade 1 → 4 (Kellgren-Lawrence) — progression de l'usure et de la désaxation (Évaluez à quel stade une PTG est indiquée)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format PHOTO</small>
+</div>
+
+<h3 id="45-biomecanique-de-la-marche-et-du-genou-prothetique">4.5 Biomécanique de la marche et du genou prothétique</h3>
+<ul>
+<li>Analyse de la marche (<em>gait analysis</em>) — genou normal vs arthrosique vs PTG</li>
+<li>Cycle de marche (stance phase 60%, swing phase 40%)</li>
+<li>Centre de pression : passage du talon aux orteils</li>
+<li>Flexion du genou en phase d'appui : ~15° (amortissement)</li>
+<li>Extension terminale (toe-off) : quasi-complète</li>
+<li>Modifications de la marche après PTG</li>
+<li>Récupération du KAM (moment d'adduction) vers des valeurs normales</li>
+<li>Réduction de la flexion en phase d'appui (PTG = légère raideur fonctionnelle)</li>
+<li>Altération du <em>single-leg stance</em> (stabilité unipode)</li>
+<li>Vitesse de marche : amélioration de 20-40% par rapport au pré-opératoire <em>(Bade et al., 2010)</em></li>
+<li>Pattern asymétrique possible (genou prothétique vs genou natif controlatéral)</li>
+<li>Ce qu'une PTG ne restaure PAS</li>
+<li>Proprioception complète (perte du cartilage et des mécanorécepteurs)</li>
+<li>Screw-home mechanism (dans la plupart des designs)</li>
+<li>Rollback physiologique complet (sauf certains designs MC/medial pivot)</li>
+<li>Flexion maximale identique au genou natif (moyenne post-PTG : 110-120° vs 140-155° natif) <em>(Behrend et al., 2012)</em></li>
+<li>Sensation de « genou normal » : <em>Forgotten Joint Score</em> (FJS) ≤ 50 chez 30-50% des patients <em>(Thienpont et al., 2014)</em></li>
+</ul>
+<div class="vertex-media video">
+<strong>🎬 MPTG04-S05-001</strong><br/>
+<em>Animation comparée du cycle de marche : genou normal vs arthrosique vs PTG — superposition des courbes de flexion-extension et des forces (Identifiez les différences principales)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MPTG04-S05-002 — Infographie « Ce que la PTG restaure vs ce qu'elle ne restaure pas » : tableau visuel (Discutez de l'information préopératoire au patient)]</p>
+</blockquote>
+<hr />
+<h1 id="auto-evaluation-partie-i">AUTO-ÉVALUATION — PARTIE I</h1>
+<h2 id="questions-transversales-modules-1-4">Questions transversales Modules 1-4</h2>
+<h3 id="qcm-5-questions">QCM (5 questions)</h3>
+<p><strong>Q1</strong> 🥉 : Quel chirurgien a développé la première PTG condylaire (resurfaçage) avec ciment acrylique, transposant le concept de Charnley au genou ?<br />
+- A) Walldius<br />
+- B) Freeman<br />
+- C) Gunston<br />
+- D) Insall<br />
+- E) Shiers</p>
+<p><strong>Q2</strong> 🥈 : La physe distale du fémur contribue à environ quel pourcentage de la croissance en longueur du fémur ?<br />
+- A) 30%<br />
+- B) 50%<br />
+- C) 70%<br />
+- D) 90%<br />
+- E) 40%</p>
+<p><strong>Q3</strong> 🥈 : Quel nerf est le plus vulnérable lors de la correction d'un valgus sévère en PTG ?<br />
+- A) Nerf tibial<br />
+- B) Nerf saphène<br />
+- C) Nerf fibulaire commun<br />
+- D) Nerf fémoral<br />
+- E) Nerf obturateur</p>
+<p><strong>Q4</strong> 🥇 : Un patient de 80 kg monte un escalier. Quelle force de compression s'exerce approximativement sur son genou ?<br />
+- A) 800 N<br />
+- B) 1 600 N<br />
+- C) 2 400 N<br />
+- D) 3 200 N<br />
+- E) 4 800 N</p>
+<p><strong>Q5</strong> 💎 : Expliquez pourquoi les prothèses à charnière des années 1950-1960 avaient un taux de descellement très élevé. Utilisez vos connaissances en cinématique du genou (6 DDL) et en transmission des contraintes pour argumenter votre réponse.</p>
+<h3 id="cas-clinique">Cas clinique</h3>
+<blockquote>
+<p>🏥 <strong>M. Dupont, 68 ans</strong>, ancien menuisier, consulte pour gonalgie droite mécanique évoluant depuis 5 ans. Radiographie : gonarthrose médiale avec HKA = 172°, LDFA = 88°, MPTA = 84°. Interligne latéral conservé.</p>
+<ol>
+<li>Localisez l'origine de la déformation (fémorale, tibiale, ou articulaire) en analysant les angles.</li>
+<li>Calculez le pourcentage approximatif de surcharge médiale.</li>
+<li>Quel sera l'impact de cette surcharge sur la cinématique (rollback, rotation) ?</li>
+</ol>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 1 — Fondamentaux et Sciences de base (Modules 1-4)</em><br />
+<em>Document conforme à la charte VERTEX© — Version 1.0 — Mars 2026</em></p>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Bade MJ, Kohrt WM, Stevens-Lapsley JE. Outcomes before and after total knee arthroplasty compared to healthy adults. <em>J Orthop Sports Phys Ther</em>. 2010;40(9):559-567.</li>
+<li>Behrend H, Giesinger K, Giesinger JM, Kuster MS. The "forgotten joint" as the ultimate goal in joint arthroplasty: validation of a new patient-reported outcome measure. <em>J Arthroplasty</em>. 2012;27(3):430-436.</li>
+<li>D'Lima DD, Patil S, Steklov N, et al. Tibial forces measured in vivo after total knee arthroplasty. <em>J Arthroplasty</em>. 2005;21(2):255-262.</li>
+<li>Dejour H, Walch G, Neyret P, Adeleine P. La dysplasie de la trochlée fémorale. <em>Rev Chir Orthop</em>. 1990;76(1):45-54.</li>
+<li>Dennis DA, Komistek RD, Hoff WA, Gabriel SM. In vivo knee kinematics derived using an inverse perspective technique. <em>Clin Orthop Relat Res</em>. 1996;(331):107-117.</li>
+<li>Dimeglio A. Growth in pediatric orthopaedics. <em>J Pediatr Orthop</em>. 2001;21(4):549-555.</li>
+<li>Freeman MAR, Pinskerova V. The movement of the normal tibio-femoral joint. <em>J Biomech</em>. 2005;38(2):197-208.</li>
+<li>Harrington IJ. Static and dynamic loading patterns in knee joints with deformities. <em>J Bone Joint Surg Am</em>. 1983;65(2):247-259.</li>
+<li>Howell SM, Howell SJ, Hull ML. Assessment of the radii of the medial and lateral femoral condyles in varus and valgus knees with osteoarthritis. <em>Clin Orthop Relat Res</em>. 2012;470(5):1410-1417.</li>
+<li>Idusuyi OB, Morrey BF. Peroneal nerve palsy after total knee arthroplasty. <em>Clin Orthop Relat Res</em>. 1996;(328):233-238.</li>
+<li>Insall JN, Ranawat CS, Aglietti P, Shine J. A comparison of four models of total knee-replacement prostheses. <em>J Bone Joint Surg Am</em>. 1976;58(6):754-765.</li>
+<li>Insall JN, Lachiewicz PF, Burstein AH. The posterior stabilized condylar prosthesis: a modification of the total condylar design. Two to four-year clinical experience. <em>J Bone Joint Surg Am</em>. 1982;64(9):1317-1323.</li>
+<li>Kim SJ, Lubis AMT. Discoid lateral meniscus. <em>Clin Sports Med</em>. 2006;25(4):667-680.</li>
+<li>Kurtz S, Ong K, Lau E, et al. Projections of primary and revision hip and knee arthroplasty in the United States from 2005 to 2030. <em>J Bone Joint Surg Am</em>. 2007;89(4):780-785.</li>
+<li>Kutzner I, Heinlein B, Graichen F, et al. Loading of the knee joint during activities of daily living measured in vivo in five subjects. <em>J Biomech</em>. 2010;43(11):2164-2173.</li>
+<li>Livingston LA. The quadriceps angle: a review of the literature. <em>J Orthop Sports Phys Ther</em>. 2002;28(2):105-109.</li>
+<li>Mistry D, Callaghan J. The infrapatellar branch of the saphenous nerve and total knee arthroplasty. 1996.</li>
+<li>Oohashi Y, Koshino T, Oohashi Y. Clinical features and classification of bipartite or multipartite patella. <em>Knee Surg Sports Traumatol Arthrosc</em>. 2006;14(11):1118-1120.</li>
+<li>Pritchett JW. Longitudinal growth and growth-plate activity in the lower extremity. <em>Clin Orthop Relat Res</em>. 1992;(275):274-279.</li>
+<li>Reilly DT, Martens M. Experimental analysis of the quadriceps muscle force and patello-femoral joint reaction force for various activities. <em>Acta Orthop Scand</em>. 1972;43(2):126-137.</li>
+<li>Thienpont E, Opsomer G, Koninckx A, Houssiau F. Joint awareness in different types of knee arthroplasty evaluated with the Forgotten Joint Score. <em>J Arthroplasty</em>. 2014;29(1):48-51.</li>
+<li>Wiberg G. Roentgenographic and anatomic studies on the femoropatellar joint. <em>Acta Orthop Scand Suppl</em>. 1941;12(S):319-410.</li>
+<li>Woo SL-Y, Hollis JM, Adams DJ, et al. Tensile properties of the human femur-anterior cruciate ligament-tibia complex. <em>Am J Sports Med</em>. 1991;19(3):217-225.</li>
+<li>Zaidi SH, Cobb AG, Bentley G. Danger to the popliteal artery in high tibial osteotomy. <em>J Bone Joint Surg Br</em>. 1999;81(4):696-698.</li>
+</ul>
+</div>

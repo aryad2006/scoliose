@@ -1,0 +1,507 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-01-embryologie-anatomie-et-histologie-thyroidiennes">🦋 PARTIE 01 — EMBRYOLOGIE, ANATOMIE ET HISTOLOGIE THYROÏDIENNES</h1>
+<h2 id="des-origines-embryonnaires-aux-particularites-chirurgicales">Des origines embryonnaires aux particularités chirurgicales</h2>
+<hr />
+<h1 id="module-01-embryologie-de-la-thyroide">MODULE 01 — EMBRYOLOGIE DE LA THYROÏDE</h1>
+<h2 id="11-developpement-embryonnaire-normal">1.1 Développement embryonnaire normal</h2>
+<h3 id="111-origine-et-migration-de-lebauche-mediane">1.1.1 Origine et migration de l'ébauche médiane</h3>
+<div class="vertex-media video">
+<strong>🎬 MHYPO01-S01-001</strong><br/>
+<em>ANIMATION : migration thyroïdienne de la 3e à la 7e semaine — du foramen caecum à la loge cervicale antérieure</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p>L'ébauche thyroïdienne principale dérive de l'<strong>endoderme du plancher pharyngé</strong>, au niveau du <strong>foramen caecum</strong> (sillon entre V lingual et base de langue), à partir de la <strong>3e semaine</strong> de développement embryonnaire.</p>
+<p><strong>Phases de développement</strong> (adapté de De Felice &amp; Di Lauro, Endocr Rev 2004) :</p>
+<table>
+<thead>
+<tr>
+<th>Semaine</th>
+<th>Événement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S3-S4</td>
+<td>Épaississement endodermique, formation du diverticule thyroïdien</td>
+</tr>
+<tr>
+<td>S4-S5</td>
+<td>Élongation du canal thyréoglosse, descente cervicale</td>
+</tr>
+<tr>
+<td>S5-S7</td>
+<td>Bilobation, involution du canal thyréoglosse, atteinte position cervicale définitive</td>
+</tr>
+<tr>
+<td>S8-S10</td>
+<td>Folliculogenèse, apparition de la thyroglobuline</td>
+</tr>
+<tr>
+<td>S11-S12</td>
+<td>Début de la biosynthèse hormonale (captation iode)</td>
+</tr>
+<tr>
+<td>S20</td>
+<td>Autonomie fonctionnelle de la thyroïde fœtale</td>
+</tr>
+</tbody>
+</table>
+<p>Le <strong>canal thyréoglosse</strong> connecte transitoirement le foramen caecum à la thyroïde en migration. Il involue normalement à la 7e semaine. Son oblitération incomplète est responsable des malformations congénitales les plus fréquentes.</p>
+<h3 id="112-origine-de-lebauche-laterale-cellules-c">1.1.2 Origine de l'ébauche latérale (cellules C)</h3>
+<p>Les <strong>cellules C parafolliculaires</strong> (sécrétant la calcitonine) dérivent des <strong>corps ultimo-branchiaux</strong> (4e poches branchiales), d'origine ectodermique (crêtes neurales). Ils fusionnent avec l'ébauche médiane à la 7e semaine, apportant les précurseurs des cellules C dans les deux tiers supérieurs des lobes thyroïdiens.</p>
+<h3 id="113-genes-de-developpement-thyroidien">1.1.3 Gènes de développement thyroïdien</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO01-S01-002 — TABLEAU : gènes de développement thyroïdien — mutations et phénotypes]</p>
+</blockquote>
+<p><strong>Facteurs de transcription thyroïdiens</strong> (adapté de Macchia, J Endocrinol Invest 2000) :</p>
+<table>
+<thead>
+<tr>
+<th>Gène</th>
+<th>Protéine</th>
+<th>Expression</th>
+<th>Mutation → Phénotype</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NKX2-1</strong> (TTF-1)</td>
+<td>NK2 homeobox 1</td>
+<td>Thyroïde, poumon, cerveau</td>
+<td>Hypothyroïdie + détresse respiratoire + choréoathétose (triade : cerveau-thyroïde-poumon)</td>
+</tr>
+<tr>
+<td><strong>FOXE1</strong> (TTF-2)</td>
+<td>Forkhead box E1</td>
+<td>Thyroïde, palais, choane</td>
+<td>Athyréose + fente palatine + atrésie des choanes (syndrome de Bamforth-Lazarus)</td>
+</tr>
+<tr>
+<td><strong>PAX8</strong></td>
+<td>Paired box 8</td>
+<td>Thyroïde, rein</td>
+<td>Hypo/athyréose (sans malformations extra-thyroïdiennes)</td>
+</tr>
+<tr>
+<td><strong>HHEX</strong></td>
+<td>Homeobox</td>
+<td>Thyroïde, foie</td>
+<td>Dysgénésie thyroïdienne (rôle moins documenté chez l'humain)</td>
+</tr>
+<tr>
+<td><strong>NKX2-5</strong></td>
+<td>NK2 homeobox 5</td>
+<td>Thyroïde, cœur</td>
+<td>Malformations cardiaques + hypothyroïdie</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Chez tout enfant présentant une hypothyroïdie congénitale avec malformations associées (cardiaque, palatine, respiratoire), un bilan génétique recherchant les mutations NKX2-1, FOXE1 ou PAX8 est recommandé. Ces mutations sont présentes dans 2-5 % des cas de dysgénésie thyroïdienne (adapté de Léger et al., J Clin Endocrinol Metab 2014).</p>
+</blockquote>
+<hr />
+<h2 id="12-anomalies-du-developpement">1.2 Anomalies du développement</h2>
+<h3 id="121-dysgenesies-thyroidiennes">1.2.1 Dysgénésies thyroïdiennes</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO01-S02-001 — SCHÉMA : classification des dysgénésies thyroïdiennes — athyréose, ectopie, hémithyroïdie]</p>
+</blockquote>
+<p><strong>Classification</strong> (adapté de Garel, Pediatr Radiol 2001) :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Prévalence parmi HC</th>
+<th>Mécanisme</th>
+<th>Localisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ectopie thyroïdienne</strong></td>
+<td>40-45 %</td>
+<td>Arrêt de migration</td>
+<td>Linguale (90 %), sous-hyoïdienne, médiastinale, sublinguale</td>
+</tr>
+<tr>
+<td><strong>Athyréose</strong></td>
+<td>25-30 %</td>
+<td>Agénèse complète</td>
+<td>Absence de tissu thyroïdien</td>
+</tr>
+<tr>
+<td><strong>Hémithyroïdie</strong></td>
+<td>15-20 %</td>
+<td>Agénésie d'un lobe</td>
+<td>Lobe gauche plus souvent absent</td>
+</tr>
+<tr>
+<td><strong>Hypoplasie</strong></td>
+<td>10-15 %</td>
+<td>Développement insuffisant</td>
+<td>En place mais tissu réduit</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > La thyroïde linguale (ectopie à la base de la langue) représente la seule thyroïde fonctionnelle dans 70 % des cas. Son exérèse chirurgicale accidentelle (masse linguale confondue avec un kyste) provoque une hypothyroïdie définitive irréversible. Toute masse de la base de la langue doit bénéficier d'une scintigraphie thyroïdienne avant toute décision chirurgicale.</div>
+
+<h3 id="122-kyste-et-fistule-du-tractus-thyreoglosse">1.2.2 Kyste et fistule du tractus thyréoglosse</h3>
+<p><strong>Physiopathologie</strong> : oblitération incomplète du canal thyréoglosse → kyste médian cervical ou fistule.</p>
+<p><strong>Caractéristiques</strong> :<br />
+- Localisation : ligne médiane cervicale, 50 % juxta-hyoïdiens<br />
+- <strong>Signe pathognomonique</strong> : élévation à la déglutition ET à la protusion linguale (adhérence à l'os hyoïde)<br />
+- Risque : infection (fistulisation), cancer (1-2 %, souvent carcinome papillaire)<br />
+- Traitement : <strong>intervention de Sistrunk</strong> (résection du kyste + corps de l'os hyoïde + trajet jusqu'au foramen caecum)</p>
+<hr />
+<h2 id="13-quiz-module-01">1.3 Quiz Module 01</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Le foramen caecum, point d'origine de l'ébauche thyroïdienne, se situe :<br />
+- A) Au niveau du 4e arc branchial<br />
+- B) À la jonction V lingual / base de langue<br />
+- C) Dans le 3e ventricule cérébral<br />
+- D) Au niveau de la 3e poche branchiale</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le foramen caecum est le vestige du point d'origine de l'ébauche thyroïdienne, à la jonction entre le V lingual et la base de langue.</p>
+</blockquote>
+<p><strong>Q2.</strong> Les cellules C parafolliculaires dérivent :<br />
+- A) De l'endoderme pharyngé (comme les thyréocytes)<br />
+- B) Des corps ultimo-branchiaux (crêtes neurales, ectodermiques)<br />
+- C) Du mésenchyme cervical<br />
+- D) De la 2e poche branchiale</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Les cellules C ont une origine ectodermique (crêtes neurales via les corps ultimo-branchiaux), distincte des thyréocytes (endoderme).</p>
+</blockquote>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un garçon de 3 ans présente une hypothyroïdie congénitale + surdité neurosensorielle + détresse respiratoire néonatale. Quel gène est le plus probablement muté ?<br />
+- A) PAX8<br />
+- B) FOXE1<br />
+- C) NKX2-1<br />
+- D) HHEX</p>
+<blockquote>
+<p><strong>Réponse : C</strong> — La triade cérébro-thyroïdo-pulmonaire (NKX2-1/TTF-1 = expression dans thyroïde, poumon et cerveau).</p>
+</blockquote>
+<h3 id="or">🥇 Or</h3>
+<p><strong>Q4.</strong> Lors de la résection d'une masse à la base de la langue, le chirurgien ORL ne trouve pas de tissu thyroïdien en position cervicale normale à l'échographie. Quelle est l'urgence ?<br />
+- A) Prélever un extemporané de la masse<br />
+- B) Réaliser une scintigraphie thyroïdienne avant toute résection<br />
+- C) Doser la TSH post-opératoire<br />
+- D) Chercher un lobe pyramidal de Lalouette</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La masse est probablement une thyroïde linguale ectopique (unique dans 70 % des cas). Sa résection provoquerait une hypothyroïdie définitive. La scintigraphie est obligatoire avant tout geste.</p>
+</blockquote>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q5.</strong> Un enfant porteur d'une mutation hétérozygote NKX2-1 présente une détresse respiratoire à la naissance puis une hypothyroïdie débutante. À 3 ans, il développe une choréoathétose progressive. Quel est le mécanisme de chaque atteinte organique et quelle est l'approche thérapeutique ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : NKX2-1 est exprimé dans la thyroïde (folliculogenèse), le poumon (expression du surfactant via protéines SP-A, SP-C) et les ganglions de la base (développement). La détresse respiratoire correspond au déficit en surfactant, l'hypothyroïdie à la dysgénésie, et la choréoathétose à l'atteinte striatale. Traitement : LT4 pour l'hypothyroïdie + traitement de la choréoathétose (clonazépam, tétrabenazine) + suivi pneumologique. Le génotype/phénotype est très variable (pénétrance incomplète).</p>
+</blockquote>
+<hr />
+<h1 id="module-02-anatomie-de-la-thyroide">MODULE 02 — ANATOMIE DE LA THYROÏDE</h1>
+<h2 id="21-description-anatomique">2.1 Description anatomique</h2>
+<h3 id="211-forme-dimensions-et-poids">2.1.1 Forme, dimensions et poids</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO02-S01-001 — PHOTOGRAPHIE ANATOMIQUE : thyroïde in situ — lobes, isthme, lobe pyramidal, parathyroïdes]</p>
+</blockquote>
+<p>La thyroïde est une glande endocrine paire et médiane, en forme de <strong>H</strong> ou de <strong>papillon</strong> :<br />
+- 2 <strong>lobes</strong> latéraux : hauteur 4-6 cm, largeur 1,5-2 cm, épaisseur 2-3 cm<br />
+- <strong>Isthme</strong> : bande transversale, 1-2 cm de hauteur<br />
+- <strong>Lobe pyramidal de Lalouette</strong> : vestige du canal thyréoglosse, présent dans 50-80 % des cas, remontant vers l'os hyoïde<br />
+- <strong>Poids</strong> : 15-25 g en euthyroïdie (femme) et 20-30 g (homme) ; diminue avec l'âge</p>
+<h3 id="212-rapports-anatomiques-chirurgicaux">2.1.2 Rapports anatomiques chirurgicaux</h3>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Rapport</th>
+<th>Implication clinique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Antérieur</strong></td>
+<td>Muscles sous-hyoïdiens, aponévrose cervicale, peau</td>
+<td>Incision de Kocher dans cette région</td>
+</tr>
+<tr>
+<td><strong>Postéro-médial</strong></td>
+<td>Trachée (anneaux 1-4), œsophage</td>
+<td>Compression trachéale par goitre → dyspnée, stridor</td>
+</tr>
+<tr>
+<td><strong>Postéro-latéral</strong></td>
+<td>Artères carotides communes, veines jugulaires</td>
+<td>Variations artérielles importantes</td>
+</tr>
+<tr>
+<td><strong>Postérieur</strong></td>
+<td><strong>Nerfs récurrents</strong>, <strong>parathyroïdes supérieures et inférieures</strong></td>
+<td>Lésion récurrentielle (dysphonie), hypoparathyroïdie post-opératoire</td>
+</tr>
+</tbody>
+</table>
+<h3 id="213-vascularisation">2.1.3 Vascularisation</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO02-S02-001 — SCHÉMA : vascularisation thyroïdienne — artères thyroïdiennes supérieures, inférieures et artère de Neubauer]</p>
+</blockquote>
+<p><strong>Artères</strong> :<br />
+- <strong>Artères thyroïdiennes supérieures</strong> (ATSup) : issues de la carotide externe, se divisent en branches antérieure et postérieure<br />
+- <strong>Artères thyroïdiennes inférieures</strong> (ATInf) : issues du tronc thyrocervical (sous-clavière), apportent 50-70 % du débit thyroïdien<br />
+- <strong>Artère thyroïdienne de Neubauer</strong> (thyroïda ima) : inconstante (3-10 %), naît de l'aorte ou du tronc brachio-céphalique, risque hémorragique en chirurgie cervicale basse</p>
+<p><strong>Veines</strong> :<br />
+- <strong>Veines thyroïdiennes supérieures</strong> → veine jugulaire interne<br />
+- <strong>Veines thyroïdiennes moyennes</strong> → veine jugulaire interne<br />
+- <strong>Veines thyroïdiennes inférieures</strong> → troncs veineux brachio-céphaliques (plexus veineux antérieur)</p>
+<p><strong>Débit sanguin</strong> : 80-120 mL/min au repos, pouvant atteindre 1 L/min dans la maladie de Basedow (signe du frémissement).</p>
+<h3 id="214-nerfs-recurrents-anatomie-chirurgicale">2.1.4 Nerfs récurrents : anatomie chirurgicale</h3>
+<div class="vertex-media video">
+<strong>🎬 MHYPO02-S02-002</strong><br/>
+<em>VIDÉO : dissection du nerf récurrent en chirurgie thyroïdienne — repères anatomiques et variantes</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<p>Les <strong>nerfs laryngés inférieurs (récurrents)</strong> sont les structures les plus à risque en chirurgie thyroïdienne :<br />
+- <strong>Nerf récurrent droit</strong> : contourne l'artère sous-clavière droite<br />
+- <strong>Nerf récurrent gauche</strong> : contourne la crosse aortique (trajet plus long, risque accru)<br />
+- <strong>Nerf laryngé non récurrent droit</strong> : variante (0,5-1 %), descend directement de la carotide, risque majeur si méconnu<br />
+- Rapport avec l'ATInf : croisement variable (antérieur, postérieur, entre les branches) — zone dangereuse</p>
+<div class="vertex-alerte"><strong>PIÈGE DIAGNOSTIQUE</strong> : > La paralysie récurrentielle unilatérale post-thyroïdectomie se manifeste par une dysphonie avec voix bitonale. La paralysie bilatérale est une urgence vitale (risque d'asphyxie). L'incidence de la paralysie récurrentielle définitive varie de 0,5 à 2 % dans les séries chirurgicales de référence. La neuromonitorisation peropératoire réduit significativement ce risque.</div>
+
+<hr />
+<h2 id="22-quiz-module-02">2.2 Quiz Module 02</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quelle artère apporte 50-70 % du débit sanguin thyroïdien ?<br />
+- A) Artère thyroïdienne supérieure<br />
+- B) Artère thyroïdienne inférieure<br />
+- C) Artère de Neubauer<br />
+- D) Artère carotide interne</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — L'artère thyroïdienne inférieure (tronc thyrocervical) assure la majorité de la vascularisation.</p>
+</blockquote>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q2.</strong> Après une thyroïdectomie totale, la patiente présente une hypocalcémie à H48 avec tétanie. Quel mécanisme ?<br />
+- A) Hypothyroïdie aiguë post-opératoire<br />
+- B) Hypoparathyroïdie par lésion ou dévascularisation des parathyroïdes<br />
+- C) Insuffisance surrénalienne associée<br />
+- D) Dilution ionique par les solutés de perfusion</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — L'hypoparathyroïdie post-thyroïdectomie (transitoire 10-15 %, définitive 1-2 %) est due à la lésion ou dévascularisation des glandes parathyroïdes accolées aux faces postérieures des lobes.</p>
+</blockquote>
+<h3 id="or_1">🥇 Or</h3>
+<p><strong>Q3.</strong> Un patient a une prise de contraste cervicale pour TDM. On découvre une artère "descendant directement du cou sans faire de boucle" qui croise la thyroïde à droite. Quel est le risque ?<br />
+- A) Rupture de l'artère de Neubauer<br />
+- B) Nerf laryngé non récurrent droit (variante à risque en chirurgie)<br />
+- C) Artère carotide externe accessoire<br />
+- D) Veine thyroïdienne inférieure dilatée</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le nerf laryngé non récurrent droit (0,5-1 %) est une variante rare à connaître impérativement avant une chirurgie thyroïdienne droite.</p>
+</blockquote>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q4.</strong> Expliquez pourquoi le goitre plongeant endothoracique est plus difficile à opérer et quels risques anatomiques il ajoute ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : Le goitre plongeant descend dans le médiastin antérieur ou postérieur, derrière le sternum. Les difficultés : (1) rapport étroit avec la trachée (compression, déviation, trachéomalacie post-extirpation = risque de trachéospasme), (2) nécessité d'une sternotomie partielle dans 2-5 % des cas, (3) vascularisation cervicale mais veines de drainage thoraciques pouvant saigner massivement, (4) nerfs récurrents distendus et déplacés, (5) risque de pneumothorax. La TDM cervico-thoracique préopératoire est obligatoire.</p>
+</blockquote>
+<hr />
+<h1 id="module-03-histologie-et-cytologie-thyroidiennes">MODULE 03 — HISTOLOGIE ET CYTOLOGIE THYROÏDIENNES</h1>
+<h2 id="31-le-follicule-thyroidien-unite-fonctionnelle">3.1 Le follicule thyroïdien : unité fonctionnelle</h2>
+<h3 id="311-organisation-folliculaire">3.1.1 Organisation folliculaire</h3>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO03-S01-001 — PHOTOMICROGRAPHIE : follicules thyroïdiens normaux (HE × 100) — thyréocytes, colloïde, cellules C parafolliculaires]</p>
+</blockquote>
+<p>Le <strong>follicule thyroïdien</strong> est l'unité anatomique et fonctionnelle de la thyroïde :<br />
+- Sphère délimitée par une monocouche de <strong>thyréocytes</strong> (cellules folliculaires)<br />
+- Diamètre : 50-500 µm (variable selon l'état d'activité)<br />
+- Lumière remplie de <strong>colloïde</strong> : gel visqueux composé principalement de <strong>thyroglobuline</strong> iodée<br />
+- Chaque lobe thyroïdien contient ~ 3 millions de follicules</p>
+<p><strong>Aspect histologique selon l'activité fonctionnelle</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>État fonctionnel</th>
+<th>Thyréocytes</th>
+<th>Colloïde</th>
+<th>Vacuoles</th>
+<th>Follicule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Euthyroïdie</strong></td>
+<td>Cubiques</td>
+<td>Abondante, homogène</td>
+<td>Rares</td>
+<td>Taille moyenne</td>
+</tr>
+<tr>
+<td><strong>Stimulation (TSH ↑)</strong></td>
+<td>Cylindriques hauts</td>
+<td>Peu abondante, pâle</td>
+<td>Nombreuses (résorption)</td>
+<td>Petit, actif</td>
+</tr>
+<tr>
+<td><strong>Hypo-stimulation (TSH ↓)</strong></td>
+<td>Aplatis, squameux</td>
+<td>Très abondante, rose vif</td>
+<td>Absentes</td>
+<td>Grand, inactif</td>
+</tr>
+</tbody>
+</table>
+<h3 id="312-le-thyreocyte-polarite-fonctionnelle">3.1.2 Le thyréocyte : polarité fonctionnelle</h3>
+<blockquote>
+<p>[MEDIA: 📊 MHYPO03-S01-002 — SCHÉMA : ultrastructure du thyréocyte polarisé — pôle basal (NIS), pôle apical (microvillosités, TPO), organelles]</p>
+</blockquote>
+<p>Le thyréocyte présente une <strong>polarité apico-basale</strong> fondamentale :</p>
+<p><strong>Pôle basal</strong> (vers les capillaires) :<br />
+- <strong>NIS</strong> (cotransporteur Na/I) : captation active de l'iode du plasma<br />
+- Récepteurs à la TSH (TSHR) : couplés à l'adénylyl cyclase<br />
+- Jonctions serrées et desmosomes</p>
+<p><strong>Pôle apical</strong> (vers la lumière folliculaire) :<br />
+- Microvillosités (augmentation surface d'échange)<br />
+- <strong>TPO</strong> (thyroperoxydase) : oxydation de l'iode, iodation de la Tg<br />
+- <strong>DUOX2</strong> : génération de H₂O₂ pour la TPO<br />
+- <strong>Pendrine</strong> (SLC26A4) : efflux d'iode vers la lumière<br />
+- Exportation de la thyroglobuline par exocytose<br />
+- Endocytose de la colloïde (vacuoles apicales)</p>
+<h3 id="313-cellules-c-parafolliculaires">3.1.3 Cellules C parafolliculaires</h3>
+<ul>
+<li>Situées entre les thyréocytes et la membrane basale (ne font pas contact avec la lumière)</li>
+<li>Plus fréquentes dans les tiers supérieurs et postérieurs des lobes</li>
+<li>Cytoplasme pâle, granules sécrétoires de calcitonine</li>
+<li>Peuvent être le point de départ du <strong>carcinome médullaire de la thyroïde</strong> (MEN 2)</li>
+</ul>
+<hr />
+<h2 id="32-histologie-de-la-thyroidite-de-hashimoto">3.2 Histologie de la thyroïdite de Hashimoto</h2>
+<blockquote>
+<p>[MEDIA: 🔬 MHYPO03-S02-001 — PHOTOMICROGRAPHIE : thyroïdite de Hashimoto (HE × 40) — infiltrat lymphocytaire, centre germinatif, cellules de Hürthle, destruction folliculaire]</p>
+</blockquote>
+<p><strong>Aspects histologiques caractéristiques</strong> (adapté de Volpé, Clin Endocrinol 1987) :<br />
+- <strong>Infiltrat lymphocytaire</strong> dense, diffus, avec formation de <strong>centres germinatifs</strong> (réaction folliculaire immunitaire)<br />
+- <strong>Cellules de Hürthle</strong> (cellules oxyphiles, onccocytes) : thyréocytes avec mitochondries abondantes, cytoplasme granuleux rose — signe de stress cellulaire chronique<br />
+- <strong>Fibrose interstitielle</strong> progressive, variable<br />
+- <strong>Destruction folliculaire</strong> : follicules de petite taille, colloïde raréfiée, aspect de thyroïde atrophique dans les formes évoluées</p>
+<p><strong>Aspect macroscopique</strong> : glande ferme, bosselée, de taille augmentée (forme hypertrophique) ou diminuée (forme atrophique)</p>
+<p>💡 <strong>POINT PRATIQUE</strong> :</p>
+<blockquote>
+<p>Le diagnostic de thyroïdite de Hashimoto est <strong>clinico-biologique</strong> : il ne nécessite pas de cytoponction ou de biopsie en routine. La présence d'anti-TPO élevés + échographie hypoéchogène + TSH élevée = Hashimoto. La cytoponction n'est indiquée que si un nodule suspect à l'échographie nécessite une caractérisation cytologique.</p>
+</blockquote>
+<hr />
+<h2 id="33-quiz-module-03">3.3 Quiz Module 03</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Le NIS est localisé :<br />
+- A) Sur le pôle apical du thyréocyte (côté colloïde)<br />
+- B) Sur le pôle basal du thyréocyte (côté capillaires)<br />
+- C) Dans les granules sécrétoires cytoplasmiques<br />
+- D) Sur les cellules C parafolliculaires</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Le NIS est un cotransporteur Na/I basolatéral qui capture l'iode depuis le plasma.</p>
+</blockquote>
+<p><strong>Q2.</strong> Les cellules de Hürthle dans la thyroïdite de Hashimoto correspondent à :<br />
+- A) Des lymphocytes B activés<br />
+- B) Des thyréocytes avec accumulation mitochondriale (oxyphiles)<br />
+- C) Des cellules C hyperplasiques<br />
+- D) Des macrophages en phase de résorption</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — Les cellules de Hürthle (oncocytes) sont des thyréocytes avec une accumulation marquée de mitochondries, donnant un cytoplasme granuleux rose, signe de stress cellulaire chronique.</p>
+</blockquote>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q3.</strong> Un patient a une TSH élevée avec une thyroïde petite à l'échographie (volume 8 mL). La biopsie montre une fibrose étendue sans infiltrat lymphocytaire résiduel. Quel est le stade évolutif probable ?<br />
+- A) Thyroïdite de Hashimoto forme aiguë<br />
+- B) Thyroïdite de Hashimoto forme atrophique évoluée (thyroïdite atrophique)<br />
+- C) Thyroïdite subaiguë de De Quervain en phase cicatricielle<br />
+- D) Carcinome médullaire</p>
+<blockquote>
+<p><strong>Réponse : B</strong> — La forme atrophique de la thyroïdite de Hashimoto est le stade tardif, avec fibrose extensive remplaçant le parenchyme thyroïdien fonctionnel.</p>
+</blockquote>
+<h3 id="or_2">🥇 Or</h3>
+<p><strong>Q4.</strong> Expliquez pourquoi la pendrine (SLC26A4) doit être exprimée au pôle apical du thyréocyte pour que la synthèse hormonale soit possible.</p>
+<blockquote>
+<p><strong>Réponse</strong> : Après captation basolatérale par le NIS, l'iode traverse le thyréocyte et doit être exporté dans la lumière folliculaire pour être oxydé par la TPO. La pendrine est le canal d'efflux apical qui assure ce transfert. Sans pendrine fonctionnelle (syndrome de Pendred), l'iode s'accumule dans le thyréocyte mais n'est pas disponible pour la TPO — résultat : défaut d'organification, goitre, hypothyroïdie, et surdité neurosensorielle (la pendrine est aussi exprimée dans la cochlée).</p>
+</blockquote>
+<h3 id="diamant_2">💎 Diamant</h3>
+<p><strong>Q5.</strong> Un follicule thyroïdien normal contient une réserve de thyroglobuline iodée représentant environ 2-3 mois d'hormones thyroïdiennes. Pourquoi cette réserve est-elle si grande par rapport aux autres glandes endocrines (surrénales, hypophyse) ? Quelles conséquences cliniques cela a-t-il ?</p>
+<blockquote>
+<p><strong>Réponse</strong> : La thyroïde est unique parmi les glandes endocrines en stockant ses hormones EXTRACELLULAIRES (dans la colloïde) sous forme de précurseur (thyroglobuline). La réserve de 2-3 mois est une adaptation évolutive pour les périodes de carence iodée alimentaire (chez les populations de chasseurs-cueilleurs). Conséquences cliniques : (1) L'arrêt brutal de la synthèse (ex : ATU) ne produit pas d'hypothyroïdie immédiate — la thyrotoxicose persiste quelques semaines avec vidage du stock folliculaire. (2) Une thyroïdite destructrice (De Quervain, post-partum) libère massivement le stock → thyrotoxicose transitoire par libération hormonale. (3) La TSH met 4-6 semaines à refléter le nouvel équilibre après modification thérapeutique (demi-vie T4 = 7 jours × 5 demi-vies = 5 semaines pour stabilisation).</p>
+</blockquote>
+<hr />
+<p><em>Dernière mise à jour : 14 mars 2026</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

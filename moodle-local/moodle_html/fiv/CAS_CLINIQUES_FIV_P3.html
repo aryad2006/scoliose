@@ -1,0 +1,752 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-fiv-amp-partie-3-cas-18-a-24">CAS CLINIQUES — FIV / AMP — Partie 3 (Cas 18 à 24)</h1>
+<h2 id="formation-vertex-fecondation-in-vitro-et-assistance-medicale-a-la-procreation">Formation VERTEX© — Fécondation In Vitro et Assistance Médicale à la Procréation</h2>
+<h3 id="niveaux-or-et-diamant">Niveaux Or 🥇 et Diamant 💎</h3>
+<hr />
+<blockquote>
+<p><strong>Instructions pédagogiques</strong> : Les cas de cette partie sont les plus complexes. Ils mobilisent des connaissances transversales (5+ modules), exigent des prises de décision en situation d'incertitude, et abordent la gestion des complications graves, des dilemmes éthiques et des situations rares. Prenez le temps de construire votre raisonnement avant de consulter les réponses.</p>
+</blockquote>
+<hr />
+<h2 id="cas-18-torsion-dannexe-post-ponction-urgence-chirurgicale">CAS 18 🥇 — Torsion d'Annexe Post-Ponction : Urgence Chirurgicale</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-18 — Torsion d'annexe post-ponction : douleur latéralisée aiguë, Doppler absent, cœlioscopie urgente]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme R., 26 ans. FIV-ICSI pour infertilité tubaire (salpingectomie bilatérale). Ponction 48h auparavant : 16 ovocytes (protocole antagoniste, trigger agoniste, freeze-all). Ovaires volumineux post-ponction.</p>
+<p><strong>Présentation aux urgences</strong> : Douleur abdominale <strong>aiguë, latéralisée à droite</strong>, apparue brutalement il y a 3 heures. Nausées, 1 vomissement. Pas de fièvre. Pas de saignement vaginal.</p>
+<p><strong>Examen</strong> : défense en fosse iliaque droite. FC 110 bpm. PA 100/60 mmHg. T° 37,2°C.</p>
+<hr />
+<p><strong>Q1 🥇</strong> — Quel diagnostic évoquez-vous en priorité et quels diagnostics différentiels ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Diagnostic prioritaire : Torsion d'annexe droite</strong></p>
+<p>Arguments :<br />
+- Douleur <strong>aiguë latéralisée</strong> (≠ SHO qui est diffus bilatéral)<br />
+- Survenue 48h post-ponction avec ovaires volumineux (facteur mécanique : ovaires lourds → torsion sur le pédicule vasculaire)<br />
+- Défense localisée, signes vagaux (nausées, tachycardie)<br />
+- Incidence post-ponction : 0,08-0,2 %</p>
+<p><strong>Diagnostics différentiels</strong> :<br />
+1. <strong>Hémorragie intra-péritonéale</strong> post-ponction (0,1-0,5 %) : douleur plus diffuse, choc hypovolémique, liquide au Douglas<br />
+2. <strong>Appendicite aiguë</strong> : mais le contexte post-ponction rend la torsion plus probable<br />
+3. <strong>SHO précoce</strong> : douleur diffuse bilatérale, distension, pas de latéralisation aiguë<br />
+4. <strong>Rupture de kyste ovarien</strong> : douleur brutale mais Doppler ovarien conservé</p>
+<hr />
+<p><strong>Q2 🥇</strong> — Échographie en urgence : ovaire droit augmenté de volume (9 cm), œdémateux, <strong>Doppler artériel ovarien droit ABSENT</strong>. Ovaire gauche 7 cm, Doppler conservé. Pas de liquide libre significatif.</p>
+<p><strong>Quelle est votre conduite immédiate ?</strong></p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Cœlioscopie en URGENCE</strong> pour détorsion :</p>
+<ol>
+<li><strong>Ne PAS attendre</strong> un scanner ou une IRM — le diagnostic est clinique + échographique</li>
+<li><strong>Cœlioscopie</strong> : détorsion de l'annexe (déroulement du pédicule vasculaire)</li>
+<li><strong>Évaluation de la viabilité</strong> : si l'ovaire est encore viable (revascularisation après détorsion, couleur qui revient), conservation. Si nécrose avérée → ovariectomie</li>
+<li><strong>Ovariopexie</strong> : fixation de l'ovaire au ligament utéro-sacré pour prévenir la récidive (controversé mais souvent réalisé)</li>
+<li><strong>Pas d'ovariectomie systématique</strong> : même un ovaire cyanosé peut récupérer après détorsion (reperfusion en 24-48h)</li>
+</ol>
+<blockquote></blockquote>
+<div class="vertex-alerte"><strong>Règle de sécurité</strong> : douleur latéralisée aiguë + Doppler absent post-ponction = **torsion jusqu'à preuve du contraire** → cœlioscopie en urgence. Le pronostic dépend du temps d'ischémie.</div>
+
+<hr />
+<p><strong>Q3 🥇</strong> — Cœlioscopie : torsion d'annexe droite sur 2 tours. Détorsion réalisée. L'ovaire reprend une coloration normale en 10 minutes. Pas de nécrose. Ovariopexie réalisée.</p>
+<p><strong>Quel suivi post-opératoire et quelles conséquences pour le parcours FIV ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Suivi</strong> :<br />
+- Surveillance 24-48h en hospitalisation<br />
+- Contrôle Doppler ovarien droit à J+1 (vérifier la revascularisation)<br />
+- Antalgiques (paracétamol, pas d'AINS)<br />
+- Anticoagulation par HBPM si immobilisation prolongée</p>
+<p><strong>Conséquences FIV</strong> :<br />
+- Les embryons sont vitrifiés (freeze-all) → le TEC peut être planifié 2-3 mois après, une fois l'ovaire cicatrisé<br />
+- L'AMH doit être recontrôlée à 3 mois (évaluer l'impact de l'ischémie transitoire sur la réserve ovarienne)<br />
+- Le pronostic est favorable si la détorsion a été rapide (&lt; 6h d'ischémie)</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Torsion d'annexe post-ponction : 0,08-0,2 %, urgence chirurgicale<br />
+2. Signe clé : douleur LATÉRALISÉE aiguë (≠ SHO = diffus)<br />
+3. Doppler absent = cœlioscopie urgente, pas d'attente<br />
+4. Détorsion &gt; ovariectomie (même ovaire cyanosé peut récupérer)</p>
+</blockquote>
+<hr />
+<h2 id="cas-19-erreur-de-protocole-triple-piege-chez-une-patiente-sopk">CAS 19 💎 — Erreur de Protocole : Triple Piège chez une Patiente SOPK</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-19 — Erreur de protocole SOPK : analyse des 3 erreurs cumulées et correction]</p>
+</blockquote>
+<p><strong>Situation</strong> : Vous êtes médecin remplaçant dans un centre d'AMP. Vous recevez Mme S., 25 ans, SOPK sévère (AMH 12 ng/mL, CFA 40, IMC 30). Elle est à J8 de stimulation FIV, prescrite par le titulaire absent.</p>
+<p><strong>Prescription en cours</strong> :<br />
+- Protocole <strong>long agoniste</strong> (triptoreline débutée J21 du cycle précédent)<br />
+- FSH <strong>300 UI/j</strong> (Gonal-F)<br />
+- Monitorage prévu à J12 seulement</p>
+<p><strong>Monitorage J8 (que vous réalisez)</strong> :<br />
+- Échographie : <strong>28 follicules &gt; 14 mm</strong>, ovaires 10 cm bilatéraux<br />
+- E2 : <strong>6 200 pg/mL</strong><br />
+- Progestérone : 1,1 ng/mL</p>
+<hr />
+<p><strong>Q1 💎</strong> — Identifiez TOUTES les erreurs de cette prescription et leurs conséquences potentielles.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>3 erreurs majeures cumulées</strong> :</p>
+<p><strong>Erreur 1 — Protocole long agoniste chez SOPK sévère</strong> :<br />
+- Le protocole agoniste long <strong>désensibilise les récepteurs GnRH</strong> → le trigger agoniste devient <strong>IMPOSSIBLE</strong> (il ne peut pas déclencher de pic de LH endogène)<br />
+- Conséquence : la seule option de trigger est l'hCG → pas de « porte de sortie » sécuritaire en cas d'hyperréponse<br />
+- Le protocole antagoniste est le SEUL choix sûr chez le SOPK (possibilité de trigger agoniste)</p>
+<p><strong>Erreur 2 — FSH 300 UI/j chez SOPK sévère (AMH 12, CFA 40)</strong> :<br />
+- Dose beaucoup trop élevée. La dose recommandée en SOPK est 100-150 UI/j maximum (« start low, go slow »)<br />
+- Résultat : recrutement folliculaire massif (28 follicules &gt; 14 mm en seulement 8 jours)</p>
+<p><strong>Erreur 3 — Monitorage tardif (prévu à J12 seulement)</strong> :<br />
+- Le premier contrôle aurait dû être à J5-J6, puis tous les 2 jours<br />
+- Ici, la situation est déjà hors contrôle à J8. Un monitorage à J12 aurait trouvé une situation catastrophique (probablement 35-40 follicules, E2 &gt; 10 000 pg/mL)</p>
+<hr />
+<p><strong>Q2 💎</strong> — Vous êtes face à cette situation. E2 6 200 pg/mL, 28 follicules, protocole agoniste long, trigger agoniste impossible. Quelles sont vos options ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Options</strong> (de la moins risquée à la plus risquée) :</p>
+<p><strong>Option A — Annulation du cycle</strong> (la plus sûre) :<br />
+- Arrêt immédiat de la FSH<br />
+- Pas de trigger<br />
+- L'atrésie folliculaire se produira naturellement en quelques jours<br />
+- Perte de la cohorte folliculaire mais sécurité de la patiente garantie</p>
+<p><strong>Option B — Coasting + trigger hCG à dose réduite + freeze-all</strong> (risquée) :<br />
+- Arrêt FSH pendant 2-3 jours, attendre que E2 diminue à &lt; 3 500-4 000 pg/mL<br />
+- Trigger hCG à dose minimale (2 500-5 000 UI au lieu de 10 000)<br />
+- Freeze-all obligatoire<br />
+- Cabergoline 0,5 mg/j × 8 jours<br />
+- Risque : SHO sévère malgré tout (l'hCG a une demi-vie de 5-7 jours)</p>
+<p><strong>Option C — Ponction sans trigger</strong> (expérimentale, rarement utilisée) :<br />
+- Certains ovocytes matures peuvent être récupérés mais rendement très faible</p>
+<p><strong>Recommandation</strong> : <strong>Option A</strong> (annulation) si le couple comprend la situation. <strong>Option B</strong> si le couple insiste (après information claire sur le risque de SHO sévère + consentement éclairé + surveillance hospitalière post-ponction).</p>
+<hr />
+<p><strong>Q3 💎</strong> — Vous choisissez l'annulation. Comment expliquez-vous la situation au couple et au titulaire ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Au couple</strong> :<br />
+- Explication honnête : « La réponse ovarienne est beaucoup trop forte et le protocole ne nous permet pas d'utiliser le déclenchement de sécurité. Continuer exposerait à un risque grave pour votre santé (syndrome d'hyperstimulation ovarienne sévère, avec risque d'hospitalisation, de thrombose, et dans les cas extrêmes de complications vitales). »<br />
+- « Nous devons annuler ce cycle pour votre sécurité. Au prochain cycle, nous utiliserons un protocole adapté (antagoniste, faibles doses de FSH, trigger agoniste) qui vous protégera. »<br />
+- Empathie : reconnaître la déception, le temps perdu, le coût émotionnel</p>
+<p><strong>Au titulaire</strong> :<br />
+- Communication factuelle et professionnelle (pas accusatoire)<br />
+- Rapport écrit détaillant les constatations à J8 et la décision d'annulation<br />
+- Proposition de protocole correct pour le cycle suivant<br />
+- Signalement en réunion de morbidité du centre (event review) pour amélioration des pratiques</p>
+<p><strong>Protocole correct pour le prochain cycle</strong> :<br />
+- <strong>Antagoniste</strong> + FSH <strong>100-125 UI/j</strong> + monitorage à <strong>J5, J7, J9</strong> + trigger <strong>agoniste</strong> + <strong>freeze-all</strong> + <strong>cabergoline</strong></p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Le protocole agoniste long rend le trigger agoniste IMPOSSIBLE<br />
+2. FSH &gt; 150 UI chez SOPK sévère = surdosage<br />
+3. Monitorage tardif = perte de contrôle<br />
+4. L'annulation est parfois la décision la plus sage<br />
+5. Communication honnête avec le couple et professionnelle avec l'équipe</p>
+</blockquote>
+<hr />
+<h2 id="cas-20-thrombose-veineuse-cerebrale-sur-sho-severe">CAS 20 💎 — Thrombose Veineuse Cérébrale sur SHO Sévère</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-20 — Thrombose veineuse cérébrale sur SHO : territoires inhabituels, diagnostic et traitement]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme T., 29 ans, SHO sévère tardif hospitalisée depuis 5 jours (Ht 46 %, ascite, grossesse débutante β-hCG 2 800 UI/L). Sous HBPM 40 mg/j, remplissage, albumine. Évolution initialement favorable.</p>
+<p><strong>J6 d'hospitalisation</strong> : céphalées intenses d'apparition progressive (36h), résistantes au paracétamol. Nausées. Flou visuel bilatéral. Examen neurologique : œdème papillaire bilatéral au fond d'œil. Pas de déficit moteur.</p>
+<hr />
+<p><strong>Q1 💎</strong> — Quel diagnostic évoquez-vous et pourquoi dans ce contexte ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Thrombose veineuse cérébrale (TVC)</strong> — sinus longitudinal supérieur ou sinus latéral.</p>
+<p>Pourquoi dans ce contexte :<br />
+1. <strong>SHO sévère</strong> → hémoconcentration (Ht 46 %) + hypercoagulabilité → thrombophilie acquise<br />
+2. <strong>Risque thrombotique du SHO</strong> : 4-10 % des SHO sévères<br />
+3. <strong>Territoires inhabituels</strong> dans le SHO : veines jugulaires, sinus veineux cérébraux, Budd-Chiari (veines hépatiques). Contrairement à la TVP/EP classique, les thromboses du SHO touchent préférentiellement le <strong>système veineux supérieur</strong> (hémoconcentration + fuite protéique → viscosité accrue dans le territoire veineux céphalique)<br />
+4. <strong>Présentation</strong> : céphalées progressives + œdème papillaire (HTIC) + nausées = triade classique de la TVC<br />
+5. <strong>Grossesse</strong> = facteur thrombogène additionnel (état d'hypercoagulabilité physiologique)</p>
+<hr />
+<p><strong>Q2 💎</strong> — Quel examen confirmez-vous en urgence ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>IRM cérébrale + veinographie par résonance magnétique (ARM veineuse)</strong> = gold standard pour la TVC.</p>
+<p>Résultats attendus :<br />
+- <strong>Signe du delta vide</strong> sur les séquences post-gadolinium (thrombus dans le sinus)<br />
+- <strong>Hypersignal T1/T2</strong> du thrombus frais (sang coagulé)<br />
+- Évaluation de l'étendue (sinus longitudinal, sinus latéral, veines corticales)<br />
+- Recherche d'infarctus veineux parenchymateux (complications)<br />
+- Recherche de transformation hémorragique</p>
+<p>Alternative si IRM non disponible : <strong>scanner cérébral avec injection</strong> (signe du delta vide), mais moins sensible.</p>
+<hr />
+<p><strong>Q3 💎</strong> — IRM : thrombose du sinus longitudinal supérieur et du sinus latéral gauche. Pas d'infarctus veineux. Quelle est votre prise en charge ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Prise en charge multidisciplinaire urgente</strong> (neurologie + gynécologie + hématologie) :</p>
+<p><strong>1. Anticoagulation curative</strong> :<br />
+- <strong>HBPM curative</strong> : enoxaparine <strong>1 mg/kg × 2/j SC</strong> (passage de la dose prophylactique 40 mg/j à la dose curative)<br />
+- Compatible avec la grossesse (l'HBPM ne traverse pas la barrière placentaire)<br />
+- AVK = CONTRE-INDIQUÉS au 1er trimestre (tératogènes)<br />
+- AOD = CONTRE-INDIQUÉS pendant la grossesse</p>
+<p><strong>2. Traitement symptomatique</strong> :<br />
+- Paracétamol IV pour les céphalées (AINS CONTRE-INDIQUÉS : grossesse + SHO)<br />
+- Antinauséeux<br />
+- Si crise épileptique : antiépileptique compatible grossesse (lévétiracétam)<br />
+- Pas de ponction lombaire déplétive systématique</p>
+<p><strong>3. Poursuite du traitement SHO</strong> :<br />
+- Remplissage, albumine, paracentèse si ascite tendue<br />
+- Le SHO se résoudra progressivement avec la stabilisation du β-hCG</p>
+<p><strong>4. Surveillance</strong> :<br />
+- IRM de contrôle à 1 mois puis 3 mois (recanalisation ?)<br />
+- Bilan de thrombophilie <strong>après l'accouchement</strong> (ne pas doser pendant la grossesse + SHO car faux positifs : protéine C, protéine S, antithrombine diminuées par la fuite capillaire)<br />
+- Anticoagulation curative à poursuivre <strong>toute la grossesse + 6 semaines post-partum</strong> minimum</p>
+<p><strong>5. Pronostic</strong> :<br />
+- TVC sans infarctus veineux → bon pronostic (&gt; 90 % de récupération complète)<br />
+- La grossesse peut se poursuivre avec une surveillance rapprochée</p>
+<hr />
+<p><strong>Q4 💎</strong> — Comment cette complication aurait-elle pu être prévenue ?</p>
+<p><strong>Réponse Q4</strong> :</p>
+<p><strong>Prévention à plusieurs niveaux</strong> :</p>
+<ol>
+<li><strong>Protocole correct</strong> : antagoniste + trigger agoniste + freeze-all → pas de SHO tardif → pas de thrombose</li>
+<li><strong>Si transfert frais inévitable</strong> : HBPM prophylactique systématique en cas de SHO modéré/sévère (ce qui a été fait ici)</li>
+<li><strong>Dose d'HBPM</strong> : certains experts recommandent une dose prophylactique <strong>intermédiaire</strong> (40 mg × 2/j) plutôt que standard (40 mg/j) en cas de SHO sévère avec Ht &gt; 45 %, surtout si grossesse</li>
+<li><strong>Hydratation agressive</strong> : limiter l'hémoconcentration (principal mécanisme thrombogène)</li>
+<li><strong>Mobilisation précoce</strong> : pas d'alitement strict (sauf si état hémodynamique instable)</li>
+<li><strong>Surveillance des signes neurologiques</strong> : céphalées inhabituelles dans le SHO = TVC jusqu'à preuve du contraire</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Thrombose veineuse dans 4-10 % des SHO sévères<br />
+2. Territoires inhabituels : sinus cérébraux, jugulaire, Budd-Chiari<br />
+3. Céphalées + SHO = TVC jusqu'à preuve du contraire → IRM urgente<br />
+4. HBPM curative compatible avec la grossesse<br />
+5. AVK et AOD = CONTRE-INDIQUÉS pendant la grossesse</p>
+</blockquote>
+<hr />
+<h2 id="cas-21-iop-a-28-ans-diagnostic-deuil-genetique-et-don-dovocytes">CAS 21 💎 — IOP à 28 Ans : Diagnostic, Deuil Génétique et Don d'Ovocytes</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-21 — IOP : diagnostic précoce, bilan étiologique complet, parcours don d'ovocytes]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mme U., 28 ans, designer graphique. Aménorrhée secondaire depuis 10 mois (après cycles réguliers depuis 14 ans). Désir de grossesse avec son conjoint (30 ans).</p>
+<p><strong>Bilan</strong> :<br />
+- β-hCG : négatif<br />
+- <strong>FSH : 58 UI/L</strong> (N 3-10 en phase folliculaire)<br />
+- FSH de contrôle à 4 semaines : <strong>62 UI/L</strong> (confirmation)<br />
+- E2 : 18 pg/mL (effondré)<br />
+- <strong>AMH : 0,03 ng/mL</strong> (quasi indosable)<br />
+- <strong>CFA : 0</strong> (aucun follicule visible)<br />
+- LH : 45 UI/L (élevée)<br />
+- Prolactine : normale. TSH : normale.<br />
+- Échographie : utérus normal, ovaires atrophiques (2 mL chacun)</p>
+<hr />
+<p><strong>Q1 💎</strong> — Posez le diagnostic et détaillez le bilan étiologique.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Diagnostic : Insuffisance Ovarienne Prématurée (IOP)</strong> — anciennement « ménopause précoce ».</p>
+<p>Critères : aménorrhée ≥ 4 mois + FSH &gt; 25 UI/L (× 2 à 4 semaines d'intervalle) avant 40 ans. Ici : FSH 58-62 UI/L, AMH effondrée, CFA 0 → IOP confirmée.</p>
+<p><strong>Bilan étiologique</strong> :</p>
+<ol>
+<li>
+<p><strong>Génétique</strong> :<br />
+   - <strong>Caryotype</strong> : recherche syndrome de Turner (45,X) et ses variants (mosaïques 45,X/46,XX)<br />
+   - <strong>FMR1</strong> (prémutation X fragile) : 55-200 répétitions CGG → IOP dans 20-25 % des porteuses. Conseil génétique obligatoire (risque d'X fragile chez les fils)<br />
+   - Caryotype du conjoint (systématique)</p>
+</li>
+<li>
+<p><strong>Auto-immune</strong> :<br />
+   - <strong>Anticorps anti-surrénaliens</strong> (anti-21-hydroxylase) : association IOP + insuffisance surrénalienne (syndrome APECED)<br />
+   - <strong>Anti-TPO</strong> (auto-immunité thyroïdienne associée dans 20-30 %)<br />
+   - Anticorps anti-ovaire (non standardisés, peu fiables)</p>
+</li>
+<li>
+<p><strong>Iatrogène</strong> :<br />
+   - Antécédent de chimiothérapie, radiothérapie pelvienne → interrogatoire<br />
+   - Chirurgie ovarienne bilatérale → interrogatoire</p>
+</li>
+<li>
+<p><strong>Métabolique</strong> :<br />
+   - Galactosémie (rare, à évoquer si contexte familial)</p>
+</li>
+</ol>
+<p><strong>Résultat le plus fréquent</strong> : IOP <strong>idiopathique</strong> (50-60 % des cas après exclusion des causes).</p>
+<hr />
+<p><strong>Q2 💎</strong> — Résultats : caryotype 46,XX (normal). FMR1 : 28 répétitions (normal). Anti-21-hydroxylase : négatif. Anti-TPO : positif (Hashimoto associée, TSH 3,2 → surveiller). Diagnostic : <strong>IOP idiopathique</strong> sur terrain auto-immun.</p>
+<p><strong>Quelles options de fertilité et quelles illusions devez-vous dissiper ?</strong></p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Options de fertilité</strong> :</p>
+<p><strong>1. FIV avec ovocytes propres</strong> :<br />
+- Taux de naissance/cycle : <strong>2-5 %</strong> (extrêmement faible)<br />
+- Possible uniquement si un follicule apparaît spontanément (surveillance échographique mensuelle)<br />
+- Random-start si follicule visible → ponction → ICSI<br />
+- Accumulation sur plusieurs mois/années → résultats aléatoires<br />
+- <strong>Honnêteté</strong> : il est peu probable que cette approche aboutisse avec un CFA à 0 et une AMH à 0,03</p>
+<p><strong>2. Don d'ovocytes</strong> : <strong>option la plus efficace</strong><br />
+- Taux de naissance : <strong>40-60 % par transfert</strong> (l'âge de la donneuse, pas de la receveuse, détermine la qualité ovocytaire)<br />
+- En France : don gratuit, anonyme (accès origines loi 2021), CECOS/centres agréés<br />
+- Délai d'attente : 12-24 mois (pénurie de donneuses en France → certains couples se tournent vers l'étranger : Espagne, République tchèque)<br />
+- Risque obstétrical spécifique : <strong>prééclampsie × 2-3</strong> (allo-immunisation)</p>
+<p><strong>3. Accueil d'embryons</strong> : alternative au don d'ovocytes (~200-300 cas/an en France)</p>
+<p><strong>Illusions à dissiper</strong> :<br />
+- <strong>PRP ovarien, OFFA, cellules souches</strong> : AUCUN validé par RCT. Marketing agressif. Ne pas créer de faux espoirs <em>(Kawamura 2013 = série de cas, non reproduite à grande échelle)</em><br />
+- <strong>Compléments alimentaires « pour relancer les ovaires »</strong> : aucune efficacité prouvée en IOP vraie</p>
+<hr />
+<p><strong>Q3 💎</strong> — La patiente pleure : « Je n'ai que 28 ans, comment est-ce possible ? Et le don, ce ne sera pas mon enfant génétiquement. » Comment gérez-vous cette consultation ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Accompagnement psychologique structuré</strong> :</p>
+<p><strong>1. Validation émotionnelle</strong> :<br />
+- « Ce que vous ressentez est parfaitement légitime. Un diagnostic d'IOP à 28 ans est un choc. Personne ne s'y prépare. »<br />
+- Ne pas minimiser (« vous êtes jeune, vous avez le temps ») — c'est précisément le contraire<br />
+- Laisser le temps au silence et aux larmes</p>
+<p><strong>2. Information sur l'IOP</strong> :<br />
+- 1 % des femmes &lt; 40 ans, 0,1 % &lt; 30 ans<br />
+- Pas de « faute » de la patiente — causes génétiques ou auto-immunes dans la majorité des cas<br />
+- Le THM (traitement hormonal de ménopause) est OBLIGATOIRE jusqu'à 51 ans (protection osseuse, cardiovasculaire, cognitive) — ce n'est PAS une « ménopause définitive » au sens où le corps peut être soutenu hormonalement</p>
+<p><strong>3. Le deuil génétique</strong> :<br />
+- Le don d'ovocytes signifie que l'enfant aura les gènes de la donneuse, pas ceux de la mère<br />
+- C'est un <strong>processus de deuil spécifique</strong> (deuil du lien génétique maternel) qui prend du temps<br />
+- « L'enfant sera le VÔTRE : vous le porterez, il grandira dans votre utérus, vous le nourrirez, vous l'élèverez. Le lien génétique n'est qu'une dimension de la parentalité. »<br />
+- L'épigénétique de la gestation : l'environnement utérin maternel influence l'expression des gènes de l'embryon → la mère porteuse n'est pas « étrangère » biologiquement</p>
+<p><strong>4. Orientation</strong> :<br />
+- Psychologue spécialisé AMP (TCC, EMDR si trauma du diagnostic)<br />
+- Associations : BAMP, Maia<br />
+- Pas de pression temporelle : « Prenez le temps qu'il vous faut. Le don d'ovocytes peut être fait à 30, 35 ou même 40 ans — l'âge utérin est moins critique que l'âge ovarien. »<br />
+- Proposer un délai de réflexion de 3-6 mois avant de s'engager dans le parcours don</p>
+<p><strong>5. Le conjoint</strong> :<br />
+- L'impliquer activement. Pour lui, l'enfant sera génétiquement le sien → vécus asymétriques dans le couple<br />
+- Thérapie de couple si nécessaire</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. IOP : FSH &gt; 25 × 2 à 4 semaines + aménorrhée avant 40 ans<br />
+2. Bilan : caryotype, FMR1, auto-immunité surrénalienne et thyroïdienne<br />
+3. Don d'ovocytes = option la plus efficace (40-60 % par transfert)<br />
+4. PRP/OFFA/cellules souches = NON validés, mettre en garde<br />
+5. Le deuil génétique est un processus spécifique nécessitant un accompagnement</p>
+</blockquote>
+<hr />
+<h2 id="cas-22-erreur-didentification-au-laboratoire-gestion-de-crise-et-amp-vigilance">CAS 22 💎 — Erreur d'Identification au Laboratoire : Gestion de Crise et AMP-Vigilance</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-22 — Erreur d'identification gamètes : système de prévention RI Witness RFID, déclaration AMP-vigilance]</p>
+</blockquote>
+<p><strong>Situation</strong> : Vous êtes le biologiste responsable du laboratoire de FIV. L'embryologiste vous signale un incident : lors de la préparation de 2 ICSI simultanées, les boîtes de culture de Mme V. et Mme W. ont été <strong>échangées pendant 15 minutes</strong> avant que l'erreur ne soit détectée (les étiquettes ne correspondaient pas au numéro de poste de travail). Aucune manipulation d'ICSI n'a encore été réalisée sur les boîtes.</p>
+<hr />
+<p><strong>Q1 💎</strong> — Quelle est la gravité de cet événement et quelles sont les conséquences potentielles ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Gravité</strong> : <strong>événement sentinelle de niveau maximal</strong> en AMP, même si détecté avant toute manipulation.</p>
+<p><strong>Conséquences potentielles (si non détecté)</strong> :<br />
+- ICSI des ovocytes de Mme V. avec les spermatozoïdes de M. W. (et inversement)<br />
+- Naissance d'un enfant génétiquement non apparenté aux parents sociaux → catastrophe médicale, juridique, psychologique, irréversible<br />
+- Contentieux juridique majeur (responsabilité civile et pénale du laboratoire)</p>
+<p><strong>Même si détecté à temps</strong> :<br />
+- L'incident révèle une <strong>faille systémique</strong> dans la chaîne d'identification<br />
+- Les ovocytes ont été exposés à un environnement de culture potentiellement contaminé par des cellules étrangères (risque théorique)</p>
+<hr />
+<p><strong>Q2 💎</strong> — Détaillez votre gestion immédiate de la crise.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Gestion immédiate</strong> :</p>
+<p><strong>1. Stop — Sécuriser</strong> :<br />
+- Arrêter toute manipulation sur les 2 dossiers<br />
+- Remettre chaque boîte sous le bon dossier (vérification croisée par 2 personnes)<br />
+- Confirmer l'identité de chaque échantillon par traçabilité complète (numéro de patient, numéro de boîte, position dans l'incubateur)</p>
+<p><strong>2. Évaluer le risque résiduel</strong> :<br />
+- Les boîtes ont-elles été ouvertes ? Manipulées ? Ensemencées ?<br />
+- Ici : non → pas de contamination croisée → les gamètes sont intacts et identifiés<br />
+- Les ICSI peuvent être réalisées normalement après re-vérification</p>
+<p><strong>3. Documenter</strong> :<br />
+- Rapport écrit détaillé : chronologie, mode de détection, personnes impliquées, actions correctives<br />
+- Horodatage précis (caméras de surveillance du laboratoire)</p>
+<p><strong>4. Déclarer</strong> :<br />
+- <strong>AMP-vigilance</strong> : déclaration obligatoire à l'ABM (Agence de la Biomédecine) dans les 48 heures<br />
+- Classification : événement indésirable grave (EIG) ou événement porteur de risque (EPR) selon la nomenclature</p>
+<p><strong>5. Informer les patientes ?</strong> :<br />
+- Sujet délicat : l'incident a été détecté et corrigé, aucun dommage n'a eu lieu<br />
+- Certains centres informent systématiquement (transparence) ; d'autres non (pas de dommage = pas d'information obligatoire)<br />
+- Recommandation : information factuelle et rassurante si le centre a une politique de transparence</p>
+<hr />
+<p><strong>Q3 💎</strong> — Quelles mesures correctives mettez-vous en place pour prévenir la récidive ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Mesures correctives</strong> :</p>
+<p><strong>1. Témoin électronique</strong> :<br />
+- <strong>RI Witness</strong> (système RFID) : chaque boîte de culture, chaque tube de sperme, chaque cryotube porte une puce RFID. Le système alerte en temps réel si 2 patients différents sont présents simultanément sur le même poste de travail<br />
+- Alternative : Matcher (système par code-barres)<br />
+- Investissement significatif mais gold standard de prévention</p>
+<p><strong>2. Règle de non-simultanéité</strong> :<br />
+- Un seul patient par poste de travail à la fois<br />
+- Si 2 ICSI en parallèle : 2 postes séparés avec barrière physique</p>
+<p><strong>3. Double vérification systématique</strong> :<br />
+- À chaque étape (réception, dénudation, ICSI, culture, transfert, vitrification) : vérification de l'identité par 2 personnes (opérateur + témoin)<br />
+- Check-list standardisée signée à chaque étape</p>
+<p><strong>4. Formation et culture de sécurité</strong> :<br />
+- Réunion d'équipe (morbidité-mortalité de laboratoire)<br />
+- Analyse de cause racine (root cause analysis) : facteur humain ? Organisation ? Charge de travail ? Ergonomie ?<br />
+- Pas de culpabilisation individuelle → culture de signalement non punitive</p>
+<p><strong>5. Audit</strong> :<br />
+- Audit interne immédiat<br />
+- Audit COFRAC/ABM lors de la prochaine visite</p>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. L'erreur d'identification = événement le plus grave en AMP<br />
+2. RI Witness (RFID) = gold standard de prévention<br />
+3. Double vérification à chaque étape = obligatoire<br />
+4. Déclaration AMP-vigilance dans les 48h<br />
+5. Culture de sécurité non punitive &gt; recherche de coupable</p>
+</blockquote>
+<hr />
+<h2 id="cas-23-burn-out-amp-et-fin-de-parcours-accompagnement-du-couple">CAS 23 💎 — Burn-out AMP et Fin de Parcours : Accompagnement du Couple</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-23 — Burn-out AMP : signes d'alerte, PHQ-9, accompagnement psychologique, fin de parcours]</p>
+</blockquote>
+<p><strong>Patients</strong> : Mme et M. X. — Elle 42 ans, lui 44 ans. Infertilité depuis 8 ans. Parcours : 4 IIU + 4 FIV (compteur épuisé). Résultats : 2 FC précoces (7 et 8 SA), 2 β-hCG négatifs, 2 transferts annulés (pas d'embryon à J5). Dernière FIV : 3 ovocytes, 1 fécondé, arrêt de développement J3.</p>
+<p><strong>Consultation</strong> : Mme X. arrive en retard, visage fermé. M. X. silencieux. Elle dit : « On vient par habitude. Je ne sais même plus pourquoi. » Puis : « Peut-être qu'on devrait tout arrêter. »</p>
+<hr />
+<p><strong>Q1 💎</strong> — Identifiez les signes de burn-out AMP chez ce couple et les facteurs de risque.</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Signes de burn-out AMP chez Mme X.</strong> :<br />
+- <strong>Détachement</strong> : « par habitude », perte de sens du parcours<br />
+- <strong>Irritabilité/résignation</strong> : visage fermé, retard (désengagement)<br />
+- <strong>Remise en question</strong> : « peut-être tout arrêter »<br />
+- <strong>Épuisement émotionnel</strong> : 8 ans de parcours, multiple déceptions</p>
+<p><strong>Signes chez M. X.</strong> :<br />
+- <strong>Silence</strong> : les hommes sont sous-diagnostiqués en souffrance AMP (10-15 % de dépression vs 15-25 % chez les femmes)<br />
+- <strong>Retrait</strong> : pas d'expression verbale → souffrance internalisée</p>
+<p><strong>Facteurs de risque</strong> :<br />
+- Durée du parcours (8 ans)<br />
+- Nombre de tentatives (4 IIU + 4 FIV)<br />
+- Expérience de FC (deuils répétés)<br />
+- Âge (42 ans → conscience du déclin biologique)<br />
+- Compteur épuisé (pas de remboursement → ajout du stress financier si poursuite)<br />
+- 30-40 % des couples abandonnent le parcours AMP par épuisement (pas par décision rationnelle)</p>
+<hr />
+<p><strong>Q2 💎</strong> — Comment structurez-vous cette consultation ?</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Structure de la consultation</strong> :</p>
+<p><strong>1. Écoute active (10-15 min)</strong> :<br />
+- « Qu'est-ce qui vous amène aujourd'hui ? Comment vivez-vous cette situation ? »<br />
+- Laisser Mme X. exprimer son désarroi sans interrompre<br />
+- S'adresser directement à M. X. : « Et vous, comment vivez-vous tout cela ? » (ne pas le laisser s'effacer)<br />
+- Valider les émotions : « Ce que vous ressentez après 8 ans est parfaitement compréhensible. L'épuisement n'est pas de la faiblesse. »</p>
+<p><strong>2. Évaluation psychologique rapide</strong> :<br />
+- <strong>PHQ-9</strong> (Patient Health Questionnaire) : ≥ 10 = dépistage positif pour dépression<br />
+- Questions directes : troubles du sommeil, appétit, pensées sombres, impact sur le couple, vie sexuelle, vie professionnelle<br />
+- Si PHQ-9 ≥ 10 → référer vers psychiatre/psychologue spécialisé</p>
+<p><strong>3. Bilan factuel honnête (5 min)</strong> :<br />
+- AMH probablement effondrée à 42 ans (recontrôler si &gt; 6 mois)<br />
+- Taux de naissance/cycle à 42 ans : &lt; 5 % avec ovocytes propres<br />
+- Compteur SS épuisé → coût financier si FIV supplémentaire (~4 000-6 000 €/tentative en non remboursé)<br />
+- Honnêteté : « Les chances avec vos ovocytes sont très faibles maintenant. »</p>
+<p><strong>4. Options (sans imposer)</strong> :<br />
+- <strong>Pause thérapeutique</strong> : 3-6 mois. Pas d'impact sur les résultats (mais à 42 ans, chaque mois compte si reprise)<br />
+- <strong>Don d'ovocytes</strong> : taux 40-60 % par transfert. Mais refus initial fréquent → laisser la porte ouverte<br />
+- <strong>Adoption</strong> : parcours différent, à explorer si le couple le souhaite<br />
+- <strong>Fin de parcours</strong> : accompagnement spécifique du deuil de l'enfant biologique<br />
+- <strong>Ne JAMAIS forcer</strong> : la décision appartient au couple</p>
+<p><strong>5. Orientation</strong> :<br />
+- Psychologue spécialisé AMP (TCC, mindfulness/MBSR pour stress, EMDR si trauma)<br />
+- Thérapie de couple si tension relationnelle<br />
+- Associations : BAMP, Maia, Agir pour notre fertilité</p>
+<hr />
+<p><strong>Q3 💎</strong> — Après 3 mois de pause et un suivi psychologique, le couple revient. Mme X. va mieux mais a décidé de ne plus faire de FIV avec ses ovocytes. M. X. demande : « Et si on essayait le don ? » Elle hésite.</p>
+<p><strong>Comment accompagnez-vous cette transition ?</strong></p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Accompagnement de la transition vers le don</strong> :</p>
+<ol>
+<li>
+<p><strong>Reconnaître le chemin parcouru</strong> : « Le fait d'être ici après cette réflexion montre votre courage et votre engagement l'un envers l'autre. »</p>
+</li>
+<li>
+<p><strong>Explorer l'hésitation de Mme X.</strong> :<br />
+   - Crainte du deuil génétique : « l'enfant ne me ressemblera pas »<br />
+   - Crainte du jugement social : « est-ce vraiment mon enfant ? »<br />
+   - Peur de recommencer un parcours (épuisement)<br />
+   → Reformuler : « En don d'ovocytes, vous portez la grossesse, l'enfant grandit dans votre corps. L'épigénétique de la gestation influence l'expression des gènes. Vous serez sa mère à tous les niveaux. »</p>
+</li>
+<li>
+<p><strong>Information pratique</strong> :<br />
+   - Taux de succès : 40-60 % par transfert (nettement supérieur à la FIV autologue à 42 ans)<br />
+   - Délai d'attente en France : 12-24 mois (CECOS). Alternative : centres espagnols ou tchèques (délai 1-3 mois, non remboursé)<br />
+   - Risques : prééclampsie × 2-3 (allo-immunisation) → surveillance rapprochée<br />
+   - Aucun lien légal de la donneuse avec l'enfant (anonymat, sauf accès origines loi 2021)</p>
+</li>
+<li>
+<p><strong>Pas de décision ce jour</strong> : proposer un délai de réflexion supplémentaire (1-2 mois) + consultation avec le psychologue avant de s'engager</p>
+</li>
+<li>
+<p><strong>Si le couple finit par refuser le don aussi</strong> :<br />
+   - Accompagnement de la fin de parcours sans enfant = responsabilité du médecin<br />
+   - Orientation vers un psychologue pour le deuil de la parentalité<br />
+   - Valider que « ne pas avoir d'enfant n'est pas un échec — c'est une situation subie »</p>
+</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Burn-out AMP : 30-40 % des couples, détachement/irritabilité/perte de sens<br />
+2. PHQ-9 ≥ 10 = dépistage dépression, orienter vers psy<br />
+3. Les hommes sont sous-diagnostiqués (10-15 % dépression)<br />
+4. Ne JAMAIS forcer une décision (don, fin de parcours)<br />
+5. Accompagnement fin de parcours = fait partie du soin</p>
+</blockquote>
+<hr />
+<h2 id="cas-24-transplantation-uterine-pour-syndrome-mrkh-innovation-et-limites">CAS 24 💎 — Transplantation Utérine pour Syndrome MRKH : Innovation et Limites</h2>
+<blockquote>
+<p>[MEDIA: 🩺 CC-FIV-24 — Transplantation utérine : protocole, indications (MRKH), résultats mondiaux, limites éthiques]</p>
+</blockquote>
+<p><strong>Patiente</strong> : Mlle Y., 26 ans, syndrome de <strong>Mayer-Rokitansky-Küster-Hauser (MRKH)</strong> diagnostiqué à 16 ans (aménorrhée primaire). Agénésie utérine et vaginale. Ovaires fonctionnels (AMH 3,2 ng/mL, CFA 13). Néovagin créé par technique de Frank (dilatation progressive). En couple depuis 4 ans. Souhaite porter elle-même sa grossesse.</p>
+<hr />
+<p><strong>Q1 💎</strong> — Quelles sont les options pour Mlle Y. et pourquoi la transplantation utérine est-elle l'unique option de grossesse propre ?</p>
+<p><strong>Réponse Q1</strong> :</p>
+<p><strong>Options parentales</strong> :</p>
+<ol>
+<li>
+<p><strong>GPA (Gestation Pour Autrui)</strong> :<br />
+   - FIV avec ovocytes de Mlle Y. + sperme du conjoint → transfert chez une porteuse<br />
+   - <strong>INTERDIT en France</strong> (art. 16-7 Code civil). Possible à l'étranger (USA, Canada, Ukraine, Grèce)<br />
+   - Transcription de l'état civil complexe mais possible <em>(Mennesson, CEDH 2014)</em></p>
+</li>
+<li>
+<p><strong>Transplantation utérine</strong> :<br />
+   - <strong>Seule option</strong> pour que Mlle Y. porte elle-même sa grossesse<br />
+   - Indication principale : MRKH (agénésie utérine congénitale)<br />
+   - &gt; 100 transplantations mondiales, &gt; 50 naissances (2024)<br />
+   - Première naissance : <strong>Brännström, Suède, 2014</strong><br />
+   - Taux de naissance : 40-50 %</p>
+</li>
+<li>
+<p><strong>Adoption</strong> : option parentale sans dimension biologique/gestationnelle</p>
+</li>
+</ol>
+<p>→ La transplantation utérine est l'unique option de <strong>grossesse propre</strong> (porter soi-même l'enfant) légale et accessible.</p>
+<hr />
+<p><strong>Q2 💎</strong> — Détaillez le protocole de transplantation utérine étape par étape.</p>
+<p><strong>Réponse Q2</strong> :</p>
+<p><strong>Protocole en 6 étapes</strong> :</p>
+<p><strong>Étape 1 — FIV + vitrification d'embryons</strong> :<br />
+- Stimulation FIV standard (ovaires fonctionnels de Mlle Y.)<br />
+- ICSI avec sperme du conjoint<br />
+- Vitrification de tous les blastocystes obtenus<br />
+- Objectif : ≥ 3-5 blastocystes vitrifiés avant la transplantation</p>
+<p><strong>Étape 2 — Transplantation utérine</strong> :<br />
+- <strong>Donneuse</strong> : vivante (apparentée : mère, sœur, tante) ou décédée (programme spécifique)<br />
+- Chirurgie de prélèvement : hystérectomie avec préservation des pédicules vasculaires (artères utérines + veines utérines)<br />
+- Chirurgie de greffe : anastomoses vasculaires (artère iliaque interne/externe de la receveuse)<br />
+- Durée : 8-12 heures<br />
+- Immunosuppression : tacrolimus + azathioprine (protocole adapté de la transplantation rénale)</p>
+<p><strong>Étape 3 — Attente 12 mois</strong> :<br />
+- Vérification de la vascularisation (Doppler, IRM)<br />
+- Apparition de cycles menstruels (preuve de viabilité endométriale)<br />
+- Stabilisation de l'immunosuppression<br />
+- Biopsies cervicales régulières (surveillance rejet)</p>
+<p><strong>Étape 4 — TEC</strong> :<br />
+- Transfert d'embryon congelé quand l'utérus est fonctionnel<br />
+- Cycle substitué (pas d'ovulation dans l'utérus greffé — pas de connexion tubaire)</p>
+<p><strong>Étape 5 — Grossesse</strong> :<br />
+- Sous immunosuppression (tacrolimus : passage placentaire minime, compatible grossesse)<br />
+- Surveillance rapprochée (rejet, prééclampsie, RCIU)<br />
+- <strong>Césarienne obligatoire</strong> (~36-37 SA) — le travail spontané n'est pas sûr (innervation utérine absente, cicatrices vasculaires)</p>
+<p><strong>Étape 6 — Hystérectomie</strong> :<br />
+- Retrait de l'utérus greffé après 1-2 grossesses<br />
+- Arrêt de l'immunosuppression → retour à l'état pré-greffe</p>
+<hr />
+<p><strong>Q3 💎</strong> — Quels sont les enjeux éthiques de la transplantation utérine ?</p>
+<p><strong>Réponse Q3</strong> :</p>
+<p><strong>Enjeux éthiques majeurs</strong> :</p>
+<ol>
+<li>
+<p><strong>Rapport bénéfice/risque</strong> :<br />
+   - Greffe d'un organe <strong>non vital</strong> (vs rein, cœur) → l'immunosuppression est une charge lourde pour une fonction non vitale<br />
+   - Risques chirurgicaux significatifs (12h de chirurgie, anastomoses complexes)<br />
+   - Risque pour la donneuse vivante (hystérectomie majeure avec sacrifice des pédicules vasculaires)</p>
+</li>
+<li>
+<p><strong>Donneuse vivante vs décédée</strong> :<br />
+   - Donneuse vivante (mère → fille) : lien émotionnel fort mais risque chirurgical pour la donneuse<br />
+   - Donneuse décédée : pas de risque pour un vivant mais qualité d'organe variable (ischémie froide)<br />
+   - Question : la donneuse est-elle vraiment libre de son consentement (pression familiale) ?</p>
+</li>
+<li>
+<p><strong>Alternatives</strong> :<br />
+   - La GPA est plus simple, plus sûre, et plus efficace → mais interdite en France<br />
+   - La transplantation utérine est-elle « nécessaire » alors qu'une alternative moins invasive existe (si elle était légale) ?</p>
+</li>
+<li>
+<p><strong>Justice sociale</strong> :<br />
+   - Accès limité (centres hyperspécialisés, coût &gt; 50 000 €)<br />
+   - MRKH touche 1/4 500 femmes → maladie rare, peu de programmes</p>
+</li>
+<li>
+<p><strong>Temporalité</strong> :<br />
+   - L'utérus greffé est retiré après utilisation → concept d'organe « temporaire »<br />
+   - Immunosuppression pendant la grossesse : effet sur le fœtus (données rassurantes mais séries limitées)</p>
+</li>
+<li>
+<p><strong>Perspectives</strong> :<br />
+   - Utérus bio-ingéniéré (scaffold décellularisé + recellularisation) : stade expérimental animal<br />
+   - Si ectogenèse partielle se développe → la transplantation utérine deviendra-t-elle obsolète ?</p>
+</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Points d'apprentissage</strong> :<br />
+1. Transplantation utérine : indication principale = MRKH<br />
+2. Protocole : FIV + vitrification → greffe → 12 mois → TEC → césarienne → hystérectomie<br />
+3. &gt; 100 transplantations, &gt; 50 naissances, taux 40-50 %<br />
+4. Enjeux éthiques : organe non vital, donneuse vivante, alternatives (GPA), accès<br />
+5. GPA reste interdite en France malgré sa plus grande simplicité</p>
+</blockquote>
+<hr />
+<p><em>Fin de la Partie 3 — 7 cas cliniques (1 Or, 6 Diamant)</em></p>
+<hr />
+<p><strong>Récapitulatif Partie 3 :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cas</th>
+<th>Niveau</th>
+<th>Thème</th>
+<th>Modules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>🥇</td>
+<td>Torsion d'annexe post-ponction</td>
+<td>M16, M32</td>
+</tr>
+<tr>
+<td>19</td>
+<td>💎</td>
+<td>Triple erreur de protocole chez SOPK</td>
+<td>M12, M13, M15, M36</td>
+</tr>
+<tr>
+<td>20</td>
+<td>💎</td>
+<td>Thrombose veineuse cérébrale sur SHO</td>
+<td>M36, M22</td>
+</tr>
+<tr>
+<td>21</td>
+<td>💎</td>
+<td>IOP à 28 ans, deuil génétique, don d'ovocytes</td>
+<td>M39, M27, M42</td>
+</tr>
+<tr>
+<td>22</td>
+<td>💎</td>
+<td>Erreur d'identification au laboratoire, AMP-vigilance</td>
+<td>M33</td>
+</tr>
+<tr>
+<td>23</td>
+<td>💎</td>
+<td>Burn-out AMP, fin de parcours</td>
+<td>M42, M39</td>
+</tr>
+<tr>
+<td>24</td>
+<td>💎</td>
+<td>Transplantation utérine pour MRKH</td>
+<td>M44</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>RÉCAPITULATIF GLOBAL — 24 cas cliniques FIV/AMP :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Cas</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥉 Bronze</td>
+<td>1, 2, 3, 4 (partie)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>🥈 Argent</td>
+<td>4 (partie), 5, 6, 7, 8, 9, 10, 11 (partie), 17 (partie)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>🥇 Or</td>
+<td>11 (partie), 12, 13, 14, 15, 16, 17 (partie), 18</td>
+<td>7</td>
+</tr>
+<tr>
+<td>💎 Diamant</td>
+<td>19, 20, 21, 22, 23, 24</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Couverture :</strong><br />
+- ✅ 4 niveaux de difficulté (Bronze → Diamant)<br />
+- ✅ ≥ 5 questions par cas<br />
+- ✅ Réponses argumentées avec justifications physiopathologiques<br />
+- ✅ Décision partagée : cas 17, 21, 23<br />
+- ✅ Pluridisciplinarité : cas 13 (réanimation), 18 (chirurgie), 20 (neurologie), 21 (génétique), 22 (biologie)<br />
+- ✅ Conduites à tenir structurées<br />
+- ✅ Données biologiques et radiologiques réalistes</p>
+<hr />
+<p><em>CAS_CLINIQUES_FIV_P3.md — Formation VERTEX© FIV/AMP — 20 mars 2026</em></p>
+</div>

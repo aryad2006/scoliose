@@ -1,0 +1,732 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="partie-7-histoires-specifiques-des-techniques-et-materiels-orthopediques">🦴 PARTIE 7 — HISTOIRES SPÉCIFIQUES DES TECHNIQUES ET MATÉRIELS ORTHOPÉDIQUES</h1>
+<h2 id="du-platre-a-limpression-3d-levolution-de-chaque-technique-racontee">Du plâtre à l'impression 3D — l'évolution de chaque technique racontée</h2>
+<hr />
+<h1 id="module-26-histoire-complete-du-platre-et-de-limmobilisation">MODULE 26 — HISTOIRE COMPLÈTE DU PLÂTRE ET DE L'IMMOBILISATION</h1>
+<h2 id="5000-ans-de-contention-du-lin-egyptien-au-platre-imprime">5000 ans de contention — du lin égyptien au plâtre imprimé</h2>
+<hr />
+<h2 id="1-chronologie-detaillee">1. Chronologie détaillée</h2>
+<table>
+<thead>
+<tr>
+<th>Période</th>
+<th>Matériau/Technique</th>
+<th>Inventeur/Origine</th>
+<th>Mécanisme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~2500 av. J.-C.</td>
+<td>Lin imbibé de résine d'acacia</td>
+<td>Égypte ancienne</td>
+<td>Durcissement par polymérisation naturelle</td>
+</tr>
+<tr>
+<td>~1000</td>
+<td>Plâtre de Paris (gypse cuit) appliqué directement</td>
+<td>Rhazes (Al-Razi), Perse</td>
+<td>Réaction exothermique du sulfate de calcium</td>
+</tr>
+<tr>
+<td>1798</td>
+<td>Redécouverte du plâtre arabe</td>
+<td>Chirurgiens de Bonaparte en Égypte</td>
+<td>Observation clinique</td>
+</tr>
+<tr>
+<td>1814</td>
+<td>Bandages amidonnés</td>
+<td>Hendriksz, Pays-Bas</td>
+<td>Amidon + eau → rigidité</td>
+</tr>
+<tr>
+<td>1828</td>
+<td>Appareil inamovible amidonné</td>
+<td>Seutin, Belgique</td>
+<td>Bandes de toile + amidon cuit</td>
+</tr>
+<tr>
+<td>1839</td>
+<td>Plâtre coulé sur flanelle</td>
+<td>Lafargue, France</td>
+<td>Première coulée de plâtre</td>
+</tr>
+<tr>
+<td>1851</td>
+<td>Bandage plâtré moderne (gaze + plâtre de Paris)</td>
+<td>Antonius Mathijsen, Pays-Bas</td>
+<td>Standard pendant 120 ans</td>
+</tr>
+<tr>
+<td>1852</td>
+<td>Nikolai Pirogov (Russie) : plâtre sur le champ de bataille (Crimée)</td>
+<td>Pirogov</td>
+<td>Usage militaire de masse</td>
+</tr>
+<tr>
+<td>1876</td>
+<td>Plâtre circulaire non fendu (controversé)</td>
+<td>Plusieurs</td>
+<td>Risque de syndrome des loges</td>
+</tr>
+<tr>
+<td>1920s</td>
+<td>Plâtre de marche (walking cast)</td>
+<td>Böhler, Dehne</td>
+<td>Mise en charge en plâtre</td>
+</tr>
+<tr>
+<td>1940s</td>
+<td>Plâtres fonctionnels (Sarmiento)</td>
+<td>Augusto Sarmiento</td>
+<td>Immobilisation fonctionnelle (mobilité articulaire)</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Résine de fibre de verre (Scotchcast®)</td>
+<td>3M</td>
+<td>Plus léger, résistant à l'eau, radio-transparent</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Résines polyuréthane</td>
+<td>Plusieurs</td>
+<td>Alternative synthétique</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Plâtres imprimés 3D ventilés</td>
+<td>Osteoid Medical, ActivArmor</td>
+<td>Ultra-léger, ventilé, lavable</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>Orthèses thermoformables sur mesure</td>
+<td>Plusieurs</td>
+<td>Fabrication rapide, recyclable</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO26-S01-001 — FRISE CHRONOLOGIQUE ILLUSTRÉE : 5000 ans d'immobilisation — de la résine égyptienne au plâtre 3D]</p>
+<p>[MEDIA: 🔬 MHISTO26-S01-002 — COLLECTION MUSÉALE : évolution du plâtre — attelle égyptienne, bandage amidonné de Seutin, plâtre de Mathijsen, fibre de verre, plâtre 3D]</p>
+</blockquote>
+<h3 id="11-antonius-mathijsen-1805-1878-linventeur-du-platre-moderne">1.1 Antonius Mathijsen (1805-1878) — l'inventeur du plâtre moderne</h3>
+<p>👤 <strong>PORTRAIT — ANTONIUS MATHIJSEN (1805-1878)</strong> :</p>
+<blockquote>
+<p>Chirurgien militaire néerlandais, Mathijsen imagine de tremper des bandes de gaze dans du plâtre de Paris sec, qu'il mouille ensuite pour les appliquer. Le bandage durcit en 5-10 minutes, créant une contention rigide et modelable. Publié en 1851 dans le <em>Repertorium</em>, son bandage plâtré est adopté dans le monde entier en moins de 10 ans.</p>
+</blockquote>
+<h3 id="12-augusto-sarmiento-le-platre-fonctionnel">1.2 Augusto Sarmiento — le plâtre fonctionnel</h3>
+<p>👤 <strong>PORTRAIT — AUGUSTO SARMIENTO (1927-2020)</strong> :</p>
+<blockquote>
+<p>Chirurgien colombien-américain à l'Université de Miami, Sarmiento développe dans les années 1960 le concept de plâtre fonctionnel (functional bracing). Au lieu d'immobiliser les articulations sus- et sous-jacentes à la fracture (plâtre classique), Sarmiento propose une orthèse de contention qui maintient l'alignement tout en permettant la mobilité articulaire et la mise en charge précoce.</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>Le plâtre fonctionnel de Sarmiento (1967) démontre que l'immobilisation rigide de toutes les articulations n'est pas nécessaire à la consolidation. Ce principe guide le traitement non opératoire moderne des fractures humérales et tibiales.</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-26">2. Quiz — Module 26</h2>
+<h3 id="bronze">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Qui a inventé le bandage plâtré moderne en 1851 ?<br />
+- A) Lorenz Böhler<br />
+- B) Antonius Mathijsen ✓<br />
+- C) Nikolai Pirogov<br />
+- D) Augusto Sarmiento</p>
+<h3 id="argent">🥈 Argent</h3>
+<p><strong>Q2.</strong> Quel est le principe du plâtre fonctionnel de Sarmiento ?<br />
+- A) Un plâtre plus solide que le plâtre classique<br />
+- B) Une contention qui maintient l'alignement tout en permettant la mobilité articulaire ✓<br />
+- C) Un plâtre résistant à l'eau<br />
+- D) Un plâtre appliqué sous anesthésie</p>
+<hr />
+<h1 id="module-27-histoire-de-la-chirurgie-du-rachis-deforme">MODULE 27 — HISTOIRE DE LA CHIRURGIE DU RACHIS DÉFORMÉ</h1>
+<h2 id="de-la-succussion-dhippocrate-a-linstrumentation-3d">De la succussion d'Hippocrate à l'instrumentation 3D</h2>
+<hr />
+<h2 id="1-chronologie-de-la-chirurgie-du-rachis-scoliotique">1. Chronologie de la chirurgie du rachis scoliotique</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Chirurgien</th>
+<th>Innovation</th>
+<th>Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~400 av. J.-C.</td>
+<td>Hippocrate</td>
+<td>Succussion sur échelle, pression directe</td>
+<td>Correction par gravité et pression</td>
+</tr>
+<tr>
+<td>1575</td>
+<td>Ambroise Paré</td>
+<td>Corset métallique en fer</td>
+<td>Contention rigide externe</td>
+</tr>
+<tr>
+<td>1741</td>
+<td>Nicolas Andry</td>
+<td>Exercices et postures correctrices</td>
+<td>Correction posturale</td>
+</tr>
+<tr>
+<td>1780</td>
+<td>Jean-André Venel</td>
+<td>Corsets moulés + exercices en institution</td>
+<td>Approche institutionnelle</td>
+</tr>
+<tr>
+<td>1839</td>
+<td>Jules Guérin</td>
+<td>Sections musculaires et tendineuses</td>
+<td>Première approche chirurgicale</td>
+</tr>
+<tr>
+<td>1895</td>
+<td>Bradford et Brackett</td>
+<td>Cadre de Bradford (décubitus)</td>
+<td>Correction par gravité</td>
+</tr>
+<tr>
+<td>1911</td>
+<td>Russell Hibbs</td>
+<td>Première arthrodèse rachidienne (tuberculose)</td>
+<td>Fusion vertébrale sans instrumentation</td>
+</tr>
+<tr>
+<td>1914</td>
+<td>Hibbs et Albee</td>
+<td>Arthrodèse pour scoliose</td>
+<td>Fusion in situ (sans correction)</td>
+</tr>
+<tr>
+<td>1946</td>
+<td>Blount et Schmidt</td>
+<td>Corset de Milwaukee (CTLSO)</td>
+<td>Corset actif avec mentonnière</td>
+</tr>
+<tr>
+<td>1953</td>
+<td>Risser</td>
+<td>Plâtre EDF (élongation-dérotation-flexion)</td>
+<td>Correction en plâtre EDF</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Paul Harrington</td>
+<td>Tiges de distraction-compression</td>
+<td>Première instrumentation métallique (2D)</td>
+</tr>
+<tr>
+<td>1976</td>
+<td>Eduardo Luque</td>
+<td>Fils sous-laminaires + tiges</td>
+<td>Fixation segmentaire (2D)</td>
+</tr>
+<tr>
+<td>1979</td>
+<td>Cheneau</td>
+<td>Corset de Cheneau thermoplastique</td>
+<td>Corset moderne moulé</td>
+</tr>
+<tr>
+<td>1983</td>
+<td>Yves Cotrel et Jean Dubousset</td>
+<td>Instrumentation CD</td>
+<td>Correction 3D : distraction + rotation + translation</td>
+</tr>
+<tr>
+<td>1993</td>
+<td>Suk</td>
+<td>Vis pédiculaires segmentaires</td>
+<td>Meilleure correction, abandon des crochets</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Growing rods, VEPTR</td>
+<td>Akbarnia, Campbell</td>
+<td>Arthrodèse différée chez l'enfant</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>MAGEC (tige magnétique)</td>
+<td>Ellipse Technologies</td>
+<td>Allongement non invasif (IRM)</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Tethering vertébral (VBT)</td>
+<td>Samdani, Newton</td>
+<td>Alternative non fusionnelle</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>Planification 3D + navigation + robot</td>
+<td>Plusieurs</td>
+<td>Chirurgie de précision</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO27-S01-001 — FRISE CHRONOLOGIQUE ILLUSTRÉE : 2500 ans de traitement de la scoliose]</p>
+</blockquote>
+<h3 id="11-paul-harrington-1911-1980-la-premiere-instrumentation-rachidienne">1.1 Paul Harrington (1911-1980) — la première instrumentation rachidienne</h3>
+<p>👤 <strong>PORTRAIT — PAUL HARRINGTON (1911-1980)</strong> :</p>
+<blockquote>
+<p>Chirurgien orthopédiste à Houston (Texas), Harrington développe sa tige de distraction pour corriger les scolioses paralytiques post-poliomyélite. Implantée pour la première fois en 1960, la tige de Harrington utilise un système à cliquet pour distraire le côté concave de la courbure. Malgré ses limites (correction 2D uniquement, « flatback syndrome »), la tige de Harrington est utilisée pendant 20 ans et pose le traitement de la scoliose par instrumentation.</p>
+</blockquote>
+<h3 id="12-cotrel-et-dubousset-la-revolution-3d-1983">1.2 Cotrel et Dubousset — la révolution 3D (1983)</h3>
+<blockquote>
+<p>[MEDIA: 🖼️ MHISTO27-S01-002 — PORTRAIT : Yves Cotrel et Jean Dubousset, inventeurs de l'instrumentation CD, Paris, 1983]</p>
+</blockquote>
+<p>👤 <strong>PORTRAIT — YVES COTREL (1925-2019) ET JEAN DUBOUSSET (1932-)</strong> :</p>
+<blockquote>
+<p>Deux chirurgiens français qui révolutionnent la chirurgie du rachis en 1983. Cotrel, chirurgien de Saint-Vincent-de-Paul (Paris), et Dubousset, chirurgien de l'hôpital Saint-Louis, développent l'instrumentation CD (Cotrel-Dubousset) qui permet pour la première fois la correction tridimensionnelle des scolioses. Leur système utilise des crochets et vis fixés sur deux tiges reliées par des connecteurs transverses (DTT), permettant la distraction, la compression, la translation et surtout la dérotation vertébrale. L'instrumentation CD remplace la tige de Harrington dans le monde entier et reste le paradigme de toute instrumentation rachidienne postérieure moderne.</p>
+</blockquote>
+<p>📜 <strong>DOCUMENT D'ÉPOQUE</strong> :</p>
+<blockquote>
+<p><em>« La scoliose est une déformation tridimensionnelle. On ne peut pas corriger une déformation 3D avec un instrument qui ne travaille que dans un seul plan. C'est pourquoi nous avons développé un système qui permet la correction simultanée dans les plans frontal, sagittal et axial. »</em><br />
+— Jean Dubousset (adapté)</p>
+</blockquote>
+<p>🔑 <strong>ÉTAPE CLÉ</strong> :</p>
+<blockquote>
+<p>L'instrumentation CD (1983) est considérée comme la plus grande innovation de l'histoire de la chirurgie du rachis depuis l'arthrodèse de Hibbs (1911). Son principe de correction 3D par distraction-compression segmentaire, rotation de la tige et translation vertébrale guide encore toutes les instrumentations rachidiennes modernes.</p>
+</blockquote>
+<h3 id="13-le-vertebral-body-tethering-vbt-vers-la-fusion-free-surgery">1.3 Le Vertebral Body Tethering (VBT) — vers la fusion-free surgery</h3>
+<p>Le VBT, développé dans les années 2010, propose une alternative non fusionnelle pour les scolioses de l'adolescent en utilisant un câble flexible fixé par des vis sur les corps vertébraux du côté convexe, pour moduler la croissance et corriger progressivement la courbure.</p>
+<p>🔗 <strong>LIEN AVEC LA PRATIQUE ACTUELLE</strong> :</p>
+<blockquote>
+<p>Le VBT est approuvé par la FDA depuis 2019 (ApiFix, Tether). Il représente un changement de paradigme : corriger la scoliose sans fusionner le rachis, en préservant la mobilité. Les résultats à moyen terme (5 ans) sont encourageants mais les données à long terme sont attendues.</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-27">2. Quiz — Module 27</h2>
+<h3 id="bronze_1">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Qui a réalisé la première arthrodèse rachidienne en 1911 ?<br />
+- A) Paul Harrington<br />
+- B) Russell Hibbs ✓<br />
+- C) Yves Cotrel<br />
+- D) Eduardo Luque</p>
+<p><strong>Q2.</strong> Quel est l'apport majeur de l'instrumentation Cotrel-Dubousset (1983) ?<br />
+- A) L'utilisation de vis pédiculaires<br />
+- B) La correction tridimensionnelle de la scoliose ✓<br />
+- C) L'arthrodèse sans instrumentation<br />
+- D) Le corset post-opératoire</p>
+<h3 id="diamant">💎 Diamant</h3>
+<p><strong>Q3.</strong> Retracez l'évolution conceptuelle de la chirurgie de la scoliose : de la fusion sans correction (Hibbs 1911) à la correction sans fusion (VBT 2019). Quelles leçons biologiques et biomécaniques ont guidé cette évolution ?</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : (1) Hibbs (1911) : fusion in situ, pas de correction — objectif = stabiliser ; (2) Harrington (1962) : correction 2D par distraction — mais flatback syndrome ; (3) Luque (1976) : fixation segmentaire → meilleur contrôle ; (4) CD (1983) : correction 3D → paradigme moderne ; (5) Vis pédiculaires (1990s) : ancrage solide → meilleures corrections ; (6) VBT (2010s) : modulation de croissance → préservation de la mobilité. Leçon : la compréhension de la biomécanique 3D du rachis et de la biologie de croissance a permis de passer de traitements grossiers à des corrections personnalisées.</p>
+</blockquote>
+<hr />
+<h1 id="module-28-histoire-de-la-prothese-totale-de-hanche-pth">MODULE 28 — HISTOIRE DE LA PROTHÈSE TOTALE DE HANCHE (PTH)</h1>
+<h2 id="synthese-illustree-de-larthroplastie-coxo-femorale">Synthèse illustrée de l'arthroplastie coxo-fémorale</h2>
+<hr />
+<h2 id="1-chronologie-complete-de-la-pth">1. Chronologie complète de la PTH</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Chirurgien</th>
+<th>Innovation</th>
+<th>Couple</th>
+<th>Fixation</th>
+<th>Survie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1891</td>
+<td>Glück</td>
+<td>Prothèse en ivoire</td>
+<td>Ivoire-os</td>
+<td>Ciment au colophane</td>
+<td>Échec (infection)</td>
+</tr>
+<tr>
+<td>1923</td>
+<td>Smith-Petersen</td>
+<td>Cup arthroplasty en verre</td>
+<td>Verre-os</td>
+<td>Libre</td>
+<td>Échec (fragilité)</td>
+</tr>
+<tr>
+<td>1938</td>
+<td>Smith-Petersen</td>
+<td>Cup en Vitallium</td>
+<td>Métal-os</td>
+<td>Libre</td>
+<td>Succès limité</td>
+</tr>
+<tr>
+<td>1938</td>
+<td>Wiles</td>
+<td>Première PTH totale (acier)</td>
+<td>Métal-métal</td>
+<td>Vis/boulons</td>
+<td>Échec (descellement)</td>
+</tr>
+<tr>
+<td>1940</td>
+<td>Austin Moore</td>
+<td>Hémiarthroplastie</td>
+<td>Métal-cartilage</td>
+<td>Press-fit</td>
+<td>Modéré</td>
+</tr>
+<tr>
+<td>1946</td>
+<td>Frères Judet</td>
+<td>Tête acrylique</td>
+<td>Acrylique-os</td>
+<td>Press-fit</td>
+<td>Échec (usure rapide)</td>
+</tr>
+<tr>
+<td>1951</td>
+<td>McKee-Farrar</td>
+<td>PTH métal-métal</td>
+<td>CoCr-CoCr</td>
+<td>Ciment</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td>1958</td>
+<td>Charnley — début travaux</td>
+<td>PTFE-métal</td>
+<td>Teflon-métal</td>
+<td>Ciment PMMA</td>
+<td>Échec (usure PTFE)</td>
+</tr>
+<tr>
+<td>1962</td>
+<td>Charnley — LFA</td>
+<td>UHMWPE-métal</td>
+<td>PE-CoCr</td>
+<td>Ciment PMMA</td>
+<td>80 % à 25 ans</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>Boutin (France)</td>
+<td>Couple céramique-céramique</td>
+<td>Al₂O₃-Al₂O₃</td>
+<td>Ciment</td>
+<td>Bonne survie</td>
+</tr>
+<tr>
+<td>1980s</td>
+<td>Tiges non cimentées</td>
+<td>Revêtement HA, titane poreux</td>
+<td>PE-métal</td>
+<td>Ostéointégration</td>
+<td>&gt; 90 % à 20 ans</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>PE hautement réticulé (XLPE)</td>
+<td>XLPE-métal ou céramique</td>
+<td>Réduit usure 90 %</td>
+<td>Variable</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Resurfaçage (BHR)</td>
+<td>Métal-métal grande tête</td>
+<td>CoCr-CoCr</td>
+<td>Non cimenté</td>
+<td>Controversé</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>Cupule double mobilité (Bousquet)</td>
+<td>PE-métal + double articulation</td>
+<td>Double mobilité</td>
+<td>Variable</td>
+<td>Excellent anti-luxation</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Tête céramique 4ème génération</td>
+<td>Alumine-zircone composite (Biolox Delta)</td>
+<td>Céramique-XLPE</td>
+<td>Non cimenté</td>
+<td>&gt; 95 % à 15 ans</td>
+</tr>
+<tr>
+<td>2020s</td>
+<td>PTH robotisée (MAKO)</td>
+<td>Céramique-XLPE</td>
+<td>Variable</td>
+<td>Non cimenté</td>
+<td>En cours d'évaluation</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO28-S01-001 — FRISE CHRONOLOGIQUE COMPLÈTE : histoire de la PTH de Glück (1891) à la PTH robotisée (2025)]</p>
+<p>[MEDIA: 🔬 MHISTO28-S01-002 — COLLECTION PHOTOGRAPHIQUE : toutes les générations de PTH alignées chronologiquement]</p>
+</blockquote>
+<h3 id="11-la-double-mobilite-innovation-francaise">1.1 La double mobilité — innovation française</h3>
+<p>👤 <strong>PORTRAIT — GILLES BOUSQUET (1937-2014)</strong> :</p>
+<blockquote>
+<p>Chirurgien lyonnais, Bousquet invente en 1974 le concept de double mobilité : une tête fémorale articulée dans un insert en polyéthylène mobile, lui-même articulé dans une cupule métallique. Ce système réduit drastiquement le risque de luxation (&lt; 1 % vs 3-5 % pour les designs conventionnels) et est devenu le standard en France et de plus en plus dans le monde, notamment chez le sujet âgé et en révision.</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-28">2. Quiz — Module 28</h2>
+<h3 id="bronze_2">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel couple tribologique Charnley a-t-il utilisé dans sa prothèse définitive (1962) ?<br />
+- A) Métal-métal<br />
+- B) Céramique-céramique<br />
+- C) Polyéthylène-métal (UHMWPE-CoCr) ✓<br />
+- D) Teflon-métal</p>
+<h3 id="argent_1">🥈 Argent</h3>
+<p><strong>Q2.</strong> Quel chirurgien français a inventé la cupule à double mobilité ?<br />
+- A) Jean Dubousset<br />
+- B) Gilles Bousquet ✓<br />
+- C) Robert Judet<br />
+- D) Yves Cotrel</p>
+<hr />
+<h1 id="module-29-histoire-de-la-prothese-totale-de-genou-ptg">MODULE 29 — HISTOIRE DE LA PROTHÈSE TOTALE DE GENOU (PTG)</h1>
+<h2 id="du-moule-de-campbell-aux-genoux-connectes">Du moule de Campbell aux genoux connectés</h2>
+<hr />
+<h2 id="1-chronologie-synthetique-de-la-ptg">1. Chronologie synthétique de la PTG</h2>
+<p>(Voir tableau détaillé Module 15, Section 2.3)</p>
+<h3 id="11-john-insall-1930-2000-le-pere-de-la-ptg-moderne">1.1 John Insall (1930-2000) — le père de la PTG moderne</h3>
+<p>👤 <strong>PORTRAIT — JOHN INSALL (1930-2000)</strong> :</p>
+<blockquote>
+<p>Chirurgien britannique émigré aux États-Unis, Insall est le chirurgien le plus influent de l'histoire de la prothèse de genou. Au Hospital for Special Surgery (New York), il développe avec Chitranjan Ranawat et Peter Walker la prothèse « Total Condylar » (1973) puis la prothèse postéro-stabilisée (1978), designs qui deviennent les standards mondiaux. Il publie le <em>Insall Knee Score</em> (IKS), le système d'évaluation le plus utilisé pour la PTG. Son textbook <em>Surgery of the Knee</em> est la référence mondiale.</p>
+</blockquote>
+<p><strong>Innovations d'Insall</strong> :<br />
+- Total Condylar Knee Prosthesis (1973) — premier design anatomique fiable<br />
+- Prothèse postéro-stabilisée (IB-II, 1978) — sacrifice du LCP avec came et plot<br />
+- Technique chirurgicale standardisée (voie para-patellaire médiale)<br />
+- Insall Knee Score (IKS) — score fonctionnel de référence<br />
+- <em>Surgery of the Knee</em> — textbook de référence mondiale</p>
+<hr />
+<h2 id="2-quiz-module-29">2. Quiz — Module 29</h2>
+<h3 id="bronze_3">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Quel chirurgien a développé la prothèse Total Condylar en 1973 ?<br />
+- A) Sir John Charnley<br />
+- B) John Insall ✓<br />
+- C) Freeman<br />
+- D) Walldius</p>
+<h3 id="diamant_1">💎 Diamant</h3>
+<p><strong>Q2.</strong> Comparez les philosophies CR (conservation du LCP) et PS (sacrifice du LCP avec came-plot) en PTG. Quels sont les arguments historiques et biomécaniques de chaque école ?</p>
+<blockquote>
+<p><strong>Éléments de réponse attendus</strong> : CR : préservation du rollback physiologique, proprioception, stabilité sans came ; risque : insuffisance du LCP → instabilité postérieure. PS : rollback mécanique par came-plot, correction du flexum plus facile, reproductibilité ; risque : usure de la came, fracture du plot. Registres : survie comparable &gt; 95 % à 15 ans. Tendance 2020s : prothèses « medially stabilized » (Medial Pivot) comme troisième voie.</p>
+</blockquote>
+<hr />
+<h1 id="module-30-histoire-des-pansements-et-de-lantisepsie-chirurgicale">MODULE 30 — HISTOIRE DES PANSEMENTS ET DE L'ANTISEPSIE CHIRURGICALE</h1>
+<h2 id="du-miel-egyptien-aux-pansements-connectes">Du miel égyptien aux pansements connectés</h2>
+<hr />
+<h2 id="1-chronologie-complete-des-pansements">1. Chronologie complète des pansements</h2>
+<p>(Voir tableau détaillé Module 08, Section 3.2)</p>
+<h3 id="11-innovations-majeures-du-xxe-siecle">1.1 Innovations majeures du XXe siècle</h3>
+<p><strong>La théorie de Winter (1962)</strong> :<br />
+George Winter démontre expérimentalement que les plaies guérissent 50 % plus vite en milieu humide qu'à l'air libre. Ce paradigme — la cicatrisation en milieu humide — révolutionne le traitement des plaies et donne naissance aux pansements occlusifs modernes.</p>
+<p><strong>La thérapie par pression négative — VAC® (1995)</strong> :<br />
+Louis Argenta et Michael Morykwas (Wake Forest University) développent le Vacuum-Assisted Closure (VAC®), qui applique une pression négative contrôlée sur la plaie pour stimuler la granulation, réduire l'œdème et drainer les exsudats. Le VAC® devient un outil indispensable en traumatologie orthopédique, notamment pour les fractures ouvertes et les infections prothétiques.</p>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO30-S01-001 — FRISE : histoire des pansements — du miel égyptien au pansement connecté]</p>
+</blockquote>
+<hr />
+<h1 id="module-31-histoire-des-fixateurs-externes">MODULE 31 — HISTOIRE DES FIXATEURS EXTERNES</h1>
+<h2 id="du-fil-de-kirschner-au-taylor-spatial-frame">Du fil de Kirschner au Taylor Spatial Frame</h2>
+<hr />
+<h2 id="1-chronologie-des-fixateurs-externes">1. Chronologie des fixateurs externes</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Développeur</th>
+<th>Type</th>
+<th>Innovation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1843</td>
+<td>Malgaigne</td>
+<td>Griffe de Malgaigne (rotule)</td>
+<td>Premier ancrage percutané</td>
+</tr>
+<tr>
+<td>1897</td>
+<td>Clayton Parkhill</td>
+<td>Premier vrai fixateur externe</td>
+<td>Barres + fiches</td>
+</tr>
+<tr>
+<td>1902</td>
+<td>Albin Lambotte</td>
+<td>Fixateur tubulaire</td>
+<td>Système modulaire</td>
+</tr>
+<tr>
+<td>1907</td>
+<td>Fritz Steinmann</td>
+<td>Broche trans-osseuse pour traction</td>
+<td>Traction transsquelettique</td>
+</tr>
+<tr>
+<td>1909</td>
+<td>Martin Kirschner</td>
+<td>Broche fine de Kirschner</td>
+<td>Broche lisse polyvalente</td>
+</tr>
+<tr>
+<td>1938</td>
+<td>Raoul Hoffmann</td>
+<td>Fixateur multi-plan articulé</td>
+<td>Standard de guerre</td>
+</tr>
+<tr>
+<td>1944</td>
+<td>Roger Anderson</td>
+<td>Fixateur monoplan simplifié</td>
+<td>Usage militaire</td>
+</tr>
+<tr>
+<td>1951</td>
+<td>Gavriil Ilizarov</td>
+<td>Fixateur circulaire</td>
+<td>Broches tendues + anneaux</td>
+</tr>
+<tr>
+<td>1970s</td>
+<td>AO/ASIF</td>
+<td>Fixateur externe AO tubulaire</td>
+<td>Standardisation</td>
+</tr>
+<tr>
+<td>1983</td>
+<td>Orthofix (De Bastiani)</td>
+<td>Fixateur monolatéral dynamique</td>
+<td>Dynamisation</td>
+</tr>
+<tr>
+<td>1990s</td>
+<td>Taylor</td>
+<td>Taylor Spatial Frame (TSF)</td>
+<td>Correction 6 axes (hexapode)</td>
+</tr>
+<tr>
+<td>2000s</td>
+<td>Plusieurs</td>
+<td>Fixateurs hybrides</td>
+<td>Combinaison anneaux + barres</td>
+</tr>
+<tr>
+<td>2010s</td>
+<td>Ortho-SUV, TL-HEX</td>
+<td>Hexapodes informatisés</td>
+<td>Planification 3D assistée</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MHISTO31-S01-001 — FRISE : évolution des fixateurs externes de Parkhill (1897) au TSF (1990s)]</p>
+<p>[MEDIA: 🔬 MHISTO31-S01-002 — COLLECTION : fixateurs externes historiques — Lambotte, Hoffmann, Ilizarov, AO, TSF]</p>
+</blockquote>
+<hr />
+<h2 id="2-quiz-module-31">2. Quiz — Module 31</h2>
+<h3 id="bronze_4">🥉 Bronze</h3>
+<p><strong>Q1.</strong> Qui a inventé la broche de Kirschner ?<br />
+- A) Fritz Steinmann<br />
+- B) Martin Kirschner ✓<br />
+- C) Albin Lambotte<br />
+- D) Raoul Hoffmann</p>
+<h3 id="argent_2">🥈 Argent</h3>
+<p><strong>Q2.</strong> Quel fixateur externe permet la correction dans les 6 degrés de liberté (6 axes) ?<br />
+- A) Le fixateur de Hoffmann<br />
+- B) Le fixateur AO tubulaire<br />
+- C) Le Taylor Spatial Frame (hexapode) ✓<br />
+- D) Le fixateur d'Ilizarov classique</p>
+<hr />
+<p><em>Fin de la Partie 7 — Histoires spécifiques</em><br />
+<em>Prochaine partie : Les grands noms de l'orthopédie</em><br />
+<em>Formation VERTEX© — Tous droits réservés</em></p>
+</div>

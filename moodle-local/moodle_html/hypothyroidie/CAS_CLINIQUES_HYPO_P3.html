@@ -1,0 +1,497 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cas-cliniques-hypothyroidies-partie-3">CAS CLINIQUES — HYPOTHYROÏDIES — PARTIE 3</h1>
+<h2 id="cas-21-a-30-niveaux-or-et-diamant">Cas 21 à 30 — Niveaux Or et Diamant</h2>
+<h3 id="formation-vertex-endocrinologie-hypothyroidies">Formation VERTEX© — Endocrinologie : Hypothyroïdies</h3>
+<hr />
+<h2 id="cas-21-or-la-thyroidite-du-post-partum-severe">CAS 21 🥇 OR — "La Thyroïdite du Post-Partum Sévère"</h2>
+<p><strong>Présentation</strong> : Madame R., 31 ans, anti-TPO à 580 UI/mL connus avant la grossesse, ayant accouché il y a 3 mois. Elle consulte pour palpitations, amaigrissement de 3 kg, et insomnie depuis 3 semaines. Allaitement en cours. FC 108/min. TSH 0,06 mUI/L, T4L 29 pmol/L.</p>
+<p><strong>Question 1</strong> — Quel est le diagnostic ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Phase hyperthyroïdienne de thyroïdite du post-partum</strong> — survenue à 3 mois post-partum, terrain anti-TPO positifs prédisposant. Mécanisme : destruction auto-immune thyroïdienne → libération massive d'hormones stockées.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Quel traitement pour la phase aiguë en tenant compte de l'allaitement ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Bêta-bloquants</strong> (propranolol 40 mg × 2/j) pour contrôler les symptômes cardiovasculaires — <strong>compatibles avec l'allaitement</strong> (dose faible, peu de transfert lacté). Pas d'antithyroïdiens de synthèse (thyroïdite destructive, pas de synthèse excédentaire). Pas de radioiode (contre-indiqué pendant l'allaitement).</p>
+</blockquote>
+<p><strong>Question 3</strong> — À 5 mois post-partum, TSH à 15 mUI/L, T4L basse. La patiente présente une fatigue importante. Que faire ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Phase hypothyroïdienne de la thyroïdite du post-partum — initier <strong>LT4</strong> (compatible avec l'allaitement — dose transférée au lait minimale). Contrôle TSH à 6 semaines.</p>
+</blockquote>
+<p><strong>Question 4</strong> — À 18 mois post-partum, la TSH reste élevée (12 mUI/L) malgré 8 mois de LT4. La patiente désire arrêter le traitement. Quelle décision prendre ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Anti-TPO très élevés + TSH persistante élevée = <strong>évolution vers Hashimoto permanent</strong>. Le sevrage de la LT4 est possible mais un contrôle TSH à 4-6 semaines est indispensable pour confirmer la permanence. Si TSH re-monte : traitement à vie.</p>
+</blockquote>
+<hr />
+<h2 id="cas-22-or-le-bypass-gastrique-et-la-lt4">CAS 22 🥇 OR — "Le Bypass Gastrique et la LT4"</h2>
+<p><strong>Présentation</strong> : Madame H., 39 ans, traitée pour hypothyroïdie de Hashimoto sous LT4 100 µg/j, TSH stable à 1,6 mUI/L. Elle subit un bypass gastrique Roux-en-Y il y a 5 mois. Lors du contrôle trimestriel, TSH à 28 mUI/L malgré la même dose de LT4.</p>
+<p><strong>Question 1</strong> — Quel mécanisme explique cette décompensation ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Le bypass gastrique réduit la surface d'absorption intestinale (exclusion du duodénum et du jéjunum proximal — sites d'absorption de la LT4) → <strong>malabsorption de la LT4</strong> malgré une dose inchangée.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Quelle formulation de LT4 est préférable dans ce contexte ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Solution buvable</strong> (Tsoludose®) — absorption non pH-dépendante, meilleure biodisponibilité en cas de malabsorption, pas besoin de dissolution dans l'estomac. Alternative : gel mou (softgel).</p>
+</blockquote>
+<p><strong>Question 3</strong> — La dose doit-elle être augmentée ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Oui — augmenter progressivement la dose de LT4 (paliers de 25 µg/4 semaines) en parallèle du changement de formulation. Certains patients post-bypass nécessitent des doses 50-100 % supérieures à leurs besoins pré-chirurgicaux.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Quelle complication de la carence en iode doit être prévenue après bypass gastrique ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Pas de carence iodée spécifique au bypass mais risque de <strong>carence en sélénium et en zinc</strong> (cofacteurs des désiodases) pouvant aggraver la conversion T4→T3. Supplémentation multivitaminique systématique post-bypass + contrôle T3L si symptômes persistants.</p>
+</blockquote>
+<hr />
+<h2 id="cas-23-or-la-chirurgie-urgente-chez-lhypothyroidien">CAS 23 🥇 OR — "La Chirurgie Urgente Chez l'Hypothyroïdien"</h2>
+<p><strong>Présentation</strong> : Monsieur D., 65 ans, hypothyroïdien traité mais sous LT4 depuis 2 semaines seulement (hypothyroïdie sévère initialement non diagnostiquée, TSH de départ 55 mUI/L). Il se présente aux urgences pour péritonite aiguë sur ulcère perforé nécessitant une laparotomie en urgence dans les 2 heures.</p>
+<p><strong>Question 1</strong> — Quels sont les risques anesthésiques spécifiques à l'hypothyroïdie ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : ↓ Contractilité myocardique (risque de choc cardiogénique), ↑ sensibilité aux anesthésiques halogénés (hypotension profonde), ↑ sensibilité aux morphiniques (hypoventilation prolongée), hypothermie peropératoire, hyponatrémie, hypoglycémie.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Quel traitement thyroïdien administrer en urgence avant/pendant la chirurgie ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT4 IV 200-400 µg en dose de charge</strong> (+ T3 IV 10 µg si disponible — effet plus rapide). <strong>Hydrocortisone 100 mg IV</strong> (insuffisance surrénalienne relative non exclue). Monitoring cardiovasculaire continu.</p>
+</blockquote>
+<p><strong>Question 3</strong> — En post-opératoire, le patient est en soins intensifs sous nutrition parentérale. Quel traitement thyroïdien maintenir ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Poursuivre <strong>LT4 IV</strong> jusqu'à reprise de la nutrition orale. Dose = 75-80 % de la dose orale habituelle (biodisponibilité IV vs orale). Contrôle TSH + T4L à 48-72h d'intervalle.</p>
+</blockquote>
+<p><strong>Question 4</strong> — L'anesthésiste souhaite utiliser du fentanyl en PCA en post-opératoire. Quelle précaution ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : L'hypothyroïdie augmente la sensibilité aux opioïdes (↓ métabolisme hépatique, ↑ sensibilité du SNC). <strong>Réduire les doses de 30-50 %</strong>, surveiller la fréquence respiratoire et la saturation en O2. Nausées et iléus post-opératoire peuvent être aggravés.</p>
+</blockquote>
+<hr />
+<h2 id="cas-24-diamant-la-resistance-inexpliquee">CAS 24 💎 DIAMANT — "La Résistance Inexpliquée"</h2>
+<p><strong>Présentation</strong> : Madame E., 45 ans, est adressée par son endocrinologue après 4 ans de suivi insatisfaisant. Thyroïdectomie totale pour Basedow il y a 5 ans. Sous LT4 175 µg/j (2,5 µg/kg/j), TSH invariablement entre 8 et 15 mUI/L. Multiples essais de solutions buvables, prises supervisées normalisent transitoirement la TSH (→ 1,2 mUI/L en intra-hospitalier) mais TSH re-monte à la sortie.</p>
+<p><strong>Question 1</strong> — La prise supervisée normalise la TSH. Quelle conclusion s'impose ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Non-observance confirmée</strong> — absorption de la LT4 est normale (prise supervisée → TSH normale). La TSH élevée en ambulatoire = irrégularité des prises.</p>
+</blockquote>
+<p><strong>Question 2</strong> — La patiente explique qu'elle oublie vraiment, sans intentionnalité. Quelle solution thérapeutique alternative à la prise quotidienne proposer ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT4 en dose hebdomadaire</strong> (7 × 175 µg = 1225 µg le lundi, par exemple) — adapté au non-observant. TSH légèrement plus variable mais contrôlable. Validation de l'acceptabilité par la patiente.</p>
+</blockquote>
+<p><strong>Question 3</strong> — La patiente, malgré toutes les solutions, maintient une TSH entre 6-10 mUI/L et se dit asymptomatique. Est-il raisonnable d'accepter ce niveau de TSH ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Dans ce contexte de non-observance chronique et d'athyréose, un compromis à TSH 5-8 mUI/L peut être acceptable si la patiente est asymptomatique, &lt; 65 ans, sans facteur de risque cardiovasculaire, et que les risques du surdosage iatrogène (FA, ostéoporose) par augmentation forcée de dose semblent plus importants. Décision partagée, documentée.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Quel rôle les systèmes de dispensation électronique (smart pillbox) ou les applications mobiles pourraient-ils jouer dans la prise en charge de la non-observance chez cette patiente ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Les piluliers connectés (alertes sonores, enregistrement des ouvertures) et les applications mobiles (rappels, suivi de TSH, gamification) améliorent l'observance de 15-25 % dans les maladies chroniques (adapté de Dayer et al., 2013). L'IA d'observance (détection des patterns d'oubli) est en cours d'intégration dans des plateformes thyroïdiennes numériques. Recommander en complément de l'éducation thérapeutique.</p>
+</blockquote>
+<hr />
+<h2 id="cas-25-diamant-lhypothyroidie-centrale-post-radiotherapie">CAS 25 💎 DIAMANT — "L'Hypothyroïdie Centrale Post-Radiothérapie"</h2>
+<p><strong>Présentation</strong> : Monsieur B., 42 ans, en rémission d'un lymphome hodgkinien traité 3 ans auparavant par chimiothérapie + irradiation médiastino-cervicale 36 Gy. Il se plaint de fatigue, libido effondrée, prise de poids de 8 kg. Bilan : TSH 1,2 mUI/L, T4L 9 pmol/L (basse), testostérone totale 6,2 nmol/L (basse), cortisol 8h 130 nmol/L (bas), IGF-1 à 80 µg/L (bas pour l'âge).</p>
+<p><strong>Question 1</strong> — Comment interpréter la TSH normale avec T4L basse ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Hypothyroïdie centrale post-radiothérapie</strong> — l'irradiation cervicale/médiastinale touche l'hypophyse et l'hypothalamus → insuffisance thyréotrope (± insuffisance des autres axes). TSH inadaptée à la T4L basse.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Le tableau associe déficits en TSH, cortisol, testostérone et GH. Quel est l'ordre de remplacement ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :<br />
+1. <strong>Hydrocortisone</strong> (cortisol 8h bas = insuffisance corticotrope → risque vital prioritaire)<br />
+2. <strong>LT4</strong> (après cortisonicothérapie démarrée)<br />
+3. <strong>Testostérone</strong> (confort, libido, masse musculaire)<br />
+4. <strong>Somatropine</strong> (GH si déficit sévère symptomatique — discuter après bilan complet)</p>
+</blockquote>
+<p><strong>Question 3</strong> — Comment surveiller l'efficacité de la LT4 dans ce contexte d'hypothyroïdie centrale ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>T4L</strong> (pas la TSH) — cible : T4L dans le tiers supérieur de la norme pour l'âge. TSH reste inadaptée et ne peut servir de marqueur.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Le patient revient 2 ans plus tard avec rechute du lymphome et nouvelle radiothérapie prévue. Quelle surveillance thyroïdienne intensifier ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Risque de détérioration de la fonction thyroïdienne post-radiothérapie répétée (hypothyroïdie primaire directe si dose thyroïdienne + hypothyroïdie centrale aggravée). Bilan thyroïdien complet avant irradiation + protocole de surveillance tous les 3 mois la première année, puis semestrielle à vie. Évaluation de l'ensemble de l'axe hypophysaire à distance.</p>
+</blockquote>
+<hr />
+<h2 id="cas-26-diamant-la-dysthyroidie-amiodarone-complexe">CAS 26 💎 DIAMANT — "La Dysthyroïdie Amiodarone Complexe"</h2>
+<p><strong>Présentation</strong> : Monsieur C., 72 ans, fibrillation atriale permanente, insuffisance cardiaque à FEVG 35 %, traité par amiodarone 200 mg/j depuis 18 mois. Bilan thyroïdien :<br />
+- TSH : 0,04 mUI/L (très basse)<br />
+- T4L : 52 pmol/L (très élevée)<br />
+- T3L : 7,8 pmol/L (haute)<br />
+- Anti-TPO : négatifs<br />
+- Echographie : vascularisation augmentée, aspect pseudo-nodulaire, pas de nodule franc</p>
+<p><strong>Question 1</strong> — S'agit-il d'une hyperthyroïdie amiodaronée type 1 ou type 2 ? Comment les différencier ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :<br />
+- <strong>Type 1</strong> : excès de synthèse sur goitre préexistant ou Basedow sous-jacent — scintigraphie : captation élevée, anti-TSHR positifs<br />
+- <strong>Type 2</strong> : thyroïdite destructive par toxicité directe de l'amiodarone — scintigraphie : captation blanche (effondrée), anti-TSHR négatifs, interleukine-6 élevée<br />
+- Ici : anti-TPO négatifs, vascularisation augmentée évoque le type 1 ou forme mixte. Scintigraphie ¹²³I indispensable.</p>
+</blockquote>
+<p><strong>Question 2</strong> — La scintigraphie montre une captation modérée hétérogène. La forme mixte est retenue. Quel traitement ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Thionamides (carbimazole)</strong> pour type 1 + <strong>prednisone 40 mg/j</strong> pour la composante type 2. Si pas de réponse à 4-6 semaines → thyroïdectomie totale en urgence (patient cardiaque grave ne pouvant attendre). L'amiodarone est maintenue si indication cardiologique vitale.</p>
+</blockquote>
+<p><strong>Question 3</strong> — Pourquoi la thyroïdectomie doit-elle être envisagée rapidement dans ce contexte ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : L'hyperthyroïdie aggrave l'insuffisance cardiaque (tachycardie, augmentation des besoins en O2, aggravation de la FEVG). L'amiodarone ne peut être arrêtée (risque vital cardiaque). Les traitements médicaux sont souvent insuffisants dans les formes mixtes. La thyroïdectomie totale (après euthyroïdie relative) permet de contrôler rapidement la dysthyroïdie chez ce patient fragile.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Après thyroïdectomie, quel traitement thyroïdien et quelle surveillance prévoir ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT4</strong> à initier dès J2 post-opératoire (substitution complète après athyréose). Dose progressive compte tenu de la cardiopathie sévère (12,5-25 µg initialement). La surveillance de la TSH peut être perturbée pendant 6-12 mois post-opératoires si de l'amiodarone reste dans les tissus (demi-vie longue). Utiliser la T4L comme guide supplémentaire.</p>
+</blockquote>
+<hr />
+<h2 id="cas-27-diamant-le-nourrisson-avec-buvard-normal">CAS 27 💎 DIAMANT — "Le Nourrisson avec Buvard Normal"</h2>
+<p><strong>Présentation</strong> : Julien, 4 mois, est amené par sa mère pour consultation de puériculture. Le buvard à J3 était normal (TSH 14 mUI/L). La mère signale depuis 3 semaines : constipation, léthargie, succion faible, prise de poids insuffisante (courbe en dessous du P3). Fontanelle postérieure encore ouverte. T° 36,1°C.</p>
+<p><strong>Question 1</strong> — Pourquoi un buvard normal n'exclut pas une hypothyroïdie congénitale ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Deux causes de faux négatif : (1) <strong>Hypothyroïdie centrale</strong> (TSH normale ou basse avec T4L basse — non détectée par le programme TSH) ; (2) <strong>Pic TSH retardé</strong> (prématuré, surcharge iodée maternelle, transfusion néonatale). Julien peut avoir une hypothyroïdie centrale congénitale.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Quel bilan réaliser en urgence ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>TSH sérique + T4L + T3L</strong>. Si T4L basse avec TSH inadaptée → bilan d'insuffisance hypophysaire (IGF-1, cortisol matinal, glucose). IRM hypophysaire si déficit central confirmé (recherche de malformation : absence de tige pituitaire, selle turcique vide, etc.).</p>
+</blockquote>
+<p><strong>Question 3</strong> — La TSH est à 2,8 mUI/L et la T4L à 5,2 pmol/L (très basse pour l'âge). Quel est le diagnostic et quel gène évoquer ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Hypothyroïdie centrale congénitale</strong>. Gènes à évoquer : <strong>PROP1</strong> (panhypopituitarisme progressif), <strong>POU1F1</strong> (TSH + GH + prolactine), <strong>HESX1</strong> (dysplasie septo-optique). Séquençage NGS du panel hypophysaire.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Comment traiter ce nourrisson, et quelle spécificité dans le suivi vs une hypothyroïdie primaire congénitale ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT4 orale 10-15 µg/kg/j</strong> (même dose que pour l'HT primaire). Surveillance par <strong>T4L</strong> (pas la TSH — inadaptée dans l'HT centrale). Cible : T4L dans le tiers supérieur de la norme pour l'âge. Bilan de l'axe corticotrope avant de commencer LT4 (risque d'insuffisance surrénalienne associée). Suivi neuro-développemental rapproché.</p>
+</blockquote>
+<hr />
+<h2 id="cas-28-diamant-la-resistance-partielle-de-type-alpha">CAS 28 💎 DIAMANT — "La Résistance Partielle de Type Alpha"</h2>
+<p><strong>Présentation</strong> : Amélie, 6 ans, est adressée pour dysmorphie légère, bradycardie (56/min), constipation sévère, retard mental modéré, macrocéphalie. Sa mère présente les mêmes caractéristiques mais de manière atténuée. TSH : 2,1 mUI/L. T4L : 36 pmol/L (élevée). T3L : 3,0 pmol/L (basse pour l'âge). Ratio T3/T4 : 0,083 (inversé).</p>
+<p><strong>Question 1</strong> — Quel syndrome biologique est présent, et quel récepteur est atteint ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>RTHα (résistance aux hormones thyroïdiennes de type alpha)</strong> — profil caractéristique : T4L élevée + <strong>T3L basse</strong> (ratio T3/T4 inversé) + TSH normale. Le TRα1 est muté → les tissus à prédominance TRα (cœur → bradycardie, intestin → constipation, os → dysmorphie, cerveau → retard mental) ne répondent pas à T3.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Pourquoi la T3L est-elle basse alors que la T4L est élevée ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Mécanisme de compensation : T4 → T3 par les désiodases, mais l'axe HPT est partiellement fonctionnel (TRβ intact). La TSH normale stimule la thyroïde qui produit de la T4. L'organisme essaie de compenser la résistance tissulaire TRα en augmentant la T4 disponible, mais la conversion T4→T3 est paradoxalement réduite (par rétrocontrôle TRβ-médié → frein relatif de la TSH). Résultat : T4L haute + T3L insuffisante.</p>
+</blockquote>
+<p><strong>Question 3</strong> — Le gène muté est THRA. Quel est le mode de transmission et le risque pour les enfants d'Amélie ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Autosomique dominant</strong> (hétérozygote, comme la mère atteinte de manière atténuée). Risque de transmission : 50 % à chaque enfant. Les formes maternelles (adulte) sont souvent moins sévères (phénocopies légères).</p>
+</blockquote>
+<p><strong>Question 4</strong> — Quel traitement est envisageable pour améliorer les symptômes d'Amélie ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT3 à doses titrées</strong> (T3 supra-physiologique pour saturer les récepteurs TRα mutants à affinité réduite). Risque : effets sur TRβ (hyperthyroïdie centrale, perte osseuse). Alternative en évaluation : <strong>DITPA (diiodothyropropionic acid)</strong> ou <strong>sobetirome</strong> (agonistes TRβ-sélectifs épargnant TRα). Prise en charge multidisciplinaire (neurologue, cardiologue, orthopédiste) + rééducation neuro-développementale.</p>
+</blockquote>
+<hr />
+<h2 id="cas-29-diamant-lhypothyroidie-et-la-fertilite">CAS 29 💎 DIAMANT — "L'Hypothyroïdie et la Fertilité"</h2>
+<p><strong>Présentation</strong> : Madame K., 33 ans, adressée par son gynécologue pour infertilité de 18 mois (cycles irréguliers, spanioménorrhée, 2 fausses couches précoces). Bilan : TSH 6,8 mUI/L, T4L basse, anti-TPO à 890 UI/mL. Bilan gynécologique par ailleurs normal. L'hystéroscopie est normale.</p>
+<p><strong>Question 1</strong> — Par quel mécanisme l'hypothyroïdie peut-elle causer l'infertilité et les fausses couches ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : (1) ↑ TRH → ↑ prolactine → inhibition GnRH → anovulation ; (2) Dysfonction lutéale ; (3) Anticorps anti-TPO → réponse immune placentaire pathologique ; (4) Impact direct sur la réceptivité endométriale (TR dans l'endomètre) ; (5) Anomalies de la coagulation (facteur VWF) → risque de thromboses placentaires précoces.</p>
+</blockquote>
+<p><strong>Question 2</strong> — Quel traitement initier avant toute PMA ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>LT4</strong> pour normaliser la TSH &lt; 2,5 mUI/L (cible préconceptionnelle). Contrôle TSH à 6-8 semaines. La normalisation de la TSH améliore les cycles dans 80 % des cas et réduit le risque de fausse couche.</p>
+</blockquote>
+<p><strong>Question 3</strong> — Sous LT4, TSH à 1,8 mUI/L, la grossesse spontanée survient 4 mois plus tard. Que faire dès l'annonce de la grossesse ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : <strong>Augmenter la LT4 de 25-30 % immédiatement</strong> (ne pas attendre). Contrôle TSH + T4L dans 4 semaines. Supplémentation en iode (150-200 µg/j). Surveillance mensuelle au T1.</p>
+</blockquote>
+<p><strong>Question 4</strong> — Compte tenu des deux fausses couches antérieures, quelle surveillance supplémentaire est proposée ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Bilan thrombophilique complet (anticoagulant lupique, anti-phospholipides — association Hashimoto/SAPL décrite). Surveillance rapprochée au T1 (échographies précoces). Aspirine à faible dose si SAPL confirmé. Consultation en gynécologie obstétricale spécialisée (grossesse à risque).</p>
+</blockquote>
+<hr />
+<h2 id="cas-30-diamant-integration-clinique-le-grand-tableau">CAS 30 💎 DIAMANT — "Intégration Clinique — Le Grand Tableau"</h2>
+<p><strong>Présentation</strong> : Madame A., 68 ans, retraitée, est adressée aux urgences pour confusion nocturne, chute à domicile. Antécédents : HTA (ramipril), arthrose. Son médecin traitant note lors de l'examen : PA 88/56, T° 34,8°C, FC 44/min, épanchement péricardique à l'echo, hyponatrémie 122 mmol/L, glycémie 3,2 mmol/L, hémogramme : anémie normocytaire, CK à 1 800 UI/L.</p>
+<p><strong>Question 1</strong> — Associez chaque anomalie biologique à son mécanisme physiopathologique dans l'hypothyroïdie.</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :<br />
+| Anomalie | Mécanisme |<br />
+|----------|-----------|<br />
+| Hyponatrémie 122 | SIADH (sécrétion inappropriée ADH) + dilution par rétention hydrique mucoïde |<br />
+| Hypoglycémie | ↓ glycogénolyse, ↓ néoglucogenèse, ↓ contre-régulation adrénerge |<br />
+| Anémie normocytaire | ↓ EPO, carence martiale associée fréquente, absorption diminuée |<br />
+| CK élevée | Myopathie hypothyroïdienne (infiltration mucoïde, ↓ activité ATPase musculaire) |<br />
+| Épanchement péricardique | Accumulation de glycoaminoglycanes, ↑ perméabilité vasculaire |<br />
+| Bradycardie 44/min | ↓ densité récepteurs β-adrénergiques, ↓ conduction nodale |</p>
+</blockquote>
+<p><strong>Question 2</strong> — Le score de Popoveniuc pour ce tableau : T° &lt; 35°C (10 pts), FC &lt; 60/min (10 pts), épanchement péricardique (10 pts), confusion (20 pts), pas de facteur précipitant identifié = total ≈ 50 pts. Quelle est la décision ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Score ≥ 60 = coma myxœdémateux probable / ≥ 45 = traitement sans attendre la confirmation biologique. <strong>Ici ≈ 50 pts → traitement d'urgence</strong> sans attendre les résultats de la TSH. <strong>LT4 IV 200-400 µg en dose de charge</strong>, hydrocortisone 100 mg IV, réchauffement passif, réanimation.</p>
+</blockquote>
+<p><strong>Question 3</strong> — La TSH revient 2h plus tard à 185 mUI/L, T4L à 3 pmol/L, cortisol stimulé à 90 nmol/L (bas). Que modifiez-vous dans le traitement ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> : Le cortisol très bas confirme une <strong>insuffisance surrénalienne relative ou absolue</strong>. Maintenir hydrocortisone 100 mg IV/8h (la LT4 a été initiée après l'hydrocortisone → bonne pratique). En cas d'insuffisance surrénalienne non traitée préalablement, la LT4 aurait pu précipiter une crise addisonienue.</p>
+</blockquote>
+<p><strong>Question 4</strong> — La patiente récupère à J5 et est orientée vers un service de médecine interne. Quel dispositif ambulatoire organiser à la sortie pour éviter une récidive ?</p>
+<blockquote>
+<p><strong>Réponse attendue</strong> :<br />
+1. LT4 orale (passage de IV à orale à la reprise de l'alimentation) — pilulier hebdomadaire préparé par la pharmacie<br />
+2. TSH de contrôle à 6 semaines<br />
+3. Aide à domicile / infirmière quotidienne pour s'assurer de la prise<br />
+4. Bracelet médical (hypothyroïdie traitée, insuffisance surrénalienne)<br />
+5. Ordonnance d'hydrocortisone injectable pour les jours de stress (si insuffisance surrénalienne confirmée)<br />
+6. Lettre au médecin traitant et à la famille expliquant les signes d'alarme d'une hypothyroïdie décompensée<br />
+7. Consultation endocrinologique dans 2 mois</p>
+</blockquote>
+<hr />
+<h3 id="tableau-de-synthese-des-30-cas-cliniques">Tableau de synthèse des 30 cas cliniques</h3>
+<table>
+<thead>
+<tr>
+<th>Cas</th>
+<th>Niveau</th>
+<th>Thème principal</th>
+<th>Message clé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>🥉</td>
+<td>Hashimoto typique</td>
+<td>TSH = 1er examen, traiter par LT4</td>
+</tr>
+<tr>
+<td>02</td>
+<td>🥉</td>
+<td>Dyslipidémie secondaire</td>
+<td>Doser TSH avant statine</td>
+</tr>
+<tr>
+<td>03</td>
+<td>🥉</td>
+<td>Grossesse, anti-TPO</td>
+<td>LT4 si HT frustre + anti-TPO +</td>
+</tr>
+<tr>
+<td>04</td>
+<td>🥉</td>
+<td>Dépistage néonatal</td>
+<td>Traitement avant J14</td>
+</tr>
+<tr>
+<td>05</td>
+<td>🥉</td>
+<td>Coma myxœdémateux</td>
+<td>Reconnaître et traiter en urgence</td>
+</tr>
+<tr>
+<td>06</td>
+<td>🥈</td>
+<td>Variation saisonnière TSH</td>
+<td>Ne pas modifier la dose en hiver sans confirmation</td>
+</tr>
+<tr>
+<td>07</td>
+<td>🥈</td>
+<td>Dépression résistante</td>
+<td>Éliminer HT avant de changer l'antidépresseur</td>
+</tr>
+<tr>
+<td>08</td>
+<td>🥈</td>
+<td>Amiodarone</td>
+<td>HT amiodarone = LT4 sans arrêter l'amiodarone</td>
+</tr>
+<tr>
+<td>09</td>
+<td>🥈</td>
+<td>ICI (immunothérapie)</td>
+<td>Thyroïdite ICI : ne pas arrêter l'immunothérapie</td>
+</tr>
+<tr>
+<td>10</td>
+<td>🥈</td>
+<td>HT de l'enfant</td>
+<td>Cassure staturale → doser TSH</td>
+</tr>
+<tr>
+<td>11</td>
+<td>🥈</td>
+<td>Résistance LT4</td>
+<td>Prise supervisée → non-observance</td>
+</tr>
+<tr>
+<td>12</td>
+<td>🥈</td>
+<td>Post-thyroïdectomie</td>
+<td>LT4 dès J1-J2, contrôle à 6 semaines</td>
+</tr>
+<tr>
+<td>13</td>
+<td>🥈</td>
+<td>HT frustre et coronarien</td>
+<td>Initiation très prudente 12,5 µg/j</td>
+</tr>
+<tr>
+<td>14</td>
+<td>🥇</td>
+<td>Grossesse sous LT4</td>
+<td>+25-30 % dès le test positif</td>
+</tr>
+<tr>
+<td>15</td>
+<td>🥇</td>
+<td>RTHβ</td>
+<td>T4L et T3L élevées + TSH inadaptée</td>
+</tr>
+<tr>
+<td>16</td>
+<td>🥇</td>
+<td>Fatigue persistante</td>
+<td>T3L basse → LT4+LT3</td>
+</tr>
+<tr>
+<td>17</td>
+<td>🥇</td>
+<td>Panhypopituitarisme</td>
+<td>Remplacer le cortisol avant la LT4</td>
+</tr>
+<tr>
+<td>18</td>
+<td>🥇</td>
+<td>MCT8 (Allan-Herndon)</td>
+<td>T3L très haute + retard neurologique</td>
+</tr>
+<tr>
+<td>19</td>
+<td>🥇</td>
+<td>NTIS réanimation</td>
+<td>Ne pas traiter le sick euthyroid</td>
+</tr>
+<tr>
+<td>20</td>
+<td>🥇</td>
+<td>Van Wyk-Grumbach</td>
+<td>Puberté précoce → doser TSH, LT4 seul</td>
+</tr>
+<tr>
+<td>21</td>
+<td>🥇</td>
+<td>Thyroïdite post-partum</td>
+<td>Biphasique : bêta-bloquants puis LT4</td>
+</tr>
+<tr>
+<td>22</td>
+<td>🥇</td>
+<td>Bypass gastrique</td>
+<td>Solution buvable pour malabsorption</td>
+</tr>
+<tr>
+<td>23</td>
+<td>🥇</td>
+<td>Chirurgie urgente</td>
+<td>LT4 IV + hydrocortisone</td>
+</tr>
+<tr>
+<td>24</td>
+<td>💎</td>
+<td>Non-observance chronique</td>
+<td>Dose hebdomadaire, décision partagée</td>
+</tr>
+<tr>
+<td>25</td>
+<td>💎</td>
+<td>HT centrale post-radiot.</td>
+<td>T4L = marqueur cible, pas TSH</td>
+</tr>
+<tr>
+<td>26</td>
+<td>💎</td>
+<td>Amiodarone type mixte</td>
+<td>Thionamides + corticoïdes, thyroïdectomie urgente</td>
+</tr>
+<tr>
+<td>27</td>
+<td>💎</td>
+<td>HT centrale congénitale</td>
+<td>Buvard normal n'exclut pas HT centrale</td>
+</tr>
+<tr>
+<td>28</td>
+<td>💎</td>
+<td>RTHα</td>
+<td>T4L haute + T3L basse = ratio T3/T4 inversé</td>
+</tr>
+<tr>
+<td>29</td>
+<td>💎</td>
+<td>Infertilité et HT</td>
+<td>TSH &lt; 2,5 mUI/L avant conception</td>
+</tr>
+<tr>
+<td>30</td>
+<td>💎</td>
+<td>Coma myxœdémateux</td>
+<td>Score Popoveniuc, traiter sans attendre</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Formation VERTEX© — Cas Cliniques Hypothyroïdies — Partie 3 — Mars 2026</em><br />
+<em>30 cas cliniques couvrant l'ensemble du spectre des hypothyroïdies — Bronze → Diamant</em></p>
+</div>

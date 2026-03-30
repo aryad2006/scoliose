@@ -1,0 +1,738 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="module-15-instrumentation-rachidienne-implants-et-materiaux">MODULE 15 — INSTRUMENTATION RACHIDIENNE : IMPLANTS ET MATÉRIAUX</h1>
+<p><strong>Partie VII — Techniques chirurgicales</strong><br />
+<strong>Durée estimée</strong> : 3h<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1 à 14</p>
+<hr />
+<h2 id="mise-en-situation">🏥 Mise en situation</h2>
+<blockquote>
+<p>Lors de la consultation pré-opératoire de Sophie (Module 8), ses parents demandent : <em>« Qu'est-ce qu'on va mettre dans son dos ? C'est en métal ? Combien de temps ça dure ? Est-ce que ça va rouiller ? Peut-elle passer à l'IRM ? »</em></p>
+<p>→ <em>Ce module répond à toutes ces questions sur l'instrumentation : les implants, les matériaux, les systèmes, leurs avantages/inconvénients et leur devenir à long terme.</em></p>
+</blockquote>
+<hr />
+<h2 id="termes-cles">Termes clés</h2>
+<p>Vis pédiculaire • Vis polyaxiale (tulipe) • Vis monoaxiale • Connectors / tulipes • Crochet laminaire • Bande sous-laminaire • Allograft / autogreffe • Tige cobalt-chrome (CoCr) • Tige titane (Ti) • Tige en PEEK • Tige transitionnelle • Domino connecteur • Vis iliaque • S2AI (sacro-alar-iliac) • Cage intersomatique (TLIF, PLIF, ALIF, XLIF, LatIF) • Navigation 3D peropératoire • O-Arm • Chirurgie robotique rachidienne (Mazor, Rosa) • Corrosion galvanique • Compatibilité IRM • Pseudarthrose • BMP-2 (rhBMP) • Biocéramiques</p>
+<hr />
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Décrire</strong> les différents types d'ancrages vertébraux (vis, crochets, bandes) et leurs applications (Bloom : Connaissance)</li>
+<li><strong>Comparer</strong> les propriétés mécaniques des matériaux d'implants (titane, cobalt-chrome, PEEK) (Bloom : Analyse)</li>
+<li><strong>Sélectionner</strong> le type de tige approprié selon la courbure et l'indication chirurgicale (Bloom : Évaluation)</li>
+<li><strong>Expliquer</strong> les principes des cages intersomatiques et leur rôle dans la fusion (Bloom : Compréhension)</li>
+<li><strong>Décrire</strong> les systèmes de navigation peropératoire et leurs avantages en termes de précision (Bloom : Connaissance)</li>
+</ol>
+<hr />
+<h2 id="pre-test-5-questions">Pré-test — 5 questions</h2>
+<p><strong>Q1.</strong> La vis pédiculaire polyaxiale (tulipe) permet :<br />
+- A. Plus de résistance à l'arrachement qu'une vis monoaxiale<br />
+- <strong>B. Un réglage de l'angle entre la tête de vis et la tige — facilite la mise en place de la tige et la correction</strong><br />
+- C. Une correction plus importante<br />
+- D. Elle est moins coûteuse</p>
+<p><strong>Q2.</strong> Parmi les alliages suivants, lequel a le module d'élasticité le plus proche de l'os cortical ?<br />
+- A. Cobalt-chrome<br />
+- B. Ti-6Al-4V<br />
+- <strong>C. PEEK (polyéther-éther-cétone)</strong><br />
+- D. Acier inoxydable</p>
+<p><strong>Q3.</strong> La navigation 3D peropératoire (O-Arm/Stealth) améliore la précision de placement des vis pédiculaires à :<br />
+- A. 75 %<br />
+- B. 85 %<br />
+- <strong>C. 95–98 %</strong><br />
+- D. 100 %</p>
+<p><strong>Q4.</strong> La BMP-2 (bone morphogenetic protein) est :<br />
+- <strong>A. Un facteur de croissance ostéoinducteur puissant — recombinant rhBMP-2, indication adulte en fusion difficile</strong><br />
+- B. Une antibiothérapie locale<br />
+- C. Une colle biologique<br />
+- D. Un substitut osseux ostéoconducteur</p>
+<p><strong>Q5.</strong> La corrosion galvanique se produit quand :<br />
+- A. La vis touche le disque intervertébral<br />
+- <strong>B. Deux métaux de potentiels électrochimiques différents sont en contact dans un environnement humide</strong><br />
+- C. La tige est trop rigide<br />
+- D. Le patient passe à l'IRM</p>
+<hr />
+<h2 id="151-ancrages-vertebraux">15.1 Ancrages vertébraux</h2>
+<div class="vertex-media schema">
+<strong>📐 M15-S01-001</strong><br/>
+<em>Schéma comparatif des ancrages vertébraux</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 🧊 M15-S01-002 — Modèle 3D vis pédiculaire polyaxiale]</p>
+</blockquote>
+<h3 id="1511-vis-pediculaires">15.1.1 Vis pédiculaires</h3>
+<p><strong>Principe</strong> : La vis est insérée dans le pédicule vertébral et traverse jusqu'à l'os spongieux du corps vertébral → ancrage le plus solide disponible.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Polyaxiale</strong> (tulipe)</td>
+<td>La tête pivote par rapport à la tige dans un arc de 30–40°</td>
+<td>Standard — facilite la mise en tige après insertion des vis</td>
+</tr>
+<tr>
+<td><strong>Monoaxiale</strong></td>
+<td>Axe fixe tige/vis</td>
+<td>Correction en rotation — meilleure rigidité de montage</td>
+</tr>
+<tr>
+<td><strong>Uniaxiale en translation</strong></td>
+<td>Déplacement axial autorisé</td>
+<td>Niveaux extrêmes</td>
+</tr>
+<tr>
+<td><strong>Fenestrated</strong></td>
+<td>Canal interne pour injection de ciment</td>
+<td>Ostéoporose</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Propriétés mécaniques</strong> :<br />
+- Résistance à l'arrachement (pull-out) : dépend de <strong>densité osseuse</strong> + <strong>diamètre vis</strong> + <strong>longueur</strong> + <strong>profondeur d'insertion</strong><br />
+- Pull-out élevé : <strong>os dense + vis 6,5 mm + longueur 45 mm + bicortical</strong> (vis touchant la corticale antérieure)</p>
+<h3 id="1512-crochets-laminaires-et-pediculaires">15.1.2 Crochets laminaires et pédiculaires</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Insertion</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crochet supra-laminaire</strong></td>
+<td>Sous la lame, traction vers le haut</td>
+<td>Pas de risque pédiculaire</td>
+<td>Moins fort que vis</td>
+</tr>
+<tr>
+<td><strong>Crochet infra-transverse</strong></td>
+<td>Dessous du pédicule</td>
+<td>Ancrage modéré</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Crochet costotransverse</strong></td>
+<td>Croisement côte-transverse</td>
+<td>Niveaux thoraciques</td>
+<td>Rare</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Indication actuelle</strong> : Les crochets sont essentiellement utilisés en <strong>ancrage proximal</strong> (levels T2-T3) pour les arthrodèses longues, en complément ou alternative aux vis pédiculaires dans les niveaux à pédicules petits.</p>
+<h3 id="1513-bandes-sous-laminaires-ligamentotaxis-inversee">15.1.3 Bandes sous-laminaires (ligamentotaxis inversée)</h3>
+<ul>
+<li><strong>Principe</strong> : Ruban de polyéthylène passé sous la lame, attaché à la tige</li>
+<li><strong>Avantages</strong> : Distribution des forces sur toute la surface laminaire, pas de risque de brèche pédiculaire, réducteur de PJK</li>
+<li><strong>Indication</strong> : Ancrage proximal des grandes fusions pour réduire le risque de PJK, complément des vis dans l'ostéoporose</li>
+</ul>
+<h3 id="1514-vis-iliaques-et-s2ai">15.1.4 Vis iliaques et S2AI</h3>
+<p><strong>Ancrage pelvien — indications</strong> : Fusion jusqu'au sacrum (neuromusculaire, adulte dégénératif, scoliose bas-thoracique)</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Insertion</th>
+<th>Avantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vis iliaques classiques</strong></td>
+<td>Dans l'aile iliaque, accès postérieur</td>
+<td>Longues, résistantes</td>
+</tr>
+<tr>
+<td><strong>Vis S2AI (sacro-alar-iliac)</strong></td>
+<td>Via S2 vers l'iliaque, trajectoire oblique</td>
+<td>En ligne avec les vis sacrées, moins proeminentes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="152-tiges-et-connecteurs">15.2 Tiges et connecteurs</h2>
+<div class="vertex-media schema">
+<strong>📐 M15-S02-001</strong><br/>
+<em>Tableau comparatif matériaux de tiges</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h3 id="1521-materiaux-des-tiges">15.2.1 Matériaux des tiges</h3>
+<table>
+<thead>
+<tr>
+<th>Matériau</th>
+<th>Module élasticité</th>
+<th>Rigidité</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cobalt-Chrome (CoCr)</strong></td>
+<td>250 GPa</td>
+<td>Très rigide</td>
+<td>Force de correction maximale, résistance à la fatigue</td>
+<td>Moins de modabilité, artefacts IRM</td>
+</tr>
+<tr>
+<td><strong>Titane (Ti-6Al-4V)</strong></td>
+<td>110 GPa</td>
+<td>Intermédiaire</td>
+<td>Biocompatible, moins d'artefacts IRM, cintrabilité</td>
+<td>Moins fort que CoCr</td>
+</tr>
+<tr>
+<td><strong>PEEK</strong></td>
+<td>3–4 GPa</td>
+<td>Élastique</td>
+<td>Proche de l'os, radiotransparent, compatible IRM</td>
+<td>Moins éprouvé à long terme</td>
+</tr>
+<tr>
+<td><strong>Nitinol</strong></td>
+<td>Variable</td>
+<td>Forme-mémoire</td>
+<td>Correction autonome (expérimental)</td>
+<td>Non disponible en routine</td>
+</tr>
+<tr>
+<td><strong>Tige composite CoCr/Ti</strong></td>
+<td>Transitionnelle</td>
+<td>Variable selon zones</td>
+<td>Rigidité adaptée par segments</td>
+<td>Coûteuse</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Choix clinique</strong> :<br />
+- <strong>Courbures sévères / correction maximale</strong> → CoCr<br />
+- <strong>Fusion lombaire adjacente à zone mobile</strong> → Ti ou transitionnelle<br />
+- <strong>Artefacts IRM minimaux souhaités</strong> → Ti ou PEEK<br />
+- <strong>Ostéoporose</strong> → Ti (moins de contrainte sur l'ancrage)</p>
+</blockquote>
+<h3 id="1522-diametre-des-tiges">15.2.2 Diamètre des tiges</h3>
+<table>
+<thead>
+<tr>
+<th>Diamètre</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5,5 mm</strong></td>
+<td>Standard adulte/adolescent</td>
+</tr>
+<tr>
+<td><strong>6,0–6,35 mm</strong></td>
+<td>Déformités sévères, adulte robuste</td>
+</tr>
+<tr>
+<td><strong>4,5–5,0 mm</strong></td>
+<td>Enfant, tige de croissance</td>
+</tr>
+<tr>
+<td><strong>3,5 mm</strong></td>
+<td>Pédiatrique très jeune (&lt;&lt; 6 ans)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1523-double-tige">15.2.3 Double tige</h3>
+<ul>
+<li>Standard dans toutes les chirurgies de la colonne (2 tiges parallèles)</li>
+<li>Stabilité ×3–4 par rapport à une tige unique</li>
+<li>Connecteurs transverses (cross-links) tous les 3–4 niveaux → résistance à la torsion</li>
+</ul>
+<hr />
+<h2 id="153-cages-intersomatiques">15.3 Cages intersomatiques</h2>
+<div class="vertex-media schema">
+<strong>📐 M15-S03-001</strong><br/>
+<em>Schéma comparatif des voies d'abord intersomatiques</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Principe</strong> : Dispositif interposé dans l'espace discal après discectomie → support structurel + espace pour la fusion osseuse.</p>
+<h3 id="voies-dabord-intersomatiques">Voies d'abord intersomatiques</h3>
+<table>
+<thead>
+<tr>
+<th>Acronyme</th>
+<th>Voie</th>
+<th>Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TLIF</strong> (Transforaminal lumbar interbody fusion)</td>
+<td>Postéro-latérale</td>
+<td>Standard lombaire — accès minimal au canal</td>
+</tr>
+<tr>
+<td><strong>PLIF</strong> (Posterior lumbar interbody fusion)</td>
+<td>Postérieure</td>
+<td>Bilatéral — plus de rétraction nerveuse</td>
+</tr>
+<tr>
+<td><strong>ALIF</strong> (Anterior lumbar interbody fusion)</td>
+<td>Antérieure abdominale</td>
+<td>L4-L5, L5-S1 — grandes cages, forte lordose</td>
+</tr>
+<tr>
+<td><strong>XLIF / LLIF</strong> (Extreme/Lateral lumbar interbody fusion)</td>
+<td>Latérale rétropéritonéale</td>
+<td>L1-L4 — exclut L5-S1 (plexus lombaire)</td>
+</tr>
+<tr>
+<td><strong>AxiaLIF</strong></td>
+<td>Axiale trans-sacrée</td>
+<td>S1-L5 uniquement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="materiaux-des-cages">Matériaux des cages</h3>
+<table>
+<thead>
+<tr>
+<th>Matériau</th>
+<th>Avantages</th>
+<th>Artefacts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titane</strong></td>
+<td>Rigide, stable, ostéo intégration</td>
+<td>Artefacts IRM</td>
+</tr>
+<tr>
+<td><strong>PEEK</strong></td>
+<td>Radiotransparent, proche os</td>
+<td>IRM excellent</td>
+</tr>
+<tr>
+<td><strong>Cage carbone</strong></td>
+<td>Radiotransparent, léger</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Cage expandable</strong> (titan/PEEK)</td>
+<td>Restaure la lordose in situ</td>
+<td>Complexité</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contenu-des-cages">Contenu des cages</h3>
+<ul>
+<li><strong>Autogreffe</strong> (or standard) : os du patient (crête iliaque ou local)  </li>
+<li><strong>Allogreffe</strong> (cadavériques, banque d'os) : complément commode</li>
+<li><strong>Substituts</strong> : hydroxyapatite, TCP, β-TCP</li>
+<li><strong>BMP-2</strong> : discutée pour les pseudarthroses, âge adulte uniquement (CI &lt; 18 ans)</li>
+</ul>
+<hr />
+<h2 id="154-materiaux-biologiques-et-substituts-osseux">15.4 Matériaux biologiques et substituts osseux</h2>
+<blockquote>
+<p>[MEDIA: 📊 M15-S04-001 — Tableau pyramide des substituts osseux]</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Produit</th>
+<th>Type</th>
+<th>Force (preuve)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autogreffe crête iliaque</strong></td>
+<td>Ostéogénique + ostéoconducteur + ostéoinducteur</td>
+<td>Gold standard</td>
+</tr>
+<tr>
+<td><strong>Autogreffe locale</strong></td>
+<td>Ostéogénique + ostéoconducteur</td>
+<td>Bonne (quantité limitée)</td>
+</tr>
+<tr>
+<td><strong>Allogreffe (banque)</strong></td>
+<td>Ostéoconducteur</td>
+<td>Modérée (non ostéogénique)</td>
+</tr>
+<tr>
+<td><strong>DBM (Demineralized Bone Matrix)</strong></td>
+<td>Ostéoinducteur faible</td>
+<td>Variable selon marque</td>
+</tr>
+<tr>
+<td><strong>Hydroxyapatite (HA)</strong></td>
+<td>Ostéoconducteur</td>
+<td>Structurel</td>
+</tr>
+<tr>
+<td><strong>β-TCP</strong></td>
+<td>Ostéoconducteur résorbable</td>
+<td>Complément</td>
+</tr>
+<tr>
+<td><strong>BMP-2 (rhBMP)</strong></td>
+<td>Ostéoinducteur fort</td>
+<td>Fort (adulte, CI &lt; 18 ans, coût élevé)</td>
+</tr>
+<tr>
+<td><strong>BMP-7 / OP-1</strong></td>
+<td>Ostéoinducteur</td>
+<td>Moins couramment utilisé</td>
+</tr>
+</tbody>
+</table>
+<p>**</p>
+<div class="vertex-alerte"><strong>Mise en garde BMP-2 (INFUSE)</strong> : - Efficacité prouvée dans les fusions lombaires ALIF chez l'adulte
+- CI chez l'enfant/adolescent (risque théorique de sarcome) — FDA Black Box warning
+- Effets indésirables : œdème local, ossification hétérotopique, en ALIF risque de migration antérieure (ostéolyse transitoire)</div>
+
+<hr />
+<h2 id="155-navigation-peroperatoire-et-robotique">15.5 Navigation peropératoire et robotique</h2>
+<div class="vertex-media video">
+<strong>🎬 M15-S05-001</strong><br/>
+<em>Vidéo démonstration O-Arm/navigation</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format VIDEO</small>
+</div>
+
+<h3 id="1551-fluoroscopie-standard">15.5.1 Fluoroscopie standard</h3>
+<ul>
+<li><strong>Technique de base</strong> : scopie biplanaire AP + profil</li>
+<li>Précision vis pédiculaire : <strong>85–92 %</strong> (classe A/B, Gertzbein &amp; Robbins, 1990)</li>
+<li>Exposition ionisante patient et chirurgien</li>
+</ul>
+<h3 id="1552-navigation-3d-per-operatoire-o-arm-stealthstealthstation">15.5.2 Navigation 3D per-opératoire (O-Arm + Stealth/StealthStation)</h3>
+<p><strong>Principe</strong> :<br />
+1. Scanner O-Arm peropératoire (acquisition 3D en 30–60 sec)<br />
+2. Recalage automatique sur l'anatomie réelle<br />
+3. Guidage en temps réel de la perçeuse + vis sur écran de navigation (3 plans simultanés)</p>
+<p><strong>Avantages</strong> :<br />
+- Précision : <strong>95–98 %</strong> (classe A/B, Kosmopoulos &amp; Schizas, 2007) — vs 85–92 % fluoroscopie<br />
+- Réduction des brèches pédiculaires (classe C/D/E) de ~60 %<br />
+- Moins d'exposition aux rayons X pour le chirurgien<br />
+- Vérification immédiate post-mise en place</p>
+<p><strong>Inconvénients</strong> :<br />
+- Coût élevé (système navigation + O-Arm = 500 000–800 000 €)<br />
+- Temps de set-up (15–20 min)<br />
+- Nécessite immobilité peropératoire (pas de repositionnement du patient)</p>
+<h3 id="1553-chirurgie-robotique-mazor-x-rosa-spine">15.5.3 Chirurgie robotique (Mazor X, Rosa Spine)</h3>
+<p><strong>Principe</strong> :<br />
+- Robot positionne un guide tube précis selon la planification préopératoire 3D<br />
+- Le chirurgien utilise le guide pour perçage + vis</p>
+<p><strong>Avantages</strong> :<br />
+- Précision &gt; 98 %, courbe d'apprentissage réduite pour les débutants<br />
+- Planification préopératoire détaillée (logiciel)<br />
+- Réduction des corrections peropératoires</p>
+<p><strong>Inconvénients</strong> :<br />
+- Coût ++++ (robot = 600 000–1 000 000 €)<br />
+- Non supérieur à la navigation humaine experte pour les chirurgiens expérimentés<br />
+- Dépendance technologique</p>
+<hr />
+<h2 id="156-biocompatibilite-et-compatibilite-irm">15.6 Biocompatibilité et compatibilité IRM</h2>
+<h3 id="1561-compatibilite-irm-des-implants-rachidiens">15.6.1 Compatibilité IRM des implants rachidiens</h3>
+<table>
+<thead>
+<tr>
+<th>Matériau</th>
+<th>IRM compatible ?</th>
+<th>Artefacts</th>
+<th>Précautions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titane pur</strong></td>
+<td>✅ Oui</td>
+<td>Faibles</td>
+<td>Aucune — standard</td>
+</tr>
+<tr>
+<td><strong>Ti-6Al-4V</strong></td>
+<td>✅ Oui (1.5T et 3T)</td>
+<td>Modérés</td>
+<td>Vérifier date implant</td>
+</tr>
+<tr>
+<td><strong>Cobalt-Chrome</strong></td>
+<td>✅ Oui (conditionnelle)</td>
+<td>Importants</td>
+<td>1.5T max</td>
+</tr>
+<tr>
+<td><strong>Acier inoxydable</strong></td>
+<td>⚠️ Conditionnelle</td>
+<td>Très importants</td>
+<td>Rare en rachis moderne</td>
+</tr>
+<tr>
+<td><strong>PEEK</strong></td>
+<td>✅ Oui</td>
+<td>Aucun</td>
+<td>Non magnétique</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Règle pratique</strong> : Tous les implants rachidiens modernes en Ti ou CoCr sont <strong>IRM semi-compatibles</strong> (pas de contre-indication absolue en 1.5T). Les artefacts peuvent gêner la lecture des images au niveau de l'implant.</p>
+</blockquote>
+<h3 id="1562-corrosion-galvanique">15.6.2 Corrosion galvanique</h3>
+<p><strong>Définition</strong> : Dégradation électrochimique quand deux métaux de différents potentiels électrochimiques sont en contact dans un électrolyte (liquides biologiques).</p>
+<p><strong>Dans le rachis</strong> :<br />
+- Contact entre <strong>vis Ti</strong> et <strong>tige CoCr</strong> = combinaison fréquente → corrosion à l'interface<br />
+- Libération d'ions métalliques (Co, Cr) → toxicité locale et systémique à long terme<br />
+- Artefacts d'imagerie + douleur parfois</p>
+<p><strong>Prévention</strong> :<br />
+- Utiliser le même matériau pour la vis et la tige (all-Ti ou all-CoCr)<br />
+- Ou utiliser des assemblages validés (CoCr dans tulipe Ti → configuration testée et tolérée)<br />
+- Inspection peropératoire des surfaces de contact</p>
+<hr />
+<h2 id="157-devenir-des-implants-a-long-terme">15.7 Devenir des implants à long terme</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Réponse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Durée de vie des vis</strong></td>
+<td>Indefinie si fusion osseuse solide — pas de remplacement prévu</td>
+</tr>
+<tr>
+<td><strong>Obligation d'ablation</strong></td>
+<td>Non — sauf complication (infection, douleur, brêche)</td>
+</tr>
+<tr>
+<td><strong>Taux de rupture de tige</strong></td>
+<td>5–15 % à 5 ans si pseudarthrose — 1–2 % si fusion correcte</td>
+</tr>
+<tr>
+<td><strong>Ablation du matériel</strong></td>
+<td>Possible si fusion solide (2–3 ans minimum), souvent non recommandée</td>
+</tr>
+<tr>
+<td><strong>Impact sur le sport</strong></td>
+<td>Aucun — pas de restriction sportive définitive</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="158-implants-en-evolution-tendances-actuelles">15.8 Implants en évolution — Tendances actuelles</h2>
+<table>
+<thead>
+<tr>
+<th>Innovation</th>
+<th>Stade</th>
+<th>Avantage potentiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vis biodégradables (PLLA)</strong></td>
+<td>Pédiatrique — recherche</td>
+<td>Pas d'ablation, croissance non entravée</td>
+</tr>
+<tr>
+<td><strong>Implants antiinfectieux</strong> (Ti pouvant + argent/iode)</td>
+<td>Clinique</td>
+<td>Réduction infection</td>
+</tr>
+<tr>
+<td><strong>Tige dynamique / semi-rigide (Dynesys)</strong></td>
+<td>Clinique (lombaire)</td>
+<td>Préservation mouvement adjacent</td>
+</tr>
+<tr>
+<td><strong>Cage à lordose variable in-situ</strong></td>
+<td>Standard</td>
+<td>Restauration lordose optimale</td>
+</tr>
+<tr>
+<td><strong>Vis connectées (capteurs)</strong></td>
+<td>Recherche</td>
+<td>Monitoring de la fusion en temps réel</td>
+</tr>
+<tr>
+<td><strong>VBT Tether</strong></td>
+<td>SIA juvénile</td>
+<td>Croissance guidée non fusionnante</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="points-cles-a-retenir">Points clés à retenir</h2>
+<blockquote>
+<p>📌 <strong>1.</strong> La <strong>vis polyaxiale</strong> est le standard actuel — permet la correction par rotation de tige après insertion.</p>
+<p>📌 <strong>2.</strong> Le <strong>cobalt-chrome</strong> est plus rigide et plus correcteur que le titane → indiqué pour les grandes déformités ; le titane est préféré pour moins d'artefacts IRM et en cas d'ostéoporose.</p>
+<p>📌 <strong>3.</strong> La <strong>navigation 3D</strong> (O-Arm + Stealth) améliore la précision à 95–98 % vs 85–92 % en fluoroscopie — recommandée en pédiatrique et dans les déformités complexes.</p>
+<p>📌 <strong>4.</strong> Les implants modernes sont <strong>tous compatibles IRM</strong> (semi-conditionnelle 1.5T) — ne pas contre-indiquer une IRM à un patient porteur d'implants rachidiens modernes.</p>
+<p>📌 <strong>5.</strong> La <strong>BMP-2</strong> est puissante mais <strong>contre-indiquée chez l'enfant/adolescent</strong> (&lt; 18 ans, risque théorique sarcome).</p>
+<p>📌 <strong>6.</strong> La <strong>corrosion galvanique Ti/CoCr</strong> à l'interface vis-tige est une réalité — prévenir par cohérence des matériaux ou interface éprouvée.</p>
+</blockquote>
+<hr />
+<h2 id="quiz-12-questions">Quiz — 12 questions</h2>
+<p><strong>Q1. 🥉</strong> La vis pédiculaire polyaxiale se distingue de la monoaxiale par :<br />
+- <strong>A. La tête qui pivote dans la tulipe, permettant de captiver la tige dans différents axes</strong><br />
+- B. Sa résistance à l'arrachement supérieure<br />
+- C. Son utilisation exclusive en cervical<br />
+- D. Son prix moins élevé</p>
+<p><strong>Q2. 🥉</strong> Le matériau de tige le plus rigide est :<br />
+- A. Titane<br />
+- <strong>B. Cobalt-Chrome</strong><br />
+- C. PEEK<br />
+- D. Acier</p>
+<p><strong>Q3. 🥉</strong> La précision de placement des vis pédiculaires avec navigation 3D O-Arm est de :<br />
+- A. 75 %<br />
+- B. 85 %<br />
+- <strong>C. 95–98 %</strong><br />
+- D. 100 %</p>
+<p><strong>Q4. 🥉</strong> Quelle est la contre-indication principale à l'utilisation de BMP-2 ?<br />
+- A. L'ostéoporose<br />
+- <strong>B. L'âge &lt; 18 ans (risque de sarcome)</strong><br />
+- C. La scoliose &gt; 50°<br />
+- D. Les pertes sanguines importantes</p>
+<p><strong>Q5. 🥈</strong> Une cage ALIF par rapport à TLIF offre principalement :<br />
+- A. Un meilleur accès au canal rachidien<br />
+- <strong>B. Un contact osseux de plus grande surface + plus grande hauteur de cage + lordose supérieure — idéale L4-S1</strong><br />
+- C. Une réduction des risques vasculaires<br />
+- D. Un temps opératoire plus court</p>
+<p><strong>Q6. 🥈</strong> Quel matériau de cage produit le moins d'artefacts IRM ?<br />
+- A. Titane<br />
+- B. Cobalt-Chrome<br />
+- <strong>C. PEEK</strong><br />
+- D. Acier</p>
+<p><strong>Q7. 🥈</strong> La corrosion galvanique en implantologie rachidienne est maximale entre :<br />
+- A. Deux vis en titane<br />
+- <strong>B. Vis en titane et tige en cobalt-chrome</strong><br />
+- C. Cage PEEK et vis titane<br />
+- D. Deux types de CoCr différents</p>
+<p><strong>Q8. 🥇</strong> Un patient porte des vis pédiculaires titane et des tiges CoCr posées il y a 3 ans pour une fusion L4-S1. Il doit avoir une IRM lombaire. Que décidez-vous ?<br />
+- A. IRM contre-indiquée formellement<br />
+- <strong>B. IRM réalisable en 1.5T — informer le radiologue de la présence d'implants, signaler le type de matériel. Les artefacts seront présents au niveau des implants mais l'IRM est sûre</strong><br />
+- C. Attendre l'ablation du matériel avant l'IRM<br />
+- D. Scanner uniquement — jamais d'IRM avec implants rachidiens</p>
+<p><strong>Q9. 🥇</strong> Vous planifiez une fusion T2-S1 chez un patient obèse (IMC 38), avec ostéoporose (T-score –3,0). Quelle stratégie d'ancrage pelvien choisissez-vous ?<br />
+- <strong>A. Vis S2AI bilatérales + augmentation pédiculaire au ciment sur les niveaux les plus caudaux + bandes sous-laminaires au niveau proximal</strong><br />
+- B. Vis iliaques classiques sans ciment — the mass is enough anchor<br />
+- C. Crochets sacrés bilatéraux<br />
+- D. TLIF seul à S1</p>
+<p><strong>Q10. 🥇</strong> La rupture de tige post-arthrodèse à 2 ans de recul signifie le plus souvent :<br />
+- <strong>A. Une pseudarthrose (absence de fusion osseuse) — la tige a subi des cycles de fatigue sans le soutien de la fusion</strong><br />
+- B. Un matériau défectueux<br />
+- C. Une infection tardive<br />
+- D. Une décompensation coronale</p>
+<p><strong>Q11. 💎</strong> Vous opérez une scoliose chez un enfant de 8 ans (EOS, MCGR). À 3 ans de suivi, le patient présente une douleur localisée en regard de la tige, sans signe infectieux. L'IRM montre une hypersignal T2 autour de la tige MCGR. Quelle est l'hypothèse principale ?<br />
+- <strong>A. Réaction aux débris métalliques (corrosion, particles) issues du mécanisme d'allongement MCGR — complication spécifique décrite (titanium/cobalt-chrome debris)</strong><br />
+- B. Infection tardive<br />
+- C. Pseudarthrose (enfant non fusionné)<br />
+- D. Récidive de la déformation</p>
+<p><strong>Q12. 💎</strong> Le chirurgien planifie une fusion L3-S1 avec ALIF L4-L5 et L5-S1 + TLIF L3-L4 + vis pédiculaires postérieures T12-sacrum-iliac. Il prévoit des vis Ti mais des tiges CoCr. Son assistant signale un possible problème. Quel est ce problème et comment y remédier ?<br />
+- <strong>A. Risque de corrosion galvanique à l'interface tulipe Ti / tige CoCr — utiliser soit tout-Ti soit tout-CoCr, ou utiliser les configurations Ti/CoCr validées par le fabricant (certains systèmes ont été testés et approuvés pour cette combinaison)</strong><br />
+- B. Le CoCr est trop rigide pour la région lombaire<br />
+- C. L'ALIF est incompatible avec les vis Ti<br />
+- D. Il n'y a aucun problème — Ti et CoCr sont toujours compatibles</p>
+<hr />
+<h2 id="ressources-complementaires">Ressources complémentaires</h2>
+<ul>
+<li><strong>Gertzbein SD, Robbins SE.</strong> Accuracy of pedicular screw placement in vivo. <em>Spine</em>. 1990;15(1):11–14</li>
+<li><strong>Kosmopoulos V, Schizas C.</strong> Pedicle screw placement accuracy: a meta-analysis. <em>Spine</em>. 2007;32(3):E111–E120</li>
+<li><strong>Faraj A et al.</strong> Titanium vs CoCr. <em>Spine</em>. Review 2019</li>
+<li><strong>Lonstein JE et al.</strong> Pedicle screw accuracy. <em>Spine</em>. 1999</li>
+<li><strong>Ntilikina Y et al.</strong> O-Arm navigation accuracy. <em>Orthopedics</em>. 2017</li>
+<li><strong>Vaccaro AR et al.</strong> ALIF cage selection. <em>JAAOS</em>. 2020</li>
+<li><strong>FDA.</strong> BMP-2 safety communication. 2008 + update 2013</li>
+<li><strong>Gaines RW.</strong> Iliac screws. <em>Spine</em>. 2000;25:2279</li>
+</ul>
+</div>

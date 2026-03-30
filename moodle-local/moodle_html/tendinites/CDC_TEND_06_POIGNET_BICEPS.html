@@ -1,0 +1,294 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-tendinites">CAHIER DES CHARGES — FORMATION TENDINITES</h1>
+<h2 id="partie-6-tendinopathies-du-poignet-de-la-main-et-du-bicepstriceps-modules-16-17">Partie 6 — Tendinopathies du poignet, de la main et du biceps/triceps (Modules 16-17)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Tendinites et Tendinopathies<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-16-tendinopathies-du-poignet-et-de-la-main">MODULE 16 : TENDINOPATHIES DU POIGNET ET DE LA MAIN</h1>
+<p><strong>Partie</strong> : VI — Tendinopathies du poignet, de la main et du biceps/triceps<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Jeune mère, consulte pour une douleur du poignet droit, rétro-styloïdienne radiale, apparue 3 semaines après l'accouchement. La douleur est aggravée par les gestes de préhension (saisir le bébé, ouvrir un bocal). Le test de Finkelstein est extrêmement positif. Une infiltration péri-tendineuse dans le 1er compartiment des extenseurs est proposée. *De quelle pathologie s'agit-il ? L'infiltration est-elle le bon choix ? Quel est le taux de succès ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> la ténosynovite de De Quervain et la distinguer des autres douleurs du poignet radial</li>
+<li><strong>Connaître</strong> les tendinopathies des 6 compartiments dorsaux du poignet</li>
+<li><strong>Maîtriser</strong> le diagnostic et le traitement du doigt à ressaut (trigger finger)</li>
+<li><strong>Identifier</strong> les tendinopathies spécifiques de la main (fléchisseurs, extenseurs)</li>
+<li><strong>Proposer</strong> un traitement adapté pour chaque entité</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-161-tenosynovite-de-de-quervain">Section 16.1 — Ténosynovite de De Quervain</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : 1er compartiment dorsal du poignet → 2 tendons : abductor pollicis longus (APL) et extensor pollicis brevis (EPB), passant sous un rétinaculum fibreux au-dessus de la styloïde radiale<br />
+- <strong>Variantes anatomiques</strong> : septum intra-compartimentaire divisant le 1er compartiment en 2 tunnels séparés (APL et EPB) → fréquent (30-50%), implication pour l'infiltration (il faut injecter dans les 2 sous-compartiments) et la chirurgie (il faut ouvrir les 2)<br />
+- <strong>Physiopathologie</strong> : sténose du 1er compartiment → épaississement du rétinaculum → friction/compression des tendons → ténosynovite sténosante — PAS une inflammation mais un épaississement stenosant<br />
+- <strong>Épidémiologie</strong> : femmes &gt;&gt; hommes (6-10:1), pic 30-50 ans, forte association avec post-partum (hormones + gestes répétés de portage du nourrisson), travail de bureau (souris, clavier), sport de raquette<br />
+- <strong>Clinique</strong> :<br />
+  - Douleur rétro-styloïdienne radiale, irradiant vers le pouce et l'avant-bras<br />
+  - Test de Finkelstein (modifié = Eichhoff) : le patient ferme le poing sur le pouce, l'examinateur dévie le poignet en inclinaison ulnaire → douleur aiguë vive au 1er compartiment — Se 89%, Sp 14% (peu spécifique !)<br />
+  - Épaississement palpable du 1er compartiment, crépitation possible<br />
+- <strong>Diagnostic différentiel</strong> : arthrose trapézo-métacarpienne (rhizarthrose — test de grind/shear), fracture du scaphoïde, syndrome d'intersection (2ème compartiment croisant le 1er), névrome de la branche sensitive du nerf radial (Wartenberg)<br />
+- <strong>Traitement</strong> :<br />
+  - Orthèse de repos (pouce inclus : spica) : 4-6 semaines — taux de guérison 50% si 1er épisode<br />
+  - Infiltration de corticoïdes dans le 1er compartiment : taux de guérison 70-90% (BONNE indication des corticoïdes, contrairement aux tendinopathies) — attention au septum (infiltrer les 2 sous-compartiments sous guidage échographique si septum)<br />
+  - Chirurgie (ouverture du 1er compartiment) : si échec de 2-3 infiltrations — taux de guérison 90-95%, risques : lésion de la branche sensitive du nerf radial (névrome), subluxation tendineuse<br />
+  - AINS topiques : complément utile</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND16-S01-001 | 📐 SCHÉMA | 1er compartiment dorsal — APL, EPB, rétinaculum, septum | Schéma anatomique |<br />
+| MTEND16-S01-002 | 🎥 VIDÉO | Test de Finkelstein (Eichhoff) — démonstration | Vidéo clinique |<br />
+| MTEND16-S01-003 | 📷 IMAGE | Échographie — ténosynovite de De Quervain (épaississement, épanchement de gaine) | Image annotée |<br />
+| MTEND16-S01-004 | 🎥 VIDÉO | Infiltration échoguidée du 1er compartiment (avec septum) | Vidéo interventionnelle |<br />
+| MTEND16-S01-005 | 📐 SCHÉMA | Variante anatomique avec septum — les 2 sous-compartiments | Illustration |<br />
+| MTEND16-S01-006 | 📊 INFOGRAPHIE | Algorithme de traitement de la ténosynovite de De Quervain | Arbre décisionnel |</p>
+<h3 id="section-162-doigt-a-ressaut-trigger-finger">Section 16.2 — Doigt à ressaut (trigger finger)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : les tendons fléchisseurs (FDS et FDP) glissent dans une gaine synoviale avec un système de poulies (A1-A5, C1-C4) → la poulie A1 est le site de conflit<br />
+- <strong>Physiopathologie</strong> : épaississement de la poulie A1 et/ou du tendon → sténose → blocage en flexion puis déblocage brutal (« ressaut ») — PAS une inflammation mais une sténose mécanique<br />
+- <strong>Épidémiologie</strong> : 2-3% de la population générale, femmes 4-6:1, pic 50-60 ans, diabète (10-20% des diabétiques ont un doigt à ressaut), polyarthrite rhumatoïde, hypothyroïdie, amyloïdose<br />
+- <strong>Clinique</strong> :<br />
+  - Blocage du doigt en flexion avec déblocage douloureux en extension (le « ressaut »)<br />
+  - Nodule palpable à la base du doigt (en regard de la poulie A1, articulation MP)<br />
+  - Classification <em>(adapté de Green, 2005, in Green's Operative Hand Surgery)</em> :<br />
+    - Grade I : gêne douloureuse, sensibilité locale et nodule palpable, mais sans phénomène de ressaut<br />
+    - Grade II : présence d'un ressaut perceptible, que le patient peut débloquer de façon active<br />
+    - Grade III : ressaut marqué ne pouvant être résolu que par une manœuvre passive de déblocage<br />
+    - Grade IV : enraidissement fixe du doigt en position fléchie (ou plus rarement en extension)<br />
+  - Cas particulier : pouce à ressaut du nourrisson (congénital) — nodule de Notta<br />
+- <strong>Traitement</strong> :<br />
+  - Orthèse de blocage en extension de la MP (doigt libre en IP) : la nuit, 4-6 semaines — taux de succès 50-70% (grade I-II)<br />
+  - Infiltration de corticoïdes dans la gaine des fléchisseurs (A1) : taux de succès 57-93% (1ère injection), 50% (2ème injection), moins efficace chez les diabétiques et si atteinte multiple<br />
+  - Chirurgie (libération de la poulie A1) : libération ouverte ou percutanée à l'aiguille — taux de succès &gt;95%<br />
+  - Release percutané à l'aiguille (ultrasound-guided ou en aveugle) : technique mini-invasive, consultation externe, résultats 85-95% — risque de lésion tendineuse ou neurale</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND16-S02-001 | 📐 SCHÉMA | Système de poulies des fléchisseurs (A1-A5, C1-C4) | Schéma anatomique |<br />
+| MTEND16-S02-002 | 🎬 ANIMATION | Mécanisme du doigt à ressaut — sténose A1, blocage/déblocage | Animation biomécanique |<br />
+| MTEND16-S02-003 | 🎥 VIDÉO | Examen clinique du doigt à ressaut — ressaut palpable | Vidéo clinique |<br />
+| MTEND16-S02-004 | 🎥 VIDÉO | Release percutané à l'aiguille échoguidé | Vidéo interventionnelle |<br />
+| MTEND16-S02-005 | 📊 INFOGRAPHIE | Classification de Green et algorithme de traitement | Aide-mémoire |</p>
+<h3 id="section-163-autres-tendinopathies-du-poignet-et-de-la-main">Section 16.3 — Autres tendinopathies du poignet et de la main</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Syndrome d'intersection</strong> : croisement des tendons du 1er compartiment (APL, EPB) avec ceux du 2ème compartiment (ECRL, ECRB) — friction → crépitation palpable (« squeaker's wrist ») à 4-6 cm en proximal du poignet — diagnostic : crépitation, douleur face dorsale de l'avant-bras distal (pas de la styloïde radiale ≠ De Quervain), traitement : repos, orthèse, infiltration<br />
+- <strong>Tendinopathie de l'ECU (6ème compartiment)</strong> : douleur ulnaire du poignet, aggravée par déviation ulnaire et la supination (instabilité de l'ECU si subluxation hors de sa gouttière lors de la supination-flexion) — fréquent chez les sportifs (tennis, golf)<br />
+  - Diagnostic : synergy test — supination résistée du poignet fléchi en déviation ulnaire<br />
+  - Imagerie : échographie dynamique (subluxation en temps réel)<br />
+  - Traitement : orthèse, renforcement, chirurgie si instabilité récurrente (reconstruction de la gaine sous-sheath)<br />
+- <strong>Tendinopathie du fléchisseur radial du carpe (FCR)</strong> : douleur à la face palmaire-radiale du poignet — rare, association avec rhizarthrose<br />
+- <strong>Mallet finger et jersey finger</strong> : lésions traumatiques des tendons extenseur et fléchisseur de la phalange distale — orthèse vs chirurgie selon le type</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND16-S03-001 | 📐 SCHÉMA | Les 6 compartiments dorsaux du poignet — schéma transversal | Schéma anatomique |<br />
+| MTEND16-S03-002 | 📐 SCHÉMA | Syndrome d'intersection — croisement des compartiments 1 et 2 | Illustration |<br />
+| MTEND16-S03-003 | 🎥 VIDÉO | Échographie dynamique — subluxation de l'ECU en supination | Vidéo écho |<br />
+| MTEND16-S03-004 | 📊 INFOGRAPHIE | Diagnostic différentiel des douleurs du poignet par localisation | Cartographie |</p>
+<h3 id="points-cles-du-module-16">Points clés du Module 16</h3>
+<ol>
+<li>La ténosynovite de De Quervain est une sténose du 1er compartiment (APL + EPB) — le septum est présent dans 30-50% des cas</li>
+<li>L'infiltration de corticoïdes est une BONNE indication dans De Quervain (70-90% de succès) — contrairement aux tendinopathies</li>
+<li>Le doigt à ressaut est causé par la sténose de la poulie A1 — le diabète est un facteur de risque majeur</li>
+<li>Le syndrome d'intersection (crépitation dorsale de l'avant-bras) se distingue de De Quervain par sa localisation plus proximale</li>
+<li>L'instabilité de l'ECU mime souvent une pathologie du TFCC (diagnostic différentiel)</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, tests cliniques, classification)</li>
+<li>3 QCM Argent (diagnostic différentiel, traitements, imagerie)</li>
+<li>2 QCM Or (cas : douleur radiale du poignet → De Quervain vs intersection vs rhizarthrose)</li>
+<li>1 QCM Diamant (cas : post-partum avec douleur du poignet + échec d'infiltration → analyse du septum et plan)</li>
+<li>1 QROC : « Décrivez les variantes anatomiques du 1er compartiment dorsal et leur impact sur l'infiltration et la chirurgie de la ténosynovite de De Quervain. »</li>
+</ul>
+<hr />
+<h1 id="module-17-tendinopathies-du-biceps-et-du-triceps">MODULE 17 : TENDINOPATHIES DU BICEPS ET DU TRICEPS</h1>
+<p><strong>Partie</strong> : VI — Tendinopathies du poignet, de la main et du biceps/triceps<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-7, 14</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Haltérophile amateur, ressent un craquement brutal du pli du coude en soulevant une charge lourde en biceps curl. Il présente une ecchymose de la fosse cubitale, une douleur antérieure du coude, et une déformation du biceps (le muscle remonte vers l'épaule — « signe de Popeye inversé »). La supination résistée est très faible. *Rupture du biceps distal ? Comment confirmer ? Doit-on opérer en urgence ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Diagnostiquer</strong> la rupture du biceps distal (hook test, squeeze test)</li>
+<li><strong>Distinguer</strong> les tendinopathies du long biceps (proximale) des lésions du biceps distal</li>
+<li><strong>Connaître</strong> les tendinopathies et ruptures du triceps</li>
+<li><strong>Maîtriser</strong> les indications chirurgicales et les techniques de réinsertion</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-171-rupture-du-tendon-du-biceps-distal">Section 17.1 — Rupture du tendon du biceps distal</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : biceps brachial (2 chefs : long et court) → tendon commun → insertion sur la tubérosité radiale — rôle : flexion du coude (30%) et surtout SUPINATION (40-50%)<br />
+- <strong>Épidémiologie</strong> <em>(Safran &amp; Graham, 2002, Clin Orthop Relat Res)</em> : lésion rare (incidence de 1,2 à 3 pour 100 000), à très nette prédominance masculine (93-98 % des cas), survenant entre 30 et 60 ans, sur le bras dominant ; facteurs de risque identifiés : stéroïdes anabolisants, tabac, sports de force<br />
+- <strong>Mécanisme</strong> : contraction excentrique brutale du biceps (charge lourde en extension résistée, bras qui cède sous la charge) → rupture à l'insertion sur la tubérosité radiale<br />
+- <strong>Diagnostic clinique</strong> :<br />
+  - Craquement brutal, douleur antérieure du coude, ecchymose extensive<br />
+  - Rétraction du corps musculaire en proximal (signe de « Popeye inversé » — déformation)<br />
+  - <strong>Hook test</strong> <em>(O'Driscoll et al., 2007, J Bone Joint Surg Am)</em> : patient en flexion active du coude à 90°, l'examinateur essaie de placer son index sous le tendon du biceps dans la fosse cubitale → impossible si rupture complète (pas de corde tendineuse palpable) — Se 100 %, Sp 100 % (le TEST DIAGNOSTIC)<br />
+  - <strong>Biceps squeeze test</strong> <em>(Ruland et al., 2005, Clin Orthop Relat Res)</em> : compression du corps musculaire du biceps (analogue au test de Thompson pour l'Achille) → normalement : supination passive ; en cas de rupture : absence de supination — Se 96 %<br />
+  - Faiblesse en supination (perte 40-50%) +++, faiblesse en flexion modérée (perte 20-30%)<br />
+- <strong>Imagerie</strong> : IRM (séquence FABS — Flexion-ABduction-Supination view, ou coupe axiale à la tubérosité radiale), échographie dynamique (rétraction, gap)<br />
+- <strong>Traitement</strong> :<br />
+  - Chirurgical (gold standard, urgence RELATIVE — idéalement &lt;3 semaines) : réinsertion anatomique sur la tubérosité radiale par ancres, boutons (endobutton) ou suture transosseuse — voie unique antérieure (Henry) ou double incision (Boyd-Anderson modifiée)<br />
+  - Complications chirurgicales : lésion du nerf interosseux postérieur (NIPA), ossification hétérotopique, synostose radio-ulnaire (double incision)<br />
+  - Non-chirurgical : acceptable chez le patient sédentaire/âgé qui tolère un déficit en supination — cosmétique (déformation) + perte fonctionnelle modérée<br />
+  - Rupture chronique (&gt;6 semaines) : reconstruction par allogreffe tendineuse interposée si les moignons sont rétractés</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND17-S01-001 | 📐 SCHÉMA | Anatomie du biceps — 2 chefs, tendon distal, tubérosité radiale | Schéma annoté |<br />
+| MTEND17-S01-002 | 🎥 VIDÉO | Hook test — normal vs rupture (démonstration clinique) | Vidéo clinique |<br />
+| MTEND17-S01-003 | 🎥 VIDÉO | Biceps squeeze test | Vidéo clinique |<br />
+| MTEND17-S01-004 | 📷 IMAGE | IRM — rupture du biceps distal, vue FABS | Image annotée |<br />
+| MTEND17-S01-005 | 🎥 VIDÉO | Réinsertion du biceps distal — technique endobutton | Vidéo chirurgicale |<br />
+| MTEND17-S01-006 | 📊 INFOGRAPHIE | Algorithme de prise en charge de la rupture du biceps distal | Arbre décisionnel |</p>
+<h3 id="section-172-tendinopathie-du-biceps-proximal-long-biceps">Section 17.2 — Tendinopathie du biceps proximal (long biceps)</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Rappel anatomique</strong> : long biceps (LBT) → tendon intra-articulaire → labrum supérieur (SLAP complex) → gouttière bicipitale → stabilisé par le pulley system (LCH, LGHS, SSC)<br />
+- <strong>Physiopathologie</strong> : la tendinopathie du LBT est rarement isolée → presque toujours associée à une pathologie de la coiffe (rupture SSP/SSC), instabilité du LBT, lésion SLAP<br />
+- <strong>Pathologies</strong> :<br />
+  - Tendinopathie du LBT dans la gouttière : épaississement, ténosynovite<br />
+  - Instabilité/subluxation du LBT : rupture du pulley (SSC) → le LBT sort de la gouttière → douleur, claquement<br />
+  - Lésion SLAP (Superior Labrum Anterior Posterior) : arrachement du labrum supérieur avec ou sans l'insertion du LBT — sportif overhead (lancer, volley)<br />
+  - Rupture du LBT : fréquente, souvent bien tolérée chez le &gt;60 ans (« Popeye sign » = rétraction du muscle vers le bas) → perte fonctionnelle minime (10-20% de perte de supination)<br />
+- <strong>Clinique</strong> : douleur antérieure de l'épaule, gouttière bicipitale, Speed test, Yergason test (cf. Module 5)<br />
+- <strong>Traitement</strong> :<br />
+  - Conservateur : rééducation de la coiffe, AINS, infiltration dans la gaine du biceps (écho-guidée)<br />
+  - Ténodèse du biceps : fixation du tendon en extra-articulaire (gouttière ou sous-pectoral) → indications : instabilité du LBT, tendinopathie chronique récalcitrante, &lt;55 ans actif<br />
+  - Ténotomie du biceps : section simple du tendon intra-articulaire → le tendon se rétracte → Popeye sign cosmétique → acceptable chez le &gt;55 ans peu actif ou les ruptures de coiffe massive associées</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND17-S02-001 | 📐 SCHÉMA | LBT — trajet intra-articulaire, gouttière bicipitale, pulley system | Schéma |<br />
+| MTEND17-S02-002 | 📷 IMAGE | IRM — subluxation du LBT hors de la gouttière (rupture du pulley) | Image annotée |<br />
+| MTEND17-S02-003 | 🎥 VIDÉO | Ténodèse sous-pectorale du biceps — technique | Vidéo chirurgicale |<br />
+| MTEND17-S02-004 | 📷 IMAGE | Aspect clinique — Popeye sign après rupture/ténotomie du LBT | Photo clinique |</p>
+<h3 id="section-173-tendinopathie-et-rupture-du-triceps">Section 17.3 — Tendinopathie et rupture du triceps</h3>
+<p><strong>Contenu obligatoire</strong> :<br />
+- <strong>Anatomie</strong> : triceps brachial (3 chefs : long, médial, latéral) → tendon commun → insertion sur l'olécrane — seul extenseur du coude<br />
+- <strong>Tendinopathie du triceps</strong> : rare, haltérophilie (extension résistée, lockout du bench press/shoulder press), lancer (baseball — phase d'accélération)<br />
+  - Clinique : douleur postérieure du coude, palpation de l'insertion olécranienne, extension résistée douloureuse<br />
+  - Imagerie : échographie, IRM (signal d'enthésopathie, bursite olécranienne associée)<br />
+  - Traitement : repos, excentrique, AINS — rarement chirurgical<br />
+- <strong>Rupture du tendon du triceps</strong> : très rare (rupture tendineuse la moins fréquente), souvent traumatique (chute sur la main, bras en extension), ou iatrogène (infiltration locale), ou sur terrain fragilisé (anabolisants, insuffisance rénale chronique)<br />
+  - Diagnostic : perte de l'extension active du coude, gap palpable postérieur, « flake sign » sur radiographie latérale (petit fragment osseux arraché de l'olécrane)<br />
+  - Traitement : chirurgical si rupture complète (réinsertion) — conservateur si partielle et non rétractée</p>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MTEND17-S03-001 | 📐 SCHÉMA | Anatomie du triceps — 3 chefs, insertion olécranienne | Schéma |<br />
+| MTEND17-S03-002 | 📷 IMAGE | Radiographie — flake sign (rupture du triceps avec avulsion olécranienne) | Cliché annoté |<br />
+| MTEND17-S03-003 | 📊 INFOGRAPHIE | Diagnostic différentiel des douleurs postérieures du coude | Tableau |</p>
+<h3 id="points-cles-du-module-17">Points clés du Module 17</h3>
+<ol>
+<li>Le hook test (Se 100%, Sp 100%) est le test diagnostic de la rupture du biceps distal</li>
+<li>La rupture du biceps distal est une urgence chirurgicale relative (&lt;3 semaines) — perte de 40-50% de la supination si non opérée</li>
+<li>La tendinopathie du long biceps est rarement isolée — rechercher systématiquement une pathologie de la coiffe associée</li>
+<li>Ténodèse &lt; 55 ans actif, ténotomie &gt; 55 ans ou coiffe massive</li>
+<li>La rupture du triceps est la plus rare des ruptures tendineuses — « flake sign » sur radio latérale</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (anatomie, tests cliniques, mécanismes)</li>
+<li>3 QCM Argent (imagerie, indications chirurgicales, ténodèse vs ténotomie)</li>
+<li>2 QCM Or (cas : craquement du coude chez un haltérophile → diagnostic, timing chirurgical)</li>
+<li>1 QCM Diamant (cas : homme 52 ans, douleur épaule + Popeye sign + rupture SSP → quel traitement pour le LBT ?)</li>
+<li>1 QROC : « Comparez la ténodèse et la ténotomie du long biceps : indications, technique, résultats, et complications. »</li>
+</ul>
+<hr />
+<h2 id="references">Références</h2>
+<ul>
+<li>Green DP. Trigger finger. In: Green DP, Hotchkiss RN, Pederson WC, Wolfe SW, eds. <em>Green's Operative Hand Surgery</em>. 5th ed. Philadelphia: Elsevier Churchill Livingstone; 2005:2137-2150.</li>
+<li>O'Driscoll SW, Goncalves LB, Dietz P. The hook test for distal biceps tendon avulsion. <em>Am J Sports Med</em>. 2007;35(11):1865-1869.</li>
+<li>Ruland RT, Dunbar RP, Bowen JD. The biceps squeeze test for diagnosis of distal biceps tendon ruptures. <em>Clin Orthop Relat Res</em>. 2005;(437):128-131.</li>
+<li>Safran MR, Graham SM. Distal biceps tendon ruptures: incidence, demographics, and the effect of smoking. <em>Clin Orthop Relat Res</em>. 2002;(404):275-283.</li>
+</ul>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

@@ -79,13 +79,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && confirm_sesskey()) {
         $coupon = vertex_coupons_create($email, $duration, $fullname, $courses, 'Inscription directe par admin');
         $result = vertex_coupons_redeem($coupon->code, $user->id);
 
-        $msg = $created_user
-            ? "Compte créé et inscrit : {$user->email} (mot de passe : " . ($password ?: 'Vertex2026!') . ")"
-            : "Utilisateur existant inscrit : {$user->email}";
-        $msg .= " — Accès pour {$duration} jours";
+        $actual_password = $password ?: 'Vertex2026!';
 
-        redirect(new moodle_url('/local/vertex_coupons/manage.php'),
-            $msg, null, \core\output\notification::NOTIFY_SUCCESS);
+        redirect(new moodle_url('/local/vertex_coupons/manage.php', [
+            'action' => 'enrolled',
+            'uid' => $user->id,
+            'new' => $created_user ? 1 : 0,
+            'pwd' => base64_encode($actual_password),
+            'days' => $duration,
+        ]), '', null, \core\output\notification::NOTIFY_SUCCESS);
     }
 
     if ($action_post === 'batch_create') {
@@ -106,6 +108,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && confirm_sesskey()) {
         }
         redirect(new moodle_url('/local/vertex_coupons/manage.php'),
             "{$count} coupons créés", null, \core\output\notification::NOTIFY_SUCCESS);
+    }
+
+    if ($action_post === 'send_welcome') {
+        $user_id = required_param('user_id', PARAM_INT);
+        $password = optional_param('password', '', PARAM_RAW);
+        $days = optional_param('days', 30, PARAM_INT);
+
+        $user = $DB->get_record('user', ['id' => $user_id]);
+        if ($user) {
+            $admin = get_admin();
+            $login_url = $CFG->wwwroot . '/login/';
+            $duration_text = $days . ' jours';
+            if ($days == 365) $duration_text = '1 an';
+            if ($days == 180) $duration_text = '6 mois';
+            if ($days == 90) $duration_text = '3 mois';
+
+            $subject = 'VERTEX - Vos identifiants de connexion';
+            $messagetext = "Bonjour " . fullname($user) . ",\n\nVotre compte VERTEX a ete cree.\n\nSite : {$login_url}\nIdentifiant : {$user->username}\nMot de passe : {$password}\nAcces : {$duration_text}\n\nCordialement,\nVERTEX - Formations Medicales";
+            $messagehtml = "<div style='font-family:sans-serif;max-width:600px;margin:0 auto;'><div style='background:#1565C0;padding:25px;text-align:center;border-radius:12px 12px 0 0;'><h1 style='color:white;margin:0;'>VERTEX</h1></div><div style='background:white;padding:30px;border:1px solid #e0e0e0;border-top:none;border-radius:0 0 12px 12px;'><p>Bonjour <strong>" . fullname($user) . "</strong>,</p><p>Votre compte a ete cree sur la plateforme VERTEX.</p><div style='background:#E3F2FD;border:2px solid #1565C0;border-radius:12px;padding:20px;margin:20px 0;'><table style='width:100%;'><tr><td style='padding:5px 0;font-weight:600;'>Site</td><td><a href='{$login_url}'>{$login_url}</a></td></tr><tr><td style='padding:5px 0;font-weight:600;'>Identifiant</td><td><code>{$user->username}</code></td></tr><tr><td style='padding:5px 0;font-weight:600;'>Mot de passe</td><td><code>" . htmlspecialchars($password) . "</code></td></tr><tr><td style='padding:5px 0;font-weight:600;'>Acces</td><td>{$duration_text}</td></tr></table></div><p style='color:#888;font-size:0.9em;'>Cordialement,<br/>VERTEX - Formations Medicales</p></div></div>";
+
+            $sent = email_to_user($user, $admin, $subject, $messagetext, $messagehtml);
+            $msg = $sent ? "Email envoye a {$user->email}" : "Echec d envoi — verifiez la configuration SMTP";
+            $type = $sent ? \core\output\notification::NOTIFY_SUCCESS : \core\output\notification::NOTIFY_ERROR;
+            redirect(new moodle_url('/local/vertex_coupons/manage.php', [
+                'action' => 'enrolled', 'uid' => $user->id, 'new' => 0,
+                'pwd' => base64_encode($password), 'days' => $days,
+            ]), $msg, null, $type);
+        }
     }
 
     if ($action_post === 'send') {
@@ -394,6 +424,61 @@ specialiste@cabinet.fr"></textarea></div>';
 
     echo '<button type="submit" class="vertex-btn vertex-btn-primary">Créer les coupons</button>';
     echo '</form></div>';
+}
+
+// === ONGLET : CONFIRMATION INSCRIPTION ===
+if ($action === 'enrolled') {
+    $uid = required_param('uid', PARAM_INT);
+    $is_new = optional_param('new', 0, PARAM_INT);
+    $pwd_b64 = optional_param('pwd', '', PARAM_RAW);
+    $days = optional_param('days', 30, PARAM_INT);
+    $actual_pwd = base64_decode($pwd_b64);
+
+    $user = $DB->get_record('user', ['id' => $uid]);
+
+    if ($user) {
+        $duration_text = $days . ' jours';
+        if ($days == 365) $duration_text = '1 an';
+        if ($days == 180) $duration_text = '6 mois';
+        if ($days == 90) $duration_text = '3 mois';
+
+        echo '<div class="vertex-card" style="text-align: center;">';
+        echo '<h3 style="border: none; color: #2E7D32;">Inscription reussie</h3>';
+
+        echo '<div style="background: #E8F5E9; border: 2px solid #2E7D32; border-radius: 12px; padding: 25px; margin: 20px auto; max-width: 500px; text-align: left;">';
+        echo '<table style="width:100%;">';
+        echo '<tr><td style="padding:6px 0;font-weight:600;width:40%;">Nom</td><td>' . fullname($user) . '</td></tr>';
+        echo '<tr><td style="padding:6px 0;font-weight:600;">Email</td><td>' . $user->email . '</td></tr>';
+        echo '<tr><td style="padding:6px 0;font-weight:600;">Identifiant</td><td><code>' . $user->username . '</code></td></tr>';
+        if ($is_new && $actual_pwd) {
+            echo '<tr><td style="padding:6px 0;font-weight:600;">Mot de passe</td><td><code>' . htmlspecialchars($actual_pwd) . '</code></td></tr>';
+        }
+        echo '<tr><td style="padding:6px 0;font-weight:600;">Acces</td><td>' . $duration_text . ' (toutes les formations)</td></tr>';
+        echo '<tr><td style="padding:6px 0;font-weight:600;">Expiration</td><td>' . date('d/m/Y', time() + $days * 86400) . '</td></tr>';
+        echo '</table>';
+        echo '</div>';
+
+        // Boutons
+        $login_url = $CFG->wwwroot . '/login/';
+        $copy_msg = "Bonjour " . fullname($user) . ",\\n\\nVotre compte VERTEX a ete cree :\\n\\nSite : {$login_url}\\nIdentifiant : {$user->username}\\nMot de passe : " . addslashes($actual_pwd) . "\\nAcces : {$duration_text}\\n\\nCordialement,\\nVERTEX";
+
+        echo '<div style="margin-top: 20px;">';
+        echo "<button onclick=\"navigator.clipboard.writeText('" . $copy_msg . "'.replace(/\\\\n/g, '\\n')); this.textContent='Copie !'; this.style.background='#2E7D32';\" class='vertex-btn vertex-btn-primary' style='margin:5px;'>Copier les identifiants</button>";
+
+        // Bouton envoyer par email
+        echo "<form method='post' style='display:inline-block; margin:5px;'>";
+        echo "<input type='hidden' name='sesskey' value='" . sesskey() . "'>";
+        echo "<input type='hidden' name='formaction' value='send_welcome'>";
+        echo "<input type='hidden' name='user_id' value='{$user->id}'>";
+        echo "<input type='hidden' name='password' value='" . htmlspecialchars($actual_pwd) . "'>";
+        echo "<input type='hidden' name='days' value='{$days}'>";
+        echo "<button type='submit' class='vertex-btn' style='background:#E65100;color:white;margin:5px;'>Envoyer par email</button>";
+        echo "</form>";
+        echo '</div>';
+
+        echo '<p style="margin-top: 20px;"><a href="?action=direct">Inscrire un autre praticien</a> &middot; <a href="?action=list">Voir les coupons</a></p>';
+        echo '</div>';
+    }
 }
 
 echo '</div>'; // .vertex-admin

@@ -1,0 +1,639 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-des-charges-formation-obesite-et-orthopedie">CAHIER DES CHARGES — FORMATION OBÉSITÉ ET ORTHOPÉDIE</h1>
+<h2 id="partie-2-traitement-de-lobesite-modules-6-9">Partie 2 — Traitement de l'obésité (Modules 6-9)</h2>
+<p><strong>Date</strong> : 10 mars 2026<br />
+<strong>Version</strong> : 1.0<br />
+<strong>Formation</strong> : Obésité et Orthopédie<br />
+<strong>Plateforme</strong> : VERTEX©</p>
+<hr />
+<h1 id="module-6-prise-en-charge-nutritionnelle-et-dietetique-regimes-deficits-caloriques-micronutriments">MODULE 6 : PRISE EN CHARGE NUTRITIONNELLE ET DIÉTÉTIQUE — RÉGIMES, DÉFICITS CALORIQUES, MICRONUTRIMENTS</h1>
+<p><strong>Partie</strong> : II — Traitement de l'obésité<br />
+<strong>Durée estimée</strong> : 3h00<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-5</p>
+<h2 id="accroche-clinique">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 48 ans, IMC 39, est programmé pour une PTG dans 4 mois. L'équipe décide de proposer un programme d'amaigrissement préopératoire. Le patient a déjà essayé « tous les régimes » — Dukan, cétogène, jeûne intermittent — avec à chaque fois une reprise de poids. *Quel régime prescrire ? Existe-t-il des données probantes en faveur d'un régime particulier ? Comment éviter les carences nutritionnelles qui compromettraient la cicatrisation osseuse et tendineuse ?*</div>
+
+<h2 id="objectifs-dapprentissage">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> un déficit calorique adapté et réaliste (500-1000 kcal/jour) en tenant compte des besoins du patient orthopédique</li>
+<li><strong>Comparer</strong> les principales stratégies diététiques (méditerranéen, hypocalorique équilibré, hyperprotéiné, cétogène, jeûne intermittent) et leur niveau de preuve</li>
+<li><strong>Identifier</strong> les carences nutritionnelles fréquentes chez l'obèse (vitamine D, fer, B12, protéines) et leur impact sur la chirurgie orthopédique</li>
+<li><strong>Organiser</strong> un suivi nutritionnel en collaboration avec un diététicien/nutritionniste</li>
+<li><strong>Adapter</strong> la nutrition périopératoire du patient obèse (pré-habilitation nutritionnelle)</li>
+</ol>
+<h2 id="structure-du-contenu">Structure du contenu</h2>
+<h3 id="section-61-principes-de-la-prise-en-charge-nutritionnelle-de-lobesite">Section 6.1 — Principes de la prise en charge nutritionnelle de l'obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Balance énergétique négative</strong> : seul principe universel pour la perte de poids — réduire les apports caloriques et/ou augmenter la dépense énergétique ; déficit recommandé de 500-1000 kcal/jour pour une perte de 0,5-1 kg/semaine (HAS, recommandations 2011 ; NICE, 2014)</li>
+<li><strong>Métabolisme de base</strong> : environ 20-25 kcal/kg de poids idéal/jour chez le sédentaire ; l'obèse a un métabolisme de base absolu plus élevé (masse métaboliquement active + masse grasse) mais un rapport métabolisme/poids corporel plus faible</li>
+<li><strong>Estimation des besoins</strong> : formule de Harris-Benedict, formule de Mifflin-St Jeor (plus précise chez l'obèse), calorimétrie indirecte (gold standard, rarement disponible en pratique)</li>
+<li><strong>Répartition des macronutriments</strong> : apports protéiques suffisants (1,0-1,5 g/kg de poids idéal/jour) pour préserver la masse musculaire pendant la perte de poids ; protéines d'autant plus importants chez le patient orthopédique (cicatrisation, reconstruction) ; les recommandations françaises (ANSES) préconisent 15-20% de protéines, 30-35% de lipides, 45-55% de glucides</li>
+<li><strong>Aliments ultra-transformés</strong> : réduction voire suppression — remplacement par des aliments bruts, peu transformés, riches en fibres</li>
+<li><strong>Hydratation</strong> : 1,5-2 L/jour minimum, plus en périopératoire</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO06-S01-001 | 📊 INFOGRAPHIE | Principes de la perte de poids — déficit calorique, répartition des macronutriments, hydratation | Infographie fondamentale |<br />
+| MOBO06-S01-002 | 📐 SCHÉMA | Calcul des besoins énergétiques — Mifflin-St Jeor, poids idéal vs poids réel | Schéma calculatoire |<br />
+| MOBO06-S01-003 | 📊 INFOGRAPHIE | Pyramide alimentaire adaptée au patient obèse préopératoire | Pyramide modifiée |</p>
+<h3 id="section-62-strategies-dietetiques-donnees-de-la-litterature">Section 6.2 — Stratégies diététiques : données de la littérature</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Régime hypocalorique équilibré</strong> : réduction calorique modérée avec maintien de tous les groupes alimentaires — approche de référence recommandée par la HAS (2011) et les guidelines européennes (EASO, 2015) ; perte de poids modeste (environ 5-10% à 6 mois) mais maintien à long terme possible si adhésion</li>
+<li><strong>Régime méditerranéen</strong> : riche en fruits, légumes, légumineuses, poisson, huile d'olive, pauvre en viande rouge et aliments transformés ; bénéfices cardiovasculaires établis (Estruch et al., <em>N Engl J Med</em>, 2013 — étude PREDIMED) ; efficacité comparable voire supérieure aux régimes pauvres en graisses pour la perte de poids et les marqueurs métaboliques</li>
+<li><strong>Régime hyperprotéiné</strong> : protéines représentant 25-35% des apports caloriques ; préservation de la masse musculaire pendant la perte de poids (Wycherley et al., <em>Am J Clin Nutr</em>, 2012) ; potentiellement intéressant chez le patient orthopédique préopératoire ; surveillance rénale nécessaire</li>
+<li><strong>Régime cétogène (très faible en glucides, VLCD)</strong> : glucides &lt; 50 g/jour, cétose nutritionnelle ; perte de poids rapide à court terme mais adhésion à long terme difficile ; risque de carence en fibres, micronutriments ; données insuffisantes sur la sécurité à long terme ; peut être proposé en phase d'amaigrissement pré-bariatrique rapide (régime « yaourt » de 2 semaines)</li>
+<li><strong>Jeûne intermittent</strong> : restriction temporelle (16:8, 5:2) ; données émergentes sur les bénéfices métaboliques mais pas de supériorité établie par rapport au déficit calorique continu pour la perte de poids (de Cabo &amp; Mattson, <em>N Engl J Med</em>, 2019)</li>
+<li><strong>Message-clé</strong> : la méta-analyse de Johnston et al. (<em>JAMA</em>, 2014) portant sur de nombreux essais randomisés montre que la différence de perte de poids entre les différents régimes est cliniquement modeste — l'adhésion au régime est le facteur le plus prédictif du résultat, plus que la composition du régime elle-même</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO06-S02-001 | 📊 INFOGRAPHIE | Comparaison des stratégies diététiques — efficacité, adhésion, risques, niveau de preuve | Tableau comparatif |<br />
+| MOBO06-S02-002 | 📐 SCHÉMA | Régime méditerranéen — composition, pyramide, bénéfices cardiovasculaires et articulaires | Schéma alimentaire |<br />
+| MOBO06-S02-003 | 📐 SCHÉMA | Régime cétogène — mécanisme de la cétose, avantages et inconvénients | Schéma métabolique |</p>
+<h3 id="section-63-carences-nutritionnelles-chez-lobese-et-impact-orthopedique">Section 6.3 — Carences nutritionnelles chez l'obèse et impact orthopédique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Paradoxe nutritionnel de l'obésité</strong> : l'obèse est en excès calorique global mais peut être carencé en micronutriments — alimentation déséquilibrée, riche en calories vides, pauvre en nutriments essentiels (Via, <em>Curr Obes Rep</em>, 2012)</li>
+<li><strong>Vitamine D</strong> : carence fréquente chez l'obèse (prévalence estimée 60-80%), lié à la séquestration dans le tissu adipeux (Wortsman et al., <em>Am J Clin Nutr</em>, 2000) ; la vitamine D est essentielle pour la consolidation osseuse, l'immunité innée (risque infectieux), la fonction musculaire ; supplémentation recommandée : doses plus élevées chez l'obèse (posologies souvent doublées pour atteindre un taux de 25-OH vitamine D ≥ 30 ng/mL)</li>
+<li><strong>Fer</strong> : carence fréquente (environ 30-40% des obèses), liée à l'inflammation chronique (hepcidine ↑, séquestration du fer) et à l'alimentation pauvre en fer héminique ; peut entraîner une anémie périopératoire — optimisation par supplémentation orale ou IV</li>
+<li><strong>Vitamine B12 et folates</strong> : carences surtout post-bariatrique (malabsorption après bypass) mais aussi chez l'obèse non opéré (alimentation déséquilibrée, metformine — cause de carence en B12)</li>
+<li><strong>Protéines</strong> : apport souvent insuffisant en termes de qualité (excès de protéines animales grasses) ; la sarcopénie de l'obèse est aggravée par le déficit protéique ; l'apport préopératoire doit cibler 1,2-1,5 g/kg de poids idéal/jour</li>
+<li><strong>Calcium</strong> : absorption diminuée en cas de carence en vitamine D ; supplémentation systématique post-bariatrique</li>
+<li><strong>Impact orthopédique des carences</strong> : retard de consolidation fracturaire (vitamine D, calcium, protéines), risque infectieux accru (vitamine D, fer), cicatrisation cutanée compromise (protéines, zinc, vitamine C), anémie périopératoire nécessitant des transfusions</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO06-S03-001 | 📊 INFOGRAPHIE | Carences nutritionnelles de l'obèse — prévalence, mécanismes, conséquences orthopédiques | Tableau intégratif |<br />
+| MOBO06-S03-002 | 📐 SCHÉMA | Métabolisme de la vitamine D chez l'obèse — séquestration, doses adaptées | Schéma pharmacologique |<br />
+| MOBO06-S03-003 | 📐 SCHÉMA | Impact des carences sur la chirurgie orthopédique — consolidation, infection, cicatrisation | Schéma en réseau |</p>
+<h3 id="section-64-nutrition-perioperatoire-pre-habilitation-nutritionnelle">Section 6.4 — Nutrition périopératoire : pré-habilitation nutritionnelle</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Concept de pré-habilitation nutritionnelle</strong> : optimisation de l'état nutritionnel avant chirurgie élective pour améliorer les résultats — concept intégré dans les protocoles RAAC/ERAS</li>
+<li><strong>Protocole pré-opératoire</strong> :</li>
+<li>J-90 à J-30 : évaluation nutritionnelle complète (bilan biologique + consultation diététique), correction des carences, régime hyperprotéiné modérément hypocalorique</li>
+<li>J-14 : régime très basses calories (VLCD) type « régime yaourt » — désinfiltration hépatique (réduction du volume hépatique de 15-20%, utile surtout en chirurgie bariatrique mais aussi en chirurgie rachidienne antérieure), perte de poids rapide de 3-5 kg</li>
+<li>J-1 : charge glucidique orale (CHO) selon les protocoles RAAC (réduction de l'insulinorésistance postopératoire)</li>
+<li><strong>Nutrition postopératoire</strong> : reprise alimentaire précoce (J0 si possible), alimentation hyperprotéinée, supplémentation en vitamine D et fer, compléments nutritionnels oraux si nécessaire</li>
+<li><strong>Immunonutrition</strong> : arginine, oméga-3, nucléotides — preuves limitées mais certaines études suggèrent un bénéfice sur le risque infectieux en chirurgie major (Braga et al., <em>Arch Surg</em>, 2002) — données extrapolées de la chirurgie digestive, applicabilité en orthopédie encore faible</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO06-S04-001 | 📐 SCHÉMA | Protocole de pré-habilitation nutritionnelle — chronologie J-90 à J+30 | Timeline opératoire |<br />
+| MOBO06-S04-002 | 📊 INFOGRAPHIE | Checklist nutritionnelle préopératoire — bilans, supplémentations, régime | Checklist clinique |</p>
+<h3 id="points-cles-du-module-6">Points clés du Module 6</h3>
+<ol>
+<li>Le seul principe universel de perte de poids est le déficit calorique — 500-1000 kcal/jour pour une perte de 0,5-1 kg/semaine</li>
+<li>L'adhésion au régime est plus importante que sa composition — aucun régime n'est clairement supérieur à long terme</li>
+<li>Le régime méditerranéen combine bénéfices pondéraux et cardiovasculaires</li>
+<li>L'obèse est paradoxalement souvent carencé en micronutriments (vitamine D, fer, B12, protéines)</li>
+<li>La carence en vitamine D touche 60-80% des obèses et impacte directement les résultats orthopédiques</li>
+<li>L'apport protéique doit cibler 1,2-1,5 g/kg de poids idéal/jour en périopératoire</li>
+<li>La pré-habilitation nutritionnelle fait partie intégrante des protocoles RAAC chez l'obèse</li>
+<li>Le « régime yaourt » pré-opératoire (2 semaines de VLCD) réduit le volume hépatique — utile en chirurgie bariatrique et rachidienne</li>
+</ol>
+<h3 id="auto-evaluation">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (déficit calorique recommandé, carences fréquentes, apport protéique cible)</li>
+<li>3 QCM Argent (comparaison des régimes, vitamine D chez l'obèse, pré-habilitation nutritionnelle)</li>
+<li>2 QCM Or (programme nutritionnel préopératoire complet, gestion des carences post-bariatrique)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 42, carencé en fer et vitamine D, programmé PTG dans 3 mois — programme nutritionnel complet intégrant ses comorbidités)</li>
+<li>1 QROC : « Pourquoi l'obésité est-elle paradoxalement associée à des carences nutritionnelles, et comment ces carences impactent-elles les résultats de la chirurgie orthopédique ? »</li>
+</ul>
+<hr />
+<h1 id="module-7-activite-physique-et-therapie-comportementale-programmes-adaptes-aspects-psychologiques">MODULE 7 : ACTIVITÉ PHYSIQUE ET THÉRAPIE COMPORTEMENTALE — PROGRAMMES ADAPTÉS, ASPECTS PSYCHOLOGIQUES</h1>
+<p><strong>Partie</strong> : II — Traitement de l'obésité<br />
+<strong>Durée estimée</strong> : 2h30<br />
+<strong>Niveau</strong> : Fondamental → Intermédiaire<br />
+<strong>Prérequis</strong> : Modules 1-6</p>
+<h2 id="accroche-clinique_1">Accroche clinique</h2>
+<div class="vertex-accroche">Une patiente de 54 ans, IMC 37, gonarthrose bilatérale, vous dit : « Je ne peux pas faire de sport, docteur, j'ai trop mal aux genoux. » Son kiné confirme que la marche au-delà de 15 minutes lui est douloureuse. Son IMC la place dans la zone d'augmentation de risque pour l'arthroplastie. *Comment prescrire une activité physique chez un patient obèse qui a des limitations articulaires ? Comment briser le cercle vicieux douleur-inactivité-prise de poids ?*</div>
+
+<h2 id="objectifs-dapprentissage_1">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Prescrire</strong> un programme d'activité physique adaptée (APA) chez l'obèse avec limitations articulaires</li>
+<li><strong>Expliquer</strong> les bénéfices de l'activité physique sur la perte de poids, l'inflammation, l'arthrose et les résultats chirurgicaux</li>
+<li><strong>Identifier</strong> les principes de la thérapie comportementale et cognitivo-comportementale (TCC) appliqués à l'obésité</li>
+<li><strong>Comprendre</strong> les aspects psychologiques de l'obésité (motivation, image corporelle, estime de soi)</li>
+<li><strong>Organiser</strong> un programme de pré-habilitation physique avant chirurgie orthopédique</li>
+</ol>
+<h2 id="structure-du-contenu_1">Structure du contenu</h2>
+<h3 id="section-71-activite-physique-et-obesite-donnees-de-la-litterature">Section 7.1 — Activité physique et obésité : données de la littérature</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Recommandations OMS (2020)</strong> : au minimum 150-300 min/semaine d'activité d'intensité modérée, ou 75-150 min d'activité vigoureuse ; renforcement musculaire ≥ 2 fois/semaine ; réduction du temps sédentaire</li>
+<li><strong>Activité physique et perte de poids</strong> : l'exercice seul produit une perte de poids modeste (environ 2-3 kg en moyenne sans restriction alimentaire) mais les bénéfices métaboliques et fonctionnels sont considérables ; l'exercice est essentiel pour le maintien de la perte de poids à long terme (Donnelly et al., <em>Med Sci Sports Exerc</em>, 2009)</li>
+<li><strong>Bénéfices anti-inflammatoires</strong> : l'exercice régulier réduit les marqueurs inflammatoires (CRP, IL-6, TNF-α) indépendamment de la perte de poids — effet anti-inflammatoire propre de la contraction musculaire (sécrétion de myokines anti-inflammatoires : IL-10, IL-1ra) (Pedersen, <em>J Physiol</em>, 2009)</li>
+<li><strong>Bénéfices sur l'arthrose</strong> : le renforcement musculaire périarticulaire (quadriceps pour le genou, glutéaux pour la hanche) réduit la douleur et améliore la fonction même sans perte de poids significative (Fransen et al., Cochrane, 2015)</li>
+<li><strong>Pré-habilitation</strong> : les programmes d'exercices préopératoires sont associés dans les méta-analyses à une réduction de la durée de séjour et une amélioration de la récupération fonctionnelle après arthroplastie (Moyer et al., <em>JBJS Am</em>, 2017)</li>
+<li><strong>Cercle vicieux</strong> : douleur articulaire → inactivité → prise de poids → surcharge articulaire → douleur — l'APA vise à rompre ce cercle</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO07-S01-001 | 📐 SCHÉMA | Cercle vicieux douleur-inactivité-prise de poids — et comment le rompre | Schéma circulaire |<br />
+| MOBO07-S01-002 | 📊 INFOGRAPHIE | Bénéfices de l'activité physique chez l'obèse — pondéraux, métaboliques, articulaires, psychologiques | Infographie multi-volets |<br />
+| MOBO07-S01-003 | 📐 SCHÉMA | Myokines anti-inflammatoires — sécrétion musculaire, effets systémiques | Schéma physiologique |</p>
+<h3 id="section-72-programmes-dactivite-physique-adaptee-apa-pour-le-patient-obese-avec-limitations-articulaires">Section 7.2 — Programmes d'activité physique adaptée (APA) pour le patient obèse avec limitations articulaires</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Évaluation initiale</strong> : test de marche de 6 minutes, évaluation des capacités articulaires, évaluation cardiovasculaire (test d'effort si nécessaire), contre-indications (insuffisance cardiaque décompensée, arthrose en poussée aiguë)</li>
+<li><strong>Activités en décharge</strong> :</li>
+<li><strong>Balnéothérapie / aquagym</strong> : réduction de 50% du poids apparent dans l'eau (flottabilité), exercice cardiovasculaire et musculaire avec impact articulaire minimal — idéal pour l'obèse avec gonarthrose/coxarthrose ; les données publiées montrent une amélioration de la fonction et de la douleur articulaire (Lu et al., <em>Clin Rehabil</em>, 2015)</li>
+<li><strong>Vélo d'appartement / cycloergomètre</strong> : faible impact articulaire, bon exercice cardiovasculaire, charge adaptable</li>
+<li><strong>Exercices en position assise ou semi-allongée</strong> : renforcement musculaire avec bandes élastiques, haltères légers</li>
+<li><strong>Renforcement musculaire ciblé</strong> :</li>
+<li>Quadriceps (gonarthrose) : exercices isométriques, squats partiels contre un mur, leg press</li>
+<li>Glutéaux (coxarthrose) : clamshells, ponts fessiers, abductions de hanche</li>
+<li>Core / gainage : stabilisation rachidienne, réduction de la lombalgie</li>
+<li><strong>Progression</strong> : démarrer à faible intensité, augmenter progressivement (principe de surcharge progressive) ; fréquence cible : 3-5 séances/semaine ; durée : démarrer à 15-20 min et progresser vers 45-60 min</li>
+<li><strong>Encadrement</strong> : idéalement par un enseignant en APA (licence STAPS parcours APA), un kinésithérapeute spécialisé ou un éducateur médico-sportif ; programme personnalisé et supervisé initialement</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO07-S02-001 | 🎬 ANIMATION | Programme d'APA pour l'obèse avec gonarthrose — exercices en décharge et renforcement | Vidéo d'exercices |<br />
+| MOBO07-S02-002 | 📊 INFOGRAPHIE | Progression d'un programme d'APA — semaines 1% à 12% | Planning progressif |<br />
+| MOBO07-S02-003 | 📷 IMAGE | Balnéothérapie chez l'obèse — exercices en piscine avec support thérapeutique | Photo clé |</p>
+<h3 id="section-73-therapie-comportementale-et-cognitivo-comportementale-tcc">Section 7.3 — Thérapie comportementale et cognitivo-comportementale (TCC)</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Principes de la TCC appliquée à l'obésité</strong> : identification des pensées automatiques dysfonctionnelles (« je n'y arriverai jamais », « un écart = un échec total »), restructuration cognitive, gestion du stress et des émotions sans recours à l'alimentation</li>
+<li><strong>Techniques comportementales</strong> : auto-monitoring (journal alimentaire, application de suivi), contrôle du stimulus (ne pas stocker d'aliments tentants), gestion des portions, manger en pleine conscience (<em>mindful eating</em>)</li>
+<li><strong>Entretien motivationnel</strong> : technique de Rogers et Miller (1983) — explorer l'ambivalence, renforcer la motivation intrinsèque, respecter l'autonomie du patient ; les données de la littérature montrent une efficacité modeste sur la perte de poids (environ 1,5 kg de plus que le contrôle à 12 mois) mais un impact significatif sur l'adhésion thérapeutique (Armstrong et al., <em>Obes Rev</em>, 2011)</li>
+<li><strong>Gestion de l'image corporelle</strong> : le patient obèse a souvent une image corporelle négative, source de souffrance et d'évitement social ; l'approche thérapeutique doit intégrer la réhabilitation de l'image de soi</li>
+<li><strong>Prévention de la rechute</strong> : identification des situations à risque (stress, émotions, événements sociaux), stratégies de coping, acceptation des "écarts" sans catastrophisme</li>
+<li><strong>Place de la TCC dans le parcours pré-chirurgical</strong> : l'évaluation et la prise en charge psychologique sont recommandées (HAS, 2009) avant chirurgie bariatrique ; en pré-arthroplastie, la TCC peut améliorer l'adhésion au programme d'optimisation préopératoire</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO07-S03-001 | 📐 SCHÉMA | Modèle cognitivo-comportemental de l'obésité — situation → pensée → émotion → comportement | Schéma TCC |<br />
+| MOBO07-S03-002 | 📊 INFOGRAPHIE | Entretien motivationnel — principes OARS (Open questions, Affirming, Reflecting, Summarizing) | Infographie pratique |<br />
+| MOBO07-S03-003 | 📐 SCHÉMA | Stratégies de prévention de la rechute pondérale — identification des situations à risque | Schéma comportemental |</p>
+<h3 id="points-cles-du-module-7">Points clés du Module 7</h3>
+<ol>
+<li>L'activité physique procure des bénéfices métaboliques, anti-inflammatoires et articulaires majeurs, même sans perte de poids significative</li>
+<li>Les activités en décharge (balnéothérapie, vélo) sont idéales pour l'obèse avec limitations articulaires</li>
+<li>Le renforcement musculaire périarticulaire réduit la douleur arthrosique indépendamment du poids</li>
+<li>La pré-habilitation physique préopératoire améliore la récupération après arthroplastie</li>
+<li>La TCC aide à modifier les comportements alimentaires en agissant sur les pensées dysfonctionnelles</li>
+<li>L'entretien motivationnel est un outil essentiel pour renforcer l'adhésion thérapeutique</li>
+<li>Le cercle vicieux douleur-inactivité-prise de poids doit être activement rompu</li>
+<li>La prise en charge psychologique est recommandée dans le parcours pré-chirurgical</li>
+</ol>
+<h3 id="auto-evaluation_1">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (recommandations OMS, bénéfices de l'exercice, activités en décharge)</li>
+<li>3 QCM Argent (myokines anti-inflammatoires, pré-habilitation, principes TCC)</li>
+<li>2 QCM Or (programme d'APA avec gonarthrose sévère, entretien motivationnel)</li>
+<li>1 QCM Diamant (cas clinique : patiente obèse dépressive, refusant l'exercice, programmée PTG — stratégie d'engagement multidimensionnelle)</li>
+<li>1 QROC : « Décrivez un programme de pré-habilitation physique de 12 semaines pour un patient obèse (IMC 38) avec gonarthrose bilatérale programmé pour une PTG. »</li>
+</ul>
+<hr />
+<h1 id="module-8-pharmacotherapie-de-lobesite-des-suppresseurs-dappetit-aux-agonistes-glp-1">MODULE 8 : PHARMACOTHÉRAPIE DE L'OBÉSITÉ — DES SUPPRESSEURS D'APPÉTIT AUX AGONISTES GLP-1</h1>
+<p><strong>Partie</strong> : II — Traitement de l'obésité<br />
+<strong>Durée estimée</strong> : 3h30<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-7</p>
+<h2 id="accroche-clinique_2">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 52 ans, IMC 41, DT2 traité par metformine, est programmé pour une PTG dans 6 mois. Son endocrinologue propose l'introduction de sémaglutide (Wegovy® / Ozempic®) pour obtenir une perte de poids substantielle avant la chirurgie. En 12 semaines, le patient perd 11 kg. *Comment fonctionnent les agonistes GLP-1 ? Quels sont les effets sur la masse musculaire et osseuse ? Faut-il arrêter le traitement avant la chirurgie orthopédique (risque d'aspiration gastrique) ? Quels sont les autres médicaments anti-obésité disponibles ?*</div>
+
+<h2 id="objectifs-dapprentissage_2">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Classer</strong> les médicaments anti-obésité par mécanisme d'action (GLP-1, GLP-1/GIP, inhibiteurs de l'absorption, anorexigènes centraux)</li>
+<li><strong>Prescrire</strong> les agonistes GLP-1 (sémaglutide, liraglutide, tirzépatide) en connaissant les indications, contre-indications, posologies et effets secondaires</li>
+<li><strong>Évaluer</strong> l'efficacité des traitements pharmacologiques sur la perte de poids et les comorbidités métaboliques</li>
+<li><strong>Analyser</strong> les implications périopératoires des médicaments anti-obésité (vidange gastrique retardée, masse musculaire)</li>
+<li><strong>Intégrer</strong> la pharmacothérapie dans la stratégie globale d'optimisation pondérale pré-chirurgicale</li>
+</ol>
+<h2 id="structure-du-contenu_2">Structure du contenu</h2>
+<h3 id="section-81-historique-et-evolution-de-la-pharmacotherapie-anti-obesite">Section 8.1 — Historique et évolution de la pharmacothérapie anti-obésité</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Historique des échecs</strong> : les amphétamines (1930-1970), la fenfluramine (retirée 1997, valvulopathie), le rimonabant (retiré 2008, dépression/suicide), la sibutramine (retirée 2010, risque cardiovasculaire) — l'histoire de la pharmacothérapie de l'obésité est jalonnée de retraits pour effets secondaires graves</li>
+<li><strong>Médicaments actuels autorisés</strong> (état 2024-2025) :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Molécule</th>
+<th>Nom commercial</th>
+<th>Mécanisme</th>
+<th>Perte de poids moyenne</th>
+<th>Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orlistat</strong></td>
+<td>Xenical® / Alli®</td>
+<td>Inhibiteur de lipases pancréatiques (↓ absorption des graisses de 30%)</td>
+<td>~3-4% vs placebo</td>
+<td>AMM France (disponible depuis 1999)</td>
+</tr>
+<tr>
+<td><strong>Naltrexone/bupropion</strong></td>
+<td>Mysimba®</td>
+<td>Antagoniste opioïde + inhibiteur recapture NA/DA (↓ appétit)</td>
+<td>~5-6% vs placebo</td>
+<td>AMM Europe</td>
+</tr>
+<tr>
+<td><strong>Liraglutide 3 mg</strong></td>
+<td>Saxenda®</td>
+<td>Agoniste GLP-1 (satiété, vidange gastrique ralentie)</td>
+<td>~5-8% vs placebo</td>
+<td>AMM Europe, SC quotidienne</td>
+</tr>
+<tr>
+<td><strong>Sémaglutide 2,4 mg</strong></td>
+<td>Wegovy®</td>
+<td>Agoniste GLP-1 de longue durée</td>
+<td>~12-15% vs placebo</td>
+<td>AMM Europe, SC hebdomadaire</td>
+</tr>
+<tr>
+<td><strong>Tirzépatide</strong></td>
+<td>Mounjaro® / Zepbound®</td>
+<td>Double agoniste GLP-1/GIP</td>
+<td>~18-22% vs placebo</td>
+<td>AMM en cours en Europe pour l'obésité ; AMM DT2 (Mounjaro®)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Révolution GLP-1</strong> : les agonistes du GLP-1 ont transformé le traitement de l'obésité — efficacité sans précédent, profil de sécurité favorable, bénéfices cardiovasculaires démontrés (essai SELECT, <em>N Engl J Med</em>, 2023 — sémaglutide réduit les événements cardiovasculaires majeurs chez les patients obèses non diabétiques)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO08-S01-001 | 📊 INFOGRAPHIE | Chronologie des médicaments anti-obésité — échecs et révolution GLP-1 | Timeline historique |<br />
+| MOBO08-S01-002 | 📊 INFOGRAPHIE | Comparaison des traitements actuels — mécanisme, efficacité, effets secondaires | Tableau synthétique |</p>
+<h3 id="section-82-agonistes-glp-1-et-double-agonistes-glp-1gip-pharmacologie-et-donnees-cliniques">Section 8.2 — Agonistes GLP-1 et double agonistes GLP-1/GIP : pharmacologie et données cliniques</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>GLP-1 physiologique</strong> : hormone incrétine sécrétée par les cellules L de l'iléon en réponse à l'ingestion alimentaire ; effets : stimulation sécrétion d'insuline (glucose-dépendante), inhibition du glucagon, ralentissement de la vidange gastrique, satiété centrale (hypothalamus) ; demi-vie très courte (2-3 minutes) — dégradée par la DPP-4</li>
+<li><strong>Sémaglutide (Wegovy® 2,4 mg SC/semaine)</strong> :</li>
+<li>Essai STEP 1 (Wilding et al., <em>N Engl J Med</em>, 2021) : étude randomisée en double aveugle, environ 1 900 participants, perte de poids moyenne d'environ 15% à 68 semaines (vs environ 2% placebo) — résultat historique</li>
+<li>Essai SELECT (Lincoff et al., <em>N Engl J Med</em>, 2023) : réduction d'environ 20% du risque d'événements cardiovasculaires majeurs (MACE) chez les patients obèses non diabétiques</li>
+<li>Effets secondaires : nausées (40-50%, dose-dépendantes, s'atténuent), vomissements, diarrhée, constipation ; risque de pancréatite (rare) ; cholélithiase (~2%) ; perte de masse musculaire (30-40% de la perte de poids totale est de la masse maigre)</li>
+<li><strong>Tirzépatide (Mounjaro® / Zepbound®)</strong> :</li>
+<li>Double agoniste GLP-1 et GIP — le GIP (peptide insulinotrope glucose-dépendant) potentialise l'effet du GLP-1 sur la satiété et le métabolisme</li>
+<li>Essai SURMOUNT-1 (Jastreboff et al., <em>N Engl J Med</em>, 2022) : perte de poids moyenne d'environ 21% à la dose de 15 mg à 72 semaines — la plus importante jamais rapportée pour un médicament anti-obésité</li>
+<li>Profil de sécurité similaire au sémaglutide ; effets GI fréquents mais transitoires</li>
+<li><strong>Pipeline</strong> : survodutide (triple agoniste GLP-1/glucagon/GIP), orforglipron (agoniste GLP-1 oral), amycréatine (agoniste AMY/CGRP) — prochaine génération de médicaments anti-obésité</li>
+<li><strong>Sémaglutide oral (Rybelsus®)</strong> : forme orale du sémaglutide pour le DT2 ; dose anti-obésité en cours de développement (essai OASIS)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO08-S02-001 | 🎬 ANIMATION | Mécanisme d'action du GLP-1 — sécrétion, récepteurs, effets centraux et périphériques | Animation pharmacologique clé |<br />
+| MOBO08-S02-002 | 📊 INFOGRAPHIE | Résultats des essais STEP 1 et SURMOUNT-1 — courbes de perte de poids | Graphiques adaptés |<br />
+| MOBO08-S02-003 | 📐 SCHÉMA | Double agonisme GLP-1/GIP du tirzépatide — mécanisme et synergie | Schéma pharmacologique |<br />
+| MOBO08-S02-004 | 📊 INFOGRAPHIE | Pipeline des médicaments anti-obésité — molécules en développement | Timeline future |</p>
+<h3 id="section-83-implications-perioperatoires-des-agonistes-glp-1">Section 8.3 — Implications périopératoires des agonistes GLP-1</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Vidange gastrique retardée</strong> : les agonistes GLP-1 ralentissent significativement la vidange gastrique — risque d'estomac « plein » malgré le jeûne préopératoire, avec risque d'inhalation bronchique à l'induction anesthésique (syndrome de Mendelson)</li>
+<li><strong>Recommandations ASA (2023)</strong> et recommandations de l'ADA/AACE :</li>
+<li>Sémaglutide (hebdomadaire) : certaines sociétés recommandaient l'interruption 7 jours avant la chirurgie ; les recommandations ont évolué vers une approche individualisée (pas de consensus international absolu). L'ASA (2023) a publié des guidelines recommandant d'envisager l'arrêt temporaire avant chirurgie élective, mais ces recommandations sont activement débattues</li>
+<li>Liraglutide (quotidien) : interruption au moins le jour de la chirurgie, et souvent la veille</li>
+<li>Évaluation échographique gastrique au point de soin (<em>point-of-care gastric ultrasound</em>) pour évaluer le volume gastrique résiduel avant l'induction</li>
+<li>Alternative : induction à séquence rapide (ISR) si le traitement ne peut être interrompu ou si le volume gastrique est élevé à l'échographie</li>
+<li><strong>Perte de masse musculaire</strong> : environ 30-40% de la perte de poids sous agonistes GLP-1 est de la masse maigre (Wilding et al., <em>N Engl J Med</em>, 2021) — risque de sarcopénie, particulièrement préoccupant chez le sujet âgé et le patient opéré (force musculaire nécessaire à la rééducation) ; stratégie de prévention : exercice de résistance concomitant, apport protéique optimisé</li>
+<li><strong>Perte osseuse</strong> : une perte de poids rapide est associée à une perte osseuse (BMD réduite) (Villareal et al., <em>N Engl J Med</em>, 2011) — surveillance par DXA si perte &gt; 10% du poids, supplémentation en calcium et vitamine D systématique</li>
+<li><strong>Reprise du traitement postopératoire</strong> : reprendre progressivement après reprise de l'alimentation orale ; le timing exact dépend du type de chirurgie et de la tolérance digestive</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO08-S03-001 | </p>
+<div class="vertex-alerte"><strong>SCHÉMA | Risque d'inhalation sous agonistes GLP-1</strong> : vidange gastrique retardée, estomac plein, ISR | Schéma de danger |
+| MOBO08-S03-002 | 📐 SCHÉMA | Recommandations d'arrêt des agonistes GLP-1 avant chirurgie — selon les sociétés savantes | Schéma comparatif |
+| MOBO08-S03-003 | 📐 SCHÉMA | Composition de la perte de poids sous GLP-1 — masse grasse vs masse maigre | Schéma corporel |
+| MOBO08-S03-004 | 🎬 ANIMATION | Échographie gastrique au point de soin — technique, interprétation, décision | Vidéo pratique |</div>
+
+<h3 id="section-84-autres-medicaments-et-strategie-therapeutique-globale">Section 8.4 — Autres médicaments et stratégie thérapeutique globale</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Orlistat</strong> : inhibition de 30% de l'absorption des graisses alimentaires ; effets secondaires gastro-intestinaux (stéatorrhée, urgences fécales) limitant l'observance ; perte de poids modeste (~3-4 kg vs placebo) ; malabsorption des vitamines liposolubles (A, D, E, K) — supplémentation recommandée ; attention particulière en orthopédie : peut aggraver la carence en vitamine D</li>
+<li><strong>Naltrexone/bupropion (Mysimba®)</strong> : action sur le système mélanocortinergique et le circuit de récompense ; perte de poids modérée (~5-6%) ; contre-indications : épilepsie, HTA non contrôlée, TCA de type boulimie/purge ; effets secondaires : nausées, céphalées, insomnie</li>
+<li><strong>Metformine</strong> : non approuvée pour l'obésité mais couramment prescrite dans le DT2 ; perte de poids modeste (~2-3 kg) ; bénéfice métabolique ; doit être arrêtée 48h avant une chirurgie majeure (risque d'acidose lactique en cas d'insuffisance rénale peropératoire)</li>
+<li><strong>Inhibiteurs SGLT2</strong> (empagliflozine, dapagliflozine) : approuvés pour le DT2 et l'insuffisance cardiaque ; perte de poids modeste (2-3 kg) par glycosurie ; risque d'acidocétose euglycémique en périopératoire → arrêt 3 jours avant chirurgie selon la SFAR</li>
+<li><strong>Stratégie thérapeutique intégrée</strong> : la pharmacothérapie n'est jamais seule — toujours associée à un changement de mode de vie (nutrition + activité physique) ; escalade thérapeutique : changement de mode de vie → ajout d'un médicament → combinaison → chirurgie bariatrique si échec ; la pharmacothérapie peut être un « pont » vers la chirurgie bariatrique ou vers l'arthroplastie (optimisation pondérale pré-chirurgicale)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO08-S04-001 | 📊 INFOGRAPHIE | Algorithme de prise en charge de l'obésité — escalade thérapeutique (lifestyle → pharma → bariatrique) | Algorithme clinique |<br />
+| MOBO08-S04-002 | 📊 INFOGRAPHIE | Médicaments à arrêter avant chirurgie orthopédique — GLP-1, metformine, SGLT2j, anticoagulants | Tableau périopératoire |</p>
+<h3 id="points-cles-du-module-8">Points clés du Module 8</h3>
+<ol>
+<li>Les agonistes GLP-1 (sémaglutide, liraglutide) représentent une révolution — perte de poids de 12-15% vs placebo</li>
+<li>Le tirzépatide (double agoniste GLP-1/GIP) atteint une perte de poids d'environ 21% — efficacité sans précédent</li>
+<li>Le sémaglutide réduit les événements cardiovasculaires majeurs chez les obèses non diabétiques (essai SELECT)</li>
+<li>Les agonistes GLP-1 retardent la vidange gastrique — risque d'inhalation périopératoire, arrêt préopératoire recommandé</li>
+<li>30-40% de la perte de poids sous GLP-1 est de la masse maigre — risque de sarcopénie, compenser par l'exercice de résistance</li>
+<li>La metformine doit être arrêtée 48h avant chirurgie majeure, les SGLT2i 3 jours avant</li>
+<li>La pharmacothérapie est un outil d'optimisation préchirurgicale — « pont » vers la chirurgie bariatrique ou orthopédique</li>
+<li>Aucun médicament ne remplace le changement de mode de vie — toujours associer nutrition et exercice</li>
+</ol>
+<h3 id="auto-evaluation_2">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (mécanisme GLP-1, perte de poids sémaglutide, arrêt metformine)</li>
+<li>3 QCM Argent (tirzépatide vs sémaglutide, risque d'inhalation GLP-1, composition de la perte de poids)</li>
+<li>2 QCM Or (stratégie pharmacologique préopératoire, échographie gastrique au point de soin)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 43, DT2, sous sémaglutide + metformine + empagliflozine, programmé PTH dans 2 semaines — gestion périopératoire complète des traitements)</li>
+<li>1 QROC : « Quels sont les risques périopératoires spécifiques liés aux agonistes GLP-1 en chirurgie orthopédique et comment les gérer ? »</li>
+</ul>
+<hr />
+<h1 id="module-9-chirurgie-bariatrique-sleeve-bypass-techniques-complications-et-suivi">MODULE 9 : CHIRURGIE BARIATRIQUE — SLEEVE, BYPASS, TECHNIQUES, COMPLICATIONS ET SUIVI</h1>
+<p><strong>Partie</strong> : II — Traitement de l'obésité<br />
+<strong>Durée estimée</strong> : 4h00<br />
+<strong>Niveau</strong> : Intermédiaire → Expert<br />
+<strong>Prérequis</strong> : Modules 1-8</p>
+<h2 id="accroche-clinique_3">Accroche clinique</h2>
+<div class="vertex-accroche">Un patient de 45 ans, IMC 48, gonarthrose tricompartimentale bilatérale invalidante, deux tentatives de perte de poids médicale ayant échoué (reprise de 100% du poids perdu), DT2 sous insuline, SAOS appareillé. Le nutritionniste et le chirurgien bariatrique proposent une sleeve gastrectomie avant de programmer la PTG. *Quelles sont les techniques bariatriques ? Quels sont les bénéfices et risques articulaires de la chirurgie bariatrique ? Faut-il opérer la bariatrique d'abord, puis le genou, ou l'inverse ? Quelles carences post-bariatriques impacteront la chirurgie orthopédique ?*</div>
+
+<h2 id="objectifs-dapprentissage_3">Objectifs d'apprentissage</h2>
+<ol>
+<li><strong>Connaître</strong> les indications de la chirurgie bariatrique selon les critères HAS/IFSO (IMC ≥ 40, ou ≥ 35 avec comorbidités)</li>
+<li><strong>Décrire</strong> les principales techniques bariatriques (sleeve, RYGB, OAGB, anneau gastrique) et leurs mécanismes d'action</li>
+<li><strong>Analyser</strong> les bénéfices de la chirurgie bariatrique sur l'appareil locomoteur (réduction de la douleur arthrosique, report de l'arthroplastie)</li>
+<li><strong>Identifier</strong> les complications et carences post-bariatriques impactant la chirurgie orthopédique</li>
+<li><strong>Planifier</strong> la séquence chirurgicale optimale (bariatrique → orthopédique)</li>
+</ol>
+<h2 id="structure-du-contenu_3">Structure du contenu</h2>
+<h3 id="section-91-indications-et-parcours-de-chirurgie-bariatrique">Section 9.1 — Indications et parcours de chirurgie bariatrique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Critères d'éligibilité</strong> (HAS 2009, révisés ; IFSO 2022) :</li>
+<li>IMC ≥ 40 kg/m² (ou ≥ 35 avec au moins une comorbidité : DT2, HTA, SAOS, arthrose invalidante, etc.)</li>
+<li>Échec documenté d'une prise en charge médicale d'au moins 6-12 mois (nutrition, activité physique, ± pharmacothérapie)</li>
+<li>Évaluation en réunion de concertation pluridisciplinaire (RCP) bariatrique</li>
+<li>Évaluation psychologique/psychiatrique</li>
+<li>Pas de contre-indication anesthésique ou chirurgicale</li>
+<li>Information complète et consentement éclairé</li>
+<li><strong>Parcours pré-opératoire</strong> : au minimum 6-12 mois de suivi multidisciplinaire (endocrinologue, nutritionniste/diététicien, psychologue/psychiatre, kinésithérapeute, chirurgien digestif) ; ce parcours est obligatoire pour le remboursement en France</li>
+<li><strong>Évolution des indications</strong> : discussion d'un abaissement du seuil d'IMC (≥ 30 avec DT2 mal contrôlé) et introduction de critères métaboliques plutôt que strictement basés sur l'IMC (concept de chirurgie métabolique)</li>
+<li><strong>Volume chirurgical</strong> : environ 60 000 procédures bariatriques par an en France (données ATIH/PMSI), environ 250 000 aux États-Unis</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO09-S01-001 | 📐 SCHÉMA | Critères d'éligibilité à la chirurgie bariatrique — arbre décisionnel HAS/IFSO | Algorithme clinique |<br />
+| MOBO09-S01-002 | 📊 INFOGRAPHIE | Parcours pré-opératoire bariatrique — chronologie des consultations obligatoires | Timeline du parcours |</p>
+<h3 id="section-92-techniques-chirurgicales-bariatriques">Section 9.2 — Techniques chirurgicales bariatriques</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Gastrectomie longitudinale (sleeve gastrectomy, SG)</strong> :</li>
+<li>Technique : résection verticale d'environ 80% de l'estomac le long de la grande courbure, laissant un tube gastrique d'environ 100-150 mL ; purement restrictive (réduction du volume gastrique) + hormonal (réduction de la ghréline car le fundus, principal site de sécrétion, est réséqué)</li>
+<li>Procédure la plus réalisée dans le monde (environ 60% des chirurgies bariatriques globalement)</li>
+<li>Perte d'excès de poids : environ 60-70% à 5 ans</li>
+<li>Avantages : technique relativement simple, pas de modification du circuit digestif, pas de malabsorption, pas de corps étranger</li>
+<li>
+<p>Complications : fuite sur la ligne d'agrafes (1-3%), sténose, RGO de novo (30-40%), dilatation à long terme avec reprise pondérale</p>
+</li>
+<li>
+<p><strong>Bypass gastrique en Y de Roux (RYGB)</strong> :</p>
+</li>
+<li>Technique : création d'une petite poche gastrique (environ 30 mL) anastomosée à une anse jéjunale (anse alimentaire de 150 cm) ; le reste de l'estomac et le duodénum sont exclus du transit (anse biliopancréatique rejoignant l'anse alimentaire au pied de l'anse)</li>
+<li>Mécanismes : restrictif (petite poche) + malabsorptif modéré + hormonal (↑ GLP-1, ↓ ghréline, modification du microbiote)</li>
+<li>Perte d'excès de poids : environ 65-75% à 5 ans</li>
+<li>Gold standard historique — technique de référence contre laquelle les autres sont comparées</li>
+<li>Avantages : efficacité pondérale et métabolique excellente (rémission du DT2 dans environ 60-80% des cas à 2 ans — Mingrone et al., <em>N Engl J Med</em>, 2012), amélioration du RGO</li>
+<li>
+<p>Complications : hernie interne (1-5%), ulcère anastomotique (2-5%), dumping syndrome (10-30%), sténose anastomotique, carences nutritionnelles (fer, B12, calcium, vitamine D — malabsorption duodénale)</p>
+</li>
+<li>
+<p><strong>Bypass en oméga (One Anastomosis Gastric Bypass, OAGB)</strong> :</p>
+</li>
+<li>Technique : une seule anastomose gastrojéjunale (vs 2 pour le RYGB) ; anse biliopancréatique plus longue (200 cm)</li>
+<li>Plus malabsorptif que le RYGB — efficacité pondérale potentiellement supérieure</li>
+<li>Risque de reflux biliaire (bile dans la poche gastrique) — controversé</li>
+<li>
+<p>Popularité croissante en France</p>
+</li>
+<li>
+<p><strong>Anneau gastrique ajustable (AGB)</strong> :</p>
+</li>
+<li>Technique : anneau en silicone placé autour du fundus, ajustable par un boîtier sous-cutané</li>
+<li>Procédure la moins efficace (perte d'excès de poids environ 40-50%), en déclin constant</li>
+<li>Complications : glissement, érosion, dysfonctionnement du boîtier ; taux de réintervention très élevé</li>
+<li>
+<p>Quasi-abandonnée en 2024-2025</p>
+</li>
+<li>
+<p><strong>Dérivation biliopancréatique avec switch duodénal (DS) / SADI-S</strong> :</p>
+</li>
+<li>Technique la plus malabsorptive — sleeve + anastomose duodéno-iléale</li>
+<li>Perte d'excès de poids &gt; 80%</li>
+<li>Efficacité maximale sur le DT2 mais carences sévères (protéines, vitamines liposolubles)</li>
+<li>Réservée à la super-obésité (IMC ≥ 50) ou aux échecs des autres techniques</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO09-S02-001 | 🎬 ANIMATION | Sleeve gastrectomie — technique step-by-step, résection, agrafage | Animation chirurgicale 3D |<br />
+| MOBO09-S02-002 | 🎬 ANIMATION | Bypass gastrique en Y de Roux — création poche, anastomose, circuit alimentaire | Animation chirurgicale 3D |<br />
+| MOBO09-S02-003 | 📐 SCHÉMA | Comparaison des 4 techniques bariatriques — anatomie post-opératoire | Schéma comparatif |<br />
+| MOBO09-S02-004 | 📊 INFOGRAPHIE | Tableau comparatif des techniques — efficacité, complications, carences, indications | Tableau synthétique |</p>
+<h3 id="section-93-benefices-musculosquelettiques-de-la-chirurgie-bariatrique">Section 9.3 — Bénéfices musculosquelettiques de la chirurgie bariatrique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Réduction de la douleur arthrosique</strong> : les études observationnelles montrent une réduction de 40-60% de la douleur du genou (EVA) après chirurgie bariatrique avec perte de poids significative (Richette et al., <em>Ann Rheum Dis</em>, 2011 ; King et al., <em>Arthritis Care Res</em>, 2016) — amélioration de la fonction (WOMAC, KSS) ; la réduction de la charge mécanique ET de l'inflammation systémique contribuent conjointement à cette amélioration</li>
+<li><strong>Report ou évitement de l'arthroplastie</strong> : certaines études observationnelles suggèrent que la chirurgie bariatrique peut reporter la nécessité d'une arthroplastie chez une proportion de patients qui étaient candidats à une PTG avant la perte de poids — les patients les plus jeunes avec une arthrose modérée sont ceux qui bénéficient le plus d'un report</li>
+<li><strong>Amélioration de la mobilité et de la fonction</strong> : gain de mobilité articulaire (disparition de la limitation par les tissus mous), amélioration de la marche (distance au test de 6 minutes), diminution du handicap</li>
+<li><strong>Rémission métabolique</strong> : amélioration du diabète (rémission dans environ 60-80% des cas après RYGB), de l'HTA, du SAOS — ces améliorations réduisent indirectement le risque opératoire si une arthroplastie devient nécessaire</li>
+<li><strong>Réduction de l'inflammation systémique</strong> : baisse des marqueurs inflammatoires (CRP, TNF-α, IL-6, leptine) après chirurgie bariatrique — effet bénéfique sur l'arthrose métabolique</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO09-S03-001 | 📊 INFOGRAPHIE | Bénéfices musculosquelettiques de la chirurgie bariatrique — douleur, fonction, inflammation | Données quantifiées |<br />
+| MOBO09-S03-002 | 📐 SCHÉMA | Mécanismes d'amélioration arthrosique après bariatrique — mécanique + métabolique | Schéma en deux axes |<br />
+| MOBO09-S03-003 | 🎬 ANIMATION | Simulation ObesSim© — impact de la perte de poids post-bariatrique sur les forces articulaires du genou | Simulation interactive |</p>
+<h3 id="section-94-complications-et-consequences-orthopediques-de-la-chirurgie-bariatrique">Section 9.4 — Complications et conséquences orthopédiques de la chirurgie bariatrique</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Carences nutritionnelles post-bariatriques</strong> (cf. Module 24 pour les détails) :</li>
+<li>RYGB &gt; sleeve &gt; anneau — les techniques malabsorptives créent davantage de carences</li>
+<li>Fer : carence dans 20-50% des cas post-RYGB (malabsorption duodénale)</li>
+<li>Vitamine B12 : carence dans 30-60% post-RYGB</li>
+<li>Calcium et vitamine D : carence dans 50-70%, aggravée par la malabsorption → risque d'ostéoporose secondaire et d'hyperparathyroïdie secondaire</li>
+<li>Protéines : dénutrition protéique dans 5-15% post-DS, plus rare post-sleeve/RYGB</li>
+<li>Zinc, cuivre, sélénium, vitamines A, E, K (si malabsorption)</li>
+<li><strong>Impact orthopédique</strong> : retard de consolidation fracturaire, ostéoporose, fractures de fragilité, infection du site opératoire (malnutrition protéique), anémie périopératoire</li>
+<li><strong>Ostéoporose post-bariatrique</strong> :</li>
+<li>La perte de poids rapide s'accompagne d'une perte de densité osseuse (mécanorégulation : la réduction de la charge mécanique → diminution de la formation osseuse)</li>
+<li>La malabsorption de calcium et vitamine D aggrave la déminéralisation</li>
+<li>Études DXA post-bariatrique : perte de 5-10% de BMD à la hanche à 2 ans post-RYGB (Yu, <em>J Bone Miner Res</em>, 2015)</li>
+<li>Risque de fractures atypiques, fractures du col fémoral et fractures vertébrales à moyen-long terme</li>
+<li>Surveillance systématique : DXA annuelle, bilan phosphocalcique, vitamine D tous les 6 mois, supplémentation à vie</li>
+<li><strong>Excès cutané résiduel</strong> : après perte de poids massive (&gt; 40-50 kg), excès cutané abdominal, des cuisses et des bras — peut interférer avec les incisions chirurgicales (plastie abdominale souvent nécessaire), risque d'intertrigo persistant, impact psychologique</li>
+<li><strong>Dumping syndrome post-RYGB</strong> : en périopératoire, attention à la nutrition entérale riche en sucres — risque de dumping (malaise, diarrhée, hypoglycémie réactionnelle)</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO09-S04-001 | 📊 INFOGRAPHIE | Carences nutritionnelles post-bariatriques par technique — fer, B12, Ca, vitD, protéines | Tableau comparatif |<br />
+| MOBO09-S04-002 | 📐 SCHÉMA | Ostéoporose post-bariatrique — mécanismes (décharge + malabsorption), surveillance | Schéma physiopathologique |<br />
+| MOBO09-S04-003 | 📷 IMAGE | Excès cutané résiduel post-bariatrique — impact sur les sites chirurgicaux | Photo clinique |</p>
+<h3 id="section-95-sequence-chirurgicale-bariatrique-dabord-ou-orthopedie-dabord">Section 9.5 — Séquence chirurgicale : bariatrique d'abord ou orthopédie d'abord ?</h3>
+<p><strong>Contenu obligatoire</strong> :</p>
+<ul>
+<li><strong>Approche recommandée</strong> : la stratégie privilégiée dans la littérature est <strong>bariatrique d'abord</strong>, puis arthroplastie après stabilisation du poids (environ 12-18 mois post-bariatrique) — période nécessaire pour la stabilisation pondérale, la correction des carences et l'adaptation métabolique (Nearing et al., <em>J Am Acad Orthop Surg</em>, 2012)</li>
+<li><strong>Arguments pour la bariatrique d'abord</strong> :</li>
+<li>Réduction du poids → diminution du risque chirurgical orthopédique</li>
+<li>Amélioration des comorbidités (DT2, SAOS, HTA) → meilleur profil anesthésique</li>
+<li>Possible évitement de l'arthroplastie si la douleur arthrosique s'améliore suffisamment</li>
+<li>Réduction de la taille des cuisses → meilleur accès chirurgical articulaire</li>
+<li><strong>Arguments contre (nuances)</strong> :</li>
+<li>Certaines études observationnelles ont rapporté un taux accru de complications après arthroplastie chez les patients post-bariatriques par rapport aux patients obèses d'IMC équivalent n'ayant pas eu de chirurgie bariatrique (Inacio et al., <em>J Arthroplasty</em>, 2014 ; Werner et al., <em>JBJS Am</em>, 2015) — possiblement lié aux carences nutritionnelles et aux changements métaboliques</li>
+<li>Le délai d'attente (12-18 mois) peut être source de souffrance pour le patient arthrosique</li>
+<li>Certains patients ne perdent pas suffisamment de poids ou reprennent du poids avant l'arthroplastie</li>
+<li><strong>Approche chirurgicale simultanée</strong> : exceptionnellement discutée (sleeve + arthroplastie en un temps) — données très limitées, réservée à des centres experts avec protocole spécifique</li>
+<li><strong>Chronologie optimale</strong> : la fenêtre d'arthroplastie se situe entre 12 et 24 mois post-bariatrique (poids stabilisé, carences corrigées, catabolisme terminé) ; au-delà de 2-3 ans, risque de reprise pondérale</li>
+</ul>
+<p><strong>Médias</strong> :<br />
+| ID | Type | Description | Notes |<br />
+|----|------|-------------|-------|<br />
+| MOBO09-S05-001 | 📐 SCHÉMA | Séquence chirurgicale optimale — bariatrique d'abord → stabilisation → arthroplastie | Timeline séquentielle |<br />
+| MOBO09-S05-002 | 📊 INFOGRAPHIE | Arguments pour et contre la séquence bariatrique → orthopédie | Tableau balance |<br />
+| MOBO09-S05-003 | 🎬 ANIMATION | Simulation ObesSim© — comparaison des résultats arthroplastiques : obèse non bariatrique vs post-bariatrique vs poids normal | Simulation comparative |</p>
+<h3 id="points-cles-du-module-9">Points clés du Module 9</h3>
+<ol>
+<li>La chirurgie bariatrique est indiquée pour un IMC ≥ 40 ou ≥ 35 avec comorbidités, après échec d'au moins 6-12 mois de prise en charge médicale</li>
+<li>La sleeve gastrectomie est la procédure la plus réalisée (60%), le RYGB reste le gold standard historique</li>
+<li>La chirurgie bariatrique réduit la douleur arthrosique de 40-60% et peut reporter l'arthroplastie</li>
+<li>Les carences nutritionnelles post-bariatriques (fer, B12, calcium, vitamine D, protéines) impactent directement les résultats orthopédiques</li>
+<li>L'ostéoporose post-bariatrique est un risque réel — surveillance DXA et supplémentation à vie</li>
+<li>La séquence recommandée est : bariatrique d'abord → stabilisation 12-18 mois → arthroplastie</li>
+<li>Les résultats de l'arthroplastie post-bariatrique ne sont pas uniformément meilleurs que ceux des obèses non opérés</li>
+<li>La prise en charge du patient post-bariatrique en orthopédie nécessite une vigilance nutritionnelle et osseuse renforcée</li>
+</ol>
+<h3 id="auto-evaluation_3">Auto-évaluation</h3>
+<ul>
+<li>3 QCM Bronze (critères d'éligibilité bariatrique, techniques principales, mécanismes sleeve vs bypass)</li>
+<li>3 QCM Argent (carences nutritionnelles selon la technique, bénéfices articulaires, séquence chirurgicale)</li>
+<li>2 QCM Or (complications post-bariatriques impactant l'orthopédie, chronologie optimale bariatrique → arthroplastie)</li>
+<li>1 QCM Diamant (cas clinique : patient IMC 50, DT2, gonarthrose sévère — analyse décisionnelle complète bariatrique vs arthroplastie vs séquence combinée)</li>
+<li>1 QROC : « Pourquoi les résultats de l'arthroplastie ne sont-ils pas toujours meilleurs chez les patients post-bariatriques par rapport aux patients obèses de même IMC non opérés ? Discutez les facteurs confondants. »</li>
+</ul>
+<hr />
+<h2 id="references-bibliographiques-partie-ii-modules-6-9">Références bibliographiques — Partie II (Modules 6-9)</h2>
+<ol>
+<li>Armstrong MJ, Mottershead TA, Ronksley PE, et al. Motivational interviewing to improve weight loss in overweight and/or obese patients: a systematic review and meta-analysis. <em>Obes Rev</em>. 2011;12(9):709-723.</li>
+<li>Braga M, Gianotti L, Nespoli L, et al. Nutritional approach in malnourished surgical patients: a prospective randomized study. <em>Arch Surg</em>. 2002;137(2):174-180.</li>
+<li>de Cabo R, Mattson MP. Effects of intermittent fasting on health, aging, and disease. <em>N Engl J Med</em>. 2019;381(26):2541-2551.</li>
+<li>Donnelly JE, Blair SN, Jakicic JM, et al. Appropriate physical activity intervention strategies for weight loss and prevention of weight regain for adults. <em>Med Sci Sports Exerc</em>. 2009;41(2):459-471.</li>
+<li>Estruch R, Ros E, Salas-Salvadó J, et al. Primary prevention of cardiovascular disease with a Mediterranean diet supplemented with extra-virgin olive oil or nuts. <em>N Engl J Med</em>. 2018;378(25):e34.</li>
+<li>Fransen M, McConnell S, Harmer AR, et al. Exercise for osteoarthritis of the knee. <em>Cochrane Database Syst Rev</em>. 2015;(1):CD004376.</li>
+<li>Inacio MCS, Kritz-Silverstein D, Raman R, et al. The impact of pre-operative weight loss on incidence of surgical site infection and readmission rates after total joint arthroplasty. <em>J Arthroplasty</em>. 2014;29(3):458-464.</li>
+<li>Jastreboff AM, Aronne LJ, Ahmad NN, et al. Tirzepatide once weekly for the treatment of obesity. <em>N Engl J Med</em>. 2022;387(3):205-216.</li>
+<li>Johnston BC, Kanters S, Bandayrel K, et al. Comparison of weight loss among named diet programs in overweight and obese adults: a meta-analysis. <em>JAMA</em>. 2014;312(9):923-933.</li>
+<li>King WC, Chen JY, Courcoulas AP, et al. Objectively-measured physical activity and sedentary time after bariatric surgery vs the general population. <em>Arthritis Care Res</em>. 2016;68(3):350-358.</li>
+<li>Lincoff AM, Brown-Frandsen K, Colhoun HM, et al. Semaglutide and cardiovascular outcomes in obesity without diabetes. <em>N Engl J Med</em>. 2023;389(24):2221-2232.</li>
+<li>Lu M, Su Y, Zhang Y, et al. Effectiveness of aquatic exercise for treatment of knee osteoarthritis. <em>Clin Rehabil</em>. 2015;29(1):3-12.</li>
+<li>Mingrone G, Panunzi S, De Gaetano A, et al. Bariatric surgery versus conventional medical therapy for type 2 diabetes. <em>N Engl J Med</em>. 2012;366(17):1577-1585.</li>
+<li>Moyer R, Ikert K, Long K, Marsh J. The value of preoperative exercise and education for patients undergoing total hip and knee arthroplasty: a systematic review and meta-analysis. <em>JBJS Rev</em>. 2017;5(12):e2.</li>
+<li>Nearing EE, Santos TM, Topolski MS, et al. Benefits of bariatric surgery before elective total joint arthroplasty: is there an ideal BMI? <em>J Am Acad Orthop Surg</em>. 2012;20(8):488-497.</li>
+<li>Pedersen BK. The diseasome of physical inactivity — and the role of myokines in muscle-fat cross talk. <em>J Physiol</em>. 2009;587(Pt 23):5559-5568.</li>
+<li>Richette P, Poitou C, Garnero P, et al. Benefits of massive weight loss on symptoms, systemic inflammation and cartilage turnover in obese patients with knee osteoarthritis. <em>Ann Rheum Dis</em>. 2011;70(1):139-144.</li>
+<li>Via M. The malnutrition of obesity: micronutrient deficiencies that promote diabetes. <em>ISRN Endocrinol</em>. 2012;2012:103472.</li>
+<li>Villareal DT, Chode S, Parimi N, et al. Weight loss, exercise, or both and physical function in obese older adults. <em>N Engl J Med</em>. 2011;364(13):1218-1229.</li>
+<li>Werner BC, Kurkis GM, Ghassan ET, et al. Bariatric surgery prior to total knee arthroplasty is associated with fewer postoperative complications. <em>J Arthroplasty</em>. 2015;30(9 Suppl):81-85.</li>
+<li>Wilding JPH, Batterham RL, Calanna S, et al. Once-weekly semaglutide in adults with overweight or obesity. <em>N Engl J Med</em>. 2021;384(11):989-1002.</li>
+<li>Wortsman J, Matsuoka LY, Chen TC, Lu Z, Holick MF. Decreased bioavailability of vitamin D in obesity. <em>Am J Clin Nutr</em>. 2000;72(3):690-693.</li>
+<li>Wycherley TP, Moran LJ, Clifton PM, Noakes M, Brinkworth GD. Effects of energy-restricted high-protein, low-fat compared with standard-protein, low-fat diets: a meta-analysis. <em>Am J Clin Nutr</em>. 2012;96(6):1281-1298.</li>
+<li>Yu EW. Bone metabolism after bariatric surgery. <em>J Bone Miner Res</em>. 2014;29(7):1507-1518.</li>
+</ol>
+<hr />
+<p><em>Document conforme à la charte VERTEX© — Version 1.0 — 10 mars 2026</em></p>
+</div>

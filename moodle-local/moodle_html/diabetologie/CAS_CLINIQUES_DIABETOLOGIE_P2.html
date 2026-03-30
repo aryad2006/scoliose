@@ -1,0 +1,874 @@
+
+<style>
+/* VERTEX© — Styles pédagogiques Moodle */
+.vertex-module { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; max-width: 960px; margin: 0 auto; }
+.vertex-module h1 { color: #1565C0; border-bottom: 3px solid #1565C0; padding-bottom: 10px; font-size: 1.8em; }
+.vertex-module h2 { color: #2E7D32; margin-top: 2em; font-size: 1.5em; border-left: 4px solid #2E7D32; padding-left: 12px; }
+.vertex-module h3 { color: #E65100; margin-top: 1.5em; font-size: 1.2em; }
+.vertex-module h4 { color: #6A1B9A; margin-top: 1em; }
+
+/* Boîte objectifs */
+.vertex-objectifs { background: #E3F2FD; border-left: 5px solid #1565C0; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-objectifs h3 { color: #1565C0; margin-top: 0; font-size: 1.1em; }
+.vertex-objectifs::before { content: "🎯"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte cas clinique / accroche */
+.vertex-accroche { background: #FFF3E0; border-left: 5px solid #E65100; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+.vertex-accroche::before { content: "🏥"; font-size: 1.3em; margin-right: 8px; font-style: normal; }
+
+/* Boîte alerte / danger */
+.vertex-alerte { background: #FFEBEE; border-left: 5px solid #C62828; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-alerte::before { content: "⚠️"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte erreur fréquente */
+.vertex-erreur { background: #FCE4EC; border-left: 5px solid #AD1457; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-erreur::before { content: "❌"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte point clé / retenir */
+.vertex-cle { background: #E8F5E9; border-left: 5px solid #2E7D32; padding: 15px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.vertex-cle::before { content: "💡"; font-size: 1.3em; margin-right: 8px; }
+
+/* Boîte média */
+.vertex-media { background: #F3E5F5; border: 2px dashed #7B1FA2; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; color: #6A1B9A; }
+.vertex-media::before { content: "📷"; font-size: 1.5em; display: block; margin-bottom: 8px; }
+.vertex-media.video::before { content: "🎬"; }
+.vertex-media.schema::before { content: "📐"; }
+
+/* Boîte référence bibliographique */
+.vertex-ref { background: #ECEFF1; border-left: 5px solid #607D8B; padding: 10px 15px; margin: 15px 0; border-radius: 0 8px 8px 0; font-size: 0.9em; color: #546E7A; }
+.vertex-ref::before { content: "📚"; margin-right: 8px; }
+
+/* Tableaux */
+.vertex-module table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; }
+.vertex-module th { background: #1565C0; color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.vertex-module td { padding: 8px 12px; border-bottom: 1px solid #E0E0E0; }
+.vertex-module tr:nth-child(even) { background: #F5F5F5; }
+.vertex-module tr:hover { background: #E3F2FD; }
+
+/* Listes */
+.vertex-module ul { padding-left: 25px; }
+.vertex-module li { margin-bottom: 6px; }
+
+/* Blockquotes */
+.vertex-module blockquote { border-left: 4px solid #90CAF9; padding: 10px 20px; margin: 15px 0; background: #F5F5F5; }
+
+/* Code / formules */
+.vertex-module code { background: #F5F5F5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #C62828; }
+
+/* Section navigation */
+.vertex-nav { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 15px 20px; margin: 20px 0; border-radius: 8px; }
+.vertex-nav h3 { margin-top: 0; color: #1565C0; font-size: 1em; }
+.vertex-nav ul { columns: 2; column-gap: 30px; }
+.vertex-nav li { margin-bottom: 4px; break-inside: avoid; }
+
+/* Badge niveau */
+.vertex-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-right: 8px; }
+.vertex-badge.bronze { background: #F9A825; color: #fff; }
+.vertex-badge.argent { background: #90A4AE; color: #fff; }
+.vertex-badge.or { background: #FFD600; color: #333; }
+.vertex-badge.diamant { background: #00BCD4; color: #fff; }
+
+/* Cas clinique structure */
+.vertex-cas { border: 2px solid #E0E0E0; border-radius: 12px; padding: 20px; margin: 25px 0; }
+.vertex-cas-header { background: #F5F5F5; margin: -20px -20px 20px -20px; padding: 15px 20px; border-radius: 10px 10px 0 0; }
+.vertex-cas-header h3 { margin: 0; }
+
+/* Responsive */
+@media (max-width: 768px) { .vertex-nav ul { columns: 1; } .vertex-module table { font-size: 0.85em; } }
+</style>
+<div class="vertex-module">
+<h1 id="cahier-de-cas-cliniques-progressifs-formation-diabetologie">CAHIER DE CAS CLINIQUES PROGRESSIFS — FORMATION DIABETOLOGIE</h1>
+<h2 id="partie-2-cas-argent-8-13">Partie 2 — Cas Argent (8-13)</h2>
+<hr />
+<h2 id="cas-argent">🥈 CAS ARGENT</h2>
+<hr />
+<p><a id="cas-8"></a></p>
+<h3 id="cas-n8-lada-ou-dt2-un-diabete-atypique-a-42-ans">Cas n°8 — LADA ou DT2 ? Un diabete atypique a 42 ans</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 5 (DT1), 6 (DT2), 7 (Diabetes specifiques), 9 (Diagnostic)<br />
+<strong>Duree estimee</strong> : 25 min<br />
+<strong>Thematique principale</strong> : Diagnostic differentiel des diabetes de l'adulte — LADA</p>
+<h4 id="presentation-initiale">Presentation initiale</h4>
+<p>M. Lefebvre, 42 ans, enseignant de mathematiques, est adresse en consultation de diabetologie par son medecin traitant pour un diabete diagnostique il y a 6 mois. Le medecin traitant l'a mis sous metformine 1700 mg/jour mais l'HbA1c reste a 8,1% malgre une observance correcte et une perte de poids involontaire de 4 kg en 6 mois (85 → 81 kg pour 178 cm, IMC 25,6 kg/m²).</p>
+<p><strong>Antecedents</strong> :<br />
+- Medicaux : thyroidite de Hashimoto sous levothyroxine 75 µg depuis 3 ans<br />
+- Chirurgicaux : aucun<br />
+- Familiaux : pere en bonne sante, mere hypothyroidie, pas de diabete familial connu<br />
+- Mode de vie : actif (velo domicile-travail 30 min/jour), pas de tabac, alcool rare<br />
+- Allergies : aucune</p>
+<h4 id="examen-clinique">Examen clinique</h4>
+<ul>
+<li>Poids : 81 kg, taille : 178 cm, IMC : 25,6 kg/m² (normal)</li>
+<li>Tour de taille : 86 cm (&lt; 94 cm)</li>
+<li>PA : 120/75 mmHg</li>
+<li>Pas d'acanthosis nigricans</li>
+<li>Examen clinique normal par ailleurs</li>
+</ul>
+<h4 id="biologie">Biologie</h4>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycemie a jeun</td>
+<td>1,72 g/L</td>
+<td>Elevee</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>8,1%</td>
+<td>Desequilibre</td>
+</tr>
+<tr>
+<td>Peptide C a jeun</td>
+<td>0,42 nmol/L (N : 0,37-1,47)</td>
+<td>Limite basse</td>
+</tr>
+<tr>
+<td>Peptide C stimule (post-Glucagon)</td>
+<td>0,68 nmol/L</td>
+<td>Diminue (N &gt; 1,0)</td>
+</tr>
+<tr>
+<td>Anti-GAD</td>
+<td>245 UI/mL (N &lt; 5)</td>
+<td>Tres positif</td>
+</tr>
+<tr>
+<td>Anti-IA2</td>
+<td>8 UI/mL (N &lt; 8)</td>
+<td>Limite</td>
+</tr>
+<tr>
+<td>Anti-ZnT8</td>
+<td>Negatif</td>
+<td></td>
+</tr>
+<tr>
+<td>TSH</td>
+<td>2,8 mUI/L (sous LT4)</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Anti-TPO</td>
+<td>380 UI/mL</td>
+<td>Positif (connu)</td>
+</tr>
+<tr>
+<td>TG</td>
+<td>0,85 g/L</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>HDL</td>
+<td>0,62 g/L</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC08-001 — Tableau comparatif : DT1 classique vs LADA vs DT2 — criteres cliniques, biologiques et immunologiques en colonnes paralleles (Situez M. Lefebvre dans le tableau)]</p>
+</blockquote>
+<h4 id="questions-progressives">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic</strong> (analyse)</p>
+<blockquote>
+<p>Le diagnostic initial de DT2 vous semble-t-il correct ? Argumentez en faveur d'un diagnostic alternatif.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le diagnostic de DT2 est <strong>incorrectement pose</strong>. Plusieurs elements plaident contre le DT2 et en faveur d'un <strong>LADA</strong> (Latent Autoimmune Diabetes in Adults) :</p>
+<p><strong>Contre le DT2</strong> :<br />
+- IMC normal (25,6) sans obesite abdominale (tour de taille 86 cm)<br />
+- Absence d'acanthosis nigricans (pas d'insulinoresistance clinique)<br />
+- Pas d'ATCD familiaux de DT2<br />
+- Perte de poids involontaire (catabolisme par carence insulinique)<br />
+- Echec rapide de la metformine seule (HbA1c 8,1% a 6 mois)<br />
+- Triglyceroles normaux, HDL normal (pas de profil metabolique du DT2)</p>
+<p><strong>Pour le LADA</strong> :<br />
+- <strong>Auto-anticorps anti-GAD fortement positifs</strong> (245 UI/mL) — marqueur du processus auto-immun<br />
+- <strong>Peptide C bas</strong> (a jeun et stimule) — defaut de secretion insulinique<br />
+- <strong>ATCD auto-immun personnel</strong> : thyroidite de Hashimoto (polyendocrinopathie auto-immune)<br />
+- <strong>ATCD familial auto-immun</strong> : mere hypothyroidie<br />
+- <strong>Age 30-50 ans</strong> : age typique du LADA (trop vieux pour un DT1 classique pediatrique, mais mecanisme auto-immun identique a evolution plus lente)</p>
+<p><strong>Criteres diagnostiques du LADA</strong> <em>(Immunology of Diabetes Society, 2005)</em> :<br />
+1. Age au diagnostic &gt; 30 ans ✓<br />
+2. Au moins un auto-anticorps anti-ilots positif ✓ (anti-GAD+++)<br />
+3. Pas d'insulinorequérance dans les 6 premiers mois ✓ (survit sous metformine, meme si mal equilibre)</p>
+<p><strong>Question 2 — Physiopathologie</strong> (comprehension)</p>
+<blockquote>
+<p>Expliquez pourquoi le LADA evolue plus lentement que le DT1 classique de l'enfant. Quels facteurs determinent la vitesse de perte de la fonction beta ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le LADA et le DT1 partagent le <strong>meme mecanisme</strong> (destruction auto-immune des cellules β mediee par les lymphocytes T), mais la cinetique de destruction differe :</p>
+<p><strong>Evolution plus lente du LADA</strong> :<br />
+- <strong>Titre des auto-anticorps souvent plus faible</strong> que dans le DT1 pediatrique (meme si ici les anti-GAD sont eleves)<br />
+- <strong>Nombre d'auto-anticorps</strong> : le DT1 de l'enfant a souvent 3-4 auto-anticorps positifs, le LADA souvent 1 seul (anti-GAD predominant)<br />
+- <strong>Profil HLA different</strong> : les haplotypes HLA-DR3/DR4 sont moins penetrants chez l'adulte, certains haplotypes protecteurs modulent la vitesse de destruction<br />
+- <strong>Insulinoresistance associee</strong> : certains patients LADA ont une composante d'insulinoresistance (« double diabete ») qui masque temporairement le deficit secretoire</p>
+<p><strong>Facteurs predisant une evolution rapide vers l'insulinorequérance</strong> :<br />
+- Titre eleve des anti-GAD (&gt; 180 UI/mL) → ici 245 → evolution rapide probable<br />
+- Positivite de multiples auto-anticorps<br />
+- Peptide C bas au diagnostic<br />
+- Age jeune au diagnostic (&lt; 35 ans)<br />
+- IMC bas</p>
+<p>Pour M. Lefebvre, avec des anti-GAD a 245 et un peptide C deja bas, l'insulinorequérance est previsible dans les <strong>6 a 18 mois</strong>.</p>
+<p><strong>Question 3 — Prise en charge</strong> (application)</p>
+<blockquote>
+<p>Quel traitement proposez-vous a M. Lefebvre ? La metformine doit-elle etre arretee ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Traitement recommande</strong> :</p>
+<ol>
+<li>
+<p><strong>Initier l'insulinothérapie</strong> sans attendre l'epuisement complet des cellules β :<br />
+   - Insuline basale (Degludec ou Glargine U300) : debuter a 10 UI/jour, titrer selon la GAJ<br />
+   - Rationale : l'introduction precoce de l'insuline dans le LADA pourrait <strong>preserver la fonction β residuelle</strong> en mettant les cellules β « au repos » <em>(Brophy et al., Diabet Med, 2011)</em> — concept du « beta-cell rest »</p>
+</li>
+<li>
+<p><strong>Maintenir la metformine</strong> si toleree :<br />
+   - Meme dans le LADA, la metformine a un interet car elle reduit la production hepatique de glucose et la dose d'insuline necessaire<br />
+   - Elle n'aggrave pas la perte de cellules β</p>
+</li>
+<li>
+<p><strong>Medicaments a eviter</strong> :<br />
+   - <strong>Sulfamides hypoglycemiants</strong> (gliclazide) : contre-indiques dans le LADA — ils stimulent les cellules β deja en destruction, accelerant potentiellement leur epuisement<br />
+   - <strong>iSGLT2</strong> : prudence — risque accru d'acidocetose euglycemique chez les patients LADA (mecanisme : reduction de l'insuline endogene residuelle + stimulation de la cetogenese)</p>
+</li>
+<li>
+<p><strong>Surveillance</strong> :<br />
+   - Peptide C tous les 6-12 mois (suivre la decroissance de la fonction β)<br />
+   - Adaptation progressive vers un schema basal-bolus quand le peptide C sera &lt; 0,20 nmol/L<br />
+   - Depistage annuel de la maladie coeliaque et de l'insuffisance surrenalienne (polyendocrinopathie)</p>
+</li>
+</ol>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC08-002</strong><br/>
+<em>Schema evolutif : trajectoire du LADA — courbe de decroissance du peptide C avec les seuils d'intervention therapeutique (Identifiez le moment optimal pour introduire l'insuline)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC08-003 — Algorithme diagnostique : diabete de l'adulte non obese — arbre decisionnel incluant LADA, MODY, DT2 precoce, diabete secondaire (Suivez l'arbre avec les donnees de M. Lefebvre)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas">Points cles du cas</h4>
+<ol>
+<li>Tout diabete de l'adulte non obese avec echec precoce des ADO doit faire rechercher un LADA (dosage des anti-GAD + peptide C)</li>
+<li>Le LADA represente 5-10% des « DT2 » diagnostiques chez l'adulte</li>
+<li>La polyendocrinopathie auto-immune (thyroidite, vitiligo, Biermer, maladie coeliaque) est un signal d'alerte</li>
+<li>L'insuline precoce dans le LADA pourrait preserver la fonction β residuelle</li>
+<li>Les sulfamides sont contre-indiques dans le LADA (acceleration de la perte β)</li>
+</ol>
+<hr />
+<p><a id="cas-9"></a></p>
+<h3 id="cas-n9-diabete-familial-precoce-suspicion-de-mody">Cas n°9 — Diabete familial precoce : suspicion de MODY</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 7 (Diabetes specifiques/monogeniques), 9 (Diagnostic), 30 (Grossesse)<br />
+<strong>Duree estimee</strong> : 25 min<br />
+<strong>Thematique principale</strong> : Diagnostic et prise en charge des diabetes monogeniques (MODY)</p>
+<h4 id="presentation-initiale_1">Presentation initiale</h4>
+<p>Mlle Garnier, 19 ans, etudiante, est adressee en diabetologie par son gynécologue. Lors de la prescription d'une contraception orale, la glycemie a jeun de controle revele 1,32 g/L. Un second prelevement confirme : 1,28 g/L. La patiente est totalement asymptomatique, mince (IMC 21 kg/m²), et sportive (danse classique 6h/semaine).</p>
+<p><strong>Antecedents familiaux</strong> (element cle) :<br />
+- <strong>Pere</strong> : diabete diagnostique a 25 ans, sous sulfamide seul, HbA1c 6,5%, IMC 23 kg/m²<br />
+- <strong>Grand-mere paternelle</strong> : diabete diagnostique a 30 ans, sous regime seul<br />
+- <strong>Oncle paternel</strong> : « intolerance au glucose » decouverte a 28 ans<br />
+- <strong>Mere et branche maternelle</strong> : aucun diabete</p>
+<p><strong>Antecedents personnels</strong> :<br />
+- Aucun ATCD medical ni chirurgical<br />
+- Pas de syndrome polyuro-polydipsique<br />
+- Poids de naissance : 4 200 g (macrosomie neonatale chez une mere non diabetique)</p>
+<h4 id="biologie_1">Biologie</h4>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glycemie a jeun</td>
+<td>1,28 g/L (7,1 mmol/L)</td>
+</tr>
+<tr>
+<td>HbA1c</td>
+<td>6,4%</td>
+</tr>
+<tr>
+<td>HGPO 2h</td>
+<td>1,55 g/L (8,6 mmol/L)</td>
+</tr>
+<tr>
+<td>Peptide C a jeun</td>
+<td>0,85 nmol/L (normal)</td>
+</tr>
+<tr>
+<td>Anti-GAD</td>
+<td>Negatif</td>
+</tr>
+<tr>
+<td>Anti-IA2</td>
+<td>Negatif</td>
+</tr>
+<tr>
+<td>Anti-ZnT8</td>
+<td>Negatif</td>
+</tr>
+<tr>
+<td>Insulinemie a jeun</td>
+<td>8 mUI/L (normal)</td>
+</tr>
+<tr>
+<td>TG</td>
+<td>0,70 g/L</td>
+</tr>
+<tr>
+<td>HDL</td>
+<td>0,68 g/L</td>
+</tr>
+<tr>
+<td>Creatinine</td>
+<td>62 µmol/L</td>
+</tr>
+<tr>
+<td>ASAT/ALAT</td>
+<td>Normaux</td>
+</tr>
+</tbody>
+</table>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC09-001</strong><br/>
+<em>Arbre genealogique de la famille Garnier — transmission autosomique dominante du diabete sur 3 generations avec ages de diagnostic et phenotypes (Identifiez le mode de transmission)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="questions-progressives_1">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Suspicion diagnostique</strong> (analyse)</p>
+<blockquote>
+<p>Le tableau clinico-biologique vous oriente vers quel type de diabete ? Quels sont les elements positifs et negatifs ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le tableau evoque fortement un <strong>diabete monogenique de type MODY</strong> (Maturity-Onset Diabetes of the Young) :</p>
+<p><strong>Elements positifs</strong> :<br />
+- <strong>Transmission autosomique dominante</strong> : diabete present a chaque generation sur la branche paternelle (grand-mere → pere → patiente), sans sauter de generation<br />
+- <strong>Age precoce de diagnostic</strong> : &lt; 25 ans pour la patiente et le pere (critere classique du MODY)<br />
+- <strong>Hyperglycemie moderee et stable</strong> : glycemie a jeun discretement elevee (1,28 g/L), HbA1c a 6,4% — pas de deterioration majeure<br />
+- <strong>Absence d'obesite</strong> : IMC 21 kg/m², pas de syndrome metabolique<br />
+- <strong>Peptide C normal</strong> : secretion insulinique conservee → pas de DT1<br />
+- <strong>Auto-anticorps negatifs</strong> : pas de mecanisme auto-immun<br />
+- <strong>Macrosomie neonatale</strong> : poids de naissance 4200 g — hyperinsulinisme foetal par hyperglycemie maternelle meconnue ? Ou hyperinsulinisme foetal direct si mutation GCK transmise</p>
+<p><strong>Elements negatifs pour les autres diagnostics</strong> :<br />
+- Contre DT1 : pas d'auto-anticorps, peptide C normal, pas de cetose<br />
+- Contre DT2 : pas d'obesite, pas d'insulinoresistance, pas de dyslipidemia, age 19 ans<br />
+- Contre LADA : pas d'auto-anticorps</p>
+<p><strong>Question 2 — Quel MODY ?</strong> (analyse approfondie)</p>
+<blockquote>
+<p>Parmi les differents sous-types de MODY, lequel suspectez-vous en priorite chez Mlle Garnier ? Justifiez.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le tableau est tres evocateur d'un <strong>MODY 2 (mutation du gene GCK — glucokinase)</strong> :</p>
+<p><strong>Arguments pour MODY 2/GCK</strong> :<br />
+- Hyperglycemie a jeun <strong>moderee et stable</strong> (1,20-1,40 g/L) — la glucokinase est le « glucostat » de la cellule β, sa mutation deplace le seuil de detection vers le haut<br />
+- HbA1c generalement entre 5,8 et 7,5% — ici 6,4%<br />
+- L'HGPO montre une <strong>faible excursion glycemique</strong> : delta (HGPO 2h - GAJ) = 1,55 - 1,28 = 0,27 g/L (&lt; 0,50 g/L) — typique du MODY 2 (contrairement au MODY 3/HNF1A ou le delta est &gt; 0,80 g/L)<br />
+- Grand-mere traitee par regime seul : compatible avec l'evolution benigne du MODY 2<br />
+- Macrosomie neonatale : si la mere n'etait pas porteuse de la mutation mais le foetus oui, l'hyperinsulinisme foetal expliquerait la macrosomie</p>
+<p><strong>Principaux MODY a connaitre</strong> <em>(adapte de Hattersley &amp; Patel, Diabetologia, 2017)</em> :<br />
+- <strong>MODY 2 (GCK)</strong> : hyperglycemie moderee stable, rarement besoin de traitement<br />
+- <strong>MODY 3 (HNF1A)</strong> : hyperglycemie progressive, tres sensible aux sulfamides, glycosurie a seuil bas<br />
+- <strong>MODY 1 (HNF4A)</strong> : similaire au MODY 3, macrosomie et hypoglycemie neonatale<br />
+- <strong>MODY 5 (HNF1B)</strong> : anomalies renales (kystes), pancreas atrophique</p>
+<p><strong>Question 3 — Confirmation et implications</strong> (application)</p>
+<blockquote>
+<p>Comment confirmez-vous le diagnostic ? Quelles sont les implications therapeutiques et pour la descendance ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Confirmation diagnostique</strong> :<br />
+- <strong>Test genetique moleculaire</strong> : sequencage du gene GCK (chromosome 7) par technique NGS (Next Generation Sequencing) — recherche de mutation heterozygote faux-sens ou d'epissage<br />
+- Delai de resultat : 2 a 4 mois (laboratoire specialise : Exeter, Paris-Cochin)<br />
+- En attendant le resultat, le diagnostic est retenu sur arguments clinico-biologiques</p>
+<p><strong>Implications therapeutiques majeures</strong> :<br />
+- <strong>Pas de traitement medicamenteux necessaire</strong> dans le MODY 2 ! L'hyperglycemie est stable toute la vie, les complications microvasculaires sont exceptionnelles — c'est l'un des rares diabetes ou le traitement n'est pas indispensable<br />
+- <strong>Arret de la metformine</strong> si deja prescrite (inutile)<br />
+- <strong>Exception : la grossesse</strong> — pendant la grossesse, les objectifs glycemiques sont plus stricts. Si le foetus n'est pas porteur de la mutation, l'hyperglycemie maternelle peut causer une macrosomie → insuline pendant la grossesse. Si le foetus est porteur, la glycemie maternelle est « normale » pour le foetus (meme seuil glucostatique) → pas d'insuline</p>
+<p><strong>Implications pour la famille</strong> :<br />
+- <strong>Risque de transmission</strong> : 50% pour chaque enfant (autosomique dominant)<br />
+- <strong>Depistage familial</strong> : proposer le test genetique au pere et a l'oncle (confirmation), aux futurs enfants<br />
+- <strong>Impact psychologique</strong> : rassurer la patiente — le MODY 2 a un pronostic excellent sans traitement</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC09-002</strong><br/>
+<em>Schema comparatif des 4 principaux MODY — gene, mecanisme, phenotype, traitement en 4 colonnes (Associez chaque MODY a son traitement optimal)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC09-003 — Algorithme de decision therapeutique pour le MODY 2 pendant la grossesse — selon le statut genetique du foetus (Determinez si l'insuline est necessaire selon le scenario)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_1">Points cles du cas</h4>
+<ol>
+<li>Le MODY represente 2-5% de tous les diabetes — il est sous-diagnostique (souvent etiquete DT1 ou DT2)</li>
+<li>Les 3 indices cles : diabete familial autosomique dominant, diagnostic &lt; 25 ans, auto-anticorps negatifs</li>
+<li>Le MODY 2 (GCK) est une hyperglycemie moderee stable qui ne necessite habituellement pas de traitement</li>
+<li>Le delta HGPO (T2h - T0) aide a distinguer MODY 2 (&lt; 0,50 g/L) de MODY 3 (&gt; 0,80 g/L)</li>
+<li>La grossesse est la seule situation ou le MODY 2 peut necessiter un traitement insulinique</li>
+</ol>
+<hr />
+<p><a id="cas-10"></a></p>
+<h3 id="cas-n10-nephropathie-diabetique-debutante-et-strategie-nephroprotectrice">Cas n°10 — Nephropathie diabetique debutante et strategie nephroprotectrice</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 17 (Nephropathie), 26 (iSGLT2), 29 (Strategie globale DT2)<br />
+<strong>Duree estimee</strong> : 25 min<br />
+<strong>Thematique principale</strong> : Depistage, classification et traitement de la nephropathie diabetique</p>
+<h4 id="presentation-initiale_2">Presentation initiale</h4>
+<p>M. da Silva, 58 ans, DT2 depuis 14 ans, est vu en consultation de suivi trimestriel. Le bilan annuel revele pour la 2eme fois consecutive une microalbuminurie elevee. Le patient est asymptomatique.</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Metformine 2000 mg/jour<br />
+- Gliclazide LM 60 mg/jour<br />
+- Ramipril 5 mg/jour (HTA)<br />
+- Atorvastatine 20 mg/jour<br />
+- PA : 138/84 mmHg</p>
+<h4 id="resultats-biologiques">Resultats biologiques</h4>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur actuelle</th>
+<th>Il y a 6 mois</th>
+<th>Il y a 1 an</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HbA1c</td>
+<td>7,8%</td>
+<td>7,5%</td>
+<td>7,9%</td>
+</tr>
+<tr>
+<td>Creatinine</td>
+<td>105 µmol/L</td>
+<td>98 µmol/L</td>
+<td>92 µmol/L</td>
+</tr>
+<tr>
+<td>DFG (CKD-EPI)</td>
+<td>62 mL/min/1,73m²</td>
+<td>67 mL/min/1,73m²</td>
+<td>72 mL/min/1,73m²</td>
+</tr>
+<tr>
+<td>RAC urinaire</td>
+<td>85 mg/g</td>
+<td>72 mg/g</td>
+<td>45 mg/g</td>
+</tr>
+<tr>
+<td>K+</td>
+<td>4,6 mmol/L</td>
+<td>4,4 mmol/L</td>
+<td>4,2 mmol/L</td>
+</tr>
+<tr>
+<td>LDL</td>
+<td>0,95 g/L</td>
+<td>1,02 g/L</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC10-001 — Graphique d'evolution : trajectoire DFG et RAC sur 3 ans — double axe montrant la decroissance du DFG et la montee de l'albuminurie (Identifiez la pente de declin du DFG et le seuil d'alerte)]</p>
+</blockquote>
+<h4 id="questions-progressives_2">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Classification</strong> (rappel)</p>
+<blockquote>
+<p>Classifiez la maladie renale chronique de M. da Silva selon les stades KDIGO 2024. Quel est son pronostic ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Classification KDIGO</strong> <em>(adapte de KDIGO CKD Guideline, Kidney Int, 2024)</em> :</p>
+<ul>
+<li><strong>Stade G</strong> (DFG) : <strong>G3a</strong> (DFG 62 mL/min → tranche 45-59 mL/min non atteinte, mais 60-89 = G2 ; en fait 62 est dans G2. Corrigeons : DFG 62 = <strong>G2</strong> (60-89 mL/min, legerement diminue)</li>
+<li><strong>Stade A</strong> (albuminurie) : RAC 85 mg/g → <strong>A2</strong> (moderement augmentee : 30-300 mg/g)</li>
+</ul>
+<p>Classification : <strong>MRC stade G2-A2</strong> (maladie renale chronique avec DFG legerement diminue et albuminurie moderee).</p>
+<p>Le pronostic est determine par la matrice de risque KDIGO : G2-A2 = <strong>risque moderement eleve</strong> de progression. La pente de declin du DFG est preoccupante : -10 mL/min en 1 an (&gt; 5 mL/min/an = declin rapide).</p>
+<p><strong>Question 2 — Les 4 piliers de la nephroprotection</strong> (application)</p>
+<blockquote>
+<p>Quels sont les 4 piliers de la nephroprotection en 2024 ? Appliquez-les a M. da Silva.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Les 4 piliers de la nephroprotection dans la nephropathie diabetique <em>(adapte des recommandations KDIGO 2024 et ESC/EASD 2023)</em> :</p>
+<p><strong>Pilier 1 — Blocage du SRAA (deja en place, a optimiser)</strong> :<br />
+- Ramipril deja prescrit a 5 mg → <strong>augmenter a la dose maximale toleree (10 mg/jour)</strong><br />
+- Cible tensionnelle : <strong>≤ 130/80 mmHg</strong> (ici 138/84 → pas a l'objectif)<br />
+- Surveiller K+ et creatinine a J7-J14 apres chaque augmentation (acceptable : hausse creatinine &lt; 30%)</p>
+<p><strong>Pilier 2 — iSGLT2 (a introduire)</strong> :<br />
+- <strong>Dapagliflozine 10 mg/jour ou empagliflozine 10 mg/jour</strong> — indication nephroprotection prouvee par les essais DAPA-CKD <em>(NEJM, 2020)</em> et EMPA-KIDNEY <em>(NEJM, 2023)</em><br />
+- Reduction du risque de progression de la MRC de 39% (DAPA-CKD)<br />
+- Peut etre prescrit jusqu'a un DFG de 20 mL/min (ne pas initier en dessous)<br />
+- Remplace le gliclazide dans la strategie antidiabetique (les sulfamides ne sont pas nephroprotecteurs)</p>
+<p><strong>Pilier 3 — Finerenone (ARM non steroidien — a considerer)</strong> :<br />
+- <strong>Finerenone 10-20 mg/jour</strong> — prouvee par les essais FIDELIO-DKD et FIGARO-DKD <em>(NEJM, 2020-2021)</em><br />
+- Reduction supplementaire de 18% du risque renal en plus du blocage du SRAA<br />
+- Indication : DT2 + albuminurie ≥ 30 mg/g + DFG ≥ 25 mL/min, sous SRAA bloqueur a dose maximale<br />
+- Surveillance : K+ (risque d'hyperkaliemie, surtout avec IEC + finerenone)</p>
+<p><strong>Pilier 4 — Controle glycemique et tensionnel</strong> :<br />
+- HbA1c cible 7-8% en cas de MRC stade 3+ (eviter les hypoglycemies)<br />
+- PA cible ≤ 130/80 mmHg — si pas atteinte sous IEC maximal : ajouter amlodipine ou thiazidique<br />
+- Restriction sodee (&lt; 6 g NaCl/jour) pour optimiser l'effet de l'IEC</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC10-002</strong><br/>
+<em>Schema des 4 piliers de la nephroprotection — representation en 4 colonnes avec mecanisme d'action, essais cles et NNT (Identifiez les 4 medicaments et leur niveau de preuve)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<p><strong>Question 3 — Ajustement therapeutique global</strong> (synthese)</p>
+<blockquote>
+<p>Reecrivez l'ordonnance complete de M. da Silva en integrant les modifications.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Nouvelle ordonnance</strong> :</p>
+<ol>
+<li><strong>Metformine 2000 mg/jour</strong> (maintenue — autorisee jusqu'a DFG 30 mL/min, ici DFG 62)</li>
+<li><strong>Dapagliflozine 10 mg/jour</strong> (remplace le gliclazide — double effet : antidiabetique + nephroprotecteur)</li>
+<li><strong>Ramipril 10 mg/jour</strong> (augmente de 5 a 10 mg — dose maximale nephroprotectrice)</li>
+<li><strong>Finerenone 10 mg/jour</strong> (ajoutee — nephroprotection complementaire, si K+ &lt; 5,0 mmol/L)</li>
+<li><strong>Atorvastatine 40 mg/jour</strong> (augmentee — cible LDL &lt; 0,70 g/L pour MRC stade 2 a haut risque)</li>
+</ol>
+<p><strong>Surveillance a J14</strong> :<br />
+- Creatinine + K+ + DFG (verifier la tolerance de l'augmentation du ramipril et de la finerenone)<br />
+- Accepter une hausse transitoire de la creatinine de 10-15% sous iSGLT2 (hemodynamique, pas nephrotoxique — « dip initial » lie a la reduction de l'hyperfiltration glomerulaire)</p>
+<p><strong>Surveillance trimestrielle</strong> :<br />
+- HbA1c, RAC, DFG, K+, PA</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC10-003 — Ordonnance-type annotee : nephroprotection optimale en 2024 — avec justification de chaque ligne et points de surveillance (Verifiez qu'aucun pilier ne manque)]</p>
+</blockquote>
+<h4 id="points-cles-du-cas_2">Points cles du cas</h4>
+<ol>
+<li>La nephropathie diabetique se depiste par le RAC urinaire annuel (seuil : 30 mg/g)</li>
+<li>La pente de declin du DFG (&gt; 5 mL/min/an) est un signal d'alarme de progression rapide</li>
+<li>Les 4 piliers nephroprotecteurs 2024 : IEC/ARA2 + iSGLT2 + finerenone + controle glycemique/tensionnel</li>
+<li>Les iSGLT2 sont nephroprotecteurs independamment de leur effet glycemique</li>
+<li>Le « dip initial » de creatinine sous iSGLT2 est hemodynamique et attendu — ne pas arreter le traitement</li>
+</ol>
+<hr />
+<p><a id="cas-11"></a></p>
+<h3 id="cas-n11-neuropathie-diabetique-douloureuse-refractaire">Cas n°11 — Neuropathie diabetique douloureuse refractaire</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 18 (Neuropathie), 22 (Insulinotherapie), 24 (Education)<br />
+<strong>Duree estimee</strong> : 25 min<br />
+<strong>Thematique principale</strong> : Diagnostic et traitement multimodal de la neuropathie diabetique douloureuse</p>
+<h4 id="presentation-initiale_3">Presentation initiale</h4>
+<p>Mme Moreau, 64 ans, DT2 depuis 20 ans, consulte pour des douleurs des pieds et des jambes qui l'empechent de dormir depuis 6 mois. Elle decrit des « brulures permanentes, comme si ses pieds etaient dans du feu », des picotements et des decharges electriques nocturnes. La douleur est cotee a 7/10 sur l'EVA. Son medecin traitant a prescrit du paracetamol-codeine sans efficacite.</p>
+<p><strong>Traitement actuel</strong> :<br />
+- Insuline Glargine U100 (Lantus) 42 UI au coucher<br />
+- Metformine 1700 mg/jour<br />
+- Sitagliptine 100 mg/jour<br />
+- Ramipril 10 mg, amlodipine 5 mg<br />
+- Atorvastatine 40 mg<br />
+- Paracetamol-codeine 3/jour (peu efficace)<br />
+- HbA1c : 8,5%</p>
+<h4 id="examen-neurologique">Examen neurologique</h4>
+<ul>
+<li><strong>Sensibilite tactile</strong> : monofilament 10g non percu sur les 2 pieds (5/5 sites) et les 2 chevilles</li>
+<li><strong>Sensibilite vibratoire</strong> : diapason 128 Hz non percu aux 2 malleoles internes, percu aux 2 genoux</li>
+<li><strong>Sensibilite thermique</strong> : non differenciee aux 2 pieds (Tip-Therm)</li>
+<li><strong>Reflexes achilleens</strong> : abolis bilateralement</li>
+<li><strong>Reflexes rotuliens</strong> : presents, symetriques</li>
+<li><strong>Force motrice</strong> : flechisseurs dorsaux 4/5 bilateralement, leg. deficit</li>
+<li><strong>Examen des pieds</strong> : pieds secs, orteils en griffe, callosite sous M1 et M5 bilateralement, pas de plaie</li>
+<li><strong>Score DN4</strong> : 7/10 (brulure +, froid douloureux +, decharges electriques +, fourmillements +, picotements +, engourdissements +, hypoesthesie au tact +)</li>
+</ul>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC11-001</strong><br/>
+<em>Schema topographique : distribution « en chaussette » de la neuropathie sensitive — cartographie des zones d'hypoesthesie et de douleur neuropathique (Identifiez le pattern longueur-dependant)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="questions-progressives_3">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Diagnostic positif et differentiel</strong> (analyse)</p>
+<blockquote>
+<p>Confirmez le diagnostic de neuropathie diabetique douloureuse. Quels diagnostics differentiels devez-vous eliminer ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Diagnostic positif</strong> — Polyneuropathie sensitivo-motrice diabetique douloureuse :<br />
+- Distribution <strong>longueur-dependante</strong> (distale → proximale, pieds avant mains) typique<br />
+- Atteinte des 3 types de fibres : petites fibres (douleur, temperature), grosses fibres (vibration, monofilament), et motrice (deficit dorsiflexion)<br />
+- Score <strong>DN4 ≥ 4/10</strong> (ici 7/10) → confirme la composante <strong>neuropathique</strong> de la douleur<br />
+- Contexte : DT2 de longue duree (20 ans), mal equilibre (HbA1c 8,5%)</p>
+<p><strong>Diagnostics differentiels a eliminer</strong> :<br />
+- <strong>Carence en vitamine B12</strong> : frequente sous metformine au long cours (dosage B12 serique + homocysteine/acide methylmalonique) — cause reversible<br />
+- <strong>Hypothyroidie</strong> : TSH (neuropathie peripherique associee)<br />
+- <strong>Ethylisme chronique</strong> : interrogatoire precis sur la consommation d'alcool<br />
+- <strong>Canal lombaire etroit</strong> : si composante radiculaire (EMG + IRM si doute)<br />
+- <strong>Gammapathie monoclonale</strong> : electrophorese des proteines seriques (surtout si neuropathie asymetrique ou progression rapide)<br />
+- <strong>Vascularite</strong> : si neuropathie multifocale (VS, CRP, ANCA)</p>
+<p><strong>Bilan minimal a prescrire</strong> : vitamine B12, TSH, EPP, NFS, VS, fonction hepatique.</p>
+<p><strong>Question 2 — Traitement de la douleur</strong> (application)</p>
+<blockquote>
+<p>Le paracetamol-codeine est inefficace. Quel traitement de la douleur neuropathique proposez-vous ? Detaillez la strategie par paliers.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+La douleur neuropathique ne repond pas aux antalgiques classiques (paliers 1-2 OMS). Le traitement repose sur des medicaments a action centrale <em>(adapte des recommandations ADA 2024, NeuPSIG/IASP 2023)</em> :</p>
+<p><strong>1ere ligne — Monotherapie (choix selon profil)</strong> :<br />
+- <strong>Pregabaline</strong> (Lyrica) : 75 mg × 2/jour, augmentation a 150 mg × 2 apres 1 semaine, max 300 mg × 2/jour — efficacite sur la douleur et le sommeil<br />
+- OU <strong>Duloxetine</strong> (Cymbalta) : 30 mg/jour pendant 1 semaine, puis 60 mg/jour, max 120 mg/jour — IRSNA, efficace aussi sur l'humeur<br />
+- OU <strong>Amitriptyline</strong> : 10-25 mg au coucher, titration lente, max 75 mg — tricyclique, efficace mais effets secondaires anticholinergiques (a eviter si &gt; 65 ans, mais acceptable avec surveillance)</p>
+<p>Pour Mme Moreau (64 ans, douleurs nocturnes ++) : <strong>duloxetine 60 mg</strong> en 1ere intention (bon rapport benefice/risque chez le sujet age, pas d'effets anticholinergiques).</p>
+<p><strong>2eme ligne — Bitherapie si echec a 4-8 semaines</strong> :<br />
+- Duloxetine + pregabaline (complementarites d'action : IRSNA + gabapentinoide)<br />
+- OU duloxetine + amitriptyline faible dose (10-25 mg au coucher pour le sommeil)</p>
+<p><strong>3eme ligne — Options complementaires</strong> :<br />
+- <strong>Capsaicine 8% patch</strong> (Qutenza) : application topique trimestrielle en centre specialise — efficace sur les douleurs focales<br />
+- <strong>Tapentadol</strong> (Palexia) : si douleur mixte nociceptive + neuropathique — opioide atypique (agoniste µ + inhibiteur de la recapture de la NA)<br />
+- <strong>Stimulation electrique transcutanee (TENS)</strong> : complement non pharmacologique</p>
+<p><strong>A eviter</strong> :<br />
+- Opiacés classiques (tramadol, morphine) : efficacite limitee, risque d'addiction<br />
+- Carbamazepine, oxcarbazepine : non indiques dans la polyneuropathie (reserves aux nevralgies craniennes)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC11-002 — Algorithme de traitement de la douleur neuropathique — 3 paliers avec options, titration et delai d'evaluation (Choisissez le traitement de 1ere ligne pour cette patiente)]</p>
+</blockquote>
+<p><strong>Question 3 — Equilibre glycemique et « neurotoxicite du glucose »</strong> (comprehension)</p>
+<blockquote>
+<p>Quel est le lien entre equilibre glycemique et neuropathie ? L'amelioration du controle glycemique peut-elle aggraver transitoirement les douleurs ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>Lien glycemie-neuropathie</strong> :<br />
+- L'hyperglycemie chronique est le facteur de risque principal de la neuropathie diabetique via les voies des polyols (accumulation de sorbitol), des produits de glycation avancee (AGE), du stress oxydatif et de la voie PKC <em>(Brownlee, Nature, 2001)</em><br />
+- Dans le DT1, chaque reduction de 1% d'HbA1c diminue le risque de neuropathie de 30% <em>(DCCT/EDIC)</em><br />
+- Dans le DT2, le benefice est moins net mais reel (UKPDS, ADVANCE)</p>
+<p><strong>Neuropathie aigue du traitement</strong> (« treatment-induced neuropathy of diabetes ») :<br />
+- <strong>Oui</strong>, une normalisation rapide de la glycemie peut paradoxalement <strong>aggraver les douleurs neuropathiques</strong> ou meme reveler une neuropathie jusque-la silencieuse<br />
+- Mecanisme : regeneration axonale douloureuse, oedemenerve par changements osmotiques, modifications vasculaires endoneurales<br />
+- Facteur de risque : reduction de l'HbA1c &gt; 2 points en &lt; 3 mois<br />
+- Recommandation pour Mme Moreau : viser une <strong>reduction progressive</strong> de l'HbA1c (0,5-1 point par trimestre), pas de correction brutale</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC11-003</strong><br/>
+<em>Schema physiopathologique : les 4 voies de la neurotoxicite du glucose — polyols, AGE, stress oxydatif, PKC — avec points d'impact therapeutique (Identifiez les cibles therapeutiques potentielles)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="points-cles-du-cas_3">Points cles du cas</h4>
+<ol>
+<li>Le score DN4 ≥ 4/10 confirme la composante neuropathique de la douleur</li>
+<li>Les antalgiques classiques sont inefficaces — le traitement repose sur pregabaline, duloxetine ou amitriptyline</li>
+<li>La bitherapie (IRSNA + gabapentinoide) est la 2eme ligne si monotherapie insuffisante</li>
+<li>Toujours rechercher les diagnostics differentiels (carence B12 sous metformine !)</li>
+<li>La normalisation glycemique trop rapide peut aggraver les douleurs (treatment-induced neuropathy)</li>
+</ol>
+<hr />
+<p><a id="cas-12"></a></p>
+<h3 id="cas-n12-echappement-aux-antidiabetiques-oraux-dans-le-dt2">Cas n°12 — Echappement aux antidiabetiques oraux dans le DT2</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 26 (ADO), 27 (Injectables), 28 (Insuline dans le DT2), 29 (Strategie globale)<br />
+<strong>Duree estimee</strong> : 25 min<br />
+<strong>Thematique principale</strong> : Escalade therapeutique dans le DT2 — passage aux injectables</p>
+<h4 id="presentation-initiale_4">Presentation initiale</h4>
+<p>M. Beaumont, 61 ans, DT2 depuis 9 ans, est suivi trimestriellement. Malgre une tritherapie orale, l'HbA1c se degrade progressivement :</p>
+<table>
+<thead>
+<tr>
+<th>Periode</th>
+<th>HbA1c</th>
+<th>Traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnostic (2017)</td>
+<td>7,2%</td>
+<td>Metformine seule</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>7,0%</td>
+<td>Metformine 2000 mg</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>7,5%</td>
+<td>Metformine + sitagliptine 100 mg</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>7,9%</td>
+<td>Metformine + sitagliptine + gliclazide LM 60 mg</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>8,6%</td>
+<td>Idem — desequilibre malgre observance</td>
+</tr>
+<tr>
+<td>Mars 2026</td>
+<td>9,1%</td>
+<td>Idem — echappement therapeutique</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Profil clinique</strong> :<br />
+- Poids : 98 kg, taille : 175 cm, IMC : 32 kg/m²<br />
+- Tour de taille : 108 cm<br />
+- PA : 135/82 mmHg sous losartan 50 mg<br />
+- ATCD : HTA, dyslipidemia (atorvastatine 20 mg, LDL 0,92 g/L)<br />
+- Pas de complication microvasculaire connue (FO normal, RAC &lt; 30 mg/g, pas de neuropathie)<br />
+- Pas d'ATCD cardiovasculaire<br />
+- DFG : 78 mL/min</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC12-001 — Graphique d'evolution de l'HbA1c sur 9 ans — courbe ascendante avec les modifications therapeutiques successives (Identifiez le moment ou l'echappement devient significatif)]</p>
+</blockquote>
+<h4 id="questions-progressives_4">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Physiopathologie de l'echappement</strong> (comprehension)</p>
+<blockquote>
+<p>Expliquez le mecanisme de l'echappement progressif aux ADO dans le DT2. Pourquoi la tritherapie orale ne suffit-elle plus ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+L'echappement therapeutique dans le DT2 reflete la <strong>perte progressive de la masse et de la fonction des cellules β</strong> au cours du temps :</p>
+<ul>
+<li>Au diagnostic du DT2, environ <strong>50% de la masse β est deja perdue</strong> <em>(UK Prospective Diabetes Study, Taylor et al.)</em></li>
+<li>La destruction continue a un rythme de <strong>3-5% par an</strong> (apoptose β acceleree par la glucotoxicite et la lipotoxicite)</li>
+<li>Les sulfamides (gliclazide) stimulent la secretion β — mais quand il ne reste plus assez de cellules β, ils perdent leur efficacite</li>
+<li>La sitagliptine (DPP4i) potentialise le GLP-1 endogene — mais son effet est modeste (~0,5-0,7% de reduction d'HbA1c) et ne compense pas la perte β</li>
+<li>La metformine agit sur l'insulinoresistance hepatique — elle reste utile mais insuffisante seule</li>
+</ul>
+<p><strong>Resultat</strong> : apres 10-15 ans de DT2, 50-60% des patients necessitent un traitement injectable (GLP-1 RA ou insuline).</p>
+<p><strong>Question 2 — Choix therapeutique</strong> (analyse)</p>
+<blockquote>
+<p>Vous decidez de passer a un traitement injectable. Quel est votre 1er choix : un GLP-1 RA ou l'insuline ? Justifiez selon le profil de M. Beaumont.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Selon l'algorithme ESC/EASD 2023 et les recommandations ADA/EASD 2022, le <strong>GLP-1 RA en 1ere intention</strong> est preferable a l'insuline chez M. Beaumont :</p>
+<p><strong>Arguments pour le GLP-1 RA en 1er</strong> :<br />
+- <strong>Perte de poids</strong> : M. Beaumont a un IMC 32 → le semaglutide SC (Ozempic) entraine une perte de -5 a 10% du poids vs gain de +2-4 kg sous insuline<br />
+- <strong>Benefice cardiovasculaire</strong> : meme sans ATCD CV, son risque est eleve (DT2 + HTA + dyslipidemia + obesite) → le semaglutide a prouve une reduction de 26% des MACE <em>(SUSTAIN-6, NEJM 2016)</em><br />
+- <strong>Pas d'hypoglycemie</strong> : contrairement a l'insuline, le GLP-1 RA n'induit pas d'hypoglycemie (effet glucose-dependant)<br />
+- <strong>Simplicite</strong> : 1 injection SC/semaine (semaglutide) vs 1 injection/jour (insuline basale)</p>
+<p><strong>Proposition therapeutique</strong> :<br />
+- Arreter la sitagliptine (meme classe GLP-1, redondance)<br />
+- Arreter le gliclazide (sulfamide, risque hypoglycemie, inefficace)<br />
+- <strong>Ajouter semaglutide SC (Ozempic)</strong> : 0,25 mg/semaine × 4 semaines, puis 0,5 mg × 4 semaines, puis 1 mg (dose d'entretien)<br />
+- Maintenir la metformine 2000 mg/jour</p>
+<p><strong>Si HbA1c reste &gt; 8% apres 3-6 mois sous semaglutide</strong> :<br />
+- Ajouter une insuline basale (Glargine U300 ou Degludec) : association « GLP-1 RA + insuline basale » (combinaison fixe possible : iDegLira = degludec + liraglutide, Xultophy)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC12-002 — Algorithme de l'escalade therapeutique du DT2 — arbre decisionnel ADA/EASD 2022 + ESC/EASD 2023 avec priorites selon le profil (Situez M. Beaumont et suivez la branche optimale)]</p>
+</blockquote>
+<p><strong>Question 3 — Tirzepatide : nouvelle option</strong> (connaissance avancee)</p>
+<blockquote>
+<p>Un collegue vous suggere le tirzepatide (Mounjaro). Quels sont ses avantages par rapport au semaglutide ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le <strong>tirzepatide</strong> est un double agoniste GIP/GLP-1 (« twincretine ») :</p>
+<p><strong>Mecanisme</strong> : stimule simultanement les recepteurs du GIP (glucose-dependent insulinotropic polypeptide) et du GLP-1, avec une efficacite superieure sur le controle glycemique et la perte de poids</p>
+<p><strong>Avantages demontres</strong> <em>(essais SURPASS, NEJM 2021-2023)</em> :<br />
+- <strong>Reduction d'HbA1c</strong> : -2,0 a -2,5% a la dose de 15 mg (vs -1,5 a -1,8% pour semaglutide 1 mg) — superiorite demontree en face-a-face (SURPASS-2)<br />
+- <strong>Perte de poids</strong> : -12 a -15% du poids initial a la dose de 15 mg (vs -6 a -10% pour semaglutide 1 mg)<br />
+- <strong>Profil de tolerance</strong> : similaire (nausees, vomissements transitoires a l'initiation)<br />
+- <strong>Disponibilite</strong> : AMM europeenne obtenue, remboursement en cours en France (2025)</p>
+<p><strong>Limite</strong> : pas encore de donnees CV definitives (essai SURPASS-CVOT en cours) — contrairement au semaglutide qui a le label « reduction des MACE prouvee ».</p>
+<p>Pour M. Beaumont, le tirzepatide serait une excellente option si disponible (HbA1c 9,1% → la puissance de reduction glycemique est maximale avec le tirzepatide).</p>
+<h4 id="points-cles-du-cas_4">Points cles du cas</h4>
+<ol>
+<li>L'echappement aux ADO dans le DT2 est lie a la perte progressive de la masse β (ineluctable)</li>
+<li>Le GLP-1 RA est le traitement injectable de 1ere intention avant l'insuline (sauf si HbA1c &gt; 10% ou signes cataboliques)</li>
+<li>Le semaglutide associe controle glycemique + perte de poids + protection CV</li>
+<li>Le tirzepatide (double agoniste GIP/GLP-1) est le plus puissant sur HbA1c et poids</li>
+<li>L'association GLP-1 RA + insuline basale est l'etape suivante si GLP-1 RA seul insuffisant</li>
+</ol>
+<hr />
+<p><a id="cas-13"></a></p>
+<h3 id="cas-n13-diabete-cortico-induit-sous-corticotherapie-prolongee">Cas n°13 — Diabete cortico-induit sous corticotherapie prolongee</h3>
+<p><strong>Niveau</strong> : 🥈 Argent<br />
+<strong>Modules mobilises</strong> : 7 (Diabetes specifiques), 31 (Chirurgie et situations aigues), 22 (Insulinotherapie)<br />
+<strong>Duree estimee</strong> : 20 min<br />
+<strong>Thematique principale</strong> : Diagnostic et prise en charge du diabete cortico-induit</p>
+<h4 id="presentation-initiale_5">Presentation initiale</h4>
+<p>M. Fournier, 56 ans, est hospitalise en pneumologie pour une exacerbation de BPCO. Il recoit depuis J3 de la prednisone 40 mg/jour en traitement de l'exacerbation. A J5, la glycemie capillaire de 16h est a 3,20 g/L (17,7 mmol/L). Le patient n'a pas de diabete connu. Glycemie a jeun ce matin : 1,15 g/L.</p>
+<p><strong>Antecedents</strong> :<br />
+- BPCO stade Gold III, 3 exacerbations/an<br />
+- Corticotherapie orale : 3-4 cures de 7-10 jours/an depuis 5 ans<br />
+- ATCD familiaux : mere DT2<br />
+- IMC : 29 kg/m², tour de taille : 102 cm<br />
+- HbA1c realisee a l'entree : 6,2% (prediabete)</p>
+<blockquote>
+<p>[MEDIA: 📊 MDIAB-CC13-001 — Profil glycemique typique du diabete cortico-induit — courbe sur 24h montrant la glycemie normale le matin et l'hyperglycemie majeure l'apres-midi et le soir (Comparez avec le profil d'un DT2 classique)]</p>
+</blockquote>
+<h4 id="questions-progressives_5">🤔 Questions progressives</h4>
+<p><strong>Question 1 — Mecanisme</strong> (comprehension)</p>
+<blockquote>
+<p>Pourquoi la glycemie est-elle normale le matin (1,15 g/L) mais tres elevee l'apres-midi (3,20 g/L) ? Expliquez le mecanisme du diabete cortico-induit.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+Le <strong>profil glycemique du diabete cortico-induit</strong> est tres particulier et s'explique par la pharmacocinetique de la prednisone :</p>
+<ul>
+<li>La prednisone orale est prise le matin (~8h)</li>
+<li><strong>Pic d'action</strong> : 4-8 heures apres la prise → l'hyperglycemie est <strong>maximale l'apres-midi et le soir</strong> (14h-22h)</li>
+<li><strong>Effet minimal</strong> : la nuit et tot le matin → la GAJ peut etre normale ou subnormale</li>
+</ul>
+<p><strong>Mecanismes de l'hyperglycemie cortico-induite</strong> :<br />
+1. <strong>Insulinoresistance peripherique majeure</strong> : les glucocorticoides inhibent la signalisation de l'insuline (voie PI3K/Akt) dans le muscle et le tissu adipeux<br />
+2. <strong>Neoglucogenese hepatique augmentee</strong> : activation des enzymes gluconeogeniques (PEPCK, G6Pase)<br />
+3. <strong>Lipolyse</strong> : liberation d'acides gras libres → lipotoxicite → aggravation de l'insulinoresistance<br />
+4. <strong>Dysfonction β</strong> : a fortes doses, les corticoides alterent la secretion d'insuline stimulee par le glucose</p>
+<p>Le terrain de M. Fournier (prediabete, obesite abdominale, ATCD familiaux DT2) est un facteur de risque majeur de diabete cortico-induit.</p>
+<p><strong>Question 2 — Traitement</strong> (application)</p>
+<blockquote>
+<p>Quel traitement antidiabetique choisissez-vous pour M. Fournier hospitalise ? Expliquez le choix de l'insuline et le schema adapte.</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>En situation hospitaliere avec glycemies &gt; 2,5 g/L : l'insuline est le traitement de choix.</strong></p>
+<p>Schema adapte au profil glycemique cortico-induit :</p>
+<p><strong>Option 1 — Insuline NPH (isophane) le matin</strong> :<br />
+- La NPH a un pic d'action a 4-8 heures → calque parfaitement le pic hyperglycemique de la prednisone matinale<br />
+- Dose initiale : 0,3-0,4 UI/kg/jour en une injection le matin (ici ~10-12 UI)<br />
+- Titration : augmenter de 2-4 UI/jour selon la glycemie de 16h-18h (cible &lt; 1,80 g/L)</p>
+<p><strong>Option 2 — Insuline basale + bolus si besoin</strong> :<br />
+- Si les glycemies pre-prandiales du dejeuner et du diner sont aussi elevees : ajouter de l'insuline rapide avant les repas de midi et du soir<br />
+- Ne PAS utiliser une seule injection de Glargine au coucher : elle ne couvre pas le pic diurne</p>
+<p><strong>Surveillance</strong> :<br />
+- Glycemie capillaire 4 fois/jour (a jeun, avant dejeuner, 16h, avant diner)<br />
+- A jeun : cible 0,80-1,40 g/L<br />
+- Pre-prandial : cible &lt; 1,80 g/L<br />
+- Attention a la decroissance des corticoides : reduire l'insuline proportionnellement (regle : baisser l'insuline de 20-25% pour chaque palier de 10 mg de prednisone)</p>
+<blockquote>
+<p>[MEDIA: 📋 MDIAB-CC13-002 — Schema d'insulinotherapie adaptee aux corticoides — appariement pharmacocinetique NPH/prednisone avec courbes superposees (Ajustez la dose d'insuline selon la dose de corticoides)]</p>
+</blockquote>
+<p><strong>Question 3 — Apres l'hospitalisation</strong> (analyse)</p>
+<blockquote>
+<p>M. Fournier est sorti a J10 sous prednisone 20 mg/jour en decroissance. Quel suivi proposez-vous ? Le diabete va-t-il persister ?</p>
+</blockquote>
+<p><strong>Reponse attendue</strong> :<br />
+<strong>A la sortie</strong> :<br />
+- Poursuivre l'insuline NPH avec dose reduite (proportionnelle a la dose de prednisone) :<br />
+  - Prednisone 40 mg → NPH ~12 UI<br />
+  - Prednisone 20 mg → NPH ~6 UI<br />
+  - Prednisone 10 mg → NPH ~3 UI → probablement arret de l'insuline<br />
+- <strong>Autocontrole glycemique</strong> : 2-3 glycemies/jour (a jeun + 16h minimum)<br />
+- <strong>Education</strong> : reconnaitre les symptomes d'hyperglycemie et d'hypoglycemie</p>
+<p><strong>Evolution probable</strong> :<br />
+- A l'arret des corticoides, les glycemies se normalisent dans la majorite des cas<br />
+- <strong>MAIS</strong> : l'HbA1c a 6,2% (prediabete) et les facteurs de risque (obesite, ATCD familiaux, exacerbations frequentes avec corticoides repetes) signifient un <strong>risque eleve de DT2 definitif</strong> a moyen terme<br />
+- <strong>Suivi recommande</strong> :<br />
+  - GAJ ou HbA1c tous les 6 mois<br />
+  - Glycemie capillaire systematique lors des prochaines cures de corticoides<br />
+  - Mesures preventives : perte de poids (-5%), activite physique, regime</p>
+<div class="vertex-media schema">
+<strong>📐 MDIAB-CC13-003</strong><br/>
+<em>Schema decisionnel : gestion du diabete cortico-induit apres arret des corticoides — algorithme de surveillance et prevention du DT2 definitif (Planifiez le suivi a 6 et 12 mois)</em><br/>
+<small style="color: #9E9E9E;">Média à intégrer — format SCHEMA</small>
+</div>
+
+<h4 id="points-cles-du-cas_5">Points cles du cas</h4>
+<ol>
+<li>Le diabete cortico-induit a un profil glycemique specifique : GAJ normale, hyperglycemie de l'apres-midi</li>
+<li>L'insuline NPH le matin est l'option ideale (pic calque sur la prednisone)</li>
+<li>La dose d'insuline suit la dose de corticoides : reduire proportionnellement lors de la decroissance</li>
+<li>Le terrain prediabetique multiplie le risque de diabete cortico-induit (depistage systematique)</li>
+<li>Apres l'arret des corticoides, surveiller l'HbA1c tous les 6 mois (risque de DT2 definitif a distance)</li>
+</ol>
+<hr />
+<p><em>Fin de la Partie 2 — Cas Argent (8-13)</em></p>
+</div>
