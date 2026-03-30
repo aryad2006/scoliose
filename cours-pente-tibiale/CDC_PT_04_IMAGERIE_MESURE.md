@@ -31,7 +31,7 @@
 - **Axe de référence** : axe diaphysaire tibial (centre canal médullaire 1/3 proximal)
 - **Erreur fréquente** : rotation externe du tibia→ artefact (+2-3°)
 
-> [MEDIA: 📷 MPT08-S01-001 — Technique radiographique profil : positionnement patient]
+> [MEDIA: 📐 PT-MOD04-001 — Schéma technique radiographique profil strict genou 90° flexion, points de repère anatomiques]
 
 ### §1.2 Reproductibilité
 
@@ -66,7 +66,7 @@
 - Navigations/robotique la favoritent
 - Valeurs proche axe anatomique
 
-> [MEDIA: 📐 MPT08-S02-001 — Trois repères de mesure superposés]
+> [MEDIA: 📐 PT-MOD04-002 — Trois méthodes mesure PTS superposées (axe anatomique vs cortex postérieur vs mécanique, écarts 3°)]
 
 > **❌ Erreur** : Comparer PTS mesurés par différentes méthodes. Toujours spécifier (ex: "PTS 8° axe anatomique")
 
@@ -86,7 +86,7 @@ Implication : chirurgien doit **connaître méthode utilisée** dans planificati
 - **Flexion incomplète** : plateau parait moins pentu si genou partiellement fléchi
 - **Angulation film** : rouleau latéral → fausse mesure
 
-> [MEDIA: 📷 MPT08-S03-001 — Radiographies avec erreurs courantes : rotation, flexion]
+> [MEDIA: 📐 PT-MOD04-003 — Erreurs mesure PTS : rotation tibia, flexion incomplète, artefacts positionnement]
 
 ### §3.2 Artefacts pathologiques
 

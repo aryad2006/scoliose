@@ -43,7 +43,9 @@ Pente influence **equal gap** en extension vs flexion :
 - Pente imbalancée → gap extension-flexion inégal
 - Corrections pente = outil fino-tuning final gap
 
-> [MEDIA: 📐 MPT15-S01-001 — Impact pente sur rollback et gap]
+> [MEDIA: 📐 PT-MOD06-001 — Schéma alignment mécanique PTG (axe neutre 0±3°, composants fémoraux/tibiaux)]
+> [MEDIA: 📐 PT-MOD06-002 — Schéma alignment cinématique (flexion fémorale +5°, valgus tibia +3°, rollback)]
+> [MEDIA: 📐 PT-MOD06-003 — Schéma restricted KA (compromis pragmatique, flexion +1-2°, tibia neutre)]
 
 ---
 

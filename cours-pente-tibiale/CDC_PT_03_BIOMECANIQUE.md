@@ -35,7 +35,7 @@ Force axiale P sur plateau incliné d'angle θ = PTS :
 - **F perpendiculaire** = P × cos(θ) → compression
 - **F tangentielle** = P × sin(θ) → cisaillement antérieur
 
-> [MEDIA: 📐 MPT05-S01-001 — Décomposition vectorielle sur le plan incliné]
+> [MEDIA: 📐 PT-MOD05-001 — Schéma décomposition forces plan incliné (angle θ PTS, force normale P×cos, force tangentielle P×sin)]
 
 Pour 80 kg en appui monopodal (P ≈ 800 N) :
 
@@ -61,7 +61,7 @@ En flexion, le vecteur de charge se postériorise :
 - **30° flexion** : vulnérabilité maximale du LCA (quadriceps actif + cisaillement)
 - **90°** : bascule postérieure → LCP sollicité
 
-> [MEDIA: 📐 MPT05-S02-001 — Vecteur de cisaillement selon la flexion]
+> [MEDIA: 📐 PT-MOD05-002 — Vecteur cisaillement selon angle flexion (0° extension → 30° → 90°, avec forces biomécaniques)]
 
 > 🤔 **Réflexion** : Pourquoi la majorité des ruptures du LCA surviennent-elles genou en légère flexion (15-30°) ?
 
@@ -79,7 +79,9 @@ Pente effective = osseuse + ménisques + PE (en PTG) :
 
 > **❌ Erreur** : Oublier le built-in slope de l'insert PE. Pente finale = coupe + insert.
 
-> [MEDIA: 📐 MPT05-S03-001 — Pente effective : composantes]
+> [MEDIA: 📐 PT-MOD05-003 — Schéma pente effective (osseuse + ménisques + PE insert PTG, convergence médial/latéral)]
+
+> [MEDIA: 📐 PT-MOD05-004 — Triangle stabilité LCA (forces, pente, ménisques, muscles ischio-jambiers compensateurs)]
 
 ---
 
