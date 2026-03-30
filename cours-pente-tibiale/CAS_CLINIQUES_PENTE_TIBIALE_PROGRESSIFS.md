@@ -70,6 +70,10 @@ M. Guyard, 42 ans, consultant orthopédiste pour lombalgies chroniques, passe un
 
 > [MEDIA: 📷 PTIB-CC01-001 — Radiographie profil strict genou — plateau tibial avec pente postérieure visible à l'œil ; lignes de référence (cortex postérieur, axe tibial) dessinées pour illustrer la mesure de 14° (Visualisez l'angle et comparez à une pente normale ~7°)]
 
+> [MEDIA: 📐 PTIB-CC01-002 — Schéma anatomique comparatif : PTS normale 7° vs PTS 14° (montrer les lignes du plateau tibial côte à côte, exagération visuelle de la pente et implications géométriques)]
+
+> [MEDIA: 📊 PTIB-CC01-003 — Graphique distribution PTS population : histogramme population générale (centré 7°±3°) avec position du patient M. Guyard (14°) dans zone élevée]
+
 #### 🤔 Questions progressives
 
 **Question 1 — Reconnaissance anatomique** (rappel)  
