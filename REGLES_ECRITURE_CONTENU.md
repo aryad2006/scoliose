@@ -280,11 +280,15 @@ Chaque média DOIT être accompagné d'une consigne d'observation :
 ### 7.1 Règles des tableaux
 
 - Un tableau DOIT avoir un titre implicite ou explicite clair
-- Maximum 6 colonnes (au-delà : scinder)
+- **Maximum 3 colonnes** pour garantir la lisibilité sur tous les écrans (mobile, tablette, desktop, export DOCX/PDF)
+- Si plus de 3 colonnes sont nécessaires : **scinder en plusieurs tableaux** ou utiliser des **listes imbriquées**
+- Les cellules doivent contenir des **textes courts** (< 60 caractères par cellule idéalement)
+- Pour les contenus longs : utiliser des listes à puces ou des sous-sections au lieu d'un tableau
 - Toujours citer la source des données numériques (auteur, année)
 - Utiliser le **gras** dans la colonne la plus discriminante
 - Ajouter une unité de mesure quand applicable
 - Préférer les valeurs concrètes aux descriptions vagues
+- ❌ JAMAIS de tableau qui déborde horizontalement — si le contenu est trop large, reformater en liste ou scinder
 
 ### 7.2 Comparaisons
 
