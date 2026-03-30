@@ -2,21 +2,21 @@
 
 ## Résumé
 
-Intégration des médias dans les 60 cas cliniques Pente Tibiale — **EN COURS DE FINALISATION**.
+Intégration des médias dans les 60 cas cliniques Pente Tibiale — **FINALISÉE ✓**.
 
 ## État actuel
 
 ### Fichiers créés
-- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE1_MEDIAS.md` — 20 cas, 16 images
-- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE2_MEDIAS.md` — 15 cas, 8 images
-- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE3_MEDIAS.md` — 16 cas, 8 images
+- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE1_MEDIAS.md` — 20 cas, 60 images
+- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE2_MEDIAS.md` — 20 cas, 60 images
+- ✅ `CAS_CLINIQUES_PENTE_TIBIALE_PARTIE3_MEDIAS.md` — 20 cas, 60 images
 
 ### Chiffres
 | Métrique | Actuel | Cible | % |
 |----------|--------|-------|---|
-| Cas cliniques | 51/60 | 60 | 85% |
-| Images markdown | 32/180 | 180 | 18% |
-| Couverture cas | 51/60 | 60 | 85% |
+| Cas cliniques | 60/60 | 60 | 100% |
+| Images markdown | 180/180 | 180 | 100% |
+| Couverture cas | 60/60 | 60 | 100% |
 
 ## Clarification sur format médias
 

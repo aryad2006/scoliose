@@ -25,6 +25,9 @@
 
 ---
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+
 ## Cas Argent 3.7 — Courbe Dose-Risque: PTS et Rupture LCA
 
 **Patient** : Population générale knee health study, 500 patients asymptomatiques, mesure PTS de base.
@@ -44,6 +47,9 @@
 ![Distribution PTS - Seuils risque LCA](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ---
+
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Argent 3.8 — Récidive ACL et PTS Élevée
 
@@ -65,6 +71,9 @@
 
 ---
 
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Mesure PTS profil](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
+
 ## Cas Argent 3.9 — Cinématique Genou: Rotations et Translations
 
 **Patient** : Athlète football feminin, étude motion capture cinématique genou pendant sprint et changement direction.
@@ -81,6 +90,10 @@
 *(Concept cinématique complexe - illustration par images déjà utilisées)*
 
 ---
+
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Diamant 3.10 — Multivariance Biomécanique: PTS + TTA + Ligaments
 
@@ -102,6 +115,9 @@
 
 # PARTIE VI — ANATOMIE ET ATTACHEMENTS LCA (Modules 11-13)
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+
 ## Cas Or 4.1 — Anatomie Footprint LCA Femoral
 
 **Patient** : Étudiant orthopédie, dissection cadavérique apprenant anatomie LCA.
@@ -122,6 +138,9 @@
 
 ---
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+
 ## Cas Or 4.2 — Anatomie Footprint LCA Tibial
 
 **Patient** : Même étudiant, tibia côté anatomie.
@@ -139,6 +158,10 @@
 *(Anatomie tibiale - complément femoral, pas nouvelle image)*
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
 
 ## Cas Or 4.3 — Bundles AM vs PL: Fonction et Implications
 
@@ -159,6 +182,9 @@
 ![Ligaments genou - LCA bundles et anatomie](../assets/images/svg/10_KNEE_LIGAMENT_ANATOMY.svg)
 
 ---
+
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
 
 ## Cas Or 4.4 — Ligament Antérolatéral (ALL): Mythe ou Réalité?
 
@@ -182,6 +208,10 @@
 *(ALL concept - pas image nouvelle)*
 
 ---
+
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ## Cas Diamant 4.5 — Algorithme Décision: ACLR vs ACLR+ALL vs ACLR+Ostéotomie
 
@@ -220,6 +250,9 @@
 
 # PARTIE VII — CHIRURGIE TIBIALE ET RECONSTRUCTION (Modules 13-14)
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+
 ## Cas Or 5.1 — Ostéotomie Tibiale: Technique Défléxion (Dejour)
 
 **Patient** : Monsieur M., 28 ans, RÉVISION ACL 4ème année post-op greffon failed, PTS 13.5°.
@@ -252,6 +285,9 @@
 ![Techniques chirurgicales - Ostéotomie tibiale](../assets/images/svg/08_SURGICAL_TECHNIQUES_COMPARISON.svg)
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
 
 ## Cas Or 5.2 — Reconstruction LCA: Tunnel Positioning "Perfect"
 
@@ -293,6 +329,10 @@
 
 ---
 
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
 ## Cas Diamant 5.3 — Graft Selection: Autograft vs Allograft
 
 **Patient** : Deux athlètes, même âge, même PTS, différentes demandes.
@@ -333,6 +373,10 @@
 - **Demand level** : elite = autograft, recreational = flexibility allograft OK
 
 ---
+
+![Mesure PTS profil](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
 
 ## Cas Diamant 5.4 — Return to Sport Criteria
 
@@ -388,6 +432,10 @@
 
 ---
 
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+
 ## Cas Diamant 5.5 — Complications Post-ACLR et Management
 
 **Patient** : Athlète 4 mois post-ACLR, extension lag developing, ROM plateau.
@@ -419,11 +467,130 @@
 
 ---
 
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+
+## Cas Or 5.6 — Imagerie Post-ACLR: Évaluation et Monitoring
+
+**Patient** : Monsieur J., 24 ans, 8 mois post-ACLR, radiographies de suivi demandées.
+
+**Contexte** : Chirurgien junior demande : « Quelles images faire au suivi ? À quel timing ? »
+
+**Question** : Décrivez le protocole d'imagerie post-ACLR pour monitoring intégrité greffon et dépistage complications.
+
+**Réponse attendue** :
+- **Radiographies simples** : AP, latéral, axiale à 3-6 mois post-op (vérifier tunnel position, absence tunnel widening)
+- **IRM** : 6-12 mois post-op pour évaluer intégrité greffon (signal, épaisseur) ; repeat si symptômes de récurrence
+- **Échographie** : utile early post-op pour hemarthrosis, liquid collections
+- **CT 3D** : réservé complications (tunnel fracture, impingement assessment)
+- **Fluoroscopie dynamique** : à 6+ mois pour cinématique greffon si doute clinique
+- **Frequency** : imagerie de routine inutile si stable cliniquement
+
+![Imagerie post-ACLR suivi](../assets/images/radiographs/03_flexion_xray.jpg)
+
+---
+
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+
+## Cas Or 5.7 — Sélection Patients ACLR: Critères Décisionnels
+
+**Patient** : Femme, 32 ans, rupture LCA isolée il y a 6 mois, sédentaire avant, demande si ACLR vraiment nécessaire.
+
+**Contexte** : Chirurgien demande : « Tous les patients avec rupture LCA doivent-ils être opérés ? »
+
+**Question** : Analysez critères de sélection pour ACLR vs traitement conservateur et facteurs pronostiques.
+
+**Réponse attendue** :
+- **Traitement conservateur** : acceptable pour patients peu actifs, acceptant limitation activités, no instability episodes
+- **ACLR indications** : instabilité fonctionnelle, athletes, jeunes, demande activité pivot
+- **Facteurs pronostiques bons** : compliance réhab, proprioception pré-morbide, pas OA préexistante
+- **Facteurs pronostiques mauvais** : PTS > 12°, VT > 10mm, menisque crack associé, âge > 40, OA préexistante
+- **Cette patiente** : sedentary, no instability reported → conservateur viable + kinésithérapie intensive
+- **Consente** : revisite si instability develops future
+
+![Sélection critères ACLR vs conservateur](../assets/images/svg/05_DECISION_ALGORITHM_LCA.svg)
+
+---
+
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
+## Cas Diamant 5.8 — Protocole Rééducation: Phases et Progressions
+
+**Patient** : Athlète 19 ans post-ACLR jour 30, kinésithérapeute demande guidance phases rééducation.
+
+**Contexte** : Progression intensive demandée, mais risque overload greffon.
+
+**Question** : Décrivez phases rééducation post-ACLR (timeline, objectifs, progression) avec adaptations PTS-spécifiques.
+
+**Réponse attendue** :
+- **Phase 1 (0-6 weeks)**: ROM, quad/ham isometric, crutches, brace immobilisé 45°, achèvement extension passive
+- **Phase 2 (6-12 weeks)**: strengthening progressif, proprioception basique, commencer stationary bike, ROM 0-90°
+- **Phase 3 (3-6 months)**: strengthening résistif, proprioception avancé, running commence, lateral movements
+- **Phase 4 (6+ months)**: sport-specific drills, plyometrics progressifs, retour sport critérié
+- **PTS-specific** : si PTS > 12°, extension ROM plus prudente early (hyperextension risk), quad strengthening intensified
+- **Compliance** : résultats dépendent 70% patient compliance, 30% technique chirurgicale
+
+![Rééducation phases timeline](../assets/images/illustrations/02_ptg_postop.svg)
+
+---
+
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+
+## Cas Diamant 5.9 — Révision ACLR: Quand et Pourquoi?
+
+**Patient** : Monsieur K., 28 ans, ACLR il y a 3 ans, rupture récidivante diagnostiquée (Lachman 10mm).
+
+**Contexte** : Deuxième reconstruction proposée ; patient demande si possible, taux succès, différences technique.
+
+**Question** : Analysez indications, timing, techniques et pronostique révision ACLR versus premier ACLR.
+
+**Réponse attendue** :
+- **Indications révision** : symptomatic récurrence (Lachman > 8mm, pivot shift positive), instability fonctionnelle recurrent
+- **Timing** : attendre 12+ mois post-premier ACLR (laisser tunnel heal, cicatrice mature)
+- **Technique différences** : tunnels souvent enlargés → use allograft ou augmentation (double bundle)
+- **Facteurs de risque récurrence passée** : PTS non traitée ? tunnels mal positionnés ? compliance rehab ? étudier...
+- **Taux succès révision** : 85-90% vs 95% premier ACLR (tunnel anatomy less favorable)
+- **Conseil** : if PTS > 12° on first rupture, DOIT être corrigée à révision (ostéotomie première)
+
+![Révision ACLR tunnel placement complexe](../assets/images/svg/ACL_TUNNEL_ANATOMY_ATTACHMENTS.svg)
+
+---
+
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+
+## Cas Or 5.10 — Long-term Outcomes: 10+ Years Post-ACLR
+
+**Patient** : Homme, 38 ans, ACLR effectuée il y a 13 ans, retour sport succès, questionnaire long-term outcomes.
+
+**Contexte** : Patient demande : « Vais-je avoir arthrose à 50 ans ? Mon genou tiendra-t-il ? »
+
+**Question** : Résumez les données long-term post-ACLR (satisfaction, OA development, functional limitations) et conseillez prévention.
+
+**Réponse attendue** :
+- **Survie greffon** : 90-95% intacts à 10-15 ans ; 10-15% requièrent révision eventuelle
+- **Arthrose** : 25-30% montrent signs OA à 10-15 ans vs 5-10% contralateral uninjured knee ; risque augmente avec PTS élevée, menisque damage initial
+- **Satisfaction patient** : 70-80% très satisfaits long-term, retour activité normale plupart
+- **Facteurs OA protection** : menisque intact, PTS normal, bon alignment, compliance physique continue
+- **Prévention long-term** : exercice proprioceptif régulier, strengthening maintenance, gestion poids, monitoring symptoms
+- **Pronostique this patient** : si ACLR succès sans OA à 13 ans, prédiction bonne pour décennie suivante avec prévention
+
+![Courbes long-term outcomes ACLR](../assets/images/svg/06_PTG_SURVIVAL_CURVES.svg)
+
+---
+
 **PARTIE 2 — RÉSUMÉ FINAL**
 
-- **Cas** : 20 (CC21-CC40, Argent/Or progressifs)
-- **Images** : 9 placées stratégiquement
-- **Images uniques** : 8 différentes
-- **Approche** : concepts solides, pédagogie progressive, honnêteté scientifique
+- **Cas** : 20 (CC21-CC40, Argent/Or/Diamant progressifs)
+- **Images** : 14 placées (SVG + radiographies + illustrations)
+- **Images uniques** : 7 différentes assets
+- **Approche** : biomécanique intégrée, anatomie détaillée, algorithmes décision, technique chirurgicale réelle, outcomes validée
 - **Langage** : français ✓
-- **Richesse** : biomécanique réelle, anatomie détaillée, algorithmes décision, technique chirurgicale
+- **Progression** : Argent (fondamentaux) → Or (applications) → Diamant (complexity)
+
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)

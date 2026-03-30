@@ -22,6 +22,9 @@
 
 ---
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+
 ## Cas Bronze 1.2 — Dejour Découverte 1994
 
 **Patient** : Homme, 28 ans, sportif pivot, rupture LCA DIDT il y a 4 ans, reconstruction effectuée il y a 3 ans "avec succès", mais instabilité residuelle persiste.
@@ -35,6 +38,9 @@
 ![Radiographie genou - Mesure PTS annotée](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
 
 ---
+
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Argent 1.3 — Évolution Alignement MA vs KA
 
@@ -57,6 +63,9 @@
 
 ---
 
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Mesure PTS profil](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
+
 ## Cas Or 1.4 — Restricted KA (rKA) Pragmatique 2024
 
 **Patient** : Homme, 55 ans, PTS native 11°, arthrose PTF sévère.
@@ -77,6 +86,9 @@
 ![Zones de sécurité PTG - Alignements et contraintes](../assets/images/svg/PTG_ZONES_SECURITE_ALIGNEMENTS.svg)
 
 ---
+
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
 
 ## Cas Diamant 1.5 — Contexte Historico-Biomécanique Intégré
 
@@ -102,6 +114,9 @@
 
 # PARTIE II — ANATOMIE & EMBRYOLOGIE (Modules 3-4)
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+
 ## Cas Bronze 2.1 — Plateau Médial vs Latéral
 
 **Patient** : Étudiant orthopédie (cas pédagogique), apprentissage anatomie genou.
@@ -119,6 +134,9 @@
 
 ---
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+
 ## Cas Bronze 2.2 — Ménisques & Pente Fonctionnelle
 
 **Patient** : Monsieur L., 52 ans, chirurgien junior pose Q : « Après méniscectomie latérale (meniscus torn), la PTS mesurée change-t-elle ? »
@@ -133,6 +151,9 @@
 ![Anatomie genou - Ménisques et ligaments](../assets/images/diagrams/02_knee_diagram_fr.svg)
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ## Cas Argent 2.3 — Croissance et Évolution Age
 
@@ -154,6 +175,9 @@
 
 ---
 
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
+
 ## Cas Or 2.4 — Variations Ethniques et Normalité
 
 **Patient** : Homme d'origine subsaharienne, 58 ans, PTG plannifiée, TDM montre PTS 9° (légèrement plus haut que nord-européen moyen 7°).
@@ -171,6 +195,10 @@
 *(Cas pédagogique sans image - concept suffisamment documenté)*
 
 ---
+
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ## Cas Diamant 2.5 — Développement Fœtal à Arthrose
 
@@ -191,6 +219,9 @@
 
 # PARTIE III — BIOMÉCANIQUE (Modules 5-7)
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+
 ## Cas Bronze 3.1 — Plan Incliné Simple
 
 **Patient** : Monsieur T., 70 kg, appui monopodal debout.
@@ -206,6 +237,9 @@
 ![Biomécanique - Forces de cisaillement LCA](../assets/images/svg/03_BIOMECHANICS_FORCES_LCA.svg)
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
 
 ## Cas Bronze 3.2 — Flexion et Vulnérabilité LCA
 
@@ -225,6 +259,10 @@
 
 ---
 
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
 ## Cas Argent 3.3 — LCA vs LCP Relationship Pente
 
 **Patient** : Homme, 40 ans, LCP chronique déficit grade 1-2 (positive posterior drawer test 1 cm), PTS mesuré 4° (très basse).
@@ -243,6 +281,9 @@
 
 ---
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
 ## Cas Or 3.4 — FEM Complexe
 
 **Patient** : Chercheur biomécanicien prépare étude FEM sur PTG cinématique selon PTS.
@@ -260,6 +301,10 @@
 *(Concept biomécanique déjà couvert - pas de nouvelle image nécessaire)*
 
 ---
+
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
 
 ## Cas Diamant 3.5 — Fluoroscopie Dynamique Cinématique
 
@@ -280,6 +325,9 @@
 
 # PARTIE IV — IMAGERIE (Modules 8-10)
 
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+
 ## Cas Bronze 4.1 — Technique Radiographique
 
 **Patient** : Technique radiologie demande : « Patient genou 45° flexion ; radiographie résultant. PTS 8°. Influence flexion ? »
@@ -295,6 +343,9 @@
 ![Mesure PTS - Technique et repères anatomiques](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ---
+
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
 
 ## Cas Bronze 4.2 — Méthodes Mesure Comparaison
 
@@ -313,6 +364,9 @@
 
 ---
 
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
 ## Cas Argent 4.3 — TDM 3D Pentes Asymétriques
 
 **Patient** : Homme 45 ans, HTO préop planning.
@@ -330,6 +384,9 @@
 ![Radiographie TDM - Pathologie et alignement](../assets/images/radiographs/02_oa_pathology.jpg)
 
 ---
+
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
 
 ## Cas Or 4.4 — EOS Charge vs Supine
 
@@ -350,6 +407,10 @@
 *(Concept déjà couvert cas 3.5 - cinématique dynamique - pas de nouvelle image nécessaire)*
 
 ---
+
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
 
 ## Cas Diamant 4.5 — Multimodal Integration
 
@@ -381,3 +442,6 @@
 - **Images** : 18 (une par cas, sauf 2 cas théoriques sans besoin)
 - **Images uniques** : 12 différentes
 - **Approche** : UNE SEULE image pédagogiquement pertinente par cas
+
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)

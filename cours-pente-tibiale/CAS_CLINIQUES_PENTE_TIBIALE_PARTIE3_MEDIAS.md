@@ -25,6 +25,9 @@
 
 ---
 
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+
 ## Cas Or 6.2 — Obésité, PTS, et Arthrose Accélérée
 
 **Patient** : Monsieur P., 55 ans, IMC 34, arthrose PTF modérée (3 ans d'évolution), PTS 10°, douleurs articulaires 8/10, limitation marche.
@@ -44,6 +47,9 @@
 ![Distribution PTS et risque arthrose progressive](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ---
+
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Argent 6.3 — Asymétrie Médio-Latérale PTS et Arthrose Asymétrique
 
@@ -65,6 +71,9 @@
 
 ---
 
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Mesure PTS profil](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
+
 ## Cas Or 6.4 — Débat Scientifique: KA vs MA dans Arthrose Établie
 
 **Patient** : Homme, 63 ans, arthrose PTF sévère (Kellgren 4), PTS 9° (normal), arthroscopy déjà effectuée (cartilage >50% loss), candidat PTG.
@@ -81,6 +90,10 @@
 - **Conclusion** : MA = choix sûr arthrose sévère + chirurgien non-spécialisé
 
 ---
+
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Diamant 6.5 — Navigation vs Technique Manuelle: Impact PTS Correction
 
@@ -102,6 +115,9 @@
 ---
 
 # PARTIE VII — PTG TECHNIQUE & RÉSULTATS (Modules 10-11)
+
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
 
 ## Cas Or 7.1 — Designs PTG: CR vs PS vs RP
 
@@ -126,6 +142,9 @@
 
 ---
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+
 ## Cas Or 7.2 — Complications PTG: Ostéolyse, Instabilité Tardive
 
 **Patient** : Homme, 72 ans, PTG unilatérale faite 8 ans avant (design PS), TDM montre ostéolyse progressive femoral (zone 3 Gruen = région supérieure-médiale), instabilité antérieure modérée.
@@ -144,6 +163,10 @@
 - **Stratégie** : radiographies annuelles, monitoring instabilité symptomatique
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
 
 ## Cas Argent 7.3 — Satisfaction vs Survivorship: Paradoxe PTG
 
@@ -168,6 +191,10 @@
 
 ---
 
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+
 ## Cas Or 7.4 — Révision PTG: Quand et Comment
 
 **Patient** : Homme, 70 ans, PTG primaire 11 ans avant (design CR), douleur progressive (8/10), laxité antérieure 12mm (KT), radiographies montrent perte osseuse fémorale modérée.
@@ -189,6 +216,10 @@
   - Réimplantation design stable (PS si instabilité cause révision)
 
 ---
+
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
 
 ## Cas Diamant 7.5 — Alignement Bi-Compartmental: PTG + Ostéotomie Tibiale Combinées
 
@@ -215,6 +246,10 @@
 
 # PARTIE VIII — SYNTHÈSE EXPERT & OUTCOMES (Modules 12-13)
 
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
+
 ## Cas Or 8.1 — Courbes Survie PTG: Différence Designs et Populations
 
 **Patient** : Database analytique : 15-year PTG outcome study 2000+ patients.
@@ -235,6 +270,9 @@
 ![PTG survival curves et outcomes](../assets/images/svg/06_PTG_SURVIVAL_CURVES.svg)
 
 ---
+
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
 
 ## Cas Or 8.2 — Technologies Émergentes: Robotique vs Navigation vs IA
 
@@ -264,6 +302,9 @@
 ![Technologies émergentes PTG](../assets/images/svg/09_MODERN_TECHNOLOGIES_COMPARISON.svg)
 
 ---
+
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
 
 ## Cas Diamant 8.3 — Disparités Genre dans PTG
 
@@ -297,6 +338,10 @@
 
 ---
 
+![Mesure PTS profil](../assets/images/svg/RADIOGRAPHIE_PROFIL_PTS_MESURE.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+
 ## Cas Or 8.4 — Variations Internationales PTG
 
 **Patient** : Analyse comparative : guidelines PTG USA vs Europe vs Asie vs Moyen-Orient.
@@ -317,6 +362,10 @@
 - **Message** : expectations vary, consultation chirurgien local essentiel
 
 ---
+
+![Radiographie flexion](../assets/images/radiographs/03_flexion_xray.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
 
 ## Cas Diamant 8.5 — Long-Term Vision: PTG 2040
 
@@ -353,6 +402,10 @@
 - **2040 vision** : PTG outpatient semi-routine, longevity > 30 years, satisfaction > 90%
 
 ---
+
+![Mesure angle PTS](../assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
 
 ## Cas Diamant 8.6 — Synthèse Décision: Patient Complexe Multi-Pathologie
 
@@ -399,6 +452,98 @@
 
 ---
 
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
+
+## Cas Or 8.7 — Femoral vs Tibial Component: Design Considerations
+
+**Patient** : Femme, 70 ans, arthrose sévère PTF, antécédent PTG contralateral réussie il y a 8 ans.
+
+**Contexte** : Chirurgien junior demande: « Pourquoi choisir CR vs PS vs RP si géométrie fémur-tibia pareille ? »
+
+**Question** : Expliquez les différences designs composants fémoraux (condylar geometry, femoral notch) et impact cinématique, stability, long-term wear.
+
+**Réponse attendue** :
+- **CR (Cruciate-Retaining)** : préserve LCP, cinématique plus physiologique, mais exige LCP intact et technique parfaite
+- **PS (Posterior-Stabilized)** : sacrifie LCP, ajoute post (stabilité mécanique), mieux pour LCA-deficient ou LCP degenerate
+- **RP (Rotating Platform)** : mobile bearing = réduction friction, wear théoriquement moins, mais complexité implantation, coût élevé
+- **Femoral geometry** : CR design moins assertif, PS design plus agressif (box/cam mechanism)
+- **Cette patiente** : si LCP intact → CR viable ; si LCP-deficient → PS safer
+
+![Designs PTG : CR vs PS vs RP comparaison](../assets/images/svg/PTG_ZONES_SECURITE_ALIGNEMENTS.svg)
+
+---
+
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie tibia (Gray)](../assets/images/illustrations/03_gray348_tibia.png)
+
+## Cas Or 8.8 — Cemented vs Cementless Fixation: Long-Term Evidence
+
+**Patient** : Homme, 65 ans, PTG planifiée, patient demande « Est-ce qu'un implant sans ciment tient aussi longtemps ? »
+
+**Contexte** : Débat cemented vs cementless dans littérature, prix différent significativement.
+
+**Question** : Comparez survival rates, failure modes, et recommandations actuelles cemented vs cementless PTG.
+
+**Réponse attendue** :
+- **Cemented** : gold standard, survival 95%+ à 20 years, techniques éprouvées, moins dépendant skill chirurgien
+- **Cementless** : survival 90-95% à 15-20 years, bone ingrowth technique-dependent, meilleur pour patients jeunes (mieux révisable)
+- **Hybrid** (cemented femur, cementless tibia) : souvent meilleur compromis
+- **Failure modes** : cemented = aseptic loosening tardif rare ; cementless = early micromotion risk
+- **Recommandation** : patient 65 ans → cemented standard (excellent outcomes) ; < 60 ans → cementless consider
+
+![Fixation cemented vs cementless : long-term outcomes](../assets/images/svg/06_PTG_SURVIVAL_CURVES.svg)
+
+---
+
+![Genou pédiatrique](../assets/images/radiographs/04_pediatric_knee.jpg)
+![Vue antérieure genou](../assets/images/diagrams/03_anterior_view.svg)
+
+## Cas Diamant 8.9 — Polyethylene Thickness & Wear: Balance Protection vs Longevity
+
+**Patient** : Homme, 50 ans, candidat PTG (jeune), question longevité implant.
+
+**Contexte** : Patient anxieux: « Si je vis 40 ans de plus, va-t-il falloir révision ? »
+
+**Question** : Expliquez le paradoxe thickness polyéthylène: plus épais = moins wear mais plus sacrifice de laxité ; thin poly = meilleur ROM mais wear accélérée. Stratégie optimale pour jeune patient ?
+
+**Réponse attendue** :
+- **Polyethylene wear** : dépend friction (design, alignment), force (weight), activité patient
+- **Thin poly** (8mm) : cinématique meilleur, but wear rate 2-3× supérieur
+- **Thick poly** (11-14mm) : wear rate bas, mais sacrifie laxité ligamentaire (stiffness perception)
+- **Irradiated vs virgin** : crosslinked PE reduce wear ~50% vs virgin (standard now)
+- **Patient 50 ans** : recommandé crosslinked PE UHMWPE, medium thickness (11mm), expect revision ~20-25 years
+- **Prevention** : alignment optimal, weight management, activity modification
+
+![Polyéthylène usure et longevité PTG](../assets/images/illustrations/02_ptg_postop.svg)
+
+---
+
+![Radiographie normal](../assets/images/radiographs/01_knee_normal_ap.jpg)
+![Anatomie plateau tibial](../assets/images/svg/02_TIBIAL_PLATEAU_ANATOMY.svg)
+
+## Cas Diamant 8.10 — Emerging Technologies: 3D Printing, Robotic-Assisted, AI-Guided Planning
+
+**Patient** : Homme, 55 ans, PTG complexe planifiée, orthopédiste propose robot-assisted + AI planning.
+
+**Contexte** : Patient asks: « Vaut-il le coût extra ? Est-ce vraiment mieux ? »
+
+**Question** : Évaluez technologies émergentes (robot, AI, 3D custom implants) : evidence level, cost-benefit, indications.
+
+**Réponse attendue** :
+- **Robot-assisted PTG** : précision ±1-2mm, alignement meilleur, apprentissage steep, coût +5-8k€ ; evidence : meilleur alignment mais outcomes cliniques similaires à manual expert
+- **AI planning** : algorithmes predict optimal alignment, prevent mechanical complications ; promesse > evidence actuelle
+- **3D-printed custom implants** : perfect anatomy fit théorique, mais coût très élevé (~20-30k€), long-term durability data limited
+- **Current stance** : robot utile pour surgeons apprentis ; expert manual souvent aussi bon ; 3D custom = research stage
+- **Cette patient** : standard PTG avec good alignment probablement suffisant ; robot optional si surgeon expertise limite
+
+![Technologies émergentes PTG: robotique, IA, impression 3D](../assets/images/svg/09_MODERN_TECHNOLOGIES_COMPARISON.svg)
+
+---
+
 **FIN PARTIE 3**
 
-*Total : 20 cas Or-Diamant integrating PTG decision-making, technologies, outcomes, et synthèse multimodale.*
+*Total : 20 cas Or-Diamant integrating PTG decision-making, technologies, outcomes, design innovations, et synthèse multimodale complexe.*
+
+![Distribution PTS et risque](../assets/images/svg/07_PTS_DISTRIBUTION_RISK.svg)
+![Anatomie os membres](../assets/images/anatomy/01_leg_bones.svg)
