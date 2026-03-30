@@ -1,99 +1,112 @@
-<svg width="1000" height="900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900">
-  <!-- Title -->
-  <text x="500" y="35" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
-    Algorithme Décisionnel LCA — Du Diagnostic à la Chirurgie
-  </text>
-
-  <!-- Define arrow marker -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
   <defs>
+    <style>
+      .box-start { fill: #3498db; stroke: #2980b9; }
+      .box-decision { fill: #f39c12; stroke: #e67e22; }
+      .box-action { fill: #27ae60; stroke: #229954; }
+      .box-risk { fill: #e74c3c; stroke: #c0392b; }
+      .text-white { fill: white; font-weight: bold; font-size: 13px; }
+      .text-dark { fill: #1a1a1a; font-size: 12px; }
+      .text-label { fill: #34495e; font-size: 11px; }
+      .arrow { stroke: #2c3e50; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
-    </marker>
-    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#009900"/>
-    </marker>
-    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <polygon points="0 0, 10 3, 0 6" fill="#cc0000"/>
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
     </marker>
   </defs>
 
-  <!-- START: Patient with anterior knee pain -->
-  <rect x="350" y="80" width="300" height="60" fill="#ffffcc" stroke="#ff9900" stroke-width="2" rx="8"/>
-  <text x="500" y="105" font-size="13" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Patient : Douleur antérieure genou</text>
-  <text x="500" y="125" font-size="11" text-anchor="middle" fill="#333">(ou instabilité rapportée)</text>
+  <text x="700" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Algorithme Décisionnel — ACL Natif vs Reconstruction
+  </text>
+
+  <!-- START -->
+  <rect x="550" y="60" width="300" height="50" class="box-start" rx="8"/>
+  <text x="700" y="92" text-anchor="middle" class="text-white">Suspicion Rupture LCA</text>
 
   <!-- Arrow down -->
-  <line x1="500" y1="140" x2="500" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="110" x2="700" y2="140" class="arrow"/>
 
-  <!-- CLINICAL EXAM -->
-  <rect x="320" y="180" width="360" height="90" fill="#e8f4f8" stroke="#0066cc" stroke-width="2" rx="8"/>
-  <text x="500" y="205" font-size="12" font-weight="bold" text-anchor="middle" fill="#003366">EXAMEN CLINIQUE :</text>
-  <text x="340" y="225" font-size="10" fill="#003366">• Lachman test (60-90° flexion) — SENSIBILITÉ 85%</text>
-  <text x="340" y="240" font-size="10" fill="#003366">• Anterior drawer test (90° flexion) — SPÉCIFICITÉ 95%</text>
-  <text x="340" y="255" font-size="10" fill="#003366">• Pivot-shift test (flexion-extension) — PATHOGNOMONIQUE si positif</text>
+  <!-- Examen Clinique -->
+  <rect x="500" y="140" width="400" height="70" class="box-decision" rx="8"/>
+  <text x="700" y="163" text-anchor="middle" class="text-white">Examen Clinique</text>
+  <text x="700" y="185" text-anchor="middle" class="text-label">Lachman, Anterior Drawer, Pivot-Shift</text>
+  <text x="700" y="200" text-anchor="middle" class="text-label">→ Sensibilité ~90% si rupture complète</text>
 
   <!-- Arrow down -->
-  <line x1="500" y1="270" x2="500" y2="310" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="210" x2="700" y2="240" class="arrow"/>
 
-  <!-- IMAGING: X-RAY MEASUREMENT -->
-  <rect x="300" y="310" width="400" height="110" fill="#f0e8ff" stroke="#9933cc" stroke-width="2" rx="8"/>
-  <text x="500" y="335" font-size="12" font-weight="bold" text-anchor="middle" fill="#663366">RADIOGRAPHIES SIMPLES (Bilan initial) :</text>
-  <text x="320" y="355" font-size="10" fill="#663366">• Mesurer PTS (angle pente tibiale) — Dejour method</text>
-  <text x="320" y="370" font-size="10" fill="#663366">• Mesurer axe mécanique (MA) — para-articulaire vs intra-articulaire</text>
-  <text x="320" y="385" font-size="10" fill="#663366">• Évaluer morphologie plateau tibial (profondeur, pentes latérale/médiale)</text>
-  <text x="320" y="400" font-size="10" fill="#663366">• Résumé : Baseline axes, PTS pour stratégie reconstruction</text>
+  <!-- IRM -->
+  <rect x="520" y="240" width="360" height="60" class="box-decision" rx="8"/>
+  <text x="700" y="268" text-anchor="middle" class="text-white">Confirmation IRM 3D</text>
+  <text x="700" y="288" text-anchor="middle" class="text-label">Diagnostic rupture, ménisques, cartilage</text>
 
-  <!-- DECISION POINT 1: PTS LEVEL -->
-  <line x1="500" y1="420" x2="500" y2="460" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Arrow down -->
+  <line x1="700" y1="300" x2="700" y2="330" class="arrow"/>
 
-  <!-- Diamond: PTS assessment -->
-  <polygon points="500,490 570,530 500,570 430,530" fill="#fff4e6" stroke="#ff9900" stroke-width="2"/>
-  <text x="500" y="535" font-size="11" font-weight="bold" text-anchor="middle" fill="#1a1a1a">PTS ?</text>
+  <!-- MESURE PTS - CRITIQUE -->
+  <rect x="470" y="330" width="460" height="80" class="box-risk" rx="8" stroke-width="3"/>
+  <text x="700" y="358" text-anchor="middle" class="text-white">⚠️ MESURE PTS SUR RADIOGRAPHIE LATÉRALE ⚠️</text>
+  <text x="700" y="380" text-anchor="middle" class="text-label">Méthode Dejour : angle cortex postérieur tibia vs horizontale</text>
+  <text x="700" y="397" text-anchor="middle" class="text-label">Cet angle détermine la stratégie chirurgicale complète</text>
 
-  <!-- LEFT BRANCH: PTS < 12° (Normal/Moderate) -->
-  <line x1="430" y1="530" x2="280" y2="530" stroke="#009900" stroke-width="2" marker-end="url(#arrowhead-green)"/>
-  <text x="340" y="520" font-size="10" font-weight="bold" fill="#009900">PTS < 12°</text>
+  <!-- Arrow down -->
+  <line x1="700" y1="410" x2="700" y2="440" class="arrow"/>
 
-  <rect x="140" y="480" width="280" height="100" fill="#e6ffe6" stroke="#009900" stroke-width="2" rx="8"/>
-  <text x="280" y="505" font-size="11" font-weight="bold" text-anchor="middle" fill="#003300">RECONSTRUCTION LCA STANDARD</text>
-  <text x="160" y="525" font-size="10" fill="#003300">• Double-bundle or single-bundle</text>
-  <text x="160" y="540" font-size="10" fill="#003300">• Greffon : auto-hamstring préféré</text>
-  <text x="160" y="555" font-size="10" fill="#003300">• Succès ~90-95% à 5 ans</text>
+  <!-- DECISION TREE - 3 branches -->
+  <g>
+    <!-- Branche 1: PTS ≤ 10° (VERT) -->
+    <rect x="80" y="440" width="280" height="60" class="box-action" rx="8"/>
+    <text x="220" y="468" text-anchor="middle" class="text-white">PTS ≤ 10° (Normal)</text>
+    <text x="220" y="488" text-anchor="middle" class="text-label">Risque rupture baseline</text>
 
-  <!-- RIGHT BRANCH: PTS ≥ 12° (Elevated) -->
-  <line x1="570" y1="530" x2="720" y2="530" stroke="#cc0000" stroke-width="2" marker-end="url(#arrowhead-red)"/>
-  <text x="650" y="520" font-size="10" font-weight="bold" fill="#cc0000">PTS ≥ 12°</text>
+    <line x1="220" y1="500" x2="220" y2="540" class="arrow"/>
+    <rect x="100" y="540" width="240" height="90" class="box-action" rx="8"/>
+    <text x="220" y="565" text-anchor="middle" class="text-white">RECONSTRUCTION SIMPLE</text>
+    <text x="220" y="585" text-anchor="middle" class="text-label">Single-Bundle ou Double-Bundle</text>
+    <text x="220" y="602" text-anchor="middle" class="text-label">Greffon hamstring/patellar</text>
+    <text x="220" y="618" text-anchor="middle" class="text-label">Suivi clinique classique</text>
 
-  <rect x="580" y="480" width="280" height="100" fill="#ffe6e6" stroke="#cc0000" stroke-width="2" rx="8"/>
-  <text x="720" y="505" font-size="11" font-weight="bold" text-anchor="middle" fill="#660000">RECONSTRUCTION + PTS CORRECTION</text>
-  <text x="600" y="525" font-size="10" fill="#660000">• LCA reconstruction + tibial slope reduction</text>
-  <text x="600" y="540" font-size="10" fill="#660000">• Deflexion technique (Dejour approach)</text>
-  <text x="600" y="555" font-size="10" fill="#660000">• Reduce PTS to < 10° intra-operatively</text>
+    <!-- Branche 2: PTS 10-12° (ORANGE) -->
+    <rect x="440" y="440" width="280" height="60" class="box-decision" rx="8"/>
+    <text x="580" y="468" text-anchor="middle" class="text-white">PTS 10-12° (Borderline)</text>
+    <text x="580" y="488" text-anchor="middle" class="text-label">Risque modéré (+50%)</text>
 
-  <!-- MRI DETAILED ASSESSMENT (both branches converge) -->
-  <line x1="280" y1="580" x2="380" y2="630" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <line x1="720" y1="580" x2="620" y2="630" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="580" y1="500" x2="580" y2="540" class="arrow"/>
+    <rect x="460" y="540" width="240" height="90" class="box-decision" rx="8"/>
+    <text x="580" y="565" text-anchor="middle" class="text-white">RECONSTRUCTION + SURVEILLANCE</text>
+    <text x="580" y="585" text-anchor="middle" class="text-label">Double-Bundle préféré</text>
+    <text x="580" y="602" text-anchor="middle" class="text-label">Renforcement neuromusculaire</text>
+    <text x="580" y="618" text-anchor="middle" class="text-label">Suivi strict 12 mois</text>
 
-  <rect x="300" y="630" width="400" height="120" fill="#f0f8ff" stroke="#0066cc" stroke-width="2" rx="8"/>
-  <text x="500" y="655" font-size="12" font-weight="bold" text-anchor="middle" fill="#003366">BILAN IMAGERIE DÉTAILLÉ (IRM/TDM 3D) :</text>
-  <text x="320" y="675" font-size="10" fill="#003366">• IRM 3D : mesure PTS précision ±1° (ICC 0.95 vs 0.88 radio)</text>
-  <text x="320" y="690" font-size="10" fill="#003366">• Évaluer dégâts cartilage (chondropathie OA précoce)</text>
-  <text x="320" y="705" font-size="10" fill="#003366">• Morphologie ménisque (dégâts méniscaux associés 30-40%)</text>
-  <text x="320" y="720" font-size="10" fill="#003366">• 3D planning : guide pour technique, alignement, taille greffon</text>
-  <text x="320" y="735" font-size="10" fill="#003366">• TDM pour chirurgie correction axe (raro-varo associated)</text>
+    <!-- Branche 3: PTS > 12° (ROUGE) -->
+    <rect x="800" y="440" width="280" height="60" class="box-risk" rx="8"/>
+    <text x="940" y="468" text-anchor="middle" class="text-white">PTS > 12° (Élevé)</text>
+    <text x="940" y="488" text-anchor="middle" class="text-label">Risque rupture ×2.3 à ×4</text>
 
-  <!-- Arrow convergence -->
-  <line x1="500" y1="750" x2="500" y2="790" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="940" y1="500" x2="940" y2="540" class="arrow"/>
+    <rect x="820" y="540" width="240" height="110" class="box-risk" rx="8" stroke-width="2"/>
+    <text x="940" y="568" text-anchor="middle" class="text-white">CORRECTION PENTE REQUISE</text>
+    <text x="940" y="588" text-anchor="middle" class="text-label">Option 1: Déflexion PUIS reco (2-3m)</text>
+    <text x="940" y="604" text-anchor="middle" class="text-label">Option 2: DB + déflexion simultané</text>
+    <text x="940" y="620" text-anchor="middle" class="text-label">Option 3: Déflexion seule si patient</text>
+    <text x="940" y="635" text-anchor="middle" class="text-label">refuse reco (Dejour technique)</text>
+  </g>
 
-  <!-- FINAL DECISION -->
-  <rect x="320" y="790" width="360" height="85" fill="#ffffcc" stroke="#ff9900" stroke-width="2" rx="8"/>
-  <text x="500" y="815" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">DÉCISION CHIRURGICALE FINALE :</text>
-  <text x="340" y="835" font-size="10" fill="#1a1a1a">✓ Type reconstruction (mono/double bundle, auto/allo)</text>
-  <text x="340" y="850" font-size="10" fill="#1a1a1a">✓ Correction PTS ? (si ≥12°) — timing (1-stage vs 2-stage)</text>
-  <text x="340" y="865" font-size="10" fill="#1a1a1a">✓ Technique guidage (arthroscopique, pSI, robotique)</text>
-
-  <!-- Footnote -->
-  <text x="50" y="890" font-size="9" font-style="italic" fill="#666">
-    Sources : Brandon 2006 (PTS risk OR 2.3), Dejour (deflexion technique), Rivière 2020 (rKA standard), Howell 2019 (LCA outcomes)
+  <!-- Footer -->
+  <rect x="50" y="750" width="1300" height="120" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+  <text x="700" y="775" font-size="12" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Points Clés Décisionnels :
+  </text>
+  <text x="70" y="800" font-size="11" fill="#34495e">
+    • Brandon 2006 (NP II): PTS >12° = OR 2.3 rupture LCA natif vs normal
+  </text>
+  <text x="70" y="820" font-size="11" fill="#34495e">
+    • Christensen 2017 (NP I meta-analyse): Seuil 12° universel toutes populations
+  </text>
+  <text x="70" y="840" font-size="11" fill="#34495e">
+    • Independance PTS vs notch (r=0.1-0.2) mais triple risque si PTS + notch étroit + varus = très élevé
+  </text>
+  <text x="70" y="858" font-size="11" fill="#34495e">
+    • Prévention neuromusculaire critique si PTS >10°. Re-rupture post-reco: 35% si PTS>12° vs 8% si <12° (Webb 2013)
   </text>
 </svg>

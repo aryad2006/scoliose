@@ -35,7 +35,9 @@
 - PTS élevée = facteur risque associé rupture (NP I)
 - Diverse populations (américaine, asiatique, européenne), seuil >12° constant
 
-> [MEDIA: 📊 MPT11-S01-001 — Forest plot : PTS et OR rupture LCA]
+> [MEDIA: 📊 PT-MOD11-001 — Graphique OR rupture LCA vs angle PTS (Brandon 2006 : OR 2.3 à >12°, Christensen 2017 meta-analyse NP I)]
+>> [MEDIA: 📐 PT-MOD11-002 — Schéma continuum risque PTS (7° baseline → 10° ×1.5 → 12° ×2.3 → 15° ×4)]
+>> [MEDIA: 📊 PT-MOD11-003 — Distribution PTS population (histogramme, zones risque normale/borderline/élevée)]
 
 ### §1.2 Seuil 12°: universalité
 
@@ -60,7 +62,7 @@
 - PTS > 12° ET notch étroit = **double risque** (multiplication)
 - Indépendance PTS vs notch : pas corrélé (r=0.1-0.2)
 
-> [MEDIA: 📐 MPT11-S02-001 — Corrélation PTS vs notch index]
+> [MEDIA: 📐 PT-MOD11-004 — Illustration triple facteur risque (PTS + notch + varus) = compounding risk]
 
 ### §2.2 Alinage géométrique
 
@@ -153,7 +155,8 @@
 - PTS >12° + greffon → dégénérescence ménisque ↑, laxité progressive
 - Recommend déflexion préventive si PTS >11°
 
-> [MEDIA: 📊 MPT12-S01-001 — Courbes survie greffon par PTS]
+> [MEDIA: 📊 PT-MOD12-001 — Courbes survie greffon LCA (Webb 2013 : 35% re-rupture PTS>12° vs 8% <12°)]
+> [MEDIA: 📐 PT-MOD12-002 — Graphique résultats Salmon 2018 (PTS vs dégénérescence ménisque long-term)]
 
 ### §1.2 Mécanisme
 
@@ -174,7 +177,8 @@ Pente élevée post-reco → charge cisaillement anormale sur greffon → fatigu
 - Réduction PTS = ~3-4° moyenne
 - Cible post : 7-8° ("safe" pour LCA)
 
-> [MEDIA: 📐 MPT12-S02-001 — Coupe ostéotomie Dejour : orientation]
+> [MEDIA: 📐 PT-MOD12-003 — Schéma technique Dejour (coupe postérieure oblique, réduction ~3-4°)]
+> [MEDIA: 📐 PT-MOD12-004 — Algorithme décisionnel PTS + reco (cible post: 7-8°)]
 
 ### §2.3 Résultats
 
@@ -260,7 +264,8 @@ LCA natif rompu + PTS mesure ?
 - **Fixation** : implant (biody, plaque)
 - **Contrôle** : fluoroscopie per-op
 
-> [MEDIA: 🖼️ MPT13-S01-001 — Schéma approche et coupe Dejour]
+> [MEDIA: 📐 PT-MOD13-001 — Illustration technique Dejour (approche postéro-latérale, "behind tibia")]
+> [MEDIA: 🖼️ PT-MOD13-002 — Anatomie postérieure tibia (sécurité nerf fibulaire, compartiments)]
 
 ### §1.2 Variantes
 
@@ -383,6 +388,9 @@ Pente élevée (>12°) → critères iaso/hop deviennent insuffisant seul → be
 ### Pente modérée (10-12°) | +12 semaines ; ischio renforcé
 
 ### Pente élevée (>12°) |  +16 semaines, renforcement ischio 2x/semaine
+
+> [MEDIA: 📐 PT-MOD14-001 — Profil risque retour sport par PTS (<10° vs 10-12° vs >12°)]
+> [MEDIA: 📊 PT-MOD14-002 — Timeline retour sport selon PTS (6-9m vs 9-12m vs 12+m)]
 
 ---
 

@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   VERTEX© — CSS Custom pour Moodle 4.5 + Thème Moove
+   À coller dans : Apparence > Thèmes > Moove > Paramètres avancés > SCSS brut
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── COULEURS VERTEX© ─── */
+:root {
+    --vertex-primary: #0D47A1;
+    --vertex-primary-light: #1565C0;
+    --vertex-accent: #E3F2FD;
+    --vertex-success: #2E7D32;
+    --vertex-dark: #1A237E;
+    --vertex-text: #333;
+    --vertex-gray: #666;
+}
+
+/* ─── MASQUER CRÉDITS ET FOOTER INDÉSIRABLE ─── */
+/* Crédit Conecti.me (développeur thème Moove) */
+.footer-content-debugging,
+.footer-content-debugging *,
+a[href*="conecti.me"],
+a[href*="willianmano"],
+.footer-popover .footer-desc a[href*="conecti"],
+.footer-main-info p:last-child,
+.theme-credit,
+#page-footer .logininfo,
+#page-footer .tool_usertours-resettourcontainer {
+    display: none !important;
+}
+
+/* Simplifier le footer — garder seulement le copyright VERTEX© */
+#page-footer .footer-content-popover {
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--vertex-gray);
+}
+
+/* ─── NAVBAR / EN-TÊTE ─── */
+.navbar {
+    background: linear-gradient(135deg, var(--vertex-primary), var(--vertex-dark)) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #fff !important;
+}
+.navbar .nav-link:hover {
+    color: var(--vertex-accent) !important;
+}
+
+/* Logo VERTEX dans la navbar */
+.navbar-brand img {
+    max-height: 38px;
+    filter: brightness(0) invert(1); /* Logo blanc sur fond bleu */
+}
+
+/* ─── PAGE D'ACCUEIL ─── */
+/* Slider Moove — overlay sombre + texte lisible */
+.carousel-item .carousel-caption {
+    background: rgba(13, 71, 161, 0.75);
+    border-radius: 12px;
+    padding: 25px 35px;
+    backdrop-filter: blur(4px);
+}
+.carousel-item .carousel-caption h2 {
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+/* Blocs marketing Moove */
+.frontpage-marketing .marketing-block {
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.frontpage-marketing .marketing-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.frontpage-marketing .marketing-block i {
+    color: var(--vertex-primary-light);
+}
+
+/* ─── COURS ET CONTENU ─── */
+/* Titres de sections */
+.course-content .section .sectionname {
+    color: var(--vertex-primary);
+    font-weight: 700;
+    border-left: 4px solid var(--vertex-primary);
+    padding-left: 12px;
+}
+
+/* Carte de cours */
+.card.dashboard-card {
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre de progression */
+.progress-bar {
+    background: linear-gradient(90deg, var(--vertex-primary-light), var(--vertex-success));
+    border-radius: 8px;
+}
+
+/* ─── BOUTONS ─── */
+.btn-primary {
+    background: linear-gradient(135deg, var(--vertex-primary-light), var(--vertex-primary)) !important;
+    border: none !important;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--vertex-primary), var(--vertex-dark)) !important;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+}
+
+/* ─── LOGIN ─── */
+.login-container .login-form {
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+.login-container .login-form .login-heading {
+    color: var(--vertex-primary);
+}
+
+/* ─── QUIZ ─── */
+.que .formulation {
+    border-radius: 10px;
+    border-left: 4px solid var(--vertex-primary-light);
+}
+.que.correct .formulation {
+    border-left-color: var(--vertex-success);
+    background: #f1f8e9;
+}
+.que.incorrect .formulation {
+    border-left-color: #C62828;
+    background: #fce4ec;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+    .carousel-item .carousel-caption h2 {
+        font-size: 1.3em;
+    }
+    .carousel-item .carousel-caption {
+        padding: 15px 20px;
+    }
+}
+
+/* ─── FOOTER PERSONNALISÉ ─── */
+#page-footer {
+    background: #1A237E;
+    color: #B0BEC5;
+    font-size: 0.88em;
+}
+#page-footer a {
+    color: #90CAF9;
+}
+#page-footer a:hover {
+    color: #E3F2FD;
+}
+
+/* Copyright VERTEX© — injecté via Moove > Footer content */
+.vertex-footer-copyright {
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}

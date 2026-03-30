@@ -1,64 +1,102 @@
-<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
-  <!-- Title -->
-  <text x="300" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
-    Angle de Pente Tibiale (PTS) — Mesure Radiologique
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <text x="600" y="40" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Mesure Angle PTS — Méthode Dejour
   </text>
 
-  <!-- Background -->
-  <rect width="600" height="500" fill="#f9f9f9"/>
-
-  <!-- Tibia lateral view -->
-  <g id="tibia">
-    <!-- Tibial plateau (posterior slope) -->
-    <line x1="150" y1="200" x2="350" y2="240" stroke="#333" stroke-width="3" stroke-linecap="round"/>
-
-    <!-- Posterior cortex (reference) -->
-    <line x1="150" y1="200" x2="350" y2="200" stroke="#0066cc" stroke-width="2" stroke-dasharray="5,5"/>
-
-    <!-- Tibial shaft -->
-    <polygon points="150,200 140,450 160,450 170,200" fill="#cccccc" stroke="#333" stroke-width="2"/>
-
-    <!-- Joint line -->
-    <line x1="140" y1="200" x2="360" y2="240" stroke="#ff6600" stroke-width="2"/>
+  <!-- Illustration tibia en vue sagittale -->
+  <g>
+    <text x="300" y="90" font-size="16" font-weight="bold" fill="#34495e">Vue Sagittale — Radiographie Latérale</text>
+    
+    <!-- Contour tibia -->
+    <ellipse cx="200" cy="250" rx="45" ry="80" fill="none" stroke="#34495e" stroke-width="3"/>
+    
+    <!-- Cortex postérieur (repère Dejour) -->
+    <line x1="155" y1="170" x2="155" y2="330" stroke="#e74c3c" stroke-width="3"/>
+    <text x="120" y="250" font-size="12" font-weight="bold" fill="#e74c3c">Cortex post</text>
+    
+    <!-- Plateau tibial (surface) -->
+    <line x1="140" y1="210" x2="260" y2="245" stroke="#2980b9" stroke-width="4"/>
+    
+    <!-- Ligne horizontale de référence -->
+    <line x1="80" y1="320" x2="320" y2="320" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="340" y="325" font-size="11" fill="#95a5a6">Référence horizontale</text>
+    
+    <!-- Angle PTS avec arc -->
+    <path d="M 260 320 A 30 30 0 0 0 240 280" stroke="#27ae60" stroke-width="2" fill="none"/>
+    <text x="275" y="305" font-size="14" font-weight="bold" fill="#27ae60">θ = PTS</text>
+    
+    <!-- Annotations -->
+    <circle cx="155" cy="170" r="4" fill="#e74c3c"/>
+    <circle cx="260" cy="245" r="4" fill="#2980b9"/>
+    <circle cx="155" cy="320" r="4" fill="#95a5a6"/>
   </g>
 
-  <!-- Angle arc -->
-  <path d="M 200 200 Q 220 210 250 230" fill="none" stroke="#cc0000" stroke-width="3" stroke-linecap="round"/>
+  <!-- Échelle de PTS normale -->
+  <g>
+    <text x="900" y="90" font-size="16" font-weight="bold" fill="#34495e">Valeurs Cliniques Normales</text>
+    
+    <!-- Barre verte: normal -->
+    <rect x="800" y="130" width="200" height="40" fill="#e8f8f5" stroke="#27ae60" stroke-width="2" rx="5"/>
+    <text x="900" y="155" font-size="12" font-weight="bold" text-anchor="middle" fill="#27ae60">PTS: 0-10°</text>
+    <text x="900" y="175" font-size="11" text-anchor="middle" fill="#27ae60">NORMAL (moyenne 7±3°)</text>
 
-  <!-- Angle measurement annotations -->
-  <text x="220" y="185" font-size="14" fill="#0066cc" font-weight="bold">Horizontal (référence)</text>
+    <!-- Barre orange: borderline -->
+    <rect x="800" y="210" width="200" height="40" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="5"/>
+    <text x="900" y="235" font-size="12" font-weight="bold" text-anchor="middle" fill="#f39c12">PTS: 10-12°</text>
+    <text x="900" y="255" font-size="11" text-anchor="middle" fill="#f39c12">BORDERLINE (surveillance)</text>
 
-  <text x="280" y="270" font-size="14" fill="#ff6600" font-weight="bold">Plateau tibial (pente)</text>
+    <!-- Barre rouge: élevé -->
+    <rect x="800" y="290" width="200" height="40" fill="#fadbd8" stroke="#e74c3c" stroke-width="2" rx="5"/>
+    <text x="900" y="315" font-size="12" font-weight="bold" text-anchor="middle" fill="#e74c3c">PTS: >12°</text>
+    <text x="900" y="335" font-size="11" text-anchor="middle" fill="#e74c3c">ÉLEVÉ (risque rupture ×2.3)</text>
+  </g>
 
-  <!-- Angle label -->
-  <text x="240" y="225" font-size="18" fill="#cc0000" font-weight="bold">θ (PTS)</text>
+  <!-- Méthode Dejour détaillée -->
+  <g>
+    <rect x="50" y="420" width="1100" height="320" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1" rx="5"/>
+    
+    <text x="600" y="450" font-size="14" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Technique Dejour de Mesure sur Radiographie Latérale
+    </text>
 
-  <!-- Normal range box -->
-  <rect x="50" y="320" width="500" height="140" fill="#e8f4f8" stroke="#0066cc" stroke-width="2" rx="5"/>
+    <text x="70" y="485" font-size="12" font-weight="bold" fill="#2c3e50">Étapes :</text>
+    
+    <text x="70" y="510" font-size="11" fill="#34495e">
+      1. Identifier le CORTEX POSTÉRIEUR du tibia sur la radiographie latérale
+    </text>
+    <text x="90" y="530" font-size="10" fill="#555">
+      → C'est la limite postérieure de l'os cortical du tibia (bord arrière dense)
+    </text>
+    
+    <text x="70" y="560" font-size="11" fill="#34495e">
+      2. Tracer une ligne HORIZONTALE (référence)
+    </text>
+    <text x="90" y="580" font-size="10" fill="#555">
+      → Perpendiculaire à l'axe mécanique, à travers le plateau tibial
+    </text>
+    
+    <text x="70" y="610" font-size="11" fill="#34495e">
+      3. Tracer une ligne LE LONG du cortex postérieur
+    </text>
+    <text x="90" y="630" font-size="10" fill="#555">
+      → Direction antéropostérieure du tibia proximal
+    </text>
+    
+    <text x="70" y="660" font-size="11" fill="#34495e">
+      4. Mesurer l'angle entre ces deux lignes = ANGLE PTS
+    </text>
+    <text x="90" y="680" font-size="10" fill="#555">
+      → Angle positif = pente postérieure (normal), angle négatif = pente antérieure (rare)
+    </text>
 
-  <text x="60" y="345" font-size="14" font-weight="bold" fill="#003366">MESURE PTS (angle postérieur tibial) :</text>
+    <text x="70" y="710" font-size="11" font-weight="bold" fill="#e74c3c">
+      ⚠️ Précision : ICC = 0.88 (radiographie) vs 0.95 (IRM 3D). Variabilité opérateur ±1-2°
+    </text>
+  </g>
 
-  <text x="60" y="365" font-size="12" fill="#003366">
-    ✓ Normal : 7° ± 3° (Dejour, Weber)
+  <!-- Légende -->
+  <rect x="50" y="760" width="1100" height="30" fill="#fff3cd" stroke="#f39c12" stroke-width="1" rx="3"/>
+  <text x="600" y="782" font-size="11" text-anchor="middle" fill="#34495e">
+    Valeurs normatives : 7° ± 3° (population générale). Variation génétique et ethnique faible (&lt;1°).
   </text>
-
-  <text x="60" y="385" font-size="12" fill="#003366">
-    ⚠ Élevé (≥12°) : Risque rupture LCA augmenté (OR 2.3, Brandon 2006)
-  </text>
-
-  <text x="60" y="405" font-size="12" fill="#003366">
-    ✓ Méthode Dejour : Cortex postérieur vs plan horizontal
-  </text>
-
-  <text x="60" y="425" font-size="12" fill="#003366">
-    ✓ ICC mesure radiographique : 0.88-0.95 (excellent intra-observer)
-  </text>
-
-  <text x="60" y="445" font-size="12" fill="#003366">
-    ℹ Variation ethnique : Asiatiques +1.5° vs Caucasiens (Hashemi 2008)
-  </text>
-
-  <!-- Legend -->
-  <line x1="50" y1="475" x2="70" y2="475" stroke="#ff6600" stroke-width="2"/>
-  <text x="75" y="480" font-size="11" fill="#333">Joint articulaire (pente)</text>
 </svg>
