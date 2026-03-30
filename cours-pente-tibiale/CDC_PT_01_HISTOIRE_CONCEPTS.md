@@ -39,13 +39,13 @@
 
 Les anatomistes classiques s'intéressaient aux structures molles. L'idée qu'un angle de quelques degrés puisse influencer la stabilité ligamentaire n'avait pas de cadre théorique.
 
-> [MEDIA: 📷 MPT01-S01-001 — Planches anatomiques historiques du genou]
+> [MEDIA: 📐 PT-MOD01-001 — Timeline histoire PTS (1836 Weber → 2026 rKA navigation)]
 
 ### §1.2 Weber & Weber (1836)
 
 *Mechanik der menschlichen Gehwerkzeuge* — premier ouvrage de mécanique appliquée à l'appareil locomoteur. Première mesure de l'inclinaison postérieure du plateau tibial. Pas de valeur normative ni de signification clinique.
 
-> [MEDIA: 📐 MPT01-S01-002 — Schéma original Weber & Weber 1836]
+> [MEDIA: 📐 PT-MOD01-002 — Distribution PTS population (histogramme zones normale/borderline/élevée)]
 
 ### §1.3 Fick (1911)
 
@@ -67,7 +67,7 @@ Paul Maquet modélise le plateau comme un **plan incliné** :
 - **Composante tangentielle** = P × sin(PTS)
 - Plus la pente ↑ → plus le cisaillement antérieur ↑
 
-> [MEDIA: 📐 MPT01-S02-001 — Modèle du plan incliné de Maquet]
+> [MEDIA: 📐 PT-MOD03-001 — Schéma forces biomécaniques Maquet formula (F_cis = P × sin θ)]
 
 ### §2.2 Insall (1985-1993) — PTS en PTG
 
@@ -77,7 +77,7 @@ John N. Insall fixe les principes de l'alignement mécanique :
 - **PTS standardisée 0-3°** en PTG
 - Objectif : minimiser contraintes sur le polyéthylène
 
-> [MEDIA: 📐 MPT01-S02-002 — Principes d'Insall : coupe tibiale PTS 0-3°]
+> [MEDIA: 📐 PT-MOD06-001 — Alignment mécanique Insall (HKA neutre, PTS 0-3° standard)]
 
 ### §2.3 Dejour & Bonnin (1994) — Article fondateur
 

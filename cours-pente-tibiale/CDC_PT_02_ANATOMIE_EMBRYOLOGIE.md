@@ -43,7 +43,7 @@ Le tibia proximal (*proximal tibia*) comprend :
 - **Tubérosité tibiale antérieure (TTA)** : insertion du tendon rotulien, repère chirurgical majeur
 - **Épine tibiale** : éminence intercondylaire médiale et latérale, insertions des croisés
 
-> [MEDIA: 📷 MPT03-S01-001 — Vue antérieure tibia proximal : TTA, plateaux, épine]
+> [MEDIA: 📐 PT-MOD02-001 — Anatomie tibia proximal (TTA, plateaux, épine intercondylaire, repères chirurgicaux)]
 
 ### §1.2 Repères chirurgicaux
 
@@ -52,7 +52,7 @@ Le tibia proximal (*proximal tibia*) comprend :
 - **Cortex postérieur** : méthode alternative de mesure de la pente (Genin 1993)
 - **Point de Gerdy** : insertion du tractus iliotibial, repère pour l'HTO latérale
 
-> [MEDIA: 📐 MPT03-S01-002 — Repères chirurgicaux du tibia proximal : vue antérieure et latérale]
+> [MEDIA: 📐 PT-MOD02-002 — Plateau tibial anatomie (coronale + sagittale, médial 8° vs latéral 5°, ménisques)]
 
 > **📌 Consolidation** : La TTA et le bord antérieur du tibia sont les 2 repères essentiels pour positionner le guide de coupe tibiale en PTG.
 
