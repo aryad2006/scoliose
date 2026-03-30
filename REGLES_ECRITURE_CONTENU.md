@@ -748,6 +748,7 @@ Chaque formation dispose d'un fichier dédié dans son répertoire :
 |-----------|---------|------|
 | Scoliose | `CAS_CLINIQUES_SCOLIOSE.md` | CCSCOL |
 | PTG | `CAS_CLINIQUES_PTG.md` | CCPTG |
+| Pente Tibiale | `CAS_CLINIQUES_PENTE_TIBIALE_PROGRESSIFS.md` | CCPTIB |
 | IOA | `CAS_CLINIQUES_IOA.md` | CCIOA |
 | Tendinites | `CAS_CLINIQUES_TENDINITES.md` | CCTEND |
 | Obésité et Orthopédie | `CAS_CLINIQUES_OBO.md` | CCOBO |
