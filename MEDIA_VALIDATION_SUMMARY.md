@@ -1,6 +1,6 @@
 # 🔍 VALIDATION MÉDIAS — Formation Pente Tibiale
 
-**Status**: ✅ **10/10 SVG Créés** | **63 [MEDIA] Tags Intégrés** | 📍 **18+ Wikimedia à Télécharger**
+**Status**: ✅ **10/10 SVG Créés** | ✅ **18 Wikimedia Téléchargées** | 📍 **63 [MEDIA] Tags Intégrés (CDC)** | 🟡 **180+ Tags Cas Cliniques (en cours)**
 
 ---
 
@@ -87,7 +87,7 @@ grep -r "\[MEDIA:" cours-pente-tibiale/CDC_PT_*.md | wc -l
 
 | Task | Volume | Time | Status |
 |------|--------|------|--------|
-| Télécharger images Wikimedia | 18+ images | 2-3h | 📍 PRÊT |
+| Télécharger images Wikimedia | 18+ images | 2-3h | ✅ COMPLÉTÉ |
 | Ajouter [MEDIA] CAS_CLINIQUES | 60 cas × 3 = 180 tags | 8-10h | 🟡 NEXT |
 | Ajouter images QUIZ | 25+ questions | 2-3h | 🟡 AFTER |
 | QA Final (validation tous liens) | End-to-end test | 4-6h | 🟡 FINAL |
@@ -141,9 +141,10 @@ TOTAL MÉDIAS PRODUCTION:   91 (SVG + tags)
 TOTAL MÉDIAS FINAUX:       300+ (avec Cas + Quiz + Wiki)
 ````
 
-**STATUT DÉPLOIEMENT**: 🟡 **BLOQUÉ EN ATTENTE**
-- Cause: Wikimedia non téléchargées + Cas Cliniques incomplets
-- Action: Télécharger images + ajouter 180+ [MEDIA] tags CAS
+**STATUT DÉPLOIEMENT**: 🟢 **PHASE 2A COMPLÉTÉE** | 🟡 **PHASE 2B EN COURS**
+- ✅ Phase 2A: 18 images Wikimedia téléchargées avec succès
+- 🟡 Phase 2B: En attente d'intégration [MEDIA] tags dans CAS_CLINIQUES (6/180 tags actuels)
+- 🟡 Phase 2C: QA finale et export PNG pour Moodle
 
 ---
 
