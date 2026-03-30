@@ -70,7 +70,42 @@ Chaque section (ex. §1.1, §1.2...) DOIT contenir :
 
 > 🤔 **Question de réflexion** : Pourquoi la scoliose thoracique s'accompagne-t-elle toujours d'une rotation vertébrale, alors que la scoliose lombaire tourne beaucoup moins ?
 
-### 2.3 Exercices intégrés (micro-activités)
+### 2.3 Intégration obligatoire des images et médias (TOUTES FORMATIONS)
+
+**RÈGLE IMPÉRATIVE UNIVERSELLE** : Les images ne doivent JAMAIS être des tags de référence `[MEDIA:...]`. Elles doivent être **intégrées directement** en markdown. Cette règle s'applique à TOUTES les formations : Scoliose, PTG, IOA, Tendinites, Obésité et orthopédie.
+
+**Format obligatoire** :
+```markdown
+![Description claire en français](assets/images/svg/nom_fichier.svg)
+```
+
+**Format INTERDIT** :
+```markdown
+> [MEDIA: PTIB-CC01-001 — Description]
+```
+
+**Placement** : Chaque image doit être placée immédiatement après la section pédagogique concernée (sauf si plusieurs images pertinentes pour une section = les grouper).
+
+**Chemins valides** :
+- `assets/images/svg/` — Schémas et diagrammes custom
+- `assets/images/diagrams/` — Diagrammes Wikimedia
+- `assets/images/radiographs/` — Radiographies
+- `assets/images/mri/` — Vidéos IRM (format .ogg)
+- `assets/images/illustrations/` — Illustrations anatomiques
+- `assets/images/anatomy/` — Modèles 3D et os
+
+**Exemple correct** :
+```markdown
+## Biomécanique de la pente tibiale
+
+La pente tibiale (PTS) est un angle sagittal...
+
+![Mesure de la pente tibiale - Angle sagittal du plateau tibial](assets/images/svg/01_PTS_ANGLE_MEASUREMENT.svg)
+
+Cet angle détermine la translation tibiale antérieure...
+```
+
+### 2.4 Exercices intégrés (micro-activités)
 
 - **1 micro-activité par section** minimum
 - Types acceptés :
