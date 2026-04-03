@@ -22,6 +22,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Course Pages
+    Route::get('/courses', [\App\Http\Controllers\CoursePageController::class, 'index'])->name('frontend.courses.index');
+    Route::get('/courses/{course:slug}', [\App\Http\Controllers\CoursePageController::class, 'show'])->name('frontend.courses.show');
+
+    // Lesson Pages
+    Route::get('/lessons/{lesson}', [\App\Http\Controllers\LessonPageController::class, 'show'])->name('frontend.lessons.show');
 });
 
 // API Routes for VERTEX LMS
@@ -44,6 +51,11 @@ Route::middleware('auth')->prefix('api')->group(function () {
     Route::post('lessons/{lesson}/progress', [\App\Http\Controllers\ProgressController::class, 'store'])->name('progress.store');
     Route::get('lessons/{lesson}/progress', [\App\Http\Controllers\ProgressController::class, 'show'])->name('progress.show');
     Route::get('courses/{course}/progress', [\App\Http\Controllers\ProgressController::class, 'coursesProgress'])->name('progress.course');
+
+    // Media (upload and manage lesson media)
+    Route::get('lessons/{lesson}/media', [\App\Http\Controllers\MediaController::class, 'index'])->name('media.index');
+    Route::post('lessons/{lesson}/media', [\App\Http\Controllers\MediaController::class, 'store'])->name('media.store');
+    Route::delete('lessons/{lesson}/media/{media}', [\App\Http\Controllers\MediaController::class, 'destroy'])->name('media.destroy');
 });
 
 require __DIR__.'/auth.php';
