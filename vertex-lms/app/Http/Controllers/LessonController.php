@@ -6,6 +6,11 @@ use App\Models\Lesson;
 
 class LessonController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Lesson::class);
+    }
+
     public function index($moduleId)
     {
         return \App\Models\Module::findOrFail($moduleId)->lessons()->paginate();

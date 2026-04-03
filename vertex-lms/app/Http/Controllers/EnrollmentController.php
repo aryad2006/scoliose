@@ -8,6 +8,11 @@ use App\Models\Enrollment;
 
 class EnrollmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Enrollment::class);
+    }
+
     /**
      * Display a listing of the resource.
      */

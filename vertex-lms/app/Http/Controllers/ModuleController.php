@@ -8,6 +8,11 @@ use App\Models\Module;
 
 class ModuleController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Module::class);
+    }
+
     /**
      * Display a listing of the resource.
      */

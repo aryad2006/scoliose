@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProgressController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Progress::class);
+    }
+
     public function store($lessonId, StoreProgressRequest $request)
     {
         $lesson = Lesson::findOrFail($lessonId);
