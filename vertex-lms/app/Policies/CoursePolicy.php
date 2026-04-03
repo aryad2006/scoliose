@@ -34,12 +34,12 @@ class CoursePolicy
 
     public function update(User $user, Course $course): bool
     {
-        return $user->hasRole('admin') || ($user->hasRole('instructor') && $course->creator_id === $user->id);
+        return $user->hasRole(['admin', 'instructor']);
     }
 
     public function delete(User $user, Course $course): bool
     {
-        return $user->hasRole('admin') || ($user->hasRole('instructor') && $course->creator_id === $user->id);
+        return $user->hasRole(['admin', 'instructor']);
     }
 
     public function restore(User $user, Course $course): bool

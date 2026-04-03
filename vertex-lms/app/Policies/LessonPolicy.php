@@ -22,10 +22,17 @@ class LessonPolicy
             return true;
         }
         // Student can view if course is published and enrolled
-        if ($lesson->module->course->is_published && $user->enrollments->contains('course_id', $lesson->module->course_id)) {
-            return true;
+        $course = $lesson->module->course;
+        if (!$course->is_published) {
+            return false;
         }
-        return false;
+        return \App\Models\Enrollment::where('user_id', $user->id)
+            ->where('course_id', $course->id)
+            ->where(function ($query) {
+                $query->whereNull('expires_at')
+                    ->orWhere('expires_at', '>', now());
+            })
+            ->exists();
     }
 
     public function create(User $user): bool
