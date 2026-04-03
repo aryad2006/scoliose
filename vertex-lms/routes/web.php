@@ -24,4 +24,26 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// API Routes for VERTEX LMS
+Route::middleware('auth')->prefix('api')->group(function () {
+    // Courses
+    Route::apiResource('courses', \App\Http\Controllers\CourseController::class);
+
+    // Modules under Courses
+    Route::apiResource('courses.modules', \App\Http\Controllers\ModuleController::class)->shallow();
+
+    // Lessons under Modules
+    Route::apiResource('modules.lessons', \App\Http\Controllers\LessonController::class)->shallow();
+
+    // Enrollment (student joins a course)
+    Route::post('courses/{course}/enroll', [\App\Http\Controllers\EnrollmentController::class, 'store'])->name('enroll');
+    Route::get('enrollments', [\App\Http\Controllers\EnrollmentController::class, 'index'])->name('enrollments.index');
+    Route::delete('courses/{course}/unenroll', [\App\Http\Controllers\EnrollmentController::class, 'destroy'])->name('unenroll');
+
+    // Progress (track lesson completion)
+    Route::post('lessons/{lesson}/progress', [\App\Http\Controllers\ProgressController::class, 'store'])->name('progress.store');
+    Route::get('lessons/{lesson}/progress', [\App\Http\Controllers\ProgressController::class, 'show'])->name('progress.show');
+    Route::get('courses/{course}/progress', [\App\Http\Controllers\ProgressController::class, 'coursesProgress'])->name('progress.course');
+});
+
 require __DIR__.'/auth.php';
